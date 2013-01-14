@@ -1,20 +1,14 @@
 package com.simpleplugin;
 
-import com.intellij.codeInsight.intention.IntentionAction;
 import com.intellij.lang.annotation.Annotation;
 import com.intellij.lang.annotation.AnnotationHolder;
 import com.intellij.lang.annotation.Annotator;
-import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.editor.SyntaxHighlighterColors;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.TextRange;
-import com.intellij.psi.PsiDocumentManager;
 import com.intellij.psi.PsiElement;
-import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiLiteralExpression;
-import com.intellij.util.IncorrectOperationException;
 import com.simpleplugin.psi.SimpleProperty;
-import org.intellij.lang.regexp.intention.CheckRegExpIntentionAction;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
@@ -27,7 +21,8 @@ public class SimpleAnnotator implements Annotator {
             String value = (String) literalExpression.getValue();
             if (value != null && value.startsWith("simple:")) {
                 Project project = element.getProject();
-                List<SimpleProperty> properties = SimpleUtil.findProperties(project, value.substring(7));
+                String key = value.substring(7);
+                List<SimpleProperty> properties = SimpleUtil.findProperties(project, key);
                 if (properties.size() == 1) {
                     TextRange range = new TextRange(element.getTextRange().getStartOffset() + 7,
                             element.getTextRange().getStartOffset() + 7);
@@ -36,7 +31,8 @@ public class SimpleAnnotator implements Annotator {
                 } else if (properties.size() == 0) {
                     TextRange range = new TextRange(element.getTextRange().getStartOffset() + 8,
                             element.getTextRange().getEndOffset());
-                    holder.createErrorAnnotation(range, "Unresolved property");
+                    holder.createErrorAnnotation(range, "Unresolved property").
+                            registerFix(new CreatePropertyQuickFix(key));
                 }
             }
         }

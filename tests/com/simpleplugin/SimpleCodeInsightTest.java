@@ -49,7 +49,7 @@ public class SimpleCodeInsightTest extends LightCodeInsightFixtureTestCase {
                 CodeStyleManager.getInstance(getProject()).reformat(myFixture.getFile());
             }
         });
-        myFixture.checkResultByFile("FormatterTestDataAfter.simple");
+        myFixture.checkResultByFile("DefaultTestData.simple");
     }
 
     public void testRename() {

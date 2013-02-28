@@ -7,7 +7,11 @@ import com.intellij.psi.PsiElement;
 import com.intellij.psi.codeStyle.CodeStyleManager;
 import com.intellij.psi.codeStyle.CodeStyleSettingsManager;
 import com.intellij.testFramework.fixtures.LightCodeInsightFixtureTestCase;
+import com.intellij.usageView.UsageInfo;
+import com.intellij.util.indexing.FileBasedIndex;
 import com.simpleplugin.psi.SimpleProperty;
+
+import java.util.Collection;
 
 public class SimpleCodeInsightTest extends LightCodeInsightFixtureTestCase {
     @Override
@@ -29,7 +33,6 @@ public class SimpleCodeInsightTest extends LightCodeInsightFixtureTestCase {
 
     public void testAnnotations() {
         myFixture.configureByFiles("AnnotationTest.java", "Example.simple");
-        System.out.println(getProjectDescriptor().getSdk());
         myFixture.checkHighlighting(false, false, true);
     }
 
@@ -63,5 +66,10 @@ public class SimpleCodeInsightTest extends LightCodeInsightFixtureTestCase {
         myFixture.checkResult("#website = http://en.wikipedia.org/");
         commentAction.actionPerformedImpl(getProject(), myFixture.getEditor());
         myFixture.checkResult("website = http://en.wikipedia.org/");
+    }
+
+    public void testFindUsages() {
+        Collection<UsageInfo> usageInfos = myFixture.testFindUsages("FindUsagesTestData.simple", "FindUsagesTestData.java");
+        assertEquals(1, usageInfos.size());
     }
 }

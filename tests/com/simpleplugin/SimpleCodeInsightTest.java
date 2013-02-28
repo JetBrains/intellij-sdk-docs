@@ -10,7 +10,9 @@ import com.intellij.testFramework.fixtures.LightCodeInsightFixtureTestCase;
 import com.intellij.usageView.UsageInfo;
 import com.simpleplugin.psi.SimpleProperty;
 
+import java.util.Arrays;
 import java.util.Collection;
+import java.util.List;
 
 public class SimpleCodeInsightTest extends LightCodeInsightFixtureTestCase {
     @Override
@@ -27,7 +29,9 @@ public class SimpleCodeInsightTest extends LightCodeInsightFixtureTestCase {
     public void testCompletion() {
         myFixture.configureByFiles("CompleteTestData.java", "DefaultTestData.simple");
         myFixture.complete(CompletionType.BASIC, 1);
-        System.out.println(myFixture.getLookupElementStrings());
+        List<String> strings = myFixture.getLookupElementStrings();
+        assertTrue(strings.containsAll(Arrays.asList("key\\ with\\ spaces", "language", "message", "tab", "website")));
+        assertEquals(5, strings.size());
     }
 
     public void testAnnotator() {

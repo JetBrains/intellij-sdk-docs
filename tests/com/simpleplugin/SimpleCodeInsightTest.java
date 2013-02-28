@@ -19,24 +19,24 @@ public class SimpleCodeInsightTest extends LightCodeInsightFixtureTestCase {
     }
 
     public void testResolve() {
-        myFixture.configureByFiles("ResolveTestData.java", "Example.simple");
+        myFixture.configureByFiles("ResolveTestData.java", "DefaultTestData.simple");
         PsiElement element = myFixture.getFile().findElementAt(myFixture.getCaretOffset()).getParent();
         assertEquals("http://en.wikipedia.org/", ((SimpleProperty) element.getReferences()[0].resolve()).getValue());
     }
 
     public void testCompletion() {
-        myFixture.configureByFiles("CompleteTestData.java", "Example.simple");
+        myFixture.configureByFiles("CompleteTestData.java", "DefaultTestData.simple");
         myFixture.complete(CompletionType.BASIC, 1);
         System.out.println(myFixture.getLookupElementStrings());
     }
 
     public void testAnnotator() {
-        myFixture.configureByFiles("AnnotatorTestData.java", "Example.simple");
+        myFixture.configureByFiles("AnnotatorTestData.java", "DefaultTestData.simple");
         myFixture.checkHighlighting(false, false, true);
     }
 
     public void testFolding() {
-        myFixture.configureByFiles("FoldingTestData.simple");
+        myFixture.configureByFiles("DefaultTestData.simple");
         myFixture.testFolding(getTestDataPath() + "/FoldingTestData.java");
     }
 

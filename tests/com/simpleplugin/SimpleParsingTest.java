@@ -7,7 +7,7 @@ public class SimpleParsingTest extends ParsingTestCase {
         super("", "simple", new SimpleParserDefinition());
     }
 
-    public void testExample() {
+    public void testParsingTestData() {
         doTest(true, false);
     }
 

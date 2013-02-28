@@ -31,17 +31,17 @@ public class SimpleCodeInsightTest extends LightCodeInsightFixtureTestCase {
     }
 
     public void testAnnotator() {
-        myFixture.configureByFiles("AnnotationTest.java", "Example.simple");
+        myFixture.configureByFiles("AnnotatorTestData.java", "Example.simple");
         myFixture.checkHighlighting(false, false, true);
     }
 
     public void testFolding() {
-        myFixture.configureByFiles("Example.simple");
+        myFixture.configureByFiles("FoldingTestData.simple");
         myFixture.testFolding(getTestDataPath() + "/FoldingTestData.java");
     }
 
-    public void testFormatting() {
-        myFixture.configureByFiles("FormattingTestData.simple");
+    public void testFormatter() {
+        myFixture.configureByFiles("FormatterTestDataBefore.simple");
         CodeStyleSettingsManager.getSettings(getProject()).SPACE_AROUND_ASSIGNMENT_OPERATORS = true;
         ApplicationManager.getApplication().runWriteAction(new Runnable() {
             @Override
@@ -49,7 +49,7 @@ public class SimpleCodeInsightTest extends LightCodeInsightFixtureTestCase {
                 CodeStyleManager.getInstance(getProject()).reformat(myFixture.getFile());
             }
         });
-        myFixture.checkResultByFile("Example.simple");
+        myFixture.checkResultByFile("FormatterTestDataAfter.simple");
     }
 
     public void testRename() {

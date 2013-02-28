@@ -8,7 +8,6 @@ import com.intellij.psi.codeStyle.CodeStyleManager;
 import com.intellij.psi.codeStyle.CodeStyleSettingsManager;
 import com.intellij.testFramework.fixtures.LightCodeInsightFixtureTestCase;
 import com.intellij.usageView.UsageInfo;
-import com.intellij.util.indexing.FileBasedIndex;
 import com.simpleplugin.psi.SimpleProperty;
 
 import java.util.Collection;
@@ -22,7 +21,7 @@ public class SimpleCodeInsightTest extends LightCodeInsightFixtureTestCase {
     public void testResolve() {
         myFixture.configureByFiles("ResolveTestData.java", "Example.simple");
         PsiElement element = myFixture.getFile().findElementAt(myFixture.getCaretOffset()).getParent();
-        assertEquals("http://en.wikipedia.org/", ((SimpleProperty)element.getReferences()[0].resolve()).getValue());
+        assertEquals("http://en.wikipedia.org/", ((SimpleProperty) element.getReferences()[0].resolve()).getValue());
     }
 
     public void testCompletion() {
@@ -31,7 +30,7 @@ public class SimpleCodeInsightTest extends LightCodeInsightFixtureTestCase {
         System.out.println(myFixture.getLookupElementStrings());
     }
 
-    public void testAnnotations() {
+    public void testAnnotator() {
         myFixture.configureByFiles("AnnotationTest.java", "Example.simple");
         myFixture.checkHighlighting(false, false, true);
     }

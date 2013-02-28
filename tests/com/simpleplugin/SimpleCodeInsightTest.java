@@ -1,6 +1,7 @@
 package com.simpleplugin;
 
 import com.intellij.codeInsight.completion.CompletionType;
+import com.intellij.codeInsight.generation.actions.CommentByLineCommentAction;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.codeStyle.CodeStyleManager;
@@ -53,5 +54,14 @@ public class SimpleCodeInsightTest extends LightCodeInsightFixtureTestCase {
         myFixture.configureByFiles("RenameTestData.java", "RenameTestData.simple");
         myFixture.renameElementAtCaret("websiteUrl");
         myFixture.checkResultByFile("RenameTestData.simple", "RenameTestDataAfter.simple", false);
+    }
+
+    public void testCommenter() {
+        myFixture.configureByText(SimpleFileType.INSTANCE, "<caret>website = http://en.wikipedia.org/");
+        CommentByLineCommentAction commentAction = new CommentByLineCommentAction();
+        commentAction.actionPerformedImpl(getProject(), myFixture.getEditor());
+        myFixture.checkResult("#website = http://en.wikipedia.org/");
+        commentAction.actionPerformedImpl(getProject(), myFixture.getEditor());
+        myFixture.checkResult("website = http://en.wikipedia.org/");
     }
 }

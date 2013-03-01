@@ -21,6 +21,11 @@ public class SimpleParsingTest extends ParsingTestCase {
         return false;
     }
 
+    @Override
+    protected boolean includeRanges() {
+        return true;
+    }
+
     protected void doTest(boolean checkResult, boolean suppressErrors) {
         super.doTest(checkResult);
         if (!suppressErrors) {

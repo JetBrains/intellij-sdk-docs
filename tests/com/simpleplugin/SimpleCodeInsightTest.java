@@ -20,12 +20,6 @@ public class SimpleCodeInsightTest extends LightCodeInsightFixtureTestCase {
         return "../../SimplePlugin/testData";
     }
 
-    public void testResolve() {
-        myFixture.configureByFiles("ResolveTestData.java", "DefaultTestData.simple");
-        PsiElement element = myFixture.getFile().findElementAt(myFixture.getCaretOffset()).getParent();
-        assertEquals("http://en.wikipedia.org/", ((SimpleProperty) element.getReferences()[0].resolve()).getValue());
-    }
-
     public void testCompletion() {
         myFixture.configureByFiles("CompleteTestData.java", "DefaultTestData.simple");
         myFixture.complete(CompletionType.BASIC, 1);
@@ -39,13 +33,8 @@ public class SimpleCodeInsightTest extends LightCodeInsightFixtureTestCase {
         myFixture.checkHighlighting(false, false, true);
     }
 
-    public void testFolding() {
-        myFixture.configureByFiles("DefaultTestData.simple");
-        myFixture.testFolding(getTestDataPath() + "/FoldingTestData.java");
-    }
-
     public void testFormatter() {
-        myFixture.configureByFiles("FormatterTestDataBefore.simple");
+        myFixture.configureByFiles("FormatterTestData.simple");
         CodeStyleSettingsManager.getSettings(getProject()).SPACE_AROUND_ASSIGNMENT_OPERATORS = true;
         ApplicationManager.getApplication().runWriteAction(new Runnable() {
             @Override
@@ -62,6 +51,16 @@ public class SimpleCodeInsightTest extends LightCodeInsightFixtureTestCase {
         myFixture.checkResultByFile("RenameTestData.simple", "RenameTestDataAfter.simple", false);
     }
 
+    public void testFolding() {
+        myFixture.configureByFiles("DefaultTestData.simple");
+        myFixture.testFolding(getTestDataPath() + "/FoldingTestData.java");
+    }
+
+    public void testFindUsages() {
+        Collection<UsageInfo> usageInfos = myFixture.testFindUsages("FindUsagesTestData.simple", "FindUsagesTestData.java");
+        assertEquals(1, usageInfos.size());
+    }
+
     public void testCommenter() {
         myFixture.configureByText(SimpleFileType.INSTANCE, "<caret>website = http://en.wikipedia.org/");
         CommentByLineCommentAction commentAction = new CommentByLineCommentAction();
@@ -71,8 +70,9 @@ public class SimpleCodeInsightTest extends LightCodeInsightFixtureTestCase {
         myFixture.checkResult("website = http://en.wikipedia.org/");
     }
 
-    public void testFindUsages() {
-        Collection<UsageInfo> usageInfos = myFixture.testFindUsages("FindUsagesTestData.simple", "FindUsagesTestData.java");
-        assertEquals(1, usageInfos.size());
+    public void testReference() {
+        myFixture.configureByFiles("ReferenceTestData.java", "DefaultTestData.simple");
+        PsiElement element = myFixture.getFile().findElementAt(myFixture.getCaretOffset()).getParent();
+        assertEquals("http://en.wikipedia.org/", ((SimpleProperty) element.getReferences()[0].resolve()).getValue());
     }
 }

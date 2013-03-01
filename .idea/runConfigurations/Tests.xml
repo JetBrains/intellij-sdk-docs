@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="SimpleCodeInsightTest" type="JUnit" factoryName="JUnit" singleton="true">
+  <configuration default="false" name="Tests" type="JUnit" factoryName="JUnit">
     <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
       <pattern>
         <option name="PATTERN" value="com.simpleplugin.*" />
@@ -10,9 +10,9 @@
     <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
     <option name="ALTERNATIVE_JRE_PATH" value="" />
     <option name="PACKAGE_NAME" value="com.simpleplugin" />
-    <option name="MAIN_CLASS_NAME" value="com.simpleplugin.SimpleCodeInsightTest" />
-    <option name="METHOD_NAME" value="testFindUsages" />
-    <option name="TEST_OBJECT" value="class" />
+    <option name="MAIN_CLASS_NAME" value="" />
+    <option name="METHOD_NAME" value="" />
+    <option name="TEST_OBJECT" value="directory" />
     <option name="VM_PARAMETERS" value="-ea -Xbootclasspath/p:../out/classes/production/boot -XX:+HeapDumpOnOutOfMemoryError -Xmx512m -XX:MaxPermSize=320m -Didea.system.path=../test-system -Didea.home.path=../ -Didea.config.path=../test-config -Didea.test.group=ALL_EXCLUDE_DEFINED" />
     <option name="PARAMETERS" value="" />
     <option name="WORKING_DIRECTORY" value="file://$USER_HOME$/ultimate/community" />
@@ -22,14 +22,9 @@
       <value defaultName="moduleWithDependencies" />
     </option>
     <envs />
+    <dir value="$PROJECT_DIR$/tests" />
     <patterns />
-    <RunnerSettings RunnerId="Debug">
-      <option name="DEBUG_PORT" value="" />
-      <option name="TRANSPORT" value="0" />
-      <option name="LOCAL" value="true" />
-    </RunnerSettings>
     <RunnerSettings RunnerId="Run" />
-    <ConfigurationWrapper RunnerId="Debug" />
     <ConfigurationWrapper RunnerId="Run" />
     <method />
   </configuration>

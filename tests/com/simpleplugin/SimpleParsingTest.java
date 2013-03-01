@@ -13,7 +13,7 @@ public class SimpleParsingTest extends ParsingTestCase {
 
     @Override
     protected String getTestDataPath() {
-        return "testData";
+        return "../../SimplePlugin/testData";
     }
 
     @Override

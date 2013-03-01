@@ -8,7 +8,7 @@ public class SimpleParsingTest extends ParsingTestCase {
     }
 
     public void testParsingTestData() {
-        doTest(true, false);
+        doTest(true);
     }
 
     @Override
@@ -24,15 +24,5 @@ public class SimpleParsingTest extends ParsingTestCase {
     @Override
     protected boolean includeRanges() {
         return true;
-    }
-
-    protected void doTest(boolean checkResult, boolean suppressErrors) {
-        super.doTest(checkResult);
-        if (!suppressErrors) {
-            assertFalse(
-                    "PsiFile contains error elements",
-                    toParseTreeText(myFile, skipSpaces(), includeRanges()).contains("PsiErrorElement")
-            );
-        }
     }
 }

@@ -1,6 +1,5 @@
 {
   parserClass="com.simpleplugin.parser.SimpleParser"
-  parserUtilClass="com.simpleplugin.parser.SimpleParserUtil"
 
   extends="com.intellij.extapi.psi.ASTWrapperPsiElement"
 

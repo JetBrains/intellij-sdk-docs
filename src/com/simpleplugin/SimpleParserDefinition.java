@@ -29,7 +29,7 @@ public class SimpleParserDefinition implements ParserDefinition{
     @NotNull
     @Override
     public Lexer createLexer(Project project) {
-        return new FlexAdapter(new SimpleLexer((Reader) null));
+        return new SimpleLexerAdapter();
     }
 
     @NotNull

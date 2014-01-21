@@ -17,7 +17,7 @@ import java.io.Reader;
 
 public class SimpleFindUsagesProvider implements FindUsagesProvider {
     private static final DefaultWordsScanner WORDS_SCANNER =
-            new DefaultWordsScanner(new FlexAdapter(new SimpleLexer((Reader) null)),
+            new DefaultWordsScanner(new SimpleLexerAdapter(),
                     TokenSet.create(SimpleTypes.KEY), TokenSet.create(SimpleTypes.COMMENT), TokenSet.EMPTY);
 
     @Nullable

@@ -35,7 +35,7 @@ public class SimpleSyntaxHighlighter extends SyntaxHighlighterBase {
     @NotNull
     @Override
     public Lexer getHighlightingLexer() {
-        return new FlexAdapter(new SimpleLexer((Reader) null));
+        return new SimpleLexerAdapter();
     }
 
     @NotNull

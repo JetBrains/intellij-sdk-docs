@@ -1,6 +1,6 @@
 {
   parserClass="com.simpleplugin.parser.SimpleParser"
-  stubParserClass="com.simpleplugin.parser.GeneratedParserUtilBase"
+  parserUtilClass="com.simpleplugin.parser.SimpleParserUtil"
 
   extends="com.intellij.extapi.psi.ASTWrapperPsiElement"
 

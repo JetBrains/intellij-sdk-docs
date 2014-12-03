@@ -1,0 +1,2 @@
+Plugin configuration file
+=======

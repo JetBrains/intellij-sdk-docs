@@ -14,8 +14,6 @@
     ]]>
   </change-notes>
 
-  <!-- http://confluence.jetbrains.com/display/IDEADEV/Build+Number+Ranges for description -->
-  <idea-version since-build="139"/>
   <!-- http://confluence.jetbrains.com/display/IDEADEV/Plugin+Compatibility+with+IntelliJ+Platform+Products -->
   <!-- The unique identifiers of the plugins on which this plugin depends -->
   <!-- com.intellij.modules.lang is included in every IntelliJ-based IDE, plugin will be available as well -->

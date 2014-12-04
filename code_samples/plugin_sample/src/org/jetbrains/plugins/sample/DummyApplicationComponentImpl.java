@@ -19,6 +19,6 @@ public class DummyApplicationComponentImpl implements DummyApplicationComponent 
     @NotNull
     @Override
     public String getComponentName() {
-        return null;
+        return "DummyApplicationComponent";
     }
 }

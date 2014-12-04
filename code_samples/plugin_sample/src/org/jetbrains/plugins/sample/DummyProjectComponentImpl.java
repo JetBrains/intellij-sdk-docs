@@ -29,6 +29,6 @@ public class DummyProjectComponentImpl implements DummyProjectComponent {
     @NotNull
     @Override
     public String getComponentName() {
-        return null;
+        return "DummyProjectComponent";
     }
 }

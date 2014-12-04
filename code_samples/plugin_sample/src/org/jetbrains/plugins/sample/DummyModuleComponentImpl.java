@@ -34,6 +34,6 @@ public class DummyModuleComponentImpl implements DummyModuleComponent {
     @NotNull
     @Override
     public String getComponentName() {
-        return null;
+        return "DummyModuleComponent";
     }
 }

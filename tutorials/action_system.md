@@ -8,6 +8,8 @@ The object of type [AnActionEvent] (https://github.com/JetBrains/intellij-commun
 passed to this method carries the information about the current context for the action,
 and in particular, the specific presentation which needs to be updated.
 
+----------------
+
 #How create a new menu item and bidn an action to it?
 To register an action as a menu item, an <action> attribute should be added to the <actions> section of the plugin configuration file
 [plugin.xml] (https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/plugin_sample/META-INF/plugin.xml)
@@ -51,4 +53,46 @@ To register an action as a menu item, an <action> attribute should be added to t
     </actions>
 
 [Link to source code] (https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/plugin_sample/META-INF/plugin.xml)
+
+-----------
+
+#How to make an action available and visible?
+
+You need to override
+
+    AnAction.update
+
+Default implementation of this method does nothing.
+Override this method to provide the ability to dynamically change action's
+state and(or) presentation depending on the context (For example
+when your action state depends on the selection you can check for
+selection and change the state accordingly).
+This method can be called frequently, for instance, if an action is added to a toolbar, it will be updated twice a second.
+This means that this method is supposed to work really fast,
+no real work should be done at this phase.
+For example, checking selection in a tree or a list,
+is considered valid, but working with a file system is not.
+If you cannot understand the state of
+the action fast you should do it in the [AnActionEvent] (https://github.com/JetBrains/intellij-community/blob/ff16ce78a1e0ddb6e67fd1dbc6e6a597e20d483a/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnActionEvent.java)
+method and notify
+the user that action cannot be executed if it's the case.
+Parameter e carries information on the invocation place and data available
+
+    public class SimpleAction extends AnAction {
+        @Override
+        public void actionPerformed(@NotNull AnActionEvent anActionEvent) {
+        }
+
+        @Override
+        public void update(@NotNull AnActionEvent e) {
+            e.getPresentation().setVisible(true);
+            e.getPresentation().setEnabled(true);
+        }
+    }
+[Link to source code] (https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/plugin_sample/src/org/jetbrains/plugins/sample/SimpleAction.java)
+
+-------------
+
+
+
 

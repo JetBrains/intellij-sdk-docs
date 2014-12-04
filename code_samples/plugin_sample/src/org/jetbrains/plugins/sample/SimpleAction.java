@@ -10,6 +10,11 @@ import org.jetbrains.annotations.NotNull;
 public class SimpleAction extends AnAction {
     @Override
     public void actionPerformed(@NotNull AnActionEvent anActionEvent) {
+    }
 
+    @Override
+    public void update(@NotNull AnActionEvent e) {
+        e.getPresentation().setVisible(true);
+        e.getPresentation().setEnabled(true);
     }
 }

@@ -10,7 +10,7 @@ and in particular, the specific presentation which needs to be updated.
 
 ----------------
 
-#How create a new menu item and bidn an action to it?
+#How create a new menu item and bind an action to it?
 To register an action as a menu item, an <action> attribute should be added to the <actions> section of the plugin configuration file
 [plugin.xml] (https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/plugin_sample/META-INF/plugin.xml)
 

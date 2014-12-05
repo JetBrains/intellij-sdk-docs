@@ -1,4 +1,4 @@
-package org.jetbrains.plugins.sample;
+package org.jetbrains.plugins.sample.actions;
 
 import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.actionSystem.AnAction;

@@ -74,7 +74,7 @@ This configuration file contains description, components, information about depe
 
       <!-- Actions -->
       <actions>
-        <action id="PluginSample.DummyAction" class="org.jetbrains.plugins.sample.SimpleAction" text="Dummy Action" description="Illustrates how to plug an action in">
+        <action id="PluginSample.DummyAction" class="org.jetbrains.plugins.sample.actions.SimpleAction" text="Dummy Action" description="Illustrates how to plug an action in">
           <keyboard-shortcut first-keystroke="control alt A" second-keystroke="C" keymap="$default"/>
         </action>
       </actions>

@@ -85,8 +85,11 @@ Parameter e carries information on the invocation place and data available
 
         @Override
         public void update(@NotNull AnActionEvent e) {
-            e.getPresentation().setVisible(true);
-            e.getPresentation().setEnabled(true);
+            //Make action visible and available only when project is defined
+            final Project project = e.getProject();
+            boolean isAvailable = project != null;
+            e.getPresentation().setVisible(isAvailable);
+            e.getPresentation().setEnabled(isAvailable);
         }
     }
 [Link to source code] (https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/plugin_sample/src/org/jetbrains/plugins/sample/SimpleAction.java)

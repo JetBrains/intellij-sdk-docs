@@ -96,6 +96,50 @@ Parameter e carries information on the invocation place and data available
 
 -------------
 
+#How to create a custom group of actions?
+
+If some part of the functionality requires to implement several actions or actions are simply too many and overload the menu
+they can be joined into groups. In this case the group will be available as a top-level menu item, action will be represented as drop-down menu items.
+Grouping can be done by placing <group> attribute into
+[plugin.xml] (https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/plugin_sample/META-INF/plugin.xml)
+file.
+
+    <!-- The <group> element defines an action group. <action>, <group> and <separator> elements defined within it are automatically included in the group.
+    The mandatory "id" attribute specifies an unique identifier for the action.
+    The optional "class" attribute specifies the full-qualified name of the class implementing the group. If not specified,
+    com.intellij.openapi.actionSystem.DefaultActionGroup is used.
+    The optional "text" attribute specifies the text of the group (text for the menu item showing the submenu).
+    The optional "description" attribute specifies the text which is displayed in the status bar when the group is focused.
+    The optional "icon" attribute specifies the icon which is displayed on the toolbar button or next to the group.
+    The optional "popup" attribute specifies how the group is presented in the menu. If a group has popup="true", actions in it
+    are placed in a submenu; for popup="false", actions are displayed as a section of the same menu delimited by separators. -->
+    <group class="org.jetbrains.plugins.sample.DummyActionGroup" id="DummyActionGroup" text="Action Group"
+           description="Illustration of an action group"
+           icon="icons/testgroup.png" popup="true">
+        <action id="PluginSample.GroupedAction" class="org.jetbrains.plugins.sample.GroupedAction"
+                text="Grouped Action" description="An action in the group"/>
+        <!-- The <separator> element defines a separator between actions. It can also have an <add-to-group> child element. -->
+        <separator/>
+        <group id="ActionSubGroup"/>
+        <!-- The <reference> element allows to add an existing action to the group. The mandatory "ref" attribute specifies the ID of the action to add. -->
+        <reference ref="EditorCopy"/>
+        <add-to-group group-id="MainMenu" relative-to-action="HelpMenu" anchor="before"/>
+    </group>
+
+Class
+[DummyActionGroup] (https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/plugin_sample/src/org/jetbrains/plugins/sample/DummyActionGroup.java)
+should be
+derived from [ActionGroup] (https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/ActionGroup.java)
+and its
+[getChildren()](https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/plugin_sample/src/org/jetbrains/plugins/sample/DummyActionGroup.java)
+method should return an
+array of
+[actions] (https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/plugin_sample/src/org/jetbrains/plugins/sample/GroupedAction.java)
+belonging to this group.
+
+---------------
+
+
 
 
 

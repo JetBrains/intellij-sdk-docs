@@ -102,7 +102,26 @@ If some part of the functionality requires to implement several actions or actio
 they can be joined into groups. In this case the group will be available as a top-level menu item, action will be represented as drop-down menu items.
 Grouping can be done by placing <group> attribute into
 [plugin.xml] (https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/plugin_sample/META-INF/plugin.xml)
-file.
+file. In most of the cases you simply need to leave "class" attribute of the <group> undefined; in this case an instance of
+[DefaultActionGroup] (https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/actionSystem/DefaultActionGroup.java)
+will be created and filled with actions defined within it.
+
+    <group id="DummyDefaultActionGroup" text="Default action group">
+        <action class="org.jetbrains.plugins.sample.actions.GroupedToDefaultAction" id="PluginSample.GroupedToDefaultAction"/>
+    </group>
+See
+[GroupedToDefaultAction.java] (https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/plugin_sample/src/org/jetbrains/plugins/sample/actions/GroupedToDefaultAction.java)
+
+If set of actions, which need to be put into a group, is defined dynamically depending on the context,
+a custom action group can be created by setting *class* attribute. The class itself, like
+[DummyActionGroup] (https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/plugin_sample/src/org/jetbrains/plugins/sample/DummyActionGroup.java)
+in this example, should be derived from
+[ActionGroup] (https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/ActionGroup.java)
+and its
+[getChildren()](https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/plugin_sample/src/org/jetbrains/plugins/sample/DummyActionGroup.java)
+method should return an array of
+[actions] (https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/plugin_sample/src/org/jetbrains/plugins/sample/GroupedAction.java)
+belonging to this group.
 
     <!-- The <group> element defines an action group. <action>, <group> and <separator> elements defined within it are automatically included in the group.
     The mandatory "id" attribute specifies an unique identifier for the action.
@@ -125,17 +144,6 @@ file.
         <reference ref="EditorCopy"/>
         <add-to-group group-id="MainMenu" relative-to-action="HelpMenu" anchor="before"/>
     </group>
-
-Class
-[DummyActionGroup] (https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/plugin_sample/src/org/jetbrains/plugins/sample/DummyActionGroup.java)
-should be
-derived from [ActionGroup] (https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/ActionGroup.java)
-and its
-[getChildren()](https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/plugin_sample/src/org/jetbrains/plugins/sample/DummyActionGroup.java)
-method should return an
-array of
-[actions] (https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/plugin_sample/src/org/jetbrains/plugins/sample/GroupedAction.java)
-belonging to this group.
 
 ---------------
 

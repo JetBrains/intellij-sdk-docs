@@ -106,6 +106,9 @@
                   The optional "icon" attribute specifies the icon which is displayed on the toolbar button or next to the group.
                   The optional "popup" attribute specifies how the group is presented in the menu. If a group has popup="true", actions in it
                   are placed in a submenu; for popup="false", actions are displayed as a section of the same menu delimited by separators. -->
+        <group id="DummyDefaultActionGroup" text="Default action group">
+            <action class="org.jetbrains.plugins.sample.actions.GroupedToDefaultAction" id="PluginSample.GroupedToDefaultAction"/>
+        </group>
         <group class="org.jetbrains.plugins.sample.actions.DummyActionGroup" id="DummyActionGroup" text="Action Group"
                description="Illustration of an action group"
                icon="icons/testgroup.png" popup="true">

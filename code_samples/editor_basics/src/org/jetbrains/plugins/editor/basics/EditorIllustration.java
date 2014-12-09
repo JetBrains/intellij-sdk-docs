@@ -11,11 +11,11 @@ import com.intellij.openapi.project.Project;
  */
 public class EditorIllustration extends AnAction {
     @Override
-    public void actionPerformed(AnActionEvent anActionEvent) {
+    public void actionPerformed(final AnActionEvent anActionEvent) {
 
     }
     @Override
-    public void update(AnActionEvent e) {
+    public void update(final AnActionEvent e) {
         //Get required data keys
         final Project project = e.getData(CommonDataKeys.PROJECT);
         final Editor editor = e.getData(CommonDataKeys.EDITOR);

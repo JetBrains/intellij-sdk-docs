@@ -29,7 +29,7 @@ object is available ```final Editor editor = CommonDataKeys.EDITOR.getData(conte
 object is available ```final Editor editor = actionEvent.getData(CommonDataKeys.EDITOR);```
 
 ##Obtaining content: document, caret, selection, and more
-##Document.
+###Document.
 [Document.java] (https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/openapi/editor/Document.java)
 represents the contents of a text file loaded into memory, and possibly opened in an IDEA
 text editor. Line breaks in the document text are always normalized as single \n characters,
@@ -37,7 +37,7 @@ and are converted to proper format when the document is saved.
 [Document] (https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/openapi/editor/Document.java)
 can be obtained by calling ```Document document = editor.getDocument();```
 
-##Models
+###Models
 Different services for controlling and getting information about visible areas the editor can be accessible set of getters, e.g.
 ```final SelectionModel selectionModel = editor.getSelectionModel();```
 

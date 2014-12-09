@@ -35,14 +35,11 @@ represents the contents of a text file loaded into memory, and possibly opened i
 text editor. Line breaks in the document text are always normalized as single \n characters,
 and are converted to proper format when the document is saved.
 [Document] (https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/openapi/editor/Document.java)
-can be obtained by calling
-```Document document = editor.getDocument();
-```
+can be obtained by calling ```Document document = editor.getDocument();```
 
 ##Models
 Different services for controlling and getting information about visible areas the editor can be accessible set of getters, e.g.
-```final SelectionModel selectionModel = editor.getSelectionModel();
-```
+```final SelectionModel selectionModel = editor.getSelectionModel();```
 
 Editor model classes are located in
 [editor] (https://github.com/JetBrains/intellij-community/tree/master/platform/editor-ui-api/src/com/intellij/openapi/editor)

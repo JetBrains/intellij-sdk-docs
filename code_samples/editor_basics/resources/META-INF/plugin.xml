@@ -25,7 +25,10 @@
   </project-components>
 
   <actions>
-    <!-- Add your actions here -->
+    <action id="EditorBasics.EditorIllustration" class="org.jetbrains.plugins.editor.basics.EditorIllustration" text="Editor Basics"
+            description="Illustrates how to plug an action in">
+    <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+    </action>
   </actions>
 
 </idea-plugin>

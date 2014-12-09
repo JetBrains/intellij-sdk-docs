@@ -16,8 +16,10 @@ public class EditorIllustration extends AnAction {
     }
     @Override
     public void update(AnActionEvent e) {
+        //Get required data keys
         final Project project = e.getData(CommonDataKeys.PROJECT);
         final Editor editor = e.getData(CommonDataKeys.EDITOR);
+        //Set visibility only in case of existing project and editor and if some text in the editor is selected
         e.getPresentation().setVisible((project != null && editor != null && editor.getSelectionModel().hasSelection()));
     }
 }

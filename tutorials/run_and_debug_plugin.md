@@ -1,7 +1,7 @@
 Run and debug IntelliJ plugin
 =======
 
-#What to do it a fatal error erises while running a plugin
+#What to do it a fatal error arises while running a plugin
 If you get the
 [following fatal error] (https://github.com/JetBrains/intellij-sdk/blob/master/tutorials/fatal_error.md)
 

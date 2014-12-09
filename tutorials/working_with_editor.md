@@ -57,6 +57,15 @@ Please see
 [EditorIllustration.java] (https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/editor_basics/src/org/jetbrains/plugins/editor/basics/EditorIllustration.java)
 for more details.
 
+#EditorFactory
+**TODO**
+
+#DataContext
+**TODO**
+
+#AnActionEvent
+**TODO**
+
 ----------------
 
 See also

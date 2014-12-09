@@ -26,7 +26,7 @@ To access the editor instance directly the following ways can be used:
 * If
 [DataContext] (https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/DataContext.java)
 object is available
-```final Editor editor = [CommonDataKeys].EDITOR.getData(context);
+```final Editor editor = CommonDataKeys.EDITOR.getData(context);
 ```
 * If
 [ActionEvent] (https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnActionEvent.java)

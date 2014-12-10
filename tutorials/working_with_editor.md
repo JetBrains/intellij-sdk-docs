@@ -58,7 +58,30 @@ Please see
 for more details.
 
 #EditorFactory
-**TODO**
+[EditorFactory.java] (https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/editor/EditorFactory.java)
+Provides services for creating document and editor instances.
+Please note, that creating and releasing of editors must be done from the event dispatch thread.
+
+      protected JComponent createCenterPanel() {
+         final Document document = ((EditorFactoryImpl)EditorFactory.getInstance()).createDocument(true);
+         ((DocumentImpl)document).setAcceptSlashR(true);
+         myTextArea = EditorFactory.getInstance().createEditor(document, myProject, StdFileTypes.PLAIN_TEXT, true);
+         final EditorSettings settings = myTextArea.getSettings();
+         settings.setLineNumbersShown(false);
+         settings.setLineMarkerAreaShown(false);
+         settings.setFoldingOutlineShown(false);
+         settings.setRightMarginShown(false);
+         settings.setAdditionalLinesCount(0);
+         settings.setAdditionalColumnsCount(0);
+         settings.setAdditionalPageAtBottom(false);
+         ((EditorEx)myTextArea).setBackgroundColor(UIUtil.getInactiveTextFieldBackgroundColor());
+         return myTextArea.getComponent();
+      }
+
+Example from
+[ExportToFileUtil.java] (https://github.com/JetBrains/intellij-community/blob/master/platform/platform-impl/src/com/intellij/ide/util/ExportToFileUtil.java)
+
+**TODO** [Link to threading issue]
 
 #DataContext
 **TODO**

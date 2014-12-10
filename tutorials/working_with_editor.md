@@ -109,7 +109,7 @@ such as
 [Project] (https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/openapi/project/Project.java),
 and other instances related to the action execution environment.
 
-Link-----------
+-----------
 
 See also
 [CommonDataKeys.java] (https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/CommonDataKeys.java),

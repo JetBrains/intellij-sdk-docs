@@ -84,7 +84,17 @@ Example from
 **TODO** [Link to threading issue]
 
 #DataContext
-**TODO**
+Class
+[DataContext.java] (https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/DataContext.java)
+allows an action to retrieve information about the context in which it was invoked.
+It's only method
+
+```@Nullable Object getData(@NonNls String dataId);```
+
+returns an object corresponding to the specified data identifier. Some of the supported
+data identifiers are defined in class
+[PlatformDataKeys.java](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/actionSystem/PlatformDataKeys.java)
+
 
 #AnActionEvent
 **TODO**

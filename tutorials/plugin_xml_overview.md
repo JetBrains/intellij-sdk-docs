@@ -3,11 +3,11 @@ Plugin configuration file
 The main plugin functionality description should be placed in META_INF/plugin.xml
 This configuration file contains description, components, information about dependencies and user-defined extension points
 
-    <idea-plugin version="2" url="www.jetbrains.com" use-idea-classloader="true">
+```xml
+    <idea-plugin version="2" url="www.jetbrains.com">
       <id>Tutorial</id>
       <name>Basic plugin example</name>
       <version>1.0</version>
-      <vendor email="support@jetbrains.com" url="http://www.jetbrains.com">JetBrains</vendor>
       <category>Samples</category>
       <vendor email="support@jetbrains.com" url="http://jetbrains.com">JetBrains</vendor>
       <description><![CDATA[
@@ -93,7 +93,7 @@ This configuration file contains description, components, information about depe
         <!--<testExtensionPoint implementation="com.foo.impl.MyExtensionImpl"/>-->
       </extensions>
     </idea-plugin>
-
+```
 --------------------
 
 [Link to repository](https://github.com/JetBrains/intellij-community/blob/master/plugins/devkit/resources/META-INF/plugin.xml)

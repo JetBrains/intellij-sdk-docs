@@ -1,6 +1,10 @@
 Basics of working with the editor
 ===========
 
+### [Sample plugin] (https://github.com/JetBrains/intellij-sdk/tree/master/code_samples/editor_basics)
+
+----------
+
 Classes for working with editor, e.g. to manipulate the caret, get an access to a text selection, or modify the text, currently represented in the editor, are located in
 [editor-ui-api] (https://github.com/JetBrains/intellij-community/tree/master/platform/editor-ui-api)
 package. Note, that this part of the API allows to operate only with text.
@@ -93,20 +97,23 @@ It's only method
 
 returns an object corresponding to the specified data identifier. Some of the supported
 data identifiers are defined in class
-[PlatformDataKeys.java](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/actionSystem/PlatformDataKeys.java)
+[PlatformDataKeys.java] (https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/actionSystem/PlatformDataKeys.java)
 
 
 #AnActionEvent
-**TODO**
+[AnActionEvent.java] (https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnActionEvent.java)
+contains the information necessary to execute or update an
+[action] (https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java),
+such as
+[DataContext] (https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/DataContext.java),
+[Project] (https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/openapi/project/Project.java),
+and other instances related to the action execution environment.
 
-----------------
+Link-----------
 
 See also
 [CommonDataKeys.java] (https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/CommonDataKeys.java),
 [DataKey.java] (https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/DataKey.java)
-
-**TODO**
-Link to architectural overview and threading issues
 
 
 

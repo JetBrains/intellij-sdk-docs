@@ -7,12 +7,21 @@ import com.intellij.openapi.command.WriteCommandAction;
 import com.intellij.openapi.editor.Document;
 import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.editor.SelectionModel;
+import com.intellij.openapi.editor.actionSystem.EditorActionManager;
+import com.intellij.openapi.editor.actionSystem.TypedAction;
 import com.intellij.openapi.project.Project;
 
 /**
  * @author Anna Bulenkova
  */
 public class EditorIllustration extends AnAction {
+
+    static {
+        final EditorActionManager actionManager = EditorActionManager.getInstance();
+        final TypedAction typedAction = actionManager.getTypedAction();
+        typedAction.setupHandler(new MyTypedHandler());
+    }
+
     @Override
     public void actionPerformed(final AnActionEvent anActionEvent) {
         //Get all the required data from data keys

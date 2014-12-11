@@ -113,7 +113,6 @@ To implement the logic you need to override ```implement()``` action.
 And used like shows the following example:
 [EditorHandlerIllustration.java] (https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/editor_basics/src/org/jetbrains/plugins/editor/basics/EditorHandlerIllustration.java)
 
-TODO
 #Working with text
 ##EditorModificationUtil
 TODO

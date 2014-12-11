@@ -85,6 +85,16 @@ Please note, that creating and releasing of editors must be done from the event 
 Example from
 [ExportToFileUtil.java] (https://github.com/JetBrains/intellij-community/blob/master/platform/platform-impl/src/com/intellij/ide/util/ExportToFileUtil.java)
 
+#Actions activated by different editor events
+##TypedActionHandler
+TODO
+##EditorActionHandler
+TODO
+#Working with text
+##EditorModificationUtil
+TODO
+
+
 **TODO** [Link to threading issue]
 
 -----------

@@ -29,6 +29,10 @@
             description="Illustrates how to plug an action in">
     <add-to-group group-id="EditorPopupMenu" anchor="last"/>
     </action>
+    <action id="EditorBasics.EditorHandlerIllustration" class="org.jetbrains.plugins.editor.basics.EditorHandlerIllustration" text="Editor Handler"
+            description="Illustrates how to plug an action in">
+      <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+    </action>
   </actions>
 
 </idea-plugin>

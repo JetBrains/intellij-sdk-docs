@@ -145,9 +145,27 @@ belonging to this group.
         <add-to-group group-id="MainMenu" relative-to-action="HelpMenu" anchor="before"/>
     </group>
 
----------------
+--------------
 
+#AnActionEvent
+[AnActionEvent.java] (https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnActionEvent.java)
+contains the information necessary to execute or update an
+[action] (https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java),
+such as
+[DataContext] (https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/DataContext.java),
+[Project] (https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/openapi/project/Project.java),
+and other instances related to the action execution environment.
 
+-------------
 
+#DataContext
+Class
+[DataContext.java] (https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/DataContext.java)
+allows an action to retrieve information about the context in which it was invoked.
+It's only method
 
+```@Nullable Object getData(@NonNls String dataId);```
 
+returns an object corresponding to the specified data identifier. Some of the supported
+data identifiers are defined in class
+[PlatformDataKeys.java] (https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/actionSystem/PlatformDataKeys.java)

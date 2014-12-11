@@ -87,33 +87,16 @@ Example from
 
 **TODO** [Link to threading issue]
 
-#DataContext
-Class
-[DataContext.java] (https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/DataContext.java)
-allows an action to retrieve information about the context in which it was invoked.
-It's only method
-
-```@Nullable Object getData(@NonNls String dataId);```
-
-returns an object corresponding to the specified data identifier. Some of the supported
-data identifiers are defined in class
-[PlatformDataKeys.java] (https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/actionSystem/PlatformDataKeys.java)
-
-
-#AnActionEvent
-[AnActionEvent.java] (https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnActionEvent.java)
-contains the information necessary to execute or update an
-[action] (https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java),
-such as
-[DataContext] (https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/DataContext.java),
-[Project] (https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/openapi/project/Project.java),
-and other instances related to the action execution environment.
-
 -----------
 
 See also
 [CommonDataKeys.java] (https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/CommonDataKeys.java),
-[DataKey.java] (https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/DataKey.java)
+[DataKey.java] (https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/DataKey.java),
+[AnActionEvent] (https://github.com/JetBrains/intellij-community/blob/ff16ce78a1e0ddb6e67fd1dbc6e6a597e20d483a/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnActionEvent.java),
+[DataContext] (https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/DataContext.java)
+
+Related topics
+[Action System] (https://github.com/JetBrains/intellij-sdk/blob/master/tutorials/action_system.md)
 
 
 

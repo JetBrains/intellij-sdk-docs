@@ -86,8 +86,17 @@ Example from
 [ExportToFileUtil.java] (https://github.com/JetBrains/intellij-community/blob/master/platform/platform-impl/src/com/intellij/ide/util/ExportToFileUtil.java)
 
 #Actions activated by different editor events
+Classes that provide support for handling events from the editor and react on then are located in
+[editor.actionSystem] (https://github.com/JetBrains/intellij-community/tree/master/platform/platform-api/src/com/intellij/openapi/editor/actionSystem)
+package. Following examples can be considered.
+
 ##TypedActionHandler
-TODO
+Interface [TypedActionHandler.java] (https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/editor/actionSystem/TypedActionHandler.java)
+stays for actions activated by typing in the editor, meaning if typing starts actions will be executed.
+An example of using TypedActionHandler can be found in class
+[MyTypedHandler.java] (https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/editor_basics/src/org/jetbrains/plugins/editor/basics/MyTypedHandler.java).
+In this case a string *Typed* will be inserted in the editor on the first position after every keystroke.
+
 ##EditorActionHandler
 TODO
 #Working with text

@@ -98,6 +98,18 @@ An example of using TypedActionHandler can be found in class
 In this case a string *Typed* will be inserted in the editor on the first position after every keystroke.
 
 ##EditorActionHandler
+Class
+[EditorActionHandler.java] (https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/editor/actionSystem/EditorActionHandler.java)
+also stays for actions activated by keystrokes in the editor.
+This type of the editor handler should be registered as an extension point
+```<editorActionHandler action="EditorSelectWord" implementationClass="com.intellij.codeInsight.editorActions.SelectWordHandler"/>```
+
+Two types of handlers are supported: the ones which are executed once, and the ones which are executed for each caret.
+Examples of already implemented handlers can be found in
+[this package] (https://github.com/JetBrains/intellij-community/tree/master/platform/lang-impl/src/com/intellij/codeInsight/editorActions).
+And used like shows the following example:
+[EditorHandlerIllustration.java] (https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/editor_basics/src/org/jetbrains/plugins/editor/basics/EditorHandlerIllustration.java)
+
 TODO
 #Working with text
 ##EditorModificationUtil

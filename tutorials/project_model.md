@@ -94,9 +94,61 @@ are placed in the
 [core-api.openapi] (https://github.com/JetBrains/intellij-community/tree/master/platform/core-api/src/com/intellij/openapi)
 package.
 
-##FAQ
-###How do I get a list of source roots for all modules in my project?
+##How do I get a list of source roots for all modules in my project?
 Use the
 ```ProjectRootManager.getContentSourceRoots() method```.
-To clarify this, see the following
+To clarify this, see the following:
+
 [code sample] (https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/project_model/src/com/intellij/plugins/project/model/ShowSourceRootsActions.java).
+
+##How do I check whether a file is related to a project?
+Use [ProjectFileIndex.java] (https://github.com/JetBrains/intellij-community/blob/master/platform/projectModel-api/src/com/intellij/openapi/roots/ProjectFileIndex.java)
+to get this information.
+
+###How do I get an instance of the ProjectFileIndex interface?
+Use the ProjectRootManager.getFileIndex() method. For example:
+```ProjectFileIndex projectFileIndex = ProjectRootManager.getInstance(project).getFileIndex();```
+
+###How do I get a module to which a file belongs?
+To determine a module in the project in question to which the specified virtual file belongs, use the
+ProjectFileIndex.getModuleForFile(virtualFile) method:
+
+```Module module = ProjectRootManager.getInstance(project).getFileIndex().getModuleForFile(virtualFile);```
+
+Note that this method returns null if the file does not belong to any module.
+You can also use the ProjectFileIndex.getContentRootForFile method to get the module content root to which the specified file or directory belongs:
+
+```VirtualFile moduleContentRoot = ProjectRootManager.getInstance(project).getFileIndex().getContentRootForFile(virtualFileOrDirectory);```
+
+[Code sample] (https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/project_model/src/com/intellij/plugins/project/model/ProjectFileIndexSampleAction.java)
+
+###How do I get the module source root or library source root to which the specified file or directory belongs?
+
+Use the ProjectFileIndex.getSourceRootForFile method. For example:
+
+```VirtualFile moduleSourceRoot = ProjectRootManager.getInstance(project).getFileIndex().getSourceRootForFile(virtualFileOrDirectory);```
+
+Note that this method returns null if the file or directory does not belong to any source root of modules in the project.
+
+[Code sample] (https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/project_model/src/com/intellij/plugins/project/model/ProjectFileIndexSampleAction.java)
+
+###How do I check whether a file or directory is related to the project libraries?
+The ProjectFileIndex interface implements a number of methods you can use to check whether the specified file belongs to the project library classes or library sources.
+You can use the following methods:
+
+* ```ProjectFileIndex.isLibraryClassFile(virtualFile)```: Returns true if the specified virtualFile is a compiled class file.
+* ```ProjectFileIndex.isInLibraryClasses(virtualFileorDirectory)```: Returns true if the specified virtualFileorDirectory belongs to library classes.
+* ```ProjectFileIndex.isInLibrarySource(virtualFileorDirectory)```: Returns true if the specified virtualFileorDirectory belongs to library sources.
+
+[Code sample] (https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/project_model/src/com/intellij/plugins/project/model/ProjectFileIndexSampleAction.java)
+
+###How do I get and set the project SDK?
+* To get the project-level SDK: ```Sdk projectSDK = ProjectRootManager.getInstance(project).getProjectSdk();```
+* To get the project-level SDK name: ```String projectSDKName = ProjectRootManager.getInstance(project).getProjectSdkName();```
+* To set the project-level SDK: ```ProjectRootManager.getInstance(project).setProjectSdk(Sdk jdk);```
+* To set the project-level SDK name: ```ProjectRootManager.getInstance(project).setProjectSdkName(String name);```
+
+Note that by default, the project modules use the project SDK. Optionally, you can configure individual SDK for each module.
+
+[Code sample] (https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/project_model/src/com/intellij/plugins/project/model/ProjectSdkAction.java)
+

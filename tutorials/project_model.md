@@ -63,5 +63,33 @@ By default, all modules uses the project SDK.
 In addition, a module can optionally have a set of facets.
 This document explains how you can explore and change the structure of projects using API.
 
+#Working with Projects
+This section explains how to complete some common tasks related to management of projects.
+The Java classes and interfaces that you can use to explore and change the project contents are discussed.
 
+##How to Work with Project Files?
+**IntelliJ IDEA** stores the project configuration data in XML files.
+The list of those files depends on the plugin
+[project] (http://www.jetbrains.com/idea/webhelp/project.html)
+format.
+For file-based format projects, the information core to the project itself (e.g. location of the component modules, compiler settings, etc.) is stored in the <%project name%>.IPR file.
+The information about modules the project includes is stored in <%module name%>.IML files.
+Module files are created for each module.
 
+**TODO** Links to files mentioned above
+
+For directory-based format projects, the project and workspace settings are stored in a number of XML files under the <%Project home directory%>/.idea directory.
+Each XML file is responsible for its own set of settings and can be recognized by its name: projectCodeStyle.xml, encodings.xml, vcs.xml etc.
+As for the file-based format projects, .IML files describe modules.
+
+Main classes providing work with the project model are located in the package
+[projectModel-api.openapi](https://github.com/JetBrains/intellij-community/tree/master/platform/projectModel-api/src/com/intellij/openapi).
+Basic API classes and interfaces for the concepts of
+[project] (https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/openapi/project/Project.java),
+[module] (https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/openapi/module/Module.java),
+[application] (https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/openapi/application/Application.java),
+and
+[component] (https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/openapi/components/ProjectComponent.java)
+are placed in the
+[core-api.openapi] (https://github.com/JetBrains/intellij-community/tree/master/platform/core-api/src/com/intellij/openapi)
+package.

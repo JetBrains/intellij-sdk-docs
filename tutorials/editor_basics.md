@@ -123,6 +123,9 @@ Basic, most commonly required actions for text modification, e.g working with te
 inserting and deleting symbols and strings, and manipulating with text blocks, are represented are implemented in the utility class
 [EditorModificationUtil.java] (https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/editor/EditorModificationUtil.java)
 
+#Editor coordinates system. Logical position
+**TODO**
+
 **TODO** [Link to threading issue]
 
 -----------

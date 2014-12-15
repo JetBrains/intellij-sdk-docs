@@ -29,6 +29,10 @@
             description="Illustrates how to get source roots">
       <add-to-group group-id="ToolsMenu" anchor="after"/>
     </action>
+    <action id="ProjectModel.ProjectSdk" class="com.intellij.plugins.project.model.ProjectSdkAction" text="Show Sdk Info"
+            description="Illustrates how to get source roots">
+      <add-to-group group-id="ToolsMenu" anchor="after"/>
+    </action>
     <action id="ProjectModel.ProjectFileIndex" class="com.intellij.plugins.project.model.ProjectFileIndexSampleAction" text="FileProjectIndex in Action"
             description="Illustrates how to get source roots">
       <add-to-group group-id="EditorPopupMenu" anchor="last"/>

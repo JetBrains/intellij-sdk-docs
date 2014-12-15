@@ -93,3 +93,10 @@ and
 are placed in the
 [core-api.openapi] (https://github.com/JetBrains/intellij-community/tree/master/platform/core-api/src/com/intellij/openapi)
 package.
+
+##FAQ
+###How do I get a list of source roots for all modules in my project?
+Use the
+```ProjectRootManager.getContentSourceRoots() method```.
+To clarify this, see the following
+[code sample] (https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/project_model/src/com/intellij/plugins/project/model/ShowSourceRootsActions.java).

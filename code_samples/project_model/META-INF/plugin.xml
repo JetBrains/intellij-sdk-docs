@@ -25,6 +25,9 @@
   </project-components>
 
   <actions>
-    <!--Add your actions here-->
+    <action id="ProjectModel.SourceRoots" class="com.intellij.plugins.project.model.ShowSourceRootsActions" text="Show Source Roots"
+            description="Illustrates how to get source roots">
+      <add-to-group group-id="ToolsMenu" anchor="after"/>
+    </action>
   </actions>
 </idea-plugin>

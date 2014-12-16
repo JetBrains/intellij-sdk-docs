@@ -150,5 +150,35 @@ You can use the following methods:
 
 Note that by default, the project modules use the project SDK. Optionally, you can configure individual SDK for each module.
 
+###How to get a file module?
+```final Module currentModule = fileIndex.getModuleForFile(virtualFile);```
+
+###How to get a module file index?
+Information about model roots can be accessed via the class
+ [ModuleRootManager.java] (https://github.com/JetBrains/intellij-community/blob/master/platform/projectModel-api/src/com/intellij/openapi/roots/ModuleRootManager.java),
+for example, an instance of
+[ModuleFileIndex.java] (https://github.com/JetBrains/intellij-community/blob/master/platform/projectModel-api/src/com/intellij/openapi/roots/ModuleFileIndex.java)
+can be obtained, which is analogical to the
+[ProjectFileIndex.java] (https://github.com/JetBrains/intellij-community/blob/master/platform/projectModel-api/src/com/intellij/openapi/roots/ProjectFileIndex.java)
+but in the scope of a module
+
+```ModuleRootManager.getInstance(currentModule).getFileIndex()```
+
+##Changing the project structure
+Utility classes which can be used for modifying a project structure can be found in the package
+[projectModel-impl.openapi] (https://github.com/JetBrains/intellij-community/blob/master/platform/projectModel-impl/src/com/intellij/openapi).
+It's
+[roots] (https://github.com/JetBrains/intellij-community/blob/master/platform/projectModel-impl/src/com/intellij/openapi/roots/)
+subpackage contains instances and utilities meant to work with project and module source roots, including
+[ModuleRootModificationUtil.java] (https://github.com/JetBrains/intellij-community/blob/master/platform/projectModel-impl/src/com/intellij/openapi/roots/ModuleRootModificationUtil.java)
+and
+[ProjectRootUtil.java] (https://github.com/JetBrains/intellij-community/blob/master/platform/projectModel-impl/src/com/intellij/openapi/projectRoots/impl/ProjectRootUtil.java)
+
+A basic example can be viewed
+[here] (https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/project_model/src/com/intellij/plugins/project/model/ModificationAction.java)
+
+
+https://github.com/JetBrains/intellij-community/blob/master/platform/projectModel-impl/src/com/intellij/openapi/roots/ModuleRootModificationUtil.java
+
 [Code sample] (https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/project_model/src/com/intellij/plugins/project/model/ProjectSdkAction.java)
 

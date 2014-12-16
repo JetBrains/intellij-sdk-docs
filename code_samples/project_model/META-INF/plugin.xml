@@ -37,5 +37,9 @@
             description="Illustrates how to get source roots">
       <add-to-group group-id="EditorPopupMenu" anchor="last"/>
     </action>
+    <action id="ProjectModel.ModificationAction" class="com.intellij.plugins.project.model.ModificationAction" text="Project Modification in Action"
+            description="Illustrates how to get source roots">
+      <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+    </action>
   </actions>
 </idea-plugin>

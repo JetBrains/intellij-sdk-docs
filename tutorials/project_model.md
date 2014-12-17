@@ -177,8 +177,24 @@ and
 A basic example can be viewed
 [here] (https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/project_model/src/com/intellij/plugins/project/model/ModificationAction.java)
 
+##Accessing libraries and jars
+Package
+[libraries] (https://github.com/JetBrains/intellij-community/tree/master/platform/projectModel-api/src/com/intellij/openapi/roots/libraries)
+provides functionality for working with project libraries and jars.
+Libraries and jars can be retrieved like the following snippet shows
 
-https://github.com/JetBrains/intellij-community/blob/master/platform/projectModel-impl/src/com/intellij/openapi/roots/ModuleRootModificationUtil.java
+    ProjectFileIndex fileIndex = ProjectRootManager.getInstance(project).getFileIndex();
+    OrderEntry orderEntry : fileIndex.getOrderEntriesForFile(virtualFile));```
+
+More details can be found in this
+[code sample] (https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/project_model/src/com/intellij/plugins/project/model/LibrariesAction.java)
+
+##Project Sdk information
+Main information about the project Sdk can be accessed via
+[ProjectRootManager.java] (https://github.com/JetBrains/intellij-community/blob/master/platform/projectModel-api/src/com/intellij/openapi/roots/ProjectRootManager.java)
+like the following example shows
+
+```String projectSdk = ProjectRootManager.getInstance(project).getProjectSdk();```
 
 [Code sample] (https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/project_model/src/com/intellij/plugins/project/model/ProjectSdkAction.java)
 

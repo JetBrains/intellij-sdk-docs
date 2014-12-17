@@ -184,7 +184,7 @@ provides functionality for working with project libraries and jars.
 Libraries and jars can be retrieved like the following snippet shows
 
     ProjectFileIndex fileIndex = ProjectRootManager.getInstance(project).getFileIndex();
-    OrderEntry orderEntry : fileIndex.getOrderEntriesForFile(virtualFile));```
+    OrderEntry orderEntry : fileIndex.getOrderEntriesForFile(virtualFile));
 
 More details can be found in this
 [code sample] (https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/project_model/src/com/intellij/plugins/project/model/LibrariesAction.java)

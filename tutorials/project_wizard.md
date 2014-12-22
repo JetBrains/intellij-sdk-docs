@@ -60,7 +60,7 @@ For more details please see this
 [code sample] (https://github.com/bulenkov/RedlineSmalltalk/blob/master/src/st/redline/smalltalk/module/RsModuleType.java)
 
 ###Adding new wizard steps
-In a custom implementation in the
+**TODO**
 
 #Facet
 Facets in IntelliJ are the way to store multiple kinds of module-specific settings, for instance to make a language support or framework available in some given module.

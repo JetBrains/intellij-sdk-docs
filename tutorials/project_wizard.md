@@ -15,11 +15,39 @@ New module type should be derived from the class
 Main utilities to configure a custom project wizard can be found in the package
 [lang-api.ide.util.projectWizard] (https://github.com/JetBrains/intellij-community/tree/master/platform/lang-api/src/com/intellij/ide/util/projectWizard).
 These classes and interfaces serve the following purposes:
+
 * Modification of the configuration wizard view
 * Adding new steps to the wizard
 * Providing additional setting for project creation
 * Handling activities during project creation
 * Initial environment configuration
+
+###Implementing module builder
+To set up a new module environment
+[ModuleBuilder.java] (https://github.com/JetBrains/intellij-community/blob/master/platform/lang-api/src/com/intellij/ide/util/projectWizard/ModuleBuilder.java)
+class should be extended and registered as an extension point like the following snippet shows:
+
+    <extensions>
+        <!--Place your extensions here-->
+        <moduleBuilder builderClass="org.jetbrains.plugins.ruby.rails.facet.versions.MyModuleBuilder"/>
+    </extensions>
+
+Functionality which is mandatory to implement consists of:
+
+* Setting up a root model for the new module by overriding ```public abstract void setupRootModel(ModifiableRootModel modifiableRootModel) throws ConfigurationException;```
+* Getting a module type ```public abstract ModuleType getModuleType();```
+
+See
+[JavaModuleBuilder.java] (https://github.com/JetBrains/intellij-community/blob/master/java/openapi/src/com/intellij/ide/util/projectWizard/JavaModuleBuilder.java)
+to understand better how to implement a module builder.
+
+If your module type is based on the java module and meant to support Java as well, extending
+[JavaModuleBuilder.java] ((https://github.com/JetBrains/intellij-community/blob/master/java/openapi/src/com/intellij/ide/util/projectWizard/JavaModuleBuilder.java))
+is enough. No extension point needs no be registered.
+[Code sample] (https://github.com/bulenkov/RedlineSmalltalk/blob/master/src/st/redline/smalltalk/module/RsModuleType.java)
+illustrating how
+[JavaModuleBuilder.java] ((https://github.com/JetBrains/intellij-community/blob/master/java/openapi/src/com/intellij/ide/util/projectWizard/JavaModuleBuilder.java))
+can be derived.
 
 ###Implementing module builder listener
 Module builder listener reacts on a new module creation, which could be done either as a part of the project creation process,

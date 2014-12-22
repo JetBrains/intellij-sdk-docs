@@ -9,6 +9,7 @@ Working with the project wizard can be excessively illustrated with the followin
 Additional support for specific tools and technologies is usually done via implementing some certain module type which is attached to the project.
 New module type should be derived from the class
 [ModuleType.java] (https://github.com/JetBrains/intellij-community/blob/master/platform/lang-api/src/com/intellij/openapi/module/ModuleType.java).
+
 [Code sample] (https://github.com/bulenkov/RedlineSmalltalk/blob/master/src/st/redline/smalltalk/module/RsModuleType.java)
 
 ##Project wizard
@@ -21,6 +22,18 @@ These classes and interfaces serve the following purposes:
 * Providing additional setting for project creation
 * Handling activities during project creation
 * Initial environment configuration
+
+###Module type
+To create a new module type and an extension
+```<moduleType id="MY_MODULE" implementationClass="st.redline.smalltalk.module.MyModuleType"/>```
+to the [plugin.xml] (https://github.com/bulenkov/RedlineSmalltalk/blob/master/resources/META-INF/plugin.xml).
+A custom module type should extend the
+[ModuleType.java] (https://github.com/JetBrains/intellij-community/blob/master/platform/lang-api/src/com/intellij/openapi/module/ModuleType.java)
+generic from
+[ModuleBuilder.java] (https://github.com/JetBrains/intellij-community/blob/master/platform/lang-api/src/com/intellij/ide/util/projectWizard/ModuleBuilder.java).
+The following
+[sample] (https://github.com/bulenkov/RedlineSmalltalk/blob/master/src/st/redline/smalltalk/module/RsModuleType.java)
+of a custom module type show how this instance can be registered and implemented.
 
 ###Implementing module builder
 To set up a new module environment
@@ -44,9 +57,9 @@ to understand better how to implement a module builder.
 If your module type is based on the java module and meant to support Java as well, extending
 [JavaModuleBuilder.java] ((https://github.com/JetBrains/intellij-community/blob/master/java/openapi/src/com/intellij/ide/util/projectWizard/JavaModuleBuilder.java))
 is enough. No extension point needs no be registered.
-[Code sample] (https://github.com/bulenkov/RedlineSmalltalk/blob/master/src/st/redline/smalltalk/module/RsModuleType.java)
+A [code sample] (https://github.com/bulenkov/RedlineSmalltalk/blob/master/src/st/redline/smalltalk/module/RsModuleType.java)
 illustrating how
-[JavaModuleBuilder.java] ((https://github.com/JetBrains/intellij-community/blob/master/java/openapi/src/com/intellij/ide/util/projectWizard/JavaModuleBuilder.java))
+[JavaModuleBuilder.java] (https://github.com/JetBrains/intellij-community/blob/master/java/openapi/src/com/intellij/ide/util/projectWizard/JavaModuleBuilder.java)
 can be derived.
 
 ###Implementing module builder listener

@@ -21,6 +21,16 @@ These classes and interfaces serve the following purposes:
 * Handling activities during project creation
 * Initial environment configuration
 
+###Implementing module builder
+Module builder reacts on a new module creation, which could be done either as a part of the project creation process,
+or as adding a new module to the already existing project.
+Module builder implements
+[ModuleBuilderListener.java] (https://github.com/JetBrains/intellij-community/blob/master/platform/lang-api/src/com/intellij/ide/util/projectWizard/ModuleBuilderListener.java)
+Method ```public void moduleCreated(@NotNull final Module module);``` executed tasks right after a module has been created,
+these may include configuring roots looking up for an SDK and setting it up, adding a specific facet if required and others.
+For more details please see this
+[code sample] (https://github.com/bulenkov/RedlineSmalltalk/blob/master/src/st/redline/smalltalk/module/RsModuleType.java)
+
 #Facet
 Facets in IntelliJ are the way to store multiple kinds of module-specific settings, for instance to make a language support or framework available in some given module.
 To understand facets better from the point of view of an end-user, please see

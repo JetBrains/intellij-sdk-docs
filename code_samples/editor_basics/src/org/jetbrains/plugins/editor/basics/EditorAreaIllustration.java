@@ -18,8 +18,8 @@ public class EditorAreaIllustration extends AnAction {
         LogicalPosition logicalPosition = caretModel.getLogicalPosition();
         VisualPosition visualPosition = caretModel.getVisualPosition();
         int offset = caretModel.getOffset();
-        Messages.showInfoMessage("Logical position: " + logicalPosition.toString() + "\n" +
-                "Visual position: " + visualPosition.toString() + "\n" +
+        Messages.showInfoMessage(logicalPosition.toString() + "\n" +
+                visualPosition.toString() + "\n" +
                 "Offset: " + offset, "Caret Parameters Inside The Editor");
     }
 

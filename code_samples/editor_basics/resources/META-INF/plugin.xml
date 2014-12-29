@@ -33,6 +33,10 @@
             description="Illustrates how to plug an action in">
       <add-to-group group-id="EditorPopupMenu" anchor="last"/>
     </action>
+    <action id="EditorBasics.LogicalPositionIllustration" class="org.jetbrains.plugins.editor.basics.EditorAreaIllustration" text="Caret Position"
+            description="Illustrates how editor area is organized">
+      <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+    </action>
   </actions>
 
 </idea-plugin>

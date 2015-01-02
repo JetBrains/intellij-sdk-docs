@@ -1,4 +1,4 @@
-package org.jetbrains.plugins.sample;
+package org.jetbrains.plugins.sample.tree;
 
 import com.intellij.ide.projectView.TreeStructureProvider;
 import com.intellij.ide.projectView.ViewSettings;
@@ -15,7 +15,7 @@ import java.util.Collections;
 public class CustomTreeStructureProvider implements TreeStructureProvider {
     @NotNull
     @Override
-    public Collection<AbstractTreeNode> modify(@NotNull AbstractTreeNode abstractTreeNode, @NotNull Collection<AbstractTreeNode> collection, ViewSettings viewSettings) {
+    public Collection<AbstractTreeNode> modify(@NotNull AbstractTreeNode parent, @NotNull Collection<AbstractTreeNode> children, ViewSettings viewSettings) {
         return Collections.emptyList();
     }
 

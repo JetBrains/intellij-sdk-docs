@@ -34,4 +34,14 @@ The method should return the modified collection of children nodes or the initia
 are required.
 The following
 [code sample] (https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/tree_structure_provider/scr/org/jetbrains/plugins/sample/tree/TextOnlyTreeStructureProvider.java)
-illustrate how to filter out all the files from the project view except those which represent plain text file type.
+illustrates how to filter out all the files from the project view except those which represent plain text file type.
+
+#Getting selected node data
+To get a user data object of the specified type for the given selection in the
+project view you need to override the following method in the custom tree view provider:
+
+    Object getData(Collection<AbstractTreeNode> selected, String dataName);
+
+See this
+[code sample] (https://github.com/JetBrains/intellij-community/blob/master/plugins/properties/src/com/intellij/lang/properties/projectView/ResourceBundleGrouper.java)
+to understand better how user data objects of selected nodes can be used and what for.

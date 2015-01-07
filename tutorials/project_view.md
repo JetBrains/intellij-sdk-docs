@@ -1,15 +1,16 @@
 Customizing Project View
 ================
-**TODO** provide links to community repo
+
 To allow a custom plugin to modify the structure of a project as displayed in the project view
-TreeStructureProvider
+[TreeStructureProvider] (https://github.com/JetBrains/intellij-community/blob/master/platform/structure-view-api/src/com/intellij/ide/projectView/TreeStructureProvider.java)
 is used.
 
 This class should be derived and the inheritor should be registered as
 *treeStructureProvider*
-extension point in the
-plugin.xml
-plugin configuration file:
+[extension point] (https://github.com/JetBrains/intellij-community/blob/master/platform/platform-resources/src/META-INF/LangExtensionPoints.xml)
+in the
+[plugin.xml] (https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/tree_structure_provider/META-INF/plugin.xml)
+configuration file:
 
     <extensions defaultExtensionNs="com.intellij">
         <treeStructureProvider implementation="org.jetbrains.plugins.sample.tree.TextOnlyTreeStructureProvider"/>
@@ -28,9 +29,9 @@ Collection<AbstractTreeNode> modify(@NotNull AbstractTreeNode parent, @NotNull C
 Implementation of this method let a plugin to modify the list of child nodes displayed for the specified node in the
 project view. Depending on the properties of the parent it's child list can be modified according to the default project structure.
 Elements of the collection passed as the second parameters should be of type
-[ProjectViewNode.java]().
+[ProjectViewNode.java] (https://github.com/JetBrains/intellij-community/blob/master/platform/lang-api/src/com/intellij/ide/projectView/ProjectViewNode.java).
 The method should return the modified collection of children nodes or the initial children list if no modifications
 are required.
 The following
-[code sample]()
+[code sample] (https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/tree_structure_provider/scr/org/jetbrains/plugins/sample/tree/TextOnlyTreeStructureProvider.java)
 illustrate how to filter out all the files from the project view except those which represent plain text file type.

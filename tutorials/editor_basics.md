@@ -17,7 +17,7 @@ section.
 #Editor
 An instance on IntelliJ IDEA editor is represented by an interface
 [Editor.java] (https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/editor/Editor.java),
-and it's implementation can be found in a class
+and a default implementation can be found in the class
 [EditorImpl.java] (https://github.com/JetBrains/intellij-community/blob/master/platform/platform-impl/src/com/intellij/openapi/editor/impl/EditorImpl.java).
 
 ##Get an instance of the active editor

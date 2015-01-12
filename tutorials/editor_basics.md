@@ -20,7 +20,7 @@ An instance on IntelliJ IDEA editor is represented by an interface
 and a default implementation can be found in the class
 [EditorImpl.java] (https://github.com/JetBrains/intellij-community/blob/master/platform/platform-impl/src/com/intellij/openapi/editor/impl/EditorImpl.java).
 
-##Get an instance of the active editor
+##Getting an instance of the Active Editor
 A reference to an instance of the editor can be obtained by calling
 
     CommonDataKeys.EDITOR

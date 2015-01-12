@@ -110,7 +110,7 @@ This type of the editor handler should be registered as an extension point
 
 Two types of handlers are supported: the ones which are executed once, and the ones which are executed for each caret.
 Examples of already implemented handlers can be found in
-[this package] (https://github.com/JetBrains/intellij-community/tree/master/platform/lang-impl/src/com/intellij/codeInsight/editorActions),
+[editorActions package] (https://github.com/JetBrains/intellij-community/tree/master/platform/lang-impl/src/com/intellij/codeInsight/editorActions),
 e.g. the class
 [CopyHandler.java] (https://github.com/JetBrains/intellij-community/blob/master/platform/lang-impl/src/com/intellij/codeInsight/editorActions/CopyHandler.java).
 To implement the logic you need to override ```implement()``` action.

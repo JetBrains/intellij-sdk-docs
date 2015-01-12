@@ -63,7 +63,7 @@ IntelliJ editor supports work with more than one caret. To learn more about mult
 
 #EditorFactory
 [EditorFactory.java] (https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/editor/EditorFactory.java)
-Provides services for creating document and editor instances.
+provides services for creating document and editor instances.
 Please note, that creating and releasing of editors must be done from the event dispatch thread.
 
       protected JComponent createCenterPanel() {

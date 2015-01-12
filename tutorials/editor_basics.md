@@ -63,7 +63,7 @@ for more details.
 
 ###Multiple carets
 IntelliJ editor supports work with more than one caret. To learn more about multiple carets please see
-[this document] (http://confluence.jetbrains.com/display/IDEADEV/Supporting+multiple+carets)
+[Supporting Multiple Carets] (http://confluence.jetbrains.com/display/IDEADEV/Supporting+multiple+carets)
 
 #EditorFactory
 [EditorFactory.java] (https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/editor/EditorFactory.java)

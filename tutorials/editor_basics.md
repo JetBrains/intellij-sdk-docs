@@ -1,47 +1,107 @@
-Basics of working with the editor
+Basics of working with the Editor
 ===========
 
-### [Sample plugin] (https://github.com/JetBrains/intellij-sdk/tree/master/code_samples/editor_basics)
+### [Source code] (https://github.com/JetBrains/intellij-sdk/tree/master/code_samples/editor_basics)
+**TODO - Check links**
 
 ----------
 
-Classes for working with editor, e.g. to manipulate the caret, get an access to a text selection, or modify the text, currently represented in the editor, are located in
-[editor-ui-api] (https://github.com/JetBrains/intellij-community/tree/master/platform/editor-ui-api)
-package. Note, that this part of the API allows to operate only with text.
-If you need to access PSI please see
-[PSI Cookbook] (https://confluence.jetbrains.com/display/IDEADEV/PSI+Cookbook)
-section.
+This tutorial will lead you through the series of steps showing how to work with the Editor in IntelliJ IDEA, how access and modify text it contains,
+and how to handle events sent to the Editor.
 
------------
+#Editor. Working with text
+The following set of steps will show how to access a text selection and change it.
 
-#Editor
-An instance on IntelliJ IDEA editor is represented by an interface
-[Editor.java] (https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/editor/Editor.java),
-and a default implementation can be found in the class
-[EditorImpl.java] (https://github.com/JetBrains/intellij-community/blob/master/platform/platform-impl/src/com/intellij/openapi/editor/impl/EditorImpl.java).
+##Prerequirements
+###Creating a new action
+In this example access to the Editor is made through an action as a plug-in point.
+To create an action we need derive
+[AnAction.java] ()
+class.
+
+    public class EditorIllustration extends AnAction {
+    }
+
+###Registering an action
+To register the action we should add a corresponding attribute to the *<actions>* section of the plugin configuration file
+[plugin.xml] ()
+
+    <actions>
+        <action id="EditorBasics.EditorIllustration" class="org.jetbrains.plugins.editor.basics.EditorIllustration" text="Editor Basics"
+            description="Illustrates how to plug an action in">
+        <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+    </action>
+
+If an action is registered in the group EditorPopupMenu, like the sample above shows,
+it will be available from the context menu when the focus is located in the editor.
+
+###Defining action's visibility
+To determine conditions by which the action will be visible and available for being executed we need to override it's
+*public void update(final AnActionEvent e)* method.
+
+    public class EditorIllustration extends AnAction {
+        @Override
+        public void update(final AnActionEvent e) {
+        }
+    }
+
+If we want to work with a selected part of the text, it's reasonable to make the action available only when the following requirements are met:
+
+* There is a project open
+* There is an instance of the Editor available
+* There is a text selection in the Editor
+
+Further steps will show how to check these conditions through obtaining instances of Project and Editor and how to set up a desired level of action's visibility.
 
 ##Getting an instance of the Active Editor
-A reference to an instance of the editor can be obtained by calling
+A reference to an instance of the Editor can be obtained by calling ```CommonDataKeys.EDITOR```,
+obtaining a project reference is performed the same way ```CommonDataKeys.PROJECT```.
 
-    CommonDataKeys.EDITOR
+    public class EditorIllustration extends AnAction {
+        @Override
+        public void update(final AnActionEvent e) {
+            //Get required data keys
+            final Project project = e.getData(CommonDataKeys.PROJECT);
+            final Editor editor = e.getData(CommonDataKeys.EDITOR);
+            //Set visibility only in case of existing project and editor
+            e.getPresentation().setVisible((project != null && editor != null));
+        }
+    }
 
-To access the editor instance directly the following ways can be used:
+------------------
+
+**Note**
+
+To access an Editor instance also can be used other ways:
 
 * If [DataContext] (https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/DataContext.java)
 object is available ```final Editor editor = CommonDataKeys.EDITOR.getData(context);```
 * If [ActionEvent] (https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnActionEvent.java)
 object is available ```final Editor editor = actionEvent.getData(CommonDataKeys.EDITOR);```
 
-##Obtaining content: document, caret, selection, and more
-###Document.
-[Document.java] (https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/openapi/editor/Document.java)
-represents the contents of a text file loaded into memory, and possibly opened in an IDEA
-text editor. Line breaks in the document text are always normalized as single \n characters,
-and are converted to proper format when the document is saved.
-[Document] (https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/openapi/editor/Document.java)
-can be obtained by calling ```Document document = editor.getDocument();```
+------------------
 
-Editor model classes are located in
+##Obtaining a caret model and selection
+After making sure we have a project open and an instance of the Editor we need to check if any selection is available and set action's visibility accordingly to these conditions.
+[SelectionModel] () got from the Editor allows to do it by calling it's ```hasSelection()``` method.
+Here's how our ```update(final AnActionEvent e)``` method should look like at the end:
+
+    public class EditorIllustration extends AnAction {
+        @Override
+        public void update(final AnActionEvent e) {
+            //Get required data keys
+            final Project project = e.getData(CommonDataKeys.PROJECT);
+            final Editor editor = e.getData(CommonDataKeys.EDITOR);
+            //Set visibility only in case of existing project and editor and if some text in the editor is selected
+            e.getPresentation().setVisible((project != null && editor != null
+            && editor.getSelectionModel().hasSelection()));
+        }
+    }
+
+------------
+
+**Note**
+Editor allows to access different models of text representation. Model classes are located in
 [editor] (https://github.com/JetBrains/intellij-community/tree/master/platform/editor-ui-api/src/com/intellij/openapi/editor)
 subpackage of the
 [editor-ui-api] (https://github.com/JetBrains/intellij-community/tree/master/platform/editor-ui-api)
@@ -53,109 +113,101 @@ package and include:
 [ScrollingModel.java] (https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/editor/ScrollingModel.java),
 [SoftWrapModel.java] (https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/editor/SoftWrapModel.java)
 
-Please see
-[EditorIllustration.java] (https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/editor_basics/src/org/jetbrains/plugins/editor/basics/EditorIllustration.java)
-for more details.
+------------
 
-###Multiple carets
-IntelliJ editor supports work with more than one caret. To learn more about multiple carets please see
-[Supporting Multiple Carets] (http://confluence.jetbrains.com/display/IDEADEV/Supporting+multiple+carets)
+##Obtainitg a Document
+The action is visible and available now. In order to make it do something we need to override it's
+```public void actionPerformed(final AnActionEvent anActionEvent)``` method.
 
-#EditorFactory
-[EditorFactory.java] (https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/editor/EditorFactory.java)
-provides services for creating document and editor instances.
-Please note, that creating and releasing of editors must be done from the event dispatch thread.
+    public class EditorIllustration extends AnAction {
+        @Override
+        public void update(final AnActionEvent e) {
+        //code here
+        }
+        @Override
+        public void actionPerformed(final AnActionEvent anActionEvent) {
+        }
+    }
 
-      protected JComponent createCenterPanel() {
-         final Document document = ((EditorFactoryImpl)EditorFactory.getInstance()).createDocument(true);
-         ((DocumentImpl)document).setAcceptSlashR(true);
-         myTextArea = EditorFactory.getInstance().createEditor(document, myProject, StdFileTypes.PLAIN_TEXT, true);
-         final EditorSettings settings = myTextArea.getSettings();
-         settings.setLineNumbersShown(false);
-         settings.setLineMarkerAreaShown(false);
-         settings.setFoldingOutlineShown(false);
-         settings.setRightMarginShown(false);
-         settings.setAdditionalLinesCount(0);
-         settings.setAdditionalColumnsCount(0);
-         settings.setAdditionalPageAtBottom(false);
-         ((EditorEx)myTextArea).setBackgroundColor(UIUtil.getInactiveTextFieldBackgroundColor());
-         return myTextArea.getComponent();
-      }
+To modify the text an instance of the
+[Document] (https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/openapi/editor/Document.java)
+needs to be accessed. Document represents the contents of a text file loaded into memory, and possibly opened in an IDEA text editor.
+The instance of a Document will be use later when a text replacement is performed.
+We also need to figure out where the selected part of the text is located.
 
-Example from
-[ExportToFileUtil.java] (https://github.com/JetBrains/intellij-community/blob/master/platform/platform-impl/src/com/intellij/ide/util/ExportToFileUtil.java)
+    @Override
+    public void actionPerformed(final AnActionEvent anActionEvent) {
+        //Get all the required data from data keys
+        final Editor editor = anActionEvent.getRequiredData(CommonDataKeys.EDITOR);
+        final Project project = anActionEvent.getRequiredData(CommonDataKeys.PROJECT);
+        //Access document, caret, and selection
+        final Document document = editor.getDocument();
+        final SelectionModel selectionModel = editor.getSelectionModel();
+        final int start = selectionModel.getSelectionStart();
+        final int end = selectionModel.getSelectionEnd();
+    }
 
-#Actions activated by different editor events
-Classes that provide support for handling events from the editor and react on then are located in
-[editor.actionSystem] (https://github.com/JetBrains/intellij-community/tree/master/platform/platform-api/src/com/intellij/openapi/editor/actionSystem)
-package. Following examples can be considered.
+##Modifying text
+Generally replacement can be done by calling
+```void replaceString(int startOffset, int endOffset, @NotNull CharSequence s);``` of the Document, however,
+the operation of replacement must be executed safely, this mean the Document must be locked and any changes should be performed under the
+[write action] ().
+See
+[Threading Issues]() section to know more about synchronization issues and changes safety in IntelliJ.
 
-##TypedActionHandler
-Interface [TypedActionHandler.java] (https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/editor/actionSystem/TypedActionHandler.java)
-stays for actions activated by typing in the editor, meaning if typing starts actions will be executed.
-An example of using TypedActionHandler can be found in class
-[MyTypedHandler.java] (https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/editor_basics/src/org/jetbrains/plugins/editor/basics/MyTypedHandler.java).
-In this case a string *Typed* will be inserted in the editor on the first position after every keystroke.
+    @Override
+    public void actionPerformed(final AnActionEvent anActionEvent) {
+        //Get all the required data from data keys
+        final Editor editor = anActionEvent.getRequiredData(CommonDataKeys.EDITOR);
+        final Project project = anActionEvent.getRequiredData(CommonDataKeys.PROJECT);
+        //Access document, caret, and selection
+        final Document document = editor.getDocument();
+        final SelectionModel selectionModel = editor.getSelectionModel();
 
-##EditorActionHandler
-Class
-[EditorActionHandler.java] (https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/editor/actionSystem/EditorActionHandler.java)
-also stays for actions activated by keystrokes in the editor.
-This type of the editor handler should be registered as an extension point
-```<editorActionHandler action="EditorSelectWord" implementationClass="com.intellij.codeInsight.editorActions.SelectWordHandler"/>```.
-
-Two types of handlers are supported: the ones which are executed once, and the ones which are executed for each caret.
-Examples of already implemented handlers can be found in
-[editorActions package] (https://github.com/JetBrains/intellij-community/tree/master/platform/lang-impl/src/com/intellij/codeInsight/editorActions),
-e.g. the class
-[CopyHandler.java] (https://github.com/JetBrains/intellij-community/blob/master/platform/lang-impl/src/com/intellij/codeInsight/editorActions/CopyHandler.java).
-To implement the logic you need to override ```implement()``` action.
-And used like shows the following example:
-[EditorHandlerIllustration.java] (https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/editor_basics/src/org/jetbrains/plugins/editor/basics/EditorHandlerIllustration.java)
-
-#Working with text
-##EditorModificationUtil
-Basic, most commonly required actions for text modification, e.g working with text selections,
-inserting and deleting symbols and strings, and manipulating with text blocks, are represented are implemented in the utility class
-[EditorModificationUtil.java] (https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/editor/EditorModificationUtil.java)
-
-#Editor coordinates system. Positions and offsets.
-Every caret in the editor has a set of properties describing it's coordinates. These properties can be accessed by obtaining a
-[caret model instance] (https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/editor/CaretModel.java).
-
-##Logical position
-[LogicalPosition.java] (https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/editor/LogicalPosition.java)
-represents a line and a column of the current logical position of the caret. Logical positions ignore folding -
-for example, if the top 10 lines of the document are folded, the 10th line in the document will have the line number 10 in its logical position.
-Logical position may store additional parameters that define its mapping to
-[VisualPosition.java] (https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/editor/VisualPosition.java).
-Rationale is that single logical pair matches soft wrap-introduced virtual space, i.e. different visual positions
-correspond to the same logical position. It's convenient to store exact visual location details within the logical
-position in order to relief further 'logical position' -> 'visual position' mapping.
-
-##Visual position
-[VisualPosition.java] (https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/editor/VisualPosition.java)
-represent a visual position and may very from the corresponding logical position.
-Visual positions take folding into account - for example, if the top 10 lines of the document are folded, the 10th line in the document will have the line number 1 in its visual position.
-
-##Offset
-An absolute offset for a given caret position is accessible by calling
-```int offset = caretModel.getOffset();```
-
-**TODO** [Link to threading issue]
+        final int start = selectionModel.getSelectionStart();
+        final int end = selectionModel.getSelectionEnd();
+        //New instance of Runnable to make a replacement
+        Runnable runnable = new Runnable() {
+            @Override
+            public void run() {
+                document.replaceString(start, end, "Replacement");
+            }
+        };
+        //Making the replacement
+        WriteCommandAction.runWriteCommandAction(project, runnable);
+        selectionModel.removeSelection();
+    }
 
 -----------
 
-### [Sample plugin] (https://github.com/JetBrains/intellij-sdk/tree/master/code_samples/editor_basics)
+The source code is located in
+[EditorIllustration.java] (https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/editor_basics/src/org/jetbrains/plugins/editor/basics/EditorIllustration.java).
+To see how text replacement works, check out
+[Editor Basics] (https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/editor_basics/src/org/jetbrains/plugins/editor/basics/)
+plugin, make the project, and run it, then invoke the *EditorIllustration* action which is available in the context menu of the editor.
+
+**TODO - screen shot**
+
 -----------
 
-See also
+### [Source code] (https://github.com/JetBrains/intellij-sdk/tree/master/code_samples/editor_basics)
+-----------
+
+Note, that this part of the API allows to operate only with text.
+If you need to access PSI please see
+[PSI Cookbook] (https://confluence.jetbrains.com/display/IDEADEV/PSI+Cookbook)
+section.
+
+**See also**
+[editor-ui-api package] (https://github.com/JetBrains/intellij-community/tree/master/platform/editor-ui-api),
+[Editor.java] (https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/editor/Editor.java),
+[EditorImpl.java] (https://github.com/JetBrains/intellij-community/blob/master/platform/platform-impl/src/com/intellij/openapi/editor/impl/EditorImpl.java).
 [CommonDataKeys.java] (https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/CommonDataKeys.java),
 [DataKey.java] (https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/DataKey.java),
 [AnActionEvent] (https://github.com/JetBrains/intellij-community/blob/ff16ce78a1e0ddb6e67fd1dbc6e6a597e20d483a/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnActionEvent.java),
 [DataContext] (https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/DataContext.java)
 
-Related topics
+**Related topics**
 [Action System] (https://github.com/JetBrains/intellij-sdk/blob/master/tutorials/action_system.md)
 
 

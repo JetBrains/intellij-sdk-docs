@@ -13,6 +13,7 @@ and how to handle events sent to the Editor.
 The following set of steps will show how to access a text selection and change it.
 
 ##Prerequirements
+**TODO - extract to "add action" part**
 ###Creating a new action
 In this example access to the Editor is made through an action as a plug-in point.
 To create an action we need derive
@@ -180,13 +181,135 @@ See
 
 -----------
 
+**TODO - screen shot**
+
+-----------
+
 The source code is located in
 [EditorIllustration.java] (https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/editor_basics/src/org/jetbrains/plugins/editor/basics/EditorIllustration.java).
 To see how text replacement works, check out
 [Editor Basics] (https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/editor_basics/src/org/jetbrains/plugins/editor/basics/)
 plugin, make the project, and run it, then invoke the *EditorIllustration* action which is available in the context menu of the editor.
 
-**TODO - screen shot**
+#Editor coordinates system. Positions and offsets.
+Every caret in the editor has a set of properties describing it's coordinates. These properties can be accessed by obtaining a
+[caret model instance] (https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/editor/CaretModel.java).
+Working with caret positions and it's logical and visual properties will be explained in the sample below.
+
+##Prerequirements
+Access to the Editor is performed through an action.
+**TODO - extract to "add action" part**
+
+##Accessing caret positions
+To get an access to caret positions an instance of CaretModel should be obtained.
+
+    public class EditorAreaIllustration extends AnAction {
+        @Override
+        public void actionPerformed(AnActionEvent anActionEvent) {
+            final Editor editor = anActionEvent.getRequiredData(CommonDataKeys.EDITOR);
+            CaretModel caretModel = editor.getCaretModel();
+        }
+
+        @Override
+        public void update(AnActionEvent e) {
+           //...
+        }
+    }
+
+##Logical position
+[LogicalPosition.java] (https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/editor/LogicalPosition.java)
+represents a line and a column of the current logical position of the caret. Logical positions ignore folding -
+for example, if the top 10 lines of the document are folded, the 10th line in the document will have the line number 10 in its logical position.
+
+    public class EditorAreaIllustration extends AnAction {
+            @Override
+            public void actionPerformed(AnActionEvent anActionEvent) {
+                final Editor editor = anActionEvent.getRequiredData(CommonDataKeys.EDITOR);
+                CaretModel caretModel = editor.getCaretModel();
+                LogicalPosition logicalPosition = caretModel.getLogicalPosition();
+            }
+
+            @Override
+            public void update(AnActionEvent e) {
+               //...
+            }
+        }
+
+Logical position may store additional parameters that define its mapping to
+[VisualPosition.java] (https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/editor/VisualPosition.java).
+Rationale is that single logical pair matches soft wrap-introduced virtual space, i.e. different visual positions
+correspond to the same logical position. It's convenient to store exact visual location details within the logical
+position in order to relief further 'logical position' -> 'visual position' mapping.
+
+##Visual position
+[VisualPosition.java] (https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/editor/VisualPosition.java)
+represent a visual position and may very from the corresponding logical position.
+Visual positions take folding into account - for example,
+if the top 10 lines of the document are folded, the 10th line in the document will have the line number 1 in its visual position.
+
+    public class EditorAreaIllustration extends AnAction {
+            @Override
+            public void actionPerformed(AnActionEvent anActionEvent) {
+                final Editor editor = anActionEvent.getRequiredData(CommonDataKeys.EDITOR);
+                CaretModel caretModel = editor.getCaretModel();
+                LogicalPosition logicalPosition = caretModel.getLogicalPosition();
+                VisualPosition visualPosition = caretModel.getVisualPosition();
+            }
+
+            @Override
+            public void update(AnActionEvent e) {
+               //...
+            }
+        }
+
+##Offset
+An absolute offset for a given caret position is accessible through CaretModel as well
+
+    public class EditorAreaIllustration extends AnAction {
+        @Override
+        public void actionPerformed(AnActionEvent anActionEvent) {
+            final Editor editor = anActionEvent.getRequiredData(CommonDataKeys.EDITOR);
+            CaretModel caretModel = editor.getCaretModel();
+            LogicalPosition logicalPosition = caretModel.getLogicalPosition();
+            VisualPosition visualPosition = caretModel.getVisualPosition();
+            int offset = caretModel.getOffset();
+        }
+
+        @Override
+        public void update(AnActionEvent e) {
+           //...
+        }
+    }
+
+##Displaying position values
+To display the actual values of logical anf visual positions we add an
+```Messages.showInfoMessage()``` call that will show them in form of notification after the action is performed.
+
+    public class EditorAreaIllustration extends AnAction {
+            @Override
+            public void actionPerformed(AnActionEvent anActionEvent) {
+                final Editor editor = anActionEvent.getRequiredData(CommonDataKeys.EDITOR);
+                CaretModel caretModel = editor.getCaretModel();
+                LogicalPosition logicalPosition = caretModel.getLogicalPosition();
+                VisualPosition visualPosition = caretModel.getVisualPosition();
+                int offset = caretModel.getOffset();
+                Messages.showInfoMessage(logicalPosition.toString() + "\n" +
+                        visualPosition.toString() + "\n" +
+                        "Offset: " + offset, "Caret Parameters Inside The Editor");
+            }
+
+            @Override
+            public void update(AnActionEvent e) {
+               //...
+            }
+        }
+
+Check out, compile, and run the
+[Editor Basics Plugin] (https://github.com/JetBrains/intellij-sdk/tree/master/code_samples/editor_basics),
+then move carets, invoke
+[EditorAreaIllustration] (TODO)
+action, and see how logical and visual positions are related dependently on folding.
+**TODO - screenshots**
 
 -----------
 

@@ -17,7 +17,7 @@ The following set of steps will show how to access a text selection and change i
 ###Creating a new action
 In this example access to the Editor is made through an action as a plug-in point.
 To create an action we need derive
-[AnAction.java] ()
+[AnAction.java] (TODO)
 class.
 
     public class EditorIllustration extends AnAction {
@@ -25,7 +25,7 @@ class.
 
 ###Registering an action
 To register the action we should add a corresponding attribute to the *<actions>* section of the plugin configuration file
-[plugin.xml] ()
+[plugin.xml] (TODO)
 
     <actions>
         <action id="EditorBasics.EditorIllustration" class="org.jetbrains.plugins.editor.basics.EditorIllustration" text="Editor Basics"
@@ -152,9 +152,9 @@ We also need to figure out where the selected part of the text is located.
 Generally replacement can be done by calling
 ```void replaceString(int startOffset, int endOffset, @NotNull CharSequence s);``` of the Document, however,
 the operation of replacement must be executed safely, this mean the Document must be locked and any changes should be performed under the
-[write action] ().
+[write action] (TODO).
 See
-[Threading Issues]() section to know more about synchronization issues and changes safety in IntelliJ.
+[Threading Issues](TODO) section to know more about synchronization issues and changes safety in IntelliJ.
 
     @Override
     public void actionPerformed(final AnActionEvent anActionEvent) {

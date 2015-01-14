@@ -1,4 +1,4 @@
-Basics of working with the Editor
+Basics of working with the Editor.
 ===========
 
 ### [Source code] (https://github.com/JetBrains/intellij-sdk/tree/master/code_samples/editor_basics)
@@ -9,12 +9,12 @@ Basics of working with the Editor
 This tutorial will lead you through the series of steps showing how to work with the Editor in IntelliJ IDEA, how access and modify text it contains,
 and how to handle events sent to the Editor.
 
-#Editor. Working with text
+#Editor. Working with text.
 The following set of steps will show how to access a text selection and change it.
 
-##Prerequirements
+##Prerequirements.
 **TODO - extract to "add action" part**
-###Creating a new action
+###Creating a new action.
 In this example access to the Editor is made through an action as a plug-in point.
 To create an action we need derive
 [AnAction.java] (TODO)
@@ -23,7 +23,7 @@ class.
     public class EditorIllustration extends AnAction {
     }
 
-###Registering an action
+###Registering an action.
 To register the action we should add a corresponding attribute to the *<actions>* section of the plugin configuration file
 [plugin.xml] (TODO)
 
@@ -36,7 +36,7 @@ To register the action we should add a corresponding attribute to the *<actions>
 If an action is registered in the group EditorPopupMenu, like the sample above shows,
 it will be available from the context menu when the focus is located in the editor.
 
-###Defining action's visibility
+###Defining action's visibility.
 To determine conditions by which the action will be visible and available for being executed we need to override it's
 *public void update(final AnActionEvent e)* method.
 
@@ -54,7 +54,7 @@ If we want to work with a selected part of the text, it's reasonable to make the
 
 Further steps will show how to check these conditions through obtaining instances of Project and Editor and how to set up a desired level of action's visibility.
 
-##Getting an instance of the Active Editor
+##Getting an instance of the Active Editor.
 A reference to an instance of the Editor can be obtained by calling ```CommonDataKeys.EDITOR```,
 obtaining a project reference is performed the same way ```CommonDataKeys.PROJECT```.
 
@@ -82,7 +82,7 @@ object is available ```final Editor editor = actionEvent.getData(CommonDataKeys.
 
 ------------------
 
-##Obtaining a caret model and selection
+##Obtaining a caret model and selection.
 After making sure we have a project open and an instance of the Editor we need to check if any selection is available and set action's visibility accordingly to these conditions.
 [SelectionModel] () got from the Editor allows to do it by calling it's ```hasSelection()``` method.
 Here's how our ```update(final AnActionEvent e)``` method should look like at the end:
@@ -116,7 +116,7 @@ package and include:
 
 ------------
 
-##Obtainitg a Document
+##Obtainitg a Document.
 The action is visible and available now. In order to make it do something we need to override it's
 ```public void actionPerformed(final AnActionEvent anActionEvent)``` method.
 
@@ -148,7 +148,7 @@ We also need to figure out where the selected part of the text is located.
         final int end = selectionModel.getSelectionEnd();
     }
 
-##Modifying text
+##Modifying text.
 Generally replacement can be done by calling
 ```void replaceString(int startOffset, int endOffset, @NotNull CharSequence s);``` of the Document, however,
 the operation of replacement must be executed safely, this mean the Document must be locked and any changes should be performed under the
@@ -196,11 +196,11 @@ Every caret in the editor has a set of properties describing it's coordinates. T
 [caret model instance] (https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/editor/CaretModel.java).
 Working with caret positions and it's logical and visual properties will be explained in the sample below.
 
-##Prerequirements
+##Prerequirements.
 Access to the Editor is performed through an action.
 **TODO - extract to "add action" part**
 
-##Accessing caret positions
+##Accessing caret positions.
 To get an access to caret positions an instance of CaretModel should be obtained.
 
     public class EditorAreaIllustration extends AnAction {
@@ -216,7 +216,7 @@ To get an access to caret positions an instance of CaretModel should be obtained
         }
     }
 
-##Logical position
+##Logical position.
 [LogicalPosition.java] (https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/editor/LogicalPosition.java)
 represents a line and a column of the current logical position of the caret. Logical positions ignore folding -
 for example, if the top 10 lines of the document are folded, the 10th line in the document will have the line number 10 in its logical position.
@@ -241,7 +241,7 @@ Rationale is that single logical pair matches soft wrap-introduced virtual space
 correspond to the same logical position. It's convenient to store exact visual location details within the logical
 position in order to relief further 'logical position' -> 'visual position' mapping.
 
-##Visual position
+##Visual position.
 [VisualPosition.java] (https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/editor/VisualPosition.java)
 represent a visual position and may very from the corresponding logical position.
 Visual positions take folding into account - for example,
@@ -262,7 +262,7 @@ if the top 10 lines of the document are folded, the 10th line in the document wi
             }
         }
 
-##Offset
+##Offset.
 An absolute offset for a given caret position is accessible through CaretModel as well
 
     public class EditorAreaIllustration extends AnAction {
@@ -281,7 +281,7 @@ An absolute offset for a given caret position is accessible through CaretModel a
         }
     }
 
-##Displaying position values
+##Displaying position values.
 To display the actual values of logical anf visual positions we add an
 ```Messages.showInfoMessage()``` call that will show them in form of notification after the action is performed.
 

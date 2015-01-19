@@ -13,7 +13,7 @@
     <depends>com.intellij.modules.lang</depends>
 
     <extensions defaultExtensionNs="com.intellij">
-        <projectViewPane implementation="org.jetbrains.tutorials.sample.pane.ImagesProjectViewPane"/>
+        <projectViewPane implementation="org.jetbrains.tutorials.view.pane.ImagesProjectViewPane"/>
     </extensions>
 
     <application-components>

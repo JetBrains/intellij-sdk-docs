@@ -1,4 +1,4 @@
-package org.jetbrains.tutorials.sample.pane;
+package org.jetbrains.tutorials.view.pane;
 
 import com.intellij.icons.AllIcons;
 import com.intellij.ide.SelectInTarget;

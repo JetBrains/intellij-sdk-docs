@@ -24,7 +24,7 @@ To register an action as a menu item, an <action> attribute should be added to t
     The optional "description" attribute specifies the text which is displayed in the status bar when the action is focused.
     The optional "icon" attribute specifies the icon which is displayed on the toolbar button or next to the menu item. -->
 
-    <action id="PluginSample.DummyAction" class="org.jetbrains.plugins.sample.actions.SimpleAction" text="Dummy Action" description="Illustrates how to plug an action in">
+    <action id="PluginSample.DummyAction" class="SimpleAction" text="Dummy Action" description="Illustrates how to plug an action in">
 
       <!-- The <keyboard-shortcut> node specifies the keyboard shortcut for the action. An action can have several keyboard shortcuts.
       The mandatory "first-keystroke" attribute specifies the first keystroke of the action. The key strokes are specified according to the regular Swing rules.
@@ -107,7 +107,7 @@ file. In most of the cases you simply need to leave "class" attribute of the <gr
 will be created and filled with actions defined within it.
 
     <group id="DummyDefaultActionGroup" text="Default action group">
-        <action class="org.jetbrains.plugins.sample.actions.GroupedToDefaultAction" id="PluginSample.GroupedToDefaultAction"/>
+        <action class="GroupedToDefaultAction" id="PluginSample.GroupedToDefaultAction"/>
     </group>
 See
 [GroupedToDefaultAction.java] (https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/plugin_sample/src/org/jetbrains/plugins/sample/actions/GroupedToDefaultAction.java)
@@ -132,10 +132,10 @@ belonging to this group.
     The optional "icon" attribute specifies the icon which is displayed on the toolbar button or next to the group.
     The optional "popup" attribute specifies how the group is presented in the menu. If a group has popup="true", actions in it
     are placed in a submenu; for popup="false", actions are displayed as a section of the same menu delimited by separators. -->
-    <group class="org.jetbrains.plugins.sample.actions.DummyActionGroup" id="DummyActionGroup" text="Action Group"
+    <group class="DummyActionGroup" id="DummyActionGroup" text="Action Group"
            description="Illustration of an action group"
            icon="icons/testgroup.png" popup="true">
-        <action id="PluginSample.GroupedAction" class="org.jetbrains.plugins.sample.actions.GroupedAction"
+        <action id="PluginSample.GroupedAction" class="GroupedAction"
                 text="Grouped Action" description="An action in the group"/>
         <!-- The <separator> element defines a separator between actions. It can also have an <add-to-group> child element. -->
         <separator/>

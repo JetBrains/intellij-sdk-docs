@@ -43,9 +43,9 @@ This configuration file contains description, components, information about depe
       <application-components>
         <component>
           <!-- Component's interface class -->
-          <interface-class>org.jetbrains.plugins.sample.DummyApplicationComponent</interface-class>
+          <interface-class>DummyApplicationComponent</interface-class>
           <!-- Component's implementation class -->
-          <implementation-class>org.jetbrains.plugins.sample.DummyApplicationComponentImpl</implementation-class>
+          <implementation-class>DummyApplicationComponentImpl</implementation-class>
         </component>
       </application-components>
 
@@ -53,8 +53,8 @@ This configuration file contains description, components, information about depe
       <project-components>
         <component>
           <!-- Interface and implementation classes are the same -->
-          <interface-class>org.jetbrains.plugins.sample.DummyProjectComponent</interface-class>
-          <implementation-class>org.jetbrains.plugins.sample.DummyProjectComponentImpl</implementation-class>
+          <interface-class>DummyProjectComponent</interface-class>
+          <implementation-class>DummyProjectComponentImpl</implementation-class>
           <!-- If the "workspace" option is set "true", the component saves its state to the .iws file
             instead of the .ipr file.  Note that the <option> element is used only if the component implements the JDOMExternalizable interface. Otherwise, the use of the <option> element takes no effect.-->
 
@@ -67,14 +67,14 @@ This configuration file contains description, components, information about depe
       <!-- Plugin's module components -->
       <module-components>
         <component>
-          <interface-class>org.jetbrains.plugins.sample.DummyModuleComponent</interface-class>
-          <implementation-class>org.jetbrains.plugins.sample.DummyModuleComponentImpl</implementation-class>
+          <interface-class>DummyModuleComponent</interface-class>
+          <implementation-class>DummyModuleComponentImpl</implementation-class>
         </component>
       </module-components>
 
       <!-- Actions -->
       <actions>
-        <action id="PluginSample.DummyAction" class="org.jetbrains.plugins.sample.actions.SimpleAction" text="Dummy Action" description="Illustrates how to plug an action in">
+        <action id="PluginSample.DummyAction" class="SimpleAction" text="Dummy Action" description="Illustrates how to plug an action in">
           <keyboard-shortcut first-keystroke="control alt A" second-keystroke="C" keymap="$default"/>
         </action>
       </actions>

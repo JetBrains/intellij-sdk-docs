@@ -13,7 +13,7 @@ in the
 configuration file:
 
     <extensions defaultExtensionNs="com.intellij">
-        <treeStructureProvider implementation="org.jetbrains.plugins.sample.tree.TextOnlyTreeStructureProvider"/>
+        <treeStructureProvider implementation="TextOnlyTreeStructureProvider"/>
     </extensions>
 
 Two methods of the parent class need to be overridden.

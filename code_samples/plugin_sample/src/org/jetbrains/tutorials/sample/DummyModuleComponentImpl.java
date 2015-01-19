@@ -1,11 +1,11 @@
-package org.jetbrains.plugins.sample;
+package org.jetbrains.tutorials.sample;
 
 import org.jetbrains.annotations.NotNull;
 
 /**
  * @author Anna Bulenkova
  */
-public class DummyProjectComponentImpl implements DummyProjectComponent {
+public class DummyModuleComponentImpl implements DummyModuleComponent {
     @Override
     public void projectOpened() {
 
@@ -13,6 +13,11 @@ public class DummyProjectComponentImpl implements DummyProjectComponent {
 
     @Override
     public void projectClosed() {
+
+    }
+
+    @Override
+    public void moduleAdded() {
 
     }
 
@@ -29,6 +34,6 @@ public class DummyProjectComponentImpl implements DummyProjectComponent {
     @NotNull
     @Override
     public String getComponentName() {
-        return "DummyProjectComponent";
+        return "DummyModuleComponent";
     }
 }

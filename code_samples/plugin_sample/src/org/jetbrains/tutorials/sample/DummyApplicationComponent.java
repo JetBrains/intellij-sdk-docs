@@ -1,4 +1,4 @@
-package org.jetbrains.plugins.sample;
+package org.jetbrains.tutorials.sample;
 
 import com.intellij.openapi.components.ApplicationComponent;
 

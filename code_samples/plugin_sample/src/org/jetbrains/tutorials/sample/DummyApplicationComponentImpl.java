@@ -1,4 +1,4 @@
-package org.jetbrains.plugins.sample;
+package org.jetbrains.tutorials.sample;
 
 import org.jetbrains.annotations.NotNull;
 

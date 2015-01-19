@@ -1,4 +1,4 @@
-package org.jetbrains.plugins.sample.tree;
+package org.jetbrains.tutorials.sample.tree;
 
 import com.intellij.ide.projectView.TreeStructureProvider;
 import com.intellij.ide.projectView.ViewSettings;

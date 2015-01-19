@@ -13,7 +13,7 @@
   <depends>com.intellij.modules.lang</depends>
 
   <extensions defaultExtensionNs="com.intellij">
-    <treeStructureProvider implementation="org.jetbrains.plugins.sample.tree.TextOnlyTreeStructureProvider"/>
+    <treeStructureProvider implementation="org.jetbrains.tutorials.sample.tree.TextOnlyTreeStructureProvider"/>
   </extensions>
 
   <application-components>

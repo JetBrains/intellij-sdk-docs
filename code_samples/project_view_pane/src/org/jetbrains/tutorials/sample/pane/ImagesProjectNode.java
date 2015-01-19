@@ -1,4 +1,4 @@
-package org.jetbrains.plugins.sample.pane;
+package org.jetbrains.tutorials.sample.pane;
 
 import com.intellij.icons.AllIcons;
 import com.intellij.ide.projectView.PresentationData;

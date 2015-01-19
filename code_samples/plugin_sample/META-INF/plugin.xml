@@ -29,15 +29,15 @@
     <idea-version since-build="139.000" until-build="999"/>
 
     <!-- Resource bundle from which the text of plugin descriptions, action names and etc. will be loaded -->
-    <resource-bundle>org.jetbrains.plugins.sample.PluginSampleBundle</resource-bundle>
+    <resource-bundle>org.jetbrains.tutorials.sample.PluginSampleBundle</resource-bundle>
 
     <!-- Plugin's application components -->
     <application-components>
         <component>
             <!-- Component's interface class -->
-            <interface-class>org.jetbrains.plugins.sample.DummyApplicationComponent</interface-class>
+            <interface-class>org.jetbrains.tutorials.sample.DummyApplicationComponent</interface-class>
             <!-- Component's implementation class -->
-            <implementation-class>org.jetbrains.plugins.sample.DummyApplicationComponentImpl</implementation-class>
+            <implementation-class>org.jetbrains.tutorials.sample.DummyApplicationComponentImpl</implementation-class>
         </component>
     </application-components>
 
@@ -45,8 +45,8 @@
     <project-components>
         <component>
             <!-- Interface and implementation classes are the same -->
-            <interface-class>org.jetbrains.plugins.sample.DummyProjectComponent</interface-class>
-            <implementation-class>org.jetbrains.plugins.sample.DummyProjectComponentImpl</implementation-class>
+            <interface-class>org.jetbrains.tutorials.sample.DummyProjectComponent</interface-class>
+            <implementation-class>org.jetbrains.tutorials.sample.DummyProjectComponentImpl</implementation-class>
             <!-- If the "workspace" option is set "true", the component saves its state to the .iws file
               instead of the .ipr file.  Note that the <option> element is used only if the component implements the JDOMExternalizable interface. Otherwise, the use of the <option> element takes no effect.-->
 
@@ -59,8 +59,8 @@
     <!-- Plugin's module components -->
     <module-components>
         <component>
-            <interface-class>org.jetbrains.plugins.sample.DummyModuleComponent</interface-class>
-            <implementation-class>org.jetbrains.plugins.sample.DummyModuleComponentImpl</implementation-class>
+            <interface-class>org.jetbrains.tutorials.sample.DummyModuleComponent</interface-class>
+            <implementation-class>org.jetbrains.tutorials.sample.DummyModuleComponentImpl</implementation-class>
         </component>
     </module-components>
 
@@ -73,7 +73,7 @@
         The optional "use-shortcut-of" attribute specifies the ID of the action whose keyboard shortcut this action will use.
         The optional "description" attribute specifies the text which is displayed in the status bar when the action is focused.
         The optional "icon" attribute specifies the icon which is displayed on the toolbar button or next to the menu item. -->
-        <action id="PluginSample.DummyAction" class="org.jetbrains.plugins.sample.actions.SimpleAction" text="Dummy Action"
+        <action id="PluginSample.DummyAction" class="org.jetbrains.tutorials.sample.actions.SimpleAction" text="Dummy Action"
                 description="Illustrates how to plug an action in">
             <!-- The <keyboard-shortcut> node specifies the keyboard shortcut for the action. An action can have several keyboard shortcuts.
             The mandatory "first-keystroke" attribute specifies the first keystroke of the action. The key strokes are specified according to the regular Swing rules.
@@ -107,12 +107,12 @@
                   The optional "popup" attribute specifies how the group is presented in the menu. If a group has popup="true", actions in it
                   are placed in a submenu; for popup="false", actions are displayed as a section of the same menu delimited by separators. -->
         <group id="DummyDefaultActionGroup" text="Default action group">
-            <action class="org.jetbrains.plugins.sample.actions.GroupedToDefaultAction" id="PluginSample.GroupedToDefaultAction"/>
+            <action class="org.jetbrains.tutorials.sample.actions.GroupedToDefaultAction" id="PluginSample.GroupedToDefaultAction"/>
         </group>
-        <group class="org.jetbrains.plugins.sample.actions.DummyActionGroup" id="DummyActionGroup" text="Action Group"
+        <group class="org.jetbrains.tutorials.sample.actions.DummyActionGroup" id="DummyActionGroup" text="Action Group"
                description="Illustration of an action group"
                icon="icons/testgroup.png" popup="true">
-            <action id="PluginSample.GroupedAction" class="org.jetbrains.plugins.sample.actions.GroupedAction"
+            <action id="PluginSample.GroupedAction" class="org.jetbrains.tutorials.sample.actions.GroupedAction"
                     text="Grouped Action" description="An action in the group"/>
             <!-- The <separator> element defines a separator between actions. It can also have an <add-to-group> child element. -->
             <separator/>

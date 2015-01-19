@@ -2,7 +2,6 @@ Basics of working with the Editor.
 ===========
 
 ### [Source code] (https://github.com/JetBrains/intellij-sdk/tree/master/code_samples/editor_basics)
-**TODO - Check links**
 
 ----------
 

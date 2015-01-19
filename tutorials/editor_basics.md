@@ -309,7 +309,12 @@ Check out, compile, and run the
 then move carets, invoke
 [EditorAreaIllustration] (https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/editor_basics/src/org/jetbrains/plugins/editor/basics/EditorAreaIllustration.java)
 action, and see how logical and visual positions are related dependently on folding.
-**TODO - screenshots**
+
+Find the action in the context menu:
+![Show coordinates action](img/coordinates_action.png)
+
+Perform the action to see caret positions:
+![Show coordinates action](img/coordinates_demo.png)
 
 #Actions activated by editor events.
 IntelliJ IDEA SDK provides a set of embedded mechanisms for handling events related to the Editor.

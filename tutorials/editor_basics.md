@@ -182,7 +182,7 @@ section to know more about synchronization issues and changes safety in IntelliJ
 
 -----------
 
-**TODO - screen shot**
+![String replacement action](img/basics.png)
 
 -----------
 

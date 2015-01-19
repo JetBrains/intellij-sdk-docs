@@ -25,28 +25,28 @@
     </project-components>
 
     <actions>
-        <action id="ProjectModel.SourceRoots" class="com.intellij.plugins.project.model.ShowSourceRootsActions"
+        <action id="ProjectModel.SourceRoots" class="com.intellij.tutorials.project.model.ShowSourceRootsActions"
                 text="Show Source Roots"
                 description="Illustrates how to get source roots">
             <add-to-group group-id="ToolsMenu" anchor="after"/>
         </action>
-        <action id="ProjectModel.ProjectSdk" class="com.intellij.plugins.project.model.ProjectSdkAction"
+        <action id="ProjectModel.ProjectSdk" class="com.intellij.tutorials.project.model.ProjectSdkAction"
                 text="Show Sdk Info"
                 description="Illustrates how to get source roots">
             <add-to-group group-id="ToolsMenu" anchor="after"/>
         </action>
         <action id="ProjectModel.ProjectFileIndex"
-                class="com.intellij.plugins.project.model.ProjectFileIndexSampleAction"
+                class="com.intellij.tutorials.project.model.ProjectFileIndexSampleAction"
                 text="FileProjectIndex in Action"
                 description="Illustrates how to get source roots">
             <add-to-group group-id="EditorPopupMenu" anchor="last"/>
         </action>
-        <action id="ProjectModel.ModificationAction" class="com.intellij.plugins.project.model.ModificationAction"
+        <action id="ProjectModel.ModificationAction" class="com.intellij.tutorials.project.model.ModificationAction"
                 text="Project Modification in Action"
                 description="Illustrates how to get source roots">
             <add-to-group group-id="EditorPopupMenu" anchor="last"/>
         </action>
-        <action id="ProjectModel.LibrariesAction" class="com.intellij.plugins.project.model.LibrariesAction"
+        <action id="ProjectModel.LibrariesAction" class="com.intellij.tutorials.project.model.LibrariesAction"
                 text="Libraries for file"
                 description="Illustrates accessing libraries">
             <add-to-group group-id="EditorPopupMenu" anchor="last"/>

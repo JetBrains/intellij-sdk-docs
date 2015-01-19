@@ -17,7 +17,7 @@ The following set of steps will show how to access a text selection and change i
 ###Creating a new action.
 In this example access to the Editor is made through an action as a plug-in point.
 To create an action we need derive
-[AnAction.java] (TODO)
+[AnAction.java] (https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java)
 class.
 
     public class EditorIllustration extends AnAction {
@@ -25,7 +25,7 @@ class.
 
 ###Registering an action.
 To register the action we should add a corresponding attribute to the *<actions>* section of the plugin configuration file
-[plugin.xml] (TODO)
+[plugin.xml] (https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/editor_basics/resources/META-INF/plugin.xml)
 
     <actions>
         <action id="EditorBasics.EditorIllustration" class="org.jetbrains.plugins.editor.basics.EditorIllustration" text="Editor Basics"
@@ -152,9 +152,10 @@ We also need to figure out where the selected part of the text is located.
 Generally replacement can be done by calling
 ```void replaceString(int startOffset, int endOffset, @NotNull CharSequence s);``` of the Document, however,
 the operation of replacement must be executed safely, this mean the Document must be locked and any changes should be performed under the
-[write action] (TODO).
+[write action] (https://confluence.jetbrains.com/display/IDEA/Write+action+in+separate+thread).
 See
-[Threading Issues](TODO) section to know more about synchronization issues and changes safety in IntelliJ.
+[Threading Issues](https://confluence.jetbrains.com/display/IDEADEV/IntelliJ+IDEA+Architectural+Overview#IntelliJIDEAArchitecturalOverview-Threading)
+section to know more about synchronization issues and changes safety in IntelliJ.
 
     @Override
     public void actionPerformed(final AnActionEvent anActionEvent) {
@@ -307,9 +308,39 @@ To display the actual values of logical anf visual positions we add an
 Check out, compile, and run the
 [Editor Basics Plugin] (https://github.com/JetBrains/intellij-sdk/tree/master/code_samples/editor_basics),
 then move carets, invoke
-[EditorAreaIllustration] (TODO)
+[EditorAreaIllustration] (https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/editor_basics/src/org/jetbrains/plugins/editor/basics/EditorAreaIllustration.java)
 action, and see how logical and visual positions are related dependently on folding.
 **TODO - screenshots**
+
+#Actions activated by editor events.
+IntelliJ IDEA SDK provides a set of embedded mechanisms for handling events related to the Editor.
+
+##Working with EditorActionHandler.
+Class
+[EditorActionHandler.java] (https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/editor/actionSystem/EditorActionHandler.java)
+stays for actions activated by keystrokes in the editor. Series of steps below shows how t
+
+###Prerequirements
+
+
+This type of the editor handler should be registered as an extension point, e.g.
+```<editorActionHandler action="EditorSelectWord" implementationClass="com.intellij.codeInsight.editorActions.SelectWordHandler"/>```.
+
+
+Two types of handlers are supported: the ones which are executed once, and the ones which are executed for each caret.
+Examples of already implemented handlers can be found in
+[editorActions package] (https://github.com/JetBrains/intellij-community/tree/master/platform/lang-impl/src/com/intellij/codeInsight/editorActions),
+e.g. the class
+[CopyHandler.java] (https://github.com/JetBrains/intellij-community/blob/master/platform/lang-impl/src/com/intellij/codeInsight/editorActions/CopyHandler.java).
+To implement the logic you need to override ```implement()``` action.
+And used like shows the following example:
+[EditorHandlerIllustration.java] (https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/editor_basics/src/org/jetbrains/plugins/editor/basics/EditorHandlerIllustration.java)
+
+
+
+Classes that provide support for handling events from the editor and react on then are located in
+[editor.actionSystem] (https://github.com/JetBrains/intellij-community/tree/master/platform/platform-api/src/com/intellij/openapi/editor/actionSystem)
+package.
 
 -----------
 

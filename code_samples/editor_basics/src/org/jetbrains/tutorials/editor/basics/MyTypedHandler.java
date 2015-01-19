@@ -1,4 +1,4 @@
-package org.jetbrains.plugins.editor.basics;
+package org.jetbrains.tutorials.editor.basics;
 
 import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.command.WriteCommandAction;

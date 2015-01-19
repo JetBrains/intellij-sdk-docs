@@ -27,7 +27,7 @@ To register the action we should add a corresponding attribute to the *<actions>
 [plugin.xml] (https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/editor_basics/resources/META-INF/plugin.xml)
 
     <actions>
-        <action id="EditorBasics.EditorIllustration" class="org.jetbrains.plugins.editor.basics.EditorIllustration" text="Editor Basics"
+        <action id="EditorBasics.EditorIllustration" class="EditorIllustration" text="Editor Basics"
             description="Illustrates how to plug an action in">
         <add-to-group group-id="EditorPopupMenu" anchor="last"/>
     </action>

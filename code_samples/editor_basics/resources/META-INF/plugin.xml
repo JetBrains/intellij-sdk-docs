@@ -25,15 +25,15 @@
   </project-components>
 
   <actions>
-    <action id="EditorBasics.EditorIllustration" class="org.jetbrains.plugins.editor.basics.EditorIllustration" text="Editor Basics"
+    <action id="EditorBasics.EditorIllustration" class="org.jetbrains.tutorials.editor.basics.EditorIllustration" text="Editor Basics"
             description="Illustrates how to plug an action in">
     <add-to-group group-id="EditorPopupMenu" anchor="first"/>
     </action>
-    <action id="EditorBasics.EditorHandlerIllustration" class="org.jetbrains.plugins.editor.basics.EditorHandlerIllustration" text="Editor Handler"
+    <action id="EditorBasics.EditorHandlerIllustration" class="org.jetbrains.tutorials.editor.basics.EditorHandlerIllustration" text="Editor Handler"
             description="Illustrates how to plug an action in">
       <add-to-group group-id="EditorPopupMenu" anchor="first"/>
     </action>
-    <action id="EditorBasics.LogicalPositionIllustration" class="org.jetbrains.plugins.editor.basics.EditorAreaIllustration" text="Caret Position"
+    <action id="EditorBasics.LogicalPositionIllustration" class="org.jetbrains.tutorials.editor.basics.EditorAreaIllustration" text="Caret Position"
             description="Illustrates how editor area is organized">
       <add-to-group group-id="EditorPopupMenu" anchor="first"/>
     </action>

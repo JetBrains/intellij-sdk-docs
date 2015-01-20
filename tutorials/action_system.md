@@ -100,6 +100,9 @@ configuration file like the following code sample shows:
           </action>
       </actions>
 
+After performing the steps described above we need to compile and run the plugin to the the newly created action available as a Tools Menu item.
+!["Register action" quick fix](img/tools_menu_item_action.png)
+
 -----------
 
 #How to make an action available and visible?

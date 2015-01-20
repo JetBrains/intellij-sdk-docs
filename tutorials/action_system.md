@@ -1,21 +1,71 @@
-IntelliJ Action System
+IntelliJ Action System.
 ==========
+This tutorial is meant to give general information about the IntelliJ IDEA Action System and lead you through a series of steps
+which show how to create, register, and customize custom actions and action groups.
 Action system provides an option to handle certain events in a desired way. Action can either be simply a response to some state,
 or be bound to UI element and could be invoked on demand. These UI elements include main menu, context menus and toolbars.
+
+----------------
+
+**TODO - links to source**
+
+#Working with custom actions.
 An action is technically a class, derived from the [AnAction] (https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java) class.
 To update the state of the action, the method AnAction.update() is periodically called by IDEA.
 The object of type [AnActionEvent] (https://github.com/JetBrains/intellij-community/blob/ff16ce78a1e0ddb6e67fd1dbc6e6a597e20d483a/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnActionEvent.java)
 passed to this method carries the information about the current context for the action,
 and in particular, the specific presentation which needs to be updated.
 
-----------------
+##Creating actions.
+To create a new we need to extend
+[AnAction] ()
+class
 
-#How create a new menu item and bind an action to it?
-To register an action as a menu item, an <action> attribute should be added to the <actions> section of the plugin configuration file
-[plugin.xml] (https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/plugin_sample/META-INF/plugin.xml)
+    public class SimpleAction extends AnAction {
+    }
+
+The only method of an inheritor of
+[AnAction] ()
+which needs to be overridden is ```public void actionPerformed(AnActionEvent anActionEvent);```
+, and it should contain a part of code to be executed after the action has been invoked.
+
+    public class SimpleAction extends AnAction {
+        @Override
+        public void actionPerformed(AnActionEvent anActionEvent) {
+        }
+    }
+
+##Registering actions.
+To register a newly created action, <action> attribute should be added to the <actions> section of the plugin configuration file
+[plugin.xml] (). IntelliJ IDEA has an embedded inspection that spots unregistered actions.
+!["Action never used" inspection](img/action_never_used.png)
+
+To register the action and set up it's attributes press ***Alt + Enter*** while the caret is placed on the action's declaration.
+!["Register action" quick fix](img/action_never_used.png)
+
+Fill the "New Action" form to set up action's parameters such as: action's name and description, a UI component the action is bound to,
+visual position of the menu item the action is bound to, and a shortcut for invoking the action.
+In our case the action will be available in the Tools Menu, it will be placed on top, and will have no shortcuts.
+!["Register action" quick fix](img/new_action.png)
+
+After filling the "New Action" form and applying the changes *<actions>* section of our
+[plugin.xml]()
+file will look like this:
 
     <actions>
+      <!-- Add your actions here -->
+        <action id="org.jetbrains.tutorials.actions.SimpleAction" class="org.jetbrains.tutorials.actions.SimpleAction"
+                text="Simple Action" description="IntelliJ Action System Demo">
+            <add-to-group group-id="ToolsMenu" anchor="first"/>
+        </action>
+    </actions>
 
+------------
+
+Under construction
+TODO: rewrite accordingly to the guidelines/review
+
+    <actions>
     <!-- The <action> element defines an action to register.
     The mandatory "id" attribute specifies an unique identifier for the action.
     The mandatory "class" attribute specifies the full-qualified name of the class implementing the action.

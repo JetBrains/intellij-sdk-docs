@@ -32,6 +32,10 @@
 
   <actions>
     <!-- Add your actions here -->
+      <action id="org.jetbrains.tutorials.actions.SimpleAction" class="org.jetbrains.tutorials.actions.SimpleAction"
+              text="Simple Action" description="IntelliJ Action System Demo">
+          <add-to-group group-id="ToolsMenu" anchor="first"/>
+      </action>
   </actions>
 
 </idea-plugin>

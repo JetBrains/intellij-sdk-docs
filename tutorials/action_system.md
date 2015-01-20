@@ -1,6 +1,6 @@
 IntelliJ Action System
 ==========
-Action system provides an option to handle certain events in a desired way. Action can either be simply a responce to some state,
+Action system provides an option to handle certain events in a desired way. Action can either be simply a response to some state,
 or be bound to UI element and could be invoked on demand. These UI elements include main menu, context menus and toolbars.
 An action is technically a class, derived from the [AnAction] (https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java) class.
 To update the state of the action, the method AnAction.update() is periodically called by IDEA.

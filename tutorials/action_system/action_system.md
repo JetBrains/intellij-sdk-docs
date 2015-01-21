@@ -17,6 +17,8 @@ The object of type [AnActionEvent] (https://github.com/JetBrains/intellij-commun
 passed to this method carries the information about the current context for the action,
 and in particular, the specific presentation which needs to be updated.
 
+-------------
+
 ##Creating actions.
 To create a new we need to extend
 [AnAction] (https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java)
@@ -35,6 +37,8 @@ which needs to be overridden is ```public void actionPerformed(AnActionEvent anA
         public void actionPerformed(AnActionEvent anActionEvent) {
         }
     }
+
+-------------
 
 ##Registering actions.
 To register a newly created action, <action> attribute should be added to the <actions> section of the plugin configuration file
@@ -105,6 +109,20 @@ After performing the steps described above we need to compile and run the plugin
 
 -----------
 
+##Performing an action.
+In order to make the action do something we need to implement it's ```public void actionPerformed(AnActionEvent anActionEvent);``` method.
+In the following example action invokes a dialog that shows information about a selected Project View Item and has no icon and any pre-selected default option:
+
+    @Override
+    public void actionPerformed(AnActionEvent anActionEvent) {
+        Object navigatable = anActionEvent.getData(CommonDataKeys.NAVIGATABLE);
+        if (navigatable != null) {
+            Messages.showDialog(navigatable.toString(), "Selected Element:", new String[]{"OK"}, -1, null);
+        }
+    }
+
+-----------
+
 ##Setting up action's visibility and availability.
 
 To manipulate with action's visibility and availability we need to override it's ```public void update(@NotNull AnActionEvent e);```
@@ -116,6 +134,7 @@ state and(or) presentation depending on the context.
     public class SimpleAction extends AnAction {
         @Override
         public void actionPerformed(AnActionEvent anActionEvent) {
+        //...
         }
 
         @Override
@@ -129,7 +148,7 @@ there's a project available and there's an item you can navigate to selected in 
     public class SimpleAction extends AnAction {
         @Override
         public void actionPerformed(AnActionEvent anActionEvent) {
-
+        //...
         }
 
          @Override
@@ -151,20 +170,9 @@ If you cannot understand the state of the action fast you should do it in the
 [AnActionEvent] (https://github.com/JetBrains/intellij-community/blob/ff16ce78a1e0ddb6e67fd1dbc6e6a597e20d483a/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnActionEvent.java)
 method and notify the user that action cannot be executed if it's the case.
 
-##Performing an action.
-In order to make the action do something we need to implement it's ```public void actionPerformed(AnActionEvent anActionEvent);``` method.
-In the following example action invokes a dialog that shows information about a selected Project View Item and has no icon and any pre-selected default option:
-
-    @Override
-    public void actionPerformed(AnActionEvent anActionEvent) {
-        Object navigatable = anActionEvent.getData(CommonDataKeys.NAVIGATABLE);
-        if (navigatable != null) {
-            Messages.showDialog(navigatable.toString(), "Selected Element:", new String[]{"OK"}, -1, null);
-        }
-    }
+-------------
 
 After compiling and running the plugin project and invoking the action, the dialog will pop up:
-
 !["Register action" quick fix](img/action_performed.png)
 
 -------------

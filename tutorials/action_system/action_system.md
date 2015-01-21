@@ -28,7 +28,7 @@ class:
 The only method of an inheritor of
 [AnAction] (https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java)
 which needs to be overridden is ```public void actionPerformed(AnActionEvent anActionEvent);```
-, and it should contain a part of code to be executed after the action has been invoked.
+, and it should contain a part of code to be executed after the action has been invoked. In this case the action does nothing.
 
     public class SimpleAction extends AnAction {
         @Override
@@ -151,7 +151,23 @@ If you cannot understand the state of the action fast you should do it in the
 [AnActionEvent] (https://github.com/JetBrains/intellij-community/blob/ff16ce78a1e0ddb6e67fd1dbc6e6a597e20d483a/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnActionEvent.java)
 method and notify the user that action cannot be executed if it's the case.
 
-  -------------
+##Performing an action.
+In order to make the action do something we need to implement it's ```public void actionPerformed(AnActionEvent anActionEvent);``` method.
+In the following example action invokes a dialog that shows information about a selected Project View Item and has no icon and any pre-selected default option:
+
+    @Override
+    public void actionPerformed(AnActionEvent anActionEvent) {
+        Object navigatable = anActionEvent.getData(CommonDataKeys.NAVIGATABLE);
+        if (navigatable != null) {
+            Messages.showDialog(navigatable.toString(), "Selected Element:", new String[]{"OK"}, -1, null);
+        }
+    }
+
+After compiling and running the plugin project and invoking the action, the dialog will pop up:
+
+!["Register action" quick fix](img/action_performed.png)
+
+-------------
 
 #How to create a custom group of actions?
 

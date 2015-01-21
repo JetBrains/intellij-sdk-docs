@@ -105,45 +105,53 @@ After performing the steps described above we need to compile and run the plugin
 
 -----------
 
-#How to make an action available and visible?
+##Setting up action's visibility and availability.
 
-You need to override
-
-    AnAction.update
+To manipulate with action's visibility and availability we need to override it's ```public void update(@NotNull AnActionEvent e);```
 
 Default implementation of this method does nothing.
 Override this method to provide the ability to dynamically change action's
-state and(or) presentation depending on the context (For example
-when your action state depends on the selection you can check for
-selection and change the state accordingly).
-This method can be called frequently, for instance, if an action is added to a toolbar, it will be updated twice a second.
-This means that this method is supposed to work really fast,
-no real work should be done at this phase.
-For example, checking selection in a tree or a list,
-is considered valid, but working with a file system is not.
-If you cannot understand the state of
-the action fast you should do it in the [AnActionEvent] (https://github.com/JetBrains/intellij-community/blob/ff16ce78a1e0ddb6e67fd1dbc6e6a597e20d483a/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnActionEvent.java)
-method and notify
-the user that action cannot be executed if it's the case.
-Parameter e carries information on the invocation place and data available
+state and(or) presentation depending on the context.
 
     public class SimpleAction extends AnAction {
         @Override
-        public void actionPerformed(@NotNull AnActionEvent anActionEvent) {
+        public void actionPerformed(AnActionEvent anActionEvent) {
         }
 
         @Override
-        public void update(@NotNull AnActionEvent e) {
-            //Make action visible and available only when project is defined
-            final Project project = e.getProject();
-            boolean isAvailable = project != null;
-            e.getPresentation().setVisible(isAvailable);
-            e.getPresentation().setEnabled(isAvailable);
+        public void update(AnActionEvent anActionEvent) {
         }
     }
-[Link to source code] (https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/plugin_sample/src/org/jetbrains/plugins/sample/SimpleAction.java)
 
--------------
+The following code sample illustrates how to make the action visible and available only when the following conditions are met:
+there's a project available and there's an item you can navigate to selected in the project view pane:
+
+    public class SimpleAction extends AnAction {
+        @Override
+        public void actionPerformed(AnActionEvent anActionEvent) {
+
+        }
+
+         @Override
+         public void update(AnActionEvent anActionEvent) {
+             final Project project = anActionEvent.getData(CommonDataKeys.PROJECT);
+             if (project == null)
+                 return;
+             Object navigatable = anActionEvent.getData(CommonDataKeys.NAVIGATABLE);
+             anActionEvent.getPresentation().setEnabledAndVisible(navigatable != null);
+         }
+    }
+
+Parameter anActionEvent carries information on the invocation place and data available.
+
+**Note** This method can be called frequently, for instance, if an action is added to a toolbar, it will be updated twice a second.
+This means that this method is supposed to work really fast, no real work should be done at this phase.
+For example, checking selection in a tree or a list, is considered valid, but working with a file system is not.
+If you cannot understand the state of the action fast you should do it in the
+[AnActionEvent] (https://github.com/JetBrains/intellij-community/blob/ff16ce78a1e0ddb6e67fd1dbc6e6a597e20d483a/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnActionEvent.java)
+method and notify the user that action cannot be executed if it's the case.
+
+  -------------
 
 #How to create a custom group of actions?
 

@@ -177,7 +177,6 @@ After compiling and running the plugin project and invoking the action, the dial
 
 -------------
 
-**Under construction**
 #Groupping actions.
 
 If some part of the functionality requires to implement several actions or actions are simply too many and overload the menu they can be joined into groups.
@@ -200,9 +199,29 @@ class.
 IntelliJ IDEA has embedded inspection an quick fix for registering groups of actions.
 After the group has been created it's declaration should be highlighted. Place caret on group's class name declaration and press
 ***Alt + Enter***
-to register it.
+to register it:
 
 ![Register action group](img/register_group.png)
+
+In this sample our custom action group will be available in the editor popup menu:
+
+![Register action group](img/editor_popup_menu.png)
+
+After filling the "New Action" form and applying the changes *<actions>* section of the
+[plugin.xml]()
+file will look like this:
+
+    <actions>
+        <group id="org.jetbrains.tutorials.actions.SimpleGroup" class="org.jetbrains.tutorials.actions.SimpleGroup"
+               text="Simple Action Group" description="Action Group Demo">
+            <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+        </group>
+    </actions>
+
+
+-------------
+
+**Under construction**
 
 placing <group> attribute into
 [plugin.xml] (https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/plugin_sample/META-INF/plugin.xml)

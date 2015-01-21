@@ -178,11 +178,33 @@ After compiling and running the plugin project and invoking the action, the dial
 -------------
 
 **Under construction**
-#How to create a custom group of actions?
+#Groupping actions.
 
-If some part of the functionality requires to implement several actions or actions are simply too many and overload the menu
-they can be joined into groups. In this case the group will be available as a top-level menu item, action will be represented as drop-down menu items.
-Grouping can be done by placing <group> attribute into
+If some part of the functionality requires to implement several actions or actions are simply too many and overload the menu they can be joined into groups.
+In this case the group will be available as a top-level menu item, action will be represented as drop-down menu items.
+
+##Creating custom action groups.
+Grouping can be done by extending
+[ActionGroup.java]()
+class.
+
+    public class SimpleGroup extends ActionGroup {
+        @NotNull
+        @Override
+        public AnAction[] getChildren(AnActionEvent anActionEvent) {
+            return new AnAction[0];
+        }
+    }
+
+##Registering action groups.
+IntelliJ IDEA has embedded inspection an quick fix for registering groups of actions.
+After the group has been created it's declaration should be highlighted. Place caret on group's class name declaration and press
+***Alt + Enter***
+to register it.
+
+![Register action group](img/register_group.png)
+
+placing <group> attribute into
 [plugin.xml] (https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/plugin_sample/META-INF/plugin.xml)
 file. In most of the cases you simply need to leave "class" attribute of the <group> undefined; in this case an instance of
 [DefaultActionGroup] (https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/actionSystem/DefaultActionGroup.java)

@@ -232,7 +232,82 @@ And then the actions needs to be registered in the newly created group:
 
 After performing the steps described above the action group nad it's content will be available in the editor popup menu:
 
-![Custom Action Group](img/grouped_action.png)
+![Simple Action Group](img/grouped_action.png)
+
+##Working with DefaultActionGroup.
+In some cases we need to implement some specific behaviour of a group of actions dependently on the context.
+The steps below are meant to show how to make a group of actions available and visible if a certain condition is met and how to set up a group icon dynamically.
+In our case the condition is: an instance of the editor is available.
+
+###Extending DefaultActionGroup.
+[DefaultActionGroup.java]()
+is a default implementations of
+[ActionGroup.java]
+and used to add children actions and separators between them to a group.
+This class is used if a set of actions belonging to the group is fixed, which is the majority of all the cases.
+
+Firstly, [DefaultActionGroup.java] should be derived:
+
+    public class CustomDefaultActionGroup extends DefaultActionGroup {
+        @Override
+        public void update(AnActionEvent event) {
+        }
+    }
+
+###Registering action group.
+As in case with the simple action group, the inheritor of
+[DefaultActionGroup.java]()
+should be declared in
+[plugin.xml]()
+file:
+
+    <actions>
+        <group id="CustomDefaultActionGroup" class="org.jetbrains.tutorials.actions.CustomDefaultActionGroup" popup="true"
+               text="DefaultActionGroup Inheritor" description="Default Action Group Demo">
+            <add-to-group group-id="ToolsMenu" anchor="last"/>
+      </group>
+    </actions>
+
+###Creating an action.
+[AnAction.java]()
+needs to be extended:
+    public class CustomGroupedAction extends AnAction {
+        @Override
+        public void actionPerformed(AnActionEvent anActionEvent) {
+            //Does nothing
+        }
+    }
+
+###Adding actions to the group.
+Action's class should be registered in
+[plugin.xml]()
+:
+
+     <group id="CustomDefaultActionGroup" class="org.jetbrains.tutorials.actions.CustomDefaultActionGroup" popup="true"
+                 text="DefaultActionGroup Inheritor" description="Default Action Group Demo">
+              <add-to-group group-id="ToolsMenu" anchor="last"/>
+              <action class="org.jetbrains.tutorials.actions.CustomGroupedAction" id="CustomGroupedAction"
+                      text="Custom Grouped Action" description="Custom Grouped Action Demo"/>
+          </group>
+     </actions>
+
+###Providing specific behaviour for the group.
+In this case we override ```public void update(AnActionEvent event);``` method to make the group visible as a *Tools* menu item,
+however, it will be enabled only if there's an instance of the editor available. Also a custom icon is set up:
+
+    public class CustomDefaultActionGroup extends DefaultActionGroup {
+        @Override
+        public void update(AnActionEvent event) {
+            Editor editor = event.getData(CommonDataKeys.EDITOR);
+            event.getPresentation().setVisible(true);
+            event.getPresentation().setEnabled(editor != null);
+            event.getPresentation().setIcon(AllIcons.General.Error);
+        }
+    }
+
+After compiling and running the code sample above, *Tools* menu item should contain an extra group of action with a user-defined icon:
+
+![Default Action Group](img/default_action_group.png)
 
 -------------
 

@@ -63,9 +63,11 @@
           the current action is inserted. -->
           <add-to-group group-id="ToolsMenu" anchor="first"/>
       </action>
-      <group id="org.jetbrains.tutorials.actions.SimpleGroup" class="org.jetbrains.tutorials.actions.SimpleGroup"
-             text="Simple Action Group" description="Action Group Demo">
-          <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+      <group id="SimpleGroup" text="Custom Action Group" popup="true">
+      <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+          <action class="org.jetbrains.tutorials.actions.GroupedAction" id="org.jetbrains.tutorials.actions.GroupedAction"
+                  text="Grouped Action" description="Grouped Action Demo">
+          </action>
       </group>
   </actions>
 </idea-plugin>

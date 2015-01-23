@@ -8,12 +8,12 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
  */
 public class GroupedAction extends AnAction {
     @Override
-    public void update(AnActionEvent e) {
-        e.getPresentation().setEnabledAndVisible(true);
+    public void update(AnActionEvent event) {
+        event.getPresentation().setEnabledAndVisible(true);
     }
 
     @Override
-    public void actionPerformed(AnActionEvent anActionEvent) {
-
+    public void actionPerformed(AnActionEvent event) {
+        //Does nothing
     }
 }

@@ -173,6 +173,7 @@ method and notify the user that action cannot be executed if it's the case.
 -------------
 
 After compiling and running the plugin project and invoking the action, the dialog will pop up:
+
 !["Register action" quick fix](img/action_performed.png)
 
 -------------

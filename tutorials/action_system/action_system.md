@@ -183,7 +183,7 @@ After compiling and running the plugin project and invoking the action, the dial
 If some part of the functionality requires to implement several actions or actions are simply too many and overload the menu they can be joined into groups.
 In this case the group will be available as a top-level menu item, action will be represented as drop-down menu items.
 
-##Creating custom action groups.
+##Creating simple action groups.
 Grouping can be done by extending adding *<group>* attribute to *<actions>*
 [plugin.xml]()
 file.

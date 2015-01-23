@@ -183,41 +183,55 @@ If some part of the functionality requires to implement several actions or actio
 In this case the group will be available as a top-level menu item, action will be represented as drop-down menu items.
 
 ##Creating custom action groups.
-Grouping can be done by extending
-[ActionGroup.java]()
-class.
-
-    public class SimpleGroup extends ActionGroup {
-        @NotNull
-        @Override
-        public AnAction[] getChildren(AnActionEvent anActionEvent) {
-            return new AnAction[0];
-        }
-    }
-
-##Registering action groups.
-IntelliJ IDEA has embedded inspection an quick fix for registering groups of actions.
-After the group has been created it's declaration should be highlighted. Place caret on group's class name declaration and press
-***Alt + Enter***
-to register it:
-
-![Register action group](img/register_group.png)
-
-In this sample our custom action group will be available in the editor popup menu:
-
-![Register action group](img/editor_popup_menu.png)
-
-After filling the "New Action" form and applying the changes *<actions>* section of the
+Grouping can be done by extending adding *<group>* attribute to *<actions>*
 [plugin.xml]()
-file will look like this:
+file.
 
     <actions>
-        <group id="org.jetbrains.tutorials.actions.SimpleGroup" class="org.jetbrains.tutorials.actions.SimpleGroup"
-               text="Simple Action Group" description="Action Group Demo">
-            <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+        <group id="SimpleGroup" text="Custom Action Group" popup="true">
         </group>
     </actions>
 
+##Binding action groups to UI component.
+The following sample shows how to place a custom action group on top of the editor popup menu:
+
+    <actions>
+        <group id="SimpleGroup" text="Custom Action Group" popup="true">
+              <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+        </group>
+    </actions>
+
+##Adding actions to the group.
+To create an action we need to extend
+[AnAction.java]()
+class:
+
+    public class GroupedAction extends AnAction {
+        @Override
+        public void update(AnActionEvent event) {
+            event.getPresentation().setEnabledAndVisible(true);
+        }
+
+        @Override
+        public void actionPerformed(AnActionEvent event) {
+            //Does nothing
+        }
+    }
+
+And then the actions needs to be registered in the newly created group:
+
+    <action>
+        <group id="SimpleGroup" text="Custom Action Group" popup="true">
+           <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+              <action class="org.jetbrains.tutorials.actions.GroupedAction" id="org.jetbrains.tutorials.actions.GroupedAction"
+                      text="Grouped Action" description="Grouped Action Demo">
+              </action>
+        </group>
+    </actions>
+
+After performing the steps described above the action group nad it's content will be available in the editor popup menu:
+
+![Custom Action Group](img/grouped_action.png)
 
 -------------
 
@@ -246,27 +260,6 @@ method should return an array of
 [actions] (https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/plugin_sample/src/org/jetbrains/plugins/sample/GroupedAction.java)
 belonging to this group.
 
-    <!-- The <group> element defines an action group. <action>, <group> and <separator> elements defined within it are automatically included in the group.
-    The mandatory "id" attribute specifies an unique identifier for the action.
-    The optional "class" attribute specifies the full-qualified name of the class implementing the group. If not specified,
-    com.intellij.openapi.actionSystem.DefaultActionGroup is used.
-    The optional "text" attribute specifies the text of the group (text for the menu item showing the submenu).
-    The optional "description" attribute specifies the text which is displayed in the status bar when the group is focused.
-    The optional "icon" attribute specifies the icon which is displayed on the toolbar button or next to the group.
-    The optional "popup" attribute specifies how the group is presented in the menu. If a group has popup="true", actions in it
-    are placed in a submenu; for popup="false", actions are displayed as a section of the same menu delimited by separators. -->
-    <group class="DummyActionGroup" id="DummyActionGroup" text="Action Group"
-           description="Illustration of an action group"
-           icon="icons/testgroup.png" popup="true">
-        <action id="PluginSample.GroupedAction" class="GroupedAction"
-                text="Grouped Action" description="An action in the group"/>
-        <!-- The <separator> element defines a separator between actions. It can also have an <add-to-group> child element. -->
-        <separator/>
-        <group id="ActionSubGroup"/>
-        <!-- The <reference> element allows to add an existing action to the group. The mandatory "ref" attribute specifies the ID of the action to add. -->
-        <reference ref="EditorCopy"/>
-        <add-to-group group-id="MainMenu" relative-to-action="HelpMenu" anchor="before"/>
-    </group>
 
 --------------
 

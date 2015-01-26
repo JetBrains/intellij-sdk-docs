@@ -309,55 +309,8 @@ After compiling and running the code sample above, *Tools* menu item should cont
 
 ![Default Action Group](img/default_action_group.png)
 
--------------
+#Action groups with variable actions set
+If a set of actions belonging to a custom actions group ot they properties may vary dependently on the context,
+we need to extend
+[ActionGroup.java]().
 
-**Under construction**
-
-placing <group> attribute into
-[plugin.xml] (https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/plugin_sample/META-INF/plugin.xml)
-file. In most of the cases you simply need to leave "class" attribute of the <group> undefined; in this case an instance of
-[DefaultActionGroup] (https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/actionSystem/DefaultActionGroup.java)
-will be created and filled with actions defined within it.
-
-    <group id="DummyDefaultActionGroup" text="Default action group">
-        <action class="GroupedToDefaultAction" id="PluginSample.GroupedToDefaultAction"/>
-    </group>
-See
-[GroupedToDefaultAction.java] (https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/plugin_sample/src/org/jetbrains/plugins/sample/actions/GroupedToDefaultAction.java)
-
-If set of actions, which need to be put into a group, is defined dynamically depending on the context,
-a custom action group can be created by setting *class* attribute. The class itself, like
-[DummyActionGroup] (https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/plugin_sample/src/org/jetbrains/plugins/sample/DummyActionGroup.java)
-in this example, should be derived from
-[ActionGroup] (https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/ActionGroup.java)
-and its
-[getChildren()](https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/plugin_sample/src/org/jetbrains/plugins/sample/DummyActionGroup.java)
-method should return an array of
-[actions] (https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/plugin_sample/src/org/jetbrains/plugins/sample/GroupedAction.java)
-belonging to this group.
-
-
---------------
-
-#AnActionEvent
-[AnActionEvent.java] (https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnActionEvent.java)
-contains the information necessary to execute or update an
-[action] (https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java),
-such as
-[DataContext] (https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/DataContext.java),
-[Project] (https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/openapi/project/Project.java),
-and other instances related to the action execution environment.
-
--------------
-
-#DataContext
-Class
-[DataContext.java] (https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/DataContext.java)
-allows an action to retrieve information about the context in which it was invoked.
-It's only method
-
-```@Nullable Object getData(@NonNls String dataId);```
-
-returns an object corresponding to the specified data identifier. Some of the supported
-data identifiers are defined in class
-[PlatformDataKeys.java] (https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/actionSystem/PlatformDataKeys.java)

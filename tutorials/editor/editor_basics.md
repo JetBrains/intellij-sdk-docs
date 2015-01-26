@@ -322,29 +322,88 @@ IntelliJ IDEA SDK provides a set of embedded mechanisms for handling events rela
 ##Working with EditorActionHandler.
 Class
 [EditorActionHandler.java] (https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/editor/actionSystem/EditorActionHandler.java)
-stays for actions activated by keystrokes in the editor. Series of steps below shows how t
+stays for actions activated by keystrokes in the editor.
+Series of steps below show how access *EditorActionManager* and pass it actions to be executed.
+In this example we will use *EditorActionHandler* to insert one extra caret above the current caret if available
 
-###Prerequirements
+###Prerequirements.
+Create an action:
 
+    public class EditorHandlerIllustration extends AnAction {
+        @Override
+        public void actionPerformed(@NotNull AnActionEvent anActionEvent) {
+        }
+        @Override
+        public void update(@NotNull final AnActionEvent anActionEvent) {
+        }
+    }
 
-This type of the editor handler should be registered as an extension point, e.g.
-```<editorActionHandler action="EditorSelectWord" implementationClass="com.intellij.codeInsight.editorActions.SelectWordHandler"/>```.
+Register action in
+[plugin.xml]():
 
+    <actions>
+        <action id="EditorBasics.EditorHandlerIllustration" class="org.jetbrains.tutorials.editor.basics.EditorHandlerIllustration" text="Editor Handler"
+                description="Illustrates how to plug an action in">
+          <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+        </action>
+    </action>
 
-Two types of handlers are supported: the ones which are executed once, and the ones which are executed for each caret.
-Examples of already implemented handlers can be found in
-[editorActions package] (https://github.com/JetBrains/intellij-community/tree/master/platform/lang-impl/src/com/intellij/codeInsight/editorActions),
-e.g. the class
-[CopyHandler.java] (https://github.com/JetBrains/intellij-community/blob/master/platform/lang-impl/src/com/intellij/codeInsight/editorActions/CopyHandler.java).
-To implement the logic you need to override ```implement()``` action.
-And used like shows the following example:
-[EditorHandlerIllustration.java] (https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/editor_basics/src/org/jetbrains/plugins/editor/basics/EditorHandlerIllustration.java)
+###Setting visibility.
+Our action should be visible only in case if the following conditions are met:
+there's a project open, there's an editor available, and there's at least one caret active in the editor:
 
+    public class EditorHandlerIllustration extends AnAction {
+        @Override
+        public void actionPerformed(@NotNull AnActionEvent anActionEvent) {
+        }
+        @Override
+        public void update(@NotNull final AnActionEvent anActionEvent) {
+            final Project project = anActionEvent.getData(CommonDataKeys.PROJECT);
+            final Editor editor = anActionEvent.getData(CommonDataKeys.EDITOR);
+            anActionEvent.getPresentation().setVisible((project != null && editor != null && !editor.getCaretModel().getAllCarets().isEmpty()));
+        }
+    }
 
+###Obtaining *EditorActionHandler*
 
-Classes that provide support for handling events from the editor and react on then are located in
-[editor.actionSystem] (https://github.com/JetBrains/intellij-community/tree/master/platform/platform-api/src/com/intellij/openapi/editor/actionSystem)
-package.
+To manipulate with standard Editor's actions first we need to obtain
+an instance of
+[EditorActionHandler]() for the action we'd like to work with. Ih this case it will be an instance of
+[CloneCaretActionHandler]().
+
+    public class EditorHandlerIllustration extends AnAction {
+        @Override
+        public void actionPerformed(@NotNull AnActionEvent anActionEvent) {
+            final Editor editor = anActionEvent.getRequiredData(CommonDataKeys.EDITOR);
+            EditorActionManager actionManager = EditorActionManager.getInstance();
+            EditorActionHandler actionHandler = actionManager.getActionHandler(IdeActions.ACTION_EDITOR_CLONE_CARET_BELOW);
+        }
+
+        @Override
+        public void update(@NotNull final AnActionEvent anActionEvent) {
+        //...
+        }
+    }
+
+###Making *EditorActionHandler* execute actions
+To execute an action we need to call the ```public final void execute(@NotNull Editor editor, @Nullable final Caret contextCaret, final DataContext dataContext);```
+method of a corresponding *EditorActionHandler*
+
+    public class EditorHandlerIllustration extends AnAction {
+        @Override
+        public void actionPerformed(@NotNull AnActionEvent anActionEvent) {
+            final Editor editor = anActionEvent.getRequiredData(CommonDataKeys.EDITOR);
+            EditorActionManager actionManager = EditorActionManager.getInstance();
+            EditorActionHandler actionHandler = actionManager.getActionHandler(IdeActions.ACTION_EDITOR_CLONE_CARET_BELOW);
+            actionHandler.execute(editor, editor.getCaretModel().getCurrentCaret(), anActionEvent.getDataContext());
+        }
+        @Override
+        public void update(@NotNull final AnActionEvent anActionEvent) {
+        //
+        }
+    }
+
+After compiling and running the following code sample, one extra caret will be placed in the editor below the current active caret.
 
 -----------
 

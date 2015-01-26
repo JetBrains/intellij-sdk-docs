@@ -12,7 +12,7 @@ and how to handle events sent to the Editor.
 The following set of steps will show how to access a text selection and change it.
 
 ##Prerequirements.
-**TODO - extract to "add action" part**
+
 ###Creating a new action.
 In this example access to the Editor is made through an action as a plug-in point.
 To create an action we need derive
@@ -198,7 +198,6 @@ Working with caret positions and it's logical and visual properties will be expl
 
 ##Prerequirements.
 Access to the Editor is performed through an action.
-**TODO - extract to "add action" part**
 
 ##Accessing caret positions.
 To get an access to caret positions an instance of CaretModel should be obtained.

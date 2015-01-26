@@ -319,12 +319,65 @@ Perform the action to see caret positions:
 #Actions activated by editor events.
 IntelliJ IDEA SDK provides a set of embedded mechanisms for handling events related to the Editor.
 
+##Handling keystrokes in the Editor.
+To handle keystrokes and provide custom reactions interface
+[TypedActionHandler]()
+may be used.
+Series of steps below shows how to change standard behaviour of the editor and make it react on typing differently instead of simply displaying a typed character in the editor area.
+
+###Implementing *TypedActionHandler*.
+First we need to implement an instance of
+[TypedActionHandler]():
+
+    public class MyTypedHandler implements TypedActionHandler {
+        @Override
+        public void execute(@NotNull Editor editor, char c, @NotNull DataContext dataContext) {
+        }
+    }
+
+###Implementing logic for handling keystrokes.
+```public void execute(@NotNull Editor editor, char c, @NotNull DataContext dataContext);```
+method should contain the main logical part for handling keystrokes. It will be called every time a key is pressed.
+In the following example our typed handler is meant insert a string at the zero offset in the editor after a keystroke occurs:
+
+    public class MyTypedHandler implements TypedActionHandler {
+        @Override
+        public void execute(@NotNull Editor editor, char c, @NotNull DataContext dataContext) {
+            final Document document = editor.getDocument();
+            Project project = editor.getProject();
+            Runnable runnable = new Runnable() {
+                @Override
+                public void run() {
+                    document.insertString(0, "Typed\n");
+                }
+            };
+            WriteCommandAction.runWriteCommandAction(project, runnable);
+        }
+    }
+
+###Setting up *TypedActionHandler*.
+
+To enable a custom implementation of *TypedActionHandler* in the plugin we need to create a new instance of it and pass to
+```public TypedActionHandler setupHandler(TypedActionHandler handler);``` method of the
+[TypedAction]()
+class. By doing it we replace the typing handler with the specified handler.
+
+    public class EditorIllustration extends AnAction {
+        static {
+            final EditorActionManager actionManager = EditorActionManager.getInstance();
+            final TypedAction typedAction = actionManager.getTypedAction();
+            typedAction.setupHandler(new MyTypedHandler());
+        }
+    }
+
+After compiling and running the code snippet above typing in the editor will be handled with inserting an extra string at the 0 position.
+
 ##Working with EditorActionHandler.
 Class
 [EditorActionHandler.java] (https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/editor/actionSystem/EditorActionHandler.java)
 stays for actions activated by keystrokes in the editor.
 Series of steps below show how access *EditorActionManager* and pass it actions to be executed.
-In this example we will use *EditorActionHandler* to insert one extra caret above the current caret if available
+In this example we will use *EditorActionHandler* to insert one extra caret above the current caret if available.
 
 ###Prerequirements.
 Create an action:
@@ -364,7 +417,7 @@ there's a project open, there's an editor available, and there's at least one ca
         }
     }
 
-###Obtaining *EditorActionHandler*
+###Obtaining *EditorActionHandler*.
 
 To manipulate with standard Editor's actions first we need to obtain
 an instance of
@@ -385,7 +438,7 @@ an instance of
         }
     }
 
-###Making *EditorActionHandler* execute actions
+###Making *EditorActionHandler* execute actions.
 To execute an action we need to call the ```public final void execute(@NotNull Editor editor, @Nullable final Caret contextCaret, final DataContext dataContext);```
 method of a corresponding *EditorActionHandler*
 

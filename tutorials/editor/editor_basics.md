@@ -91,7 +91,8 @@ object is available ```final Editor editor = actionEvent.getData(CommonDataKeys.
 
 ##Obtaining a caret model and selection
 After making sure we have a project open and an instance of the Editor we need to check if any selection is available and set action's visibility accordingly to these conditions.
-[SelectionModel] () got from the Editor allows to do it by calling it's ```hasSelection()``` method.
+[SelectionModel] (https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/editor/SelectionModel.java)
+got from the Editor allows to do it by calling it's ```hasSelection()``` method.
 Here's how our ```update(final AnActionEvent e)``` method should look like at the end:
 
 ```java
@@ -341,13 +342,13 @@ IntelliJ IDEA SDK provides a set of embedded mechanisms for handling events rela
 
 ##Handling keystrokes in the Editor
 To handle keystrokes and provide custom reactions interface
-[TypedActionHandler]()
+[TypedActionHandler](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/editor/actionSystem/TypedActionHandler.java)
 may be used.
 Series of steps below shows how to change standard behaviour of the editor and make it react on typing differently instead of simply displaying a typed character in the editor area.
 
 ###Implementing *TypedActionHandler*
 First we need to implement an instance of
-[TypedActionHandler]():
+[TypedActionHandler](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/editor/actionSystem/TypedActionHandler.java):
 
 ```java
 public class MyTypedHandler implements TypedActionHandler {
@@ -383,7 +384,7 @@ public class MyTypedHandler implements TypedActionHandler {
 
 To enable a custom implementation of *TypedActionHandler* in the plugin we need to create a new instance of it and pass to
 ```public TypedActionHandler setupHandler(TypedActionHandler handler);``` method of the
-[TypedAction]()
+[TypedAction](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/editor/actionSystem/TypedAction.java)
 class. By doing it we replace the typing handler with the specified handler.
 
 ```java
@@ -420,7 +421,7 @@ public class EditorHandlerIllustration extends AnAction {
 ```
 
 Register action in
-[plugin.xml]():
+[plugin.xml] (https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/editor_basics/resources/META-INF/plugin.xml):
 
 ```xml
 <actions>
@@ -453,8 +454,9 @@ public class EditorHandlerIllustration extends AnAction {
 
 To manipulate with standard Editor's actions first we need to obtain
 an instance of
-[EditorActionHandler]() for the action we'd like to work with. Ih this case it will be an instance of
-[CloneCaretActionHandler]().
+[EditorActionHandler](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/editor/actionSystem/EditorActionHandler.java)
+for the action we'd like to work with. Ih this case it will be an instance of
+[CloneCaretActionHandler](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-impl/src/com/intellij/openapi/editor/actions/CloneCaretActionHandler.java).
 
 ```java
 public class EditorHandlerIllustration extends AnAction {

@@ -6,6 +6,9 @@ Action system provides an option to handle certain events in a desired way. Acti
 or be bound to UI element and could be invoked on demand. These UI elements include main menu, context menus and toolbars.
 
 ----------------
+[Source code](https://github.com/JetBrains/intellij-sdk/tree/master/code_samples/register_actions)
+
+----------------
 
 #Working with custom actions.
 An action is technically a class, derived from the
@@ -421,6 +424,11 @@ After providing an implementation of
 and making it return a non-empty array of action Tools Menu should contain an extra group of action:
 
 ![Dynamic Action Group](img/dynamic_action_group.png)
+
+----------------
+[Source code](https://github.com/JetBrains/intellij-sdk/tree/master/code_samples/register_actions)
+
+----------------
 
 
 

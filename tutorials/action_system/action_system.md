@@ -24,19 +24,23 @@ To create a new we need to extend
 [AnAction] (https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java)
 class:
 
-    public class SimpleAction extends AnAction {
-    }
+```java
+public class SimpleAction extends AnAction {
+}
+```
 
 The only method of an inheritor of
 [AnAction] (https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java)
 which needs to be overridden is ```public void actionPerformed(AnActionEvent anActionEvent);```
 , and it should contain a part of code to be executed after the action has been invoked. In this case the action does nothing.
 
-    public class SimpleAction extends AnAction {
-        @Override
-        public void actionPerformed(AnActionEvent anActionEvent) {
-        }
+```java
+public class SimpleAction extends AnAction {
+    @Override
+    public void actionPerformed(AnActionEvent anActionEvent) {
     }
+}
+```
 
 -------------
 
@@ -57,52 +61,56 @@ After filling the "New Action" form and applying the changes *<actions>* section
 [plugin.xml]()
 file will look like this:
 
-    <actions>
-      <!-- Add your actions here -->
-        <action id="org.jetbrains.tutorials.actions.SimpleAction" class="org.jetbrains.tutorials.actions.SimpleAction"
-                text="Simple Action" description="IntelliJ Action System Demo">
-            <add-to-group group-id="ToolsMenu" anchor="first"/>
-        </action>
-    </actions>
+```xml
+<actions>
+  <!-- Add your actions here -->
+    <action id="org.jetbrains.tutorials.actions.SimpleAction" class="org.jetbrains.tutorials.actions.SimpleAction"
+            text="Simple Action" description="IntelliJ Action System Demo">
+        <add-to-group group-id="ToolsMenu" anchor="first"/>
+    </action>
+</actions>
+```
 
 Full list of action's attributes can also be set manually in
 [plugin.xml]()
 configuration file like the following code sample shows:
 
-      <actions>
-        <!-- Add your actions here -->
-        <!-- The <action> element defines an action to register.
-        The mandatory "id" attribute specifies an unique identifier for the action.
-        The mandatory "class" attribute specifies the full-qualified name of the class implementing the action.
-        The mandatory "text" attribute specifies the text of the action (tooltip for toolbar button or text for menu item).
-        The optional "use-shortcut-of" attribute specifies the ID of the action whose keyboard shortcut this action will use.
-        The optional "description" attribute specifies the text which is displayed in the status bar when the action is focused.
-        The optional "icon" attribute specifies the icon which is displayed on the toolbar button or next to the menu item. -->
-          <action id="org.jetbrains.tutorials.actions.SimpleAction" class="org.jetbrains.tutorials.actions.SimpleAction"
-                  text="Simple Action" description="IntelliJ Action System Demo">
-              <!-- The <keyboard-shortcut> node specifies the keyboard shortcut for the action. An action can have several keyboard shortcuts.
-              The mandatory "first-keystroke" attribute specifies the first keystroke of the action. The key strokes are specified according to the regular Swing rules.
-              The optional "second-keystroke" attribute specifies the second keystroke of the action.
-              The mandatory "keymap" attribute specifies the keymap for which the action is active. IDs of the standard keymaps are defined as
-              constants in the com.intellij.openapi.keymap.KeymapManager class. -->
-              <keyboard-shortcut first-keystroke="control alt A" second-keystroke="C" keymap="$default"/>
-              <!-- The <mouse-shortcut> node specifies the mouse shortcut for the action. An action can have several mouse shortcuts.
-              The mandatory "keystroke" attribute specifies the clicks and modifiers for the action. It is defined as a sequence of words separated by spaces:
-              "button1", "button2", "button3" for the mouse buttons; "shift", "control", "meta", "alt", "altGraph" for the modifier keys;
-              "doubleClick" if the action is activated by a double-click of the button.
-              The mandatory "keymap" attribute specifies the keymap for which the action is active. IDs of the standard keymaps are defined as
-              constants in the com.intellij.openapi.keymap.KeymapManager class. -->
-              <mouse-shortcut keystroke="control button3 doubleClick" keymap="$default"/>
-              <!-- The <add-to-group> node specifies that the action should be added to an existing group. An action can be added to several groups.
-              The mandatory "group-id" attribute specifies the ID of the group to which the action is added.
-              The group must be implemented by an instance of the DefaultActionGroup class.
-              The mandatory "anchor" attribute specifies the position of the action in the group relative to other actions. It can have the values
-              "first", "last", "before" and "after".
-              The "relative-to-action" attribute is mandatory if the anchor is set to "before" and "after", and specifies the action before or after which
-              the current action is inserted. -->
-              <add-to-group group-id="ToolsMenu" anchor="first"/>
-          </action>
-      </actions>
+```xml
+<actions>
+    <!-- Add your actions here -->
+    <!-- The <action> element defines an action to register.
+    The mandatory "id" attribute specifies an unique identifier for the action.
+    The mandatory "class" attribute specifies the full-qualified name of the class implementing the action.
+    The mandatory "text" attribute specifies the text of the action (tooltip for toolbar button or text for menu item).
+    The optional "use-shortcut-of" attribute specifies the ID of the action whose keyboard shortcut this action will use.
+    The optional "description" attribute specifies the text which is displayed in the status bar when the action is focused.
+    The optional "icon" attribute specifies the icon which is displayed on the toolbar button or next to the menu item. -->
+      <action id="org.jetbrains.tutorials.actions.SimpleAction" class="org.jetbrains.tutorials.actions.SimpleAction"
+              text="Simple Action" description="IntelliJ Action System Demo">
+          <!-- The <keyboard-shortcut> node specifies the keyboard shortcut for the action. An action can have several keyboard shortcuts.
+          The mandatory "first-keystroke" attribute specifies the first keystroke of the action. The key strokes are specified according to the regular Swing rules.
+          The optional "second-keystroke" attribute specifies the second keystroke of the action.
+          The mandatory "keymap" attribute specifies the keymap for which the action is active. IDs of the standard keymaps are defined as
+          constants in the com.intellij.openapi.keymap.KeymapManager class. -->
+          <keyboard-shortcut first-keystroke="control alt A" second-keystroke="C" keymap="$default"/>
+          <!-- The <mouse-shortcut> node specifies the mouse shortcut for the action. An action can have several mouse shortcuts.
+          The mandatory "keystroke" attribute specifies the clicks and modifiers for the action. It is defined as a sequence of words separated by spaces:
+          "button1", "button2", "button3" for the mouse buttons; "shift", "control", "meta", "alt", "altGraph" for the modifier keys;
+          "doubleClick" if the action is activated by a double-click of the button.
+          The mandatory "keymap" attribute specifies the keymap for which the action is active. IDs of the standard keymaps are defined as
+          constants in the com.intellij.openapi.keymap.KeymapManager class. -->
+          <mouse-shortcut keystroke="control button3 doubleClick" keymap="$default"/>
+          <!-- The <add-to-group> node specifies that the action should be added to an existing group. An action can be added to several groups.
+          The mandatory "group-id" attribute specifies the ID of the group to which the action is added.
+          The group must be implemented by an instance of the DefaultActionGroup class.
+          The mandatory "anchor" attribute specifies the position of the action in the group relative to other actions. It can have the values
+          "first", "last", "before" and "after".
+          The "relative-to-action" attribute is mandatory if the anchor is set to "before" and "after", and specifies the action before or after which
+          the current action is inserted. -->
+          <add-to-group group-id="ToolsMenu" anchor="first"/>
+      </action>
+</actions>
+```
 
 After performing the steps described above we need to compile and run the plugin to the the newly created action available as a Tools Menu item.
 !["Register action" quick fix](img/tools_menu_item_action.png)
@@ -113,13 +121,15 @@ After performing the steps described above we need to compile and run the plugin
 In order to make the action do something we need to implement it's ```public void actionPerformed(AnActionEvent anActionEvent);``` method.
 In the following example action invokes a dialog that shows information about a selected Project View Item and has no icon and any pre-selected default option:
 
-    @Override
-    public void actionPerformed(AnActionEvent anActionEvent) {
-        Object navigatable = anActionEvent.getData(CommonDataKeys.NAVIGATABLE);
-        if (navigatable != null) {
-            Messages.showDialog(navigatable.toString(), "Selected Element:", new String[]{"OK"}, -1, null);
-        }
+```java
+@Override
+public void actionPerformed(AnActionEvent anActionEvent) {
+    Object navigatable = anActionEvent.getData(CommonDataKeys.NAVIGATABLE);
+    if (navigatable != null) {
+        Messages.showDialog(navigatable.toString(), "Selected Element:", new String[]{"OK"}, -1, null);
     }
+}
+```
 
 -----------
 
@@ -131,35 +141,39 @@ Default implementation of this method does nothing.
 Override this method to provide the ability to dynamically change action's
 state and(or) presentation depending on the context.
 
-    public class SimpleAction extends AnAction {
-        @Override
-        public void actionPerformed(AnActionEvent anActionEvent) {
-        //...
-        }
-
-        @Override
-        public void update(AnActionEvent anActionEvent) {
-        }
+```java
+public class SimpleAction extends AnAction {
+    @Override
+    public void actionPerformed(AnActionEvent anActionEvent) {
+    //...
     }
+
+    @Override
+    public void update(AnActionEvent anActionEvent) {
+    }
+}
+```
 
 The following code sample illustrates how to make the action visible and available only when the following conditions are met:
 there's a project available and there's an item you can navigate to selected in the project view pane:
 
-    public class SimpleAction extends AnAction {
-        @Override
-        public void actionPerformed(AnActionEvent anActionEvent) {
-        //...
-        }
-
-         @Override
-         public void update(AnActionEvent anActionEvent) {
-             final Project project = anActionEvent.getData(CommonDataKeys.PROJECT);
-             if (project == null)
-                 return;
-             Object navigatable = anActionEvent.getData(CommonDataKeys.NAVIGATABLE);
-             anActionEvent.getPresentation().setEnabledAndVisible(navigatable != null);
-         }
+```java
+public class SimpleAction extends AnAction {
+    @Override
+    public void actionPerformed(AnActionEvent anActionEvent) {
+    //...
     }
+
+     @Override
+     public void update(AnActionEvent anActionEvent) {
+         final Project project = anActionEvent.getData(CommonDataKeys.PROJECT);
+         if (project == null)
+             return;
+         Object navigatable = anActionEvent.getData(CommonDataKeys.NAVIGATABLE);
+         anActionEvent.getPresentation().setEnabledAndVisible(navigatable != null);
+     }
+}
+```
 
 Parameter anActionEvent carries information on the invocation place and data available.
 
@@ -188,47 +202,55 @@ Grouping can be done by extending adding *<group>* attribute to *<actions>*
 [plugin.xml]()
 file.
 
-    <actions>
-        <group id="SimpleGroup" text="Custom Action Group" popup="true">
-        </group>
-    </actions>
+```xml
+<actions>
+    <group id="SimpleGroup" text="Custom Action Group" popup="true">
+    </group>
+</actions>
+```
 
 ##Binding action groups to UI component.
 The following sample shows how to place a custom action group on top of the editor popup menu:
 
-    <actions>
-        <group id="SimpleGroup" text="Custom Action Group" popup="true">
-              <add-to-group group-id="EditorPopupMenu" anchor="first"/>
-        </group>
-    </actions>
+```xml
+<actions>
+    <group id="SimpleGroup" text="Custom Action Group" popup="true">
+        <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+    </group>
+</actions>
+```
 
 ##Adding actions to the group.
 To create an action we need to extend
 [AnAction.java]()
 class:
 
-    public class GroupedAction extends AnAction {
-        @Override
-        public void update(AnActionEvent event) {
-            event.getPresentation().setEnabledAndVisible(true);
-        }
-
-        @Override
-        public void actionPerformed(AnActionEvent event) {
-            //Does nothing
-        }
+```java
+public class GroupedAction extends AnAction {
+    @Override
+    public void update(AnActionEvent event) {
+        event.getPresentation().setEnabledAndVisible(true);
     }
+
+    @Override
+    public void actionPerformed(AnActionEvent event) {
+        //Does nothing
+    }
+}
+```
 
 And then the actions needs to be registered in the newly created group:
 
-    <action>
-        <group id="SimpleGroup" text="Custom Action Group" popup="true">
-           <add-to-group group-id="EditorPopupMenu" anchor="first"/>
-              <action class="org.jetbrains.tutorials.actions.GroupedAction" id="org.jetbrains.tutorials.actions.GroupedAction"
+```xml
+<action>
+    <group id="SimpleGroup" text="Custom Action Group" popup="true">
+        <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+            <action class="org.jetbrains.tutorials.actions.GroupedAction" id="org.jetbrains.tutorials.actions.GroupedAction"
                       text="Grouped Action" description="Grouped Action Demo">
-              </action>
-        </group>
-    </actions>
+            </action>
+    </group>
+</actions>
+```
 
 After performing the steps described above the action group nad it's content will be available in the editor popup menu:
 
@@ -248,11 +270,13 @@ This class is used if a set of actions belonging to the group is fixed, which is
 
 Firstly, [DefaultActionGroup.java] should be derived:
 
-    public class CustomDefaultActionGroup extends DefaultActionGroup {
-        @Override
-        public void update(AnActionEvent event) {
-        }
+```java
+public class CustomDefaultActionGroup extends DefaultActionGroup {
+    @Override
+    public void update(AnActionEvent event) {
     }
+}
+```
 
 ###Registering action group.
 As in case with the simple action group, the inheritor of
@@ -261,49 +285,59 @@ should be declared in
 [plugin.xml]()
 file:
 
-    <actions>
-        <group id="CustomDefaultActionGroup" class="org.jetbrains.tutorials.actions.CustomDefaultActionGroup" popup="true"
-               text="DefaultActionGroup Inheritor" description="Default Action Group Demo">
-            <add-to-group group-id="ToolsMenu" anchor="last"/>
-      </group>
-    </actions>
+```xml
+<actions>
+    <group id="CustomDefaultActionGroup" class="org.jetbrains.tutorials.actions.CustomDefaultActionGroup" popup="true"
+           text="DefaultActionGroup Inheritor" description="Default Action Group Demo">
+        <add-to-group group-id="ToolsMenu" anchor="last"/>
+  </group>
+</actions>
+```
 
 ###Creating an action.
 [AnAction.java]()
 needs to be extended:
-    public class CustomGroupedAction extends AnAction {
-        @Override
-        public void actionPerformed(AnActionEvent anActionEvent) {
-            //Does nothing
-        }
+
+```java
+public class CustomGroupedAction extends AnAction {
+    @Override
+    public void actionPerformed(AnActionEvent anActionEvent) {
+        //Does nothing
     }
+}
+```
 
 ###Adding actions to the group.
 Action's class should be registered in
 [plugin.xml]()
 :
 
-     <group id="CustomDefaultActionGroup" class="org.jetbrains.tutorials.actions.CustomDefaultActionGroup" popup="true"
-                 text="DefaultActionGroup Inheritor" description="Default Action Group Demo">
-              <add-to-group group-id="ToolsMenu" anchor="last"/>
-              <action class="org.jetbrains.tutorials.actions.CustomGroupedAction" id="CustomGroupedAction"
-                      text="Custom Grouped Action" description="Custom Grouped Action Demo"/>
-          </group>
-     </actions>
+```xml
+<actions>
+    <group id="CustomDefaultActionGroup" class="org.jetbrains.tutorials.actions.CustomDefaultActionGroup" popup="true"
+         text="DefaultActionGroup Inheritor" description="Default Action Group Demo">
+        <add-to-group group-id="ToolsMenu" anchor="last"/>
+        <action class="org.jetbrains.tutorials.actions.CustomGroupedAction" id="CustomGroupedAction"
+                  text="Custom Grouped Action" description="Custom Grouped Action Demo"/>
+    </group>
+</actions>
+```
 
 ###Providing specific behaviour for the group.
 In this case we override ```public void update(AnActionEvent event);``` method to make the group visible as a *Tools* menu item,
 however, it will be enabled only if there's an instance of the editor available. Also a custom icon is set up:
 
-    public class CustomDefaultActionGroup extends DefaultActionGroup {
-        @Override
-        public void update(AnActionEvent event) {
-            Editor editor = event.getData(CommonDataKeys.EDITOR);
-            event.getPresentation().setVisible(true);
-            event.getPresentation().setEnabled(editor != null);
-            event.getPresentation().setIcon(AllIcons.General.Error);
-        }
+```java
+public class CustomDefaultActionGroup extends DefaultActionGroup {
+    @Override
+    public void update(AnActionEvent event) {
+        Editor editor = event.getData(CommonDataKeys.EDITOR);
+        event.getPresentation().setVisible(true);
+        event.getPresentation().setEnabled(editor != null);
+        event.getPresentation().setIcon(AllIcons.General.Error);
     }
+}
+```
 
 After compiling and running the code sample above, *Tools* menu item should contain an extra group of action with a user-defined icon:
 

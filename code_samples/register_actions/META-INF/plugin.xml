@@ -77,7 +77,7 @@
       </group>
       <group id="BaseActionGroup" class="org.jetbrains.tutorials.actions.BaseActionGroup" popup="true"
               text="ActionGroup Demo" description="Extending AnAction Demo">
-          <add-to-group group-id="ToolsMenu" anchor="last"/>
+          <add-to-group group-id="ToolsMenu" anchor="first"/>
       </group>
   </actions>
 </idea-plugin>

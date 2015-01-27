@@ -7,8 +7,6 @@ or be bound to UI element and could be invoked on demand. These UI elements incl
 
 ----------------
 
-**TODO - links to source**
-
 #Working with custom actions.
 An action is technically a class, derived from the
 [AnAction] (https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java)

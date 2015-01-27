@@ -75,5 +75,9 @@
           <action class="org.jetbrains.tutorials.actions.CustomGroupedAction" id="CustomGroupedAction"
                   text="Custom Grouped Action" description="Custom Grouped Action Demo"/>
       </group>
+      <group id="BaseActionGroup" class="org.jetbrains.tutorials.actions.BaseActionGroup" popup="true"
+              text="ActionGroup Demo" description="Extending AnAction Demo">
+          <add-to-group group-id="ToolsMenu" anchor="last"/>
+      </group>
   </actions>
 </idea-plugin>

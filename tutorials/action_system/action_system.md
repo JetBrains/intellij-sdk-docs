@@ -347,8 +347,80 @@ After compiling and running the code sample above, *Tools* menu item should cont
 
 ![Default Action Group](img/default_action_group.png)
 
-#Action groups with variable actions set
-If a set of actions belonging to a custom actions group ot they properties may vary dependently on the context,
-we need to extend
+##Action groups with variable actions set
+If a set of actions belonging to a custom actions group may vary dependently on the context,
+we need to work with
 [ActionGroup.java](https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/ActionGroup.java).
+In this case set of actions to be grouped can be dynamically defined.
+
+###Createing variable action group
+To create a group of actions with a variable actions set we extend
+[ActionGroup.java](https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/ActionGroup.java)
+first:
+```java
+public class BaseActionGroup extends ActionGroup {
+}
+```
+
+###Registering variable action group
+To register the group *<group>* attribute needs to be placed in the *<actions>* section of
+[plugin.xml](https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/register_actions/META-INF/plugin.xml):
+
+```xml
+<actions>
+    <group id="BaseActionGroup" class="org.jetbrains.tutorials.actions.BaseActionGroup" popup="true"
+              text="ActionGroup Demo" description="Extending AnAction Demo">
+        <add-to-group group-id="ToolsMenu" anchor="first"/>
+    </group>
+</actions>
+```
+**Note**: Since the set of actions is defined dynamically no action definitions should be placed in
+[plugin.xml](https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/register_actions/META-INF/plugin.xml).
+If *<group>* attribute contains any static action definition an exception will be thrown.
+For statically defined group of action use
+[DefaultActionGroup.java](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/actionSystem/DefaultActionGroup.java)
+
+###Accessing children actions
+An array of children actions should be returned by the method ```public AnAction[] getChildren(AnActionEvent anActionEvent);``` of the a created group:
+
+```java
+public class BaseActionGroup extends ActionGroup {
+    @NotNull
+    @Override
+    public AnAction[] getChildren(AnActionEvent anActionEvent) {
+        return new AnAction[0];
+    }
+}
+```
+
+###Adding children actions to the group
+To make the group contain actions a non-empty array of
+[AnAction.java](https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java)
+elements should be returned:
+
+```java
+public class BaseActionGroup extends ActionGroup {
+    @NotNull
+    @Override
+    public AnAction[] getChildren(AnActionEvent anActionEvent) {
+        return new AnAction[]{new MyAction()};
+    }
+    class MyAction extends AnAction {
+        public MyAction() {
+           super("Dynamically Added Action");
+        }
+        @Override
+        public void actionPerformed(@NotNull AnActionEvent anActionEvent) {
+        }
+    }
+}
+```
+
+After providing an implementation of
+[AnAction.java](https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java)
+and making it return a non-empty array of action Tools Menu should contain an extra group of action:
+![Dynamic Action Group](img/dynamic_action_group.png)
+
+
+
 

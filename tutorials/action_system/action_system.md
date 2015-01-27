@@ -10,10 +10,12 @@ or be bound to UI element and could be invoked on demand. These UI elements incl
 **TODO - links to source**
 
 #Working with custom actions.
-An action is technically a class, derived from the [AnAction] (https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java)
+An action is technically a class, derived from the
+[AnAction] (https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java)
 class.
 To update the state of the action, the method AnAction.update() is periodically called by IDEA.
-The object of type [AnActionEvent] (https://github.com/JetBrains/intellij-community/blob/ff16ce78a1e0ddb6e67fd1dbc6e6a597e20d483a/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnActionEvent.java)
+The object of type
+[AnActionEvent] (https://github.com/JetBrains/intellij-community/blob/ff16ce78a1e0ddb6e67fd1dbc6e6a597e20d483a/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnActionEvent.java)
 passed to this method carries the information about the current context for the action,
 and in particular, the specific presentation which needs to be updated.
 
@@ -46,7 +48,8 @@ public class SimpleAction extends AnAction {
 
 ##Registering actions.
 To register a newly created action, <action> attribute should be added to the <actions> section of the plugin configuration file
-[plugin.xml] (). IntelliJ IDEA has an embedded inspection that spots unregistered actions.
+[plugin.xml] (https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/register_actions/META-INF/plugin.xml).
+IntelliJ IDEA has an embedded inspection that spots unregistered actions.
 !["Action never used" inspection](img/action_never_used.png)
 
 To register the action and set up it's attributes press ***Alt + Enter*** while the caret is placed on the action's declaration.
@@ -58,7 +61,7 @@ In our case the action will be available in the Tools Menu, it will be placed on
 !["Register action" quick fix](img/new_action.png)
 
 After filling the "New Action" form and applying the changes *<actions>* section of our
-[plugin.xml]()
+[plugin.xml](https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/register_actions/META-INF/plugin.xml)
 file will look like this:
 
 ```xml
@@ -72,7 +75,7 @@ file will look like this:
 ```
 
 Full list of action's attributes can also be set manually in
-[plugin.xml]()
+[plugin.xml](https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/register_actions/META-INF/plugin.xml)
 configuration file like the following code sample shows:
 
 ```xml
@@ -200,7 +203,7 @@ In this case the group will be available as a top-level menu item, action will b
 
 ##Creating simple action groups.
 Grouping can be done by extending adding *<group>* attribute to *<actions>*
-[plugin.xml]()
+[plugin.xml](https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/register_actions/META-INF/plugin.xml)
 file.
 
 ```xml
@@ -223,7 +226,7 @@ The following sample shows how to place a custom action group on top of the edit
 
 ##Adding actions to the group.
 To create an action we need to extend
-[AnAction.java]()
+[AnAction.java](https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java)
 class:
 
 ```java
@@ -263,13 +266,15 @@ The steps below are meant to show how to make a group of actions available and v
 In our case the condition is: an instance of the editor is available.
 
 ###Extending DefaultActionGroup.
-[DefaultActionGroup.java]()
+[DefaultActionGroup.java](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/actionSystem/DefaultActionGroup.java)
 is a default implementations of
-[ActionGroup.java]
+[ActionGroup.java](https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/ActionGroup.java)
 and used to add children actions and separators between them to a group.
 This class is used if a set of actions belonging to the group is fixed, which is the majority of all the cases.
 
-Firstly, [DefaultActionGroup.java] should be derived:
+Firstly,
+[DefaultActionGroup.java](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/actionSystem/DefaultActionGroup.java)
+should be derived:
 
 ```java
 public class CustomDefaultActionGroup extends DefaultActionGroup {
@@ -281,9 +286,9 @@ public class CustomDefaultActionGroup extends DefaultActionGroup {
 
 ###Registering action group.
 As in case with the simple action group, the inheritor of
-[DefaultActionGroup.java]()
+[DefaultActionGroup.java](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/actionSystem/DefaultActionGroup.java)
 should be declared in
-[plugin.xml]()
+[plugin.xml](https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/register_actions/META-INF/plugin.xml)
 file:
 
 ```xml
@@ -296,7 +301,7 @@ file:
 ```
 
 ###Creating an action.
-[AnAction.java]()
+[AnAction.java](https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java)
 needs to be extended:
 
 ```java
@@ -310,7 +315,7 @@ public class CustomGroupedAction extends AnAction {
 
 ###Adding actions to the group.
 Action's class should be registered in
-[plugin.xml]()
+[plugin.xml](https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/register_actions/META-INF/plugin.xml)
 :
 
 ```xml
@@ -347,5 +352,5 @@ After compiling and running the code sample above, *Tools* menu item should cont
 #Action groups with variable actions set
 If a set of actions belonging to a custom actions group ot they properties may vary dependently on the context,
 we need to extend
-[ActionGroup.java]().
+[ActionGroup.java](https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/ActionGroup.java).
 

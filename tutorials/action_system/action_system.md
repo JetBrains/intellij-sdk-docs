@@ -1,4 +1,4 @@
-IntelliJ Action System.
+IntelliJ Action System
 ==========
 This tutorial is meant to give general information about the IntelliJ IDEA Action System and lead you through a series of steps
 which show how to create, register, and customize custom actions and action groups.
@@ -10,7 +10,7 @@ or be bound to UI element and could be invoked on demand. These UI elements incl
 
 ----------------
 
-#Working with custom actions.
+#Working with custom actions
 An action is technically a class, derived from the
 [AnAction] (https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java)
 class.
@@ -22,7 +22,7 @@ and in particular, the specific presentation which needs to be updated.
 
 -------------
 
-##Creating actions.
+##Creating actions
 To create a new we need to extend
 [AnAction] (https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java)
 class:
@@ -47,7 +47,7 @@ public class SimpleAction extends AnAction {
 
 -------------
 
-##Registering actions.
+##Registering actions
 To register a newly created action, <action> attribute should be added to the <actions> section of the plugin configuration file
 [plugin.xml] (https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/register_actions/META-INF/plugin.xml).
 IntelliJ IDEA has an embedded inspection that spots unregistered actions.
@@ -122,7 +122,7 @@ After performing the steps described above we need to compile and run the plugin
 
 -----------
 
-##Performing an action.
+##Performing an action
 In order to make the action do something we need to implement it's ```public void actionPerformed(AnActionEvent anActionEvent);``` method.
 In the following example action invokes a dialog that shows information about a selected Project View Item and has no icon and any pre-selected default option:
 
@@ -138,7 +138,7 @@ public void actionPerformed(AnActionEvent anActionEvent) {
 
 -----------
 
-##Setting up action's visibility and availability.
+##Setting up action's visibility and availability
 
 To manipulate with action's visibility and availability we need to override it's ```public void update(@NotNull AnActionEvent e);```
 
@@ -197,12 +197,12 @@ After compiling and running the plugin project and invoking the action, the dial
 
 -------------
 
-#Groupping actions.
+#Groupping actions
 
 If some part of the functionality requires to implement several actions or actions are simply too many and overload the menu they can be joined into groups.
 In this case the group will be available as a top-level menu item, action will be represented as drop-down menu items.
 
-##Creating simple action groups.
+##Creating simple action groups
 Grouping can be done by extending adding *<group>* attribute to *<actions>*
 [plugin.xml](https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/register_actions/META-INF/plugin.xml)
 file.
@@ -214,7 +214,7 @@ file.
 </actions>
 ```
 
-##Binding action groups to UI component.
+##Binding action groups to UI component
 The following sample shows how to place a custom action group on top of the editor popup menu:
 
 ```xml
@@ -225,7 +225,7 @@ The following sample shows how to place a custom action group on top of the edit
 </actions>
 ```
 
-##Adding actions to the group.
+##Adding actions to the group
 To create an action we need to extend
 [AnAction.java](https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java)
 class:
@@ -261,12 +261,12 @@ After performing the steps described above the action group nad it's content wil
 
 ![Simple Action Group](img/grouped_action.png)
 
-##Working with DefaultActionGroup.
+##Working with DefaultActionGroup
 In some cases we need to implement some specific behaviour of a group of actions dependently on the context.
 The steps below are meant to show how to make a group of actions available and visible if a certain condition is met and how to set up a group icon dynamically.
 In our case the condition is: an instance of the editor is available.
 
-###Extending DefaultActionGroup.
+###Extending DefaultActionGroup
 [DefaultActionGroup.java](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/actionSystem/DefaultActionGroup.java)
 is a default implementations of
 [ActionGroup.java](https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/ActionGroup.java)
@@ -285,7 +285,7 @@ public class CustomDefaultActionGroup extends DefaultActionGroup {
 }
 ```
 
-###Registering action group.
+###Registering action group
 As in case with the simple action group, the inheritor of
 [DefaultActionGroup.java](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/actionSystem/DefaultActionGroup.java)
 should be declared in
@@ -301,7 +301,7 @@ file:
 </actions>
 ```
 
-###Creating an action.
+###Creating an action
 [AnAction.java](https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java)
 needs to be extended:
 
@@ -314,7 +314,7 @@ public class CustomGroupedAction extends AnAction {
 }
 ```
 
-###Adding actions to the group.
+###Adding actions to the group
 Action's class should be registered in
 [plugin.xml](https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/register_actions/META-INF/plugin.xml)
 :
@@ -330,7 +330,7 @@ Action's class should be registered in
 </actions>
 ```
 
-###Providing specific behaviour for the group.
+###Providing specific behaviour for the group
 In this case we override ```public void update(AnActionEvent event);``` method to make the group visible as a *Tools* menu item,
 however, it will be enabled only if there's an instance of the editor available. Also a custom icon is set up:
 

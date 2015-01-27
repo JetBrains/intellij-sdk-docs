@@ -19,8 +19,10 @@ To create an action we need derive
 [AnAction.java] (https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java)
 class.
 
-    public class EditorIllustration extends AnAction {
-    }
+```java
+public class EditorIllustration extends AnAction {
+}
+```
 
 ###Registering an action
 To register the action we should add a corresponding attribute to the *<actions>* section of the plugin configuration file

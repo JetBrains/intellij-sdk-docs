@@ -28,11 +28,13 @@ public class EditorIllustration extends AnAction {
 To register the action we should add a corresponding attribute to the *<actions>* section of the plugin configuration file
 [plugin.xml] (https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/editor_basics/resources/META-INF/plugin.xml)
 
-    <actions>
-        <action id="EditorBasics.EditorIllustration" class="EditorIllustration" text="Editor Basics"
-            description="Illustrates how to plug an action in">
-        <add-to-group group-id="EditorPopupMenu" anchor="last"/>
-    </action>
+```xml
+<actions>
+    <action id="EditorBasics.EditorIllustration" class="EditorIllustration" text="Editor Basics"
+        description="Illustrates how to plug an action in">
+    <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+</action>
+```
 
 If an action is registered in the group EditorPopupMenu, like the sample above shows,
 it will be available from the context menu when the focus is located in the editor.

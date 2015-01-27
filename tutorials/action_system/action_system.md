@@ -419,6 +419,7 @@ public class BaseActionGroup extends ActionGroup {
 After providing an implementation of
 [AnAction.java](https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java)
 and making it return a non-empty array of action Tools Menu should contain an extra group of action:
+
 ![Dynamic Action Group](img/dynamic_action_group.png)
 
 

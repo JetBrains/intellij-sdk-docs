@@ -58,7 +58,7 @@ public class DemoFramework extends FrameworkTypeEx {
 ```
 
 #Creating provider for enabling framework support
-To make framework set up available while executing project creating steps ```java public FrameworkSupportInModuleProvider createProvider();```
+To make framework set up available while executing project creating steps ```public FrameworkSupportInModuleProvider createProvider();```
 of the
 [DemoFramework]()
 must be implemented:

@@ -1,6 +1,10 @@
 Supporting frameworks
 ===============
 
+[Source code] (https://github.com/JetBrains/intellij-sdk/tree/master/code_samples/framework/src/com/intellij/tutorials/framework)
+
+---------------
+
 The following tutorial meant to show how to support a custom framework type for a project and make this framework type embedded in a project wizard as a UI component.
 
 #Creating a new framework
@@ -101,6 +105,10 @@ public FrameworkSupportInModuleProvider createProvider() {
 
 After compiling and running the code sample above an extra option for configuring the newly created custom framework should be available in the Project Wizard:
 ![Custom Framework Support](img/custom_framework.png)
+
+----------
+
+[Source code] (https://github.com/JetBrains/intellij-sdk/tree/master/code_samples/framework/src/com/intellij/tutorials/framework)
 
 
 

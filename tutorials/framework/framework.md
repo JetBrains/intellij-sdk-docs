@@ -9,7 +9,7 @@ The following tutorial meant to show how to support a custom framework type for 
 
 #Creating a new framework
 In oder to make a custom framework available and configurable for a project
-[FrameworkTypeEx]()
+[FrameworkTypeEx](https://github.com/JetBrains/intellij-community/blob/master/java/idea-ui/src/com/intellij/framework/FrameworkTypeEx.java)
 class needs to be extended:
 ```java
 public class DemoFramework extends FrameworkTypeEx {
@@ -18,7 +18,7 @@ public class DemoFramework extends FrameworkTypeEx {
 
 #Registering framework
 The newly created framework should be registered as an extension point by putting *framework.type* attribute into *<extensions>* section of
-[plugin.xml]()
+[plugin.xml](https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/framework/META-INF/plugin.xml)
 configuration file:
 ```xml
 <extensions defaultExtensionNs="com.intellij">
@@ -64,7 +64,7 @@ public class DemoFramework extends FrameworkTypeEx {
 #Creating provider for enabling framework support
 To make framework set up available while executing project creating steps ```public FrameworkSupportInModuleProvider createProvider();```
 of the
-[DemoFramework]()
+[DemoFramework](https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/framework/src/com/intellij/tutorials/framework/DemoFramework.java)
 must be implemented:
 
 ```java

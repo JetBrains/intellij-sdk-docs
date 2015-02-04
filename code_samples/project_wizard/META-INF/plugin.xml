@@ -14,7 +14,7 @@
 
   <extensions defaultExtensionNs="com.intellij">
     <!-- Add your extensions here -->
-      <moduleType id="DEMO_MODULE" implementationClass="org.jetbrains.tutorials.project.wizard.DemoModuleType"/>
+      <moduleBuilder builderClass="org.jetbrains.tutorials.project.wizard.DemoModuleWizardStep" id="DEMO_STEP" order="first"/>
   </extensions>
 
   <application-components>

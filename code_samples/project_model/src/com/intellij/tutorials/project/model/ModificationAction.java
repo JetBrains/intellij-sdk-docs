@@ -13,13 +13,14 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.pom.Navigatable;
 import com.intellij.psi.PsiClass;
 import com.intellij.psi.PsiFile;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * @author Anna Bulenkova
  */
 public class ModificationAction extends AnAction {
     @Override
-    public void actionPerformed(final AnActionEvent event) {
+    public void actionPerformed(@NotNull final AnActionEvent event) {
         Project project = event.getProject();
         if (project == null) return;
         Navigatable element = event.getData(CommonDataKeys.NAVIGATABLE);
@@ -39,7 +40,7 @@ public class ModificationAction extends AnAction {
     }
 
     @Override
-    public void update(final AnActionEvent event) {
+    public void update(@NotNull final AnActionEvent event) {
         Project project = event.getProject();
         Navigatable element = event.getData(CommonDataKeys.NAVIGATABLE);
         event.getPresentation().setEnabledAndVisible(project != null && element != null);

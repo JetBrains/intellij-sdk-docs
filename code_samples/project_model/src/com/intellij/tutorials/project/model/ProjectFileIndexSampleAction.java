@@ -12,13 +12,14 @@ import com.intellij.openapi.roots.ProjectFileIndex;
 import com.intellij.openapi.roots.ProjectRootManager;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.vfs.VirtualFile;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * @author Anna Bulenkova
  */
 public class ProjectFileIndexSampleAction extends AnAction {
     @Override
-    public void update(final AnActionEvent event) {
+    public void update(@NotNull final AnActionEvent event) {
         Project project = event.getProject();
         final Editor editor = event.getData(CommonDataKeys.EDITOR);
         boolean visibility = project != null && editor != null;
@@ -26,7 +27,7 @@ public class ProjectFileIndexSampleAction extends AnAction {
     }
 
     @Override
-    public void actionPerformed(final AnActionEvent event) {
+    public void actionPerformed(@NotNull final AnActionEvent event) {
         Project project = event.getProject();
         final Editor editor = event.getData(CommonDataKeys.EDITOR);
         if (project == null || editor == null) return;

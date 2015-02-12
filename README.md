@@ -10,9 +10,10 @@ You can find the current official documentation [here](http://confluence.jetbrai
 Docs engine
 -----------
 
-Install
+Install:
 ```
 sudo gem install jekyll
+git submodule update --init --remote
 ```
 
 Preview

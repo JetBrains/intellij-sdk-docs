@@ -1,0 +1,22 @@
+product_name: IntelliJ SDK
+product_version: 
+
+markdown: kramdown
+markdown_ext: foo
+kramdown:
+  input: GFM2
+  hard_wrap: false
+  auto_ids: false
+highlighter: pygments
+
+exclude:
+  - '*.scss'
+  - README*
+  - Rakefile
+  - lib
+  - webhelp-template
+  - code_samples
+
+defaults:
+  - values:
+      layout: 'webhelp'

@@ -1,6 +1,6 @@
 <!-- 
     Similar to GitBook SUMMARY.md - https://github.com/GitbookIO/gitbook#summarymd,
-    but list items without links will not br included in the table of contents.
+    but list items without links will not be included in the table of contents.
     Also you can use HTML-comments.
 -->
 

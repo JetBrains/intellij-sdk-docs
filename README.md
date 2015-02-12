@@ -10,17 +10,17 @@ You can find the current official documentation [here](http://confluence.jetbrai
 Docs engine
 -----------
 
-* Install
-  ```
-  sudo gem install jekyll
-  ```
+Install
+```
+sudo gem install jekyll
+```
 
-* Preview
-  ```
-  rake preview
-  ```
-  
-* Build
-  ```
-  rake build
-  ```
+Preview
+```
+rake preview
+```
+
+Build
+```
+rake build
+```

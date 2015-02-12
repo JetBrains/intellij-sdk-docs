@@ -1,0 +1,3 @@
+[submodule "webhelp-template"]
+	path = webhelp-template
+	url = git://git.labs.intellij.net/sites/webhelp-template

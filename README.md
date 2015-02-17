@@ -7,25 +7,27 @@ IntelliJ SDK Plugin Documentation and Samples
 
 You can find the current official documentation [here](http://confluence.jetbrains.com/display/IDEADEV/PluginDevelopment)
 
-Docs engine
------------
+#IntelliJ documentation engine
 
-Install
+##Prerequisites
+Ruby 2.0 or higher
+
+##Installation
 ```
 sudo gem install jekyll
 ```
 
-Initialize submodules
+##Initialize submodules
 ```
 git submodule update --init --remote
 ```
 
-Preview
+##Preview
 ```
 rake preview
 ```
 
-Build
+##Build
 ```
 rake build
 ```

@@ -4,7 +4,7 @@
     Also you can use HTML-comments.
 -->
 
-## Getting started
-* [Getting started with SDK](index.html)
-* Some planned topic
-<!-- * [Another planned topic](topic.html) -->
+## IntelliJ IDEA SDK Documentation
+* Basic Topics
+* Advanced Topics
+* Custom Language Support

@@ -1,5 +1,5 @@
 ---
-title: Getting started
+title: IntelliJ SDK Documentation
 ---
 
 # {{ page.title }}

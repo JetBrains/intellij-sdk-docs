@@ -6,7 +6,8 @@
 
 ## IntelliJ IDEA SDK Documentation
 * [Basic Topics](basic_topics.html)
-    * [Getting Started. Setting up development environment, creating a plugin project, running a plugin](getting_started.html)
+    * [Getting Started](getting_started.html)
+        * [Setting Up Development Environment](setting_up_environment.html)
 * [Advanced Topics](advanced_topics.html)
 * [Custom Language Support](custom_language_support.html)
 

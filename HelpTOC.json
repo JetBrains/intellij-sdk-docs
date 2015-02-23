@@ -1,0 +1,15 @@
+[{"title":"IntelliJ IDEA SDK Documentation", "type":"header"},
+  {"id":"index", "title":"About IntelliJ SDK platform","url":"index.html"},
+  {"id":"basic_topics", "title":"Basic Topics", "url":"basic_topics.html", "pages":[
+
+    {"id":"getting_started", "title":"Getting Started", "url":"getting_started.html", "pages":[
+
+      {"id":"setting_up_environment", "title":"Setting Up Development Environment", "url":"setting_up_environment.html"},
+      {"id":"creating_plugin_project", "title":"Creating a Plugin Project", "url":"creating_plugin_project.html"},
+      {"id":"running_plugin", "title":"Running a Plugin", "url":"running_plugin.html"}
+    ]}
+  ]},
+
+  {"id":"advanced_topics", "title":"Advanced Topics", "url":"advanced_topics.html"},
+  {"id":"custom_language_support", "title":"Custom Language Support", "url":"custom_language_support.html"}
+]

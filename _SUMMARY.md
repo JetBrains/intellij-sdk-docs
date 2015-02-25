@@ -12,6 +12,7 @@
         * [Creating a Plugin Project] (creating_plugin_project.html)
         * [Build Number Ranges] (build_number_ranges.html)
         * [Running a Plugin] (running_plugin.html)
+        * [Plugin Compatibility with IntelliJ Platform Products] (plugin_compatibility.html)
 * [Advanced Topics] (advanced_topics.html)
 * [Custom Language Support] (custom_language_support.html)
 

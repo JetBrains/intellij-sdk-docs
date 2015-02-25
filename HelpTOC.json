@@ -6,6 +6,7 @@
       {"id":"checkout_and_build_community", "title":"Check Out And Build Community Edition", "url":"checkout_and_build_community.html"},
       {"id":"setting_up_environment", "title":"Setting Up Development Environment", "url":"setting_up_environment.html"},
       {"id":"creating_plugin_project", "title":"Creating a Plugin Project", "url":"creating_plugin_project.html"},
+      {"id":"build_number_ranges", "title":"Build Number Ranges", "url":"build_number_ranges.html"},
       {"id":"running_plugin", "title":"Running a Plugin", "url":"running_plugin.html"}
     ]}
   ]},

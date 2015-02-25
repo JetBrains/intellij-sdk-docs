@@ -10,6 +10,7 @@
         * [Check Out And Build Community Edition] (checkout_and_build_community.html)
         * [Setting Up Development Environment] (setting_up_environment.html)
         * [Creating a Plugin Project] (creating_plugin_project.html)
+        * [Build Number Ranges] (build_number_ranges.html)
         * [Running a Plugin] (running_plugin.html)
 * [Advanced Topics] (advanced_topics.html)
 * [Custom Language Support] (custom_language_support.html)

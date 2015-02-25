@@ -5,7 +5,7 @@
     {"id":"getting_started", "title":"Getting Started", "url":"getting_started.html", "pages":[
 
       {"id":"setting_up_environment", "title":"Setting Up Development Environment", "url":"setting_up_environment.html"},
-      {"id":"creating_plugin_project", "title":"Creating a Plugin Project", "url":"creating_plugin_project.html"}, //TODO: add
+      {"id":"creating_plugin_project", "title":"Creating a Plugin Project", "url":"creating_plugin_project.html"},
       {"id":"running_plugin", "title":"Running a Plugin", "url":"running_plugin.html"}
     ]}
   ]},

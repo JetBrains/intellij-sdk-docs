@@ -13,6 +13,8 @@
         * [Build Number Ranges] (build_number_ranges.html)
         * [Running a Plugin] (running_plugin.html)
         * [Plugin Compatibility with IntelliJ Platform Products] (plugin_compatibility.html)
+    * [Plugin Structure] (plugin_structure.html)
+    * [Architectural Overview] (architectural_overview.html)
 * [Advanced Topics] (advanced_topics.html)
 * [Custom Language Support] (custom_language_support.html)
 

@@ -274,7 +274,7 @@ To clarify this procedure, consider the following sample section of the plugin.x
 ```xml
 <extensionPoints>
      <extensionPoint name="MyExtensionPoint1" beanClass="MyPlugin.MyBeanClass1">
-     <extensionPoint name="MyExtensionPoint2 interface="MyPlugin.MyInterface">
+     <extensionPoint name="MyExtensionPoint2" interface="MyPlugin.MyInterface">
 </extensionPoints>
 ```
 
@@ -310,7 +310,7 @@ Note that to declare an extension designed to access the MyExtensionPoint1 exten
 
     * _"com.intellij"_, if your plugin extends the IDEA core functionality.
     
-    * _<ID of a plugin>_, if your plugin extends a functionality of another plugin.
+    * _ID of a plugin_, if your plugin extends a functionality of another plugin.
      
 2. Add a new child element to the <extensions> element.
 The child element name must match the name of the extension point you want the extension to access.

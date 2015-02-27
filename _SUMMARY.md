@@ -19,6 +19,7 @@
 * [Advanced Topics] (advanced_topics.html)
     * Persisting state of components (persisting_state.html)
     * [XML DOM API] (xml_dom_api.html)
+    * [Spring API] (spring_api.html)
 * [Custom Language Support] (custom_language_support.html)
 
 

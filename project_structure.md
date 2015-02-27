@@ -3,7 +3,7 @@ title: Structure of IntelliJ IDEA Project
 ---
 
 <!--
-https://confluence.jetbrains.com/display/IDEADEV/Structure+of+IntelliJ+IDEA+Project
+INITIAL_SOURCE https://confluence.jetbrains.com/display/IDEADEV/Structure+of+IntelliJ+IDEA+Project
 -->
 
 # {{ page.title }}

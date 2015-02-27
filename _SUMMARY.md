@@ -4,7 +4,7 @@
     Also you can use HTML-comments.
 -->
 
-## IntelliJ IDEA SDK Documentation
+## IntelliJ Platform SDK Documentation
 * [Basic Topics] (basic_topics.html)
     * [Getting Started] (getting_started.html)
         * [Check Out And Build Community Edition] (checkout_and_build_community.html)

@@ -537,7 +537,7 @@ Thank you for your time and attention. We hope you've found this article really 
 ### Further Material
 The following bundled open source plugins make (heavy) use of DOM:
 
-- [Android](https://github.com/JetBrains/intellij-community/tree/master/plugins/android)
+- [Android](http://git.jetbrains.org/?p=idea/android.git;a=tree;f=android;;hb=HEAD)
 - [Ant](https://github.com/JetBrains/intellij-community/tree/master/plugins/ant)
 - [Plugin DevKit](https://github.com/JetBrains/intellij-community/tree/master/plugins/devkit)
 - [Maven](https://github.com/JetBrains/intellij-community/tree/master/plugins/maven)

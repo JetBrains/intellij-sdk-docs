@@ -17,6 +17,7 @@
     * [Architectural Overview] (architectural_overview.html)
     * [Structure of IntelliJ IDEA Project] (project_structure.html)
 * [Advanced Topics] (advanced_topics.html)
+    * Persisting state of components (persisting_state.html)
 * [Custom Language Support] (custom_language_support.html)
 
 

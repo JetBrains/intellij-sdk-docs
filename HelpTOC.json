@@ -15,6 +15,9 @@
     {"id":"project_structure", "title":"Structure of IntelliJ IDEA Project", "url":"project_structure.html"}
   ]},
 
-  {"id":"advanced_topics", "title":"Advanced Topics", "url":"advanced_topics.html"},
+  {"id":"advanced_topics", "title":"Advanced Topics", "url":"advanced_topics.html", "pages":[
+    {"id":"persisting_state", "title": "Persisting state of components", "url": "persisting_state.html"}
+  ]
+  },
   {"id":"custom_language_support", "title":"Custom Language Support", "url":"custom_language_support.html"}
 ]

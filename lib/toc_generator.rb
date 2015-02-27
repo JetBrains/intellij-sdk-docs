@@ -100,7 +100,8 @@ module Docs
         pages = []
 
         REXML::XPath.each(li_node, 'ul/li') do |li|
-          pages.push(extract_items(li))
+          subpages = extract_items(li)
+          pages.push(subpages) if subpages != nil
         end
 
         item['pages'] = pages unless pages.empty?

@@ -8,6 +8,7 @@ https://confluence.jetbrains.com/display/IDEADEV/Structure+of+IntelliJ+IDEA+Proj
 
 # {{ page.title }}
 
+<!--TODO split into parts accordingly to the table of contents-->
 This topic considers the concept of **IntelliJ IDEA** projects and related subjects, such as _modules_, _facets_, _libraries_, _SDK_.
 The project structure and Java classes you can use to manage projects and modules have been considered.
 

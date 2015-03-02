@@ -43,7 +43,7 @@ All the HTML files should be UTF-8 encoded.
 
 *  *Tips of the day*  follow the same pattern inspections and intentions do.
 For instance translation of /tips/AdaptiveWelcome.html goes to /tips_ja/AdaptiveWelcome.html.
-The only thing special about tips is they use special pattern for denoting shortcuts like &shortcut:EnterAction; will be replaced to keystroke mapped to EnterAction in currently used keymap at run-time.
+The only thing special about tips is they use special pattern for denoting shortcuts like *EnterAction*; will be replaced to keystroke mapped to EnterAction in currently used keymap at run-time.
 So please make sure you leave such sequences intact while translating.
 Remember UTF-8 encoding.
 

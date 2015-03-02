@@ -107,7 +107,7 @@ A number of functions which can be used for implementing and using the PSI can b
 
 A very helpful tool for debugging the PSI implementation is the [PsiViewer plugin](https://plugins.jetbrains.com/plugin/?id=227). It can show you the structure of the PSI built by your plugin, the properties of every PSI element and highlight its text range.
 
-Please see TODO [IDEADEV:Indexing and PSI Stubs in IntelliJ IDEA] for advanced topics.
+Please see [Indexing and PSI Stubs in IntelliJ IDEA](indexing_and_psi_stubs.html) for advanced topics.
 
 
 ## Syntax Highlighting and Error Highlighting

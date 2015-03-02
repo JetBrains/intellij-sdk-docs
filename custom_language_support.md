@@ -121,7 +121,7 @@ Please note new functionality about Language Defaults and support for additional
 
 The syntax and error highlighting is performed on multiple levels. The first level of syntax highlighting is based on the lexer output, and is provided through the `SyntaxHighlighter` interface. The syntax highlighter returns the `TextAttributeKey` instances for each token type which needs special highlighting. For highlighting lexer errors, the standard `TextAttributeKey` for bad characters (`HighligherColors.BAD_CHARACTER`) can be used.
 
-[Example: SyntaxHighlighlighter implementation for Properties language](https://github.com/JetBrains/intellij-community/blob/master/plugins/properties/properties-psi-api/src/com/intellij/lang/properties/PropertiesHighlighter.java)
+[Example: SyntaxHighlighter implementation for Properties language](https://github.com/JetBrains/intellij-community/blob/master/plugins/properties/properties-psi-api/src/com/intellij/lang/properties/PropertiesHighlighter.java)
 
 
 ### Parser

@@ -23,6 +23,7 @@
     * [XML DOM API](xml_dom_api.html)
     * [Spring API](spring_api.html)
     * [Developing VCS Integration Plugins for IntelliJ IDEA](vcs_integration_for_plugins.html)
+    * [Localization Guide for IntelliJ IDEA](localization_guide.html)
 * [Custom Language Support](custom_language_support.html)
 
 

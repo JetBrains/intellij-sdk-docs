@@ -15,6 +15,7 @@
     * [Plugin Structure](plugin_structure.html)
     * [Architectural Overview](architectural_overview.html)
     * [Structure of IntelliJ IDEA Project](project_structure.html)
+    * [IntelliJ IDEA Action System](action_system.html)
     * [PSI Cookbook](psi_cookbook.html)
     * [IntelliJ IDEA Virtual File System](intellij_vfs.html)
     * [Indexing and PSI Stubs in IntelliJ IDEA](indexing_and_psi_stubs.html)

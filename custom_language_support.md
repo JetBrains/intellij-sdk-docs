@@ -38,7 +38,7 @@ The lexer (lexical analyzer) defines how the contents of a file is broken into t
 
 The IDE invokes the lexer in three main contexts, and the plugin can provide different lexer implementations for these contexts:
 
-* Syntax highlighting: The lexer is returned from the implementation of the `SyntaxHighlighterFactory` interface which is registed in the `com.intellij.lang.syntaxHighlighterFactory` extension point.
+* Syntax highlighting: The lexer is returned from the implementation of the `SyntaxHighlighterFactory` interface which is registered in the `com.intellij.lang.syntaxHighlighterFactory` extension point.
 * Building the syntax tree of a file: the lexer is expected to be returned from `ParserDefinition.createLexer()`, and the `ParserDefinition` interface is registered in the `com.intellij.lang.parserDefinition` extension point.
 * Building the index of the words contained in the file: If the lexer-based words scanner implementation is used, the lexer is passed to the `DefaultWordsScanner` constructor.
 
@@ -119,7 +119,7 @@ Please note new functionality about Language Defaults and support for additional
 
 ### Lexer
 
-The syntax and error highlighting is performed on multiple levels. The first level of syntax highlighting is based on the lexer output, and is provided through the `SyntaxHighlighter` interface. The syntax highlighter returns the `TextAttributeKey` instances for each token type which needs special highlighting. For highlighting lexer errors, the standard `TextAttributeKey` for bad characters (`HighligherColors.BAD_CHARACTER`) can be used.
+The syntax and error highlighting is performed on multiple levels. The first level of syntax highlighting is based on the lexer output, and is provided through the `SyntaxHighlighter` interface. The syntax highlighter returns the `TextAttributeKey` instances for each token type which needs special highlighting. For highlighting lexer errors, the standard `TextAttributeKey` for bad characters (`HighlighterColors.BAD_CHARACTER`) can be used.
 
 [Example: SyntaxHighlighter implementation for Properties language](https://github.com/JetBrains/intellij-community/blob/master/plugins/properties/properties-psi-api/src/com/intellij/lang/properties/PropertiesHighlighter.java)
 
@@ -264,7 +264,7 @@ If you're fine with the standard UI but need to extend the default logic of rena
 * Customize how search for code references or text references is performed
 * etc.
 
-[Example: RenamePsiElementProcesssor for renaming a property](https://github.com/JetBrains/intellij-community/blob/master/plugins/properties/src/com/intellij/lang/properties/refactoring/rename/RenamePropertyProcessor.java)
+[Example: RenamePsiElementProcessor for renaming a property](https://github.com/JetBrains/intellij-community/blob/master/plugins/properties/src/com/intellij/lang/properties/refactoring/rename/RenamePropertyProcessor.java)
 
 
 

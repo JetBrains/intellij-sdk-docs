@@ -15,6 +15,7 @@
     * [Plugin Structure](plugin_structure.html)
     * [Architectural Overview](architectural_overview.html)
     * [Structure of IntelliJ IDEA Project](project_structure.html)
+    * [PSI Cookbook](psi_cookbook.html)
 * [Advanced Topics](advanced_topics.html)
     * [Persisting State of Components](persisting_state.html)
     * [XML DOM API](xml_dom_api.html)

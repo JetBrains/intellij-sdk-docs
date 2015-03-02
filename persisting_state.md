@@ -1,5 +1,5 @@
 ---
-title: Persisting State of IntelliJ IDEA Components
+title: Persisting State of Components
 ---
 
 <!--INITIAL_SOURCE https://confluence.jetbrains.com/display/IDEADEV/Persisting+State+of+Components-->

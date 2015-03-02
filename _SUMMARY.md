@@ -19,6 +19,7 @@
     * [Persisting State of Components](persisting_state.html)
     * [XML DOM API](xml_dom_api.html)
     * [Spring API](spring_api.html)
+    * [Developing VCS Integration Plugins for IntelliJ IDEA](vsc_integration_for_plugins.html)
 * [Custom Language Support](custom_language_support.html)
 
 

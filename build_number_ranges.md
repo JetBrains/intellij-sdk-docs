@@ -37,7 +37,7 @@ Usually you need to omit the product ID and use only the branch number and build
 <idea-version since-build="94.539"/>
 ```
 
-The branch numbers used for IntelliJ Platform-based products and build numbers of recent IDEA versions are:
+The branch numbers used for IntelliJ Platform-based products and build numbers of recent IDE versions are:
 
 * branch 93 - IDEA 9.0
 
@@ -133,6 +133,10 @@ The branch numbers used for IntelliJ Platform-based products and build numbers o
 
 * branch 139 - IntelliJ IDEA 14, WebStorm 9, PyCharm 4, PhpStorm 8, RubyMine 7
 
+
+* branch 141 - IntelliJ IDEA 14.1, WebStorm 10
+
+---
 
 Previous versions of IntelliJ IDEA use linear build numbers, with the following ranges:
 

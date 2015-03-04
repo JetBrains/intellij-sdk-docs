@@ -14,7 +14,7 @@ The following components are particularly noteworthy:
 
 *  *Menus and toolbars*  are built using the [IntelliJ IDEA Action System](action_system.html)
 *  [IntelliJ IDEA Tool Windows](tool_windows.html)
-*  [IntelliJ IDEA DialogWrapper](TODO)
+*  [IntelliJ IDEA DialogWrapper](dialog_wrapper.html)
 *  [IntelliJ IDEA Popups](TODO)
 *  [IntelliJ IDEA Notifications](TODO)
 *  [File and Class Choosers](TODO)

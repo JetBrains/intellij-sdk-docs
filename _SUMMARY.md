@@ -27,6 +27,7 @@
     * [Localization Guide for IntelliJ IDEA](localization_guide.html)
 * [IntelliJ IDEA User Interface Components](ui_components.html)
     * [IntelliJ IDEA Tool Windows](tool_windows.html)
+    * [Dialogs](dialog_wrapper.html)
 * [Custom Language Support](custom_language_support.html)
 
 

@@ -17,7 +17,7 @@ The following components are particularly noteworthy:
 *  [IntelliJ IDEA DialogWrapper](dialog_wrapper.html)
 *  [IntelliJ IDEA Popups](popups.html)
 *  [IntelliJ IDEA Notifications](notifications.html)
-*  [File and Class Choosers](TODO)
+*  [File and Class Choosers](file_and_class_choosers.html)
 *  [Editor Components](TODO)
 *  [IntelliJ IDEA List and Tree Controls](TODO)
 *  Tables (TableView) (TBD)

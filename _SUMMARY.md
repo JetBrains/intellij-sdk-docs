@@ -32,6 +32,7 @@
     * [Notifications](notifications.html)
     * [File and Class Choosers](file_and_class_choosers.html)
     * [Editor Components](editor_components.html)
+    * [List and Tree Controls](lists_and_trees.html)
 * [Custom Language Support](custom_language_support.html)
 
 

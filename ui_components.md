@@ -19,7 +19,7 @@ The following components are particularly noteworthy:
 *  [IntelliJ IDEA Notifications](notifications.html)
 *  [File and Class Choosers](file_and_class_choosers.html)
 *  [Editor Components](editor_components.html)
-*  [IntelliJ IDEA List and Tree Controls](TODO)
+*  [List and Tree Controls](lists_and_trees.html)
 *  Tables (TableView) (TBD)
 *  Drag & Drop Helpers (TBD)
 *  [Miscellaneous Swing Components](TODO)

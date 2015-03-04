@@ -22,7 +22,7 @@ The following components are particularly noteworthy:
 *  [List and Tree Controls](lists_and_trees.html)
 *  Tables (TableView) (TBD)
 *  Drag & Drop Helpers (TBD)
-*  [Miscellaneous Swing Components](TODO)
+*  [Miscellaneous Swing Components](misc_swing_components.html)
 
     *  Messages
     *  JBSplitter

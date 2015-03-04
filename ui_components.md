@@ -13,10 +13,10 @@ IntelliJ IDEA includes a large number of custom Swing components. Using those co
 The following components are particularly noteworthy:
 
 *  *Menus and toolbars*  are built using the [IntelliJ IDEA Action System](action_system.html)
-*  [IntelliJ IDEA Tool Windows](tool_windows.html)
-*  [IntelliJ IDEA DialogWrapper](dialog_wrapper.html)
-*  [IntelliJ IDEA Popups](popups.html)
-*  [IntelliJ IDEA Notifications](notifications.html)
+*  [Tool Windows](tool_windows.html)
+*  [DialogWrapper](dialog_wrapper.html)
+*  [Popups](popups.html)
+*  [Notifications](notifications.html)
 *  [File and Class Choosers](file_and_class_choosers.html)
 *  [Editor Components](editor_components.html)
 *  [List and Tree Controls](lists_and_trees.html)

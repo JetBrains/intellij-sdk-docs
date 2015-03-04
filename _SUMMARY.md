@@ -28,6 +28,7 @@
 * [IntelliJ IDEA User Interface Components](ui_components.html)
     * [Tool Windows](tool_windows.html)
     * [Dialogs](dialog_wrapper.html)
+    * [Popups](popups.html)
 * [Custom Language Support](custom_language_support.html)
 
 

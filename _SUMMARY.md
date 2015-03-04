@@ -29,6 +29,7 @@
     * [Tool Windows](tool_windows.html)
     * [Dialogs](dialog_wrapper.html)
     * [Popups](popups.html)
+    * [Notifications](notifications.html)
 * [Custom Language Support](custom_language_support.html)
 
 

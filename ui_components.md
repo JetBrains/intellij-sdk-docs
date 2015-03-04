@@ -16,7 +16,7 @@ The following components are particularly noteworthy:
 *  [IntelliJ IDEA Tool Windows](tool_windows.html)
 *  [IntelliJ IDEA DialogWrapper](dialog_wrapper.html)
 *  [IntelliJ IDEA Popups](TODO)
-*  [IntelliJ IDEA Notifications](TODO)
+*  [IntelliJ IDEA Notifications](notifications.html)
 *  [File and Class Choosers](TODO)
 *  [Editor Components](TODO)
 *  [IntelliJ IDEA List and Tree Controls](TODO)

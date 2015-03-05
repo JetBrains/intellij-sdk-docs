@@ -19,6 +19,7 @@
     * [PSI Cookbook](psi_cookbook.html)
     * [IntelliJ IDEA Virtual File System](intellij_vfs.html)
     * [Indexing and PSI Stubs in IntelliJ IDEA](indexing_and_psi_stubs.html)
+    * [Testing IntelliJ IDEA Plugins](testing_plugins.html)
 * [Advanced Topics](advanced_topics.html)
     * [Persisting State of Components](persisting_state.html)
     * [XML DOM API](xml_dom_api.html)

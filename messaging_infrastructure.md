@@ -29,7 +29,7 @@ This class serves as an endpoint at the messaging infrastructure. I.e. clients a
 ![Topic](img/messaging_infrastructure/topic.png)
 
 *  *display name*  just a human-readable name used for logging/monitoring purposes;
-*  *broadcast direction*  will be explained in details at [#Broadcasting]. Default value is *TO\_CHILDREN*;
+*  *broadcast direction*  will be explained in details at [Broadcasting](). Default value is *TO\_CHILDREN*;
 *  *listener class*  that is a business interface for particular topic.
 Subscribers register implementation of this interface at the messaging infrastructure and publishers may later retrieve object that conforms (IS-A) to it and call any method defined there. Messaging infrastructure takes care on dispatching that to all subscribers of the topic, i.e. the same method with the same arguments will be called on the registered callbacks;
 

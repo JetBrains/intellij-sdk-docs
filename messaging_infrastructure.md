@@ -14,9 +14,9 @@ The purpose of this document is to introduce messaging infrastructure available 
 
 # Rationale
 
-So, what is messaging in _IntelliJ IDEA_ and why do we need it? Basically, it's implementation of
+So, what is messaging in _IntelliJ IDEA_ and why do we need it? Basically, its implementation of
 [Observer pattern](http://en.wikipedia.org/wiki/Observer_pattern)
-that provides additional features like _'broadcasting on hierarchy'_ and special _'nested events'_ processing (_'nested event'_ here is a situation when new event is fired (directly or indirectly) from the callback of another event).
+that provides additional features like _broadcasting on hierarchy_ and special _nested events_ processing (_nested event_ here is a situation when new event is fired (directly or indirectly) from the callback of another event).
 
 # Design
 
@@ -48,10 +48,10 @@ Manages all subscriptions for particular client within particular bus.
 *  keeps number of *topic handler* mappings (callbacks to invoke when message for the target topic is received)
 *Note*: not more than one handler per-topic within the same connection is allowed;
 
-*  it's possible to specify *'default handler'* and subscribe to the target topic without explicitly provided callback.
-Connection will use that *'default handler'* when storing *'(topic-handler)'* mapping;
+*  it's possible to specify *default handler* and subscribe to the target topic without explicitly provided callback.
+Connection will use that *default handler* when storing *(topic-handler)* mapping;
 
-*  it's possible to explicitly release acquired resources (*'disconnect()'* method). 
+*  it's possible to explicitly release acquired resources (*disconnect()* method).
 Also it can be plugged to standard semi-automatic disposing 
 (
 [Disposable](http://git.jetbrains.org/?p=idea/community.git;a=blob_plain;f=platform/util/src/com/intellij/openapi/Disposable.java;hb=master)
@@ -109,7 +109,7 @@ public void doChange(Context context) {
 
 *Existing resources*
 
-*  *'MessageBus'* instances are available via
+*  *MessageBus* instances are available via
 [ComponentManager.getMessageBus()](http://git.jetbrains.org/?p=idea/community.git;a=blob_plain;f=platform/platform-api/src/com/intellij/openapi/components/ComponentManager.java;hb=master)
 (many standard interfaces implement it, e.g.
 [Application](http://git.jetbrains.org/?p=idea/community.git;a=blob_plain;f=platform/platform-api/src/com/intellij/openapi/application/Application.java;hb=master),
@@ -133,19 +133,19 @@ That allows to notify subscribers registered in one message bus on messages sent
 
 ![Parent-child broadcast](img/messaging_infrastructure/parent-child-broadcast.png)
 
-Here we have a simple hierarchy (*'application bus'* is a parent of *'project bus'*) with three subscribers for the same topic.
+Here we have a simple hierarchy (*application bus* is a parent of *project bus*) with three subscribers for the same topic.
 
-We get the following if *'topic1'* defines broadcast direction as *'TO\_CHILDREN'*:
-1.  A message is sent to *'topic1'* via *'application bus'*;
-2.  *'handler1'* is notified about the message;
-3.  The message is delivered to the subscribers of the same topic within *'project bus'* (*'handler2'* and *'handler3'*);
+We get the following if *topic1* defines broadcast direction as *TO\_CHILDREN*:
+1.  A message is sent to *topic1* via *application bus*;
+2.  *handler1* is notified about the message;
+3.  The message is delivered to the subscribers of the same topic within *project bus* (*handler2* and *handler3*);
 
 *Benefits*
 
 We don't need to bother with memory management of subscribers that are bound to child buses but interested in parent bus-level events.
 
 Consider the example above we may want to have project-specific functionality that reacts to the application-level events. 
-All we need to do is to subscribe to the target topic within the *'project bus'*. 
+All we need to do is to subscribe to the target topic within the *project bus*.
 No hard reference to the project-level subscriber will be stored at application-level then, 
 i.e. we just avoided memory leak on project re-opening.
 
@@ -161,7 +161,7 @@ Broadcast configuration is defined per-topic. Following options are available:
 
 # Nested messages
 
-_'Nested message'_ is a message sent (directly or indirectly) during another message processing. 
+_Nested message_ is a message sent (directly or indirectly) during another message processing.
 Messaging infrastructure of _IntelliJ IDEA_ guarantees that all messages sent to particular topic will be delivered at the sending order.
 
 *Example:*
@@ -176,9 +176,9 @@ Let's see what happens if someone sends a message to the target topic:
 
 *  _handler1_ receives _message1_ and sends _message2_ to the same topic;
 
-*  _handler2_ receives *_message1_*;
+*  _handler2_ receives _message1_;
 
-*  _handler2_ receives *_message2_*;
+*  _handler2_ receives _message2_;
 
 *  _handler1_ receives _message2_;
 
@@ -191,15 +191,15 @@ Messaging infrastructure is very light-weight, so, it's possible to reuse it at 
 
 1. Define business interface to work with;
 
-2. Create shared message bus and topic that uses the interface above (_'shared'_ here means that either _'subject'_ or _'observers'_ know about them);
+2. Create shared message bus and topic that uses the interface above (_shared_ here means that either _subject_ or _observers_ know about them);
 
 Let's compare that with a manual implementation:
 
 1. Define listener interface (business interface);
 
-2. Provide reference to the _'subject'_ to all interested listeners;
+2. Provide reference to the _subject_ to all interested listeners;
 
-3. Add listeners storage and listeners management methods (add/remove) to the _'subject'_;
+3. Add listeners storage and listeners management methods (add/remove) to the _subject_;
 
 4. Manually iterate all listeners and call target callback in all places where new event is fired;
 
@@ -210,11 +210,11 @@ We had a problem in a situation when two subscribers tried to modify the same do
 
 The thing is that every document change is performed by the following scenario:
 
-1. _'before change'_ event is sent to all document listeners and some of them publish new messages during that;
+1. _before change_ event is sent to all document listeners and some of them publish new messages during that;
 
 2.  actual change is performed;
 
-3.  _'after change'_ event is sent to all document listeners;
+3.  _after change_ event is sent to all document listeners;
 
 We had the following then:
 
@@ -222,12 +222,12 @@ We had the following then:
 2.  _message1_ is queued for both subscribers;
 3.  _message1_ delivery starts;
 4.  _subscriber1_ receives _message1_;
-5.  _subscriber1_ issues document modification request at particular range (e.g. _'document.delete(startOffset, endOffset)'_);
-6.  _'before change'_ notification is sent to the document listeners;
-7.  _message2_ is sent by one of the standard document listeners to another topic within the same message bus during _'before change'_ processing;
+5.  _subscriber1_ issues document modification request at particular range (e.g. _document.delete(startOffset, endOffset)_);
+6.  _before change_ notification is sent to the document listeners;
+7.  _message2_ is sent by one of the standard document listeners to another topic within the same message bus during _before change_ processing;
 8.  the bus tries to deliver all pending messages before queuing _message2_;
 9.  _subscriber2_ receives _message1_ and also modifies a document;
-10.  the call stack is unwinded and _'actual change'_ phase of document modification operation requested by _subscriber1_ begins;
+10.  the call stack is unwinded and _actual change_ phase of document modification operation requested by _subscriber1_ begins;
 
 **The problem**  is that document range used by _subscriber1_ for initial modification request is invalid if _subscriber2_ has changed document's range before it.
 

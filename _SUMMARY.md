@@ -26,6 +26,7 @@
     * [Spring API](spring_api.html)
     * [Developing VCS Integration Plugins for IntelliJ IDEA](vcs_integration_for_plugins.html)
     * [Localization Guide for IntelliJ IDEA](localization_guide.html)
+    * [External Builder API and Plugins](external_builder_api.html)
 * [IntelliJ IDEA User Interface Components](ui_components.html)
     * [Tool Windows](tool_windows.html)
     * [Dialogs](dialog_wrapper.html)

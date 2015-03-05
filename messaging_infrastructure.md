@@ -229,6 +229,6 @@ We had the following then:
 9.  _subscriber2_ receives _message1_ and also modifies a document;
 10.  the call stack is unwinded and _'actual change'_ phase of document modification operation requested by _subscriber1_ begins;
 
-*The problem*  is that document range used by _subscriber1_ for initial modification request is invalid if _subscriber2_ has changed document's range before it.
+**The problem**  is that document range used by _subscriber1_ for initial modification request is invalid if _subscriber2_ has changed document's range before it.
 
 

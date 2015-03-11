@@ -3,7 +3,7 @@ title: Custom Language Support Tutorial
 ---
 
 <!--
-INITIAL_SOURCE https://confluence.jetbrains.com/display/IDEADEV/Supporting+multiple+carets
+INITIAL_SOURCE https://confluence.jetbrains.com/display/IntelliJIDEA/Custom+Language+Support
 -->
 
 # {{ page.title }}

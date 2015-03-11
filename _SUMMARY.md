@@ -40,7 +40,7 @@
     * [List and Tree Controls](lists_and_trees.html)
     * [Miscellaneous Swing Components](misc_swing_components.html)
 * [Custom Language Support](custom_language_support.html)
-    * [Custom Language Support Tutorial](cls_tutorial.html)
+    * [Tutorial](cls_tutorial.html)
         * [Prerequisites](cls_prerequisites.html)
         * [Language and File Type](language_and_filetype.html)
         * [Grammar and Parser](TODO)

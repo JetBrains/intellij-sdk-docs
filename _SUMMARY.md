@@ -29,6 +29,7 @@
     * [Localization Guide for IntelliJ IDEA](localization_guide.html)
     * [External Builder API and Plugins](external_builder_api.html)
     * [Messaging Infrastructure](messaging_infrastructure.html)
+    * [Multiple Carets](multiple_carets.html)
 * [IntelliJ IDEA User Interface Components](ui_components.html)
     * [Tool Windows](tool_windows.html)
     * [Dialogs](dialog_wrapper.html)

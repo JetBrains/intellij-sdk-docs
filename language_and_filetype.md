@@ -116,6 +116,6 @@ and IntelliJ IDEA will automatically associate it with our language.
 
 ![File Type Factory](img/cls_tutorial/file_type_factory.png)
 
-[Previous\|Prerequisites](cls_prerequisites.html)
-[Top\|Custom Language Support](cls_tutorial.html)
-[Next\|Grammar and Parser](TODO)
+[Previous](cls_prerequisites.html)
+[Top](cls_tutorial.html)
+[Next](TODO)

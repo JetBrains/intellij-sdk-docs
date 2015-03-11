@@ -19,7 +19,7 @@ The lexer class will be generated with
 
 This a step-by-step tutorial and it requires performing every step:
 
-*  [Prerequisites](TODO)
+*  [Prerequisites](cls_prerequisites.html)
 *  [Language and File Type](TODO)
 *  [Grammar and Parser](TODO)
 *  [Lexer and Parser Definition](TODO)

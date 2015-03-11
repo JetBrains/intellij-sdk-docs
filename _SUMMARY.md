@@ -40,5 +40,6 @@
     * [List and Tree Controls](lists_and_trees.html)
     * [Miscellaneous Swing Components](misc_swing_components.html)
 * [Custom Language Support](custom_language_support.html)
+    * [Custom Language Support Tutorial](cls_tutorial.html)
 
 

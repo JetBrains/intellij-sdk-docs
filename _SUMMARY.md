@@ -42,7 +42,7 @@
 * [Custom Language Support](custom_language_support.html)
     * [Custom Language Support Tutorial](cls_tutorial.html)
         * [Prerequisites](cls_prerequisites.html)
-        * [Language and File Type](TODO)
+        * [Language and File Type](language_and_filetype.html)
         * [Grammar and Parser](TODO)
         * [Lexer and Parser Definition](TODO)
         * [Syntax Highlighter and Color Settings Page](TODO)

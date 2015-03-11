@@ -48,5 +48,5 @@ Create an IntelliJ IDEA Plugin project and specify IntelliJ IDEA Plugin SDK.
 ![New Project](img/cls_tutorial/new_project.png)
 
 [Top](cls_tutorial.html)
-[Next](TODO)
+[Next](language_and_filetype.md)
 

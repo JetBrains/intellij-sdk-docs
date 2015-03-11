@@ -20,7 +20,7 @@ The lexer class will be generated with
 This a step-by-step tutorial and it requires performing every step:
 
 *  [Prerequisites](cls_prerequisites.html)
-*  [Language and File Type](TODO)
+*  [Language and File Type](language_and_filetype.html)
 *  [Grammar and Parser](TODO)
 *  [Lexer and Parser Definition](TODO)
 *  [Syntax Highlighter and Color Settings Page](TODO)

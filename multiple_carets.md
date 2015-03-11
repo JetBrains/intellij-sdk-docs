@@ -37,7 +37,7 @@ _getBlockSelectionStarts()_ and _getBlockSelectionEnds()_ methods work in multi-
 
 ## Editor actions
 
-#### EditorAction and EditorActionHandler
+### EditorAction and EditorActionHandler
 
 When
 [EditorActionHandler](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/editor/actionSystem/EditorActionHandler.java) is invoked, additional parameter will be passed to it - caret instance on which it should operate, or null, if it's invoked without any caret context.
@@ -61,9 +61,9 @@ The following delegates are available:
 
 At the moment there's no need to make any changes in the handlers to support multiple carets - they are already invoked for each caret.
 
-# Typing actions
+## Typing actions
 
-#### TypedActionHandler, TypedHandlerDelegate
+### TypedActionHandler, TypedHandlerDelegate
 
 [TypedActionHandler](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/editor/actionSystem/TypedActionHandler.java)
 and
@@ -89,8 +89,7 @@ needs to be provided instead.
 
 -----------
 
-
-# Code insight actions
+## Code insight actions
 
 Existing actions inheriting from
 [CodeInsightAction](https://github.com/JetBrains/intellij-community/blob/master/platform/lang-api/src/com/intellij/codeInsight/actions/CodeInsightAction.java) will work for primary caret only.

@@ -44,7 +44,7 @@
         * [Prerequisites](cls_prerequisites.html)
         * [Language and File Type](language_and_filetype.html)
         * [Grammar and Parser](grammar_and_parser.html)
-        * [Lexer and Parser Definition](TODO)
+        * [Lexer and Parser Definition](lexer_and_parser_definition.html)
         * [Syntax Highlighter and Color Settings Page](TODO)
         * [PSI Helpers and Utilities](TODO)
         * [Annotator](TODO)

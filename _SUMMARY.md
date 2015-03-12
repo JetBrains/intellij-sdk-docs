@@ -45,7 +45,7 @@
         * [Language and File Type](language_and_filetype.html)
         * [Grammar and Parser](grammar_and_parser.html)
         * [Lexer and Parser Definition](lexer_and_parser_definition.html)
-        * [Syntax Highlighter and Color Settings Page](TODO)
+        * [Syntax Highlighter and Color Settings Page](syntax_highlighter_and_color_settings_page.html)
         * [PSI Helpers and Utilities](TODO)
         * [Annotator](TODO)
         * [Line Marker Provider](TODO)

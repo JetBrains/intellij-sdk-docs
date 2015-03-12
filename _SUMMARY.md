@@ -43,7 +43,7 @@
     * [Tutorial](cls_tutorial.html)
         * [Prerequisites](cls_prerequisites.html)
         * [Language and File Type](language_and_filetype.html)
-        * [Grammar and Parser](TODO)
+        * [Grammar and Parser](grammar_and_parser.html)
         * [Lexer and Parser Definition](TODO)
         * [Syntax Highlighter and Color Settings Page](TODO)
         * [PSI Helpers and Utilities](TODO)

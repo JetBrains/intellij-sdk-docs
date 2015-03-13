@@ -51,7 +51,7 @@
         * [Line Marker Provider](line_marker_provider.html)
         * [Completion Contributor](completion_contributor.html)
         * [Reference Contributor](reference_contributor.html)
-        * [Find Usages Provider](TODO)
+        * [Find Usages Provider](find_usages_provider.html)
         * [Folding Builder](TODO)
         * [Go To Symbol Contributor](TODO)
         * [Structure View Factory](TODO)

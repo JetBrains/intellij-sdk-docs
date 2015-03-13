@@ -49,7 +49,7 @@
         * [PSI Helpers and Utilities](psi_helper_and_utilities.html)
         * [Annotator](annotator.html)
         * [Line Marker Provider](line_marker_provider.html)
-        * [Completion Contributor](TODO)
+        * [Completion Contributor](completion_contributor.html)
         * [Reference Contributor](TODO)
         * [Find Usages Provider](TODO)
         * [Folding Builder](TODO)

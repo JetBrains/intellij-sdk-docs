@@ -48,7 +48,7 @@
         * [Syntax Highlighter and Color Settings Page](syntax_highlighter_and_color_settings_page.html)
         * [PSI Helpers and Utilities](psi_helper_and_utilities.html)
         * [Annotator](annotator.html)
-        * [Line Marker Provider](TODO)
+        * [Line Marker Provider](line_marker_provider.html)
         * [Completion Contributor](TODO)
         * [Reference Contributor](TODO)
         * [Find Usages Provider](TODO)

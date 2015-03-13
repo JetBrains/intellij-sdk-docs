@@ -55,7 +55,7 @@
         * [Folding Builder](folding_builder.html)
         * [Go To Symbol Contributor](go_to_symbol_contributor.html)
         * [Structure View Factory](structure_view_factory.html)
-        * [Formatter](TODO)
+        * [Formatter](formatter.html)
         * [Code Style Settings](TODO)
         * [Commenter](TODO)
         * [Quick Fix](TODO)

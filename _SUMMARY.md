@@ -47,7 +47,7 @@
         * [Lexer and Parser Definition](lexer_and_parser_definition.html)
         * [Syntax Highlighter and Color Settings Page](syntax_highlighter_and_color_settings_page.html)
         * [PSI Helpers and Utilities](psi_helper_and_utilities.html)
-        * [Annotator](TODO)
+        * [Annotator](annotator.html)
         * [Line Marker Provider](TODO)
         * [Completion Contributor](TODO)
         * [Reference Contributor](TODO)

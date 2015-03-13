@@ -57,7 +57,7 @@
         * [Structure View Factory](structure_view_factory.html)
         * [Formatter](formatter.html)
         * [Code Style Settings](code_style_settings.html)
-        * [Commenter](TODO)
+        * [Commenter](commenter.html)
         * [Quick Fix](TODO)
 
 

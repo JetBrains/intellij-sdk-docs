@@ -53,7 +53,7 @@
         * [Reference Contributor](reference_contributor.html)
         * [Find Usages Provider](find_usages_provider.html)
         * [Folding Builder](folding_builder.html)
-        * [Go To Symbol Contributor](TODO)
+        * [Go To Symbol Contributor](go_to_symbol_contributor.html)
         * [Structure View Factory](TODO)
         * [Formatter](TODO)
         * [Code Style Settings](TODO)

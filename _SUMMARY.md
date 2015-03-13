@@ -58,6 +58,6 @@
         * [Formatter](formatter.html)
         * [Code Style Settings](code_style_settings.html)
         * [Commenter](commenter.html)
-        * [Quick Fix](TODO)
+        * [Quick Fix](quick_fix.html)
 
 

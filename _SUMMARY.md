@@ -56,7 +56,7 @@
         * [Go To Symbol Contributor](go_to_symbol_contributor.html)
         * [Structure View Factory](structure_view_factory.html)
         * [Formatter](formatter.html)
-        * [Code Style Settings](TODO)
+        * [Code Style Settings](code_style_settings.html)
         * [Commenter](TODO)
         * [Quick Fix](TODO)
 

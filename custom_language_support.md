@@ -3,7 +3,7 @@ title: Custom Language Support
 ---
 
 <!--
-INITIAL_SOURCE TODO
+INITIAL_SOURCE http://confluence.jetbrains.com/display/IDEADEV/Developing+Custom+Language+Plugins+for+IntelliJ+IDEA
 -->
 
 # {{ page.title }}

@@ -11,7 +11,7 @@ INITIAL_SOURCE https://confluence.jetbrains.com/display/IDEADEV/Indexing+and+PSI
 
 ## Introduction
 
-The indexing framework provides a quick way to locate certain elements (for example, files containing a certain word or methods with a particular name) in large code bases. Plugin developers can use the existing indexes built by IntelliJ IDEA itself, as well as build and use their own indexes.
+The indexing framework provides a quick way to locate certain elements (for example, files containing a certain word or methods with a particular name) in large code bases. Plugin developers can use the existing indexes built by the IDE itself, as well as build and use their own indexes.
 
 It supports two main types of indexes: *file-based indexes*  and *stub indexes*. File-based indexes are built directly over the content of files, and stub indexes are built over serialized *stub trees*. A stub tree for a source file is a subset of its PSI tree which contains only externally visible declarations and is serialized in a compact binary format. Querying a file-based index gets you the set of files matching a certain condition, and querying a stub index gets you the set of matching PSI elements. Therefore, custom language plugin developers should typically use stub indexes in their plugin implementations.
 
@@ -31,7 +31,7 @@ The implementation contains of the following main parts:
 
 *  `getIndexer()` returns the indexer class, which is responsible for actually building a set of key/value pairs based on the file content.
 
-*  `getKeyDescriptor()` returns the key descriptor, which is responsible for comparing the keys and storing them in a serialized binary format. Probably the most commonly used KeyDescriptor implementation is `EnumeratorStringDescriptor`  implementation, designed for storing identifiers in an efficient way.
+*  `getKeyDescriptor()` returns the key descriptor, which is responsible for comparing the keys and storing them in a serialized binary format. Probably the most commonly used `KeyDescriptor` implementation is `EnumeratorStringDescriptor`  implementation, designed for storing identifiers in an efficient way.
 
 *  `getValueExternalizer()` returns the value serializer, which takes care of storing values in a serialized binary format.
 

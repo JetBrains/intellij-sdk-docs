@@ -1,5 +1,5 @@
 ---
-title: IntelliJ IDEA User Interface Components
+title: User Interface Components
 ---
 
 <!--
@@ -8,11 +8,11 @@ INITIAL_SOURCE https://confluence.jetbrains.com/display/IDEADEV/IntelliJ+IDEA+Us
 
 # {{ page.title }}
 
-IntelliJ IDEA includes a large number of custom Swing components. Using those components in your plugins will ensure that your plugin looks and works consistently with the UI of the rest of the IDE, and can often reduce the code size compared to using the default Swing components.
+The IntelliJ Platform includes a large number of custom Swing components. Using those components in your plugins will ensure that your plugin looks and works consistently with the UI of the rest of the IDE, and can often reduce the code size compared to using the default Swing components.
 
 The following components are particularly noteworthy:
 
-*  *Menus and toolbars*  are built using the [IntelliJ IDEA Action System](action_system.html)
+*  *Menus and toolbars* are built using the [Action System](action_system.html)
 *  [Tool Windows](tool_windows.html)
 *  [DialogWrapper](dialog_wrapper.html)
 *  [Popups](popups.html)

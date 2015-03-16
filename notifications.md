@@ -1,5 +1,5 @@
 ---
-title: IntelliJ IDEA Notifications
+title: Notifications
 ---
 
 <!--

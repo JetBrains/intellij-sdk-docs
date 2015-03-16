@@ -1,5 +1,5 @@
 ---
-title: Testing IntelliJ IDEA Plugins
+title: Testing Plugins
 ---
 
 <!--

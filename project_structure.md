@@ -1,5 +1,5 @@
 ---
-title: Structure of IntelliJ IDEA Project
+title: Structure of Project
 ---
 
 <!--

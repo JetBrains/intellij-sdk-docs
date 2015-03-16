@@ -1,5 +1,5 @@
 ---
-title: IntelliJ IDEA Tool Windows
+title: Tool Windows
 ---
 
 <!--

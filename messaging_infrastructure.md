@@ -1,5 +1,5 @@
 ---
-title: IntelliJ IDEA Messaging infrastructure
+title: Messaging infrastructure
 ---
 
 <!--

@@ -1,5 +1,5 @@
 ---
-title: IntelliJ IDEA Action System
+title: Action System
 ---
 
 <!--

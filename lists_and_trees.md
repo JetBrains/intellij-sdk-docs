@@ -1,5 +1,5 @@
 ---
-title: IntelliJ IDEA List and Tree Controls
+title: List and Tree Controls
 ---
 
 <!--

@@ -1,5 +1,5 @@
 ---
-title: Localization Guide for IntelliJ IDEA
+title: Localization Guide
 ---
 
 <!--

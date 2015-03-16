@@ -1,5 +1,5 @@
 ---
-title: Developing VCS Integration Plugins for IntelliJ IDEA
+title: VCS Integration Plugins
 ---
 
 # {{ page.title }}

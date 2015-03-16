@@ -1,5 +1,5 @@
 ---
-title: IntelliJ IDEA Virtual File System
+title: Virtual File System
 ---
 
 <!--

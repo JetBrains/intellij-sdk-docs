@@ -19,7 +19,7 @@ This article will explain the main concepts of the Language API and will guide y
 
 ## Tutorial
 
-If you prefer a full example to the detailed description offered on this page, please check out a step-by-step tutorial how to define custom language support on example of ".properties" files: [Custom Language Support Tutorial](http://confluence.jetbrains.com/display/IntelliJIDEA/Custom+Language+Support)
+If you prefer a full example to the detailed description offered on this page, please check out a step-by-step tutorial how to define custom language support on example of ".properties" files: [Custom Language Support Tutorial](cls_tutorial.html)
 
 
 ## Registering a File Type

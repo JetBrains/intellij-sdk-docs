@@ -114,7 +114,7 @@ Please see [Indexing and PSI Stubs](indexing_and_psi_stubs.html) for advanced to
 
 The class used to specify how a particular range of text should be highlighted is called `TextAttributesKey`. An instance of this class is created for every distinct type of item which should be highlighted (keyword, number, string and so on). The `TextAttributesKey` defines the default attributes which are applied to items of the corresponding type (for example, keywords are bold, numbers are blue, strings are bold and green). The mapping of the `TextAttributesKey` to specific attributes used in an editor is defined by the `EditorColorsScheme` class, and can be configured by the user if the plugin provides an appropriate configuration interface. Highlighting from multiple `TextAttributeKey` items can be layered - for example, one key may define an item's boldness and another its color.
 
-Please note new functionality about Language Defaults and support for additional color schemes as detailed in TODO Color Scheme Management in Intellij IDEA 12.1
+Please note new functionality about Language Defaults and support for additional color schemes as detailed in [Color Scheme Management](color_scheme_management.html).
 
 
 ### Lexer

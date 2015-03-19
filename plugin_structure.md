@@ -8,7 +8,10 @@ INITIAL_SOURCE https://confluence.jetbrains.com/display/IDEADEV/IntelliJ+IDEA+Pl
 
 # {{ page.title }}
 
-Plugins are the only supported way to extend IDEA functionality. A plugin uses API exposed by IDEA or other plugins to implement its functionality. This document is focused on the plugin system structure and plugin lifecycle. It doesn't specify any other APIs that may be used by plugins.
+Plugins are the only supported way to extend IDEA functionality.
+A plugin uses API exposed by IDEA or other plugins to implement its functionality.
+This document is focused on the plugin system structure and plugin lifecycle.
+It doesn't specify any other APIs that may be used by plugins.
 
 The following subjects are covered:
 <!--TODO Links from TOC to certain parts of the document-->
@@ -89,23 +92,35 @@ All the jars from the 'lib' folder are automatically added to the classpath.
 
 ## Plugin Class Loaders
 
-To load classes of each plugin, IDEA uses a separate class loader. This allows each plugin to use a different version of a library, even if the same library is used by IDEA itself or by another plugin.
+To load classes of each plugin, IDEA uses a separate class loader.
+This allows each plugin to use a different version of a library, even if the same library is used by IDEA itself or by another plugin.
 
-By default, the main IDEA class loader loads classes that were not found in the plugin class loader. However, in the plugin.xml file, one can use the <depends> element to specify that a plugin depends on one or more other plugins. In this case, the class loaders of those plugins will be used for classes not found in the current plugin. This allows a plugin to reference classes from other plugins.
+By default, the main IDEA class loader loads classes that were not found in the plugin class loader.
+However, in the plugin.xml file, one can use the <depends> element to specify that a plugin depends on one or more other plugins.
+In this case, the class loaders of those plugins will be used for classes not found in the current plugin.
+This allows a plugin to reference classes from other plugins.
 
 ## Plugin Components
 
-Components are the fundamental concept of plugins integration. There are three kinds of components: _application-level_, _project-level_ and _module-level_.
+Components are the fundamental concept of plugins integration.
+There are three kinds of components: _application-level_, _project-level_ and _module-level_.
 
-Application-level components are created and initialized on IDEA start-up. They can be acquired from the Application instance with the ```getComponent(Class)``` method.
+Application-level components are created and initialized on IDEA start-up.
+They can be acquired from the Application instance with the ```getComponent(Class)``` method.
 
-Project-level components are created for each Project instance in IDEA (please note that components might be created for even unopened projects). They can be acquired from the Project instance with the ```getComponent(Class)``` method.
+Project-level components are created for each Project instance in IDEA (please note that components might be created for even unopened projects).
+They can be acquired from the Project instance with the ```getComponent(Class)``` method.
 
-Module-level components are created for each Module in every project loaded in IDEA.  Module-level component can be acquired from Module instance with the same method.
+Module-level components are created for each Module in every project loaded in IDEA.
+Module-level component can be acquired from Module instance with the same method.
 
-Every component should have interface and implementation classes specified in the configuration file. The interface class will be used for retrieving the component from other components and the implementation class will be used for component instantiation. Note that two components of the same level (Application, Project or Module) cannot have the same interface class. Interface and implementation classes can be the same.
+Every component should have interface and implementation classes specified in the configuration file.
+The interface class will be used for retrieving the component from other components and the implementation class will be used for component instantiation.
+Note that two components of the same level (Application, Project or Module) cannot have the same interface class.
+Interface and implementation classes can be the same.
 
-Each component has the unique name which is used for its externalization and other internal needs. The name of a component is returned by its getComponentName() method.
+Each component has the unique name which is used for its externalization and other internal needs.
+The name of a component is returned by its getComponentName() method.
 
 ### Components Naming Notation
 
@@ -116,12 +131,14 @@ It's recommended to name components in _<plugin_name>.<component_name>_ form.
 Optionally, application-level component's implementation class may implement the 
 [ApplicationComponent](http://git.jetbrains.org/?p=idea/community.git;a=blob;f=platform/platform-api/src/com/intellij/openapi/components/ApplicationComponent.java;hb=HEAD) 
 interface. 
-An application component that has no dependencies should have a constructor with no parameters which will be used for its instantiation. If an application component depends on other application components, it can specify these components as constructor parameters, and IDEA will ensure that the components are instantiated in correct order to satisfy the dependencies.
+An application component that has no dependencies should have a constructor with no parameters which will be used for its instantiation.
+If an application component depends on other application components, it can specify these components as constructor parameters, and IDEA will ensure that the components are instantiated in correct order to satisfy the dependencies.
 Note that application-level components must be registered in the <application-components> section of the plugin.xml file (see Plugin Configuration File below).
 
 #### Quick creation of application components
 
-*IntelliJ IDEA* suggests a simplified way of creating application components, with all the required infrastructure. The IDEA interface will help you declare the application component's implementation class and automatically makes appropriate changes to the <application-components> section of the plugin.xml file.
+*IntelliJ IDEA* suggests a simplified way of creating application components, with all the required infrastructure.
+The IDEA interface will help you declare the application component's implementation class and automatically makes appropriate changes to the <application-components> section of the plugin.xml file.
 
 *To create and register an application component*
 
@@ -180,7 +197,8 @@ file (see Plugin Configuration File below).
 
 #### Quick creation of module components
 
-*IntelliJ IDEA* suggests a simplified way of creating module components, with all the required infrastructure. The IDEA interface will help you declare the module component's implementation class and automatically makes appropriate changes to the <module-components> section of the plugin.xml file.
+*IntelliJ IDEA* suggests a simplified way of creating module components, with all the required infrastructure.
+The IDEA interface will help you declare the module component's implementation class and automatically makes appropriate changes to the <module-components> section of the plugin.xml file.
 
 *To create and register a module component*
 
@@ -217,7 +235,9 @@ For more information and samples, refer to [Persisting State of Components]().
 
 ### Defaults
 
-Defaults (components' predefined settings) should be placed in the <component_name>.xml file. Put this file in the plugin's classpath in the folder corresponding to the default package. The readExternal() method will be called on the <component> root tag. If a component has defaults, the readExternal() method is called twice: the first time for defaults and the second time for saved configuration.
+Defaults (components' predefined settings) should be placed in the <component_name>.xml file.
+Put this file in the plugin's classpath in the folder corresponding to the default package. The readExternal() method will be called on the <component> root tag.
+If a component has defaults, the readExternal() method is called twice: the first time for defaults and the second time for saved configuration.
 
 ### Plugin Components Lifecycle
 
@@ -238,7 +258,8 @@ The components are unloaded in the following order:
 * Saving configuration - the ```writeExternal``` method is invoked (if the component implements the ```JDOMExternalizable``` interface), or the ```getState``` method is invoked (if the component implements PersistentStateComponent).
 * Disposal - the ```disposeComponent``` method is invoked.
 
-Note that you should not request any other components using the ```getComponent(``` method in the constructor of your component, otherwise you'll get an assertion. If you need access to other components when initializing your component, you can specify them as constructor parameters or access them in the ```initComponent``` method.
+Note that you should not request any other components using the ```getComponent(``` method in the constructor of your component, otherwise you'll get an assertion.
+If you need access to other components when initializing your component, you can specify them as constructor parameters or access them in the ```initComponent``` method.
 
 ### Sample Plugin
 
@@ -255,7 +276,8 @@ Intellij IDEA provides the concept of _extensions_ and _extension points_ that a
 
 ## Extension Points
 
-If you want your plugin to allow other plugins to extend its functionality, in the plugin, you must declare one or several _extension points_. Each extension point defines a class or an interface that is allowed to access this point.
+If you want your plugin to allow other plugins to extend its functionality, in the plugin, you must declare one or several _extension points_.
+Each extension point defines a class or an interface that is allowed to access this point.
 
 ## Extensions
 

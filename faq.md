@@ -90,12 +90,14 @@ This FAQ is a topical index of questions that have been asked (and answered) on 
 ## Editors, Documents and Files
 *  [Why doesn't the file change on disk after I changed it through the PSI?](http://intellij.net/forums/thread.jspa?threadID=269379)
 *  [Can I hook into the file save logic?](http://intellij.net/forums/thread.jspa?threadID=269246)
-*  [Can I mark a part of a file as read-only?|http://intellij.net/forums/thread.jspa?threadID=267895] [How do I control what happens when the user tries to edit such a part?](http://www.intellij.net/forums/thread.jspa?threadID=269406)
+*  [Can I mark a part of a file as read-only?](http://intellij.net/forums/thread.jspa?threadID=267895)
+*  [How do I control what happens when the user tries to edit such a part?](http://www.intellij.net/forums/thread.jspa?threadID=269406)
 *  [How do I implement a custom editor?](http://www.intellij.net/forums/thread.jspa?threadID=214836)
 *  [How can I show several editors for a single file in tabs?](http://www.intellij.net/forums/thread.jspa?threadID=256436)
 *  [Can I open an editor which has no underlying file on disk?](http://intellij.net/forums/thread.jspa?threadID=267233)
 *  [How do I save the content of my custom editor when the user saves all documents?](http://intellij.net/forums/thread.jspa?threadID=268178)
-*  [How do I highlight elements in a source code editor?|http://www.intellij.net/forums/thread.jspa?threadID=215366] [How do I allow to navigate between highlighted elements using Find Next?](http://www.intellij.net/forums/thread.jspa?threadID=215724)
+*  [How do I highlight elements in a source code editor?](http://www.intellij.net/forums/thread.jspa?threadID=215366)
+*  [How do I allow to navigate between highlighted elements using Find Next?](http://www.intellij.net/forums/thread.jspa?threadID=215724)
 *  [How do I force code to be re-analyzed?](http://www.intellij.net/forums/thread.jspa?threadID=224999)
 *  [How do I get the active editor instance?](http://www.intellij.net/forums/thread.jspa?threadID=264626)
 *  [How do I get the cursor position in the current editor?](http://www.intellij.net/forums/thread.jspa?threadID=263035)
@@ -103,7 +105,6 @@ This FAQ is a topical index of questions that have been asked (and answered) on 
 *  [How do I show a popup hint in an editor?](http://intellij.net/forums/thread.jspa?threadID=138488)
 *  [How do I create live template-like red box edit regions in an editor?](http://intellij.net/forums/thread.jspa?threadID=158355)
 *  [How can I show an editor with error highlighting in a toolwindow?](http://intellij.net/forums/thread.jspa?threadID=158409)
-
 
 ## Inspections
 *  [Can I build an inspection that processes XML files?](http://intellij.net/forums/message.jspa?messageID=5188503#5188503)

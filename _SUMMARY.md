@@ -60,5 +60,6 @@
         * [Code Style Settings](code_style_settings.html)
         * [Commenter](commenter.html)
         * [Quick Fix](quick_fix.html)
+* [Plugin Development FAQ](faq.html)
 
 

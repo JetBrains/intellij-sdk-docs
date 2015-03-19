@@ -10,7 +10,7 @@
         * [Setting Up Development Environment](setting_up_environment.html)
         * [Creating a Plugin Module](creating_plugin_module.html)
         * [Build Number Ranges](build_number_ranges.html)
-        * [Running a Plugin](running_plugin.html)
+        * [Running and Debugging a Plugin](running_and_debugging_a_plugin.html)
         * [Plugin Compatibility with IntelliJ Platform Products](plugin_compatibility.html)
     * [Plugin Structure](plugin_structure.html)
     * [Architectural Overview](architectural_overview.html)

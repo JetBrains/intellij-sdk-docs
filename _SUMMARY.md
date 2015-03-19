@@ -32,6 +32,7 @@
     * [Multiple Carets](multiple_carets.html)
     * [Color Scheme Management](color_scheme_management.html)
     * [Work with Icons and Images](work_with_icons_and_images.html)
+    * [Tomcat Integration](tomcat_integration.html)
 * [User Interface Components](ui_components.html)
     * [Tool Windows](tool_windows.html)
     * [Dialogs](dialog_wrapper.html)

@@ -4,7 +4,9 @@ title: VCS Integration Plugins
 
 # {{ page.title }}
 
-This page gives an overview of the Version Control Integration API in IntelliJ IDEA 7.0. Most of the concepts described here also apply to IntelliJ IDEA 6.0. The VCS API was significantly refactored in version 6.0, and this document does not describe the API of older versions.
+This page gives an overview of the Version Control Integration API in IntelliJ IDEA 7.0.
+Most of the concepts described here also apply to IntelliJ IDEA 6.0.
+The VCS API was significantly refactored in version 6.0, and this document does not describe the API of older versions.
 
 ## Key Concepts
 

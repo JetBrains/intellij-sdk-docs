@@ -12,7 +12,7 @@ The VCS API was significantly refactored in version 6.0, and this document does 
 
 ### FilePath
 
-A *FilePath* (com.intellij.openapi.vcs.FilePath) represents a path to a file or directory on disk or in the VCS repository.
+A [FilePath](com.intellij.openapi.vcs.FilePath) represents a path to a file or directory on disk or in the VCS repository.
 Unlike a VirtualFile, a FilePath can represent a path to a file which doesn't exist on disk.
 The main difference between a FilePath and a java.io.File is that a FilePath caches the VirtualFile corresponding to the path, so it can be retrieved without doing a VFS search.
 

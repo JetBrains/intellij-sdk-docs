@@ -12,8 +12,13 @@ The VCS API was significantly refactored in version 6.0, and this document does 
 
 ### FilePath
 
-A [FilePath](https://github.com/JetBrains/intellij-community/blob/master/platform/vcs-api/vcs-api-core/src/com/intellij/openapi/vcs/FilePath.java) represents a path to a file or directory on disk or in the VCS repository.
-Unlike a VirtualFile, a FilePath can represent a path to a file which doesn't exist on disk.
+A [FilePath](https://github.com/JetBrains/intellij-community/blob/master/platform/vcs-api/vcs-api-core/src/com/intellij/openapi/vcs/FilePath.java)
+represents a path to a file or directory on disk or in the VCS repository.
+Unlike a
+[VirtualFile](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/openapi/vfs/VirtualFile.java),
+a
+[FilePath](https://github.com/JetBrains/intellij-community/blob/master/platform/vcs-api/vcs-api-core/src/com/intellij/openapi/vcs/FilePath.java)
+can represent a path to a file which doesn't exist on disk.
 The main difference between a FilePath and a java.io.File is that a FilePath caches the VirtualFile corresponding to the path, so it can be retrieved without doing a VFS search.
 
 To create instances of FilePath, the VcsContextFactory API is used.

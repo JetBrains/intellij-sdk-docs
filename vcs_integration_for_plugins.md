@@ -129,7 +129,8 @@ This section describes the different components which comprise a VCS integration
 
 ### AbstractVcs
 
-This is the main entry point for a VCS plugin, which is used by IntelliJ IDEA to retrieve all other services provided by the plugin.The recommended way to register an AbstractVcs implementation is to add an extension declaration to plugin.xml, as shown in the following example:
+This is the main entry point for a VCS plugin, which is used by IntelliJ IDEA to retrieve all other services provided by the plugin.
+The recommended way to register an AbstractVcs implementation is to add an extension declaration to plugin.xml, as shown in the following example:
 
 ```xml
 <idea-plugin version="2">
@@ -140,7 +141,7 @@ This is the main entry point for a VCS plugin, which is used by IntelliJ IDEA to
 </idea-plugin>
 ```
 
-Here 'name' is the unique name of the VCS (this must match the string returned by your implementation of AbstractVcs.getName()), and 'vcsClass' is your implementation class.
+Here ```name``` is the unique name of the VCS (this must match the string returned by your implementation of ```AbstractVcs.getName()```), and *vcsClass* is your implementation class.
 
 ### ChangeProvider
 

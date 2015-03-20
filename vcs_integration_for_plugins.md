@@ -101,15 +101,20 @@ If a custom file status has not been specified, the status is calculated automat
 
 ### ChangeList
 
-A *ChangeList* (com.intellij.openapi.vcs.changes.ChangeList) represents a named group of related changes. There are two main kinds of changelists:
+A
+[ChangeList](https://github.com/JetBrains/intellij-community/blob/master/platform/vcs-api/src/com/intellij/openapi/vcs/changes/ChangeList.java)
+represents a named group of related changes.
+There are two main kinds of changelists:
 
-*  Local (LocalChangeList) represents a group of modifications done by a user locally.
-If the VCS also supports the concept of changelists (like Perforce does), the VCS plugin can synchronize IDEA's local changelist structure with that of the VCS.
-Otherwise, a local changelist is simply a subset of the files checked out or modified by the user.
+*  [LocalChangeList](https://github.com/JetBrains/intellij-community/blob/master/platform/vcs-api/src/com/intellij/openapi/vcs/changes/LocalChangeList.java) represents a group of modifications done by a user locally.
+   If the VCS also supports the concept of changelists (like Perforce does), the VCS plugin can synchronize IDEA's local changelist structure with that of the VCS.
+   Otherwise, a local changelist is simply a subset of the files checked out or modified by the user.
 
-*  Committed (CommittedChangeList) represents a set of modifications checked in to the VCS repository.
-For VCSes which support atomic commit, every committed revision is represented by a CommittedChangeList.
-For VCSes which use per-file commit (like CVS), the plugin can use heuristics to group a sequence of individual file commits into a CommittedChangeList.
+*  [CommittedChangeList](https://github.com/JetBrains/intellij-community/blob/master/platform/vcs-api/src/com/intellij/openapi/vcs/versionBrowser/CommittedChangeList.java)
+   represents a set of modifications checked in to the VCS repository.
+   For VCSes which support atomic commit, every committed revision is represented by a CommittedChangeList.
+   For VCSes which use per-file commit (like CVS), the plugin can use heuristics to group a sequence of individual file commits into a
+   [CommittedChangeList](https://github.com/JetBrains/intellij-community/blob/master/platform/vcs-api/src/com/intellij/openapi/vcs/versionBrowser/CommittedChangeList.java)
 
 Note: The "Unversioned Files", "Locally Deleted Files" etc. nodes in the Changes view are not actually changelists, and files under those nodes are not represented by Change objects.
 

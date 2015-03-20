@@ -42,24 +42,34 @@ representing paths in a VCS repository, rather than local paths, are created usi
 
 ### Revision Number
 
-A *VcsRevisionNumber* (com.intellij.openapi.vcs.history.VcsRevisionNumber) represents a revision number of the file.
-If the VCS stores revision numbers as simple integers, the standard VcsRevisionNumber.
-Int implementation can be used. If the VCS has a more complex format of revision numbers (like CVS, which uses a series of numbers delimited with dots), the plugin can provide a custom implementation.
+A
+[VcsRevisionNumber](https://github.com/JetBrains/intellij-community/blob/master/platform/vcs-api/vcs-api-core/src/com/intellij/openapi/vcs/history/VcsRevisionNumber.java)
+represents a revision number of the file.
+If the VCS stores revision numbers as simple integers, the standard
+[VcsRevisionNumber](https://github.com/JetBrains/intellij-community/blob/master/platform/vcs-api/vcs-api-core/src/com/intellij/openapi/vcs/history/VcsRevisionNumber.java).
+Int implementation can be used.
+If the VCS has a more complex format of revision numbers (like CVS, which uses a series of numbers delimited with dots), the plugin can provide a custom implementation.
 
 ### ContentRevision
 
-A *ContentRevision* (com.intellij.openapi.vcs.changes.ContentRevision) represents a particular revision of a file, which exists either locally or in a VCS repository.
+A
+[ContentRevision](https://github.com/JetBrains/intellij-community/blob/master/platform/vcs-api/vcs-api-core/src/com/intellij/openapi/vcs/changes/ContentRevision.java)
+represents a particular revision of a file, which exists either locally or in a VCS repository.
 It has three main attributes:
 
-*  FilePath specifying the file of which this is a revision. If some version of the file exists locally, this should be a local path.
+*  ```FilePath``` specifying the file of which this is a revision. If some version of the file exists locally, this should be a local path.
 
-*  VcsRevisionNumber specifying the revision number of the revision, or VcsRevisionNumber.NULL if the revision exists only locally.
+*  ```VcsRevisionNumber``` specifying the revision number of the revision, or ```VcsRevisionNumber.NULL``` if the revision exists only locally.
 
-*  Content of the revision.
+*  ```Content of the revision```.
 
-The content is returned as string, and the VCS plugin is responsible for converting the binary file content to correct encoding. To detect the encoding automatically based on the IDE settings and the byte order mark, the method CharsetToolkit.bytesToString() can be used (this API is new in IDEA 7.0.2). Revisions of binary files can also be represented as BinaryContentRevision, which is a subclass of ContentRevision. For binary revisions, the result of getContent() is undefined, and getBinaryContent() can be used to retrieve the contents as a byte array.
+The content is returned as string, and the VCS plugin is responsible for converting the binary file content to correct encoding.
+To detect the encoding automatically based on the IDE settings and the byte order mark, the method ```CharsetToolkit.bytesToString()``` can be used (this API is new in IDEA 7.0.2).
+Revisions of binary files can also be represented as BinaryContentRevision, which is a subclass of ContentRevision.
+For binary revisions, the result of getContent() is undefined, and getBinaryContent() can be used to retrieve the contents as a byte array.
 
-A useful class which can be used to represent the current on-disk version of a particular file is com.intellij.openapi.vcs.changes.CurrentContentRevision.
+A useful class which can be used to represent the current on-disk version of a particular file is
+[CurrentContentRevision](https://github.com/JetBrains/intellij-community/blob/master/platform/vcs-api/src/com/intellij/openapi/vcs/changes/CurrentContentRevision.java).
 
 ### FileStatus
 

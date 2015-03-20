@@ -116,7 +116,12 @@ There are two main kinds of changelists:
    For VCSes which use per-file commit (like CVS), the plugin can use heuristics to group a sequence of individual file commits into a
    [CommittedChangeList](https://github.com/JetBrains/intellij-community/blob/master/platform/vcs-api/src/com/intellij/openapi/vcs/versionBrowser/CommittedChangeList.java)
 
-Note: The "Unversioned Files", "Locally Deleted Files" etc. nodes in the Changes view are not actually changelists, and files under those nodes are not represented by Change objects.
+**Note**:
+
+```
+The *Unversioned Files*, *Locally Deleted Files* etc. nodes in the *Changes* view are not actually changelists,
+and files under those nodes are not represented by Change objects.
+```
 
 ## Plugin Components
 
@@ -124,7 +129,7 @@ This section describes the different components which comprise a VCS integration
 
 ### AbstractVcs
 
-This is the main entry point for a VCS plugin, which is used by IntelliJ IDEA to retrieve all other services provided by the plugin. The recommended way to register an AbstractVcs implementation is to add an extension declaration to plugin.xml, as shown in the following example:
+This is the main entry point for a VCS plugin, which is used by IntelliJ IDEA to retrieve all other services provided by the plugin.The recommended way to register an AbstractVcs implementation is to add an extension declaration to plugin.xml, as shown in the following example:
 
 ```xml
 <idea-plugin version="2">

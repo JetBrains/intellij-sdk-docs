@@ -23,12 +23,22 @@ The main difference between a
 [FilePath](https://github.com/JetBrains/intellij-community/blob/master/platform/vcs-api/vcs-api-core/src/com/intellij/openapi/vcs/FilePath.java)
 and a
 [java.io.File](http://docs.oracle.com/javase/8/docs/api/java/io/File.html)
-is that a FilePath caches the VirtualFile corresponding to the path, so it can be retrieved without doing a VFS search.
+is that a
+[FilePath](https://github.com/JetBrains/intellij-community/blob/master/platform/vcs-api/vcs-api-core/src/com/intellij/openapi/vcs/FilePath.java)
+caches the
+[VirtualFile](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/openapi/vfs/VirtualFile.java)
+corresponding to the path, so it can be retrieved without doing a VFS search.
 
-To create instances of FilePath, the VcsContextFactory API is used.
-It can be accessed as PeerFactory.getInstance().getVcsContextFactory().
+To create instances of
+[FilePath](https://github.com/JetBrains/intellij-community/blob/master/platform/vcs-api/vcs-api-core/src/com/intellij/openapi/vcs/FilePath.java),
+the
+[VcsContextFactory](https://github.com/JetBrains/intellij-community/blob/master/platform/vcs-api/src/com/intellij/openapi/vcs/actions/VcsContextFactory.java)
+API is used.
+It can be accessed as```PeerFactory.getInstance().getVcsContextFactory()```
 
-FilePaths representing paths in a VCS repository, rather than local paths, are created using VcsContextFactory.createFilePathOnNonLocal(). FilePath.isNonLocal() returns true for such files.
+[FilePath](https://github.com/JetBrains/intellij-community/blob/master/platform/vcs-api/vcs-api-core/src/com/intellij/openapi/vcs/FilePath.java)
+representing paths in a VCS repository, rather than local paths, are created using
+```VcsContextFactory.createFilePathOnNonLocal()```. ```FilePath.isNonLocal()``` returns true for such files.
 
 ### Revision Number
 

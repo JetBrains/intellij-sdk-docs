@@ -73,21 +73,31 @@ A useful class which can be used to represent the current on-disk version of a p
 
 ### FileStatus
 
-A *FileStatus* (com.intellij.openapi.vcs.FileStatus) represents a status of a file in regard to VCS (unversioned, not changed, added, modified and so on).
+A
+[FileStatus](https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/vcs/FileStatus.java)
+represents a status of a file in regard to VCS (unversioned, not changed, added, modified and so on).
 It determines the color used to render the name of the file in the UI.
 
 ### Change
 
-A *Change* (com.intellij.openapi.vcs.changes.Change) represents a single file operation (creation, modification, move/rename or deletion) from a VCS point of view.
+A
+[Change](https://github.com/JetBrains/intellij-community/blob/master/platform/vcs-api/vcs-api-core/src/com/intellij/openapi/vcs/changes/Change.java)
+represents a single file operation (creation, modification, move/rename or deletion) from a VCS point of view.
 A Change can represent either a modification which the user has performed locally and not yet committed, a committed modification, or some other type of modification (for example, a shelved change or a difference between two arbitrary revisions).
 
-A Change essentially consists of two content revisions:
-*  before revision (null if the Change represents file creation)
+A
+[Change](https://github.com/JetBrains/intellij-community/blob/master/platform/vcs-api/vcs-api-core/src/com/intellij/openapi/vcs/changes/Change.java)
+essentially consists of two content revisions:
 
-*  after revision (null if the Change represents file deletion)
+*  before revision (```null``` if the *Change* represents file creation)
+
+*  after revision (```null``` if the *Change* represents file deletion)
 
 A move or rename is represented by a Change where the before revision and the after revision have different file paths.
-A custom file status can be specified for a Change if it represents a non-standard modification of the file (for example, a file which has been merged with conflicts). If a custom file status has not been specified, the status is calculated automatically from the change type.
+A custom file status can be specified for a
+[Change](https://github.com/JetBrains/intellij-community/blob/master/platform/vcs-api/vcs-api-core/src/com/intellij/openapi/vcs/changes/Change.java)
+if it represents a non-standard modification of the file (for example, a file which has been merged with conflicts).
+If a custom file status has not been specified, the status is calculated automatically from the change type.
 
 ### ChangeList
 

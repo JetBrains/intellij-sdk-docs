@@ -19,7 +19,9 @@ Unlike a
 a
 [FilePath](https://github.com/JetBrains/intellij-community/blob/master/platform/vcs-api/vcs-api-core/src/com/intellij/openapi/vcs/FilePath.java)
 can represent a path to a file which doesn't exist on disk.
-The main difference between a FilePath and a java.io.File is that a FilePath caches the VirtualFile corresponding to the path, so it can be retrieved without doing a VFS search.
+The main difference between a
+[FilePath](https://github.com/JetBrains/intellij-community/blob/master/platform/vcs-api/vcs-api-core/src/com/intellij/openapi/vcs/FilePath.java)
+and a java.io.File is that a FilePath caches the VirtualFile corresponding to the path, so it can be retrieved without doing a VFS search.
 
 To create instances of FilePath, the VcsContextFactory API is used.
 It can be accessed as PeerFactory.getInstance().getVcsContextFactory().

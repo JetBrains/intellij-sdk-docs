@@ -61,7 +61,7 @@ It has three main attributes:
 
 *  ```VcsRevisionNumber``` specifying the revision number of the revision, or ```VcsRevisionNumber.NULL``` if the revision exists only locally.
 
-*  ```Content of the revision```.
+*  Content of the revision.
 
 The content is returned as string, and the VCS plugin is responsible for converting the binary file content to correct encoding.
 To detect the encoding automatically based on the IDE settings and the byte order mark, the method ```CharsetToolkit.bytesToString()``` can be used (this API is new in IDEA 7.0.2).

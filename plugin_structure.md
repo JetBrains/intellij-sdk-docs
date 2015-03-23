@@ -34,9 +34,10 @@ The following subjects are covered:
 
 ## Plugin Content
 
-There are 3 ways how to organize plugin content:
+*There are 3 ways how to organize plugin content:*
 
-1. A plugin consists of one .jar file placed in the plugins directory. 
+1. A plugin consists of one .jar file placed in the plugins directory:
+
 The archive should contain the configuration file (META-INF/plugin.xml) and classes that implement the plugin functionality. 
 The configuration file specifies the plugin name, description, version, vendor, the supported IDEA version, plugin components, actions and action groups, action user interface placement.
 
@@ -50,6 +51,7 @@ The configuration file specifies the plugin name, description, version, vendor, 
 			META-INF
 				plugin.xml
 ```
+
 
 2. Plugin files are located in a folder:
 
@@ -68,8 +70,8 @@ The configuration file specifies the plugin name, description, version, vendor, 
 			META-INF
 				plugin.xml
 ```
-
 The 'classes' folder and all jars located in the 'lib' folder are automatically added to the classpath.
+
 
 3. Plugin files are located in a jar-file that is placed to the lib folder:
 
@@ -96,31 +98,49 @@ To load classes of each plugin, IDEA uses a separate class loader.
 This allows each plugin to use a different version of a library, even if the same library is used by IDEA itself or by another plugin.
 
 By default, the main IDEA class loader loads classes that were not found in the plugin class loader.
-However, in the plugin.xml file, one can use the <depends> element to specify that a plugin depends on one or more other plugins.
+However, in the plugin.xml file, one can use the ```<depends>``` element to specify that a plugin depends on one or more other plugins.
 In this case, the class loaders of those plugins will be used for classes not found in the current plugin.
 This allows a plugin to reference classes from other plugins.
 
 ## Plugin Components
 
 Components are the fundamental concept of plugins integration.
-There are three kinds of components: _application-level_, _project-level_ and _module-level_.
+There are three kinds of components:
+
+*  Application-level
+
+*  Project-level
+
+*  Module-level
+
 
 Application-level components are created and initialized on IDEA start-up.
-They can be acquired from the Application instance with the ```getComponent(Class)``` method.
+They can be acquired from the
+[Application](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/openapi/application/Application.java)
+instance with the ```getComponent(Class)``` method.
 
-Project-level components are created for each Project instance in IDEA (please note that components might be created for even unopened projects).
+Project-level components are created for each
+[Project](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/openapi/project/Project.java)
+instance in IDEA (please note that components might be created for even unopened projects).
 They can be acquired from the Project instance with the ```getComponent(Class)``` method.
 
-Module-level components are created for each Module in every project loaded in IDEA.
+Module-level components are created for each
+[Module](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/openapi/module/Module.java)
+in every project loaded in IDEA.
 Module-level component can be acquired from Module instance with the same method.
 
 Every component should have interface and implementation classes specified in the configuration file.
 The interface class will be used for retrieving the component from other components and the implementation class will be used for component instantiation.
-Note that two components of the same level (Application, Project or Module) cannot have the same interface class.
+Note that two components of the same level (
+[Application](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/openapi/application/Application.java),
+[Project](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/openapi/project/Project.java)
+or
+[Module](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/openapi/module/Module.java)
+) cannot have the same interface class.
 Interface and implementation classes can be the same.
 
 Each component has the unique name which is used for its externalization and other internal needs.
-The name of a component is returned by its getComponentName() method.
+The name of a component is returned by its ```getComponentName()``` method.
 
 ### Components Naming Notation
 
@@ -129,64 +149,68 @@ It's recommended to name components in _<plugin_name>.<component_name>_ form.
 ### Application Level Components
 
 Optionally, application-level component's implementation class may implement the 
-[ApplicationComponent](http://git.jetbrains.org/?p=idea/community.git;a=blob;f=platform/platform-api/src/com/intellij/openapi/components/ApplicationComponent.java;hb=HEAD) 
+[ApplicationComponent](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/openapi/components/ApplicationComponent.java)
 interface. 
 An application component that has no dependencies should have a constructor with no parameters which will be used for its instantiation.
 If an application component depends on other application components, it can specify these components as constructor parameters, and IDEA will ensure that the components are instantiated in correct order to satisfy the dependencies.
-Note that application-level components must be registered in the <application-components> section of the plugin.xml file (see Plugin Configuration File below).
+Note that application-level components must be registered in the ```<application-components>``` section of the plugin.xml file (see Plugin Configuration File below).
 
 #### Quick creation of application components
 
 *IntelliJ IDEA* suggests a simplified way of creating application components, with all the required infrastructure.
-The IDEA interface will help you declare the application component's implementation class and automatically makes appropriate changes to the <application-components> section of the plugin.xml file.
+The IDEA interface will help you declare the application component's implementation class and automatically makes appropriate changes to the ```<application-components>``` section of the *plugin.xml* file.
 
-*To create and register an application component*
+**To create and register an application component:**
 
-* In your project, on the context menu of the destination package click *New* or press *ALT + INSERT*.
+1.  In your project, on the context menu of the destination package click *New* or press *ALT + INSERT*.
 
-* On the *New* menu, click *Application Component*.
+2.  On the *New* menu, click *Application Component*.
 
-* In the *New Application Component* dialog box that opens, enter the application component name, and then click *OK*.
+3.  In the *New Application Component* dialog box that opens, enter the application component name, and then click *OK*.
 
-*IntelliJ IDEA* generates a new Java class that implements the ```ApplicationComponent``` interface, registers the newly created component in the plugin.xml file, adds a node to the module tree view, and opens the created application component class file in the editor.
+*IntelliJ IDEA* generates a new Java class that implements the
+[ApplicationComponent](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/openapi/components/ApplicationComponent.java)
+interface, registers the newly created component in the *plugin.xml* file, adds a node to the module tree view, and opens the created application component class file in the editor.
 
 ### Project Level Components
 
 Project-level component's implementation class may implement the 
 
-[ProjectComponent](http://git.jetbrains.org/?p=idea/community.git;a=blob;f=platform/platform-api/src/com/intellij/openapi/components/ProjectComponent.java;hb=HEAD) 
+[ProjectComponent](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/openapi/components/ProjectComponent.java)
 interface. 
 The constructor of a project-level component can have a parameter of the 
-[Project](http://git.jetbrains.org/?p=idea/community.git;a=blob;f=platform/platform-api/src/com/intellij/openapi/project/Project.java;hb=HEAD)
+[Project](https://github.com/JetBrains/intellij-community/tree/master/platform/platform-api/src/com/intellij/openapi/project/Project.java)
 type, if it needs the project instance. 
 It can also specify other application-level or project-level components as parameters, if it depends on those components.
 
-Note that project-level components must be registered in the <project-components> section of the plugin.xml file 
+Note that project-level components must be registered in the ```<project-components>``` section of the *plugin.xml* file
 (see Plugin Configuration File below).
 
 #### Quick creation of project components
 
 *IntelliJ IDEA* suggests a simplified way of creating project components, with all the required infrastructure. 
-The IDEA interface will help you declare the project component's implementation class and automatically makes appropriate changes to the <project-components> section of the
+The IDEA interface will help you declare the project component's implementation class and automatically makes appropriate changes to the ```<project-components>``` section of the
  <!--TODO Link to demo source code -->
-[plugin.xml]() 
+[plugin.xml]()
 file.
 
 **To create and register a project component**
 
-* In your project, on the context menu of the destination package click *New* or press *ALT + INSERT*.
+1.  In your project, on the context menu of the destination package click *New* or press *ALT + INSERT*.
 
-* On the *New* menu, click *Project Component*.
+2.  On the *New* menu, click *Project Component*.
 
-* In the *New Project Component* dialog box that opens, enter the project component name, and then click *OK*.
+3.  In the *New Project Component* dialog box that opens, enter the project component name, and then click *OK*.
 
-*IntelliJ IDEA* generates a new Java class that implements the ```ProjectComponent``` interface, registers the newly created component in the plugin.xml file, adds a node to the module tree view, and opens the created application component class file in the editor.
+*IntelliJ IDEA* generates a new Java class that implements the
+[ProjectComponent](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/openapi/components/ProjectComponent.java)
+interface, registers the newly created component in the *plugin.xml* file, adds a node to the module tree view, and opens the created application component class file in the editor.
 
 
 ### Module Level Components
 
 Optionally, Module-level component's implementation class may implement the 
-[ModuleComponent]() 
+[ModuleComponent](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/openapi/module/ModuleComponent.java)
 interface. 
 The constructor of a module-level component can have a parameter of the Module type, if it needs the module instance. 
 It can also specify other application-level, project-level or module-level components as parameters, if it depends on those components.
@@ -206,68 +230,93 @@ The IDEA interface will help you declare the module component's implementation c
 * On the *New* menu, click *Module Component*.
 * In the *New Module Component* dialog box that opens, enter the module component name, and then click *OK*.
 
-*IntelliJ IDEA* generates a new Java class that implements the [ModuleComponent]() interface, registers the newly created component in the 
+*IntelliJ IDEA* generates a new Java class that implements the
+[ModuleComponent](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/openapi/module/ModuleComponent.java)
+interface, registers the newly created component in the
 [plugin.xml]() 
 file, adds a node to the module tree view, and opens the created application component class file in the editor.
 
 ### Persisting State of Components
 
 The state of every component will be automatically saved and loaded if the component's class implements the 
-[JDOMExternalizable]() (deprecated) or 
-[PersistentStateComponent](http://git.jetbrains.org/?p=idea/community.git;a=blob;f=platform/platform-api/src/com/intellij/openapi/components/PersistentStateComponent.java;hb=HEAD) 
+[JDOMExternalizable](https://github.com/JetBrains/intellij-community/blob/master/platform/util/src/com/intellij/openapi/util/JDOMExternalizable.java)
+(deprecated) or
+[PersistentStateComponent](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/components/PersistentStateComponent.java)
 interface.
 
 When the component's class implements the 
-[PersistentStateComponent]() 
+[PersistentStateComponent](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/components/PersistentStateComponent.java)
 interface, the component state is saved in an XML file that you can specify using the 
-[@State]() and [@Storage]() annotations in your Java code.
+[@State](https://github.com/JetBrains/intellij-community/blob/master/platform/projectModel-api/src/com/intellij/openapi/components/State.java)
+and
+[@Storage](https://github.com/JetBrains/intellij-community/blob/master/platform/projectModel-api/src/com/intellij/openapi/components/Storage.java)
+annotations in your Java code.
 
 When the component's class implements the 
-[JDOMExternalizable]() 
+[JDOMExternalizable](https://github.com/JetBrains/intellij-community/blob/master/platform/util/src/com/intellij/openapi/util/JDOMExternalizable.java)
 interface, the components save their state in the following files:
 
-* Project-level components save their state to the project (.ipr) file. 
+*  Project-level components save their state to the project (.ipr) file.
 However, if the workspace option in the plugin.xml file is set to _true_, the component saves its configuration to the workspace (.iws) file instead.
 
-* Module-level components save their state to the module (.iml) file.
+*  Module-level components save their state to the module (.iml) file.
 
 For more information and samples, refer to [Persisting State of Components](persisting_state.html).
 
 ### Defaults
 
-Defaults (components' predefined settings) should be placed in the <component_name>.xml file.
-Put this file in the plugin's classpath in the folder corresponding to the default package. The readExternal() method will be called on the <component> root tag.
-If a component has defaults, the readExternal() method is called twice: the first time for defaults and the second time for saved configuration.
+Defaults (components' predefined settings) should be placed in the *\<component_name\>.xml* file.
+Put this file in the plugin's classpath in the folder corresponding to the default package.
+The ```readExternal()``` method will be called on the <component> root tag.
+
+If a component has defaults, the ```readExternal()``` method is called twice:
+
+*  the first time for defaults
+
+*  the second time for saved configuration
 
 ### Plugin Components Lifecycle
 
 The components are loaded in the following order:
 
-* Creation - constructor is invoked.
+*  Creation - constructor is invoked.
 
-* Initialization - the ```initComponent``` method is invoked (if the component implements the ```ApplicationComponent``` interface).
+*  Initialization - the ```initComponent``` method is invoked (if the component implements the
+[ApplicationComponent](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/openapi/components/ApplicationComponent.java)
+interface).
 
-* Configuration - the ```readExternal``` method is invoked (if the component implements ```JDOMExternalizable``` interface), or the ```loadState``` method is invoked (if the component implements ```PersistentStateComponent``` and has non-default persisted state).
+*  Configuration - the ```readExternal``` method is invoked (if the component implements
+[JDOMExternalizable](https://github.com/JetBrains/intellij-community/blob/master/platform/util/src/com/intellij/openapi/util/JDOMExternalizable.java)
+interface), or the ```loadState``` method is invoked (if the component implements
+[PersistentStateComponent](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/openapi/components/PersistentStateComponent.java)
+and has non-default persisted state).
 
-* For module components, the ```moduleAdded``` method of the ```ModuleComponent``` interface is invoked to notify that a module has been added to the project.
+*  For module components, the ```moduleAdded``` method of the
+[ModuleComponent](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/openapi/module/ModuleComponent.java)
+interface is invoked to notify that a module has been added to the project.
 
-* For project components, the ```projectOpened``` method of the ```ProjectComponent``` interface is invoked to notify that a project has been loaded.
+*  For project components, the ```projectOpened``` method of the
+[ProjectComponent](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/openapi/project/ProjectComponent.java)
+interface is invoked to notify that a project has been loaded.
 
 The components are unloaded in the following order:
 
-* Saving configuration - the ```writeExternal``` method is invoked (if the component implements the ```JDOMExternalizable``` interface), or the ```getState``` method is invoked (if the component implements PersistentStateComponent).
+*  Saving configuration - the ```writeExternal``` method is invoked (if the component implements the
+[JDOMExternalizable](https://github.com/JetBrains/intellij-community/blob/master/platform/util/src/com/intellij/openapi/util/JDOMExternalizable.java)
+interface), or the ```getState``` method is invoked (if the component implements PersistentStateComponent).
+
 * Disposal - the ```disposeComponent``` method is invoked.
 
-Note that you should not request any other components using the ```getComponent(``` method in the constructor of your component, otherwise you'll get an assertion.
+Note that you should not request any other components using the ```getComponent()``` method in the constructor of your component, otherwise you'll get an assertion.
 If you need access to other components when initializing your component, you can specify them as constructor parameters or access them in the ```initComponent``` method.
 
 ### Sample Plugin
 
-A sample plugin that illustrates how to create a plugin with the application level and project level components is available in the _<%IDEA project directory%>/community/samples/plugin_ directory.
+A sample plugin that illustrates how to create a plugin with the application level and project level components is available in the ***_<%IDEA project directory%>/community/samples/plugin_ directory***.
 
 *To open sample plugin*
 
-* Run *IntelliJ IDEA* and open the _<%IDEA project directory%>/community/samples/plugin/_{*}{_}plugin.ipr{_}* file.
+*  Run *IntelliJ IDEA* and open the _<%IDEA project directory%>/community/samples/plugin/plugin.ipr_ file.
 
 
 # Plugin Extensions and Extension Points
@@ -285,11 +334,11 @@ If you want your plugin to extend the functionality of other plugins or the IDEA
 
 ## How to Declare Extensions and Extension Points?
 
-You can declare extensions and extension points in the plugin configuration file plugin.xml, within the <extensions> and <extensionPoints> sections, respectively.
+You can declare extensions and extension points in the plugin configuration file plugin.xml, within the ```<extensions>``` and ```<extensionPoints>``` sections, respectively.
 
 *To declare an extension point*
 
-* In the <extensionPoints> section, insert a child element <extensionPoint> that defines the extension point name and the name of a bean class or an interface that is allowed to extend the plugin functionality in the 'name', 'beanClass' and 'interface' attributes, respectively.
+*  In the ```<extensionPoints>``` section, insert a child element ```<extensionPoint>``` that defines the extension point name and the name of a bean class or an interface that is allowed to extend the plugin functionality in the *'name'*, *'beanClass'* and *'interface'* attributes, respectively.
 
 To clarify this procedure, consider the following sample section of the plugin.xml file:
 
@@ -302,7 +351,9 @@ To clarify this procedure, consider the following sample section of the plugin.x
 
 The *interface* attribute sets an interface the plugin that contributes to the extension point must implement.
 
-The *beanClass* attribute sets a bean class that specifies one or several properties annotated with the "@Attribute" annotation. 
+The *beanClass* attribute sets a bean class that specifies one or several properties annotated with the
+[@Attribute](https://github.com/JetBrains/intellij-community/blob/master/xml/dom-openapi/src/com/intellij/util/xml/Attribute.java)
+annotation.
 The plugin that contributes to the extension point will read those properties from the plugin.xml file. 
 To clarify this, consider the following sample ```MyBeanClass1``` bean class used in the above plugin.xml file:
 
@@ -328,20 +379,22 @@ Note that to declare an extension designed to access the MyExtensionPoint1 exten
 
 *To declare an extension*
 
-1. For the <extensions> element, set the *xmlns* (deprecated) or *defaultExtensionNs* attribute to one of the following values:
+1. For the \<extensions\> element, set the *xmlns* (deprecated) or *defaultExtensionNs* attribute to one of the following values:
 
-    * _"com.intellij"_, if your plugin extends the IDEA core functionality.
+    *  _com.intellij_, if your plugin extends the IDEA core functionality.
     
-    * _ID of a plugin_, if your plugin extends a functionality of another plugin.
+    *  _ID of a plugin_, if your plugin extends a functionality of another plugin.
      
-2. Add a new child element to the <extensions> element.
+2. Add a new child element to the \<extensions\> element.
 The child element name must match the name of the extension point you want the extension to access.
 
 3. Depending on the type of the extension point, do one of the following:
 
-    * If the extension point was declared using the *interface* attribute, for newly added child element, set the *implementation* attribute to the name of the class that implements the specified interface.
+    *  If the extension point was declared using the *interface* attribute, for newly added child element, set the *implementation* attribute to the name of the class that implements the specified interface.
     
-    * If the extension point was declared using the *beanClass* attribute, for newly added child element, set all attributes annotated with the "@Attribute" annotations in the specified bean class.
+    *  If the extension point was declared using the *beanClass* attribute, for newly added child element, set all attributes annotated with the
+    [@Attribute](https://github.com/JetBrains/intellij-community/blob/master/xml/dom-openapi/src/com/intellij/util/xml/Attribute.java)
+    annotations in the specified bean class.
 
 To clarify this procedure, consider the following sample section of the plugin.xml file that defines two extensions designed to access the _appStarter_ and _applicationConfigurable_ extension points in the IDEA core and one extension to access the _MyExtensionPoint1_ extension point in a test plugin:
 
@@ -363,36 +416,38 @@ To clarify this procedure, consider the following sample section of the plugin.x
 
 ## How to Get the Extension Points List?
 
-To get a list of extension points available in the *IntelliJ IDEA* core, consult the _<extensionPoints>_ section of the following XML configuration files:
+To get a list of extension points available in the *IntelliJ IDEA* core, consult the _\<extensionPoints\>_ section of the following XML configuration files:
 
-* [LangExtensionPoints.xml]()
+* [LangExtensionPoints.xml](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-resources/src/META-INF/LangExtensionPoints.xml)
 
-* [PlatformExtensionPoints.xml]()
+* [PlatformExtensionPoints.xml](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-resources/src/META-INF/PlatformExtensionPoints.xml)
 
-* [VcsExtensionPoints.xml]()
+* [VcsExtensionPoints.xml](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-resources/src/META-INF/VcsExtensionPoints.xml)
 
 ## Additional Information and Samples
 
 For samples plugins and detailed instructions on how to create your plugin that contributes to the IDEA core, refer to 
-[Customizing the IDEA Settings Dialog] and [Creation of Tool Windows].
+[Customizing the IDEA Settings Dialog](TODO)
+and
+[Creation of Tool Windows](TODO).
 
 # Plugin Actions
 
 *Intellij IDEA* provides the concept of _actions_. 
 An action is a class, derived from the
-[AnAction](http://git.jetbrains.org/?p=idea/community.git;a=blob;f=platform/platform-api/src/com/intellij/openapi/actionSystem/AnAction.java;hb=HEAD)
+[AnAction](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/actionSystem/AnAction.java)
 class, whose ```actionPerformed``` method is called when the menu item or toolbar button is selected. 
 The system of actions allows plugins to add their own items to IDEA menus and toolbars.
 Actions are organized into groups, which, in turn, can contain other groups. 
 A group of actions can form a toolbar or a menu. Subgroups of the group can form submenus of the menu.
 You can find detailed information on how to create and register your actions in 
-[IntelliJ IDEA Action System] and in [Creating an Action].
+[IntelliJ IDEA Action System](action_system.md).
 
 # Plugin Services
 
 *IntelliJ IDEA* provides the concept of _services_. 
 A _service_ is a plugin component loaded on demand, when your plugin calls the ```getService``` method of the 
-[ServiceManager]()
+[ServiceManager](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/openapi/components/ServiceManager.java)
 class. 
 *IntelliJ IDEA* ensures that only one instance of a service is loaded even though the service is called several times. 
 A service must have the interface and implementation classes specified in the plugin.xml file.
@@ -415,9 +470,9 @@ To declare a service, you can use the following extension points in the IDEA cor
 
 2.  For the newly added child element, set the following attributes:
 
-    * *serviceInterface*: specifies the service interface class.
+    *  *serviceInterface*: specifies the service interface class.
     
-    * *serviceImplementation*: specifies the service implementation class.
+    *  *serviceImplementation*: specifies the service implementation class.
 
 Note that the interface and implementation classes can be the same.
 
@@ -451,20 +506,25 @@ This plugin has a project component implementing a service that counts a number 
 If this number exceeds the maximum allowed number of simultaneously opened projects, the plugin returns an error
 message and closes the most recently opened project.
 
-<!-- TODO Replace with other plugin URL
+<!-- TODO Replace with other plugin URL when available-->
 
 *To install and run the sample plugin*
 
-# Click [here\|^MaxOpenedProjects.zip] to download the .Zip archive that contains the sample plugin project.
-# Extract all files from the .Zip archive to a separate folder.
-# Start *IntelliJ IDEA*, on the starting page, click *Open Project*, and then use the *Open Project* dialog box to open the downloaded project *MaxOpenedProjects*.
-# On the main menu, choose *Run \\| Run* or press *Shift + F10*.
-# If necessary, change the [Run/Debug Configurations \|http://www.jetbrains.com/idea/webhelp/run-debug-configuration-plugin.html].
--->
+*  Click [here](https://confluence.jetbrains.com/download/attachments/17924592/MaxOpenedProjects.zip?version=1&modificationDate=1282047812000) to download the .Zip archive that contains the sample plugin project.
+
+*  Extract all files from the .Zip archive to a separate folder.
+
+*  Start *IntelliJ IDEA*, on the starting page, click *Open Project*, and then use the *Open Project* dialog box to open the downloaded project *MaxOpenedProjects*.
+
+*  On the main menu, choose *Run \| Run* or press *Shift + F10*.
+
+*  If necessary, change the [Run/Debug Configurations](http://www.jetbrains.com/idea/webhelp/run-debug-configuration-plugin.html).
+
 
 # Plugin Configuration File plugin.xml
 
-The following is a sample plugin configuration file. This sample showcases and describes all elements that can be used in the plugin.xml file.
+The following is a sample plugin configuration file.
+This sample showcases and describes all elements that can be used in the plugin.xml file.
 
 ```xml
 <!-- url="" specifies the URL of the plugin homepage (displayed in the Welcome Screen and in "Plugins" settings dialog) -->
@@ -565,10 +625,10 @@ The following is a sample plugin configuration file. This sample showcases and d
 In your plugin, you may depend on classes from other plugins, either bundled, third-party or your own. 
 In order to do so, you need to perform the following two steps:
 
-* Add the jars of the plugin you're depending on to the classpath of your IntelliJ IDEA SDK. 
-(NOTE: Don't add the plugin jars as a library: this will fail at runtime because IntelliJ IDEA will load two separate copies of the dependency plugin classes.)
+*  Add the jars of the plugin you're depending on to the classpath of your IntelliJ IDEA SDK.
+(**Note**: Don't add the plugin jars as a library: this will fail at runtime because IntelliJ IDEA will load two separate copies of the dependency plugin classes.)
 
-* Add a <depends> tag to your plugin.xml, adding the ID of the plugin you're depending on as the contents of the tag. 
+*  Add a <depends> tag to your plugin.xml, adding the ID of the plugin you're depending on as the contents of the tag.
 For example: 
 
 ```xml

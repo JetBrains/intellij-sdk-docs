@@ -145,24 +145,49 @@ Here ```name``` is the unique name of the VCS (this must match the string return
 
 ### ChangeProvider
 
-This component is responsible for keeping track of the local changes done by the user in his working copy, and reporting these changes to the IntelliJ IDEA core. An implementation of this class is returned from AbstractVcs.getChangeProvider().
+This component is responsible for keeping track of the local changes done by the user in his working copy, and reporting these changes to the IntelliJ IDEA core.
+An implementation of this class is returned from
+[AbstractVcs.getChangeProvider()](https://github.com/JetBrains/intellij-community/blob/master/platform/vcs-api/src/com/intellij/openapi/vcs/AbstractVcs.java).
 
-The ChangeProvider works in tandem with VcsDirtyScopeManager, which is a component in IntelliJ IDEA core. VcsDirtyScopeManager keeps track of the 'dirty scope' - the set of files for which the VCS file status may be out of date. Files are added to the dirty scope either when they are modified on disk, or when their VCS status is invalidated by an explicit call to VcsDirtyScopeManager.fileDirty() or VcsDirtyScopeManager.dirDirtyRecursively().
+The ChangeProvider works in tandem with
+[VcsDirtyScopeManager](https://github.com/JetBrains/intellij-community/blob/master/platform/vcs-api/src/com/intellij/openapi/vcs/changes/VcsDirtyScopeManager.java),
+which is a component in IntelliJ IDEA core.
+[VcsDirtyScopeManager](https://github.com/JetBrains/intellij-community/blob/master/platform/vcs-api/src/com/intellij/openapi/vcs/changes/VcsDirtyScopeManager.java)
+keeps track of the 'dirty scope' - the set of files for which the VCS file status may be out of date.
+Files are added to the dirty scope either when they are modified on disk, or when their VCS status is invalidated by an explicit call to
+[VcsDirtyScopeManager.fileDirty()](https://github.com/JetBrains/intellij-community/blob/master/platform/vcs-api/src/com/intellij/openapi/vcs/changes/VcsDirtyScopeManager.java)
+or
+[VcsDirtyScopeManager.dirDirtyRecursively()](https://github.com/JetBrains/intellij-community/blob/master/platform/vcs-api/src/com/intellij/openapi/vcs/changes/VcsDirtyScopeManager.java).
 
-After some files have been added to the dirty scope, the dirty scope is passed to ChangeProvider.getChanges(), along with a ChangelistBuilder instance, which serves as a sink to which the ChangeProvider feeds the data about the changed files. This processing happens asynchronously in a background thread.
+After some files have been added to the dirty scope, the dirty scope is passed to
+[ChangeProvider.getChanges()](https://github.com/JetBrains/intellij-community/blob/master/platform/vcs-api/src/com/intellij/openapi/vcs/changes/ChangeProvider.java),
+along with a
+[ChangelistBuilder](https://github.com/JetBrains/intellij-community/blob/master/platform/vcs-api/src/com/intellij/openapi/vcs/changes/ChangelistBuilder.java)
+instance, which serves as a sink to which the
+[ChangeProvider](https://github.com/JetBrains/intellij-community/blob/master/platform/vcs-api/src/com/intellij/openapi/vcs/changes/ChangeProvider.java)
+feeds the data about the changed files.
+This processing happens asynchronously in a background thread.
 
-The ChangeProvider can either iterate all files under the dirty scope using VcsDirtyScope.iterate(), or retrieve information about its contents using the getDirtyFiles() and getDirtyDirectoriesRecursively() methods. If it is possible to retrieve the information about the local changes from the VCS in batch, it's strongly preferable to use the second method, as it scales much better for large working copies.
+The
+[ChangeProvider](https://github.com/JetBrains/intellij-community/blob/master/platform/vcs-api/src/com/intellij/openapi/vcs/changes/ChangeProvider.java)
+can either iterate all files under the dirty scope using
+[VcsDirtyScope.iterate()](https://github.com/JetBrains/intellij-community/blob/master/platform/vcs-api/src/com/intellij/openapi/vcs/changes/VcsDirtyScope.java),
+or retrieve information about its contents using the ```getDirtyFiles()``` and ```getDirtyDirectoriesRecursively()``` methods.
+If it is possible to retrieve the information about the local changes from the VCS in batch, it's strongly preferable to use the second method, as it scales much better for large working copies.
 
-The ChangeProvider reports data to ChangelistBuilder using the following methods:
+The
+[ChangeProvider](https://github.com/JetBrains/intellij-community/blob/master/platform/vcs-api/src/com/intellij/openapi/vcs/changes/ChangeProvider.java)
+reports data to ChangelistBuilder using the following methods:
 
-*  processChange() is called for files which have been checked out (or modified if the VCS doesn't use an explicit checkout model), scheduled for addition or deletion, moved or renamed.
+*  ```processChange()``` is called for files which have been checked out (or modified if the VCS doesn't use an explicit checkout model), scheduled for addition or deletion, moved or renamed.
 
-*  processUnversionedFile() is called for files which exist on disk, but are not managed by the VCS, not scheduled for addition, and not ignored through .cvsignore or a similar mechanism.
+*  ```processUnversionedFile()``` is called for files which exist on disk, but are not managed by the VCS, not scheduled for addition, and not ignored through *.cvsignore* or a similar mechanism.
 
-*  processLocallyDeletedFile() is called for files which exist in the VCS repository, but do not exist on disk and are not scheduled for deletion.
+*  ```processLocallyDeletedFile()``` is called for files which exist in the VCS repository, but do not exist on disk and are not scheduled for deletion.
 
-*  processIgnoredFile() is called for files which are not managed by the VCS but are ignored through .cvsignore or a similar mechanism.
+*  ```processIgnoredFile()``` is called for files which are not managed by the VCS but are ignored through *.cvsignore* or a similar mechanism.
 
-*  processSwitchedFile() is called for files or directories for which the working copy corresponds to a different branch compared to the working copy of their parent directory. This can be called for the same files for which processSwitchedFile() has already been called.
+*  ```processSwitchedFile()``` is called for files or directories for which the working copy corresponds to a different branch compared to the working copy of their parent directory.
+   This can be called for the same files for which processSwitchedFile() has already been called.
 
 

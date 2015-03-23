@@ -510,7 +510,7 @@ message and closes the most recently opened project.
 
 *To install and run the sample plugin*
 
-*  Click [here](https://confluence.jetbrains.com/download/attachments/17924592/MaxOpenedProjects.zip?version=1&modificationDate=1282047812000) to download the .Zip archive that contains the sample plugin project.
+*  Click [here](/attachments/MaxOpenedProjects.zip) to download the .Zip archive that contains the sample plugin project.
 
 *  Extract all files from the .Zip archive to a separate folder.
 

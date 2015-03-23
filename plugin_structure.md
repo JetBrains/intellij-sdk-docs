@@ -466,7 +466,7 @@ To declare a service, you can use the following extension points in the IDEA cor
 
 *To declare a service:*
 
-1. Add the appropriate child element (<applicationService>, <projectService> or <moduleService>) to the <extensions> section of the plugin.xml file.
+1. Add the appropriate child element (\<applicationService\>, \<projectService\> or \<moduleService\>) to the \<extensions\> section of the plugin.xml file.
 
 2.  For the newly added child element, set the following attributes:
 

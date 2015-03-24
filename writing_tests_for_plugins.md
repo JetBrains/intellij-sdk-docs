@@ -23,6 +23,6 @@ and cover its code with functional tests.
 *  [Folding Test](folding_test.html)
 *  [Find Usages Test](find_usages_test.html)
 *  [Commenter Test](commenter_test.html)
-*  [Reference Test](TODO)
+*  [Reference Test](reference_test.html)
 
 The final code can be found on [GitHub](http://github.com/cheptsov/SimplePlugin).

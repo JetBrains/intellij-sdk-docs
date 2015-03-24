@@ -73,7 +73,7 @@
         * [Folding Test](folding_test.html)
         * [Find Usages Test](find_usages_test.html)
         * [Commenter Test](commenter_test.html)
-        * [Reference Test](TODO)
+        * [Reference Test](reference_test.html)
 * [Plugin Development FAQ](faq.html)
 
 

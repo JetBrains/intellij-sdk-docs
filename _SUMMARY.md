@@ -43,7 +43,8 @@
     * [List and Tree Controls](lists_and_trees.html)
     * [Miscellaneous Swing Components](misc_swing_components.html)
 * [Custom Language Support](custom_language_support.html)
-    * [Tutorial](cls_tutorial.html)
+* [Tutorials](tutorials.html)
+    * [Custom Language Support](cls_tutorial.html)
         * [Prerequisites](cls_prerequisites.html)
         * [Language and File Type](language_and_filetype.html)
         * [Grammar and Parser](grammar_and_parser.html)
@@ -62,7 +63,6 @@
         * [Code Style Settings](code_style_settings.html)
         * [Commenter](commenter.html)
         * [Quick Fix](quick_fix.html)
-* [Tutorials](tutorials.html)
 * [Plugin Development FAQ](faq.html)
 
 

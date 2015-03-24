@@ -67,7 +67,7 @@
         * [Tests Prerequisites](tests_prerequisites.html)
         * [Parsing Test](parsing_test.html)
         * [Completion Test](completion_test.html)
-        * [Annotator Test](TODO)
+        * [Annotator Test](annotator_test.html)
         * [Formatter Test](TODO)
         * [Rename Test](TODO)
         * [Folding Test](TODO)

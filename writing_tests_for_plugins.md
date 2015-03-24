@@ -18,7 +18,7 @@ and cover its code with functional tests.
 *  [Parsing Test](parsing_test.html))
 *  [Completion Test](completion_test.html)
 *  [Annotator Test](annotator_test.html)
-*  [Formatter Test](TODO)
+*  [Formatter Test](formatter_test.html)
 *  [Rename Test](TODO)
 *  [Folding Test](TODO)
 *  [Find Usages Test](TODO)

@@ -71,7 +71,7 @@
         * [Formatter Test](formatter_test.html)
         * [Rename Test](rename_test.html)
         * [Folding Test](folding_test.html)
-        * [Find Usages Test](TODO)
+        * [Find Usages Test](find_usages_test.html)
         * [Commenter Test](TODO)
         * [Reference Test](TODO)
 * [Plugin Development FAQ](faq.html)

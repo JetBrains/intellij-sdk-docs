@@ -20,7 +20,7 @@ and cover its code with functional tests.
 *  [Annotator Test](annotator_test.html)
 *  [Formatter Test](formatter_test.html)
 *  [Rename Test](rename_test.html)
-*  [Folding Test](TODO)
+*  [Folding Test](folding_test.html)
 *  [Find Usages Test](TODO)
 *  [Commenter Test](TODO)
 *  [Reference Test](TODO)

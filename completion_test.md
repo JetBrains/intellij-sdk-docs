@@ -9,7 +9,9 @@ INITIAL_SOURCE https://confluence.jetbrains.com/display/IntelliJIDEA/Completion+
 # {{ page.title }}
 
 In this test we will check if code completion, implemented in the
-[Reference Contributor Tutorial](reference_contributor.html),
+[Reference Contributor](reference_contributor.html) section
+of the
+[Custom Language Support Tutorial](cls_tutorial.html)
 works as we expect.
 
 ### 1. Define test data

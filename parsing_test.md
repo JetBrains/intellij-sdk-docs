@@ -9,7 +9,9 @@ INITIAL_SOURCE https://confluence.jetbrains.com/display/IntelliJIDEA/Parsing+Tes
 # {{ page.title }}
 
 The first test will check if the parser, implemented in the
-[Lexer and Parser Definition Tutorial](lexer_und_parser_definition.html),
+[Lexer and Parser Definition](lexer_und_parser_definition.html)
+section of the
+[Custom Language Support Tutorial](cls_tutorial.html)
 works as we expect it.
 
 ### 1. Define input test data

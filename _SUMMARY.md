@@ -63,7 +63,17 @@
         * [Code Style Settings](code_style_settings.html)
         * [Commenter](commenter.html)
         * [Quick Fix](quick_fix.html)
-    *  [Writing Tests For Plugins](writing_tests_for_plugins.html)
+    * [Writing Tests For Plugins](writing_tests_for_plugins.html)
+        * [Tests Prerequisites](TODO)
+        * [Parsing Test](TODO)
+        * [Completion Test](TODO)
+        * [Annotator Test](TODO)
+        * [Formatter Test](TODO)
+        * [Rename Test](TODO)
+        * [Folding Test](TODO)
+        * [Find Usages Test](TODO)
+        * [Commenter Test](TODO)
+        * [Reference Test](TODO)
 * [Plugin Development FAQ](faq.html)
 
 

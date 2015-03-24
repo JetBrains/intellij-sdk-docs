@@ -15,7 +15,7 @@ The
 is the base class which is supposed to be used for all modal dialogs (and some non-modal dialogs) shown in *IntelliJ IDEA* plugins.
 It provides the following features:
 
-*  Button layout (platform-specific order of ```OK/Cancel``` buttons, Mac OS-specific Help button)
+*  Button layout (platform-specific order of ```OK/Cancel``` buttons, Mac OS-specific ```Help``` button)
 
 *  Context help
 
@@ -34,7 +34,9 @@ It provides the following features:
 *  Optional ```Do not ask again``` checkbox
 
 
-When using the DialogWrapper class for your own dialog, you need to follow these steps:
+When using the
+[DialogWrapper](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/ui/DialogWrapper.java)
+class for your own dialog, you need to follow these steps:
 
 *  Call the base class constructor and provide either a project in the frame of which the dialog will be displayed, or a parent component for the dialog.
 

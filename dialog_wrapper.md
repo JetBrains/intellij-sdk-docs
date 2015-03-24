@@ -10,9 +10,12 @@ INITIAL_SOURCE https://confluence.jetbrains.com/display/IDEADEV/IntelliJ+IDEA+Di
 
 ## DialogWrapper
 
-The dialog wrapper is the base class which is supposed to be used for all modal dialogs (and some non-modal dialogs) shown in IntelliJ IDEA plugins. It provides the following features:
+The
+[DialogWrapper](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/ui/DialogWrapper.java)
+is the base class which is supposed to be used for all modal dialogs (and some non-modal dialogs) shown in *IntelliJ IDEA* plugins.
+It provides the following features:
 
-*  Button layout (platform-specific order of OK/Cancel buttons, Mac OS-specific Help button)
+*  Button layout (platform-specific order of ```OK/Cancel``` buttons, Mac OS-specific Help button)
 
 *  Context help
 
@@ -20,35 +23,53 @@ The dialog wrapper is the base class which is supposed to be used for all modal 
 
 *  Non-modal validation (displaying an error message text when the data entered into the dialog is not valid)
 
-*  Keyboard shortcuts: Esc for closing the dialog, Left/Right for switching between buttons and Y/N for Yes/No actions if they exist in the dialog.
+*  Keyboard shortcuts
 
-*  Optional "Do not ask again" checkbox
+    *  ```Esc``` for closing the dialog
+
+    *   ```Left/Right``` for switching between buttons
+
+    *   ```Y/N``` for ```Yes/No``` actions if they exist in the dialog
+
+*  Optional ```Do not ask again``` checkbox
 
 
 When using the DialogWrapper class for your own dialog, you need to follow these steps:
 
 *  Call the base class constructor and provide either a project in the frame of which the dialog will be displayed, or a parent component for the dialog.
 
-*  Call the init() method from the constructor of your dialog class
+*  Call the ```init()``` method from the constructor of your dialog class
 
 *  Call the setTitle() method to set the title for the dialog box
 
-*  Implement the createCenterPanel() method to return the component comprising the main contents of the dialog.
+*  Implement the ```createCenterPanel()``` method to return the component comprising the main contents of the dialog.
 
-*  Optional: Override the getPreferredFocusedComponent() method and return the component that should be focused when the dialog is first displayed.
+*  *Optional*: Override the ```getPreferredFocusedComponent()``` method and return the component that should be focused when the dialog is first displayed.
 
-*  Optional: Override the getDimensionServiceKey() method to return the identifier which will be used for persisting the dialog dimensions.
+*  *Optional*: Override the ```getDimensionServiceKey()``` method to return the identifier which will be used for persisting the dialog dimensions.
 
-*  Optional: Override the getHelpId() method to return the context help topic associated with the dialog.
+*  *Optional*: Override the ```getHelpId()``` method to return the context help topic associated with the dialog.
 
-The DialogWrapper class is often used together with UI Designer forms.
-In this case, you bind a UI Designer form to your class extending DialogWrapper, bind the top-level panel of the form to a field and return that field from the createCenterPanel() method.
+The
+[DialogWrapper](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/ui/DialogWrapper.java)
+class is often used together with UI Designer forms.
+In this case, you bind a UI Designer form to your class extending
+[DialogWrapper](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/ui/DialogWrapper.java),
+bind the top-level panel of the form to a field and return that field from the ```createCenterPanel()``` method.
 
-To display the dialog, you call the show() method and then use the getExitCode() method to check how the dialog was closed.
+To display the dialog, you call the ```show()``` method and then use the ```getExitCode()``` method to check how the dialog was closed.
 
-To customize the buttons displayed in the dialog (replacing the standard OK/Cancel/Help set of buttons), you can override either the createActions() or createLeftActions() methods. Both of these methods return an array of Swing Action objects. If the button that you're adding closes the dialog, you can use DialogWrapperExitAction as the base class for your action.
+To customize the buttons displayed in the dialog (replacing the standard ```OK/Cancel/Help``` set of buttons), you can override either the ```createActions()``` or ```createLeftActions()``` methods.
+Both of these methods return an array of Swing Action objects.
+If the button that you're adding closes the dialog, you can use
+[DialogWrapperExitAction](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/ui/DialogWrapper.java),
+as the base class for your action.
 
-To validate the data entered into the dialog, you can override the doValidate() method. The method will be called automatically by timer.
-If the currently entered data is valid, you need to return null from your implementation. Otherwise, you need to return a ValidationInfo class, which encapsulates an error message and an optional component associated with the invalid data.
-If you specify a component, an error icon will be displayed next to it, and it will be focused when the user tries to invoke the OK action.
+To validate the data entered into the dialog, you can override the ```doValidate()``` method.
+The method will be called automatically by timer.
+If the currently entered data is valid, you need to return null from your implementation.
+Otherwise, you need to return a
+[ValidationInfo](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/ui/ValidationInfo.java)
+class, which encapsulates an error message and an optional component associated with the invalid data.
+If you specify a component, an error icon will be displayed next to it, and it will be focused when the user tries to invoke the ```OK``` action.
 

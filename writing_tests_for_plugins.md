@@ -14,7 +14,7 @@ As an example we will take the plugin implemented in the
 [Custom Language Support](cls_tutorial.html)
 and cover its code with functional tests.
 
-*  [Tests Prerequisites](TODO)
+*  [Tests Prerequisites](tests_prerequisites.html)
 *  [Parsing Test](TODO)
 *  [Completion Test](TODO)
 *  [Annotator Test](TODO)

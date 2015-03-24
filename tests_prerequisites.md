@@ -1,0 +1,41 @@
+---
+title: Tests Prerequisites
+---
+
+<!--
+INITIAL_SOURCE https://confluence.jetbrains.com/display/IntelliJIDEA/Tests+Prerequisites
+-->
+
+# {{ page.title }}
+
+### 1. Create a folder for tests
+
+Open the project with the plugin and create a separate folder "tests".
+Mark the folder as a test source root via the context menu ```Mark Directory As```  &rarr; ```Test Source Root```.
+
+### 2. Create a folder for test data
+
+In our tests we will use test data, so we need one more folder *"testData"* to store these files.
+
+### 3. Run Configuration Parameters
+
+Since some of our tests will use Java files as test data, we need to mock up the project SDK.
+IntelliJ IDEA does everything automatically when we use special utility class
+[LightCodeInsightFixtureTestCase](https://github.com/JetBrains/intellij-community/blob/master/java/testFramework/src/com/intellij/testFramework/fixtures/LightCodeInsightFixtureTestCase.java).
+
+All we need to do is to point the working directory of the run configuration to the root of IntelliJ IDEA Community Edition sources and enable the following VM options:
+
+```
+-ea -Xbootclasspath/p:../out/classes/production/boot -XX:+HeapDumpOnOutOfMemoryError -Xmx512m -XX:MaxPermSize=320m -Didea.system.path=../test-system -Didea.home.path=../ -Didea.config.path=../test-config -Didea.test.group=ALL_EXCLUDE_DEFINED
+```
+
+**Note**:
+
+  >  Keep in mind that we have changed the _working directory_, so all the paths in tests extended from
+  >  [LightCodeInsightFixtureTestCase](https://github.com/JetBrains/intellij-community/blob/master/java/testFramework/src/com/intellij/testFramework/fixtures/LightCodeInsightFixtureTestCase.java)
+  >  will use relative path to the _source root_ of IntelliJ IDEA Community Edition.
+
+-----
+[Top](writing_tests_for_plugins.html) \| [Next](parsing_test.html)
+
+

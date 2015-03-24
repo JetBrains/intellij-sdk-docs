@@ -64,7 +64,7 @@
         * [Commenter](commenter.html)
         * [Quick Fix](quick_fix.html)
     * [Writing Tests For Plugins](writing_tests_for_plugins.html)
-        * [Tests Prerequisites](TODO)
+        * [Tests Prerequisites](tests_prerequisites.html)
         * [Parsing Test](TODO)
         * [Completion Test](TODO)
         * [Annotator Test](TODO)

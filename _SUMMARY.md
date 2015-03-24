@@ -69,7 +69,7 @@
         * [Completion Test](completion_test.html)
         * [Annotator Test](annotator_test.html)
         * [Formatter Test](formatter_test.html)
-        * [Rename Test](TODO)
+        * [Rename Test](rename_test.html)
         * [Folding Test](TODO)
         * [Find Usages Test](TODO)
         * [Commenter Test](TODO)

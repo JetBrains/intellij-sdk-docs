@@ -15,7 +15,7 @@ As an example we will take the plugin implemented in the
 and cover its code with functional tests.
 
 *  [Tests Prerequisites](tests_prerequisites.html)
-*  [Parsing Test](TODO)
+*  [Parsing Test](parsing_test.html))
 *  [Completion Test](TODO)
 *  [Annotator Test](TODO)
 *  [Formatter Test](TODO)

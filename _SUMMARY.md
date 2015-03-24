@@ -72,7 +72,7 @@
         * [Rename Test](rename_test.html)
         * [Folding Test](folding_test.html)
         * [Find Usages Test](find_usages_test.html)
-        * [Commenter Test](TODO)
+        * [Commenter Test](commenter_test.html)
         * [Reference Test](TODO)
 * [Plugin Development FAQ](faq.html)
 

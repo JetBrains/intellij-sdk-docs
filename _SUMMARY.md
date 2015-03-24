@@ -66,7 +66,7 @@
     * [Writing Tests For Plugins](writing_tests_for_plugins.html)
         * [Tests Prerequisites](tests_prerequisites.html)
         * [Parsing Test](parsing_test.html)
-        * [Completion Test](TODO)
+        * [Completion Test](completion_test.html)
         * [Annotator Test](TODO)
         * [Formatter Test](TODO)
         * [Rename Test](TODO)

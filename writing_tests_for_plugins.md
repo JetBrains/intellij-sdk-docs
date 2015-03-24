@@ -3,7 +3,7 @@ title: Writing Tests For Plugins
 ---
 
 <!--
-INITIAL_SOURCE https://confluence.jetbrains.com/display/IntelliJIDEA/Writing+Tests+for+Plugins
+INITIAL_SOURCE https://confluence.jetbrains.com/display/IntelliJIDEA/Completion+Test
 -->
 
 # {{ page.title }}
@@ -16,7 +16,7 @@ and cover its code with functional tests.
 
 *  [Tests Prerequisites](tests_prerequisites.html)
 *  [Parsing Test](parsing_test.html))
-*  [Completion Test](TODO)
+*  [Completion Test](completion_test.html)
 *  [Annotator Test](TODO)
 *  [Formatter Test](TODO)
 *  [Rename Test](TODO)

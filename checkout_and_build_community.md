@@ -97,6 +97,8 @@ Parts of IntelliJ IDEA are written in Groovy, and you will get compilation error
 * Make sure you have the UI Designer plugin enabled. 
 Most of IntelliJ IDEA's UI is built using the UI Designer, and the version you build will not run correctly if you don't have the plugin enabled
 
+![UI Designer plugin](/img/getting_started/checkout_and_build_community/ui_designer_plugin_enabled.png)
+
 * Open the directory with the source code as a directory-based project. 
 
 * Configure a JSDK named "IDEA jdk" (case sensitive), pointing to an installation of JDK 1.6

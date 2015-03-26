@@ -101,7 +101,8 @@ Most of IntelliJ IDEA's UI is built using the UI Designer, and the version you b
 
 * Open the directory with the source code as a directory-based project
 
-* Configure a JSDK named "IDEA jdk" (case sensitive), pointing to an installation of JDK 1.6
+* Configure a Java SDK named *IDEA jdk* (case sensitive), pointing to an installation of JDK 1.8
+![Configure SDK](/img/getting_started/checkout_and_build_community/configure_sdk.png)
 
 * Add lib\tools.jar from the JDK installation directory to the classpath of IDEA JDK
 

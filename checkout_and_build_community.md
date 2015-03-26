@@ -86,7 +86,12 @@ or
 
 **Building and running the code**
 
-* Make sure you have the Groovy plugin enabled. 
+* Make sure you have the
+[Groovy plugin](https://plugins.jetbrains.com/plugin/1524)
+enabled by going to **Settings \| Plugins** and enabling **Groovy** plugin checkbox.
+
+![Groovy plugin](/img/getting_started/checkout_and_build_community/groovy_plugin_enabled.png)
+
 Parts of IntelliJ IDEA are written in Groovy, and you will get compilation errors if you don't have the plugin enabled
 
 * Make sure you have the UI Designer plugin enabled. 

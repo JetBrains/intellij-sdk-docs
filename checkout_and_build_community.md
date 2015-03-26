@@ -79,7 +79,10 @@ The GitHub mirror can be found at
 
 ## Building and Running from the IDE
 
-To develop IntelliJ IDEA, you can use either IntelliJ IDEA Community Edition or IntelliJ IDEA Ultimate. 
+To develop IntelliJ IDEA, you can use either
+[IntelliJ IDEA Community Edition](https://www.jetbrains.com/idea/download/)
+or
+[IntelliJ IDEA Ultimate](https://www.jetbrains.com/idea/download/).
 
 **Building and running the code**
 

@@ -32,7 +32,6 @@ Please execute the following command:
 ```
 git clone git://git.jetbrains.org/idea/community.git idea
 ```
-<!--TODO update IDEA versions-->
 
 The
 [master](https://github.com/JetBrains/intellij-community/tree/master)

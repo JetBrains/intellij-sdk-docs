@@ -17,13 +17,14 @@ on Mac.
 
 You can check out the code either by using IntelliJ IDEA or from the command line.
 
-<!--TODO screen shots-->
 
 **Checking out from IntelliJ IDEA:**
  
-* Select **Version Control \| Checkout from Version Control \| Git** from the main menu
+* Select **VCS \| Checkout from Version Control \| Git** from the main menu
 
-* In the **Git Repository URL** field, enter git://git.jetbrains.org/idea/community.git
+* In the **Git Repository URL** field, enter ```git://git.jetbrains.org/idea/community.git```
+
+![Check Out Community](/img/getting_started/checkout_and_build_community/check_out_community.png)
 
 **Checking out from the command line**
 

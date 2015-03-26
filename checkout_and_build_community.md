@@ -36,6 +36,12 @@ git clone git://git.jetbrains.org/idea/community.git idea
 The master branch currently contains the code for the development version of IntelliJ IDEA 15.x. 
 Source code of older releases of IntelliJ IDEA can be found in the following branches:
 
+14.1.x - 141
+
+14.0.x - 139
+
+13.1.x - 135
+
 13.0.x - 133
 
 12.0.x - 123

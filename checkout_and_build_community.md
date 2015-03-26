@@ -21,9 +21,9 @@ You can check out the code either by using IntelliJ IDEA or from the command lin
 
 **Checking out from IntelliJ IDEA:**
  
-* Select "Version Control \| Checkout from Version Control \| Git" from the main menu 
+* Select **Version Control \| Checkout from Version Control \| Git** from the main menu
 
-* In the "Git Repository URL" field, enter git://git.jetbrains.org/idea/community.git
+* In the **Git Repository URL** field, enter git://git.jetbrains.org/idea/community.git
 
 **Checking out from the command line**
 

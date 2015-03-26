@@ -111,6 +111,10 @@ Most of IntelliJ IDEA's UI is built using the UI Designer, and the version you b
 ![IDEA Run Configuration](/img/getting_started/checkout_and_build_community/idea_run_configuration.png)
 
 ## Building and Running from the Command Line
-<!--TODO link to ant--> 
-To build the distribution archive of IntelliJ IDEA Community Edition, execute build.xml Ant build script in the root directory of the source code. 
-The results of the build execution can be found at out/artifacts.
+To build the distribution archive of *IntelliJ IDEA Community Edition*, execute
+[build.xml](https://github.com/JetBrains/intellij-community/blob/master/build.xml)
+Ant build script in the root directory of the source code.
+![Execute Ant Build Script](/img/getting_started/checkout_and_build_community/ant_build_xml.png)
+
+
+The results of the build execution can be found at *out/artifacts*.

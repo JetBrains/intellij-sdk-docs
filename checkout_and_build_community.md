@@ -99,7 +99,7 @@ Most of IntelliJ IDEA's UI is built using the UI Designer, and the version you b
 
 ![UI Designer plugin](/img/getting_started/checkout_and_build_community/ui_designer_plugin_enabled.png)
 
-* Open the directory with the source code as a directory-based project. 
+* Open the directory with the source code as a directory-based project
 
 * Configure a JSDK named "IDEA jdk" (case sensitive), pointing to an installation of JDK 1.6
 

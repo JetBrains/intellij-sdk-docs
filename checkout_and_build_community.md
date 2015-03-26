@@ -109,7 +109,8 @@ Most of IntelliJ IDEA's UI is built using the UI Designer, and the version you b
 
 * Use **Build \| Make Project** to build the code
 
-* To run the code, use the provided shared run configuration "IDEA"
+* To run the code, use the provided shared run configuration *IDEA*
+![IDEA Run Configuration](/img/getting_started/checkout_and_build_community/idea_run_configuration.png)
 
 ## Building and Running from the Command Line
 <!--TODO link to ant--> 

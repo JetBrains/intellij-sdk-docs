@@ -107,7 +107,7 @@ Most of IntelliJ IDEA's UI is built using the UI Designer, and the version you b
 * Add **lib\\tools.jar** from the JDK installation directory to the classpath of IDEA JDK
 ![tools.jar](/img/getting_started/checkout_and_build_community/tools_jar.png)
 
-* Use Build \| Make Project to build the code
+* Use **Build \| Make Project** to build the code
 
 * To run the code, use the provided shared run configuration "IDEA"
 

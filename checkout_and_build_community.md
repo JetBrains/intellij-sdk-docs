@@ -86,34 +86,41 @@ or
 
 **Building and running the code**
 
-* Make sure you have the
-[Groovy plugin](https://plugins.jetbrains.com/plugin/1524)
-enabled by going to **Settings \| Plugins** and enabling **Groovy** plugin checkbox.
-![Groovy plugin](/img/getting_started/checkout_and_build_community/groovy_plugin_enabled.png)
+*  Make sure you have the
+   [Groovy plugin](https://plugins.jetbrains.com/plugin/1524)
+   enabled by going to **Settings \| Plugins** and enabling **Groovy** plugin checkbox.
 
-Parts of IntelliJ IDEA are written in Groovy, and you will get compilation errors if you don't have the plugin enabled
+   ![Groovy plugin](/img/getting_started/checkout_and_build_community/groovy_plugin_enabled.png)
 
-* Make sure you have the UI Designer plugin enabled. 
-Most of IntelliJ IDEA's UI is built using the UI Designer, and the version you build will not run correctly if you don't have the plugin enabled
-![UI Designer plugin](/img/getting_started/checkout_and_build_community/ui_designer_plugin_enabled.png)
+   Parts of IntelliJ IDEA are written in Groovy, and you will get compilation errors if you don't have the plugin enabled
 
-* Open the directory with the source code as a directory-based project
+*  Make sure you have the UI Designer plugin enabled.
+   Most of IntelliJ IDEA's UI is built using the UI Designer, and the version you build will not run correctly if you don't have the plugin enabled
 
-* Configure a Java SDK named *IDEA jdk* (case sensitive), pointing to an installation of JDK 1.8
-![Configure SDK](/img/getting_started/checkout_and_build_community/configure_sdk.png)
+   ![UI Designer plugin](/img/getting_started/checkout_and_build_community/ui_designer_plugin_enabled.png)
 
-* Add **lib\\tools.jar** from the JDK installation directory to the classpath of IDEA JDK
-![tools.jar](/img/getting_started/checkout_and_build_community/tools_jar.png)
+*  Open the directory with the source code as a directory-based project
 
-* Use **Build \| Make Project** to build the code
+*  Configure a Java SDK named *IDEA jdk* (case sensitive), pointing to an installation of JDK 1.8
 
-* To run the code, use the provided shared run configuration *IDEA*
-![IDEA Run Configuration](/img/getting_started/checkout_and_build_community/idea_run_configuration.png)
+   ![Configure SDK](/img/getting_started/checkout_and_build_community/configure_sdk.png)
+
+*  Add **lib\\tools.jar** from the JDK installation directory to the classpath of IDEA JDK
+
+   ![tools.jar](/img/getting_started/checkout_and_build_community/tools_jar.png)
+
+*  Use **Build \| Make Project** to build the code
+
+*  To run the code, use the provided shared run configuration *IDEA*
+
+   ![IDEA Run Configuration](/img/getting_started/checkout_and_build_community/idea_run_configuration.png)
 
 ## Building and Running from the Command Line
 To build the distribution archive of *IntelliJ IDEA Community Edition*, execute
 [build.xml](https://github.com/JetBrains/intellij-community/blob/master/build.xml)
+
 Ant build script in the root directory of the source code.
+
 ![Execute Ant Build Script](/img/getting_started/checkout_and_build_community/ant_build_xml.png)
 
 

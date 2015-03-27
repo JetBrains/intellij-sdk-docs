@@ -1,4 +1,5 @@
 ---
+layout: editable
 title: Action System
 ---
 
@@ -6,7 +7,7 @@ title: Action System
 INITIAL_SOURCE https://confluence.jetbrains.com/display/IDEADEV/IntelliJ+IDEA+Action+System
 -->
 
-# {{ page.title }}
+
 
 
 ## Executing and Updating Actions

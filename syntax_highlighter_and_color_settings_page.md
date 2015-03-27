@@ -1,4 +1,5 @@
 ---
+layout: editable
 title: Syntax Highlighter and Color Settings Page
 ---
 
@@ -6,7 +7,7 @@ title: Syntax Highlighter and Color Settings Page
 INITIAL_SOURCE https://confluence.jetbrains.com/display/IntelliJIDEA/Syntax+Highlighter+and+Color+Settings+Page
 -->
 
-# {{ page.title }}
+
 
 ### 1. Define a syntax highlighter
 

@@ -1,4 +1,5 @@
 ---
+layout: editable
 title: Build Number Ranges
 ---
 
@@ -6,7 +7,7 @@ title: Build Number Ranges
 INITIAL_SOURCE https://confluence.jetbrains.com/display/IDEADEV/Build+Number+Ranges
 -->
 
-# {{ page.title }}
+
 
 This reference of build number ranges can be used to specify correct since-build and until-build versions in the
 <!--TODO link to file in sample-->

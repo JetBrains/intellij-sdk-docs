@@ -1,4 +1,5 @@
 ---
+layout: editable
 title: Prerequisites
 ---
 
@@ -6,7 +7,7 @@ title: Prerequisites
 INITIAL_SOURCE https://confluence.jetbrains.com/display/IntelliJIDEA/Prerequisites
 -->
 
-# {{ page.title }}
+
 
 ### 1. Download and install IntelliJ IDEA
 

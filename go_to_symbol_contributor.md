@@ -1,4 +1,5 @@
 ---
+layout: editable
 title: Go To Symbol Contributor
 ---
 

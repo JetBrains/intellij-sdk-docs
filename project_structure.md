@@ -1,4 +1,5 @@
 ---
+layout: editable
 title: Structure of Project
 ---
 
@@ -6,7 +7,7 @@ title: Structure of Project
 INITIAL_SOURCE https://confluence.jetbrains.com/display/IDEADEV/Structure+of+IntelliJ+IDEA+Project
 -->
 
-# {{ page.title }}
+
 
 <!--TODO split into parts accordingly to the table of contents-->
 This topic considers the concept of **IntelliJ IDEA** projects and related subjects, such as _modules_, _facets_, _libraries_, _SDK_.

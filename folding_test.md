@@ -1,4 +1,5 @@
 ---
+layout: editable
 title: Folding Test
 ---
 
@@ -6,7 +7,7 @@ title: Folding Test
 INITIAL_SOURCE https://confluence.jetbrains.com/display/IntelliJIDEA/Folding+Test
 -->
 
-# {{ page.title }}
+
 
 In this test we will check if the folding builder, implemented in the
 [Folding Builder](folding_builder.html)

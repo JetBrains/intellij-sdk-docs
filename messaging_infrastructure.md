@@ -1,4 +1,5 @@
 ---
+layout: editable
 title: Messaging infrastructure
 ---
 
@@ -6,7 +7,7 @@ title: Messaging infrastructure
 INITIAL_SOURCE https://confluence.jetbrains.com/display/IDEADEV/IntelliJ+IDEA+Messaging+infrastructure
 -->
 
-# {{ page.title }}
+
 
 # Purpose
 

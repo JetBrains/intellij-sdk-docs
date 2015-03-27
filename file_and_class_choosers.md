@@ -1,4 +1,5 @@
 ---
+layout: editable
 title: File and Class Choosers
 ---
 
@@ -6,7 +7,7 @@ title: File and Class Choosers
 INITIAL_SOURCE https://confluence.jetbrains.com/display/IDEADEV/File+and+Class+Choosers
 -->
 
-# {{ page.title }}
+
 
 ## File Choosers
 

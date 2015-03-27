@@ -1,4 +1,5 @@
 ---
+layout: editable
 title: Run Configurations
 ---
 
@@ -6,7 +7,7 @@ title: Run Configurations
 INITIAL_SOURCE https://confluence.jetbrains.com/display/IDEADEV/Run+Configurations
 -->
 
-# {{ page.title }}
+
 
 # Purpose
 

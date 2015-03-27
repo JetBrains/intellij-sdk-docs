@@ -1,8 +1,9 @@
 ---
+layout: editable
 title: Creating a Plugin Project
 ---
 
-# {{ page.title }}
+
 
 This section explains how you can create a new plugin project from a scratch using the New Project wizard.
 Optionally, you can import an existing project or import a project from external models.

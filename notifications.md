@@ -1,4 +1,5 @@
 ---
+layout: editable
 title: Notifications
 ---
 
@@ -6,7 +7,7 @@ title: Notifications
 INITIAL_SOURCE https://confluence.jetbrains.com/display/IDEADEV/IntelliJ+IDEA+Notifications
 -->
 
-# {{ page.title }}
+
 
 ## Notifications
 

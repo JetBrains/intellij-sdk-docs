@@ -1,4 +1,5 @@
 ---
+layout: editable
 title: Testing Plugins
 ---
 
@@ -6,7 +7,7 @@ title: Testing Plugins
 INITIAL_SOURCE https://confluence.jetbrains.com/display/IDEADEV/Testing+IntelliJ+IDEA+Plugins
 -->
 
-# {{ page.title }}
+
 
 ### General Testing Approach
 

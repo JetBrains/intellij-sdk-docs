@@ -1,4 +1,5 @@
 ---
+layout: editable
 title: List and Tree Controls
 ---
 
@@ -6,7 +7,7 @@ title: List and Tree Controls
 INITIAL_SOURCE https://confluence.jetbrains.com/display/IDEADEV/IntelliJ+IDEA+List+and+Tree+Controls
 -->
 
-# {{ page.title }}
+
 
 ### JBList and Tree
 

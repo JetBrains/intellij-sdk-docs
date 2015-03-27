@@ -1,4 +1,5 @@
 ---
+layout: editable
 title: External Builder API and Plugins
 ---
 
@@ -6,7 +7,7 @@ title: External Builder API and Plugins
 INITIAL_SOURCE https://confluence.jetbrains.com/display/IDEADEV/External+Builder+API+and+Plugins
 -->
 
-# {{ page.title }}
+
 
 ### External Build Process Workflow
 

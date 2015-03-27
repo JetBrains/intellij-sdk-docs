@@ -1,8 +1,9 @@
 ---
+layout: editable
 title: Setting Up Development Environment
 ---
 
-# {{ page.title }}
+
 In order to set up the plugin development environment, you should follow these steps:
 
 *  Check out the sources of IntelliJ IDEA Community Edition as described in

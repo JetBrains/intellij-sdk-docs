@@ -1,4 +1,5 @@
 ---
+layout: editable
 title: Commenter Test
 ---
 
@@ -6,7 +7,7 @@ title: Commenter Test
 INITIAL_SOURCE https://confluence.jetbrains.com/display/IntelliJIDEA/Commenter+Test
 -->
 
-# {{ page.title }}
+
 
 In this test we will check if the commenter, implemented in the
 [Commenter](commenter.html)

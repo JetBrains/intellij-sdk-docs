@@ -1,4 +1,5 @@
 ---
+layout: editable
 title: Spring API
 ---
 
@@ -6,7 +7,7 @@ title: Spring API
 INITIAL_SOURCE http://confluence.jetbrains.com/display/IDEADEV/Spring+API+Guide
 -->
 
-# {{ page.title }}
+
 
 
 ## Using Spring-API

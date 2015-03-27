@@ -1,4 +1,5 @@
 ---
+layout: editable
 title: XML DOM API
 
 ---
@@ -7,7 +8,7 @@ title: XML DOM API
 INITIAL_SOURCE http://confluence.jetbrains.com/display/IDEADEV/Accessing+XML+through+IntelliJ+IDEA+DOM
 -->
 
-# {{ page.title }}
+
 
 <!-- TODO content: DOM <=> PSI, Go To Symbol, editor gutter icon->DOM -->
 

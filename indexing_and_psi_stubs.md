@@ -1,4 +1,5 @@
 ---
+layout: editable
 title: Indexing and PSI Stubs
 ---
 
@@ -6,7 +7,7 @@ title: Indexing and PSI Stubs
 INITIAL_SOURCE https://confluence.jetbrains.com/display/IDEADEV/Indexing+and+PSI+Stubs+in+IntelliJ+IDEA
 -->
 
-# {{ page.title }}
+
 
 
 ## Introduction

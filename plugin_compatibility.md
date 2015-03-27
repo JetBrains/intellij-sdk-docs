@@ -1,4 +1,5 @@
 ---
+layout: editable
 title: Plugin Compatibility with IntelliJ Platform Products
 ---
 

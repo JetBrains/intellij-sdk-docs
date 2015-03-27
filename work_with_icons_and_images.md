@@ -1,4 +1,5 @@
 ---
+layout: editable
 title: Work with Icons and Images
 ---
 
@@ -6,7 +7,7 @@ title: Work with Icons and Images
 INITIAL_SOURCE https://confluence.jetbrains.com/display/IDEADEV/Work+with+Icons+and+Images
 -->
 
-# {{ page.title }}
+
 
 Icons and images are used widely by IntelliJ IDEA plugins.
 Plugins need icons mostly for actions, custom components renderers, tool windows and so on.

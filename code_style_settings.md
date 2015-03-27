@@ -1,4 +1,5 @@
 ---
+layout: editable
 title: Code Style Setting
 ---
 

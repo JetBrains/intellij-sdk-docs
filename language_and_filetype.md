@@ -1,4 +1,5 @@
 ---
+layout: editable
 title: Language and File Type
 ---
 
@@ -6,7 +7,7 @@ title: Language and File Type
 INITIAL_SOURCE https://confluence.jetbrains.com/display/IntelliJIDEA/Language+and+File+Type
 -->
 
-# {{ page.title }}
+
 
 ### 1. Define a language
 

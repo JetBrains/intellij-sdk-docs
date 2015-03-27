@@ -1,8 +1,9 @@
 ---
+layout: editable
 title: VCS Integration Plugins
 ---
 
-# {{ page.title }}
+
 
 This page gives an overview of the Version Control Integration API in IntelliJ IDEA 7.0.
 Most of the concepts described here also apply to IntelliJ IDEA 6.0.

@@ -1,10 +1,11 @@
 ---
+layout: editable
 title: Persisting State of Components
 ---
 
 <!--INITIAL_SOURCE https://confluence.jetbrains.com/display/IDEADEV/Persisting+State+of+Components-->
 
-# {{ page.title }}
+
 
 The IntelliJ Platform provides an API that allows components or services to persist their state between restarts of the IDE.
 You can use either a simple API to persist a few values, or persist the state of more complicated components using the 

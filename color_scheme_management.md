@@ -1,4 +1,5 @@
 ---
+layout: editable
 title: Color Scheme Management in Intellij IDEA 12.1+
 ---
 
@@ -6,7 +7,7 @@ title: Color Scheme Management in Intellij IDEA 12.1+
 INITIAL_SOURCE https://confluence.jetbrains.com/pages/viewpage.action?pageId=49463468
 -->
 
-# {{ page.title }}
+
 
 # Preface
 

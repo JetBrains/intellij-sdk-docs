@@ -1,8 +1,9 @@
 ---
+layout: editable
 title: Check Out And Build Community Edition
 ---
 
-# {{ page.title }}
+
 
 ## Installing Git
 The source code of IntelliJ IDEA Community Edition is stored in a Git repository. 

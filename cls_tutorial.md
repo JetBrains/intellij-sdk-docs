@@ -1,4 +1,5 @@
 ---
+layout: editable
 title: Custom Language Support Tutorial
 ---
 
@@ -6,7 +7,7 @@ title: Custom Language Support Tutorial
 INITIAL_SOURCE https://confluence.jetbrains.com/display/IntelliJIDEA/Custom+Language+Support
 -->
 
-# {{ page.title }}
+
 
 In this tutorial we will add basic support for
 [.properties](http://en.wikipedia.org/wiki/.properties)

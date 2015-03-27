@@ -1,4 +1,5 @@
 ---
+layout: editable
 title: Miscellaneous Swing Components
 ---
 
@@ -6,7 +7,7 @@ title: Miscellaneous Swing Components
 INITIAL_SOURCE https://confluence.jetbrains.com/display/IDEADEV/Miscellaneous+Swing+Components
 -->
 
-# {{ page.title }}
+
 
 ### Messages
 

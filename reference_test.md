@@ -1,4 +1,5 @@
 ---
+layout: editable
 title: Reference Test
 ---
 
@@ -6,7 +7,7 @@ title: Reference Test
 INITIAL_SOURCE https://confluence.jetbrains.com/display/IntelliJIDEA/Reference+Test
 -->
 
-# {{ page.title }}
+
 
 In this test we will check if references, implemented in the
 [Reference Contributor](reference_contributor.html)

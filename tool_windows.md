@@ -1,4 +1,5 @@
 ---
+layout: editable
 title: Tool Windows
 ---
 
@@ -6,7 +7,7 @@ title: Tool Windows
 INITIAL_SOURCE https://confluence.jetbrains.com/display/IDEADEV/IntelliJ+IDEA+Tool+Windows
 -->
 
-# {{ page.title }}
+
 
 ## Tool Windows
 

@@ -1,4 +1,5 @@
 ---
+layout: editable
 title: Editor Components
 ---
 
@@ -6,7 +7,7 @@ title: Editor Components
 INITIAL_SOURCE https://confluence.jetbrains.com/display/IDEADEV/Editor+Components
 -->
 
-# {{ page.title }}
+
 
 ## EditorTextField
 

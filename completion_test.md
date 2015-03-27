@@ -1,4 +1,5 @@
 ---
+layout: editable
 title: Completion Test
 ---
 
@@ -6,7 +7,7 @@ title: Completion Test
 INITIAL_SOURCE https://confluence.jetbrains.com/display/IntelliJIDEA/Completion+Test
 -->
 
-# {{ page.title }}
+
 
 In this test we will check if code completion, implemented in the
 [Reference Contributor](reference_contributor.html) section

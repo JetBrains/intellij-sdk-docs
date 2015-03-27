@@ -1,4 +1,5 @@
 ---
+layout: editable
 title: Popups
 ---
 
@@ -6,7 +7,7 @@ title: Popups
 INITIAL_SOURCE https://confluence.jetbrains.com/display/IDEADEV/IntelliJ+IDEA+Popups
 -->
 
-# {{ page.title }}
+
 
 ## Popups
 

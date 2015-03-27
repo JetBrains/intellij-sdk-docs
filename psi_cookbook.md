@@ -1,4 +1,5 @@
 ---
+layout: editable
 title: PSI Cookbook
 ---
 
@@ -6,7 +7,7 @@ title: PSI Cookbook
 INITIAL_SOURCE https://confluence.jetbrains.com/display/IDEADEV/PSI+Cookbook
 -->
 
-# {{ page.title }}
+
 
 This page gives a list of recipes for the most common operations for working with the PSI (Program Structure Interface) in IntelliJ IDEA. Unlike [Developing Custom Language Plugins for IntelliJ IDEA], it talks about working with the PSI of existing languages (such as Java).
 

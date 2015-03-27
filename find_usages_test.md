@@ -1,4 +1,5 @@
 ---
+layout: editable
 title: Find Usages Test
 ---
 
@@ -6,7 +7,7 @@ title: Find Usages Test
 INITIAL_SOURCE https://confluence.jetbrains.com/display/IntelliJIDEA/Find+Usages+Test
 -->
 
-# {{ page.title }}
+
 
 In this test we will check if the find usages provider, implemented in the
 [Find Usages Provider](find_usages_provider.html)

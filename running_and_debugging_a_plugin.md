@@ -1,8 +1,9 @@
 ---
+layout: editable
 title: Running and Debugging a Plugin
 ---
 
-# {{ page.title }}
+
 
 
 *IntelliJ IDEA* allows you to run and debug a plugin without leaving the IDE.

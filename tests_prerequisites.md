@@ -1,4 +1,5 @@
 ---
+layout: editable
 title: Tests Prerequisites
 ---
 
@@ -6,7 +7,7 @@ title: Tests Prerequisites
 INITIAL_SOURCE https://confluence.jetbrains.com/display/IntelliJIDEA/Tests+Prerequisites
 -->
 
-# {{ page.title }}
+
 
 ### 1. Create a folder for tests
 

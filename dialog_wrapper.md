@@ -1,4 +1,5 @@
 ---
+layout: editable
 title: DialogWrapper
 ---
 
@@ -6,7 +7,7 @@ title: DialogWrapper
 INITIAL_SOURCE https://confluence.jetbrains.com/display/IDEADEV/IntelliJ+IDEA+DialogWrapper
 -->
 
-# {{ page.title }}
+
 
 ## DialogWrapper
 

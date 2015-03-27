@@ -1,4 +1,5 @@
 ---
+layout: editable
 title: Grammar and Parser
 ---
 
@@ -6,7 +7,7 @@ title: Grammar and Parser
 INITIAL_SOURCE https://confluence.jetbrains.com/display/IntelliJIDEA/Grammar+and+Parser
 -->
 
-# {{ page.title }}
+
 
 ### 1. Define a token type
 

@@ -20,3 +20,5 @@ exclude:
 defaults:
   - values:
       layout: 'webhelp'
+
+edit_on_github_url: https://github.com/JetBrains/intellij-sdk-docs/edit/master/%path%

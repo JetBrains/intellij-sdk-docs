@@ -1,5 +1,4 @@
 ---
-layout: editable
 title: IntelliJ Platform SDK Documentation
 ---
 

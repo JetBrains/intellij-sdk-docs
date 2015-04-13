@@ -17,7 +17,7 @@
         * [Plugin Class Loaders](plugin_class_loaders.html)
         * [Plugin Components](plugin_components.html)
         * [Plugin Extensions and Extension Points](plugin_extensions_and_extension_points.html)
-        * [Plugin Actions](TODO)
+        * [Plugin Actions](plugin_actions.html)
         * [Plugin Services](TODO)
         * [Plugin Configuration File](TODO)
         * [Plugin Dependencies](TODO)

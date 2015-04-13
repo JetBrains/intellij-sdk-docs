@@ -20,7 +20,7 @@
         * [Plugin Actions](plugin_actions.html)
         * [Plugin Services](plugin_services.html)
         * [Plugin Configuration File](plugin_configuration_file.html)
-        * [Plugin Dependencies](TODO)
+        * [Plugin Dependencies](plugin_dependencies.html)
     * [Architectural Overview](architectural_overview.html)
     * [Structure of Project](project_structure.html)
     * [Action System](action_system.html)

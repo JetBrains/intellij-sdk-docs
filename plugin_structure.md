@@ -19,7 +19,7 @@ The following subjects are covered:
 
 * [Plugin Content](plugin_content.html)
 
-* [Plugin Class Loaders](TODO)
+* [Plugin Class Loaders](plugin_class_loaders.html)
 
 * [Plugin Components](TODO)
 

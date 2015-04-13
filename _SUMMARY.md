@@ -14,7 +14,7 @@
         * [Plugin Compatibility with IntelliJ Platform Products](plugin_compatibility.html)
     * [Plugin Structure](plugin_structure.html)
         * [Plugin Content](plugin_content.html)
-        * [Plugin Class Loaders](TODO)
+        * [Plugin Class Loaders](plugin_class_loaders.html)
         * [Plugin Components](TODO)
         * [Plugin Extensions and Extension](TODO)
         * [Plugin Actions](TODO)

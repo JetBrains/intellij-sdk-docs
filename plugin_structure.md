@@ -23,7 +23,7 @@ The following subjects are covered:
 
 * [Plugin Components](plugin_components.html)
 
-* [Plugin Extensions and Extension](TODO)
+* [Plugin Extensions and Extension Points](TODO)
 
 * [Plugin Actions](TODO)
 

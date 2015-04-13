@@ -12,7 +12,7 @@ The
 [PsiElement](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/psi/PsiElement.java)
 class is the common base class for PSI elements.
 
-#### How do I get a PSI element?
+## How do I get a PSI element?
 
 *  From an action: ```e.getData(LangDataKeys.PSI_ELEMENT)```. Note: if an editor is currently open and the element under caret is a reference, this will return the result of resolving the reference. This may or not be what you need.
 *  From a file by offset: ```PsiFile.findElementAt()```. Note: this returns the lowest level element at the specified offset, which is normally a lexer token.
@@ -20,6 +20,6 @@ You most likely need to use PsiTreeUtil.getParentOfType() to find the element yo
 *  By iterating through a PSI file: using a ```PsiRecursiveElementWalkingVisitor```.
 *  By resolving a reference: ```PsiReference.resolve()```
 
-#### What can I do with one?
+## What can I do with one?
 
 See [PSI Cook Book](psi_cookbook.html)

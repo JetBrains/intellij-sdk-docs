@@ -162,6 +162,6 @@ The tag can also have the following optional attributes:
 ### Tutorial
 
 Check out
-[this](http://confluence.jetbrains.com/display/IntelliJIDEA/Writing+Tests+for+Plugins)
+[this](writing_tests_for_plugins.html)
 step-by-step tutorial teaching how to write and run automated tests for your custom language plugin (source code included).
 

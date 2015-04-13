@@ -15,7 +15,7 @@
     * [Plugin Structure](plugin_structure.html)
         * [Plugin Content](plugin_content.html)
         * [Plugin Class Loaders](plugin_class_loaders.html)
-        * [Plugin Components](TODO)
+        * [Plugin Components](plugin_components.html)
         * [Plugin Extensions and Extension](TODO)
         * [Plugin Actions](TODO)
         * [Plugin Services](TODO)

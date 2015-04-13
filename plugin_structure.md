@@ -17,21 +17,21 @@ It doesn't specify any other APIs that may be used by plugins.
 The following subjects are covered:
 <!--TODO Links from TOC to certain parts of the document-->
 
-* Plugin Content 
+* [Plugin Content](TODO)
 
-* Plugin Class Loaders
+* [Plugin Class Loaders](TODO)
 
-* Plugin Components
+* [Plugin Components](TODO)
 
-* Plugin Extensions and Extension
+* [Plugin Extensions and Extension](TODO)
 
-* Plugin Actions
+* [Plugin Actions](TODO)
 
-* Plugin Services
+* [Plugin Services](TODO)
 
-* Plugin Configuration File
+* [Plugin Configuration File](TODO)
 
-* Plugin Dependencies
+* [Plugin Dependencies](TODO)
 
 ## Plugin Content
 

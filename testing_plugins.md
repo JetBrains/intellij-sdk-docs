@@ -7,9 +7,7 @@ title: Testing Plugins
 INITIAL_SOURCE https://confluence.jetbrains.com/display/IDEADEV/Testing+IntelliJ+IDEA+Plugins
 -->
 
-
-
-### General Testing Approach
+## General Testing Approach
 
 Before discussing the specific details of the IntelliJ IDEA plugin test framework, it's worth looking at the general approach that the IntelliJ IDEA team uses for testing the IDE code. Our intention here is not so much to be prescriptive, and more to set the expectations we have good tools to support the approach that we use, and less good (or no) tools for approaches that we don't use.
 
@@ -35,7 +33,7 @@ Another consequence of our testing approach is what our test framework does not 
 for plugin UI testing, but we don't use either of them and cannot provide any guidelines for their use.
 Internally, we use manual testing for testing our Swing UIs.
 
-### Tests and Fixtures
+## Tests and Fixtures
 
 The IntelliJ Platform testing infrastructure is not tied to any specific test framework.
 In fact, the IntelliJ IDEA team uses both JUnit, TestNG and Cucumber for testing different parts of the project.
@@ -45,7 +43,7 @@ When writing your own tests, you have the choice between using a standard base c
 With the former approach, you can use classes such as ```LightPlatformCodeInsightFixtureTestCase``` (despite being one of the longest and ugliest class names you'll run into in the IntelliJ IDEA API, it's actually the recommended approach for writing tests).
 With the latter approach, you use the ```IdeaTestFixtureFactory``` class to create instances of fixtures for the test environment, and you need to call the fixture creation and setup methods from the test setup method used by your test framework.
 
-### Light and Heavy Tests
+## Light and Heavy Tests
 
 As mentioned above, plugin tests run in a real, rather than mocked, IntelliJ IDEA environment, and use real implementations for most of the application and project components. Loading the project components for a project is a fairly expensive operation, and we want to avoid doing it for each test. Because of that, we distinguish between *heavy*  tests, which create a new project for each test, and *light*  tests, which reuse a project from the previous test run when possible. Light and heavy tests use different base classes or fixture classes, as described below.
 
@@ -66,7 +64,7 @@ final JavaModuleFixtureBuilder moduleFixtureBuilder = projectBuilder.addModule(J
 myFixture = JavaTestFixtureFactory.getFixtureFactory().createCodeInsightFixture(projectBuilder.getFixture());
 ```
 
-### Test Project and Testdata Directories
+## Test Project and Testdata Directories
 
 The test fixture creates a *test project*  environment. Unless you customize the project creation, the test project will have one module with one source root called "```src```". The files for the test project physically exist either in a temporary directory or in an in-memory file system, depending on which implementation of ```TempDirTestFixture``` is used. ```LightPlatformCodeInsightFixtureTestCase``` uses an in-memory implementation; if you set up the test environment by calling ```IdeaTestFixtureFactory.createCodeInsightFixture```, you can specify the implementation to use.
 
@@ -90,7 +88,7 @@ When a file is opened in the in-memory editor, special markup in the file conten
 
 *  ```<block>``` and ```</block>``` specify the start and end points of the column selection.
 
-### Writing Tests
+## Writing Tests
 
 In most cases, once you have the necessary files copied to the test project and loaded into the in-memory editor, writing the test itself involves invoking your plugin code and has few dependencies on the test framework. However, for many common cases the framework provides helper methods that can make testing easier:
 
@@ -108,7 +106,7 @@ In most cases, once you have the necessary files copied to the test project and 
 
 To compare the results of executing the action with the expected results, you can use the ```checkResultByFile()``` method. The file with the expected results can also contain markup to specify the expected caret position or selected text range. If you're testing an action which modifies multiple files (a project-wide refactoring, for example), you can compare an entire directory under the test project with the expected output using ```PlatformTestUtil.assertDirectoriesEqual()```.
 
-### Testing Highlighting
+## Testing Highlighting
 
 A common task when writing plugin tests is testing various kinds of highlighting (inspections, annotators, parser error highlighting etc.) The IntelliJ Platform provides a dedicated utility and markup format for this task.
 
@@ -159,7 +157,7 @@ The tag can also have the following optional attributes:
 
 
 
-### Tutorial
+## Tutorial
 
 Check out
 [this](writing_tests_for_plugins.html)

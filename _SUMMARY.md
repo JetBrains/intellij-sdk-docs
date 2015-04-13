@@ -24,7 +24,7 @@
     * [Architectural Overview](architectural_overview.html)
         * [General Threading Rules](general_threading_rules.html)
         * [Virtual Files](virtual_file.html)
-        * [Documents](TODO)
+        * [Documents](documents.html)
         * [PSI Files](TODO)
         * [File View Providers](TODO)
         * [Psi Elements](TODO)

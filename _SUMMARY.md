@@ -13,7 +13,7 @@
         * [Running and Debugging a Plugin](running_and_debugging_a_plugin.html)
         * [Plugin Compatibility with IntelliJ Platform Products](plugin_compatibility.html)
     * [Plugin Structure](plugin_structure.html)
-        * [Plugin Content](TODO)
+        * [Plugin Content](plugin_content.html)
         * [Plugin Class Loaders](TODO)
         * [Plugin Components](TODO)
         * [Plugin Extensions and Extension](TODO)

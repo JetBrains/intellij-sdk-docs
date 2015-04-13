@@ -18,7 +18,7 @@
         * [Plugin Components](plugin_components.html)
         * [Plugin Extensions and Extension Points](plugin_extensions_and_extension_points.html)
         * [Plugin Actions](plugin_actions.html)
-        * [Plugin Services](TODO)
+        * [Plugin Services](plugin_services.html)
         * [Plugin Configuration File](TODO)
         * [Plugin Dependencies](TODO)
     * [Architectural Overview](architectural_overview.html)

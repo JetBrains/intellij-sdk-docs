@@ -3,8 +3,6 @@ layout: editable
 title: Check Out And Build Community Edition
 ---
 
-
-
 ## Installing Git
 The source code of IntelliJ IDEA Community Edition is stored in a Git repository. 
 Therefore, in order to check out the sources, you need to have Git installed. 

@@ -5,6 +5,7 @@ title: Plugin Components
 
 Components are the fundamental concept of plugins integration.
 There are three kinds of components:
+<!-- TODO Table Of Contents -->
 
 *  Application-level
 

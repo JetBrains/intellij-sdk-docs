@@ -25,7 +25,7 @@
         * [General Threading Rules](general_threading_rules.html)
         * [Virtual Files](virtual_file.html)
         * [Documents](documents.html)
-        * [PSI Files](TODO)
+        * [PSI Files](psi_files.html)
         * [File View Providers](TODO)
         * [Psi Elements](TODO)
     * [Structure of Project](project_structure.html)

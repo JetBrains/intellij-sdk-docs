@@ -23,7 +23,7 @@ This topic covers the following subjects:
 
 * [Documents](documents.html)
  
-* PSI Files
+* [PSI Files](psi_files.html)
 
 * File View Providers
  

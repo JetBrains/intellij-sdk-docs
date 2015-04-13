@@ -22,7 +22,7 @@
         * [Plugin Configuration File](plugin_configuration_file.html)
         * [Plugin Dependencies](plugin_dependencies.html)
     * [Architectural Overview](architectural_overview.html)
-        * [General Threading Rules](TODO)
+        * [General Threading Rules](general_threading_rules.html)
         * [Virtual Files](TODO)
         * [Documents](TODO)
         * [PSI Files](TODO)

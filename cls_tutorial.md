@@ -3,12 +3,6 @@ layout: editable
 title: Custom Language Support Tutorial
 ---
 
-<!--
-INITIAL_SOURCE https://confluence.jetbrains.com/display/IntelliJIDEA/Custom+Language+Support
--->
-
-
-
 In this tutorial we will add basic support for
 [.properties](http://en.wikipedia.org/wiki/.properties)
 language and it's usages within Java code.

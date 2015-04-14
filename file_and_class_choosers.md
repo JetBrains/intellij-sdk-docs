@@ -3,12 +3,6 @@ layout: editable
 title: File and Class Choosers
 ---
 
-<!--
-INITIAL_SOURCE https://confluence.jetbrains.com/display/IDEADEV/File+and+Class+Choosers
--->
-
-
-
 ## File Choosers
 
 To let a user choose a file, directory or multiple files, use the

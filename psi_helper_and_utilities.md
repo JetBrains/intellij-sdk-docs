@@ -3,11 +3,6 @@ layout: editable
 title: PSI Helpers and Utilities
 ---
 
-<!--
-INITIAL_SOURCE https://confluence.jetbrains.com/display/IntelliJIDEA/PSI+Helpers+and+Utilities
--->
-
-
 
 ### 1. Define helper methods for generated PSI elements
 

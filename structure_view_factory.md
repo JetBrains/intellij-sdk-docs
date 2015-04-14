@@ -3,9 +3,6 @@ layout: editable
 title: Structure View Factory
 ---
 
-<!--
-INITIAL_SOURCE https://confluence.jetbrains.com/display/IntelliJIDEA/Structure+View+Factory
--->
 
 A structure view factory allows to show the structure of any file in a *Structure* tool window for easy navigation between items.
 

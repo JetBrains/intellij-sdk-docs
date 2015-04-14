@@ -3,12 +3,6 @@ layout: editable
 title: Spring API
 ---
 
-<!--
-INITIAL_SOURCE http://confluence.jetbrains.com/display/IDEADEV/Spring+API+Guide
--->
-
-
-
 
 ## Using Spring-API
 To develop plugins integrating with Spring-API you will need to use IntelliJ IDEA _Ultimate Edition_ version 13.1 (or higher).

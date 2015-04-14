@@ -3,11 +3,6 @@ layout: editable
 title: User Interface Components
 ---
 
-<!--
-INITIAL_SOURCE https://confluence.jetbrains.com/display/IDEADEV/IntelliJ+IDEA+User+Interface+Components
--->
-
-
 
 The IntelliJ Platform includes a large number of custom Swing components. Using those components in your plugins will ensure that your plugin looks and works consistently with the UI of the rest of the IDE, and can often reduce the code size compared to using the default Swing components.
 

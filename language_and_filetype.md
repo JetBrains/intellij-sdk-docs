@@ -3,11 +3,6 @@ layout: editable
 title: Language and File Type
 ---
 
-<!--
-INITIAL_SOURCE https://confluence.jetbrains.com/display/IntelliJIDEA/Language+and+File+Type
--->
-
-
 
 ### 1. Define a language
 

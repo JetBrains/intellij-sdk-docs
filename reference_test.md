@@ -3,11 +3,6 @@ layout: editable
 title: Reference Test
 ---
 
-<!--
-INITIAL_SOURCE https://confluence.jetbrains.com/display/IntelliJIDEA/Reference+Test
--->
-
-
 
 In this test we will check if references, implemented in the
 [Reference Contributor](reference_contributor.html)

@@ -3,11 +3,6 @@ layout: editable
 title: Supporting multiple carets
 ---
 
-<!--
-INITIAL_SOURCE https://confluence.jetbrains.com/display/IDEADEV/Supporting+multiple+carets
--->
-
-
 
 ## Introduction
 

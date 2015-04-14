@@ -3,11 +3,6 @@ layout: editable
 title: Plugin Structure
 ---
 
-<!--
-INITIAL_SOURCE https://confluence.jetbrains.com/display/IDEADEV/IntelliJ+IDEA+Plugin+Structure
--->
-
-
 
 Plugins are the only supported way to extend IDEA functionality.
 A plugin uses API exposed by IDEA or other plugins to implement its functionality.

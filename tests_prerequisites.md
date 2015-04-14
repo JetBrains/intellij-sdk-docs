@@ -3,11 +3,6 @@ layout: editable
 title: Tests Prerequisites
 ---
 
-<!--
-INITIAL_SOURCE https://confluence.jetbrains.com/display/IntelliJIDEA/Tests+Prerequisites
--->
-
-
 
 ### 1. Create a folder for tests
 

@@ -3,10 +3,6 @@ layout: editable
 title: Code Style Setting
 ---
 
-<!--
-INITIAL_SOURCE https://confluence.jetbrains.com/display/IntelliJIDEA/Code+Style+Settings
--->
-
 ### 1. Define code style settings
 
 ```java

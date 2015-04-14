@@ -3,11 +3,6 @@ layout: editable
 title: Rename Test
 ---
 
-<!--
-INITIAL_SOURCE https://confluence.jetbrains.com/display/IntelliJIDEA/Rename+Test
--->
-
-
 
 In this test we will check if in-place rename, implemented in the
 [Reference Contributor](reference_contributor.html)

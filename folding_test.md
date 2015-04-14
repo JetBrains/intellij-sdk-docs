@@ -3,12 +3,6 @@ layout: editable
 title: Folding Test
 ---
 
-<!--
-INITIAL_SOURCE https://confluence.jetbrains.com/display/IntelliJIDEA/Folding+Test
--->
-
-
-
 In this test we will check if the folding builder, implemented in the
 [Folding Builder](folding_builder.html)
 section of the

@@ -3,13 +3,6 @@ layout: editable
 title: Indexing and PSI Stubs
 ---
 
-<!--
-INITIAL_SOURCE https://confluence.jetbrains.com/display/IDEADEV/Indexing+and+PSI+Stubs+in+IntelliJ+IDEA
--->
-
-
-
-
 ## Introduction
 
 The indexing framework provides a quick way to locate certain elements (for example, files containing a certain word or methods with a particular name) in large code bases. Plugin developers can use the existing indexes built by the IDE itself, as well as build and use their own indexes.

@@ -3,10 +3,6 @@ layout: editable
 title: Line Marker Provider
 ---
 
-<!--
-INITIAL_SOURCE https://confluence.jetbrains.com/display/IntelliJIDEA/Line+Marker+Provider
--->
-
 Line markers help to annotate any code with icons on the gutter.
 These icons may provide navigation to related code.
 

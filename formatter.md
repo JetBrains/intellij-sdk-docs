@@ -3,10 +3,6 @@ layout: editable
 title: Formatter
 ---
 
-<!--
-INITIAL_SOURCE https://confluence.jetbrains.com/display/IntelliJIDEA/Formatter
--->
-
 *A formatter allows to reformat the code automatically based on code style settings.*
 
 ### 1. Define a block

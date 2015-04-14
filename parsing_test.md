@@ -3,11 +3,6 @@ layout: editable
 title: Parsing Test
 ---
 
-<!--
-INITIAL_SOURCE https://confluence.jetbrains.com/display/IntelliJIDEA/Parsing+Test
--->
-
-
 
 The first test will check if the parser, implemented in the
 [Lexer and Parser Definition](lexer_und_parser_definition.html)

@@ -3,9 +3,6 @@ layout: editable
 title: Quick Fix
 ---
 
-<!--
-INITIAL_SOURCE https://confluence.jetbrains.com/display/IntelliJIDEA/Quick+Fix
--->
 
 A quick fix allows to apply an automatic changes to the code via *⌥⏎*.
 

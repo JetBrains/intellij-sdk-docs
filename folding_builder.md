@@ -3,10 +3,6 @@ layout: editable
 title: Folding Builder
 ---
 
-<!--
-INITIAL_SOURCE https://confluence.jetbrains.com/display/IntelliJIDEA/Folding+Builder
--->
-
 A folding builder helps you to fold the code regions and replace it with specific text.
 
 ### 1. Define a folding builder

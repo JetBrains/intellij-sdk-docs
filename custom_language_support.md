@@ -3,12 +3,6 @@ layout: editable
 title: Custom Language Support
 ---
 
-<!--
-INITIAL_SOURCE http://confluence.jetbrains.com/display/IDEADEV/Developing+Custom+Language+Plugins+for+IntelliJ+IDEA
--->
-
-
-
 Please ask questions or suggest missing topics in [plugin development forum](http://devnet.jetbrains.com/community/idea/open_api_and_plugin_development).
 
 ## Introduction

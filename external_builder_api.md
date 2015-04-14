@@ -3,12 +3,6 @@ layout: editable
 title: External Builder API and Plugins
 ---
 
-<!--
-INITIAL_SOURCE https://confluence.jetbrains.com/display/IDEADEV/External+Builder+API+and+Plugins
--->
-
-
-
 ### External Build Process Workflow
 
 When the user invokes an action that involves executing an external build (Make, Build Artifacts, etc.), the following steps happen:

@@ -3,12 +3,6 @@ layout: editable
 title: Formatter Test
 ---
 
-<!--
-INITIAL_SOURCE https://confluence.jetbrains.com/display/IntelliJIDEA/Formatter+Test
--->
-
-
-
 In this test we will check if the formatter, implemented in the
 [Formatter](formatter.html)
 section of the

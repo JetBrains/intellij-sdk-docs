@@ -3,13 +3,6 @@ layout: editable
 title: Action System
 ---
 
-<!--
-INITIAL_SOURCE https://confluence.jetbrains.com/display/IDEADEV/IntelliJ+IDEA+Action+System
--->
-
-
-
-
 ## Executing and Updating Actions
 
 The system of actions allows plugins to add their own items to IDEA menus and toolbars.

@@ -3,10 +3,6 @@ layout: editable
 title: Architectural Overview
 ---
 
-<!--
-INITIAL_SOURCE https://confluence.jetbrains.com/display/IDEADEV/IntelliJ+IDEA+Architectural+Overview
--->
-
 The goal of this topic is to describe the architecture of IntelliJ IDEA from a plugin developer's point of view. It will be organized in a
 task-based manner: rather than listing all the things that you can do with each object and describing how they are all implemented, it will try
 to answer questions "what can I do with this object", "how do I get to this object" and so on.

@@ -3,12 +3,6 @@ layout: editable
 title: Color Scheme Management in Intellij IDEA 12.1+
 ---
 
-<!--
-INITIAL_SOURCE https://confluence.jetbrains.com/pages/viewpage.action?pageId=49463468
--->
-
-
-
 # Preface
 
 Color scheme management in Intellij IDEA 12.1 was changed to ease the work of scheme designers and make schemes look equally well for different programming languages even if not designed specifically for these languages. Previously language plug-ins were using fixed default colors incompatible, for example, with dark schemes. The new implementation allows to specify a dependency on a set of standard text attributes which are linked to a scheme but not to any specific language. Language-specific attributes still can be set by a scheme designer if needed but it's optional. New color schemes have got a new .icls (Idea CoLor Scheme) extension to avoid confusion about compatibility problems with older platform versions:

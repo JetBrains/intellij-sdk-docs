@@ -3,10 +3,6 @@ layout: editable
 title: Plugin Compatibility with IntelliJ Platform Products
 ---
 
-<!--INITIAL_SOURCE
-https://confluence.jetbrains.com/display/IDEADEV/Plugin+Compatibility+with+IntelliJ+Platform+Products
--->
-
 # {{page.title}}
 
 All products based on the IntelliJ Platform (IntelliJ IDEA, RubyMine, WebStorm, PhpStorm, PyCharm and AppCode) share the same underlying platform API. 

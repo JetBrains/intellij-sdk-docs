@@ -3,11 +3,6 @@ layout: editable
 title: DialogWrapper
 ---
 
-<!--
-INITIAL_SOURCE https://confluence.jetbrains.com/display/IDEADEV/IntelliJ+IDEA+DialogWrapper
--->
-
-
 
 ## DialogWrapper
 

@@ -3,11 +3,6 @@ layout: editable
 title: Notifications
 ---
 
-<!--
-INITIAL_SOURCE https://confluence.jetbrains.com/display/IDEADEV/IntelliJ+IDEA+Notifications
--->
-
-
 
 ## Notifications
 

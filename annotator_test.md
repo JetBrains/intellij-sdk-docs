@@ -3,12 +3,6 @@ layout: editable
 title: Annotator Test
 ---
 
-<!--
-INITIAL_SOURCE https://confluence.jetbrains.com/display/IntelliJIDEA/Annotator+Test
--->
-
-
-
 In this test we will check if the annotator, implemented in the
 [Annotator](annotator.html) section
 of the

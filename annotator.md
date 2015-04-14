@@ -3,10 +3,6 @@ layout: editable
 title: Annotator
 ---
 
-<!--
-INITIAL_SOURCE https://confluence.jetbrains.com/display/IntelliJIDEA/Annotator
--->
-
 Annotator helps highlight and annotate any code based on specific rules.
 
 ### 1. Define an annotator

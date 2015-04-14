@@ -3,11 +3,6 @@ layout: editable
 title: Localization Guide
 ---
 
-<!--
-INITIAL_SOURCE https://confluence.jetbrains.com/display/IDEADEV/Localization+Guide+for+IntelliJ+IDEA
--->
-
-
 
 The purpose of the document is to describe steps necessary to create localized versions of IDEA.
 

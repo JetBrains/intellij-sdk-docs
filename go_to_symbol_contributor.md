@@ -3,10 +3,6 @@ layout: editable
 title: Go To Symbol Contributor
 ---
 
-<!--
-INITIAL_SOURCE https://confluence.jetbrains.com/display/IntelliJIDEA/Go+To+Symbol+Contributor
--->
-
 *A go to symbol contributor helps user to navigate to any PSI element by it's name.*
 
 ### 1. Define helper method for generated PSI elements

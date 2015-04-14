@@ -3,12 +3,6 @@ layout: editable
 title: Editor Components
 ---
 
-<!--
-INITIAL_SOURCE https://confluence.jetbrains.com/display/IDEADEV/Editor+Components
--->
-
-
-
 ## EditorTextField
 
 Compared to

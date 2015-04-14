@@ -3,12 +3,6 @@ layout: editable
 title: Commenter Test
 ---
 
-<!--
-INITIAL_SOURCE https://confluence.jetbrains.com/display/IntelliJIDEA/Commenter+Test
--->
-
-
-
 In this test we will check if the commenter, implemented in the
 [Commenter](commenter.html)
 section of the

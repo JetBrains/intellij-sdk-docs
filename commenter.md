@@ -3,10 +3,6 @@ layout: editable
 title: Commenter
 ---
 
-<!--
-INITIAL_SOURCE https://confluence.jetbrains.com/display/IntelliJIDEA/Commenter
--->
-
 A commenter allows user to comment the code at the cursor or selected code automatically via *⌘/*.
 
 ### 1. Define a commenter

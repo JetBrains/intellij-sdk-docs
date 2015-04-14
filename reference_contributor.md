@@ -3,9 +3,6 @@ layout: editable
 title: Reference Contributor
 ---
 
-<!--
-INITIAL_SOURCE https://confluence.jetbrains.com/display/IntelliJIDEA/Reference+Contributor
--->
 
 References is one of the most important and tricky parts in the implementation of a custom language support.
 Resolving references means the ability to go from the usage of an element to the declaration of the element, completion, rename refactoring, find usages, etc.

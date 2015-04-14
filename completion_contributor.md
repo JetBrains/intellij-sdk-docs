@@ -3,9 +3,6 @@ layout: editable
 title: Completion Contributor
 ---
 
-<!--
-INITIAL_SOURCE https://confluence.jetbrains.com/display/IntelliJIDEA/Completion+Contributor
--->
 
 The easiest way to provide completion is to use a completion contributor.
 

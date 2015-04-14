@@ -3,11 +3,6 @@ layout: editable
 title: Virtual File System
 ---
 
-<!--
-INITIAL_SOURCE https://confluence.jetbrains.com/display/IDEADEV/IntelliJ+IDEA+Virtual+File+System
--->
-
-
 
 The virtual file system (VFS) is a component of IntelliJ IDEA that encapsulates most of its activity for working with files. It serves the following main purposes:
 

@@ -3,10 +3,6 @@ layout: editable
 title: Find Usages Provider
 ---
 
-<!--
-INITIAL_SOURCE https://confluence.jetbrains.com/display/IntelliJIDEA/Find+Usages+Provider
--->
-
 A find usage provider uses a word scanner to build an index of words present in every file.
 A scanner breaks the text into words, defines the context for each word and passes it to the find usage provider.
 

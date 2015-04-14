@@ -3,11 +3,6 @@ layout: editable
 title: Prerequisites
 ---
 
-<!--
-INITIAL_SOURCE https://confluence.jetbrains.com/display/IntelliJIDEA/Prerequisites
--->
-
-
 
 ### 1. Download and install IntelliJ IDEA
 

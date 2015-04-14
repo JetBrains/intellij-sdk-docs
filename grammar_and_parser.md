@@ -3,12 +3,6 @@ layout: editable
 title: Grammar and Parser
 ---
 
-<!--
-INITIAL_SOURCE https://confluence.jetbrains.com/display/IntelliJIDEA/Grammar+and+Parser
--->
-
-
-
 ### 1. Define a token type
 
 ```java

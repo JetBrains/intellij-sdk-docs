@@ -137,7 +137,7 @@ Use the ```ProjectRootManager.getFileIndex()``` method. For example:
 ##### How do I get a module to which a file belongs?
 
 To determine a module in the project in question to which the specified 
-[virtual file](http://confluence.jetbrains.net/display/IDEADEV/IntelliJ+IDEA+Architectural+Overview#IntelliJIDEAArchitecturalOverview-VirtualFiles) 
+[virtual file](http://www.jetbrains.org/intellij/sdk/docs/virtual_file.html)
 belongs, use the ```ProjectFileIndex.getModuleForFile(virtualFile)``` method:
 
 ```
@@ -264,7 +264,7 @@ String moduleName = module == null ? "Module not found" : module.getName();
 ```
 
 * To get the project module to which the specified 
-[PSI element](http://confluence.jetbrains.net/display/IDEADEV/IntelliJ+IDEA+Architectural+Overview#IntelliJIDEAArchitecturalOverview-PsiElements) 
+[PSI element](http://www.jetbrains.org/intellij/sdk/docs/psi_elements.html)
 belongs, use the ```ModuleUtil.findModuleForPsiElement(psiElement)``` method.
 
 #### How do I work with libraries available within a module?

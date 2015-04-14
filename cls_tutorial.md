@@ -36,6 +36,3 @@ This a step-by-step tutorial and it requires performing every step:
 The final code can be found on
 [GitHub](http://github.com/cheptsov/SimplePlugin).
 
-For additional information check out the
-[official documentation](http://confluence.jetbrains.net/display/IDEADEV/PluginDevelopment)
-

@@ -3,8 +3,6 @@ layout: editable
 title: Plugin Compatibility with IntelliJ Platform Products
 ---
 
-# {{page.title}}
-
 All products based on the IntelliJ Platform (IntelliJ IDEA, RubyMine, WebStorm, PhpStorm, PyCharm and AppCode) share the same underlying platform API. 
 Thus, a plugin which does not use any Java specific functionality can be marked as compatible with other products besides IntelliJ IDEA. 
 This is done by specifying *module dependencies* in the 

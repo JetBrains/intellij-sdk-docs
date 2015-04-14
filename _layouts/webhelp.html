@@ -25,7 +25,7 @@
     {% assign current_year = 'now' | date:'%Y' %}
     {% assign last_modified = '' %}
     {% assign disqus = '' %}
-    {% assign baseurl = '.' %}
+    {% assign app_baseurl = site.webhelp_app_baseurl %}
 {% endcapture %}
 {% capture rendered_content %}{% include page.html %}{% endcapture %}
 {{ rendered_content }}

@@ -6,6 +6,6 @@ task :build do
   Rake::Task['build_ui_config'].invoke
   Rake::Task['prepare_assets'].invoke
 
-  command = "jekyll build --trace --destination=#{dest}"
+  command = "jekyll build --trace --destination=#{dest} --config _config.yml,_config_prod.yml"
   sh command
 end

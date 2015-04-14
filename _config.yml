@@ -1,6 +1,10 @@
 product_name: IntelliJ Platform SDK
-product_version: 
+product_version:
+search_scope: null
+use_side_blocks: true
+show_disqus: false
 
+webhelp_app_baseurl: /
 markdown: kramdown
 markdown_ext: foo
 kramdown:

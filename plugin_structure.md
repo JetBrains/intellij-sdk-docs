@@ -10,7 +10,6 @@ This document is focused on the plugin system structure and plugin lifecycle.
 It doesn't specify any other APIs that may be used by plugins.
 
 The following subjects are covered:
-<!--TODO Links from TOC to certain parts of the document-->
 
 * [Plugin Content](plugin_content.html)
 

@@ -37,6 +37,8 @@
         * [File-based Indexes](file_based_indexes.html)
         * [Stub Indexes](stub_indexes.html)
     * [Run Configurations](run_configurations.html)
+        * [Management](run_configuration_management.html)
+        * [Execution](run_configuration_execution.html)
     * [Testing Plugins](testing_plugins.html)
 * [Advanced Topics](advanced_topics.html)
     * [Custom Language Support](custom_language_support.html)

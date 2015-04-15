@@ -12,7 +12,8 @@ It supports two main types of indexes:
 *  [File-based indexes](file_based_indexes.html)
 *  [Stub indexes](stub_indexes.html)
 
-File-based indexes are built directly over the content of files; stub indexes are built over serialized *stub trees*.
+File-based indexes are built directly over the content of files.
+Stub indexes are built over serialized *stub trees*.
 A stub tree for a source file is a subset of its PSI tree which contains only externally visible declarations and is serialized in a compact binary format.
 Querying a file-based index gets you the set of files matching a certain condition.
 Querying a stub index gets you the set of matching PSI elements.

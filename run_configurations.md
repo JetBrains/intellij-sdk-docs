@@ -17,7 +17,7 @@ Classes used to manipulate *IntelliJ IDEA's* run configurations can be split int
 
 *  [Execution](run_configuration_execution.html)
 
-This diagram shows the main classes related to **ItelliJ IDEA** run configurations
+This diagram shows the main classes related to **IntelliJ IDEA** run configurations
 
 ![Architecture](img/run_configurations/classes.png)
 

@@ -42,6 +42,7 @@
     * [Testing Plugins](testing_plugins.html)
         * [Tests and Fixtures](tests_and_fixtures.html)
         * [Light and Heavy Tests](light_and_heavy_tests.html)
+        * [Test Project and Testdata Directories](test_project_and_testdata_directories.html)
 * [Advanced Topics](advanced_topics.html)
     * [Custom Language Support](custom_language_support.html)
     * [XML DOM API](xml_dom_api.html)

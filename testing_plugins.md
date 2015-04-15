@@ -4,9 +4,8 @@ title: Testing Plugins
 ---
 
 
-## General Testing Approach
-
-Before discussing the specific details of the IntelliJ IDEA plugin test framework, it's worth looking at the general approach that the IntelliJ IDEA team uses for testing the IDE code. Our intention here is not so much to be prescriptive, and more to set the expectations we have good tools to support the approach that we use, and less good (or no) tools for approaches that we don't use.
+Before discussing the specific details of the IntelliJ IDEA plugin test framework, it's worth looking at the general approach that the IntelliJ IDEA team uses for testing the IDE code.
+Our intention here is not so much to be prescriptive, and more to set the expectations we have good tools to support the approach that we use, and less good (or no) tools for approaches that we don't use.
 
 Most of the tests in the IntelliJ IDEA codebase are *model-level functional tests*. What this means is the following:
 
@@ -30,15 +29,7 @@ Another consequence of our testing approach is what our test framework does not 
 for plugin UI testing, but we don't use either of them and cannot provide any guidelines for their use.
 Internally, we use manual testing for testing our Swing UIs.
 
-## Tests and Fixtures
-
-The IntelliJ Platform testing infrastructure is not tied to any specific test framework.
-In fact, the IntelliJ IDEA team uses both JUnit, TestNG and Cucumber for testing different parts of the project.
-However, most of the tests are written using JUnit 3.
-
-When writing your own tests, you have the choice between using a standard base class to perform the test set up for you and using a fixture class, which lets you perform the setup manually and does not tie you to a specific test framework.
-With the former approach, you can use classes such as ```LightPlatformCodeInsightFixtureTestCase``` (despite being one of the longest and ugliest class names you'll run into in the IntelliJ IDEA API, it's actually the recommended approach for writing tests).
-With the latter approach, you use the ```IdeaTestFixtureFactory``` class to create instances of fixtures for the test environment, and you need to call the fixture creation and setup methods from the test setup method used by your test framework.
+*  [Tests and Fixtures](tests_and_fixtures.html)
 
 ## Light and Heavy Tests
 

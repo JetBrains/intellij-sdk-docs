@@ -40,6 +40,7 @@
         * [Management](run_configuration_management.html)
         * [Execution](run_configuration_execution.html)
     * [Testing Plugins](testing_plugins.html)
+        * [Tests and Fixtures](tests_and_fixtures.html)
 * [Advanced Topics](advanced_topics.html)
     * [Custom Language Support](custom_language_support.html)
     * [XML DOM API](xml_dom_api.html)

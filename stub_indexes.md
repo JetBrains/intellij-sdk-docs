@@ -5,11 +5,21 @@ title: Stub Indexes
 
 ## Stub Trees
 
-As mentioned above, a stub tree is a subset of the PSI tree for a file which is stored in a compact serialized binary format. Actually the PSI tree for a file can be backed either by the AST (built by parsing the text of the file) or by the stub tree (deserialized from disk); switching between the two is transparent. The stub tree contains only a subset of the nodes (typically only the nodes that are needed to resolve the declarations contained in this file from external files). Trying to access any node which is not part of the stub tree, or to perform any operation which cannot be satisfied by the stub tree (such as accessing the text of a PSI element), causes the file to be parsed and the PSI to switch to AST backing.
+A stub tree is a subset of the PSI tree for a file; it is stored in a compact serialized binary format.
+The PSI tree for a file can be backed either by the AST (built by parsing the text of the file) or by the stub tree deserialized from disk.
+Switching between the two is transparent.
+The stub tree contains only a subset of the nodes.
+Typically it contains only the nodes that are needed to resolve the declarations contained in this file from external files.
+Trying to access any node which is not part of the stub tree, or to perform any operation which cannot be satisfied by the stub tree,
+e.g. accessing the text of a PSI element, causes file parsing and switches the PSI to AST backing.
 
-Each stub in the stub tree is simply a bean class with no behavior, which stores a subset of the state of the corresponding PSI element (for example, its name, modifier flags like public or final, etc.) The stub also holds a pointer to its parent in the tree and a list of its children stubs.
+Each stub in the stub tree is simply a bean class with no behavior.
+A stub stores a subset of the state of the corresponding PSI element, like element's name, modifier flags like public or final, etc.
+The stub also holds a pointer to its parent in the tree and a list of its children stubs.
 
-To support stubs for your custom language, you first need to decide which of the elements of your PSI tree should be stored as stubs. Typically you need to have stubs for things like methods or fields, which are visible from other files, and don't need to have stubs for things like statements or local variables, which are not visible externally.
+To support stubs for your custom language, you first need to decide which of the elements of your PSI tree should be stored as stubs.
+Typically you need to have stubs for things like methods or fields, which are visible from other files.
+You usually don't need to have stubs for things like statements or local variables, which are not visible externally.
 
 For each element type that you want to store in the stub tree, you need to perform the following steps:
 
@@ -33,13 +43,21 @@ The following steps need to be performed only once for each language that suppor
 
 *  In your plugin.xml, define the ```<stubElementTypeHolder>``` extension and specify the interface which contains the `IElementType` constants used by your language's parser ([example](https://github.com/JetBrains/intellij-community/blob/master/plugins/properties/src/META-INF/plugin.xml#L55)).
 
-For serializing string data in stubs (such as element names), it's recommended to use ```StubOutputStream.writeName()``` and ```StubInputStream.readName()``` methods. These methods ensure that each unique identifier is stored only once in the data stream, and thus reduce the size of the serialized stub tree data.
+For serializing string data, e.g. element names, in stubs, we recommend to use ```StubOutputStream.writeName()``` and ```StubInputStream.readName()``` methods.
+These methods ensure that each unique identifier is stored only once in the data stream.
+This reduces the size of the serialized stub tree data.
 
-If you need to change the stored binary format for the stubs (for example, if you want to store some additional data or some new elements), make sure that you advance the stub version returned from `IStubFileElementType.getStubVersion()` for your language. This will cause the stubs and stub indices to be rebuilt, and will avoid mismatches between the stored data format and the code trying to load it.
+If you need to change the stored binary format for the stubs (for example, if you want to store some additional data or some new elements),
+make sure that you advance the stub version returned from `IStubFileElementType.getStubVersion()` for your language.
+This will cause the stubs and stub indices rebuilt, and will avoid mismatches between the stored data format and the code trying to load it.
 
-By default, if a PSI element extends `StubBasedPsiElement`, all elements of that type will be stored in the stub tree. If you need more precise control over which elements are stored, override `IStubElementType.shouldCreateStub()` and return `false` for elements which should not be included in the stub tree. Note that the exclusion is not recursive: if some elements of the element for which you returned false are also stub-based PSI elements, they will be included in the stub tree.
+By default, if a PSI element extends `StubBasedPsiElement`, all elements of that type will be stored in the stub tree.
+If you need more precise control over which elements are stored, override `IStubElementType.shouldCreateStub()` and return `false` for elements which should not be included in the stub tree.
 
-It's essential to make sure that all information stored in the stub tree depends only on the contents of the file for which stubs are being built, and does not depend on any external files. Otherwise the stub tree will not be rebuilt when an external dependency changes, and you will have stale and incorrect data in the stub tree.
+**Note:** The exclusion is not recursive: if some elements of the element for which you returned false are also stub-based PSI elements, they will be included in the stub tree.
+
+It's essential to make sure that all information stored in the stub tree depends only on the contents of the file for which stubs are being built, and does not depend on any external files.
+Otherwise the stub tree will not be rebuilt when an external dependency changes, and you will have stale and incorrect data in the stub tree.
 
 ## Stub Indexes
 

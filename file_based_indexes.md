@@ -3,7 +3,7 @@ layout: editable
 title: File-based Indexes
 ---
 
-File-based indexes are based on a map/reduce architecture.
+File-based indexes are based on a MapReduce architecture.
 Each index has a certain type of key and a certain type of value.
 The key is what's later used to retrieve data from the index; for example, in the word index the key is the word itself. The value is arbitrary data which is associated with the key in the index; for example, in the word index the value is a mask indicating in which context the word occurs (code, string literal or comment). In the simplest case (when we only need to know in what files some data occurs), the value has type Void and is not stored in the index.
 

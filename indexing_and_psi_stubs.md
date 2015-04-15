@@ -5,9 +5,19 @@ title: Indexing and PSI Stubs
 
 ## Introduction
 
-The indexing framework provides a quick way to locate certain elements (for example, files containing a certain word or methods with a particular name) in large code bases. Plugin developers can use the existing indexes built by the IDE itself, as well as build and use their own indexes.
+The indexing framework provides a quick way to locate certain elements, e.g. files containing a certain word or methods with a particular name, in large code bases.
+Plugin developers can use the existing indexes built by the IDE itself, as well as build and use their own indexes.
 
-It supports two main types of indexes: *file-based indexes*  and *stub indexes*. File-based indexes are built directly over the content of files, and stub indexes are built over serialized *stub trees*. A stub tree for a source file is a subset of its PSI tree which contains only externally visible declarations and is serialized in a compact binary format. Querying a file-based index gets you the set of files matching a certain condition, and querying a stub index gets you the set of matching PSI elements. Therefore, custom language plugin developers should typically use stub indexes in their plugin implementations.
+It supports two main types of indexes:
+
+*  *File-based indexes*
+*  *Stub indexes*
+
+File-based indexes are built directly over the content of files; stub indexes are built over serialized *stub trees*.
+A stub tree for a source file is a subset of its PSI tree which contains only externally visible declarations and is serialized in a compact binary format.
+Querying a file-based index gets you the set of files matching a certain condition.
+Querying a stub index gets you the set of matching PSI elements.
+Therefore, custom language plugin developers should typically use stub indexes in their plugin implementations.
 
 ## File-based Indexes
 

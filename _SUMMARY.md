@@ -34,6 +34,7 @@
     * [PSI Cookbook](psi_cookbook.html)
     * [Virtual File System](virtual_file_system.html)
     * [Indexing and PSI Stubs](indexing_and_psi_stubs.html)
+
     * [Run Configurations](run_configurations.html)
     * [Testing Plugins](testing_plugins.html)
 * [Advanced Topics](advanced_topics.html)

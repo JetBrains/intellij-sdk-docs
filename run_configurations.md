@@ -4,17 +4,18 @@ title: Run Configurations
 ---
 
 
-# Purpose
+Run configurations allow users to run a certain type of external processes from within the IDE, i.e a script, an application, a server, etc.
+You can provide UI for the user to specify execution options, as well as an option to create run configuration based on a specific location in the source code.
 
-A run configuration provides the user with the possibility to run a certain type of external process (script, application server etc.) from within the IDE. You can provide UI for the user to specify execution options, as well as the possibility to create run configuration based on a specific location in the source code.
 
-In this document, we'll start with explaining the core concepts used by the run configuration API and then will proceed to look at the sequence of steps required to implement a typical run configuration.
-
-# High-level
+# Architectural overview
 
 ![Architecture](img/run_configurations/classes.png)
 
-We can separate all entities roughly into two parts *  run configuration management (creation; persistence; modification etc) and execution.
+We can separate all entities into two parts:
+
+*  Run configuration management (creation; persistence; modification etc)
+*  Execution.
 
 # Management
 

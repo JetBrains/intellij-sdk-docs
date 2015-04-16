@@ -53,6 +53,7 @@
         * [Syntax Highlighting and Error Highlighting](syntax_highlighting_and_error_highlighting.html)
         * [References and Resolve](references_and_resolve.html)
         * [Code Completion](code_completion.html)
+        * [Find Usages](find_usages.html)
     * [XML DOM API](xml_dom_api.html)
     * [Spring API](spring_api.html)
     * [VCS Integration Plugins](vcs_integration_for_plugins.html)

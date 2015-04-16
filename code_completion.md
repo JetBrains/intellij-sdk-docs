@@ -1,4 +1,7 @@
-## Code Completion
+---
+layout: editable
+title: Code Completion
+---
 
 There are two main types of code completion that can be provided by custom language plugins: reference completion and contributor-based completion.
 

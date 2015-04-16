@@ -50,6 +50,7 @@
         * [Registering File Type](registering_file_type.html)
         * [Implementing Lexer](implementing_lexer.html)
         * [Implementing Parser and PSI](implementing_parser_and_psi.html)
+        * [Syntax Highlighting and Error Highlighting](syntax_highlighting_and_error_highlighting.html)
     * [XML DOM API](xml_dom_api.html)
     * [Spring API](spring_api.html)
     * [VCS Integration Plugins](vcs_integration_for_plugins.html)

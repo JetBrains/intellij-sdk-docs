@@ -58,6 +58,7 @@
         * [Safe Delete Refactoring](safe_delete_refactoring.html)
         * [Code Formatter](code_formatting.html)
         * [Code Inspections and Intentions](code_inspections_and_intentions.html)
+        * [Structure View](structure_view.html)
     * [XML DOM API](xml_dom_api.html)
     * [Spring API](spring_api.html)
     * [VCS Integration Plugins](vcs_integration_for_plugins.html)

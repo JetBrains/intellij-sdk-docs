@@ -3,7 +3,6 @@ layout: editable
 title: Custom Language Support
 ---
 
-Please ask questions or suggest missing topics in [plugin development forum](http://devnet.jetbrains.com/community/idea/open_api_and_plugin_development).
 
 ## Introduction
 
@@ -997,3 +996,5 @@ to use, possibly depending on the passed in
 New in 13: user-configurable *reference injections* can be provided via `referenceInjector` extension point (
 [ReferenceInjector](https://github.com/JetBrains/intellij-community/blob/master/platform/lang-api/src/com/intellij/psi/injection/ReferenceInjector.java)
 ) (IntelliLang plugin required).
+
+Please ask questions or suggest missing topics in [plugin development forum](http://devnet.jetbrains.com/community/idea/open_api_and_plugin_development).

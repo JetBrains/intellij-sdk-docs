@@ -14,7 +14,7 @@ For more information, refer to
 *  On the main menu, choose **File \| New \| Project**. The *New Project*
    wizard starts.
 
-   ![New Project Wizard](/img/creating_plugin_project/new_project_wizard.png)
+   ![New Project Wizard](img/creating_plugin_project/new_project_wizard.png)
 
 *  Set *IntelliJ Platform Plugin* project type
 

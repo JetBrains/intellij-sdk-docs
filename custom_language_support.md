@@ -31,25 +31,8 @@ Providing custom language support includes the following major steps:
 * [Code Formatter](code_formatting.html)
 * [Code Inspections and Intentions](code_inspections_and_intentions.html)
 * [Structure View](structure_view.html)
+* [Surround With](surround_with.html)
 
-
-## Surround With
-
-In order to support the ```Code | Surround With...``` action, the plugin needs to register one or more implementations of the 
-[SurroundDescriptor](https://github.com/JetBrains/intellij-community/blob/master/platform/lang-api/src/com/intellij/lang/surroundWith/SurroundDescriptor.java) 
-interface in the `com.intellij.lang.surroundDescriptor` extension point. 
-Each of the surround descriptors defines a possible type of code fragment which can be surrounded - for example, one surround descriptor can handle surrounding expressions, and another can handle statements. 
-Each surround descriptor, in turn, contains an array of 
-[Surrounder](https://github.com/JetBrains/intellij-community/blob/master/platform/lang-api/src/com/intellij/lang/surroundWith/Surrounder.java) 
-objects, defining specific templates which can be used for surrounding the selected code fragment (for example, ```Surround With if```, ```Surround With for``` and so on).
-
-When the ```Surround With...``` action is invoked, the IDE queries all surround descriptors for the language until it finds one that returns a non-empty array from its `getElementsToSurround()` method. 
-Then it calls the 
-[Surrounder.isApplicable()](https://github.com/JetBrains/intellij-community/blob/master/platform/lang-api/src/com/intellij/lang/surroundWith/Surrounder.java#L46) 
-method for each surrounder in that descriptor to check if the specific template is applicable in the current context. 
-Once the user selects a specific surrounder from the popup menu, the 
-[Surrounder.surroundElements()](https://github.com/JetBrains/intellij-community/blob/master/platform/lang-api/src/com/intellij/lang/surroundWith/Surrounder.java#L57)
-method is used to execute the surround action.
 
 ## Go to Class and Go to Symbol
 

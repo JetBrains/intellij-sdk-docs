@@ -61,6 +61,7 @@
         * [Structure View](structure_view.html)
         * [Surround With](surround_with.html)
         * [Go to Class and Go to Symbol](go_to_class_and_go_to_symbol.html)
+        * [Documentation](documentation.html)
     * [XML DOM API](xml_dom_api.html)
     * [Spring API](spring_api.html)
     * [VCS Integration Plugins](vcs_integration_for_plugins.html)

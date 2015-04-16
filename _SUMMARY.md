@@ -48,6 +48,7 @@
 * [Advanced Topics](advanced_topics.html)
     * [Custom Language Support](custom_language_support.html)
         * [Registering File Type](registering_file_type.html)
+        * [Implementing Lexer](implementing_lexer.html)
     * [XML DOM API](xml_dom_api.html)
     * [Spring API](spring_api.html)
     * [VCS Integration Plugins](vcs_integration_for_plugins.html)

@@ -3,7 +3,7 @@
     {% assign product_version = site.product_version %}
     {% assign page_title = page.title %}
     {% assign page_title_with_h1 = '' %}
-    {% assign page_id = page.name | replace:'.md','' %}
+    {% assign page_id = page.url %}
     {% assign page_content = content %}
     {% capture shortcut_switcher %}
         <div class="shortcuts-switcher"><label for="switch-shortcuts">Keymap:</label><select id="switch-shortcuts" class="select _shortcuts" height="1">

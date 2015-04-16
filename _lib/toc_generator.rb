@@ -1,5 +1,6 @@
 require 'yaml'
 require 'json'
+require 'uri'
 require 'kramdown'
 require 'rexml/document'
 require 'rexml/xpath'
@@ -89,8 +90,11 @@ module Docs
 
       REXML::XPath.each(li_node, 'a') do |link|
         href = link.attribute('href').to_s
-        id = File.basename(href, File.extname(href))
+        uri = URI.parse(href)
+        is_absolute_path = href.start_with?('/')
         is_external = href.start_with?('http://', 'https://', 'ftp://', '//')
+        id = href
+        id = '/' + id if !is_absolute_path
         item = {
             :id => id,
             :title => link.text(),

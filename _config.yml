@@ -17,7 +17,6 @@ exclude:
   - '*.scss'
   - README*
   - Rakefile
-  - lib
   - webhelp-template
   - code_samples
 

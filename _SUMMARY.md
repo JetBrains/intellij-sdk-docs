@@ -4,9 +4,6 @@
     Also you can use HTML-comments.
 -->
 
-* [Test page from subfolder](subfolder/sub-subfolder/page.html)
-* [Test subpage from subfolder](another-subfolder/page.html)
-    * [Test another page from subfolder](another-subfolder/another-sub-subfolder/page.html)
 * [Basic Topics](basic_topics.html)
     * [Getting Started](basic_topics/getting_started.html)
         * [Check Out And Build Community Edition](basic_topics/getting_started/checkout_and_build_community.html)

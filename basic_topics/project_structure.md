@@ -1,6 +1,6 @@
 ---
 layout: editable
-title: Structure of Project
+title: Project Structure
 ---
 
 

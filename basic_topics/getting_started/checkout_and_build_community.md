@@ -23,7 +23,7 @@ You can check out the code either by using IntelliJ IDEA or from the command lin
 
 * In the **Git Repository URL** field, enter ```git://git.jetbrains.org/idea/community.git```
 
-![Check Out Community](/img/getting_started/checkout_and_build_community/check_out_community.png)
+![Check Out Community](img/getting_started/checkout_and_build_community/check_out_community.png)
 
 **Checking out from the command line**
 
@@ -89,30 +89,30 @@ or
    [Groovy plugin](https://plugins.jetbrains.com/plugin/1524)
    enabled by going to **Settings \| Plugins** and enabling **Groovy** plugin checkbox.
 
-   ![Groovy plugin](/img/getting_started/checkout_and_build_community/groovy_plugin_enabled.png)
+   ![Groovy plugin](img/getting_started/checkout_and_build_community/groovy_plugin_enabled.png)
 
    Parts of IntelliJ IDEA are written in Groovy, and you will get compilation errors if you don't have the plugin enabled
 
 *  Make sure you have the UI Designer plugin enabled.
    Most of IntelliJ IDEA's UI is built using the UI Designer, and the version you build will not run correctly if you don't have the plugin enabled
 
-   ![UI Designer plugin](/img/getting_started/checkout_and_build_community/ui_designer_plugin_enabled.png)
+   ![UI Designer plugin](img/getting_started/checkout_and_build_community/ui_designer_plugin_enabled.png)
 
 *  Open the directory with the source code as a directory-based project
 
 *  Configure a Java SDK named *IDEA jdk* (case sensitive), pointing to an installation of JDK 1.8
 
-   ![Configure SDK](/img/getting_started/checkout_and_build_community/configure_sdk.png)
+   ![Configure SDK](img/getting_started/checkout_and_build_community/configure_sdk.png)
 
 *  Add **lib\\tools.jar** from the JDK installation directory to the classpath of IDEA JDK
 
-   ![tools.jar](/img/getting_started/checkout_and_build_community/tools_jar.png)
+   ![tools.jar](img/getting_started/checkout_and_build_community/tools_jar.png)
 
 *  Use **Build \| Make Project** to build the code
 
 *  To run the code, use the provided shared run configuration *IDEA*
 
-   ![IDEA Run Configuration](/img/getting_started/checkout_and_build_community/idea_run_configuration.png)
+   ![IDEA Run Configuration](img/getting_started/checkout_and_build_community/idea_run_configuration.png)
 
 ## Building and Running from the Command Line
 To build the distribution archive of *IntelliJ IDEA Community Edition*, execute
@@ -120,7 +120,7 @@ To build the distribution archive of *IntelliJ IDEA Community Edition*, execute
 
 Ant build script in the root directory of the source code.
 
-![Execute Ant Build Script](/img/getting_started/checkout_and_build_community/ant_build_xml.png)
+![Execute Ant Build Script](img/getting_started/checkout_and_build_community/ant_build_xml.png)
 
 
 The results of the build execution can be found at *out/artifacts*.

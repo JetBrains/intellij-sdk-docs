@@ -35,7 +35,7 @@ tab : \u0009
 The easiest way to get the expected PSI structure for any file is to use PSI Viewer.
 Run the project and call ```Tools``` &rarr; ```View PSI Structure```.
 
-![PSI Tree Copy](/img/writing_tests_for_plugins/plugin_copy_psi.png)
+![PSI Tree Copy](img/writing_tests_for_plugins/plugin_copy_psi.png)
 
 Use ```Copy PSI``` button to copy the expected PSI structure to the clipboard.
 

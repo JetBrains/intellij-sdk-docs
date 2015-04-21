@@ -9,8 +9,8 @@ Plugin developers can use the existing indexes built by the IDE itself, as well 
 
 It supports two main types of indexes:
 
-*  [File-based indexes](file_based_indexes.html)
-*  [Stub indexes](stub_indexes.html)
+*  [File-based indexes](basic_topics/indexing_and_psi_stubs/file_based_indexes.html)
+*  [Stub indexes](basic_topics/indexing_and_psi_stubs/stub_indexes.html)
 
 File-based indexes are built directly over the content of files.
 Stub indexes are built over serialized *stub trees*.

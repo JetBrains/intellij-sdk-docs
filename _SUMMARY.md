@@ -37,6 +37,8 @@
     * [PSI Cookbook](basic_topics/psi_cookbook.html)
     * [Virtual File System](basic_topics/virtual_file_system.html)
     * [Indexing and PSI Stubs](basic_topics/indexing_and_psi_stubs.html)
+        * [File-based indexes](basic_topics/indexing_and_psi_stubs/file_based_indexes.html)
+        * [Stub indexes](basic_topics/indexing_and_psi_stubs/stub_indexes.html)
     * [Run Configurations](basic_topics/run_configurations.html)
     * [Testing Plugins](basic_topics/testing_plugins.html)
         * [Tests and Fixtures](basic_topics/testing_plugins/tests_and_fixtures.html)

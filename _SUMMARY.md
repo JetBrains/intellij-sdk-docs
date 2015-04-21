@@ -67,7 +67,7 @@
     * [Color Scheme Management](advanced_topics/color_scheme_management.html)
     * [Work with Icons and Images](advanced_topics/work_with_icons_and_images.html)
     * [Tomcat Integration](advanced_topics/tomcat_integration.html)
-* [User Interface Components](ui_components.html)
+* [User Interface Components](user_interface_components.html)
     * [Tool Windows](tool_windows.html)
     * [Dialogs](dialog_wrapper.html)
     * [Popups](popups.html)

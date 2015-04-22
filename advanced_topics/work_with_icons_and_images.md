@@ -12,7 +12,7 @@ This page describes how to organize your work with icons and images under Intell
 
 The best way to deal with icons and other image resources is to put them to a dedicated source root, say *"icons"* or *"resources"*.
 
-![Icons](img/work_with_icons_and_images/icons1.png)
+![Icons](img/icons1.png)
 
 Then you should use ```getIcon()``` method of ```com.intellij.openapi.util.IconLoader``` class in your code to get access icons.
 You can define a class or an interface with icon constants:
@@ -65,10 +65,10 @@ So, always use ```IconLoader.getIcon("/iconName.png")```.
 Here are examples of *toolWindowStructure.png* icon representations:
 
 
-![Tool Window Structure](img/work_with_icons_and_images/toolWindowStructure.png)
-![Tool Window Structure, dark](img/work_with_icons_and_images/toolWindowStructure_dark.png)
-![Tool Window Structure, retina](img/work_with_icons_and_images/toolWindowStructure@2x.png)
-![Tool Window Structure, retina, dark](img/work_with_icons_and_images/toolWindowStructure@2x_dark.png)
+![Tool Window Structure](img/toolWindowStructure.png)
+![Tool Window Structure, dark](img/toolWindowStructure_dark.png)
+![Tool Window Structure, retina](img/toolWindowStructure@2x.png)
+![Tool Window Structure, retina, dark](img/toolWindowStructure@2x_dark.png)
 
 All icon variants should be in the same directory.
 In some cases you can skip dark variants if the original icon looks good under Darcula.

@@ -37,7 +37,7 @@
         * [File-based indexes](basic_topics/indexing_and_psi_stubs/file_based_indexes.html)
         * [Stub indexes](basic_topics/indexing_and_psi_stubs/stub_indexes.html)
     * [Run Configurations](basic_topics/run_configurations.html)
-        * [Run configuration management](basic_topics/run_configurations/run_configuration_management.html)
+        * [Run Configuration Management](basic_topics/run_configurations/run_configuration_management.html)
         * [Execution](basic_topics/run_configurations/run_configuration_execution.html)
     * [Testing Plugins](basic_topics/testing_plugins.html)
         * [Tests and Fixtures](basic_topics/testing_plugins/tests_and_fixtures.html)

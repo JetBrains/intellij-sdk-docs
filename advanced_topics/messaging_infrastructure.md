@@ -22,7 +22,7 @@ Here are the main components of the messaging API.
 
 This class serves as an endpoint at the messaging infrastructure. I.e. clients are allowed to subscribe to the topic within particular bus and to send messages to particular topic within particular bus.
 
-![Topic](img/messaging_infrastructure/topic.png)
+![Topic](img/topic.png)
 
 *  *display name*  just a human-readable name used for logging/monitoring purposes;
 *  *broadcast direction*  will be explained in details at [Broadcasting](). Default value is *TO\_CHILDREN*;
@@ -33,13 +33,13 @@ Subscribers register implementation of this interface at the messaging infrastru
 
 Is the core of the messaging system. Is used at the following scenarios:
 
-![Bus](img/messaging_infrastructure/bus.png)
+![Bus](img/bus.png)
 
 ## Connection
 
 Manages all subscriptions for particular client within particular bus.
 
-![Connection](img/messaging_infrastructure/connection.png)
+![Connection](img/connection.png)
 
 *  keeps number of *topic handler* mappings (callbacks to invoke when message for the target topic is received)
 *Note*: not more than one handler per-topic within the same connection is allowed;
@@ -69,7 +69,7 @@ public interface ChangeActionNotifier {
 
 *Subscribing*
 
-![Subscribing](img/messaging_infrastructure/subscribe.png)
+![Subscribing](img/subscribe.png)
 
 ```java
 public void init(MessageBus bus) {
@@ -88,7 +88,7 @@ public void init(MessageBus bus) {
 
 *Publishing*
 
-![Publishing](img/messaging_infrastructure/publish.png)
+![Publishing](img/publish.png)
 
 ```java
 public void doChange(Context context) {
@@ -121,13 +121,13 @@ So, it's possible to subscribe to them in order to receive information about the
 
 Message buses can be organised into hierarchies. Moreover, *IntelliJ IDEA* has them already:
 
-![Standard hierarchy](img/messaging_infrastructure/standard-hierarchy.png)
+![Standard hierarchy](img/standard-hierarchy.png)
 
 That allows to notify subscribers registered in one message bus on messages sent to another message bus.
 
 *Example:*
 
-![Parent-child broadcast](img/messaging_infrastructure/parent-child-broadcast.png)
+![Parent-child broadcast](img/parent-child-broadcast.png)
 
 Here we have a simple hierarchy (*application bus* is a parent of *project bus*) with three subscribers for the same topic.
 
@@ -164,7 +164,7 @@ Messaging infrastructure of _IntelliJ IDEA_ guarantees that all messages sent to
 
 Suppose we have the following configuration:
 
-![Nested messages](img/messaging_infrastructure/nested-config.png)
+![Nested messages](img/nested-config.png)
 
 Let's see what happens if someone sends a message to the target topic:
 

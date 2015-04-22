@@ -111,7 +111,7 @@ is also used to search for TODO items.
 
 In order to better understand the process of building a PSI tree for a simple expression, you can refer to the following diagram:
 
-![PsiBuilder](img/custom_language_support/PsiBuilder.gif)
+![PsiBuilder](img/PsiBuilder.gif)
 
 In general, there is no single right way to implement a PSI for a custom language, and the plugin author can choose the PSI structure and set of methods which are the most convenient for the code which uses the PSI (error analysis, refactorings and so on).
 However, there is one base interface which needs to be used by a custom language PSI implementation in order to support features like rename and find usages.

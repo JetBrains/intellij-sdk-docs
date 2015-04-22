@@ -22,7 +22,7 @@ The starting point for implementing any run configuration type is the
 interface.
 List of available configuration type is shown when a user opens _'Edit run configurations'_ dialog and executes _'Add'_ action:
 
-![Create](img/run_configurations/create-1.png)
+![Create](../img/create-1.png)
 
 Every type there is represented as an instance of
 [ConfigurationType](https://github.com/JetBrains/intellij-community/blob/master/platform/lang-api/src/com/intellij/execution/configurations/ConfigurationType.java)
@@ -48,7 +48,7 @@ It's possible that one _ConfigurationType_
 [has more than one](https://github.com/JetBrains/intellij-community/blob/master/platform/lang-api/src/com/intellij/execution/configurations/ConfigurationType.java#L34)
 _ConfigurationFactory_:
 
-![Configuration Factory](img/run_configurations/create-3.png)
+![Configuration Factory](../img/create-3.png)
 
 The key API of
 [ConfigurationFactory](https://github.com/JetBrains/intellij-community/blob/master/platform/lang-api/src/com/intellij/execution/configurations/ConfigurationFactory.java),
@@ -77,7 +77,7 @@ interface.
 _'Run configuration'_ here is some named profile which can be executed, e.g. application started via _'main()'_ class, test, remote debug to particular machine/port etc.
 Here is an example of a Java run configurations defined for a particular project:
 
-![Run Configuration](img/run_configurations/create-2.png)
+![Run Configuration](../img/create-2.png)
 
 When implementing a run configuration, you may want to use one of the common base classes:
 

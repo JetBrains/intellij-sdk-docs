@@ -66,7 +66,7 @@ The Grammar-Kit plugin uses JFlex lexer generation.
 If you run it for the first time it will offer you to choose a folder to download the JFlex library and skeleton to.
 Choose the project root directory.
 
-![Download Flex](img/cls_tutorial/download_jflex.png)
+![Download Flex](img/download_jflex.png)
 
 After that the IDE will generates two classes:
 *com.simpleplugin.SimpleLexer* and *com.simpleplugin.SimpleLexerAdapter*.
@@ -228,7 +228,7 @@ tab : \u0009
 
 Now open the *PsiViewer* tool window and check how the lexer brake the content of the file into tokens, and the parser parsed the tokens into PSI elements.
 
-![PSI Elements](img/cls_tutorial/psi_elements.png)
+![PSI Elements](img/psi_elements.png)
 
 ----------------
 

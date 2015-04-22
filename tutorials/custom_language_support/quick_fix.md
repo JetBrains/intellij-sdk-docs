@@ -173,7 +173,7 @@ public class SimpleAnnotator implements Annotator {
 
 Now let's try to use a property which is not defined yet.
 
-![Quick Fix](img/cls_tutorial/quick_fix.png)
+![Quick Fix](img/quick_fix.png)
 
 [Previous](commenter.html)
 [Top](cls_tutorial.html)

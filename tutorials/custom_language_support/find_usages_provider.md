@@ -89,7 +89,7 @@ public class SimpleFindUsagesProvider implements FindUsagesProvider {
 
 Now we can call *Find Usages* for any property with a reference.
 
-![Find Usages](img/cls_tutorial/find_usages.png)
+![Find Usages](img/find_usages.png)
 
 [Previous](reference_contributor.html)
 [Top](custom_language_support.html)

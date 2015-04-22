@@ -44,7 +44,7 @@ public class SimpleCompletionContributor extends CompletionContributor {
 
 ### 3. Run the project
 
-![Completion](img/cls_tutorial/completion.png)
+![Completion](img/completion.png)
 
 [Previous](line_marker_provider.html)
 [Top](cls_tutorial.html)

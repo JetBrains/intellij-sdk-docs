@@ -81,7 +81,7 @@ Now when the grammar is defined we can generate a parser with PSI classes via *G
 The Grammar-Kit will generate a parser and PSI elements in *gen* folder.
 Mark this folder as a source root and make sure everything is compiled without errors.
 
-![Parser](img/cls_tutorial/generated_parser.png)
+![Parser](img/generated_parser.png)
 
 -------
 [Previous](language_and_filetype.html)

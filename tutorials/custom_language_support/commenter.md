@@ -54,7 +54,7 @@ public class SimpleCommenter implements Commenter {
 
 ### 3. Run the project
 
-![Commenter](img/cls_tutorial/commenter.png)
+![Commenter](img/commenter.png)
 
 [Previous](code_style_settings.html)
 [Top](cls_support.html)

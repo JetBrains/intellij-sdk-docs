@@ -105,7 +105,7 @@ public class MyLineMarkerProvider implements LineMarkerProvider {
 
 Now you see the icon on the gutter and can navigate to the property definition.
 
-![Line Marker](img/cls_tutorial/line_marker.png)
+![Line Marker](img/line_marker.png)
 
 --------------
 

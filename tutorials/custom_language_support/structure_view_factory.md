@@ -156,7 +156,7 @@ public class SimpleStructureViewElement implements StructureViewTreeElement, Sor
 
 ### 5. Run the project
 
-![Structure View](img/cls_tutorial/structure_view.png)
+![Structure View](img/structure_view.png)
 
 [Previous](go_to_symbol_contributor.html)
 [Top](custom_language_support.html)

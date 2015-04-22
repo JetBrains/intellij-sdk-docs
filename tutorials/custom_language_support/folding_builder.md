@@ -82,7 +82,7 @@ public class SimpleFoldingBuilder extends FoldingBuilderEx {
 
 Now when we open a Java file, it shows the property's value instead of the key.
 
-![Folding](img/cls_tutorial/folding.png)
+![Folding](img/folding.png)
 
 [Previous](find_usages_provider.html)
 [Top](cls_tutorial.html)

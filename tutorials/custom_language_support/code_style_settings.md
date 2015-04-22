@@ -132,7 +132,7 @@ public class SimpleLanguageCodeStyleSettingsProvider extends LanguageCodeStyleSe
 
 ### 6. Run the project
 
-![Code Style Settings](img/cls_tutorial/code_style_settings.png)
+![Code Style Settings](img/code_style_settings.png)
 
 [Previous](formatter.html)
 [Top](cls_tutorial.html)

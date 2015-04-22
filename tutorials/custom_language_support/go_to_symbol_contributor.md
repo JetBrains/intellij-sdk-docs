@@ -90,7 +90,7 @@ public class SimpleChooseByNameContributor implements ChooseByNameContributor {
 
 Now we can navigate to a property definition by name pattern via *⌥⌘⇧N* shortcut.
 
-![Go To Symbol](img/cls_tutorial/go_to_symbol.png)
+![Go To Symbol](img/go_to_symbol.png)
 
 [Previous](folding_builder.html)
 [Top](cls_tutorial.html)

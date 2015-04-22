@@ -95,7 +95,7 @@ public class SimpleSyntaxHighlighterFactory extends SyntaxHighlighterFactory {
 
 ### 4. Run the project
 
-![Syntax highlighter](img/cls_tutorial/syntax_highlighter.png)
+![Syntax highlighter](img/syntax_highlighter.png)
 
 ### 5. Define a color settings page
 
@@ -183,7 +183,7 @@ public class SimpleColorSettingsPage implements ColorSettingsPage {
 
 ### 7. Run the project
 
-![Color Settings Page](img/cls_tutorial/color_settings_page.png)
+![Color Settings Page](img/color_settings_page.png)
 
 -----------
 

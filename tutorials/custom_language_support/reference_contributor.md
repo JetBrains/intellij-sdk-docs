@@ -206,11 +206,11 @@ public class SimpleReferenceContributor extends PsiReferenceContributor {
 
 As you see the IDE now resolves the property and provides completion.
 
-![Reference Contributor](img/cls_tutorial/reference_contributor.png)
+![Reference Contributor](img/reference_contributor.png)
 
 *Rename* refactoring available from definition and usages.
 
-![Rename](img/cls_tutorial/rename.png)
+![Rename](img/rename.png)
 
 ### 9. Define a refactoring support provider
 
@@ -239,7 +239,7 @@ public class SimpleRefactoringSupportProvider extends RefactoringSupportProvider
 
 ### 11. Run the project
 
-![In Place Rename](img/cls_tutorial/in_place_rename.png)
+![In Place Rename](img/in_place_rename.png)
 
 [Previous](completion_contributor.html)
 [Top](cls_tutorial.html)

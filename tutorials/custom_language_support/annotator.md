@@ -75,11 +75,11 @@ public class Test {
 }
 ```
 
-![Annotator](img/cls_tutorial/annotator.png)
+![Annotator](img/annotator.png)
 
 If we type an undefined property name, it will annotate the code with a error.
 
-![Unresolved property](img/cls_tutorial/unresolved_property.png)
+![Unresolved property](img/unresolved_property.png)
 
 [Previous](psi_helpers_and_utilities.html)
 [Top](cls_tutorial.html)

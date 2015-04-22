@@ -33,15 +33,15 @@ To attach the Community Edition source files to the SDK, open the Sourcepath tab
 IntelliJ IDEA will scan the directory for roots and offer the list of roots to add, with everything checked by default.
 Accept the list of roots by pressing OK.
 
-![Project SDK](img/cls_tutorial/project_sdk.png)
+![Project SDK](img/project_sdk.png)
 
-![Plugins](img/cls_tutorial/plugins.png)
+![Plugins](img/plugins.png)
 
 ### 5. Create a project
 
 Create an IntelliJ IDEA Plugin project and specify IntelliJ IDEA Plugin SDK.
 
-![New Project](img/cls_tutorial/new_project.png)
+![New Project](img/new_project.png)
 
 [Top](cls_tutorial.html)
 [Next](language_and_filetype.md)

@@ -110,7 +110,7 @@ public class SimpleFileTypeFactory extends FileTypeFactory{
 Create a file with extension *.simple*
 and IntelliJ IDEA will automatically associate it with our language.
 
-![File Type Factory](img/cls_tutorial/file_type_factory.png)
+![File Type Factory](img/file_type_factory.png)
 
 [Previous](cls_prerequisites.html)
 [Top](cls_tutorial.html)

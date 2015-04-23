@@ -8,14 +8,17 @@ Unless you customize the project creation, the test project will have one module
 The files for the test project physically exist either in a temporary directory or in an in-memory file system, depending on which implementation of ```TempDirTestFixture``` is used.
 ```LightPlatformCodeInsightFixtureTestCase``` uses an in-memory implementation; if you set up the test environment by calling ```IdeaTestFixtureFactory.createCodeInsightFixture```, you can specify the implementation to use.
 
-Note that if your tests use the in-memory implementation, and you abort the execution of your tests, the persisted filesystem caches may get out of sync with the in-memory structures, and you may get spurious errors in your tests.
-In that case, you need to try running the test again, and if that doesn't help, delete the "system" subdirectory under the sandbox directory specified in the IntelliJ Platform SDK settings.
+**Note:** 
+If your tests use the in-memory implementation, and you abort the execution of your tests, the persisted filesystem caches may get out of sync with the in-memory structures, and you may get spurious errors in your tests.
+If you get an unexpected error after a series of successful runs, *try running the test again*, and if that doesn't help, *delete the "system" subdirectory* under the sandbox directory specified in the IntelliJ Platform SDK settings.
 
 In your plugin, you normally store the test data for your tests (such as files on which plugin features will be executed and expected output files) in the *testdata*  directory.
-This is just a directory under the content root of your plugin, but not under a source root (files in testdata are normally not valid source code and must not be compiled).
-To specify the location of testdata, you must override the ```LightPlatformCodeInsightFixtureTestCase.getTestDataPath()``` method (the default implementation assumes running as part of the IntelliJ Platform source tree and is not appropriate for third-party plugins).
+This is just a directory under the content root of your plugin, but not under a source root. Files in testdata are normally not valid source code and must not be compiled.
+To specify the location of testdata, you must override the ```LightPlatformCodeInsightFixtureTestCase.getTestDataPath()``` method.
+The default implementation assumes running as part of the IntelliJ Platform source tree and is not appropriate for third-party plugins.
 
-Note that a very common pattern in IntelliJ Platform tests is to use the name of the test method being executed as the base for building the testdata file paths.
+**Note:** 
+A very common pattern in IntelliJ Platform tests is to use the name of the test method being executed as the base for building the testdata file paths.
 This allows to reuse most of the code between different test methods that test different aspects of the same feature, and this approach is also recommended for third-party plugin tests.
 The name of the test method can be retrieved using ```UsefulTestCase.getTestName()```.
 

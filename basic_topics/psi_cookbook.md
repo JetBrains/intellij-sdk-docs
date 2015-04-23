@@ -4,7 +4,7 @@ title: PSI Cookbook
 ---
 
 
-This page gives a list of recipes for the most common operations for working with the PSI (Program Structure Interface) in IntelliJ IDEA. Unlike [Developing Custom Language Plugins for IntelliJ IDEA], it talks about working with the PSI of existing languages (such as Java).
+This page gives a list of recipes for the most common operations for working with the PSI (Program Structure Interface) of IntelliJ Platform. Unlike [Developing Custom Language Plugins for IntelliJ IDEA], it talks about working with the PSI of existing languages (such as Java).
 
 ### How do I find a file if I know its name but don't know the path?
 

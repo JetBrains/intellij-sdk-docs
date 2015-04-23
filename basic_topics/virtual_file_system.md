@@ -4,7 +4,7 @@ title: Virtual File System
 ---
 
 
-The virtual file system (VFS) is a component of IntelliJ IDEA that encapsulates most of its activity for working with files. It serves the following main purposes:
+The virtual file system (VFS) is a component of IntelliJ Platform that encapsulates most of its activity for working with files. It serves the following main purposes:
 
 *  Providing a universal API for working with files regardless of their actual location (on disk, in archive, on a HTTP server etc.);
 *  Tracking file modifications and providing both old and new versions of the file content when a modification is detected;
@@ -22,11 +22,11 @@ The snapshot is updated from disk during _refresh operations_, which generally h
 
 A refresh operation synchronizes the state of a part of the VFS with the actual disk contents. Refresh operations are explicitly invoked from the IntelliJ IDEA or plugin code - i.e. when a file is changed on disk while IntelliJ IDEA is running, the change will not be immediately picked up by the VFS; the VFS will be updated during the next refresh operation which includes the file in its scope.
 
-IntelliJ IDEA refreshes the entire project contents asynchronously on startup. Also, by default, it performs a refresh operation when the user switches to it from another app, but users can turn this off via Settings \| Synchronize files on frame activation.
+IntelliJ Platform refreshes the entire project contents asynchronously on startup. Also, by default, it performs a refresh operation when the user switches to it from another app, but users can turn this off via Settings \| Synchronize files on frame activation.
 
-On Windows, Mac and Linux IntelliJ IDEA starts a native file watcher process that receives file change notifications from the file system and reports them to IntelliJ IDEA. If a file watcher is available, a refresh operation looks only at the files that have been reported as changed by the file watcher. If no file watcher is present (pr it is disabled), a refresh operation walks through all directories and files in the refresh scope.
+On Windows, Mac and Linux IntelliJ Platform starts a native file watcher process that receives file change notifications from the file system and reports them to IntelliJ Platform. If a file watcher is available, a refresh operation looks only at the files that have been reported as changed by the file watcher. If no file watcher is present (pr it is disabled), a refresh operation walks through all directories and files in the refresh scope.
 
-Refresh operations are based on file timestamps. If the contents of a file was changed but its timestamp remained the same, IntelliJ IDEA will not pick up the updated contents.
+Refresh operations are based on file timestamps. If the contents of a file was changed but its timestamp remained the same, IntelliJ Platform will not pick up the updated contents.
 
 There is currently no facility for removing files from the snapshot. If a file was loaded there once, it remains there forever (unless it was deleted from the disk and a refresh operation was called on one of its parent directories).
 
@@ -38,7 +38,7 @@ During the lifetime of IDEA, multiple VirtualFile instances may correspond to th
 
 From the point of view of the caller, refresh operations can be either synchronous or asynchronous. In fact, the refresh operations are executed according to their own threading policy, and the synchronous flag simply means that the calling thread will be blocked until the refresh operation (which will most likely run on a different thread) is completed.
 
-Both synchronous and asynchronous refreshes can be initiated from any thread. If a refresh is initiated from a background thread, the calling thread must not hold a read action, because otherwise a deadlock would occur. (See [IntelliJ IDEA Architectural Overview] for more details on the threading model and read/write actions). The same threading requirements also apply to functions like LocalFileSystem.refreshAndFindFileByPath(), which perform a partial refresh if the file with the specified path is not found in the snapshot.
+Both synchronous and asynchronous refreshes can be initiated from any thread. If a refresh is initiated from a background thread, the calling thread must not hold a read action, because otherwise a deadlock would occur. (See [IntelliJ Platform Architectural Overview] for more details on the threading model and read/write actions). The same threading requirements also apply to functions like LocalFileSystem.refreshAndFindFileByPath(), which perform a partial refresh if the file with the specified path is not found in the snapshot.
 
 In nearly all cases, using asynchronous refreshes is strongly preferred. If there is some code that needs to be executed after the refresh is complete, the code should be passed as a postRunnable parameter to one of the refresh methods (RefreshQueue.createSession() or VirtualFile.refresh()). Synchronous refreshes can cause deadlocks in some cases, depending on which locks are held by the thread invoking the refresh operation.
 

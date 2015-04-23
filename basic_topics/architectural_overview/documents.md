@@ -4,7 +4,7 @@ title: Documents
 ---
 
 A document is an editable sequence of Unicode characters, which typically corresponds to the text contents of a virtual file.
-Line breaks in a document are always normalized to \n. IntelliJ IDEA handles encoding and line break conversions when loading and saving documents transparently.
+Line breaks in a document are always normalized to \n. IntelliJ Platform handles encoding and line break conversions when loading and saving documents transparently.
 
 ## How do I get one?
 

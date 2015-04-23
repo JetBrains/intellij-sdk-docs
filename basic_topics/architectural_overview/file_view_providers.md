@@ -29,7 +29,7 @@ class. For example, to get the PSI tree for XML, use ```fileViewProvider.getPsi(
 
 To create a file type that has multiple interspersing trees for different languages, your plugin must contain an extension to the _fileType.fileViewProviderFactory_
 [extension point](http://www.jetbrains.org/intellij/sdk/docs/plugin_extensions_and_extension_points.html)
-available in the IntelliJ IDEA core.
+available in the IntelliJ Platform core.
 This extension point is declared using the
 [FileTypeExtensionPoint](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/openapi/fileTypes/FileTypeExtensionPoint.java)
 bean class.

@@ -3,14 +3,14 @@ layout: editable
 title: Plugin Services
 ---
 
-*IntelliJ IDEA* provides the concept of _services_.
+*IntelliJ Platform* provides the concept of _services_.
 A _service_ is a plugin component loaded on demand, when your plugin calls the ```getService``` method of the
 [ServiceManager](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/openapi/components/ServiceManager.java)
 class.
-*IntelliJ IDEA* ensures that only one instance of a service is loaded even though the service is called several times.
+*IntelliJ Platform* ensures that only one instance of a service is loaded even though the service is called several times.
 A service must have the interface and implementation classes specified in the plugin.xml file.
 The service implementation class is used for service instantiation.
-*IntelliJ IDEA* offers three types of services: _application level_ services, _project level_ services and _module level_ services.
+*IntelliJ Platform* offers three types of services: _application level_ services, _project level_ services and _module level_ services.
 
 ## How to Declare a Service?
 

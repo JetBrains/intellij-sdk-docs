@@ -98,7 +98,7 @@ To clarify this procedure, consider the following sample section of the plugin.x
 
 ## How to Get the Extension Points List?
 
-To get a list of extension points available in the *IntelliJ IDEA* core, consult the _\<extensionPoints\>_ section of the following XML configuration files:
+To get a list of extension points available in the *IntelliJ Platform* core, consult the _\<extensionPoints\>_ section of the following XML configuration files:
 
 * [LangExtensionPoints.xml](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-resources/src/META-INF/LangExtensionPoints.xml)
 

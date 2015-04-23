@@ -3,7 +3,7 @@ layout: editable
 title: General Threading Rules
 ---
 
-In general, the data structures of IntelliJ IDEA are covered by a single "multiple readers / single writer" lock.
+In general, the data structures of IntelliJ Platform are covered by a single "multiple readers / single writer" lock.
 Reading data is allowed from any thread.
 Reading data from the UI thread does not require any special effort, however, read operations performed from any other thread need to be wrapped in a read action by using ```ApplicationManager.getApplication().runReadAction()```.
 Writing the data is only allowed from the UI thread, and write operations always need to be wrapped in a write action with ```ApplicationManager.getApplication().runWriteAction()```.

@@ -3,7 +3,7 @@ layout: editable
 title: Light and Heavy Tests
 ---
 
-As mentioned above, plugin tests run in a real, rather than mocked, IntelliJ IDEA environment, and use real implementations for most of the application and project components. Loading the project components for a project is a fairly expensive operation, and we want to avoid doing it for each test.
+As mentioned above, plugin tests run in a real, rather than mocked, IntelliJ Platform environment, and use real implementations for most of the application and project components. Loading the project components for a project is a fairly expensive operation, and we want to avoid doing it for each test.
 Because of that, we distinguish between *heavy*  tests, which create a new project for each test, and *light*  tests, which reuse a project from the previous test run when possible. Light and heavy tests use different base classes or fixture classes, as described below.
 
 **Note:** Because of the performance difference, we recommend plugin developers to write light tests whenever possible.

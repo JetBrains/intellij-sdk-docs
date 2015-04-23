@@ -5,7 +5,7 @@ title: Project Structure
 
 
 <!--TODO split into parts accordingly to the table of contents-->
-This topic considers the concept of **IntelliJ IDEA** projects and related subjects, such as _modules_, _facets_, _libraries_, _SDK_.
+This topic considers the concept of projects based on **IntelliJ Platform** and related subjects, such as _modules_, _facets_, _libraries_, _SDK_.
 The project structure and Java classes you can use to manage projects and modules have been considered.
 
 ## Project and Its Components
@@ -20,8 +20,8 @@ in **IntelliJ IDEA** Web Help.
 
 #### Project
 
-In **IntelliJ IDEA**, a _project_ encapsulates all your source code, libraries, build instructions into a single organizational unit. 
-Everything you do in **IntelliJ IDEA**, is done within the context of a project. A project defines some collections referred to as _modules_ and _libraries_. 
+In **IntelliJ Platform**, a _project_ encapsulates all your source code, libraries, build instructions into a single organizational unit. 
+Everything you do using **IntelliJ Platform SDK**, is done within the context of a project. A project defines some collections referred to as _modules_ and _libraries_. 
 Depending on the logical and functional requirements to the project, you can create a _single-module_ or a _multi-module_ project.
 
 #### Module
@@ -30,7 +30,7 @@ A _module_ is a discrete unit of functionality that can be run, tested, and debu
 
 #### Library
 
-A _library_ is an archive of compiled code (such as JAR files) that your modules depend on. **IntelliJ IDEA** supports three types of libraries:
+A _library_ is an archive of compiled code (such as JAR files) that your modules depend on. **IntelliJ Platform** supports three types of libraries:
 *  **Module Library**: the library classes are visible only in this module and the library information is recorded in the module \**.iml file.
 *  **Project Library**: the library classes are visible within the project and the library information is recorded in the project \**.ipr file or in _.idea/libraries_.
 *  **Global Library**: the library information is recorded in the _applicationLibraries.xml_ file into the _<User Home>/.IntelliJIdea/config/options_ directory. Global libraries are similar to project libraries, but are visible for the different projects.
@@ -80,7 +80,7 @@ The Java classes and interfaces that you can use to explore and change the proje
 
 #### How to Work with Project Files?
 
-**IntelliJ IDEA** stores the project configuration data in XML files. The list of those files depends on the plugin 
+**IntelliJ Platform** stores the project configuration data in XML files. The list of those files depends on the plugin 
 [project format](http://www.jetbrains.com/idea/webhelp/project.html).
 
 For _file-based_ format projects, the information core to the project itself (e.g. location of the component modules, compiler settings, etc.) is stored in the _<%project name%>.IPR_ file. 
@@ -126,7 +126,7 @@ Messages.showInfoMessage("Source roots for the " + projectName + " plugin:\n" + 
 
 #### How do I check whether a file is related to a project?
 
-**IntelliJ IDEA** provides the ```ProjectFileIndex``` interface you can use to verify whether a file or directory is related to the specified IDEA project.
+**IntelliJ Platform** provides the ```ProjectFileIndex``` interface you can use to verify whether a file or directory is related to the specified IDEA project.
 This section explains how you can use this interface.
 
 ##### How do I get an instance of the ProjectFileIndex interface?
@@ -185,7 +185,7 @@ Note that by default, the project modules use the project SDK. Optionally, you c
 
 ## Working with Modules
 
-*IntelliJ IDEA* provides a number of Java classes and interfaces you can use to work with modules:
+*IntelliJ Platform* provides a number of Java classes and interfaces you can use to work with modules:
 
 * [ModuleManager](http://git.jetbrains.org/?p=idea/community.git;a=blob;f=platform/projectModel-api/src/com/intellij/openapi/module/ModuleManager.java;hb=HEAD) abstract class.
 * [Module](http://git.jetbrains.org/?p=idea/community.git;a=blob;f=platform/core-api/src/com/intellij/openapi/module/Module.java;hb=HEAD) interface.

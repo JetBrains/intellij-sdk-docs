@@ -59,7 +59,7 @@ To hook into operations performed in the local file system (for example, if you 
 #### What are the rules for working with it?
 
 See
-[IntelliJ IDEA Virtual File System](http://www.jetbrains.org/intellij/sdk/docs/virtual_file_system.html)
+[IntelliJ Platform Virtual File System](http://www.jetbrains.org/intellij/sdk/docs/virtual_file_system.html)
 for a detailed description of the VFS architecture and usage rules.
 
 #### Samples

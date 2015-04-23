@@ -58,7 +58,7 @@ Note that application-level components must be registered in the ```<application
 #### Quick creation of application components
 
 *IntelliJ IDEA* suggests a simplified way of creating application components, with all the required infrastructure.
-The IDEA interface will help you declare the application component's implementation class and automatically makes appropriate changes to the ```<application-components>``` section of the *plugin.xml* file.
+The IntelliJ interface will help you declare the application component's implementation class and automatically makes appropriate changes to the ```<application-components>``` section of the *plugin.xml* file.
 
 **To create and register an application component:**
 

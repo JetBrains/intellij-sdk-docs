@@ -6,7 +6,7 @@ title: Running and Debugging a Plugin
 
 
 
-*IntelliJ IDEA* allows you to run and debug a plugin without leaving the IDE.
+*IntelliJ Platform* allows you to run and debug a plugin without leaving the IDE.
 To run or debug the plugin from within *IntelliJ IDEA*, you need a configured special profile (a Run/Debug configuration) that specifies the class to run, VM parameters and other specific options.
 In most cases, you can use default *Run\/Debug* configuration profiles for your plugin projects.
 For information on how to change the Run/Debug configuration profile, refer to

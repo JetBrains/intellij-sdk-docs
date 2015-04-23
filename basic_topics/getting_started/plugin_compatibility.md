@@ -26,14 +26,14 @@ For example:
 If a plugin does not include any module dependency tags in its
 <!--TODO link to sample_plugin file--> 
 [plugin.xml](),
-it's assumed to be a legacy plugin and it's loaded only in IntelliJ IDEA.
+it's assumed to be a legacy plugin and it's loaded only in IntelliJ Platform based product.
 
 If the
 <!--TODO link to sample_plugin file--> 
 [plugin.xml]() 
 includes one or more of such tags, the plugin is loaded if the product contains all of the modules on which the plugin depends.
 
-The following modules are currently available in all products based on the IntelliJ platform:
+The following modules are currently available in all products based on the IntelliJ Platform:
 
 * *com.intellij.modules.platform*
 
@@ -74,7 +74,7 @@ If your plugin works with all products but provides some Java-specific functiona
 </depends>
 ```
 
-Before marking a plugin as compatible with all products, you need to verify that it doesn't use any APIs which are specific to IntelliJ IDEA. 
+Before marking a plugin as compatible with all products, you need to verify that it doesn't use any APIs which are specific to IntelliJ Platform. 
 
 In order to do that, you can create an IntelliJ Platform SDK pointing to an installation of RubyMine/PyCharm/..., compile your plugin against that SDK and verify that everything compiles.
 

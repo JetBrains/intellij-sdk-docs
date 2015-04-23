@@ -12,10 +12,11 @@ Most of the tests in the IntelliJ IDEA codebase are *model-level functional test
 
 *  The tests do not test the Swing UI and work directly with the underlying model instead.
 
-*  Most of the tests take a source file or a set of source files as input data, execute a feature, and then compare the output with expected results (which can be specified as another set of source files, as special markup in the input file, or directly in the test code).
+*  Most of the tests take a source file or a set of source files as input data, execute a feature, and then compare the output with expected results 
+   Results can be specified as another set of source files, as special markup in the input file, or directly in the test code.
 
 The biggest benefit of this test approach is that tests are very stable and require very little maintenance once they have been written, no matter how much the underlying implementation is refactored or rewritten.
-In a product with 10+ years of lifetime that has gone through a large number of internal refactorings, we find that this benefit greatly outweighs the downsides of slower test execution and more difficult debugging of failures (compared to more isolated unit tests).
+In a product with 10+ years of lifetime that has gone through a large number of internal refactorings, we find that this benefit greatly outweighs the downsides of slower test execution and more difficult debugging of failures being compared to more isolated unit tests.
 
 Another consequence of our testing approach is what our test framework does not provide:
 

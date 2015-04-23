@@ -4,9 +4,6 @@ title: Testing Plugins
 ---
 
 
-Before discussing the specific details of the IntelliJ Platform plugin test framework, it's worth looking at the general approach that the IntelliJ IDEA team uses for testing the IDE code.
-Our intention here is not so much to be prescriptive, and more to set the expectations we have good tools to support the approach that we use, and less good (or no) tools for approaches that we don't use.
-
 Most of the tests in the IntelliJ IDEA codebase are *model-level functional tests*. What this means is the following:
 
 *  The tests run in a headless environment which uses real production implementations for the majority of components, except for a number of UI components.

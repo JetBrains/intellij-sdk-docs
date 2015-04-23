@@ -10,7 +10,7 @@ The files for the test project physically exist either in a temporary directory 
 
 **Note:** 
 If your tests use the in-memory implementation, and you abort the execution of your tests, the persisted filesystem caches may get out of sync with the in-memory structures, and you may get spurious errors in your tests.
-If you get an unexpected error after a series of successful runs, *try running the test again*, and if that doesn't help, *delete the "system" subdirectory* under the sandbox directory specified in the IntelliJ Platform SDK settings.
+If you get an unexpected error after a series of successful runs, **try running the test again**, and if that doesn't help, **delete the "system" subdirectory** under the sandbox directory specified in the IntelliJ Platform SDK settings.
 
 In your plugin, you normally store the test data for your tests (such as files on which plugin features will be executed and expected output files) in the *testdata*  directory.
 This is just a directory under the content root of your plugin, but not under a source root. Files in testdata are normally not valid source code and must not be compiled.

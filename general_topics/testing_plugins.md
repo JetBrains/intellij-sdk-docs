@@ -30,11 +30,11 @@ for plugin UI testing, but we don't use either of them and cannot provide any gu
 Internally, we use manual testing for testing our Swing UIs.
 
 
-*  [Tests and Fixtures](basic_topics/testing_plugins/tests_and_fixtures.html)
-*  [Light and Heavy Tests](basic_topics/testing_plugins/light_and_heavy_tests.html)
-*  [Test Project and Testdata Directories](basic_topics/testing_plugins/test_project_and_testdata_directories.html)
-*  [Writing Tests](basic_topics/testing_plugins/writing_tests.html)
-*  [Testing Highlighting](basic_topics/testing_plugins/testing_highlighting.html)
+*  [Tests and Fixtures](general_topics/testing_plugins/tests_and_fixtures.html)
+*  [Light and Heavy Tests](general_topics/testing_plugins/light_and_heavy_tests.html)
+*  [Test Project and Testdata Directories](general_topics/testing_plugins/test_project_and_testdata_directories.html)
+*  [Writing Tests](general_topics/testing_plugins/writing_tests.html)
+*  [Testing Highlighting](general_topics/testing_plugins/testing_highlighting.html)
 
 
 Check out

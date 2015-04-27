@@ -4,7 +4,7 @@
     Also you can use HTML-comments.
 -->
 
-## Basic Topics
+## General Topics
 
 * [Getting Started](basic_topics/getting_started.html)
   * [Check Out And Build Community Edition](basic_topics/getting_started/checkout_and_build_community.html)
@@ -47,7 +47,7 @@
   * [Writing Tests](basic_topics/testing_plugins/writing_tests.html)
   * [Testing Highlighting](basic_topics/testing_plugins/testing_highlighting.html)
 
-## Advanced Topics
+## Specific Topics
 
 * [Custom Language Support](advanced_topics/custom_language_support.html)
   * [Registering File Type](advanced_topics/custom_language_support/registering_file_type.html)

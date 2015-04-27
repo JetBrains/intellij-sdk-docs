@@ -29,7 +29,7 @@
       * [PSI Files](basic_topics/architectural_overview/psi_files.html)
       * [File View Providers](basic_topics/architectural_overview/file_view_providers.html)
       * [Psi Elements](basic_topics/architectural_overview/psi_elements.html)
-* [Structure of Project](basic_topics/project_structure.html)
+* [Project Structure](basic_topics/project_structure.html)
   * [Action System](basic_topics/action_system.html)
   * [Persisting State of Components](basic_topics/persisting_state_of_components.html)
   * [PSI Cookbook](basic_topics/psi_cookbook.html)

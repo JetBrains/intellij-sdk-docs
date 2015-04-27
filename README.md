@@ -2,7 +2,7 @@ IntelliJ SDK Platform Documentation
 =======
 
 This is a repository for 
-[IntelliJ Platform SDK Documentation](jetbrains.org/intellij/sdk/docs/)
+[IntelliJ Platform SDK Documentation](http://www.jetbrains.org/intellij/sdk/docs/)
 site.
 
 ##Reporting Bugs

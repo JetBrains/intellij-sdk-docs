@@ -1,29 +1,76 @@
-intellij-sdk
-============
+title: IntelliJ SDK Platform Documentation
+---
 
-IntelliJ SDK Plugin Documentation and Samples
+This is a repository for 
+[IntelliJ Platform SDK Documentation](jetbrains.org/intellij/sdk/docs/)
+site.
 
-#IntelliJ documentation engine
+##Reporting Bugs
+Please inform about any content inconsistencies, outdated materials, cosmetic issues, and other defects you find by submitting an issue to
+[YouTrack](https://youtrack.jetbrains.com/issues/IJSDK).
 
-##Prerequisites
-Ruby 2.0 or higher
+##Working With the Site Locally
+To check out and run a local copy of the site follow the steps described below.
 
-##Installation
+###Pre-requirements
+
+*  Make sure you have a 
+   [git client](http://git-scm.com/downloads)
+   installed
+
+*  This site requires
+   [Ruby 2.0](https://www.ruby-lang.org/) or higher.
+   Follow the official Ruby language
+   [download](https://www.ruby-lang.org/en/downloads/)
+   and
+   [installation](https://www.ruby-lang.org/en/documentation/installation/)
+   instructions to get Ruby working on your machine.
+   
+*  This site requires [Jekyll](http://jekyllrb.com/), 
+   a Ruby-based site generating framework.
+   To install Jekyll refer to it's
+   [installation guidelines](http://jekyllrb.com/docs/installation/).
+   **Note:** If you are using Windows, you can face some specific aspects while installing Jekyll.
+   See this [Run Jekyll on Windows Guide](http://jekyll-windows.juthilo.com/) to get more information.
+   
+### Checking Out Site Repository
+
+To check out the source code run the following command:
+
+```bash
+git clone https://github.com/JetBrains/intellij-sdk-docs.git
 ```
-sudo gem install jekyll
-```
+   
+###Initializing Submodules
 
-##Initialize submodules
-```
+The site uses JetBrains custom web templates.
+To enable custom templates locally you need to initialize repository submodules.
+Run the command below to do so.
+ 
+```bash
 git submodule update --init --remote
 ```
 
-##Preview
-```
-rake preview
-```
+###Building and Previewing 
+A set of Rake tasks, a Make-like programs implemented in Ruby, provides short commands to build and run the site locally.
 
-##Build
-```
-rake build
-```
+####Building Site from Sources
+ 
+*  Make sure you are in a project root directory
+*  To build static site content run
+   ```
+   rake build
+   ```
+   
+####Previewing
+
+*  To start the web-server run
+    ```
+    rake preview
+    ```
+*  Open the address
+   [http://127.0.0.1:4000/](http://127.0.0.1:4000/)
+   in your browser.
+   **Note:** Make sure you haven't change default Jekyll port during installation.
+
+

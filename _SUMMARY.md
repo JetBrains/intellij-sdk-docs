@@ -4,6 +4,9 @@
     Also you can use HTML-comments.
 -->
 
+
+* [Contribution Guidelines](contribution_guidelines.html)
+
 ## General Topics
 
 * [Getting Started](general_topics/getting_started.html)

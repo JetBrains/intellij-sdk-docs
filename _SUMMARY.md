@@ -66,7 +66,7 @@
   * [Go to Class and Go to Symbol](specific_topics/custom_language_support/go_to_class_and_go_to_symbol.html)
   * [Documentation](specific_topics/custom_language_support/documentation.html)
   * [Additional Minor Features](specific_topics/custom_language_support/additional_minor_features.html)
-* [Frameworks and External APIs.html](specific_topics/frameworks_and_external_apis.html)  
+* [Frameworks and External APIs](specific_topics/frameworks_and_external_apis.html)  
   * [XML DOM API](specific_topics/frameworks_and_external_apis/xml_dom_api.html)
   * [Spring API](specific_topics/frameworks_and_external_apis/spring_api.html)
   * [External Builder API and Plugins](specific_topics/frameworks_and_external_apis/external_builder_api.html)

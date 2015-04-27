@@ -1,5 +1,5 @@
-title: IntelliJ SDK Platform Documentation
----
+IntelliJ SDK Platform Documentation
+=======
 
 This is a repository for 
 [IntelliJ Platform SDK Documentation](jetbrains.org/intellij/sdk/docs/)

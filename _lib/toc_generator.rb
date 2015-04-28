@@ -4,6 +4,7 @@ require 'uri'
 require 'kramdown'
 require 'rexml/document'
 require 'rexml/xpath'
+require_relative './utils.rb'
 
 module Docs
   class TocGenerator
@@ -15,19 +16,7 @@ module Docs
     # @return {Hash}
     def self.extract(path, kramdown_config = {})
       toc = []
-      content = File.read(path)
-      kramdown_config = kramdown_config.merge({:html_to_native => true})
-      kramdown_doc = Kramdown::Document.new(content, kramdown_config)
-      kramdown_doc_content = <<-XML
-        <?xml version="1.0" encoding="UTF-8" ?>
-        <root>
-          #{kramdown_doc.to_html}
-        </root>
-      XML
-
-      kramdown_doc_content = kramdown_doc_content.gsub(/<!--(.*?)-->/m, '')
-
-      xml = REXML::Document.new kramdown_doc_content
+      xml = Docs::Utils.md2xml(path)
       xml.elements.each("/root/*") do |node|
         items = extract_from_node(node)
         toc.concat(items) if items != nil

@@ -10,6 +10,7 @@
 ## General Topics
 
 * [Getting Started](general_topics/getting_started.html)
+   <!-- TODO remove Checkout from getting started --> 
   * [Check Out And Build Community Edition](general_topics/getting_started/checkout_and_build_community.html)
   * [Setting Up Development Environment](general_topics/getting_started/setting_up_environment.html)
   * [Creating a Plugin Project](general_topics/getting_started/creating_plugin_project.html)

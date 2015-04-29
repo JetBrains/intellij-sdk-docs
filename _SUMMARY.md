@@ -116,6 +116,6 @@
         * [Find Usages Test](tutorials/writing_tests_for_plugins/find_usages_test.html)
         * [Commenter Test](tutorials/writing_tests_for_plugins/commenter_test.html)
         * [Reference Test](tutorials/writing_tests_for_plugins/reference_test.html)
-* [Plugin Development FAQ](faq2.html)
+* [Plugin Development FAQ](faq.html)
 
 

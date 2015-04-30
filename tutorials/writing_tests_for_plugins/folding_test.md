@@ -1,6 +1,6 @@
 ---
 layout: editable
-title: Folding Test
+title: 7. Folding Test
 ---
 
 In this test we will check if the folding builder, implemented in the

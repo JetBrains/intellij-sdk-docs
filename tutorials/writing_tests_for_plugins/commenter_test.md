@@ -1,6 +1,6 @@
 ---
 layout: editable
-title: Commenter Test
+title: 9. Commenter Test
 ---
 
 In this test we will check if the commenter, implemented in the

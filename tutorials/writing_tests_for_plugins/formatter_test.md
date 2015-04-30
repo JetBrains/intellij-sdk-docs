@@ -1,6 +1,6 @@
 ---
 layout: editable
-title: Formatter Test
+title: 5. Formatter Test
 ---
 
 In this test we will check if the formatter, implemented in the

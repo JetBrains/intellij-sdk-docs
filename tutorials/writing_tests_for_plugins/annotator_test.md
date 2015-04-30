@@ -1,6 +1,6 @@
 ---
 layout: editable
-title: Annotator Test
+title: 4. Annotator Test
 ---
 
 In this test we will check if the annotator, implemented in the

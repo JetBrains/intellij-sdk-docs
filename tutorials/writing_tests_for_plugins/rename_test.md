@@ -1,6 +1,6 @@
 ---
 layout: editable
-title: Rename Test
+title: 6. Rename Test
 ---
 
 

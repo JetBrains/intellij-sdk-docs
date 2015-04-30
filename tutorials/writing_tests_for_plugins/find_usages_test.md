@@ -1,6 +1,6 @@
 ---
 layout: editable
-title: Find Usages Test
+title: 8. Find Usages Test
 ---
 
 In this test we will check if the find usages provider, implemented in the

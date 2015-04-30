@@ -1,6 +1,6 @@
 ---
 layout: editable
-title: Code Style Setting
+title: 16. Code Style Setting
 ---
 
 ### 1. Define code style settings

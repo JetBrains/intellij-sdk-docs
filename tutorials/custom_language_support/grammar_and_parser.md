@@ -1,6 +1,6 @@
 ---
 layout: editable
-title: Grammar and Parser
+title: 3. Grammar and Parser
 ---
 
 ### 1. Define a token type

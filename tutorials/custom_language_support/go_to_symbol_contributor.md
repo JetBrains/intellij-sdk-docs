@@ -1,6 +1,6 @@
 ---
 layout: editable
-title: Go To Symbol Contributor
+title: 13. Go To Symbol Contributor
 ---
 
 *A go to symbol contributor helps user to navigate to any PSI element by it's name.*

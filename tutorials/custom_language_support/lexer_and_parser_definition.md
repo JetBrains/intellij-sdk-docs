@@ -1,6 +1,6 @@
 ---
 layout: editable
-title: Lexer and Parser Definition
+title: 4. Lexer and Parser Definition
 ---
 
 The lexer defines how the contents of a file is broken into tokens.

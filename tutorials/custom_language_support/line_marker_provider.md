@@ -1,6 +1,6 @@
 ---
 layout: editable
-title: Line Marker Provider
+title: 8. Line Marker Provider
 ---
 
 Line markers help to annotate any code with icons on the gutter.

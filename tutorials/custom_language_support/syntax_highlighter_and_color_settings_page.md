@@ -1,6 +1,6 @@
 ---
 layout: editable
-title: Syntax Highlighter and Color Settings Page
+title: 5. Syntax Highlighter and Color Settings Page
 ---
 
 

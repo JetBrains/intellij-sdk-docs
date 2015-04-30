@@ -1,6 +1,6 @@
 ---
 layout: editable
-title: Annotator
+title: 7. Annotator
 ---
 
 Annotator helps highlight and annotate any code based on specific rules.

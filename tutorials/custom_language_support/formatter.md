@@ -1,6 +1,6 @@
 ---
 layout: editable
-title: Formatter
+title: 15. Formatter
 ---
 
 *A formatter allows to reformat the code automatically based on code style settings.*

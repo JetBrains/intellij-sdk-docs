@@ -1,6 +1,6 @@
 ---
 layout: editable
-title: Find Usages Provider
+title: 11. Find Usages Provider
 ---
 
 A find usage provider uses a word scanner to build an index of words present in every file.

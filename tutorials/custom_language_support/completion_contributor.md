@@ -1,6 +1,6 @@
 ---
 layout: editable
-title: Completion Contributor
+title: 9. Completion Contributor
 ---
 
 

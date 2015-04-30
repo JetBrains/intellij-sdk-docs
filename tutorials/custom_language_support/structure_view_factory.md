@@ -1,6 +1,6 @@
 ---
 layout: editable
-title: Structure View Factory
+title: 14. Structure View Factory
 ---
 
 

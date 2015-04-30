@@ -1,6 +1,6 @@
 ---
 layout: editable
-title: Folding Builder
+title: 12. Folding Builder
 ---
 
 A folding builder helps you to fold the code regions and replace it with specific text.

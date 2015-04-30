@@ -1,6 +1,6 @@
 ---
 layout: editable
-title: Language and File Type
+title: 2. Language and File Type
 ---
 
 

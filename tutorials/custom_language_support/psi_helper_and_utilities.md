@@ -4,7 +4,7 @@ title: 6. PSI Helpers and Utilities
 ---
 
 
-### 1. Define helper methods for generated PSI elements
+### 6.1. Define helper methods for generated PSI elements
 
 If we want to have custom methods in PSI classes we need to define them separately and ask Grammar-Kit to embed them into generated code.
 
@@ -38,7 +38,7 @@ public class SimplePsiImplUtil {
 }
 ```
 
-### 2. Update grammar and regenerate the parser
+### 6.2. Update grammar and regenerate the parser
 
 Now we tell to use this utility class in the grammar file via *stubParserClass* attribute.
 
@@ -71,7 +71,7 @@ property ::= (KEY? SEPARATOR VALUE?) | KEY {methods=[getKey getValue]}
 
 After we made our changes to the grammar we can regenerate the parser and PSI classes.
 
-### 3. Define an utility to search properties
+### 6.3. Define an utility to search properties
 
 Now we need an utility class to search PSI elements for defined properties over the project.
 We will use this utility later when implementing code assistance.

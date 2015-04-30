@@ -6,7 +6,7 @@ title: 4. Lexer and Parser Definition
 The lexer defines how the contents of a file is broken into tokens.
 The easiest way to create a lexer is to use [JFlex](http://jflex.de/)
 
-### 1. Define a lexer
+### 4.1. Define a lexer
 
 Define */com/simpleplugin/Simple.flex* file with rules for our lexer.
 
@@ -59,7 +59,7 @@ KEY_CHARACTER=[^:=\ \n\r\t\f\\] | "\\"{CRLF} | "\\".
 .                                                           { return TokenType.BAD_CHARACTER; }
 ```
 
-### 2. Generate a lexer class
+### 4.2. Generate a lexer class
 
 Now we can generate a lexer class via *JFlex Generator* from the context menu or via *⌘⇧G* shortcut on Simple.flex file.
 The Grammar-Kit plugin uses JFlex lexer generation.
@@ -87,7 +87,7 @@ public class SimpleLexerAdapter extends FlexAdapter {
 }
 ```
 
-### 3 Define a file
+### 4.3 Define a file
 
 ```java
 package com.simpleplugin.psi;
@@ -124,7 +124,7 @@ public class SimpleFile extends PsiFileBase {
 }
 ```
 
-### 4. Define a parser definition
+### 4.4. Define a parser definition
 
 ```java
 package com.simpleplugin;
@@ -201,13 +201,13 @@ public class SimpleParserDefinition implements ParserDefinition{
 }
 ```
 
-### 5. Register the parser definition
+### 4.5. Register the parser definition
 
 ```xml
 <lang.parserDefinition language="Simple" implementationClass="com.simpleplugin.SimpleParserDefinition"/>
 ```
 
-### 6. Run the project
+### 4.6. Run the project
 
 Create a properties file with the following content:
 

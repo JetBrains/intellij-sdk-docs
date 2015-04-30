@@ -5,7 +5,7 @@ title: 12. Folding Builder
 
 A folding builder helps you to fold the code regions and replace it with specific text.
 
-### 1. Define a folding builder
+### 12.1. Define a folding builder
 
 Let's replace usages of properties with its values by default.
 
@@ -72,13 +72,13 @@ public class SimpleFoldingBuilder extends FoldingBuilderEx {
 }
 ```
 
-### 2. Register the folding builder
+### 12.2. Register the folding builder
 
 ```xml
 <lang.foldingBuilder language="JAVA" implementationClass="com.simpleplugin.SimpleFoldingBuilder"/>
 ```
 
-### 3. Run the project
+### 12.3. Run the project
 
 Now when we open a Java file, it shows the property's value instead of the key.
 

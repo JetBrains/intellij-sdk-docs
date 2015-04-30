@@ -9,7 +9,7 @@ Resolving references means the ability to go from the usage of an element to the
 
 **Every element which can be renamed or referenced needs to implement *com.intellij.psi.PsiNamedElement* interface.**
 
-### 1. Define a base named element class
+### 10.1. Define a base named element class
 
 ```java
 package com.simpleplugin.psi;
@@ -35,7 +35,7 @@ public abstract class SimpleNamedElementImpl extends ASTWrapperPsiElement implem
 }
 ```
 
-### 2. Define helper methods for generated PSI elements
+### 10.2. Define helper methods for generated PSI elements
 
 Since we need to implement new methods in PSI class, we should define them in our utility.
 
@@ -65,7 +65,7 @@ public static PsiElement getNameIdentifier(SimpleProperty element) {
 }
 ```
 
-### 3. Define an element factory
+### 10.3. Define an element factory
 
 ```java
 package com.simpleplugin.psi;
@@ -88,7 +88,7 @@ public class SimpleElementFactory {
 }
 ```
 
-### 4. Update grammar and regenerate the parser
+### 10.4. Update grammar and regenerate the parser
 
 Now we need to make corresponding changes to the grammar file and regenerate parser and PSI classes.
 
@@ -97,7 +97,7 @@ property ::= (KEY? SEPARATOR VALUE?) | KEY {mixin="com.simpleplugin.psi.impl.Sim
   implements="com.simpleplugin.psi.SimpleNamedElement" methods=[getKey getValue getName setName getNameIdentifier]}
 ```
 
-### 5. Define a reference
+### 10.5. Define a reference
 
 Now we need to define a reference class to resolve a property from it's usage.
 
@@ -162,7 +162,7 @@ public class SimpleReference extends PsiReferenceBase<PsiElement> implements Psi
 }
 ```
 
-### 6. Define a reference contributor
+### 10.6. Define a reference contributor
 
 A reference contributor allows you to provide references from elements in other languages such as Java to elements in your language.
 Let's contribute a reference to each usage of a property.
@@ -196,13 +196,13 @@ public class SimpleReferenceContributor extends PsiReferenceContributor {
 }
 ```
 
-### 7. Register the reference contributor
+### 10.7. Register the reference contributor
 
 ```xml
 <psi.referenceContributor implementation="com.simpleplugin.SimpleReferenceContributor"/>
 ```
 
-### 8. Run the project
+### 10.8. Run the project
 
 As you see the IDE now resolves the property and provides completion.
 
@@ -212,7 +212,7 @@ As you see the IDE now resolves the property and provides completion.
 
 ![Rename](img/rename.png)
 
-### 9. Define a refactoring support provider
+### 10.9. Define a refactoring support provider
 
 To allow in-place refactoring we should specify it explicitly in a refactoring support provider.
 
@@ -231,13 +231,13 @@ public class SimpleRefactoringSupportProvider extends RefactoringSupportProvider
 }
 ```
 
-### 10. Register the refactoring support provider
+### 10.10. Register the refactoring support provider
 
 ```xml
 <lang.refactoringSupport language="Simple" implementationClass="com.simpleplugin.SimpleRefactoringSupportProvider"/>
 ```
 
-### 11. Run the project
+### 10.11. Run the project
 
 ![In Place Rename](img/in_place_rename.png)
 

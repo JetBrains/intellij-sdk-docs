@@ -3,7 +3,7 @@ layout: editable
 title: 16. Code Style Setting
 ---
 
-### 1. Define code style settings
+### 16.1. Define code style settings
 
 ```java
 package com.simpleplugin;
@@ -18,7 +18,7 @@ public class SimpleCodeStyleSettings extends CustomCodeStyleSettings {
 }
 ```
 
-### 2. Define code style settings provider
+### 16.2. Define code style settings provider
 
 ```java
 package com.simpleplugin;
@@ -71,13 +71,13 @@ public class SimpleCodeStyleSettingsProvider extends CodeStyleSettingsProvider {
 ```
 
 
-### 3. Register the code style settings provider
+### 16.3. Register the code style settings provider
 
 ```xml
 <codeStyleSettingsProvider implementation="com.simpleplugin.SimpleCodeStyleSettingsProvider"/>
 ```
 
-### 4. Define language code style settings provider
+### 16.4. Define language code style settings provider
 
 ```java
 package com.simpleplugin;
@@ -124,13 +124,13 @@ public class SimpleLanguageCodeStyleSettingsProvider extends LanguageCodeStyleSe
 }
 ```
 
-### 5. Register the language code style settings provider
+### 16.5. Register the language code style settings provider
 
 ```xml
 <langCodeStyleSettingsProvider implementation="com.simpleplugin.SimpleLanguageCodeStyleSettingsProvider"/>
 ```
 
-### 6. Run the project
+### 16.6. Run the project
 
 ![Code Style Settings](img/code_style_settings.png)
 

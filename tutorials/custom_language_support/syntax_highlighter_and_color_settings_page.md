@@ -4,7 +4,7 @@ title: 5. Syntax Highlighter and Color Settings Page
 ---
 
 
-### 1. Define a syntax highlighter
+### 5.1. Define a syntax highlighter
 
 ```java
 package com.simpleplugin;
@@ -67,7 +67,7 @@ public class SimpleSyntaxHighlighter extends SyntaxHighlighterBase {
 }
 ```
 
-### 2. Define a syntax highlighter factory
+### 5.2. Define a syntax highlighter factory
 
 ```java
 package com.simpleplugin;
@@ -87,17 +87,17 @@ public class SimpleSyntaxHighlighterFactory extends SyntaxHighlighterFactory {
 }
 ```
 
-### 3. Register the syntax highlighter factory
+### 5.3. Register the syntax highlighter factory
 
 ```xml
 <lang.syntaxHighlighterFactory key="Simple" implementationClass="com.simpleplugin.SimpleSyntaxHighlighterFactory"/>
 ```
 
-### 4. Run the project
+### 5.4. Run the project
 
 ![Syntax highlighter](img/syntax_highlighter.png)
 
-### 5. Define a color settings page
+### 5.5. Define a color settings page
 
 ```java
 package com.simpleplugin;
@@ -175,13 +175,13 @@ public class SimpleColorSettingsPage implements ColorSettingsPage {
 }
 ```
 
-### 6. Register the color settings page
+### 5.6. Register the color settings page
 
 ```xml
 <colorSettingsPage implementation="com.simpleplugin.SimpleColorSettingsPage"/>
 ```
 
-### 7. Run the project
+### 5.7. Run the project
 
 ![Color Settings Page](img/color_settings_page.png)
 

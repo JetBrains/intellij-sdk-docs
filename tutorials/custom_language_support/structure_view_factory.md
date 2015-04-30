@@ -6,7 +6,7 @@ title: 14. Structure View Factory
 
 A structure view factory allows to show the structure of any file in a *Structure* tool window for easy navigation between items.
 
-### 1. Define a structure view factory
+### 14.1. Define a structure view factory
 
 ```java
 package com.simpleplugin;
@@ -34,7 +34,7 @@ public class SimpleStructureViewFactory implements PsiStructureViewFactory {
 }
 ```
 
-### 2. Define a structure view model
+### 14.2. Define a structure view model
 
 ```java
 package com.simpleplugin;
@@ -71,7 +71,7 @@ public class SimpleStructureViewModel extends StructureViewModelBase implements
 }
 ```
 
-### 3. Define a structure view element
+### 14.3. Define a structure view element
 
 ```java
 package com.simpleplugin;
@@ -148,13 +148,13 @@ public class SimpleStructureViewElement implements StructureViewTreeElement, Sor
 }
 ```
 
-### 4. Register the structure view factory
+### 14.4. Register the structure view factory
 
 ```xml
 <lang.psiStructureViewFactory language="Simple" implementationClass="com.simpleplugin.SimpleStructureViewFactory"/>
 ```
 
-### 5. Run the project
+### 14.5. Run the project
 
 ![Structure View](img/structure_view.png)
 

@@ -6,7 +6,7 @@ title: 8. Line Marker Provider
 Line markers help to annotate any code with icons on the gutter.
 These icons may provide navigation to related code.
 
-### 1. Define a line marker provider
+### 8.1. Define a line marker provider
 
 Let's annotate usages of our properties within Java code and provide navigation to the definition of these properties.
 
@@ -95,13 +95,13 @@ public class MyLineMarkerProvider implements LineMarkerProvider {
 }
 ```
 
-### 2. Register the line marker provider
+### 8.2. Register the line marker provider
 
 ```xml
 <codeInsight.lineMarkerProvider language="JAVA" implementationClass="com.simpleplugin.SimpleLineMarkerProvider"/>
 ```
 
-### 3. Run the project
+### 8.3. Run the project
 
 Now you see the icon on the gutter and can navigate to the property definition.
 

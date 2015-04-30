@@ -5,7 +5,7 @@ title: 17. Commenter
 
 A commenter allows user to comment the code at the cursor or selected code automatically via *⌘/*.
 
-### 1. Define a commenter
+### 17.1. Define a commenter
 
 ```java
 package com.simpleplugin;
@@ -46,13 +46,13 @@ public class SimpleCommenter implements Commenter {
 }
 ```
 
-### 2. Register the commenter
+### 17.2. Register the commenter
 
 ```xml
 <lang.commenter language="Simple" implementationClass="com.simpleplugin.SimpleCommenter"/>
 ```
 
-### 3. Run the project
+### 17.3. Run the project
 
 ![Commenter](img/commenter.png)
 

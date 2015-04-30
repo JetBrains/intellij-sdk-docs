@@ -3,7 +3,7 @@ layout: editable
 title: 3. Grammar and Parser
 ---
 
-### 1. Define a token type
+### 3.1. Define a token type
 
 ```java
 package com.simpleplugin.psi;
@@ -25,7 +25,7 @@ public class SimpleTokenType extends IElementType {
 }
 ```
 
-### 2. Define an element type
+### 3.2. Define an element type
 
 ```java
 package com.simpleplugin.psi;
@@ -42,7 +42,7 @@ public class SimpleElementType extends IElementType {
 }
 ```
 
-### 3. Define grammar
+### 3.3. Define grammar
 
 Define a grammar for the properties language with */com/simpleplugin/Simple.bnf* file.
 
@@ -75,7 +75,7 @@ The grammar defines how flexible the support for a language can be.
 We specified that a property may have or may not have key and value.
 This lets the IDE still recognise incorrectly defined properties and provide corresponding code analysis and quick-fixes.
 
-### 4. Generate a parser
+### 3.4. Generate a parser
 
 Now when the grammar is defined we can generate a parser with PSI classes via *Generate Parser Code* from the context menu or via *⌘⇧G* shortcut on *Simple.bnf* file.
 The Grammar-Kit will generate a parser and PSI elements in *gen* folder.

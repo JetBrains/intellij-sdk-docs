@@ -6,7 +6,7 @@ title: 9. Completion Contributor
 
 The easiest way to provide completion is to use a completion contributor.
 
-### 1. Define a completion contributor
+### 9.1. Define a completion contributor
 
 Let's provide custom completion for values in property files.
 
@@ -36,13 +36,13 @@ public class SimpleCompletionContributor extends CompletionContributor {
 }
 ```
 
-### 2. Register the completion contributor
+### 9.2. Register the completion contributor
 
 ```xml
 <completion.contributor language="Simple" implementationClass="com.simpleplugin.SimpleCompletionContributor"/>
 ```
 
-### 3. Run the project
+### 9.3. Run the project
 
 ![Completion](img/completion.png)
 

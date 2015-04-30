@@ -6,7 +6,7 @@ title: 11. Find Usages Provider
 A find usage provider uses a word scanner to build an index of words present in every file.
 A scanner breaks the text into words, defines the context for each word and passes it to the find usage provider.
 
-### 1. Define a find usages provider
+### 11.1. Define a find usages provider
 
 ```java
 package com.simpleplugin;
@@ -79,13 +79,13 @@ public class SimpleFindUsagesProvider implements FindUsagesProvider {
 }
 ```
 
-### 2. Register the find usages provider
+### 11.2. Register the find usages provider
 
 ```xml
 <lang.findUsagesProvider language="Simple" implementationClass="com.simpleplugin.SimpleFindUsagesProvider"/>
 ```
 
-### 3. Run the project
+### 11.3. Run the project
 
 Now we can call *Find Usages* for any property with a reference.
 

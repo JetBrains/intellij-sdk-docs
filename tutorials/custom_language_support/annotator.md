@@ -5,7 +5,7 @@ title: 7. Annotator
 
 Annotator helps highlight and annotate any code based on specific rules.
 
-### 1. Define an annotator
+### 7.1. Define an annotator
 
 In this tutorial we will annotate usages of our properties within Java code.
 Let's consider a literal which starts with *"simple:"* as a usage of our property.
@@ -57,13 +57,13 @@ public class SimpleAnnotator implements Annotator {
 }
 ```
 
-### 2. Register the annotator
+### 7.2. Register the annotator
 
 ```xml
 <annotator language="JAVA" implementationClass="com.simpleplugin.SimpleAnnotator"/>
 ```
 
-### 3. Run the project
+### 7.3. Run the project
 
 Let's define the following Java file and check if the IDE resolves a property.
 

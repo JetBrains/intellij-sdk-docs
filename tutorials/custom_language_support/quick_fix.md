@@ -8,7 +8,7 @@ A quick fix allows to apply an automatic changes to the code via *⌥⏎*.
 
 Let's add a quick fix which helps to define an unresolved property from its usage.
 
-### 1. Update the element factory
+### 18.1. Update the element factory
 
 ```java
 package com.simpleplugin.psi;
@@ -42,7 +42,7 @@ public class SimpleElementFactory {
 }
 ```
 
-### 2. Define an intention action
+### 18.2. Define an intention action
 
 The quick fix will create a property in the file chosen by user, and navigate to this property after creation.
 
@@ -124,7 +124,7 @@ class CreatePropertyQuickFix extends BaseIntentionAction {
 }
 ```
 
-### 3. Update the annotator
+### 18.3. Update the annotator
 
 ```java
 package com.simpleplugin;
@@ -169,7 +169,7 @@ public class SimpleAnnotator implements Annotator {
 }
 ```
 
-### 4. Run the project
+### 18.4. Run the project
 
 Now let's try to use a property which is not defined yet.
 

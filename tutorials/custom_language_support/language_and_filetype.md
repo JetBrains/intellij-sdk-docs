@@ -4,7 +4,7 @@ title: 2. Language and File Type
 ---
 
 
-### 1. Define a language
+### 2.1. Define a language
 
 ```java
 package com.simpleplugin;
@@ -20,7 +20,7 @@ public class SimpleLanguage extends Language {
 }
 ```
 
-### 2. Define an icon
+### 2.2. Define an icon
 
 Copy the
 [icon](https://raw.github.com/cheptsov/SimplePlugin/master/src/com/simpleplugin/icons/jar-gray.png)
@@ -38,7 +38,7 @@ public class SimpleIcons {
 }
 ```
 
-### 3. Define a file type
+### 2.3. Define a file type
 
 ```java
 package com.simpleplugin;
@@ -82,7 +82,7 @@ public class SimpleFileType extends LanguageFileType {
 }
 ```
 
-### 4. Define a file type factory
+### 2.4. Define a file type factory
 
 ```java
 package com.simpleplugin;
@@ -99,13 +99,13 @@ public class SimpleFileTypeFactory extends FileTypeFactory{
 }
 ```
 
-### 5. Register the file type factory
+### 2.5. Register the file type factory
 
 ```xml
       <fileTypeFactory implementation="com.simpleplugin.SimpleFileTypeFactory"/>
 ```
 
-### 6. Run the project
+### 2.6. Run the project
 
 Create a file with extension *.simple*
 and IntelliJ IDEA will automatically associate it with our language.

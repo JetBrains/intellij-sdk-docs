@@ -4,17 +4,17 @@ title: 1. Prerequisites
 ---
 
 
-### 1. Download and install IntelliJ IDEA
+### 1.1. Download and install IntelliJ IDEA
 
 Download and install either IntelliJ IDEA Ultimate or IntelliJ IDEA Community Edition.
 
-### 2. Check out Community Edition source files
+### 1.2. Check out Community Edition source files
 
 ```
 git clone git://git.jetbrains.org/idea/community.git idea
 ```
 
-### 3. Install required plugins
+### 1.3. Install required plugins
 
 Make sure that the bundled Plugin DevKit plugin is enabled.
 Install and enable
@@ -23,7 +23,7 @@ and
 [PsiViewer](http://plugins.intellij.net/plugin/?null&pluginId=227)
 plugins.
 
-### 4. Configure SDK and source files
+### 1.4. Configure SDK and source files
 
 Configure a common JDK and an IntelliJ IDEA Plugin SDK.
 For IntelliJ IDEA Plugin SDK you should specify the directory with installed IntelliJ IDEA.
@@ -37,7 +37,7 @@ Accept the list of roots by pressing OK.
 
 ![Plugins](img/plugins.png)
 
-### 5. Create a project
+### 1.5. Create a project
 
 Create an IntelliJ IDEA Plugin project and specify IntelliJ IDEA Plugin SDK.
 

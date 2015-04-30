@@ -9,7 +9,7 @@ section of the
 [Custom Language Support Tutorial](cls_tutorial.html)
 works as we expect.
 
-### 1. Define test data
+### 5.1. Define test data
 
 Create a file *FormatterTestData.simple*.
 
@@ -29,7 +29,7 @@ key\ with\ spaces = This is the value that could be looked up with the key "key 
 tab :\u0009
 ```
 
-### 2. Define a test method
+### 5.2. Define a test method
 
 ```java
 public void testFormatter() {
@@ -45,7 +45,7 @@ public void testFormatter() {
 }
 ```
 
-### 3. Run the test
+### 5.3. Run the test
 
 Run the test and make sure it's green.
 

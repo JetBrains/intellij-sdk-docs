@@ -10,7 +10,7 @@ section of the
 [Custom Language Support Tutorial](cls_tutorial.html)
 works as we expect it.
 
-### 1. Define input test data
+### 2.1. Define input test data
 
 Create a file *ParsingTestData.simple* in *testData* folder.
 
@@ -30,7 +30,7 @@ key\ with\ spaces = This is the value that could be looked up with the key "key 
 tab : \u0009
 ```
 
-### 2. Copy the expected PSI tree
+### 2.2. Copy the expected PSI tree
 
 The easiest way to get the expected PSI structure for any file is to use PSI Viewer.
 Run the project and call ```Tools``` &rarr; ```View PSI Structure```.
@@ -39,7 +39,7 @@ Run the project and call ```Tools``` &rarr; ```View PSI Structure```.
 
 Use ```Copy PSI``` button to copy the expected PSI structure to the clipboard.
 
-### 3. Define an output test data
+### 2.3. Define an output test data
 
 Create a file *ParsingTestData.txt* with the copied PSI tree.
 
@@ -94,7 +94,7 @@ Simple File(0,433)
     PsiElement(SimpleTokenType.VALUE)('\u0009')(427,433)
 ```
 
-### 2. Define a parsing test
+### 2.4. Define a parsing test
 
 ```java
 package com.simpleplugin;
@@ -127,7 +127,7 @@ public class SimpleParsingTest extends ParsingTestCase {
 }
 ```
 
-### 3. Run the test
+### 2.5. Run the test
 
 Run the test and make sure it's green.
 

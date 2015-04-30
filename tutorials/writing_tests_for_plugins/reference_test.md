@@ -10,7 +10,7 @@ section of the
 [Custom Language Support Tutorial](cls_tutorial.html),
 works as we expect.
 
-### 1. Define test data
+### 10.1. Define test data
 
 Create a file *ReferenceTestData.java*.
 
@@ -22,7 +22,7 @@ public class Test {
 }
 ```
 
-### 2. Define a test method
+### 10.2. Define a test method
 
 ```java
 public void testReference() {
@@ -32,7 +32,7 @@ public void testReference() {
 }
 ```
 
-### 3. Run the test
+### 10.3. Run the test
 
 Run the test and make sure it's green.
 

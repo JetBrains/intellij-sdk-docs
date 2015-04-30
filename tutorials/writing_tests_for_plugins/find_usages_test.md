@@ -9,7 +9,7 @@ section of the
 [Custom Language Support Tutorial](cls_tutorial.html),
 works correctly.
 
-### 1. Define test data
+### 8.1. Define test data
 
 Create a file *FindUsagesTestData.simple*.
 
@@ -39,7 +39,7 @@ public class Test {
 }
 ```
 
-### 2. Define a test method
+### 8.2. Define a test method
 
 ```java
 public void testFindUsages() {
@@ -48,7 +48,7 @@ public void testFindUsages() {
 }
 ```
 
-### 3. Run the test
+### 8.3. Run the test
 
 Run the test and make sure it's green.
 

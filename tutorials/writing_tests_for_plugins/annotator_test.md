@@ -9,7 +9,7 @@ of the
 [Custom Language Support Tutorial](cls_tutorial.html)
 works as we expect.
 
-### 1. Define test data
+### 4.1. Define test data
 
 Create a file *AnnotatorTestData.java*.
 
@@ -22,7 +22,7 @@ public class Test {
 }
 ```
 
-### 2. Define a test method
+### 4.2. Define a test method
 
 ```java
 public void testAnnotator() {
@@ -31,7 +31,7 @@ public void testAnnotator() {
 }
 ```
 
-### 3. Run the test
+### 4.3. Run the test
 
 Run the test and make sure it's green.
 

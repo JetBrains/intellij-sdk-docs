@@ -4,16 +4,16 @@ title: 1. Tests Prerequisites
 ---
 
 
-### 1. Create a folder for tests
+### 1.1. Create a folder for tests
 
 Open the project with the plugin and create a separate folder "tests".
 Mark the folder as a test source root via the context menu ```Mark Directory As```  &rarr; ```Test Source Root```.
 
-### 2. Create a folder for test data
+### 1.2. Create a folder for test data
 
 In our tests we will use test data, so we need one more folder *"testData"* to store these files.
 
-### 3. Run Configuration Parameters
+### 1.3. Run Configuration Parameters
 
 Since some of our tests will use Java files as test data, we need to mock up the project SDK.
 IntelliJ IDEA does everything automatically when we use special utility class

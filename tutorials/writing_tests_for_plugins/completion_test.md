@@ -10,7 +10,7 @@ of the
 [Custom Language Support Tutorial](cls_tutorial.html)
 works as we expect.
 
-### 1. Define test data
+### 3.1. Define test data
 
 Create a file *DefaultTestData.simple*.
 
@@ -40,7 +40,7 @@ public class Test {
 }
 ```
 
-### 2. Define a test
+### 3.2. Define a test
 
 ```java
 package com.simpleplugin;
@@ -67,7 +67,7 @@ public class SimpleCodeInsightTest extends LightCodeInsightFixtureTestCase {
 }
 ```
 
-### 3. Run the test
+### 3.3. Run the test
 
 Run the test and make sure it's green.
 

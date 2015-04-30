@@ -9,7 +9,7 @@ section of the
 [Custom Language Support Tutorial](cls_tutorial.html),
 works as we expect.
 
-### 1. Define a test method
+### 9.1. Define a test method
 
 ```java
 public void testCommenter() {
@@ -22,7 +22,7 @@ public void testCommenter() {
 }
 ```
 
-### 2. Run the test
+### 9.2. Run the test
 
 Run the test and make sure it's green.
 

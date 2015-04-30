@@ -84,8 +84,8 @@ Mark this folder as a source root and make sure everything is compiled without e
 ![Parser](img/generated_parser.png)
 
 -------
-[Previous](language_and_filetype.html)
-[Top](cls_tutorial.html)
-[Next](lexer_and_parser_definition.html)
+[Previous](tutorials/custom_language_support/language_and_filetype.html)
+[Top](tutorials/custom_language_support_tutorial.html)
+[Next](tutorials/custom_language_support/lexer_and_parser_definition.html)
 
 

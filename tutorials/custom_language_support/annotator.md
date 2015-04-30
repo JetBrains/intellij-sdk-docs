@@ -81,7 +81,7 @@ If we type an undefined property name, it will annotate the code with a error.
 
 ![Unresolved property](img/unresolved_property.png)
 
-[Previous](psi_helpers_and_utilities.html)
-[Top](cls_tutorial.html)
-[Next](line_marker_provider.html)
+[Previous](tutorials/custom_language_support/psi_helper_and_utilities.html)
+[Top](tutorials/custom_language_support_tutorial.html)
+[Next](tutorials/custom_language_support/line_marker_provider.html)
 

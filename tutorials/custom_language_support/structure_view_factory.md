@@ -158,6 +158,6 @@ public class SimpleStructureViewElement implements StructureViewTreeElement, Sor
 
 ![Structure View](img/structure_view.png)
 
-[Previous](go_to_symbol_contributor.html)
+[Previous](tutorials/custom_language_support/go_to_symbol_contributor.html)
 [Top](custom_language_support.html)
-[Next](formatter.html)
+[Next](tutorials/custom_language_support/formatter.html)

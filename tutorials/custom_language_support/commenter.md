@@ -56,7 +56,7 @@ public class SimpleCommenter implements Commenter {
 
 ![Commenter](img/commenter.png)
 
-[Previous](code_style_settings.html)
-[Top](cls_support.html)
-[Next](quick_fix.html)
+[Previous](tutorials/custom_language_support/code_style_settings.html)
+[Top](tutorials/custom_language_support_tutorial.html)
+[Next](tutorials/custom_language_support/quick_fix.html)
 

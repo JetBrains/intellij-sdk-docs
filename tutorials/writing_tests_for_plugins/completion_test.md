@@ -73,5 +73,7 @@ Run the test and make sure it's green.
 
 -----
 
-[Previous](parsing_test.html) [Top](writing_tests_for_plugins.html) [Next](annotator_test.html)
+[Previous](tutorials/writing_tests_for_plugins/parsing_test.html) 
+[Top](tutorials/writing_tests_for_plugins.html) 
+[Next](tutorials/writing_tests_for_plugins/annotator_test.html)
 

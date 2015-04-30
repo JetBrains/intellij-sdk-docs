@@ -54,4 +54,6 @@ Run the test and make sure it's green.
 
 -----
 
-[Previous](folding_test.html) [Top](writing_tests_for_plugins.html) [Next](commenter_test.html)
+[Previous](tutorials/writing_tests_for_plugins/folding_test.html) 
+[Top](tutorials/writing_tests_for_plugins.html) 
+[Next](tutorials/writing_tests_for_plugins/commenter_test.html)

@@ -37,5 +37,7 @@ Run the test and make sure it's green.
 
 -----
 
-[Previous](completion_test.html) [Top](writing_tests_for_plugins.html) [Next](formatter_test.html)
+[Previous](tutorials/writing_tests_for_plugins/completion_test.html) 
+[Top](tutorials/writing_tests_for_plugins.html) 
+[Next](tutorials/writing_tests_for_plugins/formatter_test.html)
 

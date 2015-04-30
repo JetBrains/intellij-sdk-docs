@@ -36,4 +36,6 @@ Run the test and make sure it's green.
 
 -----
 
-[Previous](rename_test.html) [Top](writing_tests_for_plugins.html) [Next](find_usages_test.html)
+[Previous](tutorials/writing_tests_for_plugins/rename_test.html) 
+[Top](tutorials/writing_tests_for_plugins.html) 
+[Next](tutorials/writing_tests_for_plugins/find_usages_test.html)

@@ -11,7 +11,6 @@
 
 * [Getting Started](basics/getting_started.html)
    <!-- TODO remove Checkout from getting started --> 
-  * [Check Out And Build Community Edition](basics/getting_started/checkout_and_build_community.html)
   * [Setting Up Development Environment](basics/getting_started/setting_up_environment.html)
   * [Creating a Plugin Project](basics/getting_started/creating_plugin_project.html)
   * [Build Number Ranges](basics/getting_started/build_number_ranges.html)
@@ -38,6 +37,7 @@
   * [Persisting State of Components](basics/persisting_state_of_components.html)
   * [PSI Cookbook](basics/psi_cookbook.html)
   * [Virtual File System](basics/virtual_file_system.html)
+* [Check Out And Build Community Edition](basics/checkout_and_build_community.html)
 * [Indexing and PSI Stubs](basics/indexing_and_psi_stubs.html)
   * [File-based indexes](basics/indexing_and_psi_stubs/file_based_indexes.html)
   * [Stub indexes](basics/indexing_and_psi_stubs/stub_indexes.html)

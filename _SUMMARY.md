@@ -118,6 +118,7 @@
   * [Action System](tutorials/action_system.html)
     * [1. Working With Custom Actions](tutorials/action_system/working_with_custom_actions.html)
     * [2. Grouping Actions](tutorials/action_system/grouping_action.html)
+  * [Editor Basics](tutorials/editor_basics.html)
 * [Plugin Development FAQ](faq.html)
 
 

@@ -4,7 +4,6 @@
     Also you can use HTML-comments.
 -->
 
-
 * [Contribution Guidelines](contribution_guidelines.html)
 * [Basics](basics.html)
   * [Getting Started](basics/getting_started.html)
@@ -47,7 +46,6 @@
     * [Test Project and Testdata Directories](basics/testing_plugins/test_project_and_testdata_directories.html)
     * [Writing Tests](basics/testing_plugins/writing_tests.html)
     * [Testing Highlighting](basics/testing_plugins/testing_highlighting.html)
-    
 * [Architecture Reference Guide](reference_guide.html)
   * [Custom Language Support](reference_guide/custom_language_support.html)
     * [Registering File Type](reference_guide/custom_language_support/registering_file_type.html)
@@ -86,7 +84,6 @@
     * [Editor Components](user_interface_components/editor_components.html)
     * [List and Tree Controls](user_interface_components/lists_and_trees.html)
     * [Miscellaneous Swing Components](user_interface_components/misc_swing_components.html)
-    
 * [Tutorials](tutorials.html)
   * [Custom Language Support](tutorials/custom_language_support_tutorial.html)
     * [1. Prerequisites](tutorials/custom_language_support/prerequisites.html)
@@ -118,7 +115,7 @@
     * [8. Find Usages Test](tutorials/writing_tests_for_plugins/find_usages_test.html)
     * [9. Commenter Test](tutorials/writing_tests_for_plugins/commenter_test.html)
     * [10. Reference Test](tutorials/writing_tests_for_plugins/reference_test.html)
-
+  * [Action System](tutorials/action_system.html)
 * [Plugin Development FAQ](faq.html)
 
 

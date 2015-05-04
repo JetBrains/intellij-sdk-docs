@@ -116,6 +116,8 @@
     * [9. Commenter Test](tutorials/writing_tests_for_plugins/commenter_test.html)
     * [10. Reference Test](tutorials/writing_tests_for_plugins/reference_test.html)
   * [Action System](tutorials/action_system.html)
+    * [1. Working With Custom Actions](tutorials/action_system/working_with_custom_actions.html)
+    * [2. Grouping Actions](tutorials/action_system/grouping_action.html)
 * [Plugin Development FAQ](faq.html)
 
 

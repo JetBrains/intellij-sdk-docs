@@ -66,7 +66,7 @@ And then the actions needs to be registered in the newly created group:
 
 After performing the steps described above the action group nad it's content will be available in the editor popup menu:
 
-![Simple Action Group](action_system/img/grouped_action.png)
+![Simple Action Group](img/grouped_action.png)
 
 ### 2.4. Working with DefaultActionGroup
 
@@ -161,7 +161,7 @@ public class CustomDefaultActionGroup extends DefaultActionGroup {
 
 After compiling and running the code sample above, *Tools* menu item should contain an extra group of action with a user-defined icon:
 
-![Default Action Group](action_system/img/default_action_group.png)
+![Default Action Group](img/default_action_group.png)
 
 ### 2.10. Action groups with variable actions set
 
@@ -241,4 +241,4 @@ After providing an implementation of
 [AnAction.java](https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java)
 and making it return a non-empty array of action Tools Menu should contain an extra group of action:
 
-![Dynamic Action Group](action_system/img/dynamic_action_group.png)
+![Dynamic Action Group](img/dynamic_action_group.png)

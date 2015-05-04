@@ -65,6 +65,20 @@ Headers without links to corresponding files won't be visible. Files not include
 
 ## Formatting Rules
 
+### Text
+To make the source code easy to read, start every new sentence from a new line. 
+Avoid semicolons, long sentences, and complicated formulations.
+
+### Links
+Place every link separately on a new line
+
+```
+Please refer to the  
+[following article](http://link.address)
+to get more information
+```
+
+
 ## Project Structure
 
 ## Styling Rules

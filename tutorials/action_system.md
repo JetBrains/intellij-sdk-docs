@@ -54,15 +54,15 @@ public class SimpleAction extends AnAction {
 To register a newly created action, <action> attribute should be added to the <actions> section of the plugin configuration file
 [plugin.xml] (https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/register_actions/META-INF/plugin.xml).
 IntelliJ IDEA has an embedded inspection that spots unregistered actions.
-!["Action never used" inspection](img/action_never_used.png)
+!["Action never used" inspection](action_system/img/action_never_used.png)
 
 To register the action and set up it's attributes press ***Alt + Enter*** while the caret is placed on the action's declaration.
-!["Register action" quick fix](img/action_never_used.png)
+!["Register action" quick fix](action_system/img/action_never_used.png)
 
 Fill the "New Action" form to set up action's parameters such as: action's name and description, a UI component the action is bound to,
 visual position of the menu item the action is bound to, and a shortcut for invoking the action.
 In our case the action will be available in the Tools Menu, it will be placed on top, and will have no shortcuts.
-!["Register action" quick fix](img/new_action.png)
+!["Register action" quick fix](action_system/img/new_action.png)
 
 After filling the "New Action" form and applying the changes *<actions>* section of our
 [plugin.xml](https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/register_actions/META-INF/plugin.xml)
@@ -121,7 +121,7 @@ configuration file like the following code sample shows:
 
 After performing the steps described above we need to compile and run the plugin to the the newly created action available as a Tools Menu item:
 
-!["Register action" quick fix](img/tools_menu_item_action.png)
+!["Register action" quick fix](action_system/img/tools_menu_item_action.png)
 
 -----------
 
@@ -196,7 +196,7 @@ method and notify the user that action cannot be executed if it's the case.
 
 After compiling and running the plugin project and invoking the action, the dialog will pop up:
 
-!["Register action" quick fix](img/action_performed.png)
+!["Register action" quick fix](action_system/img/action_performed.png)
 
 -------------
 
@@ -262,7 +262,7 @@ And then the actions needs to be registered in the newly created group:
 
 After performing the steps described above the action group nad it's content will be available in the editor popup menu:
 
-![Simple Action Group](img/grouped_action.png)
+![Simple Action Group](action_system/img/grouped_action.png)
 
 ##Working with DefaultActionGroup
 In some cases we need to implement some specific behaviour of a group of actions dependently on the context.
@@ -351,7 +351,7 @@ public class CustomDefaultActionGroup extends DefaultActionGroup {
 
 After compiling and running the code sample above, *Tools* menu item should contain an extra group of action with a user-defined icon:
 
-![Default Action Group](img/default_action_group.png)
+![Default Action Group](action_system/img/default_action_group.png)
 
 ##Action groups with variable actions set
 If a set of actions belonging to a custom actions group may vary dependently on the context,
@@ -426,7 +426,7 @@ After providing an implementation of
 [AnAction.java](https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java)
 and making it return a non-empty array of action Tools Menu should contain an extra group of action:
 
-![Dynamic Action Group](img/dynamic_action_group.png)
+![Dynamic Action Group](action_system/img/dynamic_action_group.png)
 
 ----------------
 [Source code](https://github.com/JetBrains/intellij-sdk/tree/master/code_samples/register_actions)

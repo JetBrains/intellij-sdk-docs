@@ -5,18 +5,19 @@ title: 1. Working With Custom Actions
 
 
 An action is technically a class, derived from the
-[AnAction] (https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java)
+[AnAction](https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java)
 class.
 To update the state of the action, the method AnAction.update() is periodically called by IDEA.
 The object of type
-[AnActionEvent] (https://github.com/JetBrains/intellij-community/blob/ff16ce78a1e0ddb6e67fd1dbc6e6a597e20d483a/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnActionEvent.java)
+[AnActionEvent](https://github.com/JetBrains/intellij-community/blob/ff16ce78a1e0ddb6e67fd1dbc6e6a597e20d483a/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnActionEvent.java)
 passed to this method carries the information about the current context for the action,
 and in particular, the specific presentation which needs to be updated.
 
 
 ### 1.1. Creating actions
+
 To create a new we need to extend
-[AnAction] (https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java)
+[AnAction](https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java)
 class:
 
 ```java
@@ -25,10 +26,11 @@ public class SimpleAction extends AnAction {
 ```
 
 ### 1.2. Overriding actionPerformed()
+
 The only method of an inheritor of
-[AnAction] (https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java)
-which needs to be overridden is ```public void actionPerformed(AnActionEvent anActionEvent);```
-, and it should contain a part of code to be executed after the action has been invoked. In this case the action does nothing.
+[AnAction](https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java)
+which needs to be overridden is ```public void actionPerformed(AnActionEvent anActionEvent);```, and it should contain a part of code to be executed after the action has been invoked. 
+In this case the action does nothing.
 
 ```java
 public class SimpleAction extends AnAction {
@@ -39,20 +41,21 @@ public class SimpleAction extends AnAction {
 ```
 
 ### 1.3. Registering actions
-To register a newly created action, <action> attribute should be added to the <actions> section of the plugin configuration file
-[plugin.xml] (https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/register_actions/META-INF/plugin.xml).
+
+To register a newly created action, *\<action\>* attribute should be added to the *\<actions\>* section of the plugin configuration file
+[plugin.xml](https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/register_actions/META-INF/plugin.xml).
 IntelliJ IDEA has an embedded inspection that spots unregistered actions.
 !["Action never used" inspection](img/action_never_used.png)
 
 To register the action and set up it's attributes press ***Alt + Enter*** while the caret is placed on the action's declaration.
 !["Register action" quick fix](img/action_never_used.png)
 
-Fill the "New Action" form to set up action's parameters such as: action's name and description, a UI component the action is bound to,
+Fill the **New Action** form to set up action's parameters such as: action's name and description, a UI component the action is bound to,
 visual position of the menu item the action is bound to, and a shortcut for invoking the action.
-In our case the action will be available in the Tools Menu, it will be placed on top, and will have no shortcuts.
+In our case the action will be available in the **Tools Menu**, it will be placed on top, and will have no shortcuts.
 !["Register action" quick fix](img/new_action.png)
 
-After filling the "New Action" form and applying the changes *<actions>* section of our
+After filling the **New Action** form and applying the changes *\<actions\>* section of our
 [plugin.xml](https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/register_actions/META-INF/plugin.xml)
 file will look like this:
 
@@ -67,6 +70,7 @@ file will look like this:
 ```
 
 ### 1.4. Setting attributes manually
+
 Full list of action's attributes can also be set manually in
 [plugin.xml](https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/register_actions/META-INF/plugin.xml)
 configuration file like the following code sample shows:
@@ -113,6 +117,7 @@ After performing the steps described above we need to compile and run the plugin
 !["Register action" quick fix](img/tools_menu_item_action.png)
 
 ### 1.5. Performing an action
+
 In order to make the action do something we need to implement it's ```public void actionPerformed(AnActionEvent anActionEvent);``` method.
 In the following example action invokes a dialog that shows information about a selected Project View Item and has no icon and any pre-selected default option:
 
@@ -174,7 +179,7 @@ Parameter anActionEvent carries information on the invocation place and data ava
 This means that this method is supposed to work really fast, no real work should be done at this phase.
 For example, checking selection in a tree or a list, is considered valid, but working with a file system is not.
 If you cannot understand the state of the action fast you should do it in the
-[AnActionEvent] (https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnActionEvent.java)
+[AnActionEvent](https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnActionEvent.java)
 method and notify the user that action cannot be executed if it's the case.
 
 

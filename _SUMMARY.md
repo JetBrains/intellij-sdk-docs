@@ -6,9 +6,7 @@
 
 
 * [Contribution Guidelines](contribution_guidelines.html)
-
-
-* [Basics]()
+* [Basics](basics.html)
   * [Getting Started](basics/getting_started.html)
     * [Setting Up Development Environment](basics/getting_started/setting_up_environment.html)
     * [Creating a Plugin Project](basics/getting_started/creating_plugin_project.html)
@@ -49,8 +47,8 @@
     * [Test Project and Testdata Directories](basics/testing_plugins/test_project_and_testdata_directories.html)
     * [Writing Tests](basics/testing_plugins/writing_tests.html)
     * [Testing Highlighting](basics/testing_plugins/testing_highlighting.html)
-
-* [Architecture Reference Guide]()
+    
+* [Architecture Reference Guide](reference_guide.html)
   * [Custom Language Support](reference_guide/custom_language_support.html)
     * [Registering File Type](reference_guide/custom_language_support/registering_file_type.html)
     * [Implementing Lexer](reference_guide/custom_language_support/implementing_lexer.html)
@@ -77,19 +75,19 @@
   * [Messaging Infrastructure](reference_guide/messaging_infrastructure.html)
   * [Multiple Carets](reference_guide/multiple_carets.html)
   * [Color Scheme Management](reference_guide/color_scheme_management.html)
-      * [Work with Icons and Images](reference_guide/work_with_icons_and_images.html)
-      * [Tomcat Integration](reference_guide/tomcat_integration.html)
+    * [Work with Icons and Images](reference_guide/work_with_icons_and_images.html)
+    * [Tomcat Integration](reference_guide/tomcat_integration.html)
   * [User Interface Components](user_interface_components/user_interface_components.html)
-      * [Tool Windows](user_interface_components/tool_windows.html)
-      * [Dialogs](user_interface_components/dialog_wrapper.html)
-      * [Popups](user_interface_components/popups.html)
-      * [Notifications](user_interface_components/notifications.html)
-      * [File and Class Choosers](user_interface_components/file_and_class_choosers.html)
-      * [Editor Components](user_interface_components/editor_components.html)
-      * [List and Tree Controls](user_interface_components/lists_and_trees.html)
-      * [Miscellaneous Swing Components](user_interface_components/misc_swing_components.html)
-
-* [Tutorials]()
+    * [Tool Windows](user_interface_components/tool_windows.html)
+    * [Dialogs](user_interface_components/dialog_wrapper.html)
+    * [Popups](user_interface_components/popups.html)
+    * [Notifications](user_interface_components/notifications.html)
+    * [File and Class Choosers](user_interface_components/file_and_class_choosers.html)
+    * [Editor Components](user_interface_components/editor_components.html)
+    * [List and Tree Controls](user_interface_components/lists_and_trees.html)
+    * [Miscellaneous Swing Components](user_interface_components/misc_swing_components.html)
+    
+* [Tutorials](tutorials.html)
   * [Custom Language Support](tutorials/custom_language_support_tutorial.html)
     * [1. Prerequisites](tutorials/custom_language_support/prerequisites.html)
     * [2. Language and File Type](tutorials/custom_language_support/language_and_filetype.html)

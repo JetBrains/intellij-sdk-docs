@@ -132,9 +132,11 @@ then move carets, invoke
 action, and see how logical and visual positions are related dependently on folding.
 
 Find the action in the context menu:
+
 ![Show coordinates action](img/coordinates_action.png)
 
 Perform the action to see caret positions:
+
 ![Show coordinates action](img/coordinates_demo.png)
 
 

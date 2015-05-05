@@ -122,6 +122,7 @@
     * [1. Working With Text](tutorials/editor_basics/working_with_text.html)
     * [2. Editor Coordinates System. Positions And Offsets](tutorials/editor_basics/coordinates_system.html)
     * [3. Handling Editor Events](tutorials/editor_basics/editor_events.html)
+  * [Supporting Frameworks](tutorials/framework.html)
 * [Plugin Development FAQ](faq.html)
 
 

@@ -6,6 +6,7 @@
 
 * [Contribution Guidelines](contribution_guidelines.html)
 * [Basics](basics.html)
+  * [Main Types of IntelliJ IDEA Plugins](basics/types_of_plugins.html)
   * [Getting Started](basics/getting_started.html)
     * [Setting Up Development Environment](basics/getting_started/setting_up_environment.html)
     * [Creating a Plugin Project](basics/getting_started/creating_plugin_project.html)

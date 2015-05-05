@@ -119,6 +119,8 @@
     * [1. Working With Custom Actions](tutorials/action_system/working_with_custom_actions.html)
     * [2. Grouping Actions](tutorials/action_system/grouping_action.html)
   * [Editor Basics](tutorials/editor_basics.html)
+    * [1. Working With Text](tutorials/editor_basics/working_with_text.html)
+    * [2. Editor coordinates system. Positions and offsets](tutorials/editor_basics/coordinates_system.html)
 * [Plugin Development FAQ](faq.html)
 
 

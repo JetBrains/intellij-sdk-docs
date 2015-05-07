@@ -32,7 +32,7 @@ You can use the following methods:
 * ```ProjectFileIndex.isInLibraryClasses(virtualFileorDirectory)```: Returns true if the specified virtualFileorDirectory belongs to library classes.
 * ```ProjectFileIndex.isInLibrarySource(virtualFileorDirectory)```: Returns true if the specified virtualFileorDirectory belongs to library sources.
 
-[Code sample] (https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/project_model/src/com/intellij/plugins/project/model/ProjectFileIndexSampleAction.java)
+[Code sample](https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/project_model/src/com/intellij/plugins/project/model/ProjectFileIndexSampleAction.java)
 
 
 Note that by default, the project modules use the project SDK. 
@@ -46,7 +46,7 @@ Use the ProjectFileIndex.getSourceRootForFile method. For example:
 
 Note that this method returns null if the file or directory does not belong to any source root of modules in the project.
 
-[Code sample] (https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/project_model/src/com/intellij/plugins/project/model/ProjectFileIndexSampleAction.java)
+[Code sample](https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/project_model/src/com/intellij/plugins/project/model/ProjectFileIndexSampleAction.java)
 
 
 More details can be found in this

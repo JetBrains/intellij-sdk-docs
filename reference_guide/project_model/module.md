@@ -16,11 +16,11 @@ ProjectFileIndex.getModuleForFile(virtualFile) method:
 
 ## Accessing Module Roots
 Information about model roots can be accessed via the class
- [ModuleRootManager.java] (https://github.com/JetBrains/intellij-community/blob/master/platform/projectModel-api/src/com/intellij/openapi/roots/ModuleRootManager.java),
+[ModuleRootManager.java](https://github.com/JetBrains/intellij-community/blob/master/platform/projectModel-api/src/com/intellij/openapi/roots/ModuleRootManager.java),
 for example, an instance of
-[ModuleFileIndex.java] (https://github.com/JetBrains/intellij-community/blob/master/platform/projectModel-api/src/com/intellij/openapi/roots/ModuleFileIndex.java)
+[ModuleFileIndex.java](https://github.com/JetBrains/intellij-community/blob/master/platform/projectModel-api/src/com/intellij/openapi/roots/ModuleFileIndex.java)
 can be obtained, which is analogical to the
-[ProjectFileIndex.java] (https://github.com/JetBrains/intellij-community/blob/master/platform/projectModel-api/src/com/intellij/openapi/roots/ProjectFileIndex.java)
+[ProjectFileIndex.java](https://github.com/JetBrains/intellij-community/blob/master/platform/projectModel-api/src/com/intellij/openapi/roots/ProjectFileIndex.java)
 but in the scope of a module
 
 ```java

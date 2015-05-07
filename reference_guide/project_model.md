@@ -14,6 +14,15 @@ and
 in
 [IntelliJ IDEA Web Help](https://www.jetbrains.com/idea/help/intellij-idea.html).
 
+
+## Project Structure
+
+A project consists of one or several modules.
+Each module includes the plugin source code and so called order entries that refer to SDK and libraries the module uses.
+By default, all modules uses the project SDK.
+In addition, a module can optionally have a set of facets.
+This document explains how you can explore and change the structure of projects using API.
+
 Main project structure components are:
 
 * [Project](reference_guide/project_model/project.html) 
@@ -27,79 +36,4 @@ Main project structure components are:
 
 * [Facet](reference_guide/project_model/facet.html)
 
-
-## Working with Projects
-
-*IntelliJ Platform* stores the project configuration data in XML files.
-The list of those files depends on the plugin
-[project](http://www.jetbrains.com/idea/webhelp/project.html)
-format.
-For file-based format projects, the information core to the project itself (e.g. location of the component modules, compiler settings, etc.) is stored in the <%project name%>.IPR file.
-The information about modules the project includes is stored in <%module name%>.IML files.
-Module files are created for each module.
-
-For directory-based format projects, the project and workspace settings are stored in a number of XML files under the <%Project home directory%>/.idea directory.
-Each XML file is responsible for its own set of settings and can be recognized by its name: projectCodeStyle.xml, encodings.xml, vcs.xml etc.
-As for the file-based format projects, .IML files describe modules.
-
-Main classes providing work with the project model are located in the package
-[projectModel-api.openapi](https://github.com/JetBrains/intellij-community/tree/master/platform/projectModel-api/src/com/intellij/openapi).
-Basic API classes and interfaces for the concepts of
-[project](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/openapi/project/Project.java),
-[module](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/openapi/module/Module.java),
-[application](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/openapi/application/Application.java),
-and
-[component](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/openapi/components/ProjectComponent.java)
-are placed in the
-[core-api.openapi](https://github.com/JetBrains/intellij-community/tree/master/platform/core-api/src/com/intellij/openapi)
-package.
-
-
-### Finding Source Roots
-
-To get an array of all the source roots for a project use 
-```ProjectRootManager.getContentSourceRoots()``` 
-method like this code snippet shows:
-
-
-```java
-VirtualFile[] vFiles = ProjectRootManager.getInstance(project).getContentSourceRoots();
-```
-
-
-### Checking if File Belongs to a Project
-
-Use 
-[ProjectFileIndex.java](https://github.com/JetBrains/intellij-community/blob/master/platform/projectModel-api/src/com/intellij/openapi/roots/ProjectFileIndex.java)
-to get this information.
-
-### Getting an Instance of the ProjectFileIndex Interface
-
-Use the ProjectRootManager.getFileIndex() method. For example:
-
-```java
-ProjectFileIndex projectFileIndex = ProjectRootManager.getInstance(project).getFileIndex();
-```
-
-Note that this method returns null if the file does not belong to any module.
-You can also use the ProjectFileIndex.getContentRootForFile method to get the module content root to which the specified file or directory belongs:
-
-```java
-VirtualFile moduleContentRoot = ProjectRootManager.getInstance(project).getFileIndex().getContentRootForFile(virtualFileOrDirectory);
-``` 
-
-## Changing the project structure
-
-Utility classes which can be used for modifying a project structure can be found in the package
-[projectModel-impl.openapi](https://github.com/JetBrains/intellij-community/blob/master/platform/projectModel-impl/src/com/intellij/openapi).
-It's
-[roots](https://github.com/JetBrains/intellij-community/blob/master/platform/projectModel-impl/src/com/intellij/openapi/roots/)
-subpackage contains instances and utilities meant to work with project and module source roots, including
-[ModuleRootModificationUtil.java](https://github.com/JetBrains/intellij-community/blob/master/platform/projectModel-impl/src/com/intellij/openapi/roots/ModuleRootModificationUtil.java)
-and
-[ProjectRootUtil.java](https://github.com/JetBrains/intellij-community/blob/master/platform/projectModel-impl/src/com/intellij/openapi/projectRoots/impl/ProjectRootUtil.java)
-
-Refer to the
-[basic example](https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/project_model/src/com/intellij/plugins/project/model/ModificationAction.java)
-of on-the-fly project structure modification to learn how it can be implemented.
 

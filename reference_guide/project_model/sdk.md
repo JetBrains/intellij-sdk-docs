@@ -19,17 +19,35 @@ Main information about the project Sdk can be accessed via
 [ProjectRootManager.java](https://github.com/JetBrains/intellij-community/blob/master/platform/projectModel-api/src/com/intellij/openapi/roots/ProjectRootManager.java)
 like the following example shows
 
-```String projectSdk = ProjectRootManager.getInstance(project).getProjectSdk();```
-
-[Code sample](https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/project_model/src/com/intellij/plugins/project/model/ProjectSdkAction.java)
-
+```java
+String projectSdk = ProjectRootManager.getInstance(project).getProjectSdk();
+```
 
 ### Getting And Setting Project SDK Attributes
 
-* To get the project-level SDK: ```Sdk projectSDK = ProjectRootManager.getInstance(project).getProjectSdk();```
+* To get the project-level SDK
 
-* To get the project-level SDK name: ```String projectSDKName = ProjectRootManager.getInstance(project).getProjectSdkName();```
+  ```java
+  Sdk projectSDK = ProjectRootManager.getInstance(project).getProjectSdk();
+  ```
 
-* To set the project-level SDK: ```ProjectRootManager.getInstance(project).setProjectSdk(Sdk jdk);```
+* To get the project-level SDK name:
+ 
+  ```java 
+  String projectSDKName = ProjectRootManager.getInstance(project).getProjectSdkName();
+  ```
 
-* To set the project-level SDK name: ```ProjectRootManager.getInstance(project).setProjectSdkName(String name);```
+* To set the project-level SDK:
+ 
+  ```java
+  ProjectRootManager.getInstance(project).setProjectSdk(Sdk jdk);
+  ```
+
+* To set the project-level SDK name:
+ 
+  ```java
+  ProjectRootManager.getInstance(project).setProjectSdkName(String name);
+  ```
+  
+See the following [code sample](https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/project_model/src/com/intellij/plugins/project/model/ProjectSdkAction.java)
+to get more familiar with SDK manipulation tool set.

@@ -11,7 +11,9 @@ A module can depend on other modules of the project.
 To determine a module in the project in question to which the specified virtual file belongs, use the
 ProjectFileIndex.getModuleForFile(virtualFile) method:
 
-```Module module = ProjectRootManager.getInstance(project).getFileIndex().getModuleForFile(virtualFile);```
+```java
+Module module = ProjectRootManager.getInstance(project).getFileIndex().getModuleForFile(virtualFile);
+```
 
 
 ## Accessing Module Roots

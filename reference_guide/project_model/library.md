@@ -20,36 +20,37 @@ Package
 provides functionality for working with project libraries and jars.
 Libraries and jars can be retrieved like the following snippet shows
 
-    ProjectFileIndex fileIndex = ProjectRootManager.getInstance(project).getFileIndex();
-    OrderEntry orderEntry : fileIndex.getOrderEntriesForFile(virtualFile));
+```java
+ProjectFileIndex fileIndex = ProjectRootManager.getInstance(project).getFileIndex();
+OrderEntry orderEntry : fileIndex.getOrderEntriesForFile(virtualFile));
+```
     
 ## Checking Belonging to a Library
 
 The ProjectFileIndex interface implements a number of methods you can use to check whether the specified file belongs to the project library classes or library sources.
 You can use the following methods:
 
-* ```ProjectFileIndex.isLibraryClassFile(virtualFile)```: Returns true if the specified virtualFile is a compiled class file.
-* ```ProjectFileIndex.isInLibraryClasses(virtualFileorDirectory)```: Returns true if the specified virtualFileorDirectory belongs to library classes.
-* ```ProjectFileIndex.isInLibrarySource(virtualFileorDirectory)```: Returns true if the specified virtualFileorDirectory belongs to library sources.
+* To check if a specified virtual file is a compiled class file use
+  ```java
+  ProjectFileIndex.isLibraryClassFile(virtualFile)
+  ```
+* To check if a specified virtual file or directory belongs to library classes use
+  ```java
+  ProjectFileIndex.isInLibraryClasses(virtualFileorDirectory)
+  ```
+* To check if the specified virtual file or directory belongs to library sources use
+  ```java
+  ProjectFileIndex.isInLibrarySource(virtualFileorDirectory)
+  ```
 
-[Code sample](https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/project_model/src/com/intellij/plugins/project/model/ProjectFileIndexSampleAction.java)
+See the following [code sample](https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/project_model/src/com/intellij/plugins/project/model/ProjectFileIndexSampleAction.java)
+to see how the method mentioned above can be applied.
 
 
-Note that by default, the project modules use the project SDK. 
+**Note:** 
+By default, the project modules use the project SDK. 
 Optionally, you can configure individual SDK for each module.
 
-### Checking Belonging to a Module Source Root
 
-Use the ProjectFileIndex.getSourceRootForFile method. For example:
-
-```VirtualFile moduleSourceRoot = ProjectRootManager.getInstance(project).getFileIndex().getSourceRootForFile(virtualFileOrDirectory);```
-
-Note that this method returns null if the file or directory does not belong to any source root of modules in the project.
-
-[Code sample](https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/project_model/src/com/intellij/plugins/project/model/ProjectFileIndexSampleAction.java)
-
-
-More details can be found in this
+More details on libraries can be found in this
 [code sample](https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/project_model/src/com/intellij/plugins/project/model/LibrariesAction.java)
-
-

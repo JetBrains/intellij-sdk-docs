@@ -28,3 +28,15 @@ but in the scope of a module
 ```java
 ModuleRootManager.getInstance(currentModule).getFileIndex()
 ```
+
+### Checking Belonging to a Module Source Root
+
+To check if a virtual file or directory belongs to a module source root, use the 
+```ProjectFileIndex.getSourceRootForFile``` 
+method. 
+This method returns null if the file or directory does not belong to any source root of modules in the project.
+
+
+```java
+VirtualFile moduleSourceRoot = ProjectRootManager.getInstance(project).getFileIndex().getSourceRootForFile(virtualFileOrDirectory);
+```

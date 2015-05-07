@@ -4,7 +4,7 @@ title: Project model. Project roots and libraries. Configuring the project from 
 ---
 
 This topic considers the concept of IntelliJ IDEA projects and related subjects, such as modules, facets, libraries, SDK.
-The project structure and Java classes you can use to manage projects and modules have been considered.
+The project structure and Java classes you can use to manage projects and modules are also covered.
 
 #Project and It's Components
 This section briefly discusses the IDEA project structure, project components and related terms. For more information about projects and their components, refer to

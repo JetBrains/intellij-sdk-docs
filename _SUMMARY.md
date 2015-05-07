@@ -48,6 +48,7 @@
     * [Writing Tests](basics/testing_plugins/writing_tests.html)
     * [Testing Highlighting](basics/testing_plugins/testing_highlighting.html)
 * [Architecture Reference Guide](reference_guide.html)
+  * [Project Model](reference_guide/project_model.html)
   * [Custom Language Support](reference_guide/custom_language_support.html)
     * [Registering File Type](reference_guide/custom_language_support/registering_file_type.html)
     * [Implementing Lexer](reference_guide/custom_language_support/implementing_lexer.html)

@@ -1,5 +1,7 @@
-Project model. Project roots and libraries. Configuring the project from code.
-=================
+---
+layout: editable
+title: Project model. Project roots and libraries. Configuring the project from code.
+---
 
 This topic considers the concept of IntelliJ IDEA projects and related subjects, such as modules, facets, libraries, SDK.
 The project structure and Java classes you can use to manage projects and modules have been considered.

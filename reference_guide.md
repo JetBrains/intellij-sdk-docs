@@ -8,7 +8,7 @@ If you are not familiar with *IntelliJ Platform* API please refer to
 [Basics](basics.html)
 section.
 
-
+* [Project Model](reference_guide/project_model.html)
 * [Custom Language Support](reference_guide/custom_language_support.html)
 * [Frameworks and External APIs](reference_guide/frameworks_and_external_apis.html)  
 * [VCS Integration Plugins](reference_guide/vcs_integration_for_plugins.html)

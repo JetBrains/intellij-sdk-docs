@@ -14,6 +14,19 @@ and
 in
 [IntelliJ IDEA Web Help](https://www.jetbrains.com/idea/help/intellij-idea.html).
 
+Main project structure components are:
+
+* [Project](reference_guide/project_model/project.html) 
+  itself
+
+* [Module](reference_guide/project_model/module.html)
+
+* [SDK](reference_guide/project_model/sdk.html)
+
+* [Library](reference_guide/project_model/library.html)
+
+* [Facet](reference_guide/project_model/facet.html)
+
 
 ## Working with Projects
 

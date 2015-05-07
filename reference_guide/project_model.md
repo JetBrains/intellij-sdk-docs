@@ -1,6 +1,6 @@
 ---
 layout: editable
-title: Project model. Project roots and libraries. Configuring the project from code.
+title: Project Model. Roots and Libraries. Configuring Project from Code.
 ---
 
 This section considers internal architecture *IntelliJ Platform* projects

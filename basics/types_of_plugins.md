@@ -3,7 +3,7 @@ layout: editable
 title: Main Types of IntelliJ IDEA Plugins
 ---
 
-IntelliJ IDEA can be modified and adjusted for particular purposes by adding plugins.
+Products based on *IntelliJ Platform* can be modified and adjusted for particular purposes by adding plugins.
 All the plugins which are already available for download can be found at 
 [JetBrains Plugin Repository](https://plugins.jetbrains.com/).
 

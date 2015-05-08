@@ -20,3 +20,4 @@ More detailed explanation of the API components can be found in the
 * [Editor Basics](tutorials/editor_basics.html)
 * [Run Configurations](tutorials/run_configurations.html)
 * [Supporting Frameworks](tutorials/framework.html)
+* [Tree Structure View](tutorials/tree_structure_view.html)

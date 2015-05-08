@@ -131,6 +131,7 @@
     * [3. Handling Editor Events](tutorials/editor_basics/editor_events.html)
   * [Run Configurations](tutorials/run_configurations.html)
   * [Supporting Frameworks](tutorials/framework.html)
+  * [Tree Structure View](tutorials/tree_structure_view.html)
 * [Plugin Development FAQ](faq.html)
 
 

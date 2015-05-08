@@ -80,3 +80,8 @@ section to know how this could be done.
 After going through the steps described above you can see only text files and directories belonging to a project in the Project View.
 
 ![Text Files](tree_structure_view/img/text_only.png)
+
+
+Check out 
+[plugin source code](https://github.com/JetBrains/intellij-sdk-docs/tree/master/code_samples/tree_structure_provider)
+and build the project to see how TreeStructureView provider works in practice.

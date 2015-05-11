@@ -81,9 +81,35 @@ to get more information
 
 ## Project Structure
 
-## Styling Rules
+All the documentation is logically divided into three major parts:
 
-## Images
+* **Basics**
+  Contains information required to get familiar with the plugin development environment and the API
+* **Architecture Reference Guide**
+  More in-depth API description 
+* **Tutorials**
+  Series of steps and code samples that show how parts of the API can be use in practice
+  
+Your article should be placed in one of these three categories dependently on the type of the content.
+
+
+### \_SUMMARY.md
+
+File \_SUMMARY.md located in the project root defines the project structure and it's table of contents.
+It contains a tree of article headers linked to urls. 
+Header items without corresponding links will not be processed and listed.
+
+### Child Documents
+
+To place child documents, create a subdirectory named like a parent article and place all the child documents in it.
+
+
+### Images
+
+To place images for an article, in the article's directory root create a subfolder named \*article_name\*\/img. 
+Please downscale screenshots made at high resolution.
+
+
 
 
 

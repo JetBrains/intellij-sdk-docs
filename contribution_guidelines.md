@@ -100,7 +100,7 @@ To place child documents, create a subdirectory named like a parent article and 
 
 ### Images
 
-To place images for an article, in the article's directory root create a subfolder named \*article_name\*\/img. 
+To place images for an article, in the article's directory root create a subfolder named \<article_name\>/img. 
 Please downscale screenshots made at high resolution.
 
 

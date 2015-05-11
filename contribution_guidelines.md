@@ -60,7 +60,7 @@ To process a Markdown file you need to refer to it's HTML counterpart in *\_SUMM
 File 
 [\_SUMMARY.md](https://github.com/JetBrains/intellij-sdk-docs/blob/master/_SUMMARY.md) 
 located in the root directory defines project's hierarchical structure displayed on the left side of the page in a tree form.
-Place the name of an article and a link relatively to the site root to the correponding HTML document to *\_SUMMARY.md* to list the article in TOC.
+Place the name of an article and a link relatively to the site root to the corresponding HTML document to *\_SUMMARY.md* to list the article in TOC.
 Headers without links to corresponding files won't be visible. Files not included in the listing wont be processed. 
 
 ### Formatting Rules

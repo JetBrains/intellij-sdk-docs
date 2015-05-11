@@ -11,14 +11,14 @@ Project source code terms of use, reproduction, and redistribution is defined by
 
 ## Contributing Changes
 
-### Uses with Write Access
+### Users with Write Access
 To contribute your changes
 [clone the project](https://help.github.com/articles/fetching-a-remote/),
 implement your changes, and
 [push](https://help.github.com/articles/pushing-to-a-remote/) them to the repository.
 
 
-### User with Read-Only Access
+### Users with Read-Only Access
 
 To contribute you changes use a 
 [pull request](https://help.github.com/articles/using-pull-requests/).
@@ -38,7 +38,6 @@ The project contain the following major types of content:
     An article describes some part of the API and general rule of using it in a free form.
 2.  Step-by-step tutorials
 3.  Code samples
-
 
 
 ### Markup

@@ -33,7 +33,7 @@ public class DemoModuleType extends ModuleType<DemoModuleBuilder> {
     @NotNull
     @Override
     public String getName() {
-        return "Demo";
+        return "Demo Module Type";
     }
 
     @NotNull

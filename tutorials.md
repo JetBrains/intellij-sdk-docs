@@ -18,6 +18,7 @@ More detailed explanation of the API components can be found in the
 * [Writing Tests For Plugins](tutorials/writing_tests_for_plugins.html)
 * [Action System](tutorials/action_system.html)
 * [Editor Basics](tutorials/editor_basics.html)
+* [Project Wizard](tutorials/project_wizard.html)
 * [Code Inspections](tutorials/code_inspections.html)
 * [Run Configurations](tutorials/run_configurations.html)
 * [Supporting Frameworks](tutorials/framework.html)

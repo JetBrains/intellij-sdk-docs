@@ -129,6 +129,7 @@
     * [1. Working With Text](tutorials/editor_basics/working_with_text.html)
     * [2. Editor Coordinates System. Positions And Offsets](tutorials/editor_basics/coordinates_system.html)
     * [3. Handling Editor Events](tutorials/editor_basics/editor_events.html)
+  * [Project Wizard](tutorials/project_wizard.html)
   * [Code Inspections](tutorials/code_inspections.html)
   * [Run Configurations](tutorials/run_configurations.html)
   * [Supporting Frameworks](tutorials/framework.html)

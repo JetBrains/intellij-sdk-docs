@@ -131,6 +131,7 @@
     * [3. Handling Editor Events](tutorials/editor_basics/editor_events.html)
   * [Project Wizard](tutorials/project_wizard.html)
     * [Adding New Steps to Project Wizard](tutorials/project_wizard/adding_new_steps.html)
+    * [Supporting Module Types](tutorials/project_wizard/module_types.md)
   * [Code Inspections](tutorials/code_inspections.html)
   * [Run Configurations](tutorials/run_configurations.html)
   * [Supporting Frameworks](tutorials/framework.html)

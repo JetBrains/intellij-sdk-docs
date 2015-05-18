@@ -41,7 +41,7 @@ in case of a custom syntax or DSL.
 * Direct access to the framework's functionality
 
 Refer to 
-[AngularJS plugin](https://plugins.jetbrains.com/plugin/6971?pr=idea) 
+[Struts 2 plugin](https://plugins.jetbrains.com/plugin/1698) 
 as an example of a framework integration.
 
 # Tools Integration

@@ -31,7 +31,9 @@ To iterate over the elements in a file, use ```psiFile.accept(new PsiRecursiveEl
 
 ## Where does it come from?
 
-As the PSI is language-dependent, PSI files are created through the (link: https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/lang/Language.java text: Language ) object, using the ```LanguageParserDefinitions.INSTANCE.forLanguage(language).createFile(fileViewProvider)``` method.
+As the PSI is language-dependent, PSI files are created through the 
+[Language](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/lang/Language.java) 
+object, using the ```LanguageParserDefinitions.INSTANCE.forLanguage(language).createFile(fileViewProvider)``` method.
 
 Like documents, PSI files are created on demand when the PSI is accessed for a particular file.
 
@@ -56,7 +58,9 @@ To save the PSI file to disk, use the
 ## How do I extend it?
 
 The PSI can be extended to support additional languages through custom language plugins.
-Developing such plugins is extensively documented in [another article] (Developing Custom Language Plugins for IntelliJ IDEA).
+Developing such plugins is documented in 
+[Custom Language Support](reference_guide/custom_language_support.html) 
+reference guide.
 
 ## What are the rules for working with it?
 

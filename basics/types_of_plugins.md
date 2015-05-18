@@ -61,7 +61,7 @@ plugin as an example
 
 Plugins from these group apply different changes to the standard user interface of the IDE. 
 Newly added components can either be interactive and provide new functionality, or be just a visual modification.
-[Background Image](https://plugins.jetbrains.com/plugin/274?pr=idea) 
+[Background Image](https://plugins.jetbrains.com/plugin/72) 
 plugin can be an example.
 
 

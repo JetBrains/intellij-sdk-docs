@@ -25,13 +25,16 @@ One of the ways to improve *IntelliJ SDK Documentation* is to
 Any kind of content, like tutorials, articles about *IntelliJ* architecture, code samples, that can can help plugin developers, is kindly welcome.
 Refer to
 [Contribution Guidelines](contribution_guidelines.html)
-if you want to share your knowledge and help us make documentation better.
+if you want to share your knowledge.
 
 
 Please inform about any **content inconsistencies**, outdated materials, cosmetic issues, and other defects you find by submitting an issue to
 [YouTrack](https://youtrack.jetbrains.com/issues/IJSDK). 
 If you haven't found a documentation topic you were looking for, feel free to file a
 **[request](https://youtrack.jetbrains.com/newIssue?project=IJSDK&clearDraft=true&c=)**.
+
+[Provide your feedback](http://www.surveygizmo.com/s3/2149448/IntelliJ-SDK-Docs)
+to help us make *IntelliJ Platform* documentation better.
 
 
 

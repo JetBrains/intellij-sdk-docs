@@ -4,7 +4,6 @@
     Also you can use HTML-comments.
 -->
 
-* [Contribution Guidelines](contribution_guidelines.html)
 * [Basics](basics.html)
   * [Main Types of IntelliJ IDEA Plugins](basics/types_of_plugins.html)
   * [Getting Started](basics/getting_started.html)
@@ -137,6 +136,7 @@
   * [Supporting Frameworks](tutorials/framework.html)
   * [Tree Structure View](tutorials/tree_structure_view.html)
 * [Plugin Development FAQ](faq.html)
+* [Contribution Guidelines](contribution_guidelines.html)
 
 
 

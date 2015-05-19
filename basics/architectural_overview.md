@@ -13,14 +13,14 @@ and then return to this document.
 
 This topic covers the following subjects:
 
-* [General Threading Rules](general_topics/architectural_overview/general_threading_rules.html)
+* [General Threading Rules](architectural_overview/general_threading_rules.html)
 
-* [Virtual Files](general_topics/architectural_overview/virtual_file.html)
+* [Virtual Files](architectural_overview/virtual_file.html)
 
-* [Documents](general_topics/architectural_overview/documents.html)
+* [Documents](architectural_overview/documents.html)
  
-* [PSI Files](general_topics/architectural_overview/psi_files.html)
+* [PSI Files](architectural_overview/psi_files.html)
 
-* [File View Providers](general_topics/architectural_overview/file_view_providers.html)
+* [File View Providers](architectural_overview/file_view_providers.html)
  
-* [Psi Elements](general_topics/architectural_overview/psi_elements.html)
+* [Psi Elements](architectural_overview/psi_elements.html)

@@ -46,7 +46,7 @@ You can use the following methods:
   ProjectFileIndex.isInLibrarySource(virtualFileorDirectory)
   ```
 
-See the following [code sample](https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/project_model/src/com/intellij/plugins/project/model/ProjectFileIndexSampleAction.java)
+See the following [code sample](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/project_model/src/com/intellij/tutorials/project/model/ProjectFileIndexSampleAction.java)
 to see how the method mentioned above can be applied.
 
 
@@ -56,4 +56,4 @@ Optionally, you can configure individual SDK for each module.
 
 
 More details on libraries can be found in this
-[code sample](https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/project_model/src/com/intellij/plugins/project/model/LibrariesAction.java)
+[code sample](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/project_model/src/com/intellij/tutorials/project/model/LibrariesAction.java)

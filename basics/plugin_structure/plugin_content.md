@@ -3,7 +3,7 @@ layout: editable
 title: Plugin Content
 ---
 
-*There are 3 ways how to organize plugin content:*
+*There are 2 ways how to organize plugin content:*
 
 1. A plugin consists of one .jar file placed in the plugins directory:
 
@@ -20,28 +20,9 @@ title: Plugin Content
 			META-INF
 				plugin.xml
    ```
+   
 
-2. Plugin files are located in a folder:
-
-   ```
-.IntelliJIDEAx0
-	plugins
-		Sample
-			lib
-				libfoo.jar
-				libbar.jar
-			classes
-				com/foo/.....
-				...
-				...
-
-			META-INF
-				plugin.xml
-   ```
-
-   The 'classes' folder and all jars located in the 'lib' folder are automatically added to the classpath.
-
-3. Plugin files are located in a jar-file that is placed to the lib folder:
+2. Plugin files are located in a jar-file that is placed to the lib folder:
 
    ```
 .IntelliJIDEAx0

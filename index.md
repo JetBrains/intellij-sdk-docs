@@ -31,7 +31,7 @@ if you want to share your knowledge.
 Please inform about any **content inconsistencies**, outdated materials, cosmetic issues, and other defects you find by submitting an issue to
 [YouTrack](https://youtrack.jetbrains.com/issues/IJSDK). 
 If you haven't found a documentation topic you were looking for, feel free to file a
-**[request](https://youtrack.jetbrains.com/newIssue?project=IJSDK&clearDraft=true&c=)**.
+**[request](https://youtrack.jetbrains.com/newIssue?project=IJSDK)**.
 
 [Provide your feedback](http://www.surveygizmo.com/s3/2149448/IntelliJ-SDK-Docs)
 to help us make *IntelliJ Platform* documentation better.

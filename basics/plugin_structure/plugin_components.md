@@ -209,11 +209,3 @@ interface), or the ```getState``` method is invoked (if the component implements
 
 Note that you should not request any other components using the ```getComponent()``` method in the constructor of your component, otherwise you'll get an assertion.
 If you need access to other components when initializing your component, you can specify them as constructor parameters or access them in the ```initComponent``` method.
-
-### Sample Plugin
-
-A sample plugin that illustrates how to create a plugin with the application level and project level components is available in the ***_<%IDEA project directory%>/community/samples/plugin_ directory***.
-
-*To open sample plugin*
-
-*  Run *IntelliJ IDEA* and open the _<%IDEA project directory%>/community/samples/plugin/plugin.ipr_ file.

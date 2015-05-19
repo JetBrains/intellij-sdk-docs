@@ -41,7 +41,3 @@ The general read/write action rules are in effect. In addition to that, any oper
 If the file corresponding to a document is read-only (for example, not checked out from the version control system), document modifications will fail. Thus, before modifying the document, it is necessary to call ```ReadonlyStatusHandler.getInstance(project).ensureFilesWritable()``` to check out the file if necessary.
 
 All text strings passed to document modification methods (```setText```, ```insertString```, ```replaceString```) must use only \n as line separators.
-
-## Samples
-
-A sample plugin project that illustrates how to work with document files is available in the _<%IDEA project directory%>/community/samples/textEditor_ directory. For more information, see [Sample Text File Editor]().

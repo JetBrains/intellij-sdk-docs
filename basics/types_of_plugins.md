@@ -54,7 +54,7 @@ This implies:
 * Access to external resources
 
 Refer to 
-[TeamCity integration](https://plugins.jetbrains.com/plugin/1820?pr=idea) 
+[Gerrit integration](https://plugins.jetbrains.com/plugin/7272?pr=idea) 
 plugin as an example
 
 # User Interface Add-Ons

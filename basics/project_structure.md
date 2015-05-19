@@ -91,14 +91,14 @@ As for the file-based format projects, .IML files describe modules.
 
 To work with projects and project files, you can use the following classes and interfaces:
 
-* [Project](http://git.jetbrains.org/?p=idea/community.git;a=blob;f=platform/core-api/src/com/intellij/openapi/project/Project.java;hb=HEAD) interface.
-* [ProjectRootManager](http://git.jetbrains.org/?p=idea/community.git;a=blob;f=platform/projectModel-api/src/com/intellij/openapi/roots/ProjectRootManager.java;hb=HEAD) abstract class.
-* [ProjectManager](http://git.jetbrains.org/?p=idea/community.git;a=blob;f=platform/projectModel-api/src/com/intellij/openapi/project/ProjectManager.java;hb=HEAD) abstract class.
-* [ProjectFileIndex](http://git.jetbrains.org/?p=idea/community.git;a=blob;f=platform/projectModel-api/src/com/intellij/openapi/roots/ProjectFileIndex.java;hb=HEAD) interface.
+* [Project](https://github.com/JetBrains/intellij-community/tree/master/platform/core-api/src/com/intellij/openapi/project/Project.java) interface.
+* [ProjectRootManager](https://github.com/JetBrains/intellij-community/tree/master/platform/projectModel-api/src/com/intellij/openapi/roots/ProjectRootManager.java) abstract class.
+* [ProjectManager](https://github.com/JetBrains/intellij-community/tree/master/platform/projectModel-api/src/com/intellij/openapi/project/ProjectManager.java) abstract class.
+* [ProjectFileIndex](https://github.com/JetBrains/intellij-community/tree/master/platform/projectModel-api/src/com/intellij/openapi/roots/ProjectFileIndex.java) interface.
 
 Note that you don't need to access project files directly to load or save settings. 
 See 
-[Persisting State of Components]() 
+[Persisting State of Components](http://www.jetbrains.org/intellij/sdk/docs/basics/persisting_state_of_components.html) 
 for more information.
 
 Note that hereafter, the ```project``` variable is of the ```Project``` type. 
@@ -185,13 +185,13 @@ Note that by default, the project modules use the project SDK. Optionally, you c
 
 *IntelliJ Platform* provides a number of Java classes and interfaces you can use to work with modules:
 
-* [ModuleManager](http://git.jetbrains.org/?p=idea/community.git;a=blob;f=platform/projectModel-api/src/com/intellij/openapi/module/ModuleManager.java;hb=HEAD) abstract class.
-* [Module](http://git.jetbrains.org/?p=idea/community.git;a=blob;f=platform/core-api/src/com/intellij/openapi/module/Module.java;hb=HEAD) interface.
-* [ModuleRootManager](http://git.jetbrains.org/?p=idea/community.git;a=blob;f=platform/projectModel-api/src/com/intellij/openapi/roots/ModuleRootManager.java;hb=HEAD) abstract class.
-* [ModuleRootModel](http://git.jetbrains.org/?p=idea/community.git;a=blob;f=platform/projectModel-api/src/com/intellij/openapi/roots/ModuleRootModel.java;hb=HEAD) interface.
-* [ModuleUtil](http://git.jetbrains.org/?p=idea/community.git;a=blob;f=platform/lang-api/src/com/intellij/openapi/module/ModuleUtil.java;hb=HEAD) class.
-* [ModifiableModuleModel](http://git.jetbrains.org/?p=idea/community.git;a=blob;f=platform/projectModel-api/src/com/intellij/openapi/module/ModifiableModuleModel.java;hb=HEAD) interface.
-* [ModifiableRootModel](http://git.jetbrains.org/?p=idea/community.git;a=blob;f=platform/projectModel-api/src/com/intellij/openapi/roots/ModifiableRootModel.java;hb=HEAD) interface.
+* [ModuleManager](https://github.com/JetBrains/intellij-community/tree/master/platform/projectModel-api/src/com/intellij/openapi/module/ModuleManager.java) abstract class.
+* [Module](https://github.com/JetBrains/intellij-community/tree/master/platform/core-api/src/com/intellij/openapi/module/Module.java) interface.
+* [ModuleRootManager](https://github.com/JetBrains/intellij-community/tree/master/platform/projectModel-api/src/com/intellij/openapi/roots/ModuleRootManager.java) abstract class.
+* [ModuleRootModel](https://github.com/JetBrains/intellij-community/tree/master/platform/projectModel-api/src/com/intellij/openapi/roots/ModuleRootModel.java) interface.
+* [ModuleUtil](https://github.com/JetBrains/intellij-community/tree/master/platform/lang-api/src/com/intellij/openapi/module/ModuleUtil.java) class.
+* [ModifiableModuleModel](https://github.com/JetBrains/intellij-community/tree/master/platform/projectModel-api/src/com/intellij/openapi/module/ModifiableModuleModel.java) interface.
+* [ModifiableRootModel](https://github.com/JetBrains/intellij-community/tree/master/platform/projectModel-api/src/com/intellij/openapi/roots/ModifiableRootModel.java) interface.
 
 This section discusses how to complete some common tasks related to management of modules.
 
@@ -208,7 +208,7 @@ tab of the *Project Structure* dialog box.
 To explore the 
 [module dependencies](http://www.jetbrains.com/idea/webhelp/dependencies-tab.html), 
 use the 
-[OrderEnumerator](http://git.jetbrains.org/?p=idea/community.git;a=blob;f=platform/projectModel-api/src/com/intellij/openapi/roots/OrderEnumerator.java;hb=HEAD) 
+[OrderEnumerator](https://github.com/JetBrains/intellij-community/tree/master/platform/projectModel-api/src/com/intellij/openapi/roots/OrderEnumerator.java) 
 class.
 
 The following code snippet illustrates how you can get classpath (classes root of all dependencies) for a module:
@@ -221,7 +221,7 @@ VirtualFile[] roots = ModuleRootManager.getInstance(module).orderEntries().class
 
 Use the ```ModuleRootManager.getSdk()``` method. 
 This method returns a value of the 
-[Sdk](http://git.jetbrains.org/?p=idea/community.git;a=blob;f=platform/projectModel-api/src/com/intellij/openapi/projectRoots/Sdk.java;hb=HEAD) 
+[Sdk](https://github.com/JetBrains/intellij-community/tree/master/platform/projectModel-api/src/com/intellij/openapi/projectRoots/Sdk.java) 
 type.
 The following code snippet illustrates how you can get detailed information on SDK the specified module uses:
 
@@ -304,13 +304,13 @@ Messages.showInfoMessage(roots.toString(), "Library Info");
 ```
 
 In this sample code, ```lib``` is of the 
-[Library](http://git.jetbrains.org/?p=idea/community.git;a=blob;f=platform/projectModel-api/src/com/intellij/openapi/roots/libraries/Library.java;hb=HEAD) 
+[Library](https://github.com/JetBrains/intellij-community/blob/master/platform/projectModel-api/src/com/intellij/openapi/roots/libraries/Library.java) 
 type.
 
 #### How do I get a set of facets the module includes?
 
 Use the 
-[FacetManager](http://git.jetbrains.org/?p=idea/community.git;a=blob;f=platform/lang-api/src/com/intellij/facet/FacetManager.java;hb=HEAD] and [Facet |http://git.jetbrains.org/?p=idea/community.git;a=blob;f=platform/lang-api/src/com/intellij/facet/Facet.java;hb=HEAD) 
+[FacetManager](https://github.com/JetBrains/intellij-community/blob/master/platform/lang-api/src/com/intellij/facet/FacetManager.java) 
+and 
+[Facet](https://github.com/JetBrains/intellij-community/blob/master/platform/lang-api/src/com/intellij/facet/Facet.java) 
 classes.
-
-_to be continued_

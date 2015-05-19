@@ -4,11 +4,7 @@ title: Plugin Structure
 ---
 
 
-Plugins are the only supported way to extend IDEA functionality.
-A plugin uses API exposed by IDEA or other plugins to implement its functionality.
 This document is focused on the plugin system structure and plugin lifecycle.
-It doesn't specify any other APIs that may be used by plugins.
-
 The following subjects are covered:
 
 * [Plugin Content](general_topics/plugin_structure/plugin_content.html)

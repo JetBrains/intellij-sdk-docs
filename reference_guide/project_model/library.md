@@ -31,14 +31,17 @@ The ProjectFileIndex interface implements a number of methods you can use to che
 You can use the following methods:
 
 * To check if a specified virtual file is a compiled class file use
+
   ```java
   ProjectFileIndex.isLibraryClassFile(virtualFile)
   ```
 * To check if a specified virtual file or directory belongs to library classes use
+
   ```java
   ProjectFileIndex.isInLibraryClasses(virtualFileorDirectory)
   ```
 * To check if the specified virtual file or directory belongs to library sources use
+
   ```java
   ProjectFileIndex.isInLibrarySource(virtualFileorDirectory)
   ```

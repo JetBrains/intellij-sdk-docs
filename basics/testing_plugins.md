@@ -24,20 +24,20 @@ Another consequence of our testing approach is what our test framework does not 
 We have a few tests in our codebase that use JMock, but in general we find it difficult to mock all of the interactions with IntelliJ Platform components that your plugin class will need to have, and we recommend working with real components instead.
 
 *  We do not provide a general-purpose framework for Swing UI testing. You can try using tools such as
-[FEST](http://fest.easytesting.org/) or
+[FEST](https://code.google.com/p/fest/) or
 [Sikuli](http://www.sikuli.org/)
 for plugin UI testing, but we don't use either of them and cannot provide any guidelines for their use.
 Internally, we use manual testing for testing our Swing UIs.
 
 
-*  [Tests and Fixtures](general_topics/testing_plugins/tests_and_fixtures.html)
-*  [Light and Heavy Tests](general_topics/testing_plugins/light_and_heavy_tests.html)
-*  [Test Project and Testdata Directories](general_topics/testing_plugins/test_project_and_testdata_directories.html)
-*  [Writing Tests](general_topics/testing_plugins/writing_tests.html)
-*  [Testing Highlighting](general_topics/testing_plugins/testing_highlighting.html)
+*  [Tests and Fixtures](testing_plugins/tests_and_fixtures.html)
+*  [Light and Heavy Tests](testing_plugins/light_and_heavy_tests.html)
+*  [Test Project and Testdata Directories](testing_plugins/test_project_and_testdata_directories.html)
+*  [Writing Tests](testing_plugins/writing_tests.html)
+*  [Testing Highlighting](testing_plugins/testing_highlighting.html)
 
 
 Check out
-[this step-by-step tutorial](writing_tests_for_plugins.html)
+[this step-by-step tutorial](tutorials/writing_tests_for_plugins.html)
 teaching how to write and run automated tests for your custom language plugin (source code included).
 

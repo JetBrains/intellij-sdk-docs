@@ -50,7 +50,7 @@ Connection will use that *default handler* when storing *(topic-handler)* mappin
 *  it's possible to explicitly release acquired resources (*disconnect()* method).
 Also it can be plugged to standard semi-automatic disposing 
 (
-[Disposable](http://git.jetbrains.org/?p=idea/community.git;a=blob_plain;f=platform/util/src/com/intellij/openapi/Disposable.java;hb=master)
+[Disposable](https://github.com/JetBrains/intellij-community/tree/master/platform/util/src/com/intellij/openapi/Disposable.java)
 );
 
 ## Putting altogether
@@ -106,14 +106,14 @@ public void doChange(Context context) {
 *Existing resources*
 
 *  *MessageBus* instances are available via
-[ComponentManager.getMessageBus()](http://git.jetbrains.org/?p=idea/community.git;a=blob_plain;f=platform/platform-api/src/com/intellij/openapi/components/ComponentManager.java;hb=master)
+[ComponentManager.getMessageBus()](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/openapi/components/ComponentManager.java#L85)
 (many standard interfaces implement it, e.g.
-[Application](http://git.jetbrains.org/?p=idea/community.git;a=blob_plain;f=platform/platform-api/src/com/intellij/openapi/application/Application.java;hb=master),
-[Project](http://git.jetbrains.org/?p=idea/community.git;a=blob_plain;f=platform/platform-api/src/com/intellij/openapi/project/Project.java;hb=master);
+[Application](https://github.com/JetBrains/intellij-community/tree/master/platform/core-api/src/com/intellij/openapi/application/Application.java),
+[Project](https://github.com/JetBrains/intellij-community/tree/master/platform/core-api/src/com/intellij/openapi/project/Project.java);
 
 *  number of public topics are used by *IntelliJ IDEA*, e.g.
-[AppTopics](http://git.jetbrains.org/?p=idea/community.git;a=blob_plain;f=platform/platform-api/src/com/intellij/AppTopics.java;hb=master),
-[ProjectTopics](http://git.jetbrains.org/?p=idea/community.git;a=blob_plain;f=platform/lang-api/src/com/intellij/ProjectTopics.java;hb=master)
+[AppTopics](https://github.com/JetBrains/intellij-community/tree/master/platform/platform-api/src/com/intellij/AppTopics.java),
+[ProjectTopics](https://github.com/JetBrains/intellij-community/tree/master/platform/projectModel-api/src/com/intellij/ProjectTopics.java)
 etc.
 So, it's possible to subscribe to them in order to receive information about the processing;
 

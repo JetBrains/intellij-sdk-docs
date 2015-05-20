@@ -22,4 +22,4 @@ You most likely need to use PsiTreeUtil.getParentOfType() to find the element yo
 
 ## What can I do with one?
 
-See [PSI Cook Book](psi_cookbook.html)
+See [PSI Cook Book](/basics/psi_cookbook.html)

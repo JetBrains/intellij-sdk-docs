@@ -15,7 +15,7 @@ Series of step below show how to filter out and keep visible only text files and
 
 Create an empty plugin project.
 See 
-[Creating a Plugin Project](basics/getting_started/creating_plugin_project.html)
+[Creating a Plugin Project](/basics/getting_started/creating_plugin_project.html)
 to know how to do it.
 
 ## 1. Register Custom TreeStructureView Provider
@@ -74,7 +74,7 @@ public Collection<AbstractTreeNode> modify(@NotNull AbstractTreeNode parent, @No
 
 Compile and run the code sample from this tutorial.
 Refer to 
-[Running and Debugging a Plugin](basics/getting_started/running_and_debugging_a_plugin.html)
+[Running and Debugging a Plugin](/basics/getting_started/running_and_debugging_a_plugin.html)
 section to know how this could be done.
 
 After going through the steps described above you can see only text files and directories belonging to a project in the Project View.

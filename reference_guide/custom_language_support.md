@@ -15,7 +15,7 @@ source code.
 
 
 If you prefer a full example to the detailed description offered on this page, please check out a step-by-step tutorial how to define custom language support on example of ".properties" files:
-[Custom Language Support Tutorial](cls_tutorial.html)
+[Custom Language Support Tutorial](/tutorials/custom_language_support_tutorial.html)
 
 Providing custom language support includes the following major steps:
 

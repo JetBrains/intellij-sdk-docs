@@ -31,8 +31,11 @@ A _module_ is a discrete unit of functionality that can be run, tested, and debu
 #### Library
 
 A _library_ is an archive of compiled code (such as JAR files) that your modules depend on. **IntelliJ Platform** supports three types of libraries:
-*  **Module Library**: the library classes are visible only in this module and the library information is recorded in the module \**.iml file.
-*  **Project Library**: the library classes are visible within the project and the library information is recorded in the project \**.ipr file or in _.idea/libraries_.
+
+*  **Module Library**: the library classes are visible only in this module and the library information is recorded in the module \*.iml file.
+
+*  **Project Library**: the library classes are visible within the project and the library information is recorded in the project \*.ipr file or in _.idea/libraries_.
+
 *  **Global Library**: the library information is recorded in the _applicationLibraries.xml_ file into the _<User Home>/.IntelliJIdea/config/options_ directory. Global libraries are similar to project libraries, but are visible for the different projects.
 
 For more information about libraries, refer to 

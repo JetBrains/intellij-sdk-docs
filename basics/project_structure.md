@@ -67,7 +67,9 @@ in **IntelliJ IDEA** Web Help.
 ## Project Structure
 
 From the plugin developer's point of view, a project can be thought of as follows:
-!IntelliJIDEA_ProjectStructure.png!
+
+![Project Structure](project_structure/img/IntelliJIDEA_ProjectStructure.png)
+
 A **project** consists of one or several **modules**. 
 Each **module** includes the plugin source code and so called **order entries** that refer to **SDK** and **libraries** the module uses. 
 By default, all modules uses the project SDK. In adition, a **module** can optionally have a set of **facets**.

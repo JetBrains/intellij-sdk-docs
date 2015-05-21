@@ -181,8 +181,13 @@ You can use the following methods:
 
 ##### How do I set the project SDK?
 
-##### To set the project-level SDK: ```ProjectRootManager.getInstance(project).setProjectSdk(Sdk jdk);```
-##### To set the project-level SDK name: ```ProjectRootManager.getInstance(project).setProjectSdkName(String name);```
+##### To set the project-level SDK: 
+
+```ProjectRootManager.getInstance(project).setProjectSdk(Sdk jdk);```
+
+##### To set the project-level SDK name: 
+
+```ProjectRootManager.getInstance(project).setProjectSdkName(String name);```
 
 Note that by default, the project modules use the project SDK. Optionally, you can configure individual SDK for each module.
 

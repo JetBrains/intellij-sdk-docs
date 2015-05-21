@@ -61,15 +61,16 @@ class MyService implements PersistentStateComponent<MyService> {
 
 ### Implementing the State Class
 
-The implementation of ```PersistentStateComponent``` works by serializing public fields, 
+The implementation of ```PersistentStateComponent``` works by serializing public fields,  
 [annotated](https://github.com/JetBrains/intellij-community/tree/master/platform/util/src/com/intellij/util/xmlb/annotations) 
 private fields and bean properties into an XML format. The following types of values can be persisted:
-- numbers (both primitive types, such as int, and boxed types, such as Integer);
-- booleans;
-- strings;
-- collections;
-- maps;
-- enums.
+
+*  numbers (both primitive types, such as int, and boxed types, such as Integer);
+*  booleans;
+*  strings;
+*  collections;
+*  maps;
+*  enums.
 
 In order to exclude a public field or bean property from serialization, you can annotate the field or getter with the ```@com.intellij.util.xmlb.annotations.Transient``` annotation.
 

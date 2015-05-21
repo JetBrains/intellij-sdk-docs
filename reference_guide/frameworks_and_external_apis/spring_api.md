@@ -71,12 +71,12 @@ _Version 14.1_
 _Version 14_: ```com.intellij.spring.model.utils.SpringModelSearchers#findBean```
 
 ##### Search for beans by type
-Choose one of ```com.intellij.spring.CommonSpringModel#findBeansByPsiClassXXX``` variants.
+Choose one of ```com.intellij.spring.CommonSpringModel#findBeansByPsiClassXXX``` variants (please note deprecated methods).
 
 _Version 14_: ```com.intellij.spring.model.utils.SpringModelSearchers#findBeans```
 
 ##### Find out if bean with given name/type exists
-_Version 14_: ```com.intellij.spring.model.utils.SpringModelSearchers#doesBeanExist```
+_Version 14_: ```com.intellij.spring.model.utils.SpringModelSearchers#doesBeanExist``` (please note deprecated methods)
 
 ##### Mark bean as infrastructure bean
 _Version 14_: implement ```SpringInfrastructureBean```, such beans obtain special icon and can be filtered in various places in UI

@@ -7,7 +7,7 @@ title: Action System
 
 The system of actions allows plugins to add their own items to IDEA menus and toolbars.
 An action is a class, derived from the
-[AnAction](http://git.jetbrains.org/?p=idea/community.git;a=blob;f=platform/platform-api/src/com/intellij/openapi/actionSystem/AnAction.java;hb=HEAD)
+[AnAction](https://github.com/JetBrains/intellij-community/tree/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java)
 class, whose actionPerformed method is called when the menu item or toolbar button is selected.
 For example, one of the action classes is responsible for the "File \| Open File..." menu item and for the "Open File" toolbar button.
 
@@ -16,12 +16,12 @@ Subgroups of the group can form submenus of the menu.
 
 Every action and action group has an unique identifier.
 Identifiers of many of the standard IDEA actions are defined in the
-[IdeActions](http://git.jetbrains.org/?p=idea/community.git;a=blob;f=platform/platform-api/src/com/intellij/openapi/actionSystem/IdeActions.java;hb=HEAD)
+[IdeActions](https://github.com/JetBrains/intellij-community/tree/master/platform/platform-api/src/com/intellij/openapi/actionSystem/IdeActions.java)
 class.
 
 Every action can be included in multiple groups, and thus appear in multiple places within the IDEA user interface.
 Different places where actions can appear are defined by constants in the
-[ActionPlaces](http://git.jetbrains.org/?p=idea/community.git;a=blob;f=platform/platform-api/src/com/intellij/openapi/actionSystem/ActionPlaces.java;hb=HEAD)
+[ActionPlaces](https://github.com/JetBrains/intellij-community/tree/master/platform/platform-api/src/com/intellij/openapi/actionSystem/ActionPlaces.java)
 interface. For every place where the action appears, a new ```Presentation``` is created.
 Thus, the same action can have different text or icons when it appears in different places of the user interface.
 Different presentations for the action are created by copying the presentation returned by the ```AnAction.getTemplatePresentation()``` method.
@@ -102,11 +102,11 @@ Registering actions in plugin.xml is demonstrated in the following example. The 
 
 To register an action from code, two steps are required.
 First, an instance of the class derived from ```AnAction``` must be passed to the ```registerAction``` method of the
-[ActionManager](http://git.jetbrains.org/?p=idea/community.git;a=blob;f=platform/platform-api/src/com/intellij/openapi/actionSystem/ActionManager.java;hb=HEAD)
+[ActionManager](https://github.com/JetBrains/intellij-community/tree/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/ActionManager.java)
 class, to associate the action with an ID.
 Second, the action needs to be added to one or more groups.
 To get an instance of an action group by ID, it is necessary to call ```ActionManager.getAction()``` and cast the returned value to the
-[DefaultActionGroup](http://git.jetbrains.org/?p=idea/community.git;a=blob;f=platform/platform-api/src/com/intellij/openapi/actionSystem/DefaultActionGroup.java;hb=HEAD)
+[DefaultActionGroup](https://github.com/JetBrains/intellij-community/tree/master/platform/platform-api/src/com/intellij/openapi/actionSystem/DefaultActionGroup.java)
 class.
 
 You can create a plugin that registers actions on IDEA startup using the following procedure.

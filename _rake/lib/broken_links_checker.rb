@@ -1,5 +1,5 @@
 require 'rexml/xpath'
-require_relative './utils.rb'
+require_relative './lic/markdown'
 
 module Docs
   class SummaryChecker

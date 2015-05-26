@@ -1,5 +1,5 @@
 require 'rexml/xpath'
-require_relative './utils.rb'
+require_relative './util/markdown'
 
 module Docs
   class SummaryChecker
@@ -11,9 +11,10 @@ module Docs
 
       xml.elements.each("//a") do |link|
         href = link.attribute('href').to_s
+        is_external = href.start_with?('http://', 'https://', 'ftp://', '//')
         path = "#{dir}/#{href.gsub(/\.html$/, '.md')}"
 
-        if !File.file?(path)
+        if !is_external and !File.file?(path)
           is_ok = false unless is_ok
           missing_files.push href
           break

@@ -4,7 +4,7 @@ require 'uri'
 require 'kramdown'
 require 'rexml/document'
 require 'rexml/xpath'
-require_relative './utils.rb'
+require_relative './util/markdown'
 
 module Docs
   class TocGenerator

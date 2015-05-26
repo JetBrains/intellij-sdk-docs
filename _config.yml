@@ -1,6 +1,6 @@
 product_name: IntelliJ Platform SDK
 product_version:
-search_scope: null
+search_scope: intellij-sdk-docs
 use_side_blocks: true
 show_disqus: false
 

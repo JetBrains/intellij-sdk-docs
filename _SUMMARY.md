@@ -35,6 +35,7 @@
     * [PSI Cookbook](basics/psi_cookbook.html)
     * [Virtual File System](basics/virtual_file_system.html)
   * [Check Out And Build Community Edition](basics/checkout_and_build_community.html)
+  * [IDE Settings, Caches, Logs, and Plugins](basics/settings_caches_logs.html)
   * [Indexing and PSI Stubs](basics/indexing_and_psi_stubs.html)
     * [File-based indexes](basics/indexing_and_psi_stubs/file_based_indexes.html)
     * [Stub indexes](basics/indexing_and_psi_stubs/stub_indexes.html)

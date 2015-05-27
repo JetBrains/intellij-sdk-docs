@@ -12,10 +12,18 @@ To deploy a plugin:
 
 * Prepare your plugin for deployment.
   To do this, on the main menu, choose **Build \| Prepare Plugin Module \<module name\> for Deployment**.
-  If the plugin module does not depend on libraries, the .jar archive will be created.
-  Otherwise, a .zip archive will be created. It will include all the plugin libraries specified in the project settings.
+
+  ![Prepare Plugin for Deployment](deploying_plugin/img/prepare_plugin_for_deployment.png)
+
+* If the plugin module does not depend on libraries, the .jar archive will be created.
+  Otherwise, a .zip archive will be created.
+  It will include all the plugin libraries specified in the project settings.
+
+  ![Jar Saved Notification](deploying_plugin/img/jar_saved_notification.png)
 
 * Copy the newly created archive file to the *.IntelliJIDEAx0\config\plugins* folder, and then restart Intellij IDEA for changes to take effect.
+
+  ![Jar File Location](deploying_plugin/img/jar_location.png)
 
 * On the main menu, choose **File \| Settings**.
   The Settings dialog box opens.

@@ -55,6 +55,7 @@
     * [SDK](reference_guide/project_model/sdk.html)
     * [Library](reference_guide/project_model/library.html)
     * [Facet](reference_guide/project_model/facet.html)
+  * [Project Wizard](reference_guide/project_wizard.html)
   * [Custom Language Support](reference_guide/custom_language_support.html)
     * [Registering File Type](reference_guide/custom_language_support/registering_file_type.html)
     * [Implementing Lexer](reference_guide/custom_language_support/implementing_lexer.html)

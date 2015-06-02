@@ -11,6 +11,7 @@ Read it through to get familiar with the working environment, project structure,
 * [Architectural Overview](basics/architectural_overview.html)
 * [Project Structure](basics/project_structure.html)
 * [Check Out And Build Community Edition](basics/checkout_and_build_community.html)
+* [IDE Settings, Caches, Logs, and Plugins](basics/settings_caches_logs.html)
 * [Indexing and PSI Stubs](basics/indexing_and_psi_stubs.html)
 * [Run Configurations](basics/run_configurations.html)
 * [Testing Plugins](basics/testing_plugins.html)

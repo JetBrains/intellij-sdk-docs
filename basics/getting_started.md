@@ -21,6 +21,8 @@ To get more familiar with *IntelliJ IDEA* IDE refer to
 
 * [Running and Debugging a Plugin](basics/getting_started/running_and_debugging_a_plugin.html)
 
+* [Deploying a Plugin](basics/getting_started/deploying_plugin.html)
+
 * [Plugin Compatibility with IntelliJ Platform Products](basics/getting_started/plugin_compatibility.html)
 
 * [Plugin Structure](basics/plugin_structure.html)

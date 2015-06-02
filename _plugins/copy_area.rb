@@ -9,9 +9,10 @@ class CopyToClipboard < Liquid::Tag
     text = @text.strip.gsub(/^'|"/, '').gsub(/'|"$/, '')
 
     <<-HTML
-<div class="copy-area">
-    <input class="copy-area__field" value="#{text}">
-    <button class="btn copy-area__button" data-clipboard-text="#{text}">Copy</button>
+<div class="copy-area__wrapper">
+  <div class="copy-area">
+    <div class="copy-area__subject js-copy-subject">#{text}</div>
+  </div>
 </div>
     HTML
   end

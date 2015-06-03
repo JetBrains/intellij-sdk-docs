@@ -4,28 +4,28 @@ title: Main Types of IntelliJ IDEA Plugins
 ---
 
 Products based on *IntelliJ Platform* can be modified and adjusted for particular purposes by adding plugins.
-All the plugins which are already available for download can be found at 
+All downloadable plugins are available at 
 [JetBrains Plugin Repository](https://plugins.jetbrains.com/).
 
-Most commonly used types of plugins are:
+The most commonly used types of plugins include:
 
 * Custom language support
 * Framework integration
-* Tools integration
+* Tool integration
 * User interface add-ons
 
-The majority of already existing plugins are complex, so they combine multiple function, but generally these types can be marked out.
+The majority of existing plugins are complex and combine multiple functions, but generally these types can be marked out.
 
 ## Custom Language Support
 
 Custom language support provides basic functionality for working with a particular programming language. This includes:
 
 * File type recognition
-* Lexical analysis and
+* Lexical analysis
 * Syntax highlighting
 * Formatting
 * Code insight and code completion
-* Inspections and quickfixes
+* Inspections and quick-fixes
 * Intention actions
 
 Refer to the 
@@ -33,19 +33,17 @@ Refer to the
 to learn more about the topic.
 
 ## Framework Integration
-Framework integrations consists of improved code insight features which are typical for a given framework and
-option to use specific functionality of a framework directly from the IDE. May include language support elements
-in case of a custom syntax or DSL.
+Framework integration consists of improved code insight features which are typical for a given framework, as well as the option to use framework-specific functionality directly from the IDE. Sometimes it also includes language support elements for a custom syntax or DSL.
 
 * Specific code insight
-* Direct access to the framework's functionality
+* Direct access to framework-specific functionality
 
 Refer to 
 [Struts 2 plugin](https://plugins.jetbrains.com/plugin/1698) 
-as an example of a framework integration.
+as an example of framework integration.
 
-# Tools Integration
-Tools integration makes possible to manipulate third-party tools and components directly from the IDE without making a context switch.
+# Tool Integration
+Tool integration makes it possible to manipulate third-party tools and components directly from the IDE without switching contexts.
  
 This implies:
 
@@ -53,16 +51,12 @@ This implies:
 * Related UI components
 * Access to external resources
 
-Refer to 
+Refer to the 
 [Gerrit integration](https://plugins.jetbrains.com/plugin/7272?pr=idea) 
-plugin as an example
+plugin as an example.
 
 # User Interface Add-Ons
 
-Plugins from these group apply different changes to the standard user interface of the IDE. 
+Plugins from this group apply different changes to the standard user interface of the IDE. 
 Newly added components can either be interactive and provide new functionality, or be just a visual modification.
-[Background Image](https://plugins.jetbrains.com/plugin/72) 
-plugin can be an example.
-
-
-
+The following plugin may serve as an example: [Background Image](https://plugins.jetbrains.com/plugin/72) 

@@ -11,7 +11,7 @@ class CopyToClipboard < Liquid::Tag
     <<-HTML
 <div class="copy-area__wrapper">
   <div class="copy-area">
-    <div class="copy-area__subject js-copy-subject">#{text}</div>
+    <div class="copy-area__text-field js-copy-area-text-field">#{text}</div>
   </div>
 </div>
     HTML

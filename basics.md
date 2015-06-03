@@ -3,8 +3,8 @@ layout: editable
 title: Basics
 ---
 
-The following section covers basic aspects of working with *IntelliJ Platform*.
-Read it through to get familiar with the working environment, project structure, and frequently used API components. 
+This section covers the basics of working with *IntelliJ Platform*.
+It will familiarize you with the working environment, project structure, and frequently used API components.
 
 * [Main Types of IntelliJ IDEA Plugins](basics/types_of_plugins.html)
 * [Getting Started](basics/getting_started.html)

@@ -3,18 +3,18 @@ layout: editable
 title: Main Types of IntelliJ IDEA Plugins
 ---
 
-Products based on *IntelliJ Platform* can be modified and adjusted for particular purposes by adding plugins.
+Products based on *IntelliJ Platform* can be modified and adjusted for custom purposes by adding plugins.
 All downloadable plugins are available at 
 [JetBrains Plugin Repository](https://plugins.jetbrains.com/).
 
-The most commonly used types of plugins include:
+The most common types of plugins include:
 
 * Custom language support
 * Framework integration
 * Tool integration
 * User interface add-ons
 
-The majority of existing plugins are complex and combine multiple functions, but generally these types can be marked out.
+The majority of existing plugins are complex and combine multiple functions, but typically fall under the following categories:
 
 ## Custom Language Support
 
@@ -57,6 +57,6 @@ plugin as an example.
 
 # User Interface Add-Ons
 
-Plugins from this group apply different changes to the standard user interface of the IDE. 
-Newly added components can either be interactive and provide new functionality, or be just a visual modification.
+Plugins in this category apply various changes to the standard user interface of the IDE. 
+Some newly added components are interactive and provide new functionality, while others are limited to visual modifications only.
 The following plugin may serve as an example: [Background Image](https://plugins.jetbrains.com/plugin/72) 

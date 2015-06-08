@@ -9,12 +9,12 @@ layout: editable
 Here you can find [basic information](basics.html) about the *IntelliJ Platform SDK*, in particular how to
 **[get started](basics/getting_started.html)** with developing plugins for IntelliJ IDEA and other JetBrains IDEs.
 
-More details about particular development topics can be found in 
+More details about specific development topics can be found in the 
 [Architecture Reference Guide](reference_guide.html). 
 
 A set of
 **[step-by-step tutorials](tutorials.html)**. 
-with code samples is meant to lead you through common use cases for *IntelliJ Platform SDK*.
+with code samples will lead you through the common use cases for *IntelliJ Platform SDK*.
 
 
 The [Plugin Development FAQ](faq.html)
@@ -23,19 +23,19 @@ section contains a series of issues commonly discussed on our
 
 One of the ways to improve *IntelliJ SDK Documentation* is to 
 **[contribute to the project](contribution_guidelines.html)**. 
-Any kind of content, like tutorials, articles about *IntelliJ* architecture, code samples, that can can help plugin developers, is kindly welcome.
-Refer to
+Any kind of content including tutorials, articles about *IntelliJ* architecture or code samples that can help plugin developers is kindly welcome.
+Please read the
 [Contribution Guidelines](contribution_guidelines.html)
-if you want to share your knowledge.
+if you would like to share your knowledge.
 
 
-Please inform about any **content inconsistencies**, outdated materials, cosmetic issues, and other defects you find by submitting an issue to
+Please let us know about any **content inconsistencies**, outdated materials, cosmetic issues, or other defects you may find by submitting an issue to
 [YouTrack](https://youtrack.jetbrains.com/issues/IJSDK). 
-If you haven't found a documentation topic you were looking for, feel free to file a
+If you haven't found a documentation topic that answers your questions, feel free to file a
 **[request](https://youtrack.jetbrains.com/newIssue?project=IJSDK)**.
 
-[Provide your feedback](http://www.surveygizmo.com/s3/2149448/IntelliJ-SDK-Docs)
-to help us make *IntelliJ Platform* documentation better.
+Please [give us your feedback](http://www.surveygizmo.com/s3/2149448/IntelliJ-SDK-Docs)
+to help make *IntelliJ Platform* documentation better.
 
 
 

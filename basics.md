@@ -1,6 +1,6 @@
 ---
 layout: editable
-title: Basics
+title: Quick Start Guide
 ---
 
 This section covers the basics of working with *IntelliJ Platform*.

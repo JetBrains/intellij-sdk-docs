@@ -1,6 +1,6 @@
 ---
 layout: editable
-title: Getting started
+title: Creating Your First Plugin
 ---
 
 This documentation section will help to get started with *IntelliJ Platform* plugin development.

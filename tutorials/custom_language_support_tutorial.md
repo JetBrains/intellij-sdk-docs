@@ -34,5 +34,6 @@ This a step-by-step tutorial and it requires performing every step:
 *  [18. Quick Fix](tutorials/custom_language_support/quick_fix.html)
 
 The final code can be found on
-[GitHub](http://github.com/cheptsov/SimplePlugin).
+
+{% copyArea 'https://github.com/JetBrains/SimplePlugin.git' %}
 

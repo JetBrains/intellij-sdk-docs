@@ -13,7 +13,7 @@ More details about specific development topics can be found in the
 [Architecture Reference Guide](reference_guide.html). 
 
 A set of
-**[step-by-step tutorials](tutorials.html)**. 
+**[step-by-step tutorials](tutorials.html)** 
 with code samples will lead you through the common use cases for *IntelliJ Platform SDK*.
 
 

@@ -3,17 +3,17 @@ layout: editable
 title: Creating Your First Plugin
 ---
 
-This documentation section will help to get started with *IntelliJ Platform* plugin development.
-For development process you can use either 
+This documentation section will help you get started with developing plugins for *IntelliJ Platform*.
+You can use either 
 [IntelliJ IDEA Community Edition](https://www.jetbrains.com/idea/download/) or 
-[IntelliJ IDEA Ultimate](https://www.jetbrains.com/idea/download/).
-Both of them include the complete set of plugin development tools.
-To get more familiar with *IntelliJ IDEA* IDE refer to 
+[IntelliJ IDEA Ultimate](https://www.jetbrains.com/idea/download/) as your IDE.
+Both include the complete set of plugin development tools.
+To become more familiar with *IntelliJ IDEA*, please refer to 
 [IntelliJ IDEA Web Help](https://www.jetbrains.com/idea/help/intellij-idea.html)
 
 
 
-* [Setting Up Development Environment](basics/getting_started/setting_up_environment.html)
+* [Setting Up a Development Environment](basics/getting_started/setting_up_environment.html)
 
 * [Creating a Plugin Project](basics/getting_started/creating_plugin_project.html)
 

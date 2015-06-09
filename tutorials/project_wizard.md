@@ -7,8 +7,8 @@ This set of tutorials shows how to manipulate the process of project creation.
 Configuring Project Wizard automatically allows you to do the following:
 
 
-1. [Adding New Steps to Project Wizard](tutorials/project_wizard/adding_new_steps.html)
-2. [Supporting Module Types](tutorials/project_wizard/module_types.html)
+1. [Adding New Steps to Project Wizard](project_wizard/adding_new_steps.html)
+2. [Supporting Module Types](project_wizard/module_types.html)
 3. [Handling activities during project creation]()
 4. [Initial environment configuration]()
 

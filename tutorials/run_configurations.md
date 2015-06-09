@@ -15,7 +15,7 @@ section of
 
 Create an empty plugin project.
 See 
-[Creating a Plugin Project](basics/getting_started/creating_plugin_project.html)
+[Creating a Plugin Project](/basics/getting_started/creating_plugin_project.html)
 to know how to do it.
 
 ## 1. Register a New Configuration Type

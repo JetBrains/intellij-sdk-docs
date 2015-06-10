@@ -1,6 +1,6 @@
 ---
 title: Deploying a Plugin
-layout: editable
+layout: general
 ---
 
 To use your custom plugin, it must be built, installed, and then enabled using Plugin Manager.

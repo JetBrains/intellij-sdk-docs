@@ -1,5 +1,5 @@
 ---
-layout: editable
+layout: general
 title: 13. Go To Symbol Contributor
 ---
 

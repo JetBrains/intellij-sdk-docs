@@ -1,5 +1,5 @@
 ---
-layout: editable
+layout: general
 title: 3. Grammar and Parser
 ---
 

@@ -1,5 +1,5 @@
 ---
-layout: editable
+layout: general
 title: Project Model. Roots and Libraries. Configuring Project from Code.
 ---
 

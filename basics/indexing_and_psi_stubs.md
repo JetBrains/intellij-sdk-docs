@@ -1,5 +1,5 @@
 ---
-layout: editable
+layout: general
 title: Indexing and PSI Stubs
 ---
 

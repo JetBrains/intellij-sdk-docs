@@ -1,5 +1,5 @@
 ---
-layout: editable
+layout: general
 title: Plugin Configuration File plugin.xml
 ---
 

@@ -1,5 +1,5 @@
 ---
-layout: editable
+layout: general
 title: Setting Up Development Environment
 ---
 

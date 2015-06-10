@@ -1,5 +1,5 @@
 ---
-layout: editable
+layout: general
 title: 5. Syntax Highlighter and Color Settings Page
 ---
 

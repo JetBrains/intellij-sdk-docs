@@ -1,5 +1,5 @@
 ---
-layout: editable
+layout: general
 title: Color Scheme Management in Intellij IDEA 12.1+
 ---
 

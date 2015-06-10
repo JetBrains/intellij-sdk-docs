@@ -1,5 +1,5 @@
 ---
-layout: editable
+layout: general
 title: Basics of working with the Editor
 ---
 

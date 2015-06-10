@@ -1,6 +1,6 @@
 ---
 title: Settings, Caches, Logs, and Plugins
-layout: editable
+layout: general
 ---
 
 Every IntelliJ-based IDE stores it's local settings, caches, log and installed plugins on a hard drive.

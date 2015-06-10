@@ -1,5 +1,5 @@
 ---
-layout: editable
+layout: general
 title: Syntax Highlighting and Error Highlighting
 ---
 

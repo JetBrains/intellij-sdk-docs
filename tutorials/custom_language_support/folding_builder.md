@@ -1,5 +1,5 @@
 ---
-layout: editable
+layout: general
 title: 12. Folding Builder
 ---
 

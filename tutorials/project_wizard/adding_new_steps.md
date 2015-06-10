@@ -1,5 +1,5 @@
 ---
-layout: editable
+layout: general
 title: Adding New Steps to Project Wizard
 ---
 

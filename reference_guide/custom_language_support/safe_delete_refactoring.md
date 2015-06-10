@@ -1,5 +1,5 @@
 ---
-layout: editable
+layout: general
 title: Safe Delete Refactoring
 ---
 

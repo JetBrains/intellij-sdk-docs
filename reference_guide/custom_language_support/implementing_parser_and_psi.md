@@ -1,5 +1,5 @@
 ---
-layout: editable
+layout: general
 title: Implementing a Parser and PSI
 ---
 

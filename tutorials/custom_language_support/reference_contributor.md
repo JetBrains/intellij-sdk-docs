@@ -1,5 +1,5 @@
 ---
-layout: editable
+layout: general
 title: 10. Reference Contributor
 ---
 

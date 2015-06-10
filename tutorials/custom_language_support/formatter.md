@@ -1,5 +1,5 @@
 ---
-layout: editable
+layout: general
 title: 15. Formatter
 ---
 

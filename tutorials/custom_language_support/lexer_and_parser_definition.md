@@ -1,5 +1,5 @@
 ---
-layout: editable
+layout: general
 title: 4. Lexer and Parser Definition
 ---
 

@@ -28,7 +28,7 @@
     * [Documents](basics/architectural_overview/documents.html)
     * [PSI Files](basics/architectural_overview/psi_files.html)
     * [File View Providers](basics/architectural_overview/file_view_providers.html)
-    * [Psi Elements](basics/architectural_overview/psi_elements.html)
+    * [PSI Elements](basics/architectural_overview/psi_elements.html)
   * [Project Structure](basics/project_structure.html)
     * [Action System](basics/action_system.html)
     * [Persisting State of Components](basics/persisting_state_of_components.html)

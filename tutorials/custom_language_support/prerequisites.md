@@ -43,6 +43,6 @@ Create an IntelliJ IDEA Plugin project and specify IntelliJ IDEA Plugin SDK.
 
 ![New Project](img/new_project.png)
 
-[Top](tutorials/custom_language_support_tutorial.html)
-[Next](tutorials/custom_language_support/language_and_filetype.html)
+[Top](../custom_language_support_tutorial.html)
+[Next](language_and_filetype.html)
 

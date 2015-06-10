@@ -122,9 +122,9 @@ Now add some extra spaces and reformat the code via *⌥⌘L* shortcut.
 
 ![Formatter](img/formatter.png)
 
-[Previous](tutorials/custom_language_support/structure_view_factory.html)
-[Top](custom_language_support.html)
-[Next](tutorials/custom_language_support/code_style_settings.html)
+[Previous](structure_view_factory.html)
+[Top](../custom_language_support.html)
+[Next](code_style_settings.html)
 
 
 

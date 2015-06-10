@@ -137,7 +137,7 @@ public class SimpleUtil {
 ```
 
 ----------------
-[Previous](tutorials/custom_language_support/syntax_highlighter_and_color_settings_page.html)
-[Top](tutorials/custom_language_support_tutorial.html)
-[Next](tutorials/custom_language_support/annotator.html)
+[Previous](syntax_highlighter_and_color_settings_page.html)
+[Top](../custom_language_support_tutorial.html)
+[Next](annotator.html)
 

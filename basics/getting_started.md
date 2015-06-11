@@ -24,6 +24,3 @@ To become more familiar with *IntelliJ IDEA*, please refer to
 * [Deploying a Plugin](getting_started/deploying_plugin.html)
 
 * [Plugin Compatibility with IntelliJ Platform Products](getting_started/plugin_compatibility.html)
-
-* [Plugin Structure](basics/plugin_structure.html)
-

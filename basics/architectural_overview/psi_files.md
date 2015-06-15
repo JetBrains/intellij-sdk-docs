@@ -15,7 +15,7 @@ class represents an XML file.
 
 Unlike ```VirtualFile``` and ```Document```, which have application scope (even if multiple projects are open, each file is represented by the same ```VirtualFile``` instance), PSI has project scope (the same file is represented by multiple PsiFile instances if the file belongs to multiple projects open at the same time).
 
-## How do I get one?
+## How do I get a PSI file?
 
 *  From an action: ```e.getData(LangDataKeys.PSI_FILE)```.
 *  From a VirtualFile: ```PsiManager.getInstance(project).findFile()```
@@ -23,25 +23,25 @@ Unlike ```VirtualFile``` and ```Document```, which have application scope (even 
 *  From an element inside the file: ```psiElement.getContainingFile()```
 *  To find files with a specific name anywhere in the project, use ```FilenameIndex.getFilesByName(project, name, scope)```
 
-## What can I do with one?
+## What can I do with a PSI file?
 
 Most interesting modification operations are performed on the level of individual PSI elements, not files as a whole.
 
 To iterate over the elements in a file, use ```psiFile.accept(new PsiRecursiveElementWalkingVisitor()...);```
 
-## Where does it come from?
+## Where does it a PSI file come from?
 
-As the PSI is language-dependent, PSI files are created through the 
+As  PSI is language-dependent, PSI files are created through the 
 [Language](https://github.com/JetBrains/intellij-community/tree/master/platform/core-api/src/com/intellij/lang/Language.java) 
-object, using the ```LanguageParserDefinitions.INSTANCE.forLanguage(language).createFile(fileViewProvider)``` method.
+object, by using the ```LanguageParserDefinitions.INSTANCE.forLanguage(language).createFile(fileViewProvider)``` method.
 
 Like documents, PSI files are created on demand when the PSI is accessed for a particular file.
 
-## How long does it live?
+## How long do PSI files persist?
 
-Again, like documents, PSI files are weakly referenced from the corresponding ```VirtualFile``` instances and can be garbage collected if not referenced by anyone.
+Like documents, PSI files are weakly referenced from the corresponding ```VirtualFile``` instances and can be garbage-collected if not referenced by anyone.
 
-## How do I create one?
+## How do I create a PSI file?
 
 The
 [PsiFileFactory](https://github.com/JetBrains/intellij-community/tree/master/platform/core-api/src/com/intellij/psi/PsiFileFactory.java).
@@ -50,18 +50,17 @@ To save the PSI file to disk, use the
 [PsiDirectory](https://github.com/JetBrains/intellij-community/tree/master/platform/core-api/src/com/intellij/psi/PsiDirectory.java).
 ```add()``` method.
 
-## How do I get notified when it changes?
+## How do I get notified when PSI files change?
 
 ```PsiManager.getInstance(project).addPsiTreeChangeListener()``` allows you to receive notifications about all changes to the PSI tree of a project.
 
 
-## How do I extend it?
+## How do I extend PSI?
 
-The PSI can be extended to support additional languages through custom language plugins.
-Developing such plugins is documented in 
+PSI can be extended to support additional languages through custom language plugins. For more details on developing custom language plugins, see the
 [Custom Language Support](reference_guide/custom_language_support.html) 
 reference guide.
 
-## What are the rules for working with it?
+## What are the rules for working with PSI?
 
 Any changes done to the content of PSI files are reflected in documents, so all rules for working with documents (read/write actions, commands, read-only status handling) are in effect.

@@ -33,7 +33,7 @@ As a plugin developer, you may want to invoke a VFS refresh if you need to acces
 
 #### How long does a virtual file persist?
 
-A particular file on disk is represented by the equal&nbsp;```VirtualFile``` instances for the entire lifetime of the IDEA process. There mayt be several instances corresponding to the same file, and they can be garbage-collected.
+A particular file on disk is represented by equal&nbsp;```VirtualFile``` instances for the entire lifetime of the IDEA process. There may be several instances corresponding to the same file, and they can be garbage-collected.
 The file is a ```UserDataHolder```, and the user data is shared between those equal instances. If a file is deleted, its corresponding VirtualFile instance becomes invalid ( the ```isValid()``` method returns _false_ and operations cause exceptions).
 
 #### How do I create a virtual file?

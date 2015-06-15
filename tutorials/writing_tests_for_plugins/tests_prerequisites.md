@@ -32,7 +32,7 @@ All we need to do is to point the working directory of the run configuration to 
   >  will use relative path to the _source root_ of IntelliJ IDEA Community Edition.
 
 -----
-[Top](tutorials/writing_tests_for_plugins.html)
-[Next](tutorials/writing_tests_for_plugins/parsing_test.html)
+[Top](../writing_tests_for_plugins.html)
+[Next](parsing_test.html)
 
 

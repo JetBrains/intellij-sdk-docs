@@ -28,8 +28,8 @@ Run the test and make sure it's green.
 
 -----
 
-[Previous](tutorials/writing_tests_for_plugins/find_usages_test.html) 
-[Top](tutorials/writing_tests_for_plugins.html) 
-[Next](tutorials/writing_tests_for_plugins/reference_test.html)
+[Previous](find_usages_test.html)
+[Top](../writing_tests_for_plugins.html)
+[Next](reference_test.html)
 
 

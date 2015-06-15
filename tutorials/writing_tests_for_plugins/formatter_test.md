@@ -51,6 +51,6 @@ Run the test and make sure it's green.
 
 -----
 
-[Previous](tutorials/writing_tests_for_plugins/annotator_test.html) 
-[Top](tutorials/writing_tests_for_plugins.html) 
-[Next](tutorials/writing_tests_for_plugins/rename_test.html)
+[Previous](annotator_test.html)
+[Top](../writing_tests_for_plugins.html)
+[Next](rename_test.html)

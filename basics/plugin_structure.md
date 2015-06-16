@@ -4,8 +4,7 @@ title: Plugin Structure
 ---
 
 
-This document is focused on the plugin system structure and plugin lifecycle.
-The following subjects are covered:
+Click the following topics to learn more about the plugin system structure and plugin lifecycles:
 
 * [Plugin Content](plugin_structure/plugin_content.html)
 

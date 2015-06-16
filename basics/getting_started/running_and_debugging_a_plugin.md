@@ -8,18 +8,18 @@ title: Running and Debugging a Plugin
 
 *IntelliJ Platform* allows you to run and debug a plugin without leaving the IDE.
 To run or debug the plugin from within *IntelliJ IDEA*, you need a configured special profile (a Run/Debug configuration) that specifies the class to run, VM parameters and other specific options.
-In most cases, you can use default *Run\/Debug* configuration profiles for your plugin projects.
+In most cases, you can use the default *Run\/Debug* configuration profiles for your plugin projects.
 For information on how to change the Run/Debug configuration profile, refer to
 [Run/Debug Configuration](http://www.jetbrains.com/idea/webhelp/run-debug-configuration.html)
 and
 [Run/Debug Configuration: Plugin](http://www.jetbrains.com/idea/webhelp/run-debug-configuration-plugin.html)
 in *Intellij IDEA* Web Help.
-Using the IntelliJ IDEA's debugger, you can find out the origin of the run-time errors and exceptions.
+Using IntelliJ IDEA's debugger, you can find out the origin of the run-time errors and exceptions.
 
 **To debug a plugin**
 
-*  On the main menu, choose *Run \| Debug* or press *Shift + F9*.
+*  Select *Run \| Debug* in the main menu, or press *Shift + F9*.
 
 **To run a plugin**
 
-*  On the main menu, choose *Run \| Run* or press *Shift + F10*.
+*  Select *Run \| Run* in the main menu, or press *Shift + F10*.

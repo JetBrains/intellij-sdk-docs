@@ -3,12 +3,12 @@ layout: general
 title: Build Number Ranges
 ---
 
-This reference of build number ranges can be used to specify correct since-build and until-build versions in the
+Use this reference of build number ranges to specify the correct since-build and until-build versions in
 <!--TODO link to file in sample-->
 [plugin.xml]() 
 files.
 
-Since IntelliJ IDEA 9 beta, a multi-part build number is used: for example, IU-90.94.
+Starting with IntelliJ IDEA 9 beta, a multi-part build number is used: for example, IU-90.94.
  
 **The number consists of the following parts:**
 
@@ -18,21 +18,21 @@ Since IntelliJ IDEA 9 beta, a multi-part build number is used: for example, IU-9
 
 * Build number in the branch
 
-Every time a release branch is created for one of the products based on the IntelliJ Platform, the branch number in the release branch is incremented by 1, and the branch number in the trunk is incremented by 2. 
-So, the trunk always has even branch numbers (90, 92, 94 etc.) Release branches have odd branch numbers (91, 93 etc.) 
+Every time a release branch is created for one of the products based on IntelliJ Platform, the branch number in the release branch is incremented by 1, and the branch number in the trunk is incremented by 2. 
+Accordingly, the trunk always has even branch numbers (90, 92, 94, etc.), while release branches have odd branch numbers (91, 93, etc.).
 For example, the RubyMine 2.0 release branch has the branch number 91.
 
 Multi-part build numbers can also be used in the since-build and until-build tags of
 <!--TODO link to file in sample--> 
 [plugin.xml]() 
 files. 
-Usually you need to omit the product ID and use only the branch number and build number, for example:
+Usually you should omit the product ID and use only the branch number and build number, for example:
 
 ```xml
 <idea-version since-build="94.539"/>
 ```
 
-The branch numbers used for IntelliJ Platform-based products and build numbers of recent IDE versions are:
+The following branch numbers are used for IntelliJ-Platform-based products and build numbers of recent IDE versions:
 
 * branch 93 - IDEA 9.0
 

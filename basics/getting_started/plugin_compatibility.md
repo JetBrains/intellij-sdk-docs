@@ -4,8 +4,8 @@ title: Plugin Compatibility with IntelliJ Platform Products
 ---
 
 
-All products based on the IntelliJ Platform (IntelliJ IDEA, RubyMine, WebStorm, PhpStorm, PyCharm and AppCode) share the same underlying platform API. 
-Thus, a plugin which does not use any Java specific functionality can be marked as compatible with other products besides IntelliJ IDEA. 
+All products based on IntelliJ Platform (IntelliJ IDEA, RubyMine, WebStorm, PhpStorm, PyCharm and AppCode) share the same underlying platform API. 
+Thus, a plugin that does not use any Java-specific functionality may be marked as compatible with these other products in addition to IntelliJ IDEA.
 This is done by specifying *module dependencies* in the 
 <!--TODO link to sample_plugin file-->
 [plugin.xml]() 
@@ -26,14 +26,14 @@ For example:
 If a plugin does not include any module dependency tags in its
 <!--TODO link to sample_plugin file--> 
 [plugin.xml](),
-it's assumed to be a legacy plugin and it's loaded only in IntelliJ Platform based product.
+it's assumed to be a legacy plugin and is loaded only in a IntelliJ-Platform-based product.
 
 If the
 <!--TODO link to sample_plugin file--> 
 [plugin.xml]() 
-includes one or more of such tags, the plugin is loaded if the product contains all of the modules on which the plugin depends.
+includes one or more such tags, the plugin is loaded if the product contains all of the modules on which the plugin depends.
 
-The following modules are currently available in all products based on the IntelliJ Platform:
+The following modules are currently available in all products based on IntelliJ Platform:
 
 * *com.intellij.modules.platform*
 
@@ -63,7 +63,7 @@ The following modules are only available in specific products:
 
 * *com.intellij.modules.cidr.debugger* \- AppCode, CLion, RubyMotion
 
-PhpStorm does not have any modules specific to it, but it includes the PHP plugin, which you can also use as a dependency: *com.jetbrains.php*
+PhpStorm does not have any modules specific to itself, but it includes the PHP plugin, which you can also use as a dependency: *com.jetbrains.php*
 
 You can also specify optional module dependencies. 
 If your plugin works with all products but provides some Java-specific functionality, you can use a dependency tag like this:
@@ -74,10 +74,8 @@ If your plugin works with all products but provides some Java-specific functiona
 </depends>
 ```
 
-Before marking a plugin as compatible with all products, you need to verify that it doesn't use any APIs which are specific to IntelliJ Platform. 
-
-In order to do that, you can create an IntelliJ Platform SDK pointing to an installation of RubyMine/PyCharm/..., compile your plugin against that SDK and verify that everything compiles.
+Before marking a plugin as compatible with all products, you should verify that it doesn't use any APIs that are specific to IntelliJ Platform. To do so, create an IntelliJ Platform SDK pointing to an installation of RubyMine/PyCharm/etc., compile your plugin against that SDK, and verify that everything compiles.
 
 The 
 [IntelliJ plugin repository](http://plugins.intellij.net) 
-automatically detects the products with which a plugin is compatible, according to these rules, and makes it available to users of those products.
+automatically detects the products with which a plugin is compatible, based on the rules above, and makes it available to users of those products.

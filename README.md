@@ -1,4 +1,4 @@
-IntelliJ SDK Platform Documentation
+IntelliJ Platform SDK Documentation
 =======
 
 This is a repository for 

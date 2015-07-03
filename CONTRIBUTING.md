@@ -3,7 +3,7 @@ layout: general
 title: Contribution Guidelines
 ---
 
-This document explains how to contribute changes to the *IntelliJ SDK Platform Documentation* project.
+This document explains how to contribute changes to the *IntelliJ Platform SDK Documentation* project.
 
 ## Licensing
 Project source code terms of use, reproduction, and redistribution is defined by

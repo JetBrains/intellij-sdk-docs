@@ -140,7 +140,7 @@
     * [Supporting Frameworks](tutorials/framework.html)
     * [Tree Structure View](tutorials/tree_structure_view.html)
   * [Plugin Development FAQ](faq.html)
-  * [Contribution Guidelines](contribution_guidelines.html)
+  * [Contribution Guidelines](CONTRIBUTING.html)
 
 
 

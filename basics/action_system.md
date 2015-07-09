@@ -1,5 +1,4 @@
 ---
-layout: general
 title: Action System
 ---
 

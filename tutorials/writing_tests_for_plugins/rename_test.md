@@ -1,5 +1,4 @@
 ---
-layout: general
 title: 6. Rename Test
 ---
 

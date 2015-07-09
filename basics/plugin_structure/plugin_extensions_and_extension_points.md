@@ -1,5 +1,4 @@
 ---
-layout: general
 title: Plugin Extensions and Extension Points
 ---
 

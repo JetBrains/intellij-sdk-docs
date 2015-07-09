@@ -1,5 +1,4 @@
 ---
-layout: general
 title: 14. Structure View Factory
 ---
 

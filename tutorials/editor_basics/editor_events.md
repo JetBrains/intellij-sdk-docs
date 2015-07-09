@@ -1,5 +1,4 @@
 ---
-layout: general
 title: 3. Handling Editor Events
 ---
 

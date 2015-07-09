@@ -1,5 +1,4 @@
 ---
-layout: general
 title: Module
 ---
 A module is a discrete unit of functionality that can be run, tested, and debugged independently.

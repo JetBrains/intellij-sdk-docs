@@ -1,5 +1,4 @@
 ---
-layout: general
 title: List and Tree Controls
 ---
 
@@ -13,7 +12,7 @@ component, it's recommended to use the
 class as drop-in replacement.
 [JBList](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/ui/components/JBList.java)
 supports the following additional features on top of
-[JList]((http://docs.oracle.com/javase/8/docs/api/javax/swing/JList.html)):
+[JList](http://docs.oracle.com/javase/8/docs/api/javax/swing/JList.html):
 
 *  Drawing a tooltip with complete text of an item if the item doesn't fit into the list box width.
 

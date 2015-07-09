@@ -1,5 +1,4 @@
 ---
-layout: general
 title: Custom Language Support Tutorial
 ---
 
@@ -33,7 +32,5 @@ This a step-by-step tutorial and it requires performing every step:
 *  [17. Commenter](custom_language_support/commenter.html)
 *  [18. Quick Fix](custom_language_support/quick_fix.html)
 
-The final code can be found on
-
-{% copyArea 'https://github.com/JetBrains/SimplePlugin.git' %}
+The final code can be found in the [SamplePlugin repo on GitHub](https://github.com/JetBrains/SimplePlugin).
 

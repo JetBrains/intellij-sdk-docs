@@ -1,5 +1,4 @@
 ---
-layout: general
 title: 17. Commenter
 ---
 

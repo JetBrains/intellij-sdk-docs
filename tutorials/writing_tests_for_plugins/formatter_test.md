@@ -1,5 +1,4 @@
 ---
-layout: general
 title: 5. Formatter Test
 ---
 

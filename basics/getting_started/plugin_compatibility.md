@@ -1,5 +1,4 @@
 ---
-layout: general
 title: Plugin Compatibility with IntelliJ Platform Products
 ---
 

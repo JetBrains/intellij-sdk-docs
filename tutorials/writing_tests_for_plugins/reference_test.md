@@ -1,5 +1,4 @@
 ---
-layout: general
 title: 10. Reference Test
 ---
 

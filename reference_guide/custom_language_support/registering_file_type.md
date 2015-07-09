@@ -1,5 +1,4 @@
 ---
-layout: general
 title: Registering a File Type
 ---
 

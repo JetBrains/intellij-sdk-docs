@@ -1,6 +1,5 @@
 ---
 title: IntelliJ Platform SDK Documentation
-layout: general
 ---
 
 

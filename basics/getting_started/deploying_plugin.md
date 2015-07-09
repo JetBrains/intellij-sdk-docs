@@ -1,6 +1,5 @@
 ---
 title: Deploying a Plugin
-layout: general
 ---
 
 Before your custom plugin can be used, it must be deployed: built, installed, and then enabled using Plugin Manager.

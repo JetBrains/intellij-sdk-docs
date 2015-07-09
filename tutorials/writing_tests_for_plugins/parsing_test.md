@@ -1,5 +1,4 @@
 ---
-layout: general
 title: 2. Parsing Test
 ---
 

@@ -1,5 +1,4 @@
 ---
-layout: general
 title: 7. Folding Test
 ---
 

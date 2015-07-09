@@ -1,5 +1,4 @@
 ---
-layout: general
 title: Frameworks and External APIs
 ---
 

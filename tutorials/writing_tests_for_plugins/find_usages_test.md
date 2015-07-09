@@ -1,5 +1,4 @@
 ---
-layout: general
 title: 8. Find Usages Test
 ---
 

@@ -1,5 +1,4 @@
 ---
-layout: general
 title: Indexing and PSI Stubs
 ---
 

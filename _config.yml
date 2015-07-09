@@ -1,29 +1,6 @@
+---
 product_name: IntelliJ Platform SDK
 product_version:
-search_scope: intellij-sdk-docs
-use_side_blocks: true
-show_disqus: false
+product_type: DevGuide
 
-webhelp_app_baseurl: /
-markdown: kramdown
-markdown_ext: foo
-kramdown:
-  input: GFM2
-  hard_wrap: false
-  auto_ids: false
-highlighter: pygments
-
-exclude:
-  - '*.scss'
-  - '*.cwd'
-  - '*.iml'
-  - README*
-  - Rakefile
-  - webhelp-template
-  - code_samples
-
-defaults:
-  - values:
-      layout: 'webhelp'
-
-edit_on_github_url: https://github.com/JetBrains/intellij-sdk-docs/edit/master/%path%
+baseurl: /

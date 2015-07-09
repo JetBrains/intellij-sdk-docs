@@ -1,4 +1,3 @@
-[submodule "webhelp-template"]
-	path = webhelp-template
-	url = git://git.labs.intellij.net/sites/webhelp-template
-	branch = subdirs-support
+[submodule "sdkdocs-template"]
+	path = sdkdocs-template
+	url = https://github.com/JetBrains/sdkdocs-template.git

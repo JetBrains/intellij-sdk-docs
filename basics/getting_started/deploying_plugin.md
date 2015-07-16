@@ -19,7 +19,7 @@ To deploy a plugin:
   ![Jar Saved Notification](deploying_plugin/img/jar_saved_notification.png)
 
 * Copy the newly created archive file to the *.IntelliJIDEAx0\config\plugins* folder, and then restart IntelliJ IDEA so the changes take effect.
-  To know how to locate your *plugins* directory, refer to [IDE Settings, Caches, Logs, and Plugins](basics/settings_caches_logs.html).
+  To know how to locate your *plugins* directory, refer to [IDE Settings, Caches, Logs, and Plugins](/basics/settings_caches_logs.md).
 
   ![Jar File Location](deploying_plugin/img/jar_location.png)
 

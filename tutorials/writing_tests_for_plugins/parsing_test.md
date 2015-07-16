@@ -4,9 +4,9 @@ title: 2. Parsing Test
 
 
 The first test will check if the parser, implemented in the
-[Lexer and Parser Definition](lexer_und_parser_definition.html)
+[Lexer and Parser Definition](/tutorials/custom_language_support/lexer_and_parser_definition.md)
 section of the
-[Custom Language Support Tutorial](cls_tutorial.html)
+[Custom Language Support Tutorial](/tutorials/custom_language_support_tutorial.md)
 works as we expect it.
 
 ### 2.1. Define input test data

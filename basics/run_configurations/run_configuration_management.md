@@ -4,15 +4,8 @@ title: Run Configuration Management
 
 This document describes main classes to work with run configurations and common use case.
 
-*  [ConfigurationType](#configuration-type)
-*  [ConfigurationFactory](#configuration-factory)
-*  [RunConfiguration](#run-configuration)
-*  [SettingsEditor](#settings-editor)
-*  [Persistence](#persistence)
-*  [Refactoring Support](#refactoring-support)
-*  [Creating Configurations from Context](#creating-from-context)
-
-<div id="configuration-type"/>
+* Dummy table of contents
+{:toc}
 
 ## ConfigurationType
 
@@ -35,8 +28,6 @@ The easiest way to implement this interface is to use the
 [ConfigurationTypeBase](https://github.com/JetBrains/intellij-community/blob/master/platform/lang-api/src/com/intellij/execution/configurations/ConfigurationTypeBase.java) base class. In order to use it, you need to inherit from it and to provide the configuration type parameters (ID, name, description and icon) as constructor parameters. In addition to that, you need to call the
 [addFactory()](https://github.com/JetBrains/intellij-community/blob/master/platform/lang-api/src/com/intellij/execution/configurations/ConfigurationTypeBase.java#L46)
 method to add a configuration factory.
-
-<div id="configuration-factory"/>
 
 ## ConfigurationFactory
 
@@ -66,8 +57,6 @@ You can customize additional aspects of your configuration factory by overriding
 and the default settings methods.
 These additional overrides are optional.
 
-<div id="run-configuration"/>
-
 ## RunConfiguration
 
 Is represented by
@@ -90,8 +79,6 @@ It supports automatically generating a name for a configuration from its setting
 *  [ModuleBasedConfiguration](https://github.com/JetBrains/intellij-community/blob/master/platform/lang-api/src/com/intellij/execution/configurations/ModuleBasedConfiguration.java)
 is a base class for a configuration that is associated with a specific module (for example, Java run configurations use the selected module to determine the run classpath).
 
-<div id="settings-editor"/>
-
 ## SettingsEditor
 
 That common run configuration settings might be modified via:
@@ -104,8 +91,6 @@ method is called by the ide and shows run configuration specific UI;
 is called to discard all non-confirmed user changes made via that UI;
 *  [_applyTo()_](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/options/SettingsEditor.java#L93)
 is called to confirm the changes, i.e. copy current UI state into the target settings object;
-
-<div id="persistence"/>
 
 ## Persistence
 
@@ -137,8 +122,6 @@ In order to support that, your run configuration needs to implement the
 [RefactoringListenerProvider](https://github.com/JetBrains/intellij-community/blob/master/platform/lang-api/src/com/intellij/execution/configurations/RefactoringListenerProvider.java)
 interface.
 In your implementation of ```getRefactoringElementListener()```, you need to check whether the element being refactored is the one that your run configuration refers to, and if it is, you return a ```RefactoringElementListener``` that updates your configuration according to the new name and location of the element.
-
-<div id="creating-from-context"/>
 
 ## Creating Configurations from Context
 

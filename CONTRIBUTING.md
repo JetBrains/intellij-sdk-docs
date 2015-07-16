@@ -1,3 +1,5 @@
+---
+---
 # Contributing
 
 Thanks for contributing! Here are few useful things to know before submitting your Pull Request.
@@ -72,7 +74,7 @@ By default, when building the site, all files are copied across. Some are exclud
 
 However, only markdown files beginning with a [YAML](http://yaml.org) header are converted. If the markdown file doesn't contain a header, it won't be converted. In other words, to convert a `.md` file to HTML, it should look like this:
 
-```md
+```
 ---
 ---
 
@@ -85,7 +87,7 @@ The two lines at the top of the file are the markers of the YAML "front matter".
 
 The YAML header can contain data that is used when generating the site. For example, the page title can be specified as a simple piece of markdown - `# Title`, or it can be specified in the YAML, and the page template will display it appropriately:
 
-```md
+```
 ---
 title: The Title Of The Page
 ---
@@ -99,7 +101,7 @@ The YAML header can also include [redirect](#redirects) information.
 
 The table of contents is generated from the `_SUMMARY.md` file. It is a simple markdown list, with each item in the list being a link to another markdown page, either in the root folder, or sub-folders. The list can have nested items, which will be displayed as child items in the table of contents.
 
-```md
+```
 # Summary
 
 * [Introduction](README.md)
@@ -109,7 +111,7 @@ The table of contents is generated from the `_SUMMARY.md` file. It is a simple m
 
 The contents can be split into "parts" by separating the list into several lists, each new list starting with a level 2 heading (`##`).
 
-```md
+```
 # Summary
 
 * [Introduction](README.md)
@@ -127,7 +129,7 @@ If a node doesn't have a link, but is just plain text, it will still appear in t
 
 The documentation site is set up to include the `jekyll-redirect-from` plugin, which will generate "dummy" pages that automatically redirect to a given page. For example, to specify that the `index.html` page will be generated to redirect to `README.md`, the `README.md` file should include the following in the YAML header:
 
-```md
+```
 ---
 redirect_from:
   - /index.html
@@ -148,7 +150,7 @@ The site is configured to use the [Kramdown Markdown converter](http://kramdown.
 
 One useful attribute is `{:toc}`, which can be applied to a list item, which will get replaced with a list of links to header items. E.g. the following list item will be replaced by links to all of the header items in the page:
 
-```md
+```
 * Dummy list item
 {:toc}
 ```
@@ -220,7 +222,7 @@ Will be displayed as a callout, styled as a "note". The other styles available f
 
 Images can be included by adding the file directly to the repository and adding a link to the image like so:
 
-    ```md
+    ```
     ![Alt text](path-to-img.png)
     ```
 

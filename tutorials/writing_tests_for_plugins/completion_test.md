@@ -3,11 +3,7 @@ title: 3. Completion Test
 ---
 
 
-In this test we will check if code completion, implemented in the
-[Reference Contributor](reference_contributor.html) section
-of the
-[Custom Language Support Tutorial](cls_tutorial.html)
-works as we expect.
+In this test we will check if code completion, implemented in the [Reference Contributor](/tutorials/custom_language_support/reference_contributor.md) section of the [Custom Language Support Tutorial](/tutorials/custom_language_support_tutorial.md) works as we expect.
 
 ### 3.1. Define test data
 

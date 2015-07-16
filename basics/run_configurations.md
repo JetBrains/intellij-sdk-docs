@@ -11,10 +11,10 @@ You can provide UI for the user to specify execution options, as well as an opti
 
 Classes used to manipulate *IntelliJ IDEA's* run configurations can be split into the following groups:
 
-*  [Run configuration management](basics/run_configurations/run_configuration_management.html)
+*  [Run configuration management](/basics/run_configurations/run_configuration_management.html)
    This includes creation, persistence, and modification.
 
-*  [Execution](basics/run_configurations/run_configuration_execution.html)
+*  [Execution](/basics/run_configurations/run_configuration_execution.html)
 
 This diagram shows the main classes related to **IntelliJ IDEA** run configurations
 

@@ -19,7 +19,7 @@ items can be layered - for example, one key may define an item's boldness and an
 
 **Note:**
 New functionality about Language Defaults and support for additional color schemes as detailed in
-[Color Scheme Management](color_scheme_management.html).
+[Color Scheme Management](/reference_guide/color_scheme_management.md).
 
 
 ### Lexer

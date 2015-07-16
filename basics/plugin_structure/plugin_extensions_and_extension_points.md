@@ -108,6 +108,6 @@ To get a list of extension points available in the *IntelliJ Platform* core, con
 ## Additional Information and Samples
 
 For samples plugins and detailed instructions on how to create your plugin that contributes to the IDEA core, refer to
-[Customizing the IDEA Settings Dialog](TODO)
+Customizing the IDEA Settings Dialog
 and
-[Creation of Tool Windows](TODO).
+Creation of Tool Windows.

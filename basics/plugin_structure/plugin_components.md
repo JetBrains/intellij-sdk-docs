@@ -85,11 +85,9 @@ Note that project-level components must be registered in the ```<project-compone
 
 #### Quick creation of project components
 
-*IntelliJ IDEA* suggests a simplified way to create project components, with all the required infrastructure.
-The IDEA interface will help you declare the project component's implementation class, and will automatically make appropriate changes to the ```<project-components>``` section of the
  <!--TODO Link to demo source code -->
-[plugin.xml]()
-file.
+*IntelliJ IDEA* suggests a simplified way to create project components, with all the required infrastructure.
+The IDEA interface will help you declare the project component's implementation class, and will automatically make appropriate changes to the ```<project-components>``` section of the `plugin.xml` file.
 
 **To create and register a project component**
 
@@ -112,14 +110,12 @@ interface.
 The constructor of a module-level component can have a parameter of the Module type, if it needs the module instance.
 It can also specify other application-level, project-level or module-level components as parameters, if it depends on those components.
 
-Note that module-level components must be registered in the ```<module-components>``` section of the
-[plugin.xml]()
-file (see Plugin Configuration File below).
+Note that module-level components must be registered in the ```<module-components>``` section of the `plugin.xml` file (see Plugin Configuration File below).
 
 #### Quick creation of module components
 
 *IntelliJ IDEA* suggests a simplified way to create module components, with all the required infrastructure.
-The IDEA interface will help you declare the module component's implementation class, and will automatically make appropriate changes to the <module-components> section of the plugin.xml file.
+The IDEA interface will help you declare the module component's implementation class, and will automatically make appropriate changes to the <module-components> section of the `plugin.xml` file.
 
 *To create and register a module component*
 
@@ -129,9 +125,7 @@ The IDEA interface will help you declare the module component's implementation c
 
 *IntelliJ IDEA* will generate a new Java class that implements the
 [ModuleComponent](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/openapi/module/ModuleComponent.java)
-interface; register the newly created component in the
-[plugin.xml]()
-file; add a node to the module tree view; and open the created application component class file in the editor.
+interface; register the newly created component in the `plugin.xml` file; add a node to the module tree view; and open the created application component class file in the editor.
 
 ### Persisting State of Components
 

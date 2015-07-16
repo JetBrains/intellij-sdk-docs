@@ -6,14 +6,14 @@ title: Setting Up Development Environment
 To set up your plugin development environment:
 
 *  Check out the source code of IntelliJ IDEA Community Edition as described in
-   [Check Out And Build Community Edition](checkout_and_build_community.html).
+   [Check Out And Build Community Edition](/basics/checkout_and_build_community.md).
 
 *  Create a new *IntelliJ IDEA SDK*:
 
    ![Create IntelliJ IDEA SDK](img/create_intellij_idea_sdk.png)
 
 *  Set *IDEA jdk* created in
-   [Check Out And Build Community Edition](checkout_and_build_community.html)
+   [Check Out And Build Community Edition](/basics/checkout_and_build_community.md)
    as the default Java SDK:
 
    ![Set IDEA JDK](img/set_idea_jdk.png)

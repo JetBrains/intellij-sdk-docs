@@ -88,7 +88,7 @@
       * [Editor Components](user_interface_components/editor_components.md)
       * [List and Tree Controls](user_interface_components/lists_and_trees.md)
       * [Miscellaneous Swing Components](user_interface_components/misc_swing_components.md)
-  * [PHPStorm and WebStorm](phpstorm_and_webstorm.md)
+  * PHPStorm and WebStorm
   * [Tutorials](tutorials.md)
     * [Custom Language Support](tutorials/custom_language_support_tutorial.md)
       * [1. Prerequisites](tutorials/custom_language_support/prerequisites.md)

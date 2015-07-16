@@ -171,7 +171,7 @@ public class DemoSettingsEditor extends SettingsEditor<DemoRunConfiguration> {
 ## 7. Compile and Run the Plugin
 
 Refer to 
-[Running and Debugging a Plugin](basics/getting_started/running_and_debugging_a_plugin.html)
+[Running and Debugging a Plugin](/basics/getting_started/running_and_debugging_a_plugin.html)
 section to know how this could be done.
 
 After going through the steps described above you can create a custom Run Configuration

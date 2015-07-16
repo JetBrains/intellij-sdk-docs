@@ -3,9 +3,9 @@ title: 5. Formatter Test
 ---
 
 In this test we will check if the formatter, implemented in the
-[Formatter](formatter.html)
+[Formatter](/tutorials/custom_language_support/formatter.md)
 section of the
-[Custom Language Support Tutorial](cls_tutorial.html)
+[Custom Language Support Tutorial](/tutorials/custom_language_support_tutorial.md)
 works as we expect.
 
 ### 5.1. Define test data

@@ -442,12 +442,12 @@ Most often these controls are created by `DomUIFactory.createControl(GenericDomV
 ##### BooleanControl
 It allows you to edit boolean values. The control is bound to `JCheckBox`.
 
-![BooleanControl](xml_dom_api/booleancontrol.gif)
+![BooleanControl](/xml_dom_api/booleancontrol.gif)
 
 ##### ComboControl
 The control is bound to a non-editable `JComboBox`, so it can be used to choose something from a limited set. One case of such a limited set is enum. Or it can be a constructor where you can provide a `Factory<List<String>>`, and return from this factory anything you want (for example, a list of database names to choose from). By default, the wrong values (written in XML, but not present in the list you've given to the control) are displayed in red. Since it's common practice to specify custom `CellRenderer` for combo boxes, the control has the `isValidValue(String)` method. If it returns `false` on the value you're rendering, you can highlight it in some way, to achieve the same result as the default renderer. Or you can just delegate to that renderer in your own way.
 
-![ComboControl](xml_dom_api/combocontrol.gif)
+![ComboControl](/xml_dom_api/combocontrol.gif)
 
 ##### BooleanEnumControl
 Sometimes, when there are only 2 alternatives, it's convenient to use a check box instead of combo box. This control is designed specially for such cases. While being (and being bound to) a check box, the control edits not just "true" or "false", but any two String values, or two enum elements. In the last case, it has a boolean _invertedOrder_ parameter, to specify which element corresponds to the checked state. By default _invertedOrder_ is set to `false`, so the first element corresponds to the unchecked state, and the second — to the checked one. If you set the parameter to `true`, the states will swap.
@@ -461,7 +461,7 @@ This control allows you to edit simple string values. The control is bound to a 
 ##### PsiClassControl
 This is a one-line editor with a browse button that opens the standard  class selection dialog. The control accepts class names only. It is bound to `PsiClassPanel`.
 
-![PsiClassControl](xml_dom_api/psiclasscontrol.gif)
+![PsiClassControl](/xml_dom_api/psiclasscontrol.gif)
 
 ##### PsiTypeControl
 This is almost the same as PsiClassControl, but allows entering not only class names, but also Java primitive types and even arrays. It is bound to `PsiTypePanel`.
@@ -492,7 +492,7 @@ You can add your own popup menu to the control. Call the `DomTableView.installPo
 
 Tables can have single or multiple (default) row selection. If you want to change this behavior, override `DomTableView.allowMultipleRowsSelection()`.
 
-![CollectionControl](xml_dom_api/collectioncontrol.gif)
+![CollectionControl](/xml_dom_api/collectioncontrol.gif)
 
 ### UI Organization
 The easiest way to create a DOM-based UI form is to extend the `BasicDomElementComponent` class. This will require you to pass some DOM element to the constructor. Then you bind an IntelliJ IDEA GUI Designer form to your subclass and design a beautiful form there. You will surely want to bind some controls to DOM UI, in which case you should of course ensure that they have right types. Finally, you should create some DOM controls in class' constructor and bind them. But you can create controls and bind them to the `DomElement`'s children — `GenericDomValue`'s automatically.

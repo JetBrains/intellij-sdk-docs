@@ -6,6 +6,18 @@ GIT
     jekyll-git_metadata (0.0.3)
       jekyll (~> 2.0)
 
+GIT
+  remote: https://github.com/citizenmatt/link-checker.git
+  revision: 4b9409f5218c3bc215883c4b43061baa203597c4
+  branch: multiple_fixes
+  specs:
+    link-checker (0.7.2)
+      anemone (~> 0.7.2)
+      certified (~> 1.0.0)
+      colorize (~> 0.7.3)
+      nokogiri (~> 1.6)
+      trollop (~> 2.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -15,6 +27,7 @@ GEM
     blankslate (2.1.2.4)
     celluloid (0.16.0)
       timers (~> 4.0.0)
+    certified (1.0.0)
     classifier-reborn (2.0.3)
       fast-stemmer (~> 1.0)
     coffee-script (2.4.1)
@@ -22,10 +35,9 @@ GEM
       execjs
     coffee-script-source (1.9.1.1)
     colorator (0.1)
-    colorize (0.5.8)
+    colorize (0.7.7)
     execjs (2.5.2)
     fast-stemmer (1.0.2)
-    ffi (1.9.10)
     ffi (1.9.10-x64-mingw32)
     hitimes (1.2.2)
     jekyll (2.5.3)
@@ -54,18 +66,15 @@ GEM
     jekyll-watch (1.2.1)
       listen (~> 2.7)
     kramdown (1.8.0)
-    link-checker (0.7.2)
-      anemone (~> 0.7.2)
-      colorize (~> 0.5.8)
-      nokogiri (~> 1.5.5)
-      trollop (~> 2.0)
     liquid (2.6.2)
     listen (2.10.1)
       celluloid (~> 0.16.0)
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
     mercenary (0.3.5)
-    nokogiri (1.5.11)
+    mini_portile (0.6.2)
+    nokogiri (1.6.6.2-x64-mingw32)
+      mini_portile (~> 0.6.0)
     parslet (1.5.0)
       blankslate (~> 2.0)
     posix-spawn (0.3.11)
@@ -79,21 +88,25 @@ GEM
     redcarpet (3.3.2)
     robotex (1.0.0)
     safe_yaml (1.0.4)
-    sass (3.4.15)
+    sass (3.4.16)
     timers (4.0.1)
       hitimes
     toml (0.1.2)
       parslet (~> 1.5.0)
     trollop (2.1.2)
+    wdm (0.1.1)
     yajl-ruby (1.2.1)
 
 PLATFORMS
-  ruby
   x64-mingw32
 
 DEPENDENCIES
   jekyll
   jekyll-git_metadata!
   jekyll-redirect-from
-  link-checker
+  link-checker!
   rake
+  wdm (>= 0.1.0)
+
+BUNDLED WITH
+   1.10.5

@@ -38,6 +38,7 @@ GEM
     colorize (0.7.7)
     execjs (2.5.2)
     fast-stemmer (1.0.2)
+    ffi (1.9.10)
     ffi (1.9.10-x64-mingw32)
     hitimes (1.2.2)
     jekyll (2.5.3)
@@ -73,6 +74,8 @@ GEM
       rb-inotify (>= 0.9)
     mercenary (0.3.5)
     mini_portile (0.6.2)
+    nokogiri (1.6.6.2)
+      mini_portile (~> 0.6.0)
     nokogiri (1.6.6.2-x64-mingw32)
       mini_portile (~> 0.6.0)
     parslet (1.5.0)
@@ -94,10 +97,10 @@ GEM
     toml (0.1.2)
       parslet (~> 1.5.0)
     trollop (2.1.2)
-    wdm (0.1.1)
     yajl-ruby (1.2.1)
 
 PLATFORMS
+  ruby
   x64-mingw32
 
 DEPENDENCIES
@@ -106,7 +109,3 @@ DEPENDENCIES
   jekyll-redirect-from
   link-checker!
   rake
-  wdm (>= 0.1.0)
-
-BUNDLED WITH
-   1.10.5

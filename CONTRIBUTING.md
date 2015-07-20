@@ -32,6 +32,14 @@ In order to build the documentation site, you will need:
 * Python 2 - the [Pygments](https://github.com/tmm1/pygments.rb) gem uses Python for syntax highlighting.
 * `gem install bundler` - the site uses [Bundler](http://bundler.io) to manage gem dependencies within the repo, rather than globally installing to the local operating system.
 
+**Docker**
+
+To install this site on Docker, simply execute the following commands.
+
+* `cd docker`
+* `docker build -t intellij-sdk-docs .`
+* `docker run -it -p 4000:4000 intellij-sdk-docs /bin/bash -c 'cd intellij-sdk-docs && rake preview'`
+
 **OS X**
 
 OS X comes with Ruby and Python already installed. The only steps required are:

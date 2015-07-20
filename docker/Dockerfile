@@ -15,8 +15,7 @@ RUN \
 
 RUN \
   gem install bundler && \
-# git clone --depth 1 http://github.com/jetbrains/intellij-sdk-docs && \
-  git clone --depth 1 http://github.com/breandan/intellij-sdk-docs && \
+  git clone --depth 1 http://github.com/jetbrains/intellij-sdk-docs && \
   cd intellij-sdk-docs && \
   git submodule init && \
   git submodule update

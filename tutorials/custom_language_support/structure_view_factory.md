@@ -1,5 +1,4 @@
 ---
-layout: general
 title: 14. Structure View Factory
 ---
 
@@ -159,5 +158,5 @@ public class SimpleStructureViewElement implements StructureViewTreeElement, Sor
 ![Structure View](img/structure_view.png)
 
 [Previous](go_to_symbol_contributor.html)
-[Top](../custom_language_support.html)
+[Top](../custom_language_support_tutorial.md)
 [Next](formatter.html)

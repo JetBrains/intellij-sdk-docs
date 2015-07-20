@@ -1,13 +1,12 @@
 ---
-layout: general
 title: 6. Rename Test
 ---
 
 
 In this test we will check if in-place rename, implemented in the
-[Reference Contributor](reference_contributor.html)
+[Reference Contributor](/tutorials/custom_language_support/reference_contributor.md)
 section of the
-[Custom Language Support Tutorial](cls_tutorial.html), works as we expect.
+[Custom Language Support Tutorial](/tutorials/custom_language_support_tutorial.md), works as we expect.
 
 ### 6.1. Define input test data
 

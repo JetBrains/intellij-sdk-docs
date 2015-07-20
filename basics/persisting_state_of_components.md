@@ -1,5 +1,4 @@
 ---
-layout: general
 title: Persisting State of Components
 ---
 

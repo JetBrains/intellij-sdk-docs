@@ -1,5 +1,4 @@
 ---
-layout: general
 title: Supporting Module Types
 ---
 
@@ -10,13 +9,13 @@ This tutorial shows how to register a new module and link it to the project crea
 
 Create an empty plugin project.
 See 
-[Creating a Plugin Project](basics/getting_started/creating_plugin_project.html)
+[Creating a Plugin Project](/basics/getting_started/creating_plugin_project.html)
 to know how to do it.
 
 ## 1. Register a New Module Type
 
 Add a new *moduleType* extension into the 
-[plugin.xml](TODO)
+`plugin.xml`
 configuration file.
 
 ```xml

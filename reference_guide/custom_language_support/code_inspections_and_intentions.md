@@ -1,5 +1,4 @@
 ---
-layout: general
 title: Code Inspections and Intentions
 ---
 

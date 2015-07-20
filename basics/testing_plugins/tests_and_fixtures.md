@@ -1,5 +1,4 @@
 ---
-layout: general
 title: Tests and Fixtures
 ---
 

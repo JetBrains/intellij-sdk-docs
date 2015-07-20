@@ -1,13 +1,12 @@
 ---
-layout: general
 title: 10. Reference Test
 ---
 
 
 In this test we will check if references, implemented in the
-[Reference Contributor](reference_contributor.html)
+[Reference Contributor](/tutorials/custom_language_support/reference_contributor.md)
 section of the
-[Custom Language Support Tutorial](cls_tutorial.html),
+[Custom Language Support Tutorial](/tutorials/custom_language_support_tutorial.md),
 works as we expect.
 
 ### 10.1. Define test data

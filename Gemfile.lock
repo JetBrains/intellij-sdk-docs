@@ -1,0 +1,111 @@
+GIT
+  remote: https://github.com/citizenmatt/jekyll-git_metadata.git
+  revision: 7a379722f102622391a6e66e03d4ec6c0f8ab168
+  branch: fix_windows
+  specs:
+    jekyll-git_metadata (0.0.3)
+      jekyll (~> 2.0)
+
+GIT
+  remote: https://github.com/citizenmatt/link-checker.git
+  revision: 4b9409f5218c3bc215883c4b43061baa203597c4
+  branch: multiple_fixes
+  specs:
+    link-checker (0.7.2)
+      anemone (~> 0.7.2)
+      certified (~> 1.0.0)
+      colorize (~> 0.7.3)
+      nokogiri (~> 1.6)
+      trollop (~> 2.0)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    anemone (0.7.2)
+      nokogiri (>= 1.3.0)
+      robotex (>= 1.0.0)
+    blankslate (2.1.2.4)
+    celluloid (0.16.0)
+      timers (~> 4.0.0)
+    certified (1.0.0)
+    classifier-reborn (2.0.3)
+      fast-stemmer (~> 1.0)
+    coffee-script (2.4.1)
+      coffee-script-source
+      execjs
+    coffee-script-source (1.9.1.1)
+    colorator (0.1)
+    colorize (0.7.7)
+    execjs (2.5.2)
+    fast-stemmer (1.0.2)
+    ffi (1.9.10)
+    ffi (1.9.10-x64-mingw32)
+    hitimes (1.2.2)
+    jekyll (2.5.3)
+      classifier-reborn (~> 2.0)
+      colorator (~> 0.1)
+      jekyll-coffeescript (~> 1.0)
+      jekyll-gist (~> 1.0)
+      jekyll-paginate (~> 1.0)
+      jekyll-sass-converter (~> 1.0)
+      jekyll-watch (~> 1.1)
+      kramdown (~> 1.3)
+      liquid (~> 2.6.1)
+      mercenary (~> 0.3.3)
+      pygments.rb (~> 0.6.0)
+      redcarpet (~> 3.1)
+      safe_yaml (~> 1.0)
+      toml (~> 0.1.0)
+    jekyll-coffeescript (1.0.1)
+      coffee-script (~> 2.2)
+    jekyll-gist (1.2.1)
+    jekyll-paginate (1.1.0)
+    jekyll-redirect-from (0.8.0)
+      jekyll (>= 2.0)
+    jekyll-sass-converter (1.3.0)
+      sass (~> 3.2)
+    jekyll-watch (1.2.1)
+      listen (~> 2.7)
+    kramdown (1.8.0)
+    liquid (2.6.2)
+    listen (2.10.1)
+      celluloid (~> 0.16.0)
+      rb-fsevent (>= 0.9.3)
+      rb-inotify (>= 0.9)
+    mercenary (0.3.5)
+    mini_portile (0.6.2)
+    nokogiri (1.6.6.2)
+      mini_portile (~> 0.6.0)
+    nokogiri (1.6.6.2-x64-mingw32)
+      mini_portile (~> 0.6.0)
+    parslet (1.5.0)
+      blankslate (~> 2.0)
+    posix-spawn (0.3.11)
+    pygments.rb (0.6.3)
+      posix-spawn (~> 0.3.6)
+      yajl-ruby (~> 1.2.0)
+    rake (10.4.2)
+    rb-fsevent (0.9.5)
+    rb-inotify (0.9.5)
+      ffi (>= 0.5.0)
+    redcarpet (3.3.2)
+    robotex (1.0.0)
+    safe_yaml (1.0.4)
+    sass (3.4.16)
+    timers (4.0.1)
+      hitimes
+    toml (0.1.2)
+      parslet (~> 1.5.0)
+    trollop (2.1.2)
+    yajl-ruby (1.2.1)
+
+PLATFORMS
+  ruby
+  x64-mingw32
+
+DEPENDENCIES
+  jekyll
+  jekyll-git_metadata!
+  jekyll-redirect-from
+  link-checker!
+  rake

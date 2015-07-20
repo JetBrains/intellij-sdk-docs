@@ -1,5 +1,4 @@
 ---
-layout: general
 title: 11. Find Usages Provider
 ---
 
@@ -92,5 +91,5 @@ Now we can call *Find Usages* for any property with a reference.
 ![Find Usages](img/find_usages.png)
 
 [Previous](reference_contributor.html)
-[Top](../custom_language_support.html)
+[Top](../custom_language_support_tutorial.html)
 [Next](folding_builder.html)

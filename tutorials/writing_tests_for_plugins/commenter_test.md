@@ -1,13 +1,8 @@
 ---
-layout: general
 title: 9. Commenter Test
 ---
 
-In this test we will check if the commenter, implemented in the
-[Commenter](commenter.html)
-section of the
-[Custom Language Support Tutorial](cls_tutorial.html),
-works as we expect.
+In this test we will check if the commenter, implemented in the [Commenter](/tutorials/custom_language_support/commenter.md) section of the [Custom Language Support Tutorial](/tutorials/custom_language_support_tutorial.md), works as we expect.
 
 ### 9.1. Define a test method
 

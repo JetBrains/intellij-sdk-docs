@@ -1,12 +1,9 @@
 ---
-layout: general
 title: Build Number Ranges
 ---
 
-Use this reference of build number ranges to specify the correct since-build and until-build versions in
 <!--TODO link to file in sample-->
-[plugin.xml]() 
-files.
+Use this reference of build number ranges to specify the correct since-build and until-build versions in `plugin.xml` files.
 
 Starting with IntelliJ IDEA 9 beta, a multi-part build number is used: for example, IU-90.94.
  
@@ -22,11 +19,8 @@ Every time a release branch is created for one of the products based on IntelliJ
 Accordingly, the trunk always has even branch numbers (90, 92, 94, etc.), while release branches have odd branch numbers (91, 93, etc.).
 For example, the RubyMine 2.0 release branch has the branch number 91.
 
-Multi-part build numbers can also be used in the since-build and until-build tags of
 <!--TODO link to file in sample--> 
-[plugin.xml]() 
-files. 
-Usually you should omit the product ID and use only the branch number and build number, for example:
+Multi-part build numbers can also be used in the since-build and until-build tags of `plugin.xml` files. Usually you should omit the product ID and use only the branch number and build number, for example:
 
 ```xml
 <idea-version since-build="94.539"/>

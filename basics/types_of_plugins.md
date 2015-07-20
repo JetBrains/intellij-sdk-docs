@@ -1,5 +1,4 @@
 ---
-layout: general
 title: Main Types of IntelliJ IDEA Plugins
 ---
 

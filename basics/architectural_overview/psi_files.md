@@ -1,5 +1,4 @@
 ---
-layout: general
 title: PSI Files
 ---
 
@@ -58,7 +57,7 @@ To save the PSI file to disk, use the
 ## How do I extend PSI?
 
 PSI can be extended to support additional languages through custom language plugins. For more details on developing custom language plugins, see the
-[Custom Language Support](reference_guide/custom_language_support.html) 
+[Custom Language Support](/reference_guide/custom_language_support.md) 
 reference guide.
 
 ## What are the rules for working with PSI?

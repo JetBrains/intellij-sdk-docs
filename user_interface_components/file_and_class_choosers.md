@@ -1,5 +1,4 @@
 ---
-layout: general
 title: File and Class Choosers
 ---
 

@@ -1,5 +1,4 @@
 ---
-layout: general
 title: 9. Completion Contributor
 ---
 

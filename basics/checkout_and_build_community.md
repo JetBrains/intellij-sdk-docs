@@ -1,5 +1,4 @@
 ---
-layout: general
 title: Check Out And Build Community Edition
 ---
 

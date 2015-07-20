@@ -1,5 +1,4 @@
 ---
-layout: general
 title: Popups
 ---
 
@@ -39,7 +38,7 @@ If you need to create a list-like popup which is more flexible than a simple
 but don't want to represent the possible choices as actions in an action group, you can work directly with the
 [ListPopupStep](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/ui/popup/ListPopupStep.java)
 interface and the
-[JBPopupFactory.createListPopup()]((https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/ui/popup/JBPopupFactory.java))
+[JBPopupFactory.createListPopup()](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/ui/popup/JBPopupFactory.java)
 method.
 Normally you don't need to implement the entire interface; instead, you can derive from the
 [BaseListPopupStep](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/ui/popup/util/BaseListPopupStep.java)

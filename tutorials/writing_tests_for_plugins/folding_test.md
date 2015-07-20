@@ -1,12 +1,11 @@
 ---
-layout: general
 title: 7. Folding Test
 ---
 
 In this test we will check if the folding builder, implemented in the
-[Folding Builder](folding_builder.html)
+[Folding Builder](/tutorials/custom_language_support/folding_builder.md)
 section of the
-[Custom Language Support Tutorial](cls_tutorial.html),
+[Custom Language Support Tutorial](/tutorials/custom_language_support_tutorial.md),
 works as we expect.
 
 ### 7.1. Define test data

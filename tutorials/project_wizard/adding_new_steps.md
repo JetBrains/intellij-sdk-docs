@@ -1,5 +1,4 @@
 ---
-layout: general
 title: Adding New Steps to Project Wizard
 ---
 
@@ -9,14 +8,13 @@ This tutorial shows how to add a extra-step to the Project Wizard in order to pr
 
 Create an empty plugin project.
 See 
-[Creating a Plugin Project](basics/getting_started/creating_plugin_project.html)
+[Creating a Plugin Project](/basics/getting_started/creating_plugin_project.html)
 to know how to do it.
 
 ## 1. Register Module Builder
 
 Project configuration settings depend on the project's module type. 
-Register a new *moduleBuilder* extension point in the 
-[plugin.xml](TODO) configuration file.
+Register a new *moduleBuilder* extension point in the `plugin.xml` configuration file.
 
 
 ```xml
@@ -27,9 +25,7 @@ Register a new *moduleBuilder* extension point in the
 
 ## 2. Create a Custom Module Builder
 
-Extend 
-[ModuleBuilder](TODO)
-class to provide custom configuration.
+Extend `ModuleBuilder` class to provide custom configuration.
 
 ```java
 public class DemoModuleWizardStep extends ModuleBuilder {

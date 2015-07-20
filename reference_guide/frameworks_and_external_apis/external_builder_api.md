@@ -1,5 +1,4 @@
 ---
-layout: general
 title: External Builder API and Plugins
 ---
 

@@ -1,5 +1,4 @@
 ---
-layout: general
 title: Test Project and Testdata Directories
 ---
 

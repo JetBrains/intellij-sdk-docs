@@ -1,5 +1,4 @@
 ---
-layout: general
 title: Running and Debugging a Plugin
 ---
 

@@ -1,5 +1,4 @@
 ---
-layout: general
 title: Implementing a Parser and PSI
 ---
 
@@ -38,7 +37,7 @@ for
 
 
 The lifecycle of the PSI is described in more detail in
-[Architectural Overview](architectural_overview.html).
+[Architectural Overview](/basics/architectural_overview.md).
 
 The base classes for the PSI implementation, including
 [PsiFileBase](https://github.com/JetBrains/intellij-community/blob/master/core-impl/src/com/intellij/extapi/psi/PsiFileBase.java),
@@ -130,5 +129,5 @@ A very helpful tool for debugging the PSI implementation is the
 It can show you the structure of the PSI built by your plugin, the properties of every PSI element and highlight its text range.
 
 Please see
-[Indexing and PSI Stubs](indexing_and_psi_stubs.html)
+[Indexing and PSI Stubs](/basics/indexing_and_psi_stubs.md)
 for advanced topics.

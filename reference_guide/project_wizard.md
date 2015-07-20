@@ -1,6 +1,5 @@
 ---
 title: Project Wizard. Adding Support for Creating New Project Types.
-layout: general
 ---
 
 ## Project Wizard

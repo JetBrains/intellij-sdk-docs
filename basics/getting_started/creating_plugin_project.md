@@ -1,5 +1,4 @@
 ---
-layout: general
 title: Creating a Plugin Project
 ---
 

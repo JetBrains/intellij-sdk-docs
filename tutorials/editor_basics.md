@@ -1,5 +1,4 @@
 ---
-layout: general
 title: Basics of working with the Editor
 ---
 
@@ -17,7 +16,7 @@ and how to handle events sent to the Editor.
 
 **Note:** The described part of the API allows to operate only with text.
 If you need to access PSI please see
-[PSI Cookbook](basics/psi_cookbook.html)
+[PSI Cookbook](/basics/psi_cookbook.md)
 section.
 
 **See also:**

@@ -1,12 +1,11 @@
 ---
-layout: general
 title: 8. Find Usages Test
 ---
 
 In this test we will check if the find usages provider, implemented in the
-[Find Usages Provider](find_usages_provider.html)
+[Find Usages Provider](/tutorials/custom_language_support/find_usages_provider.md)
 section of the
-[Custom Language Support Tutorial](cls_tutorial.html),
+[Custom Language Support Tutorial](/tutorials/custom_language_support_tutorial.md),
 works correctly.
 
 ### 8.1. Define test data

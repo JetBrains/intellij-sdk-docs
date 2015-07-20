@@ -1,5 +1,4 @@
 ---
-layout: general
 title: Plugin Actions
 ---
 
@@ -11,4 +10,4 @@ The system of actions allows plugins to add their own items to IDEA menus and to
 Actions are organized into groups, which, in turn, can contain other groups.
 A group of actions can form a toolbar or a menu. Subgroups of the group can form submenus of the menu.
 You can find detailed information on how to create and register your actions in
-[IntelliJ IDEA Action System](action_system.md).
+[IntelliJ IDEA Action System](/basics/action_system.md).

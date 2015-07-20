@@ -1,14 +1,11 @@
 ---
-layout: general
 title: Writing Tests For Plugins
 ---
 
 
 In this tutorial you will learn how to write and run automated tests for your plugin.
 
-As an example we will take the plugin implemented in the
-[Custom Language Support](cls_tutorial.html)
-and cover its code with functional tests.
+As an example we will take the plugin implemented in the [Custom Language Support](/tutorials/custom_language_support_tutorial.md) and cover its code with functional tests.
 
 *  [1. Tests Prerequisites](writing_tests_for_plugins/tests_prerequisites.html)
 *  [2. Parsing Test](writing_tests_for_plugins/parsing_test.html)

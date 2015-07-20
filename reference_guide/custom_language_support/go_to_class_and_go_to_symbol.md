@@ -1,5 +1,4 @@
 ---
-layout: general
 title: Go to Class and Go to Symbol
 ---
 

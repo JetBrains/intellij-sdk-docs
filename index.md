@@ -1,6 +1,5 @@
 ---
 title: IntelliJ Platform SDK Documentation
-layout: general
 ---
 
 
@@ -22,10 +21,10 @@ section contains a series of issues commonly discussed on our
 [Open API and Plugin Development](https://devnet.jetbrains.com/community/idea/open_api_and_plugin_development) forums.
 
 One of the ways to improve *IntelliJ SDK Documentation* is to 
-**[contribute to the project](contribution_guidelines.html)**. 
+**[contribute to the project](CONTRIBUTING.md)**. 
 Any kind of content including tutorials, articles about *IntelliJ* architecture or code samples that can help plugin developers is kindly welcome.
 Please read the
-[Contribution Guidelines](contribution_guidelines.html)
+[Contribution Guidelines](CONTRIBUTING.md)
 if you would like to share your knowledge.
 
 

@@ -1,5 +1,4 @@
 ---
-layout: general
 title: 4. Annotator Test
 ---
 

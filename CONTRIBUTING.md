@@ -34,11 +34,10 @@ In order to build the documentation site, you will need:
 
 **Docker**
 
-To install this site on Docker, simply execute the following commands.
+To build and run this site on Docker, execute the following commands:
 
-* `cd docker`
-* `docker build -t intellij-sdk-docs .`
-* `docker run -it -p 4000:4000 intellij-sdk-docs /bin/bash -c 'cd intellij-sdk-docs && rake preview'`
+* `docker build -t intellij-sdk-docs /intellij-sdk-docs`
+* `docker run intellij-sdk-docs` 
 
 **OS X**
 

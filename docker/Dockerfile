@@ -14,15 +14,20 @@ RUN \
   apt-get install --yes nodejs
 
 RUN \
-  gem install bundler && \
-# git clone --depth 1 http://github.com/jetbrains/intellij-sdk-docs && \
-  git clone --depth 1 http://github.com/breandan/intellij-sdk-docs && \
+  gem install bundler
+
+RUN \
+  git clone --depth 1 https://github.com/jetbrains/intellij-sdk-docs.git /intellij-sdk-docs && \
   cd intellij-sdk-docs && \
   git submodule init && \
   git submodule update
 
-RUN \
-  cd intellij-sdk-docs && \
-  rake bootstrap
+RUN cd intellij-sdk-docs && rake bootstrap
+
+VOLUME /intellij-sdk-docs
+
+WORKDIR /intellij-sdk-docs
 
 EXPOSE 4000
+
+CMD rake preview

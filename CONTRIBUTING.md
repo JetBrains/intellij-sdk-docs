@@ -36,8 +36,8 @@ In order to build the documentation site, you will need:
 
 To build and run this site on Docker, execute the following commands:
 
-* `docker build -t intellij-sdk-docs /intellij-sdk-docs`
-* `docker run intellij-sdk-docs` 
+* `docker pull breandan/intellij-sdk-docs`
+* `docker run intellij-sdk-docs`
 
 **OS X**
 

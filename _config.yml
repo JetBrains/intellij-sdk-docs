@@ -3,4 +3,4 @@ product_name: IntelliJ Platform SDK
 product_version:
 product_type: DevGuide
 
-baseurl: /
+baseurl: /intellij/sdk/docs/

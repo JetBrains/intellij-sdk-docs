@@ -1,5 +1,5 @@
 ---
-title: Main Types of IntelliJ IDEA Plugins
+title: Main Types of Plugins
 ---
 
 Products based on *IntelliJ Platform* can be modified and adjusted for custom purposes by adding plugins.
@@ -41,7 +41,7 @@ Refer to
 [Struts 2 plugin](https://plugins.jetbrains.com/plugin/1698) 
 as an example of framework integration.
 
-# Tool Integration
+## Tool Integration
 Tool integration makes it possible to manipulate third-party tools and components directly from the IDE without switching contexts.
  
 This implies:
@@ -54,7 +54,7 @@ Refer to the
 [Gerrit integration](https://plugins.jetbrains.com/plugin/7272?pr=idea) 
 plugin as an example.
 
-# User Interface Add-Ons
+## User Interface Add-Ons
 
 Plugins in this category apply various changes to the standard user interface of the IDE. 
 Some newly added components are interactive and provide new functionality, while others are limited to visual modifications only.

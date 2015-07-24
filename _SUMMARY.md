@@ -1,6 +1,6 @@
 * [IntelliJ Platform SDK](index.md)
   * [Quick Start Guide](basics.md)
-    * [Main Types of IntelliJ IDEA Plugins](basics/types_of_plugins.md)
+    * [Main Types of Plugins](basics/types_of_plugins.md)
     * [Creating Your First Plugin](basics/getting_started.md)
       * [Setting Up Development Environment](basics/getting_started/setting_up_environment.md)
       * [Creating a Plugin Project](basics/getting_started/creating_plugin_project.md)

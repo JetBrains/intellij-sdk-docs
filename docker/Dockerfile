@@ -16,18 +16,17 @@ RUN \
 RUN \
   gem install bundler
 
-RUN \
-  git clone --depth 1 https://github.com/jetbrains/intellij-sdk-docs.git /intellij-sdk-docs && \
-  cd intellij-sdk-docs && \
-  git submodule init && \
-  git submodule update
+VOLUME /data
 
-RUN cd intellij-sdk-docs && rake bootstrap
-
-VOLUME /intellij-sdk-docs
-
-WORKDIR /intellij-sdk-docs
+WORKDIR /data
 
 EXPOSE 4000
 
-CMD rake preview
+CMD \
+  if cd intellij-sdk-docs; \
+    then git pull; \
+    else git clone --depth 1 https://github.com/jetbrains/intellij-sdk-docs.git && cd intellij-sdk-docs; \
+  fi && \
+  git submodule update --init && \
+  rake bootstrap && \
+  rake preview

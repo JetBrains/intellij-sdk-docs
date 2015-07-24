@@ -2,6 +2,6 @@
     "productName": "IntelliJ Platform SDK",
     "searchScope": "intellij-sdk-docs",
     "disqusID": "",
-    "showDisqus: false,
+    "showDisqus": false,
     "useSideblocks": true
 }

@@ -34,10 +34,11 @@ In order to build the documentation site, you will need:
 
 **Docker**
 
-To build and run this site on Docker, execute the following commands:
+To build and run this site on Docker, run the following commands from inside the parent directory (with the `sdkdocs-template` submodule initialized, please see the [boot2docker documentation](https://github.com/boot2docker/boot2docker#folder-sharing) for how to enable folder sharing with Docker containers):
 
-* `docker pull breandan/intellij-sdk-docs`
-* `docker run intellij-sdk-docs`
+* `docker build -t intellij-sdk-docs . && docker run -p 4000:4000 -v $PWD:/usr/src/app intellij-sdk-docs`
+
+This will will forward port 4000 from the Docker container (which can be configured the [Rakefile](https://github.com/JetBrains/intellij-sdk-docs/blob/master/Rakefile), just update the `p- <HOST_PORT>:<CONTAINER_PORT>` flag) and mount the working directory to `/usr/src/app` where `intellij-sdk-docs` expects to find a Jekyll site. From there, it will run `rake bootstrap && rake preview`. Finally, you can access your site at by visiting [http://localhost:4000/intellij/sdk/docs/](http://localhost:4003/intellij/sdk/docs/). Please keep in mind if you are running boot2docker, that it may bind a [different address](https://github.com/boot2docker/boot2docker#container-port-redirection).
 
 **OS X**
 

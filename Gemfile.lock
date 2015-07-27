@@ -1,4 +1,12 @@
 GIT
+  remote: https://github.com/citizenmatt/jekyll-git_metadata.git
+  revision: 7a379722f102622391a6e66e03d4ec6c0f8ab168
+  branch: fix_windows
+  specs:
+    jekyll-git_metadata (0.0.3)
+      jekyll (~> 2.0)
+
+GIT
   remote: https://github.com/citizenmatt/link-checker.git
   revision: 4b9409f5218c3bc215883c4b43061baa203597c4
   branch: multiple_fixes
@@ -89,7 +97,6 @@ GEM
     toml (0.1.2)
       parslet (~> 1.5.0)
     trollop (2.1.2)
-    wdm (0.1.1)
     yajl-ruby (1.2.1)
 
 PLATFORMS
@@ -98,10 +105,10 @@ PLATFORMS
 
 DEPENDENCIES
   jekyll
+  jekyll-git_metadata!
   jekyll-redirect-from
   link-checker!
   rake
-  wdm (>= 0.1.0)
 
 BUNDLED WITH
    1.10.6

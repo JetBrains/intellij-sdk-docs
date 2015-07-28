@@ -90,17 +90,17 @@ It has the following fields:
 
 The simplest ways of specifying the ```@Storage``` annotation are as follows:
 
-* ```@Storage(id="other", file = StoragePathMacros.APP_CONFIG + "/other.xml")``` for application-level values
+* ```@Storage(id="other", file = StoragePathMacros.APP_CONFIG + "/yourName.xml")``` for application-level values
 * ```@Storage(id="other", file = StoragePathMacros.PROJECT_FILE)``` for values stored in the project file (for .ipr based projects)
 * ```@Storage(id = "dir", file = StoragePathMacros.PROJECT_CONFIG_DIR + "/other.xml", scheme = StorageScheme.DIRECTORY_BASED)})``` for values stored in the project directory (for directory-based projects)
 * ```@Storage(id="other", file = StoragePathMacros.WORKSPACE_FILE)``` for values stored in the workspace file
+
+By specifying a different value for the ```file``` parameter, you can cause the state to be persisted in a different file. For application-level components strongly recommended to use custom file, using of ```other.xml``` is deprecated.
 
 The ```roamingType``` parameter of the ```@Storage``` annotation specifies the roaming type when the Settings Repository plugin is used.
 
 The ```id``` parameter of the ```@Storage``` annotation can be used to exclude specific fields from serialization in specific formats. 
 If you do not need to exclude anything, you can set the ```id``` to an arbitrary string value.
-
-By specifying a different value for the ```file``` parameter, you can cause the state to be persisted in a different file.
 
 If you need to specify where the values are stored when the directory-based project format is used, you need to add the second ```@Storage``` annotation with the scheme parameter set to StorageScheme.DIRECTORY_BASED, for example:
 

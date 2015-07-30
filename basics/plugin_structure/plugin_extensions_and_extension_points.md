@@ -56,7 +56,7 @@ public class MyBeanClass1 extends AbstractExtensionPointBean {
 
 }
 ```
-Note that to declare an extension designed to access the MyExtensionPoint1 extension point, your plugin.xml file must contain the <MyExtensionPoint1> tag with the "key" and "implementationClass" attributes set to appropriate values (see the sample plugin.xml file below).
+Note that to declare an extension designed to access the MyExtensionPoint1 extension point, your plugin.xml file must contain the \<MyExtensionPoint1\> tag with the "key" and "implementationClass" attributes set to appropriate values (see the sample plugin.xml file below).
 
 *To declare an extension*
 

@@ -35,7 +35,7 @@ bean class.
 To access this extension point, create a Java class that implements the
 [FileViewProviderFactory](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/psi/FileViewProviderFactory.java)
 interface, and in this class, override the ```createFileViewProvider``` method.
-To declare the extension to the _fileType.fileViewProviderFactory_ extension point, to the <extensions> section of the plugin.xml file, add the following syntax:
+To declare the extension to the _fileType.fileViewProviderFactory_ extension point, to the \<extensions\> section of the plugin.xml file, add the following syntax:
 
 ```
 <fileType.fileViewProviderFactory filetype=%file type% implementationClass=%class name%>

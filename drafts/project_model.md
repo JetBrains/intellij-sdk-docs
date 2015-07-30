@@ -32,7 +32,7 @@ IntelliJ IDEA supports three types of libraries:
 
 * **Module Library**: the library classes are visible only in this module and the library information is recorded in the module *.iml file.
 * **Project Library**: the library classes are visible within the project and the library information is recorded in the project *.ipr file or in .idea/libraries.
-* **Global Library**: the library information is recorded in the applicationLibraries.xml file into the <User Home>/.IntelliJIdea/config/options directory. Global libraries are similar to project libraries, but are visible for the different projects.
+* **Global Library**: the library information is recorded in the applicationLibraries.xml file into the \<User Home\>/.IntelliJIdea/config/options directory. Global libraries are similar to project libraries, but are visible for the different projects.
 
 For more information about libraries, refer to
 [Library] (http://www.jetbrains.com/idea/webhelp/library.html).

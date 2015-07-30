@@ -67,7 +67,7 @@ After that every time compilation is run in the test IDE, the build  process wil
 
 The build process has built-in self-cpu-profiling capabilities. To enable them do the following:
 
-1. Copy `<ide-home>/lib/yjp-controller-api-redist.jar` and `<ide-home>/bin/yjpagent.\*`  files to `<ide-system-dir>/compile-server`
+1. Copy `<ide-home>/lib/yjp-controller-api-redist.jar` and `<ide-home>/bin/yjpagent.*`  files to `<ide-system-dir>/compile-server`
 
 2. In "Settings \| Compiler \| Additional compiler process VM options" field enter `-Dprofiling.mode=true`
 

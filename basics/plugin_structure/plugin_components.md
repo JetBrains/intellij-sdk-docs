@@ -43,7 +43,7 @@ The name of a component is returned by its ```getComponentName()``` method.
 
 ### Components Naming Notation
 
-It is recommended to name components in \<plugin_name\>.\<component_name\> form.
+It is recommended to name components in `<plugin_name>.<component_name>` form.
 
 ### Application Level Components
 
@@ -115,7 +115,7 @@ Note that module-level components must be registered in the ```<module-component
 #### Quick creation of module components
 
 *IntelliJ IDEA* suggests a simplified way to create module components, with all the required infrastructure.
-The IDEA interface will help you declare the module component's implementation class, and will automatically make appropriate changes to the \<module-components\> section of the `plugin.xml` file.
+The IDEA interface will help you declare the module component's implementation class, and will automatically make appropriate changes to the `<module-components>` section of the `plugin.xml` file.
 
 *To create and register a module component*
 
@@ -158,9 +158,9 @@ For more information and samples, refer to
 ### Defaults
 
 
-The defaults (components' predefined settings) should be placed in the *\<component_name\>.xml* file.
+The defaults (components' predefined settings) should be placed in the `<component_name>.xml` file.
 Place this file in the plugin's classpath in the folder corresponding to the default package.
-The ```readExternal()``` method will be called on the \<component\> root tag.
+The ```readExternal()``` method will be called on the `<component>` root tag.
 
 If a component has defaults, the ```readExternal()``` method is called twice:
 

@@ -35,11 +35,11 @@ The ```AnActionEvent``` instance is also passed to the ```actionPerformed``` met
 
 ## Registering Actions
 
-There are two main ways to register an action: either by listing it in the \<actions\> section of the plugin.xml file, or through Java code.
+There are two main ways to register an action: either by listing it in the `<actions>` section of the plugin.xml file, or through Java code.
 
 ### Registering Actions in plugin.xml
 
-Registering actions in plugin.xml is demonstrated in the following example. The example section of plugin.xml demonstrates all elements which can be used in the \<actions\> section, and describes the meaning of each element.
+Registering actions in plugin.xml is demonstrated in the following example. The example section of plugin.xml demonstrates all elements which can be used in the `<actions>` section, and describes the meaning of each element.
 
 ```xml
     <!-- Actions -->
@@ -149,7 +149,7 @@ public class MyPluginRegistration implements ApplicationComponent {
 Note, that the sample ```TextBoxes``` class is described in
 [Getting Started with Plugin Development](/basics/getting_started.html).
 
-To ensure that your plugin is initialized on IDEA start-up, make the following changes to the \<application-components\> section of the plugin.xml file:
+To ensure that your plugin is initialized on IDEA start-up, make the following changes to the `<application-components>` section of the plugin.xml file:
 
 ```xml
 <application-components>

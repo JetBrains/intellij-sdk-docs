@@ -50,7 +50,7 @@ mechanism to support plugins. There are several service interfaces (e.g. `Builde
 
 ### Registering a plugin for External Builder
 
-Sources of a plugin for External Builder should be put in a separate module. By convention such module has name '...-jps-plugin' and its sources are placed under 'jps-plugin' directory in the main plugin directory. Use \<compileServer.plugin\> extension to add the plugin to classpath of external build process, the plugin jar should be named \<jps module name\>.jar. 'Build' | 'Prepare Plugin Module for deployment' action will automatically pack 'jps-plugin' part to a separate jar accordingly.
+Sources of a plugin for External Builder should be put in a separate module. By convention such module has name '...-jps-plugin' and its sources are placed under 'jps-plugin' directory in the main plugin directory. Use `<compileServer.plugin>` extension to add the plugin to classpath of external build process, the plugin jar should be named `<jps module name>.jar`. 'Build' | 'Prepare Plugin Module for deployment' action will automatically pack 'jps-plugin' part to a separate jar accordingly.
 
 ### Debugging a plugin for External Builder
 
@@ -73,7 +73,7 @@ The build process has built-in self-cpu-profiling capabilities. To enable them d
 
 3. Make sure automatic make is turned off
 
-After this every build process run should result in a CPU snapshot stored in \<user-home\>/Snapshots directory.
+After this every build process run should result in a CPU snapshot stored in `<user-home>`/Snapshots directory.
 Snapshots are named like "ExternalBuild\-\{date\}.snapshot".
 
 Specifying `-Dprofiling.mode=false` will turn profiling off.

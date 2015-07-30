@@ -23,7 +23,7 @@ public class EditorIllustration extends AnAction {
 
 ### 1.1.2. Registering an action
 
-To register the action we should add a corresponding attribute to the *\<actions\>* section of the plugin configuration file
+To register the action we should add a corresponding attribute to the `<actions>` section of the plugin configuration file
 [plugin.xml](https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/editor_basics/resources/META-INF/plugin.xml)
 
 

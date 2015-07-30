@@ -9,7 +9,7 @@ To deploy a plugin:
 * Make your project by invoking **Build \| Make Project**.
 
 * Prepare your plugin for deployment.
-  In the main menu, select **Build \| Prepare Plugin Module \<module name\> for Deployment**.
+  In the main menu, select **Build \| Prepare Plugin Module `<module name>` for Deployment**.
 
   ![Prepare Plugin for Deployment](deploying_plugin/img/prepare_plugin_for_deployment.png)
 

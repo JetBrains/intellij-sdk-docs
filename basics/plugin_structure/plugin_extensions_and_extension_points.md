@@ -56,17 +56,17 @@ public class MyBeanClass1 extends AbstractExtensionPointBean {
 
 }
 ```
-Note that to declare an extension designed to access the MyExtensionPoint1 extension point, your plugin.xml file must contain the \<MyExtensionPoint1\> tag with the "key" and "implementationClass" attributes set to appropriate values (see the sample plugin.xml file below).
+Note that to declare an extension designed to access the MyExtensionPoint1 extension point, your plugin.xml file must contain the `<MyExtensionPoint1>` tag with the "key" and "implementationClass" attributes set to appropriate values (see the sample plugin.xml file below).
 
 *To declare an extension*
 
-1. For the \<extensions\> element, set the *xmlns* (deprecated) or *defaultExtensionNs* attribute to one of the following values:
+1. For the `<extensions>` element, set the *xmlns* (deprecated) or *defaultExtensionNs* attribute to one of the following values:
 
     *  _com.intellij_, if your plugin extends the IDEA core functionality.
 
     *  _ID of a plugin_, if your plugin extends a functionality of another plugin.
 
-2. Add a new child element to the \<extensions\> element.
+2. Add a new child element to the `<extensions>` element.
 The child element name must match the name of the extension point you want the extension to access.
 
 3. Depending on the type of the extension point, do one of the following:
@@ -97,7 +97,7 @@ To clarify this procedure, consider the following sample section of the plugin.x
 
 ## How to Get the Extension Points List?
 
-To get a list of extension points available in the *IntelliJ Platform* core, consult the _\<extensionPoints\>_ section of the following XML configuration files:
+To get a list of extension points available in the *IntelliJ Platform* core, consult the `<extensionPoints>` section of the following XML configuration files:
 
 * [LangExtensionPoints.xml](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-resources/src/META-INF/LangExtensionPoints.xml)
 

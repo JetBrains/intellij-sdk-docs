@@ -1,10 +1,8 @@
 package com.simpleplugin;
 
-import com.intellij.find.impl.HelpID;
 import com.intellij.lang.cacheBuilder.DefaultWordsScanner;
 import com.intellij.lang.cacheBuilder.WordsScanner;
 import com.intellij.lang.findUsages.FindUsagesProvider;
-import com.intellij.lexer.FlexAdapter;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiNamedElement;
 import com.intellij.psi.tree.TokenSet;
@@ -12,8 +10,6 @@ import com.simpleplugin.psi.SimpleProperty;
 import com.simpleplugin.psi.SimpleTypes;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-
-import java.io.Reader;
 
 public class SimpleFindUsagesProvider implements FindUsagesProvider {
     private static final DefaultWordsScanner WORDS_SCANNER =
@@ -34,7 +30,7 @@ public class SimpleFindUsagesProvider implements FindUsagesProvider {
     @Nullable
     @Override
     public String getHelpId(@NotNull PsiElement psiElement) {
-        return HelpID.FIND_OTHER_USAGES;
+        return null;
     }
 
     @NotNull

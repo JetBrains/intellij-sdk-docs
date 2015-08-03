@@ -3,6 +3,7 @@ package com.simpleplugin;
 import com.intellij.codeInsight.completion.CompletionType;
 import com.intellij.codeInsight.generation.actions.CommentByLineCommentAction;
 import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.command.CommandProcessor;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.codeStyle.CodeStyleManager;
 import com.intellij.psi.codeStyle.CodeStyleSettingsManager;
@@ -39,7 +40,12 @@ public class SimpleCodeInsightTest extends LightCodeInsightFixtureTestCase {
         ApplicationManager.getApplication().runWriteAction(new Runnable() {
             @Override
             public void run() {
-                CodeStyleManager.getInstance(getProject()).reformat(myFixture.getFile());
+                CommandProcessor.getInstance().executeCommand(getProject(), new Runnable() {
+                    @Override
+                    public void run() {
+                        CodeStyleManager.getInstance(getProject()).reformat(myFixture.getFile());
+                    }
+                }, null, null);
             }
         });
         myFixture.checkResultByFile("DefaultTestData.simple");

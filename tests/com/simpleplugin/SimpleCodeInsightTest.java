@@ -4,6 +4,7 @@ import com.intellij.codeInsight.completion.CompletionType;
 import com.intellij.codeInsight.generation.actions.CommentByLineCommentAction;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.command.CommandProcessor;
+import com.intellij.openapi.command.WriteCommandAction;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.codeStyle.CodeStyleManager;
 import com.intellij.psi.codeStyle.CodeStyleSettingsManager;
@@ -37,17 +38,12 @@ public class SimpleCodeInsightTest extends LightCodeInsightFixtureTestCase {
     public void testFormatter() {
         myFixture.configureByFiles("FormatterTestData.simple");
         CodeStyleSettingsManager.getSettings(getProject()).SPACE_AROUND_ASSIGNMENT_OPERATORS = true;
-        ApplicationManager.getApplication().runWriteAction(new Runnable() {
+        new WriteCommandAction.Simple(getProject()) {
             @Override
-            public void run() {
-                CommandProcessor.getInstance().executeCommand(getProject(), new Runnable() {
-                    @Override
-                    public void run() {
-                        CodeStyleManager.getInstance(getProject()).reformat(myFixture.getFile());
-                    }
-                }, null, null);
+            protected void run() throws Throwable {
+                CodeStyleManager.getInstance(getProject()).reformat(myFixture.getFile());
             }
-        });
+        }.execute();
         myFixture.checkResultByFile("DefaultTestData.simple");
     }
 

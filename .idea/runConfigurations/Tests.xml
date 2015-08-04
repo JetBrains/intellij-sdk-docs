@@ -15,7 +15,7 @@
     <option name="TEST_OBJECT" value="directory" />
     <option name="VM_PARAMETERS" value="-ea -Xbootclasspath/p:../out/classes/production/boot -XX:+HeapDumpOnOutOfMemoryError -Xmx512m -XX:MaxPermSize=320m -Didea.system.path=../test-system -Didea.home.path=. -Didea.config.path=../test-config -Didea.test.group=ALL_EXCLUDE_DEFINED" />
     <option name="PARAMETERS" value="" />
-    <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/../idea/intellij-community" />
+    <option name="WORKING_DIRECTORY" value="file://$USER_HOME$/ultimate/community" />
     <option name="ENV_VARIABLES" />
     <option name="PASS_PARENT_ENVS" value="true" />
     <option name="TEST_SEARCH_SCOPE">

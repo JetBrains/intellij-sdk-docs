@@ -4,6 +4,7 @@ import com.intellij.codeInsight.intention.impl.BaseIntentionAction;
 import com.intellij.lang.ASTNode;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.command.CommandProcessor;
+import com.intellij.openapi.command.WriteCommandAction;
 import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.fileChooser.FileChooser;
 import com.intellij.openapi.fileChooser.FileChooserDescriptor;
@@ -72,25 +73,20 @@ class CreatePropertyQuickFix extends BaseIntentionAction {
     }
 
     private void createProperty(final Project project, final VirtualFile file) {
-        ApplicationManager.getApplication().runWriteAction(new Runnable() {
+        new WriteCommandAction.Simple(project) {
             @Override
             public void run() {
-                CommandProcessor.getInstance().executeCommand(project, new Runnable() {
-                    @Override
-                    public void run() {
-                        SimpleFile simpleFile = (SimpleFile) PsiManager.getInstance(project).findFile(file);
-                        ASTNode lastChildNode = simpleFile.getNode().getLastChildNode();
-                        if (lastChildNode != null && !lastChildNode.getElementType().equals(SimpleTypes.CRLF)) {
-                            simpleFile.getNode().addChild(SimpleElementFactory.createCRLF(project).getNode());
-                        }
-                        SimpleProperty property = SimpleElementFactory.createProperty(project, key, "");
-                        simpleFile.getNode().addChild(property.getNode());
-                        ((Navigatable) property.getLastChild().getNavigationElement()).navigate(true);
-                        FileEditorManager.getInstance(project).getSelectedTextEditor().getCaretModel().
-                                moveCaretRelatively(2, 0, false, false, false);
-                    }
-                }, null, null);
+                SimpleFile simpleFile = (SimpleFile) PsiManager.getInstance(project).findFile(file);
+                ASTNode lastChildNode = simpleFile.getNode().getLastChildNode();
+                if (lastChildNode != null && !lastChildNode.getElementType().equals(SimpleTypes.CRLF)) {
+                    simpleFile.getNode().addChild(SimpleElementFactory.createCRLF(project).getNode());
+                }
+                SimpleProperty property = SimpleElementFactory.createProperty(project, key, "");
+                simpleFile.getNode().addChild(property.getNode());
+                ((Navigatable) property.getLastChild().getNavigationElement()).navigate(true);
+                FileEditorManager.getInstance(project).getSelectedTextEditor().getCaretModel().
+                        moveCaretRelatively(2, 0, false, false, false);
             }
-        });
+        }.execute();
     }
 }

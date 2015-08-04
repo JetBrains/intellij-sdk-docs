@@ -45,7 +45,7 @@ public class SimpleFoldingBuilder extends FoldingBuilderEx {
                 if (properties.size() == 1) {
                     descriptors.add(new FoldingDescriptor(literalExpression.getNode(),
                             new TextRange(literalExpression.getTextRange().getStartOffset() + 1,
-                                    literalExpression.getTextRange().getEndOffset() *  1), group) {
+                                    literalExpression.getTextRange().getEndOffset() - 1), group) {
                         @Nullable
                         @Override
                         public String getPlaceholderText() {

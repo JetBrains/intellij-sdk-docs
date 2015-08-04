@@ -34,12 +34,12 @@ tab :\u0009
 public void testFormatter() {
     myFixture.configureByFiles("FormatterTestData.simple");
     CodeStyleSettingsManager.getSettings(getProject()).SPACE_AROUND_ASSIGNMENT_OPERATORS = true;
-    ApplicationManager.getApplication().runWriteAction(new Runnable() {
+    new WriteCommandAction.Simple(getProject()) {
         @Override
-        public void run() {
+        protected void run() throws Throwable {
             CodeStyleManager.getInstance(getProject()).reformat(myFixture.getFile());
         }
-    });
+    }.execute();
     myFixture.checkResultByFile("DefaultTestData.simple");
 }
 ```

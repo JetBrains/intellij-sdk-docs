@@ -35,11 +35,11 @@ The ```AnActionEvent``` instance is also passed to the ```actionPerformed``` met
 
 ## Registering Actions
 
-There are two main ways to register an action: either by listing it in the <actions> section of the plugin.xml file, or through Java code.
+There are two main ways to register an action: either by listing it in the `<actions>` section of the plugin.xml file, or through Java code.
 
 ### Registering Actions in plugin.xml
 
-Registering actions in plugin.xml is demonstrated in the following example. The example section of plugin.xml demonstrates all elements which can be used in the <actions> section, and describes the meaning of each element.
+Registering actions in plugin.xml is demonstrated in the following example. The example section of plugin.xml demonstrates all elements which can be used in the `<actions>` section, and describes the meaning of each element.
 
 ```xml
     <!-- Actions -->
@@ -113,7 +113,7 @@ You can create a plugin that registers actions on IDEA startup using the followi
 *To register an action on IDEA startup*
 # Create a new class that implements the ```ApplicationComponent``` interface.
 # In this class, override the ```getComponentName```, ```initComponent```, and ```disposeComponent``` methods.
-# Register this class in the <application-components> section of the plugin.xml file.
+# Register this class in the `<application-components>` section of the plugin.xml file.
 
 
 To clarify the above procedure, consider the following sample Java class ```MyPluginRegistration``` that registers an action defined in a custom ```TextBoxes``` class and adds a new menu command to the *Window*  menu group on the main menu:
@@ -149,7 +149,7 @@ public class MyPluginRegistration implements ApplicationComponent {
 Note, that the sample ```TextBoxes``` class is described in
 [Getting Started with Plugin Development](/basics/getting_started.html).
 
-To ensure that your plugin is initialized on IDEA start-up, make the following changes to the <application-components> section of the plugin.xml file:
+To ensure that your plugin is initialized on IDEA start-up, make the following changes to the `<application-components>` section of the plugin.xml file:
 
 ```xml
 <application-components>

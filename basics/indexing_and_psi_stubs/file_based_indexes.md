@@ -26,7 +26,7 @@ Refer to it as an example to understand this topic better.
 
 Each specific index implementation is a class extending
 [FileBasedIndexExtension](https://github.com/JetBrains/intellij-community/blob/master/platform/indexing-api/src/com/intellij/util/indexing/FileBasedIndexExtension.java).
-A file-base index should be registered in the <fileBasedIndex>  extension point.
+A file-base index should be registered in the `<fileBasedIndex>`  extension point.
 
 The implementation of a file-based contains of the following main parts:
 

@@ -41,7 +41,7 @@ public class SimpleAction extends AnAction {
 
 ### 1.3. Registering actions
 
-To register a newly created action, *\<action\>* attribute should be added to the *\<actions\>* section of the plugin configuration file
+To register a newly created action, `<action>` attribute should be added to the `<actions>` section of the plugin configuration file
 [plugin.xml](https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/register_actions/META-INF/plugin.xml).
 IntelliJ IDEA has an embedded inspection that spots unregistered actions.
 !["Action never used" inspection](img/action_never_used.png)
@@ -54,7 +54,7 @@ visual position of the menu item the action is bound to, and a shortcut for invo
 In our case the action will be available in the **Tools Menu**, it will be placed on top, and will have no shortcuts.
 !["Register action" quick fix](img/new_action.png)
 
-After filling the **New Action** form and applying the changes *\<actions\>* section of our
+After filling the **New Action** form and applying the changes `<actions>` section of our
 [plugin.xml](https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/register_actions/META-INF/plugin.xml)
 file will look like this:
 

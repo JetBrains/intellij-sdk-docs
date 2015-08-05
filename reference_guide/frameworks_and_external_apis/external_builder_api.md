@@ -50,7 +50,7 @@ mechanism to support plugins. There are several service interfaces (e.g. `Builde
 
 ### Registering a plugin for External Builder
 
-Sources of a plugin for External Builder should be put in a separate module. By convention such module has name '...-jps-plugin' and its sources are placed under 'jps-plugin' directory in the main plugin directory. Use `<compileServer.plugin>` extension to add the plugin to classpath of external build process, the plugin jar should be named "<jps module name>.jar". 'Build' | 'Prepare Plugin Module for deployment' action will automatically pack 'jps-plugin' part to a separate jar accordingly.
+Sources of a plugin for External Builder should be put in a separate module. By convention such module has name '...-jps-plugin' and its sources are placed under 'jps-plugin' directory in the main plugin directory. Use `<compileServer.plugin>` extension to add the plugin to classpath of external build process, the plugin jar should be named `<jps module name>.jar`. 'Build' | 'Prepare Plugin Module for deployment' action will automatically pack 'jps-plugin' part to a separate jar accordingly.
 
 ### Debugging a plugin for External Builder
 
@@ -67,13 +67,13 @@ After that every time compilation is run in the test IDE, the build  process wil
 
 The build process has built-in self-cpu-profiling capabilities. To enable them do the following:
 
-1. Copy `<ide-home>/lib/yjp-controller-api-redist.jar` and `<ide-home>/bin/yjpagent.\*`  files to `<ide-system-dir>/compile-server`
+1. Copy `<ide-home>/lib/yjp-controller-api-redist.jar` and `<ide-home>/bin/yjpagent.*`  files to `<ide-system-dir>/compile-server`
 
 2. In "Settings \| Compiler \| Additional compiler process VM options" field enter `-Dprofiling.mode=true`
 
 3. Make sure automatic make is turned off
 
-After this every build process run should result in a CPU snapshot stored in <user-home>/Snapshots directory.
+After this every build process run should result in a CPU snapshot stored in `<user-home>`/Snapshots directory.
 Snapshots are named like "ExternalBuild\-\{date\}.snapshot".
 
 Specifying `-Dprofiling.mode=false` will turn profiling off.

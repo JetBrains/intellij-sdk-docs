@@ -35,7 +35,7 @@ A _library_ is an archive of compiled code (such as JAR files) that your modules
 
 *  **Project Library**: the library classes are visible within the project and the library information is recorded in the project \*.ipr file or in _.idea/libraries_.
 
-*  **Global Library**: the library information is recorded in the _applicationLibraries.xml_ file into the _<User Home>/.IntelliJIdea/config/options_ directory. Global libraries are similar to project libraries, but are visible for the different projects.
+*  **Global Library**: the library information is recorded in the _applicationLibraries.xml_ file into the `<User Home>/.IntelliJIdea/config/options` directory. Global libraries are similar to project libraries, but are visible for the different projects.
 
 For more information about libraries, refer to 
 [Library](http://www.jetbrains.com/idea/webhelp/library.html).

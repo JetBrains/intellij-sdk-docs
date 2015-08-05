@@ -127,7 +127,7 @@ In your implementation of ```getRefactoringElementListener()```, you need to che
 
 Many plugins support automatic creation of run configurations from context, so that the user can click, for example, on an application or test class and automatically run it using the correct run configuration type. In order to support that, you need to provide an implementation of the
 [RunConfigurationProducer](https://github.com/JetBrains/intellij-community/blob/master/platform/lang-api/src/com/intellij/execution/actions/RunConfigurationProducer.java)
-interface and to register it as \<runConfigurationProducer\> in your plugin.xml.
+interface and to register it as `<runConfigurationProducer>` in your plugin.xml.
 (Note that this API has been redesigned in IntelliJ IDEA 13; ```RuntimeConfigurationProducer``` is an older and much more confusing version of the same API).
 
 The two main methods that you need to implement are:

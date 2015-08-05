@@ -37,7 +37,7 @@ Refresh operations are explicitly invoked from the IntelliJ IDEA or plugin code 
 The VFS will be updated during the next refresh operation which includes the file in its scope.
 
 IntelliJ Platform refreshes the entire project contents asynchronously on startup. 
-By default, it performs a refresh operation when the user switches to it from another app, but users can turn this off via **Settings \| Synchronize** files on frame activation.
+By default, it performs a refresh operation when the user switches to it from another app, but users can turn this off via **Settings \| Appearance & Behavior \| System Settings \| Synchronize files on frame activation**.
 
 On Windows, Mac and Linux IntelliJ Platform starts a native file watcher process that receives file change notifications from the file system and reports them to IntelliJ Platform. 
 If a file watcher is available, a refresh operation looks only at the files that have been reported as changed by the file watcher. 
@@ -63,7 +63,7 @@ In fact, the refresh operations are executed according to their own threading po
 
 Both synchronous and asynchronous refreshes can be initiated from any thread. 
 If a refresh is initiated from a background thread, the calling thread must not hold a read action, because otherwise a deadlock would occur. 
-See [IntelliJ Platform Architectural Overview] for more details on the threading model and read/write actions. 
+See [IntelliJ Platform Architectural Overview](/basics/architectural_overview/general_threading_rules.html) for more details on the threading model and read/write actions.
 The same threading requirements also apply to functions like 
 [LocalFileSystem.refreshAndFindFileByPath()](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/vfs/LocalFileSystem.java), 
 which perform a partial refresh if the file with the specified path is not found in the snapshot.
@@ -71,9 +71,8 @@ which perform a partial refresh if the file with the specified path is not found
 In nearly all cases, using asynchronous refreshes is strongly preferred. 
 If there is some code that needs to be executed after the refresh is complete, the code should be passed as a postRunnable parameter to one of the refresh methods:
  
-*  [RefreshQueue.createSession()](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/vfs/newvfs/RefreshQueue.java#L36)
-
-*  [VirtualFile.refresh()](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/openapi/vfs/VirtualFile.java#L681)
+*  [RefreshQueue.createSession()](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/vfs/newvfs/RefreshQueue.java)
+*  [VirtualFile.refresh()](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/openapi/vfs/VirtualFile.java)
  
 Synchronous refreshes can cause deadlocks in some cases, depending on which locks are held by the thread invoking the refresh operation.
 
@@ -83,12 +82,12 @@ All changes happening in the virtual file system, either as a result of refresh 
 VFS events are always fired in the event dispatch thread, and in a write action.
 
 The most efficient way to listen to VFS events is to implement the BulkFileListener interface and to subscribe with it to the 
-[VirtualFileManager.VFS_CHANGES](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/openapi/vfs/VirtualFileManager.java#L34) 
+[VirtualFileManager.VFS_CHANGES](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/openapi/vfs/VirtualFileManager.java)
 topic. 
 
 This API gives you all the changes detected during the refresh operation in one list, and lets you process them in batch. 
 Alternatively, you can implement the VirtualFileListener interface and register it using 
-[VirtualFileManager.addVirtualFileListener()](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/openapi/vfs/VirtualFileManager.java#L113). 
+[VirtualFileManager.addVirtualFileListener()](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/openapi/vfs/VirtualFileManager.java).
 This will let you process the events one by one.
 
 Note that the VFS listeners are application-level, and will receive events for changes happening in all the projects opened by the user. 
@@ -100,7 +99,7 @@ However, it is still present in the VFS snapshot, and you can access its last co
 
 Note that a refresh operation fires events only for changes in files that have been loaded in the snapshot. 
 For example, if you accessed a VirtualFile for a directory but never loaded its contents using 
-[VirtualFile.getChildren()](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/openapi/vfs/VirtualFile.java#L315), 
-you may not get fileCreated notifications when files are created in that directory. 
+[VirtualFile.getChildren()](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/openapi/vfs/VirtualFile.java),
+you may not get fileCreated notifications when files are created in that directory.
 If you loaded only a single file in a directory using VirtualFile.findChild(), you will get notifications for changes to that file, but you may not get created/deleted notifications for other files in the same directory.
 

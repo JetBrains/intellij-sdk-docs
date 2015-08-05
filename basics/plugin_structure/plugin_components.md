@@ -52,7 +52,7 @@ Optionally, application-level component's implementation class may implement the
 interface.
 An application component that has no dependencies should have a constructor with no parameters which will be used for its instantiation.
 If an application component depends on other application components, it can specify these components as constructor parameters. IntelliJ IDEA will ensure that the components are instantiated in the correct order to satisfy the dependencies.
-Note that application-level components must be registered in the ```<application-components>``` section of the plugin.xml file (see Plugin Configuration File below).
+Note that application-level components must be registered in the ```<application-components>``` section of the plugin.xml file (see [Plugin Configuration File](/basics/plugin_structure/plugin_configuration_file.html) below).
 
 #### Quick creation of application components
 
@@ -77,11 +77,11 @@ Project-level component's implementation class may implement the
 [ProjectComponent](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/openapi/components/ProjectComponent.java)
 interface.
 The constructor of a project-level component can have a parameter of the
-[Project](https://github.com/JetBrains/intellij-community/tree/master/platform/platform-api/src/com/intellij/openapi/project/Project.java)
+[Project](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/openapi/project/Project.java)
 type, if it needs the project instance.
 It can also specify other application-level or project-level components as parameters, if it depends on those components.
 
-Note that project-level components must be registered in the ```<project-components>``` section of the *plugin.xml* file (see Plugin Configuration File below).
+Note that project-level components must be registered in the ```<project-components>``` section of the *plugin.xml* file (see [Plugin Configuration File](/basics/plugin_structure/plugin_configuration_file.html) below).
 
 #### Quick creation of project components
 
@@ -110,7 +110,7 @@ interface.
 The constructor of a module-level component can have a parameter of the Module type, if it needs the module instance.
 It can also specify other application-level, project-level or module-level components as parameters, if it depends on those components.
 
-Note that module-level components must be registered in the ```<module-components>``` section of the `plugin.xml` file (see Plugin Configuration File below).
+Note that module-level components must be registered in the ```<module-components>``` section of the `plugin.xml` file (see [Plugin Configuration File](/basics/plugin_structure/plugin_configuration_file.html) below).
 
 #### Quick creation of module components
 
@@ -132,11 +132,11 @@ interface; register the newly created component in the `plugin.xml` file; add a 
 The state of every component will be automatically saved and loaded if the component's class implements the
 [JDOMExternalizable](https://github.com/JetBrains/intellij-community/blob/master/platform/util/src/com/intellij/openapi/util/JDOMExternalizable.java)
 (deprecated) or
-[PersistentStateComponent](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/components/PersistentStateComponent.java)
+[PersistentStateComponent](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/openapi/components/PersistentStateComponent.java)
 interface.
 
 When the component's class implements the
-[PersistentStateComponent](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/components/PersistentStateComponent.java)
+[PersistentStateComponent](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/openapi/components/PersistentStateComponent.java)
 interface, the component state is saved in an XML file that you can specify using the
 [@State](https://github.com/JetBrains/intellij-community/blob/master/platform/projectModel-api/src/com/intellij/openapi/components/State.java)
 and
@@ -189,7 +189,7 @@ and has non-default persisted state).
 interface is invoked to notify that a module has been added to the project.
 
 *  For project components, the ```projectOpened``` method of the
-[ProjectComponent](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/openapi/project/ProjectComponent.java)
+[ProjectComponent](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/openapi/components/ProjectComponent.java)
 interface is invoked to notify that a project has been loaded.
 
 The components are unloaded in the following order:

@@ -6,7 +6,7 @@ This section explains how you can create a new plugin project from a scratch usi
 Optionally, you can import an existing project or import a project from external models.
 You can also add a new plugin module to an existing *Intellij IDEA*  project.
 For more information, refer to
-[Intellij IDEA Web Help](http://www.jetbrains.com/idea/webhelp/index.jsp?reference.dialogs.new.project).
+[Intellij IDEA Web Help](https://www.jetbrains.com/idea/help/new-project-wizard.html).
 
 ## To create a plugin project:
 

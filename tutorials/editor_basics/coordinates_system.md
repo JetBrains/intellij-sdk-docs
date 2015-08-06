@@ -125,9 +125,9 @@ public class EditorAreaIllustration extends AnAction {
 ```
 
 Check out, compile, and run the
-[Editor Basics Plugin](https://github.com/JetBrains/intellij-sdk/tree/master/code_samples/editor_basics),
+[Editor Basics Plugin](https://github.com/JetBrains/intellij-sdk-docs/tree/master/code_samples/editor_basics),
 then move carets, invoke
-[EditorAreaIllustration](https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/editor_basics/src/org/jetbrains/plugins/editor/basics/EditorAreaIllustration.java)
+[EditorAreaIllustration](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/editor_basics/src/org/jetbrains/tutorials/editor/basics/EditorAreaIllustration.java)
 action, and see how logical and visual positions are related dependently on folding.
 
 Find the action in the context menu:

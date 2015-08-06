@@ -6,7 +6,7 @@ title: Check Out And Build Community Edition
 The source code of IntelliJ IDEA Community Edition is stored in a Git repository. 
 Therefore, in order to check out the sources, you need to have Git installed. 
 We recommend using the 
-[msys git](http://code.google.com/p/msysgit/)
+[msys git](https://msysgit.github.io)
 distribution on Windows and 
 [git-osx-installer](http://code.google.com/p/git-osx-installer/) 
 on Mac.

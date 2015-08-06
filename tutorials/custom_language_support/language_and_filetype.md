@@ -22,7 +22,7 @@ public class SimpleLanguage extends Language {
 ### 2.2. Define an icon
 
 Copy the
-[icon](https://raw.github.com/cheptsov/SimplePlugin/master/src/com/simpleplugin/icons/jar-gray.png)
+[icon](https://raw.githubusercontent.com/cheptsov/SimplePlugin/master/src/com/simpleplugin/icons/jar-gray.png)
 to **com.simpleplugin.icons** package.
 
 ```java

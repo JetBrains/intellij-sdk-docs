@@ -5,7 +5,7 @@ title: 3. Handling Editor Events
 The following set of tutorials is meant to be an introduction to actions activated by editor events
 IntelliJ IDEA SDK provides a set of embedded mechanisms for handling events related to the Editor.
 
-[Source code](https://github.com/JetBrains/intellij-sdk/tree/master/code_samples/editor_basics)
+[Source code](https://github.com/JetBrains/intellij-sdk-docs/tree/master/code_samples/editor_basics)
 
 
 ## 3.1. Handling keystrokes in the Editor
@@ -95,7 +95,7 @@ public class EditorHandlerIllustration extends AnAction {
 ```
 
 Register action in
-[plugin.xml](https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/editor_basics/resources/META-INF/plugin.xml):
+[plugin.xml](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/editor_basics/resources/META-INF/plugin.xml):
 
 ```xml
 <actions>
@@ -171,4 +171,4 @@ public class EditorHandlerIllustration extends AnAction {
 
 After compiling and running the following code sample, one extra caret will be placed in the editor below the current active caret.
 
-[Source code](https://github.com/JetBrains/intellij-sdk/tree/master/code_samples/editor_basics)
+[Source code](https://github.com/JetBrains/intellij-sdk-docs/tree/master/code_samples/editor_basics)

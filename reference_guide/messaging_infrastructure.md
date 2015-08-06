@@ -10,7 +10,7 @@ The purpose of this document is to introduce messaging infrastructure available 
 # Rationale
 
 So, what is messaging in _IntelliJ IDEA_ and why do we need it? Basically, its implementation of
-[Observer pattern](http://en.wikipedia.org/wiki/Observer_pattern)
+[Observer pattern](https://en.wikipedia.org/wiki/Observer_pattern)
 that provides additional features like _broadcasting on hierarchy_ and special _nested events_ processing (_nested event_ here is a situation when new event is fired (directly or indirectly) from the callback of another event).
 
 # Design
@@ -49,7 +49,7 @@ Connection will use that *default handler* when storing *(topic-handler)* mappin
 *  it's possible to explicitly release acquired resources (*disconnect()* method).
 Also it can be plugged to standard semi-automatic disposing 
 (
-[Disposable](https://github.com/JetBrains/intellij-community/tree/master/platform/util/src/com/intellij/openapi/Disposable.java)
+[Disposable](https://github.com/JetBrains/intellij-community/blob/master/platform/util/src/com/intellij/openapi/Disposable.java)
 );
 
 ## Putting altogether
@@ -107,12 +107,12 @@ public void doChange(Context context) {
 *  *MessageBus* instances are available via
 [ComponentManager.getMessageBus()](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/openapi/components/ComponentManager.java#L85)
 (many standard interfaces implement it, e.g.
-[Application](https://github.com/JetBrains/intellij-community/tree/master/platform/core-api/src/com/intellij/openapi/application/Application.java),
-[Project](https://github.com/JetBrains/intellij-community/tree/master/platform/core-api/src/com/intellij/openapi/project/Project.java);
+[Application](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/openapi/application/Application.java),
+[Project](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/openapi/project/Project.java);
 
 *  number of public topics are used by *IntelliJ IDEA*, e.g.
-[AppTopics](https://github.com/JetBrains/intellij-community/tree/master/platform/platform-api/src/com/intellij/AppTopics.java),
-[ProjectTopics](https://github.com/JetBrains/intellij-community/tree/master/platform/projectModel-api/src/com/intellij/ProjectTopics.java)
+[AppTopics](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/AppTopics.java),
+[ProjectTopics](https://github.com/JetBrains/intellij-community/blob/master/platform/projectModel-api/src/com/intellij/ProjectTopics.java)
 etc.
 So, it's possible to subscribe to them in order to receive information about the processing;
 
@@ -182,7 +182,7 @@ Let's see what happens if someone sends a message to the target topic:
 ## Relief listeners management
 
 Messaging infrastructure is very light-weight, so, it's possible to reuse it at local sub-systems in order to relief
-[Observers](http://en.wikipedia.org/wiki/Observer_pattern) construction. Let's see what is necessary to do then:
+[Observers](https://en.wikipedia.org/wiki/Observer_pattern) construction. Let's see what is necessary to do then:
 
 1. Define business interface to work with;
 

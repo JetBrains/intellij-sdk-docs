@@ -11,7 +11,7 @@ Depending on the logical and functional requirements to the project, you can cre
 
 *IntelliJ Platform* stores the project configuration data in XML files.
 The list of those files depends on the plugin
-[project](http://www.jetbrains.com/idea/webhelp/project.html)
+[project](http://www.jetbrains.com/idea/help/project.html)
 format.
 For file-based format projects, the information core to the project itself (e.g. location of the component modules, compiler settings, etc.) is stored in the <%project name%>.IPR file.
 The information about modules the project includes is stored in <%module name%>.IML files.
@@ -70,14 +70,14 @@ VirtualFile moduleContentRoot = ProjectRootManager.getInstance(project).getFileI
 ## Changing the project structure
 
 Utility classes which can be used for modifying a project structure can be found in the package
-[projectModel-impl.openapi](https://github.com/JetBrains/intellij-community/blob/master/platform/projectModel-impl/src/com/intellij/openapi).
+[projectModel-impl.openapi](https://github.com/JetBrains/intellij-community/tree/master/platform/projectModel-impl/src/com/intellij/openapi).
 It's
-[roots](https://github.com/JetBrains/intellij-community/blob/master/platform/projectModel-impl/src/com/intellij/openapi/roots/)
+[roots](https://github.com/JetBrains/intellij-community/tree/master/platform/projectModel-impl/src/com/intellij/openapi/roots/)
 subpackage contains instances and utilities meant to work with project and module source roots, including
-[ModuleRootModificationUtil.java](https://github.com/JetBrains/intellij-community/blob/master/platform/projectModel-impl/src/com/intellij/openapi/roots/ModuleRootModificationUtil.java)
+[ModuleRootModificationUtil.java](https://github.com/JetBrains/intellij-community/blob/master/platform/projectModel-api/src/com/intellij/openapi/roots/ModuleRootModificationUtil.java)
 and
 [ProjectRootUtil.java](https://github.com/JetBrains/intellij-community/blob/master/platform/projectModel-impl/src/com/intellij/openapi/projectRoots/impl/ProjectRootUtil.java)
 
 Refer to the
-[basic example](https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/project_model/src/com/intellij/plugins/project/model/ModificationAction.java)
+[basic example](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/project_model/src/com/intellij/tutorials/project/model/ModificationAction.java)
 of on-the-fly project structure modification to learn how it can be implemented.

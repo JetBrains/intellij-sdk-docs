@@ -5,7 +5,7 @@ title: Persisting State of Components
 
 The IntelliJ Platform provides an API that allows components or services to persist their state between restarts of the IDE.
 You can use either a simple API to persist a few values, or persist the state of more complicated components using the 
-[PersistentStateComponent](https://github.com/JetBrains/intellij-community/tree/master/platform/core-api/src/com/intellij/openapi/components/PersistentStateComponent.java) 
+[PersistentStateComponent](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/openapi/components/PersistentStateComponent.java) 
 interface.
 
 ## Using PropertiesComponent for Simple non-roamable Persistence

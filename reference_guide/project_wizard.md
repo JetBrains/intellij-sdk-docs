@@ -5,7 +5,7 @@ title: Project Wizard. Adding Support for Creating New Project Types.
 ## Project Wizard
 
 Working with the project wizard can be illustrated with the
-[RedLine SmallTalk plugin](https://github.com/bulenkov/RedlineSmalltalk.git)
+[RedLine SmallTalk plugin](https://github.com/bulenkov/RedlineSmalltalk)
 
 ## Implementing New Module Type
 

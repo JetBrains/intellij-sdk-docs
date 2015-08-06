@@ -13,7 +13,7 @@ These UI elements include main menu, context menus, and toolbars.
 * [Grouping Action](action_system/grouping_action.html)
 
 
-[Plugin source code](https://github.com/JetBrains/intellij-sdk/tree/master/code_samples/register_actions)
+[Plugin source code](https://github.com/JetBrains/intellij-sdk-docs/tree/master/code_samples/register_actions)
 
 [Home](/)
 

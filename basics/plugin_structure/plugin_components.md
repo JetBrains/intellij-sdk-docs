@@ -16,7 +16,7 @@ There are three kinds of components:
 Application-level components are created and initialized when IntelliJ IDEA starts up.
 They can be acquired from the
 [Application](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/openapi/application/Application.java)
-instance by using the ```getComponent(Class)``` method.
+instance by using the `getComponent(Class)` method.
 
 Project-level components are created for each
 [Project](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/openapi/project/Project.java)
@@ -77,7 +77,7 @@ Project-level component's implementation class may implement the
 [ProjectComponent](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/openapi/components/ProjectComponent.java)
 interface.
 The constructor of a project-level component can have a parameter of the
-[Project](https://github.com/JetBrains/intellij-community/tree/master/platform/platform-api/src/com/intellij/openapi/project/Project.java)
+[Project](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/openapi/project/Project.java)
 type, if it needs the project instance.
 It can also specify other application-level or project-level components as parameters, if it depends on those components.
 
@@ -132,11 +132,11 @@ interface; register the newly created component in the `plugin.xml` file; add a 
 The state of every component will be automatically saved and loaded if the component's class implements the
 [JDOMExternalizable](https://github.com/JetBrains/intellij-community/blob/master/platform/util/src/com/intellij/openapi/util/JDOMExternalizable.java)
 (deprecated) or
-[PersistentStateComponent](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/components/PersistentStateComponent.java)
+[PersistentStateComponent](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/openapi/components/PersistentStateComponent.java)
 interface.
 
 When the component's class implements the
-[PersistentStateComponent](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/components/PersistentStateComponent.java)
+[PersistentStateComponent](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/openapi/components/PersistentStateComponent.java)
 interface, the component state is saved in an XML file that you can specify using the
 [@State](https://github.com/JetBrains/intellij-community/blob/master/platform/projectModel-api/src/com/intellij/openapi/components/State.java)
 and
@@ -189,7 +189,7 @@ and has non-default persisted state).
 interface is invoked to notify that a module has been added to the project.
 
 *  For project components, the ```projectOpened``` method of the
-[ProjectComponent](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/openapi/project/ProjectComponent.java)
+[ProjectComponent](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/openapi/components/ProjectComponent.java)
 interface is invoked to notify that a project has been loaded.
 
 The components are unloaded in the following order:

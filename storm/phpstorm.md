@@ -2,7 +2,7 @@
 title: Plugin Development
 ---
 
-Plugins in PHPStorm developed in Java using IntelliJ IDEA (Community Edition is OK). You will also need a copy of PhpStorm to develop against. The [PsiViewer plugin](https://plugins.jetbrains.com/plugin/?null&pluginId=227) will also be most useful.
+Plugins in PHPStorm developed in Java using IntelliJ IDEA (Community Edition is OK). You will also need a copy of PhpStorm to develop against. The [PsiViewer plugin](https://plugins.jetbrains.com/plugin/?pluginId=227) will also be most useful.
 
 ### PhpStorm Specifics
 * [Setting-up the environment](setting_up_environment.md)

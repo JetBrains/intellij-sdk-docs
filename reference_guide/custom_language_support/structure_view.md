@@ -52,4 +52,4 @@ The latter method returns an array of `PsiElement`\-derived classes which can be
 **Example:**
 [StructureViewElement](https://github.com/JetBrains/intellij-community/blob/master/plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/structureView/PropertiesStructureViewElement.java)
 for a
-[Properties language plugin](https://github.com/JetBrains/intellij-community/blob/master/plugins/properties/)
+[Properties language plugin](https://github.com/JetBrains/intellij-community/tree/master/plugins/properties/)

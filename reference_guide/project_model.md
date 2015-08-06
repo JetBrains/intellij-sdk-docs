@@ -5,11 +5,11 @@ title: Project Model. Roots and Libraries. Configuring Project from Code.
 This section considers internal architecture *IntelliJ Platform* projects
 and gives overview for classes and packages of the API used to manipulate with projects and their components, such as modules, facets, libraries, SDK.
 For general information about the concept of a projects and concepts related to it, refer to
-[Project](http://www.jetbrains.com/idea/webhelp/project.html),
-[Module](http://www.jetbrains.com/idea/webhelp/module.html),
-[Library](http://www.jetbrains.com/idea/webhelp/library.html),
+[Project](http://www.jetbrains.com/idea/help/project.html),
+[Module](http://www.jetbrains.com/idea/help/module.html),
+[Library](http://www.jetbrains.com/idea/help/library.html),
 and
-[Facet](http://www.jetbrains.com/idea/webhelp/facet.html)
+[Facet](http://www.jetbrains.com/idea/help/facet.html)
 in
 [IntelliJ IDEA Web Help](https://www.jetbrains.com/idea/help/intellij-idea.html).
 

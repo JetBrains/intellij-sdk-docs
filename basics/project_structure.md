@@ -11,10 +11,10 @@ The project structure and Java classes you can use to manage projects and module
 
 This section briefly discusses the IDEA project structure, project components and related terms. 
 For more information about projects and their components, refer to 
-[Project](http://www.jetbrains.com/idea/webhelp/project.html), 
-[Module](http://www.jetbrains.com/idea/webhelp/module.html), 
-[Library](http://www.jetbrains.com/idea/webhelp/library.html), 
-[Facet](http://www.jetbrains.com/idea/webhelp/facet.html) 
+[Project](http://www.jetbrains.com/idea/help/project.html), 
+[Module](http://www.jetbrains.com/idea/help/module.html), 
+[Library](http://www.jetbrains.com/idea/help/library.html), 
+[Facet](http://www.jetbrains.com/idea/help/facet.html) 
 in **IntelliJ IDEA** Web Help.
 
 #### Project
@@ -38,7 +38,7 @@ A _library_ is an archive of compiled code (such as JAR files) that your modules
 *  **Global Library**: the library information is recorded in the _applicationLibraries.xml_ file into the `<User Home>/.IntelliJIdea/config/options` directory. Global libraries are similar to project libraries, but are visible for the different projects.
 
 For more information about libraries, refer to 
-[Library](http://www.jetbrains.com/idea/webhelp/library.html).
+[Library](http://www.jetbrains.com/idea/help/library.html).
 
 #### SDK
 
@@ -58,9 +58,9 @@ A _facet_ represents certain configuration, specific for a particular framework/
 A module can have multiple facets. 
 E.g. Spring specific configuration is stored in a Spring facet.
 For more information about facets see 
-[Facet](http://www.jetbrains.com/idea/webhelp/facet.html) 
+[Facet](http://www.jetbrains.com/idea/help/facet.html) 
 and 
-[Facet Dependencies](http://www.jetbrains.com/idea/webhelp/available-facets-and-their-dependencies.html) 
+[Facet Dependencies](http://www.jetbrains.com/idea/help/available-facets-and-their-dependencies.html) 
 in **IntelliJ IDEA** Web Help.
 
 ## Project Structure
@@ -83,7 +83,7 @@ The Java classes and interfaces that you can use to explore and change the proje
 #### How to Work with Project Files?
 
 **IntelliJ Platform** stores the project configuration data in XML files. The list of those files depends on the plugin 
-[project format](http://www.jetbrains.com/idea/webhelp/project.html).
+[project format](http://www.jetbrains.com/idea/help/project.html).
 
 For _file-based_ format projects, the information core to the project itself (e.g. location of the component modules, compiler settings, etc.) is stored in the _<%project name%>.IPR_ file. 
 The information about modules the project includes is stored in _<%module name%>.IML_ files. 
@@ -95,10 +95,10 @@ As for the file-based format projects, .IML files describe modules.
 
 To work with projects and project files, you can use the following classes and interfaces:
 
-* [Project](https://github.com/JetBrains/intellij-community/tree/master/platform/core-api/src/com/intellij/openapi/project/Project.java) interface.
-* [ProjectRootManager](https://github.com/JetBrains/intellij-community/tree/master/platform/projectModel-api/src/com/intellij/openapi/roots/ProjectRootManager.java) abstract class.
-* [ProjectManager](https://github.com/JetBrains/intellij-community/tree/master/platform/projectModel-api/src/com/intellij/openapi/project/ProjectManager.java) abstract class.
-* [ProjectFileIndex](https://github.com/JetBrains/intellij-community/tree/master/platform/projectModel-api/src/com/intellij/openapi/roots/ProjectFileIndex.java) interface.
+* [Project](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/openapi/project/Project.java) interface.
+* [ProjectRootManager](https://github.com/JetBrains/intellij-community/blob/master/platform/projectModel-api/src/com/intellij/openapi/roots/ProjectRootManager.java) abstract class.
+* [ProjectManager](https://github.com/JetBrains/intellij-community/blob/master/platform/projectModel-api/src/com/intellij/openapi/project/ProjectManager.java) abstract class.
+* [ProjectFileIndex](https://github.com/JetBrains/intellij-community/blob/master/platform/projectModel-api/src/com/intellij/openapi/roots/ProjectFileIndex.java) interface.
 
 Note that you don't need to access project files directly to load or save settings. 
 See 
@@ -194,13 +194,13 @@ Note that by default, the project modules use the project SDK. Optionally, you c
 
 *IntelliJ Platform* provides a number of Java classes and interfaces you can use to work with modules:
 
-* [ModuleManager](https://github.com/JetBrains/intellij-community/tree/master/platform/projectModel-api/src/com/intellij/openapi/module/ModuleManager.java) abstract class.
-* [Module](https://github.com/JetBrains/intellij-community/tree/master/platform/core-api/src/com/intellij/openapi/module/Module.java) interface.
-* [ModuleRootManager](https://github.com/JetBrains/intellij-community/tree/master/platform/projectModel-api/src/com/intellij/openapi/roots/ModuleRootManager.java) abstract class.
-* [ModuleRootModel](https://github.com/JetBrains/intellij-community/tree/master/platform/projectModel-api/src/com/intellij/openapi/roots/ModuleRootModel.java) interface.
-* [ModuleUtil](https://github.com/JetBrains/intellij-community/tree/master/platform/lang-api/src/com/intellij/openapi/module/ModuleUtil.java) class.
-* [ModifiableModuleModel](https://github.com/JetBrains/intellij-community/tree/master/platform/projectModel-api/src/com/intellij/openapi/module/ModifiableModuleModel.java) interface.
-* [ModifiableRootModel](https://github.com/JetBrains/intellij-community/tree/master/platform/projectModel-api/src/com/intellij/openapi/roots/ModifiableRootModel.java) interface.
+* [ModuleManager](https://github.com/JetBrains/intellij-community/blob/master/platform/projectModel-api/src/com/intellij/openapi/module/ModuleManager.java) abstract class.
+* [Module](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/openapi/module/Module.java) interface.
+* [ModuleRootManager](https://github.com/JetBrains/intellij-community/blob/master/platform/projectModel-api/src/com/intellij/openapi/roots/ModuleRootManager.java) abstract class.
+* [ModuleRootModel](https://github.com/JetBrains/intellij-community/blob/master/platform/projectModel-api/src/com/intellij/openapi/roots/ModuleRootModel.java) interface.
+* [ModuleUtil](https://github.com/JetBrains/intellij-community/blob/master/platform/lang-api/src/com/intellij/openapi/module/ModuleUtil.java) class.
+* [ModifiableModuleModel](https://github.com/JetBrains/intellij-community/blob/master/platform/projectModel-api/src/com/intellij/openapi/module/ModifiableModuleModel.java) interface.
+* [ModifiableRootModel](https://github.com/JetBrains/intellij-community/blob/master/platform/projectModel-api/src/com/intellij/openapi/roots/ModifiableRootModel.java) interface.
 
 This section discusses how to complete some common tasks related to management of modules.
 
@@ -212,12 +212,12 @@ Use the ```ModuleManager.getModules()``` method.
 
 _Order entries_ include SDK, libraries and other modules the module uses. 
 With the *IntelliJ IDEA* UI, you can view order entries for a module on the 
-[Dependencies](http://www.jetbrains.com/idea/webhelp/dependencies-tab.html) 
+[Dependencies](http://www.jetbrains.com/idea/help/dependencies-tab.html) 
 tab of the *Project Structure* dialog box.
 To explore the 
-[module dependencies](http://www.jetbrains.com/idea/webhelp/dependencies-tab.html), 
+[module dependencies](http://www.jetbrains.com/idea/help/dependencies-tab.html), 
 use the 
-[OrderEnumerator](https://github.com/JetBrains/intellij-community/tree/master/platform/projectModel-api/src/com/intellij/openapi/roots/OrderEnumerator.java) 
+[OrderEnumerator](https://github.com/JetBrains/intellij-community/blob/master/platform/projectModel-api/src/com/intellij/openapi/roots/OrderEnumerator.java) 
 class.
 
 The following code snippet illustrates how you can get classpath (classes root of all dependencies) for a module:
@@ -230,7 +230,7 @@ VirtualFile[] roots = ModuleRootManager.getInstance(module).orderEntries().class
 
 Use the ```ModuleRootManager.getSdk()``` method. 
 This method returns a value of the 
-[Sdk](https://github.com/JetBrains/intellij-community/tree/master/platform/projectModel-api/src/com/intellij/openapi/projectRoots/Sdk.java) 
+[Sdk](https://github.com/JetBrains/intellij-community/blob/master/platform/projectModel-api/src/com/intellij/openapi/projectRoots/Sdk.java) 
 type.
 The following code snippet illustrates how you can get detailed information on SDK the specified module uses:
 

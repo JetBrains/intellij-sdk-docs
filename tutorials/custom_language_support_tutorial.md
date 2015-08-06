@@ -3,7 +3,7 @@ title: Custom Language Support Tutorial
 ---
 
 In this tutorial we will add basic support for
-[.properties](http://en.wikipedia.org/wiki/.properties)
+[.properties](https://en.wikipedia.org/wiki/.properties)
 language and it's usages within Java code.
 
 We will generate parser and PSI elements using

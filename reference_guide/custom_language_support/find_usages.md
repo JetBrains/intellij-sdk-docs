@@ -15,7 +15,7 @@ interfaces.
 Implementation of
 [FindUsagesProvider](https://github.com/JetBrains/intellij-community/blob/master/plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/findUsages/PropertiesFindUsagesProvider.java)
 in
-[Properties language plugin](https://github.com/JetBrains/intellij-community/blob/master/plugins/properties/)
+[Properties language plugin](https://github.com/JetBrains/intellij-community/tree/master/plugins/properties/)
 
 
 The steps of the ```Find Usages``` action are the following:
@@ -83,4 +83,4 @@ passed to the provider in this case will be an instance of
 **Example:**
 [ElementDescriptionProvider](https://github.com/JetBrains/intellij-community/blob/master/plugins/properties/src/com/intellij/lang/properties/PropertiesDescriptionProvider.java)
 for
-[Properties language plugin](https://github.com/JetBrains/intellij-community/blob/master/plugins/properties/)
+[Properties language plugin](https://github.com/JetBrains/intellij-community/tree/master/plugins/properties/)

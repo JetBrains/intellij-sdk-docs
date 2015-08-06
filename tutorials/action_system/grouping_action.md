@@ -8,7 +8,7 @@ In this case the group will be available as a top-level menu item, action will b
 ### 2.1. Creating simple action groups
 
 Grouping can be done by extending adding `<group>` attribute to `<actions>`
-[plugin.xml](https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/register_actions/META-INF/plugin.xml)
+[plugin.xml](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/register_actions/META-INF/plugin.xml)
 file.
 
 ```xml
@@ -98,7 +98,7 @@ public class CustomDefaultActionGroup extends DefaultActionGroup {
 As in case with the simple action group, the inheritor of
 [DefaultActionGroup.java](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/actionSystem/DefaultActionGroup.java)
 should be declared in
-[plugin.xml](https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/register_actions/META-INF/plugin.xml)
+[plugin.xml](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/register_actions/META-INF/plugin.xml)
 file:
 
 ```xml
@@ -127,7 +127,7 @@ public class CustomGroupedAction extends AnAction {
 ### 2.8. Adding actions to the group
 
 Action's class should be registered in
-[plugin.xml](https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/register_actions/META-INF/plugin.xml)
+[plugin.xml](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/register_actions/META-INF/plugin.xml)
 :
 
 ```xml
@@ -182,7 +182,7 @@ public class BaseActionGroup extends ActionGroup {
 ### 2.12. Registering variable action group
 
 To register the group `<group>` attribute needs to be placed in the *`<actions>`* section of
-[plugin.xml](https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/register_actions/META-INF/plugin.xml):
+[plugin.xml](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/register_actions/META-INF/plugin.xml):
 
 ```xml
 <actions>
@@ -193,7 +193,7 @@ To register the group `<group>` attribute needs to be placed in the *`<actions>`
 </actions>
 ```
 **Note**: Since the set of actions is defined dynamically no action definitions should be placed in
-[plugin.xml](https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/register_actions/META-INF/plugin.xml).
+[plugin.xml](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/register_actions/META-INF/plugin.xml).
 If `<group>` attribute contains any static action definition an exception will be thrown.
 For statically defined group of action use
 [DefaultActionGroup.java](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/actionSystem/DefaultActionGroup.java)

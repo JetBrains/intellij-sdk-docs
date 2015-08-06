@@ -6,7 +6,7 @@ This tutorial is meant to illustrate how the project tree structure view appeara
 If you need to know more about basic concepts of a project view in IntelliJ-based IDEs, please refer to
 [Exploring The Project Structure](https://www.jetbrains.com/idea/help/exploring-the-project-structure.html#d164891e120)
 of 
-[IntelliJ IDEA Web Help](https://www.jetbrains.com/idea/help/).
+[IntelliJ IDEA Web Help](https://www.jetbrains.com/idea/help/intellij-idea.html).
 
 Series of step below show how to filter out and keep visible only text files and directories in the Project View Panel. 
 

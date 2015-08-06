@@ -24,7 +24,7 @@ public class EditorIllustration extends AnAction {
 ### 1.1.2. Registering an action
 
 To register the action we should add a corresponding attribute to the `<actions>` section of the plugin configuration file
-[plugin.xml](https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/editor_basics/resources/META-INF/plugin.xml)
+[plugin.xml](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/editor_basics/resources/META-INF/plugin.xml)
 
 
 ```xml
@@ -211,7 +211,7 @@ public void actionPerformed(final AnActionEvent anActionEvent) {
 -----------
 
 The source code is located in
-[EditorIllustration.java](https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/editor_basics/src/org/jetbrains/plugins/editor/basics/EditorIllustration.java).
+[EditorIllustration.java](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/editor_basics/src/org/jetbrains/tutorials/editor/basics/EditorIllustration.java).
 To see how text replacement works, check out
-[Editor Basics](https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/editor_basics/src/org/jetbrains/plugins/editor/basics/)
+[Editor Basics](https://github.com/JetBrains/intellij-sdk-docs/tree/master/code_samples/editor_basics/src/org/jetbrains/tutorials/editor/basics/)
 plugin, make the project, and run it, then invoke the *EditorIllustration* action which is available in the context menu of the editor.

@@ -19,7 +19,7 @@ public class DemoFramework extends FrameworkTypeEx {
 ## 2. Registering framework
 
 The newly created framework should be registered as an extension point by putting *framework.type* attribute into `<extensions>` section of
-[plugin.xml](https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/framework/META-INF/plugin.xml)
+[plugin.xml](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/framework/META-INF/plugin.xml)
 configuration file:
 
 
@@ -72,7 +72,7 @@ public class DemoFramework extends FrameworkTypeEx {
 To make framework set up available while executing project creating steps 
 ```public FrameworkSupportInModuleProvider createProvider();```
 of the
-[DemoFramework](https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/framework/src/com/intellij/tutorials/framework/DemoFramework.java)
+[DemoFramework](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/framework/src/com/intellij/tutorials/framework/DemoFramework.java)
 must be implemented:
 
 
@@ -117,7 +117,7 @@ After compiling and running the code sample above an extra option for configurin
 
 ----------
 
-[Source code](https://github.com/JetBrains/intellij-sdk/tree/master/code_samples/framework/src/com/intellij/tutorials/framework)
+[Source code](https://github.com/JetBrains/intellij-sdk-docs/tree/master/code_samples/framework/src/com/intellij/tutorials/framework)
 
 
 

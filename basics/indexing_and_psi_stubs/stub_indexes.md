@@ -28,7 +28,7 @@ For each element type that you want to store in the stub tree, you need to perfo
 
 *  Make sure that the interface for the PSI element extends `StubBasedPsiElement` parameterized by the type of the stub interface ([example](https://github.com/JetBrains/intellij-community/blob/master/plugins/properties/properties-psi-api/src/com/intellij/lang/properties/psi/Property.java)).
 
-*  Make sure that the implementation class for the PSI element extends `StubBasedPsiElementBase` parameterized by the type of the stub interface ([example](https://github.com/JetBrains/intellij-community/blob/master/plugins/properties/src/com/intellij/lang/properties/psi/impl/PropertyImpl.java#L45)). Provide both a constructor that accepts an ASTNode and a constructor which accepts a stub.
+*  Make sure that the implementation class for the PSI element extends `StubBasedPsiElementBase` parameterized by the type of the stub interface ([example](https://github.com/JetBrains/intellij-community/blob/master/plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/psi/impl/PropertyImpl.java#L45)). Provide both a constructor that accepts an ASTNode and a constructor which accepts a stub.
 
 *  Create a class which implements `IStubElementType` and is parameterized with the stub interface and the actual PSI element interface ([example](https://github.com/JetBrains/intellij-community/blob/master/plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/parsing/PropertyStubElementType.java)). Implement the createPsi() and createStub() methods for creating PSI from a stub and vice versa. Implement the serialize() and deserialize() methods for storing the data in a binary stream.
 
@@ -75,7 +75,7 @@ To access the data from an index, the following two methods are used:
 
 ### Related Forum Discussions
 
-*  [Lifecycle of stub creation](http://devnet.jetbrains.com/message/5485343)
+*  [Lifecycle of stub creation](https://devnet.jetbrains.com/message/5485343)
 
 
 

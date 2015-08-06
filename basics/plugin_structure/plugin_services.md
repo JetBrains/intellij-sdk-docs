@@ -75,4 +75,4 @@ message and closes the most recently opened project.
 
 *  On the main menu, choose *Run \| Run* or press *Shift + F10*.
 
-*  If necessary, change the [Run/Debug Configurations](http://www.jetbrains.com/idea/webhelp/run-debug-configuration-plugin.html).
+*  If necessary, change the [Run/Debug Configurations](http://www.jetbrains.com/idea/help/run-debug-configuration-plugin.html).

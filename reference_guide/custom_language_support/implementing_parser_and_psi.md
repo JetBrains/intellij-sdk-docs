@@ -40,7 +40,7 @@ The lifecycle of the PSI is described in more detail in
 [Architectural Overview](/basics/architectural_overview.md).
 
 The base classes for the PSI implementation, including
-[PsiFileBase](https://github.com/JetBrains/intellij-community/blob/master/core-impl/src/com/intellij/extapi/psi/PsiFileBase.java),
+[PsiFileBase](https://github.com/JetBrains/intellij-community/blob/master/platform/core-impl/src/com/intellij/extapi/psi/PsiFileBase.java),
 the base implementation of
 [PsiFile](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/psi/PsiFile.java),
 and

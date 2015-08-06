@@ -69,5 +69,5 @@ If your plugin works with all products but provides some Java-specific functiona
 Before marking a plugin as compatible with all products, you should verify that it doesn't use any APIs that are specific to IntelliJ Platform. To do so, create an IntelliJ Platform SDK pointing to an installation of RubyMine/PyCharm/etc., compile your plugin against that SDK, and verify that everything compiles.
 
 The 
-[IntelliJ plugin repository](http://plugins.intellij.net) 
+[IntelliJ plugin repository](http://plugins.jetbrains.com/)
 automatically detects the products with which a plugin is compatible, based on the rules above, and makes it available to users of those products.

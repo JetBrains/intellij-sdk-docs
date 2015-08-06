@@ -3,7 +3,7 @@ title: Basics of working with the Editor
 ---
 
 
-[Source code](https://github.com/JetBrains/intellij-sdk/tree/master/code_samples/editor_basics)
+[Source code](https://github.com/JetBrains/intellij-sdk-docs/tree/master/code_samples/editor_basics)
 
 ----------
 
@@ -29,6 +29,6 @@ section.
 [DataContext](https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/DataContext.java)
 
 **Related topics:**
-[Action System](https://github.com/JetBrains/intellij-sdk/blob/master/tutorials/action_system/action_system.md)
+[Action System](/tutorials/action_system/action_system.md)
 
 

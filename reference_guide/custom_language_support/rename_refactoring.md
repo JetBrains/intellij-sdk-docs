@@ -18,7 +18,7 @@ Thus, surprisingly, the easiest way to get the replacement node is to create a d
 **Example:**
 [setName()](https://github.com/JetBrains/intellij-community/blob/master/plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/psi/impl/PropertyImpl.java#L58)
 implementation for a
-[Properties language plugin](https://github.com/JetBrains/intellij-community/blob/master/plugins/properties/)
+[Properties language plugin](https://github.com/JetBrains/intellij-community/tree/master/plugins/properties)
 
 
 Another interface related to the Rename refactoring is
@@ -32,7 +32,7 @@ are registered in the `com.intellij.lang.namesValidator` extension point.
 **Example**:
 [NamesValidator](https://github.com/JetBrains/intellij-community/blob/master/plugins/properties/src/com/intellij/lang/properties/PropertiesNamesValidator.java)
 for
-[Properties language plugin](https://github.com/JetBrains/intellij-community/blob/master/plugins/properties/)
+[Properties language plugin](https://github.com/JetBrains/intellij-community/tree/master/plugins/properties)
 
 
 Further customization of the Rename refactoring processing is possible on multiple levels.
@@ -65,4 +65,4 @@ This allows you to:
 **Example**:
 [RenamePsiElementProcessor](https://github.com/JetBrains/intellij-community/blob/master/plugins/properties/src/com/intellij/lang/properties/refactoring/rename/RenamePropertyProcessor.java)
 for renaming a property in
-[Properties plugin language](https://github.com/JetBrains/intellij-community/blob/master/plugins/properties/)
+[Properties plugin language](https://github.com/JetBrains/intellij-community/tree/master/plugins/properties)

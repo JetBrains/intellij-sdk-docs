@@ -19,7 +19,7 @@ Make sure that the bundled Plugin DevKit plugin is enabled.
 Install and enable
 [Grammar-Kit](http://plugins.intellij.net/plugin?pluginId=6606)
 and
-[PsiViewer](http://plugins.intellij.net/plugin/?null&pluginId=227)
+[PsiViewer](http://plugins.intellij.net/plugin/?pluginId=227)
 plugins.
 
 ### 1.4. Configure SDK and source files

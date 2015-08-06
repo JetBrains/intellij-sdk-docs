@@ -4,12 +4,12 @@ title: PSI Files
 
 A PSI (Program Structure Interface) file is the root of a structure representing the contents of a file as a hierarchy of elements in a particular programming language.
 The
-[PsiFile](https://github.com/JetBrains/intellij-community/tree/master/platform/core-api/src/com/intellij/psi/PsiFile.java)
+[PsiFile](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/psi/PsiFile.java)
 class is the common base class for all PSI files, while files in a specific language are usually represented by its subclasses.
 For example, the
-[PsiJavaFile](https://github.com/JetBrains/intellij-community/tree/master/java/java-psi-api/src/com/intellij/psi/PsiJavaFile.java)
+[PsiJavaFile](https://github.com/JetBrains/intellij-community/blob/master/java/java-psi-api/src/com/intellij/psi/PsiJavaFile.java)
 class represents a Java file, and the
-[XmlFile](https://github.com/JetBrains/intellij-community/tree/master/xml/xml-psi-api/src/com/intellij/psi/xml/XmlFile.java)
+[XmlFile](https://github.com/JetBrains/intellij-community/blob/master/xml/xml-psi-api/src/com/intellij/psi/xml/XmlFile.java)
 class represents an XML file.
 
 Unlike ```VirtualFile``` and ```Document```, which have application scope (even if multiple projects are open, each file is represented by the same ```VirtualFile``` instance), PSI has project scope (the same file is represented by multiple PsiFile instances if the file belongs to multiple projects open at the same time).
@@ -31,7 +31,7 @@ To iterate over the elements in a file, use ```psiFile.accept(new PsiRecursiveEl
 ## Where does it a PSI file come from?
 
 As  PSI is language-dependent, PSI files are created through the 
-[Language](https://github.com/JetBrains/intellij-community/tree/master/platform/core-api/src/com/intellij/lang/Language.java) 
+[Language](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/lang/Language.java) 
 object, by using the ```LanguageParserDefinitions.INSTANCE.forLanguage(language).createFile(fileViewProvider)``` method.
 
 Like documents, PSI files are created on demand when the PSI is accessed for a particular file.
@@ -43,10 +43,10 @@ Like documents, PSI files are weakly referenced from the corresponding ```Virtua
 ## How do I create a PSI file?
 
 The
-[PsiFileFactory](https://github.com/JetBrains/intellij-community/tree/master/platform/core-api/src/com/intellij/psi/PsiFileFactory.java).
+[PsiFileFactory](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/psi/PsiFileFactory.java).
 ```getInstance(project).createFileFromText()``` method creates an in-memory PSI file with the specified contents.
 To save the PSI file to disk, use the
-[PsiDirectory](https://github.com/JetBrains/intellij-community/tree/master/platform/core-api/src/com/intellij/psi/PsiDirectory.java).
+[PsiDirectory](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/psi/PsiDirectory.java).
 ```add()``` method.
 
 ## How do I get notified when PSI files change?

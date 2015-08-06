@@ -26,7 +26,7 @@ and registered like below:
 
 The easiest way to implement this interface is to use the
 [ConfigurationTypeBase](https://github.com/JetBrains/intellij-community/blob/master/platform/lang-api/src/com/intellij/execution/configurations/ConfigurationTypeBase.java) base class. In order to use it, you need to inherit from it and to provide the configuration type parameters (ID, name, description and icon) as constructor parameters. In addition to that, you need to call the
-[addFactory()](https://github.com/JetBrains/intellij-community/blob/master/platform/lang-api/src/com/intellij/execution/configurations/ConfigurationTypeBase.java#L46)
+[addFactory()](https://github.com/JetBrains/intellij-community/blob/master/platform/lang-api/src/com/intellij/execution/configurations/ConfigurationTypeBase.java)
 method to add a configuration factory.
 
 ## ConfigurationFactory
@@ -35,7 +35,7 @@ All run configurations are created by
 [ConfigurationFactory](https://github.com/JetBrains/intellij-community/blob/master/platform/lang-api/src/com/intellij/execution/configurations/ConfigurationFactory.java)
 registered for particular _ConfigurationType_.
 It's possible that one _ConfigurationType_
-[has more than one](https://github.com/JetBrains/intellij-community/blob/master/platform/lang-api/src/com/intellij/execution/configurations/ConfigurationType.java#L34)
+[has more than one](https://github.com/JetBrains/intellij-community/blob/master/platform/lang-api/src/com/intellij/execution/configurations/ConfigurationType.java)
 _ConfigurationFactory_:
 
 ![Configuration Factory](../img/create-3.png)
@@ -43,17 +43,17 @@ _ConfigurationFactory_:
 The key API of
 [ConfigurationFactory](https://github.com/JetBrains/intellij-community/blob/master/platform/lang-api/src/com/intellij/execution/configurations/ConfigurationFactory.java),
 and the only method that you're required to implement, is the
-[createTemplateConfiguration](https://github.com/JetBrains/intellij-community/blob/master/platform/lang-api/src/com/intellij/execution/configurations/ConfigurationFactory.java#L45)
+[createTemplateConfiguration](https://github.com/JetBrains/intellij-community/blob/master/platform/lang-api/src/com/intellij/execution/configurations/ConfigurationFactory.java)
 method.
 This method is called once per project to create the template run configuration.
 All real run configurations (loaded from the workspace or created by the user) are called by cloning the template through the
-[createConfiguration](https://github.com/JetBrains/intellij-community/blob/master/platform/lang-api/src/com/intellij/execution/configurations/ConfigurationFactory.java#L39)
+[createConfiguration](https://github.com/JetBrains/intellij-community/blob/master/platform/lang-api/src/com/intellij/execution/configurations/ConfigurationFactory.java)
 method.
 
 You can customize additional aspects of your configuration factory by overriding the
-[getIcon](https://github.com/JetBrains/intellij-community/blob/master/platform/lang-api/src/com/intellij/execution/configurations/ConfigurationFactory.java#L59),
-[getAddIcon](https://github.com/JetBrains/intellij-community/blob/master/platform/lang-api/src/com/intellij/execution/configurations/ConfigurationFactory.java#L55),
-[getName](https://github.com/JetBrains/intellij-community/blob/master/platform/lang-api/src/com/intellij/execution/configurations/ConfigurationFactory.java#L51)
+[getIcon](https://github.com/JetBrains/intellij-community/blob/master/platform/lang-api/src/com/intellij/execution/configurations/ConfigurationFactory.java),
+[getAddIcon](https://github.com/JetBrains/intellij-community/blob/master/platform/lang-api/src/com/intellij/execution/configurations/ConfigurationFactory.java),
+[getName](https://github.com/JetBrains/intellij-community/blob/master/platform/lang-api/src/com/intellij/execution/configurations/ConfigurationFactory.java)
 and the default settings methods.
 These additional overrides are optional.
 
@@ -83,22 +83,22 @@ is a base class for a configuration that is associated with a specific module (f
 
 That common run configuration settings might be modified via:
 
-*  [_RunConfiguration_-specific UI](https://github.com/JetBrains/intellij-community/blob/master/platform/lang-api/src/com/intellij/execution/configurations/RunConfiguration.java#L48).
-That is handled by [SettingsEditor](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/options/SettingsEditor.java#L97):
-*  [_getComponent()_](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/options/SettingsEditor.java#L97)
+*  [_RunConfiguration_-specific UI](https://github.com/JetBrains/intellij-community/blob/master/platform/lang-api/src/com/intellij/execution/configurations/RunConfiguration.java).
+That is handled by [SettingsEditor](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/options/SettingsEditor.java):
+*  [_getComponent()_](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/options/SettingsEditor.java)
 method is called by the ide and shows run configuration specific UI;
-*  [_resetFrom()_](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/options/SettingsEditor.java#L83)
+*  [_resetFrom()_](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/options/SettingsEditor.java)
 is called to discard all non-confirmed user changes made via that UI;
-*  [_applyTo()_](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/options/SettingsEditor.java#L93)
+*  [_applyTo()_](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/options/SettingsEditor.java)
 is called to confirm the changes, i.e. copy current UI state into the target settings object;
 
 ## Persistence
 
 That run configuration settings are persistent, i.e. they are stored at file system and loaded back on the ide startup.
 That is performed via
-[writeExternal()](https://github.com/JetBrains/intellij-community/blob/master/platform/util/src/com/intellij/openapi/util/JDOMExternalizable.java#L27)
+[writeExternal()](https://github.com/JetBrains/intellij-community/blob/master/platform/util/src/com/intellij/openapi/util/JDOMExternalizable.java)
 and
-[readExternal()](https://github.com/JetBrains/intellij-community/blob/master/platform/util/src/com/intellij/openapi/util/JDOMExternalizable.java#L26)
+[readExternal()](https://github.com/JetBrains/intellij-community/blob/master/platform/util/src/com/intellij/openapi/util/JDOMExternalizable.java)
 methods of
 [RunConfiguration](https://github.com/JetBrains/intellij-community/blob/master/platform/lang-api/src/com/intellij/execution/configurations/RunConfiguration.java)
 class correspondingly.

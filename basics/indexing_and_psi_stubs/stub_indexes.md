@@ -28,19 +28,19 @@ For each element type that you want to store in the stub tree, you need to perfo
 
 *  Make sure that the interface for the PSI element extends `StubBasedPsiElement` parameterized by the type of the stub interface ([example](https://github.com/JetBrains/intellij-community/blob/master/plugins/properties/properties-psi-api/src/com/intellij/lang/properties/psi/Property.java)).
 
-*  Make sure that the implementation class for the PSI element extends `StubBasedPsiElementBase` parameterized by the type of the stub interface ([example](https://github.com/JetBrains/intellij-community/blob/master/plugins/properties/src/com/intellij/lang/properties/psi/impl/PropertyImpl.java#L45)). Provide both a constructor that accepts an ASTNode and a constructor which accepts a stub.
+*  Make sure that the implementation class for the PSI element extends `StubBasedPsiElementBase` parameterized by the type of the stub interface ([example](https://github.com/JetBrains/intellij-community/blob/master/plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/psi/impl/PropertyImpl.java)). Provide both a constructor that accepts an ASTNode and a constructor which accepts a stub.
 
 *  Create a class which implements `IStubElementType` and is parameterized with the stub interface and the actual PSI element interface ([example](https://github.com/JetBrains/intellij-community/blob/master/plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/parsing/PropertyStubElementType.java)). Implement the createPsi() and createStub() methods for creating PSI from a stub and vice versa. Implement the serialize() and deserialize() methods for storing the data in a binary stream.
 
 *  Use the class implementing `IStubElementType` as the element type constant when parsing ([example](https://github.com/JetBrains/intellij-community/blob/master/plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/parsing/PropertiesElementTypes.java))
 
-*  Make sure that all methods in the PSI element interface access the stub data rather than the PSI tree when appropriate ([example: Property.getKey() implementation](https://github.com/JetBrains/intellij-community/blob/master/plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/psi/impl/PropertyImpl.java#L95))
+*  Make sure that all methods in the PSI element interface access the stub data rather than the PSI tree when appropriate ([example: Property.getKey() implementation](https://github.com/JetBrains/intellij-community/blob/master/plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/psi/impl/PropertyImpl.java))
 
 The following steps need to be performed only once for each language that supports stubs:
 
 *  Change the file element type for your language (the element type that you return from ```ParserDefinition.getFileNodeType()```) to a class that extends IStubFileElementType.
 
-*  In your plugin.xml, define the ```<stubElementTypeHolder>``` extension and specify the interface which contains the `IElementType` constants used by your language's parser ([example](https://github.com/JetBrains/intellij-community/blob/master/plugins/properties/src/META-INF/plugin.xml#L55)).
+*  In your plugin.xml, define the ```<stubElementTypeHolder>``` extension and specify the interface which contains the `IElementType` constants used by your language's parser ([example](https://github.com/JetBrains/intellij-community/blob/master/plugins/properties/src/META-INF/plugin.xml)).
 
 For serializing string data, e.g. element names, in stubs, we recommend to use ```StubOutputStream.writeName()``` and ```StubInputStream.readName()``` methods.
 These methods ensure that each unique identifier is stored only once in the data stream.
@@ -65,7 +65,7 @@ When building the stub tree, you can at the same time put some data about the st
 A stub index is a class which extends [AbstractStubIndex](https://github.com/JetBrains/intellij-community/blob/master/platform/indexing-api/src/com/intellij/psi/stubs/AbstractStubIndex.java). In the most common case, when the key type is String, you use a more specific base class, namely [StringStubIndexExtension](https://github.com/JetBrains/intellij-community/blob/master/platform/indexing-api/src/com/intellij/psi/stubs/StringStubIndexExtension.java).
 Stub index implementation classes are registered in the ```<stubIndex>``` extension point.
 
-To put data into an index, you implement the method ```IStubElementType.indexStub()``` ([example: JavaClassElementType.indexStub()](https://github.com/JetBrains/intellij-community/blob/master/java/java-psi-impl/src/com/intellij/psi/impl/java/stubs/JavaClassElementType.java#L189)). This method accepts an ```IndexSink``` as a parameter, and puts in the index ID and the key for each index in which the element should be stored.
+To put data into an index, you implement the method ```IStubElementType.indexStub()``` ([example: JavaClassElementType.indexStub()](https://github.com/JetBrains/intellij-community/blob/master/java/java-psi-impl/src/com/intellij/psi/impl/java/stubs/JavaClassElementType.java)). This method accepts an ```IndexSink``` as a parameter, and puts in the index ID and the key for each index in which the element should be stored.
 
 To access the data from an index, the following two methods are used:
 

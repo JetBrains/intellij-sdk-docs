@@ -12,9 +12,9 @@ and
 [Configuring Project JDK](http://www.jetbrains.com/idea/webhelp/configuring-project-jdk.html)
 in IntelliJ IDEA Web Help.
 
-### Getting Project Sdk Information
+### Getting Project SDK Information
 
-Main information about the project Sdk can be accessed via
+Main information about the project SDK can be accessed via
 [ProjectRootManager.java](https://github.com/JetBrains/intellij-community/blob/master/platform/projectModel-api/src/com/intellij/openapi/roots/ProjectRootManager.java)
 like the following example shows
 
@@ -48,5 +48,5 @@ String projectSdk = ProjectRootManager.getInstance(project).getProjectSdk();
   ProjectRootManager.getInstance(project).setProjectSdkName(String name);
   ```
   
-See the following [code sample](https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/project_model/src/com/intellij/plugins/project/model/ProjectSdkAction.java)
+See the following [code sample](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/project_model/src/com/intellij/tutorials/project/model/ProjectSdkAction.java)
 to get more familiar with SDK manipulation tool set.

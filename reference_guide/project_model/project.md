@@ -60,8 +60,8 @@ Use the ProjectRootManager.getFileIndex() method. For example:
 ProjectFileIndex projectFileIndex = ProjectRootManager.getInstance(project).getFileIndex();
 ```
 
-Note that this method returns null if the file does not belong to any module.
-You can also use the ProjectFileIndex.getContentRootForFile method to get the module content root to which the specified file or directory belongs:
+Note that this method returns `null` if the file does not belong to any module.
+You can also use the ProjectFileIndex.getContentRootForFile() method to get the module content root to which the specified file or directory belongs:
 
 ```java
 VirtualFile moduleContentRoot = ProjectRootManager.getInstance(project).getFileIndex().getContentRootForFile(virtualFileOrDirectory);
@@ -74,10 +74,10 @@ Utility classes which can be used for modifying a project structure can be found
 It's
 [roots](https://github.com/JetBrains/intellij-community/blob/master/platform/projectModel-impl/src/com/intellij/openapi/roots/)
 subpackage contains instances and utilities meant to work with project and module source roots, including
-[ModuleRootModificationUtil.java](https://github.com/JetBrains/intellij-community/blob/master/platform/projectModel-impl/src/com/intellij/openapi/roots/ModuleRootModificationUtil.java)
+[ModuleRootModificationUtil.java](https://github.com/JetBrains/intellij-community/blob/master/platform/projectModel-api/src/com/intellij/openapi/roots/ModuleRootModificationUtil.java)
 and
 [ProjectRootUtil.java](https://github.com/JetBrains/intellij-community/blob/master/platform/projectModel-impl/src/com/intellij/openapi/projectRoots/impl/ProjectRootUtil.java)
 
 Refer to the
-[basic example](https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/project_model/src/com/intellij/plugins/project/model/ModificationAction.java)
+[basic example](https://github.com/JetBrains/intellij-sdk/blob/master/code_samples/project_model/src/com/intellij/tutorials/project/model/ModificationAction.java)
 of on-the-fly project structure modification to learn how it can be implemented.

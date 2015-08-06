@@ -7,7 +7,7 @@ Thanks for contributing! Here are few useful things to know before submitting yo
 * Licensing - see [LICENSE.txt](LICENSE.txt)
 * [Setting up your environment](#setting-up-your-environment)
 * [Markup](#markup)
-    * _SUMMARY.md
+    * [_SUMMARY.md](#summarymd)
     * [Redirects](#redirects)
     * [Table of contents](#table-of-contents)
     * [Liquid tags and filters](#liquid-tags-and-filters)

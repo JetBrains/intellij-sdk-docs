@@ -83,8 +83,8 @@ Now when we open a Java file, it shows the property's value instead of the key.
 
 ![Folding](img/folding.png)
 
-[Previous](find_usages_provider.html)
-[Top](../custom_language_support_tutorial.html)
-[Next](go_to_symbol_contributor.html)
+[Previous](find_usages_provider.md)
+[Top](../custom_language_support_tutorial.md)
+[Next](go_to_symbol_contributor.md)
 
 

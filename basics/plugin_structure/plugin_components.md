@@ -153,7 +153,7 @@ However, if the workspace option in the plugin.xml file is set to _true_, the co
 *  Module-level components save their state to the module (.iml) file.
 
 For more information and samples, refer to 
-[Persisting State of Components](/basics/persisting_state_of_components.html).
+[Persisting State of Components](/basics/persisting_state_of_components.md).
 
 ### Defaults
 

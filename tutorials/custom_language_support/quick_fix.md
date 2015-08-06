@@ -174,6 +174,6 @@ Now let's try to use a property which is not defined yet.
 
 ![Quick Fix](img/quick_fix.png)
 
-[Previous](commenter.html)
-[Top](../custom_language_support_tutorial.html)
+[Previous](commenter.md)
+[Top](../custom_language_support_tutorial.md)
 

@@ -83,8 +83,8 @@ Mark this folder as a source root and make sure everything is compiled without e
 ![Parser](img/generated_parser.png)
 
 -------
-[Previous](language_and_filetype.html)
-[Top](../custom_language_support_tutorial.html)
-[Next](lexer_and_parser_definition.html)
+[Previous](language_and_filetype.md)
+[Top](../custom_language_support_tutorial.md)
+[Next](lexer_and_parser_definition.md)
 
 

@@ -10,14 +10,14 @@ and then returning to this document.
 
 The following subjects are covered:
 
-* [General Threading Rules](architectural_overview/general_threading_rules.html)
+* [General Threading Rules](architectural_overview/general_threading_rules.md)
 
-* [Virtual Files](architectural_overview/virtual_file.html)
+* [Virtual Files](architectural_overview/virtual_file.md)
 
-* [Documents](architectural_overview/documents.html)
+* [Documents](architectural_overview/documents.md)
  
-* [PSI Files](architectural_overview/psi_files.html)
+* [PSI Files](architectural_overview/psi_files.md)
 
-* [File View Providers](architectural_overview/file_view_providers.html)
+* [File View Providers](architectural_overview/file_view_providers.md)
  
-* [Psi Elements](architectural_overview/psi_elements.html)
+* [Psi Elements](architectural_overview/psi_elements.md)

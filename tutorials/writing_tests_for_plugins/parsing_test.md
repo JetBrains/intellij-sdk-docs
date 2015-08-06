@@ -132,7 +132,7 @@ Run the test and make sure it's green.
 
 -----
 
-[Previous](tests_prerequisites.html)
-[Top](../writing_tests_for_plugins.html)
-[Next](completion_test.html)
+[Previous](tests_prerequisites.md)
+[Top](../writing_tests_for_plugins.md)
+[Next](completion_test.md)
 

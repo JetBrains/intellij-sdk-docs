@@ -133,7 +133,7 @@ which has two methods to be overridden:
 
 Facets in IntelliJ are the way to store multiple kinds of module-specific settings, for instance to make a language support or framework available in some given module.
 To understand facets better from the point of view of an end-user, please see
-[Facet](/reference_guide/project_model/facet.html)
+[Facet](/reference_guide/project_model/facet.md)
 documentation section.
 
 

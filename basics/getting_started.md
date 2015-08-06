@@ -12,14 +12,14 @@ To become more familiar with *IntelliJ IDEA*, please refer to
 
 
 
-* [Setting Up a Development Environment](getting_started/setting_up_environment.html)
+* [Setting Up a Development Environment](getting_started/setting_up_environment.md)
 
-* [Creating a Plugin Project](getting_started/creating_plugin_project.html)
+* [Creating a Plugin Project](getting_started/creating_plugin_project.md)
 
-* [Build Number Ranges](getting_started/build_number_ranges.html)
+* [Build Number Ranges](getting_started/build_number_ranges.md)
 
-* [Running and Debugging a Plugin](getting_started/running_and_debugging_a_plugin.html)
+* [Running and Debugging a Plugin](getting_started/running_and_debugging_a_plugin.md)
 
-* [Deploying a Plugin](getting_started/deploying_plugin.html)
+* [Deploying a Plugin](getting_started/deploying_plugin.md)
 
-* [Plugin Compatibility with IntelliJ Platform Products](getting_started/plugin_compatibility.html)
+* [Plugin Compatibility with IntelliJ Platform Products](getting_started/plugin_compatibility.md)

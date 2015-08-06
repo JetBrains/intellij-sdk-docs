@@ -108,6 +108,6 @@ Now you see the icon on the gutter and can navigate to the property definition.
 
 --------------
 
-[Previous](annotator.html)
-[Top](../custom_language_support_tutorial.html)
-[Next](completion_contributor.html)
+[Previous](annotator.md)
+[Top](../custom_language_support_tutorial.md)
+[Next](completion_contributor.md)

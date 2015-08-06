@@ -16,7 +16,7 @@ class use native UI.
 The ```showCheckboxMessageDialog()``` function provides an easy way to implement a ```Do not show this again``` checkbox on messages.
 
 Note that it is recommended to use non-modal notifications instead of modal message boxes whenever it's appropriate.
-Please refer to the [Notifications](notifications.html) topic for more information.
+Please refer to the [Notifications](notifications.md) topic for more information.
 
 ### JBSplitter
 

@@ -147,7 +147,7 @@ public class MyPluginRegistration implements ApplicationComponent {
 ```
 
 Note, that the sample ```TextBoxes``` class is described in
-[Getting Started with Plugin Development](/basics/getting_started.html).
+[Getting Started with Plugin Development](/basics/getting_started.md).
 
 To ensure that your plugin is initialized on IDEA start-up, make the following changes to the `<application-components>` section of the plugin.xml file:
 

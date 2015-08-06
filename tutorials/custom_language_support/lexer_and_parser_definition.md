@@ -231,7 +231,7 @@ Now open the *PsiViewer* tool window and check how the lexer brake the content o
 
 ----------------
 
-[Previous](grammar_and_parser.html)
-[Top](../custom_language_support_tutorial.html)
-[Next](syntax_highlighter_and_color_settings_page.html)
+[Previous](grammar_and_parser.md)
+[Top](../custom_language_support_tutorial.md)
+[Next](syntax_highlighter_and_color_settings_page.md)
 

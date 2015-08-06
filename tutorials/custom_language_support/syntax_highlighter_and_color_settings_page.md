@@ -186,8 +186,8 @@ public class SimpleColorSettingsPage implements ColorSettingsPage {
 
 -----------
 
-[Previous](lexer_and_parser_definition.html)
-[Top](../custom_language_support_tutorial.html)
-[Next](psi_helper_and_utilities.html)
+[Previous](lexer_and_parser_definition.md)
+[Top](../custom_language_support_tutorial.md)
+[Next](psi_helper_and_utilities.md)
 
 

@@ -5,18 +5,18 @@ title: IntelliJ Platform SDK Documentation
 
 ## Welcome to the IntelliJ Platform SDK Documentation!
 
-Here you can find [basic information](basics.html) about the *IntelliJ Platform SDK*, in particular how to
-**[get started](basics/getting_started.html)** with developing plugins for IntelliJ IDEA and other JetBrains IDEs.
+Here you can find [basic information](basics.md) about the *IntelliJ Platform SDK*, in particular how to
+**[get started](basics/getting_started.md)** with developing plugins for IntelliJ IDEA and other JetBrains IDEs.
 
 More details about specific development topics can be found in the 
-[Architecture Reference Guide](reference_guide.html). 
+[Architecture Reference Guide](reference_guide.md). 
 
 A set of
-**[step-by-step tutorials](tutorials.html)** 
+**[step-by-step tutorials](tutorials.md)** 
 with code samples will lead you through the common use cases for *IntelliJ Platform SDK*.
 
 
-The [Plugin Development FAQ](faq.html)
+The [Plugin Development FAQ](faq.md)
 section contains a series of issues commonly discussed on our
 [Open API and Plugin Development](https://devnet.jetbrains.com/community/idea/open_api_and_plugin_development) forums.
 

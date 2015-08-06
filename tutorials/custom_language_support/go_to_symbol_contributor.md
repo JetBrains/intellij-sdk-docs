@@ -91,6 +91,6 @@ Now we can navigate to a property definition by name pattern via *⌥⌘⇧N* sh
 
 ![Go To Symbol](img/go_to_symbol.png)
 
-[Previous](folding_builder.html)
-[Top](../custom_language_support_tutorial.html)
-[Next](structure_view_factory.html)
+[Previous](folding_builder.md)
+[Top](../custom_language_support_tutorial.md)
+[Next](structure_view_factory.md)

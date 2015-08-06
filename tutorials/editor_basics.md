@@ -10,9 +10,9 @@ title: Basics of working with the Editor
 This tutorial will lead you through the series of steps showing how to work with the Editor in IntelliJ IDEA, how access and modify text it contains,
 and how to handle events sent to the Editor.
 
-* [1. Working With Text](editor_basics/working_with_text.html)
-* [2. Editor coordinates system. Positions and offsets](editor_basics/coordinates_system.html)
-* [3. Handling Editor Events](editor_basics/editor_events.html)
+* [1. Working With Text](editor_basics/working_with_text.md)
+* [2. Editor coordinates system. Positions and offsets](editor_basics/coordinates_system.md)
+* [3. Handling Editor Events](editor_basics/editor_events.md)
 
 **Note:** The described part of the API allows to operate only with text.
 If you need to access PSI please see

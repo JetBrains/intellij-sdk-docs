@@ -28,7 +28,7 @@ Custom language support provides basic functionality for working with a particul
 * Intention actions
 
 Refer to the 
-[Custom Language Support Tutorial](/tutorials/custom_language_support_tutorial.html)
+[Custom Language Support Tutorial](/tutorials/custom_language_support_tutorial.md)
 to learn more about the topic.
 
 ## Framework Integration

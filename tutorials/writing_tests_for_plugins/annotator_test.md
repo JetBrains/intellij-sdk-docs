@@ -3,9 +3,9 @@ title: 4. Annotator Test
 ---
 
 In this test we will check if the annotator, implemented in the
-[Annotator](../custom_language_support/annotator.html) section
+[Annotator](../custom_language_support/annotator.md) section
 of the
-[Custom Language Support Tutorial](../custom_language_support_tutorial.html)
+[Custom Language Support Tutorial](../custom_language_support_tutorial.md)
 works as we expect.
 
 ### 4.1. Define test data
@@ -36,7 +36,7 @@ Run the test and make sure it's green.
 
 -----
 
-[Previous](completion_test.html)
-[Top](../writing_tests_for_plugins.html)
-[Next](formatter_test.html)
+[Previous](completion_test.md)
+[Top](../writing_tests_for_plugins.md)
+[Next](formatter_test.md)
 

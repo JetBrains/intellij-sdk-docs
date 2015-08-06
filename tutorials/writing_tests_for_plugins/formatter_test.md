@@ -50,6 +50,6 @@ Run the test and make sure it's green.
 
 -----
 
-[Previous](annotator_test.html)
-[Top](../writing_tests_for_plugins.html)
-[Next](rename_test.html)
+[Previous](annotator_test.md)
+[Top](../writing_tests_for_plugins.md)
+[Next](rename_test.md)

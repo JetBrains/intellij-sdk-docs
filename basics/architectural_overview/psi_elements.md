@@ -21,4 +21,4 @@ Most likely you should use PsiTreeUtil.getParentOfType() to find the element you
 
 ## What can I do with PSI elements?
 
-See [PSI Cook Book](/basics/psi_cookbook.html)
+See [PSI Cook Book](/basics/psi_cookbook.md)

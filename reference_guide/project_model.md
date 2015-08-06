@@ -24,15 +24,15 @@ This document explains how you can explore and change the structure of projects 
 
 Main project structure components are:
 
-* [Project](/reference_guide/project_model/project.html) 
+* [Project](/reference_guide/project_model/project.md) 
   itself
 
-* [Module](/reference_guide/project_model/module.html)
+* [Module](/reference_guide/project_model/module.md)
 
-* [SDK](/reference_guide/project_model/sdk.html)
+* [SDK](/reference_guide/project_model/sdk.md)
 
-* [Library](/reference_guide/project_model/library.html)
+* [Library](/reference_guide/project_model/library.md)
 
-* [Facet](/reference_guide/project_model/facet.html)
+* [Facet](/reference_guide/project_model/facet.md)
 
 

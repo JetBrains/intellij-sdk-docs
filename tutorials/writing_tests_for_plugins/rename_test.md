@@ -72,8 +72,8 @@ public void testRename() {
 
 Run the test and make sure it's green.
 
-[Previous](formatter_test.html)
-[Top](../writing_tests_for_plugins.html)
-[Next](folding_test.html)
+[Previous](formatter_test.md)
+[Top](../writing_tests_for_plugins.md)
+[Next](folding_test.md)
 
 

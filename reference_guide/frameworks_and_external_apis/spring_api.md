@@ -81,7 +81,7 @@ _Version 14_: ```com.intellij.spring.model.utils.SpringModelSearchers#doesBeanEx
 _Version 14_: implement ```SpringInfrastructureBean```, such beans obtain special icon and can be filtered in various places in UI
 
 ### XML Configuration
-All support for XML-based Spring configuration files is provided via [DOM-API](xml_dom_api.html).
+All support for XML-based Spring configuration files is provided via [DOM-API](xml_dom_api.md).
 
 ##### Add support for additional Spring namespace
 See EP ```com.intellij.spring.dom.SpringCustomNamespaces```, registered namespace-key must match the one registered with your DOM elements via ```@Namespace```.

@@ -45,9 +45,9 @@ public class SimpleCompletionContributor extends CompletionContributor {
 
 ![Completion](img/completion.png)
 
-[Previous](line_marker_provider.html)
-[Top](../custom_language_support_tutorial.html)
-[Next](reference_contributor.html)
+[Previous](line_marker_provider.md)
+[Top](../custom_language_support_tutorial.md)
+[Next](reference_contributor.md)
 
 
 

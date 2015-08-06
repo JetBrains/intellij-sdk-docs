@@ -14,7 +14,7 @@ section of
 
 Create an empty plugin project.
 See 
-[Creating a Plugin Project](/basics/getting_started/creating_plugin_project.html)
+[Creating a Plugin Project](/basics/getting_started/creating_plugin_project.md)
 to know how to do it.
 
 ## 1. Register a New Configuration Type
@@ -171,7 +171,7 @@ public class DemoSettingsEditor extends SettingsEditor<DemoRunConfiguration> {
 ## 7. Compile and Run the Plugin
 
 Refer to 
-[Running and Debugging a Plugin](/basics/getting_started/running_and_debugging_a_plugin.html)
+[Running and Debugging a Plugin](/basics/getting_started/running_and_debugging_a_plugin.md)
 section to know how this could be done.
 
 After going through the steps described above you can create a custom Run Configuration

@@ -8,7 +8,7 @@ This tutorial shows how to add a extra-step to the Project Wizard in order to pr
 
 Create an empty plugin project.
 See 
-[Creating a Plugin Project](/basics/getting_started/creating_plugin_project.html)
+[Creating a Plugin Project](/basics/getting_started/creating_plugin_project.md)
 to know how to do it.
 
 ## 1. Register Module Builder

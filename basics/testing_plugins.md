@@ -29,14 +29,14 @@ for plugin UI testing, but we don't use either of them and cannot provide any gu
 Internally, we use manual testing for testing our Swing UIs.
 
 
-*  [Tests and Fixtures](/basics/testing_plugins/tests_and_fixtures.html)
-*  [Light and Heavy Tests](/basics/testing_plugins/light_and_heavy_tests.html)
-*  [Test Project and Testdata Directories](/basics/testing_plugins/test_project_and_testdata_directories.html)
-*  [Writing Tests](/basics/testing_plugins/writing_tests.html)
-*  [Testing Highlighting](/basics/testing_plugins/testing_highlighting.html)
+*  [Tests and Fixtures](/basics/testing_plugins/tests_and_fixtures.md)
+*  [Light and Heavy Tests](/basics/testing_plugins/light_and_heavy_tests.md)
+*  [Test Project and Testdata Directories](/basics/testing_plugins/test_project_and_testdata_directories.md)
+*  [Writing Tests](/basics/testing_plugins/writing_tests.md)
+*  [Testing Highlighting](/basics/testing_plugins/testing_highlighting.md)
 
 
 Check out
-[this step-by-step tutorial](/tutorials/writing_tests_for_plugins.html)
+[this step-by-step tutorial](/tutorials/writing_tests_for_plugins.md)
 teaching how to write and run automated tests for your custom language plugin (source code included).
 

@@ -14,26 +14,26 @@ source code.
 
 
 If you prefer a full example to the detailed description offered on this page, please check out a step-by-step tutorial how to define custom language support on example of ".properties" files:
-[Custom Language Support Tutorial](/tutorials/custom_language_support_tutorial.html)
+[Custom Language Support Tutorial](/tutorials/custom_language_support_tutorial.md)
 
 Providing custom language support includes the following major steps:
 
-* [Registering File Type](/reference_guide/custom_language_support/registering_file_type.html)
-* [Implementing Lexer](/reference_guide/custom_language_support/implementing_lexer.html)
-* [Implementing Parser and PSI](/reference_guide/custom_language_support/implementing_parser_and_psi.html)
-* [Syntax Highlighting and Error Highlighting](/reference_guide/custom_language_support/syntax_highlighting_and_error_highlighting.html)
-* [References and Resolve](/reference_guide/custom_language_support/references_and_resolve.html)
-* [Code Completion](/reference_guide/custom_language_support/code_completion.html)
-* [Find Usages](/reference_guide/custom_language_support/find_usages.html)
-* [Rename Refactoring](/reference_guide/custom_language_support/rename_refactoring.html)
-* [Safe Delete Refactoring](/reference_guide/custom_language_support/safe_delete_refactoring.html)
-* [Code Formatter](/reference_guide/custom_language_support/code_formatting.html)
-* [Code Inspections and Intentions](/reference_guide/custom_language_support/code_inspections_and_intentions.html)
-* [Structure View](/reference_guide/custom_language_support/structure_view.html)
-* [Surround With](/reference_guide/custom_language_support/surround_with.html)
-* [Go to Class and Go to Symbol](/reference_guide/custom_language_support/go_to_class_and_go_to_symbol.html)
-* [Documentation](/reference_guide/custom_language_support/documentation.html)
-* [Additional Minor Features](/reference_guide/custom_language_support/additional_minor_features.html)
+* [Registering File Type](/reference_guide/custom_language_support/registering_file_type.md)
+* [Implementing Lexer](/reference_guide/custom_language_support/implementing_lexer.md)
+* [Implementing Parser and PSI](/reference_guide/custom_language_support/implementing_parser_and_psi.md)
+* [Syntax Highlighting and Error Highlighting](/reference_guide/custom_language_support/syntax_highlighting_and_error_highlighting.md)
+* [References and Resolve](/reference_guide/custom_language_support/references_and_resolve.md)
+* [Code Completion](/reference_guide/custom_language_support/code_completion.md)
+* [Find Usages](/reference_guide/custom_language_support/find_usages.md)
+* [Rename Refactoring](/reference_guide/custom_language_support/rename_refactoring.md)
+* [Safe Delete Refactoring](/reference_guide/custom_language_support/safe_delete_refactoring.md)
+* [Code Formatter](/reference_guide/custom_language_support/code_formatting.md)
+* [Code Inspections and Intentions](/reference_guide/custom_language_support/code_inspections_and_intentions.md)
+* [Structure View](/reference_guide/custom_language_support/structure_view.md)
+* [Surround With](/reference_guide/custom_language_support/surround_with.md)
+* [Go to Class and Go to Symbol](/reference_guide/custom_language_support/go_to_class_and_go_to_symbol.md)
+* [Documentation](/reference_guide/custom_language_support/documentation.md)
+* [Additional Minor Features](/reference_guide/custom_language_support/additional_minor_features.md)
 
 
 Please ask questions or suggest missing topics in [plugin development forum](https://devnet.jetbrains.com/community/idea/open_api_and_plugin_development).

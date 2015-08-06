@@ -9,8 +9,8 @@ Action can either be simply a response to some state, or be bound to UI element 
 These UI elements include main menu, context menus, and toolbars.
 
 
-* [Working With Custom Actions](action_system/working_with_custom_actions.html)
-* [Grouping Action](action_system/grouping_action.html)
+* [Working With Custom Actions](action_system/working_with_custom_actions.md)
+* [Grouping Action](action_system/grouping_action.md)
 
 
 [Plugin source code](https://github.com/JetBrains/intellij-sdk-docs/tree/master/code_samples/register_actions)

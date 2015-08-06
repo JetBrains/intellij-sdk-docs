@@ -18,7 +18,7 @@ interface, which is registered via the ```com.intellij.fileTypeFactory```
 **Example**:
 [LanguageFileType](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/openapi/fileTypes/LanguageFileType.java)
 implementation in
-[Properties language plugin](https://github.com/JetBrains/intellij-community/blob/master/plugins/properties/properties-psi-api/src/com/intellij/lang/properties/PropertiesFileType.java)
+[Properties language plugin](https://github.com/JetBrains/intellij-community/blob/master/plugins/properties)
 
 To verify that the file type is registered correctly, you can implement the
 [LanguageFileType.getIcon()](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/openapi/fileTypes/LanguageFileType.java)

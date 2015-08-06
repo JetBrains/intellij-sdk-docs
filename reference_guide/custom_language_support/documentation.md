@@ -11,7 +11,7 @@ A standard base class for such implementations is available in the class
 **Example**:
 [DocumentationProvider](https://github.com/JetBrains/intellij-community/blob/master/plugins/properties/src/com/intellij/lang/properties/PropertiesDocumentationProvider.java)
 for
-[Properties language plugin](https://github.com/JetBrains/intellij-community/blob/master/plugins/properties/)
+[Properties language plugin](https://github.com/JetBrains/intellij-community/tree/master/plugins/properties)
 
 
 The `getQuickNavigateInfo()` method returns the text to be displayed when the user holds the mouse over an element with ```Ctrl``` pressed.

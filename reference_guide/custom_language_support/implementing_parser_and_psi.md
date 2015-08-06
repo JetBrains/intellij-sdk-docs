@@ -33,14 +33,14 @@ method.
 **Example**:
 [ParserDefinition](https://github.com/JetBrains/intellij-community/blob/master/plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/parsing/PropertiesParserDefinition.java)
 for
-[Properties language plugin](https://github.com/JetBrains/intellij-community/blob/master/plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/)
+[Properties language plugin](https://github.com/JetBrains/intellij-community/tree/master/plugins/properties)
 
 
 The lifecycle of the PSI is described in more detail in
 [Architectural Overview](/basics/architectural_overview.md).
 
 The base classes for the PSI implementation, including
-[PsiFileBase](https://github.com/JetBrains/intellij-community/blob/master/core-impl/src/com/intellij/extapi/psi/PsiFileBase.java),
+[PsiFileBase](https://github.com/JetBrains/intellij-community/blob/master/platform/core-impl/src/com/intellij/extapi/psi/PsiFileBase.java),
 the base implementation of
 [PsiFile](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/psi/PsiFile.java),
 and
@@ -72,7 +72,7 @@ returns `null`, even if the tokens are not valid according to the language synta
 **Example**:
 [PsiParser](https://github.com/JetBrains/intellij-community/blob/master/plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/parsing/PropertiesParser.java)
 implementation for
-[Properties language plugin](https://github.com/JetBrains/intellij-community/blob/master/plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/).
+[Properties language plugin](https://github.com/JetBrains/intellij-community/tree/master/plugins/properties)
 
 The parser works by setting pairs of markers (
 [PsiBuilder.Marker](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/lang/PsiBuilder.java)

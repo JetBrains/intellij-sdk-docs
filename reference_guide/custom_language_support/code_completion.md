@@ -40,7 +40,7 @@ consists of calling the `extend()` method and passing in the *pattern* specifyin
 
 **Example**:
 [CompletionContributor](https://github.com/JetBrains/intellij-plugins/blob/master/osmorc/src/org/osmorc/manifest/completion/OsgiManifestCompletionContributor.java)
-for completing keywords in MANIFEST.MF files.
+for completing keywords in MANIFEST.MF files
 
 
 Items shown in the completion list are represented by instances of the

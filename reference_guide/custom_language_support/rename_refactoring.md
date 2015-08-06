@@ -16,9 +16,9 @@ Creating a fully correct AST node from scratch is quite difficult.
 Thus, surprisingly, the easiest way to get the replacement node is to create a dummy file in the custom language so that it would contain the necessary node in its parse tree, build the parse tree and extract the necessary node from it.
 
 **Example:**
-[setName()](https://github.com/JetBrains/intellij-community/blob/master/plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/psi/impl/PropertyImpl.java#L58)
+[setName()](https://github.com/JetBrains/intellij-community/blob/master/plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/psi/impl/PropertyImpl.java)
 implementation for a
-[Properties language plugin](https://github.com/JetBrains/intellij-community/blob/master/plugins/properties/)
+[Properties language plugin](https://github.com/JetBrains/intellij-community/tree/master/plugins/properties)
 
 
 Another interface related to the Rename refactoring is
@@ -32,7 +32,7 @@ are registered in the `com.intellij.lang.namesValidator` extension point.
 **Example**:
 [NamesValidator](https://github.com/JetBrains/intellij-community/blob/master/plugins/properties/src/com/intellij/lang/properties/PropertiesNamesValidator.java)
 for
-[Properties language plugin](https://github.com/JetBrains/intellij-community/blob/master/plugins/properties/)
+[Properties language plugin](https://github.com/JetBrains/intellij-community/tree/master/plugins/properties)
 
 
 Further customization of the Rename refactoring processing is possible on multiple levels.
@@ -44,7 +44,8 @@ at all.
 
 **Example**:
 [RenameHandler](https://github.com/JetBrains/intellij-community/blob/master/plugins/properties/src/com/intellij/lang/properties/refactoring/rename/ResourceBundleFromEditorRenameHandler.java)
-for renaming a resource bundle
+for renaming a resource bundle in
+[Properties language plugin](https://github.com/JetBrains/intellij-community/tree/master/plugins/properties)
 
 
 If you're fine with the standard UI but need to extend the default logic of renaming, you can provide an implementation of the

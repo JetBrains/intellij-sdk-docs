@@ -29,7 +29,7 @@ The interface can return the prefix for the line comment, and the prefix and suf
 
 **Example:**
 [Commenter](https://github.com/JetBrains/intellij-community/blob/master/plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/PropertiesCommenter.java)
-for [Properties language plugin](https://github.com/JetBrains/intellij-community/blob/master/plugins/properties/)
+for [Properties language plugin](https://github.com/JetBrains/intellij-community/tree/master/plugins/properties)
 
 
 To support smart/semantic *Join Lines* see
@@ -44,15 +44,15 @@ To support smart/semantic *Join Lines* see
 *Semantic highlight usages* (e.g. exit points) can be achieved using
 [HighlightUsagesHandlerFactory](https://github.com/JetBrains/intellij-community/blob/master/platform/lang-impl/src/com/intellij/codeInsight/highlighting/HighlightUsagesHandlerFactory.java).
 
-*View\|Parameter Info* is provided via
+**View \| Parameter Info** is provided via
 [ParameterInfoHandler](https://github.com/JetBrains/intellij-community/blob/master/platform/lang-api/src/com/intellij/lang/parameterInfo/ParameterInfoHandler.java)
 (extension point `codeInsight.parameterInfo`).
 
 The *To Do view* is supported automatically if the plugin provides a correct implementation of the
-[ParserDefinition.getCommentTokens()](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/lang/ParserDefinition.java#L79)
+[ParserDefinition.getCommentTokens()](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/lang/ParserDefinition.java)
 method.
 
-The *View \| Context Info* feature is supported for custom languages since IntelliJ IDEA 10.5.
+The **View \| Context Info** feature is supported for custom languages since IntelliJ IDEA 10.5.
 In order for it to work, you need to have a structure view implementation based on a
 [TreeBasedStructureViewBuilder](https://github.com/JetBrains/intellij-community/blob/master/platform/structure-view-api/src/com/intellij/ide/structureView/TreeBasedStructureViewBuilder.java),
 and additionally to provide an implementation of
@@ -60,13 +60,13 @@ and additionally to provide an implementation of
 for your language and to register it in the `declarationRangeHandler` extension point.
 
 *Spellchecking* can be provided via EP `spellchecker.support` (
-[SpellcheckingStrategy](https://github.com/JetBrains/intellij-community/spellchecker/src/com/intellij/spellchecker/tokenizer/SpellcheckingStrategy.java)
+[SpellcheckingStrategy](https://github.com/JetBrains/intellij-community/blob/master/spellchecker/src/com/intellij/spellchecker/tokenizer/SpellcheckingStrategy.java)
 ) where you can return
-[Tokenizer](https://github.com/JetBrains/intellij-community/spellchecker/src/com/intellij/spellchecker/tokenizer/Tokenizer.java)
+[Tokenizer](https://github.com/JetBrains/intellij-community/blob/master/spellchecker/src/com/intellij/spellchecker/tokenizer/Tokenizer.java)
 to use, possibly depending on the passed in
 [PsiElement](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/psi/PsiElement.java)
 (or `EMPTY_TOKENIZER` for no spellchecking).
 
-New in 13: user-configurable *reference injections* can be provided via `referenceInjector` extension point (
+**New in IntelliJ IDEA 13**: user-configurable *reference injections* can be provided via `referenceInjector` extension point (
 [ReferenceInjector](https://github.com/JetBrains/intellij-community/blob/master/platform/lang-api/src/com/intellij/psi/injection/ReferenceInjector.java)
 ) (IntelliLang plugin required).

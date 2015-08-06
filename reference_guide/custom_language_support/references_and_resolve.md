@@ -27,12 +27,12 @@ The latter method can be implemented by calling ```resolve()``` and comparing th
 
 **Example**:
 [Reference](https://github.com/JetBrains/intellij-community/blob/master/plugins/properties/src/com/intellij/lang/properties/ResourceBundleReference.java)
-to a ResourceBundle in the
-[Properties language plugin](https://github.com/JetBrains/intellij-community/blob/master/plugins/properties/)
+to a ResourceBundle in
+[Properties language plugin](https://github.com/JetBrains/intellij-community/tree/master/plugins/properties)
 
 
 There's a set of interfaces which can be used as a base for implementing resolve support, namely the
-[PsiScopeProcessor interface](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/psi/scope/PsiScopeProcessor.java) and the
+[PsiScopeProcessor](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/psi/scope/PsiScopeProcessor.java) interface and the
 [PsiElement.processDeclarations()](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/psi/PsiElement.java)
 method.
 These interfaces have a number of extra complexities which are not necessary for most custom languages (like support for substituting Java generics types), but they are required if the custom language can have references to Java code.

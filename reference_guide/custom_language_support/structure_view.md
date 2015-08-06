@@ -16,7 +16,8 @@ interface, which is registered in the `com.intellij.lang.psiStructureViewFactory
 
 **Example:**
 [PsiStructureViewFactory](https://github.com/JetBrains/intellij-community/blob/master/plugins/properties/src/com/intellij/lang/properties/structureView/PropertiesStructureViewBuilderFactory.java)
-for .properties files
+for
+[Properties language plugin](https://github.com/JetBrains/intellij-community/tree/master/plugins/properties)
 
 
 To reuse the *IntelliJ Platform* implementation of the
@@ -24,7 +25,7 @@ To reuse the *IntelliJ Platform* implementation of the
 the plugin returns a
 [TreeBasedStructureViewBuilder](https://github.com/JetBrains/intellij-community/blob/master/platform/structure-view-api/src/com/intellij/ide/structureView/TreeBasedStructureViewBuilder.java)
 from its
-[PsiStructureViewFactory.getStructureViewBuilder()](https://github.com/JetBrains/intellij-community/blob/master/platform/structure-view-api/src/com/intellij/lang/PsiStructureViewFactory.java#L35)
+[PsiStructureViewFactory.getStructureViewBuilder()](https://github.com/JetBrains/intellij-community/blob/master/platform/structure-view-api/src/com/intellij/lang/PsiStructureViewFactory.java)
 method.
 As the model for the builder, the plugin can specify a subclass of
 [TextEditorBasedStructureViewModel](https://github.com/JetBrains/intellij-community/blob/master/platform/structure-view-api/src/com/intellij/ide/structureView/TextEditorBasedStructureViewModel.java),
@@ -32,7 +33,8 @@ and by overriding methods of this subclass it customizes the structure view for 
 
 **Example**:
 [StructureViewModel](https://github.com/JetBrains/intellij-community/blob/master/plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/structureView/PropertiesFileStructureViewModel.java)
-for .properties files
+for
+[Properties language plugin](https://github.com/JetBrains/intellij-community/tree/master/plugins/properties)
 
 
 The main method to override is `getRoot()`, which returns the instance of a class implementing the
@@ -51,5 +53,5 @@ The latter method returns an array of `PsiElement`\-derived classes which can be
 
 **Example:**
 [StructureViewElement](https://github.com/JetBrains/intellij-community/blob/master/plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/structureView/PropertiesStructureViewElement.java)
-for a
-[Properties language plugin](https://github.com/JetBrains/intellij-community/blob/master/plugins/properties/)
+for
+[Properties language plugin](https://github.com/JetBrains/intellij-community/tree/master/plugins/properties)

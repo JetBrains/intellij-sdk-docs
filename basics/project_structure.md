@@ -25,7 +25,7 @@ Depending on the logical and functional requirements to the project, you can cre
 
 #### Module
 
-A _module_ is a discrete unit of functionality that can be run, tested, and debugged independently. Modules includes such things as source code, build scripts, unit tests, deployment descriptors, etc. In the project, each module can use a specific SDK or inherit SDK defined on the project level (see the SDK section later in this document). A module can depend on other modules of the project.
+A _module_ is a discrete unit of functionality that can be run, tested, and debugged independently. Modules includes such things as source code, build scripts, unit tests, deployment descriptors, etc. In the project, each module can use a specific SDK or inherit SDK defined on the project level (see the [SDK](/reference_guide/project_model/sdk.html) section later in this document). A module can depend on other modules of the project.
 
 #### Library
 

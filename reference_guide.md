@@ -3,9 +3,7 @@ title: Architecture Reference Guide
 ---
 
 This documentation section contains more in-depth explanation of different API components.
-If you are not familiar with *IntelliJ Platform* API please refer to  
-[Basics](basics.html)
-section.
+If you are not familiar with *IntelliJ Platform* API please refer to [Basics](basics.html) section.
 
 * [Project Model](reference_guide/project_model.html)
 * [Project Wizard](reference_guide/project_wizard.html)

@@ -91,5 +91,5 @@ Now we can call *Find Usages* for any property with a reference.
 ![Find Usages](img/find_usages.png)
 
 [Previous](reference_contributor.md)
-[Top](../custom_language_support_tutorial.md)
+[Top](/tutorials/custom_language_support_tutorial.md)
 [Next](folding_builder.md)

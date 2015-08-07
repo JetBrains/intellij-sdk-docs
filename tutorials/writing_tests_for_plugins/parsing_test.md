@@ -133,6 +133,6 @@ Run the test and make sure it's green.
 -----
 
 [Previous](tests_prerequisites.md)
-[Top](../writing_tests_for_plugins.md)
+[Top](/tutorials/writing_tests_for_plugins.md)
 [Next](completion_test.md)
 

@@ -137,6 +137,6 @@ public class SimpleUtil {
 
 ----------------
 [Previous](syntax_highlighter_and_color_settings_page.md)
-[Top](../custom_language_support_tutorial.md)
+[Top](/tutorials/custom_language_support_tutorial.md)
 [Next](annotator.md)
 

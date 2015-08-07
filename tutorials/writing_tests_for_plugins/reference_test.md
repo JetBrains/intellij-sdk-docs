@@ -38,7 +38,7 @@ Run the test and make sure it's green.
 -----
 
 [Previous](commenter_test.md)
-[Top](../writing_tests_for_plugins.md)
+[Top](/tutorials/writing_tests_for_plugins.md)
 
 
 

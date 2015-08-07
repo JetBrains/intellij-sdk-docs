@@ -241,7 +241,7 @@ public class SimpleRefactoringSupportProvider extends RefactoringSupportProvider
 ![In Place Rename](img/in_place_rename.png)
 
 [Previous](completion_contributor.md)
-[Top](../custom_language_support_tutorial.md)
+[Top](/tutorials/custom_language_support_tutorial.md)
 [Next](find_usages_provider.md)
 
 

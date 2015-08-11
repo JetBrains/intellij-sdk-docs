@@ -1,19 +1,20 @@
 ---
-title: Setting-up environment for PhpStorm plugin development
+title: Setting-up Environment for PhpStorm Plugin Development
 ---
 
 ## General information
 Follow steps that are described at [Getting Started with Plugin Development](http://confluence.jetbrains.com/display/IDEADEV/Getting+Started+with+Plugin+Development).
+
 There are two ways to develop plugins for PhpStorm:
-1. Use Intellij IDEA Ultimate with the PHP plugin installed
+1. Use IntelliJ IDEA Ultimate with the PHP plugin installed.
 2. Use PhpStorm as a targeted IDE in a first place.
-The choice affects how you will configure SDK for the plugin. In the first case you need to specify current installation of Intellij IDEA as SDK and in the second case you need to specify current installation of PhpStorm. This step is described in [Getting Started with Plugin Development](https://confluence.jetbrains.com/display/IDEADEV/Getting+Started+with+Plugin+Development).
+The choice affects how you will configure SDK for the plugin. In the first case you need to specify current installation of IntelliJ IDEA as SDK and in the second case you need to specify current installation of PhpStorm. This step is described in [Getting Started with Plugin Development](https://confluence.jetbrains.com/display/IDEADEV/Getting+Started+with+Plugin+Development).
 
 ## How to use OpenAPI library
 
-> OpenAPI is available only for PhpStorm 6 and above.
+> OpenAPI is available for PhpStorm 6 and above.
 
-This section explains how to configure Intellij IDEA for using PhpStorm OpenAPI.
+This section explains how to configure IntelliJ IDEA for using PhpStorm OpenAPI.
 
 ### Adding library to a module
 

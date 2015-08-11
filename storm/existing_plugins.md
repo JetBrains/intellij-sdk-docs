@@ -1,10 +1,21 @@
 ---
-title: Existing 3rd party framework-specific plugins
+title: Existing Third Party Framework-specific Plugins
 ---
+
+## Symfony2 Plugin
+
+Symfony2 plugin is a free plugin for Symfony2 framework developers.
+
+There are lots of futures included into this plugin, such as Symfony-specific completion and navigation for symbols, templates, service container, Doctrine, translations, routes, forms, events, and more.
+
+* [Official Symfony2 plugin Web Site](http://symfony2-plugin.espend.de/)
+* [GitHub](https://github.com/Haehnchen/idea-php-symfony2-plugin)
+* [Symfony Development using PhpStorm Tutorials](https://confluence.jetbrains.com/display/PhpStorm/Symfony+Development+using+PhpStorm)
+* [Symfony2 plugin in PhpStorm Plugins Repository](https://plugins.jetbrains.com/plugin/7219?pr=phpStorm)
 
 ## Magicento
 
-Magicento is a free PHPStorm plugin for Magento developers.
+Magicento is a paid PhpStorm plugin for Magento developers. Free limited version is available.
 Features include: Goto for factories and template paths, autocomplete for factories, xml files and class names, documentation for xml nodes, evaluation of PHP code inside Magento environment, and much more to come!
 
 * [Official Magicento Web Site](http://magicento.com/)
@@ -22,14 +33,7 @@ Features are: Going from render and renderPartial to the view file. Includes con
 
 ## Symfony2 - Clickable Views
 
-Symfony2 - Clickable Views is a plugin for Symfony2 Framework developers. Resolves on CTRL+Click the corresponding twig template in your Symfony2 project. This plugin demands a projectstructure which you can find in the Symfony2 Std. Edition and will not work with custom layouts.
+Symfony2 - Clickable Views is a plugin for Symfony2 Framework developers. Resolves on Ctrl+Click the corresponding twig template in your Symfony2 project. This plugin demands a projectstructure which you can find in the Symfony2 Std. Edition and will not work with custom layouts.
 
 * [GitHub](https://github.com/xenji/phpstorm-symfony2-plugin)
 * [Symfony2 - Clickable Views plugin in PhpStorm Plugins Repository](https://plugins.jetbrains.com/plugin?pr=webide&pluginId=7057)
-
-## Symfony2 - Factory Support
-
-Symfony2 - Clickable Views is a plugin for Symfony2 Framework developers. Resolves on CTRL+Click the corresponding twig template in your Symfony2 project. This plugin demands a projectstructure which you can find in the Symfony2 Std. Edition and will not work with custom layouts.
-
-* [GitHub](https://github.com/Haehnchen/idea-php-symfony2-plugin)
-* [Symfony2 plugin in PhpStorm Plugins Repository](https://plugins.jetbrains.com/plugin?pr=&pluginId=7219)

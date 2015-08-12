@@ -1,5 +1,5 @@
 ---
-title: Plugin Development
+title: PhpStorm Plugin Development
 ---
 
 Plugins for PhpStorm are developed in Java using IntelliJ IDEA (Community Edition is sufficient in this case). You will also need a copy of PhpStorm to develop against. The [PsiViewer plugin](https://plugins.jetbrains.com/plugin/?pluginId=227) will also be useful.

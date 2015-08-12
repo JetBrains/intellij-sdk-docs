@@ -1,5 +1,5 @@
 ---
-title: Existing Third Party Framework-specific Plugins
+title: Existing Third Party Plugins
 ---
 
 ## Symfony2 Plugin

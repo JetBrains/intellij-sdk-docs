@@ -3,9 +3,12 @@ title: 2. Grouping Actions
 ---
 
 If some part of the functionality requires to implement several actions or actions are simply too many and overload the menu they can be joined into groups.
+
+### 2.1. Simple action groups
+
 In this case the group will be available as a top-level menu item, action will be represented as drop-down menu items.
 
-### 2.1. Creating simple action groups
+#### 2.1.1. Creating simple action groups
 
 Grouping can be done by extending adding `<group>` attribute to `<actions>`
 [plugin.xml](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/register_actions/META-INF/plugin.xml)
@@ -18,7 +21,7 @@ file.
 </actions>
 ```
 
-### 2.2. Binding action groups to UI component
+#### 2.1.2. Binding action groups to UI component
 
 The following sample shows how to place a custom action group on top of the editor popup menu:
 
@@ -30,7 +33,7 @@ The following sample shows how to place a custom action group on top of the edit
 </actions>
 ```
 
-### 2.3. Adding actions to the group
+#### 2.1.3. Adding actions to the group
 
 To create an action we need to extend
 [AnAction.java](https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java)
@@ -67,13 +70,13 @@ After performing the steps described above the action group nad it's content wil
 
 ![Simple Action Group](img/grouped_action.png)
 
-### 2.4. Working with DefaultActionGroup
+### 2.2. Working with DefaultActionGroup
 
 In some cases we need to implement some specific behaviour of a group of actions dependently on the context.
 The steps below are meant to show how to make a group of actions available and visible if a certain condition is met and how to set up a group icon dynamically.
 In our case the condition is: an instance of the editor is available.
 
-### 2.5. Extending DefaultActionGroup
+#### 2.2.1. Extending DefaultActionGroup
 
 [DefaultActionGroup.java](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/actionSystem/DefaultActionGroup.java)
 is a default implementations of
@@ -93,7 +96,7 @@ public class CustomDefaultActionGroup extends DefaultActionGroup {
 }
 ```
 
-### 2.6. Registering action group
+#### 2.2.2. Registering action group
 
 As in case with the simple action group, the inheritor of
 [DefaultActionGroup.java](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/actionSystem/DefaultActionGroup.java)
@@ -110,7 +113,7 @@ file:
 </actions>
 ```
 
-### 2.7. Creating an action
+#### 2.2.3. Creating an action
 
 [AnAction.java](https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java)
 needs to be extended:
@@ -124,7 +127,7 @@ public class CustomGroupedAction extends AnAction {
 }
 ```
 
-### 2.8. Adding actions to the group
+#### 2.2.4. Adding actions to the group
 
 Action's class should be registered in
 [plugin.xml](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/register_actions/META-INF/plugin.xml)
@@ -141,7 +144,7 @@ Action's class should be registered in
 </actions>
 ```
 
-### 2.9. Providing specific behaviour for the group
+#### 2.2.5. Providing specific behaviour for the group
 
 In this case we override ```public void update(AnActionEvent event);``` method to make the group visible as a *Tools* menu item,
 however, it will be enabled only if there's an instance of the editor available. Also a custom icon is set up:
@@ -162,14 +165,14 @@ After compiling and running the code sample above, *Tools* menu item should cont
 
 ![Default Action Group](img/default_action_group.png)
 
-### 2.10. Action groups with variable actions set
+### 2.3. Action groups with variable actions set
 
 If a set of actions belonging to a custom actions group may vary dependently on the context,
 we need to work with
 [ActionGroup.java](https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/ActionGroup.java).
 In this case set of actions to be grouped can be dynamically defined.
 
-### 2.11. Creating variable action group
+#### 2.3.1. Creating variable action group
 
 To create a group of actions with a variable actions set we extend
 [ActionGroup.java](https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/ActionGroup.java)
@@ -179,7 +182,7 @@ public class BaseActionGroup extends ActionGroup {
 }
 ```
 
-### 2.12. Registering variable action group
+#### 2.3.2. Registering variable action group
 
 To register the group `<group>` attribute needs to be placed in the *`<actions>`* section of
 [plugin.xml](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/register_actions/META-INF/plugin.xml):
@@ -198,7 +201,7 @@ If `<group>` attribute contains any static action definition an exception will b
 For statically defined group of action use
 [DefaultActionGroup.java](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/actionSystem/DefaultActionGroup.java)
 
-### 2.13. Accessing children actions
+#### 2.3.3. Accessing children actions
 
 An array of children actions should be returned by the method ```public AnAction[] getChildren(AnActionEvent anActionEvent);``` of the a created group:
 
@@ -212,7 +215,7 @@ public class BaseActionGroup extends ActionGroup {
 }
 ```
 
-### 2.14. Adding children actions to the group
+#### 2.3.4. Adding children actions to the group
 
 To make the group contain actions a non-empty array of
 [AnAction.java](https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java)

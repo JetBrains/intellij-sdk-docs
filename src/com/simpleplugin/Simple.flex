@@ -21,7 +21,7 @@ FIRST_VALUE_CHARACTER=[^ \n\r\f\\] | "\\"{CRLF} | "\\".
 VALUE_CHARACTER=[^\n\r\f\\] | "\\"{CRLF} | "\\".
 END_OF_LINE_COMMENT=("#"|"!")[^\r\n]*
 SEPARATOR=[:=]
-KEY_CHARACTER=[^:=\ \n\r\t\f\\] | "\\"{CRLF} | "\\".
+KEY_CHARACTER=[^:=\ \n\r\t\f\\] | "\\ "
 
 %state WAITING_VALUE
 

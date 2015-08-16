@@ -17,7 +17,12 @@ public class SimpleLineMarkerProvider extends RelatedItemLineMarkerProvider {
     protected void collectNavigationMarkers(@NotNull PsiElement element, Collection<? super RelatedItemLineMarkerInfo> result) {
         if (element instanceof PsiLiteralExpression) {
             PsiLiteralExpression literalExpression = (PsiLiteralExpression) element;
-            String value = (String) literalExpression.getValue();
+            String value = null;
+            try {
+                value = (String) literalExpression.getValue();
+            } catch (Exception e) {
+                value = null;
+            }
             if (value != null && value.startsWith("simple:")) {
                 Project project = element.getProject();
                 final List<SimpleProperty> properties = SimpleUtil.findProperties(project, value.substring(7));

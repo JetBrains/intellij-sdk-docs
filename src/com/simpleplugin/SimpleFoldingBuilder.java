@@ -27,10 +27,17 @@ public class SimpleFoldingBuilder extends FoldingBuilderEx {
         List<FoldingDescriptor> descriptors = new ArrayList<FoldingDescriptor>();
         Collection<PsiLiteralExpression> literalExpressions = PsiTreeUtil.findChildrenOfType(root, PsiLiteralExpression.class);
         for (final PsiLiteralExpression literalExpression : literalExpressions) {
-            String value = (String) literalExpression.getValue();
+            String value;
+            try {
+                value = (String) literalExpression.getValue();
+            } catch (Exception e) {
+                value = null;
+            }
+
             if (value != null && value.startsWith("simple:")) {
                 Project project = literalExpression.getProject();
-                final List<SimpleProperty> properties = SimpleUtil.findProperties(project, value.substring(7));
+                String key = value.substring(7);
+                final List<SimpleProperty> properties = SimpleUtil.findProperties(project, key);
                 if (properties.size() == 1) {
                     descriptors.add(new FoldingDescriptor(literalExpression.getNode(),
                             new TextRange(literalExpression.getTextRange().getStartOffset() + 1,
@@ -38,7 +45,10 @@ public class SimpleFoldingBuilder extends FoldingBuilderEx {
                         @Nullable
                         @Override
                         public String getPlaceholderText() {
-                            return properties.get(0).getValue();
+                            // IMPORTANT: keys can come with no values, so a test for null is needed
+                            // IMPORTANT: Convert embedded \n to backslash n, so that the string will look like it has LF embedded in it and embedded " to escaped "
+                            String valueOf = properties.get(0).getValue();
+                            return valueOf == null ? "" : valueOf.replaceAll("\n","\\n").replaceAll("\"","\\\\\"");
                         }
                     });
                 }

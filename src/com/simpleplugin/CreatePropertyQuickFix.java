@@ -3,9 +3,8 @@ package com.simpleplugin;
 import com.intellij.codeInsight.intention.impl.BaseIntentionAction;
 import com.intellij.lang.ASTNode;
 import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.command.CommandProcessor;
 import com.intellij.openapi.command.WriteCommandAction;
-import com.intellij.openapi.editor.Editor;
+import com.intellij.openapi.editor.*;
 import com.intellij.openapi.fileChooser.FileChooser;
 import com.intellij.openapi.fileChooser.FileChooserDescriptor;
 import com.intellij.openapi.fileChooser.FileChooserDescriptorFactory;
@@ -81,11 +80,19 @@ class CreatePropertyQuickFix extends BaseIntentionAction {
                 if (lastChildNode != null && !lastChildNode.getElementType().equals(SimpleTypes.CRLF)) {
                     simpleFile.getNode().addChild(SimpleElementFactory.createCRLF(project).getNode());
                 }
-                SimpleProperty property = SimpleElementFactory.createProperty(project, key, "");
+                // IMPORTANT: change spaces to escaped spaces or the new node will only have the first word for the key
+                SimpleProperty property = SimpleElementFactory.createProperty(project, key.replaceAll(" ", "\\\\ "), "");
                 simpleFile.getNode().addChild(property.getNode());
                 ((Navigatable) property.getLastChild().getNavigationElement()).navigate(true);
                 FileEditorManager.getInstance(project).getSelectedTextEditor().getCaretModel().
                         moveCaretRelatively(2, 0, false, false, false);
+
+                  // almost the same thing but manipulating plain text of the document instead of PSI
+//                FileEditorManager.getInstance(project).openFile(file, true);
+//                final Editor editor = FileEditorManager.getInstance(project).getSelectedTextEditor();
+//                final Document document = editor.getDocument();
+//                document.insertString(document.getTextLength(), "\n" + key.replaceAll(" ", "\\\\ ") + " = ");
+//                editor.getCaretModel().getPrimaryCaret().moveToOffset(document.getTextLength());
             }
         }.execute();
     }

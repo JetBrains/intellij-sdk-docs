@@ -26,11 +26,8 @@ public class SimpleBlock extends AbstractBlock {
         ASTNode child = myNode.getFirstChildNode();
         ASTNode previousChild = null;
         while (child != null) {
-            if (child.getElementType() != TokenType.WHITE_SPACE &&
-                    (previousChild == null || previousChild.getElementType() != SimpleTypes.CRLF ||
-                            child.getElementType() != SimpleTypes.CRLF)) {
-                Block block = new SimpleBlock(child, Wrap.createWrap(WrapType.NONE, false), Alignment.createAlignment(),
-                        spacingBuilder);
+            if (child.getElementType() != TokenType.WHITE_SPACE && child.getElementType() != SimpleTypes.CRLF) {
+                Block block = new SimpleBlock(child, Wrap.createWrap(WrapType.NONE, false), Alignment.createAlignment(), spacingBuilder);
                 blocks.add(block);
             }
             previousChild = child;

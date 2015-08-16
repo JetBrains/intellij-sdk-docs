@@ -3,11 +3,13 @@ package com.simpleplugin.psi.impl;
 import com.intellij.lang.ASTNode;
 import com.intellij.navigation.ItemPresentation;
 import com.intellij.psi.PsiElement;
+import com.intellij.psi.PsiFile;
 import com.simpleplugin.SimpleIcons;
 import com.simpleplugin.psi.SimpleElementFactory;
 import com.simpleplugin.psi.SimpleProperty;
 import com.simpleplugin.psi.SimpleTypes;
 import org.jetbrains.annotations.Nullable;
+import java.lang.String;
 
 import javax.swing.*;
 
@@ -15,7 +17,8 @@ public class SimplePsiImplUtil {
     public static String getKey(SimpleProperty element) {
         ASTNode keyNode = element.getNode().findChildByType(SimpleTypes.KEY);
         if (keyNode != null) {
-            return keyNode.getText();
+            // IMPORTANT: Convert embedded escaped spaces to simple spaces
+            return keyNode.getText().replaceAll("\\\\ "," ");
         } else {
             return null;
         }
@@ -37,7 +40,6 @@ public class SimplePsiImplUtil {
     public static PsiElement setName(SimpleProperty element, String newName) {
         ASTNode keyNode = element.getNode().findChildByType(SimpleTypes.KEY);
         if (keyNode != null) {
-
             SimpleProperty property = SimpleElementFactory.createProperty(element.getProject(), newName);
             ASTNode newKeyNode = property.getFirstChild().getNode();
             element.getNode().replaceChild(keyNode, newKeyNode);
@@ -65,7 +67,8 @@ public class SimplePsiImplUtil {
             @Nullable
             @Override
             public String getLocationString() {
-                return element.getContainingFile().getName();
+                PsiFile containingFile = element.getContainingFile();
+                return containingFile == null ? null : containingFile.getName();
             }
 
             @Nullable

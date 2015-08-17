@@ -11,3 +11,7 @@ message = Welcome to \
 key\ with\ spaces = This is the value that could be looked up with the key "key with spaces".
 # Unicode
 tab : \u0009
+# test for illegal key attempt
+key\
+with\
+endofline = test

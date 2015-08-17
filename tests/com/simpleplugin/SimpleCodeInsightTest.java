@@ -19,14 +19,14 @@ import java.util.List;
 public class SimpleCodeInsightTest extends LightCodeInsightFixtureTestCase {
     @Override
     protected String getTestDataPath() {
-        return "../../SimplePlugin/testData";
+        return "../SimplePlugin/testData";
     }
 
     public void testCompletion() {
         myFixture.configureByFiles("CompleteTestData.java", "DefaultTestData.simple");
         myFixture.complete(CompletionType.BASIC, 1);
         List<String> strings = myFixture.getLookupElementStrings();
-        assertTrue(strings.containsAll(Arrays.asList("key\\ with\\ spaces", "language", "message", "tab", "website")));
+        assertTrue(strings.containsAll(Arrays.asList("key with spaces", "language", "message", "tab", "website")));
         assertEquals(5, strings.size());
     }
 
@@ -38,6 +38,7 @@ public class SimpleCodeInsightTest extends LightCodeInsightFixtureTestCase {
     public void testFormatter() {
         myFixture.configureByFiles("FormatterTestData.simple");
         CodeStyleSettingsManager.getSettings(getProject()).SPACE_AROUND_ASSIGNMENT_OPERATORS = true;
+        CodeStyleSettingsManager.getSettings(getProject()).KEEP_BLANK_LINES_IN_CODE = 1;
         new WriteCommandAction.Simple(getProject()) {
             @Override
             protected void run() throws Throwable {

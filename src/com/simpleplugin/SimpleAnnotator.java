@@ -18,8 +18,9 @@ public class SimpleAnnotator implements Annotator {
     public void annotate(@NotNull final PsiElement element, @NotNull AnnotationHolder holder) {
         if (element instanceof PsiLiteralExpression) {
             PsiLiteralExpression literalExpression = (PsiLiteralExpression) element;
-            String value = (String) literalExpression.getValue();
-            if (value != null && value.startsWith("simple:")) {
+            String value = literalExpression.getValue() instanceof String ? (String)literalExpression.getValue() : null;
+
+            if (value != null && value.startsWith("simple"+":")) {
                 Project project = element.getProject();
                 String key = value.substring(7);
                 List<SimpleProperty> properties = SimpleUtil.findProperties(project, key);

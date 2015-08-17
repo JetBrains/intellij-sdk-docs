@@ -24,13 +24,11 @@ public class SimpleBlock extends AbstractBlock {
     protected List<Block> buildChildren() {
         List<Block> blocks = new ArrayList<Block>();
         ASTNode child = myNode.getFirstChildNode();
-        ASTNode previousChild = null;
         while (child != null) {
             if (child.getElementType() != TokenType.WHITE_SPACE && child.getElementType() != SimpleTypes.CRLF) {
                 Block block = new SimpleBlock(child, Wrap.createWrap(WrapType.NONE, false), Alignment.createAlignment(), spacingBuilder);
                 blocks.add(block);
             }
-            previousChild = child;
             child = child.getTreeNext();
         }
         return blocks;

@@ -27,12 +27,7 @@ public class SimpleFoldingBuilder extends FoldingBuilderEx {
         List<FoldingDescriptor> descriptors = new ArrayList<FoldingDescriptor>();
         Collection<PsiLiteralExpression> literalExpressions = PsiTreeUtil.findChildrenOfType(root, PsiLiteralExpression.class);
         for (final PsiLiteralExpression literalExpression : literalExpressions) {
-            String value;
-            try {
-                value = (String) literalExpression.getValue();
-            } catch (Exception e) {
-                value = null;
-            }
+            String value = literalExpression.getValue() instanceof String ? (String)literalExpression.getValue() : null;
 
             if (value != null && value.startsWith("simple:")) {
                 Project project = literalExpression.getProject();

@@ -38,11 +38,11 @@ For each element type that you want to store in the stub tree, you need to perfo
 
 The following steps need to be performed only once for each language that supports stubs:
 
-*  Change the file element type for your language (the element type that you return from ```ParserDefinition.getFileNodeType()```) to a class that extends IStubFileElementType.
+*  Change the file element type for your language (the element type that you return from `ParserDefinition.getFileNodeType()`) to a class that extends IStubFileElementType.
 
-*  In your plugin.xml, define the ```<stubElementTypeHolder>``` extension and specify the interface which contains the `IElementType` constants used by your language's parser ([example](https://github.com/JetBrains/intellij-community/blob/master/plugins/properties/src/META-INF/plugin.xml#L55)).
+*  In your plugin.xml, define the `<stubElementTypeHolder>` extension and specify the interface which contains the `IElementType` constants used by your language's parser ([example](https://github.com/JetBrains/intellij-community/blob/master/plugins/properties/src/META-INF/plugin.xml#L55)).
 
-For serializing string data, e.g. element names, in stubs, we recommend to use ```StubOutputStream.writeName()``` and ```StubInputStream.readName()``` methods.
+For serializing string data, e.g. element names, in stubs, we recommend to use `StubOutputStream.writeName()` and `StubInputStream.readName()` methods.
 These methods ensure that each unique identifier is stored only once in the data stream.
 This reduces the size of the serialized stub tree data.
 
@@ -63,9 +63,9 @@ Otherwise the stub tree will not be rebuilt when an external dependency changes,
 When building the stub tree, you can at the same time put some data about the stub elements into a number of indexes, which then can be used to find the PSI elements by the corresponding key. Unlike file-based indexes, stub indexes do not support storing custom data as values; the value is always a PSI element. Keys in stub indexes are normally strings (such as class names); other data types are also supported if desired.
 
 A stub index is a class which extends [AbstractStubIndex](https://github.com/JetBrains/intellij-community/blob/master/platform/indexing-api/src/com/intellij/psi/stubs/AbstractStubIndex.java). In the most common case, when the key type is String, you use a more specific base class, namely [StringStubIndexExtension](https://github.com/JetBrains/intellij-community/blob/master/platform/indexing-api/src/com/intellij/psi/stubs/StringStubIndexExtension.java).
-Stub index implementation classes are registered in the ```<stubIndex>``` extension point.
+Stub index implementation classes are registered in the `<stubIndex>` extension point.
 
-To put data into an index, you implement the method ```IStubElementType.indexStub()``` ([example: JavaClassElementType.indexStub()](https://github.com/JetBrains/intellij-community/blob/master/java/java-psi-impl/src/com/intellij/psi/impl/java/stubs/JavaClassElementType.java#L189)). This method accepts an ```IndexSink``` as a parameter, and puts in the index ID and the key for each index in which the element should be stored.
+To put data into an index, you implement the method `IStubElementType.indexStub()` ([example: JavaClassElementType.indexStub()](https://github.com/JetBrains/intellij-community/blob/master/java/java-psi-impl/src/com/intellij/psi/impl/java/stubs/JavaClassElementType.java#L189)). This method accepts an `IndexSink` as a parameter, and puts in the index ID and the key for each index in which the element should be stored.
 
 To access the data from an index, the following two methods are used:
 

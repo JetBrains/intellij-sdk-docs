@@ -14,4 +14,4 @@ for
 [Properties language plugin](https://github.com/JetBrains/intellij-community/tree/master/plugins/properties/)
 
 
-The `getQuickNavigateInfo()` method returns the text to be displayed when the user holds the mouse over an element with ```Ctrl``` pressed.
+The `getQuickNavigateInfo()` method returns the text to be displayed when the user holds the mouse over an element with `Ctrl` pressed.

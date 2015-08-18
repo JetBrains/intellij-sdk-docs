@@ -13,11 +13,11 @@ class is the common base class for PSI elements.
 
 ## How do I get a PSI element?
 
-*  From an action: ```e.getData(LangDataKeys.PSI_ELEMENT)```. Note: if an editor is currently open and the element under caret is a reference, this will return the result of resolving the reference. This may or may not be what you need.
-*  From a file by offset: ```PsiFile.findElementAt()```. Note: this returns the lowest level element at the specified offset, which is normally a lexer token.
+*  From an action: `e.getData(LangDataKeys.PSI_ELEMENT)`. Note: if an editor is currently open and the element under caret is a reference, this will return the result of resolving the reference. This may or may not be what you need.
+*  From a file by offset: `PsiFile.findElementAt()`. Note: this returns the lowest level element at the specified offset, which is normally a lexer token.
 Most likely you should use PsiTreeUtil.getParentOfType() to find the element you really need.
-*  By iterating through a PSI file: using a ```PsiRecursiveElementWalkingVisitor```.
-*  By resolving a reference: ```PsiReference.resolve()```
+*  By iterating through a PSI file: using a `PsiRecursiveElementWalkingVisitor`.
+*  By resolving a reference: `PsiReference.resolve()`
 
 ## What can I do with PSI elements?
 

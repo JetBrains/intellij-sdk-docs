@@ -14,7 +14,7 @@ When the user invokes an action that involves executing an external build (Make,
 
 *  The external build process is spawned (or an existing build process background process is reused).
 
-*  The external build process loads the project model (.idea, .iml files and so on), represented by a ```JpsModel``` instance.
+*  The external build process loads the project model (.idea, .iml files and so on), represented by a `JpsModel` instance.
 
 *  The full tree of targets to build is calculated, based on the dependencies of each build target to be compiled.
 
@@ -32,15 +32,15 @@ When the user invokes an action that involves executing an external build (Make,
 
 To support incremental build, the build process uses a number of caches which are persisted between build invocations. Even if your compiler doesn't support incremental build, you still need to report correct information so that incremental build works correctly for other compilers.
 
-*  ```SourceToOutputMapping``` is a many-to-many relationship between source files and output files ("which source files were used to produce the specified output file"). It's filled by calls to `BuildOutputConsumer.registerOutputFile()` and `ModuleLevelBuilder.OutputConsumer.registerOutputFile()`.
+*  `SourceToOutputMapping` is a many-to-many relationship between source files and output files ("which source files were used to produce the specified output file"). It's filled by calls to `BuildOutputConsumer.registerOutputFile()` and `ModuleLevelBuilder.OutputConsumer.registerOutputFile()`.
 
-*  ```Timestamps``` records the timestamp of each source file when it was compiled by each build target. (If the compilation was invoked multiple times with different scopes and the file was changed in the meantime, the last compiled timestamps for different build targets may vary.) It's updated automatically by JPS.
+*  `Timestamps` records the timestamp of each source file when it was compiled by each build target. (If the compilation was invoked multiple times with different scopes and the file was changed in the meantime, the last compiled timestamps for different build targets may vary.) It's updated automatically by JPS.
 
-The IDE monitors the changes of the project content and uses the information from those caches to generate the set of dirty and deleted files for every compilation. (Dirty files need to be recompiled, and deleted files need to have their output deleted). A builder can also report additional files as dirty (e.g. if a method is deleted, the builder can report the classes using this method as dirty.) A module-level builder can add some files to the dirty scope; if this happens, and if the builder returns ```ADDITIONAL_PASS_REQUIRED``` from its `build()` method, another round of builder execution for the same module chunk will be started with the new dirty scope.
+The IDE monitors the changes of the project content and uses the information from those caches to generate the set of dirty and deleted files for every compilation. (Dirty files need to be recompiled, and deleted files need to have their output deleted). A builder can also report additional files as dirty (e.g. if a method is deleted, the builder can report the classes using this method as dirty.) A module-level builder can add some files to the dirty scope; if this happens, and if the builder returns `ADDITIONAL_PASS_REQUIRED` from its `build()` method, another round of builder execution for the same module chunk will be started with the new dirty scope.
 
-A builder may also want to have its custom caches to store additional information to support partial recompilation of a target (e.g. the dependencies between Java files in a module). To store this data, you can either store arbitrary files in the directory returned from ```BuildDataManager.getDataPaths().getTargetDataRoot()``` or use a higher-level API: ```BuildDataManager.getStorage()```
+A builder may also want to have its custom caches to store additional information to support partial recompilation of a target (e.g. the dependencies between Java files in a module). To store this data, you can either store arbitrary files in the directory returned from `BuildDataManager.getDataPaths().getTargetDataRoot()` or use a higher-level API: `BuildDataManager.getStorage()`
 
-To pass custom data between the invocation of the same builder between multiple targets, you can use ```CompileContext.getUserData()``` and ```CompileContext.putUserData()```.
+To pass custom data between the invocation of the same builder between multiple targets, you can use `CompileContext.getUserData()` and `CompileContext.putUserData()`.
 
 ### Services and extensions in External Builder
 

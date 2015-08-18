@@ -15,16 +15,16 @@ The
 interface allows you to create popups that display different kinds of components, depending on your specific needs.
 The most commonly used methods are:
 
-*  ```createComponentPopupBuilder()``` is the most generic one, allowing you to show any
+*  `createComponentPopupBuilder()` is the most generic one, allowing you to show any
 [Swing](http://docs.oracle.com/javase/tutorial/uiswing/start/index.html)
 component in the popup.
 
-*  ```createListPopupBuilder()``` creates a popup for choosing one or more items from a
+*  `createListPopupBuilder()` creates a popup for choosing one or more items from a
     [Swing JList](http://docs.oracle.com/javase/8/docs/api/javax/swing/JList.html).
 
-*  ```createConfirmation()``` creates a popup for choosing between two options, and performing different actions depending on which option is selected.
+*  `createConfirmation()` creates a popup for choosing between two options, and performing different actions depending on which option is selected.
 
-*  ```createActionGroupPopup()``` creates a popup which shows the actions from an action group and executes the action selected by the user.
+*  `createActionGroupPopup()` creates a popup which shows the actions from an action group and executes the action selected by the user.
 
 Action group popups support different ways of choosing an action from the keyboard, in additional to the normal arrow keys.
 By passing one of the constants in the
@@ -43,18 +43,18 @@ method.
 Normally you don't need to implement the entire interface; instead, you can derive from the
 [BaseListPopupStep](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/ui/popup/util/BaseListPopupStep.java)
 class.
-The key methods to override are ```getTextFor()``` (returning the text to display for an item) and ```onChosen()``` (called when an item is selected).
-By returning a new popup step from the ```onChosen()``` method, you can implement hierarchical (nested) popups.
+The key methods to override are `getTextFor()` (returning the text to display for an item) and `onChosen()` (called when an item is selected).
+By returning a new popup step from the `onChosen()` method, you can implement hierarchical (nested) popups.
 
-Once you've created the popup, you need to display it by calling one of the ```show()``` methods.
-You can let *IntelliJ IDEA* automatically choose the position based on the context, by calling ```showInBestPositionFor()```, or specify the position explicitly through methods like ```showUnderneathOf()``` and ```showInCenterOf()```.
+Once you've created the popup, you need to display it by calling one of the `show()` methods.
+You can let *IntelliJ IDEA* automatically choose the position based on the context, by calling `showInBestPositionFor()`, or specify the position explicitly through methods like `showUnderneathOf()` and `showInCenterOf()`.
 
 
 **Note:**
 
->  The ```show()``` methods return immediately and do not wait for the popup to be closed.
+>  The `show()` methods return immediately and do not wait for the popup to be closed.
 
-If you need to perform some action when the popup is closed, you can either attach a listener to it using the ```addListener()``` method, override a method of the popup contents such as
+If you need to perform some action when the popup is closed, you can either attach a listener to it using the `addListener()` method, override a method of the popup contents such as
 [PopupStep.onChosen()](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/ui/popup/PopupStep.java),
 or attach an event handler to your own component within the popup.
 

@@ -12,7 +12,7 @@ which passes a
 implementation class to its base class constructor.
 To register a file type, the plugin developer provides an implementation of the
 [FileTypeFactory](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/fileTypes/FileTypeFactory.java)
-interface, which is registered via the ```com.intellij.fileTypeFactory```
+interface, which is registered via the `com.intellij.fileTypeFactory`
 [platform extension point](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-resources/src/META-INF/PlatformExtensionPoints.xml).
 
 **Example**:

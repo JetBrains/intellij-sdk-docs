@@ -47,7 +47,7 @@ If you don't need to associate any value with the files (i.e. your value type is
 [ScalarIndexExtension](https://github.com/JetBrains/intellij-community/blob/master/platform/indexing-impl/src/com/intellij/util/indexing/ScalarIndexExtension.java)
 as the base class.
 
-**Note:** The data returned by ```DataIndexer.map()``` must depend only on input data passed to the method, and must not depend on any external files.
+**Note:** The data returned by `DataIndexer.map()` must depend only on input data passed to the method, and must not depend on any external files.
 Otherwise your index will not be correctly updated when the external data changes, and you will have stale data in your index.
 
 ## Accessing a File-based Index

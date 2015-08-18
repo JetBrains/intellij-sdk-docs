@@ -37,7 +37,7 @@ package.
 ### Finding Source Roots
 
 To get an array of all the source roots for a project use 
-```ProjectRootManager.getContentSourceRoots()``` 
+`ProjectRootManager.getContentSourceRoots()` 
 method like this code snippet shows:
 
 

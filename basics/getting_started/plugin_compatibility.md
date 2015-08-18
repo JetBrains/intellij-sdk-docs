@@ -7,7 +7,7 @@ All products based on IntelliJ Platform (IntelliJ IDEA, RubyMine, WebStorm, PhpS
 Thus, a plugin that does not use any Java-specific functionality may be marked as compatible with these other products in addition to IntelliJ IDEA.
 This is done by specifying *module dependencies* in the `plugin.xml` file.
 
-A module dependency is a ```<depends>``` tag where the contents of the tag starts with *com.intellij.modules*.
+A module dependency is a `<depends>` tag where the contents of the tag starts with *com.intellij.modules*.
  
 For example:
 

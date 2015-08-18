@@ -15,11 +15,11 @@ If you want your plugin to extend the functionality of other plugins or the IDEA
 
 ## How to Declare Extensions and Extension Points?
 
-You can declare extensions and extension points in the plugin configuration file plugin.xml, within the ```<extensions>``` and ```<extensionPoints>``` sections, respectively.
+You can declare extensions and extension points in the plugin configuration file plugin.xml, within the `<extensions>` and `<extensionPoints>` sections, respectively.
 
 *To declare an extension point*
 
-*  In the ```<extensionPoints>``` section, insert a child element ```<extensionPoint>``` that defines the extension point name and the name of a bean class or an interface that is allowed to extend the plugin functionality in the *'name'*, *'beanClass'* and *'interface'* attributes, respectively.
+*  In the `<extensionPoints>` section, insert a child element `<extensionPoint>` that defines the extension point name and the name of a bean class or an interface that is allowed to extend the plugin functionality in the *'name'*, *'beanClass'* and *'interface'* attributes, respectively.
 
 To clarify this procedure, consider the following sample section of the plugin.xml file:
 
@@ -36,7 +36,7 @@ The *beanClass* attribute sets a bean class that specifies one or several proper
 [@Attribute](https://github.com/JetBrains/intellij-community/blob/master/xml/dom-openapi/src/com/intellij/util/xml/Attribute.java)
 annotation.
 The plugin that contributes to the extension point will read those properties from the plugin.xml file.
-To clarify this, consider the following sample ```MyBeanClass1``` bean class used in the above plugin.xml file:
+To clarify this, consider the following sample `MyBeanClass1` bean class used in the above plugin.xml file:
 
 ```java
 public class MyBeanClass1 extends AbstractExtensionPointBean {

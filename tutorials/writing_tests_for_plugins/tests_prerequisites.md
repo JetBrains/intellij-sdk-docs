@@ -6,7 +6,7 @@ title: 1. Tests Prerequisites
 ### 1.1. Create a folder for tests
 
 Open the project with the plugin and create a separate folder "tests".
-Mark the folder as a test source root via the context menu ```Mark Directory As```  &rarr; ```Test Source Root```.
+Mark the folder as a test source root via the context menu `Mark Directory As`  &rarr; `Test Source Root`.
 
 ### 1.2. Create a folder for test data
 

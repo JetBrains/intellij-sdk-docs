@@ -31,7 +31,7 @@ ModuleRootManager.getInstance(currentModule).getFileIndex()
 ### Checking Belonging to a Module Source Root
 
 To check if a virtual file or directory belongs to a module source root, use the 
-```ProjectFileIndex.getSourceRootForFile``` 
+`ProjectFileIndex.getSourceRootForFile` 
 method. 
 This method returns null if the file or directory does not belong to any source root of modules in the project.
 

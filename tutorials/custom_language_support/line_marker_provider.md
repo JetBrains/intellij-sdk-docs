@@ -50,10 +50,10 @@ public class SimpleLineMarkerProvider extends RelatedItemLineMarkerProvider {
 ## More technical details for implementers
 
 *  Please return line marker info for exact element you were asked for.
-    For example, do not return class marker info if ```getLineMarkerInfo()``` was called for a method.
+    For example, do not return class marker info if `getLineMarkerInfo()` was called for a method.
 
 *  Please return relevant line marker info for as small element as possible.
-     For example, do not return method marker for ```PsiMethod```. Instead, return it for the ```PsiIdentifier``` which is a name of this method.
+     For example, do not return method marker for `PsiMethod`. Instead, return it for the `PsiIdentifier` which is a name of this method.
 
 ### Even more technical details:
 
@@ -68,7 +68,7 @@ public class MyLineMarkerProvider implements LineMarkerProvider {
 }
 ```
 
-Inspection (specifically, ```LineMarkersPass```) for performance reasons queries all ```LineMarkerProviders``` in two passes:
+Inspection (specifically, `LineMarkersPass`) for performance reasons queries all `LineMarkerProviders` in two passes:
 
   *  first pass for all elements in visible area
 
@@ -76,14 +76,14 @@ Inspection (specifically, ```LineMarkersPass```) for performance reasons queries
 
 If providers return nothing for either area, its line markers are cleared.
 So if e.g. a method is half-visible (its name is visible but part of its body isn't) and
-some poorly written ```LineMarkerProvider``` returned info for the ```PsiMethod``` instead of ```PsiIdentifier``` then:
+some poorly written `LineMarkerProvider` returned info for the `PsiMethod` instead of `PsiIdentifier` then:
 
-  *  the first pass removes line marker info because whole ```PsiMethod``` is not visible.
+  *  the first pass removes line marker info because whole `PsiMethod` is not visible.
 
-  *  the second pass tries to add line marker info back because ```LineMarkerProvider``` is called for the ```PsiMethod``` at last.
+  *  the second pass tries to add line marker info back because `LineMarkerProvider` is called for the `PsiMethod` at last.
 
 As a result, line marker icon would blink annoyingly.
-To fix this, rewrite ```LineMarkerProvider``` to return info for ```PsiIdentifier``` instead of ```PsiMethod```:
+To fix this, rewrite `LineMarkerProvider` to return info for `PsiIdentifier` instead of `PsiMethod`:
 
 ```java
 public class MyLineMarkerProvider implements LineMarkerProvider {

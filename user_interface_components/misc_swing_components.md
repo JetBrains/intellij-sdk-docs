@@ -13,7 +13,7 @@ When running on Mac OS X, the message boxes shown by the
 [Messages](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/ui/Messages.java)
 class use native UI.
 
-The ```showCheckboxMessageDialog()``` function provides an easy way to implement a ```Do not show this again``` checkbox on messages.
+The `showCheckboxMessageDialog()` function provides an easy way to implement a `Do not show this again` checkbox on messages.
 
 Note that it is recommended to use non-modal notifications instead of modal message boxes whenever it's appropriate.
 Please refer to the [Notifications](notifications.md) topic for more information.
@@ -32,11 +32,11 @@ instead of the standard
 [JSplitPane](http://docs.oracle.com/javase/8/docs/api/javax/swing/JSplitPane.html)
 in your plugins.
 
-To add your components to the splitter, call the ```setFirstComponent()``` and ```setSecondComponent()``` methods.
+To add your components to the splitter, call the `setFirstComponent()` and `setSecondComponent()` methods.
 
 [JBSplitter](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/ui/JBSplitter.java)
 supports automatic remembering of the split proportion.
-In order to enable it, call the ```setSplitterProportionKey()``` method and pass the ID under which the proportion will be stored.
+In order to enable it, call the `setSplitterProportionKey()` method and pass the ID under which the proportion will be stored.
 
 ### JBTabs
 

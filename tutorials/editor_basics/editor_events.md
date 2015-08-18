@@ -30,7 +30,7 @@ public class MyTypedHandler implements TypedActionHandler {
 
 ### 3.1.3. Implementing logic for handling keystrokes
 
-```public void execute(@NotNull Editor editor, char c, @NotNull DataContext dataContext);```
+`public void execute(@NotNull Editor editor, char c, @NotNull DataContext dataContext);`
 
 method should contain the main logical part for handling keystrokes. It will be called every time a key is pressed.
 In the following example our typed handler is meant insert a string at the zero offset in the editor after a keystroke occurs:
@@ -55,7 +55,7 @@ public class MyTypedHandler implements TypedActionHandler {
 ### 3.1.4. Setting up *TypedActionHandler*
 
 To enable a custom implementation of *TypedActionHandler* in the plugin we need to create a new instance of it and pass to
-```public TypedActionHandler setupHandler(TypedActionHandler handler);``` method of the
+`public TypedActionHandler setupHandler(TypedActionHandler handler);` method of the
 [TypedAction](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/editor/actionSystem/TypedAction.java)
 class. By doing it we replace the typing handler with the specified handler.
 
@@ -150,7 +150,7 @@ public class EditorHandlerIllustration extends AnAction {
 
 ### 3.2.4. Making *EditorActionHandler* execute actions
 
-To execute an action we need to call the ```public final void execute(@NotNull Editor editor, @Nullable final Caret contextCaret, final DataContext dataContext);```
+To execute an action we need to call the `public final void execute(@NotNull Editor editor, @Nullable final Caret contextCaret, final DataContext dataContext);`
 method of a corresponding *EditorActionHandler*
 
 ```java

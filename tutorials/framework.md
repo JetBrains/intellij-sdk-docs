@@ -70,7 +70,7 @@ public class DemoFramework extends FrameworkTypeEx {
 ## 4. Creating provider for enabling framework support
 
 To make framework set up available while executing project creating steps 
-```public FrameworkSupportInModuleProvider createProvider();```
+`public FrameworkSupportInModuleProvider createProvider();`
 of the
 [DemoFramework](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/framework/src/com/intellij/tutorials/framework/DemoFramework.java)
 must be implemented:

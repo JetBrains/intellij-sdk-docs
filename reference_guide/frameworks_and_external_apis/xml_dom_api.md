@@ -104,7 +104,7 @@ String getValue();
 void setValue(String s);
 ```
 
-These method names (`getValue` and `setValue`) are standard, and they are used for accessing tag values by default. If you want to use custom method names for the same goal, you should annotate these methods with ```@TagValue```, for example:
+These method names (`getValue` and `setValue`) are standard, and they are used for accessing tag values by default. If you want to use custom method names for the same goal, you should annotate these methods with `@TagValue`, for example:
 
 ```java
 @TagValue

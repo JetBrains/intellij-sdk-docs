@@ -23,7 +23,7 @@ implementation for a
 
 Another interface related to the Rename refactoring is
 [NamesValidator](https://github.com/JetBrains/intellij-community/blob/master/platform/lang-api/src/com/intellij/lang/refactoring/NamesValidator.java).
-This interface allows a plugin to check if the name entered by the user in the ```Rename``` dialog is a valid identifier (and not a keyword) according to the custom language rules.
+This interface allows a plugin to check if the name entered by the user in the `Rename` dialog is a valid identifier (and not a keyword) according to the custom language rules.
 If an implementation of this interface is not provided by the plugin, Java rules for validating identifiers are used.
 Implementations of
 [NamesValidator](https://github.com/JetBrains/intellij-community/blob/master/platform/lang-api/src/com/intellij/lang/refactoring/NamesValidator.java)

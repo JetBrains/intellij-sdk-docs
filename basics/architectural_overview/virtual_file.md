@@ -9,50 +9,50 @@ The VFS level deals only with binary content. You can get or set the contents of
 
 #### How do I get a virtual file?
 
-*  From an action: ```e.getData(PlatformDataKeys.VIRTUAL_FILE)```. If you are interested in multiple selection, you can also use ```e.getData(PlatformDataKeys.VIRTUAL_FILE_ARRAY)```.
+*  From an action: `e.getData(PlatformDataKeys.VIRTUAL_FILE)`. If you are interested in multiple selection, you can also use `e.getData(PlatformDataKeys.VIRTUAL_FILE_ARRAY)`.
 
-*  From a path in the local file system: ```LocalFileSystem.getInstance().findFileByIoFile()```
+*  From a path in the local file system: `LocalFileSystem.getInstance().findFileByIoFile()`
 
-*  From a PSI file: ```psiFile.getVirtualFile()``` (may return null if the PSI file exists only in memory)
+*  From a PSI file: `psiFile.getVirtualFile()` (may return null if the PSI file exists only in memory)
 
-*  From a document: ```FileDocumentManager.getInstance().getFile()```
+*  From a document: `FileDocumentManager.getInstance().getFile()`
 
 #### What can I do with it?
 
 Typical file operations are available, such as traverse the file system, get file contents, rename, move, or delete.
 
-Recursive iteration should be performed using ```VfsUtilCore.iterateChildrenRecursively``` to prevent endless loops caused by recursive symlinks.
+Recursive iteration should be performed using `VfsUtilCore.iterateChildrenRecursively` to prevent endless loops caused by recursive symlinks.
 
 #### Where does it come from?
 
 The VFS is built incrementally, by scanning the file system up and down starting from the project root.
-New files appearing in the file system are detected by VFS _refreshes_. A refresh operation can be initiated programmatically using (```VirtualFileManager.getInstance().refresh()``` or ```VirtualFile.refresh()```).
+New files appearing in the file system are detected by VFS _refreshes_. A refresh operation can be initiated programmatically using (`VirtualFileManager.getInstance().refresh()` or `VirtualFile.refresh()`).
 VFS refreshes are also triggered whenever file system watchers receive file system change notifications (available on the Windows and Mac operating systems).
 As a plugin developer, you may want to invoke a VFS refresh if you need to access a file that has just been created by an external tool through IntelliJ IDEA APIs.
 
 #### How long does a virtual file persist?
 
-A particular file on disk is represented by equal&nbsp;```VirtualFile``` instances for the entire lifetime of the IDEA process. There may be several instances corresponding to the same file, and they can be garbage-collected.
-The file is a ```UserDataHolder```, and the user data is shared between those equal instances. If a file is deleted, its corresponding VirtualFile instance becomes invalid ( the ```isValid()``` method returns _false_ and operations cause exceptions).
+A particular file on disk is represented by equal&nbsp;`VirtualFile` instances for the entire lifetime of the IDEA process. There may be several instances corresponding to the same file, and they can be garbage-collected.
+The file is a `UserDataHolder`, and the user data is shared between those equal instances. If a file is deleted, its corresponding VirtualFile instance becomes invalid ( the `isValid()` method returns _false_ and operations cause exceptions).
 
 #### How do I create a virtual file?
 
 Usually you don't. As a rule, files are created either through the PSI API or through the regular java.io.File API.
-If you do need to create a file through VFS, you can use the ```VirtualFile.createChildData()``` method to create a ```VirtualFile``` instance and the ```VirtualFile.setBinaryContent()``` method to write some data to the file.
+If you do need to create a file through VFS, you can use the `VirtualFile.createChildData()` method to create a `VirtualFile` instance and the `VirtualFile.setBinaryContent()` method to write some data to the file.
 
 #### How do I get notified when VFS changes?
 
-The ```VirtualFileManager.addVirtualFileListener()``` method allows you to receive notifications about all changes in the VFS.
+The `VirtualFileManager.addVirtualFileListener()` method allows you to receive notifications about all changes in the VFS.
 
 #### How do I extend VFS?
 
 To provide an alternative file system implementation (for example, an FTP file system), implement the
 [VirtualFileSystem](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/openapi/vfs/VirtualFileSystem.java)
-class (most likely you'll also need to implement ```VirtualFile```), and register your implementation as an
+class (most likely you'll also need to implement `VirtualFile`), and register your implementation as an
 [application component](http://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_components.html).
 To hook into operations performed in the local file system (for example, if you are developing a version control system integration that needs custom rename/move handling), implement the 
 [LocalFileOperationsHandler](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/vfs/LocalFileOperationsHandler.java) 
-interface and register it through the```LocalFileSystem.registerAuxiliaryFileOperationsHandler``` method.
+interface and register it through the`LocalFileSystem.registerAuxiliaryFileOperationsHandler` method.
 
 #### What are the rules for working with VFS?
 

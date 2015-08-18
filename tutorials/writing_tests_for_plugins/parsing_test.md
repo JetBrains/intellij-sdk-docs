@@ -32,11 +32,11 @@ tab : \u0009
 ### 2.2. Copy the expected PSI tree
 
 The easiest way to get the expected PSI structure for any file is to use PSI Viewer.
-Run the project and call ```Tools``` &rarr; ```View PSI Structure```.
+Run the project and call `Tools` &rarr; `View PSI Structure`.
 
 ![PSI Tree Copy](img/plugin_copy_psi.png)
 
-Use ```Copy PSI``` button to copy the expected PSI structure to the clipboard.
+Use `Copy PSI` button to copy the expected PSI structure to the clipboard.
 
 ### 2.3. Define an output test data
 

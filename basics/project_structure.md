@@ -105,12 +105,12 @@ See
 [Persisting State of Components](http://www.jetbrains.org/intellij/sdk/docs/basics/persisting_state_of_components.html) 
 for more information.
 
-Note that hereafter, the ```project``` variable is of the ```Project``` type. 
-For example, for the opened project, you can get it from an action: ```Project project = e.getProject();```
+Note that hereafter, the `project` variable is of the `Project` type. 
+For example, for the opened project, you can get it from an action: `Project project = e.getProject();`
 
 #### How do I get a list of source roots for all modules in my project?
 
-Use the ```ProjectRootManager.getContentSourceRoots()``` method. 
+Use the `ProjectRootManager.getContentSourceRoots()` method. 
 To clarify this, consider the following code snippet:
 
 
@@ -128,65 +128,65 @@ Messages.showInfoMessage("Source roots for the " + projectName + " plugin:\n" + 
 
 #### How do I check whether a file is related to a project?
 
-**IntelliJ Platform** provides the ```ProjectFileIndex``` interface you can use to verify whether a file or directory is related to the specified IDEA project.
+**IntelliJ Platform** provides the `ProjectFileIndex` interface you can use to verify whether a file or directory is related to the specified IDEA project.
 This section explains how you can use this interface.
 
 ##### How do I get an instance of the ProjectFileIndex interface?
 
-Use the ```ProjectRootManager.getFileIndex()``` method. For example:
-```ProjectFileIndex projectFileIndex = ProjectRootManager.getInstance(project).getFileIndex();```
+Use the `ProjectRootManager.getFileIndex()` method. For example:
+`ProjectFileIndex projectFileIndex = ProjectRootManager.getInstance(project).getFileIndex();`
 
 ##### How do I get a module to which a file belongs?
 
 To determine a module in the project in question to which the specified 
 [virtual file](http://www.jetbrains.org/intellij/sdk/docs/basics/architectural_overview/virtual_file.html)
-belongs, use the ```ProjectFileIndex.getModuleForFile(virtualFile)``` method:
+belongs, use the `ProjectFileIndex.getModuleForFile(virtualFile)` method:
 
 ```
 Module module = ProjectRootManager.getInstance(project).getFileIndex().getModuleForFile(virtualFile);
 ```
 
-Note that this method returns ```null``` if the file does not belong to any module.
+Note that this method returns `null` if the file does not belong to any module.
 
-You can also use the ```ProjectFileIndex.getContentRootForFile``` method to get the module content root to which the specified file or directory belongs:
+You can also use the `ProjectFileIndex.getContentRootForFile` method to get the module content root to which the specified file or directory belongs:
 
-```VirtualFile moduleContentRoot = ProjectRootManager.getInstance(project).getFileIndex().getContentRootForFile(virtualFileorDirectory);```
+`VirtualFile moduleContentRoot = ProjectRootManager.getInstance(project).getFileIndex().getContentRootForFile(virtualFileorDirectory);`
 
 
 ##### How do I get the module source root or library source root to which the specified file or directory belongs?
 
-Use the ```ProjectFileIndex.getSourceRootForFile``` method. For example:
+Use the `ProjectFileIndex.getSourceRootForFile` method. For example:
 
 ```VirtualFile moduleSourceRoot = ProjectRootManager.getInstance(project).getFileIndex().getSourceRootForFile(virtualFileorDirectory);
 ```
-Note that this method returns ```null``` if the file or directory does not belong to any source root of modules in the project.
+Note that this method returns `null` if the file or directory does not belong to any source root of modules in the project.
 
 ##### How do I check whether a file or directory is related to the project libraries?
 
-The ```ProjectFileIndex``` interface implements a number of methods you can use to check whether the specified file belongs to the project library classes or library sources.
+The `ProjectFileIndex` interface implements a number of methods you can use to check whether the specified file belongs to the project library classes or library sources.
 You can use the following methods:
 
-* ```ProjectFileIndex.isLibraryClassFile(virtualFile)```: Returns ```true``` if the specified ```virtualFile``` is a compiled class file.
+* `ProjectFileIndex.isLibraryClassFile(virtualFile)`: Returns `true` if the specified `virtualFile` is a compiled class file.
 
-* ```ProjectFileIndex.isInLibraryClasses(virtualFileorDirectory)```: Returns ```true``` if the specified ```virtualFileorDirectory``` belongs to library classes.
+* `ProjectFileIndex.isInLibraryClasses(virtualFileorDirectory)`: Returns `true` if the specified `virtualFileorDirectory` belongs to library classes.
 
-* ```ProjectFileIndex.isInLibrarySource(virtualFileorDirectory)```: Returns ```true``` if the specified ```virtualFileorDirectory``` belongs to library sources.
+* `ProjectFileIndex.isInLibrarySource(virtualFileorDirectory)`: Returns `true` if the specified `virtualFileorDirectory` belongs to library sources.
 
 ##### How do I get the project SDK?
 
-* To get the project-level SDK: ```Sdk projectSDK = ProjectRootManager.getInstance(project).getProjectSdk();```
+* To get the project-level SDK: `Sdk projectSDK = ProjectRootManager.getInstance(project).getProjectSdk();`
 
-* To get the project-level SDK name: ```String projectSDKName = ProjectRootManager.getInstance(project).getProjectSdkName();```
+* To get the project-level SDK name: `String projectSDKName = ProjectRootManager.getInstance(project).getProjectSdkName();`
 
 ##### How do I set the project SDK?
 
 ##### To set the project-level SDK: 
 
-```ProjectRootManager.getInstance(project).setProjectSdk(Sdk jdk);```
+`ProjectRootManager.getInstance(project).setProjectSdk(Sdk jdk);`
 
 ##### To set the project-level SDK name: 
 
-```ProjectRootManager.getInstance(project).setProjectSdkName(String name);```
+`ProjectRootManager.getInstance(project).setProjectSdkName(String name);`
 
 Note that by default, the project modules use the project SDK. Optionally, you can configure individual SDK for each module.
 
@@ -206,7 +206,7 @@ This section discusses how to complete some common tasks related to management o
 
 #### How do I get a list of modules the project includes?
 
-Use the ```ModuleManager.getModules()``` method.
+Use the `ModuleManager.getModules()` method.
 
 #### How do I get dependencies and classpath of a module?
 
@@ -228,7 +228,7 @@ VirtualFile[] roots = ModuleRootManager.getInstance(module).orderEntries().class
 
 #### How do I get the SDK the module uses?
 
-Use the ```ModuleRootManager.getSdk()``` method. 
+Use the `ModuleRootManager.getSdk()` method. 
 This method returns a value of the 
 [Sdk](https://github.com/JetBrains/intellij-community/blob/master/platform/projectModel-api/src/com/intellij/openapi/projectRoots/Sdk.java) 
 type.
@@ -243,7 +243,7 @@ String jdkInfo = "Module: " + module.getName() + " SDK: " + SDK.getName() + " SD
 
 #### How do I get a list of modules on which this module directly depends?
 
-Use the ```ModuleRootManager.getDependencies()``` method to get an array of the ```Module``` type values or the ```ModuleRootManager.getDependencyModuleNames()``` to get an array of module names. To clarify, consider the following code snippet:
+Use the `ModuleRootManager.getDependencies()` method to get an array of the `Module` type values or the `ModuleRootManager.getDependencyModuleNames()` to get an array of module names. To clarify, consider the following code snippet:
 
 ```java
 ModuleRootManager moduleRootManager = ModuleRootManager.getInstance(module);
@@ -253,14 +253,14 @@ String[] dependentModulesNames = moduleRootManager.getDependencyModuleNames();
 
 #### How do I get a list of modules that depend on this module?
 
-Use the ```ModuleManager.getModuleDependentModules(module)``` method.
+Use the `ModuleManager.getModuleDependentModules(module)` method.
 
-Note that you can also check whether a module (*module1*) depends on another specified module (*module2*) using the ```ModuleManager.isModuleDependent``` method in the following way:
-```boolean isDependent = ModuleManager.getInstance(project).isModuleDependent(module1,module2);```
+Note that you can also check whether a module (*module1*) depends on another specified module (*module2*) using the `ModuleManager.isModuleDependent` method in the following way:
+`boolean isDependent = ModuleManager.getInstance(project).isModuleDependent(module1,module2);`
 
 #### How do I get a module to which the specified file or PSI element belongs?
 
-* To get the project module to which the specified file belongs, use the ```ModuleUtil.findModuleForFile()``` static method. 
+* To get the project module to which the specified file belongs, use the `ModuleUtil.findModuleForFile()` static method. 
 To clarify, consider the following code snippet:
 
 ```java
@@ -272,13 +272,13 @@ String moduleName = module == null ? "Module not found" : module.getName();
 
 * To get the project module to which the specified 
 [PSI element](http://www.jetbrains.org/intellij/sdk/docs/basics/architectural_overview/psi_elements.html)
-belongs, use the ```ModuleUtil.findModuleForPsiElement(psiElement)``` method.
+belongs, use the `ModuleUtil.findModuleForPsiElement(psiElement)` method.
 
 #### How do I work with libraries available within a module?
 
 ##### How do I get a list of libraries available within a module?
 
-To get the list of libraries, use ```OrderEnumerator#forEachLibrary``` method. 
+To get the list of libraries, use `OrderEnumerator#forEachLibrary` method. 
 To clarify this, consider the following code snippet that illustrates how to output the list of libraries for the specified module:
 
 ```java
@@ -292,11 +292,11 @@ ModuleRootManager.getInstance(module).orderEntries().forEachLibrary(new Processo
 });
 Messages.showInfoMessage(StringUtil.join(libraryNames, "\n"), "Libraries in Module");
 ```
-This sample code outputs a list of libraries for the ```module``` module.
+This sample code outputs a list of libraries for the `module` module.
 
 ##### How do I get the library content?
 
-The ```Library``` class provides the ```getUrls``` method you can use to get a list of source roots and classes the library includes. 
+The `Library` class provides the `getUrls` method you can use to get a list of source roots and classes the library includes. 
 To clarify, consider the following code snippet:
 
 ```java
@@ -312,7 +312,7 @@ for (String each : lib.getUrls(OrderRootType.CLASSES)) {
 Messages.showInfoMessage(roots.toString(), "Library Info");
 ```
 
-In this sample code, ```lib``` is of the 
+In this sample code, `lib` is of the 
 [Library](https://github.com/JetBrains/intellij-community/blob/master/platform/projectModel-api/src/com/intellij/openapi/roots/libraries/Library.java) 
 type.
 

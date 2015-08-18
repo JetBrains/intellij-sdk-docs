@@ -54,7 +54,7 @@ See also
 [SpacingBuilder](https://github.com/JetBrains/intellij-community/blob/master/platform/lang-api/src/com/intellij/formatting/SpacingBuilder.java)
 which aids in building rule-based configuration.
 
-An important special case in using the formatter is the smart indent performed when the user presses the ```Enter``` key in a source code file.
+An important special case in using the formatter is the smart indent performed when the user presses the `Enter` key in a source code file.
 To determine the indent for the new line, the formatter engine calls the method `getChildAttributes()` on either the block immediately before the caret or the parent of that block, depending on the return value of the `isIncomplete()` method for the block before the caret.
 If the block before the cursor is incomplete (contains elements that the user will probably type but has not yet typed, like a closing parenthesis of the parameter list or the trailing semicolon of a statement), `getChildAttributes()` is called on the block before the caret; otherwise, it's called on the parent block.
 

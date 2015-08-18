@@ -13,13 +13,13 @@ The IDE invokes the lexer in three main contexts, and the plugin can provide dif
 
 *  Syntax highlighting: The lexer is returned from the implementation of the
    [SyntaxHighlighterFactory](https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/fileTypes/SyntaxHighlighterFactory.java)
-   interface which is registered in the ```com.intellij.lang.syntaxHighlighterFactory``` extension point.
+   interface which is registered in the `com.intellij.lang.syntaxHighlighterFactory` extension point.
 
 *  Building the syntax tree of a file: the lexer is expected to be returned from
    [ParserDefinition.createLexer()](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/lang/ParserDefinition.java),
    and the
    [ParserDefinition](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/lang/ParserDefinition.java)
-   interface is registered in the ```com.intellij.lang.parserDefinition``` extension point.
+   interface is registered in the `com.intellij.lang.parserDefinition` extension point.
 
 *  Building the index of the words contained in the file:
    if the lexer-based words scanner implementation is used, the lexer is passed to the
@@ -49,8 +49,8 @@ The source code of
 [IntelliJ IDEA Community Edition](https://github.com/JetBrains/intellij-community)
 includes a patched version of JFlex 1.4 located in *tools/lexer/jflex-1.4* and lexer skeleton file *tools/lexer/idea-flex.skeleton* which can be used for creating lexers compatible with
 [FlexAdapter](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/lexer/FlexAdapter.java).
-The patched version of JFlex provides a new command line option ```--charat``` which changes the JFlex generated code so that it works with the IntelliJ Platform skeleton.
-Enabling ```--charat``` option passes the source data for lexing as a
+The patched version of JFlex provides a new command line option `--charat` which changes the JFlex generated code so that it works with the IntelliJ Platform skeleton.
+Enabling `--charat` option passes the source data for lexing as a
 [CharSequence](https://docs.oracle.com/javase/8/docs/api/java/lang/CharSequence.html)
 and not as an array of characters.
 

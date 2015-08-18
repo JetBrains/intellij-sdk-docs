@@ -13,7 +13,7 @@ The best way to deal with icons and other image resources is to put them to a de
 
 ![Icons](img/icons1.png)
 
-Then you should use ```getIcon()``` method of ```com.intellij.openapi.util.IconLoader``` class in your code to get access icons.
+Then you should use `getIcon()` method of `com.intellij.openapi.util.IconLoader` class in your code to get access icons.
 You can define a class or an interface with icon constants:
 
 ```java
@@ -60,7 +60,7 @@ So, every icon should have a copy for Retina devices and Darcula look and feel.
 
 
 IconLoader will load the icon that matches the best depending on the current&nbsp;environment.
-So, always use ```IconLoader.getIcon("/iconName.png")```.
+So, always use `IconLoader.getIcon("/iconName.png")`.
 Here are examples of *toolWindowStructure.png* icon representations:
 
 

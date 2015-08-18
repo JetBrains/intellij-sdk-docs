@@ -146,7 +146,7 @@ Action's class should be registered in
 
 #### 2.2.5. Providing specific behaviour for the group
 
-In this case we override ```public void update(AnActionEvent event);``` method to make the group visible as a *Tools* menu item,
+In this case we override `public void update(AnActionEvent event);` method to make the group visible as a *Tools* menu item,
 however, it will be enabled only if there's an instance of the editor available. Also a custom icon is set up:
 
 ```java
@@ -203,7 +203,7 @@ For statically defined group of action use
 
 #### 2.3.3. Accessing children actions
 
-An array of children actions should be returned by the method ```public AnAction[] getChildren(AnActionEvent anActionEvent);``` of the a created group:
+An array of children actions should be returned by the method `public AnAction[] getChildren(AnActionEvent anActionEvent);` of the a created group:
 
 ```java
 public class BaseActionGroup extends ActionGroup {

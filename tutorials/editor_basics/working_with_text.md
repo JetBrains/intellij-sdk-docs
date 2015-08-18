@@ -62,8 +62,8 @@ Further steps will show how to check these conditions through obtaining instance
 
 ## 1.2. Getting an instance of the Active Editor
 
-A reference to an instance of the Editor can be obtained by calling ```CommonDataKeys.EDITOR```,
-obtaining a project reference is performed the same way ```CommonDataKeys.PROJECT```.
+A reference to an instance of the Editor can be obtained by calling `CommonDataKeys.EDITOR`,
+obtaining a project reference is performed the same way `CommonDataKeys.PROJECT`.
 
 
 ```java
@@ -84,10 +84,10 @@ public class EditorIllustration extends AnAction {
 To access an Editor instance also can be used other ways:
 
 * If [DataContext](https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/DataContext.java)
-  object is available ```final Editor editor = CommonDataKeys.EDITOR.getData(context);```
+  object is available `final Editor editor = CommonDataKeys.EDITOR.getData(context);`
 
 * If [ActionEvent](https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnActionEvent.java)
-  object is available ```final Editor editor = actionEvent.getData(CommonDataKeys.EDITOR);```
+  object is available `final Editor editor = actionEvent.getData(CommonDataKeys.EDITOR);`
 
 
 
@@ -95,8 +95,8 @@ To access an Editor instance also can be used other ways:
 
 After making sure we have a project open and an instance of the Editor we need to check if any selection is available and set action's visibility accordingly to these conditions.
 [SelectionModel](https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/editor/SelectionModel.java)
-got from the Editor allows to do it by calling it's ```hasSelection()``` method.
-Here's how our ```update(final AnActionEvent e)``` method should look like at the end:
+got from the Editor allows to do it by calling it's `hasSelection()` method.
+Here's how our `update(final AnActionEvent e)` method should look like at the end:
 
 
 ```java
@@ -133,7 +133,7 @@ package and include:
 
 The action is visible and available now. 
 In order to make it do something we need to override it's
-```public void actionPerformed(final AnActionEvent anActionEvent)``` method.
+`public void actionPerformed(final AnActionEvent anActionEvent)` method.
 
 
 ```java
@@ -172,7 +172,7 @@ public void actionPerformed(final AnActionEvent anActionEvent) {
 ## 1.5. Modifying text
 
 Generally replacement can be done by calling
-```void replaceString(int startOffset, int endOffset, @NotNull CharSequence s);``` of the Document, however,
+`void replaceString(int startOffset, int endOffset, @NotNull CharSequence s);` of the Document, however,
 the operation of replacement must be executed safely, this means the Document must be locked and any changes should be performed under the
 [write action](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/openapi/command/WriteCommandAction.java#L172).
 See

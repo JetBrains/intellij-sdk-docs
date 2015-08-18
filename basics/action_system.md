@@ -21,17 +21,17 @@ class.
 Every action can be included in multiple groups, and thus appear in multiple places within the IDEA user interface.
 Different places where actions can appear are defined by constants in the
 [ActionPlaces](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/actionSystem/ActionPlaces.java)
-interface. For every place where the action appears, a new ```Presentation``` is created.
+interface. For every place where the action appears, a new `Presentation` is created.
 Thus, the same action can have different text or icons when it appears in different places of the user interface.
-Different presentations for the action are created by copying the presentation returned by the ```AnAction.getTemplatePresentation()``` method.
+Different presentations for the action are created by copying the presentation returned by the `AnAction.getTemplatePresentation()` method.
 
-To update the state of the action, the method ```AnAction.update()``` is periodically called by IDEA.
-The object of type ```AnActionEvent``` passed to this method carries the information about the current context for the action, and in particular, the specific presentation which needs to be updated.
+To update the state of the action, the method `AnAction.update()` is periodically called by IDEA.
+The object of type `AnActionEvent` passed to this method carries the information about the current context for the action, and in particular, the specific presentation which needs to be updated.
 
-To retrieve the information about the current state of the IDE, including the active project, the selected file, the selection in the editor and so on, the method ```AnActionEvent.getData()``` can be used.
-Different data keys that can be passed to that method are defined in the ```DataKeys``` class.
+To retrieve the information about the current state of the IDE, including the active project, the selected file, the selection in the editor and so on, the method `AnActionEvent.getData()` can be used.
+Different data keys that can be passed to that method are defined in the `DataKeys` class.
 
-The ```AnActionEvent``` instance is also passed to the ```actionPerformed``` method.
+The `AnActionEvent` instance is also passed to the `actionPerformed` method.
 
 ## Registering Actions
 
@@ -100,23 +100,23 @@ Registering actions in plugin.xml is demonstrated in the following example. The 
 ### Registering Actions from Code
 
 To register an action from code, two steps are required.
-First, an instance of the class derived from ```AnAction``` must be passed to the ```registerAction``` method of the
+First, an instance of the class derived from `AnAction` must be passed to the `registerAction` method of the
 [ActionManager](https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/ActionManager.java)
 class, to associate the action with an ID.
 Second, the action needs to be added to one or more groups.
-To get an instance of an action group by ID, it is necessary to call ```ActionManager.getAction()``` and cast the returned value to the
+To get an instance of an action group by ID, it is necessary to call `ActionManager.getAction()` and cast the returned value to the
 [DefaultActionGroup](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/actionSystem/DefaultActionGroup.java)
 class.
 
 You can create a plugin that registers actions on IDEA startup using the following procedure.
 
 *To register an action on IDEA startup*
-# Create a new class that implements the ```ApplicationComponent``` interface.
-# In this class, override the ```getComponentName```, ```initComponent```, and ```disposeComponent``` methods.
+# Create a new class that implements the `ApplicationComponent` interface.
+# In this class, override the `getComponentName`, `initComponent`, and `disposeComponent` methods.
 # Register this class in the `<application-components>` section of the plugin.xml file.
 
 
-To clarify the above procedure, consider the following sample Java class ```MyPluginRegistration``` that registers an action defined in a custom ```TextBoxes``` class and adds a new menu command to the *Window*  menu group on the main menu:
+To clarify the above procedure, consider the following sample Java class `MyPluginRegistration` that registers an action defined in a custom `TextBoxes` class and adds a new menu command to the *Window*  menu group on the main menu:
 
 ```java
 public class MyPluginRegistration implements ApplicationComponent {
@@ -146,7 +146,7 @@ public class MyPluginRegistration implements ApplicationComponent {
 }
 ```
 
-Note, that the sample ```TextBoxes``` class is described in
+Note, that the sample `TextBoxes` class is described in
 [Getting Started with Plugin Development](/basics/getting_started.md).
 
 To ensure that your plugin is initialized on IDEA start-up, make the following changes to the `<application-components>` section of the plugin.xml file:
@@ -162,8 +162,8 @@ To ensure that your plugin is initialized on IDEA start-up, make the following c
 
 ## Building UI from Actions
 
-If a plugin needs to include a toolbar or popup menu built from a group of actions in its own user interface, that can be accomplished through the ```ActionPopupMenu``` and ```ActionToolbar``` classes. These objects can be created through calls to ```ActionManager.createActionPopupMenu``` and ```ActionManager.createActionToolbar```.
+If a plugin needs to include a toolbar or popup menu built from a group of actions in its own user interface, that can be accomplished through the `ActionPopupMenu` and `ActionToolbar` classes. These objects can be created through calls to `ActionManager.createActionPopupMenu` and `ActionManager.createActionToolbar`.
 To get a Swing component from such an object, simply call the getComponent() method.
 
-If your action toolbar is attached to a specific component (for example, a panel in a toolwindow), you usually need to call ```ActionToolbar.setTargetComponent()``` and pass the instance of the related component as a parameter.
+If your action toolbar is attached to a specific component (for example, a panel in a toolwindow), you usually need to call `ActionToolbar.setTargetComponent()` and pass the instance of the related component as a parameter.
 This ensures that the state of the toolbar buttons depends on the state of the related component, and not on the current focus location within the IDE frame.

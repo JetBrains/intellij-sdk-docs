@@ -73,7 +73,7 @@ When implementing a run configuration, you may want to use one of the common bas
 is a general-purpose superclass that contains the most basic implementation of a run configuration.
 
 *  [LocatableConfigurationBase](https://github.com/JetBrains/intellij-community/blob/master/platform/lang-api/src/com/intellij/execution/configurations/LocatableConfigurationBase.java)
-is a common base class that should be used for configurations that can be created from context by a ```RunConfigurationProducer```.
+is a common base class that should be used for configurations that can be created from context by a `RunConfigurationProducer`.
 It supports automatically generating a name for a configuration from its settings and keeping track of whether the name was changed by the user.
 
 *  [ModuleBasedConfiguration](https://github.com/JetBrains/intellij-community/blob/master/platform/lang-api/src/com/intellij/execution/configurations/ModuleBasedConfiguration.java)
@@ -109,9 +109,9 @@ class, which combines a run configuration with runner-specific settings, as well
 
 Dealing with instances of this class becomes necessary when you need to create run configurations from code. This is accomplished with the following two steps:
 
- *  ```RunManager.createConfiguration()``` creates an instance of ```RunnerAndConfigurationSettings```;
+ *  `RunManager.createConfiguration()` creates an instance of `RunnerAndConfigurationSettings`;
 
- *  ```RunManager.addConfiguration()``` makes it persistent by adding it to either the list of shared configurations stored in a project, or to the list of local configurations stored in the workspace file.
+ *  `RunManager.addConfiguration()` makes it persistent by adding it to either the list of shared configurations stored in a project, or to the list of local configurations stored in the workspace file.
 
 <div id="refactoring-support"/>
 
@@ -121,22 +121,22 @@ Most run configurations contain references to classes, files or directories in t
 In order to support that, your run configuration needs to implement the
 [RefactoringListenerProvider](https://github.com/JetBrains/intellij-community/blob/master/platform/lang-api/src/com/intellij/execution/configurations/RefactoringListenerProvider.java)
 interface.
-In your implementation of ```getRefactoringElementListener()```, you need to check whether the element being refactored is the one that your run configuration refers to, and if it is, you return a ```RefactoringElementListener``` that updates your configuration according to the new name and location of the element.
+In your implementation of `getRefactoringElementListener()`, you need to check whether the element being refactored is the one that your run configuration refers to, and if it is, you return a `RefactoringElementListener` that updates your configuration according to the new name and location of the element.
 
 ## Creating Configurations from Context
 
 Many plugins support automatic creation of run configurations from context, so that the user can click, for example, on an application or test class and automatically run it using the correct run configuration type. In order to support that, you need to provide an implementation of the
 [RunConfigurationProducer](https://github.com/JetBrains/intellij-community/blob/master/platform/lang-api/src/com/intellij/execution/actions/RunConfigurationProducer.java)
 interface and to register it as `<runConfigurationProducer>` in your plugin.xml.
-(Note that this API has been redesigned in IntelliJ IDEA 13; ```RuntimeConfigurationProducer``` is an older and much more confusing version of the same API).
+(Note that this API has been redesigned in IntelliJ IDEA 13; `RuntimeConfigurationProducer` is an older and much more confusing version of the same API).
 
 The two main methods that you need to implement are:
 
- *  ```setupConfigurationFromContext``` receives a blank configuration of your type and a ```ConfigurationContext``` containing information about a source code location (accessible by calling ```getLocation()``` or ```getPsiLocation()```).
+ *  `setupConfigurationFromContext` receives a blank configuration of your type and a `ConfigurationContext` containing information about a source code location (accessible by calling `getLocation()` or `getPsiLocation()`).
  Your implementation needs to check whether the location is applicable for your configuration type (for example, if it's in a file of the language you're supporting).
  If not, you need to return false, and if it is, you need to put the correct context-specific settings into the run configuration and return true.
 
- *  ```isConfigurationFromContext``` checks if the specified configuration of your type was created from the specified context.
+ *  `isConfigurationFromContext` checks if the specified configuration of your type was created from the specified context.
  Implementing this method allows you to reuse an existing run configuration which is applicable to the current context instead of creating a new one and possibly ignoring the customisations the user has performed in the existing one.
 
 Note that, in order to support automatic naming of configurations created from context, your configuration should use

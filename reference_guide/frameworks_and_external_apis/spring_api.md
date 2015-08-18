@@ -38,7 +38,7 @@ Spring facets usually contain one more user-configured/provided filesets, which 
 
 A fileset usually corresponds to an actual application context configuration at runtime. Hierarchies can be modeled by depending on another fileset (possibly from  another module).
 
-As an API-user, you will usually rather work with ```SpringModel``` (which is built on top of fileset(s)).
+As an API-user, you will usually rather work with `SpringModel` (which is built on top of fileset(s)).
 
 ## How do I...
 **Some core classes have been changed in 14(.1), please see "_Version 14(.1)_" notes for info on how to replace existing API-calls**
@@ -46,48 +46,48 @@ As an API-user, you will usually rather work with ```SpringModel``` (which is bu
 ### Spring Model
 
 ##### Obtain Spring Model by file, PsiElement, ..
-See ```SpringManager#getSpringModel(s)...``` and ```com.intellij.spring.model.utils.SpringModelUtils```.
+See `SpringManager#getSpringModel(s)...` and `com.intellij.spring.model.utils.SpringModelUtils`.
 
 ##### Contribute implicit model(s)
-See ```com.intellij.spring.SpringModelProvider``` to provide implicit filesets (e.g. provided by another framework in specific configuration file).
+See `com.intellij.spring.SpringModelProvider` to provide implicit filesets (e.g. provided by another framework in specific configuration file).
 
 ##### Contribute implicit beans
-See ```com.intellij.spring.model.jam.CustomComponentsDiscoverer``` or ```com.intellij.spring.model.SpringImplicitBeansProviderBase``` to provide implicit (framework-specific) beans (e.g. "servletContext" by Spring MVC).
+See `com.intellij.spring.model.jam.CustomComponentsDiscoverer` or `com.intellij.spring.model.SpringImplicitBeansProviderBase` to provide implicit (framework-specific) beans (e.g. "servletContext" by Spring MVC).
 
 ##### Contribute custom bean scope
 _Version 14_
-See ```com.intellij.spring.model.scope.SpringCustomBeanScope``` to provide custom (e.g. framework specific) bean scopes.
+See `com.intellij.spring.model.scope.SpringCustomBeanScope` to provide custom (e.g. framework specific) bean scopes.
 
 ##### Obtain/Create Spring Profiles
 _Version 14.1_
-```com.intellij.spring.profiles.SpringProfilesFactory```
+`com.intellij.spring.profiles.SpringProfilesFactory`
 
 ### Beans
 
 ##### Search for bean by name
-```com.intellij.spring.CommonSpringModel#findBeanByName```
+`com.intellij.spring.CommonSpringModel#findBeanByName`
 
-_Version 14_: ```com.intellij.spring.model.utils.SpringModelSearchers#findBean```
+_Version 14_: `com.intellij.spring.model.utils.SpringModelSearchers#findBean`
 
 ##### Search for beans by type
-Choose one of ```com.intellij.spring.CommonSpringModel#findBeansByPsiClassXXX``` variants (please note deprecated methods).
+Choose one of `com.intellij.spring.CommonSpringModel#findBeansByPsiClassXXX` variants (please note deprecated methods).
 
-_Version 14_: ```com.intellij.spring.model.utils.SpringModelSearchers#findBeans```
+_Version 14_: `com.intellij.spring.model.utils.SpringModelSearchers#findBeans`
 
 ##### Find out if bean with given name/type exists
-_Version 14_: ```com.intellij.spring.model.utils.SpringModelSearchers#doesBeanExist``` (please note deprecated methods)
+_Version 14_: `com.intellij.spring.model.utils.SpringModelSearchers#doesBeanExist` (please note deprecated methods)
 
 ##### Mark bean as infrastructure bean
-_Version 14_: implement ```SpringInfrastructureBean```, such beans obtain special icon and can be filtered in various places in UI
+_Version 14_: implement `SpringInfrastructureBean`, such beans obtain special icon and can be filtered in various places in UI
 
 ### XML Configuration
 All support for XML-based Spring configuration files is provided via [DOM-API](xml_dom_api.md).
 
 ##### Add support for additional Spring namespace
-See EP ```com.intellij.spring.dom.SpringCustomNamespaces```, registered namespace-key must match the one registered with your DOM elements via ```@Namespace```.
-Register available elements via standard ```DomExtender<Beans>``` EP or ```com.intellij.spring.dom.SpringCustomNamespaces#registerExtensions``` (Version 14).
+See EP `com.intellij.spring.dom.SpringCustomNamespaces`, registered namespace-key must match the one registered with your DOM elements via `@Namespace`.
+Register available elements via standard `DomExtender<Beans>` EP or `com.intellij.spring.dom.SpringCustomNamespaces#registerExtensions` (Version 14).
 
-Please pay attention to ```getModelVersion``` and ```getStubVersion``` (see javadoc).
+Please pay attention to `getModelVersion` and `getStubVersion` (see javadoc).
 
 ##### Add reference to Spring Bean in my DomElement
 Use the following template:
@@ -113,14 +113,14 @@ JamStringAttributeMeta.Single<SpringBeanPointer> ATTRIBUTE_META =
 ### IDE features
 
 ##### Add inspections to Spring Validator
-Add additional inspections (e.g. for custom namespace) to Spring Validator (*Settings|Compiler|Validation*) via EP ```com.intellij.spring.SpringInspectionsRegistry$Contributor```.
+Add additional inspections (e.g. for custom namespace) to Spring Validator (*Settings|Compiler|Validation*) via EP `com.intellij.spring.SpringInspectionsRegistry$Contributor`.
 
 ##### Add additional files to Spring Validator
 _Version 14.1_
-Additional files to be processed by inspections registered with Spring Validator (e.g. specific ```.properties``` configuration files) can be registered via  ```com.intellij.spring.SpringInspectionsRegistry$AdditionalFilesContributor```
+Additional files to be processed by inspections registered with Spring Validator (e.g. specific `.properties` configuration files) can be registered via  `com.intellij.spring.SpringInspectionsRegistry$AdditionalFilesContributor`
 
 ##### Configure Spring support for other frameworks
-Use ```com.intellij.spring.facet.SpringConfigurator``` to provide "automatic" configuration when Spring facet is added via framework wizard.
+Use `com.intellij.spring.facet.SpringConfigurator` to provide "automatic" configuration when Spring facet is added via framework wizard.
 
 ##### UI/Presentation
-Please do not reference bean icons from ```SpringApiIcons``` directly, but use ```SpringPresentationProvider``` to re-use unified icon/bean name. See ```SpringBeansPsiElementCellRenderer``` for popup/list renderer.
+Please do not reference bean icons from `SpringApiIcons` directly, but use `SpringPresentationProvider` to re-use unified icon/bean name. See `SpringBeansPsiElementCellRenderer` for popup/list renderer.

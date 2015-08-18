@@ -55,15 +55,15 @@ method can be used to highlight the invalid tokens and display an error message 
 The third level of highlighting is performed through the
 [Annotator](https://github.com/JetBrains/intellij-community/blob/master/platform/analysis-api/src/com/intellij/lang/annotation/Annotator.java)
 interface.
-A plugin can register one or more annotators in the ```com.intellij.annotator``` extension point, and these annotators are called during the background highlighting pass to process the elements in the PSI tree of the custom language.
+A plugin can register one or more annotators in the `com.intellij.annotator` extension point, and these annotators are called during the background highlighting pass to process the elements in the PSI tree of the custom language.
 Annotators can analyze not only the syntax, but also the semantics using PSI, and thus can provide much more complex syntax and error highlighting logic.
 The annotator can also provide quick fixes to problems it detects.
 
 When the file is changed, the annotator is called incrementally to process only changed elements in the PSI tree.
 
-To highlight a region of text as a warning or error, the annotator calls ```createErrorAnnotation()``` or ```createWarningAnnotation()``` on the
+To highlight a region of text as a warning or error, the annotator calls `createErrorAnnotation()` or `createWarningAnnotation()` on the
 [AnnotationHolder](https://github.com/JetBrains/intellij-community/blob/master/platform/analysis-api/src/com/intellij/lang/annotation/AnnotationHolder.java)
-object passed to it, and optionally calls ```registerFix()``` on the returned
+object passed to it, and optionally calls `registerFix()` on the returned
 [Annotation](https://github.com/JetBrains/intellij-community/blob/master/platform/analysis-api/src/com/intellij/lang/annotation/Annotation.java)
 object to add a quick fix for the error or warning.
 To apply additional syntax highlighting, the annotator can call
@@ -95,11 +95,11 @@ interface for converting the output of the external tool into editor highlightin
 The plugin can also provide a configuration interface to allow the user to configure the colors used for highlighting specific items.
 In order to do that, it should provide an implementation of
 [ColorSettingPage](https://github.com/JetBrains/intellij-community/blob/master/platform/lang-api/src/com/intellij/openapi/options/colors/ColorSettingsPage.java)
-and register it in the ```com.intellij.colorSettingsPage``` extension point.
+and register it in the `com.intellij.colorSettingsPage` extension point.
 
 **Example**:
 [ColorSettingsPage](https://github.com/JetBrains/intellij-community/blob/master/plugins/properties/src/com/intellij/openapi/options/colors/pages/PropertiesColorsPage.java)
 for
 [Properties language plugin](https://github.com/JetBrains/intellij-community/tree/master/plugins/properties/)
 
-The ```Export to HTML``` feature uses the same syntax highlighting mechanism as the editor, so it will work automatically for custom languages which provide a syntax highlighter.
+The `Export to HTML` feature uses the same syntax highlighting mechanism as the editor, so it will work automatically for custom languages which provide a syntax highlighter.

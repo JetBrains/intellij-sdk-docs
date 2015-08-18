@@ -34,11 +34,11 @@ To create instances of
 the
 [VcsContextFactory](https://github.com/JetBrains/intellij-community/blob/master/platform/vcs-api/src/com/intellij/openapi/vcs/actions/VcsContextFactory.java)
 API is used.
-It can be accessed as```PeerFactory.getInstance().getVcsContextFactory()```
+It can be accessed as`PeerFactory.getInstance().getVcsContextFactory()`
 
 [FilePath](https://github.com/JetBrains/intellij-community/blob/master/platform/vcs-api/vcs-api-core/src/com/intellij/openapi/vcs/FilePath.java)
 representing paths in a VCS repository, rather than local paths, are created using
-```VcsContextFactory.createFilePathOnNonLocal()```. ```FilePath.isNonLocal()``` returns true for such files.
+`VcsContextFactory.createFilePathOnNonLocal()`. `FilePath.isNonLocal()` returns true for such files.
 
 ### Revision Number
 
@@ -57,14 +57,14 @@ A
 represents a particular revision of a file, which exists either locally or in a VCS repository.
 It has three main attributes:
 
-*  ```FilePath``` specifying the file of which this is a revision. If some version of the file exists locally, this should be a local path.
+*  `FilePath` specifying the file of which this is a revision. If some version of the file exists locally, this should be a local path.
 
-*  ```VcsRevisionNumber``` specifying the revision number of the revision, or ```VcsRevisionNumber.NULL``` if the revision exists only locally.
+*  `VcsRevisionNumber` specifying the revision number of the revision, or `VcsRevisionNumber.NULL` if the revision exists only locally.
 
 *  Content of the revision.
 
 The content is returned as string, and the VCS plugin is responsible for converting the binary file content to correct encoding.
-To detect the encoding automatically based on the IDE settings and the byte order mark, the method ```CharsetToolkit.bytesToString()``` can be used (this API is new in IDEA 7.0.2).
+To detect the encoding automatically based on the IDE settings and the byte order mark, the method `CharsetToolkit.bytesToString()` can be used (this API is new in IDEA 7.0.2).
 Revisions of binary files can also be represented as BinaryContentRevision, which is a subclass of ContentRevision.
 For binary revisions, the result of getContent() is undefined, and getBinaryContent() can be used to retrieve the contents as a byte array.
 
@@ -89,9 +89,9 @@ A
 [Change](https://github.com/JetBrains/intellij-community/blob/master/platform/vcs-api/vcs-api-core/src/com/intellij/openapi/vcs/changes/Change.java)
 essentially consists of two content revisions:
 
-*  before revision (```null``` if the *Change* represents file creation)
+*  before revision (`null` if the *Change* represents file creation)
 
-*  after revision (```null``` if the *Change* represents file deletion)
+*  after revision (`null` if the *Change* represents file deletion)
 
 A move or rename is represented by a Change where the before revision and the after revision have different file paths.
 A custom file status can be specified for a
@@ -141,7 +141,7 @@ The recommended way to register an AbstractVcs implementation is to add an exten
 </idea-plugin>
 ```
 
-Here ```name``` is the unique name of the VCS (this must match the string returned by your implementation of ```AbstractVcs.getName()```), and *vcsClass* is your implementation class.
+Here `name` is the unique name of the VCS (this must match the string returned by your implementation of `AbstractVcs.getName()`), and *vcsClass* is your implementation class.
 
 ### ChangeProvider
 
@@ -172,22 +172,22 @@ The
 [ChangeProvider](https://github.com/JetBrains/intellij-community/blob/master/platform/vcs-api/src/com/intellij/openapi/vcs/changes/ChangeProvider.java)
 can either iterate all files under the dirty scope using
 [VcsDirtyScope.iterate()](https://github.com/JetBrains/intellij-community/blob/master/platform/vcs-api/src/com/intellij/openapi/vcs/changes/VcsDirtyScope.java),
-or retrieve information about its contents using the ```getDirtyFiles()``` and ```getDirtyDirectoriesRecursively()``` methods.
+or retrieve information about its contents using the `getDirtyFiles()` and `getDirtyDirectoriesRecursively()` methods.
 If it is possible to retrieve the information about the local changes from the VCS in batch, it's strongly preferable to use the second method, as it scales much better for large working copies.
 
 The
 [ChangeProvider](https://github.com/JetBrains/intellij-community/blob/master/platform/vcs-api/src/com/intellij/openapi/vcs/changes/ChangeProvider.java)
 reports data to ChangelistBuilder using the following methods:
 
-*  ```processChange()``` is called for files which have been checked out (or modified if the VCS doesn't use an explicit checkout model), scheduled for addition or deletion, moved or renamed.
+*  `processChange()` is called for files which have been checked out (or modified if the VCS doesn't use an explicit checkout model), scheduled for addition or deletion, moved or renamed.
 
-*  ```processUnversionedFile()``` is called for files which exist on disk, but are not managed by the VCS, not scheduled for addition, and not ignored through *.cvsignore* or a similar mechanism.
+*  `processUnversionedFile()` is called for files which exist on disk, but are not managed by the VCS, not scheduled for addition, and not ignored through *.cvsignore* or a similar mechanism.
 
-*  ```processLocallyDeletedFile()``` is called for files which exist in the VCS repository, but do not exist on disk and are not scheduled for deletion.
+*  `processLocallyDeletedFile()` is called for files which exist in the VCS repository, but do not exist on disk and are not scheduled for deletion.
 
-*  ```processIgnoredFile()``` is called for files which are not managed by the VCS but are ignored through *.cvsignore* or a similar mechanism.
+*  `processIgnoredFile()` is called for files which are not managed by the VCS but are ignored through *.cvsignore* or a similar mechanism.
 
-*  ```processSwitchedFile()``` is called for files or directories for which the working copy corresponds to a different branch compared to the working copy of their parent directory.
+*  `processSwitchedFile()` is called for files or directories for which the working copy corresponds to a different branch compared to the working copy of their parent directory.
    This can be called for the same files for which processSwitchedFile() has already been called.
 
 

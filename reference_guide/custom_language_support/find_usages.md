@@ -2,7 +2,7 @@
 title: Find Usages
 ---
 
-The ```Find Usages``` action is a multi-step process, and each step of the process requires involvement from the custom language plugin.
+The `Find Usages` action is a multi-step process, and each step of the process requires involvement from the custom language plugin.
 The language plugin participates in the Find Usages process by registering an implementation of
 [FindUsagesProvider](https://github.com/JetBrains/intellij-community/blob/master/platform/indexing-api/src/com/intellij/lang/findUsages/FindUsagesProvider.java)
 in the `com.intellij.lang.findUsagesProvider` extension point, and through the PSI implementation using
@@ -18,9 +18,9 @@ in
 [Properties language plugin](https://github.com/JetBrains/intellij-community/tree/master/plugins/properties/)
 
 
-The steps of the ```Find Usages``` action are the following:
+The steps of the `Find Usages` action are the following:
 
-*  Before the ```Find Usages``` action can be invoked, the IDE builds an index of words present in every file in the custom language.
+*  Before the `Find Usages` action can be invoked, the IDE builds an index of words present in every file in the custom language.
    Using the
    [WordsScanner](https://github.com/JetBrains/intellij-community/blob/master/platform/indexing-api/src/com/intellij/lang/cacheBuilder/WordsScanner.java)
    implementation returned from

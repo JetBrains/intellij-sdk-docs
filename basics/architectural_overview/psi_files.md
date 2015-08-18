@@ -12,46 +12,46 @@ class represents a Java file, and the
 [XmlFile](https://github.com/JetBrains/intellij-community/blob/master/xml/xml-psi-api/src/com/intellij/psi/xml/XmlFile.java)
 class represents an XML file.
 
-Unlike ```VirtualFile``` and ```Document```, which have application scope (even if multiple projects are open, each file is represented by the same ```VirtualFile``` instance), PSI has project scope (the same file is represented by multiple PsiFile instances if the file belongs to multiple projects open at the same time).
+Unlike `VirtualFile` and `Document`, which have application scope (even if multiple projects are open, each file is represented by the same `VirtualFile` instance), PSI has project scope (the same file is represented by multiple PsiFile instances if the file belongs to multiple projects open at the same time).
 
 ## How do I get a PSI file?
 
-*  From an action: ```e.getData(LangDataKeys.PSI_FILE)```.
-*  From a VirtualFile: ```PsiManager.getInstance(project).findFile()```
-*  From a Document: ```PsiDocumentManager.getInstance(project).getPsiFile()```
-*  From an element inside the file: ```psiElement.getContainingFile()```
-*  To find files with a specific name anywhere in the project, use ```FilenameIndex.getFilesByName(project, name, scope)```
+*  From an action: `e.getData(LangDataKeys.PSI_FILE)`.
+*  From a VirtualFile: `PsiManager.getInstance(project).findFile()`
+*  From a Document: `PsiDocumentManager.getInstance(project).getPsiFile()`
+*  From an element inside the file: `psiElement.getContainingFile()`
+*  To find files with a specific name anywhere in the project, use `FilenameIndex.getFilesByName(project, name, scope)`
 
 ## What can I do with a PSI file?
 
 Most interesting modification operations are performed on the level of individual PSI elements, not files as a whole.
 
-To iterate over the elements in a file, use ```psiFile.accept(new PsiRecursiveElementWalkingVisitor()...);```
+To iterate over the elements in a file, use `psiFile.accept(new PsiRecursiveElementWalkingVisitor()...);`
 
 ## Where does it a PSI file come from?
 
 As  PSI is language-dependent, PSI files are created through the 
 [Language](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/lang/Language.java) 
-object, by using the ```LanguageParserDefinitions.INSTANCE.forLanguage(language).createFile(fileViewProvider)``` method.
+object, by using the `LanguageParserDefinitions.INSTANCE.forLanguage(language).createFile(fileViewProvider)` method.
 
 Like documents, PSI files are created on demand when the PSI is accessed for a particular file.
 
 ## How long do PSI files persist?
 
-Like documents, PSI files are weakly referenced from the corresponding ```VirtualFile``` instances and can be garbage-collected if not referenced by anyone.
+Like documents, PSI files are weakly referenced from the corresponding `VirtualFile` instances and can be garbage-collected if not referenced by anyone.
 
 ## How do I create a PSI file?
 
 The
 [PsiFileFactory](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/psi/PsiFileFactory.java).
-```getInstance(project).createFileFromText()``` method creates an in-memory PSI file with the specified contents.
+`getInstance(project).createFileFromText()` method creates an in-memory PSI file with the specified contents.
 To save the PSI file to disk, use the
 [PsiDirectory](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/psi/PsiDirectory.java).
-```add()``` method.
+`add()` method.
 
 ## How do I get notified when PSI files change?
 
-```PsiManager.getInstance(project).addPsiTreeChangeListener()``` allows you to receive notifications about all changes to the PSI tree of a project.
+`PsiManager.getInstance(project).addPsiTreeChangeListener()` allows you to receive notifications about all changes to the PSI tree of a project.
 
 
 ## How do I extend PSI?

@@ -83,20 +83,20 @@ If a pair of markers is nested in another pair (starts after its start and ends 
 The element type for the marker pair and for the AST node created from it is specified when the end marker is set, which is done by making call to
 [PsiBuilder.Marker.done()](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/lang/PsiBuilder.java).
 Also, it is possible to drop a start marker before its end marker has been set.
-The ```drop()``` method drops only a single start marker without affecting any markers added after it, and the ```rollbackTo()``` method drops the start marker and all markers added after it and reverts the lexer position to the start marker.
+The `drop()` method drops only a single start marker without affecting any markers added after it, and the `rollbackTo()` method drops the start marker and all markers added after it and reverts the lexer position to the start marker.
 These methods can be used to implement lookahead when parsing.
 
 The method
 [PsiBuilder.Marker.precede()](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/lang/PsiBuilder.java)
 is useful for right-to-left parsing when you don't know how many markers you need at a certain position until you read more input.
-For example, a binary expression ```a+b+c``` needs to be parsed as ```( (a+b) + c )```.
+For example, a binary expression `a+b+c` needs to be parsed as `( (a+b) + c )`.
 Thus, two start markers are needed at the position of the token 'a', but that is not known until the token 'c' is read.
 When the parser reaches the '+' token following 'b', it can call `precede()` to duplicate the start marker at 'a' position, and then put its matching end marker after 'c'.
 
 An important feature of
 [PsiBuilder](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/lang/PsiBuilder.java)
 is its handling of whitespace and comments.
-The types of tokens which are treated as whitespace or comments are defined by the methods ```getWhitespaceTokens()``` and ```getCommentTokens()``` in the
+The types of tokens which are treated as whitespace or comments are defined by the methods `getWhitespaceTokens()` and `getCommentTokens()` in the
 [ParserDefinition](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/lang/ParserDefinition.java)
 class.
 [PsiBuilder](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/lang/PsiBuilder.java)
@@ -116,9 +116,9 @@ In general, there is no single right way to implement a PSI for a custom languag
 However, there is one base interface which needs to be used by a custom language PSI implementation in order to support features like rename and find usages.
 Every element which can be renamed or referenced (a class definition, a method definition and so on) needs to implement the
 [PsiNamedElement](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/psi/PsiNamedElement.java)
-interface, with methods ```getName()``` and ```setName()```.
+interface, with methods `getName()` and `setName()`.
 
-A number of functions which can be used for implementing and using the PSI can be found in the ```com.intellij.psi.util``` package, and in particular in the
+A number of functions which can be used for implementing and using the PSI can be found in the `com.intellij.psi.util` package, and in particular in the
 [PsiUtil](https://github.com/JetBrains/intellij-community/blob/master/java/java-psi-api/src/com/intellij/psi/util/PsiUtil.java)
 and
 [PsiTreeUtil](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/psi/util/PsiTreeUtil.java)

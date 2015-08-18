@@ -37,5 +37,5 @@ This can be accomplished with the following steps:
 
 *  Pass the returned document to the
    [EditorTextField](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-impl/src/com/intellij/ui/EditorTextField.java)
-   constructor or its ```setDocument()``` method.
+   constructor or its `setDocument()` method.
 

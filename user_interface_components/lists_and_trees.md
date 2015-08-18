@@ -17,10 +17,10 @@ supports the following additional features on top of
 *  Drawing a tooltip with complete text of an item if the item doesn't fit into the list box width.
 
 *  Drawing a gray text message in the middle of the list box when it contains no items.
-   The text can be customized by calling ```getEmptyText().setText()```.
+   The text can be customized by calling `getEmptyText().setText()`.
 
 *  Drawing a busy icon in the top right corner of the list box to indicate that a background operation is being performed.
-   This can be enabled by calling ```setPaintBusy()```.
+   This can be enabled by calling `setPaintBusy()`.
 
 Similarly, the
 [Tree](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/ui/treeStructure/Tree.java)
@@ -38,7 +38,7 @@ When you need to customize the presentation of items in a list box or a tree, it
 or
 [ColoredTreeCellRenderer](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/ui/ColoredTreeCellRenderer.java)
 classes as the cell renderer.
-These classes allow you to compose the presentation out of multiple text fragments with different attributes by calling ```append()``` and to set an optional icon for the item by calling ```setIcon```.
+These classes allow you to compose the presentation out of multiple text fragments with different attributes by calling `append()` and to set an optional icon for the item by calling `setIcon`.
 The renderer automatically takes care of setting the correct text color for selected items and of many other platform-specific rendering details.
 
 ### ListSpeedSearch and TreeSpeedSearch
@@ -47,12 +47,12 @@ To facilitate keyboard-based selection of items in a list box or a tree, you can
 [ListSpeedSearch](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-impl/src/com/intellij/ui/ListSpeedSearch.java)
 and
 [TreeSpeedSearch](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-impl/src/com/intellij/ui/TreeSpeedSearch.java).
-This can be done simply by calling ```new ListSpeedSeach(list)``` or ```new TreeSpeedSearch(tree)```.
-If you need to customize the text which is used to locate the element, you can override the ```getElementText()``` method.
+This can be done simply by calling `new ListSpeedSeach(list)` or `new TreeSpeedSearch(tree)`.
+If you need to customize the text which is used to locate the element, you can override the `getElementText()` method.
 Alternatively, you can pass a function to convert items to strings.
-A function needs to be passed as ```elementTextDelegate``` to the
+A function needs to be passed as `elementTextDelegate` to the
 [ListSpeedSearch](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-impl/src/com/intellij/ui/ListSpeedSearch.java)
-constructor or as ```toString``` to the
+constructor or as `toString` to the
 [TreeSpeedSearch](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-impl/src/com/intellij/ui/TreeSpeedSearch.java)
 constructor.
 
@@ -77,11 +77,11 @@ To use a toolbar decorator:
    [ToolbarDecorator.createDecorator](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/ui/ToolbarDecorator.java)
    to create a decorator instance.
 
-*  If you need to support adding and/or removing items, call ```setAddAction()``` and/or ```setRemoveAction()```.
+*  If you need to support adding and/or removing items, call `setAddAction()` and/or `setRemoveAction()`.
 
-*  If you need other buttons in additional to the standard ones, call ```addExtraAction()``` or ```setActionGroup()```.
+*  If you need other buttons in additional to the standard ones, call `addExtraAction()` or `setActionGroup()`.
 
-*  Call ```createPanel()``` and add the component it returns to your panel.
+*  Call `createPanel()` and add the component it returns to your panel.
 
 <!--
 ### AbstractTreeBuilder and AbstractTreeStructure

@@ -10,7 +10,7 @@ As a replacement, *IntelliJ IDEA* provides multiple non-modal notification UI op
 
 ### Dialogs
 
-When working in a modal dialog, instead of checking the validity of the input when the ```OK``` button is pressed and notifying the user about invalid data with a modal dialog, the recommended approach is to use
+When working in a modal dialog, instead of checking the validity of the input when the `OK` button is pressed and notifying the user about invalid data with a modal dialog, the recommended approach is to use
 [DialogBuilder.doValidate()](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/ui/DialogBuilder.java),
 which was described previously.
 
@@ -19,7 +19,7 @@ which was described previously.
 For actions invoked from the editor (such as refactorings, navigation actions and different code insight features), the best way to notify the user about the inability to perform an action is to use the
 [HintManager](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/codeInsight/hint/HintManager.java)
 class.
-Its method ```showErrorHint()``` displays a floating popup above the editor which is automatically hidden when the user starts performing another action in the editor.
+Its method `showErrorHint()` displays a floating popup above the editor which is automatically hidden when the user starts performing another action in the editor.
 Other
 [HintManager](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/codeInsight/hint/HintManager.java)
 methods can be used for displaying other kinds of non-modal notification hints over an editor.
@@ -32,7 +32,7 @@ class.
 
 It has two main advantages:
 
-*  The user can control the way each notification type is displayed under ```Settings | Notifications```
+*  The user can control the way each notification type is displayed under `Settings | Notifications`
 
 *  All displayed notifications are gathered in the Event Log toolwindow and can be reviewed later
 
@@ -45,10 +45,10 @@ instance to the constructor of the
 [Notification](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/notification/Notification.java)
 class.
 
-The ```groupDisplayId``` parameter of the
+The `groupDisplayId` parameter of the
 [Notification](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/notification/Notification.java)
 constructor specifies a notification type.
-The user can choose the display type corresponding to each notification type under ```Settings | Notifications```.
+The user can choose the display type corresponding to each notification type under `Settings | Notifications`.
 To specify the preferred display type, you need to call
 [Notifications.Bus.register()](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/notification/Notification.java)
 before displaying any notifications.

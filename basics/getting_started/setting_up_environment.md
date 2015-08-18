@@ -23,7 +23,7 @@ To set up your plugin development environment:
    **Note:**
    You may use IntelliJ IDEA Ultimate as an alternative, but the debugging of core code will only work with the *Community Edition*.
 
-*  In the Sourcepath tab of the SDK settings, click the ```Add``` button:
+*  In the Sourcepath tab of the SDK settings, click the `Add` button:
 
    ![Add Sourcepath](img/add_sourcepath.png)
 

@@ -24,11 +24,11 @@ As for the file-based format projects, .IML files describe modules.
 Main classes providing work with the project model are located in the package
 [projectModel-api.openapi](https://github.com/JetBrains/intellij-community/tree/master/platform/projectModel-api/src/com/intellij/openapi).
 Basic API classes and interfaces for the concepts of
-[project](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/openapi/project/Project.java),
-[module](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/openapi/module/Module.java),
-[application](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/openapi/application/Application.java),
+[project](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/core-api/src/com/intellij/openapi/project/Project.java),
+[module](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/core-api/src/com/intellij/openapi/module/Module.java),
+[application](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/core-api/src/com/intellij/openapi/application/Application.java),
 and
-[component](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/openapi/components/ProjectComponent.java)
+[component](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/core-api/src/com/intellij/openapi/components/ProjectComponent.java)
 are placed in the
 [core-api.openapi](https://github.com/JetBrains/intellij-community/tree/master/platform/core-api/src/com/intellij/openapi)
 package.
@@ -49,7 +49,7 @@ VirtualFile[] vFiles = ProjectRootManager.getInstance(project).getContentSourceR
 ### Checking if File Belongs to a Project
 
 Use 
-[ProjectFileIndex.java](https://github.com/JetBrains/intellij-community/blob/master/platform/projectModel-api/src/com/intellij/openapi/roots/ProjectFileIndex.java)
+[ProjectFileIndex.java](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/projectModel-api/src/com/intellij/openapi/roots/ProjectFileIndex.java)
 to get this information.
 
 ### Getting an Instance of the ProjectFileIndex Interface
@@ -74,9 +74,9 @@ Utility classes which can be used for modifying a project structure can be found
 It's
 [roots](https://github.com/JetBrains/intellij-community/tree/master/platform/projectModel-impl/src/com/intellij/openapi/roots/)
 subpackage contains instances and utilities meant to work with project and module source roots, including
-[ModuleRootModificationUtil.java](https://github.com/JetBrains/intellij-community/blob/master/platform/projectModel-api/src/com/intellij/openapi/roots/ModuleRootModificationUtil.java)
+[ModuleRootModificationUtil.java](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/projectModel-api/src/com/intellij/openapi/roots/ModuleRootModificationUtil.java)
 and
-[ProjectRootUtil.java](https://github.com/JetBrains/intellij-community/blob/master/platform/projectModel-impl/src/com/intellij/openapi/projectRoots/impl/ProjectRootUtil.java)
+[ProjectRootUtil.java](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/projectModel-impl/src/com/intellij/openapi/projectRoots/impl/ProjectRootUtil.java)
 
 Refer to the
 [basic example](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/project_model/src/com/intellij/tutorials/project/model/ModificationAction.java)

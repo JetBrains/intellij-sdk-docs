@@ -65,7 +65,7 @@ Both synchronous and asynchronous refreshes can be initiated from any thread.
 If a refresh is initiated from a background thread, the calling thread must not hold a read action, because otherwise a deadlock would occur. 
 See [IntelliJ Platform Architectural Overview] for more details on the threading model and read/write actions. 
 The same threading requirements also apply to functions like 
-[LocalFileSystem.refreshAndFindFileByPath()](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/vfs/LocalFileSystem.java), 
+[LocalFileSystem.refreshAndFindFileByPath()](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/platform-api/src/com/intellij/openapi/vfs/LocalFileSystem.java), 
 which perform a partial refresh if the file with the specified path is not found in the snapshot.
 
 In nearly all cases, using asynchronous refreshes is strongly preferred. 

@@ -11,23 +11,23 @@ As a replacement, *IntelliJ IDEA* provides multiple non-modal notification UI op
 ### Dialogs
 
 When working in a modal dialog, instead of checking the validity of the input when the `OK` button is pressed and notifying the user about invalid data with a modal dialog, the recommended approach is to use
-[DialogBuilder.doValidate()](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/ui/DialogBuilder.java),
+[DialogBuilder.doValidate()](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/platform-api/src/com/intellij/openapi/ui/DialogBuilder.java),
 which was described previously.
 
 ### Editor Hints
 
 For actions invoked from the editor (such as refactorings, navigation actions and different code insight features), the best way to notify the user about the inability to perform an action is to use the
-[HintManager](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/codeInsight/hint/HintManager.java)
+[HintManager](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/platform-api/src/com/intellij/codeInsight/hint/HintManager.java)
 class.
 Its method `showErrorHint()` displays a floating popup above the editor which is automatically hidden when the user starts performing another action in the editor.
 Other
-[HintManager](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/codeInsight/hint/HintManager.java)
+[HintManager](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/platform-api/src/com/intellij/codeInsight/hint/HintManager.java)
 methods can be used for displaying other kinds of non-modal notification hints over an editor.
 
 ### Top-Level Notifications
 
 The most general way to display non-modal notifications is to use the
-[Notifications](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/notification/Notification.java)
+[Notifications](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/platform-api/src/com/intellij/notification/Notification.java)
 class.
 
 It has two main advantages:
@@ -37,19 +37,19 @@ It has two main advantages:
 *  All displayed notifications are gathered in the Event Log toolwindow and can be reviewed later
 
 The specific method used to display a notification is
-[Notifications.Bus.notify()](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/notification/Notification.java).
+[Notifications.Bus.notify()](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/platform-api/src/com/intellij/notification/Notification.java).
 The text of the notification can include HTML tags.
 You can allow the user to interact with the notification by including hyperlink tags in the notification text and passing a
-[NotificationListener](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/notification/NotificationListener.java)
+[NotificationListener](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/platform-api/src/com/intellij/notification/NotificationListener.java)
 instance to the constructor of the
-[Notification](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/notification/Notification.java)
+[Notification](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/platform-api/src/com/intellij/notification/Notification.java)
 class.
 
 The `groupDisplayId` parameter of the
-[Notification](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/notification/Notification.java)
+[Notification](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/platform-api/src/com/intellij/notification/Notification.java)
 constructor specifies a notification type.
 The user can choose the display type corresponding to each notification type under `Settings | Notifications`.
 To specify the preferred display type, you need to call
-[Notifications.Bus.register()](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/notification/Notification.java)
+[Notifications.Bus.register()](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/platform-api/src/com/intellij/notification/Notification.java)
 before displaying any notifications.
 

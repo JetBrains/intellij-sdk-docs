@@ -8,9 +8,9 @@ title: List and Tree Controls
 Whenever you would normally use a standard
 [Swing JList](http://docs.oracle.com/javase/8/docs/api/javax/swing/JList.html)
 component, it's recommended to use the
-[JBList](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/ui/components/JBList.java)
+[JBList](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/platform-api/src/com/intellij/ui/components/JBList.java)
 class as drop-in replacement.
-[JBList](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/ui/components/JBList.java)
+[JBList](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/platform-api/src/com/intellij/ui/components/JBList.java)
 supports the following additional features on top of
 [JList](http://docs.oracle.com/javase/8/docs/api/javax/swing/JList.html):
 
@@ -23,20 +23,20 @@ supports the following additional features on top of
    This can be enabled by calling `setPaintBusy()`.
 
 Similarly, the
-[Tree](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/ui/treeStructure/Tree.java)
+[Tree](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/platform-api/src/com/intellij/ui/treeStructure/Tree.java)
 class provides a replacement for the standard
 [JTree](http://docs.oracle.com/javase/8/docs/api/javax/swing/JTree.html)
 class.
 In addition to the features of
-[JBList](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/ui/components/JBList.java),
+[JBList](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/platform-api/src/com/intellij/ui/components/JBList.java),
 it supports wide selection painting (Mac style) and auto-scroll on drag & drop.
 
 ### ColoredListCellRenderer and ColoredTreeCellRenderer
 
 When you need to customize the presentation of items in a list box or a tree, it's recommended to use the
-[ColoredListCellRenderer](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/ui/ColoredListCellRenderer.java)
+[ColoredListCellRenderer](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/platform-api/src/com/intellij/ui/ColoredListCellRenderer.java)
 or
-[ColoredTreeCellRenderer](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/ui/ColoredTreeCellRenderer.java)
+[ColoredTreeCellRenderer](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/platform-api/src/com/intellij/ui/ColoredTreeCellRenderer.java)
 classes as the cell renderer.
 These classes allow you to compose the presentation out of multiple text fragments with different attributes by calling `append()` and to set an optional icon for the item by calling `setIcon`.
 The renderer automatically takes care of setting the correct text color for selected items and of many other platform-specific rendering details.
@@ -44,23 +44,23 @@ The renderer automatically takes care of setting the correct text color for sele
 ### ListSpeedSearch and TreeSpeedSearch
 
 To facilitate keyboard-based selection of items in a list box or a tree, you can install a speed search handler on it using the
-[ListSpeedSearch](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-impl/src/com/intellij/ui/ListSpeedSearch.java)
+[ListSpeedSearch](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/platform-impl/src/com/intellij/ui/ListSpeedSearch.java)
 and
-[TreeSpeedSearch](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-impl/src/com/intellij/ui/TreeSpeedSearch.java).
+[TreeSpeedSearch](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/platform-impl/src/com/intellij/ui/TreeSpeedSearch.java).
 This can be done simply by calling `new ListSpeedSeach(list)` or `new TreeSpeedSearch(tree)`.
 If you need to customize the text which is used to locate the element, you can override the `getElementText()` method.
 Alternatively, you can pass a function to convert items to strings.
 A function needs to be passed as `elementTextDelegate` to the
-[ListSpeedSearch](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-impl/src/com/intellij/ui/ListSpeedSearch.java)
+[ListSpeedSearch](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/platform-impl/src/com/intellij/ui/ListSpeedSearch.java)
 constructor or as `toString` to the
-[TreeSpeedSearch](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-impl/src/com/intellij/ui/TreeSpeedSearch.java)
+[TreeSpeedSearch](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/platform-impl/src/com/intellij/ui/TreeSpeedSearch.java)
 constructor.
 
 ### ToolbarDecorator
 
 A very common task in plugin development is showing a list or a tree where the user is allowed to add, remove, edit or reorder the items.
 The implementation of this task is greatly facilitated by the
-[ToolbarDecorator](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/ui/ToolbarDecorator.java)
+[ToolbarDecorator](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/platform-api/src/com/intellij/ui/ToolbarDecorator.java)
 class.
 This class provides a toolbar with actions on items and automatically enables drag & drop reordering of items in list boxes if supported by the underlying list model.
 The position of the toolbar above or below the list depends on the platform under which *IntelliJ IDEA* is running.
@@ -68,13 +68,13 @@ The position of the toolbar above or below the list depends on the platform unde
 To use a toolbar decorator:
 
 *  If you need to support removing and reordering of items in a list box, make sure the model of your list implements the
-   [EditableModel](https://github.com/JetBrains/intellij-community/blob/master/platform/util/src/com/intellij/util/ui/EditableModel.java)
+   [EditableModel](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/util/src/com/intellij/util/ui/EditableModel.java)
    interface.
-   [CollectionListModel](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/ui/CollectionListModel.java)
+   [CollectionListModel](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/platform-api/src/com/intellij/ui/CollectionListModel.java)
    is a handy model class that implements this interface.
 
 *  Call
-   [ToolbarDecorator.createDecorator](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/ui/ToolbarDecorator.java)
+   [ToolbarDecorator.createDecorator](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/platform-api/src/com/intellij/ui/ToolbarDecorator.java)
    to create a decorator instance.
 
 *  If you need to support adding and/or removing items, call `setAddAction()` and/or `setRemoveAction()`.

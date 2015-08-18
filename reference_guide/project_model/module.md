@@ -17,11 +17,11 @@ Module module = ProjectRootManager.getInstance(project).getFileIndex().getModule
 
 ## Accessing Module Roots
 Information about model roots can be accessed via the class
-[ModuleRootManager.java](https://github.com/JetBrains/intellij-community/blob/master/platform/projectModel-api/src/com/intellij/openapi/roots/ModuleRootManager.java),
+[ModuleRootManager.java](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/projectModel-api/src/com/intellij/openapi/roots/ModuleRootManager.java),
 for example, an instance of
-[ModuleFileIndex.java](https://github.com/JetBrains/intellij-community/blob/master/platform/projectModel-api/src/com/intellij/openapi/roots/ModuleFileIndex.java)
+[ModuleFileIndex.java](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/projectModel-api/src/com/intellij/openapi/roots/ModuleFileIndex.java)
 can be obtained, which is analogical to the
-[ProjectFileIndex.java](https://github.com/JetBrains/intellij-community/blob/master/platform/projectModel-api/src/com/intellij/openapi/roots/ProjectFileIndex.java)
+[ProjectFileIndex.java](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/projectModel-api/src/com/intellij/openapi/roots/ProjectFileIndex.java)
 but in the scope of a module
 
 ```java

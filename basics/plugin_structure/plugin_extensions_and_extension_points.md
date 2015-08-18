@@ -33,7 +33,7 @@ To clarify this procedure, consider the following sample section of the plugin.x
 The *interface* attribute sets an interface the plugin that contributes to the extension point must implement.
 
 The *beanClass* attribute sets a bean class that specifies one or several properties annotated with the
-[@Attribute](https://github.com/JetBrains/intellij-community/blob/master/xml/dom-openapi/src/com/intellij/util/xml/Attribute.java)
+[@Attribute](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/xml/dom-openapi/src/com/intellij/util/xml/Attribute.java)
 annotation.
 The plugin that contributes to the extension point will read those properties from the plugin.xml file.
 To clarify this, consider the following sample `MyBeanClass1` bean class used in the above plugin.xml file:
@@ -74,7 +74,7 @@ The child element name must match the name of the extension point you want the e
     *  If the extension point was declared using the *interface* attribute, for newly added child element, set the *implementation* attribute to the name of the class that implements the specified interface.
 
     *  If the extension point was declared using the *beanClass* attribute, for newly added child element, set all attributes annotated with the
-    [@Attribute](https://github.com/JetBrains/intellij-community/blob/master/xml/dom-openapi/src/com/intellij/util/xml/Attribute.java)
+    [@Attribute](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/xml/dom-openapi/src/com/intellij/util/xml/Attribute.java)
     annotations in the specified bean class.
 
 To clarify this procedure, consider the following sample section of the plugin.xml file that defines two extensions designed to access the _appStarter_ and _applicationConfigurable_ extension points in the IDEA core and one extension to access the _MyExtensionPoint1_ extension point in a test plugin:
@@ -99,11 +99,11 @@ To clarify this procedure, consider the following sample section of the plugin.x
 
 To get a list of extension points available in the *IntelliJ Platform* core, consult the `<extensionPoints>` section of the following XML configuration files:
 
-* [LangExtensionPoints.xml](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-resources/src/META-INF/LangExtensionPoints.xml)
+* [LangExtensionPoints.xml](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/platform-resources/src/META-INF/LangExtensionPoints.xml)
 
-* [PlatformExtensionPoints.xml](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-resources/src/META-INF/PlatformExtensionPoints.xml)
+* [PlatformExtensionPoints.xml](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/platform-resources/src/META-INF/PlatformExtensionPoints.xml)
 
-* [VcsExtensionPoints.xml](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-resources/src/META-INF/VcsExtensionPoints.xml)
+* [VcsExtensionPoints.xml](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/platform-resources/src/META-INF/VcsExtensionPoints.xml)
 
 ## Additional Information and Samples
 

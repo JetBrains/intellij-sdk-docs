@@ -95,10 +95,10 @@ As for the file-based format projects, .IML files describe modules.
 
 To work with projects and project files, you can use the following classes and interfaces:
 
-* [Project](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/openapi/project/Project.java) interface.
-* [ProjectRootManager](https://github.com/JetBrains/intellij-community/blob/master/platform/projectModel-api/src/com/intellij/openapi/roots/ProjectRootManager.java) abstract class.
-* [ProjectManager](https://github.com/JetBrains/intellij-community/blob/master/platform/projectModel-api/src/com/intellij/openapi/project/ProjectManager.java) abstract class.
-* [ProjectFileIndex](https://github.com/JetBrains/intellij-community/blob/master/platform/projectModel-api/src/com/intellij/openapi/roots/ProjectFileIndex.java) interface.
+* [Project](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/core-api/src/com/intellij/openapi/project/Project.java) interface.
+* [ProjectRootManager](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/projectModel-api/src/com/intellij/openapi/roots/ProjectRootManager.java) abstract class.
+* [ProjectManager](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/projectModel-api/src/com/intellij/openapi/project/ProjectManager.java) abstract class.
+* [ProjectFileIndex](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/projectModel-api/src/com/intellij/openapi/roots/ProjectFileIndex.java) interface.
 
 Note that you don't need to access project files directly to load or save settings. 
 See 
@@ -194,13 +194,13 @@ Note that by default, the project modules use the project SDK. Optionally, you c
 
 *IntelliJ Platform* provides a number of Java classes and interfaces you can use to work with modules:
 
-* [ModuleManager](https://github.com/JetBrains/intellij-community/blob/master/platform/projectModel-api/src/com/intellij/openapi/module/ModuleManager.java) abstract class.
-* [Module](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/openapi/module/Module.java) interface.
-* [ModuleRootManager](https://github.com/JetBrains/intellij-community/blob/master/platform/projectModel-api/src/com/intellij/openapi/roots/ModuleRootManager.java) abstract class.
-* [ModuleRootModel](https://github.com/JetBrains/intellij-community/blob/master/platform/projectModel-api/src/com/intellij/openapi/roots/ModuleRootModel.java) interface.
-* [ModuleUtil](https://github.com/JetBrains/intellij-community/blob/master/platform/lang-api/src/com/intellij/openapi/module/ModuleUtil.java) class.
-* [ModifiableModuleModel](https://github.com/JetBrains/intellij-community/blob/master/platform/projectModel-api/src/com/intellij/openapi/module/ModifiableModuleModel.java) interface.
-* [ModifiableRootModel](https://github.com/JetBrains/intellij-community/blob/master/platform/projectModel-api/src/com/intellij/openapi/roots/ModifiableRootModel.java) interface.
+* [ModuleManager](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/projectModel-api/src/com/intellij/openapi/module/ModuleManager.java) abstract class.
+* [Module](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/core-api/src/com/intellij/openapi/module/Module.java) interface.
+* [ModuleRootManager](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/projectModel-api/src/com/intellij/openapi/roots/ModuleRootManager.java) abstract class.
+* [ModuleRootModel](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/projectModel-api/src/com/intellij/openapi/roots/ModuleRootModel.java) interface.
+* [ModuleUtil](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/openapi/module/ModuleUtil.java) class.
+* [ModifiableModuleModel](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/projectModel-api/src/com/intellij/openapi/module/ModifiableModuleModel.java) interface.
+* [ModifiableRootModel](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/projectModel-api/src/com/intellij/openapi/roots/ModifiableRootModel.java) interface.
 
 This section discusses how to complete some common tasks related to management of modules.
 
@@ -217,7 +217,7 @@ tab of the *Project Structure* dialog box.
 To explore the 
 [module dependencies](http://www.jetbrains.com/idea/help/dependencies-tab.html), 
 use the 
-[OrderEnumerator](https://github.com/JetBrains/intellij-community/blob/master/platform/projectModel-api/src/com/intellij/openapi/roots/OrderEnumerator.java) 
+[OrderEnumerator](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/projectModel-api/src/com/intellij/openapi/roots/OrderEnumerator.java) 
 class.
 
 The following code snippet illustrates how you can get classpath (classes root of all dependencies) for a module:
@@ -230,7 +230,7 @@ VirtualFile[] roots = ModuleRootManager.getInstance(module).orderEntries().class
 
 Use the `ModuleRootManager.getSdk()` method. 
 This method returns a value of the 
-[Sdk](https://github.com/JetBrains/intellij-community/blob/master/platform/projectModel-api/src/com/intellij/openapi/projectRoots/Sdk.java) 
+[Sdk](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/projectModel-api/src/com/intellij/openapi/projectRoots/Sdk.java) 
 type.
 The following code snippet illustrates how you can get detailed information on SDK the specified module uses:
 
@@ -313,13 +313,13 @@ Messages.showInfoMessage(roots.toString(), "Library Info");
 ```
 
 In this sample code, `lib` is of the 
-[Library](https://github.com/JetBrains/intellij-community/blob/master/platform/projectModel-api/src/com/intellij/openapi/roots/libraries/Library.java) 
+[Library](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/projectModel-api/src/com/intellij/openapi/roots/libraries/Library.java) 
 type.
 
 #### How do I get a set of facets the module includes?
 
 Use the 
-[FacetManager](https://github.com/JetBrains/intellij-community/blob/master/platform/lang-api/src/com/intellij/facet/FacetManager.java) 
+[FacetManager](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/facet/FacetManager.java) 
 and 
-[Facet](https://github.com/JetBrains/intellij-community/blob/master/platform/lang-api/src/com/intellij/facet/Facet.java) 
+[Facet](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/facet/Facet.java) 
 classes.

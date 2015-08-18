@@ -7,13 +7,13 @@ The `Safe Delete` refactoring also builds on the same `Find Usages` framework as
 In addition to that, in order to support `Safe Delete`, a plugin needs to implement two things:
 
 *  The
-   [RefactoringSupportProvider](https://github.com/JetBrains/intellij-community/blob/master/platform/lang-api/src/com/intellij/lang/refactoring/RefactoringSupportProvider.java)
+   [RefactoringSupportProvider](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/lang/refactoring/RefactoringSupportProvider.java)
    interface, registered in the `com.intellij.lang.refactoringSupport` extension point, and the `isSafeDeleteAvailable()` method, which checks if the `Safe Delete` refactoring is available for a specific PSI element
 
 *  The
    [PsiElement.delete()](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/psi/PsiElement.java#L371)
    method for the
-   [PsiElement](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/psi/PsiElement.java)
+   [PsiElement](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/core-api/src/com/intellij/psi/PsiElement.java)
    subclasses for which `Safe Delete` is available.
    Deleting PSI elements is implemented by deleting the underlying AST nodes from the AST tree (which, in turn, causes the text ranges corresponding to the AST nodes to be deleted from the document).
 
@@ -29,5 +29,5 @@ This is done by implementing the `SafeDeleteProcessorDelegate` interface.
 
 
 **Example**:
-[SafeDeleteProcessorDelegate](https://github.com/JetBrains/intellij-community/blob/master/plugins/properties/src/com/intellij/lang/properties/refactoring/PropertiesFilesSafeDeleteProcessor.java)
+[SafeDeleteProcessorDelegate](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/plugins/properties/src/com/intellij/lang/properties/refactoring/PropertiesFilesSafeDeleteProcessor.java)
 implementation for a .properties file

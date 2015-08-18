@@ -23,7 +23,7 @@ The standard execution of a run action goes through the following steps:
 ## Executor
 
 The
-[Executor](https://github.com/JetBrains/intellij-community/blob/master/platform/lang-api/src/com/intellij/execution/Executor.java)
+[Executor](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/execution/Executor.java)
 interface describes a specific way of executing any possible run configuration.
 The three default executors provided by the IntelliJ Platform by default are _Run_, _Debug_ and (in IntelliJ IDEA Ultimate and certain platform-based IDEs) _Run with Coverage_.
 Each executor gets its own toolbar button, which starts the selected run configuration using this executor, and its own context menu item for starting a configuration using this executor.
@@ -38,22 +38,22 @@ It describes a process which is ready to be started and holds the information li
 (The existence of RunProfileState as a separate step in the execution flow allows run configuration extensions and other components to patch the configuration and to modify the parameters before it gets executed.)
 
 The standard base class used as implementation of RunProfileState is
-[CommandLineState](https://github.com/JetBrains/intellij-community/blob/master/platform/lang-api/src/com/intellij/execution/configurations/CommandLineState.java).
+[CommandLineState](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/execution/configurations/CommandLineState.java).
 It contains the logic for putting together a running process and a console into an
-[ExecutionResult](https://github.com/JetBrains/intellij-community/blob/master/platform/lang-api/src/com/intellij/execution/ExecutionResult.java),
+[ExecutionResult](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/execution/ExecutionResult.java),
 but doesn't know anything how the process is actually started. For starting the process, it's best to use the
-[GeneralCommandLine](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/execution/configurations/GeneralCommandLine.java)
+[GeneralCommandLine](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/platform-api/src/com/intellij/execution/configurations/GeneralCommandLine.java)
 class, which takes care of setting up the command line parameters and executing the process.
 
 Alternatively, if the process you need to run is a JVM-based one, you can use the
-[JavaCommandLineState](https://github.com/JetBrains/intellij-community/blob/master/java/execution/openapi/src/com/intellij/execution/configurations/JavaCommandLineState.java)
+[JavaCommandLineState](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/java/execution/openapi/src/com/intellij/execution/configurations/JavaCommandLineState.java)
 base class. It knows about the command line parameters of the JVM and can take care of details like calculating the classpath for the JVM.
 
 To monitor the execution of a process and capture its output, the
-[OSProcessHandler](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/execution/process/OSProcessHandler.java)
+[OSProcessHandler](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/platform-api/src/com/intellij/execution/process/OSProcessHandler.java)
 class is normally used.
 Once you've created an instance of OSProcessHandler from either a command line or a Process object, you need to call the `startNotify()` method to start capturing its output.
-You may also want to attach a [ProcessTerminatedListener](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/execution/process/ProcessTerminatedListener.java)
+You may also want to attach a [ProcessTerminatedListener](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/platform-api/src/com/intellij/execution/process/ProcessTerminatedListener.java)
 to the OSProcessHandler, so that the exit status of the process will be displayed in the console.
 
 ## Displaying the Process Output
@@ -62,22 +62,22 @@ If you're using `CommandLineState`, a console view will be automatically created
 Alternatively, you can arrange this yourself:
 
  *  `TextConsoleBuilderFactory.createBuilder(project).getConsole()` creates a
- [ConsoleView](https://github.com/JetBrains/intellij-community/blob/master/platform/lang-api/src/com/intellij/execution/ui/ConsoleView.java)
+ [ConsoleView](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/execution/ui/ConsoleView.java)
  instance;
 
  *  `ConsoleView.attachToProcess()` attaches it to the output of a process.
 
 If the process you're running uses ANSI escape codes to color its output, the
-[ColoredProcessHandler](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/execution/process/ColoredProcessHandler.java)
+[ColoredProcessHandler](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/platform-api/src/com/intellij/execution/process/ColoredProcessHandler.java)
 class will parse it and display the colors in the IntelliJ console.
 
 Console
-[filters](https://github.com/JetBrains/intellij-community/blob/master/platform/lang-api/src/com/intellij/execution/filters/Filter.java)
+[filters](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/execution/filters/Filter.java)
 allow you to convert certain strings found in the process output to clickable hyperlinks. To attach a filter to the console, use `CommandLineState.addConsoleFilters()` or, if you're creating a console manually, `TextConsoleBuilder.addFilter()`.
 Two common filter implementations you may want to reuse are
-[RegexpFilter](https://github.com/JetBrains/intellij-community/blob/master/platform/lang-api/src/com/intellij/execution/filters/RegexpFilter.java)
+[RegexpFilter](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/execution/filters/RegexpFilter.java)
 and
-[UrlFilter](https://github.com/JetBrains/intellij-community/blob/master/platform/lang-api/src/com/intellij/execution/filters/UrlFilter.java).
+[UrlFilter](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/execution/filters/UrlFilter.java).
 
 ## Starting a Run Configuration from Code
 

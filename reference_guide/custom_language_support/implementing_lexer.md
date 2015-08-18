@@ -7,48 +7,48 @@ The lexer, or
 defines how the contents of a file is broken into tokens.
 The lexer serves as a foundation for nearly all of the features of custom language plugins, from basic syntax highlighting to advanced code analysis features.
 The API for the lexer is defined by the
-[Lexer](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/lexer/Lexer.java) interface.
+[Lexer](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/core-api/src/com/intellij/lexer/Lexer.java) interface.
 
 The IDE invokes the lexer in three main contexts, and the plugin can provide different lexer implementations for these contexts:
 
 *  Syntax highlighting: The lexer is returned from the implementation of the
-   [SyntaxHighlighterFactory](https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/fileTypes/SyntaxHighlighterFactory.java)
+   [SyntaxHighlighterFactory](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/editor-ui-api/src/com/intellij/openapi/fileTypes/SyntaxHighlighterFactory.java)
    interface which is registered in the `com.intellij.lang.syntaxHighlighterFactory` extension point.
 
 *  Building the syntax tree of a file: the lexer is expected to be returned from
-   [ParserDefinition.createLexer()](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/lang/ParserDefinition.java),
+   [ParserDefinition.createLexer()](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/core-api/src/com/intellij/lang/ParserDefinition.java),
    and the
-   [ParserDefinition](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/lang/ParserDefinition.java)
+   [ParserDefinition](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/core-api/src/com/intellij/lang/ParserDefinition.java)
    interface is registered in the `com.intellij.lang.parserDefinition` extension point.
 
 *  Building the index of the words contained in the file:
    if the lexer-based words scanner implementation is used, the lexer is passed to the
-   [DefaultWordsScanner](https://github.com/JetBrains/intellij-community/blob/master/platform/indexing-api/src/com/intellij/lang/cacheBuilder/DefaultWordsScanner.java)
+   [DefaultWordsScanner](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/indexing-api/src/com/intellij/lang/cacheBuilder/DefaultWordsScanner.java)
    constructor.
 
 The lexer used for syntax highlighting can be invoked incrementally to process only the changed part of a file, whereas lexers used in other contexts are always called to process an entire file, or a complete language construction embedded in a file in a different language.
 
 A lexer that can be used incrementally may need to return its *state*, which means the context corresponding to each position in a file.
 For example, a
-[Java lexer](https://github.com/JetBrains/intellij-community/blob/master/java/java-psi-impl/src/com/intellij/lang/java/lexer/JavaLexer.java)
+[Java lexer](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/java/java-psi-impl/src/com/intellij/lang/java/lexer/JavaLexer.java)
 could have separate states for top level context, comment context and string literal context.
 An important requirement for a syntax highlighting lexer is that its state must be represented by a single integer number returned from
-[Lexer.getState()](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/lexer/Lexer.java).
+[Lexer.getState()](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/core-api/src/com/intellij/lexer/Lexer.java).
 That state will be passed to the
-[Lexer.start()](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/lexer/Lexer.java)
+[Lexer.start()](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/core-api/src/com/intellij/lexer/Lexer.java)
 method, along with the start offset of the fragment to process, when lexing is resumed from the middle of a file.
 Lexers used in other contexts can always return `0` from the `getState()` method.
 
 The easiest way to create a lexer for a custom language plugin is to use [JFlex](http://jflex.de).
 Adapter classes,
-[FlexLexer](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/lexer/FlexLexer.java)
+[FlexLexer](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/core-api/src/com/intellij/lexer/FlexLexer.java)
 and
-[FlexAdapter](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/lexer/FlexAdapter.java)
+[FlexAdapter](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/core-api/src/com/intellij/lexer/FlexAdapter.java)
 adapt JFlex lexers to the IntelliJ Platform Lexer API.
 The source code of
 [IntelliJ IDEA Community Edition](https://github.com/JetBrains/intellij-community)
 includes a patched version of JFlex 1.4 located in *tools/lexer/jflex-1.4* and lexer skeleton file *tools/lexer/idea-flex.skeleton* which can be used for creating lexers compatible with
-[FlexAdapter](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/lexer/FlexAdapter.java).
+[FlexAdapter](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/core-api/src/com/intellij/lexer/FlexAdapter.java).
 The patched version of JFlex provides a new command line option `--charat` which changes the JFlex generated code so that it works with the IntelliJ Platform skeleton.
 Enabling `--charat` option passes the source data for lexing as a
 [CharSequence](https://docs.oracle.com/javase/8/docs/api/java/lang/CharSequence.html)
@@ -73,28 +73,28 @@ definition for
 
 
 Types of tokens for lexers are defined by instances of
-[IElementType](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/psi/tree/IElementType.java).
+[IElementType](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/core-api/src/com/intellij/psi/tree/IElementType.java).
 A number of token types common for all languages are defined in the
-[TokenType](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/psi/TokenType.java)
+[TokenType](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/core-api/src/com/intellij/psi/TokenType.java)
 interface.
 Custom language plugins should reuse these token types wherever applicable.
 For all other token types, the plugin needs to create new
-[IElementType](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/psi/tree/IElementType.java)
+[IElementType](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/core-api/src/com/intellij/psi/tree/IElementType.java)
 instances and associate with the language in which the token type is used.
 The same
-[IElementType](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/psi/tree/IElementType.java)
+[IElementType](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/core-api/src/com/intellij/psi/tree/IElementType.java)
 instance should be returned every time a particular token type is encountered by the lexer.
 
 **Example:**
-[Token types](https://github.com/JetBrains/intellij-community/blob/master/plugins/properties/properties-psi-api/src/com/intellij/lang/properties/parsing/PropertiesTokenTypes.java)
+[Token types](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/plugins/properties/properties-psi-api/src/com/intellij/lang/properties/parsing/PropertiesTokenTypes.java)
 for
 [Properties language plugin](https://github.com/JetBrains/intellij-community/blob/master/plugins/properties/)
 
 
 An important feature which can be implemented at lexer level is mixing languages within a file, for example, embedding fragments of Java code in some template language.
 If a language supports embedding its fragments in another language, it needs to define the chameleon token types for different types of fragments which can be embedded, and these token types need to implement the
-[ILazyParseableElementType](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/psi/tree/ILazyParseableElementType.java)
+[ILazyParseableElementType](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/core-api/src/com/intellij/psi/tree/ILazyParseableElementType.java)
 interface.
 The lexer of the enclosing language needs to return the entire fragment of the embedded language as a single chameleon token, of the type defined by the embedded language.
 To parse the contents of the chameleon token, the IDE will call the parser of the embedded language through a call to
-[ILazyParseableElementType.parseContents()](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/psi/tree/ILazyParseableElementType.java).
+[ILazyParseableElementType.parseContents()](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/core-api/src/com/intellij/psi/tree/ILazyParseableElementType.java).

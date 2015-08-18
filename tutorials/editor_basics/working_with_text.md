@@ -11,7 +11,7 @@ The following set of steps will show how to access a text selection and change i
 
 In this example access to the Editor is made through an action as a plug-in point.
 To create an action we need derive
-[AnAction.java](https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java)
+[AnAction.java](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java)
 class.
 
 
@@ -83,10 +83,10 @@ public class EditorIllustration extends AnAction {
 
 To access an Editor instance also can be used other ways:
 
-* If [DataContext](https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/DataContext.java)
+* If [DataContext](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/DataContext.java)
   object is available `final Editor editor = CommonDataKeys.EDITOR.getData(context);`
 
-* If [ActionEvent](https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnActionEvent.java)
+* If [ActionEvent](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnActionEvent.java)
   object is available `final Editor editor = actionEvent.getData(CommonDataKeys.EDITOR);`
 
 
@@ -94,7 +94,7 @@ To access an Editor instance also can be used other ways:
 ## 1.3. Obtaining a caret model and selection
 
 After making sure we have a project open and an instance of the Editor we need to check if any selection is available and set action's visibility accordingly to these conditions.
-[SelectionModel](https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/editor/SelectionModel.java)
+[SelectionModel](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/editor-ui-api/src/com/intellij/openapi/editor/SelectionModel.java)
 got from the Editor allows to do it by calling it's `hasSelection()` method.
 Here's how our `update(final AnActionEvent e)` method should look like at the end:
 
@@ -121,12 +121,12 @@ subpackage of the
 [editor-ui-api](https://github.com/JetBrains/intellij-community/tree/master/platform/editor-ui-api)
 package and include:
 
-* [CaretModel.java](https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/editor/CaretModel.java),
-* [FoldingModel.java](https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/editor/FoldingModel.java),
-* [IndentsModel.java](https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/editor/IndentsModel.java),
-* [ScrollingModel.java](https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/editor/ScrollingModel.java),
-* [ScrollingModel.java](https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/editor/ScrollingModel.java),
-* [SoftWrapModel.java](https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/editor/SoftWrapModel.java)
+* [CaretModel.java](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/editor-ui-api/src/com/intellij/openapi/editor/CaretModel.java),
+* [FoldingModel.java](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/editor-ui-api/src/com/intellij/openapi/editor/FoldingModel.java),
+* [IndentsModel.java](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/editor-ui-api/src/com/intellij/openapi/editor/IndentsModel.java),
+* [ScrollingModel.java](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/editor-ui-api/src/com/intellij/openapi/editor/ScrollingModel.java),
+* [ScrollingModel.java](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/editor-ui-api/src/com/intellij/openapi/editor/ScrollingModel.java),
+* [SoftWrapModel.java](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/editor-ui-api/src/com/intellij/openapi/editor/SoftWrapModel.java)
 
 
 ## 1.4. Obtaining a Document
@@ -149,7 +149,7 @@ public class EditorIllustration extends AnAction {
 ```
 
 To modify the text an instance of the
-[Document](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/openapi/editor/Document.java)
+[Document](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/core-api/src/com/intellij/openapi/editor/Document.java)
 needs to be accessed. Document represents the contents of a text file loaded into memory, and possibly opened in an IDEA text editor.
 The instance of a Document will be use later when a text replacement is performed.
 We also need to figure out where the selected part of the text is located.

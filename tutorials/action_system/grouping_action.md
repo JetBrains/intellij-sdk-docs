@@ -36,7 +36,7 @@ The following sample shows how to place a custom action group on top of the edit
 #### 2.1.3. Adding actions to the group
 
 To create an action we need to extend
-[AnAction.java](https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java)
+[AnAction.java](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java)
 class:
 
 ```java
@@ -78,14 +78,14 @@ In our case the condition is: an instance of the editor is available.
 
 #### 2.2.1. Extending DefaultActionGroup
 
-[DefaultActionGroup.java](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/actionSystem/DefaultActionGroup.java)
+[DefaultActionGroup.java](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/platform-api/src/com/intellij/openapi/actionSystem/DefaultActionGroup.java)
 is a default implementations of
-[ActionGroup.java](https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/ActionGroup.java)
+[ActionGroup.java](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/ActionGroup.java)
 and used to add children actions and separators between them to a group.
 This class is used if a set of actions belonging to the group is fixed, which is the majority of all the cases.
 
 Firstly,
-[DefaultActionGroup.java](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/actionSystem/DefaultActionGroup.java)
+[DefaultActionGroup.java](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/platform-api/src/com/intellij/openapi/actionSystem/DefaultActionGroup.java)
 should be derived:
 
 ```java
@@ -99,7 +99,7 @@ public class CustomDefaultActionGroup extends DefaultActionGroup {
 #### 2.2.2. Registering action group
 
 As in case with the simple action group, the inheritor of
-[DefaultActionGroup.java](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/actionSystem/DefaultActionGroup.java)
+[DefaultActionGroup.java](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/platform-api/src/com/intellij/openapi/actionSystem/DefaultActionGroup.java)
 should be declared in
 [plugin.xml](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/register_actions/META-INF/plugin.xml)
 file:
@@ -115,7 +115,7 @@ file:
 
 #### 2.2.3. Creating an action
 
-[AnAction.java](https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java)
+[AnAction.java](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java)
 needs to be extended:
 
 ```java
@@ -169,13 +169,13 @@ After compiling and running the code sample above, *Tools* menu item should cont
 
 If a set of actions belonging to a custom actions group may vary dependently on the context,
 we need to work with
-[ActionGroup.java](https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/ActionGroup.java).
+[ActionGroup.java](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/ActionGroup.java).
 In this case set of actions to be grouped can be dynamically defined.
 
 #### 2.3.1. Creating variable action group
 
 To create a group of actions with a variable actions set we extend
-[ActionGroup.java](https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/ActionGroup.java)
+[ActionGroup.java](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/ActionGroup.java)
 first:
 ```java
 public class BaseActionGroup extends ActionGroup {
@@ -199,7 +199,7 @@ To register the group `<group>` attribute needs to be placed in the *`<actions>`
 [plugin.xml](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/register_actions/META-INF/plugin.xml).
 If `<group>` attribute contains any static action definition an exception will be thrown.
 For statically defined group of action use
-[DefaultActionGroup.java](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/actionSystem/DefaultActionGroup.java)
+[DefaultActionGroup.java](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/platform-api/src/com/intellij/openapi/actionSystem/DefaultActionGroup.java)
 
 #### 2.3.3. Accessing children actions
 
@@ -218,7 +218,7 @@ public class BaseActionGroup extends ActionGroup {
 #### 2.3.4. Adding children actions to the group
 
 To make the group contain actions a non-empty array of
-[AnAction.java](https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java)
+[AnAction.java](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java)
 elements should be returned:
 
 ```java
@@ -240,7 +240,7 @@ public class BaseActionGroup extends ActionGroup {
 ```
 
 After providing an implementation of
-[AnAction.java](https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java)
+[AnAction.java](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java)
 and making it return a non-empty array of action Tools Menu should contain an extra group of action:
 
 ![Dynamic Action Group](img/dynamic_action_group.png)

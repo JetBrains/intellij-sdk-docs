@@ -7,7 +7,7 @@ The following tutorial meant to show how to support a custom framework type for 
 ## 1. Creating a new framework
 
 In oder to make a custom framework available and configurable for a project
-[FrameworkTypeEx](https://github.com/JetBrains/intellij-community/blob/master/java/idea-ui/src/com/intellij/framework/FrameworkTypeEx.java)
+[FrameworkTypeEx](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/java/idea-ui/src/com/intellij/framework/FrameworkTypeEx.java)
 class needs to be extended:
 
 

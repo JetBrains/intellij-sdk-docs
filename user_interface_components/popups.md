@@ -11,7 +11,7 @@ Making use of these controls in your plugin ensures a consistent user experience
 Popups can optionally display a title, are optionally movable and resizable (and support remembering their size), and can be nested (show another popup when an item is selected).
 
 The
-[JBPopupFactory](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/ui/popup/JBPopupFactory.java)
+[JBPopupFactory](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/platform-api/src/com/intellij/openapi/ui/popup/JBPopupFactory.java)
 interface allows you to create popups that display different kinds of components, depending on your specific needs.
 The most commonly used methods are:
 
@@ -28,7 +28,7 @@ component in the popup.
 
 Action group popups support different ways of choosing an action from the keyboard, in additional to the normal arrow keys.
 By passing one of the constants in the
-[ActionSelectionAid](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/ui/popup/JBPopupFactory.java)
+[ActionSelectionAid](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/platform-api/src/com/intellij/openapi/ui/popup/JBPopupFactory.java)
 enumeration, you can choose whether an action can be selected by pressing a key corresponding to its sequential number, typing part of its text (speed search) or pressing a mnemonic character.
 For popups with a fixed set of items, the recommended selection method is sequential numbering;
 for popups with a variable and potentially large number of items, speed search typically works best.
@@ -36,12 +36,12 @@ for popups with a variable and potentially large number of items, speed search t
 If you need to create a list-like popup which is more flexible than a simple
 [JList](http://docs.oracle.com/javase/8/docs/api/javax/swing/JList.html)
 but don't want to represent the possible choices as actions in an action group, you can work directly with the
-[ListPopupStep](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/ui/popup/ListPopupStep.java)
+[ListPopupStep](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/platform-api/src/com/intellij/openapi/ui/popup/ListPopupStep.java)
 interface and the
-[JBPopupFactory.createListPopup()](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/ui/popup/JBPopupFactory.java)
+[JBPopupFactory.createListPopup()](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/platform-api/src/com/intellij/openapi/ui/popup/JBPopupFactory.java)
 method.
 Normally you don't need to implement the entire interface; instead, you can derive from the
-[BaseListPopupStep](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/ui/popup/util/BaseListPopupStep.java)
+[BaseListPopupStep](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/platform-api/src/com/intellij/openapi/ui/popup/util/BaseListPopupStep.java)
 class.
 The key methods to override are `getTextFor()` (returning the text to display for an item) and `onChosen()` (called when an item is selected).
 By returning a new popup step from the `onChosen()` method, you can implement hierarchical (nested) popups.
@@ -55,6 +55,6 @@ You can let *IntelliJ IDEA* automatically choose the position based on the conte
 >  The `show()` methods return immediately and do not wait for the popup to be closed.
 
 If you need to perform some action when the popup is closed, you can either attach a listener to it using the `addListener()` method, override a method of the popup contents such as
-[PopupStep.onChosen()](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/ui/popup/PopupStep.java),
+[PopupStep.onChosen()](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/platform-api/src/com/intellij/openapi/ui/popup/PopupStep.java),
 or attach an event handler to your own component within the popup.
 

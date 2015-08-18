@@ -8,7 +8,7 @@ PSI elements and operations on the level of individual PSI elements are used to 
 or
 [intention actions](http://www.jetbrains.com/idea/help/intention-actions.html).
 The
-[PsiElement](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/psi/PsiElement.java)
+[PsiElement](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/core-api/src/com/intellij/psi/PsiElement.java)
 class is the common base class for PSI elements.
 
 ## How do I get a PSI element?

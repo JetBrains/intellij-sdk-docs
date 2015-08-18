@@ -22,17 +22,17 @@ You usually don't need to have stubs for things like statements or local variabl
 
 For each element type that you want to store in the stub tree, you need to perform the following steps:
 
-*  Define an interface for the stub, derived from the `StubElement` interface ([example](https://github.com/JetBrains/intellij-community/blob/master/plugins/properties/properties-psi-api/src/com/intellij/lang/properties/psi/PropertyStub.java)).
+*  Define an interface for the stub, derived from the `StubElement` interface ([example](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/plugins/properties/properties-psi-api/src/com/intellij/lang/properties/psi/PropertyStub.java)).
 
-*  Provide an implementation for the interface ([example](https://github.com/JetBrains/intellij-community/blob/master/plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/psi/impl/PropertyStubImpl.java)).
+*  Provide an implementation for the interface ([example](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/psi/impl/PropertyStubImpl.java)).
 
-*  Make sure that the interface for the PSI element extends `StubBasedPsiElement` parameterized by the type of the stub interface ([example](https://github.com/JetBrains/intellij-community/blob/master/plugins/properties/properties-psi-api/src/com/intellij/lang/properties/psi/Property.java)).
+*  Make sure that the interface for the PSI element extends `StubBasedPsiElement` parameterized by the type of the stub interface ([example](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/plugins/properties/properties-psi-api/src/com/intellij/lang/properties/psi/Property.java)).
 
 *  Make sure that the implementation class for the PSI element extends `StubBasedPsiElementBase` parameterized by the type of the stub interface ([example](https://github.com/JetBrains/intellij-community/blob/master/plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/psi/impl/PropertyImpl.java#L45)). Provide both a constructor that accepts an ASTNode and a constructor which accepts a stub.
 
-*  Create a class which implements `IStubElementType` and is parameterized with the stub interface and the actual PSI element interface ([example](https://github.com/JetBrains/intellij-community/blob/master/plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/parsing/PropertyStubElementType.java)). Implement the createPsi() and createStub() methods for creating PSI from a stub and vice versa. Implement the serialize() and deserialize() methods for storing the data in a binary stream.
+*  Create a class which implements `IStubElementType` and is parameterized with the stub interface and the actual PSI element interface ([example](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/parsing/PropertyStubElementType.java)). Implement the createPsi() and createStub() methods for creating PSI from a stub and vice versa. Implement the serialize() and deserialize() methods for storing the data in a binary stream.
 
-*  Use the class implementing `IStubElementType` as the element type constant when parsing ([example](https://github.com/JetBrains/intellij-community/blob/master/plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/parsing/PropertiesElementTypes.java))
+*  Use the class implementing `IStubElementType` as the element type constant when parsing ([example](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/parsing/PropertiesElementTypes.java))
 
 *  Make sure that all methods in the PSI element interface access the stub data rather than the PSI tree when appropriate ([example: Property.getKey() implementation](https://github.com/JetBrains/intellij-community/blob/master/plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/psi/impl/PropertyImpl.java#L95))
 
@@ -62,7 +62,7 @@ Otherwise the stub tree will not be rebuilt when an external dependency changes,
 
 When building the stub tree, you can at the same time put some data about the stub elements into a number of indexes, which then can be used to find the PSI elements by the corresponding key. Unlike file-based indexes, stub indexes do not support storing custom data as values; the value is always a PSI element. Keys in stub indexes are normally strings (such as class names); other data types are also supported if desired.
 
-A stub index is a class which extends [AbstractStubIndex](https://github.com/JetBrains/intellij-community/blob/master/platform/indexing-api/src/com/intellij/psi/stubs/AbstractStubIndex.java). In the most common case, when the key type is String, you use a more specific base class, namely [StringStubIndexExtension](https://github.com/JetBrains/intellij-community/blob/master/platform/indexing-api/src/com/intellij/psi/stubs/StringStubIndexExtension.java).
+A stub index is a class which extends [AbstractStubIndex](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/indexing-api/src/com/intellij/psi/stubs/AbstractStubIndex.java). In the most common case, when the key type is String, you use a more specific base class, namely [StringStubIndexExtension](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/indexing-api/src/com/intellij/psi/stubs/StringStubIndexExtension.java).
 Stub index implementation classes are registered in the `<stubIndex>` extension point.
 
 To put data into an index, you implement the method `IStubElementType.indexStub()` ([example: JavaClassElementType.indexStub()](https://github.com/JetBrains/intellij-community/blob/master/java/java-psi-impl/src/com/intellij/psi/impl/java/stubs/JavaClassElementType.java#L189)). This method accepts an `IndexSink` as a parameter, and puts in the index ID and the key for each index in which the element should be stored.

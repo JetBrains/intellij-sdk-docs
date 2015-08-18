@@ -5,7 +5,7 @@ title: 2. Editor coordinates system. Positions and offsets
 
 Every caret in the editor has a set of properties describing it's coordinates. 
 These properties can be accessed by obtaining a
-[caret model instance](https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/editor/CaretModel.java).
+[caret model instance](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/editor-ui-api/src/com/intellij/openapi/editor/CaretModel.java).
 Working with caret positions and it's logical and visual properties will be explained in the sample below.
 
 ## 2.1. Pre-requirements
@@ -31,7 +31,7 @@ public class EditorAreaIllustration extends AnAction {
 
 ## 2.3. Logical position
 
-[LogicalPosition.java](https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/editor/LogicalPosition.java)
+[LogicalPosition.java](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/editor-ui-api/src/com/intellij/openapi/editor/LogicalPosition.java)
 represents a line and a column of the current logical position of the caret. Logical positions ignore folding -
 for example, if the top 10 lines of the document are folded, the 10th line in the document will have the line number 10 in its logical position.
 
@@ -51,14 +51,14 @@ public class EditorAreaIllustration extends AnAction {
 ```
 
 Logical position may store additional parameters that define its mapping to
-[VisualPosition.java](https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/editor/VisualPosition.java).
+[VisualPosition.java](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/editor-ui-api/src/com/intellij/openapi/editor/VisualPosition.java).
 Rationale is that single logical pair matches soft wrap-introduced virtual space, i.e. different visual positions
 correspond to the same logical position. It's convenient to store exact visual location details within the logical
 position in order to relief further 'logical position' -> 'visual position' mapping.
 
 ## 2.4. Visual position
 
-[VisualPosition.java](https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/editor/VisualPosition.java)
+[VisualPosition.java](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/editor-ui-api/src/com/intellij/openapi/editor/VisualPosition.java)
 represent a visual position and may very from the corresponding logical position.
 Visual positions take folding into account - for example,
 if the top 10 lines of the document are folded, the 10th line in the document will have the line number 1 in its visual position.

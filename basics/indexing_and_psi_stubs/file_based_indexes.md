@@ -21,11 +21,11 @@ When you access the index, you specify the key that you're interested in and get
 ## Implementing a File-based Index
 
 A fairly simple file-based index implementation is the
-[UI Designer bound forms index](https://github.com/JetBrains/intellij-community/blob/master/plugins/ui-designer/src/com/intellij/uiDesigner/binding/FormClassIndex.java).
+[UI Designer bound forms index](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/plugins/ui-designer/src/com/intellij/uiDesigner/binding/FormClassIndex.java).
 Refer to it as an example to understand this topic better.
 
 Each specific index implementation is a class extending
-[FileBasedIndexExtension](https://github.com/JetBrains/intellij-community/blob/master/platform/indexing-api/src/com/intellij/util/indexing/FileBasedIndexExtension.java).
+[FileBasedIndexExtension](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/indexing-api/src/com/intellij/util/indexing/FileBasedIndexExtension.java).
 A file-base index should be registered in the `<fileBasedIndex>`  extension point.
 
 The implementation of a file-based contains of the following main parts:
@@ -44,7 +44,7 @@ The implementation of a file-based contains of the following main parts:
    The index is automatically rebuilt if the current version differs from the version of the index implementation used to build the index.
 
 If you don't need to associate any value with the files (i.e. your value type is Void), you can simplify the implementation by using
-[ScalarIndexExtension](https://github.com/JetBrains/intellij-community/blob/master/platform/indexing-impl/src/com/intellij/util/indexing/ScalarIndexExtension.java)
+[ScalarIndexExtension](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/indexing-impl/src/com/intellij/util/indexing/ScalarIndexExtension.java)
 as the base class.
 
 **Note:** The data returned by `DataIndexer.map()` must depend only on input data passed to the method, and must not depend on any external files.
@@ -52,7 +52,7 @@ Otherwise your index will not be correctly updated when the external data change
 
 ## Accessing a File-based Index
 
-Access to file-based indexes is performed through the [FileBasedIndex](https://github.com/JetBrains/intellij-community/blob/master/platform/indexing-api/src/com/intellij/util/indexing/FileBasedIndex.java)
+Access to file-based indexes is performed through the [FileBasedIndex](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/indexing-api/src/com/intellij/util/indexing/FileBasedIndex.java)
 class.
 The following primary operations are supported:
 
@@ -74,11 +74,11 @@ The most useful indexes for plugin developers are:
 *  File name index
 
 Generally, the word index should be accessed indirectly, but using the helper methods in the
-[PsiSearchHelper](https://github.com/JetBrains/intellij-community/blob/master/platform/indexing-api/src/com/intellij/psi/search/PsiSearchHelper.java)
+[PsiSearchHelper](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/indexing-api/src/com/intellij/psi/search/PsiSearchHelper.java)
 class.
 
 The second index is
-[FilenameIndex](https://github.com/JetBrains/intellij-community/blob/master/platform/indexing-impl/src/com/intellij/psi/search/FilenameIndex.java).
+[FilenameIndex](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/indexing-impl/src/com/intellij/psi/search/FilenameIndex.java).
 It provides a quick way to find all files matching a certain file name.
-[FileTypeIndex](https://github.com/JetBrains/intellij-community/blob/master/platform/indexing-impl/src/com/intellij/psi/search/FileTypeIndex.java)
+[FileTypeIndex](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/indexing-impl/src/com/intellij/psi/search/FileTypeIndex.java)
 serves a similar goal: it allows to quickly find all files of a certain file type.

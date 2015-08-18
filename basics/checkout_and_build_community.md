@@ -115,7 +115,7 @@ or
 
 ## Building and Running from the Command Line
 To build the distribution archive of *IntelliJ IDEA Community Edition*, execute
-[build.xml](https://github.com/JetBrains/intellij-community/blob/master/build.xml)
+[build.xml](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/build.xml)
 
 Ant build script in the root directory of the source code.
 

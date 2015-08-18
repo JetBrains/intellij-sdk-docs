@@ -15,7 +15,7 @@ in IntelliJ IDEA Web Help.
 ### Getting Project Sdk Information
 
 Main information about the project Sdk can be accessed via
-[ProjectRootManager.java](https://github.com/JetBrains/intellij-community/blob/master/platform/projectModel-api/src/com/intellij/openapi/roots/ProjectRootManager.java)
+[ProjectRootManager.java](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/projectModel-api/src/com/intellij/openapi/roots/ProjectRootManager.java)
 like the following example shows
 
 ```java

@@ -1,5 +1,5 @@
 <idea-plugin version="2">
-  <id>com.yourcompany.unique.plugin.id</id>
+  <id>com.simpleplugin.unique.plugin.id</id>
   <name>Simple</name>
   <version>1.0</version>
   <vendor email="support@yourcompany.com" url="http://www.yourcompany.com">YourCompany</vendor>
@@ -40,7 +40,7 @@
     <!-- Add your extensions here -->
       <fileTypeFactory implementation="com.simpleplugin.SimpleFileTypeFactory"/>
       <lang.parserDefinition language="Simple" implementationClass="com.simpleplugin.SimpleParserDefinition"/>
-      <lang.syntaxHighlighterFactory key="Simple" implementationClass="com.simpleplugin.SimpleSyntaxHighlighterFactory"/>
+      <lang.syntaxHighlighterFactory key="Simple" language="Simple" implementationClass="com.simpleplugin.SimpleSyntaxHighlighterFactory"/>
       <colorSettingsPage implementation="com.simpleplugin.SimpleColorSettingsPage"/>
       <annotator language="JAVA" implementationClass="com.simpleplugin.SimpleAnnotator"/>
       <codeInsight.lineMarkerProvider language="JAVA" implementationClass="com.simpleplugin.SimpleLineMarkerProvider"/>
@@ -55,5 +55,6 @@
       <codeStyleSettingsProvider implementation="com.simpleplugin.SimpleCodeStyleSettingsProvider"/>
       <langCodeStyleSettingsProvider implementation="com.simpleplugin.SimpleLanguageCodeStyleSettingsProvider"/>
       <lang.commenter language="Simple" implementationClass="com.simpleplugin.SimpleCommenter"/>
+      <todoIndexer filetype="Simple file" implementationClass="com.simpleplugin.SimpleTodoIndexer"/>
   </extensions>
 </idea-plugin>

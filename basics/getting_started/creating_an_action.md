@@ -78,9 +78,12 @@ IntelliJ IDEA provides the New Action wizard that suggests a simplified way of c
 Note that you can use this wizard only to add a new action to an existing action group on the main menu or toolbar. If you want to create a new action group, and then add an action to this group, follow instructions earlier in this document.
 
 **To create and register an action with the New Action wizard**
+
 1. In your project, on the context menu of the destination package click **New** or press **Alt + Insert**.
 2. On the **New** menu, click **Action**.
+
 ![New Action Template](img/new_action_template.png)
+
 3. On the **New Action** page that opens, fill in the following fields, and then click **OK**:
 
 *  **Action ID**: Enter the unique ID of the action. Recommended format: <Plugin name>.<ID>

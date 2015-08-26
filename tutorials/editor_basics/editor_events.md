@@ -2,8 +2,8 @@
 title: 3. Handling Editor Events
 ---
 
-The following set of tutorials is meant to be an introduction to actions activated by editor events
-IntelliJ IDEA SDK provides a set of embedded mechanisms for handling events related to the Editor.
+The following set of tutorials is meant to be an introduction to actions activated by editor events.
+The IntelliJ Platform SDK provides a set of callbacks for handling events related to the Editor.
 
 [Source code](https://github.com/JetBrains/intellij-sdk-docs/tree/master/code_samples/editor_basics)
 

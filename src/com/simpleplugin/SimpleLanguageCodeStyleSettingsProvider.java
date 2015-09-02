@@ -19,8 +19,6 @@ public class SimpleLanguageCodeStyleSettingsProvider extends LanguageCodeStyleSe
             consumer.renameStandardOption("SPACE_AROUND_ASSIGNMENT_OPERATORS", "Separator");
         } else if (settingsType == SettingsType.BLANK_LINES_SETTINGS) {
             consumer.showStandardOptions("KEEP_BLANK_LINES_IN_CODE");
-        } else if (settingsType == SettingsType.WRAPPING_AND_BRACES_SETTINGS) {
-            consumer.showStandardOptions("KEEP_LINE_BREAKS");
         }
     }
 
@@ -29,6 +27,9 @@ public class SimpleLanguageCodeStyleSettingsProvider extends LanguageCodeStyleSe
         return "# You are reading the \".properties\" entry.\n" +
                 "! The exclamation mark can also mark text as comments.\n" +
                 "website = http://en.wikipedia.org/\n" +
+                "\n" +
+                "\n" +
+                "\n" +
                 "language = English\n" +
                 "# The backslash below tells the application to continue reading\n" +
                 "# the value onto the next line.\n" +

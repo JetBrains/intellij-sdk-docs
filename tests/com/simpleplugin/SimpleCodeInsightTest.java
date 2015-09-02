@@ -2,9 +2,8 @@ package com.simpleplugin;
 
 import com.intellij.codeInsight.completion.CompletionType;
 import com.intellij.codeInsight.generation.actions.CommentByLineCommentAction;
-import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.command.CommandProcessor;
 import com.intellij.openapi.command.WriteCommandAction;
+import com.intellij.openapi.vfs.newvfs.impl.VfsRootAccess;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.codeStyle.CodeStyleManager;
 import com.intellij.psi.codeStyle.CodeStyleSettingsManager;
@@ -17,6 +16,12 @@ import java.util.Collection;
 import java.util.List;
 
 public class SimpleCodeInsightTest extends LightCodeInsightFixtureTestCase {
+    @Override
+    protected void setUp() throws Exception {
+        VfsRootAccess.SHOULD_PERFORM_ACCESS_CHECK = false; // TODO: a workaround for v15
+        super.setUp();
+    }
+
     @Override
     protected String getTestDataPath() {
         return "../SimplePlugin/testData";
@@ -38,7 +43,7 @@ public class SimpleCodeInsightTest extends LightCodeInsightFixtureTestCase {
     public void testFormatter() {
         myFixture.configureByFiles("FormatterTestData.simple");
         CodeStyleSettingsManager.getSettings(getProject()).SPACE_AROUND_ASSIGNMENT_OPERATORS = true;
-        CodeStyleSettingsManager.getSettings(getProject()).KEEP_BLANK_LINES_IN_CODE = 1;
+        CodeStyleSettingsManager.getSettings(getProject()).KEEP_BLANK_LINES_IN_CODE = 2;
         new WriteCommandAction.Simple(getProject()) {
             @Override
             protected void run() throws Throwable {

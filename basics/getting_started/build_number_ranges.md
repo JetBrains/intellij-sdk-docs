@@ -123,7 +123,7 @@ The following branch numbers are used for IntelliJ-Platform-based products and b
 * branch 139 - IntelliJ IDEA 14, WebStorm 9, PyCharm 4, PhpStorm 8, RubyMine 7
 
 
-* branch 141 - IntelliJ IDEA 14.1, WebStorm 10, PyCharm 4.1
+* branch 141 - IntelliJ IDEA 14.1, WebStorm 10, PyCharm 4.1, Android Studio 1.3
 
 ---
 

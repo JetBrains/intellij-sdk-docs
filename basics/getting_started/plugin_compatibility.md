@@ -55,6 +55,8 @@ The following modules are only available in specific products:
 
 * *com.intellij.modules.cidr.debugger* \- AppCode, CLion, RubyMotion
 
+* *com.intellij.modules.androidstudio* \- Android Studio
+
 PhpStorm does not have any modules specific to itself, but it includes the PHP plugin, which you can also use as a dependency: *com.jetbrains.php*
 
 You can also specify optional module dependencies. 

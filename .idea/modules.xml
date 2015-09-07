@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/intellij-sdk-docs.iml" filepath="$PROJECT_DIR$/.idea/intellij-sdk-docs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/code_samples/simple_language_plugin/simple_language_plugin.iml" filepath="$PROJECT_DIR$/code_samples/simple_language_plugin/simple_language_plugin.iml" />
     </modules>
   </component>
 </project>

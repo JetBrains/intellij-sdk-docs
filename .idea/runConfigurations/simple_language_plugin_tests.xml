@@ -1,15 +1,9 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="Tests" type="JUnit" factoryName="JUnit">
-    <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-      <pattern>
-        <option name="PATTERN" value="com.simpleplugin.*" />
-        <option name="ENABLED" value="true" />
-      </pattern>
-    </extension>
-    <module name="SimplePlugin" />
+  <configuration default="false" name="simple_language_plugin_tests" type="JUnit" factoryName="JUnit">
+    <module name="simple_language_plugin" />
     <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
     <option name="ALTERNATIVE_JRE_PATH" value="" />
-    <option name="PACKAGE_NAME" value="com.simpleplugin" />
+    <option name="PACKAGE_NAME" />
     <option name="MAIN_CLASS_NAME" value="" />
     <option name="METHOD_NAME" value="" />
     <option name="TEST_OBJECT" value="directory" />
@@ -19,13 +13,11 @@
     <option name="ENV_VARIABLES" />
     <option name="PASS_PARENT_ENVS" value="true" />
     <option name="TEST_SEARCH_SCOPE">
-      <value defaultName="moduleWithDependencies" />
+      <value defaultName="singleModule" />
     </option>
     <envs />
-    <dir value="$PROJECT_DIR$/tests" />
+    <dir value="$PROJECT_DIR$/code_samples/simple_language_plugin/tests" />
     <patterns />
-    <RunnerSettings RunnerId="Run" />
-    <ConfigurationWrapper RunnerId="Run" />
     <method />
   </configuration>
 </component>

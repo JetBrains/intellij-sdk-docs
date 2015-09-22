@@ -74,6 +74,7 @@
       * [XML DOM API](reference_guide/frameworks_and_external_apis/xml_dom_api.md)
       * [Spring API](reference_guide/frameworks_and_external_apis/spring_api.md)
       * [External Builder API and Plugins](reference_guide/frameworks_and_external_apis/external_builder_api.md)
+      * [External system integration](reference_guide/frameworks_and_external_apis/external_system_integration.md)
     * [VCS Integration Plugins](reference_guide/vcs_integration_for_plugins.md)
     * [Localization Guide](reference_guide/localization_guide.md)
     * [Messaging Infrastructure](reference_guide/messaging_infrastructure.md)

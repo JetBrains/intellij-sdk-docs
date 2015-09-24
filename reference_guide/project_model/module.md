@@ -3,7 +3,7 @@ title: Module
 ---
 A module is a discrete unit of functionality that can be run, tested, and debugged independently.
 Modules includes such things as source code, build scripts, unit tests, deployment descriptors, etc.
-In the project, each module can use a specific SDK or inherit SDK defined on the project level (see the SDK section later in this document).
+In the project, each module can use a specific SDK or inherit SDK defined on the project level (see the [SDK](sdk.md) section later in this document).
 A module can depend on other modules of the project.
 
 ## Getting Current Module
@@ -16,7 +16,7 @@ Module module = ProjectRootManager.getInstance(project).getFileIndex().getModule
 
 
 ## Accessing Module Roots
-Information about model roots can be accessed via the class
+Information about module roots can be accessed via the class
 [ModuleRootManager.java](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/projectModel-api/src/com/intellij/openapi/roots/ModuleRootManager.java),
 for example, an instance of
 [ModuleFileIndex.java](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/projectModel-api/src/com/intellij/openapi/roots/ModuleFileIndex.java)
@@ -30,11 +30,8 @@ ModuleRootManager.getInstance(currentModule).getFileIndex()
 
 ### Checking Belonging to a Module Source Root
 
-To check if a virtual file or directory belongs to a module source root, use the 
-`ProjectFileIndex.getSourceRootForFile` 
-method. 
+To check if a virtual file or directory belongs to a module source root, use the `ProjectFileIndex.getSourceRootForFile` method.
 This method returns null if the file or directory does not belong to any source root of modules in the project.
-
 
 ```java
 VirtualFile moduleSourceRoot = ProjectRootManager.getInstance(project).getFileIndex().getSourceRootForFile(virtualFileOrDirectory);

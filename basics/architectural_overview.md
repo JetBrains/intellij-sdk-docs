@@ -5,7 +5,7 @@ title: Architectural Overview
 This topic describes the architecture of IntelliJ Platform from a plugin developer's point of view. It is organized in a task-based manner to answer specific questions like "what can I do with this object?", "how do I get to this object?" and so on.
 
 Before proceeding please make sure you're familiar with the basic concepts of IntelliJ Platform plugin development. If not, consider starting with the live demo and tutorials at 
-[http://www.jetbrains.com/idea/plugins/index.html](http://www.jetbrains.com/idea/plugins/index.html) 
+[www.jetbrains.com/idea/plugins/](http://www.jetbrains.com/idea/plugins/)
 and then returning to this document.
 
 The following subjects are covered:

@@ -30,4 +30,5 @@ This is done by implementing the `SafeDeleteProcessorDelegate` interface.
 
 **Example**:
 [SafeDeleteProcessorDelegate](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/plugins/properties/src/com/intellij/lang/properties/refactoring/PropertiesFilesSafeDeleteProcessor.java)
-implementation for a .properties file
+implementation for
+[Properties language plugin](https://github.com/JetBrains/intellij-community/tree/master/plugins/properties)

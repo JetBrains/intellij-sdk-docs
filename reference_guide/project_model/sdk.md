@@ -12,9 +12,9 @@ and
 [Configuring Global, Project and Module SDKs](https://www.jetbrains.com/idea/help/configuring-global-project-and-module-sdks.html)
 in IntelliJ IDEA Web Help.
 
-### Getting Project Sdk Information
+### Getting Project SDK Information
 
-Main information about the project Sdk can be accessed via
+Main information about the project SDK can be accessed via
 [ProjectRootManager.java](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/projectModel-api/src/com/intellij/openapi/roots/ProjectRootManager.java)
 like the following example shows
 

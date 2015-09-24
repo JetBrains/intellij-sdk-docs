@@ -29,6 +29,6 @@ section.
 [DataContext](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/DataContext.java)
 
 **Related topics:**
-[Action System](/tutorials/action_system/action_system.md)
+[Action System](/tutorials/action_system.md)
 
 

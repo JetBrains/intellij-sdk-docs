@@ -25,7 +25,7 @@ Depending on the logical and functional requirements to the project, you can cre
 
 #### Module
 
-A _module_ is a discrete unit of functionality that can be run, tested, and debugged independently. Modules includes such things as source code, build scripts, unit tests, deployment descriptors, etc. In the project, each module can use a specific SDK or inherit SDK defined on the project level (see the SDK section later in this document). A module can depend on other modules of the project.
+A _module_ is a discrete unit of functionality that can be run, tested, and debugged independently. Modules includes such things as source code, build scripts, unit tests, deployment descriptors, etc. In the project, each module can use a specific SDK or inherit SDK defined on the project level (see the [SDK](/reference_guide/project_model/sdk.html) section later in this document). A module can depend on other modules of the project.
 
 #### Library
 
@@ -102,7 +102,7 @@ To work with projects and project files, you can use the following classes and i
 
 Note that you don't need to access project files directly to load or save settings. 
 See 
-[Persisting State of Components](http://www.jetbrains.org/intellij/sdk/docs/basics/persisting_state_of_components.html) 
+[Persisting State of Components](persisting_state_of_components.md)
 for more information.
 
 Note that hereafter, the `project` variable is of the `Project` type. 
@@ -139,10 +139,10 @@ Use the `ProjectRootManager.getFileIndex()` method. For example:
 ##### How do I get a module to which a file belongs?
 
 To determine a module in the project in question to which the specified 
-[virtual file](http://www.jetbrains.org/intellij/sdk/docs/basics/architectural_overview/virtual_file.html)
+[virtual file](architectural_overview/virtual_file.md)
 belongs, use the `ProjectFileIndex.getModuleForFile(virtualFile)` method:
 
-```
+```java
 Module module = ProjectRootManager.getInstance(project).getFileIndex().getModuleForFile(virtualFile);
 ```
 
@@ -150,15 +150,18 @@ Note that this method returns `null` if the file does not belong to any module.
 
 You can also use the `ProjectFileIndex.getContentRootForFile` method to get the module content root to which the specified file or directory belongs:
 
-`VirtualFile moduleContentRoot = ProjectRootManager.getInstance(project).getFileIndex().getContentRootForFile(virtualFileorDirectory);`
-
+```java
+VirtualFile moduleContentRoot = ProjectRootManager.getInstance(project).getFileIndex().getContentRootForFile(virtualFileorDirectory);
+```
 
 ##### How do I get the module source root or library source root to which the specified file or directory belongs?
 
 Use the `ProjectFileIndex.getSourceRootForFile` method. For example:
 
-```VirtualFile moduleSourceRoot = ProjectRootManager.getInstance(project).getFileIndex().getSourceRootForFile(virtualFileorDirectory);
+```java
+VirtualFile moduleSourceRoot = ProjectRootManager.getInstance(project).getFileIndex().getSourceRootForFile(virtualFileorDirectory);
 ```
+
 Note that this method returns `null` if the file or directory does not belong to any source root of modules in the project.
 
 ##### How do I check whether a file or directory is related to the project libraries?
@@ -271,7 +274,7 @@ String moduleName = module == null ? "Module not found" : module.getName();
 ```
 
 * To get the project module to which the specified 
-[PSI element](http://www.jetbrains.org/intellij/sdk/docs/basics/architectural_overview/psi_elements.html)
+[PSI element](architectural_overview/psi_elements.md)
 belongs, use the `ModuleUtil.findModuleForPsiElement(psiElement)` method.
 
 #### How do I work with libraries available within a module?

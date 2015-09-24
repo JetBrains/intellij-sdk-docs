@@ -3,7 +3,7 @@ title: Run Configurations
 ---
 
 
-Run configurations allow users to run a certain type of external processes from within the IDE, i.e a script, an application, a server, etc.
+Run configurations allow users to run a certain type of external processes from within the IDE, i.e. a script, an application, a server, etc.
 You can provide UI for the user to specify execution options, as well as an option to create run configuration based on a specific location in the source code.
 
 

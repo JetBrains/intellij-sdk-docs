@@ -67,10 +67,9 @@ Choose the project root directory.
 
 ![Download Flex](img/download_jflex.png)
 
-After that the IDE will generates two classes:
-*com.simpleplugin.SimpleLexer* and *com.simpleplugin.SimpleLexerAdapter*.
+After that the IDE will generate lexer: *com.simpleplugin.SimpleLexer*.
 
-Make sure you've added the corresponding changes to the *com.simpleplugin.SimpleLexerAdapter* class:
+### 4.3. Define an adapter
 
 ```java
 package com.simpleplugin;
@@ -86,7 +85,7 @@ public class SimpleLexerAdapter extends FlexAdapter {
 }
 ```
 
-### 4.3 Define a file
+### 4.4. Define a file
 
 ```java
 package com.simpleplugin.psi;
@@ -123,7 +122,7 @@ public class SimpleFile extends PsiFileBase {
 }
 ```
 
-### 4.4. Define a parser definition
+### 4.5. Define a parser definition
 
 ```java
 package com.simpleplugin;
@@ -132,7 +131,6 @@ import com.intellij.lang.ASTNode;
 import com.intellij.lang.Language;
 import com.intellij.lang.ParserDefinition;
 import com.intellij.lang.PsiParser;
-import com.intellij.lexer.FlexAdapter;
 import com.intellij.lexer.Lexer;
 import com.intellij.openapi.project.Project;
 import com.intellij.psi.FileViewProvider;
@@ -146,8 +144,6 @@ import com.simpleplugin.psi.SimpleFile;
 import com.simpleplugin.psi.SimpleTypes;
 import org.jetbrains.annotations.NotNull;
 
-import java.io.Reader;
-
 public class SimpleParserDefinition implements ParserDefinition{
     public static final TokenSet WHITE_SPACES = TokenSet.create(TokenType.WHITE_SPACE);
     public static final TokenSet COMMENTS = TokenSet.create(SimpleTypes.COMMENT);
@@ -157,7 +153,7 @@ public class SimpleParserDefinition implements ParserDefinition{
     @NotNull
     @Override
     public Lexer createLexer(Project project) {
-        return new FlexAdapter(new SimpleLexer((Reader) null));
+        return new SimpleLexerAdapter();
     }
 
     @NotNull
@@ -200,13 +196,13 @@ public class SimpleParserDefinition implements ParserDefinition{
 }
 ```
 
-### 4.5. Register the parser definition
+### 4.6. Register the parser definition
 
 ```xml
 <lang.parserDefinition language="Simple" implementationClass="com.simpleplugin.SimpleParserDefinition"/>
 ```
 
-### 4.6. Run the project
+### 4.7. Run the project
 
 Create a properties file with the following content:
 

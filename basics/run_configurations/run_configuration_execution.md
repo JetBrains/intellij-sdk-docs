@@ -25,7 +25,7 @@ The standard execution of a run action goes through the following steps:
 The
 [Executor](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/execution/Executor.java)
 interface describes a specific way of executing any possible run configuration.
-The three default executors provided by the IntelliJ Platform by default are _Run_, _Debug_ and (in IntelliJ IDEA Ultimate and certain platform-based IDEs) _Run with Coverage_.
+The three default executors provided by the IntelliJ Platform by default are _Run_, _Debug_ and _Run with Coverage_.
 Each executor gets its own toolbar button, which starts the selected run configuration using this executor, and its own context menu item for starting a configuration using this executor.
 
 As a plugin developer, you normally don't need to implement the _Executor_ interface.
@@ -82,7 +82,7 @@ and
 ## Starting a Run Configuration from Code
 
 If you have an existing run configuration that you need to execute, the easiest way to do so is to use
-[ProgramRunnerUtil.executeConfiguration](https://github.com/JetBrains/intellij-community/blob/master/platform/lang-impl/src/com/intellij/execution/ProgramRunnerUtil.java#L110).
+[ProgramRunnerUtil.executeConfiguration()](https://github.com/JetBrains/intellij-community/blob/master/platform/lang-impl/src/com/intellij/execution/ProgramRunnerUtil.java#L110).
 The method takes a Project, a RunnerAndConfigurationSettings, as well as an Executor.
 To get the RunnerAndConfigurationSettings for an existing configuration, you can use, for example, `RunManager.getConfigurationSettings(ConfigurationType)`.
 As the last parameter, you normally pass either `DefaultRunExecutor.getRunExecutorInstance()` or `DefaultDebugExecutor.getDebugExecutorInstance()`.

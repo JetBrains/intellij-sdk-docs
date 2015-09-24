@@ -13,7 +13,6 @@ package com.simpleplugin;
 import com.intellij.lang.cacheBuilder.DefaultWordsScanner;
 import com.intellij.lang.cacheBuilder.WordsScanner;
 import com.intellij.lang.findUsages.FindUsagesProvider;
-import com.intellij.lexer.FlexAdapter;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiNamedElement;
 import com.intellij.psi.tree.TokenSet;
@@ -22,11 +21,9 @@ import com.simpleplugin.psi.SimpleTypes;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.io.Reader;
-
 public class SimpleFindUsagesProvider implements FindUsagesProvider {
     private static final DefaultWordsScanner WORDS_SCANNER =
-            new DefaultWordsScanner(new FlexAdapter(new SimpleLexer((Reader) null)),
+            new DefaultWordsScanner(new SimpleLexerAdapter(),
                     TokenSet.create(SimpleTypes.KEY), TokenSet.create(SimpleTypes.COMMENT), TokenSet.EMPTY);
 
     @Nullable

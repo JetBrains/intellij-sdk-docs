@@ -16,7 +16,8 @@ interface, which is registered in the `com.intellij.lang.psiStructureViewFactory
 
 **Example:**
 [PsiStructureViewFactory](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/plugins/properties/src/com/intellij/lang/properties/structureView/PropertiesStructureViewBuilderFactory.java)
-for .properties files
+for
+[Properties language plugin](https://github.com/JetBrains/intellij-community/tree/master/plugins/properties)
 
 
 To reuse the *IntelliJ Platform* implementation of the
@@ -32,7 +33,8 @@ and by overriding methods of this subclass it customizes the structure view for 
 
 **Example**:
 [StructureViewModel](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/structureView/PropertiesFileStructureViewModel.java)
-for .properties files
+for
+[Properties language plugin](https://github.com/JetBrains/intellij-community/tree/master/plugins/properties)
 
 
 The main method to override is `getRoot()`, which returns the instance of a class implementing the
@@ -51,5 +53,5 @@ The latter method returns an array of `PsiElement`\-derived classes which can be
 
 **Example:**
 [StructureViewElement](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/structureView/PropertiesStructureViewElement.java)
-for a
+for
 [Properties language plugin](https://github.com/JetBrains/intellij-community/tree/master/plugins/properties/)

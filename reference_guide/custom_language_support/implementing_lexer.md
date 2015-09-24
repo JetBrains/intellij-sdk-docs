@@ -69,7 +69,7 @@ Lexers must never abort prematurely because of an invalid character.
 **Example**:
 [Lexer](https://github.com/JetBrains/intellij-community/blob/master/plugins/properties/src/com/intellij/lang/properties/parsing/Properties.flex)
 definition for
-[Properties language plugin](https://github.com/JetBrains/intellij-community/blob/master/plugins/properties/src/com/intellij/lang/properties/)
+[Properties language plugin](https://github.com/JetBrains/intellij-community/tree/master/plugins/properties)
 
 
 Types of tokens for lexers are defined by instances of
@@ -88,7 +88,7 @@ instance should be returned every time a particular token type is encountered by
 **Example:**
 [Token types](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/plugins/properties/properties-psi-api/src/com/intellij/lang/properties/parsing/PropertiesTokenTypes.java)
 for
-[Properties language plugin](https://github.com/JetBrains/intellij-community/blob/master/plugins/properties/)
+[Properties language plugin](https://github.com/JetBrains/intellij-community/tree/master/plugins/properties)
 
 
 An important feature which can be implemented at lexer level is mixing languages within a file, for example, embedding fragments of Java code in some template language.

@@ -3,7 +3,7 @@ title: Plugin Compatibility with IntelliJ Platform Products
 ---
 
 <!--TODO link to sample_plugin file-->
-All products based on IntelliJ Platform (IntelliJ IDEA, RubyMine, WebStorm, PhpStorm, PyCharm and AppCode) share the same underlying platform API. 
+All products based on IntelliJ Platform (IntelliJ IDEA, RubyMine, WebStorm, PhpStorm, PyCharm, AppCode, etc.) share the same underlying platform API.
 Thus, a plugin that does not use any Java-specific functionality may be marked as compatible with these other products in addition to IntelliJ IDEA.
 This is done by specifying *module dependencies* in the `plugin.xml` file.
 
@@ -20,7 +20,7 @@ For example:
 ```
 
 <!--TODO link to sample_plugin file--> 
-If a plugin does not include any module dependency tags in its `plugin.xml`, it's assumed to be a legacy plugin and is loaded only in a IntelliJ-Platform-based product.
+If a plugin does not include any module dependency tags in its `plugin.xml`, it's assumed to be a legacy plugin and is loaded only in IntelliJ IDEA.
 
 <!--TODO link to sample_plugin file--> 
 If the `plugin.xml` includes one or more such tags, the plugin is loaded if the product contains all of the modules on which the plugin depends.
@@ -68,7 +68,7 @@ If your plugin works with all products but provides some Java-specific functiona
 </depends>
 ```
 
-Before marking a plugin as compatible with all products, you should verify that it doesn't use any APIs that are specific to IntelliJ Platform. To do so, create an IntelliJ Platform SDK pointing to an installation of RubyMine/PyCharm/etc., compile your plugin against that SDK, and verify that everything compiles.
+Before marking a plugin as compatible with all products, you should verify that it doesn't use any APIs that are specific to IntelliJ IDEA. To do so, create an IntelliJ Platform SDK pointing to an installation of RubyMine/PyCharm/etc., compile your plugin against that SDK, and verify that everything compiles.
 
 The 
 [IntelliJ plugin repository](http://plugins.jetbrains.com/)

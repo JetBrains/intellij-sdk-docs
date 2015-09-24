@@ -32,7 +32,7 @@ to a ResourceBundle in the
 
 
 There's a set of interfaces which can be used as a base for implementing resolve support, namely the
-[PsiScopeProcessor interface](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/core-api/src/com/intellij/psi/scope/PsiScopeProcessor.java) and the
+[PsiScopeProcessor](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/core-api/src/com/intellij/psi/scope/PsiScopeProcessor.java) interface and the
 [PsiElement.processDeclarations()](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/core-api/src/com/intellij/psi/PsiElement.java)
 method.
 These interfaces have a number of extra complexities which are not necessary for most custom languages (like support for substituting Java generics types), but they are required if the custom language can have references to Java code.

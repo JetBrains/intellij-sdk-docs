@@ -52,7 +52,7 @@ Optionally, application-level component's implementation class may implement the
 interface.
 An application component that has no dependencies should have a constructor with no parameters which will be used for its instantiation.
 If an application component depends on other application components, it can specify these components as constructor parameters. IntelliJ IDEA will ensure that the components are instantiated in the correct order to satisfy the dependencies.
-Note that application-level components must be registered in the `<application-components>` section of the plugin.xml file (see Plugin Configuration File below).
+Note that application-level components must be registered in the `<application-components>` section of the plugin.xml file (see [Plugin Configuration File](plugin_configuration_file.md)).
 
 #### Quick creation of application components
 
@@ -81,7 +81,7 @@ The constructor of a project-level component can have a parameter of the
 type, if it needs the project instance.
 It can also specify other application-level or project-level components as parameters, if it depends on those components.
 
-Note that project-level components must be registered in the `<project-components>` section of the *plugin.xml* file (see Plugin Configuration File below).
+Note that project-level components must be registered in the `<project-components>` section of the *plugin.xml* file (see [Plugin Configuration File](plugin_configuration_file.md)).
 
 #### Quick creation of project components
 
@@ -110,7 +110,7 @@ interface.
 The constructor of a module-level component can have a parameter of the Module type, if it needs the module instance.
 It can also specify other application-level, project-level or module-level components as parameters, if it depends on those components.
 
-Note that module-level components must be registered in the `<module-components>` section of the `plugin.xml` file (see Plugin Configuration File below).
+Note that module-level components must be registered in the `<module-components>` section of the `plugin.xml` file (see [Plugin Configuration File](plugin_configuration_file.md)).
 
 #### Quick creation of module components
 

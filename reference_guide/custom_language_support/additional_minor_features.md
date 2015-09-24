@@ -44,7 +44,7 @@ To support smart/semantic *Join Lines* see
 *Semantic highlight usages* (e.g. exit points) can be achieved using
 [HighlightUsagesHandlerFactory](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-impl/src/com/intellij/codeInsight/highlighting/HighlightUsagesHandlerFactory.java).
 
-*View\|Parameter Info* is provided via
+*View \| Parameter Info* is provided via
 [ParameterInfoHandler](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/lang/parameterInfo/ParameterInfoHandler.java)
 (extension point `codeInsight.parameterInfo`).
 
@@ -67,6 +67,6 @@ to use, possibly depending on the passed in
 [PsiElement](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/core-api/src/com/intellij/psi/PsiElement.java)
 (or `EMPTY_TOKENIZER` for no spellchecking).
 
-New in 13: user-configurable *reference injections* can be provided via `referenceInjector` extension point (
+**New in IntelliJ IDEA 13**: user-configurable *reference injections* can be provided via `referenceInjector` extension point (
 [ReferenceInjector](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/psi/injection/ReferenceInjector.java)
 ) (IntelliLang plugin required).

@@ -51,6 +51,7 @@ package com.simpleplugin;
 import com.intellij.codeInsight.intention.impl.BaseIntentionAction;
 import com.intellij.lang.ASTNode;
 import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.command.WriteCommandAction;
 import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.fileChooser.FileChooser;
 import com.intellij.openapi.fileChooser.FileChooserDescriptor;
@@ -61,12 +62,17 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.pom.Navigatable;
 import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiManager;
+import com.intellij.psi.search.FileTypeIndex;
+import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.util.IncorrectOperationException;
+import com.intellij.util.indexing.FileBasedIndex;
 import com.simpleplugin.psi.SimpleElementFactory;
 import com.simpleplugin.psi.SimpleFile;
 import com.simpleplugin.psi.SimpleProperty;
 import com.simpleplugin.psi.SimpleTypes;
 import org.jetbrains.annotations.NotNull;
+
+import java.util.Collection;
 
 class CreatePropertyQuickFix extends BaseIntentionAction {
     private String key;
@@ -97,28 +103,38 @@ class CreatePropertyQuickFix extends BaseIntentionAction {
         ApplicationManager.getApplication().invokeLater(new Runnable() {
             @Override
             public void run() {
-                final FileChooserDescriptor descriptor = FileChooserDescriptorFactory.createSingleFileDescriptor(SimpleFileType.INSTANCE);
-                descriptor.setRoots(project.getBaseDir());
-                final VirtualFile file = FileChooser.chooseFile(descriptor, project, null);
-                if (file != null) {
-                    ApplicationManager.getApplication().runWriteAction(new Runnable() {
-                        @Override
-                        public void run() {
-                            SimpleFile simpleFile = (SimpleFile) PsiManager.getInstance(project).findFile(file);
-                            ASTNode lastChildNode = simpleFile.getNode().getLastChildNode();
-                            if (lastChildNode != null && !lastChildNode.getElementType().equals(SimpleTypes.CRLF)) {
-                                simpleFile.getNode().addChild(SimpleElementFactory.createCRLF(project).getNode());
-                            }
-                            SimpleProperty property = SimpleElementFactory.createProperty(project, key, "");
-                            simpleFile.getNode().addChild(property.getNode());
-                            ((Navigatable) property.getLastChild().getNavigationElement()).navigate(true);
-                            FileEditorManager.getInstance(project).getSelectedTextEditor().getCaretModel().
-                                    moveCaretRelatively(2, 0, false, false, false);
-                        }
-                    });
+                Collection<VirtualFile> virtualFiles = FileBasedIndex.getInstance().getContainingFiles(FileTypeIndex.NAME, SimpleFileType.INSTANCE,
+                        GlobalSearchScope.allScope(project));
+                if (virtualFiles.size() == 1) {
+                    createProperty(project, virtualFiles.iterator().next());
+                } else {
+                    final FileChooserDescriptor descriptor = FileChooserDescriptorFactory.createSingleFileDescriptor(SimpleFileType.INSTANCE);
+                    descriptor.setRoots(project.getBaseDir());
+                    final VirtualFile file = FileChooser.chooseFile(descriptor, project, null);
+                    if (file != null) {
+                        createProperty(project, file);
+                    }
                 }
             }
         });
+    }
+
+    private void createProperty(final Project project, final VirtualFile file) {
+        new WriteCommandAction.Simple(project) {
+            @Override
+            public void run() {
+                SimpleFile simpleFile = (SimpleFile) PsiManager.getInstance(project).findFile(file);
+                ASTNode lastChildNode = simpleFile.getNode().getLastChildNode();
+                if (lastChildNode != null && !lastChildNode.getElementType().equals(SimpleTypes.CRLF)) {
+                    simpleFile.getNode().addChild(SimpleElementFactory.createCRLF(project).getNode());
+                }
+                SimpleProperty property = SimpleElementFactory.createProperty(project, key, "");
+                simpleFile.getNode().addChild(property.getNode());
+                ((Navigatable) property.getLastChild().getNavigationElement()).navigate(true);
+                FileEditorManager.getInstance(project).getSelectedTextEditor().getCaretModel().
+                        moveCaretRelatively(2, 0, false, false, false);
+            }
+        }.execute();
     }
 }
 ```
@@ -131,7 +147,7 @@ package com.simpleplugin;
 import com.intellij.lang.annotation.Annotation;
 import com.intellij.lang.annotation.AnnotationHolder;
 import com.intellij.lang.annotation.Annotator;
-import com.intellij.openapi.editor.SyntaxHighlighterColors;
+import com.intellij.openapi.editor.DefaultLanguageHighlighterColors;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.TextRange;
 import com.intellij.psi.PsiElement;
@@ -155,7 +171,7 @@ public class SimpleAnnotator implements Annotator {
                     TextRange range = new TextRange(element.getTextRange().getStartOffset() + 7,
                             element.getTextRange().getStartOffset() + 7);
                     Annotation annotation = holder.createInfoAnnotation(range, null);
-                    annotation.setTextAttributes(SyntaxHighlighterColors.LINE_COMMENT);
+                    annotation.setTextAttributes(DefaultLanguageHighlighterColors.LINE_COMMENT);
                 } else if (properties.size() == 0) {
                     TextRange range = new TextRange(element.getTextRange().getStartOffset() + 8,
                             element.getTextRange().getEndOffset());

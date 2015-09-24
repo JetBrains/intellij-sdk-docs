@@ -26,7 +26,7 @@ OrderEntry orderEntry : fileIndex.getOrderEntriesForFile(virtualFile));
     
 ## Checking Belonging to a Library
 
-The ProjectFileIndex interface implements a number of methods you can use to check whether the specified file belongs to the project library classes or library sources.
+The [ProjectFileIndex](https://github.com/JetBrains/intellij-community/blob/master/platform/projectModel-api/src/com/intellij/openapi/roots/ProjectFileIndex.java) interface implements a number of methods you can use to check whether the specified file belongs to the project library classes or library sources.
 You can use the following methods:
 
 * To check if a specified virtual file is a compiled class file use

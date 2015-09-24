@@ -44,7 +44,8 @@ at all.
 
 **Example**:
 [RenameHandler](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/plugins/properties/src/com/intellij/lang/properties/refactoring/rename/ResourceBundleFromEditorRenameHandler.java)
-for renaming a resource bundle
+for renaming a resource bundle in the
+[Properties language plugin](https://github.com/JetBrains/intellij-community/tree/master/plugins/properties)
 
 
 If you're fine with the standard UI but need to extend the default logic of renaming, you can provide an implementation of the

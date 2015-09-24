@@ -70,8 +70,7 @@ The return value of `createIndentOptions()` determines the default indent size.
 
 ### Rearranger
 
-**New in 12:**
-
+**New in IntelliJ IDEA 12:**
 Allows custom languages to provide user-configurable arrangement/grouping rules for element types supported by language plugin.
 Rules can be refined via modifiers and name, ordering can be applied additionally.
 Please see

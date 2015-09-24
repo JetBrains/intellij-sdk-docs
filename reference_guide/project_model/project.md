@@ -60,8 +60,8 @@ Use the ProjectRootManager.getFileIndex() method. For example:
 ProjectFileIndex projectFileIndex = ProjectRootManager.getInstance(project).getFileIndex();
 ```
 
-Note that this method returns null if the file does not belong to any module.
-You can also use the ProjectFileIndex.getContentRootForFile method to get the module content root to which the specified file or directory belongs:
+Note that this method returns `null` if the file does not belong to any module.
+You can also use the `ProjectFileIndex.getContentRootForFile()` method to get the module content root to which the specified file or directory belongs:
 
 ```java
 VirtualFile moduleContentRoot = ProjectRootManager.getInstance(project).getFileIndex().getContentRootForFile(virtualFileOrDirectory);

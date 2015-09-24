@@ -49,7 +49,7 @@ The `VirtualFileManager.addVirtualFileListener()` method allows you to receive n
 To provide an alternative file system implementation (for example, an FTP file system), implement the
 [VirtualFileSystem](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/core-api/src/com/intellij/openapi/vfs/VirtualFileSystem.java)
 class (most likely you'll also need to implement `VirtualFile`), and register your implementation as an
-[application component](http://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_components.html).
+[application component](/basics/plugin_structure/plugin_components.md).
 To hook into operations performed in the local file system (for example, if you are developing a version control system integration that needs custom rename/move handling), implement the 
 [LocalFileOperationsHandler](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/platform-api/src/com/intellij/openapi/vfs/LocalFileOperationsHandler.java) 
 interface and register it through the`LocalFileSystem.registerAuxiliaryFileOperationsHandler` method.
@@ -57,5 +57,5 @@ interface and register it through the`LocalFileSystem.registerAuxiliaryFileOpera
 #### What are the rules for working with VFS?
 
 See
-[IntelliJ Platform Virtual File System](http://www.jetbrains.org/intellij/sdk/docs/basics/virtual_file_system.html)
+[IntelliJ Platform Virtual File System](/basics/virtual_file_system.md)
 for a detailed description of the VFS architecture and usage guidelines.

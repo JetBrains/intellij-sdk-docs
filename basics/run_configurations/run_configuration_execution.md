@@ -82,7 +82,7 @@ and
 ## Starting a Run Configuration from Code
 
 If you have an existing run configuration that you need to execute, the easiest way to do so is to use
-[ProgramRunnerUtil.executeConfiguration()](https://github.com/JetBrains/intellij-community/blob/master/platform/lang-impl/src/com/intellij/execution/ProgramRunnerUtil.java).
+[ProgramRunnerUtil.executeConfiguration()](https://github.com/JetBrains/intellij-community/blob/master/platform/lang-impl/src/com/intellij/execution/ProgramRunnerUtil.java#L110).
 The method takes a Project, a RunnerAndConfigurationSettings, as well as an Executor.
 To get the RunnerAndConfigurationSettings for an existing configuration, you can use, for example, `RunManager.getConfigurationSettings(ConfigurationType)`.
 As the last parameter, you normally pass either `DefaultRunExecutor.getRunExecutorInstance()` or `DefaultDebugExecutor.getDebugExecutorInstance()`.

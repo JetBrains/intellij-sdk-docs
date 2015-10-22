@@ -45,7 +45,7 @@ git clone https://github.com/JetBrains/intellij-sdk-docs.git
 
 The site uses JetBrains custom web templates.
 To enable custom templates locally you need to initialize repository submodules.
-Run the command below to do so.
+Run the following command in the checkout directory to do so.
  
 ```bash
 git submodule update --init --remote

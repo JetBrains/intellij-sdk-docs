@@ -51,8 +51,14 @@ See `SpringManager#getSpringModel(s)...` and `com.intellij.spring.model.utils.Sp
 ##### Contribute implicit model(s)
 See `com.intellij.spring.SpringModelProvider` to provide implicit filesets (e.g. provided by another framework in specific configuration file).
 
+_Version 15_
+See `com.intellij.spring.facet.SpringAutodetectedFileSet` for a convenient base class.
+
 ##### Contribute implicit beans
 See `com.intellij.spring.model.jam.CustomComponentsDiscoverer` or `com.intellij.spring.model.SpringImplicitBeansProviderBase` to provide implicit (framework-specific) beans (e.g. "servletContext" by Spring MVC).
+
+_Version 15_
+`CustomComponentsDiscoverer` has been split into `com.intellij.spring.model.custom.CustomLocalComponentsDiscoverer` and `com.intellij.spring.model.custom.CustomModuleComponentsDiscoverer` respectively.
 
 ##### Contribute custom bean scope
 _Version 14_
@@ -109,6 +115,10 @@ JamStringAttributeMeta.Single<SpringBeanPointer> ATTRIBUTE_META =
     JamAttributeMeta.singleString("attributeName",
         new SpringBeanReferenceJamConverter("fqn.to.required.class"));
 ```
+
+### spring.factories
+_Version 15_
+See `com.intellij.spring.spi.SpringSpiManager`.
 
 ### IDE features
 

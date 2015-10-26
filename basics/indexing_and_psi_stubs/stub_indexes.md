@@ -28,9 +28,9 @@ For each element type that you want to store in the stub tree, you need to perfo
 
 *  Make sure that the interface for the PSI element extends `StubBasedPsiElement` parameterized by the type of the stub interface ([example](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/plugins/properties/properties-psi-api/src/com/intellij/lang/properties/psi/Property.java)).
 
-*  Make sure that the implementation class for the PSI element extends `StubBasedPsiElementBase` parameterized by the type of the stub interface ([example](https://github.com/JetBrains/intellij-community/blob/master/plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/psi/impl/PropertyImpl.java#L45)). Provide both a constructor that accepts an ASTNode and a constructor which accepts a stub.
+*  Make sure that the implementation class for the PSI element extends `StubBasedPsiElementBase` parameterized by the type of the stub interface ([example](https://github.com/JetBrains/intellij-community/blob/master/plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/psi/impl/PropertyImpl.java#L45)). Provide both a constructor that accepts an `ASTNode` and a constructor which accepts a stub.
 
-*  Create a class which implements `IStubElementType` and is parameterized with the stub interface and the actual PSI element interface ([example](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/parsing/PropertyStubElementType.java)). Implement the createPsi() and createStub() methods for creating PSI from a stub and vice versa. Implement the serialize() and deserialize() methods for storing the data in a binary stream.
+*  Create a class which implements `IStubElementType` and is parameterized with the stub interface and the actual PSI element interface ([example](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/parsing/PropertyStubElementType.java)). Implement the `createPsi()` and `createStub()` methods for creating PSI from a stub and vice versa. Implement the `serialize()` and `deserialize()` methods for storing the data in a binary stream.
 
 *  Use the class implementing `IStubElementType` as the element type constant when parsing ([example](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/parsing/PropertiesElementTypes.java))
 
@@ -38,9 +38,9 @@ For each element type that you want to store in the stub tree, you need to perfo
 
 The following steps need to be performed only once for each language that supports stubs:
 
-*  Change the file element type for your language (the element type that you return from `ParserDefinition.getFileNodeType()`) to a class that extends IStubFileElementType.
+*  Change the file element type for your language (the element type that you return from `ParserDefinition.getFileNodeType()`) to a class that extends `IStubFileElementType`.
 
-*  In your plugin.xml, define the `<stubElementTypeHolder>` extension and specify the interface which contains the `IElementType` constants used by your language's parser ([example](https://github.com/JetBrains/intellij-community/blob/master/plugins/properties/src/META-INF/plugin.xml#L55)).
+*  In your `plugin.xml`, define the `<stubElementTypeHolder>` extension and specify the interface which contains the `IElementType` constants used by your language's parser ([example](https://github.com/JetBrains/intellij-community/blob/master/plugins/properties/src/META-INF/plugin.xml#L55)).
 
 For serializing string data, e.g. element names, in stubs, we recommend to use `StubOutputStream.writeName()` and `StubInputStream.readName()` methods.
 These methods ensure that each unique identifier is stored only once in the data stream.

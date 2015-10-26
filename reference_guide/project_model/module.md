@@ -7,13 +7,8 @@ In the project, each module can use a specific SDK or inherit SDK defined on the
 A module can depend on other modules of the project.
 
 ## Getting Current Module
-To determine a module in the project in question to which the specified virtual file belongs, use the
-ProjectFileIndex.getModuleForFile(virtualFile) method:
-
-```java
-Module module = ProjectRootManager.getInstance(project).getFileIndex().getModuleForFile(virtualFile);
-```
-
+To determine the module in the project in question to which the specified `VirtualFile` belongs use `ModuleUtilCore#findModuleForFile`.
+Use `ModuleUtilCore#findModuleForPsiElement` to find the module for a given `PsiElement`.
 
 ## Accessing Module Roots
 Information about module roots can be accessed via the class

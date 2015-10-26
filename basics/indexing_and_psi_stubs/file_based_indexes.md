@@ -13,7 +13,7 @@ The value is arbitrary data which is associated with the key in the index.
 
 *Example:* in the word index the value is a mask indicating in which context the word occurs (code, string literal or comment).
 
-In the simplest case, when we only need to know in what files some data occurs, the value has type Void and is not stored in the index.
+In the simplest case, when we only need to know in what files some data occurs, the value has type `Void` and is not stored in the index.
 
 When the index implementation indexes a file, it receives the content of a file and returns a map from the keys found in the file to the associated values.
 When you access the index, you specify the key that you're interested in and get back the list of files in which the key occurs and the value associated with each file.
@@ -33,8 +33,7 @@ The implementation of a file-based contains of the following main parts:
 *  `getIndexer()` returns the indexer class, which is is responsible for actually building a set of key/value pairs based on the file content.
 
 *  `getKeyDescriptor()` returns the key descriptor, which is responsible for comparing the keys and storing them in a serialized binary format.
-   Probably the most commonly used `KeyDescriptor` implementation is `EnumeratorStringDescriptor`  implementation.
-   It is designed for storing identifiers in an efficient way.
+   Probably the most commonly used `KeyDescriptor` implementation is `EnumeratorStringDescriptor` which is designed for storing identifiers in an efficient way.
 
 *  `getValueExternalizer()` returns the value serializer, which takes care of storing values in a serialized binary format.
 

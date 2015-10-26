@@ -2,7 +2,7 @@
 title: Plugin Extensions and Extension Points
 ---
 
-Intellij IDEA provides the concept of _extensions_ and _extension points_ that allows a plugin to interact with other plugins or with the IDEA core.
+The IntelliJ Platform provides the concept of _extensions_ and _extension points_ that allows a plugin to interact with other plugins or with the IDE itself.
 
 ## Extension Points
 
@@ -11,11 +11,11 @@ Each extension point defines a class or an interface that is allowed to access t
 
 ## Extensions
 
-If you want your plugin to extend the functionality of other plugins or the IDEA core, in the plugin, you must declare one or several _extensions_.
+If you want your plugin to extend the functionality of other plugins or the IntelliJ Platform, you must declare one or several _extensions_.
 
 ## How to Declare Extensions and Extension Points?
 
-You can declare extensions and extension points in the plugin configuration file plugin.xml, within the `<extensions>` and `<extensionPoints>` sections, respectively.
+You can declare extensions and extension points in the plugin configuration file `plugin.xml`, within the `<extensions>` and `<extensionPoints>` sections, respectively.
 
 *To declare an extension point*
 
@@ -35,8 +35,8 @@ The *interface* attribute sets an interface the plugin that contributes to the e
 The *beanClass* attribute sets a bean class that specifies one or several properties annotated with the
 [@Attribute](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/xml/dom-openapi/src/com/intellij/util/xml/Attribute.java)
 annotation.
-The plugin that contributes to the extension point will read those properties from the plugin.xml file.
-To clarify this, consider the following sample `MyBeanClass1` bean class used in the above plugin.xml file:
+The plugin that contributes to the extension point will read those properties from the `plugin.xml` file.
+To clarify this, consider the following sample `MyBeanClass1` bean class used in the above `plugin.xml` file:
 
 ```java
 public class MyBeanClass1 extends AbstractExtensionPointBean {
@@ -56,13 +56,13 @@ public class MyBeanClass1 extends AbstractExtensionPointBean {
 
 }
 ```
-Note that to declare an extension designed to access the MyExtensionPoint1 extension point, your plugin.xml file must contain the `<MyExtensionPoint1>` tag with the "key" and "implementationClass" attributes set to appropriate values (see the sample plugin.xml file below).
+Note that to declare an extension designed to access the `MyExtensionPoint1` extension point, your `plugin.xml` file must contain the `<MyExtensionPoint1>` tag with the "key" and "implementationClass" attributes set to appropriate values (see sample below).
 
 *To declare an extension*
 
 1. For the `<extensions>` element, set the *xmlns* (deprecated) or *defaultExtensionNs* attribute to one of the following values:
 
-    *  _com.intellij_, if your plugin extends the IDEA core functionality.
+    *  _com.intellij_, if your plugin extends the IntelliJ Platform core functionality.
 
     *  _ID of a plugin_, if your plugin extends a functionality of another plugin.
 
@@ -77,16 +77,17 @@ The child element name must match the name of the extension point you want the e
     [@Attribute](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/xml/dom-openapi/src/com/intellij/util/xml/Attribute.java)
     annotations in the specified bean class.
 
-To clarify this procedure, consider the following sample section of the plugin.xml file that defines two extensions designed to access the _appStarter_ and _applicationConfigurable_ extension points in the IDEA core and one extension to access the _MyExtensionPoint1_ extension point in a test plugin:
+To clarify this procedure, consider the following sample section of the plugin.xml file that defines two extensions designed to access the _appStarter_ and _applicationConfigurable_ extension points in the IntelliJ Platform and one extension to access the _MyExtensionPoint1_ extension point in a test plugin:
 
 ```xml
-<!-- Declare extensions to access extension points in the IDEA core. These extension points
+<!-- Declare extensions to access extension points in the IntelliJ Platform. These extension points
       have been declared using the "interface" attribute.
  -->
   <extensions defaultExtensionNs="com.intellij">
      <appStarter implementation="MyTestPackage.MyTestExtension1"></appStarter>
      <applicationConfigurable implementation="MyTestPackage.MyTestExtension2"></applicationConfigurable>
   </extensions>
+
  <!-- Declare extensions to access extension points in a custom plugin
       The MyExtensionPoint1 extension point has been declared using *beanClass* attribute.
  -->

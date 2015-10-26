@@ -36,6 +36,9 @@ The
 branch currently contains the code for the development version of IntelliJ IDEA 15.x.
 Source code of older releases of IntelliJ IDEA can be found in the following branches:
 
+15.0.x -
+[143](https://github.com/JetBrains/intellij-community/tree/143)
+
 14.1.x -
 [141](https://github.com/JetBrains/intellij-community/tree/141)
 

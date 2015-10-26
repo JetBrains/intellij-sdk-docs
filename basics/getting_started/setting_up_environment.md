@@ -17,7 +17,7 @@ To set up your plugin development environment:
 *  Check out the source code of IntelliJ IDEA Community Edition as described in
    [Check Out And Build Community Edition](/basics/checkout_and_build_community.md).
 
-*  Create a new *IntelliJ Platform SDK* under **File | Project Structure**:
+*  Create a new *IntelliJ Platform SDK* under **File \| Project Structure**:
 
    ![Create IntelliJ Platform SDK](img/create_intellij_idea_sdk.png)
 
@@ -30,8 +30,7 @@ To set up your plugin development environment:
    ![Set IDEA JDK](img/set_java_sdk.png)
 
 
-   **Note:**
-   You may use IntelliJ IDEA Ultimate as an alternative, but debugging the core code will only work with the *Community Edition*.
+> **warning** You may use IntelliJ IDEA Ultimate as an alternative, but debugging the core code will only work with the *Community Edition*.
 
 *  In the Sourcepath tab of the SDK settings, click the *Add* button:
 

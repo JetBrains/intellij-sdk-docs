@@ -2,7 +2,7 @@
 title: Settings, Caches, Logs, and Plugins
 ---
 
-Every IntelliJ-based IDE stores it's local settings, caches, log and installed plugins on a hard drive.
+Every IntelliJ-based IDE stores its local settings, caches, log and installed plugins on a hard drive.
 Location of the IDE files depends on the operating system, product and version.
 IDE settings directory name is made up of the product code name and product version.
 We will use `<product_system_name><product_version>` as an alias for the product internal settings home directory name.

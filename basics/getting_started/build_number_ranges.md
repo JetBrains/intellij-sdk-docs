@@ -2,31 +2,35 @@
 title: Build Number Ranges
 ---
 
-<!--TODO link to file in sample-->
-Use this reference of build number ranges to specify the correct since-build and until-build versions in `plugin.xml` files.
+Use this reference of build number ranges to specify the correct `since-build` and `until-build` values in your plugin descriptor.
 
-Starting with IntelliJ IDEA 9 beta, a multi-part build number is used: for example, IU-90.94.
- 
-**The number consists of the following parts:**
+Starting with IntelliJ IDEA 9 beta, a multi-part build number is used:
+
+```
+IU-90.94
+```
+
+The number consists of the following parts:
 
 * Product ID (IC for IDEA Community, IU for IDEA Ultimate, RM for RubyMine, PY for PyCharm, etc.)
 
-* Branch number
+* Branch number ("90")
 
-* Build number in the branch
+* Build number in the branch ("94")
 
 Every time a release branch is created for one of the products based on IntelliJ Platform, the branch number in the release branch is incremented by 1, and the branch number in the trunk is incremented by 2. 
 Accordingly, the trunk always has even branch numbers (90, 92, 94, etc.), while release branches have odd branch numbers (91, 93, etc.).
-For example, the RubyMine 2.0 release branch has the branch number 91.
+For example, the RubyMine 7 release branch has the branch number 139.
 
-<!--TODO link to file in sample--> 
-Multi-part build numbers can also be used in the since-build and until-build tags of `plugin.xml` files. Usually you should omit the product ID and use only the branch number and build number, for example:
+Multi-part build numbers can also be used in the `since-build` and `until-build` attributes of `idea-version`. Usually you should omit the product ID and use only the branch number and build number, for example:
 
 ```xml
 <idea-version since-build="94.539"/>
 ```
 
-The following branch numbers are used for IntelliJ-Platform-based products and build numbers of recent IDE versions:
+The following branch numbers are used for IntelliJ Platform-based products and build numbers of recent IDE versions:
+
+* branch 143 - IntelliJ IDEA 15, WebStorm 11, PyCharm 5, PhpStorm 10, RubyMine 8, AppCode 3.3, CLion 1.2
 
 * branch 141 - IntelliJ IDEA 14.1, WebStorm 10, PyCharm 4.1, Android Studio 1.3
 
@@ -38,7 +42,7 @@ The following branch numbers are used for IntelliJ-Platform-based products and b
 
 * branch 131 - WebStorm 7, PyCharm 3.0, PhpStorm 7
 
-* branch 129 - IntelliJ IDEA 12.1, bugfix updates for PyCharm 2.7, PhpStorm/WebStorm 6
+* branch 129 - IntelliJ IDEA 12.1, bug-fix updates for PyCharm 2.7, PhpStorm/WebStorm 6
 
 * branch 127 - PhpStorm/WebStorm 6.0, AppCode 2.0
 

@@ -2,14 +2,13 @@
 title: Plugin Dependencies
 ---
 
-In your plugin, you may depend on classes from other plugins, either bundled, third-party or your own.
-In order to do so, you need to perform the following two steps:
+In your plugin, you may depend on classes from other plugins, either bundled, third-party or your own. In order to do so, you need to perform the following two steps:
 
-*  Add the jars of the plugin you're depending on to the classpath of your *IntelliJ Platform SDK*.
+* Add the jars of the plugin you're depending on to the classpath of your *IntelliJ Platform SDK*.
 
 > **warning** Do not add the plugin jars as a library: this will fail at runtime because IntelliJ Platform will load two separate copies of the dependency plugin classes.
 
-*  Add a `<depends>` tag to your plugin.xml, adding the ID of the plugin you're depending on as the contents of the tag.
+* Add a `<depends>` tag to your plugin.xml, adding the ID of the plugin you're depending on as the contents of the tag.
 For example:
 
 ```xml

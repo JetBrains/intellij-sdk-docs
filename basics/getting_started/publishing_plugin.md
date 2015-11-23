@@ -2,7 +2,7 @@
 title: Publishing a plugin
 ---
 
-When your plugin is ready, you can upload it to [IntelliJ Plugin Repository](https://plugins.jetbrains.com). To perform this operation, you must login with your personal JetBrains account.
+When your plugin is ready, you can upload it to the [IntelliJ Plugin Repository](https://plugins.jetbrains.com). To perform this operation, you must login with your personal JetBrains Account.
 
 **To get your JetBrains account**
 

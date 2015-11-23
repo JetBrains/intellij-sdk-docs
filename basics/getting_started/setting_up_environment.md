@@ -6,9 +6,9 @@ title: Setting Up a Development Environment
 
 Use the following check list to ensure that you are ready to develop your custom plugins.
 
-- [x] **IntelliJ IDEA** version 9.0 or later (either Community Edition or Ultimate) must be installed on your computer.
-- [x] **IntelliJ IDEA CE source code** should be checked out to your local computer. This is not a requirement but will make it much easier for you to debug your plugins. For detailed instructions, refer to [Check Out And Build Community Edition](/basics/checkout_and_build_community.md).
-- [x] **IntelliJ Platform SDK** must configured for your IDEA project. For more information, see [Configuring IntelliJ Platform SDK](#configuring-intellij-platform-sdk) below.
+- **IntelliJ IDEA** version 9.0 or later (either Community Edition or Ultimate) must be installed on your computer.
+- **IntelliJ IDEA CE source code** should be checked out to your local computer. This is not a requirement but will make it much easier for you to debug your plugins. For detailed instructions, refer to [Check Out And Build Community Edition](/basics/checkout_and_build_community.md).
+- **IntelliJ Platform SDK** must configured for your IDEA project. For more information, see [Configuring IntelliJ Platform SDK](#configuring-intellij-platform-sdk) below.
   
 ### Configuring IntelliJ Platform SDK
   

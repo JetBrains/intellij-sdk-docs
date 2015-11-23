@@ -2,24 +2,21 @@
 title: PSI Cookbook
 ---
 
+This page gives a list of recipes for the most common operations for working with the PSI (Program Structure Interface). Unlike [Developing Custom Language Plugins](/reference_guide/custom_language_support.md), it talks about working with the PSI of existing languages (such as Java).
 
-This page gives a list of recipes for the most common operations for working with the PSI (Program Structure Interface) of IntelliJ Platform. Unlike 
-[Developing Custom Language Plugins](/reference_guide/custom_language_support.md), 
-it talks about working with the PSI of existing languages (such as Java).
-
-### How do I find a file if I know its name but don't know the path?
+## How do I find a file if I know its name but don't know the path?
 
 `FilenameIndex.getFilesByName()`
 
-### How do I find where a particular PSI element is used?
+## How do I find where a particular PSI element is used?
 
 `ReferencesSearch.search()`
 
-### How do I rename a PSI element?
+## How do I rename a PSI element?
 
 `RefactoringFactory.createRename()`
 
-### How can I cause the PSI for a virtual file to be rebuilt?
+## How can I cause the PSI for a virtual file to be rebuilt?
 
 `FileContentUtil.reparseFiles()`
 

@@ -4,7 +4,7 @@ title: Creating an action
 
 Your plugins can customize the Intellij IDEA UI by adding new items to the menus and toolbars. Intellij IDEA provides the [AnAction.java](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java) class whose `actionPerformed` method is called each time you select a menu item or click a toolbar button.
 
-To customize **IntelliJ IDEA**, you should perform two basic steps:
+To customize *IntelliJ IDEA*, you should perform two basic steps:
 
 1. In your plugin, define an action or a system of actions that add their own items to menus and toolbars.
 2. Register your actions.
@@ -13,7 +13,7 @@ This topic outlines the above steps. For detailed information and samples, refer
 
 ### Defining actions
 
-An action is a class derived from the AnAction class. To define your action, in your plugin, create a Java class derived from the `AnAction` class. In this class, override the `actionPerformed` method to be called when a menu item or a toolbar button is selected.
+An action is a class derived from the `AnAction` class. To define your action, in your plugin, create a Java class derived from the `AnAction` class. In this class, override the `actionPerformed` method to be called when a menu item or a toolbar button is selected.
  
  To clarify this procedure, consider the following code snippet that defines the `TextBoxes` class derived from the `AnAction` class:
  
@@ -23,10 +23,10 @@ public class TextBoxes extends AnAction {
     // (optionally, you can specify the menu description and an icon to display next to the menu item).
     // You can omit this constructor when registering the action in the plugin.xml file.
     public TextBoxes() {
-         // Set the menu item name.
-            super("Text _Boxes");
-         // Set the menu item name, description and icon.
-         // super("Text _Boxes","Item description",IconLoader.getIcon("/Mypackage/icon.png"));
+        // Set the menu item name.
+        super("Text _Boxes");
+        // Set the menu item name, description and icon.
+        // super("Text _Boxes","Item description",IconLoader.getIcon("/Mypackage/icon.png"));
     }
  
     public void actionPerformed(AnActionEvent event) {
@@ -41,8 +41,7 @@ Note that optionally, you can define a set of classes derived from the `AnAction
 
 ### Registering actions
 
-Once you have defined an action or a system of actions, you must register them to specify the menu items or toolbar buttons associated with actions.
-You can register actions in one of the following ways:
+Once you have defined an action or a system of actions, you must register them to specify the menu items or toolbar buttons associated with actions. You can register actions in one of the following ways:
 
 * Register actions in the `<actions>` section of the `plugin.xml` file.
 * Register actions from Java code.
@@ -51,7 +50,7 @@ This section provides some examples that illustrate how to register actions. For
 
 #### Registering actions in the plugin.xml file
 
-To register your actions, make appropriate changes to the `<actions>` section of the plugin.xml file for your IDEA project. The following fragment of the plugin.xml file adds the Sample Menu group (item) to the main menu. Clicking this item allows you to access **Sample Menu | Text Boxes and Sample Menu | Show Dialog** menu commands:
+To register your actions, make appropriate changes to the `<actions>` section of the plugin.xml file for your IDEA project. The following fragment of the plugin.xml file adds the Sample Menu group (item) to the main menu. Clicking this item allows you to access **Sample Menu \| Text Boxes and Sample Menu \| Show Dialog** menu commands:
 
 ![Sample Menu](img/sample_menu.jpg)
 
@@ -86,7 +85,7 @@ Note that you can use this wizard only to add a new action to an existing action
 
 3. On the **New Action** page that opens, fill in the following fields, and then click **OK**:
 
-*  **Action ID**: Enter the unique ID of the action. Recommended format: <Plugin name>.<ID>
+*  **Action ID**: Enter the unique ID of the action. Recommended format: `PluginName.ID`
 *  **Class Name**: Enter the name of the action class to be created.
 *  **Name**: Enter the name of the menu item or tooltip for toolbar button associated with action.
 *  **Description**: Optionally, enter the action description. The IDEA status bar indicates this description when focusing the action.
@@ -95,4 +94,4 @@ Note that you can use this wizard only to add a new action to an existing action
 
 ![New Action Page](img/new_action_page.png)
 
-IntelliJ IDEA generates a .java file with the specified class name, registers the newly created action in the plugin.xml file, adds a node to the module tree view, and opens the created action class file in the editor.
+IntelliJ IDEA generates a `.java` file with the specified class name, registers the newly created action in the plugin.xml file, adds a node to the module tree view, and opens the created action class file in the editor.

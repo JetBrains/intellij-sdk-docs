@@ -8,7 +8,7 @@ You can use either
 [IntelliJ IDEA Ultimate](https://www.jetbrains.com/idea/download/) as your IDE.
 Both include the complete set of plugin development tools.
 To become more familiar with *IntelliJ IDEA*, please refer to 
-[IntelliJ IDEA Web Help](https://www.jetbrains.com/idea/help/intellij-idea.html)
+[IntelliJ IDEA Web Help](https://www.jetbrains.com/idea/help/)
 
 
 * [Setting Up a Development Environment](getting_started/setting_up_environment.md)

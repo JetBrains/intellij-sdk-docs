@@ -27,18 +27,18 @@ git clone git://git.jetbrains.org/idea/community.git idea
 
 The [master](https://github.com/JetBrains/intellij-community/tree/master) branch currently contains the code for the development version of IntelliJ IDEA 15.x. Source code of older releases of IntelliJ IDEA can be found in the following branches:
 
-| IntelliJ Product version | Branch name/number |
-|==========================|====================|
-| 15.0.x                   | [143](https://github.com/JetBrains/intellij-community/tree/143) |
-| 14.1.x                   | [141](https://github.com/JetBrains/intellij-community/tree/141) |
-| 14.0.x                   | [139](https://github.com/JetBrains/intellij-community/tree/139) |
-| 13.1.x                   | [135](https://github.com/JetBrains/intellij-community/tree/135) |
-| 13.0.x                   | [133](https://github.com/JetBrains/intellij-community/tree/133) |
-| 12.0.x                   | [123](https://github.com/JetBrains/intellij-community/tree/123) |
-| 11.1.x                   | [117](https://github.com/JetBrains/intellij-community/tree/117) |
+| IntelliJ Product version | Branch name/number                                                |
+|--------------------------|-------------------------------------------------------------------|
+| 15.0.x                   | [143](https://github.com/JetBrains/intellij-community/tree/143)   |
+| 14.1.x                   | [141](https://github.com/JetBrains/intellij-community/tree/141)   |
+| 14.0.x                   | [139](https://github.com/JetBrains/intellij-community/tree/139)   |
+| 13.1.x                   | [135](https://github.com/JetBrains/intellij-community/tree/135)   |
+| 13.0.x                   | [133](https://github.com/JetBrains/intellij-community/tree/133)   |
+| 12.0.x                   | [123](https://github.com/JetBrains/intellij-community/tree/123)   |
+| 11.1.x                   | [117](https://github.com/JetBrains/intellij-community/tree/117)   |
 | 11.0.x                   | [nika](https://github.com/JetBrains/intellij-community/tree/nika) |
 | 10.5.x                   | [xena](https://github.com/JetBrains/intellij-community/tree/xena) |
-| 10.0.x                   | [x0x](https://github.com/JetBrains/intellij-community/tree/x0x) |
+| 10.0.x                   | [x0x](https://github.com/JetBrains/intellij-community/tree/x0x)   |
 | 9.x                      | [maia](https://github.com/JetBrains/intellij-community/tree/maia) |
 
 You can also browse the source code through the Web interface.

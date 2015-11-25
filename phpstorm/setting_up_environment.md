@@ -25,10 +25,12 @@ This section explains how to configure IntelliJ IDEA for using PhpStorm OpenAPI.
 3. Press **Add** button
 4. Find and select `php-openapi.jar` and `php.jar`. They are located in `<your_installation_of_PhpStorm>/plugins/php/lib`.
 
-![Adding Library](img/AddingLibrary.png)
+    ![Adding Library](img/AddingLibrary.png)
+
 5. Agree to add the libraries to your Module
 6. Open **Modules \| Dependencies** and change **Scope** to **Provided**. This step is necessary because otherwise `ClassCastException` will be thrown because two instances of the library will be loaded via different class loaders
-![Changing Scope](img/changingscope.png)
+
+    ![Changing Scope](img/changingscope.png)
 
 ### Adding dependencies to `plugin.xml`
 

@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="tasks">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/code_samples/gradle_plugin_demo/build/idea-sandbox/config/tasks/untitled2.tasks.zip!/" />
+      <root url="jar://$PROJECT_DIR$/code_samples/gradle_plugin_demo/build/idea-sandbox/config/tasks/untitled2.contexts.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

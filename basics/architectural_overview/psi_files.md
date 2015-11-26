@@ -4,7 +4,7 @@ title: PSI Files
 
 A PSI (Program Structure Interface) file is the root of a structure representing the contents of a file as a hierarchy of elements in a particular programming language.
 
-The [PsiFile](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/core-api/src/com/intellij/psi/PsiFile.java) class is the common base class for all PSI files, while files in a specific language are usually represented by its subclasses.  For example, the [PsiJavaFile](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/java/java-psi-api/src/com/intellij/psi/PsiJavaFile.java) class represents a Java file, and the [XmlFile](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/xml/xml-psi-api/src/com/intellij/psi/xml/XmlFile.java) class represents an XML file.
+The [PsiFile](upsource:///platform/core-api/src/com/intellij/psi/PsiFile.java) class is the common base class for all PSI files, while files in a specific language are usually represented by its subclasses.  For example, the [PsiJavaFile](upsource:///java/java-psi-api/src/com/intellij/psi/PsiJavaFile.java) class represents a Java file, and the [XmlFile](upsource:///xml/xml-psi-api/src/com/intellij/psi/xml/XmlFile.java) class represents an XML file.
 
 Unlike `VirtualFile` and `Document`, which have application scope (even if multiple projects are open, each file is represented by the same `VirtualFile` instance), PSI has project scope (the same file is represented by multiple `PsiFile` instances if the file belongs to multiple projects open at the same time).
 
@@ -24,7 +24,7 @@ To iterate over the elements in a file, use `psiFile.accept(new PsiRecursiveElem
 
 ## Where does it a PSI file come from?
 
-As PSI is language-dependent, PSI files are created through the [Language](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/core-api/src/com/intellij/lang/Language.java) object, by using the `LanguageParserDefinitions.INSTANCE.forLanguage(language).createFile(fileViewProvider)` method.
+As PSI is language-dependent, PSI files are created through the [Language](upsource:///platform/core-api/src/com/intellij/lang/Language.java) object, by using the `LanguageParserDefinitions.INSTANCE.forLanguage(language).createFile(fileViewProvider)` method.
 
 Like documents, PSI files are created on demand when the PSI is accessed for a particular file.
 
@@ -34,9 +34,9 @@ Like documents, PSI files are weakly referenced from the corresponding `VirtualF
 
 ## How do I create a PSI file?
 
-The [`PsiFileFactory`](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/core-api/src/com/intellij/psi/PsiFileFactory.java)`.getInstance(project).createFileFromText()` method creates an in-memory PSI file with the specified contents.
+The [`PsiFileFactory`](upsource:///platform/core-api/src/com/intellij/psi/PsiFileFactory.java)`.getInstance(project).createFileFromText()` method creates an in-memory PSI file with the specified contents.
 
-To save the PSI file to disk, use the [`PsiDirectory`](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/core-api/src/com/intellij/psi/PsiDirectory.java)`.add()` method.
+To save the PSI file to disk, use the [`PsiDirectory`](upsource:///platform/core-api/src/com/intellij/psi/PsiDirectory.java)`.add()` method.
 
 ## How do I get notified when PSI files change?
 

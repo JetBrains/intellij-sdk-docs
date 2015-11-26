@@ -2,7 +2,7 @@
 title: Virtual Files
 ---
 
-A virtual file [com.intellij.openapi.vfs.VirtualFile](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/core-api/src/com/intellij/openapi/vfs/VirtualFile.java) is *IntelliJ IDEA's* representation of a file in a file system (VFS). Most commonly, a virtual file is a file in your local file system. However, *IntelliJ IDEA* supports multiple pluggable file system implementations, so virtual files can also represent classes in a JAR file, old revisions of files loaded from a version control repository, and so on.
+A virtual file [com.intellij.openapi.vfs.VirtualFile](upsource:///platform/core-api/src/com/intellij/openapi/vfs/VirtualFile.java) is *IntelliJ IDEA's* representation of a file in a file system (VFS). Most commonly, a virtual file is a file in your local file system. However, *IntelliJ IDEA* supports multiple pluggable file system implementations, so virtual files can also represent classes in a JAR file, old revisions of files loaded from a version control repository, and so on.
 
 The VFS level deals only with binary content. You can get or set the contents of a `VirtualFile` as a stream of bytes, but concepts like encodings and line separators are handled on higher system levels.
 
@@ -39,9 +39,9 @@ The `VirtualFileManager.addVirtualFileListener()` method allows you to receive n
 
 ## How do I extend VFS?
 
-To provide an alternative file system implementation (for example, an FTP file system), implement the [VirtualFileSystem](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/core-api/src/com/intellij/openapi/vfs/VirtualFileSystem.java) class (most likely you'll also need to implement `VirtualFile`), and register your implementation as an [application component](/basics/plugin_structure/plugin_components.md).
+To provide an alternative file system implementation (for example, an FTP file system), implement the [VirtualFileSystem](upsource:///platform/core-api/src/com/intellij/openapi/vfs/VirtualFileSystem.java) class (most likely you'll also need to implement `VirtualFile`), and register your implementation as an [application component](/basics/plugin_structure/plugin_components.md).
 
-To hook into operations performed in the local file system (for example, if you are developing a version control system integration that needs custom rename/move handling), implement the [LocalFileOperationsHandler](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/platform-api/src/com/intellij/openapi/vfs/LocalFileOperationsHandler.java) interface and register it through the`LocalFileSystem.registerAuxiliaryFileOperationsHandler` method.
+To hook into operations performed in the local file system (for example, if you are developing a version control system integration that needs custom rename/move handling), implement the [LocalFileOperationsHandler](upsource:///platform/platform-api/src/com/intellij/openapi/vfs/LocalFileOperationsHandler.java) interface and register it through the`LocalFileSystem.registerAuxiliaryFileOperationsHandler` method.
 
 ## What are the rules for working with VFS?
 

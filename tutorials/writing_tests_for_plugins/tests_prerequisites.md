@@ -16,7 +16,7 @@ In our tests we will use test data, so we need one more folder *"testData"* to s
 
 Since some of our tests will use Java files as test data, we need to mock up the project SDK.
 IntelliJ IDEA does everything automatically when we use special utility class
-[LightCodeInsightFixtureTestCase](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/java/testFramework/src/com/intellij/testFramework/fixtures/LightCodeInsightFixtureTestCase.java).
+[LightCodeInsightFixtureTestCase](upsource:///java/testFramework/src/com/intellij/testFramework/fixtures/LightCodeInsightFixtureTestCase.java).
 
 All we need to do is to point the working directory of the run configuration to the root of IntelliJ IDEA Community Edition sources and enable the following VM options:
 
@@ -27,7 +27,7 @@ All we need to do is to point the working directory of the run configuration to 
 **Note**:
 
   >  Keep in mind that we have changed the _working directory_, so all the paths in tests extended from
-  >  [LightCodeInsightFixtureTestCase](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/java/testFramework/src/com/intellij/testFramework/fixtures/LightCodeInsightFixtureTestCase.java)
+  >  [LightCodeInsightFixtureTestCase](upsource:///java/testFramework/src/com/intellij/testFramework/fixtures/LightCodeInsightFixtureTestCase.java)
   >  will use relative path to the _source root_ of IntelliJ IDEA Community Edition.
 
 -----

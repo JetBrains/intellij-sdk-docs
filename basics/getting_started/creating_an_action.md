@@ -2,7 +2,7 @@
 title: Creating an action
 ---
 
-Your plugins can customize the Intellij IDEA UI by adding new items to the menus and toolbars. Intellij IDEA provides the [AnAction.java](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java) class whose `actionPerformed` method is called each time you select a menu item or click a toolbar button.
+Your plugins can customize the Intellij IDEA UI by adding new items to the menus and toolbars. Intellij IDEA provides the [AnAction.java](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java) class whose `actionPerformed` method is called each time you select a menu item or click a toolbar button.
 
 To customize *IntelliJ IDEA*, you should perform two basic steps:
 

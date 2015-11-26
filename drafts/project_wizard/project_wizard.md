@@ -8,7 +8,7 @@ Working with the project wizard can be excessively illustrated with the followin
 ##Implementing new module type
 Additional support for specific tools and technologies is usually done via implementing some certain module type which is attached to the project.
 New module type should be derived from the class
-[ModuleType.java] (https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/openapi/module/ModuleType.java).
+[ModuleType.java] (upsource:///platform/lang-api/src/com/intellij/openapi/module/ModuleType.java).
 
 [Code sample] (https://github.com/bulenkov/RedlineSmalltalk/blob/master/src/st/redline/smalltalk/module/RsModuleType.java)
 
@@ -28,16 +28,16 @@ To create a new module type and an extension
 `<moduleType id="MY_MODULE" implementationClass="st.redline.smalltalk.module.MyModuleType"/>`
 to the [plugin.xml] (https://github.com/bulenkov/RedlineSmalltalk/blob/master/resources/META-INF/plugin.xml).
 A custom module type should extend the
-[ModuleType.java] (https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/openapi/module/ModuleType.java)
+[ModuleType.java] (upsource:///platform/lang-api/src/com/intellij/openapi/module/ModuleType.java)
 generic from
-[ModuleBuilder.java] (https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/ide/util/projectWizard/ModuleBuilder.java).
+[ModuleBuilder.java] (upsource:///platform/lang-api/src/com/intellij/ide/util/projectWizard/ModuleBuilder.java).
 The following
 [sample] (https://github.com/bulenkov/RedlineSmalltalk/blob/master/src/st/redline/smalltalk/module/RsModuleType.java)
 of a custom module type show how this instance can be registered and implemented.
 
 ###Implementing module builder
 To set up a new module environment
-[ModuleBuilder.java] (https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/ide/util/projectWizard/ModuleBuilder.java)
+[ModuleBuilder.java] (upsource:///platform/lang-api/src/com/intellij/ide/util/projectWizard/ModuleBuilder.java)
 class should be extended and registered as an extension point like the following snippet shows:
 
     <extensions>
@@ -51,22 +51,22 @@ Functionality which is mandatory to implement consists of:
 * Getting a module type `public abstract ModuleType getModuleType();`
 
 See
-[JavaModuleBuilder.java] (https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/java/openapi/src/com/intellij/ide/util/projectWizard/JavaModuleBuilder.java)
+[JavaModuleBuilder.java] (upsource:///java/openapi/src/com/intellij/ide/util/projectWizard/JavaModuleBuilder.java)
 to understand better how to implement a module builder.
 
 If your module type is based on the java module and meant to support Java as well, extending
-[JavaModuleBuilder.java] ((https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/java/openapi/src/com/intellij/ide/util/projectWizard/JavaModuleBuilder.java))
+[JavaModuleBuilder.java] ((upsource:///java/openapi/src/com/intellij/ide/util/projectWizard/JavaModuleBuilder.java))
 is enough. No extension point needs no be registered.
 A [code sample] (https://github.com/bulenkov/RedlineSmalltalk/blob/master/src/st/redline/smalltalk/module/RsModuleType.java)
 illustrating how
-[JavaModuleBuilder.java] (https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/java/openapi/src/com/intellij/ide/util/projectWizard/JavaModuleBuilder.java)
+[JavaModuleBuilder.java] (upsource:///java/openapi/src/com/intellij/ide/util/projectWizard/JavaModuleBuilder.java)
 can be derived.
 
 ###Implementing module builder listener
 Module builder listener reacts on a new module creation, which could be done either as a part of the project creation process,
 or as adding a new module to the already existing project.
 To provide a certain behavior right after a module has been created, module builder should implement
-[ModuleBuilderListener.java] (https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/ide/util/projectWizard/ModuleBuilderListener.java)
+[ModuleBuilderListener.java] (upsource:///platform/lang-api/src/com/intellij/ide/util/projectWizard/ModuleBuilderListener.java)
 Method `public void moduleCreated(@NotNull final Module module);` executed tasks right after a module has been created,
 these may include configuring roots looking up for an SDK and setting it up, adding a specific facet if required and others.
 For more details please see this
@@ -82,7 +82,7 @@ This
 [code sample] (https://github.com/bulenkov/RedlineSmalltalk/blob/master/src/st/redline/smalltalk/module/RsModuleWizardStep.java)
 illustrates how a custom wizard step can be created.
 This class is derived from
-[ModuleWizardStep.java] (https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/ide/util/projectWizard/ModuleWizardStep.java),
+[ModuleWizardStep.java] (upsource:///platform/lang-api/src/com/intellij/ide/util/projectWizard/ModuleWizardStep.java),
 which has two methods to be overridden:
 
 * `public JComponent getComponent();` defines how the step will look like

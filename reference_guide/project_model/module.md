@@ -10,7 +10,7 @@ To determine the module in the project in question to which the specified `Virtu
 
 ## Accessing module roots
 
-Information about module roots can be accessed via the class [ModuleRootManager.java](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/projectModel-api/src/com/intellij/openapi/roots/ModuleRootManager.java), for example, an instance of [ModuleFileIndex.java](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/projectModel-api/src/com/intellij/openapi/roots/ModuleFileIndex.java) can be obtained, which is similar to the [ProjectFileIndex.java](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/projectModel-api/src/com/intellij/openapi/roots/ProjectFileIndex.java) but in the scope of a module.
+Information about module roots can be accessed via the class [ModuleRootManager.java](upsource:///platform/projectModel-api/src/com/intellij/openapi/roots/ModuleRootManager.java), for example, an instance of [ModuleFileIndex.java](upsource:///platform/projectModel-api/src/com/intellij/openapi/roots/ModuleFileIndex.java) can be obtained, which is similar to the [ProjectFileIndex.java](upsource:///platform/projectModel-api/src/com/intellij/openapi/roots/ProjectFileIndex.java) but in the scope of a module.
 
 ```java
 ModuleRootManager.getInstance(currentModule).getFileIndex()

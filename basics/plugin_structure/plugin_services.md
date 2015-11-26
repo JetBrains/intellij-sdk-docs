@@ -4,7 +4,7 @@ title: Plugin Services
 
 The *IntelliJ Platform* provides the concept of _services_.
 
-A _service_ is a plugin component loaded on demand, when your plugin calls the `getService` method of the [ServiceManager](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/core-api/src/com/intellij/openapi/components/ServiceManager.java) class.
+A _service_ is a plugin component loaded on demand, when your plugin calls the `getService` method of the [ServiceManager](upsource:///platform/core-api/src/com/intellij/openapi/components/ServiceManager.java) class.
 
 The *IntelliJ Platform* ensures that only one instance of a service is loaded even though the service is called several times. A service must have the interface and implementation classes specified in the `plugin.xml` file. The service implementation class is used for service instantiation.
 

@@ -30,7 +30,7 @@ To clarify this procedure, consider the following sample section of the plugin.x
 ```
 
 * The `interface` attribute sets an interface the plugin that contributes to the extension point must implement.
-* The `beanClass` attribute sets a bean class that specifies one or several properties annotated with the [@Attribute](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/xml/dom-openapi/src/com/intellij/util/xml/Attribute.java) annotation.
+* The `beanClass` attribute sets a bean class that specifies one or several properties annotated with the [@Attribute](upsource:///xml/dom-openapi/src/com/intellij/util/xml/Attribute.java) annotation.
 
 The plugin that contributes to the extension point will read those properties from the `plugin.xml` file.
 
@@ -64,7 +64,7 @@ Note that to declare an extension designed to access the `MyExtensionPoint1` ext
 2. Add a new child element to the `<extensions>` element. The child element name must match the name of the extension point you want the extension to access.
 3. Depending on the type of the extension point, do one of the following:
     * If the extension point was declared using the `interface` attribute, for newly added child element, set the `implementation` attribute to the name of the class that implements the specified interface.
-    * If the extension point was declared using the `beanClass` attribute, for newly added child element, set all attributes annotated with the [@Attribute](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/xml/dom-openapi/src/com/intellij/util/xml/Attribute.java) annotations in the specified bean class.
+    * If the extension point was declared using the `beanClass` attribute, for newly added child element, set all attributes annotated with the [@Attribute](upsource:///xml/dom-openapi/src/com/intellij/util/xml/Attribute.java) annotations in the specified bean class.
 
 To clarify this procedure, consider the following sample section of the `plugin.xml` file that defines two extensions designed to access the `appStarter` and `applicationConfigurable` extension points in the *IntelliJ Platform* and one extension to access the `MyExtensionPoint1` extension point in a test plugin:
 
@@ -89,9 +89,9 @@ To clarify this procedure, consider the following sample section of the `plugin.
 
 To get a list of extension points available in the *IntelliJ Platform* core, consult the `<extensionPoints>` section of the following XML configuration files:
 
-* [`LangExtensionPoints.xml`](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/platform-resources/src/META-INF/LangExtensionPoints.xml)
-* [`PlatformExtensionPoints.xml`](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/platform-resources/src/META-INF/PlatformExtensionPoints.xml)
-* [`VcsExtensionPoints.xml`](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/platform-resources/src/META-INF/VcsExtensionPoints.xml)
+* [`LangExtensionPoints.xml`](upsource:///platform/platform-resources/src/META-INF/LangExtensionPoints.xml)
+* [`PlatformExtensionPoints.xml`](upsource:///platform/platform-resources/src/META-INF/PlatformExtensionPoints.xml)
+* [`VcsExtensionPoints.xml`](upsource:///platform/platform-resources/src/META-INF/VcsExtensionPoints.xml)
 
 ## Additional Information and Samples
 

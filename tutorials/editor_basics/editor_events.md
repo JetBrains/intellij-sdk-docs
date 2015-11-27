@@ -11,14 +11,14 @@ The IntelliJ Platform SDK provides a set of callbacks for handling events relate
 ## 3.1. Handling keystrokes in the Editor
 
 To handle keystrokes and provide custom reactions interface
-[TypedActionHandler](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/platform-api/src/com/intellij/openapi/editor/actionSystem/TypedActionHandler.java)
+[TypedActionHandler](upsource:///platform/platform-api/src/com/intellij/openapi/editor/actionSystem/TypedActionHandler.java)
 may be used.
 Series of steps below shows how to change standard behaviour of the editor and make it react on typing differently instead of simply displaying a typed character in the editor area.
 
 ### 3.1.2 Implementing *TypedActionHandler*
 
 First we need to implement an instance of
-[TypedActionHandler](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/platform-api/src/com/intellij/openapi/editor/actionSystem/TypedActionHandler.java):
+[TypedActionHandler](upsource:///platform/platform-api/src/com/intellij/openapi/editor/actionSystem/TypedActionHandler.java):
 
 ```java
 public class MyTypedHandler implements TypedActionHandler {
@@ -56,7 +56,7 @@ public class MyTypedHandler implements TypedActionHandler {
 
 To enable a custom implementation of *TypedActionHandler* in the plugin we need to create a new instance of it and pass to
 `public TypedActionHandler setupHandler(TypedActionHandler handler);` method of the
-[TypedAction](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/platform-api/src/com/intellij/openapi/editor/actionSystem/TypedAction.java)
+[TypedAction](upsource:///platform/platform-api/src/com/intellij/openapi/editor/actionSystem/TypedAction.java)
 class. By doing it we replace the typing handler with the specified handler.
 
 ```java
@@ -74,7 +74,7 @@ After compiling and running the code snippet above typing in the editor will be 
 ## 3.2. Working with EditorActionHandler
 
 Class
-[EditorActionHandler.java](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/platform-api/src/com/intellij/openapi/editor/actionSystem/EditorActionHandler.java)
+[EditorActionHandler.java](upsource:///platform/platform-api/src/com/intellij/openapi/editor/actionSystem/EditorActionHandler.java)
 stays for actions activated by keystrokes in the editor.
 Series of steps below show how access *EditorActionManager* and pass it actions to be executed.
 In this example we will use *EditorActionHandler* to insert one extra caret above the current caret if available.
@@ -129,9 +129,9 @@ public class EditorHandlerIllustration extends AnAction {
 
 To manipulate with standard Editor's actions first we need to obtain
 an instance of
-[EditorActionHandler](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/platform-api/src/com/intellij/openapi/editor/actionSystem/EditorActionHandler.java)
+[EditorActionHandler](upsource:///platform/platform-api/src/com/intellij/openapi/editor/actionSystem/EditorActionHandler.java)
 for the action we'd like to work with. Ih this case it will be an instance of
-[CloneCaretActionHandler](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/platform-impl/src/com/intellij/openapi/editor/actions/CloneCaretActionHandler.java).
+[CloneCaretActionHandler](upsource:///platform/platform-impl/src/com/intellij/openapi/editor/actions/CloneCaretActionHandler.java).
 
 ```java
 public class EditorHandlerIllustration extends AnAction {

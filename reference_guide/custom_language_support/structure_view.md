@@ -4,41 +4,41 @@ title: Structure View
 
 The Structure View implementation used for a specific file type can be customized on many levels.
 If a custom language plugin provides an implementation of the
-[StructureView](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/structure-view-api/src/com/intellij/ide/structureView/StructureView.java)
+[StructureView](upsource:///platform/structure-view-api/src/com/intellij/ide/structureView/StructureView.java)
 interface, it can completely replace the standard structure view implementation with a custom user interface component.
 However, for most languages this is not necessary, and the standard
-[StructureView](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/structure-view-api/src/com/intellij/ide/structureView/StructureView.java)
+[StructureView](upsource:///platform/structure-view-api/src/com/intellij/ide/structureView/StructureView.java)
 implementation provided by *IntelliJ Platform* can be reused.
 
 The starting point for the structure view is the
-[PsiStructureViewFactory](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/structure-view-api/src/com/intellij/lang/PsiStructureViewFactory.java)
+[PsiStructureViewFactory](upsource:///platform/structure-view-api/src/com/intellij/lang/PsiStructureViewFactory.java)
 interface, which is registered in the `com.intellij.lang.psiStructureViewFactory` extension point.
 
 **Example:**
-[PsiStructureViewFactory](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/plugins/properties/src/com/intellij/lang/properties/structureView/PropertiesStructureViewBuilderFactory.java)
+[PsiStructureViewFactory](upsource:///plugins/properties/src/com/intellij/lang/properties/structureView/PropertiesStructureViewBuilderFactory.java)
 for
 [Properties language plugin](https://github.com/JetBrains/intellij-community/tree/master/plugins/properties)
 
 
 To reuse the *IntelliJ Platform* implementation of the
-[StructureView](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/structure-view-api/src/com/intellij/ide/structureView/StructureView.java),
+[StructureView](upsource:///platform/structure-view-api/src/com/intellij/ide/structureView/StructureView.java),
 the plugin returns a
-[TreeBasedStructureViewBuilder](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/structure-view-api/src/com/intellij/ide/structureView/TreeBasedStructureViewBuilder.java)
+[TreeBasedStructureViewBuilder](upsource:///platform/structure-view-api/src/com/intellij/ide/structureView/TreeBasedStructureViewBuilder.java)
 from its
 [PsiStructureViewFactory.getStructureViewBuilder()](https://github.com/JetBrains/intellij-community/blob/master/platform/structure-view-api/src/com/intellij/lang/PsiStructureViewFactory.java#L35)
 method.
 As the model for the builder, the plugin can specify a subclass of
-[TextEditorBasedStructureViewModel](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/structure-view-api/src/com/intellij/ide/structureView/TextEditorBasedStructureViewModel.java),
+[TextEditorBasedStructureViewModel](upsource:///platform/structure-view-api/src/com/intellij/ide/structureView/TextEditorBasedStructureViewModel.java),
 and by overriding methods of this subclass it customizes the structure view for a specific language.
 
 **Example**:
-[StructureViewModel](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/structureView/PropertiesFileStructureViewModel.java)
+[StructureViewModel](upsource:///plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/structureView/PropertiesFileStructureViewModel.java)
 for
 [Properties language plugin](https://github.com/JetBrains/intellij-community/tree/master/plugins/properties)
 
 
 The main method to override is `getRoot()`, which returns the instance of a class implementing the
-[StructureViewTreeElement](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/structure-view-api/src/com/intellij/ide/structureView/StructureViewTreeElement.java)
+[StructureViewTreeElement](upsource:///platform/structure-view-api/src/com/intellij/ide/structureView/StructureViewTreeElement.java)
 interface.
 There exists no  standard implementation of this interface, so a plugin will need to implement it completely.
 
@@ -52,6 +52,6 @@ The implementation of `StructureViewTreeElement.getChildren()` needs to be match
 The latter method returns an array of `PsiElement`\-derived classes which can be shown as structure view elements, and is used to select the Structure View item matching the cursor position when the structure view is first opened or when the `Autoscroll from source` option is used.
 
 **Example:**
-[StructureViewElement](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/structureView/PropertiesStructureViewElement.java)
+[StructureViewElement](upsource:///plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/structureView/PropertiesStructureViewElement.java)
 for
 [Properties language plugin](https://github.com/JetBrains/intellij-community/tree/master/plugins/properties/)

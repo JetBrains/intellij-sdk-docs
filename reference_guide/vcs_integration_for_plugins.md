@@ -12,48 +12,48 @@ The VCS API was significantly refactored in version 6.0, and this document does 
 
 ### FilePath
 
-A [FilePath](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/vcs-api/vcs-api-core/src/com/intellij/openapi/vcs/FilePath.java)
+A [FilePath](upsource:///platform/vcs-api/vcs-api-core/src/com/intellij/openapi/vcs/FilePath.java)
 represents a path to a file or directory on disk or in the VCS repository.
 Unlike a
-[VirtualFile](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/core-api/src/com/intellij/openapi/vfs/VirtualFile.java),
+[VirtualFile](upsource:///platform/core-api/src/com/intellij/openapi/vfs/VirtualFile.java),
 a
-[FilePath](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/vcs-api/vcs-api-core/src/com/intellij/openapi/vcs/FilePath.java)
+[FilePath](upsource:///platform/vcs-api/vcs-api-core/src/com/intellij/openapi/vcs/FilePath.java)
 can represent a path to a file which doesn't exist on disk.
 The main difference between a
-[FilePath](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/vcs-api/vcs-api-core/src/com/intellij/openapi/vcs/FilePath.java)
+[FilePath](upsource:///platform/vcs-api/vcs-api-core/src/com/intellij/openapi/vcs/FilePath.java)
 and a
 [java.io.File](http://docs.oracle.com/javase/8/docs/api/java/io/File.html)
 is that a
-[FilePath](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/vcs-api/vcs-api-core/src/com/intellij/openapi/vcs/FilePath.java)
+[FilePath](upsource:///platform/vcs-api/vcs-api-core/src/com/intellij/openapi/vcs/FilePath.java)
 caches the
-[VirtualFile](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/core-api/src/com/intellij/openapi/vfs/VirtualFile.java)
+[VirtualFile](upsource:///platform/core-api/src/com/intellij/openapi/vfs/VirtualFile.java)
 corresponding to the path, so it can be retrieved without doing a VFS search.
 
 To create instances of
-[FilePath](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/vcs-api/vcs-api-core/src/com/intellij/openapi/vcs/FilePath.java),
+[FilePath](upsource:///platform/vcs-api/vcs-api-core/src/com/intellij/openapi/vcs/FilePath.java),
 the
-[VcsContextFactory](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/vcs-api/src/com/intellij/openapi/vcs/actions/VcsContextFactory.java)
+[VcsContextFactory](upsource:///platform/vcs-api/src/com/intellij/openapi/vcs/actions/VcsContextFactory.java)
 API is used.
 It can be accessed as`PeerFactory.getInstance().getVcsContextFactory()`
 
-[FilePath](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/vcs-api/vcs-api-core/src/com/intellij/openapi/vcs/FilePath.java)
+[FilePath](upsource:///platform/vcs-api/vcs-api-core/src/com/intellij/openapi/vcs/FilePath.java)
 representing paths in a VCS repository, rather than local paths, are created using
 `VcsContextFactory.createFilePathOnNonLocal()`. `FilePath.isNonLocal()` returns true for such files.
 
 ### Revision Number
 
 A
-[VcsRevisionNumber](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/vcs-api/vcs-api-core/src/com/intellij/openapi/vcs/history/VcsRevisionNumber.java)
+[VcsRevisionNumber](upsource:///platform/vcs-api/vcs-api-core/src/com/intellij/openapi/vcs/history/VcsRevisionNumber.java)
 represents a revision number of the file.
 If the VCS stores revision numbers as simple integers, the standard
-[VcsRevisionNumber](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/vcs-api/vcs-api-core/src/com/intellij/openapi/vcs/history/VcsRevisionNumber.java).
+[VcsRevisionNumber](upsource:///platform/vcs-api/vcs-api-core/src/com/intellij/openapi/vcs/history/VcsRevisionNumber.java).
 Int implementation can be used.
 If the VCS has a more complex format of revision numbers (like CVS, which uses a series of numbers delimited with dots), the plugin can provide a custom implementation.
 
 ### ContentRevision
 
 A
-[ContentRevision](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/vcs-api/vcs-api-core/src/com/intellij/openapi/vcs/changes/ContentRevision.java)
+[ContentRevision](upsource:///platform/vcs-api/vcs-api-core/src/com/intellij/openapi/vcs/changes/ContentRevision.java)
 represents a particular revision of a file, which exists either locally or in a VCS repository.
 It has three main attributes:
 
@@ -69,24 +69,24 @@ Revisions of binary files can also be represented as BinaryContentRevision, whic
 For binary revisions, the result of getContent() is undefined, and getBinaryContent() can be used to retrieve the contents as a byte array.
 
 A useful class which can be used to represent the current on-disk version of a particular file is
-[CurrentContentRevision](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/vcs-api/src/com/intellij/openapi/vcs/changes/CurrentContentRevision.java).
+[CurrentContentRevision](upsource:///platform/vcs-api/src/com/intellij/openapi/vcs/changes/CurrentContentRevision.java).
 
 ### FileStatus
 
 A
-[FileStatus](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/editor-ui-api/src/com/intellij/openapi/vcs/FileStatus.java)
+[FileStatus](upsource:///platform/editor-ui-api/src/com/intellij/openapi/vcs/FileStatus.java)
 represents a status of a file in regard to VCS (unversioned, not changed, added, modified and so on).
 It determines the color used to render the name of the file in the UI.
 
 ### Change
 
 A
-[Change](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/vcs-api/vcs-api-core/src/com/intellij/openapi/vcs/changes/Change.java)
+[Change](upsource:///platform/vcs-api/vcs-api-core/src/com/intellij/openapi/vcs/changes/Change.java)
 represents a single file operation (creation, modification, move/rename or deletion) from a VCS point of view.
 A Change can represent either a modification which the user has performed locally and not yet committed, a committed modification, or some other type of modification (for example, a shelved change or a difference between two arbitrary revisions).
 
 A
-[Change](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/vcs-api/vcs-api-core/src/com/intellij/openapi/vcs/changes/Change.java)
+[Change](upsource:///platform/vcs-api/vcs-api-core/src/com/intellij/openapi/vcs/changes/Change.java)
 essentially consists of two content revisions:
 
 *  before revision (`null` if the *Change* represents file creation)
@@ -95,26 +95,26 @@ essentially consists of two content revisions:
 
 A move or rename is represented by a Change where the before revision and the after revision have different file paths.
 A custom file status can be specified for a
-[Change](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/vcs-api/vcs-api-core/src/com/intellij/openapi/vcs/changes/Change.java)
+[Change](upsource:///platform/vcs-api/vcs-api-core/src/com/intellij/openapi/vcs/changes/Change.java)
 if it represents a non-standard modification of the file (for example, a file which has been merged with conflicts).
 If a custom file status has not been specified, the status is calculated automatically from the change type.
 
 ### ChangeList
 
 A
-[ChangeList](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/vcs-api/src/com/intellij/openapi/vcs/changes/ChangeList.java)
+[ChangeList](upsource:///platform/vcs-api/src/com/intellij/openapi/vcs/changes/ChangeList.java)
 represents a named group of related changes.
 There are two main kinds of changelists:
 
-*  [LocalChangeList](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/vcs-api/src/com/intellij/openapi/vcs/changes/LocalChangeList.java) represents a group of modifications done by a user locally.
+*  [LocalChangeList](upsource:///platform/vcs-api/src/com/intellij/openapi/vcs/changes/LocalChangeList.java) represents a group of modifications done by a user locally.
    If the VCS also supports the concept of changelists (like Perforce does), the VCS plugin can synchronize IDEA's local changelist structure with that of the VCS.
    Otherwise, a local changelist is simply a subset of the files checked out or modified by the user.
 
-*  [CommittedChangeList](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/vcs-api/src/com/intellij/openapi/vcs/versionBrowser/CommittedChangeList.java)
+*  [CommittedChangeList](upsource:///platform/vcs-api/src/com/intellij/openapi/vcs/versionBrowser/CommittedChangeList.java)
    represents a set of modifications checked in to the VCS repository.
    For VCSes which support atomic commit, every committed revision is represented by a CommittedChangeList.
    For VCSes which use per-file commit (like CVS), the plugin can use heuristics to group a sequence of individual file commits into a
-   [CommittedChangeList](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/vcs-api/src/com/intellij/openapi/vcs/versionBrowser/CommittedChangeList.java)
+   [CommittedChangeList](upsource:///platform/vcs-api/src/com/intellij/openapi/vcs/versionBrowser/CommittedChangeList.java)
 
 **Note**:
 
@@ -147,36 +147,36 @@ Here `name` is the unique name of the VCS (this must match the string returned b
 
 This component is responsible for keeping track of the local changes done by the user in his working copy, and reporting these changes to the IntelliJ IDEA core.
 An implementation of this class is returned from
-[AbstractVcs.getChangeProvider()](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/vcs-api/src/com/intellij/openapi/vcs/AbstractVcs.java).
+[AbstractVcs.getChangeProvider()](upsource:///platform/vcs-api/src/com/intellij/openapi/vcs/AbstractVcs.java).
 
 The ChangeProvider works in tandem with
-[VcsDirtyScopeManager](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/vcs-api/src/com/intellij/openapi/vcs/changes/VcsDirtyScopeManager.java),
+[VcsDirtyScopeManager](upsource:///platform/vcs-api/src/com/intellij/openapi/vcs/changes/VcsDirtyScopeManager.java),
 which is a component in IntelliJ IDEA core.
-[VcsDirtyScopeManager](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/vcs-api/src/com/intellij/openapi/vcs/changes/VcsDirtyScopeManager.java)
+[VcsDirtyScopeManager](upsource:///platform/vcs-api/src/com/intellij/openapi/vcs/changes/VcsDirtyScopeManager.java)
 keeps track of the 'dirty scope' - the set of files for which the VCS file status may be out of date.
 Files are added to the dirty scope either when they are modified on disk, or when their VCS status is invalidated by an explicit call to
-[VcsDirtyScopeManager.fileDirty()](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/vcs-api/src/com/intellij/openapi/vcs/changes/VcsDirtyScopeManager.java)
+[VcsDirtyScopeManager.fileDirty()](upsource:///platform/vcs-api/src/com/intellij/openapi/vcs/changes/VcsDirtyScopeManager.java)
 or
-[VcsDirtyScopeManager.dirDirtyRecursively()](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/vcs-api/src/com/intellij/openapi/vcs/changes/VcsDirtyScopeManager.java).
+[VcsDirtyScopeManager.dirDirtyRecursively()](upsource:///platform/vcs-api/src/com/intellij/openapi/vcs/changes/VcsDirtyScopeManager.java).
 
 After some files have been added to the dirty scope, the dirty scope is passed to
-[ChangeProvider.getChanges()](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/vcs-api/src/com/intellij/openapi/vcs/changes/ChangeProvider.java),
+[ChangeProvider.getChanges()](upsource:///platform/vcs-api/src/com/intellij/openapi/vcs/changes/ChangeProvider.java),
 along with a
-[ChangelistBuilder](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/vcs-api/src/com/intellij/openapi/vcs/changes/ChangelistBuilder.java)
+[ChangelistBuilder](upsource:///platform/vcs-api/src/com/intellij/openapi/vcs/changes/ChangelistBuilder.java)
 instance, which serves as a sink to which the
-[ChangeProvider](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/vcs-api/src/com/intellij/openapi/vcs/changes/ChangeProvider.java)
+[ChangeProvider](upsource:///platform/vcs-api/src/com/intellij/openapi/vcs/changes/ChangeProvider.java)
 feeds the data about the changed files.
 This processing happens asynchronously in a background thread.
 
 The
-[ChangeProvider](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/vcs-api/src/com/intellij/openapi/vcs/changes/ChangeProvider.java)
+[ChangeProvider](upsource:///platform/vcs-api/src/com/intellij/openapi/vcs/changes/ChangeProvider.java)
 can either iterate all files under the dirty scope using
-[VcsDirtyScope.iterate()](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/vcs-api/src/com/intellij/openapi/vcs/changes/VcsDirtyScope.java),
+[VcsDirtyScope.iterate()](upsource:///platform/vcs-api/src/com/intellij/openapi/vcs/changes/VcsDirtyScope.java),
 or retrieve information about its contents using the `getDirtyFiles()` and `getDirtyDirectoriesRecursively()` methods.
 If it is possible to retrieve the information about the local changes from the VCS in batch, it's strongly preferable to use the second method, as it scales much better for large working copies.
 
 The
-[ChangeProvider](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/vcs-api/src/com/intellij/openapi/vcs/changes/ChangeProvider.java)
+[ChangeProvider](upsource:///platform/vcs-api/src/com/intellij/openapi/vcs/changes/ChangeProvider.java)
 reports data to ChangelistBuilder using the following methods:
 
 *  `processChange()` is called for files which have been checked out (or modified if the VCS doesn't use an explicit checkout model), scheduled for addition or deletion, moved or renamed.

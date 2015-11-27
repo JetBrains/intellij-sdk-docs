@@ -4,7 +4,7 @@ title: 1. Working With Custom Actions
 
 
 An action is technically a class, derived from the
-[AnAction](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java)
+[AnAction](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java)
 class.
 To update the state of the action, the method AnAction.update() is periodically called by IDEA.
 The object of type
@@ -16,7 +16,7 @@ and in particular, the specific presentation which needs to be updated.
 ### 1.1. Creating actions
 
 To create a new we need to extend
-[AnAction](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java)
+[AnAction](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java)
 class:
 
 ```java
@@ -27,7 +27,7 @@ public class SimpleAction extends AnAction {
 ### 1.2. Overriding actionPerformed()
 
 The only method of an inheritor of
-[AnAction](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java)
+[AnAction](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java)
 which needs to be overridden is `public void actionPerformed(AnActionEvent anActionEvent);`, and it should contain a part of code to be executed after the action has been invoked. 
 In this case the action does nothing.
 
@@ -178,7 +178,7 @@ Parameter anActionEvent carries information on the invocation place and data ava
 This means that this method is supposed to work really fast, no real work should be done at this phase.
 For example, checking selection in a tree or a list, is considered valid, but working with a file system is not.
 If you cannot understand the state of the action fast you should do it in the
-[AnActionEvent](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnActionEvent.java)
+[AnActionEvent](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnActionEvent.java)
 method and notify the user that action cannot be executed if it's the case.
 
 

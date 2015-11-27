@@ -17,7 +17,7 @@ Implementations of `ProgramRunner.execute()` go through the following steps to e
 
 ## Executor
 
-The [`Executor`](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/execution/Executor.java) interface describes a specific way of executing any possible run configuration.
+The [`Executor`](upsource:///platform/lang-api/src/com/intellij/execution/Executor.java) interface describes a specific way of executing any possible run configuration.
 
 The three default executors provided by the *IntelliJ Platform* by default are _Run_, _Debug_ and _Run with Coverage_.  Each executor gets its own toolbar button, which starts the selected run configuration using this executor, and its own context menu item for starting a configuration using this executor.
 
@@ -27,24 +27,24 @@ As a plugin developer, you normally don't need to implement the `Executor` inter
 
 The `RunProfileState` interface comes up in every run configuration implementation as the return value `RunProfile.getState()`. It describes a process which is ready to be started and holds the information like the command line, current working directory, and environment variables for the process to be started. (The existence of `RunProfileState` as a separate step in the execution flow allows run configuration extensions and other components to patch the configuration and to modify the parameters before it gets executed.)
 
-The standard base class used as implementation of `RunProfileState` is [`CommandLineState`](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/execution/configurations/CommandLineState.java). It contains the logic for putting together a running process and a console into an [`ExecutionResult`](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/execution/ExecutionResult.java), but doesn't know anything how the process is actually started. For starting the process, it's best to use the [`GeneralCommandLine`](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/platform-api/src/com/intellij/execution/configurations/GeneralCommandLine.java) class, which takes care of setting up the command line parameters and executing the process.
+The standard base class used as implementation of `RunProfileState` is [`CommandLineState`](upsource:///platform/lang-api/src/com/intellij/execution/configurations/CommandLineState.java). It contains the logic for putting together a running process and a console into an [`ExecutionResult`](upsource:///platform/lang-api/src/com/intellij/execution/ExecutionResult.java), but doesn't know anything how the process is actually started. For starting the process, it's best to use the [`GeneralCommandLine`](upsource:///platform/platform-api/src/com/intellij/execution/configurations/GeneralCommandLine.java) class, which takes care of setting up the command line parameters and executing the process.
 
-Alternatively, if the process you need to run is a JVM-based one, you can use the [`JavaCommandLineState`](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/java/execution/openapi/src/com/intellij/execution/configurations/JavaCommandLineState.java) base class. It knows about the command line parameters of the JVM and can take care of details like calculating the classpath for the JVM.
+Alternatively, if the process you need to run is a JVM-based one, you can use the [`JavaCommandLineState`](upsource:///java/execution/openapi/src/com/intellij/execution/configurations/JavaCommandLineState.java) base class. It knows about the command line parameters of the JVM and can take care of details like calculating the classpath for the JVM.
 
-To monitor the execution of a process and capture its output, the [`OSProcessHandler`](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/platform-api/src/com/intellij/execution/process/OSProcessHandler.java) class is normally used. Once you've created an instance of `OSProcessHandler` from either a command line or a Process object, you need to call the `startNotify()` method to start capturing its output. You may also want to attach a [`ProcessTerminatedListener`](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/platform-api/src/com/intellij/execution/process/ProcessTerminatedListener.java) to the `OSProcessHandler`, so that the exit status of the process will be displayed in the console.
+To monitor the execution of a process and capture its output, the [`OSProcessHandler`](upsource:///platform/platform-api/src/com/intellij/execution/process/OSProcessHandler.java) class is normally used. Once you've created an instance of `OSProcessHandler` from either a command line or a Process object, you need to call the `startNotify()` method to start capturing its output. You may also want to attach a [`ProcessTerminatedListener`](upsource:///platform/platform-api/src/com/intellij/execution/process/ProcessTerminatedListener.java) to the `OSProcessHandler`, so that the exit status of the process will be displayed in the console.
 
 ## Displaying the process output
 
 If you're using `CommandLineState`, a console view will be automatically created and attached to the output of the process. Alternatively, you can arrange this yourself:
 
-* `TextConsoleBuilderFactory.createBuilder(project).getConsole()` creates a [`ConsoleView`](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/execution/ui/ConsoleView.java) instance
+* `TextConsoleBuilderFactory.createBuilder(project).getConsole()` creates a [`ConsoleView`](upsource:///platform/lang-api/src/com/intellij/execution/ui/ConsoleView.java) instance
 * `ConsoleView.attachToProcess()` attaches it to the output of a process.
 
-If the process you're running uses ANSI escape codes to color its output, the [`ColoredProcessHandler`](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/platform-api/src/com/intellij/execution/process/ColoredProcessHandler.java) class will parse it and display the colors in the IntelliJ console.
+If the process you're running uses ANSI escape codes to color its output, the [`ColoredProcessHandler`](upsource:///platform/platform-api/src/com/intellij/execution/process/ColoredProcessHandler.java) class will parse it and display the colors in the IntelliJ console.
 
-Console [filters](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/execution/filters/Filter.java) allow you to convert certain strings found in the process output to clickable hyperlinks. To attach a filter to the console, use `CommandLineState.addConsoleFilters()` or, if you're creating a console manually, `TextConsoleBuilder.addFilter()`.
+Console [filters](upsource:///platform/lang-api/src/com/intellij/execution/filters/Filter.java) allow you to convert certain strings found in the process output to clickable hyperlinks. To attach a filter to the console, use `CommandLineState.addConsoleFilters()` or, if you're creating a console manually, `TextConsoleBuilder.addFilter()`.
 
-Two common filter implementations you may want to reuse are [`RegexpFilter`](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/execution/filters/RegexpFilter.java) and [`UrlFilter`](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/execution/filters/UrlFilter.java).
+Two common filter implementations you may want to reuse are [`RegexpFilter`](upsource:///platform/lang-api/src/com/intellij/execution/filters/RegexpFilter.java) and [`UrlFilter`](upsource:///platform/lang-api/src/com/intellij/execution/filters/UrlFilter.java).
 
 ## Starting a run configuration from code
 

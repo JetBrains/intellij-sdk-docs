@@ -81,7 +81,7 @@ To develop IntelliJ IDEA, you can use either [IntelliJ IDEA Community Edition](h
 
 ## Building and Running from the Command Line
 
-To build the distribution archive of *IntelliJ IDEA Community Edition*, execute the [build.xml](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/build.xml) Ant build script in the root directory of the source code.
+To build the distribution archive of *IntelliJ IDEA Community Edition*, execute the [build.xml](upsource:///build.xml) Ant build script in the root directory of the source code.
 
 ![Execute Ant Build Script](img/ant_build_xml.png)
 

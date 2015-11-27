@@ -4,15 +4,15 @@ title: Action System
 
 ## Executing and updating actions
 
-The system of actions allows plugins to add their own items to IDEA menus and toolbars.  An action is a class, derived from the [`AnAction`](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java) class, whose `actionPerformed` method is called when the menu item or toolbar button is selected.
+The system of actions allows plugins to add their own items to IDEA menus and toolbars.  An action is a class, derived from the [`AnAction`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java) class, whose `actionPerformed` method is called when the menu item or toolbar button is selected.
 For example, one of the action classes is responsible for the **File \| Open File...** menu item and for the **Open File** toolbar button.
 
 Actions are organized into groups, which, in turn, can contain other groups. A group of actions can form a toolbar or a menu.
 Subgroups of the group can form submenus of the menu.
 
-Every action and action group has an unique identifier. Identifiers of many of the standard IDEA actions are defined in the [IdeActions](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/platform-api/src/com/intellij/openapi/actionSystem/IdeActions.java) class.
+Every action and action group has an unique identifier. Identifiers of many of the standard IDEA actions are defined in the [IdeActions](upsource:///platform/platform-api/src/com/intellij/openapi/actionSystem/IdeActions.java) class.
 
-Every action can be included in multiple groups, and thus appear in multiple places within the IDEA user interface. Different places where actions can appear are defined by constants in the [`ActionPlaces`](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/platform-api/src/com/intellij/openapi/actionSystem/ActionPlaces.java) interface. For every place where the action appears, a new `Presentation` is created. Thus, the same action can have different text or icons when it appears in different places of the user interface. Different presentations for the action are created by copying the presentation returned by the `AnAction.getTemplatePresentation()` method.
+Every action can be included in multiple groups, and thus appear in multiple places within the IDEA user interface. Different places where actions can appear are defined by constants in the [`ActionPlaces`](upsource:///platform/platform-api/src/com/intellij/openapi/actionSystem/ActionPlaces.java) interface. For every place where the action appears, a new `Presentation` is created. Thus, the same action can have different text or icons when it appears in different places of the user interface. Different presentations for the action are created by copying the presentation returned by the `AnAction.getTemplatePresentation()` method.
 
 To update the state of the action, the method `AnAction.update()` is periodically called by IDEA. The `AnActionEvent` object passed to this method carries the information about the current context for the action, and in particular, the specific presentation which needs to be updated.
 
@@ -115,8 +115,8 @@ Registering actions in `plugin.xml` is demonstrated in the following example. Th
 
 To register an action from code, two steps are required.
 
-* First, an instance of the class derived from `AnAction` must be passed to the `registerAction` method of the [ActionManager](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/ActionManager.java) class, to associate the action with an ID.
-* Second, the action needs to be added to one or more groups. To get an instance of an action group by ID, it is necessary to call `ActionManager.getAction()` and cast the returned value to the [DefaultActionGroup](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/platform-api/src/com/intellij/openapi/actionSystem/DefaultActionGroup.java) class.
+* First, an instance of the class derived from `AnAction` must be passed to the `registerAction` method of the [ActionManager](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/ActionManager.java) class, to associate the action with an ID.
+* Second, the action needs to be added to one or more groups. To get an instance of an action group by ID, it is necessary to call `ActionManager.getAction()` and cast the returned value to the [DefaultActionGroup](upsource:///platform/platform-api/src/com/intellij/openapi/actionSystem/DefaultActionGroup.java) class.
 
 You can create a plugin that registers actions on IDEA startup using the following procedure.
 

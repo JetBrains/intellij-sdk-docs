@@ -49,7 +49,7 @@ Connection will use that *default handler* when storing *(topic-handler)* mappin
 *  it's possible to explicitly release acquired resources (*disconnect()* method).
 Also it can be plugged to standard semi-automatic disposing 
 (
-[Disposable](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/util/src/com/intellij/openapi/Disposable.java)
+[Disposable](upsource:///platform/util/src/com/intellij/openapi/Disposable.java)
 );
 
 ## Putting altogether
@@ -107,12 +107,12 @@ public void doChange(Context context) {
 *  *MessageBus* instances are available via
 [ComponentManager.getMessageBus()](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/openapi/components/ComponentManager.java#L85)
 (many standard interfaces implement it, e.g.
-[Application](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/core-api/src/com/intellij/openapi/application/Application.java),
-[Project](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/core-api/src/com/intellij/openapi/project/Project.java);
+[Application](upsource:///platform/core-api/src/com/intellij/openapi/application/Application.java),
+[Project](upsource:///platform/core-api/src/com/intellij/openapi/project/Project.java);
 
 *  number of public topics are used by *IntelliJ IDEA*, e.g.
-[AppTopics](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/platform-api/src/com/intellij/AppTopics.java),
-[ProjectTopics](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/projectModel-api/src/com/intellij/ProjectTopics.java)
+[AppTopics](upsource:///platform/platform-api/src/com/intellij/AppTopics.java),
+[ProjectTopics](upsource:///platform/projectModel-api/src/com/intellij/ProjectTopics.java)
 etc.
 So, it's possible to subscribe to them in order to receive information about the processing;
 

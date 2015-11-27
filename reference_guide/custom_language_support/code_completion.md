@@ -10,32 +10,32 @@ Contributor-based completion provides more features, supports all three completi
 ### Reference Completion
 
 To fill the completion list, the IDE calls
-[PsiReference.getVariants()](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/core-api/src/com/intellij/psi/PsiReference.java)
+[PsiReference.getVariants()](upsource:///platform/core-api/src/com/intellij/psi/PsiReference.java)
 either on the reference at the caret location or on a dummy reference that would be placed at the caret.
 This method needs to return an array of objects containing either strings,
-[PsiElement](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/core-api/src/com/intellij/psi/PsiElement.java)
+[PsiElement](upsource:///platform/core-api/src/com/intellij/psi/PsiElement.java)
 instances or instances of the
-[LookupElement](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/codeInsight/lookup/LookupElement.java)
+[LookupElement](upsource:///platform/lang-api/src/com/intellij/codeInsight/lookup/LookupElement.java)
 class.
 If a
-[PsiElement](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/core-api/src/com/intellij/psi/PsiElement.java)
+[PsiElement](upsource:///platform/core-api/src/com/intellij/psi/PsiElement.java)
 instance is returned in the array, the completion list shows the icon for the element.
 
 The most common way to implement `getVariants()` is to use the same function for walking up the tree as in
-[PsiReference.resolve()](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/core-api/src/com/intellij/psi/PsiReference.java),
+[PsiReference.resolve()](upsource:///platform/core-api/src/com/intellij/psi/PsiReference.java),
 and a different implementation of
-[PsiScopeProcessor](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/core-api/src/com/intellij/psi/scope/PsiScopeProcessor.java)
+[PsiScopeProcessor](upsource:///platform/core-api/src/com/intellij/psi/scope/PsiScopeProcessor.java)
 which collects all declarations passed to its `processDeclarations()` method and returns them as an array for filling the completion list.
 
 ### Contributor-based Completion
 
 Implementing the
-[CompletionContributor](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/codeInsight/completion/CompletionContributor.java)
+[CompletionContributor](upsource:///platform/lang-api/src/com/intellij/codeInsight/completion/CompletionContributor.java)
 interface gives you the greatest control over the operation of code completion for your language.
 Note that the JavaDoc of that class contains a detailed FAQ for implementing code completion.
 
 The core scenario of using
-[CompletionContributor](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/codeInsight/completion/CompletionContributor.java)
+[CompletionContributor](upsource:///platform/lang-api/src/com/intellij/codeInsight/completion/CompletionContributor.java)
 consists of calling the `extend()` method and passing in the *pattern* specifying the context in which this completion variant is applicable, as well as a *completion provider* which generates the items to show in the completion list.
 
 **Example**:
@@ -44,10 +44,10 @@ for completing keywords in MANIFEST.MF files.
 
 
 Items shown in the completion list are represented by instances of the
-[LookupElement](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/codeInsight/lookup/LookupElement.java)
+[LookupElement](upsource:///platform/lang-api/src/com/intellij/codeInsight/lookup/LookupElement.java)
 interface.
 These instances are normally created through the
-[LookupElementBuilder](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/codeInsight/lookup/LookupElementBuilder.java)
+[LookupElementBuilder](upsource:///platform/lang-api/src/com/intellij/codeInsight/lookup/LookupElementBuilder.java)
 class.
 For every lookup element, you can specify the following attributes:
 

@@ -6,7 +6,7 @@ A PSI (Program Structure Interface) file represents a hierarchy of PSI elements 
 
 PSI elements and operations on the level of individual PSI elements are used to explore the internal structure of source code as it is interpreted by **IntelliJ IDEA**. For example, you can use PSI elements to perform code analysis, such as [code inspections](http://www.jetbrains.com/idea/help/code-inspection.html) or [intention actions](http://www.jetbrains.com/idea/help/intention-actions.html).
 
-The [PsiElement](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/core-api/src/com/intellij/psi/PsiElement.java) class is the common base class for PSI elements.
+The [PsiElement](upsource:///platform/core-api/src/com/intellij/psi/PsiElement.java) class is the common base class for PSI elements.
 
 ## How do I get a PSI element?
 

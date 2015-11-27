@@ -20,9 +20,9 @@ When you access the index, you specify the key that you're interested in and get
 
 ## Implementing a file based index
 
-A fairly simple file-based index implementation is the [UI Designer bound forms index](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/plugins/ui-designer/src/com/intellij/uiDesigner/binding/FormClassIndex.java). Refer to it as an example to understand this topic better.
+A fairly simple file-based index implementation is the [UI Designer bound forms index](upsource:///plugins/ui-designer/src/com/intellij/uiDesigner/binding/FormClassIndex.java). Refer to it as an example to understand this topic better.
 
-Each specific index implementation is a class extending [FileBasedIndexExtension](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/indexing-api/src/com/intellij/util/indexing/FileBasedIndexExtension.java). A file based index should be registered in the `<fileBasedIndex>` extension point.
+Each specific index implementation is a class extending [FileBasedIndexExtension](upsource:///platform/indexing-api/src/com/intellij/util/indexing/FileBasedIndexExtension.java). A file based index should be registered in the `<fileBasedIndex>` extension point.
 
 The implementation of a file based contains of the following main parts:
 
@@ -34,13 +34,13 @@ The implementation of a file based contains of the following main parts:
 * `getInputFilter()` allows to restrict the indexing only to a certain set of files.
 * `getVersion()` returns the version of the index implementation. The index is automatically rebuilt if the current version differs from the version of the index implementation used to build the index.
 
-If you don't need to associate any value with the files (i.e. your value type is Void), you can simplify the implementation by using [ScalarIndexExtension](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/indexing-impl/src/com/intellij/util/indexing/ScalarIndexExtension.java) as the base class.
+If you don't need to associate any value with the files (i.e. your value type is Void), you can simplify the implementation by using [ScalarIndexExtension](upsource:///platform/indexing-impl/src/com/intellij/util/indexing/ScalarIndexExtension.java) as the base class.
 
 > **Note** The data returned by `DataIndexer.map()` must depend only on input data passed to the method, and must not depend on any external files. Otherwise your index will not be correctly updated when the external data changes, and you will have stale data in your index.
 
 ## Accessing a file based index
 
-Access to file based indexes is performed through the [FileBasedIndex](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/indexing-api/src/com/intellij/util/indexing/FileBasedIndex.java) class.
+Access to file based indexes is performed through the [FileBasedIndex](upsource:///platform/indexing-api/src/com/intellij/util/indexing/FileBasedIndex.java) class.
 
 The following primary operations are supported:
 
@@ -59,6 +59,6 @@ The *IntelliJ Platform* contains a number of the standard file-based indexes. Th
 * Word index
 * File name index
 
-Generally, the word index should be accessed indirectly, but using the helper methods in the [`PsiSearchHelper`](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/indexing-api/src/com/intellij/psi/search/PsiSearchHelper.java) class.
+Generally, the word index should be accessed indirectly, but using the helper methods in the [`PsiSearchHelper`](upsource:///platform/indexing-api/src/com/intellij/psi/search/PsiSearchHelper.java) class.
 
-The second index is [`FilenameIndex`](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/indexing-impl/src/com/intellij/psi/search/FilenameIndex.java). It provides a quick way to find all files matching a certain file name. [`FileTypeIndex`](https://upsource.jetbrains.com/idea-community/file/1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/indexing-impl/src/com/intellij/psi/search/FileTypeIndex.java) serves a similar goal: it allows to quickly find all files of a certain file type.
+The second index is [`FilenameIndex`](upsource:///platform/indexing-impl/src/com/intellij/psi/search/FilenameIndex.java). It provides a quick way to find all files matching a certain file name. [`FileTypeIndex`](upsource:///platform/indexing-impl/src/com/intellij/psi/search/FileTypeIndex.java) serves a similar goal: it allows to quickly find all files of a certain file type.

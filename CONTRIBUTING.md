@@ -38,7 +38,7 @@ To build and run this site on Docker, first clone this repository and initialize
 
 * `docker build -t intellij-sdk-docs . && docker run -p 4000:4000 -v $PWD:/usr/src/app intellij-sdk-docs`
 
-This command will forward port 4000 from the Docker container (which can be configured in the [Rakefile](https://github.com/JetBrains/intellij-sdk-docs/blob/master/Rakefile), by updating the `-p <HOST_PORT>:<CONTAINER_PORT>` flag) and mount the working directory to `/usr/src/app` (where `intellij-sdk-docs` should reside). From there, Docker will run `rake bootstrap && rake preview`. Finally, you can access your newly created site at by visiting [http://localhost:4000/intellij/sdk/docs/](http://localhost:4000/intellij/sdk/docs/). Please keep in mind that boot2docker will bind a [different address](https://github.com/boot2docker/boot2docker#container-port-redirection).
+This command will forward port 4000 from the Docker container (which can be configured in the [Rakefile](https://github.com/JetBrains/intellij-sdk-docs/blob/master/Rakefile), by updating `-p <HOST_PORT>:<CONTAINER_PORT>`), then mount the working directory to `/usr/src/app` (where `intellij-sdk-docs` should reside). From there, Docker will run `rake bootstrap && rake preview`. Finally, you can access the newly created site by visiting [http://localhost:4000/intellij/sdk/docs/](http://localhost:4000/intellij/sdk/docs/). Please keep in mind that boot2docker will bind a [different address](https://github.com/boot2docker/boot2docker#container-port-redirection) on the host machine.
 
 **OS X**
 

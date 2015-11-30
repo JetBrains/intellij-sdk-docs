@@ -3,7 +3,7 @@ title: Library
 ---
 
 A library is an archive of compiled code (such as JAR files) that your modules depend on.
-IntelliJ IDEA supports three types of libraries:
+The IntelliJ Platform supports three types of libraries:
 
 * **Module Library**: the library classes are visible only in this module and the library information is recorded in the module *.iml file.
 * **Project Library**: the library classes are visible within the project and the library information is recorded in the project *.ipr file or in .idea/libraries.

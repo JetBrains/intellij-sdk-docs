@@ -1,7 +1,7 @@
 Project model. Project roots and libraries. Configuring the project from code.
 =================
 
-This topic considers the concept of IntelliJ IDEA projects and related subjects, such as modules, facets, libraries, SDK.
+This topic considers the concept of IntelliJ Platform projects and related subjects, such as modules, facets, libraries, SDK.
 The project structure and Java classes you can use to manage projects and modules have been considered.
 
 #Project and It's Components
@@ -11,12 +11,12 @@ This section briefly discusses the IDEA project structure, project components an
 [Library] (http://www.jetbrains.com/idea/webhelp/library.html),
 and
 [Facet] (http://www.jetbrains.com/idea/webhelp/facet.html)
-in
+in the
 [IntelliJ IDEA Web Help] (https://www.jetbrains.com/idea/help/intellij-idea.html).
 
 ##Project
-In IntelliJ IDEA, a project encapsulates all your source code, libraries, build instructions into a single organizational unit.
-Everything you do in IntelliJ IDEA, is done within the context of a project.
+In the IntelliJ Platform, a project encapsulates all your source code, libraries, build instructions into a single organizational unit.
+Everything you do in the IDE, is done within the context of a project.
 A project defines some collections referred to as modules and libraries.
 Depending on the logical and functional requirements to the project, you can create a single-module or a multi-module project.
 
@@ -28,7 +28,7 @@ A module can depend on other modules of the project.
 
 ##Library
 A library is an archive of compiled code (such as JAR files) that your modules depend on.
-IntelliJ IDEA supports three types of libraries:
+The IntelliJ Platform supports three types of libraries:
 
 * **Module Library**: the library classes are visible only in this module and the library information is recorded in the module *.iml file.
 * **Project Library**: the library classes are visible within the project and the library information is recorded in the project *.ipr file or in .idea/libraries.
@@ -46,7 +46,7 @@ For more information about SDKs, see
 [JDKs] (http://www.jetbrains.com/idea/webhelp/jdks.html)
 and
 [Configuring Project JDK] (http://www.jetbrains.com/idea/webhelp/configuring-project-jdk.html)
-in IntelliJ IDEA Web Help.
+in the IntelliJ IDEA Web Help.
 
 ##Facet
 A facet represents certain configuration, specific for a particular framework/technology, associated with a module. A module can have multiple facets. E.g. Spring specific configuration is stored in a Spring facet.
@@ -54,7 +54,7 @@ For more information about facets see
 [Facet] (http://www.jetbrains.com/idea/webhelp/facet.html)
 and
 [Facet Dependencies] (http://www.jetbrains.com/idea/webhelp/available-facets-and-their-dependencies.html)
-in IntelliJ IDEA Web Help.
+in the IntelliJ IDEA Web Help.
 
 #Project Structure
 A project consists of one or several modules.
@@ -68,7 +68,7 @@ This section explains how to complete some common tasks related to management of
 The Java classes and interfaces that you can use to explore and change the project contents are discussed.
 
 ##How to Work with Project Files?
-**IntelliJ IDEA** stores the project configuration data in XML files.
+The IntelliJ Platform stores the project configuration data in XML files.
 The list of those files depends on the plugin
 [project] (http://www.jetbrains.com/idea/webhelp/project.html)
 format.

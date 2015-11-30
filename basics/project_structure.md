@@ -8,7 +8,7 @@ This topic considers the concept of projects based on *IntelliJ Platform* and re
 
 ## Project and its components
 
-This section briefly discusses the IDEA project structure, project components and related terms.  For more information about projects and their components, refer to [Project](http://www.jetbrains.com/idea/help/project.html), [Module](http://www.jetbrains.com/idea/help/module.html), [Library](http://www.jetbrains.com/idea/help/library.html), [Facet](http://www.jetbrains.com/idea/help/facet.html) in *IntelliJ IDEA* Web Help.
+This section briefly discusses the IDEA project structure, project components and related terms.  For more information about projects and their components, refer to [Project](http://www.jetbrains.com/idea/help/project.html), [Module](http://www.jetbrains.com/idea/help/module.html), [Library](http://www.jetbrains.com/idea/help/library.html), [Facet](http://www.jetbrains.com/idea/help/facet.html) in the *IntelliJ IDEA* Web Help.
 
 ### Project
 
@@ -36,13 +36,13 @@ The SDK determines which API library is used to build the project. If your proje
 
 Optionally, you can configure individual SDK for each module.
 
-For more information about SDKs, see [Configuring Global, Project and Module SDKs](https://www.jetbrains.com/idea/help/configuring-global-project-and-module-sdks.html) in *IntelliJ IDEA* Web Help.
+For more information about SDKs, see [Configuring Global, Project and Module SDKs](https://www.jetbrains.com/idea/help/configuring-global-project-and-module-sdks.html) in the *IntelliJ IDEA* Web Help.
 
 ### Facet
 
 A _facet_ represents certain configuration, specific for a particular framework/technology, associated with a module. A module can have multiple facets. E.g. Spring specific configuration is stored in a Spring facet.
 
-For more information about facets see [Facet](http://www.jetbrains.com/idea/help/facet.html) and [Facet Dependencies](http://www.jetbrains.com/idea/help/available-facets-and-their-dependencies.html) in *IntelliJ IDEA* Web Help.
+For more information about facets see [Facet](http://www.jetbrains.com/idea/help/facet.html) and [Facet Dependencies](http://www.jetbrains.com/idea/help/available-facets-and-their-dependencies.html) in the *IntelliJ IDEA* Web Help.
 
 ## Project Structure
 

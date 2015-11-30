@@ -5,7 +5,7 @@ title: Popups
 
 ## Popups
 
-The *IntelliJ IDEA* user interface makes extensive use of popups \- semi-modal windows that have no chrome (explicit closing buttons) and disappear automatically on focus loss.
+The *IntelliJ Platform* user interface makes extensive use of popups \- semi-modal windows that have no chrome (explicit closing buttons) and disappear automatically on focus loss.
 Making use of these controls in your plugin ensures a consistent user experience between your plugin and the rest of the IDE.
 
 Popups can optionally display a title, are optionally movable and resizable (and support remembering their size), and can be nested (show another popup when an item is selected).
@@ -47,7 +47,7 @@ The key methods to override are `getTextFor()` (returning the text to display fo
 By returning a new popup step from the `onChosen()` method, you can implement hierarchical (nested) popups.
 
 Once you've created the popup, you need to display it by calling one of the `show()` methods.
-You can let *IntelliJ IDEA* automatically choose the position based on the context, by calling `showInBestPositionFor()`, or specify the position explicitly through methods like `showUnderneathOf()` and `showInCenterOf()`.
+You can let the IntelliJ Platform automatically choose the position based on the context, by calling `showInBestPositionFor()`, or specify the position explicitly through methods like `showUnderneathOf()` and `showInCenterOf()`.
 
 
 **Note:**

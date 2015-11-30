@@ -45,13 +45,13 @@ You can also browse the source code through the Web interface.
 
 ## Forking on GitHub
 
-As an alternative to checking out the official repository, you can fork the GitHub mirror of the IntelliJ IDEA source code, make changes in your own fork, and send us a pull request.
+As an alternative to checking out the official repository, you can fork the GitHub mirror of the IntelliJ Platform source code, make changes in your own fork, and send us a pull request.
 
 The GitHub mirror can be found at [https://github.com/JetBrains/intellij-community](https://github.com/JetBrains/intellij-community).
 
 ## Building and Running from the IDE
 
-To develop IntelliJ IDEA, you can use either [IntelliJ IDEA Community Edition](https://www.jetbrains.com/idea/download/) or [IntelliJ IDEA Ultimate](https://www.jetbrains.com/idea/download/).
+To develop plugins and applications on the IntelliJ Platform, you can use either [IntelliJ IDEA Community Edition](https://www.jetbrains.com/idea/download/) or [IntelliJ IDEA Ultimate](https://www.jetbrains.com/idea/download/).
 
 **Building and running the code**
 
@@ -61,7 +61,7 @@ To develop IntelliJ IDEA, you can use either [IntelliJ IDEA Community Edition](h
 
    Parts of IntelliJ IDEA are written in Groovy, and you will get compilation errors if you don't have the plugin enabled.
 
-*  Make sure you have the UI Designer plugin enabled. Most of IntelliJ IDEA's UI is built using the UI Designer, and the version you build will not run correctly if you don't have the plugin enabled.
+*  Make sure you have the UI Designer plugin enabled. Most of the IntelliJ IDEA platform UI is built using the UI Designer, and the version you build will not run correctly if you don't have the plugin enabled.
 
    ![UI Designer plugin](img/ui_designer_plugin_enabled.png)
 

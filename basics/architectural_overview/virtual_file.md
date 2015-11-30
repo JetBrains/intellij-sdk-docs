@@ -2,7 +2,7 @@
 title: Virtual Files
 ---
 
-A virtual file [com.intellij.openapi.vfs.VirtualFile](upsource:///platform/core-api/src/com/intellij/openapi/vfs/VirtualFile.java) is *IntelliJ IDEA's* representation of a file in a file system (VFS). Most commonly, a virtual file is a file in your local file system. However, *IntelliJ IDEA* supports multiple pluggable file system implementations, so virtual files can also represent classes in a JAR file, old revisions of files loaded from a version control repository, and so on.
+A virtual file [com.intellij.openapi.vfs.VirtualFile](upsource:///platform/core-api/src/com/intellij/openapi/vfs/VirtualFile.java) is the *IntelliJ Platform's* representation of a file in a file system (VFS). Most commonly, a virtual file is a file in your local file system. However, the *IntelliJ Platform* supports multiple pluggable file system implementations, so virtual files can also represent classes in a JAR file, old revisions of files loaded from a version control repository, and so on.
 
 The VFS level deals only with binary content. You can get or set the contents of a `VirtualFile` as a stream of bytes, but concepts like encodings and line separators are handled on higher system levels.
 
@@ -21,7 +21,7 @@ Typical file operations are available, such as traverse the file system, get fil
 
 The VFS is built incrementally, by scanning the file system up and down starting from the project root. New files appearing in the file system are detected by VFS _refreshes_. A refresh operation can be initiated programmatically using (`VirtualFileManager.getInstance().refresh()` or `VirtualFile.refresh()`). VFS refreshes are also triggered whenever file system watchers receive file system change notifications (available on the Windows and Mac operating systems).
 
-As a plugin developer, you may want to invoke a VFS refresh if you need to access a file that has just been created by an external tool through IntelliJ IDEA APIs.
+As a plugin developer, you may want to invoke a VFS refresh if you need to access a file that has just been created by an external tool through the IntelliJ Platform APIs.
 
 ## How long does a virtual file persist?
 

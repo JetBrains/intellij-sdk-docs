@@ -117,7 +117,7 @@ public class DemoModuleWizardStep extends ModuleWizardStep {
 
 ## 5. Creating a Module of New Type
 
-After compiling and running the plugin, create a new project with the instance of *IntelliJ IDEA* being run from sources.
+After compiling and running the plugin, create a new project with a source-compiled instance of *IntelliJ IDEA*.
 You will see a new module type and it's settings panel available in the Project Wizard.
 
 ![New Module Type](module_types/img/new_module_type.png)

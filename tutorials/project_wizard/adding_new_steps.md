@@ -91,7 +91,7 @@ public class DemoModuleWizardStep extends ModuleBuilder {
 
 ## 5. Checking UI Appearance  
 
-After compiling and running the plugin create a new project using compiled from sources instance of IntelliJ IDEA.
+After compiling and running the plugin create a new project using a source-compiled instance of *IntelliJ IDEA*.
 
 ![New Project](img/empty_project.png)
 

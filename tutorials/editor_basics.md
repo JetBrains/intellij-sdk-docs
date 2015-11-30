@@ -7,7 +7,7 @@ title: Basics of working with the Editor
 
 ----------
 
-This tutorial will lead you through the series of steps showing how to work with the Editor in IntelliJ IDEA, how access and modify text it contains,
+This tutorial will lead you through the series of steps showing how to work with the IntelliJ Platform Editor, how access and modify text it contains,
 and how to handle events sent to the Editor.
 
 * [1. Working With Text](editor_basics/working_with_text.md)

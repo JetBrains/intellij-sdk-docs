@@ -15,10 +15,10 @@ In our tests we will use test data, so we need one more folder *"testData"* to s
 ### 1.3. Run Configuration Parameters
 
 Since some of our tests will use Java files as test data, we need to mock up the project SDK.
-IntelliJ IDEA does everything automatically when we use special utility class
+IntelliJ IDEA does everything automatically when we use the special utility class
 [LightCodeInsightFixtureTestCase](upsource:///java/testFramework/src/com/intellij/testFramework/fixtures/LightCodeInsightFixtureTestCase.java).
 
-All we need to do is to point the working directory of the run configuration to the root of IntelliJ IDEA Community Edition sources and enable the following VM options:
+All we need to do is point the the run configuration's working directory to the root of the IntelliJ IDEA Community Edition sources and enable the following VM options:
 
 ```
 -ea -Xbootclasspath/p:../out/classes/production/boot -XX:+HeapDumpOnOutOfMemoryError -Xmx512m -XX:MaxPermSize=320m -Didea.system.path=../test-system -Didea.home.path=../ -Didea.config.path=../test-config -Didea.test.group=ALL_EXCLUDE_DEFINED

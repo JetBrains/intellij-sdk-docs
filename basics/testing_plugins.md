@@ -2,7 +2,7 @@
 title: Testing Plugins
 ---
 
-Most of the tests in the *IntelliJ IDEA* codebase are *model level functional tests*. What this means is the following:
+Most of the tests in the *IntelliJ Platform* codebase are *model level functional tests*. What this means is the following:
 
 * The tests run in a headless environment which uses real production implementations for the majority of components, except for a number of UI components.
 * The tests usually test a feature as a whole, rather than individual functions that comprise its implementation.

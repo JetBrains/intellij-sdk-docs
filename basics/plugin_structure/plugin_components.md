@@ -4,9 +4,9 @@ title: Plugin Components
 
 Components are the fundamental concept of plugin integration. There are three kinds of components:
 
-* **Application level components** are created and initialized when *IntelliJ IDEA* starts up. They can be acquired from the [Application](upsource:///platform/core-api/src/com/intellij/openapi/application/Application.java) instance by using the `getComponent(Class)` method.
-* **Project level components** are created for each [`Project`](upsource:///platform/core-api/src/com/intellij/openapi/project/Project.java) instance in *IntelliJ IDEA*. (Please note that components may be created even for unopened projects.) They can be acquired from the `Project` instance by using the `getComponent(Class)` method.
-* **Module level components** are created for each [Module](upsource:///platform/core-api/src/com/intellij/openapi/module/Module.java) in every project loaded in *IntelliJ IDEA*.
+* **Application level components** are created and initialized when your IDE starts up. They can be acquired from the [Application](upsource:///platform/core-api/src/com/intellij/openapi/application/Application.java) instance by using the `getComponent(Class)` method.
+* **Project level components** are created for each [`Project`](upsource:///platform/core-api/src/com/intellij/openapi/project/Project.java) instance in the IDE. (Please note that components may be created even for unopened projects.) They can be acquired from the `Project` instance by using the `getComponent(Class)` method.
+* **Module level components** are created for each [`Module`](upsource:///platform/core-api/src/com/intellij/openapi/module/Module.java) inside every project loaded in the IDE.
 Module level components can be acquired from a `Module` instance with the `getComponent(Class)` method.
 
 Every component should have interface and implementation classes specified in the configuration file. The interface class will be used for retrieving the component from other components, and the implementation class will be used for component instantiation.
@@ -23,15 +23,15 @@ It is recommended to name components in the form `<plugin_name>.<component_name>
 
 Optionally, an application level component's implementation class may implement the [ApplicationComponent](upsource:///platform/core-api/src/com/intellij/openapi/components/ApplicationComponent.java) interface.
 
-An application component that has no dependencies should have a constructor with no parameters which will be used for its instantiation. If an application component depends on other application components, it can specify these components as constructor parameters. *IntelliJ IDEA* will ensure that the components are instantiated in the correct order to satisfy the dependencies.
+An application component that has no dependencies should have a constructor with no parameters which will be used for its instantiation. If an application component depends on other application components, it can specify these components as constructor parameters. The *IntelliJ Platform* will ensure that the components are instantiated in the correct order to satisfy the dependencies.
 
 Note that application level components must be registered in the `<application-components>` section of the plugin.xml file (see [Plugin Configuration File](plugin_configuration_file.md)).
 
 ### Quick creation of application components
 
-*IntelliJ IDEA* suggests a simplified way to create application components, with all the required infrastructure.
+The *IntelliJ Platform* suggests a simplified way to create application components, with all the required infrastructure.
 
-The IntelliJ interface will help you declare the application component's implementation class, and will automatically make appropriate changes to the `<application-components>` section of the `plugin.xml` file.
+The IntelliJ Platform interface will help you declare the application component's implementation class, and will automatically make appropriate changes to the `<application-components>` section of the `plugin.xml` file.
 
 **To create and register an application component:**
 
@@ -39,7 +39,7 @@ The IntelliJ interface will help you declare the application component's impleme
 2. In the *New* menu, click *Application Component*.
 3. In the *New Application Component* dialog box that opens, enter the application component name, and then click *OK*.
 
-*IntelliJ IDEA* will generate a new Java class that implements the [ApplicationComponent](upsource:///platform/core-api/src/com/intellij/openapi/components/ApplicationComponent.java) interface; register the newly created component in the `plugin.xml` file; add a node to the module tree view; and open the created application component class file in the editor.
+The *IntelliJ Platform* will generate a new Java class that implements the [ApplicationComponent](upsource:///platform/core-api/src/com/intellij/openapi/components/ApplicationComponent.java) interface. First register the newly created component in the `plugin.xml` file, then add a node to the module tree view; and open the created application component class file in the editor.
 
 ## Project level components
 
@@ -52,7 +52,7 @@ Note that project level components must be registered in the `<project-component
 ### Quick creation of project components
 
  <!--TODO Link to demo source code -->
-*IntelliJ IDEA* suggests a simplified way to create project components, with all the required infrastructure.
+The *IntelliJ Platform* suggests a simplified way to create project components, with all the required infrastructure.
 
 The IDEA interface will help you declare the project component's implementation class, and will automatically make appropriate changes to the `<project-components>` section of the `plugin.xml` file.
 
@@ -62,7 +62,7 @@ The IDEA interface will help you declare the project component's implementation 
 2. In the *New* menu, click *Project Component*.
 3. In the *New Project Component* dialog box that opens, enter the project component name, and then click *OK*.
 
-*IntelliJ IDEA* will generate a new Java class that implements the [ProjectComponent](upsource:///platform/core-api/src/com/intellij/openapi/components/ProjectComponent.java) interface; register the newly created component in the `plugin.xml` file; add a node to the module tree view; and open the created application component class file in the editor.
+The *IntelliJ Platform* will generate a new Java class that implements the [ProjectComponent](upsource:///platform/core-api/src/com/intellij/openapi/components/ProjectComponent.java) interface; register the newly created component in the `plugin.xml` file; add a node to the module tree view; and open the created application component class file in the editor.
 
 ## Module level components
 
@@ -74,7 +74,7 @@ Note that module level components must be registered in the `<module-components>
 
 ### Quick creation of module components
 
-*IntelliJ IDEA* suggests a simplified way to create module components, with all the required infrastructure.
+The *IntelliJ Platform* suggests a simplified way to create module components, with all the required infrastructure.
 
 The IDEA interface will help you declare the module component's implementation class, and will automatically make appropriate changes to the `<module-components>` section of the `plugin.xml` file.
 
@@ -84,7 +84,7 @@ The IDEA interface will help you declare the module component's implementation c
 2. In the *New* menu, click *Module Component*.
 3. In the *New Module Component* dialog box that opens, enter the module component name, and then click *OK*.
 
-*IntelliJ IDEA* will generate a new Java class that implements the [ModuleComponent](upsource:///platform/core-api/src/com/intellij/openapi/module/ModuleComponent.java) interface; register the newly created component in the `plugin.xml` file; add a node to the module tree view; and open the created application component class file in the editor.
+The *IntelliJ Platform* will generate a new Java class that implements the [ModuleComponent](upsource:///platform/core-api/src/com/intellij/openapi/module/ModuleComponent.java) interface; register the newly created component in the `plugin.xml` file; add a node to the module tree view; and open the created application component class file in the editor.
 
 ## Persisting the state of components
 

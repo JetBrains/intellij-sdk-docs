@@ -2,14 +2,14 @@
 title: Creating an action
 ---
 
-Your plugins can customize the Intellij IDEA UI by adding new items to the menus and toolbars. Intellij IDEA provides the [AnAction.java](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java) class whose `actionPerformed` method is called each time you select a menu item or click a toolbar button.
+Your plugins can customize the IntelliJ Platform UI by adding new items to the menus and toolbars. The IntelliJ Platform provides the class [AnAction.java](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java) whose `actionPerformed` method is called each time you select a menu item or click a toolbar button.
 
-To customize *IntelliJ IDEA*, you should perform two basic steps:
+To create custom actions in the *IntelliJ Platform*, you should perform two basic steps:
 
 1. In your plugin, define an action or a system of actions that add their own items to menus and toolbars.
 2. Register your actions.
 
-This topic outlines the above steps. For detailed information and samples, refer to [IntelliJ IDEA Action System](/basics/action_system.md).
+This topic outlines the above steps. For detailed information and samples, refer to [IntelliJ Platform Action System](/basics/action_system.md).
 
 ### Defining actions
 
@@ -46,7 +46,7 @@ Once you have defined an action or a system of actions, you must register them t
 * Register actions in the `<actions>` section of the `plugin.xml` file.
 * Register actions from Java code.
 
-This section provides some examples that illustrate how to register actions. For more information, refer to [IntelliJ IDEA Action System](/basics/action_system.md).
+This section provides some examples that illustrate how to register actions. For more information, refer to [IntelliJ Platform Action System](/basics/action_system.md).
 
 #### Registering actions in the plugin.xml file
 
@@ -64,15 +64,15 @@ To register your actions, make appropriate changes to the `<actions>` section of
 </actions>
 ```
 
-This fragment of the plugin.xml file demonstrates only some elements you can use in the `<actions>` section to register your actions. For information about all elements designed to register your actions, refer to [IntelliJ IDEA Action System](/basics/action_system.md).
+This fragment of the plugin.xml file demonstrates only some elements you can use in the `<actions>` section to register your actions. For information about all elements designed to register your actions, refer to [IntelliJ Platform Action System](/basics/action_system.md).
 
 #### Registering actions from Java code
 
-Alternatively, you can register your actions from Java code. For more information and samples that illustrate how to register actions from Java code, see [IntelliJ IDEA Action System](/basics/action_system.md).
+Alternatively, you can register your actions from Java code. For more information and samples that illustrate how to register actions from Java code, see [IntelliJ Platform Action System](/basics/action_system.md).
 
 ### Quick creation of actions
 
-IntelliJ IDEA provides the New Action wizard that suggests a simplified way of creating actions, with all the required infrastructure. The wizard helps you declare the action class and automatically makes appropriate changes to the `<actions>` section of the plugin.xml file.
+The IntelliJ Platform provides the **New Action** wizard that suggests a simplified way of creating actions, with all the required infrastructure. The wizard helps you declare the action class and automatically makes appropriate changes to the `<actions>` section of the plugin.xml file.
 
 Note that you can use this wizard only to add a new action to an existing action group on the main menu or toolbar. If you want to create a new action group, and then add an action to this group, follow instructions earlier in this document.
 
@@ -94,4 +94,4 @@ Note that you can use this wizard only to add a new action to an existing action
 
 ![New Action Page](img/new_action_page.png)
 
-IntelliJ IDEA generates a `.java` file with the specified class name, registers the newly created action in the plugin.xml file, adds a node to the module tree view, and opens the created action class file in the editor.
+The IntelliJ Platform generates a `.java` file with the specified class name, registers the newly created action in the plugin.xml file, adds a node to the module tree view, and opens the created action class file in the editor.

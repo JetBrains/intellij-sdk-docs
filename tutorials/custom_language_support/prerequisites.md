@@ -24,9 +24,9 @@ plugins.
 
 ### 1.4. Configure SDK and source files
 
-Configure a common JDK and an IntelliJ IDEA Plugin SDK.
-For IntelliJ IDEA Plugin SDK you should specify the directory with installed IntelliJ IDEA.
-By default it offers the directory of the currently running IntelliJ IDEA.
+Configure a common JDK and an IntelliJ Platform SDK.
+For the IntelliJ Platform SDK you may need to specify the directory containing the installed version IntelliJ IDEA.
+By default it should offer the directory of the currently running version of IntelliJ IDEA.
 
 To attach the Community Edition source files to the SDK, open the Sourcepath tab in the SDK configuration dialog, press the Add button and select the directory with the Community Edition source checkout.
 IntelliJ IDEA will scan the directory for roots and offer the list of roots to add, with everything checked by default.
@@ -38,7 +38,7 @@ Accept the list of roots by pressing OK.
 
 ### 1.5. Create a project
 
-Create an IntelliJ IDEA Plugin project and specify IntelliJ IDEA Plugin SDK.
+Create an IntelliJ Platform Plugin project and specify IntelliJ Platform SDK.
 
 ![New Project](img/new_project.png)
 

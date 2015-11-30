@@ -49,7 +49,7 @@ MyServiceImplClass service = ServiceManager.getService(MyServiceImplClass.class)
 
 ### Sample Plugin
 
-This section allows you to download and install a sample plugin illustrating how to create and use a plugin service. This plugin has a project component implementing a service that counts the number of currently opened projects in *IntelliJ IDEA*. If this number exceeds the maximum allowed number of simultaneously opened projects, the plugin returns an error message and closes the most recently opened project.
+This section allows you to download and install a sample plugin illustrating how to create and use a plugin service. This plugin has a project component implementing a service that counts the number of currently opened projects in the IDE. If this number exceeds the maximum allowed number of simultaneously opened projects, the plugin returns an error message and closes the most recently opened project.
 
 <!-- TODO Replace with other plugin URL when available-->
 

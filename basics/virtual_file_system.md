@@ -16,13 +16,13 @@ All VFS access operations go through the snapshot.
 
 If some information is requested through the VFS APIs and is not available in the snapshot, it is loaded from disk and stored into the snapshot. If the information is available in the snapshot, the snapshot data is returned. The contents of files and the lists of files in directories are stored in the snapshot only if that specific information was accessed - otherwise, only file metadata like name, length, timestamp, attributes is stored.
 
-> **Note** This means that the state of the file system and the file contents displayed in the IntelliJ IDEA UI comes from the snapshot, which may not always match the actual contents of the disk. 
+> **Note** This means that the state of the file system and the file contents displayed in the IntelliJ Platform UI comes from the snapshot, which may not always match the actual contents of the disk. 
 >
-> For example, in some cases deleted files can still be visible in the UI for some time before the deletion is picked up by IntelliJ IDEA.
+> For example, in some cases deleted files can still be visible in the UI for some time before the deletion is picked up by the IntelliJ Platform.
 
 The snapshot is updated from disk during _refresh operations_, which generally happen asynchronously. All write operations made through the VFS are synchronous - i.e. the contents is saved to disk immediately.
 
-A refresh operation synchronizes the state of a part of the VFS with the actual disk contents. Refresh operations are explicitly invoked from *IntelliJ IDEA* or plugin code - i.e. when a file is changed on disk while *IntelliJ IDEA* is running, the change will not be immediately picked up by the VFS. The VFS will be updated during the next refresh operation which includes the file in its scope.
+A refresh operation synchronizes the state of a part of the VFS with the actual disk contents. Refresh operations are explicitly invoked by the *IntelliJ Platform* or plugin code - i.e. when a file is changed on disk while the IDE is running, the change will not be immediately picked up by the VFS. The VFS will be updated during the next refresh operation which includes the file in its scope.
 
 *IntelliJ Platform* refreshes the entire project contents asynchronously on startup. By default, it performs a refresh operation when the user switches to it from another app, but users can turn this off via **Settings \| Appearance & Behavior \| System Settings \| Synchronize files on frame activation**.
 
@@ -34,7 +34,7 @@ There is currently no facility for removing files from the snapshot. If a file w
 
 The VFS itself does not honor ignored files listed in **Settings \| File Types \| Files** and folders to ignore and excluded folders listed in **Project Structure \| Modules \| Sources \| Excluded**. If the application code accesses them, the VFS will load and return their contents. In most cases, the ignored files and excluded folders must be skipped from processing by higher level code.
 
-During the lifetime of a running instance of *IntelliJ IDEA*, multiple `VirtualFile` instances may correspond to the same disk file. They are equal, have the same `hashCode` and share the user data.
+During the lifetime of a running instance of an IntelliJ Platform IDE, multiple `VirtualFile` instances may correspond to the same disk file. They are equal, have the same `hashCode` and share the user data.
 
 ## Synchronous and asynchronous refreshes
 

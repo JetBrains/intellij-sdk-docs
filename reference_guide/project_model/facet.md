@@ -8,4 +8,4 @@ For more information about facets see
 [Facet](http://www.jetbrains.com/idea/help/facet.html)
 and
 [Facet Dependencies](http://www.jetbrains.com/idea/help/available-facets-and-their-dependencies.html)
-in IntelliJ IDEA Web Help.
+in the IntelliJ IDEA Web Help.

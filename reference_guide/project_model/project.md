@@ -2,7 +2,7 @@
 title: Project
 ---
 
-In *IntelliJ IDEA*, a project encapsulates all your source code, libraries, build instructions into a single organizational unit. Everything you do in *IntelliJ IDEA*, is done within the context of a project. A project defines some collections referred to as modules and libraries. Depending on the logical and functional requirements to the project, you can create a single-module or a multi-module project.
+In the *IntelliJ Platform*, a project encapsulates all your source code, libraries, build instructions into a single organizational unit. Everything you do in the IDE, is done within the context of a project. A project defines some collections referred to as modules and libraries. Depending on the logical and functional requirements to the project, you can create a single-module or a multi-module project.
 
 ## Working with projects
 

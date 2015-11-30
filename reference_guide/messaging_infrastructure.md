@@ -5,11 +5,11 @@ title: Messaging infrastructure
 
 # Purpose
 
-The purpose of this document is to introduce messaging infrastructure available at _IntelliJ IDEA_ to the product's developers and plugin writers. It is intended to answer why, when and how to use it.
+The purpose of this document is to introduce the messaging infrastructure available in the IntelliJ Platform to developers and plugin writers. It is intended to answer why, when and how to use it.
 
 # Rationale
 
-So, what is messaging in _IntelliJ IDEA_ and why do we need it? Basically, its implementation of
+So, what is messaging in the IntelliJ Platform and why do we need it? Basically, its implementation of
 [Observer pattern](https://en.wikipedia.org/wiki/Observer_pattern)
 that provides additional features like _broadcasting on hierarchy_ and special _nested events_ processing (_nested event_ here is a situation when new event is fired (directly or indirectly) from the callback of another event).
 
@@ -110,7 +110,7 @@ public void doChange(Context context) {
 [Application](upsource:///platform/core-api/src/com/intellij/openapi/application/Application.java),
 [Project](upsource:///platform/core-api/src/com/intellij/openapi/project/Project.java);
 
-*  number of public topics are used by *IntelliJ IDEA*, e.g.
+*  number of public topics are used by the *IntelliJ Platform*, e.g.
 [AppTopics](upsource:///platform/platform-api/src/com/intellij/AppTopics.java),
 [ProjectTopics](upsource:///platform/projectModel-api/src/com/intellij/ProjectTopics.java)
 etc.
@@ -118,7 +118,7 @@ So, it's possible to subscribe to them in order to receive information about the
 
 # Broadcasting
 
-Message buses can be organised into hierarchies. Moreover, *IntelliJ IDEA* has them already:
+Message buses can be organised into hierarchies. Moreover, the *IntelliJ Platform* has them already:
 
 ![Standard hierarchy](img/standard-hierarchy.png)
 
@@ -157,7 +157,7 @@ Broadcast configuration is defined per-topic. Following options are available:
 # Nested messages
 
 _Nested message_ is a message sent (directly or indirectly) during another message processing.
-Messaging infrastructure of _IntelliJ IDEA_ guarantees that all messages sent to particular topic will be delivered at the sending order.
+The IntelliJ Platform's Messaging infrastructure guarantees that all messages sent to particular topic will be delivered at the sending order.
 
 *Example:*
 

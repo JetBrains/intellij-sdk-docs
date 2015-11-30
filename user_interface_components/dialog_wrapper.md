@@ -7,7 +7,7 @@ title: DialogWrapper
 
 The
 [DialogWrapper](upsource:///platform/platform-api/src/com/intellij/openapi/ui/DialogWrapper.java)
-is the base class which is supposed to be used for all modal dialogs (and some non-modal dialogs) shown in *IntelliJ IDEA* plugins.
+is the base class which is supposed to be used for all modal dialogs (and some non-modal dialogs) shown in *IntelliJ Platform* plugins.
 It provides the following features:
 
 *  Button layout (platform-specific order of `OK/Cancel` buttons, Mac OS-specific `Help` button)

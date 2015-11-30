@@ -18,7 +18,7 @@ The constructor parameters specify whether files and/or directories can be selec
 For more fine-grained control over the allowed selection, you can overload the `isFileSelectable()` method.
 You can also customize the presentation of files by overloading `getIcon()`, `getName()` and `getComment()` methods on
 [FileChooserDescriptor](upsource:///platform/platform-api/src/com/intellij/openapi/fileChooser/FileChooserDescriptor.java).
-Note that the native Mac OS X file chooser does not support most of the customizations, so if you rely on them, you need to use an overload of `chooseFiles()` which displays the standard *IntelliJ IDEA* dialog.
+Note that the native Mac OS X file chooser does not support most of the customizations, so if you rely on them, you need to use an overload of `chooseFiles()` which displays the standard *IntelliJ Platform* dialog.
 
 A very common way of using file choosers is to use a text field for entering the path with an ellipsis button ("...") for showing the file chooser.
 To create such a control, use the

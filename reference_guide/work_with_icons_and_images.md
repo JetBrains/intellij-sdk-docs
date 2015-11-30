@@ -3,7 +3,7 @@ title: Work with Icons and Images
 ---
 
 
-Icons and images are used widely by IntelliJ IDEA plugins.
+Icons and images are used widely by IntelliJ Platform plugins.
 Plugins need icons mostly for actions, custom components renderers, tool windows and so on.
 This page describes how to organize your work with icons and images under IntelliJ Platform.
 
@@ -36,7 +36,7 @@ and use icons inside plugin.xml as well:
 
 ### Image formats and naming notations
 
-IntelliJ IDEA Platform supports Retina displays and has dark look and feel called Darcula.
+IntelliJ Platform supports Retina displays and has dark look and feel called Darcula.
 According this all images should have 4 different representations (in some cases only 2).
 Let's take a look on the example above.
 We've got three icons:

@@ -2,7 +2,7 @@
 title: IntelliJ Action System
 ---
 
-This tutorial is meant to give general information about the IntelliJ IDEA Action System and lead you through a series of steps
+This tutorial is meant to give general information about the IntelliJ Platform Action System and lead you through a series of steps
 which show how to create, register, and customize custom actions and action groups.
 Action system provides an option to handle certain events in a desired way. 
 Action can either be simply a response to some state, or be bound to UI element and could be invoked on demand. 

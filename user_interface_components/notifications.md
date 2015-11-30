@@ -5,8 +5,8 @@ title: Notifications
 
 ## Notifications
 
-One of the leading design principles in recent versions of *IntelliJ IDEA* is avoiding the use of modal message boxes for notifying the user about errors and other situations that may warrant his attention.
-As a replacement, *IntelliJ IDEA* provides multiple non-modal notification UI options.
+One of the leading design principles in recent versions of *IntelliJ IDEA* is avoiding the use of modal message boxes for notifying the user about errors and other situations that may warrant the user's attention.
+As a replacement, the *IntelliJ Platform* provides multiple non-modal notification UI options.
 
 ### Dialogs
 

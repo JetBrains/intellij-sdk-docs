@@ -79,8 +79,8 @@ This FAQ is a topical index of questions that have been asked (and answered) on 
 *  [Why are the extension elements in my plugin.xml red?](https://devnet.jetbrains.com/thread/269517)
 *  [How can I read the plugin descriptor of my plugin from code?](https://devnet.jetbrains.com/thread/225115)
 *  [How do I provide a custom exception reporter for my plugin?](https://devnet.jetbrains.com/thread/264619)
-*  [How can I add the help topics of my plugin to the IntelliJ IDEA help system?](https://devnet.jetbrains.com/thread/261416)
-*  [How do I get the version of IntelliJ IDEA under which my plugin is running?](https://devnet.jetbrains.com/thread/156440)
+*  [How can I add the help topics of my plugin to the IntelliJ Platform help system?](https://devnet.jetbrains.com/thread/261416)
+*  [How do I get the version of IntelliJ Platform under which my plugin is running?](https://devnet.jetbrains.com/thread/156440)
 
 ## Editors, Documents and Files
 *  [Why doesn't the file change on disk after I changed it through the PSI?](https://devnet.jetbrains.com/thread/269379)

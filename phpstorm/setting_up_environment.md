@@ -16,7 +16,7 @@ The choice affects how you will configure SDK for the plugin. In the first case 
 
 > OpenAPI is available for PhpStorm 6 and above.
 
-This section explains how to configure IntelliJ IDEA for using PhpStorm OpenAPI.
+This section explains how to configure the IntelliJ Platform for using PhpStorm OpenAPI.
 
 ### Adding library to a module
 

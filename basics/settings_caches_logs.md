@@ -11,7 +11,7 @@ Every IntelliJ-based IDE stores its local settings, caches, log and installed pl
 
   In the folder you can find two subdirectories:
   * `config` that contains user-specific settings.
-  * `system` that stores `IntelliJ IDEA` data caches.
+  * `system` that stores `IntelliJ Platform` data caches.
 
 * **Mac OS X:** You can find internal configuration data in:
   * `/Applications/<product_system_name><product_version>/Contents/plugins` contains the catalog with plugins.

@@ -65,7 +65,7 @@ If closing tabs is enabled in general, you can disable closing of specific tabs 
 
 ## How to Create a Tool Window?
 
-The IntelliJ IDEA core provides the _toolWindow_ [extension point](/basics/plugin_structure/plugin_extensions_and_extension_points.md) that you can use to create and configure your custom tool windows. This extension point is declared using the [ToolWindowEP](upsource:///platform/platform-api/src/com/intellij/openapi/wm/ToolWindowEP.java) bean class.
+The IntelliJ Platform provides the _toolWindow_ [extension point](/basics/plugin_structure/plugin_extensions_and_extension_points.md) that you can use to create and configure your custom tool windows. This extension point is declared using the [ToolWindowEP](upsource:///platform/platform-api/src/com/intellij/openapi/wm/ToolWindowEP.java) bean class.
 
 To create a tool window, first declare an extension to the _toolWindow_ extension point.
 
@@ -75,8 +75,8 @@ To create a plugin that displays a custom tool window, perform the following ste
 
 1. In your plugin project, create a Java class that implements the [ToolWindowFactory](upsource:///platform/platform-api/src/com/intellij/openapi/wm/ToolWindowFactory.java)interface.
 2. In this class, override the `createToolWindowContent` method. This method specifies the content for your tool window.
-3. In the plugin configuration file plugin.xml, create the _&lt;extensions defaultExtensionNs="com.intellij"&gt; &lt;/extensions&gt;_ section.
-4. To this section, add the _&lt;toolWindow&gt;_ element, and for this element, set the following attributes declared in the ToolWindowEP bean class:
+3. In the plugin configuration file plugin.xml, create the `<extensions defaultExtensionNs="com.intellij">...</extensions>` section.
+4. To this section, add the `<toolWindow>` element, and for this element, set the following attributes declared in the ToolWindowEP bean class:
     - **id** (required): specifies the tool window caption.
     - **anchor** (required): specifies the tool window bar where the tool window button will be displayed. Possible values: "left", "right", "top", "bottom."
     - **secondary** (optional): when true, the tool window button will be shown on the lower part of the tool window bar. Default value is false.
@@ -86,12 +86,11 @@ To create a plugin that displays a custom tool window, perform the following ste
 
 To clarify the above procedure, consider the following fragment of the `plugin.xml` file:
 
-&lt;extensions defaultExtensionNs="com.intellij"&gt;
-                           
-    &lt;toolWindow id="My Sample Tool Window" icon="/myPackage/icon.png" anchor="right" factoryClass="myPackage.MyToolWindowFactory"&gt;
-         
-    &lt;/toolWindow&gt;
-&lt;/extensions&gt;
+```xml
+<extensions defaultExtensionNs="com.intellij">
+    <toolWindow id="My Sample Tool Window" icon="/myPackage/icon.png" anchor="right" factoryClass="myPackage.MyToolWindowFactory"/>
+</extensions>
+```
 
 ### Sample Plugin
 

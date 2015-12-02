@@ -2,7 +2,7 @@
 title: Getting Started
 ---
 
-Adding Gradle build support to an IntelliJ Platform Plugin requires a recent distribution the Gradle build system and IntelliJ IDEA.
+Adding Gradle build support to an IntelliJ Platform Plugin requires a recent distribution to the Gradle build system and IntelliJ IDEA (Community or Ultimate).
 
 ### 1.0. Download and install Gradle
 
@@ -14,11 +14,11 @@ Download and install either IntelliJ IDEA Ultimate or the IntelliJ IDEA Communit
 
 ### 1.2. Ensure the Gradle plugin is enabled
 
-The Gradle plugin is required if you want to add a [Gradle Run Configuration](https://www.jetbrains.com/idea/help/create-run-debug-configuration-for-gradle-tasks.html) to IntelliJ IDEA. You can verify the Gradle plugin is enabled by visiting **Settings \| Plugins \| Gradle**.
+The [Gradle plugin](https://plugins.gradle.org/plugin/org.jetbrains.intellij) is required if you want to add a [Gradle Run Configuration](https://www.jetbrains.com/idea/help/create-run-debug-configuration-for-gradle-tasks.html) to IntelliJ IDEA. You can verify the Gradle plugin is enabled by visiting **Settings \| Plugins \| Gradle**.
 
 ![Ensure the Gradle plugin is enabled](img/step0_gradle_enabled.png)
 
-### 1.3. Create a new Gradle project 
+### 1.3. Add Gradle support to an existing plugin 
 
 There are two ways to add Gradle support to an existing project. Both will require adding a `build.gradle` file under the root directory, with at least the following contents:
 
@@ -38,19 +38,25 @@ apply plugin: 'org.jetbrains.intellij'
 apply plugin: 'java'
 
 intellij {
-    version '15.0.1'
-    plugins 'coverage'
+    version 'IC-14.1.4' //IntelliJ IDEA dependency 
+    plugins 'coverage' //Bundled plugin dependencies
     pluginName 'plugin_name_goes_here'
 }
+
+group 'org.jetbrains'
+version '1.2' // Plugin version
 ```
 
-To add Gradle support to an existing project, copy the above Gradle buildscript into your `build.gradle` file, and with the Gradle executable on your system `PATH`, execute the following command on your system command line:
+To add Gradle support to an existing project, copy the above Gradle build script into your `build.gradle` file, and with the Gradle executable on your system `PATH`, execute the following commands on your system's command line:
 
 ```
 gradle cleanIdea
+gradle runIdea
 ```
 
-This will clean any existing IntelliJ IDEA configuration files and generate a new Gradle build configuration recognized by IntelliJ IDEA. Once your project refreshes, you should be able to view and click the Gradle tool window displayed under **View \| Tool Windows \| Gradle**. This indicates that IntelliJ IDEA recognizes the Gradle facet.
+This will clean any existing IntelliJ IDEA configuration files and generate a new Gradle build configuration recognized by IntelliJ IDEA. Once your project refreshes, you should be able to view the Gradle tool window displayed under **View \| Tool Windows \| Gradle**. This indicates that IntelliJ IDEA recognizes the Gradle facet.
+
+### 1.4. Add Gradle support from scratch
 
 The second method to add Gradle support is by creating a new project from scratch in IntelliJ IDEA and copying over any existing sources. This may be the preferred option in case Gradle is not able to convert an existing project. To do so, create a new project in IntelliJ IDEA by opening **File \| New... \| Project**, and select Gradle from the dialog box: 
 
@@ -66,7 +72,7 @@ Finally, make sure Gradle is using the correct JVM. This should be the same vers
 
 Now, add the above script to your `build.gradle` file, overwriting any existing contents.
 
-### 1.3. Running a simple plugin
+### 1.5. Running a simple plugin
 
 Create the following directory structure:
 

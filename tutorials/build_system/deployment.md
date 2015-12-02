@@ -37,7 +37,25 @@ publish {
 
 Your pluginId can be found in your plugin's URL, ie.: `https://plugins.jetbrains.com/plugin/YOUR_PLUGIN_ID`.
 
-### 2.2 Deploy your plugin
+### 2.1 Configure your plugin
+
+The gradle-intellij-plugin provides a number of [configuration options](https://github.com/JetBrains/gradle-intellij-plugin#configuration) for customizing how Gradle builds your plugin. One of the most important is the `intellij.version`, which will control how your plugin is uploaded to the plugin repository. You will need to update this version for the plugin repository to accept a new plugin artifact.
+
+By default, if you modify the `version` in your build script, the Gradle plugin will automatically update the `<version>` in your `plugin.xml` file. It will also set the `<idea-version since-build=.../>` values to the current running version of IntelliJ IDEA `plugin.xml` file, however you can disable this feature by setting the `intellij.updateSinceUntilBuild` option to `false`.
+
+```groovy
+intellij {
+    version '15.0.1'
+    plugins 'coverage'
+    pluginName 'idear'
+    intellij.updateSinceUntilBuild false //Disables updating since-build attribute in plugin.xml
+}
+
+group 'com.jetbrains'
+version '1.2' // Update me!
+```
+
+### 2.3 Deploy your plugin
 
 To deploy a new version of your plugin to the JetBrains plugin repository, execute the following Gradle command:
 

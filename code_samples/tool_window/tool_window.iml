@@ -2,9 +2,7 @@
 <module type="PLUGIN_MODULE" version="4">
   <component name="DevKit.ModuleBuildProperties" url="file://$MODULE_DIR$/resources/META-INF/plugin.xml" />
   <component name="NewModuleRootManager" inherit-compiler-output="false">
-    <output url="file:///production/tool_window" />
-    <output-test url="file:///test/tool_window" />
-    <exclude-output />
+    <output url="file://$MODULE_DIR$/out" />
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/resources" type="java-resource" />

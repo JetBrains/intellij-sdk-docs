@@ -12,6 +12,12 @@
   </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/sdkdocs-template" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/sdkdocs-template" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/sdkdocs-template" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/sdkdocs-template" vcs="Git" />
   </component>
 </project>

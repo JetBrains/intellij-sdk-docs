@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/code_samples/MaxOpenedProjects/MaxOpenedProjects.iml" filepath="$PROJECT_DIR$/code_samples/MaxOpenedProjects/MaxOpenedProjects.iml" />
       <module fileurl="file://$PROJECT_DIR$/code_samples/editor_basics/editor_basics.iml" filepath="$PROJECT_DIR$/code_samples/editor_basics/editor_basics.iml" />
       <module fileurl="file://$PROJECT_DIR$/code_samples/facet_basics/facet_basics.iml" filepath="$PROJECT_DIR$/code_samples/facet_basics/facet_basics.iml" />
       <module fileurl="file://$PROJECT_DIR$/code_samples/framework/framework.iml" filepath="$PROJECT_DIR$/code_samples/framework/framework.iml" />

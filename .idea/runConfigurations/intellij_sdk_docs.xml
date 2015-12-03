@@ -1,0 +1,26 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="intellij-sdk-docs" type="docker-deploy" factoryName="Docker Deployment" server-name="Docker">
+    <deployment type="dockerfile" path="$PROJECT_DIR$/Dockerfile">
+      <settings>
+        <option name="JSONFilePath" value="$PROJECT_DIR$/container_settings.json" />
+        <option name="command" value="" />
+        <option name="containerName" value="" />
+        <option name="entrypoint" value="" />
+        <option name="envVarsExpanded" value="true" />
+        <option name="imageTag" value="intellij-sdk-docs" />
+        <option name="startBrowserSettings">
+          <browser start="true" />
+        </option>
+        <option name="volumeBindings">
+          <list>
+            <DockerVolumeBindingImpl>
+              <option name="containerPath" value="/usr/src/app" />
+              <option name="hostPath" value="C:\Users\breandan\WebstormProjects\intellij-sdk-docs" />
+            </DockerVolumeBindingImpl>
+          </list>
+        </option>
+      </settings>
+    </deployment>
+    <method />
+  </configuration>
+</component>

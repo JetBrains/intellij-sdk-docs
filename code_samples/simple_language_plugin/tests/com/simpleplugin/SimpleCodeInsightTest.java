@@ -24,7 +24,7 @@ public class SimpleCodeInsightTest extends LightCodeInsightFixtureTestCase {
 
     @Override
     protected String getTestDataPath() {
-        return "../../SimplePlugin/testData";
+        return "code_samples/simple_language_plugin/testData";
     }
 
     public void testCompletion() {

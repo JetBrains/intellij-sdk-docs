@@ -9,6 +9,7 @@
       <module fileurl="file://$PROJECT_DIR$/code_samples/gradle_plugin_demo/gradle_plugin_demo.iml" filepath="$PROJECT_DIR$/code_samples/gradle_plugin_demo/gradle_plugin_demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/code_samples/inspection/inspection.iml" filepath="$PROJECT_DIR$/code_samples/inspection/inspection.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/intellij-sdk-docs.iml" filepath="$PROJECT_DIR$/.idea/intellij-sdk-docs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/code_sample/kotlin_demo/kotlin_demo.iml" filepath="$PROJECT_DIR$/code_sample/kotlin_demo/kotlin_demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/code_samples/module/module.iml" filepath="$PROJECT_DIR$/code_samples/module/module.iml" />
       <module fileurl="file://$PROJECT_DIR$/code_samples/plugin_sample/plugin_sample.iml" filepath="$PROJECT_DIR$/code_samples/plugin_sample/plugin_sample.iml" />
       <module fileurl="file://$PROJECT_DIR$/code_samples/project_model/project_model.iml" filepath="$PROJECT_DIR$/code_samples/project_model/project_model.iml" />

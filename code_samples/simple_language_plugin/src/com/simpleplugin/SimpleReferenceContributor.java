@@ -19,7 +19,7 @@ public class SimpleReferenceContributor extends PsiReferenceContributor {
                         if (value != null && value.startsWith("simple"+":")) {
                             return new PsiReference[]{new SimpleReference(element, new TextRange(8, value.length() + 1))};
                         }
-                        return new PsiReference[0];
+                        return PsiReference.EMPTY_ARRAY;
                     }
                 });
     }

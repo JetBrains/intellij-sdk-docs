@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExternalDependencies">
+    <plugin id="DevKit" />
+    <plugin id="Docker" />
+    <plugin id="org.jetbrains.idea.grammar" />
+    <plugin id="org.jetbrains.kotlin" />
+    <plugin id="org.jetbrains.plugins.gradle" />
+  </component>
+</project>

@@ -1,15 +1,7 @@
 https://confluence.jetbrains.com/pages/viewpage.action?pageId=15799219
 https://confluence.jetbrains.com/download/attachments/15799219/Presentation.pdf
 
-https://confluence.jetbrains.com/display/IDEADEV/IntelliJ+IDEA+Tool+Windows
-https://confluence.jetbrains.com/display/IDEADEV/IntelliJ+IDEA+DialogWrapper
 https://confluence.jetbrains.com/display/IDEADEV/IntelliJ+IDEA+Notifications
-https://confluence.jetbrains.com/display/IDEADEV/File+and+Class+Choosers
-https://confluence.jetbrains.com/display/IDEADEV/Editor+Components
-https://confluence.jetbrains.com/display/IDEADEV/IntelliJ+IDEA+List+and+Tree+Controls
-https://confluence.jetbrains.com/display/IDEADEV/Miscellaneous+Swing+Components
-https://confluence.jetbrains.com/display/IDEADEV/External+Builder+API+and+Plugins
-https://confluence.jetbrains.com/display/IDEADEV/External+system+integration
 https://confluence.jetbrains.com/display/IDEADEV/Creation+of+Intention+Action
 https://confluence.jetbrains.com/display/IDEADEV/Inspection+of+Code+Source
 https://confluence.jetbrains.com/display/IDEADEV/ComparisonChainGen

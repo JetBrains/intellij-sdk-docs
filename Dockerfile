@@ -12,6 +12,9 @@ ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
 
+# Tell anyone who's interested that we're running in docker
+ENV DOCKER true
+
 RUN apt-get --yes install nodejs
 
 WORKDIR /usr/src/app

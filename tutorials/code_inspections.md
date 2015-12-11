@@ -12,7 +12,7 @@ You can create custom inspections through the **IntelliJ IDEA** interface (see
 
 ### Used Techniques
 
-The **comparing_references_inspection** sample plugin illustrates the use of the following techniques:
+The [comparing_refereces_inspection](https://github.com/JetBrains/intellij-sdk-docs/tree/master/code_samples/comparing_references_inspection) sample plugin illustrates the use of the following techniques:
 
 - How to analyze a [PSI tree](http://confluence.jetbrains.net/display/IDEADEV/IntelliJ+IDEA+Architectural+Overview#PsiFiles).
 - How to find a Java token of interest in the PSI tree.
@@ -23,8 +23,6 @@ The **comparing_references_inspection** sample plugin illustrates the use of t
 
 The **comparingReferences** sample plugin is available in the `<%IntelliJ SDK Docs project%>/code_samples/comparing_references_inspection` directory.  
 When launched, this plugin adds the **'==' or '!=' instead of 'equals()'** item to the **Probable bugs** node in the [Inspections list](http://www.jetbrains.com/idea/webhelp/inspections-2.html).
-
-![](img/comparingReferences_options.png)
 
 ##### Running the Plugin
 
@@ -42,7 +40,9 @@ Once the plugin is launched, you can set the plugin options. You can specify the
 
 1. On the IDEA main menu, choose **File | Settings**, and then under **Project Settings**, click **Inspections**.
 2. In the list of the IntelliJ IDEA inspections, expand the **Probable bugs** node, and then click **'==' or '!=' instead of 'equals()'**.  
-![Image](https://confluence.jetbrains.com/download/attachments/36023033/comparingReferences_options.png?version=1&modificationDate=1284998753000&api=v2)
+
+![](img/comparingReferences_options.png)
+
 3. Under **Options**, you can specify the following plugin settings:
     - From the **Severity** list, select the severity level of probable bugs the plugin will find (such as Warning, Info, etc.)
     - In the text box under **Severity**, specify the semicolon separated list of Java classes to be participated in this code inspection.

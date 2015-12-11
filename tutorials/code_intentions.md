@@ -13,13 +13,12 @@ You can view a list of all available intention actions using the [Intention Lis
 **To display Intention List**
 
 1. Open the **Settings** dialog box.
-2. Under **IDE Settings**, click **Intentions**.  
-This displays the list of all intention actions currently available in **IntelliJ IDEA**. The intention actions are grouped according to the areas of their use.  
-To enable/disable an intention action, select/clear the check box to its left.
+2. Under **IDE Settings**, click **Intentions**. This displays the list of all intention actions currently available in **IntelliJ IDEA**. The intention actions are grouped according to the areas of their use.  
+3. To enable/disable an intention action, select/deselect the check box to its left.
 
 ### Used Techniques
 
-The **conditionalOperatorConverter** sample plugin illustrates the use of the following techniques:
+The [conditional_operator_intention](https://github.com/JetBrains/intellij-sdk-docs/tree/master/code_samples/conditional_operator_intention) sample plugin illustrates the use of the following techniques:
 
 - How to analyze a [PSI tree](http://confluence.jetbrains.net/display/IDEADEV/IntelliJ+IDEA+Architectural+Overview#PsiFiles).
 - How to find a Java token of interest in the PSI tree.

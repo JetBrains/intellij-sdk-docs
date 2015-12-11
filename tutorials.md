@@ -22,3 +22,7 @@ More detailed explanation of the API components can be found in the
 * [Run Configurations](tutorials/run_configurations.md)
 * [Supporting Frameworks](tutorials/framework.md)
 * [Tree Structure View](tutorials/tree_structure_view.md)
+* [Kotlin for Plugin Developers](tutorials/kotlin.md)
+* [Gradle Build System](tutorials/build_system.md)
+* [Code Inspections](tutorials/code_inspections.md)
+* [Code Intentions](tutorials/code_inspections.md)

@@ -10,7 +10,7 @@ If you want your plugin to allow other plugins to extend its functionality, in t
 
 ## Extensions
 
-If you want your plugin to extend the functionality of other plugins or the *IntelliJ Platform*, you must declare one or several _extensions_.
+If you want your plugin to extend the functionality of other plugins or the *Intell           iJ Platform*, you must declare one or several _extensions_.
 
 ## How to declare extensions and extension points
 

@@ -40,7 +40,7 @@ During the lifetime of a running instance of an IntelliJ Platform IDE, multiple 
 
 From the point of view of the caller, refresh operations can be either synchronous or asynchronous. In fact, the refresh operations are executed according to their own threading policy, and the synchronous flag simply means that the calling thread will be blocked until the refresh operation (which will most likely run on a different thread) is completed.
 
-Both synchronous and asynchronous refreshes can be initiated from any thread. If a refresh is initiated from a background thread, the calling thread must not hold a read action, because otherwise a deadlock would occur. See [IntelliJ Platform Architectural Overview](/basics/architectural_overview/general_threading_rules.html) for more details on the threading model and read/write actions.
+Both synchronous and asynchronous refreshes can be initiated from any thread. If a refresh is initiated from a background thread, the calling thread must not hold a read action, because otherwise a deadlock would occur. See [IntelliJ Platform Architectural Overview](/basics/architectural_overview/general_threading_rules.md) for more details on the threading model and read/write actions.
 
 The same threading requirements also apply to functions like [LocalFileSystem.refreshAndFindFileByPath()](upsource:///platform/platform-api/src/com/intellij/openapi/vfs/LocalFileSystem.java), which perform a partial refresh if the file with the specified path is not found in the snapshot.
 

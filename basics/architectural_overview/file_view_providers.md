@@ -23,7 +23,7 @@ A `FileViewProvider` instance corresponds to a single `VirtualFile`, a single `D
 
 ## How do I extend the FileViewProvider?
 
-To create a file type that has multiple interspersing trees for different languages, your plugin must contain an extension to the `fileType.fileViewProviderFactory` [extension point](/basics/plugin_structure/plugin_extensions_and_extension_points.html) available in the *IntelliJ Platform* core.
+To create a file type that has multiple interspersing trees for different languages, your plugin must contain an extension to the `fileType.fileViewProviderFactory` [extension point](/basics/plugin_structure/plugin_extensions_and_extension_points.md) available in the *IntelliJ Platform* core.
 
 This extension point is declared using the [FileTypeExtensionPoint](upsource:///platform/core-api/src/com/intellij/openapi/fileTypes/FileTypeExtensionPoint.java)
 bean class.

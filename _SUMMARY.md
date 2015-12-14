@@ -139,10 +139,12 @@
     * [Project Wizard](tutorials/project_wizard.md)
       * [Adding New Steps to Project Wizard](tutorials/project_wizard/adding_new_steps.md)
       * [Supporting Module Types](tutorials/project_wizard/module_types.md)
-  <!-- * [Code Inspections](tutorials/code_inspections.md) -->
+    * [Code Inspections](tutorials/code_inspections.md) 
+    * [Code Intentions](tutorials/code_intentions.md) 
     * [Run Configurations](tutorials/run_configurations.md)
     * [Supporting Frameworks](tutorials/framework.md)
     * [Tree Structure View](tutorials/tree_structure_view.md)
+    * [Kotlin for Plugin Developers](tutorials/kotlin.md)
   * [Plugin Development FAQ](faq.md)
   * [Contribution Guidelines](CONTRIBUTING.md)
 

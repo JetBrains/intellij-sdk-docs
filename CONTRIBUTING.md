@@ -6,6 +6,8 @@ Thanks for contributing! Here are few useful things to know before submitting yo
 
 * Licensing - see [LICENSE.txt](LICENSE.txt)
 * [Setting up your environment](#setting-up-your-environment)
+    * [Developing with Docker](#developing-with-docker)
+    * [Developing locally](#developing-locally)
 * [Markup](#markup)
     * [_SUMMARY.md](#summarymd)
     * [Redirects](#redirects)
@@ -21,24 +23,45 @@ Thanks for contributing! Here are few useful things to know before submitting yo
 
 ## Setting up your environment
 
-This site is a [Jekyll](http://jekyllrb.com) site, which is a popular static site generator, written in Ruby. It can be hosted locally to ensure that any changes are correct. Once set up, running the site is as easy as calling `rake preview`.
+This site runs via [Jekyll](http://jekyllrb.com), which is a popular static site generator, written in Ruby. It can be hosted locally to ensure that any changes are correct. Once set up, running the site is as easy as calling `rake preview`.
 
-### Prerequisites
+Alternatively, the site can also be hosted in a [Docker container](https://www.docker.com). On Mac and Windows, this means the site is hosted in a virtual machine. Docker maintains this container, building it based on the instructions in the [`Dockerfile`](Dockerfile). All dependencies (Ruby, etc.) are automatically installed when building the image, which reduces the manual configuration steps. The Docker image is also used to build the [published site](http://www.jetbrains.org/intellij/sdk/docs/index.html), so it is a known working environment.
+
+### Developing with Docker
+
+Follow these steps to work with Docker:
+
+* Firstly, install Docker, using the [Docker Toolbox](https://www.docker.com/docker-toolbox).
+* On Windows and Mac, start the Docker host virtual machine (start the "Docker Quickstart terminal" or run "Kitematic". See the Getting Started guides on [docker.com](https://www.docker.com) for more details).
+* Clone the [`intellij-sdk-docs`](https://github.com/JetBrains/intellij-sdk-docs) repo to the local machine, and [initialise the `sdkdocs-template` submodule](#a-word-on-submodules).
+* Change the current directory to the parent directory of the git repo.
+* Run `docker build -t intellij-sdk-docs .`. This will build the docker image from the current folder, and give it the tag `intellij-sdk-docs`.
+    * Note that this must be run from a command prompt that has the various `DOCKER_*` environment variables set up, such as the Docker Quickstart Terminal.
+* Run `docker run -p 4000:4000 -v $PWD:/usr/src/app intellij-sdk-docs`. This command will:
+    * Start the docker container called `intellij-sdk-docs`.
+    * Forward port 4000 from the docker container to port 4000 on the docker client.
+
+    > **NOTE** For Windows and Mac, this means port 4000 of the docker container is forwarded to port 4000 of the docker virtual machine, not `localhost`. For Linux, the docker client is the host machine, so `localhost:4000` is forwarded to port 4000 on the docker container.
+    >
+    > In order to hit the container's port 4000 from Windows or the Mac, it is necessary to hit the IP address of the docker client (virtual machine). Use `docker-machine ip default` to get the IP address of the docker client. Use `X.X.X.X:4000` to hit the client in the virtual machine, which is in turn mapped to the container's port 4000.
+    >
+    > Alternatively, modify the virtual machine's settings to automatically forward port 4000 to `localhost`. See this [blog post](http://acaird.github.io/computers/2014/11/16/docker-virtualbox-host-networking/) for more details.
+ 
+    * Mount the current directory (`$PWD` is a Unix style environment variable. You can use `%CD%` on Windows, or specify the full path) as `/usr/src/app` inside the docker container. This means the docker image will see the `intellij-sdk-docs` repo as the folder `/usr/src/app`.
+
+    > **NOTE** If running on Windows in an msys bash script (e.g. the "Docker Quickstart terminal"), the path to the local folder needs to be properly escaped, or the msys environment will translate the paths to standard Windows path, and you will see an error such as `invalid value "C:\\Users\\...;C:\\Program Files\\Git\\usr\\src\\app" for flag -v`. To fix this, prefix the full path with double slashes, e.g. `-v //c/Users/...`, or `docker run -p 4000:4000 -v /$PWD:/usr/src/app intellij-sdk-docs` (note the leading slash before `$PWD`).
+
+    * Run the commands specific in the Dockerfile's `CMD` instruction, which runs both `rake bootstrap`, which ensures all of the prerequisites are installed, and `rake preview`, which builds the site and starts to host it.
+* Finally, you can access the newly created site by visiting [http://localhost:4000/intellij/sdk/docs/](http://localhost:4000/intellij/sdk/docs/), or by using the IP address of the docker client virtual machine (see note above).
+
+### Developing locally
 
 In order to build the documentation site, you will need:
 
-* Ruby 2 - Jekyll is a Ruby application
-* Ruby 2 DevKit (for Windows)
+* Ruby 2 - Jekyll is a Ruby application.
+* Ruby 2 DevKit (for Windows) - Some of Jekyll's dependencies need to be compiled, and require the DevKit to be installed.
 * Python 2 - the [Pygments](https://github.com/tmm1/pygments.rb) gem uses Python for syntax highlighting.
-* `gem install bundler` - the site uses [Bundler](http://bundler.io) to manage gem dependencies within the repo, rather than globally installing to the local operating system.
-
-**Docker**
-
-To build and run this site on Docker, first clone this repository and initialize the `sdkdocs-template` subodule, then run the following commands from inside the parent directory (for Mac OS X and Windows users, please refer to the [boot2docker documentation](https://github.com/boot2docker/boot2docker#folder-sharing) for installation instructions and how to enable folder sharing with Docker containers):
-
-* `docker build -t intellij-sdk-docs . && docker run -p 4000:4000 -v $PWD:/usr/src/app intellij-sdk-docs`
-
-This command will forward port 4000 from the Docker container (which can be configured in the [Rakefile](https://github.com/JetBrains/intellij-sdk-docs/blob/master/Rakefile), by updating `-p <HOST_PORT>:<CONTAINER_PORT>`), then mount the working directory to `/usr/src/app` (where `intellij-sdk-docs` should reside). From there, Docker will run `rake bootstrap && rake preview`. Finally, you can access the newly created site by visiting [http://localhost:4000/intellij/sdk/docs/](http://localhost:4000/intellij/sdk/docs/). Please keep in mind that boot2docker will bind a [different address](https://github.com/boot2docker/boot2docker#container-port-redirection) on the host machine.
+* `gem install bundler` - the site uses [Bundler](http://bundler.io) to manage gem dependencies within the repo, rather than globally installing to the local operating system. Run this command to install the Bundler toolset globally.
 
 **OS X**
 
@@ -61,7 +84,7 @@ This is made easier if you use [Chocolatey](https://chocolatey.org), a package m
     * Add the line `- C:\tools\ruby21` (including the leading minus sign)
 * `choco install python2`
 
-**NOTE:** Before running the `rake bootstrap` step listed below, please run the `devkitvars.bat` file from the DevKit. E.g. `C:\tools\DevKit\devkitvars.bat`
+> **NOTE** Before running the `rake bootstrap` step listed below, please run the `devkitvars.bat` file from the DevKit. E.g. `C:\tools\DevKit\devkitvars.bat`
 
 ### Bootstrapping the environment
 
@@ -78,7 +101,7 @@ To build and test the site, simply run `rake preview`. This will build the site 
 
 ## Markup
 
-By default, when building the site, all files are copied across. Some are excluded in the `_config.yml` and `sdkdocs-template/jekyll/_config-defaults.yml` files. The documentation files themselves are [Markdown](http://daringfireball.net/projects/markdown/) files (`.md`) that get automatically converted to HTML when the site is built.
+By default, when building the site, all files are copied to the destination `_site` folder. Some files are excluded in the `_config.yml` and `sdkdocs-template/jekyll/_config-defaults.yml` files. The documentation files themselves are [Markdown](http://daringfireball.net/projects/markdown/) files (`.md`) that get automatically converted to HTML when the site is built.
 
 However, only markdown files beginning with a [YAML](http://yaml.org) header are converted. If the markdown file doesn't contain a header, it won't be converted. In other words, to convert a `.md` file to HTML, it should look like this:
 
@@ -107,7 +130,7 @@ The YAML header can also include [redirect](#redirects) information.
 
 ### _SUMMARY.md
 
-The table of contents is generated from the `_SUMMARY.md` file. It is a simple markdown list, with each item in the list being a link to another markdown page, either in the root folder, or sub-folders. The list can have nested items, which will be displayed as child items in the table of contents.
+The table of contents for the site is displayed in the tree view on the left hand side of the site, and it is generated from the `_SUMMARY.md` file. It is a simple markdown list, with each item in the list being a link to another markdown page, either in the root folder, or sub-folders. The list can have nested items, which will be displayed as child items in the table of contents.
 
 ```
 # Summary
@@ -135,7 +158,7 @@ If a node doesn't have a link, but is just plain text, it will still appear in t
 
 ### Redirects
 
-The documentation site is set up to include the `jekyll-redirect-from` plugin, which will generate "dummy" pages that automatically redirect to a given page. For example, to specify that the `index.html` page will be generated to redirect to `README.md`, the `README.md` file should include the following in the YAML header:
+The documentation site is set up to include the [jekyll-redirect-from](https://github.com/jekyll/jekyll-redirect-from) plugin, which will generate "dummy" pages that automatically redirect to a given page. For example, to specify that the `index.html` page will be generated to redirect to `README.md`, the `README.md` file should include the following in the YAML header:
 
 ```
 ---

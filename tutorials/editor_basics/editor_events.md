@@ -85,7 +85,6 @@ Create an action:
 
 ```java
 public class EditorHandlerIllustration extends AnAction {
-    @Override                                        
     public void actionPerformed(@NotNull AnActionEvent anActionEvent) {
     }
     @Override

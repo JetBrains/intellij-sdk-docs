@@ -60,12 +60,11 @@ In order to build the documentation site, you will need:
 
 * Ruby 2 - Jekyll is a Ruby application.
 * Ruby 2 DevKit (for Windows) - Some of Jekyll's dependencies need to be compiled, and require the DevKit to be installed.
-* Python 2 - the [Pygments](https://github.com/tmm1/pygments.rb) gem uses Python for syntax highlighting.
 * `gem install bundler` - the site uses [Bundler](http://bundler.io) to manage gem dependencies within the repo, rather than globally installing to the local operating system. Run this command to install the Bundler toolset globally.
 
 **OS X**
 
-OS X comes with Ruby and Python already installed. The only steps required are:
+OS X comes with Ruby already installed. The only steps required are:
 
 * `gem install bundler`
 
@@ -73,7 +72,6 @@ OS X comes with Ruby and Python already installed. The only steps required are:
 
 * Install [Ruby 2](http://rubyinstaller.org) and the [Ruby 2 DevKit](http://rubyinstaller.org/downloads/) (one of the gems needs to build a native component)
     * After installing the DevKit, make sure to edit the `config.yml` file to point to the Ruby installation
-* Install [Python 2](https://www.python.org/downloads/windows/) (2.7 is recommended)
 
 This is made easier if you use [Chocolatey](https://chocolatey.org), a package manager for Windows:
 
@@ -82,7 +80,6 @@ This is made easier if you use [Chocolatey](https://chocolatey.org), a package m
     * After installing the DevKit, make sure to edit the `config.yml` file to point to the Ruby installation.
     * By default, this is `C:\tools\DevKit\config.yml`
     * Add the line `- C:\tools\ruby21` (including the leading minus sign)
-* `choco install python2`
 
 > **NOTE** Before running the `rake bootstrap` step listed below, please run the `devkitvars.bat` file from the DevKit. E.g. `C:\tools\DevKit\devkitvars.bat`
 
@@ -105,7 +102,7 @@ By default, when building the site, all files are copied to the destination `_si
 
 However, only markdown files beginning with a [YAML](http://yaml.org) header are converted. If the markdown file doesn't contain a header, it won't be converted. In other words, to convert a `.md` file to HTML, it should look like this:
 
-```
+```md
 ---
 ---
 
@@ -118,7 +115,7 @@ The two lines at the top of the file are the markers of the YAML "front matter".
 
 The YAML header can contain data that is used when generating the site. For example, the page title can be specified as a simple piece of markdown - `# Title`, or it can be specified in the YAML, and the page template will display it appropriately:
 
-```
+```md
 ---
 title: The Title Of The Page
 ---
@@ -132,7 +129,7 @@ The YAML header can also include [redirect](#redirects) information.
 
 The table of contents for the site is displayed in the tree view on the left hand side of the site, and it is generated from the `_SUMMARY.md` file. It is a simple markdown list, with each item in the list being a link to another markdown page, either in the root folder, or sub-folders. The list can have nested items, which will be displayed as child items in the table of contents.
 
-```
+```md
 # Summary
 
 * [Introduction](README.md)
@@ -142,7 +139,7 @@ The table of contents for the site is displayed in the tree view on the left han
 
 The contents can be split into "parts" by separating the list into several lists, each new list starting with a level 2 heading (`##`).
 
-```
+```md
 # Summary
 
 * [Introduction](README.md)
@@ -160,7 +157,7 @@ If a node doesn't have a link, but is just plain text, it will still appear in t
 
 The documentation site is set up to include the [jekyll-redirect-from](https://github.com/jekyll/jekyll-redirect-from) plugin, which will generate "dummy" pages that automatically redirect to a given page. For example, to specify that the `index.html` page will be generated to redirect to `README.md`, the `README.md` file should include the following in the YAML header:
 
-```
+```md
 ---
 redirect_from:
   - /index.html
@@ -181,7 +178,7 @@ The site is configured to use the [Kramdown Markdown converter](http://kramdown.
 
 One useful attribute is `{:toc}`, which can be applied to a list item, which will get replaced with a list of links to header items. E.g. the following list item will be replaced by links to all of the header items in the page:
 
-```
+```md
 * Dummy list item
 {:toc}
 ```
@@ -210,7 +207,9 @@ Syntax highlighting can be applied by specifying the language after the first se
     // Some Java code
     ```
 
-Here is the list of [supported languages](https://github.com/github/linguist/blob/master/lib/linguist/languages.yml).
+Here is the list of [supported languages](https://github.com/jneen/rouge/wiki/List-of-supported-languages-and-lexers) (and also [Kotlin](https://kotlinlang.org), of course).
+
+<!-- Not currently supported by rouge, or by the site's CSS
 
 The site is also configured to highlight a range of files in the source code, by specifying `{start-end}` which is the start and end line of the highlighting:
 
@@ -220,6 +219,7 @@ The site is also configured to highlight a range of files in the source code, by
     // Highlighted
     // Not highlighted
     ```
+-->
 
 ### Tables
 
@@ -253,7 +253,7 @@ Will be displayed as a callout, styled as a "note". The other styles available f
 
 Images can be included by adding the file directly to the repository and adding a link to the image like so:
 
-    ```
+    ```md
     ![Alt text](path-to-img.png)
     ```
 

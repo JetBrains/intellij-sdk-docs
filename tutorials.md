@@ -25,4 +25,4 @@ More detailed explanation of the API components can be found in the
 * [Kotlin for Plugin Developers](tutorials/kotlin.md)
 * [Gradle Build System](tutorials/build_system.md)
 * [Code Inspections](tutorials/code_inspections.md)
-* [Code Intentions](tutorials/code_inspections.md)
+* [Code Intentions](tutorials/code_intentions.md)

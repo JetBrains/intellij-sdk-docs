@@ -14,7 +14,7 @@ You can create custom inspections through the **IntelliJ IDEA** interface (see
 
 The [comparing_refereces_inspection](https://github.com/JetBrains/intellij-sdk-docs/tree/master/code_samples/comparing_references_inspection) sample plugin illustrates the use of the following techniques:
 
-- How to analyze a [PSI tree](http://confluence.jetbrains.net/display/IDEADEV/IntelliJ+IDEA+Architectural+Overview#PsiFiles).
+- How to analyze a [PSI tree](/basics/architectural_overview/psi_files.md).
 - How to find a Java token of interest in the PSI tree.
 - How to inspect Java code in the **IntelliJ IDEA** editor using the [BaseJavaLocalInspectionTool](upsource:///java/java-analysis-api/src/com/intellij/codeInspection/BaseJavaLocalInspectionTool.java) class.
 - How to create a JUnit test for this plugin using the [IdeaTestFixtureFactory](upsource:///platform/testFramework/src/com/intellij/testFramework/fixtures/IdeaTestFixtureFactory.java) class.

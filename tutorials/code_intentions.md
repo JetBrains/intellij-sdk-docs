@@ -21,7 +21,7 @@ You can view a list of all available intention actions using the [Intention Lis
 
 The [conditional_operator_intention](https://github.com/JetBrains/intellij-sdk-docs/tree/master/code_samples/conditional_operator_intention) sample plugin illustrates the use of the following techniques:
 
-- How to analyze a [PSI tree](http://confluence.jetbrains.net/display/IDEADEV/IntelliJ+IDEA+Architectural+Overview#PsiFiles).
+- How to analyze a [PSI tree](/basics/architectural_overview/psi_files.md).
 - How to find a Java token of interest in the PSI tree.
 - How to invoke a quick fix action for a token element under cursor using the [PsiElementBaseIntentionAction](upsource:///platform/lang-api/src/com/intellij/codeInsight/intention/PsiElementBaseIntentionAction.java) class.
 - How to create a JUnit test for this plugin using the [IdeaTestFixtureFactory](upsource:///platform/testFramework/src/com/intellij/testFramework/fixtures/IdeaTestFixtureFactory.java) class.

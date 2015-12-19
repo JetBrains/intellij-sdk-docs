@@ -17,6 +17,13 @@ ENV DOCKER true
 
 RUN apt-get --yes install nodejs
 
+# Add bundle install to Docker image
+ADD Gemfile* /tmp/
+ADD Rakefile /tmp/
+ADD sdkdocs-template /tmp/sdkdocs-template
+WORKDIR /tmp
+RUN rake bootstrap
+
 WORKDIR /usr/src/app
 
 EXPOSE 4000

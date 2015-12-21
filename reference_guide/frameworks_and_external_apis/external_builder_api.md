@@ -54,6 +54,17 @@ Sources of a plugin for External Builder should be put in a separate module. By 
 
 ### Debugging a plugin for External Builder
 
+**If your test IDE is IntelliJ IDEA 16.0 or newer**
+
+Switch on "Debug Build Process" toggle action (available via 'Find Action') in the test IDE. After that every time compilation is run, the build  process will wait for debugger connection on some (random) port and will show the port number in the status bar. In working copy of IDE a "Remote" run configuration should be created and pointed to this port. If you often need to debug external builders and want to reuse the created "Remote" run configuration you may fix the port number by adding the following VM option to the plugin run configuration:
+
+```
+-Dcompiler.process.debug.port=<port-number>
+```
+
+
+**If your test IDE is IntelliJ IDEA 15.0 or older**
+
 Start IDE with your plugin with the following VM option
 
 ```

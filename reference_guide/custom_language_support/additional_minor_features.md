@@ -49,7 +49,7 @@ To support smart/semantic *Join Lines* see
 (extension point `codeInsight.parameterInfo`).
 
 The *To Do view* is supported automatically if the plugin provides a correct implementation of the
-[ParserDefinition.getCommentTokens()](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/lang/ParserDefinition.java#L79)
+[ParserDefinition.getCommentTokens()](upsource:///platform/core-api/src/com/intellij/lang/ParserDefinition.java)<!--#L79-->
 method.
 
 The *View \| Context Info* feature is supported for custom languages since IntelliJ IDEA 10.5.

@@ -11,7 +11,7 @@ In addition to that, in order to support `Safe Delete`, a plugin needs to implem
    interface, registered in the `com.intellij.lang.refactoringSupport` extension point, and the `isSafeDeleteAvailable()` method, which checks if the `Safe Delete` refactoring is available for a specific PSI element
 
 *  The
-   [PsiElement.delete()](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/psi/PsiElement.java#L371)
+   [PsiElement.delete()](upsource:///platform/core-api/src/com/intellij/psi/PsiElement.java)<!--#L371-->
    method for the
    [PsiElement](upsource:///platform/core-api/src/com/intellij/psi/PsiElement.java)
    subclasses for which `Safe Delete` is available.
@@ -19,7 +19,7 @@ In addition to that, in order to support `Safe Delete`, a plugin needs to implem
 
 
 **Example:**
-[delete()](https://github.com/JetBrains/intellij-community/blob/master/plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/psi/impl/PropertyImpl.java#L363)
+[delete()](upsource:///plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/psi/impl/PropertyImpl.java)<!--#L363-->
 implementation for a
 [Property language plugin](https://github.com/JetBrains/intellij-community/tree/master/plugins/properties/)
 

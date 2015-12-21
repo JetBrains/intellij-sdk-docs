@@ -67,7 +67,7 @@ Lexers, and in particular JFlex-based lexers, need to be created in such a way t
 Lexers must never abort prematurely because of an invalid character.
 
 **Example**:
-[Lexer](https://github.com/JetBrains/intellij-community/blob/master/plugins/properties/src/com/intellij/lang/properties/parsing/Properties.flex)
+[Lexer](upsource:///plugins/properties/src/com/intellij/lang/properties/parsing/Properties.flex)
 definition for
 [Properties language plugin](https://github.com/JetBrains/intellij-community/tree/master/plugins/properties)
 

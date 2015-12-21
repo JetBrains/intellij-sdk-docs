@@ -19,19 +19,19 @@ Every type there is represented as an instance of [`ConfigurationType`](upsource
 <configurationType implementation="org.jetbrains.plugins.gradle.service.execution.GradleExternalTaskConfigurationType" />
 ```
 
-The easiest way to implement this interface is to use the [`ConfigurationTypeBase`](upsource:///platform/lang-api/src/com/intellij/execution/configurations/ConfigurationTypeBase.java) base class. In order to use it, you need to inherit from it and to provide the configuration type parameters (ID, name, description and icon) as constructor parameters. In addition to that, you need to call the [`addFactory()`](https://github.com/JetBrains/intellij-community/blob/master/platform/lang-api/src/com/intellij/execution/configurations/ConfigurationTypeBase.java#L46) method to add a configuration factory.
+The easiest way to implement this interface is to use the [`ConfigurationTypeBase`](upsource:///platform/lang-api/src/com/intellij/execution/configurations/ConfigurationTypeBase.java) base class. In order to use it, you need to inherit from it and to provide the configuration type parameters (ID, name, description and icon) as constructor parameters. In addition to that, you need to call the [`addFactory()`](upsource:///platform/lang-api/src/com/intellij/execution/configurations/ConfigurationTypeBase.java)<!--#L46--> method to add a configuration factory.
 
 ## Configuration factory
 
-All run configurations are created by the [`ConfigurationFactory`](upsource:///platform/lang-api/src/com/intellij/execution/configurations/ConfigurationFactory.java) registered for a particular `ConfigurationType`. It's possible that one `ConfigurationType` [has more than one](https://github.com/JetBrains/intellij-community/blob/master/platform/lang-api/src/com/intellij/execution/configurations/ConfigurationType.java#L34) `ConfigurationFactory`:
+All run configurations are created by the [`ConfigurationFactory`](upsource:///platform/lang-api/src/com/intellij/execution/configurations/ConfigurationFactory.java) registered for a particular `ConfigurationType`. It's possible that one `ConfigurationType` [has more than one](upsource:///platform/lang-api/src/com/intellij/execution/configurations/ConfigurationType.java)<!--#L34--> `ConfigurationFactory`:
 
 ![Configuration Factory](/basics/img/create-3.png)
 
-The key API of [`ConfigurationFactory`](upsource:///platform/lang-api/src/com/intellij/execution/configurations/ConfigurationFactory.java), and the only method that you're required to implement, is the [`createTemplateConfiguration`](https://github.com/JetBrains/intellij-community/blob/master/platform/lang-api/src/com/intellij/execution/configurations/ConfigurationFactory.java#L45) method. This method is called once per project to create the template run configuration.
+The key API of [`ConfigurationFactory`](upsource:///platform/lang-api/src/com/intellij/execution/configurations/ConfigurationFactory.java), and the only method that you're required to implement, is the [`createTemplateConfiguration`](upsource:///platform/lang-api/src/com/intellij/execution/configurations/ConfigurationFactory.java)<!--#L45--> method. This method is called once per project to create the template run configuration.
 
-All real run configurations (loaded from the workspace or created by the user) are called by cloning the template through the [`ceateConfiguration`](https://github.com/JetBrains/intellij-community/blob/master/platform/lang-api/src/com/intellij/execution/configurations/ConfigurationFactory.java#L39) method.
+All real run configurations (loaded from the workspace or created by the user) are called by cloning the template through the [`ceateConfiguration`](upsource:///platform/lang-api/src/com/intellij/execution/configurations/ConfigurationFactory.java)<!--#L39--> method.
 
-You can customize additional aspects of your configuration factory by overriding the [`getIcon`](https://github.com/JetBrains/intellij-community/blob/master/platform/lang-api/src/com/intellij/execution/configurations/ConfigurationFactory.java#L59), [`getAddIcon`](https://github.com/JetBrains/intellij-community/blob/master/platform/lang-api/src/com/intellij/execution/configurations/ConfigurationFactory.java#L55), [`getName`](https://github.com/JetBrains/intellij-community/blob/master/platform/lang-api/src/com/intellij/execution/configurations/ConfigurationFactory.java#L51) and the default settings methods. These additional overrides are optional.
+You can customize additional aspects of your configuration factory by overriding the [`getIcon`](upsource:///platform/lang-api/src/com/intellij/execution/configurations/ConfigurationFactory.java)<!--#L59-->, [`getAddIcon`](upsource:///platform/lang-api/src/com/intellij/execution/configurations/ConfigurationFactory.java)<!--#L55-->, [`getName`](upsource:///platform/lang-api/src/com/intellij/execution/configurations/ConfigurationFactory.java)<!--#L51--> and the default settings methods. These additional overrides are optional.
 
 ## Run configuration
 
@@ -51,15 +51,15 @@ When implementing a run configuration, you may want to use one of the common bas
 
 That common run configuration settings might be modified via:
 
-[`RunConfiguration`-specific UI](https://github.com/JetBrains/intellij-community/blob/master/platform/lang-api/src/com/intellij/execution/configurations/RunConfiguration.java#L48). That is handled by [`SettingsEditor`](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/options/SettingsEditor.java#L97):
+[`RunConfiguration`-specific UI](upsource:///platform/lang-api/src/com/intellij/execution/configurations/RunConfiguration.java)<!--#L48-->. That is handled by [`SettingsEditor`](upsource:///platform/platform-api/src/com/intellij/openapi/options/SettingsEditor.java)<!--#L97-->:
 
-* [`getComponent()`](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/options/SettingsEditor.java#L97) method is called by the IDE and shows run configuration specific UI.
-* [`resetFrom()`](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/options/SettingsEditor.java#L83) is called to discard all non-confirmed user changes made via that UI.
-* [`applyTo()`](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/options/SettingsEditor.java#L93) is called to confirm the changes, i.e. copy current UI state into the target settings object.
+* [`getComponent()`](upsource:///platform/platform-api/src/com/intellij/openapi/options/SettingsEditor.java)<!--#L97--> method is called by the IDE and shows run configuration specific UI.
+* [`resetFrom()`](upsource:///platform/platform-api/src/com/intellij/openapi/options/SettingsEditor.java)<!--#L83--> is called to discard all non-confirmed user changes made via that UI.
+* [`applyTo()`](upsource:///platform/platform-api/src/com/intellij/openapi/options/SettingsEditor.java)<!--#L93--> is called to confirm the changes, i.e. copy current UI state into the target settings object.
 
 ## Persistence
 
-That run configuration settings are persistent, i.e. they are stored at file system and loaded back on the IDE startup. That is performed via [`writeExternal()`](https://github.com/JetBrains/intellij-community/blob/master/platform/util/src/com/intellij/openapi/util/JDOMExternalizable.java#L27) and [`readExternal()`](https://github.com/JetBrains/intellij-community/blob/master/platform/util/src/com/intellij/openapi/util/JDOMExternalizable.java#L26) methods of [`RunConfiguration`](upsource:///platform/lang-api/src/com/intellij/execution/configurations/RunConfiguration.java) class correspondingly.
+That run configuration settings are persistent, i.e. they are stored at file system and loaded back on the IDE startup. That is performed via [`writeExternal()`](upsource:///platform/util/src/com/intellij/openapi/util/JDOMExternalizable.java)<!--#L27--> and [`readExternal()`](upsource:///platform/util/src/com/intellij/openapi/util/JDOMExternalizable.java)<!--#L26--> methods of [`RunConfiguration`](upsource:///platform/lang-api/src/com/intellij/execution/configurations/RunConfiguration.java) class correspondingly.
 
 The actual configurations stored by the *IntelliJ Platform* are represented by instances of the [`RunnerAndConfigurationSettings`](upsource:///platform/lang-api/src/com/intellij/execution/RunnerAndConfigurationSettings.java) class, which combines a run configuration with runner-specific settings, as well as keeping track of certain run configuration flags such as "temporary" or "singleton".
 

@@ -8,7 +8,7 @@ An action is technically a class, derived from the
 class.
 To update the state of the action, the method AnAction.update() is periodically called by IDEA.
 The object of type
-[AnActionEvent](https://github.com/JetBrains/intellij-community/blob/ff16ce78a1e0ddb6e67fd1dbc6e6a597e20d483a/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnActionEvent.java)
+[AnActionEvent](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnActionEvent.java)
 passed to this method carries the information about the current context for the action,
 and in particular, the specific presentation which needs to be updated.
 

@@ -25,7 +25,7 @@ section.
 [EditorImpl.java](upsource:///platform/platform-impl/src/com/intellij/openapi/editor/impl/EditorImpl.java).
 [CommonDataKeys.java](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/CommonDataKeys.java),
 [DataKey.java](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/DataKey.java),
-[AnActionEvent](https://github.com/JetBrains/intellij-community/blob/ff16ce78a1e0ddb6e67fd1dbc6e6a597e20d483a/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnActionEvent.java),
+[AnActionEvent](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnActionEvent.java),
 [DataContext](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/DataContext.java)
 
 **Related topics:**

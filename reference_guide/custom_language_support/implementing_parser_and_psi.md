@@ -72,7 +72,7 @@ returns `null`, even if the tokens are not valid according to the language synta
 **Example**:
 [PsiParser](upsource:///plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/parsing/PropertiesParser.java)
 implementation for
-[Properties language plugin](https://github.com/JetBrains/intellij-community/blob/master/plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/).
+[Properties language plugin](upsource:///plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/).
 
 The parser works by setting pairs of markers (
 [PsiBuilder.Marker](upsource:///platform/core-api/src/com/intellij/lang/PsiBuilder.java)

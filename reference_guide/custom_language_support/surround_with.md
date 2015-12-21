@@ -12,8 +12,8 @@ objects, defining specific templates which can be used for surrounding the selec
 
 When the `Surround With...` action is invoked, the IDE queries all surround descriptors for the language until it finds one that returns a non-empty array from its `getElementsToSurround()` method.
 Then it calls the
-[Surrounder.isApplicable()](https://github.com/JetBrains/intellij-community/blob/master/platform/lang-api/src/com/intellij/lang/surroundWith/Surrounder.java#L46)
+[Surrounder.isApplicable()](upsource:///platform/lang-api/src/com/intellij/lang/surroundWith/Surrounder.java)<!--#L46-->
 method for each surrounder in that descriptor to check if the specific template is applicable in the current context.
 Once the user selects a specific surrounder from the popup menu, the
-[Surrounder.surroundElements()](https://github.com/JetBrains/intellij-community/blob/master/platform/lang-api/src/com/intellij/lang/surroundWith/Surrounder.java#L57)
+[Surrounder.surroundElements()](upsource:///platform/lang-api/src/com/intellij/lang/surroundWith/Surrounder.java)<!--#L57-->
 method is used to execute the surround action.

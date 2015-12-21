@@ -173,11 +173,7 @@ public void actionPerformed(final AnActionEvent anActionEvent) {
 
 Generally replacement can be done by calling
 `void replaceString(int startOffset, int endOffset, @NotNull CharSequence s);` of the Document, however,
-the operation of replacement must be executed safely, this means the Document must be locked and any changes should be performed under the
-[write action](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/openapi/command/WriteCommandAction.java#L172).
-See
-[Threading Issues](/basics/architectural_overview/general_threading_rules.md)
-section to learn more about synchronization issues and changes safety in IntelliJ.
+the operation of replacement must be executed safely, this means the Document must be locked and any changes should be performed under the [write action](upsource:///platform/core-api/src/com/intellij/openapi/command/WriteCommandAction.java)<!--#L172-->. See the [Threading Issues](/basics/architectural_overview/general_threading_rules.md) section to learn more about synchronization issues and changes safety on the IntelliJ Platform.
 
 ```java
 @Override

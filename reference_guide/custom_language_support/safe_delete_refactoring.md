@@ -21,7 +21,7 @@ In addition to that, in order to support `Safe Delete`, a plugin needs to implem
 **Example:**
 [delete()](upsource:///plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/psi/impl/PropertyImpl.java)<!--#L363-->
 implementation for a
-[Property language plugin](https://github.com/JetBrains/intellij-community/tree/master/plugins/properties/)
+[Property language plugin](upsource:///plugins/properties/)
 
 
 If needed, it's possible to further customize how Safe Delete is performed for a particular type of element (how references are searched, etc).
@@ -31,4 +31,4 @@ This is done by implementing the `SafeDeleteProcessorDelegate` interface.
 **Example**:
 [SafeDeleteProcessorDelegate](upsource:///plugins/properties/src/com/intellij/lang/properties/refactoring/PropertiesFilesSafeDeleteProcessor.java)
 implementation for
-[Properties language plugin](https://github.com/JetBrains/intellij-community/tree/master/plugins/properties)
+[Properties language plugin](upsource:///plugins/properties)

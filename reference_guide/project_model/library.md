@@ -15,7 +15,7 @@ For more information about libraries, refer to
 ## Accessing Libraries and Jars
 
 Package
-[libraries](https://github.com/JetBrains/intellij-community/tree/master/platform/projectModel-api/src/com/intellij/openapi/roots/libraries)
+[libraries](upsource:///platform/projectModel-api/src/com/intellij/openapi/roots/libraries)
 provides functionality for working with project libraries and jars.
 Libraries and jars can be retrieved like the following snippet shows
 

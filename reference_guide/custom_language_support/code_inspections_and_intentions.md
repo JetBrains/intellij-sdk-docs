@@ -21,7 +21,7 @@ provides better performance (because of its support for incremental analysis) an
 A
 [simple inspection](upsource:///plugins/properties/properties-psi-impl/src/com/intellij/codeInspection/TrailingSpacesInPropertyInspection.java)
 for
-[Properties language plugin](https://github.com/JetBrains/intellij-community/tree/master/plugins/properties/)
+[Properties language plugin](upsource:///plugins/properties/)
 
 
 The code intentions for custom languages also use the regular API for intentions.

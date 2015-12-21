@@ -28,7 +28,7 @@ The latter method can be implemented by calling `resolve()` and comparing the re
 **Example**:
 [Reference](upsource:///plugins/properties/src/com/intellij/lang/properties/ResourceBundleReference.java)
 to a ResourceBundle in the
-[Properties language plugin](https://github.com/JetBrains/intellij-community/tree/master/plugins/properties)
+[Properties language plugin](upsource:///plugins/properties)
 
 
 There's a set of interfaces which can be used as a base for implementing resolve support, namely the

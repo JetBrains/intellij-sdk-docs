@@ -116,9 +116,9 @@ public class EditorIllustration extends AnAction {
 **Note:**
 Editor allows to access different models of text representation. 
 Model classes are located in
-[editor](https://github.com/JetBrains/intellij-community/tree/master/platform/editor-ui-api/src/com/intellij/openapi/editor)
+[editor](upsource:///platform/editor-ui-api/src/com/intellij/openapi/editor)
 subpackage of the
-[editor-ui-api](https://github.com/JetBrains/intellij-community/tree/master/platform/editor-ui-api)
+[editor-ui-api](upsource:///platform/editor-ui-api)
 package and include:
 
 * [CaretModel.java](upsource:///platform/editor-ui-api/src/com/intellij/openapi/editor/CaretModel.java),

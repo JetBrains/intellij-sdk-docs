@@ -40,7 +40,7 @@ can be used.
 **Example:**
 [SyntaxHighlighter](upsource:///plugins/properties/properties-psi-api/src/com/intellij/lang/properties/PropertiesHighlighter.java)
 implementation for
-[Properties language plugin](https://github.com/JetBrains/intellij-community/tree/master/plugins/properties/)
+[Properties language plugin](upsource:///plugins/properties/)
 
 
 ### Parser
@@ -75,7 +75,7 @@ to specify the text attributes key for the highlighting.
 **Example:**
 [Annotator](upsource:///plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/PropertiesAnnotator.java)
 for
-[Properties language plugin](https://github.com/JetBrains/intellij-community/tree/master/plugins/properties/)
+[Properties language plugin](upsource:///plugins/properties/)
 
 
 ### External tool
@@ -100,6 +100,6 @@ and register it in the `com.intellij.colorSettingsPage` extension point.
 **Example**:
 [ColorSettingsPage](upsource:///plugins/properties/src/com/intellij/openapi/options/colors/pages/PropertiesColorsPage.java)
 for
-[Properties language plugin](https://github.com/JetBrains/intellij-community/tree/master/plugins/properties/)
+[Properties language plugin](upsource:///plugins/properties/)
 
 The `Export to HTML` feature uses the same syntax highlighting mechanism as the editor, so it will work automatically for custom languages which provide a syntax highlighter.

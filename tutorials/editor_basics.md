@@ -20,7 +20,7 @@ If you need to access PSI please see
 section.
 
 **See also:**
-[editor-ui-api package](https://github.com/JetBrains/intellij-community/tree/master/platform/editor-ui-api),
+[editor-ui-api package](upsource:///platform/editor-ui-api),
 [Editor.java](upsource:///platform/editor-ui-api/src/com/intellij/openapi/editor/Editor.java),
 [EditorImpl.java](upsource:///platform/platform-impl/src/com/intellij/openapi/editor/impl/EditorImpl.java).
 [CommonDataKeys.java](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/CommonDataKeys.java),

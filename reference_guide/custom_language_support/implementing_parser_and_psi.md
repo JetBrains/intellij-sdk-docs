@@ -33,7 +33,7 @@ method.
 **Example**:
 [ParserDefinition](upsource:///plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/parsing/PropertiesParserDefinition.java)
 for
-[Properties language plugin](https://github.com/JetBrains/intellij-community/tree/master/plugins/properties)
+[Properties language plugin](upsource:///plugins/properties)
 
 
 The lifecycle of the PSI is described in more detail in

@@ -4,10 +4,10 @@ title: Tutorials
 
 This section contains a set of step-by-step tutorials which some aspects of work with *IntelliJ Platform*.
 
-To set up development environment and get started please refer to the 
+To set up the development environment and get started please refer to the 
 [Basics](basics.md) section.
 
-More detailed explanation of the API components can be found in the
+A more detailed explanation of the API components can be found in the
 [Architecture Reference Guide](reference_guide.md).
 
 

@@ -20,7 +20,7 @@ GIT
 
 GIT
   remote: https://github.com/citizenmatt/rouge.git
-  revision: 0786e898fd66805ddf1e965c4aa472d6a89d70ce
+  revision: 1c6c57410e5b7ffd3112ae99770f7a7e4d6c064a
   branch: multiple_fixes
   specs:
     rouge (1.10.1)
@@ -82,9 +82,9 @@ GEM
     mercenary (0.3.5)
     mini_portile2 (2.0.0)
     multipart-post (2.0.0)
-    nokogiri (1.6.7)
+    nokogiri (1.6.7.1)
       mini_portile2 (~> 2.0.0.rc2)
-    nokogiri (1.6.7-x64-mingw32)
+    nokogiri (1.6.7.1-x64-mingw32)
       mini_portile2 (~> 2.0.0.rc2)
     octokit (4.2.0)
       sawyer (~> 0.6.0, >= 0.5.3)
@@ -121,3 +121,6 @@ DEPENDENCIES
   link-checker!
   rake
   rouge!
+
+BUNDLED WITH
+   1.10.6

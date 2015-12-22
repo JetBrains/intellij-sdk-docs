@@ -9,43 +9,7 @@ These icons may provide navigation to related code.
 
 Let's annotate usages of our properties within Java code and provide navigation to the definition of these properties.
 
-```java
-package com.simpleplugin;
-
-import com.intellij.codeInsight.daemon.RelatedItemLineMarkerInfo;
-import com.intellij.codeInsight.daemon.RelatedItemLineMarkerProvider;
-import com.intellij.codeInsight.navigation.NavigationGutterIconBuilder;
-import com.intellij.openapi.project.Project;
-import com.intellij.psi.PsiElement;
-import com.intellij.psi.PsiLiteralExpression;
-import com.simpleplugin.psi.SimpleProperty;
-import org.jetbrains.annotations.NotNull;
-
-import java.util.Collection;
-import java.util.List;
-
-public class SimpleLineMarkerProvider extends RelatedItemLineMarkerProvider {
-    @Override
-    protected void collectNavigationMarkers(@NotNull PsiElement element, Collection<? super RelatedItemLineMarkerInfo> result) {
-        if (element instanceof PsiLiteralExpression) {
-            PsiLiteralExpression literalExpression = (PsiLiteralExpression) element;
-            String value = (String) literalExpression.getValue();
-            if (value != null && value.startsWith("simple:")) {
-                Project project = element.getProject();
-                final List<SimpleProperty> properties = SimpleUtil.findProperties(project, value.substring(7));
-                if (properties.size() > 0) {
-                    NavigationGutterIconBuilder<PsiElement> builder =
-                            NavigationGutterIconBuilder.create(SimpleIcons.FILE).
-                                    setTargets(properties).
-                                    setTooltipText("Navigate to a simple property");
-                    result.add(builder.createLineMarkerInfo(element));
-                }
-            }
-        }
-    }
-}
-```
-
+{% include_code simple_language_plugin/src/com/simpleplugin/SimpleLineMarkerProvider.java %}
 
 ## More technical details for implementers
 

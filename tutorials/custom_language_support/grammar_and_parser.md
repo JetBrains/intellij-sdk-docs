@@ -4,69 +4,17 @@ title: 3. Grammar and Parser
 
 ### 3.1. Define a token type
 
-```java
-package com.simpleplugin.psi;
-
-import com.intellij.psi.tree.IElementType;
-import com.simpleplugin.SimpleLanguage;
-import org.jetbrains.annotations.NonNls;
-import org.jetbrains.annotations.NotNull;
-
-public class SimpleTokenType extends IElementType {
-    public SimpleTokenType(@NotNull @NonNls String debugName) {
-        super(debugName, SimpleLanguage.INSTANCE);
-    }
-
-    @Override
-    public String toString() {
-        return "SimpleTokenType." + super.toString();
-    }
-}
-```
+{% include_code simple_language_plugin/src/com/simpleplugin/psi/SimpleTokenType.java %}
 
 ### 3.2. Define an element type
 
-```java
-package com.simpleplugin.psi;
-
-import com.intellij.psi.tree.IElementType;
-import com.simpleplugin.SimpleLanguage;
-import org.jetbrains.annotations.NonNls;
-import org.jetbrains.annotations.NotNull;
-
-public class SimpleElementType extends IElementType {
-    public SimpleElementType(@NotNull @NonNls String debugName) {
-        super(debugName, SimpleLanguage.INSTANCE);
-    }
-}
-```
+{% include_code simple_language_plugin/src/com/simpleplugin/psi/SimpleElementType.java %}
 
 ### 3.3. Define grammar
 
 Define a grammar for the properties language with */com/simpleplugin/Simple.bnf* file.
 
-```java
-{
-  parserClass="com.simpleplugin.parser.SimpleParser"
-
-  extends="com.intellij.extapi.psi.ASTWrapperPsiElement"
-
-  psiClassPrefix="Simple"
-  psiImplClassSuffix="Impl"
-  psiPackage="com.simpleplugin.psi"
-  psiImplPackage="com.simpleplugin.psi.impl"
-
-  elementTypeHolderClass="com.simpleplugin.psi.SimpleTypes"
-  elementTypeClass="com.simpleplugin.psi.SimpleElementType"
-  tokenTypeClass="com.simpleplugin.psi.SimpleTokenType"
-}
-
-simpleFile ::= item_*
-
-private item_ ::= (property|COMMENT|CRLF)
-
-property ::= (KEY? SEPARATOR VALUE?) | KEY
-```
+{% include_code simple_language_plugin/src/com/simpleplugin/Simple.bnf lang:java %}
 
 As you see a properties file can contain properties, comments and line breaks.
 

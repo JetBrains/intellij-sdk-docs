@@ -95,36 +95,7 @@ Simple File(0,433)
 
 ### 2.4. Define a parsing test
 
-```java
-package com.simpleplugin;
-
-import com.intellij.testFramework.ParsingTestCase;
-
-public class SimpleParsingTest extends ParsingTestCase {
-    public SimpleParsingTest() {
-        super("", "simple", new SimpleParserDefinition());
-    }
-
-    public void testParsingTestData() {
-        doTest(true);
-    }
-
-    @Override
-    protected String getTestDataPath() {
-        return "../../SimplePlugin/testData";
-    }
-
-    @Override
-    protected boolean skipSpaces() {
-        return false;
-    }
-
-    @Override
-    protected boolean includeRanges() {
-        return true;
-    }
-}
-```
+{% include_code simple_language_plugin/tests/com/simpleplugin/SimpleParsingTest.java %}
 
 ### 2.5. Run the test
 

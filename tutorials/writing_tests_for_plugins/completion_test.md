@@ -27,40 +27,11 @@ tab : \u0009
 
 Create one more file *CompleteTestData.java*.
 
-```java
-public class Test {
-    public static void main(String[] args) {
-        System.out.println("simple:<caret>");
-    }
-}
-```
+{% include_code simple_language_plugin/testData/CompleteTestData.java %}
 
 ### 3.2. Define a test
 
-```java
-package com.simpleplugin;
-
-import com.intellij.codeInsight.completion.CompletionType;
-import com.intellij.testFramework.fixtures.LightCodeInsightFixtureTestCase;
-
-import java.util.Arrays;
-import java.util.List;
-
-public class SimpleCodeInsightTest extends LightCodeInsightFixtureTestCase {
-    @Override
-    protected String getTestDataPath() {
-        return "../../SimplePlugin/testData";
-    }
-
-    public void testCompletion() {
-        myFixture.configureByFiles("CompleteTestData.java", "DefaultTestData.simple");
-        myFixture.complete(CompletionType.BASIC, 1);
-        List<String> strings = myFixture.getLookupElementStrings();
-        assertTrue(strings.containsAll(Arrays.asList("key\\ with\\ spaces", "language", "message", "tab", "website")));
-        assertEquals(5, strings.size());
-    }
-}
-```
+{% include_code simple_language_plugin/tests/com/simpleplugin/SimpleCodeInsightTest.java %}
 
 ### 3.3. Run the test
 

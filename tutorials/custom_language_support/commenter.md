@@ -6,44 +6,7 @@ A commenter allows user to comment the code at the cursor or selected code autom
 
 ### 17.1. Define a commenter
 
-```java
-package com.simpleplugin;
-
-import com.intellij.lang.Commenter;
-import org.jetbrains.annotations.Nullable;
-
-public class SimpleCommenter implements Commenter {
-    @Nullable
-    @Override
-    public String getLineCommentPrefix() {
-        return "#";
-    }
-
-    @Nullable
-    @Override
-    public String getBlockCommentPrefix() {
-        return "";
-    }
-
-    @Nullable
-    @Override
-    public String getBlockCommentSuffix() {
-        return null;
-    }
-
-    @Nullable
-    @Override
-    public String getCommentedBlockCommentPrefix() {
-        return null;
-    }
-
-    @Nullable
-    @Override
-    public String getCommentedBlockCommentSuffix() {
-        return null;
-    }
-}
-```
+{% include_code simple_language_plugin/src/com/simpleplugin/SimpleCommenter.java %}
 
 ### 17.2. Register the commenter
 

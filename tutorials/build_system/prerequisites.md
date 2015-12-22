@@ -78,68 +78,9 @@ Create the following directory structure:
 
 ![Gradle directory structure](img/gradle_directory_structure.png)
 
-```java
-import com.intellij.openapi.actionSystem.AnAction;
-import com.intellij.openapi.actionSystem.AnActionEvent;
-import com.intellij.openapi.actionSystem.PlatformDataKeys;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.ui.Messages;
+{% include_code gradle_plugin_demo/src/main/java/HelloAction.java %}
 
-public class HelloAction extends AnAction {
-    public HelloAction() {
-        super("Hello");
-    }
-
-    public void actionPerformed(AnActionEvent event) {
-        Project project = event.getData(PlatformDataKeys.PROJECT);
-        Messages.showMessageDialog(project, "Hello world!", "Greeting", Messages.getInformationIcon());
-    }
-}
-```
-
-```xml
-<idea-plugin version="2">
-  <id>org.jetbrains</id>
-  <name>gradle_plugin_demo</name>
-  <version>0.0.1</version>
-  <vendor email="dummy" url="dummy">dummy</vendor>
-
-  <description><![CDATA[
-      Sample plugin.<br>
-    ]]></description>
-
-  <change-notes><![CDATA[
-      Release 0.0.1: Initial release.<br>
-    ]]>
-  </change-notes>
-
-  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
-  <idea-version since-build="131"/>
-
-  <!-- please see https://confluence.jetbrains.com/display/IDEADEV/Plugin+Compatibility+with+IntelliJ+Platform+Products
-       on how to target different products -->
-  <!-- uncomment to enable plugin in all products
-  <depends>com.intellij.modules.lang</depends>
-  -->
-
-  <extensions defaultExtensionNs="com.intellij">
-  </extensions>
-
-  <application-components>
-  </application-components>
-
-  <project-components>
-  </project-components>
-
-  <actions>
-    <group id="MyPlugin.SampleMenu" text="Greeting" description="Greeting menu">
-      <add-to-group group-id="MainMenu" anchor="last"  />
-      <action id="Myplugin.Textboxes" class="HelloAction" text="Hello" description="Says hello" />
-    </group>
-  </actions>
-
-</idea-plugin>
-```
+{% include_code gradle_plugin_demo/src/main/resources/META-INF/plugin.xml %}
 
 Add a new Gradle Run Configuration, configured like so:
  

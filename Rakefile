@@ -1,7 +1,11 @@
 Rake.add_rakelib 'sdkdocs-template/rakelib'
 
+begin
 FileUtils.mkdir_p %w( _includes/code_samples )
-FileUtils.cp_r 'code_samples', '_includes', :verbose => true
+FileUtils.cp_r 'code_samples', '_includes', :verbose => true, :remove_destination => true
+rescue
+  `yes | cp -rf code_samples _includes`
+  end
 
 CONFIG = {
   :source_dir => __dir__,

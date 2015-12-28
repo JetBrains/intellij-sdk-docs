@@ -2,7 +2,6 @@
 product_name: IntelliJ Platform SDK
 product_version:
 product_type: DevGuide
-include: ["code-samples"]
 
 baseurl: /intellij/sdk/docs/
 

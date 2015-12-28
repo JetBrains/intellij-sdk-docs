@@ -4,17 +4,23 @@ title: 3. Grammar and Parser
 
 ### 3.1. Define a token type
 
-{% include_code simple_language_plugin/src/com/simpleplugin/psi/SimpleTokenType.java %}
+```java
+{% include /code_samples/simple_language_plugin/src/com/simpleplugin/psi/SimpleTokenType.java %}
+```
 
 ### 3.2. Define an element type
 
-{% include_code simple_language_plugin/src/com/simpleplugin/psi/SimpleElementType.java %}
+```java
+{% include /code_samples/simple_language_plugin/src/com/simpleplugin/psi/SimpleElementType.java %}
+```
 
 ### 3.3. Define grammar
 
 Define a grammar for the properties language with */com/simpleplugin/Simple.bnf* file.
 
-{% include_code simple_language_plugin/src/com/simpleplugin/Simple.bnf lang:java %}
+```java
+{% include /code_samples/simple_language_plugin/src/com/simpleplugin/Simple.bnf %}
+```
 
 As you see a properties file can contain properties, comments and line breaks.
 

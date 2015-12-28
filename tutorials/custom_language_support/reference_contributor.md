@@ -10,9 +10,13 @@ Resolving references means the ability to go from the usage of an element to the
 
 ### 10.1. Define a base named element class
 
-{% include_code simple_language_plugin/src/com/simpleplugin/psi/SimpleNamedElement.java %}
+```java
+{% include /code_samples/simple_language_plugin/src/com/simpleplugin/psi/SimpleNamedElement.java %}
+```
 
-{% include_code simple_language_plugin/src/com/simpleplugin/psi/impl/SimpleNamedElementImpl.java %}
+```java
+{% include /code_samples/simple_language_plugin/src/com/simpleplugin/psi/impl/SimpleNamedElementImpl.java %}
+```
 
 ### 10.2. Define helper methods for generated PSI elements
 
@@ -80,14 +84,18 @@ property ::= (KEY? SEPARATOR VALUE?) | KEY {mixin="com.simpleplugin.psi.impl.Sim
 
 Now we need to define a reference class to resolve a property from it's usage.
 
-{% include_code simple_language_plugin/src/com/simpleplugin/SimpleReference.java %}
+```java
+{% include /code_samples/simple_language_plugin/src/com/simpleplugin/SimpleReference.java %}
+```
 
 ### 10.6. Define a reference contributor
 
 A reference contributor allows you to provide references from elements in other languages such as Java to elements in your language.
 Let's contribute a reference to each usage of a property.
 
-{% include_code simple_language_plugin/src/com/simpleplugin/SimpleReferenceContributor.java %}
+```java
+{% include /code_samples/simple_language_plugin/src/com/simpleplugin/SimpleReferenceContributor.java %}
+```
 
 ### 10.7. Register the reference contributor
 
@@ -109,7 +117,9 @@ As you see the IDE now resolves the property and provides completion.
 
 To allow in-place refactoring we should specify it explicitly in a refactoring support provider.
 
-{% include_code simple_language_plugin/src/com/simpleplugin/SimpleRefactoringSupportProvider.java %}
+```java
+{% include /code_samples/simple_language_plugin/src/com/simpleplugin/SimpleRefactoringSupportProvider.java %}
+```
 
 ### 10.10. Register the refactoring support provider
 

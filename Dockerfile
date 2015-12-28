@@ -20,6 +20,8 @@ RUN apt-get --yes install nodejs
 # Add bundle install to Docker image
 ADD Gemfile* /tmp/
 ADD Rakefile /tmp/
+ADD _SUMMARY.md /tmp/
+ADD .git /tmp/.git
 ADD sdkdocs-template /tmp/sdkdocs-template
 WORKDIR /tmp
 RUN rake bootstrap

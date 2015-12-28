@@ -43,7 +43,9 @@ property ::= (KEY? SEPARATOR VALUE?) | KEY {mixin="com.simpleplugin.psi.impl.Sim
 
 ### 13.3. Define a go to symbol contributor
 
-{% include_code simple_language_plugin/src/com/simpleplugin/SimpleChooseByNameContributor.java %}
+```java
+{% include /code_samples/simple_language_plugin/src/com/simpleplugin/SimpleChooseByNameContributor.java %}
+```
 
 ### 13.4. Register the go to symbol contributor
 

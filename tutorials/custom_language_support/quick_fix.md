@@ -9,17 +9,23 @@ Let's add a quick fix which helps to define an unresolved property from its usag
 
 ### 18.1. Update the element factory
 
-{% include_code simple_language_plugin/src/com/simpleplugin/psi/SimpleElementFactory.java %}
+```java
+{% include /code_samples/simple_language_plugin/src/com/simpleplugin/psi/SimpleElementFactory.java %}
+```
 
 ### 18.2. Define an intention action
 
 The quick fix will create a property in the file chosen by user, and navigate to this property after creation.
 
-{% include_code simple_language_plugin/src/com/simpleplugin/CreatePropertyQuickFix.java %}
+```java
+{% include /code_samples/simple_language_plugin/src/com/simpleplugin/CreatePropertyQuickFix.java %}
+```
 
 ### 18.3. Update the annotator
 
-{% include_code simple_language_plugin/src/com/simpleplugin/SimpleAnnotator.java %}
+```java
+{% include /code_samples/simple_language_plugin/src/com/simpleplugin/SimpleAnnotator.java %}
+```
 
 ### 18.4. Run the project
 

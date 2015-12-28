@@ -8,7 +8,9 @@ A folding builder helps you to fold the code regions and replace it with specifi
 
 Let's replace usages of properties with its values by default.
 
-{% include_code simple_language_plugin/src/com/simpleplugin/SimpleFoldingBuilder.java %}
+```java
+{% include /code_samples/simple_language_plugin/src/com/simpleplugin/SimpleFoldingBuilder.java %}
+```
 
 ### 12.2. Register the folding builder
 

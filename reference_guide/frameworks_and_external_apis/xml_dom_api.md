@@ -326,7 +326,7 @@ Newly created DOM elements are always correct and valid, so their `isValid()` me
 Element validity is very important, since you cannot invoke any methods on invalid elements (except, of course, `isValid()` itself).
 
 #### DOM Reflection
-DOM also has a kind of reflection, called "Generic Info". One would use it to be able to access children by tag names directly, instead of calling getter methods. See `GenericInfo` interface and `getGenericInfo()` methods in `DomElement` and `DomManager` for more information. There's also `DomElement.getXmlElementName()` method that returns the name of a corresponding tag or attribute.
+DOM also has a kind of reflection, called "Generic Info". One would use it to be able to access children by tag names directly, instead of calling getter methods. See `DomGenericInfo` interface and `getGenericInfo()` methods in `DomElement` and `DomManager` for more information. There's also `DomElement.getXmlElementName()` method that returns the name of a corresponding tag or attribute.
 
 #### Presentation
 <!-- TODO: using @Presentation -->
@@ -437,7 +437,7 @@ With simple controls, you can edit `GenericDomValue`: simple text, class names, 
 
 We have three major DomWrapper's: `DomFixedWrapper<T>` redirecting calls to `GenericDomValue<T>`, `DomStringWrapper` redirecting calls to string accessors of `GenericDomValue`, and `DomCollectionWrapper` that gets/sets values of the first element of the given `GenericDomValue` collection. Some controls (those having a text field as part of itself) take additional boolean constructor parameter — _commitOnEveryChange_, whose meaning is evident from the name. We don't recommend using it anywhere except small dialogs, because committing on every change slows down the system significantly.
 
-Most often these controls are created by `DomUIFactory.createControl(GenericDomValue)`. This method understands which control to create by using DOM reflection (`GenericInfo`, as you probably remember). But sometimes you may want to create the controls directly. So let's look at the simple controls more closely.
+Most often these controls are created by `DomUIFactory.createControl(GenericDomValue)`. This method understands which control to create by using DOM reflection (`DomGenericInfo`, as you probably remember). But sometimes you may want to create the controls directly. So let's look at the simple controls more closely.
 
 ##### BooleanControl
 It allows you to edit boolean values. The control is bound to `JCheckBox`.

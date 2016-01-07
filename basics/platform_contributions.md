@@ -1,5 +1,5 @@
 ---
-title: "Contributing to the IntelliJ Platform"
+title: Contributing to the IntelliJ Platform
 ---
 
 #### Participate in the Community
@@ -30,6 +30,6 @@ One of the best ways to contribute a larger piece of code, adding extra function
 - **Submit a patch**  
 If you would like to improve the code in the IntelliJ Platform or the core functionality of IntelliJ IDEA, you can submit a patch in [IntelliJ's YouTrack bug database](http://youtrack.jetbrains.net/issues/IDEA) . You can either file a new issue with the patch attached, or attach a patch to an issue submitted by another user. When writing a patch, please make sure to follow the [IntelliJ Coding Guidelines](intellij_coding_guidelines.md).  
 Alternatively, you can fork [the IntelliJ IDEA repository on GitHub](https://github.com/JetBrains/intellij-community), make the changes in your fork and send us a pull request.
-A developer will review your patch and, if it meets the [quality criteria](intellij_coding_guidelines.md) and fits well with the rest of the code, you'll be notified about the acceptance of the patch. You will also need to sign the [contribution agreement](http://www.jetbrains.org/display/IJOS/Contributor+Agreement) in order to complete your contribution. Just print it out, sign, scan and email to [contribute@jetbrains.com](mailto:contribute@jetbrains.com)
+A developer will review your patch and, if it meets the [quality criteria](intellij_coding_guidelines.md) and fits well with the rest of the code, you'll be notified about the acceptance of the patch. You will also need to sign the [contribution agreement](http://www.jetbrains.org/display/IJOS/Contributor+Agreement) in order to complete your contribution.
 - **Become a commiter and commit code directly**
 Developers with a long history of submitting high-quality patches can gain direct commit rights.

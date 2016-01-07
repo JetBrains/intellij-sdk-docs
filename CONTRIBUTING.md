@@ -5,6 +5,7 @@
 Thanks for contributing! Here are few useful things to know before submitting your Pull Request.
 
 * Licensing - see [LICENSE.txt](LICENSE.txt)
+* [Contributing to the IntelliJ Platform](#contributing-to-the-intellij-platform)
 * [Setting up your environment](#setting-up-your-environment)
     * [Developing with Docker](#developing-with-docker)
     * [Developing locally](#developing-locally)
@@ -20,6 +21,10 @@ Thanks for contributing! Here are few useful things to know before submitting yo
     * [Images](#images)
 * Style guide
 * [A word on submodules](#a-word-on-submodules)
+
+## Contributing to the IntelliJ Platform
+
+This document describes our contribution guidelines for the IntelliJ SDK Docs. For information about contributing to the IntelliJ Platform, please visit [Contributing to the IntelliJ Platform](/basics/platform_contributions.md).
 
 ## Setting up your environment
 

@@ -8,7 +8,7 @@ This topic describes the [comparing_refereces_inspection](https://github.com/Je
 
 The **IntelliJ Platform** provides tools designed for static code analysis (so called _code inspections_) that help you maintain and clean up your code without actually executing it. For more information, refer to [Code Inspection](http://www.jetbrains.com/idea/webhelp/code-inspection.html) in the **IntelliJ IDEA** Web Help. In **IntelliJ IDEA** you will find a set of built-in inspections that are grouped by their goals and sense.
 
-You can create custom inspections through the **IntelliJ IDEA** interface (see [Creating Own Inspections](http://www.jetbrains.com/idea/webhelp/creating-own-inspections.html)). Alternatively, you can develop a plugin to implement a custom inspection.
+You can create custom inspections through the **IntelliJ IDEA** interface (see [Creating Custom Inspections](https://www.jetbrains.com/idea/help/creating-custom-inspections.html)). Alternatively, you can develop a plugin to implement a custom inspection.
 
 ## Techniques Used
 

@@ -22,10 +22,10 @@ You can check out the code either by using IntelliJ IDEA or from the command lin
 Please execute the following command:
 
 ```
-git clone git://git.jetbrains.org/idea/community.git idea
+git clone --depth 1 git://git.jetbrains.org/idea/community.git idea
 ```
 
-The [master](https://github.com/JetBrains/intellij-community/tree/master) branch currently contains the code for the development version of IntelliJ IDEA 15.x. Source code of older releases of IntelliJ IDEA can be found in the following branches:
+The [master](https://github.com/JetBrains/intellij-community/tree/master) branch currently contains the code for the most recent development version of IntelliJ IDEA. Source code of older releases of IntelliJ IDEA can be found in the following branches:
 
 | IntelliJ Product version | Branch name/number                                                |
 |--------------------------|-------------------------------------------------------------------|
@@ -41,7 +41,20 @@ The [master](https://github.com/JetBrains/intellij-community/tree/master) branch
 | 10.0.x                   | [x0x](https://github.com/JetBrains/intellij-community/tree/x0x)   |
 | 9.x                      | [maia](https://github.com/JetBrains/intellij-community/tree/maia) |
 
-You can also browse the source code through the Web interface.
+
+The source code of stable releases of IntelliJ IDEA Community Edition is also available as a tarball:
+
+- [IntelliJ IDEA Community Edition 15.0.1](http://download.jetbrains.com/idea/ideaIC-15.0.1-src.tar.bz2)
+- [IntelliJ IDEA Community Edition 14.1.4](http://download.jetbrains.com/idea/ideaIC-14.1.4-src.tar.bz2)
+- [IntelliJ IDEA Community Edition 13.1.6](http://download.jetbrains.com/idea/ideaIC-13.1.6-src.tar.bz2)
+- [IntelliJ IDEA Community Edition 13.0.4](http://download.jetbrains.com/idea/ideaIC-13.0.4-src.tar.bz2)
+- [IntelliJ IDEA Community Edition 12.1.6](http://download.jetbrains.com/idea/ideaIC-12.1.6-src.tar.bz2)
+- [IntelliJ IDEA Community Edition 12.0.4](http://download.jetbrains.com/idea/ideaIC-12.0.4-src.tar.bz2)
+- [IntelliJ IDEA Community Edition 11.1.4](http://download.jetbrains.com/idea/ideaIC-11.1.4-src.tar.bz2)
+- [IntelliJ IDEA Community Edition 11.0.2](http://download.jetbrains.com/idea/ideaIC-11.0.2-src.tar.bz2)
+- [IntelliJ IDEA Community Edition 10.5.4](http://download.jetbrains.com/idea/ideaIC-10.5.4-src.tar.bz2)
+- [IntelliJ IDEA Community Edition 10.0.3](http://download.jetbrains.com/idea/ideaIC-10.0.3-src.tar.bz2)
+- [IntelliJ IDEA Community Edition 9.0.4](http://download.jetbrains.com/idea/ideaIC-9.0.4-src.tar.bz2)
 
 ## Forking on GitHub
 

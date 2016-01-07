@@ -45,6 +45,8 @@
       * [Test Project and Testdata Directories](basics/testing_plugins/test_project_and_testdata_directories.md)
       * [Writing Tests](basics/testing_plugins/writing_tests.md)
       * [Testing Highlighting](basics/testing_plugins/testing_highlighting.md)
+    * [Contributing to the IntelliJ Platform](basics/platform_contributions.md)
+      * [IntelliJ Coding Guidelines](basics/intellij_coding_guidelines.md)
   * [Architecture Reference Guide](reference_guide.md)
     * [Project Model](reference_guide/project_model.md)
       * [Project](reference_guide/project_model/project.md)
@@ -146,7 +148,7 @@
     * [Tree Structure View](tutorials/tree_structure_view.md)
     * [Kotlin for Plugin Developers](tutorials/kotlin.md)
   * [Plugin Development FAQ](faq.md)
-  * [Contribution Guidelines](CONTRIBUTING.md)
+* [Contribution Guidelines](CONTRIBUTING.md)
 
 
 

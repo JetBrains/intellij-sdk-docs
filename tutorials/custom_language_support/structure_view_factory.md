@@ -7,15 +7,21 @@ A structure view factory allows to show the structure of any file in a *Structur
 
 ### 14.1. Define a structure view factory
 
-{% include_code simple_language_plugin/src/com/simpleplugin/SimpleStructureViewFactory.java %}
+```java
+{% include /code_samples/simple_language_plugin/src/com/simpleplugin/SimpleStructureViewFactory.java %}
+```
 
 ### 14.2. Define a structure view model
 
-{% include_code simple_language_plugin/src/com/simpleplugin/SimpleStructureViewModel.java %}
+```java
+{% include /code_samples/simple_language_plugin/src/com/simpleplugin/SimpleStructureViewModel.java %}
+```
 
 ### 14.3. Define a structure view element
 
-{% include_code simple_language_plugin/src/com/simpleplugin/SimpleStructureViewElement.java %}
+```java
+{% include /code_samples/simple_language_plugin/src/com/simpleplugin/SimpleStructureViewElement.java %}
+```
 
 ### 14.4. Register the structure view factory
 

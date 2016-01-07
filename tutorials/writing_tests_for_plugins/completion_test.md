@@ -27,11 +27,15 @@ tab : \u0009
 
 Create one more file *CompleteTestData.java*.
 
-{% include_code simple_language_plugin/testData/CompleteTestData.java %}
+```java
+{% include /code_samples/simple_language_plugin/testData/CompleteTestData.java %}
+```
 
 ### 3.2. Define a test
 
-{% include_code simple_language_plugin/tests/com/simpleplugin/SimpleCodeInsightTest.java %}
+```java
+{% include /code_samples/simple_language_plugin/tests/com/simpleplugin/SimpleCodeInsightTest.java %}
+```
 
 ### 3.3. Run the test
 

@@ -6,7 +6,9 @@ A commenter allows user to comment the code at the cursor or selected code autom
 
 ### 17.1. Define a commenter
 
-{% include_code simple_language_plugin/src/com/simpleplugin/SimpleCommenter.java %}
+```java
+{% include /code_samples/simple_language_plugin/src/com/simpleplugin/SimpleCommenter.java %}
+```
 
 ### 17.2. Register the commenter
 

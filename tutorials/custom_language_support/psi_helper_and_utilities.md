@@ -9,7 +9,9 @@ If we want to have custom methods in PSI classes we need to define them separate
 
 Let's define an utility class with these helper methods.
 
-{% include_code simple_language_plugin/src/com/simpleplugin/psi/impl/SimplePsiImplUtil.java %}
+```java
+{% include /code_samples/simple_language_plugin/src/com/simpleplugin/psi/impl/SimplePsiImplUtil.java %}
+```
 
 ### 6.2. Update grammar and regenerate the parser
 
@@ -49,7 +51,9 @@ After we made our changes to the grammar we can regenerate the parser and PSI cl
 Now we need an utility class to search PSI elements for defined properties over the project.
 We will use this utility later when implementing code assistance.
 
-{% include_code simple_language_plugin/src/com/simpleplugin/SimpleUtil.java %}
+```java
+{% include /code_samples/simple_language_plugin/src/com/simpleplugin/SimpleUtil.java %}
+```
 
 ----------------
 [Previous](syntax_highlighter_and_color_settings_page.md)

@@ -4,7 +4,7 @@ title: Plugin Development FAQ
 
 
 This FAQ is a topical index of questions that have been asked (and answered) on our
-[OpenAPI forum](https://devnet.jetbrains.com/community/idea/open_api_and_plugin_development)
+[OpenAPI forum](https://devnet.jetbrains.com/community/idea/open_api_and_plugin_development).
 
 ## Open-Source Plugins
 *  [How do I compile the Scala plugin?](https://devnet.jetbrains.com/thread/266848)

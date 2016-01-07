@@ -78,9 +78,13 @@ Create the following directory structure:
 
 ![Gradle directory structure](img/gradle_directory_structure.png)
 
-{% include_code gradle_plugin_demo/src/main/java/HelloAction.java %}
+```java
+{% include /code_samples/gradle_plugin_demo/src/main/java/HelloAction.java %}
+```
 
-{% include_code gradle_plugin_demo/src/main/resources/META-INF/plugin.xml %}
+```java
+{% include /code_samples/gradle_plugin_demo/src/main/resources/META-INF/plugin.xml %}
+```
 
 Add a new Gradle Run Configuration, configured like so:
  

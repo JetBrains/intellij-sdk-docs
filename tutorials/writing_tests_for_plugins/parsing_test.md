@@ -95,7 +95,9 @@ Simple File(0,433)
 
 ### 2.4. Define a parsing test
 
-{% include_code simple_language_plugin/tests/com/simpleplugin/SimpleParsingTest.java %}
+```java
+{% include /code_samples/simple_language_plugin/tests/com/simpleplugin/SimpleParsingTest.java %}
+```
 
 ### 2.5. Run the test
 

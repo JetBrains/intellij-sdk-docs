@@ -9,7 +9,9 @@ The easiest way to create a lexer is to use [JFlex](http://jflex.de/)
 
 Define */com/simpleplugin/Simple.flex* file with rules for our lexer.
 
-{% include_code simple_language_plugin/src/com/simpleplugin/Simple.flex lang:java %}
+```java
+{% include /code_samples/simple_language_plugin/src/com/simpleplugin/Simple.flex %}
+```
 
 ### 4.2. Generate a lexer class
 
@@ -24,15 +26,21 @@ After that the IDE will generate lexer: *com.simpleplugin.SimpleLexer*.
 
 ### 4.3. Define an adapter
 
-{% include_code simple_language_plugin/src/com/simpleplugin/SimpleLexerAdapter.java %}
+```java
+{% include /code_samples/simple_language_plugin/src/com/simpleplugin/SimpleLexerAdapter.java %}
+```
 
 ### 4.4. Define a file
 
-{% include_code simple_language_plugin/src/com/simpleplugin/psi/SimpleFile.java %}
+```java
+{% include /code_samples/simple_language_plugin/src/com/simpleplugin/psi/SimpleFile.java %}
+```
 
 ### 4.5. Define a parser definition
 
-{% include_code simple_language_plugin/src/com/simpleplugin/SimpleParserDefinition.java %}
+```java
+{% include /code_samples/simple_language_plugin/src/com/simpleplugin/SimpleParserDefinition.java %}
+```
 
 ### 4.6. Register the parser definition
 

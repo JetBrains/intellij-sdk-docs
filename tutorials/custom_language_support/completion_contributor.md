@@ -9,7 +9,9 @@ The easiest way to provide completion is to use a completion contributor.
 
 Let's provide custom completion for values in property files.
 
-{% include_code simple_language_plugin/src/com/simpleplugin/SimpleCompletionContributor.java %}
+```java
+{% include /code_samples/simple_language_plugin/src/com/simpleplugin/SimpleCompletionContributor.java %}
+```
 
 ### 9.2. Register the completion contributor
 

@@ -116,6 +116,10 @@ JamStringAttributeMeta.Single<SpringBeanPointer> ATTRIBUTE_META =
         new SpringBeanReferenceJamConverter("fqn.to.required.class"));
 ```
 
+##### @AliasFor
+_Version 16_
+See `com.intellij.spring.model.aliasFor.SpringAliasForUtils` to obtain corresponding `@AliasFor` JAM.
+
 ### spring.factories
 _Version 15_
 See `com.intellij.spring.spi.SpringSpiManager`.

@@ -143,6 +143,8 @@
       * [Supporting Module Types](tutorials/project_wizard/module_types.md)
     * [Code Inspections](tutorials/code_inspections.md)
     * [Code Intentions](tutorials/code_intentions.md)
+    * [Live Templates](tutorials/live_templates.md)
+        * [1. Adding Live Template Support](tutorials/live_templates/template_support.md)\
     * [Run Configurations](tutorials/run_configurations.md)
     * [Supporting Frameworks](tutorials/framework.md)
     * [Tree Structure View](tutorials/tree_structure_view.md)

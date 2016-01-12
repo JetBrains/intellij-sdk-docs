@@ -1,6 +1,6 @@
 <idea-plugin version="2">
-  <id>com.your.company.unique.plugin.id</id>
-  <name>Plugin display name here</name>
+  <id>live_templates</id>
+  <name>live_templates</name>
   <version>1.0</version>
   <vendor email="support@yourcompany.com" url="http://www.yourcompany.com">YourCompany</vendor>
 
@@ -25,7 +25,9 @@
   -->
 
   <extensions defaultExtensionNs="com.intellij">
-    <!-- Add your extensions here -->
+    <defaultLiveTemplatesProvider implementation="MarkdownTemplateProvider"/>
+    <liveTemplateContext implementation="MarkdownContext"/>
+
   </extensions>
 
   <actions>

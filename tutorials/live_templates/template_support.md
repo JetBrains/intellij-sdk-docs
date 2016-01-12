@@ -34,3 +34,34 @@ Copy this file into your plugin's resources, (eg. `project/resource/liveTemplate
 
 ## Implement DefaultLiveTemplatesProvider
 
+The `DefaultLiveTemplatesProvider` tells us where to find the Live Template settings file. Make sure to include the full path to the file, relative to the resources directory, excluding the file name.
+
+```java
+{% include /code_samples/live_templates/src/MarkdownTemplateProvider.java %}
+```
+
+## Implement TemplateContextType
+
+A `TemplateContextType` tells us where the live template is applicible.
+
+```java
+{% include /code_samples/live_templates/src/MarkdownTemplateProvider.java %}
+```
+
+Once you define the `TemplateContextType`, be sure to add the assigned context type to the previously created Live Template settings file. Under `<template>...</template>` add the following context:
+
+```xml
+<context>
+  <option name="MARKDOWN" value=true />
+</context>
+```
+
+## Register Extension Points
+
+```xml
+{% include /code_samples/live_templates/resources/META-INF/plugin.xml %}
+```
+
+## Check Plugin
+
+Now check that the plugin is working correctly. Run the plugin and verify there is a new entry under *File \| Settings \| Live Templates \| Markdown \| \[*. Finally, create a new file `Test.md` and confirm that the Live Template works.

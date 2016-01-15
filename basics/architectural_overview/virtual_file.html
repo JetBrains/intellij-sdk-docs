@@ -6,22 +6,22 @@
 <head>
     <meta charset="UTF-8">
     <title>Virtual Files / IntelliJ Platform SDK  DevGuide</title>
-    <link rel="stylesheet" href="/intellij-sdk-docsapp/css/styles.min.css">
+    <link rel="stylesheet" href="/intellij-sdk-docs/app/css/styles.min.css">
 
     <!-- non-retina iPad pre iOS 7 -->
-    <link rel="apple-touch-icon" href="/intellij-sdk-docsapple-touch-icon-72x72.png" sizes="72x72">
+    <link rel="apple-touch-icon" href="/intellij-sdk-docs/apple-touch-icon-72x72.png" sizes="72x72">
 
     <!-- retina iPhone pre iOS 7 -->
-    <link rel="apple-touch-icon" href="/intellij-sdk-docsapple-touch-icon-114x114.png" sizes="114x114">
+    <link rel="apple-touch-icon" href="/intellij-sdk-docs/apple-touch-icon-114x114.png" sizes="114x114">
 
     <!-- retina iPad pre iOS 7 -->
-    <link rel="apple-touch-icon" href="/intellij-sdk-docsapple-touch-icon-144x144.png" sizes="144x144">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/intellij-sdk-docsapple-touch-icon-precomposed.png">
+    <link rel="apple-touch-icon" href="/intellij-sdk-docs/apple-touch-icon-144x144.png" sizes="144x144">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/intellij-sdk-docs/apple-touch-icon-precomposed.png">
 
     <!-- normal favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="/intellij-sdk-docsfavicon.ico">
-    <link rel="icon" type="image/png" href="/intellij-sdk-docsfavicon.png">
-<link  rel="stylesheet" href="/intellij-sdk-docsstyles/styles.css"></head>
+    <link rel="shortcut icon" type="image/x-icon" href="/intellij-sdk-docs/favicon.ico">
+    <link rel="icon" type="image/png" href="/intellij-sdk-docs/favicon.png">
+<link  rel="stylesheet" href="/intellij-sdk-docs/styles/styles.css"></head>
 <body data-id="basics/architectural_overview/virtual_file">
 <div class="wrapper">
     <section class="panel _nav">
@@ -121,14 +121,14 @@
 <a name="how-do-i-extend-vfs" class="elem-anchor"></a>
 <h2>How do I extend VFS?<a href="#how-do-i-extend-vfs" class="anchor-link"><span></span></a></h2>
 
-<p>To provide an alternative file system implementation (for example, an FTP file system), implement the <a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/core-api/src/com/intellij/openapi/vfs/VirtualFileSystem.java" data-bypass="yes" target="_blank"><span>VirtualFileSystem</span></a> class (most likely you’ll also need to implement <code class="code highlight language-text">VirtualFile</code>), and register your implementation as an <a href="/intellij-sdk-docsbasics/plugin_structure/plugin_components.html"><span>application component</span></a>.</p>
+<p>To provide an alternative file system implementation (for example, an FTP file system), implement the <a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/core-api/src/com/intellij/openapi/vfs/VirtualFileSystem.java" data-bypass="yes" target="_blank"><span>VirtualFileSystem</span></a> class (most likely you’ll also need to implement <code class="code highlight language-text">VirtualFile</code>), and register your implementation as an <a href="/intellij-sdk-docs/basics/plugin_structure/plugin_components.html"><span>application component</span></a>.</p>
 
 <p>To hook into operations performed in the local file system (for example, if you are developing a version control system integration that needs custom rename/move handling), implement the <a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/platform-api/src/com/intellij/openapi/vfs/LocalFileOperationsHandler.java" data-bypass="yes" target="_blank"><span>LocalFileOperationsHandler</span></a> interface and register it through the<code class="code highlight language-text">LocalFileSystem.registerAuxiliaryFileOperationsHandler</code> method.</p>
 
 <a name="what-are-the-rules-for-working-with-vfs" class="elem-anchor"></a>
 <h2>What are the rules for working with VFS?<a href="#what-are-the-rules-for-working-with-vfs" class="anchor-link"><span></span></a></h2>
 
-<p>See <a href="/intellij-sdk-docsbasics/virtual_file_system.html"><span>IntelliJ Platform Virtual File System</span></a> for a detailed description of the VFS architecture and usage guidelines.</p>
+<p>See <a href="/intellij-sdk-docs/basics/virtual_file_system.html"><span>IntelliJ Platform Virtual File System</span></a> for a detailed description of the VFS architecture and usage guidelines.</p>
 
 
                     <div class="last-modified">
@@ -145,7 +145,7 @@
 </div>
 
 
-<script data-main="/intellij-sdk-docsapp/js/main.build" data-baseurl="/intellij-sdk-docs" src="/intellij-sdk-docsapp/js/vendor/requirejs/require.js"></script>
+<script data-main="/intellij-sdk-docs/app/js/main.build" data-baseurl="/intellij-sdk-docs/" src="/intellij-sdk-docs/app/js/vendor/requirejs/require.js"></script>
 
 </body>
 </html>

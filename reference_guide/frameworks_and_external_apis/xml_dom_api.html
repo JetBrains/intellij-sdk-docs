@@ -6,22 +6,22 @@
 <head>
     <meta charset="UTF-8">
     <title>XML DOM API / IntelliJ Platform SDK  DevGuide</title>
-    <link rel="stylesheet" href="/intellij-sdk-docsapp/css/styles.min.css">
+    <link rel="stylesheet" href="/intellij-sdk-docs/app/css/styles.min.css">
 
     <!-- non-retina iPad pre iOS 7 -->
-    <link rel="apple-touch-icon" href="/intellij-sdk-docsapple-touch-icon-72x72.png" sizes="72x72">
+    <link rel="apple-touch-icon" href="/intellij-sdk-docs/apple-touch-icon-72x72.png" sizes="72x72">
 
     <!-- retina iPhone pre iOS 7 -->
-    <link rel="apple-touch-icon" href="/intellij-sdk-docsapple-touch-icon-114x114.png" sizes="114x114">
+    <link rel="apple-touch-icon" href="/intellij-sdk-docs/apple-touch-icon-114x114.png" sizes="114x114">
 
     <!-- retina iPad pre iOS 7 -->
-    <link rel="apple-touch-icon" href="/intellij-sdk-docsapple-touch-icon-144x144.png" sizes="144x144">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/intellij-sdk-docsapple-touch-icon-precomposed.png">
+    <link rel="apple-touch-icon" href="/intellij-sdk-docs/apple-touch-icon-144x144.png" sizes="144x144">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/intellij-sdk-docs/apple-touch-icon-precomposed.png">
 
     <!-- normal favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="/intellij-sdk-docsfavicon.ico">
-    <link rel="icon" type="image/png" href="/intellij-sdk-docsfavicon.png">
-<link  rel="stylesheet" href="/intellij-sdk-docsstyles/styles.css"></head>
+    <link rel="shortcut icon" type="image/x-icon" href="/intellij-sdk-docs/favicon.ico">
+    <link rel="icon" type="image/png" href="/intellij-sdk-docs/favicon.png">
+<link  rel="stylesheet" href="/intellij-sdk-docs/styles/styles.css"></head>
 <body data-id="reference_guide/frameworks_and_external_apis/xml_dom_api">
 <div class="wrapper">
     <section class="panel _nav">
@@ -528,13 +528,13 @@ Return <code class="code highlight language-text">true</code> from <code class="
 <h5>BooleanControl</h5>
 <p>It allows you to edit boolean values. The control is bound to <code class="code highlight language-text">JCheckBox</code>.</p>
 
-<p><img src="/intellij-sdk-docsxml_dom_api/booleancontrol.gif" alt="BooleanControl" /></p>
+<p><img src="/intellij-sdk-docs/xml_dom_api/booleancontrol.gif" alt="BooleanControl" /></p>
 
 <a name="combocontrol" class="elem-anchor"></a>
 <h5>ComboControl</h5>
 <p>The control is bound to a non-editable <code class="code highlight language-text">JComboBox</code>, so it can be used to choose something from a limited set. One case of such a limited set is enum. Or it can be a constructor where you can provide a <code class="code highlight language-text">Factory&lt;List&lt;String&gt;&gt;</code>, and return from this factory anything you want (for example, a list of database names to choose from). By default, the wrong values (written in XML, but not present in the list you’ve given to the control) are displayed in red. Since it’s common practice to specify custom <code class="code highlight language-text">CellRenderer</code> for combo boxes, the control has the <code class="code highlight language-text">isValidValue(String)</code> method. If it returns <code class="code highlight language-text">false</code> on the value you’re rendering, you can highlight it in some way, to achieve the same result as the default renderer. Or you can just delegate to that renderer in your own way.</p>
 
-<p><img src="/intellij-sdk-docsxml_dom_api/combocontrol.gif" alt="ComboControl" /></p>
+<p><img src="/intellij-sdk-docs/xml_dom_api/combocontrol.gif" alt="ComboControl" /></p>
 
 <a name="booleanenumcontrol" class="elem-anchor"></a>
 <h5>BooleanEnumControl</h5>
@@ -552,7 +552,7 @@ Return <code class="code highlight language-text">true</code> from <code class="
 <h5>PsiClassControl</h5>
 <p>This is a one-line editor with a browse button that opens the standard  class selection dialog. The control accepts class names only. It is bound to <code class="code highlight language-text">PsiClassPanel</code>.</p>
 
-<p><img src="/intellij-sdk-docsxml_dom_api/psiclasscontrol.gif" alt="PsiClassControl" /></p>
+<p><img src="/intellij-sdk-docs/xml_dom_api/psiclasscontrol.gif" alt="PsiClassControl" /></p>
 
 <a name="psitypecontrol" class="elem-anchor"></a>
 <h5>PsiTypeControl</h5>
@@ -584,7 +584,7 @@ Return <code class="code highlight language-text">true</code> from <code class="
 
 <p>Tables can have single or multiple (default) row selection. If you want to change this behavior, override <code class="code highlight language-text">DomTableView.allowMultipleRowsSelection()</code>.</p>
 
-<p><img src="/intellij-sdk-docsxml_dom_api/collectioncontrol.gif" alt="CollectionControl" /></p>
+<p><img src="/intellij-sdk-docs/xml_dom_api/collectioncontrol.gif" alt="CollectionControl" /></p>
 
 <a name="ui-organization" class="elem-anchor"></a>
 <h3>UI Organization<a href="#ui-organization" class="anchor-link"><span></span></a></h3>
@@ -648,7 +648,7 @@ Return <code class="code highlight language-text">true</code> from <code class="
 </div>
 
 
-<script data-main="/intellij-sdk-docsapp/js/main.build" data-baseurl="/intellij-sdk-docs" src="/intellij-sdk-docsapp/js/vendor/requirejs/require.js"></script>
+<script data-main="/intellij-sdk-docs/app/js/main.build" data-baseurl="/intellij-sdk-docs/" src="/intellij-sdk-docs/app/js/vendor/requirejs/require.js"></script>
 
 </body>
 </html>

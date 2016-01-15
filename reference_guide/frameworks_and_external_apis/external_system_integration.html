@@ -6,22 +6,22 @@
 <head>
     <meta charset="UTF-8">
     <title> / IntelliJ Platform SDK  DevGuide</title>
-    <link rel="stylesheet" href="/intellij-sdk-docsapp/css/styles.min.css">
+    <link rel="stylesheet" href="/intellij-sdk-docs/app/css/styles.min.css">
 
     <!-- non-retina iPad pre iOS 7 -->
-    <link rel="apple-touch-icon" href="/intellij-sdk-docsapple-touch-icon-72x72.png" sizes="72x72">
+    <link rel="apple-touch-icon" href="/intellij-sdk-docs/apple-touch-icon-72x72.png" sizes="72x72">
 
     <!-- retina iPhone pre iOS 7 -->
-    <link rel="apple-touch-icon" href="/intellij-sdk-docsapple-touch-icon-114x114.png" sizes="114x114">
+    <link rel="apple-touch-icon" href="/intellij-sdk-docs/apple-touch-icon-114x114.png" sizes="114x114">
 
     <!-- retina iPad pre iOS 7 -->
-    <link rel="apple-touch-icon" href="/intellij-sdk-docsapple-touch-icon-144x144.png" sizes="144x144">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/intellij-sdk-docsapple-touch-icon-precomposed.png">
+    <link rel="apple-touch-icon" href="/intellij-sdk-docs/apple-touch-icon-144x144.png" sizes="144x144">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/intellij-sdk-docs/apple-touch-icon-precomposed.png">
 
     <!-- normal favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="/intellij-sdk-docsfavicon.ico">
-    <link rel="icon" type="image/png" href="/intellij-sdk-docsfavicon.png">
-<link  rel="stylesheet" href="/intellij-sdk-docsstyles/styles.css"></head>
+    <link rel="shortcut icon" type="image/x-icon" href="/intellij-sdk-docs/favicon.ico">
+    <link rel="icon" type="image/png" href="/intellij-sdk-docs/favicon.png">
+<link  rel="stylesheet" href="/intellij-sdk-docs/styles/styles.css"></head>
 <body data-id="reference_guide/frameworks_and_external_apis/external_system_integration">
 <div class="wrapper">
     <section class="panel _nav">
@@ -103,13 +103,13 @@
 <p><strong>General</strong><br />
 External system wrapper is required to be able to build project info on the basis of the given external system config. That information is built using in terms of <a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/external-system-api/src/com/intellij/openapi/externalSystem/model/DataNode.java" data-bypass="yes" target="_blank"><span>DataNode</span></a>, <a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/external-system-api/src/com/intellij/openapi/externalSystem/model/Key.java" data-bypass="yes" target="_blank"><span>Key</span></a> and <a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/external-system-api/src/com/intellij/openapi/externalSystem/model/project/ProjectEntityData.java" data-bypass="yes" target="_blank"><span>ProjectEntityData</span></a>.</p>
 
-<p><img src="/intellij-sdk-docsreference_guide/img/data-node.png" alt="DataNode" /></p>
+<p><img src="/intellij-sdk-docs/reference_guide/img/data-node.png" alt="DataNode" /></p>
 
 <p>Here <em>DataNode</em> class is just a holder for the target data (data type is defined by the <em>Key</em>). Multiple DataNode objects might be organized in directed graph where every edge identifies parent-child relation.</p>
 
 <p>For example, simple one-module project might look as below:</p>
 
-<p><img src="/intellij-sdk-docsreference_guide/img/data-node-example.png" alt="DataNode Example" /></p>
+<p><img src="/intellij-sdk-docs/reference_guide/img/data-node-example.png" alt="DataNode Example" /></p>
 
 <p><strong>Consequence</strong><br />
 The IDE provides a set of built-in <em>Key</em>s and <em>ProjectEntityData</em>s but any external system integration or third-party plugin developer might enhance project data by defining her own <em>Key</em> and <em>ProjectEntityData</em> and storing them at a child of appropriate <em>DataNode</em>.</p>
@@ -141,7 +141,7 @@ The IDE provides a set of built-in <em>Key</em>s and <em>ProjectEntityData</em>s
 
 <p>It’s possible to configure external system integration to automatically refresh project structure when external project’s config file is modified. Basically, end-user should check corresponding box at external system settings for that:</p>
 
-<p><img src="/intellij-sdk-docsreference_guide/img/use-auto-import.png" alt="Auto-import" /></p>
+<p><img src="/intellij-sdk-docs/reference_guide/img/use-auto-import.png" alt="Auto-import" /></p>
 
 <p>Built-in support covers only root config files of linked external projects. However, there is a possible situation that particular external project has another config files which affect resulting project structure as well (for example, it might be a multi-project where every sub-project has its own config file). That’s why it’s possible to enhance that processing by making target external system implementation (<em>ExternalSystemManager</em>) implement <em>ExternalSystemAutoImportAware</em>. That allows to provide custom logic for mapping file modification events to the target external project affected by that.</p>
 
@@ -152,13 +152,13 @@ The IDE provides a set of built-in <em>Key</em>s and <em>ProjectEntityData</em>s
 
 <p>The general idea is that all external system settings controls are represented by implementations of <a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/external-system-impl/src/com/intellij/openapi/externalSystem/service/settings/ExternalSettingsControl.java" data-bypass="yes" target="_blank"><span>ExternalSettingsControl</span></a> interface. There are also external system project-local settings and global external system settings. So, basically particular external system settings UI looks as below:</p>
 
-<p><img src="/intellij-sdk-docsreference_guide/img/configurable.png" alt="Configurable" /></p>
+<p><img src="/intellij-sdk-docs/reference_guide/img/configurable.png" alt="Configurable" /></p>
 
 <p>It’s recommended to extend from <a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/external-system-impl/src/com/intellij/openapi/externalSystem/service/settings/AbstractExternalProjectSettingsControl.java" data-bypass="yes" target="_blank"><span>AbstractExternalProjectSettingsControl</span></a> for implementing project-level settings control as it already handles some of them.</p>
 
 <p>Similar approach is used for providing ‘import from external system’ UI - implementation is expected to extended <a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/external-system-impl/src/com/intellij/openapi/externalSystem/service/settings/AbstractImportFromExternalSystemControl.java" data-bypass="yes" target="_blank"><span>AbstractImportFromExternalSystemControl</span></a> and it has not linked external projects list but target external project path control:</p>
 
-<p><img src="/intellij-sdk-docsreference_guide/img/import.png" alt="Import from external system" /></p>
+<p><img src="/intellij-sdk-docs/reference_guide/img/import.png" alt="Import from external system" /></p>
 
 <a name="using-with-121x-ij-branch" class="elem-anchor"></a>
 <h1>Using with 12.1.x IJ branch<a href="#using-with-121x-ij-branch" class="anchor-link"><span></span></a></h1>
@@ -187,7 +187,7 @@ The IDE provides a set of built-in <em>Key</em>s and <em>ProjectEntityData</em>s
 </div>
 
 
-<script data-main="/intellij-sdk-docsapp/js/main.build" data-baseurl="/intellij-sdk-docs" src="/intellij-sdk-docsapp/js/vendor/requirejs/require.js"></script>
+<script data-main="/intellij-sdk-docs/app/js/main.build" data-baseurl="/intellij-sdk-docs/" src="/intellij-sdk-docs/app/js/vendor/requirejs/require.js"></script>
 
 </body>
 </html>

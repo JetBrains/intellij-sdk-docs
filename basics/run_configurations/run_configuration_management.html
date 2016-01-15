@@ -6,22 +6,22 @@
 <head>
     <meta charset="UTF-8">
     <title>Run Configuration Management / IntelliJ Platform SDK  DevGuide</title>
-    <link rel="stylesheet" href="/intellij-sdk-docsapp/css/styles.min.css">
+    <link rel="stylesheet" href="/intellij-sdk-docs/app/css/styles.min.css">
 
     <!-- non-retina iPad pre iOS 7 -->
-    <link rel="apple-touch-icon" href="/intellij-sdk-docsapple-touch-icon-72x72.png" sizes="72x72">
+    <link rel="apple-touch-icon" href="/intellij-sdk-docs/apple-touch-icon-72x72.png" sizes="72x72">
 
     <!-- retina iPhone pre iOS 7 -->
-    <link rel="apple-touch-icon" href="/intellij-sdk-docsapple-touch-icon-114x114.png" sizes="114x114">
+    <link rel="apple-touch-icon" href="/intellij-sdk-docs/apple-touch-icon-114x114.png" sizes="114x114">
 
     <!-- retina iPad pre iOS 7 -->
-    <link rel="apple-touch-icon" href="/intellij-sdk-docsapple-touch-icon-144x144.png" sizes="144x144">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/intellij-sdk-docsapple-touch-icon-precomposed.png">
+    <link rel="apple-touch-icon" href="/intellij-sdk-docs/apple-touch-icon-144x144.png" sizes="144x144">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/intellij-sdk-docs/apple-touch-icon-precomposed.png">
 
     <!-- normal favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="/intellij-sdk-docsfavicon.ico">
-    <link rel="icon" type="image/png" href="/intellij-sdk-docsfavicon.png">
-<link  rel="stylesheet" href="/intellij-sdk-docsstyles/styles.css"></head>
+    <link rel="shortcut icon" type="image/x-icon" href="/intellij-sdk-docs/favicon.ico">
+    <link rel="icon" type="image/png" href="/intellij-sdk-docs/favicon.png">
+<link  rel="stylesheet" href="/intellij-sdk-docs/styles/styles.css"></head>
 <body data-id="basics/run_configurations/run_configuration_management">
 <div class="wrapper">
     <section class="panel _nav">
@@ -92,7 +92,7 @@
 
 <p>The starting point for implementing any run configuration type is the <a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/execution/configurations/ConfigurationType.java" data-bypass="yes" target="_blank"><span><code class="code highlight language-text">ConfigurationType</code></span></a> interface. The list of available configuration types is shown when a user opens the <em>‘Edit run configurations’</em> dialog and executes <em>‘Add’</em> action:</p>
 
-<p><img src="/intellij-sdk-docsbasics/img/create-1.png" alt="Create" /></p>
+<p><img src="/intellij-sdk-docs/basics/img/create-1.png" alt="Create" /></p>
 
 <p>Every type there is represented as an instance of <a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/execution/configurations/ConfigurationType.java" data-bypass="yes" target="_blank"><span><code class="code highlight language-text">ConfigurationType</code></span></a> and registered like below:</p>
 
@@ -106,7 +106,7 @@
 
 <p>All run configurations are created by the <a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/execution/configurations/ConfigurationFactory.java" data-bypass="yes" target="_blank"><span><code class="code highlight language-text">ConfigurationFactory</code></span></a> registered for a particular <code class="code highlight language-text">ConfigurationType</code>. It’s possible that one <code class="code highlight language-text">ConfigurationType</code> <a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/execution/configurations/ConfigurationType.java" data-bypass="yes" target="_blank"><span>has more than one</span></a><!--#L34--> <code class="code highlight language-text">ConfigurationFactory</code>:</p>
 
-<p><img src="/intellij-sdk-docsbasics/img/create-3.png" alt="Configuration Factory" /></p>
+<p><img src="/intellij-sdk-docs/basics/img/create-3.png" alt="Configuration Factory" /></p>
 
 <p>The key API of <a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/execution/configurations/ConfigurationFactory.java" data-bypass="yes" target="_blank"><span><code class="code highlight language-text">ConfigurationFactory</code></span></a>, and the only method that you’re required to implement, is the <a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/execution/configurations/ConfigurationFactory.java" data-bypass="yes" target="_blank"><span><code class="code highlight language-text">createTemplateConfiguration</code></span></a><!--#L45--> method. This method is called once per project to create the template run configuration.</p>
 
@@ -121,7 +121,7 @@
 
 <p>Here is an example of a Java run configurations defined for a particular project:</p>
 
-<p><img src="/intellij-sdk-docsbasics/img/create-2.png" alt="Run Configuration" /></p>
+<p><img src="/intellij-sdk-docs/basics/img/create-2.png" alt="Run Configuration" /></p>
 
 <p>When implementing a run configuration, you may want to use one of the common base classes:</p>
 
@@ -198,7 +198,7 @@ interface and to register it as <code class="code highlight language-text">&lt;r
 </div>
 
 
-<script data-main="/intellij-sdk-docsapp/js/main.build" data-baseurl="/intellij-sdk-docs" src="/intellij-sdk-docsapp/js/vendor/requirejs/require.js"></script>
+<script data-main="/intellij-sdk-docs/app/js/main.build" data-baseurl="/intellij-sdk-docs/" src="/intellij-sdk-docs/app/js/vendor/requirejs/require.js"></script>
 
 </body>
 </html>

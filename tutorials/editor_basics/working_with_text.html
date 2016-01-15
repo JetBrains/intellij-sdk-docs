@@ -6,22 +6,22 @@
 <head>
     <meta charset="UTF-8">
     <title>1. Working with text / IntelliJ Platform SDK  DevGuide</title>
-    <link rel="stylesheet" href="/intellij-sdk-docsapp/css/styles.min.css">
+    <link rel="stylesheet" href="/intellij-sdk-docs/app/css/styles.min.css">
 
     <!-- non-retina iPad pre iOS 7 -->
-    <link rel="apple-touch-icon" href="/intellij-sdk-docsapple-touch-icon-72x72.png" sizes="72x72">
+    <link rel="apple-touch-icon" href="/intellij-sdk-docs/apple-touch-icon-72x72.png" sizes="72x72">
 
     <!-- retina iPhone pre iOS 7 -->
-    <link rel="apple-touch-icon" href="/intellij-sdk-docsapple-touch-icon-114x114.png" sizes="114x114">
+    <link rel="apple-touch-icon" href="/intellij-sdk-docs/apple-touch-icon-114x114.png" sizes="114x114">
 
     <!-- retina iPad pre iOS 7 -->
-    <link rel="apple-touch-icon" href="/intellij-sdk-docsapple-touch-icon-144x144.png" sizes="144x144">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/intellij-sdk-docsapple-touch-icon-precomposed.png">
+    <link rel="apple-touch-icon" href="/intellij-sdk-docs/apple-touch-icon-144x144.png" sizes="144x144">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/intellij-sdk-docs/apple-touch-icon-precomposed.png">
 
     <!-- normal favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="/intellij-sdk-docsfavicon.ico">
-    <link rel="icon" type="image/png" href="/intellij-sdk-docsfavicon.png">
-<link  rel="stylesheet" href="/intellij-sdk-docsstyles/styles.css"></head>
+    <link rel="shortcut icon" type="image/x-icon" href="/intellij-sdk-docs/favicon.ico">
+    <link rel="icon" type="image/png" href="/intellij-sdk-docs/favicon.png">
+<link  rel="stylesheet" href="/intellij-sdk-docs/styles/styles.css"></head>
 <body data-id="tutorials/editor_basics/working_with_text">
 <div class="wrapper">
     <section class="panel _nav">
@@ -244,7 +244,7 @@ We also need to figure out where the selected part of the text is located.</p>
 
 <p>Generally replacement can be done by calling
 <code class="code highlight language-text">void replaceString(int startOffset, int endOffset, @NotNull CharSequence s);</code> of the Document, however,
-the operation of replacement must be executed safely, this means the Document must be locked and any changes should be performed under the <a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/core-api/src/com/intellij/openapi/command/WriteCommandAction.java" data-bypass="yes" target="_blank"><span>write action</span></a><!--#L172-->. See the <a href="/intellij-sdk-docsbasics/architectural_overview/general_threading_rules.html"><span>Threading Issues</span></a> section to learn more about synchronization issues and changes safety on the IntelliJ Platform.</p>
+the operation of replacement must be executed safely, this means the Document must be locked and any changes should be performed under the <a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/core-api/src/com/intellij/openapi/command/WriteCommandAction.java" data-bypass="yes" target="_blank"><span>write action</span></a><!--#L172-->. See the <a href="/intellij-sdk-docs/basics/architectural_overview/general_threading_rules.html"><span>Threading Issues</span></a> section to learn more about synchronization issues and changes safety on the IntelliJ Platform.</p>
 
 <pre><code class="code-block__wrapper code-block _highlighted lang_java"><span class="nd">@Override</span>
 <span class="kd">public</span> <span class="kt">void</span> <span class="nf">actionPerformed</span><span class="o">(</span><span class="kd">final</span> <span class="n">AnActionEvent</span> <span class="n">anActionEvent</span><span class="o">)</span> <span class="o">{</span>
@@ -297,7 +297,7 @@ plugin, make the project, and run it, then invoke the <em>EditorIllustration</em
 </div>
 
 
-<script data-main="/intellij-sdk-docsapp/js/main.build" data-baseurl="/intellij-sdk-docs" src="/intellij-sdk-docsapp/js/vendor/requirejs/require.js"></script>
+<script data-main="/intellij-sdk-docs/app/js/main.build" data-baseurl="/intellij-sdk-docs/" src="/intellij-sdk-docs/app/js/vendor/requirejs/require.js"></script>
 
 </body>
 </html>

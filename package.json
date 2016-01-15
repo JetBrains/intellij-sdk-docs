@@ -1,0 +1,30 @@
+{
+  "name": "intellij-sdk-docs",
+  "version": "1.0.0",
+  "description": "IntelliJ Platform SDK Documentation\r =======",
+  "main": "Gruntfile.js",
+  "dependencies": {
+    "grunt-build-control": "^0.6.2",
+    "grunt": "^0.4.5",
+    "grunt-exec": "^0.4.6"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-build-control": "^0.6.2",
+    "grunt-exec": "^0.4.6",
+    "grunt-jekyll": "^0.4.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JetBrains/intellij-sdk-docs"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JetBrains/intellij-sdk-docs/issues"
+  },
+  "homepage": "https://github.com/JetBrains/intellij-sdk-docs"
+}

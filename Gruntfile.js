@@ -1,16 +1,6 @@
 module.exports = function(grunt) {
 
     grunt.initConfig({
-        //jekyll: {
-        //    serve: {                            // Another target
-        //        options: {
-        //            bundleExec: true,
-        //            config: 'sdkdocs-template/jekyll/_config-defaults.yml,_config_gh-pages.yml',
-        //            serve: false,
-        //            verbose: true
-        //        }
-        //    }
-        //},
         exec: {
             build: {
                 cmd: 'rake build[_config_gh-pages.yml]'

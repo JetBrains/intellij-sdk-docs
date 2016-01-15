@@ -1,0 +1,253 @@
+
+
+
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>Getting Started / IntelliJ Platform SDK  DevGuide</title>
+    <link rel="stylesheet" href="/intellij/sdk/docs/app/css/styles.min.css">
+
+    <!-- non-retina iPad pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-72x72.png" sizes="72x72">
+
+    <!-- retina iPhone pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-114x114.png" sizes="114x114">
+
+    <!-- retina iPad pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-144x144.png" sizes="144x144">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/intellij/sdk/docs/apple-touch-icon-precomposed.png">
+
+    <!-- normal favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="/intellij/sdk/docs/favicon.ico">
+    <link rel="icon" type="image/png" href="/intellij/sdk/docs/favicon.png">
+<link  rel="stylesheet" href="/intellij/sdk/docs/styles/styles.css"></head>
+<body data-id="tutorials/build_system/prerequisites">
+<div class="wrapper">
+    <section class="panel _nav">
+        <header class="panel__header">
+            <div class="container">
+                <form class="search-box">
+                    <label for="search-box__input" class="search-box__label">
+                        <input type="text" class="search-box__input" id="search-box__input" placeholder="Search IntelliJ Platform SDK  DevGuide">
+                    </label>
+                    <div class="search-box__clear" title="Clear"></div>
+                </form>
+            </div>
+        </header>
+        <nav class="panel__content">
+            <div class="container _nav">
+                <menu class="nav-tree"></menu>
+            </div>
+            <div class="container _footer panel__footer">
+                <p><a href="https://youtrack.jetbrains.com/issues/IJSDK">Send feedback</a></p>
+                <p>&copy; 2000&ndash;2016 <a href="//www.jetbrains.com">JetBrains</a> s.r.o.<br>
+                    All rights reserved.</p>
+            </div>
+        </nav>
+    </section>
+
+    <main class="panel _main" role="main">
+        <header class="panel__header">
+            <div class="container">
+                <h3>IntelliJ Platform SDK DevGuide</h3>
+                
+        <div class="shortcuts-switcher"><label for="switch-shortcuts">Keymap:</label><select id="switch-shortcuts" class="select _shortcuts" height="1">
+            <option data-group="primary" value="default" selected>Default</option>
+            <option data-group="primary" value="default_for_gnome">GNOME</option>
+            <option data-group="primary" value="default_for_kde">KDE</option>
+            <option data-group="primary" value="default_for_xwin">XWindow</option>
+            <option data-group="primary" value="emacs">Emacs</option>
+            <option data-group="primary" value="jbuilder">JBuilder</option>
+            <option data-group="primary" value="visual_studio">Visual Studio</option>
+            <option data-group="primary" value="netbeans_6.5">NetBeans 6.5</option>
+            <option data-group="primary" value="eclipse">Eclipse</option>
+            <option data-group="secondary" value="mac_os_x_10.5_">OS X 10.5+</option>
+            <option data-group="secondary" value="mac_os_x">OS X</option>
+            <option data-group="secondary" value="eclipse_mac_os_x">OS X Eclipse</option></select>
+        </div>
+    
+                <div class="panel-trigger"></div>
+            </div>
+        </header>
+        <section class="panel__content">
+            <div class="container">
+                <article class="article" data-shortcut-switcher="false">
+
+                    <h1>Getting Started</h1>
+                    <p>Adding Gradle build support to an IntelliJ Platform Plugin requires a recent distribution to the Gradle build system and IntelliJ IDEA (Community or Ultimate).</p>
+
+<a name="download-and-install-gradle" class="elem-anchor"></a>
+<h3>1.0. Download and install Gradle<a href="#download-and-install-gradle" class="anchor-link"><span></span></a></h3>
+
+<p>Download and install Gradle, following the instructions provided in the <a href="https://docs.gradle.org/current/userguide/installation.html" data-bypass="yes" target="_blank"><span>Gradle User Guide</span></a>.</p>
+
+<a name="download-and-install-intellij-idea" class="elem-anchor"></a>
+<h3>1.1. Download and install IntelliJ IDEA<a href="#download-and-install-intellij-idea" class="anchor-link"><span></span></a></h3>
+
+<p>Download and install either IntelliJ IDEA Ultimate or the IntelliJ IDEA Community Edition.</p>
+
+<a name="ensure-the-gradle-plugin-is-enabled" class="elem-anchor"></a>
+<h3>1.2. Ensure the Gradle plugin is enabled<a href="#ensure-the-gradle-plugin-is-enabled" class="anchor-link"><span></span></a></h3>
+
+<p>The <a href="https://plugins.gradle.org/plugin/org.jetbrains.intellij" data-bypass="yes" target="_blank"><span>Gradle plugin</span></a> is required if you want to add a <a href="https://www.jetbrains.com/idea/help/create-run-debug-configuration-for-gradle-tasks.html" data-bypass="yes" target="_blank"><span>Gradle Run Configuration</span></a> to IntelliJ IDEA. You can verify the Gradle plugin is enabled by visiting <strong>Settings | Plugins | Gradle</strong>.</p>
+
+<p><img src="img/step0_gradle_enabled.png" alt="Ensure the Gradle plugin is enabled" /></p>
+
+<a name="add-gradle-support-to-an-existing-plugin" class="elem-anchor"></a>
+<h3>1.3. Add Gradle support to an existing plugin<a href="#add-gradle-support-to-an-existing-plugin" class="anchor-link"><span></span></a></h3>
+
+<p>There are two ways to add Gradle support to an existing project. Both will require adding a <code class="code highlight language-text">build.gradle</code> file under the root directory, with at least the following contents:</p>
+
+<pre><code class="code-block__wrapper code-block _highlighted lang_groovy"><span class="n">buildscript</span> <span class="o">{</span>
+    <span class="n">repositories</span> <span class="o">{</span>
+        <span class="n">mavenCentral</span><span class="o">()</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="n">plugins</span> <span class="o">{</span>
+    <span class="n">id</span> <span class="s2">"org.jetbrains.intellij"</span> <span class="n">version</span> <span class="s2">"0.0.20"</span>
+<span class="o">}</span>
+
+<span class="n">apply</span> <span class="nl">plugin:</span> <span class="s1">'idea'</span>
+<span class="n">apply</span> <span class="nl">plugin:</span> <span class="s1">'org.jetbrains.intellij'</span>
+<span class="n">apply</span> <span class="nl">plugin:</span> <span class="s1">'java'</span>
+
+<span class="n">intellij</span> <span class="o">{</span>
+    <span class="n">version</span> <span class="s1">'IC-14.1.4'</span> <span class="c1">//IntelliJ IDEA dependency </span>
+    <span class="n">plugins</span> <span class="s1">'coverage'</span> <span class="c1">//Bundled plugin dependencies</span>
+    <span class="n">pluginName</span> <span class="s1">'plugin_name_goes_here'</span>
+<span class="o">}</span>
+
+<span class="n">group</span> <span class="s1">'org.jetbrains'</span>
+<span class="n">version</span> <span class="s1">'1.2'</span> <span class="c1">// Plugin version</span>
+</code></pre>
+
+<p>To add Gradle support to an existing project, copy the above Gradle build script into your <code class="code highlight language-text">build.gradle</code> file, and with the Gradle executable on your system <code class="code highlight language-text">PATH</code>, execute the following commands on your system’s command line:</p>
+
+<pre><code class="code-block__wrapper code-block _highlighted lang_text">gradle cleanIdea
+gradle runIdea
+</code></pre>
+
+<p>This will clean any existing IntelliJ IDEA configuration files and generate a new Gradle build configuration recognized by IntelliJ IDEA. Once your project refreshes, you should be able to view the Gradle tool window displayed under <strong>View | Tool Windows | Gradle</strong>. This indicates that IntelliJ IDEA recognizes the Gradle facet.</p>
+
+<a name="add-gradle-support-from-scratch" class="elem-anchor"></a>
+<h3>1.4. Add Gradle support from scratch<a href="#add-gradle-support-from-scratch" class="anchor-link"><span></span></a></h3>
+
+<p>The second method to add Gradle support is by creating a new project from scratch in IntelliJ IDEA and copying over any existing sources. This may be the preferred option in case Gradle is not able to convert an existing project. To do so, create a new project in IntelliJ IDEA by opening <strong>File | New… | Project</strong>, and select Gradle from the dialog box:</p>
+
+<p><img src="img/step1_new_gradle_project.png" alt="Select the Gradle facet in the Project Creation Wizard" /></p>
+
+<p>The Project Creation Wizard will now guide you through the Gradle project creation process. You will need to specify a Group ID, Artifact ID, and Version:</p>
+
+<p><img src="img/step2_group_artifact_version.png" alt="Specify the Group, Artifact, and Version IDs" /></p>
+
+<p>Finally, make sure Gradle is using the correct JVM. This should be the same version as the corresponding 64- or 32-bit Gradle distribution from <a href="#download-and-install-gradle"><span>Step 1.0</span></a>:</p>
+
+<p><img src="img/step3_gradle_config.png" alt="Verify the JVM is the correct version" /></p>
+
+<p>Now, add the above script to your <code class="code highlight language-text">build.gradle</code> file, overwriting any existing contents.</p>
+
+<a name="running-a-simple-plugin" class="elem-anchor"></a>
+<h3>1.5. Running a simple plugin<a href="#running-a-simple-plugin" class="anchor-link"><span></span></a></h3>
+
+<p>Create the following directory structure:</p>
+
+<p><img src="img/gradle_directory_structure.png" alt="Gradle directory structure" /></p>
+
+<pre><code class="code-block__wrapper code-block _highlighted lang_java"><span class="kn">import</span> <span class="nn">com.intellij.openapi.actionSystem.AnAction</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.intellij.openapi.actionSystem.AnActionEvent</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.intellij.openapi.actionSystem.PlatformDataKeys</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.intellij.openapi.project.Project</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.intellij.openapi.ui.Messages</span><span class="o">;</span>
+
+<span class="cm">/**
+ * Created by breandan on 11/25/2015.
+ */</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">HelloAction</span> <span class="kd">extends</span> <span class="n">AnAction</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="nf">HelloAction</span><span class="o">()</span> <span class="o">{</span>
+        <span class="kd">super</span><span class="o">(</span><span class="s">"Hello"</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">actionPerformed</span><span class="o">(</span><span class="n">AnActionEvent</span> <span class="n">event</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">Project</span> <span class="n">project</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="na">getData</span><span class="o">(</span><span class="n">PlatformDataKeys</span><span class="o">.</span><span class="na">PROJECT</span><span class="o">);</span>
+        <span class="n">Messages</span><span class="o">.</span><span class="na">showMessageDialog</span><span class="o">(</span><span class="n">project</span><span class="o">,</span> <span class="s">"Hello world!"</span><span class="o">,</span> <span class="s">"Greeting"</span><span class="o">,</span> <span class="n">Messages</span><span class="o">.</span><span class="na">getInformationIcon</span><span class="o">());</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
+
+<pre><code class="code-block__wrapper code-block _highlighted lang_java"><span class="o">&lt;</span><span class="n">idea</span><span class="o">-</span><span class="n">plugin</span> <span class="n">version</span><span class="o">=</span><span class="s">"2"</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">id</span><span class="o">&gt;</span><span class="n">org</span><span class="o">.</span><span class="na">jetbrains</span><span class="o">&lt;/</span><span class="n">id</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">name</span><span class="o">&gt;</span><span class="n">gradle_plugin_demo</span><span class="o">&lt;/</span><span class="n">name</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">version</span><span class="o">&gt;</span><span class="mf">0.0</span><span class="o">.</span><span class="mi">1</span><span class="o">&lt;/</span><span class="n">version</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">vendor</span> <span class="n">email</span><span class="o">=</span><span class="s">"dummy"</span> <span class="n">url</span><span class="o">=</span><span class="s">"dummy"</span><span class="o">&gt;</span><span class="n">dummy</span><span class="o">&lt;/</span><span class="n">vendor</span><span class="o">&gt;</span>
+
+  <span class="o">&lt;</span><span class="n">description</span><span class="o">&gt;&lt;![</span><span class="n">CDATA</span><span class="o">[</span>
+      <span class="n">Sample</span> <span class="n">plugin</span><span class="o">.&lt;</span><span class="n">br</span><span class="o">&gt;</span>
+    <span class="o">]]&gt;&lt;/</span><span class="n">description</span><span class="o">&gt;</span>
+
+  <span class="o">&lt;</span><span class="n">change</span><span class="o">-</span><span class="n">notes</span><span class="o">&gt;&lt;![</span><span class="n">CDATA</span><span class="o">[</span>
+      <span class="n">Release</span> <span class="mf">0.0</span><span class="o">.</span><span class="mi">1</span><span class="o">:</span> <span class="n">Initial</span> <span class="n">release</span><span class="o">.&lt;</span><span class="n">br</span><span class="o">&gt;</span>
+    <span class="o">]]&gt;</span>
+  <span class="o">&lt;/</span><span class="n">change</span><span class="o">-</span><span class="n">notes</span><span class="o">&gt;</span>
+
+  <span class="o">&lt;!--</span> <span class="n">please</span> <span class="n">see</span> <span class="nl">https:</span><span class="c1">//confluence.jetbrains.com/display/IDEADEV/Build+Number+Ranges for description --&gt;</span>
+  <span class="o">&lt;</span><span class="n">idea</span><span class="o">-</span><span class="n">version</span> <span class="n">since</span><span class="o">-</span><span class="n">build</span><span class="o">=</span><span class="s">"131"</span><span class="o">/&gt;</span>
+
+  <span class="o">&lt;!--</span> <span class="n">please</span> <span class="n">see</span> <span class="nl">https:</span><span class="c1">//confluence.jetbrains.com/display/IDEADEV/Plugin+Compatibility+with+IntelliJ+Platform+Products</span>
+       <span class="n">on</span> <span class="n">how</span> <span class="n">to</span> <span class="n">target</span> <span class="n">different</span> <span class="n">products</span> <span class="o">--&gt;</span>
+  <span class="o">&lt;!--</span> <span class="n">uncomment</span> <span class="n">to</span> <span class="n">enable</span> <span class="n">plugin</span> <span class="n">in</span> <span class="n">all</span> <span class="n">products</span>
+  <span class="o">&lt;</span><span class="n">depends</span><span class="o">&gt;</span><span class="n">com</span><span class="o">.</span><span class="na">intellij</span><span class="o">.</span><span class="na">modules</span><span class="o">.</span><span class="na">lang</span><span class="o">&lt;/</span><span class="n">depends</span><span class="o">&gt;</span>
+  <span class="o">--&gt;</span>
+
+  <span class="o">&lt;</span><span class="n">extensions</span> <span class="n">defaultExtensionNs</span><span class="o">=</span><span class="s">"com.intellij"</span><span class="o">&gt;</span>
+  <span class="o">&lt;/</span><span class="n">extensions</span><span class="o">&gt;</span>
+
+  <span class="o">&lt;</span><span class="n">application</span><span class="o">-</span><span class="n">components</span><span class="o">&gt;</span>
+  <span class="o">&lt;/</span><span class="n">application</span><span class="o">-</span><span class="n">components</span><span class="o">&gt;</span>
+
+  <span class="o">&lt;</span><span class="n">project</span><span class="o">-</span><span class="n">components</span><span class="o">&gt;</span>
+  <span class="o">&lt;/</span><span class="n">project</span><span class="o">-</span><span class="n">components</span><span class="o">&gt;</span>
+
+  <span class="o">&lt;</span><span class="n">actions</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">group</span> <span class="n">id</span><span class="o">=</span><span class="s">"MyPlugin.SampleMenu"</span> <span class="n">text</span><span class="o">=</span><span class="s">"Greeting"</span> <span class="n">description</span><span class="o">=</span><span class="s">"Greeting menu"</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="n">add</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">group</span> <span class="n">group</span><span class="o">-</span><span class="n">id</span><span class="o">=</span><span class="s">"MainMenu"</span> <span class="n">anchor</span><span class="o">=</span><span class="s">"last"</span>  <span class="o">/&gt;</span>
+      <span class="o">&lt;</span><span class="n">action</span> <span class="n">id</span><span class="o">=</span><span class="s">"Myplugin.Textboxes"</span> <span class="kd">class</span><span class="err">="</span><span class="nc">HelloAction</span><span class="s">" text="</span><span class="n">Hello</span><span class="s">" description="</span><span class="n">Says</span> <span class="n">hello</span><span class="err">"</span> <span class="o">/&gt;</span>
+    <span class="o">&lt;/</span><span class="n">group</span><span class="o">&gt;</span>
+  <span class="o">&lt;/</span><span class="n">actions</span><span class="o">&gt;</span>
+
+<span class="o">&lt;/</span><span class="n">idea</span><span class="o">-</span><span class="n">plugin</span><span class="o">&gt;</span>
+</code></pre>
+
+<p>Add a new Gradle Run Configuration, configured like so:</p>
+
+<p><img src="img/gradle_run_config.png" alt="Gradle Run Configuration" /></p>
+
+<p>Launch the new Gradle Run Configuration. From the Run Window, the following output should be visible.</p>
+
+<p><img src="img/launched.png" alt="Gradle task output" /></p>
+
+<p>Finally, when the IDE launches, there should be a new menu to the right of the <strong>Help</strong> menu. Your plugin is now configured on Gradle.</p>
+
+<p><a href="/intellij/sdk/docs/tutorials/build_system.html"><span>Top</span></a></p>
+
+
+                    <div class="last-modified">
+                        Last modified: 28 December 2015
+                    </div>
+                </article>
+
+                <section class="disqus">
+                    <div id="disqus_thread"></div>
+                </section>
+            </div>
+        </section>
+    </main>
+</div>
+
+
+<script data-main="/intellij/sdk/docs/app/js/main.build" data-baseurl="/intellij/sdk/docs/" src="/intellij/sdk/docs/app/js/vendor/requirejs/require.js"></script>
+
+</body>
+</html>
+

@@ -1,0 +1,126 @@
+
+
+
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>Testing Plugins / IntelliJ Platform SDK  DevGuide</title>
+    <link rel="stylesheet" href="/intellij/sdk/docs/app/css/styles.min.css">
+
+    <!-- non-retina iPad pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-72x72.png" sizes="72x72">
+
+    <!-- retina iPhone pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-114x114.png" sizes="114x114">
+
+    <!-- retina iPad pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-144x144.png" sizes="144x144">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/intellij/sdk/docs/apple-touch-icon-precomposed.png">
+
+    <!-- normal favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="/intellij/sdk/docs/favicon.ico">
+    <link rel="icon" type="image/png" href="/intellij/sdk/docs/favicon.png">
+<link  rel="stylesheet" href="/intellij/sdk/docs/styles/styles.css"></head>
+<body data-id="basics/testing_plugins">
+<div class="wrapper">
+    <section class="panel _nav">
+        <header class="panel__header">
+            <div class="container">
+                <form class="search-box">
+                    <label for="search-box__input" class="search-box__label">
+                        <input type="text" class="search-box__input" id="search-box__input" placeholder="Search IntelliJ Platform SDK  DevGuide">
+                    </label>
+                    <div class="search-box__clear" title="Clear"></div>
+                </form>
+            </div>
+        </header>
+        <nav class="panel__content">
+            <div class="container _nav">
+                <menu class="nav-tree"></menu>
+            </div>
+            <div class="container _footer panel__footer">
+                <p><a href="https://youtrack.jetbrains.com/issues/IJSDK">Send feedback</a></p>
+                <p>&copy; 2000&ndash;2016 <a href="//www.jetbrains.com">JetBrains</a> s.r.o.<br>
+                    All rights reserved.</p>
+            </div>
+        </nav>
+    </section>
+
+    <main class="panel _main" role="main">
+        <header class="panel__header">
+            <div class="container">
+                <h3>IntelliJ Platform SDK DevGuide</h3>
+                
+        <div class="shortcuts-switcher"><label for="switch-shortcuts">Keymap:</label><select id="switch-shortcuts" class="select _shortcuts" height="1">
+            <option data-group="primary" value="default" selected>Default</option>
+            <option data-group="primary" value="default_for_gnome">GNOME</option>
+            <option data-group="primary" value="default_for_kde">KDE</option>
+            <option data-group="primary" value="default_for_xwin">XWindow</option>
+            <option data-group="primary" value="emacs">Emacs</option>
+            <option data-group="primary" value="jbuilder">JBuilder</option>
+            <option data-group="primary" value="visual_studio">Visual Studio</option>
+            <option data-group="primary" value="netbeans_6.5">NetBeans 6.5</option>
+            <option data-group="primary" value="eclipse">Eclipse</option>
+            <option data-group="secondary" value="mac_os_x_10.5_">OS X 10.5+</option>
+            <option data-group="secondary" value="mac_os_x">OS X</option>
+            <option data-group="secondary" value="eclipse_mac_os_x">OS X Eclipse</option></select>
+        </div>
+    
+                <div class="panel-trigger"></div>
+            </div>
+        </header>
+        <section class="panel__content">
+            <div class="container">
+                <article class="article" data-shortcut-switcher="false">
+
+                    <h1>Testing Plugins</h1>
+                    <p>Most of the tests in the <em>IntelliJ Platform</em> codebase are <em>model level functional tests</em>. What this means is the following:</p>
+
+<ul>
+  <li>The tests run in a headless environment which uses real production implementations for the majority of components, except for a number of UI components.</li>
+  <li>The tests usually test a feature as a whole, rather than individual functions that comprise its implementation.</li>
+  <li>The tests do not test the Swing UI and work directly with the underlying model instead.</li>
+  <li>Most of the tests take a source file or a set of source files as input data, execute a feature, and then compare the output with expected results. Results can be specified as another set of source files, as special markup in the input file, or directly in the test code.</li>
+</ul>
+
+<p>The biggest benefit of this test approach is that tests are very stable and require very little maintenance once they have been written, no matter how much the underlying implementation is refactored or rewritten.</p>
+
+<p>In a product with 10+ years of lifetime that has gone through a large number of internal refactorings, we find that this benefit greatly outweighs the downsides of slower test execution and more difficult debugging of failures being compared to more isolated unit tests.</p>
+
+<p>Another consequence of our testing approach is what our test framework does not provide:</p>
+
+<ul>
+  <li>We do not provide a recommended approach to mocking. We have a few tests in our codebase that use JMock, but in general we find it difficult to mock all of the interactions with <em>IntelliJ Platform</em> components that your plugin class will need to have, and we recommend working with real components instead.</li>
+  <li>
+    <p>We do not provide a general-purpose framework for Swing UI testing. You can try using tools such as <a href="https://code.google.com/p/fest/" data-bypass="yes" target="_blank"><span>FEST</span></a> or <a href="http://www.sikuli.org/" data-bypass="yes" target="_blank"><span>Sikuli</span></a> for plugin UI testing, but we don’t use either of them and cannot provide any guidelines for their use. Internally, we use manual testing for testing our Swing UIs.</p>
+  </li>
+  <li><a href="/intellij/sdk/docs/basics/testing_plugins/tests_and_fixtures.html"><span>Tests and Fixtures</span></a></li>
+  <li><a href="/intellij/sdk/docs/basics/testing_plugins/light_and_heavy_tests.html"><span>Light and Heavy Tests</span></a></li>
+  <li><a href="/intellij/sdk/docs/basics/testing_plugins/test_project_and_testdata_directories.html"><span>Test Project and Testdata Directories</span></a></li>
+  <li><a href="/intellij/sdk/docs/basics/testing_plugins/writing_tests.html"><span>Writing Tests</span></a></li>
+  <li><a href="/intellij/sdk/docs/basics/testing_plugins/testing_highlighting.html"><span>Testing Highlighting</span></a></li>
+</ul>
+
+<p>Check out <a href="/intellij/sdk/docs/tutorials/writing_tests_for_plugins.html"><span>this step-by-step tutorial</span></a> teaching how to write and run automated tests for your custom language plugin (source code included).</p>
+
+
+                    <div class="last-modified">
+                        Last modified: 30 November 2015
+                    </div>
+                </article>
+
+                <section class="disqus">
+                    <div id="disqus_thread"></div>
+                </section>
+            </div>
+        </section>
+    </main>
+</div>
+
+
+<script data-main="/intellij/sdk/docs/app/js/main.build" data-baseurl="/intellij/sdk/docs/" src="/intellij/sdk/docs/app/js/vendor/requirejs/require.js"></script>
+
+</body>
+</html>
+

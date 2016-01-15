@@ -1,0 +1,60 @@
+<idea-plugin version="2">
+  <id>com.simpleplugin.unique.plugin.id</id>
+  <name>Simple</name>
+  <version>1.0</version>
+  <vendor email="support@yourcompany.com" url="http://www.yourcompany.com">YourCompany</vendor>
+
+  <description><![CDATA[
+      Enter short description for your plugin here.<br>
+      <small>most HTML tags may be used</small>
+      ]]></description>
+
+  <change-notes><![CDATA[
+      Add change notes here.<br>
+      <small>most HTML tags may be used</small>
+      ]]>
+  </change-notes>
+
+  <!-- please see http://confluence.jetbrains.net/display/IDEADEV/Build+Number+Ranges for description -->
+  <idea-version since-build="107.105"/>
+
+  <!-- please see http://confluence.jetbrains.net/display/IDEADEV/Plugin+Compatibility+with+IntelliJ+Platform+Products
+       on how to target different products -->
+  <!-- uncomment to enable plugin in all products
+  <depends>com.intellij.modules.lang</depends>
+  -->
+
+  <application-components>
+    <!-- Add your application components here -->
+  </application-components>
+
+  <project-components>
+    <!-- Add your project components here -->
+  </project-components>
+
+  <actions>
+    <!-- Add your actions here -->
+  </actions>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+      <fileTypeFactory implementation="com.simpleplugin.SimpleFileTypeFactory"/>
+      <lang.parserDefinition language="Simple" implementationClass="com.simpleplugin.SimpleParserDefinition"/>
+      <lang.syntaxHighlighterFactory key="Simple" language="Simple" implementationClass="com.simpleplugin.SimpleSyntaxHighlighterFactory"/>
+      <colorSettingsPage implementation="com.simpleplugin.SimpleColorSettingsPage"/>
+      <annotator language="JAVA" implementationClass="com.simpleplugin.SimpleAnnotator"/>
+      <codeInsight.lineMarkerProvider language="JAVA" implementationClass="com.simpleplugin.SimpleLineMarkerProvider"/>
+      <completion.contributor language="Simple" implementationClass="com.simpleplugin.SimpleCompletionContributor"/>
+      <psi.referenceContributor implementation="com.simpleplugin.SimpleReferenceContributor"/>
+      <lang.findUsagesProvider language="Simple" implementationClass="com.simpleplugin.SimpleFindUsagesProvider"/>
+      <lang.refactoringSupport language="Simple" implementationClass="com.simpleplugin.SimpleRefactoringSupportProvider"/>
+      <lang.foldingBuilder language="JAVA" implementationClass="com.simpleplugin.SimpleFoldingBuilder"/>
+      <gotoSymbolContributor implementation="com.simpleplugin.SimpleChooseByNameContributor"/>
+      <lang.psiStructureViewFactory language="Simple" implementationClass="com.simpleplugin.SimpleStructureViewFactory"/>
+      <lang.formatter language="Simple" implementationClass="com.simpleplugin.SimpleFormattingModelBuilder"/>
+      <codeStyleSettingsProvider implementation="com.simpleplugin.SimpleCodeStyleSettingsProvider"/>
+      <langCodeStyleSettingsProvider implementation="com.simpleplugin.SimpleLanguageCodeStyleSettingsProvider"/>
+      <lang.commenter language="Simple" implementationClass="com.simpleplugin.SimpleCommenter"/>
+      <todoIndexer filetype="Simple file" implementationClass="com.simpleplugin.SimpleTodoIndexer"/>
+  </extensions>
+</idea-plugin>

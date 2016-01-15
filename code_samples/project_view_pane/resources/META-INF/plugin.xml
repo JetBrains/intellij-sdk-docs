@@ -1,0 +1,30 @@
+<idea-plugin version="2" url="www.jetbrains.com">
+    <id>org.jetbrains.plugins.sample.ProjectViewPane</id>
+    <name>Project View Pain Demo</name>
+    <version>1.0</version>
+    <vendor email="support@jetbrains.com" url="http://www.jetbrains.com">JetBrains</vendor>
+
+    <description>Project View Pain Demo</description>
+
+    <change-notes>Initial commit</change-notes>
+
+    <!-- please see http://confluence.jetbrains.com/display/IDEADEV/Build+Number+Ranges for description -->
+    <idea-version since-build="131"/>
+    <depends>com.intellij.modules.lang</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <projectViewPane implementation="org.jetbrains.tutorials.view.pane.ImagesProjectViewPane"/>
+    </extensions>
+
+    <application-components>
+        <!-- Add your application components here -->
+    </application-components>
+
+    <project-components>
+        <!-- Add your project components here -->
+    </project-components>
+
+    <actions>
+        <!-- Add your actions here -->
+    </actions>
+</idea-plugin>

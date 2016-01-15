@@ -1,0 +1,246 @@
+
+
+
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>External Builder API and Plugins / IntelliJ Platform SDK  DevGuide</title>
+    <link rel="stylesheet" href="/intellij/sdk/docs/app/css/styles.min.css">
+
+    <!-- non-retina iPad pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-72x72.png" sizes="72x72">
+
+    <!-- retina iPhone pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-114x114.png" sizes="114x114">
+
+    <!-- retina iPad pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-144x144.png" sizes="144x144">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/intellij/sdk/docs/apple-touch-icon-precomposed.png">
+
+    <!-- normal favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="/intellij/sdk/docs/favicon.ico">
+    <link rel="icon" type="image/png" href="/intellij/sdk/docs/favicon.png">
+<link  rel="stylesheet" href="/intellij/sdk/docs/styles/styles.css"></head>
+<body data-id="reference_guide/frameworks_and_external_apis/external_builder_api">
+<div class="wrapper">
+    <section class="panel _nav">
+        <header class="panel__header">
+            <div class="container">
+                <form class="search-box">
+                    <label for="search-box__input" class="search-box__label">
+                        <input type="text" class="search-box__input" id="search-box__input" placeholder="Search IntelliJ Platform SDK  DevGuide">
+                    </label>
+                    <div class="search-box__clear" title="Clear"></div>
+                </form>
+            </div>
+        </header>
+        <nav class="panel__content">
+            <div class="container _nav">
+                <menu class="nav-tree"></menu>
+            </div>
+            <div class="container _footer panel__footer">
+                <p><a href="https://youtrack.jetbrains.com/issues/IJSDK">Send feedback</a></p>
+                <p>&copy; 2000&ndash;2016 <a href="//www.jetbrains.com">JetBrains</a> s.r.o.<br>
+                    All rights reserved.</p>
+            </div>
+        </nav>
+    </section>
+
+    <main class="panel _main" role="main">
+        <header class="panel__header">
+            <div class="container">
+                <h3>IntelliJ Platform SDK DevGuide</h3>
+                
+        <div class="shortcuts-switcher"><label for="switch-shortcuts">Keymap:</label><select id="switch-shortcuts" class="select _shortcuts" height="1">
+            <option data-group="primary" value="default" selected>Default</option>
+            <option data-group="primary" value="default_for_gnome">GNOME</option>
+            <option data-group="primary" value="default_for_kde">KDE</option>
+            <option data-group="primary" value="default_for_xwin">XWindow</option>
+            <option data-group="primary" value="emacs">Emacs</option>
+            <option data-group="primary" value="jbuilder">JBuilder</option>
+            <option data-group="primary" value="visual_studio">Visual Studio</option>
+            <option data-group="primary" value="netbeans_6.5">NetBeans 6.5</option>
+            <option data-group="primary" value="eclipse">Eclipse</option>
+            <option data-group="secondary" value="mac_os_x_10.5_">OS X 10.5+</option>
+            <option data-group="secondary" value="mac_os_x">OS X</option>
+            <option data-group="secondary" value="eclipse_mac_os_x">OS X Eclipse</option></select>
+        </div>
+    
+                <div class="panel-trigger"></div>
+            </div>
+        </header>
+        <section class="panel__content">
+            <div class="container">
+                <article class="article" data-shortcut-switcher="false">
+
+                    <h1>External Builder API and Plugins</h1>
+                    <a name="external-build-process-workflow" class="elem-anchor"></a>
+<h3>External Build Process Workflow<a href="#external-build-process-workflow" class="anchor-link"><span></span></a></h3>
+
+<p>When the user invokes an action that involves executing an external build (Make, Build Artifacts, etc.), the following steps happen:</p>
+
+<ul>
+  <li>
+    <p>Before-compile tasks are executed in the IDE process.</p>
+  </li>
+  <li>
+    <p>Some source generation tasks that depend on the PSI (e.g. UI designer form to source compilation) are executed in the IDE process.</p>
+  </li>
+  <li>
+    <p><code class="code highlight language-text">BuildTargetScopeProvider</code> extensions are called to calculate the scope of the external build (the set of build targets to compile based on the target module to make and the known set of changes).</p>
+  </li>
+  <li>
+    <p>The external build process is spawned (or an existing build process background process is reused).</p>
+  </li>
+  <li>
+    <p>The external build process loads the project model (.idea, .iml files and so on), represented by a <code class="code highlight language-text">JpsModel</code> instance.</p>
+  </li>
+  <li>
+    <p>The full tree of targets to build is calculated, based on the dependencies of each build target to be compiled.</p>
+  </li>
+  <li>
+    <p>For each target, the set of builders capable of building this target is calculated.</p>
+  </li>
+  <li>
+    <p>For every target and every builder, the <code class="code highlight language-text">build()</code> method is called. This can happen in parallel if the “Compile independent modules in parallel” option is enabled in the settings. For module-level builders, the order of invoking builders for a single target is determined by their category; for other builders, the order is undefined.</p>
+  </li>
+  <li>
+    <p>Caches to record the state of the compilation are saved.</p>
+  </li>
+  <li>
+    <p>Compilation messages reported through the <code class="code highlight language-text">CompileContext</code> API are transmitted to the IDE process and displayed in the UI (in the <em>Messages</em> view).</p>
+  </li>
+  <li>
+    <p>Post-compile tasks are executed in the IDE process.</p>
+  </li>
+</ul>
+
+<a name="incremental-build" class="elem-anchor"></a>
+<h3>Incremental Build<a href="#incremental-build" class="anchor-link"><span></span></a></h3>
+
+<p>To support incremental build, the build process uses a number of caches which are persisted between build invocations. Even if your compiler doesn’t support incremental build, you still need to report correct information so that incremental build works correctly for other compilers.</p>
+
+<ul>
+  <li>
+    <p><code class="code highlight language-text">SourceToOutputMapping</code> is a many-to-many relationship between source files and output files (“which source files were used to produce the specified output file”). It’s filled by calls to <code class="code highlight language-text">BuildOutputConsumer.registerOutputFile()</code> and <code class="code highlight language-text">ModuleLevelBuilder.OutputConsumer.registerOutputFile()</code>.</p>
+  </li>
+  <li>
+    <p><code class="code highlight language-text">Timestamps</code> records the timestamp of each source file when it was compiled by each build target. (If the compilation was invoked multiple times with different scopes and the file was changed in the meantime, the last compiled timestamps for different build targets may vary.) It’s updated automatically by JPS.</p>
+  </li>
+</ul>
+
+<p>The IDE monitors the changes of the project content and uses the information from those caches to generate the set of dirty and deleted files for every compilation. (Dirty files need to be recompiled, and deleted files need to have their output deleted). A builder can also report additional files as dirty (e.g. if a method is deleted, the builder can report the classes using this method as dirty.) A module-level builder can add some files to the dirty scope; if this happens, and if the builder returns <code class="code highlight language-text">ADDITIONAL_PASS_REQUIRED</code> from its <code class="code highlight language-text">build()</code> method, another round of builder execution for the same module chunk will be started with the new dirty scope.</p>
+
+<p>A builder may also want to have its custom caches to store additional information to support partial recompilation of a target (e.g. the dependencies between Java files in a module). To store this data, you can either store arbitrary files in the directory returned from <code class="code highlight language-text">BuildDataManager.getDataPaths().getTargetDataRoot()</code> or use a higher-level API: <code class="code highlight language-text">BuildDataManager.getStorage()</code></p>
+
+<p>To pass custom data between the invocation of the same builder between multiple targets, you can use <code class="code highlight language-text">CompileContext.getUserData()</code> and <code class="code highlight language-text">CompileContext.putUserData()</code>.</p>
+
+<a name="services-and-extensions-in-external-builder" class="elem-anchor"></a>
+<h3>Services and extensions in External Builder<a href="#services-and-extensions-in-external-builder" class="anchor-link"><span></span></a></h3>
+
+<p>The external builder process uses the standard Java
+<a href="http://docs.oracle.com/javase/8/docs/api/java/util/ServiceLoader.html" data-bypass="yes" target="_blank"><span>services</span></a>
+mechanism to support plugins. There are several service interfaces (e.g. <code class="code highlight language-text">BuilderService</code>) which can be implemented in plugins to extend the builder functionality. An implementation of a service need to be registered by creating <code class="code highlight language-text">META-INF/services/&lt;service-interface-fqn&gt;</code> file containing the qualified name of the implementation class. E.g. <code class="code highlight language-text">BuilderService</code> implementations are registered in <code class="code highlight language-text">META-INF/services/org.jetbrains.jps.incremental.BuilderService</code> file. These files don’t have extensions so you need to map corresponding patterns to text files in IDE settings.</p>
+
+<a name="registering-a-plugin-for-external-builder" class="elem-anchor"></a>
+<h3>Registering a plugin for External Builder<a href="#registering-a-plugin-for-external-builder" class="anchor-link"><span></span></a></h3>
+
+<p>Sources of a plugin for External Builder should be put in a separate module. By convention such module has name ‘…-jps-plugin’ and its sources are placed under ‘jps-plugin’ directory in the main plugin directory. Use <code class="code highlight language-text">&lt;compileServer.plugin&gt;</code> extension to add the plugin to classpath of external build process, the plugin jar should be named <code class="code highlight language-text">&lt;jps module name&gt;.jar</code>. ‘Build’ | ‘Prepare Plugin Module for deployment’ action will automatically pack ‘jps-plugin’ part to a separate jar accordingly.</p>
+
+<a name="debugging-a-plugin-for-external-builder" class="elem-anchor"></a>
+<h3>Debugging a plugin for External Builder<a href="#debugging-a-plugin-for-external-builder" class="anchor-link"><span></span></a></h3>
+
+<p><strong>If your test IDE is IntelliJ IDEA 16.0 or newer</strong></p>
+
+<p>Switch on “Debug Build Process” toggle action (available via ‘Find Action’) in the test IDE. After that every time compilation is run, the build  process will wait for debugger connection on some (random) port and will show the port number in the status bar. In working copy of IDE a “Remote” run configuration should be created and pointed to this port. If you often need to debug external builders and want to reuse the created “Remote” run configuration you may fix the port number by adding the following VM option to the plugin run configuration:</p>
+
+<pre><code class="code-block__wrapper code-block _highlighted lang_text">-Dcompiler.process.debug.port=&lt;port-number&gt;
+</code></pre>
+
+<p><strong>If your test IDE is IntelliJ IDEA 15.0 or older</strong></p>
+
+<p>Start IDE with your plugin with the following VM option</p>
+
+<pre><code class="code-block__wrapper code-block _highlighted lang_text">-Dcompiler.process.debug.port=&lt;port-number&gt;
+</code></pre>
+
+<p>After that every time compilation is run in the test IDE, the build  process will wait for debugger connection on this port and only then proceed.  In working copy of IDE a “Remote” run configuration should be created and pointed to this port. Specifying port “-1” will disable debugging mode.</p>
+
+<a name="profiling-external-build-process" class="elem-anchor"></a>
+<h3>Profiling external build process<a href="#profiling-external-build-process" class="anchor-link"><span></span></a></h3>
+
+<p>The build process has built-in self-cpu-profiling capabilities. To enable them do the following:</p>
+
+<ol>
+  <li>
+    <p>Copy <code class="code highlight language-text">&lt;ide-home&gt;/lib/yjp-controller-api-redist.jar</code> and <code class="code highlight language-text">&lt;ide-home&gt;/bin/yjpagent.*</code>  files to <code class="code highlight language-text">&lt;ide-system-dir&gt;/compile-server</code></p>
+  </li>
+  <li>
+    <p>In “Settings | Compiler | Additional compiler process VM options” field enter <code class="code highlight language-text">-Dprofiling.mode=true</code></p>
+  </li>
+  <li>
+    <p>Make sure automatic make is turned off</p>
+  </li>
+</ol>
+
+<p>After this every build process run should result in a CPU snapshot stored in <code class="code highlight language-text">&lt;user-home&gt;</code>/Snapshots directory.
+Snapshots are named like “ExternalBuild-{date}.snapshot”.</p>
+
+<p>Specifying <code class="code highlight language-text">-Dprofiling.mode=false</code> will turn profiling off.
+Please capture a couple of snapshots for the situations in which you believe the build should work much faster than it does.</p>
+
+<p>Please create an issue in the issue tracker and attach generated *.snapshot files to it or upload them to
+<a href="ftp://ftp.intellij.net/.uploads" data-bypass="yes" target="_blank"><span>ftp://ftp.intellij.net/.uploads</span></a> and specify links in the issue.
+Please also provide details about the memory and other VM settings for the build process you were using.</p>
+
+<a name="accessing-external-build-process-logs" class="elem-anchor"></a>
+<h3>Accessing External Build process’ logs<a href="#accessing-external-build-process-logs" class="anchor-link"><span></span></a></h3>
+
+<p>The log file is located under the directory</p>
+
+<pre><code class="code-block__wrapper code-block _highlighted lang_text">&lt;ide-system-directory&gt;/log/build-log
+</code></pre>
+
+<p>There both <code class="code highlight language-text">build-log.log</code> and <code class="code highlight language-text">build-log.properties</code> files can be found.
+The <code class="code highlight language-text">build-log.properties</code> is a log4j configuration file, where the log level and desired logging categories can be adjusted. 
+This file contains logging from all  build sessions, including those from the auto-make.</p>
+
+<p>In IntelliJ Platform versions before version 14.1 log4j configuration was stored in <code class="code highlight language-text">build-log.xml</code>.</p>
+
+<a name="accessing-project-model-and-configuration-from-external-build" class="elem-anchor"></a>
+<h3>Accessing project model and configuration from External Build<a href="#accessing-project-model-and-configuration-from-external-build" class="anchor-link"><span></span></a></h3>
+
+<p>The project model in External Build process is provided by JPS (<em>JetBrains Project System</em>).
+A project is represented by <code class="code highlight language-text">JpsProject</code>, a module by <code class="code highlight language-text">JpsModule</code> and so on.
+If your compiler depends on something that isn’t added to the model yet (e.g. some facet settings),
+you need to extend the JPS model (use <code class="code highlight language-text">JpsGwtModuleExtension</code> as a reference implementation) and provide implementation of
+<code class="code highlight language-text">JpsModelSerializerExtension</code> to load the configuration from project files.</p>
+
+<a name="implementing-builder" class="elem-anchor"></a>
+<h4>Implementing builder</h4>
+
+<p>If your compiler isn’t involved into compilation of an existing <code class="code highlight language-text">BuildTarget</code> you need to create a new implementation of <code class="code highlight language-text">BuildTarget</code> and <code class="code highlight language-text">BuildTargetType</code>. Also register an implementation of <code class="code highlight language-text">BuildTargetScopeProvider</code> extension on IDE side to add required targets to the build scope.
+The builder implementation should extend either <code class="code highlight language-text">TargetBuilder</code> or <code class="code highlight language-text">ModuleLevelBuilder</code> class and should be created using <code class="code highlight language-text">BuilderService</code> extension.</p>
+
+
+
+                    <div class="last-modified">
+                        Last modified: 18 December 2015
+                    </div>
+                </article>
+
+                <section class="disqus">
+                    <div id="disqus_thread"></div>
+                </section>
+            </div>
+        </section>
+    </main>
+</div>
+
+
+<script data-main="/intellij/sdk/docs/app/js/main.build" data-baseurl="/intellij/sdk/docs/" src="/intellij/sdk/docs/app/js/vendor/requirejs/require.js"></script>
+
+</body>
+</html>
+

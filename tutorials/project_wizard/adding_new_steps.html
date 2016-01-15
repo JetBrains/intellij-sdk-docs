@@ -1,0 +1,196 @@
+
+
+
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>Adding New Steps to Project Wizard / IntelliJ Platform SDK  DevGuide</title>
+    <link rel="stylesheet" href="/intellij/sdk/docs/app/css/styles.min.css">
+
+    <!-- non-retina iPad pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-72x72.png" sizes="72x72">
+
+    <!-- retina iPhone pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-114x114.png" sizes="114x114">
+
+    <!-- retina iPad pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-144x144.png" sizes="144x144">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/intellij/sdk/docs/apple-touch-icon-precomposed.png">
+
+    <!-- normal favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="/intellij/sdk/docs/favicon.ico">
+    <link rel="icon" type="image/png" href="/intellij/sdk/docs/favicon.png">
+<link  rel="stylesheet" href="/intellij/sdk/docs/styles/styles.css"></head>
+<body data-id="tutorials/project_wizard/adding_new_steps">
+<div class="wrapper">
+    <section class="panel _nav">
+        <header class="panel__header">
+            <div class="container">
+                <form class="search-box">
+                    <label for="search-box__input" class="search-box__label">
+                        <input type="text" class="search-box__input" id="search-box__input" placeholder="Search IntelliJ Platform SDK  DevGuide">
+                    </label>
+                    <div class="search-box__clear" title="Clear"></div>
+                </form>
+            </div>
+        </header>
+        <nav class="panel__content">
+            <div class="container _nav">
+                <menu class="nav-tree"></menu>
+            </div>
+            <div class="container _footer panel__footer">
+                <p><a href="https://youtrack.jetbrains.com/issues/IJSDK">Send feedback</a></p>
+                <p>&copy; 2000&ndash;2016 <a href="//www.jetbrains.com">JetBrains</a> s.r.o.<br>
+                    All rights reserved.</p>
+            </div>
+        </nav>
+    </section>
+
+    <main class="panel _main" role="main">
+        <header class="panel__header">
+            <div class="container">
+                <h3>IntelliJ Platform SDK DevGuide</h3>
+                
+        <div class="shortcuts-switcher"><label for="switch-shortcuts">Keymap:</label><select id="switch-shortcuts" class="select _shortcuts" height="1">
+            <option data-group="primary" value="default" selected>Default</option>
+            <option data-group="primary" value="default_for_gnome">GNOME</option>
+            <option data-group="primary" value="default_for_kde">KDE</option>
+            <option data-group="primary" value="default_for_xwin">XWindow</option>
+            <option data-group="primary" value="emacs">Emacs</option>
+            <option data-group="primary" value="jbuilder">JBuilder</option>
+            <option data-group="primary" value="visual_studio">Visual Studio</option>
+            <option data-group="primary" value="netbeans_6.5">NetBeans 6.5</option>
+            <option data-group="primary" value="eclipse">Eclipse</option>
+            <option data-group="secondary" value="mac_os_x_10.5_">OS X 10.5+</option>
+            <option data-group="secondary" value="mac_os_x">OS X</option>
+            <option data-group="secondary" value="eclipse_mac_os_x">OS X Eclipse</option></select>
+        </div>
+    
+                <div class="panel-trigger"></div>
+            </div>
+        </header>
+        <section class="panel__content">
+            <div class="container">
+                <article class="article" data-shortcut-switcher="false">
+
+                    <h1>Adding New Steps to Project Wizard</h1>
+                    <p>This tutorial shows how to add a extra-step to the Project Wizard in order to provide additional project configuration settings.</p>
+
+<a name="pre-requirements" class="elem-anchor"></a>
+<h2>Pre-requirements.<a href="#pre-requirements" class="anchor-link"><span></span></a></h2>
+
+<p>Create an empty plugin project.
+See 
+<a href="/intellij/sdk/docs/basics/getting_started/creating_plugin_project.html"><span>Creating a Plugin Project</span></a>
+to know how to do it.</p>
+
+<a name="register-module-builder" class="elem-anchor"></a>
+<h2>1. Register Module Builder<a href="#register-module-builder" class="anchor-link"><span></span></a></h2>
+
+<p>Project configuration settings depend on the project’s module type. 
+Register a new <em>moduleBuilder</em> extension point in the <code class="code highlight language-text">plugin.xml</code> configuration file.</p>
+
+<pre><code class="code-block__wrapper code-block _highlighted lang_xml">  <span class="nt">&lt;extensions</span> <span class="na">defaultExtensionNs=</span><span class="s">"com.intellij"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;moduleBuilder</span> <span class="na">builderClass=</span><span class="s">"org.jetbrains.tutorials.project.wizard.DemoModuleWizardStep"</span> <span class="na">id=</span><span class="s">"DEMO_STEP"</span> <span class="na">order=</span><span class="s">"first"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/extensions&gt;</span>
+</code></pre>
+
+<a name="create-a-custom-module-builder" class="elem-anchor"></a>
+<h2>2. Create a Custom Module Builder<a href="#create-a-custom-module-builder" class="anchor-link"><span></span></a></h2>
+
+<p>Extend <code class="code highlight language-text">ModuleBuilder</code> class to provide custom configuration.</p>
+
+<pre><code class="code-block__wrapper code-block _highlighted lang_java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">DemoModuleWizardStep</span> <span class="kd">extends</span> <span class="n">ModuleBuilder</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setupRootModel</span><span class="o">(</span><span class="n">ModifiableRootModel</span> <span class="n">modifiableRootModel</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">ConfigurationException</span> <span class="o">{</span>
+
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="n">ModuleType</span> <span class="nf">getModuleType</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
+
+<a name="define-module-type" class="elem-anchor"></a>
+<h2>3. Define Module Type<a href="#define-module-type" class="anchor-link"><span></span></a></h2>
+
+<p>Set a module type you want to provide an extra wizard step for. In this example we choose an empty module type.</p>
+
+<pre><code class="code-block__wrapper code-block _highlighted lang_java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">DemoModuleWizardStep</span> <span class="kd">extends</span> <span class="n">ModuleBuilder</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setupRootModel</span><span class="o">(</span><span class="n">ModifiableRootModel</span> <span class="n">modifiableRootModel</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">ConfigurationException</span> <span class="o">{</span>
+
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="n">ModuleType</span> <span class="nf">getModuleType</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">ModuleType</span><span class="o">.</span><span class="na">EMPTY</span><span class="o">;</span> <span class="c1">//or it could be any other module type</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
+
+<a name="design-and-implement-wizard-steps" class="elem-anchor"></a>
+<h2>4. Design and Implement Wizard Steps<a href="#design-and-implement-wizard-steps" class="anchor-link"><span></span></a></h2>
+
+<p>Provide an implementation of a custom UI component to be added to the Wizard.
+In this case we leave it as a label.</p>
+
+<pre><code class="code-block__wrapper code-block _highlighted lang_java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">DemoModuleWizardStep</span> <span class="kd">extends</span> <span class="n">ModuleBuilder</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setupRootModel</span><span class="o">(</span><span class="n">ModifiableRootModel</span> <span class="n">modifiableRootModel</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">ConfigurationException</span> <span class="o">{</span>
+
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="n">ModuleType</span> <span class="nf">getModuleType</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">ModuleType</span><span class="o">.</span><span class="na">EMPTY</span><span class="o">;</span> 
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">ModuleWizardStep</span><span class="o">[]</span> <span class="nf">createWizardSteps</span><span class="o">(</span><span class="nd">@NotNull</span> <span class="n">WizardContext</span> <span class="n">wizardContext</span><span class="o">,</span> <span class="nd">@NotNull</span> <span class="n">ModulesProvider</span> <span class="n">modulesProvider</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="n">ModuleWizardStep</span><span class="o">[]{</span><span class="k">new</span> <span class="n">ModuleWizardStep</span><span class="o">()</span> <span class="o">{</span>
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="n">JComponent</span> <span class="nf">getComponent</span><span class="o">()</span> <span class="o">{</span>
+                  <span class="k">return</span> <span class="k">new</span> <span class="nf">JLabel</span><span class="o">(</span><span class="s">"Put your content here"</span><span class="o">);</span>
+            <span class="o">}</span>
+
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">updateDataModel</span><span class="o">()</span> <span class="o">{</span>
+
+            <span class="o">}</span>
+        <span class="o">}};</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
+
+<a name="checking-ui-appearance" class="elem-anchor"></a>
+<h2>5. Checking UI Appearance<a href="#checking-ui-appearance" class="anchor-link"><span></span></a></h2>
+
+<p>After compiling and running the plugin create a new project using a source-compiled instance of <em>IntelliJ IDEA</em>.</p>
+
+<p><img src="img/empty_project.png" alt="New Project" /></p>
+
+<p>Choose an <em>Empty Module</em> type, click next, and you get to the just added extra step.</p>
+
+<p><img src="img/extra_step.png" alt="Extra Step" /></p>
+
+<p>Modify and tune the UI component depending on your requirements.</p>
+
+
+
+                    <div class="last-modified">
+                        Last modified: 30 November 2015
+                    </div>
+                </article>
+
+                <section class="disqus">
+                    <div id="disqus_thread"></div>
+                </section>
+            </div>
+        </section>
+    </main>
+</div>
+
+
+<script data-main="/intellij/sdk/docs/app/js/main.build" data-baseurl="/intellij/sdk/docs/" src="/intellij/sdk/docs/app/js/vendor/requirejs/require.js"></script>
+
+</body>
+</html>
+

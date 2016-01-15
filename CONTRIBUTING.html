@@ -1,0 +1,443 @@
+
+
+
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title> / IntelliJ Platform SDK  DevGuide</title>
+    <link rel="stylesheet" href="/intellij/sdk/docs/app/css/styles.min.css">
+
+    <!-- non-retina iPad pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-72x72.png" sizes="72x72">
+
+    <!-- retina iPhone pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-114x114.png" sizes="114x114">
+
+    <!-- retina iPad pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-144x144.png" sizes="144x144">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/intellij/sdk/docs/apple-touch-icon-precomposed.png">
+
+    <!-- normal favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="/intellij/sdk/docs/favicon.ico">
+    <link rel="icon" type="image/png" href="/intellij/sdk/docs/favicon.png">
+<link  rel="stylesheet" href="/intellij/sdk/docs/styles/styles.css"></head>
+<body data-id="CONTRIBUTING">
+<div class="wrapper">
+    <section class="panel _nav">
+        <header class="panel__header">
+            <div class="container">
+                <form class="search-box">
+                    <label for="search-box__input" class="search-box__label">
+                        <input type="text" class="search-box__input" id="search-box__input" placeholder="Search IntelliJ Platform SDK  DevGuide">
+                    </label>
+                    <div class="search-box__clear" title="Clear"></div>
+                </form>
+            </div>
+        </header>
+        <nav class="panel__content">
+            <div class="container _nav">
+                <menu class="nav-tree"></menu>
+            </div>
+            <div class="container _footer panel__footer">
+                <p><a href="https://youtrack.jetbrains.com/issues/IJSDK">Send feedback</a></p>
+                <p>&copy; 2000&ndash;2016 <a href="//www.jetbrains.com">JetBrains</a> s.r.o.<br>
+                    All rights reserved.</p>
+            </div>
+        </nav>
+    </section>
+
+    <main class="panel _main" role="main">
+        <header class="panel__header">
+            <div class="container">
+                <h3>IntelliJ Platform SDK DevGuide</h3>
+                
+        <div class="shortcuts-switcher"><label for="switch-shortcuts">Keymap:</label><select id="switch-shortcuts" class="select _shortcuts" height="1">
+            <option data-group="primary" value="default" selected>Default</option>
+            <option data-group="primary" value="default_for_gnome">GNOME</option>
+            <option data-group="primary" value="default_for_kde">KDE</option>
+            <option data-group="primary" value="default_for_xwin">XWindow</option>
+            <option data-group="primary" value="emacs">Emacs</option>
+            <option data-group="primary" value="jbuilder">JBuilder</option>
+            <option data-group="primary" value="visual_studio">Visual Studio</option>
+            <option data-group="primary" value="netbeans_6.5">NetBeans 6.5</option>
+            <option data-group="primary" value="eclipse">Eclipse</option>
+            <option data-group="secondary" value="mac_os_x_10.5_">OS X 10.5+</option>
+            <option data-group="secondary" value="mac_os_x">OS X</option>
+            <option data-group="secondary" value="eclipse_mac_os_x">OS X Eclipse</option></select>
+        </div>
+    
+                <div class="panel-trigger"></div>
+            </div>
+        </header>
+        <section class="panel__content">
+            <div class="container">
+                <article class="article" data-shortcut-switcher="false">
+
+                    
+                    <a name="contributing" class="elem-anchor"></a>
+<h1>Contributing<a href="#contributing" class="anchor-link"><span></span></a></h1>
+
+<p>Thanks for contributing! Here are few useful things to know before submitting your Pull Request.</p>
+
+<ul>
+  <li>Licensing - see <a href="LICENSE.txt"><span>LICENSE.txt</span></a></li>
+  <li><a href="#contributing-to-the-intellij-platform"><span>Contributing to the IntelliJ Platform</span></a></li>
+  <li><a href="#setting-up-your-environment"><span>Setting up your environment</span></a>
+    <ul>
+      <li><a href="#developing-with-docker"><span>Developing with Docker</span></a></li>
+      <li><a href="#developing-locally"><span>Developing locally</span></a></li>
+    </ul>
+  </li>
+  <li><a href="#markup"><span>Markup</span></a>
+    <ul>
+      <li><a href="#summarymd"><span>_SUMMARY.md</span></a></li>
+      <li><a href="#redirects"><span>Redirects</span></a></li>
+      <li><a href="#table-of-contents"><span>Table of contents</span></a></li>
+      <li><a href="#liquid-tags-and-filters"><span>Liquid tags and filters</span></a></li>
+      <li><a href="#syntax-highlighting"><span>Syntax highlighting</span></a></li>
+      <li><a href="#tables"><span>Tables</span></a></li>
+      <li><a href="#links"><span>Links</span></a></li>
+      <li><a href="#notes-and-callouts"><span>Callouts</span></a></li>
+      <li><a href="#images"><span>Images</span></a></li>
+    </ul>
+  </li>
+  <li>Style guide</li>
+  <li><a href="#a-word-on-submodules"><span>A word on submodules</span></a></li>
+</ul>
+
+<a name="contributing-to-the-intellij-platform" class="elem-anchor"></a>
+<h2>Contributing to the IntelliJ Platform<a href="#contributing-to-the-intellij-platform" class="anchor-link"><span></span></a></h2>
+
+<p>This document describes our contribution guidelines for the IntelliJ SDK Docs. For information about contributing to the IntelliJ Platform, please visit <a href="/intellij/sdk/docs/basics/platform_contributions.html"><span>Contributing to the IntelliJ Platform</span></a>.</p>
+
+<a name="setting-up-your-environment" class="elem-anchor"></a>
+<h2>Setting up your environment<a href="#setting-up-your-environment" class="anchor-link"><span></span></a></h2>
+
+<p>This site runs via <a href="http://jekyllrb.com" data-bypass="yes" target="_blank"><span>Jekyll</span></a>, which is a popular static site generator, written in Ruby. It can be hosted locally to ensure that any changes are correct. Once set up, running the site is as easy as calling <code class="code highlight language-text">rake preview</code>.</p>
+
+<p>Alternatively, the site can also be hosted in a <a href="https://www.docker.com" data-bypass="yes" target="_blank"><span>Docker container</span></a>. On Mac and Windows, this means the site is hosted in a virtual machine. Docker maintains this container, building it based on the instructions in the <a href="Dockerfile"><span><code class="code highlight language-text">Dockerfile</code></span></a>. All dependencies (Ruby, etc.) are automatically installed when building the image, which reduces the manual configuration steps. The Docker image is also used to build the <a href="http://www.jetbrains.org/intellij/sdk/docs/index.html" data-bypass="yes" target="_blank"><span>published site</span></a>, so it is a known working environment.</p>
+
+<a name="developing-with-docker" class="elem-anchor"></a>
+<h3>Developing with Docker<a href="#developing-with-docker" class="anchor-link"><span></span></a></h3>
+
+<p>Follow these steps to work with Docker:</p>
+
+<ul>
+  <li>Firstly, install Docker, using the <a href="https://www.docker.com/docker-toolbox" data-bypass="yes" target="_blank"><span>Docker Toolbox</span></a>.</li>
+  <li>On Windows and Mac, start the Docker host virtual machine (start the “Docker Quickstart terminal” or run “Kitematic”. See the Getting Started guides on <a href="https://www.docker.com" data-bypass="yes" target="_blank"><span>docker.com</span></a> for more details).</li>
+  <li>Clone the <a href="https://github.com/JetBrains/intellij-sdk-docs" data-bypass="yes" target="_blank"><span><code class="code highlight language-text">intellij-sdk-docs</code></span></a> repo to the local machine, and <a href="#a-word-on-submodules"><span>initialise the <code class="code highlight language-text">sdkdocs-template</code> submodule</span></a>.</li>
+  <li>Change the current directory to the parent directory of the git repo.</li>
+  <li>Run <code class="code highlight language-text">docker build -t intellij-sdk-docs .</code>. This will build the docker image from the current folder, and give it the tag <code class="code highlight language-text">intellij-sdk-docs</code>.
+    <ul>
+      <li>Note that this must be run from a command prompt that has the various <code class="code highlight language-text">DOCKER_*</code> environment variables set up, such as the Docker Quickstart Terminal.</li>
+    </ul>
+  </li>
+  <li>Run <code class="code highlight language-text">docker run -p 4000:4000 -v $PWD:/usr/src/app intellij-sdk-docs</code>. This command will:
+    <ul>
+      <li>Start the docker container called <code class="code highlight language-text">intellij-sdk-docs</code>.</li>
+      <li>Forward port 4000 from the docker container to port 4000 on the docker client.</li>
+    </ul>
+
+    <aside class="note">
+      <p> For Windows and Mac, this means port 4000 of the docker container is forwarded to port 4000 of the docker virtual machine, not <code class="code highlight language-text">localhost</code>. For Linux, the docker client is the host machine, so <code class="code highlight language-text">localhost:4000</code> is forwarded to port 4000 on the docker container.</p>
+
+      <p>In order to hit the container’s port 4000 from Windows or the Mac, it is necessary to hit the IP address of the docker client (virtual machine). Use <code class="code highlight language-text">docker-machine ip default</code> to get the IP address of the docker client. Use <code class="code highlight language-text">X.X.X.X:4000</code> to hit the client in the virtual machine, which is in turn mapped to the container’s port 4000.</p>
+
+      <p>Alternatively, modify the virtual machine’s settings to automatically forward port 4000 to <code class="code highlight language-text">localhost</code>. See this <a href="http://acaird.github.io/computers/2014/11/16/docker-virtualbox-host-networking/" data-bypass="yes" target="_blank"><span>blog post</span></a> for more details.</p>
+    </aside>
+
+    <ul>
+      <li>Mount the current directory (<code class="code highlight language-text">$PWD</code> is a Unix style environment variable. You can use <code class="code highlight language-text">%CD%</code> on Windows, or specify the full path) as <code class="code highlight language-text">/usr/src/app</code> inside the docker container. This means the docker image will see the <code class="code highlight language-text">intellij-sdk-docs</code> repo as the folder <code class="code highlight language-text">/usr/src/app</code>.</li>
+    </ul>
+
+    <aside class="note">
+      <p> If running on Windows in an msys bash script (e.g. the “Docker Quickstart terminal”), the path to the local folder needs to be properly escaped, or the msys environment will translate the paths to standard Windows path, and you will see an error such as <code class="code highlight language-text">invalid value "C:\\Users\\...;C:\\Program Files\\Git\\usr\\src\\app" for flag -v</code>. To fix this, prefix the full path with double slashes, e.g. <code class="code highlight language-text">-v //c/Users/...</code>, or <code class="code highlight language-text">docker run -p 4000:4000 -v /$PWD:/usr/src/app intellij-sdk-docs</code> (note the leading slash before <code class="code highlight language-text">$PWD</code>).</p>
+    </aside>
+
+    <ul>
+      <li>Run the commands specific in the Dockerfile’s <code class="code highlight language-text">CMD</code> instruction, which runs both <code class="code highlight language-text">rake bootstrap</code>, which ensures all of the prerequisites are installed, and <code class="code highlight language-text">rake preview</code>, which builds the site and starts to host it.</li>
+    </ul>
+  </li>
+  <li>Finally, you can access the newly created site by visiting <a href="http://localhost:4000/intellij/sdk/docs/" data-bypass="yes" target="_blank"><span>http://localhost:4000/intellij/sdk/docs/</span></a>, or by using the IP address of the docker client virtual machine (see note above).</li>
+</ul>
+
+<a name="developing-locally" class="elem-anchor"></a>
+<h3>Developing locally<a href="#developing-locally" class="anchor-link"><span></span></a></h3>
+
+<p>In order to build the documentation site, you will need:</p>
+
+<ul>
+  <li>Ruby 2 - Jekyll is a Ruby application.</li>
+  <li>Ruby 2 DevKit (for Windows) - Some of Jekyll’s dependencies need to be compiled, and require the DevKit to be installed.</li>
+  <li><code class="code highlight language-text">gem install bundler</code> - the site uses <a href="http://bundler.io" data-bypass="yes" target="_blank"><span>Bundler</span></a> to manage gem dependencies within the repo, rather than globally installing to the local operating system. Run this command to install the Bundler toolset globally.</li>
+</ul>
+
+<p><strong>OS X</strong></p>
+
+<p>OS X comes with Ruby already installed. The only steps required are:</p>
+
+<ul>
+  <li><code class="code highlight language-text">gem install bundler</code></li>
+</ul>
+
+<p><strong>Windows</strong></p>
+
+<ul>
+  <li>Install <a href="http://rubyinstaller.org" data-bypass="yes" target="_blank"><span>Ruby 2</span></a> and the <a href="http://rubyinstaller.org/downloads/" data-bypass="yes" target="_blank"><span>Ruby 2 DevKit</span></a> (one of the gems needs to build a native component)
+    <ul>
+      <li>After installing the DevKit, make sure to edit the <code class="code highlight language-text">config.yml</code> file to point to the Ruby installation</li>
+    </ul>
+  </li>
+</ul>
+
+<p>This is made easier if you use <a href="https://chocolatey.org" data-bypass="yes" target="_blank"><span>Chocolatey</span></a>, a package manager for Windows:</p>
+
+<ul>
+  <li><code class="code highlight language-text">choco install ruby</code></li>
+  <li><code class="code highlight language-text">choco install ruby2.devkit</code>
+    <ul>
+      <li>After installing the DevKit, make sure to edit the <code class="code highlight language-text">config.yml</code> file to point to the Ruby installation.</li>
+      <li>By default, this is <code class="code highlight language-text">C:\tools\DevKit\config.yml</code></li>
+      <li>Add the line <code class="code highlight language-text">- C:\tools\ruby21</code> (including the leading minus sign)</li>
+    </ul>
+  </li>
+</ul>
+
+<aside class="note">
+  <p> Before running the <code class="code highlight language-text">rake bootstrap</code> step listed below, please run the <code class="code highlight language-text">devkitvars.bat</code> file from the DevKit. E.g. <code class="code highlight language-text">C:\tools\DevKit\devkitvars.bat</code></p>
+</aside>
+
+<a name="bootstrapping-the-environment" class="elem-anchor"></a>
+<h3>Bootstrapping the environment<a href="#bootstrapping-the-environment" class="anchor-link"><span></span></a></h3>
+
+<ol>
+  <li>Ensure Bundler is installed - <code class="code highlight language-text">gem install bundler</code></li>
+  <li>On Windows, ensure the <code class="code highlight language-text">devkitvars.bat</code> file has been run in the current command prompt (e.g. <code class="code highlight language-text">c:\tools\DevKit\devkitvars.bat</code>).</li>
+  <li>Clone the documentation site.</li>
+  <li>Initialise and update the <code class="code highlight language-text">sdkdocs-template</code> submodule - <code class="code highlight language-text">git submodule init</code> and <code class="code highlight language-text">git submodule update</code></li>
+  <li><code class="code highlight language-text">rake bootstrap</code> - this uses Bundler to download all required gems.</li>
+  <li><code class="code highlight language-text">rake preview</code> - this will build the site, and host it in a local webserver.</li>
+</ol>
+
+<a name="building-and-previewing-the-site" class="elem-anchor"></a>
+<h3>Building and previewing the site<a href="#building-and-previewing-the-site" class="anchor-link"><span></span></a></h3>
+
+<p>To build and test the site, simply run <code class="code highlight language-text">rake preview</code>. This will build the site and host it, using the config provided. The URL of the hosted site is displayed on the screen, and depends on the <code class="code highlight language-text">baseurl</code> field defined in <code class="code highlight language-text">_config.yml</code>.</p>
+
+<a name="markup" class="elem-anchor"></a>
+<h2>Markup<a href="#markup" class="anchor-link"><span></span></a></h2>
+
+<p>By default, when building the site, all files are copied to the destination <code class="code highlight language-text">_site</code> folder. Some files are excluded in the <code class="code highlight language-text">_config.yml</code> and <code class="code highlight language-text">sdkdocs-template/jekyll/_config-defaults.yml</code> files. The documentation files themselves are <a href="http://daringfireball.net/projects/markdown/" data-bypass="yes" target="_blank"><span>Markdown</span></a> files (<code class="code highlight language-text">.md</code>) that get automatically converted to HTML when the site is built.</p>
+
+<p>However, only markdown files beginning with a <a href="http://yaml.org" data-bypass="yes" target="_blank"><span>YAML</span></a> header are converted. If the markdown file doesn’t contain a header, it won’t be converted. In other words, to convert a <code class="code highlight language-text">.md</code> file to HTML, it should look like this:</p>
+
+<pre><code class="code-block__wrapper code-block _highlighted lang_md"><span class="nn">---</span>
+<span class="nn">---</span>
+
+<span class="gh"># Introduction</span>
+
+Lorem ipsum...
+</code></pre>
+
+<p>The two lines at the top of the file are the markers of the YAML “front matter”. Fields can be added in between these markers, and are used when generating the HTML. Typically, this header will be empty, although it is required by Jekyll (if omitted, the file isn’t converted).</p>
+
+<p>The YAML header can contain data that is used when generating the site. For example, the page title can be specified as a simple piece of markdown - <code class="code highlight language-text"># Title</code>, or it can be specified in the YAML, and the page template will display it appropriately:</p>
+
+<pre><code class="code-block__wrapper code-block _highlighted lang_md"><span class="nn">---</span>
+<span class="s">title</span><span class="pi">:</span> <span class="s">The Title Of The Page</span>
+<span class="nn">---</span>
+
+Lorem ipsum...
+</code></pre>
+
+<p>The YAML header can also include <a href="#redirects"><span>redirect</span></a> information.</p>
+
+<a name="summarymd" class="elem-anchor"></a>
+<h3>_SUMMARY.md<a href="#summarymd" class="anchor-link"><span></span></a></h3>
+
+<p>The table of contents for the site is displayed in the tree view on the left hand side of the site, and it is generated from the <code class="code highlight language-text">_SUMMARY.md</code> file. It is a simple markdown list, with each item in the list being a link to another markdown page, either in the root folder, or sub-folders. The list can have nested items, which will be displayed as child items in the table of contents.</p>
+
+<pre><code class="code-block__wrapper code-block _highlighted lang_md"><span class="gh"># Summary</span>
+<span class="p">
+*</span> <span class="p">[</span><span class="nv">Introduction</span><span class="p">](</span><span class="sx">README.md</span><span class="p">)</span>
+<span class="p">*</span> <span class="p">[</span><span class="nv">About This Guide</span><span class="p">](</span><span class="sx">Intro/About.md</span><span class="p">)</span>
+<span class="p">    *</span> <span class="p">[</span><span class="nv">Key Topics</span><span class="p">](</span><span class="sx">Intro/KeyTopics.md</span><span class="p">)</span>
+</code></pre>
+
+<p>The contents can be split into “parts” by separating the list into several lists, each new list starting with a level 2 heading (<code class="code highlight language-text">##</code>).</p>
+
+<pre><code class="code-block__wrapper code-block _highlighted lang_md"><span class="gh"># Summary</span>
+<span class="p">
+*</span> <span class="p">[</span><span class="nv">Introduction</span><span class="p">](</span><span class="sx">README.md</span><span class="p">)</span>
+<span class="p">*</span> <span class="p">[</span><span class="nv">About This Guide</span><span class="p">](</span><span class="sx">Intro/About.md</span><span class="p">)</span>
+<span class="p">    *</span> <span class="p">[</span><span class="nv">Key Topics</span><span class="p">](</span><span class="sx">Intro/KeyTopics.md</span><span class="p">)</span>
+
+<span class="gu">## Part I - Extending the Platform</span>
+<span class="p">*</span> <span class="p">[</span><span class="nv">Getting Started</span><span class="p">](</span><span class="sx">Docs/GettingStarted.md</span><span class="p">)</span>
+<span class="p">*</span> ...
+</code></pre>
+
+<p>If a node doesn’t have a link, but is just plain text, it will still appear in the table of contents, but will be greyed out and not clickable. It acts like a placeholder for a documentation item. This is useful to keep track of what should be documented, but hasn’t yet, and can be useful to show readers that the topic exists, but isn’t yet documented (Pull Requests always welcome!).</p>
+
+<a name="redirects" class="elem-anchor"></a>
+<h3>Redirects<a href="#redirects" class="anchor-link"><span></span></a></h3>
+
+<p>The documentation site is set up to include the <a href="https://github.com/jekyll/jekyll-redirect-from" data-bypass="yes" target="_blank"><span>jekyll-redirect-from</span></a> plugin, which will generate “dummy” pages that automatically redirect to a given page. For example, to specify that the <code class="code highlight language-text">index.html</code> page will be generated to redirect to <code class="code highlight language-text">README.md</code>, the <code class="code highlight language-text">README.md</code> file should include the following in the YAML header:</p>
+
+<pre><code class="code-block__wrapper code-block _highlighted lang_md"><span class="nn">---</span>
+<span class="s">redirect_from</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">/index.html</span>
+<span class="nn">---</span>
+
+<span class="gh"># Introduction</span>
+
+Lorem ipsum...
+</code></pre>
+
+<p>This will create an <code class="code highlight language-text">index.html</code> file that will automatically redirect to the generated <code class="code highlight language-text">README.html</code> file. This is very useful to allow the site URL to automatically show the <code class="code highlight language-text">README.html</code> file - <code class="code highlight language-text">http://localhost:4001/foo-test/</code> will try to load <code class="code highlight language-text">index.html</code>, which will automatically redirect to <code class="code highlight language-text">README.html</code>.</p>
+
+<p>It is also useful to redirect when renaming or moving files. Multiple redirects can be added to the YAML header.</p>
+
+<a name="table-of-contents" class="elem-anchor"></a>
+<h3>Table of contents<a href="#table-of-contents" class="anchor-link"><span></span></a></h3>
+
+<p>The site is configured to use the <a href="http://kramdown.gettalong.org" data-bypass="yes" target="_blank"><span>Kramdown Markdown converter</span></a>, which adds some extra features over traditional markdown, such as “attribute lists”, which can apply attributes to the generated elements.</p>
+
+<p>One useful attribute is <code class="code highlight language-text">{:toc}</code>, which can be applied to a list item, which will get replaced with a list of links to header items. E.g. the following list item will be replaced by links to all of the header items in the page:</p>
+
+<pre><code class="code-block__wrapper code-block _highlighted lang_md"><span class="p">*</span> Dummy list item
+{:toc}
+</code></pre>
+
+<p>Further Kramdown features are described on the <a href="http://kramdown.gettalong.org/converter/html.html" data-bypass="yes" target="_blank"><span>converter page</span></a>, and attribute lists are described on the <a href="http://kramdown.gettalong.org/syntax.html" data-bypass="yes" target="_blank"><span>syntax page</span></a>. Note that source code formatting is configured to use <a href="https://help.github.com/articles/github-flavored-markdown/" data-bypass="yes" target="_blank"><span>GitHub Flavoured Mardown</span></a> and “code fences”, see below.</p>
+
+<a name="liquid-tags-and-filters" class="elem-anchor"></a>
+<h3>Liquid tags and filters<a href="#liquid-tags-and-filters" class="anchor-link"><span></span></a></h3>
+
+<p>Jekyll uses the <a href="http://liquidmarkup.org" data-bypass="yes" target="_blank"><span>Liquid</span></a> templating language to process files. This means standard Liquid tags and filters are available. There should be little need to use them however, as the Markdown format is already quite rich. See the <a href="http://jekyllrb.com/docs/templates/" data-bypass="yes" target="_blank"><span>Jekyll site</span></a> for more details.</p>
+
+<a name="syntax-highlighting" class="elem-anchor"></a>
+<h3>Syntax highlighting<a href="#syntax-highlighting" class="anchor-link"><span></span></a></h3>
+
+<p>Source code can be represented by using <a href="https://help.github.com/articles/github-flavored-markdown/" data-bypass="yes" target="_blank"><span>GitHub Flavoured Markdown</span></a> code fences, which are three back ticks:</p>
+
+<pre><code class="code-block__wrapper code-block _highlighted lang_text">```
+// Source code goes here...
+```
+</code></pre>
+
+<p>Syntax highlighting can be applied by specifying the language after the first set of ticks:</p>
+
+<pre><code class="code-block__wrapper code-block _highlighted lang_text">```csharp
+// Some C# code
+```
+
+```java
+// Some Java code
+```
+</code></pre>
+
+<p>Here is the list of <a href="https://github.com/jneen/rouge/wiki/List-of-supported-languages-and-lexers" data-bypass="yes" target="_blank"><span>supported languages</span></a> (and also <a href="https://kotlinlang.org" data-bypass="yes" target="_blank"><span>Kotlin</span></a>, of course).</p>
+
+<!-- Not currently supported by rouge, or by the site's CSS
+
+The site is also configured to highlight a range of files in the source code, by specifying `{start-end}` which is the start and end line of the highlighting:
+
+    ```java{2-3}
+    // Not highlighted
+    // Highlighted
+    // Highlighted
+    // Not highlighted
+    ```
+-->
+
+<a name="tables" class="elem-anchor"></a>
+<h3>Tables<a href="#tables" class="anchor-link"><span></span></a></h3>
+
+<p>The Kramdown parser also supports tables. The syntax is to use the pipe (<code class="code highlight language-text">|</code>) and minus symbols:</p>
+
+<pre><code class="code-block__wrapper code-block _highlighted lang_text">```md
+| Column 1 | Column 2 | Column 3 |
+|----------|----------|----------|
+| Blah     | Blah     | Blah     |
+```
+</code></pre>
+
+<a name="links" class="elem-anchor"></a>
+<h3>Links<a href="#links" class="anchor-link"><span></span></a></h3>
+
+<p>Links are handled as normal markdown links, and can be links to external sites, pages within the sites, or headings in the sites. When a Markdown header is converted to an HTML header, it is assigned an ID, so it can be linked, e.g. <code class="code highlight language-text">## Introduction</code> will get the ID of <code class="code highlight language-text">introduction</code>, and can be linked either in the same page <code class="code highlight language-text">[click here](#introduction)</code> or cross page <code class="code highlight language-text">[click here](page.html#introduction)</code>. The anchor name will be all lower case, and spaces are replaced with <code class="code highlight language-text">-</code>, e.g. <code class="code highlight language-text">## Page setup</code> becomes <code class="code highlight language-text">#page-setup</code>.</p>
+
+<ul>
+  <li><code class="code highlight language-text">[External site](http://example.org)</code> will link to an external site</li>
+  <li><code class="code highlight language-text">[Other page in current directory](Page2.md)</code> will link to a page in the same directory as the current page. Note that the extension is <code class="code highlight language-text">.md</code>, NOT <code class="code highlight language-text">.html</code>.</li>
+  <li><code class="code highlight language-text">[Page in another folder](/Folder2/Page2.md)</code> will link to a page in another folder. Note that the URL is navigating from root - this works even if the site is hosted in a sub-folder (e.g. this link will work for <code class="code highlight language-text">http://localhost:4000/devguide/Folder2/Page2.html</code>). Relative links will also work (<code class="code highlight language-text">../Folder2/Page2.md</code>).</li>
+  <li><code class="code highlight language-text">[Link to section on another page](Page2.md#another-section)</code> will link to a heading on another page. The ID of the heading is generated by making the text lowercase and replacing spaces with <code class="code highlight language-text">-</code>.</li>
+  <li><code class="code highlight language-text">[Link to section on current page](#another-section)</code> will link to a heading on the current page.</li>
+</ul>
+
+<a name="notes-and-callouts" class="elem-anchor"></a>
+<h3>Notes and callouts<a href="#notes-and-callouts" class="anchor-link"><span></span></a></h3>
+
+<p>Notes and callouts can be specified using the blockquote syntax. The converter will look at the first following word to see if it is bold. If so, it will apply that as a callout style. For example:</p>
+
+<pre><code class="code-block__wrapper code-block _highlighted lang_text">&gt; **NOTE** This is a note
+</code></pre>
+
+<p>Will be displayed as a callout, styled as a “note”. The other styles available for callouts are “note”, “warning”, “tip” and “todo”.</p>
+
+<a name="images" class="elem-anchor"></a>
+<h3>Images<a href="#images" class="anchor-link"><span></span></a></h3>
+
+<p>Images can be included by adding the file directly to the repository and adding a link to the image like so:</p>
+
+<pre><code class="code-block__wrapper code-block _highlighted lang_text">```md
+![Alt text](path-to-img.png)
+```
+</code></pre>
+
+<p>Please downscale screenshots made at high resolution.</p>
+
+<a name="a-word-on-submodules" class="elem-anchor"></a>
+<h2>A word on submodules<a href="#a-word-on-submodules" class="anchor-link"><span></span></a></h2>
+
+<p>The <code class="code highlight language-text">sdkdocs-template</code> repo is added as a submodule, and it also contains a submodule to the private <code class="code highlight language-text">webhelp-template</code> repo. The <code class="code highlight language-text">sdkdocs-template</code> repo contains build time scripts and compiled and minified JS and CSS that allow the site to run. The private <code class="code highlight language-text">webhelp-template</code> repo contains the code to build the JS and CSS. It is currently closed source, but the plan is to make it open source at some point, in which case, it is likely the two repos will be merged.</p>
+
+<p>After cloning, a submodule needs to be initialised and updated:</p>
+
+<pre><code class="code-block__wrapper code-block _highlighted lang_text">```
+git submodule init
+git submodule update
+```
+</code></pre>
+
+<p>This will create a <code class="code highlight language-text">.gitmodules</code> file, register a submodule in the <code class="code highlight language-text">sdkdocs-template</code> folder, and check out the files. (Note that when a repo is added as a submodule, it doesn’t get a <code class="code highlight language-text">.git</code> folder, but instead gets a <code class="code highlight language-text">.git</code> file that points to the location of the <code class="code highlight language-text">.git</code> folder.</p>
+
+<p>A submodule can be updated using normal git commands such as <code class="code highlight language-text">git pull</code>. It can be switched to a different branch using <code class="code highlight language-text">git checkout</code>, and any changes to the currently checked out revision need to be committed back into the main repo, as normal git commands. It is initially cloned at a specific revision, and not as part of a branch.update</p>
+
+<p>If changes are made to the submodule, they should be made on a branch to a clone, and a Pull Request sent. Changes can be made and committed, and the hosting repo will need to commit a pointer to the current version of the submodule.</p>
+
+<p>If there are any problems with the <code class="code highlight language-text">sdkdocs-template</code>, please <a href="https://github.com/JetBrains/sdkdocs-template/issues" data-bypass="yes" target="_blank"><span>raise an issue</span></a>.</p>
+
+
+
+                    <div class="last-modified">
+                        Last modified: 6 January 2016
+                    </div>
+                </article>
+
+                <section class="disqus">
+                    <div id="disqus_thread"></div>
+                </section>
+            </div>
+        </section>
+    </main>
+</div>
+
+
+<script data-main="/intellij/sdk/docs/app/js/main.build" data-baseurl="/intellij/sdk/docs/" src="/intellij/sdk/docs/app/js/vendor/requirejs/require.js"></script>
+
+</body>
+</html>
+

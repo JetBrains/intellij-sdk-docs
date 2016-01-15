@@ -1,0 +1,240 @@
+
+
+
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>Persisting State of Components / IntelliJ Platform SDK  DevGuide</title>
+    <link rel="stylesheet" href="/intellij/sdk/docs/app/css/styles.min.css">
+
+    <!-- non-retina iPad pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-72x72.png" sizes="72x72">
+
+    <!-- retina iPhone pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-114x114.png" sizes="114x114">
+
+    <!-- retina iPad pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-144x144.png" sizes="144x144">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/intellij/sdk/docs/apple-touch-icon-precomposed.png">
+
+    <!-- normal favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="/intellij/sdk/docs/favicon.ico">
+    <link rel="icon" type="image/png" href="/intellij/sdk/docs/favicon.png">
+<link  rel="stylesheet" href="/intellij/sdk/docs/styles/styles.css"></head>
+<body data-id="basics/persisting_state_of_components">
+<div class="wrapper">
+    <section class="panel _nav">
+        <header class="panel__header">
+            <div class="container">
+                <form class="search-box">
+                    <label for="search-box__input" class="search-box__label">
+                        <input type="text" class="search-box__input" id="search-box__input" placeholder="Search IntelliJ Platform SDK  DevGuide">
+                    </label>
+                    <div class="search-box__clear" title="Clear"></div>
+                </form>
+            </div>
+        </header>
+        <nav class="panel__content">
+            <div class="container _nav">
+                <menu class="nav-tree"></menu>
+            </div>
+            <div class="container _footer panel__footer">
+                <p><a href="https://youtrack.jetbrains.com/issues/IJSDK">Send feedback</a></p>
+                <p>&copy; 2000&ndash;2016 <a href="//www.jetbrains.com">JetBrains</a> s.r.o.<br>
+                    All rights reserved.</p>
+            </div>
+        </nav>
+    </section>
+
+    <main class="panel _main" role="main">
+        <header class="panel__header">
+            <div class="container">
+                <h3>IntelliJ Platform SDK DevGuide</h3>
+                
+        <div class="shortcuts-switcher"><label for="switch-shortcuts">Keymap:</label><select id="switch-shortcuts" class="select _shortcuts" height="1">
+            <option data-group="primary" value="default" selected>Default</option>
+            <option data-group="primary" value="default_for_gnome">GNOME</option>
+            <option data-group="primary" value="default_for_kde">KDE</option>
+            <option data-group="primary" value="default_for_xwin">XWindow</option>
+            <option data-group="primary" value="emacs">Emacs</option>
+            <option data-group="primary" value="jbuilder">JBuilder</option>
+            <option data-group="primary" value="visual_studio">Visual Studio</option>
+            <option data-group="primary" value="netbeans_6.5">NetBeans 6.5</option>
+            <option data-group="primary" value="eclipse">Eclipse</option>
+            <option data-group="secondary" value="mac_os_x_10.5_">OS X 10.5+</option>
+            <option data-group="secondary" value="mac_os_x">OS X</option>
+            <option data-group="secondary" value="eclipse_mac_os_x">OS X Eclipse</option></select>
+        </div>
+    
+                <div class="panel-trigger"></div>
+            </div>
+        </header>
+        <section class="panel__content">
+            <div class="container">
+                <article class="article" data-shortcut-switcher="false">
+
+                    <h1>Persisting State of Components</h1>
+                    <p>The <em>IntelliJ Platform</em> provides an API that allows components or services to persist their state between restarts of the IDE. You can use either a simple API to persist a few values, or persist the state of more complicated components using the <a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/core-api/src/com/intellij/openapi/components/PersistentStateComponent.java" data-bypass="yes" target="_blank"><span>PersistentStateComponent</span></a> interface.</p>
+
+<a name="using-propertiescomponent-for-simple-non-roamable-persistence" class="elem-anchor"></a>
+<h2>Using PropertiesComponent for simple non-roamable persistence<a href="#using-propertiescomponent-for-simple-non-roamable-persistence" class="anchor-link"><span></span></a></h2>
+
+<p>If the only thing that your plugin needs to persist is a few simple values, the easiest way to do so is to use the <code class="code highlight language-text">com.intellij.ide.util.PropertiesComponent</code> service. It can be used for saving both application level values and project level values (stored in the workspace file). Roaming is disabled for <code class="code highlight language-text">PropertiesComponent</code>, so use it only for temporary, non-roamable properties.</p>
+
+<p>Use the <code class="code highlight language-text">PropertiesComponent.getInstance()</code> method for storing application level values, and the <code class="code highlight language-text">PropertiesComponent.getInstance(Project)</code> method for storing project-level values.</p>
+
+<p>Since all plugins share the same namespace, it is highly recommended to prefix key names (e.g. using your plugin ID).</p>
+
+<a name="using-persistentstatecomponent" class="elem-anchor"></a>
+<h2>Using PersistentStateComponent<a href="#using-persistentstatecomponent" class="anchor-link"><span></span></a></h2>
+
+<p>The <code class="code highlight language-text">com.intellij.openapi.components.PersistentStateComponent</code> interface gives you the most flexibility for defining the values to be persisted, their format and storage location. In order to use it, you should mark a service or a component as implementing the <code class="code highlight language-text">PersistentStateComponent</code> interface, define the state class, and specify the storage location using the <code class="code highlight language-text">@com.intellij.openapi.components.State</code> annotation.</p>
+
+<p>Note that instances of extensions cannot persist their state by implementing <code class="code highlight language-text">PersistentStateComponent</code>. If your extension needs to have persistent state, you need to define a separate service responsible for managing that state.</p>
+
+<a name="implementing-the-persistentstatecomponent-interface" class="elem-anchor"></a>
+<h3>Implementing the PersistentStateComponent interface<a href="#implementing-the-persistentstatecomponent-interface" class="anchor-link"><span></span></a></h3>
+
+<p>The implementation of <code class="code highlight language-text">PersistentStateComponent</code> needs to be parameterized with the type of the state class. The state class can either be a separate JavaBean class, or the class implementing <code class="code highlight language-text">PersistentStateComponent</code> itself.</p>
+
+<p>In the former case, the instance of the state class is typically stored as a field in the <code class="code highlight language-text">PersistentStateComponent</code> class:</p>
+
+<pre><code class="code-block__wrapper code-block _highlighted lang_java"><span class="kd">class</span> <span class="nc">MyService</span> <span class="kd">implements</span> <span class="n">PersistentStateComponent</span><span class="o">&lt;</span><span class="n">MyService</span><span class="o">.</span><span class="na">State</span><span class="o">&gt;</span> <span class="o">{</span>
+  <span class="kd">class</span> <span class="nc">State</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="n">value</span><span class="o">;</span>
+  <span class="o">}</span>
+
+  <span class="n">State</span> <span class="n">myState</span><span class="o">;</span>
+
+  <span class="kd">public</span> <span class="n">State</span> <span class="nf">getState</span><span class="o">()</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="n">myState</span><span class="o">;</span>
+  <span class="o">}</span>
+
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">loadState</span><span class="o">(</span><span class="n">State</span> <span class="n">state</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">myState</span> <span class="o">=</span> <span class="n">state</span><span class="o">;</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
+
+<p>In the latter case, you can use the following pattern to implement <code class="code highlight language-text">getState()</code> and <code class="code highlight language-text">loadState()</code> methods:</p>
+
+<pre><code class="code-block__wrapper code-block _highlighted lang_java"><span class="kd">class</span> <span class="nc">MyService</span> <span class="kd">implements</span> <span class="n">PersistentStateComponent</span><span class="o">&lt;</span><span class="n">MyService</span><span class="o">&gt;</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="n">String</span> <span class="n">stateValue</span><span class="o">;</span>
+
+  <span class="kd">public</span> <span class="n">MyService</span> <span class="nf">getState</span><span class="o">()</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="k">this</span><span class="o">;</span>
+  <span class="o">}</span>
+
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">loadState</span><span class="o">(</span><span class="n">MyService</span> <span class="n">state</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">XmlSerializerUtil</span><span class="o">.</span><span class="na">copyBean</span><span class="o">(</span><span class="n">state</span><span class="o">,</span> <span class="k">this</span><span class="o">);</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
+
+<a name="implementing-the-state-class" class="elem-anchor"></a>
+<h3>Implementing the state class<a href="#implementing-the-state-class" class="anchor-link"><span></span></a></h3>
+
+<p>The implementation of <code class="code highlight language-text">PersistentStateComponent</code> works by serializing public fields, <a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/util/src/com/intellij/util/xmlb/annotations" data-bypass="yes" target="_blank"><span>annotated</span></a> private fields and bean properties into an XML format. The following types of values can be persisted:</p>
+
+<ul>
+  <li>numbers (both primitive types, such as <code class="code highlight language-text">int</code>, and boxed types, such as <code class="code highlight language-text">Integer</code>)</li>
+  <li>booleans</li>
+  <li>strings</li>
+  <li>collections</li>
+  <li>maps</li>
+  <li>enums</li>
+</ul>
+
+<p>In order to exclude a public field or bean property from serialization, you can annotate the field or getter with the <code class="code highlight language-text">@com.intellij.util.xmlb.annotations.Transient</code> annotation.</p>
+
+<p>Note that the state class must have a default constructor. It should return the default state of the component (one used if there is nothing persisted in the XML files yet).</p>
+
+<p>State class should have a <code class="code highlight language-text">equals</code> method, but if it is not implemented, state objects will be compared by fields. If you write in Kotlin, use <a href="http://kotlinlang.org/docs/reference/data-classes.html" data-bypass="yes" target="_blank"><span>Data</span></a>.</p>
+
+<a name="defining-the-storage-location" class="elem-anchor"></a>
+<h3>Defining the storage location<a href="#defining-the-storage-location" class="anchor-link"><span></span></a></h3>
+
+<p>In order to specify where exactly the persisted values will be stored, you need to add a <code class="code highlight language-text">@State</code> annotation to the <code class="code highlight language-text">PersistentStateComponent</code> class. It has the following fields:</p>
+
+<ul>
+  <li><code class="code highlight language-text">name</code> (required) - specifies the name of the state (name of the root tag in XML)</li>
+  <li>One or more of <code class="code highlight language-text">@com.intellij.openapi.components.Storage</code> annotations (required) - specify the storage locations for <code class="code highlight language-text">.ipr</code> and directory-based projects</li>
+  <li><code class="code highlight language-text">reloadable</code> (optional) - if set to false, complete project reload is required when the XML file is changed externally and the state has changed.</li>
+</ul>
+
+<p>The simplest ways of specifying the <code class="code highlight language-text">@Storage</code> annotation are as follows:</p>
+
+<ul>
+  <li><code class="code highlight language-text">@Storage(id = "other", file = StoragePathMacros.APP_CONFIG + "/yourName.xml")</code> for application level values</li>
+  <li><code class="code highlight language-text">@Storage(id = "other", file = StoragePathMacros.PROJECT_FILE)</code> for values stored in the project file (for <code class="code highlight language-text">.ipr</code> based projects)</li>
+  <li><code class="code highlight language-text">@Storage(id = "dir", file = StoragePathMacros.PROJECT_CONFIG_DIR + "/other.xml", scheme = StorageScheme.DIRECTORY_BASED)})</code> for values stored in the project directory (for directory based projects)</li>
+  <li><code class="code highlight language-text">@Storage(id = "other", file = StoragePathMacros.WORKSPACE_FILE)</code> for values stored in the workspace file</li>
+</ul>
+
+<p>The <code class="code highlight language-text">id</code> parameter of the <code class="code highlight language-text">@Storage</code> annotation can be used to exclude specific fields from serialization in specific formats. If you do not need to exclude anything, you can set the <code class="code highlight language-text">id</code> to an arbitrary string value. If you need to specify where the values are stored when the directory-based project format is used, you need to add the second <code class="code highlight language-text">@Storage</code> annotation with the scheme parameter set to <code class="code highlight language-text">StorageScheme.DIRECTORY_BASED</code>, for example:</p>
+
+<pre><code class="code-block__wrapper code-block _highlighted lang_java"><span class="nd">@State</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">"AntConfiguration"</span><span class="o">,</span>
+  <span class="n">storages</span> <span class="o">=</span> <span class="o">{</span>
+    <span class="nd">@Storage</span><span class="o">(</span><span class="n">id</span> <span class="o">=</span> <span class="s">"default"</span><span class="o">,</span> <span class="n">file</span> <span class="o">=</span> <span class="n">StoragePathMacros</span><span class="o">.</span><span class="na">PROJECT_FILE</span><span class="o">),</span>
+    <span class="nd">@Storage</span><span class="o">(</span><span class="n">id</span> <span class="o">=</span> <span class="s">"dir"</span><span class="o">,</span> <span class="n">file</span> <span class="o">=</span> <span class="n">StoragePathMacros</span><span class="o">.</span><span class="na">PROJECT_CONFIG_DIR</span> <span class="o">+</span> <span class="s">"/ant.xml"</span><span class="o">,</span> <span class="n">scheme</span> <span class="o">=</span> <span class="n">StorageScheme</span><span class="o">.</span><span class="na">DIRECTORY_BASED</span><span class="o">)</span>
+  <span class="o">}</span>
+<span class="o">)</span>
+</code></pre>
+
+<p>By specifying a different value for the <code class="code highlight language-text">file</code> parameter, you can cause the state to be persisted in a different file. For application level components strongly recommended to use custom file, using of <code class="code highlight language-text">other.xml</code> is deprecated.</p>
+
+<p>The <code class="code highlight language-text">roamingType</code> parameter of the <code class="code highlight language-text">@Storage</code> annotation specifies the roaming type when the Settings Repository plugin is used.</p>
+
+<a name="customizing-the-xml-format-of-persisted-values" class="elem-anchor"></a>
+<h2>Customizing the XML format of persisted values<a href="#customizing-the-xml-format-of-persisted-values" class="anchor-link"><span></span></a></h2>
+
+<p>Please consider to use annotation parameters only to achieve backward compatibility. Otherwise feel free to file issues about serialization cosmetics.</p>
+
+<p>If you want to use the default bean serialization but need to customize the storage format in XML (for example, for compatibility with previous versions of your plugin or externally defined XML formats), you can use the <code class="code highlight language-text">@Tag</code>, <code class="code highlight language-text">@Attribute</code>, <code class="code highlight language-text">@Property</code>, <code class="code highlight language-text">@MapAnnotation</code>, <code class="code highlight language-text">@AbstractCollection</code> annotations.</p>
+
+<p>You can look at the source code (<code class="code highlight language-text">com.intellij.util.xmlb</code> package) to get more information about the meaning of these annotations.</p>
+
+<p>If the state that you need to serialize doesn’t map cleanly to a JavaBean, you can use <code class="code highlight language-text">org.jdom.Element</code> as the state class. In that case, you can use the <code class="code highlight language-text">getState()</code> method to build an XML element with an arbitrary structure, which will then be saved directly in the state XML file. In the <code class="code highlight language-text">loadState()</code> method, you can deserialize the JDOM element tree using any custom logic. But this way is not recommended and should be avoided.</p>
+
+<a name="persistent-component-lifecycle" class="elem-anchor"></a>
+<h2>Persistent component lifecycle<a href="#persistent-component-lifecycle" class="anchor-link"><span></span></a></h2>
+
+<p>The <code class="code highlight language-text">loadState()</code> method is called after the component has been created (only if there is some non-default state persisted for the component), and after the XML file with the persisted state is changed externally (for example, if the project file was updated from the version control system). In the latter case, the component is responsible for updating the UI and other related components according to the changed state.</p>
+
+<p>The <code class="code highlight language-text">getState()</code> method is called every time the settings are saved (for example, on frame deactivation or when closing the IDE). If the state returned from <code class="code highlight language-text">getState()</code> is equal to the default state (obtained by creating the state class with a default constructor), nothing is persisted in the XML. Otherwise, the returned state is serialized in XML and stored.</p>
+
+<a name="legacy-api-jdomexternalizable" class="elem-anchor"></a>
+<h2>Legacy API (JDOMExternalizable)<a href="#legacy-api-jdomexternalizable" class="anchor-link"><span></span></a></h2>
+
+<p>Older IDEA components use the <code class="code highlight language-text">JDOMExternalizable</code> interface for persisting state. It uses the <code class="code highlight language-text">readExternal()</code> method for reading the state from a JDOM element, and <code class="code highlight language-text">writeExternal()</code> to write the state to it.</p>
+
+<p><code class="code highlight language-text">JDOMExternalizable</code> implementations can store the state in attributes and sub-elements manually, and/or use the <code class="code highlight language-text">DefaultJDOMExternalizer</code> class to store the values of all public fields automatically.</p>
+
+<p>When the component’s class implements the <code class="code highlight language-text">JDOMExternalizable</code> interface, the components save their state in the following files:</p>
+
+<ul>
+  <li>Project level components save their state to the project (<code class="code highlight language-text">.ipr</code>) file. However, if the workspace option in the <code class="code highlight language-text">plugin.xml</code> file is set to <code class="code highlight language-text">true</code>, the component saves its configuration to the workspace (<code class="code highlight language-text">.iws</code>) file instead.</li>
+  <li>Module level components save their state to the module (<code class="code highlight language-text">.iml</code>) file.</li>
+</ul>
+
+
+                    <div class="last-modified">
+                        Last modified: 21 December 2015
+                    </div>
+                </article>
+
+                <section class="disqus">
+                    <div id="disqus_thread"></div>
+                </section>
+            </div>
+        </section>
+    </main>
+</div>
+
+
+<script data-main="/intellij/sdk/docs/app/js/main.build" data-baseurl="/intellij/sdk/docs/" src="/intellij/sdk/docs/app/js/vendor/requirejs/require.js"></script>
+
+</body>
+</html>
+

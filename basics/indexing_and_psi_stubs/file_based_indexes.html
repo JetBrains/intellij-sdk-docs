@@ -1,0 +1,175 @@
+
+
+
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>File-based Indexes / IntelliJ Platform SDK  DevGuide</title>
+    <link rel="stylesheet" href="/intellij/sdk/docs/app/css/styles.min.css">
+
+    <!-- non-retina iPad pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-72x72.png" sizes="72x72">
+
+    <!-- retina iPhone pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-114x114.png" sizes="114x114">
+
+    <!-- retina iPad pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-144x144.png" sizes="144x144">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/intellij/sdk/docs/apple-touch-icon-precomposed.png">
+
+    <!-- normal favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="/intellij/sdk/docs/favicon.ico">
+    <link rel="icon" type="image/png" href="/intellij/sdk/docs/favicon.png">
+<link  rel="stylesheet" href="/intellij/sdk/docs/styles/styles.css"></head>
+<body data-id="basics/indexing_and_psi_stubs/file_based_indexes">
+<div class="wrapper">
+    <section class="panel _nav">
+        <header class="panel__header">
+            <div class="container">
+                <form class="search-box">
+                    <label for="search-box__input" class="search-box__label">
+                        <input type="text" class="search-box__input" id="search-box__input" placeholder="Search IntelliJ Platform SDK  DevGuide">
+                    </label>
+                    <div class="search-box__clear" title="Clear"></div>
+                </form>
+            </div>
+        </header>
+        <nav class="panel__content">
+            <div class="container _nav">
+                <menu class="nav-tree"></menu>
+            </div>
+            <div class="container _footer panel__footer">
+                <p><a href="https://youtrack.jetbrains.com/issues/IJSDK">Send feedback</a></p>
+                <p>&copy; 2000&ndash;2016 <a href="//www.jetbrains.com">JetBrains</a> s.r.o.<br>
+                    All rights reserved.</p>
+            </div>
+        </nav>
+    </section>
+
+    <main class="panel _main" role="main">
+        <header class="panel__header">
+            <div class="container">
+                <h3>IntelliJ Platform SDK DevGuide</h3>
+                
+        <div class="shortcuts-switcher"><label for="switch-shortcuts">Keymap:</label><select id="switch-shortcuts" class="select _shortcuts" height="1">
+            <option data-group="primary" value="default" selected>Default</option>
+            <option data-group="primary" value="default_for_gnome">GNOME</option>
+            <option data-group="primary" value="default_for_kde">KDE</option>
+            <option data-group="primary" value="default_for_xwin">XWindow</option>
+            <option data-group="primary" value="emacs">Emacs</option>
+            <option data-group="primary" value="jbuilder">JBuilder</option>
+            <option data-group="primary" value="visual_studio">Visual Studio</option>
+            <option data-group="primary" value="netbeans_6.5">NetBeans 6.5</option>
+            <option data-group="primary" value="eclipse">Eclipse</option>
+            <option data-group="secondary" value="mac_os_x_10.5_">OS X 10.5+</option>
+            <option data-group="secondary" value="mac_os_x">OS X</option>
+            <option data-group="secondary" value="eclipse_mac_os_x">OS X Eclipse</option></select>
+        </div>
+    
+                <div class="panel-trigger"></div>
+            </div>
+        </header>
+        <section class="panel__content">
+            <div class="container">
+                <article class="article" data-shortcut-switcher="false">
+
+                    <h1>File-based Indexes</h1>
+                    <p>File-based indexes are based on a Map/Reduce architecture. Each index has a certain type of key and a certain type of value.</p>
+
+<p>The key is what’s later used to retrieve data from the index.</p>
+
+<p><em>Example:</em> in the word index the key is the word itself.</p>
+
+<p>The value is arbitrary data which is associated with the key in the index.</p>
+
+<p><em>Example:</em> in the word index the value is a mask indicating in which context the word occurs (code, string literal or comment).</p>
+
+<p>In the simplest case, when we only need to know in what files some data occurs, the value has type <code class="code highlight language-text">Void</code> and is not stored in the index.</p>
+
+<p>When the index implementation indexes a file, it receives the content of a file and returns a map from the keys found in the file to the associated values.</p>
+
+<p>When you access the index, you specify the key that you’re interested in and get back the list of files in which the key occurs and the value associated with each file.</p>
+
+<a name="implementing-a-file-based-index" class="elem-anchor"></a>
+<h2>Implementing a file based index<a href="#implementing-a-file-based-index" class="anchor-link"><span></span></a></h2>
+
+<p>A fairly simple file-based index implementation is the <a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/plugins/ui-designer/src/com/intellij/uiDesigner/binding/FormClassIndex.java" data-bypass="yes" target="_blank"><span>UI Designer bound forms index</span></a>. Refer to it as an example to understand this topic better.</p>
+
+<p>Each specific index implementation is a class extending <a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/indexing-api/src/com/intellij/util/indexing/FileBasedIndexExtension.java" data-bypass="yes" target="_blank"><span>FileBasedIndexExtension</span></a>. A file based index should be registered in the <code class="code highlight language-text">&lt;fileBasedIndex&gt;</code> extension point.</p>
+
+<p>The implementation of a file based contains of the following main parts:</p>
+
+<ul>
+  <li><code class="code highlight language-text">getIndexer()</code> returns the indexer class, which is is responsible for actually building a set of key/value pairs based on the file content.</li>
+  <li>
+    <p><code class="code highlight language-text">getKeyDescriptor()</code> returns the key descriptor, which is responsible for comparing the keys and storing them in a serialized binary format.</p>
+
+    <p>Probably the most commonly used <code class="code highlight language-text">KeyDescriptor</code> implementation is <code class="code highlight language-text">EnumeratorStringDescriptor</code> which is designed for storing identifiers in an efficient way.</p>
+  </li>
+  <li><code class="code highlight language-text">getValueExternalizer()</code> returns the value serializer, which takes care of storing values in a serialized binary format.</li>
+  <li><code class="code highlight language-text">getInputFilter()</code> allows to restrict the indexing only to a certain set of files.</li>
+  <li><code class="code highlight language-text">getVersion()</code> returns the version of the index implementation. The index is automatically rebuilt if the current version differs from the version of the index implementation used to build the index.</li>
+</ul>
+
+<p>If you don’t need to associate any value with the files (i.e. your value type is Void), you can simplify the implementation by using <a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/indexing-impl/src/com/intellij/util/indexing/ScalarIndexExtension.java" data-bypass="yes" target="_blank"><span>ScalarIndexExtension</span></a> as the base class.</p>
+
+<aside class="note">
+  <p> The data returned by <code class="code highlight language-text">DataIndexer.map()</code> must depend only on input data passed to the method, and must not depend on any external files. Otherwise your index will not be correctly updated when the external data changes, and you will have stale data in your index.</p>
+</aside>
+
+<a name="accessing-a-file-based-index" class="elem-anchor"></a>
+<h2>Accessing a file based index<a href="#accessing-a-file-based-index" class="anchor-link"><span></span></a></h2>
+
+<p>Access to file based indexes is performed through the <a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/indexing-api/src/com/intellij/util/indexing/FileBasedIndex.java" data-bypass="yes" target="_blank"><span>FileBasedIndex</span></a> class.</p>
+
+<p>The following primary operations are supported:</p>
+
+<ul>
+  <li><code class="code highlight language-text">getAllKeys()</code> and <code class="code highlight language-text">processAllKeys()</code> allow to obtain the list of all keys found in files which are part of the specified project.</li>
+</ul>
+
+<aside class="note">
+  <p> The returned data is guaranteed to contain all keys found in up-to-date project content, but may also contain additional keys not currently found in the project.</p>
+</aside>
+
+<ul>
+  <li><code class="code highlight language-text">getValues()</code> allows to obtain all values associated with a specific key but not the files in which they were found.</li>
+  <li><code class="code highlight language-text">getContainingFiles()</code> allows to obtain all files in which a specific key was encountered.</li>
+  <li><code class="code highlight language-text">processValues()</code> allows to iterate though all files in which a specific key was encountered and to access the associated values at the same time.</li>
+</ul>
+
+<a name="standard-indexes" class="elem-anchor"></a>
+<h2>Standard indexes<a href="#standard-indexes" class="anchor-link"><span></span></a></h2>
+
+<p>The <em>IntelliJ Platform</em> contains a number of the standard file-based indexes. The most useful indexes for plugin developers are:</p>
+
+<ul>
+  <li>Word index</li>
+  <li>File name index</li>
+</ul>
+
+<p>Generally, the word index should be accessed indirectly, but using the helper methods in the <a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/indexing-api/src/com/intellij/psi/search/PsiSearchHelper.java" data-bypass="yes" target="_blank"><span><code class="code highlight language-text">PsiSearchHelper</code></span></a> class.</p>
+
+<p>The second index is <a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/indexing-impl/src/com/intellij/psi/search/FilenameIndex.java" data-bypass="yes" target="_blank"><span><code class="code highlight language-text">FilenameIndex</code></span></a>. It provides a quick way to find all files matching a certain file name. <a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/indexing-impl/src/com/intellij/psi/search/FileTypeIndex.java" data-bypass="yes" target="_blank"><span><code class="code highlight language-text">FileTypeIndex</code></span></a> serves a similar goal: it allows to quickly find all files of a certain file type.</p>
+
+
+                    <div class="last-modified">
+                        Last modified: 26 November 2015
+                    </div>
+                </article>
+
+                <section class="disqus">
+                    <div id="disqus_thread"></div>
+                </section>
+            </div>
+        </section>
+    </main>
+</div>
+
+
+<script data-main="/intellij/sdk/docs/app/js/main.build" data-baseurl="/intellij/sdk/docs/" src="/intellij/sdk/docs/app/js/vendor/requirejs/require.js"></script>
+
+</body>
+</html>
+

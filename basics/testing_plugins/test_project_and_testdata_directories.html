@@ -1,0 +1,129 @@
+
+
+
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Project and Testdata Directories / IntelliJ Platform SDK  DevGuide</title>
+    <link rel="stylesheet" href="/intellij/sdk/docs/app/css/styles.min.css">
+
+    <!-- non-retina iPad pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-72x72.png" sizes="72x72">
+
+    <!-- retina iPhone pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-114x114.png" sizes="114x114">
+
+    <!-- retina iPad pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-144x144.png" sizes="144x144">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/intellij/sdk/docs/apple-touch-icon-precomposed.png">
+
+    <!-- normal favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="/intellij/sdk/docs/favicon.ico">
+    <link rel="icon" type="image/png" href="/intellij/sdk/docs/favicon.png">
+<link  rel="stylesheet" href="/intellij/sdk/docs/styles/styles.css"></head>
+<body data-id="basics/testing_plugins/test_project_and_testdata_directories">
+<div class="wrapper">
+    <section class="panel _nav">
+        <header class="panel__header">
+            <div class="container">
+                <form class="search-box">
+                    <label for="search-box__input" class="search-box__label">
+                        <input type="text" class="search-box__input" id="search-box__input" placeholder="Search IntelliJ Platform SDK  DevGuide">
+                    </label>
+                    <div class="search-box__clear" title="Clear"></div>
+                </form>
+            </div>
+        </header>
+        <nav class="panel__content">
+            <div class="container _nav">
+                <menu class="nav-tree"></menu>
+            </div>
+            <div class="container _footer panel__footer">
+                <p><a href="https://youtrack.jetbrains.com/issues/IJSDK">Send feedback</a></p>
+                <p>&copy; 2000&ndash;2016 <a href="//www.jetbrains.com">JetBrains</a> s.r.o.<br>
+                    All rights reserved.</p>
+            </div>
+        </nav>
+    </section>
+
+    <main class="panel _main" role="main">
+        <header class="panel__header">
+            <div class="container">
+                <h3>IntelliJ Platform SDK DevGuide</h3>
+                
+        <div class="shortcuts-switcher"><label for="switch-shortcuts">Keymap:</label><select id="switch-shortcuts" class="select _shortcuts" height="1">
+            <option data-group="primary" value="default" selected>Default</option>
+            <option data-group="primary" value="default_for_gnome">GNOME</option>
+            <option data-group="primary" value="default_for_kde">KDE</option>
+            <option data-group="primary" value="default_for_xwin">XWindow</option>
+            <option data-group="primary" value="emacs">Emacs</option>
+            <option data-group="primary" value="jbuilder">JBuilder</option>
+            <option data-group="primary" value="visual_studio">Visual Studio</option>
+            <option data-group="primary" value="netbeans_6.5">NetBeans 6.5</option>
+            <option data-group="primary" value="eclipse">Eclipse</option>
+            <option data-group="secondary" value="mac_os_x_10.5_">OS X 10.5+</option>
+            <option data-group="secondary" value="mac_os_x">OS X</option>
+            <option data-group="secondary" value="eclipse_mac_os_x">OS X Eclipse</option></select>
+        </div>
+    
+                <div class="panel-trigger"></div>
+            </div>
+        </header>
+        <section class="panel__content">
+            <div class="container">
+                <article class="article" data-shortcut-switcher="false">
+
+                    <h1>Test Project and Testdata Directories</h1>
+                    <p>The test fixture creates a <em>test project</em> environment. Unless you customize the project creation, the test project will have one module with one source root called <code class="code highlight language-text">src</code>. The files for the test project exist either in a temporary directory or in an in-memory file system, depending on which implementation of <code class="code highlight language-text">TempDirTestFixture</code> is used.</p>
+
+<p><code class="code highlight language-text">LightPlatformCodeInsightFixtureTestCase</code> uses an in-memory implementation; if you set up the test environment by calling <code class="code highlight language-text">IdeaTestFixtureFactory.createCodeInsightFixture</code>, you can specify the implementation to use.</p>
+
+<aside class="note">
+  <p> If your tests use the in-memory implementation, and you abort the execution of your tests, the persisted filesystem caches may get out of sync with the in-memory structures, and you may get spurious errors in your tests.</p>
+
+  <p>If you get an unexpected error after a series of successful runs, <strong>try running the test again</strong>, and if that doesn’t help, <strong>delete the “system” subdirectory</strong> under the sandbox directory specified in the <em>IntelliJ Platform</em> SDK settings.</p>
+</aside>
+
+<p>In your plugin, you normally store the test data for your tests (such as files on which plugin features will be executed and expected output files) in the <code class="code highlight language-text">testdata</code> directory. This is just a directory under the content root of your plugin, but not under a source root. Files in <code class="code highlight language-text">testdata</code> are normally not valid source code and must not be compiled.</p>
+
+<p>To specify the location of <code class="code highlight language-text">testdata</code>, you must override the <code class="code highlight language-text">LightPlatformCodeInsightFixtureTestCase.getTestDataPath()</code> method. The default implementation assumes running as part of the <em>IntelliJ Platform</em> source tree and is not appropriate for third-party plugins.</p>
+
+<aside class="note">
+  <p> A very common pattern in <em>IntelliJ Platform</em> tests is to use the name of the test method being executed as the base for building the <code class="code highlight language-text">testdata</code> file paths. This allows to reuse most of the code between different test methods that test different aspects of the same feature, and this approach is also recommended for third-party plugin tests. The name of the test method can be retrieved using <code class="code highlight language-text">UsefulTestCase.getTestName()</code>.</p>
+</aside>
+
+<p>To copy files or directories from your <code class="code highlight language-text">testdata</code> directory to the test project directory, you can use the <code class="code highlight language-text">copyFileToProject()</code> and <code class="code highlight language-text">copyDirectoryToProject()</code> methods in the <code class="code highlight language-text">CodeInsightTestFixture</code> class.</p>
+
+<p>Most operations in plugin tests require a file open in the in-memory editor, in which highlighting, completion and other operations will be performed. The in-memory editor instance is returned by <code class="code highlight language-text">CodeInsightTestFixture.getEditor()</code>. To copy a file from the <code class="code highlight language-text">testdata</code> directory to the test project directory and immediately open it in the editor, you can use the <code class="code highlight language-text">CodeInsightTestFixture.configureByFile()</code> or <code class="code highlight language-text">configureByFiles()</code> methods. The latter copies multiple files to the test project directory and opens the <em>first</em> of them in the in-memory editor.</p>
+
+<p>Alternatively, you can use one of the other methods which take parameters annotated with <code class="code highlight language-text">@TestDataFile</code>. These methods copy the specified files from the <code class="code highlight language-text">testdata</code> directory to the test project directory, open the first of the specified files in the in-memory editor, and then perform the requested operation such as highlighting or code completion.</p>
+
+<p>When a file is opened in the in-memory editor, special markup in the file content can be used to specify the caret position or selection. You can use one of the following markers:</p>
+
+<ul>
+  <li><code class="code highlight language-text">&lt;caret&gt;</code> specifies the position where the caret should be placed.</li>
+  <li><code class="code highlight language-text">&lt;selection&gt;</code> and <code class="code highlight language-text">&lt;/selection&gt;</code> specify the start and end of the text range to be selected.</li>
+  <li><code class="code highlight language-text">&lt;block&gt;</code> and <code class="code highlight language-text">&lt;/block&gt;</code> specify the start and end points of the column selection.</li>
+</ul>
+
+
+                    <div class="last-modified">
+                        Last modified: 24 November 2015
+                    </div>
+                </article>
+
+                <section class="disqus">
+                    <div id="disqus_thread"></div>
+                </section>
+            </div>
+        </section>
+    </main>
+</div>
+
+
+<script data-main="/intellij/sdk/docs/app/js/main.build" data-baseurl="/intellij/sdk/docs/" src="/intellij/sdk/docs/app/js/vendor/requirejs/require.js"></script>
+
+</body>
+</html>
+

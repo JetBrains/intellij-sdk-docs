@@ -1,0 +1,296 @@
+
+
+
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>Plugin Development FAQ / IntelliJ Platform SDK  DevGuide</title>
+    <link rel="stylesheet" href="/intellij/sdk/docs/app/css/styles.min.css">
+
+    <!-- non-retina iPad pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-72x72.png" sizes="72x72">
+
+    <!-- retina iPhone pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-114x114.png" sizes="114x114">
+
+    <!-- retina iPad pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-144x144.png" sizes="144x144">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/intellij/sdk/docs/apple-touch-icon-precomposed.png">
+
+    <!-- normal favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="/intellij/sdk/docs/favicon.ico">
+    <link rel="icon" type="image/png" href="/intellij/sdk/docs/favicon.png">
+<link  rel="stylesheet" href="/intellij/sdk/docs/styles/styles.css"></head>
+<body data-id="faq">
+<div class="wrapper">
+    <section class="panel _nav">
+        <header class="panel__header">
+            <div class="container">
+                <form class="search-box">
+                    <label for="search-box__input" class="search-box__label">
+                        <input type="text" class="search-box__input" id="search-box__input" placeholder="Search IntelliJ Platform SDK  DevGuide">
+                    </label>
+                    <div class="search-box__clear" title="Clear"></div>
+                </form>
+            </div>
+        </header>
+        <nav class="panel__content">
+            <div class="container _nav">
+                <menu class="nav-tree"></menu>
+            </div>
+            <div class="container _footer panel__footer">
+                <p><a href="https://youtrack.jetbrains.com/issues/IJSDK">Send feedback</a></p>
+                <p>&copy; 2000&ndash;2016 <a href="//www.jetbrains.com">JetBrains</a> s.r.o.<br>
+                    All rights reserved.</p>
+            </div>
+        </nav>
+    </section>
+
+    <main class="panel _main" role="main">
+        <header class="panel__header">
+            <div class="container">
+                <h3>IntelliJ Platform SDK DevGuide</h3>
+                
+        <div class="shortcuts-switcher"><label for="switch-shortcuts">Keymap:</label><select id="switch-shortcuts" class="select _shortcuts" height="1">
+            <option data-group="primary" value="default" selected>Default</option>
+            <option data-group="primary" value="default_for_gnome">GNOME</option>
+            <option data-group="primary" value="default_for_kde">KDE</option>
+            <option data-group="primary" value="default_for_xwin">XWindow</option>
+            <option data-group="primary" value="emacs">Emacs</option>
+            <option data-group="primary" value="jbuilder">JBuilder</option>
+            <option data-group="primary" value="visual_studio">Visual Studio</option>
+            <option data-group="primary" value="netbeans_6.5">NetBeans 6.5</option>
+            <option data-group="primary" value="eclipse">Eclipse</option>
+            <option data-group="secondary" value="mac_os_x_10.5_">OS X 10.5+</option>
+            <option data-group="secondary" value="mac_os_x">OS X</option>
+            <option data-group="secondary" value="eclipse_mac_os_x">OS X Eclipse</option></select>
+        </div>
+    
+                <div class="panel-trigger"></div>
+            </div>
+        </header>
+        <section class="panel__content">
+            <div class="container">
+                <article class="article" data-shortcut-switcher="false">
+
+                    <h1>Plugin Development FAQ</h1>
+                    <p>This FAQ is a topical index of questions that have been asked (and answered) on our
+<a href="https://devnet.jetbrains.com/community/idea/open_api_and_plugin_development" data-bypass="yes" target="_blank"><span>OpenAPI forum</span></a>.</p>
+
+<a name="open-source-plugins" class="elem-anchor"></a>
+<h2>Open-Source Plugins<a href="#open-source-plugins" class="anchor-link"><span></span></a></h2>
+<ul>
+  <li><a href="https://devnet.jetbrains.com/thread/266848" data-bypass="yes" target="_blank"><span>How do I compile the Scala plugin?</span></a></li>
+</ul>
+
+<a name="version-differences" class="elem-anchor"></a>
+<h2>Version Differences<a href="#version-differences" class="anchor-link"><span></span></a></h2>
+<ul>
+  <li><a href="https://devnet.jetbrains.com/thread/269447" data-bypass="yes" target="_blank"><span>How do I replace my usage of Project.getProjectFile() in 7.0?</span></a></li>
+  <li><a href="https://devnet.jetbrains.com/thread/269493" data-bypass="yes" target="_blank"><span>How do I replace my usage of DataConstants with DataKeys in 7.0?</span></a></li>
+  <li><a href="https://devnet.jetbrains.com/thread/269001" data-bypass="yes" target="_blank"><span>How do I replace my usage of ToolWindowManager.registerToolWindow() in 7.0?</span></a></li>
+  <li><a href="https://devnet.jetbrains.com/thread/268094" data-bypass="yes" target="_blank"><span>How do I replace my usage of PsiSearchHelper.findReferences() in 7.0?</span></a></li>
+  <li><a href="https://devnet.jetbrains.com/thread/213530" data-bypass="yes" target="_blank"><span>How do I replace my usage of DelayedFileStatusProvider in 6.0?</span></a></li>
+</ul>
+
+<a name="action-system" class="elem-anchor"></a>
+<h2>Action System<a href="#action-system" class="anchor-link"><span></span></a></h2>
+<ul>
+  <li><a href="https://devnet.jetbrains.com/thread/268927" data-bypass="yes" target="_blank"><span>How do I trigger actions programmatically?</span></a></li>
+  <li><a href="https://devnet.jetbrains.com/thread/267076" data-bypass="yes" target="_blank"><span>How do I add a main menu item?</span></a></li>
+  <li><a href="https://devnet.jetbrains.com/thread/247161" data-bypass="yes" target="_blank"><span>How do I customize the “New…” menu?</span></a></li>
+  <li><a href="https://devnet.jetbrains.com/thread/257558" data-bypass="yes" target="_blank"><span>How do I customize the compiler output context menu?</span></a></li>
+  <li><a href="https://devnet.jetbrains.com/thread/234000" data-bypass="yes" target="_blank"><span>How do I get the context of an action (selected file, active project etc.)?</span></a></li>
+  <li><a href="https://devnet.jetbrains.com/thread/233379" data-bypass="yes" target="_blank"><span>How do I change the icon of an action dynamically?</span></a></li>
+  <li><a href="https://devnet.jetbrains.com/thread/148491" data-bypass="yes" target="_blank"><span>How do I add icons to the IDEA toolbar?</span></a></li>
+  <li><a href="https://devnet.jetbrains.com/thread/162503" data-bypass="yes" target="_blank"><span>Where do I get the list of built-in action IDs?</span></a></li>
+</ul>
+
+<a name="accessing-and-modifying-the-source-code" class="elem-anchor"></a>
+<h2>Accessing and Modifying the Source Code<a href="#accessing-and-modifying-the-source-code" class="anchor-link"><span></span></a></h2>
+<ul>
+  <li><a href="https://devnet.jetbrains.com/thread/268652" data-bypass="yes" target="_blank"><span>How do I find all subclasses of a class?</span></a></li>
+  <li><a href="https://devnet.jetbrains.com/thread/267506" data-bypass="yes" target="_blank"><span>How do I find all anonymous classes created in a class?</span></a></li>
+  <li><a href="https://devnet.jetbrains.com/thread/267171" data-bypass="yes" target="_blank"><span>How do I calculate the value of a string literal token?</span></a></li>
+  <li><a href="https://devnet.jetbrains.com/thread/268809" data-bypass="yes" target="_blank"><span>How do I rename or move a Java class?</span></a></li>
+  <li><a href="https://devnet.jetbrains.com/thread/267757" data-bypass="yes" target="_blank"><span>How do I build the list of all classes used by a given class or package?</span></a></li>
+  <li><a href="https://devnet.jetbrains.com/thread/216585" data-bypass="yes" target="_blank"><span>How do I insert whitespace into the PSI?</span></a></li>
+  <li><a href="https://devnet.jetbrains.com/thread/220800" data-bypass="yes" target="_blank"><span>How do I add properties to a .properties file?</span></a></li>
+  <li><a href="https://devnet.jetbrains.com/thread/222157" data-bypass="yes" target="_blank"><span>How do I find specific method calls inside a PsiMethod?</span></a></li>
+  <li><a href="https://devnet.jetbrains.com/thread/251579" data-bypass="yes" target="_blank"><span>What is the lifecycle of a PSI element?</span></a></li>
+  <li><a href="https://devnet.jetbrains.com/thread/124081" data-bypass="yes" target="_blank"><span>How do I find a file given its name (but no path)?</span></a></li>
+  <li><a href="https://devnet.jetbrains.com/thread/265094" data-bypass="yes" target="_blank"><span>How do I create a new class in the given package?</span></a></li>
+  <li><a href="https://devnet.jetbrains.com/thread/263617" data-bypass="yes" target="_blank"><span>How do I make a PsiClass extend another PsiClass?</span></a></li>
+  <li><a href="https://devnet.jetbrains.com/thread/143947" data-bypass="yes" target="_blank"><span>How do I find references to a class from non-Java files?</span></a></li>
+  <li><a href="https://devnet.jetbrains.com/thread/148446" data-bypass="yes" target="_blank"><span>How do I find the source file given the path to a .class file?</span></a></li>
+  <li><a href="https://devnet.jetbrains.com/thread/156040" data-bypass="yes" target="_blank"><span>How do I find classes with the specified non-qualified name?</span></a></li>
+  <li><a href="https://devnet.jetbrains.com/thread/159258" data-bypass="yes" target="_blank"><span>How do I find the module in which a class is located?</span></a></li>
+</ul>
+
+<a name="working-with-xml-and-xml-dom" class="elem-anchor"></a>
+<h2>Working with XML and XML DOM<a href="#working-with-xml-and-xml-dom" class="anchor-link"><span></span></a></h2>
+<ul>
+  <li><a href="https://devnet.jetbrains.com/thread/267398" data-bypass="yes" target="_blank"><span>How do I change the value of an XML attribute through the PSI?</span></a></li>
+  <li><a href="https://devnet.jetbrains.com/thread/196522" data-bypass="yes" target="_blank"><span>How do I add custom references to Java elements in XML files?</span></a></li>
+  <li><a href="https://devnet.jetbrains.com/thread/256637" data-bypass="yes" target="_blank"><span>How do I programmatically register a DTD or schema?</span></a></li>
+  <li><a href="https://devnet.jetbrains.com/thread/269542" data-bypass="yes" target="_blank"><span>What is the “strict” parameter in DomElement.getParentOfType()?</span></a></li>
+</ul>
+
+<a name="code-completion" class="elem-anchor"></a>
+<h2>Code Completion<a href="#code-completion" class="anchor-link"><span></span></a></h2>
+<ul>
+  <li><a href="https://devnet.jetbrains.com/thread/265400" data-bypass="yes" target="_blank"><span>How do I determine what type of code completion was invoked?</span></a></li>
+  <li><a href="https://devnet.jetbrains.com/thread/266818" data-bypass="yes" target="_blank"><span>How do I provide additional code completion in specific places of a Java file?</span></a></li>
+</ul>
+
+<a name="refactoring" class="elem-anchor"></a>
+<h2>Refactoring<a href="#refactoring" class="anchor-link"><span></span></a></h2>
+<ul>
+  <li><a href="https://devnet.jetbrains.com/thread/248923" data-bypass="yes" target="_blank"><span>How can I receive notifications about refactoring events?</span></a></li>
+  <li><a href="https://devnet.jetbrains.com/thread/162502" data-bypass="yes" target="_blank"><span>How do I show a refactoring dialog programmatically?</span></a></li>
+</ul>
+
+<a name="rundebug" class="elem-anchor"></a>
+<h2>Run/Debug<a href="#rundebug" class="anchor-link"><span></span></a></h2>
+<ul>
+  <li><a href="https://devnet.jetbrains.com/thread/251054" data-bypass="yes" target="_blank"><span>How do I implement a custom run configuration?</span></a></li>
+</ul>
+
+<a name="makecompile" class="elem-anchor"></a>
+<h2>Make/Compile<a href="#makecompile" class="anchor-link"><span></span></a></h2>
+<ul>
+  <li><a href="https://devnet.jetbrains.com/thread/146746" data-bypass="yes" target="_blank"><span>How do I get access to class files generated by javac?</span></a></li>
+</ul>
+
+<a name="version-control-integration" class="elem-anchor"></a>
+<h2>Version Control Integration<a href="#version-control-integration" class="anchor-link"><span></span></a></h2>
+<ul>
+  <li><a href="https://devnet.jetbrains.com/thread/269503" data-bypass="yes" target="_blank"><span>Can I provide line status markers for files in a custom file system?</span></a></li>
+  <li><a href="https://devnet.jetbrains.com/thread/268542" data-bypass="yes" target="_blank"><span>How do I update the state of VCS actions depending on file status?</span></a></li>
+  <li><a href="https://devnet.jetbrains.com/thread/267779" data-bypass="yes" target="_blank"><span>How can I find out the module of a deleted file?</span></a></li>
+  <li><a href="https://devnet.jetbrains.com/thread/267462" data-bypass="yes" target="_blank"><span>Can I provide additional decorations for changelists in the Changes view?</span></a></li>
+  <li><a href="https://devnet.jetbrains.com/thread/269156" data-bypass="yes" target="_blank"><span>How do I report out-of-date files?</span></a></li>
+</ul>
+
+<a name="test-framework" class="elem-anchor"></a>
+<h2>Test Framework<a href="#test-framework" class="anchor-link"><span></span></a></h2>
+<ul>
+  <li><a href="https://devnet.jetbrains.com/thread/247156" data-bypass="yes" target="_blank"><span>How can I use the new test framework?</span></a></li>
+  <li><a href="https://devnet.jetbrains.com/thread/269495" data-bypass="yes" target="_blank"><span>How do I create a library dependency in my test module?</span></a></li>
+</ul>
+
+<a name="plugin-architecture" class="elem-anchor"></a>
+<h2>Plugin Architecture<a href="#plugin-architecture" class="anchor-link"><span></span></a></h2>
+<ul>
+  <li><a href="https://devnet.jetbrains.com/thread/269517" data-bypass="yes" target="_blank"><span>Why are the extension elements in my plugin.xml red?</span></a></li>
+  <li><a href="https://devnet.jetbrains.com/thread/225115" data-bypass="yes" target="_blank"><span>How can I read the plugin descriptor of my plugin from code?</span></a></li>
+  <li><a href="https://devnet.jetbrains.com/thread/264619" data-bypass="yes" target="_blank"><span>How do I provide a custom exception reporter for my plugin?</span></a></li>
+  <li><a href="https://devnet.jetbrains.com/thread/261416" data-bypass="yes" target="_blank"><span>How can I add the help topics of my plugin to the IntelliJ Platform help system?</span></a></li>
+  <li><a href="https://devnet.jetbrains.com/thread/156440" data-bypass="yes" target="_blank"><span>How do I get the version of IntelliJ Platform under which my plugin is running?</span></a></li>
+</ul>
+
+<a name="editors-documents-and-files" class="elem-anchor"></a>
+<h2>Editors, Documents and Files<a href="#editors-documents-and-files" class="anchor-link"><span></span></a></h2>
+<ul>
+  <li><a href="https://devnet.jetbrains.com/thread/269379" data-bypass="yes" target="_blank"><span>Why doesn’t the file change on disk after I changed it through the PSI?</span></a></li>
+  <li><a href="https://devnet.jetbrains.com/thread/269246" data-bypass="yes" target="_blank"><span>Can I hook into the file save logic?</span></a></li>
+  <li><a href="https://devnet.jetbrains.com/thread/267895" data-bypass="yes" target="_blank"><span>Can I mark a part of a file as read-only?</span></a></li>
+  <li><a href="https://devnet.jetbrains.com/thread/269406" data-bypass="yes" target="_blank"><span>How do I control what happens when the user tries to edit such a part?</span></a></li>
+  <li><a href="https://devnet.jetbrains.com/thread/214836" data-bypass="yes" target="_blank"><span>How do I implement a custom editor?</span></a></li>
+  <li><a href="https://devnet.jetbrains.com/thread/256436" data-bypass="yes" target="_blank"><span>How can I show several editors for a single file in tabs?</span></a></li>
+  <li><a href="https://devnet.jetbrains.com/thread/267233" data-bypass="yes" target="_blank"><span>Can I open an editor which has no underlying file on disk?</span></a></li>
+  <li><a href="https://devnet.jetbrains.com/thread/268178" data-bypass="yes" target="_blank"><span>How do I save the content of my custom editor when the user saves all documents?</span></a></li>
+  <li><a href="https://devnet.jetbrains.com/thread/215366" data-bypass="yes" target="_blank"><span>How do I highlight elements in a source code editor?</span></a></li>
+  <li><a href="https://devnet.jetbrains.com/thread/215724" data-bypass="yes" target="_blank"><span>How do I allow to navigate between highlighted elements using Find Next?</span></a></li>
+  <li><a href="https://devnet.jetbrains.com/thread/224999" data-bypass="yes" target="_blank"><span>How do I force code to be re-analyzed?</span></a></li>
+  <li><a href="https://devnet.jetbrains.com/thread/264626" data-bypass="yes" target="_blank"><span>How do I get the active editor instance?</span></a></li>
+  <li><a href="https://devnet.jetbrains.com/thread/263035" data-bypass="yes" target="_blank"><span>How do I get the cursor position in the current editor?</span></a></li>
+  <li><a href="https://devnet.jetbrains.com/thread/260112" data-bypass="yes" target="_blank"><span>How do I clear the read-only status of a file?</span></a></li>
+  <li><a href="https://devnet.jetbrains.com/thread/138488" data-bypass="yes" target="_blank"><span>How do I show a popup hint in an editor?</span></a></li>
+  <li><a href="https://devnet.jetbrains.com/thread/158355" data-bypass="yes" target="_blank"><span>How do I create live template-like red box edit regions in an editor?</span></a></li>
+  <li><a href="https://devnet.jetbrains.com/thread/158409" data-bypass="yes" target="_blank"><span>How can I show an editor with error highlighting in a toolwindow?</span></a></li>
+</ul>
+
+<a name="inspections" class="elem-anchor"></a>
+<h2>Inspections<a href="#inspections" class="anchor-link"><span></span></a></h2>
+<ul>
+  <li><a href="https://devnet.jetbrains.com/message/5188503" data-bypass="yes" target="_blank"><span>Can I build an inspection that processes XML files?</span></a></li>
+  <li><a href="https://devnet.jetbrains.com/thread/256665" data-bypass="yes" target="_blank"><span>Why are the inspection results shown multiple times?</span></a></li>
+  <li><a href="https://devnet.jetbrains.com/thread/253735" data-bypass="yes" target="_blank"><span>How can I provide a quick fix that creates a method?</span></a></li>
+  <li><a href="https://devnet.jetbrains.com/thread/146143" data-bypass="yes" target="_blank"><span>Is it possible to inspect only the elements that have been modified after the last full inspection?</span></a></li>
+</ul>
+
+<a name="project-structure" class="elem-anchor"></a>
+<h2>Project Structure<a href="#project-structure" class="anchor-link"><span></span></a></h2>
+<ul>
+  <li><a href="https://devnet.jetbrains.com/thread/269362" data-bypass="yes" target="_blank"><span>Can I add a new module dependency storage format?</span></a></li>
+  <li><a href="https://devnet.jetbrains.com/thread/247157" data-bypass="yes" target="_blank"><span>What is the Pair to be passed to JavaModuleBuilder.setSourcePaths()?</span></a></li>
+  <li><a href="https://devnet.jetbrains.com/thread/262185" data-bypass="yes" target="_blank"><span>How do I access all configured JDKs?</span></a></li>
+</ul>
+
+<a name="custom-languages" class="elem-anchor"></a>
+<h2>Custom Languages<a href="#custom-languages" class="anchor-link"><span></span></a></h2>
+<ul>
+  <li><a href="https://devnet.jetbrains.com/thread/264574" data-bypass="yes" target="_blank"><span>How do I provide Parameter Info support for my language?</span></a></li>
+  <li><a href="https://devnet.jetbrains.com/thread/268106" data-bypass="yes" target="_blank"><span>How do I provide auto-popup code completion in my language?</span></a></li>
+  <li><a href="https://devnet.jetbrains.com/thread/213765" data-bypass="yes" target="_blank"><span>How to make a closing brace unindent?</span></a></li>
+  <li><a href="https://devnet.jetbrains.com/thread/212228" data-bypass="yes" target="_blank"><span>How to automatically insert closing quotes?</span></a></li>
+  <li><a href="https://devnet.jetbrains.com/thread/215354" data-bypass="yes" target="_blank"><span>How do I provide Ctrl+mouse popups for my language?</span></a></li>
+  <li><a href="https://devnet.jetbrains.com/thread/220451" data-bypass="yes" target="_blank"><span>How do I enable debugging for my custom language which is compiled into Java?</span></a></li>
+  <li><a href="https://devnet.jetbrains.com/thread/220280" data-bypass="yes" target="_blank"><span>How do I generate virtual Java classes mirroring the classes of my language?</span></a></li>
+</ul>
+
+<a name="user-interface" class="elem-anchor"></a>
+<h2>User Interface<a href="#user-interface" class="anchor-link"><span></span></a></h2>
+<ul>
+  <li><a href="https://devnet.jetbrains.com/thread/268421" data-bypass="yes" target="_blank"><span>How do I provide animated status bar notifications?</span></a></li>
+  <li><a href="https://devnet.jetbrains.com/thread/267558" data-bypass="yes" target="_blank"><span>How do I enable file name completion in a combobox?</span></a></li>
+  <li><a href="https://devnet.jetbrains.com/thread/269169" data-bypass="yes" target="_blank"><span>How do I show a popup with left-aligned and right-aligned parts for each item?</span></a></li>
+  <li><a href="https://devnet.jetbrains.com/thread/267280" data-bypass="yes" target="_blank"><span>Can I use an embedded Web browser from my plugin?</span></a></li>
+  <li><a href="https://devnet.jetbrains.com/thread/215468" data-bypass="yes" target="_blank"><span>How do I provide a custom icon for files/PSI elements?</span></a></li>
+  <li><a href="https://devnet.jetbrains.com/thread/245819" data-bypass="yes" target="_blank"><span>Can I show a progress indicator for WriteActions?</span></a></li>
+  <li><a href="https://devnet.jetbrains.com/thread/204909" data-bypass="yes" target="_blank"><span>How do I make it possible to search the options of my plugin in the Settings dialog?</span></a></li>
+  <li><a href="https://devnet.jetbrains.com/thread/255255" data-bypass="yes" target="_blank"><span>How do I show a custom window or popup based on Structure View?</span></a></li>
+  <li><a href="https://devnet.jetbrains.com/thread/263998" data-bypass="yes" target="_blank"><span>Is it possible to extend the Project View tree?</span></a></li>
+  <li><a href="https://devnet.jetbrains.com/thread/264241" data-bypass="yes" target="_blank"><span>How do I show the “Project Structure” dialog programmatically?</span></a></li>
+  <li><a href="https://devnet.jetbrains.com/thread/263776" data-bypass="yes" target="_blank"><span>How do I print messages in the console view?</span></a></li>
+  <li><a href="https://devnet.jetbrains.com/thread/260537" data-bypass="yes" target="_blank"><span>How do I show the package selector dialog programmatically?</span></a></li>
+  <li><a href="https://devnet.jetbrains.com/thread/150616" data-bypass="yes" target="_blank"><span>How do I provide syntax and error highlighting in a combo box editor?</span></a></li>
+  <li><a href="https://devnet.jetbrains.com/thread/153237" data-bypass="yes" target="_blank"><span>How can I get notified when my toolwindow is activated?</span></a></li>
+  <li><a href="https://devnet.jetbrains.com/thread/155452" data-bypass="yes" target="_blank"><span>How can I provide Close and Rerun buttons in my Usage View window?</span></a></li>
+</ul>
+
+<a name="general" class="elem-anchor"></a>
+<h2>General<a href="#general" class="anchor-link"><span></span></a></h2>
+<ul>
+  <li><a href="https://devnet.jetbrains.com/thread/267876" data-bypass="yes" target="_blank"><span>How do I get the currently active project outside of an AnAction?</span></a></li>
+  <li><a href="https://devnet.jetbrains.com/thread/267877" data-bypass="yes" target="_blank"><span>How do I detect when a project is closing?</span></a></li>
+  <li><a href="https://devnet.jetbrains.com/thread/252590" data-bypass="yes" target="_blank"><span>How can I implement a custom stack trace analyzer?</span></a></li>
+  <li><a href="https://devnet.jetbrains.com/thread/264364" data-bypass="yes" target="_blank"><span>Where is the state of an ApplicationComponent stored?</span></a></li>
+  <li><a href="https://devnet.jetbrains.com/thread/150233" data-bypass="yes" target="_blank"><span>How do I open a project programmatically?</span></a></li>
+  <li><a href="https://devnet.jetbrains.com/thread/156790" data-bypass="yes" target="_blank"><span>How do I get the folder of the currently selected file?</span></a></li>
+  <li><a href="https://devnet.jetbrains.com/thread/148273" data-bypass="yes" target="_blank"><span>How do I encrypt some values in the configuration data of my plugin?</span></a></li>
+  <li><a href="https://devnet.jetbrains.com/message/5527276" data-bypass="yes" target="_blank"><span>How can I track exceptions from my plugin?</span></a></li>
+</ul>
+
+
+                    <div class="last-modified">
+                        Last modified: 28 December 2015
+                    </div>
+                </article>
+
+                <section class="disqus">
+                    <div id="disqus_thread"></div>
+                </section>
+            </div>
+        </section>
+    </main>
+</div>
+
+
+<script data-main="/intellij/sdk/docs/app/js/main.build" data-baseurl="/intellij/sdk/docs/" src="/intellij/sdk/docs/app/js/vendor/requirejs/require.js"></script>
+
+</body>
+</html>
+

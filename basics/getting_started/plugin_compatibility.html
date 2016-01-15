@@ -1,0 +1,155 @@
+
+
+
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>Plugin Compatibility with IntelliJ Platform Products / IntelliJ Platform SDK  DevGuide</title>
+    <link rel="stylesheet" href="/intellij/sdk/docs/app/css/styles.min.css">
+
+    <!-- non-retina iPad pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-72x72.png" sizes="72x72">
+
+    <!-- retina iPhone pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-114x114.png" sizes="114x114">
+
+    <!-- retina iPad pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-144x144.png" sizes="144x144">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/intellij/sdk/docs/apple-touch-icon-precomposed.png">
+
+    <!-- normal favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="/intellij/sdk/docs/favicon.ico">
+    <link rel="icon" type="image/png" href="/intellij/sdk/docs/favicon.png">
+<link  rel="stylesheet" href="/intellij/sdk/docs/styles/styles.css"></head>
+<body data-id="basics/getting_started/plugin_compatibility">
+<div class="wrapper">
+    <section class="panel _nav">
+        <header class="panel__header">
+            <div class="container">
+                <form class="search-box">
+                    <label for="search-box__input" class="search-box__label">
+                        <input type="text" class="search-box__input" id="search-box__input" placeholder="Search IntelliJ Platform SDK  DevGuide">
+                    </label>
+                    <div class="search-box__clear" title="Clear"></div>
+                </form>
+            </div>
+        </header>
+        <nav class="panel__content">
+            <div class="container _nav">
+                <menu class="nav-tree"></menu>
+            </div>
+            <div class="container _footer panel__footer">
+                <p><a href="https://youtrack.jetbrains.com/issues/IJSDK">Send feedback</a></p>
+                <p>&copy; 2000&ndash;2016 <a href="//www.jetbrains.com">JetBrains</a> s.r.o.<br>
+                    All rights reserved.</p>
+            </div>
+        </nav>
+    </section>
+
+    <main class="panel _main" role="main">
+        <header class="panel__header">
+            <div class="container">
+                <h3>IntelliJ Platform SDK DevGuide</h3>
+                
+        <div class="shortcuts-switcher"><label for="switch-shortcuts">Keymap:</label><select id="switch-shortcuts" class="select _shortcuts" height="1">
+            <option data-group="primary" value="default" selected>Default</option>
+            <option data-group="primary" value="default_for_gnome">GNOME</option>
+            <option data-group="primary" value="default_for_kde">KDE</option>
+            <option data-group="primary" value="default_for_xwin">XWindow</option>
+            <option data-group="primary" value="emacs">Emacs</option>
+            <option data-group="primary" value="jbuilder">JBuilder</option>
+            <option data-group="primary" value="visual_studio">Visual Studio</option>
+            <option data-group="primary" value="netbeans_6.5">NetBeans 6.5</option>
+            <option data-group="primary" value="eclipse">Eclipse</option>
+            <option data-group="secondary" value="mac_os_x_10.5_">OS X 10.5+</option>
+            <option data-group="secondary" value="mac_os_x">OS X</option>
+            <option data-group="secondary" value="eclipse_mac_os_x">OS X Eclipse</option></select>
+        </div>
+    
+                <div class="panel-trigger"></div>
+            </div>
+        </header>
+        <section class="panel__content">
+            <div class="container">
+                <article class="article" data-shortcut-switcher="false">
+
+                    <h1>Plugin Compatibility with IntelliJ Platform Products</h1>
+                    <!--TODO link to sample_plugin file-->
+
+<p>All products based on IntelliJ Platform (IntelliJ IDEA, RubyMine, WebStorm, PhpStorm, PyCharm, AppCode, etc.) share the same underlying platform API. Thus, a plugin that does not use any Java-specific functionality may be marked as compatible with these other products in addition to IntelliJ IDEA. This is done by specifying <em>module dependencies</em> in the <code class="code highlight language-text">plugin.xml</code> file.</p>
+
+<p>A module dependency is a <code class="code highlight language-text">&lt;depends&gt;</code> tag where the contents of the tag starts with <code class="code highlight language-text">com.intellij.modules</code>.</p>
+
+<p>For example:</p>
+
+<pre><code class="code-block__wrapper code-block _highlighted lang_xml"><span class="nt">&lt;idea-plugin</span> <span class="na">version=</span><span class="s">"2"</span><span class="nt">&gt;</span>
+  ...
+  <span class="nt">&lt;depends&gt;</span>com.intellij.modules.lang<span class="nt">&lt;/depends&gt;</span>
+  ...
+<span class="nt">&lt;/idea-plugin&gt;</span>
+</code></pre>
+
+<!--TODO link to sample_plugin file-->
+
+<p>If a plugin does not include any module dependency tags in its <code class="code highlight language-text">plugin.xml</code>, it’s assumed to be a legacy plugin and is loaded only in IntelliJ IDEA.</p>
+
+<p>If the <code class="code highlight language-text">plugin.xml</code> includes one or more such tags, the plugin is loaded if the product contains all of the modules on which the plugin depends.</p>
+
+<p>The following modules are currently available in all products based on IntelliJ Platform:</p>
+
+<ul>
+  <li><code class="code highlight language-text">com.intellij.modules.platform</code></li>
+  <li><code class="code highlight language-text">com.intellij.modules.lang</code></li>
+  <li><code class="code highlight language-text">com.intellij.modules.vcs</code></li>
+  <li><code class="code highlight language-text">com.intellij.modules.xml</code></li>
+  <li><code class="code highlight language-text">com.intellij.modules.xdebugger</code></li>
+</ul>
+
+<p>The following modules are only available in specific products:</p>
+
+<ul>
+  <li><code class="code highlight language-text">com.intellij.modules.java</code> - IntelliJ IDEA</li>
+  <li><code class="code highlight language-text">com.intellij.modules.ultimate</code> - IntelliJ IDEA Ultimate Edition</li>
+  <li><code class="code highlight language-text">com.intellij.modules.ruby</code> - RubyMine</li>
+  <li><code class="code highlight language-text">com.intellij.modules.python</code> - PyCharm</li>
+  <li><code class="code highlight language-text">com.intellij.modules.appcode</code> - AppCode</li>
+  <li><code class="code highlight language-text">com.intellij.modules.clion</code> - CLion</li>
+  <li><code class="code highlight language-text">com.intellij.modules.cidr.lang</code> - AppCode, CLion</li>
+  <li><code class="code highlight language-text">com.intellij.modules.cidr.debugger</code> - AppCode, CLion, RubyMotion</li>
+  <li><code class="code highlight language-text">com.intellij.modules.androidstudio</code> - Android Studio</li>
+</ul>
+
+<p>PhpStorm does not have any modules specific to itself, but it includes the PHP plugin, which you can also use as a dependency: <code class="code highlight language-text">com.jetbrains.php</code></p>
+
+<p>You can also specify optional module dependencies. If your plugin works with all products but provides some Java-specific functionality, you can use a dependency tag like this:</p>
+
+<pre><code class="code-block__wrapper code-block _highlighted lang_xml"><span class="nt">&lt;depends</span> <span class="na">optional=</span><span class="s">"true"</span> <span class="na">config-file=</span><span class="s">"my-java-features.xml"</span><span class="nt">&gt;</span>
+	com.intellij.modules.java
+<span class="nt">&lt;/depends&gt;</span>
+</code></pre>
+
+<p>Before marking a plugin as compatible with all products, you should verify that it doesn’t use any APIs that are specific to IntelliJ IDEA. To do so, create an IntelliJ Platform SDK pointing to an installation of RubyMine, PyCharm, etc., compile your plugin against that SDK, and verify that everything compiles.</p>
+
+<p>The <a href="http://plugins.jetbrains.com/" data-bypass="yes" target="_blank"><span>IntelliJ plugin repository</span></a> automatically detects the products with which a plugin is compatible, based on the rules above, and makes it available to users of those products.</p>
+
+
+                    <div class="last-modified">
+                        Last modified: 23 November 2015
+                    </div>
+                </article>
+
+                <section class="disqus">
+                    <div id="disqus_thread"></div>
+                </section>
+            </div>
+        </section>
+    </main>
+</div>
+
+
+<script data-main="/intellij/sdk/docs/app/js/main.build" data-baseurl="/intellij/sdk/docs/" src="/intellij/sdk/docs/app/js/vendor/requirejs/require.js"></script>
+
+</body>
+</html>
+

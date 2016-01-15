@@ -1,0 +1,8 @@
+https://confluence.jetbrains.com/pages/viewpage.action?pageId=15799219
+https://confluence.jetbrains.com/download/attachments/15799219/Presentation.pdf
+
+https://confluence.jetbrains.com/display/IDEADEV/ComparisonChainGen
+https://confluence.jetbrains.com/display/IDEADEV/Diana+Plugin+Migration+Guide
+https://confluence.jetbrains.com/display/IDEADEV/Customizing+the+IDEA+Settings+Dialog
+https://confluence.jetbrains.com/display/IDEADEV/Remote+communication
+https://confluence.jetbrains.com/display/IDEADEV/Sample+Text+File+Editor

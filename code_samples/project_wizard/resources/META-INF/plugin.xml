@@ -1,0 +1,31 @@
+<idea-plugin version="2" url="www.jetbrains.com">
+  <id>org.jetbrains.tutorials.ProjectWizard</id>
+  <name>Project Wizard Demo</name>
+  <version>1.0</version>
+  <vendor email="support@jetbrains.com" url="http://www.jetbrains.com">JetBrains</vendor>
+
+  <description>Illustration of working with Project Wizard</description>
+
+  <change-notes>Initial commit</change-notes>
+
+  <!-- please see http://confluence.jetbrains.com/display/IDEADEV/Build+Number+Ranges for description -->
+  <idea-version since-build="131"/>
+  <depends>com.intellij.modules.lang</depends>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+      <moduleBuilder builderClass="org.jetbrains.tutorials.project.wizard.DemoModuleWizardStep" id="DEMO_STEP" order="first"/>
+  </extensions>
+
+  <application-components>
+    <!-- Add your application components here -->
+  </application-components>
+
+  <project-components>
+    <!-- Add your project components here -->
+  </project-components>
+
+  <actions>
+  </actions>
+
+</idea-plugin>

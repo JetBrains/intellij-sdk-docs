@@ -1,0 +1,229 @@
+
+
+
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>1. Adding Live Template Support / IntelliJ Platform SDK  DevGuide</title>
+    <link rel="stylesheet" href="/intellij/sdk/docs/app/css/styles.min.css">
+
+    <!-- non-retina iPad pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-72x72.png" sizes="72x72">
+
+    <!-- retina iPhone pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-114x114.png" sizes="114x114">
+
+    <!-- retina iPad pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-144x144.png" sizes="144x144">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/intellij/sdk/docs/apple-touch-icon-precomposed.png">
+
+    <!-- normal favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="/intellij/sdk/docs/favicon.ico">
+    <link rel="icon" type="image/png" href="/intellij/sdk/docs/favicon.png">
+<link  rel="stylesheet" href="/intellij/sdk/docs/styles/styles.css"></head>
+<body data-id="tutorials/live_templates/template_support">
+<div class="wrapper">
+    <section class="panel _nav">
+        <header class="panel__header">
+            <div class="container">
+                <form class="search-box">
+                    <label for="search-box__input" class="search-box__label">
+                        <input type="text" class="search-box__input" id="search-box__input" placeholder="Search IntelliJ Platform SDK  DevGuide">
+                    </label>
+                    <div class="search-box__clear" title="Clear"></div>
+                </form>
+            </div>
+        </header>
+        <nav class="panel__content">
+            <div class="container _nav">
+                <menu class="nav-tree"></menu>
+            </div>
+            <div class="container _footer panel__footer">
+                <p><a href="https://youtrack.jetbrains.com/issues/IJSDK">Send feedback</a></p>
+                <p>&copy; 2000&ndash;2016 <a href="//www.jetbrains.com">JetBrains</a> s.r.o.<br>
+                    All rights reserved.</p>
+            </div>
+        </nav>
+    </section>
+
+    <main class="panel _main" role="main">
+        <header class="panel__header">
+            <div class="container">
+                <h3>IntelliJ Platform SDK DevGuide</h3>
+                
+        <div class="shortcuts-switcher"><label for="switch-shortcuts">Keymap:</label><select id="switch-shortcuts" class="select _shortcuts" height="1">
+            <option data-group="primary" value="default" selected>Default</option>
+            <option data-group="primary" value="default_for_gnome">GNOME</option>
+            <option data-group="primary" value="default_for_kde">KDE</option>
+            <option data-group="primary" value="default_for_xwin">XWindow</option>
+            <option data-group="primary" value="emacs">Emacs</option>
+            <option data-group="primary" value="jbuilder">JBuilder</option>
+            <option data-group="primary" value="visual_studio">Visual Studio</option>
+            <option data-group="primary" value="netbeans_6.5">NetBeans 6.5</option>
+            <option data-group="primary" value="eclipse">Eclipse</option>
+            <option data-group="secondary" value="mac_os_x_10.5_">OS X 10.5+</option>
+            <option data-group="secondary" value="mac_os_x">OS X</option>
+            <option data-group="secondary" value="eclipse_mac_os_x">OS X Eclipse</option></select>
+        </div>
+    
+                <div class="panel-trigger"></div>
+            </div>
+        </header>
+        <section class="panel__content">
+            <div class="container">
+                <article class="article" data-shortcut-switcher="false">
+
+                    <h1>1. Adding Live Template Support</h1>
+                    <a name="template-creation" class="elem-anchor"></a>
+<h2>Template Creation<a href="#template-creation" class="anchor-link"><span></span></a></h2>
+
+<p>Initially, you will need to <a href="https://www.jetbrains.com/idea/help/creating-and-editing-live-templates.html#d1476224e158" data-bypass="yes" target="_blank"><span>create a new Live Template</span></a> from scratch. Add a new Template Group, “Markdown” and create a new Live Template under this group. Then give the template an abbreviation (ex. “[”) and a description (ex. “New markdown link”). Paste the following snippet into the <em>Template text</em>:</p>
+
+<pre><code class="code-block__wrapper code-block _highlighted lang_text">[$TEXT$]($LINK$)$END$
+</code></pre>
+
+<p>The variables <code class="code highlight language-text">$TEXT$</code> and <code class="code highlight language-text">$LINK$</code> may be further configured in the <em>Edit variables</em> dialogue, to reorder their precedence and bind to functions that will invoke auto-completion at the appropriate time, among many other <a href="https://www.jetbrains.com/idea/help/creating-and-editing-template-variables.html" data-bypass="yes" target="_blank"><span>useful functions</span></a>. Developers should become familiar with the provided functions before implementing any special functionality in a plugin, in case the desired feature is available as a <a href="https://www.jetbrains.com/idea/help/creating-and-editing-template-variables.html#predefined_functions" data-bypass="yes" target="_blank"><span>predefined function</span></a>.</p>
+
+<p>Finally, give your new Live Template an applicable context (ie. “Everywhere” or “Other”).</p>
+
+<a name="export-the-live-template" class="elem-anchor"></a>
+<h2>Export the Live Template<a href="#export-the-live-template" class="anchor-link"><span></span></a></h2>
+
+<p>Once confident the Live Template produces the expected result (consider testing it inside the current editor to minimize debugging later), export the Live Template (<strong>File | Export Settings | ☑ Live Templates</strong>). Unpack the resulting archive, and inside a directory <code class="code highlight language-text">./templates/</code> there will be a file  called <code class="code highlight language-text">Markdown.xml</code> with the following contents:</p>
+
+<pre><code class="code-block__wrapper code-block _highlighted lang_xml"><span class="nt">&lt;templateSet</span> <span class="na">group=</span><span class="s">"Markdown"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;template</span> <span class="na">name=</span><span class="s">"["</span> <span class="na">value=</span><span class="s">"[$TEXT$]($LINK$)$END$"</span> <span class="na">description=</span><span class="s">"New link reference."</span> <span class="na">toReformat=</span><span class="s">"false"</span> <span class="na">toShortenFQNames=</span><span class="s">"false"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;variable</span> <span class="na">name=</span><span class="s">"TEXT"</span> <span class="na">expression=</span><span class="s">""</span> <span class="na">defaultValue=</span><span class="s">""</span> <span class="na">alwaysStopAt=</span><span class="s">"true"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;variable</span> <span class="na">name=</span><span class="s">"LINK"</span> <span class="na">expression=</span><span class="s">"complete()"</span> <span class="na">defaultValue=</span><span class="s">""</span> <span class="na">alwaysStopAt=</span><span class="s">"true"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;context&gt;</span>
+      <span class="nt">&lt;option</span> <span class="na">name=</span><span class="s">"OTHER"</span> <span class="na">value=</span><span class="s">"true"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/context&gt;</span>
+  <span class="nt">&lt;/template&gt;</span>
+<span class="nt">&lt;/templateSet&gt;</span>
+</code></pre>
+
+<p>Copy this file into your plugin’s resources, (eg. <code class="code highlight language-text">project/resource/liveTemplates/Markdown.xml</code>.</p>
+
+<a name="implement-defaultlivetemplatesprovider" class="elem-anchor"></a>
+<h2>Implement DefaultLiveTemplatesProvider<a href="#implement-defaultlivetemplatesprovider" class="anchor-link"><span></span></a></h2>
+
+<p>The <code class="code highlight language-text">DefaultLiveTemplatesProvider</code> tells us where to find the Live Template settings file. Make sure to include the full path to the file, relative to the resources directory, excluding the file name.</p>
+
+<pre><code class="code-block__wrapper code-block _highlighted lang_java"><span class="kn">import</span> <span class="nn">com.intellij.codeInsight.template.impl.DefaultLiveTemplatesProvider</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.jetbrains.annotations.Nullable</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">MarkdownTemplateProvider</span> <span class="kd">implements</span> <span class="n">DefaultLiveTemplatesProvider</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">String</span><span class="o">[]</span> <span class="nf">getDefaultLiveTemplateFiles</span><span class="o">()</span>
+    <span class="o">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="n">String</span><span class="o">[]</span> <span class="o">{</span><span class="s">"liveTemplates/Markdown"</span><span class="o">};</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Nullable</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">String</span><span class="o">[]</span> <span class="nf">getHiddenLiveTemplateFiles</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="n">String</span><span class="o">[</span><span class="mi">0</span><span class="o">];</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+</code></pre>
+
+<a name="implement-templatecontexttype" class="elem-anchor"></a>
+<h2>Implement TemplateContextType<a href="#implement-templatecontexttype" class="anchor-link"><span></span></a></h2>
+
+<p>A <code class="code highlight language-text">TemplateContextType</code> tells us where the live template is applicible.</p>
+
+<pre><code class="code-block__wrapper code-block _highlighted lang_java"><span class="kn">import</span> <span class="nn">com.intellij.codeInsight.template.impl.DefaultLiveTemplatesProvider</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.jetbrains.annotations.Nullable</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">MarkdownTemplateProvider</span> <span class="kd">implements</span> <span class="n">DefaultLiveTemplatesProvider</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">String</span><span class="o">[]</span> <span class="nf">getDefaultLiveTemplateFiles</span><span class="o">()</span>
+    <span class="o">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="n">String</span><span class="o">[]</span> <span class="o">{</span><span class="s">"liveTemplates/Markdown"</span><span class="o">};</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Nullable</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">String</span><span class="o">[]</span> <span class="nf">getHiddenLiveTemplateFiles</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="n">String</span><span class="o">[</span><span class="mi">0</span><span class="o">];</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+</code></pre>
+
+<p>Once you define the <code class="code highlight language-text">TemplateContextType</code>, be sure to add the assigned context type to the previously created Live Template settings file. Under <code class="code highlight language-text">&lt;template&gt;...&lt;/template&gt;</code> add the following context:</p>
+
+<pre><code class="code-block__wrapper code-block _highlighted lang_xml"><span class="nt">&lt;context&gt;</span>
+  <span class="nt">&lt;option</span> <span class="na">name=</span><span class="s">"MARKDOWN"</span> <span class="na">value=</span><span class="s">true</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/context&gt;</span>
+</code></pre>
+
+<a name="register-extension-points" class="elem-anchor"></a>
+<h2>Register Extension Points<a href="#register-extension-points" class="anchor-link"><span></span></a></h2>
+
+<pre><code class="code-block__wrapper code-block _highlighted lang_xml"><span class="nt">&lt;idea-plugin</span> <span class="na">version=</span><span class="s">"2"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;id&gt;</span>live_templates<span class="nt">&lt;/id&gt;</span>
+  <span class="nt">&lt;name&gt;</span>live_templates<span class="nt">&lt;/name&gt;</span>
+  <span class="nt">&lt;version&gt;</span>1.0<span class="nt">&lt;/version&gt;</span>
+  <span class="nt">&lt;vendor</span> <span class="na">email=</span><span class="s">"support@yourcompany.com"</span> <span class="na">url=</span><span class="s">"http://www.yourcompany.com"</span><span class="nt">&gt;</span>YourCompany<span class="nt">&lt;/vendor&gt;</span>
+
+  <span class="nt">&lt;description&gt;</span><span class="cp">&lt;![CDATA[
+      Enter short description for your plugin here.&lt;br&gt;</span>
+      <span class="nt">&lt;em&gt;</span>most HTML tags may be used<span class="nt">&lt;/em&gt;</span>
+    ]]&gt;<span class="nt">&lt;/description&gt;</span>
+
+  <span class="nt">&lt;change-notes&gt;</span><span class="cp">&lt;![CDATA[
+      Add change notes here.&lt;br&gt;</span>
+      <span class="nt">&lt;em&gt;</span>most HTML tags may be used<span class="nt">&lt;/em&gt;</span>
+    ]]&gt;
+  <span class="nt">&lt;/change-notes&gt;</span>
+
+  <span class="c">&lt;!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description --&gt;</span>
+  <span class="nt">&lt;idea-version</span> <span class="na">since-build=</span><span class="s">"141.0"</span><span class="nt">/&gt;</span>
+
+  <span class="c">&lt;!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+       on how to target different products --&gt;</span>
+  <span class="c">&lt;!-- uncomment to enable plugin in all products
+  &lt;depends&gt;com.intellij.modules.lang&lt;/depends&gt;
+  --&gt;</span>
+
+  <span class="nt">&lt;extensions</span> <span class="na">defaultExtensionNs=</span><span class="s">"com.intellij"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;defaultLiveTemplatesProvider</span> <span class="na">implementation=</span><span class="s">"MarkdownTemplateProvider"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;liveTemplateContext</span> <span class="na">implementation=</span><span class="s">"MarkdownContext"</span><span class="nt">/&gt;</span>
+
+  <span class="nt">&lt;/extensions&gt;</span>
+
+  <span class="nt">&lt;actions&gt;</span>
+    <span class="c">&lt;!-- Add your actions here --&gt;</span>
+  <span class="nt">&lt;/actions&gt;</span>
+
+<span class="nt">&lt;/idea-plugin&gt;</span>
+</code></pre>
+
+<a name="check-plugin" class="elem-anchor"></a>
+<h2>Check Plugin<a href="#check-plugin" class="anchor-link"><span></span></a></h2>
+
+<p>Now check that the plugin is working correctly. Run the plugin and verify there is a new entry under <em>File | Settings | Live Templates | Markdown | [</em>. Finally, create a new file <code class="code highlight language-text">Test.md</code> and confirm that the Live Template works.</p>
+
+
+                    <div class="last-modified">
+                        Last modified: 12 January 2016
+                    </div>
+                </article>
+
+                <section class="disqus">
+                    <div id="disqus_thread"></div>
+                </section>
+            </div>
+        </section>
+    </main>
+</div>
+
+
+<script data-main="/intellij/sdk/docs/app/js/main.build" data-baseurl="/intellij/sdk/docs/" src="/intellij/sdk/docs/app/js/vendor/requirejs/require.js"></script>
+
+</body>
+</html>
+

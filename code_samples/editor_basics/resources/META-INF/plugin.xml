@@ -1,0 +1,42 @@
+<idea-plugin version="2" url="www.jetbrains.com">
+  <id>org.jetbrains.plugins.sample.EditorBasics</id>
+  <name>Editor basics</name>
+  <version>1.0</version>
+  <vendor email="support@jetbrains.com" url="http://www.jetbrains.com">JetBrains</vendor>
+
+  <description>Illustration of Editor's basics</description>
+
+  <change-notes>Initial commit</change-notes>
+
+  <!-- please see http://confluence.jetbrains.com/display/IDEADEV/Build+Number+Ranges for description -->
+  <idea-version since-build="131"/>
+  <depends>com.intellij.modules.lang</depends>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+  </extensions>
+
+  <application-components>
+    <!-- Add your application components here -->
+  </application-components>
+
+  <project-components>
+    <!-- Add your project components here -->
+  </project-components>
+
+  <actions>
+    <action id="EditorBasics.EditorIllustration" class="org.jetbrains.tutorials.editor.basics.EditorIllustration" text="Editor Basics"
+            description="Illustrates how to plug an action in">
+    <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+    </action>
+    <action id="EditorBasics.EditorHandlerIllustration" class="org.jetbrains.tutorials.editor.basics.EditorHandlerIllustration" text="Editor Handler"
+            description="Illustrates how to plug an action in">
+      <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+    </action>
+    <action id="EditorBasics.LogicalPositionIllustration" class="org.jetbrains.tutorials.editor.basics.EditorAreaIllustration" text="Caret Position"
+            description="Illustrates how editor area is organized">
+      <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+    </action>
+  </actions>
+
+</idea-plugin>

@@ -1,0 +1,188 @@
+
+
+
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>Code Formatter / IntelliJ Platform SDK  DevGuide</title>
+    <link rel="stylesheet" href="/intellij/sdk/docs/app/css/styles.min.css">
+
+    <!-- non-retina iPad pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-72x72.png" sizes="72x72">
+
+    <!-- retina iPhone pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-114x114.png" sizes="114x114">
+
+    <!-- retina iPad pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-144x144.png" sizes="144x144">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/intellij/sdk/docs/apple-touch-icon-precomposed.png">
+
+    <!-- normal favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="/intellij/sdk/docs/favicon.ico">
+    <link rel="icon" type="image/png" href="/intellij/sdk/docs/favicon.png">
+<link  rel="stylesheet" href="/intellij/sdk/docs/styles/styles.css"></head>
+<body data-id="reference_guide/custom_language_support/code_formatting">
+<div class="wrapper">
+    <section class="panel _nav">
+        <header class="panel__header">
+            <div class="container">
+                <form class="search-box">
+                    <label for="search-box__input" class="search-box__label">
+                        <input type="text" class="search-box__input" id="search-box__input" placeholder="Search IntelliJ Platform SDK  DevGuide">
+                    </label>
+                    <div class="search-box__clear" title="Clear"></div>
+                </form>
+            </div>
+        </header>
+        <nav class="panel__content">
+            <div class="container _nav">
+                <menu class="nav-tree"></menu>
+            </div>
+            <div class="container _footer panel__footer">
+                <p><a href="https://youtrack.jetbrains.com/issues/IJSDK">Send feedback</a></p>
+                <p>&copy; 2000&ndash;2016 <a href="//www.jetbrains.com">JetBrains</a> s.r.o.<br>
+                    All rights reserved.</p>
+            </div>
+        </nav>
+    </section>
+
+    <main class="panel _main" role="main">
+        <header class="panel__header">
+            <div class="container">
+                <h3>IntelliJ Platform SDK DevGuide</h3>
+                
+        <div class="shortcuts-switcher"><label for="switch-shortcuts">Keymap:</label><select id="switch-shortcuts" class="select _shortcuts" height="1">
+            <option data-group="primary" value="default" selected>Default</option>
+            <option data-group="primary" value="default_for_gnome">GNOME</option>
+            <option data-group="primary" value="default_for_kde">KDE</option>
+            <option data-group="primary" value="default_for_xwin">XWindow</option>
+            <option data-group="primary" value="emacs">Emacs</option>
+            <option data-group="primary" value="jbuilder">JBuilder</option>
+            <option data-group="primary" value="visual_studio">Visual Studio</option>
+            <option data-group="primary" value="netbeans_6.5">NetBeans 6.5</option>
+            <option data-group="primary" value="eclipse">Eclipse</option>
+            <option data-group="secondary" value="mac_os_x_10.5_">OS X 10.5+</option>
+            <option data-group="secondary" value="mac_os_x">OS X</option>
+            <option data-group="secondary" value="eclipse_mac_os_x">OS X Eclipse</option></select>
+        </div>
+    
+                <div class="panel-trigger"></div>
+            </div>
+        </header>
+        <section class="panel__content">
+            <div class="container">
+                <article class="article" data-shortcut-switcher="false">
+
+                    <h1>Code Formatter</h1>
+                    <p>The IntelliJ Platform includes a powerful framework for implementing custom language formatters.
+In this framework, the plugin specifies the <em>constraints</em> on the spacing between different syntax elements, and the formatting engine, provided by the IDE, calculates the smallest number of whitespace modifications that need to be performed on the file to make it match the constraints.</p>
+
+<p>The process of formatting a file or a file fragment consists of the following main steps:</p>
+
+<ul>
+  <li>
+    <p>The <em>formatting model builder</em> (
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/formatting/FormattingModelBuilder.java" data-bypass="yes" target="_blank"><span>FormattingModelBuilder</span></a>
+), implemented by the plugin, provides a formatting model (
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/formatting/FormattingModel.java" data-bypass="yes" target="_blank"><span>FormattingModel</span></a>
+) for the document to be formatted</p>
+  </li>
+  <li>
+    <p>The formatting model is requested to build the structure of the file as applies to formatting, as a tree of <em>blocks</em> (
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/formatting/Block.java" data-bypass="yes" target="_blank"><span>Block</span></a>
+) with associated indent, wrap, alignment and spacing settings.</p>
+  </li>
+  <li>
+    <p>The formatting engine calculates the sequence of whitespace characters (spaces, tabs and/or line breaks) that needs to be placed at every block boundary, based on the formatting model provided by the plugin.</p>
+  </li>
+  <li>
+    <p>The formatting model is requested to insert the calculated whitespace characters at necessary positions in the file.</p>
+  </li>
+</ul>
+
+<p>The structure of blocks is usually built in such a way that it mirrors the PSI structure of the file - for example, in Java code, the top-level formatting block covers the entire file, its children cover individual classes in the file, blocks on the next level cover methods inside classes, and so on. The formatter modifies only the characters between blocks, and the tree of blocks must be built in such a way that the bottom-level blocks cover all non-whitespace characters in the file: otherwise the characters between blocks may be deleted by the formatter.</p>
+
+<p>If the formatting operation does not affect the entire file (for example, if the formatter is called to format the pasted block of text), a complete tree of blocks is not built - rather, only blocks for the text range covered by the formatting operation and their parents are built.</p>
+
+<p>For every block, the plugin specifies the following properties:</p>
+
+<ul>
+  <li>
+    <p>The <em>spacing</em> (
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/formatting/Spacing.java" data-bypass="yes" target="_blank"><span>Spacing</span></a>
+) specifies what spaces or line breaks are inserted between the specified children of the block.
+The spacing object specifies the minimum and maximum number of spaces that must be placed between the specified child blocks, the minimum number of line breaks to place there, and whether the existing line breaks and blank lines should be preserved.
+The formatting model can also specify that the spacing between the specified blocks may not be modified by the formatter.</p>
+  </li>
+  <li>
+    <p>The <em>indent</em> specifies how the block is indented relative to its parent block.
+There are different modes of indenting defined by factory methods in the Indent class.
+The most commonly used are the none indent (which means the child block is not indented), the regular indent (the child block is indented by the number of spaces specified in the <strong>Project Code Style | General | Indent</strong> setting) and the continuation indent (based on <strong>Project Code Style | General | Continuation Indent</strong> setting).
+If the formatting model does not specify an indent, the “continuation without first” mode is used, which means that the first block in a sequence of blocks with that type is not indented and the following blocks are indented with a continuation indent.</p>
+  </li>
+  <li>
+    <p>The <em>wrap</em> (
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/formatting/Wrap.java" data-bypass="yes" target="_blank"><span>Wrap</span></a>
+) specifies whether the content of the block is wrapped to the next line.
+Wrapping is performed by inserting a line break before the block content.
+The plugin can specify that a particular block is never wrapped, always wrapped, or wrapped only if it exceeds the right margin.</p>
+  </li>
+  <li>
+    <p>The <em>alignment</em> (
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/formatting/Alignment.java" data-bypass="yes" target="_blank"><span>Alignment</span></a>
+) specifies which blocks should be aligned with each other.
+If two blocks with the alignment property set to the same object instance are placed in different lines, and if the second block is the first non-whitespace block in its line, the formatter inserts white spaces before the second block so that it starts from the same column as the first one.</p>
+  </li>
+</ul>
+
+<p>For each of these properties, a number of special use settings exists, which are described in the JavaDoc comments for the respective classes.
+See also
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/formatting/SpacingBuilder.java" data-bypass="yes" target="_blank"><span>SpacingBuilder</span></a>
+which aids in building rule-based configuration.</p>
+
+<p>An important special case in using the formatter is the smart indent performed when the user presses the <code class="code highlight language-text">Enter</code> key in a source code file.
+To determine the indent for the new line, the formatter engine calls the method <code class="code highlight language-text">getChildAttributes()</code> on either the block immediately before the caret or the parent of that block, depending on the return value of the <code class="code highlight language-text">isIncomplete()</code> method for the block before the caret.
+If the block before the cursor is incomplete (contains elements that the user will probably type but has not yet typed, like a closing parenthesis of the parameter list or the trailing semicolon of a statement), <code class="code highlight language-text">getChildAttributes()</code> is called on the block before the caret; otherwise, it’s called on the parent block.</p>
+
+<p><strong>New in IntelliJ IDEA 13</strong>:
+Code formatting can be suppressed per region via <a href="http://youtrack.jetbrains.com/issue/IDEA-56995#comment=27-605969" data-bypass="yes" target="_blank"><span>special comments</span></a>.</p>
+
+<a name="code-style-settings" class="elem-anchor"></a>
+<h3>Code Style Settings<a href="#code-style-settings" class="anchor-link"><span></span></a></h3>
+
+<p>To specify the default indent size for the language provided by your plugin, and to allow the user to configure the tab size and indent size you need to implement the
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/psi/codeStyle/FileTypeIndentOptionsProvider.java" data-bypass="yes" target="_blank"><span>FileTypeIndentOptionsProvider</span></a>
+interface and to register the implementation in the <code class="code highlight language-text">fileTypeIndentOptionsProvider</code> extension point.
+The return value of <code class="code highlight language-text">createIndentOptions()</code> determines the default indent size.</p>
+
+<a name="rearranger" class="elem-anchor"></a>
+<h3>Rearranger<a href="#rearranger" class="anchor-link"><span></span></a></h3>
+
+<p><strong>New in IntelliJ IDEA 12:</strong>
+Allows custom languages to provide user-configurable arrangement/grouping rules for element types supported by language plugin.
+Rules can be refined via modifiers and name, ordering can be applied additionally.
+Please see
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/psi/codeStyle/arrangement/Rearranger.java" data-bypass="yes" target="_blank"><span>Rearranger</span></a>
+and related for JavaDoc.</p>
+
+
+                    <div class="last-modified">
+                        Last modified: 26 November 2015
+                    </div>
+                </article>
+
+                <section class="disqus">
+                    <div id="disqus_thread"></div>
+                </section>
+            </div>
+        </section>
+    </main>
+</div>
+
+
+<script data-main="/intellij/sdk/docs/app/js/main.build" data-baseurl="/intellij/sdk/docs/" src="/intellij/sdk/docs/app/js/vendor/requirejs/require.js"></script>
+
+</body>
+</html>
+

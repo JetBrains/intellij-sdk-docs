@@ -1,0 +1,157 @@
+
+
+
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>IntelliJ Coding Guidelines / IntelliJ Platform SDK  DevGuide</title>
+    <link rel="stylesheet" href="/intellij/sdk/docs/app/css/styles.min.css">
+
+    <!-- non-retina iPad pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-72x72.png" sizes="72x72">
+
+    <!-- retina iPhone pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-114x114.png" sizes="114x114">
+
+    <!-- retina iPad pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-144x144.png" sizes="144x144">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/intellij/sdk/docs/apple-touch-icon-precomposed.png">
+
+    <!-- normal favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="/intellij/sdk/docs/favicon.ico">
+    <link rel="icon" type="image/png" href="/intellij/sdk/docs/favicon.png">
+<link  rel="stylesheet" href="/intellij/sdk/docs/styles/styles.css"></head>
+<body data-id="basics/intellij_coding_guidelines">
+<div class="wrapper">
+    <section class="panel _nav">
+        <header class="panel__header">
+            <div class="container">
+                <form class="search-box">
+                    <label for="search-box__input" class="search-box__label">
+                        <input type="text" class="search-box__input" id="search-box__input" placeholder="Search IntelliJ Platform SDK  DevGuide">
+                    </label>
+                    <div class="search-box__clear" title="Clear"></div>
+                </form>
+            </div>
+        </header>
+        <nav class="panel__content">
+            <div class="container _nav">
+                <menu class="nav-tree"></menu>
+            </div>
+            <div class="container _footer panel__footer">
+                <p><a href="https://youtrack.jetbrains.com/issues/IJSDK">Send feedback</a></p>
+                <p>&copy; 2000&ndash;2016 <a href="//www.jetbrains.com">JetBrains</a> s.r.o.<br>
+                    All rights reserved.</p>
+            </div>
+        </nav>
+    </section>
+
+    <main class="panel _main" role="main">
+        <header class="panel__header">
+            <div class="container">
+                <h3>IntelliJ Platform SDK DevGuide</h3>
+                
+        <div class="shortcuts-switcher"><label for="switch-shortcuts">Keymap:</label><select id="switch-shortcuts" class="select _shortcuts" height="1">
+            <option data-group="primary" value="default" selected>Default</option>
+            <option data-group="primary" value="default_for_gnome">GNOME</option>
+            <option data-group="primary" value="default_for_kde">KDE</option>
+            <option data-group="primary" value="default_for_xwin">XWindow</option>
+            <option data-group="primary" value="emacs">Emacs</option>
+            <option data-group="primary" value="jbuilder">JBuilder</option>
+            <option data-group="primary" value="visual_studio">Visual Studio</option>
+            <option data-group="primary" value="netbeans_6.5">NetBeans 6.5</option>
+            <option data-group="primary" value="eclipse">Eclipse</option>
+            <option data-group="secondary" value="mac_os_x_10.5_">OS X 10.5+</option>
+            <option data-group="secondary" value="mac_os_x">OS X</option>
+            <option data-group="secondary" value="eclipse_mac_os_x">OS X Eclipse</option></select>
+        </div>
+    
+                <div class="panel-trigger"></div>
+            </div>
+        </header>
+        <section class="panel__content">
+            <div class="container">
+                <article class="article" data-shortcut-switcher="false">
+
+                    <h1>IntelliJ Coding Guidelines</h1>
+                    <p>If you are writing code that you would like to contribute to the IntelliJ Platform (either as a patch or as a plugin), following these guidelines will make it easier for the JetBrains development team to review and accept your changes.</p>
+
+<a name="following-the-latest-source-code" class="elem-anchor"></a>
+<h4>Following the Latest Source Code</h4>
+
+<p>If you submit patches, we strongly recommend building your patches against the latest version of the code from the Git repository. The easiest way to do so is to clone the JetBrains Git repository, track your work in Git, and create patches using the “git format-patch” command.</p>
+
+<a name="general-architectural-principles" class="elem-anchor"></a>
+<h4>General Architectural Principles</h4>
+
+<p>Please do your best to follow common Java architectural principles. “Effective Java” by Joshua Bloch is a good place to start.</p>
+
+<a name="tests" class="elem-anchor"></a>
+<h4>Tests</h4>
+
+<p>Most of the existing functionality of IntelliJ IDEA is covered by functional tests. If the area you’re modifying is covered by tests, you must run the tests and make sure that your changes do not introduce any new test failures. It’s also strongly recommended that you provide new functional tests that cover the bugs you fix or the new features that you add.</p>
+
+<a name="code-formatting" class="elem-anchor"></a>
+<h4>Code Formatting</h4>
+
+<p>We’re generally pretty lax about code formatting, but at least the following conventions must be observed:</p>
+
+<ul>
+  <li>2 space indents in source files</li>
+  <li><strong>my</strong> prefix for instance variables and <strong>our</strong> prefix for class variables</li>
+  <li>new source code files must include a copyright statement with the Apache 2 license and the name of the contributor.</li>
+</ul>
+
+<p>The easiest way to follow our code formatting guidelines is to reformat your code submissions using the shared code style, which is included in the IntelliJ IDEA Community Edition project directory.</p>
+
+<a name="inspections" class="elem-anchor"></a>
+<h4>Inspections</h4>
+
+<p>The IntelliJ IDEA Community Edition project includes a shared inspection profile. We strongly recommend making sure that the code you submit does not contain any warnings highlighted by the inspections configured in that inspection profile.</p>
+
+<a name="javadoc-comments" class="elem-anchor"></a>
+<h4>JavaDoc Comments</h4>
+
+<p>If your code adds new OpenAPI interfaces, classes, methods or extension points, you must provide JavaDoc comments describing the parameters and intended usage of the APIs. Providing JavaDoc or other comments for other parts of the code is a good idea but isn’t required.</p>
+
+<a name="commits" class="elem-anchor"></a>
+<h4>Commits</h4>
+
+<p>To avoid unnecessary work when reviewing your changes, please follow these guidelines:</p>
+
+<ul>
+  <li>Look through all of your changes in your patch or pull request before you submit it to us. Make sure that everything you’ve changed is there for a reason.</li>
+  <li>Please don’t include unfinished work to the patch. Make sure that it doesn’t include any TODO comments. If you added some code and ended up not needing it, please make sure that you delete it before you submit your patch.</li>
+  <li>Please don’t include any changes that affect formatting, fixing “yellow code” (warnings) or code style along with actual changes that fix a bug or implement a feature. No one likes to leave poor code, but remember that having these changes mixed with each other complicates the process of review.</li>
+  <li>Please don’t fix multiple problems within a single patch or pull request.</li>
+  <li>Please don’t commit your personal changes to configuration files (runConfigurations/IDEA.xml, codeStyleSettings.xml, misc.xml, etc.) unless it is essential for the fix itself.</li>
+  <li>Please avoid moving or renaming classes unless it is necessary for the fix.</li>
+</ul>
+
+<p>The ideal pull request would contain 1 commit with everything needed to fix the bug or implement a feature, but nothing else. “Commit early, commit often” perfectly applies only to local commits, but such “public commits” are hard to review (the reviewer needs either to go commit by commit spending more time to review work-in-progress, or to review all changes at once thus losing valuable information stored in commit messages).</p>
+
+<p>The best would be to commit early, but then to squash all commits into one with a descriptive commit message.</p>
+
+<p>Sometimes several commits for a single issue are also acceptable, but each of these need to be self-contained “steps” to solve the problem.</p>
+
+
+                    <div class="last-modified">
+                        Last modified: 7 January 2016
+                    </div>
+                </article>
+
+                <section class="disqus">
+                    <div id="disqus_thread"></div>
+                </section>
+            </div>
+        </section>
+    </main>
+</div>
+
+
+<script data-main="/intellij/sdk/docs/app/js/main.build" data-baseurl="/intellij/sdk/docs/" src="/intellij/sdk/docs/app/js/vendor/requirejs/require.js"></script>
+
+</body>
+</html>
+

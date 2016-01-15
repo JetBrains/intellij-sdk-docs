@@ -1,0 +1,188 @@
+
+
+
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>Find Usages / IntelliJ Platform SDK  DevGuide</title>
+    <link rel="stylesheet" href="/intellij/sdk/docs/app/css/styles.min.css">
+
+    <!-- non-retina iPad pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-72x72.png" sizes="72x72">
+
+    <!-- retina iPhone pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-114x114.png" sizes="114x114">
+
+    <!-- retina iPad pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-144x144.png" sizes="144x144">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/intellij/sdk/docs/apple-touch-icon-precomposed.png">
+
+    <!-- normal favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="/intellij/sdk/docs/favicon.ico">
+    <link rel="icon" type="image/png" href="/intellij/sdk/docs/favicon.png">
+<link  rel="stylesheet" href="/intellij/sdk/docs/styles/styles.css"></head>
+<body data-id="reference_guide/custom_language_support/find_usages">
+<div class="wrapper">
+    <section class="panel _nav">
+        <header class="panel__header">
+            <div class="container">
+                <form class="search-box">
+                    <label for="search-box__input" class="search-box__label">
+                        <input type="text" class="search-box__input" id="search-box__input" placeholder="Search IntelliJ Platform SDK  DevGuide">
+                    </label>
+                    <div class="search-box__clear" title="Clear"></div>
+                </form>
+            </div>
+        </header>
+        <nav class="panel__content">
+            <div class="container _nav">
+                <menu class="nav-tree"></menu>
+            </div>
+            <div class="container _footer panel__footer">
+                <p><a href="https://youtrack.jetbrains.com/issues/IJSDK">Send feedback</a></p>
+                <p>&copy; 2000&ndash;2016 <a href="//www.jetbrains.com">JetBrains</a> s.r.o.<br>
+                    All rights reserved.</p>
+            </div>
+        </nav>
+    </section>
+
+    <main class="panel _main" role="main">
+        <header class="panel__header">
+            <div class="container">
+                <h3>IntelliJ Platform SDK DevGuide</h3>
+                
+        <div class="shortcuts-switcher"><label for="switch-shortcuts">Keymap:</label><select id="switch-shortcuts" class="select _shortcuts" height="1">
+            <option data-group="primary" value="default" selected>Default</option>
+            <option data-group="primary" value="default_for_gnome">GNOME</option>
+            <option data-group="primary" value="default_for_kde">KDE</option>
+            <option data-group="primary" value="default_for_xwin">XWindow</option>
+            <option data-group="primary" value="emacs">Emacs</option>
+            <option data-group="primary" value="jbuilder">JBuilder</option>
+            <option data-group="primary" value="visual_studio">Visual Studio</option>
+            <option data-group="primary" value="netbeans_6.5">NetBeans 6.5</option>
+            <option data-group="primary" value="eclipse">Eclipse</option>
+            <option data-group="secondary" value="mac_os_x_10.5_">OS X 10.5+</option>
+            <option data-group="secondary" value="mac_os_x">OS X</option>
+            <option data-group="secondary" value="eclipse_mac_os_x">OS X Eclipse</option></select>
+        </div>
+    
+                <div class="panel-trigger"></div>
+            </div>
+        </header>
+        <section class="panel__content">
+            <div class="container">
+                <article class="article" data-shortcut-switcher="false">
+
+                    <h1>Find Usages</h1>
+                    <p>The <code class="code highlight language-text">Find Usages</code> action is a multi-step process, and each step of the process requires involvement from the custom language plugin.
+The language plugin participates in the Find Usages process by registering an implementation of
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/indexing-api/src/com/intellij/lang/findUsages/FindUsagesProvider.java" data-bypass="yes" target="_blank"><span>FindUsagesProvider</span></a>
+in the <code class="code highlight language-text">com.intellij.lang.findUsagesProvider</code> extension point, and through the PSI implementation using
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/core-api/src/com/intellij/psi/PsiNamedElement.java" data-bypass="yes" target="_blank"><span>PsiNamedElement</span></a>
+and
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/core-api/src/com/intellij/psi/PsiReference.java" data-bypass="yes" target="_blank"><span>PsiReference</span></a>
+interfaces.</p>
+
+<p><strong>Example</strong>:
+Implementation of
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/findUsages/PropertiesFindUsagesProvider.java" data-bypass="yes" target="_blank"><span>FindUsagesProvider</span></a>
+in
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/plugins/properties/" data-bypass="yes" target="_blank"><span>Properties language plugin</span></a></p>
+
+<p>The steps of the <code class="code highlight language-text">Find Usages</code> action are the following:</p>
+
+<ul>
+  <li>
+    <p>Before the <code class="code highlight language-text">Find Usages</code> action can be invoked, the IDE builds an index of words present in every file in the custom language.
+Using the
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/indexing-api/src/com/intellij/lang/cacheBuilder/WordsScanner.java" data-bypass="yes" target="_blank"><span>WordsScanner</span></a>
+implementation returned from
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/indexing-api/src/com/intellij/lang/findUsages/FindUsagesProvider.java" data-bypass="yes" target="_blank"><span>FindUsagesProvider.getWordsScanner()</span></a>,
+the contents of every file are loaded and passes it to the words scanner, along with the words consumer.
+The words scanner breaks the text into words, defines the context for each word (code, comments or literals) and passes the word to the consumer.
+The simplest way to implement the words scanner is to use the
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/indexing-api/src/com/intellij/lang/cacheBuilder/DefaultWordsScanner.java" data-bypass="yes" target="_blank"><span>DefaultWordsScanner</span></a>
+implementation, passing to it the sets of lexer token types which are treated as identifiers, literals and comments.
+The default words scanner will use the lexer to break the text into tokens, and will handle breaking the text of comment and literal tokens into individual words.</p>
+  </li>
+  <li>
+    <p>When the user invokes the Find Usages action, the IDE locates the PSI element the references to which will be searched.
+The PSI element at the cursor (the direct tree parent of the token at the cursor position) must be either a
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/core-api/src/com/intellij/psi/PsiNamedElement.java" data-bypass="yes" target="_blank"><span>PsiNamedElement</span></a>
+or a
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/core-api/src/com/intellij/psi/PsiReference.java" data-bypass="yes" target="_blank"><span>PsiReference</span></a>
+which resolves to a
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/core-api/src/com/intellij/psi/PsiNamedElement.java" data-bypass="yes" target="_blank"><span>PsiNamedElement</span></a>.
+The word cache will be used to search for the text returned from the
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/core-api/src/com/intellij/psi/PsiNamedElement.java" data-bypass="yes" target="_blank"><span>PsiNamedElement.getName()</span></a>
+method.
+Also, if the text range of the
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/core-api/src/com/intellij/psi/PsiNamedElement.java" data-bypass="yes" target="_blank"><span>PsiNamedElement</span></a>
+includes some other text besides the identifier returned from <code class="code highlight language-text">getName()</code> (for example, if the
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/core-api/src/com/intellij/psi/PsiNamedElement.java" data-bypass="yes" target="_blank"><span>PsiNamedElement</span></a>
+represents a JavaScript function and its text range includes the “<code class="code highlight language-text">function</code>” keyword in addition to the name of the function), the method <code class="code highlight language-text">getTextOffset()</code> must be overridden for the
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/core-api/src/com/intellij/psi/PsiNamedElement.java" data-bypass="yes" target="_blank"><span>PsiNamedElement</span></a>,
+and must return the start offset of the name identifier within the text range of the element.</p>
+  </li>
+  <li>
+    <p>Once the element is located, the IDE calls
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/indexing-api/src/com/intellij/lang/findUsages/FindUsagesProvider.java" data-bypass="yes" target="_blank"><span>FindUsagesProvider.canFindUsagesFor()</span></a>
+to ask the plugin if the Find Usages action is applicable to the specific element.</p>
+  </li>
+  <li>
+    <p>When showing the Find Usages dialog to the user,
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/indexing-api/src/com/intellij/lang/findUsages/FindUsagesProvider.java" data-bypass="yes" target="_blank"><span>FindUsagesProvider.getType()</span></a>
+and
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/indexing-api/src/com/intellij/lang/findUsages/FindUsagesProvider.java" data-bypass="yes" target="_blank"><span>FindUsagesProvider.getDescriptiveName()</span></a>
+are called to determine how the element should be presented to the user.</p>
+  </li>
+  <li>
+    <p>For every file containing the searched words, the IDE builds the PSI tree and recursively descends that tree.
+The text of each element is broken into words and then scanned.
+If the element was indexed as an identifier, every word is checked to be a
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/core-api/src/com/intellij/psi/PsiReference.java" data-bypass="yes" target="_blank"><span>PsiReference</span></a>
+resolving to the element the usages of which are searched.
+If the element was indexed as a comment or literal and the search in comments or literals is enabled, it checks if the word is equal to the name of the searched element.</p>
+  </li>
+  <li>
+    <p>After the usages are collected, results are shown in the usages pane.
+The text shown for each found element is taken from the
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/indexing-api/src/com/intellij/lang/findUsages/FindUsagesProvider.java" data-bypass="yes" target="_blank"><span>FindUsagesProvider.getNodeText()</span></a>
+method.</p>
+  </li>
+</ul>
+
+<p>To have the title of the found element be correctly displayed in the title of the Find Usages toolwindow, you need to provide an implementation of the
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/core-api/src/com/intellij/psi/ElementDescriptionProvider.java" data-bypass="yes" target="_blank"><span>ElementDescriptionProvider</span></a>
+interface.
+The
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/core-api/src/com/intellij/psi/ElementDescriptionLocation.java" data-bypass="yes" target="_blank"><span>ElementDescriptionLocation</span></a>
+passed to the provider in this case will be an instance of
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-impl/src/com/intellij/usageView/UsageViewLongNameLocation.java" data-bypass="yes" target="_blank"><span>UsageViewLongNameLocation</span></a>.</p>
+
+<p><strong>Example:</strong>
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/plugins/properties/src/com/intellij/lang/properties/PropertiesDescriptionProvider.java" data-bypass="yes" target="_blank"><span>ElementDescriptionProvider</span></a>
+for
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/plugins/properties/" data-bypass="yes" target="_blank"><span>Properties language plugin</span></a></p>
+
+
+                    <div class="last-modified">
+                        Last modified: 21 December 2015
+                    </div>
+                </article>
+
+                <section class="disqus">
+                    <div id="disqus_thread"></div>
+                </section>
+            </div>
+        </section>
+    </main>
+</div>
+
+
+<script data-main="/intellij/sdk/docs/app/js/main.build" data-baseurl="/intellij/sdk/docs/" src="/intellij/sdk/docs/app/js/vendor/requirejs/require.js"></script>
+
+</body>
+</html>
+

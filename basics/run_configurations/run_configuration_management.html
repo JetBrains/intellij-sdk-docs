@@ -1,0 +1,205 @@
+
+
+
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>Run Configuration Management / IntelliJ Platform SDK  DevGuide</title>
+    <link rel="stylesheet" href="/intellij/sdk/docs/app/css/styles.min.css">
+
+    <!-- non-retina iPad pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-72x72.png" sizes="72x72">
+
+    <!-- retina iPhone pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-114x114.png" sizes="114x114">
+
+    <!-- retina iPad pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-144x144.png" sizes="144x144">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/intellij/sdk/docs/apple-touch-icon-precomposed.png">
+
+    <!-- normal favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="/intellij/sdk/docs/favicon.ico">
+    <link rel="icon" type="image/png" href="/intellij/sdk/docs/favicon.png">
+<link  rel="stylesheet" href="/intellij/sdk/docs/styles/styles.css"></head>
+<body data-id="basics/run_configurations/run_configuration_management">
+<div class="wrapper">
+    <section class="panel _nav">
+        <header class="panel__header">
+            <div class="container">
+                <form class="search-box">
+                    <label for="search-box__input" class="search-box__label">
+                        <input type="text" class="search-box__input" id="search-box__input" placeholder="Search IntelliJ Platform SDK  DevGuide">
+                    </label>
+                    <div class="search-box__clear" title="Clear"></div>
+                </form>
+            </div>
+        </header>
+        <nav class="panel__content">
+            <div class="container _nav">
+                <menu class="nav-tree"></menu>
+            </div>
+            <div class="container _footer panel__footer">
+                <p><a href="https://youtrack.jetbrains.com/issues/IJSDK">Send feedback</a></p>
+                <p>&copy; 2000&ndash;2016 <a href="//www.jetbrains.com">JetBrains</a> s.r.o.<br>
+                    All rights reserved.</p>
+            </div>
+        </nav>
+    </section>
+
+    <main class="panel _main" role="main">
+        <header class="panel__header">
+            <div class="container">
+                <h3>IntelliJ Platform SDK DevGuide</h3>
+                
+        <div class="shortcuts-switcher"><label for="switch-shortcuts">Keymap:</label><select id="switch-shortcuts" class="select _shortcuts" height="1">
+            <option data-group="primary" value="default" selected>Default</option>
+            <option data-group="primary" value="default_for_gnome">GNOME</option>
+            <option data-group="primary" value="default_for_kde">KDE</option>
+            <option data-group="primary" value="default_for_xwin">XWindow</option>
+            <option data-group="primary" value="emacs">Emacs</option>
+            <option data-group="primary" value="jbuilder">JBuilder</option>
+            <option data-group="primary" value="visual_studio">Visual Studio</option>
+            <option data-group="primary" value="netbeans_6.5">NetBeans 6.5</option>
+            <option data-group="primary" value="eclipse">Eclipse</option>
+            <option data-group="secondary" value="mac_os_x_10.5_">OS X 10.5+</option>
+            <option data-group="secondary" value="mac_os_x">OS X</option>
+            <option data-group="secondary" value="eclipse_mac_os_x">OS X Eclipse</option></select>
+        </div>
+    
+                <div class="panel-trigger"></div>
+            </div>
+        </header>
+        <section class="panel__content">
+            <div class="container">
+                <article class="article" data-shortcut-switcher="false">
+
+                    <h1>Run Configuration Management</h1>
+                    <p>This document describes main classes to work with run configurations and common use case.</p>
+
+<ul id="markdown-toc">
+  <li><a href="#configuration-type" id="markdown-toc-configuration-type"><span>Configuration type<a href="#configuration-type" class="anchor-link"><span></span></a></span></a></li>
+  <li><a href="#configuration-factory" id="markdown-toc-configuration-factory"><span>Configuration factory<a href="#configuration-factory" class="anchor-link"><span></span></a></span></a></li>
+  <li><a href="#run-configuration" id="markdown-toc-run-configuration"><span>Run configuration<a href="#run-configuration" class="anchor-link"><span></span></a></span></a></li>
+  <li><a href="#settings-editor" id="markdown-toc-settings-editor"><span>Settings editor<a href="#settings-editor" class="anchor-link"><span></span></a></span></a></li>
+  <li><a href="#persistence" id="markdown-toc-persistence"><span>Persistence<a href="#persistence" class="anchor-link"><span></span></a></span></a></li>
+  <li><a href="#refactoring-support" id="markdown-toc-refactoring-support"><span>Refactoring support<a href="#refactoring-support" class="anchor-link"><span></span></a></span></a></li>
+  <li><a href="#creating-configurations-from-context" id="markdown-toc-creating-configurations-from-context"><span>Creating configurations from context<a href="#creating-configurations-from-context" class="anchor-link"><span></span></a></span></a></li>
+</ul>
+
+<a name="configuration-type" class="elem-anchor"></a>
+<h2>Configuration type<a href="#configuration-type" class="anchor-link"><span></span></a></h2>
+
+<p>The starting point for implementing any run configuration type is the <a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/execution/configurations/ConfigurationType.java" data-bypass="yes" target="_blank"><span><code class="code highlight language-text">ConfigurationType</code></span></a> interface. The list of available configuration types is shown when a user opens the <em>‘Edit run configurations’</em> dialog and executes <em>‘Add’</em> action:</p>
+
+<p><img src="/intellij/sdk/docs/basics/img/create-1.png" alt="Create" /></p>
+
+<p>Every type there is represented as an instance of <a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/execution/configurations/ConfigurationType.java" data-bypass="yes" target="_blank"><span><code class="code highlight language-text">ConfigurationType</code></span></a> and registered like below:</p>
+
+<pre><code class="code-block__wrapper code-block _highlighted lang_xml"><span class="nt">&lt;configurationType</span> <span class="na">implementation=</span><span class="s">"org.jetbrains.plugins.gradle.service.execution.GradleExternalTaskConfigurationType"</span> <span class="nt">/&gt;</span>
+</code></pre>
+
+<p>The easiest way to implement this interface is to use the <a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/execution/configurations/ConfigurationTypeBase.java" data-bypass="yes" target="_blank"><span><code class="code highlight language-text">ConfigurationTypeBase</code></span></a> base class. In order to use it, you need to inherit from it and to provide the configuration type parameters (ID, name, description and icon) as constructor parameters. In addition to that, you need to call the <a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/execution/configurations/ConfigurationTypeBase.java" data-bypass="yes" target="_blank"><span><code class="code highlight language-text">addFactory()</code></span></a><!--#L46--> method to add a configuration factory.</p>
+
+<a name="configuration-factory" class="elem-anchor"></a>
+<h2>Configuration factory<a href="#configuration-factory" class="anchor-link"><span></span></a></h2>
+
+<p>All run configurations are created by the <a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/execution/configurations/ConfigurationFactory.java" data-bypass="yes" target="_blank"><span><code class="code highlight language-text">ConfigurationFactory</code></span></a> registered for a particular <code class="code highlight language-text">ConfigurationType</code>. It’s possible that one <code class="code highlight language-text">ConfigurationType</code> <a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/execution/configurations/ConfigurationType.java" data-bypass="yes" target="_blank"><span>has more than one</span></a><!--#L34--> <code class="code highlight language-text">ConfigurationFactory</code>:</p>
+
+<p><img src="/intellij/sdk/docs/basics/img/create-3.png" alt="Configuration Factory" /></p>
+
+<p>The key API of <a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/execution/configurations/ConfigurationFactory.java" data-bypass="yes" target="_blank"><span><code class="code highlight language-text">ConfigurationFactory</code></span></a>, and the only method that you’re required to implement, is the <a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/execution/configurations/ConfigurationFactory.java" data-bypass="yes" target="_blank"><span><code class="code highlight language-text">createTemplateConfiguration</code></span></a><!--#L45--> method. This method is called once per project to create the template run configuration.</p>
+
+<p>All real run configurations (loaded from the workspace or created by the user) are called by cloning the template through the <a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/execution/configurations/ConfigurationFactory.java" data-bypass="yes" target="_blank"><span><code class="code highlight language-text">ceateConfiguration</code></span></a><!--#L39--> method.</p>
+
+<p>You can customize additional aspects of your configuration factory by overriding the <a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/execution/configurations/ConfigurationFactory.java" data-bypass="yes" target="_blank"><span><code class="code highlight language-text">getIcon</code></span></a><!--#L59-->, <a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/execution/configurations/ConfigurationFactory.java" data-bypass="yes" target="_blank"><span><code class="code highlight language-text">getAddIcon</code></span></a><!--#L55-->, <a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/execution/configurations/ConfigurationFactory.java" data-bypass="yes" target="_blank"><span><code class="code highlight language-text">getName</code></span></a><!--#L51--> and the default settings methods. These additional overrides are optional.</p>
+
+<a name="run-configuration" class="elem-anchor"></a>
+<h2>Run configuration<a href="#run-configuration" class="anchor-link"><span></span></a></h2>
+
+<p>The run configuration itself is represented by the <a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/execution/configurations/RunConfiguration.java" data-bypass="yes" target="_blank"><span><code class="code highlight language-text">RunConfiguration</code></span></a> interface. A <em>‘run configuration’</em> here is some named profile which can be executed, e.g. application started via <code class="code highlight language-text">main()</code> class, test, remote debug to particular machine/port etc.</p>
+
+<p>Here is an example of a Java run configurations defined for a particular project:</p>
+
+<p><img src="/intellij/sdk/docs/basics/img/create-2.png" alt="Run Configuration" /></p>
+
+<p>When implementing a run configuration, you may want to use one of the common base classes:</p>
+
+<ul>
+  <li><a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/execution/configurations/RunConfigurationBase.java" data-bypass="yes" target="_blank"><span><code class="code highlight language-text">RunConfigurationBase</code></span></a> is a general-purpose superclass that contains the most basic implementation of a run configuration.</li>
+  <li><a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/execution/configurations/LocatableConfigurationBase.java" data-bypass="yes" target="_blank"><span><code class="code highlight language-text">LocatableConfigurationBase</code></span></a> is a common base class that should be used for configurations that can be created from context by a <code class="code highlight language-text">RunConfigurationProducer</code>. It supports automatically generating a name for a configuration from its settings and keeping track of whether the name was changed by the user.</li>
+  <li><a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/execution/configurations/ModuleBasedConfiguration.java" data-bypass="yes" target="_blank"><span><code class="code highlight language-text">ModuleBasedConfiguration</code></span></a> is a base class for a configuration that is associated with a specific module (for example, Java run configurations use the selected module to determine the run classpath).</li>
+</ul>
+
+<a name="settings-editor" class="elem-anchor"></a>
+<h2>Settings editor<a href="#settings-editor" class="anchor-link"><span></span></a></h2>
+
+<p>That common run configuration settings might be modified via:</p>
+
+<p><a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/execution/configurations/RunConfiguration.java" data-bypass="yes" target="_blank"><span><code class="code highlight language-text">RunConfiguration</code>-specific UI</span></a><!--#L48-->. That is handled by <a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/platform-api/src/com/intellij/openapi/options/SettingsEditor.java" data-bypass="yes" target="_blank"><span><code class="code highlight language-text">SettingsEditor</code></span></a><!--#L97-->:</p>
+
+<ul>
+  <li><a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/platform-api/src/com/intellij/openapi/options/SettingsEditor.java" data-bypass="yes" target="_blank"><span><code class="code highlight language-text">getComponent()</code></span></a><!--#L97--> method is called by the IDE and shows run configuration specific UI.</li>
+  <li><a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/platform-api/src/com/intellij/openapi/options/SettingsEditor.java" data-bypass="yes" target="_blank"><span><code class="code highlight language-text">resetFrom()</code></span></a><!--#L83--> is called to discard all non-confirmed user changes made via that UI.</li>
+  <li><a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/platform-api/src/com/intellij/openapi/options/SettingsEditor.java" data-bypass="yes" target="_blank"><span><code class="code highlight language-text">applyTo()</code></span></a><!--#L93--> is called to confirm the changes, i.e. copy current UI state into the target settings object.</li>
+</ul>
+
+<a name="persistence" class="elem-anchor"></a>
+<h2>Persistence<a href="#persistence" class="anchor-link"><span></span></a></h2>
+
+<p>That run configuration settings are persistent, i.e. they are stored at file system and loaded back on the IDE startup. That is performed via <a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/util/src/com/intellij/openapi/util/JDOMExternalizable.java" data-bypass="yes" target="_blank"><span><code class="code highlight language-text">writeExternal()</code></span></a><!--#L27--> and <a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/util/src/com/intellij/openapi/util/JDOMExternalizable.java" data-bypass="yes" target="_blank"><span><code class="code highlight language-text">readExternal()</code></span></a><!--#L26--> methods of <a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/execution/configurations/RunConfiguration.java" data-bypass="yes" target="_blank"><span><code class="code highlight language-text">RunConfiguration</code></span></a> class correspondingly.</p>
+
+<p>The actual configurations stored by the <em>IntelliJ Platform</em> are represented by instances of the <a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/execution/RunnerAndConfigurationSettings.java" data-bypass="yes" target="_blank"><span><code class="code highlight language-text">RunnerAndConfigurationSettings</code></span></a> class, which combines a run configuration with runner-specific settings, as well as keeping track of certain run configuration flags such as “temporary” or “singleton”.</p>
+
+<p>Dealing with instances of this class becomes necessary when you need to create run configurations from code. This is accomplished with the following two steps:</p>
+
+<ul>
+  <li><code class="code highlight language-text">RunManager.createConfiguration()</code> creates an instance of <code class="code highlight language-text">RunnerAndConfigurationSettings</code>.</li>
+  <li><code class="code highlight language-text">RunManager.addConfiguration()</code> makes it persistent by adding it to either the list of shared configurations stored in a project, or to the list of local configurations stored in the workspace file.</li>
+</ul>
+
+<a name="refactoring-support" class="elem-anchor"></a>
+<h2>Refactoring support<a href="#refactoring-support" class="anchor-link"><span></span></a></h2>
+
+<p>Most run configurations contain references to classes, files or directories in their settings, and these settings usually need to be updated when the corresponding element is renamed or moved.</p>
+
+<p>In order to support that, your run configuration needs to implement the <a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/execution/configurations/RefactoringListenerProvider.java" data-bypass="yes" target="_blank"><span><code class="code highlight language-text">RefactoringListenerProvider</code></span></a> interface.</p>
+
+<p>In your implementation of <code class="code highlight language-text">getRefactoringElementListener()</code>, you need to check whether the element being refactored is the one that your run configuration refers to, and if it is, you return a <code class="code highlight language-text">RefactoringElementListener</code> that updates your configuration according to the new name and location of the element.</p>
+
+<a name="creating-configurations-from-context" class="elem-anchor"></a>
+<h2>Creating configurations from context<a href="#creating-configurations-from-context" class="anchor-link"><span></span></a></h2>
+
+<p>Many plugins support automatic creation of run configurations from context, so that the user can click, for example, on an application or test class and automatically run it using the correct run configuration type. In order to support that, you need to provide an implementation of the <a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/execution/actions/RunConfigurationProducer.java" data-bypass="yes" target="_blank"><span><code class="code highlight language-text">RunConfigurationProducer</code></span></a>
+interface and to register it as <code class="code highlight language-text">&lt;runConfigurationProducer&gt;</code> in your <code class="code highlight language-text">plugin.xml</code>. (Note that this API has been redesigned in IntelliJ IDEA 13; the old <code class="code highlight language-text">RuntimeConfigurationProducer</code> is a much more confusing version of the same API).</p>
+
+<p>The two main methods that you need to implement are:</p>
+
+<ul>
+  <li><code class="code highlight language-text">setupConfigurationFromContext</code> receives a blank configuration of your type and a <code class="code highlight language-text">ConfigurationContext</code> containing information about a source code location (accessible by calling <code class="code highlight language-text">getLocation()</code> or <code class="code highlight language-text">getPsiLocation()</code>). Your implementation needs to check whether the location is applicable for your configuration type (for example, if it’s in a file of the language you’re supporting). If not, you need to return false, and if it is, you need to put the correct context-specific settings into the run configuration and return true.</li>
+  <li><code class="code highlight language-text">isConfigurationFromContext</code> checks if the specified configuration of your type was created from the specified context. Implementing this method allows you to reuse an existing run configuration which is applicable to the current context instead of creating a new one and possibly ignoring the customisations the user has performed in the existing one.</li>
+</ul>
+
+<p>Note that, in order to support automatic naming of configurations created from context, your configuration should use
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/execution/configurations/LocatableConfigurationBase.java" data-bypass="yes" target="_blank"><span><code class="code highlight language-text">LocatableConfigurationBase</code></span></a> as the base class.</p>
+
+
+                    <div class="last-modified">
+                        Last modified: 21 December 2015
+                    </div>
+                </article>
+
+                <section class="disqus">
+                    <div id="disqus_thread"></div>
+                </section>
+            </div>
+        </section>
+    </main>
+</div>
+
+
+<script data-main="/intellij/sdk/docs/app/js/main.build" data-baseurl="/intellij/sdk/docs/" src="/intellij/sdk/docs/app/js/vendor/requirejs/require.js"></script>
+
+</body>
+</html>
+

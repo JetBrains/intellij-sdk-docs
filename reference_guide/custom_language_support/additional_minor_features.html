@@ -1,0 +1,164 @@
+
+
+
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>Additional Minor Features / IntelliJ Platform SDK  DevGuide</title>
+    <link rel="stylesheet" href="/intellij/sdk/docs/app/css/styles.min.css">
+
+    <!-- non-retina iPad pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-72x72.png" sizes="72x72">
+
+    <!-- retina iPhone pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-114x114.png" sizes="114x114">
+
+    <!-- retina iPad pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-144x144.png" sizes="144x144">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/intellij/sdk/docs/apple-touch-icon-precomposed.png">
+
+    <!-- normal favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="/intellij/sdk/docs/favicon.ico">
+    <link rel="icon" type="image/png" href="/intellij/sdk/docs/favicon.png">
+<link  rel="stylesheet" href="/intellij/sdk/docs/styles/styles.css"></head>
+<body data-id="reference_guide/custom_language_support/additional_minor_features">
+<div class="wrapper">
+    <section class="panel _nav">
+        <header class="panel__header">
+            <div class="container">
+                <form class="search-box">
+                    <label for="search-box__input" class="search-box__label">
+                        <input type="text" class="search-box__input" id="search-box__input" placeholder="Search IntelliJ Platform SDK  DevGuide">
+                    </label>
+                    <div class="search-box__clear" title="Clear"></div>
+                </form>
+            </div>
+        </header>
+        <nav class="panel__content">
+            <div class="container _nav">
+                <menu class="nav-tree"></menu>
+            </div>
+            <div class="container _footer panel__footer">
+                <p><a href="https://youtrack.jetbrains.com/issues/IJSDK">Send feedback</a></p>
+                <p>&copy; 2000&ndash;2016 <a href="//www.jetbrains.com">JetBrains</a> s.r.o.<br>
+                    All rights reserved.</p>
+            </div>
+        </nav>
+    </section>
+
+    <main class="panel _main" role="main">
+        <header class="panel__header">
+            <div class="container">
+                <h3>IntelliJ Platform SDK DevGuide</h3>
+                
+        <div class="shortcuts-switcher"><label for="switch-shortcuts">Keymap:</label><select id="switch-shortcuts" class="select _shortcuts" height="1">
+            <option data-group="primary" value="default" selected>Default</option>
+            <option data-group="primary" value="default_for_gnome">GNOME</option>
+            <option data-group="primary" value="default_for_kde">KDE</option>
+            <option data-group="primary" value="default_for_xwin">XWindow</option>
+            <option data-group="primary" value="emacs">Emacs</option>
+            <option data-group="primary" value="jbuilder">JBuilder</option>
+            <option data-group="primary" value="visual_studio">Visual Studio</option>
+            <option data-group="primary" value="netbeans_6.5">NetBeans 6.5</option>
+            <option data-group="primary" value="eclipse">Eclipse</option>
+            <option data-group="secondary" value="mac_os_x_10.5_">OS X 10.5+</option>
+            <option data-group="secondary" value="mac_os_x">OS X</option>
+            <option data-group="secondary" value="eclipse_mac_os_x">OS X Eclipse</option></select>
+        </div>
+    
+                <div class="panel-trigger"></div>
+            </div>
+        </header>
+        <section class="panel__content">
+            <div class="container">
+                <article class="article" data-shortcut-switcher="false">
+
+                    <h1>Additional Minor Features</h1>
+                    <p>In order to implement <em>brace matching</em>, once the syntax highlighting lexer has been implemented, all that is required is to implement the
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/lang/PairedBraceMatcher.java" data-bypass="yes" target="_blank"><span>PairedBraceMatcher</span></a>
+interface and to return an array of brace pairs (
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/lang/BracePair.java" data-bypass="yes" target="_blank"><span>BracePair</span></a>
+) for the language.
+Each brace pair specifies the characters for the opening and closing braces and the lexer token types for these characters.
+(In principle, it is possible to return multi-character tokens, like “begin” and “end”, as the start and end tokens of a brace pair.
+The IDE will match such braces, but the highlighting for such braces will not be fully correct.)</p>
+
+<p>Certain types of braces can be marked as structural.
+Structural braces have higher priority than regular braces: they are matched with each other even if there are unmatched braces of other types between them, and an opening non-structural braces is not matched with a closing one if one of them is inside a pair of matched structural braces and another is outside.</p>
+
+<p>The <em>code folding</em> is controlled by the plugin through the
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/core-api/src/com/intellij/lang/folding/FoldingBuilder.java" data-bypass="yes" target="_blank"><span>FoldingBuilder</span></a>
+interface.
+The interface returns the list of text ranges which are foldable (as an array of
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/core-api/src/com/intellij/lang/folding/FoldingDescriptor.java" data-bypass="yes" target="_blank"><span>FoldingDescriptor</span></a>
+objects), the replacement text which is shown for each range when it is folded, and the default state of each folding region (folded or unfolded).</p>
+
+<p>The <em>Comment Code</em> feature is controlled through the
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/core-api/src/com/intellij/lang/Commenter.java" data-bypass="yes" target="_blank"><span>Commenter</span></a>
+interface.
+The interface can return the prefix for the line comment, and the prefix and suffix for the block comment, if such features are supported by the language.</p>
+
+<p><strong>Example:</strong>
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/PropertiesCommenter.java" data-bypass="yes" target="_blank"><span>Commenter</span></a>
+for <a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/plugins/properties/" data-bypass="yes" target="_blank"><span>Properties language plugin</span></a></p>
+
+<p>To support smart/semantic <em>Join Lines</em> see
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/codeInsight/editorActions/JoinLinesHandlerDelegate.java" data-bypass="yes" target="_blank"><span>JoinLinesHandlerDelegate</span></a>.</p>
+
+<p><em>Smart Enter</em> (e.g. autocomplete missing semicolon/parentheses) can be provided via
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/codeInsight/editorActions/smartEnter/SmartEnterProcessor.java" data-bypass="yes" target="_blank"><span>SmartEnterProcessor</span></a>.</p>
+
+<p><em>Naming suggestions</em> for Rename Refactoring can be provided via
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/refactoring/rename/NameSuggestionProvider.java" data-bypass="yes" target="_blank"><span>NameSuggestionProvider</span></a>.</p>
+
+<p><em>Semantic highlight usages</em> (e.g. exit points) can be achieved using
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-impl/src/com/intellij/codeInsight/highlighting/HighlightUsagesHandlerFactory.java" data-bypass="yes" target="_blank"><span>HighlightUsagesHandlerFactory</span></a>.</p>
+
+<p><em>View | Parameter Info</em> is provided via
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/lang/parameterInfo/ParameterInfoHandler.java" data-bypass="yes" target="_blank"><span>ParameterInfoHandler</span></a>
+(extension point <code class="code highlight language-text">codeInsight.parameterInfo</code>).</p>
+
+<p>The <em>To Do view</em> is supported automatically if the plugin provides a correct implementation of the
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/core-api/src/com/intellij/lang/ParserDefinition.java" data-bypass="yes" target="_blank"><span>ParserDefinition.getCommentTokens()</span></a><!--#L79-->
+method.</p>
+
+<p>The <em>View | Context Info</em> feature is supported for custom languages since IntelliJ IDEA 10.5.
+In order for it to work, you need to have a structure view implementation based on a
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/structure-view-api/src/com/intellij/ide/structureView/TreeBasedStructureViewBuilder.java" data-bypass="yes" target="_blank"><span>TreeBasedStructureViewBuilder</span></a>,
+and additionally to provide an implementation of
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/codeInsight/hint/DeclarationRangeHandler.java" data-bypass="yes" target="_blank"><span>DeclarationRangeHandler</span></a>
+for your language and to register it in the <code class="code highlight language-text">declarationRangeHandler</code> extension point.</p>
+
+<p><em>Spellchecking</em> can be provided via EP <code class="code highlight language-text">spellchecker.support</code> (
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/spellchecker/src/com/intellij/spellchecker/tokenizer/SpellcheckingStrategy.java" data-bypass="yes" target="_blank"><span>SpellcheckingStrategy</span></a>
+) where you can return
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/spellchecker/src/com/intellij/spellchecker/tokenizer/Tokenizer.java" data-bypass="yes" target="_blank"><span>Tokenizer</span></a>
+to use, possibly depending on the passed in
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/core-api/src/com/intellij/psi/PsiElement.java" data-bypass="yes" target="_blank"><span>PsiElement</span></a>
+(or <code class="code highlight language-text">EMPTY_TOKENIZER</code> for no spellchecking).</p>
+
+<p><strong>New in IntelliJ IDEA 13</strong>: user-configurable <em>reference injections</em> can be provided via <code class="code highlight language-text">referenceInjector</code> extension point (
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/psi/injection/ReferenceInjector.java" data-bypass="yes" target="_blank"><span>ReferenceInjector</span></a>
+) (IntelliLang plugin required).</p>
+
+
+                    <div class="last-modified">
+                        Last modified: 21 December 2015
+                    </div>
+                </article>
+
+                <section class="disqus">
+                    <div id="disqus_thread"></div>
+                </section>
+            </div>
+        </section>
+    </main>
+</div>
+
+
+<script data-main="/intellij/sdk/docs/app/js/main.build" data-baseurl="/intellij/sdk/docs/" src="/intellij/sdk/docs/app/js/vendor/requirejs/require.js"></script>
+
+</body>
+</html>
+

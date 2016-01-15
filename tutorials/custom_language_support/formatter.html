@@ -1,0 +1,223 @@
+
+
+
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>15. Formatter / IntelliJ Platform SDK  DevGuide</title>
+    <link rel="stylesheet" href="/intellij/sdk/docs/app/css/styles.min.css">
+
+    <!-- non-retina iPad pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-72x72.png" sizes="72x72">
+
+    <!-- retina iPhone pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-114x114.png" sizes="114x114">
+
+    <!-- retina iPad pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-144x144.png" sizes="144x144">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/intellij/sdk/docs/apple-touch-icon-precomposed.png">
+
+    <!-- normal favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="/intellij/sdk/docs/favicon.ico">
+    <link rel="icon" type="image/png" href="/intellij/sdk/docs/favicon.png">
+<link  rel="stylesheet" href="/intellij/sdk/docs/styles/styles.css"></head>
+<body data-id="tutorials/custom_language_support/formatter">
+<div class="wrapper">
+    <section class="panel _nav">
+        <header class="panel__header">
+            <div class="container">
+                <form class="search-box">
+                    <label for="search-box__input" class="search-box__label">
+                        <input type="text" class="search-box__input" id="search-box__input" placeholder="Search IntelliJ Platform SDK  DevGuide">
+                    </label>
+                    <div class="search-box__clear" title="Clear"></div>
+                </form>
+            </div>
+        </header>
+        <nav class="panel__content">
+            <div class="container _nav">
+                <menu class="nav-tree"></menu>
+            </div>
+            <div class="container _footer panel__footer">
+                <p><a href="https://youtrack.jetbrains.com/issues/IJSDK">Send feedback</a></p>
+                <p>&copy; 2000&ndash;2016 <a href="//www.jetbrains.com">JetBrains</a> s.r.o.<br>
+                    All rights reserved.</p>
+            </div>
+        </nav>
+    </section>
+
+    <main class="panel _main" role="main">
+        <header class="panel__header">
+            <div class="container">
+                <h3>IntelliJ Platform SDK DevGuide</h3>
+                
+        <div class="shortcuts-switcher"><label for="switch-shortcuts">Keymap:</label><select id="switch-shortcuts" class="select _shortcuts" height="1">
+            <option data-group="primary" value="default" selected>Default</option>
+            <option data-group="primary" value="default_for_gnome">GNOME</option>
+            <option data-group="primary" value="default_for_kde">KDE</option>
+            <option data-group="primary" value="default_for_xwin">XWindow</option>
+            <option data-group="primary" value="emacs">Emacs</option>
+            <option data-group="primary" value="jbuilder">JBuilder</option>
+            <option data-group="primary" value="visual_studio">Visual Studio</option>
+            <option data-group="primary" value="netbeans_6.5">NetBeans 6.5</option>
+            <option data-group="primary" value="eclipse">Eclipse</option>
+            <option data-group="secondary" value="mac_os_x_10.5_">OS X 10.5+</option>
+            <option data-group="secondary" value="mac_os_x">OS X</option>
+            <option data-group="secondary" value="eclipse_mac_os_x">OS X Eclipse</option></select>
+        </div>
+    
+                <div class="panel-trigger"></div>
+            </div>
+        </header>
+        <section class="panel__content">
+            <div class="container">
+                <article class="article" data-shortcut-switcher="false">
+
+                    <h1>15. Formatter</h1>
+                    <p><em>A formatter allows to reformat the code automatically based on code style settings.</em></p>
+
+<a name="define-a-block" class="elem-anchor"></a>
+<h3>15.1. Define a block<a href="#define-a-block" class="anchor-link"><span></span></a></h3>
+
+<p>The formatter uses the blocks to receive formatting rules for each PSI element.
+Our goal is to cover each PSI element with such block. Since each block builds own children blocks we can generate extra blocks or skip any PSI elements.</p>
+
+<pre><code class="code-block__wrapper code-block _highlighted lang_java"><span class="kn">package</span> <span class="n">com</span><span class="o">.</span><span class="na">simpleplugin</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">com.intellij.formatting.*</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.intellij.lang.ASTNode</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.intellij.psi.TokenType</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.intellij.psi.formatter.common.AbstractBlock</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.simpleplugin.psi.SimpleTypes</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.jetbrains.annotations.NotNull</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.jetbrains.annotations.Nullable</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.util.ArrayList</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.List</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">SimpleBlock</span> <span class="kd">extends</span> <span class="n">AbstractBlock</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="n">SpacingBuilder</span> <span class="n">spacingBuilder</span><span class="o">;</span>
+
+    <span class="kd">protected</span> <span class="nf">SimpleBlock</span><span class="o">(</span><span class="nd">@NotNull</span> <span class="n">ASTNode</span> <span class="n">node</span><span class="o">,</span> <span class="nd">@Nullable</span> <span class="n">Wrap</span> <span class="n">wrap</span><span class="o">,</span> <span class="nd">@Nullable</span> <span class="n">Alignment</span> <span class="n">alignment</span><span class="o">,</span>
+                          <span class="n">SpacingBuilder</span> <span class="n">spacingBuilder</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kd">super</span><span class="o">(</span><span class="n">node</span><span class="o">,</span> <span class="n">wrap</span><span class="o">,</span> <span class="n">alignment</span><span class="o">);</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">spacingBuilder</span> <span class="o">=</span> <span class="n">spacingBuilder</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">protected</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Block</span><span class="o">&gt;</span> <span class="nf">buildChildren</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">List</span><span class="o">&lt;</span><span class="n">Block</span><span class="o">&gt;</span> <span class="n">blocks</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Block</span><span class="o">&gt;();</span>
+        <span class="n">ASTNode</span> <span class="n">child</span> <span class="o">=</span> <span class="n">myNode</span><span class="o">.</span><span class="na">getFirstChildNode</span><span class="o">();</span>
+        <span class="n">ASTNode</span> <span class="n">previousChild</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="k">while</span> <span class="o">(</span><span class="n">child</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">child</span><span class="o">.</span><span class="na">getElementType</span><span class="o">()</span> <span class="o">!=</span> <span class="n">TokenType</span><span class="o">.</span><span class="na">WHITE_SPACE</span> <span class="o">&amp;&amp;</span>
+                    <span class="o">(</span><span class="n">previousChild</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">||</span> <span class="n">previousChild</span><span class="o">.</span><span class="na">getElementType</span><span class="o">()</span> <span class="o">!=</span> <span class="n">SimpleTypes</span><span class="o">.</span><span class="na">CRLF</span> <span class="o">||</span>
+                            <span class="n">child</span><span class="o">.</span><span class="na">getElementType</span><span class="o">()</span> <span class="o">!=</span> <span class="n">SimpleTypes</span><span class="o">.</span><span class="na">CRLF</span><span class="o">))</span> <span class="o">{</span>
+                <span class="n">Block</span> <span class="n">block</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SimpleBlock</span><span class="o">(</span><span class="n">child</span><span class="o">,</span> <span class="n">Wrap</span><span class="o">.</span><span class="na">createWrap</span><span class="o">(</span><span class="n">WrapType</span><span class="o">.</span><span class="na">NONE</span><span class="o">,</span> <span class="kc">false</span><span class="o">),</span> <span class="n">Alignment</span><span class="o">.</span><span class="na">createAlignment</span><span class="o">(),</span>
+                        <span class="n">spacingBuilder</span><span class="o">);</span>
+                <span class="n">blocks</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">block</span><span class="o">);</span>
+            <span class="o">}</span>
+            <span class="n">previousChild</span> <span class="o">=</span> <span class="n">child</span><span class="o">;</span>
+            <span class="n">child</span> <span class="o">=</span> <span class="n">child</span><span class="o">.</span><span class="na">getTreeNext</span><span class="o">();</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">blocks</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">Indent</span> <span class="nf">getIndent</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">Indent</span><span class="o">.</span><span class="na">getNoneIndent</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Nullable</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">Spacing</span> <span class="nf">getSpacing</span><span class="o">(</span><span class="nd">@Nullable</span> <span class="n">Block</span> <span class="n">child1</span><span class="o">,</span> <span class="nd">@NotNull</span> <span class="n">Block</span> <span class="n">child2</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">spacingBuilder</span><span class="o">.</span><span class="na">getSpacing</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="n">child1</span><span class="o">,</span> <span class="n">child2</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isLeaf</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">myNode</span><span class="o">.</span><span class="na">getFirstChildNode</span><span class="o">()</span> <span class="o">==</span> <span class="kc">null</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+</code></pre>
+
+<a name="define-a-formatting-model-builder" class="elem-anchor"></a>
+<h3>15.2. Define a formatting model builder<a href="#define-a-formatting-model-builder" class="anchor-link"><span></span></a></h3>
+
+<p>Let’s define a formatter which removes extra spaces except the single ones around the property separator.</p>
+
+<pre><code class="code-block__wrapper code-block _highlighted lang_java"><span class="kn">package</span> <span class="n">com</span><span class="o">.</span><span class="na">simpleplugin</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">com.intellij.formatting.*</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.intellij.lang.ASTNode</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.intellij.openapi.util.TextRange</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.intellij.psi.PsiElement</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.intellij.psi.PsiFile</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.intellij.psi.codeStyle.CodeStyleSettings</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.simpleplugin.psi.SimpleTypes</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.jetbrains.annotations.NotNull</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.jetbrains.annotations.Nullable</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">SimpleFormattingModelBuilder</span> <span class="kd">implements</span> <span class="n">FormattingModelBuilder</span> <span class="o">{</span>
+    <span class="nd">@NotNull</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">FormattingModel</span> <span class="nf">createModel</span><span class="o">(</span><span class="n">PsiElement</span> <span class="n">element</span><span class="o">,</span> <span class="n">CodeStyleSettings</span> <span class="n">settings</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">FormattingModelProvider</span><span class="o">.</span><span class="na">createFormattingModelForPsiFile</span><span class="o">(</span><span class="n">element</span><span class="o">.</span><span class="na">getContainingFile</span><span class="o">(),</span>
+                <span class="k">new</span> <span class="nf">SimpleBlock</span><span class="o">(</span><span class="n">element</span><span class="o">.</span><span class="na">getNode</span><span class="o">(),</span> <span class="n">Wrap</span><span class="o">.</span><span class="na">createWrap</span><span class="o">(</span><span class="n">WrapType</span><span class="o">.</span><span class="na">NONE</span><span class="o">,</span> <span class="kc">false</span><span class="o">),</span>
+                        <span class="n">Alignment</span><span class="o">.</span><span class="na">createAlignment</span><span class="o">(),</span> <span class="n">createSpaceBuilder</span><span class="o">(</span><span class="n">settings</span><span class="o">)),</span> <span class="n">settings</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="kd">private</span> <span class="kd">static</span> <span class="n">SpacingBuilder</span> <span class="nf">createSpaceBuilder</span><span class="o">(</span><span class="n">CodeStyleSettings</span> <span class="n">settings</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nf">SpacingBuilder</span><span class="o">(</span><span class="n">settings</span><span class="o">,</span> <span class="n">SimpleLanguage</span><span class="o">.</span><span class="na">INSTANCE</span><span class="o">).</span>
+                <span class="n">around</span><span class="o">(</span><span class="n">SimpleTypes</span><span class="o">.</span><span class="na">SEPARATOR</span><span class="o">).</span><span class="na">spaceIf</span><span class="o">(</span><span class="n">settings</span><span class="o">.</span><span class="na">SPACE_AROUND_ASSIGNMENT_OPERATORS</span><span class="o">).</span>
+                <span class="n">before</span><span class="o">(</span><span class="n">SimpleTypes</span><span class="o">.</span><span class="na">PROPERTY</span><span class="o">).</span><span class="na">none</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Nullable</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">TextRange</span> <span class="nf">getRangeAffectingIndent</span><span class="o">(</span><span class="n">PsiFile</span> <span class="n">file</span><span class="o">,</span> <span class="kt">int</span> <span class="n">offset</span><span class="o">,</span> <span class="n">ASTNode</span> <span class="n">elementAtOffset</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
+
+<a name="register-the-formatter" class="elem-anchor"></a>
+<h3>15.3. Register the formatter<a href="#register-the-formatter" class="anchor-link"><span></span></a></h3>
+
+<pre><code class="code-block__wrapper code-block _highlighted lang_xml"><span class="nt">&lt;lang.formatter</span> <span class="na">language=</span><span class="s">"Simple"</span> <span class="na">implementationClass=</span><span class="s">"com.simpleplugin.SimpleFormattingModelBuilder"</span><span class="nt">/&gt;</span>
+</code></pre>
+
+<a name="run-the-project" class="elem-anchor"></a>
+<h3>15.4. Run the project<a href="#run-the-project" class="anchor-link"><span></span></a></h3>
+
+<p>Now add some extra spaces and reformat the code via <em>⌥⌘L</em> shortcut.</p>
+
+<p><img src="img/formatter.png" alt="Formatter" /></p>
+
+<p><a href="structure_view_factory.html"><span>Previous</span></a>
+<a href="/intellij/sdk/docs/tutorials/custom_language_support_tutorial.html"><span>Top</span></a>
+<a href="code_style_settings.html"><span>Next</span></a></p>
+
+
+
+                    <div class="last-modified">
+                        Last modified: 28 December 2015
+                    </div>
+                </article>
+
+                <section class="disqus">
+                    <div id="disqus_thread"></div>
+                </section>
+            </div>
+        </section>
+    </main>
+</div>
+
+
+<script data-main="/intellij/sdk/docs/app/js/main.build" data-baseurl="/intellij/sdk/docs/" src="/intellij/sdk/docs/app/js/vendor/requirejs/require.js"></script>
+
+</body>
+</html>
+

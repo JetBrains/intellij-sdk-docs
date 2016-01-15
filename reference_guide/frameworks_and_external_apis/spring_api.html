@@ -1,0 +1,268 @@
+
+
+
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>Spring API / IntelliJ Platform SDK  DevGuide</title>
+    <link rel="stylesheet" href="/intellij/sdk/docs/app/css/styles.min.css">
+
+    <!-- non-retina iPad pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-72x72.png" sizes="72x72">
+
+    <!-- retina iPhone pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-114x114.png" sizes="114x114">
+
+    <!-- retina iPad pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-144x144.png" sizes="144x144">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/intellij/sdk/docs/apple-touch-icon-precomposed.png">
+
+    <!-- normal favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="/intellij/sdk/docs/favicon.ico">
+    <link rel="icon" type="image/png" href="/intellij/sdk/docs/favicon.png">
+<link  rel="stylesheet" href="/intellij/sdk/docs/styles/styles.css"></head>
+<body data-id="reference_guide/frameworks_and_external_apis/spring_api">
+<div class="wrapper">
+    <section class="panel _nav">
+        <header class="panel__header">
+            <div class="container">
+                <form class="search-box">
+                    <label for="search-box__input" class="search-box__label">
+                        <input type="text" class="search-box__input" id="search-box__input" placeholder="Search IntelliJ Platform SDK  DevGuide">
+                    </label>
+                    <div class="search-box__clear" title="Clear"></div>
+                </form>
+            </div>
+        </header>
+        <nav class="panel__content">
+            <div class="container _nav">
+                <menu class="nav-tree"></menu>
+            </div>
+            <div class="container _footer panel__footer">
+                <p><a href="https://youtrack.jetbrains.com/issues/IJSDK">Send feedback</a></p>
+                <p>&copy; 2000&ndash;2016 <a href="//www.jetbrains.com">JetBrains</a> s.r.o.<br>
+                    All rights reserved.</p>
+            </div>
+        </nav>
+    </section>
+
+    <main class="panel _main" role="main">
+        <header class="panel__header">
+            <div class="container">
+                <h3>IntelliJ Platform SDK DevGuide</h3>
+                
+        <div class="shortcuts-switcher"><label for="switch-shortcuts">Keymap:</label><select id="switch-shortcuts" class="select _shortcuts" height="1">
+            <option data-group="primary" value="default" selected>Default</option>
+            <option data-group="primary" value="default_for_gnome">GNOME</option>
+            <option data-group="primary" value="default_for_kde">KDE</option>
+            <option data-group="primary" value="default_for_xwin">XWindow</option>
+            <option data-group="primary" value="emacs">Emacs</option>
+            <option data-group="primary" value="jbuilder">JBuilder</option>
+            <option data-group="primary" value="visual_studio">Visual Studio</option>
+            <option data-group="primary" value="netbeans_6.5">NetBeans 6.5</option>
+            <option data-group="primary" value="eclipse">Eclipse</option>
+            <option data-group="secondary" value="mac_os_x_10.5_">OS X 10.5+</option>
+            <option data-group="secondary" value="mac_os_x">OS X</option>
+            <option data-group="secondary" value="eclipse_mac_os_x">OS X Eclipse</option></select>
+        </div>
+    
+                <div class="panel-trigger"></div>
+            </div>
+        </header>
+        <section class="panel__content">
+            <div class="container">
+                <article class="article" data-shortcut-switcher="false">
+
+                    <h1>Spring API</h1>
+                    <a name="using-spring-api" class="elem-anchor"></a>
+<h2>Using Spring-API<a href="#using-spring-api" class="anchor-link"><span></span></a></h2>
+<p>To develop plugins integrating with Spring-API you will need to use <em>IntelliJ IDEA Ultimate Edition</em> version 13.1 (or higher).</p>
+
+<a name="setting-up-intellij-platform-sdk" class="elem-anchor"></a>
+<h3>Setting up IntelliJ Platform SDK<a href="#setting-up-intellij-platform-sdk" class="anchor-link"><span></span></a></h3>
+
+<a name="new-sdk" class="elem-anchor"></a>
+<h5>New SDK</h5>
+<p>Please create an IntelliJ Platform SDK to include all minimum required files.
+Then add <code class="code highlight language-text">$IDEA_HOME$/plugins/Spring/lib/spring.jar</code> to its <em>classpath</em> (<em>not</em> to your plugin module’s dependencies).</p>
+
+<a name="existing-sdk" class="elem-anchor"></a>
+<h5>Existing SDK</h5>
+<p>Follow these steps to modify existing IntelliJ Platform SDK:</p>
+
+<ul>
+  <li>add to <em>classpath</em> (<em>not</em> to your plugin module’s dependencies)
+    <ul>
+      <li><code class="code highlight language-text">$IDEA_HOME$/plugins/Spring/lib/spring-api.jar</code></li>
+      <li><code class="code highlight language-text">$IDEA_HOME$/plugins/Spring/lib/spring.jar</code></li>
+    </ul>
+  </li>
+  <li>add to <em>sourcepath</em>
+    <ul>
+      <li><code class="code highlight language-text">$IDEA_HOME$/lib/src/src_spring-openapi.zip</code></li>
+    </ul>
+  </li>
+</ul>
+
+<a name="general-notes" class="elem-anchor"></a>
+<h3>General Notes<a href="#general-notes" class="anchor-link"><span></span></a></h3>
+<p>If you use other Spring functionality (e.g. Spring EL) in your plugin, make sure to add all required JARs to your IntelliJ Platform SDK classpath to make your plugin’s tests work.</p>
+
+<p>Please use only Spring-related functionality exposed in <code class="code highlight language-text">spring-api.jar</code> (where   sources are provided) in your plugin. Using any other “internal” (implementation) classes from Spring plugin itself (<code class="code highlight language-text">spring.jar</code>) is <em>not</em> supported.</p>
+
+<a name="pluginxml" class="elem-anchor"></a>
+<h3>plugin.xml<a href="#pluginxml" class="anchor-link"><span></span></a></h3>
+<p>Add <code class="code highlight language-text">&lt;depends&gt;com.intellij.spring&lt;/depends&gt;</code> to your <code class="code highlight language-text">plugin.xml</code> to require “Spring Support” plugin to be activated. All available extension points are available under <code class="code highlight language-text">com.intellij.spring</code> prefix.
+Note that “Spring Support” plugin itself has dependencies to a few other plugins which need to be enabled in your sandbox (see notifications on startup).</p>
+
+<a name="main-concepts" class="elem-anchor"></a>
+<h2>Main concepts<a href="#main-concepts" class="anchor-link"><span></span></a></h2>
+<p>A Spring facet can be attached on a Module.</p>
+
+<p>Spring facets usually contain one more user-configured/provided filesets, which group a set of Spring related configuration files (XML, Code or .properties files).</p>
+
+<p>A fileset usually corresponds to an actual application context configuration at runtime. Hierarchies can be modeled by depending on another fileset (possibly from  another module).</p>
+
+<p>As an API-user, you will usually rather work with <code class="code highlight language-text">SpringModel</code> (which is built on top of fileset(s)).</p>
+
+<a name="how-do-i" class="elem-anchor"></a>
+<h2>How do I…<a href="#how-do-i" class="anchor-link"><span></span></a></h2>
+<p><strong>Some core classes have been changed in 14(.1), please see “<em>Version 14(.1)</em>” notes for info on how to replace existing API-calls</strong></p>
+
+<a name="spring-model" class="elem-anchor"></a>
+<h3>Spring Model<a href="#spring-model" class="anchor-link"><span></span></a></h3>
+
+<a name="obtain-spring-model-by-file-psielement-" class="elem-anchor"></a>
+<h5>Obtain Spring Model by file, PsiElement, ..</h5>
+<p>See <code class="code highlight language-text">SpringManager#getSpringModel(s)...</code> and <code class="code highlight language-text">com.intellij.spring.model.utils.SpringModelUtils</code>.</p>
+
+<a name="contribute-implicit-models" class="elem-anchor"></a>
+<h5>Contribute implicit model(s)</h5>
+<p>See <code class="code highlight language-text">com.intellij.spring.SpringModelProvider</code> to provide implicit filesets (e.g. provided by another framework in specific configuration file).</p>
+
+<p><em>Version 15</em>
+See <code class="code highlight language-text">com.intellij.spring.facet.SpringAutodetectedFileSet</code> for a convenient base class.</p>
+
+<a name="contribute-implicit-beans" class="elem-anchor"></a>
+<h5>Contribute implicit beans</h5>
+<p>See <code class="code highlight language-text">com.intellij.spring.model.jam.CustomComponentsDiscoverer</code> or <code class="code highlight language-text">com.intellij.spring.model.SpringImplicitBeansProviderBase</code> to provide implicit (framework-specific) beans (e.g. “servletContext” by Spring MVC).</p>
+
+<p><em>Version 15</em>
+<code class="code highlight language-text">CustomComponentsDiscoverer</code> has been split into <code class="code highlight language-text">com.intellij.spring.model.custom.CustomLocalComponentsDiscoverer</code> and <code class="code highlight language-text">com.intellij.spring.model.custom.CustomModuleComponentsDiscoverer</code> respectively.</p>
+
+<a name="contribute-custom-bean-scope" class="elem-anchor"></a>
+<h5>Contribute custom bean scope</h5>
+<p><em>Version 14</em>
+See <code class="code highlight language-text">com.intellij.spring.model.scope.SpringCustomBeanScope</code> to provide custom (e.g. framework specific) bean scopes.</p>
+
+<a name="obtaincreate-spring-profiles" class="elem-anchor"></a>
+<h5>Obtain/Create Spring Profiles</h5>
+<p><em>Version 14.1</em>
+<code class="code highlight language-text">com.intellij.spring.profiles.SpringProfilesFactory</code></p>
+
+<a name="beans" class="elem-anchor"></a>
+<h3>Beans<a href="#beans" class="anchor-link"><span></span></a></h3>
+
+<a name="search-for-bean-by-name" class="elem-anchor"></a>
+<h5>Search for bean by name</h5>
+<p><code class="code highlight language-text">com.intellij.spring.CommonSpringModel#findBeanByName</code></p>
+
+<p><em>Version 14</em>: <code class="code highlight language-text">com.intellij.spring.model.utils.SpringModelSearchers#findBean</code></p>
+
+<a name="search-for-beans-by-type" class="elem-anchor"></a>
+<h5>Search for beans by type</h5>
+<p>Choose one of <code class="code highlight language-text">com.intellij.spring.CommonSpringModel#findBeansByPsiClassXXX</code> variants (please note deprecated methods).</p>
+
+<p><em>Version 14</em>: <code class="code highlight language-text">com.intellij.spring.model.utils.SpringModelSearchers#findBeans</code></p>
+
+<a name="find-out-if-bean-with-given-nametype-exists" class="elem-anchor"></a>
+<h5>Find out if bean with given name/type exists</h5>
+<p><em>Version 14</em>: <code class="code highlight language-text">com.intellij.spring.model.utils.SpringModelSearchers#doesBeanExist</code> (please note deprecated methods)</p>
+
+<a name="mark-bean-as-infrastructure-bean" class="elem-anchor"></a>
+<h5>Mark bean as infrastructure bean</h5>
+<p><em>Version 14</em>: implement <code class="code highlight language-text">SpringInfrastructureBean</code>, such beans obtain special icon and can be filtered in various places in UI</p>
+
+<a name="xml-configuration" class="elem-anchor"></a>
+<h3>XML Configuration<a href="#xml-configuration" class="anchor-link"><span></span></a></h3>
+<p>All support for XML-based Spring configuration files is provided via <a href="xml_dom_api.html"><span>DOM-API</span></a>.</p>
+
+<a name="add-support-for-additional-spring-namespace" class="elem-anchor"></a>
+<h5>Add support for additional Spring namespace</h5>
+<p>See EP <code class="code highlight language-text">com.intellij.spring.dom.SpringCustomNamespaces</code>, registered namespace-key must match the one registered with your DOM elements via <code class="code highlight language-text">@Namespace</code>.
+Register available elements via standard <code class="code highlight language-text">DomExtender&lt;Beans&gt;</code> EP or <code class="code highlight language-text">com.intellij.spring.dom.SpringCustomNamespaces#registerExtensions</code> (Version 14).</p>
+
+<p>Please pay attention to <code class="code highlight language-text">getModelVersion</code> and <code class="code highlight language-text">getStubVersion</code> (see javadoc).</p>
+
+<a name="add-reference-to-spring-bean-in-my-domelement" class="elem-anchor"></a>
+<h5>Add reference to Spring Bean in my DomElement</h5>
+<p>Use the following template:</p>
+
+<pre><code class="code-block__wrapper code-block _highlighted lang_java"><span class="nd">@Convert</span><span class="o">(</span><span class="n">SpringBeanResolveConverter</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
+<span class="nd">@RequiredBeanType</span><span class="o">(</span><span class="s">"fqn.to.required.class"</span><span class="o">)</span> <span class="c1">// optional</span>
+<span class="n">GenericAttributeValue</span><span class="o">&lt;</span><span class="n">SpringBeanPointer</span><span class="o">&gt;</span> <span class="nf">getMyAttributeName</span><span class="o">();</span>
+</code></pre>
+
+<a name="code-configuration" class="elem-anchor"></a>
+<h3>Code Configuration<a href="#code-configuration" class="anchor-link"><span></span></a></h3>
+
+<a name="add-reference-to-spring-bean-in-my-jamelement" class="elem-anchor"></a>
+<h5>Add reference to Spring Bean in my JamElement</h5>
+<p><em>Version 14</em></p>
+
+<pre><code class="code-block__wrapper code-block _highlighted lang_java"><span class="n">JamStringAttributeMeta</span><span class="o">.</span><span class="na">Single</span><span class="o">&lt;</span><span class="n">SpringBeanPointer</span><span class="o">&gt;</span> <span class="n">ATTRIBUTE_META</span> <span class="o">=</span>
+    <span class="n">JamAttributeMeta</span><span class="o">.</span><span class="na">singleString</span><span class="o">(</span><span class="s">"attributeName"</span><span class="o">,</span>
+        <span class="k">new</span> <span class="nf">SpringBeanReferenceJamConverter</span><span class="o">(</span><span class="s">"fqn.to.required.class"</span><span class="o">));</span>
+</code></pre>
+
+<a name="aliasfor" class="elem-anchor"></a>
+<h5>@AliasFor</h5>
+<p><em>Version 16</em>
+See <code class="code highlight language-text">com.intellij.spring.model.aliasFor.SpringAliasForUtils</code> to obtain corresponding <code class="code highlight language-text">@AliasFor</code> JAM.</p>
+
+<a name="springfactories" class="elem-anchor"></a>
+<h3>spring.factories<a href="#springfactories" class="anchor-link"><span></span></a></h3>
+<p><em>Version 15</em>
+See <code class="code highlight language-text">com.intellij.spring.spi.SpringSpiManager</code>.</p>
+
+<a name="ide-features" class="elem-anchor"></a>
+<h3>IDE features<a href="#ide-features" class="anchor-link"><span></span></a></h3>
+
+<a name="add-inspections-to-spring-validator" class="elem-anchor"></a>
+<h5>Add inspections to Spring Validator</h5>
+<p>Add additional inspections (e.g. for custom namespace) to Spring Validator (<em>Settings|Compiler|Validation</em>) via EP <code class="code highlight language-text">com.intellij.spring.SpringInspectionsRegistry$Contributor</code>.</p>
+
+<a name="add-additional-files-to-spring-validator" class="elem-anchor"></a>
+<h5>Add additional files to Spring Validator</h5>
+<p><em>Version 14.1</em>
+Additional files to be processed by inspections registered with Spring Validator (e.g. specific <code class="code highlight language-text">.properties</code> configuration files) can be registered via  <code class="code highlight language-text">com.intellij.spring.SpringInspectionsRegistry$AdditionalFilesContributor</code></p>
+
+<a name="configure-spring-support-for-other-frameworks" class="elem-anchor"></a>
+<h5>Configure Spring support for other frameworks</h5>
+<p>Use <code class="code highlight language-text">com.intellij.spring.facet.SpringConfigurator</code> to provide “automatic” configuration when Spring facet is added via framework wizard.</p>
+
+<a name="uipresentation" class="elem-anchor"></a>
+<h5>UI/Presentation</h5>
+<p>Please do not reference bean icons from <code class="code highlight language-text">SpringApiIcons</code> directly, but use <code class="code highlight language-text">SpringPresentationProvider</code> to re-use unified icon/bean name. See <code class="code highlight language-text">SpringBeansPsiElementCellRenderer</code> for popup/list renderer.</p>
+
+
+                    <div class="last-modified">
+                        Last modified: 8 January 2016
+                    </div>
+                </article>
+
+                <section class="disqus">
+                    <div id="disqus_thread"></div>
+                </section>
+            </div>
+        </section>
+    </main>
+</div>
+
+
+<script data-main="/intellij/sdk/docs/app/js/main.build" data-baseurl="/intellij/sdk/docs/" src="/intellij/sdk/docs/app/js/vendor/requirejs/require.js"></script>
+
+</body>
+</html>
+

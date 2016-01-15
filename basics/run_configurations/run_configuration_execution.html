@@ -1,0 +1,155 @@
+
+
+
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>Execution / IntelliJ Platform SDK  DevGuide</title>
+    <link rel="stylesheet" href="/intellij/sdk/docs/app/css/styles.min.css">
+
+    <!-- non-retina iPad pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-72x72.png" sizes="72x72">
+
+    <!-- retina iPhone pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-114x114.png" sizes="114x114">
+
+    <!-- retina iPad pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-144x144.png" sizes="144x144">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/intellij/sdk/docs/apple-touch-icon-precomposed.png">
+
+    <!-- normal favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="/intellij/sdk/docs/favicon.ico">
+    <link rel="icon" type="image/png" href="/intellij/sdk/docs/favicon.png">
+<link  rel="stylesheet" href="/intellij/sdk/docs/styles/styles.css"></head>
+<body data-id="basics/run_configurations/run_configuration_execution">
+<div class="wrapper">
+    <section class="panel _nav">
+        <header class="panel__header">
+            <div class="container">
+                <form class="search-box">
+                    <label for="search-box__input" class="search-box__label">
+                        <input type="text" class="search-box__input" id="search-box__input" placeholder="Search IntelliJ Platform SDK  DevGuide">
+                    </label>
+                    <div class="search-box__clear" title="Clear"></div>
+                </form>
+            </div>
+        </header>
+        <nav class="panel__content">
+            <div class="container _nav">
+                <menu class="nav-tree"></menu>
+            </div>
+            <div class="container _footer panel__footer">
+                <p><a href="https://youtrack.jetbrains.com/issues/IJSDK">Send feedback</a></p>
+                <p>&copy; 2000&ndash;2016 <a href="//www.jetbrains.com">JetBrains</a> s.r.o.<br>
+                    All rights reserved.</p>
+            </div>
+        </nav>
+    </section>
+
+    <main class="panel _main" role="main">
+        <header class="panel__header">
+            <div class="container">
+                <h3>IntelliJ Platform SDK DevGuide</h3>
+                
+        <div class="shortcuts-switcher"><label for="switch-shortcuts">Keymap:</label><select id="switch-shortcuts" class="select _shortcuts" height="1">
+            <option data-group="primary" value="default" selected>Default</option>
+            <option data-group="primary" value="default_for_gnome">GNOME</option>
+            <option data-group="primary" value="default_for_kde">KDE</option>
+            <option data-group="primary" value="default_for_xwin">XWindow</option>
+            <option data-group="primary" value="emacs">Emacs</option>
+            <option data-group="primary" value="jbuilder">JBuilder</option>
+            <option data-group="primary" value="visual_studio">Visual Studio</option>
+            <option data-group="primary" value="netbeans_6.5">NetBeans 6.5</option>
+            <option data-group="primary" value="eclipse">Eclipse</option>
+            <option data-group="secondary" value="mac_os_x_10.5_">OS X 10.5+</option>
+            <option data-group="secondary" value="mac_os_x">OS X</option>
+            <option data-group="secondary" value="eclipse_mac_os_x">OS X Eclipse</option></select>
+        </div>
+    
+                <div class="panel-trigger"></div>
+            </div>
+        </header>
+        <section class="panel__content">
+            <div class="container">
+                <article class="article" data-shortcut-switcher="false">
+
+                    <h1>Execution</h1>
+                    <p>The standard execution of a run action goes through the following steps:</p>
+
+<ul>
+  <li>The user selects a <em>run configuration</em> (for example, by choosing one from the run configurations combobox) and an <em>executor</em>  (for example, by pressing a toolbar button created by the executor).</li>
+  <li>The <em>program runner</em> that will actually execute the process is selected, by polling all registered program runners and asking whether they can run the specified run profile with the specified executor ID.</li>
+  <li>The <code class="code highlight language-text">ExecutionEnvironment</code> object is created. This object aggregates all the settings required to execute the process, as well as the selected <code class="code highlight language-text">ProgramRunner</code>.</li>
+  <li><code class="code highlight language-text">ProgramRunner.execute()</code> is called, receiving the executor and the execution environment.</li>
+</ul>
+
+<p>Implementations of <code class="code highlight language-text">ProgramRunner.execute()</code> go through the following steps to execute the process:</p>
+
+<ul>
+  <li><code class="code highlight language-text">RunProfile.getState()</code> method is called to create a <code class="code highlight language-text">RunProfileState</code> object, describing a process about to be started. At this stage, the command line parameters, environment variables and other information required to start the process is initialized.</li>
+  <li><code class="code highlight language-text">RunProfileState.execute()</code> is called. It starts the process, attaches a <code class="code highlight language-text">ProcessHandler</code> to its input and output streams, creates a console to display the process output, and returns an <code class="code highlight language-text">ExecutionResult</code> object aggregating the console and the process handler.</li>
+  <li>The <code class="code highlight language-text">RunContentBuilder</code> object is created and invoked to display the execution console in a tab of the Run or Debug toolwindow.</li>
+</ul>
+
+<a name="executor" class="elem-anchor"></a>
+<h2>Executor<a href="#executor" class="anchor-link"><span></span></a></h2>
+
+<p>The <a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/execution/Executor.java" data-bypass="yes" target="_blank"><span><code class="code highlight language-text">Executor</code></span></a> interface describes a specific way of executing any possible run configuration.</p>
+
+<p>The three default executors provided by the <em>IntelliJ Platform</em> by default are <em>Run</em>, <em>Debug</em> and <em>Run with Coverage</em>.  Each executor gets its own toolbar button, which starts the selected run configuration using this executor, and its own context menu item for starting a configuration using this executor.</p>
+
+<p>As a plugin developer, you normally don’t need to implement the <code class="code highlight language-text">Executor</code> interface. However, it can be useful, for example, if you’re implementing a profiler integration and want to provide the possibility to execute any configuration with profiling.</p>
+
+<a name="running-a-process" class="elem-anchor"></a>
+<h2>Running a process<a href="#running-a-process" class="anchor-link"><span></span></a></h2>
+
+<p>The <code class="code highlight language-text">RunProfileState</code> interface comes up in every run configuration implementation as the return value <code class="code highlight language-text">RunProfile.getState()</code>. It describes a process which is ready to be started and holds the information like the command line, current working directory, and environment variables for the process to be started. (The existence of <code class="code highlight language-text">RunProfileState</code> as a separate step in the execution flow allows run configuration extensions and other components to patch the configuration and to modify the parameters before it gets executed.)</p>
+
+<p>The standard base class used as implementation of <code class="code highlight language-text">RunProfileState</code> is <a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/execution/configurations/CommandLineState.java" data-bypass="yes" target="_blank"><span><code class="code highlight language-text">CommandLineState</code></span></a>. It contains the logic for putting together a running process and a console into an <a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/execution/ExecutionResult.java" data-bypass="yes" target="_blank"><span><code class="code highlight language-text">ExecutionResult</code></span></a>, but doesn’t know anything how the process is actually started. For starting the process, it’s best to use the <a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/platform-api/src/com/intellij/execution/configurations/GeneralCommandLine.java" data-bypass="yes" target="_blank"><span><code class="code highlight language-text">GeneralCommandLine</code></span></a> class, which takes care of setting up the command line parameters and executing the process.</p>
+
+<p>Alternatively, if the process you need to run is a JVM-based one, you can use the <a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/java/execution/openapi/src/com/intellij/execution/configurations/JavaCommandLineState.java" data-bypass="yes" target="_blank"><span><code class="code highlight language-text">JavaCommandLineState</code></span></a> base class. It knows about the command line parameters of the JVM and can take care of details like calculating the classpath for the JVM.</p>
+
+<p>To monitor the execution of a process and capture its output, the <a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/platform-api/src/com/intellij/execution/process/OSProcessHandler.java" data-bypass="yes" target="_blank"><span><code class="code highlight language-text">OSProcessHandler</code></span></a> class is normally used. Once you’ve created an instance of <code class="code highlight language-text">OSProcessHandler</code> from either a command line or a Process object, you need to call the <code class="code highlight language-text">startNotify()</code> method to start capturing its output. You may also want to attach a <a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/platform-api/src/com/intellij/execution/process/ProcessTerminatedListener.java" data-bypass="yes" target="_blank"><span><code class="code highlight language-text">ProcessTerminatedListener</code></span></a> to the <code class="code highlight language-text">OSProcessHandler</code>, so that the exit status of the process will be displayed in the console.</p>
+
+<a name="displaying-the-process-output" class="elem-anchor"></a>
+<h2>Displaying the process output<a href="#displaying-the-process-output" class="anchor-link"><span></span></a></h2>
+
+<p>If you’re using <code class="code highlight language-text">CommandLineState</code>, a console view will be automatically created and attached to the output of the process. Alternatively, you can arrange this yourself:</p>
+
+<ul>
+  <li><code class="code highlight language-text">TextConsoleBuilderFactory.createBuilder(project).getConsole()</code> creates a <a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/execution/ui/ConsoleView.java" data-bypass="yes" target="_blank"><span><code class="code highlight language-text">ConsoleView</code></span></a> instance</li>
+  <li><code class="code highlight language-text">ConsoleView.attachToProcess()</code> attaches it to the output of a process.</li>
+</ul>
+
+<p>If the process you’re running uses ANSI escape codes to color its output, the <a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/platform-api/src/com/intellij/execution/process/ColoredProcessHandler.java" data-bypass="yes" target="_blank"><span><code class="code highlight language-text">ColoredProcessHandler</code></span></a> class will parse it and display the colors in the IntelliJ console.</p>
+
+<p>Console <a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/execution/filters/Filter.java" data-bypass="yes" target="_blank"><span>filters</span></a> allow you to convert certain strings found in the process output to clickable hyperlinks. To attach a filter to the console, use <code class="code highlight language-text">CommandLineState.addConsoleFilters()</code> or, if you’re creating a console manually, <code class="code highlight language-text">TextConsoleBuilder.addFilter()</code>.</p>
+
+<p>Two common filter implementations you may want to reuse are <a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/execution/filters/RegexpFilter.java" data-bypass="yes" target="_blank"><span><code class="code highlight language-text">RegexpFilter</code></span></a> and <a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/execution/filters/UrlFilter.java" data-bypass="yes" target="_blank"><span><code class="code highlight language-text">UrlFilter</code></span></a>.</p>
+
+<a name="starting-a-run-configuration-from-code" class="elem-anchor"></a>
+<h2>Starting a run configuration from code<a href="#starting-a-run-configuration-from-code" class="anchor-link"><span></span></a></h2>
+
+<p>If you have an existing run configuration that you need to execute, the easiest way to do so is to use <a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-impl/src/com/intellij/execution/ProgramRunnerUtil.java" data-bypass="yes" target="_blank"><span><code class="code highlight language-text">ProgramRunnerUtil.executeConfiguration()</code></span></a><!--#L110-->. The method takes a <code class="code highlight language-text">Project</code>, a <code class="code highlight language-text">RunnerAndConfigurationSettings</code>, as well as an <code class="code highlight language-text">Executor</code>. To get the <code class="code highlight language-text">RunnerAndConfigurationSettings</code> for an existing configuration, you can use, for example, <code class="code highlight language-text">RunManager.getConfigurationSettings(ConfigurationType)</code>. As the last parameter, you normally pass either <code class="code highlight language-text">DefaultRunExecutor.getRunExecutorInstance()</code> or <code class="code highlight language-text">DefaultDebugExecutor.getDebugExecutorInstance()</code>.</p>
+
+
+                    <div class="last-modified">
+                        Last modified: 21 December 2015
+                    </div>
+                </article>
+
+                <section class="disqus">
+                    <div id="disqus_thread"></div>
+                </section>
+            </div>
+        </section>
+    </main>
+</div>
+
+
+<script data-main="/intellij/sdk/docs/app/js/main.build" data-baseurl="/intellij/sdk/docs/" src="/intellij/sdk/docs/app/js/vendor/requirejs/require.js"></script>
+
+</body>
+</html>
+

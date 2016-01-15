@@ -1,0 +1,194 @@
+
+
+
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title> / IntelliJ Platform SDK  DevGuide</title>
+    <link rel="stylesheet" href="/intellij/sdk/docs/app/css/styles.min.css">
+
+    <!-- non-retina iPad pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-72x72.png" sizes="72x72">
+
+    <!-- retina iPhone pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-114x114.png" sizes="114x114">
+
+    <!-- retina iPad pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-144x144.png" sizes="144x144">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/intellij/sdk/docs/apple-touch-icon-precomposed.png">
+
+    <!-- normal favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="/intellij/sdk/docs/favicon.ico">
+    <link rel="icon" type="image/png" href="/intellij/sdk/docs/favicon.png">
+<link  rel="stylesheet" href="/intellij/sdk/docs/styles/styles.css"></head>
+<body data-id="reference_guide/frameworks_and_external_apis/external_system_integration">
+<div class="wrapper">
+    <section class="panel _nav">
+        <header class="panel__header">
+            <div class="container">
+                <form class="search-box">
+                    <label for="search-box__input" class="search-box__label">
+                        <input type="text" class="search-box__input" id="search-box__input" placeholder="Search IntelliJ Platform SDK  DevGuide">
+                    </label>
+                    <div class="search-box__clear" title="Clear"></div>
+                </form>
+            </div>
+        </header>
+        <nav class="panel__content">
+            <div class="container _nav">
+                <menu class="nav-tree"></menu>
+            </div>
+            <div class="container _footer panel__footer">
+                <p><a href="https://youtrack.jetbrains.com/issues/IJSDK">Send feedback</a></p>
+                <p>&copy; 2000&ndash;2016 <a href="//www.jetbrains.com">JetBrains</a> s.r.o.<br>
+                    All rights reserved.</p>
+            </div>
+        </nav>
+    </section>
+
+    <main class="panel _main" role="main">
+        <header class="panel__header">
+            <div class="container">
+                <h3>IntelliJ Platform SDK DevGuide</h3>
+                
+        <div class="shortcuts-switcher"><label for="switch-shortcuts">Keymap:</label><select id="switch-shortcuts" class="select _shortcuts" height="1">
+            <option data-group="primary" value="default" selected>Default</option>
+            <option data-group="primary" value="default_for_gnome">GNOME</option>
+            <option data-group="primary" value="default_for_kde">KDE</option>
+            <option data-group="primary" value="default_for_xwin">XWindow</option>
+            <option data-group="primary" value="emacs">Emacs</option>
+            <option data-group="primary" value="jbuilder">JBuilder</option>
+            <option data-group="primary" value="visual_studio">Visual Studio</option>
+            <option data-group="primary" value="netbeans_6.5">NetBeans 6.5</option>
+            <option data-group="primary" value="eclipse">Eclipse</option>
+            <option data-group="secondary" value="mac_os_x_10.5_">OS X 10.5+</option>
+            <option data-group="secondary" value="mac_os_x">OS X</option>
+            <option data-group="secondary" value="eclipse_mac_os_x">OS X Eclipse</option></select>
+        </div>
+    
+                <div class="panel-trigger"></div>
+            </div>
+        </header>
+        <section class="panel__content">
+            <div class="container">
+                <article class="article" data-shortcut-switcher="false">
+
+                    
+                    <a name="purpose" class="elem-anchor"></a>
+<h1>Purpose<a href="#purpose" class="anchor-link"><span></span></a></h1>
+
+<p>This page provides high-level overview of <em>External System</em> sub-system.</p>
+
+<a name="rationale" class="elem-anchor"></a>
+<h1>Rationale<a href="#rationale" class="anchor-link"><span></span></a></h1>
+
+<p>There are multiple project management systems (<a href="http://maven.apache.org/" data-bypass="yes" target="_blank"><span>maven</span></a>, <a href="http://www.gradle.org/" data-bypass="yes" target="_blank"><span>gradle</span></a>, <a href="http://www.scala-sbt.org/" data-bypass="yes" target="_blank"><span>sbt</span></a> etc) and it’s good to support them at the IDE. Luckily, they all provide a similar set of facilities from the integration point of view:</p>
+
+<ul>
+  <li>build IDE project from external system config (pom.xml, build.gradle etc);</li>
+  <li>provide a list of available tasks;</li>
+  <li>allow to execute a particular task;</li>
+  <li>…</li>
+</ul>
+
+<p>That means that we can separate external system-specific logic and general IDE processing. <em>‘External system’</em> sub-system provides simple api for wrapping external system and extensible IDE-specific processing logic.</p>
+
+<a name="project-management" class="elem-anchor"></a>
+<h1>Project management<a href="#project-management" class="anchor-link"><span></span></a></h1>
+
+<a name="project-data-domain" class="elem-anchor"></a>
+<h2>Project data domain<a href="#project-data-domain" class="anchor-link"><span></span></a></h2>
+
+<p><strong>General</strong><br />
+External system wrapper is required to be able to build project info on the basis of the given external system config. That information is built using in terms of <a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/external-system-api/src/com/intellij/openapi/externalSystem/model/DataNode.java" data-bypass="yes" target="_blank"><span>DataNode</span></a>, <a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/external-system-api/src/com/intellij/openapi/externalSystem/model/Key.java" data-bypass="yes" target="_blank"><span>Key</span></a> and <a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/external-system-api/src/com/intellij/openapi/externalSystem/model/project/ProjectEntityData.java" data-bypass="yes" target="_blank"><span>ProjectEntityData</span></a>.</p>
+
+<p><img src="/intellij/sdk/docs/reference_guide/img/data-node.png" alt="DataNode" /></p>
+
+<p>Here <em>DataNode</em> class is just a holder for the target data (data type is defined by the <em>Key</em>). Multiple DataNode objects might be organized in directed graph where every edge identifies parent-child relation.</p>
+
+<p>For example, simple one-module project might look as below:</p>
+
+<p><img src="/intellij/sdk/docs/reference_guide/img/data-node-example.png" alt="DataNode Example" /></p>
+
+<p><strong>Consequence</strong><br />
+The IDE provides a set of built-in <em>Key</em>s and <em>ProjectEntityData</em>s but any external system integration or third-party plugin developer might enhance project data by defining her own <em>Key</em> and <em>ProjectEntityData</em> and storing them at a child of appropriate <em>DataNode</em>.</p>
+
+<a name="managing-project-data" class="elem-anchor"></a>
+<h2>Managing project data<a href="#managing-project-data" class="anchor-link"><span></span></a></h2>
+
+<p>We need to process project data is built on external system config basis. Here comes <a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/external-system-api/src/com/intellij/openapi/externalSystem/service/project/manage/ProjectDataService.java" data-bypass="yes" target="_blank"><span>ProjectDataService</span></a>. It is a strategy which knows how to manage particular <em>ProjectEntityData</em>. For example, when we want to import a project from external model, we can start by the top level <em>DataNode</em> which references project info and then import its data using corresponding service.</p>
+
+<p>Custom services can be defined via <em>‘externalProjectDataService’</em> extension.</p>
+
+<p>The good thing is that we can separate project parsing and management here. That means that a set of <em>DataNode</em>, <em>Key</em> and <em>ProjectDataServices</em> can be introduced for particular technology and then every external system integration can build corresponding data if necessary using it.</p>
+
+<a name="importing-from-external-model" class="elem-anchor"></a>
+<h2>Importing from external model<a href="#importing-from-external-model" class="anchor-link"><span></span></a></h2>
+
+<p>IntelliJ platform provides standard api for that. Namely, <a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/projectImport/ProjectImportBuilder.java" data-bypass="yes" target="_blank"><span>ProjectImportBuilder</span></a> and <a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/projectImport/ProjectImportProvider.java" data-bypass="yes" target="_blank"><span>ProjectImportProvider</span></a>. There are two classes built on <em>template method</em> pattern - <a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/external-system-impl/src/com/intellij/openapi/externalSystem/service/project/wizard/AbstractExternalProjectImportBuilder.java" data-bypass="yes" target="_blank"><span>AbstractExternalProjectImportBuilder</span></a> and <a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/external-system-impl/src/com/intellij/openapi/externalSystem/service/project/wizard/AbstractExternalProjectImportProvider.java" data-bypass="yes" target="_blank"><span>AbstractExternalProjectImportProvider</span></a>. They might be sub-classes and that concrete implementations should be registered at IoC descriptor (plugin.xml).</p>
+
+<p>Here is an example from the gradle integration plugin:</p>
+
+<pre><code class="code-block__wrapper code-block _highlighted lang_text">&lt;projectImportProvider implementation="org.jetbrains.plugins.gradle.service.settings.GradleProjectImportProvider"/&gt;
+&lt;projectImportBuilder implementation="org.jetbrains.plugins.gradle.service.settings.GradleProjectImportBuilder"/&gt;
+</code></pre>
+
+<p>Note that <a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/external-system-impl/src/com/intellij/openapi/externalSystem/service/project/wizard/AbstractExternalProjectImportBuilder.java" data-bypass="yes" target="_blank"><span>AbstractExternalProjectImportBuilder</span></a> is built on top of the ‘external system settings’ controls.</p>
+
+<a name="auto-import" class="elem-anchor"></a>
+<h2>Auto-import<a href="#auto-import" class="anchor-link"><span></span></a></h2>
+
+<p>It’s possible to configure external system integration to automatically refresh project structure when external project’s config file is modified. Basically, end-user should check corresponding box at external system settings for that:</p>
+
+<p><img src="/intellij/sdk/docs/reference_guide/img/use-auto-import.png" alt="Auto-import" /></p>
+
+<p>Built-in support covers only root config files of linked external projects. However, there is a possible situation that particular external project has another config files which affect resulting project structure as well (for example, it might be a multi-project where every sub-project has its own config file). That’s why it’s possible to enhance that processing by making target external system implementation (<em>ExternalSystemManager</em>) implement <em>ExternalSystemAutoImportAware</em>. That allows to provide custom logic for mapping file modification events to the target external project affected by that.</p>
+
+<p><strong>Note:</strong> <em>ExternalSystemAutoImportAware.getAffectedExternalProjectPath()</em> is called quite often, that’s why it’s expected to return control as soon as possible. Helper <em>CachingExternalSystemAutoImportAware</em> class might be used for caching, i.e. <em>ExternalSystemManager</em> which implements <em>ExternalSystemAutoImportAware</em> can have a field like <em>‘new CachingExternalSystemAutoImportAware(new MyExternalSystemAutoImportAware())’</em> and delegate <em>ExternalSystemAutoImportAware.getAffectedExternalProjectPath()</em> calls to it.</p>
+
+<a name="settings" class="elem-anchor"></a>
+<h1>Settings<a href="#settings" class="anchor-link"><span></span></a></h1>
+
+<p>The general idea is that all external system settings controls are represented by implementations of <a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/external-system-impl/src/com/intellij/openapi/externalSystem/service/settings/ExternalSettingsControl.java" data-bypass="yes" target="_blank"><span>ExternalSettingsControl</span></a> interface. There are also external system project-local settings and global external system settings. So, basically particular external system settings UI looks as below:</p>
+
+<p><img src="/intellij/sdk/docs/reference_guide/img/configurable.png" alt="Configurable" /></p>
+
+<p>It’s recommended to extend from <a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/external-system-impl/src/com/intellij/openapi/externalSystem/service/settings/AbstractExternalProjectSettingsControl.java" data-bypass="yes" target="_blank"><span>AbstractExternalProjectSettingsControl</span></a> for implementing project-level settings control as it already handles some of them.</p>
+
+<p>Similar approach is used for providing ‘import from external system’ UI - implementation is expected to extended <a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/external-system-impl/src/com/intellij/openapi/externalSystem/service/settings/AbstractImportFromExternalSystemControl.java" data-bypass="yes" target="_blank"><span>AbstractImportFromExternalSystemControl</span></a> and it has not linked external projects list but target external project path control:</p>
+
+<p><img src="/intellij/sdk/docs/reference_guide/img/import.png" alt="Import from external system" /></p>
+
+<a name="using-with-121x-ij-branch" class="elem-anchor"></a>
+<h1>Using with 12.1.x IJ branch<a href="#using-with-121x-ij-branch" class="anchor-link"><span></span></a></h1>
+
+<p>Though main development is performed at the ‘master’ branch, there is a special 12.1.x-compatible version. Here are instructions on how to use it:</p>
+
+<ol>
+  <li>Download external-system.zip;</li>
+  <li>Unpack it and define <em>external-system.jar</em> as a library dependency;</li>
+  <li>Configure sources from <em>external-system-src.jar</em> if necessary;</li>
+  <li>Add definitions from <em>ExternalSystemExtensionPoints.xml</em> and <em>ExternalSystemExtensions.xml</em> to your <em>plugin.xml</em> (that <strong>.xml files are bundled into <em>external-system-src.jar</em>). *Note:</strong> it’s very important to use custom namespace there because there is a possible case that more than one external system integration uses this approach to be compatible with 12.1.x;</li>
+</ol>
+
+
+                    <div class="last-modified">
+                        Last modified: 21 December 2015
+                    </div>
+                </article>
+
+                <section class="disqus">
+                    <div id="disqus_thread"></div>
+                </section>
+            </div>
+        </section>
+    </main>
+</div>
+
+
+<script data-main="/intellij/sdk/docs/app/js/main.build" data-baseurl="/intellij/sdk/docs/" src="/intellij/sdk/docs/app/js/vendor/requirejs/require.js"></script>
+
+</body>
+</html>
+

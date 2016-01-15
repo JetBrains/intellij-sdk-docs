@@ -1,0 +1,184 @@
+
+
+
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>Settings, Caches, Logs, and Plugins / IntelliJ Platform SDK  DevGuide</title>
+    <link rel="stylesheet" href="/intellij/sdk/docs/app/css/styles.min.css">
+
+    <!-- non-retina iPad pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-72x72.png" sizes="72x72">
+
+    <!-- retina iPhone pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-114x114.png" sizes="114x114">
+
+    <!-- retina iPad pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-144x144.png" sizes="144x144">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/intellij/sdk/docs/apple-touch-icon-precomposed.png">
+
+    <!-- normal favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="/intellij/sdk/docs/favicon.ico">
+    <link rel="icon" type="image/png" href="/intellij/sdk/docs/favicon.png">
+<link  rel="stylesheet" href="/intellij/sdk/docs/styles/styles.css"></head>
+<body data-id="basics/settings_caches_logs">
+<div class="wrapper">
+    <section class="panel _nav">
+        <header class="panel__header">
+            <div class="container">
+                <form class="search-box">
+                    <label for="search-box__input" class="search-box__label">
+                        <input type="text" class="search-box__input" id="search-box__input" placeholder="Search IntelliJ Platform SDK  DevGuide">
+                    </label>
+                    <div class="search-box__clear" title="Clear"></div>
+                </form>
+            </div>
+        </header>
+        <nav class="panel__content">
+            <div class="container _nav">
+                <menu class="nav-tree"></menu>
+            </div>
+            <div class="container _footer panel__footer">
+                <p><a href="https://youtrack.jetbrains.com/issues/IJSDK">Send feedback</a></p>
+                <p>&copy; 2000&ndash;2016 <a href="//www.jetbrains.com">JetBrains</a> s.r.o.<br>
+                    All rights reserved.</p>
+            </div>
+        </nav>
+    </section>
+
+    <main class="panel _main" role="main">
+        <header class="panel__header">
+            <div class="container">
+                <h3>IntelliJ Platform SDK DevGuide</h3>
+                
+        <div class="shortcuts-switcher"><label for="switch-shortcuts">Keymap:</label><select id="switch-shortcuts" class="select _shortcuts" height="1">
+            <option data-group="primary" value="default" selected>Default</option>
+            <option data-group="primary" value="default_for_gnome">GNOME</option>
+            <option data-group="primary" value="default_for_kde">KDE</option>
+            <option data-group="primary" value="default_for_xwin">XWindow</option>
+            <option data-group="primary" value="emacs">Emacs</option>
+            <option data-group="primary" value="jbuilder">JBuilder</option>
+            <option data-group="primary" value="visual_studio">Visual Studio</option>
+            <option data-group="primary" value="netbeans_6.5">NetBeans 6.5</option>
+            <option data-group="primary" value="eclipse">Eclipse</option>
+            <option data-group="secondary" value="mac_os_x_10.5_">OS X 10.5+</option>
+            <option data-group="secondary" value="mac_os_x">OS X</option>
+            <option data-group="secondary" value="eclipse_mac_os_x">OS X Eclipse</option></select>
+        </div>
+    
+                <div class="panel-trigger"></div>
+            </div>
+        </header>
+        <section class="panel__content">
+            <div class="container">
+                <article class="article" data-shortcut-switcher="false">
+
+                    <h1>Settings, Caches, Logs, and Plugins</h1>
+                    <p>Every IntelliJ-based IDE stores its local settings, caches, log and installed plugins on a hard drive. Location of the IDE files depends on the operating system, product and version. IDE settings directory name is made up of the product code name and product version. We will use <code class="code highlight language-text">&lt;product_system_name&gt;&lt;product_version&gt;</code> as an alias for the product internal settings home directory name.</p>
+
+<a name="directory-locations" class="elem-anchor"></a>
+<h2>Directory locations<a href="#directory-locations" class="anchor-link"><span></span></a></h2>
+
+<ul>
+  <li><strong>Windows:</strong> You can find internal configuration data in <code class="code highlight language-text">&lt;User home&gt;\.&lt;product_system_name&gt;&lt;product_version&gt;</code></li>
+  <li>
+    <p><strong>Linux:</strong> You can find internal configuration data in <code class="code highlight language-text">~/.&lt;product_system_name&gt;&lt;product_version&gt;</code></p>
+
+    <p>In the folder you can find two subdirectories:
+* <code class="code highlight language-text">config</code> that contains user-specific settings.
+* <code class="code highlight language-text">system</code> that stores <code class="code highlight language-text">IntelliJ Platform</code> data caches.</p>
+  </li>
+  <li><strong>Mac OS X:</strong> You can find internal configuration data in:
+    <ul>
+      <li><code class="code highlight language-text">/Applications/&lt;product_system_name&gt;&lt;product_version&gt;/Contents/plugins</code> contains the catalog with plugins.</li>
+      <li><code class="code highlight language-text">~/Library/Preferences/&lt;product_system_name&gt;&lt;product_version&gt;</code> contains the rest of the configuration settings.</li>
+      <li><code class="code highlight language-text">~/Library/Caches/&lt;product_system_name&gt;&lt;product_version&gt;</code> contains data caches, logs, local history, etc.</li>
+    </ul>
+
+    <p>These files can be quite significant in size.</p>
+
+    <ul>
+      <li><code class="code highlight language-text">~/Library/Logs/&lt;product_system_name&gt;&lt;product_version&gt;</code> contains logs.</li>
+    </ul>
+  </li>
+</ul>
+
+<a name="product-system-names" class="elem-anchor"></a>
+<h2>Product System Names<a href="#product-system-names" class="anchor-link"><span></span></a></h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Product name</th>
+      <th style="text-align: right">Directory name prefix</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>IntelliJ IDEA Ultimate Edition</td>
+      <td style="text-align: right"><code class="code highlight language-text">IntelliJIdea</code></td>
+    </tr>
+    <tr>
+      <td>IntelliJ IDEA Community Edition</td>
+      <td style="text-align: right"><code class="code highlight language-text">IdeaIC</code></td>
+    </tr>
+    <tr>
+      <td>RubyMine</td>
+      <td style="text-align: right"><code class="code highlight language-text">RubyMine</code></td>
+    </tr>
+    <tr>
+      <td>WebStorm (7.0+)</td>
+      <td style="text-align: right"><code class="code highlight language-text">WebStorm</code></td>
+    </tr>
+    <tr>
+      <td>PhpStorm and WebStorm (pre-7.0)</td>
+      <td style="text-align: right"><code class="code highlight language-text">WebIde</code></td>
+    </tr>
+    <tr>
+      <td>PyCharm</td>
+      <td style="text-align: right"><code class="code highlight language-text">PyCharm</code></td>
+    </tr>
+    <tr>
+      <td>AppCode</td>
+      <td style="text-align: right"><code class="code highlight language-text">appCode</code></td>
+    </tr>
+    <tr>
+      <td>CLion</td>
+      <td style="text-align: right"><code class="code highlight language-text">clion</code></td>
+    </tr>
+    <tr>
+      <td>0xDBE Data Base IDE</td>
+      <td style="text-align: right"><code class="code highlight language-text">0xDBE</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<a name="example" class="elem-anchor"></a>
+<h2>Example<a href="#example" class="anchor-link"><span></span></a></h2>
+
+<p>To go to the <em>IntelliJ IDEA 14</em> plugin directory on Mac execute the following command:</p>
+
+<pre><code class="code-block__wrapper code-block _highlighted lang_bash"><span class="nb">cd</span> /Applications/IntelliJ<span class="se">\ </span>IDEA<span class="se">\ </span>14.app/Contents/plugins
+</code></pre>
+
+
+                    <div class="last-modified">
+                        Last modified: 30 November 2015
+                    </div>
+                </article>
+
+                <section class="disqus">
+                    <div id="disqus_thread"></div>
+                </section>
+            </div>
+        </section>
+    </main>
+</div>
+
+
+<script data-main="/intellij/sdk/docs/app/js/main.build" data-baseurl="/intellij/sdk/docs/" src="/intellij/sdk/docs/app/js/vendor/requirejs/require.js"></script>
+
+</body>
+</html>
+

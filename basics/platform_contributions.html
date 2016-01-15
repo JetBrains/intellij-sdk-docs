@@ -1,0 +1,138 @@
+
+
+
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>Contributing to the IntelliJ Platform / IntelliJ Platform SDK  DevGuide</title>
+    <link rel="stylesheet" href="/intellij/sdk/docs/app/css/styles.min.css">
+
+    <!-- non-retina iPad pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-72x72.png" sizes="72x72">
+
+    <!-- retina iPhone pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-114x114.png" sizes="114x114">
+
+    <!-- retina iPad pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-144x144.png" sizes="144x144">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/intellij/sdk/docs/apple-touch-icon-precomposed.png">
+
+    <!-- normal favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="/intellij/sdk/docs/favicon.ico">
+    <link rel="icon" type="image/png" href="/intellij/sdk/docs/favicon.png">
+<link  rel="stylesheet" href="/intellij/sdk/docs/styles/styles.css"></head>
+<body data-id="basics/platform_contributions">
+<div class="wrapper">
+    <section class="panel _nav">
+        <header class="panel__header">
+            <div class="container">
+                <form class="search-box">
+                    <label for="search-box__input" class="search-box__label">
+                        <input type="text" class="search-box__input" id="search-box__input" placeholder="Search IntelliJ Platform SDK  DevGuide">
+                    </label>
+                    <div class="search-box__clear" title="Clear"></div>
+                </form>
+            </div>
+        </header>
+        <nav class="panel__content">
+            <div class="container _nav">
+                <menu class="nav-tree"></menu>
+            </div>
+            <div class="container _footer panel__footer">
+                <p><a href="https://youtrack.jetbrains.com/issues/IJSDK">Send feedback</a></p>
+                <p>&copy; 2000&ndash;2016 <a href="//www.jetbrains.com">JetBrains</a> s.r.o.<br>
+                    All rights reserved.</p>
+            </div>
+        </nav>
+    </section>
+
+    <main class="panel _main" role="main">
+        <header class="panel__header">
+            <div class="container">
+                <h3>IntelliJ Platform SDK DevGuide</h3>
+                
+        <div class="shortcuts-switcher"><label for="switch-shortcuts">Keymap:</label><select id="switch-shortcuts" class="select _shortcuts" height="1">
+            <option data-group="primary" value="default" selected>Default</option>
+            <option data-group="primary" value="default_for_gnome">GNOME</option>
+            <option data-group="primary" value="default_for_kde">KDE</option>
+            <option data-group="primary" value="default_for_xwin">XWindow</option>
+            <option data-group="primary" value="emacs">Emacs</option>
+            <option data-group="primary" value="jbuilder">JBuilder</option>
+            <option data-group="primary" value="visual_studio">Visual Studio</option>
+            <option data-group="primary" value="netbeans_6.5">NetBeans 6.5</option>
+            <option data-group="primary" value="eclipse">Eclipse</option>
+            <option data-group="secondary" value="mac_os_x_10.5_">OS X 10.5+</option>
+            <option data-group="secondary" value="mac_os_x">OS X</option>
+            <option data-group="secondary" value="eclipse_mac_os_x">OS X Eclipse</option></select>
+        </div>
+    
+                <div class="panel-trigger"></div>
+            </div>
+        </header>
+        <section class="panel__content">
+            <div class="container">
+                <article class="article" data-shortcut-switcher="false">
+
+                    <h1>Contributing to the IntelliJ Platform</h1>
+                    <a name="participate-in-the-community" class="elem-anchor"></a>
+<h4>Participate in the Community</h4>
+
+<ul>
+  <li><strong>Participate in newsgroups and forums</strong><br />
+There are several community <a href="http://www.jetbrains.net/devnet/community/idea" data-bypass="yes" target="_blank"><span>forums and newsgroups</span></a> you can join to discuss IntelliJ IDEA. The forums are an excellent source for users and contributors interested in having technical discussions, answering questions, or resolving potential issues for newcomers.</li>
+  <li><strong>Link to jetbrains.org</strong><br />
+The success of any open source project depends on the number of people who use the product and contribute back to the project. By linking to jetbrains.org, you can increase the chances of a new user or contributor finding out about the project and joining the community. If you’re as excited about IntelliJ IDEA Community Edition as we are, you can show it by linking to us. Project logos and other assets are <a href="https://www.jetbrains.com/company/press/" data-bypass="yes" target="_blank"><span>also available</span></a>.</li>
+  <li><strong>Promote IntelliJ Platform and IntelliJ IDEA Community Edition</strong><br />
+Help promote the platform and IDE by using your blog, Twitter, Facebook, or submitting an article to your favorite local magazine. If you are a member of a different open source community, why not mention IntelliJ IDEA on their discussion forums or at conferences? If you love IntelliJ IDEA, don’t hold back - speak up! The more developers use IntelliJ IDEA, the more bugs will be caught, the more plug-ins will be written, the more visible the project, and the more benefits the community will get!</li>
+</ul>
+
+<a name="help-others-learn" class="elem-anchor"></a>
+<h4>Help Others Learn</h4>
+
+<ul>
+  <li><strong>Write documents</strong><br />
+We’re always looking for new articles about IntelliJ IDEA features as well as documentation for the IntelliJ Platform. You can write tutorials, how-tos, sample applications, or just share your experience with the IntelliJ Platform. You can publish your documentation on an website or blog, or submit a <a href="/intellij/sdk/docs/CONTRIBUTING.html"><span>pull request</span></a> to the SDK Docs.</li>
+  <li><strong>Produce screencasts</strong><br />
+Screencasts have recently become very popular as a way to show other developers how to use the tool effectively. You can record a screencast about a particular feature or use case you discovered and would like to share it with the community.</li>
+</ul>
+
+<a name="contribute-code" class="elem-anchor"></a>
+<h4>Contribute Code</h4>
+
+<ul>
+  <li><strong>File a bug report</strong><br />
+Bug reports take little time to file and are very helpful to developers. This is one of the easiest contributions you can make. When you discover a problem with the IDE or the platform, please report it. Make sure you provide information about your environment (OS, JDK version), steps to reproduce the issue, as well as a written description of the problem. You can file a bug in our <a href="http://youtrack.jetbrains.net/issues/IDEA" data-bypass="yes" target="_blank"><span>YouTrack issue tracker</span></a>.
+Before submitting an issue, please search for already submitted ones describing the same problem - and if you find one, feel free to vote for it.</li>
+  <li><strong>Help us triage existing bug reports</strong><br />
+Over the years, users have submitted thousands of issues to the IntelliJ issue tracker. Many of the unresolved issues are no longer applicable to the latest version of IntelliJ IDEA, are duplicates, or require additional information to be resolved. Leaving comments notifying about the status of such issues helps the team keep the issue tracker clean and useful for everyone.</li>
+  <li><strong>Write a plug-in</strong><br />
+One of the best ways to contribute a larger piece of code, adding extra functionality to IntelliJ IDEA, is by writing a plug-in. You can submit a plug-in to the <a href="http://plugins.intellij.net/" data-bypass="yes" target="_blank"><span>IntelliJ IDEA plug-in repository</span></a>, making it available for all IntelliJ IDEA users. When writing a plug-in, you have control over the code and don’t need to sign the contribution agreement. For more information about writing plug-ins, visit the <a href="http://www.jetbrains.org/display/IJOS/Writing+Plug-ins" data-bypass="yes" target="_blank"><span>plug-in development documentation</span></a>.</li>
+  <li><strong>Submit a patch</strong><br />
+If you would like to improve the code in the IntelliJ Platform or the core functionality of IntelliJ IDEA, you can submit a patch in <a href="http://youtrack.jetbrains.net/issues/IDEA" data-bypass="yes" target="_blank"><span>IntelliJ’s YouTrack bug database</span></a> . You can either file a new issue with the patch attached, or attach a patch to an issue submitted by another user. When writing a patch, please make sure to follow the <a href="intellij_coding_guidelines.html"><span>IntelliJ Coding Guidelines</span></a>.<br />
+Alternatively, you can fork <a href="https://github.com/JetBrains/intellij-community" data-bypass="yes" target="_blank"><span>the IntelliJ IDEA repository on GitHub</span></a>, make the changes in your fork and send us a pull request.
+A developer will review your patch and, if it meets the <a href="intellij_coding_guidelines.html"><span>quality criteria</span></a> and fits well with the rest of the code, you’ll be notified about the acceptance of the patch. You will also need to sign the <a href="http://www.jetbrains.org/display/IJOS/Contributor+Agreement" data-bypass="yes" target="_blank"><span>contribution agreement</span></a> in order to complete your contribution.</li>
+  <li><strong>Become a commiter and commit code directly</strong>
+Developers with a long history of submitting high-quality patches can gain direct commit rights.</li>
+</ul>
+
+
+                    <div class="last-modified">
+                        Last modified: 7 January 2016
+                    </div>
+                </article>
+
+                <section class="disqus">
+                    <div id="disqus_thread"></div>
+                </section>
+            </div>
+        </section>
+    </main>
+</div>
+
+
+<script data-main="/intellij/sdk/docs/app/js/main.build" data-baseurl="/intellij/sdk/docs/" src="/intellij/sdk/docs/app/js/vendor/requirejs/require.js"></script>
+
+</body>
+</html>
+

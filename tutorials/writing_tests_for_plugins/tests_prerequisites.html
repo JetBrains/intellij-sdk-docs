@@ -1,0 +1,133 @@
+
+
+
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>1. Tests Prerequisites / IntelliJ Platform SDK  DevGuide</title>
+    <link rel="stylesheet" href="/intellij/sdk/docs/app/css/styles.min.css">
+
+    <!-- non-retina iPad pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-72x72.png" sizes="72x72">
+
+    <!-- retina iPhone pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-114x114.png" sizes="114x114">
+
+    <!-- retina iPad pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-144x144.png" sizes="144x144">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/intellij/sdk/docs/apple-touch-icon-precomposed.png">
+
+    <!-- normal favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="/intellij/sdk/docs/favicon.ico">
+    <link rel="icon" type="image/png" href="/intellij/sdk/docs/favicon.png">
+<link  rel="stylesheet" href="/intellij/sdk/docs/styles/styles.css"></head>
+<body data-id="tutorials/writing_tests_for_plugins/tests_prerequisites">
+<div class="wrapper">
+    <section class="panel _nav">
+        <header class="panel__header">
+            <div class="container">
+                <form class="search-box">
+                    <label for="search-box__input" class="search-box__label">
+                        <input type="text" class="search-box__input" id="search-box__input" placeholder="Search IntelliJ Platform SDK  DevGuide">
+                    </label>
+                    <div class="search-box__clear" title="Clear"></div>
+                </form>
+            </div>
+        </header>
+        <nav class="panel__content">
+            <div class="container _nav">
+                <menu class="nav-tree"></menu>
+            </div>
+            <div class="container _footer panel__footer">
+                <p><a href="https://youtrack.jetbrains.com/issues/IJSDK">Send feedback</a></p>
+                <p>&copy; 2000&ndash;2016 <a href="//www.jetbrains.com">JetBrains</a> s.r.o.<br>
+                    All rights reserved.</p>
+            </div>
+        </nav>
+    </section>
+
+    <main class="panel _main" role="main">
+        <header class="panel__header">
+            <div class="container">
+                <h3>IntelliJ Platform SDK DevGuide</h3>
+                
+        <div class="shortcuts-switcher"><label for="switch-shortcuts">Keymap:</label><select id="switch-shortcuts" class="select _shortcuts" height="1">
+            <option data-group="primary" value="default" selected>Default</option>
+            <option data-group="primary" value="default_for_gnome">GNOME</option>
+            <option data-group="primary" value="default_for_kde">KDE</option>
+            <option data-group="primary" value="default_for_xwin">XWindow</option>
+            <option data-group="primary" value="emacs">Emacs</option>
+            <option data-group="primary" value="jbuilder">JBuilder</option>
+            <option data-group="primary" value="visual_studio">Visual Studio</option>
+            <option data-group="primary" value="netbeans_6.5">NetBeans 6.5</option>
+            <option data-group="primary" value="eclipse">Eclipse</option>
+            <option data-group="secondary" value="mac_os_x_10.5_">OS X 10.5+</option>
+            <option data-group="secondary" value="mac_os_x">OS X</option>
+            <option data-group="secondary" value="eclipse_mac_os_x">OS X Eclipse</option></select>
+        </div>
+    
+                <div class="panel-trigger"></div>
+            </div>
+        </header>
+        <section class="panel__content">
+            <div class="container">
+                <article class="article" data-shortcut-switcher="false">
+
+                    <h1>1. Tests Prerequisites</h1>
+                    <a name="create-a-folder-for-tests" class="elem-anchor"></a>
+<h3>1.1. Create a folder for tests<a href="#create-a-folder-for-tests" class="anchor-link"><span></span></a></h3>
+
+<p>Open the project with the plugin and create a separate folder “tests”.
+Mark the folder as a test source root via the context menu <code class="code highlight language-text">Mark Directory As</code>  → <code class="code highlight language-text">Test Source Root</code>.</p>
+
+<a name="create-a-folder-for-test-data" class="elem-anchor"></a>
+<h3>1.2. Create a folder for test data<a href="#create-a-folder-for-test-data" class="anchor-link"><span></span></a></h3>
+
+<p>In our tests we will use test data, so we need one more folder <em>“testData”</em> to store these files.</p>
+
+<a name="run-configuration-parameters" class="elem-anchor"></a>
+<h3>1.3. Run Configuration Parameters<a href="#run-configuration-parameters" class="anchor-link"><span></span></a></h3>
+
+<p>Since some of our tests will use Java files as test data, we need to mock up the project SDK.
+IntelliJ IDEA does everything automatically when we use the special utility class
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/java/testFramework/src/com/intellij/testFramework/fixtures/LightCodeInsightFixtureTestCase.java" data-bypass="yes" target="_blank"><span>LightCodeInsightFixtureTestCase</span></a>.</p>
+
+<p>All we need to do is point the the run configuration’s working directory to the root of the IntelliJ IDEA Community Edition sources and enable the following VM options:</p>
+
+<pre><code class="code-block__wrapper code-block _highlighted lang_text">-ea -Xbootclasspath/p:../out/classes/production/boot -XX:+HeapDumpOnOutOfMemoryError -Xmx512m -XX:MaxPermSize=320m -Didea.system.path=../test-system -Didea.home.path=../ -Didea.config.path=../test-config -Didea.test.group=ALL_EXCLUDE_DEFINED
+</code></pre>
+
+<p><strong>Note</strong>:</p>
+
+<aside>
+  <p>Keep in mind that we have changed the <em>working directory</em>, so all the paths in tests extended from
+ <a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/java/testFramework/src/com/intellij/testFramework/fixtures/LightCodeInsightFixtureTestCase.java" data-bypass="yes" target="_blank"><span>LightCodeInsightFixtureTestCase</span></a>
+ will use relative path to the <em>source root</em> of IntelliJ IDEA Community Edition.</p>
+</aside>
+
+<hr />
+<p><a href="/intellij/sdk/docs/tutorials/writing_tests_for_plugins.html"><span>Top</span></a>
+<a href="parsing_test.html"><span>Next</span></a></p>
+
+
+
+                    <div class="last-modified">
+                        Last modified: 30 November 2015
+                    </div>
+                </article>
+
+                <section class="disqus">
+                    <div id="disqus_thread"></div>
+                </section>
+            </div>
+        </section>
+    </main>
+</div>
+
+
+<script data-main="/intellij/sdk/docs/app/js/main.build" data-baseurl="/intellij/sdk/docs/" src="/intellij/sdk/docs/app/js/vendor/requirejs/require.js"></script>
+
+</body>
+</html>
+

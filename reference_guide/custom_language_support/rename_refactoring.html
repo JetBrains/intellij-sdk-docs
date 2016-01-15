@@ -1,0 +1,167 @@
+
+
+
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>Rename Refactoring / IntelliJ Platform SDK  DevGuide</title>
+    <link rel="stylesheet" href="/intellij/sdk/docs/app/css/styles.min.css">
+
+    <!-- non-retina iPad pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-72x72.png" sizes="72x72">
+
+    <!-- retina iPhone pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-114x114.png" sizes="114x114">
+
+    <!-- retina iPad pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-144x144.png" sizes="144x144">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/intellij/sdk/docs/apple-touch-icon-precomposed.png">
+
+    <!-- normal favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="/intellij/sdk/docs/favicon.ico">
+    <link rel="icon" type="image/png" href="/intellij/sdk/docs/favicon.png">
+<link  rel="stylesheet" href="/intellij/sdk/docs/styles/styles.css"></head>
+<body data-id="reference_guide/custom_language_support/rename_refactoring">
+<div class="wrapper">
+    <section class="panel _nav">
+        <header class="panel__header">
+            <div class="container">
+                <form class="search-box">
+                    <label for="search-box__input" class="search-box__label">
+                        <input type="text" class="search-box__input" id="search-box__input" placeholder="Search IntelliJ Platform SDK  DevGuide">
+                    </label>
+                    <div class="search-box__clear" title="Clear"></div>
+                </form>
+            </div>
+        </header>
+        <nav class="panel__content">
+            <div class="container _nav">
+                <menu class="nav-tree"></menu>
+            </div>
+            <div class="container _footer panel__footer">
+                <p><a href="https://youtrack.jetbrains.com/issues/IJSDK">Send feedback</a></p>
+                <p>&copy; 2000&ndash;2016 <a href="//www.jetbrains.com">JetBrains</a> s.r.o.<br>
+                    All rights reserved.</p>
+            </div>
+        </nav>
+    </section>
+
+    <main class="panel _main" role="main">
+        <header class="panel__header">
+            <div class="container">
+                <h3>IntelliJ Platform SDK DevGuide</h3>
+                
+        <div class="shortcuts-switcher"><label for="switch-shortcuts">Keymap:</label><select id="switch-shortcuts" class="select _shortcuts" height="1">
+            <option data-group="primary" value="default" selected>Default</option>
+            <option data-group="primary" value="default_for_gnome">GNOME</option>
+            <option data-group="primary" value="default_for_kde">KDE</option>
+            <option data-group="primary" value="default_for_xwin">XWindow</option>
+            <option data-group="primary" value="emacs">Emacs</option>
+            <option data-group="primary" value="jbuilder">JBuilder</option>
+            <option data-group="primary" value="visual_studio">Visual Studio</option>
+            <option data-group="primary" value="netbeans_6.5">NetBeans 6.5</option>
+            <option data-group="primary" value="eclipse">Eclipse</option>
+            <option data-group="secondary" value="mac_os_x_10.5_">OS X 10.5+</option>
+            <option data-group="secondary" value="mac_os_x">OS X</option>
+            <option data-group="secondary" value="eclipse_mac_os_x">OS X Eclipse</option></select>
+        </div>
+    
+                <div class="panel-trigger"></div>
+            </div>
+        </header>
+        <section class="panel__content">
+            <div class="container">
+                <article class="article" data-shortcut-switcher="false">
+
+                    <h1>Rename Refactoring</h1>
+                    <p>The operation of the Rename refactoring is quite similar to that of Find Usages.
+It uses the same rules for locating the element to be renamed, and the same index of words for locating the files which may have references to the element being renamed.</p>
+
+<p>When the rename refactoring is performed, the method
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/core-api/src/com/intellij/psi/PsiNamedElement.java" data-bypass="yes" target="_blank"><span>PsiNamedElement.setName()</span></a>
+is called for the renamed element, and
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/core-api/src/com/intellij/psi/PsiReference.java" data-bypass="yes" target="_blank"><span>PsiReference.handleElementRename()</span></a>
+is called for all references to the renamed element.
+Both of these methods perform basically the same action: replace the underlying AST node of the PSI element with the node containing the new text entered by the user.
+Creating a fully correct AST node from scratch is quite difficult.
+Thus, surprisingly, the easiest way to get the replacement node is to create a dummy file in the custom language so that it would contain the necessary node in its parse tree, build the parse tree and extract the necessary node from it.</p>
+
+<p><strong>Example:</strong>
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/psi/impl/PropertyImpl.java" data-bypass="yes" target="_blank"><span>setName()</span></a><!--#L58-->
+implementation for a
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/plugins/properties" data-bypass="yes" target="_blank"><span>Properties language plugin</span></a></p>
+
+<p>Another interface related to the Rename refactoring is
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/lang/refactoring/NamesValidator.java" data-bypass="yes" target="_blank"><span>NamesValidator</span></a>.
+This interface allows a plugin to check if the name entered by the user in the <code class="code highlight language-text">Rename</code> dialog is a valid identifier (and not a keyword) according to the custom language rules.
+If an implementation of this interface is not provided by the plugin, Java rules for validating identifiers are used.
+Implementations of
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/lang/refactoring/NamesValidator.java" data-bypass="yes" target="_blank"><span>NamesValidator</span></a>
+are registered in the <code class="code highlight language-text">com.intellij.lang.namesValidator</code> extension point.</p>
+
+<p><strong>Example</strong>:
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/plugins/properties/src/com/intellij/lang/properties/PropertiesNamesValidator.java" data-bypass="yes" target="_blank"><span>NamesValidator</span></a>
+for
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/plugins/properties" data-bypass="yes" target="_blank"><span>Properties language plugin</span></a></p>
+
+<p>Further customization of the Rename refactoring processing is possible on multiple levels.
+Providing a custom implementation of the
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/refactoring/rename/RenameHandler.java" data-bypass="yes" target="_blank"><span>RenameHandler</span></a>
+interface allows you to entirely replace the UI and workflow of the rename refactoring, and also to support renaming something which is not a
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/core-api/src/com/intellij/psi/PsiElement.java" data-bypass="yes" target="_blank"><span>PsiElement</span></a>
+at all.</p>
+
+<p><strong>Example</strong>:
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/plugins/properties/src/com/intellij/lang/properties/refactoring/rename/ResourceBundleFromEditorRenameHandler.java" data-bypass="yes" target="_blank"><span>RenameHandler</span></a>
+for renaming a resource bundle in the
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/plugins/properties" data-bypass="yes" target="_blank"><span>Properties language plugin</span></a></p>
+
+<p>If you’re fine with the standard UI but need to extend the default logic of renaming, you can provide an implementation of the
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-impl/src/com/intellij/refactoring/rename/RenamePsiElementProcessor.java" data-bypass="yes" target="_blank"><span>RenamePsiElementProcessor</span></a>
+interface.
+This allows you to:</p>
+
+<ul>
+  <li>
+    <p>Rename an element different from the one on which the action was invoked (a super method, for example)</p>
+  </li>
+  <li>
+    <p>Rename multiple elements at once (if their names are linked according to the logic of your language)</p>
+  </li>
+  <li>
+    <p>Check for name conflicts (existing names etc.)</p>
+  </li>
+  <li>
+    <p>Customize how search for code references or text references is performed</p>
+  </li>
+  <li>
+    <p>etc.</p>
+  </li>
+</ul>
+
+<p><strong>Example</strong>:
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/plugins/properties/src/com/intellij/lang/properties/refactoring/rename/RenamePropertyProcessor.java" data-bypass="yes" target="_blank"><span>RenamePsiElementProcessor</span></a>
+for renaming a property in
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/plugins/properties" data-bypass="yes" target="_blank"><span>Properties plugin language</span></a></p>
+
+
+                    <div class="last-modified">
+                        Last modified: 21 December 2015
+                    </div>
+                </article>
+
+                <section class="disqus">
+                    <div id="disqus_thread"></div>
+                </section>
+            </div>
+        </section>
+    </main>
+</div>
+
+
+<script data-main="/intellij/sdk/docs/app/js/main.build" data-baseurl="/intellij/sdk/docs/" src="/intellij/sdk/docs/app/js/vendor/requirejs/require.js"></script>
+
+</body>
+</html>
+

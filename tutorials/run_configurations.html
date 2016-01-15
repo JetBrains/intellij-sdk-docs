@@ -1,0 +1,276 @@
+
+
+
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>Run Configurations / IntelliJ Platform SDK  DevGuide</title>
+    <link rel="stylesheet" href="/intellij/sdk/docs/app/css/styles.min.css">
+
+    <!-- non-retina iPad pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-72x72.png" sizes="72x72">
+
+    <!-- retina iPhone pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-114x114.png" sizes="114x114">
+
+    <!-- retina iPad pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-144x144.png" sizes="144x144">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/intellij/sdk/docs/apple-touch-icon-precomposed.png">
+
+    <!-- normal favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="/intellij/sdk/docs/favicon.ico">
+    <link rel="icon" type="image/png" href="/intellij/sdk/docs/favicon.png">
+<link  rel="stylesheet" href="/intellij/sdk/docs/styles/styles.css"></head>
+<body data-id="tutorials/run_configurations">
+<div class="wrapper">
+    <section class="panel _nav">
+        <header class="panel__header">
+            <div class="container">
+                <form class="search-box">
+                    <label for="search-box__input" class="search-box__label">
+                        <input type="text" class="search-box__input" id="search-box__input" placeholder="Search IntelliJ Platform SDK  DevGuide">
+                    </label>
+                    <div class="search-box__clear" title="Clear"></div>
+                </form>
+            </div>
+        </header>
+        <nav class="panel__content">
+            <div class="container _nav">
+                <menu class="nav-tree"></menu>
+            </div>
+            <div class="container _footer panel__footer">
+                <p><a href="https://youtrack.jetbrains.com/issues/IJSDK">Send feedback</a></p>
+                <p>&copy; 2000&ndash;2016 <a href="//www.jetbrains.com">JetBrains</a> s.r.o.<br>
+                    All rights reserved.</p>
+            </div>
+        </nav>
+    </section>
+
+    <main class="panel _main" role="main">
+        <header class="panel__header">
+            <div class="container">
+                <h3>IntelliJ Platform SDK DevGuide</h3>
+                
+        <div class="shortcuts-switcher"><label for="switch-shortcuts">Keymap:</label><select id="switch-shortcuts" class="select _shortcuts" height="1">
+            <option data-group="primary" value="default" selected>Default</option>
+            <option data-group="primary" value="default_for_gnome">GNOME</option>
+            <option data-group="primary" value="default_for_kde">KDE</option>
+            <option data-group="primary" value="default_for_xwin">XWindow</option>
+            <option data-group="primary" value="emacs">Emacs</option>
+            <option data-group="primary" value="jbuilder">JBuilder</option>
+            <option data-group="primary" value="visual_studio">Visual Studio</option>
+            <option data-group="primary" value="netbeans_6.5">NetBeans 6.5</option>
+            <option data-group="primary" value="eclipse">Eclipse</option>
+            <option data-group="secondary" value="mac_os_x_10.5_">OS X 10.5+</option>
+            <option data-group="secondary" value="mac_os_x">OS X</option>
+            <option data-group="secondary" value="eclipse_mac_os_x">OS X Eclipse</option></select>
+        </div>
+    
+                <div class="panel-trigger"></div>
+            </div>
+        </header>
+        <section class="panel__content">
+            <div class="container">
+                <article class="article" data-shortcut-switcher="false">
+
+                    <h1>Run Configurations</h1>
+                    <p>These series of steps show how to register and implement a simple Run Configuration.
+Run Configurations are used to run internal and external processes from within <em>IntelliJ Platform</em> based products.
+To get familiar with the concept of a Run Configuration refer
+<a href="https://www.jetbrains.com/idea/help/run-debug-configuration.html" data-bypass="yes" target="_blank"><span>Run/Debug Configuration</span></a>
+section of 
+<a href="https://www.jetbrains.com/idea/help/intellij-idea.html" data-bypass="yes" target="_blank"><span>IntelliJ IDEA Web Help</span></a></p>
+
+<a name="pre-requirements" class="elem-anchor"></a>
+<h2>Pre-requirements.<a href="#pre-requirements" class="anchor-link"><span></span></a></h2>
+
+<p>Create an empty plugin project.
+See 
+<a href="/intellij/sdk/docs/basics/getting_started/creating_plugin_project.html"><span>Creating a Plugin Project</span></a>
+to know how to do it.</p>
+
+<a name="register-a-new-configuration-type" class="elem-anchor"></a>
+<h2>1. Register a New Configuration Type<a href="#register-a-new-configuration-type" class="anchor-link"><span></span></a></h2>
+
+<p>Add new <em>configurationType</em> extension to the 
+<a href="https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/run_configuration/META-INF/plugin.xml" data-bypass="yes" target="_blank"><span>plugin.xml</span></a></p>
+
+<pre><code class="code-block__wrapper code-block _highlighted lang_xml"><span class="nt">&lt;extensions</span> <span class="na">defaultExtensionNs=</span><span class="s">"com.intellij"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;configurationType</span> <span class="na">implementation=</span><span class="s">"org.jetbrains.tutorials.run.configuration.DemoRunConfigurationType"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/extensions&gt;</span>
+</code></pre>
+
+<a name="implement-configurationtype" class="elem-anchor"></a>
+<h2>2. Implement ConfigurationType<a href="#implement-configurationtype" class="anchor-link"><span></span></a></h2>
+
+<p>Implement 
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/execution/configurations/ConfigurationType.java" data-bypass="yes" target="_blank"><span>ConfigurationType</span></a> 
+interface registered in the Step 1.</p>
+
+<pre><code class="code-block__wrapper code-block _highlighted lang_java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">DemoRunConfigurationType</span> <span class="kd">implements</span> <span class="n">ConfigurationType</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getDisplayName</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="s">"Demo"</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getConfigurationTypeDescription</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="s">"Demo Run Configuration Type"</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">Icon</span> <span class="nf">getIcon</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">AllIcons</span><span class="o">.</span><span class="na">General</span><span class="o">.</span><span class="na">Information</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="nd">@NotNull</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getId</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="s">"DEMO_RUN_CONFIGURATION"</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">ConfigurationFactory</span><span class="o">[]</span> <span class="nf">getConfigurationFactories</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="n">ConfigurationFactory</span><span class="o">[]{</span><span class="k">new</span> <span class="n">DemoConfigurationFactory</span><span class="o">(</span><span class="k">this</span><span class="o">)};</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
+
+<a name="implement-a-configuration-factory" class="elem-anchor"></a>
+<h2>3. Implement a Configuration Factory<a href="#implement-a-configuration-factory" class="anchor-link"><span></span></a></h2>
+
+<p>Implement a new
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/execution/configurations/ConfigurationFactory.java" data-bypass="yes" target="_blank"><span>ConfigurationFactory</span></a>
+through which custom run configurations will be created.</p>
+
+<pre><code class="code-block__wrapper code-block _highlighted lang_java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">DemoConfigurationFactory</span> <span class="kd">extends</span> <span class="n">ConfigurationFactory</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">FACTORY_NAME</span> <span class="o">=</span> <span class="s">"Demo configuration factory"</span><span class="o">;</span>
+
+    <span class="kd">protected</span> <span class="nf">DemoConfigurationFactory</span><span class="o">(</span><span class="n">ConfigurationType</span> <span class="n">type</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kd">super</span><span class="o">(</span><span class="n">type</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">RunConfiguration</span> <span class="nf">createTemplateConfiguration</span><span class="o">(</span><span class="n">Project</span> <span class="n">project</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nf">DemoRunConfiguration</span><span class="o">(</span><span class="n">project</span><span class="o">,</span> <span class="k">this</span><span class="o">,</span> <span class="s">"Demo"</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getName</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">FACTORY_NAME</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+</code></pre>
+
+<a name="implement-a-run-configuration" class="elem-anchor"></a>
+<h2>4. Implement a Run Configuration<a href="#implement-a-run-configuration" class="anchor-link"><span></span></a></h2>
+
+<p>To make your changes visible from the UI, implement a new Run Configuration.</p>
+
+<p><strong>Note:</strong> In most of the cases you can derive a custom Run Configuration class from the
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/execution/configurations/RunConfigurationBase.java" data-bypass="yes" target="_blank"><span>RunConfigurationBase</span></a>.
+If you need to implement specific settings externalization rules and I/O behaviour, 
+use 
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/execution/configurations/RunConfiguration.java" data-bypass="yes" target="_blank"><span>RunConfiguration</span></a>
+interface.</p>
+
+<pre><code class="code-block__wrapper code-block _highlighted lang_java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">DemoRunConfiguration</span> <span class="kd">extends</span> <span class="n">RunConfigurationBase</span> <span class="o">{</span>
+    <span class="kd">protected</span> <span class="nf">DemoRunConfiguration</span><span class="o">(</span><span class="n">Project</span> <span class="n">project</span><span class="o">,</span> <span class="n">ConfigurationFactory</span> <span class="n">factory</span><span class="o">,</span> <span class="n">String</span> <span class="n">name</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kd">super</span><span class="o">(</span><span class="n">project</span><span class="o">,</span> <span class="n">factory</span><span class="o">,</span> <span class="n">name</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="nd">@NotNull</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">SettingsEditor</span><span class="o">&lt;?</span> <span class="kd">extends</span> <span class="n">RunConfiguration</span><span class="o">&gt;</span> <span class="nf">getConfigurationEditor</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nf">DemoSettingsEditor</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">checkConfiguration</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">RuntimeConfigurationException</span> <span class="o">{</span>
+
+    <span class="o">}</span>
+
+    <span class="nd">@Nullable</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">RunProfileState</span> <span class="nf">getState</span><span class="o">(</span><span class="nd">@NotNull</span> <span class="n">Executor</span> <span class="n">executor</span><span class="o">,</span> <span class="nd">@NotNull</span> <span class="n">ExecutionEnvironment</span> <span class="n">executionEnvironment</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">ExecutionException</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
+
+<a name="create-and-implement-run-configuration-ui-form" class="elem-anchor"></a>
+<h2>5. Create and Implement Run Configuration UI Form<a href="#create-and-implement-run-configuration-ui-form" class="anchor-link"><span></span></a></h2>
+
+<p>Create a new 
+[UI form] 
+that defines, how an inner part of the new Run Configuration should look like.
+Default Run Configuration will be looking like this:</p>
+
+<p><img src="run_configurations/img/ui_form.png" alt="Default Run Configuration Look" /></p>
+
+<a name="bind-the-ui-form" class="elem-anchor"></a>
+<h2>6. Bind the UI Form<a href="#bind-the-ui-form" class="anchor-link"><span></span></a></h2>
+
+<p>The UI Form should be bound with a Java class responsible for handling UI components logic.</p>
+
+<pre><code class="code-block__wrapper code-block _highlighted lang_java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">DemoSettingsEditor</span> <span class="kd">extends</span> <span class="n">SettingsEditor</span><span class="o">&lt;</span><span class="n">DemoRunConfiguration</span><span class="o">&gt;</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="n">JPanel</span> <span class="n">myPanel</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">LabeledComponent</span><span class="o">&lt;</span><span class="n">ComponentWithBrowseButton</span><span class="o">&gt;</span> <span class="n">myMainClass</span><span class="o">;</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">resetEditorFrom</span><span class="o">(</span><span class="n">DemoRunConfiguration</span> <span class="n">demoRunConfiguration</span><span class="o">)</span> <span class="o">{</span>
+
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">applyEditorTo</span><span class="o">(</span><span class="n">DemoRunConfiguration</span> <span class="n">demoRunConfiguration</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">ConfigurationException</span> <span class="o">{</span>
+
+    <span class="o">}</span>
+
+    <span class="nd">@NotNull</span>
+    <span class="nd">@Override</span>
+    <span class="kd">protected</span> <span class="n">JComponent</span> <span class="nf">createEditor</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">myPanel</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">createUIComponents</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">myMainClass</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LabeledComponent</span><span class="o">&lt;</span><span class="n">ComponentWithBrowseButton</span><span class="o">&gt;();</span>
+        <span class="n">myMainClass</span><span class="o">.</span><span class="na">setComponent</span><span class="o">(</span><span class="k">new</span> <span class="n">TextFieldWithBrowseButton</span><span class="o">());</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
+
+<a name="compile-and-run-the-plugin" class="elem-anchor"></a>
+<h2>7. Compile and Run the Plugin<a href="#compile-and-run-the-plugin" class="anchor-link"><span></span></a></h2>
+
+<p>Refer to 
+<a href="/intellij/sdk/docs/basics/getting_started/running_and_debugging_a_plugin.html"><span>Running and Debugging a Plugin</span></a>
+section to know how this could be done.</p>
+
+<p>After going through the steps described above you can create a custom Run Configuration
+from your plugin.</p>
+
+<p><img src="run_configurations/img/new_run_configuration.png" alt="New Run Configuration Type" /></p>
+
+
+                    <div class="last-modified">
+                        Last modified: 26 November 2015
+                    </div>
+                </article>
+
+                <section class="disqus">
+                    <div id="disqus_thread"></div>
+                </section>
+            </div>
+        </section>
+    </main>
+</div>
+
+
+<script data-main="/intellij/sdk/docs/app/js/main.build" data-baseurl="/intellij/sdk/docs/" src="/intellij/sdk/docs/app/js/vendor/requirejs/require.js"></script>
+
+</body>
+</html>
+

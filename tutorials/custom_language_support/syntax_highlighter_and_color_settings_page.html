@@ -1,0 +1,281 @@
+
+
+
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>5. Syntax Highlighter and Color Settings Page / IntelliJ Platform SDK  DevGuide</title>
+    <link rel="stylesheet" href="/intellij/sdk/docs/app/css/styles.min.css">
+
+    <!-- non-retina iPad pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-72x72.png" sizes="72x72">
+
+    <!-- retina iPhone pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-114x114.png" sizes="114x114">
+
+    <!-- retina iPad pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-144x144.png" sizes="144x144">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/intellij/sdk/docs/apple-touch-icon-precomposed.png">
+
+    <!-- normal favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="/intellij/sdk/docs/favicon.ico">
+    <link rel="icon" type="image/png" href="/intellij/sdk/docs/favicon.png">
+<link  rel="stylesheet" href="/intellij/sdk/docs/styles/styles.css"></head>
+<body data-id="tutorials/custom_language_support/syntax_highlighter_and_color_settings_page">
+<div class="wrapper">
+    <section class="panel _nav">
+        <header class="panel__header">
+            <div class="container">
+                <form class="search-box">
+                    <label for="search-box__input" class="search-box__label">
+                        <input type="text" class="search-box__input" id="search-box__input" placeholder="Search IntelliJ Platform SDK  DevGuide">
+                    </label>
+                    <div class="search-box__clear" title="Clear"></div>
+                </form>
+            </div>
+        </header>
+        <nav class="panel__content">
+            <div class="container _nav">
+                <menu class="nav-tree"></menu>
+            </div>
+            <div class="container _footer panel__footer">
+                <p><a href="https://youtrack.jetbrains.com/issues/IJSDK">Send feedback</a></p>
+                <p>&copy; 2000&ndash;2016 <a href="//www.jetbrains.com">JetBrains</a> s.r.o.<br>
+                    All rights reserved.</p>
+            </div>
+        </nav>
+    </section>
+
+    <main class="panel _main" role="main">
+        <header class="panel__header">
+            <div class="container">
+                <h3>IntelliJ Platform SDK DevGuide</h3>
+                
+        <div class="shortcuts-switcher"><label for="switch-shortcuts">Keymap:</label><select id="switch-shortcuts" class="select _shortcuts" height="1">
+            <option data-group="primary" value="default" selected>Default</option>
+            <option data-group="primary" value="default_for_gnome">GNOME</option>
+            <option data-group="primary" value="default_for_kde">KDE</option>
+            <option data-group="primary" value="default_for_xwin">XWindow</option>
+            <option data-group="primary" value="emacs">Emacs</option>
+            <option data-group="primary" value="jbuilder">JBuilder</option>
+            <option data-group="primary" value="visual_studio">Visual Studio</option>
+            <option data-group="primary" value="netbeans_6.5">NetBeans 6.5</option>
+            <option data-group="primary" value="eclipse">Eclipse</option>
+            <option data-group="secondary" value="mac_os_x_10.5_">OS X 10.5+</option>
+            <option data-group="secondary" value="mac_os_x">OS X</option>
+            <option data-group="secondary" value="eclipse_mac_os_x">OS X Eclipse</option></select>
+        </div>
+    
+                <div class="panel-trigger"></div>
+            </div>
+        </header>
+        <section class="panel__content">
+            <div class="container">
+                <article class="article" data-shortcut-switcher="false">
+
+                    <h1>5. Syntax Highlighter and Color Settings Page</h1>
+                    <a name="define-a-syntax-highlighter" class="elem-anchor"></a>
+<h3>5.1. Define a syntax highlighter<a href="#define-a-syntax-highlighter" class="anchor-link"><span></span></a></h3>
+
+<pre><code class="code-block__wrapper code-block _highlighted lang_java"><span class="kn">package</span> <span class="n">com</span><span class="o">.</span><span class="na">simpleplugin</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">com.intellij.lexer.Lexer</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.intellij.openapi.editor.DefaultLanguageHighlighterColors</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.intellij.openapi.editor.HighlighterColors</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.intellij.openapi.editor.colors.TextAttributesKey</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.intellij.openapi.fileTypes.SyntaxHighlighterBase</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.intellij.psi.TokenType</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.intellij.psi.tree.IElementType</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.simpleplugin.psi.SimpleTypes</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.jetbrains.annotations.NotNull</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">static</span> <span class="n">com</span><span class="o">.</span><span class="na">intellij</span><span class="o">.</span><span class="na">openapi</span><span class="o">.</span><span class="na">editor</span><span class="o">.</span><span class="na">colors</span><span class="o">.</span><span class="na">TextAttributesKey</span><span class="o">.</span><span class="na">createTextAttributesKey</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">SimpleSyntaxHighlighter</span> <span class="kd">extends</span> <span class="n">SyntaxHighlighterBase</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">TextAttributesKey</span> <span class="n">SEPARATOR</span> <span class="o">=</span> <span class="n">createTextAttributesKey</span><span class="o">(</span><span class="s">"SIMPLE_SEPARATOR"</span><span class="o">,</span> <span class="n">DefaultLanguageHighlighterColors</span><span class="o">.</span><span class="na">OPERATION_SIGN</span><span class="o">);</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">TextAttributesKey</span> <span class="n">KEY</span> <span class="o">=</span> <span class="n">createTextAttributesKey</span><span class="o">(</span><span class="s">"SIMPLE_KEY"</span><span class="o">,</span> <span class="n">DefaultLanguageHighlighterColors</span><span class="o">.</span><span class="na">KEYWORD</span><span class="o">);</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">TextAttributesKey</span> <span class="n">VALUE</span> <span class="o">=</span> <span class="n">createTextAttributesKey</span><span class="o">(</span><span class="s">"SIMPLE_VALUE"</span><span class="o">,</span> <span class="n">DefaultLanguageHighlighterColors</span><span class="o">.</span><span class="na">STRING</span><span class="o">);</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">TextAttributesKey</span> <span class="n">COMMENT</span> <span class="o">=</span> <span class="n">createTextAttributesKey</span><span class="o">(</span><span class="s">"SIMPLE_COMMENT"</span><span class="o">,</span> <span class="n">DefaultLanguageHighlighterColors</span><span class="o">.</span><span class="na">LINE_COMMENT</span><span class="o">);</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">TextAttributesKey</span> <span class="n">BAD_CHARACTER</span> <span class="o">=</span> <span class="n">createTextAttributesKey</span><span class="o">(</span><span class="s">"SIMPLE_BAD_CHARACTER"</span><span class="o">,</span> <span class="n">HighlighterColors</span><span class="o">.</span><span class="na">BAD_CHARACTER</span><span class="o">);</span>
+
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">TextAttributesKey</span><span class="o">[]</span> <span class="n">BAD_CHAR_KEYS</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TextAttributesKey</span><span class="o">[]{</span><span class="n">BAD_CHARACTER</span><span class="o">};</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">TextAttributesKey</span><span class="o">[]</span> <span class="n">SEPARATOR_KEYS</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TextAttributesKey</span><span class="o">[]{</span><span class="n">SEPARATOR</span><span class="o">};</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">TextAttributesKey</span><span class="o">[]</span> <span class="n">KEY_KEYS</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TextAttributesKey</span><span class="o">[]{</span><span class="n">KEY</span><span class="o">};</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">TextAttributesKey</span><span class="o">[]</span> <span class="n">VALUE_KEYS</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TextAttributesKey</span><span class="o">[]{</span><span class="n">VALUE</span><span class="o">};</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">TextAttributesKey</span><span class="o">[]</span> <span class="n">COMMENT_KEYS</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TextAttributesKey</span><span class="o">[]{</span><span class="n">COMMENT</span><span class="o">};</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">TextAttributesKey</span><span class="o">[]</span> <span class="n">EMPTY_KEYS</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TextAttributesKey</span><span class="o">[</span><span class="mi">0</span><span class="o">];</span>
+
+    <span class="nd">@NotNull</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">Lexer</span> <span class="nf">getHighlightingLexer</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nf">SimpleLexerAdapter</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="nd">@NotNull</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">TextAttributesKey</span><span class="o">[]</span> <span class="nf">getTokenHighlights</span><span class="o">(</span><span class="n">IElementType</span> <span class="n">tokenType</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">tokenType</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">SimpleTypes</span><span class="o">.</span><span class="na">SEPARATOR</span><span class="o">))</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="n">SEPARATOR_KEYS</span><span class="o">;</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">tokenType</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">SimpleTypes</span><span class="o">.</span><span class="na">KEY</span><span class="o">))</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="n">KEY_KEYS</span><span class="o">;</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">tokenType</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">SimpleTypes</span><span class="o">.</span><span class="na">VALUE</span><span class="o">))</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="n">VALUE_KEYS</span><span class="o">;</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">tokenType</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">SimpleTypes</span><span class="o">.</span><span class="na">COMMENT</span><span class="o">))</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="n">COMMENT_KEYS</span><span class="o">;</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">tokenType</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">TokenType</span><span class="o">.</span><span class="na">BAD_CHARACTER</span><span class="o">))</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="n">BAD_CHAR_KEYS</span><span class="o">;</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="n">EMPTY_KEYS</span><span class="o">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
+
+<a name="define-a-syntax-highlighter-factory" class="elem-anchor"></a>
+<h3>5.2. Define a syntax highlighter factory<a href="#define-a-syntax-highlighter-factory" class="anchor-link"><span></span></a></h3>
+
+<pre><code class="code-block__wrapper code-block _highlighted lang_java"><span class="kn">package</span> <span class="n">com</span><span class="o">.</span><span class="na">simpleplugin</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">com.intellij.openapi.fileTypes.SyntaxHighlighter</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.intellij.openapi.fileTypes.SyntaxHighlighterFactory</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.intellij.openapi.project.Project</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.intellij.openapi.vfs.VirtualFile</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.jetbrains.annotations.NotNull</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">SimpleSyntaxHighlighterFactory</span> <span class="kd">extends</span> <span class="n">SyntaxHighlighterFactory</span> <span class="o">{</span>
+    <span class="nd">@NotNull</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">SyntaxHighlighter</span> <span class="nf">getSyntaxHighlighter</span><span class="o">(</span><span class="n">Project</span> <span class="n">project</span><span class="o">,</span> <span class="n">VirtualFile</span> <span class="n">virtualFile</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nf">SimpleSyntaxHighlighter</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
+
+<a name="register-the-syntax-highlighter-factory" class="elem-anchor"></a>
+<h3>5.3. Register the syntax highlighter factory<a href="#register-the-syntax-highlighter-factory" class="anchor-link"><span></span></a></h3>
+
+<pre><code class="code-block__wrapper code-block _highlighted lang_xml"><span class="nt">&lt;lang.syntaxHighlighterFactory</span> <span class="na">key=</span><span class="s">"Simple"</span> <span class="na">implementationClass=</span><span class="s">"com.simpleplugin.SimpleSyntaxHighlighterFactory"</span><span class="nt">/&gt;</span>
+</code></pre>
+
+<a name="run-the-project" class="elem-anchor"></a>
+<h3>5.4. Run the project<a href="#run-the-project" class="anchor-link"><span></span></a></h3>
+
+<p><img src="img/syntax_highlighter.png" alt="Syntax highlighter" /></p>
+
+<a name="define-a-color-settings-page" class="elem-anchor"></a>
+<h3>5.5. Define a color settings page<a href="#define-a-color-settings-page" class="anchor-link"><span></span></a></h3>
+
+<pre><code class="code-block__wrapper code-block _highlighted lang_java"><span class="kn">package</span> <span class="n">com</span><span class="o">.</span><span class="na">simpleplugin</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">com.intellij.openapi.editor.colors.TextAttributesKey</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.intellij.openapi.fileTypes.SyntaxHighlighter</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.intellij.openapi.options.colors.AttributesDescriptor</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.intellij.openapi.options.colors.ColorDescriptor</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.intellij.openapi.options.colors.ColorSettingsPage</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.jetbrains.annotations.NotNull</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.jetbrains.annotations.Nullable</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">javax.swing.*</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Map</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">SimpleColorSettingsPage</span> <span class="kd">implements</span> <span class="n">ColorSettingsPage</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">AttributesDescriptor</span><span class="o">[]</span> <span class="n">DESCRIPTORS</span> <span class="o">=</span> <span class="k">new</span> <span class="n">AttributesDescriptor</span><span class="o">[]{</span>
+            <span class="k">new</span> <span class="nf">AttributesDescriptor</span><span class="o">(</span><span class="s">"Key"</span><span class="o">,</span> <span class="n">SimpleSyntaxHighlighter</span><span class="o">.</span><span class="na">KEY</span><span class="o">),</span>
+            <span class="k">new</span> <span class="nf">AttributesDescriptor</span><span class="o">(</span><span class="s">"Separator"</span><span class="o">,</span> <span class="n">SimpleSyntaxHighlighter</span><span class="o">.</span><span class="na">SEPARATOR</span><span class="o">),</span>
+            <span class="k">new</span> <span class="nf">AttributesDescriptor</span><span class="o">(</span><span class="s">"Value"</span><span class="o">,</span> <span class="n">SimpleSyntaxHighlighter</span><span class="o">.</span><span class="na">VALUE</span><span class="o">),</span>
+    <span class="o">};</span>
+
+    <span class="nd">@Nullable</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">Icon</span> <span class="nf">getIcon</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">SimpleIcons</span><span class="o">.</span><span class="na">FILE</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="nd">@NotNull</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">SyntaxHighlighter</span> <span class="nf">getHighlighter</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nf">SimpleSyntaxHighlighter</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="nd">@NotNull</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getDemoText</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="s">"# You are reading the \".properties\" entry.\n"</span> <span class="o">+</span>
+                <span class="s">"! The exclamation mark can also mark text as comments.\n"</span> <span class="o">+</span>
+                <span class="s">"website = http://en.wikipedia.org/\n"</span> <span class="o">+</span>
+                <span class="s">"language = English\n"</span> <span class="o">+</span>
+                <span class="s">"# The backslash below tells the application to continue reading\n"</span> <span class="o">+</span>
+                <span class="s">"# the value onto the next line.\n"</span> <span class="o">+</span>
+                <span class="s">"message = Welcome to \\\n"</span> <span class="o">+</span>
+                <span class="s">"          Wikipedia!\n"</span> <span class="o">+</span>
+                <span class="s">"# Add spaces to the key\n"</span> <span class="o">+</span>
+                <span class="s">"key\\ with\\ spaces = This is the value that could be looked up with the key \"key with spaces\".\n"</span> <span class="o">+</span>
+                <span class="s">"# Unicode\n"</span> <span class="o">+</span>
+                <span class="s">"tab : \\u0009"</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Nullable</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">TextAttributesKey</span><span class="o">&gt;</span> <span class="nf">getAdditionalHighlightingTagToDescriptorMap</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="nd">@NotNull</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">AttributesDescriptor</span><span class="o">[]</span> <span class="nf">getAttributeDescriptors</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">DESCRIPTORS</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="nd">@NotNull</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">ColorDescriptor</span><span class="o">[]</span> <span class="nf">getColorDescriptors</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">ColorDescriptor</span><span class="o">.</span><span class="na">EMPTY_ARRAY</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="nd">@NotNull</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getDisplayName</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="s">"Simple"</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
+
+<a name="register-the-color-settings-page" class="elem-anchor"></a>
+<h3>5.6. Register the color settings page<a href="#register-the-color-settings-page" class="anchor-link"><span></span></a></h3>
+
+<pre><code class="code-block__wrapper code-block _highlighted lang_xml"><span class="nt">&lt;colorSettingsPage</span> <span class="na">implementation=</span><span class="s">"com.simpleplugin.SimpleColorSettingsPage"</span><span class="nt">/&gt;</span>
+</code></pre>
+
+<a name="run-the-project-1" class="elem-anchor"></a>
+<h3>5.7. Run the project<a href="#run-the-project-1" class="anchor-link"><span></span></a></h3>
+
+<p><img src="img/color_settings_page.png" alt="Color Settings Page" /></p>
+
+<hr />
+
+<p><a href="lexer_and_parser_definition.html"><span>Previous</span></a>
+<a href="/intellij/sdk/docs/tutorials/custom_language_support_tutorial.html"><span>Top</span></a>
+<a href="psi_helper_and_utilities.html"><span>Next</span></a></p>
+
+
+
+                    <div class="last-modified">
+                        Last modified: 28 December 2015
+                    </div>
+                </article>
+
+                <section class="disqus">
+                    <div id="disqus_thread"></div>
+                </section>
+            </div>
+        </section>
+    </main>
+</div>
+
+
+<script data-main="/intellij/sdk/docs/app/js/main.build" data-baseurl="/intellij/sdk/docs/" src="/intellij/sdk/docs/app/js/vendor/requirejs/require.js"></script>
+
+</body>
+</html>
+

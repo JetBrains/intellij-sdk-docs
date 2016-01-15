@@ -1,0 +1,83 @@
+<idea-plugin version="2">
+  <id>org.jetbrains.plugins.sample.RegisterActions</id>
+  <name>Sample plugin for working with IntelliJ Action System</name>
+  <version>1.0</version>
+    <vendor email="support@jetbrains.com" url="http://www.jetbrains.com">JetBrains</vendor>
+
+    <description>Illustration of Action System</description>
+
+    <change-notes>Initial commit</change-notes>
+
+    <!-- please see https://confluence.jetbrains.com/display/IDEADEV/Build+Number+Ranges for description -->
+    <idea-version since-build="131"/>
+    <depends>com.intellij.modules.lang</depends>
+
+  <!-- please see https://confluence.jetbrains.com/display/IDEADEV/Plugin+Compatibility+with+IntelliJ+Platform+Products
+       on how to target different products -->
+  <!-- uncomment to enable plugin in all products
+  <depends>com.intellij.modules.lang</depends>
+  -->
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+  </extensions>
+
+  <application-components>
+    <!-- Add your application components here -->
+  </application-components>
+
+  <project-components>
+    <!-- Add your project components here -->
+  </project-components>
+
+  <actions>
+    <!-- Add your actions here -->
+    <!-- The <action> element defines an action to register.
+    The mandatory "id" attribute specifies an unique identifier for the action.
+    The mandatory "class" attribute specifies the full-qualified name of the class implementing the action.
+    The mandatory "text" attribute specifies the text of the action (tooltip for toolbar button or text for menu item).
+    The optional "use-shortcut-of" attribute specifies the ID of the action whose keyboard shortcut this action will use.
+    The optional "description" attribute specifies the text which is displayed in the status bar when the action is focused.
+    The optional "icon" attribute specifies the icon which is displayed on the toolbar button or next to the menu item. -->
+      <action id="org.jetbrains.tutorials.actions.SimpleAction" class="org.jetbrains.tutorials.actions.SimpleAction"
+              text="Simple Action" description="IntelliJ Action System Demo">
+          <!-- The <keyboard-shortcut> node specifies the keyboard shortcut for the action. An action can have several keyboard shortcuts.
+          The mandatory "first-keystroke" attribute specifies the first keystroke of the action. The key strokes are specified according to the regular Swing rules.
+          The optional "second-keystroke" attribute specifies the second keystroke of the action.
+          The mandatory "keymap" attribute specifies the keymap for which the action is active. IDs of the standard keymaps are defined as
+          constants in the com.intellij.openapi.keymap.KeymapManager class. -->
+          <keyboard-shortcut first-keystroke="control alt A" second-keystroke="C" keymap="$default"/>
+          <!-- The <mouse-shortcut> node specifies the mouse shortcut for the action. An action can have several mouse shortcuts.
+          The mandatory "keystroke" attribute specifies the clicks and modifiers for the action. It is defined as a sequence of words separated by spaces:
+          "button1", "button2", "button3" for the mouse buttons; "shift", "control", "meta", "alt", "altGraph" for the modifier keys;
+          "doubleClick" if the action is activated by a double-click of the button.
+          The mandatory "keymap" attribute specifies the keymap for which the action is active. IDs of the standard keymaps are defined as
+          constants in the com.intellij.openapi.keymap.KeymapManager class. -->
+          <mouse-shortcut keystroke="control button3 doubleClick" keymap="$default"/>
+          <!-- The <add-to-group> node specifies that the action should be added to an existing group. An action can be added to several groups.
+          The mandatory "group-id" attribute specifies the ID of the group to which the action is added.
+          The group must be implemented by an instance of the DefaultActionGroup class.
+          The mandatory "anchor" attribute specifies the position of the action in the group relative to other actions. It can have the values
+          "first", "last", "before" and "after".
+          The "relative-to-action" attribute is mandatory if the anchor is set to "before" and "after", and specifies the action before or after which
+          the current action is inserted. -->
+          <add-to-group group-id="ToolsMenu" anchor="first"/>
+      </action>
+      <group id="SimpleGroup" text="Custom Action Group" popup="true">
+      <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+          <action class="org.jetbrains.tutorials.actions.GroupedAction" id="org.jetbrains.tutorials.actions.GroupedAction"
+                  text="Grouped Action" description="Grouped Action Demo">
+          </action>
+      </group>
+      <group id="CustomDefaultActionGroup" class="org.jetbrains.tutorials.actions.CustomDefaultActionGroup" popup="true"
+             text="DefaultActionGroup Inheritor" description="Default Action Group Demo">
+          <add-to-group group-id="ToolsMenu" anchor="last"/>
+          <action class="org.jetbrains.tutorials.actions.CustomGroupedAction" id="CustomGroupedAction"
+                  text="Custom Grouped Action" description="Custom Grouped Action Demo"/>
+      </group>
+      <group id="BaseActionGroup" class="org.jetbrains.tutorials.actions.BaseActionGroup" popup="true"
+              text="ActionGroup Demo" description="Extending AnAction Demo">
+          <add-to-group group-id="ToolsMenu" anchor="first"/>
+      </group>
+  </actions>
+</idea-plugin>

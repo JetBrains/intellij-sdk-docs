@@ -1,0 +1,157 @@
+
+
+
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>Main Types of Plugins / IntelliJ Platform SDK  DevGuide</title>
+    <link rel="stylesheet" href="/intellij/sdk/docs/app/css/styles.min.css">
+
+    <!-- non-retina iPad pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-72x72.png" sizes="72x72">
+
+    <!-- retina iPhone pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-114x114.png" sizes="114x114">
+
+    <!-- retina iPad pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-144x144.png" sizes="144x144">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/intellij/sdk/docs/apple-touch-icon-precomposed.png">
+
+    <!-- normal favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="/intellij/sdk/docs/favicon.ico">
+    <link rel="icon" type="image/png" href="/intellij/sdk/docs/favicon.png">
+<link  rel="stylesheet" href="/intellij/sdk/docs/styles/styles.css"></head>
+<body data-id="basics/types_of_plugins">
+<div class="wrapper">
+    <section class="panel _nav">
+        <header class="panel__header">
+            <div class="container">
+                <form class="search-box">
+                    <label for="search-box__input" class="search-box__label">
+                        <input type="text" class="search-box__input" id="search-box__input" placeholder="Search IntelliJ Platform SDK  DevGuide">
+                    </label>
+                    <div class="search-box__clear" title="Clear"></div>
+                </form>
+            </div>
+        </header>
+        <nav class="panel__content">
+            <div class="container _nav">
+                <menu class="nav-tree"></menu>
+            </div>
+            <div class="container _footer panel__footer">
+                <p><a href="https://youtrack.jetbrains.com/issues/IJSDK">Send feedback</a></p>
+                <p>&copy; 2000&ndash;2016 <a href="//www.jetbrains.com">JetBrains</a> s.r.o.<br>
+                    All rights reserved.</p>
+            </div>
+        </nav>
+    </section>
+
+    <main class="panel _main" role="main">
+        <header class="panel__header">
+            <div class="container">
+                <h3>IntelliJ Platform SDK DevGuide</h3>
+                
+        <div class="shortcuts-switcher"><label for="switch-shortcuts">Keymap:</label><select id="switch-shortcuts" class="select _shortcuts" height="1">
+            <option data-group="primary" value="default" selected>Default</option>
+            <option data-group="primary" value="default_for_gnome">GNOME</option>
+            <option data-group="primary" value="default_for_kde">KDE</option>
+            <option data-group="primary" value="default_for_xwin">XWindow</option>
+            <option data-group="primary" value="emacs">Emacs</option>
+            <option data-group="primary" value="jbuilder">JBuilder</option>
+            <option data-group="primary" value="visual_studio">Visual Studio</option>
+            <option data-group="primary" value="netbeans_6.5">NetBeans 6.5</option>
+            <option data-group="primary" value="eclipse">Eclipse</option>
+            <option data-group="secondary" value="mac_os_x_10.5_">OS X 10.5+</option>
+            <option data-group="secondary" value="mac_os_x">OS X</option>
+            <option data-group="secondary" value="eclipse_mac_os_x">OS X Eclipse</option></select>
+        </div>
+    
+                <div class="panel-trigger"></div>
+            </div>
+        </header>
+        <section class="panel__content">
+            <div class="container">
+                <article class="article" data-shortcut-switcher="false">
+
+                    <h1>Main Types of Plugins</h1>
+                    <p>Products based on the <em>IntelliJ Platform</em> can be modified and adjusted for custom purposes by adding plugins. All downloadable plugins are available at the <a href="https://plugins.jetbrains.com/" data-bypass="yes" target="_blank"><span>JetBrains Plugin Repository</span></a>.</p>
+
+<p>The most common types of plugins include:</p>
+
+<ul>
+  <li>Custom language support</li>
+  <li>Framework integration</li>
+  <li>Tool integration</li>
+  <li>User interface add-ons</li>
+</ul>
+
+<a name="custom-language-support" class="elem-anchor"></a>
+<h2>Custom Language Support<a href="#custom-language-support" class="anchor-link"><span></span></a></h2>
+
+<p>Custom language support provides basic functionality for working with a particular programming language. This includes:</p>
+
+<ul>
+  <li>File type recognition</li>
+  <li>Lexical analysis</li>
+  <li>Syntax highlighting</li>
+  <li>Formatting</li>
+  <li>Code insight and code completion</li>
+  <li>Inspections and quick-fixes</li>
+  <li>Intention actions</li>
+</ul>
+
+<p>Refer to the <a href="/intellij/sdk/docs/tutorials/custom_language_support_tutorial.html"><span>Custom Language Support Tutorial</span></a> to learn more about the topic.</p>
+
+<a name="framework-integration" class="elem-anchor"></a>
+<h2>Framework Integration<a href="#framework-integration" class="anchor-link"><span></span></a></h2>
+
+<p>Framework integration consists of improved code insight features which are typical for a given framework, as well as the option to use framework-specific functionality directly from the IDE. Sometimes it also includes language support elements for a custom syntax or DSL.</p>
+
+<ul>
+  <li>Specific code insight</li>
+  <li>Direct access to framework-specific functionality</li>
+</ul>
+
+<p>Refer to the <a href="https://plugins.jetbrains.com/plugin/1698" data-bypass="yes" target="_blank"><span>Struts 2 plugin</span></a> as an example of framework integration.</p>
+
+<a name="tool-integration" class="elem-anchor"></a>
+<h2>Tool Integration<a href="#tool-integration" class="anchor-link"><span></span></a></h2>
+
+<p>Tool integration makes it possible to manipulate third-party tools and components directly from the IDE without switching contexts.</p>
+
+<p>This implies:</p>
+
+<ul>
+  <li>Implementation of additional actions</li>
+  <li>Related UI components</li>
+  <li>Access to external resources</li>
+</ul>
+
+<p>Refer to the <a href="https://plugins.jetbrains.com/plugin/7272?pr=idea" data-bypass="yes" target="_blank"><span>Gerrit integration</span></a> plugin as an example.</p>
+
+<a name="user-interface-add-ons" class="elem-anchor"></a>
+<h2>User Interface Add-Ons<a href="#user-interface-add-ons" class="anchor-link"><span></span></a></h2>
+
+<p>Plugins in this category apply various changes to the standard user interface of the IDE. Some newly added components are interactive and provide new functionality, while others are limited to visual modifications only. The <a href="https://plugins.jetbrains.com/plugin/72" data-bypass="yes" target="_blank"><span>Background Image</span></a> plugin may serve as an example.</p>
+
+
+                    <div class="last-modified">
+                        Last modified: 23 November 2015
+                    </div>
+                </article>
+
+                <section class="disqus">
+                    <div id="disqus_thread"></div>
+                </section>
+            </div>
+        </section>
+    </main>
+</div>
+
+
+<script data-main="/intellij/sdk/docs/app/js/main.build" data-baseurl="/intellij/sdk/docs/" src="/intellij/sdk/docs/app/js/vendor/requirejs/require.js"></script>
+
+</body>
+</html>
+

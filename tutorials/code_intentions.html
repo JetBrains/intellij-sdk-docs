@@ -1,0 +1,176 @@
+
+
+
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>Code Intentions / IntelliJ Platform SDK  DevGuide</title>
+    <link rel="stylesheet" href="/intellij/sdk/docs/app/css/styles.min.css">
+
+    <!-- non-retina iPad pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-72x72.png" sizes="72x72">
+
+    <!-- retina iPhone pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-114x114.png" sizes="114x114">
+
+    <!-- retina iPad pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-144x144.png" sizes="144x144">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/intellij/sdk/docs/apple-touch-icon-precomposed.png">
+
+    <!-- normal favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="/intellij/sdk/docs/favicon.ico">
+    <link rel="icon" type="image/png" href="/intellij/sdk/docs/favicon.png">
+<link  rel="stylesheet" href="/intellij/sdk/docs/styles/styles.css"></head>
+<body data-id="tutorials/code_intentions">
+<div class="wrapper">
+    <section class="panel _nav">
+        <header class="panel__header">
+            <div class="container">
+                <form class="search-box">
+                    <label for="search-box__input" class="search-box__label">
+                        <input type="text" class="search-box__input" id="search-box__input" placeholder="Search IntelliJ Platform SDK  DevGuide">
+                    </label>
+                    <div class="search-box__clear" title="Clear"></div>
+                </form>
+            </div>
+        </header>
+        <nav class="panel__content">
+            <div class="container _nav">
+                <menu class="nav-tree"></menu>
+            </div>
+            <div class="container _footer panel__footer">
+                <p><a href="https://youtrack.jetbrains.com/issues/IJSDK">Send feedback</a></p>
+                <p>&copy; 2000&ndash;2016 <a href="//www.jetbrains.com">JetBrains</a> s.r.o.<br>
+                    All rights reserved.</p>
+            </div>
+        </nav>
+    </section>
+
+    <main class="panel _main" role="main">
+        <header class="panel__header">
+            <div class="container">
+                <h3>IntelliJ Platform SDK DevGuide</h3>
+                
+        <div class="shortcuts-switcher"><label for="switch-shortcuts">Keymap:</label><select id="switch-shortcuts" class="select _shortcuts" height="1">
+            <option data-group="primary" value="default" selected>Default</option>
+            <option data-group="primary" value="default_for_gnome">GNOME</option>
+            <option data-group="primary" value="default_for_kde">KDE</option>
+            <option data-group="primary" value="default_for_xwin">XWindow</option>
+            <option data-group="primary" value="emacs">Emacs</option>
+            <option data-group="primary" value="jbuilder">JBuilder</option>
+            <option data-group="primary" value="visual_studio">Visual Studio</option>
+            <option data-group="primary" value="netbeans_6.5">NetBeans 6.5</option>
+            <option data-group="primary" value="eclipse">Eclipse</option>
+            <option data-group="secondary" value="mac_os_x_10.5_">OS X 10.5+</option>
+            <option data-group="secondary" value="mac_os_x">OS X</option>
+            <option data-group="secondary" value="eclipse_mac_os_x">OS X Eclipse</option></select>
+        </div>
+    
+                <div class="panel-trigger"></div>
+            </div>
+        </header>
+        <section class="panel__content">
+            <div class="container">
+                <article class="article" data-shortcut-switcher="false">
+
+                    <h1>Code Intentions</h1>
+                    <p>This topic describes the <a href="https://github.com/JetBrains/intellij-sdk-docs/tree/master/code_samples/conditional_operator_intention" data-bypass="yes" target="_blank"><span>conditional_operator_intention</span></a>, a sample plugin that adds a new <a href="http://www.jetbrains.com/idea/webhelp/intention-actions.html" data-bypass="yes" target="_blank"><span>intention action</span></a> to the IntelliJ Platform Intentions list. In addition, the sample plugin contains a JUnit-based test.</p>
+
+<a name="about-intention-actions" class="elem-anchor"></a>
+<h2>About Intention Actions<a href="#about-intention-actions" class="anchor-link"><span></span></a></h2>
+
+<p>The <strong>IntelliJ Platform</strong> analyzes your code and helps handle situations that may result in errors. When a possible problem is suspected, the IDE suggests an appropriate intention action, denoted with special icons. For more information, refer to <a href="http://www.jetbrains.com/idea/webhelp/intention-actions.html" data-bypass="yes" target="_blank"><span>Intention Actions</span></a> in the <strong>IntelliJ IDEA</strong> Web Help.</p>
+
+<p>You can view a list of all available intention actions using the <a href="http://www.jetbrains.com/idea/webhelp/intentions.html#intentionList" data-bypass="yes" target="_blank"><span>Intention List</span></a> provided by the IDE.</p>
+
+<p><strong>To display Intention List</strong></p>
+
+<ol>
+  <li>Open the <strong>Settings</strong> dialog box.</li>
+  <li>Under <strong>IDE Settings</strong>, click <strong>Intentions</strong>. This displays the list of all intention actions currently available in <strong>IntelliJ IDEA</strong>.
+    <ul>
+      <li>The intention actions are grouped according to the areas of their use.</li>
+      <li>To enable/disable an intention action, select/deselect the check box to its left.</li>
+    </ul>
+  </li>
+</ol>
+
+<a name="techniques-used" class="elem-anchor"></a>
+<h2>Techniques Used<a href="#techniques-used" class="anchor-link"><span></span></a></h2>
+
+<p>The <a href="https://github.com/JetBrains/intellij-sdk-docs/tree/master/code_samples/conditional_operator_intention" data-bypass="yes" target="_blank"><span>conditional_operator_intention</span></a> sample plugin illustrates the use of the following techniques:</p>
+
+<ul>
+  <li>How to analyze a <a href="/intellij/sdk/docs/basics/architectural_overview/psi_files.html"><span>PSI tree</span></a>.</li>
+  <li>How to find a Java token of interest in the PSI tree.</li>
+  <li>How to invoke a quick fix action for a token element under cursor using the <a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/codeInsight/intention/PsiElementBaseIntentionAction.java" data-bypass="yes" target="_blank"><span>PsiElementBaseIntentionAction</span></a> class.</li>
+  <li>How to create a JUnit test for this plugin using the <a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/testFramework/src/com/intellij/testFramework/fixtures/IdeaTestFixtureFactory.java" data-bypass="yes" target="_blank"><span>IdeaTestFixtureFactory</span></a> class.</li>
+</ul>
+
+<a name="sample-plugin" class="elem-anchor"></a>
+<h2>Sample Plugin<a href="#sample-plugin" class="anchor-link"><span></span></a></h2>
+
+<p>The <strong>ConditionalOperatorConverter</strong> sample plugin is available in the <code class="code highlight language-text">&lt;%IntelliJ SDK Docs project%&gt;/code_samples/conditional_operator_intention</code> directory. When launched, this plugin adds the <strong>Convert ternary operator if statement</strong> item to the <strong>Conditional Operator</strong> node in the IDEA Intentions list:</p>
+
+<p><img src="img/IntentionsList.png" alt="" /></p>
+
+<a name="running-the-plugin" class="elem-anchor"></a>
+<h4>Running the Plugin</h4>
+
+<p><strong>To run the sample plugin</strong></p>
+
+<ol>
+  <li>Start <strong>IntelliJ IDEA</strong> and open the <strong>conditionalOperatorConvertor</strong> plugin project saved into the <code class="code highlight language-text">&lt;%IntelliJ SDK Docs project%&gt;/code_samples/conditional_operator_intention</code> directory.</li>
+  <li>Open the <a href="http://www.jetbrains.com/idea/webhelp/project-structure.html" data-bypass="yes" target="_blank"><span>Project Structure</span></a> dialog and ensure that the project settings are valid for your environment.</li>
+  <li>If necessary, modify the <a href="http://www.jetbrains.com/idea/webhelp/run-debug-configuration-plugin.html" data-bypass="yes" target="_blank"><span>Run/Debug Configurations</span></a> and Run the plugin by choosing the <strong>Run</strong> on the main menu.</li>
+</ol>
+
+<a name="how-does-it-work" class="elem-anchor"></a>
+<h4>How does it work?</h4>
+
+<p>The plugin analyzes symbols under the cursor in your code opened in the IDEA editor. If the cursor is positioned on the “?” conditional operator, <strong>IntelliJ IDEA</strong> proposes to replace this conditional (ternary) operator with the “if-then-else” statement:</p>
+
+<p><img src="img/TernaryOperator.png" alt="" /></p>
+
+<p>In this example, the code:</p>
+
+<pre><code class="code-block__wrapper code-block _highlighted lang_java"><span class="k">return</span> <span class="o">(</span><span class="n">n</span><span class="o">&gt;=</span><span class="mi">0</span><span class="o">)</span> <span class="o">?</span> <span class="n">n</span> <span class="o">:</span> <span class="o">-</span><span class="n">n</span><span class="o">;</span>
+</code></pre>
+
+<p>will be replaced with the code:</p>
+
+<pre><code class="code-block__wrapper code-block _highlighted lang_java"><span class="k">if</span> <span class="o">((</span><span class="n">n</span><span class="o">&gt;=</span><span class="mi">0</span><span class="o">))</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="n">n</span><span class="o">;</span>
+<span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="o">-</span><span class="n">n</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre>
+
+<a name="testing-the-plugin" class="elem-anchor"></a>
+<h5>Testing the Plugin</h5>
+
+<p>The sample plugin contains the <code class="code highlight language-text">YourTest</code> Java class in the <code class="code highlight language-text">testSource/testPlugin/</code> package and the test data in the <code class="code highlight language-text">testData/</code> directory. To perform the plugin test, run the <code class="code highlight language-text">YourTest.test()</code> method.</p>
+
+<p>For detailed information about testing and all related procedures, refer to <a href="http://www.jetbrains.com/idea/webhelp/testing.html" data-bypass="yes" target="_blank"><span>Testing</span></a> and <a href="http://www.jetbrains.com/idea/webhelp/testing-support.html" data-bypass="yes" target="_blank"><span>Testing Support</span></a> in the <strong>IntelliJ IDEA</strong> Web Help.</p>
+
+
+                    <div class="last-modified">
+                        Last modified: 19 December 2015
+                    </div>
+                </article>
+
+                <section class="disqus">
+                    <div id="disqus_thread"></div>
+                </section>
+            </div>
+        </section>
+    </main>
+</div>
+
+
+<script data-main="/intellij/sdk/docs/app/js/main.build" data-baseurl="/intellij/sdk/docs/" src="/intellij/sdk/docs/app/js/vendor/requirejs/require.js"></script>
+
+</body>
+</html>
+

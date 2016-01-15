@@ -1,0 +1,55 @@
+<idea-plugin version="2" url="www.jetbrains.com">
+    <id>org.jetbrains.plugins.sample.ProjectModel</id>
+    <name>Editor basics</name>
+    <version>1.0</version>
+    <vendor email="support@jetbrains.com" url="http://www.jetbrains.com">JetBrains</vendor>
+
+    <description>Project model illustration</description>
+
+    <change-notes>Initial commit</change-notes>
+
+    <!-- please see http://confluence.jetbrains.com/display/IDEADEV/Build+Number+Ranges for description -->
+    <idea-version since-build="131"/>
+    <depends>com.intellij.modules.lang</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
+
+    <application-components>
+        <!-- Add your application components here -->
+    </application-components>
+
+    <project-components>
+        <!-- Add your project components here -->
+    </project-components>
+
+    <actions>
+        <action id="ProjectModel.SourceRoots" class="com.intellij.tutorials.project.model.ShowSourceRootsActions"
+                text="Show Source Roots"
+                description="Illustrates how to get source roots">
+            <add-to-group group-id="ToolsMenu" anchor="after"/>
+        </action>
+        <action id="ProjectModel.ProjectSdk" class="com.intellij.tutorials.project.model.ProjectSdkAction"
+                text="Show Sdk Info"
+                description="Illustrates how to get source roots">
+            <add-to-group group-id="ToolsMenu" anchor="after"/>
+        </action>
+        <action id="ProjectModel.ProjectFileIndex"
+                class="com.intellij.tutorials.project.model.ProjectFileIndexSampleAction"
+                text="FileProjectIndex in Action"
+                description="Illustrates how to get source roots">
+            <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+        </action>
+        <action id="ProjectModel.ModificationAction" class="com.intellij.tutorials.project.model.ModificationAction"
+                text="Project Modification in Action"
+                description="Illustrates how to get source roots">
+            <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+        </action>
+        <action id="ProjectModel.LibrariesAction" class="com.intellij.tutorials.project.model.LibrariesAction"
+                text="Libraries for file"
+                description="Illustrates accessing libraries">
+            <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+        </action>
+    </actions>
+</idea-plugin>

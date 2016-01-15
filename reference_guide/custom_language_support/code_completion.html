@@ -1,0 +1,154 @@
+
+
+
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>Code Completion / IntelliJ Platform SDK  DevGuide</title>
+    <link rel="stylesheet" href="/intellij/sdk/docs/app/css/styles.min.css">
+
+    <!-- non-retina iPad pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-72x72.png" sizes="72x72">
+
+    <!-- retina iPhone pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-114x114.png" sizes="114x114">
+
+    <!-- retina iPad pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-144x144.png" sizes="144x144">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/intellij/sdk/docs/apple-touch-icon-precomposed.png">
+
+    <!-- normal favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="/intellij/sdk/docs/favicon.ico">
+    <link rel="icon" type="image/png" href="/intellij/sdk/docs/favicon.png">
+<link  rel="stylesheet" href="/intellij/sdk/docs/styles/styles.css"></head>
+<body data-id="reference_guide/custom_language_support/code_completion">
+<div class="wrapper">
+    <section class="panel _nav">
+        <header class="panel__header">
+            <div class="container">
+                <form class="search-box">
+                    <label for="search-box__input" class="search-box__label">
+                        <input type="text" class="search-box__input" id="search-box__input" placeholder="Search IntelliJ Platform SDK  DevGuide">
+                    </label>
+                    <div class="search-box__clear" title="Clear"></div>
+                </form>
+            </div>
+        </header>
+        <nav class="panel__content">
+            <div class="container _nav">
+                <menu class="nav-tree"></menu>
+            </div>
+            <div class="container _footer panel__footer">
+                <p><a href="https://youtrack.jetbrains.com/issues/IJSDK">Send feedback</a></p>
+                <p>&copy; 2000&ndash;2016 <a href="//www.jetbrains.com">JetBrains</a> s.r.o.<br>
+                    All rights reserved.</p>
+            </div>
+        </nav>
+    </section>
+
+    <main class="panel _main" role="main">
+        <header class="panel__header">
+            <div class="container">
+                <h3>IntelliJ Platform SDK DevGuide</h3>
+                
+        <div class="shortcuts-switcher"><label for="switch-shortcuts">Keymap:</label><select id="switch-shortcuts" class="select _shortcuts" height="1">
+            <option data-group="primary" value="default" selected>Default</option>
+            <option data-group="primary" value="default_for_gnome">GNOME</option>
+            <option data-group="primary" value="default_for_kde">KDE</option>
+            <option data-group="primary" value="default_for_xwin">XWindow</option>
+            <option data-group="primary" value="emacs">Emacs</option>
+            <option data-group="primary" value="jbuilder">JBuilder</option>
+            <option data-group="primary" value="visual_studio">Visual Studio</option>
+            <option data-group="primary" value="netbeans_6.5">NetBeans 6.5</option>
+            <option data-group="primary" value="eclipse">Eclipse</option>
+            <option data-group="secondary" value="mac_os_x_10.5_">OS X 10.5+</option>
+            <option data-group="secondary" value="mac_os_x">OS X</option>
+            <option data-group="secondary" value="eclipse_mac_os_x">OS X Eclipse</option></select>
+        </div>
+    
+                <div class="panel-trigger"></div>
+            </div>
+        </header>
+        <section class="panel__content">
+            <div class="container">
+                <article class="article" data-shortcut-switcher="false">
+
+                    <h1>Code Completion</h1>
+                    <p>There are two main types of code completion that can be provided by custom language plugins: reference completion and contributor-based completion.</p>
+
+<p>Reference completion is easier to implement, but supports only the basic completion action.
+Contributor-based completion provides more features, supports all three completion types (basic, smart and class name) and can be used, for example, to implement keyword completion.</p>
+
+<a name="reference-completion" class="elem-anchor"></a>
+<h3>Reference Completion<a href="#reference-completion" class="anchor-link"><span></span></a></h3>
+
+<p>To fill the completion list, the IDE calls
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/core-api/src/com/intellij/psi/PsiReference.java" data-bypass="yes" target="_blank"><span>PsiReference.getVariants()</span></a>
+either on the reference at the caret location or on a dummy reference that would be placed at the caret.
+This method needs to return an array of objects containing either strings,
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/core-api/src/com/intellij/psi/PsiElement.java" data-bypass="yes" target="_blank"><span>PsiElement</span></a>
+instances or instances of the
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/codeInsight/lookup/LookupElement.java" data-bypass="yes" target="_blank"><span>LookupElement</span></a>
+class.
+If a
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/core-api/src/com/intellij/psi/PsiElement.java" data-bypass="yes" target="_blank"><span>PsiElement</span></a>
+instance is returned in the array, the completion list shows the icon for the element.</p>
+
+<p>The most common way to implement <code class="code highlight language-text">getVariants()</code> is to use the same function for walking up the tree as in
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/core-api/src/com/intellij/psi/PsiReference.java" data-bypass="yes" target="_blank"><span>PsiReference.resolve()</span></a>,
+and a different implementation of
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/core-api/src/com/intellij/psi/scope/PsiScopeProcessor.java" data-bypass="yes" target="_blank"><span>PsiScopeProcessor</span></a>
+which collects all declarations passed to its <code class="code highlight language-text">processDeclarations()</code> method and returns them as an array for filling the completion list.</p>
+
+<a name="contributor-based-completion" class="elem-anchor"></a>
+<h3>Contributor-based Completion<a href="#contributor-based-completion" class="anchor-link"><span></span></a></h3>
+
+<p>Implementing the
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/codeInsight/completion/CompletionContributor.java" data-bypass="yes" target="_blank"><span>CompletionContributor</span></a>
+interface gives you the greatest control over the operation of code completion for your language.
+Note that the JavaDoc of that class contains a detailed FAQ for implementing code completion.</p>
+
+<p>The core scenario of using
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/codeInsight/completion/CompletionContributor.java" data-bypass="yes" target="_blank"><span>CompletionContributor</span></a>
+consists of calling the <code class="code highlight language-text">extend()</code> method and passing in the <em>pattern</em> specifying the context in which this completion variant is applicable, as well as a <em>completion provider</em> which generates the items to show in the completion list.</p>
+
+<p><strong>Example</strong>:
+<a href="https://github.com/JetBrains/intellij-plugins/blob/master/osmorc/src/org/osmorc/manifest/completion/OsgiManifestCompletionContributor.java" data-bypass="yes" target="_blank"><span>CompletionContributor</span></a>
+for completing keywords in MANIFEST.MF files.</p>
+
+<p>Items shown in the completion list are represented by instances of the
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/codeInsight/lookup/LookupElement.java" data-bypass="yes" target="_blank"><span>LookupElement</span></a>
+interface.
+These instances are normally created through the
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/codeInsight/lookup/LookupElementBuilder.java" data-bypass="yes" target="_blank"><span>LookupElementBuilder</span></a>
+class.
+For every lookup element, you can specify the following attributes:</p>
+
+<ul>
+  <li>Text, tail text and type text. Tail text is shown next to the main item text, is not used for prefix matching, and can be used, for example, to show the parameter list of the method. Type text is shown right-aligned in the lookup list and can be used to show the return type or containing class of a method, for example.</li>
+  <li>Icon</li>
+  <li>Text attributes (bold, strikeout etc.)</li>
+  <li>Insert handler. The insert handler is a callback which is called when the item is selected, and can be used to perform additional modifications of the text (for example, to put in the parentheses for a method call)</li>
+</ul>
+
+
+                    <div class="last-modified">
+                        Last modified: 26 November 2015
+                    </div>
+                </article>
+
+                <section class="disqus">
+                    <div id="disqus_thread"></div>
+                </section>
+            </div>
+        </section>
+    </main>
+</div>
+
+
+<script data-main="/intellij/sdk/docs/app/js/main.build" data-baseurl="/intellij/sdk/docs/" src="/intellij/sdk/docs/app/js/vendor/requirejs/require.js"></script>
+
+</body>
+</html>
+

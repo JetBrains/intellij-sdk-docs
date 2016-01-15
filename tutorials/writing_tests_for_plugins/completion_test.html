@@ -1,0 +1,233 @@
+
+
+
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>3. Completion Test / IntelliJ Platform SDK  DevGuide</title>
+    <link rel="stylesheet" href="/intellij/sdk/docs/app/css/styles.min.css">
+
+    <!-- non-retina iPad pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-72x72.png" sizes="72x72">
+
+    <!-- retina iPhone pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-114x114.png" sizes="114x114">
+
+    <!-- retina iPad pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-144x144.png" sizes="144x144">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/intellij/sdk/docs/apple-touch-icon-precomposed.png">
+
+    <!-- normal favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="/intellij/sdk/docs/favicon.ico">
+    <link rel="icon" type="image/png" href="/intellij/sdk/docs/favicon.png">
+<link  rel="stylesheet" href="/intellij/sdk/docs/styles/styles.css"></head>
+<body data-id="tutorials/writing_tests_for_plugins/completion_test">
+<div class="wrapper">
+    <section class="panel _nav">
+        <header class="panel__header">
+            <div class="container">
+                <form class="search-box">
+                    <label for="search-box__input" class="search-box__label">
+                        <input type="text" class="search-box__input" id="search-box__input" placeholder="Search IntelliJ Platform SDK  DevGuide">
+                    </label>
+                    <div class="search-box__clear" title="Clear"></div>
+                </form>
+            </div>
+        </header>
+        <nav class="panel__content">
+            <div class="container _nav">
+                <menu class="nav-tree"></menu>
+            </div>
+            <div class="container _footer panel__footer">
+                <p><a href="https://youtrack.jetbrains.com/issues/IJSDK">Send feedback</a></p>
+                <p>&copy; 2000&ndash;2016 <a href="//www.jetbrains.com">JetBrains</a> s.r.o.<br>
+                    All rights reserved.</p>
+            </div>
+        </nav>
+    </section>
+
+    <main class="panel _main" role="main">
+        <header class="panel__header">
+            <div class="container">
+                <h3>IntelliJ Platform SDK DevGuide</h3>
+                
+        <div class="shortcuts-switcher"><label for="switch-shortcuts">Keymap:</label><select id="switch-shortcuts" class="select _shortcuts" height="1">
+            <option data-group="primary" value="default" selected>Default</option>
+            <option data-group="primary" value="default_for_gnome">GNOME</option>
+            <option data-group="primary" value="default_for_kde">KDE</option>
+            <option data-group="primary" value="default_for_xwin">XWindow</option>
+            <option data-group="primary" value="emacs">Emacs</option>
+            <option data-group="primary" value="jbuilder">JBuilder</option>
+            <option data-group="primary" value="visual_studio">Visual Studio</option>
+            <option data-group="primary" value="netbeans_6.5">NetBeans 6.5</option>
+            <option data-group="primary" value="eclipse">Eclipse</option>
+            <option data-group="secondary" value="mac_os_x_10.5_">OS X 10.5+</option>
+            <option data-group="secondary" value="mac_os_x">OS X</option>
+            <option data-group="secondary" value="eclipse_mac_os_x">OS X Eclipse</option></select>
+        </div>
+    
+                <div class="panel-trigger"></div>
+            </div>
+        </header>
+        <section class="panel__content">
+            <div class="container">
+                <article class="article" data-shortcut-switcher="false">
+
+                    <h1>3. Completion Test</h1>
+                    <p>In this test we will check if code completion, implemented in the <a href="/intellij/sdk/docs/tutorials/custom_language_support/reference_contributor.html"><span>Reference Contributor</span></a> section of the <a href="/intellij/sdk/docs/tutorials/custom_language_support_tutorial.html"><span>Custom Language Support Tutorial</span></a> works as we expect.</p>
+
+<a name="define-test-data" class="elem-anchor"></a>
+<h3>3.1. Define test data<a href="#define-test-data" class="anchor-link"><span></span></a></h3>
+
+<p>Create a file <em>DefaultTestData.simple</em>.</p>
+
+<pre><code class="code-block__wrapper code-block _highlighted lang_bash"><span class="c"># You are reading the ".properties" entry.</span>
+! The exclamation mark can also mark text as comments.
+website <span class="o">=</span> http://en.wikipedia.org/
+
+language <span class="o">=</span> English
+<span class="c"># The backslash below tells the application to continue reading</span>
+<span class="c"># the value onto the next line.</span>
+message <span class="o">=</span> Welcome to <span class="se">\</span>
+          Wikipedia!
+<span class="c"># Add spaces to the key</span>
+key<span class="se">\ </span>with<span class="se">\ </span>spaces <span class="o">=</span> This is the value that could be looked up with the key <span class="s2">"key with spaces"</span>.
+<span class="c"># Unicode</span>
+tab : <span class="se">\u</span>0009
+</code></pre>
+
+<p>Create one more file <em>CompleteTestData.java</em>.</p>
+
+<pre><code class="code-block__wrapper code-block _highlighted lang_java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Test</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"simple:&lt;caret&gt;"</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+</code></pre>
+
+<a name="define-a-test" class="elem-anchor"></a>
+<h3>3.2. Define a test<a href="#define-a-test" class="anchor-link"><span></span></a></h3>
+
+<pre><code class="code-block__wrapper code-block _highlighted lang_java"><span class="kn">package</span> <span class="n">com</span><span class="o">.</span><span class="na">simpleplugin</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">com.intellij.codeInsight.completion.CompletionType</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.intellij.codeInsight.generation.actions.CommentByLineCommentAction</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.intellij.openapi.command.WriteCommandAction</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.intellij.openapi.vfs.newvfs.impl.VfsRootAccess</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.intellij.psi.PsiElement</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.intellij.psi.codeStyle.CodeStyleManager</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.intellij.psi.codeStyle.CodeStyleSettingsManager</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.intellij.testFramework.fixtures.LightCodeInsightFixtureTestCase</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.intellij.usageView.UsageInfo</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.simpleplugin.psi.SimpleProperty</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.util.Arrays</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Collection</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.List</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">SimpleCodeInsightTest</span> <span class="kd">extends</span> <span class="n">LightCodeInsightFixtureTestCase</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">setUp</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+        <span class="n">VfsRootAccess</span><span class="o">.</span><span class="na">SHOULD_PERFORM_ACCESS_CHECK</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span> <span class="c1">// TODO: a workaround for v15</span>
+        <span class="kd">super</span><span class="o">.</span><span class="na">setUp</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">protected</span> <span class="n">String</span> <span class="nf">getTestDataPath</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="s">"code_samples/simple_language_plugin/testData"</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">testCompletion</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">myFixture</span><span class="o">.</span><span class="na">configureByFiles</span><span class="o">(</span><span class="s">"CompleteTestData.java"</span><span class="o">,</span> <span class="s">"DefaultTestData.simple"</span><span class="o">);</span>
+        <span class="n">myFixture</span><span class="o">.</span><span class="na">complete</span><span class="o">(</span><span class="n">CompletionType</span><span class="o">.</span><span class="na">BASIC</span><span class="o">,</span> <span class="mi">1</span><span class="o">);</span>
+        <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">strings</span> <span class="o">=</span> <span class="n">myFixture</span><span class="o">.</span><span class="na">getLookupElementStrings</span><span class="o">();</span>
+        <span class="n">assertTrue</span><span class="o">(</span><span class="n">strings</span><span class="o">.</span><span class="na">containsAll</span><span class="o">(</span><span class="n">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="s">"key with spaces"</span><span class="o">,</span> <span class="s">"language"</span><span class="o">,</span> <span class="s">"message"</span><span class="o">,</span> <span class="s">"tab"</span><span class="o">,</span> <span class="s">"website"</span><span class="o">)));</span>
+        <span class="n">assertEquals</span><span class="o">(</span><span class="mi">5</span><span class="o">,</span> <span class="n">strings</span><span class="o">.</span><span class="na">size</span><span class="o">());</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">testAnnotator</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">myFixture</span><span class="o">.</span><span class="na">configureByFiles</span><span class="o">(</span><span class="s">"AnnotatorTestData.java"</span><span class="o">,</span> <span class="s">"DefaultTestData.simple"</span><span class="o">);</span>
+        <span class="n">myFixture</span><span class="o">.</span><span class="na">checkHighlighting</span><span class="o">(</span><span class="kc">false</span><span class="o">,</span> <span class="kc">false</span><span class="o">,</span> <span class="kc">true</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">testFormatter</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">myFixture</span><span class="o">.</span><span class="na">configureByFiles</span><span class="o">(</span><span class="s">"FormatterTestData.simple"</span><span class="o">);</span>
+        <span class="n">CodeStyleSettingsManager</span><span class="o">.</span><span class="na">getSettings</span><span class="o">(</span><span class="n">getProject</span><span class="o">()).</span><span class="na">SPACE_AROUND_ASSIGNMENT_OPERATORS</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+        <span class="n">CodeStyleSettingsManager</span><span class="o">.</span><span class="na">getSettings</span><span class="o">(</span><span class="n">getProject</span><span class="o">()).</span><span class="na">KEEP_BLANK_LINES_IN_CODE</span> <span class="o">=</span> <span class="mi">2</span><span class="o">;</span>
+        <span class="k">new</span> <span class="n">WriteCommandAction</span><span class="o">.</span><span class="na">Simple</span><span class="o">(</span><span class="n">getProject</span><span class="o">())</span> <span class="o">{</span>
+            <span class="nd">@Override</span>
+            <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">Throwable</span> <span class="o">{</span>
+                <span class="n">CodeStyleManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">getProject</span><span class="o">()).</span><span class="na">reformat</span><span class="o">(</span><span class="n">myFixture</span><span class="o">.</span><span class="na">getFile</span><span class="o">());</span>
+            <span class="o">}</span>
+        <span class="o">}.</span><span class="na">execute</span><span class="o">();</span>
+        <span class="n">myFixture</span><span class="o">.</span><span class="na">checkResultByFile</span><span class="o">(</span><span class="s">"DefaultTestData.simple"</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">testRename</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">myFixture</span><span class="o">.</span><span class="na">configureByFiles</span><span class="o">(</span><span class="s">"RenameTestData.java"</span><span class="o">,</span> <span class="s">"RenameTestData.simple"</span><span class="o">);</span>
+        <span class="n">myFixture</span><span class="o">.</span><span class="na">renameElementAtCaret</span><span class="o">(</span><span class="s">"websiteUrl"</span><span class="o">);</span>
+        <span class="n">myFixture</span><span class="o">.</span><span class="na">checkResultByFile</span><span class="o">(</span><span class="s">"RenameTestData.simple"</span><span class="o">,</span> <span class="s">"RenameTestDataAfter.simple"</span><span class="o">,</span> <span class="kc">false</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">testFolding</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">myFixture</span><span class="o">.</span><span class="na">configureByFiles</span><span class="o">(</span><span class="s">"DefaultTestData.simple"</span><span class="o">);</span>
+        <span class="n">myFixture</span><span class="o">.</span><span class="na">testFolding</span><span class="o">(</span><span class="n">getTestDataPath</span><span class="o">()</span> <span class="o">+</span> <span class="s">"/FoldingTestData.java"</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">testFindUsages</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">Collection</span><span class="o">&lt;</span><span class="n">UsageInfo</span><span class="o">&gt;</span> <span class="n">usageInfos</span> <span class="o">=</span> <span class="n">myFixture</span><span class="o">.</span><span class="na">testFindUsages</span><span class="o">(</span><span class="s">"FindUsagesTestData.simple"</span><span class="o">,</span> <span class="s">"FindUsagesTestData.java"</span><span class="o">);</span>
+        <span class="n">assertEquals</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="n">usageInfos</span><span class="o">.</span><span class="na">size</span><span class="o">());</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">testCommenter</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">myFixture</span><span class="o">.</span><span class="na">configureByText</span><span class="o">(</span><span class="n">SimpleFileType</span><span class="o">.</span><span class="na">INSTANCE</span><span class="o">,</span> <span class="s">"&lt;caret&gt;website = http://en.wikipedia.org/"</span><span class="o">);</span>
+        <span class="n">CommentByLineCommentAction</span> <span class="n">commentAction</span> <span class="o">=</span> <span class="k">new</span> <span class="n">CommentByLineCommentAction</span><span class="o">();</span>
+        <span class="n">commentAction</span><span class="o">.</span><span class="na">actionPerformedImpl</span><span class="o">(</span><span class="n">getProject</span><span class="o">(),</span> <span class="n">myFixture</span><span class="o">.</span><span class="na">getEditor</span><span class="o">());</span>
+        <span class="n">myFixture</span><span class="o">.</span><span class="na">checkResult</span><span class="o">(</span><span class="s">"#website = http://en.wikipedia.org/"</span><span class="o">);</span>
+        <span class="n">commentAction</span><span class="o">.</span><span class="na">actionPerformedImpl</span><span class="o">(</span><span class="n">getProject</span><span class="o">(),</span> <span class="n">myFixture</span><span class="o">.</span><span class="na">getEditor</span><span class="o">());</span>
+        <span class="n">myFixture</span><span class="o">.</span><span class="na">checkResult</span><span class="o">(</span><span class="s">"website = http://en.wikipedia.org/"</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">testReference</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">myFixture</span><span class="o">.</span><span class="na">configureByFiles</span><span class="o">(</span><span class="s">"ReferenceTestData.java"</span><span class="o">,</span> <span class="s">"DefaultTestData.simple"</span><span class="o">);</span>
+        <span class="n">PsiElement</span> <span class="n">element</span> <span class="o">=</span> <span class="n">myFixture</span><span class="o">.</span><span class="na">getFile</span><span class="o">().</span><span class="na">findElementAt</span><span class="o">(</span><span class="n">myFixture</span><span class="o">.</span><span class="na">getCaretOffset</span><span class="o">()).</span><span class="na">getParent</span><span class="o">();</span>
+        <span class="n">assertEquals</span><span class="o">(</span><span class="s">"http://en.wikipedia.org/"</span><span class="o">,</span> <span class="o">((</span><span class="n">SimpleProperty</span><span class="o">)</span> <span class="n">element</span><span class="o">.</span><span class="na">getReferences</span><span class="o">()[</span><span class="mi">0</span><span class="o">].</span><span class="na">resolve</span><span class="o">()).</span><span class="na">getValue</span><span class="o">());</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+</code></pre>
+
+<a name="run-the-test" class="elem-anchor"></a>
+<h3>3.3. Run the test<a href="#run-the-test" class="anchor-link"><span></span></a></h3>
+
+<p>Run the test and make sure it’s green.</p>
+
+<hr />
+
+<p><a href="parsing_test.html"><span>Previous</span></a>
+<a href="/intellij/sdk/docs/tutorials/writing_tests_for_plugins.html"><span>Top</span></a>
+<a href="annotator_test.html"><span>Next</span></a></p>
+
+
+
+                    <div class="last-modified">
+                        Last modified: 28 December 2015
+                    </div>
+                </article>
+
+                <section class="disqus">
+                    <div id="disqus_thread"></div>
+                </section>
+            </div>
+        </section>
+    </main>
+</div>
+
+
+<script data-main="/intellij/sdk/docs/app/js/main.build" data-baseurl="/intellij/sdk/docs/" src="/intellij/sdk/docs/app/js/vendor/requirejs/require.js"></script>
+
+</body>
+</html>
+

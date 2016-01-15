@@ -1,0 +1,208 @@
+
+
+
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>Supporting multiple carets / IntelliJ Platform SDK  DevGuide</title>
+    <link rel="stylesheet" href="/intellij/sdk/docs/app/css/styles.min.css">
+
+    <!-- non-retina iPad pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-72x72.png" sizes="72x72">
+
+    <!-- retina iPhone pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-114x114.png" sizes="114x114">
+
+    <!-- retina iPad pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-144x144.png" sizes="144x144">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/intellij/sdk/docs/apple-touch-icon-precomposed.png">
+
+    <!-- normal favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="/intellij/sdk/docs/favicon.ico">
+    <link rel="icon" type="image/png" href="/intellij/sdk/docs/favicon.png">
+<link  rel="stylesheet" href="/intellij/sdk/docs/styles/styles.css"></head>
+<body data-id="reference_guide/multiple_carets">
+<div class="wrapper">
+    <section class="panel _nav">
+        <header class="panel__header">
+            <div class="container">
+                <form class="search-box">
+                    <label for="search-box__input" class="search-box__label">
+                        <input type="text" class="search-box__input" id="search-box__input" placeholder="Search IntelliJ Platform SDK  DevGuide">
+                    </label>
+                    <div class="search-box__clear" title="Clear"></div>
+                </form>
+            </div>
+        </header>
+        <nav class="panel__content">
+            <div class="container _nav">
+                <menu class="nav-tree"></menu>
+            </div>
+            <div class="container _footer panel__footer">
+                <p><a href="https://youtrack.jetbrains.com/issues/IJSDK">Send feedback</a></p>
+                <p>&copy; 2000&ndash;2016 <a href="//www.jetbrains.com">JetBrains</a> s.r.o.<br>
+                    All rights reserved.</p>
+            </div>
+        </nav>
+    </section>
+
+    <main class="panel _main" role="main">
+        <header class="panel__header">
+            <div class="container">
+                <h3>IntelliJ Platform SDK DevGuide</h3>
+                
+        <div class="shortcuts-switcher"><label for="switch-shortcuts">Keymap:</label><select id="switch-shortcuts" class="select _shortcuts" height="1">
+            <option data-group="primary" value="default" selected>Default</option>
+            <option data-group="primary" value="default_for_gnome">GNOME</option>
+            <option data-group="primary" value="default_for_kde">KDE</option>
+            <option data-group="primary" value="default_for_xwin">XWindow</option>
+            <option data-group="primary" value="emacs">Emacs</option>
+            <option data-group="primary" value="jbuilder">JBuilder</option>
+            <option data-group="primary" value="visual_studio">Visual Studio</option>
+            <option data-group="primary" value="netbeans_6.5">NetBeans 6.5</option>
+            <option data-group="primary" value="eclipse">Eclipse</option>
+            <option data-group="secondary" value="mac_os_x_10.5_">OS X 10.5+</option>
+            <option data-group="secondary" value="mac_os_x">OS X</option>
+            <option data-group="secondary" value="eclipse_mac_os_x">OS X Eclipse</option></select>
+        </div>
+    
+                <div class="panel-trigger"></div>
+            </div>
+        </header>
+        <section class="panel__content">
+            <div class="container">
+                <article class="article" data-shortcut-switcher="false">
+
+                    <h1>Supporting multiple carets</h1>
+                    <a name="introduction" class="elem-anchor"></a>
+<h2>Introduction<a href="#introduction" class="anchor-link"><span></span></a></h2>
+
+<p>Support for multiple independent carets has been added to editor implementation in IDEA 13.1.
+Most editor actions (keyboard navigation, text insertion and deletion, etc) will be applied to each caret independently.
+Each caret has its own associated selection, which is a continuous range of document characters (can be empty).
+When after some action two or more carets end up in the same visual position, they are merged into a single caret with their associated selections merged into a single one. Similar thing will happen when selections for several carets become overlapped, only one of the carets will remain, and the selections will be merged.
+There’s a concept of ‘primary’ caret - the one on which non-multi-caret-aware actions and the actions which need a single-point document context (like code completion) will operate.
+Currently, the most recent caret is considered the primary one.</p>
+
+<a name="core-functionality" class="elem-anchor"></a>
+<h2>Core functionality<a href="#core-functionality" class="anchor-link"><span></span></a></h2>
+
+<p>Core logic related to multi-caret implementation such as accessing currently existing carets adding and removing carets is available via
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/editor-ui-api/src/com/intellij/openapi/editor/CaretModel.java" data-bypass="yes" target="_blank"><span>CaretModel</span></a>
+interface, some changes also have been made in
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/editor-ui-api/src/com/intellij/openapi/editor/SelectionModel.java" data-bypass="yes" target="_blank"><span>SelectionModel</span></a>
+interface.
+Check Javadoc of those interfaces for details.</p>
+
+<p>Notable changes from old behaviour:</p>
+
+<ul>
+  <li>
+    <p>Previously existing methods in CaretModel and SelectionModel to query and modify caret and selection positions work by default on the primary caret now. In the context of CaretModel.<em>runForEachCaret</em> method though, they operate on the current caret.
+So the behaviour of legacy code (not using Caret interface) will depend on the context of its invocation.</p>
+  </li>
+  <li>
+    <p>Block selection doesn’t exist as a separate concept anymore.
+Correspondingly, block-selection-related methods in SelectionModel interface have changed behaviour - <em>hasBlockSelection()</em> will always return false, <em>setBlockSelection()</em> will create a multi-caret selection equivalent to the requested block selection.
+<em>getBlockSelectionStarts()</em> and <em>getBlockSelectionEnds()</em> methods work in multi-caret state, returning all selected regions.</p>
+  </li>
+</ul>
+
+<a name="editor-actions" class="elem-anchor"></a>
+<h2>Editor actions<a href="#editor-actions" class="anchor-link"><span></span></a></h2>
+
+<a name="editoraction-and-editoractionhandler" class="elem-anchor"></a>
+<h3>EditorAction and EditorActionHandler<a href="#editoraction-and-editoractionhandler" class="anchor-link"><span></span></a></h3>
+
+<p>When
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/platform-api/src/com/intellij/openapi/editor/actionSystem/EditorActionHandler.java" data-bypass="yes" target="_blank"><span>EditorActionHandler</span></a> is invoked, additional parameter will be passed to it - caret instance on which it should operate, or null, if it’s invoked without any caret context.
+If the handler invokes another handler (delegate handler for the same actionId, or a completely unrelated handler), that parameter should normally be passed to the delegate unchanged (unless no context caret has been provided to the handler, but it needs to invoke another handler on a specific caret).
+Of course, handler can just ignore the caret parameter if its functionality is not related to caret/selection position.</p>
+
+<p>If handler needs to implement multi-caret functionality it can do so explicitly in the overridden <em>doExecute</em> method, but if it just needs that method to be invoked for each caret, it’s enough to pass a parameter to EditorActionHandler constructor to make <em>doExecute</em> called for each caret, when the handler is invoked without specific caret context.</p>
+
+<a name="editor-action-delegates" class="elem-anchor"></a>
+<h3>Editor action delegates<a href="#editor-action-delegates" class="anchor-link"><span></span></a></h3>
+
+<p>The following delegates are available:</p>
+
+<ul>
+  <li>EnterHandlerDelegate</li>
+  <li>BackspaceHandlerDelegate</li>
+  <li>JoinLinesHandlerDelegate</li>
+  <li>EditorNavigationDelegate</li>
+  <li>SmartEnterProcessor</li>
+  <li>CommentCompleteHandler</li>
+  <li>StatementUpDownMover</li>
+  <li>CodeBlockProvider</li>
+</ul>
+
+<p>At the moment there’s no need to make any changes in the handlers to support multiple carets - they are already invoked for each caret.</p>
+
+<a name="typing-actions" class="elem-anchor"></a>
+<h2>Typing actions<a href="#typing-actions" class="anchor-link"><span></span></a></h2>
+
+<a name="typedactionhandler-typedhandlerdelegate" class="elem-anchor"></a>
+<h3>TypedActionHandler, TypedHandlerDelegate<a href="#typedactionhandler-typedhandlerdelegate" class="anchor-link"><span></span></a></h3>
+
+<p><a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/platform-api/src/com/intellij/openapi/editor/actionSystem/TypedActionHandler.java" data-bypass="yes" target="_blank"><span>TypedActionHandler</span></a>
+and
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/codeInsight/editorActions/TypedHandlerDelegate.java" data-bypass="yes" target="_blank"><span>TypedHandlerDelegate</span></a>
+implementations are invoked only once for each typed character.
+If those handlers need to support multiple carets, they will need to implement that explicitly.</p>
+
+<p><a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/platform-api/src/com/intellij/openapi/editor/EditorModificationUtil.java" data-bypass="yes" target="_blank"><span>EditorModificationUtil</span></a>.
+<em>typeInStringAtCaretHonorMultipleCarets</em> utility method is available to do the most common task in this case - inserting the same text into all caret positions and/or moving all carets relatively to their current position.
+Examples of its usage:</p>
+
+<ul>
+  <li>
+    <p><a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/platform-api/src/com/intellij/openapi/editor/actionSystem/TypedAction.java" data-bypass="yes" target="_blank"><span>TypedAction</span></a>.</p>
+  </li>
+  <li>
+    <p><a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/xml/impl/src/com/intellij/codeInsight/editorActions/XmlGtTypedHandler.java" data-bypass="yes" target="_blank"><span>XmlGtTypedHandler</span></a>.</p>
+  </li>
+</ul>
+
+<hr />
+<p><strong>Note</strong>:
+Starting from IDEA 14,
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/codeInsight/editorActions/TypedHandlerDelegate.java" data-bypass="yes" target="_blank"><span>TypedHandlerDelegate</span></a>
+implementations are invoked automatically for each caret. If one wants to implement custom multicaret behaviour on typing,
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/platform-api/src/com/intellij/openapi/editor/actionSystem/TypedActionHandler.java" data-bypass="yes" target="_blank"><span>TypedActionHandler</span></a>
+needs to be provided instead.</p>
+
+<hr />
+
+<a name="code-insight-actions" class="elem-anchor"></a>
+<h2>Code insight actions<a href="#code-insight-actions" class="anchor-link"><span></span></a></h2>
+
+<p>Existing actions inheriting from
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-api/src/com/intellij/codeInsight/actions/CodeInsightAction.java" data-bypass="yes" target="_blank"><span>CodeInsightAction</span></a> will work for primary caret only.
+To support in multiple carets one should inherit
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/lang-impl/src/com/intellij/codeInsight/actions/MultiCaretCodeInsightAction.java" data-bypass="yes" target="_blank"><span>MultiCaretCodeInsightAction</span></a>
+instead (each caret might have a different editor and PSI instance, so using old API is not possible).
+It is available since IDEA 14.</p>
+
+
+
+                    <div class="last-modified">
+                        Last modified: 26 November 2015
+                    </div>
+                </article>
+
+                <section class="disqus">
+                    <div id="disqus_thread"></div>
+                </section>
+            </div>
+        </section>
+    </main>
+</div>
+
+
+<script data-main="/intellij/sdk/docs/app/js/main.build" data-baseurl="/intellij/sdk/docs/" src="/intellij/sdk/docs/app/js/vendor/requirejs/require.js"></script>
+
+</body>
+</html>
+

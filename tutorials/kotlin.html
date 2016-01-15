@@ -1,0 +1,132 @@
+
+
+
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>Kotlin for Plugin Developers / IntelliJ Platform SDK  DevGuide</title>
+    <link rel="stylesheet" href="/intellij/sdk/docs/app/css/styles.min.css">
+
+    <!-- non-retina iPad pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-72x72.png" sizes="72x72">
+
+    <!-- retina iPhone pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-114x114.png" sizes="114x114">
+
+    <!-- retina iPad pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-144x144.png" sizes="144x144">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/intellij/sdk/docs/apple-touch-icon-precomposed.png">
+
+    <!-- normal favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="/intellij/sdk/docs/favicon.ico">
+    <link rel="icon" type="image/png" href="/intellij/sdk/docs/favicon.png">
+<link  rel="stylesheet" href="/intellij/sdk/docs/styles/styles.css"></head>
+<body data-id="tutorials/kotlin">
+<div class="wrapper">
+    <section class="panel _nav">
+        <header class="panel__header">
+            <div class="container">
+                <form class="search-box">
+                    <label for="search-box__input" class="search-box__label">
+                        <input type="text" class="search-box__input" id="search-box__input" placeholder="Search IntelliJ Platform SDK  DevGuide">
+                    </label>
+                    <div class="search-box__clear" title="Clear"></div>
+                </form>
+            </div>
+        </header>
+        <nav class="panel__content">
+            <div class="container _nav">
+                <menu class="nav-tree"></menu>
+            </div>
+            <div class="container _footer panel__footer">
+                <p><a href="https://youtrack.jetbrains.com/issues/IJSDK">Send feedback</a></p>
+                <p>&copy; 2000&ndash;2016 <a href="//www.jetbrains.com">JetBrains</a> s.r.o.<br>
+                    All rights reserved.</p>
+            </div>
+        </nav>
+    </section>
+
+    <main class="panel _main" role="main">
+        <header class="panel__header">
+            <div class="container">
+                <h3>IntelliJ Platform SDK DevGuide</h3>
+                
+        <div class="shortcuts-switcher"><label for="switch-shortcuts">Keymap:</label><select id="switch-shortcuts" class="select _shortcuts" height="1">
+            <option data-group="primary" value="default" selected>Default</option>
+            <option data-group="primary" value="default_for_gnome">GNOME</option>
+            <option data-group="primary" value="default_for_kde">KDE</option>
+            <option data-group="primary" value="default_for_xwin">XWindow</option>
+            <option data-group="primary" value="emacs">Emacs</option>
+            <option data-group="primary" value="jbuilder">JBuilder</option>
+            <option data-group="primary" value="visual_studio">Visual Studio</option>
+            <option data-group="primary" value="netbeans_6.5">NetBeans 6.5</option>
+            <option data-group="primary" value="eclipse">Eclipse</option>
+            <option data-group="secondary" value="mac_os_x_10.5_">OS X 10.5+</option>
+            <option data-group="secondary" value="mac_os_x">OS X</option>
+            <option data-group="secondary" value="eclipse_mac_os_x">OS X Eclipse</option></select>
+        </div>
+    
+                <div class="panel-trigger"></div>
+            </div>
+        </header>
+        <section class="panel__content">
+            <div class="container">
+                <article class="article" data-shortcut-switcher="false">
+
+                    <h1>Kotlin for Plugin Developers</h1>
+                    <a name="why-kotlin" class="elem-anchor"></a>
+<h2>1. Why Kotlin?<a href="#why-kotlin" class="anchor-link"><span></span></a></h2>
+
+<p>Using Kotlin to write plugins for the IntelliJ Platform is very similar to writing plugins in Java. Existing plugin developers can get started by converting boilerplate Java classes to their Kotlin equivalents by using the <a href="https://kotlinlang.org/docs/tutorials/mixing-java-kotlin-intellij.html#converting-an-existing-java-file-to-kotlin-with-j2k" data-bypass="yes" target="_blank"><span>J2K compiler</span></a> bundled with the IntelliJ Platform (versions  143.+), and developers can easily mix and match Kotlin classes with their existing Java code.</p>
+
+<p>In addition to <a href="https://kotlinlang.org/docs/reference/null-safety.html" data-bypass="yes" target="_blank"><span>null safety</span></a> and <a href="https://kotlinlang.org/docs/reference/type-safe-builders.html" data-bypass="yes" target="_blank"><span>type-safe builders</span></a>, the Kotlin language offers a number of convenient features for plugin development, which make plugins easier to read and simpler to maintain. Much like <a href="https://kotlinlang.org/docs/tutorials/kotlin-android.html" data-bypass="yes" target="_blank"><span>Kotlin for Android</span></a>, the IntelliJ Platform makes extensive use of callbacks, which are easy to express as <a href="https://kotlinlang.org/docs/reference/lambdas.html" data-bypass="yes" target="_blank"><span>lambdas</span></a> in Kotlin.</p>
+
+<p>Likewise, it is easy to customize the behavior of internal classes in IntelliJ IDEA, with <a href="https://kotlinlang.org/docs/reference/extensions.html" data-bypass="yes" target="_blank"><span>extensions</span></a>. For example, it is common practice to <a href="http://www.slf4j.org/faq.html#logging_performance" data-bypass="yes" target="_blank"><span>guard logging statements</span></a> to avoid the cost of parameter construction, leading to the following ceremony when using the log:</p>
+
+<pre><code class="code-block__wrapper code-block _highlighted lang_java"><span class="k">if</span><span class="o">(</span><span class="n">logger</span><span class="o">.</span><span class="na">isDebugEnabled</span><span class="o">())</span> <span class="o">{</span>
+  <span class="n">logger</span><span class="o">.</span><span class="na">debug</span><span class="o">(</span><span class="s">"..."</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre>
+
+<p>We can achieve the same result more succinctly in Kotlin, by declaring the following extension method:</p>
+
+<pre><code class="code-block__wrapper code-block _highlighted lang_kotlin"><span class="k">inline</span> <span class="k">fun</span> <span class="nf">Logger</span><span class="p">.</span><span class="n">debug</span><span class="p">(</span><span class="n">lazyMessage</span><span class="p">:</span> <span class="p">()</span> <span class="p">-&gt;</span> <span class="n">String</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">isDebugEnabled</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">debug</span><span class="p">(</span><span class="n">lazyMessage</span><span class="p">())</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>Now we can directly write <code class="code highlight language-text">logger.debug { "..." }</code> to receive all the benefits of lightweight logging, with none of the verbosity. With practice, you will be able to recognize many idioms in the IntelliJ Platform that can be simplified with Kotlin. To learn more about building IntelliJ Platform plugins with Kotlin, this tutorial will help you get started.</p>
+
+<a name="adding-kotlin-support" class="elem-anchor"></a>
+<h2>2. Adding Kotlin Support<a href="#adding-kotlin-support" class="anchor-link"><span></span></a></h2>
+
+<p>Plugins targeting the IntelliJ Platform versions 143 and above are easy to migrate: just start writing Kotlin. The necessary Kotlin plugins and libraries are already bundled with the IDE, requiring no further configuration. For version 142 or below, you will need to install and configure dependencies to the Kotlin runtime (in addition to installing the Kotlin plugin itself, for code assistance and tooling support). For detailed instructions, please refer to the <a href="https://kotlinlang.org/docs/tutorials/getting-started.html" data-bypass="yes" target="_blank"><span>Kotlin documentation</span></a>.</p>
+
+<a name="kotlin-gradle-plugin" class="elem-anchor"></a>
+<h2>3. Kotlin Gradle Plugin<a href="#kotlin-gradle-plugin" class="anchor-link"><span></span></a></h2>
+
+<p>For plugins already using the <a href="build_system.html"><span>Gradle Build System</span></a>, or those that require explicit control over the Kotlin version, we recommend using the <em>kotlin-gradle-plugin</em>. This greatly simplifies building Kotlin-based plugins in a controlled and reproducible manner. For detailed instructions, please refer to the <a href="https://kotlinlang.org/docs/reference/using-gradle.html#configuring-dependencies" data-bypass="yes" target="_blank"><span>Kotlin documentation</span></a>.</p>
+
+
+                    <div class="last-modified">
+                        Last modified: 18 December 2015
+                    </div>
+                </article>
+
+                <section class="disqus">
+                    <div id="disqus_thread"></div>
+                </section>
+            </div>
+        </section>
+    </main>
+</div>
+
+
+<script data-main="/intellij/sdk/docs/app/js/main.build" data-baseurl="/intellij/sdk/docs/" src="/intellij/sdk/docs/app/js/vendor/requirejs/require.js"></script>
+
+</body>
+</html>
+

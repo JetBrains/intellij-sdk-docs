@@ -1,0 +1,149 @@
+
+
+
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>Structure View / IntelliJ Platform SDK  DevGuide</title>
+    <link rel="stylesheet" href="/intellij/sdk/docs/app/css/styles.min.css">
+
+    <!-- non-retina iPad pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-72x72.png" sizes="72x72">
+
+    <!-- retina iPhone pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-114x114.png" sizes="114x114">
+
+    <!-- retina iPad pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-144x144.png" sizes="144x144">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/intellij/sdk/docs/apple-touch-icon-precomposed.png">
+
+    <!-- normal favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="/intellij/sdk/docs/favicon.ico">
+    <link rel="icon" type="image/png" href="/intellij/sdk/docs/favicon.png">
+<link  rel="stylesheet" href="/intellij/sdk/docs/styles/styles.css"></head>
+<body data-id="reference_guide/custom_language_support/structure_view">
+<div class="wrapper">
+    <section class="panel _nav">
+        <header class="panel__header">
+            <div class="container">
+                <form class="search-box">
+                    <label for="search-box__input" class="search-box__label">
+                        <input type="text" class="search-box__input" id="search-box__input" placeholder="Search IntelliJ Platform SDK  DevGuide">
+                    </label>
+                    <div class="search-box__clear" title="Clear"></div>
+                </form>
+            </div>
+        </header>
+        <nav class="panel__content">
+            <div class="container _nav">
+                <menu class="nav-tree"></menu>
+            </div>
+            <div class="container _footer panel__footer">
+                <p><a href="https://youtrack.jetbrains.com/issues/IJSDK">Send feedback</a></p>
+                <p>&copy; 2000&ndash;2016 <a href="//www.jetbrains.com">JetBrains</a> s.r.o.<br>
+                    All rights reserved.</p>
+            </div>
+        </nav>
+    </section>
+
+    <main class="panel _main" role="main">
+        <header class="panel__header">
+            <div class="container">
+                <h3>IntelliJ Platform SDK DevGuide</h3>
+                
+        <div class="shortcuts-switcher"><label for="switch-shortcuts">Keymap:</label><select id="switch-shortcuts" class="select _shortcuts" height="1">
+            <option data-group="primary" value="default" selected>Default</option>
+            <option data-group="primary" value="default_for_gnome">GNOME</option>
+            <option data-group="primary" value="default_for_kde">KDE</option>
+            <option data-group="primary" value="default_for_xwin">XWindow</option>
+            <option data-group="primary" value="emacs">Emacs</option>
+            <option data-group="primary" value="jbuilder">JBuilder</option>
+            <option data-group="primary" value="visual_studio">Visual Studio</option>
+            <option data-group="primary" value="netbeans_6.5">NetBeans 6.5</option>
+            <option data-group="primary" value="eclipse">Eclipse</option>
+            <option data-group="secondary" value="mac_os_x_10.5_">OS X 10.5+</option>
+            <option data-group="secondary" value="mac_os_x">OS X</option>
+            <option data-group="secondary" value="eclipse_mac_os_x">OS X Eclipse</option></select>
+        </div>
+    
+                <div class="panel-trigger"></div>
+            </div>
+        </header>
+        <section class="panel__content">
+            <div class="container">
+                <article class="article" data-shortcut-switcher="false">
+
+                    <h1>Structure View</h1>
+                    <p>The Structure View implementation used for a specific file type can be customized on many levels.
+If a custom language plugin provides an implementation of the
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/structure-view-api/src/com/intellij/ide/structureView/StructureView.java" data-bypass="yes" target="_blank"><span>StructureView</span></a>
+interface, it can completely replace the standard structure view implementation with a custom user interface component.
+However, for most languages this is not necessary, and the standard
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/structure-view-api/src/com/intellij/ide/structureView/StructureView.java" data-bypass="yes" target="_blank"><span>StructureView</span></a>
+implementation provided by <em>IntelliJ Platform</em> can be reused.</p>
+
+<p>The starting point for the structure view is the
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/structure-view-api/src/com/intellij/lang/PsiStructureViewFactory.java" data-bypass="yes" target="_blank"><span>PsiStructureViewFactory</span></a>
+interface, which is registered in the <code class="code highlight language-text">com.intellij.lang.psiStructureViewFactory</code> extension point.</p>
+
+<p><strong>Example:</strong>
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/plugins/properties/src/com/intellij/lang/properties/structureView/PropertiesStructureViewBuilderFactory.java" data-bypass="yes" target="_blank"><span>PsiStructureViewFactory</span></a>
+for
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/plugins/properties" data-bypass="yes" target="_blank"><span>Properties language plugin</span></a></p>
+
+<p>To reuse the <em>IntelliJ Platform</em> implementation of the
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/structure-view-api/src/com/intellij/ide/structureView/StructureView.java" data-bypass="yes" target="_blank"><span>StructureView</span></a>,
+the plugin returns a
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/structure-view-api/src/com/intellij/ide/structureView/TreeBasedStructureViewBuilder.java" data-bypass="yes" target="_blank"><span>TreeBasedStructureViewBuilder</span></a>
+from its
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/structure-view-api/src/com/intellij/lang/PsiStructureViewFactory.java" data-bypass="yes" target="_blank"><span>PsiStructureViewFactory.getStructureViewBuilder()</span></a><!--#L35-->
+method.
+As the model for the builder, the plugin can specify a subclass of
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/structure-view-api/src/com/intellij/ide/structureView/TextEditorBasedStructureViewModel.java" data-bypass="yes" target="_blank"><span>TextEditorBasedStructureViewModel</span></a>,
+and by overriding methods of this subclass it customizes the structure view for a specific language.</p>
+
+<p><strong>Example</strong>:
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/structureView/PropertiesFileStructureViewModel.java" data-bypass="yes" target="_blank"><span>StructureViewModel</span></a>
+for
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/plugins/properties" data-bypass="yes" target="_blank"><span>Properties language plugin</span></a></p>
+
+<p>The main method to override is <code class="code highlight language-text">getRoot()</code>, which returns the instance of a class implementing the
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/structure-view-api/src/com/intellij/ide/structureView/StructureViewTreeElement.java" data-bypass="yes" target="_blank"><span>StructureViewTreeElement</span></a>
+interface.
+There exists no  standard implementation of this interface, so a plugin will need to implement it completely.</p>
+
+<p>The structure view tree is usually built as a partial mirror of the PSI tree.
+In the implementation of
+<code class="code highlight language-text">StructureViewTreeElement.getChildren()</code>,
+the plugin can specify which of the child elements of a specific PSI tree node need to be represented as elements in the structure view.
+Another important method is <code class="code highlight language-text">getPresentation()</code>, which can be used to customize the text, attributes and icon used to represent an element in the structure view.</p>
+
+<p>The implementation of <code class="code highlight language-text">StructureViewTreeElement.getChildren()</code> needs to be matched by <code class="code highlight language-text">TextEditorBasedStructureViewModel.getSuitableClasses()</code>.
+The latter method returns an array of <code class="code highlight language-text">PsiElement</code>-derived classes which can be shown as structure view elements, and is used to select the Structure View item matching the cursor position when the structure view is first opened or when the <code class="code highlight language-text">Autoscroll from source</code> option is used.</p>
+
+<p><strong>Example:</strong>
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/structureView/PropertiesStructureViewElement.java" data-bypass="yes" target="_blank"><span>StructureViewElement</span></a>
+for
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/plugins/properties/" data-bypass="yes" target="_blank"><span>Properties language plugin</span></a></p>
+
+
+                    <div class="last-modified">
+                        Last modified: 21 December 2015
+                    </div>
+                </article>
+
+                <section class="disqus">
+                    <div id="disqus_thread"></div>
+                </section>
+            </div>
+        </section>
+    </main>
+</div>
+
+
+<script data-main="/intellij/sdk/docs/app/js/main.build" data-baseurl="/intellij/sdk/docs/" src="/intellij/sdk/docs/app/js/vendor/requirejs/require.js"></script>
+
+</body>
+</html>
+

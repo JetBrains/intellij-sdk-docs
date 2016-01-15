@@ -1,0 +1,209 @@
+
+
+
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>Supporting Frameworks / IntelliJ Platform SDK  DevGuide</title>
+    <link rel="stylesheet" href="/intellij/sdk/docs/app/css/styles.min.css">
+
+    <!-- non-retina iPad pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-72x72.png" sizes="72x72">
+
+    <!-- retina iPhone pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-114x114.png" sizes="114x114">
+
+    <!-- retina iPad pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-144x144.png" sizes="144x144">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/intellij/sdk/docs/apple-touch-icon-precomposed.png">
+
+    <!-- normal favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="/intellij/sdk/docs/favicon.ico">
+    <link rel="icon" type="image/png" href="/intellij/sdk/docs/favicon.png">
+<link  rel="stylesheet" href="/intellij/sdk/docs/styles/styles.css"></head>
+<body data-id="tutorials/framework">
+<div class="wrapper">
+    <section class="panel _nav">
+        <header class="panel__header">
+            <div class="container">
+                <form class="search-box">
+                    <label for="search-box__input" class="search-box__label">
+                        <input type="text" class="search-box__input" id="search-box__input" placeholder="Search IntelliJ Platform SDK  DevGuide">
+                    </label>
+                    <div class="search-box__clear" title="Clear"></div>
+                </form>
+            </div>
+        </header>
+        <nav class="panel__content">
+            <div class="container _nav">
+                <menu class="nav-tree"></menu>
+            </div>
+            <div class="container _footer panel__footer">
+                <p><a href="https://youtrack.jetbrains.com/issues/IJSDK">Send feedback</a></p>
+                <p>&copy; 2000&ndash;2016 <a href="//www.jetbrains.com">JetBrains</a> s.r.o.<br>
+                    All rights reserved.</p>
+            </div>
+        </nav>
+    </section>
+
+    <main class="panel _main" role="main">
+        <header class="panel__header">
+            <div class="container">
+                <h3>IntelliJ Platform SDK DevGuide</h3>
+                
+        <div class="shortcuts-switcher"><label for="switch-shortcuts">Keymap:</label><select id="switch-shortcuts" class="select _shortcuts" height="1">
+            <option data-group="primary" value="default" selected>Default</option>
+            <option data-group="primary" value="default_for_gnome">GNOME</option>
+            <option data-group="primary" value="default_for_kde">KDE</option>
+            <option data-group="primary" value="default_for_xwin">XWindow</option>
+            <option data-group="primary" value="emacs">Emacs</option>
+            <option data-group="primary" value="jbuilder">JBuilder</option>
+            <option data-group="primary" value="visual_studio">Visual Studio</option>
+            <option data-group="primary" value="netbeans_6.5">NetBeans 6.5</option>
+            <option data-group="primary" value="eclipse">Eclipse</option>
+            <option data-group="secondary" value="mac_os_x_10.5_">OS X 10.5+</option>
+            <option data-group="secondary" value="mac_os_x">OS X</option>
+            <option data-group="secondary" value="eclipse_mac_os_x">OS X Eclipse</option></select>
+        </div>
+    
+                <div class="panel-trigger"></div>
+            </div>
+        </header>
+        <section class="panel__content">
+            <div class="container">
+                <article class="article" data-shortcut-switcher="false">
+
+                    <h1>Supporting Frameworks</h1>
+                    <p>The following tutorial meant to show how to support a custom framework type for a project and make this framework type embedded in a project wizard as a UI component.</p>
+
+<a name="creating-a-new-framework" class="elem-anchor"></a>
+<h2>1. Creating a new framework<a href="#creating-a-new-framework" class="anchor-link"><span></span></a></h2>
+
+<p>In oder to make a custom framework available and configurable for a project
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/java/idea-ui/src/com/intellij/framework/FrameworkTypeEx.java" data-bypass="yes" target="_blank"><span>FrameworkTypeEx</span></a>
+class needs to be extended:</p>
+
+<pre><code class="code-block__wrapper code-block _highlighted lang_java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">DemoFramework</span> <span class="kd">extends</span> <span class="n">FrameworkTypeEx</span> <span class="o">{</span>
+<span class="o">}</span>
+</code></pre>
+
+<a name="registering-framework" class="elem-anchor"></a>
+<h2>2. Registering framework<a href="#registering-framework" class="anchor-link"><span></span></a></h2>
+
+<p>The newly created framework should be registered as an extension point by putting <em>framework.type</em> attribute into <code class="code highlight language-text">&lt;extensions&gt;</code> section of
+<a href="https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/framework/META-INF/plugin.xml" data-bypass="yes" target="_blank"><span>plugin.xml</span></a>
+configuration file:</p>
+
+<pre><code class="code-block__wrapper code-block _highlighted lang_xml"><span class="nt">&lt;extensions</span> <span class="na">defaultExtensionNs=</span><span class="s">"com.intellij"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;framework.type</span> <span class="na">implementation=</span><span class="s">"com.intellij.tutorials.framework.DemoFramework"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/extensions&gt;</span>
+</code></pre>
+
+<a name="setting-up-mandatory-attributes" class="elem-anchor"></a>
+<h2>3. Setting up mandatory attributes<a href="#setting-up-mandatory-attributes" class="anchor-link"><span></span></a></h2>
+
+<p>The framework component should have a unique name passed as a string literal to the constructor:</p>
+
+<pre><code class="code-block__wrapper code-block _highlighted lang_java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">DemoFramework</span> <span class="kd">extends</span> <span class="n">FrameworkTypeEx</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">FRAMEWORK_ID</span> <span class="o">=</span> <span class="s">"Demo"</span><span class="o">;</span>
+    <span class="kd">protected</span> <span class="nf">DemoFramework</span><span class="o">()</span> <span class="o">{</span>
+        <span class="kd">super</span><span class="o">(</span><span class="n">FRAMEWORK_ID</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
+
+<p><em>Presentable name</em> and <em>icon</em> define the appearance of visual components related to the framework:</p>
+
+<pre><code class="code-block__wrapper code-block _highlighted lang_java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">DemoFramework</span> <span class="kd">extends</span> <span class="n">FrameworkTypeEx</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">FRAMEWORK_ID</span> <span class="o">=</span> <span class="s">"Demo"</span><span class="o">;</span>
+    <span class="kd">protected</span> <span class="nf">DemoFramework</span><span class="o">()</span> <span class="o">{</span>
+        <span class="kd">super</span><span class="o">(</span><span class="n">FRAMEWORK_ID</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="nd">@NotNull</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getPresentableName</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="s">"Demo Framework"</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="nd">@NotNull</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">Icon</span> <span class="nf">getIcon</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">AllIcons</span><span class="o">.</span><span class="na">Providers</span><span class="o">.</span><span class="na">Apache</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
+
+<a name="creating-provider-for-enabling-framework-support" class="elem-anchor"></a>
+<h2>4. Creating provider for enabling framework support<a href="#creating-provider-for-enabling-framework-support" class="anchor-link"><span></span></a></h2>
+
+<p>To make framework set up available while executing project creating steps 
+<code class="code highlight language-text">public FrameworkSupportInModuleProvider createProvider();</code>
+of the
+<a href="https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/framework/src/com/intellij/tutorials/framework/DemoFramework.java" data-bypass="yes" target="_blank"><span>DemoFramework</span></a>
+must be implemented:</p>
+
+<pre><code class="code-block__wrapper code-block _highlighted lang_java"><span class="nd">@NotNull</span>
+<span class="nd">@Override</span>
+<span class="kd">public</span> <span class="n">FrameworkSupportInModuleProvider</span> <span class="nf">createProvider</span><span class="o">()</span> <span class="o">{</span>
+    <span class="k">return</span>  <span class="k">new</span> <span class="nf">FrameworkSupportInModuleProvider</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nd">@NotNull</span>
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="n">FrameworkTypeEx</span> <span class="nf">getFrameworkType</span><span class="o">()</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="n">DemoFramework</span><span class="o">.</span><span class="na">this</span><span class="o">;</span>
+        <span class="o">}</span>
+
+        <span class="nd">@NotNull</span>
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="n">FrameworkSupportInModuleConfigurable</span> <span class="nf">createConfigurable</span><span class="o">(</span><span class="nd">@NotNull</span> <span class="n">FrameworkSupportModel</span> <span class="n">model</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="k">new</span> <span class="nf">FrameworkSupportInModuleConfigurable</span><span class="o">()</span> <span class="o">{</span>
+                <span class="nd">@Nullable</span>
+                <span class="nd">@Override</span>
+                <span class="kd">public</span> <span class="n">JComponent</span> <span class="nf">createComponent</span><span class="o">()</span> <span class="o">{</span>
+                    <span class="k">return</span> <span class="k">new</span> <span class="nf">JCheckBox</span><span class="o">(</span><span class="s">"Extra Option"</span><span class="o">);</span>
+                <span class="o">}</span>
+
+                <span class="nd">@Override</span>
+                <span class="kd">public</span> <span class="kt">void</span> <span class="nf">addSupport</span><span class="o">(</span><span class="nd">@NotNull</span> <span class="n">Module</span> <span class="n">module</span><span class="o">,</span> <span class="nd">@NotNull</span> <span class="n">ModifiableRootModel</span> <span class="n">model</span><span class="o">,</span> <span class="nd">@NotNull</span> <span class="n">ModifiableModelsProvider</span> <span class="n">provider</span><span class="o">)</span> <span class="o">{</span>
+                    <span class="c1">//do what you want here: setup a library, generate a specific file, etc</span>
+                <span class="o">}</span>
+            <span class="o">};</span>
+        <span class="o">}</span>
+
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isEnabledForModuleType</span><span class="o">(</span><span class="nd">@NotNull</span> <span class="n">ModuleType</span> <span class="n">type</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+        <span class="o">}</span>
+    <span class="o">};</span>
+<span class="o">}</span>
+</code></pre>
+
+<p>After compiling and running the code sample above an extra option for configuring the newly created custom framework should be available in the Project Wizard:
+<img src="framework/img/custom_framework.png" alt="Custom Framework Support" /></p>
+
+<hr />
+
+<p><a href="https://github.com/JetBrains/intellij-sdk-docs/tree/master/code_samples/framework/src/com/intellij/tutorials/framework" data-bypass="yes" target="_blank"><span>Source code</span></a></p>
+
+
+
+                    <div class="last-modified">
+                        Last modified: 26 November 2015
+                    </div>
+                </article>
+
+                <section class="disqus">
+                    <div id="disqus_thread"></div>
+                </section>
+            </div>
+        </section>
+    </main>
+</div>
+
+
+<script data-main="/intellij/sdk/docs/app/js/main.build" data-baseurl="/intellij/sdk/docs/" src="/intellij/sdk/docs/app/js/vendor/requirejs/require.js"></script>
+
+</body>
+</html>
+

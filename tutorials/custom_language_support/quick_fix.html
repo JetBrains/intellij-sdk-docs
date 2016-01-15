@@ -1,0 +1,300 @@
+
+
+
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>18. Quick Fix / IntelliJ Platform SDK  DevGuide</title>
+    <link rel="stylesheet" href="/intellij/sdk/docs/app/css/styles.min.css">
+
+    <!-- non-retina iPad pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-72x72.png" sizes="72x72">
+
+    <!-- retina iPhone pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-114x114.png" sizes="114x114">
+
+    <!-- retina iPad pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-144x144.png" sizes="144x144">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/intellij/sdk/docs/apple-touch-icon-precomposed.png">
+
+    <!-- normal favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="/intellij/sdk/docs/favicon.ico">
+    <link rel="icon" type="image/png" href="/intellij/sdk/docs/favicon.png">
+<link  rel="stylesheet" href="/intellij/sdk/docs/styles/styles.css"></head>
+<body data-id="tutorials/custom_language_support/quick_fix">
+<div class="wrapper">
+    <section class="panel _nav">
+        <header class="panel__header">
+            <div class="container">
+                <form class="search-box">
+                    <label for="search-box__input" class="search-box__label">
+                        <input type="text" class="search-box__input" id="search-box__input" placeholder="Search IntelliJ Platform SDK  DevGuide">
+                    </label>
+                    <div class="search-box__clear" title="Clear"></div>
+                </form>
+            </div>
+        </header>
+        <nav class="panel__content">
+            <div class="container _nav">
+                <menu class="nav-tree"></menu>
+            </div>
+            <div class="container _footer panel__footer">
+                <p><a href="https://youtrack.jetbrains.com/issues/IJSDK">Send feedback</a></p>
+                <p>&copy; 2000&ndash;2016 <a href="//www.jetbrains.com">JetBrains</a> s.r.o.<br>
+                    All rights reserved.</p>
+            </div>
+        </nav>
+    </section>
+
+    <main class="panel _main" role="main">
+        <header class="panel__header">
+            <div class="container">
+                <h3>IntelliJ Platform SDK DevGuide</h3>
+                
+        <div class="shortcuts-switcher"><label for="switch-shortcuts">Keymap:</label><select id="switch-shortcuts" class="select _shortcuts" height="1">
+            <option data-group="primary" value="default" selected>Default</option>
+            <option data-group="primary" value="default_for_gnome">GNOME</option>
+            <option data-group="primary" value="default_for_kde">KDE</option>
+            <option data-group="primary" value="default_for_xwin">XWindow</option>
+            <option data-group="primary" value="emacs">Emacs</option>
+            <option data-group="primary" value="jbuilder">JBuilder</option>
+            <option data-group="primary" value="visual_studio">Visual Studio</option>
+            <option data-group="primary" value="netbeans_6.5">NetBeans 6.5</option>
+            <option data-group="primary" value="eclipse">Eclipse</option>
+            <option data-group="secondary" value="mac_os_x_10.5_">OS X 10.5+</option>
+            <option data-group="secondary" value="mac_os_x">OS X</option>
+            <option data-group="secondary" value="eclipse_mac_os_x">OS X Eclipse</option></select>
+        </div>
+    
+                <div class="panel-trigger"></div>
+            </div>
+        </header>
+        <section class="panel__content">
+            <div class="container">
+                <article class="article" data-shortcut-switcher="false">
+
+                    <h1>18. Quick Fix</h1>
+                    <p>A quick fix allows to apply an automatic changes to the code via <em>⌥⏎</em>.</p>
+
+<p>Let’s add a quick fix which helps to define an unresolved property from its usage.</p>
+
+<a name="update-the-element-factory" class="elem-anchor"></a>
+<h3>18.1. Update the element factory<a href="#update-the-element-factory" class="anchor-link"><span></span></a></h3>
+
+<pre><code class="code-block__wrapper code-block _highlighted lang_java"><span class="kn">package</span> <span class="n">com</span><span class="o">.</span><span class="na">simpleplugin</span><span class="o">.</span><span class="na">psi</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">com.intellij.openapi.project.Project</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.intellij.psi.PsiElement</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.intellij.psi.PsiFileFactory</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.simpleplugin.SimpleFileType</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">SimpleElementFactory</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="n">SimpleProperty</span> <span class="nf">createProperty</span><span class="o">(</span><span class="n">Project</span> <span class="n">project</span><span class="o">,</span> <span class="n">String</span> <span class="n">name</span><span class="o">,</span> <span class="n">String</span> <span class="n">value</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kd">final</span> <span class="n">SimpleFile</span> <span class="n">file</span> <span class="o">=</span> <span class="n">createFile</span><span class="o">(</span><span class="n">project</span><span class="o">,</span> <span class="n">name</span> <span class="o">+</span> <span class="s">" = "</span> <span class="o">+</span> <span class="n">value</span><span class="o">);</span>
+        <span class="k">return</span> <span class="o">(</span><span class="n">SimpleProperty</span><span class="o">)</span> <span class="n">file</span><span class="o">.</span><span class="na">getFirstChild</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="n">SimpleProperty</span> <span class="nf">createProperty</span><span class="o">(</span><span class="n">Project</span> <span class="n">project</span><span class="o">,</span> <span class="n">String</span> <span class="n">name</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kd">final</span> <span class="n">SimpleFile</span> <span class="n">file</span> <span class="o">=</span> <span class="n">createFile</span><span class="o">(</span><span class="n">project</span><span class="o">,</span> <span class="n">name</span><span class="o">);</span>
+        <span class="k">return</span> <span class="o">(</span><span class="n">SimpleProperty</span><span class="o">)</span> <span class="n">file</span><span class="o">.</span><span class="na">getFirstChild</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="n">PsiElement</span> <span class="nf">createCRLF</span><span class="o">(</span><span class="n">Project</span> <span class="n">project</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kd">final</span> <span class="n">SimpleFile</span> <span class="n">file</span> <span class="o">=</span> <span class="n">createFile</span><span class="o">(</span><span class="n">project</span><span class="o">,</span> <span class="s">"\n"</span><span class="o">);</span>
+        <span class="k">return</span> <span class="n">file</span><span class="o">.</span><span class="na">getFirstChild</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="n">SimpleFile</span> <span class="nf">createFile</span><span class="o">(</span><span class="n">Project</span> <span class="n">project</span><span class="o">,</span> <span class="n">String</span> <span class="n">text</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">String</span> <span class="n">name</span> <span class="o">=</span> <span class="s">"dummy.simple"</span><span class="o">;</span>
+        <span class="k">return</span> <span class="o">(</span><span class="n">SimpleFile</span><span class="o">)</span> <span class="n">PsiFileFactory</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">project</span><span class="o">).</span>
+                <span class="n">createFileFromText</span><span class="o">(</span><span class="n">name</span><span class="o">,</span> <span class="n">SimpleFileType</span><span class="o">.</span><span class="na">INSTANCE</span><span class="o">,</span> <span class="n">text</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
+
+<a name="define-an-intention-action" class="elem-anchor"></a>
+<h3>18.2. Define an intention action<a href="#define-an-intention-action" class="anchor-link"><span></span></a></h3>
+
+<p>The quick fix will create a property in the file chosen by user, and navigate to this property after creation.</p>
+
+<pre><code class="code-block__wrapper code-block _highlighted lang_java"><span class="kn">package</span> <span class="n">com</span><span class="o">.</span><span class="na">simpleplugin</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">com.intellij.codeInsight.intention.impl.BaseIntentionAction</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.intellij.lang.ASTNode</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.intellij.openapi.application.ApplicationManager</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.intellij.openapi.command.WriteCommandAction</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.intellij.openapi.editor.*</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.intellij.openapi.fileChooser.FileChooser</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.intellij.openapi.fileChooser.FileChooserDescriptor</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.intellij.openapi.fileChooser.FileChooserDescriptorFactory</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.intellij.openapi.fileEditor.FileEditorManager</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.intellij.openapi.project.Project</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.intellij.openapi.vfs.VirtualFile</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.intellij.pom.Navigatable</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.intellij.psi.PsiFile</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.intellij.psi.PsiManager</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.intellij.psi.search.FileTypeIndex</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.intellij.psi.search.GlobalSearchScope</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.intellij.util.IncorrectOperationException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.intellij.util.indexing.FileBasedIndex</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.simpleplugin.psi.SimpleElementFactory</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.simpleplugin.psi.SimpleFile</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.simpleplugin.psi.SimpleProperty</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.simpleplugin.psi.SimpleTypes</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.jetbrains.annotations.NotNull</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.util.Collection</span><span class="o">;</span>
+
+<span class="kd">class</span> <span class="nc">CreatePropertyQuickFix</span> <span class="kd">extends</span> <span class="n">BaseIntentionAction</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">key</span><span class="o">;</span>
+
+    <span class="n">CreatePropertyQuickFix</span><span class="o">(</span><span class="n">String</span> <span class="n">key</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">key</span> <span class="o">=</span> <span class="n">key</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="nd">@NotNull</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getText</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="s">"Create property"</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="nd">@NotNull</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getFamilyName</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="s">"Simple properties"</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isAvailable</span><span class="o">(</span><span class="nd">@NotNull</span> <span class="n">Project</span> <span class="n">project</span><span class="o">,</span> <span class="n">Editor</span> <span class="n">editor</span><span class="o">,</span> <span class="n">PsiFile</span> <span class="n">file</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">invoke</span><span class="o">(</span><span class="nd">@NotNull</span> <span class="kd">final</span> <span class="n">Project</span> <span class="n">project</span><span class="o">,</span> <span class="kd">final</span> <span class="n">Editor</span> <span class="n">editor</span><span class="o">,</span> <span class="n">PsiFile</span> <span class="n">file</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">IncorrectOperationException</span> <span class="o">{</span>
+        <span class="n">ApplicationManager</span><span class="o">.</span><span class="na">getApplication</span><span class="o">().</span><span class="na">invokeLater</span><span class="o">(</span><span class="k">new</span> <span class="n">Runnable</span><span class="o">()</span> <span class="o">{</span>
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">()</span> <span class="o">{</span>
+                <span class="n">Collection</span><span class="o">&lt;</span><span class="n">VirtualFile</span><span class="o">&gt;</span> <span class="n">virtualFiles</span> <span class="o">=</span> <span class="n">FileBasedIndex</span><span class="o">.</span><span class="na">getInstance</span><span class="o">().</span><span class="na">getContainingFiles</span><span class="o">(</span><span class="n">FileTypeIndex</span><span class="o">.</span><span class="na">NAME</span><span class="o">,</span> <span class="n">SimpleFileType</span><span class="o">.</span><span class="na">INSTANCE</span><span class="o">,</span>
+                        <span class="n">GlobalSearchScope</span><span class="o">.</span><span class="na">allScope</span><span class="o">(</span><span class="n">project</span><span class="o">));</span>
+                <span class="k">if</span> <span class="o">(</span><span class="n">virtualFiles</span><span class="o">.</span><span class="na">size</span><span class="o">()</span> <span class="o">==</span> <span class="mi">1</span><span class="o">)</span> <span class="o">{</span>
+                    <span class="n">createProperty</span><span class="o">(</span><span class="n">project</span><span class="o">,</span> <span class="n">virtualFiles</span><span class="o">.</span><span class="na">iterator</span><span class="o">().</span><span class="na">next</span><span class="o">());</span>
+                <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+                    <span class="kd">final</span> <span class="n">FileChooserDescriptor</span> <span class="n">descriptor</span> <span class="o">=</span> <span class="n">FileChooserDescriptorFactory</span><span class="o">.</span><span class="na">createSingleFileDescriptor</span><span class="o">(</span><span class="n">SimpleFileType</span><span class="o">.</span><span class="na">INSTANCE</span><span class="o">);</span>
+                    <span class="n">descriptor</span><span class="o">.</span><span class="na">setRoots</span><span class="o">(</span><span class="n">project</span><span class="o">.</span><span class="na">getBaseDir</span><span class="o">());</span>
+                    <span class="kd">final</span> <span class="n">VirtualFile</span> <span class="n">file</span> <span class="o">=</span> <span class="n">FileChooser</span><span class="o">.</span><span class="na">chooseFile</span><span class="o">(</span><span class="n">descriptor</span><span class="o">,</span> <span class="n">project</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
+                    <span class="k">if</span> <span class="o">(</span><span class="n">file</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+                        <span class="n">createProperty</span><span class="o">(</span><span class="n">project</span><span class="o">,</span> <span class="n">file</span><span class="o">);</span>
+                    <span class="o">}</span>
+                <span class="o">}</span>
+            <span class="o">}</span>
+        <span class="o">});</span>
+    <span class="o">}</span>
+
+    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">createProperty</span><span class="o">(</span><span class="kd">final</span> <span class="n">Project</span> <span class="n">project</span><span class="o">,</span> <span class="kd">final</span> <span class="n">VirtualFile</span> <span class="n">file</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">new</span> <span class="n">WriteCommandAction</span><span class="o">.</span><span class="na">Simple</span><span class="o">(</span><span class="n">project</span><span class="o">)</span> <span class="o">{</span>
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">()</span> <span class="o">{</span>
+                <span class="n">SimpleFile</span> <span class="n">simpleFile</span> <span class="o">=</span> <span class="o">(</span><span class="n">SimpleFile</span><span class="o">)</span> <span class="n">PsiManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">project</span><span class="o">).</span><span class="na">findFile</span><span class="o">(</span><span class="n">file</span><span class="o">);</span>
+                <span class="n">ASTNode</span> <span class="n">lastChildNode</span> <span class="o">=</span> <span class="n">simpleFile</span><span class="o">.</span><span class="na">getNode</span><span class="o">().</span><span class="na">getLastChildNode</span><span class="o">();</span>
+                <span class="k">if</span> <span class="o">(</span><span class="n">lastChildNode</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">lastChildNode</span><span class="o">.</span><span class="na">getElementType</span><span class="o">().</span><span class="na">equals</span><span class="o">(</span><span class="n">SimpleTypes</span><span class="o">.</span><span class="na">CRLF</span><span class="o">))</span> <span class="o">{</span>
+                    <span class="n">simpleFile</span><span class="o">.</span><span class="na">getNode</span><span class="o">().</span><span class="na">addChild</span><span class="o">(</span><span class="n">SimpleElementFactory</span><span class="o">.</span><span class="na">createCRLF</span><span class="o">(</span><span class="n">project</span><span class="o">).</span><span class="na">getNode</span><span class="o">());</span>
+                <span class="o">}</span>
+                <span class="c1">// IMPORTANT: change spaces to escaped spaces or the new node will only have the first word for the key</span>
+                <span class="n">SimpleProperty</span> <span class="n">property</span> <span class="o">=</span> <span class="n">SimpleElementFactory</span><span class="o">.</span><span class="na">createProperty</span><span class="o">(</span><span class="n">project</span><span class="o">,</span> <span class="n">key</span><span class="o">.</span><span class="na">replaceAll</span><span class="o">(</span><span class="s">" "</span><span class="o">,</span> <span class="s">"\\\\ "</span><span class="o">),</span> <span class="s">""</span><span class="o">);</span>
+                <span class="n">simpleFile</span><span class="o">.</span><span class="na">getNode</span><span class="o">().</span><span class="na">addChild</span><span class="o">(</span><span class="n">property</span><span class="o">.</span><span class="na">getNode</span><span class="o">());</span>
+                <span class="o">((</span><span class="n">Navigatable</span><span class="o">)</span> <span class="n">property</span><span class="o">.</span><span class="na">getLastChild</span><span class="o">().</span><span class="na">getNavigationElement</span><span class="o">()).</span><span class="na">navigate</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
+                <span class="n">FileEditorManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">project</span><span class="o">).</span><span class="na">getSelectedTextEditor</span><span class="o">().</span><span class="na">getCaretModel</span><span class="o">().</span>
+                        <span class="n">moveCaretRelatively</span><span class="o">(</span><span class="mi">2</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="kc">false</span><span class="o">,</span> <span class="kc">false</span><span class="o">,</span> <span class="kc">false</span><span class="o">);</span>
+
+                  <span class="c1">// almost the same thing but manipulating plain text of the document instead of PSI</span>
+<span class="c1">//                FileEditorManager.getInstance(project).openFile(file, true);</span>
+<span class="c1">//                final Editor editor = FileEditorManager.getInstance(project).getSelectedTextEditor();</span>
+<span class="c1">//                final Document document = editor.getDocument();</span>
+<span class="c1">//                document.insertString(document.getTextLength(), "\n" + key.replaceAll(" ", "\\\\ ") + " = ");</span>
+<span class="c1">//                editor.getCaretModel().getPrimaryCaret().moveToOffset(document.getTextLength());</span>
+            <span class="o">}</span>
+        <span class="o">}.</span><span class="na">execute</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+</code></pre>
+
+<a name="update-the-annotator" class="elem-anchor"></a>
+<h3>18.3. Update the annotator<a href="#update-the-annotator" class="anchor-link"><span></span></a></h3>
+
+<pre><code class="code-block__wrapper code-block _highlighted lang_java"><span class="kn">package</span> <span class="n">com</span><span class="o">.</span><span class="na">simpleplugin</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">com.intellij.lang.annotation.Annotation</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.intellij.lang.annotation.AnnotationHolder</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.intellij.lang.annotation.Annotator</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.intellij.openapi.editor.DefaultLanguageHighlighterColors</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.intellij.openapi.project.Project</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.intellij.openapi.util.TextRange</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.intellij.psi.PsiElement</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.intellij.psi.PsiLiteralExpression</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.simpleplugin.psi.SimpleProperty</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.jetbrains.annotations.NotNull</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.util.List</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">SimpleAnnotator</span> <span class="kd">implements</span> <span class="n">Annotator</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">annotate</span><span class="o">(</span><span class="nd">@NotNull</span> <span class="kd">final</span> <span class="n">PsiElement</span> <span class="n">element</span><span class="o">,</span> <span class="nd">@NotNull</span> <span class="n">AnnotationHolder</span> <span class="n">holder</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">element</span> <span class="k">instanceof</span> <span class="n">PsiLiteralExpression</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">PsiLiteralExpression</span> <span class="n">literalExpression</span> <span class="o">=</span> <span class="o">(</span><span class="n">PsiLiteralExpression</span><span class="o">)</span> <span class="n">element</span><span class="o">;</span>
+            <span class="n">String</span> <span class="n">value</span> <span class="o">=</span> <span class="n">literalExpression</span><span class="o">.</span><span class="na">getValue</span><span class="o">()</span> <span class="k">instanceof</span> <span class="n">String</span> <span class="o">?</span> <span class="o">(</span><span class="n">String</span><span class="o">)</span><span class="n">literalExpression</span><span class="o">.</span><span class="na">getValue</span><span class="o">()</span> <span class="o">:</span> <span class="kc">null</span><span class="o">;</span>
+
+            <span class="k">if</span> <span class="o">(</span><span class="n">value</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="n">value</span><span class="o">.</span><span class="na">startsWith</span><span class="o">(</span><span class="s">"simple"</span><span class="o">+</span><span class="s">":"</span><span class="o">))</span> <span class="o">{</span>
+                <span class="n">Project</span> <span class="n">project</span> <span class="o">=</span> <span class="n">element</span><span class="o">.</span><span class="na">getProject</span><span class="o">();</span>
+                <span class="n">String</span> <span class="n">key</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="na">substring</span><span class="o">(</span><span class="mi">7</span><span class="o">);</span>
+                <span class="n">List</span><span class="o">&lt;</span><span class="n">SimpleProperty</span><span class="o">&gt;</span> <span class="n">properties</span> <span class="o">=</span> <span class="n">SimpleUtil</span><span class="o">.</span><span class="na">findProperties</span><span class="o">(</span><span class="n">project</span><span class="o">,</span> <span class="n">key</span><span class="o">);</span>
+                <span class="k">if</span> <span class="o">(</span><span class="n">properties</span><span class="o">.</span><span class="na">size</span><span class="o">()</span> <span class="o">==</span> <span class="mi">1</span><span class="o">)</span> <span class="o">{</span>
+                    <span class="n">TextRange</span> <span class="n">range</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TextRange</span><span class="o">(</span><span class="n">element</span><span class="o">.</span><span class="na">getTextRange</span><span class="o">().</span><span class="na">getStartOffset</span><span class="o">()</span> <span class="o">+</span> <span class="mi">7</span><span class="o">,</span>
+                            <span class="n">element</span><span class="o">.</span><span class="na">getTextRange</span><span class="o">().</span><span class="na">getStartOffset</span><span class="o">()</span> <span class="o">+</span> <span class="mi">7</span><span class="o">);</span>
+                    <span class="n">Annotation</span> <span class="n">annotation</span> <span class="o">=</span> <span class="n">holder</span><span class="o">.</span><span class="na">createInfoAnnotation</span><span class="o">(</span><span class="n">range</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
+                    <span class="n">annotation</span><span class="o">.</span><span class="na">setTextAttributes</span><span class="o">(</span><span class="n">DefaultLanguageHighlighterColors</span><span class="o">.</span><span class="na">LINE_COMMENT</span><span class="o">);</span>
+                <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">properties</span><span class="o">.</span><span class="na">size</span><span class="o">()</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+                    <span class="n">TextRange</span> <span class="n">range</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TextRange</span><span class="o">(</span><span class="n">element</span><span class="o">.</span><span class="na">getTextRange</span><span class="o">().</span><span class="na">getStartOffset</span><span class="o">()</span> <span class="o">+</span> <span class="mi">8</span><span class="o">,</span>
+                            <span class="n">element</span><span class="o">.</span><span class="na">getTextRange</span><span class="o">().</span><span class="na">getEndOffset</span><span class="o">());</span>
+                    <span class="n">holder</span><span class="o">.</span><span class="na">createErrorAnnotation</span><span class="o">(</span><span class="n">range</span><span class="o">,</span> <span class="s">"Unresolved property"</span><span class="o">).</span>
+                            <span class="n">registerFix</span><span class="o">(</span><span class="k">new</span> <span class="n">CreatePropertyQuickFix</span><span class="o">(</span><span class="n">key</span><span class="o">));</span>
+                <span class="o">}</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+</code></pre>
+
+<a name="run-the-project" class="elem-anchor"></a>
+<h3>18.4. Run the project<a href="#run-the-project" class="anchor-link"><span></span></a></h3>
+
+<p>Now let’s try to use a property which is not defined yet.</p>
+
+<p><img src="img/quick_fix.png" alt="Quick Fix" /></p>
+
+<p><a href="commenter.html"><span>Previous</span></a>
+<a href="/intellij/sdk/docs/tutorials/custom_language_support_tutorial.html"><span>Top</span></a></p>
+
+
+
+                    <div class="last-modified">
+                        Last modified: 28 December 2015
+                    </div>
+                </article>
+
+                <section class="disqus">
+                    <div id="disqus_thread"></div>
+                </section>
+            </div>
+        </section>
+    </main>
+</div>
+
+
+<script data-main="/intellij/sdk/docs/app/js/main.build" data-baseurl="/intellij/sdk/docs/" src="/intellij/sdk/docs/app/js/vendor/requirejs/require.js"></script>
+
+</body>
+</html>
+

@@ -1,0 +1,201 @@
+
+
+
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>List and Tree Controls / IntelliJ Platform SDK  DevGuide</title>
+    <link rel="stylesheet" href="/intellij/sdk/docs/app/css/styles.min.css">
+
+    <!-- non-retina iPad pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-72x72.png" sizes="72x72">
+
+    <!-- retina iPhone pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-114x114.png" sizes="114x114">
+
+    <!-- retina iPad pre iOS 7 -->
+    <link rel="apple-touch-icon" href="/intellij/sdk/docs/apple-touch-icon-144x144.png" sizes="144x144">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/intellij/sdk/docs/apple-touch-icon-precomposed.png">
+
+    <!-- normal favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="/intellij/sdk/docs/favicon.ico">
+    <link rel="icon" type="image/png" href="/intellij/sdk/docs/favicon.png">
+<link  rel="stylesheet" href="/intellij/sdk/docs/styles/styles.css"></head>
+<body data-id="user_interface_components/lists_and_trees">
+<div class="wrapper">
+    <section class="panel _nav">
+        <header class="panel__header">
+            <div class="container">
+                <form class="search-box">
+                    <label for="search-box__input" class="search-box__label">
+                        <input type="text" class="search-box__input" id="search-box__input" placeholder="Search IntelliJ Platform SDK  DevGuide">
+                    </label>
+                    <div class="search-box__clear" title="Clear"></div>
+                </form>
+            </div>
+        </header>
+        <nav class="panel__content">
+            <div class="container _nav">
+                <menu class="nav-tree"></menu>
+            </div>
+            <div class="container _footer panel__footer">
+                <p><a href="https://youtrack.jetbrains.com/issues/IJSDK">Send feedback</a></p>
+                <p>&copy; 2000&ndash;2016 <a href="//www.jetbrains.com">JetBrains</a> s.r.o.<br>
+                    All rights reserved.</p>
+            </div>
+        </nav>
+    </section>
+
+    <main class="panel _main" role="main">
+        <header class="panel__header">
+            <div class="container">
+                <h3>IntelliJ Platform SDK DevGuide</h3>
+                
+        <div class="shortcuts-switcher"><label for="switch-shortcuts">Keymap:</label><select id="switch-shortcuts" class="select _shortcuts" height="1">
+            <option data-group="primary" value="default" selected>Default</option>
+            <option data-group="primary" value="default_for_gnome">GNOME</option>
+            <option data-group="primary" value="default_for_kde">KDE</option>
+            <option data-group="primary" value="default_for_xwin">XWindow</option>
+            <option data-group="primary" value="emacs">Emacs</option>
+            <option data-group="primary" value="jbuilder">JBuilder</option>
+            <option data-group="primary" value="visual_studio">Visual Studio</option>
+            <option data-group="primary" value="netbeans_6.5">NetBeans 6.5</option>
+            <option data-group="primary" value="eclipse">Eclipse</option>
+            <option data-group="secondary" value="mac_os_x_10.5_">OS X 10.5+</option>
+            <option data-group="secondary" value="mac_os_x">OS X</option>
+            <option data-group="secondary" value="eclipse_mac_os_x">OS X Eclipse</option></select>
+        </div>
+    
+                <div class="panel-trigger"></div>
+            </div>
+        </header>
+        <section class="panel__content">
+            <div class="container">
+                <article class="article" data-shortcut-switcher="false">
+
+                    <h1>List and Tree Controls</h1>
+                    <a name="jblist-and-tree" class="elem-anchor"></a>
+<h3>JBList and Tree<a href="#jblist-and-tree" class="anchor-link"><span></span></a></h3>
+
+<p>Whenever you would normally use a standard
+<a href="http://docs.oracle.com/javase/8/docs/api/javax/swing/JList.html" data-bypass="yes" target="_blank"><span>Swing JList</span></a>
+component, it’s recommended to use the
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/platform-api/src/com/intellij/ui/components/JBList.java" data-bypass="yes" target="_blank"><span>JBList</span></a>
+class as drop-in replacement.
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/platform-api/src/com/intellij/ui/components/JBList.java" data-bypass="yes" target="_blank"><span>JBList</span></a>
+supports the following additional features on top of
+<a href="http://docs.oracle.com/javase/8/docs/api/javax/swing/JList.html" data-bypass="yes" target="_blank"><span>JList</span></a>:</p>
+
+<ul>
+  <li>
+    <p>Drawing a tooltip with complete text of an item if the item doesn’t fit into the list box width.</p>
+  </li>
+  <li>
+    <p>Drawing a gray text message in the middle of the list box when it contains no items.
+The text can be customized by calling <code class="code highlight language-text">getEmptyText().setText()</code>.</p>
+  </li>
+  <li>
+    <p>Drawing a busy icon in the top right corner of the list box to indicate that a background operation is being performed.
+This can be enabled by calling <code class="code highlight language-text">setPaintBusy()</code>.</p>
+  </li>
+</ul>
+
+<p>Similarly, the
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/platform-api/src/com/intellij/ui/treeStructure/Tree.java" data-bypass="yes" target="_blank"><span>Tree</span></a>
+class provides a replacement for the standard
+<a href="http://docs.oracle.com/javase/8/docs/api/javax/swing/JTree.html" data-bypass="yes" target="_blank"><span>JTree</span></a>
+class.
+In addition to the features of
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/platform-api/src/com/intellij/ui/components/JBList.java" data-bypass="yes" target="_blank"><span>JBList</span></a>,
+it supports wide selection painting (Mac style) and auto-scroll on drag &amp; drop.</p>
+
+<a name="coloredlistcellrenderer-and-coloredtreecellrenderer" class="elem-anchor"></a>
+<h3>ColoredListCellRenderer and ColoredTreeCellRenderer<a href="#coloredlistcellrenderer-and-coloredtreecellrenderer" class="anchor-link"><span></span></a></h3>
+
+<p>When you need to customize the presentation of items in a list box or a tree, it’s recommended to use the
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/platform-api/src/com/intellij/ui/ColoredListCellRenderer.java" data-bypass="yes" target="_blank"><span>ColoredListCellRenderer</span></a>
+or
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/platform-api/src/com/intellij/ui/ColoredTreeCellRenderer.java" data-bypass="yes" target="_blank"><span>ColoredTreeCellRenderer</span></a>
+classes as the cell renderer.
+These classes allow you to compose the presentation out of multiple text fragments with different attributes by calling <code class="code highlight language-text">append()</code> and to set an optional icon for the item by calling <code class="code highlight language-text">setIcon</code>.
+The renderer automatically takes care of setting the correct text color for selected items and of many other platform-specific rendering details.</p>
+
+<a name="listspeedsearch-and-treespeedsearch" class="elem-anchor"></a>
+<h3>ListSpeedSearch and TreeSpeedSearch<a href="#listspeedsearch-and-treespeedsearch" class="anchor-link"><span></span></a></h3>
+
+<p>To facilitate keyboard-based selection of items in a list box or a tree, you can install a speed search handler on it using the
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/platform-impl/src/com/intellij/ui/ListSpeedSearch.java" data-bypass="yes" target="_blank"><span>ListSpeedSearch</span></a>
+and
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/platform-impl/src/com/intellij/ui/TreeSpeedSearch.java" data-bypass="yes" target="_blank"><span>TreeSpeedSearch</span></a>.
+This can be done simply by calling <code class="code highlight language-text">new ListSpeedSeach(list)</code> or <code class="code highlight language-text">new TreeSpeedSearch(tree)</code>.
+If you need to customize the text which is used to locate the element, you can override the <code class="code highlight language-text">getElementText()</code> method.
+Alternatively, you can pass a function to convert items to strings.
+A function needs to be passed as <code class="code highlight language-text">elementTextDelegate</code> to the
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/platform-impl/src/com/intellij/ui/ListSpeedSearch.java" data-bypass="yes" target="_blank"><span>ListSpeedSearch</span></a>
+constructor or as <code class="code highlight language-text">toString</code> to the
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/platform-impl/src/com/intellij/ui/TreeSpeedSearch.java" data-bypass="yes" target="_blank"><span>TreeSpeedSearch</span></a>
+constructor.</p>
+
+<a name="toolbardecorator" class="elem-anchor"></a>
+<h3>ToolbarDecorator<a href="#toolbardecorator" class="anchor-link"><span></span></a></h3>
+
+<p>A very common task in plugin development is showing a list or a tree where the user is allowed to add, remove, edit or reorder the items.
+The implementation of this task is greatly facilitated by the
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/platform-api/src/com/intellij/ui/ToolbarDecorator.java" data-bypass="yes" target="_blank"><span>ToolbarDecorator</span></a>
+class.
+This class provides a toolbar with actions on items and automatically enables drag &amp; drop reordering of items in list boxes if supported by the underlying list model.
+The position of the toolbar above or below the list depends on the graphics platform under which the IDE is running.</p>
+
+<p>To use a toolbar decorator:</p>
+
+<ul>
+  <li>
+    <p>If you need to support removing and reordering of items in a list box, make sure the model of your list implements the
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/util/src/com/intellij/util/ui/EditableModel.java" data-bypass="yes" target="_blank"><span>EditableModel</span></a>
+interface.
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/platform-api/src/com/intellij/ui/CollectionListModel.java" data-bypass="yes" target="_blank"><span>CollectionListModel</span></a>
+is a handy model class that implements this interface.</p>
+  </li>
+  <li>
+    <p>Call
+<a href="https://upsource.jetbrains.com/idea-ce/file/idea-ce-1731d054af4ca27aa827c03929e27eeb0e6a8366/platform/platform-api/src/com/intellij/ui/ToolbarDecorator.java" data-bypass="yes" target="_blank"><span>ToolbarDecorator.createDecorator</span></a>
+to create a decorator instance.</p>
+  </li>
+  <li>
+    <p>If you need to support adding and/or removing items, call <code class="code highlight language-text">setAddAction()</code> and/or <code class="code highlight language-text">setRemoveAction()</code>.</p>
+  </li>
+  <li>
+    <p>If you need other buttons in additional to the standard ones, call <code class="code highlight language-text">addExtraAction()</code> or <code class="code highlight language-text">setActionGroup()</code>.</p>
+  </li>
+  <li>
+    <p>Call <code class="code highlight language-text">createPanel()</code> and add the component it returns to your panel.</p>
+  </li>
+</ul>
+
+<!--
+### AbstractTreeBuilder and AbstractTreeStructure
+TODO link to tutorial
+-->
+
+
+
+                    <div class="last-modified">
+                        Last modified: 30 November 2015
+                    </div>
+                </article>
+
+                <section class="disqus">
+                    <div id="disqus_thread"></div>
+                </section>
+            </div>
+        </section>
+    </main>
+</div>
+
+
+<script data-main="/intellij/sdk/docs/app/js/main.build" data-baseurl="/intellij/sdk/docs/" src="/intellij/sdk/docs/app/js/vendor/requirejs/require.js"></script>
+
+</body>
+</html>
+

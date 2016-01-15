@@ -73,4 +73,21 @@ A set of Rake tasks, a Make-like programs implemented in Ruby, provides short co
    in your browser.
    **Note:** Make sure you haven't change default Jekyll port during installation.
 
+####Deployment to GitHub Pages
 
+To deploy updates from this repository to GitHub Pages, contributors can take the following steps:
+
+1. Fork `intellij-sdk-docs` and push changes to your local `master` branch.
+
+2. Deployment is possible via `grunt deploy` or by rebuilding `_site` manually.
+    * Node.js deployment:
+        * Install [node.js](https://nodejs.org/en/download).
+        * From parent directory, run: `npm install grunt grunt-exec grunt-build-control --save-dev`
+        * Run `grunt -v deploy` to commit and push changes to the `gh-pages` branch.
+    * Manual deployment:
+        * `rake build[_config-gh-pages.yml]`
+        * `cd _site`
+        * `git add -A && git commit -m "Commit message"`
+        * `git push origin gh-pages`
+        
+3. Visit `<YOUR_GH_USERNAME>.github.io/intellij-sdk-docs/` to view the site.

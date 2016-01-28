@@ -1,0 +1,64 @@
+GIT
+  remote: https://github.com/JetBrains/jekyll-git_metadata.git
+  revision: 5f5e3a02d0cc414d984d85835235b782aac04b4d
+  branch: fix_windows
+  specs:
+    jekyll-git_metadata (0.0.3)
+      jekyll (~> 3.0)
+
+GIT
+  remote: https://github.com/JetBrains/rouge
+  revision: 1c6c57410e5b7ffd3112ae99770f7a7e4d6c064a
+  branch: multiple_fixes
+  specs:
+    rouge (1.10.1)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    colorator (0.1)
+    ffi (1.9.10)
+    ffi (1.9.10-x64-mingw32)
+    jekyll (3.0.1)
+      colorator (~> 0.1)
+      jekyll-sass-converter (~> 1.0)
+      jekyll-watch (~> 1.1)
+      kramdown (~> 1.3)
+      liquid (~> 3.0)
+      mercenary (~> 0.3.3)
+      rouge (~> 1.7)
+      safe_yaml (~> 1.0)
+    jekyll-redirect-from (0.9.1)
+      jekyll (>= 2.0)
+    jekyll-sass-converter (1.4.0)
+      sass (~> 3.4)
+    jekyll-watch (1.3.0)
+      listen (~> 3.0)
+    kramdown (1.9.0)
+    liquid (3.0.6)
+    listen (3.0.5)
+      rb-fsevent (>= 0.9.3)
+      rb-inotify (>= 0.9)
+    mercenary (0.3.5)
+    rake (10.4.2)
+    rb-fsevent (0.9.6)
+    rb-inotify (0.9.5)
+      ffi (>= 0.5.0)
+    safe_yaml (1.0.4)
+    sass (3.4.20)
+    wdm (0.1.1)
+
+PLATFORMS
+  ruby
+  x64-mingw32
+
+DEPENDENCIES
+  jekyll (~> 3.0)
+  jekyll-git_metadata!
+  jekyll-redirect-from
+  rake
+  rouge!
+  wdm (>= 0.1.0)
+
+BUNDLED WITH
+   1.10.6

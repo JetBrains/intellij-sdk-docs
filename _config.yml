@@ -1,0 +1,14 @@
+---
+product_name: IntelliJ Platform SDK
+product_version:
+product_type: DevGuide
+
+baseurl: /intellij/sdk/docs/
+
+# This is tag 143.381.42
+upsource:
+  server: upsource.jetbrains.com
+  repo: idea-ce
+  # This is the SHA for the 143.381.42 release, but it's not indexed on Upsource
+  # commit: db70c2b4bdc79eb5f551632aade418c0de50e840
+  commit: 1731d054af4ca27aa827c03929e27eeb0e6a8366

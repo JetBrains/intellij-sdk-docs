@@ -98,7 +98,7 @@
     * [PHP Open API](phpstorm/php_open_api.md)
     * [Existing Third Party Plugins](phpstorm/existing_plugins.md)
   * [Tutorials](tutorials.md)
-    * [Build System Support](tutorials/build_system.md)
+    * [Gradle Support](tutorials/build_system.md)
       * [1. Prerequisites](tutorials/build_system/prerequisites.md)
       * [2. Deployment](tutorials/build_system/deployment.md)
     * [Custom Language Support](tutorials/custom_language_support_tutorial.md)

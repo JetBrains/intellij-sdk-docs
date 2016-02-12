@@ -26,7 +26,7 @@ In the former case, the instance of the state class is typically stored as a fie
 
 ```java
 class MyService implements PersistentStateComponent<MyService.State> {
-  class State {
+  static class State {
     public String value;
   }
 

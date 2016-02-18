@@ -80,6 +80,8 @@ Choose one of `com.intellij.spring.CommonSpringModel#findBeansByPsiClassXXX` var
 
 _Version 14_: `com.intellij.spring.model.utils.SpringModelSearchers#findBeans`
 
+_Version 16_: note deprecation of `SpringModelSearchParameters.BeanClass#withInheritors(GlobalSearchScope)`
+
 ##### Find out if bean with given name/type exists
 _Version 14_: `com.intellij.spring.model.utils.SpringModelSearchers#doesBeanExist` (please note deprecated methods)
 

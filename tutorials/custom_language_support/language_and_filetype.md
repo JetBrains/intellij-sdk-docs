@@ -6,13 +6,13 @@ title: 2. Language and File Type
 ### 2.1. Define a language
 
 ```java
-{% include /code_samples/simple_language_plugin/src/com/simpleplugin/Simple.bnf %}
+{% include /code_samples/simple_language_plugin/src/com/simpleplugin/SimpleLanguage.java %}
 ```
 
 ### 2.2. Define an icon
 
 Copy the
-[icon](https://raw.githubusercontent.com/cheptsov/SimplePlugin/master/src/com/simpleplugin/icons/jar-gray.png)
+[icon](https://raw.githubusercontent.com/JetBrains/intellij-sdk-docs/master/code_samples/simple_language_plugin/src/com/simpleplugin/icons/jar-gray.png)
 to **com.simpleplugin.icons** package.
 
 ```java

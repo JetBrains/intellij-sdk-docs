@@ -25,16 +25,16 @@ Follow these steps to modify existing IntelliJ Platform SDK:
 If you use other Spring functionality (e.g. Spring EL) in your plugin, make sure to add all required JARs to your IntelliJ Platform SDK classpath to make your plugin's tests work.
 
 
-Please use only Spring-related functionality exposed in `spring-api.jar` (where   sources are provided) in your plugin. Using any other "internal" (implementation) classes from Spring plugin itself (`spring.jar`) is _not_ supported.
+Please use only Spring-related functionality exposed in `spring-api.jar` (where sources are provided) in your plugin. Using any other "internal" (implementation) classes from Spring plugin itself (`spring.jar`) is _not_ supported.
 
 ### plugin.xml
-Add `<depends>com.intellij.spring</depends>` to your `plugin.xml` to require "Spring Support" plugin to be activated. All available extension points are available under `com.intellij.spring` prefix.
+Add `<depends>com.intellij.spring</depends>` to your `plugin.xml` to require "Spring Support" plugin to be activated. All available extension points are provided under `com.intellij.spring` prefix.
 Note that "Spring Support" plugin itself has dependencies to a few other plugins which need to be enabled in your sandbox (see notifications on startup).
 
 ## Main concepts
 A Spring facet can be attached on a Module.
 
-Spring facets usually contain one more user-configured/provided filesets, which group a set of Spring related configuration files (XML, Code or .properties files).
+Spring facets usually contain one more user-configured or automatically provided filesets, which group a set of Spring related configuration files (XML, Code or .properties files).
 
 A fileset usually corresponds to an actual application context configuration at runtime. Hierarchies can be modeled by depending on another fileset (possibly from  another module).
 
@@ -80,11 +80,13 @@ Choose one of `com.intellij.spring.CommonSpringModel#findBeansByPsiClassXXX` var
 
 _Version 14_: `com.intellij.spring.model.utils.SpringModelSearchers#findBeans`
 
+_Version 16_: note deprecation of `SpringModelSearchParameters.BeanClass#withInheritors(GlobalSearchScope)`
+
 ##### Find out if bean with given name/type exists
 _Version 14_: `com.intellij.spring.model.utils.SpringModelSearchers#doesBeanExist` (please note deprecated methods)
 
 ##### Mark bean as infrastructure bean
-_Version 14_: implement `SpringInfrastructureBean`, such beans obtain special icon and can be filtered in various places in UI
+_Version 14_: implement `SpringInfrastructureBean`, such beans obtain special icon and can be filtered in various places in UI.
 
 ### XML Configuration
 All support for XML-based Spring configuration files is provided via [DOM-API](xml_dom_api.md).

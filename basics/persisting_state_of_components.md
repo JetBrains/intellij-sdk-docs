@@ -26,7 +26,7 @@ In the former case, the instance of the state class is typically stored as a fie
 
 ```java
 class MyService implements PersistentStateComponent<MyService.State> {
-  class State {
+  static class State {
     public String value;
   }
 
@@ -79,29 +79,17 @@ State class should have a `equals` method, but if it is not implemented, state o
 
 In order to specify where exactly the persisted values will be stored, you need to add a `@State` annotation to the `PersistentStateComponent` class. It has the following fields:
 
-* `name` (required) - specifies the name of the state (name of the root tag in XML)
-* One or more of `@com.intellij.openapi.components.Storage` annotations (required) - specify the storage locations for `.ipr` and directory-based projects
-* `reloadable` (optional) - if set to false, complete project reload is required when the XML file is changed externally and the state has changed.
+* `name` (required) — specifies the name of the state (name of the root tag in XML).
+* `storages` — one or more of `@com.intellij.openapi.components.Storage` annotations to specify the storage locations. Optional for project level values — standard project file will be used in this case.
+* `reloadable` (optional) — if set to false, complete project (or application) reload is required when the XML file is changed externally and the state has changed.
 
-The simplest ways of specifying the `@Storage` annotation are as follows:
+The simplest ways of specifying the `@Storage` annotation are as follows (since IntelliJ IDEA 16, for previous versions please see [old version](https://github.com/JetBrains/intellij-sdk-docs/blob/5dcb02991cf828a7d4680d125ce56b4c10234146/basics/persisting_state_of_components.md) of this document):
 
-* `@Storage(id = "other", file = StoragePathMacros.APP_CONFIG + "/yourName.xml")` for application level values
-* `@Storage(id = "other", file = StoragePathMacros.PROJECT_FILE)` for values stored in the project file (for `.ipr` based projects)
-* `@Storage(id = "dir", file = StoragePathMacros.PROJECT_CONFIG_DIR + "/other.xml", scheme = StorageScheme.DIRECTORY_BASED)})` for values stored in the project directory (for directory based projects)
-* `@Storage(id = "other", file = StoragePathMacros.WORKSPACE_FILE)` for values stored in the workspace file
+* `@Storage("yourName.xml")` If component is project-level — for `.ipr` based projects standard project file will be used automatically, you don't need to specify anything.
 
-The `id` parameter of the `@Storage` annotation can be used to exclude specific fields from serialization in specific formats. If you do not need to exclude anything, you can set the `id` to an arbitrary string value. If you need to specify where the values are stored when the directory-based project format is used, you need to add the second `@Storage` annotation with the scheme parameter set to `StorageScheme.DIRECTORY_BASED`, for example:
+* `@Storage(StoragePathMacros.WORKSPACE_FILE)` for values stored in the workspace file.
 
-```java
-@State(name = "AntConfiguration",
-  storages = {
-    @Storage(id = "default", file = StoragePathMacros.PROJECT_FILE),
-    @Storage(id = "dir", file = StoragePathMacros.PROJECT_CONFIG_DIR + "/ant.xml", scheme = StorageScheme.DIRECTORY_BASED)
-  }
-)
-```
-
-By specifying a different value for the `file` parameter, you can cause the state to be persisted in a different file. For application level components strongly recommended to use custom file, using of `other.xml` is deprecated.
+By specifying a different value for the `value` parameter (`file` before IntelliJ IDEA 16), you can cause the state to be persisted in a different file. For application level components strongly recommended to use custom file, using of `other.xml` is deprecated.
 
 The `roamingType` parameter of the `@Storage` annotation specifies the roaming type when the Settings Repository plugin is used.
 

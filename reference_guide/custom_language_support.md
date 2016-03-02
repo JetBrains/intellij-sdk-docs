@@ -36,4 +36,4 @@ Providing custom language support includes the following major steps:
 * [Additional Minor Features](/reference_guide/custom_language_support/additional_minor_features.md)
 
 
-Please ask questions or suggest missing topics in [plugin development forum](https://devnet.jetbrains.com/community/idea/open_api_and_plugin_development).
+Please ask questions or suggest missing topics in [plugin development forum](https://intellij-support.jetbrains.com/hc/en-us/community/topics/200366979-IntelliJ-IDEA-Open-API-and-Plugin-Development).

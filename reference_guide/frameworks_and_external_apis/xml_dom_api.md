@@ -526,7 +526,7 @@ All the fields here are actually bound to controls in a GUI form.
 Very often you'll have to create your own file editor. Then, to use all the binding and undo functionality, it's suggested to inherit your `FileEditorProvider` from `PerspectiveFileEditorProvider`, create an instance of `DomFileEditor` there, and pass a `BasicDomElementComponent`. To easily create an editor with a caption at the top, like in our EJB and JSF, you may use the static method `DomFileEditor.createDomFileEditor()`. `DomFileEditor` automatically listens to all changes in the document corresponding to the given DOM element, and therefore refreshes your component on undo. If you want to listen to changes in additional documents, use the methods `addWatchedDocument()`, `removeWatchedDocument()`, `addWatchedElement()`, `removeWatchedElement()` in `DomFileEditor`.
 
 ## Conclusion
-Thank you for your time and attention. We hope you've found this article really useful. You are welcome to post your questions and comments to our [Open API and Plugin Development Forum](https://devnet.jetbrains.com/community/idea/open_api_and_plugin_development).
+Thank you for your time and attention. We hope you've found this article really useful. You are welcome to post your questions and comments to our [Open API and Plugin Development Forum](https://intellij-support.jetbrains.com/hc/en-us/community/topics/200366979-IntelliJ-IDEA-Open-API-and-Plugin-Development).
 
 ### Further Material
 The following bundled open source plugins make (heavy) use of DOM:

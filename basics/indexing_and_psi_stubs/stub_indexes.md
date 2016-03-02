@@ -52,5 +52,5 @@ To access the data from an index, the following two methods are used:
 
 ## Related Forum Discussions
 
-*  [Lifecycle of stub creation](https://devnet.jetbrains.com/message/5485343)
+*  [Lifecycle of stub creation](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206121959-Lifecycle-of-stub-creation/comments/206143885)
 

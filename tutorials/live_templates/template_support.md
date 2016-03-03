@@ -42,19 +42,21 @@ The `DefaultLiveTemplatesProvider` tells us where to find the Live Template sett
 
 ## Implement TemplateContextType
 
-A `TemplateContextType` tells us where the live template is applicible.
+A `TemplateContextType` tells us where the live template is applicable.
 
 ```java
 {% include /code_samples/live_templates/src/MarkdownContext.java %}
 ```
 
-Once you define the `TemplateContextType`, be sure to add the assigned context type to the previously created Live Template settings file. Under `<template>...</template>` add the following context:
+Once you define the `TemplateContextType`*, be sure to add the assigned context type to the previously created Live Template settings file. Under `<template>...</template>` add the following context:
 
 ```xml
 <context>
   <option name="MARKDOWN" value=true />
 </context>
 ```
+
+*It is not always necessary to define your own `TemplateContextType`, as there are many existing template contexts already defined in the IntelliJ Platform. Consider reusing one of the [many existing template contexts](https://upsource.jetbrains.com/idea-community/file/d190fa2f2741067587fd14c6f771302dda6fcc18/platform/lang-api/src/com/intellij/codeInsight/template/TemplateContextType.java?hierarchy=/platform/lang-api/src/com/intellij/codeInsight/template/TemplateContextType.java:46&nav=0:0:focused) if you are augmenting language support to an existing area.
 
 ## Register Extension Points
 

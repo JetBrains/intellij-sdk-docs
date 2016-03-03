@@ -45,7 +45,7 @@ The `DefaultLiveTemplatesProvider` tells us where to find the Live Template sett
 A `TemplateContextType` tells us where the live template is applicible.
 
 ```java
-{% include /code_samples/live_templates/src/MarkdownTemplateProvider.java %}
+{% include /code_samples/live_templates/src/MarkdownContext.java %}
 ```
 
 Once you define the `TemplateContextType`, be sure to add the assigned context type to the previously created Live Template settings file. Under `<template>...</template>` add the following context:

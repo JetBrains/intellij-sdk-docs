@@ -34,7 +34,7 @@ public class MyLineMarkerProvider implements LineMarkerProvider {
 }
 ```
 
-Inspection (specifically, `LineMarkersPass`) for performance reasons queries all `LineMarkerProviders` in two passes:
+Inspection (specifically, [`LineMarkersPass`](upsource:///platform/lang-impl/src/com/intellij/codeInsight/daemon/impl/LineMarkersPass.java)) for performance reasons queries all [`LineMarkerProviders`](upsource:///platform/lang-api/src/com/intellij/codeInsight/daemon/LineMarkerProviders.java) in two passes:
 
   *  first pass for all elements in visible area
 
@@ -42,7 +42,7 @@ Inspection (specifically, `LineMarkersPass`) for performance reasons queries all
 
 If providers return nothing for either area, its line markers are cleared.
 So if e.g. a method is half-visible (its name is visible but part of its body isn't) and
-some poorly written `LineMarkerProvider` returned info for the `PsiMethod` instead of `PsiIdentifier` then:
+some poorly written [`LineMarkerProvider`](upsource:///platform/lang-api/src/com/intellij/codeInsight/daemon/LineMarkerProvider.java) returned info for the `PsiMethod` instead of `PsiIdentifier` then:
 
   *  the first pass removes line marker info because whole `PsiMethod` is not visible.
 

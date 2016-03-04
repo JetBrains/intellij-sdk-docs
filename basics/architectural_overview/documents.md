@@ -20,7 +20,7 @@ Document instances are created when some operation needs to access the text cont
 
 ## How long does a Document persist?
 
-Document instances are weakly referenced from `VirtualFile` instances. Thus, an unmodified `Document` instance can be garbage-collected if it isn't referenced by anyone, and a new instance will be created if the document contents is accessed again later. Storing `Document` references in long-term data structures of your plugin will cause memory leaks.
+Document instances are weakly referenced from `VirtualFile` instances. Thus, an unmodified [`Document`](upsource:///platform/core-api/src/com/intellij/openapi/editor/Document.java) instance can be garbage-collected if it isn't referenced by anyone, and a new instance will be created if the document contents is accessed again later. Storing `Document` references in long-term data structures of your plugin will cause memory leaks.
 
 ## How do I create a Document?
 

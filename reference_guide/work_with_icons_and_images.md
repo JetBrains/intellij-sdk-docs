@@ -13,7 +13,7 @@ The best way to deal with icons and other image resources is to put them to a de
 
 ![Icons](img/icons1.png)
 
-Use `getIcon()` method of `com.intellij.openapi.util.IconLoader` to access icons.
+Use `getIcon()` method of [`com.intellij.openapi.util.IconLoader`](upsource:///platform/util/src/com/intellij/openapi/util/IconLoader.java) to access icons.
 Then define a class or an interface with icon constants:
 
 ```java

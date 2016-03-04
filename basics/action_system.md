@@ -12,11 +12,11 @@ Subgroups of the group can form submenus of the menu.
 
 Every action and action group has an unique identifier. Identifiers of many of the standard IDEA actions are defined in the [IdeActions](upsource:///platform/platform-api/src/com/intellij/openapi/actionSystem/IdeActions.java) class.
 
-Every action can be included in multiple groups, and thus appear in multiple places within the IDEA user interface. Different places where actions can appear are defined by constants in the [`ActionPlaces`](upsource:///platform/platform-api/src/com/intellij/openapi/actionSystem/ActionPlaces.java) interface. For every place where the action appears, a new `Presentation` is created. Thus, the same action can have different text or icons when it appears in different places of the user interface. Different presentations for the action are created by copying the presentation returned by the `AnAction.getTemplatePresentation()` method.
+Every action can be included in multiple groups, and thus appear in multiple places within the IDEA user interface. Different places where actions can appear are defined by constants in the [`ActionPlaces`](upsource:///platform/platform-api/src/com/intellij/openapi/actionSystem/ActionPlaces.java) interface. For every place where the action appears, a new [`Presentation`](upsource:///platform/platform-api/src/com/intellij/ide/presentation/Presentation.java) is created. Thus, the same action can have different text or icons when it appears in different places of the user interface. Different presentations for the action are created by copying the presentation returned by the `AnAction.getTemplatePresentation()` method.
 
-To update the state of the action, the method `AnAction.update()` is periodically called by IDEA. The `AnActionEvent` object passed to this method carries the information about the current context for the action, and in particular, the specific presentation which needs to be updated.
+To update the state of the action, the method `AnAction.update()` is periodically called by IDEA. The [`AnActionEvent`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnActionEvent.java) object passed to this method carries the information about the current context for the action, and in particular, the specific presentation which needs to be updated.
 
-To retrieve the information about the current state of the IDE, including the active project, the selected file, the selection in the editor and so on, the method `AnActionEvent.getData()` can be used. Different data keys that can be passed to that method are defined in the `DataKeys` class.
+To retrieve the information about the current state of the IDE, including the active project, the selected file, the selection in the editor and so on, the method `AnActionEvent.getData()` can be used. Different data keys that can be passed to that method are defined in the [`CommonDataKeys`](upsource:///platform/platform-api/src/com/intellij/openapi/actionSystem/CommonDataKeys.java)class.
 
 The `AnActionEvent` instance is also passed to the `actionPerformed` method.
 
@@ -122,7 +122,7 @@ You can create a plugin that registers actions on IDEA startup using the followi
 
 **To register an action on IDEA startup**
 
-* Create a new class that implements the `ApplicationComponent` interface.
+* Create a new class that implements the [`ApplicationComponent`](upsource:///platform/core-api/src/com/intellij/openapi/components/ApplicationComponent.java) interface.
 * In this class, override the `getComponentName`, `initComponent`, and `disposeComponent` methods.
 * Register this class in the `<application-components>` section of the plugin.xml file.
 
@@ -174,6 +174,6 @@ To ensure that your plugin is initialized on IDEA start-up, make the following c
 
 ## Building UI from Actions
 
-If a plugin needs to include a toolbar or popup menu built from a group of actions in its own user interface, that can be accomplished through the `ActionPopupMenu` and `ActionToolbar` classes. These objects can be created through calls to `ActionManager.createActionPopupMenu` and `ActionManager.createActionToolbar`. To get a Swing component from such an object, simply call the getComponent() method.
+If a plugin needs to include a toolbar or popup menu built from a group of actions in its own user interface, that can be accomplished through the [`ActionPopupMenu`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/ActionPopupMenu.java) and [`ActionToolbar`](upsource:///latform/editor-ui-api/src/com/intellij/openapi/actionSystem/ActionToolbar.java) classes. These objects can be created through calls to `ActionManager.createActionPopupMenu` and `ActionManager.createActionToolbar`. To get a Swing component from such an object, simply call the getComponent() method.
 
 If your action toolbar is attached to a specific component (for example, a panel in a toolwindow), you usually need to call `ActionToolbar.setTargetComponent()` and pass the instance of the related component as a parameter. This ensures that the state of the toolbar buttons depends on the state of the related component, and not on the current focus location within the IDE frame.

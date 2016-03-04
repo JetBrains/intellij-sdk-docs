@@ -10,7 +10,7 @@ of
 
 Series of step below show how to filter out and keep visible only text files and directories in the Project View Panel. 
 
-## Pre-requirements.
+## Pre-requirements
 
 Create an empty plugin project.
 See 

@@ -29,7 +29,7 @@ The implementation of a file based contains of the following main parts:
 * `getIndexer()` returns the indexer class, which is is responsible for actually building a set of key/value pairs based on the file content.
 * `getKeyDescriptor()` returns the key descriptor, which is responsible for comparing the keys and storing them in a serialized binary format.
 
-   Probably the most commonly used `KeyDescriptor` implementation is `EnumeratorStringDescriptor` which is designed for storing identifiers in an efficient way.
+   Probably the most commonly used [`KeyDescriptor`](upsource:///platform/util/src/com/intellij/util/io/KeyDescriptor.java) implementation is [`EnumeratorStringDescriptor`](upsource:///platform/util/src/com/intellij/util/io/EnumeratorStringDescriptor.java) which is designed for storing identifiers in an efficient way.
 * `getValueExternalizer()` returns the value serializer, which takes care of storing values in a serialized binary format.
 * `getInputFilter()` allows to restrict the indexing only to a certain set of files.
 * `getVersion()` returns the version of the index implementation. The index is automatically rebuilt if the current version differs from the version of the index implementation used to build the index.

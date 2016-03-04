@@ -2,7 +2,7 @@
 title: Creating an action
 ---
 
-Your plugins can customize the IntelliJ Platform UI by adding new items to the menus and toolbars. The IntelliJ Platform provides the class [AnAction.java](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java) whose `actionPerformed` method is called each time you select a menu item or click a toolbar button.
+Your plugins can customize the IntelliJ Platform UI by adding new items to the menus and toolbars. The IntelliJ Platform provides the class [AnAction](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java), whose `actionPerformed` method is called each time you select a menu item or click a toolbar button.
 
 To create custom actions in the *IntelliJ Platform*, you should perform two basic steps:
 

@@ -10,11 +10,11 @@ When the user invokes an action that involves executing an external build (Make,
 
 *  Some source generation tasks that depend on the PSI (e.g. UI designer form to source compilation) are executed in the IDE process.
 
-*  `BuildTargetScopeProvider` extensions are called to calculate the scope of the external build (the set of build targets to compile based on the target module to make and the known set of changes).
+*  [`BuildTargetScopeProvider`](upsource:///java/compiler/impl/src/com/intellij/compiler/impl/BuildTargetScopeProvider.java) extensions are called to calculate the scope of the external build (the set of build targets to compile based on the target module to make and the known set of changes).
 
 *  The external build process is spawned (or an existing build process background process is reused).
 
-*  The external build process loads the project model (.idea, .iml files and so on), represented by a `JpsModel` instance.
+*  The external build process loads the project model (.idea, .iml files and so on), represented by a [`JpsModel`](upsource:///jps/model-api/src/org/jetbrains/jps/model/JpsModel.java) instance.
 
 *  The full tree of targets to build is calculated, based on the dependencies of each build target to be compiled.
 
@@ -24,7 +24,7 @@ When the user invokes an action that involves executing an external build (Make,
 
 *  Caches to record the state of the compilation are saved.
 
-*  Compilation messages reported through the `CompileContext` API are transmitted to the IDE process and displayed in the UI (in the *Messages* view).
+*  Compilation messages reported through the [`CompileContext`](upsource:///jps/jps-builders/src/org/jetbrains/jps/incremental/CompileContext.java) API are transmitted to the IDE process and displayed in the UI (in the *Messages* view).
 
 *  Post-compile tasks are executed in the IDE process.
 
@@ -32,9 +32,9 @@ When the user invokes an action that involves executing an external build (Make,
 
 To support incremental build, the build process uses a number of caches which are persisted between build invocations. Even if your compiler doesn't support incremental build, you still need to report correct information so that incremental build works correctly for other compilers.
 
-*  `SourceToOutputMapping` is a many-to-many relationship between source files and output files ("which source files were used to produce the specified output file"). It's filled by calls to `BuildOutputConsumer.registerOutputFile()` and `ModuleLevelBuilder.OutputConsumer.registerOutputFile()`.
+*  [`SourceToOutputMapping`](upsource:///jps/jps-builders/src/org/jetbrains/jps/builders/storage/SourceToOutputMapping.java) is a many-to-many relationship between source files and output files ("which source files were used to produce the specified output file"). It's filled by calls to `BuildOutputConsumer.registerOutputFile()` and `ModuleLevelBuilder.OutputConsumer.registerOutputFile()`.
 
-*  `Timestamps` records the timestamp of each source file when it was compiled by each build target. (If the compilation was invoked multiple times with different scopes and the file was changed in the meantime, the last compiled timestamps for different build targets may vary.) It's updated automatically by JPS.
+*  [`Timestamps`](upsource:///jps/jps-builders/src/org/jetbrains/jps/incremental/storage/Timestamps.java) records the timestamp of each source file when it was compiled by each build target. (If the compilation was invoked multiple times with different scopes and the file was changed in the meantime, the last compiled timestamps for different build targets may vary.) It's updated automatically by JPS.
 
 The IDE monitors the changes of the project content and uses the information from those caches to generate the set of dirty and deleted files for every compilation. (Dirty files need to be recompiled, and deleted files need to have their output deleted). A builder can also report additional files as dirty (e.g. if a method is deleted, the builder can report the classes using this method as dirty.) A module-level builder can add some files to the dirty scope; if this happens, and if the builder returns `ADDITIONAL_PASS_REQUIRED` from its `build()` method, another round of builder execution for the same module chunk will be started with the new dirty scope.
 
@@ -46,7 +46,7 @@ To pass custom data between the invocation of the same builder between multiple 
 
 The external builder process uses the standard Java
 [services](http://docs.oracle.com/javase/8/docs/api/java/util/ServiceLoader.html)
-mechanism to support plugins. There are several service interfaces (e.g. `BuilderService`) which can be implemented in plugins to extend the builder functionality. An implementation of a service need to be registered by creating `META-INF/services/<service-interface-fqn>` file containing the qualified name of the implementation class. E.g. `BuilderService` implementations are registered in `META-INF/services/org.jetbrains.jps.incremental.BuilderService` file. These files don't have extensions so you need to map corresponding patterns to text files in IDE settings.
+mechanism to support plugins. There are several service interfaces (e.g. [`BuilderService`](upsource:///jps/jps-builders/src/org/jetbrains/jps/incremental/BuilderService.java) which can be implemented in plugins to extend the builder functionality. An implementation of a service need to be registered by creating `META-INF/services/<service-interface-fqn>` file containing the qualified name of the implementation class. E.g. `BuilderService` implementations are registered in `META-INF/services/org.jetbrains.jps.incremental.BuilderService` file. These files don't have extensions so you need to map corresponding patterns to text files in IDE settings.
 
 ### Registering a plugin for External Builder
 
@@ -112,14 +112,14 @@ In IntelliJ Platform versions before version 14.1 log4j configuration was stored
 ### Accessing project model and configuration from External Build
 
 The project model in External Build process is provided by JPS (*JetBrains Project System*).
-A project is represented by `JpsProject`, a module by `JpsModule` and so on.
+A project is represented by [`JpsProject`](upsource:///jps/model-api/src/org/jetbrains/jps/model/JpsProject.java), a module by [`JpsModule`](upsource:///jps/model-api/src/org/jetbrains/jps/model/JpsProject.java) and so on.
 If your compiler depends on something that isn't added to the model yet (e.g. some facet settings),
 you need to extend the JPS model (use `JpsGwtModuleExtension` as a reference implementation) and provide implementation of
-`JpsModelSerializerExtension` to load the configuration from project files.
+[`JpsModelSerializerExtension`](upsource:///jps/model-serialization/src/org/jetbrains/jps/model/serialization/JpsModelSerializerExtension.java) to load the configuration from project files.
 
 #### Implementing builder
 
-If your compiler isn't involved into compilation of an existing `BuildTarget` you need to create a new implementation of `BuildTarget` and `BuildTargetType`. Also register an implementation of `BuildTargetScopeProvider` extension on IDE side to add required targets to the build scope.
-The builder implementation should extend either `TargetBuilder` or `ModuleLevelBuilder` class and should be created using `BuilderService` extension.
+If your compiler isn't involved into compilation of an existing [`BuildTarget`](upsource:///jps/jps-builders/src/org/jetbrains/jps/builders/BuildTarget.java) you need to create a new implementation of `BuildTarget` and `BuildTargetType`. Also register an implementation of [`BuildTargetScopeProvider`](upsource:///java/compiler/impl/src/com/intellij/compiler/impl/BuildTargetScopeProvider.java) extension on IDE side to add required targets to the build scope.
+The builder implementation should extend either [`TargetBuilder`](upsource:///jps/jps-builders/src/org/jetbrains/jps/incremental/TargetBuilder.java) or [`ModuleLevelBuilder`](upsource:///jps/jps-builders/src/org/jetbrains/jps/incremental/ModuleLevelBuilder.java) class and should be created using [`BuilderService`](upsource:///jps/jps-builders/src/org/jetbrains/jps/incremental/BuilderService.java) extension.
 
 

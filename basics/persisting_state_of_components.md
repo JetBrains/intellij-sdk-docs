@@ -6,7 +6,7 @@ The *IntelliJ Platform* provides an API that allows components or services to pe
 
 ## Using PropertiesComponent for simple non-roamable persistence
 
-If the only thing that your plugin needs to persist is a few simple values, the easiest way to do so is to use the `com.intellij.ide.util.PropertiesComponent` service. It can be used for saving both application level values and project level values (stored in the workspace file). Roaming is disabled for `PropertiesComponent`, so use it only for temporary, non-roamable properties.
+If the only thing that your plugin needs to persist is a few simple values, the easiest way to do so is to use the [`com.intellij.ide.util.PropertiesComponent`](upsource:///platform/core-api/src/com/intellij/ide/util/PropertiesComponent.java) service. It can be used for saving both application level values and project level values (stored in the workspace file). Roaming is disabled for `PropertiesComponent`, so use it only for temporary, non-roamable properties.
 
 Use the `PropertiesComponent.getInstance()` method for storing application level values, and the `PropertiesComponent.getInstance(Project)` method for storing project-level values.
 
@@ -14,7 +14,7 @@ Since all plugins share the same namespace, it is highly recommended to prefix k
 
 ## Using PersistentStateComponent
 
-The `com.intellij.openapi.components.PersistentStateComponent` interface gives you the most flexibility for defining the values to be persisted, their format and storage location. In order to use it, you should mark a service or a component as implementing the `PersistentStateComponent` interface, define the state class, and specify the storage location using the `@com.intellij.openapi.components.State` annotation.
+The [`com.intellij.openapi.components.PersistentStateComponent`](upsource:///platform/core-api/src/com/intellij/openapi/components/PersistentStateComponent.java) interface gives you the most flexibility for defining the values to be persisted, their format and storage location. In order to use it, you should mark a service or a component as implementing the `PersistentStateComponent` interface, define the state class, and specify the storage location using the `@com.intellij.openapi.components.State` annotation.
 
 Note that instances of extensions cannot persist their state by implementing `PersistentStateComponent`. If your extension needs to have persistent state, you need to define a separate service responsible for managing that state.
 
@@ -111,9 +111,9 @@ The `getState()` method is called every time the settings are saved (for example
 
 ## Legacy API (JDOMExternalizable)
 
-Older IDEA components use the `JDOMExternalizable` interface for persisting state. It uses the `readExternal()` method for reading the state from a JDOM element, and `writeExternal()` to write the state to it.
+Older IDEA components use the [`JDOMExternalizable`](upsource:///platform/util/src/com/intellij/openapi/util/JDOMExternalizable.java) interface for persisting state. It uses the `readExternal()` method for reading the state from a JDOM element, and `writeExternal()` to write the state to it.
 
-`JDOMExternalizable` implementations can store the state in attributes and sub-elements manually, and/or use the `DefaultJDOMExternalizer` class to store the values of all public fields automatically.
+`JDOMExternalizable` implementations can store the state in attributes and sub-elements manually, and/or use the [`DefaultJDOMExternalizer`](upsource:///platform/util/src/com/intellij/openapi/util/DefaultJDOMExternalizer.java) class to store the values of all public fields automatically.
 
 When the component's class implements the `JDOMExternalizable` interface, the components save their state in the following files:
 

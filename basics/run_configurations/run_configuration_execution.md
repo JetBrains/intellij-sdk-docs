@@ -6,7 +6,7 @@ The standard execution of a run action goes through the following steps:
 
 * The user selects a *run configuration* (for example, by choosing one from the run configurations combobox) and an *executor*  (for example, by pressing a toolbar button created by the executor).
 * The *program runner* that will actually execute the process is selected, by polling all registered program runners and asking whether they can run the specified run profile with the specified executor ID.
-* The `ExecutionEnvironment` object is created. This object aggregates all the settings required to execute the process, as well as the selected `ProgramRunner`.
+* The [`ExecutionEnvironment`](upsource:///platform/lang-api/src/com/intellij/execution/runners/ExecutionEnvironment.java) object is created. This object aggregates all the settings required to execute the process, as well as the selected [`ProgramRunner`](upsource:///platform/lang-api/src/com/intellij/execution/runners/ProgramRunner.java).
 * `ProgramRunner.execute()` is called, receiving the executor and the execution environment.
 
 Implementations of `ProgramRunner.execute()` go through the following steps to execute the process:

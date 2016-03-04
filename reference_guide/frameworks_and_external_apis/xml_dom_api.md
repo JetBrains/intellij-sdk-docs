@@ -10,7 +10,7 @@ title: XML DOM API
 This article is intended for plugin writers who create custom web server integrations, or some UI for easy XML editing. It describes the *Document Object Model* (DOM) in IntelliJ Platform --- an easy way to work with DTD or Schema-based XML models.
 The following topics will be covered: working with DOM itself (reading/writing tags content, attributes, and subtags) and easy XML editing in the UI by connecting UI to DOM.
 
-It's assumed that the reader is familiar with Java 5, Swing, IntelliJ Platform XML PSI (classes `XmlTag`, `XmlFile`, `XmlTagValue`, etc.), IntelliJ Platform plugin development basics (application and project components, file editors).
+It's assumed that the reader is familiar with Java 5, Swing, IntelliJ Platform XML PSI (classes [`XmlTag`](upsource:///xml/xml-psi-api/src/com/intellij/psi/xml/XmlTag.java), [`XmlFile`](upsource:///xml/xml-psi-api/src/com/intellij/psi/xml/XmlFile.java), [`XmlTagValue`](upsource:///xml/xml-psi-api/src/com/intellij/psi/xml/XmlTagValue.java), etc.), IntelliJ Platform plugin development basics (application and project components, file editors).
 
 ## Introduction
 
@@ -55,7 +55,7 @@ if (document != null) {
 }
 ```
 
-Looks awful, doesn't it? But there's a better way to do the same thing. You just need to extend a special interface --- `DomElement`.
+Looks awful, doesn't it? But there's a better way to do the same thing. You just need to extend a special interface --- [`DomElement`](upsource:///xml/dom-openapi/src/com/intellij/util/xml/DomElement.java).
 
 For example, let's create several interfaces:
 
@@ -73,8 +73,8 @@ interface Bar extends com.intellij.util.xml.DomElement {
 }
 ```
 
-Next, you should create a `DomFileDescription` object, pass to its constructor the root tag name and root element interface, and register it with extension point `com.intellij.dom.fileDescription`.
-You can now get the file element from `DomManager`. To get the "239" value, you only have to write the following code:
+Next, you should create a [`DomFileDescription`](upsource:///xml/dom-openapi/src/com/intellij/util/xml/DomFileDescription.java) object, pass to its constructor the root tag name and root element interface, and register it with extension point `com.intellij.dom.fileDescription`.
+You can now get the file element from [`DomManager`](upsource:///xml/dom-openapi/src/com/intellij/util/xml/DomManager.java). To get the "239" value, you only have to write the following code:
 
 ```java
 DomManager manager = DomManager.getDomManager(project);
@@ -178,7 +178,7 @@ That's all\! Now you can get/set values, resolve this `PsiClass`, get its `Strin
 GenericAttributeValue<PsiClass> getSomeClass();
 ```
 
-The `DomNameStrategy` interface specifies how to convert accessor names to XML element names. Or more precisely, not the full accessor names, but rather the names minus any "get", "set" or "is" prefixes. The strategy class is specified in the `@NameStrategy` annotation in any DOM element interface. Then any descendants and children of this interface will use this strategy. The default strategy is `HyphenNameStrategy`, where words are delimited by hyphens (see sample above). Another common variant is `JavaNameStrategy` that capitalizes the first letter of each word, as in Java's naming convention. In our example, the attribute name would be "someClass".
+The [`DomNameStrategy`](upsource:///xml/dom-openapi/src/com/intellij/util/xml/DomNameStrategy.java) interface specifies how to convert accessor names to XML element names. Or more precisely, not the full accessor names, but rather the names minus any "get", "set" or "is" prefixes. The strategy class is specified in the `@NameStrategy` annotation in any DOM element interface. Then any descendants and children of this interface will use this strategy. The default strategy is [`HyphenNameStrategy`](upsource:///xml/dom-openapi/src/com/intellij/util/xml/HyphenNameStrategy.java), where words are delimited by hyphens (see sample above). Another common variant is [`JavaNameStrategy`](upsource:///xml/dom-openapi/src/com/intellij/util/xml/JavaNameStrategy.java) that capitalizes the first letter of each word, as in Java's naming convention. In our example, the attribute name would be "someClass".
 
 If attribute doesn't define a `PsiClass`, but some other custom `T` that needs a converter, you just need to specify the `@Convert` annotation to the getter.
 
@@ -211,7 +211,7 @@ EjbRelationshipRole getEjbRelationshipRole2();
 
 The first method will return the DOM element for the first subtag named `<ejb-relationship-role>`, and the second --- for the second one. Hence the term "fixed-number" for such children. According to DTD or Schema, there should be fixed number of subtags with the given name. Most often this fixed number is 1; in our case with the relations it is 2. Just like attributes, fixed-number children exist regardless of underlying tag existence. If you need to delete tags, it can be done with the help of the same `undefine()` method.
 
-For children of `GenericDomValue` type, you can also specify a converter, just as you can for attributes.
+For children of [`GenericDomValue`](upsource:///xml/dom-openapi/src/com/intellij/util/xml/GenericDomValue.java) type, you can also specify a converter, just as you can for attributes.
 
 ### Children: Collections
 
@@ -263,7 +263,7 @@ To add elements to such mixed collections, you should create "add" methods for e
 The index parameter in the last example means the index in the merged collection, not in the collection of tags named "bar".
 
 ### Dynamic Definition
-You can extend existing DOM model at runtime by implementing `com.intellij.util.xml.reflect.DomExtender<T>`. Register it in "extenderClass" attribute of EP `com.intellij.dom.extender`, where "domClass" specifies DOM class `<T>` to be extended. `DomExtensionsRegistrar` provides various methods to register dynamic attributes and children.
+You can extend existing DOM model at runtime by implementing `com.intellij.util.xml.reflect.DomExtender<T>`. Register it in "extenderClass" attribute of EP `com.intellij.dom.extender`, where "domClass" specifies DOM class `<T>` to be extended. [`DomExtensionsRegistrar`](upsource:///xml/dom-openapi/src/com/intellij/util/xml/reflect/DomExtensionsRegistrar.java) provides various methods to register dynamic attributes and children.
 
 _13.1_
 If the contributed elements depend on anything other than plain XML file content (used framework version, libraries in classpath, ...), make sure to return `false` from `DomExtender#supportsStubs`.
@@ -326,7 +326,7 @@ Newly created DOM elements are always correct and valid, so their `isValid()` me
 Element validity is very important, since you cannot invoke any methods on invalid elements (except, of course, `isValid()` itself).
 
 #### DOM Reflection
-DOM also has a kind of reflection, called "Generic Info". One would use it to be able to access children by tag names directly, instead of calling getter methods. See `DomGenericInfo` interface and `getGenericInfo()` methods in `DomElement` and `DomManager` for more information. There's also `DomElement.getXmlElementName()` method that returns the name of a corresponding tag or attribute.
+DOM also has a kind of reflection, called "Generic Info". One would use it to be able to access children by tag names directly, instead of calling getter methods. See [`DomGenericInfo`](upsource:///xml/dom-openapi/src/com/intellij/util/xml/reflect/DomGenericInfo.java) interface and `getGenericInfo()` methods in `DomElement` and `DomManager` for more information. There's also `DomElement.getXmlElementName()` method that returns the name of a corresponding tag or attribute.
 
 #### Presentation
 <!-- TODO: using @Presentation -->
@@ -414,7 +414,7 @@ extension point `com.intellij.dom.implementation` and DOM will generate at run-t
 Many frameworks require a set of XML configuration files ("fileset") to work as one model, so resolving/navigation works across all related DOM files.
 Depending on implementation/plugin, providing filesets implicitly (using existing framework's setup in project) or via user configuration (usually via dedicated `Facet`) can be achieved.
 
-Extend `DomModelFactory` (or `BaseDomModelFactory` for non-`Module` scope) and provide implementation of your `DomModel`. Usually you will want to add searcher/utility methods to work with your `DomModel` implementation.
+Extend [`DomModelFactory`](upsource:///xml/dom-openapi/src/com/intellij/util/xml/model/impl/DomModelFactory.java) (or `BaseDomModelFactory` for non-`Module` scope) and provide implementation of your `DomModel`. Usually you will want to add searcher/utility methods to work with your `DomModel` implementation.
 Example can be found in Struts 2 plugin (package `com.intellij.struts2.dom.struts.model`).
 
 ### DOM Stubs

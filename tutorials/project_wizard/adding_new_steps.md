@@ -4,7 +4,7 @@ title: Adding New Steps to Project Wizard
 
 This tutorial shows how to add a extra-step to the Project Wizard in order to provide additional project configuration settings.
 
-## Pre-requirements.
+## Pre-requirements
 
 Create an empty plugin project.
 See 
@@ -25,7 +25,7 @@ Register a new *moduleBuilder* extension point in the `plugin.xml` configuration
 
 ## 2. Create a Custom Module Builder
 
-Extend `ModuleBuilder` class to provide custom configuration.
+Extend [`ModuleBuilder`](upsource:///platform/lang-api/src/com/intellij/ide/util/projectWizard/ModuleBuilder.java) class to provide custom configuration.
 
 ```java
 public class DemoModuleWizardStep extends ModuleBuilder {

@@ -8,7 +8,7 @@ For example, a JSPX page has a separate PSI tree for the Java code in it (`PsiJa
 
 Each of the PSI trees covers the entire contents of the file, and contains special "outer language elements" in the places where contents in a different language can be found.
 
-A `FileViewProvider` instance corresponds to a single `VirtualFile`, a single `Document`, and can be used to retrieve multiple `PsiFile` instances.
+A [`FileViewProvider`](upsource:///platform/core-api/src/com/intellij/psi/FileViewProvider.java) instance corresponds to a single `VirtualFile`, a single `Document`, and can be used to retrieve multiple `PsiFile` instances.
 
 ## How do I get an FVP?
 
@@ -38,4 +38,4 @@ To declare the extension to the `fileType.fileViewProviderFactory` extension poi
 </extensions>
 ```
 
-Where `%file_type%` refers to the type of the file being created (for example, "JFS"), and the `%class_name%` refers to the name of your Java class that implements the `FileViewProviderFactory` interface.
+Where `%file_type%` refers to the type of the file being created (for example, "JFS"), and the `%class_name%` refers to the name of your Java class that implements the [`FileViewProviderFactory`](upsource:///platform/core-api/src/com/intellij/psi/FileViewProviderFactory.java) interface.

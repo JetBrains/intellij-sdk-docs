@@ -5,7 +5,7 @@ title: Supporting Module Types
 *IntelliJ Platform* provides a set of standard module types which can be chosen, however, you might need to create a module of a type that haven't been supported yet.
 This tutorial shows how to register a new module and link it to the project creation procedure and the UI.
 
-## Pre-requirements.
+## Pre-requirements
 
 Create an empty plugin project.
 See 

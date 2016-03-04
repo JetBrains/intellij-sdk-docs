@@ -10,7 +10,7 @@ To get familiar with the concept of a Run Configuration refer
 section of 
 [IntelliJ IDEA Web Help](https://www.jetbrains.com/idea/help/intellij-idea.html)
 
-## Pre-requirements.
+## Pre-requirements
 
 Create an empty plugin project.
 See 

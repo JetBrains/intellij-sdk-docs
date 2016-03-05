@@ -59,7 +59,7 @@ It has three main attributes:
 
 *  `FilePath` specifying the file of which this is a revision. If some version of the file exists locally, this should be a local path.
 
-*  `VcsRevisionNumber` specifying the revision number of the revision, or `VcsRevisionNumber.NULL` if the revision exists only locally.
+*  [`VcsRevisionNumber`](upsource:///platform/vcs-api/vcs-api-core/src/com/intellij/openapi/vcs/history/VcsRevisionNumber.java) specifying the revision number of the revision, or `VcsRevisionNumber.NULL` if the revision exists only locally.
 
 *  Content of the revision.
 

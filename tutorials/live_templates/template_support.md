@@ -34,7 +34,7 @@ Copy this file into your plugin's resources, (eg. `project/resource/liveTemplate
 
 ## Implement DefaultLiveTemplatesProvider
 
-The `DefaultLiveTemplatesProvider` tells us where to find the Live Template settings file. Make sure to include the full path to the file, relative to the resources directory, excluding the file name.
+The [`DefaultLiveTemplatesProvider`](upsource:///platform/lang-impl/src/com/intellij/codeInsight/template/impl/DefaultLiveTemplatesProvider.java) tells us where to find the Live Template settings file. Make sure to include the full path to the file, relative to the resources directory, excluding the file name.
 
 ```java
 {% include /code_samples/live_templates/src/MarkdownTemplateProvider.java %}
@@ -42,7 +42,7 @@ The `DefaultLiveTemplatesProvider` tells us where to find the Live Template sett
 
 ## Implement TemplateContextType
 
-A `TemplateContextType` tells us where the live template is applicable.
+A [`TemplateContextType`](upsource:///platform/lang-api/src/com/intellij/codeInsight/template/TemplateContextType.java) tells us where the live template is applicable.
 
 ```java
 {% include /code_samples/live_templates/src/MarkdownContext.java %}

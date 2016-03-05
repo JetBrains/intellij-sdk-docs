@@ -6,7 +6,7 @@ A _module_ is a discrete unit of functionality that can be run, tested, and debu
 
 ## Getting the current module
 
-To determine the module in the project in question to which the specified `VirtualFile` belongs use `ModuleUtilCore#findModuleForFile`. Use `ModuleUtilCore#findModuleForPsiElement` to find the module for a given `PsiElement`.
+To determine the module in the project in question to which the specified [`VirtualFile`](upsource:///platform/core-api/src/com/intellij/openapi/vfs/VirtualFile.java) belongs use `ModuleUtilCore#findModuleForFile`. Use `ModuleUtilCore#findModuleForPsiElement` to find the module for a given `PsiElement`.
 
 ## Accessing module roots
 

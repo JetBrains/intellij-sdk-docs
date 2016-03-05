@@ -11,8 +11,8 @@ The standard execution of a run action goes through the following steps:
 
 Implementations of `ProgramRunner.execute()` go through the following steps to execute the process:
 
-* `RunProfile.getState()` method is called to create a `RunProfileState` object, describing a process about to be started. At this stage, the command line parameters, environment variables and other information required to start the process is initialized.
-* `RunProfileState.execute()` is called. It starts the process, attaches a `ProcessHandler` to its input and output streams, creates a console to display the process output, and returns an `ExecutionResult` object aggregating the console and the process handler.
+* `RunProfile.getState()` method is called to create a [`RunProfileState`](upsource:///platform/lang-api/src/com/intellij/execution/configurations/RunProfileState.java) object, describing a process about to be started. At this stage, the command line parameters, environment variables and other information required to start the process is initialized.
+* `RunProfileState.execute()` is called. It starts the process, attaches a `ProcessHandler` to its input and output streams, creates a console to display the process output, and returns an [`ExecutionResult`](upsource:///platform/lang-api/src/com/intellij/execution/ExecutionResult.java) object aggregating the console and the process handler.
 * The `RunContentBuilder` object is created and invoked to display the execution console in a tab of the Run or Debug toolwindow.
 
 ## Executor
@@ -48,4 +48,4 @@ Two common filter implementations you may want to reuse are [`RegexpFilter`](ups
 
 ## Starting a run configuration from code
 
-If you have an existing run configuration that you need to execute, the easiest way to do so is to use [`ProgramRunnerUtil.executeConfiguration()`](upsource:///platform/lang-impl/src/com/intellij/execution/ProgramRunnerUtil.java)<!--#L110-->. The method takes a `Project`, a `RunnerAndConfigurationSettings`, as well as an `Executor`. To get the `RunnerAndConfigurationSettings` for an existing configuration, you can use, for example, `RunManager.getConfigurationSettings(ConfigurationType)`. As the last parameter, you normally pass either `DefaultRunExecutor.getRunExecutorInstance()` or `DefaultDebugExecutor.getDebugExecutorInstance()`.
+If you have an existing run configuration that you need to execute, the easiest way to do so is to use [`ProgramRunnerUtil.executeConfiguration()`](upsource:///platform/lang-impl/src/com/intellij/execution/ProgramRunnerUtil.java)<!--#L110-->. The method takes a [`Project`](upsource:///platform/core-api/src/com/intellij/openapi/project/Project.java), a [`RunnerAndConfigurationSettings`](upsource:///platform/lang-api/src/com/intellij/execution/RunnerAndConfigurationSettings.java), as well as an [`Executor`](upsource:///platform/lang-api/src/com/intellij/execution/Executor.java). To get the `RunnerAndConfigurationSettings` for an existing configuration, you can use, for example, `RunManager.getConfigurationSettings(ConfigurationType)`. As the last parameter, you normally pass either `DefaultRunExecutor.getRunExecutorInstance()` or `DefaultDebugExecutor.getDebugExecutorInstance()`.

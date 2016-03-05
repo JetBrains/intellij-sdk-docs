@@ -19,11 +19,11 @@ Let's annotate usages of our properties within Java code and provide navigation 
     For example, do not return class marker info if `getLineMarkerInfo()` was called for a method.
 
 *  Please return relevant line marker info for as small element as possible.
-     For example, do not return method marker for `PsiMethod`. Instead, return it for the `PsiIdentifier` which is a name of this method.
+     For example, do not return method marker for [`PsiMethod`](upsource:///java/java-psi-api/src/com/intellij/psi/PsiMethod.java). Instead, return it for the [`PsiIdentifier`](upsource:///java/java-psi-api/src/com/intellij/psi/PsiIdentifier.java) which is a name of this method.
 
 ### Even more technical details:
 
-What happens when LineMarkerProvider returns something for too big PsiElement?
+What happens when `LineMarkerProvider` returns something for too big PsiElement?
 
 ```java
 public class MyLineMarkerProvider implements LineMarkerProvider {

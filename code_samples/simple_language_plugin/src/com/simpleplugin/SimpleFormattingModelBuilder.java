@@ -11,23 +11,30 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public class SimpleFormattingModelBuilder implements FormattingModelBuilder {
-    @NotNull
-    @Override
-    public FormattingModel createModel(PsiElement element, CodeStyleSettings settings) {
-        return FormattingModelProvider.createFormattingModelForPsiFile(element.getContainingFile(),
-                new SimpleBlock(element.getNode(), Wrap.createWrap(WrapType.NONE, false),
-                        Alignment.createAlignment(), createSpaceBuilder(settings)), settings);
-    }
+  @NotNull
+  @Override
+  public FormattingModel createModel(PsiElement element, CodeStyleSettings settings) {
+    return FormattingModelProvider.createFormattingModelForPsiFile(element.getContainingFile(),
+                                                                   new SimpleBlock(element.getNode(),
+                                                                                   Wrap.createWrap(WrapType.NONE,
+                                                                                                   false),
+                                                                                   Alignment.createAlignment(),
+                                                                                   createSpaceBuilder(settings)),
+                                                                   settings);
+  }
 
-    private static SpacingBuilder createSpaceBuilder(CodeStyleSettings settings) {
-        return new SpacingBuilder(settings, SimpleLanguage.INSTANCE).
-                around(SimpleTypes.SEPARATOR).spaceIf(settings.SPACE_AROUND_ASSIGNMENT_OPERATORS).
-                before(SimpleTypes.PROPERTY).none();
-    }
+  private static SpacingBuilder createSpaceBuilder(CodeStyleSettings settings) {
+    return new SpacingBuilder(settings, SimpleLanguage.INSTANCE).
+                                                                    around(SimpleTypes.SEPARATOR)
+                                                                .spaceIf(settings.SPACE_AROUND_ASSIGNMENT_OPERATORS)
+                                                                .
+                                                                    before(SimpleTypes.PROPERTY)
+                                                                .none();
+  }
 
-    @Nullable
-    @Override
-    public TextRange getRangeAffectingIndent(PsiFile file, int offset, ASTNode elementAtOffset) {
-        return null;
-    }
+  @Nullable
+  @Override
+  public TextRange getRangeAffectingIndent(PsiFile file, int offset, ASTNode elementAtOffset) {
+    return null;
+  }
 }

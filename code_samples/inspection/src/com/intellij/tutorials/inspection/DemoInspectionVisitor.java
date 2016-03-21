@@ -8,13 +8,13 @@ import com.intellij.psi.PsiPlainTextFile;
  * @author Anna Bulenkova
  */
 public class DemoInspectionVisitor extends PsiElementVisitor {
-    @Override
-    public void visitElement(PsiElement element) {
-        super.visitElement(element);
-    }
+  @Override
+  public void visitElement(PsiElement element) {
+    super.visitElement(element);
+  }
 
-    @Override
-    public void visitPlainTextFile(PsiPlainTextFile file) {
-        super.visitPlainTextFile(file);
-    }
+  @Override
+  public void visitPlainTextFile(PsiPlainTextFile file) {
+    super.visitPlainTextFile(file);
+  }
 }

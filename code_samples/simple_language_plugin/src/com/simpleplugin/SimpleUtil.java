@@ -16,42 +16,44 @@ import java.util.Collections;
 import java.util.List;
 
 public class SimpleUtil {
-    public static List<SimpleProperty> findProperties(Project project, String key) {
-        List<SimpleProperty> result = null;
-        Collection<VirtualFile> virtualFiles = FileBasedIndex.getInstance().getContainingFiles(FileTypeIndex.NAME, SimpleFileType.INSTANCE,
-                GlobalSearchScope.allScope(project));
-        for (VirtualFile virtualFile : virtualFiles) {
-            SimpleFile simpleFile = (SimpleFile) PsiManager.getInstance(project).findFile(virtualFile);
-            if (simpleFile != null) {
-                SimpleProperty[] properties = PsiTreeUtil.getChildrenOfType(simpleFile, SimpleProperty.class);
-                if (properties != null) {
-                    for (SimpleProperty property : properties) {
-                        if (key.equals(property.getKey())) {
-                            if (result == null) {
-                                result = new ArrayList<SimpleProperty>();
-                            }
-                            result.add(property);
-                        }
-                    }
-                }
+  public static List<SimpleProperty> findProperties(Project project, String key) {
+    List<SimpleProperty> result = null;
+    Collection<VirtualFile> virtualFiles =
+        FileBasedIndex.getInstance().getContainingFiles(FileTypeIndex.NAME, SimpleFileType.INSTANCE,
+                                                        GlobalSearchScope.allScope(project));
+    for (VirtualFile virtualFile : virtualFiles) {
+      SimpleFile simpleFile = (SimpleFile) PsiManager.getInstance(project).findFile(virtualFile);
+      if (simpleFile != null) {
+        SimpleProperty[] properties = PsiTreeUtil.getChildrenOfType(simpleFile, SimpleProperty.class);
+        if (properties != null) {
+          for (SimpleProperty property : properties) {
+            if (key.equals(property.getKey())) {
+              if (result == null) {
+                result = new ArrayList<SimpleProperty>();
+              }
+              result.add(property);
             }
+          }
         }
-        return result != null ? result : Collections.<SimpleProperty>emptyList();
+      }
     }
+    return result != null ? result : Collections.<SimpleProperty>emptyList();
+  }
 
-    public static List<SimpleProperty> findProperties(Project project) {
-        List<SimpleProperty> result = new ArrayList<SimpleProperty>();
-        Collection<VirtualFile> virtualFiles = FileBasedIndex.getInstance().getContainingFiles(FileTypeIndex.NAME, SimpleFileType.INSTANCE,
-                GlobalSearchScope.allScope(project));
-        for (VirtualFile virtualFile : virtualFiles) {
-            SimpleFile simpleFile = (SimpleFile) PsiManager.getInstance(project).findFile(virtualFile);
-            if (simpleFile != null) {
-                SimpleProperty[] properties = PsiTreeUtil.getChildrenOfType(simpleFile, SimpleProperty.class);
-                if (properties != null) {
-                    Collections.addAll(result, properties);
-                }
-            }
+  public static List<SimpleProperty> findProperties(Project project) {
+    List<SimpleProperty> result = new ArrayList<SimpleProperty>();
+    Collection<VirtualFile> virtualFiles =
+        FileBasedIndex.getInstance().getContainingFiles(FileTypeIndex.NAME, SimpleFileType.INSTANCE,
+                                                        GlobalSearchScope.allScope(project));
+    for (VirtualFile virtualFile : virtualFiles) {
+      SimpleFile simpleFile = (SimpleFile) PsiManager.getInstance(project).findFile(virtualFile);
+      if (simpleFile != null) {
+        SimpleProperty[] properties = PsiTreeUtil.getChildrenOfType(simpleFile, SimpleProperty.class);
+        if (properties != null) {
+          Collections.addAll(result, properties);
         }
-        return result;
+      }
     }
+    return result;
+  }
 }

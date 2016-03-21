@@ -15,26 +15,27 @@ import javax.swing.*;
  * @author Anna Bulenkova
  */
 public class DemoModuleWizardStep extends ModuleBuilder {
-    public void setupRootModel(ModifiableRootModel modifiableRootModel) throws ConfigurationException {
+  public void setupRootModel(ModifiableRootModel modifiableRootModel) throws ConfigurationException {
 
-    }
+  }
 
-    public ModuleType getModuleType() {
-        return ModuleType.EMPTY; //or it could be other module type
-    }
+  public ModuleType getModuleType() {
+    return ModuleType.EMPTY; //or it could be other module type
+  }
 
-    @Override
-    public ModuleWizardStep[] createWizardSteps(@NotNull WizardContext wizardContext, @NotNull ModulesProvider modulesProvider) {
-        return new ModuleWizardStep[]{new ModuleWizardStep() {
-            @Override
-            public JComponent getComponent() {
-                  return new JLabel("Put your content here");
-            }
+  @Override
+  public ModuleWizardStep[] createWizardSteps(@NotNull WizardContext wizardContext,
+                                              @NotNull ModulesProvider modulesProvider) {
+    return new ModuleWizardStep[]{new ModuleWizardStep() {
+      @Override
+      public JComponent getComponent() {
+        return new JLabel("Put your content here");
+      }
 
-            @Override
-            public void updateDataModel() {
+      @Override
+      public void updateDataModel() {
 
-            }
-        }};
-    }
+      }
+    }};
+  }
 }

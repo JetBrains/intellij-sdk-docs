@@ -6,7 +6,7 @@ import com.intellij.codeInspection.InspectionToolProvider;
  * @author Anna Bulenkova
  */
 public class DemoInspectionToolProvider implements InspectionToolProvider {
-    public Class[] getInspectionClasses() {
-        return new Class[] { DemoCodeInspection.class};
-    }
+  public Class[] getInspectionClasses() {
+    return new Class[]{DemoCodeInspection.class};
+  }
 }

@@ -3,7 +3,6 @@ package com.intellij.codeInspection;
 import com.intellij.codeInsight.daemon.GroupNames;
 import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.util.Ref;
 import com.intellij.psi.*;
 import com.intellij.psi.tree.IElementType;
 import com.intellij.ui.DocumentAdapter;
@@ -14,8 +13,6 @@ import org.jetbrains.annotations.NotNull;
 import javax.swing.*;
 import javax.swing.event.DocumentEvent;
 import java.awt.*;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.StringTokenizer;
 
 /**
@@ -26,13 +23,17 @@ public class ComparingReferencesInspection extends BaseJavaLocalInspectionTool {
 
   private final LocalQuickFix myQuickFix = new MyQuickFix();
 
-  @SuppressWarnings({"WeakerAccess"}) @NonNls public String CHECKED_CLASSES = "java.lang.String;java.util.Date";
-  @NonNls private static final String DESCRIPTION_TEMPLATE = InspectionsBundle.message("inspection.comparing.references.problem.descriptor");
+  @SuppressWarnings({"WeakerAccess"})
+  @NonNls
+  public String CHECKED_CLASSES = "java.lang.String;java.util.Date";
+  @NonNls
+  private static final String DESCRIPTION_TEMPLATE =
+      InspectionsBundle.message("inspection.comparing.references.problem.descriptor");
 
   @NotNull
   public String getDisplayName() {
 
-      return "'==' or '!=' instead of 'equals()'";
+    return "'==' or '!=' instead of 'equals()'";
   }
 
   @NotNull
@@ -57,32 +58,33 @@ public class ComparingReferencesInspection extends BaseJavaLocalInspectionTool {
     return false;
   }
 
-    @NotNull
-    @Override
-    public PsiElementVisitor buildVisitor(@NotNull final ProblemsHolder holder, boolean isOnTheFly) {
-     return new JavaElementVisitor() {
+  @NotNull
+  @Override
+  public PsiElementVisitor buildVisitor(@NotNull final ProblemsHolder holder, boolean isOnTheFly) {
+    return new JavaElementVisitor() {
 
-         @Override
-         public void visitReferenceExpression(PsiReferenceExpression psiReferenceExpression) {
-         }
+      @Override
+      public void visitReferenceExpression(PsiReferenceExpression psiReferenceExpression) {
+      }
 
 
-      @Override public void visitBinaryExpression(PsiBinaryExpression expression) {
-          super.visitBinaryExpression(expression);
+      @Override
+      public void visitBinaryExpression(PsiBinaryExpression expression) {
+        super.visitBinaryExpression(expression);
         IElementType opSign = expression.getOperationTokenType();
-          if (opSign == JavaTokenType.EQEQ || opSign == JavaTokenType.NE) {
-              PsiExpression lOperand = expression.getLOperand();
-              PsiExpression rOperand = expression.getROperand();
-              if (rOperand == null || isNullLiteral(lOperand) || isNullLiteral(rOperand)) return;
+        if (opSign == JavaTokenType.EQEQ || opSign == JavaTokenType.NE) {
+          PsiExpression lOperand = expression.getLOperand();
+          PsiExpression rOperand = expression.getROperand();
+          if (rOperand == null || isNullLiteral(lOperand) || isNullLiteral(rOperand)) return;
 
-              PsiType lType = lOperand.getType();
-              PsiType rType = rOperand.getType();
+          PsiType lType = lOperand.getType();
+          PsiType rType = rOperand.getType();
 
-              if (isCheckedType(lType) || isCheckedType(rType)) {
-                  holder.registerProblem(expression,
-                          DESCRIPTION_TEMPLATE, myQuickFix);
-              }
+          if (isCheckedType(lType) || isCheckedType(rType)) {
+            holder.registerProblem(expression,
+                                   DESCRIPTION_TEMPLATE, myQuickFix);
           }
+        }
       }
     };
   }
@@ -94,14 +96,14 @@ public class ComparingReferencesInspection extends BaseJavaLocalInspectionTool {
   private static class MyQuickFix implements LocalQuickFix {
     @NotNull
     public String getName() {
-        // The test (see the TestThisPlugin class) uses this string to identify the quick fix action.
+      // The test (see the TestThisPlugin class) uses this string to identify the quick fix action.
       return InspectionsBundle.message("inspection.comparing.references.use.quickfix");
     }
 
 
     public void applyFix(@NotNull Project project, @NotNull ProblemDescriptor descriptor) {
       try {
-        PsiBinaryExpression binaryExpression = (PsiBinaryExpression)descriptor.getPsiElement();
+        PsiBinaryExpression binaryExpression = (PsiBinaryExpression) descriptor.getPsiElement();
         IElementType opSign = binaryExpression.getOperationTokenType();
         PsiExpression lExpr = binaryExpression.getLOperand();
         PsiExpression rExpr = binaryExpression.getROperand();
@@ -109,20 +111,20 @@ public class ComparingReferencesInspection extends BaseJavaLocalInspectionTool {
           return;
 
         PsiElementFactory factory = JavaPsiFacade.getInstance(project).getElementFactory();
-        PsiMethodCallExpression equalsCall = (PsiMethodCallExpression)factory.createExpressionFromText("a.equals(b)", null);
+        PsiMethodCallExpression equalsCall =
+            (PsiMethodCallExpression) factory.createExpressionFromText("a.equals(b)", null);
 
         equalsCall.getMethodExpression().getQualifierExpression().replace(lExpr);
         equalsCall.getArgumentList().getExpressions()[0].replace(rExpr);
 
-        PsiExpression result = (PsiExpression)binaryExpression.replace(equalsCall);
+        PsiExpression result = (PsiExpression) binaryExpression.replace(equalsCall);
 
         if (opSign == JavaTokenType.NE) {
-          PsiPrefixExpression negation = (PsiPrefixExpression)factory.createExpressionFromText("!a", null);
+          PsiPrefixExpression negation = (PsiPrefixExpression) factory.createExpressionFromText("!a", null);
           negation.getOperand().replace(result);
           result.replace(negation);
         }
-      }
-      catch (IncorrectOperationException e) {
+      } catch (IncorrectOperationException e) {
         LOG.error(e);
       }
     }

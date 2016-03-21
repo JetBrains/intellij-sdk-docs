@@ -3,9 +3,9 @@
   <description>Inspection for (probably) inappropriate use of equality relation operation.</description>
   <version>1.0</version>
   <vendor>JetBrains</vendor>
-    <!--
-    <idea-version since-build="3000"/>
-    -->
+  <!--
+  <idea-version since-build="3000"/>
+  -->
 
   <extensions defaultExtensionNs="com.intellij">
     <inspectionToolProvider implementation="com.intellij.codeInspection.ComparingReferencesProvider"/>

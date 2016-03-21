@@ -1,15 +1,15 @@
 // This is a generated file. Not intended for manual editing.
 package com.simpleplugin.parser;
 
+import com.intellij.lang.ASTNode;
+import com.intellij.lang.LightPsiParser;
 import com.intellij.lang.PsiBuilder;
 import com.intellij.lang.PsiBuilder.Marker;
-import static com.simpleplugin.psi.SimpleTypes.*;
-import static com.intellij.lang.parser.GeneratedParserUtilBase.*;
-import com.intellij.psi.tree.IElementType;
-import com.intellij.lang.ASTNode;
-import com.intellij.psi.tree.TokenSet;
 import com.intellij.lang.PsiParser;
-import com.intellij.lang.LightPsiParser;
+import com.intellij.psi.tree.IElementType;
+
+import static com.intellij.lang.parser.GeneratedParserUtilBase.*;
+import static com.simpleplugin.psi.SimpleTypes.*;
 
 @SuppressWarnings({"SimplifiableIfStatement", "UnusedAssignment"})
 public class SimpleParser implements PsiParser, LightPsiParser {
@@ -25,8 +25,7 @@ public class SimpleParser implements PsiParser, LightPsiParser {
     Marker m = enter_section_(b, 0, _COLLAPSE_, null);
     if (t == PROPERTY) {
       r = property(b, 0);
-    }
-    else {
+    } else {
       r = parse_root_(t, b, 0);
     }
     exit_section_(b, 0, m, t, r, true, TRUE_CONDITION);

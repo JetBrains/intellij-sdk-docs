@@ -16,25 +16,27 @@ import java.util.Collection;
  * @author Anna Bulenkova
  */
 public class TextOnlyTreeStructureProvider implements TreeStructureProvider {
-    @NotNull
-    @Override
-    public Collection<AbstractTreeNode> modify(@NotNull AbstractTreeNode parent, @NotNull Collection<AbstractTreeNode> children, ViewSettings settings) {
-        ArrayList<AbstractTreeNode> nodes = new ArrayList<AbstractTreeNode>();
-        for (AbstractTreeNode child : children) {
-            if (child instanceof PsiFileNode) {
-                VirtualFile file = ((PsiFileNode) child).getVirtualFile();
-                if (file != null && !file.isDirectory() && !(file.getFileType() instanceof PlainTextFileType)) {
-                    continue;
-                }
-            }
-            nodes.add(child);
+  @NotNull
+  @Override
+  public Collection<AbstractTreeNode> modify(@NotNull AbstractTreeNode parent,
+                                             @NotNull Collection<AbstractTreeNode> children,
+                                             ViewSettings settings) {
+    ArrayList<AbstractTreeNode> nodes = new ArrayList<AbstractTreeNode>();
+    for (AbstractTreeNode child : children) {
+      if (child instanceof PsiFileNode) {
+        VirtualFile file = ((PsiFileNode) child).getVirtualFile();
+        if (file != null && !file.isDirectory() && !(file.getFileType() instanceof PlainTextFileType)) {
+          continue;
         }
-        return nodes;
+      }
+      nodes.add(child);
     }
+    return nodes;
+  }
 
-    @Nullable
-    @Override
-    public Object getData(Collection<AbstractTreeNode> collection, String s) {
-        return null;
-    }
+  @Nullable
+  @Override
+  public Object getData(Collection<AbstractTreeNode> collection, String s) {
+    return null;
+  }
 }

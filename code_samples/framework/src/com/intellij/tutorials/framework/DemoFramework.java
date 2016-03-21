@@ -18,54 +18,57 @@ import javax.swing.*;
  * @author Anna Bulenkova
  */
 public class DemoFramework extends FrameworkTypeEx {
-    public static final String FRAMEWORK_ID = "Demo";
-    protected DemoFramework() {
-        super(FRAMEWORK_ID);
-    }
+  public static final String FRAMEWORK_ID = "Demo";
 
-    @NotNull
-    @Override
-    public FrameworkSupportInModuleProvider createProvider() {
-        return  new FrameworkSupportInModuleProvider() {
-            @NotNull
-            @Override
-            public FrameworkTypeEx getFrameworkType() {
-                return DemoFramework.this;
-            }
+  protected DemoFramework() {
+    super(FRAMEWORK_ID);
+  }
 
-            @NotNull
-            @Override
-            public FrameworkSupportInModuleConfigurable createConfigurable(@NotNull FrameworkSupportModel model) {
-                return new FrameworkSupportInModuleConfigurable() {
-                    @Nullable
-                    @Override
-                    public JComponent createComponent() {
-                        return new JCheckBox("Extra Option");
-                    }
+  @NotNull
+  @Override
+  public FrameworkSupportInModuleProvider createProvider() {
+    return new FrameworkSupportInModuleProvider() {
+      @NotNull
+      @Override
+      public FrameworkTypeEx getFrameworkType() {
+        return DemoFramework.this;
+      }
 
-                    @Override
-                    public void addSupport(@NotNull Module module, @NotNull ModifiableRootModel model, @NotNull ModifiableModelsProvider provider) {
-                        //do what you want here: setup a library, generate a specific file, etc
-                    }
-                };
-            }
+      @NotNull
+      @Override
+      public FrameworkSupportInModuleConfigurable createConfigurable(@NotNull FrameworkSupportModel model) {
+        return new FrameworkSupportInModuleConfigurable() {
+          @Nullable
+          @Override
+          public JComponent createComponent() {
+            return new JCheckBox("Extra Option");
+          }
 
-            @Override
-            public boolean isEnabledForModuleType(@NotNull ModuleType type) {
-                return true;
-            }
+          @Override
+          public void addSupport(@NotNull Module module,
+                                 @NotNull ModifiableRootModel model,
+                                 @NotNull ModifiableModelsProvider provider) {
+            //do what you want here: setup a library, generate a specific file, etc
+          }
         };
-    }
+      }
 
-    @NotNull
-    @Override
-    public String getPresentableName() {
-        return "Demo Framework";
-    }
+      @Override
+      public boolean isEnabledForModuleType(@NotNull ModuleType type) {
+        return true;
+      }
+    };
+  }
 
-    @NotNull
-    @Override
-    public Icon getIcon() {
-        return AllIcons.Providers.Apache;
-    }
+  @NotNull
+  @Override
+  public String getPresentableName() {
+    return "Demo Framework";
+  }
+
+  @NotNull
+  @Override
+  public Icon getIcon() {
+    return AllIcons.Providers.Apache;
+  }
 }

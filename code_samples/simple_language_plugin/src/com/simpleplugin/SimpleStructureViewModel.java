@@ -9,24 +9,24 @@ import com.simpleplugin.psi.SimpleFile;
 import org.jetbrains.annotations.NotNull;
 
 public class SimpleStructureViewModel extends StructureViewModelBase implements
-        StructureViewModel.ElementInfoProvider {
-    public SimpleStructureViewModel(PsiFile psiFile) {
-        super(psiFile, new SimpleStructureViewElement(psiFile));
-    }
+    StructureViewModel.ElementInfoProvider {
+  public SimpleStructureViewModel(PsiFile psiFile) {
+    super(psiFile, new SimpleStructureViewElement(psiFile));
+  }
 
-    @NotNull
-    public Sorter[] getSorters() {
-        return new Sorter[] {Sorter.ALPHA_SORTER};
-    }
+  @NotNull
+  public Sorter[] getSorters() {
+    return new Sorter[]{Sorter.ALPHA_SORTER};
+  }
 
 
-    @Override
-    public boolean isAlwaysShowsPlus(StructureViewTreeElement element) {
-        return false;
-    }
+  @Override
+  public boolean isAlwaysShowsPlus(StructureViewTreeElement element) {
+    return false;
+  }
 
-    @Override
-    public boolean isAlwaysLeaf(StructureViewTreeElement element) {
-        return element instanceof SimpleFile;
-    }
+  @Override
+  public boolean isAlwaysLeaf(StructureViewTreeElement element) {
+    return element instanceof SimpleFile;
+  }
 }

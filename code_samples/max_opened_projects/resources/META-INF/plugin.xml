@@ -11,9 +11,9 @@
 
   <project-components>
     <!-- Add your project components here -->
-      <component>
-          <implementation-class>MyPackage.MaxProject</implementation-class>
-      </component>
+    <component>
+      <implementation-class>MyPackage.MaxProject</implementation-class>
+    </component>
   </project-components>
 
   <actions>
@@ -22,8 +22,8 @@
 
   <extensions defaultExtensionNs="com.intellij">
     <!-- Add your extensions here -->
-      <applicationService serviceInterface="MyPackage.MyCounter" serviceImplementation="MyPackage.MyCounter">
-          
-      </applicationService>
+    <applicationService serviceInterface="MyPackage.MyCounter" serviceImplementation="MyPackage.MyCounter">
+
+    </applicationService>
   </extensions>
 </idea-plugin>

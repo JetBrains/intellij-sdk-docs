@@ -22,88 +22,88 @@ import javax.swing.tree.DefaultTreeModel;
  * @author Anna Bulenkova
  */
 public class ImagesProjectViewPane extends AbstractProjectViewPSIPane {
-    public static final String ID = "IMAGES";
+  public static final String ID = "IMAGES";
 
-    protected ImagesProjectViewPane(Project project) {
-        super(project);
-    }
+  protected ImagesProjectViewPane(Project project) {
+    super(project);
+  }
 
-    @Override
-    public String getTitle() {
-        return "Images";
-    }
+  @Override
+  public String getTitle() {
+    return "Images";
+  }
 
-    @Override
-    public javax.swing.Icon getIcon() {
-        return AllIcons.FileTypes.Custom;
-    }
+  @Override
+  public javax.swing.Icon getIcon() {
+    return AllIcons.FileTypes.Custom;
+  }
 
-    @NotNull
-    @Override
-    public String getId() {
-        return ID;
-    }
+  @NotNull
+  @Override
+  public String getId() {
+    return ID;
+  }
 
-    @Override
-    public int getWeight() {
+  @Override
+  public int getWeight() {
+    return 10;
+  }
+
+  @Override
+  public SelectInTarget createSelectInTarget() {
+    return new ProjectViewSelectInTarget(myProject) {
+
+      @Override
+      public String toString() {
+        return "images";
+      }
+
+      @Nullable
+      @Override
+      public String getMinorViewId() {
+        return "images";
+      }
+
+      @Override
+      public float getWeight() {
         return 10;
-    }
+      }
+    };
+  }
 
-    @Override
-    public SelectInTarget createSelectInTarget() {
-        return new ProjectViewSelectInTarget(myProject) {
+  @Override
+  protected ProjectAbstractTreeStructureBase createStructure() {
+    return new ProjectTreeStructure(myProject, ID) {
+      @Override
+      protected AbstractTreeNode createRoot(Project project, ViewSettings settings) {
+        return new ImagesProjectNode(project);
+      }
 
-            @Override
-            public String toString() {
-                return "images";
-            }
+      @Override
+      public Object[] getChildElements(Object element) {
+        return super.getChildElements(element);
+      }
+    };
+  }
 
-            @Nullable
-            @Override
-            public String getMinorViewId() {
-                return "images";
-            }
+  @Override
+  protected ProjectViewTree createTree(DefaultTreeModel model) {
+    return new ProjectViewTree(myProject, model) {
+      @Override
+      public DefaultMutableTreeNode getSelectedNode() {
+        return ImagesProjectViewPane.this.getSelectedNode();
+      }
 
-            @Override
-            public float getWeight() {
-                return 10;
-            }
-        };
-    }
+      @Override
+      public boolean isRootVisible() {
+        return true;
+      }
+    };
+  }
 
-    @Override
-    protected ProjectAbstractTreeStructureBase createStructure() {
-        return new ProjectTreeStructure(myProject, ID) {
-            @Override
-            protected AbstractTreeNode createRoot(Project project, ViewSettings settings) {
-                return new ImagesProjectNode(project);
-            }
-
-            @Override
-            public Object[] getChildElements(Object element) {
-                return super.getChildElements(element);
-            }
-        };
-    }
-
-    @Override
-    protected ProjectViewTree createTree(DefaultTreeModel model) {
-        return new ProjectViewTree(myProject, model) {
-            @Override
-            public DefaultMutableTreeNode getSelectedNode() {
-                return ImagesProjectViewPane.this.getSelectedNode();
-            }
-
-            @Override
-            public boolean isRootVisible() {
-                return true;
-            }
-        };
-    }
-
-    @Override
-    protected AbstractTreeUpdater createTreeUpdater(AbstractTreeBuilder builder) {
-        return new AbstractTreeUpdater(builder);
-    }
+  @Override
+  protected AbstractTreeUpdater createTreeUpdater(AbstractTreeBuilder builder) {
+    return new AbstractTreeUpdater(builder);
+  }
 }
 

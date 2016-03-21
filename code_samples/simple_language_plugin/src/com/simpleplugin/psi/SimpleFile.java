@@ -10,23 +10,23 @@ import org.jetbrains.annotations.NotNull;
 import javax.swing.*;
 
 public class SimpleFile extends PsiFileBase {
-    public SimpleFile(@NotNull FileViewProvider viewProvider) {
-        super(viewProvider, SimpleLanguage.INSTANCE);
-    }
+  public SimpleFile(@NotNull FileViewProvider viewProvider) {
+    super(viewProvider, SimpleLanguage.INSTANCE);
+  }
 
-    @NotNull
-    @Override
-    public FileType getFileType() {
-        return SimpleFileType.INSTANCE;
-    }
+  @NotNull
+  @Override
+  public FileType getFileType() {
+    return SimpleFileType.INSTANCE;
+  }
 
-    @Override
-    public String toString() {
-        return "Simple File";
-    }
+  @Override
+  public String toString() {
+    return "Simple File";
+  }
 
-    @Override
-    public Icon getIcon(int flags) {
-        return super.getIcon(flags);
-    }
+  @Override
+  public Icon getIcon(int flags) {
+    return super.getIcon(flags);
+  }
 }

@@ -1,10 +1,10 @@
 // This is a generated file. Not intended for manual editing.
 package com.simpleplugin.psi;
 
-import com.intellij.psi.tree.IElementType;
-import com.intellij.psi.PsiElement;
 import com.intellij.lang.ASTNode;
-import com.simpleplugin.psi.impl.*;
+import com.intellij.psi.PsiElement;
+import com.intellij.psi.tree.IElementType;
+import com.simpleplugin.psi.impl.SimplePropertyImpl;
 
 public interface SimpleTypes {
 
@@ -19,7 +19,7 @@ public interface SimpleTypes {
   class Factory {
     public static PsiElement createElement(ASTNode node) {
       IElementType type = node.getElementType();
-       if (type == PROPERTY) {
+      if (type == PROPERTY) {
         return new SimplePropertyImpl(node);
       }
       throw new AssertionError("Unknown element type: " + type);

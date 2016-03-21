@@ -17,53 +17,54 @@ import com.simpleplugin.psi.SimpleFile;
 import com.simpleplugin.psi.SimpleTypes;
 import org.jetbrains.annotations.NotNull;
 
-public class SimpleParserDefinition implements ParserDefinition{
-    public static final TokenSet WHITE_SPACES = TokenSet.create(TokenType.WHITE_SPACE);
-    public static final TokenSet COMMENTS = TokenSet.create(SimpleTypes.COMMENT);
+public class SimpleParserDefinition implements ParserDefinition {
+  public static final TokenSet WHITE_SPACES = TokenSet.create(TokenType.WHITE_SPACE);
+  public static final TokenSet COMMENTS = TokenSet.create(SimpleTypes.COMMENT);
 
-    public static final IFileElementType FILE = new IFileElementType(Language.<SimpleLanguage>findInstance(SimpleLanguage.class));
+  public static final IFileElementType FILE =
+      new IFileElementType(Language.<SimpleLanguage>findInstance(SimpleLanguage.class));
 
-    @NotNull
-    @Override
-    public Lexer createLexer(Project project) {
-        return new SimpleLexerAdapter();
-    }
+  @NotNull
+  @Override
+  public Lexer createLexer(Project project) {
+    return new SimpleLexerAdapter();
+  }
 
-    @NotNull
-    public TokenSet getWhitespaceTokens() {
-        return WHITE_SPACES;
-    }
+  @NotNull
+  public TokenSet getWhitespaceTokens() {
+    return WHITE_SPACES;
+  }
 
-    @NotNull
-    public TokenSet getCommentTokens() {
-        return COMMENTS;
-    }
+  @NotNull
+  public TokenSet getCommentTokens() {
+    return COMMENTS;
+  }
 
-    @NotNull
-    public TokenSet getStringLiteralElements() {
-        return TokenSet.EMPTY;
-    }
+  @NotNull
+  public TokenSet getStringLiteralElements() {
+    return TokenSet.EMPTY;
+  }
 
-    @NotNull
-    public PsiParser createParser(final Project project) {
-        return new SimpleParser();
-    }
+  @NotNull
+  public PsiParser createParser(final Project project) {
+    return new SimpleParser();
+  }
 
-    @Override
-    public IFileElementType getFileNodeType() {
-        return FILE;
-    }
+  @Override
+  public IFileElementType getFileNodeType() {
+    return FILE;
+  }
 
-    public PsiFile createFile(FileViewProvider viewProvider) {
-        return new SimpleFile(viewProvider);
-    }
+  public PsiFile createFile(FileViewProvider viewProvider) {
+    return new SimpleFile(viewProvider);
+  }
 
-    public SpaceRequirements spaceExistanceTypeBetweenTokens(ASTNode left, ASTNode right) {
-        return SpaceRequirements.MAY;
-    }
+  public SpaceRequirements spaceExistanceTypeBetweenTokens(ASTNode left, ASTNode right) {
+    return SpaceRequirements.MAY;
+  }
 
-    @NotNull
-    public PsiElement createElement(ASTNode node) {
-        return SimpleTypes.Factory.createElement(node);
-    }
+  @NotNull
+  public PsiElement createElement(ASTNode node) {
+    return SimpleTypes.Factory.createElement(node);
+  }
 }

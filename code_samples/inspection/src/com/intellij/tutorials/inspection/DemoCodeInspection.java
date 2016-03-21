@@ -9,16 +9,16 @@ import org.jetbrains.annotations.NotNull;
  * @author Anna Bulenkova
  */
 public class DemoCodeInspection extends LocalInspectionTool {
-    @Nls
-    @NotNull
-    @Override
-    public String getDisplayName() {
-        return "Demo Inspection";
-    }
+  @Nls
+  @NotNull
+  @Override
+  public String getDisplayName() {
+    return "Demo Inspection";
+  }
 
-    @NotNull
-    @Override
-    public DemoInspectionVisitor buildVisitor(@NotNull ProblemsHolder holder, boolean isOnTheFly) {
-        return new DemoInspectionVisitor();
-    }
+  @NotNull
+  @Override
+  public DemoInspectionVisitor buildVisitor(@NotNull ProblemsHolder holder, boolean isOnTheFly) {
+    return new DemoInspectionVisitor();
+  }
 }

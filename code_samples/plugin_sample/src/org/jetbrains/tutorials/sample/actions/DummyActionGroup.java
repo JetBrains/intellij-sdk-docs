@@ -9,9 +9,9 @@ import org.jetbrains.annotations.NotNull;
  * @author Anna Bulenkova
  */
 public class DummyActionGroup extends ActionGroup {
-    @NotNull
-    @Override
-    public AnAction[] getChildren(AnActionEvent anActionEvent) {
-        return new GroupedAction[0];
-    }
+  @NotNull
+  @Override
+  public AnAction[] getChildren(AnActionEvent anActionEvent) {
+    return new GroupedAction[0];
+  }
 }

@@ -11,37 +11,37 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public class SimpleCodeStyleSettingsProvider extends CodeStyleSettingsProvider {
-    @Override
-    public CustomCodeStyleSettings createCustomSettings(CodeStyleSettings settings) {
-        return new SimpleCodeStyleSettings(settings);
-    }
+  @Override
+  public CustomCodeStyleSettings createCustomSettings(CodeStyleSettings settings) {
+    return new SimpleCodeStyleSettings(settings);
+  }
 
-    @Nullable
-    @Override
-    public String getConfigurableDisplayName() {
-        return "Simple";
-    }
+  @Nullable
+  @Override
+  public String getConfigurableDisplayName() {
+    return "Simple";
+  }
 
-    @NotNull
-    @Override
-    public Configurable createSettingsPage(CodeStyleSettings settings, CodeStyleSettings originalSettings) {
-        return new CodeStyleAbstractConfigurable(settings, originalSettings, "Simple") {
-            @Override
-            protected CodeStyleAbstractPanel createPanel(CodeStyleSettings settings) {
-                return new SimpleCodeStyleMainPanel(getCurrentSettings(), settings);
-            }
+  @NotNull
+  @Override
+  public Configurable createSettingsPage(CodeStyleSettings settings, CodeStyleSettings originalSettings) {
+    return new CodeStyleAbstractConfigurable(settings, originalSettings, "Simple") {
+      @Override
+      protected CodeStyleAbstractPanel createPanel(CodeStyleSettings settings) {
+        return new SimpleCodeStyleMainPanel(getCurrentSettings(), settings);
+      }
 
-            @Nullable
-            @Override
-            public String getHelpTopic() {
-                return null;
-            }
-        };
-    }
+      @Nullable
+      @Override
+      public String getHelpTopic() {
+        return null;
+      }
+    };
+  }
 
-    private static class SimpleCodeStyleMainPanel extends TabbedLanguageCodeStylePanel {
-        public SimpleCodeStyleMainPanel(CodeStyleSettings currentSettings, CodeStyleSettings settings) {
-            super(SimpleLanguage.INSTANCE, currentSettings, settings);
-        }
+  private static class SimpleCodeStyleMainPanel extends TabbedLanguageCodeStylePanel {
+    public SimpleCodeStyleMainPanel(CodeStyleSettings currentSettings, CodeStyleSettings settings) {
+      super(SimpleLanguage.INSTANCE, currentSettings, settings);
     }
+  }
 }

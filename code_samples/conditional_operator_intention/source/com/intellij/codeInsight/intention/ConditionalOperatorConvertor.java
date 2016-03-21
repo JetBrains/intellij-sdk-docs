@@ -13,7 +13,8 @@ import org.jetbrains.annotations.Nullable;
 /**
  * @author dsl
  */
-@NonNls public class ConditionalOperatorConvertor extends PsiElementBaseIntentionAction implements IntentionAction {
+@NonNls
+public class ConditionalOperatorConvertor extends PsiElementBaseIntentionAction implements IntentionAction {
 
   @NotNull
   public String getText() {
@@ -30,10 +31,10 @@ import org.jetbrains.annotations.Nullable;
     if (!element.isWritable()) return false;
 
     if (element instanceof PsiJavaToken) {
-      final PsiJavaToken token = (PsiJavaToken)element;
+      final PsiJavaToken token = (PsiJavaToken) element;
       if (token.getTokenType() != JavaTokenType.QUEST) return false;
       if (token.getParent() instanceof PsiConditionalExpression) {
-        final PsiConditionalExpression conditionalExpression = (PsiConditionalExpression)token.getParent();
+        final PsiConditionalExpression conditionalExpression = (PsiConditionalExpression) token.getParent();
         if (conditionalExpression.getThenExpression() == null
             || conditionalExpression.getElseExpression() == null) {
           return false;
@@ -63,12 +64,13 @@ import org.jetbrains.annotations.Nullable;
 
     // Maintain declrations
     if (originalStatement instanceof PsiDeclarationStatement) {
-      final PsiDeclarationStatement declaration = (PsiDeclarationStatement)originalStatement;
+      final PsiDeclarationStatement declaration = (PsiDeclarationStatement) originalStatement;
       final PsiElement[] declaredElements = declaration.getDeclaredElements();
       PsiLocalVariable variable = null;
       for (PsiElement declaredElement : declaredElements) {
-        if (declaredElement instanceof PsiLocalVariable && PsiTreeUtil.isAncestor(declaredElement, conditionalExpression, true)) {
-          variable = (PsiLocalVariable)declaredElement;
+        if (declaredElement instanceof PsiLocalVariable &&
+            PsiTreeUtil.isAncestor(declaredElement, conditionalExpression, true)) {
+          variable = (PsiLocalVariable) declaredElement;
           break;
         }
       }
@@ -77,31 +79,31 @@ import org.jetbrains.annotations.Nullable;
       final Object marker = new Object();
       PsiTreeUtil.mark(conditionalExpression, marker);
       PsiExpressionStatement statement =
-        (PsiExpressionStatement)factory.createStatementFromText(variable.getName() + " = 0;", null);
-      statement = (PsiExpressionStatement)CodeStyleManager.getInstance(project).reformat(statement);
-      ((PsiAssignmentExpression)statement.getExpression()).getRExpression().replace(variable.getInitializer());
+          (PsiExpressionStatement) factory.createStatementFromText(variable.getName() + " = 0;", null);
+      statement = (PsiExpressionStatement) CodeStyleManager.getInstance(project).reformat(statement);
+      ((PsiAssignmentExpression) statement.getExpression()).getRExpression().replace(variable.getInitializer());
       variable.getInitializer().delete();
       final PsiElement variableParent = variable.getParent();
       originalStatement = variableParent.getParent().addAfter(statement, variableParent);
-      conditionalExpression = (PsiConditionalExpression)PsiTreeUtil.releaseMark(originalStatement, marker);
+      conditionalExpression = (PsiConditionalExpression) PsiTreeUtil.releaseMark(originalStatement, marker);
     }
 
     // create then and else branches
     final PsiElement[] originalElements = new PsiElement[]{originalStatement, conditionalExpression};
-    final PsiExpression condition = (PsiExpression)conditionalExpression.getCondition().copy();
+    final PsiExpression condition = (PsiExpression) conditionalExpression.getCondition().copy();
     final PsiElement[] thenElements = PsiTreeUtil.copyElements(originalElements);
     final PsiElement[] elseElements = PsiTreeUtil.copyElements(originalElements);
     thenElements[1].replace(conditionalExpression.getThenExpression());
     elseElements[1].replace(conditionalExpression.getElseExpression());
 
-    PsiIfStatement statement = (PsiIfStatement)factory.createStatementFromText("if (true) { a = b } else { c = d }",
-                                                                               null);
-    statement = (PsiIfStatement)CodeStyleManager.getInstance(project).reformat(statement);
+    PsiIfStatement statement = (PsiIfStatement) factory.createStatementFromText("if (true) { a = b } else { c = d }",
+                                                                                null);
+    statement = (PsiIfStatement) CodeStyleManager.getInstance(project).reformat(statement);
     statement.getCondition().replace(condition);
-    statement = (PsiIfStatement)originalStatement.replace(statement);
+    statement = (PsiIfStatement) originalStatement.replace(statement);
 
-    ((PsiBlockStatement)statement.getThenBranch()).getCodeBlock().getStatements()[0].replace(thenElements[0]);
-    ((PsiBlockStatement)statement.getElseBranch()).getCodeBlock().getStatements()[0].replace(elseElements[0]);
+    ((PsiBlockStatement) statement.getThenBranch()).getCodeBlock().getStatements()[0].replace(thenElements[0]);
+    ((PsiBlockStatement) statement.getElseBranch()).getCodeBlock().getStatements()[0].replace(elseElements[0]);
   }
 
   public boolean startInWriteAction() {

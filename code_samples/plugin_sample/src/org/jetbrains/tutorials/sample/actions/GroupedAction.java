@@ -8,8 +8,8 @@ import org.jetbrains.annotations.NotNull;
  * @author Anna Bulenkova
  */
 public class GroupedAction extends AnAction {
-    @Override
-    public void actionPerformed(@NotNull AnActionEvent anActionEvent) {
+  @Override
+  public void actionPerformed(@NotNull AnActionEvent anActionEvent) {
 
-    }
+  }
 }

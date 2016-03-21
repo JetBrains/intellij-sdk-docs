@@ -8,12 +8,12 @@ import com.intellij.openapi.ui.Messages;
  * Created by breandan on 11/25/2015.
  */
 public class HelloAction extends AnAction {
-    public HelloAction() {
-        super("Hello");
-    }
+  public HelloAction() {
+    super("Hello");
+  }
 
-    public void actionPerformed(AnActionEvent event) {
-        Project project = event.getData(PlatformDataKeys.PROJECT);
-        Messages.showMessageDialog(project, "Hello world!", "Greeting", Messages.getInformationIcon());
-    }
+  public void actionPerformed(AnActionEvent event) {
+    Project project = event.getData(PlatformDataKeys.PROJECT);
+    Messages.showMessageDialog(project, "Hello world!", "Greeting", Messages.getInformationIcon());
+  }
 }

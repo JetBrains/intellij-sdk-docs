@@ -13,19 +13,19 @@ import org.jetbrains.annotations.Nullable;
  * @author Anna Bulenkova
  */
 public class DemoModuleBuilder extends ModuleBuilder {
-    @Override
-    public void setupRootModel(ModifiableRootModel model) throws ConfigurationException {
+  @Override
+  public void setupRootModel(ModifiableRootModel model) throws ConfigurationException {
 
-    }
+  }
 
-    @Override
-    public ModuleType getModuleType() {
-        return DemoModuleType.getInstance();
-    }
+  @Override
+  public ModuleType getModuleType() {
+    return DemoModuleType.getInstance();
+  }
 
-    @Nullable
-    @Override
-    public ModuleWizardStep getCustomOptionsStep(WizardContext context, Disposable parentDisposable) {
-        return new DemoModuleWizardStep();
-    }
+  @Nullable
+  @Override
+  public ModuleWizardStep getCustomOptionsStep(WizardContext context, Disposable parentDisposable) {
+    return new DemoModuleWizardStep();
+  }
 }

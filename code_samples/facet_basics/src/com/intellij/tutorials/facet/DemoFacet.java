@@ -1,7 +1,6 @@
 package com.intellij.tutorials.facet;
 
-import com.intellij.facet.Facet;
-import com.intellij.facet.FacetType;
+import com.intellij.facet.*;
 import com.intellij.openapi.module.Module;
 
 /**

@@ -1,18 +1,13 @@
 package com.simpleplugin;
 
 import com.intellij.ide.structureView.StructureViewTreeElement;
-import com.intellij.ide.util.treeView.smartTree.SortableTreeElement;
-import com.intellij.ide.util.treeView.smartTree.TreeElement;
-import com.intellij.navigation.ItemPresentation;
-import com.intellij.navigation.NavigationItem;
-import com.intellij.psi.PsiElement;
-import com.intellij.psi.PsiNamedElement;
+import com.intellij.ide.util.treeView.smartTree.*;
+import com.intellij.navigation.*;
+import com.intellij.psi.*;
 import com.intellij.psi.util.PsiTreeUtil;
-import com.simpleplugin.psi.SimpleFile;
-import com.simpleplugin.psi.SimpleProperty;
+import com.simpleplugin.psi.*;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class SimpleStructureViewElement implements StructureViewTreeElement, SortableTreeElement {
   private PsiElement element;

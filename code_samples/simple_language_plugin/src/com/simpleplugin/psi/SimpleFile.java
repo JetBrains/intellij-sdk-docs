@@ -3,8 +3,7 @@ package com.simpleplugin.psi;
 import com.intellij.extapi.psi.PsiFileBase;
 import com.intellij.openapi.fileTypes.FileType;
 import com.intellij.psi.FileViewProvider;
-import com.simpleplugin.SimpleFileType;
-import com.simpleplugin.SimpleLanguage;
+import com.simpleplugin.*;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;

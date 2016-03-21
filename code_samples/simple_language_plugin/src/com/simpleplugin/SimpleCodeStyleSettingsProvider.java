@@ -1,14 +1,9 @@
 package com.simpleplugin;
 
-import com.intellij.application.options.CodeStyleAbstractConfigurable;
-import com.intellij.application.options.CodeStyleAbstractPanel;
-import com.intellij.application.options.TabbedLanguageCodeStylePanel;
+import com.intellij.application.options.*;
 import com.intellij.openapi.options.Configurable;
-import com.intellij.psi.codeStyle.CodeStyleSettings;
-import com.intellij.psi.codeStyle.CodeStyleSettingsProvider;
-import com.intellij.psi.codeStyle.CustomCodeStyleSettings;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
+import com.intellij.psi.codeStyle.*;
+import org.jetbrains.annotations.*;
 
 public class SimpleCodeStyleSettingsProvider extends CodeStyleSettingsProvider {
   @Override

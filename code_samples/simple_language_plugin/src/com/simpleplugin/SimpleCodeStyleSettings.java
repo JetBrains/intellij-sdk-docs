@@ -1,7 +1,6 @@
 package com.simpleplugin;
 
-import com.intellij.psi.codeStyle.CodeStyleSettings;
-import com.intellij.psi.codeStyle.CustomCodeStyleSettings;
+import com.intellij.psi.codeStyle.*;
 
 public class SimpleCodeStyleSettings extends CustomCodeStyleSettings {
   public SimpleCodeStyleSettings(CodeStyleSettings settings) {

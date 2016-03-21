@@ -1,7 +1,6 @@
 package org.jetbrains.tutorials.actions;
 
-import com.intellij.openapi.actionSystem.AnAction;
-import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.openapi.actionSystem.*;
 
 /**
  * @author Anna Bulenkova

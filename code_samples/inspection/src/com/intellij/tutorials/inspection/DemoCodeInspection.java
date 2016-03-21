@@ -1,9 +1,7 @@
 package com.intellij.tutorials.inspection;
 
-import com.intellij.codeInspection.LocalInspectionTool;
-import com.intellij.codeInspection.ProblemsHolder;
-import org.jetbrains.annotations.Nls;
-import org.jetbrains.annotations.NotNull;
+import com.intellij.codeInspection.*;
+import org.jetbrains.annotations.*;
 
 /**
  * @author Anna Bulenkova

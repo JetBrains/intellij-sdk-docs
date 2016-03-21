@@ -1,22 +1,16 @@
 package com.simpleplugin;
 
 import com.intellij.lang.ASTNode;
-import com.intellij.lang.folding.FoldingBuilderEx;
-import com.intellij.lang.folding.FoldingDescriptor;
-import com.intellij.openapi.editor.Document;
-import com.intellij.openapi.editor.FoldingGroup;
+import com.intellij.lang.folding.*;
+import com.intellij.openapi.editor.*;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.TextRange;
-import com.intellij.psi.PsiElement;
-import com.intellij.psi.PsiLiteralExpression;
+import com.intellij.psi.*;
 import com.intellij.psi.util.PsiTreeUtil;
 import com.simpleplugin.psi.SimpleProperty;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
+import org.jetbrains.annotations.*;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
+import java.util.*;
 
 public class SimpleFoldingBuilder extends FoldingBuilderEx {
   @NotNull
@@ -44,7 +38,7 @@ public class SimpleFoldingBuilder extends FoldingBuilderEx {
             public String getPlaceholderText() {
               // IMPORTANT: keys can come with no values, so a test for null is needed
               // IMPORTANT: Convert embedded \n to backslash n, so that the string will look like it has LF embedded
-                // in it and embedded " to escaped "
+              // in it and embedded " to escaped "
               String valueOf = properties.get(0).getValue();
               return valueOf == null ? "" : valueOf.replaceAll("\n", "\\n").replaceAll("\"", "\\\\\"");
             }

@@ -5,15 +5,12 @@ import com.intellij.codeInsight.generation.actions.CommentByLineCommentAction;
 import com.intellij.openapi.command.WriteCommandAction;
 import com.intellij.openapi.vfs.newvfs.impl.VfsRootAccess;
 import com.intellij.psi.PsiElement;
-import com.intellij.psi.codeStyle.CodeStyleManager;
-import com.intellij.psi.codeStyle.CodeStyleSettingsManager;
+import com.intellij.psi.codeStyle.*;
 import com.intellij.testFramework.fixtures.LightCodeInsightFixtureTestCase;
 import com.intellij.usageView.UsageInfo;
 import com.simpleplugin.psi.SimpleProperty;
 
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.List;
+import java.util.*;
 
 public class SimpleCodeInsightTest extends LightCodeInsightFixtureTestCase {
   @Override

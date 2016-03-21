@@ -1,13 +1,11 @@
 package com.simpleplugin;
 
-import com.intellij.navigation.ChooseByNameContributor;
-import com.intellij.navigation.NavigationItem;
+import com.intellij.navigation.*;
 import com.intellij.openapi.project.Project;
 import com.simpleplugin.psi.SimpleProperty;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class SimpleChooseByNameContributor implements ChooseByNameContributor {
   @NotNull

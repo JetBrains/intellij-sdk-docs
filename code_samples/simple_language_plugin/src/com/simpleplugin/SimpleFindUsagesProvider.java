@@ -1,15 +1,11 @@
 package com.simpleplugin;
 
-import com.intellij.lang.cacheBuilder.DefaultWordsScanner;
-import com.intellij.lang.cacheBuilder.WordsScanner;
+import com.intellij.lang.cacheBuilder.*;
 import com.intellij.lang.findUsages.FindUsagesProvider;
-import com.intellij.psi.PsiElement;
-import com.intellij.psi.PsiNamedElement;
+import com.intellij.psi.*;
 import com.intellij.psi.tree.TokenSet;
-import com.simpleplugin.psi.SimpleProperty;
-import com.simpleplugin.psi.SimpleTypes;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
+import com.simpleplugin.psi.*;
+import org.jetbrains.annotations.*;
 
 public class SimpleFindUsagesProvider implements FindUsagesProvider {
   @Nullable

@@ -1,14 +1,10 @@
 package com.intellij.tutorials.facet;
 
 import com.intellij.facet.FacetConfiguration;
-import com.intellij.facet.ui.FacetEditorContext;
-import com.intellij.facet.ui.FacetEditorTab;
-import com.intellij.facet.ui.FacetValidatorsManager;
-import com.intellij.openapi.util.InvalidDataException;
-import com.intellij.openapi.util.WriteExternalException;
+import com.intellij.facet.ui.*;
+import com.intellij.openapi.util.*;
 import org.jdom.Element;
-import org.jetbrains.annotations.Nls;
-import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.*;
 
 import javax.swing.*;
 import java.awt.*;

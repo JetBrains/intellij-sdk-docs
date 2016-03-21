@@ -1,8 +1,6 @@
 package com.intellij.tutorials.inspection;
 
-import com.intellij.psi.PsiElement;
-import com.intellij.psi.PsiElementVisitor;
-import com.intellij.psi.PsiPlainTextFile;
+import com.intellij.psi.*;
 
 /**
  * @author Anna Bulenkova

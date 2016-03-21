@@ -1,8 +1,7 @@
 package com.simpleplugin;
 
 import com.intellij.lexer.Lexer;
-import com.intellij.psi.impl.cache.impl.BaseFilterLexer;
-import com.intellij.psi.impl.cache.impl.OccurrenceConsumer;
+import com.intellij.psi.impl.cache.impl.*;
 import com.intellij.psi.search.UsageSearchContext;
 
 public class SimpleFilterLexer extends BaseFilterLexer {

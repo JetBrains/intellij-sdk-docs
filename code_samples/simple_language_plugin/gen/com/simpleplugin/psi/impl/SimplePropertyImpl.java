@@ -3,10 +3,8 @@ package com.simpleplugin.psi.impl;
 
 import com.intellij.lang.ASTNode;
 import com.intellij.navigation.ItemPresentation;
-import com.intellij.psi.PsiElement;
-import com.intellij.psi.PsiElementVisitor;
-import com.simpleplugin.psi.SimpleProperty;
-import com.simpleplugin.psi.SimpleVisitor;
+import com.intellij.psi.*;
+import com.simpleplugin.psi.*;
 import org.jetbrains.annotations.NotNull;
 
 public class SimplePropertyImpl extends SimpleNamedElementImpl implements SimpleProperty {

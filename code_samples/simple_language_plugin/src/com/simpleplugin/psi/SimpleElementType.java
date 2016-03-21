@@ -2,8 +2,7 @@ package com.simpleplugin.psi;
 
 import com.intellij.psi.tree.IElementType;
 import com.simpleplugin.SimpleLanguage;
-import org.jetbrains.annotations.NonNls;
-import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.*;
 
 public class SimpleElementType extends IElementType {
   public SimpleElementType(@NotNull @NonNls String debugName) {

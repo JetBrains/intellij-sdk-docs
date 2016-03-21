@@ -1,8 +1,7 @@
 package com.simpleplugin;
 
 import com.intellij.lang.Language;
-import com.intellij.psi.codeStyle.CodeStyleSettingsCustomizable;
-import com.intellij.psi.codeStyle.LanguageCodeStyleSettingsProvider;
+import com.intellij.psi.codeStyle.*;
 import org.jetbrains.annotations.NotNull;
 
 public class SimpleLanguageCodeStyleSettingsProvider extends LanguageCodeStyleSettingsProvider {

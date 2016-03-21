@@ -1,8 +1,7 @@
 package com.simpleplugin.psi;
 
 import com.intellij.openapi.project.Project;
-import com.intellij.psi.PsiElement;
-import com.intellij.psi.PsiFileFactory;
+import com.intellij.psi.*;
 import com.simpleplugin.SimpleFileType;
 
 public class SimpleElementFactory {

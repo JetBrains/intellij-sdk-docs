@@ -2,12 +2,9 @@ package com.simpleplugin.psi.impl;
 
 import com.intellij.lang.ASTNode;
 import com.intellij.navigation.ItemPresentation;
-import com.intellij.psi.PsiElement;
-import com.intellij.psi.PsiFile;
+import com.intellij.psi.*;
 import com.simpleplugin.SimpleIcons;
-import com.simpleplugin.psi.SimpleElementFactory;
-import com.simpleplugin.psi.SimpleProperty;
-import com.simpleplugin.psi.SimpleTypes;
+import com.simpleplugin.psi.*;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;

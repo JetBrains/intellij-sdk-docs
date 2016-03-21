@@ -69,7 +69,7 @@ A set of Rake tasks, a Make-like programs implemented in Ruby, provides short co
     rake preview
     ```
 *  Open the address
-   [http://127.0.0.1:4000/](http://127.0.0.1:4000/)
+   [http://localhost:4000/intellij/sdk/docs/](http://localhost:4000/intellij/sdk/docs/)
    in your browser.
    **Note:** Make sure you haven't change default Jekyll port during installation.
 

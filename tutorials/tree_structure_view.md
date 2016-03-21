@@ -20,7 +20,7 @@ to know how to do it.
 ## 1. Register Custom TreeStructureView Provider
 
 Add new *treeStructureProvider* extension to the
-[plugin.xml](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/tree_structure_provider/META-INF/plugin.xml)
+[plugin.xml](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/tree_structure_provider/resources/META-INF/plugin.xml)
 
 ```java
 <extensions defaultExtensionNs="com.intellij">
@@ -54,19 +54,7 @@ To implement Tree Structure nodes filtering logic, override modify() method.
 The example below shows how to filter out all the Project View nodes except those which correspond text files and directories.
 
 ```java
-public Collection<AbstractTreeNode> modify(@NotNull AbstractTreeNode parent, @NotNull Collection<AbstractTreeNode> children, ViewSettings settings) {
-    ArrayList<AbstractTreeNode> nodes = new ArrayList<AbstractTreeNode>();
-    for (AbstractTreeNode child : children) {
-        if (child instanceof PsiFileNode) {
-            VirtualFile file = ((PsiFileNode) child).getVirtualFile();
-            if (file != null && !file.isDirectory() && !(file.getFileType() instanceof PlainTextFileType)) {
-                continue;
-            }
-        }
-        nodes.add(child);
-    }
-    return nodes;
-}
+{% include /code_samples/tree_structure_provider/src/org/jetbrains/tutorials/tree/structure/TextOnlyTreeStructureProvider.java %}
 ```
 
 ## 4. Compile and Run the Plugin

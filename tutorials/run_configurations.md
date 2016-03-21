@@ -20,7 +20,7 @@ to know how to do it.
 ## 1. Register a New Configuration Type
 
 Add new *configurationType* extension to the 
-[plugin.xml](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/run_configuration/META-INF/plugin.xml)
+[plugin.xml](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/run_configuration/resources/META-INF/plugin.xml)
 
 ```xml
 <extensions defaultExtensionNs="com.intellij">

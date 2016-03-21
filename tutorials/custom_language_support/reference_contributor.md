@@ -51,7 +51,7 @@ public static PsiElement getNameIdentifier(SimpleProperty element) {
 ### 10.3. Define an element factory
 
 ```java
-{% include /code_samples/simpleplugin/psi/impl/SimpleElementFactory.java %}
+{% include /code_samples/simple_language_plugin/src/com/simpleplugin/psi/SimpleElementFactory.java %}
 ```
 
 ### 10.4. Update grammar and regenerate the parser

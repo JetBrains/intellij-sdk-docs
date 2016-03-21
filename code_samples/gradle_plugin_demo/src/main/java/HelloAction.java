@@ -2,9 +2,6 @@ import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.Messages;
 
-/**
- * Created by breandan on 11/25/2015.
- */
 public class HelloAction extends AnAction {
   public HelloAction() {
     super("Hello");

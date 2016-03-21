@@ -9,7 +9,7 @@ Annotator helps highlight and annotate any code based on specific rules.
 In this tutorial we will annotate usages of our properties within Java code.
 Let's consider a literal which starts with *"simple:"* as a usage of our property.
 
-```
+```java
 {% include /code_samples/simple_language_plugin/src/com/simpleplugin/SimpleAnnotator.java %}
 ```
 

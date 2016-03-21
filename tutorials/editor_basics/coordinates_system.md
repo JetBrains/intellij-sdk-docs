@@ -101,7 +101,7 @@ public class EditorAreaIllustration extends AnAction {
 ```
 
 ## 2.6. Displaying position values
-To display the actual values of logical anf visual positions we add an
+To display the actual values of logical and visual positions we add an
 `Messages.showInfoMessage()` call that will show them in form of notification after the action is performed.
 
 ```java

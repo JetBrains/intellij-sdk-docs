@@ -46,9 +46,8 @@ public class ConditionalOperatorConvertor extends PsiElementBaseIntentionAction 
     return false;
   }
 
-  public void invoke(@NotNull Project project, Editor editor, PsiFile file) throws IncorrectOperationException {
+  public void invoke(@NotNull Project project, Editor editor, PsiElement element) throws IncorrectOperationException {
     final int offset = editor.getCaretModel().getOffset();
-    final PsiElement element = file.findElementAt(offset);
     PsiConditionalExpression conditionalExpression = PsiTreeUtil.getParentOfType(element,
                                                                                  PsiConditionalExpression.class, false);
     if (conditionalExpression == null) return;

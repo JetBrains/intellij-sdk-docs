@@ -28,7 +28,8 @@ git clone --depth 1 git://git.jetbrains.org/idea/community.git idea
 The [master](https://github.com/JetBrains/intellij-community/tree/master) branch currently contains the code for the most recent development version of IntelliJ IDEA. Source code of older releases of IntelliJ IDEA can be found in the following branches:
 
 | IntelliJ Product version | Branch name/number                                                |
-|--------------------------|-------------------------------------------------------------------|
+|:-------------------------|:------------------------------------------------------------------|
+| 16.0.x                   | [145](https://github.com/JetBrains/intellij-community/tree/145)   |
 | 15.0.x                   | [143](https://github.com/JetBrains/intellij-community/tree/143)   |
 | 14.1.x                   | [141](https://github.com/JetBrains/intellij-community/tree/141)   |
 | 14.0.x                   | [139](https://github.com/JetBrains/intellij-community/tree/139)   |

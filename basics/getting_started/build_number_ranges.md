@@ -4,6 +4,8 @@ title: Build Number Ranges
 
 Use this reference of build number ranges to specify the correct `since-build` and `until-build` values in your plugin descriptor.
 
+In the beginning of 2016, following branch `145.*` of the IntelliJ Platform, JetBrains IDEs switched to a new versioning scheme, with the following format: `YYYY.R.N.M*`, where `YYYY` represents the last four digits of the current Gregorian calendar, and `R` represents the yearly major release, resetting to `1` at the beginning of each new calendar year.
+
 Starting with IntelliJ IDEA 9 beta, a multi-part build number is used, such as:
 
 ```
@@ -26,6 +28,7 @@ Multi-part build numbers can also be used in the `since-build` and `until-build`
 
 The following branch numbers are used for IntelliJ Platform-based products and build numbers of recent IDE versions:
 
+* branch 145 - IntelliJ IDEA 2016.1, WebStorm 2016.1, PyCharm 2016.1, PhpStorm 2016.1, RubyMine 2016.1, AppCode 2016.1, CLion 2016.1, DataGrip 2016.1
 * branch 143 - IntelliJ IDEA 15, WebStorm 11, PyCharm 5, PhpStorm 10, RubyMine 8, AppCode 3.3, CLion 1.2, DataGrip 1.0
 * branch 141 - IntelliJ IDEA 14.1, WebStorm 10, PyCharm 4.1, Android Studio 1.3
 * branch 139 - IntelliJ IDEA 14, WebStorm 9, PyCharm 4, PhpStorm 8, RubyMine 7

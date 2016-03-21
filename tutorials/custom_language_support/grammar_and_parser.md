@@ -19,7 +19,26 @@ title: 3. Grammar and Parser
 Define a grammar for the properties language with */com/simpleplugin/Simple.bnf* file.
 
 ```java
-{% include /code_samples/simple_language_plugin/src/com/simpleplugin/Simple.bnf %}
+{
+  parserClass="com.simpleplugin.parser.SimpleParser"
+
+  extends="com.intellij.extapi.psi.ASTWrapperPsiElement"
+
+  psiClassPrefix="Simple"
+  psiImplClassSuffix="Impl"
+  psiPackage="com.simpleplugin.psi"
+  psiImplPackage="com.simpleplugin.psi.impl"
+
+  elementTypeHolderClass="com.simpleplugin.psi.SimpleTypes"
+  elementTypeClass="com.simpleplugin.psi.SimpleElementType"
+  tokenTypeClass="com.simpleplugin.psi.SimpleTokenType"
+}
+
+simpleFile ::= item_*
+
+private item_ ::= (property|COMMENT|CRLF)
+
+property ::= (KEY? SEPARATOR VALUE?) | KEY
 ```
 
 As you see a properties file can contain properties, comments and line breaks.

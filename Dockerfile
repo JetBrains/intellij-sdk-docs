@@ -24,9 +24,7 @@ ADD _SUMMARY.md /tmp/
 ADD .git /tmp/.git
 ADD sdkdocs-template /tmp/sdkdocs-template
 WORKDIR /tmp
-RUN gem install bundler && \
-    bundle install && \
-    rake bootstrap --trace
+RUN rake bootstrap --trace
 
 WORKDIR /usr/src/app
 

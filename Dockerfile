@@ -31,5 +31,6 @@ WORKDIR /usr/src/app
 EXPOSE 4000
 
 CMD \
+  gem install bundler && \
   rake bootstrap --trace && \
   rake preview

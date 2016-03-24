@@ -24,13 +24,14 @@ ADD _SUMMARY.md /tmp/
 ADD .git /tmp/.git
 ADD sdkdocs-template /tmp/sdkdocs-template
 WORKDIR /tmp
-RUN rake bootstrap
+RUN gem install bundler && \
+    bundle install && \
+    rake bootstrap --trace
 
 WORKDIR /usr/src/app
 
 EXPOSE 4000
 
 CMD \
-  gem install bundler && \
   rake bootstrap --trace && \
   rake preview

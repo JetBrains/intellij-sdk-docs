@@ -32,5 +32,5 @@ This a step-by-step tutorial and it requires performing every step:
 *  [17. Commenter](custom_language_support/commenter.md)
 *  [18. Quick Fix](custom_language_support/quick_fix.md)
 
-The final code can be found in the [SamplePlugin repo on GitHub](https://github.com/JetBrains/SimplePlugin).
+The final code can be found in the [SamplePlugin repo on GitHub](https://github.com/JetBrains/intellij-sdk-docs/tree/master/code_samples/simple_language_plugin).
 

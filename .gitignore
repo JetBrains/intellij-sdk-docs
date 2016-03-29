@@ -20,6 +20,7 @@ _includes
 .idea/tasks.xml
 .idea/dictionaries
 .idea/libraries/Gradle__*.xml
+.idea/codeStyleSettings.xml
 
 # Sensitive or high-churn files:
 .idea/dataSources.ids

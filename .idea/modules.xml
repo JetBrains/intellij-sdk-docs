@@ -2,27 +2,27 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/code_samples/comparing_references_inspection/comparing_references_inspection.iml" filepath="$PROJECT_DIR$/code_samples/comparing_references_inspection/comparing_references_inspection.iml" />
-      <module fileurl="file://$PROJECT_DIR$/code_samples/conditional_operator_intention/conditional_operator_intention.iml" filepath="$PROJECT_DIR$/code_samples/conditional_operator_intention/conditional_operator_intention.iml" />
-      <module fileurl="file://$PROJECT_DIR$/code_samples/editor_basics/editor_basics.iml" filepath="$PROJECT_DIR$/code_samples/editor_basics/editor_basics.iml" />
-      <module fileurl="file://$PROJECT_DIR$/code_samples/facet_basics/facet_basics.iml" filepath="$PROJECT_DIR$/code_samples/facet_basics/facet_basics.iml" />
-      <module fileurl="file://$PROJECT_DIR$/code_samples/framework/framework.iml" filepath="$PROJECT_DIR$/code_samples/framework/framework.iml" />
-      <module fileurl="file://$PROJECT_DIR$/code_samples/gradle_plugin_demo/gradle_plugin_demo.iml" filepath="$PROJECT_DIR$/code_samples/gradle_plugin_demo/gradle_plugin_demo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/code_samples/inspection/inspection.iml" filepath="$PROJECT_DIR$/code_samples/inspection/inspection.iml" />
+      <module fileurl="file://$PROJECT_DIR$/code_samples/comparing_references_inspection/comparing_references_inspection.iml" filepath="$PROJECT_DIR$/code_samples/comparing_references_inspection/comparing_references_inspection.iml" group="code_samples" />
+      <module fileurl="file://$PROJECT_DIR$/code_samples/conditional_operator_intention/conditional_operator_intention.iml" filepath="$PROJECT_DIR$/code_samples/conditional_operator_intention/conditional_operator_intention.iml" group="code_samples" />
+      <module fileurl="file://$PROJECT_DIR$/code_samples/editor_basics/editor_basics.iml" filepath="$PROJECT_DIR$/code_samples/editor_basics/editor_basics.iml" group="code_samples" />
+      <module fileurl="file://$PROJECT_DIR$/code_samples/facet_basics/facet_basics.iml" filepath="$PROJECT_DIR$/code_samples/facet_basics/facet_basics.iml" group="code_samples" />
+      <module fileurl="file://$PROJECT_DIR$/code_samples/framework/framework.iml" filepath="$PROJECT_DIR$/code_samples/framework/framework.iml" group="code_samples" />
+      <module fileurl="file://$PROJECT_DIR$/code_samples/gradle_plugin_demo/gradle_plugin_demo.iml" filepath="$PROJECT_DIR$/code_samples/gradle_plugin_demo/gradle_plugin_demo.iml" group="code_samples" />
+      <module fileurl="file://$PROJECT_DIR$/code_samples/inspection/inspection.iml" filepath="$PROJECT_DIR$/code_samples/inspection/inspection.iml" group="code_samples" />
       <module fileurl="file://$PROJECT_DIR$/.idea/intellij-sdk-docs.iml" filepath="$PROJECT_DIR$/.idea/intellij-sdk-docs.iml" />
-      <module fileurl="file://$PROJECT_DIR$/code_samples/kotlin_demo/kotlin_demo.iml" filepath="$PROJECT_DIR$/code_samples/kotlin_demo/kotlin_demo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/code_samples/live_templates/live_templates.iml" filepath="$PROJECT_DIR$/code_samples/live_templates/live_templates.iml" />
-      <module fileurl="file://$PROJECT_DIR$/code_samples/max_opened_projects/max_opened_projects.iml" filepath="$PROJECT_DIR$/code_samples/max_opened_projects/max_opened_projects.iml" />
-      <module fileurl="file://$PROJECT_DIR$/code_samples/module/module.iml" filepath="$PROJECT_DIR$/code_samples/module/module.iml" />
-      <module fileurl="file://$PROJECT_DIR$/code_samples/plugin_sample/plugin_sample.iml" filepath="$PROJECT_DIR$/code_samples/plugin_sample/plugin_sample.iml" />
-      <module fileurl="file://$PROJECT_DIR$/code_samples/project_model/project_model.iml" filepath="$PROJECT_DIR$/code_samples/project_model/project_model.iml" />
-      <module fileurl="file://$PROJECT_DIR$/code_samples/project_view_pane/project_view_pane.iml" filepath="$PROJECT_DIR$/code_samples/project_view_pane/project_view_pane.iml" />
-      <module fileurl="file://$PROJECT_DIR$/code_samples/project_wizard/project_wizard.iml" filepath="$PROJECT_DIR$/code_samples/project_wizard/project_wizard.iml" />
-      <module fileurl="file://$PROJECT_DIR$/code_samples/register_actions/register_actions.iml" filepath="$PROJECT_DIR$/code_samples/register_actions/register_actions.iml" />
-      <module fileurl="file://$PROJECT_DIR$/code_samples/run_configuration/run_configuration.iml" filepath="$PROJECT_DIR$/code_samples/run_configuration/run_configuration.iml" />
-      <module fileurl="file://$PROJECT_DIR$/code_samples/simple_language_plugin/simple_language_plugin.iml" filepath="$PROJECT_DIR$/code_samples/simple_language_plugin/simple_language_plugin.iml" />
-      <module fileurl="file://$PROJECT_DIR$/code_samples/tool_window/tool_window.iml" filepath="$PROJECT_DIR$/code_samples/tool_window/tool_window.iml" />
-      <module fileurl="file://$PROJECT_DIR$/code_samples/tree_structure_provider/tree_structure_provider.iml" filepath="$PROJECT_DIR$/code_samples/tree_structure_provider/tree_structure_provider.iml" />
+      <module fileurl="file://$PROJECT_DIR$/code_samples/kotlin_demo/kotlin_demo.iml" filepath="$PROJECT_DIR$/code_samples/kotlin_demo/kotlin_demo.iml" group="code_samples" />
+      <module fileurl="file://$PROJECT_DIR$/code_samples/live_templates/live_templates.iml" filepath="$PROJECT_DIR$/code_samples/live_templates/live_templates.iml" group="code_samples" />
+      <module fileurl="file://$PROJECT_DIR$/code_samples/max_opened_projects/max_opened_projects.iml" filepath="$PROJECT_DIR$/code_samples/max_opened_projects/max_opened_projects.iml" group="code_samples" />
+      <module fileurl="file://$PROJECT_DIR$/code_samples/module/module.iml" filepath="$PROJECT_DIR$/code_samples/module/module.iml" group="code_samples" />
+      <module fileurl="file://$PROJECT_DIR$/code_samples/plugin_sample/plugin_sample.iml" filepath="$PROJECT_DIR$/code_samples/plugin_sample/plugin_sample.iml" group="code_samples" />
+      <module fileurl="file://$PROJECT_DIR$/code_samples/project_model/project_model.iml" filepath="$PROJECT_DIR$/code_samples/project_model/project_model.iml" group="code_samples" />
+      <module fileurl="file://$PROJECT_DIR$/code_samples/project_view_pane/project_view_pane.iml" filepath="$PROJECT_DIR$/code_samples/project_view_pane/project_view_pane.iml" group="code_samples" />
+      <module fileurl="file://$PROJECT_DIR$/code_samples/project_wizard/project_wizard.iml" filepath="$PROJECT_DIR$/code_samples/project_wizard/project_wizard.iml" group="code_samples" />
+      <module fileurl="file://$PROJECT_DIR$/code_samples/register_actions/register_actions.iml" filepath="$PROJECT_DIR$/code_samples/register_actions/register_actions.iml" group="code_samples" />
+      <module fileurl="file://$PROJECT_DIR$/code_samples/run_configuration/run_configuration.iml" filepath="$PROJECT_DIR$/code_samples/run_configuration/run_configuration.iml" group="code_samples" />
+      <module fileurl="file://$PROJECT_DIR$/code_samples/simple_language_plugin/simple_language_plugin.iml" filepath="$PROJECT_DIR$/code_samples/simple_language_plugin/simple_language_plugin.iml" group="code_samples" />
+      <module fileurl="file://$PROJECT_DIR$/code_samples/tool_window/tool_window.iml" filepath="$PROJECT_DIR$/code_samples/tool_window/tool_window.iml" group="code_samples" />
+      <module fileurl="file://$PROJECT_DIR$/code_samples/tree_structure_provider/tree_structure_provider.iml" filepath="$PROJECT_DIR$/code_samples/tree_structure_provider/tree_structure_provider.iml" group="code_samples" />
     </modules>
   </component>
 </project>

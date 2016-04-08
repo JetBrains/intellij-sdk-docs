@@ -43,6 +43,11 @@ As an API-user, you will usually rather work with `SpringModel` (which is built 
 ## How do I...
 **Some core classes have been changed in 14(.1), please see "_Version 14(.1)_" notes for info on how to replace existing API-calls**
 
+### Spring Setup
+To check availability of Spring/Spring Facet etc. see `com.intellij.spring.model.utils.SpringCommonUtils`.
+
+_2016.2_ See `com.intellij.spring.SpringLibraryUtil` to obtain information about exact version of Spring in use.
+
 ### Spring Model
 
 ##### Obtain Spring Model by file, PsiElement, ..

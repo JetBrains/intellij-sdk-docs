@@ -4,8 +4,6 @@ title: Build Number Ranges
 
 Use this reference of build number ranges to specify the correct `since-build` and `until-build` values in your plugin descriptor.
 
-In the beginning of 2016, following branch `145.*` of the IntelliJ Platform, JetBrains IDEs switched to a new versioning scheme, with the following format: `YYYY.R.N.M*`, where `YYYY` represents the last four digits of the current Gregorian calendar, and `R` represents the yearly major release, resetting to `1` at the beginning of each new calendar year.
-
 Starting with IntelliJ IDEA 9 beta, a multi-part build number is used, such as:
 
 ```
@@ -18,15 +16,33 @@ The number consists of the following parts:
 * Branch number ("90")
 * Build number in the branch ("94")
 
-Every time a release branch is created for one of the products based on IntelliJ Platform, the branch number in the release branch is incremented by 1, and the branch number in the trunk is incremented by 2. Accordingly, the trunk always has even branch numbers (90, 92, 94, etc.), while release branches have odd branch numbers (91, 93, etc.). For example, the RubyMine 7 release branch has the branch number 139.
+Since the version 2016.2 of IntelliJ Platform, branch and  build numbers mimic the [IDE version scheme](https://blog.jetbrains.com/blog/2016/03/09/jetbrains-toolbox-release-and-versioning-changes/): they are the shortened Platform versions: `162` for 2016.2, `163` for 2016.3, `171` for 2017.1. In this scheme `IU-163.94` corresponds to the 2016.3 releases.
+
+Starting with 2016.2 the build number may also have multiple components:
+```
+IU-162.94
+IU-162.94.11
+IU-162.94.11.256.42
+```
+This gives more flexibility for third-party plugins and IDE developers. Plugins may specify compatibility versions more precisely; IDE vendors may have build numbers that are based on a specific IntelliJ Platform version and also specify additional internal version (e.g. 256.42 in XX-162.94.11.256.42) to allow plugin developers for their IDE to specify compatibility.
+
+
 
 Multi-part build numbers can also be used in the `since-build` and `until-build` attributes of `idea-version`. Usually you should omit the product ID and use only the branch number and build number, for example:
 
 ```xml
 <idea-version since-build="94.539"/>
+<idea-version since-build="162.539.11"/>
+<idea-version until-build="162"/> <!-- any build intil 162, not inclusive!-->
+<idea-version since-build="162" until-build="162.*"/> <!-- any 162-based version, 162.94, 162.94.11, etc.-->
 ```
 
 The following branch numbers are used for IntelliJ Platform-based products and build numbers of recent IDE versions:
+
+* ...
+* branch 171 - IntelliJ Platform 2017.1
+* branch 163 - IntelliJ Platform 2016.3
+* branch 162 - IntelliJ Platform 2016.2
 
 * branch 145 - IntelliJ IDEA 2016.1, WebStorm 2016.1, PyCharm 2016.1, PhpStorm 2016.1, RubyMine 2016.1, AppCode 2016.1, CLion 2016.1, DataGrip 2016.1
 * branch 143 - IntelliJ IDEA 15, WebStorm 11, PyCharm 5, PhpStorm 10, RubyMine 8, AppCode 3.3, CLion 1.2, DataGrip 1.0

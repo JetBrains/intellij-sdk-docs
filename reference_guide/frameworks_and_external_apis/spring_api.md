@@ -40,8 +40,12 @@ A fileset usually corresponds to an actual application context configuration at 
 
 As an API-user, you will usually rather work with `SpringModel` (which is built on top of fileset(s)).
 
+## API updates
+> **Note** Starting with 2016.2, internal representation of bean _type_ has been changed from `PsiClass` to `PsiType`, please note deprecations.
+
+> **Note** Some core classes have been changed in 14(.1), please see "_Version 14(.1)_" notes for info on how to replace existing API-calls.
+
 ## How do I...
-**Some core classes have been changed in 14(.1), please see "_Version 14(.1)_" notes for info on how to replace existing API-calls**
 
 ### Spring Setup
 To check availability of Spring/Spring Facet etc. see `com.intellij.spring.model.utils.SpringCommonUtils`.

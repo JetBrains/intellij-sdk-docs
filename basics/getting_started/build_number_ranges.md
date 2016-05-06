@@ -7,24 +7,18 @@ Use this reference of build number ranges to specify the correct `since-build` a
 Starting with IntelliJ IDEA 9 beta, a multi-part build number is used, such as:
 
 ```
-IU-90.94
+IU-162.94
 ```
 
 The number consists of the following parts:
 
 * Product ID (IC for IDEA Community, IU for IDEA Ultimate, RM for RubyMine, PY for PyCharm, etc.)
-* Branch number ("90")
+* Branch number ("162")
 * Build number in the branch ("94")
 
 Since the version 2016.2 of IntelliJ Platform, branch and  build numbers mimic the [IDE version scheme](https://blog.jetbrains.com/blog/2016/03/09/jetbrains-toolbox-release-and-versioning-changes/): they are the shortened Platform versions: `162` for 2016.2, `163` for 2016.3, `171` for 2017.1. In this scheme `IU-163.94` corresponds to the 2016.3 releases.
 
-Starting with 2016.2 the build number may also have multiple components:
-```
-IU-162.94
-IU-162.94.11
-IU-162.94.11.256.42
-```
-This gives more flexibility for third-party plugins and IDE developers. Plugins may specify compatibility versions more precisely; IDE vendors may have build numbers that are based on a specific IntelliJ Platform version and also specify additional internal version (e.g. 256.42 in XX-162.94.11.256.42) to allow plugin developers for their IDE to specify compatibility.
+Starting with 2016.2 the build number may also have multiple components: `IU-162.94`, `IU-162.94.11`, `IU-162.94.11.256.42`. This gives more flexibility for third-party plugins and IDE developers. Plugins may specify compatibility versions more precisely; IDE vendors may have build numbers that are based on a specific IntelliJ Platform version and also specify additional internal version (e.g. 256.42 in XX-162.94.11.256.42) to allow plugin developers for their IDE to specify compatibility.
 
 
 

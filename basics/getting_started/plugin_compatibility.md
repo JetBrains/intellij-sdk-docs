@@ -34,15 +34,18 @@ The following modules are currently available in all products based on IntelliJ 
 
 The following modules are only available in specific products:
 
-* `com.intellij.modules.java` - IntelliJ IDEA
-* `com.intellij.modules.ultimate` - IntelliJ IDEA Ultimate Edition
-* `com.intellij.modules.ruby` - RubyMine
-* `com.intellij.modules.python` - PyCharm
-* `com.intellij.modules.appcode` - AppCode
-* `com.intellij.modules.clion` - CLion
-* `com.intellij.modules.cidr.lang` - AppCode, CLion
-* `com.intellij.modules.cidr.debugger` - AppCode, CLion, RubyMotion
-* `com.intellij.modules.androidstudio` - Android Studio
+| Module                               | Product                                                               |
+|--------------------------------------|-----------------------------------------------------------------------|
+| `com.intellij.modules.java`          | IntelliJ IDEA                                                         |
+| `com.intellij.modules.ultimate`      | IntelliJ IDEA Ultimate Edition                                        |
+| `com.intellij.modules.androidstudio` | Android Studio                                                        |
+| `com.intellij.modules.appcode`       | AppCode                                                               |
+| `com.intellij.modules.cidr.lang`     | AppCode, CLion                                                        |
+| `com.intellij.modules.cidr.debugger` | AppCode, CLion, RubyMotion                                            |
+| `com.intellij.modules.clion`         | CLion                                                                 |
+| `com.intellij.modules.database`      | IntelliJ IDEA Ultimate Edition, PhpStorm, RubyMine, PyCharm, DataGrip |
+| `com.intellij.modules.python`        | PyCharm                                                               |
+| `com.intellij.modules.ruby`          | RubyMine                                                              |
 
 PhpStorm does not have any modules specific to itself, but it includes the PHP plugin, which you can also use as a dependency: `com.jetbrains.php`
 
@@ -50,7 +53,7 @@ You can also specify optional module dependencies. If your plugin works with all
 
 ```xml
 <depends optional="true" config-file="my-java-features.xml">
-	com.intellij.modules.java
+  com.intellij.modules.java
 </depends>
 ```
 

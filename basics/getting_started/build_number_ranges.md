@@ -21,7 +21,7 @@ Multi-part build numbers can also be used in the `since-build` and `until-build`
 ```xml
 <idea-version since-build="94.539"/>
 <idea-version since-build="162.539.11"/>
-<idea-version until-build="162"/> <!-- any build intil 162, not inclusive!-->
+<idea-version until-build="162"/> <!-- any build until 162, not inclusive!-->
 <idea-version since-build="162" until-build="162.*"/> <!-- any 162-based version, 162.94, 162.94.11, etc.-->
 ```
 

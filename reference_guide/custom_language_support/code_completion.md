@@ -43,6 +43,10 @@ consists of calling the `extend()` method and passing in the *pattern* specifyin
 for completing keywords in MANIFEST.MF files.
 
 
+Keep in mind that the pattern is checked against the leaf PSI element. If you
+want to match a composite element, use `withParent` or `withSuperParent`
+methods.
+
 Items shown in the completion list are represented by instances of the
 [LookupElement](upsource:///platform/lang-api/src/com/intellij/codeInsight/lookup/LookupElement.java)
 interface.

@@ -25,12 +25,12 @@ There are two ways to add Gradle support to an existing project. Both will requi
 ```groovy
 buildscript {
     repositories {
-        mavenCentral()
+        maven { url 'http://dl.bintray.com/jetbrains/intellij-plugin-service' }
     }
 }
 
 plugins {
-    id "org.jetbrains.intellij" version "0.0.20"
+    id "org.jetbrains.intellij" version "0.1.6"
 }
 
 apply plugin: 'idea'
@@ -38,7 +38,7 @@ apply plugin: 'org.jetbrains.intellij'
 apply plugin: 'java'
 
 intellij {
-    version 'IC-14.1.4' //IntelliJ IDEA dependency 
+    version '15.0.1' //IntelliJ IDEA dependency 
     plugins 'coverage' //Bundled plugin dependencies
     pluginName 'plugin_name_goes_here'
 }

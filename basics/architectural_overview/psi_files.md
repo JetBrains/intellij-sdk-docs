@@ -22,7 +22,7 @@ Most interesting modification operations are performed on the level of individua
 
 To iterate over the elements in a file, use `psiFile.accept(new PsiRecursiveElementWalkingVisitor()...);`
 
-## Where does it a PSI file come from?
+## Where does a PSI file come from?
 
 As PSI is language-dependent, PSI files are created through the [Language](upsource:///platform/core-api/src/com/intellij/lang/Language.java) object, by using the `LanguageParserDefinitions.INSTANCE.forLanguage(language).createFile(fileViewProvider)` method.
 

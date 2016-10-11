@@ -30,7 +30,7 @@ The following branch numbers are used for *IntelliJ Platform* based products and
 | Branch number                                                   | IntelliJ Platform version |
 |-----------------------------------------------------------------|---------------------------|
 | 171                                                             | 2017.1                    |
-| 163                                                             | 2016.3                    |
+| [163](https://github.com/JetBrains/intellij-community/tree/163) | 2016.3                    |
 | [162](https://github.com/JetBrains/intellij-community/tree/162) | 2016.2                    |
 
 Note that there is no `170`. In the `YYYY.R` versioning scheme, the `R` part starts at 1.

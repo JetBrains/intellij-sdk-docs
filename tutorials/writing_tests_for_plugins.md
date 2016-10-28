@@ -18,4 +18,4 @@ As an example we will take the plugin implemented in the [Custom Language Suppor
 *  [9. Commenter Test](writing_tests_for_plugins/commenter_test.md)
 *  [10. Reference Test](writing_tests_for_plugins/reference_test.md)
 
-The final code can be found on [GitHub](https://github.com/cheptsov/SimplePlugin).
+The final code can be found on [GitHub](https://github.com/JetBrains/SimplePlugin).

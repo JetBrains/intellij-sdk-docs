@@ -2,7 +2,7 @@
 title: Code Inspections
 ---
 
-This topic describes the [comparing_refereces_inspection](https://github.com/JetBrains/intellij-sdk-docs/tree/master/code_samples/comparing_references_inspection), a sample plugin that creates a custom [inspection](http://www.jetbrains.com/idea/webhelp/code-inspection.html) for Java code. In addition, the sample plugin contains a JUnit-based test.
+This topic describes the [comparing_references_inspection](https://github.com/JetBrains/intellij-sdk-docs/tree/master/code_samples/comparing_references_inspection), a sample plugin that creates a custom [inspection](http://www.jetbrains.com/idea/webhelp/code-inspection.html) for Java code. In addition, the sample plugin contains a JUnit-based test.
 
 ## About Code Inspections
 
@@ -12,7 +12,7 @@ You can create custom inspections through the **IntelliJ IDEA** interface (see
 
 ## Techniques Used
 
-The [comparing_refereces_inspection](https://github.com/JetBrains/intellij-sdk-docs/tree/master/code_samples/comparing_references_inspection) sample plugin illustrates the use of the following techniques:
+The [comparing_references_inspection](https://github.com/JetBrains/intellij-sdk-docs/tree/master/code_samples/comparing_references_inspection) sample plugin illustrates the use of the following techniques:
 
 - How to analyze a [PSI tree](/basics/architectural_overview/psi_files.md).
 - How to find a Java token of interest in the PSI tree.

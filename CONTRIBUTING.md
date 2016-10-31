@@ -258,9 +258,7 @@ Will be displayed as a callout, styled as a "note". The other styles available f
 
 Images can be included by adding the file directly to the repository and adding a link to the image like so:
 
-    ```md
     ![Alt text](path-to-img.png)
-    ```
 
 Please downscale screenshots made at high resolution.
 

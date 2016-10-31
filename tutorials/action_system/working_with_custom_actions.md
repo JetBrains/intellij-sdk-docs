@@ -118,7 +118,7 @@ After performing the steps described above we need to compile and run the plugin
 
 ### 1.5. Performing an action
 
-In order to make the action do something we need to implement it's `public void actionPerformed(AnActionEvent anActionEvent);` method.
+In order to make the action do something we need to implement `public void actionPerformed(AnActionEvent anActionEvent);` method.
 In the following example action invokes a dialog that shows information about a selected Project View Item and has no icon and any pre-selected default option:
 
 ```java
@@ -134,7 +134,7 @@ public void actionPerformed(AnActionEvent anActionEvent) {
 
 ### 1.6. Setting up action's visibility and availability
 
-To manipulate with action's visibility and availability we need to override it's `public void update(@NotNull AnActionEvent e);`
+To manipulate with action's visibility and availability we need to override `public void update(@NotNull AnActionEvent e);`
 
 Default implementation of this method does nothing.
 Override this method to provide the ability to dynamically change action's state and(or) presentation depending on the context.

@@ -44,15 +44,16 @@ public class SimpleAction extends AnAction {
 To register a newly created action, `<action>` attribute should be added to the `<actions>` section of the plugin configuration file
 [plugin.xml](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/register_actions/resources/META-INF/plugin.xml).
 IntelliJ IDEA has an embedded inspection that spots unregistered actions.
+
 !["Action never used" inspection](img/action_never_used.png)
 
-To register the action and set up it's attributes press ***Alt + Enter*** while the caret is placed on the action's declaration.
-!["Register action" quick fix](img/action_never_used.png)
+To register the action and set up its attributes press ***Alt + Enter*** while the caret is placed on the action's declaration.
 
 Fill the **New Action** form to set up action's parameters such as: action's name and description, a UI component the action is bound to,
 visual position of the menu item the action is bound to, and a shortcut for invoking the action.
 In our case the action will be available in the **Tools Menu**, it will be placed on top, and will have no shortcuts.
-!["Register action" quick fix](img/new_action.png)
+
+![New Action](img/new_action.png)
 
 After filling the **New Action** form and applying the changes `<actions>` section of our
 [plugin.xml](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/register_actions/resources/META-INF/plugin.xml)
@@ -184,4 +185,4 @@ method and notify the user that action cannot be executed if it's the case.
 
 After compiling and running the plugin project and invoking the action, the dialog will pop up:
 
-!["Register action" quick fix](img/action_performed.png)
+![Action performed](img/action_performed.png)

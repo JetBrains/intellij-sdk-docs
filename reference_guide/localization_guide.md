@@ -41,7 +41,7 @@ Property values mostly follow MessageFormat rules.
 
 *  **Inspection descriptions**  appear in Settings|Errors and represent short information about what each of the inspection tools is intended to do.
 Each description is represented by single html file under ***/inspectionDescriptions/*** folder that should be encoded in UTF-8 encoding.
-Localized versions should be stored in folder suffixed with locale instead. For instance ***/inspectionDescriptions/CanBeFinal.html*** from ***resources_en.jar*** translation should be placed in ***/inspectionDescriptions_ja/CanBeFinal.html*** in ***resouces_ja.jar***.
+Localized versions should be stored in folder suffixed with locale instead. For instance ***/inspectionDescriptions/CanBeFinal.html*** from ***resources_en.jar*** translation should be placed in ***/inspectionDescriptions_ja/CanBeFinal.html*** in ***resources_ja.jar***.
 
 *  **Intention descriptions and samples**  are very similar to inspection descriptions but the layout is a bit more advanced.
 Every intention has a bunch of files located in the folder named after intention's short name in /intentionDescriptions/.

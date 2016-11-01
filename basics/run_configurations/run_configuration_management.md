@@ -29,7 +29,7 @@ All run configurations are created by the [`ConfigurationFactory`](upsource:///p
 
 The key API of [`ConfigurationFactory`](upsource:///platform/lang-api/src/com/intellij/execution/configurations/ConfigurationFactory.java), and the only method that you're required to implement, is the [`createTemplateConfiguration`](upsource:///platform/lang-api/src/com/intellij/execution/configurations/ConfigurationFactory.java)<!--#L45--> method. This method is called once per project to create the template run configuration.
 
-All real run configurations (loaded from the workspace or created by the user) are called by cloning the template through the [`ceateConfiguration`](upsource:///platform/lang-api/src/com/intellij/execution/configurations/ConfigurationFactory.java)<!--#L39--> method.
+All real run configurations (loaded from the workspace or created by the user) are called by cloning the template through the [`createConfiguration`](upsource:///platform/lang-api/src/com/intellij/execution/configurations/ConfigurationFactory.java)<!--#L39--> method.
 
 You can customize additional aspects of your configuration factory by overriding the [`getIcon`](upsource:///platform/lang-api/src/com/intellij/execution/configurations/ConfigurationFactory.java)<!--#L59-->, [`getAddIcon`](upsource:///platform/lang-api/src/com/intellij/execution/configurations/ConfigurationFactory.java)<!--#L55-->, [`getName`](upsource:///platform/lang-api/src/com/intellij/execution/configurations/ConfigurationFactory.java)<!--#L51--> and the default settings methods. These additional overrides are optional.
 

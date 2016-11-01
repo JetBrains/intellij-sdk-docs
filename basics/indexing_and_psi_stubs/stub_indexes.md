@@ -43,7 +43,7 @@ When building the stub tree, you can at the same time put some data about the st
 
 A stub index is a class which extends [`AbstractStubIndex`](upsource:///platform/indexing-api/src/com/intellij/psi/stubs/AbstractStubIndex.java). In the most common case, when the key type is `String`, you use a more specific base class, namely [StringStubIndexExtension](upsource:///platform/indexing-api/src/com/intellij/psi/stubs/StringStubIndexExtension.java). Stub index implementation classes are registered in the `<stubIndex>` extension point.
 
-To put data into an index, you implement the method `IStubElementType.indexStub()` ([example: JavaClassElementType.indexStub()](upsource:///psi/impl/java/stubs/JavaClassElementType.java)<!--#L189-->). This method accepts an `IndexSink` as a parameter, and puts in the index ID and the key for each index in which the element should be stored.
+To put data into an index, you implement the method `IStubElementType.indexStub()` ([example: JavaClassElementType.indexStub()](upsource:///java/java-psi-impl/src/com/intellij/psi/impl/java/stubs/JavaClassElementType.java)<!--#L189-->). This method accepts an `IndexSink` as a parameter, and puts in the index ID and the key for each index in which the element should be stored.
 
 To access the data from an index, the following two methods are used:
 

@@ -1,10 +1,10 @@
 <idea-plugin version="2" url="www.jetbrains.com">
   <id>org.jetbrains.plugins.sample.ProjectViewPane</id>
-  <name>Project View Pain Demo</name>
+  <name>Project View Pane Demo</name>
   <version>1.0</version>
   <vendor email="support@jetbrains.com" url="http://www.jetbrains.com">JetBrains</vendor>
 
-  <description>Project View Pain Demo</description>
+  <description>Project View Pane Demo</description>
 
   <change-notes>Initial commit</change-notes>
 

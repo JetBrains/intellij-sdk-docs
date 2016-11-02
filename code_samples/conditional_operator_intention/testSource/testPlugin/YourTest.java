@@ -1,6 +1,7 @@
 package testPlugin;
 
 import com.intellij.codeInsight.intention.IntentionAction;
+import com.intellij.testFramework.UsefulTestCase;
 import com.intellij.testFramework.builders.JavaModuleFixtureBuilder;
 import com.intellij.testFramework.fixtures.*;
 import junit.framework.Assert;
@@ -14,7 +15,7 @@ import org.junit.*;
  * To change this template use File | Settings | File Templates.
  */
 
-public class YourTest {
+public class YourTest extends UsefulTestCase {
   protected CodeInsightTestFixture myFixture;
   // Specify path to your test data
   // e.g.  final String dataPath = "c:\\users\\john
@@ -26,7 +27,7 @@ public class YourTest {
   public void setUp() throws Exception {
 
     final IdeaTestFixtureFactory fixtureFactory = IdeaTestFixtureFactory.getFixtureFactory();
-    final TestFixtureBuilder<IdeaProjectTestFixture> testFixtureBuilder = fixtureFactory.createFixtureBuilder();
+    final TestFixtureBuilder<IdeaProjectTestFixture> testFixtureBuilder = fixtureFactory.createFixtureBuilder(getName());
     myFixture = JavaTestFixtureFactory.getFixtureFactory().createCodeInsightFixture(testFixtureBuilder.getFixture());
     myFixture.setTestDataPath(dataPath);
     final JavaModuleFixtureBuilder builder = testFixtureBuilder.addModule(JavaModuleFixtureBuilder.class);

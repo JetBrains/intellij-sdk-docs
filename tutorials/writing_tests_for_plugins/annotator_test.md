@@ -26,7 +26,7 @@ public class Test {
 ```java
 public void testAnnotator() {
     myFixture.configureByFiles("AnnotatorTestData.java", "DefaultTestData.simple");
-    myFixture.checkHighlighting(false, false, true);
+    myFixture.checkHighlighting(false, false, true, true);
 }
 ```
 

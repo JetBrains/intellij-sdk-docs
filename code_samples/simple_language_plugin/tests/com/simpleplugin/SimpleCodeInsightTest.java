@@ -3,19 +3,20 @@ package com.simpleplugin;
 import com.intellij.codeInsight.completion.CompletionType;
 import com.intellij.codeInsight.generation.actions.CommentByLineCommentAction;
 import com.intellij.openapi.command.WriteCommandAction;
-import com.intellij.openapi.vfs.newvfs.impl.VfsRootAccess;
 import com.intellij.psi.PsiElement;
-import com.intellij.psi.codeStyle.*;
+import com.intellij.psi.codeStyle.CodeStyleManager;
+import com.intellij.psi.codeStyle.CodeStyleSettingsManager;
 import com.intellij.testFramework.fixtures.LightCodeInsightFixtureTestCase;
 import com.intellij.usageView.UsageInfo;
 import com.simpleplugin.psi.SimpleProperty;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.List;
 
 public class SimpleCodeInsightTest extends LightCodeInsightFixtureTestCase {
   @Override
   protected void setUp() throws Exception {
-    VfsRootAccess.SHOULD_PERFORM_ACCESS_CHECK = false; // TODO: a workaround for v15
     super.setUp();
   }
 
@@ -34,7 +35,7 @@ public class SimpleCodeInsightTest extends LightCodeInsightFixtureTestCase {
 
   public void testAnnotator() {
     myFixture.configureByFiles("AnnotatorTestData.java", "DefaultTestData.simple");
-    myFixture.checkHighlighting(false, false, true);
+    myFixture.checkHighlighting(false, false, true, true);
   }
 
   public void testFormatter() {

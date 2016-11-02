@@ -2,7 +2,7 @@
   <id>com.intellij.tutorials.facet</id>
   <name>Facet Demo</name>
   <version>1.0</version>
-  <vendor email="support@jrtbrains.com" url="http://www.yourcompany.com">JetBrains</vendor>
+  <vendor email="support@jetbrains.com" url="http://www.yourcompany.com">JetBrains</vendor>
 
   <description>Basic example of working with facets</description>
 

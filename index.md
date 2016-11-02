@@ -15,7 +15,7 @@ The [Plugin Development FAQ](faq.md) section contains a series of issues commonl
 
 One of the ways to improve the *IntelliJ SDK* documentation is to **[contribute to the project](CONTRIBUTING.md)**. Any kind of content including tutorials, articles about architecture or code samples that can help plugin developers is kindly welcome. Please read the [Contribution Guidelines](CONTRIBUTING.md) if you would like to share your knowledge.
 
-Please let us know about any **content inconsistencies**, outdated materials, cosmetic issues, or other defects you may find by submitting an issue to [YouTrack](https://youtrack.jetbrains.com/issues/IJSDK). If you haven't found a documentation topic that answers your questions, feel free to file a **[request](https://youtrack.jetbrains.com/newIssue?project=IJSDK)**.
+Please let us know about any **content inconsistencies**, outdated materials, cosmetic issues or other defects you may find in the docs and samples by submitting an issue to [YouTrack](https://youtrack.jetbrains.com/issues/IJSDK). If you haven't found a documentation topic that answers your questions, feel free to file a **[request](https://youtrack.jetbrains.com/newIssue?project=IJSDK)**.
 
 Please [give us your feedback](http://www.surveygizmo.com/s3/2149448/IntelliJ-SDK-Docs) to help make the *IntelliJ Platform* documentation better.
 

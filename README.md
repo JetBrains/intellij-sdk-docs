@@ -6,8 +6,8 @@ This is a repository for
 site.
 
 ##Reporting Bugs
-Please inform about any content inconsistencies, outdated materials, cosmetic issues, and other defects you find by submitting an issue to
-[YouTrack](https://youtrack.jetbrains.com/issues/IJSDK).
+Please inform about any content inconsistencies, outdated materials, cosmetic issues and other defects you find in the docs and samples by submitting an issue to
+[YouTrack](https://youtrack.jetbrains.com/issues/IJSDK). 
 
 ##Working With the Site Locally
 To check out and run a local copy of the site follow the steps described below.

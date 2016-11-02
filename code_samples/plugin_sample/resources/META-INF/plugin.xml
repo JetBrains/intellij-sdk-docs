@@ -14,7 +14,7 @@
     ]]>
   </change-notes>
 
-  <!-- http://confluence.jetbrains.com/display/IDEADEV/Plugin+Compatibility+with+IntelliJ+Platform+Products -->
+  <!-- http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html -->
   <!-- The unique identifiers of the plugins on which this plugin depends -->
   <!-- com.intellij.modules.lang is included in every IntelliJ-based IDE, plugin will be available as well -->
   <depends>com.intellij.modules.lang</depends>
@@ -25,7 +25,9 @@
          in the "help" subdirectory of the plugin directory. The "path" attribute specifies the name of the helpset file within the JAR file.-->
   <helpset file="plugin-help.jar" path="/Help.hs"/>
 
-  <!-- Minimum and maximum build of IDEA compatible with the plugin -->
+  <!-- Minimum and maximum build of IDEA compatible with the plugin
+       see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html
+  -->
   <idea-version since-build="139.000" until-build="999"/>
 
   <!-- Resource bundle from which the text of plugin descriptions, action names and etc. will be loaded -->

@@ -8,7 +8,7 @@
 
   <change-notes>Initial commit</change-notes>
 
-  <!-- please see http://confluence.jetbrains.com/display/IDEADEV/Build+Number+Ranges for description -->
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
   <idea-version since-build="131"/>
   <depends>com.intellij.modules.lang</depends>
 

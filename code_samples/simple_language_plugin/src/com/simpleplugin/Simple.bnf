@@ -15,9 +15,14 @@
   psiImplUtilClass="com.simpleplugin.psi.impl.SimplePsiImplUtil"
 }
 
-simpleFile ::= item_*
+simpleFile ::= (property|COMMENT)*
 
-private item_ ::= (property|COMMENT|CRLF)
+property ::= (KEY SEPARATOR VALUE?)|KEY {
+    pin=3
+    recoverWhile="recover_property"
+    mixin="com.simpleplugin.psi.impl.SimpleNamedElementImpl"
+    implements="com.simpleplugin.psi.SimpleNamedElement"
+    methods=[getKey getValue getName setName getNameIdentifier getPresentation]
+}
 
-property ::= (KEY? SEPARATOR VALUE?) | KEY {mixin="com.simpleplugin.psi.impl.SimpleNamedElementImpl"
-  implements="com.simpleplugin.psi.SimpleNamedElement" methods=[getKey getValue getName setName getNameIdentifier getPresentation]}
+private recover_property ::= !(KEY|SEPARATOR|COMMENT)

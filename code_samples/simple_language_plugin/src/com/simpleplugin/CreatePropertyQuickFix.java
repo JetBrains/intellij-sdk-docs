@@ -5,16 +5,22 @@ import com.intellij.lang.ASTNode;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.command.WriteCommandAction;
 import com.intellij.openapi.editor.Editor;
-import com.intellij.openapi.fileChooser.*;
+import com.intellij.openapi.fileChooser.FileChooser;
+import com.intellij.openapi.fileChooser.FileChooserDescriptor;
+import com.intellij.openapi.fileChooser.FileChooserDescriptorFactory;
 import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.pom.Navigatable;
-import com.intellij.psi.*;
-import com.intellij.psi.search.*;
+import com.intellij.psi.PsiFile;
+import com.intellij.psi.PsiManager;
+import com.intellij.psi.search.FileTypeIndex;
+import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.util.IncorrectOperationException;
 import com.intellij.util.indexing.FileBasedIndex;
-import com.simpleplugin.psi.*;
+import com.simpleplugin.psi.SimpleElementFactory;
+import com.simpleplugin.psi.SimpleFile;
+import com.simpleplugin.psi.SimpleProperty;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Collection;
@@ -73,7 +79,8 @@ class CreatePropertyQuickFix extends BaseIntentionAction {
       public void run() {
         SimpleFile simpleFile = (SimpleFile) PsiManager.getInstance(project).findFile(file);
         ASTNode lastChildNode = simpleFile.getNode().getLastChildNode();
-        if (lastChildNode != null && !lastChildNode.getElementType().equals(SimpleTypes.CRLF)) {
+        // TODO: Add another check for CRLF
+        if (lastChildNode != null/* && !lastChildNode.getElementType().equals(SimpleTypes.CRLF)*/) {
           simpleFile.getNode().addChild(SimpleElementFactory.createCRLF(project).getNode());
         }
         // IMPORTANT: change spaces to escaped spaces or the new node will only have the first word for the key

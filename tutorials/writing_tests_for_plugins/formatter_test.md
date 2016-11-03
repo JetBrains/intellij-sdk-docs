@@ -37,7 +37,8 @@ public void testFormatter() {
     new WriteCommandAction.Simple(getProject()) {
         @Override
         protected void run() throws Throwable {
-            CodeStyleManager.getInstance(getProject()).reformat(myFixture.getFile());
+            CodeStyleManager.getInstance(getProject()).reformatText(myFixture.getFile(),
+                            ContainerUtil.newArrayList(myFixture.getFile().getTextRange()));
         }
     }.execute();
     myFixture.checkResultByFile("DefaultTestData.simple");

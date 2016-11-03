@@ -15,13 +15,13 @@ import com.intellij.psi.TokenType;
 %eof{  return;
 %eof}
 
-CRLF= \n|\r|\r\n
+CRLF=\n
 WHITE_SPACE=[\ \t\f]
-FIRST_VALUE_CHARACTER=[^ \n\r\f\\] | "\\"{CRLF} | "\\".
-VALUE_CHARACTER=[^\n\r\f\\] | "\\"{CRLF} | "\\".
-END_OF_LINE_COMMENT=("#"|"!")[^\r\n]*
+FIRST_VALUE_CHARACTER=[^ \n\f\\] | "\\"{CRLF} | "\\".
+VALUE_CHARACTER=[^\n\f\\] | "\\"{CRLF} | "\\".
+END_OF_LINE_COMMENT=("#"|"!")[^\n]*
 SEPARATOR=[:=]
-KEY_CHARACTER=[^:=\ \n\r\t\f\\] | "\\ "
+KEY_CHARACTER=[^:=\ \n\t\f\\] | "\\ "
 
 %state WAITING_VALUE
 
@@ -39,7 +39,7 @@ KEY_CHARACTER=[^:=\ \n\r\t\f\\] | "\\ "
 
 <WAITING_VALUE> {FIRST_VALUE_CHARACTER}{VALUE_CHARACTER}*   { yybegin(YYINITIAL); return SimpleTypes.VALUE; }
 
-({CRLF}|{WHITE_SPACE})+                                     { yybegin(YYINITIAL); return TokenType.WHITE_SPACE; }
+{CRLF}+                                                     { yybegin(YYINITIAL); return SimpleTypes.CRLF; }
 
 {WHITE_SPACE}+                                              { yybegin(YYINITIAL); return TokenType.WHITE_SPACE; }
 

@@ -8,6 +8,7 @@ import com.intellij.psi.codeStyle.CodeStyleManager;
 import com.intellij.psi.codeStyle.CodeStyleSettingsManager;
 import com.intellij.testFramework.fixtures.LightCodeInsightFixtureTestCase;
 import com.intellij.usageView.UsageInfo;
+import com.intellij.util.containers.ContainerUtil;
 import com.simpleplugin.psi.SimpleProperty;
 
 import java.util.Arrays;
@@ -45,7 +46,8 @@ public class SimpleCodeInsightTest extends LightCodeInsightFixtureTestCase {
     new WriteCommandAction.Simple(getProject()) {
       @Override
       protected void run() throws Throwable {
-        CodeStyleManager.getInstance(getProject()).reformat(myFixture.getFile());
+        CodeStyleManager.getInstance(getProject()).reformatText(myFixture.getFile(),
+                ContainerUtil.newArrayList(myFixture.getFile().getTextRange()));
       }
     }.execute();
     myFixture.checkResultByFile("DefaultTestData.simple");

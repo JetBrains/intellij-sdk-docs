@@ -1,4 +1,4 @@
-<idea-plugin version="2">
+<idea-plugin>
   <name>max_opened_projects</name>
   <description>short description of the plugin</description>
   <version>1.0</version>

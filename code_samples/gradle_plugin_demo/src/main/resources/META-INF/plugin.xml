@@ -1,4 +1,4 @@
-<idea-plugin version="2">
+<idea-plugin>
   <id>org.jetbrains</id>
   <name>gradle_plugin_demo</name>
   <version>0.0.1</version>

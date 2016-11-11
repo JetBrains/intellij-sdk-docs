@@ -1,4 +1,4 @@
-<idea-plugin version="2" url="www.jetbrains.com">
+<idea-plugin url="www.jetbrains.com">
   <id>org.jetbrains.tutorials.run.configuration</id>
   <name>Run Configuration</name>
   <version>1.0</version>

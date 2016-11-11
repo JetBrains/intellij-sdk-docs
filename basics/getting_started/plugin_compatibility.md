@@ -11,7 +11,7 @@ A module dependency is a `<depends>` tag where the contents of the tag starts wi
 For example:
 
 ```xml
-<idea-plugin version="2">
+<idea-plugin>
   ...
   <depends>com.intellij.modules.lang</depends>
   ...

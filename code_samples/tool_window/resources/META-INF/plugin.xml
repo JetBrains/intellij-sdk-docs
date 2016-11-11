@@ -1,4 +1,4 @@
-<idea-plugin version="2">
+<idea-plugin>
   <id>org.jetbrains.plugins.sample.ToolWindow</id>
   <name>Tool Window</name>
   <description>This sample plugin illustrates how to create your custom tool window.</description>

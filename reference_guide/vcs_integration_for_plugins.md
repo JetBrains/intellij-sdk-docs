@@ -133,7 +133,7 @@ This is the main entry point for a VCS plugin, which is used by the IntelliJ Pla
 The recommended way to register an AbstractVcs implementation is to add an extension declaration to plugin.xml, as shown in the following example:
 
 ```xml
-<idea-plugin version="2">
+<idea-plugin>
   ...
   <extensions defaultExtensionNs="com.intellij">
     <vcs name="svn" vcsClass="org.jetbrains.idea.svn.SvnVcs"/>

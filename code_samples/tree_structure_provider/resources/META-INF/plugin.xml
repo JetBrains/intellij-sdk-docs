@@ -1,4 +1,4 @@
-<idea-plugin version="2" url="www.jetbrains.com">
+<idea-plugin url="www.jetbrains.com">
   <id>org.jetbrains.plugins.sample.TreeStructure</id>
   <name>Tree Structure Provider Demo</name>
   <version>1.0</version>

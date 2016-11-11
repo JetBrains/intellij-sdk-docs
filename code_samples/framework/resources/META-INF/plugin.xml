@@ -1,4 +1,4 @@
-<idea-plugin version="2">
+<idea-plugin>
   <id>com.intellij.demo.framework</id>
   <name>Framework example</name>
   <version>1.0</version>

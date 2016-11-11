@@ -1,4 +1,4 @@
-<idea-plugin version="2">
+<idea-plugin>
   <id>live_templates</id>
   <name>live_templates</name>
   <version>1.0</version>

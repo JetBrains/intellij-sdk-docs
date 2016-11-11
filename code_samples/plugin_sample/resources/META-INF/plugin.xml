@@ -1,4 +1,4 @@
-<idea-plugin version="2" url="www.jetbrains.com" use-idea-classloader="true">
+<idea-plugin url="www.jetbrains.com" use-idea-classloader="true">
   <id>org.jetbrains.plugins.sample.PluginSample</id>
   <name>Basic plugin example</name>
   <version>1.0</version>

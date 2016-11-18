@@ -37,7 +37,7 @@ class for your own dialog, you need to follow these steps:
 
 *  Call the `init()` method from the constructor of your dialog class
 
-*  Call the setTitle() method to set the title for the dialog box
+*  Call the `setTitle()` method to set the title for the dialog box
 
 *  Implement the `createCenterPanel()` method to return the component comprising the main contents of the dialog.
 
@@ -64,9 +64,9 @@ as the base class for your action.
 
 To validate the data entered into the dialog, you can override the `doValidate()` method.
 The method will be called automatically by timer.
-If the currently entered data is valid, you need to return null from your implementation.
+If the currently entered data is valid, you need to return `null` from your implementation.
 Otherwise, you need to return a
 [ValidationInfo](upsource:///platform/platform-api/src/com/intellij/openapi/ui/ValidationInfo.java)
-class, which encapsulates an error message and an optional component associated with the invalid data.
+class which encapsulates an error message and an optional component associated with the invalid data.
 If you specify a component, an error icon will be displayed next to it, and it will be focused when the user tries to invoke the `OK` action.
 

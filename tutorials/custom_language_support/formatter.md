@@ -29,7 +29,7 @@ Let's define a formatter which removes extra spaces except the single ones aroun
 
 ### 15.4. Run the project
 
-Now add some extra spaces and reformat the code via *⌥⌘L* shortcut.
+Now add some extra spaces and reformat the code via **Code \| Reformat Code**.
 
 ![Formatter](img/formatter.png)
 

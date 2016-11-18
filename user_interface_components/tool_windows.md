@@ -5,7 +5,7 @@ title: Tool Windows
 
 ## Tool Windows
 
-_Tool windows_ are child windows of **IntelliJ IDEA** used to display information. These windows generally have their own toolbars (referred to as _tool window bars_) along the outer edges of the main window containing one or more _tool window buttons_, which activate panels displayed on the left, bottom and right sides of the main *IntelliJ IDEA* toolwindow. For detailed information about tool windows, please see [IntelliJ IDEA Web Help ](https://www.jetbrains.com/idea/help/tool-windows.html).
+_Tool windows_ are child windows of the IDE used to display information. These windows generally have their own toolbars (referred to as _tool window bars_) along the outer edges of the main window containing one or more _tool window buttons_, which activate panels displayed on the left, bottom and right sides of the main IDE window. For detailed information about tool windows, please see [IntelliJ IDEA Web Help ](https://www.jetbrains.com/idea/help/tool-windows.html).
 
 Each side contains two tool window groups, the primary and the secondary one, and only one toolwindow from each group can be active at a time.
 
@@ -19,13 +19,13 @@ In the second scenario (used by the `Analyze Dependencies` action, for example),
 In the first scenario, the toolwindow is registered in *plugin.xml* using the `<toolWindow>` extension point.
 The extension point attributes specify all the data which is necessary to display the toolwindow button:
 
-*  The ID of the toolwindow (corresponds to the text displayed on the toolwindow button)
+*  The `id` of the toolwindow (corresponds to the text displayed on the toolwindow button)
 
-*  The anchor, meaning the side of the screen on which the toolwindow is displayed ("left", "right" or "bottom")
+*  The `anchor`, meaning the side of the screen on which the toolwindow is displayed ("left", "right" or "bottom")
 
-*  The "secondary" attribute, specifying whether the toolwindow is displayed in the primary or the secondary group
+*  The `secondary` attribute, specifying whether the toolwindow is displayed in the primary or the secondary group
 
-*  The icon to display on the toolwindow button (13x13 pixels)
+*  The `icon` to display on the toolwindow button (13x13 pixels)
 
 In addition to that, you specify the *factory class*  - the name of a class implementing the
 [ToolWindowFactory](upsource:///platform/platform-api/src/com/intellij/openapi/wm/ToolWindowFactory.java)
@@ -36,7 +36,7 @@ This procedure ensures that unused toolwindows don't cause any overhead in start
 If the toolwindow of your plugin doesn't need to be displayed for all projects, you can also specify the *conditionClass*  attribute - the qualified name of a class implementing the
 [Condition\<Project\>](upsource:///platform/util-rt/src/com/intellij/openapi/util/Condition.java)
 interface (this can be the same class as the toolwindow factory implementation).
-If the condition returns false, the toolwindow will not be displayed.
+If the condition returns `false`, the toolwindow will not be displayed.
 Note that the condition is evaluated only once when the project is loaded;
 if you'd like to show your and hide toolwindow dynamically while the user is working with the project, you need to use the second method for toolwindow registration.
 

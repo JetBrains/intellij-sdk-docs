@@ -3,7 +3,7 @@ title: 18. Quick Fix
 ---
 
 
-A quick fix allows to apply an automatic changes to the code via *⌥⏎*.
+A quick fix allows to apply an automatic changes to the code via **Show Intention Actions** (Alt + Enter).
 
 Let's add a quick fix which helps to define an unresolved property from its usage.
 

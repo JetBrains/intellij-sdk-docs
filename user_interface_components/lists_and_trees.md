@@ -63,7 +63,7 @@ The implementation of this task is greatly facilitated by the
 [ToolbarDecorator](upsource:///platform/platform-api/src/com/intellij/ui/ToolbarDecorator.java)
 class.
 This class provides a toolbar with actions on items and automatically enables drag & drop reordering of items in list boxes if supported by the underlying list model.
-The position of the toolbar above or below the list depends on the graphics platform under which the IDE is running.
+The position of the toolbar above or below the list depends on the platform under which the IDE is running.
 
 To use a toolbar decorator:
 

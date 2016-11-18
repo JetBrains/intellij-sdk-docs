@@ -9,7 +9,7 @@ The
 [Messages](upsource:///platform/platform-api/src/com/intellij/openapi/ui/Messages.java)
 class provides a way to show simple message boxes, input dialogs (modal dialogs with a text field) and chooser dialogs (modal dialogs with a combo box).
 The function of different methods of the class should be clear from their names.
-When running on Mac OS X, the message boxes shown by the
+When running on macOS, the message boxes shown by the
 [Messages](upsource:///platform/platform-api/src/com/intellij/openapi/ui/Messages.java)
 class use native UI.
 
@@ -43,5 +43,5 @@ In order to enable it, call the `setSplitterProportionKey()` method and pass the
 The
 [JBTabs](upsource:///platform/platform-api/src/com/intellij/ui/tabs/JBTabs.java)
 class is JetBrains' implementation of the tab control, used for editor tabs and a few other components.
-It has a significantly different look & feel compared to the standard Swing tabs, and looks less native on the Mac OS X platform, so it's up to you to choose which tab control would be more appropriate for your plugin.
+It has a significantly different look & feel compared to the standard Swing tabs, and looks less native on the macOS platform, so it's up to you to choose which tab control would be more appropriate for your plugin.
 

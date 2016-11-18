@@ -4,9 +4,9 @@ title: 10. Reference Contributor
 
 
 References is one of the most important and tricky parts in the implementation of a custom language support.
-Resolving references means the ability to go from the usage of an element to the declaration of the element, completion, rename refactoring, find usages, etc.
+Resolving references means the ability to go from the usage of an element to its declaration, completion, rename refactoring, find usages, etc.
 
-**Every element which can be renamed or referenced needs to implement *com.intellij.psi.PsiNamedElement* interface.**
+**Every element which can be renamed or referenced needs to implement `com.intellij.psi.PsiNamedElement` interface.**
 
 ### 10.1. Define a base named element class
 

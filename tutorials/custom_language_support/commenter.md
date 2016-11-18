@@ -2,7 +2,7 @@
 title: 17. Commenter
 ---
 
-A commenter allows user to comment the code at the cursor or selected code automatically via *⌘/*.
+A commenter allows user to comment the code at the cursor or selected code automatically via corresponding actions.
 
 ### 17.1. Define a commenter
 

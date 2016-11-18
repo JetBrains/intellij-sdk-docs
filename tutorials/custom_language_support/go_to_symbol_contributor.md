@@ -2,7 +2,7 @@
 title: 13. Go To Symbol Contributor
 ---
 
-*A go to symbol contributor helps user to navigate to any PSI element by it's name.*
+*A go to symbol contributor helps user to navigate to any PSI element by its name.*
 
 ### 13.1. Define helper method for generated PSI elements
 
@@ -55,7 +55,7 @@ property ::= (KEY? SEPARATOR VALUE?) | KEY {mixin="com.simpleplugin.psi.impl.Sim
 
 ### 13.5. Run the project
 
-Now we can navigate to a property definition by name pattern via *⌥⌘⇧N* shortcut.
+Now we can navigate to a property definition by name pattern via **Navigate \| Symbol** action.
 
 ![Go To Symbol](img/go_to_symbol.png)
 

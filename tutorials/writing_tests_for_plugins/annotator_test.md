@@ -6,7 +6,7 @@ In this test we will check if the annotator, implemented in the
 [Annotator](/tutorials/custom_language_support/annotator.md) section
 of the
 [Custom Language Support Tutorial](/tutorials/custom_language_support_tutorial.md)
-works as we expect.
+works as expected.
 
 ### 4.1. Define test data
 

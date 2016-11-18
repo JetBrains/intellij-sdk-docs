@@ -14,10 +14,9 @@ section of
 
 Create an empty plugin project.
 See 
-[Creating a Plugin Project](/basics/getting_started/creating_plugin_project.md)
-to know how to do it.
+[Creating a Plugin Project](/basics/getting_started/creating_plugin_project.md).
 
-## 1. Register a New Configuration Type
+## 1. Register a new ConfigurationType
 
 Add new *configurationType* extension to the 
 [plugin.xml](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/run_configuration/resources/META-INF/plugin.xml)
@@ -64,7 +63,7 @@ public class DemoRunConfigurationType implements ConfigurationType {
 }
 ```
 
-## 3. Implement a Configuration Factory
+## 3. Implement a ConfigurationFactory
 
 Implement a new
 [ConfigurationFactory](upsource:///platform/lang-api/src/com/intellij/execution/configurations/ConfigurationFactory.java)
@@ -171,8 +170,7 @@ public class DemoSettingsEditor extends SettingsEditor<DemoRunConfiguration> {
 ## 7. Compile and Run the Plugin
 
 Refer to 
-[Running and Debugging a Plugin](/basics/getting_started/running_and_debugging_a_plugin.md)
-section to know how this could be done.
+[Running and Debugging a Plugin](/basics/getting_started/running_and_debugging_a_plugin.md).
 
 After going through the steps described above you can create a custom Run Configuration
 from your plugin.

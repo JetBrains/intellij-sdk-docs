@@ -14,10 +14,9 @@ Series of step below show how to filter out and keep visible only text files and
 
 Create an empty plugin project.
 See 
-[Creating a Plugin Project](/basics/getting_started/creating_plugin_project.md)
-to know how to do it.
+[Creating a Plugin Project](/basics/getting_started/creating_plugin_project.md).
 
-## 1. Register Custom TreeStructureView Provider
+## 1. Register Custom TreeStructure Provider
 
 Add new *treeStructureProvider* extension to the
 [plugin.xml](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/tree_structure_provider/resources/META-INF/plugin.xml)
@@ -50,8 +49,8 @@ public class TextOnlyTreeStructureProvider implements TreeStructureProvider {
 
 ## 3. Override modify() method
 
-To implement Tree Structure nodes filtering logic, override modify() method.
-The example below shows how to filter out all the Project View nodes except those which correspond text files and directories.
+To implement Tree Structure nodes filtering logic, override `modify()` method.
+The example below shows how to filter out all the Project View nodes except those which correspond to text files and directories.
 
 ```java
 {% include /code_samples/tree_structure_provider/src/org/jetbrains/tutorials/tree/structure/TextOnlyTreeStructureProvider.java %}
@@ -61,8 +60,7 @@ The example below shows how to filter out all the Project View nodes except thos
 
 Compile and run the code sample from this tutorial.
 Refer to 
-[Running and Debugging a Plugin](/basics/getting_started/running_and_debugging_a_plugin.md)
-section to know how this could be done.
+[Running and Debugging a Plugin](/basics/getting_started/running_and_debugging_a_plugin.md).
 
 After going through the steps described above you can see only text files and directories belonging to a project in the Project View.
 

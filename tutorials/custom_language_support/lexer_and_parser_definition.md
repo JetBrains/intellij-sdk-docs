@@ -15,7 +15,7 @@ Define */com/simpleplugin/Simple.flex* file with rules for our lexer.
 
 ### 4.2. Generate a lexer class
 
-Now we can generate a lexer class via *JFlex Generator* from the context menu or via *⌘⇧G* shortcut on Simple.flex file.
+Now we can generate a lexer class via *JFlex Generator* from the context menu on `Simple.flex` file.
 The Grammar-Kit plugin uses JFlex lexer generation.
 If you run it for the first time it will offer you to choose a folder to download the JFlex library and skeleton to.
 Choose the project root directory.

@@ -9,7 +9,7 @@ To let a user choose a file, directory or multiple files, use the
 method.
 This method has multiple overloads.
 The best method to use is the one which returns void and takes a callback receiving the list of selected files as a parameter.
-This is the only overload which will display a native file open dialog on Mac OS X.
+This is the only overload which will display a native file open dialog on macOS.
 
 The
 [FileChooserDescriptor](upsource:///platform/platform-api/src/com/intellij/openapi/fileChooser/FileChooserDescriptor.java)

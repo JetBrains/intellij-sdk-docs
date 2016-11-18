@@ -2,19 +2,18 @@
 title: Supporting Module Types
 ---
 
-*IntelliJ Platform* provides a set of standard module types which can be chosen, however, you might need to create a module of a type that haven't been supported yet.
-This tutorial shows how to register a new module and link it to the project creation procedure and the UI.
+*IntelliJ Platform* provides a set of standard module types which can be chosen, however, you might need to create a module of a type that isn't supported yet.
+This tutorial shows how to register a new module type and link it to the project creation procedure and the UI.
 
 ## Pre-requirements
 
-Create an empty plugin project.
-See 
-[Creating a Plugin Project](/basics/getting_started/creating_plugin_project.md)
-to know how to do it.
+Create an empty plugin project,
+see 
+[Creating a Plugin Project](/basics/getting_started/creating_plugin_project.md).
 
 ## 1. Register a New Module Type
 
-Add a new *moduleType* extension into the 
+Add a new *moduleType* extension in the 
 `plugin.xml`
 configuration file.
 
@@ -118,7 +117,7 @@ public class DemoModuleWizardStep extends ModuleWizardStep {
 ## 5. Creating a Module of New Type
 
 After compiling and running the plugin, create a new project with a source-compiled instance of *IntelliJ IDEA*.
-You will see a new module type and it's settings panel available in the Project Wizard.
+You will see a new module type and its settings panel available in the Project Wizard.
 
 ![New Module Type](module_types/img/new_module_type.png)
 

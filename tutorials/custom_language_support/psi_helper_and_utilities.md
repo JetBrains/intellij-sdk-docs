@@ -15,7 +15,7 @@ Let's define an utility class with these helper methods.
 
 ### 6.2. Update grammar and regenerate the parser
 
-Now we tell to use this utility class in the grammar file via *stubParserClass* attribute.
+Now we tell to use this utility class in the grammar file via *psiImplUtilClass* attribute.
 
 To tell which methods for which PSI classes must be used we specify methods for particular rule.
 

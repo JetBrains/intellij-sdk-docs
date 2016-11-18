@@ -30,9 +30,9 @@ This lets the IDE still recognise incorrectly defined properties and provide cor
 
 ### 3.4. Generate a parser
 
-Now when the grammar is defined we can generate a parser with PSI classes via *Generate Parser Code* from the context menu or via *⌘⇧G* shortcut on *Simple.bnf* file.
-The Grammar-Kit will generate a parser and PSI elements in *gen* folder.
-Mark this folder as a source root and make sure everything is compiled without errors.
+Now when the grammar is defined we can generate a parser with PSI classes via *Generate Parser Code* from the context menu on *Simple.bnf* file.
+This will generate a parser and PSI elements in *gen* folder.
+Mark this folder as *Generated Sources Root* and make sure everything is compiled without errors.
 
 ![Parser](img/generated_parser.png)
 

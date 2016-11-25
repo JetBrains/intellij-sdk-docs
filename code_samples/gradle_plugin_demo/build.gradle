@@ -1,11 +1,11 @@
 buildscript {
     repositories {
-        mavenCentral()
+        maven { url 'http://dl.bintray.com/jetbrains/intellij-plugin-service' }
     }
 }
 
 plugins {
-    id "org.jetbrains.intellij" version "0.0.20"
+    id "org.jetbrains.intellij" version "0.1.6"
 }
 
 apply plugin: 'idea'

@@ -72,8 +72,8 @@ Finally, specify a JVM Gradle will use, it can be the Project JDK. You also conf
 
 Now, add the following script to your `build.gradle file`, overwriting any existing contents.
 
-```java
-{% include /code_samples/gradle_plugin_demo/src/build.gradle %}
+```groovy
+{% include /code_samples/gradle_plugin_demo/build.gradle %}
 ```
 
 ### 1.4. Running a simple plugin

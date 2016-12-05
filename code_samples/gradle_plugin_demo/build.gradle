@@ -1,31 +1,16 @@
 buildscript {
-    repositories {
-        mavenCentral()
+  repositories {
+    maven {
+      url "https://plugins.gradle.org/m2/"
     }
+    maven {
+      url 'http://dl.bintray.com/jetbrains/intellij-plugin-service'
+    }
+
+  }
+  dependencies {
+    classpath "gradle.plugin.org.jetbrains:gradle-intellij-plugin:0.1.10"
+  }
 }
 
-plugins {
-    id "org.jetbrains.intellij" version "0.0.20"
-}
-
-apply plugin: 'idea'
 apply plugin: 'org.jetbrains.intellij'
-apply plugin: 'java'
-
-compileJava {
-    sourceCompatibility = 1.8
-    targetCompatibility = 1.8
-}
-
-intellij {
-    version '15.0.1'
-    plugins 'coverage'
-    pluginName 'gradle_plugin_demo'
-}
-
-group 'org.jetbrains'
-version '0.0.1-SNAPSHOT'
-
-repositories {
-    mavenCentral()
-}

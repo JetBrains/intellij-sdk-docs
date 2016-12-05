@@ -70,7 +70,11 @@ Finally, specify a JVM Gradle will use, it can be the Project JDK. You also conf
 
 <img src="img/step3_gradle_config.png" alt="Verify the JVM is the correct version" width="800px"/>
 
-Now, add the above script to your `build.gradle` file, overwriting any existing contents.
+Now, add the following script to your `build.gradle file`, overwriting any existing contents.
+
+```java
+{% include /code_samples/gradle_plugin_demo/src/build.gradle %}
+```
 
 ### 1.4. Running a simple plugin
 

@@ -34,7 +34,7 @@ apply plugin: 'org.jetbrains.intellij'
 apply plugin: 'java'
 
 intellij {
-    version 'IC-2016.3.1' //IntelliJ IDEA dependency 
+    version 'IC-2016.3' //IntelliJ IDEA 2016.3 dependency; for a full list of IntelliJ IDEA releases please see https://www.jetbrains.com/intellij-repository/releases
     plugins 'coverage' //Bundled plugin dependencies
     pluginName 'plugin_name_goes_here'
 }

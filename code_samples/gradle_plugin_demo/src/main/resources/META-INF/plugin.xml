@@ -25,12 +25,6 @@
   <extensions defaultExtensionNs="com.intellij">
   </extensions>
 
-  <application-components>
-  </application-components>
-
-  <project-components>
-  </project-components>
-
   <actions>
     <group id="MyPlugin.SampleMenu" text="Greeting" description="Greeting menu">
       <add-to-group group-id="MainMenu" anchor="last"/>

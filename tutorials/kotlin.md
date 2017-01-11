@@ -36,7 +36,7 @@ Plugins targeting the IntelliJ Platform versions 143 and above are easy to migra
 
 For plugins already using the [Gradle Build System](build_system.md), or those that require precise control over the Kotlin build process, we recommend using the [kotlin-gradle-plugin](https://kotlinlang.org/docs/reference/using-gradle.html#configuring-dependencies). This [Gradle plugin](http://mvnrepository.com/artifact/org.jetbrains.kotlin/kotlin-gradle-plugin-core) greatly simplifies building Kotlin projects in a controlled and reproducible manner.
 
-As plugins often target a range of IntelliJ Platform releases, it is important to package your plugin with its own Kotlin runtime to ensure backward- and forward- compatibility. Should the default Kotlin runtime shipped with the IntelliJ Platform change during the course of your plugin's targeted version range, the plugin itself will remain unaffected (assuming no breaking changes to the IntelliJ Platform API). For example, your `build.gradle` file may look like so:
+Your `build.gradle` file may look like so:
 
 ```groovy
 buildscript {
@@ -62,12 +62,9 @@ version '0.0.1'
 repositories {
     mavenCentral()
 }
-
-dependencies {
-    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    compile "org.jetbrains.kotlin:kotlin-runtime:$kotlin_version"
-}
 ```
+
+Please note that you should **not** include `kotlin-runtime` and `kotlin-stdlib` jars with your plugin because Kotlin guarantees backward- and forward- binary compatibility. 
 
 ## 4. Examples
 

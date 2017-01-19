@@ -28,4 +28,4 @@ Sometimes, the following conditions hold:
 * eagerly calculating the data for the entire project during indexing isn't needed (e.g. it slows down the indexing, and/or this data probably will ever be needed for a minor subset of all project files)
 * the data can be recalculated lazily on request without major performance penalties
 
-In such cases, file-based index can be used, but file gists provide a way to perform data calculation lazily, caching on disk, and a more lightweight API. Please see [VirtualFileGist](upsource:///platform/indexing-api/src/com/intellij/util/gist/VirtualFileGist.java) and [VirtualFileGist](upsource:///platform/indexing-api/src/com/intellij/util/gist/PsiFileGist.java) documentation.
+In such cases, file-based index can be used, but file gists provide a way to perform data calculation lazily, caching on disk, and a more lightweight API. Please see [VirtualFileGist](upsource:///platform/indexing-api/src/com/intellij/util/gist/VirtualFileGist.java) and [PsiFileGist](upsource:///platform/indexing-api/src/com/intellij/util/gist/PsiFileGist.java) documentation.

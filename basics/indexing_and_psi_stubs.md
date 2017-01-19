@@ -24,6 +24,7 @@ Indexing is a potentially long process. It's performed in background, and during
 ## Gists
 
 Sometimes, the following conditions hold:
+
 * the aggregation functionality of file-based indices is not needed. One just needs to calculate some data based on particular file's contents, and cache it on disk
 * eagerly calculating the data for the entire project during indexing isn't needed (e.g. it slows down the indexing, and/or this data probably will ever be needed for a minor subset of all project files)
 * the data can be recalculated lazily on request without major performance penalties

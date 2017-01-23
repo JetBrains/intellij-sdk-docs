@@ -32,10 +32,10 @@ To clarify the service declaration procedure, consider the following fragment of
 ```xml
 <extensions defaultExtensionNs="com.intellij">
   <!-- Declare the application level service -->
-  <applicationService serviceInterface="Mypackage.MyServiceInterfaceClass" serviceImplementation="Mypackage.MyServiceImplClass" />
+  <applicationService serviceInterface="Mypackage.MyApplicationService" serviceImplementation="Mypackage.MyApplicationServiceImpl" />
 
   <!-- Declare the project level service -->
-  <projectService serviceInterface="Mypackage.MyProjectServiceInterfaceClass" serviceImplementation="Mypackage.MyProjectServiceImplClass" />
+  <projectService serviceInterface="Mypackage.MyProjectService" serviceImplementation="Mypackage.MyProjectServiceImpl" />
 </extensions>
 ```
 
@@ -44,7 +44,11 @@ To clarify the service declaration procedure, consider the following fragment of
 To instantiate your service, in Java code, use the following syntax:
 
 ```java
-MyServiceImplClass service = ServiceManager.getService(MyServiceImplClass.class);
+MyApplicationService applicationService = ServiceManager.getService(MyApplicationService.class);
+
+MyProjectService projectService = ServiceManager.getService(project, MyProjectService.class);
+
+MyModuleService moduleService = ModuleServiceManager.getService(module, MyModuleService.class);
 ```
 
 ### Sample Plugin

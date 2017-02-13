@@ -66,7 +66,11 @@ repositories {
 
 Please note that you should **not** include `kotlin-runtime` and `kotlin-stdlib` jars with your plugin because Kotlin guarantees backward- and forward- binary compatibility. 
 
-## 4. Examples
+## 4. UI in Kotlin
+
+The best way to create user interfaces with Kotlin is to use a type safe DSL for building forms instead of GUI designer. The DSL used in the IntelliJ platform is inside `com.intellij.ui.layout` package. [Documentation](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-impl/src/com/intellij/ui/layout/readme.md).
+
+## 5. Examples
 
 There are a number of [open source Kotlin projects](https://github.com/search?l=Kotlin&q=+intellij&ref=searchresults&type=Repositories) built on the IntelliJ Platform. For a readily available source of up to date examples and applications of the Kotlin language for building developer tools with the IntelliJ Platform, developers may look to these projects for inspiration:
 

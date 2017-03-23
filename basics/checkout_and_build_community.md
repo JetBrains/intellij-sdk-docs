@@ -29,6 +29,7 @@ The [master](https://github.com/JetBrains/intellij-community/tree/master) branch
 
 | IntelliJ Product version | Branch name/number                                                |
 |--------------------------|-------------------------------------------------------------------|
+| 2017.1                   | [171](https://github.com/JetBrains/intellij-community/tree/171)   |
 | 2016.3                   | [163](https://github.com/JetBrains/intellij-community/tree/163)   |
 | 2016.2                   | [162](https://github.com/JetBrains/intellij-community/tree/162)   |
 | 2016.1                   | [145](https://github.com/JetBrains/intellij-community/tree/145)   |
@@ -47,7 +48,7 @@ The [master](https://github.com/JetBrains/intellij-community/tree/master) branch
 
 The source code of stable releases of IntelliJ IDEA Community Edition is also available as a tarball:
 
-- [IntelliJ IDEA Community Edition 2016.1.3](https://download.jetbrains.com/idea/ideaIC-2016.1.3-src.tar.bz2)
+- [IntelliJ IDEA Community Edition 2016.1.4](https://download.jetbrains.com/idea/ideaIC-2016.1.4-src.tar.bz2)
 - [IntelliJ IDEA Community Edition 15.0.6](https://download.jetbrains.com/idea/ideaIC-15.0.6-src.tar.bz2)
 - [IntelliJ IDEA Community Edition 14.1.7](https://download.jetbrains.com/idea/ideaIC-14.1.7-src.tar.bz2)
 - [IntelliJ IDEA Community Edition 13.1.7](https://download.jetbrains.com/idea/ideaIC-13.1.7-src.tar.bz2)

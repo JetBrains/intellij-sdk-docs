@@ -17,6 +17,7 @@ You must not access the model outside a read or write action. The corresponding 
 ## invokeLater
 
 To pass control from a background thread to the event dispatch thread, instead of the standard `SwingUtilities.invokeLater()`, plugins should use `ApplicationManager.getApplication().invokeLater()`. The latter API allows specifying the _modality state_ for the call, i.e. the stack of modal dialogs under which the call is allowed to execute. 
+
 * Passing `ModalityState.NON_MODAL` means that the operation will be executed after all modal dialogs are closed. Note that this state is almost never appropriate, because if any of the open (unrelated) project displays a per-project modal dialog, the action will be executed after it's closed. 
 * Passing `ModalityState.stateForComponent()` means that the operation can be executed when the topmost shown dialog is the one that contains the specified component, or is one of its parent dialogs. 
 * If no modality state is passed, `ModalityState.defaultModalityState()` will be used. In most cases, this is the optimal choice, that uses current modality state when invoked from UI thread, and has a special handling for background processes started with `ProgressManager`: `invokeLater` from such a process may run in the same dialog that the process started.
@@ -29,6 +30,7 @@ If your UI thread activity needs to access [file-based index](../indexing_and_ps
 Background threads shouldn't take read actions for a long time. The reason is that if the UI thread needs a write action (e.g. the user types something), it must acquire it as soon as possible, otherwise the UI will freeze until all background threads have released their read actions.
 
 The best known approach to that is to cancel background read actions whenever there's a write action about to occur, and restart that background read action later from the scratch. Editor highlighting, code completion, Goto Class/File/etc actions all work like this. There are two recommended ways of doing this:
+
 * If you're on UI thread, create a `ReadTask` and pass it to one of `ProgressIndicatorUtils.schedule*` methods. Inside `onCanceled` method, schedule it again if the activity should be restarted. 
 * If you're already in a background thread, use `ProgressManager.getInstance().runInReadActionWithWriteActionPriority()` in a loop, until it passes or the whole activity becomes obsolete.
 

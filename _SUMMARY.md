@@ -151,6 +151,12 @@
     * [Kotlin for Plugin Developers](tutorials/kotlin.md)
   * [Plugin Development FAQ](faq.md)
 * [Contribution Guidelines](CONTRIBUTING.md)
-
-
-
+* [Plugin Repository](plugin_repository/index.md)
+  * [API Reference](plugin_repository/api/api_reference.md)
+    * [Plugin Upload](plugin_repository/api/plugin_upload.md)
+    * [Plugins List](plugin_repository/api/plugins_list.md)
+    * [Plugin Details](plugin_repository/api/plugin_details.md)
+    * [Plugin Update Download](plugin_repository/api/plugin_download_update.md)
+    * [Maven Interface](plugin_repository/api/maven_interface.md)
+    * [Plugin Developers List](plugin_repository/api/plugin_developers.md)
+  * [Custom Release Channels](plugin_repository/custom_channels.md)

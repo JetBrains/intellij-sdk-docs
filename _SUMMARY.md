@@ -84,6 +84,7 @@
     * [Color Scheme Management](reference_guide/color_scheme_management.md)
     * [Work with Icons and Images](reference_guide/work_with_icons_and_images.md)
     * [Tomcat Integration](reference_guide/tomcat_integration.md)
+    * [Breaking API Changes](reference_guide/api_changes_list.md)
     * [User Interface Components](user_interface_components/user_interface_components.md)
       * [Tool Windows](user_interface_components/tool_windows.md)
       * [Dialogs](user_interface_components/dialog_wrapper.md)

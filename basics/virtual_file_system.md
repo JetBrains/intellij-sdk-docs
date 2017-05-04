@@ -59,7 +59,7 @@ The most efficient way to listen to VFS events is to implement the `BulkFileList
 
 This API gives you all the changes detected during the refresh operation in one list, and lets you process them in batch. Alternatively, you can implement the `VirtualFileListener` interface and register it using [VirtualFileManager.addVirtualFileListener()](upsource:///platform/core-api/src/com/intellij/openapi/vfs/VirtualFileManager.java)<!--#L113-->. This will let you process the events one by one.
 
-Note that the VFS listeners are application level, and will receive events for changes happening in all the projects opened by the user. You may need to filter out events which aren't relevant to your task.
+> **Note** VFS listeners are application level, and will receive events for changes happening in *all* the projects opened by the user. You may need to filter out events which aren't relevant to your task.
 
 VFS events are sent both before and after each change, and you can access the old contents of the file in the before event. Note that events caused by a refresh are sent after the changes have already occurred on disk - so when you process the `beforeFileDeletion` event, for example, the file has already been deleted from disk. However, it is still present in the VFS snapshot, and you can access its last contents using the VFS API.
 

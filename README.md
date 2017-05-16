@@ -5,14 +5,14 @@ This is a repository for
 [IntelliJ Platform SDK Documentation](http://www.jetbrains.org/intellij/sdk/docs/)
 site.
 
-##Reporting Bugs
+## Reporting Bugs
 Please inform about any content inconsistencies, outdated materials, cosmetic issues and other defects you find in the docs and samples by submitting an issue to
 [YouTrack](https://youtrack.jetbrains.com/issues/IJSDK). 
 
-##Working With the Site Locally
+## Working With the Site Locally
 To check out and run a local copy of the site follow the steps described below.
 
-###Pre-requirements
+### Pre-requirements
 
 *  Make sure you have a 
    [git client](http://git-scm.com/downloads)
@@ -41,7 +41,7 @@ To check out the source code run the following command:
 git clone https://github.com/JetBrains/intellij-sdk-docs.git
 ```
    
-###Initializing Submodules
+### Initializing Submodules
 
 The site uses JetBrains custom web templates.
 To enable custom templates locally you need to initialize repository submodules.
@@ -51,10 +51,10 @@ Run the following command in the checkout directory to do so.
 git submodule update --init --remote
 ```
 
-###Building and Previewing 
+### Building and Previewing 
 A set of Rake tasks, a Make-like programs implemented in Ruby, provides short commands to build and run the site locally.
 
-####Building Site from Sources
+#### Building Site from Sources
  
 *  Make sure you are in a project root directory
 *  To build static site content run
@@ -62,7 +62,7 @@ A set of Rake tasks, a Make-like programs implemented in Ruby, provides short co
    rake build
    ```
    
-####Previewing
+#### Previewing
 
 *  To start the web-server run
     ```

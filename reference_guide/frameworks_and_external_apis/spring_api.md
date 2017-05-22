@@ -2,6 +2,7 @@
 title: Spring API
 ---
 
+Spring API allows 3rd party plugins to re-use, integrate with or extend existing Spring Framework support in IntelliJ IDEA.
 
 ## Using Spring-API
 To develop plugins integrating with Spring-API you will need to use _IntelliJ IDEA Ultimate Edition_ version 13.1 (or higher).
@@ -32,7 +33,7 @@ Add `<depends>com.intellij.spring</depends>` to your `plugin.xml` to require "Sp
 Note that "Spring Support" plugin itself has dependencies to a few other plugins which need to be enabled in your sandbox (see notifications on startup).
 
 ## Main concepts
-A Spring facet can be attached on a Module.
+A Spring facet can be attached on a Module. (Nearly) All Spring functionality requires an existing and properly setup Spring facet.
 
 Spring facets usually contain one more user-configured or automatically provided filesets, which group a set of Spring related configuration files (XML, Code or .properties files).
 
@@ -61,7 +62,10 @@ See `SpringManager#getSpringModel(s)...` and `com.intellij.spring.model.utils.Sp
 See `com.intellij.spring.SpringModelProvider` to provide implicit filesets (e.g. provided by another framework in specific configuration file).
 
 _Version 15_
-See `com.intellij.spring.facet.SpringAutodetectedFileSet` for a convenient base class.
+See `com.intellij.spring.facet.SpringAutodetectedFileSet` for a convenient base class. Please note that autodetected filesets cannot be edited/modified by users in Spring facet.
+
+##### Customize implicit models configuration
+_2017.1_ See `com.intellij.spring.facet.SpringFileSetEditorCustomization` to customize presentation and/or add extra settings/actions for specific autodetected filesets.
 
 ##### Contribute implicit beans
 See `com.intellij.spring.model.jam.CustomComponentsDiscoverer` or `com.intellij.spring.model.SpringImplicitBeansProviderBase` to provide implicit (framework-specific) beans (e.g. "servletContext" by Spring MVC).

@@ -98,14 +98,14 @@ This FAQ is a topical index of questions that have been asked (and answered) on 
 *  [How do I get the cursor position in the current editor?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206794335-How-to-get-cursor-position-in-the-current-editor-)
 *  [How do I clear the read-only status of a file?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206142039-Clear-read-only-status)
 *  [How do I show a popup hint in an editor?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206146719-HintManager-API-question)
-*  [How do I create live template-like red box edit regions in an editor?](https://devnet.jetbrains.com/thread/158355)
+*  [How do I create live template-like red box edit regions in an editor?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206800165-How-to-%C3%A7reate-live-template-like-red-box-edit-regions-in-an-editor)
 *  [How can I show an editor with error highlighting in a toolwindow?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206146679-Error-highlighting-in-Editors)
 
 ## Inspections
 *  [Can I build an inspection that processes XML files?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206139579-LocalInspectionTool-for-XML-files-/comments/206204765)
 *  [Why are the inspection results shown multiple times?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206142489-visitXmlAttribute-question)
 *  [How can I provide a quick fix that creates a method?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206142769-Triggering-Create-Method-intention)
-*  [Is it possible to inspect only the elements that have been modified after the last full inspection?](https://devnet.jetbrains.com/thread/146143)
+*  [Is it possible to inspect only the elements that have been modified after the last full inspection?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206800645-How-to-inspect-only-the-elements-modified-since-the-last-class-inspection)
 
 ## Project Structure
 *  [Can I add a new module dependency storage format?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206137859-Dependency-storage-formats-)

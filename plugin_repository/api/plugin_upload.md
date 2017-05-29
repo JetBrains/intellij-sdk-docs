@@ -42,33 +42,3 @@ Curl command example:
 ```
 curl -k -i -F userName=pluginrobot -F password=123456 -F xmlId=ro.redeul.google.go -F file=@Go-0.11.1197.zip -F channel=nightly https://plugins.jetbrains.com/plugin/uploadPlugin
 ```
-
-## GET
-
-**Using pluginId**
-
-Provide url as an url to the file (plugin update package). Template:
-
-```
-https://plugins.jetbrains.com/plugin/uploadPlugin?pluginId=<pluginId>&userName=<userName>&password=<password>&channel=<channel>&url=<url to plugin .jar/.zip file>
-```
-
-Example:
-
-```
-https://plugins.jetbrains.com/plugin/uploadPlugin?pluginId=5047&userName=pluginrobot&password=123456&channel=nightly&url=http%3A%2F%2Fplugins.jetbrains.com%2FGo-0.11.1197.zip
-```
-
-**Using pluginXmlId**
-
-Provide url as an url to the file (plugin update package). Template:
-
-```
-https://plugins.jetbrains.com/plugin/uploadPlugin?xmlId=<pluginXmlId>&userName=<userName>&password=<password>&channel=<name>&url=<url to plugin .jar/.zip file>
-```
-
-Example:
-
-```
-https://plugins.jetbrains.com/plugin/uploadPlugin?xmlId=ro.redeul.google.go&userName=pluginrobot&password=123456&channel=nightly&url=http%3A%2F%2Fplugins.jetbrains.com%2FGo-0.11.1197.zip
-```

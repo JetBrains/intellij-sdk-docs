@@ -9,7 +9,7 @@ Every project uses a Software Development Kit (SDK). For Java projects, the SDK 
 Main information about the project SDK can be accessed via [ProjectRootManager.java](upsource:///platform/projectModel-api/src/com/intellij/openapi/roots/ProjectRootManager.java) like the following example shows
 
 ```java
-String projectSdk = ProjectRootManager.getInstance(project).getProjectSdk();
+Sdk projectSdk = ProjectRootManager.getInstance(project).getProjectSdk();
 ```
 
 ## Getting and setting project SDK attributes

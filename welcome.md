@@ -1,5 +1,7 @@
 ---
 title: IntelliJ Platform SDK Documentation
+redirect_from:
+  - /index.html
 ---
 
 

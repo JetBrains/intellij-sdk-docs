@@ -1,4 +1,4 @@
-* [IntelliJ Platform SDK](index.md)
+* [IntelliJ Platform SDK](welcome.md)
   * [Quick Start Guide](basics.md)
     * [Main Types of Plugins](basics/types_of_plugins.md)
     * [Creating Your First Plugin](basics/getting_started.md)

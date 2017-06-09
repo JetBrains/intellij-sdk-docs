@@ -3,5 +3,5 @@
     "searchScope": "intellij-sdk-docs",
     "disqusID": "",
     "showDisqus": false,
-    "useSideblocks": true
+    "useSideblocks": false
 }

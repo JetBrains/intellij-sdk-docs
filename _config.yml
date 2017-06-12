@@ -10,3 +10,5 @@ upsource:
   server: upsource.jetbrains.com
   repo: idea-ce
   commit: d00d8b4ae3ed33097972b8a4286b336bf4ffcfab
+
+github_repo: JetBrains/intellij-sdk-docs

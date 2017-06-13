@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/citizenmatt/jekyll-git_metadata.git
+  revision: 03c85b599fe6c52e3f0253450b9790503a3dd742
+  branch: caching
+  specs:
+    jekyll-git_metadata (0.1.2)
+      jekyll (~> 3.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -18,8 +26,6 @@ GEM
       pathutil (~> 0.9)
       rouge (~> 1.7)
       safe_yaml (~> 1.0)
-    jekyll-git_metadata (0.1.2)
-      jekyll (~> 3.0)
     jekyll-redirect-from (0.9.1)
       jekyll (>= 2.0)
     jekyll-sass-converter (1.5.0)
@@ -49,7 +55,7 @@ PLATFORMS
 
 DEPENDENCIES
   jekyll (~> 3.4.3)
-  jekyll-git_metadata
+  jekyll-git_metadata!
   jekyll-redirect-from
   rake
   rouge

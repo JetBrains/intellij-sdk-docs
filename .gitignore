@@ -2,6 +2,7 @@
 _site/
 .sass-cache/
 .jekyll-metadata
+.git-metadata/
 _includes
 .bundle/
 

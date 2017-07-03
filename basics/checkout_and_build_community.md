@@ -78,7 +78,7 @@ To develop plugins and applications on the IntelliJ Platform, you can use either
 * If this git repository is not on `master` branch you need to checkout the same branches/tags in `android` and `android/tools-base` git repositories.
 * Open the project.
 * If an error notification about a missing required plugin (e.g. Kotlin) is shown enable or install that plugin.
-* Configure a JSDK named "IDEA jdk" (case sensitive), pointing to an installation of JDK 1.6.
+* Configure a JSDK named "IDEA jdk" (case sensitive), pointing to an installation of JDK 1.8.
 
    ![Configure SDK](img/configure_sdk.png)
 

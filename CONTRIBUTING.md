@@ -1,6 +1,6 @@
 ---
+title: Contributing
 ---
-# Contributing
 
 Thanks for contributing! Here are few useful things to know before submitting your Pull Request.
 

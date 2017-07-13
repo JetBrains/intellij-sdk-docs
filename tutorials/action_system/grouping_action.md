@@ -66,7 +66,7 @@ And then the actions needs to be registered in the newly created group:
 </actions>
 ```
 
-After performing the steps described above the action group nad it's content will be available in the editor popup menu:
+After performing the steps described above the action group and its content will be available in the editor popup menu:
 
 ![Simple Action Group](img/grouped_action.png)
 

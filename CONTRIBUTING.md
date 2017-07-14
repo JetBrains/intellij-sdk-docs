@@ -50,7 +50,7 @@ Follow these steps to work with Docker:
     >
     > In order to hit the container's port 4000 from Windows or the Mac, it is necessary to hit the IP address of the docker client (virtual machine). Use `docker-machine ip default` to get the IP address of the docker client. Use `X.X.X.X:4000` to hit the client in the virtual machine, which is in turn mapped to the container's port 4000.
     >
-    > Alternatively, modify the virtual machine's settings to automatically forward port 4000 to `localhost`. See this [blog post](http://acaird.github.io/computers/2014/11/16/docker-virtualbox-host-networking/) for more details.
+    > Alternatively, modify the virtual machine's settings to automatically forward port 4000 to `localhost`. See this [blog post](http://acaird.github.io/computers/2014/11/16/docker-virtualbox-host-networking) for more details.
  
     * Mount the current directory (`$PWD` is a Unix style environment variable. You can use `%CD%` on Windows, or specify the full path) as `/usr/src/app` inside the docker container. This means the docker image will see the `intellij-sdk-docs` repo as the folder `/usr/src/app`.
 

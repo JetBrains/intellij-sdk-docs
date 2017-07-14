@@ -17,9 +17,9 @@ git clone git://git.jetbrains.org/idea/community.git idea
 
 Make sure that the bundled Plugin DevKit plugin is enabled.
 Install and enable
-[Grammar-Kit](http://plugins.intellij.net/plugin?pluginId=6606)
+[Grammar-Kit](https://plugins.jetbrains.com/plugin/6606-grammar-kit)
 and
-[PsiViewer](http://plugins.intellij.net/plugin/?pluginId=227)
+[PsiViewer](https://plugins.jetbrains.com/plugin/227-psiviewer)
 plugins.
 
 ### 1.4. Configure SDK and source files

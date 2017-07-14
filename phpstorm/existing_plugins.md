@@ -20,7 +20,7 @@ Features include: Goto for factories and template paths, autocomplete for factor
 
 * [Official Magicento Web Site](http://magicento.com/)
 * [GitHub](https://github.com/enriquepiatti/Magicento)
-* [Magicento in PhpStorm Plugins Repository](http://plugins.jetbrains.com/plugin/?webide&pluginId=7089)
+* [Magicento in PhpStorm Plugins Repository](https://plugins.jetbrains.com/plugin/7089-magicento)
 
 ## YiiStorm
 
@@ -29,11 +29,5 @@ Features are: Going from render and renderPartial to the view file. Includes con
 
 * [Official YiiStorm Web Site](http://mazx.ru/)
 * [GitHub](https://github.com/cmazx/yiistorm)
-* [YiiStorm in PhpStorm Plugins Repository](https://plugins.jetbrains.com/plugin/?webide&pluginId=7182)
+* [YiiStorm in PhpStorm Plugins Repository](https://plugins.jetbrains.com/plugin/7182-yiistorm)
 
-## Symfony2 - Clickable Views
-
-Symfony2 - Clickable Views is a plugin for Symfony2 Framework developers. Resolves on Ctrl+Click the corresponding twig template in your Symfony2 project. This plugin demands a projectstructure which you can find in the Symfony2 Std. Edition and will not work with custom layouts.
-
-* [GitHub](https://github.com/xenji/phpstorm-symfony2-plugin)
-* [Symfony2 - Clickable Views plugin in PhpStorm Plugins Repository](https://plugins.jetbrains.com/plugin?pr=webide&pluginId=7057)

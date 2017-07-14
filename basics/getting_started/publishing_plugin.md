@@ -11,6 +11,6 @@ When your plugin is ready, you can upload it to the [IntelliJ Plugin Repository]
 
 **To upload your plugin to Intellij Plugin Repository**
 
-1. [Login to IntelliJ Plugin Repository](https://plugins.jetbrains.com/space) with your personal JetBrains account.
+1. [Login to IntelliJ Plugin Repository](https://plugins.jetbrains.com/author/me) with your personal JetBrains account.
 2. On your Profile page that opens, click **Add new plugin**.
 3. Fill in the **Add new plugin** form that opens and click the **Add the plugin** button to upload your plugin.

@@ -56,7 +56,6 @@ The source code of stable releases of IntelliJ IDEA Community Edition is also av
 - [IntelliJ IDEA Community Edition 13.0.5](https://download.jetbrains.com/idea/ideaIC-13.0.5-src.tar.bz2)
 - [IntelliJ IDEA Community Edition 12.1.8](https://download.jetbrains.com/idea/ideaIC-12.1.8-src.tar.bz2)
 - [IntelliJ IDEA Community Edition 12.0.4](https://download.jetbrains.com/idea/ideaIC-12.0.4-src.tar.bz2)
-- [IntelliJ IDEA Community Edition 11.1.4](https://download.jetbrains.com/idea/ideaIC-11.1.4-src.tar.bz2)
 - [IntelliJ IDEA Community Edition 11.0.2](https://download.jetbrains.com/idea/ideaIC-11.0.2-src.tar.bz2)
 - [IntelliJ IDEA Community Edition 10.5.4](https://download.jetbrains.com/idea/ideaIC-10.5.4-src.tar.bz2)
 - [IntelliJ IDEA Community Edition 10.0.3](https://download.jetbrains.com/idea/ideaIC-10.0.3-src.tar.bz2)

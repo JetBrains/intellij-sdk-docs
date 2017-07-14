@@ -56,10 +56,10 @@ and not as an array of characters.
 
 
 For developing lexers using JFlex, the
-[JFlex Support](https://plugins.jetbrains.com/plugin/?id=263)
+[JFlex Support](https://plugins.jetbrains.com/plugin/263-jflex-support)
 plugin can be useful.
 It provides syntax highlighting and other useful features for editing JFlex files.
-[GrammarKit plugin](https://plugins.jetbrains.com/plugin/?id=6606)
+[GrammarKit plugin](https://plugins.jetbrains.com/plugin/6606-grammar-kit)
 also has builtin JFlex support.
 
 **Note:**

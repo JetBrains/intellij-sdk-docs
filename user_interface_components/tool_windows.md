@@ -100,7 +100,7 @@ To clarify how to develop plugins that create tool windows, consider the **tool
 
 1. Start **IntelliJ IDEA** and open the **tool_window** project saved into the [code_samples/tool_window](https://github.com/JetBrains/intellij-sdk-docs/tree/master/code_samples/tool_window) directory.
 2. Ensure that the project settings are valid for your environment. If necessary, modify the project settings.  
-To view or modify the project settings, you can open the [Project Structure](https://www.jetbrains.com/idea/help/configuring-project-structure.html).
+To view or modify the project settings, you can open the [Project Structure](https://www.jetbrains.com/help/idea/project-structure-dialog.html) dialog.
 3. Run the plugin by choosing the **Run | Run** on the main menu.  
 If necessary, change the [Run/Debug Configurations](http://www.jetbrains.com/idea/help/run-debug-configuration-plugin.html).
 

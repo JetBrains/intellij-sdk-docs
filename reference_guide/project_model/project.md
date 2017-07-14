@@ -6,7 +6,7 @@ In the *IntelliJ Platform*, a project encapsulates all your source code, librari
 
 ## Working with projects
 
-The *IntelliJ Platform* stores the project configuration data in XML files. The list of those files depends on the plugin [project](http://www.jetbrains.com/idea/help/project.html) format.
+The *IntelliJ Platform* stores the project configuration data in XML files. The list of those files depends on the plugin [project](https://www.jetbrains.com/help/idea/about-projects.html) format.
 
 For file based format projects, the information core to the project itself (e.g. location of the component modules, compiler settings, etc.) is stored in the `%project_name%.ipr` file. The information about modules the project includes is stored in `%module_name%.iml` files. Module files are created for each module.
 

@@ -4,8 +4,4 @@ title: Facet
 
 A facet represents certain configuration, specific for a particular framework/technology, associated with a module. 
 A module can have multiple facets. E.g. Spring specific configuration is stored in a Spring facet.
-For more information about facets see
-[Facet](http://www.jetbrains.com/idea/help/facet.html)
-and
-[Facet Dependencies](http://www.jetbrains.com/idea/help/available-facets-and-their-dependencies.html)
-in the IntelliJ IDEA Web Help.
+For more information about facets see [Adding Support for Frameworks and Technologies](https://www.jetbrains.com/help/idea/adding-support-for-frameworks-and-technologies.html#facets) and the help page for the [Facets dialog](https://www.jetbrains.com/help/idea/facets.html) in the IntelliJ IDEA Web Help.

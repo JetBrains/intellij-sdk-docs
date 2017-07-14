@@ -2,7 +2,7 @@
 title: SDK
 ---
 
-Every project uses a Software Development Kit (SDK). For Java projects, the SDK is referred to as the JDK (Java Development Kit). The SDK determines which API library is used to build the project. If your project is multi-module, the project SDK by default is common for all modules within the project. Optionally, you can configure individual SDKs for each module. For more information about SDKs, see [SDK](https://www.jetbrains.com/idea/help/sdk.html) and [Configuring Global, Project and Module SDKs](https://www.jetbrains.com/idea/help/configuring-global-project-and-module-sdks.html) in the IntelliJ IDEA Web Help.
+Every project uses a Software Development Kit (SDK). For Java projects, the SDK is referred to as the JDK (Java Development Kit). The SDK determines which API library is used to build the project. If your project is multi-module, the project SDK by default is common for all modules within the project. Optionally, you can configure individual SDKs for each module. For more information about SDKs, see [SDK](https://www.jetbrains.com/help/idea/working-with-sdks.html) in the IntelliJ IDEA Web Help.
 
 ## Getting project SDK information
 

@@ -8,7 +8,7 @@ This topic considers the concept of projects based on *IntelliJ Platform* and re
 
 ## Project and its components
 
-This section briefly discusses the IDEA project structure, project components and related terms.  For more information about projects and their components, refer to [Project](http://www.jetbrains.com/idea/help/project.html), [Module](http://www.jetbrains.com/idea/help/module.html), [Library](http://www.jetbrains.com/idea/help/library.html), [Facet](http://www.jetbrains.com/idea/help/facet.html) in the *IntelliJ IDEA* Web Help.
+This section briefly discusses the IDEA project structure, project components and related terms.  For more information about projects and their components, refer to [Project](https://www.jetbrains.com/help/idea/about-projects.html), [Module](https://www.jetbrains.com/help/idea/about-modules.html), [Library](https://www.jetbrains.com/help/idea/working-with-libraries.html), [Facet](https://www.jetbrains.com/help/idea/adding-support-for-frameworks-and-technologies.html#facets) in the *IntelliJ IDEA* Web Help.
 
 ### Project
 
@@ -26,7 +26,7 @@ A _library_ is an archive of compiled code (such as JAR files) that your modules
 * **Project Library**: the library classes are visible within the project and the library information is recorded in the project `.ipr` file or in `.idea/libraries`.
 * **Global Library**: the library information is recorded in the `applicationLibraries.xml` file into the `~/.IntelliJIdea/config/options` directory. Global libraries are similar to project libraries, but are visible for the different projects.
 
-For more information about libraries, refer to [Library](http://www.jetbrains.com/idea/help/library.html).
+For more information about libraries, refer to [Library](https://www.jetbrains.com/help/idea/working-with-libraries.html).
 
 ### SDK
 
@@ -36,13 +36,13 @@ The SDK determines which API library is used to build the project. If your proje
 
 Optionally, you can configure individual SDK for each module.
 
-For more information about SDKs, see [Configuring Global, Project and Module SDKs](https://www.jetbrains.com/idea/help/configuring-global-project-and-module-sdks.html) in the *IntelliJ IDEA* Web Help.
+For more information about SDKs, see [Working with SDKs](https://www.jetbrains.com/help/idea/working-with-sdks.html) in the *IntelliJ IDEA* Web Help.
 
 ### Facet
 
 A _facet_ represents certain configuration, specific for a particular framework/technology, associated with a module. A module can have multiple facets. E.g. Spring specific configuration is stored in a Spring facet.
 
-For more information about facets see [Facet](http://www.jetbrains.com/idea/help/facet.html) and [Facet Dependencies](http://www.jetbrains.com/idea/help/available-facets-and-their-dependencies.html) in the *IntelliJ IDEA* Web Help.
+For more information about facets see [Facet](https://www.jetbrains.com/help/idea/adding-support-for-frameworks-and-technologies.html#facets) and [Language and Framework Specific Guidelines](https://www.jetbrains.com/help/idea/language-and-framework-specific-guidelines.html) in the *IntelliJ IDEA* Web Help.
 
 ## Project Structure
 
@@ -61,7 +61,7 @@ The Java classes and interfaces that you can use to explore and change the proje
 
 ### How to Work with Project Files?
 
-The *IntelliJ Platform* stores the project configuration data in XML files. The list of those files depends on the plugin [project format](http://www.jetbrains.com/idea/help/project.html).
+The *IntelliJ Platform* stores the project configuration data in XML files. The list of those files depends on the plugin [project format](https://www.jetbrains.com/help/idea/about-projects.html).
 
 For _file-based_ format projects, the information core to the project itself (e.g. location of the component modules, compiler settings, etc.) is stored in the `%project_name%.ipr` file.
 

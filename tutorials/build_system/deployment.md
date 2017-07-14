@@ -74,7 +74,7 @@ For best results, plugin developers should build against a fixed version, rather
 
 ### 2.3 Deploy your plugin
 
-The first step when deploying a plugin is to confirm that it works correctly. You may wish to verify this by [installing your plugin from disk](https://www.jetbrains.com/idea/help/installing-plugin-from-disk.html) on a fresh instance of IntelliJ IDEA Community Edition. Once you are confident the plugin works as intended, make sure the plugin version is updated, as the JetBrains Plugin repository will not accept multiple artifacts with the same version. To deploy a new version of your plugin to the JetBrains plugin repository, execute the following Gradle command:
+The first step when deploying a plugin is to confirm that it works correctly. You may wish to verify this by [installing your plugin from disk](https://www.jetbrains.com/help/idea/installing-a-plugin-from-the-disk.html) on a fresh instance of IntelliJ IDEA Community Edition. Once you are confident the plugin works as intended, make sure the plugin version is updated, as the JetBrains Plugin repository will not accept multiple artifacts with the same version. To deploy a new version of your plugin to the JetBrains plugin repository, execute the following Gradle command:
 
 ```bash
 gradle publishPlugin

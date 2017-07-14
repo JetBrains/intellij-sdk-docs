@@ -28,7 +28,7 @@ The **comparingReferences** sample plugin is available in the `<%IntelliJ SDK 
 **To run the sample plugin**
 
 1. Start **IntelliJ IDEA** and open the **comparingReferences** plugin project saved into the `<%IntelliJ SDK Docs project%>/code_samples/comparing_references_inspection` directory.
-2. Open the [Project Structure](http://www.jetbrains.com/idea/webhelp/project-structure.html) dialog and ensure that the project settings are valid for your environment.
+2. Open the [Project Structure](https://www.jetbrains.com/help/idea/project-structure-dialog.html) dialog and ensure that the project settings are valid for your environment.
 3. If necessary, modify the [Run/Debug Configurations](http://www.jetbrains.com/idea/webhelp/run-debug-configuration-plugin.html) and Run the plugin by choosing the **Run | Run** on the main menu.
 
 #### Configuring the Plugin
@@ -69,4 +69,4 @@ return (s1.equals(s2));
 
 The sample plugin contains the `TestThisPlugin` Java class in the `testSource/testPlugin` package and the test data in the `testData` directory. This test adds two test cases to this plugin project. To run test cases, run the `YourTest.test()` or `YourTest.test1()` method, respectively.
 
-For detailed information about testing and all related procedures, refer to [Testing](http://www.jetbrains.com/idea/webhelp/testing.html) and [Testing Support](http://www.jetbrains.com/idea/webhelp/testing-support.html) in the **IntelliJ IDEA** Web Help.
+For detailed information about testing and all related procedures, refer to [Testing](http://www.jetbrains.com/idea/webhelp/testing.html) in the **IntelliJ IDEA** Web Help.

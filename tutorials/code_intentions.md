@@ -37,7 +37,7 @@ The **ConditionalOperatorConverter** sample plugin is available in the `<%Inte
 **To run the sample plugin**
 
 1. Start **IntelliJ IDEA** and open the **conditionalOperatorConvertor** plugin project saved into the `<%IntelliJ SDK Docs project%>/code_samples/conditional_operator_intention` directory.
-2. Open the [Project Structure](http://www.jetbrains.com/idea/webhelp/project-structure.html) dialog and ensure that the project settings are valid for your environment.
+2. Open the [Project Structure](https://www.jetbrains.com/help/idea/project-structure-dialog.html) dialog and ensure that the project settings are valid for your environment.
 3. If necessary, modify the [Run/Debug Configurations](http://www.jetbrains.com/idea/webhelp/run-debug-configuration-plugin.html) and Run the plugin by choosing the **Run** on the main menu.
 
 #### How does it work?
@@ -66,4 +66,4 @@ if ((n>=0)) {
 
 The sample plugin contains the `YourTest` Java class in the `testSource/testPlugin/` package and the test data in the `testData/` directory. To perform the plugin test, run the `YourTest.test()` method.
 
-For detailed information about testing and all related procedures, refer to [Testing](http://www.jetbrains.com/idea/webhelp/testing.html) and [Testing Support](http://www.jetbrains.com/idea/webhelp/testing-support.html) in the **IntelliJ IDEA** Web Help.
+For detailed information about testing and all related procedures, refer to [Testing](http://www.jetbrains.com/idea/webhelp/testing.html) in the **IntelliJ IDEA** Web Help.

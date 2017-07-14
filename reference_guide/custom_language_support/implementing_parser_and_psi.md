@@ -53,7 +53,7 @@ There is currently no ready way to reuse existing language grammars, for example
 The parsers need to be coded manually.
 
 Custom language parser and PSI classes can be generated from grammars using
-[Grammar-Kit](https://plugins.jetbrains.com/plugin/?id=6606) plugin.
+[Grammar-Kit](https://plugins.jetbrains.com/plugin/6606-grammar-kit) plugin.
 Besides code generation it provides various features for editing grammar files: syntax highlighting, quick navigation, refactorings and more.
 The Grammar-Kit plugin is built using its own engine and its source code can be found on
 [GitHub](https://github.com/JetBrains/Grammar-Kit).
@@ -125,7 +125,7 @@ and
 classes.
 
 A very helpful tool for debugging the PSI implementation is the
-[PsiViewer plugin](https://plugins.jetbrains.com/plugin/?id=227).
+[PsiViewer plugin](https://plugins.jetbrains.com/plugin/227-psiviewer).
 It can show you the structure of the PSI built by your plugin, the properties of every PSI element and highlight its text range.
 
 Please see

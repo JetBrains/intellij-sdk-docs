@@ -6,7 +6,7 @@ The *IntelliJ Platform* provides the concept of _services_.
 
 A _service_ is a plugin component loaded on demand, when your plugin calls the `getService` method of the [ServiceManager](upsource:///platform/core-api/src/com/intellij/openapi/components/ServiceManager.java) class.
 
-The *IntelliJ Platform* ensures that only one instance of a service is loaded even though the service is called several times. A service must have the interface and implementation classes specified in the `plugin.xml` file. The service implementation class is used for service instantiation.
+The *IntelliJ Platform* ensures that only one instance of a service is loaded even though the service is called several times. A service must have an implementation class which is used for service instantiation. A service may also have an interface class which is used to obtain the service instance and provides API of the service. The interface and implementation classes are specified in the `plugin.xml` file.
 
 The *IntelliJ Platform* offers three types of services: _application level_ services, _project level_ services and _module level_ services.
 
@@ -25,7 +25,7 @@ To declare a service, you can use the following extension points in the IDEA cor
     * `serviceInterface`: specifies the service interface class.
     * `serviceImplementation`: specifies the service implementation class.
 
-Note that the interface and implementation classes can be the same.
+If `serviceInterface` isn't specified it's supposed to have the same value as `serviceImplementation`.
 
 To clarify the service declaration procedure, consider the following fragment of the `plugin.xml` file:
 

@@ -18,7 +18,7 @@ title: 3. Grammar and Parser
 
 Define a grammar for the properties language with */com/simpleplugin/Simple.bnf* file.
 
-```
+```java
 {
   parserClass="com.simpleplugin.parser.SimpleParser"
 

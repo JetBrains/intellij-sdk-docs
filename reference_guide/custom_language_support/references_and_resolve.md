@@ -21,9 +21,14 @@ and return the references as an array.
 
 The main method of the
 [PsiReference](upsource:///platform/core-api/src/com/intellij/psi/PsiReference.java)
-interface is `resolve()`, which returns the element to which the reference points, or `null` if it was not possible to resolve the reference to a valid element (for example, should it point to an undefined class).
-A counterpart to this method is `isReferenceTo()`, which checks if the reference resolves to the specified element.
-The latter method can be implemented by calling `resolve()` and comparing the result with the passed PSI element, but additional optimizations are possible (for example, performing the tree walk only if the element text is equal to the text of the reference).
+interface is `resolve()`, which returns the element to which the reference points, or `null` if it was not possible to resolve the reference to a valid element (for example, should it point to an undefined class). The resolved element should implement the [PsiNamedElement](upsource:///platform/core-api/src/com/intellij/psi/PsiNamedElement.java) interface.
+
+> **NOTE** While both the referencing element and the referenced element both have a name, only the element which **introduces** the name (e.g. the definition `int x = 42`) needs to implement the [PsiNamedElement](upsource:///platform/core-api/src/com/intellij/psi/PsiNamedElement.java) interface. It is not necessary for the referencing element at the point of usage (e.g. the `x` in the expression `x + 1`) to implement [PsiNamedElement](upsource:///platform/core-api/src/com/intellij/psi/PsiNamedElement.java).
+
+> **TIP** In order to enable more advanced IntelliJ functionality, prefer implementing [PsiNameIdentifierOwner](upsource:///platform/core-api/src/com/intellij/psi/PsiNameIdentifierOwner.java) over [PsiNamedElement](upsource:///platform/core-api/src/com/intellij/psi/PsiNamedElement.java) where possible.
+
+A counterpart to the `resolve()` method is `isReferenceTo()`, which checks if the reference resolves to the specified element. The latter method can be implemented by calling `resolve()` and comparing the result with the passed PSI element, but additional optimizations are possible (for example, performing the tree walk only if the element text is equal to the text of the reference).
+
 
 **Example**:
 [Reference](upsource:///plugins/properties/src/com/intellij/lang/properties/ResourceBundleReference.java)

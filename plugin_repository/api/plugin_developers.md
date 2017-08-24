@@ -5,7 +5,7 @@ title: Plugin Developers List API
 This API endpoint provides a list of all plugin developers for a plugin by specified *pluginId* or *pluginXmlId*:
  
 ```
-https://plugins.jetbrains.com/plugin/developers?pluginXmlId=<pluginXmlId>
+https://plugins.jetbrains.com/plugin/developers?xmlId=<pluginXmlId>
 ```
 or
 ```
@@ -20,6 +20,6 @@ Where
 
 e.g. for [Scala Plugin](https://plugins.jetbrains.com/plugin/1347-scala):
 
-[https://plugins.jetbrains.com/plugin/developers?pluginXmlId=org.intellij.scala](https://plugins.jetbrains.com/plugin/developers?pluginXmlId=org.intellij.scala)
+[https://plugins.jetbrains.com/plugin/developers?xmlId=org.intellij.scala](https://plugins.jetbrains.com/plugin/developers?xmlId=org.intellij.scala)
 or
 [https://plugins.jetbrains.com/plugin/developers?pluginId=1347](https://plugins.jetbrains.com/plugin/developers?pluginId=1347)

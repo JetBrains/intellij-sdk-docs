@@ -1,3 +1,5 @@
+[![official project](http://jb.gg/badges/official-flat-square.svg)](https://confluence.jetbrains.com/display/ALL/JetBrains+on+GitHub)
+
 IntelliJ Platform SDK Documentation
 =======
 

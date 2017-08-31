@@ -24,7 +24,9 @@ To declare a service, you can use the following extension points in the IDEA cor
 2. In the *New* menu, choose *Plugin DevKit* and click *Application Service*, *Project Service* or *Module Service* depending on the type of service you need to use.
 3. In the dialog box that opens, you can specify service interface and implementation, or just a service class if you uncheck *Separate interface from implementation* checkbox.
 
-The *IntelliJ Platform* will generate new Java interface and class (or just a class if you unchecked *Separate interface from implementation* checkbox) and register the new service in `plugin.xml` file.
+The IDE will generate new Java interface and class (or just a class if you unchecked *Separate interface from implementation* checkbox) and register the new service in `plugin.xml` file.
+
+> **Note** Declaring a service via *New* context menu is available since version **2017.3**.
 
 
 To clarify the service declaration procedure, consider the following fragment of the `plugin.xml` file:

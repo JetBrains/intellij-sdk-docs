@@ -20,12 +20,14 @@ To declare a service, you can use the following extension points in the IDEA cor
 
 **To declare a service:**
 
-1. Add the appropriate child element (`<applicationService>`, `<projectService>` or `<moduleService>`) to the `<extensions>` section of the plugin.xml file.
-2. For the newly added child element, set the following attributes:
-    * `serviceInterface`: specifies the service interface class.
-    * `serviceImplementation`: specifies the service implementation class.
+1. In your project, open the context menu of the destination package and click *New* (or press <kbd>Alt</kbd>+<kbd>Insert</kbd>).
+2. In the *New* menu, choose *Plugin DevKit* and click *Application Service*, *Project Service* or *Module Service* depending on the type of service you need to use.
+3. In the dialog box that opens, you can specify service interface and implementation, or just a service class if you uncheck *Separate interface from implementation* checkbox.
 
-If `serviceInterface` isn't specified it's supposed to have the same value as `serviceImplementation`.
+The IDE will generate new Java interface and class (or just a class if you unchecked *Separate interface from implementation* checkbox) and register the new service in `plugin.xml` file.
+
+> **Note** Declaring a service via *New* context menu is available since version **2017.3**.
+
 
 To clarify the service declaration procedure, consider the following fragment of the `plugin.xml` file:
 
@@ -38,6 +40,8 @@ To clarify the service declaration procedure, consider the following fragment of
   <projectService serviceInterface="Mypackage.MyProjectService" serviceImplementation="Mypackage.MyProjectServiceImpl" />
 </extensions>
 ```
+
+If `serviceInterface` isn't specified it's supposed to have the same value as `serviceImplementation`.
 
 ## Retrieving a service
 

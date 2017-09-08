@@ -31,7 +31,8 @@ To register the action we should add a corresponding attribute to the `<actions>
 <actions>
     <action id="EditorBasics.EditorIllustration" class="EditorIllustration" text="Editor Basics"
         description="Illustrates how to plug an action in">
-    <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+        <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+    </action>
 </action>
 ```
 

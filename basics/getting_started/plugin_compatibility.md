@@ -36,15 +36,16 @@ The following modules are only available in specific products:
 
 | Module                               | Product                                                               |
 |--------------------------------------|-----------------------------------------------------------------------|
-| `com.intellij.modules.java`          | IntelliJ IDEA                                                         |
+| `com.intellij.modules.java`          | IntelliJ IDEA, Android Studio                                         |
 | `com.intellij.modules.ultimate`      | IntelliJ IDEA Ultimate Edition                                        |
 | `com.intellij.modules.androidstudio` | Android Studio                                                        |
 | `com.intellij.modules.appcode`       | AppCode                                                               |
 | `com.intellij.modules.cidr.lang`     | AppCode, CLion                                                        |
 | `com.intellij.modules.cidr.debugger` | AppCode, CLion, RubyMotion                                            |
 | `com.intellij.modules.clion`         | CLion                                                                 |
-| `com.intellij.modules.database`      | IntelliJ IDEA Ultimate Edition, PhpStorm, RubyMine, PyCharm, DataGrip |
+| `com.intellij.modules.database`      | IntelliJ IDEA Ultimate Edition, DataGrip, PhpStorm, PyCharm, RubyMine |
 | `com.intellij.modules.python`        | PyCharm                                                               |
+| `com.intellij.modules.rider`         | Rider                                                                 |
 | `com.intellij.modules.ruby`          | RubyMine                                                              |
 
 PhpStorm does not have any modules specific to itself, but it includes the PHP plugin, which you can also use as a dependency: `com.jetbrains.php`

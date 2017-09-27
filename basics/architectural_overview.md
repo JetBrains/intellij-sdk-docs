@@ -1,5 +1,7 @@
 ---
 title: Architectural Overview
+redirect_from:
+  - /reference_guide.html
 ---
 
 This topic describes the architecture of the *IntelliJ Platform* from a plugin developer's point of view. It is organized in a task-based manner to answer specific questions like "what can I do with this object?", "how do I get to this object?" and so on.

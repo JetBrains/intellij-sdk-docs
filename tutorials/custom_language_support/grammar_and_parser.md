@@ -47,6 +47,8 @@ The grammar defines how flexible the support for a language can be.
 We specified that a property may have or may not have key and value.
 This lets the IDE still recognise incorrectly defined properties and provide corresponding code analysis and quick-fixes.
 
+Note that the `SimpleTypes` class in the `elementTypeHolderClass` field above specifies the name of a class that gets generated from the grammar, it doesn't exist at this point.
+
 ### 3.4. Generate a parser
 
 Now when the grammar is defined we can generate a parser with PSI classes via *Generate Parser Code* from the context menu on *Simple.bnf* file.

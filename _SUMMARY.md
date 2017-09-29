@@ -1,9 +1,11 @@
 # Summary
 
 * [Introduction](welcome.md)
-* About the IntelliJ Platform
-* About this Guide
-    * [Contributing to this Guide](CONTRIBUTING.md)
+* [The IntelliJ Platform](intro/intellij_platform.md)
+* [About this Guide](intro/about.md)
+    * [Key Topics](intro/key_topics.md)
+    * [Contributing](CONTRIBUTING.md)
+* [Getting Help](intro/getting_help.md)
 * [Recently Updated](recently_updated.md)
 
 ## Part I - Plugins
@@ -62,7 +64,7 @@
 * [Contributing to the IntelliJ Platform](basics/platform_contributions.md)
     * [IntelliJ Coding Guidelines](basics/intellij_coding_guidelines.md)
 
-## Part III - Platform
+## Part III - Base Platform
 * Component Model
 * [Threading](basics/architectural_overview/general_threading_rules.md)
     * Background Tasks
@@ -143,7 +145,7 @@
 * Unit Testing
 
 ## Part VII - Product Specific
-* Compatibility with Multiple Products
+* Compatibility with Multiple Products
 * IDEA
     * [Tomcat Integration](reference_guide/tomcat_integration.md)
     * [Spring API](reference_guide/frameworks_and_external_apis/spring_api.md)
@@ -252,6 +254,7 @@
 * [Kotlin for Plugin Developers](tutorials/kotlin.md)
 
 ## Appendix II - Resources
+* [Introduction](resources.md)
 * [IntelliJ Community Edition on GitHub](https://github.com/JetBrains/intellij-community)
 * [IntelliJ Plugins](https://github.com/JetBrains/intellij-plugins)
 * [IntelliJ Scala Plugin](https://github.com/JetBrains/intellij-scala)

@@ -10,7 +10,7 @@
 
 ## Part I - Plugins
 * [Introduction](basics.md)
-* [Types of Plugins](basics/types_of_plugins.md)
+    * [Types of Plugins](basics/types_of_plugins.md)
 * [Getting Started](basics/getting_started.md)
     * [Setting Up a Development Environment](basics/getting_started/setting_up_environment.md)
     * [Check Out And Build Community Edition](basics/checkout_and_build_community.md)
@@ -40,22 +40,22 @@
     * [Test Project and Testdata Directories](basics/testing_plugins/test_project_and_testdata_directories.md)
     * [Writing Tests](basics/testing_plugins/writing_tests.md)
     * [Testing Highlighting](basics/testing_plugins/testing_highlighting.md)
-* Versioning and Compatibility
-    * [Plugin Compatibility with IntelliJ Platform Products](basics/getting_started/plugin_compatibility.md)
-* Extension Points
+* [Versioning and Compatibility](basics/getting_started/plugin_compatibility.md)
+    * [Breaking API Changes](reference_guide/api_changes_list.md)
+* Required Technologies
+    * Kotlin
+    * Gradle
+    * Primer for the non-JVM Developer
+* [Troubleshooting](basics/settings_caches_logs.md)
 * [Plugin Development FAQ](faq.md)
-* Kotlin
-* Gradle
-* Primer for the non-JVM Developer
-* [Breaking API Changes](reference_guide/api_changes_list.md)
-* [Useful Folders](basics/settings_caches_logs.md)
 
 ## Part II - Architecture
 * [Introduction](basics/architectural_overview.md)
-* Components
-* Platform
+* Base Platform
+    * Components
+    * Extension Points
 * Project Model
-* PSI
+* [PSI](basics/architectural_overview/psi.md)
     * [PSI Files](basics/architectural_overview/psi_files.md)
     * [File View Providers](basics/architectural_overview/file_view_providers.md)
     * [PSI Elements](basics/architectural_overview/psi_elements.md)
@@ -65,10 +65,11 @@
     * [IntelliJ Coding Guidelines](basics/intellij_coding_guidelines.md)
 
 ## Part III - Base Platform
-* Component Model
-* [Threading](basics/architectural_overview/general_threading_rules.md)
-    * Background Tasks
-* Actions
+* [Fundamentals](platform/fundamentals.md)
+    * Component Model
+    * [Threading](basics/architectural_overview/general_threading_rules.md)
+        * Background Tasks
+    * [Messaging Infrastructure](reference_guide/messaging_infrastructure.md)
 * [User Interface Components](user_interface_components/user_interface_components.md)
     * [Tool Windows](user_interface_components/tool_windows.md)
     * [Dialogs](user_interface_components/dialog_wrapper.md)
@@ -78,25 +79,25 @@
     * [Editor Components](user_interface_components/editor_components.md)
     * [List and Tree Controls](user_interface_components/lists_and_trees.md)
     * [Miscellaneous Swing Components](user_interface_components/misc_swing_components.md)
-* [Icons and Images](reference_guide/work_with_icons_and_images.md)
+    * [Icons and Images](reference_guide/work_with_icons_and_images.md)
+    * [Color Scheme Management](reference_guide/color_scheme_management.md)
+* Actions
 * Settings
-* [Virtual Files](basics/architectural_overview/virtual_file.md)
-* Scratch Files
+* [Files](basics/architectural_overview/files.md)
+    * [Virtual Files](basics/architectural_overview/virtual_file.md)
+    * Scratch Files
 * [Documents](basics/architectural_overview/documents.md)
-* Editors
+* [Editors](reference_guide/editors.md)
     * [Multiple Carets](reference_guide/multiple_carets.md)
 * [Run Configurations](basics/run_configurations.md)
     * [Run Configuration Management](basics/run_configurations/run_configuration_management.md)
     * [Execution](basics/run_configurations/run_configuration_execution.md)
-* Version Control Systems
-    * [VCS Integration Plugins](reference_guide/vcs_integration_for_plugins.md)
+* [Version Control Systems](reference_guide/vcs_integration_for_plugins.md)
+    * Diff
     * Local History
-* Diff
 * Indexing
 * Tasks and Contexts
 * [Localization Guide](reference_guide/localization_guide.md)
-* [Messaging Infrastructure](reference_guide/messaging_infrastructure.md)
-* [Color Scheme Management](reference_guide/color_scheme_management.md)
 * Diagrams
 * Database Tools
 
@@ -109,7 +110,7 @@
 * [SDK](reference_guide/project_model/sdk.md)
 * [Library](reference_guide/project_model/library.md)
 * [Facet](reference_guide/project_model/facet.md)
-* Build System
+* [Build System](reference_guide/project_model/build_system.md)
     * [External Builder API and Plugins](reference_guide/frameworks_and_external_apis/external_builder_api.md)
     * [External system integration](reference_guide/frameworks_and_external_apis/external_system_integration.md)
 
@@ -126,27 +127,29 @@
 * [XML DOM API](reference_guide/frameworks_and_external_apis/xml_dom_api.md)
 
 ## Part VI - Features
-* Annotator
-* Inspections
-    * Profiles
-    * Scopes
-    * Suppressing Highlights
-    * Structural Search
-* Quick fixes
-* Intentions
+* Navigation
+    * Go To Symbol
+* Editing
+    * Code Completion
+    * Templates
+        * Live Templates
+        * File Templates
+        * Surround Templates
+    * QuickDoc
+    * Intentions
+* Analysing
+    * Annotator
+    * Inspections
+        * Profiles
+        * Scopes
+        * Suppressing Highlights
+        * Structural Search
 * Refactoring
-* Code Completion
-* Go To Symbol
-* Templates
-    * Live Templates
-    * File Templates
-    * Surround Templates
-* QuickDoc
 * Unit Testing
 
 ## Part VII - Product Specific
 * Compatibility with Multiple Products
-* IDEA
+* [IDEA](products/idea.md)
     * [Tomcat Integration](reference_guide/tomcat_integration.md)
     * [Spring API](reference_guide/frameworks_and_external_apis/spring_api.md)
 * [PhpStorm](phpstorm/phpstorm.md)

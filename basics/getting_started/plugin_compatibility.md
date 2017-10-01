@@ -50,6 +50,8 @@ The following modules are only available in specific products:
 
 PhpStorm does not have any modules specific to itself, but it includes the PHP plugin, which you can also use as a dependency: `com.jetbrains.php`
 
+If you want to add a dependency to a specific plugin, then add a module dependency tag based on its plugin name/ID to the `plugin.xml`. For example `JavaScript` or `tslint`. Note that some plugins are not included by default in the target SDK, so you also have to add their jars manually to the SDKs classpath to compile against their provided classes. Make sure that you add the plugin jars to the SDK and not to your plugin, else the jars will be bundled with your plugin.
+
 You can also specify optional module dependencies. If your plugin works with all products but provides some Java-specific functionality, you can use a dependency tag like this:
 
 ```xml

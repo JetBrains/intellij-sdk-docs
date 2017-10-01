@@ -58,7 +58,7 @@ You can also specify optional module dependencies. If your plugin works with all
 </depends>
 ```
 
-Before marking a plugin as compatible with all products, you should verify that it doesn't use any APIs that are specific to IntelliJ IDEA. To do so, create an IntelliJ Platform SDK pointing to an installation of RubyMine, PyCharm, etc., compile your plugin against that SDK, and verify that everything compiles.
+Before marking a plugin as compatible with all products, you should verify that it doesn't use any APIs that are specific to IntelliJ IDEA. To do so, create an IntelliJ Platform SDK pointing to an installation of RubyMine, PyCharm, etc., compile your plugin against that SDK, and verify that everything compiles. Visit https://www.jetbrains.com/buy/opensource/ to check if your project is eligible for free Open Source Licenses of JetBrains products.
 
 The [IntelliJ plugin repository](http://plugins.jetbrains.com/) automatically detects the products with which a plugin is compatible, based on the rules above, and makes it available to users of those products.
 

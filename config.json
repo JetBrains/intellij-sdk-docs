@@ -1,6 +1,7 @@
 {
     "productName": "IntelliJ Platform SDK",
-    "searchScope": "intellij-sdk-docs",
+    "searchScope": "idea-help",
+    "searchService": "https://data.services.jetbrains.com/search/",
     "disqusID": "",
     "showDisqus": false,
     "useSideblocks": false

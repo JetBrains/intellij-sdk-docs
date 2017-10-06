@@ -70,10 +70,3 @@ tab : \u0009
 Now open the *PsiViewer* tool window and check how the lexer brake the content of the file into tokens, and the parser parsed the tokens into PSI elements.
 
 ![PSI Elements](img/psi_elements.png)
-
-----------------
-
-[Previous](grammar_and_parser.md)
-[Top](/tutorials/custom_language_support_tutorial.md)
-[Next](syntax_highlighter_and_color_settings_page.md)
-

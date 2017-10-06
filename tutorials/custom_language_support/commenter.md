@@ -19,8 +19,3 @@ A commenter allows user to comment the code at the cursor or selected code autom
 ### 17.3. Run the project
 
 ![Commenter](img/commenter.png)
-
-[Previous](code_style_settings.md)
-[Top](/tutorials/custom_language_support_tutorial.md)
-[Next](quick_fix.md)
-

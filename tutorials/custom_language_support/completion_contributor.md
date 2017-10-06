@@ -22,10 +22,3 @@ Let's provide custom completion for values in property files.
 ### 9.3. Run the project
 
 ![Completion](img/completion.png)
-
-[Previous](line_marker_provider.md)
-[Top](/tutorials/custom_language_support_tutorial.md)
-[Next](reference_contributor.md)
-
-
-

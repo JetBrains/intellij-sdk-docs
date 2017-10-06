@@ -40,11 +40,3 @@ title: 5. Syntax Highlighter and Color Settings Page
 ### 5.7. Run the project
 
 ![Color Settings Page](img/color_settings_page.png)
-
------------
-
-[Previous](lexer_and_parser_definition.md)
-[Top](/tutorials/custom_language_support_tutorial.md)
-[Next](psi_helper_and_utilities.md)
-
-

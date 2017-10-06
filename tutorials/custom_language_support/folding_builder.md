@@ -23,9 +23,3 @@ Let's replace usages of properties with its values by default.
 Now when we open a Java file, it shows the property's value instead of the key.
 
 ![Folding](img/folding.png)
-
-[Previous](find_usages_provider.md)
-[Top](/tutorials/custom_language_support_tutorial.md)
-[Next](go_to_symbol_contributor.md)
-
-

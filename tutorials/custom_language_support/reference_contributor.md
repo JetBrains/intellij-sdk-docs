@@ -113,10 +113,3 @@ To allow in-place refactoring we should specify it explicitly in a refactoring s
 ### 10.11. Run the project
 
 ![In Place Rename](img/in_place_rename.png)
-
-[Previous](completion_contributor.md)
-[Top](/tutorials/custom_language_support_tutorial.md)
-[Next](find_usages_provider.md)
-
-
-

@@ -22,7 +22,3 @@ A scanner breaks the text into words, defines the context for each word and pass
 Now we can call *Find Usages* for any property with a reference.
 
 ![Find Usages](img/find_usages.png)
-
-[Previous](reference_contributor.md)
-[Top](/tutorials/custom_language_support_tutorial.md)
-[Next](folding_builder.md)

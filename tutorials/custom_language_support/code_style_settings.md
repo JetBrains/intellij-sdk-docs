@@ -35,7 +35,3 @@ title: 16. Code Style Setting
 ### 16.6. Run the project
 
 ![Code Style Settings](img/code_style_settings.png)
-
-[Previous](formatter.md)
-[Top](/tutorials/custom_language_support_tutorial.md)
-[Next](commenter.md)

@@ -54,9 +54,3 @@ We will use this utility later when implementing code assistance.
 ```java
 {% include /code_samples/simple_language_plugin/src/com/simpleplugin/SimpleUtil.java %}
 ```
-
-----------------
-[Previous](syntax_highlighter_and_color_settings_page.md)
-[Top](/tutorials/custom_language_support_tutorial.md)
-[Next](annotator.md)
-

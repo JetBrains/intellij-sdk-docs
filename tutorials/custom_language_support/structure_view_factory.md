@@ -32,7 +32,3 @@ A structure view factory allows to show the structure of any file in a *Structur
 ### 14.5. Run the project
 
 ![Structure View](img/structure_view.png)
-
-[Previous](go_to_symbol_contributor.md)
-[Top](/tutorials/custom_language_support_tutorial.md)
-[Next](formatter.md)

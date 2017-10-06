@@ -56,10 +56,3 @@ This will generate a parser and PSI elements in *gen* folder.
 Mark this folder as *Generated Sources Root* and make sure everything is compiled without errors.
 
 ![Parser](img/generated_parser.png)
-
--------
-[Previous](language_and_filetype.md)
-[Top](/tutorials/custom_language_support_tutorial.md)
-[Next](lexer_and_parser_definition.md)
-
-

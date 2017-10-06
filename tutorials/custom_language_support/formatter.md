@@ -32,10 +32,3 @@ Let's define a formatter which removes extra spaces except the single ones aroun
 Now add some extra spaces and reformat the code via **Code \| Reformat Code**.
 
 ![Formatter](img/formatter.png)
-
-[Previous](structure_view_factory.md)
-[Top](/tutorials/custom_language_support_tutorial.md)
-[Next](code_style_settings.md)
-
-
-

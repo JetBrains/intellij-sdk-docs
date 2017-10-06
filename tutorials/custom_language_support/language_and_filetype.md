@@ -43,7 +43,3 @@ Create a file with extension *.simple*
 and IntelliJ IDEA will automatically associate it with our language.
 
 ![File Type Factory](img/file_type_factory.png)
-
-[Previous](prerequisites.md)
-[Top](/tutorials/custom_language_support_tutorial.md)
-[Next](grammar_and_parser.md)

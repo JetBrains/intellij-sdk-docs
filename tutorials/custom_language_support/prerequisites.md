@@ -41,7 +41,3 @@ Accept the list of roots by pressing OK.
 Create an IntelliJ Platform Plugin project and specify IntelliJ Platform SDK.
 
 ![New Project](img/new_project.png)
-
-[Top](/tutorials/custom_language_support_tutorial.md)
-[Next](language_and_filetype.md)
-

@@ -32,7 +32,3 @@ The quick fix will create a property in the file chosen by user, and navigate to
 Now let's try to use a property which is not defined yet.
 
 ![Quick Fix](img/quick_fix.png)
-
-[Previous](commenter.md)
-[Top](/tutorials/custom_language_support_tutorial.md)
-

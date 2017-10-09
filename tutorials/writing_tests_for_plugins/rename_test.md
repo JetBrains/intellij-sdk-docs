@@ -71,9 +71,3 @@ public void testRename() {
 ### 6.4. Run the test
 
 Run the test and make sure it's green.
-
-[Previous](formatter_test.md)
-[Top](/tutorials/writing_tests_for_plugins.md)
-[Next](folding_test.md)
-
-

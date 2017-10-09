@@ -34,13 +34,3 @@ public void testReference() {
 ### 10.3. Run the test
 
 Run the test and make sure it's green.
-
------
-
-[Previous](commenter_test.md)
-[Top](/tutorials/writing_tests_for_plugins.md)
-
-
-
-
-

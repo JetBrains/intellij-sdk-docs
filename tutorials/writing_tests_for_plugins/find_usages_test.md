@@ -50,9 +50,3 @@ public void testFindUsages() {
 ### 8.3. Run the test
 
 Run the test and make sure it's green.
-
------
-
-[Previous](folding_test.md)
-[Top](/tutorials/writing_tests_for_plugins.md)
-[Next](commenter_test.md)

@@ -102,10 +102,3 @@ Simple File(0,433)
 ### 2.5. Run the test
 
 Run the test and make sure it's green.
-
------
-
-[Previous](tests_prerequisites.md)
-[Top](/tutorials/writing_tests_for_plugins.md)
-[Next](completion_test.md)
-

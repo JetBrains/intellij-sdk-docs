@@ -48,9 +48,3 @@ public void testFormatter() {
 ### 5.3. Run the test
 
 Run the test and make sure it's green.
-
------
-
-[Previous](annotator_test.md)
-[Top](/tutorials/writing_tests_for_plugins.md)
-[Next](rename_test.md)

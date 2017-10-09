@@ -20,11 +20,3 @@ public void testCommenter() {
 ### 9.2. Run the test
 
 Run the test and make sure it's green.
-
------
-
-[Previous](find_usages_test.md)
-[Top](/tutorials/writing_tests_for_plugins.md)
-[Next](reference_test.md)
-
-

@@ -103,5 +103,3 @@ Launch the new Gradle Run Configuration. From the Run Window, the following outp
 <img src="img/launched.png" alt="Gradle task output" width="800px"/>
 
 Finally, when the IDE launches, there should be a new menu to the right of the **Help** menu. Your plugin is now configured on Gradle.
-
-[Top](/tutorials/build_system.md)

@@ -33,10 +33,3 @@ public void testAnnotator() {
 ### 4.3. Run the test
 
 Run the test and make sure it's green.
-
------
-
-[Previous](completion_test.md)
-[Top](/tutorials/writing_tests_for_plugins.md)
-[Next](formatter_test.md)
-

@@ -29,9 +29,3 @@ All we need to do is point the the run configuration's working directory to the 
   >  Keep in mind that we have changed the _working directory_, so all the paths in tests extended from
   >  [LightCodeInsightFixtureTestCase](upsource:///java/testFramework/src/com/intellij/testFramework/fixtures/LightCodeInsightFixtureTestCase.java)
   >  will use relative path to the _source root_ of IntelliJ IDEA Community Edition.
-
------
-[Top](/tutorials/writing_tests_for_plugins.md)
-[Next](parsing_test.md)
-
-

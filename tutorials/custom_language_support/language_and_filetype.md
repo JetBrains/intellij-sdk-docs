@@ -5,6 +5,8 @@ title: 2. Language and File Type
 
 ### 2.1. Define a language
 
+Note the case of the name of the language - `Simple`.
+
 ```java
 {% include /code_samples/simple_language_plugin/src/com/simpleplugin/SimpleLanguage.java %}
 ```

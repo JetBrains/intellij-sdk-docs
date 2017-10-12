@@ -2,6 +2,8 @@
 title: 16. Code Style Setting
 ---
 
+Code style settings allow defining formatting options. A code style settings provider will create an instance of the settings, and also create an options page in order to edit them. In this example, we'll create a page that uses the default language code style settings, customised by a language code style settings provider.
+
 ### 16.1. Define code style settings
 
 ```java

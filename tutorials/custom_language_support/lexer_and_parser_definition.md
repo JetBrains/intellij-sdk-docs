@@ -30,7 +30,9 @@ After that the IDE will generate lexer: *com.simpleplugin.SimpleLexer*.
 {% include /code_samples/simple_language_plugin/src/com/simpleplugin/SimpleLexerAdapter.java %}
 ```
 
-### 4.4. Define a file
+### 4.4. Define a root file
+
+Create the class in the `com.simpleplugin.psi` namespace.
 
 ```java
 {% include /code_samples/simple_language_plugin/src/com/simpleplugin/psi/SimpleFile.java %}
@@ -67,6 +69,6 @@ key\ with\ spaces = This is the value that could be looked up with the key "key 
 tab : \u0009
 ```
 
-Now open the *PsiViewer* tool window and check how the lexer brake the content of the file into tokens, and the parser parsed the tokens into PSI elements.
+Now open the *PsiViewer* tool window and check how the lexer breaks the content of the file into tokens, and the parser parsed the tokens into PSI elements.
 
 ![PSI Elements](img/psi_elements.png)

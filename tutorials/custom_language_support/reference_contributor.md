@@ -55,10 +55,29 @@ public class SimplePsiImplUtil {
 }
 ```
 
+Note that the `SimpleElementFactory` class will show as an error. We'll create it next.
+
 ### 10.3. Define an element factory
 
 ```java
-{% include /code_samples/simple_language_plugin/src/com/simpleplugin/psi/SimpleElementFactory.java %}
+package com.simpleplugin.psi;
+
+import com.intellij.openapi.project.Project;
+import com.intellij.psi.*;
+import com.simpleplugin.SimpleFileType;
+
+public class SimpleElementFactory {
+  public static SimpleProperty createProperty(Project project, String name) {
+    final SimpleFile file = createFile(project, name);
+    return (SimpleProperty) file.getFirstChild();
+  }
+
+  public static SimpleFile createFile(Project project, String text) {
+    String name = "dummy.simple";
+    return (SimpleFile) PsiFileFactory.getInstance(project).
+        createFileFromText(name, SimpleFileType.INSTANCE, text);
+  }
+}
 ```
 
 ### 10.4. Update grammar and regenerate the parser
@@ -69,6 +88,8 @@ Now we need to make corresponding changes to the grammar file and regenerate par
 property ::= (KEY? SEPARATOR VALUE?) | KEY {mixin="com.simpleplugin.psi.impl.SimpleNamedElementImpl"
   implements="com.simpleplugin.psi.SimpleNamedElement" methods=[getKey getValue getName setName getNameIdentifier]}
 ```
+
+Don't forget to regenerate the parser! Right click on the `Simple.bnf` file and select _Generate Parser Code_.
 
 ### 10.5. Define a reference
 

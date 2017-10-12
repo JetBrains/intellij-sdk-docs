@@ -12,22 +12,21 @@ public class SimpleFormattingModelBuilder implements FormattingModelBuilder {
   @NotNull
   @Override
   public FormattingModel createModel(PsiElement element, CodeStyleSettings settings) {
-    return FormattingModelProvider.createFormattingModelForPsiFile(element.getContainingFile(),
-                                                                   new SimpleBlock(element.getNode(),
-                                                                                   Wrap.createWrap(WrapType.NONE,
-                                                                                                   false),
-                                                                                   Alignment.createAlignment(),
-                                                                                   createSpaceBuilder(settings)),
-                                                                   settings);
+    return FormattingModelProvider
+        .createFormattingModelForPsiFile(element.getContainingFile(),
+                new SimpleBlock(element.getNode(),
+                    Wrap.createWrap(WrapType.NONE, false),
+                    Alignment.createAlignment(),
+                    createSpaceBuilder(settings)),
+                settings);
   }
 
   private static SpacingBuilder createSpaceBuilder(CodeStyleSettings settings) {
-    return new SpacingBuilder(settings, SimpleLanguage.INSTANCE).
-                                                                    around(SimpleTypes.SEPARATOR)
-                                                                .spaceIf(settings.SPACE_AROUND_ASSIGNMENT_OPERATORS)
-                                                                .
-                                                                    before(SimpleTypes.PROPERTY)
-                                                                .none();
+    return new SpacingBuilder(settings, SimpleLanguage.INSTANCE)
+        .around(SimpleTypes.SEPARATOR)
+        .spaceIf(settings.SPACE_AROUND_ASSIGNMENT_OPERATORS)
+        .before(SimpleTypes.PROPERTY)
+        .none();
   }
 
   @Nullable

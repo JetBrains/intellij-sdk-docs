@@ -4,11 +4,15 @@ title: 3. Grammar and Parser
 
 ### 3.1. Define a token type
 
+Create a file in the `com.simpleplugin.psi` package.
+
 ```java
 {% include /code_samples/simple_language_plugin/src/com/simpleplugin/psi/SimpleTokenType.java %}
 ```
 
 ### 3.2. Define an element type
+
+Create a file in the `com.simpleplugin.psi` package.
 
 ```java
 {% include /code_samples/simple_language_plugin/src/com/simpleplugin/psi/SimpleElementType.java %}

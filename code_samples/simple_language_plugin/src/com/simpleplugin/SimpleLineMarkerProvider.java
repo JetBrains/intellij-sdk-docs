@@ -23,7 +23,7 @@ public class SimpleLineMarkerProvider extends RelatedItemLineMarkerProvider {
           NavigationGutterIconBuilder<PsiElement> builder =
               NavigationGutterIconBuilder.create(SimpleIcons.FILE).
                   setTargets(properties).
-                                             setTooltipText("Navigate to a simple property");
+                  setTooltipText("Navigate to a simple property");
           result.add(builder.createLineMarkerInfo(element));
         }
       }

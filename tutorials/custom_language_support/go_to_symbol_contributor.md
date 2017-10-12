@@ -41,6 +41,8 @@ property ::= (KEY? SEPARATOR VALUE?) | KEY {mixin="com.simpleplugin.psi.impl.Sim
   implements="com.simpleplugin.psi.SimpleNamedElement" methods=[getKey getValue getName setName getNameIdentifier getPresentation]}
 ```
 
+Regenerate the parser by right clicking on the `Simple.bnf` file and selecting _Generate Parser Code_.
+
 ### 13.3. Define a go to symbol contributor
 
 ```java

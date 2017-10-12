@@ -38,6 +38,10 @@ public class SimpleAnnotator implements Annotator {
                                           element.getTextRange().getStartOffset() + 7);
           Annotation annotation = holder.createInfoAnnotation(range, null);
           annotation.setTextAttributes(DefaultLanguageHighlighterColors.LINE_COMMENT);
+        } else if (properties.size() == 0) {
+          TextRange range = new TextRange(element.getTextRange().getStartOffset() + 8,
+                                          element.getTextRange().getEndOffset());
+          holder.createErrorAnnotation(range, "Unresolved property");
         }
       }
     }

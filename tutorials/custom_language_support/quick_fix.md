@@ -23,6 +23,8 @@ The quick fix will create a property in the file chosen by user, and navigate to
 
 ### 18.3. Update the annotator
 
+Note the call to `registerFix`.
+
 ```java
 {% include /code_samples/simple_language_plugin/src/com/simpleplugin/SimpleAnnotator.java %}
 ```

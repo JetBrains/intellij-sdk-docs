@@ -18,7 +18,7 @@ title: 5. Syntax Highlighter and Color Settings Page
 ### 5.3. Register the syntax highlighter factory
 
 ```xml
-<lang.syntaxHighlighterFactory key="Simple" implementationClass="com.simpleplugin.SimpleSyntaxHighlighterFactory"/>
+<lang.syntaxHighlighterFactory language="Simple" implementationClass="com.simpleplugin.SimpleSyntaxHighlighterFactory"/>
 ```
 
 ### 5.4. Run the project

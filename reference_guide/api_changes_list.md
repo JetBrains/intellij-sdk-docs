@@ -12,6 +12,7 @@ The following problem patterns are supported:
 <class name>.<method name> method removed
 <class name>.<field name> field removed
 <class name>.<method name> abstract method added
+<class name> class moved to package <package name>
 
 where <class name> is a fully-qualified name of the class, e.g. com.intellij.openapi.actionSystem.AnAction.
 

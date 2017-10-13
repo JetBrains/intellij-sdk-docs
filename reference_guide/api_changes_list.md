@@ -35,8 +35,8 @@ NOTE: You are allowed to prettify the pattern using markdown-features:
 
 |  Change | How to deal with it |
 |---------|---------------------|
-| `com.intellij.internal.statistic.AbstractApplicationUsagesCollector` class removed | Override `com.intellij.internal.statistic.AbstractProjectsUsagesCollector` instead |
-| `com.intellij.internal.statistic.UsagesCollector.doPersistProjectUsages` method removed | There is no need to call this method anymore |
+| `com.intellij.internal.statistic.AbstractApplicationUsagesCollector` class removed | This class isn't supposed to be used in regular plugins. Override `com.intellij.internal.statistic.AbstractProjectsUsagesCollector` instead if you're developing an IDE with its own statistics services. |
+| `com.intellij.internal.statistic.UsagesCollector.doPersistProjectUsages` method removed | This method isn't supposed to be used in regular plugins. There is no need to call this method anymore. |
 |`org.apache.sanselan` package removed | Use classes from `org.apache.commons.imaging` instead |
 
 ## Changes in IntelliJ Platform 2016.3

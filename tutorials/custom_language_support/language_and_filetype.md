@@ -35,8 +35,12 @@ to **com.simpleplugin.icons** package.
 
 ### 2.5. Register the file type factory
 
+In plugin.xml add:
+
 ```xml
+<extensions defaultExtensionNs="com.intellij">
       <fileTypeFactory implementation="com.simpleplugin.SimpleFileTypeFactory"/>
+</extensions>
 ```
 
 ### 2.6. Run the project

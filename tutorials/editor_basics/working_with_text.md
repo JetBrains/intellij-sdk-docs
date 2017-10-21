@@ -33,7 +33,7 @@ To register the action we should add a corresponding attribute to the `<actions>
         description="Illustrates how to plug an action in">
         <add-to-group group-id="EditorPopupMenu" anchor="last"/>
     </action>
-</action>
+</actions>
 ```
 
 If an action is registered in the group EditorPopupMenu, like the sample above shows,

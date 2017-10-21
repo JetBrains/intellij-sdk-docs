@@ -43,6 +43,7 @@ This FAQ is a topical index of questions that have been asked (and answered) on 
 *  [How do I find the source file given the path to a .class file?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206800595-How-to-find-the-source-for-a-class-file)
 *  [How do I find classes with the specified non-qualified name?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206146759-How-to-resolve-unqualified-name-to-possible-PsiClasses-)
 *  [How do I find the module in which a class is located?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206103859-How-to-get-Module-from-PsiClass-)
+* [PSI cookbook](http://www.jetbrains.org/intellij/sdk/docs/basics/psi_cookbook.html)
 
 ## Working with XML and XML DOM
 *  [How do I change the value of an XML attribute through the PSI?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206139639-Change-xml-attribute-value)

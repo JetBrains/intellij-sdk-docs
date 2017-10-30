@@ -101,7 +101,7 @@ This FAQ is a topical index of questions that have been asked (and answered) on 
 *  [How do I clear the read-only status of a file?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206142039-Clear-read-only-status)
 *  [How do I show a popup hint in an editor?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206146719-HintManager-API-question)
 *  [How do I create live template-like red box edit regions in an editor?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206800165-How-to-%C3%A7reate-live-template-like-red-box-edit-regions-in-an-editor)
-*  [How can I show an editor with error highlighting in a toolwindow?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206146679-Error-highlighting-in-Editors)
+*  [How can I show an editor with error highlighting in a tool window?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206146679-Error-highlighting-in-Editors)
 
 ## Inspections
 *  [Can I build an inspection that processes XML files?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206139579-LocalInspectionTool-for-XML-files-/comments/206204765)
@@ -137,7 +137,7 @@ This FAQ is a topical index of questions that have been asked (and answered) on 
 *  [How do I print messages in the console view?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206141419-Putting-messages-into-console-window-)
 *  [How do I show the package selector dialog programmatically?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206794265-Package-selector-dialog)
 *  [How do I provide syntax and error highlighting in a combo box editor?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206800495-EditorTextField-in-3403-How-to-get-an-Editor-that-does-error-highlighting-)
-*  [How can I get notified when my toolwindow is activated?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206800405-How-can-i-run-some-code-when-a-ToolWindow-activates)
+*  [How can I get notified when my tool window is activated?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206800405-How-can-i-run-some-code-when-a-ToolWindow-activates)
 *  [How can I provide Close and Rerun buttons in my Usage View window?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206146779-How-to-get-a-Close-button-in-an-own-Usage-View-)
 
 ## General

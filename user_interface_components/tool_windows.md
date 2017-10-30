@@ -7,54 +7,54 @@ title: Tool Windows
 
 _Tool windows_ are child windows of the IDE used to display information. These windows generally have their own toolbars (referred to as _tool window bars_) along the outer edges of the main window containing one or more _tool window buttons_, which activate panels displayed on the left, bottom and right sides of the main IDE window. For detailed information about tool windows, please see [IntelliJ IDEA Web Help ](https://www.jetbrains.com/idea/help/tool-windows.html).
 
-Each side contains two tool window groups, the primary and the secondary one, and only one toolwindow from each group can be active at a time.
+Each side contains two tool window groups, the primary and the secondary one, and only one tool window from each group can be active at a time.
 
-Each toolwindow can show multiple tabs (or "contents", as they are called in the API).
-For example, the Run toolwindow displays a tab for each active run configuration, and the Changes toolwindow displays a fixed set of tabs depending on the version control system used in the project.
+Each tool window can show multiple tabs (or "contents", as they are called in the API).
+For example, the Run tool window displays a tab for each active run configuration, and the Changes tool window displays a fixed set of tabs depending on the version control system used in the project.
 
 There are two main scenarios for the use of tool windows in a plugin.
-In the first scenario (used by the Ant and Commander plugins, for example), a toolwindow button is always visible, and the user can activate it and interact with the plugin functionality at any time.
-In the second scenario (used by the `Analyze Dependencies` action, for example), the toolwindow is created to show the results of a specific operation, and can be closed by the user after the operation is completed.
+In the first scenario (used by the Ant and Commander plugins, for example), a tool window button is always visible, and the user can activate it and interact with the plugin functionality at any time.
+In the second scenario (used by the `Analyze Dependencies` action, for example), the tool window is created to show the results of a specific operation, and can be closed by the user after the operation is completed.
 
-In the first scenario, the toolwindow is registered in *plugin.xml* using the `<toolWindow>` extension point.
-The extension point attributes specify all the data which is necessary to display the toolwindow button:
+In the first scenario, the tool window is registered in *plugin.xml* using the `<tool window>` extension point.
+The extension point attributes specify all the data which is necessary to display the tool window button:
 
-*  The `id` of the toolwindow (corresponds to the text displayed on the toolwindow button)
+*  The `id` of the tool window (corresponds to the text displayed on the tool window button)
 
-*  The `anchor`, meaning the side of the screen on which the toolwindow is displayed ("left", "right" or "bottom")
+*  The `anchor`, meaning the side of the screen on which the tool window is displayed ("left", "right" or "bottom")
 
-*  The `secondary` attribute, specifying whether the toolwindow is displayed in the primary or the secondary group
+*  The `secondary` attribute, specifying whether the tool window is displayed in the primary or the secondary group
 
-*  The `icon` to display on the toolwindow button (13x13 pixels)
+*  The `icon` to display on the tool window button (13x13 pixels)
 
 In addition to that, you specify the *factory class*  - the name of a class implementing the
 [ToolWindowFactory](upsource:///platform/platform-api/src/com/intellij/openapi/wm/ToolWindowFactory.java)
 interface.
-When the user clicks on the toolwindow button, the `createToolWindowContent()` method of the factory class is called, and initializes the UI of the toolwindow.
-This procedure ensures that unused toolwindows don't cause any overhead in startup time or memory usage: if a user does not interact with the toolwindow of your plugin, no plugin code will be loaded or executed.
+When the user clicks on the tool window button, the `createToolWindowContent()` method of the factory class is called, and initializes the UI of the tool window.
+This procedure ensures that unused tool windows don't cause any overhead in startup time or memory usage: if a user does not interact with the tool window of your plugin, no plugin code will be loaded or executed.
 
-If the toolwindow of your plugin doesn't need to be displayed for all projects, you can also specify the *conditionClass*  attribute - the qualified name of a class implementing the
+If the tool window of your plugin doesn't need to be displayed for all projects, you can also specify the *conditionClass*  attribute - the qualified name of a class implementing the
 [Condition\<Project\>](upsource:///platform/util-rt/src/com/intellij/openapi/util/Condition.java)
-interface (this can be the same class as the toolwindow factory implementation).
-If the condition returns `false`, the toolwindow will not be displayed.
+interface (this can be the same class as the tool window factory implementation).
+If the condition returns `false`, the tool window will not be displayed.
 Note that the condition is evaluated only once when the project is loaded;
-if you'd like to show your and hide toolwindow dynamically while the user is working with the project, you need to use the second method for toolwindow registration.
+if you'd like to show your and hide tool window dynamically while the user is working with the project, you need to use the second method for tool window registration.
 
 The second method involves simply calling
 [ToolWindowManager.registerToolWindow()](upsource:///platform/platform-api/src/com/intellij/openapi/wm/ToolWindowManager.java)
 from your plugin code.
 The method has multiple overloads that can be used depending on your task.
-If you use an overload that takes a component, the component becomes the first content (tab) displayed in the toolwindow.
+If you use an overload that takes a component, the component becomes the first content (tab) displayed in the tool window.
 
-Displaying the contents of many toolwindows requires access to the indexes.
-Because of that, toolwindows are normally disabled while building indices, unless you pass true as the value of `canWorkInDumbMode` to the `registerToolWindow()` function.
+Displaying the contents of many tool windows requires access to the indexes.
+Because of that, tool windows are normally disabled while building indices, unless you pass true as the value of `canWorkInDumbMode` to the `registerToolWindow()` function.
 
-As mentioned previously, toolwindows can contain multiple tabs, or contents.
-To manage the contents of a toolwindow, you can call
+As mentioned previously, tool windows can contain multiple tabs, or contents.
+To manage the contents of a tool window, you can call
 [ToolWindow.getContentManager()](upsource:///platform/platform-api/src/com/intellij/openapi/wm/ToolWindow.java).
 To add a tab (content), you first need to create it by calling
 [ContentManager.getFactory().createContent()](upsource:///platform/platform-api/src/com/intellij/ui/content/ContentManager.java),
-and then to add it to the toolwindow using
+and then to add it to the tool window using
 [ContentManager.addContent()](upsource:///platform/platform-api/src/com/intellij/ui/content/ContentManager.java).
 
 You can control whether the user is allowed to close tabs either globally or on a per-tab basis.
@@ -96,12 +96,12 @@ To clarify the above procedure, consider the following fragment of the `plugin.x
 
 To clarify how to develop plugins that create tool windows, consider the **toolWindow** sample plugin available in the [code_samples](https://github.com/JetBrains/intellij-sdk-docs/tree/master/code_samples/) directory of the SDK documentation. This plugin creates the **Sample Calendar** tool window that displays the system date, time and time zone.
 
-**To run toolWindow plugin**
+**To run the toolWindow plugin**
 
 1. Start **IntelliJ IDEA** and open the **tool_window** project saved into the [code_samples/tool_window](https://github.com/JetBrains/intellij-sdk-docs/tree/master/code_samples/tool_window) directory.
-2. Ensure that the project settings are valid for your environment. If necessary, modify the project settings.  
+2. Ensure that the project settings are valid for your environment. If necessary, modify the project settings.
 To view or modify the project settings, you can open the [Project Structure](https://www.jetbrains.com/help/idea/project-structure-dialog.html) dialog.
-3. Run the plugin by choosing the **Run | Run** on the main menu.  
+3. Run the plugin by choosing the **Run | Run** on the main menu.
 If necessary, change the [Run/Debug Configurations](http://www.jetbrains.com/idea/help/run-debug-configuration-plugin.html).
 
 The plugin creates the **Sample Calendar** tool window. When opened, this tool window is similar to the following screen:

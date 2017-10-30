@@ -72,7 +72,7 @@ The text shown for each found element is taken from the
 [FindUsagesProvider.getNodeText()](upsource:///platform/indexing-api/src/com/intellij/lang/findUsages/FindUsagesProvider.java)
 method.
 
-To have the title of the found element be correctly displayed in the title of the Find Usages toolwindow, you need to provide an implementation of the
+To have the title of the found element be correctly displayed in the title of the Find Usages tool window, you need to provide an implementation of the
 [ElementDescriptionProvider](upsource:///platform/core-api/src/com/intellij/psi/ElementDescriptionProvider.java)
 interface.
 The

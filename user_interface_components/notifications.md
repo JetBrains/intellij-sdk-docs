@@ -34,7 +34,7 @@ It has two main advantages:
 
 *  The user can control the way each notification type is displayed under `Settings | Notifications`
 
-*  All displayed notifications are gathered in the Event Log toolwindow and can be reviewed later
+*  All displayed notifications are gathered in the Event Log tool window and can be reviewed later
 
 The specific method used to display a notification is
 [Notifications.Bus.notify()](upsource:///platform/platform-api/src/com/intellij/notification/Notification.java).

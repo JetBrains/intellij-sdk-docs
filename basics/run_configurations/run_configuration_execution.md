@@ -13,7 +13,7 @@ Implementations of `ProgramRunner.execute()` go through the following steps to e
 
 * `RunProfile.getState()` method is called to create a [`RunProfileState`](upsource:///platform/lang-api/src/com/intellij/execution/configurations/RunProfileState.java) object, describing a process about to be started. At this stage, the command line parameters, environment variables and other information required to start the process is initialized.
 * `RunProfileState.execute()` is called. It starts the process, attaches a `ProcessHandler` to its input and output streams, creates a console to display the process output, and returns an [`ExecutionResult`](upsource:///platform/lang-api/src/com/intellij/execution/ExecutionResult.java) object aggregating the console and the process handler.
-* The `RunContentBuilder` object is created and invoked to display the execution console in a tab of the Run or Debug toolwindow.
+* The `RunContentBuilder` object is created and invoked to display the execution console in a tab of the Run or Debug tool window.
 
 ## Executor
 

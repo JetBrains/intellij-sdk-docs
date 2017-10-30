@@ -39,6 +39,11 @@ NOTE: You are allowed to prettify the pattern using markdown-features:
 | `com.intellij.internal.statistic.UsagesCollector.doPersistProjectUsages` method removed | This method isn't supposed to be used in regular plugins. There is no need to call this method anymore. |
 |`org.apache.sanselan` package removed | Use classes from `org.apache.commons.imaging` instead |
 
+## Changes in PhpStorm and PHP plugin 2017.3
+|  Change | How to deal with it |
+|---------|---------------------|
+| `com.jetbrains.php.lang.psi.elements.Function.getReturnType()` now returns `PhpReturnType` instead of `PsiElement`|Before method had been returning a `com.jetbrains.php.lang.psi.elements.ClassReference`. Now method returns `com.jetbrains.php.lang.psi.elements.PhpReturnType`. Method `ReturnType.getClassReference()` can be used if you need just a `ClassReference`. If you need to get the the `PhpType` of return type, please, use `com.jetbrains.php.lang.psi.elements.Function.getReturnType.getType()` method |
+
 ## Changes in IntelliJ Platform 2016.3
 
 |  Change | How to deal with it |

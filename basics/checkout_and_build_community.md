@@ -29,8 +29,8 @@ The [master](https://github.com/JetBrains/intellij-community/tree/master) branch
 
 | IntelliJ Product version | Branch name/number                                                |
 |--------------------------|-------------------------------------------------------------------|
-| 2017.3                   | [171](https://github.com/JetBrains/intellij-community/tree/173)   |
-| 2017.2                   | [171](https://github.com/JetBrains/intellij-community/tree/172)   |
+| 2017.3                   | [173](https://github.com/JetBrains/intellij-community/tree/173)   |
+| 2017.2                   | [172](https://github.com/JetBrains/intellij-community/tree/172)   |
 | 2017.1                   | [171](https://github.com/JetBrains/intellij-community/tree/171)   |
 | 2016.3                   | [163](https://github.com/JetBrains/intellij-community/tree/163)   |
 | 2016.2                   | [162](https://github.com/JetBrains/intellij-community/tree/162)   |

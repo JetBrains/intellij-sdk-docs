@@ -9,12 +9,20 @@ the first column is a problem pattern and the second column is a human-readable 
 The following problem patterns are supported:
 <package name> package removed
 <class name> class removed
+
 <class name>.<method name> method removed
+<class name>.<method name> method return type changed from <before> to <after>
+<class name>.<method name> method parameter type changed from <before> to <after>
+<class name>.<method name> method visibility changed from <before> to <after>
+
 <class name>.<field name> field removed
+<class name>.<field name> field type changed from <before> to <after>
+<class name>.<field name> field visibility changed from <before> to <after>
+
 <class name>.<method name> abstract method added
 <class name> class moved to package <package name>
 
-where <class name> is a fully-qualified name of the class, e.g. com.intellij.openapi.actionSystem.AnAction.
+where <class name> is a fully-qualified name of the class, e.g. com.intellij.openapi.actionSystem.AnAction$InnerClass.
 
 NOTE: You are allowed to prettify the pattern using markdown-features:
  1) code quotes: `org.example.Foo.methodName`
@@ -43,7 +51,7 @@ NOTE: You are allowed to prettify the pattern using markdown-features:
 
 |  Change | How to deal with it |
 |---------|---------------------|
-| `com.jetbrains.php.lang.psi.elements.Function.getReturnType()` now returns `PhpReturnType` instead of `PsiElement` | Before method had been returning a `com.jetbrains.php.lang.psi.elements.ClassReference`. Now method returns `com.jetbrains.php.lang.psi.elements.PhpReturnType`. Method `ReturnType.getClassReference()` can be used if you need just a `ClassReference`. If you need to get the `PhpType`, use `com.jetbrains.php.lang.psi.elements.Function.getReturnType.getType()` method instead |
+| `com.jetbrains.php.lang.psi.elements.Function.getReturnType()` method return type changed from `PsiElement` to `PhpReturnType` | Before method had been returning a `com.jetbrains.php.lang.psi.elements.ClassReference`. Now method returns `com.jetbrains.php.lang.psi.elements.PhpReturnType`. Method `ReturnType.getClassReference()` can be used if you need just a `ClassReference`. If you need to get the `PhpType`, use `com.jetbrains.php.lang.psi.elements.Function.getReturnType.getType()` method instead |
 
 ## Changes in IntelliJ Platform 2016.3
 

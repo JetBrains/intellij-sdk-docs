@@ -56,10 +56,6 @@ public class DemoModuleType extends ModuleType<DemoModuleBuilder> {
         return "Demo Module Type";
     }
 
-    @Override
-    public Icon getBigIcon() {
-        return AllIcons.General.Information;
-    }
 
     @Override
     public Icon getNodeIcon(@Deprecated boolean b) {

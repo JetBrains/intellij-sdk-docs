@@ -156,6 +156,7 @@
     * [Setting-up the Environment](phpstorm/setting_up_environment.md)
     * [PHP Open API](phpstorm/php_open_api.md)
     * [Existing Third Party Plugins](phpstorm/existing_plugins.md)
+* [PyCharm](products/pycharm.md)
 * DataGrip
 * Android Studio
 * Rider

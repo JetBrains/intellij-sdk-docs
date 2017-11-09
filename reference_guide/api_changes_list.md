@@ -47,6 +47,15 @@ NOTE: You are allowed to prettify the pattern using markdown-features:
 | `com.intellij.internal.statistic.UsagesCollector.doPersistProjectUsages` method removed | This method isn't supposed to be used in regular plugins. There is no need to call this method anymore. |
 |`org.apache.sanselan` package removed | Use classes from `org.apache.commons.imaging` instead |
 
+## Changes in DataGrip and Database Tools plugin 2017.3
+
+|  Change | How to deal with it |
+|---------|---------------------|
+| `com.intellij.database.dataSource.DataSourceManager` class removed | Use `com.intellij.database.psi.DbPsiFacade` instead |
+| `com.intellij.database.dataSource.DataSourceManagerEx` class removed | Use `com.intellij.database.psi.DbPsiFacade` instead |
+| `com.intellij.database.dataSource.DataSource` class removed | Use `com.intellij.database.psi.DbDataSource` and `com.intellij.database.model.DatabaseSystem` instead.
+| `com.intellij.database.psi.DbDataSource.getModel` return value changed from `DbElement`-based model to `DasObject`-based model | Use `com.intellij.database.psi.DbPsiFacade.findElement` to get the corresponding `com.intellij.database.psi.DbElement` wrapper when needed.
+
 ## Changes in PhpStorm and PHP plugin 2017.3
 
 |  Change | How to deal with it |

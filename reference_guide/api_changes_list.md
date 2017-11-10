@@ -24,6 +24,8 @@ The following problem patterns are supported:
 
 where <class name> is a fully-qualified name of the class, e.g. com.intellij.openapi.actionSystem.AnAction$InnerClass.
 
+NOTE: If a change you're trying to document doesn't match any of the above patterns, fill in a ticket in the YouTrack/Plugins Repository assigned to me (Sergey Patrikeev), or contact me directly. An example of such a task is https://youtrack.jetbrains.com/issue/PR-1218. Until supported, you may document the change as you prefer, and I will correct it later.
+
 NOTE: You are allowed to prettify the pattern using markdown-features:
  1) code quotes: `org.example.Foo.methodName`
  2) links [org.example.Foo](upsource:///platform/core-api/src/org/example/Foo)

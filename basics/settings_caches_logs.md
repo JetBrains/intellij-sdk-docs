@@ -34,7 +34,7 @@ Every IntelliJ-based IDE stores its local settings, caches, log and installed pl
 | PyCharm                         | `PyCharm`             |
 | AppCode                         | `appCode`             |
 | CLion                           | `clion`               |
-| 0xDBE Data Base IDE             | `0xDBE`               |
+| DataGrip                        | `DataGrip`            |
 
 ## Example
 

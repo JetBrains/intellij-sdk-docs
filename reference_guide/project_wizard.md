@@ -77,7 +77,7 @@ to understand better how to implement a module builder.
 If your module type is based on the java module and meant to support Java as well, extending
 [JavaModuleBuilder](upsource:///java/openapi/src/com/intellij/ide/util/projectWizard/JavaModuleBuilder.java)
 is enough.
-No extension point needs no be registered.
+No extension point needs to be registered.
 Refer to
 [SmallTalk module type](https://github.com/bulenkov/RedlineSmalltalk/blob/master/src/st/redline/smalltalk/module/RsModuleType.java)
 to see how
@@ -110,7 +110,7 @@ public ModuleWizardStep[] createWizardSteps(WizardContext wizardContext, Modules
 ```
 method in a custom
 [module builder](https://github.com/bulenkov/RedlineSmalltalk/blob/master/src/st/redline/smalltalk/module/RsModuleBuilder.java).
-If this method returns a non-empty array of ModuleWizardStep objects, new steps will be shown in their indexing oder while creating a new module.
+If this method returns a non-empty array of ModuleWizardStep objects, new steps will be shown in their indexing order while creating a new module.
 The following
 [implementation](https://github.com/bulenkov/RedlineSmalltalk/blob/master/src/st/redline/smalltalk/module/RsModuleWizardStep.java)
 for the SmallTalk project type illustrates how a custom wizard step can be created.

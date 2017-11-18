@@ -8,7 +8,7 @@ title: 13. Go To Symbol Contributor
 
 To specify how a PSI element looks like in the *Go To Symbol* popup window, *Structure* tool window or another components, it should implement *getPresentation* method.
 
-This means we need to define this method in our utility *com.simpleplugin.parser.SimplePsiImplUtil* and regenerate the parser and PSI classes.
+This means we need to define this method in our utility *com.simpleplugin.psi.impl.SimplePsiImplUtil* and regenerate the parser and PSI classes.
 
 ```java
 public static ItemPresentation getPresentation(final SimpleProperty element) {

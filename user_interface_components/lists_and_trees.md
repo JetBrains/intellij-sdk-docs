@@ -47,7 +47,7 @@ To facilitate keyboard-based selection of items in a list box or a tree, you can
 [ListSpeedSearch](upsource:///platform/platform-impl/src/com/intellij/ui/ListSpeedSearch.java)
 and
 [TreeSpeedSearch](upsource:///platform/platform-impl/src/com/intellij/ui/TreeSpeedSearch.java).
-This can be done simply by calling `new ListSpeedSeach(list)` or `new TreeSpeedSearch(tree)`.
+This can be done simply by calling `new ListSpeedSearch(list)` or `new TreeSpeedSearch(tree)`.
 If you need to customize the text which is used to locate the element, you can override the `getElementText()` method.
 Alternatively, you can pass a function to convert items to strings.
 A function needs to be passed as `elementTextDelegate` to the

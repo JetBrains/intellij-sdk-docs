@@ -48,6 +48,7 @@ NOTE: You are allowed to prettify the pattern using markdown-features:
 | `com.intellij.internal.statistic.AbstractApplicationUsagesCollector` class removed | This class isn't supposed to be used in regular plugins. Override `com.intellij.internal.statistic.AbstractProjectsUsagesCollector` instead if you're developing an IDE with its own statistics services. |
 | `com.intellij.internal.statistic.UsagesCollector.doPersistProjectUsages` method removed | This method isn't supposed to be used in regular plugins. There is no need to call this method anymore. |
 |`org.apache.sanselan` package removed | Use classes from `org.apache.commons.imaging` instead |
+| `com.intellij.psi.MultiplePsiFilesPerDocumentFileViewProvider.getLanguages` abstract method added | Implementation of this class are supposed to have several languages so you need to implement this method explicitly and return them all |
 
 ## Changes in DataGrip and Database Tools plugin 2017.3
 

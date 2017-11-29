@@ -57,7 +57,7 @@ NOTE: You are allowed to prettify the pattern using markdown-features:
 | `com.intellij.database.dataSource.DataSourceManager` class removed | Use `com.intellij.database.psi.DbPsiFacade` instead |
 | `com.intellij.database.dataSource.DataSourceManagerEx` class removed | Use `com.intellij.database.psi.DbPsiFacade` instead |
 | `com.intellij.database.dataSource.DataSource` class removed | Use `com.intellij.database.psi.DbDataSource` and `com.intellij.database.model.DatabaseSystem` instead.
-| `com.intellij.database.psi.DbDataSource.getModel` return value changed from `DbElement`-based model to `DasObject`-based model | Use `com.intellij.database.psi.DbPsiFacade.findElement` to get the corresponding `com.intellij.database.psi.DbElement` wrapper when needed.
+| `com.intellij.database.psi.DbDataSource.getModel` method return type changed from `DbElement`-based model to `DasObject`-based model | Use `com.intellij.database.psi.DbPsiFacade.findElement` to get the corresponding `com.intellij.database.psi.DbElement` wrapper when needed.
 | `com.intellij.database.view.DatabaseView.getTreeBuilder` method removed | Use `LangDataKeys.PSI_ELEMENT_ARRAY.get(event)` to get Database view selection
 
 ## Changes in PhpStorm and PHP plugin 2017.3

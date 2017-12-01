@@ -21,7 +21,7 @@ The [comparing_references_inspection](https://github.com/JetBrains/intellij-sdk
 
 ## Sample Plugin
 
-The **comparingReferences** sample plugin is available in the `<%IntelliJ SDK Docs project%>/code_samples/comparing_references_inspection` directory. When launched, this plugin adds the **'==' or '!=' instead of 'equals()'** item to the **Probable bugs** node in the [Inspections list](http://www.jetbrains.com/idea/webhelp/inspections-2.html).
+The **comparingReferences** sample plugin is available in the `<%IntelliJ SDK Docs project%>/code_samples/comparing_references_inspection` directory. When launched, this plugin adds the **'==' or '!=' instead of 'equals()'** item to the **Probable bugs** node in the [Inspections list](https://www.jetbrains.com/help/idea/inspections.html).
 
 #### Running the Plugin
 

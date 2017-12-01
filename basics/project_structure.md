@@ -8,7 +8,7 @@ This topic considers the concept of projects based on *IntelliJ Platform* and re
 
 ## Project and its components
 
-This section briefly discusses the IDEA project structure, project components and related terms.  For more information about projects and their components, refer to [Project](https://www.jetbrains.com/help/idea/about-projects.html), [Module](https://www.jetbrains.com/help/idea/about-modules.html), [Library](https://www.jetbrains.com/help/idea/working-with-libraries.html), [Facet](https://www.jetbrains.com/help/idea/adding-support-for-frameworks-and-technologies.html#facets) in the *IntelliJ IDEA* Web Help.
+This section briefly discusses the IDEA project structure, project components and related terms.  For more information about projects and their components, refer to [Project](https://www.jetbrains.com/help/idea/about-projects.html), [Module](https://www.jetbrains.com/help/idea/configuring-projects.html#working-with-modules), [Library](https://www.jetbrains.com/help/idea/working-with-libraries.html), [Facet](https://www.jetbrains.com/help/idea/adding-support-for-frameworks-and-technologies.html#facets) in the *IntelliJ IDEA* Web Help.
 
 ### Project
 

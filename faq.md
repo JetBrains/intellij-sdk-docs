@@ -7,7 +7,7 @@ This FAQ is a topical index of questions that have been asked (and answered) on 
 [OpenAPI forum](https://intellij-support.jetbrains.com/hc/en-us/community/topics/200366979-IntelliJ-IDEA-Open-API-and-Plugin-Development).
 
 ## Open-Source Plugins
-*  [How do I compile the Scala plugin?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206135599-Working-with-the-Scala-plugin-source)
+*  [How do I compile the Scala plugin?](https://github.com/jetbrains/intellij-scala#setting-up-the-project)
 
 ## Version Differences
 *  [How do I replace my usage of Project.getProjectFile() in 7.0?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206139019-Method-will-cease-but-how-to-find-what-to-use-instead-)

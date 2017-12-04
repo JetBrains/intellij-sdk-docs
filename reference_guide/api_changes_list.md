@@ -49,6 +49,9 @@ NOTE: You are allowed to prettify the pattern using markdown-features:
 | `com.intellij.internal.statistic.UsagesCollector.doPersistProjectUsages` method removed | This method isn't supposed to be used in regular plugins. There is no need to call this method anymore. |
 |`org.apache.sanselan` package removed | Use classes from `org.apache.commons.imaging` instead |
 | `com.intellij.psi.MultiplePsiFilesPerDocumentFileViewProvider.getLanguages` abstract method added | Implementation of this class are supposed to have several languages so you need to implement this method explicitly and return them all |
+| `org.jetbrains.kotlin.idea.configuration.KotlinProjectConfigurator.changeCoroutineConfiguration` abstract method added | You need to implement this method and add the logic for updating the configuration in your build system |
+| `org.jetbrains.kotlin.idea.configuration.KotlinProjectConfigurator.updateLanguageVersion` abstract method added | You need to implement this method and add the logic for updating the configuration in your build system |
+| `org.jetbrains.kotlin.idea.configuration.KotlinProjectConfigurator.addLibraryDependency` abstract method added | You need to implement this method and add the logic for updating the configuration in your build system |
 
 ## Changes in DataGrip and Database Tools plugin 2017.3
 

@@ -30,7 +30,7 @@ The following is a sample plugin configuration file. This sample showcases and d
   <!-- The vendor of the plugin.
        The optional "url" attribute specifies the URL of the vendor homepage.
        The optional "email" attribute specifies the e-mail address of the vendor.-->
-  <vendor url="http://www.jetbrains.com" email="support@jetbrains.com"</vendor>
+  <vendor url="http://www.jetbrains.com" email="support@jetbrains.com" />
 
   <!-- The unique identifiers of the plugins on which this plugin depends. -->
   <depends>MyFirstPlugin</depends>

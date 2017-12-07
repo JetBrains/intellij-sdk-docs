@@ -29,7 +29,7 @@ Application level components must be registered in the `<application-components>
 
 ## Project level components
 
-Optionally, a project level component's implementation class may implement the [ProjectComponent](upsource:///platform/core-api/src/com/intellij/openapi/components/ProjectComponent.java) interface.
+Optionally, a project level component's implementation class may implement the [ProjectComponent](upsource:///platform/projectModel-api/src/com/intellij/openapi/components/PersistentStateComponent.java) interface.
 
 The constructor of a project level component can have a parameter of the [Project](upsource:///platform/core-api/src/com/intellij/openapi/project/Project.java) type, if it needs the project instance.  It can also specify other application-level or project-level components as parameters, if it depends on those components.
 
@@ -37,7 +37,7 @@ Project level components must be registered in the `<project-components>` sectio
 
 ## Module level components
 
-Optionally, a module level component's implementation class may implement the [ModuleComponent](upsource:///platform/core-api/src/com/intellij/openapi/module/ModuleComponent.java) interface.
+Optionally, a module level component's implementation class may implement the [ModuleComponent](upsource:///platform/projectModel-api/src/com/intellij/openapi/module/ModuleComponent.java) interface.
 
 The constructor of a module level component can have a parameter of the Module type, if it needs the module instance. It can also specify other application level, project level or module level components as parameters, if it depends on those components.
 
@@ -45,9 +45,9 @@ Module level components must be registered in the `<module-components>` section 
 
 ## Persisting the state of components
 
-The state of every component will be automatically saved and loaded if the component's class implements the [JDOMExternalizable](upsource:///platform/util/src/com/intellij/openapi/util/JDOMExternalizable.java) (deprecated) or [PersistentStateComponent](upsource:///platform/core-api/src/com/intellij/openapi/components/PersistentStateComponent.java) interface.
+The state of every component will be automatically saved and loaded if the component's class implements the [JDOMExternalizable](upsource:///platform/util/src/com/intellij/openapi/util/JDOMExternalizable.java) (deprecated) or [PersistentStateComponent](upsource:///platform/projectModel-api/src/com/intellij/openapi/components/PersistentStateComponent.java) interface.
 
-When the component's class implements the [PersistentStateComponent](upsource:///platform/core-api/src/com/intellij/openapi/components/PersistentStateComponent.java) interface, the component state is saved in an XML file that you can specify using the [@State](upsource:///platform/projectModel-api/src/com/intellij/openapi/components/State.java) and [@Storage](upsource:///platform/projectModel-api/src/com/intellij/openapi/components/Storage.java) annotations in your Java code.
+When the component's class implements the [PersistentStateComponent](upsource:///platform/projectModel-api/src/com/intellij/openapi/components/PersistentStateComponent.java) interface, the component state is saved in an XML file that you can specify using the [@State](upsource:///platform/projectModel-api/src/com/intellij/openapi/components/State.java) and [@Storage](upsource:///platform/projectModel-api/src/com/intellij/openapi/components/Storage.java) annotations in your Java code.
 
 When the component's class implements the [JDOMExternalizable](upsource:///platform/util/src/com/intellij/openapi/util/JDOMExternalizable.java) interface, the components save their state in the following files:
 
@@ -74,9 +74,9 @@ The components are loaded in the following order:
 
 * Creation - constructor is invoked.
 * Initialization - the `initComponent` method is invoked (if the component implements the [ApplicationComponent](upsource:///platform/core-api/src/com/intellij/openapi/components/ApplicationComponent.java) interface).
-* Configuration - the `readExternal` method is invoked (if the component implements [JDOMExternalizable](upsource:///platform/util/src/com/intellij/openapi/util/JDOMExternalizable.java) interface), or the `loadState` method is invoked (if the component implements [PersistentStateComponent](upsource:///platform/core-api/src/com/intellij/openapi/components/PersistentStateComponent.java) and has non-default persisted state).
-* For module components, the `moduleAdded` method of the [ModuleComponent](upsource:///platform/core-api/src/com/intellij/openapi/module/ModuleComponent.java) interface is invoked to notify that a module has been added to the project.
-* For project components, the `projectOpened` method of the [ProjectComponent](upsource:///platform/core-api/src/com/intellij/openapi/components/ProjectComponent.java) interface is invoked to notify that a project has been loaded.
+* Configuration - the `readExternal` method is invoked (if the component implements [JDOMExternalizable](upsource:///platform/util/src/com/intellij/openapi/util/JDOMExternalizable.java) interface), or the `loadState` method is invoked (if the component implements [PersistentStateComponent](upsource:///platform/projectModel-api/src/com/intellij/openapi/components/PersistentStateComponent.java) and has non-default persisted state).
+* For module components, the `moduleAdded` method of the [ModuleComponent](upsource:///platform/projectModel-api/src/com/intellij/openapi/module/ModuleComponent.java) interface is invoked to notify that a module has been added to the project.
+* For project components, the `projectOpened` method of the [ProjectComponent](upsource:///platform/projectModel-api/src/com/intellij/openapi/components/ProjectComponent.java) interface is invoked to notify that a project has been loaded.
 
 The components are unloaded in the following order:
 

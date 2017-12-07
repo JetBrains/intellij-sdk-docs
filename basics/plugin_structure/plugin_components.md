@@ -29,7 +29,7 @@ Application level components must be registered in the `<application-components>
 
 ## Project level components
 
-Optionally, a project level component's implementation class may implement the [ProjectComponent](upsource:///platform/projectModel-api/src/com/intellij/openapi/components/PersistentStateComponent.java) interface.
+Optionally, a project level component's implementation class may implement the [ProjectComponent](upsource:///platform/core-api/src/com/intellij/openapi/components/ProjectComponent.java) interface.
 
 The constructor of a project level component can have a parameter of the [Project](upsource:///platform/core-api/src/com/intellij/openapi/project/Project.java) type, if it needs the project instance.  It can also specify other application-level or project-level components as parameters, if it depends on those components.
 

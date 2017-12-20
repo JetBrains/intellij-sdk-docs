@@ -2,5 +2,5 @@
 title: IntelliJ IDEA
 ---
 
-* [Tomcat integration](reference_guide/tomcat_integration.md)
+* [Tomcat Integration](reference_guide/tomcat_integration.md)
 * [Spring API](reference_guide/frameworks_and_external_apis/spring_api.md)

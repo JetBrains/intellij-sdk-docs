@@ -149,7 +149,7 @@
 
 ## Part VII - Product Specific
 * Compatibility with Multiple Products
-* [IDEA](products/idea.md)
+* [IntelliJ IDEA](products/idea.md)
     * [Tomcat Integration](reference_guide/tomcat_integration.md)
     * [Spring API](reference_guide/frameworks_and_external_apis/spring_api.md)
 * [PhpStorm](phpstorm/phpstorm.md)

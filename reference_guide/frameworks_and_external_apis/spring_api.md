@@ -35,7 +35,7 @@ Note that "Spring Support" plugin itself has dependencies to a few other plugins
 ## Main concepts
 A Spring facet can be attached on a Module. (Nearly) All Spring functionality requires an existing and properly setup Spring facet.
 
-Spring facets usually contain one more user-configured or automatically provided filesets, which group a set of Spring related configuration files (XML, Code or .properties files).
+Spring facets usually contain one more user-configured or automatically provided filesets, which group a set of Spring related configuration files (XML, Code, .properties or other configuration files).
 
 A fileset usually corresponds to an actual application context configuration at runtime. Hierarchies can be modeled by depending on another fileset (possibly from  another module).
 

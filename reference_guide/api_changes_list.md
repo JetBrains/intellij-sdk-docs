@@ -41,6 +41,14 @@ NOTE: You are allowed to prettify the pattern using markdown-features:
   }
 </style>
 
+## Changes in IntelliJ Platform 2018.1
+
+|  Change | How to deal with it |
+|---------|---------------------|
+| `com.google.common.base.Objects.ToStringHelper` class removed | Use `com.google.common.base.MoreObjects.ToStringHelper` instead |
+| `com.google.common.util.concurrent.Futures.get` method removed | Use `com.google.common.util.concurrent.Futures.getChecked` instead |
+
+
 ## Changes in IntelliJ Platform 2017.3
 
 |  Change | How to deal with it |

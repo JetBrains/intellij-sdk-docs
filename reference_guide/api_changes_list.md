@@ -47,6 +47,7 @@ NOTE: You are allowed to prettify the pattern using markdown-features:
 |---------|---------------------|
 | `com.google.common.base.Objects.ToStringHelper` class removed | Use `com.google.common.base.MoreObjects.ToStringHelper` instead |
 | `com.google.common.util.concurrent.Futures.get` method removed | Use `com.google.common.util.concurrent.Futures.getChecked` instead |
+| [SVNKit](https://svnkit.com/index.html) library removed from dependencies | Use classes from `org.jetbrains.idea.svn` instead |
 
 
 ## Changes in IntelliJ Platform 2017.3

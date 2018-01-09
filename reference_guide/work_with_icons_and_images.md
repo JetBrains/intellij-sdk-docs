@@ -14,9 +14,9 @@ The `getIcon()` method of [`com.intellij.openapi.util.IconLoader`](upsource:///p
 
 ```java
 public interface DemoPluginIcons {
-  Icon STRUCTURE_TOOL_WINDOW = IconLoader.getIcon("/toolWindowStructure.png");
-  Icon MY_LANG_FILE_TYPE = IconLoader.getIcon("/myLangFileType.png");
-  Icon DEMO_ACTION = IconLoader.getIcon("/demoAction.png");
+  Icon STRUCTURE_TOOL_WINDOW = IconLoader.getIcon("/icons/toolWindowStructure.png");
+  Icon MY_LANG_FILE_TYPE = IconLoader.getIcon("/icons/myLangFileType.png");
+  Icon DEMO_ACTION = IconLoader.getIcon("/icons/demoAction.png");
 }
 ```
 

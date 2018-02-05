@@ -56,7 +56,7 @@ public class GroupedAction extends AnAction {
 And then the actions needs to be registered in the newly created group:
 
 ```xml
-<action>
+<actions>
     <group id="SimpleGroup" text="Custom Action Group" popup="true">
         <add-to-group group-id="EditorPopupMenu" anchor="first"/>
             <action class="org.jetbrains.tutorials.actions.GroupedAction" id="org.jetbrains.tutorials.actions.GroupedAction"

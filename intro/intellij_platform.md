@@ -20,7 +20,7 @@ Products built on the _IntelliJ Platform_ are composable applications, with the 
 
 Plugins can extend the platform in lots of ways, from adding a simple menu item to adding support for a complete language, build system and debugger. A lot of the existing functionality in the _IntelliJ Platform_ is written as plugins that can be included or excluded depending on the needs of the end product. See the section on [Plugins](/basics.md) for more details.
 
-The _Intellij Platform_ is a JVM application, written mostly in Java and Kotlin. You should be familiar with these languages, and associated tooling, in order to write plugins for products based on the _IntelliJ Platform_. At this time, it's not possible to extend the _IntelliJ Platform_ in non-JVM languages.
+The _IntelliJ Platform_ is a JVM application, written mostly in Java and Kotlin. You should be familiar with these languages, and associated tooling, in order to write plugins for products based on the _IntelliJ Platform_. At this time, it's not possible to extend the _IntelliJ Platform_ in non-JVM languages.
 
 ## Open Source
 

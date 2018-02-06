@@ -7,9 +7,9 @@ When your plugin is ready, you can upload it to the [IntelliJ Plugin Repository]
 **To get your JetBrains account**
 
 1. Open the [JetBrains Account Center](https://account.jetbrains.com) and click **Create Account**.
-2. Fill in all fields in the **Create Jetbrains Account** form that opens and click **Register**.
+2. Fill in all fields in the **Create JetBrains Account** form that opens and click **Register**.
 
-**To upload your plugin to Intellij Plugin Repository**
+**To upload your plugin to IntelliJ Plugin Repository**
 
 1. [Login to IntelliJ Plugin Repository](https://plugins.jetbrains.com/author/me) with your personal JetBrains account.
 2. On your Profile page that opens, click **Add new plugin**.

@@ -54,6 +54,7 @@ NOTE: You are allowed to prettify the pattern using markdown-features:
 | `com.intellij.ide.ui.laf.darcula.ui.DarculaComboBoxUI` constructor parameter `JComboBox` removed | Use `com.intellij.ide.ui.laf.darcula.ui.DarculaComboBoxUI` default constructor instead |
 | `com.intellij.ide.ui.laf.darcula.ui.TextFieldWithPopupHandlerUI.myTextField` field removed | Use `javax.swing.plaf.basic.BasicTextUI.getComponent()` instead |
 | `com.intellij.ide.ui.laf.darcula.ui.DarculaButtonUI.isDefaultButton` method parameter type changed from `javax.swing.JComponent` to `java.awt.Component` | This was done to avoid many redundant casts to `javax.swing.JComponent` |
+| `com.intellij.ide.ui.laf.intellij.MacIntelliJIconCache` class renamed to `com.intellij.ide.ui.laf.IconCache` | Use more generic class name `com.intellij.ide.ui.laf.IconCache` |
 
 ## Changes in PhpStorm and PHP plugin 2018.1
 

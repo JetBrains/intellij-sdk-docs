@@ -1,51 +1,61 @@
 ---
-title: Main Types of Plugins
+title: 插件的主要类型
 ---
 
-Products based on the *IntelliJ Platform* can be modified and adjusted for custom purposes by adding plugins. All downloadable plugins are available at the [JetBrains Plugin Repository](https://plugins.jetbrains.com/).
+基于对产品 *的IntelliJ平台* 可以通过添加插件进行修改和调整定制的目的。所有下载插件都可以在[JetBrains的插件库](https://plugins.jetbrains.com/)。
 
-The most common types of plugins include:
+最常见的类型的插件包括：
 
-* Custom language support
-* Framework integration
-* Tool integration
-* User interface add-ons
+* 自定义语言支持
+* 框架集成
+* 工具集成
+* 用户界面加载项
 
-## Custom Language Support
 
-Custom language support provides basic functionality for working with a particular programming language. This includes:
 
-* File type recognition
-* Lexical analysis
-* Syntax highlighting
-* Formatting
-* Code insight and code completion
-* Inspections and quick-fixes
-* Intention actions
+## 自定义语言支持[](http://127.0.0.1:4000/intellij/sdk/docs/basics/types_of_plugins.html#custom-language-support)
 
-Refer to the [Custom Language Support Tutorial](/tutorials/custom_language_support_tutorial.md) to learn more about the topic.
+自定义语言支持提供基本功能与特定的编程语言工作。这包括：
 
-## Framework Integration
+* 文件类型识别
+* 词法分析
+* 语法高亮
+* 格式化
+* 代码洞察和代码完成
+* 检查和快速修复
+* 意向行为
 
-Framework integration consists of improved code insight features which are typical for a given framework, as well as the option to use framework-specific functionality directly from the IDE. Sometimes it also includes language support elements for a custom syntax or DSL.
+请参阅[自定义语言支持教程](http://127.0.0.1:4000/intellij/sdk/docs/tutorials/custom_language_support_tutorial.html)，以了解更多的话题。
 
-* Specific code insight
-* Direct access to framework-specific functionality
 
-Refer to the [Struts 2 plugin](https://plugins.jetbrains.com/plugin/1698) as an example of framework integration.
 
-## Tool Integration
+## 框架集成[](http://127.0.0.1:4000/intellij/sdk/docs/basics/types_of_plugins.html#framework-integration)
 
-Tool integration makes it possible to manipulate third-party tools and components directly from the IDE without switching contexts.
- 
-This implies:
+框架集成包括改进的代码洞察功能，这是典型的给定的框架，以及直接从IDE中使用框架特定功能的选项。有时，它也包括一个自定义的语法或DSL语言支持的元素。
 
-* Implementation of additional actions 
-* Related UI components
-* Access to external resources
+* 具体代码洞察
+* 直接访问特定于框架的功能
 
-Refer to the [Gerrit integration](https://plugins.jetbrains.com/plugin/7272?pr=idea) plugin as an example.
+请参考[Struts 2的插件](https://plugins.jetbrains.com/plugin/1698)作为框架集成的例子。
 
-## User Interface Add-Ons
 
-Plugins in this category apply various changes to the standard user interface of the IDE. Some newly added components are interactive and provide new functionality, while others are limited to visual modifications only. The [Background Image](https://plugins.jetbrains.com/plugin/72) plugin may serve as an example.
+
+## 工具集成[](http://127.0.0.1:4000/intellij/sdk/docs/basics/types_of_plugins.html#tool-integration)
+
+工具集成能够直接从IDE操纵第三方工具和组件，而无需切换上下文。
+
+这意味着：
+
+* 额外行动的实施
+* 相关的UI组件
+* 访问外部资源
+
+请参阅[格里特集成](https://plugins.jetbrains.com/plugin/7272?pr=idea)插件作为一个例子。
+
+
+
+## 用户界面加载项[](http://127.0.0.1:4000/intellij/sdk/docs/basics/types_of_plugins.html#user-interface-add-ons)
+
+这一类插件适用于IDE的标准用户界面的各种变化。一些新加入的成分是互动的，并提供新的功能，而另一些则仅限于视觉修改。所述[背景图像](https://plugins.jetbrains.com/plugin/72)的插件可以作为一个例子。
+
+

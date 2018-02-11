@@ -1,105 +1,105 @@
 # Summary
 
-* [Introduction](welcome.md)
-* [The IntelliJ Platform](intro/intellij_platform.md)
-* [About this Guide](intro/about.md)
-    * [Key Topics](intro/key_topics.md)
-    * [Contributing](CONTRIBUTING.md)
-* [Getting Help](intro/getting_help.md)
-* [Recently Updated](recently_updated.md)
+* [介绍](welcome.md)
+* [IntelliJ Platform](intro/intellij_platform.md)
+* [关于本指南](intro/about.md)
+    * [关键主题](intro/key_topics.md)
+    * [特约](CONTRIBUTING.md)
+* [获得帮助](intro/getting_help.md)
+* [最近更新](recently_updated.md)
 
 ## Part I - Plugins
-* [Introduction](basics.md)
-    * [Types of Plugins](basics/types_of_plugins.md)
-* [Getting Started](basics/getting_started.md)
-    * [Setting Up a Development Environment](basics/getting_started/setting_up_environment.md)
-    * [Check Out And Build Community Edition](basics/checkout_and_build_community.md)
-    * [Creating a Plugin Project](basics/getting_started/creating_plugin_project.md)
-    * [Build Number Ranges](basics/getting_started/build_number_ranges.md)
-    * [Creating an Action](basics/getting_started/creating_an_action.md)
-    * [Running and Debugging a Plugin](basics/getting_started/running_and_debugging_a_plugin.md)
-    * [Deploying a Plugin](basics/getting_started/deploying_plugin.md)
-    * [Publishing a Plugin](basics/getting_started/publishing_plugin.md)
-    * [Plugin Structure](basics/plugin_structure.md)
-        * [Plugin Content](basics/plugin_structure/plugin_content.md)
-        * [Plugin Class Loaders](basics/plugin_structure/plugin_class_loaders.md)
-        * [Plugin Components](basics/plugin_structure/plugin_components.md)
-        * [Plugin Extensions and Extension Points](basics/plugin_structure/plugin_extensions_and_extension_points.md)
-        * [Plugin Actions](basics/plugin_structure/plugin_actions.md)
-        * [Plugin Services](basics/plugin_structure/plugin_services.md)
-        * [Plugin Configuration File](basics/plugin_structure/plugin_configuration_file.md)
-        * [Plugin Dependencies](basics/plugin_structure/plugin_dependencies.md)
-* [Project Structure](basics/project_structure.md)
-    * [Action System](basics/action_system.md)
-    * [Persisting State of Components](basics/persisting_state_of_components.md)
-    * [PSI Cookbook](basics/psi_cookbook.md)
-    * [Virtual File System](basics/virtual_file_system.md)
-* [Testing Plugins](basics/testing_plugins.md)
-    * [Tests and Fixtures](basics/testing_plugins/tests_and_fixtures.md)
-    * [Light and Heavy Tests](basics/testing_plugins/light_and_heavy_tests.md)
-    * [Test Project and Testdata Directories](basics/testing_plugins/test_project_and_testdata_directories.md)
-    * [Writing Tests](basics/testing_plugins/writing_tests.md)
-    * [Testing Highlighting](basics/testing_plugins/testing_highlighting.md)
-* [Versioning and Compatibility](basics/getting_started/plugin_compatibility.md)
-    * [Breaking API Changes](reference_guide/api_changes_list.md)
-* Required Technologies
+* [介绍](basics.md)
+    * [插件的类型](basics/types_of_plugins.md)
+* [入门](basics/getting_started.md)
+    * [建立一个开发环境](basics/getting_started/setting_up_environment.md)
+    * [检出并建立社区版](basics/checkout_and_build_community.md)
+    * [创建一个插件项目](basics/getting_started/creating_plugin_project.md)
+    * [编号范围](basics/getting_started/build_number_ranges.md)
+    * [创建一个动作](basics/getting_started/creating_an_action.md)
+    * [运行和调试一个插件](basics/getting_started/running_and_debugging_a_plugin.md)
+    * [部署一个插件](basics/getting_started/deploying_plugin.md)
+    * [发布一个插件](basics/getting_started/publishing_plugin.md)
+    * [插件结构](basics/plugin_structure.md)
+        * [插件内容](basics/plugin_structure/plugin_content.md)
+        * [插件类装载机](basics/plugin_structure/plugin_class_loaders.md)
+        * [插件组件](basics/plugin_structure/plugin_components.md)
+        * [插件扩展和扩展点](basics/plugin_structure/plugin_extensions_and_extension_points.md)
+        * [插件操作](basics/plugin_structure/plugin_actions.md)
+        * [插件服务](basics/plugin_structure/plugin_services.md)
+        * [插件配置文件](basics/plugin_structure/plugin_configuration_file.md)
+        * [插件依赖关系](basics/plugin_structure/plugin_dependencies.md)
+* [项目结构](basics/project_structure.md)
+    * [行动系统](basics/action_system.md)
+    * [组件持久状态](basics/persisting_state_of_components.md)
+    * [PSI 食谱](basics/psi_cookbook.md)
+    * [虚拟文件系统](basics/virtual_file_system.md)
+* [测试插件](basics/testing_plugins.md)
+    * [测试和夹具](basics/testing_plugins/tests_and_fixtures.md)
+    * [轻和重的测试](basics/testing_plugins/light_and_heavy_tests.md)
+    * [测试项目和测试数据目录](basics/testing_plugins/test_project_and_testdata_directories.md)
+    * [编写测试](basics/testing_plugins/writing_tests.md)
+    * [测试突出显示](basics/testing_plugins/testing_highlighting.md)
+* [版本和兼容性](basics/getting_started/plugin_compatibility.md)
+    * [打破API的变化](reference_guide/api_changes_list.md)
+* 所需的技术
     * Kotlin
     * Gradle
-    * Primer for the non-JVM Developer
-* [Troubleshooting](basics/settings_caches_logs.md)
-* [Plugin Development FAQ](faq.md)
+    * 非JVM开发人员的入门
+* [故障排除](basics/settings_caches_logs.md)
+* [插件开发常见问题](faq.md)
 
 ## Part II - Architecture
-* [Introduction](basics/architectural_overview.md)
-* Base Platform
-    * Components
-    * Extension Points
-* Project Model
+* [介绍](basics/architectural_overview.md)
+* 基础平台
+    * 组件
+    * 扩展点
+* 项目模型
 * [PSI](basics/architectural_overview/psi.md)
-    * [PSI Files](basics/architectural_overview/psi_files.md)
-    * [File View Providers](basics/architectural_overview/file_view_providers.md)
-    * [PSI Elements](basics/architectural_overview/psi_elements.md)
-* Features
-* Products
-* [Contributing to the IntelliJ Platform](basics/platform_contributions.md)
-    * [IntelliJ Coding Guidelines](basics/intellij_coding_guidelines.md)
+    * [PSI 文件](basics/architectural_overview/psi_files.md)
+    * [文件视图提供者](basics/architectural_overview/file_view_providers.md)
+    * [PSI 元素](basics/architectural_overview/psi_elements.md)
+* 特征
+* 产品
+* [为 IntelliJ 平台做出贡献](basics/platform_contributions.md)
+    * [IntelliJ 编码指南](basics/intellij_coding_guidelines.md)
 
 ## Part III - Base Platform
-* [Fundamentals](platform/fundamentals.md)
-    * Component Model
-    * [Threading](basics/architectural_overview/general_threading_rules.md)
-        * Background Tasks
-    * [Messaging Infrastructure](reference_guide/messaging_infrastructure.md)
-* [User Interface Components](user_interface_components/user_interface_components.md)
-    * [Tool Windows](user_interface_components/tool_windows.md)
-    * [Dialogs](user_interface_components/dialog_wrapper.md)
-    * [Popups](user_interface_components/popups.md)
-    * [Notifications](user_interface_components/notifications.md)
-    * [File and Class Choosers](user_interface_components/file_and_class_choosers.md)
-    * [Editor Components](user_interface_components/editor_components.md)
-    * [List and Tree Controls](user_interface_components/lists_and_trees.md)
-    * [Miscellaneous Swing Components](user_interface_components/misc_swing_components.md)
-    * [Icons and Images](reference_guide/work_with_icons_and_images.md)
-    * [Color Scheme Management](reference_guide/color_scheme_management.md)
-* Actions
-* Settings
-* [Files](basics/architectural_overview/files.md)
-    * [Virtual Files](basics/architectural_overview/virtual_file.md)
-    * Scratch Files
-* [Documents](basics/architectural_overview/documents.md)
-* [Editors](reference_guide/editors.md)
-    * [Multiple Carets](reference_guide/multiple_carets.md)
-* [Run Configurations](basics/run_configurations.md)
-    * [Run Configuration Management](basics/run_configurations/run_configuration_management.md)
-    * [Execution](basics/run_configurations/run_configuration_execution.md)
-* [Version Control Systems](reference_guide/vcs_integration_for_plugins.md)
-    * Diff
-    * Local History
-* Indexing
-* Tasks and Contexts
-* [Localization Guide](reference_guide/localization_guide.md)
-* Diagrams
-* Database Tools
+* [基本面](platform/fundamentals.md)
+    * 组件模型
+    * [穿线](basics/architectural_overview/general_threading_rules.md)
+        * 背景任务
+    * [消息传递基础结构](reference_guide/messaging_infrastructure.md)
+* [用户界面组件](user_interface_components/user_interface_components.md)
+    * [工具窗口](user_interface_components/tool_windows.md)
+    * [对话框](user_interface_components/dialog_wrapper.md)
+    * [弹出窗口](user_interface_components/popups.md)
+    * [通知](user_interface_components/notifications.md)
+    * [文件和类选择器](user_interface_components/file_and_class_choosers.md)
+    * [编辑器组件](user_interface_components/editor_components.md)
+    * [列表和树控件](user_interface_components/lists_and_trees.md)
+    * [其他 Swing 组件](user_interface_components/misc_swing_components.md)
+    * [图标和图像](reference_guide/work_with_icons_and_images.md)
+    * [配色方案管理](reference_guide/color_scheme_management.md)
+* 操作
+* 设置
+* [文件](basics/architectural_overview/files.md)
+    * [虚拟文件](basics/architectural_overview/virtual_file.md)
+    * 临时文件
+* [文档](basics/architectural_overview/documents.md)
+* [编者](reference_guide/editors.md)
+    * [多意见](reference_guide/multiple_carets.md)
+* [运行配置](basics/run_configurations.md)
+    * [运行配置管理](basics/run_configurations/run_configuration_management.md)
+    * [执行](basics/run_configurations/run_configuration_execution.md)
+* [版本控制](reference_guide/vcs_integration_for_plugins.md)
+    * 比较
+    * 本地文件历史
+* 索引
+* 任务和上下文
+* [本地化指南](reference_guide/localization_guide.md)
+* 图
+* 数据库工具
 
 ## Part IV - Project Model
 * [Introduction](reference_guide/project_model.md)

@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="conditional_operator_intention" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
     <module name="conditional_operator_intention" />
@@ -7,3 +8,4 @@
     <method />
   </configuration>
 </component>
+

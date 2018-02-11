@@ -1,5 +1,5 @@
 ---
-title: Creating Your First Plugin
+title: 创建第一个插件
 ---
 
 This documentation section will help you get started with developing plugins for the *IntelliJ Platform*. You can use either [IntelliJ IDEA Community Edition](https://www.jetbrains.com/idea/download/) or [IntelliJ IDEA Ultimate](https://www.jetbrains.com/idea/download/) as your IDE.  Both include the complete set of plugin development tools. To become more familiar with *IntelliJ IDEA*, please refer to the [IntelliJ IDEA Web Help](https://www.jetbrains.com/idea/help/).
@@ -14,3 +14,5 @@ In this section:
 * [Deploying a Plugin](getting_started/deploying_plugin.md)
 * [Plugin Compatibility with IntelliJ Platform Products](getting_started/plugin_compatibility.md)
 * [Publishing a plugin to plugin repository](getting_started/publishing_plugin.md)
+
+

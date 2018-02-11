@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="preview" type="RakeRunConfigurationType" factoryName="Rake">
     <module name="" />
@@ -24,4 +23,3 @@
     <method />
   </configuration>
 </component>
-

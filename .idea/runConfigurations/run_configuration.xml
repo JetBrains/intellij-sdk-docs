@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="run_configuration" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
     <module name="run_configuration" />
@@ -7,3 +8,4 @@
     <method />
   </configuration>
 </component>
+

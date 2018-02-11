@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="register_actions" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
     <module name="register_actions" />
@@ -8,4 +7,3 @@
     <method />
   </configuration>
 </component>
-

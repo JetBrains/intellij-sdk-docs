@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="tool_window" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
     <module name="tool_window" />
@@ -8,4 +7,3 @@
     <method />
   </configuration>
 </component>
-

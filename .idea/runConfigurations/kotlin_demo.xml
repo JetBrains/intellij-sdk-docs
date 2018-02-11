@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="kotlin_demo" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
     <module name="kotlin_demo" />
@@ -6,3 +7,4 @@
     <method />
   </configuration>
 </component>
+

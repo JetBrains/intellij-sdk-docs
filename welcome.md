@@ -6,14 +6,16 @@ redirect_from:
 
 Welcome to the _IntelliJ Platform_ SDK. This is the primary source of documentation for extending the _IntelliJ Platform_, by creating plugins, custom language support or building a custom IDE.
 
+欢迎来到 _IntelliJ Platform_ SDK。这是延长 _IntelliJ Platform_ 的主要文献来源，通过创建插件，自定义语言支持或建立一个自定义IDE。
+
 ## Getting Started
 
-* [**What is the IntelliJ Platform?**](intro/intellij_platform.md)
-* [**About this Guide**](intro/about.md)
-    * [**Key Topics**](intro/key_topics.md)
-* [**Getting Help**](intro/getting_help.md)
-* [**Tutorials**](tutorials.md)
-* [**Resources**](resources.md)
+* [**_IntelliJ Platform_ 是什么?**](intro/intellij_platform.md)
+* [**关于这篇指南**](intro/about.md)
+    * [**关键字提示**](intro/key_topics.md)
+* [**获取帮助**](intro/getting_help.md)
+* [**指导**](tutorials.md)
+* [**资源**](resources.md)
 
 ## Open Source
 

@@ -1,7 +1,7 @@
 # Summary
 
 * [介绍](welcome.md)
-* [IntelliJ Platform](intro/intellij_platform.md)
+* [IntelliJ Platform ](intro/intellij_platform.md)
 * [关于本指南](intro/about.md)
     * [关键主题](intro/key_topics.md)
     * [特约](CONTRIBUTING.md)

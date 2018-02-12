@@ -2,17 +2,17 @@
 title: 创建第一个插件
 ---
 
-This documentation section will help you get started with developing plugins for the *IntelliJ Platform*. You can use either [IntelliJ IDEA Community Edition](https://www.jetbrains.com/idea/download/) or [IntelliJ IDEA Ultimate](https://www.jetbrains.com/idea/download/) as your IDE.  Both include the complete set of plugin development tools. To become more familiar with *IntelliJ IDEA*, please refer to the [IntelliJ IDEA Web Help](https://www.jetbrains.com/idea/help/).
+本文档节将帮助您开始使用开发插件*的IntelliJ平台*。您可以使用[的IntelliJ IDEA社区版](https://www.jetbrains.com/idea/download/)和[IntelliJ IDEA的终极](https://www.jetbrains.com/idea/download/)作为IDE。两者都包括一套完整的插件开发工具。为了更加熟悉*的IntelliJ IDEA*，请参阅[IntelliJ IDEA的Web帮助](https://www.jetbrains.com/idea/help/)。
 
-In this section:
+在这个部分：
 
-* [Setting Up a Development Environment](getting_started/setting_up_environment.md)
-* [Creating a Plugin Project](getting_started/creating_plugin_project.md)
-* [Build Number Ranges](getting_started/build_number_ranges.md)
-* [Creating an Action](getting_started/creating_an_action.md)
-* [Running and Debugging a Plugin](getting_started/running_and_debugging_a_plugin.md)
-* [Deploying a Plugin](getting_started/deploying_plugin.md)
-* [Plugin Compatibility with IntelliJ Platform Products](getting_started/plugin_compatibility.md)
-* [Publishing a plugin to plugin repository](getting_started/publishing_plugin.md)
+* [建立开发环境](getting_started/setting_up_environment.md)
+* [创建插件项目](getting_started/creating_plugin_project.md)
+* [版本号范围](getting_started/build_number_ranges.md)
+* [创建操作](getting_started/creating_an_action.md)
+* [运行和调试一个插件](getting_started/running_and_debugging_a_plugin.md)
+* [部署插件](getting_started/deploying_plugin.md)
+* [产品插件兼容性](getting_started/plugin_compatibility.md)
+* [发布一个插件，插件库](getting_started/publishing_plugin.md)
 
 

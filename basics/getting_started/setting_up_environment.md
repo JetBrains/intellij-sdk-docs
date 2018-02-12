@@ -1,22 +1,22 @@
 ---
-title: Setting Up a Development Environment
+title: 建立开发环境
 ---
 
-### Preliminary Steps
+### 预备步骤
 
-Use the following check list to ensure that you are ready to develop your custom plugins.
+使用下面的检查表，以确保您准备开发自己的定制插件。
 
-- **IntelliJ IDEA** version 9.0 or later (either Community Edition or Ultimate) must be installed on your computer.
-- **IntelliJ IDEA CE source code** should be checked out to your local computer. This is not a requirement but will make it much easier for you to debug your plugins. For detailed instructions, refer to [Check Out And Build Community Edition](/basics/checkout_and_build_community.md).
-- **Plugin DevKit** plugin must be enabled in IDE
-- **IntelliJ Platform SDK** must be configured for your IDEA project. For more information, see [Configuring IntelliJ Platform SDK](#configuring-intellij-platform-sdk) below.
+* **IntelliJ IDEA的** 版本9.0或更高版本（无论是社区版或旗舰版）必须安装在您的计算机上。
+* **IntelliJ IDEA的CE源代码** 应该被检出到本地计算机。这不是一个要求，但将使它更容易为你调试你的插件。有关详细说明，请参阅 [检查，并建立社区版](basics/checkout_and_build_community.md).
+* **插件的devkit** 插件必须在IDE中启用
+* **的IntelliJ平台SDK** 必须配置为您的IDEA项目。欲了解更多信息，请参阅 [配置的IntelliJ平台SDK](#配置的IntelliJ平台SDK).
   
-### Configuring IntelliJ Platform SDK
+### 配置的IntelliJ平台SDK
   
-To set up your plugin development environment:
+要设置您的插件开发环境：
 
-*  Check out the source code of IntelliJ IDEA Community Edition as described in
-   [Check Out And Build Community Edition](/basics/checkout_and_build_community.md).
+*  检查出的IntelliJ IDEA社区版的源代码中的说明
+   [检查，并建立社区版](basics/checkout_and_build_community.md).
 
 *  Create a new *IntelliJ Platform SDK* under **File \| Project Structure**:
 
@@ -50,3 +50,5 @@ To set up your plugin development environment:
 *  Go to **File \| Project Structure** and select the newly created *IntelliJ Platform SDK* as the default SDK for the plugin module:
 
    ![Set Plugin Module SDK](img/set_plugin_module_sdk.png)
+
+

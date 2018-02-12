@@ -49,12 +49,6 @@ NOTE: You are allowed to prettify the pattern using markdown-features:
 | `com.google.common.util.concurrent.Futures.get` method removed | Use `com.google.common.util.concurrent.Futures.getChecked` instead |
 | [`org.tmatesoft.svn`](https://svnkit.com/index.html) package removed | Use classes from `org.jetbrains.idea.svn` instead |
 | `org.jetbrains.idea.svn.svnkit.SvnKitManager` class removed | Use `org.jetbrains.idea.svn.api.ClientFactory` instead |
-| `com.intellij.ide.ui.laf.darcula.ui.TextFieldWithPopupHandlerUI` constructor parameter `JTextField` removed | Use `com.intellij.ide.ui.laf.darcula.ui.TextFieldWithPopupHandlerUI` default constructor instead |
-| `com.intellij.ide.ui.laf.darcula.ui.DarculaTextFieldUI` constructor parameter `JTextField` removed | Use `com.intellij.ide.ui.laf.darcula.ui.DarculaTextFieldUI` default constructor instead |
-| `com.intellij.ide.ui.laf.darcula.ui.DarculaComboBoxUI` constructor parameter `JComboBox` removed | Use `com.intellij.ide.ui.laf.darcula.ui.DarculaComboBoxUI` default constructor instead |
-| `com.intellij.ide.ui.laf.darcula.ui.TextFieldWithPopupHandlerUI.myTextField` field removed | Use `javax.swing.plaf.basic.BasicTextUI.getComponent()` instead |
-| `com.intellij.ide.ui.laf.darcula.ui.DarculaButtonUI.isDefaultButton` method parameter type changed from `javax.swing.JComponent` to `java.awt.Component` | This was done to avoid many redundant casts to `javax.swing.JComponent` |
-| `com.intellij.ide.ui.laf.intellij.MacIntelliJIconCache` class renamed to `com.intellij.ide.ui.laf.IconCache` | Use more generic class name `com.intellij.ide.ui.laf.IconCache` |
 
 ## Changes in PhpStorm and PHP plugin 2018.1
 

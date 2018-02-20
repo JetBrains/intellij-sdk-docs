@@ -49,6 +49,7 @@ NOTE: You are allowed to prettify the pattern using markdown-features:
 | `com.google.common.util.concurrent.Futures.get` method removed | Use `com.google.common.util.concurrent.Futures.getChecked` instead |
 | [`org.tmatesoft.svn`](https://svnkit.com/index.html) package removed | Use classes from `org.jetbrains.idea.svn` instead |
 | `org.jetbrains.idea.svn.svnkit.SvnKitManager` class removed | Use `org.jetbrains.idea.svn.api.ClientFactory` instead |
+| `clojure` package removed | Clojure 1.8 jars are removed from IntelliJ Ultimate package, provide your own jars if needed |
 
 ## Changes in PhpStorm and PHP plugin 2018.1
 

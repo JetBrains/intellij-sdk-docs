@@ -14,6 +14,7 @@ the first column is a problem pattern and the second column is a human-readable 
 The following problem patterns are supported:
 <package name> package removed
 <class name> class removed
+<class name> renamed to <new class name>
 
 <class name>.<method name> method removed
 <class name>.<method name> method return type changed from <before> to <after>

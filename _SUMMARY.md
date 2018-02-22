@@ -42,6 +42,9 @@
     * [Testing Highlighting](basics/testing_plugins/testing_highlighting.md)
 * [Versioning and Compatibility](basics/getting_started/plugin_compatibility.md)
     * [Breaking API Changes](reference_guide/api_changes_list.md)
+        * [2018.*](reference_guide/api_changes/api_changes_list_2018.md)
+        * [2017.*](reference_guide/api_changes/api_changes_list_2017.md)
+        * [2016.*](reference_guide/api_changes/api_changes_list_2016.md)
 * Required Technologies
     * Kotlin
     * Gradle

@@ -12,8 +12,14 @@ The following problem patterns are supported:
 
 <class name>.<method name> method removed
 <class name>.<method name> method return type changed from <before> to <after>
+<class name>.<method name> method parameter <type> removed
 <class name>.<method name> method parameter type changed from <before> to <after>
 <class name>.<method name> method visibility changed from <before> to <after>
+
+<class name> constructor removed
+<class name> constructor parameter <type> removed
+<class name> constructor parameter type changed from <before> to <after>
+<class name> constructor visibility changed from <before> to <after>
 
 <class name>.<field name> field removed
 <class name>.<field name> field type changed from <before> to <after>

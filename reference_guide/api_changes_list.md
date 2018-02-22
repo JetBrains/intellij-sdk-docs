@@ -3,6 +3,11 @@ title: Incompatible Changes in IntelliJ Platform and Plugins API
 ---
 
 <!--
+Before documenting a breaking API change, please, make sure that the change cannot be avoided 
+in an alternative way as the following docs state:
+API compatibility policy: https://confluence.jetbrains.com/display/IDEA/IntelliJ+Platform+API+compatibility+policy
+API Compatibility FAQ:    https://confluence.jetbrains.com/display/IDEA/IntelliJ+API+Compatibility+Policy+FAQ
+
 To document a new incompatible change you have to fill a row in a table so that
 the first column is a problem pattern and the second column is a human-readable description.
 

@@ -154,3 +154,36 @@ Use `com.intellij.spring.facet.SpringConfigurator` to provide "automatic" config
 
 ##### UI/Presentation
 Please do not reference bean icons from `SpringApiIcons` directly, but use `SpringPresentationProvider` to re-use unified icon/bean name. See `SpringBeansPsiElementCellRenderer` for popup/list renderer.
+
+
+# Spring Boot
+_2018.1_
+
+Spring Boot API allows to extend/access Spring Boot specific support in the IDE.
+
+> **WARNING** While we try to maintain compatibility, please be prepared for a less strict policy. 
+
+### Setting up
+Please perform these steps _additionally_ to setting up Spring API support (see [here](#setting-up-intellij-platform-sdk)):
+
+* add to _classpath_ (_not_ to your plugin module's dependencies)
+	* `$IDEA_HOME$/plugins/SpringBoot/lib/spring-boot.jar`
+* add to _sourcepath_
+	* `$IDEA_HOME$/lib/src/src_spring-boot-openapi.zip`
+
+### plugin.xml
+Add `<depends>com.intellij.spring.boot</depends>` to your `plugin.xml` to require "Spring Boot" plugin to be activated. All available extension points are provided under `com.intellij.spring.boot` prefix.
+
+### Spring Boot Library
+Use `com.intellij.spring.boot.library.SpringBootLibraryUtil` to query version and availability of common additional libraries.
+
+### Custom Configuration Files Format
+`com.intellij.spring.boot.model.SpringBootModelConfigFileContributor` allows to add support for custom config file formats.    
+                                            
+### Auto-Configuration support
+Existing `Condition` implementations can be simulated at design time in IDE via `com.intellij.spring.boot.model.autoconfigure.conditions.ConditionalContributor`.
+
+Custom `@ConditionalOn...` annotations implementing `com.intellij.spring.boot.model.autoconfigure.conditions.jam.ConditionalOnJamElement` will be added into evaluation automatically.              
+
+### Spring Initializr
+`com.intellij.spring.boot.initializr.SpringInitializrModuleBuilderPostTask` allows to perform custom setup steps after creation of module (e.g. setup integration with build system).

@@ -44,6 +44,7 @@ The following modules are only available in specific products:
 | `com.intellij.modules.cidr.debugger` | AppCode, CLion, RubyMotion                                            |
 | `com.intellij.modules.clion`         | CLion                                                                 |
 | `com.intellij.modules.database`      | IntelliJ IDEA Ultimate Edition, DataGrip, PhpStorm, PyCharm, RubyMine |
+| `com.intellij.modules.go`            | GoLand                                                                |
 | `com.intellij.modules.python`        | PyCharm                                                               |
 | `com.intellij.modules.rider`         | Rider                                                                 |
 | `com.intellij.modules.ruby`          | RubyMine                                                              |

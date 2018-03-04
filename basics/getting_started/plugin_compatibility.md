@@ -9,7 +9,7 @@ and Android Studio) or database support (IntelliJ IDEA Ultimate, DataGrip, PhpSt
 
 It is possible to write a plugin that is compatible across multiple products, as long as the plugin specifies which product it is compatible with. More specifically, the plugin must specify, using [the `<depends>` tag](http://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_dependencies.html) in the [`plugin.xml` file](http://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_configuration_file.html), dependencies on well known _modules_ or plugins.
 
-For the purposes of dependencies, a module can be thought of as a built-in plugin that ships as a non-removable part of a product. Not all products define and declare modules. For example, PhpStorm and GoLand do not have their own modules, but the products themselves depend on (and ship) the language specific plugins. You can make your plugin compatible with these products by also depending on the same language plugins.
+For the purposes of dependencies, a module can be thought of as a built-in plugin that ships as a non-removable part of a product. Not all products define and declare modules. For example, PhpStorm does not have its own module, but the product itself depends on (and ships) the PHP language plugin. You can make your plugin compatible with PhpStorm by also depending on the same language plugin.
 
 For example:
 
@@ -39,21 +39,21 @@ This means a plugin can declare a dependency on `com.intellij.modules.vcs` and i
 
 The following modules or built-in plugins are available in these specific products:
 
-| Module or built-in plugin            | Product                                                               |
-|--------------------------------------|-----------------------------------------------------------------------|
-| `com.intellij.modules.java`          | IntelliJ IDEA, Android Studio                                         |
-| `com.intellij.modules.ultimate`      | IntelliJ IDEA Ultimate Edition                                        |
-| `com.intellij.modules.androidstudio` | Android Studio                                                        |
-| `com.intellij.modules.appcode`       | AppCode                                                               |
-| `com.intellij.modules.cidr.lang`     | AppCode, CLion                                                        |
-| `com.intellij.modules.cidr.debugger` | AppCode, CLion, RubyMotion                                            |
-| `com.intellij.modules.clion`         | CLion                                                                 |
-| `com.intellij.modules.database`      | IntelliJ IDEA Ultimate Edition, DataGrip, PhpStorm, PyCharm, RubyMine |
-| `com.intellij.modules.python`        | PyCharm                                                               |
-| `com.intellij.modules.rider`         | Rider                                                                 |
-| `com.intellij.modules.ruby`          | RubyMine                                                              |
-| `com.jetbrains.php`                  | PhpStorm (built-in plugin)                                            |
-| `org.jetbrains.plugins.go`           | GoLand (built-in plugin)                                              |
+| Module or built-in plugin            | Product                                                                              |
+|--------------------------------------|--------------------------------------------------------------------------------------|
+| `com.intellij.modules.java`          | IntelliJ IDEA, Android Studio                                                        |
+| `com.intellij.modules.ultimate`      | IntelliJ IDEA Ultimate Edition                                                       |
+| `com.intellij.modules.androidstudio` | Android Studio                                                                       |
+| `com.intellij.modules.appcode`       | AppCode                                                                              |
+| `com.intellij.modules.cidr.lang`     | AppCode, CLion                                                                       |
+| `com.intellij.modules.cidr.debugger` | AppCode, CLion, RubyMotion                                                           |
+| `com.intellij.modules.clion`         | CLion                                                                                |
+| `com.intellij.modules.database`      | IntelliJ IDEA Ultimate Edition, DataGrip, GoLand, PhpStorm, PyCharm, Rider, RubyMine |
+| `com.intellij.modules.go`            | GoLand                                                                               |
+| `com.intellij.modules.python`        | PyCharm                                                                              |
+| `com.intellij.modules.rider`         | Rider                                                                                |
+| `com.intellij.modules.ruby`          | RubyMine                                                                             |
+| `com.jetbrains.php`                  | PhpStorm (built-in plugin)                                                           |
 
 ## Plugin dependencies
 

@@ -53,6 +53,10 @@ Run the following command in the checkout directory to do so.
 git submodule update --init --remote
 ```
 
+### Installing Gema
+
+After you performed the initial checkout for the main repository and the submodule, run `bundle install` to install additional required gems.
+
 ### Building and Previewing 
 A set of Rake tasks, a Make-like programs implemented in Ruby, provides short commands to build and run the site locally.
 
@@ -73,6 +77,6 @@ A set of Rake tasks, a Make-like programs implemented in Ruby, provides short co
 *  Open the address
    [http://localhost:4000/intellij/sdk/docs/](http://localhost:4000/intellij/sdk/docs/)
    in your browser.
-   **Note:** Make sure you haven't change default Jekyll port during installation.
+   **Note:** Make sure you haven't changed default Jekyll port during installation.
 
 

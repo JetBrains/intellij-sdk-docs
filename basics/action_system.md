@@ -20,6 +20,8 @@ To retrieve the information about the current state of the IDE, including the ac
 
 The `AnActionEvent` instance is also passed to the `actionPerformed` method.
 
+For a step-by-step walkthrough of defining actions, please check out the [action system tutorial](/tutorials/action_system.md).
+
 ## Registering Actions
 
 There are two main ways to register an action: either by listing it in the `<actions>` section of the `plugin.xml` file, or through Java code.

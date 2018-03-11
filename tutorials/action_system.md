@@ -2,14 +2,12 @@
 title: IntelliJ Action System
 ---
 
-This tutorial is meant to give general information about the IntelliJ Platform Action System and lead you through a series of steps
-which show how to create, register, and customize custom actions and action groups.
-Action system provides an option to handle certain events in a desired way. 
-Action can either be simply a response to some state, or be bound to UI element and could be invoked on demand. 
-These UI elements include main menu, context menus, and toolbars.
+This tutorial leads you through a series of steps which show how to create, register, and customize custom actions
+and action groups. By registering actions, you can add your own menu items, toolbar buttons and keyboard shortcuts
+to the IntelliJ IDEA user interface. For more information, please refer to the [IntelliJ Platform Action System](/basics/action_system.md)
+documentation.
 
-
-* [Working With Custom Actions](action_system/working_with_custom_actions.md)
+* [Registering Actions](action_system/working_with_custom_actions.md)
 * [Grouping Action](action_system/grouping_action.md)
 
 

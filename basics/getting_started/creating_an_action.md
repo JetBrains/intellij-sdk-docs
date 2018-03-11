@@ -95,3 +95,8 @@ Note that you can use this wizard only to add a new action to an existing action
 ![New Action Page](img/new_action_page.png)
 
 The IntelliJ Platform generates a `.java` file with the specified class name, registers the newly created action in the plugin.xml file, adds a node to the module tree view, and opens the created action class file in the editor.
+
+## More Information
+
+For more information on working with actions, please check out the [action system documentation](/basics/action_system.md)
+and the [actions tutorial](/tutorials/action_system.md).

@@ -30,7 +30,6 @@
         * [Plugin Configuration File](basics/plugin_structure/plugin_configuration_file.md)
         * [Plugin Dependencies](basics/plugin_structure/plugin_dependencies.md)
 * [Project Structure](basics/project_structure.md)
-    * [Action System](basics/action_system.md)
     * [Persisting State of Components](basics/persisting_state_of_components.md)
     * [PSI Cookbook](basics/psi_cookbook.md)
     * [Virtual File System](basics/virtual_file_system.md)
@@ -84,7 +83,7 @@
     * [Miscellaneous Swing Components](user_interface_components/misc_swing_components.md)
     * [Icons and Images](reference_guide/work_with_icons_and_images.md)
     * [Color Scheme Management](reference_guide/color_scheme_management.md)
-* Actions
+* [Actions](basics/action_system.md)
 * Settings
 * [Files](basics/architectural_overview/files.md)
     * [Virtual Files](basics/architectural_overview/virtual_file.md)
@@ -242,7 +241,7 @@
     * [9. Commenter Test](tutorials/writing_tests_for_plugins/commenter_test.md)
     * [10. Reference Test](tutorials/writing_tests_for_plugins/reference_test.md)
 * [Action System](tutorials/action_system.md)
-    * [1. Working With Custom Actions](tutorials/action_system/working_with_custom_actions.md)
+    * [1. Registering an Action](tutorials/action_system/working_with_custom_actions.md)
     * [2. Grouping Actions](tutorials/action_system/grouping_action.md)
 * [Editor Basics](tutorials/editor_basics.md)
     * [1. Working With Text](tutorials/editor_basics/working_with_text.md)

@@ -10,7 +10,7 @@ It also includes an image editor as well as a full text editor, and provides abs
 
 Furthermore, it includes pluggable APIs to build common IDE functionality, such as a project model and a build system. It also provides infrastructure for a very rich debugging experience, with language agnostic advanced breakpoint support, call stacks, watch windows and expression evaluation.
 
-But the _IntelliJ Platform_'s real power comes from the Program Structure Index (PSI). This is a set of functionality that can be used to parse files and build rich syntactic and semantic models of the code, and to build indexes from this data. This powers a lot of functionality, from quick navigating to files, types and symbols, to the contents of code completion windows and find usages, code inspections and code rewriting, for quick fixes or refactorings, as well as many other features.
+But the _IntelliJ Platform_'s real power comes from the Program Structure Interface (PSI). This is a set of functionality that can be used to parse files and build rich syntactic and semantic models of the code, and to build indexes from this data. This powers a lot of functionality, from quick navigating to files, types and symbols, to the contents of code completion windows and find usages, code inspections and code rewriting, for quick fixes or refactorings, as well as many other features.
 
 The _IntelliJ Platform_ includes parsers and a PSI model for a number of languages, and its composable nature means that it is possible to add support for other languages.
 

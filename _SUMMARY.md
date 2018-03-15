@@ -2,6 +2,8 @@
 
 * [Introduction](welcome.md)
 * [The IntelliJ Platform](intro/intellij_platform.md)
+    * [Contributing to the IntelliJ Platform](basics/platform_contributions.md)
+    * [IntelliJ Coding Guidelines](basics/intellij_coding_guidelines.md)
 * [About this Guide](intro/about.md)
     * [Key Topics](intro/key_topics.md)
     * [Contributing](CONTRIBUTING.md)
@@ -29,21 +31,6 @@
         * [Plugin Services](basics/plugin_structure/plugin_services.md)
         * [Plugin Configuration File](basics/plugin_structure/plugin_configuration_file.md)
         * [Plugin Dependencies](basics/plugin_structure/plugin_dependencies.md)
-* [Project Structure](basics/project_structure.md)
-    * [Persisting State of Components](basics/persisting_state_of_components.md)
-    * [PSI Cookbook](basics/psi_cookbook.md)
-    * [Virtual File System](basics/virtual_file_system.md)
-* [Testing Plugins](basics/testing_plugins.md)
-    * [Tests and Fixtures](basics/testing_plugins/tests_and_fixtures.md)
-    * [Light and Heavy Tests](basics/testing_plugins/light_and_heavy_tests.md)
-    * [Test Project and Testdata Directories](basics/testing_plugins/test_project_and_testdata_directories.md)
-    * [Writing Tests](basics/testing_plugins/writing_tests.md)
-    * [Testing Highlighting](basics/testing_plugins/testing_highlighting.md)
-* [Versioning and Compatibility](basics/getting_started/plugin_compatibility.md)
-    * [Breaking API Changes](reference_guide/api_changes_list.md)
-        * [2018.*](reference_guide/api_changes/api_changes_list_2018.md)
-        * [2017.*](reference_guide/api_changes/api_changes_list_2017.md)
-        * [2016.*](reference_guide/api_changes/api_changes_list_2016.md)
 * Required Technologies
     * Kotlin
     * Gradle
@@ -51,22 +38,7 @@
 * [Troubleshooting](basics/settings_caches_logs.md)
 * [Plugin Development FAQ](faq.md)
 
-## Part II - Architecture
-* [Introduction](basics/architectural_overview.md)
-* Base Platform
-    * Components
-    * Extension Points
-* Project Model
-* [PSI](basics/architectural_overview/psi.md)
-    * [PSI Files](basics/architectural_overview/psi_files.md)
-    * [File View Providers](basics/architectural_overview/file_view_providers.md)
-    * [PSI Elements](basics/architectural_overview/psi_elements.md)
-* Features
-* Products
-* [Contributing to the IntelliJ Platform](basics/platform_contributions.md)
-    * [IntelliJ Coding Guidelines](basics/intellij_coding_guidelines.md)
-
-## Part III - Base Platform
+## Part II - Base Platform
 * [Fundamentals](platform/fundamentals.md)
     * Component Model
     * [Threading](basics/architectural_overview/general_threading_rules.md)
@@ -85,9 +57,10 @@
     * [Color Scheme Management](reference_guide/color_scheme_management.md)
 * [Actions](basics/action_system.md)
 * Settings
+    * [Persisting State of Components](basics/persisting_state_of_components.md)
 * [Files](basics/architectural_overview/files.md)
+    * [Virtual File System](basics/virtual_file_system.md)
     * [Virtual Files](basics/architectural_overview/virtual_file.md)
-    * Scratch Files
 * [Documents](basics/architectural_overview/documents.md)
 * [Editors](reference_guide/editors.md)
     * [Multiple Carets](reference_guide/multiple_carets.md)
@@ -97,14 +70,12 @@
 * [Version Control Systems](reference_guide/vcs_integration_for_plugins.md)
     * Diff
     * Local History
-* Indexing
 * Tasks and Contexts
 * [Localization Guide](reference_guide/localization_guide.md)
 * Diagrams
-* Database Tools
 
-## Part IV - Project Model
-* [Introduction](reference_guide/project_model.md)
+## Part III - Project Model
+* [Introduction](basics/project_structure.md)
 * [Project](reference_guide/project_model/project.md)
     * [Project Wizard](reference_guide/project_wizard.md)
     * Frameworks
@@ -116,11 +87,14 @@
     * [External Builder API and Plugins](reference_guide/frameworks_and_external_apis/external_builder_api.md)
     * [External system integration](reference_guide/frameworks_and_external_apis/external_system_integration.md)
 
-## Part V - PSI
-* What is the PSI?
-* PSI Elements
+## Part IV - PSI
+* [What is the PSI?](basics/architectural_overview/psi.md)
+* [PSI Files](basics/architectural_overview/psi_files.md)
+* [File View Providers](basics/architectural_overview/file_view_providers.md)
+* [PSI Elements](basics/architectural_overview/psi_elements.md)
 * Navigating the PSI
 * Modifying the PSI
+* [PSI Cookbook](basics/psi_cookbook.md)
 * [Indexing and PSI Stubs](basics/indexing_and_psi_stubs.md)
     * [File-based indexes](basics/indexing_and_psi_stubs/file_based_indexes.md)
     * [Stub indexes](basics/indexing_and_psi_stubs/stub_indexes.md)
@@ -128,7 +102,7 @@
 * Unified AST
 * [XML DOM API](reference_guide/frameworks_and_external_apis/xml_dom_api.md)
 
-## Part VI - Features
+## Part V - Features
 * Navigation
     * Go To Symbol
 * Editing
@@ -149,21 +123,16 @@
 * Refactoring
 * Unit Testing
 
-## Part VII - Product Specific
-* Compatibility with Multiple Products
-* [IntelliJ IDEA](products/idea.md)
-    * [Tomcat Integration](reference_guide/tomcat_integration.md)
-    * [Spring API](reference_guide/frameworks_and_external_apis/spring_api.md)
-* [PhpStorm](phpstorm/phpstorm.md)
-    * [Setting-up the Environment](phpstorm/setting_up_environment.md)
-    * [PHP Open API](phpstorm/php_open_api.md)
-    * [Existing Third Party Plugins](phpstorm/existing_plugins.md)
-* [PyCharm](products/pycharm.md)
-* DataGrip
-* Android Studio
-* Rider
+## Part VI - Testing
 
-## Part VIII - Custom Languages
+* [Testing Plugins](basics/testing_plugins.md)
+    * [Tests and Fixtures](basics/testing_plugins/tests_and_fixtures.md)
+    * [Light and Heavy Tests](basics/testing_plugins/light_and_heavy_tests.md)
+    * [Test Project and Testdata Directories](basics/testing_plugins/test_project_and_testdata_directories.md)
+    * [Writing Tests](basics/testing_plugins/writing_tests.md)
+    * [Testing Highlighting](basics/testing_plugins/testing_highlighting.md)
+
+## Part VII - Custom Languages
 * [Custom Language Support](reference_guide/custom_language_support.md)
     * [Registering File Type](reference_guide/custom_language_support/registering_file_type.md)
     * [Implementing Lexer](reference_guide/custom_language_support/implementing_lexer.md)
@@ -189,6 +158,21 @@
 * Build System
 * Compiler
 * Debugger
+
+## Part VIII - Product Specific
+* [Compatibility with Multiple Products](basics/getting_started/plugin_compatibility.md)
+* [IntelliJ IDEA](products/idea.md)
+    * [Tomcat Integration](reference_guide/tomcat_integration.md)
+    * [Spring API](reference_guide/frameworks_and_external_apis/spring_api.md)
+* [PhpStorm](phpstorm/phpstorm.md)
+    * [Setting-up the Environment](phpstorm/setting_up_environment.md)
+    * [PHP Open API](phpstorm/php_open_api.md)
+    * [Existing Third Party Plugins](phpstorm/existing_plugins.md)
+* [PyCharm](products/pycharm.md)
+* DataGrip
+* Android Studio
+* Rider
+
 
 ## Part IX - Custom IDEs
 * Build Your Own IDE
@@ -270,3 +254,10 @@
 * [IntelliJ Plugin Developers Gitter](https://gitter.im/IntelliJ-Plugin-Developers/Lobby)
 * [Community SDK Forum](https://intellij-support.jetbrains.com/hc/en-us/community/topics/200366979-IntelliJ-IDEA-Open-API-and-Plugin-Development)
 * [Kotlin Reference](https://kotlinlang.org)
+
+## Appendix III - Breaking API Changes
+
+* [Breaking API Changes](reference_guide/api_changes_list.md)
+    * [2018.*](reference_guide/api_changes/api_changes_list_2018.md)
+    * [2017.*](reference_guide/api_changes/api_changes_list_2017.md)
+    * [2016.*](reference_guide/api_changes/api_changes_list_2016.md)

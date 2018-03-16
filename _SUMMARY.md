@@ -14,14 +14,18 @@
 * [Introduction](basics.md)
     * [Types of Plugins](basics/types_of_plugins.md)
 * [Getting Started](basics/getting_started.md)
-    * [Setting Up a Development Environment](basics/getting_started/setting_up_environment.md)
-    * [Check Out And Build Community Edition](basics/checkout_and_build_community.md)
-    * [Creating a Plugin Project](basics/getting_started/creating_plugin_project.md)
-    * [Build Number Ranges](basics/getting_started/build_number_ranges.md)
-    * [Creating an Action](basics/getting_started/creating_an_action.md)
-    * [Running and Debugging a Plugin](basics/getting_started/running_and_debugging_a_plugin.md)
-    * [Deploying a Plugin](basics/getting_started/deploying_plugin.md)
-    * [Publishing a Plugin](basics/getting_started/publishing_plugin.md)
+    * [Using Gradle](tutorials/build_system.md)
+        * [Getting Started with Gradle](tutorials/build_system/prerequisites.md)
+        * [Creating an Action](basics/getting_started/creating_an_action.md)
+        * [Publishing Your Plugin](tutorials/build_system/deployment.md)
+    * [Using DevKit](basics/getting_started/using_dev_kit.md)
+        * [Setting Up a Development Environment](basics/getting_started/setting_up_environment.md)
+        * [Check Out And Build Community Edition](basics/checkout_and_build_community.md)
+        * [Creating a Plugin Project](basics/getting_started/creating_plugin_project.md)
+        * [Creating an Action](basics/getting_started/creating_an_action.md)
+        * [Running and Debugging a Plugin](basics/getting_started/running_and_debugging_a_plugin.md)
+        * [Deploying a Plugin](basics/getting_started/deploying_plugin.md)
+        * [Publishing a Plugin](basics/getting_started/publishing_plugin.md)
     * [Plugin Structure](basics/plugin_structure.md)
         * [Plugin Content](basics/plugin_structure/plugin_content.md)
         * [Plugin Class Loaders](basics/plugin_structure/plugin_class_loaders.md)
@@ -31,10 +35,7 @@
         * [Plugin Services](basics/plugin_structure/plugin_services.md)
         * [Plugin Configuration File](basics/plugin_structure/plugin_configuration_file.md)
         * [Plugin Dependencies](basics/plugin_structure/plugin_dependencies.md)
-* Required Technologies
-    * Kotlin
-    * Gradle
-    * Primer for the non-JVM Developer
+* [Kotlin for Plugin Developers](tutorials/kotlin.md)
 * [Troubleshooting](basics/settings_caches_logs.md)
 * [Plugin Development FAQ](faq.md)
 
@@ -56,6 +57,9 @@
     * [Icons and Images](reference_guide/work_with_icons_and_images.md)
     * [Color Scheme Management](reference_guide/color_scheme_management.md)
 * [Actions](basics/action_system.md)
+    * [Actions Tutorial](tutorials/action_system.md)
+        * [1. Registering an Action](tutorials/action_system/working_with_custom_actions.md)
+        * [2. Grouping Actions](tutorials/action_system/grouping_action.md)
 * Settings
     * [Persisting State of Components](basics/persisting_state_of_components.md)
 * [Files](basics/architectural_overview/files.md)
@@ -64,9 +68,14 @@
 * [Documents](basics/architectural_overview/documents.md)
 * [Editors](reference_guide/editors.md)
     * [Multiple Carets](reference_guide/multiple_carets.md)
+    * [Editor Basics](tutorials/editor_basics.md)
+        * [1. Working With Text](tutorials/editor_basics/working_with_text.md)
+        * [2. Editor Coordinates System. Positions And Offsets](tutorials/editor_basics/coordinates_system.md)
+        * [3. Handling Editor Events](tutorials/editor_basics/editor_events.md)
 * [Run Configurations](basics/run_configurations.md)
     * [Run Configuration Management](basics/run_configurations/run_configuration_management.md)
     * [Execution](basics/run_configurations/run_configuration_execution.md)
+    * [Run Configurations Tutorial](tutorials/run_configurations.md)
 * [Version Control Systems](reference_guide/vcs_integration_for_plugins.md)
     * Diff
     * Local History
@@ -78,7 +87,10 @@
 * [Introduction](basics/project_structure.md)
 * [Project](reference_guide/project_model/project.md)
     * [Project Wizard](reference_guide/project_wizard.md)
-    * Frameworks
+    * [Project Wizard Tutorial](tutorials/project_wizard.md)
+        * [Adding New Steps to Project Wizard](tutorials/project_wizard/adding_new_steps.md)
+        * [Supporting Module Types](tutorials/project_wizard/module_types.md)
+    * [Frameworks](tutorials/framework.md)
 * [Module](reference_guide/project_model/module.md)
 * [SDK](reference_guide/project_model/sdk.md)
 * [Library](reference_guide/project_model/library.md)
@@ -108,19 +120,22 @@
 * Editing
     * Code Completion
     * Templates
-        * Live Templates
+        * [Live Templates](tutorials/live_templates.md)
+            * [1. Adding Live Template Support](tutorials/live_templates/template_support.md)
         * File Templates
         * Surround Templates
     * QuickDoc
-    * Intentions
+    * [Intentions](tutorials/code_intentions.md)
 * Analysing
     * Annotator
-    * Inspections
+    * [Inspections](tutorials/code_inspections.md)
         * Profiles
         * Scopes
         * Suppressing Highlights
         * Structural Search
 * Refactoring
+* Project View
+    * [Modifying Project View Structure](tutorials/tree_structure_view.md)
 * Unit Testing
 
 ## Part VI - Testing
@@ -153,6 +168,36 @@
     * To do Explorer
     * Parameter Info
     * Parameter Hints
+* [Custom Language Support Tutorial](tutorials/custom_language_support_tutorial.md)
+    * [1. Prerequisites](tutorials/custom_language_support/prerequisites.md)
+    * [2. Language and File Type](tutorials/custom_language_support/language_and_filetype.md)
+    * [3. Grammar and Parser](tutorials/custom_language_support/grammar_and_parser.md)
+    * [4. Lexer and Parser Definition](tutorials/custom_language_support/lexer_and_parser_definition.md)
+    * [5. Syntax Highlighter and Color Settings Page](tutorials/custom_language_support/syntax_highlighter_and_color_settings_page.md)
+    * [6. PSI Helpers and Utilities](tutorials/custom_language_support/psi_helper_and_utilities.md)
+    * [7. Annotator](tutorials/custom_language_support/annotator.md)
+    * [8. Line Marker Provider](tutorials/custom_language_support/line_marker_provider.md)
+    * [9. Completion Contributor](tutorials/custom_language_support/completion_contributor.md)
+    * [10. Reference Contributor](tutorials/custom_language_support/reference_contributor.md)
+    * [11. Find Usages Provider](tutorials/custom_language_support/find_usages_provider.md)
+    * [12. Folding Builder](tutorials/custom_language_support/folding_builder.md)
+    * [13. Go To Symbol Contributor](tutorials/custom_language_support/go_to_symbol_contributor.md)
+    * [14. Structure View Factory](tutorials/custom_language_support/structure_view_factory.md)
+    * [15. Formatter](tutorials/custom_language_support/formatter.md)
+    * [16. Code Style Settings](tutorials/custom_language_support/code_style_settings.md)
+    * [17. Commenter](tutorials/custom_language_support/commenter.md)
+    * [18. Quick Fix](tutorials/custom_language_support/quick_fix.md)
+* [Testing a Custom Language Plugin](tutorials/writing_tests_for_plugins.md)
+    * [1. Tests Prerequisites](tutorials/writing_tests_for_plugins/tests_prerequisites.md)
+    * [2. Parsing Test](tutorials/writing_tests_for_plugins/parsing_test.md)
+    * [3. Completion Test](tutorials/writing_tests_for_plugins/completion_test.md)
+    * [4. Annotator Test](tutorials/writing_tests_for_plugins/annotator_test.md)
+    * [5. Formatter Test](tutorials/writing_tests_for_plugins/formatter_test.md)
+    * [6. Rename Test](tutorials/writing_tests_for_plugins/rename_test.md)
+    * [7. Folding Test](tutorials/writing_tests_for_plugins/folding_test.md)
+    * [8. Find Usages Test](tutorials/writing_tests_for_plugins/find_usages_test.md)
+    * [9. Commenter Test](tutorials/writing_tests_for_plugins/commenter_test.md)
+    * [10. Reference Test](tutorials/writing_tests_for_plugins/reference_test.md)
 * Injected Languages
 * Project Model
 * Build System
@@ -161,6 +206,7 @@
 
 ## Part VIII - Product Specific
 * [Compatibility with Multiple Products](basics/getting_started/plugin_compatibility.md)
+* [Build Number Ranges](basics/getting_started/build_number_ranges.md)
 * [IntelliJ IDEA](products/idea.md)
     * [Tomcat Integration](reference_guide/tomcat_integration.md)
     * [Spring API](reference_guide/frameworks_and_external_apis/spring_api.md)
@@ -189,61 +235,8 @@
     * [Plugin Developers List](plugin_repository/api/plugin_developers.md)
 * [Custom Release Channels](plugin_repository/custom_channels.md)
 
-## Appendix I - Tutorials
-* [Tutorials](tutorials.md)
-* [Gradle Support](tutorials/build_system.md)
-    * [1. Prerequisites](tutorials/build_system/prerequisites.md)
-    * [2. Deployment](tutorials/build_system/deployment.md)
-* [Custom Language Support](tutorials/custom_language_support_tutorial.md)
-    * [1. Prerequisites](tutorials/custom_language_support/prerequisites.md)
-    * [2. Language and File Type](tutorials/custom_language_support/language_and_filetype.md)
-    * [3. Grammar and Parser](tutorials/custom_language_support/grammar_and_parser.md)
-    * [4. Lexer and Parser Definition](tutorials/custom_language_support/lexer_and_parser_definition.md)
-    * [5. Syntax Highlighter and Color Settings Page](tutorials/custom_language_support/syntax_highlighter_and_color_settings_page.md)
-    * [6. PSI Helpers and Utilities](tutorials/custom_language_support/psi_helper_and_utilities.md)
-    * [7. Annotator](tutorials/custom_language_support/annotator.md)
-    * [8. Line Marker Provider](tutorials/custom_language_support/line_marker_provider.md)
-    * [9. Completion Contributor](tutorials/custom_language_support/completion_contributor.md)
-    * [10. Reference Contributor](tutorials/custom_language_support/reference_contributor.md)
-    * [11. Find Usages Provider](tutorials/custom_language_support/find_usages_provider.md)
-    * [12. Folding Builder](tutorials/custom_language_support/folding_builder.md)
-    * [13. Go To Symbol Contributor](tutorials/custom_language_support/go_to_symbol_contributor.md)
-    * [14. Structure View Factory](tutorials/custom_language_support/structure_view_factory.md)
-    * [15. Formatter](tutorials/custom_language_support/formatter.md)
-    * [16. Code Style Settings](tutorials/custom_language_support/code_style_settings.md)
-    * [17. Commenter](tutorials/custom_language_support/commenter.md)
-    * [18. Quick Fix](tutorials/custom_language_support/quick_fix.md)
-* [Writing Tests For Plugins](tutorials/writing_tests_for_plugins.md)
-    * [1. Tests Prerequisites](tutorials/writing_tests_for_plugins/tests_prerequisites.md)
-    * [2. Parsing Test](tutorials/writing_tests_for_plugins/parsing_test.md)
-    * [3. Completion Test](tutorials/writing_tests_for_plugins/completion_test.md)
-    * [4. Annotator Test](tutorials/writing_tests_for_plugins/annotator_test.md)
-    * [5. Formatter Test](tutorials/writing_tests_for_plugins/formatter_test.md)
-    * [6. Rename Test](tutorials/writing_tests_for_plugins/rename_test.md)
-    * [7. Folding Test](tutorials/writing_tests_for_plugins/folding_test.md)
-    * [8. Find Usages Test](tutorials/writing_tests_for_plugins/find_usages_test.md)
-    * [9. Commenter Test](tutorials/writing_tests_for_plugins/commenter_test.md)
-    * [10. Reference Test](tutorials/writing_tests_for_plugins/reference_test.md)
-* [Action System](tutorials/action_system.md)
-    * [1. Registering an Action](tutorials/action_system/working_with_custom_actions.md)
-    * [2. Grouping Actions](tutorials/action_system/grouping_action.md)
-* [Editor Basics](tutorials/editor_basics.md)
-    * [1. Working With Text](tutorials/editor_basics/working_with_text.md)
-    * [2. Editor Coordinates System. Positions And Offsets](tutorials/editor_basics/coordinates_system.md)
-    * [3. Handling Editor Events](tutorials/editor_basics/editor_events.md)
-* [Project Wizard](tutorials/project_wizard.md)
-    * [Adding New Steps to Project Wizard](tutorials/project_wizard/adding_new_steps.md)
-    * [Supporting Module Types](tutorials/project_wizard/module_types.md)
-* [Code Inspections](tutorials/code_inspections.md)
-* [Code Intentions](tutorials/code_intentions.md)
-* [Live Templates](tutorials/live_templates.md)
-    * [1. Adding Live Template Support](tutorials/live_templates/template_support.md)\
-* [Run Configurations](tutorials/run_configurations.md)
-* [Supporting Frameworks](tutorials/framework.md)
-* [Tree Structure View](tutorials/tree_structure_view.md)
-* [Kotlin for Plugin Developers](tutorials/kotlin.md)
+## Appendix I - Resources
 
-## Appendix II - Resources
 * [Introduction](resources.md)
 * [IntelliJ Community Edition on GitHub](https://github.com/JetBrains/intellij-community)
 * [IntelliJ Plugins](https://github.com/JetBrains/intellij-plugins)
@@ -255,7 +248,7 @@
 * [Community SDK Forum](https://intellij-support.jetbrains.com/hc/en-us/community/topics/200366979-IntelliJ-IDEA-Open-API-and-Plugin-Development)
 * [Kotlin Reference](https://kotlinlang.org)
 
-## Appendix III - Breaking API Changes
+## Appendix II - Breaking API Changes
 
 * [Breaking API Changes](reference_guide/api_changes_list.md)
     * [2018.*](reference_guide/api_changes/api_changes_list_2018.md)

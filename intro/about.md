@@ -48,14 +48,10 @@ This guide is split into several parts, similar to a text book. Each part builds
 
     Documents the API for the [Plugin Repository](https://plugins.jetbrains.com) service that JetBrains maintains and is used to host plugins. It is not necessary to know this API in order to publish plugins - plugins can be uploaded manually, or via the Gradle IntelliJ Plugin.
 
-* [**Appendix I - Tutorials**](/tutorials.md)
-
-    Provides tutorials and links to working sample code to demonstrate various features and functionality related to the _IntelliJ Platform_.
-
-* [**Appendix II - Resources**](/resources.md)
+* [**Appendix I - Resources**](/resources.md)
 
     Links to useful resources, such as the IntelliJ Community Edition source code, the Plugin Development forum and the Plugin Developers Gitter room.
 
-* [**Appendix III - Breaking API Changes**](reference_guide/api_changes_list.md)
+* [**Appendix II - Breaking API Changes**](reference_guide/api_changes_list.md)
 
    Provides a list of backwards-incompatible API changes in each major release of the IntelliJ Platform.

@@ -1,5 +1,5 @@
 ---
-title: Deploying plugins with Gradle
+title: Publishing plugins with Gradle
 ---
 
 Once you have configured Gradle support, you can automatically build and deploy your plugin to the JetBrains [Plugin Repository](http://plugins.jetbrains.com). To do so, you will need to have already published the plugin to the plugin repository. For detailed information, please see the guide to [publishing a plugin](http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/publishing_plugin.html).

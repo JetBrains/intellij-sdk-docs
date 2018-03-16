@@ -12,7 +12,7 @@ Welcome to the _IntelliJ Platform_ SDK. This is the primary source of documentat
 * [**About this Guide**](intro/about.md)
     * [**Key Topics**](intro/key_topics.md)
 * [**Getting Help**](intro/getting_help.md)
-* [**Tutorials**](tutorials.md)
+* [**Getting Started**](/basics/getting_started.md)
 * [**Resources**](resources.md)
 
 ## Open Source

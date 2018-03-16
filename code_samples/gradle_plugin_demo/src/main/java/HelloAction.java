@@ -8,7 +8,7 @@ public class HelloAction extends AnAction {
   }
 
   public void actionPerformed(AnActionEvent event) {
-    Project project = event.getData(PlatformDataKeys.PROJECT);
+    Project project = event.getProject();
     Messages.showMessageDialog(project, "Hello world!", "Greeting", Messages.getInformationIcon());
   }
 }

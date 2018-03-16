@@ -26,7 +26,7 @@ buildscript {
 }
 
 plugins {
-    id "org.jetbrains.intellij" version "0.1.10"
+    id "org.jetbrains.intellij" version "0.2.18"
 }
 
 apply plugin: 'idea'
@@ -54,7 +54,11 @@ This will clean any existing IntelliJ IDEA configuration files and generate a ne
 
 ### 1.3. Add Gradle support from scratch
 
-The second method to add Gradle support is by creating a new project from scratch in IntelliJ IDEA and copying over any existing sources. This may be the preferred option in case Gradle is not able to convert an existing project. To do so, create a new project in IntelliJ IDEA by opening **File \| New... \| Project**, and select Gradle from the dialog box: 
+The second method to add Gradle support is by creating a new project from scratch in IntelliJ IDEA.
+This can also be used for an existing plugin, if Gradle is not able to convert the existing project - in this case,
+you need to copy over the sources to the new project.
+
+To do so, create a new project in IntelliJ IDEA by opening **File \| New... \| Project**, and select Gradle from the dialog box:
 
 <img src="img/step1_new_gradle_project.png" alt="Select the Gradle facet in the Project Creation Wizard" width="800px"/>
 

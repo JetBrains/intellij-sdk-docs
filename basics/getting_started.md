@@ -11,7 +11,6 @@ In this section:
 
 * [Developing plugins using Gradle](/tutorials/build_system.md)
     * [Getting Started with Gradle](/tutorials/build_system/prerequisites.md)
-    * [Creating an Action](getting_started/creating_an_action.md)
     * [Publishing Your Plugin](/tutorials/build_system/deployment.md)
 * [Developing plugins using DevKit](getting_started/using_dev_kit.md)
     * [Setting Up a Development Environment](getting_started/setting_up_environment.md)

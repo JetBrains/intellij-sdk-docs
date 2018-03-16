@@ -7,8 +7,8 @@ title: Basics of working with the Editor
 
 ----------
 
-This tutorial will lead you through the series of steps showing how to work with the IntelliJ Platform Editor, how access and modify text it contains,
-and how to handle events sent to the Editor.
+This tutorial will lead you through the series of steps showing how to work with the IntelliJ Platform Editor, how to access and modify text it contains,
+and how to handle events sent to the editor.
 
 * [1. Working With Text](editor_basics/working_with_text.md)
 * [2. Editor coordinates system. Positions and offsets](editor_basics/coordinates_system.md)

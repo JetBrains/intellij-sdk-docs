@@ -46,8 +46,7 @@ version '1.2' // Plugin version
 To add Gradle support to an existing project, copy the above Gradle build script into your `build.gradle` file, and with the Gradle executable on your system `PATH`, execute the following commands on your system's command line:
 
 ```
-gradle cleanIdea
-gradle runIdea
+gradle cleanIdea idea
 ```
 
 This will clean any existing IntelliJ IDEA configuration files and generate a new Gradle build configuration recognized by IntelliJ IDEA. Once your project refreshes, you should be able to view the Gradle tool window displayed under **View \| Tool Windows \| Gradle**. This indicates that IntelliJ IDEA recognizes the Gradle facet.
@@ -94,7 +93,7 @@ Now add a new `HelloAction` class and `plugin.xml` in the `META-INF` folder:
 {% include /code_samples/gradle_plugin_demo/src/main/resources/META-INF/plugin.xml %}
 ```
 
-Open the Gradle tool window and search for `runIdea` task. If it’s not in the list, please hit `Refresh` button on the top. Double-click on it to run it.
+Open the Gradle tool window and search for `runIde` task. If it’s not in the list, please hit `Refresh` button on the top. Double-click on it to run it.
 
 <img src="img/gradle_tasks_in_tool_window.png" alt="Gradle Tool Window" width="398px"/>
 

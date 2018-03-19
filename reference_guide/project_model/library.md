@@ -17,14 +17,44 @@ For more information about libraries, refer to
 Package
 [libraries](upsource:///platform/projectModel-api/src/com/intellij/openapi/roots/libraries)
 provides functionality for working with project libraries and jars.
-Libraries and jars can be retrieved like the following snippet shows
+
+### How do I get a list of libraries available within a module?
+
+To get the list of libraries, use `OrderEnumerator.forEachLibrary` method.
+To clarify this, consider the following code snippet that illustrates how to output the list of libraries for the specified module:
 
 ```java
-ProjectFileIndex fileIndex = ProjectRootManager.getInstance(project).getFileIndex();
-OrderEntry orderEntry : fileIndex.getOrderEntriesForFile(virtualFile));
+final List<String> libraryNames = new ArrayList<String>();
+ModuleRootManager.getInstance(module).orderEntries().forEachLibrary(library -> {
+  libraryNames.add(library.getName());
+  return true;
+});
+Messages.showInfoMessage(StringUtil.join(libraryNames, "\n"), "Libraries in Module");
 ```
-    
-## Checking Belonging to a Library
+
+This sample code outputs a list of libraries for the `module` module.
+
+### How do I get the library content?
+
+The `Library` class provides the `getUrls` method you can use to get a list of source roots and classes the library includes. To clarify, consider the following code snippet:
+
+```java
+StringBuilder roots = new StringBuilder("The " + lib.getName() + " library includes:\n");
+roots.append("Sources:\n");
+for (String each : lib.getUrls(OrderRootType.SOURCES)) {
+  roots.append(each).append("\n");
+}
+roots.append("Classes:\n");
+for (String each : lib.getUrls(OrderRootType.CLASSES)) {
+  strRoots.append(each).append("\n");
+}
+Messages.showInfoMessage(roots.toString(), "Library Info");
+```
+
+In this sample code, `lib` is of the [Library](upsource:///platform/projectModel-api/src/com/intellij/openapi/roots/libraries/Library.java) type.
+
+
+### Checking Belonging to a Library
 
 The [ProjectFileIndex](upsource:///platform/projectModel-api/src/com/intellij/openapi/roots/ProjectFileIndex.java) interface implements a number of methods you can use to check whether the specified file belongs to the project library classes or library sources.
 You can use the following methods:
@@ -47,11 +77,6 @@ You can use the following methods:
 
 See the following [code sample](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/project_model/src/com/intellij/tutorials/project/model/ProjectFileIndexSampleAction.java)
 to see how the method mentioned above can be applied.
-
-
-**Note:** 
-By default, the project modules use the project SDK. 
-Optionally, you can configure individual SDK for each module.
 
 
 More details on libraries can be found in this

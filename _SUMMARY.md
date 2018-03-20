@@ -126,7 +126,7 @@
     * QuickDoc
     * [Intentions](tutorials/code_intentions.md)
 * Analysing
-    * Annotator
+    * [Annotator](tutorials/annotator.md)
     * [Inspections](tutorials/code_inspections.md)
         * Profiles
         * Scopes
@@ -198,7 +198,6 @@
     * [9. Commenter Test](tutorials/writing_tests_for_plugins/commenter_test.md)
     * [10. Reference Test](tutorials/writing_tests_for_plugins/reference_test.md)
 * Injected Languages
-* Project Model
 * Build System
 * Compiler
 * Debugger

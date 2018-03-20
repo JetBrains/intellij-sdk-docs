@@ -11,6 +11,8 @@ Create an empty plugin project,
 see 
 [Creating a Plugin Project](/basics/getting_started/creating_plugin_project.md).
 
+**Attention: the UI for selecting module types and the creation of modules through project wizard is IntelliJ-specific.**
+
 ## 1. Register a New Module Type
 
 Add a new *moduleType* extension in the 

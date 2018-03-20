@@ -2,21 +2,112 @@
 title: Module
 ---
 
-A _module_ is a discrete unit of functionality that can be run, tested, and debugged independently. Modules includes such things as source code, build scripts, unit tests, deployment descriptors, etc.  In the project, each module can use a specific SDK or inherit the SDK defined on the project level (see the [SDK](sdk.md) section later in this guide). A module can depend on other modules of the project.
+A _module_ is a discrete unit of functionality that can be run, tested, and debugged independently. Modules includes such things as source code, build scripts, unit tests, deployment descriptors, etc.
 
-## Getting the current module
+The key components of a module are:
+  * **Content roots** - the directories where the files belonging to the module (source code, resources etc.)
+    are stored. Each directory can belong to one and only one module; it's not possible to share a content root
+    between multiple modules.
+  * **Source roots** - A content root can have multiple **source roots** underneath it. Source roots can have different types:
+   regular source roots, test source roots, resource roots etc. In IntelliJ IDEA, source roots are used as roots of the package hierarchy
+   structure (Java classes directly under a source root will be in the root package). Source roots can also be used to
+   implement more fine-grained dependency checks (code under a regular source root cannot depend on code under a test
+   source root). Not all other IntelliJ Platform-based IDEs use source roots.
+  * **Order entries** - the dependencies of a module, which are stored in an ordered list. A dependency can be a reference
+    to an [SDK](sdk.md), a [library](library.md), or another module.
+  * **[Facets](facet.md)** - the list of framework-specific configuration entries.
 
-To determine the module in the project in question to which the specified [`VirtualFile`](upsource:///platform/core-api/src/com/intellij/openapi/vfs/VirtualFile.java) belongs use `ModuleUtilCore#findModuleForFile`. Use `ModuleUtilCore#findModuleForPsiElement` to find the module for a given `PsiElement`.
+In addition to that, a module can store other settings, such as a module-specific [SDK](sdk.md), compile output path
+settings, and so on. Plugins can store additional data associated with a module by creating facets or module-level components.
 
-## Accessing module roots
 
-Information about module roots can be accessed via the class [ModuleRootManager.java](upsource:///platform/projectModel-api/src/com/intellij/openapi/roots/ModuleRootManager.java), for example, an instance of [ModuleFileIndex.java](upsource:///platform/projectModel-api/src/com/intellij/openapi/roots/ModuleFileIndex.java) can be obtained, which is similar to the [ProjectFileIndex.java](upsource:///platform/projectModel-api/src/com/intellij/openapi/roots/ProjectFileIndex.java) but in the scope of a module.
+The *IntelliJ Platform* provides a number of Java classes and interfaces you can use to work with modules:
+
+* [`ModuleManager`](upsource:///platform/projectModel-api/src/com/intellij/openapi/module/ModuleManager.java) abstract class.
+* [`Module`](upsource:///platform/core-api/src/com/intellij/openapi/module/Module.java) interface.
+* [`ModuleRootManager`](upsource:///platform/projectModel-api/src/com/intellij/openapi/roots/ModuleRootManager.java) abstract class.
+* [`ModuleRootModel`](upsource:///platform/projectModel-api/src/com/intellij/openapi/roots/ModuleRootModel.java) interface.
+* [`ModuleUtil`](upsource:///platform/lang-api/src/com/intellij/openapi/module/ModuleUtil.java) class.
+* [`ModifiableModuleModel`](upsource:///platform/projectModel-api/src/com/intellij/openapi/module/ModifiableModuleModel.java) interface.
+* [`ModifiableRootModel`](upsource:///platform/projectModel-api/src/com/intellij/openapi/roots/ModifiableRootModel.java) interface.
+
+This section discusses how to complete some common tasks related to management of modules.
+
+### How do I get a list of modules the project includes?
+
+Use the `ModuleManager.getModules()` method.
+
+### How do I get dependencies and classpath of a module?
+
+_Order entries_ include SDK, libraries and other modules the module uses. With the *IntelliJ IDEA* UI, you can view order entries for a module on the [Dependencies](http://www.jetbrains.com/idea/help/dependencies-tab.html) tab of the *Project Structure* dialog box.
+
+To explore the [module dependencies](http://www.jetbrains.com/idea/help/dependencies-tab.html), use the [OrderEnumerator](upsource:///platform/projectModel-api/src/com/intellij/openapi/roots/OrderEnumerator.java) class.
+
+The following code snippet illustrates how you can get classpath (classes root of all dependencies) for a module:
 
 ```java
-ModuleRootManager.getInstance(currentModule).getFileIndex()
+VirtualFile[] roots = ModuleRootManager.getInstance(module).orderEntries().classes().getRoots();
 ```
 
-## Checking belonging to a module source root
+### How do I get the SDK the module uses?
+
+Use the `ModuleRootManager.getSdk()` method. This method returns a value of the [Sdk](upsource:///platform/projectModel-api/src/com/intellij/openapi/projectRoots/Sdk.java) type.
+
+The following code snippet illustrates how you can get detailed information on SDK the specified module uses:
+
+```java
+ModuleRootManager moduleRootManager = ModuleRootManager.getInstance(module);
+Sdk SDK = moduleRootManager.getSdk();
+String jdkInfo = "Module: " + module.getName() + " SDK: " + SDK.getName() + " SDK version: "
+                 + SDK.getVersionString() + " SDK home directory: " + SDK.getHomePath();
+```
+
+### How do I get a list of modules on which this module directly depends?
+
+Use the `ModuleRootManager.getDependencies()` method to get an array of the `Module` type values or the `ModuleRootManager.getDependencyModuleNames()` to get an array of module names. To clarify, consider the following code snippet:
+
+```java
+ModuleRootManager moduleRootManager = ModuleRootManager.getInstance(module);
+Module[] dependentModules = moduleRootManager.getDependencies();
+String[] dependentModulesNames = moduleRootManager.getDependencyModuleNames();
+```
+
+### How do I get a list of modules that depend on this module?
+
+Use the `ModuleManager.getModuleDependentModules(module)` method.
+
+Note that you can also check whether a module (*module1*) depends on another specified module (*module2*) using the `ModuleManager.isModuleDependent` method in the following way:
+
+```java
+boolean isDependent = ModuleManager.getInstance(project).isModuleDependent(module1,module2);
+```
+
+### How do I get a module to which the specified file or PSI element belongs?
+
+* To get the project module to which the specified file belongs, use the `ModuleUtil.findModuleForFile()` static method.
+
+    To clarify, consider the following code snippet:
+
+```java
+String pathToFile = "C:\\users\\firstName.LastName\\plugins\\myPlugin\src\MyAction.java";
+VirtualFile virtualFile = LocalFileSystem.getInstance().findFileByPath(pathToFile);
+Module module = ModuleUtil.findModuleForFile(virtualFile,myProject);
+String moduleName = module == null ? "Module not found" : module.getName();
+```
+
+* To get the project module to which the specified [PSI element](architectural_overview/psi_elements.md) belongs, use the `ModuleUtil.findModuleForPsiElement(psiElement)` method.
+
+
+### Accessing module roots
+
+Information about module roots can be accessed via the class [ModuleRootManager.java](upsource:///platform/projectModel-api/src/com/intellij/openapi/roots/ModuleRootManager.java).
+For example, the following snippet shows how to access the content roots of a module:
+
+```java
+VirtualFile[] contentRoots = ModuleRootManager.getInstance(module).getContentRoots();
+```
+
+### Checking belonging to a module source root
 
 To check if a virtual file or directory belongs to a module source root, use the `ProjectFileIndex.getSourceRootForFile` method. This method returns null if the file or directory does not belong to any source root of modules in the project.
 

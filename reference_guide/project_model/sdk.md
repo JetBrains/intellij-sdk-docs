@@ -58,6 +58,6 @@ public boolean setupSdkPaths(@NotNull Sdk sdk, @NotNull SdkModel sdkModel) {
 
 To let user select an SDK, see [ProjectJdksEditor](upsource:///java/idea-ui/src/com/intellij/openapi/projectRoots/ui/ProjectJdksEditor.java).
 
-However, it is not recommended to use "SDK" in non-IDEA IDEs. "SDK" is IntelliJ-specific (as well as `ProjectJdksEditor` mentioned above) and doesn't work in PyCharm, RubyMine, etc.
+However, it is not recommended to use "SDK" in non-IDEA IDEs. Although "SDK" is available in most JB products, `ProjectJdksEditor` is IntelliJ-specific, making the operation around "SDK" difficult.
 The most recommended way of managing your "SDK" settings is to create a [`CustomStepProjectGenerator`](upsource:///platform/lang-impl/src/com/intellij/ide/util/projectWizard/CustomStepProjectGenerator.java)
 implementation and save settings in a [`PersistentStateComponent`](http://www.jetbrains.org/intellij/sdk/docs/basics/persisting_state_of_components.html).

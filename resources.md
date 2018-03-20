@@ -7,6 +7,7 @@ The following links represent useful resources for working with the _IntelliJ Pl
 * [IntelliJ Community Edition on GitHub](https://github.com/JetBrains/intellij-community)
 * [IntelliJ Plugins](https://github.com/JetBrains/intellij-plugins)
 * [IntelliJ Scala Plugin](https://github.com/JetBrains/intellij-scala)
+* [Gradle Plugin for Grammar-Kit](https://github.com/hurricup/gradle-grammar-kit-plugin)
 * [Gradle IntelliJ Plugin](https://github.com/JetBrains/gradle-intellij-plugin)
 * [IntelliJ SDK Documentation](https://github.com/JetBrains/intellij-sdk-docs)
 * [IntelliJ Plugin Verifier](https://github.com/JetBrains/intellij-plugin-verifier)

@@ -42,7 +42,7 @@ See the following [code sample](https://github.com/JetBrains/intellij-sdk-docs/b
 
 ## Working with your own SDK
 
-To create your own SDK, You need to create a class extends [SdkType](https://upsource.jetbrains.com/idea-ce/file/idea-ce-974a6ed084613aa5b0e345fbeb50de59720ab283/platform/lang-api/src/com/intellij/openapi/projectRoots/SdkType.java), leave `saveAdditionalData` blank, and register it in the `com.intellij.sdkType` extension point.
+To create your own SDK, You need to create a class extends [`SdkType`](https://upsource.jetbrains.com/idea-ce/file/idea-ce-974a6ed084613aa5b0e345fbeb50de59720ab283/platform/lang-api/src/com/intellij/openapi/projectRoots/SdkType.java), leave `saveAdditionalData` blank, and register it in the `com.intellij.sdkType` extension point.
 
 To make your SDK settings persistant, you should override `setupSdkPaths` and save your settings by `modificator.commitChanges()`:
 
@@ -51,9 +51,13 @@ To make your SDK settings persistant, you should override `setupSdkPaths` and sa
 public boolean setupSdkPaths(@NotNull Sdk sdk, @NotNull SdkModel sdkModel) {
     SdkModificator modificator = sdk.getSdkModificator();
     modificator.setVersionString(getVersionString(sdk));
-    modificator.commitChanges();
+    modificator.commitChanges(); // save
     return true;
 }
 ```
 
 To let user select an SDK, see [ProjectJdksEditor](https://upsource.jetbrains.com/idea-ce/file/idea-ce-8c9022ae739b82b2ee8f3355da98b9bbce2cb915/java/idea-ui/src/com/intellij/openapi/projectRoots/ui/ProjectJdksEditor.java).
+
+However, it is not recommended to use "SDK" in non-IDEA IDEs. "SDK" is IntelliJ-specific and doesn't work in PyCharm, RubyMine, etc.
+The most recommended way of managing your "SDK" settings is to create a [`CustomStepProjectGenerator`](https://upsource.jetbrains.com/idea-ce/file/idea-ce-8c9022ae739b82b2ee8f3355da98b9bbce2cb915/platform/lang-impl/src/com/intellij/ide/util/projectWizard/CustomStepProjectGenerator.java)
+implementation and save settings in a [`PersistentStateComponent`](http://www.jetbrains.org/intellij/sdk/docs/basics/persisting_state_of_components.html).

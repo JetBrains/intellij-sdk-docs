@@ -126,7 +126,7 @@
     * QuickDoc
     * [Intentions](tutorials/code_intentions.md)
 * Analysing
-    * [Annotator](tutorials/annotator.md)
+    * Annotator
     * [Inspections](tutorials/code_inspections.md)
         * Profiles
         * Scopes

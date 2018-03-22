@@ -14,9 +14,31 @@ The Gradle plugin is required if you want to add a [Gradle Run Configuration](ht
 
 <img src="img/step0_gradle_enabled.png" alt="Ensure the Gradle plugin is enabled" width="858px"/>
 
-### 1.2. Add Gradle support to an existing plugin 
+### 1.2. Create plugin project from scratch
 
-There are two ways to add Gradle support to an existing project. Both will require adding a `build.gradle` file under the root directory, with at least the following contents:
+IntelliJ IDEA supports automatically creating new plugin projects using Gradle, with all the necessary build.gradle
+setup performed automatically. This can also be used to convert an existing plugin to Gradle, if Gradle is not able to 
+convert the existing project - in this case, you need to copy over the sources to the new project.
+
+To do so, create a new project in IntelliJ IDEA by opening **File \| New... \| Project**, and select Gradle from the dialog box.
+In the "Additional Libraries and Frameworks" page, check "IntelliJ Platform Plugin".
+
+<img src="img/step1_new_gradle_project.png" alt="Select the Gradle facet in the Project Creation Wizard" width="800px"/>
+
+The Project Creation Wizard will now guide you through the Gradle project creation process. You will need to specify a Group ID, Artifact ID, and Version:
+
+<img src="img/step2_group_artifact_version.png" alt="Specify the Group, Artifact, and Version IDs" width="800px"/>
+
+It’s recommended to select the `Use default gradle wrapper` option, that way IntelliJ IDEA will install everything you need to run Gradle tasks itself.
+
+Finally, specify a JVM Gradle will use, it can be the Project JDK. You also configure this path once the project is created via **Settings \| Build, Execution, Deployment \| Build Tools \| Gradle**.
+
+<img src="img/step3_gradle_config.png" alt="Verify the JVM is the correct version" width="800px"/>
+
+
+### 1.3. Add Gradle support to an existing plugin 
+
+To add Gradle support to an existing plugin project, create a `build.gradle` file under the root directory, with at least the following contents:
 
 ```groovy
 buildscript {
@@ -26,7 +48,7 @@ buildscript {
 }
 
 plugins {
-    id "org.jetbrains.intellij" version "0.2.18"
+    id "org.jetbrains.intellij" version "0.3.0"
 }
 
 apply plugin: 'idea'
@@ -43,41 +65,13 @@ group 'org.jetbrains'
 version '1.2' // Plugin version
 ```
 
-To add Gradle support to an existing project, copy the above Gradle build script into your `build.gradle` file, and with the Gradle executable on your system `PATH`, execute the following commands on your system's command line:
+Then, with the Gradle executable on your system `PATH`, execute the following commands on your system's command line:
 
 ```
 gradle cleanIdea idea
 ```
 
 This will clean any existing IntelliJ IDEA configuration files and generate a new Gradle build configuration recognized by IntelliJ IDEA. Once your project refreshes, you should be able to view the Gradle tool window displayed under **View \| Tool Windows \| Gradle**. This indicates that IntelliJ IDEA recognizes the Gradle facet.
-
-### 1.3. Add Gradle support from scratch
-
-The second method to add Gradle support is by creating a new project from scratch in IntelliJ IDEA.
-This can also be used for an existing plugin, if Gradle is not able to convert the existing project - in this case,
-you need to copy over the sources to the new project.
-
-To do so, create a new project in IntelliJ IDEA by opening **File \| New... \| Project**, and select Gradle from the dialog box:
-
-<img src="img/step1_new_gradle_project.png" alt="Select the Gradle facet in the Project Creation Wizard" width="800px"/>
-
-The Project Creation Wizard will now guide you through the Gradle project creation process. You will need to specify a Group ID, Artifact ID, and Version:
-
-<img src="img/step2_group_artifact_version.png" alt="Specify the Group, Artifact, and Version IDs" width="800px"/>
-
-On the next screen, check `Create directories for empty content roots automatically`.
-
-It’s recommended to select the `Use default gradle wrapper` option, that way IntelliJ IDEA will install everything you need to run Gradle tasks itself.
-
-Finally, specify a JVM Gradle will use, it can be the Project JDK. You also configure this path once the project is created via **Settings \| Build, Execution, Deployment \| Build Tools \| Gradle**.
-
-<img src="img/step3_gradle_config.png" alt="Verify the JVM is the correct version" width="800px"/>
-
-Now, add the following script to your `build.gradle file`, overwriting any existing contents.
-
-```groovy
-{% include /code_samples/gradle_plugin_demo/build.gradle %}
-```
 
 ### 1.4. Running a simple plugin
 

@@ -12,33 +12,71 @@ For file based format projects, the information core to the project itself (e.g.
 
 For directory based format projects, the project and workspace settings are stored in a number of XML files under the `%project_home_directory%/.idea` directory. Each XML file is responsible for its own set of settings and can be recognized by its name: `projectCodeStyle.xml`, `encodings.xml`, `vcs.xml` etc. As for the file-based format projects, `.iml` files describe modules.
 
-Main classes providing work with the project model are located in the package [projectModel-api.openapi](upsource:///platform/projectModel-api/src/com/intellij/openapi). Basic API classes and interfaces for the concepts of [project](upsource:///platform/core-api/src/com/intellij/openapi/project/Project.java), [module](upsource:///platform/core-api/src/com/intellij/openapi/module/Module.java), [application](upsource:///platform/core-api/src/com/intellij/openapi/application/Application.java), and [component](upsource:///platform/core-api/src/com/intellij/openapi/components/ProjectComponent.java) are placed in the [core-api.openapi](upsource:///platform/core-api/src/com/intellij/openapi) package.
+Note that you don't need to access project files directly to load or save settings. See [Persisting State of Components](persisting_state_of_components.md) for more information.
 
-### Finding source roots
+To work with projects and project files, you can use the following classes and interfaces:
 
-To get an array of all the source roots for a project use `ProjectRootManager.getContentSourceRoots()` method like this code snippet shows:
+* [`Project`](upsource:///platform/core-api/src/com/intellij/openapi/project/Project.java) interface.
+* [`ProjectRootManager`](upsource:///platform/projectModel-api/src/com/intellij/openapi/roots/ProjectRootManager.java) abstract class.
+* [`ProjectManager`](upsource:///platform/projectModel-api/src/com/intellij/openapi/project/ProjectManager.java) abstract class.
+* [`ProjectFileIndex`](upsource:///platform/projectModel-api/src/com/intellij/openapi/roots/ProjectFileIndex.java) interface.
+
+Other classes for working with the project model are located in the package [projectModel-api.openapi](upsource:///platform/projectModel-api/src/com/intellij/openapi). Basic API classes and interfaces for the concepts of [project](upsource:///platform/core-api/src/com/intellij/openapi/project/Project.java), [module](upsource:///platform/core-api/src/com/intellij/openapi/module/Module.java), [application](upsource:///platform/core-api/src/com/intellij/openapi/application/Application.java), and [component](upsource:///platform/core-api/src/com/intellij/openapi/components/ProjectComponent.java) are placed in the [core-api.openapi](upsource:///platform/core-api/src/com/intellij/openapi) package.
+
+### How do I get a list of source roots for all modules in my project?
+
+Use the `ProjectRootManager.getContentSourceRoots()` method. To clarify this, consider the following code snippet:
 
 ```java
+String projectName = project.getName();
+StringBuilder sourceRootsList = new StringBuilder();
 VirtualFile[] vFiles = ProjectRootManager.getInstance(project).getContentSourceRoots();
+for (VirtualFile file : vFiles) {
+  sourceRootsList.append(file.getUrl()).append("\n");
+}
+
+Messages.showInfoMessage("Source roots for the " + projectName + " plugin:\n" + sourceRootsList, "Project Properties");
 ```
 
 ### Checking if a file belongs to a project
 
-Use [ProjectFileIndex.java](upsource:///platform/projectModel-api/src/com/intellij/openapi/roots/ProjectFileIndex.java) to get this information.
-
-### Getting an Instance of the ProjectFileIndex Interface
-
-Use the `ProjectRootManager.getFileIndex()` method. For example:
-
+Use [ProjectFileIndex.java](upsource:///platform/projectModel-api/src/com/intellij/openapi/roots/ProjectFileIndex.java) to get this information:
 ```java
 ProjectFileIndex projectFileIndex = ProjectRootManager.getInstance(project).getFileIndex();
 ```
 
-Note that this method returns `null` if the file does not belong to any module. You can also use the `ProjectFileIndex.getContentRootForFile()` method to get the module content root to which the specified file or directory belongs:
+### How do I get the content or source root to which the specified file or directory belongs?
+
+Use the `ProjectFileIndex.getContentRootForFile` and `ProjectFileIndex.getSourceRootForFile` methods. For example:
 
 ```java
-VirtualFile moduleContentRoot = ProjectRootManager.getInstance(project).getFileIndex().getContentRootForFile(virtualFileOrDirectory);
+VirtualFile moduleContentRoot = ProjectRootManager.getInstance(project).getFileIndex().getContentRootForFile(virtualFileorDirectory);
+VirtualFile moduleSourceRoot = ProjectRootManager.getInstance(project).getFileIndex().getSourceRootForFile(virtualFileorDirectory);
 ```
+
+Note that this method returns `null` if the file or directory does not belong to any source root of modules in the project.
+ 
+### How do I check whether a file or directory is related to the project libraries?
+
+The `ProjectFileIndex` interface implements a number of methods you can use to check whether the specified file belongs to the project library classes or library sources.
+
+You can use the following methods:
+
+* `ProjectFileIndex.isLibraryClassFile(virtualFile)`: Returns `true` if the specified `virtualFile` is a compiled class file.
+* `ProjectFileIndex.isInLibraryClasses(virtualFileorDirectory)`: Returns `true` if the specified `virtualFileorDirectory` belongs to library classes.
+* `ProjectFileIndex.isInLibrarySource(virtualFileorDirectory)`: Returns `true` if the specified `virtualFileorDirectory` belongs to library sources.
+
+### How do I get the project SDK?
+
+* To get the project-level SDK: `Sdk projectSDK = ProjectRootManager.getInstance(project).getProjectSdk();` 
+* To get the project-level SDK name: `String projectSDKName = ProjectRootManager.getInstance(project).getProjectSdkName();`
+
+### How do I set the project SDK?
+
+* To set the project-level SDK: `ProjectRootManager.getInstance(project).setProjectSdk(Sdk jdk);`
+* To set the project-level SDK name: `ProjectRootManager.getInstance(project).setProjectSdkName(String name);`
+
+Note that by default, the project modules use the project SDK. Optionally, you can configure individual SDK for each module.
 
 ## Changing the project structure
 

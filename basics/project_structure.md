@@ -42,15 +42,7 @@ For more information about SDKs, see [Working with SDKs](https://www.jetbrains.c
 
 A _facet_ represents certain configuration, specific for a particular framework/technology, associated with a module. A module can have multiple facets. E.g. Spring specific configuration is stored in a Spring facet.
 
-For more information about facets see [Facet](https://www.jetbrains.com/help/idea/adding-support-for-frameworks-and-technologies.html#facets) and [Language and Framework Specific Guidelines](https://www.jetbrains.com/help/idea/language-and-framework-specific-guidelines.html) in the *IntelliJ IDEA* Web Help.
-
-## Project Structure
-
-From the plugin developer's point of view, a project can be thought of as follows:
-
-![Project Structure](project_structure/img/IntelliJIDEA_ProjectStructure.png)
-
-A **project** consists of one or several **modules**. Each **module** includes the plugin source code and so called **order entries** that refer to **SDK** and **libraries** the module uses. By default, all modules uses the project SDK. In addition, a **module** can optionally have a set of **facets**.
+Facets are documented under [Facet](https://www.jetbrains.com/help/idea/adding-support-for-frameworks-and-technologies.html#facets) and [Language and Framework Specific Guidelines](https://www.jetbrains.com/help/idea/language-and-framework-specific-guidelines.html) in the *IntelliJ IDEA* Web Help.
 
 For more information on each of these entities, see:
 

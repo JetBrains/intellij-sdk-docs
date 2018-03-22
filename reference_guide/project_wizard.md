@@ -137,4 +137,38 @@ To understand facets better from the point of view of an end-user, please see
 documentation section.
 
 
+## Implementing Project Structure Detector
 
+To support the creation of your module when a project is imported from existing sources, extend [ProjectStructureDetector](https://upsource.jetbrains.com/idea-ce/file/idea-ce-8bcd17315c7ac0a69ac6c8e9a3fb217707daa2cd/java/idea-ui/src/com/intellij/ide/util/projectWizard/importSources/ProjectStructureDetector.java).
+
+To detect your files your module supports implement
+
+```java
+public abstract DirectoryProcessingResult detectRoots(@NotNull File dir, @NotNull File[] children, @NotNull File base,
+                                                        @NotNull List<DetectedProjectRoot> result);
+```
+
+Refer to the [Smalltalk project structure derector](https://github.com/bulenkov/RedlineSmalltalk/blob/master/src/st/redline/smalltalk/module/RsProjectStructureDetector.java)
+
+But detecting the files is not enough, you also need to create a module for the project if appropriate by implementing `setupProjectStructure()`. Here is an example that creates a module if no other modules exist in the project structure.
+
+```java
+@Override
+    public void setupProjectStructure(@NotNull final Collection<DetectedProjectRoot> roots,
+        @NotNull final ProjectDescriptor projectDescriptor,
+        @NotNull final ProjectFromSourcesBuilder builder)
+    {
+        List<ModuleDescriptor> modules = projectDescriptor.getModules();
+        if (modules.isEmpty())
+        {
+            modules = new ArrayList<>();
+            for (DetectedProjectRoot root : roots)
+            {
+                modules.add(
+                    new ModuleDescriptor(root.getDirectory(), MyModuleType.getInstance(),
+                        ContainerUtil.emptyList()));
+            }
+            projectDescriptor.setModules(modules);
+        }
+    }
+```

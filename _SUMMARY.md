@@ -94,9 +94,7 @@
 * [SDK](reference_guide/project_model/sdk.md)
 * [Library](reference_guide/project_model/library.md)
 * [Facet](reference_guide/project_model/facet.md)
-* [Build System](reference_guide/project_model/build_system.md)
-    * [External Builder API and Plugins](reference_guide/frameworks_and_external_apis/external_builder_api.md)
-    * [External system integration](reference_guide/frameworks_and_external_apis/external_system_integration.md)
+* [External system integration](reference_guide/frameworks_and_external_apis/external_system_integration.md)
 
 ## Part IV - PSI
 * [What is the PSI?](basics/architectural_overview/psi.md)
@@ -136,6 +134,8 @@
 * Project View
     * [Modifying Project View Structure](tutorials/tree_structure_view.md)
 * Unit Testing
+* [Build System](reference_guide/project_model/build_system.md)
+    * [External Builder API and Plugins](reference_guide/frameworks_and_external_apis/external_builder_api.md)
 
 ## Part VI - Testing
 

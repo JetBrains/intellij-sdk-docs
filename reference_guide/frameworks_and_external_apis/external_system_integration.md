@@ -76,12 +76,3 @@ It's recommended to extend from [AbstractExternalProjectSettingsControl](upsourc
 Similar approach is used for providing 'import from external system' UI - implementation is expected to extended [AbstractImportFromExternalSystemControl](upsource:///platform/external-system-impl/src/com/intellij/openapi/externalSystem/service/settings/AbstractImportFromExternalSystemControl.java) and it has not linked external projects list but target external project path control:
 
 ![Import from external system](/reference_guide/img/import.png)
-
-# Using with 12.1.x IJ branch
-
-Though main development is performed at the 'master' branch, there is a special 12.1.x-compatible version. Here are instructions on how to use it:
-
-1.  Download external-system.zip;
-2.  Unpack it and define *external-system.jar* as a library dependency;
-3.  Configure sources from *external-system-src.jar* if necessary;
-4.  Add definitions from *ExternalSystemExtensionPoints.xml* and *ExternalSystemExtensions.xml* to your *plugin.xml* (that **.xml files are bundled into *external-system-src.jar*). *Note:** it's very important to use custom namespace there because there is a possible case that more than one external system integration uses this approach to be compatible with 12.1.x;

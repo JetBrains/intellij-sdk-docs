@@ -21,7 +21,7 @@ In your plugin, you may depend on classes from other plugins, either bundled, th
 
 ```groovy
 intellij {
-    plugins 'org.jetbrains.kotlin@1.2.30'
+    plugins 'org.jetbrains.kotlin:1.2.30'
 }
 ```
 

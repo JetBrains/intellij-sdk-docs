@@ -99,7 +99,12 @@ intellij {
 
 The best way to create user interfaces with Kotlin is to use a type safe DSL for building forms instead of GUI designer. The DSL used in the IntelliJ platform is inside `com.intellij.ui.layout` package. [Documentation](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-impl/src/com/intellij/ui/layout/readme.md).
 
-## 5. Examples
+## 5. Handling Kotlin code
+
+If you need to write a plugin that processes Kotlin code, you need to add a dependency on the Kotlin plugin. Please refer
+to [Plugin Dependencies](/basics/plugin_structure/plugin_dependencies.md) for information on how to do that.
+
+## 6. Examples
 
 There are a number of [open source Kotlin projects](https://github.com/search?l=Kotlin&q=+intellij&ref=searchresults&type=Repositories) built on the IntelliJ Platform. For a readily available source of up to date examples and applications of the Kotlin language for building developer tools with the IntelliJ Platform, developers may look to these projects for inspiration:
 

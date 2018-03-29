@@ -69,6 +69,7 @@ In this sample code, `lib` is of the [Library](upsource:///platform/projectModel
 
 To create a library, you need to perform the following steps:
 
+  * Get a ([write action](/basics/architectural_overview/general_threading_rules.html#readwrite-lock)
   * Obtain the library table to which you want to add the library. Use one of the following, depending on the library level:
       * `LibraryTablesRegistrar.getInstance().getLibraryTable()`
       * `LibraryTablesRegistrar.getInstance().getLibraryTable(Project)`
@@ -84,13 +85,14 @@ class to add a library with a single API call. You can find an example of using 
 
 To add or change the roots of a library, you need to perform the following steps:
 
+  * Get a ([write action](/basics/architectural_overview/general_threading_rules.html#readwrite-lock)
   * Get a **modifiable model** for the library, using `Library.getModifiableModel()`
   * Use methods such as `Library.ModifiableModel.addRoot()` to perform the necessary changes
   * Commit the model using `Library.ModifiableModel.commit()`.
   
 ### How do I add a library dependency to a module?
 
-Use `ModuleRootModificationUtil.addDependency(module, library)`.  
+Use `ModuleRootModificationUtil.addDependency(module, library)` from under a write action.  
 
 ### Checking Belonging to a Library
 

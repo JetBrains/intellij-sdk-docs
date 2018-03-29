@@ -114,3 +114,18 @@ To check if a virtual file or directory belongs to a module source root, use the
 ```java
 VirtualFile moduleSourceRoot = ProjectRootManager.getInstance(project).getFileIndex().getSourceRootForFile(virtualFileOrDirectory);
 ```
+
+## Receiving notifications about module changes
+
+To receive notifications about module changes (modules being added, removed or renamed),
+use the [message bus](/reference_guide/messaging_infrastructure.md) and the `ProjectTopics.MODULES` topic:
+
+```java
+project.getMessageBus().connect().subscribe(ProjectTopics.MODULES, new ModuleListener() {
+  @Override
+  public void moduleAdded(@NotNull Project project, @NotNull Module module) {
+
+  }
+});
+```
+

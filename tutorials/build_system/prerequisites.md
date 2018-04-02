@@ -8,9 +8,9 @@ Adding Gradle build support to an IntelliJ Platform Plugin requires a recent dis
 
 Download and install either IntelliJ IDEA Ultimate or the IntelliJ IDEA Community Edition.
 
-### 1.1. Ensure the Gradle plugin is enabled
+### 1.1. Ensure the Gradle plugin and 'Plugin DevKit' plugin are enabled
 
-The Gradle plugin is required if you want to add a [Gradle Run Configuration](https://www.jetbrains.com/idea/help/create-run-debug-configuration-for-gradle-tasks.html) to IntelliJ IDEA. You can verify the Gradle plugin is enabled by visiting **Settings \| Plugins \| Gradle**.
+You can verify that the plugins are enabled by visiting **Settings \| Plugins**.
 
 <img src="img/step0_gradle_enabled.png" alt="Ensure the Gradle plugin is enabled" width="858px"/>
 

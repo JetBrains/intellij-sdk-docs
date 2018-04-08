@@ -17,9 +17,9 @@ A [`FileViewProvider`](upsource:///platform/core-api/src/com/intellij/psi/FileVi
 
 ## What can I do with an FVP?
 
-* To get the list of all languages for which PSI trees exist in a file: `fileViewProvider.getLanguages()`
+* To get the set of all languages for which PSI trees exist in a file: `fileViewProvider.getLanguages()`
 * To get the PSI tree for a particular language: `fileViewProvider.getPsi(language)`, where the `language` parameter can take values of the [Language](upsource:///platform/core-api/src/com/intellij/lang/Language.java) type defined in [StdLanguages](upsource:///platform/platform-api/src/com/intellij/lang/StdLanguages.java) class. For example, to get the PSI tree for XML, use `fileViewProvider.getPsi(StdLanguages.XML)`.
-* To find an element of a particular language at the specified offset in the file: `fileViewProvider.findElementAt(offset,language)`
+* To find an element of a particular language at the specified offset in the file: `fileViewProvider.findElementAt(offset, language)`
 
 ## How do I extend the FileViewProvider?
 
@@ -30,7 +30,7 @@ bean class.
 
 To access this extension point, create a Java class that implements the [FileViewProviderFactory](upsource:///platform/core-api/src/com/intellij/psi/FileViewProviderFactory.java) interface, and in this class, override the `createFileViewProvider` method.
 
-To declare the extension to the `fileType.fileViewProviderFactory` extension point, to the `<extensions>` section of the plugin.xml file, add the following syntax:
+To declare the extension to the `fileType.fileViewProviderFactory` extension point, add the following syntax to the `<extensions>` section of the `plugin.xml` file:
 
 ```xml
 <extensions>

@@ -36,14 +36,14 @@ To register the action we should add the corresponding tag to the `<actions>` se
 </actions>
 ```
 
-If an action is registered in the group EditorPopupMenu, like the sample above shows,
+If an action is registered in the group `EditorPopupMenu`, like the sample above shows,
 it will be available from the context menu when the focus is located in the editor.
 
 
 ### 1.1.3. Defining action's visibility
 
-To determine conditions by which the action will be visible and available for being executed we need to override it's
-*public void update(AnActionEvent e)* method.
+To determine conditions by which the action will be visible and available for being executed we need to override its
+`public void update(AnActionEvent e)` method.
 
 ```java
 public class EditorIllustration extends AnAction {
@@ -82,7 +82,7 @@ public class EditorIllustration extends AnAction {
 
 **Note:**
 
-To access an Editor instance other ways can also be used:
+To access an Editor instance, other ways can also be used:
 
 * If [DataContext](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/DataContext.java)
   object is available: `final Editor editor = CommonDataKeys.EDITOR.getData(context);`
@@ -92,10 +92,10 @@ To access an Editor instance other ways can also be used:
 
 ## 1.3. Obtaining a caret model and selection
 
-After making sure we have a project open and an instance of the Editor we need to check if any selection is available and set action's visibility accordingly to these conditions.
+After making sure we have a project open and an instance of the Editor we need to check if any selection is available and set action's visibility according to these conditions.
 [SelectionModel](upsource:///platform/editor-ui-api/src/com/intellij/openapi/editor/SelectionModel.java)
 accessed from the Editor allows to do it by calling its `hasSelection()` method.
-Here's how our `update(AnActionEvent e)` method should look like at the end:
+Here's how our `update(AnActionEvent e)` method should look like in the end:
 
 
 ```java
@@ -124,14 +124,13 @@ package and include:
 * [FoldingModel.java](upsource:///platform/editor-ui-api/src/com/intellij/openapi/editor/FoldingModel.java),
 * [IndentsModel.java](upsource:///platform/editor-ui-api/src/com/intellij/openapi/editor/IndentsModel.java),
 * [ScrollingModel.java](upsource:///platform/editor-ui-api/src/com/intellij/openapi/editor/ScrollingModel.java),
-* [ScrollingModel.java](upsource:///platform/editor-ui-api/src/com/intellij/openapi/editor/ScrollingModel.java),
 * [SoftWrapModel.java](upsource:///platform/editor-ui-api/src/com/intellij/openapi/editor/SoftWrapModel.java)
 
 
 ## 1.4. Obtaining a Document
 
 The action is visible and available now. 
-In order to make it do something we need to override it's
+In order to make it do something we need to override its
 `public void actionPerformed(AnActionEvent anActionEvent)` method.
 
 
@@ -139,7 +138,7 @@ In order to make it do something we need to override it's
 public class EditorIllustration extends AnAction {
     @Override
     public void update(AnActionEvent e) {
-    //code here
+        //code here
     }
     @Override
     public void actionPerformed(AnActionEvent anActionEvent) {
@@ -149,7 +148,7 @@ public class EditorIllustration extends AnAction {
 
 To modify the text an instance of the
 [Document](upsource:///platform/core-api/src/com/intellij/openapi/editor/Document.java)
-needs to be accessed. [Document](/basics/architectural_overview/documents.md) represents the contents of a text file loaded into memory, and possibly opened in an IDEA text editor.
+needs to be accessed. [Document](/basics/architectural_overview/documents.md) represents the contents of a text file loaded into memory and possibly opened in an IDEA text editor.
 The instance of a Document will be used later when a text replacement is performed.
 We also need to figure out where the selected part of the text is located.
 
@@ -173,7 +172,7 @@ public void actionPerformed(final AnActionEvent e) {
 Generally replacement can be done by calling
 `void replaceString(int startOffset, int endOffset, @NotNull CharSequence s);` of the Document, however,
 the operation of replacement must be executed safely, this means the Document must be locked and
-any changes should be performed under the [write action](upsource:///platform/core-api/src/com/intellij/openapi/command/WriteCommandAction.java)<!--#L172-->.
+any changes should be performed in a [write action](upsource:///platform/core-api/src/com/intellij/openapi/command/WriteCommandAction.java)<!--#L172-->.
 See the [Threading Issues](/basics/architectural_overview/general_threading_rules.md) section to learn more about synchronization issues and changes safety on the IntelliJ Platform.
 
 ```java
@@ -206,4 +205,4 @@ The source code is located in
 [EditorIllustration.java](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/editor_basics/src/org/jetbrains/tutorials/editor/basics/EditorIllustration.java).
 To see how text replacement works, check out
 [Editor Basics](https://github.com/JetBrains/intellij-sdk-docs/tree/master/code_samples/editor_basics/src/org/jetbrains/tutorials/editor/basics/)
-plugin, make the project, and run it, then invoke the *EditorIllustration* action which is available in the context menu of the editor.
+plugin, make the project, run it, then invoke the *EditorIllustration* action which is available in the context menu of the editor.

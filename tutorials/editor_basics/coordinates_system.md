@@ -3,17 +3,17 @@ title: 2. Editor coordinates system. Positions and offsets
 ---
 
 
-Every caret in the editor has a set of properties describing it's coordinates. 
+Every caret in the editor has a set of properties describing its coordinates.
 These properties can be accessed by obtaining a
 [caret model instance](upsource:///platform/editor-ui-api/src/com/intellij/openapi/editor/CaretModel.java).
-Working with caret positions and it's logical and visual properties will be explained in the sample below.
+Working with caret positions and their logical and visual properties will be explained in the sample below.
 
 ## 2.1. Pre-requirements
 Access to the Editor is performed through an action.
 
 ## 2.2. Accessing caret positions
 
-To get an access to caret positions an instance of CaretModel should be obtained.
+To get an access to caret positions an instance of `CaretModel` should be obtained.
 
 ```java
 public class EditorAreaIllustration extends AnAction {
@@ -32,7 +32,7 @@ public class EditorAreaIllustration extends AnAction {
 ## 2.3. Logical position
 
 [LogicalPosition.java](upsource:///platform/editor-ui-api/src/com/intellij/openapi/editor/LogicalPosition.java)
-represents a line and a column of the current logical position of the caret. Logical positions ignore folding -
+represents a line and a column of the current logical position of the caret. Logical positions ignore folding —
 for example, if the top 10 lines of the document are folded, the 10th line in the document will have the line number 10 in its logical position.
 
 ```java
@@ -52,15 +52,15 @@ public class EditorAreaIllustration extends AnAction {
 
 Logical position may store additional parameters that define its mapping to
 [VisualPosition.java](upsource:///platform/editor-ui-api/src/com/intellij/openapi/editor/VisualPosition.java).
-Rationale is that single logical pair matches soft wrap-introduced virtual space, i.e. different visual positions
-correspond to the same logical position. It's convenient to store exact visual location details within the logical
-position in order to relief further 'logical position' -> 'visual position' mapping.
+Rationale is that a single logical pair matches a virtual space introduced by soft wrap, i.e. different visual positions
+may correspond to the same logical position. It's convenient to store exact visual location details within the logical
+position in order to relieve further 'logical position' -> 'visual position' mapping.
 
 ## 2.4. Visual position
 
 [VisualPosition.java](upsource:///platform/editor-ui-api/src/com/intellij/openapi/editor/VisualPosition.java)
-represent a visual position and may very from the corresponding logical position.
-Visual positions take folding into account - for example,
+represents a visual position and may differ from the corresponding logical position.
+Visual positions take folding into account — for example,
 if the top 10 lines of the document are folded, the 10th line in the document will have the line number 1 in its visual position.
 
 ```java
@@ -81,7 +81,7 @@ public class EditorAreaIllustration extends AnAction {
 
 ## 2.5. Offset
 
-An absolute offset for a given caret position is accessible through CaretModel as well
+An absolute offset for a given caret position is accessible through `CaretModel` as well:
 
 ```java
 public class EditorAreaIllustration extends AnAction {

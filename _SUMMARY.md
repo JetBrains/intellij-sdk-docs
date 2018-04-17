@@ -101,13 +101,13 @@
 * [PSI Files](basics/architectural_overview/psi_files.md)
 * [File View Providers](basics/architectural_overview/file_view_providers.md)
 * [PSI Elements](basics/architectural_overview/psi_elements.md)
-* Navigating the PSI
+* [Navigating the PSI](basics/architectural_overview/navigating_psi.md)
+* [References](basics/architectural_overview/psi_references.md)
 * Modifying the PSI
 * [PSI Cookbook](basics/psi_cookbook.md)
 * [Indexing and PSI Stubs](basics/indexing_and_psi_stubs.md)
     * [File-based indexes](basics/indexing_and_psi_stubs/file_based_indexes.md)
     * [Stub indexes](basics/indexing_and_psi_stubs/stub_indexes.md)
-* References
 * Unified AST
 * [XML DOM API](reference_guide/frameworks_and_external_apis/xml_dom_api.md)
 

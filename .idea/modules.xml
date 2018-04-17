@@ -18,6 +18,7 @@
       <module fileurl="file://$PROJECT_DIR$/code_samples/project_model/project_model.iml" filepath="$PROJECT_DIR$/code_samples/project_model/project_model.iml" group="code_samples" />
       <module fileurl="file://$PROJECT_DIR$/code_samples/project_view_pane/project_view_pane.iml" filepath="$PROJECT_DIR$/code_samples/project_view_pane/project_view_pane.iml" group="code_samples" />
       <module fileurl="file://$PROJECT_DIR$/code_samples/project_wizard/project_wizard.iml" filepath="$PROJECT_DIR$/code_samples/project_wizard/project_wizard.iml" group="code_samples" />
+      <module fileurl="file://$PROJECT_DIR$/code_samples/psi_demo.iml" filepath="$PROJECT_DIR$/code_samples/psi_demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/code_samples/register_actions/register_actions.iml" filepath="$PROJECT_DIR$/code_samples/register_actions/register_actions.iml" group="code_samples" />
       <module fileurl="file://$PROJECT_DIR$/code_samples/run_configuration/run_configuration.iml" filepath="$PROJECT_DIR$/code_samples/run_configuration/run_configuration.iml" group="code_samples" />
       <module fileurl="file://$PROJECT_DIR$/code_samples/simple_language_plugin/simple_language_plugin.iml" filepath="$PROJECT_DIR$/code_samples/simple_language_plugin/simple_language_plugin.iml" group="code_samples" />

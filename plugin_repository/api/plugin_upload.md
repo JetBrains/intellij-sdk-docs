@@ -20,13 +20,13 @@ Parameters:
 Provide file as file contents. Curl command template:
 
 ```
-curl -k -i -F userName=<userName> -F password=<password> -F pluginId=<pluginId> -F file=@<path to plugin .jar/.zip file> -F channel=<channel> https://plugins.jetbrains.com/plugin/uploadPlugin
+curl -i -F userName=<userName> -F password=<password> -F pluginId=<pluginId> -F file=@<path to plugin .jar/.zip file> -F channel=<channel> https://plugins.jetbrains.com/plugin/uploadPlugin
 ```
 
 Curl command example:
 
 ```
-curl -k -i -F userName=pluginrobot -F password=123456 -F pluginId=5047 -F file=@Go-0.11.1197.zip -F channel=nightly https://plugins.jetbrains.com/plugin/uploadPlugin
+curl -i -F userName=pluginrobot -F password=123456 -F pluginId=5047 -F file=@Go-0.11.1197.zip -F channel=nightly https://plugins.jetbrains.com/plugin/uploadPlugin
 ```
 
 **Using pluginXmlId**
@@ -34,11 +34,11 @@ curl -k -i -F userName=pluginrobot -F password=123456 -F pluginId=5047 -F file=@
 Provide file as file contents. Curl command template:
 
 ```
-curl -k -i -F userName=<userName> -F password=<password> -F xmlId=<pluginXmlId> -F file=@<path to plugin .jar/.zip file> -F channel=<channel> https://plugins.jetbrains.com/plugin/uploadPlugin
+curl -i -F userName=<userName> -F password=<password> -F xmlId=<pluginXmlId> -F file=@<path to plugin .jar/.zip file> -F channel=<channel> https://plugins.jetbrains.com/plugin/uploadPlugin
 ```
 
 Curl command example:
 
 ```
-curl -k -i -F userName=pluginrobot -F password=123456 -F xmlId=ro.redeul.google.go -F file=@Go-0.11.1197.zip -F channel=nightly https://plugins.jetbrains.com/plugin/uploadPlugin
+curl -i -F userName=pluginrobot -F password=123456 -F xmlId=ro.redeul.google.go -F file=@Go-0.11.1197.zip -F channel=nightly https://plugins.jetbrains.com/plugin/uploadPlugin
 ```

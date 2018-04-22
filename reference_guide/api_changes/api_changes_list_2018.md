@@ -15,6 +15,16 @@ See the note on how to document new problems on the main page reference_guide/ap
   }
 </style>
 
+## Changes in IntelliJ Platform 2018.2
+
+|  Change | How to deal with it |
+|---------|---------------------|
+| `com.intellij.util.Query.forEach` method parameter type changed from `Processor<Result>` to `Processor<? super Result>` | Update `Query` implementations accordingly |
+| `com.intellij.util.Query.forEachAsync` method parameter type changed from `Processor<Result>` to `Processor<? super Result>` | Update `Query` implementations accordingly |
+| `com.intellij.util.QueryExecutor.execute` method parameter type changed from `Processor<Result>` to `Processor<? super Result>` | Update `QueryExecutor` implementations accordingly |
+| `com.intellij.openapi.application.QueryExecutorBase.processQuery` method parameter type changed from `Processor<Result>` to `Processor<? super Result>` | Update `QueryExecutorBase` inheritors accordingly |
+| `com.intellij.util.InstanceofQuery` type parameter `T` added | Set this parameter at call sites to base query type |
+
 ## Changes in IntelliJ Platform 2018.1
 
 |  Change | How to deal with it |

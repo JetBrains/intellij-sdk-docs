@@ -16,7 +16,7 @@ The _IntelliJ Platform_ is very large, and very capable, and its size and scope 
 
 ## Code model
 
-The _IntelliJ Platform_'s code model is called the PSI - the Program Structure Index. The PSI parses code, builds indexes and creates a semantic model.
+The _IntelliJ Platform_'s code model is called the PSI - the Program Structure Interface. The PSI parses code, builds indexes and creates a semantic model.
 
 ## Common extension points
 

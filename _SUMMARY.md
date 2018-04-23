@@ -41,9 +41,11 @@
 ## Part II - Base Platform
 * [Fundamentals](platform/fundamentals.md)
     * Component Model
+    * Disposers
     * [Threading](basics/architectural_overview/general_threading_rules.md)
         * Background Tasks
     * [Messaging Infrastructure](reference_guide/messaging_infrastructure.md)
+    * Queries and Query Executors
 * [User Interface Components](user_interface_components/user_interface_components.md)
     * [Tool Windows](user_interface_components/tool_windows.md)
     * [Dialogs](user_interface_components/dialog_wrapper.md)
@@ -61,6 +63,7 @@
         * [2. Grouping Actions](tutorials/action_system/grouping_action.md)
 * Settings
     * [Persisting State of Components](basics/persisting_state_of_components.md)
+    * Editing Settings
 * [Files](basics/architectural_overview/files.md)
     * [Virtual File System](basics/virtual_file_system.md)
     * [Virtual Files](basics/architectural_overview/virtual_file.md)
@@ -103,11 +106,12 @@
 * [PSI Elements](basics/architectural_overview/psi_elements.md)
 * [Navigating the PSI](basics/architectural_overview/navigating_psi.md)
 * [References](basics/architectural_overview/psi_references.md)
-* Modifying the PSI
+* [Modifying the PSI](basics/architectural_overview/modifying_psi.md)
 * [PSI Cookbook](basics/psi_cookbook.md)
 * [Indexing and PSI Stubs](basics/indexing_and_psi_stubs.md)
     * [File-based indexes](basics/indexing_and_psi_stubs/file_based_indexes.md)
     * [Stub indexes](basics/indexing_and_psi_stubs/stub_indexes.md)
+* Element Patterns
 * Unified AST
 * [XML DOM API](reference_guide/frameworks_and_external_apis/xml_dom_api.md)
 

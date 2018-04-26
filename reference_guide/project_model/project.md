@@ -80,11 +80,11 @@ Note that by default, the project modules use the project SDK. Optionally, you c
 Utility classes which can be used for modifying a project structure can be found in the package [projectModel-impl.openapi](upsource:///platform/projectModel-impl/src/com/intellij/openapi). Its [roots](upsource:///platform/projectModel-impl/src/com/intellij/openapi/roots/) subpackage contains instances and utilities intended for work with project and module source roots, including [ModuleRootModificationUtil.java](upsource:///platform/projectModel-api/src/com/intellij/openapi/roots/ModuleRootModificationUtil.java) and [ProjectRootUtil.java](upsource:///platform/projectModel-impl/src/com/intellij/openapi/projectRoots/impl/ProjectRootUtil.java). Project structure
 changes need to be performed in a [write action](/basics/architectural_overview/general_threading_rules.html#readwrite-lock).
 
-Refer to the [basic example](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/project_model/src/com/intellij/tutorials/project/model/ModificationAction.java) of an on-the-fly project structure modification to learn how it can be implemented.
+Refer to the [basic example](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/project_model/src/com/intellij/tutorials/project/model/ModificationAction.java) of on-the-fly project structure modification to learn how it can be implemented.
 
 ## Receiving notifications about project structure changes
 
-To receive notifications about changes in project structure (modules or libraries being added or removed, module dependencies being changed and so on),
+To receive notifications about changes in project structure (modules or libraries being added or removed, module dependencies being changed, and so on),
 use the [message bus](/reference_guide/messaging_infrastructure.md) and the `ProjectTopics.PROJECT_ROOTS` topic:
 
 ```java

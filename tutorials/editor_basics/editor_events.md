@@ -11,7 +11,7 @@ The IntelliJ Platform SDK provides a set of callbacks for handling events relate
 ## 3.1. Handling keystrokes in the Editor
 
 [TypedActionHandler](upsource:///platform/platform-api/src/com/intellij/openapi/editor/actionSystem/TypedActionHandler.java)
-interface is intended to handle keystrokes and provide custom reactions.
+interface is intended to implement custom handling for keys typed in the editor.
 The steps below show how to customize the behaviour of the editor and make it react to typing in a different way than just displaying the typed character in the editor area.
 
 ### 3.1.2 Implementing *TypedActionHandler*
@@ -32,7 +32,7 @@ public class MyTypedHandler implements TypedActionHandler {
 `public void execute(@NotNull Editor editor, char c, @NotNull DataContext dataContext);`
 
 method should contain the main logical part for handling keystrokes. It will be called every time a key is pressed.
-In the following example our typed handler is supposed to insert a string at the zero offset in the editor after a keystroke occurs:
+In the following example our typed handler inserts a string at the zero offset in the editor after a keystroke occurs:
 
 ```java
 public class MyTypedHandler implements TypedActionHandler {

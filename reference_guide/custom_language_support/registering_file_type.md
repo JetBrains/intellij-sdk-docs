@@ -10,7 +10,7 @@ A custom language file type is a class derived from
 which passes a
 [Language](upsource:///platform/core-api/src/com/intellij/lang/Language.java)
 subclass to its base class constructor.
-To register a file type, the plugin developer provides a subclass of the
+To register a file type, the plugin developer provides a subclass of
 [FileTypeFactory](upsource:///platform/platform-api/src/com/intellij/openapi/fileTypes/FileTypeFactory.java), which is registered via the `com.intellij.fileTypeFactory`
 [platform extension point](upsource:///platform/platform-resources/src/META-INF/PlatformExtensionPoints.xml).
 

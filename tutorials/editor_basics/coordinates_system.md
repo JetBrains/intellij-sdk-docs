@@ -54,7 +54,7 @@ Logical position may store additional parameters that define its mapping to
 [VisualPosition.java](upsource:///platform/editor-ui-api/src/com/intellij/openapi/editor/VisualPosition.java).
 Rationale is that a single logical pair matches a virtual space introduced by soft wrap, i.e. different visual positions
 may correspond to the same logical position. It's convenient to store exact visual location details within the logical
-position in order to relieve further 'logical position' -> 'visual position' mapping.
+position in order to simplify further 'logical position' -> 'visual position' mapping.
 
 ## 2.4. Visual position
 

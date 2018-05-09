@@ -2,8 +2,8 @@
 title: Modifying the PSI
 ---
 
-The PSI is a read-write interface for working with the source code. You can modify the PSI by *adding*, *replacing*,
-and *deleting* PSI elements.
+The PSI is a read-write representation of the source code as a tree of elements corresponding to the structure of a source
+file. You can modify the PSI by *adding*, *replacing*, and *deleting* PSI elements.
 
 To perform these operations, you use methods such as `PsiElement.add()`, `PsiElement.delete()`, and `PsiElement.replace()`,
 as well as other methods defined in the `PsiElement` interface that let you process multiple elements in a single

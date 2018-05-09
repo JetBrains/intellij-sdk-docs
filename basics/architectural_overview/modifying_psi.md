@@ -16,7 +16,7 @@ for more information on commands and write actions.
 
 ## Creating the New PSI
 
-The PSI elements to add to the tree, or to replace the existing PSI elements, are normally *created from text*.
+The PSI elements to add to the tree, or to replace existing PSI elements, are normally *created from text*.
 In the most general case, you use the `createFileFromText` method of [`PsiFileFactory`](upsource:///platform/core-api/src/com/intellij/psi/PsiFileFactory.java)
 to create a new file that contains the code construct which you need to add to the tree or to use as a replacement
 for an existing element, traverse the resulting tree to locate the specific element that you need, and then pass that
@@ -38,7 +38,7 @@ For larger code fragments, it's best to perform the modification in several step
  * replace the placeholders with the user code fragments;
  * replace the element in the original source file with the replacement tree.
 
-This ensure that the formatting of the user code is preserved and that the modification doesn't introduce any unwanted 
+This ensures that the formatting of the user code is preserved and that the modification doesn't introduce any unwanted
 whitespace changes.  
 
 As an example of this approach, see the quickfix in the `ComparingReferencesInspection` example:
@@ -72,7 +72,7 @@ methods must use only `\n` as line separators.
 The PSI modification methods do not restrict you in the way you can build the resulting tree structure. For example,
 when working with a Java class, you can add a `for` statement as a direct child of a `PsiMethod` element, even though
 the Java parser will never produce such a structure (the `for` statement will always be a child of the `PsiCodeBlock`)
-representing the method body). Modifications that produce incorrect tree structure may appear to work, but they will
+representing the method body). Modifications that produce incorrect tree structures may appear to work, but they will
 lead to problems and exceptions later. Therefore, you always need to ensure that the structure you built with PSI
 modification operations is the same as what the parser would produce when parsing the code that you've built.
 
@@ -100,7 +100,7 @@ the user's code style settings and inserted into the correct place of the file.
 
 In some cases, you need to perform a PSI modification and then to perform an operation on the document you've just
 modified through the PSI (for example, start a live template). In this case, you need to call a special method that
-completes the PSI-based postprocessing (such as formatting) and commits the changes to the document. The method
+completes the PSI-based post-processing (such as formatting) and commits the changes to the document. The method
 you need to call is called `doPostponedOperationsAndUnblockDocument`, and it's defined in the
 [`PsiDocumentManager`](upsource:///platform/core-api/src/com/intellij/psi/PsiDocumentManager.java) class.
 

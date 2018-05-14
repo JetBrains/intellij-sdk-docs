@@ -187,3 +187,8 @@ Custom `@ConditionalOn...` annotations implementing `com.intellij.spring.boot.mo
 
 ### Spring Initializr
 `com.intellij.spring.boot.initializr.SpringInitializrModuleBuilderPostTask` allows to perform custom setup steps after creation of module (e.g. setup integration with build system).
+
+### Endpoint tab
+_2018.2_
+
+Use `com.intellij.spring.boot.run.endpoint` to add custom actuator endpoint tabs. Any settings should be exposed in "Spring Boot" settings tab via `com.intellij.spring.boot.run.endpointTabConfigurable`.

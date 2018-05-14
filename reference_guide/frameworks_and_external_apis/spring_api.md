@@ -195,4 +195,4 @@ requires `spring-boot-initializr.jar`
 ### Endpoint tab
 _2018.2_ - requires `spring-boot-run.jar`
 
-Use `com.intellij.spring.boot.run.endpoint` to add custom actuator endpoint tabs. Any settings should be exposed in "Spring Boot" settings tab via `com.intellij.spring.boot.run.endpointTabConfigurable`.
+Use EP `com.intellij.spring.boot.run.endpoint` to add custom actuator endpoint tabs. Any settings should be exposed in "Spring Boot" settings tab via `com.intellij.spring.boot.run.endpointTabConfigurable` EP.

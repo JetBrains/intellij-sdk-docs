@@ -168,6 +168,8 @@ Please perform these steps _additionally_ to setting up Spring API support (see 
 
 * add to _classpath_ (_not_ to your plugin module's dependencies)
 	* `$IDEA_HOME$/plugins/SpringBoot/lib/spring-boot.jar`
+	* `$IDEA_HOME$/plugins/SpringBoot/lib/spring-boot-initializr.jar` (optional)
+	* `$IDEA_HOME$/plugins/SpringBoot/lib/spring-boot-run.jar` (optional)
 * add to _sourcepath_
 	* `$IDEA_HOME$/lib/src/src_spring-boot-openapi.zip`
 
@@ -186,9 +188,11 @@ Existing `Condition` implementations can be simulated at design time in IDE via 
 Custom `@ConditionalOn...` annotations implementing `com.intellij.spring.boot.model.autoconfigure.conditions.jam.ConditionalOnJamElement` will be added into evaluation automatically.              
 
 ### Spring Initializr
+requires `spring-boot-initializr.jar`
+
 `com.intellij.spring.boot.initializr.SpringInitializrModuleBuilderPostTask` allows to perform custom setup steps after creation of module (e.g. setup integration with build system).
 
 ### Endpoint tab
-_2018.2_
+_2018.2_ - requires `spring-boot-run.jar`
 
 Use `com.intellij.spring.boot.run.endpoint` to add custom actuator endpoint tabs. Any settings should be exposed in "Spring Boot" settings tab via `com.intellij.spring.boot.run.endpointTabConfigurable`.

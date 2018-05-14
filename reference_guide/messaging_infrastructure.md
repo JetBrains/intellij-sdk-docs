@@ -201,7 +201,7 @@ Let's compare that with a manual implementation:
 ## Avoid shared data modification from subscribers
 
 We had a problem in a situation when two subscribers tried to modify the same document
-([IDEA-71701](https://youtrack.jetbrains.net/issue/IDEA-71701)).
+([IDEA-71701](https://youtrack.jetbrains.com/issue/IDEA-71701)).
 
 The thing is that every document change is performed by the following scenario:
 

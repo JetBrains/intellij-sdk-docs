@@ -4,6 +4,8 @@ title: Spring API
 
 Spring API allows 3rd party plugins to re-use, integrate with or extend existing Spring Framework support in IntelliJ IDEA.
 
+A popular plugin using Spring API is [hybris integration](https://plugins.jetbrains.com/plugin/7525-hybris-integration).
+
 To develop plugins you will need to use _IntelliJ IDEA Ultimate Edition_ version 13.1 or higher.
 
 ### Setting up IntelliJ Platform SDK

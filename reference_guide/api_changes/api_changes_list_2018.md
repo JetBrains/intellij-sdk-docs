@@ -24,6 +24,8 @@ See the note on how to document new problems on the main page reference_guide/ap
 | `com.intellij.util.QueryExecutor.execute` method parameter type changed from `Processor<Result>` to `Processor<? super Result>` | Update `QueryExecutor` implementations accordingly |
 | `com.intellij.openapi.application.QueryExecutorBase.processQuery` method parameter type changed from `Processor<Result>` to `Processor<? super Result>` | Update `QueryExecutorBase` inheritors accordingly |
 | `com.intellij.util.InstanceofQuery` type parameter `T` added | Set this parameter at call sites to base query type |
+| `com.intellij.task.ProjectTaskManager.build` method parameter type changed from `Artifact[]` to `ProjectModelBuildableElement[]` | In most of the cases it's enough to recompile the code. |
+| `com.intellij.task.ProjectTaskManager.rebuild` method parameter type changed from `Artifact[]` to `ProjectModelBuildableElement[]` | In most of the cases it's enough to recompile the code. | 
 
 ## Changes in IntelliJ Platform 2018.1
 

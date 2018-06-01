@@ -31,7 +31,7 @@ The Project Creation Wizard will now guide you through the Gradle project creati
 
 It’s recommended to select the `Use default gradle wrapper` option, that way IntelliJ IDEA will install everything you need to run Gradle tasks itself.
 
-Finally, specify a JVM Gradle will use, it can be the Project JDK. You also configure this path once the project is created via **Settings \| Build, Execution, Deployment \| Build Tools \| Gradle**.
+Finally, specify a JVM Gradle will use, it can be the Project JDK. You also configure this path once the project is created via **Settings \| Build, Execution, Deployment \| Build Tools \| Gradle**. Note that this JDK should be configured as described in [the setup for a devkit project](http://www.jetbrains.org/intellij/sdk/docs/basics/checkout_and_build_community.html#building-and-running-from-the-ide), ie it should have lib/tools.jar (located in the JDK installation directory) included on the class path.
 
 <img src="img/step3_gradle_config.png" alt="Verify the JVM is the correct version" width="800px"/>
 

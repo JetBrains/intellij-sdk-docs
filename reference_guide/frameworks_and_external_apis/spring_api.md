@@ -18,7 +18,7 @@ Then add `$IDEA_HOME$/plugins/Spring/lib/spring.jar` to its _classpath_ (_not_ t
 Follow these steps to modify existing IntelliJ Platform SDK:
 
 * add to _classpath_ (_not_ to your plugin module's dependencies)
-	* `$IDEA_HOME$/plugins/Spring/lib/spring-api.jar`
+	* `$IDEA_HOME$/plugins/Spring/lib/spring-api.jar` _not in recent versions, merged into `spring.jar`_
 	* `$IDEA_HOME$/plugins/Spring/lib/spring.jar`
 * add to _sourcepath_
 	* `$IDEA_HOME$/lib/src/src_spring-openapi.zip`

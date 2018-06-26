@@ -11,8 +11,16 @@ In order to deploy a plugin to the plugin repository, you will first need to sup
 Place the following information inside a file called `gradle.properties` under your project's root directory, or inside `GRADLE_HOME/gradle.properties`.
 
 ```
-intellij.publish.username="YOUR_USERNAME_HERE"
-intellij.publish.password="YOUR_PASSWORD_HERE"
+intellijPublishUsername="YOUR_USERNAME_HERE"
+intellijPublishPassword="YOUR_PASSWORD_HERE"
+```
+
+Then refer to these values in `publishPlugin` task in your `build.gradle` file:
+
+```
+publishPlugin {
+  username intellijPublishUsername
+  password intellijPublishPassword
 ```
 
 If you place a `gradle.properties` file in your project's root directory, please ensure that this file is ignored by your version control tool. For example in Git, you can add the following line to your `.gitignore` file:
@@ -32,19 +40,6 @@ If your project already has a custom `gradle.properties` file, you may create a 
 ```
 apply from: "/path/to/custom.properties"
 ```
-
-### 2.1 Add your plugin ID
-
-Inside the `intellij { ... }` portion of your Gradle buildscript, add the following snippet:
-
-```groovy
-publish {
-    pluginId 'YOUR_PLUGIN_ID'
-    // (optional) apply from: "YOUR_CUSTOM_PROPERTIES_FILE.properties"
-}
-```
-
-Your pluginId can be found in your plugin's URL, ie.: `https://plugins.jetbrains.com/plugin/YOUR_PLUGIN_ID`.
 
 ### 2.1 Configure your plugin
 

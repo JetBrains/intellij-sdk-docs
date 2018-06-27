@@ -6,17 +6,16 @@ title: Setting Up a Development Environment
 
 Use the following check list to ensure that you are ready to develop your custom plugins.
 
-- **IntelliJ IDEA** version 9.0 or later (either Community Edition or Ultimate) must be installed on your computer.
-- **IntelliJ IDEA CE source code** should be checked out to your local computer. This is not a requirement but will make it much easier for you to debug your plugins. For detailed instructions, refer to [Check Out And Build Community Edition](/basics/checkout_and_build_community.md).
-- **Plugin DevKit** plugin must be enabled in IDE
-- **IntelliJ Platform SDK** must be configured for your IDEA project. For more information, see [Configuring IntelliJ Platform SDK](#configuring-intellij-platform-sdk) below.
+- **IntelliJ IDEA CE source code** should be checked out to your local computer. This is not a requirement but will make it much easier for you to debug your plugins. For detailed instructions, refer to [Check Out And Build Community Edition](https://github.com/JetBrains/intellij-community/blob/master/README.md).
+- **Plugin DevKit** plugin must be [enabled in IntelliJ IDEA](https://www.jetbrains.com/help/idea/managing-plugins.html)
+- **IntelliJ Platform SDK** must be configured for your IDEA project. For more information, see below.
   
 ### Configuring IntelliJ Platform SDK
   
 To set up your plugin development environment:
 
 *  Check out the source code of IntelliJ IDEA Community Edition as described in
-   [Check Out And Build Community Edition](/basics/checkout_and_build_community.md).
+   [Check Out And Build Community Edition](https://github.com/JetBrains/intellij-community/blob/master/README.md).
 
 *  Create a new *IntelliJ Platform SDK* under **File \| Project Structure**:
 
@@ -26,7 +25,7 @@ To set up your plugin development environment:
 
    ![Set Home Directory](img/set_home_directory.png)
 
-*  Select the **IDEA jdk** created in [Check Out And Build Community Edition](/basics/checkout_and_build_community.md) as the default Java SDK:
+*  Select the **IDEA jdk** created in [Check Out And Build Community Edition](https://github.com/JetBrains/intellij-community/blob/master/README.md) as the default Java SDK:
 
    ![Set IDEA JDK](img/set_java_sdk.png)
 

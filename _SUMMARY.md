@@ -19,7 +19,7 @@
         * [Publishing Your Plugin](tutorials/build_system/deployment.md)
     * [Using DevKit](basics/getting_started/using_dev_kit.md)
         * [Setting Up a Development Environment](basics/getting_started/setting_up_environment.md)
-        * [Check Out And Build Community Edition](basics/checkout_and_build_community.md)
+        * [Check Out And Build Community Edition](https://github.com/JetBrains/intellij-community/blob/master/README.md)
         * [Creating a Plugin Project](basics/getting_started/creating_plugin_project.md)
         * [Creating an Action](basics/getting_started/creating_an_action.md)
         * [Running and Debugging a Plugin](basics/getting_started/running_and_debugging_a_plugin.md)

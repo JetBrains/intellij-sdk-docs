@@ -14,7 +14,6 @@ In this section:
     * [Publishing Your Plugin](/tutorials/build_system/deployment.md)
 * [Developing plugins using DevKit](getting_started/using_dev_kit.md)
     * [Setting Up a Development Environment](getting_started/setting_up_environment.md)
-    * [Check Out And Build Community Edition](https://github.com/JetBrains/intellij-community/blob/master/README.md)
     * [Creating a Plugin Project](getting_started/creating_plugin_project.md)
     * [Creating an Action](getting_started/creating_an_action.md)
     * [Running and Debugging a Plugin](getting_started/running_and_debugging_a_plugin.md)

@@ -15,6 +15,12 @@ See the note on how to document new problems on the main page reference_guide/ap
   }
 </style>
 
+## Changes in IntelliJ Platform 2018.3
+
+|  Change | How to deal with it |
+|---------|---------------------|
+| `com.intellij.psi.meta.PsiMetaData.getDependences` method removed | Use `com.intellij.psi.meta.PsiMetaData.getDependencies` |
+
 ## Changes in IntelliJ Platform 2018.2
 
 |  Change | How to deal with it |

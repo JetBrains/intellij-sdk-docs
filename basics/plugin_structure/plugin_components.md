@@ -76,7 +76,7 @@ The components are loaded in the following order:
 * Initialization - the `initComponent` method is invoked (if the component implements the [ApplicationComponent](upsource:///platform/core-api/src/com/intellij/openapi/components/ApplicationComponent.java) interface).
 * Configuration - the `readExternal` method is invoked (if the component implements [JDOMExternalizable](upsource:///platform/util/src/com/intellij/openapi/util/JDOMExternalizable.java) interface), or the `loadState` method is invoked (if the component implements [PersistentStateComponent](upsource:///platform/projectModel-api/src/com/intellij/openapi/components/PersistentStateComponent.java) and has non-default persisted state).
 * For module components, the `moduleAdded` method of the [ModuleComponent](upsource:///platform/projectModel-api/src/com/intellij/openapi/module/ModuleComponent.java) interface is invoked to notify that a module has been added to the project.
-* For project components, the `projectOpened` method of the [ProjectComponent](upsource:///platform/projectModel-api/src/com/intellij/openapi/components/ProjectComponent.java) interface is invoked to notify that a project has been loaded.
+* For project components, the `projectOpened` method of the [ProjectComponent](upsource:///platform/core-api/src/com/intellij/openapi/components/ProjectComponent.java) interface is invoked to notify that a project has been loaded.
 
 The components are unloaded in the following order:
 

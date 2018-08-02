@@ -1,6 +1,7 @@
 package testPlugin;
 
 import com.intellij.codeInsight.intention.IntentionAction;
+import com.intellij.openapi.application.PathManager;
 import com.intellij.testFramework.UsefulTestCase;
 import com.intellij.testFramework.builders.JavaModuleFixtureBuilder;
 import com.intellij.testFramework.fixtures.*;
@@ -17,10 +18,7 @@ import org.junit.*;
 
 public class YourTest extends UsefulTestCase {
   protected CodeInsightTestFixture myFixture;
-  // Specify path to your test data
-  // e.g.  final String dataPath = "c:\\users\\john
-  // .doe\\idea\\community\\samples\\conditionalOperatorConvertor/testData";
-  final String dataPath = "c:\\users\\John.Doe\\idea\\community\\samples\\conditionalOperatorConvertor/testData";
+  final String dataPath = PathManager.getResourceRoot(YourTest.class, "/testPlugin/YourTest.class");
 
   @Before
 
@@ -41,10 +39,9 @@ public class YourTest extends UsefulTestCase {
   @After
   public void tearDown() throws Exception {
     myFixture.tearDown();
-    myFixture = null;
   }
 
-  protected void doTest(String testName, String hint) throws Throwable {
+  protected void doTest(String testName, String hint) {
     // Messages.showInfoMessage("Test started", "Info");
     myFixture.configureByFile(testName + ".java");
     final IntentionAction action = myFixture.findSingleIntention(hint);
@@ -54,7 +51,7 @@ public class YourTest extends UsefulTestCase {
   }
 
   @Test
-  public void test() throws Throwable {
+  public void test() {
     doTest("before.template", "Convert ternary operator to if statement");
   }
 

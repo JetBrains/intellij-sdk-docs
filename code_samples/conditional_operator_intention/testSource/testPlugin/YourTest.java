@@ -5,7 +5,6 @@ import com.intellij.openapi.application.PathManager;
 import com.intellij.testFramework.UsefulTestCase;
 import com.intellij.testFramework.builders.JavaModuleFixtureBuilder;
 import com.intellij.testFramework.fixtures.*;
-import junit.framework.Assert;
 import org.junit.*;
 
 /**
@@ -14,6 +13,7 @@ import org.junit.*;
  * Date: Sep 13, 2010
  * Time: 9:35:50 PM
  * To change this template use File | Settings | File Templates.
+ * This test requires Editor > Code Style set to Default IDE
  */
 
 public class YourTest extends UsefulTestCase {

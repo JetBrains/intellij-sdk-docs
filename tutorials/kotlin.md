@@ -64,7 +64,17 @@ repositories {
 }
 ```
 
-Please note that you should **not** include `kotlin-runtime` and `kotlin-stdlib` jars with your plugin because Kotlin guarantees backward- and forward- binary compatibility.
+Please note that you should **not** include `kotlin-stdlib` (or `kotlin-runtime` which is deprecated), `kotlin-reflect`, `kotlinx-coroutines-core` and `kotlinx-coroutines-jdk8` jars with your plugin because Kotlin guarantees backward- and forward- binary compatibility and latest version of Intellij Platform provides these libraries.
+
+You may prohibit including them transitively by other dependency in `dependencies` section in your `build.gradle`:
+
+```groovy
+dependencies {
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-guava:0.20") {
+        exclude group: "org.jetbrains.kotlinx", module: "kotlinx-coroutines-core"
+    }
+}
+```
 
 ### 3.1. Use Kotlin to write gradle script
 

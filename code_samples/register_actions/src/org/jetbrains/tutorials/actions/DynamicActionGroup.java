@@ -32,7 +32,7 @@ public class DynamicActionGroup extends ActionGroup {
   @Override
   public AnAction[] getChildren(AnActionEvent anActionEvent) {
     return new AnAction[]{ new SimplePopDialogAction("Action Added at Runtime",
-                                                "Dynamic Group Action Demo",
+                                                "Dynamic Action Demo",
                                                       null)
                           };
   }

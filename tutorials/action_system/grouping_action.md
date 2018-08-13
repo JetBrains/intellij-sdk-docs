@@ -2,7 +2,7 @@
 title: 2. Grouping Actions
 ---
 
-If some part of the functionality requires to implement several actions or actions are simply too many and overload the menu they can be joined into groups.
+If an implementation requires several actions, or there are simply too many actions that overload the menu, they can be joined into groups.
 
 ### 2.1. Simple action groups
 
@@ -10,225 +10,226 @@ In this case the group will be available as a top-level menu item, and actions w
 
 #### 2.1.1. Creating simple action groups
 
-Grouping can be done by adding a `<group>` tag to the `<actions>` section in
+Grouping can be done by adding a `<group>` element to the `<actions>` section in
 [plugin.xml](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/register_actions/resources/META-INF/plugin.xml).
+Note this example has no `class` attribute in the `<group>` element because we want the IntelliJ Platform framework to 
+supply a default implementation class for the group. Section 2.2 discusses using specialized implementations. The `id` attribute
+must be unique, so incorporating the plugin ID or package name is encouraged. This allows reuse of a group with a different `id`.
 
 ```xml
 <actions>
-    <group id="SimpleGroup" text="Custom Action Group" popup="true">
+    <group id="org.jetbrains.tutorials.actions.GroupedActions" text="Example Grouped Actions" popup="true">
     </group>
 </actions>
 ```
 
 #### 2.1.2. Binding action groups to UI components
 
-The following sample shows how to place a custom action group on top of the editor popup menu:
+The following sample shows how to use an `<add-to-group>` element to place a custom action group relative to 
+an entry in the **Tools** menu. Note the attribute `relative-to-action` references `SimpleAction`, which is not a native IntelliJ menu entry. 
+Rather `SimpleAction` is defined in the same 
+[plugin.xml](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/register_actions/resources/META-INF/plugin.xml) file
+as part of this sample plugin.
 
 ```xml
 <actions>
-    <group id="SimpleGroup" text="Custom Action Group" popup="true">
-        <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+     <group id="org.jetbrains.tutorials.actions.GroupedActions" text="Example Grouped Actions" popup="true">
+      <add-to-group group-id="ToolsMenu" anchor="after" relative-to-action="org.jetbrains.tutorials.actions.SimpleAction"/>
     </group>
 </actions>
 ```
 
-#### 2.1.3. Adding actions to the group
+#### 2.1.3. Creating an action for the simple action group
 
-Just as usual, to create an action we need to extend
+To create an action we need to extend the
 [AnAction.java](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java)
-class:
+class. This example uses [SimplePopDialogAction](../../code_samples/register_actions/src/org/jetbrains/tutorials/actions/SimplePopDialogAction.java)
+action class, which pops a simple dialog to give users feedback when a menu item is chosen.
 
 ```java
-public class GroupedAction extends AnAction {
-    @Override
-    public void actionPerformed(AnActionEvent event) {
-        //Does nothing
-    }
+package org.jetbrains.tutorials.actions;
+public class SimplePopDialogAction extends AnAction {
+  @Override
+  public void actionPerformed(@NotNull AnActionEvent anActionEvent) {
+    // Using the event, create and show a dialog...
+  }
+  @Override
+  public void update(AnActionEvent anActionEvent) {
+    // Require a project to be open...
+  }
 }
 ```
 
-And then the actions needs to be registered in the newly created group:
+####  2.1.4. Adding an action to the simple action group
+
+Now the `SimplePopDialogAction` needs to be registered in the newly created group. Note the `id` attribute is set to
+something unique, and different from, the fully qualified `class` attribute in the `<group>` element. A unique `id` supports reuse of 
+action classes in more than one menu or group.
 
 ```xml
-<actions>
-    <group id="SimpleGroup" text="Custom Action Group" popup="true">
-        <add-to-group group-id="EditorPopupMenu" anchor="first"/>
-        <action class="org.jetbrains.tutorials.actions.GroupedAction" id="org.jetbrains.tutorials.actions.GroupedAction"
-                  text="Grouped Action" description="Grouped Action Demo">
-        </action>
-    </group>
-</actions>
+<group id="org.jetbrains.tutorials.actions.GroupedActions" text="Example Grouped Actions" popup="true">
+  <add-to-group group-id="ToolsMenu" anchor="after" relative-to-action="org.jetbrains.tutorials.actions.SimpleAction"/>
+  <action class="org.jetbrains.tutorials.actions.SimplePopDialogAction" 
+    id="org.jetbrains.tutorials.actions.SimpleGroupedAction" text="A Grouped Action" description="Grouped Action Demo">
+  </action>
+</group>
 ```
 
-After performing the steps described above the action group and its content will be available in the editor popup menu:
+After performing the steps described above the action group and its content will be available in the **Tools** menu:
 
 ![Simple Action Group](img/grouped_action.png)
-
+    
+  
 ### 2.2. Implementing custom action group classes
 
-In some cases we need to implement some specific behaviour of a group of actions dependently on the context.
-The steps below are meant to show how to make a group of actions available and visible if a certain condition is met and how to set up a group icon dynamically.
-In our case the condition is: an instance of the editor is available.
+In some cases we need to implement some specific behaviour of a group of actions depending on the context.
+The steps below show how to make a group of actions available and visible if certain conditions are met.
+In this case the condition is having an instance of an editor is available. This condition is needed because the custom
+action group will be added to an IntelliJ menu that is only enabled for editing.
 
 #### 2.2.1. Extending DefaultActionGroup
 
 [DefaultActionGroup.java](upsource:///platform/platform-api/src/com/intellij/openapi/actionSystem/DefaultActionGroup.java)
-is a default implementations of
-[ActionGroup.java](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/ActionGroup.java)
-and used to add children actions and separators between them to a group.
-This class is used if a set of actions belonging to the group is fixed, which is the majority of all the cases.
+is an implementation of
+[ActionGroup.java](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/ActionGroup.java).
+The `DefaultActionGroup` is used to add child actions and separators between them to a group.
+This class is used if a set of actions belonging to the group does not change at runtime, which is the majority of all the cases.
+(See section 2.3 for groups with variable child actions at runtime.)
 
-Firstly, you need to create a class extending
-[DefaultActionGroup.java](upsource:///platform/platform-api/src/com/intellij/openapi/actionSystem/DefaultActionGroup.java):
+First, we create we create the class [CustomDefaultActionGroup](../../code_samples/register_actions/src/org/jetbrains/tutorials/actions/CustomDefaultActionGroup.java) 
+that extends [DefaultActionGroup.java](upsource:///platform/platform-api/src/com/intellij/openapi/actionSystem/DefaultActionGroup.java):
 
 ```java
+package org.jetbrains.tutorials.actions;
 public class CustomDefaultActionGroup extends DefaultActionGroup {
     @Override
     public void update(AnActionEvent event) {
+      // Enable/disable depending on whether user is editing...
     }
 }
 ```
 
-#### 2.2.2. Registering action group
+#### 2.2.2. Registering the custom action group
 
-As in case with the simple action group, the action group class
-should be declared in
+As in the case with the simple action group, the action `<group>` should be declared in the *`<actions>`* section of 
 [plugin.xml](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/register_actions/resources/META-INF/plugin.xml)
-file, as the `class` attribute of the `<group>` tag:
+file. Note:
+  * The presence of the `class` attribute in the `<group>` element, which tells the IntelliJ Platform framework to
+  use `CustomDefaultActionGroup` rather than the default implementation.
+  * The `<add-to-group>` element specifies adding the group in the first position of the existing `EditorPopupMenu`.
 
 ```xml
 <actions>
-    <group id="CustomDefaultActionGroup" class="org.jetbrains.tutorials.actions.CustomDefaultActionGroup" popup="true"
-           text="DefaultActionGroup Inheritor" description="Default Action Group Demo">
-        <add-to-group group-id="ToolsMenu" anchor="last"/>
-  </group>
+    <group id="org.jetbrains.tutorials.actions.ExampleCustomDefaultActionGroup" 
+        class="org.jetbrains.tutorials.actions.CustomDefaultActionGroup" popup="true"
+        text="Example Custom DefaultActionGroup" description="Custom DefaultActionGroup Demo">
+      <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+    </group>
 </actions>
 ```
 
 #### 2.2.3. Creating an action
 
-[AnAction.java](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java)
-needs to be extended:
+For simplicity the `SimplePopDialogAction` action class will be reused.
 
-```java
-{% include /code_samples/register_actions/src/org/jetbrains/tutorials/actions/CustomGroupedAction.java %}
-```
 
 #### 2.2.4. Adding actions to the group
 
-Action's class should be registered in
-[plugin.xml](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/register_actions/resources/META-INF/plugin.xml)
-:
-
+As in Section 2.1.4, the `SimplePopDialogAction` action is
+added as an `<action>` element in the `<group>` element. Note:
+  * The `class` attribute in the `<group>` element has the same fully qualified name as used in Section 2.1.4.
+  * The `id` attribute is unique to distinguish it from the use of the `SimplePopDialogAction` class in (Section 2.1.4) `GroupedActions`.
+   
 ```xml
 <actions>
-    <group id="CustomDefaultActionGroup" class="org.jetbrains.tutorials.actions.CustomDefaultActionGroup" popup="true"
-         text="DefaultActionGroup Inheritor" description="Default Action Group Demo">
-        <add-to-group group-id="ToolsMenu" anchor="last"/>
-        <action class="org.jetbrains.tutorials.actions.CustomGroupedAction" id="CustomGroupedAction"
-                  text="Custom Grouped Action" description="Custom Grouped Action Demo"/>
+    <group id="org.jetbrains.tutorials.actions.ExampleCustomDefaultActionGroup" 
+        class="org.jetbrains.tutorials.actions.CustomDefaultActionGroup" popup="true"
+        text="Example Custom DefaultActionGroup" description="Custom DefaultActionGroup Demo">
+      <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+      <action class="org.jetbrains.tutorials.actions.SimplePopDialogAction" id="org.jetbrains.tutorials.actions.CustomGroupedAction"
+              text="A Custom Grouped Action" description="Custom Grouped Action Demo"/>
     </group>
 </actions>
 ```
 
 #### 2.2.5. Providing specific behaviour for the group
 
-In this case we override `public void update(AnActionEvent event);` method to make the group visible as a *Tools* menu item,
-however, it will be enabled only if there's an instance of the editor available. Also a custom icon is set up:
+In this case we override the `DefaultActionGroup.update(AnActionEvent event)` method to make the group visible only 
+if there's an instance of the editor available. Also a custom icon is set up:
 
 ```java
 public class CustomDefaultActionGroup extends DefaultActionGroup {
-    @Override
-    public void update(AnActionEvent event) {
-        Editor editor = event.getData(CommonDataKeys.EDITOR);
-        event.getPresentation().setVisible(true);
-        event.getPresentation().setEnabled(editor != null);
-        event.getPresentation().setIcon(AllIcons.General.Error);
-    }
+  @Override
+  public void update(AnActionEvent event) {
+    // Enable/disable depending on whether user is editing
+    Editor editor = event.getData(CommonDataKeys.EDITOR);
+    event.getPresentation().setEnabled(editor != null);
+    // Always make visible.
+    event.getPresentation().setVisible(true);
+    // Take this opportunity to set an icon for the menu entry.
+    event.getPresentation().setIcon(AllIcons.General.Error);
+  }
 }
 ```
 
-After compiling and running the code sample above, *Tools* menu item should contain an extra group of action with a user-defined icon:
+After compiling and running the code sample above, and opening a file in the editor and right-clicking,
+the **Editing** menu will popup containing an new group of actions in the first position. The new group 
+will also have an icon:
 
-![Default Action Group](img/default_action_group.png)
+![Default Action Group](img/editor_popup_menu.png)
+  
 
-### 2.3. Action groups with variable actions set
+### 2.3. Action groups with a variable actions set
 
-If a set of actions belonging to a custom actions group may vary dependently on the context,
-we need to work with
+If a set of actions belonging to a custom actions group will vary depending on the context, the group must extend 
 [ActionGroup.java](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/ActionGroup.java).
-In this case set of actions to be grouped can be dynamically defined.
+In this case set of actions to be grouped are dynamically defined.
 
 #### 2.3.1. Creating variable action group
 
-To create a group of actions with a variable actions set we extend
-[ActionGroup.java](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/ActionGroup.java)
-first:
+To create a group of actions with a variable number of actions we extend
+`ActionGroup.java` to make the [DynamicActionGroup](../../code_samples/register_actions/src/org/jetbrains/tutorials/actions/DynamicActionGroup.java) class:
+
 ```java
-public class BaseActionGroup extends ActionGroup {
+public class DynamicActionGroup extends ActionGroup {
 }
 ```
 
-#### 2.3.2. Registering variable action group
+#### 2.3.2. Registering a variable action group
 
-To register the group `<group>` attribute needs to be placed in the *`<actions>`* section of
-[plugin.xml](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/register_actions/resources/META-INF/plugin.xml):
+To register the dynamic menu group, a `<group>` attribute needs to be placed in the `<actions>` section of
+[plugin.xml](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/register_actions/resources/META-INF/plugin.xml).
+Note that when enabled this group will appear as the last entry in the **Tools** menu:
 
 ```xml
 <actions>
-    <group id="BaseActionGroup" class="org.jetbrains.tutorials.actions.BaseActionGroup" popup="true"
-              text="ActionGroup Demo" description="Extending AnAction Demo">
-        <add-to-group group-id="ToolsMenu" anchor="first"/>
+    <group id="org.jetbrains.tutorials.actions.DynamicActionGroup" class="org.jetbrains.tutorials.actions.DynamicActionGroup" popup="true"
+           text="Dynamic ActionGroup" description="Dynamic ActionGroup Demo">
+      <add-to-group group-id="ToolsMenu" anchor="last"/>
     </group>
 </actions>
 ```
-**Note**: Since the set of actions is defined dynamically no action definitions should be placed in
-[plugin.xml](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/register_actions/resources/META-INF/plugin.xml).
-If `<group>` attribute contains any static action definition an exception will be thrown.
-For statically defined group of action use
-[DefaultActionGroup.java](upsource:///platform/platform-api/src/com/intellij/openapi/actionSystem/DefaultActionGroup.java)
+*Note*: If a`<group>` element's `class` attribute names a class derived from `ActionGroup`, then any static `<action>` declarations in the `<group>`
+will throw an exception. For a statically defined group of action use `DefaultActionGroup.java`.
 
-#### 2.3.3. Accessing children actions
+#### 2.3.3. Adding child actions to the group
 
-An array of children actions should be returned by the method `public AnAction[] getChildren(AnActionEvent anActionEvent);` of the created group:
+To add actions to the `DynamicActionGroup`, a non-empty array of
+`AnAction.java` instances should be returned from the `DynamicActionGroup.getChildren(AnActionEvent anActionEvent)` method. Here again we reuse the 
+`SimplePopDialogAction` action class.
 
 ```java
-public class BaseActionGroup extends ActionGroup {
-    @NotNull
-    @Override
-    public AnAction[] getChildren(AnActionEvent anActionEvent) {
-        return new AnAction[0];
-    }
+public class DynamicActionGroup extends ActionGroup {
+  @NotNull
+  @Override
+  public AnAction[] getChildren(AnActionEvent anActionEvent) {
+    return new AnAction[]{ new SimplePopDialogAction( "Action Added at Runtime",
+                                                      "Dynamic Action Demo",
+                                                      null)};
+  }
 }
 ```
 
-#### 2.3.4. Adding children actions to the group
-
-To make the group contain actions, a non-empty array of
-[AnAction.java](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java)
-elements should be returned:
-
-```java
-public class BaseActionGroup extends ActionGroup {
-    @NotNull
-    @Override
-    public AnAction[] getChildren(AnActionEvent anActionEvent) {
-        return new AnAction[]{new MyAction()};
-    }
-
-    class MyAction extends AnAction {
-        public MyAction() {
-           super("Dynamically Added Action");
-        }
-        @Override
-        public void actionPerformed(@NotNull AnActionEvent anActionEvent) {
-        }
-    }
-}
-```
-
-After providing an implementation of
-[AnAction.java](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java)
-and making it return a non-empty array of actions, the Tools Menu should contain an extra group of actions:
+After providing the implementation of `DynamicActionGroup` and making it return a non-empty array of actions, the last position in the **Tools** Menu should contain a new group of actions:
 
 ![Dynamic Action Group](img/dynamic_action_group.png)

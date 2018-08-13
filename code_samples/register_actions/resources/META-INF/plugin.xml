@@ -90,7 +90,7 @@
     </group>
     <!-- CustomDefaultActionGroup demonstrates declaring an action group based on a ActionGroup class supplied by this plugin.
       This group is to be inserted atop the Editor Popup Menu. It declares one action in the group. -->
-    <group id="org.jetbrains.tutorials.actions.CustomDefaultActionGroup" class="org.jetbrains.tutorials.actions.CustomDefaultActionGroup" popup="true"
+    <group id="org.jetbrains.tutorials.actions.ExampleCustomDefaultActionGroup" class="org.jetbrains.tutorials.actions.CustomDefaultActionGroup" popup="true"
            text="Example Custom DefaultActionGroup" description="Custom DefaultActionGroup Demo">
       <add-to-group group-id="EditorPopupMenu" anchor="first"/>
       <action class="org.jetbrains.tutorials.actions.SimplePopDialogAction" id="org.jetbrains.tutorials.actions.CustomGroupedAction"

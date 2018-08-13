@@ -29,7 +29,7 @@ public class CustomDefaultActionGroup extends DefaultActionGroup {
     // Enable/disable depending on whether user is editing
     Editor editor = event.getData(CommonDataKeys.EDITOR);
     event.getPresentation().setEnabled(editor != null);
-    // Always make visible, even when disabled. Helps to demonstrate the placement.
+    // Always make visible.
     event.getPresentation().setVisible(true);
     // Take this opportunity to set an icon for the menu entry.
     event.getPresentation().setIcon(AllIcons.General.Error);

@@ -25,7 +25,7 @@ public class DynamicActionGroup extends ActionGroup {
    * Returns an array of menu actions for the group.
    *
    * @param anActionEvent Event received when the associated group-id menu is chosen.
-   * @return: AnAction[]  An instance of AnAction, in this case containing a single instance of the
+   * @return AnAction[]  An instance of AnAction, in this case containing a single instance of the
    * SimplePopDialogAction class.
    */
   @NotNull

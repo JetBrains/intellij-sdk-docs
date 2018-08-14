@@ -14,7 +14,7 @@ Grouping can be done by adding a `<group>` element to the `<actions>` section in
 [plugin.xml](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/register_actions/resources/META-INF/plugin.xml).
 Note this example has no `class` attribute in the `<group>` element because we want the IntelliJ Platform framework to 
 supply a default implementation class for the group. Section 2.2 discusses using specialized implementations. The `id` attribute
-must be unique, so incorporating the plugin ID or package name is encouraged. This allows reuse of a group with a different `id`.
+must be unique, so incorporating the plugin ID or package name is encouraged. This allows reuse of the group with a different `id`.
 
 ```xml
 <actions>
@@ -44,21 +44,8 @@ as part of this sample plugin.
 To create an action we need to extend the
 [AnAction.java](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java)
 class. This example uses [SimplePopDialogAction](../../code_samples/register_actions/src/org/jetbrains/tutorials/actions/SimplePopDialogAction.java)
-action class, which pops a simple dialog to give users feedback when a menu item is chosen.
-
-```java
-package org.jetbrains.tutorials.actions;
-public class SimplePopDialogAction extends AnAction {
-  @Override
-  public void actionPerformed(@NotNull AnActionEvent anActionEvent) {
-    // Using the event, create and show a dialog...
-  }
-  @Override
-  public void update(AnActionEvent anActionEvent) {
-    // Require a project to be open...
-  }
-}
-```
+action class, which pops a simple dialog to give users feedback when a menu item is chosen. See the [working with custom actions](working_with_custom_actions.md)
+documentation for more information about this class.
 
 ####  2.1.4. Adding an action to the simple action group
 
@@ -210,12 +197,12 @@ Note that when enabled this group will appear as the last entry in the **Tools**
 </actions>
 ```
 *Note*: If a`<group>` element's `class` attribute names a class derived from `ActionGroup`, then any static `<action>` declarations in the `<group>`
-will throw an exception. For a statically defined group of action use `DefaultActionGroup.java`.
+will throw an exception. For a statically defined group of actions use `DefaultActionGroup.java`.
 
 #### 2.3.3. Adding child actions to the group
 
 To add actions to the `DynamicActionGroup`, a non-empty array of
-`AnAction.java` instances should be returned from the `DynamicActionGroup.getChildren(AnActionEvent anActionEvent)` method. Here again we reuse the 
+`AnAction` instances should be returned from the `DynamicActionGroup.getChildren(AnActionEvent)` method. Here again we reuse the 
 `SimplePopDialogAction` action class.
 
 ```java
@@ -230,6 +217,6 @@ public class DynamicActionGroup extends ActionGroup {
 }
 ```
 
-After providing the implementation of `DynamicActionGroup` and making it return a non-empty array of actions, the last position in the **Tools** Menu should contain a new group of actions:
+After providing the implementation of `DynamicActionGroup` and making it return a non-empty array of actions, the last position in the **Tools** Menu will contain a new group of actions:
 
 ![Dynamic Action Group](img/dynamic_action_group.png)

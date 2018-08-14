@@ -15,11 +15,8 @@ and in particular, the specific presentation which needs to be updated.
 
 ### 1.1. Creating actions
 
-To create a new action we need to extend the  
-[AnAction](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java)
-class. As an example we will do that in the 
-[SimplePopDialogAction](../../code_samples/register_actions/src/org/jetbrains/tutorials/actions/SimplePopDialogAction.java)
-class:
+To create a new action we need to extend the [AnAction](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java)
+class. As an example we will do that in the `SimplePopDialogAction` class in the `register_actions` code sample.
 
 ```java
 public class SimplePopDialogAction extends AnAction {
@@ -28,11 +25,10 @@ public class SimplePopDialogAction extends AnAction {
 
 ### 1.2. Overriding actionPerformed()
 
-The 
-[AnAction](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java)
+The [AnAction](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java)
 class is abstract, and classes that extend it must override the `AnAction.actionPerformed(AnActionEvent)` method.
 This method should contain the code to be executed when the action has been invoked.
-In this case the `SimplePopDialogAction.actionPerformed(AnActionEvent)` doesn't do anything yet.
+In this case `SimplePopDialogAction.actionPerformed(AnActionEvent)` doesn't do anything yet.
 
 ```java
 public class SimplePopDialogAction extends AnAction {
@@ -108,21 +104,19 @@ The following code gets information from the `anActionEvent` input parameter and
 A generic icon, and the `description` and `text` attributes from the invoking menu action are displayed.
 
 ```java
-public class SimplePopDialogAction extends AnAction {
-  @Override
-  public void actionPerformed(@NotNull AnActionEvent anActionEvent) {
+@Override
+public void actionPerformed(@NotNull AnActionEvent anActionEvent) {
     // Using the event, create and show a dialog
     Project currentProject = anActionEvent.getProject();
     String dlgTitle = anActionEvent.getPresentation().getDescription();
     String dlgMessage = anActionEvent.getPresentation().getText() + " Selected!";
     Messages.showMessageDialog(currentProject, dlgMessage, dlgTitle, ourIcon);
-  }
 }
 ```
 
 ### 1.6. Setting up an action's visibility and availability
 
-To control the action's visibility and availability we need to override the `AnAction.update(@ AnActionEvent)` method.
+To control the action's visibility and availability we need to override the `AnAction.update(AnActionEvent)` method.
 The default implementation of this method does nothing, which means the action is always disabled.
 Override this method to provide the ability to dynamically change action's state and(or) presentation depending on the context.
 
@@ -131,18 +125,11 @@ object being available. So the `SimplePopDialogAction.update(AnActionEvent)` met
 the action for contexts where a`Project` object isn't defined:
 
 ```java
-public class SimplePopDialogAction extends AnAction {
-  @Override
-  public void actionPerformed(AnActionEvent anActionEvent) {
-    //...see Section 1.5 for implementation details
-  }
-  
-  @Override
-  public void update(AnActionEvent anActionEvent) {
+@Override
+public void update(AnActionEvent anActionEvent) {
     // Set the availability based on whether a project is open
     Project project = anActionEvent.getProject();
     anActionEvent.getPresentation().setEnabledAndVisible(project != null);
-  }
 }
 ```
 

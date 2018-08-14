@@ -6,7 +6,7 @@ If an implementation requires several actions, or there are simply too many acti
 
 ### 2.1. Simple action groups
 
-In this case the group will be available as a top-level menu item, and actions will be represented as drop-down menu items.
+In this first example the action group will be available as a top-level menu item, and actions will be represented as drop-down menu items.
 
 #### 2.1.1. Creating simple action groups
 
@@ -14,7 +14,7 @@ Grouping can be done by adding a `<group>` element to the `<actions>` section in
 [plugin.xml](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/register_actions/resources/META-INF/plugin.xml).
 Note this example has no `class` attribute in the `<group>` element because we want the IntelliJ Platform framework to 
 supply a default implementation class for the group. Section 2.2 discusses using specialized implementations. The `id` attribute
-must be unique, so incorporating the plugin ID or package name is encouraged. This allows reuse of the group with a different `id`.
+must be unique, so incorporating the plugin ID or package name is encouraged.
 
 ```xml
 <actions>
@@ -26,10 +26,9 @@ must be unique, so incorporating the plugin ID or package name is encouraged. Th
 #### 2.1.2. Binding action groups to UI components
 
 The following sample shows how to use an `<add-to-group>` element to place a custom action group relative to 
-an entry in the **Tools** menu. Note the attribute `relative-to-action` references `SimpleAction`, which is not a native IntelliJ menu entry. 
+an entry in the **Tools** menu. Note the attribute `relative-to-action` references the action `id` for `SimpleAction`, which is not a native IntelliJ menu entry. 
 Rather `SimpleAction` is defined in the same 
-[plugin.xml](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/register_actions/resources/META-INF/plugin.xml) file
-as part of this sample plugin.
+[plugin.xml](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/register_actions/resources/META-INF/plugin.xml) file.
 
 ```xml
 <actions>
@@ -43,9 +42,9 @@ as part of this sample plugin.
 
 To create an action we need to extend the
 [AnAction.java](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java)
-class. This example uses [SimplePopDialogAction](../../code_samples/register_actions/src/org/jetbrains/tutorials/actions/SimplePopDialogAction.java)
-action class, which pops a simple dialog to give users feedback when a menu item is chosen. See the [working with custom actions](working_with_custom_actions.md)
-documentation for more information about this class.
+class. This example uses the `SimplePopDialogAction` class, which pops a dialog to give users feedback when a 
+menu item is chosen. See the [Registering an Action](working_with_custom_actions.md)
+page for more information about this class.
 
 ####  2.1.4. Adding an action to the simple action group
 
@@ -79,12 +78,13 @@ action group will be added to an IntelliJ menu that is only enabled for editing.
 [DefaultActionGroup.java](upsource:///platform/platform-api/src/com/intellij/openapi/actionSystem/DefaultActionGroup.java)
 is an implementation of
 [ActionGroup.java](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/ActionGroup.java).
-The `DefaultActionGroup` is used to add child actions and separators between them to a group.
+The `DefaultActionGroup` class is used to add child actions and separators between them to a group.
 This class is used if a set of actions belonging to the group does not change at runtime, which is the majority of all the cases.
 (See section 2.3 for groups with variable child actions at runtime.)
 
-First, we create we create the class [CustomDefaultActionGroup](../../code_samples/register_actions/src/org/jetbrains/tutorials/actions/CustomDefaultActionGroup.java) 
-that extends [DefaultActionGroup.java](upsource:///platform/platform-api/src/com/intellij/openapi/actionSystem/DefaultActionGroup.java):
+As an example we will extend 
+[DefaultActionGroup.java](upsource:///platform/platform-api/src/com/intellij/openapi/actionSystem/DefaultActionGroup.java) 
+to create the `CustomDefaultActionGroup` class in the `register_actions` code sample:
 
 ```java
 package org.jetbrains.tutorials.actions;
@@ -175,7 +175,7 @@ In this case set of actions to be grouped are dynamically defined.
 #### 2.3.1. Creating variable action group
 
 To create a group of actions with a variable number of actions we extend
-`ActionGroup.java` to make the [DynamicActionGroup](../../code_samples/register_actions/src/org/jetbrains/tutorials/actions/DynamicActionGroup.java) class:
+`ActionGroup.java` to create the `DynamicActionGroup` class in the `register_actions` code sample:
 
 ```java
 public class DynamicActionGroup extends ActionGroup {

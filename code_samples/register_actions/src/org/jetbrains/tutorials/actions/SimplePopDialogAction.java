@@ -23,9 +23,6 @@ import javax.swing.*;
  */
 public class SimplePopDialogAction extends AnAction {
 
-  // Capture the generic message icon for display in the dialog.
-  private static final Icon ourIcon = Messages.getInformationIcon();
-
   /**
    * This default constructor is used by the IntelliJ Platform framework to
    * instantiate this class based on plugin.xml declarations. Only needed in SimplePopDialogAction
@@ -51,7 +48,8 @@ public class SimplePopDialogAction extends AnAction {
 
   /**
    * Gives the user feedback when the dynamic action menu is chosen.
-   * Pops a simple message dialog.
+   * Pops a simple message dialog. See the psi_demo plugin for an
+   * example of how to use AnActionEvent to access Psi data.
    * @param anActionEvent Event received when the associated menu item is chosen.
    */
   @Override
@@ -60,7 +58,7 @@ public class SimplePopDialogAction extends AnAction {
     Project currentProject = anActionEvent.getProject();
     String dlgTitle = anActionEvent.getPresentation().getDescription();
     String dlgMessage = anActionEvent.getPresentation().getText() + " Selected!";
-    Messages.showMessageDialog(currentProject, dlgMessage, dlgTitle, ourIcon);
+    Messages.showMessageDialog(currentProject, dlgMessage, dlgTitle, Messages.getInformationIcon());
   }
 
   /**

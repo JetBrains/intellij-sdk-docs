@@ -98,7 +98,7 @@
     </group>
     <!-- DynamicActionGroup demonstrates declaring an action group without a static action declaration.
      An action is added to the group programmatically in the DynamicActionGroup implementation. The group is added
-     at the top of the tools menu. -->
+     last in the tools menu. -->
     <group id="org.jetbrains.tutorials.actions.DynamicActionGroup" class="org.jetbrains.tutorials.actions.DynamicActionGroup" popup="true"
            text="Dynamic ActionGroup" description="Dynamic ActionGroup Demo">
       <add-to-group group-id="ToolsMenu" anchor="last"/>

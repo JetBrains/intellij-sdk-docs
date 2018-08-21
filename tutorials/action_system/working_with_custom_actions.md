@@ -23,6 +23,12 @@ public class SimplePopDialogAction extends AnAction {
 }
 ```
 
+**Note** the `SimplePopDialogAction` does not have class fields of any kind. This is because an instance of `AnAction` class
+exists for the entire lifetime of the application. If `AnAction` class uses a field to store data which has a shorter 
+lifetime, and doesn't clear this data promptly, the data will be leaked. For example, any `AnAction` data that exists 
+only within the context of a `Project` will cause the `Project` to be kept in memory after the user has closed it.
+
+
 ### 1.2. Overriding actionPerformed()
 
 The [AnAction](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java)
@@ -103,14 +109,23 @@ In order to make the action do something we need to add code to the `SimplePopDi
 The following code gets information from the `anActionEvent` input parameter and constructs a simple message dialog.
 A generic icon, and the `description` and `text` attributes from the invoking menu action are displayed.
 
+For demonstration purposes the `AnActionEvent.getData()` method tests if a [Navigatable](upsource:///platform/core-api/src/com/intellij/pom/Navigatable.java) 
+object is available, meaning e.g. an element has been selected in the editor. If so, information about 
+the selected element is opportunistically added to the dialog.
+
 ```java
 @Override
 public void actionPerformed(@NotNull AnActionEvent anActionEvent) {
     // Using the event, create and show a dialog
     Project currentProject = anActionEvent.getProject();
+    StringBuffer dlgMsg = new StringBuffer(anActionEvent.getPresentation().getText() + " Selected!");
     String dlgTitle = anActionEvent.getPresentation().getDescription();
-    String dlgMessage = anActionEvent.getPresentation().getText() + " Selected!";
-    Messages.showMessageDialog(currentProject, dlgMessage, dlgTitle, ourIcon);
+    // If an element is selected in the editor, add info about it.
+    Navigatable nav = anActionEvent.getData(CommonDataKeys.NAVIGATABLE);
+    if (nav != null) {
+      dlgMsg.append(String.format("\nSelected Element: %s", nav.toString()));
+    }
+Messages.showMessageDialog(currentProject, dlgMsg.toString(), dlgTitle, Messages.getInformationIcon());
 }
 ```
 
@@ -133,7 +148,9 @@ public void update(AnActionEvent anActionEvent) {
 }
 ```
 
-Parameter `anActionEvent` carries information on the invocation place and data available.
+Parameter `anActionEvent` carries information on the invocation place and data available. Note the `update()` method does
+not check to see if a [Navigatable](upsource:///platform/core-api/src/com/intellij/pom/Navigatable.java) object is available
+before enabling `SimplePopDialogAction`. This is done for the purposes of demonstration code.  
 
 **Note** This method can be called frequently: for instance, if an action is added to a toolbar, it will be updated twice a second.
 This means that this method is supposed to _work really fast_; no real work should be done at this phase.

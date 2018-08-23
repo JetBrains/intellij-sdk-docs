@@ -41,4 +41,4 @@ KEY_CHARACTER=[^:=\ \n\t\f\\] | "\\ "
 
 ({CRLF}|{WHITE_SPACE})+                                     { yybegin(YYINITIAL); return TokenType.WHITE_SPACE; }
 
-.                                                           { return TokenType.BAD_CHARACTER; }
+[^]                                                         { return TokenType.BAD_CHARACTER; }

@@ -52,6 +52,6 @@ This guide is split into several parts, similar to a text book. Each part builds
 
     Links to useful resources, such as the IntelliJ Community Edition source code, the Plugin Development forum and the Plugin Developers Gitter room.
 
-* [**Appendix II - Breaking API Changes**](reference_guide/api_changes_list.md)
+* [**Appendix II - Breaking API Changes**](/reference_guide/api_changes_list.md)
 
    Provides a list of backwards-incompatible API changes in each major release of the IntelliJ Platform.

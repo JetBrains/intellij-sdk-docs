@@ -8,4 +8,4 @@ Plugins for PhpStorm are developed in Java using IntelliJ IDEA (Community Editio
 
 * [Setting-up the environment](setting_up_environment.md)
 * [PHP Open API](php_open_api.md)
-* [Existing 3rd party plugins](existing_plugins.md)
+* [Example Third Party PhpStorm plugins](existing_plugins.md)

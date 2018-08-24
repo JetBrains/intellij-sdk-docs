@@ -1,6 +1,8 @@
 ---
-title: Existing Third Party Plugins
+title: Example PhpStorm Third Party Plugins
 ---
+
+This page lists some example PhpStorm plugins created by third party developers.
 
 ## Symfony2 Plugin
 

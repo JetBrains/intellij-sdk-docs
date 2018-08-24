@@ -34,7 +34,7 @@
     * [Plugin Configuration File](basics/plugin_structure/plugin_configuration_file.md)
     * [Plugin Dependencies](basics/plugin_structure/plugin_dependencies.md)
 * [Kotlin for Plugin Developers](tutorials/kotlin.md)
-* [Troubleshooting](basics/settings_caches_logs.md)
+* [Troubleshooting](https://intellij-support.jetbrains.com/hc/en-us/articles/206544519-Directories-used-by-the-IDE-to-store-settings-caches-plugins-and-logs)
 * [Plugin Development FAQ](faq.md)
 
 ## Part II - Base Platform

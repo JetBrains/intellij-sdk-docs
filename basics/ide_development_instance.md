@@ -22,7 +22,7 @@ The default **Sandbox Home** directory locations are:
 * **Linux:** `~/.<product_system_name><product_version>/system/plugins-sandbox/`
 * **Macos** `~/Library/Caches/<product_system_name><product_version>/plugins-sandbox/`
 
-Within those directories are folders pertaining to the Development Instance:
+Within those directories are subdirectories pertaining to the Development Instance:
 * `config` contains settings for the IDE instance.
 * `plugins` contains folders for each plugin being run in the IDE instance. 
 * `system/caches or system\caches` holds the IDE instance data.

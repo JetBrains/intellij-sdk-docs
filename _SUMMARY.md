@@ -34,7 +34,7 @@
     * [Plugin Configuration File](basics/plugin_structure/plugin_configuration_file.md)
     * [Plugin Dependencies](basics/plugin_structure/plugin_dependencies.md)
 * [Kotlin for Plugin Developers](tutorials/kotlin.md)
-* [IDE Development Instances](basics/settings_caches_logs.md)
+* [IDE Development Instances](basics/ide_development_instance.md)
 * [Plugin Development FAQ](faq.md)
 
 ## Part II - Base Platform

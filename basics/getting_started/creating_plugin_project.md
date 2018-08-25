@@ -5,7 +5,7 @@ title: Creating a Plugin Project
 This section explains how you can create a new plugin project from scratch using the New Project wizard.  Optionally, you can import an existing project or import a project from external models. You can also add a new plugin module to an existing *IntelliJ Platform* project.
 For more information, refer to the [IntelliJ IDEA Web Help](https://www.jetbrains.com/idea/help/new-project-wizard.html).
 
-## To create a plugin project:
+### To Create an IntelliJ Platform Project:
 
 *  On the main menu, choose **File \| New \| Project**. The *New Project*
    wizard starts.
@@ -17,3 +17,16 @@ For more information, refer to the [IntelliJ IDEA Web Help](https://www.jetbrain
 *  Set desired project name
 *  Click **Finish** to generate project structure files
 *  Go to **File \| Project Structure** to customize project settings if required
+
+### To Create an IntelliJ Platform Plugin Module
+*  Select **File \| New \| Module** and choose the *IntelliJ Platform Plugin* module type
+
+   ![IntelliJ Platform Plugin Module](img/intellij_platform_plugin_module.png)
+<br/>
+<br/>
+*  Enter your desired plugin name.
+
+*  Go to **File \| Project Structure** and select the newly created *IntelliJ Platform SDK* as the default SDK for the plugin module:
+
+   ![Set Plugin Module SDK](img/set_plugin_module_sdk.png)
+

@@ -40,13 +40,12 @@ To set up your plugin development environment:
    ![Specify Source Paths](img/community_sources_directory.png)
 <br/>
 <br/>
-*  Select **File \| New \| Module** and choose the *IntelliJ Platform Plugin* module type
-
-   ![IntelliJ Platform Plugin Module](img/intellij_platform_plugin_module.png)
-<br/>
-<br/>
-*  Enter your desired plugin name.
-
-*  Go to **File \| Project Structure** and select the newly created *IntelliJ Platform SDK* as the default SDK for the plugin module:
-
-   ![Set Plugin Module SDK](img/set_plugin_module_sdk.png)
+*  Specify the **Sandbox Home** directory.  
+   The *Sandbox Home* directory stores the settings of the IDE development instance launched from a Plugin Project's **Run** configration.
+   Shown below is the default *Sandbox Home* directory for a user on Mac OS X. Any directory can be chosen as the *Sandbox Home* location. 
+   Use the ellipsis button (shown below) to define a custom location.  
+   
+   See the [IDE Development Instances](/basics/ide_development_instance.md) page for more information about default *Sandbox Home* directory
+   locations and contents.  
+  
+   ![Specify Sandbox Path](img/plugins-sandbox.png)

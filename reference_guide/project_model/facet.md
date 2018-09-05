@@ -10,3 +10,8 @@ For more information about facets see [Adding Support for Frameworks and Technol
 
 To access the list of facets for a module, use the [FacetManager](upsource:///platform/lang-api/src/com/intellij/facet/FacetManager.java)
 and [Facet](upsource:///platform/lang-api/src/com/intellij/facet/Facet.java) classes.
+
+
+If you want IDEs to advertise that your plugin supports a facet such in the example below look at the information about [the feature extractor](/plugin_repository/feature_extractor.md).
+
+![Facet Type of Feature](/plugin_repository/img/feature_extractor_facet.png)

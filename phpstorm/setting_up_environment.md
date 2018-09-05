@@ -6,13 +6,12 @@ title: Setting-up the Environment for PhpStorm Plugin Development
 Please review the information in the [Getting Started with Plugin Development](/basics/getting_started.md)
 section of this guide.
 
-There are two ways to develop plugins for PhpStorm:
-1. Use IntelliJ IDEA as the IDE with the PHP plugin installed.
-2. Use PhpStorm as the IDE.
+PhpStorm plugin development is done in Java using IntelliJ IDEA. However, a plugin can be developed to target either
+IntelliJ IDEA or PhpStorm. The choice dictates how the plugin project SDK is configured:
+1. Target IntelliJ IDEA Ultimate with the PHP plugin installed: base the plugin project SDK on the installed version of IntelliJ IDEA.
+2. Target PhpStorm: base the plugin project SDK on the installed version of PhpStorm.
 
-The choice affects how you will configure an SDK for developing a plugin. Using IntelliJ IDEA as the IDE requires basing the
-SDK for your project on your installed version of IntelliJ IDEA. Using PhpStorm as the IDE requires basing the SDK for
-your project on your installed version of PhpStorm. Choosing an installed IDE as the basis for a project is described on 
+Choosing an installed product as the basis for a project is described on 
 the [Setting Up a Development Environment](/basics/getting_started/setting_up_environment.md) page.
 
 > **Note** IntelliJ IDEA Community Edition does not support the PHP plugin. The IDE for developing a PhpStorm plugin can be IntelliJ IDEA Community Edition, but the IDE used for testing must be IntelliJ IDEA Ultimate.

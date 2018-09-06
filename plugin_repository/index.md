@@ -2,19 +2,23 @@
 title: Plugin Repository (plugins.jetbrains.com)
 ---
 
-Plugins are extensions to JetBrains products core functionality. They provide various integrations (e.g. with a VCS or application servers), add support for various development technologies, frameworks and programming languages, and so on.
+Plugins extend the core functionality of JetBrains products. They provide various integrations (e.g. with a VCS or application servers), 
+add support for various development technologies, frameworks and programming languages, and so on.
  
-Plugin Repository is a service responsible for:
+The Plugin Repository is a service responsible for:
 
  * Providing a product (e.g. IntelliJ IDEA) with a list of compatible plugins and their updates;
  
- * Facilitating the download of the compatible plugin update;
+ * Facilitating the download of compatible plugin updates;
  
  * Storage, uploading, and management of the plugins and their updates developed and published by third-party vendors or JetBrains.
 
-JetBrains provides an official plugins repository [plugins.jetbrains.com](https://plugins.jetbrains.com) service for all IntelliJ Platform-based IDEs, as well as TeamCity (limited functionality).
+JetBrains provides an official plugins repository [plugins.jetbrains.com](https://plugins.jetbrains.com) for all IntelliJ Platform-based IDEs, 
+as well as TeamCity (limited functionality).
  
-You can set up your own, enterprise plugin repositories for IntelliJ Platform based IDEs (also known as custom plugin repositories), for example, to store plugins that you want to reserve for your company's internal use only. [Read more](https://www.jetbrains.com/help/idea/managing-enterprise-plugin-repositories.html) about IntelliJ Platform-based IDEs enterprise repositories support.
+You can set up your own enterprise plugin repositories for IntelliJ Platform based IDEs (also known as custom plugin repositories).
+For example, to store plugins that you want to reserve for your company's internal use only. 
+[Read more](https://www.jetbrains.com/help/idea/managing-enterprise-plugin-repositories.html) about IntelliJ Platform-based IDEs enterprise repositories support.
  
 This documentation section includes articles, FAQs, and tutorials on [JetBrains plugin repository](https://plugins.jetbrains.com) operations.
 

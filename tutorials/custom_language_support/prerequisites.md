@@ -3,17 +3,17 @@ title: 1. Prerequisites
 ---
 
 
-### 1.1. Download and install IntelliJ IDEA
+### 1.1. Download and Install IntelliJ IDEA
 
-Download and install either IntelliJ IDEA Ultimate or IntelliJ IDEA Community Edition.
+Download and install either IntelliJ IDEA Ultimate or IntelliJ IDEA Community Edition as described on the
+[Creating Your First Plugin](/basics/getting_started.md) page.
 
-### 1.2. Check out Community Edition source files
+### 1.2. Check out Community Edition Source Files
 
-```
-git clone git://git.jetbrains.org/idea/community.git idea
-```
+Download the IntelliJ IDEA Community Edition source files as described in the IntelliJ IDEA Community Edition 
+[README](https://github.com/JetBrains/intellij-community/blob/master/README.md#getting-intellij-idea-community-edition-source-code) file.
 
-### 1.3. Install required plugins
+### 1.3. Install Required Plugins
 
 Make sure that the bundled Plugin DevKit plugin is enabled.
 Install and enable
@@ -21,23 +21,16 @@ Install and enable
 and
 [PsiViewer](https://plugins.jetbrains.com/plugin/227-psiviewer)
 plugins.
-
-### 1.4. Configure SDK and source files
-
-Configure a common JDK and an IntelliJ Platform SDK.
-For the IntelliJ Platform SDK you may need to specify the directory containing the installed version IntelliJ IDEA.
-By default it should offer the directory of the currently running version of IntelliJ IDEA.
-
-To attach the Community Edition source files to the SDK, open the Sourcepath tab in the SDK configuration dialog, press the Add button and select the directory with the Community Edition source checkout.
-IntelliJ IDEA will scan the directory for roots and offer the list of roots to add, with everything checked by default.
-Accept the list of roots by pressing OK.
-
-![Project SDK](img/project_sdk.png)
-
+<br/>
+<br/>
 ![Plugins](img/plugins.png)
 
-### 1.5. Create a project
+### 1.4. Configure the SDK and Source Files
 
-Create an IntelliJ Platform Plugin project and specify IntelliJ Platform SDK.
+Configure a common [JDK](https://github.com/JetBrains/intellij-community/blob/master/README.md#intellij-build-configuration) 
+and an [IntelliJ Platform SDK](/basics/getting_started/setting_up_environment.html). 
 
-![New Project](img/new_project.png)
+### 1.5. Create a Project
+
+Create an [IntelliJ Platform Plugin project](/basics/getting_started/creating_plugin_project.html).
+

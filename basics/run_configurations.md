@@ -4,7 +4,7 @@ title: Run Configurations
 
 *Run Configurations* allow users to run a certain type of external processes from within the IDE, e.g. a script, an application, a server, etc. You can provide UI for the user to specify execution options, as well as an option to create a run configuration based on a specific location in the source code.
 
-If you want IDEs to advertise that your plugin supports run configurations, look at the page about 
+If you want IDEs to show a prompt to users that your plugin supports run configurations, look at the page about
 [feature extractor](/plugin_repository/feature_extractor.md).
 
 # Architectural overview

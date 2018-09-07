@@ -5,7 +5,7 @@ title: Supporting Module Types
 *IntelliJ Platform* provides a set of standard module types which can be chosen, however, you might need to create a module of a type that isn't supported yet.
 This tutorial shows how to register a new module type and link it to the project creation procedure and the UI.
 
-If you want IDEs to advertise that your plugin supports a module type, look at the page about [feature extractor](/plugin_repository/feature_extractor.md).
+If you want IDEs to suggest to users that your plugin supports a module type, look at the page about [feature extractor](/plugin_repository/feature_extractor.md).
 ## Pre-requirements
 
 Create an empty plugin project,

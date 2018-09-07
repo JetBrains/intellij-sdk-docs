@@ -2,14 +2,14 @@
 title: Feature Extractor
 ---
 
-The IntelliJ Platform IDEs will advertise a plugin for installation if the plugin provides additional features from this list:
+The IntelliJ Platform IDEs will recommend a plugin for installation if the plugin provides additional features from this list:
 * Configuration Type
 * Facet Type
 * File Extensions Type
 * Module Type
 * Artifact Type
 
-IntelliJ Platform IDEs only show plugin advertisements in the appropriate context so they are meaningful to the user. 
+IntelliJ Platform IDEs only show plugin suggestions in the appropriate context so they are meaningful to the user.
 
 The [`feature extractor`](https://github.com/JetBrains/intellij-plugin-verifier/tree/master/intellij-feature-extractor/) tool 
 catalogs these types of features for a plugin. It works by statically analyzing the bytecode of a plugin to extract values
@@ -24,7 +24,7 @@ When you want IDEs to show that your plugin supports Run Configuration Type, you
 [ConfigurationType](https://github.com/JetBrains/intellij-community/blob/master/platform/lang-api/src/com/intellij/execution/configurations/ConfigurationType.java) 
 and implement the `getId()` method. The `feature extractor` analyzes the value of `getId()`.
 
-An advertisement for a plugin that supports the *Run D App* Configuration Type:
+An suggestion to install plugins that support the *Run D App* Configuration Type:
 
 ![Configuration Type of Feature](img/feature_extractor_configuration.png)
 
@@ -35,7 +35,7 @@ Refer to [Run Configurations](/basics/run_configurations.md) to get more informa
 To support a Facet Type feature you should extend [FacetType](https://github.com/JetBrains/intellij-community/blob/master/platform/lang-api/src/com/intellij/facet/FacetType.java),
 and pass `stringId` to its constructor. The value of the `stringId` parameter will be analyzed by the `feature extractor`.
 
-An advertisement for a plugin that supports the *jangaroo* Facet Type:
+An notification to install plugins that support the *jangaroo* Facet Type:
 
 ![Facet Type of Feature](img/feature_extractor_facet.png)
 
@@ -47,7 +47,7 @@ A plugin can support specific types of file extensions. When there is a file wit
 You should extend [FileTypeFactory](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/fileTypes/FileTypeFactory.java) 
 and feed supported file extensions in `createFileTypes(FileTypeConsumer)`. Values of `FileTypeConsumer` are analyzed by the `feature extractor`.
 
-An advertisement for plugins which support the _\*.d_ Extension Type:
+An suggestion to install plugins which support the _\*.d_ Extension Type:
 
 ![File Extensions Type of Feature](img/feature_extractor_extensions.png)
 
@@ -55,7 +55,7 @@ Refer to [Registering a File Type](/reference_guide/custom_language_support/regi
 
 ## Module Type
 
-If you want IDEs to advertise that your plugin can support creating specific Module Types, you should extend 
+If you want IDEs to show a prompt that your plugin can support creating specific Module Types, you should extend
 [ModuleType](https://github.com/JetBrains/intellij-community/blob/master/platform/lang-api/src/com/intellij/openapi/module/ModuleType.java) 
 and pass the `id` parameter for your Module Type to its constructor. The `feature extractor` will evaluate the values of `id`.
 

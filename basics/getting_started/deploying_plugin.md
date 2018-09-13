@@ -6,8 +6,8 @@ Before your custom plugin can be used, it must be deployed: built, installed, an
 
 To deploy a plugin:
 
-* Make your project by invoking **Build \| Make Project**.
-* Prepare your plugin for deployment. In the main menu, select **Build \| Prepare Plugin Module '\<module name\>' for Deployment**.
+* Make your project by invoking **Build \| Build Project** or **Build \| Build Module \<module name\>**.
+* Prepare your plugin for deployment. In the main menu, select **Build \| Prepare Plugin Module \<module name\> for Deployment**.
 
   ![Prepare Plugin for Deployment](deploying_plugin/img/prepare_plugin_for_deployment.png)
 
@@ -15,13 +15,10 @@ To deploy a plugin:
 
   ![Jar Saved Notification](deploying_plugin/img/jar_saved_notification.png)
 
-* Copy the newly created archive file to the `.IntelliJIDEAx0\config\plugins` folder, and then restart your IDE so the changes may take effect.  To know how to locate your *plugins* directory,
-  refer to [IDE Settings, Caches, Logs, and Plugins](https://intellij-support.jetbrains.com/hc/en-us/articles/206544519-Directories-used-by-the-IDE-to-store-settings-caches-plugins-and-logs).
+* [Install](https://www.jetbrains.com/help/idea/managing-plugins.html#installing-plugins-from-disk)
+  the newly created archive/jar file from disk. The `editor_basics` code sample builds the plugin archive/jar into the `editor_basics` project folder:
 
   ![Jar File Location](deploying_plugin/img/jar_location.png)
 
-* In the main menu, select **File \| Settings** to open the Settings dialog box.
-* In the Settings dialog box, under **IDE Settings**, click **Plugins**.
-* In the Plugins area, open the **Installed** tab, and then select the check-box next to your plugin name.
-* When finished, click OK to close the Settings dialog box.
-* Restart the IDE so that your changes take effect.
+* Restart your IDE so the changes will take effect.
+

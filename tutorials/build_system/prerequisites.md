@@ -44,7 +44,9 @@ intellij {
   sandboxDirectory = "$project.buildDir/myCustom-sandbox"
 }
 ```
-
+See the [IDE Development Instances](/basics/ide_development_instance.md) 
+page for more information about default Sandbox Home directory locations and contents.
+ 
 ### 1.4 Add Gradle Support to an Existing Plugin 
 
 To add Gradle support to an existing plugin project, create a `build.gradle` file under the root directory, with at least the following contents:

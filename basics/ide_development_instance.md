@@ -17,7 +17,7 @@ See [Configuring a Gradle Plugin Project](/tutorials/build_system/prerequisites.
 for more information about specifying a **Sandbox Home** location. The default **Sandbox Home** location
 for Gradle-based plugin projects is:
 * **Windows** `<Project Dir>\build\idea-sandbox`
-* **Linux or Macos** `<Project Dir>/build/idea-sandbox`
+* **Linux or macOS** `<Project Dir>/build/idea-sandbox`
 
 ### Sandbox Home Location for DevKit-Based Plugin Projects
 For DevKit-based plugins, the default **Sandbox Home** location is defined in the IntelliJ Platform Plugin SDK. 
@@ -25,7 +25,7 @@ See specifying the [Sandbox Home for DevKit Projects](/basics/getting_started/se
 The default **Sandbox Home** directory location for DevKit-based plugin projects is:  
 * **Windows:** `<User home>\.<product_system_name><product_version>\system\plugins-sandbox\`
 * **Linux:** `~/.<product_system_name><product_version>/system/plugins-sandbox/`
-* **Macos** `~/Library/Caches/<product_system_name><product_version>/plugins-sandbox/`
+* **macOS** `~/Library/Caches/<product_system_name><product_version>/plugins-sandbox/`
 
 ### Development Instance Settings, Caches, Logs, and Plugins
 Within the **Sandbox Home** directory are subdirectories pertaining to the Development Instance:

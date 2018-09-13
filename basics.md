@@ -9,5 +9,5 @@ It will familiarize you with the working environment, project structure, and fre
 * [Getting Started](basics/getting_started.md)
 * [Plugin Structure](basics/plugin_structure.md)
 * [Kotlin for Plugin Developers](/tutorials/kotlin.md)
-* [IDE Settings, Caches, Logs, and Plugins](https://intellij-support.jetbrains.com/hc/en-us/articles/206544519-Directories-used-by-the-IDE-to-store-settings-caches-plugins-and-logs)
+* [IDE Development Instances](basics/ide_development_instance.md)
 * [Plugin development FAQ](faq.md)

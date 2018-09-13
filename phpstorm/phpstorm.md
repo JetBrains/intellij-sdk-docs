@@ -2,10 +2,12 @@
 title: PhpStorm Plugin Development
 ---
 
-Plugins for PhpStorm are developed in Java using either IntelliJ IDEA or PhpStorm. IntelliJ IDEA Community Edition does not support the PHP plugin.
-IntelliJ IDEA Community Edition can be used to develop a PhpStorm plugin, but IntelliJ IDEA Ultimate must be used for testing.
- 
-You will also need a copy of PhpStorm to develop against. The [PsiViewer plugin](https://plugins.jetbrains.com/plugin/227-psiviewer) will also be useful.
+### Development and Testing Tools
+Plugins for PhpStorm are developed in Java using either edition of IntelliJ IDEA. The Community Edition of IntelliJ IDEA can
+be used for developing, but not testing, a PhpStorm plugin. Although IntelliJ IDEA Ultimate Edition (with the PHP plugin) can be 
+used for testing PhpStorm plugins, the recommended approach is to use PhpStorm for testing.
+
+The [PsiViewer plugin](https://plugins.jetbrains.com/plugin/227-psiviewer) is also recommended.
 
 ### PhpStorm Specifics
 

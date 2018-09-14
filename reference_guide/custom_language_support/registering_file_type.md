@@ -2,7 +2,7 @@
 title: Registering a File Type
 ---
 
-The first step in developing a custom language plugin is registering a file type the language will be associated with.
+The first step in developing a custom language plugin is registering a file type associated with the language.
 The IDE normally determines the type of a file by looking at its file name.
 
 A custom language file type is a class derived from
@@ -22,3 +22,7 @@ subclass in
 To verify that the file type is registered correctly, you can implement the
 [LanguageFileType.getIcon()](upsource:///platform/core-api/src/com/intellij/openapi/fileTypes/LanguageFileType.java)
 method and verify that the correct icon is displayed for files which have the extension(s) associated with your file type.
+
+If you want IDEs to show a hint prompting users that your plugin supports some extensions as in the example below, look at the information about [the feature extractor](/plugin_repository/feature_extractor.md).
+
+![File Extensions Type of Feature](/plugin_repository/img/feature_extractor_extensions.png)

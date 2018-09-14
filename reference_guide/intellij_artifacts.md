@@ -52,8 +52,8 @@ Describing the desired artifact is done with Maven coordinates:
 For each artifact [at the Repository URLs](#add-the-repository-url) there are multiple versions available. The version can be specified in one of several ways:
 * A branch build is specified as _BRANCH.BUILD[.FIX]_. For example, a branch build such as `141.233`, or a branch build with a fix such as `139.555.1`
 * Release numbers are specified as _MAJOR[.MINOR][.FIX]_. For example `14`, or `14.1`, or `14.1.1`
-* A snapshot of a branch is specified as _XXX-SNAPSHOT_. For example `142-SNAPSHOT`
-* A snapshot of an early release is specified as _BRANCH-EAP-SNAPSHOT_. For example `141-EAP-SNAPSHOT`
+* A snapshot of the latest nightly build from a branch is specified as _XXX-SNAPSHOT_. For example `142-SNAPSHOT`
+* A snapshot of a branch from which the next EAP/release build will be produced is specified as _BRANCH-EAP-SNAPSHOT_. For example `141-EAP-SNAPSHOT`
 
 
 ## Examples

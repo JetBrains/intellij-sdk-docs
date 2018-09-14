@@ -234,7 +234,7 @@
     * [Plugin Update Download](plugin_repository/api/plugin_download_update.md)
     * [Maven Interface](plugin_repository/api/maven_interface.md)
     * [Plugin Developers List](plugin_repository/api/plugin_developers.md)
-* [Feature Extractor](plugin_repository/feature_extractor.md)
+* [Plugin Recommendations](plugin_repository/feature_extractor.md)
 * [Custom Release Channels](plugin_repository/custom_channels.md)
 
 ## Appendix I - Resources

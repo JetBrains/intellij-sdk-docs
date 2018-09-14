@@ -1,20 +1,20 @@
 ---
-title: Getting Started
+title: Getting Started with Gradle
 ---
 
 Adding Gradle build support to an IntelliJ Platform Plugin requires a recent distribution to the Gradle build system and IntelliJ IDEA (Community or Ultimate).
 
-### 1.0. Download and install IntelliJ IDEA
+### 1.0 Download and Install IntelliJ IDEA
 
 Download and install either IntelliJ IDEA Ultimate or the IntelliJ IDEA Community Edition.
 
-### 1.1. Ensure the Gradle plugin and 'Plugin DevKit' plugin are enabled
+### 1.1 Ensure the Gradle Plugin and 'Plugin DevKit' Plugin are Enabled
 
 You can verify that the plugins are enabled by visiting **Settings \| Plugins**.
 
 <img src="img/step0_gradle_enabled.png" alt="Ensure the Gradle plugin is enabled" width="858px"/>
 
-### 1.2. Create plugin project from scratch
+### 1.2 Create a Plugin Project from Scratch
 
 IntelliJ IDEA supports automatically creating new plugin projects using Gradle, with all the necessary build.gradle
 setup performed automatically. This can also be used to convert an existing plugin to Gradle, if Gradle is not able to 
@@ -35,8 +35,19 @@ Finally, specify a JVM Gradle will use, it can be the Project JDK. You also conf
 
 <img src="img/step3_gradle_config.png" alt="Verify the JVM is the correct version" width="800px"/>
 
-
-### 1.3. Add Gradle support to an existing plugin 
+### 1.3 Configuring a Gradle Plugin Project
+Support for Gradle-based plugin projects is provided by the IntelliJ Platform `gradle-intellij-plugin`.
+See the [Gradle plugin README](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md#gradle) for more information. 
+For example, to configure the **Sandbox Home** directory's location include the following in the project's `build.gradle` file:
+```groovy
+intellij {
+  sandboxDirectory = "$project.buildDir/myCustom-sandbox"
+}
+```
+See the [IDE Development Instances](/basics/ide_development_instance.md) 
+page for more information about default Sandbox Home directory locations and contents.
+ 
+### 1.4 Add Gradle Support to an Existing Plugin 
 
 To add Gradle support to an existing plugin project, create a `build.gradle` file under the root directory, with at least the following contents:
 
@@ -73,7 +84,7 @@ gradle cleanIdea idea
 
 This will clean any existing IntelliJ IDEA configuration files and generate a new Gradle build configuration recognized by IntelliJ IDEA. Once your project refreshes, you should be able to view the Gradle tool window displayed under **View \| Tool Windows \| Gradle**. This indicates that IntelliJ IDEA recognizes the Gradle facet.
 
-### 1.4. Running a simple plugin
+### 1.5 Running a Simple Plugin
 
 Now add a new `HelloAction` class and `plugin.xml` in the `META-INF` folder:
 

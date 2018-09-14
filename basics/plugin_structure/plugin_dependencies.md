@@ -2,8 +2,8 @@
 title: Plugin Dependencies
 ---
 
-In your plugin, you may depend on classes from other plugins, either bundled, third-party or your own. In order to do so, you need to perform the following steps:
-
+Your plugin may depend on classes from other plugins, either bundled, third-party or your own. In order to express such 
+dependencies (e.g. Kotlin), you need to perform the following steps:
 * If the plugin is not bundled, run the sandbox instance of your target IDE and install the plugin there.
 * Add the jars of the plugin you're depending on to the classpath of your *IntelliJ Platform SDK*.
   In order to do that, open the Project Structure dialog, select the SDK you're using, press the + button in the Classpath tab, and
@@ -17,7 +17,7 @@ In your plugin, you may depend on classes from other plugins, either bundled, th
 
 > **warning** Do not add the plugin jars as a library: this will fail at runtime because IntelliJ Platform will load two separate copies of the dependency plugin classes.
 
-* If you're using Gradle to build your plugin, instead of doing the above add it to the `plugins` parameter of the `intellij` block in your build.gradle, for example:
+* If you're using Gradle to build your plugin, then instead of doing the above add the dependency to the `plugins` parameter of the `intellij` block in your build.gradle, for example:
 
 ```groovy
 intellij {

@@ -2,42 +2,26 @@
 title: Setting-up the Environment for PhpStorm Plugin Development
 ---
 
-## General information
-Follow steps that are described at [Getting Started with Plugin Development](/basics/getting_started.md).
+### General information
+Please familiarize yourself with the [Getting Started with Plugin Development](/basics/getting_started.md)
+section of this guide.
 
-There are two ways to develop plugins for PhpStorm:
+If you are using a [DevKit](/basics/getting_started/using_dev_kit.md)
+workflow to develop plugins for PhpStorm, the recommended approach is to base the plugin project SDK on an installation
+of PhpStorm. An alternative approach is to base the plugin project SDK on an installation of IntelliJ IDEA Ultimate with the PHP plugin.
+However, this runs the risk of accidentally using some APIs which are not available in PhpStorm.
 
-1. Use IntelliJ IDEA Ultimate with the PHP plugin installed.
-2. Use PhpStorm as a targeted IDE in a first place.
+### How to use the PhpStorm OpenAPI Library for Plugin Development
 
-The choice affects how you will configure SDK for the plugin. In the first case you need to specify current installation of IntelliJ IDEA as SDK and in the second case you need to specify current installation of PhpStorm. This step is described in [Getting Started with Plugin Development](/basics/getting_started.md).
+> **Note** The OpenAPI is available for PhpStorm 6 and above.
 
-## How to use OpenAPI library
+The [Plugin Dependencies](/basics/plugin_structure/plugin_dependencies.md) page describes adding dependencies to the
+DevKit as well as Gradle development environments. Follow the instructions to:
 
-> OpenAPI is available for PhpStorm 6 and above.
+* Add the PHP OpenAPI classes to the classpath of your plugin:
+  * For Gradle-based plugin development, add the `com.jetbrains.php` plugin ID to your build.gradle file. 
+  * For DevKit-based plugin development, add the `php-openapi.jar` and `php.jar` libraries to the classpath of your project's SDK.  
+    These libraries are located in `<your_installation_of_PhpStorm>/plugins/php/lib` directory.
 
-This section explains how to configure the IntelliJ Platform for using PhpStorm OpenAPI.
-
-### Adding library to a module
-
-1. Open Project Structure **File \| Project Structure**
-2. Select **Libraries**
-3. Press **Add** button
-4. Find and select `php-openapi.jar` and `php.jar`. They are located in `<your_installation_of_PhpStorm>/plugins/php/lib`.
-
-    ![Adding Library](img/AddingLibrary.png)
-
-5. Agree to add the libraries to your Module
-6. Open **Modules \| Dependencies** and change **Scope** to **Provided**. This step is necessary because otherwise `ClassCastException` will be thrown because two instances of the library will be loaded via different class loaders
-
-    ![Changing Scope](img/changingscope.png)
-
-### Adding dependencies to `plugin.xml`
-
-1. Open `plugin.xml` in the directory `META-INF`
-2. Add two `<depends>` items to `plugin.xml`:
-
-```xml
-<depends>com.jetbrains.php</depends>
-<depends>com.intellij.modules.platform</depends>
-```
+* Add the `com.jetbrains.php` and `com.intellij.modules.platform` dependencies
+  to the your plugin project's `plugin.xml` file.

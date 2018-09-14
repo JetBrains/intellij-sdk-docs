@@ -16,18 +16,22 @@ More artifacts will be hosted in the future.
 Platform are hosted at the bintray repository. These artifacts should not be used directly, but a link to this 
 repository should be added to pom.xml/build.gradle files if individual modules from the IntelliJ Platform Artifacts Repository are used.    
 
-### How to Use the IntelliJ Platform Artifacts Repository
-There are two steps to using the repository:
-1. Add the corresponding repository URL to a Maven or Gradle script.
+## How to Use the IntelliJ Platform Artifacts Repository
+Artifacts in the repositories are utilized by adding information to a project's build.gradle file. See
+the [gradle-intellij-plugin](https://github.com/JetBrains/gradle-intellij-plugin) for more information about
+Gradle support. 
+
+There are two types of information needed to use a repository:
+1. Specify the corresponding repository URL for the artifact.
 2. Specify the Maven coordinates for the artifact. 
  
-#### Add the Repository URL 
+### Add the Repository URL 
 The corresponding URL for the desired artifact needs to be added to a Maven or Gradle script:
 * For release or EAP versions, use https://www.jetbrains.com/intellij-repository/releases 
 * For snapshot or EAP snapshots, use https://www.jetbrains.com/intellij-repository/snapshots
 * For dependencies of individual modules from the IntelliJ Platform, use https://jetbrains.bintray.com/intellij-third-party-dependencies 
 
-#### Specify the Artifact
+### Specify the Artifact
 Describing the desired artifact is done with Maven coordinates:
 * Cross-platform zip distributions of IntelliJ Platform artifacts:
   * groupId = com.jetbrains.intellij.idea
@@ -45,19 +49,19 @@ Describing the desired artifact is done with Maven coordinates:
   * classifier = ""
   * packaging = jar
 
-For each artifact there are several versions available. The version can be specified in one of several ways:
+For each artifact [at the Repository URLs](#add-the-repository-url) there are multiple versions available. The version can be specified in one of several ways:
 * A branch build is specified as _BRANCH.BUILD[.FIX]_. For example, a branch build such as `141.233`, or a branch build with a fix such as `139.555.1`
 * Release numbers are specified as _MAJOR[.MINOR][.FIX]_. For example `14`, or `14.1`, or `14.1.1`
 * A snapshot of a branch is specified as _XXX-SNAPSHOT_. For example `142-SNAPSHOT`
 * A snapshot of an early release is specified as _BRANCH-EAP-SNAPSHOT_. For example `141-EAP-SNAPSHOT`
 
 
-### Examples
+## Examples
 This section presents several examples of using a Gradle script to incorporate the repository in a build.gradle file. Each example
 illustrates declaring the artifact URL, Maven coordinates, and Version for an artifact.
 There are two parts to each example: the repository and the dependency sections.
 
-#### Gradle Example for IntelliJ IDEA Community Edition Distribution
+### Gradle Example for IntelliJ IDEA Community Edition Distribution
 These snippets illustrate incorporating an IntelliJ snapshot build into a build.gradle file.
 
 **Repository Section**  
@@ -80,7 +84,7 @@ Where `idea_dep` names this custom configuration.
 Here is an example of a [build.gradle](https://github.com/shalupov/idea-cloudformation/blob/9007023afa187a1fb8b45c3ca66d5a51f86b795c/build.gradle)
 file that is currently in use.
 
-#### Gradle Example for an Individual Module from the IntelliJ IDEA Project
+### Gradle Example for an Individual Module from the IntelliJ IDEA Project
 These snippets illustrate incorporating an IntelliJ module into a build.gradle file. In this case the desired module is `jps-model-serialization`.
 
 **Repositories Section**  

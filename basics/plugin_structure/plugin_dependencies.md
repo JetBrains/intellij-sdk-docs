@@ -21,7 +21,7 @@ dependencies (e.g. Kotlin), you need to perform the following steps:
 
 ```groovy
 intellij {
-    plugins 'org.jetbrains.kotlin:1.2.30'
+    plugins "Kotlin"
 }
 ```
 

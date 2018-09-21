@@ -73,4 +73,8 @@ Before marking a plugin as compatible with all products, you should verify that 
 
 The [IntelliJ plugin repository](http://plugins.jetbrains.com/) automatically detects the products with which a plugin is compatible, based on the rules above, and makes it available to users of those products.
 
+## Platform Compatibility
+
 The API of _IntelliJ Platform_ and bundled plugins may be changed between releases. The major changes which may break plugins are listed on [Incompatible Changes in _IntelliJ Platform_ and Plugins API](/reference_guide/api_changes_list.md) page.
+
+To be sure that your plugin will work on your targeted platform, you should use the same development version of IntelliJ platform as the one you are targeting. 

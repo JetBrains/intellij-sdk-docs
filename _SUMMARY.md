@@ -243,6 +243,7 @@
 * [IntelliJ Community Edition on GitHub](https://github.com/JetBrains/intellij-community)
 * [IDE Settings, Caches, Logs, and Plugins](https://intellij-support.jetbrains.com/hc/en-us/articles/206544519-Directories-used-by-the-IDE-to-store-settings-caches-plugins-and-logs)
 * [IntelliJ Plugins](https://github.com/JetBrains/intellij-plugins)
+* [IntelliJ Platform Artifacts Repository](reference_guide/intellij_artifacts.md)
 * [IntelliJ Scala Plugin](https://github.com/JetBrains/intellij-scala)
 * [Gradle IntelliJ Plugin](https://github.com/JetBrains/gradle-intellij-plugin)
 * [IntelliJ SDK Documentation](https://github.com/JetBrains/intellij-sdk-docs)

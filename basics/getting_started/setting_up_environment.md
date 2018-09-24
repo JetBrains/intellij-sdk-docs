@@ -25,7 +25,7 @@ To set up your plugin development environment:
    ![Set Home Directory](img/set_home_directory.png)
 <br/>
 <br/>      
-*  Select the **IDEA jdk** as the default Java SDK. See the _IntelliJ Build Configuration_ section of [Check Out And Build Community Edition](https://github.com/JetBrains/intellij-community/blob/master/README.md) for instructions about creating the **IDEA jdk**.
+*  Select **1.8** as the default Java SDK. See the _IntelliJ Build Configuration_ section of [Check Out And Build Community Edition](https://github.com/JetBrains/intellij-community/blob/master/README.md) for instructions about creating **1.8** JSDK.
 
    ![Set IDEA JDK](img/set_java_sdk.png)
 <br/>

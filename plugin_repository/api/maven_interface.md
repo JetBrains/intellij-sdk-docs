@@ -7,7 +7,7 @@ You can download a plugin update from the [plugin repository](https://plugins.je
 URL format is the following:
 
 ```
-https://plugins.jetbrains.com/maven/com/jetbrains/plugins/<plugin_xml_id>/<version>/<plugin_xml_id>-<version>-<channel>.<extension>
+https://plugins.jetbrains.com/maven/<channel>/com/jetbrains/plugins/<plugin_xml_id>/<version>/<plugin_xml_id>-<version>.<extension>
 ```
 
 Where
@@ -24,11 +24,9 @@ E.g. to download *[VueJs plugin version 1.0.1](https://plugins.jetbrains.com/plu
 
 Also, you can use Gradle or Maven to retrieve a plugin as a maven-dependency:
 
-* **groupId** is always **com.jetbrains.plugins**;
+* **groupId** is either **\<channel>.com.jetbrains.plugins** or **com.jetbrains.plugins** for *Stable* channel;
 
 * **artifactId** is **pluginXmlId** (pluginXmlId is specified as a *Plugin XML ID* parameter on the right of the plugin's individual update page);
-
-* **classifier** is a **channel** (empty classifier means default *Stable* channel).
 
 **build.gradle**
 
@@ -38,7 +36,8 @@ repositories {
 }
  
 dependencies {
-  compile 'com.jetbrains.plugins:<plugin_xml_id>:<version>@<extension>'
+  compile '.jetbrains.plugins:<plugin_xml_id>:<version>' // for the plugin from Stable channel
+  compile '<channel>.com.jetbrains.plugins:<plugin_xml_id>:<version>' // for the plugin from non-default channel
 }
 ```
 

@@ -36,7 +36,7 @@ repositories {
 }
  
 dependencies {
-  compile '.jetbrains.plugins:<plugin_xml_id>:<version>' // for the plugin from Stable channel
+  compile 'com.jetbrains.plugins:<plugin_xml_id>:<version>' // for the plugin from Stable channel
   compile '<channel>.com.jetbrains.plugins:<plugin_xml_id>:<version>' // for the plugin from non-default channel
 }
 ```

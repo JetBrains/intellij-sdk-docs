@@ -53,7 +53,7 @@ Run the following command in the checkout directory to do so.
 git submodule update --init --remote
 ```
 
-### Installing Gema
+### Installing Gems
 
 After you performed the initial checkout for the main repository and the submodule, run `bundle install` to install additional required gems.
 

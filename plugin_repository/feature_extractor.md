@@ -24,7 +24,7 @@ A plugin can support specific file types (file extensions). When there is a file
 You should extend [FileTypeFactory](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/fileTypes/FileTypeFactory.java)
 and feed supported file extensions in `createFileTypes(FileTypeConsumer)`. Values of `FileTypeConsumer` are analyzed by the `feature extractor`.
 
-An suggestion to install plugins which support the _\*.d_ Extension Type:
+A suggestion to install plugins which support the _\*.d_ Extension Type:
 
 ![File Extensions Type of Feature](img/feature_extractor_extensions.png)
 
@@ -36,7 +36,7 @@ When you want IDEs to show that your plugin supports Run Configuration Type, you
 [ConfigurationType](https://github.com/JetBrains/intellij-community/blob/master/platform/lang-api/src/com/intellij/execution/configurations/ConfigurationType.java) 
 and implement the `getId()` method. The `feature extractor` analyzes the value of `getId()`.
 
-An suggestion to install plugins that support the *Run D App* Configuration Type:
+A suggestion to install plugins that support the *Run D App* Configuration Type:
 
 ![Configuration Type of Feature](img/feature_extractor_configuration.png)
 
@@ -47,7 +47,7 @@ Refer to [Run Configurations](/basics/run_configurations.md) to get more informa
 To support a Facet Type feature you should extend [FacetType](https://github.com/JetBrains/intellij-community/blob/master/platform/lang-api/src/com/intellij/facet/FacetType.java),
 and pass `stringId` to its constructor. The value of the `stringId` parameter will be analyzed by the `feature extractor`.
 
-An notification to install plugins that support the *jangaroo* Facet Type:
+A notification to install plugins that support the *jangaroo* Facet Type:
 
 ![Facet Type of Feature](img/feature_extractor_facet.png)
 

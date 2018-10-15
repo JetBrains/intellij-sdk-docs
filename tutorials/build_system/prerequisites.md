@@ -86,7 +86,8 @@ This will clean any existing IntelliJ IDEA configuration files and generate a ne
 
 ### 1.5 Running a Simple Plugin
 
-Now add a new `HelloAction` class and `plugin.xml` in the `META-INF` folder:
+Now add a new `HelloAction` class to the Java folder, and `plugin.xml` and `pluginIcon.svg` files in the `META-INF` folder.
+for more information about `pluginIcon.svg` files, see the [Plugin Icon File](/basics/plugin_structure/plugin_icon_file.md) section.
 
 <img src="img/gradle_directory_structure.png" alt="Gradle directory structure" width="374px"/>
 

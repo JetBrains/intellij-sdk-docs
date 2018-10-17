@@ -1,26 +1,10 @@
 <idea-plugin>
   <id>org.jetbrains</id>
-  <name>my_plugin</name>
+  <name>Hello Action Project</name>
   <version>0.0.1</version>
   <vendor email="dummy" url="dummy">dummy</vendor>
 
-  <description><![CDATA[
-      Sample plugin.<br>
-    ]]></description>
-
-  <change-notes><![CDATA[
-      Release 0.0.1: Initial release.<br>
-    ]]>
-  </change-notes>
-
-  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
-  <idea-version since-build="162"/>
-
-  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
-       on how to target different products -->
-  <!-- uncomment to enable plugin in all products
   <depends>com.intellij.modules.lang</depends>
-  -->
 
   <extensions defaultExtensionNs="com.intellij">
   </extensions>

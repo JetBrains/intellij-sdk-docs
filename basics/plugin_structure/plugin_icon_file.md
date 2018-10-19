@@ -17,7 +17,7 @@ for more information.
 ### Plugin Icon File Format
 All Plugin Icon images must be provided in SVG format. 
 Plugin Icons will be displayed in 40px by 40px and 80px by 80px size. However, _only one
-size icon_ should be supplied because the will automatically
+size icon_ should be supplied because it will automatically
 scale.
 
 | Icon Size  | Example SVG Icon                            |

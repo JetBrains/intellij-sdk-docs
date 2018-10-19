@@ -32,6 +32,7 @@
     * [Plugin Actions](basics/plugin_structure/plugin_actions.md)
     * [Plugin Services](basics/plugin_structure/plugin_services.md)
     * [Plugin Configuration File](basics/plugin_structure/plugin_configuration_file.md)
+    * [Plugin Icon](basics/plugin_structure/plugin_icon_file.md)
     * [Plugin Dependencies](basics/plugin_structure/plugin_dependencies.md)
 * [Kotlin for Plugin Developers](tutorials/kotlin.md)
 * [IDE Development Instances](basics/ide_development_instance.md)

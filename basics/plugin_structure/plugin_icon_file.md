@@ -10,11 +10,15 @@ Plugin Icons are shown in the Settings/Preferences [Plugin Manager](https://www.
 in JetBrains' products. Plugin Icons also appear in the [Plugins Repository](https://plugins.jetbrains.com/),
 and also in [MarketPlace](https://plugins.jetbrains.com/marketplace).
 
+**Note:** icons and images that are used within a plugin have different requirements. 
+See [Working with Icons and Images](/reference_guide/work_with_icons_and_images.md)
+for more information.
+
 ### Plugin Icon File Format
 All Plugin Icon images must be provided in SVG format. 
 Plugin Icons will be displayed in 40px by 40px and 80px by 80px size. However, _only one
-size icon_ should be supplied because the IntelliJ Platform will automatically
-scale the image as needed.
+size icon_ should be supplied because the will automatically
+scale.
 
 | Icon Size  | Example SVG Icon                            |
 | ------------- | -------------                            |

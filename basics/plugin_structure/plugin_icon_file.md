@@ -31,7 +31,7 @@ Plugin Icon files are named according to the following conventions:
 
 ### Adding Plugin Icons to a Plugin Project
 The Plugin Icon files must be in the `META-INF` folder of the plugin distribution file, 
-i.e. the *.jar or *.zip file you upload to the plugin repository and install into
+i.e. the `*.jar` or `*.zip` file you upload to the plugin repository and install into
 a JetBrains IDE.
 
 To include Plugin Icons in your distribution file, place the Plugin Icon files 
@@ -40,12 +40,3 @@ is the same regardless of using DevKit or Gradle for developing a plugin. For ex
  
 ![Plugin Icons in META-INF folder](img/resource_directory_structure.png)
 
-### Plugin Icons API
-If you need access to existing Plugin Icons you can acquire
-them through the Plugin Repository using the following URL format:  
-`https://plugins.jetbrains.com/api/icon?pluginId=${PLUGIN_XMLID}&theme=${DEFAULT|DARCULA}`
-Note the`theme` parameter may be omitted when you are retrieving an icon for a DEFAULT 
-theme.
-
-An example URL to retrieve the Fortran Plugin Icon would be:  
-`https://plugins.jetbrains.com/api/icon?pluginId=org.jetbrains.fortran&theme=DEFAULT`

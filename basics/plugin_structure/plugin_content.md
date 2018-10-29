@@ -11,7 +11,7 @@ There are two possible ways of organizing plugin content:
     and the classes that implement the plugin functionality. The configuration file 
     specifies the plugin name, description, version, vendor, the supported IntelliJ IDEA version, 
     plugin components, actions and action groups, and action user interface placement.
-    See the [Plugin Icon File](plugin_icon_file.md) page for more information about plugin icon svg files.
+    See the [Plugin Icon File](plugin_icon_file.md) page for more information about plugin icon SVG files.
 
    ```
    .IntelliJIDEAx0/
@@ -25,7 +25,7 @@ There are two possible ways of organizing plugin content:
            pluginIcon.svg
            pluginIcon_dark.svg
    ```
-   
+
 
 2. Plugin files located in a `.jar` file that is placed in the lib folder:
 

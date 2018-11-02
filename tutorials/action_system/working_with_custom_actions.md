@@ -98,7 +98,7 @@ file actually contains elements for `<keyboard-shortcut>` and `<mouse-shortcut>`
 The [plugin.xml](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/register_actions/resources/META-INF/plugin.xml) 
 file contains copious comments about the declaration.
 
-After performing the steps described above we need to compile and run the plugin to the the newly created action available as a Tools Menu item:
+After performing the steps described above we need to compile and run the plugin to the newly created action available as a Tools Menu item:
 
 !["Register action" quick fix](img/tools_menu_item_action.png)
 

@@ -115,7 +115,7 @@
 * [XML DOM API](reference_guide/frameworks_and_external_apis/xml_dom_api.md)
 
 ## Part V - Features
-* Navigation
+* [Navigation](reference_guide/navigation/navigation_intro.md)
     * Go To Symbol
 * Editing
     * Code Completion

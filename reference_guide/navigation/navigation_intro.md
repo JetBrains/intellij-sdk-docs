@@ -31,10 +31,12 @@ indicates whether this object supports navigation to source within an editor. Se
 interface comments for more information about these two methods.
 
 The `navigate()` method is called to open the (content-containing) object in an editor or display, and request focus. Typically an implementation
-of `Navigatable` does the heavy lifting of invoking an editor for the content and requesting focus. See below for examples.  
+of `Navigatable` does the heavy lifting of invoking an editor for the content and requesting focus. See below for examples,
+and the [Navigatable](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/pom/Navigatable.java)
+interface for more information.  
 
 ### Example IntelliJ Platform Implementations of Navigatable
-This section describes some example implementations that can be found in the platform. This is by no means an exhaustive list, 
+This section describes some example implementations that can be found in the IntelliJ Platform. This is by no means an exhaustive list, 
 but is intended to illustrate how `Navigatable` works in different contexts.
 
 #### Example Navigatable Class Related to Psi Elements
@@ -55,37 +57,34 @@ represent Java files, classes, methods, and fields.
 The [OpenFileDescriptor](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/fileEditor/OpenFileDescriptor.java)
 class is used by content classes needing `Navigatable` functionality. 
 
-The class diagram below shows `OpenFileDescriptor` inherits from the `Navigatable` and `Comparable` interfaces. The former defines the navigation
+The class diagram below shows that `OpenFileDescriptor` inherits from the `Navigatable` and `Comparable` interfaces. The former defines the navigation
 functionality, and the latter defines the comparison and ordering functionality.
 
 <img src="img/open_file_descriptor.png" alt="OpenFileDescriptor" width="400px"/>
 
 For example, the `OpenFileDescriptor` class is used for opening a file from the 
 [Project View](https://www.jetbrains.com/help/idea/project-tool-window.html)
-Tool Window. Double clicking a file in Project View causes the following
-sequence:
+Tool Window. Double clicking, or highlighting and pressing Shift-Enter on a file in Project View causes a
+sequence such as the following (some steps are omitted for brevity):
 
-* Event listeners determine the double click event is occuring in the Project Tool panel.
-* Event handlers use the event data to determine a data context that represents a file, and request processing the event.
-* Utilities that use the data context to get the `Navigatable` object, in this case a file represented by an `AbstractPsiBasedNode`.
-* Utilities that call the `navigate()` method on the file (`AbstractPsiBasedNode`) object.
-* Navigation utilities then execute commands to open a file based on a `PsiElement`.
-* The commands execute navigation utilities that call the `navigate()` method on the `PsiElement` type of object, in this case a `JavaStubPsiElement`.
-* The `JavaStubPsiElement.navigate()` method uses the `PsiNavigationSupport` object to get the associated `OpenFileDescriptor` object, 
+* Event listeners and handlers use the event data to determine a `DataContext` that represents a file.
+* `OpenSourceUtil` uses the `DataContext` to get the `Navigatable`-type object, in this case a virtual file object.
+* `NavigationUtil` calls the `navigate()` method on the virtual file object, in this case a `JavaStubPsiElement`.
+* The `JavaStubPsiElement.navigate()` method uses the `PsiNavigationSupport` object to get its associated `OpenFileDescriptor` object, 
   which provides the `Navigatable` functionality.  
 * The `JavaStubPsiElement.navigate()` method calls the `OpenFileDescriptor.navigate()` method.
 
 As the sequence diagram below illustrates, `OpenFileDescriptor.navigate()` does the following:
 * Calls `canNavigate()` to confirm a valid `VirtualFile` is associated with `JavaStubPsiElement`.
-* Verifies the `VirtualFile` is not a directory.
-* Calls `navigateInEditorOrNativeApp()`, which calls `does the following:
-  * determines the `FileType` is `JavaFileType`:
-  * calls `navigateInEditor()`, which calls `navigateInRequestedEditor()` to find an editor based
-    on the `DataContext`, failing that it:
-    * calls `navigateInAnyFileEditor`:
-      * which uses `FileEditorManager` to get a list of `FileEditor` objects associated with 
+* Verifies the `VirtualFile` object does not represent a directory.
+* Calls `navigateInEditorOrNativeApp()`, which does the following:
+  * Determines the `FileType` is, e.g. `JavaFileType`:
+  * Calls `navigateInEditor()`, which calls `navigateInRequestedEditor()` to find an editor based
+    on the `DataContext`. Failing that it:
+    * Calls `navigateInAnyFileEditor()` which:
+      * Uses `FileEditorManager` to get a list of `FileEditor` objects associated with 
       the current `Project` and `OpenFileDescriptor`.  Most `FileType` objects are associated with only one `FileEditor`.
-      * `navigateInAnyFileEditor` then iterates over the `FileEditor` list (usually just one) to open the file
+      * Iterates over the `FileEditor` list (usually just one) to open the file
       represented by `JavaStubPsiElement` in the associated editor and request focus.
 
 <img src="img/open_file_sequence.png" alt="open_file_sequence" width="900px"/>

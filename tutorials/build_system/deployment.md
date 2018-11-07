@@ -60,7 +60,7 @@ group 'com.jetbrains'
 version '1.2' // Update me!
 ```
 
-When you run `gradle runIdea` with a build script containing the above snippet, Gradle will download the appropriate version of IntelliJ IDEA from either a [Snapshot](https://www.jetbrains.com/intellij-repository/snapshots) (time-based) or [Release](https://www.jetbrains.com/idea/help/managing-plugins.html) (version based) repository, configure the plugin sandbox, install your plugin, and launch a new instance of the IDE. This task can be run directly from the command line, without any prior tooling assistance. For best results, you should choose 
+When you run `gradle runIdea` with a build script containing the above snippet, Gradle will download the appropriate version of IntelliJ IDEA from either a [Snapshot](https://www.jetbrains.com/intellij-repository/snapshots) (time-based) or [Release](https://www.jetbrains.com/idea/help/managing-plugins.html) (version based) repository, configure the plugin sandbox, install your plugin, and launch a new instance of the IDE. This task can be run directly from the command line, without any prior tooling assistance. 
 
 For best results, plugin developers should build against a fixed version, rather than `LATEST-TRUNK-SNAPSHOT`. For information about available versions of the IntelliJ Platform, you may consult the following URLs for the most recent updates:
 

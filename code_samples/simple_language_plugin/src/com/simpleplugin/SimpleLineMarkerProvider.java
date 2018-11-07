@@ -13,7 +13,7 @@ public class SimpleLineMarkerProvider extends RelatedItemLineMarkerProvider {
   @Override
   protected void collectNavigationMarkers(@NotNull PsiElement element,
                                           Collection<? super RelatedItemLineMarkerInfo> result) {
-    if (element instanceof PsiLiteralExpression) {
+    if (element instanceof PsiLiteralExpression && element.getFirstChild() == null) {
       PsiLiteralExpression literalExpression = (PsiLiteralExpression) element;
       String value = literalExpression.getValue() instanceof String ? (String) literalExpression.getValue() : null;
       if (value != null && value.startsWith("simple" + ":")) {

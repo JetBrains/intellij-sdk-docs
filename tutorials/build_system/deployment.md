@@ -1,8 +1,9 @@
 ---
-title: Publishing plugins with Gradle
+title: Publishing Plugins with Gradle
 ---
 
-Once you have configured Gradle support, you can automatically build and deploy your plugin to the JetBrains [Plugin Repository](http://plugins.jetbrains.com). To do so, you will need to have already published the plugin to the plugin repository. For detailed information, please see the guide to [publishing a plugin](http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/publishing_plugin.html).
+Once you have configured Gradle support, you can automatically build and deploy your plugin to the [JetBrains Plugin Repository](http://plugins.jetbrains.com). To do so, you 
+will need to have already published the plugin to the plugin repository. For detailed information, please see the guide to [publishing a plugin](http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/publishing_plugin.html).
 
 ### 2.0 Add your account credentials
 
@@ -83,4 +84,6 @@ You may also deploy plugins to a release channel of your choosing, by configurin
 * `beta`: https://plugins.jetbrains.com/plugins/beta/list
 * `eap`: https://plugins.jetbrains.com/plugins/eap/list
 
-It is also possible to host an [Enterprise Plugin Repository](https://www.jetbrains.com/idea/help/adding-plugins-to-enterprise-repositories.html), in which case the URL structure will depend on your hosting address. For more information, please refer to the [IntelliJ IDEA documentation](https://www.jetbrains.com/idea/help/managing-plugins.html).
+It is also possible to host an enterprise plugin repository, in which case the URL 
+structure will depend on your hosting address. For more information, please refer to the
+[Enterprise Plugin Repositories](/basics/getting_started/update_plugins_format.md) documentation.

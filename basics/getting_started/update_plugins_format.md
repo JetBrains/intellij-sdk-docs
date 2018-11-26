@@ -1,21 +1,21 @@
 ---
-title: Publishing a Plugin to an Enterprise Plugin Repository
+title: Publishing a Plugin to a Custom Plugin Repository
 ---
 
 If you intend to use a plugin repository _other than_ the [JetBrains Plugin Repository](https://plugins.jetbrains.com), 
 you will need to:
-* Upload your plugin JAR/ZIP file to the HTTPS web server you are using for the enterprise repository.
+* Upload your plugin JAR/ZIP file to the HTTPS web server you are using for the custom repository.
 * Maintain an `updatePlugins.xml` file on that web server describing all the available plugins.
-* Add the URL for the enterprise repository to the JetBrains IDE [Repository Settings/Preferences](https://www.jetbrains.com/help/idea/managing-plugins.html#repos).
+* Add the URL for the custom repository to the JetBrains IDE [Repository Settings/Preferences](https://www.jetbrains.com/help/idea/managing-plugins.html#repos).
 
 ## Describing Your Plugins in an updatePlugins File
-Every enterprise plugin repository must have at least one `updatePlugins.xml` file to describe the latest compatible version 
+Every custom plugin repository must have at least one `updatePlugins.xml` file to describe the latest compatible version 
 for every hosted plugin. The description in `updatePlugins.xml` is used by JetBrains IDEs to locate plugins by attributes 
 such as id, IDE version, and plugin version. These attributes are displayed by JetBrains IDEs to help users select or upgrade plugins.
 The description also tells the JetBrains IDE where to download the plugin itself.
 
-An enterprise plugin repository's `updatePlugins.xml` file is constructed and maintained by the administrator of
-the repository. More than one `updatePlugins.xml` file may be required if consumers of the enterprise repository are using more
+A custom plugin repository's `updatePlugins.xml` file is constructed and maintained by the administrator of
+the repository. More than one `updatePlugins.xml` file may be required if consumers of the custom repository are using more
 than one version of a JetBrains IDE. For example `updatePlugins-182.xml`, `updatePlugins-183.xml` for IntelliJ IDEA 2018.2 and 2018.3 respectively.
 Each `updatePlugins-*.xml` file will have a unique URL that is added to the JetBrains IDE 
 [Repository Settings/Preferences](https://www.jetbrains.com/help/idea/managing-plugins.html#repos). 
@@ -51,10 +51,10 @@ The format of an `updatePlugins.xml` file is simply a list of sequential element
 ```
 <br>
 **Note:** 
-* An `updatePlugins` file must contain at least one set of `<plugin></plugin>` elements.
-* A plugin may be listed only once in an `updatePlugins` file.
+* An `updatePlugins` file must contain at least one set of `<plugin></plugin>` elements.  
+* A plugin may be listed only once in an `updatePlugins` file.  
 * All plugins must be compatible with the same release(s) of the JetBrains IDE, or the plugin descriptions must be split into separate
-  `updatePlugins-major-minor.xml` files. 
+  `updatePlugins-major-minor.xml` files.  
 
 ### Optional updatePlugin Elements
 Can additional elements be added to `updatePlugins.xml`? Yes, but it's advisable only if needed. The additional elements will have
@@ -62,7 +62,7 @@ to be synchronized with each plugin's `plugin.xml` file.
 
 During plugin installation the JetBrains IDE reads the plugin JAR/ZIP file, and thereafter displays more information about the plugin.
 What additional information might help a user select a plugin when 
-[browsing the enterprise plugin repository](https://www.jetbrains.com/help/idea/managing-plugins.html#repos)
+[browsing the custom plugin repository](https://www.jetbrains.com/help/idea/managing-plugins.html#repos)
 before installation? The answer depends on the plugins and repository consumers. Here are the candidate elements:
 
 | Element                                                      |  Effects & Requirements     |

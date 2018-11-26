@@ -24,7 +24,7 @@
         * [Running and Debugging a Plugin](basics/getting_started/running_and_debugging_a_plugin.md)
         * [Deploying a Plugin](basics/getting_started/deploying_plugin.md)
         * [Publishing a Plugin](basics/getting_started/publishing_plugin.md)
-* [Enterprise Plugin Repositories](basics/getting_started/update_plugins_format.md)
+* [Custom Plugin Repositories](basics/getting_started/update_plugins_format.md)
 * [Plugin Structure](basics/plugin_structure.md)
     * [Plugin Content](basics/plugin_structure/plugin_content.md)
     * [Plugin Class Loaders](basics/plugin_structure/plugin_class_loaders.md)

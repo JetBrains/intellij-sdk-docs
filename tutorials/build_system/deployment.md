@@ -79,13 +79,13 @@ gradle publishPlugin
 
 Now check that the most recent version of your plugin appears on the [Plugin Repository](https://plugins.jetbrains.com/). If successfully deployed, any users who currently have your plugin installed on an eligible version of the IntelliJ Platform will be notified of a new update available on the following restart.
 
-You may also deploy plugins to a release channel of your choosing, by configuring the `intellij.publish.channel` property. When empty, this will use the default plugin repository, available to all [JetBrains plugin repository](https://plugins.jetbrains.com/) users, however you can publish to an arbitrarily-named channel. When using a non-default release channel, users may need to add a new [custom plugin repository](https://www.jetbrains.com/idea/help/managing-enterprise-plugin-repositories.html) to install your plugin. For example, if you specify `intellij.publish.channel 'canary'`, then users will need to add the `https://plugins.jetbrains.com/plugins/canary/list` repository to install the plugin and receive updates. These channels are treated as separate repositories for all intents and purposes. Popular channel names include:
+You may also deploy plugins to a release channel of your choosing, by configuring the `intellij.publish.channel` property. When empty, this will use the default plugin repository, available to all [JetBrains plugin repository](https://plugins.jetbrains.com/) users, however you can publish to an arbitrarily-named channel. For example, if you specify `intellij.publish.channel 'canary'`, then users will need to add the `https://plugins.jetbrains.com/plugins/canary/list` repository to install the plugin and receive updates. These channels are treated as separate repositories for all intents and purposes. Popular channel names include:
 
 * `alpha`: https://plugins.jetbrains.com/plugins/alpha/list
 * `beta`: https://plugins.jetbrains.com/plugins/beta/list
 * `eap`: https://plugins.jetbrains.com/plugins/eap/list
 
-## Publishing with Gradle to an Enterprise Plugin Repository
-It is also possible to host an enterprise plugin repository, in which case the URL 
+## Publishing with Gradle to a Custom Plugin Repository
+It is also possible to host a custom plugin repository, in which case the URL 
 structure will depend on your hosting address. For more information, please refer to the
-[Enterprise Plugin Repositories](/basics/getting_started/update_plugins_format.md) documentation.
+[Custom Plugin Repositories](/basics/getting_started/update_plugins_format.md) documentation.

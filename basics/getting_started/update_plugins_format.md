@@ -9,7 +9,7 @@ you will need to:
 * Add the URL for the custom repository to the JetBrains IDE [Repository Settings/Preferences](https://www.jetbrains.com/help/idea/managing-plugins.html#repos).
 
 ## Describing Your Plugins in an updatePlugins File
-Every custom plugin repository must have at least one `updatePlugins.xml` file to describe the latest compatible version 
+Every custom plugin repository must have at least one `updatePlugins.xml` file to describe the latest available version 
 for every hosted plugin. The description in `updatePlugins.xml` is used by JetBrains IDEs to locate plugins by attributes 
 such as id, IDE version, and plugin version. These attributes are displayed by JetBrains IDEs to help users select or upgrade plugins.
 The description also tells the JetBrains IDE where to download the plugin itself.
@@ -39,10 +39,10 @@ The format of an `updatePlugins.xml` file is simply a list of sequential element
     <!--
       The <idea-version> element must match the same element in plugin.xml. Required.
     -->
-    <idea-version since-build="181.3" until-build="184.*" />
+    <idea-version since-build="181.3" until-build="191.*" />
   </plugin>
   <plugin id="id.of.different.plugin" url="https://www.otherserver.com/other_repository/differentplugin.jar" version="major.minor">
-    <idea-version since-build="181.3" until-build="184.*" />
+    <idea-version since-build="181.3" until-build="191.*" />
   </plugin>
   <plugin>
     <!-- And so on for other plugins... -->
@@ -51,10 +51,9 @@ The format of an `updatePlugins.xml` file is simply a list of sequential element
 ```
 <br>
 **Note:** 
-* An `updatePlugins` file must contain at least one set of `<plugin></plugin>` elements.  
-* A plugin may be listed only once in an `updatePlugins` file.  
-* All plugins must be compatible with the same release(s) of the JetBrains IDE, or the plugin descriptions must be split into separate
-  `updatePlugins-major-minor.xml` files.  
+* An `updatePlugins.xml` file must contain at least one set of `<plugin></plugin>` elements.  
+* A plugin `id` may be listed only once in an `updatePlugins.xml` file.  
+* Multiple plugins with the same `id` but different `idea-version` attributes must be split into separate `updatePlugins-*.xml` files. 
 
 ### Optional updatePlugin Elements
 Can additional elements be added to `updatePlugins.xml`? Yes, but it's advisable only if needed. The additional elements will have

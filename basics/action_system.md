@@ -68,9 +68,20 @@ Registering actions in `plugin.xml` is demonstrated in the following example. Th
            keystroke of the action.
            The mandatory "keymap" attribute specifies the keymap for which
            the action is active. IDs of the standard keymaps are defined as
-           constants in the com.intellij.openapi.keymap.KeymapManager class. -->
-      <keyboard-shortcut first-keystroke="control alt G" second-keystroke="C" keymap="$default"/>
-      <!-- The <mouse-shortcut> node specifies the mouse shortcut for the
+           constants in the com.intellij.openapi.keymap.KeymapManager class. 
+           The optional "remove" attribute in the second <keyboard-shortcut>
+           element below means the specified shortcut should be removed from 
+           the specified action.
+           The optional "replace-all" attribute in the third <keyboard-shortcut>
+           element below means remove all keyboard and mouse shortcuts from the specified 
+           action before adding the specified shortcut.  -->
+    <!-- Add the first and second keystrokes to all keymaps  -->
+    <keyboard-shortcut keymap="$default" first-keystroke="control alt G" second-keystroke="C"/>
+    <!-- Except to the "Mac OS X" keymap and its children -->
+    <keyboard-shortcut keymap="Mac OS X" first-keystroke="control alt G" second-keystroke="C" remove="true"/>
+    <!-- The "Mac OS X 10.5+" keymap and its children will have only this keyboard shortcut for this action.  -->
+    <keyboard-shortcut keymap="Mac OS X 10.5+" first-keystroke="control alt G" second-keystroke="C" replace-all="true"/>
+    <!-- The <mouse-shortcut> node specifies the mouse shortcut for the
            action. An action can have several mouse shortcuts.
            The mandatory "keystroke" attribute specifies the clicks and
            modifiers for the action. It is defined as a sequence of words
@@ -80,8 +91,10 @@ Registering actions in `plugin.xml` is demonstrated in the following example. Th
            "doubleClick" if the action is activated by a double-click of the button.
            The mandatory "keymap" attribute specifies the keymap for which
            the action is active. IDs of the standard keymaps are defined as
-           constants in the com.intellij.openapi.keymap.KeymapManager class. -->
-    <mouse-shortcut keystroke="control button3 doubleClick" keymap="$default"/>
+           constants in the com.intellij.openapi.keymap.KeymapManager class.
+           The "remove" and "replace-all" attributes can also be used in
+           a <mouse-shortcut> element. See <keyboard-shortcut> for documentation.  -->
+    <mouse-shortcut keymap="$default" keystroke="control button3 doubleClick"/>
   </action>
   <!-- The <group> element defines an action group. <action>, <group> and 
        <separator> elements defined within it are automatically included in the group.

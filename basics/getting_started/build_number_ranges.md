@@ -29,6 +29,9 @@ The following branch numbers are used for *IntelliJ Platform* based products and
 
 | Branch number                                                   | IntelliJ Platform version |
 |-----------------------------------------------------------------|---------------------------|
+| [183](https://github.com/JetBrains/intellij-community/tree/183) | 2018.3                    |
+| [182](https://github.com/JetBrains/intellij-community/tree/182) | 2018.2                    |
+| [181](https://github.com/JetBrains/intellij-community/tree/181) | 2018.1                    |
 | [173](https://github.com/JetBrains/intellij-community/tree/173) | 2017.3                    |
 | [172](https://github.com/JetBrains/intellij-community/tree/172) | 2017.2                    |
 | [171](https://github.com/JetBrains/intellij-community/tree/171) | 2017.1                    |

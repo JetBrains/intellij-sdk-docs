@@ -4,8 +4,10 @@ title: Publishing a Plugin to a Custom Plugin Repository
 
 If you intend to use a plugin repository _other than_ the [JetBrains Plugin Repository](https://plugins.jetbrains.com), 
 you will need to:
-* Upload your plugin JAR/ZIP file to the HTTPS web server you are using for the custom repository.
-* Maintain an `updatePlugins.xml` file on that web server describing all the available plugins.
+* Create and maintain an `updatePlugins.xml` file on the HTTPS web server you are using for your custom repository. 
+  This file describes all the plugins available in your custom repository and each plugin's download URL.
+* Upload your plugin JAR/ZIP file to an HTTPS web server. This can be the same web server you are using for the custom repository
+  or a different HTTPS web server.
 * Add the URL for the custom repository to the JetBrains IDE [Repository Settings/Preferences](https://www.jetbrains.com/help/idea/managing-plugins.html#repos).
 
 ## Describing Your Plugins in an updatePlugins File

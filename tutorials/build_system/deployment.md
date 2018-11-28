@@ -1,8 +1,9 @@
 ---
-title: Publishing plugins with Gradle
+title: Publishing Plugins with Gradle
 ---
 
-Once you have configured Gradle support, you can automatically build and deploy your plugin to the JetBrains [Plugin Repository](http://plugins.jetbrains.com). To do so, you will need to have already published the plugin to the plugin repository. For detailed information, please see the guide to [publishing a plugin](http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/publishing_plugin.html).
+Once you have configured Gradle support, you can automatically build and deploy your plugin to the [JetBrains Plugin Repository](http://plugins.jetbrains.com). To do so, you 
+will need to have already published the plugin to the plugin repository. For detailed information, please see the guide to [publishing a plugin](http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/publishing_plugin.html).
 
 ### 2.0 Add your account credentials
 
@@ -60,7 +61,7 @@ group 'com.jetbrains'
 version '1.2' // Update me!
 ```
 
-When you run `gradle runIdea` with a build script containing the above snippet, Gradle will download the appropriate version of IntelliJ IDEA from either a [Snapshot](https://www.jetbrains.com/intellij-repository/snapshots) (time-based) or [Release](https://www.jetbrains.com/idea/help/managing-plugins.html) (version based) repository, configure the plugin sandbox, install your plugin, and launch a new instance of the IDE. This task can be run directly from the command line, without any prior tooling assistance. For best results, you should choose 
+When you run `gradle runIdea` with a build script containing the above snippet, Gradle will download the appropriate version of IntelliJ IDEA from either a [Snapshot](https://www.jetbrains.com/intellij-repository/snapshots) (time-based) or [Release](https://www.jetbrains.com/idea/help/managing-plugins.html) (version based) repository, configure the plugin sandbox, install your plugin, and launch a new instance of the IDE. This task can be run directly from the command line, without any prior tooling assistance. 
 
 For best results, plugin developers should build against a fixed version, rather than `LATEST-TRUNK-SNAPSHOT`. For information about available versions of the IntelliJ Platform, you may consult the following URLs for the most recent updates:
 
@@ -77,10 +78,8 @@ gradle publishPlugin
 
 Now check that the most recent version of your plugin appears on the [Plugin Repository](https://plugins.jetbrains.com/). If successfully deployed, any users who currently have your plugin installed on an eligible version of the IntelliJ Platform will be notified of a new update available on the following restart.
 
-You may also deploy plugins to a release channel of your choosing, by configuring the `intellij.publish.channel` property. When empty, this will use the default plugin repository, available to all [JetBrains plugin repository](https://plugins.jetbrains.com/) users, however you can publish to an arbitrarily-named channel. When using a non-default release channel, users may need to add a new [custom plugin repository](https://www.jetbrains.com/idea/help/managing-enterprise-plugin-repositories.html) to install your plugin. For example, if you specify `intellij.publish.channel 'canary'`, then users will need to add the `https://plugins.jetbrains.com/plugins/canary/list` repository to install the plugin and receive updates. These channels are treated as separate repositories for all intents and purposes. Popular channel names include:
+You may also deploy plugins to a release channel of your choosing, by configuring the `intellij.publish.channel` property. When empty, this will use the default plugin repository, available to all [JetBrains plugin repository](https://plugins.jetbrains.com/) users. However, you can publish to an arbitrarily-named channel. These non-default release channels are treated as separate repositories for all intents and purposes. When using a non-default release channel, users will need to add a new [custom plugin repository](https://www.jetbrains.com/help/idea/managing-plugins.html#repos) to install your plugin. For example, if you specify `intellij.publish.channel 'canary'`, then users will need to add the `https://plugins.jetbrains.com/plugins/canary/list` repository to install the plugin and receive updates.  Popular channel names include:
 
 * `alpha`: https://plugins.jetbrains.com/plugins/alpha/list
 * `beta`: https://plugins.jetbrains.com/plugins/beta/list
 * `eap`: https://plugins.jetbrains.com/plugins/eap/list
-
-It is also possible to host an [Enterprise Plugin Repository](https://www.jetbrains.com/idea/help/adding-plugins-to-enterprise-repositories.html), in which case the URL structure will depend on your hosting address. For more information, please refer to the [IntelliJ IDEA documentation](https://www.jetbrains.com/idea/help/managing-plugins.html).

@@ -1,10 +1,39 @@
+<!--
+  ~ Copyright 2000-2018 JetBrains s.r.o. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
+  -->
 <idea-plugin>
-  <id>org.jetbrains</id>
-  <name>Hello Action Project</name>
-  <version>0.0.1</version>
-  <vendor email="dummy" url="dummy">dummy</vendor>
+  <!--  Unique id for this plugin. Must stay constant for the life of the
+          plugin or it will confuse users when managing installation & updating.
+          Must match project.group in build.gradle -->
+  <id>org.jetbrains.sdk.gradle_demo</id>
 
-  <depends>com.intellij.modules.lang</depends>
+  <!--  Text to display as name on Preferences/Settings | Plugin page -->
+  <name>SDK Gradle Sample Project</name>
+
+  <version>Replaced by patchPluginXml.version in build.gradle</version>
+
+  <!--  Text to display as name on Preferences/Settings | Plugin page -->
+  <vendor email="support@yourcoolcompany.com" url="https://plugins.jetbrains.com/marketplace">IntelliJ Platform SDK</vendor>
+
+  <!-- This displays correctly.
+        <description><![CDATA[Demonstrates using the Gradle workflow to develop plugins for JetBrains IDEs<br>Adds <em>Greeting</em> to the main menu.<br>Pops a simple <b>Hello</b> dialog]]></description>
+       substitutes as
+        <description>Demonstrates using the Gradle workflow to develop plugins for JetBrains IDEs&lt;br&gt;Adds &lt;em&gt;Greeting&lt;/em&gt; to the main menu.&lt;br&gt;Pops a simple &lt;b&gt;Hello&lt;/b&gt; dialog</description>
+        -->
+  <!-- This does not. It is substituted as
+        <description>&lt;![CDATA[Demonstrates using the Gradle workflow to develop plugins for JetBrains IDEs&lt;br&gt;Adds &lt;em&gt;Greeting&lt;/em&gt; to the main menu.&lt;br&gt;Pops a simple &lt;b&gt;Hello&lt;/b&gt; dialog]]&gt;</description>
+        -->
+  <description>Replaced by patchPluginXml.pluginDescription in build.gradle</description>
+
+  <!-- This displays correctly.
+        <change-notes><![CDATA[<b>0.1.0</b> Document build.gradle file<br><b>0.0.1</b> Initial release.]]></change-notes>
+       substitues as
+        <change-notes>&lt;b&gt;0.1.0&lt;/b&gt; Document build.gradle file&lt;br&gt;&lt;b&gt;0.0.1&lt;/b&gt; Initial release.</change-notes>
+  -->
+  <!-- This does not. It is substituted as
+        <change-notes>&lt;![CDATA[&lt;b&gt;0.1.0&lt;/b&gt; Document build.gradle file&lt;br&gt;&lt;b&gt;0.0.1&lt;/b&gt; Initial release.]]&gt;</change-notes>
+        -->
+  <change-notes>Replaced by patchPluginXml.changeNotes in build.gradle</change-notes>
 
   <extensions defaultExtensionNs="com.intellij">
   </extensions>

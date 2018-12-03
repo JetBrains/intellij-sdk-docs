@@ -8,11 +8,11 @@ baseurl: /intellij/sdk/docs/
 
 description: Documentation for working with and extending the IntelliJ Platform SDK
 
-# This is tag 171.3780.107 (2017.1)
+# This is tag 183.4284 (2018.3)
 upsource:
   server: upsource.jetbrains.com
   repo: idea-ce
-  commit: d00d8b4ae3ed33097972b8a4286b336bf4ffcfab
+  commit: a7b3d4e9e48efbd4ac75105e9737cea25324f11e
 
 github_repo: JetBrains/intellij-sdk-docs
 youtrack_project: IJSDK

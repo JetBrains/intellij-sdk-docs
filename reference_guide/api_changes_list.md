@@ -49,6 +49,7 @@ IntelliJ API may be occasionally changed between releases leading to
 incompatibilities of existing plugins with new IDEs' builds. 
 The following pages list the breaking changes in IDE releases.  
   
+* [**Changes in 2019.***](api_changes/api_changes_list_2019.md)
 * [**Changes in 2018.***](api_changes/api_changes_list_2018.md)
 * [**Changes in 2017.***](api_changes/api_changes_list_2017.md)
 * [**Changes in 2016.***](api_changes/api_changes_list_2016.md)

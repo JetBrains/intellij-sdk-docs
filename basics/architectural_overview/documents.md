@@ -30,7 +30,7 @@ If you need to create a new file on disk, you don't create a `Document`: you cre
 
 * `Document.addDocumentListener` allows you to receive notifications about changes in a particular `Document` instance.
 * `EditorFactory.getEventMulticaster().addDocumentListener` allows you to receive notifications about changes in all open documents.
-* `FileDocumentManager.addFileDocumentManagerListener` allows you to receive notifications when any `Document` is saved or reloaded from disk.
+* Subscribe to `AppTopics#FILE_DOCUMENT_SYNC` on any level bus to receive notifications when any `Document` is saved or reloaded from disk.
 
 ## What are the rules of working with Documents?
 

@@ -14,23 +14,23 @@ public void hello(String message) {
 }
 ```
 
-This simple code fragment contains four references. The references created by the identifiers `System`, `out` and
-`println` can be resolved to the corresponding declarations in the JDK: the `System` class, the `out` field and the
-`println` method. The reference created by the second occurrence of the `message` identifier can be resolved to the
-`message` parameter, declared by `String message` in the method header.
+This simple code fragment contains five references. The references created by the identifiers `String`, `System`, `out` and
+`println` can be resolved to the corresponding declarations in the JDK: the `String` class, the `System` class, the `out`
+field and the `println` method. The reference for the `message` identifier (created by it second occurrence: 
+`println(message)`) can be resolved to the `message` parameter, declared by `String message` in the method header.
 
-Note that `String message` is not a reference, and cannot be resolved. Instead, it's a _declaration_. It does not
-refer to any name defined elsewhere; instead, it defines a name by itself.
+Note that `message` identifier, declared by `String message`, is not a reference, and cannot be resolved. Instead, it's a 
+_declaration_. It does not refer to any name defined elsewhere; instead, it defines a name by itself.
 
 A reference is an instance of a class implementing the [`PsiReference`](upsource:///platform/core-api/src/com/intellij/psi/PsiReference.java) interface.
 Note that references are distinct from PSI elements. You can obtain the references created by a PSI element by calling
 `PsiElement.getReferences()`, and can go back from a reference to an element by calling `PsiReference.getElement()`.
 
 To *resolve* the reference - to locate the declaration being referenced - you call `PsiReference.resolve()`. It's very
-important to understand the difference between the `getElement()` and `resolve()`. The former method returns the _source_
-of a reference, while the latter returns its _target_. In the example above, for the `message` reference, `getElement()`
-will return the `message` identifier on the second line of the snippet, and `resolve()` will return the `message` identifier
-on the first line (inside the parameter list).
+important to understand the difference between the `getElement()` and `resolve()` methods at `PsiReference` interface. 
+The former method returns the _source_ of a reference, while the latter returns its _target_. In the example above, 
+for the `message` reference, `getElement()` will return the `message` identifier at `println(message)`, and 
+`resolve()` will return the `message` identifier at `String message`.
 
 The process of resolving references is distinct from parsing, and is not performed at the same time. Moreover, it is
 not always successful. If the code currently open in the IDE does not compile, or in other situations, it's normal

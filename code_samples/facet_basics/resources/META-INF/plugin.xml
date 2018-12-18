@@ -2,35 +2,14 @@
   <id>com.intellij.tutorials.facet</id>
   <name>Facet Demo</name>
   <version>1.0</version>
-  <vendor email="support@jetbrains.com" url="http://www.yourcompany.com">JetBrains</vendor>
+  <vendor>JetBrains</vendor>
 
-  <description>Basic example of working with facets</description>
+  <description>Basic example of adding support for custom Facets</description>
 
-  <change-notes>Initial commit</change-notes>
-
-  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
   <idea-version since-build="131"/>
-
-  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
-       on how to target different products -->
-  <!-- uncomment to enable plugin in all products
-  <depends>com.intellij.modules.lang</depends>
-  -->
 
   <extensions defaultExtensionNs="com.intellij">
     <facetType implementation="com.intellij.tutorials.facet.DemoFacetType"/>
   </extensions>
-
-  <application-components>
-    <!-- Add your application components here -->
-  </application-components>
-
-  <project-components>
-    <!-- Add your project components here -->
-  </project-components>
-
-  <actions>
-    <!-- Add your actions here -->
-  </actions>
 
 </idea-plugin>

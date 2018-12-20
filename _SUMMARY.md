@@ -252,6 +252,7 @@
 * [IntelliJ Plugin Verifier](https://github.com/JetBrains/intellij-plugin-verifier)
 * [IntelliJ Plugin Developers Gitter](https://gitter.im/IntelliJ-Plugin-Developers/Lobby)
 * [Community SDK Forum](https://intellij-support.jetbrains.com/hc/en-us/community/topics/200366979-IntelliJ-IDEA-Open-API-and-Plugin-Development)
+* [Open Source Plugins](https://plugins.jetbrains.com/search?correctionAllowed=true&pr=&orderBy=name&search=&should_have_source=true)
 * [Kotlin Reference](https://kotlinlang.org)
 
 ## Appendix II - Breaking API Changes

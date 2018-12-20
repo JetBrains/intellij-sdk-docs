@@ -19,4 +19,4 @@ See the note on how to document new problems on the main page reference_guide/ap
 
 |  Change | How to deal with it |
 |---------|---------------------|
-|  ./.    |  ./. |
+| `kotlinx.coroutines.experimental` package removed | Bundled Kotlin library is updated to 1.3 so the plugins must to [migrate](https://blog.jetbrains.com/kotlin/2018/09/kotlin-1-3-rc-is-here-migrate-your-coroutines/) to the stable versions of coroutines |

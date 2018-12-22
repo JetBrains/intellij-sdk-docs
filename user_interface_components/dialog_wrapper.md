@@ -70,3 +70,50 @@ Otherwise, you need to return a
 class which encapsulates an error message and an optional component associated with the invalid data.
 If you specify a component, an error icon will be displayed next to it, and it will be focused when the user tries to invoke the `OK` action.
 
+## Example
+
+Simple definition of a
+[DialogWrapper](upsource:///platform/platform-api/src/com/intellij/openapi/ui/DialogWrapper.java):
+
+```java
+package com.example.plugin.component;
+
+import com.intellij.openapi.ui.DialogWrapper;
+import org.jetbrains.annotations.Nullable;
+
+import javax.swing.*;
+import java.awt.*;
+
+public class SampleDialogWrapper extends DialogWrapper {
+
+    public SampleDialogWrapper() {
+        super(true); // use current window as parent
+        super.init();
+        super.setTitle("Test DialogWrapper");
+    }
+
+    @Nullable
+    @Override
+    protected JComponent createCenterPanel() {
+        JPanel dialogPanel = new JPanel(new BorderLayout());
+
+        JLabel label = new JLabel("testing");
+        dialogPanel.add(label);
+
+        return dialogPanel;
+    }
+}
+```
+
+Usage of 
+[DialogWrapper](upsource:///platform/platform-api/src/com/intellij/openapi/ui/DialogWrapper.java):
+
+```java
+JButton testButton = new JButton();
+testButton.addActionListener(actionEvent -> {
+  boolean result = new SampleDialogWrapper().showAndGet();
+  if(result) {
+    // add stuff
+  }
+});
+```

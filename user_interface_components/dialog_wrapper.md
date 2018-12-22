@@ -113,7 +113,7 @@ JButton testButton = new JButton();
 testButton.addActionListener(actionEvent -> {
   boolean result = new SampleDialogWrapper().showAndGet();
   if(result) {
-    // add stuff
+    // user pressed ok
   }
 });
 ```

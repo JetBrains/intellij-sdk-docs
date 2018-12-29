@@ -88,8 +88,8 @@ public class SampleDialogWrapper extends DialogWrapper {
 
     public SampleDialogWrapper() {
         super(true); // use current window as parent
-        super.init();
-        super.setTitle("Test DialogWrapper");
+        init();
+        setTitle("Test DialogWrapper");
     }
 
     @Nullable
@@ -98,7 +98,8 @@ public class SampleDialogWrapper extends DialogWrapper {
         JPanel dialogPanel = new JPanel(new BorderLayout());
 
         JLabel label = new JLabel("testing");
-        dialogPanel.add(label);
+        label.setPreferredSize(new Dimension(100, 100));
+        dialogPanel.add(label, BorderLayout.CENTER);
 
         return dialogPanel;
     }

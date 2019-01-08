@@ -65,8 +65,8 @@ When you run `gradle runIdea` with a build script containing the above snippet, 
 
 For best results, plugin developers should build against a fixed version, rather than `LATEST-TRUNK-SNAPSHOT`. For information about available versions of the IntelliJ Platform, you may consult the following URLs for the most recent updates:
 
-* https://www.jetbrains.com/intellij-repository/releases
-* https://www.jetbrains.com/intellij-repository/snapshots
+* Releases: [https://www.jetbrains.com/intellij-repository/releases](https://www.jetbrains.com/intellij-repository/releases)
+* Snapshots: [https://www.jetbrains.com/intellij-repository/snapshots](https://www.jetbrains.com/intellij-repository/snapshots)
 
 ### 2.3 Deploy your plugin
 

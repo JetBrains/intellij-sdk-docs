@@ -4,7 +4,7 @@ title: Upload Plugin API
  
 Please note that maximum allowed plugin size is *200 MB*.
 
-You should create a [**hubPermanentToken**](https://www.jetbrains.com/help/hub/Manage-Permanent-Tokens.html) and specify Plugin Repository in Scope.
+You should create a [**hubPermanentToken**](https://www.jetbrains.com/help/hub/Manage-Permanent-Tokens.html) at [JetBrains Hub](https://hub.jetbrains.com/users/me?tab=authentification) and specify Plugin Repository in Scope.
 
    ![Hub Token](img/hub_token.png)
 

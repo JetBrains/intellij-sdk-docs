@@ -214,6 +214,8 @@ Syntax highlighting can be applied by specifying the language after the first se
 
 Here is the list of [supported languages](https://github.com/jneen/rouge/wiki/List-of-supported-languages-and-lexers) (and also [Kotlin](https://kotlinlang.org), of course).
 
+Please keep code samples concise and avoid any unnecessary "surrounding" code or import statements. 
+
 <!-- Not currently supported by rouge, or by the site's CSS
 
 The site is also configured to highlight a range of files in the source code, by specifying `{start-end}` which is the start and end line of the highlighting:

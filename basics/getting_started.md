@@ -5,7 +5,7 @@ title: Creating Your First Plugin
 This documentation section will help you get started with developing plugins for the *IntelliJ Platform*. You can use either [IntelliJ IDEA Community Edition](https://www.jetbrains.com/idea/download/) or [IntelliJ IDEA Ultimate](https://www.jetbrains.com/idea/download/) as your IDE.  Both include the complete set of plugin development tools. To become more familiar with *IntelliJ IDEA*, please refer to the [IntelliJ IDEA Web Help](https://www.jetbrains.com/idea/help/).
 
 There are two possible workflows for building IntelliJ IDEA plugins. The recommended workflow for new projects is
-to [use Gradle](/tutorials/build_system.md). For existing projects, the old workflow [using Plugin DevKit](basics/getting_started/using_dev_kit.md) is still supported.
+to [use Gradle](/tutorials/build_system.md). For existing projects, the old workflow [using Plugin DevKit](getting_started/using_dev_kit.md) is still supported.
 
 In this section:
 

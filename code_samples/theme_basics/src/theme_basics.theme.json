@@ -1,0 +1,44 @@
+{
+  "name": "Theme Basics",
+  "dark": false,
+  "author": "IntelliJ Platform SDK",
+
+  "ui": {
+    "*": {
+      "background": "#FFFFFF",
+      "foreground": "#0C5800",
+      "selectionBackground": "#AED7E3",
+      "selectionForeground": "#032294"
+    }
+  },
+
+  "background": {
+    "image": "/austria.png",
+    "transparency": 10,
+    "fill": "scale",
+    "anchor": "center"
+  },
+
+  "icons": {
+    "/actions/compile.svg": "/cha-ching.svg",
+    "/actions/execute.svg": "/run.svg",
+
+    "ColorPalette": {
+      "Actions.Blue": "#5BC0DE",
+      "Actions.Green": "#96CEB4",
+      "Actions.Red": "#D9534F",
+      "Actions.Yellow": "#FFEEAD",
+      "Actions.Grey": "#354E5A",
+
+      "Objects.Blue": "#5BC0DE",
+      "Objects.Green": "#96CEB4",
+      "Objects.Red": "#D9534F",
+      "Objects.Yellow": "#FFEEAD",
+      "Objects.Purple": "#BA7FBA",
+      "Objects.Pink": "#FFC5E8",
+      "Objects.Grey": "#4694AE",
+      "Objects.BlackText": "#0C5800"
+    }
+  }
+
+}

@@ -22,4 +22,5 @@ Please see [CONTRIBUTING.md](CONTRIBUTING.md) for details on how to host the doc
 
 Please see [Getting Help](/intro/getting_help.md) if you encounter bugs in this guide or require help with missing content. 
 
-
+## Updates
+See [Recently Updated](recently_updated.md) for latest changes. Follow [JBPlatform](https://twitter.com/JBPlatform/) on Twitter and visit [JetBrains Platform Blog](https://blog.jetbrains.com/platform/) for latest announcements.

@@ -17,7 +17,9 @@ Welcome to the _IntelliJ Platform_ SDK. This is the primary source of documentat
 
 ## Open Source
 
-This guide is Open Source, and licensed under Apache 2.0. The source (as Markdown) is [hosted on GitHub](https://github.com/JetBrains/intellij-sdk-docs). Issues and features are tracked in [YouTrack](https://youtrack.jetbrains.com/issues/IJSDK) - if you find a bug or require help with missing content, please [raise an issue](https://youtrack.jetbrains.com/newIssue?project=IJSDK&clearDraft=true&c=). Of course, pull requests to the GitHub repository are also gratefully accepted.
-
+This guide is Open Source, and licensed under Apache 2.0. The source (as Markdown) is [hosted on GitHub](https://github.com/JetBrains/intellij-sdk-docs). 
 Please see [CONTRIBUTING.md](CONTRIBUTING.md) for details on how to host the docs locally and contribute.
+
+Please see [Getting Help](/intro/getting_help.md) if you encounter bugs in this guide or require help with missing content. 
+
 

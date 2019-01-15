@@ -1,5 +1,7 @@
 ---
 title: PhpStorm Plugin Development
+redirect_from:
+  - /phpstorm/phpstorm.html
 ---
 
 ### Development and Testing Tools

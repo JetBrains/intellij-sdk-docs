@@ -213,10 +213,10 @@
 * [IntelliJ IDEA](products/idea.md)
     * [Tomcat Integration](reference_guide/tomcat_integration.md)
     * [Spring API](reference_guide/frameworks_and_external_apis/spring_api.md)
-* [PhpStorm](phpstorm/phpstorm.md)
-    * [Setting-up the Environment](phpstorm/setting_up_environment.md)
-    * [PHP Open API](phpstorm/php_open_api.md)
-    * [Existing Third Party Plugins](phpstorm/existing_plugins.md)
+* [PhpStorm](products/phpstorm/phpstorm.md)
+    * [Setting-up the Environment](products/phpstorm/setting_up_environment.md)
+    * [PHP Open API](products/phpstorm/php_open_api.md)
+    * [Existing Third Party Plugins](products/phpstorm/existing_plugins.md)
 * [PyCharm](products/pycharm.md)
 * DataGrip
 * Android Studio

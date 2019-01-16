@@ -48,7 +48,7 @@ This guide is split into several parts, similar to a text book. Each part builds
 
     Documents the API for the [Plugin Repository](https://plugins.jetbrains.com) service that JetBrains maintains and is used to host plugins. It is not necessary to know this API in order to publish plugins - plugins can be uploaded manually, or via the Gradle IntelliJ Plugin.
 
-* [**Appendix I - Resources**](/resources.md)
+* [**Appendix I - Resources**](/appendix/resources/useful_links.md)
 
     Links to useful resources, such as the IntelliJ Community Edition source code, the Plugin Development forum and the Plugin Developers Gitter room.
 

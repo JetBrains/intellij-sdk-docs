@@ -43,3 +43,13 @@ Curl command example:
 ```
 curl -i --header "Authorization: Bearer perm:qwertyasdfghzxcvb" -F xmlId=ro.redeul.google.go -F file=@Go-0.11.1197.zip -F channel=nightly https://plugins.jetbrains.com/plugin/uploadPlugin
 ```
+
+## Using Gradle with the `gradle-intellij-plugin`
+
+Upload your plugin directly with the `plublishPlugin` task using the token. Create a file `gradle.properties` that you keep local and don't share in your public repository. Add the following content
+
+```
+publishPlugin.token="yourTokenHere"
+```
+
+The `gradle publishPlugin` will use the token for authentication and you can upload your plugin to the JetBrains plugin repository.

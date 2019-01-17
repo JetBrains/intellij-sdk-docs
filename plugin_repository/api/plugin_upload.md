@@ -52,4 +52,13 @@ Upload your plugin directly with the `publishPlugin` task using the token. Creat
 publishPlugin.token="yourTokenHere"
 ```
 
-The `gradle publishPlugin` task will use the token for authentication and you can upload your plugin to the JetBrains plugin repository.
+Add the following to `build.gradle` to use the token-value
+
+```
+if (project.file('gradle.properties').exists()) {
+    apply from: "gradle.properties"
+}
+```
+
+
+The `gradle publishPlugin` task will use the token for authentication if you run it locally on your machine and you can upload your plugin to the JetBrains plugin repository.

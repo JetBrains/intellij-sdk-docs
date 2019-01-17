@@ -20,7 +20,7 @@ This FAQ is a topical index of questions that have been asked (and answered) on 
 *  [Where do I get the list of built-in action IDs?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206126699-List-of-built-in-action-ID-s-)
 
 ## Accessing and Modifying the Source Code
-*  [PSI Architectural Overview](https://www.jetbrains.org/intellij/sdk/docs/basics/architectural_overview/psi.html)
+*  [PSI Architectural Overview](/basics/architectural_overview/psi.md)
 *  [How do I find all subclasses of a class?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206791895-finding-all-derived-class-given-parent-class)
 *  [How do I find all anonymous classes created in a class?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206792205-How-to-find-anonymous-classes-in-PsiClass-)
 *  [How do I calculate the value of a string literal token?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206139829-How-to-evaluate-the-value-of-PsiJavaToken-of-STRING-LITERAL-type)
@@ -37,7 +37,7 @@ This FAQ is a topical index of questions that have been asked (and answered) on 
 *  [How do I find the source file given the path to a .class file?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206800595-How-to-find-the-source-for-a-class-file)
 *  [How do I find classes with the specified non-qualified name?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206146759-How-to-resolve-unqualified-name-to-possible-PsiClasses-)
 *  [How do I find the module in which a class is located?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206103859-How-to-get-Module-from-PsiClass-)
-* [PSI Cookbook](http://www.jetbrains.org/intellij/sdk/docs/basics/psi_cookbook.html)
+*  [PSI Cookbook](/basics/psi_cookbook.md)
 
 ## Working with XML and XML DOM
 *  [How do I change the value of an XML attribute through the PSI?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206139639-Change-xml-attribute-value)

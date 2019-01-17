@@ -76,14 +76,6 @@ Simple definition of a
 [DialogWrapper](upsource:///platform/platform-api/src/com/intellij/openapi/ui/DialogWrapper.java):
 
 ```java
-package com.example.plugin.component;
-
-import com.intellij.openapi.ui.DialogWrapper;
-import org.jetbrains.annotations.Nullable;
-
-import javax.swing.*;
-import java.awt.*;
-
 public class SampleDialogWrapper extends DialogWrapper {
 
     public SampleDialogWrapper() {

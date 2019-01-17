@@ -9,13 +9,6 @@ This FAQ is a topical index of questions that have been asked (and answered) on 
 ## Open-Source Plugins
 *  [How do I compile the Scala plugin?](https://github.com/jetbrains/intellij-scala#setting-up-the-project)
 
-## Version Differences
-*  [How do I replace my usage of Project.getProjectFile() in 7.0?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206139019-Method-will-cease-but-how-to-find-what-to-use-instead-)
-*  [How do I replace my usage of DataConstants with DataKeys in 7.0?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206138959-DataKey-howto-)
-*  [How do I replace my usage of ToolWindowManager.registerToolWindow() in 7.0?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206791795-ToolWindowmanager-registerToolWindow-depricated)
-*  [How do I replace my usage of PsiSearchHelper.findReferences() in 7.0?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206139439-Replacement-for-PsiSearchHelper-deprecated-findReferences-method-)
-*  [How do I replace my usage of DelayedFileStatusProvider in 6.0?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206144019-com-intellij-openapi-vcs-DelayedFileStatusProvider-disapeared-in-5218)
-
 ## Action System
 *  [How do I trigger actions programmatically?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206130119-Triggering-AnAction-instances-)
 *  [How do I add a main menu item?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206750335-Add-new-Main-menu-option-for-plugin)

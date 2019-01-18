@@ -14,9 +14,9 @@ public void hello(String message) {
 }
 ```
 
-This simple code fragment contains four references. The references created by the identifiers `System`, `out` and
-`println` can be resolved to the corresponding declarations in the JDK: the `System` class, the `out` field and the
-`println` method. The reference created by the second occurrence of the `message` identifier can be resolved to the
+This simple code fragment contains five references. The references created by the identifiers `String`, `System`, `out` and
+`println` can be resolved to the corresponding declarations in the JDK: the `String` and `System` classes, the `out` field and the
+`println` method. The reference created by the second occurrence of the `message` identifier in `println(message)` can be resolved to the
 `message` parameter, declared by `String message` in the method header.
 
 Note that `String message` is not a reference, and cannot be resolved. Instead, it's a _declaration_. It does not
@@ -27,7 +27,7 @@ Note that references are distinct from PSI elements. You can obtain the referenc
 `PsiElement.getReferences()`, and can go back from a reference to an element by calling `PsiReference.getElement()`.
 
 To *resolve* the reference - to locate the declaration being referenced - you call `PsiReference.resolve()`. It's very
-important to understand the difference between the `getElement()` and `resolve()`. The former method returns the _source_
+important to understand the difference between `PsiReference.getElement()` and `PsiReference.resolve()`. The former method returns the _source_
 of a reference, while the latter returns its _target_. In the example above, for the `message` reference, `getElement()`
 will return the `message` identifier on the second line of the snippet, and `resolve()` will return the `message` identifier
 on the first line (inside the parameter list).

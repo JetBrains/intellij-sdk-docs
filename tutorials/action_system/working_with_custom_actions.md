@@ -80,7 +80,7 @@ This declaration is adequate, but as we'll see in the next section there are mor
 ### 1.4. Setting attributes manually
 
 You can configure additional attributes of the action by adding them to the **New Action** form or by editing its registration in the plugin.xml file.
-Please refer to the [Action System documentation](/basics/action_system.html#registering-actions) for the full list
+Please refer to the [Action System documentation](../../basics/action_system.md#registering-actions) for the full list
 of supported attributes.
 
 The `<action>` declaration for `SimplePopDialogAction` in the register_actions 

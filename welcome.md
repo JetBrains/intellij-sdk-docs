@@ -4,6 +4,8 @@ redirect_from:
   - /index.html
 ---
 
+[![official JetBrains project](http://jb.gg/badges/official-flat-square.svg)](https://confluence.jetbrains.com/display/ALL/JetBrains+on+GitHub)
+
 Welcome to the _IntelliJ Platform_ SDK. This is the primary source of documentation for extending the _IntelliJ Platform_, by creating plugins, custom language support or building a custom IDE.
 
 ## Getting Started

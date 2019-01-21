@@ -15,7 +15,7 @@ The following links represent useful resources for working with the _IntelliJ Pl
 
 ### Tooling
 * [IDE Settings, Caches, Logs, and Plugins](https://intellij-support.jetbrains.com/hc/en-us/articles/206544519-Directories-used-by-the-IDE-to-store-settings-caches-plugins-and-logs)
-* [IntelliJ Platform Artifacts Repository](reference_guide/intellij_artifacts.md)
+* [IntelliJ Platform Artifacts Repository](/reference_guide/intellij_artifacts.md)
 * [Gradle Plugin for Grammar-Kit](https://github.com/hurricup/gradle-grammar-kit-plugin)
 * [Gradle IntelliJ Plugin](https://github.com/JetBrains/gradle-intellij-plugin)
 * [IntelliJ Plugin Verifier](https://github.com/JetBrains/intellij-plugin-verifier)

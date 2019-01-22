@@ -1,9 +1,6 @@
 ---
-title: Custom UI Themes
+title: Creating Custom UI Themes
 ---
-
-Custom UI Themes give designers control of the appearance of built-in IntelliJ IDEA UI elements. 
-Custom UI Themes are distinct from [creating new UI elements](/user_interface_components/user_interface_components.md) for a plugin. 
 
 Creating a custom UI Theme is a process of choosing a base IDE Theme (_Light_ or _Darcula_,) then changing aspects of the base Theme definition. 
 Custom UI Themes can:
@@ -44,7 +41,7 @@ Creating a UI Theme follows this general sequence:
 A UI Theme is added to an IntelliJ Platform plugin using the DevKit UI Theme Wizard.
 
 ### Creating a UI Theme with the DevKit Theme Wizard
-The DevKit Wizard is part of the DevKit plugin, which is bundled and enabled in IntelliJ IDEA. 
+The DevKit Wizard is part of the DevKit plugin, which is bundled with IntelliJ IDEA. 
 While a plugin project is open in IntelliJ IDEA, select the _**New | Plugin DevKit | Theme**_ action. 
 This Wizard can be used for both DevKit and Gradle-based plugins.
 

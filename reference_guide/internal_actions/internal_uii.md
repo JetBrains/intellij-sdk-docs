@@ -11,15 +11,13 @@ If the menu item **Tools \| Internal Actions \| UI \| UI Inspector** is not avai
 Before using the _UI Inspector_, it must be enabled by selecting the menu item **Tools \| Internal Actions \| UI \| UI Inspector**.
 The enabled state of the _UI Inspector_ is modal; it remains enabled until it is disabled by selecting the _UI Inspector_ menu item again. 
 
-When enabled, the _UI Inspector_ menu entry displays a check mark as shown below:
-
-![Enabled UI Inspector Menu](img/internal_uii_menu.png)
+When enabled, the _UI Inspector_ menu entry displays a check mark.
 
 ## Using the UI Inspector
 While enabled, centering the cursor on a UI element and pressing _control-alt_ when _clicking_ the mouse reveals the internal description of the UI element.
 
 For example, to get information about the build (hammer) icon on the toolbar, put the cursor on the icon and press _control-alt_ while clicking the mouse.
-As shown below:
+As shown below, the _UI Inspector_ displays:
 * The icon has the internal path `Allcons.Actions.Compile`.
 * The `foreground` and `background` colors for the icon are also displayed.
 

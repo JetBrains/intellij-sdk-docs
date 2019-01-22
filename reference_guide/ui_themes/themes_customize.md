@@ -13,7 +13,7 @@ Colors are defined by six-digit RGB or eight-digit RGBA hexadecimal notation.
 
 ### UI Theme Reference Implementations
 When learning new syntax, it is often useful to have some existing implementations for reference.
-For example, refer to the [Theme description file](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-resources/src/themes/HighContrast.theme.json) for the IntelliJ IDEA _High Contrast_ Theme.
+For example, refer to the [Theme description file](upsource:///platform/platform-resources/src/themes/HighContrast.theme.json) for the IntelliJ IDEA _High Contrast_ Theme.
 
 ## Customizing Icons
 UI themes can customize the color of default IntelliJ IDEA UI icons, or substitute custom icons for the default ones. 
@@ -175,14 +175,17 @@ In this example the customized border supersedes the default definition and
 any global color override.
 
 ## Finding Attribute Keys for UI Controls
-There are hundreds of UI control `element.property` keys defined in the IntelliJ IDEA UI. 
-Unfortunately, there isn't autocomplete functionality in the IDE Editor to assist programmers. 
+There are hundreds of UI control `element.property` keys defined in the IntelliJ Platform UI. 
 Some keys and strategies for applying them can be gleaned from the [UI Theme reference implementations](#UI-Theme-Reference-Implementations). 
-
 For a general search, here some suggested methods for locating UI control keys.
 
+### Finding a UI Control Key Using Code Completion in the Editor
+The preferred method of finding UI control keys is to use the code completion feature in the IntelliJ IDEA editor.
+New entries in the `"ui": {}` section will invoke the code completion popup, as shown below:
+![UI Control Key Code Completion](img/uit_control_complete.png)
+
 ### Finding a UI Control Key in the Defaults File
-This method is based on searching the [UiDefaultsHardcodedKeys](https://github.com/JetBrains/intellij-community/blob/master/plugins/devkit/devkit-core/src/completion/UiDefaultsHardcodedKeys.java) file.
+This method is based on searching the [UiDefaultsHardcodedKeys](upsource:///plugins/devkit/devkit-core/src/completion/UiDefaultsHardcodedKeys.java) file.
 Compound keys are listed in the file, and are periodically updated.
 
 ### Finding a UI Control Key using Laf Defaults UI

@@ -11,8 +11,8 @@ If the menu item **Tools \| Internal Actions** is not available in IntelliJ IDEA
 The _LaF Defaults_ window is opened by selecting the menu item **Tools \| Internal Actions \| UI \| LaF Defaults**.
 
 The _LaF Defaults_ window has two columns representing key-value pairs for UI Controls: 
-* The _Name_ column contains the UI Control `key` for each IntelliJ IDEA UI element available at runtime.
-* The _Value_ column contains the UI Control color `value` for each IntelliJ IDEA UI element. 
+* The _Name_ column contains the UI Control `key` for each IntelliJ Platform UI element available at runtime.
+* The _Value_ column contains the UI Control color `value` for each IntelliJ Platform UI element. 
 
 ## Using the the LaF Panel
 

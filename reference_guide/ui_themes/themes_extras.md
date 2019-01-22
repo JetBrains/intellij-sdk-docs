@@ -1,16 +1,16 @@
 ---
-title: Customizing UI Themes - Editor Schemes and Background Images
+title: UI Themes - Editor Schemes and Background Images
 ---
 
 UI Themes can also provide custom color and font settings, as well as custom images for display in the IntelliJ IDEA application window.
  
 ## Adding a Custom Editor Scheme
-IntelliJ IDEA users can set preferences to configure the colors and fonts used in the Editor. 
+IntelliJ IDE users can set preferences to configure the colors and fonts used in the Editor. 
 These custom color and font settings are called _color schemes_, and can be exported and shared.
 
 Use the following procedure to create a color scheme for a UI Theme. 
 If needed refer to the [Configuring Colors and Fonts](https://www.jetbrains.com/help/idea/configuring-colors-and-fonts.html) section of IntelliJ IDEA help:
-* Create the desired custom color scheme using the IntelliJ IDEA preferences.
+* Create the desired custom color scheme using the IDE preferences.
 * Export the color scheme. Name the file for the custom scheme.
 * Once exported, change the file extension from `icls` to `xml`. 
 
@@ -32,12 +32,12 @@ The example below adds an editor scheme named "Lightning" to the _Theme Basics_ 
 ```
 
 ## Adding a Custom Background Image
-IntelliJ IDEA supports setting an image as a background in the application window. 
+The IDE supports setting an image as a background in the application window. 
 Users can do this manually in [Preferences](https://www.jetbrains.com/help/idea/setting-background-image.html).
 
 UI Themes support specifying a background image as a key-value pair in the `"background": {}` section of a Theme description file:
 * The `image` key uses the file name of the image as the value.
-The background image should be in PNG format, and placed in the UI Theme plugin project's resources folder. 
+The background image should placed in the UI Theme plugin project's resources folder. 
 * The `transparency` key uses a `value` of 1-100. 
 A `value` of 100 is opaque.
 * The `fill` key uses a value of `scale`, meaning to expand the image to fill the space as the window gets resized.

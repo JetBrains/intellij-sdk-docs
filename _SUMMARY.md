@@ -8,7 +8,6 @@
     * [Key Topics](intro/key_topics.md)
     * [Contributing](CONTRIBUTING.md)
 * [Getting Help](intro/getting_help.md)
-* [Recently Updated](recently_updated.md)
 
 ## Part I - Plugins
 * [Introduction](basics.md)

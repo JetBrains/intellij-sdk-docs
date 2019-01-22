@@ -80,10 +80,11 @@ An icon replacement is described within the `icon {}` section of a Theme descrip
 Note that icon replacement key-value pairs appear outside of the `ColorPalette` section. 
 
 For icon substitutions, the `key` is the path to the default icon image.
-This path is derived from the `AllIcons.[Group].[IconName]` icon section reported by the [UI Inspector](/resources.md).  
+This path is derived from the `AllIcons.[Group].[IconName]` path in icon section reported by the [UI Inspector](/reference_guide/internal_actions/internal_uii.md).  
 
-For example, to replace the _Build_ (hammer) icon in the toolbar with one resembling a factory, the `key` is `/actions/compile.svg`. 
-The `value` is the file name of the replacement icon, located in the `resources` folder of the plugin project:
+For example, the _Build_ (hammer) icon in the toolbar has the path `Allcons.Actions.Compile` as reported by the UI Inspector. 
+Therefor the `key` for the _Build_ icon is `/actions/compile.svg`. 
+The `value` is the file name of the replacement icon, located in the `resources` folder of the UI Theme plugin project:
 ```json
 {
 "icons": {
@@ -185,5 +186,5 @@ This method is based on searching the [UiDefaultsHardcodedKeys](https://github.c
 Compound keys are listed in the file, and are periodically updated.
 
 ### Finding a UI Control Key using Laf Defaults UI
-Using the [Laf Defaults](/resources.md) inspector, enter the `element` portion of the key. 
+Using the [Laf Defaults](/reference_guide/internal_actions/internal_ui_lafd.md) inspector, enter the `element` portion of the key. 
 The Laf Defaults inspector will prompt with a list of UI Control keys and their default color.

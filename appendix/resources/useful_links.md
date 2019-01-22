@@ -19,6 +19,7 @@ The following links represent useful resources for working with the _IntelliJ Pl
 * [Gradle Plugin for Grammar-Kit](https://github.com/hurricup/gradle-grammar-kit-plugin)
 * [Gradle IntelliJ Plugin](https://github.com/JetBrains/gradle-intellij-plugin)
 * [IntelliJ Plugin Verifier](https://github.com/JetBrains/intellij-plugin-verifier)
+* [Internal Actions Menu](/reference_guide/internal_actions/internal_actions_intro.md)
 
 ### Help
 * [Community SDK Forum](https://intellij-support.jetbrains.com/hc/en-us/community/topics/200366979-IntelliJ-IDEA-Open-API-and-Plugin-Development)

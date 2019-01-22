@@ -1,5 +1,7 @@
 ---
 title: Setting-up the Environment for PhpStorm Plugin Development
+redirect_from:
+  - /phpstorm/setting_up_environment.html
 ---
 
 ### General information

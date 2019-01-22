@@ -215,10 +215,10 @@
 * [IntelliJ IDEA](products/idea.md)
     * [Tomcat Integration](reference_guide/tomcat_integration.md)
     * [Spring API](reference_guide/frameworks_and_external_apis/spring_api.md)
-* [PhpStorm](phpstorm/phpstorm.md)
-    * [Setting-up the Environment](phpstorm/setting_up_environment.md)
-    * [PHP Open API](phpstorm/php_open_api.md)
-    * [Existing Third Party Plugins](phpstorm/existing_plugins.md)
+* [PhpStorm](products/phpstorm/phpstorm.md)
+    * [Setting-up the Environment](products/phpstorm/setting_up_environment.md)
+    * [PHP Open API](products/phpstorm/php_open_api.md)
+    * [Existing Third Party Plugins](products/phpstorm/existing_plugins.md)
 * [PyCharm](products/pycharm.md)
 * DataGrip
 * Android Studio
@@ -243,19 +243,7 @@
 
 ## Appendix I - Resources
 
-* [Introduction](resources.md)
-* [IntelliJ Community Edition on GitHub](https://github.com/JetBrains/intellij-community)
-* [IDE Settings, Caches, Logs, and Plugins](https://intellij-support.jetbrains.com/hc/en-us/articles/206544519-Directories-used-by-the-IDE-to-store-settings-caches-plugins-and-logs)
-* [IntelliJ Plugins](https://github.com/JetBrains/intellij-plugins)
-* [IntelliJ Platform Artifacts Repository](reference_guide/intellij_artifacts.md)
-* [IntelliJ Scala Plugin](https://github.com/JetBrains/intellij-scala)
-* [Gradle IntelliJ Plugin](https://github.com/JetBrains/gradle-intellij-plugin)
-* [IntelliJ SDK Documentation](https://github.com/JetBrains/intellij-sdk-docs)
-* [IntelliJ Plugin Verifier](https://github.com/JetBrains/intellij-plugin-verifier)
-* [IntelliJ Plugin Developers Gitter](https://gitter.im/IntelliJ-Plugin-Developers/Lobby)
-* [Community SDK Forum](https://intellij-support.jetbrains.com/hc/en-us/community/topics/200366979-IntelliJ-IDEA-Open-API-and-Plugin-Development)
-* [Open Source Plugins](https://plugins.jetbrains.com/search?correctionAllowed=true&pr=&orderBy=name&search=&should_have_source=true)
-* [Kotlin Reference](https://kotlinlang.org)
+* [Useful Links](appendix/resources/useful_links.md)
 
 ## Appendix II - Breaking API Changes
 

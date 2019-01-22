@@ -30,13 +30,13 @@ UI Themes have several components:
 
 ## Custom UI Theme Workflow
 Creating a UI Theme follows this general sequence:
-* [Start with a Plugin Project](https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/creating_plugin_project.html)
+* [Start with a Plugin Project](/basics/getting_started/creating_plugin_project.md)
 * [Add UI Theme components to the plugin](#creating-a-ui-theme-with-the-devkit-theme-wizard) by using the DevKit UI Theme Wizard.
 * [Customize the UI Theme](themes_customize.md) by adding data objects to the Theme description (JSON) file.
 * [Add an Editor Scheme or Background Image](themes_extras.md) to the plugin.
 * [Build and test](/basics/getting_started/running_and_debugging_a_plugin.md) the UI Theme plugin.
-* [Deploy the UI Theme plugin](https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/deploying_plugin.html)
-* [Publish the UI Theme plugin](https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/publishing_plugin.html) 
+* [Deploy the UI Theme plugin](/basics/getting_started/deploying_plugin.md)
+* [Publish the UI Theme plugin](/basics/getting_started/publishing_plugin.md) 
 
 
 ## Creating Custom UI Themes
@@ -56,7 +56,7 @@ The Wizard then prompts for the name of the new Theme, and the basis for the The
 
 ![DevKit Dialog](img/devkit_wiz_dialog.png)
 
-The name of the new Theme does not have to match the name of the plugin. 
+The best practice is to name the new Theme the same as the name of the plugin. 
 The checkbox indicates the basis for the Theme. 
 Checking _Dark theme_ means basing the custom Theme on _Darcula_. 
 Leaving the box unchecked means basing the custom Theme on the default IntelliJ IDEA _Light_ Theme. 
@@ -89,15 +89,12 @@ This declaration binds the Theme description file to a theme provider extension 
 ```
 
 At this point, the UI Theme `theme_basics` is a valid UI Theme. 
-Its plugin can be built and tested in IntelliJ IDEA, giving the user the opportunity to select _theme_basics_ in the [Theme](https://www.jetbrains.com/help/idea/settings-appearance.html) _Preferences_ dropdown. 
+Its plugin can be built and tested in IntelliJ Platform-based IDEs, giving the user the opportunity to select _theme_basics_ in the [Theme](https://www.jetbrains.com/help/idea/settings-appearance.html) _Preferences_ dropdown. 
 The custom Theme looks exactly like the IntelliJ IDEA default `Light` Theme, but it is a valid custom Theme.
 
 ### Completing the Default UI Theme Description File
 The default UI Theme definition can be directly edited to add or change some of the values for the default keys, if desired:
-* The following values can be changed directly in the Theme (`*.theme.json`) description file:
-  * The value of the `name` key can be independent of the name of the UI Theme (`*.theme.json`) description file. 
-    In the case of the `theme_basics` code sample, it is changed to "Theme Basics".
-  * The value of the `dark` key can be changed to `true`, which would switch the basis of the Theme to _Darcula_ instead of _Light_.
-  * The value of the `author` key, which defaults to an empty string, can be set to a `String` literal. 
-    In the case of the `theme_basics` code sample, it is set to "IntelliJ Platform SDK".
-* The name of the Theme description file, e.g. `theme_basics.theme.json`, can be changed as long as the `path` key of the `<themeProvider>` element (in `plugin.xml`) matches the new file name.
+The following values can be changed directly in the Theme (`*.theme.json`) description file:
+* The value of the `dark` key can be changed to `true`, which would switch the basis of the Theme to _Darcula_ instead of _Light_.
+* The value of the `author` key, which defaults to an empty string, can be set to a `String` literal. 
+In the case of the `theme_basics` code sample, it is set to "IntelliJ Platform SDK".

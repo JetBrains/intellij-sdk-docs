@@ -37,7 +37,7 @@ Users can do this manually in [Preferences](https://www.jetbrains.com/help/idea/
 
 UI Themes support specifying a background image as a key-value pair in the `"background": {}` section of a Theme description file:
 * The `image` key uses the file name of the image as the value.
-The background image must be in PNG format, and placed in the UI Theme plugin project's resources folder. 
+The background image should be in PNG format, and placed in the UI Theme plugin project's resources folder. 
 * The `transparency` key uses a `value` of 1-100. 
 A `value` of 100 is opaque.
 * The `fill` key uses a value of `scale`, meaning to expand the image to fill the space as the window gets resized.

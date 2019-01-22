@@ -1,10 +1,10 @@
 <scheme name="Lightning" version="142" parent_scheme="Default">
   <metaInfo>
-    <property name="created">2019-01-14T16:19:13</property>
+    <property name="created">2019-01-22T02:54:51</property>
     <property name="ide">idea</property>
     <property name="ideVersion">2019.1.0.0</property>
-    <property name="modified">2019-01-14T16:19:38</property>
-    <property name="originalScheme">Lightning Color</property>
+    <property name="modified">2019-01-22T02:55:20</property>
+    <property name="originalScheme">Lightning</property>
   </metaInfo>
   <colors>
     <option name="CARET_ROW_COLOR" value="e8e3cf" />

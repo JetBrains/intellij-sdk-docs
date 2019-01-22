@@ -9,7 +9,7 @@ dependencies (e.g. Kotlin), you need to perform the following steps:
 
 ```kotlin
 intellij {
-        setPlugins("Kotlin", "gradle", "junit")
+        setPlugins("org.jetbrains.kotlin:1.2.30")
 }
 ```
 * If you're using Gradle with a groovy build script to build your plugin,  add the dependency to the `plugins`[^gradleplugin] parameter of the `intellij` block in your build.gradle, for example:

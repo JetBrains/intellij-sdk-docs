@@ -42,8 +42,10 @@ A UI Theme is added to an IntelliJ Platform plugin using the DevKit UI Theme Wiz
 
 ### Creating a UI Theme with the DevKit Theme Wizard
 The DevKit Wizard is part of the DevKit plugin, which is bundled with IntelliJ IDEA. 
-While a plugin project is open in IntelliJ IDEA, select the _**New | Plugin DevKit | Theme**_ action. 
-This Wizard can be used for both DevKit and Gradle-based plugins.
+This Wizard can be used for both DevKit-based and Gradle-based plugins.
+
+While a plugin project is open in IntelliJ IDEA, select the `src` folder in the _Project_ tool window.
+From the main menu, select the _**New | Plugin DevKit | Theme**_ action. 
 
 ![DevKit Wizard Action](img/devkit_wiz_action.png)
 

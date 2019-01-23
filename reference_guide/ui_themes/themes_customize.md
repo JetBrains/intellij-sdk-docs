@@ -105,7 +105,7 @@ A UI control `key` has the compound format `element.property`, where:
 * `element` is the type (label, checkbox, etc.,) of the UI control.
 * `property` is how the color is applied. Examples include `foreground`, `background`, and `errorForeground `.
 
-Note that some UI control keys have more than two parts, for example `Button.intellij.native.borderColor`.
+Note that some UI control keys have more than two parts, for example `Popup.Advertiser.foreground` or `ScrollBar.Mac.Transparent.thumbColor`.
 The full key must be used to customize that specific button control.
 However, for other purposes the first section can be considered the `element`, and the last section considered the `property`.
 
@@ -182,6 +182,7 @@ For a general search, here some suggested methods for locating UI control keys.
 ### Finding a UI Control Key Using Code Completion in the Editor
 The preferred method of finding UI control keys is to use the code completion feature in the IntelliJ IDEA editor.
 New entries in the `"ui": {}` section will invoke the code completion popup, as shown below:
+
 ![UI Control Key Code Completion](img/uit_control_complete.png)
 
 ### Finding a UI Control Key in the Defaults File

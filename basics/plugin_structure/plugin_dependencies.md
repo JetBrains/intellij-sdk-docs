@@ -9,14 +9,14 @@ dependencies (e.g. Kotlin), you need to perform the following steps:
 
 ```kotlin
 intellij {
-        setPlugins("org.jetbrains.kotlin:1.2.30")
+        setPlugins("org.jetbrains.kotlin:1.3.11-release-IJ2018.3-1")
 }
 ```
 * If you're using Gradle with a groovy build script to build your plugin,  add the dependency to the `plugins`[^gradleplugin] parameter of the `intellij` block in your build.gradle, for example:
 
 ```groovy
 intellij {
-    plugins 'org.jetbrains.kotlin:1.2.30'
+    plugins 'org.jetbrains.kotlin:1.3.11-release-IJ2018.3-1'
 }
 ```
 * If you aren't using Gradle, add the jars of the plugin you're depending on to the classpath of your *IntelliJ Platform SDK*.

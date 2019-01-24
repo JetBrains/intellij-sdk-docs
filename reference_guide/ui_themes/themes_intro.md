@@ -2,7 +2,7 @@
 title: Custom UI Themes
 ---
 
-Beginning with the 19.1 release, custom UI Themes are supported by IntelliJ IDEA.
+Beginning with the 2019.1 release, custom UI Themes are supported by IntelliJ IDEA.
 Custom UI Themes give designers control of the appearance of built-in IntelliJ IDEA UI elements. 
 [Creating a new UI element](/user_interface_components/user_interface_components.md) for a plugin is distinctly different than Custom UI Themes. 
 

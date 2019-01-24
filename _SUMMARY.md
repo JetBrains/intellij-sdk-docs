@@ -35,6 +35,7 @@
     * [Plugin Configuration File](basics/plugin_structure/plugin_configuration_file.md)
     * [Plugin Icon](basics/plugin_structure/plugin_icon_file.md)
     * [Plugin Dependencies](basics/plugin_structure/plugin_dependencies.md)
+* [IntelliJ Platform Artifacts Repository](reference_guide/intellij_artifacts.md)
 * [Kotlin for Plugin Developers](tutorials/kotlin.md)
 * [IDE Development Instances](basics/ide_development_instance.md)
 * [Plugin Development FAQ](faq.md)

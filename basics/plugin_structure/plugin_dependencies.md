@@ -5,7 +5,21 @@ title: Plugin Dependencies
 Your plugin may depend on classes from other plugins, either bundled, third-party or your own. In order to express such 
 dependencies (e.g. Kotlin), you need to perform the following steps:
 * If the plugin is not bundled, run the sandbox instance of your target IDE and install the plugin there.
-* Add the jars of the plugin you're depending on to the classpath of your *IntelliJ Platform SDK*.
+* If you are using Gradle with a Kotlin build script to build your plugin, use `setPlugins()`[^gradleplugin] within the `intellij` block, for example:
+
+```kotlin
+intellij {
+        setPlugins("org.jetbrains.kotlin:1.3.11-release-IJ2018.3-1")
+}
+```
+* If you're using Gradle with a groovy build script to build your plugin,  add the dependency to the `plugins`[^gradleplugin] parameter of the `intellij` block in your build.gradle, for example:
+
+```groovy
+intellij {
+    plugins 'org.jetbrains.kotlin:1.3.11-release-IJ2018.3-1'
+}
+```
+* If you aren't using Gradle, add the jars of the plugin you're depending on to the classpath of your *IntelliJ Platform SDK*.
   In order to do that, open the Project Structure dialog, select the SDK you're using, press the + button in the Classpath tab, and
   select the plugin jar file or files.
     * For bundled plugins, the plugin jar files are located in `plugins/<pluginname>` or `plugins/<pluginname>/lib` under the main installation directory.
@@ -16,14 +30,6 @@ dependencies (e.g. Kotlin), you need to perform the following steps:
 ![Adding Plugin to Classpath](img/add_plugin_dependency.png)
 
 > **warning** Do not add the plugin jars as a library: this will fail at runtime because IntelliJ Platform will load two separate copies of the dependency plugin classes.
-
-* If you're using Gradle to build your plugin, then instead of doing the above add the dependency to the `plugins` parameter of the `intellij` block in your build.gradle, for example:
-
-```groovy
-intellij {
-    plugins 'org.jetbrains.kotlin:1.2.30'
-}
-```
 
 * Add a `<depends>` tag to your plugin.xml, adding the ID of the plugin you're depending on as the contents of the tag.
 For example:
@@ -66,3 +72,5 @@ define an annotator for Kotlin:
 </idea-plugin>
 ```
 
+---
+[^gradleplugin]: See the `plugins` attribute [gradle-intellij-plugin: Configuration](https://github.com/JetBrains/gradle-intellij-plugin#configuration) for acceptable values.

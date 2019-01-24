@@ -7,11 +7,8 @@ repository makes artifacts more accessible for plugin authors.
 
 The IntelliJ Platform Artifacts Repository contains:
 * [Releases repository](https://www.jetbrains.com/intellij-repository/releases/) for release and EAP versions.
-* [Snapshots repository](https://www.jetbrains.com/intellij-repository/snapshots/) for nightly successful 
-  builds of each branch.
+* [Snapshots repository](https://www.jetbrains.com/intellij-repository/snapshots/) for EAP candidates and the latest EAP for each branch.
   
-More artifacts will be hosted in the future.
-
 [Dependencies](https://jetbrains.bintray.com/intellij-third-party-dependencies) of individual modules from the IntelliJ
 Platform are hosted at the bintray repository. These artifacts should not be used directly, but a link to this 
 repository should be added to pom.xml/build.gradle files if individual modules from the IntelliJ Platform Artifacts Repository are used.    
@@ -21,14 +18,14 @@ Artifacts in the repositories are utilized by adding information to a project's 
 the [gradle-intellij-plugin](https://github.com/JetBrains/gradle-intellij-plugin) for more information about
 Gradle support. 
 
-There are two types of information needed to use a repository:
+If you want to setup the dependencies manually, there are two types of information needed to use a repository:
 1. Specify the corresponding repository URL for the artifact.
 2. Specify the Maven coordinates for the artifact. 
  
 ### Add the Repository URL 
 The corresponding URL for the desired artifact needs to be added to a Maven or Gradle script:
 * For release or EAP versions, use https://www.jetbrains.com/intellij-repository/releases 
-* For snapshot or EAP snapshots, use https://www.jetbrains.com/intellij-repository/snapshots
+* For EAP candidate snapshots, use https://www.jetbrains.com/intellij-repository/snapshots
 * For dependencies of individual modules from the IntelliJ Platform, use https://jetbrains.bintray.com/intellij-third-party-dependencies 
 
 ### Specify the Artifact
@@ -52,7 +49,6 @@ Describing the desired artifact is done with Maven coordinates:
 For each artifact [at the Repository URLs](#add-the-repository-url) there are multiple versions available. The version can be specified in one of several ways:
 * A branch build is specified as _BRANCH.BUILD[.FIX]_. For example, a branch build such as `141.233`, or a branch build with a fix such as `139.555.1`
 * Release numbers are specified as _MAJOR[.MINOR][.FIX]_. For example `14`, or `14.1`, or `14.1.1`
-* A snapshot of the latest nightly build from a branch is specified as _XXX-SNAPSHOT_. For example `142-SNAPSHOT`
 * A snapshot of a branch from which the next EAP/release build will be produced is specified as _BRANCH-EAP-SNAPSHOT_. For example `141-EAP-SNAPSHOT`
 
 

@@ -243,6 +243,7 @@
 ## Appendix I - Resources
 
 * [Useful Links](appendix/resources/useful_links.md)
+* [Consulting](appendix/resources/consulting.md)
 
 ## Appendix II - Breaking API Changes
 

@@ -16,7 +16,7 @@ Theme plugins should be stand-alone plugins, and not combined with other plugin 
 This approach is the best user experience because it avoids an IDE restart when installing a UI Theme plugin.
 
 UI Themes have several components:
-* A required Theme description (JSON) file in the plugin project's `src` (source code) folder. 
+* A required Theme description (JSON) file in the plugin project's `resources` folder. 
 * A required `themeProvider` declaration in the plugin's `plugin.xml` file, located in the plugin project's `META-INF` folder.
 * An optional Editor Scheme description (XML) file derived from an exported IDE editor scheme. 
   This file is located in the plugin project's `resources` folder.
@@ -44,7 +44,7 @@ A UI Theme is added to an IntelliJ Platform plugin using the DevKit UI Theme Wiz
 The DevKit Wizard is part of the DevKit plugin, which is bundled with IntelliJ IDEA. 
 This Wizard can be used for both DevKit-based and Gradle-based plugins.
 
-While a plugin project is open in IntelliJ IDEA, select the `src` folder in the _Project_ tool window.
+While a plugin project is open in IntelliJ IDEA, select the `resources` folder in the _Project_ tool window.
 From the main menu, select the _**New | Plugin DevKit | Theme**_ action. 
 
 ![DevKit Wizard Action](img/devkit_wiz_action.png)
@@ -61,7 +61,7 @@ Checking _Dark theme_ means basing the custom Theme on _Darcula_.
 Leaving the box unchecked means basing the custom Theme on the default IntelliJ IDEA _Light_ Theme. 
 For the SDK code sample `theme_basics` the box is _unchecked_.
 
-Clicking the _OK_ button creates a default Theme description file named `[themeName].theme.json` in the plugin project's `src` directory. 
+Clicking the _OK_ button creates a default Theme description file named `[themeName].theme.json` in the plugin project's `resources` folder. 
 In this example, the file is named `theme_basics.theme.json`. 
 The content of the default file is a short set of key–value pairs:  
 ```json

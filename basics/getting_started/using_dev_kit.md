@@ -2,8 +2,8 @@
 title: Using DevKit
 ---
 
-Plugin DevKit is an IntelliJ plugin that provides support for developing IntelliJ plugins using IntelliJ IDEA's
-own build system. It provides its own SDK type and a set of actions for building plugins within the IDE.
+_Plugin DevKit_ is a bundled IntelliJ IDEA plugin for developing plugins for the IntelliJ Platform using IntelliJ IDEA's
+own build system. It provides its custom SDK type and a set of actions for building plugins within the IDE.
 
 In this section:
 

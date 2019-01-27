@@ -11,5 +11,6 @@ The following independent companies and individuals provide paid plugin consulti
 | Joachim Ansorg | [www.plugin-dev.com](http://www.plugin-dev.com) | -/- |
 | Daniel Espendiller | [daniel@espendiller.net](daniel@espendiller.net) | -/- |
 | Robert Ekendahl | [www.edaphic.studio](https://www.edaphic.studio) | Custom Language support |
+| Patrick Scheibe | [www.halirutan.de](http://halirutan.de/) | Plugins: [Wolfram Language](https://plugins.jetbrains.com/plugin/7232-wolfram-language), [Key Promoter X](https://plugins.jetbrains.com/plugin/9792-key-promoter-x). Highly active in the [Plugin Developer Chat](https://gitter.im/IntelliJ-Plugin-Developers/Lobby). |
 
 Please [submit a PR or file a YouTrack issue](/intro/getting_help.md) for changes or additions to this list.

@@ -23,7 +23,7 @@ A link to this repository should be added to `pom.xml`/`build.gradle` files when
 IntelliJ Platform module artifacts are utilized by adding information to a project's `build.gradle` file. 
 See the [gradle-intellij-plugin README file](https://github.com/JetBrains/gradle-intellij-plugin) for more information about IntelliJ IDEA Gradle support. 
 
-There are two types of information needed to use a repository:
+If you want to setup the dependencies manually, there are two types of information needed to use a repository:
 1. Specify the corresponding repository URL for the artifact.
 2. Specify the Maven coordinates for the artifact. 
  

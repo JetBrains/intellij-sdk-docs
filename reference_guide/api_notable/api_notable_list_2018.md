@@ -1,0 +1,27 @@
+---
+title: Notable Changes in IntelliJ Platform and Plugins API 2018.*
+---
+
+<style>
+  table {
+    width:100%;
+  }
+  th, tr, td {
+    width:50%;
+  }
+</style>
+
+## Notable Changes in IntelliJ Platform 2018.3
+
+| Change | Description |
+|--------|-------------|
+| ASM Library 7.0 | Updated to 7.0 [Issue](https://youtrack.jetbrains.com/issue/IDEA-191331) |
+| Extendable Registry keys | Plugins can contribute new keys to _Registry_ dialog via EP `com.intellij.registryKey` [Issue](https://youtrack.jetbrains.com/issue/IDEA-177378) | 
+| Editor: content between text lines| Ability to add arbitrary content (preview, debugger information, etc.) [Issue](https://youtrack.jetbrains.com/issue/IDEA-183815) |
+
+## Notable Changes in IntelliJ Platform 2018.2
+
+| Change | Description |
+|--------|-------------|
+| _Run Anything_ (**Double CTRL**) | Allows executing predefined activities using a popup with smart completion, e.g. [Gradle Tasks](https://www.jetbrains.com/help/idea/gradle.html#gradle_tasks), executing Run Configurations, ... See [`RunAnythingProvider`](upsource:///platform/lang-impl/src/com/intellij/ide/actions/runAnything/activity/RunAnythingProvider.java) |
+| JPS: Report exception in IDE | Ability to report exceptions from build process [Issue](https://youtrack.jetbrains.com/issue/IDEA-187115) |

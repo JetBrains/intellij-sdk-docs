@@ -99,7 +99,7 @@ For more information about `pluginIcon.svg` files, see the [Plugin Icon](/basics
 {% include /code_samples/gradle_plugin_demo/src/main/resources/META-INF/plugin.xml %}
 ```
 
-Open the Gradle tool window and search for `runIde` task. If it’s not in the list, please hit `Refresh` button on the top. Double-click on it to run it.
+Open the Gradle tool window and search for `runIdea` task. If it’s not in the list, please hit `Refresh` button on the top. Double-click on it to run it.
 
 <img src="img/gradle_tasks_in_tool_window.png" alt="Gradle Tool Window" width="398px"/>
 

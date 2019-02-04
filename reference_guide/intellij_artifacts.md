@@ -10,7 +10,7 @@ The IntelliJ Platform artifacts repositories are:
 * [Snapshots repository](https://www.jetbrains.com/intellij-repository/snapshots/) for EAP candidates and the latest EAP for each branch.
 
 Both the Releases and Snapshots repositories have two types of content:
-* Artifacts for cross-platform, zip distributions of IntelliJ IDEA binaries and source code.
+* Artifacts for cross-platform, ZIP distributions of IntelliJ IDEA binaries and source code.
 These artifacts are not intended to be accessed directly from a plugin project's `build.gradle` file. 
 The `gradle-intellij-plugin` will access them as-needed for a plugin project.
 * Artifacts for individual modules from the IntelliJ Platform. 

@@ -20,7 +20,8 @@ See the note on how to document new problems on the main page reference_guide/ap
 |  Change | How to deal with it |
 |---------|---------------------|
 | `kotlinx.coroutines.experimental` package removed | Bundled Kotlin library is updated to 1.3 so the plugins must [migrate](https://blog.jetbrains.com/kotlin/2018/09/kotlin-1-3-rc-is-here-migrate-your-coroutines/) to the stable versions of coroutines. |
-| The constructor `com.intellij.openapi.vcs.impl.ProjectLevelVcsManagerImpl.<init>(Project, FileStatusManager, FileIndexFacade, ProjectManager, DefaultVcsRootPolicy, VcsFileListenerContextHelper)` has been removed | Use `com.intellij.openapi.vcs.impl.ProjectLevelVcsManagerImpl.<init>(Project, FileStatusManager, FileIndexFacade, ProjectManager, DefaultVcsRootPolicy)` |
+| `com.intellij.openapi.vcs.impl.ProjectLevelVcsManagerImpl(Project, FileStatusManager, FileIndexFacade, ProjectManager, DefaultVcsRootPolicy, VcsFileListenerContextHelper)` constructor removed | Use `com.intellij.openapi.vcs.impl.ProjectLevelVcsManagerImpl.<init>(Project, FileStatusManager, FileIndexFacade, ProjectManager, DefaultVcsRootPolicy)` |
+| `com.intellij.injected.editor.DocumentWindow.injectedToHost(int, boolean)` abstract method added | Implement the method in DocumentWindow implementations |
 
 ## Changes in DataGrip and Database Tools plugin 2019.1
 

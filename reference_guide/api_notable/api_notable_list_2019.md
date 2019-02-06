@@ -17,3 +17,4 @@ title: Notable Changes in IntelliJ Platform and Plugins API 2019.*
 |--------|-------------|
 | `@org.jetbrains.annotations.ApiStatus.AvailableSince` | External annotations for IntelliJ Platform are generated and attached to plugin projects automatically (replacing `@since` Javadoc) |
 | `PsiReferenceProvider`: assert underlying element | Assert references are created for the given underlying `PsiElement` [Issue](https://youtrack.jetbrains.com/issue/IDEA-203954) |
+| `CachedValue`: more strict assertions | Enabled in tests and EAP/internal mode, see `CachedValueStabilityChecker` javadoc |

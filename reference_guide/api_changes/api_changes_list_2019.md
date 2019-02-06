@@ -33,4 +33,4 @@ See the note on how to document new problems on the main page reference_guide/ap
 
 |  Change | How to deal with it |
 |---------|---------------------|
-| `com.intellij.sql.psi.SqlTokens.SQL_IDENT` field type changed from `com.intellij.sql.psi.impl.SqlTokenType` to `com.intellij.sql.psi.SqlTokenType` | In most of the cases it's enough to recompile the code. It may also be needed to check that the code doesn't rely on the field's type. |
+| `com.intellij.sql.psi.SqlTokens.SQL_IDENT` field type changed from `com.intellij.sql.psi.impl.SqlTokenType` to `com.intellij.sql.psi.SqlTokenType` | In most of the cases, it's enough to recompile the code. It may also be needed to check that the code doesn't rely on the field's type. |

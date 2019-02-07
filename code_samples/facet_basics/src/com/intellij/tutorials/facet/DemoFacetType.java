@@ -11,10 +11,10 @@ import javax.swing.*;
  * @author Anna Bulenkova
  */
 public class DemoFacetType extends FacetType<DemoFacet, DemoFacetConfiguration> {
-  private static final FacetTypeId<DemoFacet> TYPE_ID = new FacetTypeId<DemoFacet>(DemoFacet.ID);
+  public static final FacetTypeId<DemoFacet> DEMO_FACET_TYPE_ID = new FacetTypeId<DemoFacet>(DemoFacet.FACET_ID);
 
   public DemoFacetType() {
-    super(TYPE_ID, DemoFacet.ID, "Demo Facet");
+    super(DEMO_FACET_TYPE_ID, DemoFacet.FACET_ID, DemoFacet.FACET_NAME);
   }
 
   @Override
@@ -31,7 +31,7 @@ public class DemoFacetType extends FacetType<DemoFacet, DemoFacetConfiguration> 
   }
 
   @Override
-  public boolean isSuitableModuleType(ModuleType type) {
+  public boolean isSuitableModuleType(final ModuleType type) {
     return true;
   }
 

@@ -10,6 +10,7 @@ import com.intellij.openapi.fileChooser.FileChooserDescriptor;
 import com.intellij.openapi.fileChooser.FileChooserDescriptorFactory;
 import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.project.ProjectUtil;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.pom.Navigatable;
 import com.intellij.psi.PsiFile;
@@ -56,14 +57,13 @@ class CreatePropertyQuickFix extends BaseIntentionAction {
       @Override
       public void run() {
         Collection<VirtualFile> virtualFiles =
-            FileBasedIndex.getInstance().getContainingFiles(FileTypeIndex.NAME, SimpleFileType.INSTANCE,
-                                                            GlobalSearchScope.allScope(project));
+                FileTypeIndex.getFiles(SimpleFileType.INSTANCE, GlobalSearchScope.allScope(project) );
         if (virtualFiles.size() == 1) {
           createProperty(project, virtualFiles.iterator().next());
         } else {
           final FileChooserDescriptor descriptor =
               FileChooserDescriptorFactory.createSingleFileDescriptor(SimpleFileType.INSTANCE);
-          descriptor.setRoots(project.getBaseDir());
+          descriptor.setRoots(ProjectUtil.guessProjectDir(project));
           final VirtualFile file = FileChooser.chooseFile(descriptor, project, null);
           if (file != null) {
             createProperty(project, file);
@@ -74,29 +74,43 @@ class CreatePropertyQuickFix extends BaseIntentionAction {
   }
 
   private void createProperty(final Project project, final VirtualFile file) {
-    new WriteCommandAction.Simple(project) {
-      @Override
-      public void run() {
-        SimpleFile simpleFile = (SimpleFile) PsiManager.getInstance(project).findFile(file);
-        ASTNode lastChildNode = simpleFile.getNode().getLastChildNode();
-        // TODO: Add another check for CRLF
-        if (lastChildNode != null/* && !lastChildNode.getElementType().equals(SimpleTypes.CRLF)*/) {
-          simpleFile.getNode().addChild(SimpleElementFactory.createCRLF(project).getNode());
-        }
-        // IMPORTANT: change spaces to escaped spaces or the new node will only have the first word for the key
-        SimpleProperty property = SimpleElementFactory.createProperty(project, key.replaceAll(" ", "\\\\ "), "");
-        simpleFile.getNode().addChild(property.getNode());
-        ((Navigatable) property.getLastChild().getNavigationElement()).navigate(true);
-        FileEditorManager.getInstance(project).getSelectedTextEditor().getCaretModel().
-            moveCaretRelatively(2, 0, false, false, false);
-
+    WriteCommandAction.writeCommandAction(project).run(() -> {
+      SimpleFile simpleFile = (SimpleFile) PsiManager.getInstance(project).findFile(file);
+      ASTNode lastChildNode = simpleFile.getNode().getLastChildNode();
+      // TODO: Add another check for CRLF
+      if (lastChildNode != null/* && !lastChildNode.getElementType().equals(SimpleTypes.CRLF)*/) {
+        simpleFile.getNode().addChild(SimpleElementFactory.createCRLF(project).getNode());
+      }
+      // IMPORTANT: change spaces to escaped spaces or the new node will only have the first word for the key
+      SimpleProperty property = SimpleElementFactory.createProperty(project, key.replaceAll(" ", "\\\\ "), "");
+      simpleFile.getNode().addChild(property.getNode());
+      ((Navigatable) property.getLastChild().getNavigationElement()).navigate(true);
+      FileEditorManager.getInstance(project).getSelectedTextEditor().getCaretModel().
+                                                                                            moveCaretRelatively(2, 0, false, false, false);
+    });
+//    new WriteCommandAction.Simple(project) {
+//      @Override
+//      public void run() {
+//        SimpleFile simpleFile = (SimpleFile) PsiManager.getInstance(project).findFile(file);
+//        ASTNode lastChildNode = simpleFile.getNode().getLastChildNode();
+//        // TODO: Add another check for CRLF
+//        if (lastChildNode != null/* && !lastChildNode.getElementType().equals(SimpleTypes.CRLF)*/) {
+//          simpleFile.getNode().addChild(SimpleElementFactory.createCRLF(project).getNode());
+//        }
+//        // IMPORTANT: change spaces to escaped spaces or the new node will only have the first word for the key
+//        SimpleProperty property = SimpleElementFactory.createProperty(project, key.replaceAll(" ", "\\\\ "), "");
+//        simpleFile.getNode().addChild(property.getNode());
+//        ((Navigatable) property.getLastChild().getNavigationElement()).navigate(true);
+//        FileEditorManager.getInstance(project).getSelectedTextEditor().getCaretModel().
+//            moveCaretRelatively(2, 0, false, false, false);
+//
         // almost the same thing but manipulating plain text of the document instead of PSI
 //                FileEditorManager.getInstance(project).openFile(file, true);
 //                final Editor editor = FileEditorManager.getInstance(project).getSelectedTextEditor();
 //                final Document document = editor.getDocument();
 //                document.insertString(document.getTextLength(), "\n" + key.replaceAll(" ", "\\\\ ") + " = ");
 //                editor.getCaretModel().getPrimaryCaret().moveToOffset(document.getTextLength());
-      }
-    }.execute();
+//      }
+//    }.execute();
   }
 }

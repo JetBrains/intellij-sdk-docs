@@ -6,7 +6,7 @@
 
   <description>Project View Pane Demo listing only image files</description>
 
-  <idea-version since-build="131"/>
+  <idea-version since-build="172.2103.15"/>
   <depends>com.intellij.modules.lang</depends>
 
   <extensions defaultExtensionNs="com.intellij">

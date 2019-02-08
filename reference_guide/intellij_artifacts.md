@@ -10,7 +10,7 @@ The IntelliJ Platform artifacts repositories are:
 * [Snapshots repository](https://www.jetbrains.com/intellij-repository/snapshots/) for EAP candidates and the latest EAP for each branch.
 
 Both the Releases and Snapshots repositories have two types of content:
-* Artifacts for cross-platform, ZIP distributions of IntelliJ IDEA binaries and source code.
+* Binary and source code artifacts for cross-platform, ZIP distributions of IntelliJ Platform-based IDEs, such as IntelliJ IDEA, CLion, Rider, and MPS.
 These artifacts are not intended to be accessed directly from a plugin project's `build.gradle` file. 
 The `gradle-intellij-plugin` will access them as-needed for a plugin project.
 * Artifacts for individual modules from the IntelliJ Platform. 
@@ -21,9 +21,9 @@ A link to this repository should be added to `pom.xml`/`build.gradle` files when
 
 ## Using IntelliJ Platform Module Artifacts
 IntelliJ Platform module artifacts are utilized by adding information to a project's `build.gradle` file. 
-See the [gradle-intellij-plugin README file](https://github.com/JetBrains/gradle-intellij-plugin) for more information about IntelliJ IDEA Gradle support. 
+More information about [Gradle support](https://www.jetbrains.com/help/idea/gradle.html) is available in the IntelliJ IDEA Help documentation. 
 
-If you want to setup the dependencies manually, there are two types of information needed to use a repository:
+To setup dependencies on a module there are two types of information needed:
 1. Specify the corresponding repository URL for the artifact.
 2. Specify the Maven coordinates for the artifact. 
  
@@ -31,7 +31,7 @@ If you want to setup the dependencies manually, there are two types of informati
 The URL for the desired artifact needs to be added to a Maven or Gradle script:
 * For release or EAP versions, use https://www.jetbrains.com/intellij-repository/releases 
 * For EAP candidate snapshots, use https://www.jetbrains.com/intellij-repository/snapshots
-* For dependencies of individual modules from the IntelliJ Platform, also use https://jetbrains.bintray.com/intellij-third-party-dependencies 
+* For dependencies on individual modules from the IntelliJ Platform, also use https://jetbrains.bintray.com/intellij-third-party-dependencies 
 
 ### Specify the Artifact
 Describing a desired IntelliJ Platform module artifact is done with Maven coordinates. 

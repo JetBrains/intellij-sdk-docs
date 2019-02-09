@@ -12,16 +12,17 @@ In order to deploy a plugin to the plugin repository, you will first need to sup
 Place the following information inside a file called `gradle.properties` under your project's root directory, or inside `GRADLE_HOME/gradle.properties`.
 
 ```
-intellijPublishUsername="YOUR_USERNAME_HERE"
-intellijPublishPassword="YOUR_PASSWORD_HERE"
+intellijPublishUsername=YOUR_USERNAME_HERE
+intellijPublishPassword=YOUR_PASSWORD_HERE
 ```
 
 Then refer to these values in `publishPlugin` task in your `build.gradle` file:
 
-```
+```groovy
 publishPlugin {
-  username intellijPublishUsername
-  password intellijPublishPassword
+    username intellijPublishUsername
+    password intellijPublishPassword
+}
 ```
 
 If you place a `gradle.properties` file in your project's root directory, please ensure that this file is ignored by your version control tool. For example in Git, you can add the following line to your `.gitignore` file:
@@ -38,8 +39,20 @@ git update-index --assume-unchanged gradle.properties
 
 If your project already has a custom `gradle.properties` file, you may create a custom `*.properties` file, and load it manually. For example:
 
+```groovy
+Properties credentialProperties = new Properties()
+InputStream inputStream = new FileInputStream("/path/to/custom.properties")
+credentialProperties.load(inputStream)
+inputStream.close()
 ```
-apply from: "/path/to/custom.properties"
+
+and then you can use the properties with:
+
+```groovy
+publishPlugin {
+    username credentialProperties['intellijPublishUsername']
+    password credentialProperties['intellijPublishPassword']
+}
 ```
 
 ### 2.1 Configure your plugin
@@ -49,7 +62,9 @@ The gradle-intellij-plugin provides a number of [configuration options](https://
  The Gradle plugin will also update the `<idea-version since-build=.../>` values within the `plugin.xml` file to match the `intellij.version`, valid until the last release in the current major version, however you can disable this feature by setting the `intellij.updateSinceUntilBuild` option to `false`.
 
 ```groovy
-apply plugin: 'org.jetbrains.intellij'
+plugins {
+    id 'org.jetbrains.intellij' version '0.4.2'
+}
 
 intellij {
     version '15.0.1'
@@ -61,7 +76,7 @@ group 'com.jetbrains'
 version '1.2' // Update me!
 ```
 
-When you run `gradle runIdea` with a build script containing the above snippet, Gradle will download the appropriate version of IntelliJ IDEA from either a [Snapshot](https://www.jetbrains.com/intellij-repository/snapshots) (time-based) or [Release](https://www.jetbrains.com/idea/help/managing-plugins.html) (version based) repository, configure the plugin sandbox, install your plugin, and launch a new instance of the IDE. This task can be run directly from the command line, without any prior tooling assistance. 
+When you run `gradle runIde` with a build script containing the above snippet, Gradle will download the appropriate version of IntelliJ IDEA from either a [Snapshot](https://www.jetbrains.com/intellij-repository/snapshots) (time-based) or [Release](https://www.jetbrains.com/idea/help/managing-plugins.html) (version based) repository, configure the plugin sandbox, install your plugin, and launch a new instance of the IDE. This task can be run directly from the command line, without any prior tooling assistance. 
 
 For best results, plugin developers should build against a fixed version, rather than `LATEST-TRUNK-SNAPSHOT`. For information about available versions of the IntelliJ Platform, you may consult the following URLs for the most recent updates:
 
@@ -78,8 +93,18 @@ gradle publishPlugin
 
 Now check that the most recent version of your plugin appears on the [Plugin Repository](https://plugins.jetbrains.com/). If successfully deployed, any users who currently have your plugin installed on an eligible version of the IntelliJ Platform will be notified of a new update available on the following restart.
 
-You may also deploy plugins to a release channel of your choosing, by configuring the `intellij.publish.channel` property. When empty, this will use the default plugin repository, available to all [JetBrains plugin repository](https://plugins.jetbrains.com/) users. However, you can publish to an arbitrarily-named channel. These non-default release channels are treated as separate repositories for all intents and purposes. When using a non-default release channel, users will need to add a new [custom plugin repository](https://www.jetbrains.com/help/idea/managing-plugins.html#repos) to install your plugin. For example, if you specify `intellij.publish.channel 'canary'`, then users will need to add the `https://plugins.jetbrains.com/plugins/canary/list` repository to install the plugin and receive updates.  Popular channel names include:
+You may also deploy plugins to a release channel of your choosing, by configuring the `publishPlugin.channels` property. For example:
+
+```groovy
+publishPlugin {
+    channels 'beta'
+}
+```
+
+When empty, this will use the default plugin repository, available to all [JetBrains plugin repository](https://plugins.jetbrains.com/) users. However, you can publish to an arbitrarily-named channel. These non-default release channels are treated as separate repositories for all intents and purposes. When using a non-default release channel, users will need to add a new [custom plugin repository](https://www.jetbrains.com/help/idea/managing-plugins.html#repos) to install your plugin. For example, if you specify `publishPlugin.channels 'canary'`, then users will need to add the `https://plugins.jetbrains.com/plugins/canary/list` repository to install the plugin and receive updates.  Popular channel names include:
 
 * `alpha`: https://plugins.jetbrains.com/plugins/alpha/list
 * `beta`: https://plugins.jetbrains.com/plugins/beta/list
 * `eap`: https://plugins.jetbrains.com/plugins/eap/list
+
+More information about the available configuration options is at the [documentation of the intellij gradle plugin](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md#publishing-dsl).

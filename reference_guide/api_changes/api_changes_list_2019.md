@@ -28,6 +28,7 @@ See the note on how to document new problems on the main page reference_guide/ap
 | `com.intellij.injected.editor.DocumentWindow.injectedToHost(int, boolean)` abstract method added | Implement the method in DocumentWindow implementations |
 | `git4idea.rebase.GitCommitEditingAction#actionPerformed(AnActionEvent)` method became final | Implement `actionPerformedAfterChecks` instead of `actionPerformed` |
 | `git4idea.rebase.GitCommitEditingAction#actionPerformedAfterChecks(AnActionEvent)` abstract method added | Implement `actionPerformedAfterChecks` instead of `actionPerformed` |
+| `com.intellij.util.lang.UrlClassLoader.loadPlatformLibrary` method removed | Use `com.intellij.util.loader.NativeLibraryLoader.loadPlatformLibrary` instead. |
 
 ## Changes in DataGrip and Database Tools plugin 2019.1
 

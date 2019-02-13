@@ -185,10 +185,6 @@ New entries in the `"ui": {}` section will invoke the code completion popup, as 
 
 ![UI Control Key Code Completion](img/uit_control_complete.png)
 
-### Finding a UI Control Key in the Defaults File
-This method is based on searching the [UiDefaultsHardcodedKeys](upsource:///plugins/devkit/devkit-core/src/completion/UiDefaultsHardcodedKeys.java) file.
-Compound keys are listed in the file, and are periodically updated.
-
 ### Finding a UI Control Key using Laf Defaults UI
 Using the [Laf Defaults](/reference_guide/internal_actions/internal_ui_lafd.md) inspector, enter the `element` portion of the key. 
 The Laf Defaults inspector will prompt with a list of UI Control keys and their default color.

@@ -4,9 +4,11 @@ title: Working with Icons and Images
 
 Icons and images are used widely by IntelliJ Platform plugins. Plugins need icons mostly for actions, custom components renderers, tool windows and so on.
 
-**Note:** Plugin Icons, which represent a plugin itself, have different requirements than icons and images used within a plugin.
+> **NOTE** Plugin Icons, which represent a plugin itself, have different requirements than icons and images used within a plugin.
 For more information see the [Plugin Icon](/basics/plugin_structure/plugin_icon_file.md) page. 
- 
+
+> **TIP** Plugins should reuse existing platform icons whenever possible, see [AllIcons](upsource:///platform/util/src/com/intellij/icons/AllIcons.java). A detailed [design guideline](https://jetbrains.github.io/ui/principles/icons/) is available for creating custom icons.
+  
 ## How to organize and how to use icons?
 
 The best way to deal with icons and other image resources is to put them to a dedicated source root, say *"icons"* or *"resources"*.

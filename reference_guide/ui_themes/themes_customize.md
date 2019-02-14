@@ -180,7 +180,8 @@ Some keys and strategies for applying them can be gleaned from the [UI Theme ref
 For a general search, here some suggested methods for locating UI control keys.
 
 ### Finding a UI Control Key Using Code Completion in the Editor
-The preferred method of finding UI control keys is to use the code completion feature in the IntelliJ IDEA editor.
+The preferred method of finding UI control keys is to use the code completion feature in the IntelliJ IDEA editor. 
+Note that some keys presented by the code completion feature may be deprecated. 
 New entries in the `"ui": {}` section will invoke the code completion popup, as shown below:
 
 ![UI Control Key Code Completion](img/uit_control_complete.png)

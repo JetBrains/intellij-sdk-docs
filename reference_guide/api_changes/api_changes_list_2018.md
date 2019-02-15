@@ -23,13 +23,13 @@ See the note on how to document new problems on the main page reference_guide/ap
 
 |  Change | How to deal with it |
 |---------|---------------------|
-| `com.intellij.openapi.externalSystem.action.ExternalSystemAction#isEnabled` method `AnActionEvent` parameter marked @NotNull | remove `?`s in your Kotlin code |
-| `com.intellij.openapi.externalSystem.action.ExternalSystemAction#isVisible` method `AnActionEvent` parameter marked @NotNull | remove `?`s in your Kotlin code |
-| `com.intellij.openapi.actionSystem.AnAction#actionPerformed` method `AnActionEvent` parameter marked @NotNull | remove `?`s in your Kotlin code |
-| `com.intellij.openapi.actionSystem.DataContext#getData` method `dataId` parameter marked @NotNull | remove `?`s in your Kotlin code |
-| `com.intellij.openapi.actionSystem.ToggleAction#isSelected` method `AnActionEvent` parameter marked @NotNull | remove `?`s in your Kotlin code |
-| `com.intellij.openapi.actionSystem.ToggleAction#setSelected` method `AnActionEvent` parameter marked @NotNull | remove `?`s in your Kotlin code |
-| `com.intellij.openapi.actionSystem.DataProvider#getData` method `dataId` parameter marked @NotNull | remove `?`s in your Kotlin code |
+| `com.intellij.openapi.externalSystem.action.ExternalSystemAction#isEnabled` method `AnActionEvent` parameter marked `@NotNull` | remove `?`s in your Kotlin code |
+| `com.intellij.openapi.externalSystem.action.ExternalSystemAction#isVisible` method `AnActionEvent` parameter marked `@NotNull` | remove `?`s in your Kotlin code |
+| `com.intellij.openapi.actionSystem.AnAction#actionPerformed` method `AnActionEvent` parameter marked `@NotNull` | remove `?`s in your Kotlin code |
+| `com.intellij.openapi.actionSystem.DataContext#getData` method `dataId` parameter marked `@NotNull` | remove `?`s in your Kotlin code |
+| `com.intellij.openapi.actionSystem.ToggleAction#isSelected` method `AnActionEvent` parameter marked `@NotNull` | remove `?`s in your Kotlin code |
+| `com.intellij.openapi.actionSystem.ToggleAction#setSelected` method `AnActionEvent` parameter marked `@NotNull` | remove `?`s in your Kotlin code |
+| `com.intellij.openapi.actionSystem.DataProvider#getData` method `dataId` parameter marked `@NotNull` | remove `?`s in your Kotlin code |
 | `com.intellij.psi.meta.PsiMetaData.getDependences` method removed | Use `com.intellij.psi.meta.PsiMetaData.getDependencies` |
 
 ## Changes in IntelliJ Platform 2018.2

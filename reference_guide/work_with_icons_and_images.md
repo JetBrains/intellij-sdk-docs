@@ -37,9 +37,9 @@ Use these constants inside `plugin.xml` as well. Note that the package name `ico
         icon="DemoPluginIcons.DEMO_ACTION"/>
 ```
 
-### Image formats and naming notations
+### Image formats
 
-IntelliJ Platform supports Retina displays and has dark look and feel called Darcula. Thus, every icon should have a dedicated variant for Retina devices and Darcula look and feel. In some cases, you can skip dark variants if the original icon looks good under Darcula.
+IntelliJ Platform supports Retina displays and has dark theme called Darcula. Thus, every icon should have a dedicated variant for Retina devices and Darcula theme. In some cases, you can skip dark variants if the original icon looks good under Darcula.
 
 Required icon sizes depend on the usage as listed in the following table:
 
@@ -50,18 +50,37 @@ Required icon sizes depend on the usage as listed in the following table:
 | Editor gutter          | 12x12 |
 
 
-All icon files must be placed in the same directory following this naming pattern:
+#### SVG format
+> **NOTE** SVG icons are supported since 2018.2.
 
-* **iconName.png** W x H pixels (Will be used on non-Retina devices with default look and feel)
-* **iconName@2x.png** 2\*W x 2\*H pixels (Will be used on Retina devices with default look and feel)
-* **iconName_dark.png** W x H pixels (Will be used on non-Retina devices with Darcula look and feel)
-* **iconName@2x_dark.png** 2\*W x 2\*H pixels (Will be used on Retina devices with Darcula look and feel)
+As SVG icons can be scaled arbitrarily, they provide better results on HiDPI environments or when used in combination with bigger screen fonts (e.g., in presentation mode).
+
+A base size denoting the size (in the user space) of the rendered image in 1x scale should be provided. The size is set via the `width` and `height` attributes omitting the size units. If unspecified, it defaults to 16x16 pixels.
+
+A minimal SVG icon file:
+```xml
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16">
+ <rect width="100%" height="100%" fill="green"/>
+</svg>
+```
+
+The naming notation used for PNG icons (see below) is still relevant. However, the `@2x` version of an SVG icon should still provide the same base size. The icon graphics of such an icon can be expressed in more details via double precision. If the icon graphics are simple enough so that it renders perfectly in every scale, then the `@2x` version can be omitted. 
+
+#### PNG format 
+> **NOTE** Please consider using SVG icons if your plugin targets 2018.2+.
+
+All icon files must be placed in the same directory following this naming pattern (replace `.png` with `.svg` for SVG icons):
+
+* **iconName.png** W x H pixels (Will be used on non-Retina devices with default theme)
+* **iconName@2x.png** 2\*W x 2\*H pixels (Will be used on Retina devices with default theme)
+* **iconName_dark.png** W x H pixels (Will be used on non-Retina devices with Darcula theme)
+* **iconName@2x_dark.png** 2\*W x 2\*H pixels (Will be used on Retina devices with Darcula theme)
 
 The `IconLoader` class will load the icon that matches the best depending on the current environment.
 
 Here are examples of *toolWindowStructure.png* icon representations:
 
-| Look and feel    | File name                         | Image |
+| Theme/Resolution | File name                         | Image |
 |------------------|-----------------------------------|-------|
 | Default          | `toolWindowStructure.png`         | ![Tool Window Structure](img/toolWindowStructure.png) |
 | Darcula          | `toolWindowStructure_dark.png`    | ![Tool Window Structure, dark](img/toolWindowStructure_dark.png) |

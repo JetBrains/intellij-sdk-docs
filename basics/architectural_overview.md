@@ -13,4 +13,4 @@ The following subjects are covered:
 * [Documents](architectural_overview/documents.md)
 * [PSI files](architectural_overview/psi_files.md)
 * [File view providers](architectural_overview/file_view_providers.md)
-* [Psi elements](architectural_overview/psi_elements.md)
+* [PSI elements](architectural_overview/psi_elements.md)

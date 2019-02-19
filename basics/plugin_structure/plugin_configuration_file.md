@@ -51,8 +51,9 @@ The following is a sample plugin configuration file. This sample showcases and d
   <!-- Minimum and maximum build of IDE compatible with the plugin -->
   <idea-version since-build="183" until-build="183.*"/>
 
-  <!-- Resource bundle from which the text of plugin descriptions,
-       action names and etc. will be loaded -->
+  <!-- Resource bundle (/messages/MyPluginBundle.properties) to be used
+       with `key` attributes in extension points and implicit keys like
+       `action.[pluginID].[ActionID].text` -->
   <resource-bundle>messages.MyPluginBundle</resource-bundle>
 
   <!-- Plugin's application components -->

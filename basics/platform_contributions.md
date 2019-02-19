@@ -2,7 +2,7 @@
 title: Contributing to the IntelliJ Platform
 ---
 
-Please make sure to read the [Code Of Conduct](../CODE_OF_CONDUCT.md).
+Please make sure to read the [JetBrains Open Source and Community Code of Conduct](https://confluence.jetbrains.com/display/ALL/JetBrains+Open+Source+and+Community+Code+of+Conduct).
 
 #### Participate in the Community
 

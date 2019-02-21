@@ -110,21 +110,13 @@ The `name` attributes for Windows and Linux have the pattern `ScrollBar.Transpar
 
 **macOS Name Attributes** 
 
-The `name` attributes for macOS have two distinct patterns:
-* `ScrollBar.Mac.*` applies when the vertical and horizontal scroll bar "Show always" system setting is on.
-* `ScrollBar.Mac.Transparent.*` applies when the horizontal scroll bar "Show when scrolling" system setting is on.
+The `name` attribute pattern for the vertical scroll bar is `ScrollBar.Mac.*`.
+
+The `name` attribute pattern for the horizontal scroll bar depends on the macOS preferences _Show scroll bars_ setting:
+  * `ScrollBar.Mac.*` when the _Always_ setting is selected.
+  * `ScrollBar.Mac.Transparent.*` when the _When scrolling_ setting is selected.
 
 The wildcard portion of these patterns corresponds to the `usage` definitions above.
-
-**Deprecated Name Attributes** 
-
-The following keys are deprecated and will be removed from `highContrastScheme.xml`:
-* `ScrollBar.trackColor` 
-* `ScrollBar.thumbColor` 
-* `ScrollBar.thumbBorderColor`
-* `ScrollBar.hoverTrackColor`
-* `ScrollBar.hoverThumbColor`
-* `ScrollBar.hoverThumbBorderColor`
 
 
 ## Adding a Custom Background Image

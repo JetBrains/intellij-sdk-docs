@@ -7,7 +7,7 @@ IntelliJ Platform SDK Documentation
 Welcome to the repository for [IntelliJ Platform SDK Documentation](http://www.jetbrains.org/intellij/sdk/docs/) site.
 
 ## Reporting Bugs
-Please inform about any content inconsistencies, outdated materials, cosmetic issues and other defects you find in the docs and samples by submitting an issue to
+Please report any content inconsistencies, outdated materials, cosmetic issues and other defects you find in the docs and samples by submitting an issue to
 [YouTrack](https://youtrack.jetbrains.com/issues/IJSDK). 
 
 ## Working With the Site Locally

@@ -2,7 +2,7 @@
 title: Contributing
 ---
 
-Thanks for contributing! Here are few useful things to know before submitting your Pull Request.
+Thanks for contributing! Here are a few useful things to know before submitting your Pull Request.
 
 * Licensing - see [LICENSE.txt](LICENSE.txt)
 * [Contributing to the IntelliJ Platform](#contributing-to-the-intellij-platform)
@@ -48,7 +48,7 @@ Follow these steps to work with Docker:
 
     > **NOTE** For Windows and Mac, this means port 4000 of the docker container is forwarded to port 4000 of the docker virtual machine, not `localhost`. For Linux, the docker client is the host machine, so `localhost:4000` is forwarded to port 4000 on the docker container.
     >
-    > In order to hit the container's port 4000 from Windows or the Mac, it is necessary to hit the IP address of the docker client (virtual machine). Use `docker-machine ip default` to get the IP address of the docker client. Use `X.X.X.X:4000` to hit the client in the virtual machine, which is in turn mapped to the container's port 4000.
+    > To hit the container's port 4000 from Windows or the Mac, it is necessary to hit the IP address of the docker client (virtual machine). Use `docker-machine ip default` to get the IP address of the docker client. Use `X.X.X.X:4000` to hit the client in the virtual machine, which is in turn mapped to the container's port 4000.
     >
     > Alternatively, modify the virtual machine's settings to automatically forward port 4000 to `localhost`. See this [blog post](http://acaird.github.io/computers/2014/11/16/docker-virtualbox-host-networking) for more details.
  
@@ -61,7 +61,7 @@ Follow these steps to work with Docker:
 
 ### Developing locally
 
-In order to build the documentation site, you will need:
+To build the documentation site, you will need:
 
 * Ruby 2 - Jekyll is a Ruby application.
 * Ruby 2 DevKit (for Windows) - Some of Jekyll's dependencies need to be compiled, and require the DevKit to be installed.
@@ -99,7 +99,7 @@ This is made easier if you use [Chocolatey](https://chocolatey.org), a package m
 
 ### Building and previewing the site
 
-To build and test the site, simply run `rake preview`. This will build the site and host it, using the config provided. The URL of the hosted site is displayed on the screen, and depends on the `baseurl` field defined in `_config.yml`.
+To build and test the site, simply run `rake preview`. This will build the site and host it, using the config provided. The URL of the hosted site is displayed on the screen and depends on the `baseurl` field defined in `_config.yml`.
 
 ## Markup
 
@@ -132,7 +132,7 @@ The YAML header can also include [redirect](#redirects) information.
 
 ### _SUMMARY.md
 
-The table of contents for the site is displayed in the tree view on the left hand side of the site, and it is generated from the `_SUMMARY.md` file. It is a simple markdown list, with each item in the list being a link to another markdown page, either in the root folder, or sub-folders. The list can have nested items, which will be displayed as child items in the table of contents.
+The table of contents for the site is displayed in the tree view on the left-hand side of the site, and it is generated from the `_SUMMARY.md` file. It is a simple markdown list, with each item in the list being a link to another markdown page, either in the root folder, or sub-folders. The list can have nested items, which will be displayed as child items in the table of contents.
 
 ```md
 # Summary
@@ -156,7 +156,7 @@ The contents can be split into "parts" by separating the list into several lists
 * ...
 ```
 
-If a node doesn't have a link, but is just plain text, it will still appear in the table of contents, but will be greyed out and not clickable. It acts like a placeholder for a documentation item. This is useful to keep track of what should be documented, but hasn't yet, and can be useful to show readers that the topic exists, but isn't yet documented (Pull Requests always welcome!).
+If a node doesn't have a link, but is just plain text, it will still appear in the table of contents but will be greyed out and not clickable. It acts as a placeholder for a documentation item. This is useful to keep track of what should be documented, but hasn't yet, and can be useful to show readers that the topic exists, but isn't yet documented (Pull Requests always welcome!).
 
 ### Redirects
 
@@ -192,11 +192,11 @@ Further Kramdown features are described on the [converter page](http://kramdown.
 
 ### Liquid tags and filters
 
-Jekyll uses the [Liquid](http://liquidmarkup.org) templating language to process files. This means standard Liquid tags and filters are available. There should be little need to use them however, as the Markdown format is already quite rich. See the [Jekyll site](http://jekyllrb.com/docs/templates/) for more details.
+Jekyll uses the [Liquid](http://liquidmarkup.org) templating language to process files. This means standard Liquid tags and filters are available. There should be little need to use them, however, as the Markdown format is already quite rich. See the [Jekyll site](http://jekyllrb.com/docs/templates/) for more details.
 
 ### Syntax highlighting
 
-Source code can be represented by using [GitHub Flavoured Markdown](https://help.github.com/articles/github-flavored-markdown/) code fences, which are three back ticks:
+Source code can be represented by using [GitHub Flavoured Markdown](https://help.github.com/articles/github-flavored-markdown/) code fences, which are three backticks:
 
     ```
     // Source code goes here...
@@ -240,7 +240,7 @@ The Kramdown parser also supports tables. The syntax is to use the pipe (`|`) an
 
 ### Links
 
-Links are handled as normal markdown links, and can be links to external sites, pages within the sites, or headings in the sites. When a Markdown header is converted to an HTML header, it is assigned an ID, so it can be linked, e.g. `## Introduction` will get the ID of `introduction`, and can be linked either in the same page `[click here](#introduction)` or cross page `[click here](page.html#introduction)`. The anchor name will be all lower case, and spaces are replaced with `-`, e.g. `## Page setup` becomes `#page-setup`.
+Links are handled as normal markdown links and can be linked to external sites, pages within the sites, or headings in the sites. When a Markdown header is converted to an HTML header, it is assigned an ID, so it can be linked, e.g. `## Introduction` will get the ID of `introduction`, and can be linked either in the same page `[click here](#introduction)` or cross-page `[click here](page.html#introduction)`. The anchor name will be all lower case, and spaces are replaced with `-`, e.g. `## Page setup` becomes `#page-setup`.
 
 * `[External site](http://example.org)` will link to an external site
 * `[Other page in current directory](Page2.md)` will link to a page in the same directory as the current page. Note that the extension is `.md`, NOT `.html`.
@@ -262,7 +262,7 @@ Images can be included by adding the file directly to the repository and adding 
 
     ![Alt text](path-to-img.png)
 
-Please downscale screenshots made at high resolution.
+Please, downscale screenshots made at high resolution.
 
 ## A word on submodules
 

@@ -65,6 +65,7 @@
         * [2. Grouping Actions](tutorials/action_system/grouping_action.md)
 * Settings
     * [Persisting State of Components](basics/persisting_state_of_components.md)
+    * [Persisting Sensitive Data](basics/persisting_sensitive_data.md)
     * Editing Settings
 * [Files](basics/architectural_overview/files.md)
     * [Virtual File System](basics/virtual_file_system.md)

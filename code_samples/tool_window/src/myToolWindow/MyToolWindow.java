@@ -16,16 +16,8 @@ public class MyToolWindow {
     private JPanel myToolWindowContent;
 
     public MyToolWindow(ToolWindow toolWindow) {
-        hideToolWindowButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                toolWindow.hide(null);
-            }
-        });
-        refreshToolWindowButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                currentDateTime();
-            }
-        });
+        hideToolWindowButton.addActionListener(e -> toolWindow.hide(null));
+        refreshToolWindowButton.addActionListener(e -> currentDateTime());
 
         this.currentDateTime();
     }

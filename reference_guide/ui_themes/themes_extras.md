@@ -5,12 +5,12 @@ title: UI Themes - Editor Schemes and Background Images
 UI Themes can also provide custom color and font settings, as well as custom images for display in the IntelliJ IDEA application window.
  
 ## Adding a Custom Editor Scheme
-IntelliJ IDEA users can set preferences to configure the colors and fonts used in the Editor. 
+Users of IntelliJ Platform-based IDEs, such as Intellij IDEA, can set preferences to configure the colors and fonts used in the Editor. 
 These custom color and font settings are called _Editor Color Schemes_.
 
 ### Creating a Custom Editor Scheme Using Settings/Preferences
-Custom editor color schemes can be specified and exported using the _Settings/Preferences_ dialog.
-Note that editor [Colors and Fonts](https://www.jetbrains.com/help/idea/configuring-colors-and-fonts.html), and [Colors for Version Control File Status](https://www.jetbrains.com/help/idea/file-status-highlights.html) are customized in different sections of IntelliJ IDEA _Settings/Preferences_.
+Custom editor color schemes can be specified and exported using the IDE _Settings/Preferences_ dialog.
+Note that editor [Colors and Fonts](https://www.jetbrains.com/help/idea/configuring-colors-and-fonts.html), and [Colors for Version Control File Status](https://www.jetbrains.com/help/idea/file-status-highlights.html) are customized in different sections of _Settings/Preferences_.
 
 Use the following procedure to customize an editor color scheme for a UI Theme: 
 * Create the desired custom editor color scheme using the IDE preferences. 
@@ -66,7 +66,7 @@ For additional examples of `FILESTATUS` color `name` attributes, see the editor 
 Editor scroll bar colors should be coordinated with, and switch together with an editor color scheme.
 Please note that Custom UI Theme (`*.theme.json`) files also contain `ScrollBar.*` name attributes, but these are for scroll bars outside the context of the editor.
 
->**Note** The Editor Scroll Bar colors are the only custom editor scheme settings that cannot be customized and exported through the IntelliJ IDEA preferences.
+>**Note** The Editor Scroll Bar colors are the only editor scheme settings that cannot be customized and exported through IDE preferences.
 
 Customizing the editor scroll bar colors requires manually changing an editor color scheme XML file.
 At this time there isn't code completion functionality for editing color scheme XML files, so the `name` attributes are described below.
@@ -86,8 +86,8 @@ Note that the following example snippet uses an eight-digit hexadecimal color `v
 ```
 
 #### Editor Scroll Bar Attribute Names
-The full list of scroll bar `name` attributes is in the [High Contrast editor scheme](upsource:///platform/platform-resources/src/themes/highContrastScheme.xml) file. 
-These name attributes cannot be accessed from anywhere in the UI at this time, so they must be manually added to an editor color scheme XML file.
+A list of scroll bar `name` attributes is in the [High Contrast editor scheme](upsource:///platform/platform-resources/src/themes/highContrastScheme.xml) file. 
+These name attributes cannot be accessed from anywhere in the IDE UI at this time, so they must be manually added to an editor color scheme XML file.
 
 The following list explains the `usage` format of the `name` attribute, i.e. where a custom scroll bar color is applied:
 * `*.trackColor` — The scroll bar thumb moves across this area.

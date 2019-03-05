@@ -25,12 +25,6 @@ public class SimpleCodeStyleSettingsProvider extends CodeStyleSettingsProvider {
       protected CodeStyleAbstractPanel createPanel(CodeStyleSettings settings) {
         return new SimpleCodeStyleMainPanel(getCurrentSettings(), settings);
       }
-    
-      @Nullable
-      @Override
-      public String getHelpTopic() {
-        return null;
-      }
     };
   }
   

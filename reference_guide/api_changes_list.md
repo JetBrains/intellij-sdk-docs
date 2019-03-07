@@ -9,8 +9,8 @@ in an alternative way as the following docs state:
 API Compatibility policy: https://confluence.jetbrains.com/display/IDEA/IntelliJ+Platform+API+compatibility+policy
 API Compatibility FAQ:    https://confluence.jetbrains.com/display/IDEA/IntelliJ+API+Compatibility+Policy+FAQ
 
-To document a new incompatible change, you have to fill a row in a table so that
-the first column is a problem pattern and the second column is a human-readable description.
+To document a new incompatible change, add a new line with the problem pattern
+followed by a 2nd line with ": "-prefixed human-readable description.
 
 The following problem patterns are supported:
 
@@ -23,7 +23,7 @@ The following problem patterns are supported:
 <class name>.<method name> method parameter <type> removed
 <class name>.<method name> method parameter type changed from <before> to <after>
 <class name>.<method name> method visibility changed from <before> to <after>
-<class name>.<method name> method became final
+<class name>.<method name> method marked final
 
 <class name> constructor removed
 <class name> constructor parameter <type> removed

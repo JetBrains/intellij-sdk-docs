@@ -10,6 +10,11 @@ See the note on how to document new problems on the main page reference_guide/ap
 
 -->
 
+## Changes in IntelliJ Platform 2019.2
+`java.org.java_websocket` package removed
+: Java-WebSocket Library was removed. [Homepage](https://github.com/TooTallNate/Java-WebSocket)
+
+
 ## Changes in IntelliJ Platform 2019.1
 
 `kotlinx.coroutines.experimental` package removed 

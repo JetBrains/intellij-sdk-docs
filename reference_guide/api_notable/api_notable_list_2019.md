@@ -7,6 +7,8 @@ title: Notable Changes in IntelliJ Platform and Plugins API 2019.*
 `com.intellij.util.Query#forEach`
 : Defaults to thread-safe to prevent problems with clients using unsynchronized collections.
 
+Java-WebSocket Library
+: Library was removed. [Homepage](https://github.com/TooTallNate/Java-WebSocket)
 
 ## Notable Changes in IntelliJ Platform 2019.1
 

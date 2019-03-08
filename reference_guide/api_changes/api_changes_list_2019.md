@@ -14,9 +14,6 @@ See the note on how to document new problems on the main page reference_guide/ap
 `java.org.java_websocket` package removed
 : Java-WebSocket Library was removed. [Homepage](https://github.com/TooTallNate/Java-WebSocket)
 
-`com.intellij.openapi.util.KeyedExtensionCollector.getExtensions()` method marked final
-: Remove custom implementation.
-
 `com.intellij.ide.SaveAndSyncHandlerImpl.refreshOpenFiles()` method removed
 : Use `com.intellij.ide.SaveAndSyncHandler.refreshOpenFiles` instead.
 
@@ -40,6 +37,9 @@ See the note on how to document new problems on the main page reference_guide/ap
 
 `com.intellij.util.lang.UrlClassLoader.loadPlatformLibrary` method removed
 : Use `com.intellij.util.loader.NativeLibraryLoader.loadPlatformLibrary` instead.
+
+`com.intellij.openapi.util.KeyedExtensionCollector.getExtensions()` method marked final
+: Remove custom implementation.
 
 ## Changes in DataGrip and Database Tools plugin 2019.1
 

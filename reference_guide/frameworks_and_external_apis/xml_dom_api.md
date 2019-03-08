@@ -74,6 +74,8 @@ interface Bar extends com.intellij.util.xml.DomElement {
 ```
 
 Next, you should create a [`DomFileDescription`](upsource:///xml/dom-openapi/src/com/intellij/util/xml/DomFileDescription.java) object, pass to its constructor the root tag name and root element interface, and register it with extension point `com.intellij.dom.fileDescription`.
+If your plugin targets 2019.1 or later, please use extension point `com.intellij.dom.fileMetaData` instead and specify `rootTagName` and `domVersion`/`stubVersion` in `plugin.xml`.
+
 You can now get the file element from [`DomManager`](upsource:///xml/dom-openapi/src/com/intellij/util/xml/DomManager.java). To get the "239" value, you only have to write the following code:
 
 ```java

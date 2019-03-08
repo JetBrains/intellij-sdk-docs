@@ -1,12 +1,10 @@
-<idea-plugin url="www.jetbrains.com">
+<idea-plugin>
   <id>org.jetbrains.plugins.sample.TreeStructure</id>
   <name>Tree Structure Provider Demo</name>
   <version>1.0</version>
-  <vendor email="support@jetbrains.com" url="http://www.jetbrains.com">JetBrains</vendor>
+  <vendor>JetBrains</vendor>
 
-  <description>Tree Structure Provider Demo</description>
-
-  <change-notes>Initial commit</change-notes>
+  <description>Tree Structure Provider Demo showing only plain text files</description>
 
   <idea-version since-build="131"/>
   <depends>com.intellij.modules.lang</depends>
@@ -14,17 +12,5 @@
   <extensions defaultExtensionNs="com.intellij">
     <treeStructureProvider implementation="org.jetbrains.tutorials.tree.structure.TextOnlyTreeStructureProvider"/>
   </extensions>
-
-  <application-components>
-    <!-- Add your application components here -->
-  </application-components>
-
-  <project-components>
-    <!-- Add your project components here -->
-  </project-components>
-
-  <actions>
-    <!-- Add your actions here -->
-  </actions>
 
 </idea-plugin>

@@ -10,7 +10,7 @@ as well as other methods defined in the `PsiElement` interface that let you proc
 operation, or to specify the exact location in the tree where an element needs to be added.
 
 Just as document operations, PSI modifications need to be wrapped in a write action and in a command (and therefore
-can only be performed in the event dispatch thread). See [the Documents article](/basics/architectural_overview/documents.html#what-are-the-rules-of-working-with-documents)
+can only be performed in the event dispatch thread). See [the Documents article](documents.md#what-are-the-rules-of-working-with-documents)
 for more information on commands and write actions.
 
 

@@ -1,5 +1,8 @@
 ---
 title: Fundamentals
+redirect_from:
+  - /reference_guide.html
+  - /basics/architectural_overview.html
 ---
 
 This section describes the low level fundamental building blocks of the _IntelliJ Platform_:

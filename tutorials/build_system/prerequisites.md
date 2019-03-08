@@ -2,13 +2,13 @@
 title: Getting Started with Gradle
 ---
 
-Adding Gradle build support to an IntelliJ Platform Plugin requires a recent distribution to the Gradle build system and IntelliJ IDEA (Community or Ultimate).
+Adding Gradle build support to an IntelliJ Platform Plugin requires a recent distribution of the Gradle build system and IntelliJ IDEA (Community or Ultimate).
 
 ### 1.0 Download and Install IntelliJ IDEA
 
 Download and install either IntelliJ IDEA Ultimate or the IntelliJ IDEA Community Edition.
 
-### 1.1 Ensure the Gradle Plugin and 'Plugin DevKit' Plugin are Enabled
+### 1.1 Ensure that 'Gradle' and 'Plugin DevKit' Plugins are Enabled
 
 You can verify that the plugins are enabled by visiting **Settings \| Plugins**.
 
@@ -16,7 +16,7 @@ You can verify that the plugins are enabled by visiting **Settings \| Plugins**.
 
 ### 1.2 Create a Plugin Project from Scratch
 
-IntelliJ IDEA supports automatically creating new plugin projects using Gradle, with all the necessary build.gradle
+IntelliJ IDEA supports automatically creating new plugin projects using Gradle, with all the necessary `build.gradle`
 setup performed automatically. This can also be used to convert an existing plugin to Gradle, if Gradle is not able to 
 convert the existing project - in this case, you need to copy over the sources to the new project.
 
@@ -59,7 +59,7 @@ buildscript {
 }
 
 plugins {
-    id "org.jetbrains.intellij" version "0.3.0"
+    id "org.jetbrains.intellij" version "0.4.2"
 }
 
 apply plugin: 'idea'

@@ -4,7 +4,7 @@ title: Upload Plugin API
  
 Please note that maximum allowed plugin size is *200 MB*.
 
-You should create a [**hubPermanentToken**](https://www.jetbrains.com/help/hub/Manage-Permanent-Tokens.html) and specify Plugin Repository in Scope.
+You should create a [**hubPermanentToken**](https://www.jetbrains.com/help/hub/Manage-Permanent-Tokens.html) at [JetBrains Hub](https://hub.jetbrains.com/users/me?tab=authentification) and specify Plugin Repository in Scope.
 
    ![Hub Token](img/hub_token.png)
 
@@ -43,3 +43,50 @@ Curl command example:
 ```
 curl -i --header "Authorization: Bearer perm:qwertyasdfghzxcvb" -F xmlId=ro.redeul.google.go -F file=@Go-0.11.1197.zip -F channel=nightly https://plugins.jetbrains.com/plugin/uploadPlugin
 ```
+## .NET
+
+You can upload the plugins for .NET using *push* command of the *NuGet CLI*. 
+You should use [hubPermanentToken](https://www.jetbrains.com/help/hub/Manage-Permanent-Tokens.html) for it 
+with Plugin Repository in Scope as shown above. 
+
+Push command template:
+
+```
+nuget push <path to plugin .nupkg file> <hubPermanentToken> -Source https://plugins.jetbrains.com/
+```
+
+Push command example:
+
+```
+nuget push angularjs.1.9.0.nupkg perm:qwertyasdfghzxcvb -Source https://plugins.jetbrains.com/
+```
+
+**Configuration**
+
+Configuration for NuGet is located in `%AppData%\NuGet\NuGet.Config` (Windows), 
+`~/.config/NuGet/NuGet.Config` or `~/.nuget/NuGet/NuGet.Config` (Mac/Linux).
+You can modify this file using [the NuGet CLI commands](https://docs.microsoft.com/en-us/nuget/reference/nuget-config-file). 
+
+For example, you can set a key for a source and add *plugins site* to the default push source:
+
+```
+# Set hub token for plugins site
+nuget setApiKey perm:qwertyasdfghzxcvb -Source https://plugins.jetbrains.com/
+
+# Set plugins site as default for push
+nuget config -set defaultPushSource=https://plugins.jetbrains.com/
+
+# Push if the key and the default source are set
+nuget push angularjs.1.9.0.nupkg
+```
+In addition to the fact that you can change NuGet's default configuration, 
+you can apply your own configuration file using `ConfigFile` option in *push* command. 
+For example:
+
+```
+nuget push angularjs.1.9.0.nupkg -ConfigFile ~/my.Config
+```
+
+To obtain more information about the NuGet configuration see [this page](https://docs.microsoft.com/en-us/nuget/consume-packages/configuring-nuget-behavior).
+
+

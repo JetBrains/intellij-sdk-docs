@@ -1,5 +1,7 @@
 ---
 title: IDE Development Instances - Settings, Caches, Logs, and Plugins
+redirect_from:
+  - /basics/settings_caches_logs.html
 ---
 
 A JetBrains feature for developing plugins is to run or debug a plugin project from within a JetBrains IDE, e.g. IntelliJ IDEA. 

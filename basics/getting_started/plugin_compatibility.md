@@ -54,6 +54,7 @@ The following modules or built-in plugins are available in these specific produc
 | `com.intellij.modules.rider`         | Rider                                                                                |
 | `com.intellij.modules.ruby`          | RubyMine                                                                             |
 | `com.jetbrains.php`                  | PhpStorm (built-in plugin)                                                           |
+| `com.intellij.modules.webstorm`      | WebStorm                                                           |
 
 ## Plugin dependencies
 

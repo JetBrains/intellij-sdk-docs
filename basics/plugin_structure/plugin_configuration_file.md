@@ -2,11 +2,11 @@
 title: Plugin Configuration File - plugin.xml
 ---
 
-The following is a sample plugin configuration file. This sample showcases and describes all elements that can be used in the plugin.xml file.
+The following is a sample plugin configuration file. This sample showcases and describes all elements that can be used in the `plugin.xml` file.
 
 ```xml
-<!-- url="" specifies the URL of the plugin homepage (displayed in the Welcome Screen and in "Plugins" settings dialog) -->
-<idea-plugin url="http://www.jetbrains.com/idea">
+<!-- `url` specifies the URL of the plugin homepage (can be opened from "Plugins" settings dialog) -->
+<idea-plugin url="https://www.jetbrains.com/idea">
 
   <!-- Plugin name -->
   <name>VssIntegration</name>
@@ -14,7 +14,7 @@ The following is a sample plugin configuration file. This sample showcases and d
   <!-- Unique identifier of the plugin.
        Cannot be changed between the plugin versions.
        If not specified, assumed to be equal to <name>. -->
-  <id>VssIntegration</id>
+  <id>com.jetbrains.vssintegration</id>
 
   <!-- Description of the plugin. -->
   <description>Vss integration plugin</description>
@@ -30,29 +30,30 @@ The following is a sample plugin configuration file. This sample showcases and d
   <!-- The vendor of the plugin.
        The optional "url" attribute specifies the URL of the vendor homepage.
        The optional "email" attribute specifies the e-mail address of the vendor.-->
-  <vendor url="http://www.jetbrains.com" email="support@jetbrains.com" />
+  <vendor url="https://www.jetbrains.com" email="support@jetbrains.com" />
 
   <!-- The unique identifiers of the plugins on which this plugin depends. -->
-  <depends>MyFirstPlugin</depends>
+  <depends>com.MyFirstPlugin</depends>
 
   <!-- Optional dependency on another plugin.
-       If the plugin with the "MySecondPlugin" ID is installed,
+       If the plugin with the "com.MySecondPlugin" ID is installed,
        the contents of mysecondplugin.xml (the format of this file
        conforms to the format of plugin.xml) will be loaded. -->
-  <depends optional="true" config-file="mysecondplugin.xml">MySecondPlugin</depends>
+  <depends optional="true" config-file="mysecondplugin.xml">com.MySecondPlugin</depends>
 
   <!-- Allows a plugin to integrate its help system (in JavaHelp format)
-       with the IDEA help system. The "file" attribute specifies the name
+       with the IDE help system. The "file" attribute specifies the name
        of the JAR file in the "help" subdirectory of the plugin directory.
        The "path" attribute specifies the name of the helpset file within
        the JAR file.-->
   <helpset file="myhelp.jar" path="/Help.hs" />
 
-  <!-- Minimum and maximum build of IDEA compatible with the plugin -->
-  <idea-version since-build="3000" until-build="3999"/>
+  <!-- Minimum and maximum build of IDE compatible with the plugin -->
+  <idea-version since-build="183" until-build="183.*"/>
 
-  <!-- Resource bundle from which the text of plugin descriptions,
-       action names and etc. will be loaded -->
+  <!-- Resource bundle (/messages/MyPluginBundle.properties) to be used
+       with `key` attributes in extension points and implicit keys like
+       `action.[pluginID].[ActionID].text` -->
   <resource-bundle>messages.MyPluginBundle</resource-bundle>
 
   <!-- Plugin's application components -->
@@ -70,7 +71,7 @@ The following is a sample plugin configuration file. This sample showcases and d
   <project-components>
     <component>
       <!-- Interface and implementation classes are the same -->
-      <interface-class>com.foo.Component2</interface-class>
+      <implementation-class>com.foo.Component2</implementation-class>
 
       <!-- If the "workspace" option is set "true", the component
            saves its state to the .iws file instead of the .ipr file.
@@ -80,14 +81,14 @@ The following is a sample plugin configuration file. This sample showcases and d
       <option name="workspace" value="true" />
 
       <!-- If the "loadForDefaultProject" tag is present, the project component is instantiated also for the default project. -->
-      <loadForDefaultProject>
+      <loadForDefaultProject/>
     </component>
   </project-components>
 
   <!-- Plugin's module components -->
   <module-components>
     <component>
-      <interface-class>com.foo.Component3</interface-class>
+      <implementation-class>com.foo.Component3</implementation-class>
     </component>
   </module-components>
 
@@ -108,11 +109,11 @@ The following is a sample plugin configuration file. This sample showcases and d
   </extensionPoints>
 
   <!-- Extensions which the plugin adds to extension points
-       defined by the IDEA core or by other plugins.
+       defined by the IntelliJ Platform or by other plugins.
        The "defaultExtensionNs " attribute must be set to the
        ID of the plugin defining the extension point, or to 
        "com.intellij" if the extension point is defined by the
-       IDEA core. The name of the tag within the <extensions>
+       IntelliJ Platform. The name of the tag within the <extensions>
        tag matches the name of the extension point, and the
        "implementation" class specifies the name of the class
        added to the extension point. -->

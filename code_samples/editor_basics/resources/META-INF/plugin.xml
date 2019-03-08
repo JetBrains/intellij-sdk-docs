@@ -4,25 +4,10 @@
   <version>1.0</version>
   <vendor email="support@jetbrains.com" url="http://www.jetbrains.com">JetBrains</vendor>
 
-  <description>Illustration of Editor's basics</description>
+  <description>Illustration of various basic Editor APIs</description>
 
-  <change-notes>Initial commit</change-notes>
-
-  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
   <idea-version since-build="131"/>
   <depends>com.intellij.modules.lang</depends>
-
-  <extensions defaultExtensionNs="com.intellij">
-    <!-- Add your extensions here -->
-  </extensions>
-
-  <application-components>
-    <!-- Add your application components here -->
-  </application-components>
-
-  <project-components>
-    <!-- Add your project components here -->
-  </project-components>
 
   <actions>
     <action id="EditorBasics.EditorIllustration"

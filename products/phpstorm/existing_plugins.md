@@ -1,5 +1,7 @@
 ---
 title: Example PhpStorm Third Party Plugins
+redirect_from:
+  - /phpstorm/existing_plugins.html
 ---
 
 This page lists some example PhpStorm plugins created by third party developers.

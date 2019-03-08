@@ -95,7 +95,7 @@ Module module = ModuleUtil.findModuleForFile(virtualFile,myProject);
 String moduleName = module == null ? "Module not found" : module.getName();
 ```
 
-* To get the project module to which the specified [PSI element](architectural_overview/psi_elements.md) belongs, use the `ModuleUtil.findModuleForPsiElement(psiElement)` method.
+* To get the project module to which the specified [PSI element](../../basics/architectural_overview/psi_elements.md) belongs, use the `ModuleUtil.findModuleForPsiElement(psiElement)` method.
 
 
 ### Accessing module roots

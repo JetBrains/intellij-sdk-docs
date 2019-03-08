@@ -1,95 +1,60 @@
 ---
-title: IntelliJ Platform Artifacts Repository
+title: IntelliJ Platform Artifacts Repositories
 ---
 
-JetBrains maintains a public repository that hosts artifacts related to the IntelliJ Platform, such as binaries and source code. This 
-repository makes artifacts more accessible for plugin authors.
+JetBrains maintains public repositories that host artifacts related to the IntelliJ Platform, such as binaries and source code. These 
+repositories make artifacts more accessible for plugin developers.
 
-The IntelliJ Platform Artifacts Repository contains:
+The IntelliJ Platform artifacts repositories are:
 * [Releases repository](https://www.jetbrains.com/intellij-repository/releases/) for release and EAP versions.
-* [Snapshots repository](https://www.jetbrains.com/intellij-repository/snapshots/) for nightly successful 
-  builds of each branch.
+* [Snapshots repository](https://www.jetbrains.com/intellij-repository/snapshots/) for EAP candidates and the latest EAP for each branch.
+
+Both the Releases and Snapshots repositories have two types of content:
+* Binary and source code artifacts for cross-platform, ZIP distributions of IntelliJ Platform-based IDEs, such as IntelliJ IDEA, CLion, Rider, and MPS.
+These artifacts are not intended to be accessed directly from a plugin project's `build.gradle` file. 
+The `gradle-intellij-plugin` will access them as-needed for a plugin project.
+* Artifacts for individual modules from the IntelliJ Platform. 
+These may be downloaded, or accessed directly from a `build.gradle` file, as explained below.
   
-More artifacts will be hosted in the future.
+Artifacts for IntelliJ Platform third-party dependencies are hosted at the [Bintray repository](https://jetbrains.bintray.com/intellij-third-party-dependencies). 
+A link to this repository should be added to `pom.xml`/`build.gradle` files when individual modules from an IntelliJ Platform artifacts repository are used.    
 
-[Dependencies](https://jetbrains.bintray.com/intellij-third-party-dependencies) of individual modules from the IntelliJ
-Platform are hosted at the bintray repository. These artifacts should not be used directly, but a link to this 
-repository should be added to pom.xml/build.gradle files if individual modules from the IntelliJ Platform Artifacts Repository are used.    
+## Using IntelliJ Platform Module Artifacts
+IntelliJ Platform module artifacts are utilized by adding information to a project's `build.gradle` file. 
+More information about [Gradle support](https://www.jetbrains.com/help/idea/gradle.html) is available in the IntelliJ IDEA Help documentation. 
 
-## How to Use the IntelliJ Platform Artifacts Repository
-Artifacts in the repositories are utilized by adding information to a project's build.gradle file. See
-the [gradle-intellij-plugin](https://github.com/JetBrains/gradle-intellij-plugin) for more information about
-Gradle support. 
-
-There are two types of information needed to use a repository:
+To setup dependencies on a module there are two types of information needed:
 1. Specify the corresponding repository URL for the artifact.
 2. Specify the Maven coordinates for the artifact. 
  
-### Add the Repository URL 
-The corresponding URL for the desired artifact needs to be added to a Maven or Gradle script:
+### Specify the Repository URL 
+The URL for the desired artifact needs to be added to a Maven or Gradle script:
 * For release or EAP versions, use https://www.jetbrains.com/intellij-repository/releases 
-* For snapshot or EAP snapshots, use https://www.jetbrains.com/intellij-repository/snapshots
-* For dependencies of individual modules from the IntelliJ Platform, use https://jetbrains.bintray.com/intellij-third-party-dependencies 
+* For EAP candidate snapshots, use https://www.jetbrains.com/intellij-repository/snapshots
+* For dependencies on individual modules from the IntelliJ Platform, also use https://jetbrains.bintray.com/intellij-third-party-dependencies 
 
 ### Specify the Artifact
-Describing the desired artifact is done with Maven coordinates:
-* Cross-platform zip distributions of IntelliJ Platform artifacts:
-  * groupId = com.jetbrains.intellij.idea
-  * artifactId = ideaIC
-  * classifier = ""
-  * packaging = .zip
-* Sources of IntelliJ IDEA Community Edition:
-  * groupId = com.jetbrains.intellij.idea
-  * artifactId = ideaIC
-  * classifier = sources
-  * packaging = jar
-* Individual modules from the IntelliJ Platform with their dependencies. For example, to specify the jps-model-serialization module:
+Describing a desired IntelliJ Platform module artifact is done with Maven coordinates. 
+For example, to specify the `jps-model-serialization` module:
   * groupId = com.jetbrains.intellij.platform
   * artifactId = jps-model-serialization
   * classifier = ""
   * packaging = jar
 
-For each artifact [at the Repository URLs](#add-the-repository-url) there are multiple versions available. The version can be specified in one of several ways:
+For each artifact [at the Repository URLs](#specify-the-repository-url) there are multiple versions available. The version can be specified in one of several ways:
 * A branch build is specified as _BRANCH.BUILD[.FIX]_. For example, a branch build such as `141.233`, or a branch build with a fix such as `139.555.1`
 * Release numbers are specified as _MAJOR[.MINOR][.FIX]_. For example `14`, or `14.1`, or `14.1.1`
-* A snapshot of the latest nightly build from a branch is specified as _XXX-SNAPSHOT_. For example `142-SNAPSHOT`
 * A snapshot of a branch from which the next EAP/release build will be produced is specified as _BRANCH-EAP-SNAPSHOT_. For example `141-EAP-SNAPSHOT`
 
 
-## Examples
-This section presents several examples of using a Gradle script to incorporate the repository in a build.gradle file. Each example
-illustrates declaring the artifact URL, Maven coordinates, and Version for an artifact.
-There are two parts to each example: the repository and the dependency sections.
+## Gradle Example for an Individual Module from the IntelliJ Platform
+This section presents an example of using a Gradle script to incorporate an IntelliJ Platform module and repository in a `build.gradle` file. 
+The example illustrates declaring the artifact URL, Maven coordinates, and version for the `jps-model-serialization` module artifact.
+There are two parts to the example: the repository and the dependency sections.
 
-### Gradle Example for IntelliJ IDEA Community Edition Distribution
-These snippets illustrate incorporating an IntelliJ snapshot build into a build.gradle file.
-
-**Repository Section**  
-This snippet selects the snapshot repository for the artifact by virtue of the URL.
-```groovy
-repositories {
-    maven { url "https://www.jetbrains.com/intellij-repository/snapshots" }
-}
-```
-
-**Dependencies Section**  
-Given the repository section has selected a snapshot, the dependencies section specifies the desired build artifact.
-```groovy
-dependencies {
-    idea_dep "com.jetbrains.intellij.idea:ideaIC:141-SNAPSHOT@zip"
-}
-```
-Where `idea_dep` names this custom configuration.
-
-Here is an example of a [build.gradle](https://github.com/shalupov/idea-cloudformation/blob/9007023afa187a1fb8b45c3ca66d5a51f86b795c/build.gradle)
-file that is currently in use.
-
-### Gradle Example for an Individual Module from the IntelliJ IDEA Project
-These snippets illustrate incorporating an IntelliJ module into a build.gradle file. In this case the desired module is `jps-model-serialization`.
-
-**Repositories Section**  
-This snippet selects the release repository with the first URL, and the repository of IntelliJ IDEA dependencies with the second URL.
-The second URL is needed because this example selects individual modules, not a full build. 
+### Repositories Section  
+This code snippet selects the release repository with the first URL, and repository of IntelliJ Platform dependencies with the second URL.
+The second URL is needed because this example selects individual modules. 
 ```groovy
 repositories {
 	maven { url "https://www.jetbrains.com/intellij-repository/releases" }
@@ -97,8 +62,8 @@ repositories {
 }
 ```
 
-**Dependencies Section**  
-This dependencies section specifies the desired module artifacts.
+### Dependencies Section  
+This code snippet specifies the desired module artifacts.
 ```groovy
 dependencies {
 	compile "com.jetbrains.intellij.platform:jps-model-serialization:182.2949.4"

@@ -1,29 +1,18 @@
 <idea-plugin>
-  <name>max_opened_projects</name>
-  <description>short description of the plugin</description>
+  <name>Maximum Open Projects</name>
+  <description>Shows warning dialog when the maximum allowed number of open projects is exceeded</description>
   <version>1.0</version>
-  <vendor>YourCompany</vendor>
-  <idea-version since-build="8000"/>
-
-  <application-components>
-    <!-- Add your application components here -->
-  </application-components>
+  <vendor>JetBrains</vendor>
+  <idea-version since-build="131"/>
 
   <project-components>
-    <!-- Add your project components here -->
     <component>
       <implementation-class>MyPackage.MaxProject</implementation-class>
     </component>
   </project-components>
 
-  <actions>
-    <!-- Add your actions here -->
-  </actions>
-
   <extensions defaultExtensionNs="com.intellij">
-    <!-- Add your extensions here -->
-    <applicationService serviceInterface="MyPackage.MyCounter" serviceImplementation="MyPackage.MyCounter">
-
-    </applicationService>
+    <applicationService serviceInterface="MyPackage.MyCounter"
+                        serviceImplementation="MyPackage.MyCounter"/>
   </extensions>
 </idea-plugin>

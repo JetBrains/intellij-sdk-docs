@@ -2,7 +2,7 @@
 title: Plugin Icon
 ---
 
-Beginning in version 2018.3, the IntelliJ Platform supports representing a plugin with an icon.
+Beginning in version 2019.1, the IntelliJ Platform supports representing a plugin with an icon.
 A _Plugin Icon_ is intended to be a unique representation of a plugin's functionality, technology, or 
 company. 
 

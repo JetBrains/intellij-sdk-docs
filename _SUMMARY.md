@@ -24,6 +24,7 @@
         * [Running and Debugging a Plugin](basics/getting_started/running_and_debugging_a_plugin.md)
         * [Deploying a Plugin](basics/getting_started/deploying_plugin.md)
         * [Publishing a Plugin](basics/getting_started/publishing_plugin.md)
+* [Custom Plugin Repositories](basics/getting_started/update_plugins_format.md)
 * [Plugin Structure](basics/plugin_structure.md)
     * [Plugin Content](basics/plugin_structure/plugin_content.md)
     * [Plugin Class Loaders](basics/plugin_structure/plugin_class_loaders.md)
@@ -34,6 +35,7 @@
     * [Plugin Configuration File](basics/plugin_structure/plugin_configuration_file.md)
     * [Plugin Icon](basics/plugin_structure/plugin_icon_file.md)
     * [Plugin Dependencies](basics/plugin_structure/plugin_dependencies.md)
+* [IntelliJ Platform Artifacts Repositories](reference_guide/intellij_artifacts.md)
 * [Kotlin for Plugin Developers](tutorials/kotlin.md)
 * [IDE Development Instances](basics/ide_development_instance.md)
 * [Plugin Development FAQ](faq.md)
@@ -63,6 +65,7 @@
         * [2. Grouping Actions](tutorials/action_system/grouping_action.md)
 * Settings
     * [Persisting State of Components](basics/persisting_state_of_components.md)
+    * [Persisting Sensitive Data](basics/persisting_sensitive_data.md)
     * Editing Settings
 * [Files](basics/architectural_overview/files.md)
     * [Virtual File System](basics/virtual_file_system.md)
@@ -212,10 +215,10 @@
 * [IntelliJ IDEA](products/idea.md)
     * [Tomcat Integration](reference_guide/tomcat_integration.md)
     * [Spring API](reference_guide/frameworks_and_external_apis/spring_api.md)
-* [PhpStorm](phpstorm/phpstorm.md)
-    * [Setting-up the Environment](phpstorm/setting_up_environment.md)
-    * [PHP Open API](phpstorm/php_open_api.md)
-    * [Existing Third Party Plugins](phpstorm/existing_plugins.md)
+* [PhpStorm](products/phpstorm/phpstorm.md)
+    * [Setting-up the Environment](products/phpstorm/setting_up_environment.md)
+    * [PHP Open API](products/phpstorm/php_open_api.md)
+    * [Existing Third Party Plugins](products/phpstorm/existing_plugins.md)
 * [PyCharm](products/pycharm.md)
 * DataGrip
 * Android Studio
@@ -240,22 +243,17 @@
 
 ## Appendix I - Resources
 
-* [Introduction](resources.md)
-* [IntelliJ Community Edition on GitHub](https://github.com/JetBrains/intellij-community)
-* [IDE Settings, Caches, Logs, and Plugins](https://intellij-support.jetbrains.com/hc/en-us/articles/206544519-Directories-used-by-the-IDE-to-store-settings-caches-plugins-and-logs)
-* [IntelliJ Plugins](https://github.com/JetBrains/intellij-plugins)
-* [IntelliJ Platform Artifacts Repository](reference_guide/intellij_artifacts.md)
-* [IntelliJ Scala Plugin](https://github.com/JetBrains/intellij-scala)
-* [Gradle IntelliJ Plugin](https://github.com/JetBrains/gradle-intellij-plugin)
-* [IntelliJ SDK Documentation](https://github.com/JetBrains/intellij-sdk-docs)
-* [IntelliJ Plugin Verifier](https://github.com/JetBrains/intellij-plugin-verifier)
-* [IntelliJ Plugin Developers Gitter](https://gitter.im/IntelliJ-Plugin-Developers/Lobby)
-* [Community SDK Forum](https://intellij-support.jetbrains.com/hc/en-us/community/topics/200366979-IntelliJ-IDEA-Open-API-and-Plugin-Development)
-* [Kotlin Reference](https://kotlinlang.org)
+* [Useful Links](appendix/resources/useful_links.md)
+* [Consulting](appendix/resources/consulting.md)
 
-## Appendix II - Breaking API Changes
+## Appendix II - API Changes
 
-* [Breaking API Changes](reference_guide/api_changes_list.md)
+* [Incompatible API Changes](reference_guide/api_changes_list.md)
+    * [2019.*](reference_guide/api_changes/api_changes_list_2019.md)
     * [2018.*](reference_guide/api_changes/api_changes_list_2018.md)
     * [2017.*](reference_guide/api_changes/api_changes_list_2017.md)
     * [2016.*](reference_guide/api_changes/api_changes_list_2016.md)
+
+* [Notable API Changes](reference_guide/api_notable/api_notable.md)
+    * [2019.*](reference_guide/api_notable/api_notable_list_2019.md)
+    * [2018.*](reference_guide/api_notable/api_notable_list_2018.md)

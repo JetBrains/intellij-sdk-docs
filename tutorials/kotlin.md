@@ -66,9 +66,9 @@ repositories {
 
 Please note that you should **not** include `kotlin-runtime` and `kotlin-stdlib` jars with your plugin because Kotlin guarantees backward- and forward- binary compatibility.
 
-### 3.1. Use Kotlin to write gradle script
+### 3.1. Use Kotlin to write Gradle script
 
-After gradle 4.4, gradle starts supporting `build.gradle.kts`, an alternative to `build.gradle` written in Kotlin.
+Starting with 4.4, Gradle supports `build.gradle.kts`, an alternative to `build.gradle` written in Kotlin.
 
 There're many good resources for learning how to write build scripts for an IntelliJ plugin with Kotlin script, like [intellij-rust](https://github.com/intellij-rust/intellij-rust/blob/master/build.gradle.kts), [julia-intellij](https://github.com/ice1000/julia-intellij/blob/master/build.gradle.kts), [covscript-intellij](https://github.com/covscript/covscript-intellij/blob/master/build.gradle.kts) or [zig-intellij](https://github.com/ice1000/zig-intellij/blob/master/build.gradle.kts).
 
@@ -84,7 +84,7 @@ buildscript {
 }
 
 plugins {
-	id("org.jetbrains.intellij") version "0.2.18"
+	id("org.jetbrains.intellij") version "0.4.2"
 	kotlin("jvm") version "1.2.30"
 }
 

@@ -38,7 +38,7 @@ Sdk projectSdk = ProjectRootManager.getInstance(project).getProjectSdk();
   ProjectRootManager.getInstance(project).setProjectSdkName(String name);
   ```
   
-See the following [code sample](../../../code_samples/project_model/src/com/intellij/tutorials/project/model/ProjectSdkAction.java) to get more familiar with SDK manipulation tool set.
+See the following [code sample](../../code_samples/project_model/src/com/intellij/tutorials/project/model/ProjectSdkAction.java) to get more familiar with SDK manipulation tool set.
 
 ## Working with your own SDK
 

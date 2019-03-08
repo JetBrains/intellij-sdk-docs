@@ -13,7 +13,6 @@ import javax.swing.*;
  * Defines the type, id, and name of the DemoFacet. Provides creation of DemoFacet
  * and associated Configuration.
  * Allows application of this facet to all ModuleTypes.
- * @see com.intellij.facet.FacetType
  *
  * @author Anna Bulenkova
  */

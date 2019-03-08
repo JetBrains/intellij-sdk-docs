@@ -13,9 +13,6 @@ import org.jetbrains.annotations.Nullable;
 /**
  * Provides a custom implementation of the Configuration class for DemoFacet.
  *
- * @see com.intellij.facet.FacetConfiguration
- * @see com.intellij.openapi.components.PersistentStateComponent
- *
  * @author Anna Bulenkova
  * @author John Hake
  */

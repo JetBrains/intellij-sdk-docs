@@ -16,7 +16,6 @@ import java.awt.*;
 /**
  * Provides the JPanel to be displayed in the facet UI.
  * Manages validation and modification of the DemoFacet state.
- * @see com.intellij.facet.ui.FacetEditorTab
  *
  * @author John Hake
  */

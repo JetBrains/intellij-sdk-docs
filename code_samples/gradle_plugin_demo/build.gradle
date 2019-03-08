@@ -28,10 +28,8 @@ dependencies {
 // This is the default value, defined for documentation purposes
 project.buildDir = file("${project.projectDir}/build")
 
-////////////////////////// Gradle Core Java Declarations ///////////////////////
 
-// Specify the version of the Java programming language be used to compile .java files
-sourceCompatibility= 1.8
+////////////////////////// Gradle Core Java Declarations ///////////////////////
 
 // Define a custom project layout for this plugin 
 // This is the default value, defined for documentation purposes
@@ -70,13 +68,13 @@ intellij {
   // If this version does not exist on your machine Gradle will download it.
   // Note the IntelliJ version must match the version specified in patchPluginXML.sinceBuild IF intellij.updateSinceUntilBuild is true.
   // For a full list of IntelliJ IDEA releases please see https://www.jetbrains.com/intellij-repository/releases
-  version '183.4886.37'
+  // version '183.4588.61'
 
   // The path to locally installed IDEA version against which your plugin will be built. 
   // Commented out because intellij.version is already specified.
   // Note the IntelliJ version on this path must match the version specified in patchPluginXML.sinceBuild
   // IF intellij.updateSinceUntilBuild is true.
-  // localPath = '/Applications/IntelliJCE2018-3.app'
+  localPath = '/Applications/IntelliJCE2018-3.app'
 
   // The type of JetBrains distribution. IntelliJ Community Edition is the default.
   type 'IC'

@@ -36,7 +36,6 @@
     * [Plugin Dependencies](basics/plugin_structure/plugin_dependencies.md)
 * [Kotlin for Plugin Developers](tutorials/kotlin.md)
 * [IDE Development Instances](basics/ide_development_instance.md)
-* [Code Samples](code_samples/gradle_plugin_demo/docs/gradle_plugin_demo.md)
 * [Plugin Development FAQ](faq.md)
 
 ## Part II - Base Platform

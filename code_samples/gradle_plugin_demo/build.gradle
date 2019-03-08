@@ -82,7 +82,7 @@ intellij {
     // If this version does not exist on your machine Gradle will download it.
     // Note the IntelliJ version must match the version specified in patchPluginXML.sinceBuild if intellij.updateSinceUntilBuild is true.
     // For a full list of IntelliJ IDEA releases please see https://www.jetbrains.com/intellij-repository/releases
-    version '183.4588.61'
+    version '2018.3.1'
      
     // The path to locally installed IDEA version against which your plugin will be built. 
     // Commented out because intellij.version is already specified.
@@ -160,10 +160,10 @@ runIde {
 // Patch the plugin.xml file with the following values
 patchPluginXml {
     version = '0.1.0'               // <version> tag value
-//    sinceBuild = '145.0'            // <idea-version> tag since-build attribute
+    sinceBuild = '145.0'            // <idea-version> tag since-build attribute
 
     // <idea-version> tag until-build attribute - Not Inclusive!
-//    untilBuild = ''                 // substitutes as an open value
+    untilBuild = ''                 // substitutes as an open value
 
     // Replaces <description> tag contents.
     // No <![CDATA[ ]]> required when embedding HTML tags.
@@ -184,15 +184,18 @@ patchPluginXml {
 }
 
 // Define javadoc paths
-javadoc {
+javadoc.doFirst {
     source = sourceSets.main.java.srcDirs
     classpath = sourceSets.main.compileClasspath
     // Non-default path
-    destinationDir = file("${project.projectDir}/docs/javadoc")
+    destinationDir = project.file('docs/javadoc')
 }
 
 // javadoc task works from the command line, but adding these behaviors doesn't work
-// javadoc.dependsOn compileJava
-// patchPluginXml.dependsOn javadoc
-jar.dependsOn javadoc
+compileJava.doLast {
+    javadoc
+}
+runIde.doFirst {
+    javadoc
+}
 

@@ -4,7 +4,7 @@ title: Notable Changes in IntelliJ Platform and Plugins API 2019.*
 
 ## Notable Changes in IntelliJ Platform 2019.2
 
-`com.intellij.util.Query#forEach`
+`com.intellij.util.Query.forEach`
 : Defaults to thread-safe to prevent problems with clients using unsynchronized collections.
 
 ## Notable Changes in IntelliJ Platform 2019.1

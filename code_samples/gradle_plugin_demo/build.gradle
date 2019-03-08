@@ -1,13 +1,21 @@
+
+
 ////////////////////////// Gradle Core Declarations ///////////////////////
+
+buildscript {
+
+}
 
 // Declare the plugins to be added to Gradle
 plugins {
-  // Gradle Java core plugin. Does not need to be explicitly declared; just
-  // shown for documentation. Adds Java compilation, testing and bundling 
-  // capabilities to a project.
-  id 'java'
-  // JetBrains IDE plugin for building IDEA projects with Gradle
-  // Must be explicitly declared.
+    // Gradle Java core plugin. Does not need to be explicitly declared; just
+    // shown for documentation.
+    // Adds Java compilation, testing and bundling capabilities to a project.
+    // https://docs.gradle.org/current/userguide/java_plugin.html#java_plugin
+    id 'java'
+    // JetBrains IDE plugin for building IDEA projects with Gradle
+    // Must be explicitly declared.
+    // https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md
   id "org.jetbrains.intellij" version "0.3.12"
 }
 apply plugin: 'java'
@@ -15,13 +23,15 @@ apply plugin: 'org.jetbrains.intellij'
 
 // Declare public binary repositories to download and consume open source dependencies
 repositories {
-  mavenCentral()
+    mavenCentral()
+    
 }
 
 // Declare dependencies on modules hosted in repositories, files and other Gradle projects
+// https://docs.gradle.org/current/userguide/dependency_types.html#dependency_types
 dependencies {
-  // dependency required to compile the test source of the project
-  testCompile group: 'junit', name: 'junit', version: '4.12'
+    // dependency required to compile the test source of the project
+    testCompile group: 'junit', name: 'junit', version: '4.12'
 }
 
 // Set the project build directory.
@@ -29,161 +39,160 @@ dependencies {
 project.buildDir = file("${project.projectDir}/build")
 
 
+
 ////////////////////////// Gradle Core Java Declarations ///////////////////////
 
 // Define a custom project layout for this plugin 
 // This is the default value, defined for documentation purposes
+// https://docs.gradle.org/current/userguide/java_plugin.html#sec:java_project_layout
 // Notes on syntax:
 //   srcDir 'some/dir/path' is additive to existing source set
 //   srcDirs = ['some/dir/path'] replaces default source set with ONLY this set
 sourceSets {
-  main {
-    java {
-      srcDir 'src/main/java/'
+    main {
+        java {
+            srcDir 'src/main/java/'
+        }
+        resources {
+            srcDir 'src/main/resources/'
+        }
     }
-    resources {
-      srcDir 'src/main/resources/'
+    test {
+        java {
+            srcDir 'src/test/java'
+        }
+        resources {
+            srcDir 'src/test/resources'
+        }
     }
-  }
-  test {
-    java {
-      srcDir 'src/test/java'
-    }
-    resources {
-      srcDir 'src/test/resources'
-    }
-  }
 }
+
+
 
 
 ////////////////////////// IDEA Gradle Plugin for JetBrains IDEs /////////////////////
 // https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md
 
 intellij {
-  // Name for the plugin jar file (same as project name in Devkit)
-  pluginName 'gradle_plugin_demo'
+    // Name for the plugin jar file (same as project name in Devkit)
+    pluginName 'gradle_plugin_demo'
 
-  // Specify the version of IDEA against which your plugin will be built
-  // If neither intellij.version nor intellij.localPath is specified, default is downloading the latest EAP snapshot.
-  // If this version does not exist on your machine Gradle will download it.
-  // Note the IntelliJ version must match the version specified in patchPluginXML.sinceBuild IF intellij.updateSinceUntilBuild is true.
-  // For a full list of IntelliJ IDEA releases please see https://www.jetbrains.com/intellij-repository/releases
-  // version '183.4588.61'
+    // Specify the version of IDEA against which your plugin will be built
+    // If neither intellij.version nor intellij.localPath is specified, default is downloading the latest EAP snapshot.
+    // If this version does not exist on your machine Gradle will download it.
+    // Note the IntelliJ version must match the version specified in patchPluginXML.sinceBuild if intellij.updateSinceUntilBuild is true.
+    // For a full list of IntelliJ IDEA releases please see https://www.jetbrains.com/intellij-repository/releases
+    version '183.4588.61'
+     
+    // The path to locally installed IDEA version against which your plugin will be built. 
+    // Commented out because intellij.version is already specified.
+    // Note the IntelliJ version on this path must match the version specified in patchPluginXML.sinceBuild if
+    // intellij.updateSinceUntilBuild is true.
+    // localPath = '/Applications/IntelliJ2018-3.app'
 
-  // The path to locally installed IDEA version against which your plugin will be built. 
-  // Commented out because intellij.version is already specified.
-  // Note the IntelliJ version on this path must match the version specified in patchPluginXML.sinceBuild
-  // IF intellij.updateSinceUntilBuild is true.
-  localPath = '/Applications/IntelliJCE2018-3.app'
+    // The type of JetBrains distribution. IntelliJ Community Edition is the default.
+    type 'IC'
+    
+    // The list of bundled IDEA plugins and plugins from the IDEA repository
+    // on which this plugin depends. Same function as <depends> tag in plugin.xml
+    // This is just an example
+    plugins 'org.intellij.plugins.markdown:183.4588.3'
 
-  // The type of JetBrains distribution. IntelliJ Community Edition is the default.
-  type 'IC'
+    // Patch plugin.xml with "since" and "until" build values from 
+    // patchPluginXml.sinceBuild and patchPluginXml.untilBuild.
+    // This is the default value, defined for documentation purposes
+    updateSinceUntilBuild = 'true'
 
-  // The list of bundled IDEA plugins and plugins from the IDEA repository
-  // on which this plugin depends. Same function as <depends> tag in plugin.xml
-  // This is just an example, not really required for this plugin.
-  plugins 'org.intellij.plugins.markdown:183.4588.3'
+    // The user-defined value from patchPluginXml.sinceBuild 
+    // (or its default value) will be used as a "since" value,
+    // and if set to true the same value will be set for the "until" value.
+    // This is the default value, defined for documentation purposes
+    sameSinceUntilBuild = 'false'
+    
+    // Instrument Java classes with nullability assertions.
+    // This is the default value, defined for documentation purposes
+    instrumentCode = 'true'
 
-  // Patch plugin.xml with "since" and "until" build values from 
-  // patchPluginXml.sinceBuild and patchPluginXml.untilBuild.
-  // This is the default value, defined for documentation purposes
-  updateSinceUntilBuild = 'true'
+    // Download IntelliJ sources while initializing Gradle build
+    // This is the default value, defined for documentation purposes
+    downloadSources = 'true'
 
-  // The user-defined value from patchPluginXml.sinceBuild 
-  // (or its default value) will be used as a "since" value,
-  // and if this is set to true the same value will be set for the "until" value.
-  // This is the default value, defined for documentation purposes
-  sameSinceUntilBuild = 'false'
+    // Define the sandbox directory path/name
+    // This is the default value, defined for documentation purposes
+    sandboxDirectory = file("${project.buildDir}/idea-sandbox")
+    
+    // Set this path if you want to test your plugin in any non-IDEA JetBrains IDE 
+    // The default empty path means use the same IDE for compiling and running/debugging
+    alternativeIdePath = ''
 
-  // Instrument Java classes with nullability assertions.
-  // This is the default value, defined for documentation purposes
-  instrumentCode = 'true'
-
-  // Download IntelliJ sources while initializing Gradle build
-  // This is the default value, defined for documentation purposes
-  downloadSources = 'true'
-
-  // Define the sandbox directory path/name
-  // This is the default value, defined for documentation purposes
-  sandboxDirectory = file("${project.buildDir}/idea-sandbox")
-
-  // Set this path if you want to test your plugin in any non-IDEA JetBrains IDE 
-  // The default empty path means use the same IDE for compiling and running/debugging
-  alternativeIdePath = ''
-
-  // The absolute path to the local directory that should be used for storing IDEA distributions.
-  // The default empty path means the Gradle cache directory will be used.
-  ideaDependencyCachePath = ''
+    // The absolute path to the local directory that should be used for storing IDEA distributions.
+    // The default empty path means the Gradle cache directory will be used.
+    ideaDependencyCachePath = ''
 
 }
 
 // Set runIde attributes
 runIde {
+    
+    // Version of the JetBrains Java version to use. Unspecified means using the built-in version.
+    // runIde.jbreVersion = ''
+    
+    // Path to IDEA distribution
+    // How does this relate to intellij.localPath, intellij.alternativeIdePath?
+    // > java.io.FileNotFoundException: /Applications/IntelliJ2018-3.app/build.txt - what is build.txt?
+    // runIde.ideaDirectory = '/Applications/IntelliJ2018-3.app'
+    
+    // Path to the sandbox config directory  
+    // This is the default value, defined for documentation purposes
+    configDirectory = file("${intellij.sandboxDirectory}/config")
 
-  // Version of the JetBrains Java runtime version to use when running.
-  // Specify if you want to run against a jre different than the version
-  // built-in the application. Unspecified means using the built-in version.
-  // E.g.
-  // runIde.jbreVersion = 'jbrex8u152b1343.15'
+    // Path to the sandbox plugins directory  
+    // This is the default value, defined for documentation purposes
+    pluginsDirectory = file("${intellij.sandboxDirectory}/plugins")
 
-  // Path to a local IDEA build to be used to run plugin. Allows testing
-  // this plugin against a different version of IntelliJ. Leave out
-  // to run against the build specified by intellij.version or intellij.localPath
-  // runIde.ideaDirectory = '/Users/<user_name>/Documents/source/idea'
-
-  // Path to the sandbox config directory  
-  // This is the default value, defined for documentation purposes
-  configDirectory = file("${intellij.sandboxDirectory}/config")
-
-  // Path to the sandbox plugins directory  
-  // This is the default value, defined for documentation purposes
-  pluginsDirectory = file("${intellij.sandboxDirectory}/plugins")
-
-  // Path to the sandbox system directory  
-  // This is the default value, defined for documentation purposes
-  systemDirectory = file("${intellij.sandboxDirectory}/system")
-
+    // Path to the sandbox system directory  
+    // This is the default value, defined for documentation purposes
+    systemDirectory = file("${intellij.sandboxDirectory}/system")
+    
 }
 
 
 // Patch the plugin.xml file with the following values
 patchPluginXml {
+    version = '0.1.0'               // <version> tag value
+//    sinceBuild = '145.0'            // <idea-version> tag since-build attribute
 
-  version = '0.1.0'               // <version> tag value
+    // <idea-version> tag until-build attribute - Not Inclusive!
+//    untilBuild = ''                 // substitutes as an open value
 
-  sinceBuild = '145.0'            // <idea-version> tag since-build attribute
-  
-  untilBuild = ''                 // <idea-version> tag until-build attribute - Not Inclusive!
+    // Replaces <description> tag contents.
+    // No <![CDATA[ ]]> required when embedding HTML tags.
+    pluginDescription = 'Demonstrates using the Gradle workflow to develop plugins for JetBrains IDEs<br>Adds <em>Greeting</em> to the main menu.<br>Pops a simple <b>Hello</b> dialog'
 
-  // Replaces <description> tag contents.
-  // No <![CDATA[ ]]> required when embedding HTML tags.
-  pluginDescription = 'Demonstrates using the Gradle workflow to develop plugins for JetBrains IDEs<br>Adds <em>Greeting</em> to the main menu.<br>Pops a simple <b>Hello</b> dialog'
+    // Replaces <change-notes> tag value
+    // No <![CDATA[ ]]> required when embedding HTML tags.
+    changeNotes = '<b>0.1.0</b> Document build.gradle file<br><b>0.0.1</b> Initial release.'
 
-  // Replaces <change-notes> tag value
-  // No <![CDATA[ ]]> required when embedding HTML tags.
-  changeNotes = '<b>0.1.0</b> Document build.gradle file<br><b>0.0.1</b> Initial release.'
+    // The list of plugin.xml files to patch (in this case just 1)
+    // Note that full path is required for each plugin.xml file
+    // This is the default value, defined for documentation purposes
+    pluginXmlFiles = ["${sourceSets.main.resources.asPath}"]
 
-  // The list of plugin.xml files to patch (in this case just 1)
-  // Note that full path is required for each plugin.xml file
-  // This is the default value, defined for documentation purposes
-  pluginXmlFiles = ["${sourceSets.main.resources.asPath}"]
-
-  // the directory to store patched xml files
-  // This is the default value, defined for documentation purposes
-  destinationDir = file("${project.buildDir}/patchedPluginXmlFiles")
+    // the directory to store patched xml files
+    // This is the default value, defined for documentation purposes
+    destinationDir = file("${project.buildDir}/patchedPluginXmlFiles")
 }
 
-
-// Define javadoc paths for this plugin
+// Define javadoc paths
 javadoc {
-  // Set of source files to include
-  source = sourceSets.main.java.srcDirs
-  // Include all class files, e.g. from libraries
-  classpath = sourceSets.main.compileClasspath
-  // Non-default output path
-  destinationDir = file("${project.projectDir}/docs/javadoc")
+    source = sourceSets.main.java.srcDirs
+    classpath = sourceSets.main.compileClasspath
+    // Non-default path
+    destinationDir = file("${project.projectDir}/docs/javadoc")
 }
 
-// Force rebuild of Javadocs each time the plugin jar is built
+// javadoc task works from the command line, but adding these behaviors doesn't work
+// javadoc.dependsOn compileJava
+// patchPluginXml.dependsOn javadoc
 jar.dependsOn javadoc
 

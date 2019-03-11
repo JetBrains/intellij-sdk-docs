@@ -4,25 +4,32 @@ package testPlugin;
 import com.intellij.codeInsight.daemon.impl.HighlightInfo;
 import com.intellij.codeInsight.intention.IntentionAction;
 import com.intellij.codeInspection.ComparingReferencesInspection;
+import com.intellij.codeInspection.InspectionToolProvider;
+import com.intellij.testFramework.TestDataPath;
 import com.intellij.testFramework.UsefulTestCase;
 import com.intellij.testFramework.builders.JavaModuleFixtureBuilder;
 import com.intellij.testFramework.fixtures.*;
-import junit.framework.Assert;
+import org.junit.Assert;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
  * @see JavaCodeInsightFixtureTestCase
  * @see LightCodeInsightFixtureTestCase
  */
+@TestDataPath("$CONTENT_ROOT/../testData")
 public class TestThisPlugin extends UsefulTestCase {
 
   protected CodeInsightTestFixture myFixture;
+  
+  // TODO: Get path to module root, then add path to testData
   // Specify path to your test data directory
   // e.g.  final String dataPath = "c:\\users\\john.doe\\idea\\community\\samples\\ComparingReferences/testData";
   final String dataPath = "c:\\users\\John.Doe\\idea\\community\\samples\\comparingReferences/testData";
 
-
+  
   public void setUp() throws Exception {
 
     final IdeaTestFixtureFactory fixtureFactory = IdeaTestFixtureFactory.getFixtureFactory();
@@ -44,6 +51,7 @@ public class TestThisPlugin extends UsefulTestCase {
 
   protected void doTest(String testName, String hint) throws Throwable {
     myFixture.configureByFile(testName + ".java");
+
     myFixture.enableInspections(ComparingReferencesInspection.class);
     List<HighlightInfo> highlightInfos = myFixture.doHighlighting();
     Assert.assertTrue(!highlightInfos.isEmpty());

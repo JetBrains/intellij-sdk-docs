@@ -7,7 +7,7 @@
   <description><![CDATA[Simple language plugin for
   <a href="http://www.jetbrains.org/intellij/sdk/docs/tutorials/custom_language_support_tutorial.html">Custom Language Support Tutorial</a>]]></description>
 
-  <idea-version since-build="107.105"/>
+  <idea-version since-build="183.3283.2"/>
 
   <extensions defaultExtensionNs="com.intellij">
     <fileTypeFactory implementation="com.simpleplugin.SimpleFileTypeFactory"/>

@@ -1,14 +1,37 @@
+<!-- Copyright 2000-2019 JetBrains s.r.o. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+
 <idea-plugin>
-  <id>com.intellij.tutorials.facet</id>
-  <name>Facet Demo</name>
-  <version>1.0</version>
-  <vendor>JetBrains</vendor>
 
-  <description>Basic example of adding support for custom Facets</description>
+  <!--  Unique id for this plugin. Must stay constant for the life of the plugin.  -->
+  <id>org.intellij.sdk.facet</id>
 
-  <idea-version since-build="131"/>
+  <!-- Text to display as name on Preferences/Settings | Plugin page -->
+  <name>SDK Facet Basics</name>
+
+  <!-- Text to display as description on Preferences/Settings | Plugin page  -->
+  <description>
+    <![CDATA[
+    Demonstrates implementing the custom Facet pattern.<br>Adds <em>SDK Facet</em> to the Project Structure | Project Settings | Facets menu.
+    ]]>
+  </description>
+  <change-notes>
+    <![CDATA[
+      <b>2.0</b> Refactored to illustrate use of PersistentComponent.<br>
+      <b>1.0</b> Release 2018.3 and earlier.
+    ]]>
+  </change-notes>
+
+  <!-- Text to display as company information on Preferences/Settings | Plugin page -->
+  <vendor email="sdk-example@jetbrains.com" url="https://plugins.jetbrains.com">IntelliJ Platform SDK</vendor>
+
+  <!-- The version of this plugin -->
+  <version>2.0</version>
+
+  <!-- Compatible with the following versions of IntelliJ Platform -->
+  <idea-version since-build="173"/>
 
   <extensions defaultExtensionNs="com.intellij">
+    <!-- Register the custom facet extension -->
     <facetType implementation="com.intellij.tutorials.facet.DemoFacetType"/>
   </extensions>
 

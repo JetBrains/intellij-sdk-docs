@@ -1,4 +1,4 @@
-[![official JetBrains project](http://jb.gg/badges/official-flat-square.svg)](https://confluence.jetbrains.com/display/ALL/JetBrains+on+GitHub)
+[![official JetBrains project](https://jb.gg/badges/official-flat-square.svg)](https://confluence.jetbrains.com/display/ALL/JetBrains+on+GitHub)
 [![Join the chat at https://gitter.im/JetBrains/gradle-intellij-plugin](https://badges.gitter.im/JetBrains/intellij-sdk-docs.svg)](https://gitter.im/IntelliJ-Plugin-Developers/Lobby)
 
 IntelliJ Platform SDK Documentation
@@ -16,7 +16,7 @@ To check out and run a local copy of the site follow the steps described below.
 ### Pre-requirements
 
 *  Make sure you have a 
-   [git client](http://git-scm.com/downloads)
+   [git client](https://git-scm.com/downloads)
    installed
 
 *  This site requires
@@ -27,10 +27,10 @@ To check out and run a local copy of the site follow the steps described below.
    [installation](https://www.ruby-lang.org/en/documentation/installation/)
    instructions to get Ruby working on your machine.
    
-*  This site requires [Jekyll](http://jekyllrb.com/), 
+*  This site requires [Jekyll](https://jekyllrb.com/), 
    a Ruby-based site generating framework.
    To install Jekyll refer to it's
-   [installation guidelines](http://jekyllrb.com/docs/installation/).
+   [installation guidelines](https://jekyllrb.com/docs/installation/).
    **Note:** If you are using Windows, you can face some specific aspects while installing Jekyll.
    See this [Run Jekyll on Windows Guide](http://jekyll-windows.juthilo.com/) to get more information.
    

@@ -32,7 +32,7 @@ To check out and run a local copy of the site follow the steps described below.
    To install Jekyll refer to it's
    [installation guidelines](https://jekyllrb.com/docs/installation/).
    **Note:** If you are using Windows, you can face some specific aspects while installing Jekyll.
-   See this [Run Jekyll on Windows Guide](http://jekyll-windows.juthilo.com/) to get more information.
+   See this [Run Jekyll on Windows Guide](https://jekyll-windows.juthilo.com/) to get more information.
    
 ### Checking Out Site Repository
 

@@ -45,7 +45,7 @@ To pass custom data between the invocation of the same builder between multiple 
 ### Services and extensions in External Builder
 
 The external builder process uses the standard Java
-[services](http://docs.oracle.com/javase/8/docs/api/java/util/ServiceLoader.html)
+[services](https://docs.oracle.com/javase/8/docs/api/java/util/ServiceLoader.html)
 mechanism to support plugins. There are several service interfaces (e.g. [`BuilderService`](upsource:///jps/jps-builders/src/org/jetbrains/jps/incremental/BuilderService.java) which can be implemented in plugins to extend the builder functionality. An implementation of a service need to be registered by creating `META-INF/services/<service-interface-fqn>` file containing the qualified name of the implementation class. E.g. `BuilderService` implementations are registered in `META-INF/services/org.jetbrains.jps.incremental.BuilderService` file. These files don't have extensions so you need to map corresponding patterns to text files in IDE settings.
 
 ### Registering a plugin for External Builder

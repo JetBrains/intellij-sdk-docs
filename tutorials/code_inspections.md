@@ -2,11 +2,11 @@
 title: Code Inspections
 ---
 
-This topic describes the [comparing_references_inspection](https://github.com/JetBrains/intellij-sdk-docs/tree/master/code_samples/comparing_references_inspection), a sample plugin that creates a custom [inspection](http://www.jetbrains.com/idea/webhelp/code-inspection.html) for Java code. In addition, the sample plugin contains a JUnit-based test.
+This topic describes the [comparing_references_inspection](https://github.com/JetBrains/intellij-sdk-docs/tree/master/code_samples/comparing_references_inspection), a sample plugin that creates a custom [inspection](https://www.jetbrains.com/idea/webhelp/code-inspection.html) for Java code. In addition, the sample plugin contains a JUnit-based test.
 
 ## About Code Inspections
 
-The **IntelliJ Platform** provides tools designed for static code analysis (so called _code inspections_) that help you maintain and clean up your code without actually executing it. For more information, refer to [Code Inspection](http://www.jetbrains.com/idea/webhelp/code-inspection.html) in the **IntelliJ IDEA** Web Help. In **IntelliJ IDEA** you will find a set of built-in inspections that are grouped by their goals and sense.
+The **IntelliJ Platform** provides tools designed for static code analysis (so called _code inspections_) that help you maintain and clean up your code without actually executing it. For more information, refer to [Code Inspection](https://www.jetbrains.com/idea/webhelp/code-inspection.html) in the **IntelliJ IDEA** Web Help. In **IntelliJ IDEA** you will find a set of built-in inspections that are grouped by their goals and sense.
 
 You can create custom inspections through the **IntelliJ IDEA** interface (see [Creating Custom Inspections](https://www.jetbrains.com/idea/help/creating-custom-inspections.html)). Alternatively, you can develop a plugin to implement a custom inspection.
 
@@ -29,7 +29,7 @@ The **comparingReferences** sample plugin is available in the `<%IntelliJ SDK 
 
 1. Start **IntelliJ IDEA** and open the **comparingReferences** plugin project saved into the `<%IntelliJ SDK Docs project%>/code_samples/comparing_references_inspection` directory.
 2. Open the [Project Structure](https://www.jetbrains.com/help/idea/project-structure-dialog.html) dialog and ensure that the project settings are valid for your environment.
-3. If necessary, modify the [Run/Debug Configurations](http://www.jetbrains.com/idea/webhelp/run-debug-configuration-plugin.html) and Run the plugin by choosing the **Run | Run** on the main menu.
+3. If necessary, modify the [Run/Debug Configurations](https://www.jetbrains.com/idea/webhelp/run-debug-configuration-plugin.html) and Run the plugin by choosing the **Run | Run** on the main menu.
 
 #### Configuring the Plugin
 
@@ -69,4 +69,4 @@ return (s1.equals(s2));
 
 The sample plugin contains the `TestThisPlugin` Java class in the `testSource/testPlugin` package and the test data in the `testData` directory. This test adds two test cases to this plugin project. To run test cases, run the `YourTest.test()` or `YourTest.test1()` method, respectively.
 
-For detailed information about testing and all related procedures, refer to [Testing](http://www.jetbrains.com/idea/webhelp/testing.html) in the **IntelliJ IDEA** Web Help.
+For detailed information about testing and all related procedures, refer to [Testing](https://www.jetbrains.com/help/idea/performing-tests.html) in the **IntelliJ IDEA** Web Help.

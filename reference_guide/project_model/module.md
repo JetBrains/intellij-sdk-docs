@@ -39,9 +39,9 @@ Use the `ModuleManager.getModules()` method.
 
 ### How do I get dependencies and classpath of a module?
 
-_Order entries_ include SDK, libraries and other modules the module uses. With the *IntelliJ IDEA* UI, you can view order entries for a module on the [Dependencies](http://www.jetbrains.com/idea/help/dependencies-tab.html) tab of the *Project Structure* dialog box.
+_Order entries_ include SDK, libraries and other modules the module uses. With the *IntelliJ IDEA* UI, you can view order entries for a module on the [Dependencies](https://www.jetbrains.com/help/idea/dependencies-tab.html) tab of the *Project Structure* dialog box.
 
-To explore the [module dependencies](http://www.jetbrains.com/idea/help/dependencies-tab.html), use the [OrderEnumerator](upsource:///platform/projectModel-api/src/com/intellij/openapi/roots/OrderEnumerator.java) class.
+To explore the [module dependencies](https://www.jetbrains.com/help/idea/dependencies-tab.html), use the [OrderEnumerator](upsource:///platform/projectModel-api/src/com/intellij/openapi/roots/OrderEnumerator.java) class.
 
 The following code snippet illustrates how you can get classpath (classes root of all dependencies) for a module:
 

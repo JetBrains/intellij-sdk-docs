@@ -84,7 +84,7 @@ To exclude a public field or bean property from serialization, annotate the fiel
 
 Note that the state class must have a default constructor. It should return the default state of the component (one used if there is nothing persisted in the XML files yet).
 
-State class should have an `equals` method, but if it is not implemented, state objects will be compared by fields. When using Kotlin, use [Data Classes](http://kotlinlang.org/docs/reference/data-classes.html).
+State class should have an `equals` method, but if it is not implemented, state objects will be compared by fields. When using Kotlin, use [Data Classes](https://kotlinlang.org/docs/reference/data-classes.html).
 
 ### Defining the storage location
 

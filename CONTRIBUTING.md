@@ -28,9 +28,9 @@ This document describes our contribution guidelines for the IntelliJ SDK Docs. F
 
 ## Setting up your environment
 
-This site runs via [Jekyll](http://jekyllrb.com), which is a popular static site generator, written in Ruby. It can be hosted locally to ensure that any changes are correct. Once set up, running the site is as easy as calling `rake preview`.
+This site runs via [Jekyll](https://jekyllrb.com), which is a popular static site generator, written in Ruby. It can be hosted locally to ensure that any changes are correct. Once set up, running the site is as easy as calling `rake preview`.
 
-Alternatively, the site can also be hosted in a [Docker container](https://www.docker.com). On Mac and Windows, this means the site is hosted in a virtual machine. Docker maintains this container, building it based on the instructions in the [`Dockerfile`](Dockerfile). All dependencies (Ruby, etc.) are automatically installed when building the image, which reduces the manual configuration steps. The Docker image is also used to build the [published site](http://www.jetbrains.org/intellij/sdk/docs/index.html), so it is a known working environment.
+Alternatively, the site can also be hosted in a [Docker container](https://www.docker.com). On Mac and Windows, this means the site is hosted in a virtual machine. Docker maintains this container, building it based on the instructions in the [`Dockerfile`](Dockerfile). All dependencies (Ruby, etc.) are automatically installed when building the image, which reduces the manual configuration steps. The Docker image is also used to build the [published site](https://www.jetbrains.org/intellij/sdk/docs/index.html), so it is a known working environment.
 
 ### Developing with Docker
 
@@ -50,7 +50,7 @@ Follow these steps to work with Docker:
     >
     > To hit the container's port 4000 from Windows or the Mac, it is necessary to hit the IP address of the docker client (virtual machine). Use `docker-machine ip default` to get the IP address of the docker client. Use `X.X.X.X:4000` to hit the client in the virtual machine, which is in turn mapped to the container's port 4000.
     >
-    > Alternatively, modify the virtual machine's settings to automatically forward port 4000 to `localhost`. See this [blog post](http://acaird.github.io/computers/2014/11/16/docker-virtualbox-host-networking) for more details.
+    > Alternatively, modify the virtual machine's settings to automatically forward port 4000 to `localhost`. See this [blog post](https://acaird.github.io/computers/2014/11/16/docker-virtualbox-host-networking) for more details.
  
     * Mount the current directory (`$PWD` is a Unix style environment variable. You can use `%CD%` on Windows, or specify the full path) as `/usr/src/app` inside the docker container. This means the docker image will see the `intellij-sdk-docs` repo as the folder `/usr/src/app`.
 
@@ -65,7 +65,7 @@ To build the documentation site, you will need:
 
 * Ruby 2 - Jekyll is a Ruby application.
 * Ruby 2 DevKit (for Windows) - Some of Jekyll's dependencies need to be compiled, and require the DevKit to be installed.
-* `gem install bundler` - the site uses [Bundler](http://bundler.io) to manage gem dependencies within the repo, rather than globally installing to the local operating system. Run this command to install the Bundler toolset globally.
+* `gem install bundler` - the site uses [Bundler](https://bundler.io) to manage gem dependencies within the repo, rather than globally installing to the local operating system. Run this command to install the Bundler toolset globally.
 
 **OS X**
 
@@ -75,7 +75,7 @@ OS X comes with Ruby already installed. The only steps required are:
 
 **Windows**
 
-* Install [Ruby 2](http://rubyinstaller.org) and the [Ruby 2 DevKit](http://rubyinstaller.org/downloads/) (one of the gems needs to build a native component)
+* Install [Ruby 2](https://rubyinstaller.org) and the [Ruby 2 DevKit](http://rubyinstaller.org/downloads/) (one of the gems needs to build a native component)
     * After installing the DevKit, make sure to edit the `config.yml` file to point to the Ruby installation
 
 This is made easier if you use [Chocolatey](https://chocolatey.org), a package manager for Windows:
@@ -103,9 +103,9 @@ To build and test the site, simply run `rake preview`. This will build the site 
 
 ## Markup
 
-By default, when building the site, all files are copied to the destination `_site` folder. Some files are excluded in the `_config.yml` and `sdkdocs-template/jekyll/_config-defaults.yml` files. The documentation files themselves are [Markdown](http://daringfireball.net/projects/markdown/) files (`.md`) that get automatically converted to HTML when the site is built.
+By default, when building the site, all files are copied to the destination `_site` folder. Some files are excluded in the `_config.yml` and `sdkdocs-template/jekyll/_config-defaults.yml` files. The documentation files themselves are [Markdown](https://daringfireball.net/projects/markdown/) files (`.md`) that get automatically converted to HTML when the site is built.
 
-However, only markdown files beginning with a [YAML](http://yaml.org) header are converted. If the markdown file doesn't contain a header, it won't be converted. In other words, to convert a `.md` file to HTML, it should look like this:
+However, only markdown files beginning with a [YAML](https://yaml.org) header are converted. If the markdown file doesn't contain a header, it won't be converted. In other words, to convert a `.md` file to HTML, it should look like this:
 
 ```md
 ---
@@ -188,11 +188,11 @@ One useful attribute is `{:toc}`, which can be applied to a list item, which wil
 {:toc}
 ```
 
-Further Kramdown features are described on the [converter page](http://kramdown.gettalong.org/converter/html.html), and attribute lists are described on the [syntax page](http://kramdown.gettalong.org/syntax.html). Note that source code formatting is configured to use [GitHub Flavoured Mardown](https://help.github.com/articles/github-flavored-markdown/) and "code fences", see below.
+Further Kramdown features are described on the [converter page](https://kramdown.gettalong.org/converter/html.html), and attribute lists are described on the [syntax page](http://kramdown.gettalong.org/syntax.html). Note that source code formatting is configured to use [GitHub Flavoured Mardown](https://help.github.com/articles/github-flavored-markdown/) and "code fences", see below.
 
 ### Liquid tags and filters
 
-Jekyll uses the [Liquid](http://liquidmarkup.org) templating language to process files. This means standard Liquid tags and filters are available. There should be little need to use them, however, as the Markdown format is already quite rich. See the [Jekyll site](http://jekyllrb.com/docs/templates/) for more details.
+Jekyll uses the [Liquid](https://shopify.github.io/liquid/) templating language to process files. This means standard Liquid tags and filters are available. There should be little need to use them, however, as the Markdown format is already quite rich. See the [Jekyll site](http://jekyllrb.com/docs/templates/) for more details.
 
 ### Syntax highlighting
 

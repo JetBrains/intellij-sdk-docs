@@ -16,11 +16,11 @@ interface allows you to create popups that display different kinds of components
 The most commonly used methods are:
 
 *  `createComponentPopupBuilder()` is the most generic one, allowing you to show any
-[Swing](http://docs.oracle.com/javase/tutorial/uiswing/start/index.html)
+[Swing](https://docs.oracle.com/javase/tutorial/uiswing/start/index.html)
 component in the popup.
 
 *  `createListPopupBuilder()` creates a popup for choosing one or more items from a
-    [Swing JList](http://docs.oracle.com/javase/8/docs/api/javax/swing/JList.html).
+    [Swing JList](https://docs.oracle.com/javase/8/docs/api/javax/swing/JList.html).
 
 *  `createConfirmation()` creates a popup for choosing between two options, and performing different actions depending on which option is selected.
 
@@ -34,7 +34,7 @@ For popups with a fixed set of items, the recommended selection method is sequen
 for popups with a variable and potentially large number of items, speed search typically works best.
 
 If you need to create a list-like popup which is more flexible than a simple
-[JList](http://docs.oracle.com/javase/8/docs/api/javax/swing/JList.html)
+[JList](https://docs.oracle.com/javase/8/docs/api/javax/swing/JList.html)
 but don't want to represent the possible choices as actions in an action group, you can work directly with the
 [ListPopupStep](upsource:///platform/platform-api/src/com/intellij/openapi/ui/popup/ListPopupStep.java)
 interface and the

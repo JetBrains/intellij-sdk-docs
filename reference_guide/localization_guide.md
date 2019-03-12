@@ -25,7 +25,7 @@ For every such file localized jar should contain translated version that is plac
 For example ***messages/ActionsBundle.properties*** file from ***resources_en.jar*** should have its translated version ***messages/ActionsBundle_ja.properties*** file in ***resources_ja.jar***.
 All property files should be ASCII encoded with *\uXXXX* sequences used for characters that have no their representation in ASCII range.
 See
-[native2ascii](http://docs.oracle.com/javase/7/docs/technotes/tools/solaris/native2ascii.html)
+[native2ascii](https://docs.oracle.com/javase/7/docs/technotes/tools/solaris/native2ascii.html)
 tool for more details.
 
 Property values mostly follow MessageFormat rules.

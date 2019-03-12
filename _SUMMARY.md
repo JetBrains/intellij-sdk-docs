@@ -7,6 +7,7 @@
 * [About this Guide](intro/about.md)
     * [Key Topics](intro/key_topics.md)
     * [Contributing](CONTRIBUTING.md)
+    * [Code of Conduct](CODE_OF_CONDUCT.md)
 * [Getting Help](intro/getting_help.md)
 * [Recently Updated](recently_updated.md)
 

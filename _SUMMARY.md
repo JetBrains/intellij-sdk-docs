@@ -7,6 +7,7 @@
 * [About this Guide](intro/about.md)
     * [Key Topics](intro/key_topics.md)
     * [Contributing](CONTRIBUTING.md)
+    * [SDK Code Sample Guidelines](basics/code_sample_guidelines.md)
 * [Getting Help](intro/getting_help.md)
 * [Recently Updated](recently_updated.md)
 

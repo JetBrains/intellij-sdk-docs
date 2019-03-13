@@ -29,13 +29,14 @@ In the following example the `key` - the default red color (#DB5860) used for `A
   "name": "Theme Basics",
   "dark": false,
   "author": "IntelliJ Platform SDK",
+  "editorScheme": "/theme_basics.xml",
   "ui": {
   },
-"icons": {
- "ColorPalette": {
-   "#DB5860": "#D61A26"
- }
-}
+  "icons": {
+    "ColorPalette": {
+      "#DB5860": "#D61A26"
+    }
+  }
 }
 ```  
 This color substitution is applied throughout the IDE UI.
@@ -83,11 +84,11 @@ For icon substitutions, the `key` is the path to the default icon image.
 This path is derived from the `AllIcons.[Group].[IconName]` path in icon section reported by the [UI Inspector](/reference_guide/internal_actions/internal_uii.md).  
 
 For example, the _Build_ (hammer) icon in the toolbar has the path `Allcons.Actions.Compile` as reported by the UI Inspector. 
-Therefor the `key` for the _Build_ icon is `/actions/compile.svg`. 
+Therefore the `key` for the _Build_ icon is `/actions/compile.svg`. 
 The `value` is the file name of the replacement icon, located in the `resources` folder of the UI Theme plugin project:
 ```json
 {
-"icons": {
+  "icons": {
     "/actions/compile.svg": "/factory.svg"
   }
 }

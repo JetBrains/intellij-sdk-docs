@@ -69,6 +69,7 @@ The content of the default file is a short set of key–value pairs:
  "name": "theme_basics",
  "dark": false,
  "author": "",
+ "editorScheme": "/theme_basics.xml",
  "ui": {
  }
 }
@@ -76,7 +77,8 @@ The content of the default file is a short set of key–value pairs:
 
 The `value` of the `name` key matches the first portion of the Theme description `[themeName].theme.json` file name. 
 The `value` of `name` is displayed in the [Theme](https://www.jetbrains.com/help/idea/settings-appearance.html)  _Preferences_ dropdown when the UI Theme's plugin is installed in the IDE. 
-The value of the `author` key is by default empty. 
+The value of the `author` key is by default empty.
+The `editorScheme` section will be addressed in [Adding a Custom Editor Scheme](themes_extras.md#adding-a-custom-editor-scheme) 
 The `ui` section will be addressed in [Customizing UI Control Colors](themes_customize.md#customizing-ui-controls). 
 
 The Wizard also creates a `themeProvider` declaration in the `<extensions>` section of the plugin's `plugin.xml` file. 
@@ -86,6 +88,7 @@ This declaration binds the Theme description file to a theme provider extension 
     <themeProvider id="eb9b7461-397b-4b98-a422-224fc0a74564" path="/theme_basics.theme.json"/>
   </extensions>
 ```
+> **WARNING** Do not change the value of the `themeProvider` `id` attribute.
 
 At this point, the UI Theme `theme_basics` is a valid UI Theme. 
 Its plugin can be built and tested in IntelliJ Platform-based IDEs, giving the user the opportunity to select _theme_basics_ in the [Theme](https://www.jetbrains.com/help/idea/settings-appearance.html) _Preferences_ dropdown. 

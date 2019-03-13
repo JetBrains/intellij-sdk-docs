@@ -14,15 +14,19 @@ Note that editor [Colors and Fonts](https://www.jetbrains.com/help/idea/configur
 
 Use the following procedure to customize an editor color scheme for a UI Theme: 
 * Create the desired custom editor color scheme using the IDE preferences. 
-* Export the color scheme. Name the file for the custom scheme.
+* Export the custom editor color scheme to the desired file name.
+  In this example, the file is exported to `Lightning.icls`
 * Once exported, change the file extension from `*.icls` to `*.xml`.
+  In this example, the result is `Lightning.xml`.
 * See [Customizing Editor Scroll Bar Colors](#customizing-editor-scroll-bar-colors) to change the colors of editor scroll bars. 
 
 ### Incorporating the Editor Color Scheme in the Custom UI Theme
 The next step is to add the color scheme to the UI Theme plugin project:
-* Place the color scheme XML file in the `resources` folder of the UI Theme plugin project.
-* Add a key-value pair to the UI Theme description file for the scheme. 
-The `key` is always "editorScheme". The `value` is the name of the editor color scheme file.
+* Replace the default generated custom editor color scheme XML file (in this example `theme_basics.xml`) in the `resources` folder with the exported custom editor color scheme.
+  In this case, the action is to _replace_ `theme_basics.xml` with `Lightning.xml`.
+* In the UI Theme file (in this example `theme_basics.theme.json`,) replace the name of the generated editor scheme file (`theme_basics.xml`) with the new (`Lightning.xml`) file name.
+  The `key` is always "editorScheme".
+  The `value` is the name of the editor color scheme file.
 
 The example below adds an editor scheme named "Lightning" to the _Theme Basics_ custom UI Theme:
 ```json
@@ -69,7 +73,7 @@ Please note that Custom UI Theme (`*.theme.json`) files also contain `ScrollBar.
 >**Note** The Editor Scroll Bar colors are the only editor scheme settings that cannot be customized and exported through IDE preferences.
 
 Customizing the editor scroll bar colors requires manually changing an editor color scheme XML file.
-At this time there isn't code completion functionality for editing color scheme XML files, so the `name` attributes are described below.
+At this time there isn't code completion functionality for changing custom color editor scheme XML files, so the `name` attributes are described below.
 
 #### Editor Scroll Bar Attribute Name Format
 The typical format of a scroll bar `name` attribute is `ScrollBar.usage`, where `usage` describes where the color is to be applied.

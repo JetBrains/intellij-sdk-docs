@@ -6,6 +6,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.editor.Editor;
+import icons.ActionBasicsIcons;
 
 /**
  * Creates an action group to contain menu actions. See plugin.xml declarations.
@@ -29,6 +30,6 @@ public class CustomDefaultActionGroup extends DefaultActionGroup {
     // Always make visible.
     event.getPresentation().setVisible(true);
     // Take this opportunity to set an icon for the menu entry.
-    event.getPresentation().setIcon(ActionBasicsIcons.SDK_DEFAULT_ICON);
+    event.getPresentation().setIcon(ActionBasicsIcons.Sdk_default_icon);
   }
 }

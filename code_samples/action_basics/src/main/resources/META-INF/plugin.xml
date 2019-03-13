@@ -41,7 +41,7 @@
     The optional "description" attribute specifies the text which is displayed in the status bar when the action is focused.
     The optional "icon" attribute specifies the icon which is displayed on the toolbar button or next to the menu item. -->
     <action id="org.intellij.sdk.action.PopDialogAction" class="org.intellij.sdk.action.PopDialogAction"
-            text="Pop Dialog Action" description="SDK Action Example" icon="/icons/sdk.svg">
+            text="Pop Dialog Action" description="SDK Action Example" icon="ActionBasicsIcons.Sdk_default_icon">
       <!-- The <keyboard-shortcut> node specifies the keyboard shortcut for the action. An action can have several keyboard shortcuts.
       The mandatory "first-keystroke" attribute specifies the first keystroke of the action. The key strokes are specified according to the regular Swing rules.
       The optional "second-keystroke" attribute specifies the second keystroke of the action.
@@ -83,24 +83,24 @@
       IntelliJ Platform framework. (Note the lack of a "class" attribute.) GroupedActions gets inserted after PopDialogAction
       in the Tools menu. Because the group's implementation is default, it cannot impose enable/disable conditions. Instead it
       must rely on the conditions imposed by the parent menu where it is inserted. It declares one action in the group. -->
-    <group id="org.intellij.sdk.action.GroupedActions" text="Static Grouped Actions" popup="true" icon="/icons/sdk.svg">
+    <group id="org.intellij.sdk.action.GroupedActions" text="Static Grouped Actions" popup="true" icon="ActionBasicsIcons.Sdk_default_icon">
       <add-to-group group-id="ToolsMenu" anchor="after" relative-to-action="org.intellij.sdk.action.PopDialogAction"/>
       <action class="org.intellij.sdk.action.PopDialogAction" id="org.intellij.sdk.action.GroupPopDialogAction"
-              text="A Group Action" description="SDK Static Grouped Action Example" icon="/icons/sdk.svg">
+              text="A Group Action" description="SDK Static Grouped Action Example" icon="ActionBasicsIcons.Sdk_default_icon">
       </action>
     </group>
     <!-- CustomDefaultActionGroup demonstrates declaring an action group based on a ActionGroup class supplied by this plugin.
       This group is to be inserted atop the Editor Popup Menu. It declares one action in the group. -->
     <group id="org.intellij.sdk.action.CustomDefaultActionGroup" class="org.intellij.sdk.action.CustomDefaultActionGroup" popup="true"
-            text="Popup Grouped Actions" description="Custom DefaultActionGroup Demo" icon="/icons/sdk.svg">
+            text="Popup Grouped Actions" description="Custom DefaultActionGroup Demo" icon="ActionBasicsIcons.Sdk_default_icon">
       <add-to-group group-id="EditorPopupMenu" anchor="first"/>
       <action class="org.intellij.sdk.action.PopDialogAction" id="org.intellij.sdk.action.CustomGroupedAction"
-              text="A Popup Action" description="SDK Popup Grouped Action Example" icon="/icons/sdk.svg"/>
+              text="A Popup Action" description="SDK Popup Grouped Action Example" icon="ActionBasicsIcons.Sdk_default_icon"/>
     </group>
     <!-- DynamicActionGroup demonstrates declaring an action group without a static action declaration.
      An action is added to the group programmatically in the DynamicActionGroup implementation. -->
     <group id="org.intellij.sdk.action.DynamicActionGroup" class="org.intellij.sdk.action.DynamicActionGroup" popup="true"
-            text="Dynamically Grouped Actions" description="SDK Dynamically Grouped Action Example" icon="/icons/sdk.svg">
+            text="Dynamically Grouped Actions" description="SDK Dynamically Grouped Action Example" icon="ActionBasicsIcons.Sdk_default_icon">
       <add-to-group group-id="ToolsMenu" anchor="after" relative-to-action="org.intellij.sdk.action.GroupedActions"/>
     </group>
   </actions>

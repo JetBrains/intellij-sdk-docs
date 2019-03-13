@@ -6,6 +6,7 @@ import com.intellij.icons.AllIcons;
 import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import icons.ActionBasicsIcons;
 import org.jetbrains.annotations.NotNull;
 
 /**
@@ -32,7 +33,7 @@ public class DynamicActionGroup extends ActionGroup {
   public AnAction[] getChildren(AnActionEvent anActionEvent) {
     return new AnAction[]{ new PopDialogAction("Action Added at Runtime",
                                                "Dynamic Action Demo",
-                                               AllIcons.General.ArrowRight)
+                                               ActionBasicsIcons.Sdk_default_icon)
     };
   }
   

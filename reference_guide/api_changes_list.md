@@ -10,7 +10,7 @@ API Compatibility policy: https://confluence.jetbrains.com/display/IDEA/IntelliJ
 API Compatibility FAQ:    https://confluence.jetbrains.com/display/IDEA/IntelliJ+API+Compatibility+Policy+FAQ
 
 To document a new incompatible change, add a new line with the problem pattern
-followed by a 2nd line with ": "-prefixed human-readable description.
+followed by a 2nd line with ": "-prefixed human-readable description and recommended fix/action.
 
 The following problem patterns are supported:
 

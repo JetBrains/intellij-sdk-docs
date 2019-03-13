@@ -15,7 +15,7 @@ See the note on how to document new problems on the main page reference_guide/ap
 : This method isn't supposed to be used in regular plugins. There is no need to call this method anymore.
  
 `org.apache.sanselan` package removed
-:  Use classes from `org.apache.commons.imaging` instead .
+: Use classes from `org.apache.commons.imaging` instead.
  
 `com.intellij.psi.MultiplePsiFilesPerDocumentFileViewProvider.getLanguages` abstract method added 
 : Implementation of this class are supposed to have several languages so you need to implement this method explicitly and return them all. 

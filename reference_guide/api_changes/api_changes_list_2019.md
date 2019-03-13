@@ -14,9 +14,6 @@ See the note on how to document new problems on the main page reference_guide/ap
 `java.org.java_websocket` package removed
 : [Java-WebSocket Library](https://github.com/TooTallNate/Java-WebSocket) was removed, bundle it with your plugin instead.
 
-`com.intellij.ide.SaveAndSyncHandlerImpl.refreshOpenFiles()` method removed
-: Use `com.intellij.ide.SaveAndSyncHandler.refreshOpenFiles` instead.
-
 
 ## Changes in IntelliJ Platform 2019.1
 

@@ -14,8 +14,7 @@ public class SimpleUtil {
   public static List<SimpleProperty> findProperties(Project project, String key) {
     List<SimpleProperty> result = null;
     Collection<VirtualFile> virtualFiles =
-        FileBasedIndex.getInstance().getContainingFiles(FileTypeIndex.NAME, SimpleFileType.INSTANCE,
-                                                        GlobalSearchScope.allScope(project));
+            FileTypeIndex.getFiles(SimpleFileType.INSTANCE, GlobalSearchScope.allScope(project));
     for (VirtualFile virtualFile : virtualFiles) {
       SimpleFile simpleFile = (SimpleFile) PsiManager.getInstance(project).findFile(virtualFile);
       if (simpleFile != null) {
@@ -38,8 +37,7 @@ public class SimpleUtil {
   public static List<SimpleProperty> findProperties(Project project) {
     List<SimpleProperty> result = new ArrayList<SimpleProperty>();
     Collection<VirtualFile> virtualFiles =
-        FileBasedIndex.getInstance().getContainingFiles(FileTypeIndex.NAME, SimpleFileType.INSTANCE,
-                                                        GlobalSearchScope.allScope(project));
+            FileTypeIndex.getFiles(SimpleFileType.INSTANCE, GlobalSearchScope.allScope(project));
     for (VirtualFile virtualFile : virtualFiles) {
       SimpleFile simpleFile = (SimpleFile) PsiManager.getInstance(project).findFile(virtualFile);
       if (simpleFile != null) {

@@ -1,9 +1,9 @@
 package org.jetbrains.tutorials.sample;
 
-import com.intellij.openapi.components.ApplicationComponent;
+import com.intellij.openapi.components.BaseComponent;
 
 /**
  * @author Anna Bulenkova
  */
-interface DummyApplicationComponent extends ApplicationComponent {
+interface DummyApplicationComponent extends BaseComponent {
 }

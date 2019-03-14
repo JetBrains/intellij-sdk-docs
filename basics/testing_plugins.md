@@ -11,11 +11,11 @@ Most of the tests in the *IntelliJ Platform* codebase are *model level functiona
 
 The biggest benefit of this test approach is that tests are very stable and require very little maintenance once they have been written, no matter how much the underlying implementation is refactored or rewritten.
 
-In a product with 10+ years of lifetime that has gone through a large number of internal refactorings, we find that this benefit greatly outweighs the downsides of slower test execution and more difficult debugging of failures being compared to more isolated unit tests.
+In a product with 15+ years of lifetime that has gone through a large number of internal refactorings, we find that this benefit greatly outweighs the downsides of slower test execution and more difficult debugging of failures being compared to more isolated unit tests.
 
 Another consequence of our testing approach is what our test framework does not provide:
 
-* We do not provide a recommended approach to mocking. We have a few tests in our codebase that use JMock, but in general we find it difficult to mock all of the interactions with *IntelliJ Platform* components that your plugin class will need to have, and we recommend working with real components instead.
+* We do not provide a recommended approach to mocking. We have a few tests in our codebase that use JMock, but in general, we find it difficult to mock all of the interactions with *IntelliJ Platform* components that your plugin class will need to have, and we recommend working with real components instead.
 * We do not provide a general-purpose framework for Swing UI testing. You can try using tools such as [FEST](https://code.google.com/p/fest/) or [Sikuli](http://www.sikuli.org/) for plugin UI testing, but we don't use either of them and cannot provide any guidelines for their use. Internally, we use manual testing for testing our Swing UIs.
 
 * [Tests and Fixtures](/basics/testing_plugins/tests_and_fixtures.md)

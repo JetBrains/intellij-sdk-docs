@@ -1,15 +1,13 @@
-[![official JetBrains project](http://jb.gg/badges/official-flat-square.svg)](https://confluence.jetbrains.com/display/ALL/JetBrains+on+GitHub)
+[![official JetBrains project](https://jb.gg/badges/official-flat-square.svg)](https://confluence.jetbrains.com/display/ALL/JetBrains+on+GitHub)
 [![Join the chat at https://gitter.im/JetBrains/gradle-intellij-plugin](https://badges.gitter.im/JetBrains/intellij-sdk-docs.svg)](https://gitter.im/IntelliJ-Plugin-Developers/Lobby)
 
 IntelliJ Platform SDK Documentation
 =======
 
-This is a repository for 
-[IntelliJ Platform SDK Documentation](http://www.jetbrains.org/intellij/sdk/docs/)
-site.
+Welcome to the repository for [IntelliJ Platform SDK Documentation](http://www.jetbrains.org/intellij/sdk/docs/) site.
 
 ## Reporting Bugs
-Please inform about any content inconsistencies, outdated materials, cosmetic issues and other defects you find in the docs and samples by submitting an issue to
+Please report any content inconsistencies, outdated materials, cosmetic issues and other defects you find in the docs and samples by submitting an issue to
 [YouTrack](https://youtrack.jetbrains.com/issues/IJSDK). 
 
 ## Working With the Site Locally
@@ -18,7 +16,7 @@ To check out and run a local copy of the site follow the steps described below.
 ### Pre-requirements
 
 *  Make sure you have a 
-   [git client](http://git-scm.com/downloads)
+   [git client](https://git-scm.com/downloads)
    installed
 
 *  This site requires
@@ -29,12 +27,12 @@ To check out and run a local copy of the site follow the steps described below.
    [installation](https://www.ruby-lang.org/en/documentation/installation/)
    instructions to get Ruby working on your machine.
    
-*  This site requires [Jekyll](http://jekyllrb.com/), 
+*  This site requires [Jekyll](https://jekyllrb.com/), 
    a Ruby-based site generating framework.
    To install Jekyll refer to it's
-   [installation guidelines](http://jekyllrb.com/docs/installation/).
+   [installation guidelines](https://jekyllrb.com/docs/installation/).
    **Note:** If you are using Windows, you can face some specific aspects while installing Jekyll.
-   See this [Run Jekyll on Windows Guide](http://jekyll-windows.juthilo.com/) to get more information.
+   See this [Run Jekyll on Windows Guide](https://jekyll-windows.juthilo.com/) to get more information.
    
 ### Checking Out Site Repository
 
@@ -47,7 +45,7 @@ git clone https://github.com/JetBrains/intellij-sdk-docs.git
 ### Initializing Submodules
 
 The site uses JetBrains custom web templates.
-To enable custom templates locally you need to initialize repository submodules.
+To enable custom templates locally, you need to initialize repository submodules.
 Run the following command in the checkout directory to do so.
  
 ```bash
@@ -56,10 +54,10 @@ git submodule update --init --remote
 
 ### Installing Gems
 
-After you performed the initial checkout for the main repository and the submodule, run `bundle install` to install additional required gems.
+After you performed the initial checkout for the main repository and the submodule, run `bundle install` to install additionally required gems.
 
 ### Building and Previewing 
-A set of Rake tasks, a Make-like programs implemented in Ruby, provides short commands to build and run the site locally.
+A set of Rake tasks, a Make-like program implemented in Ruby, provides short commands to build and run the site locally.
 
 #### Building Site from Sources
  

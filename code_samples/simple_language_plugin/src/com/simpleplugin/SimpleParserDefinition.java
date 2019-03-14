@@ -50,7 +50,7 @@ public class SimpleParserDefinition implements ParserDefinition {
     return new SimpleFile(viewProvider);
   }
 
-  public SpaceRequirements spaceExistanceTypeBetweenTokens(ASTNode left, ASTNode right) {
+  public SpaceRequirements spaceExistenceTypeBetweenTokens(ASTNode left, ASTNode right) {
     return SpaceRequirements.MAY;
   }
 

@@ -7,7 +7,7 @@ title: Plugin Compatibility with IntelliJ Platform Products
 All products based on the _IntelliJ Platform_, such as IntelliJ IDEA, RubyMine, WebStorm, and so on, target the same underlying platform API, with some products sharing features built on top of the platform, such as Java support (IntelliJ IDEA
 and Android Studio) or database support (IntelliJ IDEA Ultimate, DataGrip, PhpStorm, etc.).
 
-It is possible to write a plugin that is compatible across multiple products, as long as the plugin specifies which product it is compatible with. More specifically, the plugin must specify, using [the `<depends>` tag](http://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_dependencies.html) in the [`plugin.xml` file](http://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_configuration_file.html), dependencies on well known _modules_ or plugins.
+It is possible to write a plugin that is compatible across multiple products, as long as the plugin specifies which product it is compatible with. More specifically, the plugin must specify, using [the `<depends>` tag](/basics/plugin_structure/plugin_dependencies.md) in the [`plugin.xml` file](/basics/plugin_structure/plugin_configuration_file.md), dependencies on well known _modules_ or plugins.
 
 For the purposes of dependencies, a module can be thought of as a built-in plugin that ships as a non-removable part of a product. Not all products define and declare modules. For example, PhpStorm does not have its own module, but the product itself depends on (and ships) the PHP language plugin. You can make your plugin compatible with PhpStorm by also depending on the same language plugin.
 
@@ -72,10 +72,10 @@ You can also specify optional dependencies. If your plugin works with all produc
 
 Before marking a plugin as compatible with all products, you should verify that it doesn't use any APIs that are specific to IntelliJ IDEA. To do so, create an _IntelliJ Platform_ SDK pointing to an installation of RubyMine, PyCharm, etc., compile your plugin against that SDK, and verify that everything compiles. Visit the [Open Source Licensing page](https://www.jetbrains.com/buy/opensource/) to check if your project is eligible for free Open Source Licenses of JetBrains products.
 
-The [IntelliJ plugin repository](http://plugins.jetbrains.com/) automatically detects the products with which a plugin is compatible, based on the rules above, and makes it available to users of those products.
+The [JetBrains plugin repository](https://plugins.jetbrains.com/) automatically detects the products with which a plugin is compatible, based on the rules above, and makes it available to users of those products.
 
 ## Platform Compatibility
 
-The API of _IntelliJ Platform_ and bundled plugins may be changed between releases. The major changes which may break plugins are listed on [Incompatible Changes in _IntelliJ Platform_ and Plugins API](/reference_guide/api_changes_list.md) page.
+The API of _IntelliJ Platform_ and bundled plugins may be changed between releases. The major changes which may break plugins are listed on [Incompatible Changes in IntelliJ Platform and Plugins API](/reference_guide/api_changes_list.md) page.
 
 To be sure that your plugin will work on your targeted platform, you should use the same development version of IntelliJ platform as the one you are targeting. 

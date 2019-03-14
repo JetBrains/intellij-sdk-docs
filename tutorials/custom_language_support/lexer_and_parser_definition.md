@@ -3,7 +3,7 @@ title: 4. Lexer and Parser Definition
 ---
 
 The lexer defines how the contents of a file is broken into tokens.
-The easiest way to create a lexer is to use [JFlex](http://jflex.de/)
+The easiest way to create a lexer is to use [JFlex](https://jflex.de/)
 
 ### 4.1. Define a lexer
 

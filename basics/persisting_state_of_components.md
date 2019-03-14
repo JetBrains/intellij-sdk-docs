@@ -4,7 +4,7 @@ title: Persisting State of Components
 
 The *IntelliJ Platform* provides an API that allows components or services to persist their state between restarts of the IDE. You can use either a simple API to persist a few values, or persist the state of more complicated components using the [PersistentStateComponent](upsource:///platform/core-api/src/com/intellij/openapi/components/PersistentStateComponent.java) interface.
 
-> **WARNING** If you need to persist sensitive data like passwords, please see [Credentials Store](https://github.com/JetBrains/intellij-community/blob/master/platform/credential-store/readme.md)
+> **WARNING** If you need to persist sensitive data like passwords, please see [Persisting Sensitive Data](persisting_sensitive_data.md).
 
 ## Using PropertiesComponent for simple non-roamable persistence
 
@@ -84,7 +84,7 @@ To exclude a public field or bean property from serialization, annotate the fiel
 
 Note that the state class must have a default constructor. It should return the default state of the component (one used if there is nothing persisted in the XML files yet).
 
-State class should have an `equals` method, but if it is not implemented, state objects will be compared by fields. When using Kotlin, use [Data Classes](http://kotlinlang.org/docs/reference/data-classes.html).
+State class should have an `equals` method, but if it is not implemented, state objects will be compared by fields. When using Kotlin, use [Data Classes](https://kotlinlang.org/docs/reference/data-classes.html).
 
 ### Defining the storage location
 

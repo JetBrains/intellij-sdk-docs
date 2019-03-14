@@ -5,7 +5,7 @@ title: Editor Components
 ## EditorTextField
 
 Compared to
-[Swing JTextArea](http://docs.oracle.com/javase/8/docs/api/javax/swing/JTextArea.html), the
+[Swing JTextArea](https://docs.oracle.com/javase/8/docs/api/javax/swing/JTextArea.html), the
 *IntelliJ Platform's* editor component has a ton of advantages: syntax highlighting support, code completion, code folding and much more.
 *IntelliJ Platform* editors are normally displayed in editor tabs, but they can be embedded in dialogs or tool windows, too.
 This is enabled by the

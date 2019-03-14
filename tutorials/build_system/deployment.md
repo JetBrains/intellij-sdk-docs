@@ -2,8 +2,8 @@
 title: Publishing Plugins with Gradle
 ---
 
-Once you have configured Gradle support, you can automatically build and deploy your plugin to the [JetBrains Plugin Repository](http://plugins.jetbrains.com). To do so, you 
-will need to have already published the plugin to the plugin repository. For detailed information, please see the guide to [publishing a plugin](http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/publishing_plugin.html).
+Once you have configured Gradle support, you can automatically build and deploy your plugin to the [JetBrains Plugin Repository](https://plugins.jetbrains.com). To do so, you 
+will need to have already published the plugin to the plugin repository. For detailed information, please see the guide to [publishing a plugin](../../basics/getting_started/publishing_plugin.md).
 
 ### 2.0 Add your account credentials
 
@@ -78,7 +78,7 @@ When you run `gradle runIde` with a build script containing the above snippet, G
 
 ### 2.3 Deploy your plugin
 
-The first step when deploying a plugin is to confirm that it works correctly. You may wish to verify this by [installing your plugin from disk](https://www.jetbrains.com/help/idea/installing-a-plugin-from-the-disk.html) on a fresh instance of your target IDE(s). Once you are confident the plugin works as intended, make sure the plugin version is updated, as the JetBrains Plugin repository will not accept multiple artifacts with the same version. To deploy a new version of your plugin to the JetBrains plugin repository, execute the following Gradle command:
+The first step when deploying a plugin is to confirm that it works correctly. You may wish to verify this by [installing your plugin from disk](https://www.jetbrains.com/help/idea/managing-plugins.html) on a fresh instance of your target IDE(s). Once you are confident the plugin works as intended, make sure the plugin version is updated, as the JetBrains Plugin repository will not accept multiple artifacts with the same version. To deploy a new version of your plugin to the JetBrains plugin repository, execute the following Gradle command:
 
 ```bash
 gradle publishPlugin

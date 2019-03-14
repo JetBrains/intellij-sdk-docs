@@ -3,7 +3,7 @@ title: Implementing Lexer
 ---
 
 The lexer, or
-[lexical analyzer](http://en.wikipedia.org/wiki/Lexical_analysis),
+[lexical analyzer](https://en.wikipedia.org/wiki/Lexical_analysis),
 defines how the contents of a file is broken into tokens.
 The lexer serves as a foundation for nearly all of the features of custom language plugins, from basic syntax highlighting to advanced code analysis features.
 The API for the lexer is defined by the
@@ -39,7 +39,7 @@ That state will be passed to the
 method, along with the start offset of the fragment to process, when lexing is resumed from the middle of a file.
 Lexers used in other contexts can always return `0` from the `getState()` method.
 
-The easiest way to create a lexer for a custom language plugin is to use [JFlex](http://jflex.de).
+The easiest way to create a lexer for a custom language plugin is to use [JFlex](https://jflex.de).
 Adapter classes,
 [FlexLexer](upsource:///platform/core-api/src/com/intellij/lexer/FlexLexer.java)
 and

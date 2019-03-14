@@ -22,7 +22,7 @@ can represent a path to a file which doesn't exist on disk.
 The main difference between a
 [FilePath](upsource:///platform/vcs-api/vcs-api-core/src/com/intellij/openapi/vcs/FilePath.java)
 and a
-[java.io.File](http://docs.oracle.com/javase/8/docs/api/java/io/File.html)
+[java.io.File](https://docs.oracle.com/javase/8/docs/api/java/io/File.html)
 is that a
 [FilePath](upsource:///platform/vcs-api/vcs-api-core/src/com/intellij/openapi/vcs/FilePath.java)
 caches the

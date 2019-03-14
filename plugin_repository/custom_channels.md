@@ -4,7 +4,7 @@ title: Custom Release Channels
 
 ## Uploading a Plugin Update to the Custom Release Channel
 
-You may deploy plugins to a specific channel of your choosing via the plugin repository web interface, [Gradle plugin](http://www.jetbrains.org/intellij/sdk/docs/tutorials/build_system/deployment.html) or the [API](api/plugin_upload.md).
+You may deploy plugins to a specific channel of your choosing via the plugin repository web interface, [Gradle plugin](../tutorials/build_system/deployment.md) or the [API](api/plugin_upload.md).
 
 When empty, this will use the default plugin repository channel (*Stable*), available to all JetBrains plugin repository users, however, you can publish to an arbitrarily-named channel.
 
@@ -39,7 +39,7 @@ https://plugins.jetbrains.com/plugins/<channel>/<pluginId>
 ```
 (e.g. `https://plugins.jetbrains.com/plugins/eap/1347`)
 
-Please refer to the [Managing Enterprise Plugin Repositories](https://www.jetbrains.com/help/idea/managing-enterprise-plugin-repositories.html) help article for more information on how to specify a custom plugin repository in the IntelliJ Platform Based IDEs to receive plugins and updates from the custom release channel:
+Please refer to the [Managing Enterprise Plugin Repositories](https://www.jetbrains.com/help/idea/managing-plugins.html) help article for more information on how to specify a custom plugin repository in the IntelliJ Platform Based IDEs to receive plugins and updates from the custom release channel:
 
 ![Add Custom Plugin Repository in IntelliJ IDEA](img/intellij_custom_plugin_repository.png)
 

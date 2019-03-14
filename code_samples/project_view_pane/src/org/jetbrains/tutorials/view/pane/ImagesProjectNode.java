@@ -7,6 +7,7 @@ import com.intellij.ide.util.treeView.AbstractTreeNode;
 import com.intellij.openapi.Disposable;
 import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.project.ProjectUtil;
 import com.intellij.openapi.util.*;
 import com.intellij.openapi.util.text.StringUtil;
 import com.intellij.openapi.vfs.*;
@@ -24,7 +25,7 @@ public class ImagesProjectNode extends AbstractTreeNode<VirtualFile> {
   private static final Key<Set<VirtualFile>> IMAGES_PROJECT_DIRS = Key.create("images.files.or.directories");
 
   public ImagesProjectNode(final Project project) {
-    super(project, project.getBaseDir());
+    super(project, ProjectUtil.guessProjectDir(project));
     scanImages(project);
 
     subscribeToVFS(project);
@@ -37,11 +38,12 @@ public class ImagesProjectNode extends AbstractTreeNode<VirtualFile> {
   private void scanImages(Project project) {
     addAllByExt(project, "png");
     addAllByExt(project, "jpg");
+    addAllByExt(project, "svg");
   }
 
   private void addAllByExt(Project project, String ext) {
     final Set<VirtualFile> imagesFiles = getImagesFiles(project);
-    final VirtualFile projectDir = project.getBaseDir();
+    final VirtualFile projectDir = ProjectUtil.guessProjectDir(project);
     for (VirtualFile file : FilenameIndex.getAllFilesByExt(project, ext)) {
       while (file != null && !file.equals(projectDir)) {
         imagesFiles.add(file);
@@ -76,7 +78,7 @@ public class ImagesProjectNode extends AbstractTreeNode<VirtualFile> {
     }
     if (files.isEmpty()) return Collections.emptyList();
     final List<AbstractTreeNode> nodes = new ArrayList<AbstractTreeNode>(files.size());
-    final boolean alwaysOnTop = ((ProjectViewImpl) ProjectView.getInstance(myProject)).isFoldersAlwaysOnTop();
+     final boolean alwaysOnTop = ((ProjectViewImpl) ProjectView.getInstance(myProject)).isFoldersAlwaysOnTop("");
     Collections.sort(files, new Comparator<VirtualFile>() {
       @Override
       public int compare(VirtualFile o1, VirtualFile o2) {
@@ -120,9 +122,9 @@ public class ImagesProjectNode extends AbstractTreeNode<VirtualFile> {
 
   private void subscribeToVFS(final Project project) {
     final Alarm alarm = new Alarm(Alarm.ThreadToUse.POOLED_THREAD, project);
-    LocalFileSystem.getInstance().addVirtualFileListener(new VirtualFileAdapter() {
+    LocalFileSystem.getInstance().addVirtualFileListener(new VirtualFileListener() {
       {
-        final VirtualFileAdapter me = this;
+        final VirtualFileListener me = this;
         Disposer.register(project, new Disposable() {
           @Override
           public void dispose() {

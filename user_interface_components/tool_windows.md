@@ -102,7 +102,7 @@ To clarify how to develop plugins that create tool windows, consider the **tool
 2. Ensure that the project settings are valid for your environment. If necessary, modify the project settings.
 To view or modify the project settings, you can open the [Project Structure](https://www.jetbrains.com/help/idea/project-structure-dialog.html) dialog.
 3. Run the plugin by choosing the **Run | Run** on the main menu.
-If necessary, change the [Run/Debug Configurations](http://www.jetbrains.com/idea/help/run-debug-configuration-plugin.html).
+If necessary, change the [Run/Debug Configurations](https://www.jetbrains.com/help/idea/run-debug-configuration-plugin.html).
 
 The plugin creates the **Sample Calendar** tool window. When opened, this tool window is similar to the following screen:
 

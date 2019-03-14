@@ -23,13 +23,13 @@ Please refer to the [Notifications](notifications.md) topic for more information
 The
 [JBSplitter](upsource:///platform/platform-api/src/com/intellij/ui/JBSplitter.java)
 class is JetBrains' replacement for the standard
-[JSplitPane](http://docs.oracle.com/javase/8/docs/api/javax/swing/JSplitPane.html)
+[JSplitPane](https://docs.oracle.com/javase/8/docs/api/javax/swing/JSplitPane.html)
 class.
 Unlike some other JetBrains-enhanced Swing components, it's not a drop-in replacement and has a different API.
 However, to achieve a consistent user experience, it's recommended to use
 [JBSplitter](upsource:///platform/platform-api/src/com/intellij/ui/JBSplitter.java)
 instead of the standard
-[JSplitPane](http://docs.oracle.com/javase/8/docs/api/javax/swing/JSplitPane.html)
+[JSplitPane](https://docs.oracle.com/javase/8/docs/api/javax/swing/JSplitPane.html)
 in your plugins.
 
 To add your components to the splitter, call the `setFirstComponent()` and `setSecondComponent()` methods.

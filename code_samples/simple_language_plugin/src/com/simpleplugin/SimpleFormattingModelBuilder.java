@@ -24,7 +24,7 @@ public class SimpleFormattingModelBuilder implements FormattingModelBuilder {
   private static SpacingBuilder createSpaceBuilder(CodeStyleSettings settings) {
     return new SpacingBuilder(settings, SimpleLanguage.INSTANCE)
         .around(SimpleTypes.SEPARATOR)
-        .spaceIf(settings.SPACE_AROUND_ASSIGNMENT_OPERATORS)
+        .spaceIf(settings.getCommonSettings(SimpleLanguage.INSTANCE.getID()).SPACE_AROUND_ASSIGNMENT_OPERATORS)
         .before(SimpleTypes.PROPERTY)
         .none();
   }

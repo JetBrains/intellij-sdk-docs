@@ -59,7 +59,7 @@ To determine the indent for the new line, the formatter engine calls the method 
 If the block before the cursor is incomplete (contains elements that the user will probably type but has not yet typed, like a closing parenthesis of the parameter list or the trailing semicolon of a statement), `getChildAttributes()` is called on the block before the caret; otherwise, it's called on the parent block.
 
 **New in IntelliJ IDEA 13**:
-Code formatting can be suppressed per region via [special comments](http://youtrack.jetbrains.com/issue/IDEA-56995#comment=27-605969).
+Code formatting can be suppressed per region via [special comments](https://youtrack.jetbrains.com/issue/IDEA-56995#comment=27-605969).
 
 ### Code Style Settings
 

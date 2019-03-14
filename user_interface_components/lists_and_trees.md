@@ -6,13 +6,13 @@ title: List and Tree Controls
 ### JBList and Tree
 
 Whenever you would normally use a standard
-[Swing JList](http://docs.oracle.com/javase/8/docs/api/javax/swing/JList.html)
+[Swing JList](https://docs.oracle.com/javase/8/docs/api/javax/swing/JList.html)
 component, it's recommended to use the
 [JBList](upsource:///platform/platform-api/src/com/intellij/ui/components/JBList.java)
 class as drop-in replacement.
 [JBList](upsource:///platform/platform-api/src/com/intellij/ui/components/JBList.java)
 supports the following additional features on top of
-[JList](http://docs.oracle.com/javase/8/docs/api/javax/swing/JList.html):
+[JList](https://docs.oracle.com/javase/8/docs/api/javax/swing/JList.html):
 
 *  Drawing a tooltip with complete text of an item if the item doesn't fit into the list box width.
 
@@ -25,7 +25,7 @@ supports the following additional features on top of
 Similarly, the
 [Tree](upsource:///platform/platform-api/src/com/intellij/ui/treeStructure/Tree.java)
 class provides a replacement for the standard
-[JTree](http://docs.oracle.com/javase/8/docs/api/javax/swing/JTree.html)
+[JTree](https://docs.oracle.com/javase/8/docs/api/javax/swing/JTree.html)
 class.
 In addition to the features of
 [JBList](upsource:///platform/platform-api/src/com/intellij/ui/components/JBList.java),

@@ -34,9 +34,9 @@ The example below adds an editor scheme named "Lightning" to the _Theme Basics_ 
   "name": "Theme Basics",
   "dark": false,
   "author": "IntelliJ Platform SDK",
+  "editorScheme": "/Lightning.xml",
   "ui": {
-  },
-  "editorScheme": "/Lightning.xml"
+  }
 }
 ```
 

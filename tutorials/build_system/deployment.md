@@ -7,9 +7,13 @@ will need to have already published the plugin to the plugin repository. For det
 
 ### 2.0 Add your account credentials
 
-In order to deploy a plugin to the plugin repository, you will first need to supply your JetBrains Account credentials. These are typically stored in the [Gradle properties](https://docs.gradle.org/current/userguide/build_environment.html#sec:gradle_configuration_properties). It is crucial that you do not check these credentials into source control.
+In order to deploy a plugin to the plugin repository, you will first need to supply your JetBrains Account credentials. 
+We will describe three options to do so: using only the Gradle properties, using environment variables and using arguments to the Gradle task.
 
-Place the following information inside a file called `gradle.properties` under your project's root directory, or inside `GRADLE_HOME/gradle.properties`.
+#### Using the Gradle properties file
+You can store the credentials in the [Gradle properties](https://docs.gradle.org/current/userguide/build_environment.html#sec:gradle_configuration_properties). It is crucial that you do not check these credentials into source control.
+
+To do this, place the following information inside a file called `gradle.properties` under your project's root directory, or inside `GRADLE_HOME/gradle.properties`.
 
 ```
 intellijPublishUsername=YOUR_USERNAME_HERE
@@ -31,29 +35,21 @@ If you place a `gradle.properties` file in your project's root directory, please
 gradle.properties
 ```
 
-Alternately, you may decide to create a default `gradle.properties` template, and instruct `git` to ignore any future changes to that file. To do so, check in the default template and execute the following command:
+#### Using environment variables
 
-```
-git update-index --assume-unchanged gradle.properties
-```
+Alternatively, and possibly slightly more safe because you cannot accidentally commit your credentials to git, you can provide your credentials via the environment variables `ORG_GRADLE_PROJECT_intellijPublishUsername` and `ORG_GRADLE_PROJECT_intellijPublishPassword`.
 
-If your project already has a custom `gradle.properties` file, you may create a custom `*.properties` file, and load it manually. For example:
+You can for example do this by providing them in the run configuration with which you run the `publishPlugin` task locally.
+To do so, create a Gradle run configuration (if not already done), choose your Gradle project, specify the `publishPlugin` task and then add the mentioned environment variables.
 
-```groovy
-Properties credentialProperties = new Properties()
-InputStream inputStream = new FileInputStream("/path/to/custom.properties")
-credentialProperties.load(inputStream)
-inputStream.close()
-```
+Note that you will still need to put some default values (can be empty) in the Gradle properties, because otherwise you will get a compilation error.
 
-and then you can use the properties with:
+#### Providing parameters to the Gradle task
 
-```groovy
-publishPlugin {
-    username credentialProperties['intellijPublishUsername']
-    password credentialProperties['intellijPublishPassword']
-}
-```
+Similar to using environment variables you can also pass your credentials as parameters to the Gradle task.
+You need to provide the parameters `-Dorg.gradle.project.intellijPublishUsername=myusername -Dorg.gradle.project.intellijPublishPassword=mypassword` for example via the command line or by putting this in the arguments of your run configuration.
+
+Note that also in this case you still need to put some default values in your Gradle properties.
 
 ### 2.1 Configure your plugin
 

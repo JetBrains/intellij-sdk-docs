@@ -9,7 +9,6 @@
     * [Contributing](CONTRIBUTING.md)
     * [Code of Conduct](CODE_OF_CONDUCT.md)
 * [Getting Help](intro/getting_help.md)
-* [Recently Updated](recently_updated.md)
 
 ## Part I - Plugins
 * [Introduction](basics.md)
@@ -38,6 +37,12 @@
     * [Plugin Dependencies](basics/plugin_structure/plugin_dependencies.md)
 * [IntelliJ Platform Artifacts Repositories](reference_guide/intellij_artifacts.md)
 * [Kotlin for Plugin Developers](tutorials/kotlin.md)
+* [Internal Actions Menu](reference_guide/internal_actions/internal_actions_intro.md)
+    * [Enabling Internal Mode](reference_guide/internal_actions/enabling_internal.md)
+    * [Internal Actions](reference_guide/internal_actions/interal_actions_menu.md)
+    * [UI Tools](reference_guide/internal_actions/internal_ui_sub.md)
+    * [UI Inspector](reference_guide/internal_actions/internal_uii.md)
+    * [Laf Defaults](reference_guide/internal_actions/internal_ui_lafd.md)
 * [IDE Development Instances](basics/ide_development_instance.md)
 * [Plugin Development FAQ](faq.md)
 
@@ -60,6 +65,10 @@
     * [Miscellaneous Swing Components](user_interface_components/misc_swing_components.md)
     * [Icons and Images](reference_guide/work_with_icons_and_images.md)
     * [Color Scheme Management](reference_guide/color_scheme_management.md)
+* [UI Themes](reference_guide/ui_themes/themes_intro.md)
+    * [Creating UI Themes](reference_guide/ui_themes/themes.md)
+    * [Customizing a UI Theme](reference_guide/ui_themes/themes_customize.md)
+    * [Adding Schemes and Images](reference_guide/ui_themes/themes_extras.md)
 * [Actions](basics/action_system.md)
     * [Actions Tutorial](tutorials/action_system.md)
         * [1. Registering an Action](tutorials/action_system/working_with_custom_actions.md)

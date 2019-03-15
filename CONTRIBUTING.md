@@ -264,6 +264,8 @@ Images can be included by adding the file directly to the repository and adding 
 
 Please, downscale screenshots made at high resolution.
 
+    ![Alt text](path-to-img.png){:width="42px"}
+
 ## A word on submodules
 
 The `sdkdocs-template` repo is added as a submodule, and it also contains a submodule to the private `webhelp-template` repo. The `sdkdocs-template` repo contains build time scripts and compiled and minified JS and CSS that allow the site to run. The private `webhelp-template` repo contains the code to build the JS and CSS. It is currently closed source, but the plan is to make it open source at some point, in which case, it is likely the two repos will be merged.

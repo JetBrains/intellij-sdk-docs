@@ -57,7 +57,7 @@ Note that this document refers to `Objects` keys as "Noun icons."
 An icon Palette color is customized by adding an `Actions` or `Objects` `key` and custom color `value` to the `"ColorPalette": {}` section in a Theme description file.
 The list of available icon `Actions` and `Objects` keys are provided by the completion popup in the editor:
 
-<img src="img/theme_colorpalette_popup.png" alt="Color Palette Popup" width="600px"/>
+![Color Palette Popup](img/theme_colorpalette_popup.png){:width="600px"}
 
 For example, the following key-value pair changes the color for  all blue-colored icons on toolbars to the color #5BC0DE:
 ```json

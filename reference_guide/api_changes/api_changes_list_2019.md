@@ -42,3 +42,20 @@ See the note on how to document new problems on the main page reference_guide/ap
 
 `com.intellij.sql.psi.SqlTokens.SQL_IDENT` field type changed from `com.intellij.sql.psi.impl.SqlTokenType` to `com.intellij.sql.psi.SqlTokenType`
 : In most of the cases, it's enough to recompile the code. It may also be needed to check that the code doesn't rely on the field's type.
+
+## Changes in Kotlin Plugin API
+
+`org.jetbrains.kotlin.KtNodeTypes.BOOLEAN_CONSTANT` field type changed from `org.jetbrains.kotlin.KtNodeType` to `com.intellij.psi.tree.IElementType`
+: Field type has been generalised. In most of the cases, it's enough to recompile the code of the plugin.
+
+`org.jetbrains.kotlin.KtNodeTypes.CHARACTER_CONSTANT` field type changed from `org.jetbrains.kotlin.KtNodeType` to `com.intellij.psi.tree.IElementType`
+: Field type has been generalised. In most of the cases, it's enough to recompile the code of the plugin.
+
+`org.jetbrains.kotlin.KtNodeTypes.FLOAT_CONSTANT` field type changed from `org.jetbrains.kotlin.KtNodeType` to `com.intellij.psi.tree.IElementType`
+: Field type has been generalised. In most of the cases, it's enough to recompile the code of the plugin.
+
+`org.jetbrains.kotlin.KtNodeTypes.INTEGER_CONSTANT` field type changed from `org.jetbrains.kotlin.KtNodeType` to `com.intellij.psi.tree.IElementType`
+: Field type has been generalised. In most of the cases, it's enough to recompile the code of the plugin.
+
+`org.jetbrains.kotlin.KtNodeTypes.STRING_TEMPLATE` field type changed from `org.jetbrains.kotlin.KtNodeType` to `com.intellij.psi.tree.IElementType`
+: Field type has been generalised. In most of the cases, it's enough to recompile the code of the plugin.

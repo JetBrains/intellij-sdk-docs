@@ -14,6 +14,8 @@ See the note on how to document new problems on the main page reference_guide/ap
 `java.org.java_websocket` package removed
 : [Java-WebSocket Library](https://github.com/TooTallNate/Java-WebSocket) was removed, bundle it with your plugin instead.
 
+`com.intellij.ui.layout.Cell.invoke$default(Cell, JComponent, CCFlags[], int, GrowPolicy, String, int, Object)` method parameter type changed
+: Signature of this function has been seriously changed without possibility to keep the old function. Change invocations and overriding of that function according to new parameters and recompile the code. 
 
 ## Changes in IntelliJ Platform 2019.1
 

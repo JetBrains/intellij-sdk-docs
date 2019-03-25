@@ -37,6 +37,9 @@ Finally, specify a JVM Gradle will use, it can be the Project JDK. You also conf
 
 ### 1.3 Configuring a Gradle Plugin Project
 Support for Gradle-based plugin projects is provided by the IntelliJ Platform `gradle-intellij-plugin`.
+
+> **Note** Please make sure to always upgrade to latest version of `gradle-intellij-plugin` plugin, follow releases on [GitHub](https://github.com/JetBrains/gradle-intellij-plugin/releases). 
+
 See the [Gradle plugin README](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md#gradle) for more information. 
 For example, to configure the **Sandbox Home** directory's location include the following in the project's `build.gradle` file:
 ```groovy

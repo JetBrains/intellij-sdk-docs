@@ -56,7 +56,7 @@ Once you define the `TemplateContextType`*, be sure to add the assigned context 
 </context>
 ```
 
-*It is not always necessary to define your own `TemplateContextType`, as there are many existing template contexts already defined in the IntelliJ Platform. Consider reusing one of the [many existing template contexts](https://upsource.jetbrains.com/idea-community/file/d190fa2f2741067587fd14c6f771302dda6fcc18/platform/lang-api/src/com/intellij/codeInsight/template/TemplateContextType.java?hierarchy=/platform/lang-api/src/com/intellij/codeInsight/template/TemplateContextType.java:46&nav=0:0:focused) if you are augmenting language support to an existing area.
+*It is not always necessary to define your own `TemplateContextType`, as there are many existing template contexts already defined in the IntelliJ Platform. Consider reusing one of the [many existing template contexts](https://upsource.jetbrains.com/idea-ce/file/idea-ce-ce8a9647c40aacd14cb51a8f2407b1ecb03fb6f9/platform/lang-api/src/com/intellij/codeInsight/template/TemplateContextType.java?hierarchy=/platform/lang-api/src/com/intellij/codeInsight/template/TemplateContextType.java:46&nav=0:0:focused) if you are augmenting language support to an existing area.
 
 ## Register Extension Points
 

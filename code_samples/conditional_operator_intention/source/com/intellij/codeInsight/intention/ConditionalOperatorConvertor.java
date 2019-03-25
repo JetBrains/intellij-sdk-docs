@@ -1,6 +1,5 @@
-/*
- * Copyright 2000-2018 JetBrains s.r.o. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
- */
+
+// Copyright 2000-2019 JetBrains s.r.o. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
 
 package com.intellij.codeInsight.intention;
 
@@ -26,21 +25,21 @@ public class ConditionalOperatorConvertor extends PsiElementBaseIntentionAction 
    */
   @NotNull
   public String getText() {
-    return "Convert ternary operator to if statement";
+    return "SDK Convert ternary operator to if statement";
   }
 
 
   /**
    * Returns text for name of this family of intentions. It is used to externalize
-   * "auto-show" state of intentions. Only one intention action is being provided,
-   * so the family name is the same text as the intention action list entry.
+   * "auto-show" state of intentions.
+   * It is also the directory name for the descriptions.
    *
-   * @return the intention family name.
-   * @see ConditionalOperatorConvertor#getText()
+   * @see     com.intellij.codeInsight.intention.IntentionManager#registerIntentionAndMetaData(IntentionAction, String...)
+   * @return  the intention family name.
    */
   @NotNull
   public String getFamilyName() {
-    return getText();
+    return "ConditionalOperatorIntention";
   }
 
 

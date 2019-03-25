@@ -2,11 +2,14 @@
 title: Code Intentions
 ---
 
-This topic describes the [conditional_operator_intention](https://github.com/JetBrains/intellij-sdk-docs/tree/master/code_samples/conditional_operator_intention), a sample plugin that adds a new [intention action](https://www.jetbrains.com/help/idea/intention-actions.html) to the IntelliJ Platform Intentions list. In addition, the sample plugin contains a JUnit-based test.
+This topic describes the [conditional_operator_intention](https://github.com/JetBrains/intellij-sdk-docs/tree/master/code_samples/conditional_operator_intention), a sample plugin that adds a new [intention action](https://www.jetbrains.com/help/idea/intention-actions.html) to the IntelliJ Platform Intentions list. 
+In addition, the sample plugin contains a JUnit-based test.
 
 ## About Intention Actions
 
-The **IntelliJ Platform** analyzes your code and helps handle situations that may result in errors. When a possible problem is suspected, the IDE suggests an appropriate intention action, denoted with special icons. For more information, refer to [Intention Actions](https://www.jetbrains.com/help/idea/intention-actions.html) in the **IntelliJ IDEA** Web Help. 
+The **IntelliJ Platform** analyzes your code and helps handle situations that may result in errors. 
+When a possible problem is suspected, the IDE suggests an appropriate intention action, denoted with special icons. 
+For more information, refer to [Intention Actions](https://www.jetbrains.com/help/idea/intention-actions.html) in the **IntelliJ IDEA** Web Help. 
 
 You can view a list of all available intention actions using the [Intention List](https://www.jetbrains.com/help/idea/intention-actions.html#intention-settings) provided by the IDE.
 
@@ -28,7 +31,8 @@ The [conditional_operator_intention](https://github.com/JetBrains/intellij-sdk-
 
 ## Sample Plugin
 
-The **ConditionalOperatorConverter** sample plugin is available in the `<%IntelliJ SDK Docs project%>/code_samples/conditional_operator_intention` directory. When launched, this plugin adds the **Convert ternary operator if statement** item to the **Conditional Operator** node in the IDEA Intentions list:
+The **ConditionalOperatorConverter** sample plugin is available in the `<%IntelliJ SDK Docs project%>/code_samples/conditional_operator_intention` directory. 
+When launched, this plugin adds the **Convert ternary operator if statement** item to the **Conditional Operator** node in the IDEA Intentions list:
 
 ![](img/IntentionsList.png)
 
@@ -42,7 +46,8 @@ The **ConditionalOperatorConverter** sample plugin is available in the `<%Inte
 
 #### How does it work?
 
-The plugin analyzes symbols under the cursor in your code opened in the IDEA editor. If the cursor is positioned on the "?" conditional operator, **IntelliJ IDEA** proposes to replace this conditional (ternary) operator with the "if-then-else" statement:
+The plugin analyzes symbols under the cursor in your code opened in the IDEA editor. 
+If the cursor is positioned on the "?" conditional operator, **IntelliJ IDEA** proposes to replace this conditional (ternary) operator with the "if-then-else" statement:
 
 ![](img/TernaryOperator.png)
 
@@ -64,6 +69,7 @@ if ((n>=0)) {
 
 ##### Testing the Plugin
 
-The sample plugin contains the `YourTest` Java class in the `testSource/testPlugin/` package and the test data in the `testData/` directory. To perform the plugin test, run the `YourTest.test()` method.
+The sample plugin contains the `YourTest` Java class in the `testSource/testPlugin/` package and the test data in the `testData/` directory. 
+To perform the plugin test, run the `YourTest.test()` method.
 
 For detailed information about testing and all related procedures, refer to [Testing](https://www.jetbrains.com/help/idea/performing-tests.html) in the **IntelliJ IDEA** Web Help.

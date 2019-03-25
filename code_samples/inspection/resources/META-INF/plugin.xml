@@ -1,15 +1,67 @@
+<!-- Copyright 2000-2019 JetBrains s.r.o. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+
 <idea-plugin>
+  <!--  Unique id for this plugin. Must stay constant for the life of the plugin.  -->
   <id>com.intellij.tutorials.inspection</id>
-  <name>Inspection Demo</name>
-  <version>1.0</version>
-  <vendor>JetBrains</vendor>
 
-  <description>Basic example of working with code inspections</description>
+  <!-- Text to display as name on Preferences/Settings | Plugin page -->
+  <name>SDK Inspection Demo</name>
 
-  <idea-version since-build="131"/>
+  <!-- The version of this plugin -->
+  <version>1.1.0</version>
+
+  <!-- Compatible with the following versions of IntelliJ Platform -->
+  <idea-version since-build="191"/>
+
+  <!-- Text to display as description on Preferences/Settings | Plugin page  -->
+  <description>
+    <![CDATA[
+      Basic example of working with code inspections. Adds entry to <b>Preferences | Editor | Inspections | SDK | Example Tools</b>.
+    ]]>
+  </description>
+  <change-notes>
+    <![CDATA[
+      <ul>
+        <li><b>1.1.0</b> Refactor resources, add "SDK" to description.</li>
+        <li><b>1.0.0</b> Release 2018.3 and earlier.</li>
+      </ul>
+    ]]>
+  </change-notes>
+
+  <!-- Text to display as company information on Preferences/Settings | Plugin page -->
+  <vendor email="sdk-example@jetbrains.com" url="https://plugins.jetbrains.com">IntelliJ Platform SDK</vendor>
 
   <extensions defaultExtensionNs="com.intellij">
-    <inspectionToolProvider implementation="com.intellij.tutorials.inspection.DemoInspectionToolProvider"/>
+
+    <!--  Extend the IntelliJ Platform local inspection type, and connect it to the implementation class
+           in this plugin.
+           <localInspection> type element is applied within the scope of a file under edit.
+               It is preferred over <inspectionToolProvider>
+               @see intellij.platform.resources.LangExtensionPoints
+               @see com.intellij.codeInspection.InspectionProfileEntry
+           Attributes:
+             language= Defines the type of file (in this case java source) for this inspection. Not localized
+             shortName= The default name for the inspection, e.g. the default
+                 for name for the description file "DemoCode.html". Not localized.
+             displayName= The string to be shown in the Preferences | Editor | Inspections panel
+                 The displayName gets registered to identify this inspection.
+                 Can be localized using key= and bundle= attributes instead.
+             groupPath= Defines the outermost grouping for this inspection in
+                 the Preferences | Editor | Inspections panel. Not localized.
+             groupName= The subgroup containing this inspection. Not localized.
+             enabledByDefault= Inspection state when Inspections panel is created.
+             level= The default level of error found by this inspection, e.g. INFO, ERROR, etc.
+                 @see com.intellij.codeHighlighting.HighlightDisplayLevel
+             inplementationClass= package.className of inspection implementation
+            -->
+    <localInspection language="JAVA"
+            shortName="DemoCode"
+            displayName="Demo Inspection"
+            groupName="Example Inspections"
+            groupPath="SDK"
+            enabledByDefault="true"
+            level="WARNING"
+            implementationClass="com.intellij.tutorials.inspection.DemoCodeInspection"/>
   </extensions>
 
 </idea-plugin>

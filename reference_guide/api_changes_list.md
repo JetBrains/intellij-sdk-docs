@@ -18,28 +18,28 @@ The following problem patterns are supported:
 <class name> class removed
 <class name> renamed to <new class name>
 
-<class name>.<method name>(<human-readable parametes>) method removed
-<class name>.<method name>(<human-readable parametes>) method return type changed from <before> to <after>
-<class name>.<method name>(<human-readable parametes>) method parameter <type> removed
-<class name>.<method name>(<human-readable parametes>) method parameter type changed from <before> to <after>
-<class name>.<method name>(<human-readable parametes>) method visibility changed from <before> to <after>
-<class name>.<method name>(<human-readable parametes>) method marked final
+<class name>.<method name>(<human-readable parameters>) method removed
+<class name>.<method name>(<human-readable parameters>) method return type changed from <before> to <after>
+<class name>.<method name>(<human-readable parameters>) method parameter <type> removed
+<class name>.<method name>(<human-readable parameters>) method parameter type changed from <before> to <after>
+<class name>.<method name>(<human-readable parameters>) method visibility changed from <before> to <after>
+<class name>.<method name>(<human-readable parameters>) method marked final
 
-<class name>(<human-readable parametes>) constructor removed
-<class name>(<human-readable parametes>) constructor parameter <type> removed
-<class name>(<human-readable parametes>) constructor parameter type changed from <before> to <after>
-<class name>(<human-readable parametes>) constructor visibility changed from <before> to <after>
+<class name>(<human-readable parameters>) constructor removed
+<class name>(<human-readable parameters>) constructor parameter <type> removed
+<class name>(<human-readable parameters>) constructor parameter type changed from <before> to <after>
+<class name>(<human-readable parameters>) constructor visibility changed from <before> to <after>
 
 <class name>.<field name> field removed
 <class name>.<field name> field type changed from <before> to <after>
 <class name>.<field name> field visibility changed from <before> to <after>
 
-<class name>.<method name>(<human-readable parametes>) abstract method added
+<class name>.<method name>(<human-readable parameters>) abstract method added
 <class name> class moved to package <package name>
 
 where <class name> is a fully-qualified name of the class, e.g. com.intellij.openapi.actionSystem.AnAction$InnerClass.
 <method name> is the exact method's name. Note that constructors have dedicated patterns.
-<human-readable parametes> is a string representing parameters, which are not necessarily fully qualified. They do not affect the parser. For example, instead of (java.lang.Object, java.util.List, int) you are free to write just (Object, List<String>, int).
+<human-readable parameters> is a string representing parameters, which are not necessarily fully qualified. They do not affect the parser. For example, instead of (java.lang.Object, java.util.List, int) you are free to write (Object, List<String>, int).
 
 NOTE: If a change you're trying to document doesn't match any of the above patterns, fill in a ticket in the YouTrack. 
 An example of a ticket is https://youtrack.jetbrains.com/issue/PR-1218. Until supported, you may document the change as you prefer, and I will correct it later.

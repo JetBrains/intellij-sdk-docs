@@ -62,7 +62,7 @@ buildscript {
 }
 
 plugins {
-    id "org.jetbrains.intellij" version "0.4.6"
+    id "org.jetbrains.intellij" version "0.4.7"
 }
 
 apply plugin: 'idea'

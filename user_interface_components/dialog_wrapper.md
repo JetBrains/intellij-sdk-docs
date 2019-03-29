@@ -60,7 +60,8 @@ To customize the buttons displayed in the dialog (replacing the standard `OK/Can
 Both of these methods return an array of Swing Action objects.
 If the button that you're adding closes the dialog, you can use
 [DialogWrapperExitAction](upsource:///platform/platform-api/src/com/intellij/openapi/ui/DialogWrapper.java),
-as the base class for your action.
+as the base class for your action. 
+Use `action.putValue(DialogWrapper.DEFAULT_ACTION, true)` to set the default button.
 
 To validate the data entered into the dialog, you can override the `doValidate()` method.
 The method will be called automatically by timer.

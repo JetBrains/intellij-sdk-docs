@@ -12,3 +12,5 @@ This section discusses creating and customizing UI Themes:
 * [Creating UI Themes](themes.md)
 * [Customizing UI Themes](themes_customize.md)
 * [Adding Editor Schemes and Background Images](themes_extras.md)
+
+For plugin developers, [Exposing Theme Metadata](themes_metadata.md) discusses the format of customization keys and information how to provide it to Theme authors. 

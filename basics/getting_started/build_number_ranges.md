@@ -1,6 +1,14 @@
 ---
 title: Build Number Ranges
 ---
+<style>
+  table {
+    width:100%;
+  }
+  th:first-child, td:first-child {
+    width: 10%;
+  }
+</style>
 
 Use this reference of build number ranges to specify the correct `since-build` and `until-build` values in your plugin descriptor.
 

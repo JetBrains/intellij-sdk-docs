@@ -69,6 +69,7 @@
     * [Creating UI Themes](reference_guide/ui_themes/themes.md)
     * [Customizing a UI Theme](reference_guide/ui_themes/themes_customize.md)
     * [Adding Schemes and Images](reference_guide/ui_themes/themes_extras.md)
+    * [Exposing Theme Metadata](reference_guide/ui_themes/themes_metadata.md)
 * [Actions](basics/action_system.md)
     * [Actions Tutorial](tutorials/action_system.md)
         * [1. Registering an Action](tutorials/action_system/working_with_custom_actions.md)

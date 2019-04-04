@@ -9,6 +9,8 @@ in an alternative way as the following docs state:
 API Compatibility policy: https://confluence.jetbrains.com/display/IDEA/IntelliJ+Platform+API+compatibility+policy
 API Compatibility FAQ:    https://confluence.jetbrains.com/display/IDEA/IntelliJ+API+Compatibility+Policy+FAQ
 
+Places marked with ApiStatus.@Experimental don't need to be documented.
+
 To document a new incompatible change, add a new line with the problem pattern
 followed by a 2nd line with ": "-prefixed human-readable description and recommended fix/action.
 

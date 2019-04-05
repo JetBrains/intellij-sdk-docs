@@ -59,7 +59,7 @@ PsiMethodCallExpression equalsCall =
 equalsCall.getMethodExpression().getQualifierExpression().replace(lExpr);
 equalsCall.getArgumentList().getExpressions()[0].replace(rExpr);
 
-// Step 3: replace a larger element in the original file with te replacement tree
+// Step 3: replace a larger element in the original file with the replacement tree
 PsiExpression result = (PsiExpression) binaryExpression.replace(equalsCall);
 ```
 

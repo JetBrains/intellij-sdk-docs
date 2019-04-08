@@ -83,7 +83,6 @@ In these compound cases, the last portion of the compound `usage` still describe
 Note that the following example snippet uses an eight-digit hexadecimal color `value` to give `ScrollBar.Mac.thumbColor` transparency:
 ```xml
 <color>
-<option name="ScrollBar.background" value="000000"/>
 <option name="ScrollBar.Mac.trackColor" value="000000"/>
 <option name="ScrollBar.Mac.thumbColor" value="FFFFFFBE"/>
 </color>
@@ -94,10 +93,12 @@ A list of scroll bar `name` attributes is in the [High Contrast editor scheme](u
 These name attributes cannot be accessed from anywhere in the IDE UI at this time, so they must be manually added to an editor color scheme XML file.
 
 The following list explains the `usage` format of the `name` attribute, i.e. where a custom scroll bar color is applied:
-* `*.trackColor` — The scroll bar thumb moves across this area.
+* `*.trackColor` — The scroll bar thumb moves across this area. 
+  At this time the vertical scrollbar track color and transparency cannot be customized.
 * `*.thumbColor` — The movable rectangle that corresponds to the visible content's size.
 * `*.thumbBorderColor` — The thumb border.
-* `*.hoverTrackColor` — Same `usage` as above but for hover.
+* `*.hoverTrackColor` — Same `usage` as above but for hover. 
+  At this time the vertical scrollbar hover track color and transparency cannot be customized.
 * `*.hoverThumbColor` — Same `usage` as above but for hover.
 * `*.hoverThumbBorderColor` — Same `usage` as above but for hover.
 
@@ -105,20 +106,22 @@ The `name` attribute patterns are enumerated below.
 
 **Platform Independent Name Attributes**
 
-`ScrollBar.background` sets the background color for the horizontal scroll bar. 
+The horizontal scroll bar background color is set by `ScrollBar.background`.  
 This background color is visible only if the horizontal scroll bar's `*.trackColor` has transparency.
+
+At this time the vertical scrollbar background color cannot be customized.
 
 **Windows/Linux Name Attributes** 
 
-The `name` attributes for Windows and Linux have the pattern `ScrollBar.Transparent.*`, where the wildcard portion corresponds to the `usage` definitions above.
+The `name` attributes for Windows and Linux scroll bars have the pattern `ScrollBar.Transparent.*`, where the wildcard portion corresponds to the `usage` definitions above.
 
 **macOS Name Attributes** 
 
-The `name` attribute pattern for the vertical scroll bar is `ScrollBar.Mac.*`.
+The `name` attribute pattern for the vertical scroll bar is `ScrollBar.Mac.*`. 
 
 The `name` attribute pattern for the horizontal scroll bar depends on the macOS preferences _Show scroll bars_ setting:
   * `ScrollBar.Mac.*` when the _Always_ setting is selected.
-  * `ScrollBar.Mac.Transparent.*` when the _When scrolling_ setting is selected.
+  * `ScrollBar.Mac.Transparent.*` when the _When scrolling_ setting is selected.  
 
 The wildcard portion of these patterns corresponds to the `usage` definitions above.
 

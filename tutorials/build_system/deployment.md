@@ -24,8 +24,8 @@ Then refer to these values in `publishPlugin` task in your `build.gradle` file:
 
 ```groovy
 publishPlugin {
-    username intellijPublishUsername
-    password intellijPublishPassword
+    username findProperty('intellijPublishUsername')
+    password findProperty('intellijPublishPassword')
 }
 ```
 

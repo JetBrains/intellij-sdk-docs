@@ -23,9 +23,6 @@ See the note on how to document new problems on the main page reference_guide/ap
 `org.jetbrains.intellij.build.ProductProperties`: fields `yourkitAgentBinariesDirectoryPath` and `enableYourkitAgentInEAP` have been removed
 : Please bundle [performanceTesting plugin](https://plugins.jetbrains.com/plugin/7819-performance-testing) in case you would like to bundle YourKit profiler within your IDE.
 
-`com.intellij.profiler.api.configurations.ProfilerConfigurationType.getLanguageSettingsGroup()` abstract method added
-: Implement the method in `ProfilerConfigurationType`'s implementations.
-
 ## Changes in IntelliJ Platform 2019.1
 
 `kotlinx.coroutines.experimental` package removed 

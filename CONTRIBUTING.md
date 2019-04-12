@@ -101,6 +101,8 @@ This is made easier if you use [Chocolatey](https://chocolatey.org), a package m
 
 To build and test the site, simply run `rake preview`. This will build the site and host it, using the config provided. The URL of the hosted site is displayed on the screen and depends on the `baseurl` field defined in `_config.yml`.
 
+> **NOTE** You must use `localhost` as hostname, otherwise fonts will fail to load.
+
 ## Markup
 
 By default, when building the site, all files are copied to the destination `_site` folder. Some files are excluded in the `_config.yml` and `sdkdocs-template/jekyll/_config-defaults.yml` files. The documentation files themselves are [Markdown](https://daringfireball.net/projects/markdown/) files (`.md`) that get automatically converted to HTML when the site is built.

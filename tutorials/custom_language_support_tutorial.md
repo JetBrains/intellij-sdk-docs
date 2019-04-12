@@ -2,14 +2,11 @@
 title: Custom Language Support Tutorial
 ---
 
-In this tutorial we will add basic support for
+In this tutorial we will add support for
 [.properties](https://en.wikipedia.org/wiki/.properties)
 language and its usages within Java code.
 
-We will generate parser and PSI elements using
-[Grammar-Kit](https://github.com/JetBrains/Grammar-Kit) plugin.
-The lexer class will be generated with
-[JFlex](https://jflex.de/).
+The final code can be found in the [SamplePlugin repo on GitHub](https://github.com/JetBrains/intellij-sdk-docs/tree/master/code_samples/simple_language_plugin).
 
 This a step-by-step tutorial and it requires performing every step:
 
@@ -31,6 +28,3 @@ This a step-by-step tutorial and it requires performing every step:
 *  [16. Code Style Settings](custom_language_support/code_style_settings.md)
 *  [17. Commenter](custom_language_support/commenter.md)
 *  [18. Quick Fix](custom_language_support/quick_fix.md)
-
-The final code can be found in the [SamplePlugin repo on GitHub](https://github.com/JetBrains/intellij-sdk-docs/tree/master/code_samples/simple_language_plugin).
-

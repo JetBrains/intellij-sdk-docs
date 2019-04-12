@@ -52,11 +52,15 @@ NOTE: You are allowed to prettify the pattern using markdown-features:
  3) both code quotes and links: [`org.example.Foo`](upsource:///platform/core-api/src/org/example/Foo)
 -->
 
-IntelliJ API may be occasionally changed between releases leading to 
-incompatibilities of existing plugins with new IDEs' builds. 
-The following pages list the breaking changes in IDE releases.  
+IntelliJ API may be occasionally changed between releases leading to incompatibilities of existing plugins with newer IDE builds. 
+
+Compatibility with newer IDEs can easily be verified for plugins hosted on the [JetBrains plugin repository](../plugin_repository/index.md) using the builtin [Plugin Verifier](https://blog.jetbrains.com/platform/2018/07/plugins-repository-now-integrates-with-the-plugin-verification-tool/).
   
+The following pages list the breaking changes in IDE releases with required/recommended steps to take by plugin authors. 
+
 * [**Changes in 2019.***](api_changes/api_changes_list_2019.md)
 * [**Changes in 2018.***](api_changes/api_changes_list_2018.md)
 * [**Changes in 2017.***](api_changes/api_changes_list_2017.md)
 * [**Changes in 2016.***](api_changes/api_changes_list_2016.md)
+
+> **NOTE** Changes from API marked with [`org.jetbrains.annotations.ApiStatus.@Experimental`](upsource:///platform/util/src/org/jetbrains/annotations/ApiStatus.java) are not listed here, as incompatible changes are to be expected.

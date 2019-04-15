@@ -8,7 +8,7 @@ title: PyCharm
 
 The APIs from the standard set of Platform Open API modules can be safely used in plugins. Public symbols defined in these modules have a lifecycle, and will be marked as deprecated for several releases before being removed.
 
-The modules are [defined in the `CommunityRepositoryModules.groovy` file](https://github.com/JetBrains/intellij-community/blob/master/platform/build-scripts/groovy/org/jetbrains/intellij/build/CommunityRepositoryModules.groovy).
+The modules are [defined in the `CommunityRepositoryModules.groovy` file](upsource:///platform/build-scripts/groovy/org/jetbrains/intellij/build/CommunityRepositoryModules.groovy).
 
 ### PyCharm Open API
 

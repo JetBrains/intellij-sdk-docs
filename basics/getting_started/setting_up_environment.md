@@ -6,7 +6,7 @@ title: Setting Up a Development Environment
 
 Use the following checklist to ensure that you are ready to develop your custom plugins.
 
-- **Get IntelliJ IDEA CE source code** on your local computer. Getting IntelliJ IDEA CE source code is not a requirement for plugin development, but having it makes debugging your plugins much easier. For detailed instructions refer to the _Getting IntelliJ IDEA Community Edition Source Code_ section of [Check Out And Build Community Edition](https://github.com/JetBrains/intellij-community/blob/master/README.md). Note that building IntelliJ IDEA CE from source code is not required for plugin development.
+- **Get IntelliJ IDEA CE source code** on your local computer. Getting IntelliJ IDEA CE source code is not a requirement for plugin development, but having it makes debugging your plugins much easier. For detailed instructions refer to the _Getting IntelliJ IDEA Community Edition Source Code_ section of [Check Out And Build Community Edition](upsource:///README.md). Note that building IntelliJ IDEA CE from source code is not required for plugin development.
 - **Plugin DevKit** plugin must be [enabled in IntelliJ IDEA](https://www.jetbrains.com/help/idea/managing-plugins.html)
 - **IntelliJ Platform SDK** must be configured for your IDEA project. For more information, see below.
   
@@ -25,7 +25,7 @@ To set up your plugin development environment:
    ![Set Home Directory](img/set_home_directory.png)
 <br/>
 <br/>      
-*  Select **1.8** as the default Java SDK. See the _IntelliJ Build Configuration_ section of [Check Out And Build Community Edition](https://github.com/JetBrains/intellij-community/blob/master/README.md) for instructions about creating **1.8** JSDK.
+*  Select **1.8** as the default Java SDK. See the _IntelliJ Build Configuration_ section of [Check Out And Build Community Edition](upsource:///README.md) for instructions about creating **1.8** JSDK.
 
    ![Set IDEA JDK](img/set_java_sdk.png)
 <br/>

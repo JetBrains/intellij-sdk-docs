@@ -24,7 +24,7 @@ The _IntelliJ Platform_ is a JVM application, written mostly in Java and Kotlin.
 
 ## Open Source
 
-The _IntelliJ Platform_ is Open Source, under the [Apache license](https://github.com/JetBrains/intellij-community/blob/master/LICENSE.txt), and [hosted on GitHub](https://github.com/JetBrains/intellij-community).
+The _IntelliJ Platform_ is Open Source, under the [Apache license](upsource:///LICENSE.txt), and [hosted on GitHub](https://github.com/JetBrains/intellij-community).
 
 While this guide refers to the _IntelliJ Platform_ as a separate entity, there is no "IntelliJ Platform" GitHub repo. Instead, the platform is considered to be an almost complete overlap with the IntelliJ IDEA Community Edition, which is a free and Open Source version of IntelliJ IDEA Ultimate (the GitHub repo linked above is the [JetBrains/intellij-community](https://github.com/JetBrains/intellij-community) repo).
 

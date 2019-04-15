@@ -15,15 +15,12 @@ Download the IntelliJ IDEA Community Edition source files as described in the In
 
 ### 1.3. Install Required Plugins
 
-Make sure that the bundled Plugin DevKit plugin is enabled.
+Make sure that the bundled *Plugin DevKit* plugin is enabled.
 Install and enable
 [Grammar-Kit](https://plugins.jetbrains.com/plugin/6606-grammar-kit)
 and
 [PsiViewer](https://plugins.jetbrains.com/plugin/227-psiviewer)
 plugins.
-<br/>
-<br/>
-![Plugins](img/plugins.png)
 
 ### 1.4. Configure the SDK and Source Files
 

@@ -4,7 +4,7 @@
     <entry_points version="2.0" />
   </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_7" default="false" assert-keyword="true" jdk-15="true" project-jdk-name="IntelliJ IDEA IU-144.3600.7" project-jdk-type="IDEA JDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="false" project-jdk-name="IC-191.6183.87" project-jdk-type="IDEA JDK">
     <output url="file://$PROJECT_DIR$/build" />
   </component>
 </project>

@@ -1,0 +1,33 @@
+plugins {
+    id 'java'
+    id 'org.jetbrains.intellij' version '0.4.7'
+}
+
+group 'org.intellij.sdk'
+version '2.0.0'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+// See https://github.com/JetBrains/gradle-intellij-plugin/
+intellij {
+  version '2019.1'
+}
+patchPluginXml {
+}
+
+// Define javadoc paths, force rebuild before jar is built
+javadoc {
+  // Set of source files to include
+  source = sourceSets.main.java.srcDirs
+  // Include all class files, e.g. from libraries
+  classpath = sourceSets.main.compileClasspath
+}
+jar.dependsOn javadoc

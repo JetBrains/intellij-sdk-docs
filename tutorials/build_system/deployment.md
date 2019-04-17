@@ -61,7 +61,7 @@ The gradle-intellij-plugin provides a number of [configuration options](https://
 plugins {
     // Make sure to check for the latest version at https://plugins.gradle.org/plugin/org.jetbrains.intellij
     // You can also subscribe to releases at https://github.com/JetBrains/gradle-intellij-plugin/releases
-    id 'org.jetbrains.intellij' version '0.4.7'
+    id 'org.jetbrains.intellij' version '0.4.8'
 }
 
 intellij {

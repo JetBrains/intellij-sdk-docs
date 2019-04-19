@@ -1,0 +1,159 @@
+---
+title: Guidelines for Creating IntelliJ Platform SDK Code Samples
+---
+
+This document describes the coding guidelines used for authoring open source IntelliJ Platform SDK code samples.
+Before you begin, please read this page thoroughly as well as the [Code of Conduct](/CODE_OF_CONDUCT.md) and [License](https://github.com/JetBrains/intellij-sdk-docs/blob/master/LICENSE.txt) documents.
+For information about contributing to the IntelliJ Platform itself visit [Contributing to the IntelliJ Platform](/basics/platform_contributions.md).
+
+## Objectives
+Keep the following considerations in mind while authoring an SDK code sample:
+* The purpose of an SDK sample is to demonstrate an implementation pattern to build on top of subsystems and components of the IntelliJ Platform.
+* SDK code samples are instructional code, intended to teach.
+  * Instructional code differs from production code in some key aspects:
+    * Sacrifice some robustness in the interest of simplicity and brevity.
+      Use error checking where it is necessary to make a point about an implementation pitfall.
+    * Keep implementations as simple as possible, but use the full features of the IntelliJ Platform, Java language, and libraries. 
+    * Use meaningful names for interfaces, classes, fields, methods, and extension points.
+    * Write instructional JavaDoc comments.    
+  * Code samples replace lots of documentation. 
+* Aim for two levels of SDK samples:
+  * A _basic_ sample is focused on a particular subject by demonstrating a limited area of the IntelliJ Platform. 
+    It should show all the components and architecture but ultimately accomplish something elementary. 
+    For example, demonstrate persistence by storing only a `String`.
+  * An _advanced_ sample demonstrates how different parts of the IntelliJ Platform integrate and work together. 
+    For example, combining inspections or intentions with non-trivial PsiTree manipulation.
+ 
+Ultimately, the goal is to provide developers with roadmaps for implementing functionality in an IntelliJ Platform-based plugin.
+Each roadmap should contain:
+* Pointers to SDK documentation about the IntelliJ Platform APIs needed to implement the functionality.
+* Pointers to relevant _basic_ SDK sample plugins.
+* Pointers to relevant _advanced_ SDK sample plugins.
+
+## Naming Conventions for SDK Plugins
+For _basic_ samples, the naming convention is focused on the IntelliJ Platform APIs being demonstrated.
+For example, `foo_basics` where `foo` corresponds to an IntelliJ Platform feature, framework, or component.
+Some naming examples include `facet_basics` and `editor_basics`.
+There is only one _basic_ sample per IntelliJ Platform API area.
+
+For _advanced_ code samples, the name should reflect the complex functionality delivered by the plugin rather than the IntelliJ Platform APIs.
+Advanced samples will be cross-referenced to the IntelliJ Platform APIs demonstrated in the sample.
+
+Regardless of basic or advanced, an SDK plugin name is also known as the `Artifact ID` in the Gradle plugin wizard.
+
+## Plugin Copyright Statements
+Use the standard intellij-community copyright notice in all sample plugins authored by JetBrains:  
+   "Copyright 2000-$today.year JetBrains s.r.o. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file."  
+The copyright statement must appear in every source file with the `$today.year` [Velocity](https://www.jetbrains.com/help/idea/copyright-profiles.html) template resolved.
+
+## Plugin ID Conventions
+The plugin ID (`<id>` in `plugin.xml`) always begins with `org.intellij.sdk`.
+The plugin ID is known as the `Group ID` in the Gradle plugin wizard.
+
+For _basic_ code samples, it is not necessary to include "basic" in the plugin ID.
+A plugin like `facet_basics` has the ID `org.intellij.sdk.facet`.
+
+## Plugin Package Names
+Packages in plugins should begin with the plugin ID.
+If there is only one package in a plugin, then the package name is the same as the plugin ID.
+
+## Plugin Directory Structure
+SDK sample code should have a standard directory footprint.
+Standardized structure not only makes the samples easier to navigate and understand, but it builds on the default Gradle plugin project structure.
+The following is the directory structure for a `basic_foo` plugin.
+```text
+code_samples/
+  basic_foo/
+    gradle/
+    src/
+      main/
+        java/
+          icons/
+            BasicFooIcons.java
+        resources/
+          icons/
+            sdk.svg           # The standard SDK icon for menus, etc.
+          META-INF/
+            plugin.xml        # The plugin configuration file
+            pluginIcon.svg    # The standard SDK plugin icon
+      test/                   # Omit if there are no tests
+        java/
+        resources/
+    build.gradle
+    gradlew
+    gradle.bat
+    settings.gradle
+```
+
+## build.gradle Conventions 
+New SDK code samples should be developed [using Gradle](/tutorials/build_system.md). 
+As of this writing, the use of Gradle in SDK code samples still relies heavily on the `plugin.xml` for specifying the plugin configuration.
+At a later, second phase, the SDK code samples will transition to rely more on the Gradle configuration. 
+
+The default contents of a `build.gradle` file are produced by the [Gradle project wizard](/tutorials/build_system/prerequisites.md#create-a-plugin-project-from-scratch). 
+A consistent structure for an SDK code sample's `build.gradle` file is important for clarity and is based on the default produced by the project wizard. 
+Comments in SDK code sample `build.gradle` files should only draw attention to the parts of the Gradle configuration that are unique for a plugin.
+
+For SDK code samples a few alterations are needed to the default build.gradle file produced by the plugin wizard:
+* Add the following statements to the [Setup DSL](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md#setup-dsl) (`intellij{}`) section:
+  ```groovy
+      // Prevents patching <idea-version> attributes in plugin.xml
+      updateSinceUntilBuild = false 
+      // Define a shared sandbox directory for running code sample plugins within an IDE.
+      sandboxDirectory = file("${project.projectDir}/../_Build/idea-sandbox")
+  ``` 
+* Remove the [Patching DSL](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md#patching-dsl) (`patchPluginXml{}`) section.
+  It is not needed in SDK samples.
+* Add the `javadoc` task to build documentation for the code sample:
+  ```groovy
+    // Force javadoc rebuild before jar is built
+    jar.dependsOn javadoc
+  ```
+
+## plugin.xml Conventions
+A consistent structure for the [`plugin.xml`](/basics/plugin_structure/plugin_configuration_file.md) configuration file of an SDK code sample is important because we want to draw attention to the unique parts of the file for a plugin.
+Inconsistent element order is visually noisy.
+Comment profusely about unique elements and configurations, and comment sparingly for the rest.
+
+The sequence of elements in an SDK code sample `plugin.xml` file is:
+* `<id>` Use the fully qualified [Plugin ID](#plugin-id-conventions).
+* `<name>` The name value does not have to match the [Plugin Name](#naming-conventions-for-sdk-plugins).
+  It might reflect the functionality of the plugin.
+  The name must start with "SDK:".
+* `<version>` The code sample's version in MAJOR.MINOR.FIX format.
+  * MAJOR corresponds to a significant upgrade in functionality.
+  * MINOR corresponds to minor refactoring and small improvements in functionality. 
+  * FIX corresponds to changes that fix problems without significant refactoring.
+* `<idea-version/>` Set the attributes:
+  * `since-build` attribute to the earliest compatible build number of the IntelliJ Platform.
+  * `until-build` attribute to an empty string `""`.
+    SDK code samples are reviewed with every major release to ensure compatibility with the latest IntelliJ Platform.
+* `<description>` is a succinct explanation of what is being demonstrated and how a user would access the functionality.
+* `<change-notes>` is an ordered list by version numbers with a brief description of changes for each version.
+* `<vendor>` Set the value to `IntelliJ Platform SDK`.
+  Set the attributes:
+  * `email` to a placeholder value `"faux-email@jetbrains.com"` 
+  * `url` to the JetBrains plugin repository `"https://plugins.jetbrains.com"`
+* Except for [special cases](/basics/plugin_structure/plugin_configuration_file.md) these elements are not used in SDK plugins.
+  * `<depends>`  
+  * `<helpset>` 
+  * `<resource-bundle>`
+* `<application-components>` Deprecated and should not be used for new plugins.
+* `<module-components>` Omit if not specifically used.
+* `<project-components>` Omit if not specifically used.
+* `<extensionPoints>` Generally not used by SDK plugins.
+* `<actions>` Omit if not specifically used.
+* `<extensions>` Omit if not specifically used.
+
+## Testing
+IntelliJ Platform SDK code samples should be built and tested against the `since-build` version.
+
+Code samples should build cleanly, with no warnings or errors, and new code samples should pass all IntelliJ IDEA code inspections.
+
+Testers should complete the following checklist. 
+Here the term "IDE" means the IntelliJ Platform-based IDE in which the plugin is designed to run:
+* The plugin should load in the IDE.
+* The correct information about the plugin should display in the **Preferences \| Plugins** panel.
+* If applicable, the plugin UI such as tool windows, menu additions, etc. should display correctly.
+* The functionality of the plugin should be tested with a sample file.
+* If applicable, the plugin should pass unit tests.

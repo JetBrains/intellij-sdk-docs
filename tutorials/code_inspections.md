@@ -122,7 +122,7 @@ Implicit in using [`LocalInspectionTool`](upsource:///platform/analysis-api/src/
 * The inspection description file is expected to be located under `<plugin root dir>/resources/inspectionDescriptions/`.
   If the inspection description file is to be located elsewhere, override `getDescriptionUrl()` in the inspection implementation class.
 * The name of the description file is expected to be the inspection `<short name>.html` as provided by the inspection description or the inspection implementation class.
-  If a short name is not provided by the plugin, the IntelliJ Platform creates one by attempting to truncate the implementation class name.
+  If a short name is not provided by the plugin, the IntelliJ Platform computes one.
   
 ### Inspection Unit Test
 The `comparing_references_inspection` code sample provides a unit test for the inspection.

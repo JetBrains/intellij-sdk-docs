@@ -29,7 +29,7 @@
   </change-notes>
 
   <!-- Text to display as company information on Preferences/Settings | Plugin page -->
-  <vendor email="sdk-example@jetbrains.com" url="https://plugins.jetbrains.com">IntelliJ Platform SDK</vendor>
+  <vendor email="faux-email@jetbrains.com" url="https://plugins.jetbrains.com">IntelliJ Platform SDK</vendor>
 
   <extensions defaultExtensionNs="com.intellij">
 
@@ -40,9 +40,8 @@
                @see intellij.platform.resources.LangExtensionPoints
                @see com.intellij.codeInspection.InspectionProfileEntry
            Attributes:
-             language= Defines the type of file (in this case java source) for this inspection. Not localized
-             shortName= The default name for the inspection, e.g. the default
-                 for name for the description file "DemoCode.html". Not localized.
+             language= Language ID
+             shortName= Not specified, will be computed by the underlying implementation classes.
              displayName= The string to be shown in the Preferences | Editor | Inspections panel
                  The displayName gets registered to identify this inspection.
                  Can be localized using key= and bundle= attributes instead.
@@ -52,10 +51,9 @@
              enabledByDefault= Inspection state when Inspections panel is created.
              level= The default level of error found by this inspection, e.g. INFO, ERROR, etc.
                  @see com.intellij.codeHighlighting.HighlightDisplayLevel
-             inplementationClass= package.className of inspection implementation
+             inplementationClass= FQN of inspection implementation
             -->
     <localInspection language="JAVA"
-            shortName="DemoCode"
             displayName="Demo Inspection"
             groupName="Example Inspections"
             groupPath="SDK"

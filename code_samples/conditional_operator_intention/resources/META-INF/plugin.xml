@@ -1,0 +1,46 @@
+<!-- Copyright 2000-2019 JetBrains s.r.o. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+
+<idea-plugin>
+  <!--  Unique id for this plugin. Must stay constant for the life of the plugin.  -->
+  <id>ConditionalOperatorConverter</id>
+
+  <!-- Text to display as name on Preferences/Settings | Plugin page -->
+  <name>SDK Conditional Operator Converter</name>
+
+  <!-- The version of this plugin -->
+  <version>1.4.0</version>
+
+  <!-- Compatible with the following versions of IntelliJ Platform -->
+  <idea-version since-build="191"/>
+
+  <!-- Text to display as description on Preferences/Settings | Plugin page  -->
+  <description>
+    <![CDATA[
+      Intention action that suggests converting a ternary operator into an 'if' block.<br>Adds entry to <b>Preferences | Editor | Intentions | SDK Intentions<b>.
+    ]]>
+  </description>
+  <change-notes>
+    <![CDATA[
+      <ul>
+        <li><b>1.4.0</b> Refactor resources, general cleanup.</li>
+        <li><b>1.3.0</b> Release 2018.3 and earlier.</li>
+      </ul>
+    ]]>
+  </change-notes>
+
+  <!-- Text to display as company information on Preferences/Settings | Plugin page -->
+  <vendor email="faux-email@jetbrains.com" url="https://plugins.jetbrains.com">IntelliJ Platform SDK</vendor>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <intentionAction>
+      <className>com.intellij.codeInsight.intention.ConditionalOperatorConvertor</className>
+      <category>SDK Intentions</category>
+    </intentionAction>
+  </extensions>
+
+  <project-components>
+    <component>
+      <implementation-class>com.intellij.codeInsight.intention.ConditionalOperatorConvertor</implementation-class>
+    </component>
+  </project-components>
+</idea-plugin>

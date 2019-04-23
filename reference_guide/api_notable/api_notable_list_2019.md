@@ -15,6 +15,9 @@ title: Notable Changes in IntelliJ Platform and Plugins API 2019.*
 `@org.jetbrains.annotations.ApiStatus.ScheduledForRemoval`
 : External annotations for IntelliJ Platform are generated and attached to plugin projects automatically. This allows highlighting of API which has been removed in newer platform versions.
 
+`@org.jetbrains.annotations.ApiStatus.Internal`
+: Indicates that the annotated element must not be considered as a public API. Do not use outside of IntelliJ Platform. [Issue](https://youtrack.jetbrains.com/issue/IDEA-211175)
+
 `PsiReferenceProvider` assert underlying element
 : Assert references are created for the given underlying `PsiElement`. [Issue](https://youtrack.jetbrains.com/issue/IDEA-203954)
 

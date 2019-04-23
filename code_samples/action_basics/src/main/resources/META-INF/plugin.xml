@@ -8,11 +8,10 @@
   <name>SDK Action Sample Project</name>
 
   <!-- The version of this plugin -->
-  <!--  <version>Replaced by patchPluginXml.version in build.gradle</version>-->
+  <version>2.0.0</version>
 
   <!-- Compatible with the following versions of IntelliJ Platform -->
-  <!-- The <idea-version> attributes are updated by intellij.updateSinceUntilBuild,
-    patchPluginXml.sinceBuild and patchPlugin.untilBuild in build.gradle -->
+  <idea-version since-build="183" until-build=""/>
 
   <!-- Text to display as description on Preferences/Settings | Plugin page  -->
   <description>
@@ -31,7 +30,7 @@
   </change-notes>
 
   <!-- Text to display as company information on Preferences/Settings | Plugin page -->
-  <vendor email="faux-email@jetbrains.com" url="https://plugins.jetbrains.com">IntelliJ Platform SDK</vendor>
+  <vendor url="https://plugins.jetbrains.com">IntelliJ Platform SDK</vendor>
 
   <actions>
     <!-- The <action> element defines an action to register.

@@ -3,7 +3,6 @@ plugins {
   id 'org.jetbrains.intellij' version '0.4.7'
 }
 
-project.version '2.0.0'
 sourceCompatibility = 1.8
 
 repositories {
@@ -16,22 +15,16 @@ dependencies {
 
 // See https://github.com/JetBrains/gradle-intellij-plugin/
 intellij {
+
   // Define IntelliJ Platform API version to use for building this plugin
   version '2019.1'
-  // Define a communal sandbox directory for running code sample plugins within an IDE.
-  sandboxDirectory = file("${project.projectDir}/../Build/idea-sandbox")
+
+// Prevents patching <idea-version> attributes in plugin.xml
+  updateSinceUntilBuild = false
+// Define a shared sandbox directory for running code sample plugins within an IDE.
+  sandboxDirectory = file("${project.projectDir}/../_idea-sandbox")
+
 }
 
-patchPluginXml {
-  version = project.version     // <version> tag value
-  // Fix limited until-build default value.
-  sinceBuild = '191'          // <idea-version> tag since-build attribute
-  untilBuild = '201.*'          // <idea-version> tag until-build attribute - until v2020.1
-}
-
-// Define javadoc paths, force rebuild before jar is built
-javadoc {
-  // Include all class files, e.g. from libraries
-  classpath = sourceSets.main.compileClasspath
-}
+// Force javadoc rebuild before jar is built
 jar.dependsOn javadoc

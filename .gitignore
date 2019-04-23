@@ -37,6 +37,7 @@ _includes
 ### Gradle template
 .gradle
 build/
+_idea-sandbox/
 
 # Ignore Gradle GUI config
 gradle-app.setting

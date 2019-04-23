@@ -23,6 +23,12 @@ See the note on how to document new problems on the main page reference_guide/ap
 `org.jetbrains.intellij.build.ProductProperties`: fields `yourkitAgentBinariesDirectoryPath` and `enableYourkitAgentInEAP` have been removed
 : Please bundle [performanceTesting plugin](https://plugins.jetbrains.com/plugin/7819-performance-testing) in case you would like to bundle YourKit profiler within your IDE.
 
+`com.intellij.extapi.psi.PsiElementBase` class removed
+: Please use `com.intellij.psi.impl.PsiElementBase` or one of its descendants as a base class for PSI elements, e.g. `com.intellij.extapi.psi.ASTWrapperPsiElement`, as suggested in a [tutorial](https://www.jetbrains.org/intellij/sdk/docs/tutorials/custom_language_support/grammar_and_parser.html).
+
+`com.intellij.extapi.psi.MetadataPsiElementBase` class removed
+: Please use different base class for PSI elements.
+
 ## Changes in IntelliJ Platform 2019.1
 
 `kotlinx.coroutines.experimental` package removed 

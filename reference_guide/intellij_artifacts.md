@@ -11,7 +11,7 @@ The IntelliJ Platform artifacts repositories are:
 
 Both the Releases and Snapshots repositories have two types of content:
 * Binary and source code artifacts for cross-platform, ZIP distributions of IntelliJ Platform-based IDEs, such as IntelliJ IDEA, CLion, Rider, and MPS.
-These artifacts are not intended to be accessed directly from a plugin project's `build.gradle` file. 
+These artifacts are _not intended_ to be accessed directly from a plugin project's `build.gradle` file. 
 The `gradle-intellij-plugin` will access them as-needed for a plugin project.
 * Artifacts for individual modules from the IntelliJ Platform. 
 These may be downloaded, or accessed directly from a `build.gradle` file, as explained below.
@@ -29,17 +29,17 @@ To setup dependencies on a module there are two types of information needed:
  
 ### Specify the Repository URL 
 The URL for the desired artifact needs to be added to a Maven or Gradle script:
-* For release or EAP versions, use https://www.jetbrains.com/intellij-repository/releases 
-* For EAP candidate snapshots, use https://www.jetbrains.com/intellij-repository/snapshots
-* For dependencies on individual modules from the IntelliJ Platform, also use https://jetbrains.bintray.com/intellij-third-party-dependencies 
+* For release or EAP versions, use `https://www.jetbrains.com/intellij-repository/releases` 
+* For EAP candidate snapshots, use `https://www.jetbrains.com/intellij-repository/snapshots`
+* For dependencies on individual modules from the IntelliJ Platform, also use `https://jetbrains.bintray.com/intellij-third-party-dependencies` 
 
 ### Specify the Artifact
 Describing a desired IntelliJ Platform module artifact is done with Maven coordinates. 
 For example, to specify the `jps-model-serialization` module:
-  * groupId = com.jetbrains.intellij.platform
-  * artifactId = jps-model-serialization
-  * classifier = ""
-  * packaging = jar
+  * _groupId_ = `com.jetbrains.intellij.platform`
+  * _artifactId_ = `jps-model-serialization`
+  * _classifier_ = `""`
+  * _packaging_ = `jar`
 
 For each artifact [at the Repository URLs](#specify-the-repository-url) there are multiple versions available. The version can be specified in one of several ways:
 * A branch build is specified as _BRANCH.BUILD[.FIX]_. For example, a branch build such as `141.233`, or a branch build with a fix such as `139.555.1`

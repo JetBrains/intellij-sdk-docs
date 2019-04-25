@@ -62,16 +62,16 @@ If there is only one package in a plugin, then the package name is the same as t
 ## Plugin Directory Structure
 SDK sample code should have a standard directory footprint.
 Standardized structure not only makes the samples easier to navigate and understand, but it builds on the default Gradle plugin project structure.
-The following is the directory structure for a `basic_foo` plugin.
+The following is the directory structure for a `foo_basics` plugin.
 ```text
 code_samples/
-  basic_foo/
+  foo_basics/
     gradle/
     src/
       main/
         java/
           icons/
-            BasicFooIcons.java
+            FooBasicsIcons.java
         resources/
           icons/
             sdk.svg           # The standard SDK icon for menus, etc.

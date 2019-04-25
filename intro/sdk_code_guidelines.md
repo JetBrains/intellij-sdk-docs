@@ -42,8 +42,10 @@ Advanced samples will be cross-referenced to the IntelliJ Platform APIs demonstr
 Regardless of basic or advanced, an SDK plugin name is also known as the `Artifact ID` in the Gradle plugin wizard.
 
 ## Plugin Copyright Statements
-Use the standard intellij-community copyright notice in all sample plugins authored by JetBrains:  
-   "Copyright 2000-$today.year JetBrains s.r.o. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file."  
+Use the standard intellij-community copyright notice in all sample plugins authored by JetBrains:
+```text  
+Copyright 2000-$today.year JetBrains s.r.o. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file."  
+```
 The copyright statement must appear in every source file with the `$today.year` [Velocity](https://www.jetbrains.com/help/idea/copyright-profiles.html) template resolved.
 
 ## Plugin ID Conventions
@@ -100,7 +102,7 @@ For SDK code samples a few alterations are needed to the default build.gradle fi
       // Prevents patching <idea-version> attributes in plugin.xml
       updateSinceUntilBuild = false 
       // Define a shared sandbox directory for running code sample plugins within an IDE.
-      sandboxDirectory = file("${project.projectDir}/../_Build/idea-sandbox")
+      sandboxDirectory = file("${project.projectDir}/../_idea-sandbox")
   ``` 
 * Remove the [Patching DSL](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md#patching-dsl) (`patchPluginXml{}`) section.
   It is not needed in SDK samples.
@@ -132,23 +134,14 @@ The sequence of elements in an SDK code sample `plugin.xml` file is:
 * `<change-notes>` is an ordered list by version numbers with a brief description of changes for each version.
 * `<vendor>` Set the value to `IntelliJ Platform SDK`.
   Set the attributes:
-  * `email` to a placeholder value `"faux-email@jetbrains.com"` 
+  * `email` omit this attribute. 
   * `url` to the JetBrains plugin repository `"https://plugins.jetbrains.com"`
-* Except for [special cases](/basics/plugin_structure/plugin_configuration_file.md) these elements are not used in SDK plugins.
-  * `<depends>`  
-  * `<helpset>` 
-  * `<resource-bundle>`
-* `<application-components>` Deprecated and should not be used for new plugins.
-* `<module-components>` Omit if not specifically used.
-* `<project-components>` Omit if not specifically used.
-* `<extensionPoints>` Generally not used by SDK plugins.
-* `<actions>` Omit if not specifically used.
-* `<extensions>` Omit if not specifically used.
+* The remainder of the [plugin configuration elements](/basics/plugin_structure/plugin_configuration_file.md) should only appear if they are needed by a specific plugin.
 
 ## Testing
 IntelliJ Platform SDK code samples should be built and tested against the `since-build` version.
 
-Code samples should build cleanly, with no warnings or errors, and new code samples should pass all IntelliJ IDEA code inspections.
+Code samples should build cleanly, with no warnings or errors, and new code samples should pass all default IntelliJ IDEA code inspections.
 
 Testers should complete the following checklist. 
 Here the term "IDE" means the IntelliJ Platform-based IDE in which the plugin is designed to run:

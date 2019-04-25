@@ -118,10 +118,10 @@ If there are any problems with the `sdkdocs-template`, please [raise an issue](h
 Content contributions to the IntelliJ Platform SDK are welcome.
 Please download or clone the open source SDK project from [GitHub](https://github.com/JetBrains/intellij-sdk-docs), make additions or changes, and submit a pull request.
 Before creating or altering content, please consult these guides:
-* [SDK Code Sample Guidelines](intro/sdk_code_guidelines.md). 
-  Conventions for code sample organization, project settings, and naming conventions are described in this document.
-  Always test code changes by building and testing the SDK code sample.
 * [SDK Documentation Style Guide](intro/sdk_style.md). 
   This guide describes documentation conventions in terms of Markdown syntax.
   Always test documentation changes using a [preview](#building-and-previewing-the-site) of the site.
+* [SDK Code Sample Guidelines](intro/sdk_code_guidelines.md). 
+  Conventions for code sample organization, project settings, and naming conventions are described in this document.
+  Always test code changes by building and testing the SDK code sample.
 

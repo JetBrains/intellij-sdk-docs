@@ -87,6 +87,13 @@ To clarify this procedure, consider the following sample section of the `plugin.
      <MyExtensionPoint1 key="keyValue" implementationClass="MyTestPackage.MyClassImpl"></MyExtensionPoint1>
   </extensions>
 ```
+### Extension default properties
+The following properties are available always:
+
+- `id` - unique ID
+- `order` - allows to order all defined extensions using `first`, `last` or `before|after [id]` respectively
+- `os` - allows to restrict extension to given OS, e.g., `os="windows"` registers the extension on Windows only 
+
 
 ## How to get the extension points list?
 

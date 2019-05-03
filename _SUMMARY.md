@@ -67,6 +67,7 @@
     * [Miscellaneous Swing Components](user_interface_components/misc_swing_components.md)
     * [Icons and Images](reference_guide/work_with_icons_and_images.md)
     * [Color Scheme Management](reference_guide/color_scheme_management.md)
+    * [Kotlin UI DSL](user_interface_components/kotlin_ui_dsl.md)
 * [UI Themes](reference_guide/ui_themes/themes_intro.md)
     * [Creating UI Themes](reference_guide/ui_themes/themes.md)
     * [Customizing a UI Theme](reference_guide/ui_themes/themes_customize.md)

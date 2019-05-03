@@ -2,8 +2,6 @@
 title: Kotlin UI DSL
 ---
 
-# Kotlin UI DSL
-
 **Note:** This document covers the Kotlin UI DSL in IntelliJ IDEA 2019.2. A lot of the features described in this document are not available for plugins targeting earlier IntelliJ IDEA versions.
 
 ## Layout Structure

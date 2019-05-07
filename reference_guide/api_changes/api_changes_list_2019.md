@@ -29,6 +29,8 @@ See the note on how to document new problems on the main page reference_guide/ap
 `com.intellij.extapi.psi.MetadataPsiElementBase` class removed
 : Please use different base class for PSI elements.
 
+New method `UniqueVFilePathBuilder.hasFilesWithSameName` added. Used to enable editor tabs names disambiguation. 
+
 ## Changes in IntelliJ Platform 2019.1
 
 `kotlinx.coroutines.experimental` package removed 

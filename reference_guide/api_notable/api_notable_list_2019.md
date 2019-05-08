@@ -7,6 +7,9 @@ title: Notable Changes in IntelliJ Platform and Plugins API 2019.*
 `com.intellij.util.Query.forEach`
 : Defaults to thread-safe to prevent problems with clients using unsynchronized collections.
 
+`com.intellij.openapi.projectRoots.SdkType#getInvalidHomeMessage`
+: Returns dedicated message when invalid SDK path was chosen (e.g., JRE instead of JDK). 
+
 ## Notable Changes in IntelliJ Platform 2019.1
 
 `@org.jetbrains.annotations.ApiStatus.AvailableSince`

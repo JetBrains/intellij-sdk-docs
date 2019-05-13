@@ -97,7 +97,7 @@ intellij {
 
 ## 4. UI in Kotlin
 
-The best way to create user interfaces with Kotlin is to use a [type safe DSL](/user_interface_components/kotlin_ui_dsl.md) for building forms instead of GUI designer. 
+The best way to create user interfaces with Kotlin is to use a [type safe DSL](/user_interface_components/kotlin_ui_dsl.md) for building forms. Using GUI designer with Kotlin is currently [not supported](https://youtrack.jetbrains.com/issue/KT-6660). 
 
 ## 5. Handling Kotlin code
 

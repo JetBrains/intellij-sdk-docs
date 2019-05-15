@@ -4,10 +4,10 @@ title: Notable Changes in IntelliJ Platform and Plugins API 2019.*
 
 ## Notable Changes in IntelliJ Platform 2019.2
 
-`org.jetbrains.annotations.ApiStatus.NonExtendable`
+`@org.jetbrains.annotations.ApiStatus.NonExtendable`
 : Indicates that the annotated API class, interface or method must not be extended, implemented or overridden by external plugins but can be only obtained or instantiated (for classes and interfaces), or called (for methods).
 
-`org.jetbrains.annotations.ApiStatus.OverrideOnly`
+`@org.jetbrains.annotations.ApiStatus.OverrideOnly`
 : Indicates that the annotated method is part of SPI (Service Provider Interface), which is intended to be only implemented or overridden but never called by external plugins.
 
 `com.intellij.util.Query.forEach`

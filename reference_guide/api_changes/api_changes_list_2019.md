@@ -11,6 +11,9 @@ See the note on how to document new problems on the main page reference_guide/ap
 -->
 
 ## Changes in IntelliJ Platform 2019.2
+`org.nustaq` package removed
+: [fast-serialization](https://github.com/RuedigerMoeller/fast-serialization) library was removed, please use `com.intellij.serialization.ObjectSerializer` instead.
+
 `java.org.java_websocket` package removed
 : [Java-WebSocket Library](https://github.com/TooTallNate/Java-WebSocket) was removed, bundle it with your plugin instead.
 

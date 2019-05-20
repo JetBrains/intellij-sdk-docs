@@ -11,6 +11,9 @@ See the note on how to document new problems on the main page reference_guide/ap
 -->
 
 ## Changes in IntelliJ Platform 2019.2
+`com.intellij.openapi.components.BaseState.map$default(BaseState, Map, int, Object)` method removed
+: Use `com.intellij.openapi.components.BaseState.map()` instead.
+
 `org.nustaq` package removed
 : [fast-serialization](https://github.com/RuedigerMoeller/fast-serialization) library was removed, please use `com.intellij.serialization.ObjectSerializer` instead.
 

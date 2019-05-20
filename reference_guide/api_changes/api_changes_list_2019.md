@@ -10,6 +10,8 @@ See the note on how to document new problems on the main page reference_guide/ap
 
 -->
 
+# 2019.2 
+
 ## Changes in IntelliJ Platform 2019.2
 `com.intellij.openapi.components.BaseState.map$default(BaseState, Map, int, Object)` method removed
 : Use `com.intellij.openapi.components.BaseState.map()` instead.
@@ -35,6 +37,8 @@ See the note on how to document new problems on the main page reference_guide/ap
 `com.intellij.extapi.psi.MetadataPsiElementBase` class removed
 : Please use different base class for PSI elements.
 
+# 2019.1
+ 
 ## Changes in IntelliJ Platform 2019.1
 
 `kotlinx.coroutines.experimental` package removed 

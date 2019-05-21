@@ -41,9 +41,12 @@ This page gives a list of recipes for the most common operations for working wit
 ### How do I get a reference to the containing package of a Java class?
 
 ```java
-PsiJavaFile javaFile = (PsiJavaFile) psiClass.getContaningFile();
+PsiJavaFile javaFile = (PsiJavaFile) psiClass.getContainingFile();
 PsiPackage pkg = JavaPsiFacade.getInstance(project).findPackage(javaFile.getPackageName());
-```
+```        
+or
+
+`com.intellij.psi.util.PsiUtil.getPackageName()`
 
 ### How do I find the methods overriding a specific method?
 

@@ -2,7 +2,6 @@
 
 package org.intellij.sdk.action;
 
-import com.intellij.icons.AllIcons;
 import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -24,16 +23,16 @@ public class DynamicActionGroup extends ActionGroup {
   /**
    * Returns an array of menu actions for the group.
    *
-   * @param anActionEvent Event received when the associated group-id menu is chosen.
+   * @param  e Event received when the associated group-id menu is chosen.
    * @return AnAction[]  An instance of AnAction, in this case containing a single instance of the
-   * PopDialogAction class.
+   * PopupDialogAction class.
    */
   @NotNull
   @Override
-  public AnAction[] getChildren(AnActionEvent anActionEvent) {
-    return new AnAction[]{ new PopDialogAction("Action Added at Runtime",
-                                               "Dynamic Action Demo",
-                                               ActionBasicsIcons.Sdk_default_icon)
+  public AnAction[] getChildren(AnActionEvent e) {
+    return new AnAction[]{ new PopupDialogAction("Action Added at Runtime",
+                                                 "Dynamic Action Demo",
+                                                 ActionBasicsIcons.Sdk_default_icon)
     };
   }
   

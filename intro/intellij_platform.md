@@ -2,13 +2,13 @@
 title: What is the IntelliJ Platform?
 ---
 
-The _IntelliJ Platform_ is not a product in and of itself, but provides a platform for building IDEs. It is used to power JetBrains products such as [IntelliJ IDEA](https://www.jetbrains.com/idea/). It is also Open Source and can be used by third parties to build IDEs, such as [Android Studio](https://developer.android.com/studio/index.html) from Google.
+The _IntelliJ Platform_ is not a product in and of itself but provides a platform for building IDEs. It is used to power JetBrains products such as [IntelliJ IDEA](https://www.jetbrains.com/idea/). It is also Open Source and can be used by third parties to build IDEs, such as [Android Studio](https://developer.android.com/studio/index.html) from Google.
 
 The IntelliJ Platform provides all of the infrastructure that these IDEs need to provide rich language tooling support. It provides a component driven, cross-platform JVM based application host with a high-level user interface toolkit for creating tool windows, tree views and lists (supporting fast search) as well as popup menus and dialogs.
 
 It also includes an image editor as well as a full text editor, and provides abstract implementations of syntax highlighting, code folding, code completion, and other rich text editing features.
 
-Furthermore, it includes open APIs to build common IDE functionality, such as a project model and a build system. It also provides infrastructure for a very rich debugging experience, with language agnostic advanced breakpoint support, call stacks, watch windows and expression evaluation.
+Furthermore, it includes open APIs to build common IDE functionality, such as a project model and a build system. It also provides infrastructure for a very rich debugging experience, with language agnostic advanced breakpoint support, call stacks, watch windows, and expression evaluation.
 
 But the IntelliJ Platform's real power comes from the Program Structure Interface (PSI). This is a set of functionality that can be used to parse files and build rich syntactic and semantic models of the code, and to build indexes from this data. This powers a lot of functionality, from quick navigating to files, types and symbols, to the contents of code completion windows and find usages, code inspections and code rewriting, for quick fixes or refactorings, as well as many other features.
 
@@ -21,7 +21,7 @@ Products built on the IntelliJ Platform are extensible applications, with the pl
 
 Plugins can extend the platform in lots of ways, from adding a simple menu item to adding support for a complete language, build system and debugger. A lot of the existing functionality in the IntelliJ Platform is written as plugins that can be included or excluded depending on the needs of the end product. See the [Quick Start Guide](/basics.md) for more details.
 
-The IntelliJ Platform is a JVM application, written mostly in Java and Kotlin. You should be familiar with these languages, and associated tooling, in order to write plugins for products based on the IntelliJ Platform. At this time, it's not possible to extend the IntelliJ Platform in non-JVM languages.
+The IntelliJ Platform is a JVM application, written mostly in Java and Kotlin. You should be experienced with these languages, large libraries written in them, their associated tooling, and large open source projects to write plugins for products based on the IntelliJ Platform. At this time, it's not possible to extend the IntelliJ Platform in non-JVM languages.
 
 ## Open Source
 
@@ -53,13 +53,10 @@ The following IDEs are based on the IntelliJ Platform:
   * [RubyMine](https://www.jetbrains.com/ruby/) 
   * [WebStorm](https://www.jetbrains.com/webstorm/) 
 * [Android Studio](https://developer.android.com/studio/index.html) IDE from Google.
+* [CUBA Studio](https://www.cuba-platform.com/) 
 
-JetBrains [Rider](https://www.jetbrains.com/rider/) uses the IntelliJ Platform differently than other IntelliJ based IDEs. It uses the IntelliJ Platform to provide the user interface for a C# and .NET IDE, with the standard IntelliJ editors, tool windows, debugging experience and so on. It also integrates into the standard Find Usages and Search Everywhere UI, and makes use of code completion, syntax highlighting and so on.
+JetBrains [Rider](https://www.jetbrains.com/rider/) uses the IntelliJ Platform differently than other IntelliJ based IDEs. It uses the IntelliJ Platform to provide the user interface for a C# and .NET IDE, with the standard IntelliJ editors, tool windows, debugging experience and so on. It also integrates into the standard Find Usages and Search Everywhere UI, and makes use of code completion, syntax highlighting, and so on.
 
-However, Rider doesn't create a full PSI (syntactic and semantic) model for C# files. Instead, it reuses [ReSharper](https://www.jetbrains.com/resharper/) to provide language functionality. All of the C# PSI model, and all inspections and code rewriting, such as quick fixes and refactorings are run out of process, in a command line version of ReSharper. This means that creating a plugin for Rider involves two parts - a plugin that lives in the IntelliJ "front end" to show user interface, and a plugin that lives in the ReSharper "back end" to analyze and work with the C# PSI.
+However, Rider doesn't create a full PSI (syntactic and semantic) model for C# files. Instead, it reuses [ReSharper](https://www.jetbrains.com/resharper/) to provide language functionality. All of the C# PSI model and all inspections and code rewriting, such as quick fixes and refactorings are run out of process, in a command line version of ReSharper. This means that creating a plugin for Rider involves two parts - a plugin that lives in the IntelliJ "front end" to show user interface, and a plugin that lives in the ReSharper "back end" to analyze and work with the C# PSI.
 
 Fortunately, many plugins can simply work with the ReSharper backend - Rider takes care of displaying the results of inspections and code completion, and many plugins can be written that don't require an IntelliJ UI component. More details can be found in the Product Specific section.
-
-### Contributing
-Of course, because the IntelliJ Platform is open source, we also accept [pull requests](https://github.com/JetBrains/intellij-community/pulls) to the platform itself, rather than just opening the source for view. Issue tracking is managed with [YouTrack (using the IDEA project)](https://youtrack.jetbrains.com/issues/IDEA), and if you wish to contribute to the platform, it is usually a good idea to open an issue describing the changes you wish to make before making the changes - this allows the team chance to give feedback and advice. More details can be found in the section on [Contributing to the IntelliJ Platform](/basics/platform_contributions.md).
-

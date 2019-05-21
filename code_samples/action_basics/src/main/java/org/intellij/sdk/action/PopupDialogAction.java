@@ -19,15 +19,15 @@ import javax.swing.*;
  * Typically this class is instantiated by the IntelliJ Platform framework based on declarations
  * in the plugin.xml file. But when added at runtime this class is instantiated by an action group.
  */
-public class PopDialogAction extends AnAction {
+public class PopupDialogAction extends AnAction {
   
   /**
    * This default constructor is used by the IntelliJ Platform framework to
-   * instantiate this class based on plugin.xml declarations. Only needed in PopDialogAction
+   * instantiate this class based on plugin.xml declarations. Only needed in PopupDialogAction
    * class because a second constructor is overridden.
    * @see AnAction#AnAction()
    */
-  public PopDialogAction() {
+  public PopupDialogAction() {
     super();
   }
   
@@ -35,12 +35,12 @@ public class PopDialogAction extends AnAction {
    * This constructor is used to support dynamically added menu actions.
    * It sets the text, description to be displayed for the menu item.
    * Otherwise, the default AnAction constructor is used by the IntelliJ Platform.
-   * @param menuText  The text to be displayed as a menu item.
-   * @param menuDescription  The description of the menu item.
-   * @param menuIcon  The icon to be used with the menu item.
+   * @param text  The text to be displayed as a menu item.
+   * @param description  The description of the menu item.
+   * @param icon  The icon to be used with the menu item.
    */
-  public PopDialogAction(@Nullable String menuText, @Nullable String menuDescription, @Nullable Icon menuIcon) {
-    super(menuText, menuDescription, menuIcon);
+  public PopupDialogAction(@Nullable String text, @Nullable String description, @Nullable Icon icon) {
+    super(text, description, icon);
   }
   
   /**
@@ -66,13 +66,13 @@ public class PopDialogAction extends AnAction {
   /**
    * Determines whether this menu item is available for the current context.
    * Requires a project to be open.
-   * @param evnt Event received when the associated group-id menu is chosen.
+   * @param e Event received when the associated group-id menu is chosen.
    */
   @Override
-  public void update(AnActionEvent evnt) {
+  public void update(AnActionEvent e) {
     // Set the availability based on whether a project is open
-    Project project = evnt.getProject();
-    evnt.getPresentation().setEnabledAndVisible(project != null);
+    Project project = e.getProject();
+    e.getPresentation().setEnabledAndVisible(project != null);
   }
   
 }

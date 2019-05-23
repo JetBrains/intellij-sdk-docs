@@ -2,6 +2,8 @@
 title: Notable Changes in IntelliJ Platform and Plugins API 2019.*
 ---
 
+# 2019.2 
+
 ## Notable Changes in IntelliJ Platform 2019.2
 
 Unbundled plugins in IntelliJ IDEA
@@ -18,6 +20,9 @@ Unbundled plugins in IntelliJ IDEA
 
 `com.intellij.openapi.projectRoots.SdkType#getInvalidHomeMessage`
 : Returns dedicated message when invalid SDK path was chosen (e.g., JRE instead of JDK). 
+
+
+# 2019.1 
 
 ## Notable Changes in IntelliJ Platform 2019.1
 

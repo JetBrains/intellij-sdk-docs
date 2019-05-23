@@ -21,10 +21,6 @@
   <!-- Optional dependency on another plugin. If the plugin with the "MySecondPlugin" ID is installed, the contents of mysecondplugin.xml (the format of this file conforms to the format of plugin.xml) will be loaded. -->
   <!--<depends optional="true" config-file="custom-plugin.xml">CustomPlugin</depends>-->
 
-  <!-- Allows a plugin to integrate its help system (in JavaHelp format) with the IDEA help system. The "file" attribute specifies the name of the JAR file
-         in the "help" subdirectory of the plugin directory. The "path" attribute specifies the name of the helpset file within the JAR file.-->
-  <helpset file="plugin-help.jar" path="/Help.hs"/>
-
   <!-- Minimum and maximum build of IDEA compatible with the plugin
        see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html
   -->

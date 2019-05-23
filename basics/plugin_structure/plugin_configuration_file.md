@@ -55,13 +55,6 @@ The following is a sample plugin configuration file. This sample showcases and d
        (the format of this file conforms to the format of plugin.xml) will be loaded. -->
   <depends optional="true" config-file="mysecondplugin.xml">com.MySecondPlugin</depends>
 
-  <!-- Allows a plugin to integrate its help system (in JavaHelp format)
-       with the IDE help system. The "file" attribute specifies the name
-       of the JAR file in the "help" subdirectory of the plugin directory.
-       The "path" attribute specifies the name of the helpset file within
-       the JAR file.-->
-  <helpset file="myhelp.jar" path="/Help.hs" />
-
   <!-- Minimum and maximum build of IDE compatible with the plugin -->
   <idea-version since-build="183" until-build="183.*"/>
 

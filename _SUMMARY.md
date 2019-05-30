@@ -26,6 +26,7 @@
         * [Running and Debugging a Plugin](basics/getting_started/running_and_debugging_a_plugin.md)
         * [Deploying a Plugin](basics/getting_started/deploying_plugin.md)
         * [Publishing a Plugin](basics/getting_started/publishing_plugin.md)
+* [IDE Development Instances](basics/ide_development_instance.md)
 * [Custom Plugin Repositories](basics/getting_started/update_plugins_format.md)
 * [Plugin Structure](basics/plugin_structure.md)
     * [Plugin Content](basics/plugin_structure/plugin_content.md)
@@ -45,7 +46,6 @@
     * [UI Tools](reference_guide/internal_actions/internal_ui_sub.md)
     * [UI Inspector](reference_guide/internal_actions/internal_uii.md)
     * [Laf Defaults](reference_guide/internal_actions/internal_ui_lafd.md)
-* [IDE Development Instances](basics/ide_development_instance.md)
 * [Plugin Development FAQ](faq.md)
 
 ## Part II - Base Platform

@@ -6,6 +6,9 @@ This document describes the coding guidelines used for authoring open source Int
 Before you begin, please read this page thoroughly as well as the [Code of Conduct](/CODE_OF_CONDUCT.md) and [License](https://github.com/JetBrains/intellij-sdk-docs/blob/master/LICENSE.txt) documents.
 For information about contributing to the IntelliJ Platform itself visit [Contributing to the IntelliJ Platform](/basics/platform_contributions.md).
 
+  * Dummy list item
+  {:toc}
+  
 ## Objectives
 Keep the following considerations in mind while authoring an SDK code sample:
 * The purpose of an SDK sample is to demonstrate an implementation pattern to build on top of subsystems and components of the IntelliJ Platform.
@@ -136,6 +139,8 @@ The sequence of elements in an SDK code sample `plugin.xml` file is:
   Set the attributes:
   * `email` omit this attribute. 
   * `url` to the JetBrains plugin repository `"https://plugins.jetbrains.com"`
+* `<depends>` set the value to `com.intellij.modules.java` to indicate [compatibility](/basics/getting_started/plugin_compatibility.md) with IntelliJ IDEA.
+  Add other `<depends>` elements as needed to indicate compatibility with other IntelliJ Platform-based IDEs.
 * The remainder of the [plugin configuration elements](/basics/plugin_structure/plugin_configuration_file.md) should only appear if they are needed by a specific plugin.
 
 ## Testing

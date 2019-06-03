@@ -104,7 +104,7 @@ Note that source code formatting is configured to use [GitHub Flavoured Mardown]
 Jekyll uses the [Liquid](https://shopify.github.io/liquid/) templating language to process files. 
 This process means standard Liquid tags and filters are available. 
 There should be little need to use them, however, as the Markdown format is already quite rich. 
-See the [Jekyll site](http://jekyllrb.com/docs/templates/) for more details.
+See the [Jekyll site](https://jekyllrb.com/docs/liquid/) for more details.
 
 
 ### Text Format Conventions
@@ -178,7 +178,7 @@ The `upsource:///` URI effectively points to the root of the `intellij-community
   Note the use of \`\` characters surrounding the class name in the link.
 
 General links have one of the following formats:
-* `[External site](http://example.org)` links to an external site.
+* `[External site](https://example.org)` links to an external site.
 * Linking to pages in the SDK documentation:
   * `[SDK doc page in current directory](Page2.md)` links to an SDK doc page in the same directory as the current page. 
     Note that the extension is `.md`, _NOT_ `.html`.

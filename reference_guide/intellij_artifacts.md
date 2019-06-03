@@ -25,7 +25,7 @@ More information about [Gradle support](https://www.jetbrains.com/help/idea/grad
 
 To setup dependencies on a module there are two types of information needed:
 1. Specify the corresponding repository URL for the artifact.
-2. Specify the Maven coordinates for the artifact. 
+2. Specify the [Maven coordinates](https://maven.apache.org/pom.html#Maven_Coordinates) for the artifact. 
  
 ### Specify the Repository URL 
 The URL for the desired artifact needs to be added to a Maven or Gradle script:
@@ -33,18 +33,49 @@ The URL for the desired artifact needs to be added to a Maven or Gradle script:
 * For EAP candidate snapshots, use `https://www.jetbrains.com/intellij-repository/snapshots`
 * For dependencies on individual modules from the IntelliJ Platform, also use `https://jetbrains.bintray.com/intellij-third-party-dependencies` 
 
-### Specify the Artifact
-Describing a desired IntelliJ Platform module artifact is done with Maven coordinates. 
+### Specify the Maven Coordinates for the Artifact
+Describing a desired IntelliJ Platform module artifact is done with Maven coordinates: _groupId_, _artifactId_, and _version_.
+The Maven coordinates are based on the names of modules.
+
+The _groupId_ for a module is the prefix `com.jetbrains.` concatenated with the first two parts of the module name.  
+For example, the module `intellij.xml` would have the groupId `com.jetbrains.intellij.xml`. 
+
+The _artifactId_ is the second.._n_ parts of the module name separated by "-" characters. 
+For example, the module `intellij.xml` would have the artifactId `xml`.
+There are some special cases to artifactId names. 
+If the second part of the module name is a common group like `platform`, `vcs`, or `cloud`, the second part of the module name is dropped, and the artifactId becomes the third.._n_ parts of the module name, separated by "-" characters.
+Portions of the module name expressed in `camelCase` format are divided and used in the artifactId as (all lower case) `camel-case`.  
+
+The table below shows some module names and their corresponding groupId and artifactId.
+
+| **Module Name** | **groupId** | **artifactId** | **Module Name Length, Comments About artifactId** |
+|-----------------|-------------|----------------|-------------------------------|
+|intellij.xml | com.jetbrains.intellij.xml | xml | n=2 |
+|intellij.xml.impl | com.jetbrains.intellij.xml | xml-impl | n=3, name is parts 2nd-3rd |
+|intellij.java.debugger |    com.jetbrains.intellij.java    | java-debugger | n=3 |
+|intellij.platform.util | com.jetbrains.intellij.platform | util | n=3 but drop "platform" |
+|intellij.platform.testFramework | com.jetbrains.intellij.platform | test-framework | n=3 but drop "platform" and hyphenate camel case |
+|intellij.platform.annotations | com.jetbrains.intellij.platform | annotations | n=3 but drop "platform" |
+|intellij.platform.annotations.java5 | com.jetbrains.intellij.platform | annotations-java5 | n=4, but drop "platform" |
+|intellij.java.compiler.antTasks | com.jetbrains.intellij.java | java-compiler-ant-tasks | n=4, but hyphenate camel case |
+|intellij.platform.vcs.log | com.jetbrains.intellij.platform | vcs-log | n=4, but drop "platform" |
+|intellij.spring | com.jetbrains.intellij.spring | spring | n=2 |
+|intellij.spring.boot | com.jetbrains.intellij.spring | spring-boot | n=3 |
+|-----------------|-------------|----------------|-------------------------------|
+
+> **Note** The `intellij.platform.annotations` modules aren’t related to the IntelliJ Platform per se, and potentially may be used in any Java project. The module org.jetbrains.intellij.platform.annotations will move from IntelliJ IDEA sources to a separate Git repository and publish them with special Maven coordinates.
+
+The artifact _version_ can be specified in one of several ways because each artifact [at the Repository URLs](#specify-the-repository-url) has multiple versions available: 
+* A branch build is specified as _BRANCH.BUILD[.FIX]_. For example, a branch build such as `141.233`, or a branch build with a fix such as `139.555.1`
+* Release numbers are specified as _MAJOR[.MINOR][.FIX]_. For example `14`, or `14.1`, or `14.1.1`
+* A snapshot of a branch from which the next EAP/release build will be produced is specified as _BRANCH-EAP-SNAPSHOT_. For example `141-EAP-SNAPSHOT`
+
+### Example Artifact Specification
 For example, to specify the `jps-model-serialization` module:
   * _groupId_ = `com.jetbrains.intellij.platform`
   * _artifactId_ = `jps-model-serialization`
   * _classifier_ = `""`
   * _packaging_ = `jar`
-
-For each artifact [at the Repository URLs](#specify-the-repository-url) there are multiple versions available. The version can be specified in one of several ways:
-* A branch build is specified as _BRANCH.BUILD[.FIX]_. For example, a branch build such as `141.233`, or a branch build with a fix such as `139.555.1`
-* Release numbers are specified as _MAJOR[.MINOR][.FIX]_. For example `14`, or `14.1`, or `14.1.1`
-* A snapshot of a branch from which the next EAP/release build will be produced is specified as _BRANCH-EAP-SNAPSHOT_. For example `141-EAP-SNAPSHOT`
 
 
 ## Gradle Example for an Individual Module from the IntelliJ Platform
@@ -74,3 +105,22 @@ Note:
  * The artifact version (`182.2949.4`) must match in both statements.
  * In this example `jps-model-serialization` declares the APIs and `jps-model-impl` provides the implementation, so both
    are required dependencies.
+
+<!--
+Save until after review.
+#### Legacy Artifacts
+The table below describes the groupId and artifactId for **Legacy** artifacts published at IntelliJ Platform artifacts repositories.
+These artifacts will continue to be published using these groupId and artifactId. 
+The [version](#specifying-version) specification below still apply to these legacy artifacts.
+
+| **groupId** | **artifactId** | **Description** |
+|-------------|----------------|-----------------|
+|com.jetbrains.intellij.idea | ideaIC | Full zip distribution of IDEA Community |
+|com.jetbrains.intellij.idea | ideaIU | Full zip distribution of IDEA Ultimate |
+|org.jetbrains.intellij.deps | trove4j | Third-party dependencies of IntelliJ IDEA project |
+|org.jetbrains | annotations | Old versions of IDEA annotations |
+|com.intellij | javac2 | Old versions of javac2 Ant tasks |
+|org.jetbrains.intellij | plugin-repository-rest-client | JetBrains plugin repository client |
+|org.jetbrains.kotlin | kotlin-stdlib | Kotlin artifacts |
+|org.jetbrains.teamcity | teamcity-rest-client | TeamCity rest client |
+-->

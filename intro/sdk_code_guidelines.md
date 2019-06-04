@@ -131,16 +131,18 @@ The sequence of elements in an SDK code sample `plugin.xml` file is:
   * FIX corresponds to changes that fix problems without significant refactoring.
 * `<idea-version/>` Set the attributes:
   * `since-build` attribute to the earliest compatible build number of the IntelliJ Platform.
-  * `until-build` attribute to an empty string `""`.
-    SDK code samples are reviewed with every major release to ensure compatibility with the latest IntelliJ Platform.
+    The default for SDK samples is "173".
+  * `until-build` Omit this attribute for new sample plugins.
+    SDK code samples are reviewed before every major release (20XX.1) to ensure compatibility with the latest IntelliJ Platform.
+    Add this attribute if a plugin sample is deprecated with a release of the IntelliJ Platform.
+* `<depends>` Include at least one dependency with the module `com.intellij.modules.platform` to indicate basic plugin compatibility with IntelliJ Platform-based products.
+  Add `<depends>` elements containing module FQNs as needed to describe more specialized [Compatibility with Multiple Products](/basics/getting_started/plugin_compatibility.md), and any other [Plugin Dependencies](/basics/plugin_structure/plugin_dependencies.md). 
 * `<description>` is a succinct explanation of what is being demonstrated and how a user would access the functionality.
 * `<change-notes>` is an ordered list by version numbers with a brief description of changes for each version.
 * `<vendor>` Set the value to `IntelliJ Platform SDK`.
   Set the attributes:
   * `email` omit this attribute. 
   * `url` to the JetBrains plugin repository `"https://plugins.jetbrains.com"`
-* `<depends>` set the value to `com.intellij.modules.java` to indicate [compatibility](/basics/getting_started/plugin_compatibility.md) with IntelliJ IDEA.
-  Add other `<depends>` elements as needed to indicate compatibility with other IntelliJ Platform-based IDEs.
 * The remainder of the [plugin configuration elements](/basics/plugin_structure/plugin_configuration_file.md) should only appear if they are needed by a specific plugin.
 
 ## Testing

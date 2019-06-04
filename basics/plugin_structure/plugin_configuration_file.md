@@ -43,12 +43,15 @@ The following is a sample plugin configuration file. This sample showcases and d
        The optional "url" attribute specifies the URL of the vendor homepage.
        The optional "email" attribute specifies the e-mail address of the vendor.
        Displayed in the "Plugins" settings dialog and the plugin repository Web interface. -->
-   <vendor url="https://www.jetbrains.com" email="support@jetbrains.com">Megasoftware Company Inc.</vendor>
+   <vendor url="https://www.jetbrains.com" email="support@jetbrains.com">A Company Inc.</vendor>
 
-  <!-- The unique identifiers of the plugins on which this plugin depends.
-       By default, the list of <depends> plugins is used by the plugin repository to determine IDE compatibility.
-       Default compatibility can be overridden by the plugin author at the plugin repository. -->
-  <depends>com.MyFirstPlugin</depends>
+  <!-- Mandatory dependencies on plugins or modules.
+       The FQN module names in <depends> elements are used to determine IDE compatibility for the plugin.
+       Include at least the module shown below to indicate compatibility with IntelliJ Platform-based products.
+       Also include dependencies on other plugins as needed.
+       See "Compatibility with Multiple Products" and "Plugin Dependencies" for more information.  -->
+  <depends>com.intellij.modules.platform</depends>
+  <depends>com.third.party.plugin</depends>
 
   <!-- Optional dependency on another plugin.
        If the plugin with the "com.MySecondPlugin" ID is installed, the contents of mysecondplugin.xml

@@ -6,6 +6,9 @@ title: Notable Changes in IntelliJ Platform and Plugins API 2019.*
 
 ## Notable Changes in IntelliJ Platform 2019.2
 
+`com.intellij.codeHighlighting.TextEditorHighlightingPassFactory` registration
+: Use new dedicated extension point `com.intellij.highlightingPassFactory`.
+
 `com.intellij.openapi.fileTypes.FileTypeFactory` deprecated
 : When registering file type via file extension matching, use extension point `com.intellij.fileType` instead (see [Sample](/tutorials/custom_language_support/language_and_filetype.md#b-register-file-type-20192-or-later)).
 

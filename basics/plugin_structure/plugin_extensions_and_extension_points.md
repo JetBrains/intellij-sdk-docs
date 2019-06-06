@@ -95,6 +95,26 @@ The following properties are available always:
 - `os` - allows to restrict extension to given OS, e.g., `os="windows"` registers the extension on Windows only 
 
 
+### Extension properties code insight
+Several tooling features are available to help configuring bean class extension points in `plugin.xml`.
+
+Property names matching the following list will resolve to FQN:
+- `implementation`
+- `className`
+- `serviceInterface` / `serviceImplementation`
+- ending with `Class` (case-sensitive)
+
+A required parent type can be specified in the extension point declaration via nested `<with>`:
+```xml
+    <extensionPoint name="myExtension" beanClass="MyExtensionBean">
+      <with attribute="psiElementClass" implements="com.intellij.psi.PsiElement"/>
+    </extensionPoint>
+```
+
+Property name `language` will automatically resolve to all present `Language` IDs.
+
+Specifying `@org.jetbrains.annotations.Nls` verifies capitalization of UI text properties according to given `capitalization` value (2019.2 and later).
+
 ## How to get the extension points list?
 
 To get a list of extension points available in the *IntelliJ Platform* core, consult the `<extensionPoints>` section of the following XML configuration files:

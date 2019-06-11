@@ -7,6 +7,9 @@
 
   <idea-version since-build="141.0"/>
 
+  <!-- Product and plugin compatibility requirements -->
+  <depends>com.intellij.modules.platform</depends>
+
   <extensions defaultExtensionNs="com.intellij">
     <toolWindow id="Sample Calendar" secondary="true" icon="/myToolWindow/plus.png" anchor="right"
                 factoryClass="myToolWindow.MyToolWindowFactory"/>

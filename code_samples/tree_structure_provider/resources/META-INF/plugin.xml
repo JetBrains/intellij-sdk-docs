@@ -7,7 +7,7 @@
   <description>Tree Structure Provider Demo showing only plain text files</description>
 
   <idea-version since-build="131"/>
-  <depends>com.intellij.modules.lang</depends>
+  <depends>com.intellij.modules.platform</depends>
 
   <extensions defaultExtensionNs="com.intellij">
     <treeStructureProvider implementation="org.jetbrains.tutorials.tree.structure.TextOnlyTreeStructureProvider"/>

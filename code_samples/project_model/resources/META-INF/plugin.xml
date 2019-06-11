@@ -7,7 +7,9 @@
   <description>Demonstrates various aspects of interacting with project model</description>
 
   <idea-version since-build="131"/>
-  <depends>com.intellij.modules.lang</depends>
+
+  <!-- Product and plugin compatibility requirements -->
+  <depends>com.intellij.modules.java</depends>
 
   <actions>
     <action id="ProjectModel.SourceRoots" class="com.intellij.tutorials.project.model.ShowSourceRootsActions"

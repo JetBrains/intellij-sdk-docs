@@ -13,6 +13,9 @@
   <!-- Compatible with the following versions of IntelliJ Platform -->
   <idea-version since-build="191"/>
 
+  <!-- Product and plugin compatibility requirements -->
+  <depends>com.intellij.modules.java</depends>
+
   <!-- Text to display as description on Preferences/Settings | Plugin page  -->
   <description>
     <![CDATA[

@@ -5,6 +5,9 @@
   <vendor>JetBrains</vendor>
   <idea-version since-build="131"/>
 
+  <!-- Product and plugin compatibility requirements -->
+  <depends>com.intellij.modules.platform</depends>
+
   <project-components>
     <component>
       <implementation-class>MyPackage.MaxProject</implementation-class>

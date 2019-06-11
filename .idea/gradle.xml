@@ -12,9 +12,14 @@
             <option value="$PROJECT_DIR$/code_samples/gradle_plugin_demo" />
           </set>
         </option>
-        <option name="myModules">
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/code_samples/kotlin_demo" />
+        <option name="gradleJvm" value="1.8 8u202b1483.58" />
+        <option name="modules">
           <set>
-            <option value="$PROJECT_DIR$/code_samples/gradle_plugin_demo" />
+            <option value="$PROJECT_DIR$/code_samples/kotlin_demo" />
           </set>
         </option>
       </GradleProjectSettings>

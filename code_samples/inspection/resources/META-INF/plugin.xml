@@ -51,7 +51,7 @@
              enabledByDefault= Inspection state when Inspections panel is created.
              level= The default level of error found by this inspection, e.g. INFO, ERROR, etc.
                  @see com.intellij.codeHighlighting.HighlightDisplayLevel
-             inplementationClass= FQN of inspection implementation
+             implementationClass= FQN of inspection implementation
             -->
     <localInspection language="JAVA"
             displayName="Demo Inspection"

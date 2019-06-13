@@ -47,7 +47,7 @@ In plugin.xml add:
 
 ### 2.5.B. Register file type (2019.2 or later)
 
-Registration of file type can now be done via `plugin.xml` only without implementing `FileTypeFactory` when matching by extension(s) only.
+When matching via file extension or exact file name, registration of file type should be done via `plugin.xml` only without implementing `FileTypeFactory`. 
 
 ```xml
 <extensions defaultExtensionNs="com.intellij">

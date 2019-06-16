@@ -5,7 +5,7 @@
   <id>org.intellij.sdk.action</id>
 
   <!-- Text to display as name on Preferences/Settings | Plugin page -->
-  <name>SDK Action Sample Project</name>
+  <name>SDK: Action Sample Project</name>
 
   <!-- The version of this plugin -->
   <version>2.0.0</version>

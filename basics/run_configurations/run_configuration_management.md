@@ -88,3 +88,7 @@ The two main methods that you need to implement are:
 
 Note that, in order to support automatic naming of configurations created from context, your configuration should use
 [`LocatableConfigurationBase`](upsource:///platform/lang-api/src/com/intellij/execution/configurations/LocatableConfigurationBase.java) as the base class.
+
+## Running from the gutter
+
+Take a look at `RunLineMarkerContributor` and its implementations.

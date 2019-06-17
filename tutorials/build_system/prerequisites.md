@@ -7,11 +7,10 @@ The IntelliJ IDEA Ultimate and Community editions bundle the necessary plugins t
 These IntelliJ IDEA plugins are _Gradle_ and _Plugin DevKit_, which are enabled by default.
 To verify these plugins are installed and enabled, see the help section about [Managing Plugins](https://www.jetbrains.com/help/idea/managing-plugins.html).
 
+> **WARNING** When adding additional repositories to your Gradle build script, make sure to always use HTTPS protocol.
+
 * bullet list
 {:toc}
-
-
-> **WARNING** When adding additional repositories to your Gradle build script, make sure to use HTTPS always.
 
 ## Creating a Gradle-Based IntelliJ Platform Plugin with New Project Wizard
 IntelliJ IDEA supports creating new Gradle-based IntelliJ Platform plugin projects using the [New Project Wizard](https://www.jetbrains.com/help/idea/gradle.html#project_create_gradle).
@@ -134,7 +133,7 @@ The New Project Wizard produces the `my_gradle_plugin` project `build.gradle` fi
 #### Plugin Gradle Properties and Plugin Configuration File Elements
 The Gradle properties `rootProject.name` and `project.group` will not, in general, match the respective `plugin.xml` elements `<name>` and `<id>`.
 There is no IntelliJ Platform-related reason they should as they serve different functions.
-The `<name>` element can have nothing to do with the content root, and often is more explanatory than the `rootProject.name`.
+The `<name>` element is often similar to the content root, but is more explanatory than the `rootProject.name`.
 The `<id>` is a unique identifier over all plugins, typically a concatenation of the Maven `groupId` and `artifactId`; the default Gradle `project.group` property is only the `groupId`.
 
 

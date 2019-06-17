@@ -7,6 +7,8 @@ The IntelliJ IDEA Ultimate and Community editions bundle the Gradle and Plugin D
 The [Getting Started with Gradle](prerequisites.md) page provides a tutorial for creating Gradle-based IntelliJ Platform plugins.
 It may be useful to review the IntelliJ Platform page, particularly the description of versioning in the [Open Source](/intro/intellij_platform.md#open-source) section.
 
+> **WARNING** When adding additional repositories to your Gradle build script, make sure to always use HTTPS protocol.
+
 * bullet list
 {:toc}
 
@@ -16,7 +18,7 @@ The plugin adds Gradle tasks for the `build.gradle` file that enable developing 
 The [README](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md) file for the `gradle-intellij-plugin` project is the reference for configuring these tasks.
  
 When getting started, there are several items to note on the README page:
-* At the top of the page, the [latest production version](https://github.com/jetbrains/gradle-intellij-plugin#the-latest-version) (e.g. `0.4.8`) of the IntelliJ IDEA Gradle plugin is listed.
+* At the top of the page, the [latest production version](https://github.com/jetbrains/gradle-intellij-plugin#the-latest-version) of the IntelliJ IDEA Gradle plugin is listed.
 * Also at the top is the minimum version of Gradle required to support the IntelliJ IDEA Gradle plugin.
 * The table of extended Gradle [Tasks](https://github.com/jetbrains/gradle-intellij-plugin#tasks) has a succinct description for each task added by the plugin.
   This documentation will focus on the configuration and use four of those tasks:

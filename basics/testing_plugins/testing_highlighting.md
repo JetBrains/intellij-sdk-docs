@@ -2,7 +2,7 @@
 title: Testing Highlighting
 ---
 
-A common task when writing plugin tests is testing various kinds of highlighting (inspections, annotators, parser error highlighting etc.) The *IntelliJ Platform* provides a dedicated utility and markup format for this task.
+A common task when writing plugin tests is testing various kinds of highlighting (inspections, annotators, parser error highlighting, etc.). The *IntelliJ Platform* provides a dedicated utility and markup format for this task.
 
 To test the highlighting for the file currently loaded into the in-memory editor, you invoke the `checkHighlighting()` method. The parameters to the method specify which severities should be taken into account when comparing the results with the expected results: errors are always taken into account, whereas warnings, weak warnings and infos are optional. Alternatively, you can use the `testHighlighting()` method, which loads a `testdata` file into the in-memory editor and highlights it as a single operation.
 

@@ -7,7 +7,7 @@ title: 6. PSI Helpers and Utilities
 
 If we want to have custom methods in PSI classes we need to define them separately and ask Grammar-Kit to embed them into generated code.
 
-Let's define an utility class with these helper methods.
+Let's define a utility class with these helper methods.
 
 ```java
 package com.simpleplugin.psi.impl;
@@ -78,9 +78,9 @@ property ::= (KEY? SEPARATOR VALUE?) | KEY {methods=[getKey getValue]}
 
 After we made our changes to the grammar we can regenerate the parser and PSI classes.
 
-### 6.3. Define an utility to search properties
+### 6.3. Define a utility to search properties
 
-Now we need an utility class to search PSI elements for defined properties over the project.
+Now we need a utility class to search PSI elements for defined properties over the project.
 We will use this utility later when implementing code assistance.
 
 ```java

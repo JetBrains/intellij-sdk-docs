@@ -30,7 +30,7 @@ To clarify this procedure, consider the following sample section of the plugin.x
 ```
 
 * The `interface` attribute sets an interface the plugin that contributes to the extension point must implement.
-* The `beanClass` attribute sets a bean class that specifies one or several properties annotated with the [@Attribute](upsource:///xml/dom-openapi/src/com/intellij/util/xml/Attribute.java) annotation.
+* The `beanClass` attribute sets a bean class that specifies one or several properties annotated with the [@Attribute](upsource:///platform/util/src/com/intellij/util/xmlb/annotations/Attribute.java) annotation.
 
 The plugin that contributes to the extension point will read those properties from the `plugin.xml` file.
 
@@ -54,17 +54,20 @@ public class MyBeanClass1 extends AbstractExtensionPointBean {
 }
 ```
 
-Note that to declare an extension designed to access the `MyExtensionPoint1` extension point, your `plugin.xml` file must contain the `<MyExtensionPoint1>` tag with the `key` and `implementationClass` attributes set to appropriate values (see sample below).
+To declare an extension designed to access the `MyExtensionPoint1` extension point, your `plugin.xml` file must contain the `<MyExtensionPoint1>` tag with the `key` and `implementationClass` attributes set to appropriate values (see sample below).
 
 **To declare an extension**
 
-1. For the `<extensions>` element, set the `xmlns` (deprecated) or `defaultExtensionNs` attribute to one of the following values:
+> **TIP** Auto-completion is available for all these steps.
+
+1. For the `<extensions>` element, set the `defaultExtensionNs` attribute to one of the following values:
     * `com.intellij`, if your plugin extends the IntelliJ Platform core functionality.
     * `{ID of a plugin}`, if your plugin extends a functionality of another plugin.
 2. Add a new child element to the `<extensions>` element. The child element name must match the name of the extension point you want the extension to access.
 3. Depending on the type of the extension point, do one of the following:
     * If the extension point was declared using the `interface` attribute, for newly added child element, set the `implementation` attribute to the name of the class that implements the specified interface.
-    * If the extension point was declared using the `beanClass` attribute, for newly added child element, set all attributes annotated with the [@Attribute](upsource:///xml/dom-openapi/src/com/intellij/util/xml/Attribute.java) annotations in the specified bean class.
+    * If the extension point was declared using the `beanClass` attribute, for newly added child element, set all attributes annotated with the [@Attribute](upsource:///platform/util/src/com/intellij/util/xmlb/annotations/Attribute.java) annotations in the specified bean class.
+
 
 To clarify this procedure, consider the following sample section of the `plugin.xml` file that defines two extensions designed to access the `appStarter` and `applicationConfigurable` extension points in the *IntelliJ Platform* and one extension to access the `MyExtensionPoint1` extension point in a test plugin:
 
@@ -84,6 +87,33 @@ To clarify this procedure, consider the following sample section of the `plugin.
      <MyExtensionPoint1 key="keyValue" implementationClass="MyTestPackage.MyClassImpl"></MyExtensionPoint1>
   </extensions>
 ```
+### Extension default properties
+The following properties are available always:
+
+- `id` - unique ID
+- `order` - allows to order all defined extensions using `first`, `last` or `before|after [id]` respectively
+- `os` - allows to restrict extension to given OS, e.g., `os="windows"` registers the extension on Windows only 
+
+
+### Extension properties code insight
+Several tooling features are available to help configuring bean class extension points in `plugin.xml`.
+
+Property names matching the following list will resolve to FQN:
+- `implementation`
+- `className`
+- `serviceInterface` / `serviceImplementation`
+- ending with `Class` (case-sensitive)
+
+A required parent type can be specified in the extension point declaration via nested `<with>`:
+```xml
+    <extensionPoint name="myExtension" beanClass="MyExtensionBean">
+      <with attribute="psiElementClass" implements="com.intellij.psi.PsiElement"/>
+    </extensionPoint>
+```
+
+Property name `language` will automatically resolve to all present `Language` IDs.
+
+Specifying `@org.jetbrains.annotations.Nls` verifies capitalization of UI text properties according to given `capitalization` value (2019.2 and later).
 
 ## How to get the extension points list?
 
@@ -93,6 +123,3 @@ To get a list of extension points available in the *IntelliJ Platform* core, con
 * [`PlatformExtensionPoints.xml`](upsource:///platform/platform-resources/src/META-INF/PlatformExtensionPoints.xml)
 * [`VcsExtensionPoints.xml`](upsource:///platform/platform-resources/src/META-INF/VcsExtensionPoints.xml)
 
-## Additional Information and Samples
-
-For samples plugins and detailed instructions on how to create your plugin that contributes to the IDEA core, refer to Customizing the IDEA Settings Dialog and Creation of Tool Windows.

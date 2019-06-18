@@ -37,6 +37,12 @@ If you do need to create a file through VFS, you can use the `VirtualFile.create
 
 The `VirtualFileManager.addVirtualFileListener()` method allows you to receive notifications about all changes in the VFS.
 
+## Are there any utilities for analyzing and manipulating virtual files?
+
+[`VfsUtil`](upsource:///platform/core-api/src/com/intellij/openapi/vfs/VfsUtil.java) and [`VfsUtilCore`](upsource:///platform/core-api/src/com/intellij/openapi/vfs/VfsUtilCore.java) provide utility methods for analyzing files in the Virtual File System.
+
+You can use [`ProjectLocator`](upsource:///platform/core-api/src/com/intellij/openapi/project/ProjectLocator.java) to find the projects that contain a given virtual file.
+
 ## How do I extend VFS?
 
 To provide an alternative file system implementation (for example, an FTP file system), implement the [VirtualFileSystem](upsource:///platform/core-api/src/com/intellij/openapi/vfs/VirtualFileSystem.java) class (most likely you'll also need to implement `VirtualFile`), and register your implementation as an [application component](/basics/plugin_structure/plugin_components.md).

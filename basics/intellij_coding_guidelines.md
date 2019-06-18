@@ -1,5 +1,5 @@
 ---
-title: IntelliJ Coding Guidelines
+title: IntelliJ Platform Coding Guidelines
 ---
 
 If you are writing code that you would like to contribute to the IntelliJ Platform (either as a patch or as a plugin), following these guidelines will make it easier for the JetBrains development team to review and accept your changes.

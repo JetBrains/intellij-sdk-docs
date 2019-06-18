@@ -8,7 +8,7 @@ This page provides high-level overview of *External System* sub-system.
 
 # Rationale
 
-There are multiple project management systems ([maven](https://maven.apache.org/), [gradle](http://www.gradle.org/), [sbt](http://www.scala-sbt.org/) etc) and it's good to support them at the IDE. Luckily, they all provide a similar set of facilities from the integration point of view:
+There are multiple project management systems ([maven](https://maven.apache.org/), [gradle](https://www.gradle.org/), [sbt](https://www.scala-sbt.org/) etc) and it's good to support them at the IDE. Luckily, they all provide a similar set of facilities from the integration point of view:
 
 *   build IDE project from external system config (pom.xml, build.gradle etc);
 *   provide a list of available tasks;

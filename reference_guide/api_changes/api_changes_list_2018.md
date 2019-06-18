@@ -10,6 +10,8 @@ See the note on how to document new problems on the main page reference_guide/ap
 
 -->
 
+# 2018.3 
+
 ## Changes in IntelliJ Platform 2018.3
 
 `com.intellij.openapi.externalSystem.action.ExternalSystemAction.isEnabled` method `AnActionEvent` parameter marked `@NotNull`
@@ -37,6 +39,8 @@ See the note on how to document new problems on the main page reference_guide/ap
 : Use `com.intellij.psi.meta.PsiMetaData.getDependencies` instead.
 
 
+# 2018.2
+ 
 ## Changes in IntelliJ Platform 2018.2
 
 `com.intellij.util.Query.forEach` method parameter type changed from `Processor<Result>` to `Processor<? super Result>`
@@ -63,6 +67,8 @@ See the note on how to document new problems on the main page reference_guide/ap
 `org.apache.batik.script.InterpreterFactory.createInterpreter` abstract method added 
 : Update `InterpreterFactory` implementations accordingly.
 
+
+# 2018.1 
 
 ## Changes in IntelliJ Platform 2018.1
 

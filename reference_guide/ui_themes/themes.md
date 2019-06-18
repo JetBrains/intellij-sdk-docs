@@ -82,13 +82,13 @@ The `editorScheme` section will be addressed in [Adding a Custom Editor Scheme](
 The `ui` section will be addressed in [Customizing UI Control Colors](themes_customize.md#customizing-ui-controls). 
 
 The Wizard also creates a `themeProvider` declaration in the `<extensions>` section of the plugin's `plugin.xml` file. 
-This declaration binds the Theme description file to a theme provider extension `id`.
+This declaration binds the Theme description file to a theme provider extension using a generated unique `id`.
 ```xml
   <extensions defaultExtensionNs="com.intellij">
     <themeProvider id="eb9b7461-397b-4b98-a422-224fc0a74564" path="/theme_basics.theme.json"/>
   </extensions>
 ```
-> **WARNING** Do not change the value of the `themeProvider` `id` attribute.
+> **WARNING** Do not modify or re-use an existing value of the generated `id` attribute.
 
 At this point, the UI Theme `theme_basics` is a valid UI Theme. 
 Its plugin can be built and tested in IntelliJ Platform-based IDEs, giving the user the opportunity to select _theme_basics_ in the [Theme](https://www.jetbrains.com/help/idea/settings-appearance.html) _Preferences_ dropdown. 

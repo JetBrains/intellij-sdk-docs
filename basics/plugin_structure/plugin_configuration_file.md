@@ -8,45 +8,55 @@ The following is a sample plugin configuration file. This sample showcases and d
 <!-- `url` specifies the URL of the plugin homepage (can be opened from "Plugins" settings dialog) -->
 <idea-plugin url="https://www.jetbrains.com/idea">
 
-  <!-- Plugin name -->
+  <!-- Plugin name. It should be short and descriptive but does 
+       not have to be identical to the name of the JAR file. 
+       Displayed in the "Plugins" settings dialog and the plugin repository Web interface. -->
   <name>VssIntegration</name>
 
-  <!-- Unique identifier of the plugin.
+  <!-- Unique identifier of the plugin. Should be FQN.
        Cannot be changed between the plugin versions.
-       If not specified, assumed to be equal to <name>. -->
+       If not specified, assumed to be equal to <name>. This can have brittle results. -->
   <id>com.jetbrains.vssintegration</id>
 
-  <!-- Description of the plugin. -->
-  <description>Vss integration plugin</description>
+  <!-- Description of the plugin. 
+       Should be short and to the point.
+       Start the description with a verb in present simple form such as 
+       "integrates", "synchronizes", "adds support for" or "lets you view".
+       Don’t use marketing adjectives like “simple”, “lightweight”, or “professional”.
+       Don’t repeat the name of the plugin.
+       For plugins that add language/platform/framework support, the description MUST specify 
+       the version of the corresponding language/platform/framework.
+       Don't mention the IDE compatibility. E.g. don't say "Adds support to IntelliJ IDEA for..."
+       Displayed in the "Plugins" settings dialog and the plugin repository Web interface. -->
+  <description>Integrates Volume Snapshot Service W10</description>
 
   <!-- Description of changes in the latest version of the plugin.
-       Displayed in the "Plugins" settings dialog and in the
-       plugin repository Web interface. -->
+       Displayed in the "Plugins" settings dialog and the plugin repository Web interface.  -->
   <change-notes>Initial release of the plugin.</change-notes>
 
-  <!-- Plugin version -->
-  <version>1.0</version>
+  <!-- Plugin version
+       Recommended format is BRANCH.BUILD.FIX (MAJOR.MINOR.FIX)
+       Displayed in the "Plugins" settings dialog and the plugin repository Web interface.  -->
+   <version>1.0.0</version>
 
   <!-- The vendor of the plugin.
        The optional "url" attribute specifies the URL of the vendor homepage.
-       The optional "email" attribute specifies the e-mail address of the vendor.-->
-  <vendor url="https://www.jetbrains.com" email="support@jetbrains.com" />
+       The optional "email" attribute specifies the e-mail address of the vendor.
+       Displayed in the "Plugins" settings dialog and the plugin repository Web interface. -->
+   <vendor url="https://www.jetbrains.com" email="support@jetbrains.com">A Company Inc.</vendor>
 
-  <!-- The unique identifiers of the plugins on which this plugin depends. -->
-  <depends>com.MyFirstPlugin</depends>
+  <!-- Mandatory dependencies on plugins or modules.
+       The FQN module names in <depends> elements are used to determine IDE compatibility for the plugin.
+       Include at least the module shown below to indicate compatibility with IntelliJ Platform-based products.
+       Also include dependencies on other plugins as needed.
+       See "Compatibility with Multiple Products" and "Plugin Dependencies" for more information.  -->
+  <depends>com.intellij.modules.platform</depends>
+  <depends>com.third.party.plugin</depends>
 
   <!-- Optional dependency on another plugin.
-       If the plugin with the "com.MySecondPlugin" ID is installed,
-       the contents of mysecondplugin.xml (the format of this file
-       conforms to the format of plugin.xml) will be loaded. -->
+       If the plugin with the "com.MySecondPlugin" ID is installed, the contents of mysecondplugin.xml
+       (the format of this file conforms to the format of plugin.xml) will be loaded. -->
   <depends optional="true" config-file="mysecondplugin.xml">com.MySecondPlugin</depends>
-
-  <!-- Allows a plugin to integrate its help system (in JavaHelp format)
-       with the IDE help system. The "file" attribute specifies the name
-       of the JAR file in the "help" subdirectory of the plugin directory.
-       The "path" attribute specifies the name of the helpset file within
-       the JAR file.-->
-  <helpset file="myhelp.jar" path="/Help.hs" />
 
   <!-- Minimum and maximum build of IDE compatible with the plugin -->
   <idea-version since-build="183" until-build="183.*"/>

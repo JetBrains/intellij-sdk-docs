@@ -35,7 +35,7 @@ public class SimpleAnnotator implements Annotator {
         List<SimpleProperty> properties = SimpleUtil.findProperties(project, key);
         if (properties.size() == 1) {
           TextRange range = new TextRange(element.getTextRange().getStartOffset() + 7,
-                                          element.getTextRange().getStartOffset() + 7);
+                                          element.getTextRange().getEndOffset());
           Annotation annotation = holder.createInfoAnnotation(range, null);
           annotation.setTextAttributes(DefaultLanguageHighlighterColors.LINE_COMMENT);
         } else if (properties.size() == 0) {

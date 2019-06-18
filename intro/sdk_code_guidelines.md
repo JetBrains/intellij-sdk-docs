@@ -46,7 +46,6 @@ Note that the naming convention relates to the `Artifact ID`, which is the Gradl
 This is different than the `<name>` definition provided in the [`plugin.xml`](#pluginxml-conventions) file.
 See the [Plugin Gradle Properties](/tutorials/build_system/prerequisites.md#plugin-gradle-properties-and-plugin-configuration-file-elements) section for more information about the distinction.
 
-
 ## Plugin Copyright Statements
 Use the standard intellij-community copyright notice in all sample plugins authored by JetBrains:
 ```text  

@@ -157,7 +157,6 @@ Converting a DevKit-based plugin project to a Gradle-based plugin project can be
 * Click _Finish_ to create the new Gradle-based plugin.
 * [Add more modules](https://www.jetbrains.com/help/idea/gradle.html#gradle_add_module) using Gradle [_Source Sets_](https://www.jetbrains.com/help/idea/gradle.html#gradle_source_sets) as needed.
 
-
 ## Running a Simple Gradle-Based IntelliJ Platform Plugin
 Before running [`my_gradle_project`](#components-of-a-wizard-generated-gradle-intellij-platform-plugin), some code needs to be added to provide simple functionality.
 * Using the code below, add a `HelloAction.java` class to the `src/main/java/` folder.

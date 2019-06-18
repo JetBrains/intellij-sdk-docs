@@ -39,3 +39,7 @@ The general read/write action rules are in effect. In addition to that, any oper
 If the file corresponding to a `Document` is read-only (for example, not checked out from the version control system), document modifications will fail. Thus, before modifying the `Document`, it is necessary to call `ReadonlyStatusHandler.getInstance(project).ensureFilesWritable()` to check out the file if necessary.
 
 All text strings passed to `Document` modification methods (`setText`, `insertString`, `replaceString`) must use only \n as line separators.
+
+## Are there any utilities available for working with Documents?
+
+[`DocumentUtil`](upsource:///platform/core-impl/src/com/intellij/util/DocumentUtil.java) contains utility methods for `Document` processing. This allows you to get information like the text offsets of particular lines. This is particularly useful when you need text location/offset information about a given PsiElement.

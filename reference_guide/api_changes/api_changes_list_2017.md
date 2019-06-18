@@ -6,6 +6,8 @@ title: Incompatible Changes in IntelliJ Platform and Plugins API 2017.*
 See the note on how to document new problems on the main page reference_guide/api_changes_list.md 
 -->
 
+# 2017.3 
+
 ## Changes in IntelliJ Platform 2017.3
 
 `com.intellij.internal.statistic.AbstractApplicationUsagesCollector` class removed

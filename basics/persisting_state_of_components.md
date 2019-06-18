@@ -103,7 +103,7 @@ The simplest ways of specifying the `@Storage` annotation are as follows (since 
 
 By specifying a different value for the `value` parameter (`file` before 2016.x), the state will be persisted in a different file. 
 
->> **NOTE** For application-level components it is strongly recommended to use a custom file, using of `other.xml` is deprecated.
+> **NOTE** For application-level components it is strongly recommended to use a custom file, using of `other.xml` is deprecated.
 
 The `roamingType` parameter of the `@Storage` annotation specifies the roaming type when the Settings Repository plugin is used.
 

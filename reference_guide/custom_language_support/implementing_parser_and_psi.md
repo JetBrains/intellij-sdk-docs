@@ -48,14 +48,13 @@ the base implementation of
 [PsiElement](upsource:///platform/core-api/src/com/intellij/psi/PsiElement.java),
 are provided by *IntelliJ Platform*.
 
-There is currently no ready way to reuse existing language grammars, for example, from ANTLR, for creating custom language parsers.
-The parsers need to be coded manually.
-
-Custom language parser and PSI classes can be generated from grammars using
+While coding parser manually is quite possible, we highly recommend generating parser and corresponding PSI classes from grammars using
 [Grammar-Kit](https://plugins.jetbrains.com/plugin/6606-grammar-kit) plugin.
-Besides code generation it provides various features for editing grammar files: syntax highlighting, quick navigation, refactorings and more.
-The Grammar-Kit plugin is built using its own engine and its source code can be found on
+Besides code generation, it provides various features for editing grammar files: syntax highlighting, quick navigation, refactorings, and more.
+The Grammar-Kit plugin is built using its own engine; its source code can be found on
 [GitHub](https://github.com/JetBrains/Grammar-Kit).
+
+For re-using existing ANTLRv4 grammars, see [antlr4-intellij-adaptor](https://github.com/antlr/antlr4-intellij-adaptor) library.
 
 The language plugin provides the parser implementation as an implementation of the
 [PsiParser](upsource:///platform/core-api/src/com/intellij/lang/PsiParser.java)

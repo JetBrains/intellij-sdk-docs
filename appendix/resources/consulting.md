@@ -4,7 +4,7 @@ title: Consulting
 
 The following independent companies and individuals provide paid plugin consulting and development services.
 
->> **NOTE** JetBrains is not responsible for nor guarantees the performance of these independent third-party companies.
+> **NOTE** JetBrains is not responsible for nor guarantees the performance of these independent third-party companies.
 
 |  Name | Contact | Notes |
 |-------|---------|-------|

@@ -10,9 +10,17 @@ See the note on how to document new problems on the main page reference_guide/ap
 
 -->
 
+# 2019.2 
+
 ## Changes in IntelliJ Platform 2019.2
+`com.intellij.openapi.components.BaseState.map$default(BaseState, Map, int, Object)` method removed
+: Use `com.intellij.openapi.components.BaseState.map()` instead.
+
+`org.nustaq` package removed
+: [fast-serialization](https://github.com/RuedigerMoeller/fast-serialization) library was removed, please use `com.intellij.serialization.ObjectSerializer` instead.
+
 `java.org.java_websocket` package removed
-: [Java-WebSocket Library](https://github.com/TooTallNate/Java-WebSocket) was removed, bundle it with your plugin instead.
+: [Java-WebSocket](https://github.com/TooTallNate/Java-WebSocket) library was removed, bundle it with your plugin instead.
 
 `com.intellij.ui.layout.Cell.invoke$default(Cell, JComponent, CCFlags[], int, GrowPolicy, String, int, Object)` method parameter type changed
 : Signature of this function has been seriously changed without possibility to keep the old function. Change invocations and overriding of that function according to new parameters and recompile the code. 
@@ -23,6 +31,14 @@ See the note on how to document new problems on the main page reference_guide/ap
 `org.jetbrains.intellij.build.ProductProperties`: fields `yourkitAgentBinariesDirectoryPath` and `enableYourkitAgentInEAP` have been removed
 : Please bundle [performanceTesting plugin](https://plugins.jetbrains.com/plugin/7819-performance-testing) in case you would like to bundle YourKit profiler within your IDE.
 
+`com.intellij.extapi.psi.PsiElementBase` class removed
+: Please use `com.intellij.psi.impl.PsiElementBase` or one of its descendants as a base class for PSI elements, e.g. `com.intellij.extapi.psi.ASTWrapperPsiElement`, as suggested in [Custom Language Support Tutorial](../../tutorials/custom_language_support/grammar_and_parser.md).
+
+`com.intellij.extapi.psi.MetadataPsiElementBase` class removed
+: Please use different base class for PSI elements.
+
+# 2019.1
+ 
 ## Changes in IntelliJ Platform 2019.1
 
 `kotlinx.coroutines.experimental` package removed 

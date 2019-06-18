@@ -29,6 +29,8 @@ to **com.simpleplugin.icons** package.
 
 ### 2.4. Define a file type factory
 
+> **NOTE** When targeting 2019.2 or later only, please see [2.5.B](#b-register-file-type-20192-or-later)
+
 ```java
 {% include /code_samples/simple_language_plugin/src/com/simpleplugin/SimpleFileTypeFactory.java %}
 ```
@@ -40,6 +42,17 @@ In plugin.xml add:
 ```xml
 <extensions defaultExtensionNs="com.intellij">
       <fileTypeFactory implementation="com.simpleplugin.SimpleFileTypeFactory"/>
+</extensions>
+```
+
+### 2.5.B. Register file type (2019.2 or later)
+
+When matching via file extension or exact file name, registration of file type should be done via `plugin.xml` only without implementing `FileTypeFactory`. 
+
+```xml
+<extensions defaultExtensionNs="com.intellij">
+    <fileType name="Simple file" implementationClass="com.simpleplugin.SimpleFileType" fieldName="INSTANCE" 
+              language="Simple" extensions="simple"/>
 </extensions>
 ```
 

@@ -22,5 +22,3 @@ The following components are particularly noteworthy:
     *  JBSplitter
     *  JBTabs
 
-> **TIP** The recommended way of building UIs on the IntelliJ Platform is the
-[Kotlin UI DSL](/user_interface_components/kotlin_ui_dsl.md).

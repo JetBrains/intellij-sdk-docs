@@ -2,7 +2,7 @@
   <id>org.jetbrains.plugins.sample.PluginSample</id>
   <name>Basic plugin example</name>
   <version>1.0</version>
-  <vendor email="support@jetbrains.com" url="https://www.jetbrains.com">JetBrains</vendor>
+  <vendor email="support@jetbrains.com" url="http://www.jetbrains.com">JetBrains</vendor>
   <category>Samples</category>
   <description><![CDATA[
       Illustration of configuration options.<br>
@@ -20,6 +20,10 @@
   <depends>com.intellij.modules.lang</depends>
   <!-- Optional dependency on another plugin. If the plugin with the "MySecondPlugin" ID is installed, the contents of mysecondplugin.xml (the format of this file conforms to the format of plugin.xml) will be loaded. -->
   <!--<depends optional="true" config-file="custom-plugin.xml">CustomPlugin</depends>-->
+
+  <!-- Allows a plugin to integrate its help system (in JavaHelp format) with the IDEA help system. The "file" attribute specifies the name of the JAR file
+         in the "help" subdirectory of the plugin directory. The "path" attribute specifies the name of the helpset file within the JAR file.-->
+  <helpset file="plugin-help.jar" path="/Help.hs"/>
 
   <!-- Minimum and maximum build of IDEA compatible with the plugin
        see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html

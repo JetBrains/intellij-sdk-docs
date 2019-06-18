@@ -2,7 +2,7 @@
   <id>org.jetbrains.plugins.sample.EditorBasics</id>
   <name>Editor basics</name>
   <version>1.0</version>
-  <vendor email="support@jetbrains.com" url="https://www.jetbrains.com">JetBrains</vendor>
+  <vendor email="support@jetbrains.com" url="http://www.jetbrains.com">JetBrains</vendor>
 
   <description>Illustration of various basic Editor APIs</description>
 

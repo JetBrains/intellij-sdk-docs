@@ -12,8 +12,7 @@ which passes a
 subclass to its base class constructor.
 To register a file type, the plugin developer provides a subclass of
 [FileTypeFactory](upsource:///platform/platform-api/src/com/intellij/openapi/fileTypes/FileTypeFactory.java), which is registered via the `com.intellij.fileTypeFactory`
-[platform extension point](upsource:///platform/platform-resources/src/META-INF/PlatformExtensionPoints.xml). 
-> **NOTE** When targeting 2019.2 or later only, using `com.intellij.fileType` extension point is preferred to using dedicated `FileTypeFactory`.
+[platform extension point](upsource:///platform/platform-resources/src/META-INF/PlatformExtensionPoints.xml).
 
 **Example**:
 [LanguageFileType](upsource:///platform/core-api/src/com/intellij/openapi/fileTypes/LanguageFileType.java)

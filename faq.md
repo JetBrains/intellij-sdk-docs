@@ -67,9 +67,12 @@ This FAQ is a topical index of questions that have been asked (and answered) on 
 *  [How do I report out-of-date files?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206791775-VCS-OpenAPI-what-to-do-with-files-detected-as-out-of-date-)
 
 ## Test Framework
+*  [How can I use the new test framework?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206143599-New-Testing-Framework)
 *  [How do I create a library dependency in my test module?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206791555-library-depndency-in-InspectionTestCase)
 
 ## Plugin Architecture
+*  [Why are the extension elements in my plugin.xml red?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206138949-plugin-dtd-and-fileEditorProvider-element)
+*  [How can I read the plugin descriptor of my plugin from code?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206796695-how-to-read-the-plugin-xml-file-from-within-plugin)
 *  [How do I provide a custom exception reporter for my plugin?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206793965-Custom-exception-reporting)
 *  [How can I add the help topics of my plugin to the IntelliJ Platform help system?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206760095-how-do-i-plug-into-the-main-idea-help-system-)
 *  [How do I get the version of IntelliJ Platform under which my plugin is running?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206800275-How-to-get-the-idea-version)

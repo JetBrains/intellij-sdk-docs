@@ -1,5 +1,3 @@
-// Copyright 2000-2019 JetBrains s.r.o. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
-
 package testPlugin;
 
 import com.intellij.codeInsight.intention.IntentionAction;
@@ -54,7 +52,7 @@ public class YourTest extends UsefulTestCase {
 
   @Test
   public void test() {
-    doTest("before.template", "SDK Convert ternary operator to if statement");
+    doTest("before.template", "Convert ternary operator to if statement");
   }
 
 }

@@ -61,8 +61,6 @@ The following minimal sample demonstrates all details required when exposing UI 
   
 > **TIP** It is highly recommended to always provide a `description` entry, so Theme authors can understand usages.
 
-> **TIP** Do not remove existing keys, but deprecate them instead to help Theme authors upgrade their existing themes.
-
 Color keys can be used via `JBColor#namedColor` providing defaults for Light and Dark theme:
 ```java
   private static final Color SECTION_HEADER_FOREGROUND =

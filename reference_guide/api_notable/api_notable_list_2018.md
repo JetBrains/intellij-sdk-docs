@@ -2,8 +2,6 @@
 title: Notable Changes in IntelliJ Platform and Plugins API 2018.*
 ---
 
-# 2018.3 
-
 ## Notable Changes in IntelliJ Platform 2018.3
 
 ASM Library 7.0
@@ -14,8 +12,6 @@ Extendable Registry keys
 
 Editor: content between text lines
 : Ability to add arbitrary content (preview, debugger information, etc.). [Issue](https://youtrack.jetbrains.com/issue/IDEA-183815)
-
-# 2018.2 
 
 ## Notable Changes in IntelliJ Platform 2018.2
 

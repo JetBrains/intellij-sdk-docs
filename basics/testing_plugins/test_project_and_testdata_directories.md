@@ -19,7 +19,7 @@ To copy files or directories from your `testdata` directory to the test project 
 
 Most operations in plugin tests require a file open in the in-memory editor, in which highlighting, completion and other operations will be performed. The in-memory editor instance is returned by `CodeInsightTestFixture.getEditor()`. To copy a file from the `testdata` directory to the test project directory and immediately open it in the editor, you can use the `CodeInsightTestFixture.configureByFile()` or `configureByFiles()` methods. The latter copies multiple files to the test project directory and opens the *first* of them in the in-memory editor.
 
-Alternatively, you can use one of the other methods which take parameters annotated with `@TestDataFile`. These methods copy the specified files from the `testdata` directory to the test project directory, open the first of the specified files in the in-memory editor, and then perform the requested operation such as highlighting or code completion.
+Alternatively, you can use one of the other methods which take parameters annotated with [`@TestDataFile`](upsource:///platform/testFramework/src/com/intellij/testFramework/TestDataFile.java). These methods copy the specified files from the `testdata` directory to the test project directory, open the first of the specified files in the in-memory editor, and then perform the requested operation such as highlighting or code completion.
 
 When a file is opened in the in-memory editor, special markup in the file content can be used to specify the caret position or selection. You can use one of the following markers:
 

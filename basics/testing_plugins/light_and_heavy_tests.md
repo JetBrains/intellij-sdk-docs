@@ -13,6 +13,8 @@ Light and heavy tests use different base classes or fixture classes, as describe
 
 > **Note** Because of the performance difference, we recommend plugin developers to write *light* tests whenever possible.
 
+## Light Tests
+
 The standard way of writing a light test is to extend the following classes:
 
 * [`LightPlatformCodeInsightFixtureTestCase`](upsource:///platform/testFramework/src/com/intellij/testFramework/fixtures/LightPlatformCodeInsightFixtureTestCase.java) for tests that don't have any Java dependencies.
@@ -20,9 +22,13 @@ The standard way of writing a light test is to extend the following classes:
 
 > **Note** In 2019.2, `LightPlatformCodeInsightFixtureTestCase` has been renamed to `BasePlatformTestCase` and `LightCodeInsightFixtureTestCase` to `LightJavaCodeInsightFixtureTestCase` respectively.
 
-When writing a light test, you can specify the requirements for the project that you need to have in your test, such as the module type, the configured SDK, facets, libraries, etc. You do so by extending the [`LightProjectDescriptor`](upsource:///platform/testFramework/src/com/intellij/testFramework/LightProjectDescriptor.java) class and returning your project descriptor from `LightCodeInsightFixtureTestCase.getProjectDescriptor()`. Before executing each test, the project will be reused if the test case returns the same project descriptor as the previous one, or recreated if the descriptor is different.
+When writing a light test, you can specify the requirements for the project that you need to have in your test, such as the module type, the configured SDK, facets, libraries, etc. You do so by extending the [`LightProjectDescriptor`](upsource:///platform/testFramework/src/com/intellij/testFramework/LightProjectDescriptor.java) class and returning your project descriptor from `getProjectDescriptor()`.
+Before executing each test, the project will be reused if the test case returns the same project descriptor as the previous one, or recreated if the descriptor is different.
 
-> **Note** If you need to set up a multi-module project for your tests, you must write a heavy test. 
+
+## Heavy Tests
+
+> **Note** If you need to set up a multi-module project for your tests, you **must** write a heavy test. 
 
 The setup code for a multi-module Java project looks something like that:
 

@@ -6,6 +6,8 @@ Once you have configured Gradle support, you can automatically build and deploy 
 To do so, you will need to have already published the plugin to the plugin repository. 
 For detailed information, please see the guide to [publishing a plugin](../../basics/getting_started/publishing_plugin.md).
 
+> **WARNING** When adding additional repositories to your Gradle build script, make sure to always use HTTPS protocol.
+
 ### 2.0 Add your account credentials
 
 In order to deploy a plugin to the plugin repository, you will first need to supply your JetBrains Account credentials. 

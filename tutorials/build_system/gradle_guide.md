@@ -18,15 +18,15 @@ The plugin adds Gradle tasks for the `build.gradle` file that enable developing 
 The [README](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md) file for the `gradle-intellij-plugin` project is the reference for configuring these tasks.
  
 When getting started, there are several items to note on the README page:
-* At the top of the page, the [latest production version](https://github.com/jetbrains/gradle-intellij-plugin#the-latest-version) of the IntelliJ IDEA Gradle plugin is listed.
+* At the top of the page, the [latest production version](https://github.com/JetBrains/gradle-intellij-plugin#the-latest-version) of the IntelliJ IDEA Gradle plugin is listed.
 * Also at the top is the minimum version of Gradle required to support the IntelliJ IDEA Gradle plugin.
-* The table of extended Gradle [Tasks](https://github.com/jetbrains/gradle-intellij-plugin#tasks) has a succinct description for each task added by the plugin.
+* The table of extended Gradle [Tasks](https://github.com/JetBrains/gradle-intellij-plugin#tasks) has a succinct description for each task added by the plugin.
   This documentation will focus on the configuration and use four of those tasks:
-  * [Setup DSL](https://github.com/jetbrains/gradle-intellij-plugin#setup-dsl) - `intellij { ... }`.
-  * [Running DSL](https://github.com/jetbrains/gradle-intellij-plugin#running-dsl) - `runIde { ... }`
-  * [Patching DSL](https://github.com/jetbrains/gradle-intellij-plugin#patching-dsl) - `patchPluginXml { ... }`
-  * [Publishing DSL](https://github.com/jetbrains/gradle-intellij-plugin#publishing-dsl) - `publishPlugin { ... }`
-* Examples are always a helpful resource, and at the bottom of the page are links to [example](https://github.com/jetbrains/gradle-intellij-plugin#examples) open source IntelliJ Platform plugin projects based on Gradle.
+  * [Setup DSL](https://github.com/JetBrains/gradle-intellij-plugin#setup-dsl) - `intellij { ... }`.
+  * [Running DSL](https://github.com/JetBrains/gradle-intellij-plugin#running-dsl) - `runIde { ... }`
+  * [Patching DSL](https://github.com/JetBrains/gradle-intellij-plugin#patching-dsl) - `patchPluginXml { ... }`
+  * [Publishing DSL](https://github.com/JetBrains/gradle-intellij-plugin#publishing-dsl) - `publishPlugin { ... }`
+* Examples are always a helpful resource, and at the bottom of the page are links to [example](https://github.com/JetBrains/gradle-intellij-plugin#examples) open source IntelliJ Platform plugin projects based on Gradle.
 * Almost every Gradle plugin attribute has a default value that will work to get started on a Gradle-based IntelliJ Platform plugin project.
 
 
@@ -40,7 +40,7 @@ If a matching version of the specified IntelliJ Platform is not available on the
 IntelliJ IDEA then indexes the build and any associated source code and JetBrains Java Runtime.
 
 #### IntelliJ Platform Configuration
-Explicitly setting the [Setup DSL](https://github.com/jetbrains/gradle-intellij-plugin#setup-dsl) attributes `intellij.version` and `intellij.type` tells the Gradle plugin to use that configuration of the IntelliJ Platform to build the plugin project.
+Explicitly setting the [Setup DSL](https://github.com/JetBrains/gradle-intellij-plugin#setup-dsl) attributes `intellij.version` and `intellij.type` tells the Gradle plugin to use that configuration of the IntelliJ Platform to build the plugin project.
 If a local installation of IntelliJ IDEA is the desired type and version of the IntelliJ Platform, use `intellij.localPath` to point to that installation.
 If the `intellij.localPath` attribute is set, do not set the `intellij.version` and `intellij.type` attributes as this could result in undefined behavior.
 
@@ -48,7 +48,7 @@ If the `intellij.localPath` attribute is set, do not set the `intellij.version` 
 IntelliJ Platform plugin projects may depend on either bundled or third-party plugins.
 In that case, a project should build against a version of those plugins that match the IntelliJ Platform version used to build the plugin project.
 The Gradle plugin will fetch any plugins in the list defined by `intellij.plugins`.
-See the Gradle plugin [README](https://github.com/jetbrains/gradle-intellij-plugin#setup-dsl) for information about specifying the plugin and version.
+See the Gradle plugin [README](https://github.com/JetBrains/gradle-intellij-plugin#setup-dsl) for information about specifying the plugin and version.
 
 Note that this attribute describes a dependency so the Gradle plugin can fetch the required artifacts.
 The IntelliJ Platform plugin project is still required to declare these dependencies in its [Plugin Configuration](/basics/plugin_structure/plugin_configuration_file.md) (`plugin.xml`) file.
@@ -59,7 +59,7 @@ Using the corresponding JetBrains Runtime is also the default, so for this use c
 
 #### Running Against Alternate Versions and Types of IntelliJ Platform-Based IDEs
 The IntelliJ Platform IDE used for the Development Instance can be different from that used to build the plugin project.
-Setting the [Running DSL](https://github.com/jetbrains/gradle-intellij-plugin#running-dsl) attribute `runIde.ideaDirectory` will define an IDE to be used for the Development Instance in that single `runIde` task.
+Setting the [Running DSL](https://github.com/JetBrains/gradle-intellij-plugin#running-dsl) attribute `runIde.ideaDirectory` will define an IDE to be used for the Development Instance.
 This attribute is commonly used when running or debugging a plugin in an [alternate IntelliJ Platform-based IDE](/intro/intellij_platform.md#ides-based-on-the-intellij-platform).
 
 #### Running Against Alternate Versions of the JetBrains Runtime
@@ -86,7 +86,7 @@ The Gradle plugin version is defined in the `plugins {}` section of a project's 
 The Gradle version is in defined in a project's `gradle-wrapper.properties`.
 
 ### Patching the Plugin Configuration File
-A plugin project's `plugin.xml` file has element values that are "patched" at build time from the attributes of the `patchPluginXml` ([Patching DSL](https://github.com/jetbrains/gradle-intellij-plugin#patching-dsl)) task. 
+A plugin project's `plugin.xml` file has element values that are "patched" at build time from the attributes of the `patchPluginXml` ([Patching DSL](https://github.com/JetBrains/gradle-intellij-plugin#patching-dsl)) task. 
 As many as possible of the attributes in the Patching DSL will be substituted into the corresponding element values in a plugin project's `plugin.xml` file:
 * If a `patchPluginXml` attribute default value is defined, the attribute value will be patched in plugin.xml _regardless of whether the `patchPluginXml` task appears in the `build.gradle` file_.
   * For example, the default values for the attributes `patchPluginXml.sinceBuild` and `patchPluginXml.untilBuild` are defined based on the declared (or default) value of `intellij.version`.
@@ -104,7 +104,7 @@ As discussed in [Components of a Wizard-Generated Gradle IntelliJ Platform Plugi
 However, the IntelliJ IDEA Gradle plugin does not combine and substitute those Gradle properties for the default `<id>` and `<name>` elements in the `plugin.xml` file.
 
 ### Publishing with the Gradle Plugin
-Please review the [Publishing Plugins with Gradle](deployment.md) page before using the [Publishing DSL](https://github.com/jetbrains/gradle-intellij-plugin#publishing-dsl) attributes.
+Please review the [Publishing Plugins with Gradle](deployment.md) page before using the [Publishing DSL](https://github.com/JetBrains/gradle-intellij-plugin#publishing-dsl) attributes.
 That documentation explains three different ways to use Gradle for plugin uploads without exposing account credentials.
 
 
@@ -120,8 +120,7 @@ IntelliJ Platform plugins targeting IntelliJ IDEA have the most straightforward 
   * Set the necessary [plugin dependencies](#plugin-dependencies), if any. 
 * If the plugin project should be run or debugged in an IDE Development Instance based on the same IntelliJ IDEA version, no further attributes need to be set for the IDE Development Instance. 
   This is the default behavior and is the most common use case. 
-  * If the plugin project should be run or debugged in an IDE Development Instance based on a different version or type of IntelliJ IDEA, set the [Running or Setup](#running-against-alternate-versions-and-types-of-intellij-platform-based-ides) DSL attributes accordingly.
-    For projects with only one `runIde` task, use the Running DSL attribute `runIde.ideaDirectory`.
+  * If the plugin project should be run or debugged in an IDE Development Instance based on an alternate version of the IntelliJ Platform, set the [Running](#running-against-alternate-versions-and-types-of-intellij-platform-based-ides) DSL attribute accordingly.
   * If the plugin project should be run using a JetBrains Runtime other than the default for the IDE Development Instance, specify the [JetBrains Runtime version](#running-against-alternate-versions-of-the-jetbrains-runtime). 
 * Set the appropriate attributes for [patching the `plugin.xml` file](#patching-the-plugin-configuration-file).
 
@@ -138,7 +137,7 @@ It will be helpful to review the [PhpStorm Plugin Development](/products/phpstor
   The plugin dependency must be declared using the Gradle plugin `intellij.plugins` attribute, which lists the `id` and `version` of the plugin dependency.
 * The best practice is to use the target version of PhpStorm as the IDE Development Instance.
   That enables running and debugging the plugin in the target (e.g., PhpStorm) application.
-  The choice of application to use for the IDE Development Instance is configured using the Gradle plugin attribute `intellij.alternativeIdePath`.
+  The choice of application to use for the IDE Development Instance is configured using the Gradle plugin attribute `runIde.ideaDirectory`.
 
 The snippet below is an example of configuring the Setup and Running DSLs in a `build.gradle` file to develop a plugin targeted at PhpStorm. 
 The configuration uses IntelliJ IDEA Community Edition v2019.1.2 (build 191.7141.44) as the IntelliJ Platform against which the plugin project is built.

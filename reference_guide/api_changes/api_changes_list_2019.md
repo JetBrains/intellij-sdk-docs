@@ -25,6 +25,10 @@ See the note on how to document new problems on the main page reference_guide/ap
 `com.intellij.ui.layout.Cell.invoke$default(Cell, JComponent, CCFlags[], int, GrowPolicy, String, int, Object)` method parameter type changed
 : Signature of this function has been seriously changed without possibility to keep the old function. Change invocations and overriding of that function according to new parameters and recompile the code. 
 
+`com.intellij.ui.layout.Row.label$default(Row, String, int, UIUtil.ComponentStyle, UIUtil.FontColor, boolean, int, Object)` method removed
+: This method has been pulled up to the base class `Cell`; since it has default parameters, it's a binary breaking change in Kotlin.
+Recompile your code to pick up the new signature.
+
 `com.yourkit` package removed
 : YourKit library has been extracted into the separate plugin which is not bundled in all IDEs by default. YourKit library is a library for profiling IDE, and its util classes shouldn't be used for general purpose. Instead of `com.yourkit.util.Strings` please use  `org.apache.commons.lang.StringUtils`.  Instead of `com.yourkit.util.ArrayUtil` please use `org.apache.commons.lang.ArrayUtils`
 
@@ -36,6 +40,12 @@ See the note on how to document new problems on the main page reference_guide/ap
 
 `com.intellij.extapi.psi.MetadataPsiElementBase` class removed
 : Please use different base class for PSI elements.
+
+`com.intellij.ide.actions.SearchAgainAction` class now extends `EditorAction`, making its `actionPerformed` method final.
+: Please use the `<editorActionHandler>` extension point to register a different handler for the action.
+
+`com.intellij.ide.actions.SearchBackAction` class now extends `EditorAction`, making its `actionPerformed` method final.
+: Please use the `<editorActionHandler>` extension point to register a different handler for the action.
 
 # 2019.1
  

@@ -30,9 +30,6 @@ New API for Editor Inlay Hints
 `com.intellij.openapi.fileTypes.FileTypeFactory` deprecated
 : When registering file type via file extension or exact file name matching, use extension point `com.intellij.fileType` instead (see [Sample](/tutorials/custom_language_support/language_and_filetype.md#b-register-file-type-20192-or-later)).
 
-Unbundled plugins in IntelliJ IDEA
-: Several plugins for no longer actively maintained technology have been moved to a [separate repository](https://github.com/JetBrains/intellij-obsolete-plugins/). If your plugin depends on them, users will need to install them from the [JetBrains plugin repository](https://plugins.jetbrains.com).
-
 `@org.jetbrains.annotations.ApiStatus.NonExtendable`
 : Indicates that the annotated API class, interface or method must not be extended, implemented or overridden by external plugins but can be only obtained or instantiated (for classes and interfaces), or called (for methods).
 
@@ -44,6 +41,16 @@ Unbundled plugins in IntelliJ IDEA
 
 `com.intellij.openapi.projectRoots.SdkType#getInvalidHomeMessage`
 : Returns dedicated message when invalid SDK path was chosen (e.g., JRE instead of JDK). 
+
+
+## Notable Changes in IntelliJ IDEA
+
+Java functionality extracted as plugin
+: If your plugin depends on Java, it must be specified now, please see [blog post](https://blog.jetbrains.com/platform/2019/06/java-functionality-extracted-as-a-plugin/) for details.
+
+Unbundled plugins
+: Several plugins for no longer actively maintained technology have been moved to a [separate repository](https://github.com/JetBrains/intellij-obsolete-plugins/). If your plugin depends on them, users will need to install them from the [JetBrains plugin repository](https://plugins.jetbrains.com).
+
 
 
 # 2019.1 

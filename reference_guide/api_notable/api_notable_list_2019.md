@@ -6,6 +6,9 @@ title: Notable Changes in IntelliJ Platform and Plugins API 2019.*
 
 ## Notable Changes in IntelliJ Platform 2019.2
 
+New API for Editor Inlay Hints
+: Allows a variety of presentations (incl. custom painting), mouse event handling and exposing settings in _Editor \| Inlay Hints_. See `com.intellij.codeInsight.hints.InlayHintsProvider`.
+
 `com.intellij.openapi.vfs.AsyncFileListener`
 : A non-blocking variant for `com.intellij.openapi.vfs.newvfs.BulkFileListener`.
 

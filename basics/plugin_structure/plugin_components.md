@@ -21,8 +21,6 @@ It is recommended to name components in the form `<plugin_name>.<component_name>
 
 ## Application level components
 
-Optionally, an application level component's implementation class may implement the [ApplicationComponent](upsource:///platform/core-api/src/com/intellij/openapi/components/ApplicationComponent.java) interface.
-
 An application component that has no dependencies should have a constructor with no parameters which will be used for its instantiation. If an application component depends on other application components, it can specify these components as constructor parameters. The *IntelliJ Platform* will ensure that the components are instantiated in the correct order to satisfy the dependencies.
 
 Application level components must be registered in the `<application-components>` section of the plugin.xml file (see [Plugin Configuration File](plugin_configuration_file.md)).

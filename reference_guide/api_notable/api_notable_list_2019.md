@@ -48,4 +48,4 @@ Unbundled plugins in IntelliJ IDEA
 : Assert references are created for the given underlying `PsiElement`. [Issue](https://youtrack.jetbrains.com/issue/IDEA-203954)
 
 `CachedValue` more strict assertions
-: Enabled in tests and EAP/internal mode, see `CachedValueStabilityChecker` Javadoc.
+: Enabled in tests and EAP/internal mode, see [`CachedValueStabilityChecker`](upsource:///platform/core-impl/src/com/intellij/util/CachedValueStabilityChecker.java) Javadoc.

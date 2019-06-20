@@ -6,6 +6,9 @@ title: Notable Changes in IntelliJ Platform and Plugins API 2019.*
 
 ## Notable Changes in IntelliJ Platform 2019.2
 
+Create HTML representation of Code
+: Use `com.intellij.openapi.editor.richcopy.HtmlSyntaxInfoUtil` to create Lexer-based highlighted code samples, e.g. for usage in documentation. 
+
 View \| Appearance \| Description in Tree Views
 : Toggles showing additional details in UI (e.g. modification timestamp in Project View) see `UISettings#getShowInplaceComments`.
 

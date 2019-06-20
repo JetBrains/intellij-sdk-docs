@@ -6,11 +6,14 @@ title: Notable Changes in IntelliJ Platform and Plugins API 2019.*
 
 ## Notable Changes in IntelliJ Platform 2019.2
 
+`com.intellij.openapi.startup.StartupActivity` background variant
+: Use new dedicated extension point `com.intellij.backgroundPostStartupActivity` (see Javadoc for `StartupActivity#BACKGROUND_POST_STARTUP_ACTIVITY`).
+
 `com.intellij.codeHighlighting.TextEditorHighlightingPassFactory` registration
 : Use new dedicated extension point `com.intellij.highlightingPassFactory`.
 
 `com.intellij.openapi.fileTypes.FileTypeFactory` deprecated
-: When registering file type via file extension matching, use extension point `com.intellij.fileType` instead (see [Sample](/tutorials/custom_language_support/language_and_filetype.md#b-register-file-type-20192-or-later)).
+: When registering file type via file extension or exact file name matching, use extension point `com.intellij.fileType` instead (see [Sample](/tutorials/custom_language_support/language_and_filetype.md#b-register-file-type-20192-or-later)).
 
 Unbundled plugins in IntelliJ IDEA
 : Several plugins for no longer actively maintained technology have been moved to a [separate repository](https://github.com/JetBrains/intellij-obsolete-plugins/). If your plugin depends on them, users will need to install them from the [JetBrains plugin repository](https://plugins.jetbrains.com).

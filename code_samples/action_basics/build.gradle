@@ -1,0 +1,30 @@
+plugins {
+  id 'java'
+  id 'org.jetbrains.intellij' version '0.4.9'
+}
+
+sourceCompatibility = 1.8
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+// See https://github.com/JetBrains/gradle-intellij-plugin/
+intellij {
+
+  // Define IntelliJ Platform API version to use for building this plugin
+  version '2019.1'
+
+// Prevents patching <idea-version> attributes in plugin.xml
+  updateSinceUntilBuild = false
+// Define a shared sandbox directory for running code sample plugins within an IDE.
+  sandboxDirectory = file("${project.projectDir}/../_idea-sandbox")
+
+}
+
+// Force javadoc rebuild before jar is built
+jar.dependsOn javadoc

@@ -20,9 +20,12 @@ easier for the analysis, or ask JetBrains to manually add any missed feature typ
 
 ## File Type
 
-A plugin can support specific file types (file extensions). When there is a file with a specific extension open in an IDE, a hint will be shown to users prompting them to install your plugin.
-You should extend [FileTypeFactory](upsource:///platform/platform-api/src/com/intellij/openapi/fileTypes/FileTypeFactory.java)
-and feed supported file extensions in `createFileTypes(FileTypeConsumer)`. Values of `FileTypeConsumer` are analyzed by the `feature extractor`.
+A plugin can [support specific file types](/reference_guide/custom_language_support/registering_file_type.md) (file extensions). When there is a file with a specific extension open in an IDE, a hint will be shown to users prompting them to install your plugin.
+
+Both variants are supported by the `feature extractor`:
+- Extend [FileTypeFactory](upsource:///platform/platform-api/src/com/intellij/openapi/fileTypes/FileTypeFactory.java)
+and feed supported file extensions in `createFileTypes(FileTypeConsumer)`, values of `FileTypeConsumer` are analyzed.
+- Register `com.intellij.fileType` extension point (available in 2019.2+), `extensions` attribute is analyzed.
 
 A suggestion to install plugins which support the _\*.d_ Extension Type:
 

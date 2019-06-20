@@ -19,6 +19,7 @@
 * [Getting Started](basics/getting_started.md)
     * [Using Gradle](tutorials/build_system.md)
         * [Getting Started with Gradle](tutorials/build_system/prerequisites.md)
+        * [Configuring Gradle Projects](tutorials/build_system/gradle_guide.md)
         * [Publishing Your Plugin](tutorials/build_system/deployment.md)
     * [Using DevKit](basics/getting_started/using_dev_kit.md)
         * [Setting Up a Development Environment](basics/getting_started/setting_up_environment.md)
@@ -162,11 +163,11 @@
 ## Part VI - Testing
 
 * [Testing Plugins](basics/testing_plugins.md)
-    * [Tests and Fixtures](basics/testing_plugins/tests_and_fixtures.md)
-    * [Light and Heavy Tests](basics/testing_plugins/light_and_heavy_tests.md)
-    * [Test Project and Testdata Directories](basics/testing_plugins/test_project_and_testdata_directories.md)
-    * [Writing Tests](basics/testing_plugins/writing_tests.md)
-    * [Testing Highlighting](basics/testing_plugins/testing_highlighting.md)
+* [Tests and Fixtures](basics/testing_plugins/tests_and_fixtures.md)
+* [Light and Heavy Tests](basics/testing_plugins/light_and_heavy_tests.md)
+* [Test Project and Testdata Directories](basics/testing_plugins/test_project_and_testdata_directories.md)
+* [Writing Tests](basics/testing_plugins/writing_tests.md)
+* [Testing Highlighting](basics/testing_plugins/testing_highlighting.md)
 
 ## Part VII - Custom Languages
 * [Custom Language Support](reference_guide/custom_language_support.md)

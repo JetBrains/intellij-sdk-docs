@@ -31,7 +31,7 @@ Ultimately, the goal is to provide developers with roadmaps for implementing fun
 Each roadmap should contain:
 * Pointers to SDK documentation about the IntelliJ Platform APIs needed to implement the functionality.
 * Pointers to relevant _basic_ SDK sample plugins.
-* Pointers to relevant _advanced_ SDK sample plugins.
+* Pointers to related _advanced_ SDK sample plugins.
 
 ## Naming Conventions for SDK Plugins
 For _basic_ samples, the naming convention is focused on the IntelliJ Platform APIs being demonstrated.
@@ -42,7 +42,9 @@ There is only one _basic_ sample per IntelliJ Platform API area.
 For _advanced_ code samples, the name should reflect the complex functionality delivered by the plugin rather than the IntelliJ Platform APIs.
 Advanced samples will be cross-referenced to the IntelliJ Platform APIs demonstrated in the sample.
 
-Regardless of basic or advanced, an SDK plugin name is also known as the `Artifact ID` in the Gradle plugin wizard.
+Note that the naming convention relates to the `Artifact ID`, which is the Gradle property `rootProject.name`.
+This is different than the `<name>` definition provided in the [`plugin.xml`](#pluginxml-conventions) file.
+See the [Plugin Gradle Properties](/tutorials/build_system/prerequisites.md#plugin-gradle-properties-and-plugin-configuration-file-elements) section for more information about the distinction.
 
 ## Plugin Copyright Statements
 Use the standard intellij-community copyright notice in all sample plugins authored by JetBrains:
@@ -52,11 +54,11 @@ Copyright 2000-$today.year JetBrains s.r.o. Use of this source code is governed 
 The copyright statement must appear in every source file with the `$today.year` [Velocity](https://www.jetbrains.com/help/idea/copyright-profiles.html) template resolved.
 
 ## Plugin ID Conventions
-The plugin ID (`<id>` in `plugin.xml`) always begins with `org.intellij.sdk`.
-The plugin ID is known as the `Group ID` in the Gradle plugin wizard.
+The `Group ID` for SDK plugins is always `org.intellij.sdk`.
+In general, the plugin ID is the `Group ID` concatenated with the `Artifact ID`.
 
 For _basic_ code samples, it is not necessary to include "basic" in the plugin ID.
-A plugin like `facet_basics` has the ID `org.intellij.sdk.facet`.
+A plugin like `facet_basics` has the plugin ID `org.intellij.sdk.facet`.
 
 ## Plugin Package Names
 Packages in plugins should begin with the plugin ID.
@@ -64,7 +66,7 @@ If there is only one package in a plugin, then the package name is the same as t
 
 ## Plugin Directory Structure
 SDK sample code should have a standard directory footprint.
-Standardized structure not only makes the samples easier to navigate and understand, but it builds on the default Gradle plugin project structure.
+Standardized structure not only makes the samples simpler to navigate and understand, but it builds on the default Gradle plugin project structure.
 The following is the directory structure for a `foo_basics` plugin.
 ```text
 code_samples/
@@ -95,11 +97,13 @@ New SDK code samples should be developed [using Gradle](/tutorials/build_system.
 As of this writing, the use of Gradle in SDK code samples still relies heavily on the `plugin.xml` for specifying the plugin configuration.
 At a later, second phase, the SDK code samples will transition to rely more on the Gradle configuration. 
 
-The default contents of a `build.gradle` file are produced by the [Gradle project wizard](/tutorials/build_system/prerequisites.md#create-a-plugin-project-from-scratch). 
+The default contents of a `build.gradle` file are produced by the [New Project Wizard](/tutorials/build_system/prerequisites.md#creating-a-gradle-based-intellij-platform-plugin-with-new-project-wizard). 
 A consistent structure for an SDK code sample's `build.gradle` file is important for clarity and is based on the default produced by the project wizard. 
 Comments in SDK code sample `build.gradle` files should only draw attention to the parts of the Gradle configuration that are unique for a plugin.
 
-For SDK code samples a few alterations are needed to the default build.gradle file produced by the plugin wizard:
+For SDK code samples, a few alterations are needed to the default build.gradle file produced by the plugin wizard:
+* Maintain the Gradle properties `version` (`project.version`) and `group` (`project.group`).
+  See the [Plugin Gradle Properties](/tutorials/build_system/prerequisites.md#plugin-gradle-properties-and-plugin-configuration-file-elements) section for how these Gradle properties relate to the elements in `plugin.xml`.
 * Add the following statements to the [Setup DSL](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md#setup-dsl) (`intellij{}`) section:
   ```groovy
       // Prevents patching <idea-version> attributes in plugin.xml
@@ -124,7 +128,7 @@ The sequence of elements in an SDK code sample `plugin.xml` file is:
 * `<id>` Use the fully qualified [Plugin ID](#plugin-id-conventions).
 * `<name>` The name value does not have to match the [Plugin Name](#naming-conventions-for-sdk-plugins).
   It might reflect the functionality of the plugin.
-  The name must start with "SDK:".
+  The name must start with "SDK: ".
 * `<version>` The code sample's version in MAJOR.MINOR.FIX format.
   * MAJOR corresponds to a significant upgrade in functionality.
   * MINOR corresponds to minor refactoring and small improvements in functionality. 
@@ -137,7 +141,7 @@ The sequence of elements in an SDK code sample `plugin.xml` file is:
     Add this attribute if a plugin sample is deprecated with a release of the IntelliJ Platform.
 * `<depends>` Include at least one dependency with the module `com.intellij.modules.platform` to indicate basic plugin compatibility with IntelliJ Platform-based products.
   Add `<depends>` elements containing module FQNs as needed to describe more specialized [Compatibility with Multiple Products](/basics/getting_started/plugin_compatibility.md), and any other [Plugin Dependencies](/basics/plugin_structure/plugin_dependencies.md). 
-* `<description>` is a succinct explanation of what is being demonstrated and how a user would access the functionality.
+* `<description>` is a concise explanation of what is being demonstrated and how a user would access the functionality.
 * `<change-notes>` is an ordered list by version numbers with a brief description of changes for each version.
 * `<vendor>` Set the value to `IntelliJ Platform SDK`.
   Set the attributes:

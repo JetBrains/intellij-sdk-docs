@@ -2,6 +2,8 @@
 title: Plugin Components
 ---
 
+> **TIP** Due to performance considerations, please consider using [Services](plugin_services.md) instead whenever possible.
+
 Components are the fundamental concept of plugin integration. There are three kinds of components:
 
 * **Application level components** are created and initialized when your IDE starts up. They can be acquired from the [Application](upsource:///platform/core-api/src/com/intellij/openapi/application/Application.java) instance by using the `getComponent(Class)` method.
@@ -71,7 +73,7 @@ If a component has defaults, the `readExternal()` method is called twice:
 The components are loaded in the following order:
 
 * Creation - constructor is invoked.
-* Initialization - the `initComponent` method is invoked (if the component implements the [ApplicationComponent](upsource:///platform/core-api/src/com/intellij/openapi/components/ApplicationComponent.java) interface).
+* Initialization - the `initComponent` method is invoked (if the component implements the [BaseComponent](upsource:///platform/core-api/src/com/intellij/openapi/components/BaseComponent.java) interface).
 * Configuration - the `readExternal` method is invoked (if the component implements [JDOMExternalizable](upsource:///platform/util/src/com/intellij/openapi/util/JDOMExternalizable.java) interface), or the `loadState` method is invoked (if the component implements [PersistentStateComponent](upsource:///platform/projectModel-api/src/com/intellij/openapi/components/PersistentStateComponent.java) and has non-default persisted state).
 * For module components, the `moduleAdded` method of the [ModuleComponent](upsource:///platform/projectModel-api/src/com/intellij/openapi/module/ModuleComponent.java) interface is invoked to notify that a module has been added to the project.
 * For project components, the `projectOpened` method of the [ProjectComponent](upsource:///platform/core-api/src/com/intellij/openapi/components/ProjectComponent.java) interface is invoked to notify that a project has been loaded.

@@ -6,6 +6,9 @@ title: Notable Changes in IntelliJ Platform and Plugins API 2019.*
 
 ## Notable Changes in IntelliJ Platform 2019.2
 
+`com.intellij.openapi.util.ColoredItem`
+: Provides background color in all Trees, Lists and ComboBoxes.
+
 `com.intellij.openapi.startup.StartupActivity` background variant
 : Use new dedicated extension point `com.intellij.backgroundPostStartupActivity` (see Javadoc for `StartupActivity#BACKGROUND_POST_STARTUP_ACTIVITY`).
 

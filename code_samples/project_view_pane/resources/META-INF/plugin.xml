@@ -7,6 +7,8 @@
   <description>Project View Pane Demo listing only image files</description>
 
   <idea-version since-build="172.2103.15"/>
+
+  <!-- Product and plugin compatibility requirements -->
   <depends>com.intellij.modules.lang</depends>
 
   <extensions defaultExtensionNs="com.intellij">

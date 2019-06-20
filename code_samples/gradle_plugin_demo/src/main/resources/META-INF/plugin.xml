@@ -6,6 +6,7 @@
 
   <depends>com.intellij.modules.lang</depends>
 
+  <idea-version since-build="131" until-build="193.*"/>
   <extensions defaultExtensionNs="com.intellij">
   </extensions>
 

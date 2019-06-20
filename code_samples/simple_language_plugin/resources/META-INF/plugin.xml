@@ -9,6 +9,9 @@
 
   <idea-version since-build="183.3283.2"/>
 
+  <!-- Product and plugin compatibility requirements -->
+  <depends>com.intellij.modules.java</depends>
+
   <extensions defaultExtensionNs="com.intellij">
     <fileTypeFactory implementation="com.simpleplugin.SimpleFileTypeFactory"/>
     <lang.parserDefinition language="Simple" implementationClass="com.simpleplugin.SimpleParserDefinition"/>

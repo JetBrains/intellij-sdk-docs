@@ -1,0 +1,53 @@
+<!--
+  ~ Copyright 2000-2018 JetBrains s.r.o. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
+  -->
+<idea-plugin>
+
+  <!-- Unique identifier of the plugin. Cannot be changed between the plugin versions. -->
+  <id>org.intellij.sdk.kotlin_demo</id>
+
+  <!-- Plugin name -->
+  <name>SDK: kotlin_demo</name>
+
+  <!-- Plugin version, in MAJOR.MINOR.FIX format -->
+  <version>2.0.0</version>
+
+  <!-- Minimum and maximum build numbers of IDEA compatible with the plugin. -->
+  <idea-version since-build="171.0"/>
+
+  <!-- Product and plugin compatibility requirements -->
+  <depends>com.intellij.modules.lang</depends>
+  <depends>org.jetbrains.kotlin</depends>
+
+  <!-- Description of the plugin. Displayed in the "Plugins" settings dialog and in the
+         plugin repository Web interface. -->
+  <description>
+    <![CDATA[
+    Adds a <i>Greeting</i> menu group anchored last in the <b>Main Menu</b>
+    ]]>
+  </description>
+
+  <!-- Description of changes in each version of the plugin. -->
+  <change-notes>
+    <![CDATA[
+      <ul>
+        <li><b>2.0.0</b> Converted to Gradle project.</li>
+        <li><b>1.0</b> Release 2019.1 and earlier.</li>
+      </ul>
+    ]]>
+  </change-notes>
+
+  <!-- The vendor of the plugin.
+         The optional "url" attribute specifies the URL of the vendor homepage.
+         The optional "email" attribute specifies the e-mail address of the vendor.
+  -->
+  <vendor email="support@yourcompany.com" url="http://www.yourcompany.com">YourCompany</vendor>
+
+  <actions>
+    <group id="MyPlugin.TestMeu" text="Greeting" description="Greeting menu">
+      <add-to-group group-id="MainMenu" anchor="last"/>
+      <action id="Myplugin.Textboxes" class="HelloAction" text="Hello" description="Says hello"/>
+    </group>
+  </actions>
+
+</idea-plugin>

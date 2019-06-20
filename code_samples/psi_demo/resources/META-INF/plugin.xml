@@ -6,6 +6,9 @@
 
   <idea-version since-build="173.0"/>
 
+  <!-- Product and plugin compatibility requirements -->
+  <depends>com.intellij.modules.java</depends>
+
   <actions>
     <action class="com.intellij.tutorials.psi.PsiNavigationDemoAction" id="PsiNavigationDemo" text="PSI Navigation Demo...">
       <add-to-group group-id="ToolsMenu" anchor="last"/>

@@ -9,7 +9,6 @@
       <module fileurl="file://$PROJECT_DIR$/code_samples/framework/framework.iml" filepath="$PROJECT_DIR$/code_samples/framework/framework.iml" group="code_samples" />
       <module fileurl="file://$PROJECT_DIR$/code_samples/inspection/inspection.iml" filepath="$PROJECT_DIR$/code_samples/inspection/inspection.iml" group="code_samples" />
       <module fileurl="file://$PROJECT_DIR$/.idea/intellij-sdk-docs.iml" filepath="$PROJECT_DIR$/.idea/intellij-sdk-docs.iml" />
-      <module fileurl="file://$PROJECT_DIR$/code_samples/kotlin_demo/kotlin_demo.iml" filepath="$PROJECT_DIR$/code_samples/kotlin_demo/kotlin_demo.iml" group="code_samples" />
       <module fileurl="file://$PROJECT_DIR$/code_samples/live_templates/live_templates.iml" filepath="$PROJECT_DIR$/code_samples/live_templates/live_templates.iml" group="code_samples" />
       <module fileurl="file://$PROJECT_DIR$/code_samples/max_opened_projects/max_opened_projects.iml" filepath="$PROJECT_DIR$/code_samples/max_opened_projects/max_opened_projects.iml" group="code_samples" />
       <module fileurl="file://$PROJECT_DIR$/code_samples/module/module.iml" filepath="$PROJECT_DIR$/code_samples/module/module.iml" group="code_samples" />

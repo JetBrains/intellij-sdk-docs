@@ -30,6 +30,9 @@
   <!-- Compatible with the following versions of IntelliJ Platform -->
   <idea-version since-build="173"/>
 
+  <!-- Product and plugin compatibility requirements -->
+  <depends>com.intellij.modules.lang</depends>
+
   <extensions defaultExtensionNs="com.intellij">
     <!-- Register the custom facet extension -->
     <facetType implementation="com.intellij.tutorials.facet.DemoFacetType"/>

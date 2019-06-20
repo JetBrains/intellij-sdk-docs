@@ -13,6 +13,9 @@
   <!-- Compatible with the following versions of IntelliJ Platform -->
   <idea-version since-build="191"/>
 
+  <!-- Product and plugin compatibility requirements -->
+  <depends>com.intellij.modules.lang</depends>
+
   <!-- Text to display as description on Preferences/Settings | Plugin page  -->
   <description>
     <![CDATA[
@@ -53,7 +56,7 @@
                  @see com.intellij.codeHighlighting.HighlightDisplayLevel
              implementationClass= FQN of inspection implementation
             -->
-    <localInspection language="JAVA"
+    <localInspection language="TEXT"
             displayName="Demo Inspection"
             groupName="Example Inspections"
             groupPath="SDK"

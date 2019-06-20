@@ -4,12 +4,9 @@ title: Incompatible Changes in IntelliJ Platform and Plugins API
 
 <!--
 Before documenting a breaking API change, please, make sure that the change cannot be avoided 
-in an alternative way as the following docs state:
+in an alternative way.
 
-API Compatibility policy: https://confluence.jetbrains.com/display/IDEA/IntelliJ+Platform+API+compatibility+policy
-API Compatibility FAQ:    https://confluence.jetbrains.com/display/IDEA/IntelliJ+API+Compatibility+Policy+FAQ
-
-Places marked with ApiStatus.@Experimental don't need to be documented.
+APIs marked with @ApiStatus.Experimental or @ApiStatus.Internal don't need to be documented.
 
 To document a new incompatible change, add a new line with the problem pattern
 followed by a 2nd line with ": "-prefixed human-readable description and recommended fix/action.
@@ -49,8 +46,8 @@ An example of a ticket is https://youtrack.jetbrains.com/issue/PR-1218. Until su
 
 NOTE: You are allowed to prettify the pattern using markdown-features:
  1) code quotes: `org.example.Foo.methodName`
- 2) links [org.example.Foo](upsource:///platform/core-api/src/org/example/Foo)
- 3) both code quotes and links: [`org.example.Foo`](upsource:///platform/core-api/src/org/example/Foo)
+ 2) links [org.example.Foo](https://github.com/JetBrains/intellij-community/tree/master/)
+ 3) both code quotes and links: [`org.example.Foo`](https://github.com/JetBrains/intellij-community/tree/master/)
 -->
 
 IntelliJ API may be occasionally changed between releases leading to incompatibilities of existing plugins with newer IDE builds. 

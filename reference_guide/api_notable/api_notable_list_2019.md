@@ -6,6 +6,9 @@ title: Notable Changes in IntelliJ Platform and Plugins API 2019.*
 
 ## Notable Changes in IntelliJ Platform 2019.2
 
+`com.intellij.openapi.vfs.AsyncFileListener`
+: A non-blocking variant for `com.intellij.openapi.vfs.newvfs.BulkFileListener`.
+
 `com.intellij.openapi.util.ColoredItem`
 : Provides background color in all Trees, Lists and ComboBoxes.
 

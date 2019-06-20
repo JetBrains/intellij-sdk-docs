@@ -32,7 +32,6 @@
 
   <!-- Product and plugin compatibility requirements -->
   <depends>com.intellij.modules.lang</depends>
-  <!-- Might use java -->
 
   <extensions defaultExtensionNs="com.intellij">
     <!-- Register the custom facet extension -->

@@ -14,7 +14,7 @@
   <idea-version since-build="191"/>
 
   <!-- Product and plugin compatibility requirements -->
-  <depends>com.intellij.modules.platform</depends>
+  <depends>com.intellij.modules.lang</depends>
 
   <!-- Text to display as description on Preferences/Settings | Plugin page  -->
   <description>

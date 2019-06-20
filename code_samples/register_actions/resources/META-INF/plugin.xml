@@ -9,7 +9,7 @@
   <change-notes>Refactor to give users feedback when menu items are selected.</change-notes>
 
   <idea-version since-build="131"/>
-  <depends>com.intellij.modules.platform</depends>
+  <depends>com.intellij.modules.lang</depends>
 
   <actions>
     <!-- Add your actions here -->

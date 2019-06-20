@@ -10,7 +10,7 @@
   <depends>com.intellij.modules.lang</depends>
 
   <!-- Product and plugin compatibility requirements -->
-  <depends>com.intellij.modules.platform</depends>
+  <depends>com.intellij.modules.lang</depends>
 
   <actions>
     <action id="EditorBasics.EditorIllustration"

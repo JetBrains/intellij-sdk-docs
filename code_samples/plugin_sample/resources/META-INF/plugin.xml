@@ -16,8 +16,8 @@
 
   <!-- http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html -->
   <!-- The unique identifiers of the plugins on which this plugin depends -->
-  <!-- com.intellij.modules.platform is included in every IntelliJ-based IDE, plugin will be available as well -->
-  <depends>com.intellij.modules.platform</depends>
+  <!-- com.intellij.modules.lang is included in every IntelliJ-based IDE, plugin will be available as well -->
+  <depends>com.intellij.modules.lang</depends>
   <!-- Optional dependency on another plugin. If the plugin with the "MySecondPlugin" ID is installed, the contents of mysecondplugin.xml (the format of this file conforms to the format of plugin.xml) will be loaded. -->
   <!--<depends optional="true" config-file="custom-plugin.xml">CustomPlugin</depends>-->
 

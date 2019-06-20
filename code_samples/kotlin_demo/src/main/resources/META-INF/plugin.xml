@@ -16,7 +16,7 @@
   <idea-version since-build="171.0"/>
 
   <!-- Product and plugin compatibility requirements -->
-  <depends>com.intellij.modules.platform</depends>
+  <depends>com.intellij.modules.lang</depends>
   <depends>org.jetbrains.kotlin</depends>
 
   <!-- Description of the plugin. Displayed in the "Plugins" settings dialog and in the

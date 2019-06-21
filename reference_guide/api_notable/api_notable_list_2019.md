@@ -6,7 +6,10 @@ title: Notable Changes in IntelliJ Platform and Plugins API 2019.*
 
 ## Notable Changes in IntelliJ Platform 2019.2
 
-Create HTML representation of Code
+Quickfixes for file-level notifications
+: Consistent with other quickfixes, the menu now shows names of fixes, not names of problems themselves. [Issue](https://youtrack.jetbrains.com/issue/IDEA-216731)
+
+Create HTML representation of code
 : Use `com.intellij.openapi.editor.richcopy.HtmlSyntaxInfoUtil` to create Lexer-based highlighted code samples, e.g. for usage in documentation. 
 
 View \| Appearance \| Description in Tree Views

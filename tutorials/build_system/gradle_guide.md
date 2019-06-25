@@ -36,6 +36,8 @@ This section presents a guided tour of Gradle plugin attributes to achieve commo
 ### Configuring the Gradle Plugin for Building IntelliJ Platform Plugin Projects
 By default, the Gradle plugin will build a plugin project against the IntelliJ Platform defined by the latest EAP snapshot of the IntelliJ IDEA Community Edition.
 
+> **NOTE** Using EAP versions of the IntelliJ Platform requires adding the _Snapshots repository_ to the `build.gradle` file (see [IntelliJ Platform Artifacts Repositories](/reference_guide/intellij_artifacts.md)). 
+
 If a matching version of the specified IntelliJ Platform is not available on the local machine, the Gradle plugin downloads the correct version and type.
 IntelliJ IDEA then indexes the build and any associated source code and JetBrains Java Runtime.
 

@@ -4,7 +4,7 @@ title: Plugin Development FAQ
 
 
 This FAQ is a topical index of questions that have been asked (and answered) on our
-[OpenAPI forum](https://intellij-support.jetbrains.com/hc/en-us/community/topics/200366979-IntelliJ-IDEA-Open-API-and-Plugin-Development).
+[IntelliJ IDEA Open API and Plugin Development forum](https://intellij-support.jetbrains.com/hc/en-us/community/topics/200366979-IntelliJ-IDEA-Open-API-and-Plugin-Development).
 
 ## Open-Source Plugins
 *  [How do I compile the Scala plugin?](https://github.com/jetbrains/intellij-scala#setting-up-the-project)

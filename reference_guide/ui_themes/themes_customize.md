@@ -15,6 +15,30 @@ Colors are defined by six-digit RGB or eight-digit RGBA hexadecimal notation.
 When learning new syntax, it is often useful to have some existing implementations for reference.
 For example, refer to the [Theme description file](upsource:///platform/platform-resources/src/themes/HighContrast.theme.json) for the IntelliJ IDEA _High Contrast_ Theme.
 
+
+## Defining Named Colors
+Colors can always be defined individually as six-digit RGB or eight-digit RGBA hexadecimal notation.
+However, Theme definitions often use the same color in multiple places.
+Maintaining a Theme is more manageable if _Named Colors_ are globally defined in a `colors {}` block as part of the `*.theme.json` file.
+After that, the Named Color can be used instead of a hexadecimal description of the color.
+For example, defining the Named Color `basicBackground` and then using it to set the background color for panels.
+(Don't be concerned with the `"ui"` syntax in the example below, it will be discussed in [Custom UI Control Colors](#custom-ui-control-colors).)
+```json
+{
+  "name": "theme_basics",
+  "dark": false,
+  "author": "IntelliJ Platform SDK",
+  "editorScheme": "/Lightning.xml",
+
+  "colors": {
+    "basicBackground": "#E1E1E1"
+  },
+  "ui": {
+    "Panel.background": "basicBackground"
+  }
+}
+```
+
 ## Customizing Icons
 UI themes can customize the color of default IntelliJ IDEA UI icons, or substitute custom icons for the default ones. 
 Customization is done by adding an `"icons": {}` section to the Theme description file.
@@ -26,12 +50,6 @@ The `ColorPalette` must be inserted in the `icons` section.
 In the following example the `key` - the default red color (#DB5860) used for `Action` icons in the _Light_ Theme - is overridden to the `value` of a different color (#D61A26):
 ```json
 {
-  "name": "Theme Basics",
-  "dark": false,
-  "author": "IntelliJ Platform SDK",
-  "editorScheme": "/theme_basics.xml",
-  "ui": {
-  },
   "icons": {
     "ColorPalette": {
       "#DB5860": "#D61A26"

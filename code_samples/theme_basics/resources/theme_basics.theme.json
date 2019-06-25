@@ -2,6 +2,11 @@
   "name": "theme_basics",
   "dark": false,
   "author": "IntelliJ Platform SDK",
+  "editorScheme": "/Lightning.xml",
+
+  "colors": {
+    "basicBackground": "#E1E1E1"
+  },
 
   "ui": {
     "*": {
@@ -12,25 +17,20 @@
       "selectionInactiveBackground": "#BBE7F4",
       "selectionBackgroundInactive": "#BBE7F4"
     },
-
     "Label.foreground": "#3959CC",
     "Label.background": "#F6E9C9",
-
-    "Panel.background": "#E1E1E1",
-
-    "Window.border" : "4,4,4,4,E6E6E6"
+    "Panel.background": "basicBackground",
+    "Window.border": "4,4,4,4,E6E6E6"
   },
 
   "icons": {
     "/actions/compile.svg": "/factory.svg",
     "/actions/execute.svg": "/run.svg",
-
     "ColorPalette": {
       "Actions.Blue": "#5BC0DE",
       "Actions.Red": "#D9534F",
       "Actions.Yellow": "#FFEEAD",
       "Actions.Grey": "#354E5A",
-
       "Objects.Blue": "#5BC0DE",
       "Objects.Red": "#D9534F",
       "Objects.Yellow": "#FFEEAD",
@@ -38,12 +38,9 @@
       "Objects.Pink": "#FFC5E8",
       "Objects.Grey": "#4694AE",
       "Objects.BlackText": "#0C5800",
-
       "#59A869": "#00C5C0FF"
     }
   },
-
-  "editorScheme": "/Lightning.xml",
 
   "background": {
     "image": "/austria.png",

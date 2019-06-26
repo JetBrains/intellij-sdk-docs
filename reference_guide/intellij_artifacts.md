@@ -2,6 +2,8 @@
 title: IntelliJ Platform Artifacts Repositories
 ---
 
+> **WARNING** When using additional repositories, make sure to use HTTPS always.
+
 JetBrains maintains public repositories that host artifacts related to the IntelliJ Platform, such as binaries and source code. These 
 repositories make artifacts more accessible for plugin developers.
 
@@ -40,30 +42,23 @@ The Maven coordinates are based on the names of modules.
 The _groupId_ for a module is the prefix `com.jetbrains.` concatenated with the first two parts of the module name.  
 For example, the module `intellij.xml` would have the groupId `com.jetbrains.intellij.xml`. 
 
-The _artifactId_ is the second.._n_ parts of the module name separated by "-" characters. 
+The _artifactId_ is the second.._n_ parts of the module name separated by "-" characters.  
 For example, the module `intellij.xml` would have the artifactId `xml`.
 There are some special cases to artifactId names. 
 If the second part of the module name is a common group like `platform`, `vcs`, or `cloud`, the second part of the module name is dropped, and the artifactId becomes the third.._n_ parts of the module name, separated by "-" characters.
 Portions of the module name expressed in `camelCase` format are divided and used in the artifactId as (all lower case) `camel-case`.  
 
-The table below shows some module names and their corresponding groupId and artifactId.
+The table below shows some example module names and their corresponding groupId and artifactId.
 
-| **Module Name** | **groupId** | **artifactId** | **Module Name Length, Comments About artifactId** |
-|-----------------|-------------|----------------|-------------------------------|
-|intellij.xml | com.jetbrains.intellij.xml | xml | n=2 |
-|intellij.xml.impl | com.jetbrains.intellij.xml | xml-impl | n=3, name is parts 2nd-3rd |
-|intellij.java.debugger |    com.jetbrains.intellij.java    | java-debugger | n=3 |
-|intellij.platform.util | com.jetbrains.intellij.platform | util | n=3 but drop "platform" |
-|intellij.platform.testFramework | com.jetbrains.intellij.platform | test-framework | n=3 but drop "platform" and hyphenate camel case |
-|intellij.platform.annotations | com.jetbrains.intellij.platform | annotations | n=3 but drop "platform" |
-|intellij.platform.annotations.java5 | com.jetbrains.intellij.platform | annotations-java5 | n=4, but drop "platform" |
-|intellij.java.compiler.antTasks | com.jetbrains.intellij.java | java-compiler-ant-tasks | n=4, but hyphenate camel case |
-|intellij.platform.vcs.log | com.jetbrains.intellij.platform | vcs-log | n=4, but drop "platform" |
-|intellij.spring | com.jetbrains.intellij.spring | spring | n=2 |
-|intellij.spring.boot | com.jetbrains.intellij.spring | spring-boot | n=3 |
-|-----------------|-------------|----------------|-------------------------------|
-
-> **Note** The `intellij.platform.annotations` modules aren’t related to the IntelliJ Platform per se, and potentially may be used in any Java project. The module org.jetbrains.intellij.platform.annotations will move from IntelliJ IDEA sources to a separate Git repository and publish them with special Maven coordinates.
+| **Module Name** | **groupId** | **artifactId** |
+|-----------------|-------------|----------------|
+|intellij.java.compiler.antTasks | com.jetbrains.intellij.java | java-compiler-ant-tasks |
+|intellij.java.debugger |    com.jetbrains.intellij.java    | java-debugger |
+|intellij.platform.util | com.jetbrains.intellij.platform | util |
+|intellij.platform.vcs.log | com.jetbrains.intellij.platform | vcs-log |
+|intellij.spring | com.jetbrains.intellij.spring | spring |
+|intellij.xml.impl | com.jetbrains.intellij.xml | xml-impl |
+|-----------------|-------------|----------------|
 
 The artifact _version_ can be specified in one of several ways because each artifact [at the Repository URLs](#specify-the-repository-url) has multiple versions available: 
 * A branch build is specified as _BRANCH.BUILD[.FIX]_. For example, a branch build such as `141.233`, or a branch build with a fix such as `139.555.1`

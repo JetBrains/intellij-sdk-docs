@@ -99,22 +99,3 @@ Note:
  * The artifact version (`182.2949.4`) must match in both statements.
  * In this example `jps-model-serialization` declares the APIs and `jps-model-impl` provides the implementation, so both
    are required dependencies.
-
-<!--
-Save until after review.
-#### Legacy Artifacts
-The table below describes the groupId and artifactId for **Legacy** artifacts published at IntelliJ Platform artifacts repositories.
-These artifacts will continue to be published using these groupId and artifactId. 
-The [version](#specifying-version) specification below still apply to these legacy artifacts.
-
-| **groupId** | **artifactId** | **Description** |
-|-------------|----------------|-----------------|
-|com.jetbrains.intellij.idea | ideaIC | Full zip distribution of IDEA Community |
-|com.jetbrains.intellij.idea | ideaIU | Full zip distribution of IDEA Ultimate |
-|org.jetbrains.intellij.deps | trove4j | Third-party dependencies of IntelliJ IDEA project |
-|org.jetbrains | annotations | Old versions of IDEA annotations |
-|com.intellij | javac2 | Old versions of javac2 Ant tasks |
-|org.jetbrains.intellij | plugin-repository-rest-client | JetBrains plugin repository client |
-|org.jetbrains.kotlin | kotlin-stdlib | Kotlin artifacts |
-|org.jetbrains.teamcity | teamcity-rest-client | TeamCity rest client |
--->

@@ -50,15 +50,14 @@ Portions of the module name expressed in `camelCase` format are divided and used
 
 The table below shows some example module names and their corresponding groupId and artifactId.
 
-| **Module Name** | **groupId** | **artifactId** |
-|-----------------|-------------|----------------|
-|intellij.java.compiler.antTasks | com.jetbrains.intellij.java | java-compiler-ant-tasks |
-|intellij.java.debugger |    com.jetbrains.intellij.java    | java-debugger |
-|intellij.platform.util | com.jetbrains.intellij.platform | util |
-|intellij.platform.vcs.log | com.jetbrains.intellij.platform | vcs-log |
-|intellij.spring | com.jetbrains.intellij.spring | spring |
-|intellij.xml.impl | com.jetbrains.intellij.xml | xml-impl |
-|-----------------|-------------|----------------|
+| Module Name                    | groupId                         | artifactId |
+|--------------------------------|---------------------------------|----------------|
+|intellij.java.compiler.antTasks | com.jetbrains.intellij.java     | java-compiler-ant-tasks |
+|intellij.java.debugger          | com.jetbrains.intellij.java     | java-debugger |
+|intellij.platform.util          | com.jetbrains.intellij.platform | util |
+|intellij.platform.vcs.log       | com.jetbrains.intellij.platform | vcs-log |
+|intellij.spring                 | com.jetbrains.intellij.spring   | spring |
+|intellij.xml.impl               | com.jetbrains.intellij.xml      | xml-impl |
 
 The artifact _version_ can be specified in one of several ways because each artifact [at the Repository URLs](#specify-the-repository-url) has multiple versions available: 
 * A branch build is specified as _BRANCH.BUILD[.FIX]_. For example, a branch build such as `141.233`, or a branch build with a fix such as `139.555.1`

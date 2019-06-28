@@ -179,43 +179,48 @@ The following example sets the background color for all labels to the color #F6E
 The `Label.background` entry supersedes, in the narrower context of label backgrounds, any default color as well as any wildcard color assigned to backgrounds.
 
 #### Customizing the Color of UI Tabs
-The color of UI Tabs are changed by adding a key-value pair to the `"ui": {}` section of a Theme description file.
-The `key` is the `element.property` format and the `value` is the custom color.
+UI Tab colors are changed by [key-value pairs](#custom-ui-control-colors) in a Theme description file.
 
 There are two implementations of tabs in the IntelliJ Platform:
 * Editor Tabs, which e.g., represent open files in the [Editor window](https://www.jetbrains.com/help/idea/using-code-editor.html), and in [Tool Window bars](https://www.jetbrains.com/help/idea/tool-windows.html#bars_and_buttons).
 * Tabbed Panes, which e.g., are used for the [Run/Debug Configurations dialog](https://www.jetbrains.com/help/idea/run-debug-configurations-dialog.html).
 
-The control keys for UI Tabs were expanded from build 191 to 192 of the IntelliJ Platform.
-The build 191 control keys are compatible with build 192 and later versions of the IntelliJ Platform. 
+The control keys for UI Tabs were expanded from release 2019.1 to 2019.2 of the IntelliJ Platform.
+The 2019.1 release control keys are compatible with release 2019.2 and later versions of the IntelliJ Platform. 
 
-| Build 191 Element | Build 192 Element | Description of 192 Element |
+| Release 2019.1 Element | Release 2019.2 Element | Description of Release 2019.2 Element |
 |------|---------|---------|
-| N/A  | **`DefaultTabs`** | Applied to all tabs except `TabbedPane`, _unless_ overridden by a more specific Tab control element. This element is the background under all tabs. |
+| N/A  | **`DefaultTabs`** | Applied to all tabs except `TabbedPane`, _unless_ overridden by a more specific Tab control element. |
 | **`EditorTabs`**  | **`EditorTabs`** | Applied only to Editor tabs. Overrides any `DefaultTab` settings. 192 has many more `property` settings than 191. |
-| **`ToolWindow.HeaderTab`** | **`ToolWindow`** | Applied only to Tool Window tabs. Overrides any `DefaultTab` settings. 192 has many more `property` settings than 191. |
+| **`ToolWindow.HeaderTab`** | **`ToolWindow.HeaderTab`** | Applied only to Tool Window tabs. Overrides any `DefaultTab` settings. 192 has many more `property` settings than 191. |
 | **`DebuggerTabs`** | **`DefaultTabs`** | `DefaultTab` settings are used instead of `DebuggerTabs`, except for key `DebuggerTabs.underlineHeight`. |
-| N/A | **`TabbedPane`** | New in 192. Applied only to Tabbed Panes. |
+| **`TabbedPane`** | **`TabbedPane`** | Applied only to Tabbed Panes. |
 | **`Plugins.Tab`** | **`TabbedPane`** | Use `TabbedPane` instead. |
 | **`SearchEverywhere.Tab`** | **`SearchEverywhere.Tab`** | No change. |
 
 Methods for identifying UI control keys are in the [Finding Attribute Keys for UI Controls](#finding-attribute-keys-for-ui-controls) section. 
 
-For example, some Editor Tab colors are set in this snippet for build 192 and later.
-Note the changes from build 191 properties, which are updated from an excerpt from the IntelliJ Platform [High Contrast Theme](upsource:///platform/platform-resources/src/themes/HighContrast.theme.json?nav=2730:2734:focused&line=199&preview=false):
-This update is done solely for documentation purposes; the keys from build 191 continue to work in build 192:
-* `EditorTabs.underlinedTabForeground` (b192) was `EditorTabs.selectedForeground` (b191)
-* `EditorTabs.underlinedTabBackground` (b192) was `EditorTabs.selectedBackground` (b191)
-* `EditorTabs.inactiveColoredFileBackground` (b192) was `EditorTabs.inactiveMaskColor` (b191)
+For example, here is an excerpt from the IntelliJ Platform [High Contrast Theme](upsource:///platform/platform-resources/src/themes/HighContrast.theme.json):
+Note that a Theme file can mix versions of `property` identifiers:
+* The first three `property` entries are recognized by release 2019.1, and ignored by subsequent releases because they are defined by new `property` identifiers.
+* The `underlineColor` `property` is recognized by release 2019.1 and subsequent releases.
+* The `underlineHeight` `property` was introduced in release 2019.2, and is ignored by previous releases.
+* The `underlinedTabBackground` `property` was introduced in release 2019.2, replaces the 2019.1 `selectedBackground`, and is ignored by previous releases.
+* The `inactiveColoredFileBackground` `property` was introduced in release 2019.2, replaces the 2019.1 `inactiveMaskColor`, and is ignored by previous releases.
 
 ```json
 {
   "ui": {
     "EditorTabs": {
-      "underlinedTabForeground": "#FFFFFF",
-      "underlinedTabBackground": "#3333FF",
-      "underlineColor": "#3333FF",
-      "inactiveColoredFileBackground": "#000000FF"
+      "selectedForeground": "#FFFFFF", 
+      "selectedBackground": "#0e5d73",
+      "inactiveMaskColor": "#000000FF",
+
+      "underlineColor": "#1AEBFF",
+      "underlineHeight": 4,
+
+      "underlinedTabBackground": "#000000",
+      "inactiveColoredFileBackground": "#00000000"
     }
   }
 }

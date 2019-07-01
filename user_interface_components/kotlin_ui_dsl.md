@@ -77,6 +77,8 @@ These method also support **property bindings**, allowing you to automatically l
 checkBox("Show tabs in single row", uiSettings::scrollTabLayoutInEditor)
 ```
 
+Note that the bound property reference syntax also can be used to reference Java fields or getter/setter pairs (if the getter and setter match the Kotlin naming conventions).
+
 Alternatively, many factory methods support specifying a getter/setter pair for cases when a property mapping is more complicated:
 
 ```kotlin
@@ -221,9 +223,24 @@ checkBox(message("checkbox.smart.tab.reuse"),
 
 A panel returned by the `panel` method is an instance of `DialogPanel`. This base class supports the standard `apply`, `reset`, and `isModified` methods.
 
-If you're using this panel as the main panel of a `DialogWrapper`, the `apply` method will be automatically called when the dialog is closed with the OK action. The other methods are unused in this case.
+### Dialogs
 
-If you're using this panel to implement a `Configurable`, use `BoundConfigurable` as the base class. In this case, the `Configurable` methods will be automatically delegated to the panel.
+If you're using a `DialogPanel` as the main panel of a `DialogWrapper`, the `apply` method will be automatically called when the dialog is closed with the OK action. The other methods are unused in this case.
+
+Use the `focused` method to specify which control should be focused when 
+the dialog is initialized:
+
+```kotlin
+return panel {
+  row("Target class name:") {
+    textField(::className).focused()
+  }
+}
+```
+
+### Configurables
+
+If you're using the UI DSL to implement a `Configurable`, use `BoundConfigurable` as the base class. In this case, the `Configurable` methods will be automatically delegated to the panel.
 
 ## Enabling and Disabling Controls
 

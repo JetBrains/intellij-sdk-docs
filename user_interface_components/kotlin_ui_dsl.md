@@ -77,7 +77,7 @@ These method also support **property bindings**, allowing you to automatically l
 checkBox("Show tabs in single row", uiSettings::scrollTabLayoutInEditor)
 ```
 
-Note that the bound property reference syntax also can be used to reference Java fields or getter/setter pairs (if the getter and setter match the Kotlin naming conventions).
+Note that the bound property reference syntax also can be used to reference Java fields, but not getter/setter pairs.
 
 Alternatively, many factory methods support specifying a getter/setter pair for cases when a property mapping is more complicated:
 

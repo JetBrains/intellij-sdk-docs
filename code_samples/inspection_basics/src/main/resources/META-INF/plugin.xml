@@ -2,16 +2,15 @@
 
 <idea-plugin>
   <!--  Unique id for this plugin. Must stay constant for the life of the plugin.  -->
-  <id>com.intellij.tutorials.inspection</id>
+  <id>org.intellij.sdk.inspection</id>
 
-  <!-- Text to display as name on Preferences/Settings | Plugin page -->
-  <name>SDK Inspection Demo</name>
+  <name>SDK: Inspection Sample Project</name>
 
   <!-- The version of this plugin -->
-  <version>1.1.0</version>
+  <version>2.0.0</version>
 
   <!-- Compatible with the following versions of IntelliJ Platform -->
-  <idea-version since-build="191"/>
+  <idea-version since-build="171"/>
 
   <!-- Product and plugin compatibility requirements -->
   <depends>com.intellij.modules.lang</depends>
@@ -19,20 +18,21 @@
   <!-- Text to display as description on Preferences/Settings | Plugin page  -->
   <description>
     <![CDATA[
-      Basic example of working with code inspections. Adds entry to <b>Preferences | Editor | Inspections | SDK | Example Tools</b>.
-    ]]>
+        Basic example of working with code inspections. Adds entry to <b>Preferences | Editor | Inspections | SDK | Example Tools</b>.
+      ]]>
   </description>
   <change-notes>
     <![CDATA[
       <ul>
+        <li><b>2.0.0</b> Rename inspection_basics, convert to Gradle-based plugin</li>
         <li><b>1.1.0</b> Refactor resources, add "SDK" to description.</li>
         <li><b>1.0.0</b> Release 2018.3 and earlier.</li>
       </ul>
     ]]>
   </change-notes>
 
-  <!-- Text to display as company information on Preferences/Settings | Plugin page -->
-  <vendor email="faux-email@jetbrains.com" url="https://plugins.jetbrains.com">IntelliJ Platform SDK</vendor>
+   <!-- Text to display as company information on Preferences/Settings | Plugin page -->
+  <vendor url="https://plugins.jetbrains.com">IntelliJ Platform SDK</vendor>
 
   <extensions defaultExtensionNs="com.intellij">
 
@@ -57,12 +57,11 @@
              implementationClass= FQN of inspection implementation
             -->
     <localInspection language="TEXT"
-            displayName="Demo Inspection"
+            displayName="Inspection Basics"
             groupName="Example Inspections"
             groupPath="SDK"
             enabledByDefault="true"
             level="WARNING"
-            implementationClass="com.intellij.tutorials.inspection.DemoCodeInspection"/>
+            implementationClass="org.intellij.sdk.inspection.DemoCodeInspection"/>
   </extensions>
-
 </idea-plugin>

@@ -1,6 +1,17 @@
 ---
 title: Plugin Compatibility with IntelliJ Platform Products
 ---
+<style>
+  table {
+    width:100%;
+  }
+  th:first-child, td:first-child {
+    width: 30%;
+  }
+  th:last-child, td:last-child {
+    width: 30%;
+  }
+</style>
 
 <!--TODO link to sample_plugin file-->
 
@@ -29,32 +40,34 @@ If the `plugin.xml` includes one or more such tags, the plugin is loaded if the 
 
 The following modules are currently available in all products based on IntelliJ Platform:
 
-* `com.intellij.modules.platform`
-* `com.intellij.modules.lang`
-* `com.intellij.modules.vcs`
-* `com.intellij.modules.xml`
-* `com.intellij.modules.xdebugger`
+| Module or built-in plugin  | Functionality  | Product  |                                                                            |
+|----------------------------|----------------|----------|
+| `com.intellij.modules.platform`  | (SDK Part II) Messaging, UI Themes, UI Components, Files, Documents, Actions, Components, Services, Extensions, Editors  | All                                                        |
+| `com.intellij.modules.lang`  | (SDK Part VII) File Type, Lexer, Parser, Highlighting, References, Code Completion, Find, Rename, Formatter, Go to Class/Symbol  | All                                                        |
+| `com.intellij.modules.xml`  | Working with XML DOM, Editing, Custom Models, Attributes, Dynamic DOM Definition, XSD/DTD  | All                                                        |
+| `com.intellij.modules.vcs`  | TBD  | All                                                        |
+| `com.intellij.modules.xdebugger`  | TBD  | All                                                        |
 
 This means a plugin can declare a dependency on `com.intellij.modules.vcs` and it will work in any product that supports version control, and since all products currently include the `com.intellij.modules.vcs` module, this plugin will work in all products.
 
 The following modules or built-in plugins are available in these specific products:
 
-| Module or built-in plugin            | Product                                                                              |
-|--------------------------------------|--------------------------------------------------------------------------------------|
-| `com.intellij.modules.java`          | IntelliJ IDEA, Android Studio                                                        |
-| `com.intellij.modules.ultimate`      | IntelliJ IDEA Ultimate Edition                                                       |
-| `com.intellij.modules.androidstudio` | Android Studio                                                                       |
-| `com.intellij.modules.appcode`       | AppCode                                                                              |
-| `com.intellij.modules.cidr.lang`     | AppCode, CLion                                                                       |
-| `com.intellij.modules.cidr.debugger` | AppCode, CLion, RubyMotion                                                           |
-| `com.intellij.modules.clion`         | CLion                                                                                |
-| `com.intellij.modules.database`      | IntelliJ IDEA Ultimate Edition, DataGrip, GoLand, PhpStorm, PyCharm, Rider, RubyMine |
-| `com.intellij.modules.go`            | GoLand                                                                               |
-| `com.intellij.modules.python`        | PyCharm                                                                              |
-| `com.intellij.modules.rider`         | Rider                                                                                |
-| `com.intellij.modules.ruby`          | RubyMine                                                                             |
-| `com.jetbrains.php`                  | PhpStorm (built-in plugin)                                                           |
-| `com.intellij.modules.webstorm`      | WebStorm                                                           |
+| Module or built-in plugin  | Functionality  | Product  |                                                                            
+|----------------------------|----------------|----------|
+| `com.intellij.modules.java`  | Java PSI model, Inspections, Intentions, Testing  | IntelliJ IDEA, Android Studio                   |
+| `com.intellij.modules.ultimate`      | TBD  | IntelliJ IDEA Ultimate Edition                                                       |
+| `com.intellij.modules.androidstudio` | TBD  | Android Studio                                                                       |
+| `com.intellij.modules.appcode`       | TBD  | AppCode                                                                              |
+| `com.intellij.modules.cidr.lang`     | TBD  | AppCode, CLion                                                                       |
+| `com.intellij.modules.cidr.debugger` | TBD  | AppCode, CLion, RubyMotion                                                           |
+| `com.intellij.modules.clion`         | TBD  | CLion                                                                                |
+| `com.intellij.modules.database`      | TBD  | IntelliJ IDEA Ultimate Edition, DataGrip, GoLand, PhpStorm, PyCharm, Rider, RubyMine  |
+| `com.intellij.modules.go`            | TBD  | GoLand                                                                               |
+| `com.intellij.modules.python`        | TBD  | PyCharm                                                                              |
+| `com.intellij.modules.rider`         | TBD  | Rider                                                                                |
+| `com.intellij.modules.ruby`          | TBD  | RubyMine                                                                             |
+| `com.jetbrains.php`                  | TBD  | PhpStorm (built-in plugin)                                                           |
+| `com.intellij.modules.webstorm`      | TBD  | WebStorm                                                                             |
 
 ## Plugin dependencies
 

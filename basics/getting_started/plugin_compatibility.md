@@ -40,19 +40,19 @@ If the `plugin.xml` includes one or more such tags, the plugin is loaded if the 
 
 The following modules are currently available in all products based on IntelliJ Platform:
 
-| Module or built-in plugin  | Functionality  | Product  |                                                                            |
+| Module or built-in plugin  | Functionality  | Product  | 
 |----------------------------|----------------|----------|
-| `com.intellij.modules.platform`  | (SDK Part II) Messaging, UI Themes, UI Components, Files, Documents, Actions, Components, Services, Extensions, Editors  | All                                                        |
-| `com.intellij.modules.lang`  | (SDK Part VII) File Type, Lexer, Parser, Highlighting, References, Code Completion, Find, Rename, Formatter, Go to Class/Symbol  | All                                                        |
-| `com.intellij.modules.xml`  | Working with XML DOM, Editing, Custom Models, Attributes, Dynamic DOM Definition, XSD/DTD  | All                                                        |
-| `com.intellij.modules.vcs`  | TBD  | All                                                        |
-| `com.intellij.modules.xdebugger`  | TBD  | All                                                        |
+| `com.intellij.modules.platform`  | (SDK Part II) Messaging, UI Themes, UI Components, Files, Documents, Actions, Components, Services, Extensions, Editors  | All  |
+| `com.intellij.modules.lang`  | (SDK Part VII) File Type, Lexer, Parser, Highlighting, References, Code Completion, Find, Rename, Formatter, Go to Class/Symbol  | All  |
+| `com.intellij.modules.xml`  | Working with XML DOM, Editing, Custom Models, Attributes, Dynamic DOM Definition, XSD/DTD  | All  |
+| `com.intellij.modules.vcs`  | TBD  | All  |
+| `com.intellij.modules.xdebugger`  | TBD  | All  |
 
 This means a plugin can declare a dependency on `com.intellij.modules.vcs` and it will work in any product that supports version control, and since all products currently include the `com.intellij.modules.vcs` module, this plugin will work in all products.
 
 The following modules or built-in plugins are available in these specific products:
 
-| Module or built-in plugin  | Functionality  | Product  |                                                                            
+| Module or built-in plugin  | Functionality  | Product  | 
 |----------------------------|----------------|----------|
 | `com.intellij.modules.java`  | Java PSI model, Inspections, Intentions, Testing  | IntelliJ IDEA, Android Studio                   |
 | `com.intellij.modules.ultimate`      | TBD  | IntelliJ IDEA Ultimate Edition                                                       |

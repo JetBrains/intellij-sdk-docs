@@ -15,6 +15,8 @@ To specify the location of `testdata`, you must override the `getTestDataPath()`
 
 > **Note** A very common pattern in *IntelliJ Platform* tests is to use the name of the test method being executed as the base for building the `testdata` file paths. This allows to reuse most of the code between different test methods that test different aspects of the same feature, and this approach is also recommended for third-party plugin tests. The name of the test method can be retrieved using `UsefulTestCase.getTestName()`.
 
+> **Note** If your plugin builds on top of Java support, please see [Tests Prerequisites](/tutorials/writing_tests_for_plugins/tests_prerequisites.md) for setting up your test environment to obtain required _Mock JDK_ automatically.
+
 To copy files or directories from your `testdata` directory to the test project directory, you can use the `copyFileToProject()` and `copyDirectoryToProject()` methods in the [`CodeInsightTestFixture`](upsource:///platform/testFramework/src/com/intellij/testFramework/fixtures/CodeInsightTestFixture.java) class.
 
 Most operations in plugin tests require a file open in the in-memory editor, in which highlighting, completion and other operations will be performed. The in-memory editor instance is returned by `CodeInsightTestFixture.getEditor()`. To copy a file from the `testdata` directory to the test project directory and immediately open it in the editor, you can use the `CodeInsightTestFixture.configureByFile()` or `configureByFiles()` methods. The latter copies multiple files to the test project directory and opens the *first* of them in the in-memory editor.

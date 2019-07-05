@@ -33,6 +33,8 @@ Multi-part build numbers can also be used in the `since-build` and `until-build`
 <idea-version since-build="162" until-build="162.*"/> <!-- any 162-based version, 162.94, 162.94.11, etc.-->
 ```
 
+>> **Tip** Specific build numbers and their corresponding release version are available via _Previous Releases_ on the corresponding product's download page, e.g. [Previous IntelliJ IDEA Releases](https://www.jetbrains.com/idea/download/previous.html).
+
 The following branch numbers are used for *IntelliJ Platform* based products and build numbers of recent IDE versions:
 
 | Branch number                                                   | IntelliJ Platform version |

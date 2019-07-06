@@ -1,6 +1,19 @@
 ---
 title: Customizing UI Themes - Icons and UI Controls
 ---
+
+<style>
+  table {
+    width:100%;
+  }
+  th:first-child, td:first-child {
+    width: 20%;
+  }
+  th:last-child, td:last-child {
+    width: 60%;
+  }
+</style>
+
 A UI Theme is customized by adding information to the UI Theme description file that overrides the base (_Light_ or _Darcula_) UI Theme. 
 
 ## Introduction to UI Theme Description File Syntax
@@ -148,7 +161,6 @@ The following example would change the default background color to #AED7E3 for a
 ```
 Note that the wildcard `"*": {}` section must be within the `"ui": {}` section.
 
-
 #### Customizing the Color of Specific UI Control Types
 The color of a specific UI control types are changed by adding a key-value pair to the `"ui": {}` section of a Theme description file. 
 The `key` is the full `element.property` format and the `value` is the custom color.
@@ -166,6 +178,54 @@ The following example sets the background color for all labels to the color #F6E
 ```
 The `Label.background` entry supersedes, in the narrower context of label backgrounds, any default color as well as any wildcard color assigned to backgrounds.
 
+#### Customizing the Color of UI Tabs
+UI Tab colors are changed by [key-value pairs](#custom-ui-control-colors) in a Theme description file.
+
+There are two implementations of tabs in the IntelliJ Platform:
+* Editor Tabs, which e.g., represent open files in the [Editor window](https://www.jetbrains.com/help/idea/using-code-editor.html), and in [Tool Window bars](https://www.jetbrains.com/help/idea/tool-windows.html#bars_and_buttons).
+* Tabbed Panes, which e.g., are used for the [Run/Debug Configurations dialog](https://www.jetbrains.com/help/idea/run-debug-configurations-dialog.html).
+
+The control keys for UI Tabs were expanded from release 2019.1 to 2019.2 of the IntelliJ Platform.
+The 2019.1 release control keys are compatible with release 2019.2 and later versions of the IntelliJ Platform. 
+
+| Release 2019.1 Element | Release 2019.2 Element | Description of Release 2019.2 Element |
+|------|---------|---------|
+| N/A  | **`DefaultTabs`** | Applied to all tabs except `TabbedPane`, _unless_ overridden by a more specific Tab control element. |
+| **`EditorTabs`**  | **`EditorTabs`** | Applied only to Editor tabs. Overrides any `DefaultTab` settings. 192 has many more `property` settings than 191. |
+| **`ToolWindow.HeaderTab`** | **`ToolWindow.HeaderTab`** | Applied only to Tool Window tabs. Overrides any `DefaultTab` settings. 192 has many more `property` settings than 191. |
+| **`DebuggerTabs`** | **`DefaultTabs`** | `DefaultTab` settings are used instead of `DebuggerTabs`, except for key `DebuggerTabs.underlineHeight`. |
+| **`TabbedPane`** | **`TabbedPane`** | Applied only to Tabbed Panes. |
+| **`Plugins.Tab`** | **`TabbedPane`** | Use `TabbedPane` instead. |
+| **`SearchEverywhere.Tab`** | **`SearchEverywhere.Tab`** | No change. |
+
+Methods for identifying UI control keys are in the [Finding Attribute Keys for UI Controls](#finding-attribute-keys-for-ui-controls) section. 
+
+For example, here is an excerpt from the IntelliJ Platform [High Contrast Theme](upsource:///platform/platform-resources/src/themes/HighContrast.theme.json):
+Note that a Theme file can mix versions of `property` identifiers:
+* The first three `property` entries are recognized by release 2019.1, and ignored by subsequent releases because they are defined by new `property` identifiers.
+* The `underlineColor` `property` is recognized by release 2019.1 and subsequent releases.
+* The `underlineHeight` `property` was introduced in release 2019.2, and is ignored by previous releases.
+* The `underlinedTabBackground` `property` was introduced in release 2019.2, replaces the 2019.1 `selectedBackground`, and is ignored by previous releases.
+* The `inactiveColoredFileBackground` `property` was introduced in release 2019.2, replaces the 2019.1 `inactiveMaskColor`, and is ignored by previous releases.
+
+```json
+{
+  "ui": {
+    "EditorTabs": {
+      "selectedForeground": "#FFFFFF", 
+      "selectedBackground": "#0e5d73",
+      "inactiveMaskColor": "#000000FF",
+
+      "underlineColor": "#1AEBFF",
+      "underlineHeight": 4,
+
+      "underlinedTabBackground": "#000000",
+      "inactiveColoredFileBackground": "#00000000"
+    }
+  }
+}
+```
+
 ### Customizing the Borders of UI Controls
 The color and geometry of borders used in UI controls can be customized by key-value pairs in a Theme description file. 
 The format of keys for borders is `element.property`, where:
@@ -177,7 +237,6 @@ The format of keys for borders is `element.property`, where:
   It is specified as top, left, bottom, and right insets.  
 
 Methods for identifying UI control keys are in the [Finding Attribute Keys for UI Controls](#finding-attribute-keys-for-ui-controls) section. 
-
 
 #### Customizing the Border Appearance of Specific UI Controls
 The appearance of borders for specific UI control types are customized by adding a key-value pair to the `"ui": {}` section of a Theme description file. 

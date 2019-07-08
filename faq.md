@@ -98,6 +98,7 @@ This FAQ is a topical index of questions that have been asked (and answered) on 
 *  [Why are the inspection results shown multiple times?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206142489-visitXmlAttribute-question)
 *  [How can I provide a quick fix that creates a method?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206142769-Triggering-Create-Method-intention)
 *  [Is it possible to inspect only the elements that have been modified after the last full inspection?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206800645-How-to-inspect-only-the-elements-modified-since-the-last-class-inspection)
+*  [ExternalAnnotator not in sync with current editor](https://intellij-support.jetbrains.com/hc/en-us/community/posts/115000337510-Only-trigger-externalAnnotator-when-the-file-system-is-in-sync)
 
 ## Project Structure
 *  [Can I add a new module dependency storage format?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206137859-Dependency-storage-formats-)

@@ -96,7 +96,7 @@ All keys must follow this Naming Pattern:
 | **`Focused`**    | The current focused component. | `Button.focusedBorderColor` |
 | **`Selected`**   | A selected tab or any other control that has equally meaningful selected and inactive states. | `ToolWindow.HeaderTab.selectedBackground` |
 | **`Hover`** <br/> **`Pressed`** | An action as indicated in states. | `Link.hoverForeground` <br/> `Link.pressedForeground` |
-| **`Error`** <br/> **`Warning`** <br/> **`Success`** | Validation states. [See example](https://jetbrains.github.io/ui/principles/validation_errors/) in the guide article. | `ValidationTooltip.errorBackground` <br/> `ValidationTooltip.warningBorderColor` |
+| **`Error`** <br/> **`Warning`** <br/> **`Success`** | Validation states. [See example](https://jetbrains.design/intellij/principles/validation_errors/) in the guide article. | `ValidationTooltip.errorBackground` <br/> `ValidationTooltip.warningBorderColor` |
 | **`Disabled`**   | Unavailable components. | `Label.disabledForeground` |
 
 #### Part

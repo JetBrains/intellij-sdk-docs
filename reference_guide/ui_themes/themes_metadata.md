@@ -58,7 +58,11 @@ The following minimal sample demonstrates all details required when exposing UI 
     - `description` - Description to be shown to Theme authors editing `*.theme.json` files
     - `deprecated` - `true` when key is deprecated, please provide explanation and/or replacement in `description` if available
     - `source` - FQN of the underlying UI component implementation
-  
+    - `since` - The release number (e.g. `[2019.2]`) when this UI customization key was exposed. 
+                A release number prior to 2019.2 is valid.
+
+> **Note** Support for the `since` attribute began with version 2019.2, so this attribute is only displayed in versions 2019.2 and later.
+      
 > **TIP** It is highly recommended to always provide a `description` entry, so Theme authors can understand usages.
 
 > **TIP** Do not remove existing keys, but deprecate them instead to help Theme authors upgrade their existing themes.

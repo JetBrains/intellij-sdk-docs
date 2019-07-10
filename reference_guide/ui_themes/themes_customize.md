@@ -258,11 +258,16 @@ Some keys and strategies for applying them can be gleaned from the [UI Theme ref
 For a general search, here some suggested methods for locating UI control keys.
 
 ### Finding a UI Control Key Using Code Completion in the Editor
-The preferred method of finding UI control keys is to use the code completion feature in the IntelliJ IDEA editor. 
+The preferred method of finding UI control keys is to use the [Code Completion](https://www.jetbrains.com/help/idea/auto-completing-code.html#Auto-Completing_Code.xml) feature in the IntelliJ IDEA editor. 
 Note that some keys presented by the code completion feature may be deprecated. 
 New entries in the `"ui": {}` section will invoke the code completion popup, as shown below:
 
 ![UI Control Key Code Completion](img/uit_control_complete.png)
+
+Beginning with version 2019.2 of the IntelliJ Platform, the editor has added features for Code Completion and [Quick Documentation](https://www.jetbrains.com/help/idea/viewing-reference-information.html#inline-quick-documentation) to show the release in which a UI control key began to be supported.
+It appears as the _Since_ attribute in editor popups.
+In the Quick Documentation popup the format is e.g. _Since: 2019.2_.
+The Code Completion popup is similar, but it the format is e.g. _[Since 2019.2]_.
 
 ### Finding a UI Control Key using Laf Defaults UI
 Using the [Laf Defaults](/reference_guide/internal_actions/internal_ui_lafd.md) inspector, enter the `element` portion of the key. 

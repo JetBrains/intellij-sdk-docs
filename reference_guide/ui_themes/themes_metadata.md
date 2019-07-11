@@ -50,6 +50,7 @@ The following minimal sample demonstrates all details required when exposing UI 
 
 ```     
 
+### Attributes
 - `name` - Human-readable name, e.g., plugin name
 - `fixed` - `false` by default, `true` if metadata describes external elements, e.g., an UI library
 - `ui` - Root element listing all customization keys:
@@ -167,4 +168,4 @@ Metadata is split up as follows:
 
 New keys should be added to `IntelliJPlatform.themeMetadata.json` only (or corresponding "local" `*.themeMetadata.json` file of the plugin if applicable).
 
-Please make sure to respect [Key Naming Scheme](#key-naming-scheme) and keep alphabetical ordering of keys.
+Please make sure to add a `description` and use `since` and `deprecated` attributes explained in [Attributes](#attributes). Respect [Key Naming Scheme](#key-naming-scheme) and keep alphabetical ordering of keys.

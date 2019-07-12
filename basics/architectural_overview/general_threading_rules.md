@@ -48,9 +48,9 @@ The `checkCanceled` should be called often enough to guarantee smooth cancellati
 have a lot of `checkCanceled` calls inside. But if your process does lengthy non-PSI activity, you might need to
 insert explicit `checkCanceled` calls so that it happens frequently, e.g. on each Nth loop iteration.
 
-## Preventing UI freezes
+## Read action cancellability
 
-Background threads shouldn't take read actions for a long time. The reason is that if the UI thread needs a write action (e.g. the user types something), it must acquire it as soon as possible, otherwise the UI will freeze until all background threads have released their read actions.
+Background threads shouldn't take plain read actions for a long time. The reason is that if the UI thread needs a write action (e.g. the user types something), it must be acquired as soon as possible, otherwise the UI will freeze until all background threads have released their read actions.
 
 The best known approach to that is to cancel background read actions whenever there's a write action about to occur, and restart that background read action later from the scratch. Editor highlighting, code completion, Goto Class/File/etc actions all work like this.
 To achieve that, the lengthy background operation is started with a `ProgressIndicator`, and a special listener
@@ -60,9 +60,10 @@ and the thread should stop its operation (and finish the read action) as soon as
  
 There are two recommended ways of doing this:
 
-* If you're on UI thread, create a `ReadTask` and pass it to one of `ProgressIndicatorUtils.schedule*` methods. Inside `onCanceled` method, schedule it again if the activity should be restarted. 
+* If you're on UI thread, call `ReadAction.nonBlocking`
 * If you're already in a background thread, use `ProgressManager.getInstance().runInReadActionWithWriteActionPriority()` in a loop, until it passes or the whole activity becomes obsolete.
 
-In both approaches, you should always check at the start of each read action, if the objects you're working with are still valid, and if the whole operation still makes sense (i.e. not canceled by the user, the project isn't closed, etc.)
+In both approaches, you should always check at the start of each read action, if the objects you're working with are still valid, and if the whole operation still makes sense (i.e. not canceled by the user, the project isn't closed, etc.). With `ReadAction.nonBlocking`,
+`expireWhen` is a convenient place for that.
 
-If the activity you're doing has to access [file-based index](../indexing_and_psi_stubs.md) (e.g. it's doing any kind of project-wide PSI analysis, resolves references, etc), you should override `ReadTask#runBackgroundProcess` and use "smart-mode" read action there: `DumbService.getInstance(project).runReadActionInSmartMode(() -> performInReadAction(indicator))`
+If the activity you're doing has to access [file-based index](../indexing_and_psi_stubs.md) (e.g. it's doing any kind of project-wide PSI analysis, resolves references, etc), use `ReadAction.nonBlocking(...).inSmartMode()`.

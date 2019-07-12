@@ -2,6 +2,90 @@
 title: Optimizing Performance
 ---
 
-Various topics around measuring and optimizing performance of plugins.
+## Working with PSI efficiently
 
-(WIP)
+#### Avoid `PsiElement` methods which are expensive with deep trees
+
+* `getText` traverses the whole tree under the given element, and concatenates strings.
+
+Consider `textMatches` instead.
+
+* `getTextRange`, `getContainingFile`, `getProject` traverse the tree up to the file, which can be long in very nested trees.
+
+If you only need PSI element length, use `getTextLength`. File and project often can be computed once per some analysis
+and then stored in fields or passed via parameters.
+
+* Additionally, `getText`, `getNode`, `getTextRange`, etc, all need AST, which can be quite an expensive operation. See below.
+
+#### Avoid loading too many parsed trees or documents into memory at the same time
+
+Ideally, only AST nodes from files open in the editor should be present in the memory.
+Everything else, even if it's needed for resolve/highlighting purposes, can be accessed via PSI interfaces,
+but its implementations should use stubs underneath, which are less CPU- and memory-expensive.
+See `StubBasedPsiElementBase` documentation for more details.
+
+If stubs don't suit your case well (e.g. the information you need is large and/or very rarely needed, or you're
+developing a plugin for a language whose PSI you don't control), you can create your own index (via `FileBasedIndexExtension`)
+or a `PsiFileGist`.
+
+You can use `AstLoadingFilter` in production and `PsiManagerEx#setAssertOnFileLoadingFilter` in tests
+to ensure you're not loading AST accidentally.
+
+The same applies to documents: only the ones opened in editors should be loaded.
+Usually, you shouldn't need document contents (as most information can be retrieved from PSI). If you nevertheless
+need documents, consider saving the information you need to index (via `FileBasedIndexExtension`) 
+or a gist (`PsiFileGist` or `VirtualFileGist`) to get it in a cheaper way later. 
+If you still need documents, then at least ensure you load them one by one and don't hold them on
+strong references to let GC free the memory as quickly as possible. 
+
+#### Cache results of heavy computations
+
+These include `PsiElement#getReference(s)`, `PsiReference#resolve` (and `multiResolve` and other equivalents),
+expression types, type inference results, control flow graphs, etc.
+
+Usually, `CachedValue` works well.
+
+If the information you cache depends only on a subtree of the current PSI element 
+(and nothing else: no resolve results or other files), you can cache it in a field in that `PsiElement` and drop the cache
+in an override of `ASTDelegatePsiElement#subtreeChanged`.
+  
+## Improving indexing performance
+
+#### Avoid using AST
+
+Use lexer information instead of parsed trees if possible.
+
+If impossible, use light AST which doesn't create memory-hungry AST nodes inside, so traversing it might be faster. 
+Make sure to traverse only the nodes you need to.
+
+For stub index, implement `LightStubBuilder`. For other indices, you can get the light AST manually 
+via `((PsiDependentFileContent) fileContent).getLighterAST()`.
+
+#### Consider prebuilt stubs
+
+If your language has a massive standard library, which is mostly the same for all users, you can avoid stub-indexing it
+in each installation by providing prebuilt stubs with your distribution. See `PrebuiltStubsProvider` extension.
+
+## Avoiding UI freezes
+
+#### Don't perform long operations in UI thread
+
+In particular, don't traverse VFS, parse PSI, resolve references or query `FileBasedIndex`.
+
+There are cases when the platform itself invokes such expensive code (e.g. resolve in `AnAction#update`).
+We're trying to eliminate them. Meanwhile, you can try to speed up what you can in your language, it'll be beneficial anyway, as it'll also improve
+background highlighting performance.
+
+`WriteAction`s currently have to happen on UI thread, so to speed them up, you can try moving as much as possible
+out of write action into a preparation step which can be then invoked in background (e.g. using `ReadAction#nonBlocking`).
+
+Don't do anything expensive in event listeners. Ideally, you should just clear some caches.
+You can also schedule background processing of events, but be prepared that some new events might be delivered
+before your background processing starts, and thus the world might have changed by that moment or 
+even in the middle background processing. Consider using `MergingUpdateQueue` and `ReadAction.nonBlocking` to mitigate these issues.
+
+Massive batches of VFS events can be pre-processed in background, see `AsyncFileListener`. 
+
+#### Don't block EDT by long non-cancellable `ReadAction`s in background threads
+
+See [threading model](../../basics/architectural_overview/general_threading_rules.md), especially its section on *Read Action Cancellability*.

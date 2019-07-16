@@ -1,20 +1,26 @@
 ---
-title: 2. Editor coordinates system. Positions and offsets
+title: 2. Editor Coordinate Systems - Positions and Offsets
 ---
 
+The previous tutorial [Working with Text](working_with_text.md) discussed extending the [AnAction.java](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java) class, and using an [AnActionEvent](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnActionEvent.java) object.
+The event object provides access to [Project](upsource:///platform/core-api/src/com/intellij/openapi/project/Project.java), [Document](upsource:///platform/core-api/src/com/intellij/openapi/editor/Document.java), and [Editor](upsource:///platform/editor-ui-api/src/com/intellij/openapi/editor/Editor.java) objects.
 
-Every caret in the editor has a set of properties describing its coordinates.
-These properties can be accessed by obtaining a
-[caret model instance](upsource:///platform/editor-ui-api/src/com/intellij/openapi/editor/CaretModel.java).
-Working with caret positions and their logical and visual properties will be explained in the sample below.
+Every caret has a set of properties describing its position in one of several coordinate systems.
+This tutorial describes how to access information about the caret(s) in the editor.
 
 ## 2.1. Pre-requirements
-Access to the Editor is performed through an action.
+In this tutorial the [editor_basics](https://github.com/JetBrains/intellij-sdk-docs/tree/master/code_samples/editor_basics) code sample is used to explore caret positions.
+In particular, the **Caret Position** action added by `editor_basics` to the editor context menu is used to retrieve information about the current caret position.  
 
-## 2.2. Accessing caret positions
+![Editor Basics Menu](img/edit_basics_menu.png){:width="600px"}
 
-To get an access to caret positions an instance of `CaretModel` should be obtained.
+The source code for the Java class behind the menu action is [EditorAreaIllustration.java](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/editor_basics/src/main/java/org/intellij/sdk/editor/EditorAreaIllustration.java).
+The focus of discussion will be the `EditorAreaIllustration.actionPerformed()` method.
 
+## 2.2. Accessing Caret Positions from the CaretModel Object
+The properties of a caret can be accessed by obtaining an instance of the [CaretModel](upsource:///platform/editor-ui-api/src/com/intellij/openapi/editor/CaretModel.java) object for a caret.
+As in the [Working with Text](working_with_text.md) tutorial, the `AnActionEvent` is used to get the `Editor` object.
+The `Editor` object provides access to the `CaretModel` object, as shown below:
 ```java
 public class EditorAreaIllustration extends AnAction {
     @Override
@@ -23,18 +29,45 @@ public class EditorAreaIllustration extends AnAction {
         CaretModel caretModel = editor.getCaretModel();
     }
     @Override
-    public void update(AnActionEvent e) {
-       //...
-    }
+    public void update(AnActionEvent e) { /* ... */ }
 }
 ```
 
-## 2.3. Logical position
+## 2.3. Caret Position
+When a Document is opened the editor assigns an internal, zero-based coordinate system to lines and columns in the Document.
+The first line in a Document and the first character in each line are assigned the zero position.
+Note that the editor coordinate system is different from what is shown in the editor UI, which is one-based rather than zero-based.
 
-[LogicalPosition.java](upsource:///platform/editor-ui-api/src/com/intellij/openapi/editor/LogicalPosition.java)
-represents a line and a column of the current logical position of the caret. Logical positions ignore folding —
-for example, if the top 10 lines of the document are folded, the 10th line in the document will have the line number 10 in its logical position.
+[//]: # (TODO: Mention multiple carets, primary carets, single caret in Editor = primary caret)
 
+### 2.3.1. Caret Logical Position
+The caret _Logical Position_ is a zero-based, (line and column) position of the caret in the Editor Tool Window.
+Line values are based on the corresponding lines in the underlying Document being edited.
+Logical Position information is obtained from the [LogicalPosition](upsource:///platform/editor-ui-api/src/com/intellij/openapi/editor/LogicalPosition.java) object for that caret.   
+
+The Logical Position line number of a caret ignores the effects of settings that change the presentation of a Document within the Editor Tool Window.
+Examples of these settings are [Code (Line) Folding](https://www.jetbrains.com/help/idea/working-with-source-code.html#code_folding) and [Soft Line Wrap](https://www.jetbrains.com/help/idea/using-code-editor.html#f804afd8). 
+This means regardless of whether one or more lines in an Editor Tool Window are folded or soft-wrapped, the caret Logical Position line number will not change.
+
+The image below shows the simplest case of reporting Logical Position using the caret position functionality of the `editor_basics` plugin.
+No Soft Wrap or Code Folding is applied.
+Each line has a comment showing the Logical Position line number.
+The caret - a blue block - is placed on the letter "p" in "public".
+The caret is reported to be at Logical Position (5,0) - which is Logical (Position) line 5, character 0 - the first character in the line.
+[Caret Visual Position](#232-caret-visual-position), [caret leaning,](#233-caret-column-position), and [caret offset](#234-caret-offset) are discussed in later sections.  
+
+![Caret Logical Position](img/logical_pos_exp.png){:width="800px"}
+
+If Logical Position line numbers 1-3 are folded into line 0, the caret is still reported as Logical Position (5,0).
+This means that caret Logical Position is not changed by Code Folding:  
+
+![Caret Logical Position with Folding](img/logical_pos_folded.png){:width="800px"} 
+
+However, note that applying Code Folding _does change the reported Visual Position_ of the caret even if the Logical Position stays constant.
+More about [Visual Position](#232-caret-visual-position) is discussed below, but it's clear combinations of Code Folding and Soft Wrap can mean that one Logical Position of a caret could map to multiple Visual Positions.
+It is for this reason the Editor interface provides a number of methods to work with a caret Logical and Visual Position, such as the method `Editor.logicalToVisualPosition()`.
+
+The `LogicalPosition` object for a caret is obtained from the caret's `CaretModel`object, as shown in the code snippet below.
 ```java
 public class EditorAreaIllustration extends AnAction {
     @Override
@@ -44,25 +77,26 @@ public class EditorAreaIllustration extends AnAction {
         LogicalPosition logicalPosition = caretModel.getLogicalPosition();
     }
     @Override
-    public void update(AnActionEvent e) {
-        //...
-    }
+    public void update(AnActionEvent e) { /* ... */ }
 }
 ```
 
-Logical position may store additional parameters that define its mapping to
-[VisualPosition.java](upsource:///platform/editor-ui-api/src/com/intellij/openapi/editor/VisualPosition.java).
-Rationale is that a single logical pair matches a virtual space introduced by soft wrap, i.e. different visual positions
-may correspond to the same logical position. It's convenient to store exact visual location details within the logical
-position in order to simplify further 'logical position' -> 'visual position' mapping.
+### 2.3.2. Caret Visual Position
+A caret's _Visual Position_ differs from Logical Position in that it takes into account editor presentation settings such as Code Folding and Soft Line Wrap.
+In doing so, [VisualPosition](upsource:///platform/editor-ui-api/src/com/intellij/openapi/editor/VisualPosition.java) counts - zero-based - the lines of a Document that are _displayed_ in an editor Tool Window.  
+Consequently, Visual Position lines are not uniquely mapped to corresponding lines in the underlying Document being edited.
 
-## 2.4. Visual position
+For example, when Soft Line Wrap is applied to a line displayed in an Editor Tool Window it affects the Visual Position.
+In the image below, Soft Line Wrap has been applied to Logical line three.
+With the caret placed at the same location as in previous tests, it is evident the Logical Position has not changed.
+However, the Visual Position line number has increased by 1!
+The comments on each line illustrate how the Soft Wrap portion of Editor Line three is considered Visual Position line four, as though it was a separate line.
 
-[VisualPosition.java](upsource:///platform/editor-ui-api/src/com/intellij/openapi/editor/VisualPosition.java)
-represents a visual position and may differ from the corresponding logical position.
-Visual positions take folding into account — for example,
-if the top 10 lines of the document are folded, the 10th line in the document will have the line number 1 in its visual position.
+![Caret Visual Position with Soft-Wrap](img/vis_pos_soft_wrap.png){:width="800px"} 
 
+The Editor interface provides a number of methods to work with a caret Logical and Visual Position, such as the method `Editor.visualToLogicalPosition()`.
+
+The Visual Position object for a caret is obtained from the caret's `CaretModel` object, as shown in the code snippet below. 
 ```java
 public class EditorAreaIllustration extends AnAction {
     @Override
@@ -73,16 +107,58 @@ public class EditorAreaIllustration extends AnAction {
         VisualPosition visualPosition = caretModel.getVisualPosition();
     }
     @Override
-    public void update(AnActionEvent e) {
-        //...
-    }
+    public void update(AnActionEvent e) { /* ... */ }
 }
 ```
 
-## 2.5. Offset
+### 2.3.3. Caret Column Position
+The _Column Position_ is a count of characters from the beginning of a Logical (Position) line to the current caret position in that line.
+Characters are counted using a zero-based numbering system, so the first character of a line is numbered zero.
+Note that Column Position is different from what is shown in the editor UI, which uses a one-based numbering scheme.
 
-An absolute offset for a given caret position is accessible through `CaretModel` as well:
+Column Position includes:
+* The first character in a Logical line.
+* Whitespace, such as tabs.
+  Tabs can occupy multiple columns, up to the tab size set for the editor.
+* The character selected by the caret.
 
+More specifically, the Logical Position of a caret represents the boundary between two characters.
+As defined in the [LogicalPosition](upsource:///platform/editor-ui-api/src/com/intellij/openapi/editor/LogicalPosition.java) class, if a caret position is associated with a succeeding character it is said to _Lean Forward_.
+
+[//]: # (TODO: Add an understandable definition for characters leaning forward. BOL leans, just before "space" does not.)
+
+In the example below, placing a (red) line caret on the first visible character in Logical line three produces a **complete lack of lean forward?!**
+**Only with caret color #FF0000 ?! The same color as for 'Unknown Symbol' in my Preferences \| Editor \| Color Scheme \| General**
+
+[//]: # (TODO: Why does this not work for red line caret?)
+
+![Caret Column Position - Line Caret](img/caret_col_pos_line.png){:width="800px"} 
+
+In the example below, placing a (blue) block caret on the first visible character in Logical line three produces a column position of 0 for both Visual and Logical Positions.
+In both Visual and Logical Positions the character leans forward, meaning it is associated with the succeeding character in the Logical line.
+
+[//]: # (TODO: Why does this seem to always return leans forward for a block caret?)
+
+![Caret Column Position - Block Caret](img/caret_col_pos_block.png){:width="800px"} 
+
+
+### 2.3.4. Caret Offset
+The _Offset_ of a caret is a character count from the beginning of a Document to the caret position.
+Caret offsets are always calculated in terms of Logical Position.
+The caret Offset includes:
+* The first (0th) character in a document.
+* Whitespace characters, including end-of-line and tabs.
+* Any characters after end-of-line if the IDE settings permit them.
+  (**Preferences \| Editor \| General \| Virtual Space**)
+* The character selected by the caret.
+
+The example below demonstrates the Offset of a caret placed at the first character of Logical line one.
+Note the Offset is 22, which is 1 greater than the number of visible characters on line one, and the first character on line two.
+This is because the Offset includes the EOL character for the first line.
+
+![Line 2 Caret Offset](img/caret_offset_l2.png){:width="800px"}
+
+The Offset for a given caret position is accessible through `CaretModel` as well:
 ```java
 public class EditorAreaIllustration extends AnAction {
     @Override
@@ -94,15 +170,14 @@ public class EditorAreaIllustration extends AnAction {
         int offset = caretModel.getOffset();
     }
     @Override
-    public void update(AnActionEvent e) {
-        //...
-    }
-}
+    public void update(AnActionEvent e) { /* ... */ }
+ }
 ```
 
-## 2.6. Displaying position values
-To display the actual values of logical and visual positions we add an
-`Messages.showInfoMessage()` call that will show them in form of notification after the action is performed.
+
+## 2.4. Displaying position values
+To display the actual values of logical and visual positions an
+`Messages.showInfoMessage()` call shows them in form of notification after the action is performed.
 
 ```java
 public class EditorAreaIllustration extends AnAction {
@@ -118,28 +193,9 @@ public class EditorAreaIllustration extends AnAction {
                         "Offset: " + offset, "Caret Parameters Inside The Editor");
     }
     @Override
-    public void update(AnActionEvent e) {
-           //...
-    }
+    public void update(AnActionEvent e) { /* ... */ }
 }
 ```
 
-Check out, compile, and run the
-[Editor Basics Plugin](https://github.com/JetBrains/intellij-sdk-docs/tree/master/code_samples/editor_basics),
-then move carets, invoke
-[EditorAreaIllustration](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/editor_basics/src/org/jetbrains/tutorials/editor/basics/EditorAreaIllustration.java)
-action, and see how logical and visual positions are related dependently on folding.
-
-Find the action in the context menu:
-
-![Show coordinates action](img/coordinates_action.png)
-
-Perform the action to see caret positions:
-
-![Show coordinates action](img/coordinates_demo.png)
-
-
-
-
-
+[//]: # (TODO: Add section with hints for reader to work with multiple carets.)
 

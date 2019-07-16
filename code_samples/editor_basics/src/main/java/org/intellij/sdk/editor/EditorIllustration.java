@@ -1,4 +1,6 @@
-package org.jetbrains.tutorials.editor.basics;
+// Copyright 2000-2019 JetBrains s.r.o. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
+
+package org.intellij.sdk.editor;
 
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.command.WriteCommandAction;
@@ -24,14 +26,15 @@ public class EditorIllustration extends AnAction {
     final Project project = e.getRequiredData(CommonDataKeys.PROJECT);
     //Access document, caret, and selection
     final Document document = editor.getDocument();
+    // Get information about the selection
     final SelectionModel selectionModel = editor.getSelectionModel();
-
     final int start = selectionModel.getSelectionStart();
     final int end = selectionModel.getSelectionEnd();
-    //Making the replacement
+    //Make the replacement with the name of this plugin
     WriteCommandAction.runWriteCommandAction(project, () ->
-        document.replaceString(start, end, "Replacement")
+        document.replaceString(start, end, "Replaced by editor_basics")
     );
+    // De-select the text range that was just replaced
     selectionModel.removeSelection();
   }
 

@@ -4,7 +4,6 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/code_samples/comparing_references_inspection/comparing_references_inspection.iml" filepath="$PROJECT_DIR$/code_samples/comparing_references_inspection/comparing_references_inspection.iml" group="code_samples" />
       <module fileurl="file://$PROJECT_DIR$/code_samples/conditional_operator_intention/conditional_operator_intention.iml" filepath="$PROJECT_DIR$/code_samples/conditional_operator_intention/conditional_operator_intention.iml" group="code_samples" />
-      <module fileurl="file://$PROJECT_DIR$/code_samples/editor_basics/editor_basics.iml" filepath="$PROJECT_DIR$/code_samples/editor_basics/editor_basics.iml" group="code_samples" />
       <module fileurl="file://$PROJECT_DIR$/code_samples/facet_basics/facet_basics.iml" filepath="$PROJECT_DIR$/code_samples/facet_basics/facet_basics.iml" group="code_samples" />
       <module fileurl="file://$PROJECT_DIR$/code_samples/framework/framework.iml" filepath="$PROJECT_DIR$/code_samples/framework/framework.iml" group="code_samples" />
       <module fileurl="file://$PROJECT_DIR$/.idea/intellij-sdk-docs.iml" filepath="$PROJECT_DIR$/.idea/intellij-sdk-docs.iml" />

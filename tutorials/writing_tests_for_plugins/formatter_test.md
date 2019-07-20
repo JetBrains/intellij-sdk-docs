@@ -45,6 +45,21 @@ public void testFormatter() {
 }
 ```
 
+**Hint: Registering a new file type**
+
+In case you are using a File Extension which is not known to IDEA, the test will error in the first line (`myFixture.configureByFiles()`).
+
+To fix this, you can use the following code to register a file type and extension mapping beforehand:
+
+```java
+WriteCommandAction.runWriteCommandAction(getProject(), () -> {
+    FileTypeManager.getInstance().associateExtension(YourFileType.INSTANCE, YourFileType.DEFAULT_EXTENSION);
+});
+```
+
+**Alternative base test case:** You can also extend from `com.intellij.psi.formatter.FormatterTestCase`; check that
+class for the detailed usage.
+
 ### 5.3. Run the test
 
 Run the test and make sure it's green.

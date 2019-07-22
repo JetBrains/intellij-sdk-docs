@@ -6,16 +6,16 @@ redirect_from:
 
 This page lists some example PhpStorm plugins created by third party developers.
 
-## Symfony2 Plugin
+## Symfony
 
-Symfony2 plugin is a free plugin for Symfony2 framework developers.
+Symfony plugin is a free plugin for Symfony framework developers.
 
 There are lots of futures included into this plugin, such as Symfony-specific completion and navigation for symbols, templates, service container, Doctrine, translations, routes, forms, events, and more.
 
-* [Official Symfony2 plugin Web Site](https://symfony2-plugin.espend.de/)
+* [Official Symfony plugin Web Site](https://symfony2-plugin.espend.de/)
 * [GitHub](https://github.com/Haehnchen/idea-php-symfony2-plugin)
 * [Symfony Development using PhpStorm Tutorials](https://confluence.jetbrains.com/display/PhpStorm/Symfony+Development+using+PhpStorm)
-* [Symfony2 plugin in PhpStorm Plugins Repository](https://plugins.jetbrains.com/plugin/7219?pr=phpStorm)
+* [Symfony plugin in PhpStorm Plugins Repository](https://plugins.jetbrains.com/plugin/7219-symfony-support)
 
 ## Magicento
 

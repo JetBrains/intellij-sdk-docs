@@ -48,3 +48,5 @@ public void testFormatter() {
 ### 5.3. Run the test
 
 Run the test and make sure it's green.
+
+>> **TIP** See also [`com.intellij.psi.formatter.FormatterTestCase`](upsource:///platform/testFramework/src/com/intellij/psi/formatter/FormatterTestCase.java) as convenient base class.

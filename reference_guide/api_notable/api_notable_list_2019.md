@@ -2,6 +2,16 @@
 title: Notable Changes in IntelliJ Platform and Plugins API 2019.*
 ---
 
+# 2019.3 
+
+## Notable Changes in IntelliJ Platform 2019.3
+
+`PlatformTestCase` renamed to `HeavyPlatformTestCase`
+: Now reflects its "heavy test" characteristics (see [Light and Heavy Tests](/basics/testing_plugins/light_and_heavy_tests.md)).
+                           
+                           
+                           
+                           
 # 2019.2 
 
 ## Notable Changes in IntelliJ Platform 2019.2

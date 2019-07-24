@@ -30,6 +30,8 @@ Before executing each test, the project will be reused if the test case returns 
 
 > **Note** If you need to set up a multi-module project for your tests, you **must** write a heavy test. 
 
+> **Note** In 2019.3, `PlatformTestCase` has been renamed to `HeavyPlatformTestCase` reflecting its "heavy test" characteristics.
+
 The setup code for a multi-module Java project looks something like that:
 
 ```java

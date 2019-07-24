@@ -72,7 +72,7 @@ There are two ways to add child components. The recommended way is to use factor
   note("""Do not have an account? <a href="https://account.jetbrains.com/login">Sign Up</a>""", span, wrap)
   ```
 
-These method also support **property bindings**, allowing you to automatically load the value displayed in the component from a property and to store it back. The easiest way to do that is to pass a reference to a Kotlin bound property:
+These methods also support **property bindings**, allowing you to automatically load the value displayed in the component from a property and to store it back. The easiest way to do that is to pass a reference to a Kotlin bound property:
 ```kotlin
 checkBox("Show tabs in single row", uiSettings::scrollTabLayoutInEditor)
 ```
@@ -170,7 +170,7 @@ val panel = panel {
 
 ### Combo Boxes
 
-Use the `comboBox` method with either a bound property or a getter/setter pair:
+Use the `comboBox` method with either a bound property, or a getter/setter pair:
 
 ```kotlin
 comboBox(DefaultComboBoxModel<Int>(tabPlacements), uiSettings::editorTabPlacement)

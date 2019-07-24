@@ -70,6 +70,9 @@ Unbundled plugins
 
 ## Notable Changes in IntelliJ Platform 2019.1
 
+`com.intellij.testFramework.InspectionTestCase` changed to light test
+: Use dedicated `ProjectDescriptor` or rollback project setup changes in `tearDown()` (see [Light and Heavy Tests](/basics/testing_plugins/light_and_heavy_tests.md)). 
+
 `@org.jetbrains.annotations.ApiStatus.AvailableSince`
 : External annotations for IntelliJ Platform are generated and attached to plugin projects automatically (replacing `@since` Javadoc).
 

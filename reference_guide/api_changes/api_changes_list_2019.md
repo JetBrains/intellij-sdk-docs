@@ -45,7 +45,7 @@ Recompile your code to pick up the new signature.
 `com.intellij.extapi.psi.PsiElementBase` class removed
 : Please use `com.intellij.psi.impl.PsiElementBase` or one of its descendants as a base class for PSI elements, e.g. `com.intellij.extapi.psi.ASTWrapperPsiElement`, as suggested in [Custom Language Support Tutorial](../../tutorials/custom_language_support/grammar_and_parser.md).
 
-c
+`com.intellij.extapi.psi.MetadataPsiElementBase` class removed
 : Please use different base class for PSI elements.
 
 `com.intellij.ide.actions.SearchAgainAction` class now extends `com.intellij.openapi.editor.actionSystem.EditorAction` and inherits its final method `actionPerformed`

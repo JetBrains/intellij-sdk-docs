@@ -55,7 +55,7 @@ In this case, you bind a UI Designer form to your class extending
 [DialogWrapper](upsource:///platform/platform-api/src/com/intellij/openapi/ui/DialogWrapper.java),
 bind the top-level panel of the form to a field and return that field from the `createCenterPanel()` method.
 
-To display the dialog, you call the `show()` method and then use the `getExitCode()` method to check how the dialog was closed.
+To display the dialog, you call the `show()` method and then use the `getExitCode()` method to check how the dialog was closed. The `showAndGet()` method can be used to combine these two calls.
 
 To customize the buttons displayed in the dialog (replacing the standard `OK/Cancel/Help` set of buttons), you can override either the `createActions()` or `createLeftActions()` methods.
 Both of these methods return an array of Swing Action objects.
@@ -69,7 +69,7 @@ The method will be called automatically by timer.
 If the currently entered data is valid, you need to return `null` from your implementation.
 Otherwise, you need to return a
 [ValidationInfo](upsource:///platform/platform-api/src/com/intellij/openapi/ui/ValidationInfo.java)
-class which encapsulates an error message and an optional component associated with the invalid data.
+object which encapsulates an error message and an optional component associated with the invalid data.
 If you specify a component, an error icon will be displayed next to it, and it will be focused when the user tries to invoke the `OK` action.
 
 ## Example
@@ -106,8 +106,7 @@ Usage of
 ```java
 JButton testButton = new JButton();
 testButton.addActionListener(actionEvent -> {
-  boolean result = new SampleDialogWrapper().showAndGet();
-  if(result) {
+  if(new SampleDialogWrapper().showAndGet()) {
     // user pressed ok
   }
 });

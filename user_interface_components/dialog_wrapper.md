@@ -55,7 +55,7 @@ In this case, you bind a UI Designer form to your class extending
 [DialogWrapper](upsource:///platform/platform-api/src/com/intellij/openapi/ui/DialogWrapper.java),
 bind the top-level panel of the form to a field and return that field from the `createCenterPanel()` method.
 
-To display the dialog, call the `showAndGet()` method, which waits until the dialog is closed and returns its exit code.
+To display the dialog, you call the `show()` method and then use the `getExitCode()` method to check how the dialog was closed. The `showAndGet()` method can be used to combine these two calls.
 
 To customize the buttons displayed in the dialog (replacing the standard `OK/Cancel/Help` set of buttons), you can override either the `createActions()` or `createLeftActions()` methods.
 Both of these methods return an array of Swing Action objects.

@@ -17,6 +17,9 @@ See the note on how to document new problems on the main page reference_guide/ap
 `com.intellij.json.JsonFileTypeFactory` class removed
 : Use `com.intellij.fileType` extension point instead.
 
+`com.intellij.util.containers.ConcurrentHashSet` class removed
+: Use `com.intellij.util.containers.ContainerUtil#newConcurrentSet` instead.
+
 # 2019.2 
 
 ## Changes in IntelliJ Platform 2019.2

@@ -17,22 +17,20 @@ public class EditorAreaIllustration extends AnAction {
   public void actionPerformed(AnActionEvent anActionEvent) {
     final Editor editor = anActionEvent.getRequiredData(CommonDataKeys.EDITOR);
     CaretModel caretModel = editor.getCaretModel();
-
-    System.out.println("\n");
-    System.out.print("caretModel.isUpToDate: " + caretModel.isUpToDate() + ", ");
-    System.out.println("Number of carets: " + caretModel.getAllCarets().size());
-    Caret primary = caretModel.getPrimaryCaret();
-    System.out.println("Primary caret is valid? " +  primary.isValid() + ", has: " + primary.getLogicalPosition().toString() + ", Offset: " + primary.getOffset());
-
-    LogicalPosition logicalPosition = caretModel.getLogicalPosition();
-    VisualPosition visualPosition = caretModel.getVisualPosition();
-    int offset = caretModel.getOffset();
-    Messages.showInfoMessage(logicalPosition.toString() + "\n" +
-                             visualPosition.toString() + "\n" +
-                             "Offset: " + offset,
-                             "Caret Parameters Inside The Editor");
+    boolean caretModelUpToDate = caretModel.isUpToDate();
+    Caret primaryCaret = caretModel.getPrimaryCaret();
+    boolean primaryCaretIsValid = primaryCaret.isValid();
+    StringBuilder report = new StringBuilder();
+    if ( caretModelUpToDate && primaryCaretIsValid ) {
+      report.append(primaryCaret.getLogicalPosition().toString() + "\n" );
+      report.append(primaryCaret.getVisualPosition().toString() + "\n" );
+      report.append("Offset: " + primaryCaret.getOffset() );
+    } else {
+      report.append("Caret model up to date: " + caretModelUpToDate + "\n" + "Primary Caret is valid: " + primaryCaretIsValid);
+    }
+    Messages.showInfoMessage(report.toString(),"Caret Parameters Inside The Editor");
   }
-
+  
   @Override
   public void update(AnActionEvent e) {
     //Get required data keys

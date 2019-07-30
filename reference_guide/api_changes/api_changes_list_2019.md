@@ -20,8 +20,8 @@ See the note on how to document new problems on the main page reference_guide/ap
 `com.intellij.util.containers.ConcurrentHashSet` class removed
 : Use `com.intellij.util.containers.ContainerUtil#newConcurrentSet` instead.
 
-`constructor com.intellij.openapi.editor.impl.EditorFactoryImpl.<init>(com.intellij.openapi.editor.actionSystem.EditorActionManager)` constructor removed
-: Use `constructor com.intellij.openapi.editor.impl.EditorFactoryImpl.<init>()` instead.
+`com.intellij.openapi.editor.impl.EditorFactoryImpl(EditorActionManager)` constructor removed
+: Use constructor `com.intellij.openapi.editor.impl.EditorFactoryImpl()` instead.
 
 # 2019.2 
 

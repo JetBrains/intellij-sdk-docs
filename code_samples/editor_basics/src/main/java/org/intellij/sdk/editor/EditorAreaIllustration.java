@@ -7,6 +7,8 @@ import com.intellij.openapi.editor.*;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.Messages;
 
+import java.util.List;
+
 /**
  * @author Anna Bulenkova
  */
@@ -15,14 +17,19 @@ public class EditorAreaIllustration extends AnAction {
   public void actionPerformed(AnActionEvent anActionEvent) {
     final Editor editor = anActionEvent.getRequiredData(CommonDataKeys.EDITOR);
     CaretModel caretModel = editor.getCaretModel();
+
+    System.out.println("\n");
+    System.out.print("caretModel.isUpToDate: " + caretModel.isUpToDate() + ", ");
+    System.out.println("Number of carets: " + caretModel.getAllCarets().size());
+    Caret primary = caretModel.getPrimaryCaret();
+    System.out.println("Primary caret is valid? " +  primary.isValid() + ", has: " + primary.getLogicalPosition().toString() + ", Offset: " + primary.getOffset());
+
     LogicalPosition logicalPosition = caretModel.getLogicalPosition();
     VisualPosition visualPosition = caretModel.getVisualPosition();
     int offset = caretModel.getOffset();
     Messages.showInfoMessage(logicalPosition.toString() + "\n" +
                              visualPosition.toString() + "\n" +
-                             "Offset: " + offset
-                             // TODO: Remove the next line of diagnostic code
-                             + "\n" + "LogicalPosition.leansForward = " + String.valueOf(logicalPosition.leansForward),
+                             "Offset: " + offset,
                              "Caret Parameters Inside The Editor");
   }
 

@@ -56,6 +56,7 @@
             text="Caret Position"
             description="Reports information about the caret position."
             icon="EditorBasicsIcons.Sdk_default_icon">
+      <keyboard-shortcut keymap="$default" first-keystroke="control alt G"/>
       <add-to-group group-id="EditorPopupMenu" anchor="first"/>
     </action>
   </actions>

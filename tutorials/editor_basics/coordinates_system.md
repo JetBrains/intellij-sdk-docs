@@ -38,7 +38,7 @@ When a Document is opened the editor assigns an internal, zero-based coordinate 
 The first line in a Document and the first character in each line are assigned the zero position.
 Note that the editor coordinate system is different from what is shown in the editor UI, which is one-based rather than zero-based.
 
-[//]: # (TODO: Mention multiple carets, primary carets, single caret in Editor = primary caret)
+<!-- TODO: Mention multiple carets, primary carets, single caret in Editor = primary caret -->
 
 ### 2.3.1. Caret Logical Position
 The caret _Logical Position_ is a zero-based, (line and column) position of the caret in the Editor Tool Window.
@@ -122,25 +122,14 @@ Column Position includes:
   Tabs can occupy multiple columns, up to the tab size set for the editor.
 * The character selected by the caret.
 
-More specifically, the Logical Position of a caret represents the boundary between two characters.
+The Logical Column Position of a caret represents the boundary between two characters.
 As defined in the [LogicalPosition](upsource:///platform/editor-ui-api/src/com/intellij/openapi/editor/LogicalPosition.java) class, if a caret position is associated with a succeeding character it is said to _Lean Forward_.
 
-[//]: # (TODO: Add an understandable definition for characters leaning forward. BOL leans, just before "space" does not.)
-
-In the example below, placing a (red) line caret on the first visible character in Logical line three produces a **complete lack of lean forward?!**
-**Only with caret color #FF0000 ?! The same color as for 'Unknown Symbol' in my Preferences \| Editor \| Color Scheme \| General**
-
-[//]: # (TODO: Why does this not work for red line caret?)
-
-![Caret Column Position - Line Caret](img/caret_col_pos_line.png){:width="800px"} 
-
 In the example below, placing a (blue) block caret on the first visible character in Logical line three produces a column position of 0 for both Visual and Logical Positions.
-In both Visual and Logical Positions the character leans forward, meaning it is associated with the succeeding character in the Logical line.
-
-[//]: # (TODO: Why does this seem to always return leans forward for a block caret?)
-
+In the Logical Position the character leans forward, meaning it is associated with the succeeding character in the Logical line.
+For the Visual Position the character is said to _Lean Right_, indicating its association with the succeeding character in the Visual line.
+ 
 ![Caret Column Position - Block Caret](img/caret_col_pos_block.png){:width="800px"} 
-
 
 ### 2.3.4. Caret Offset
 The _Offset_ of a caret is a character count from the beginning of a Document to the caret position.
@@ -197,5 +186,5 @@ public class EditorAreaIllustration extends AnAction {
 }
 ```
 
-[//]: # (TODO: Add section with hints for reader to work with multiple carets.)
+<!-- TODO: Add section with hints for reader to work with multiple carets. -->
 

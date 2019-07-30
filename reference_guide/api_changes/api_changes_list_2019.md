@@ -85,7 +85,10 @@ Recompile your code to pick up the new signature.
 `com.yourkit` package removed
 : YourKit library has been extracted into the separate plugin which is not bundled in all IDEs by default. YourKit library is a library for profiling IDE, and its util classes shouldn't be used for general purpose. Instead of `com.yourkit.util.Strings` please use  `org.apache.commons.lang.StringUtils`.  Instead of `com.yourkit.util.ArrayUtil` please use `org.apache.commons.lang.ArrayUtils`
 
-`org.jetbrains.intellij.build.ProductProperties`: fields `yourkitAgentBinariesDirectoryPath` and `enableYourkitAgentInEAP` have been removed
+`org.jetbrains.intellij.build.ProductProperties.yourkitAgentBinariesDirectoryPath` field removed
+: Please bundle [performanceTesting plugin](https://plugins.jetbrains.com/plugin/7819-performance-testing) in case you would like to bundle YourKit profiler within your IDE.
+
+`org.jetbrains.intellij.build.ProductProperties.enableYourkitAgentInEAP` field removed
 : Please bundle [performanceTesting plugin](https://plugins.jetbrains.com/plugin/7819-performance-testing) in case you would like to bundle YourKit profiler within your IDE.
 
 `com.intellij.extapi.psi.PsiElementBase` class removed

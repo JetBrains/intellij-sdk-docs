@@ -3,11 +3,51 @@ title: Incompatible Changes in IntelliJ Platform and Plugins API 2019.*
 ---
 
 <!--
+Before documenting a breaking API change, please, make sure that the change cannot be avoided 
+in an alternative way.
 
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
-See the note on how to document new problems on the main page reference_guide/api_changes_list.md 
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
+APIs marked with @ApiStatus.Experimental or @ApiStatus.Internal don't need to be documented.
 
+To document a new incompatible change, add a new line with the problem pattern
+followed by a 2nd line with ": "-prefixed human-readable description and recommended fix/action.
+
+The following problem patterns are supported:
+
+<package name> package removed
+<class name> class removed
+<class name> renamed to <new class name>
+
+<class name>.<method name>(<human-readable parameters>) method removed
+<class name>.<method name>(<human-readable parameters>) method return type changed from <before> to <after>
+<class name>.<method name>(<human-readable parameters>) method parameter <type> removed
+<class name>.<method name>(<human-readable parameters>) method parameter type changed from <before> to <after>
+<class name>.<method name>(<human-readable parameters>) method visibility changed from <before> to <after>
+<class name>.<method name>(<human-readable parameters>) method marked final
+<class name> (class|interface) now (extends|implements) <class name> and inherits its final method <method name>(<human-readable parameters>)?
+
+<class name>(<human-readable parameters>) constructor removed
+<class name>(<human-readable parameters>) constructor parameter <type> removed
+<class name>(<human-readable parameters>) constructor parameter type changed from <before> to <after>
+<class name>(<human-readable parameters>) constructor visibility changed from <before> to <after>
+
+<class name>.<field name> field removed
+<class name>.<field name> field type changed from <before> to <after>
+<class name>.<field name> field visibility changed from <before> to <after>
+
+<class name>.<method name>(<human-readable parameters>) abstract method added
+<class name> class moved to package <package name>
+
+where <class name> is a fully-qualified name of the class, e.g. com.intellij.openapi.actionSystem.AnAction$InnerClass.
+<method name> is the exact method's name. Note that constructors have dedicated patterns.
+<human-readable parameters> is a string representing parameters, which are not necessarily fully qualified. They do not affect the parser. For example, instead of (java.lang.Object, java.util.List, int) you are free to write (Object, List<String>, int).
+
+NOTE: If a change you're trying to document doesn't match any of the above patterns, fill in a ticket in the YouTrack. 
+An example of a ticket is https://youtrack.jetbrains.com/issue/PR-1218. Until supported, you may document the change as you prefer, and I will correct it later.
+
+NOTE: You are allowed to prettify the pattern using markdown-features:
+ 1) code quotes: `org.example.Foo.methodName`
+ 2) links [org.example.Foo](https://github.com/JetBrains/intellij-community/tree/master/)
+ 3) both code quotes and links: [`org.example.Foo`](https://github.com/JetBrains/intellij-community/tree/master/)
 -->
 
 # 2019.3
@@ -45,7 +85,10 @@ Recompile your code to pick up the new signature.
 `com.yourkit` package removed
 : YourKit library has been extracted into the separate plugin which is not bundled in all IDEs by default. YourKit library is a library for profiling IDE, and its util classes shouldn't be used for general purpose. Instead of `com.yourkit.util.Strings` please use  `org.apache.commons.lang.StringUtils`.  Instead of `com.yourkit.util.ArrayUtil` please use `org.apache.commons.lang.ArrayUtils`
 
-`org.jetbrains.intellij.build.ProductProperties`: fields `yourkitAgentBinariesDirectoryPath` and `enableYourkitAgentInEAP` have been removed
+`org.jetbrains.intellij.build.ProductProperties.yourkitAgentBinariesDirectoryPath` field removed
+: Please bundle [performanceTesting plugin](https://plugins.jetbrains.com/plugin/7819-performance-testing) in case you would like to bundle YourKit profiler within your IDE.
+
+`org.jetbrains.intellij.build.ProductProperties.enableYourkitAgentInEAP` field removed
 : Please bundle [performanceTesting plugin](https://plugins.jetbrains.com/plugin/7819-performance-testing) in case you would like to bundle YourKit profiler within your IDE.
 
 `com.intellij.extapi.psi.PsiElementBase` class removed

@@ -47,7 +47,7 @@ In plugin.xml add:
 
 ### 2.5.B. Register file type (2019.2 or later)
 
-When matching via file extension, pattern or exact file name, registration of file type should be done via `plugin.xml` only without implementing `FileTypeFactory`. 
+When matching via file extension, pattern or exact file name, registration of file type should be done via `com.intellij.fileType` extension point instead of implementing dedicated `FileTypeFactory`. 
 
 ```xml
 <extensions defaultExtensionNs="com.intellij">

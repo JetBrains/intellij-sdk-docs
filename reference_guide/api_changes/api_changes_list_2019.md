@@ -63,6 +63,9 @@ NOTE: You are allowed to prettify the pattern using markdown-features:
 `com.intellij.openapi.editor.impl.EditorFactoryImpl(EditorActionManager)` constructor removed
 : Use constructor `com.intellij.openapi.editor.impl.EditorFactoryImpl()` instead.
 
+`com.intellij.util.net.ssl.CertificateManager.HOSTNAME_VERIFIER` field removed
+: Use `org.apache.http.conn.ssl.DefaultHostnameVerifier` instead.
+
 # 2019.2 
 
 ## Changes in IntelliJ Platform 2019.2

@@ -514,7 +514,7 @@ In this case, the UI form class can look like this:
 public class ConverterComponent extends BasicDomElementComponent<Converter> {
     private JPanel myRootPane;
     private TextPanel myConverterId;
-    private PsiClassPanel myConverterForClass;
+    private PsiClassPanel myConverterClass;
 
     public ConverterComponent(final Converter domElement) {
         super(domElement);
@@ -523,7 +523,7 @@ public class ConverterComponent extends BasicDomElementComponent<Converter> {
     }
 }
 ```
-All the fields here are actually bound to controls in a GUI form.
+All the fields here are now bound to controls in a GUI form.
 
 Very often you'll have to create your own file editor. Then, to use all the binding and undo functionality, it's suggested to inherit your [`FileEditorProvider`](upsource:///platform/platform-api/src/com/intellij/openapi/fileEditor/FileEditorProvider.java) from [`PerspectiveFileEditorProvider`](upsource:///xml/dom-openapi/src/com/intellij/util/xml/ui/PerspectiveFileEditorProvider.java), create an instance of [`DomFileEditor`](upsource:///xml/dom-openapi/src/com/intellij/util/xml/ui/DomFileEditor.java) there, and pass a [`BasicDomElementComponent`](upsource:///xml/dom-openapi/src/com/intellij/util/xml/ui/BasicDomElementComponent.java). To easily create an editor with a caption at the top, like in our EJB and JSF, you may use the static method `DomFileEditor.createDomFileEditor()`. `DomFileEditor` automatically listens to all changes in the document corresponding to the given DOM element, and therefore refreshes your component on undo. If you want to listen to changes in additional documents, use the methods `addWatchedDocument()`, `removeWatchedDocument()`, `addWatchedElement()`, `removeWatchedElement()` in `DomFileEditor`.
 

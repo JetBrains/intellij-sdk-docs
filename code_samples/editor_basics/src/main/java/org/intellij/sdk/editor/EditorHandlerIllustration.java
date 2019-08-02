@@ -9,24 +9,59 @@ import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * Menu action to clone a new caret based on an existing one.
  * @author Anna Bulenkova
+ * @see com.intellij.openapi.actionSystem.AnAction
  */
 public class EditorHandlerIllustration extends AnAction {
+  
+  /**
+   * This block of static code does not pertain to this class.
+   * It registers the custom MyTypedHandler, an TypedActionHandler
+   * that handles actions activated by typing in the editor.
+   * This registration code just needs to appear in a class (like AnAction class)
+   * that gets instantiated as part of IntelliJ startup.
+   */
+  static {
+    final EditorActionManager actionManager = EditorActionManager.getInstance();
+    final TypedAction typedAction = actionManager.getTypedAction();
+    typedAction.setupHandler(new MyTypedHandler());
+  }
+  
+  /**
+   * Clones a new caret at a higher Logical Position line number.
+   * @param e  Event related to this action
+   */
   @Override
-  public void actionPerformed(@NotNull AnActionEvent anActionEvent) {
-    final Editor editor = anActionEvent.getRequiredData(CommonDataKeys.EDITOR);
+  public void actionPerformed(@NotNull AnActionEvent e) {
+    // Editor is known to exist from update, so it's not null
+    final Editor editor = e.getRequiredData(CommonDataKeys.EDITOR);
+    // Get the action manager in order to get the necessary action handler...
     EditorActionManager actionManager = EditorActionManager.getInstance();
-    //Insert one more caret below the active caret
+    // Get the action handler registered to clone carets
     EditorActionHandler actionHandler = actionManager.getActionHandler(IdeActions.ACTION_EDITOR_CLONE_CARET_BELOW);
-    actionHandler.execute(editor, editor.getCaretModel().getCurrentCaret(), anActionEvent.getDataContext());
+    // Clone one caret below the active caret
+    actionHandler.execute(editor, editor.getCaretModel().getPrimaryCaret(), e.getDataContext());
   }
-
+  
+  /**
+   * Sets visibility of this action menu item if:
+   *   A project is open,
+   *   An editor is active,
+   *   At least one caret exists
+   * @param e  Event related to this action
+   */
   @Override
-  public void update(@NotNull final AnActionEvent anActionEvent) {
+  public void update(@NotNull final AnActionEvent e) {
+    boolean visibility = false;
     //Set visible if at least one caret is available
-    final Project project = anActionEvent.getData(CommonDataKeys.PROJECT);
-    final Editor editor = anActionEvent.getData(CommonDataKeys.EDITOR);
-    anActionEvent.getPresentation()
-                 .setVisible((project != null && editor != null && !editor.getCaretModel().getAllCarets().isEmpty()));
+    final Project project = e.getProject();
+    final Editor editor = e.getData(CommonDataKeys.EDITOR);
+    if (editor != null && project != null) {
+      // Ensure the list of carets in the editor is not empty
+      visibility = !editor.getCaretModel().getAllCarets().isEmpty();
+    }
+    e.getPresentation().setVisible(visibility);
   }
+  
 }

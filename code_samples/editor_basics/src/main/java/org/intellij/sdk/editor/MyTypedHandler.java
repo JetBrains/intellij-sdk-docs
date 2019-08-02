@@ -10,14 +10,23 @@ import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * This is a custom TypedActionHandler that handles actions activated
+ * keystrokes in the editor.
+ * The execute method inserts a fixed string at Offset 0 of the document.
+ * Document changes are made in the context of a write action.
+ * MyTypedHandler is registered by static code in the EditorHandlerIllustration class.
  * @author Anna Bulenkova
+ * @see com.intellij.openapi.editor.actionSystem.TypedActionHandler
  */
 class MyTypedHandler implements TypedActionHandler {
   @Override
   public void execute(@NotNull Editor editor, char c, @NotNull DataContext dataContext) {
+    // Get the document and project
     final Document document = editor.getDocument();
     Project project = editor.getProject();
-    Runnable runnable = () -> document.insertString(0, "Inserted by editor_basics\n");
+    // Construct the runnable to substitute the string at offset 0 in the document
+    Runnable runnable = () -> document.insertString(0, "editor_basics\n");
+    // Make the document change in the context of a write action.
     WriteCommandAction.runWriteCommandAction(project, runnable);
   }
 }

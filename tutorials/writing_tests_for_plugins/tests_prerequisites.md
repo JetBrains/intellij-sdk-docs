@@ -23,6 +23,13 @@ All we need to do is point the run configuration's working directory to the root
 ```
 -ea -Xbootclasspath/p:../out/classes/production/boot -XX:+HeapDumpOnOutOfMemoryError -Xmx512m -XX:MaxPermSize=320m 
 -Didea.system.path=../test-system -Didea.home.path=../ -Didea.config.path=../test-config -Didea.test.group=ALL_EXCLUDE_DEFINED
+```       
+
+If you're using Gradle, system properties must be passed to forked JVM via `build.gradle`:
+```
+test {
+  systemProperty "idea.home.path", "/path/to/community/"
+}
 ```
 
 **Note**:

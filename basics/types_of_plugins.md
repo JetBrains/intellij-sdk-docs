@@ -4,9 +4,9 @@ title: Main Types of Plugins
 
 Products based on the *IntelliJ Platform* can be modified and adjusted for custom purposes by adding plugins. All downloadable plugins are available at the [JetBrains Plugin Repository](https://plugins.jetbrains.com/).
 
-The most common types of plugins include:
+最常用的插件类型包括：
 
-* Custom language support
+* 自定义语言支持
 * Framework integration
 * Tool integration
 * User interface add-ons

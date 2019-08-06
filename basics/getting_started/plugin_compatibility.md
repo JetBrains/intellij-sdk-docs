@@ -42,11 +42,11 @@ The following modules are currently available in all products based on IntelliJ 
 
 | Module or built-in plugin  | Functionality  | Product  | 
 |----------------------------|----------------|----------|
-| `com.intellij.modules.platform`  | (SDK Part II) Messaging, UI Themes, UI Components, Files, Documents, Actions, Components, Services, Extensions, Editors  | All  |
-| `com.intellij.modules.lang`  | (SDK Part VII) File Type, Lexer, Parser, Highlighting, References, Code Completion, Find, Rename, Formatter, Go to Class/Symbol  | All  |
-| `com.intellij.modules.xml`  | Working with XML DOM, Editing, Custom Models, Attributes, Dynamic DOM Definition, XSD/DTD  | All  |
-| `com.intellij.modules.vcs`  | TBD  | All  |
-| `com.intellij.modules.xdebugger`  | TBD  | All  |
+| `com.intellij.modules.platform`  | Messaging, UI Themes, UI Components, Files, Documents, Actions, Components, Services, Extensions, Editors  | All  |
+| `com.intellij.modules.lang`  | File Type, Lexer, Parser, Highlighting, References, Code Completion, Find, Rename, Formatter, Go to Class/Symbol  | All  |
+| `com.intellij.modules.xml`  | XML DOM, Editing, Custom Models, Attributes, Dynamic DOM Definition, XSD/DTD  | All  |
+| `com.intellij.modules.vcs`  | File Paths, VCS Revision Numbers, Content Revision, File Status, Change, Change List, Abstract VCS Extension and Change Provider  | All  |
+| `com.intellij.modules.xdebugger`  | `com.intellij.xdebugger.*` Debug Session, Stack Frame, Break Point, Source Position, Memory View, Tracked Instances | All  |
 
 This means a plugin can declare a dependency on `com.intellij.modules.vcs` and it will work in any product that supports version control, and since all products currently include the `com.intellij.modules.vcs` module, this plugin will work in all products.
 
@@ -54,8 +54,8 @@ The following modules or built-in plugins are available in these specific produc
 
 | Module or built-in plugin  | Functionality  | Product  | 
 |----------------------------|----------------|----------|
-| `com.intellij.modules.java`  | Java PSI model, Inspections, Intentions, Testing  | IntelliJ IDEA, Android Studio                   |
-| `com.intellij.modules.ultimate`      | TBD  | IntelliJ IDEA Ultimate Edition                                                       |
+| `com.intellij.modules.java`  | **Java** PSI Model, Inspections, Intentions, Completion, Refactoring, Test Framework  | IntelliJ IDEA, Android Studio                   |
+| `com.intellij.modules.ultimate`      | JavaScript, TypeScript, Java EE, JVM Frameworks: Spring, Play, Grails...  | IntelliJ IDEA Ultimate Edition                                                       |
 | `com.intellij.modules.androidstudio` | TBD  | Android Studio                                                                       |
 | `com.intellij.modules.appcode`       | TBD  | AppCode                                                                              |
 | `com.intellij.modules.cidr.lang`     | TBD  | AppCode, CLion                                                                       |
@@ -63,10 +63,10 @@ The following modules or built-in plugins are available in these specific produc
 | `com.intellij.modules.clion`         | TBD  | CLion                                                                                |
 | `com.intellij.modules.database`      | TBD  | IntelliJ IDEA Ultimate Edition, DataGrip, GoLand, PhpStorm, PyCharm, Rider, RubyMine  |
 | `com.intellij.modules.go`            | TBD  | GoLand                                                                               |
-| `com.intellij.modules.python`        | TBD  | PyCharm                                                                              |
-| `com.intellij.modules.rider`         | TBD  | Rider                                                                                |
+| ~~`com.intellij.modules.python`~~ `com.jetbrains.python`? | TBD  | PyCharm                                                                              |
+| `com.intellij.modules.rider`         | ReSharper Platform: Analysis, Completion, Refactoring, Navigation, Testing   | Rider                                                                                |
 | `com.intellij.modules.ruby`          | TBD  | RubyMine                                                                             |
-| `com.jetbrains.php`                  | TBD  | PhpStorm (built-in plugin)                                                           |
+| `com.jetbrains.php`                  | **Php** PSI Model, Inspections, Code Insight, Completion, Refactoring, Test Framework | PhpStorm (built-in plugin)                                                           |
 | `com.intellij.modules.webstorm`      | TBD  | WebStorm                                                                             |
 
 ## Plugin dependencies

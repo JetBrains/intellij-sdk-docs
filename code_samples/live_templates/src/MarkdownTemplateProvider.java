@@ -10,6 +10,6 @@ public class MarkdownTemplateProvider implements DefaultLiveTemplatesProvider {
   @Nullable
   @Override
   public String[] getHiddenLiveTemplateFiles() {
-    return new String[0];
+    return null;
   }
 }

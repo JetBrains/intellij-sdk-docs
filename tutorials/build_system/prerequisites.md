@@ -121,6 +121,11 @@ The New Project Wizard produces the `my_gradle_plugin` project `build.gradle` fi
   
   // See https://github.com/JetBrains/gradle-intellij-plugin/
   intellij {
+      // you need to add plugins 'java' when you version is 2019.2
+      // See https://blog.jetbrains.com/platform/2019/06/java-functionality-extracted-as-a-plugin/
+      // plugins 'java'
+      // version '2019.2'
+      
       version '2019.1'
   }
   patchPluginXml {

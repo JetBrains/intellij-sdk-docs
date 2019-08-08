@@ -10,7 +10,7 @@ title: Plugin Compatibility with IntelliJ Platform Products
     width: 30%;
   }
   th:last-child, td:last-child {
-    width: 30%;
+    width: 25%;
   }
 </style>
 
@@ -45,12 +45,12 @@ The following table lists modules that are currently available in all products.
 Module FQN is listed on the left, an overview of functionality is listed in the middle column, and availability in products is listed on the right:
 
 | Plugin Dependency:<br>Module or Built-in Plugin  | Functionality  | IntelliJ Platform-Based Products  | 
-|----------------------------|----------------|----------|
+|--------------------------------------------------|----------------|-----------------------------------|
 | `com.intellij.modules.platform`  | Messaging, UI Themes, UI Components, Files, Documents, Actions, Components, Services, Extensions, Editors  | All  |
-| `com.intellij.modules.lang`  | File Type, Lexer, Parser, Highlighting, References, Code Completion, Find, Rename, Formatter, Code Navigation  | All  |
-| `com.intellij.modules.xml`  | XML, XML DOM, XSD/DTD, DOM Model  | All  |
-| `com.intellij.modules.vcs`  | VCS Revision Numbers, Content Revision, File Status, Change List, Change Provider  | All  |
-| `com.intellij.modules.xdebugger`  | Debug Session, Stack Frames, Break Points, Source Positions, Memory Views, Tracked Instances | All  |
+| `com.intellij.modules.lang`      | File Type, Lexer, Parser, Highlighting, References, Code Completion, Find, Rename, Formatter, Code Navigation  | All  |
+| `com.intellij.modules.xml`       | XML, XML DOM, XSD/DTD, DOM Model  | All  |
+| `com.intellij.modules.vcs`       | VCS Revision Numbers, Content Revision, File Status, Change List, Change Provider  | All  |
+| `com.intellij.modules.xdebugger` | Debug Session, Stack Frames, Break Points, Source Positions, Memory Views, Tracked Instances | All  |
 
 For example, if a plugin is dependent only on one or more of the modules in the table above, and declares the module dependencies in `plugin.xml`, it will work in any product based on the IntelliJ Platform.
 
@@ -66,22 +66,22 @@ You can make a plugin compatible with PHP functionality by also depending on the
 The following table lists modules or built-in plugins that provide specific functionality, and the products that currently ship with them.
 Module FQN is listed on the left, an overview of functionality is listed in the middle column, and availability in products is listed on the right:
 
-| Plugin Dependency:<br>Module or Built-in Plugin  | Functionality<br>Supports  | IntelliJ Platform-Based Products  | 
-|----------------------------|----------------|----------------------------|----------------|
-| `com.intellij.modules.java`          | **Java** language PSI Model, Inspections, Intentions, Completion, Refactoring, Test Framework  | IntelliJ IDEA, Android Studio                                   |
-| `com.intellij.modules.ultimate`      | JavaScript and TypeScript language PSI Models, Java EE, JVM Frameworks: Spring, Play, Grails...  | IntelliJ IDEA Ultimate Edition                                |
-| `com.intellij.modules.androidstudio` | Android SDK Platform, Build Tools, Platform Tools, SDK Tools | Android Studio                                                                                    |
-| `com.intellij.modules.appcode`       | CocoaPods, Core Data Objects, Device & Simulator Support, Testing with REST  | AppCode                                                                           |
-| `com.intellij.modules.cidr.lang`     | **C, C++, Objective-C/C++ and Swift** language PSI Model, Inspections, Intentions, Completion, Refactoring, Test Framework  | AppCode, CLion                     |
-| `com.intellij.modules.cidr.debugger` | Debugger Watches, Evaluations, Breakpoints, Inline Debugging  | AppCode, CLion, RubyMotion                                                                       |
-| `com.intellij.modules.clion`         | CMake, Profiler, Embedded Development, Remote Development, Remote Debug, Disassembly | CLion                                                                     |
+| Plugin Dependency:<br>Module or Built-in Plugin  | Functionality  | IntelliJ Platform-Based Products  | 
+|--------------------------------------------------|----------------|-----------------------------------|
+| `com.intellij.modules.java`          | **Java** language PSI Model, Inspections, Intentions, Completion, Refactoring, Test Framework  | IntelliJ IDEA, Android Studio         |
+| `com.intellij.modules.ultimate`      | JavaScript and TypeScript language PSI Models, Java EE, JVM Frameworks: Spring, Play, Grails...  | IntelliJ IDEA Ultimate Edition      |
+| `com.intellij.modules.androidstudio` | Android SDK Platform, Build Tools, Platform Tools, SDK Tools | Android Studio                                                          |
+| `com.intellij.modules.appcode`       | CocoaPods, Core Data Objects, Device & Simulator Support, Testing with REST  | AppCode                                                 |
+| `com.intellij.modules.cidr.lang`     | **C, C++, Objective-C/C++ and Swift** language PSI Model, Inspections, Intentions, Completion, Refactoring, Test Framework  | AppCode, CLion |
+| `com.intellij.modules.cidr.debugger` | Debugger Watches, Evaluations, Breakpoints, Inline Debugging  | AppCode, CLion, RubyMotion                                             |
+| `com.intellij.modules.clion`         | CMake, Profiler, Embedded Development, Remote Development, Remote Debug, Disassembly | CLion                                           |
 | `com.intellij.modules.database`      | **SQL** language PSI Model, Inspections, Completion, Refactoring, Queries | IntelliJ IDEA Ultimate Edition, DataGrip, GoLand, PhpStorm, PyCharm, Rider, RubyMine |
-| `com.intellij.modules.go`            | **Go** language PSI Model, Inspections, Intentions, Completion, Refactoring, Test Framework  | GoLand                                                            |
-| `com.intellij.modules.python`        | **Python** language PSI Model, Inspections, Intentions, Completion, Refactoring, Test Framework  | PyCharm                                                       |
-| `com.intellij.modules.rider`         | ReSharper Platform: **.NET** Analysis, Completion, Refactoring, Navigation, Testing   | Rider                                                                    |
-| `com.intellij.modules.ruby`          | **Ruby** language PSI Model, Inspections, Intentions, Completion, Refactoring, Test Framework  | RubyMine                                                        |
-| `com.jetbrains.php`                  | **PHP** language PSI Model, Inspections, Intentions, Completion, Refactoring, Test Framework | PhpStorm (built-in plugin)                                        |
-| `com.intellij.modules.webstorm`      | **Web** languages PSI Models, Inspections, Intentions, Completion, Refactoring, Test Framework  | WebStorm                                                       |
+| `com.intellij.modules.go`            | **Go** language PSI Model, Inspections, Intentions, Completion, Refactoring, Test Framework  | GoLand                                  |
+| `com.intellij.modules.python`        | **Python** language PSI Model, Inspections, Intentions, Completion, Refactoring, Test Framework  | PyCharm                             |
+| `com.intellij.modules.rider`         | ReSharper Platform: **.NET** Analysis, Completion, Refactoring, Navigation, Testing   | Rider                                          |
+| `com.intellij.modules.ruby`          | **Ruby** language PSI Model, Inspections, Intentions, Completion, Refactoring, Test Framework  | RubyMine                              |
+| `com.jetbrains.php`                  | **PHP** language PSI Model, Inspections, Intentions, Completion, Refactoring, Test Framework | PhpStorm (built-in plugin)              |
+| `com.intellij.modules.webstorm`      | **Web** languages PSI Models, Inspections, Intentions, Completion, Refactoring, Test Framework  | WebStorm                             |
 
 
 ## Verifying Dependency

@@ -69,6 +69,9 @@ NOTE: You are allowed to prettify the pattern using markdown-features:
 # 2019.2 
 
 ## Changes in IntelliJ Platform 2019.2
+Constructor injection referring to extension points not supported
+: Obtain reference to extension points via `(Project)ExtensionPointName.findExtension()` in your constructor instead.
+
 `com.intellij.openapi.components.BaseState.map$default(BaseState, Map, int, Object)` method removed
 : Use `com.intellij.openapi.components.BaseState.map()` instead.
 

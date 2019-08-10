@@ -2,7 +2,7 @@
 
 plugins {
     id 'java'
-    id 'org.jetbrains.intellij' version '0.4.9'
+    id 'org.jetbrains.intellij' version '0.4.10'
 }
 
 group 'org.intellij.sdk'
@@ -20,7 +20,7 @@ dependencies {
 
 // See https://github.com/JetBrains/gradle-intellij-plugin/
 intellij {
-  version '2019.2'
+  version '2019.1'
   updateSinceUntilBuild = false
 }
 patchPluginXml {

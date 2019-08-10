@@ -12,7 +12,7 @@
   <version>2.0.0</version>
 
   <!-- Compatible with the following versions of IntelliJ Platform -->
-  <idea-version since-build="171"/>
+  <idea-version since-build="191"/>
 
   <!-- Product and plugin compatibility requirements -->
   <depends>com.intellij.modules.lang</depends>
@@ -36,8 +36,8 @@
   <vendor url="https://plugins.jetbrains.com">IntelliJ Platform SDK</vendor>
 
   <actions>
-    <action id="EditorBasics.EditorIllustration"
-            class="org.intellij.sdk.editor.EditorIllustration"
+    <action id="EditorBasics.EditorIllustrationAction"
+            class="org.intellij.sdk.editor.EditorIllustrationAction"
             text="Editor Replace Text"
             description="Replaces selected text with 'Replacement'."
             icon="EditorBasicsIcons.Sdk_default_icon">

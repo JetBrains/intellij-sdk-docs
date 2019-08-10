@@ -1,7 +1,12 @@
+// Copyright 2000-2019 JetBrains s.r.o. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
+
 plugins {
   id 'java'
-  id 'org.jetbrains.intellij' version '0.4.9'
+  id 'org.jetbrains.intellij' version '0.4.10'
 }
+
+group 'org.intellij.sdk'
+version '2.0.0'
 
 sourceCompatibility = 1.8
 
@@ -15,15 +20,11 @@ dependencies {
 
 // See https://github.com/JetBrains/gradle-intellij-plugin/
 intellij {
-
-  // Define IntelliJ Platform API version to use for building this plugin
   version '2019.1'
-
-// Prevents patching <idea-version> attributes in plugin.xml
   updateSinceUntilBuild = false
-// Define a shared sandbox directory for running code sample plugins within an IDE.
-  sandboxDirectory = file("${project.projectDir}/../_idea-sandbox")
-
+}
+patchPluginXml {
+  version = project.version
 }
 
 // Force javadoc rebuild before jar is built

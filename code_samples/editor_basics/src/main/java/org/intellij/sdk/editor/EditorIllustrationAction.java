@@ -7,21 +7,22 @@ import com.intellij.openapi.command.WriteCommandAction;
 import com.intellij.openapi.editor.*;
 import com.intellij.openapi.editor.actionSystem.*;
 import com.intellij.openapi.project.Project;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Menu action to replace a selection of characters with a fixed string.
- * @author Anna Bulenkova
+ *
  * @see com.intellij.openapi.actionSystem.AnAction
  */
-public class EditorIllustration extends AnAction {
+public class EditorIllustrationAction extends AnAction {
   
   /**
    * Replaces the run of text selected by the primary caret with a fixed string.
    * @param e  Event related to this action
    */
   @Override
-  public void actionPerformed(final AnActionEvent e) {
-    //Get all the required data from data keys
+  public void actionPerformed(@NotNull final AnActionEvent e) {
+    // Get all the required data from data keys
     // Editor and Project were verified in update(), so they are not null.
     final Editor editor = e.getRequiredData(CommonDataKeys.EDITOR);
     final Project project = e.getRequiredData(CommonDataKeys.PROJECT);
@@ -40,18 +41,18 @@ public class EditorIllustration extends AnAction {
   }
   
   /**
-   * Sets visibility of this action menu item if:
+   * Sets visibility and enables this action menu item if:
    *   A project is open,
    *   An editor is active,
    *   Some characters are selected
    * @param e  Event related to this action
    */
   @Override
-  public void update(final AnActionEvent e) {
-    //Get required data keys
+  public void update(@NotNull final AnActionEvent e) {
+    // Get required data keys
     final Project project = e.getProject();
     final Editor editor = e.getData(CommonDataKeys.EDITOR);
-    //Set visibility only in case of existing project and editor and if a selection exists
-    e.getPresentation().setVisible((project != null && editor != null && editor.getSelectionModel().hasSelection()));
+    // Set visibility and enable only in case of existing project and editor and if a selection exists
+    e.getPresentation().setEnabledAndVisible( project != null && editor != null && editor.getSelectionModel().hasSelection() );
   }
 }

@@ -19,8 +19,7 @@ The most commonly used methods are:
 [Swing](https://docs.oracle.com/javase/tutorial/uiswing/start/index.html)
 component in the popup.
 
-*  `createListPopupBuilder()` creates a popup for choosing one or more items from a
-    [Swing JList](https://docs.oracle.com/javase/8/docs/api/javax/swing/JList.html).
+*  `createPopupChooserBuilder()` creates a popup for choosing one or more items from a plain `java.util.List`
 
 *  `createConfirmation()` creates a popup for choosing between two options, and performing different actions depending on which option is selected.
 

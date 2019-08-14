@@ -41,12 +41,12 @@ public class EditorAreaIllustration extends AnAction {
 When a `Document` is opened, the `Editor` assigns an internal, zero-based coordinate system to lines and columns in the `Document`. 
 The first line in a `Document` and the first character in each line are assigned the zero position. 
 Every character in a `Document` is assigned an [_Offset_](#caret-offset), which is a zero-based count of the characters from the beginning of the file to that character. 
-These coordinates are used to describe the line and column number for a caret position. 
-Note that the `Editor` coordinate system is different than the editor UI, which is one-based rather than zero-based.
+These [LogicalPosition](#caret-logical-position) coordinates are used to describe the line and column number for a caret position. 
+Note that the Logical Position coordinate system is different from the editor UI, which is one-based rather than zero-based.
 
-The diagram below shows the editor coordinate system applied to some example content. 
+The diagram below shows the Logical Position coordinate system applied to some example content. 
 The character "s" in the red box represents placing the cursor on that character. 
-It has the caret coordinates of line 1, column 9, and Offset 28.
+It has the caret position of line 1, column 9, and Offset 28. 
 More about caret [Offsets](#caret-offset) is discussed below.
 
 ![Editor Coordinates](img/editor_coords.png){:width="800px"}
@@ -73,7 +73,8 @@ This means that caret Logical Position is not changed by Code Folding:
 ![Caret Logical Position with Folding](img/logical_pos_folded.png){:width="800px"} 
 
 However, note that applying Code Folding _does change the reported Visual Position_ of the caret even if the Logical Position stays constant. 
-More about [Visual Position](#caret-visual-position) is discussed below. However it's clear combinations of Code Folding and Soft Wrap means that one Logical Position of a caret could map to multiple Visual Positions. 
+More about [Visual Position](#caret-visual-position) is discussed below. 
+However, it's clear combinations of Code Folding and Soft Wrap means that one Logical Position of a caret could map to multiple Visual Positions. 
 The `Editor` interface provides methods to work with a caret Logical and Visual Position, such as the method `Editor.logicalToVisualPosition()`.
 
 ### Caret Visual Position
@@ -114,14 +115,52 @@ Column Position includes:
   Tabs can occupy multiple columns, up to the tab size set for the editor.
 * The character selected by the caret.
 
-The Logical Column Position of a caret represents the boundary between two characters. 
-As defined in the [LogicalPosition](upsource:///platform/editor-ui-api/src/com/intellij/openapi/editor/LogicalPosition.java) class, if a caret position is associated with a succeeding character it is said to _Lean Forward_. 
-
-In the example below, placing a (blue) block caret on the first visible character in Logical line three produces a column position of 0 for both Visual and Logical Positions. 
-In the Logical Position the character leans forward, meaning it is associated with the succeeding character in the Logical line. 
-For the Visual Position the character is said to _Lean Right_, indicating its association with the succeeding character in the Visual line. 
+#### Caret Lean
+The Column Position of a caret is the boundary between two characters. 
+A caret can be associated with either a preceding or succeeding character. 
+The association is important in bidirectional text, where mapping from Logical Column Position to Visual Column Position is not continuous.
  
+As defined in the [LogicalPosition](upsource:///platform/editor-ui-api/src/com/intellij/openapi/editor/LogicalPosition.java) class, if a caret position is associated with a succeeding character it _Leans Forward_. 
+Otherwise, it is associated with the preceding character. 
+
+As defined in the [VisualPosition](upsource:///platform/editor-ui-api/src/com/intellij/openapi/editor/VisualPosition.java) class, if a caret position is associated with a succeeding character it _Leans Right_. 
+Otherwise, it is associated with the preceding character.
+
+#### Examples of Caret Lean
+In the example below, placing a (blue) block caret on the first visible character in Logical line three produces a column position of 0 for both Visual and Logical Positions. 
+Note that the text is unidirectional in this example. 
+In the Logical Position the caret leans forward, meaning it is associated with the succeeding character in the Logical line. 
+For the Visual Position the caret leans right, indicating its association with the succeeding character in the Visual line. 
+
 ![Caret Column Position - Block Caret](img/caret_col_pos_block.png){:width="800px"} 
+
+<br> 
+Consider the Java snippet below, and use the `editor_basics` **Caret Position** action to report caret information at each step. 
+Be sure to use the keyboard shortcut to invoke the action so that the caret position is not disturbed. 
+
+The line containing the `String` variable declaration contains bidirectional text. 
+Starting on the left end of the line, and using the arrow key to advance a line-shaped cursor to between the `("` characters reveals discontinuities in caret coordinate column positions. 
+* After the caret first moves from between `g(` to between `("`, the Logical and Visual Positions have equal column positions of 28, and neither leans. 
+  Note the value of the caret positions you measure may have different starting values because of line indentation, but the sign and magnitude of the changes in position will be the same.
+* Advancing the caret once more does not appear to visually move the cursor. 
+  However, the Logical Position column increases to 61, and although the Visual Position column does not change, it leans right. 
+* Continuing to advance the cursor (to the right) through the string causes the Logical Position column to _decrease_, and the Visual Position column to _increase_.   
+* Once the cursor advances to between the `".` characters, the Logical Position column position is again 28, and leans forward.
+  The Visual Position column position is now 61.
+* Moving the caret right once more does not appear to visually advance the cursor. 
+  However, the Logical Position and Visual Position column values are both 61, and both lean. 
+* As the cursor advances to the right, both Logical and Visual column values increase.
+
+```java
+  import static java.nio.charset.StandardCharsets.UTF_8;
+  public void showNow() {
+//34567890123456789012345678901234567890123456789012345678901234567890
+    String str = new String("تعطي يونيكود رقما فريدا لكل حرف".getBytes(), UTF_8);
+    System.out.println( str );
+  }
+```
+The apparent discontinuity in Logical Position is because the RTL portion of the string is treated (or counted) in the logical character order in which it would be written. 
+The apparent continuity in Visual Position is because the RTL portion of the string is counted in the visual order it is displayed in the code.
 
 ### Caret Offset
 The _Offset_ of a caret is a character count from the beginning of a `Document` to the caret position. 

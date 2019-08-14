@@ -9,6 +9,8 @@ redirect_from:
 
 Welcome to the _IntelliJ Platform_ SDK. This is the primary source of documentation for extending the _IntelliJ Platform_, by creating plugins, custom language support or building a custom IDE.
 
+> **TIP** JetBrains is looking for an experienced Developer Advocate to join the IntelliJ SDK team (remote possible): [Job Posting](https://www.jetbrains.com/careers/jobs/developer-advocate-272/)
+
 ## Getting Started
 
 * [**What is the IntelliJ Platform?**](intro/intellij_platform.md)

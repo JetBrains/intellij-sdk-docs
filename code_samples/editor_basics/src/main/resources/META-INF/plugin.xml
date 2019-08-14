@@ -1,0 +1,64 @@
+<!-- Copyright 2000-2019 JetBrains s.r.o. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+
+<idea-plugin>
+
+  <!--  Unique id for this plugin. Must stay constant for the life of the plugin.  -->
+  <id>org.intellij.sdk.editor</id>
+
+  <!-- Text to display as name on Preferences/Settings | Plugin page  -->
+  <name>SDK: Editor Sample Project</name>
+
+  <!-- The version of this plugin -->
+  <version>2.0.0</version>
+
+  <!-- Compatible with the following versions of IntelliJ Platform -->
+  <idea-version since-build="191"/>
+
+  <!-- Product and plugin compatibility requirements -->
+  <depends>com.intellij.modules.lang</depends>
+
+  <!-- Text to display as description on Preferences/Settings | Plugin page  -->
+  <description>
+    <![CDATA[
+        Illustrates various basic Editor APIs. Requires at least project to be open, and a file open in the editor to see the menu items this plugin adds to the editor popup menu.<br>Mouse over each of this plugin's menu items to see hints in the lower left corner of the IDE.
+      ]]>
+  </description>
+  <change-notes>
+    <![CDATA[
+      <ul>
+        <li><b>2.0.0</b> Convert to Gradle-based plugin</li>
+        <li><b>1.0.0</b> Release 2019.1 and earlier.</li>
+      </ul>
+    ]]>
+  </change-notes>
+
+  <!-- Text to display as company information on Preferences/Settings | Plugin page -->
+  <vendor url="https://plugins.jetbrains.com">IntelliJ Platform SDK</vendor>
+
+  <actions>
+    <action id="EditorBasics.EditorIllustrationAction"
+            class="org.intellij.sdk.editor.EditorIllustrationAction"
+            text="Editor Replace Text"
+            description="Replaces selected text with 'Replacement'."
+            icon="EditorBasicsIcons.Sdk_default_icon">
+      <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+    </action>
+    <action id="EditorBasics.EditorHandlerIllustration"
+            class="org.intellij.sdk.editor.EditorHandlerIllustration"
+            text="Editor Add Caret"
+            description="Adds a second caret below the existing one."
+            icon="EditorBasicsIcons.Sdk_default_icon">
+      <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+    </action>
+    <!-- Place this entry first in the popup menu; it's always enabled if a project and editor are open -->
+    <action id="EditorBasics.LogicalPositionIllustration"
+            class="org.intellij.sdk.editor.EditorAreaIllustration"
+            text="Caret Position"
+            description="Reports information about the caret position."
+            icon="EditorBasicsIcons.Sdk_default_icon">
+      <keyboard-shortcut keymap="$default" first-keystroke="control alt G"/>
+      <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+    </action>
+  </actions>
+
+</idea-plugin>

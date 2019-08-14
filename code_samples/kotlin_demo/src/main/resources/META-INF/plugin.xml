@@ -13,7 +13,7 @@
   <version>2.0.0</version>
 
   <!-- Minimum and maximum build numbers of IDEA compatible with the plugin. -->
-  <idea-version since-build="171.0"/>
+  <idea-version since-build="191.0"/>
 
   <!-- Product and plugin compatibility requirements -->
   <depends>com.intellij.modules.lang</depends>

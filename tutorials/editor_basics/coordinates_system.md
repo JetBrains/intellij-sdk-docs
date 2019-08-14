@@ -135,8 +135,9 @@ For the Visual Position the caret leans right, indicating its association with t
 ![Caret Column Position - Block Caret](img/caret_col_pos_block.png){:width="800px"} 
 
 <br> 
+
 Consider the Java snippet below, and use the `editor_basics` **Caret Position** action to report caret information at each step. 
-Be sure to use the keyboard shortcut to invoke the action so that the caret position is not disturbed. 
+Be sure to use the keyboard shortcut to invoke the action so that the caret position is not disturbed.  
 
 The line containing the `String` variable declaration contains bidirectional text. 
 Starting on the left end of the line, and using the arrow key to advance a line-shaped cursor to between the `("` characters reveals discontinuities in caret coordinate column positions. 
@@ -154,13 +155,13 @@ Starting on the left end of the line, and using the arrow key to advance a line-
 ```java
   import static java.nio.charset.StandardCharsets.UTF_8;
   public void showNow() {
-//34567890123456789012345678901234567890123456789012345678901234567890
+//234567890123456789012345678901234567890123456789012345678901234567890
     String str = new String("تعطي يونيكود رقما فريدا لكل حرف".getBytes(), UTF_8);
     System.out.println( str );
   }
 ```
 The apparent discontinuity in Logical Position is because the RTL portion of the string is treated (or counted) in the logical character order in which it would be written. 
-The apparent continuity in Visual Position is because the RTL portion of the string is counted in the visual order it is displayed in the code.
+The apparent continuity in Visual Position is because the RTL portion of the string is counted in the visual order in which it is displayed in the code.
 
 ### Caret Offset
 The _Offset_ of a caret is a character count from the beginning of a `Document` to the caret position. 

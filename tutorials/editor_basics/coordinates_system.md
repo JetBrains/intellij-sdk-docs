@@ -37,12 +37,16 @@ public class EditorAreaIllustration extends AnAction {
 }
 ```
 
-## Caret Coordinate Systems
+## Editor Coordinate Systems
 When a `Document` is opened, the `Editor` assigns an internal, zero-based coordinate system to lines and columns in the `Document`. 
 The first line in a `Document` and the first character in each line are assigned the zero position. 
 Every character in a `Document` is assigned an [_Offset_](#caret-offset), which is a zero-based count of the characters from the beginning of the file to that character. 
 These [LogicalPosition](#caret-logical-position) coordinates are used to describe the line and column number for a caret position. 
 Note that the Logical Position coordinate system is different from the editor UI, which is one-based rather than zero-based.
+
+Logical Position coordinates and other coordinate systems discussed in this tutorial can be used to characterize any location in an `Editor`, not just carets. 
+Hints used for code insights are characterized in terms of these coordinates, for example [HintManager.getHintPosition()](upsource:///platform/platform-impl/src/com/intellij/codeInsight/hint/HintManagerImpl.java). 
+Custom visual elements displayed in an `Editor`, called [Inlay](upsource:///platform/editor-ui-api/src/com/intellij/openapi/editor/Inlay.java) objects, are also expressed in terms of these coordinate systems.
 
 The diagram below shows the Logical Position coordinate system applied to some example content. 
 The character "s" in the red box represents placing the cursor on that character. 
@@ -90,7 +94,7 @@ The comments on each line illustrate how the Soft Wrap portion of Logical line t
 
 ![Caret Visual Position with Soft-Wrap](img/vis_pos_soft_wrap.png){:width="800px"} 
 
-The Logical and Visual Position objects for a caret are obtained from the `Caret` object, as shown in the code snippet below. 
+The Logical and Visual Position objects for a caret are obtained from the [Caret](upsource:///platform/editor-ui-api/src/com/intellij/openapi/editor/Caret.java) object, as shown in the code snippet below. 
 ```java
 public class EditorAreaIllustration extends AnAction {
     @Override

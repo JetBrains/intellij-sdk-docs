@@ -66,6 +66,9 @@ NOTE: You are allowed to prettify the pattern using markdown-features:
 `com.intellij.util.net.ssl.CertificateManager.HOSTNAME_VERIFIER` field removed
 : Use `org.apache.http.conn.ssl.DefaultHostnameVerifier` instead.
 
+`org.jetbrains.plugins.groovy.extensions.GroovyScriptTypeDetector(GroovyScriptType, String[])` constructor removed
+: Use constructor `GroovyScriptTypeDetector(GroovyScriptType)` instead, and `com.intellij.fileType` to register additional extensions.
+
 # 2019.2 
 
 ## Changes in IntelliJ Platform 2019.2

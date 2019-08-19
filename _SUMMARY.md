@@ -227,8 +227,13 @@
 * Debugger
 
 ## Part VIII - Product Specific
-* [Compatibility with Multiple Products](basics/getting_started/plugin_compatibility.md)
 * [Build Number Ranges](basics/getting_started/build_number_ranges.md)
+* [Compatibility with Multiple Products](basics/getting_started/plugin_compatibility.md)
+* Android Studio
+* AppCode
+* CLion
+* DataGrip
+* GoLand
 * [IntelliJ IDEA](products/idea.md)
     * [Tomcat Integration](reference_guide/tomcat_integration.md)
     * [Spring API](reference_guide/frameworks_and_external_apis/spring_api.md)
@@ -237,10 +242,9 @@
     * [PHP Open API](products/phpstorm/php_open_api.md)
     * [Existing Third Party Plugins](products/phpstorm/existing_plugins.md)
 * [PyCharm](products/pycharm.md)
-* DataGrip
-* Android Studio
-* Rider
-
+* [Rider](products/rider.md)
+* RubyMine
+* WebStorm
 
 ## Part IX - Custom IDEs
 * Build Your Own IDE

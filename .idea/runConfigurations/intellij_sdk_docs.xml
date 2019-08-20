@@ -1,6 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="intellij-sdk-docs" type="docker-deploy" factoryName="Docker Deployment" server-name="Docker">
-    <deployment type="dockerfile" path="$PROJECT_DIR$/Dockerfile">
+  <configuration default="false" name="intellij-sdk-docs" type="docker-deploy" factoryName="dockerfile" server-name="Docker">
+    <deployment type="dockerfile">
       <settings>
         <option name="JSONFilePath" value="$PROJECT_DIR$/container_settings.json" />
         <option name="command" value="" />
@@ -19,8 +20,10 @@
             </DockerVolumeBindingImpl>
           </list>
         </option>
+        <option name="sourceFilePath" value="$PROJECT_DIR$/Dockerfile" />
       </settings>
     </deployment>
     <method />
   </configuration>
 </component>
+

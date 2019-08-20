@@ -50,11 +50,13 @@ The following IDEs are based on the IntelliJ Platform:
   * [MPS](https://www.jetbrains.com/mps/)
   * [PhpStorm](https://www.jetbrains.com/phpstorm/)
   * [PyCharm](https://www.jetbrains.com/pycharm/)
+  * [Rider](#rider)
   * [RubyMine](https://www.jetbrains.com/ruby/) 
   * [WebStorm](https://www.jetbrains.com/webstorm/) 
 * [Android Studio](https://developer.android.com/studio/index.html) IDE from Google.
 * [CUBA Studio](https://www.cuba-platform.com/) 
 
+#### Rider
 JetBrains [Rider](https://www.jetbrains.com/rider/) uses the IntelliJ Platform differently than other IntelliJ based IDEs. It uses the IntelliJ Platform to provide the user interface for a C# and .NET IDE, with the standard IntelliJ editors, tool windows, debugging experience and so on. It also integrates into the standard Find Usages and Search Everywhere UI, and makes use of code completion, syntax highlighting, and so on.
 
 However, Rider doesn't create a full PSI (syntactic and semantic) model for C# files. Instead, it reuses [ReSharper](https://www.jetbrains.com/resharper/) to provide language functionality. All of the C# PSI model and all inspections and code rewriting, such as quick fixes and refactorings are run out of process, in a command line version of ReSharper. This means that creating a plugin for Rider involves two parts - a plugin that lives in the IntelliJ "front end" to show user interface, and a plugin that lives in the ReSharper "back end" to analyze and work with the C# PSI.

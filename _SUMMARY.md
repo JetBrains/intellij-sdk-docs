@@ -242,7 +242,7 @@
     * [PHP Open API](products/phpstorm/php_open_api.md)
     * [Existing Third Party Plugins](products/phpstorm/existing_plugins.md)
 * [PyCharm](products/pycharm.md)
-* Rider
+* [Rider](products/rider.md)
 * RubyMine
 * WebStorm
 

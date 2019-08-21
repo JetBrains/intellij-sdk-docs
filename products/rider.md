@@ -18,4 +18,22 @@ In particular, this article discusses _One Template to Rule Them All_, a way to 
 More background information is available in the [Building a .NET IDE with JetBrains Rider](https://www.codemag.com/Article/1811091/Building-a-.NET-IDE-with-JetBrains-Rider) article, which includes a high-level description of the _Rider Protocol_ communication process between Rider and ReSharper. 
 The article is a good counterpoint to the ReSharper DevGuide content, which discusses the protocol at the code level.
  
- 
+## Open Source Rider Plugins
+When learning new development configurations it is helpful to have some existing plugins for reference. 
+This list is intended to provide some representative projects. 
+* [Unity support for both ReSharper and Rider](https://github.com/JetBrains/resharper-unity)
+* [F# support in JetBrains Rider](https://github.com/JetBrains/fsharp-support)
+* [AgentMulder](https://github.com/ERNICommunity/AgentMulder/)
+* [ConfigureAwaitChecker](https://github.com/aelij/ConfigureAwaitChecker/)
+* [CognitiveComplexity](https://github.com/matkoch/resharper-cognitivecomplexity/)
+* [CyclomaticComplexity](https://github.com/JetBrains/resharper-cyclomatic-complexity/)
+* [Exceptional](https://github.com/CSharpAnalyzers/ExceptionalReSharper/)
+* [HeapAllocationsViewer](https://github.com/citizenmatt/resharper-heapview/)
+* [ImplicitNullability](https://github.com/matkoch/SerializationInspections/)
+* [InternalsVisibleTo](https://github.com/hmemcpy/ReSharper.InternalsVisibleTo/)
+* [PresentationAssistant](https://github.com/JetBrains/resharper-presentation-assistant/)
+* [SerializationInspections](https://github.com/matkoch/SerializationInspections/)
+* [StyleCop](https://github.com/StyleCop/StyleCop.ReSharper/)
+* [TestLinker](https://github.com/matkoch/TestLinker/)
+* [Xao](https://github.com/hmemcpy/ReSharper.Xao/)
+* [Azure Toolkit for Rider](https://github.com/JetBrains/azure-tools-for-intellij)

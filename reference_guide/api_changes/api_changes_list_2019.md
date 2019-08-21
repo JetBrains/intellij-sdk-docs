@@ -69,6 +69,9 @@ NOTE: You are allowed to prettify the pattern using markdown-features:
 `org.jetbrains.plugins.groovy.extensions.GroovyScriptTypeDetector(GroovyScriptType, String[])` constructor removed
 : Use constructor `GroovyScriptTypeDetector(GroovyScriptType)` instead, and `com.intellij.fileType` to register additional extensions.
 
+`com.intellij.openapi.vcs.changes.ui.ChangesListView.UNVERSIONED_FILES_DATA_KEY` field removed
+: Use `com.intellij.openapi.vcs.changes.ui.ChangesListView.UNVERSIONED_FILE_PATHS_DATA_KEY` instead.
+
 # 2019.2 
 
 ## Changes in IntelliJ Platform 2019.2

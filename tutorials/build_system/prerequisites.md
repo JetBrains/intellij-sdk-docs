@@ -105,7 +105,7 @@ The New Project Wizard produces the `my_gradle_plugin` project `build.gradle` fi
 ```text
   plugins {
       id 'java'
-      id 'org.jetbrains.intellij' version '0.4.9'
+      id 'org.jetbrains.intellij' version '0.4.10'
   }
   
   group 'com.your.company'

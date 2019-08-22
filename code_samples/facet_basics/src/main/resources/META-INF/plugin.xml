@@ -6,7 +6,7 @@
   <id>org.intellij.sdk.facet</id>
 
   <!-- Text to display as name on Preferences/Settings | Plugin page -->
-  <name>SDK Facet Basics</name>
+  <name>SDK: Facet Basics</name>
 
   <!-- Text to display as description on Preferences/Settings | Plugin page  -->
   <description>
@@ -16,26 +16,27 @@
   </description>
   <change-notes>
     <![CDATA[
+      <b>2.1</b> Refactored for Gradle project format.<br>
       <b>2.0</b> Refactored to illustrate use of PersistentComponent.<br>
       <b>1.0</b> Release 2018.3 and earlier.
     ]]>
   </change-notes>
 
   <!-- Text to display as company information on Preferences/Settings | Plugin page -->
-  <vendor email="sdk-example@jetbrains.com" url="https://plugins.jetbrains.com">IntelliJ Platform SDK</vendor>
+  <vendor url="https://plugins.jetbrains.com">IntelliJ Platform SDK</vendor>
 
   <!-- The version of this plugin -->
-  <version>2.0</version>
+  <version>2.1</version>
 
   <!-- Compatible with the following versions of IntelliJ Platform -->
-  <idea-version since-build="173"/>
+  <idea-version since-build="191"/>
 
   <!-- Product and plugin compatibility requirements -->
   <depends>com.intellij.modules.lang</depends>
 
   <extensions defaultExtensionNs="com.intellij">
     <!-- Register the custom facet extension -->
-    <facetType implementation="com.intellij.tutorials.facet.DemoFacetType"/>
+    <facetType implementation="org.intellij.sdk.facet.DemoFacetType"/>
   </extensions>
 
 </idea-plugin>

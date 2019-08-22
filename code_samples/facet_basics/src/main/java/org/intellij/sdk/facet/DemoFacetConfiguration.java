@@ -1,6 +1,4 @@
-// Copyright 2000-2019 JetBrains s.r.o. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
-
-package com.intellij.tutorials.facet;
+package org.intellij.sdk.facet;// Copyright 2000-2019 JetBrains s.r.o. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
 
 import com.intellij.facet.FacetConfiguration;
 import com.intellij.facet.ui.FacetEditorContext;
@@ -11,7 +9,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * Provides a custom implementation of the Configuration class for DemoFacet.
+ * Provides a custom implementation of the Configuration class for org.intellij.sdk.facet.DemoFacet.
  *
  * @author Anna Bulenkova
  * @author John Hake

@@ -1,11 +1,9 @@
-// Copyright 2000-2019 JetBrains s.r.o. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
-
-package com.intellij.tutorials.facet;
+package org.intellij.sdk.facet;// Copyright 2000-2019 JetBrains s.r.o. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
 
 import org.jetbrains.annotations.NotNull;
 
 /**
- * A simple class to store state for the DemoFacet.
+ * A simple class to store state for the org.intellij.sdk.facet.DemoFacet.
  * In this case it is just a string containing a path to an SDK.
  *
  * @author John Hake

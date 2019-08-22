@@ -1,6 +1,4 @@
-// Copyright 2000-2019 JetBrains s.r.o. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
-
-package com.intellij.tutorials.facet;
+package org.intellij.sdk.facet;// Copyright 2000-2019 JetBrains s.r.o. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
 
 import com.intellij.facet.ui.FacetEditorContext;
 import com.intellij.facet.ui.FacetEditorTab;
@@ -15,7 +13,7 @@ import java.awt.*;
 
 /**
  * Provides the JPanel to be displayed in the facet UI.
- * Manages validation and modification of the DemoFacet state.
+ * Manages validation and modification of the org.intellij.sdk.facet.DemoFacet state.
  *
  * @author John Hake
  */
@@ -26,10 +24,10 @@ public class DemoFacetEditorTab extends FacetEditorTab {
   private final JTextField myPath;
   
   /**
-   * Only DemoFacetState is captured so it can be updated per user changes
+   * Only org.intellij.sdk.facet.DemoFacetState is captured so it can be updated per user changes
    * in the EditorTab.
    *
-   * @param state     DemoFacetState object persisting DemoFacet state.
+   * @param state     org.intellij.sdk.facet.DemoFacetState object persisting org.intellij.sdk.facet.DemoFacet state.
    * @param context   Facet editor context, can be used to get e.g. the current project module.
    * @param validator Facet validator manager, can be used to get and apply a custom validator for
    *                  this facet.
@@ -42,7 +40,7 @@ public class DemoFacetEditorTab extends FacetEditorTab {
   /**
    * Provides the JPanel displayed in the Preferences | Facet UI
    *
-   * @return JPanel to be displayed in the DemoFacetEditorTab.
+   * @return JPanel to be displayed in the org.intellij.sdk.facet.DemoFacetEditorTab.
    */
   @NotNull
   @Override
@@ -96,7 +94,7 @@ public class DemoFacetEditorTab extends FacetEditorTab {
   }
   
   /**
-   * Copies current DemoFacetState into the myPath UI element.
+   * Copies current org.intellij.sdk.facet.DemoFacetState into the myPath UI element.
    * This method is called each time this editor tab is needed for display.
    */
   @Override

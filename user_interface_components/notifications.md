@@ -27,7 +27,7 @@ methods can be used for displaying other kinds of non-modal notification hints o
 ### Top-Level Notifications
 
 The most general way to display non-modal notifications is to use the
-[Notifications](upsource:///platform/platform-api/src/com/intellij/notification/Notification.java)
+[Notifications](upsource:///platform/platform-api/src/com/intellij/notification/Notifications.java)
 class.
 
 It has two main advantages:
@@ -37,7 +37,7 @@ It has two main advantages:
 *  All displayed notifications are gathered in the Event Log tool window and can be reviewed later
 
 The specific method used to display a notification is
-[Notifications.Bus.notify()](upsource:///platform/platform-api/src/com/intellij/notification/Notification.java).
+[Notifications.Bus.notify()](upsource:///platform/platform-api/src/com/intellij/notification/Notifications.java).
 The text of the notification can include HTML tags.
 You can allow the user to interact with the notification by including hyperlink tags in the notification text and passing a
 [NotificationListener](upsource:///platform/platform-api/src/com/intellij/notification/NotificationListener.java)
@@ -50,6 +50,6 @@ The `groupDisplayId` parameter of the
 constructor specifies a notification type.
 The user can choose the display type corresponding to each notification type under `Settings | Notifications`.
 To specify the preferred display type, you need to call
-[Notifications.Bus.register()](upsource:///platform/platform-api/src/com/intellij/notification/Notification.java)
+[Notifications.Bus.register()](upsource:///platform/platform-api/src/com/intellij/notification/Notifications.java)
 before displaying any notifications.
 

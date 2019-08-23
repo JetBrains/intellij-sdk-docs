@@ -1,18 +1,43 @@
+<!-- Copyright 2000-2019 JetBrains s.r.o. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+
 <idea-plugin>
-  <id>com.intellij.demo.framework</id>
-  <name>Framework example</name>
-  <version>1.0</version>
-  <vendor>JetBrains</vendor>
 
-  <description>Demonstrates basic Framework support with custom Configurable</description>
+  <!--  Unique id for this plugin. Must stay constant for the life of the plugin.  -->
+  <id>org.intellij.sdk.framework</id>
 
+  <!-- Text to display as name on Preferences/Settings | Plugin page  -->
+  <name>SDK: Framework Sample Project</name>
+
+  <!-- The version of this plugin -->
+  <version>2.0</version>
+
+  <!-- Compatible with the following versions of IntelliJ Platform -->
   <idea-version since-build="131"/>
 
   <!-- Product and plugin compatibility requirements -->
   <depends>com.intellij.modules.java</depends>
 
-  <extensions defaultExtensionNs="com.intellij">
-    <framework.type implementation="com.intellij.tutorials.framework.DemoFramework"/>
+  <!-- Text to display as description on Preferences/Settings | Plugin page  -->
+  <description>
+    <![CDATA[
+      Demonstrates basic Framework support with custom Configurable...
+    ]]>
+  </description>
+  <change-notes>
+    <![CDATA[
+      <ul>
+        <li><b>2.0.0</b> Convert to Gradle-based plugin, rename to framework_basics, change plugin ID</li>
+        <li><b>1.0.0</b> Release 2018.3 and earlier.</li>
+      </ul>
+    ]]>
+  </change-notes>
+
+  <!-- Text to display as company information on Preferences/Settings | Plugin page -->
+  <vendor url="https://plugins.jetbrains.com">IntelliJ Platform SDK</vendor>
+
+
+<extensions defaultExtensionNs="com.intellij">
+    <framework.type implementation="org.intellij.sdk.framework.DemoFramework"/>
   </extensions>
 
 </idea-plugin>

@@ -38,6 +38,8 @@ It has two main advantages:
 
 The specific method used to display a notification is
 [Notifications.Bus.notify()](upsource:///platform/platform-api/src/com/intellij/notification/Notifications.java).
+If the current Project is known, please use overload with `Project` parameter, so the notification is shown in its associated frame.
+
 The text of the notification can include HTML tags.
 You can allow the user to interact with the notification by including hyperlink tags in the notification text and passing a
 [NotificationListener](upsource:///platform/platform-api/src/com/intellij/notification/NotificationListener.java)
@@ -48,7 +50,7 @@ class.
 The `groupDisplayId` parameter of the
 [Notification](upsource:///platform/platform-api/src/com/intellij/notification/Notification.java)
 constructor specifies a notification type.
-The user can choose the display type corresponding to each notification type under `Settings | Notifications`.
+The user can choose the display type corresponding to each notification type under `Settings | Appearance and Behavior | Notifications`.
 To specify the preferred display type, you need to call
 [Notifications.Bus.register()](upsource:///platform/platform-api/src/com/intellij/notification/Notifications.java)
 before displaying any notifications.

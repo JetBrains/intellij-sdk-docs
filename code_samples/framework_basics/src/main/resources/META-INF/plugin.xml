@@ -9,10 +9,10 @@
   <name>SDK: Framework Sample Project</name>
 
   <!-- The version of this plugin -->
-  <version>2.0</version>
+  <version>2.0.0</version>
 
   <!-- Compatible with the following versions of IntelliJ Platform -->
-  <idea-version since-build="131"/>
+  <idea-version since-build="191"/>
 
   <!-- Product and plugin compatibility requirements -->
   <depends>com.intellij.modules.java</depends>
@@ -20,7 +20,7 @@
   <!-- Text to display as description on Preferences/Settings | Plugin page  -->
   <description>
     <![CDATA[
-      Demonstrates basic Framework support with custom Configurable...
+      Demonstrates basic Framework support. <br>Adds <i>SDK Demo Framework</i> to <b>File | New | Project | IntelliJ Platform Plugin</b>
     ]]>
   </description>
   <change-notes>

@@ -3,5 +3,9 @@
   <component name="CompilerConfiguration">
     <addNotNullAssertions enabled="false" />
     <wildcardResourcePatterns />
+    <bytecodeTargetLevel>
+      <module name="framework.main" target="1.8" />
+      <module name="framework.test" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

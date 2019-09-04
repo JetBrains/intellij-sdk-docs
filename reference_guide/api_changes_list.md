@@ -15,7 +15,7 @@ The following problem patterns are supported:
 
 <package name> package removed
 <class name> class removed
-<class name> renamed to <new class name>
+<class name> class renamed to <new class name>
 
 <class name>.<method name>(<human-readable parameters>) method removed
 <class name>.<method name>(<human-readable parameters>) method return type changed from <before> to <after>

@@ -105,6 +105,10 @@ For those `patchPluginXml` attributes that contain descriptions such as `changeN
 As discussed in [Components of a Wizard-Generated Gradle IntelliJ Platform Plugin](prerequisites.md#components-of-a-wizard-generated-gradle-intellij-platform-plugin), the Gradle properties `project.version`, `project.group`, and `rootProject.name` are all generated based on the input to the Wizard.
 However, the IntelliJ IDEA Gradle plugin does not combine and substitute those Gradle properties for the default `<id>` and `<name>` elements in the `plugin.xml` file.
 
+The best practice is to keep `project.version` current. 
+By default, if you modify `project.version` in `build.gradle`, the Gradle plugin will automatically update the `<version>` value in the `plugin.xml` file. 
+This practice keeps all version declarations synchronized.
+
 ### Publishing with the Gradle Plugin
 Please review the [Publishing Plugins with Gradle](deployment.md) page before using the [Publishing DSL](https://github.com/JetBrains/gradle-intellij-plugin#publishing-dsl) attributes.
 That documentation explains three different ways to use Gradle for plugin uploads without exposing account credentials.

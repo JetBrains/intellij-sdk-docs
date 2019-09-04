@@ -72,6 +72,8 @@ NOTE: You are allowed to prettify the pattern using markdown-features:
 `com.intellij.openapi.vcs.changes.ui.ChangesListView.UNVERSIONED_FILES_DATA_KEY` field removed
 : Use `com.intellij.openapi.vcs.changes.ui.ChangesListView.UNVERSIONED_FILE_PATHS_DATA_KEY` instead.
 
+## Changes in DataGrip and Database Tools plugin 2019.3
+
 `com.intellij.sql.dialects.mssql.MssqlDialect` renamed to `com.intellij.sql.dialects.mssql.MsDialect`
 : Do not use SQL dialect classes directly.
 

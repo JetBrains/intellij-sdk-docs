@@ -74,13 +74,13 @@ NOTE: You are allowed to prettify the pattern using markdown-features:
 
 ## Changes in DataGrip and Database Tools plugin 2019.3
 
-`com.intellij.sql.dialects.mssql.MssqlDialect` renamed to `com.intellij.sql.dialects.mssql.MsDialect`
+`com.intellij.sql.dialects.mssql.MssqlDialect` class renamed to `com.intellij.sql.dialects.mssql.MsDialect`
 : Do not use SQL dialect classes directly.
 
-`com.intellij.sql.dialects.oracle.OracleDialect` renamed to `com.intellij.sql.dialects.oracle.OraDialect`
+`com.intellij.sql.dialects.oracle.OracleDialect` class renamed to `com.intellij.sql.dialects.oracle.OraDialect`
 : Do not use SQL dialect classes directly.
 
-`com.intellij.sql.dialects.postgres.PostgresDialect` renamed to `com.intellij.sql.dialects.postgres.PgDialect`
+`com.intellij.sql.dialects.postgres.PostgresDialect` class renamed to `com.intellij.sql.dialects.postgres.PgDialect`
 : Do not use SQL dialect classes directly.
 
 # 2019.2 

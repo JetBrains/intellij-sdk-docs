@@ -72,6 +72,15 @@ NOTE: You are allowed to prettify the pattern using markdown-features:
 `com.intellij.openapi.vcs.changes.ui.ChangesListView.UNVERSIONED_FILES_DATA_KEY` field removed
 : Use `com.intellij.openapi.vcs.changes.ui.ChangesListView.UNVERSIONED_FILE_PATHS_DATA_KEY` instead.
 
+`com.intellij.sql.dialects.mssql.MssqlDialect` renamed to `com.intellij.sql.dialects.mssql.MsDialect`
+: Do not use SQL dialect classes directly.
+
+`com.intellij.sql.dialects.oracle.OracleDialect` renamed to `com.intellij.sql.dialects.oracle.OraDialect`
+: Do not use SQL dialect classes directly.
+
+`com.intellij.sql.dialects.postgres.PostgresDialect` renamed to `com.intellij.sql.dialects.postgres.PgDialect`
+: Do not use SQL dialect classes directly.
+
 # 2019.2 
 
 ## Changes in IntelliJ Platform 2019.2

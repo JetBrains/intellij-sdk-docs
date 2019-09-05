@@ -1,4 +1,6 @@
-package com.intellij.tutorials.framework;
+// Copyright 2000-2019 JetBrains s.r.o. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
+
+package org.intellij.sdk.framework;
 
 import com.intellij.framework.FrameworkTypeEx;
 import com.intellij.framework.addSupport.*;
@@ -6,15 +8,14 @@ import com.intellij.icons.AllIcons;
 import com.intellij.ide.util.frameworkSupport.FrameworkSupportModel;
 import com.intellij.openapi.module.*;
 import com.intellij.openapi.roots.*;
+import icons.SdkIcons;
 import org.jetbrains.annotations.*;
 
 import javax.swing.*;
 
-/**
- * @author Anna Bulenkova
- */
 public class DemoFramework extends FrameworkTypeEx {
-  public static final String FRAMEWORK_ID = "Demo";
+
+  public static final String FRAMEWORK_ID = "org.intellij.sdk.framework.DemoFramework";
 
   protected DemoFramework() {
     super(FRAMEWORK_ID);
@@ -37,14 +38,15 @@ public class DemoFramework extends FrameworkTypeEx {
           @Nullable
           @Override
           public JComponent createComponent() {
-            return new JCheckBox("Extra Option");
+            return new JCheckBox("SDK Extra Option");
           }
 
           @Override
           public void addSupport(@NotNull Module module,
                                  @NotNull ModifiableRootModel model,
                                  @NotNull ModifiableModelsProvider provider) {
-            //do what you want here: setup a library, generate a specific file, etc
+            // This is the place to set up a library, generate a specific file, etc
+            // and actually add framework support to a module.
           }
         };
       }
@@ -59,12 +61,12 @@ public class DemoFramework extends FrameworkTypeEx {
   @NotNull
   @Override
   public String getPresentableName() {
-    return "Demo Framework";
+    return "SDK Demo Framework";
   }
 
   @NotNull
   @Override
   public Icon getIcon() {
-    return AllIcons.Providers.Apache;
+    return SdkIcons.Sdk_default_icon;
   }
 }

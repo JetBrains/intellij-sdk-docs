@@ -57,6 +57,9 @@ NOTE: You are allowed to prettify the pattern using markdown-features:
 `com.intellij.json.JsonFileTypeFactory` class removed
 : Use `com.intellij.fileType` extension point instead.
 
+`org.jetbrains.plugins.ruby.ruby.codeInsight.types.RubyTypeProvider.createTypeBySymbolFromProviders(Symbol symbol, Context context)` method parameter `Context` removed
+: This was done as part of [`RUBY-24760`](https://youtrack.jetbrains.com/issue/RUBY-24760) in order to move to new Context-less approach.
+
 `com.intellij.util.containers.ConcurrentHashSet` class removed
 : Use `com.intellij.util.containers.ContainerUtil#newConcurrentSet` instead.
 

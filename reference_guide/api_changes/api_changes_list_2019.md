@@ -75,6 +75,9 @@ NOTE: You are allowed to prettify the pattern using markdown-features:
 `com.intellij.openapi.vcs.changes.ui.ChangesListView.UNVERSIONED_FILES_DATA_KEY` field removed
 : Use `com.intellij.openapi.vcs.changes.ui.ChangesListView.UNVERSIONED_FILE_PATHS_DATA_KEY` instead.
 
+`com.intellij.openapi.util.BuildNumber.getBuildNumber()` method removed
+: See `BuildNumber.asString`, `BuildNumber.getBaselineVersion()` and `BuildNumber.getComponents()` as alternatives.
+
 ## Changes in DataGrip and Database Tools plugin 2019.3
 
 `com.intellij.sql.dialects.mssql.MssqlDialect` class renamed to `com.intellij.sql.dialects.mssql.MsDialect`

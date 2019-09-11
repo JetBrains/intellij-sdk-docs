@@ -40,7 +40,7 @@ Plugin Logo designs should leave at least 2px transparent padding around the per
 ![36px by 36px is the area where the visible part of the Logo should fit](img/icon_size.png){:width="225px"}
 
 Make sure Plugin Logos have the same visual weight as the logos in the examples below. 
-The more visual weight in Plugin Logo design, the less actual space it needs. 
+The more filled a Plugin Logo design is, the less actual space it needs. 
 See more examples of [visual weight compensation](https://jetbrains.design/intellij/principles/icons/#08) in the IntelliJ Platform UI Guidelines for Icons. 
 
 For basic shapes, use the following sizes. 
@@ -49,7 +49,7 @@ Note the different areas of transparent padding used for each shape:
 | ![Square 32px by 32px](img/square_logo.png){:width="225px"} | ![Circle 36px in Diameter](img/circle_logo.png){:width="225px"} |
 |:---:|:---:|
 | _Square logo 32px by 32px_ | _Circular logo 36px in Diameter_ |
-| ![Horizontal rectangle 36px by 26px](img/rectangle_horizontal.png){:width="225px"} | ![Vertical rectangle 26px by 36px](img/rectancle_vertical.png){:width="225px"} |
+| ![Horizontal rectangle 36px by 26px](img/rectangle_horizontal.png){:width="225px"} | ![Vertical rectangle 26px by 36px](img/rectangle_vertical.png){:width="225px"} |
 | _Horizontal rectangular logo 36px by 26px_ | _Vertical rectangular logo 26px by 36px_ |
 
 <br>
@@ -59,7 +59,7 @@ If the plugin’s technology already has a logo, use its colors.
 Check the license terms before using the logo. 
 If there is no existing logo, or its use is prohibited, create a custom logo based on the [Action Colors Palette](https://jetbrains.design/intellij/principles/icons/#action-icons) in the IntelliJ Platform UI Guidelines for Icons.
 
-| ![YouTrack Plugin Logo Uses the YouTrack Product Logo ](img/yt_logo.png){:width="225px"} | ![Keymap Plugin Logo Uses Color From the Action Colors Palette](img/keymap_logo.png){:width="225px"} |
+| ![The YouTrack Plugin Logo uses the YouTrack product logo ](img/yt_logo.png){:height="200px" width="200px"} | ![The Keymap Plugin Logo uses a color from the Action Colors Palette](img/keymap_logo.png){:height="200px" width="200px"} |
 |:---:|:---:|
 | _The YouTrack Plugin Logo uses<br>the YouTrack product logo_ | _The Keymap Plugin Logo uses a color<br>from the Action Colors Palette_ |
 
@@ -85,7 +85,7 @@ Name the Plugin Logo files according to the following conventions:
 ## Adding Plugin Logo Files to a Plugin Project
 The Plugin Logo files must be in the `META-INF` folder of the plugin distribution file, i.e. the `*.jar` or `*.zip` file you upload to the plugin repository and install into a JetBrains IDE.
 
-To include Plugin Logos file in your distribution file, place the Plugin Logo files into a plugin project's `resources/META-INF` folder. 
+To include Plugin Logo files in your distribution file, place the Plugin Logo files into a plugin project's `resources/META-INF` folder. 
 Note that this requirement is the same regardless of using DevKit or Gradle for developing a plugin. For example:
  
 ![Plugin Logo Files in META-INF folder](img/resource_directory_structure.png)

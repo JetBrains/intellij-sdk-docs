@@ -6,6 +6,8 @@ title: Incompatible Changes in IntelliJ Platform and Plugins API 2017.*
 See the note on how to document new problems on the main page reference_guide/api_changes_list.md 
 -->
 
+> **NOTE** Changes from API marked with [`org.jetbrains.annotations.ApiStatus.@Experimental`](upsource:///platform/util/src/org/jetbrains/annotations/ApiStatus.java) are not listed here, as incompatible changes are to be expected.
+
 # 2017.3 
 
 ## Changes in IntelliJ Platform 2017.3

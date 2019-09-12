@@ -54,7 +54,7 @@ IntelliJ API may be occasionally changed between releases leading to incompatibi
 
 Compatibility with newer IDEs can easily be verified for plugins hosted on the [JetBrains plugin repository](../plugin_repository/index.md) using the builtin [Plugin Verifier](https://blog.jetbrains.com/platform/2018/07/plugins-repository-now-integrates-with-the-plugin-verification-tool/).
   
-The following pages list the breaking changes in IDE releases with required/recommended steps to take by plugin authors. 
+The following pages list the breaking changes in IDE/plugin releases with required/recommended steps to take by plugin authors. 
 
 * [**Changes in 2019.***](api_changes/api_changes_list_2019.md)
 * [**Changes in 2018.***](api_changes/api_changes_list_2018.md)

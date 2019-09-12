@@ -2,10 +2,11 @@
 title: Supporting Frameworks
 ---
 
-The following tutorial shows how to support a custom framework type for a project and make this framework type embedded in a project wizard as a UI component.
+The following tutorial shows how to support a custom framework type for a project and make this framework type embedded in a project wizard as a UI component.n
+The examples in this tutorial rely heavily on the [framework_basics](https://github.com/JetBrains/intellij-sdk-docs/tree/master/code_samples/framework_basics) code sample.
 
 ## 1. Creating a new framework
-In oder to make a custom framework available and configurable for a project the [FrameworkTypeEx](upsource:///java/idea-ui/src/com/intellij/framework/FrameworkTypeEx.java) class needs to be extended, in this example to make the [DemoFramework](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/framework/src/com/intellij/tutorials/framework/DemoFramework.java) class.
+In oder to make a custom framework available and configurable for a project the [FrameworkTypeEx](upsource:///java/idea-ui/src/com/intellij/framework/FrameworkTypeEx.java) class needs to be extended, in this example to make the [DemoFramework](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/framework_basics/src/main/java/org/intellij/sdk/framework/DemoFramework.java) class.
 
 ```java
 public class DemoFramework extends FrameworkTypeEx {
@@ -14,7 +15,7 @@ public class DemoFramework extends FrameworkTypeEx {
 
 ## 2. Registering framework
 The newly created framework class should be registered as an extension point by putting *framework.type* attribute into `<extensions>` section of the 
-[plugin.xml](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/framework/resources/META-INF/plugin.xml)
+[plugin.xml](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/framework_basics/src/main/resources/META-INF/plugin.xml)
 configuration file:
 
 ```xml
@@ -96,12 +97,13 @@ public FrameworkSupportInModuleProvider createProvider() {
 }
 ```
 
-After compiling and running the code sample above an extra option for configuring the newly created Demo custom framework should be available in the Project Wizard:
+After compiling and running the code sample above an extra option for configuring the newly created Demo custom framework should be available in the Project Wizard: 
+
 ![Custom Framework Support](framework/img/custom_framework.png)
 
-----------
 
-[Source code](https://github.com/JetBrains/intellij-sdk-docs/tree/master/code_samples/framework/src/com/intellij/tutorials/framework)
+
+
 
 
 

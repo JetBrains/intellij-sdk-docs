@@ -2,80 +2,112 @@
 title: Plugin Compatibility with IntelliJ Platform Products
 ---
 
-<!--TODO link to sample_plugin file-->
+<style>
+  table {
+    width:100%;
+  }
+  th:first-child, td:first-child {
+    width: 32%;
+  }
+</style>
 
-All products based on the _IntelliJ Platform_, such as IntelliJ IDEA, RubyMine, WebStorm, and so on, target the same underlying platform API, with some products sharing features built on top of the platform, such as Java support (IntelliJ IDEA
-and Android Studio) or database support (IntelliJ IDEA Ultimate, DataGrip, PhpStorm, etc.).
+## Introduction
+All products based on the _IntelliJ Platform_ are built on the same underlying API. 
+Some of these products share features built on top of the platform, such as Java support in IntelliJ IDEA and Android Studio. 
+Underlying those shared features are shared components. 
+When authoring a plugin for the IntelliJ Platform, it is important to understand and declare dependencies on these components. 
+Otherwise, it may not be possible to load or run the plugin in a product because the components on which it depends aren't available.
 
-It is possible to write a plugin that is compatible across multiple products, as long as the plugin specifies which product it is compatible with. More specifically, the plugin must specify, using [the `<depends>` tag](/basics/plugin_structure/plugin_dependencies.md) in the [`plugin.xml` file](/basics/plugin_structure/plugin_configuration_file.md), dependencies on well known _modules_ or plugins.
+* bullet list
+{:toc}
 
-For the purposes of dependencies, a module can be thought of as a built-in plugin that ships as a non-removable part of a product. Not all products define and declare modules. For example, PhpStorm does not have its own module, but the product itself depends on (and ships) the PHP language plugin. You can make your plugin compatible with PhpStorm by also depending on the same language plugin.
+## Declaring Plugin Dependencies
+For the purposes of dependencies, a _module_ can be thought of like a built-in plugin that ships as a non-removable part of a product. 
+A working definition of a dependency is that a plugin project cannot be run without the module present in an IntelliJ Platform-based product. 
+Declaring a dependency on a module also expresses a plugin's compatibility with a product in that the IntelliJ Platform determines whether a product contains the correct modules to support a plugin before loading it. 
 
-For example:
+[Part I](/basics/plugin_structure/plugin_dependencies.md) of this document describes the syntax for declaring plugin dependencies and optional plugin dependencies.  
+Part II of this document (below) describes the functionality of the IntelliJ Platform modules to aid in determining the dependencies of a plugin. 
 
-```xml
-<idea-plugin>
-  ...
-  <depends>com.intellij.modules.lang</depends>
-  ...
-</idea-plugin>
-```
+The way dependency declarations are handled by the Intellij Platform is determined by the contents of the `plugin.xml` file:
+* If a plugin does not declare any dependencies in its `plugin.xml` file, or if it declares dependencies only on other plugins but not modules, it's assumed to be a legacy plugin and is loaded only in IntelliJ IDEA.
+  This configuration of dependency declaration is deprecated; do not use it for new plugin projects. 
+* If a plugin declares at least _one_ module dependency in its `plugin.xml` file, the plugin is loaded if an IntelliJ Platform-based product contains _all the modules and plugins_ on which the plugin has declared a dependency.
 
-<!--TODO link to sample_plugin file--> 
+## Modules
+A _module_ represents a built-in plugin that is a non-removable part of a product. 
+Some modules are available in all products, and some modules are available only in some, or even just one product. 
+This section identifies and discusses modules of both types.
 
-If a plugin does not include any module dependency tags in its `plugin.xml`, it's assumed to be a legacy plugin and is loaded only in IntelliJ IDEA. 
+### Modules Available in All Products
+A core set of modules are available in all products based on the IntelliJ Platform. 
+These modules provide a set of shared functionality. 
+The following table lists modules that are currently available in all products. 
 
-If the `plugin.xml` includes one or more such tags, the plugin is loaded if the product contains **all** of the modules on which the plugin depends.
+>**Note** All plugins should declare a dependency on **`com.intellij.modules.platform`** as an indication of dependence on shared functionality. 
 
-The following modules are currently available in all products based on IntelliJ Platform:
+| Module for `<depends>` Element<br>Declaration in `plugin.xml` File | <br>Functionality                                                                | 
+|--------------------------------------|----------------------------------------------------------------------------------------------------------------|
+| **`com.intellij.modules.platform`**  | Messaging, UI Themes, UI Components, Files, Documents, Actions, Components, Services, Extensions, Editors      |
+| `com.intellij.modules.lang`          | File Type, Lexer, Parser, Highlighting, References, Code Completion, Find, Rename, Formatter, Code Navigation  |
+| `com.intellij.modules.xml`           | XML, XML DOM, XSD/DTD, DOM Model                                                                               |
+| `com.intellij.modules.vcs`           | VCS Revision Numbers, File Status, Change Lists, File History, Annotations                                     |
+| `com.intellij.modules.xdebugger`     | Debug Session, Stack Frames, Break Points, Source Positions, Memory Views, Tracked Instances                   |
 
-* `com.intellij.modules.platform`
-* `com.intellij.modules.lang`
-* `com.intellij.modules.vcs`
-* `com.intellij.modules.xml`
-* `com.intellij.modules.xdebugger`
+As of this writing, if a plugin: **A)** is dependent _only_ on one or more of the modules in the table above, **and B)** declares those module dependencies in `plugin.xml`, then any product developed by JetBrains based on the IntelliJ Platform will load it.
 
-This means a plugin can declare a dependency on `com.intellij.modules.vcs` and it will work in any product that supports version control, and since all products currently include the `com.intellij.modules.vcs` module, this plugin will work in all products.
+### Modules Specific to Functionality
+More specialized functionality is also delivered via modules and plugins in IntelliJ Platform-based products. 
+For example, the `com.intellij.modules.python` module supports the Python language-specific functionality. 
+If a plugin uses functionality from this module, such as Python-specific inspections and refactoring, it must declare a dependency on this module.
 
-The following modules or built-in plugins are available in these specific products:
+Note that not all products define and declare modules. 
+For example, PhpStorm does not have its own module, but the product itself depends on (and ships with) the PHP language plugin. 
+A plugin project is compatible with PHP functionality if it declares a dependency on this PHP language plugin.
 
-| Module or built-in plugin            | Product                                                                              |
-|--------------------------------------|--------------------------------------------------------------------------------------|
-| `com.intellij.modules.java`          | IntelliJ IDEA, Android Studio                                                        |
-| `com.intellij.modules.ultimate`      | IntelliJ IDEA Ultimate Edition                                                       |
-| `com.intellij.modules.androidstudio` | Android Studio                                                                       |
-| `com.intellij.modules.appcode`       | AppCode                                                                              |
-| `com.intellij.modules.cidr.lang`     | AppCode, CLion                                                                       |
-| `com.intellij.modules.cidr.debugger` | AppCode, CLion, RubyMotion                                                           |
-| `com.intellij.modules.clion`         | CLion                                                                                |
-| `com.intellij.modules.database`      | IntelliJ IDEA Ultimate Edition, DataGrip, GoLand, PhpStorm, PyCharm, Rider, RubyMine |
-| `com.intellij.modules.go`            | GoLand                                                                               |
-| `com.intellij.modules.python`        | PyCharm                                                                              |
-| `com.intellij.modules.rider`         | Rider                                                                                |
-| `com.intellij.modules.ruby`          | RubyMine                                                                             |
-| `com.jetbrains.php`                  | PhpStorm (built-in plugin)                                                           |
-| `com.intellij.modules.webstorm`      | WebStorm                                                           |
+The following table lists(1) modules or built-in plugins that provide specific functionality, and the products that currently ship with them. 
 
-## Plugin dependencies
+| Module or Plugin for `<depends>` Element<br>Declaration in `plugin.xml` File | <br>Functionality  | IntelliJ Platform-Based<br>Product Compatibility  | 
+|------------------------------------------------------------------------------|--------------------|------------------------------------------|
+| `com.intellij.modules.java` See (2) below. <br>`com.intellij.java` | **Java** language PSI Model, Inspections, Intentions, Completion, Refactoring, Test Framework  | IntelliJ IDEA, Android Studio |
+| `com.intellij.modules.ultimate`      | All functionality unique to IntelliJ IDEA Ultimate | IntelliJ IDEA Ultimate Edition                                            |
+| `com.intellij.modules.androidstudio` | Android SDK Platform, Build Tools, Platform Tools, SDK Tools | Android Studio                                                          |
+| `com.intellij.modules.appcode`       | CocoaPods, Core Data Objects, Device & Simulator Support  | AppCode                                                                    |
+| `com.intellij.modules.cidr.lang`     | **C, C++, Objective-C/C++** language PSI Model, Swift/Objective-C Interaction, Inspections, Intentions, Completion, Refactoring, Test Framework  | AppCode, CLion |
+| `com.intellij.modules.cidr.debugger` | Debugger Watches, Evaluations, Breakpoints, Inline Debugging  | AppCode, CLion, RubyMine                                               |
+| `com.intellij.modules.clion`         | CMake, Profiler, Embedded Development, Remote Development, Remote Debug, Disassembly | CLion                                           |
+| `com.intellij.database`              | **Database Tools and SQL** language PSI Model, Inspections, Completion, Refactoring, Queries | DataGrip, IntelliJ IDEA Ultimate, AppCode, PhpStorm, PyCharm Professional, RubyMine, CLion, GoLand, Rider, and WebStorm if the Database Tools and SQL plugin is installed.|
+| `com.intellij.modules.go`            | **Go** language PSI Model, Inspections, Intentions, Completion, Refactoring, Test Framework  | GoLand                                  |
+| `com.intellij.modules.python`        | **Python** language PSI Model, Inspections, Intentions, Completion, Refactoring, Test Framework  | PyCharm, and other products if the Python plugin is installed.  |
+| `com.intellij.modules.rider`         | Connection to **ReSharper** Process in Background   | Rider                                                                            |
+| `com.intellij.modules.ruby`          | **Ruby** language PSI Model, Inspections, Intentions, Completion, Refactoring, Test Framework  | RubyMine, and IntelliJ IDEA Ultimate if the Ruby plugin is installed.  |
+| `com.jetbrains.php`                  | **PHP** language PSI Model, Inspections, Intentions, Completion, Refactoring, Test Framework | PhpStorm, and other products if the PHP plugin is installed.  |
+| `JavaScript`                         | **JavaScript** language PSI Model, Inspections, Intentions, Completion, Refactoring, Test Framework  | WebStorm, and other products if the JavaScript plugin is installed |
 
-If you want to add a dependency to a plugin, then add a `<depends>` tag using the plugin name/ID to `plugin.xml`. For example `JavaScript` or `tslint`. Note that some plugins are not included by default in the target SDK, so you also have to add their jars manually to the SDKs classpath to compile against their provided classes. Make sure that you add the plugin jars to the SDK and not to your plugin, else the jars will be bundled with your plugin.
+**Notes about Module and Plugin Dependency:**  
+**(1)** This table is not exhaustive, there are other modules currently available in JetBrains' IntelliJ Platform-based IDEs. 
+To see a list of modules, invoke the [code completion](https://www.jetbrains.com/help/idea/auto-completing-code.html#4eac28ba) feature for the `<depends>` element contents while editing the `plugin.xml` file.
 
-## Optional dependencies
+**(2)** The [Java language functionality](https://blog.jetbrains.com/platform/2019/06/java-functionality-extracted-as-a-plugin/) was extracted as a plugin in version 2019.2 of the IntelliJ Platform. 
+This refactoring separated the Java implementation from the other, non-language portions of the platform. 
+Consequently, Java dependencies are expressed differently in `plugin.xml` depending on the version of the IntelliJ Platform being targeted:
+* Syntax _required_ for releases prior to 2019.2, _allowable_ in all releases: 
+  * `plugin.xml` include `<depends>com.intellij.modules.java</depends>`
+* Syntax for 2019.2 and later releases:
+  * `plugin.xml` _allowable_ alternative include `<depends>com.intellij.java</depends>`
+  * `build.gradle` _required_ to include `intellij.plugins 'java'` 
 
-You can also specify optional dependencies. If your plugin works with all products but provides some Java-specific functionality, you can use a dependency tag like this:
 
-```xml
-<depends optional="true" config-file="my-java-features.xml">
-  com.intellij.modules.java
-</depends>
-```
+## Verifying Dependency
+Before marking a plugin project as _dependent only on modules in a target product_ in addition to `com.intellij.modules.platform`, verify the plugin isn't implicitly dependent on any APIs that are specific to IntelliJ IDEA. 
+To verify a plugin project's independence, create an SDK pointing to an installation of the intended target IntelliJ Platform-based product, e.g., PhpStorm, rather than IntelliJ IDEA. 
+Use the same development version of the IntelliJ platform as the targeted product. 
+Additional product-specific information about developing for the IntelliJ Platform is documented in Part VIII.
 
-Before marking a plugin as compatible with all products, you should verify that it doesn't use any APIs that are specific to IntelliJ IDEA. To do so, create an _IntelliJ Platform_ SDK pointing to an installation of RubyMine, PyCharm, etc., compile your plugin against that SDK, and verify that everything compiles. Visit the [Open Source Licensing page](https://www.jetbrains.com/buy/opensource/) to check if your project is eligible for free Open Source Licenses of JetBrains products.
+Based on the tables above, the [JetBrains plugin repository](https://plugins.jetbrains.com/) automatically detects the JetBrains products with which a plugin is compatible, and makes the compatibility information available to plugin authors. 
+The compatibility information determines if plugins are available at the plugin repository to users of a particular JetBrains product.  
 
-The [JetBrains plugin repository](https://plugins.jetbrains.com/) automatically detects the products with which a plugin is compatible, based on the rules above, and makes it available to users of those products.
+## Platform API Version Compatibility
+The API of _IntelliJ Platform_ and bundled plugins may change between releases. 
+The significant changes that may break plugins are listed on [Incompatible Changes in IntelliJ Platform and Plugins API](/reference_guide/api_changes_list.md) page.
 
-## Platform Compatibility
-
-The API of _IntelliJ Platform_ and bundled plugins may be changed between releases. The major changes which may break plugins are listed on [Incompatible Changes in IntelliJ Platform and Plugins API](/reference_guide/api_changes_list.md) page.
-
-To be sure that your plugin will work on your targeted platform, you should use the same development version of IntelliJ platform as the one you are targeting. 

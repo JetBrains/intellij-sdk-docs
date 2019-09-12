@@ -32,7 +32,7 @@ Part II of this document (below) describes the functionality of the IntelliJ Pla
 The way dependency declarations are handled by the Intellij Platform is determined by the contents of the `plugin.xml` file:
 * If a plugin does not declare any dependencies in its `plugin.xml` file, or if it declares dependencies only on other plugins but not modules, it's assumed to be a legacy plugin and is loaded only in IntelliJ IDEA.
   This configuration of dependency declaration is deprecated; do not use it for new plugin projects. 
-* If a plugin declares at least _one_ module dependency in its `plugin.xml` file, the plugin is loaded if a JetBrains' IntelliJ Platform-based product contains _all the modules and plugins_ on which the plugin has declared a dependency.
+* If a plugin declares at least _one_ module dependency in its `plugin.xml` file, the plugin is loaded if an IntelliJ Platform-based product contains _all the modules and plugins_ on which the plugin has declared a dependency.
 
 ## Modules
 A _module_ represents a built-in plugin that is a non-removable part of a product. 
@@ -86,7 +86,7 @@ The following table lists(1) modules or built-in plugins that provide specific f
 
 **Notes about Module and Plugin Dependency:**  
 **(1)** This table is not exhaustive, there are other modules currently available in JetBrains' IntelliJ Platform-based IDEs. 
-To generate an exhaustive list of modules, search all `plugin.xml` files in the IntelliJ Platform codebase for the string `<module value="`.
+To see a list of modules, invoke the [code completion](https://www.jetbrains.com/help/idea/auto-completing-code.html#4eac28ba) feature for the `<depends>` element contents while editing the `plugin.xml` file.
 
 **(2)** The [Java language functionality](https://blog.jetbrains.com/platform/2019/06/java-functionality-extracted-as-a-plugin/) was extracted as a plugin in version 2019.2 of the IntelliJ Platform. 
 This refactoring separated the Java implementation from the other, non-language portions of the platform. 

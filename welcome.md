@@ -27,8 +27,6 @@ Are you upgrading your plugin to the latest platform release? Make sure to check
 
 > **NOTE** If your plugin depends on Java and targets 2019.2, please make sure to follow the steps from this [blog post](https://blog.jetbrains.com/platform/2019/06/java-functionality-extracted-as-a-plugin/).
 
-> **NOTE** Using username/password for publishing your plugins to [plugins.jetbrains.com](https://plugins.jetbrains.com) via the API will stop working on August 26, 2019, see [blog post](https://blog.jetbrains.com/platform/2019/08/deprecation-notice-loginpassword-authentication-in-the-plugins-jetbrains-com-api-replaced-with-token-based-authentication/)
-
 ## Open Source
 This guide is Open Source, and licensed under Apache 2.0. The source (as Markdown) is [hosted on GitHub](https://github.com/JetBrains/intellij-sdk-docs). 
 Please see [CONTRIBUTING.md](CONTRIBUTING.md) for details on how to host the docs locally and contribute.

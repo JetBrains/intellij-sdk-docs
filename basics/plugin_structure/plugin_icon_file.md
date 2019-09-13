@@ -46,9 +46,9 @@ See more examples of [visual weight compensation](https://jetbrains.design/intel
 For basic shapes, use the following sizes. 
 Note the different areas of transparent padding used for each shape: 
 
-| ![Square 32px by 32px](img/square_logo.png){:width="225px"} | ![Circle 36px in Diameter](img/circle_logo.png){:width="225px"} |
+| ![Square 32px by 32px](img/square_logo.png){:width="225px"} | ![Circle 36px in diameter](img/circle_logo.png){:width="225px"} |
 |:---:|:---:|
-| _Square logo 32px by 32px_ | _Circular logo 36px in Diameter_ |
+| _Square logo 32px by 32px_ | _Circular logo 36px in diameter_ |
 | ![Horizontal rectangle 36px by 26px](img/rectangle_horizontal.png){:width="225px"} | ![Vertical rectangle 26px by 36px](img/rectangle_vertical.png){:width="225px"} |
 | _Horizontal rectangular logo 36px by 26px_ | _Vertical rectangular logo 26px by 36px_ |
 
@@ -65,7 +65,7 @@ If there is no existing logo, or its use is prohibited, create a custom logo bas
 
 Ensure a Plugin Logo is visible on both light and dark backgrounds. 
 If one Plugin Logo design does not work on both light and dark backgrounds, then create separate light and dark versions of the Plugin Logo. 
-The examples below illustrate how a good Plugin Logo design may work well for a light background but not so well for a dark background. 
+The examples below illustrate how a Plugin Logo design may work well for a light background but not so well for a dark background. 
 Consequently, a separate Plugin Logo for dark backgrounds is needed. 
 
 | ![Plugin Logo on Light UI Theme](img/light_version.png){:width="225px"} | ![Light Plugin Logo on Dark UI Theme](img/dark_bad.png){:width="225px"} | ![Plugin Logo for Dark UI Theme](img/dark_good.png){:width="225px"} |

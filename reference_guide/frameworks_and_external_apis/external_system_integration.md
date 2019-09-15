@@ -46,14 +46,14 @@ The good thing is that we can separate project parsing and management here. That
 
 ## Importing from external model
 
-IntelliJ platform provides standard api for that. Namely, [ProjectImportBuilder](upsource:///projectImport/ProjectImportBuilder.java) and [ProjectImportProvider](upsource:///projectImport/ProjectImportProvider.java). There are two classes built on *template method* pattern - [AbstractExternalProjectImportBuilder](upsource:///platform/external-system-impl/src/com/intellij/openapi/externalSystem/service/project/wizard/AbstractExternalProjectImportBuilder.java) and [AbstractExternalProjectImportProvider](upsource:///platform/external-system-impl/src/com/intellij/openapi/externalSystem/service/project/wizard/AbstractExternalProjectImportProvider.java). They might be sub-classes and that concrete implementations should be registered at IoC descriptor (plugin.xml).
+IntelliJ platform provides standard api for that. Namely, [ProjectImportBuilder](upsource:///java/idea-ui/src/com/intellij/projectImport/ProjectImportBuilder.java) and [ProjectImportProvider](upsource:///java/idea-ui/src/com/intellij/projectImport/ProjectImportProvider.java). There are two classes built on *template method* pattern - [AbstractExternalProjectImportBuilder](upsource:///java/idea-ui/src/com/intellij/openapi/externalSystem/service/project/wizard/AbstractExternalProjectImportBuilder.java) and [AbstractExternalProjectImportProvider](upsource:///java/idea-ui/src/com/intellij/openapi/externalSystem/service/project/wizard/AbstractExternalProjectImportProvider.java). They might be sub-classes and that concrete implementations should be registered at IoC descriptor (plugin.xml).
 
 Here is an example from the gradle integration plugin:
 
     <projectImportProvider implementation="org.jetbrains.plugins.gradle.service.settings.GradleProjectImportProvider"/>
     <projectImportBuilder implementation="org.jetbrains.plugins.gradle.service.settings.GradleProjectImportBuilder"/>
 
-Note that [AbstractExternalProjectImportBuilder](upsource:///platform/external-system-impl/src/com/intellij/openapi/externalSystem/service/project/wizard/AbstractExternalProjectImportBuilder.java) is built on top of the 'external system settings' controls.
+Note that [AbstractExternalProjectImportBuilder](upsource:///java/idea-ui/src/com/intellij/openapi/externalSystem/service/project/wizard/AbstractExternalProjectImportBuilder.java) is built on top of the 'external system settings' controls.
 
 ## Auto-import
 

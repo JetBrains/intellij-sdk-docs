@@ -74,6 +74,18 @@ NOTE: You are allowed to prettify the pattern using markdown-features:
 `com.intellij.openapi.vcs.changes.ui.ChangesListView.UNVERSIONED_FILES_DATA_KEY` field removed
 : Use `com.intellij.openapi.vcs.changes.ui.ChangesListView.UNVERSIONED_FILE_PATHS_DATA_KEY` instead.
 
+`com.intellij.openapi.vcs.VcsVFSListener.myAddedFiles` field removed
+: Use `com.intellij.openapi.vcs.VcsVFSListener.myProcessor.acquireAddedFiles()` instead.
+
+`com.intellij.openapi.vcs.VcsVFSListener.myDeletedFiles` field removed
+: Use `com.intellij.openapi.vcs.VcsVFSListener.myProcessor.acquireAllDeletedFiles().deletedFiles` instead.
+
+`com.intellij.openapi.vcs.VcsVFSListener.myDeletedWithoutConfirmFiles` field removed
+: Use `com.intellij.openapi.vcs.VcsVFSListener.myProcessor.acquireAllDeletedFiles().deletedWithoutConfirmFiles` instead.
+
+`com.intellij.openapi.vcs.VcsVFSListener.myExceptions` field removed
+: Use `com.intellij.openapi.vcs.VcsVFSListener.myProcessor.acquireExceptions()` or `com.intellij.openapi.vcs.VcsVFSListener.myProcessor.addException(VcsException exception)` instead.
+
 `com.intellij.openapi.util.BuildNumber.getBuildNumber()` method removed
 : See `BuildNumber.asString`, `BuildNumber.getBaselineVersion()` and `BuildNumber.getComponents()` as alternatives.
 

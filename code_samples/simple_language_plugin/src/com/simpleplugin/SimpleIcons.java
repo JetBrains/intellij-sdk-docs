@@ -1,9 +1,9 @@
 package com.simpleplugin;
 
-import com.intellij.openapi.util.IconLoader;
+import com.intellij.ui.IconManager;
 
 import javax.swing.*;
 
 public class SimpleIcons {
-  public static final Icon FILE = IconLoader.getIcon("/com/simpleplugin/icons/jar-gray.png");
+  public static final Icon FILE = IconManager.getInstance().getIcon("/com/simpleplugin/icons/jar-gray.png", SimpleIcons.class);
 }

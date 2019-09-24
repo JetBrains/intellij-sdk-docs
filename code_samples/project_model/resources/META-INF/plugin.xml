@@ -15,12 +15,12 @@
     <action id="ProjectModel.SourceRoots" class="com.intellij.tutorials.project.model.ShowSourceRootsActions"
             text="Show Source Roots"
             description="Illustrates how to get source roots">
-      <add-to-group group-id="ToolsMenu" anchor="after"/>
+      <add-to-group group-id="ToolsMenu" anchor="first"/>
     </action>
     <action id="ProjectModel.ProjectSdk" class="com.intellij.tutorials.project.model.ProjectSdkAction"
             text="Show Sdk Info"
-            description="Illustrates how to get source roots">
-      <add-to-group group-id="ToolsMenu" anchor="after"/>
+            description="Illustrates how to get Sdk info">
+      <add-to-group group-id="ToolsMenu" anchor="after" relative-to-action="ProjectModel.SourceRoots"/>
     </action>
     <action id="ProjectModel.ProjectFileIndex"
             class="com.intellij.tutorials.project.model.ProjectFileIndexSampleAction"
@@ -34,7 +34,7 @@
       <add-to-group group-id="EditorPopupMenu" anchor="last"/>
     </action>
     <action id="ProjectModel.LibrariesAction" class="com.intellij.tutorials.project.model.LibrariesAction"
-            text="Libraries for file"
+            text="Libraries for File"
             description="Illustrates accessing libraries">
       <add-to-group group-id="EditorPopupMenu" anchor="last"/>
     </action>

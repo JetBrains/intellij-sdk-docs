@@ -9,7 +9,7 @@
   <idea-version since-build="172.2103.15"/>
 
   <!-- Product and plugin compatibility requirements -->
-  <depends>com.intellij.modules.lang</depends>
+  <depends>com.intellij.modules.platform</depends>
 
   <extensions defaultExtensionNs="com.intellij">
     <projectViewPane implementation="org.jetbrains.tutorials.view.pane.ImagesProjectViewPane"/>

@@ -36,7 +36,7 @@
   <vendor url="https://plugins.jetbrains.com">IntelliJ Platform SDK</vendor>
 
 
-<extensions defaultExtensionNs="com.intellij">
+  <extensions defaultExtensionNs="com.intellij">
     <framework.type implementation="org.intellij.sdk.framework.DemoFramework"/>
   </extensions>
 

@@ -4,7 +4,12 @@
   <version>1.0</version>
   <vendor>JetBrains</vendor>
 
-  <description>Provides live templates for Markdown language</description>
+  <!-- Text to display as description on Preferences/Settings | Plugin page  -->
+  <description>
+    <![CDATA[
+      Demonstrates implementing live templates for Markdown language.<br> Adds an entry to the <b>Preferences | Editor | Live Templates</b> dialog.
+    ]]>
+  </description>
 
   <idea-version since-build="141.0"/>
 

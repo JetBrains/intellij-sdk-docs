@@ -7,7 +7,7 @@
   <description>Illustration of working with run configurations</description>
 
   <idea-version since-build="131"/>
-  <depends>com.intellij.modules.lang</depends>
+  <depends>com.intellij.modules.platform</depends>
 
   <extensions defaultExtensionNs="com.intellij">
     <configurationType implementation="org.jetbrains.tutorials.run.configuration.DemoRunConfigurationType"/>

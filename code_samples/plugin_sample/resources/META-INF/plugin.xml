@@ -16,8 +16,7 @@
 
   <!-- http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html -->
   <!-- The unique identifiers of the plugins on which this plugin depends -->
-  <!-- com.intellij.modules.lang is included in every IntelliJ-based IDE, plugin will be available as well -->
-  <depends>com.intellij.modules.lang</depends>
+  <depends>com.intellij.modules.platform</depends>
   <!-- Optional dependency on another plugin. If the plugin with the "MySecondPlugin" ID is installed, the contents of mysecondplugin.xml (the format of this file conforms to the format of plugin.xml) will be loaded. -->
   <!--<depends optional="true" config-file="custom-plugin.xml">CustomPlugin</depends>-->
 
@@ -87,7 +86,7 @@
       "first", "last", "before" and "after".
       The "relative-to-action" attribute is mandatory if the anchor is set to "before" and "after", and specifies the action before or after which
       the current action is inserted. -->
-      <add-to-group group-id="ToolsMenu" anchor="after"/>
+      <add-to-group group-id="ToolsMenu" anchor="first"/>
     </action>
     <!-- The <group> element defines an action group. <action>, <group> and <separator> elements defined within it are automatically included in the group.
               The mandatory "id" attribute specifies an unique identifier for the action.
@@ -98,13 +97,12 @@
               The optional "icon" attribute specifies the icon which is displayed on the toolbar button or next to the group.
               The optional "popup" attribute specifies how the group is presented in the menu. If a group has popup="true", actions in it
               are placed in a submenu; for popup="false", actions are displayed as a section of the same menu delimited by separators. -->
-    <group id="DummyDefaultActionGroup" text="Default action group">
+    <group id="DummyDefaultActionGroup" text="Default Action Group">
       <action class="org.jetbrains.tutorials.sample.actions.GroupedToDefaultAction"
               id="PluginSample.GroupedToDefaultAction"/>
     </group>
     <group class="org.jetbrains.tutorials.sample.actions.DummyActionGroup" id="DummyActionGroup" text="Action Group"
-           description="Illustration of an action group"
-           icon="icons/testgroup.png" popup="true">
+           description="Illustration of an action group">
       <action id="PluginSample.GroupedAction" class="org.jetbrains.tutorials.sample.actions.GroupedAction"
               text="Grouped Action" description="An action in the group"/>
       <!-- The <separator> element defines a separator between actions. It can also have an <add-to-group> child element. -->
@@ -127,7 +125,7 @@
 or to "com.intellij" if the extension point is defined by the IDEA core. The name of the
         tag within the <extensions> tag matches the name of the extension point, and the "implementation" class specifies the name of the
         class added to the extension point. -->
-  <extensions>
+  <extensions defaultExtensionNs="com.intellij">
     <!--<testExtensionPoint implementation="com.foo.impl.MyExtensionImpl"/>-->
   </extensions>
 </idea-plugin>

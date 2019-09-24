@@ -9,7 +9,7 @@
   <change-notes>Refactor to give users feedback when menu items are selected.</change-notes>
 
   <idea-version since-build="131"/>
-  <depends>com.intellij.modules.lang</depends>
+  <depends>com.intellij.modules.platform</depends>
 
   <actions>
     <!-- Add your actions here -->
@@ -21,7 +21,7 @@
     The optional "description" attribute specifies the text which is displayed in the status bar when the action is focused.
     The optional "icon" attribute specifies the icon which is displayed on the toolbar button or next to the menu item. -->
     <action id="org.jetbrains.tutorials.actions.SimpleAction" class="org.jetbrains.tutorials.actions.SimplePopDialogAction"
-            text="Simple Action" description="IntelliJ Action System Demo">
+            text="Simple Action" description="IntelliJ action system demo">
       <!-- The <keyboard-shortcut> node specifies the keyboard shortcut for the action. An action can have several keyboard shortcuts.
       The mandatory "first-keystroke" attribute specifies the first keystroke of the action. The key strokes are specified according to the regular Swing rules.
       The optional "second-keystroke" attribute specifies the second keystroke of the action.
@@ -66,22 +66,22 @@
     <group id="org.jetbrains.tutorials.actions.GroupedActions" text="Example Grouped Actions" popup="true">
       <add-to-group group-id="ToolsMenu" anchor="after" relative-to-action="org.jetbrains.tutorials.actions.SimpleAction"/>
       <action class="org.jetbrains.tutorials.actions.SimplePopDialogAction" id="org.jetbrains.tutorials.actions.SimpleGroupedAction"
-              text="A Grouped Action" description="Grouped Action Demo">
+              text="A Grouped Action" description="Grouped action demo">
       </action>
     </group>
     <!-- CustomDefaultActionGroup demonstrates declaring an action group based on a ActionGroup class supplied by this plugin.
       This group is to be inserted atop the Editor Popup Menu. It declares one action in the group. -->
     <group id="org.jetbrains.tutorials.actions.ExampleCustomDefaultActionGroup" class="org.jetbrains.tutorials.actions.CustomDefaultActionGroup" popup="true"
-           text="Example Custom DefaultActionGroup" description="Custom DefaultActionGroup Demo">
+           text="Example Custom DefaultActionGroup" description="Custom defaultActionGroup demo">
       <add-to-group group-id="EditorPopupMenu" anchor="first"/>
       <action class="org.jetbrains.tutorials.actions.SimplePopDialogAction" id="org.jetbrains.tutorials.actions.CustomGroupedAction"
-              text="A Custom Grouped Action" description="Custom Grouped Action Demo"/>
+              text="A Custom Grouped Action" description="Custom grouped action demo"/>
     </group>
     <!-- DynamicActionGroup demonstrates declaring an action group without a static action declaration.
      An action is added to the group programmatically in the DynamicActionGroup implementation. The group is added
      last in the tools menu. -->
     <group id="org.jetbrains.tutorials.actions.DynamicActionGroup" class="org.jetbrains.tutorials.actions.DynamicActionGroup" popup="true"
-           text="Dynamic ActionGroup" description="Dynamic ActionGroup Demo">
+           text="Dynamic ActionGroup" description="Dynamic actionGroup demo">
       <add-to-group group-id="ToolsMenu" anchor="last"/>
     </group>
   </actions>

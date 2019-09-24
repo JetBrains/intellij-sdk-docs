@@ -15,8 +15,8 @@
   <!-- Minimum and maximum build numbers of IDEA compatible with the plugin. -->
   <idea-version since-build="191.0"/>
 
-  <!-- Product and plugin compatibility requirements -->
-  <depends>com.intellij.modules.lang</depends>
+  <!-- Product and plugin compatibility requirements - uses action system and kotlin -->
+  <depends>com.intellij.modules.platform</depends>
   <depends>org.jetbrains.kotlin</depends>
 
   <!-- Description of the plugin. Displayed in the "Plugins" settings dialog and in the
@@ -41,7 +41,7 @@
          The optional "url" attribute specifies the URL of the vendor homepage.
          The optional "email" attribute specifies the e-mail address of the vendor.
   -->
-  <vendor email="support@yourcompany.com" url="http://www.yourcompany.com">YourCompany</vendor>
+  <vendor url="https://plugins.jetbrains.com">IntelliJ Platform SDK</vendor>
 
   <actions>
     <group id="MyPlugin.TestMeu" text="Greeting" description="Greeting menu">

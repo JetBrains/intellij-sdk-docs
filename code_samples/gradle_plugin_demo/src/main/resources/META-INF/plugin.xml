@@ -4,7 +4,7 @@
   <version>0.0.1</version>
   <vendor email="dummy" url="dummy">dummy</vendor>
 
-  <depends>com.intellij.modules.lang</depends>
+  <depends>com.intellij.modules.platform</depends>
 
   <idea-version since-build="191"/>
   <extensions defaultExtensionNs="com.intellij">

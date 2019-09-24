@@ -12,7 +12,7 @@
   <!-- Compatible with the following versions of IntelliJ Platform -->
   <idea-version since-build="191"/>
 
-  <!-- Product and plugin compatibility requirements -->
+  <!-- Product and plugin compatibility requirements - this inspects text, which is part of the lang module -->
   <depends>com.intellij.modules.lang</depends>
 
   <!-- Text to display as description on Preferences/Settings | Plugin page  -->
@@ -57,8 +57,8 @@
              implementationClass= FQN of inspection implementation
             -->
     <localInspection language="TEXT"
-            displayName="Inspection Basics"
-            groupName="Example Inspections"
+            displayName="Inspection basics"
+            groupName="Example inspections"
             groupPath="SDK"
             enabledByDefault="true"
             level="WARNING"

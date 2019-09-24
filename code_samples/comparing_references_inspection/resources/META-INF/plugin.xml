@@ -32,7 +32,7 @@
   </change-notes>
 
   <!-- Text to display as company information on Preferences/Settings | Plugin page -->
-  <vendor email="faux-email@jetbrains.com" url="https://plugins.jetbrains.com">IntelliJ Platform SDK</vendor>
+  <vendor url="https://plugins.jetbrains.com">IntelliJ Platform SDK</vendor>
 
   <extensions defaultExtensionNs="com.intellij">
 

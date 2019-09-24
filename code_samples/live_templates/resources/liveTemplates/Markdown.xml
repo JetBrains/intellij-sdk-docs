@@ -1,7 +1,7 @@
 <templateSet group="Markdown">
   <template name="["
             value="[$TEXT$]($LINK$)$END$"
-            description="New link reference."
+            description="SDK: New link reference."
             toReformat="false"
             toShortenFQNames="false">
     <variable name="TEXT" expression="" defaultValue="" alwaysStopAt="true"/>

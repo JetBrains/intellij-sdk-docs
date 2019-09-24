@@ -15,6 +15,7 @@
 
   <!-- Product and plugin compatibility requirements -->
   <depends>com.intellij.modules.java</depends>
+  <depends>com.intellij.modules.platform</depends>
 
   <!-- Text to display as description on Preferences/Settings | Plugin page  -->
   <description>
@@ -32,7 +33,7 @@
   </change-notes>
 
   <!-- Text to display as company information on Preferences/Settings | Plugin page -->
-  <vendor email="faux-email@jetbrains.com" url="https://plugins.jetbrains.com">IntelliJ Platform SDK</vendor>
+  <vendor url="https://plugins.jetbrains.com">IntelliJ Platform SDK</vendor>
 
   <extensions defaultExtensionNs="com.intellij">
     <intentionAction>
@@ -41,9 +42,4 @@
     </intentionAction>
   </extensions>
 
-  <project-components>
-    <component>
-      <implementation-class>com.intellij.codeInsight.intention.ConditionalOperatorConvertor</implementation-class>
-    </component>
-  </project-components>
 </idea-plugin>

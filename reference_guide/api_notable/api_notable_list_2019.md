@@ -10,6 +10,11 @@ title: Notable Changes in IntelliJ Platform and Plugins API 2019.*
 : Now reflects its "heavy test" characteristics (see [Light and Heavy Tests](/basics/testing_plugins/light_and_heavy_tests.md)).
                            
                            
+## Notable Changes in IntelliJ IDEA
+
+Unbundled plugins
+: Several plugins (Heroku integration, RubyMotion support) for no longer actively maintained technology have been moved to a [separate repository](https://github.com/JetBrains/intellij-obsolete-plugins/). 
+If your plugin depends on them, users will need to install them from the [JetBrains plugin repository](https://plugins.jetbrains.com).
                            
                            
 # 2019.2 

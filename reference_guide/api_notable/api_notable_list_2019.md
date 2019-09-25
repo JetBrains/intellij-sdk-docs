@@ -67,7 +67,7 @@ Java functionality extracted as plugin
 : If your plugin depends on Java, it must be specified now, please see [blog post](https://blog.jetbrains.com/platform/2019/06/java-functionality-extracted-as-a-plugin/) for details.
 
 Unbundled plugins
-: Several plugins for no longer actively maintained technology have been moved to a [separate repository](https://github.com/JetBrains/intellij-obsolete-plugins/). If your plugin depends on them, users will need to install them from the [JetBrains plugin repository](https://plugins.jetbrains.com).
+: Several plugins (J2ME, JsTestDriver, Struts 1.x) for no longer actively maintained technology have been moved to a [separate repository](https://github.com/JetBrains/intellij-obsolete-plugins/). If your plugin depends on them, users will need to install them from the [JetBrains plugin repository](https://plugins.jetbrains.com).
 
 
 

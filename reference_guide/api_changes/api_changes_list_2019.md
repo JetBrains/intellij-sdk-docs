@@ -89,6 +89,9 @@ NOTE: You are allowed to prettify the pattern using markdown-features:
 `com.intellij.openapi.util.BuildNumber.getBuildNumber()` method removed
 : See `BuildNumber.asString`, `BuildNumber.getBaselineVersion()` and `BuildNumber.getComponents()` as alternatives.
 
+`com.intellij.remoteServer.configuration.deployment.DeploymentConfigurationManager.createAndRunConfiguration(ServerType, RemoteServer)` method removed
+: Use `.createAndRunConfiguration(ServerType, RemoteServer, DeploymentSourceType)` instead 
+
 ## Changes in DataGrip and Database Tools plugin 2019.3
 
 `com.intellij.sql.dialects.mssql.MssqlDialect` class renamed to `com.intellij.sql.dialects.mssql.MsDialect`

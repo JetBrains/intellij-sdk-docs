@@ -20,7 +20,7 @@
     * [Using Gradle](tutorials/build_system.md)
         * [Getting Started with Gradle](tutorials/build_system/prerequisites.md)
         * [Configuring Gradle Projects](tutorials/build_system/gradle_guide.md)
-        * [Publishing Your Plugin](tutorials/build_system/deployment.md)
+        * [Publishing Plugins with Gradle](tutorials/build_system/deployment.md)
     * [Using DevKit](basics/getting_started/using_dev_kit.md)
         * [Setting Up a Development Environment](basics/getting_started/setting_up_environment.md)
         * [Creating a Plugin Project](basics/getting_started/creating_plugin_project.md)

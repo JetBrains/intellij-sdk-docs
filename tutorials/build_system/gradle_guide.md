@@ -96,6 +96,9 @@ As many as possible of the attributes in the Patching DSL will be substituted in
 * If a `patchPluginXml` attribute value is explicitly defined, the attribute value will be substituted in `plugin.xml`.
   * If both `patchPluginXml.sinceBuild` and `patchPluginXml.untilBuild` attributes are explicitly set, both are substituted in `plugin.xml`. 
   * If one attribute is explicitly set (e.g. `patchPluginXml.sinceBuild`) and one is not (e.g. `patchPluginXml.untilBuild` has default value,) both attributes are patched at their respective (explicit and default) values.
+* For **no substitution** of the `<idea-version>` element's `since-build` and `until-build` attributes, one of the following must appear in the `build.gradle` file:
+  * Either set `intellij.updateSinceUntilBuild = false`, which will disable substituting both `since-build` and `until-build` attributes,
+  * Or, for independent control, set `patchPluginXml.sinceBuild(null)` and `patchPluginXml.untilBuild(null)` depending on whether the intention is to disable one or both substitutions. 
 
 A best practice to avoid confusion is to replace the elements in `plugin.xml` that will be patched by the Gradle plugin with a comment.
 That way the values for these parameters do not appear in two places in the source code.

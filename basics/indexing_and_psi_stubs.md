@@ -15,6 +15,8 @@ File-based indexes are built directly over the content of files. Stub indexes ar
 
 Querying a file-based index gets you the set of files matching a certain condition. Querying a stub index gets you the set of matching PSI elements. Therefore, custom language plugin developers should typically use stub indexes in their plugin implementations.
 
+>> **TIP** [Indices Viewer](https://plugins.jetbrains.com/plugin/13029-indices-viewer/) is a plugin that helps inspecting indices' contents and properties.
+
 ## Dumb mode
 
 Indexing is a potentially long process. It's performed in background, and during this time, IDE's features are restricted to the ones that don't require index: basic text editing, version control etc. This restriction is managed by [DumbService](upsource:///platform/core-api/src/com/intellij/openapi/project/DumbService.java).

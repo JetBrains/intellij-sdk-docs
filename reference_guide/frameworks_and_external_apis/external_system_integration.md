@@ -8,14 +8,14 @@ This page provides high-level overview of *External System* sub-system.
 
 # Rationale
 
-There are multiple project management systems ([maven](https://maven.apache.org/), [gradle](https://www.gradle.org/), [sbt](https://www.scala-sbt.org/) etc) and it's good to support them at the IDE. Luckily, they all provide a similar set of facilities from the integration point of view:
+There are multiple project management systems ([Apache Maven](https://maven.apache.org/), [Gradle](https://www.gradle.org/), [sbt](https://www.scala-sbt.org/) etc) and it's good to support them at the IDE. Luckily, they all provide a similar set of facilities from the integration point of view:
 
-*   build IDE project from external system config (pom.xml, build.gradle etc);
+*   build IDE project from external system config (`pom.xml`, `build.gradle` etc);
 *   provide a list of available tasks;
 *   allow to execute a particular task;
 *   ...
 
-That means that we can separate external system-specific logic and general IDE processing. *'External system'* sub-system provides simple api for wrapping external system and extensible IDE-specific processing logic.
+That means that we can separate external system-specific logic and general IDE processing. *'External system'* sub-system provides simple API for wrapping external system and extensible IDE-specific processing logic.
 
 # Project management
 
@@ -46,7 +46,7 @@ The good thing is that we can separate project parsing and management here. That
 
 ## Importing from external model
 
-IntelliJ platform provides standard api for that. Namely, [ProjectImportBuilder](upsource:///java/idea-ui/src/com/intellij/projectImport/ProjectImportBuilder.java) and [ProjectImportProvider](upsource:///java/idea-ui/src/com/intellij/projectImport/ProjectImportProvider.java). There are two classes built on *template method* pattern - [AbstractExternalProjectImportBuilder](upsource:///java/idea-ui/src/com/intellij/openapi/externalSystem/service/project/wizard/AbstractExternalProjectImportBuilder.java) and [AbstractExternalProjectImportProvider](upsource:///java/idea-ui/src/com/intellij/openapi/externalSystem/service/project/wizard/AbstractExternalProjectImportProvider.java). They might be sub-classes and that concrete implementations should be registered at IoC descriptor (plugin.xml).
+IntelliJ platform provides standard API for that. Namely, [ProjectImportBuilder](upsource:///java/idea-ui/src/com/intellij/projectImport/ProjectImportBuilder.java) and [ProjectImportProvider](upsource:///java/idea-ui/src/com/intellij/projectImport/ProjectImportProvider.java). There are two classes built on *template method* pattern - [AbstractExternalProjectImportBuilder](upsource:///java/idea-ui/src/com/intellij/openapi/externalSystem/service/project/wizard/AbstractExternalProjectImportBuilder.java) and [AbstractExternalProjectImportProvider](upsource:///java/idea-ui/src/com/intellij/openapi/externalSystem/service/project/wizard/AbstractExternalProjectImportProvider.java). They might be sub-classes and that concrete implementations should be registered at IoC descriptor (plugin.xml).
 
 Here is an example from the gradle integration plugin:
 
@@ -61,7 +61,7 @@ It's possible to configure external system integration to automatically refresh 
 
 ![Auto-import](/reference_guide/img/use-auto-import.png)
 
-Built-in support covers only root config files of linked external projects. However, there is a possible situation that particular external project has another config files which affect resulting project structure as well (for example, it might be a multi-project where every sub-project has its own config file). That's why it's possible to enhance that processing by making target external system implementation (*ExternalSystemManager*) implement *ExternalSystemAutoImportAware*. That allows to provide custom logic for mapping file modification events to the target external project affected by that.
+Built-in support covers only root config files of linked external projects. However, there is a possible situation that particular external project has more config files which affect resulting project structure as well (for example, it might be a multi-project where every sub-project has its own config file). That's why it's possible to enhance that processing by making target external system implementation (*ExternalSystemManager*) implement *ExternalSystemAutoImportAware*. That allows to provide custom logic for mapping file modification events to the target external project affected by that.
 
 **Note:** *ExternalSystemAutoImportAware.getAffectedExternalProjectPath()* is called quite often, that's why it's expected to return control as soon as possible. Helper *CachingExternalSystemAutoImportAware* class might be used for caching, i.e. *ExternalSystemManager* which implements *ExternalSystemAutoImportAware* can have a field like *'new CachingExternalSystemAutoImportAware(new MyExternalSystemAutoImportAware())'* and delegate *ExternalSystemAutoImportAware.getAffectedExternalProjectPath()* calls to it.
 
@@ -73,6 +73,6 @@ The general idea is that all external system settings controls are represented b
 
 It's recommended to extend from [AbstractExternalProjectSettingsControl](upsource:///platform/external-system-impl/src/com/intellij/openapi/externalSystem/service/settings/AbstractExternalProjectSettingsControl.java) for implementing project-level settings control as it already handles some of them.
 
-Similar approach is used for providing 'import from external system' UI - implementation is expected to extended [AbstractImportFromExternalSystemControl](upsource:///java/idea-ui/src/com/intellij/openapi/externalSystem/service/settings/AbstractImportFromExternalSystemControl.java) and it has not linked external projects list but target external project path control:
+Similar approach is used for providing 'import from external system' UI - implementation is expected to extend [AbstractImportFromExternalSystemControl](upsource:///java/idea-ui/src/com/intellij/openapi/externalSystem/service/settings/AbstractImportFromExternalSystemControl.java) and it has not linked external projects list but target external project path control:
 
 ![Import from external system](/reference_guide/img/import.png)

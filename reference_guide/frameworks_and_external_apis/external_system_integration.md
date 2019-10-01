@@ -67,12 +67,12 @@ Built-in support covers only root config files of linked external projects. Howe
 
 # Settings
 
-The general idea is that all external system settings controls are represented by implementations of [ExternalSettingsControl](upsource:///platform/external-system-impl/src/com/intellij/openapi/externalSystem/service/settings/ExternalSettingsControl.java) interface. There are also external system project-local settings and global external system settings. So, basically particular external system settings UI looks as below:
+The general idea is that all external system settings controls are represented by implementations of [ExternalSystemSettingsControl](upsource:///platform/external-system-impl/src/com/intellij/openapi/externalSystem/util/ExternalSystemSettingsControl.java) interface. There are also external system project-local settings and global external system settings. So, basically particular external system settings UI looks as below:
 
 ![Configurable](/reference_guide/img/configurable.png)
 
 It's recommended to extend from [AbstractExternalProjectSettingsControl](upsource:///platform/external-system-impl/src/com/intellij/openapi/externalSystem/service/settings/AbstractExternalProjectSettingsControl.java) for implementing project-level settings control as it already handles some of them.
 
-Similar approach is used for providing 'import from external system' UI - implementation is expected to extended [AbstractImportFromExternalSystemControl](upsource:///platform/external-system-impl/src/com/intellij/openapi/externalSystem/service/settings/AbstractImportFromExternalSystemControl.java) and it has not linked external projects list but target external project path control:
+Similar approach is used for providing 'import from external system' UI - implementation is expected to extended [AbstractImportFromExternalSystemControl](upsource:///java/idea-ui/src/com/intellij/openapi/externalSystem/service/settings/AbstractImportFromExternalSystemControl.java) and it has not linked external projects list but target external project path control:
 
 ![Import from external system](/reference_guide/img/import.png)

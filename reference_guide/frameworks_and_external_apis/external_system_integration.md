@@ -22,7 +22,7 @@ That means that we can separate external system-specific logic and general IDE p
 ## Project data domain
 
 **General**  
-External system wrapper is required to be able to build project info on the basis of the given external system config. That information is built using in terms of [DataNode](upsource:///platform/external-system-api/src/com/intellij/openapi/externalSystem/model/DataNode.java), [Key](upsource:///platform/external-system-api/src/com/intellij/openapi/externalSystem/model/Key.java) and [ProjectEntityData](upsource:///platform/external-system-api/src/com/intellij/openapi/externalSystem/model/project/ProjectEntityData.java).
+External system wrapper is required to be able to build project info on the basis of the given external system config. That information is built using in terms of [DataNode](upsource:///platform/external-system-api/src/com/intellij/openapi/externalSystem/model/DataNode.java), [Key](upsource:///platform/external-system-api/src/com/intellij/openapi/externalSystem/model/Key.java) and [ExternalEntityData](upsource:///platform/external-system-api/src/com/intellij/openapi/externalSystem/model/project/ExternalEntityData.java).
 
 ![DataNode](/reference_guide/img/data-node.png)
 
@@ -34,11 +34,11 @@ For example, simple one-module project might look as below:
 
 
 **Consequence**  
-The IDE provides a set of built-in *Key*s and *ProjectEntityData*s but any external system integration or third-party plugin developer might enhance project data by defining her own *Key* and *ProjectEntityData* and storing them at a child of appropriate *DataNode*.
+The IDE provides a set of built-in *Key*s and *ExternalEntityData*s but any external system integration or third-party plugin developer might enhance project data by defining her own *Key* and *ExternalEntityData* and storing them at a child of appropriate *DataNode*.
 
 ## Managing project data
 
-We need to process project data is built on external system config basis. Here comes [ProjectDataService](upsource:///platform/external-system-api/src/com/intellij/openapi/externalSystem/service/project/manage/ProjectDataService.java). It is a strategy which knows how to manage particular *ProjectEntityData*. For example, when we want to import a project from external model, we can start by the top level *DataNode* which references project info and then import its data using corresponding service.
+We need to process project data is built on external system config basis. Here comes [ProjectDataService](upsource:///platform/external-system-api/src/com/intellij/openapi/externalSystem/service/project/manage/ProjectDataService.java). It is a strategy which knows how to manage particular *ExternalEntityData*. For example, when we want to import a project from external model, we can start by the top level *DataNode* which references project info and then import its data using corresponding service.
 
 Custom services can be defined via *'externalProjectDataService'* extension.
 

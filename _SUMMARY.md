@@ -229,7 +229,7 @@
 ## Part VIII - Product Specific
 * [Build Number Ranges](basics/getting_started/build_number_ranges.md)
 * [Compatibility with Multiple Products](basics/getting_started/plugin_compatibility.md)
-* Android Studio
+* [Android Studio](products/android_studio.md)
 * AppCode
 * CLion
 * DataGrip

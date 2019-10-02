@@ -68,24 +68,24 @@ For the [example](#creating-a-gradle-based-intellij-platform-plugin-with-new-pro
 * The `META-INF` directory under the default `main` [SourceSet](https://docs.gradle.org/current/userguide/java_plugin.html#sec:java_project_layout) contains the plugin [configuration file](/basics/plugin_structure/plugin_configuration_file.md).
 
 ```text
-  my_gradle_plugin/
-    build.gradle
-    gradle/
-      wrapper/
-        gradle-wrapper.jar
-        gradle-wrapper.properties
-    gradlew
-    gradlew.bat
-    settings.gradle
-    src/
-      main
-        java/
-        resources/
-          META-INF/
-            plugin.xml
-      test
-        java/
-        resources/
+quit-prompt
+├── build.gradle
+├── gradle
+│   └── wrapper
+│       ├── gradle-wrapper.jar
+│       └── gradle-wrapper.properties
+├── gradlew
+├── gradlew.bat
+├── settings.gradle
+└── src
+    ├── main
+    │   ├── java
+    │   └── resources
+    │       └── META-INF
+    │           └── plugin.xml
+    └── test
+        ├── java
+        └── resources
 ```
 
 The New Project Wizard produces the `my_gradle_plugin` project `build.gradle` file shown below:

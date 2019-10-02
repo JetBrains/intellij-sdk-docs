@@ -90,8 +90,8 @@
 * [Documents](basics/architectural_overview/documents.md)
 * [Editors](reference_guide/editors.md)
     * [Editor Basics](tutorials/editor_basics.md)
-        * [1. Working With Text](tutorials/editor_basics/working_with_text.md)
-        * [2. Editor Coordinates System. Positions And Offsets](tutorials/editor_basics/coordinates_system.md)
+        * [1. Working with Text](tutorials/editor_basics/working_with_text.md)
+        * [2. Editor Coordinates System. Positions and Offsets](tutorials/editor_basics/coordinates_system.md)
         * [3. Handling Editor Events](tutorials/editor_basics/editor_events.md)
     * [Multiple Carets](reference_guide/multiple_carets.md)
 * [Run Configurations](basics/run_configurations.md)
@@ -117,7 +117,7 @@
 * [SDK](reference_guide/project_model/sdk.md)
 * [Library](reference_guide/project_model/library.md)
 * [Facet](reference_guide/project_model/facet.md)
-* [External system integration](reference_guide/frameworks_and_external_apis/external_system_integration.md)
+* [External System Integration](reference_guide/frameworks_and_external_apis/external_system_integration.md)
 
 ## Part IV - PSI
 * [What is the PSI?](basics/architectural_overview/psi.md)
@@ -130,7 +130,7 @@
 * [PSI Cookbook](basics/psi_cookbook.md)
 * [Indexing and PSI Stubs](basics/indexing_and_psi_stubs.md)
     * [File-based indexes](basics/indexing_and_psi_stubs/file_based_indexes.md)
-    * [Stub indexes](basics/indexing_and_psi_stubs/stub_indexes.md)
+    * [Stub Indexes](basics/indexing_and_psi_stubs/stub_indexes.md)
 * Element Patterns
 * Unified AST
 * [XML DOM API](reference_guide/frameworks_and_external_apis/xml_dom_api.md)

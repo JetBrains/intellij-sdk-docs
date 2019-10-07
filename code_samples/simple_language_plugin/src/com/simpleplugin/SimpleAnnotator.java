@@ -16,21 +16,20 @@ public class SimpleAnnotator implements Annotator {
     if (element instanceof PsiLiteralExpression) {
       PsiLiteralExpression literalExpression = (PsiLiteralExpression) element;
       String value = literalExpression.getValue() instanceof String ? (String) literalExpression.getValue() : null;
-
+      
       if (value != null && value.startsWith("simple" + ":")) {
         Project project = element.getProject();
         String key = value.substring(7);
         List<SimpleProperty> properties = SimpleUtil.findProperties(project, key);
         if (properties.size() == 1) {
-          TextRange range = new TextRange(element.getTextRange().getStartOffset() + 7,
-                                          element.getTextRange().getStartOffset() + 7);
+          TextRange range = new TextRange(element.getTextRange().getStartOffset() + 8,
+                                          element.getTextRange().getEndOffset() - 1);
           Annotation annotation = holder.createInfoAnnotation(range, null);
           annotation.setTextAttributes(DefaultLanguageHighlighterColors.LINE_COMMENT);
         } else if (properties.size() == 0) {
           TextRange range = new TextRange(element.getTextRange().getStartOffset() + 8,
-                                          element.getTextRange().getEndOffset());
-          holder.createErrorAnnotation(range, "Unresolved property").
-              registerFix(new CreatePropertyQuickFix(key));
+                                          element.getTextRange().getEndOffset() - 1);
+          holder.createErrorAnnotation(range, "Unresolved property");
         }
       }
     }

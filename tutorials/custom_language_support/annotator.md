@@ -34,13 +34,13 @@ public class SimpleAnnotator implements Annotator {
         String key = value.substring(7);
         List<SimpleProperty> properties = SimpleUtil.findProperties(project, key);
         if (properties.size() == 1) {
-          TextRange range = new TextRange(element.getTextRange().getStartOffset() + 7,
-                                          element.getTextRange().getEndOffset());
+          TextRange range = new TextRange(element.getTextRange().getStartOffset() + 8,
+                                          element.getTextRange().getEndOffset() - 1);
           Annotation annotation = holder.createInfoAnnotation(range, null);
           annotation.setTextAttributes(DefaultLanguageHighlighterColors.LINE_COMMENT);
         } else if (properties.size() == 0) {
           TextRange range = new TextRange(element.getTextRange().getStartOffset() + 8,
-                                          element.getTextRange().getEndOffset());
+                                          element.getTextRange().getEndOffset() - 1);
           holder.createErrorAnnotation(range, "Unresolved property");
         }
       }

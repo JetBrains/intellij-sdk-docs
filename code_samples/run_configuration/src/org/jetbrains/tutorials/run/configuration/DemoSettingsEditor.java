@@ -9,22 +9,18 @@ import javax.swing.*;
 /**
  * @author Anna Bulenkova
  */
-
-/**
- * @author Anna Bulenkova
- */
 public class DemoSettingsEditor extends SettingsEditor<DemoRunConfiguration> {
   private JPanel myPanel;
-  private LabeledComponent<ComponentWithBrowseButton> myMainClass;
+  private LabeledComponent<TextFieldWithBrowseButton> myScriptName;
 
   @Override
   protected void resetEditorFrom(DemoRunConfiguration demoRunConfiguration) {
-
+    myScriptName.getComponent().setText(demoRunConfiguration.getScriptName());
   }
 
   @Override
-  protected void applyEditorTo(DemoRunConfiguration demoRunConfiguration) throws ConfigurationException {
-
+  protected void applyEditorTo(@NotNull DemoRunConfiguration demoRunConfiguration) throws ConfigurationException {
+    demoRunConfiguration.setScriptName(myScriptName.getComponent().getText());
   }
 
   @NotNull
@@ -34,8 +30,8 @@ public class DemoSettingsEditor extends SettingsEditor<DemoRunConfiguration> {
   }
 
   private void createUIComponents() {
-    myMainClass = new LabeledComponent<ComponentWithBrowseButton>();
-    myMainClass.setComponent(new TextFieldWithBrowseButton());
+    myScriptName = new LabeledComponent<TextFieldWithBrowseButton>();
+    myScriptName.setComponent(new TextFieldWithBrowseButton());
   }
 }
 

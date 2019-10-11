@@ -4,6 +4,7 @@ import com.intellij.codeInsight.daemon.*;
 import com.intellij.codeInsight.navigation.NavigationGutterIconBuilder;
 import com.intellij.openapi.project.Project;
 import com.intellij.psi.*;
+import com.intellij.psi.impl.source.tree.java.PsiJavaTokenImpl;
 import com.simpleplugin.psi.SimpleProperty;
 import org.jetbrains.annotations.NotNull;
 
@@ -12,9 +13,9 @@ import java.util.*;
 public class SimpleLineMarkerProvider extends RelatedItemLineMarkerProvider {
   @Override
   protected void collectNavigationMarkers(@NotNull PsiElement element,
-                                          Collection<? super RelatedItemLineMarkerInfo> result) {
-    if (element instanceof PsiLiteralExpression) {
-      PsiLiteralExpression literalExpression = (PsiLiteralExpression) element;
+                                          @NotNull Collection<? super RelatedItemLineMarkerInfo> result) {
+    if (element instanceof PsiJavaTokenImpl && element.getParent() instanceof PsiLiteralExpression) {
+      PsiLiteralExpression literalExpression = (PsiLiteralExpression) element.getParent();
       String value = literalExpression.getValue() instanceof String ? (String) literalExpression.getValue() : null;
       if (value != null && value.startsWith("simple" + ":")) {
         Project project = element.getProject();

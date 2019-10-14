@@ -13,7 +13,7 @@ title: Notable Changes in IntelliJ Platform and Plugins API 2019.*
 ## Notable Changes in IntelliJ IDEA
 
 Unbundled plugins
-: Several plugins (Heroku integration, RubyMotion support) for no longer actively maintained technology have been moved to a [separate repository](https://github.com/JetBrains/intellij-obsolete-plugins/). 
+: Several plugins (Heroku integration, RubyMotion support, Java Applets Support) for no longer actively maintained technology have been moved to a [separate repository](https://github.com/JetBrains/intellij-obsolete-plugins/). 
 If your plugin depends on them, users will need to install them from the [JetBrains plugin repository](https://plugins.jetbrains.com).
                            
                            

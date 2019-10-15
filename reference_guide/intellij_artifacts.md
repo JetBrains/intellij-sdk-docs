@@ -11,7 +11,7 @@ The IntelliJ Platform artifacts repositories are:
 * [Releases repository](https://www.jetbrains.com/intellij-repository/releases/) for release versions by [build number](/basics/getting_started/build_number_ranges.md).
 * [Snapshots repository](https://www.jetbrains.com/intellij-repository/snapshots/) for _BRANCH#-EAP-SNAPSHOT_, _EAP-CANDIDATE-SNAPSHOT_, _LATEST-EAP-SNAPSHOT_, and the _EAP-SNAPSHOT_.  
 
-See the [Mavin coordinates](#specify-the-maven-coordinates-for-the-artifact) section for details about specifying these artifacts. 
+See the [Maven coordinates](#specify-the-maven-coordinates-for-the-artifact) section for details about specifying these artifacts. 
 
 Both the Releases and Snapshots repositories have two types of content:
 * Binary and source code artifacts for cross-platform, ZIP distributions of IntelliJ Platform-based IDEs, such as IntelliJ IDEA, CLion, Rider, and MPS. 

@@ -37,9 +37,14 @@ The following problem patterns are supported:
 <class name>.<method name>(<human-readable parameters>) abstract method added
 <class name> class moved to package <package name>
 
-where <class name> is a fully-qualified name of the class, e.g. com.intellij.openapi.actionSystem.AnAction$InnerClass.
+<property name> property removed from resource bundle <bundle name>
+
+where 
+<class name> is a fully-qualified name of the class, e.g. com.intellij.openapi.actionSystem.AnAction$InnerClass.
 <method name> is the exact method's name. Note that constructors have dedicated patterns.
-<human-readable parameters> is a string representing parameters, which are not necessarily fully qualified. They do not affect the parser. For example, instead of (java.lang.Object, java.util.List, int) you are free to write (Object, List<String>, int).
+<human-readable parameters> is a string representing parameters, which are not necessarily fully qualified. They do not affect the parser. For example, instead of (java.lang.Object, java.util.List, int) you are free to write (Object, List<String>, int)
+<property name> is a full name of a property from .properties file, like "some.action.description"
+<bundle name> is a fully qualified name of the property bundle, which includes its package, like "message.IdeBundle"
 
 NOTE: If a change you're trying to document doesn't match any of the above patterns, fill in a ticket in the YouTrack. 
 An example of a ticket is https://youtrack.jetbrains.com/issue/PR-1218. Until supported, you may document the change as you prefer, and I will correct it later.

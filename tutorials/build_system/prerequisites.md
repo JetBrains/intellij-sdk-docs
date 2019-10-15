@@ -102,7 +102,7 @@ The New Project Wizard produces the `my_gradle_plugin` project `build.gradle` fi
   It defaults to the version of IntelliJ IDEA that was used to run the New Project Wizard.
 * The value of the Patching DSL attribute `patchPluginXml.changeNotes` is set to place holder text.
 
-```text
+```groovy
   plugins {
       id 'java'
       id 'org.jetbrains.intellij' version '0.4.10'

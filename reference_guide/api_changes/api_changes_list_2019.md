@@ -95,7 +95,7 @@ NOTE: You are allowed to prettify the pattern using markdown-features:
 : See `BuildNumber.asString`, `BuildNumber.getBaselineVersion()` and `BuildNumber.getComponents()` as alternatives.
 
 `com.intellij.remoteServer.configuration.deployment.DeploymentConfigurationManager.createAndRunConfiguration(ServerType, RemoteServer)` method removed
-: Use `DeploymentConfigurationManager.createAndRunConfiguration(ServerType, RemoteServer, DeploymentSourceType)` instead 
+: Use `DeploymentConfigurationManager.createAndRunConfiguration(ServerType, RemoteServer, DeploymentSourceType)` instead. 
 
 `org.jetbrains.plugins.cucumber.javascript.CucumberJavaScriptStepDefinitionCreator#createStepDefinition(GherkinStep, PsiFile)` method removed
 : Use `org.jetbrains.plugins.cucumber.javascript.CucumberJavaScriptStepDefinitionCreator#createStepDefinition(GherkinStep, PsiFile, boolean)` instead. 
@@ -149,7 +149,7 @@ Constructor injection referring to extension points not supported
 Recompile your code to pick up the new signature.
 
 `com.yourkit` package removed
-: YourKit library has been extracted into the separate plugin which is not bundled in all IDEs by default. YourKit library is a library for profiling IDE, and its util classes shouldn't be used for general purpose. Instead of `com.yourkit.util.Strings` please use  `org.apache.commons.lang.StringUtils`.  Instead of `com.yourkit.util.ArrayUtil` please use `org.apache.commons.lang.ArrayUtils`
+: YourKit library has been extracted into the separate plugin which is not bundled in all IDEs by default. YourKit library is a library for profiling IDE, and its util classes shouldn't be used for general purpose. Instead of `com.yourkit.util.Strings` please use  `org.apache.commons.lang.StringUtils`.  Instead of `com.yourkit.util.ArrayUtil` please use `org.apache.commons.lang.ArrayUtils`.
 
 `org.jetbrains.intellij.build.ProductProperties.yourkitAgentBinariesDirectoryPath` field removed
 : Please bundle [performanceTesting plugin](https://plugins.jetbrains.com/plugin/7819-performance-testing) in case you would like to bundle YourKit profiler within your IDE.

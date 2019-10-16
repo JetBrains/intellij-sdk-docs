@@ -33,5 +33,6 @@ In this section:
   * [Plugin Developers List](/plugin_repository/api/plugin_developers.md)
 * [Plugin Recommendations](/plugin_repository/feature_extractor.md)
 * [Custom Release Channels](/plugin_repository/custom_channels.md)
+* [Plugins Rating](/plugin_repository/plugins_rating.md)
 
 You can always reach out to the plugin repository team via email [plugins-admin@jetbrains.com](plugins-admin@jetbrains.com).

@@ -261,6 +261,7 @@
     * [Plugin Developers List](plugin_repository/api/plugin_developers.md)
 * [Plugin Recommendations](plugin_repository/feature_extractor.md)
 * [Custom Release Channels](plugin_repository/custom_channels.md)
+* [Plugins Rating](plugin_repository/plugins_rating.md)
 
 ## Appendix I - Resources
 

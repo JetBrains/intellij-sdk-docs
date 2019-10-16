@@ -97,6 +97,18 @@ NOTE: You are allowed to prettify the pattern using markdown-features:
 `com.intellij.remoteServer.configuration.deployment.DeploymentConfigurationManager.createAndRunConfiguration(ServerType, RemoteServer)` method removed
 : Use `DeploymentConfigurationManager.createAndRunConfiguration(ServerType, RemoteServer, DeploymentSourceType)` instead 
 
+`org.jetbrains.plugins.cucumber.javascript.CucumberJavaScriptStepDefinitionCreator#createStepDefinition(GherkinStep, PsiFile)` method removed
+: Use `org.jetbrains.plugins.cucumber.javascript.CucumberJavaScriptStepDefinitionCreator#createStepDefinition(GherkinStep, PsiFile, boolean)` instead. 
+ 
+`org.jetbrains.plugins.cucumber.psi.GherkinStep#getStepName()` method removed
+: Use `org.jetbrains.plugins.cucumber.psi.GherkinStep#getName()` instead. 
+ 
+`org.jetbrains.plugins.cucumber.CucumberJvmExtensionPoint#resolveStep()` method removed
+: See `org.jetbrains.plugins.cucumber.steps.reference.CucumberStepReference#multiResolveInner()` instead. 
+
+`org.jetbrains.plugins.cucumber.CucumberJvmExtensionPoint#getGlues()` method removed
+: Java specific method was moved to CucumberJava implementation. 
+ 
 ## Changes in DataGrip and Database Tools plugin 2019.3
 
 `com.intellij.sql.dialects.mssql.MssqlDialect` class renamed to `com.intellij.sql.dialects.mssql.MsDialect`

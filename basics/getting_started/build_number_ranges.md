@@ -35,7 +35,7 @@ Multi-part build numbers can also be used in the `since-build` and `until-build`
 
 >> **Tip** Specific build numbers and their corresponding release version are available via _Previous Releases_ on the corresponding product's download page, e.g. [Previous IntelliJ IDEA Releases](https://www.jetbrains.com/idea/download/previous.html).
 
-The following branch numbers are used for *IntelliJ Platform* based products and build numbers of recent IDE versions:
+### IntelliJ Platform based products of recent IDE versions
 
 | Branch number                                                   | IntelliJ Platform version |
 |-----------------------------------------------------------------|---------------------------|
@@ -53,7 +53,7 @@ The following branch numbers are used for *IntelliJ Platform* based products and
 
 Note that there is no `170`. In the `YYYY.R` versioning scheme, the `R` part starts at 1.
 
-## Branch and build numbers for IntelliJ Platform pre-2016.2
+### IntelliJ Platform based products of pre-2016.2 IDE versions
 
 | Branch number | Product version |
 |---------------|-----------------|
@@ -78,7 +78,9 @@ Note that there is no `170`. In the `YYYY.R` versioning scheme, the `R` part sta
 | 95            | IDEA 9.0.2\+ |
 | 93            | IDEA 9.0 |
 
-Build numbers for IntelliJ IDEA versions:
+## History
+
+### Build numbers for IntelliJ IDEA versions
 
 | IntelliJ IDEA version | Build number  |
 |-----------------------|---------------|
@@ -103,7 +105,7 @@ Build numbers for IntelliJ IDEA versions:
 | 9.0.1                 | 93.94         |
 | 9.0                   | 93.13         |
 
-## Build numbers for IntelliJ IDEA pre-9.0
+### Build numbers for IntelliJ IDEA pre-9.0
 
 Before IntelliJ IDEA 9.0, linear build numbers were used, with the following ranges:
 

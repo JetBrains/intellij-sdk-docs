@@ -72,11 +72,11 @@ Note that there is no `170`. In the `YYYY.R` versioning scheme, the `R` part sta
 | [119](https://github.com/JetBrains/intellij-community/tree/119) | RubyMine 4.5 |
 | [117](https://github.com/JetBrains/intellij-community/tree/117) | IntelliJ IDEA 11.1, AppCode 1.5, PyCharm 2.5, RubyMine 4.0.x, PhpStorm/WebStorm 4.0 |
 | 111           | IntelliJ IDEA 11.0 |
-| 107           | IDEA 10.5 |
-| 103           | IDEA 10.0.2\+ |
-| 99            | IDEA 10.0+ |
-| 95            | IDEA 9.0.2\+ |
-| 93            | IDEA 9.0 |
+| 107           | IntelliJ IDEA 10.5 |
+| 103           | IntelliJ IDEA 10.0.2\+ |
+| 99            | IntelliJ IDEA 10.0+ |
+| 95            | IntelliJ IDEA 9.0.2\+ |
+| 93            | IntelliJ IDEA 9.0 |
 
 ## History
 

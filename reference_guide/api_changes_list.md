@@ -6,7 +6,7 @@ title: Incompatible Changes in IntelliJ Platform and Plugins API
 Before documenting a breaking API change, please, make sure that the change cannot be avoided 
 in an alternative way.
 
-APIs marked with @ApiStatus.Experimental or @ApiStatus.Internal don't need to be documented.
+APIs marked with @ApiStatus.Experimental, @ApiStatus.Internal or @ApiStatus.ScheduledForRemoval don't need to be documented.
 
 To document a new incompatible change, add a new line with the problem pattern
 followed by a 2nd line with ": "-prefixed human-readable description and recommended fix/action.

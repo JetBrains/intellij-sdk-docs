@@ -10,7 +10,7 @@ See the note on how to document new problems on the main page reference_guide/ap
 
 -->
 
-> **NOTE** Changes from API marked with [`org.jetbrains.annotations.ApiStatus.@Experimental`](upsource:///platform/util/src/org/jetbrains/annotations/ApiStatus.java) are not listed here, as incompatible changes are to be expected.
+> **NOTE** Changes from API marked with [`org.jetbrains.annotations.ApiStatus.@Experimental/ScheduledForRemoval`](upsource:///platform/util/src/org/jetbrains/annotations/ApiStatus.java) are not listed here, as incompatible changes are to be expected.
 
 # 2018.3 
 

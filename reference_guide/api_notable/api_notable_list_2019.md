@@ -9,6 +9,8 @@ title: Notable Changes in IntelliJ Platform and Plugins API 2019.*
 `PlatformTestCase` renamed to `HeavyPlatformTestCase`
 : Now reflects its "heavy test" characteristics (see [Light and Heavy Tests](/basics/testing_plugins/light_and_heavy_tests.md)).
                            
+Support for transitive optional plugin dependencies
+: Optional `plugin.xml` configuration files can now specify `<depends>`. [Issue](https://youtrack.jetbrains.com/issue/IDEA-209769)                           
                            
 ## Notable Changes in IntelliJ IDEA
 

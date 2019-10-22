@@ -66,6 +66,33 @@ For example, customized VCS colors for a subset of file statuses will appear in 
 ```
 For additional examples of `FILESTATUS` color `name` attributes, see the editor color scheme XML file for the [High Contrast editor scheme](upsource:///platform/platform-resources/src/themes/highContrastScheme.xml).
 
+### Customizing Selected Tab Colors
+Since 2019.3 you can now customize the colors of the selected tab in the editor from the color scheme (as well as the Custom UI Themes). To do so, just like the Version Control File Status Colors, you need to add the following properties to the color scheme XML file:
+
+For the indicator below the selected tab, add these inside the `<colors>` section:
+
+```xml
+<colors>
+  <option name="TAB_UNDERLINE" value="56b6c2" />
+  <option name="TAB_UNDERLINE_INACTIVE" value="5cc5" />
+</colors>
+```
+
+For the selected tab background color, you need to add the following properties to the `<attributes>` section:
+
+```xml
+<option name="TAB_SELECTED">
+  <value>
+    <option name="BACKGROUND" value="cb4b16" />
+  </value>
+</option>
+<option name="TAB_SELECTED_INACTIVE">
+  <value>
+    <option name="BACKGROUND" value="f6a434" />
+  </value>
+</option>
+```
+
 ### Customizing Editor Scroll Bar Colors
 Editor scroll bar colors should be coordinated with, and switch together with an editor color scheme.
 Please note that Custom UI Theme (`*.theme.json`) files also contain `ScrollBar.*` name attributes, but these are for scroll bars outside the context of the editor.

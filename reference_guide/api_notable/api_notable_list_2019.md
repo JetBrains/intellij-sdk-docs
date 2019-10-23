@@ -11,6 +11,9 @@ title: Notable Changes in IntelliJ Platform and Plugins API 2019.*
                            
 Support for transitive optional plugin dependencies
 : Optional `plugin.xml` configuration files can now specify `<depends>`. [Issue](https://youtrack.jetbrains.com/issue/IDEA-209769)                           
+
+Theme plugins do not require restart
+: (Un)Installing or enabling/disabling [Theme plugins](/reference_guide/ui_themes/themes_intro.md) doesn't require an IDE restart anymore.
                            
 ## Notable Changes in IntelliJ IDEA
 

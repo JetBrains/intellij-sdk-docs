@@ -228,6 +228,7 @@
 
 ## Part VIII - Product Specific
 * [Build Number Ranges](basics/getting_started/build_number_ranges.md)
+* [Developing for Multiple Products](products/dev_alternate_products.md)
 * [Compatibility with Multiple Products](basics/getting_started/plugin_compatibility.md)
 * [Android Studio](products/android_studio.md)
 * AppCode

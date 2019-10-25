@@ -134,34 +134,5 @@ IntelliJ Platform plugins targeting IntelliJ IDEA have the most straightforward 
 * Set the appropriate attributes for [patching the `plugin.xml` file](#patching-the-plugin-configuration-file).
 
 ### Plugins Targeting Alternate IntelliJ Platform-Based IDEs
-The Gradle plugin can also be configured for developing plugins to run in IDEs that are based on the IntelliJ Platform but are not IntelliJ IDEA.
-This example focuses on the details of developing a plugin for PhpStorm.
-It will be helpful to review the [PhpStorm Plugin Development](/products/phpstorm/phpstorm.md) section.
-* The Gradle plugin attributes describing the configuration of the [IntelliJ Platform used to build the plugin project](#configuring-the-gradle-plugin-for-building-intellij-platform-plugin-projects) must be explicitly set. 
-  The type will be "IC" because the IntelliJ Platform is defined by the IntelliJ IDEA Community Edition.
-  The BRANCH.BUILD number of the IntelliJ Platform (IntelliJ IDEA CE) is the same as for the PhpStorm target.
-  Although the FIX (tertiary) number may differ between the same versions of the applications, it won't affect the match of the IntelliJ Platform.
-* All PhpStorm plugin projects have a dependency on the PhpStorm OpenAPI Library.
-  Any plugin targeting PhpStorm must list a dependency on the PHP plugin, and its version must be compatible with the target version of PhpStorm.
-  The plugin dependency must be declared using the Gradle plugin `intellij.plugins` attribute, which lists the `id` and `version` of the plugin dependency.
-* The best practice is to use the target version of PhpStorm as the IDE Development Instance.
-  That enables running and debugging the plugin in the target (e.g., PhpStorm) application.
-  The choice of application to use for the IDE Development Instance is configured using the Gradle plugin attribute `runIde.ideaDirectory`.
-
-The snippet below is an example of configuring the Setup and Running DSLs in a `build.gradle` file to develop a plugin targeted at PhpStorm. 
-The configuration uses IntelliJ IDEA Community Edition v2019.1.2 (build 191.7141.44) as the IntelliJ Platform against which the plugin project is built.
-It uses PhpStorm v2019.1.2 (build 191.7141.52) as the IDE Development Instance in which the plugin project is run and debugged.
-```groovy
-  intellij {
-    // Define IntelliJ Platform against which to build the plugin project.
-    version '191.7141.44'  // Same version (2019.1.2) as target PhpStorm   
-    type 'IC'              // Use IntelliJ IDEA CE as basis of IntelliJ Platform   
-    // Require the Php plugin, must be compatible with target v2019.1.2
-    plugins 'com.jetbrains.php:191.6707.66'     
-  }
-  
-  runIde {
-      // Path to installed v2019.1.2 PhpStorm to use as IDE Development Instance
-      ideaDirectory '/Applications/apps/PhpStorm/ch-0/191.7141.52/PhpStorm.app/Contents'
-  }
-```
+Gradle also supports developing plugins to run in IDEs that are based on the IntelliJ Platform, but are not IntelliJ IDEA.
+For more information, see the [Developing for Multiple Products](/products/dev_alternate_products.md) page of this guide.

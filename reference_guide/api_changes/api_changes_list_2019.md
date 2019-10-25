@@ -61,6 +61,9 @@ NOTE: You are allowed to prettify the pattern using markdown-features:
 
 ## Changes in IntelliJ Platform 2019.3
 
+`com.intellij.codeInsight.lookup.impl.LookupImpl.FocusDegree` class removed
+: Use `com.intellij.codeInsight.lookup.Lookup.FocusDegree` instead.
+
 `com.intellij.json.JsonFileTypeFactory` class removed
 : Use `com.intellij.fileType` extension point instead.
 

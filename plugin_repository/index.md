@@ -1,37 +1,32 @@
 ---
-title: Plugin Repository (plugins.jetbrains.com)
+title: Plugin Repository
+
+redirect_from:
+  - /plugin_repository/api/api_reference.html
+  - /plugin_repository/api/plugin_upload.html
+  - /plugin_repository/api/plugins_list.html
+  - /plugin_repository/api/plugin_details.html
+  - /plugin_repository/api/maven_interface.html
+  - /plugin_repository/api/plugin_developers.html
+  - /plugin_repository/feature_extractor.html
+  - /plugin_repository/custom_channels.html
+
 ---
-
-Plugins extend the core functionality of JetBrains products. They provide various integrations (e.g. with a VCS or application servers), 
-add support for various development technologies, frameworks and programming languages, and so on.
- 
-The Plugin Repository is a service responsible for:
-
- * Providing a product (e.g. IntelliJ IDEA) with a list of compatible plugins and their updates;
- 
- * Facilitating the download of compatible plugin updates;
- 
- * Storage, uploading, and management of the plugins and their updates developed and published by third-party vendors or JetBrains.
 
 JetBrains provides an official plugins repository [plugins.jetbrains.com](https://plugins.jetbrains.com) for all IntelliJ Platform-based IDEs, 
 as well as TeamCity (limited functionality).
  
-You can set up your own enterprise plugin repositories for IntelliJ Platform based IDEs (also known as custom plugin repositories).
-For example, to store plugins that you want to reserve for your company's internal use only. 
-[Read more](https://www.jetbrains.com/help/idea/managing-enterprise-plugin-repositories.html) about IntelliJ Platform-based IDEs enterprise repositories support.
- 
-This documentation section includes articles, FAQs, and tutorials on [JetBrains plugin repository](https://plugins.jetbrains.com) operations.
+> **WARNING** **Part X - Plugin Repository** pages have moved to [JetBrains Marketplace](https://plugins.jetbrains.com/docs/marketplace/about-marketplace.html) documentation, please update your bookmarks. 
 
-In this section:
+For your convenience pages previously part of this documentation are linked below:
 
-* [API Reference](/plugin_repository/api/api_reference.md)
-  * [Plugin Upload](/plugin_repository/api/plugin_upload.md)
-  * [Plugins List](/plugin_repository/api/plugins_list.md)
-  * [Plugin Details](/plugin_repository/api/plugin_details.md)
-  * [Plugin Update Download](/plugin_repository/api/plugin_download_update.md)
-  * [Maven Interface](/plugin_repository/api/maven_interface.md)
-  * [Plugin Developers List](/plugin_repository/api/plugin_developers.md)
-* [Plugin Recommendations](/plugin_repository/feature_extractor.md)
-* [Custom Release Channels](/plugin_repository/custom_channels.md)
+* [API Reference](https://plugins.jetbrains.com/docs/marketplace/api-reference.html)
+  * [Plugin Upload](https://plugins.jetbrains.com/docs/marketplace/plugin-upload.html)
+  * [Plugins List](https://plugins.jetbrains.com/docs/marketplace/plugins-list.html)
+  * [Plugin Details](https://plugins.jetbrains.com/docs/marketplace/plugin-details.html)
+  * [Plugin Update Download](https://plugins.jetbrains.com/docs/marketplace/plugin-update-download.html)
+  * [Maven Interface](https://plugins.jetbrains.com/docs/marketplace/maven-interface.html)
+  * [Plugin Developers List](https://plugins.jetbrains.com/docs/marketplace/plugin-developers-list.html)
+* [Plugin Recommendations](https://plugins.jetbrains.com/docs/marketplace/intellij-plugin-recommendations.html)
+* [Custom Release Channels](https://plugins.jetbrains.com/docs/marketplace/custom-release-channels.html)
 
-You can always reach out to the plugin repository team via email [plugins-admin@jetbrains.com](plugins-admin@jetbrains.com).

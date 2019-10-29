@@ -12,7 +12,7 @@ Please see the guide page for manually [publishing a plugin](../../basics/gettin
 {:toc}
 
 ## Providing Your Hub Permanent Token to Gradle
-To deploy a plugin to the plugin repository, you need to supply your [JetBrains Hub Permanent Token](/plugin_repository/api/plugin_upload.md). 
+To deploy a plugin to the plugin repository, you need to supply your [JetBrains Hub Permanent Token](https://plugins.jetbrains.com/docs/marketplace/plugin-upload.html). 
 This page describes three options to supply your _Hub Permanent Token_ via Gradle using: 
 * Gradle properties, 
 * Environment variables,

@@ -24,6 +24,4 @@ To verify that the file type is registered correctly, you can implement the
 [LanguageFileType.getIcon()](upsource:///platform/core-api/src/com/intellij/openapi/fileTypes/LanguageFileType.java)
 method and verify that the correct icon is displayed for files which have the extension(s) associated with your file type.
 
-If you want IDEs to show a hint prompting users that your plugin supports some extensions as in the example below, look at the information about [plugin recommendations](/plugin_repository/feature_extractor.md).
-
-![File Extensions Type of Feature](/plugin_repository/img/feature_extractor_extensions.png)
+If you want IDEs to show a hint prompting users that your plugin supports some extensions, look at the information about [plugin recommendations](https://plugins.jetbrains.com/docs/marketplace/intellij-plugin-recommendations.html).

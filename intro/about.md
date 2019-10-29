@@ -44,9 +44,9 @@ This guide is split into several parts, similar to a text book. Each part builds
 
     Documents how to use the _IntelliJ Platform_ to create a new, custom IDE, rather than plugins to an existing product, e.g. like WebStorm, or Android Studio.
 
-* [**Part X - Plugin Repository API**](/plugin_repository/index.md)
+* [**Part X - Plugin Repository**](/plugin_repository/index.md)
 
-    Documents the API for the [Plugin Repository](https://plugins.jetbrains.com) service that JetBrains maintains and is used to host plugins. It is not necessary to know this API in order to publish plugins - plugins can be uploaded manually, or via the Gradle IntelliJ Plugin.
+    This part has been moved to [JetBrains Marketplace documentation](https://plugins.jetbrains.com/docs/marketplace/about-marketplace.html).
 
 * [**Appendix I - Resources**](/appendix/resources/useful_links.md)
 

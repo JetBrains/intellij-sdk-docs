@@ -14,6 +14,9 @@ Support for transitive optional plugin dependencies
 
 Theme/Keymap plugins do not require restart
 : (Un)Installing or enabling/disabling [Theme](/reference_guide/ui_themes/themes_intro.md) or [Keymap](https://plugins.jetbrains.com/search?tags=Keymap) plugins doesn't require an IDE restart anymore.
+                 
+Run task once (per project)
+: Use `com.intellij.ide.util.RunOnceUtil` to run a task exactly once for application or per project.                 
                            
 ## Notable Changes in IntelliJ IDEA
 

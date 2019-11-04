@@ -52,6 +52,6 @@ This guide is split into several parts, similar to a text book. Each part builds
 
     Links to useful resources, such as the IntelliJ Community Edition source code, the Plugin Development forum and the Jetbrains Platform Slack.
 
-* [**Appendix II - Breaking API Changes**](/reference_guide/api_changes_list.md)
+* **Appendix II - Changes**
 
-   Provides a list of backwards-incompatible API changes in each major release of the IntelliJ Platform.
+   Provides a list of [backwards-incompatible](/reference_guide/api_changes_list.md) API changes as well as [notable changes and new features](/reference_guide/api_notable/api_notable.md) in each major release of the IntelliJ Platform.

@@ -22,7 +22,7 @@ Follow these steps to work with Docker:
 
 * Firstly, install Docker, using the [Docker Toolbox](https://www.docker.com/docker-toolbox).
 * On Windows and Mac, start the Docker host virtual machine (start the "Docker Quickstart terminal" or run "Kitematic." See the Getting Started guides on [docker.com](https://www.docker.com) for more details).
-* Clone the [`intellij-sdk-docs`](https://github.com/JetBrains/intellij-sdk-docs) repo to the local machine, and [initialise the `sdkdocs-template` submodule](#a-word-on-submodules).
+* Clone the [`intellij-sdk-docs`](https://github.com/JetBrains/intellij-sdk-docs) repo to the local machine, and [initialise the `sdkdocs-template` submodule](#documentation-repository-submodules).
 * Change the current directory to the parent directory of the git repo.
 * Run `docker build -t intellij-sdk-docs .` to build the docker image from the current folder, and give it the tag `intellij-sdk-docs`.
     * Note that this must be run from a command prompt that has the various `DOCKER_*` environment variables set up, such as the Docker Quickstart Terminal.

@@ -62,3 +62,4 @@ NOTE: You are allowed to prettify the pattern using markdown-features:
 ## Changes in IntelliJ Platform 2020.1
 
 `com.intellij.codeInsight.editorActions.SelectionQuotingTypedHandler.c` renamed to `com.intellij.codeInsight.editorActions.SelectionQuotingTypedHandler.UnquotingFilter`
+: Use `com.intellij.codeInsight.editorActions.SelectionQuotingTypedHandler.UnquotingFilter` instead.

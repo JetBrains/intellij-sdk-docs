@@ -106,7 +106,7 @@ Override the `TypedActionHandler.execute()` method in `MyTypedHandler` to implem
 This method is called every time a key is pressed when the Editor Tool Window has focus. 
 
 In the following example, the `MyTypedHandler.execute()` method inserts "editor_basics\n" at the zero [caret Offset](coordinates_system.md#caret-offset) position when a keystroke event occurs. 
-As explained in [Working with Text](working_with_text.md#safely-modifying-text-in-a-document), safe modifications to the document must be in the context of a write action. 
+As explained in [Working with Text](working_with_text.md#safely-replacing-selected-text-in-the-document), safe modifications to the document must be in the context of a write action. 
 So although a method on the `Document` interface does the `String` insertion, the write action ensures a stable context. 
 ```java
 class MyTypedHandler implements TypedActionHandler {

@@ -15,7 +15,7 @@ If you just want to share feedback on the guide, again, [raise an issue](https:/
 For problems related to code, rather than the content of the guide, you have several options:
 
 * [Plugin Development Forum](https://intellij-support.jetbrains.com/hc/en-us/community/topics/200366979-IntelliJ-IDEA-Open-API-and-Plugin-Development) - post a message to the support forum. It is regularly updated with answers by JetBrains team members.
-* [IntelliJ Plugin Developers Gitter room](https://gitter.im/IntelliJ-Plugin-Developers/Lobby) - this chat room is a great place to ask questions, with answers coming from both JetBrains team members, and members of the community.
+* [#intellij-platform on JetBrains Platform Slack](https://plugins.jetbrains.com/slack/) - this chat room is a great place to ask questions, with answers coming from both JetBrains team members, and members of the community
 
 Of course, all issues will be used to try and improve this guide.
 

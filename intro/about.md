@@ -50,7 +50,7 @@ This guide is split into several parts, similar to a text book. Each part builds
 
 * [**Appendix I - Resources**](/appendix/resources/useful_links.md)
 
-    Links to useful resources, such as the IntelliJ Community Edition source code, the Plugin Development forum and the Plugin Developers Gitter room.
+    Links to useful resources, such as the IntelliJ Community Edition source code, the Plugin Development forum and the Jetbrains Platform Slack.
 
 * [**Appendix II - Breaking API Changes**](/reference_guide/api_changes_list.md)
 

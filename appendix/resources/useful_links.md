@@ -23,4 +23,4 @@ The following links represent useful resources for working with the _IntelliJ Pl
 
 ### Help
 * [Community SDK Forum](https://intellij-support.jetbrains.com/hc/en-us/community/topics/200366979-IntelliJ-IDEA-Open-API-and-Plugin-Development)
-* [IntelliJ Plugin Developers Gitter](https://gitter.im/IntelliJ-Plugin-Developers/Lobby)
+* [#intellij-platform on JetBrains Platform Slack](https://plugins.jetbrains.com/slack/)

@@ -1,5 +1,4 @@
 [![official JetBrains project](https://jb.gg/badges/official-flat-square.svg)](https://confluence.jetbrains.com/display/ALL/JetBrains+on+GitHub)
-[![Join the chat at https://gitter.im/JetBrains/gradle-intellij-plugin](https://badges.gitter.im/JetBrains/intellij-sdk-docs.svg)](https://gitter.im/IntelliJ-Plugin-Developers/Lobby)
 
 IntelliJ Platform SDK Documentation
 =======

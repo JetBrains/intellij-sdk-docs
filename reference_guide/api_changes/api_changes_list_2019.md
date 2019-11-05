@@ -150,6 +150,9 @@ NOTE: You are allowed to prettify the pattern using markdown-features:
 `icons.PythonIcons.Python.PropertySetter` field removed
 : Use `icons.PythonPsiApiIcons.PropertySetter` instead.
 
+`icons.PythonIcons.Python.PropertyGetter` field removed
+: Use `icons.PythonPsiApiIcons.PropertyGetter` instead.
+
 # 2019.2 
 
 ## Changes in IntelliJ Platform 2019.2

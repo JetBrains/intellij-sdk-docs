@@ -61,6 +61,9 @@ NOTE: You are allowed to prettify the pattern using markdown-features:
 
 ## Changes in IntelliJ Platform 2019.3
 
+`com.intellij.codeInsight.completion.CompletionUtil.sortMatching(PrefixMatcher, Collection)` method removed
+: Use `com.intellij.codeInsight.completion.PrefixMatcher.sortMatching(Collection)` instead
+
 `com.intellij.json.JsonFileTypeFactory` class removed
 : Use `com.intellij.fileType` extension point instead.
 

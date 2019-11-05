@@ -147,6 +147,9 @@ NOTE: You are allowed to prettify the pattern using markdown-features:
 `com.jetbrains.python.psi.search.PyProjectScopeBuilder.excludeSdkTestsScope(Project)` method removed
 : Use `com.jetbrains.python.psi.search.PySearchUtilBase.excludeSdkTestsScope(Project)` instead.
 
+`icons.PythonIcons.Python.PropertySetter` field removed
+: Use `icons.PythonPsiApiIcons.PropertySetter` instead.
+
 # 2019.2 
 
 ## Changes in IntelliJ Platform 2019.2

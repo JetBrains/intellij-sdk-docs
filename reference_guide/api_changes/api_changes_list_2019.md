@@ -131,6 +131,9 @@ NOTE: You are allowed to prettify the pattern using markdown-features:
 `org.jetbrains.plugins.ruby.ruby.codeInsight.types.RubyTypeProvider.createTypeBySymbolFromProviders(Symbol symbol, Context context)` method parameter `Context` removed
 : This was done as part of [`RUBY-24760`](https://youtrack.jetbrains.com/issue/RUBY-24760) in order to move to new Context-less approach.
 
+## Changes in PyCharm and Python plugin 2019.3
+
+`com.jetbrains.python.inspections.PythonVisitorFilter` class moved to package `com.jetbrains.python.psi`
 
 # 2019.2 
 

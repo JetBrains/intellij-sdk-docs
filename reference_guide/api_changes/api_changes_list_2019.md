@@ -138,6 +138,9 @@ NOTE: You are allowed to prettify the pattern using markdown-features:
 `com.jetbrains.python.psi.PyUtil.addElementToStatementList(PsiElement, PyStatementList, boolean)` method removed
 : Use `com.jetbrains.python.refactoring.PyRefactoringUtil.addElementToStatementList(PsiElement, PyStatementList, boolean)` instead
 
+`com.jetbrains.python.psi.search.PyProjectScopeBuilder.excludeSdkTestsScope(Project)` method removed
+: Use `com.jetbrains.python.psi.search.PySearchUtilBase.excludeSdkTestsScope(Project)` instead.
+
 # 2019.2 
 
 ## Changes in IntelliJ Platform 2019.2

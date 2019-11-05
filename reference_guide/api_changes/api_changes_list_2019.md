@@ -61,6 +61,21 @@ NOTE: You are allowed to prettify the pattern using markdown-features:
 
 ## Changes in IntelliJ Platform 2019.3
 
+`com.intellij.codeInsight.TailType.EQ` field removed
+: Use `com.intellij.codeInsight.lookup.EqTailType.INSTANCE` instead.
+
+`com.intellij.codeInsight.completion.CompletionContributor.getActionShortcut(String)` method removed
+: Use `com.intellij.codeInsight.completion.CompletionUtil.getActionShortcut(String)` instead
+
+`com.intellij.codeInsight.AutoPopupController.runTransactionWithEverythingCommitted(Project, Runnable)` method removed
+: Use `com.intellij.codeInsight.AutoPopupControllerImpl.runTransactionWithEverythingCommitted(Project, Runnable)` instead
+
+`com.intellij.codeInsight.completion.InsertionContext.getCodeStyleSettings()` method removed
+: Use `com.intellij.codeInsight.completion.util.CompletionStyleUtil.getCodeStyleSettings(InsertionContext)` instead
+
+`com.intellij.codeInsight.completion.CompletionUtil.sortMatching(PrefixMatcher, Collection)` method removed
+: Use `com.intellij.codeInsight.completion.PrefixMatcher.sortMatching(Collection)` instead
+
 `com.intellij.json.JsonFileTypeFactory` class removed
 : Use `com.intellij.fileType` extension point instead.
 
@@ -124,6 +139,28 @@ NOTE: You are allowed to prettify the pattern using markdown-features:
 
 `org.jetbrains.plugins.ruby.ruby.codeInsight.types.RubyTypeProvider.createTypeBySymbolFromProviders(Symbol symbol, Context context)` method parameter `Context` removed
 : This was done as part of [`RUBY-24760`](https://youtrack.jetbrains.com/issue/RUBY-24760) in order to move to new Context-less approach.
+
+## Changes in PyCharm and Python plugin 2019.3
+
+`com.jetbrains.python.inspections.PythonVisitorFilter` class moved to package `com.jetbrains.python.psi`
+
+`com.jetbrains.python.psi.PyUtil.addElementToStatementList(PsiElement, PyStatementList, boolean)` method removed
+: Use `com.jetbrains.python.refactoring.PyRefactoringUtil.addElementToStatementList(PsiElement, PyStatementList, boolean)` instead
+
+`com.jetbrains.python.psi.search.PyProjectScopeBuilder.excludeSdkTestsScope(Project)` method removed
+: Use `com.jetbrains.python.psi.search.PySearchUtilBase.excludeSdkTestsScope(Project)` instead.
+
+`icons.PythonIcons.Python.PropertySetter` field removed
+: Use `icons.PythonPsiApiIcons.PropertySetter` instead.
+
+`icons.PythonIcons.Python.PropertyGetter` field removed
+: Use `icons.PythonPsiApiIcons.PropertyGetter` instead.
+
+`PARSE.expected.colon` property removed from resource bundle `com.jetbrains.python.PyBundle`
+: Use `com.jetbrains.python.PyPsiBundle` instead.
+
+`PARSE.expected.expression` property removed from resource bundle `com.jetbrains.python.PyBundle`
+: Use `com.jetbrains.python.PyPsiBundle` instead.
 
 
 # 2019.2 

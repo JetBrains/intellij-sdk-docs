@@ -153,6 +153,13 @@ NOTE: You are allowed to prettify the pattern using markdown-features:
 `icons.PythonIcons.Python.PropertyGetter` field removed
 : Use `icons.PythonPsiApiIcons.PropertyGetter` instead.
 
+`PARSE.expected.colon` property removed from resource bundle `com.jetbrains.python.PyBundle`
+: Use `com.jetbrains.python.PyPsiBundle` instead.
+
+`PARSE.expected.expression` property removed from resource bundle `com.jetbrains.python.PyBundle`
+: Use `com.jetbrains.python.PyPsiBundle` instead.
+
+
 # 2019.2 
 
 ## Changes in IntelliJ Platform 2019.2

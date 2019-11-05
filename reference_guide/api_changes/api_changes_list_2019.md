@@ -61,6 +61,9 @@ NOTE: You are allowed to prettify the pattern using markdown-features:
 
 ## Changes in IntelliJ Platform 2019.3
 
+`com.intellij.codeInsight.AutoPopupController.runTransactionWithEverythingCommitted(Project, Runnable)` method removed
+: Use `com.intellij.codeInsight.AutoPopupControllerImpl.runTransactionWithEverythingCommitted(Project, Runnable)` instead
+
 `com.intellij.codeInsight.completion.InsertionContext.getCodeStyleSettings()` method removed
 : Use `com.intellij.codeInsight.completion.util.CompletionStyleUtil.getCodeStyleSettings(InsertionContext)` instead
 

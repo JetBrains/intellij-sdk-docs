@@ -63,3 +63,7 @@ NOTE: You are allowed to prettify the pattern using markdown-features:
 
 `com.intellij.codeInsight.editorActions.SelectionQuotingTypedHandler.DequotingFilter` class renamed to `com.intellij.codeInsight.editorActions.SelectionQuotingTypedHandler.UnquotingFilter`
 : Use `com.intellij.codeInsight.editorActions.SelectionQuotingTypedHandler.UnquotingFilter` instead.
+
+`com.intellij.codeInsight.TargetElementUtilBase` class removed
+: Use `com.intellij.codeInsight.TargetElementUtil` extension point instead.
+

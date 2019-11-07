@@ -32,7 +32,7 @@ class.
 
 It has two main advantages:
 
-*  The user can control the way each notification type is displayed under `Settings | Notifications`
+*  The user can control the way each notification type is displayed under `Settings | Appearance & Behavior | Notifications`
 
 *  All displayed notifications are gathered in the Event Log tool window and can be reviewed later
 

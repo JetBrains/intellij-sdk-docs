@@ -41,11 +41,8 @@ The specific method used to display a notification is
 If the current Project is known, please use overload with `Project` parameter, so the notification is shown in its associated frame.
 
 The text of the notification can include HTML tags.
-You can allow the user to interact with the notification by including hyperlink tags in the notification text and passing a
-[NotificationListener](upsource:///platform/platform-api/src/com/intellij/notification/NotificationListener.java)
-instance to the constructor of the
-[Notification](upsource:///platform/platform-api/src/com/intellij/notification/Notification.java)
-class.
+
+Use `Notification#addAction(AnAction)` to add links below the content, use [NotificationAction](upsource:///platform/platform-api/src/com/intellij/notification/NotificationAction.java) for convenience. 
 
 The `groupDisplayId` parameter of the
 [Notification](upsource:///platform/platform-api/src/com/intellij/notification/Notification.java)

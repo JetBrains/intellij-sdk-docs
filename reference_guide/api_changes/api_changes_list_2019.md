@@ -61,7 +61,7 @@ NOTE: You are allowed to prettify the pattern using markdown-features:
 
 ## Changes in IntelliJ Platform 2019.3
 
-`com.intellij.codeInsight.TailType.getLocalCodeStyleSettings(Editor, int)` field removed
+`com.intellij.codeInsight.TailType.getLocalCodeStyleSettings(Editor, int)` method removed
 : Use `com.intellij.psi.codeStyle.CommonCodeStyleSettings.getLocalCodeStyleSettings(Editor, int)` instead.
 
 `com.intellij.codeInsight.TailType.EQ` field removed

@@ -67,6 +67,9 @@ NOTE: You are allowed to prettify the pattern using markdown-features:
 `com.intellij.codeInsight.TailType.EQ` field removed
 : Use `com.intellij.codeInsight.lookup.EqTailType.INSTANCE` instead.
 
+`com.intellij.codeInsight.TailType.COMMA` field removed
+: Use `com.intellij.codeInsight.lookup.CommaTailType.INSTANCE` instead.
+
 `com.intellij.codeInsight.completion.CompletionContributor.getActionShortcut(String)` method removed
 : Use `com.intellij.codeInsight.completion.CompletionUtil.getActionShortcut(String)` instead
 

@@ -115,6 +115,11 @@ NOTE: You are allowed to prettify the pattern using markdown-features:
 `com.intellij.remoteServer.configuration.deployment.DeploymentConfigurationManager.createAndRunConfiguration(ServerType, RemoteServer)` method removed
 : Use `DeploymentConfigurationManager.createAndRunConfiguration(ServerType, RemoteServer, DeploymentSourceType)` instead. 
 
+## Changes in Java plugin 2019.3
+
+`com.intellij.codeInspection.magicConstant.MagicCompletionContributor.getAllowedValues(PsiElement)` method return type changed from `com.intellij.codeInspection.magicConstant.MagicConstantInspection.AllowedValues` to `com.intellij.codeInspection.magicConstant.MagicConstantUtils.AllowedValues`
+: Use new type instead.
+
 ## Changes in Groovy plugin 2019.3
 
 `org.jetbrains.plugins.groovy.extensions.GroovyScriptTypeDetector(GroovyScriptType, String[])` constructor removed

@@ -22,6 +22,7 @@ dependencies {
 intellij {
   version '2019.2.4'
   type 'PY'
+  updateSinceUntilBuild = false
 }
 
 patchPluginXml {

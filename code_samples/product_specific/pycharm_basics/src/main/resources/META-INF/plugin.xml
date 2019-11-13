@@ -9,8 +9,8 @@
   <!-- The version of this plugin -->
   <version>0.1.0</version>
 
-  <!--  Must match the PyCharm build -->
-  <idea-version since-build="192.3"/>
+  <!--  Must match the target PyCharm build -->
+  <idea-version since-build="192.4"/>
 
   <!-- Requires the python plugin to run -->
   <depends>com.intellij.modules.python</depends>

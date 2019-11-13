@@ -72,7 +72,7 @@ Next to **Build #** is the BRANCH.BUILD.FIX version of the _targetIDE_.
 In the example shown below, the (BRANCH.BUILD.FIX) version is `192.7142.41`, and the product version is 2019.2.4.
 The version of the IntelliJ Platform used to build this product version is BRANCH.BUILD, or `192.7142`
 
-![Example PyCharm](img/phpstorm_build.png){:width="500px"}
+![Example PhpStorm Splash Screen](img/phpstorm_build.png){:width="500px"}
 
 If the product version isn't clear on the _About_ screen, consult the individual product pages in Part VIII.
 
@@ -108,7 +108,7 @@ This snippet is an example for configuring the Setup and Running DSLs in a `buil
     // Define IntelliJ Platform against which to build the plugin project.
     // Use the IntelliJ Platform BRANCH.BUILD version matching "targetIDE" (PhpStorm)
     version '192.7142.36'   // baseIntelliJPlatformVersion     
-    type 'IC'                 
+    type 'IU'                 
     // Require the targetIDE plugin or library 
     plugins 'com.jetbrains.php:192.6603.42'   // Stable version of plugin compatible with IntelliJ IDEA build
   }
@@ -120,7 +120,7 @@ This snippet is an example for configuring the Setup and Running DSLs in a `buil
   }
 ```
 
-## Configuring the Plugin plugin.xml File
+## Configuring plugin.xml
 As discussed on the [Plugin Dependencies](/basics/getting_started/plugin_compatibility.md#declaring-plugin-dependencies) page of this guide, a plugin's dependency on [Modules Specific to Functionality](/basics/getting_started/plugin_compatibility.md#modules-specific-to-functionality) must be declared in `plugin.xml`. 
 When using product-specific features (APIs), a dependency on the product module must be declared, as shown in the code snippet below.
 Otherwise, if only general IntelliJ Platform features (APIs) are used, then a dependency on `com.intellij.modules.platform` must be declared as discussed in [Plugin Compatibility with IntelliJ Platform Products](/basics/getting_started/plugin_compatibility.md).

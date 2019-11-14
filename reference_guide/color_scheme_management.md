@@ -1,55 +1,64 @@
 ---
-title: Color Scheme Management in IntelliJ IDEA 12.1+
+title: Color Scheme Management
 ---
 
 # Preface
 
-Color scheme management in IntelliJ IDEA 12.1 was changed to ease the work of scheme designers and make schemes look equally well for different programming languages even if not designed specifically for these languages. Previously language plug-ins were using fixed default colors incompatible, for example, with dark schemes. The new implementation allows to specify a dependency on a set of standard text attributes which are linked to a scheme but not to any specific language. Language-specific attributes still can be set by a scheme designer if needed but it's optional. New color schemes have got a new .icls (Idea CoLor Scheme) extension to avoid confusion about compatibility problems with older platform versions:
+Color scheme management in IntelliJ IDEA 12.1 was changed to ease the work of scheme designers and make schemes look equally well for different programming languages even if not designed specifically for these languages. 
+Previously language plug-ins were using fixed default colors incompatible, for example, with dark schemes.
+
+The new implementation allows to specify a dependency on a set of standard text attributes which are linked to a scheme but not to any specific language. Language-specific attributes still can be set by a scheme designer if needed but it's optional.
+New color schemes have got a new `.icls` (Idea CoLor Scheme) extension to avoid confusion about compatibility problems with older platform versions:
 if only standard attributes are set, they will not be used by the version prior to 12.1 and this will result in different highlighting colors.
 
 # Plug-in Developers
 
 ## Text Attribute Key Dependency
 
-The easiest and the best way to specify highlighting text attributes is to specify a dependency on one of standard keys defined in *DefaultLanguageHighlighterColors*  class.
-Here is an example:
+The easiest and the best way to specify highlighting text attributes is to specify a dependency on one of standard keys defined in [`DefaultLanguageHighlighterColors`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/editor/DefaultLanguageHighlighterColors.java):
 
 ```java
-static final TextAttributesKey MY_KEYWORD = TextAttributesKey.createTextAttributesKey("MY_KEYWORD", DefaultLanguageHighlighterColors.KEYWORD);
+static final TextAttributesKey MY_KEYWORD = 
+  TextAttributesKey.createTextAttributesKey("MY_KEYWORD", DefaultLanguageHighlighterColors.KEYWORD);
 ```
 
-Color scheme manager will search first for text attributes specified by "MY_KEYWORD" key.
-If those are not defined explicitly or if all the attributes are empty (undefined), it will search them using "DEFAULT_KEYWORD" key.
+Color scheme manager will search first for text attributes specified by `MY_KEYWORD` key.
+If those are not defined explicitly or if all the attributes are empty (undefined), it will search them using `DEFAULT_KEYWORD` key.
 If neither are defined, it will further fall back to a default scheme.
+
 Text attribute keys can be chained, for example you can define another key as:
 
 ```java
-static final TextAttributesKey MY_PREDEFINED_SYMBOL = TextAttributesKey.createTextAttributesKey("MY_PREDEFINED_SYMBOL", MY_KEYWORD);
+static final TextAttributesKey MY_PREDEFINED_SYMBOL = 
+  TextAttributesKey.createTextAttributesKey("MY_PREDEFINED_SYMBOL", MY_KEYWORD);
 ```
 
-The rule is the same: if text attributes can not be found by "MY_PREDEFINED_SYMBOL" key or are empty, the color scheme manager will search for "MY_KEYWORD" and if not found (empty) will further look for "DEFAULT_KEYWORD".
-*Note:*  A use of fixed default attributes is _strongly discouraged_ now.
-If you are not sure which base key to use, it's better to pick the most generic one, for example, *DefaultLanguageHighlighterColors.IDENTIFIER*.
+The rule is the same: if text attributes can not be found by `MY_PREDEFINED_SYMBOL` key or are empty, the color scheme manager will search for `MY_KEYWORD` and if not found (empty) will further look for `DEFAULT_KEYWORD`.
+
+> **NOTE** A use of fixed default attributes is _strongly discouraged_.  
+
+If you are not sure which base key to use, it's better to pick the most generic one, for example, `DefaultLanguageHighlighterColors.IDENTIFIER`.
 Remember that using fixed default attributes *will force*  a scheme designer to set up a color for this element explicitly.
-Otherwise it's default colors may visually conflict with a color scheme.
+Otherwise its default colors may visually conflict with a color scheme.
 If the scheme designer doesn't have a language plug-in, he will not be able to fix this at all.
 
 ## Providing Attributes for Specific Schemes
 
 A language plug-in may provide default text attributes for "Default" and "Darcula" bundled schemes or basically for any other scheme if the scheme's name is known.
-This can be done in *plugin.xml*  by adding an extension with a name of the file containing desired text attributes, for example:
+This can be done in `plugin.xml` by adding an extension with a name of the file containing desired text attributes, for example:
 
 ```xml
-<extension ...>
+<extensions ...>
 ..
   <additionalTextAttributes scheme="Default" file="colorSchemes/MyLangDefault.xml"/>
 ..
-</extension>
+</extensions>
 ```
 
-It tells the IDE that the file *MyLangDefault.xml*  must be searched in resources under "colorSchemes".
-Note that the path should *not*  start with a backslash and its fully qualified name (in our case *colorSchemes/MyLangDefault.xml*) *MUST BE UNIQUE*  to avoid naming collisions between different providers.
-Thus adding a language prefix, for example "MyLang", is a recommended way.
+It tells the IDE that the file `MyLangDefault.xml` must be searched in resources under `colorSchemes`.
+Note that the path should *not* start with a backslash and its fully qualified name (in our case `colorSchemes/MyLangDefault.xml`) *MUST BE UNIQUE* to avoid naming collisions between different providers.
+Thus adding a language prefix, for example "MyLang", is highly recommended.
+
 The file itself is an extract from a color scheme with required attributes, for example:
 
 ```xml

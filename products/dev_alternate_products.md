@@ -23,23 +23,23 @@ The `build.gradle` file is modified to specify the target product, which determi
 The `plugin.xml` file is modified to declare the plugin's dependency on modules or libraries.
 
 ## Configuring Build.Gradle to Target Products other than IntelliJ IDEA 
-The best practice is to use the IntelliJ IDEA Gradle plugin `intellij.type` [attribute](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md#intellij-platform-properties) to specify the target product.
+The best practice is to use the `gradle-intellij-plugin` `intellij.type` [attribute](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md#intellij-platform-properties) to specify the target product.
 For example, `PY` for PyCharm professional.
 Configuration using an `intellij.type` attribute is explained in the [Product-Specific Attribute](#configuring-plugin-projects-using-a-product-specific-attribute) section below.
 
-However, not all products have an `intellij.type` attribute defined by the IntelliJ IDEA Gradle plugin.
+However, not all products have an `intellij.type` attribute defined by the `gradle-intellij-plugin`.
 For example, PhpStorm.
 If the target product does not have an `intellij.type` attribute defined, then the best approach is to configure the project by using the [IntelliJ IDEA Attribute](#configuring-buildgradle-using-the-intellij-idea-product-attribute). 
 
 ### Configuring Plugin Projects using a Product-Specific Attribute
-If the IntelliJ IDEA Gradle plugin supports a target product directly, there will be an `intellij.type` [attribute](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md#intellij-platform-properties) defined.
+If the `gradle-intellij-plugin` supports a target product directly, there will be an `intellij.type` [attribute](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md#intellij-platform-properties) defined.
 Specifying the target as a product-specific `intellij.type` attribute has two advantages:
 * The APIs available to the plugin will be limited to only what is defined in the target product.
   (Unless additional plugin dependencies are specified.)
 * The default [Development Instance](/basics/ide_development_instance.md) for running the plugin will be the target product.  
 
 A `build.gradle` snippet setting a plugin project to target PyCharm is shown below.
-The IntelliJ IDEA Gradle plugin will fetch the matching build of PyCharm Professional to define the APIs available, and use that build of PyCharm (and associated JetBrains runtime) as the Development Instance.
+The `gradle-intellij-plugin` will fetch the matching build of PyCharm Professional to define the APIs available, and use that build of PyCharm (and associated JetBrains runtime) as the Development Instance.
 No additional product-specific configuration needs to be set in `build.gradle`:
 ```groovy
     intellij {
@@ -49,8 +49,8 @@ No additional product-specific configuration needs to be set in `build.gradle`:
 ```
 
 ### Configuring Plugin Projects using the IntelliJ IDEA Product Attribute
-If the IntelliJ IDEA Gradle plugin does not directly support an IntelliJ Platform-based product, the `build.gradle` file can still be configured to target the desired product.
-In this case, the `build.gradle` file is configured to use IntelliJ IDEA as the basis for the available APIs.
+If the `gradle-intellij-plugin` does not directly support an IntelliJ Platform-based product, the `build.gradle` file can still be configured to target the desired product.
+In this case, the `build.gradle` file is configured to use IntelliJ IDEA (Community or Ultimate Edition) as the basis for the available APIs.
 This does have the drawback that APIs not specific to the target product might accidentally be included in the plugin project.
 However testing the plugin project in the target product helps to find such mistakes.
 
@@ -78,7 +78,7 @@ If the product version isn't clear on the _About_ screen, consult the individual
 
 The [Other IntelliJ IDEA Versions](https://www.jetbrains.com/idea/download/other.html) page is a way to find build numbers for every product version.
 Additional ways include hovering over the version number for a product in ToolBox, or examining the _About_ screen for IntelliJ IDEA Community.
-In this example, IntelliJ IDEA Community (which defines the IntelliJ Platform) for v2019.2.4 is build number `192.7142.36`.
+In this example, IntelliJ IDEA Community Edition (which defines the IntelliJ Platform) for v2019.2.4 is build number `192.7142.36`.
 Although the FIX versions are different, this is not uncommon between products, and the builds are still compatible. 
 The BRANCH and BUILD numbers match, therefore in this PhpStorm example: 
 * The _targetIDE_ is PhpStorm, build `192.7142.41`, 
@@ -109,13 +109,14 @@ This snippet is an example for configuring the Setup and Running DSLs in a `buil
     // Use the IntelliJ Platform BRANCH.BUILD version matching "targetIDE" (PhpStorm)
     version '192.7142.36'   // baseIntelliJPlatformVersion     
     type 'IU'                 
-    // Require the targetIDE plugin or library 
-    plugins 'com.jetbrains.php:192.6603.42'   // Stable version of plugin compatible with IntelliJ IDEA build
+    // Require the targetIDE plugin or library
+    // Use the stable version compatible with intellij.version and intellij.type specified above 
+    plugins 'com.jetbrains.php:192.6603.42'
   }
   
   runIde {
-      // Absolute path to installed target application to use as IDE Development Instance
-      // For example, the path to PhpStorm build 192.7142.41, note macOS dialect.
+      // Absolute path to the installed targetIDE to use as IDE Development Instance
+      // Note the Contents directory must be added at the end of the path for macOS.
       ideaDirectory '/Users/jhake/Library/Application Support/JetBrains/Toolbox/apps/PhpStorm/ch-0/192.7142.41/PhpStorm.app/Contents'
   }
 ```

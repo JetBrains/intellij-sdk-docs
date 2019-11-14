@@ -41,6 +41,6 @@ Default storage format depends on OS.
 |---------|---------|
 | Windows | File in [KeePass](https://keepass.info) format |
 | macOS   | Keychain using [Security Framework](https://developer.apple.com/documentation/security/keychain_services) |
-| Linux   | [Secret Service API](https://standards.freedesktop.org/secret-service) using [libsecret](https://wiki.gnome.org/Projects/Libsecret) |
+| Linux   | [Secret Service API](https://specifications.freedesktop.org/secret-service/latest/) using [libsecret](https://wiki.gnome.org/Projects/Libsecret) |
 
 Users can override the default behavior in Preferences \| Appearance & Behavior \| System Settings \| Passwords.

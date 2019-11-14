@@ -133,7 +133,7 @@ The sequence of elements in an SDK code sample `plugin.xml` file is:
   * MAJOR corresponds to a significant upgrade in functionality.
   * MINOR corresponds to minor refactoring and small improvements in functionality. 
   * FIX corresponds to changes that fix problems without significant refactoring.
-* `<idea-version/>` Set the attributes:
+* `<idea-version>` Set the attributes:
   * `since-build` attribute to the earliest compatible build number of the IntelliJ Platform.
     The default for SDK samples is "173".
   * `until-build` Omit this attribute for new sample plugins.

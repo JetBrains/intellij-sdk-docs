@@ -4,18 +4,18 @@ title: PyCharm Plugin Development
 
 ## Introduction
 PyCharm is an IntelliJ Platform-based product.
-Plugin projects for PyCharm can be developed using IntelliJ IDEA with the Gradle plugin.
+Plugin projects for PyCharm can be developed using IntelliJ IDEA with the `gradle-intellij-plugin`.
 
 ## Configuring Plugin Projects Targeting PyCharm
 The configuration of PyCharm plugin projects follows the methods described in [Configuring Plugin Projects using a Product-Specific Attribute](dev_alternate_products.md#configuring-plugin-projects-using-a-product-specific-attribute), and [Configuring the plugin.xml File](dev_alternate_products.md#configuring-the-plugin-pluginxml-file).
-The table below summarizes the attributes to set in the `build.gradle` file:
+The table below summarizes the `gradle-intellij-plugin` attributes to set in the `build.gradle` file:
 
-| Gradle Plugin Attribute | Value |
+| `gradle-intellij-plugin` Attribute | Attribute Value |
 |-----------|-------|
-| `intellij.type` | `PY` or `PC` |
-| `intellij.version` | Match the targeted `PY` or `PC` version |
-| `intellij.plugins` | No specific declaration is needed to use `PY` or `PC` APIs |
-| `runIde.ideaDirectory` | Not needed; the Development Instance will automatically match `intellij.type` |
+| [`intellij.type`](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md#intellij-platform-properties) | `PY` for PyCharm Professional Edition, or `PC` for PyCharm Community Edition |
+| [`intellij.version`](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md#intellij-platform-properties) | Set to the targeted `PY` or `PC` version |
+| [`intellij.plugins`](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md#intellij-platform-properties) | No specific declaration is needed to use `PY` or `PC` APIs |
+| [`runIde.ideaDirectory`](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md#running-dsl) | Not needed; the Development Instance will automatically match `intellij.type` |
 
 The dependency on the PyCharm APIs must be declared in the `plugin.xml` file.
 As described in [Modules Specific to Functionality](/basics/getting_started/plugin_compatibility.md#modules-specific-to-functionality) table, the `<depends>` tags must declare `com.intellij.modules.python`
@@ -28,6 +28,6 @@ APIs for PyCharm Professional are defined in the plugin [Python](https://plugins
 The APIs for PyCharm Community are defined in the plugin [Python Community Edition](https://plugins.jetbrains.com/plugin/7322-python-community-edition/).
 These are considered stable APIs, but care should be taken to test your plugin with any version of PyCharm you wish to support.
 
-## Additional Articles and Resources
-
 ## Open Source Plugins for PyCharm
+When learning new development configurations, it is helpful to have some representative projects for reference:
+* [Flake8 Support](https://github.com/jansorg/pycharm-flake8) Adds support for flake8's # noqa comments in PyCharm.

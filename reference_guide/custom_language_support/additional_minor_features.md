@@ -70,3 +70,5 @@ to use, possibly depending on the passed in
 **New in IntelliJ IDEA 13**: user-configurable *reference injections* can be provided via `referenceInjector` extension point (
 [ReferenceInjector](upsource:///platform/lang-api/src/com/intellij/psi/injection/ReferenceInjector.java)
 ) (IntelliLang plugin required).
+
+*Color preview/chooser* gutter icons are supported via `com.intellij.colorProvider` ([ElementColorProvider](upsource:///platform/lang-api/src/com/intellij/openapi/editor/ElementColorProvider.java)) extension point.

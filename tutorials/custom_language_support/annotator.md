@@ -23,29 +23,31 @@ import org.jetbrains.annotations.NotNull;
 import java.util.List;
 
 public class SimpleAnnotator implements Annotator {
-  @Override
-  public void annotate(@NotNull final PsiElement element, @NotNull AnnotationHolder holder) {
-    if (element instanceof PsiLiteralExpression) {
-      PsiLiteralExpression literalExpression = (PsiLiteralExpression) element;
-      String value = literalExpression.getValue() instanceof String ? (String) literalExpression.getValue() : null;
+    @Override
+    public void annotate(@NotNull final PsiElement element, @NotNull AnnotationHolder holder) {
+        if (!(element instanceof PsiLiteralExpression)) return;
 
-      if (value != null && value.startsWith("simple" + ":")) {
+        PsiLiteralExpression literalExpression = (PsiLiteralExpression) element;
+        String value = literalExpression.getValue() instanceof String ? (String) literalExpression.getValue() : null;
+
+        if (value == null || !value.startsWith("simple:")) return;
+
         Project project = element.getProject();
         String key = value.substring(7);
         List<SimpleProperty> properties = SimpleUtil.findProperties(project, key);
+
+        if (properties.size() != 0 || properties.size() != 1) return;
+
+        final int startOffset = element.getTextRange().getStartOffset() + 8;
+        final int endOffset = element.getTextRange().getEndOffset() - 1;
+        final TextRange range = new TextRange(startOffset, endOffset);
+
         if (properties.size() == 1) {
-          TextRange range = new TextRange(element.getTextRange().getStartOffset() + 8,
-                                          element.getTextRange().getEndOffset() - 1);
-          Annotation annotation = holder.createInfoAnnotation(range, null);
-          annotation.setTextAttributes(DefaultLanguageHighlighterColors.LINE_COMMENT);
+            holder.createInfoAnnotation(range, null).setTextAttributes(DefaultLanguageHighlighterColors.LINE_COMMENT);
         } else if (properties.size() == 0) {
-          TextRange range = new TextRange(element.getTextRange().getStartOffset() + 8,
-                                          element.getTextRange().getEndOffset() - 1);
-          holder.createErrorAnnotation(range, "Unresolved property");
+            holder.createErrorAnnotation(range, "Unresolved property");
         }
-      }
     }
-  }
 }
 ```
 

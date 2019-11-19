@@ -245,7 +245,7 @@
 * [PyCharm](products/pycharm.md)
 * [Rider](products/rider.md)
 * RubyMine
-* WebStorm
+* [WebStorm](products/webstorm.md)
 
 ## Part IX - Custom IDEs
 * Build Your Own IDE

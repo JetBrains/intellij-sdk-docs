@@ -17,6 +17,9 @@ Theme/Keymap plugins do not require restart
                  
 Run task once (per project)
 : Use `com.intellij.ide.util.RunOnceUtil` to run a task exactly once for application or per project.                 
+                          
+Symbol completion in plain text editor (VCS Commit Message)
+: Contribute symbol names (classes, methods, ..) via `com.intellij.completion.plainTextSymbol` extension point (`com.intellij.codeInsight.completion.PlainTextSymbolCompletionContributor`).                         
                            
 ## Notable Changes in IntelliJ IDEA
 

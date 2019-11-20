@@ -118,10 +118,10 @@ NOTE: You are allowed to prettify the pattern using markdown-features:
 
 ### Test Framework
 `com.intellij.testFramework.PlatformTestUtil.registerExtension(ExtensionsArea, T, Disposable)` method removed
-: Use `com.intellij.testFramework.ServiceContainerUtil#registerExtension` instead.
+: Use `com.intellij.testFramework.ServiceContainerUtil#registerExtension(BaseExtensionPointName, T, Disposable)` instead.
 
 `com.intellij.testFramework.PlatformTestUtil.registerExtension(ExtensionsArea, BaseExtensionPointName, T, Disposable)` method removed
-: Use `com.intellij.testFramework.ServiceContainerUtil#registerExtension` instead.
+: Use `com.intellij.testFramework.ServiceContainerUtil#registerExtension(BaseExtensionPointName, T, Disposable)` instead.
 
 ## Changes in Java plugin 2019.3
 

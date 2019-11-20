@@ -123,6 +123,9 @@ NOTE: You are allowed to prettify the pattern using markdown-features:
 `com.intellij.testFramework.PlatformTestUtil.registerExtension(ExtensionsArea, BaseExtensionPointName, T, Disposable)` method removed
 : Use `com.intellij.testFramework.ServiceContainerUtil#registerExtension(BaseExtensionPointName, T, Disposable)` instead.
 
+`com.intellij.testFramework.fixtures.DefaultLightProjectDescriptor.getModuleType()` method removed
+: Use `com.intellij.testFramework.fixtures.DefaultLightProjectDescriptor.getModuleTypeId()` instead (see `com.intellij.openapi.module.ModuleTypeId`).
+
 ## Changes in Java plugin 2019.3
 
 `com.intellij.codeInspection.magicConstant.MagicCompletionContributor.getAllowedValues(PsiElement)` method return type changed from `com.intellij.codeInspection.magicConstant.MagicConstantInspection.AllowedValues` to `com.intellij.codeInspection.magicConstant.MagicConstantUtils.AllowedValues`

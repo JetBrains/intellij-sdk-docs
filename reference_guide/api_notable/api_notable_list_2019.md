@@ -20,6 +20,9 @@ Run task once (per project)
                           
 Symbol completion in plain text editor (VCS Commit Message)
 : Contribute symbol names (classes, methods, ..) via `com.intellij.completion.plainTextSymbol` extension point (`com.intellij.codeInsight.completion.PlainTextSymbolCompletionContributor`).                         
+                  
+User-customizable date/time formatting
+: Use `com.intellij.util.text.JBDateFormat#getFormatter()` to use configured format from `Settings | Appearance & Behavior | System Settings | Date Formats`.                  
                            
 ## Notable Changes in IntelliJ IDEA
 

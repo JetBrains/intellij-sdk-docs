@@ -61,12 +61,6 @@ NOTE: You are allowed to prettify the pattern using markdown-features:
 
 ## Changes in IntelliJ Platform 2019.3
 
-`com.intellij.testFramework.PlatformTestUtil.registerExtension(ExtensionsArea, T, Disposable)` method removed
-: Use `com.intellij.testFramework.ServiceContainerUtil#registerExtension` instead
-
-`com.intellij.testFramework.PlatformTestUtil.registerExtension(ExtensionsArea, BaseExtensionPointName, T, Disposable)` method removed
-: Use `com.intellij.testFramework.ServiceContainerUtil#registerExtension` instead
-
 `com.intellij.codeInsight.TailType.getLocalCodeStyleSettings(Editor, int)` method removed
 : Use `com.intellij.psi.codeStyle.CommonCodeStyleSettings.getLocalCodeStyleSettings(Editor, int)` instead.
 
@@ -100,6 +94,13 @@ NOTE: You are allowed to prettify the pattern using markdown-features:
 `com.intellij.util.net.ssl.CertificateManager.HOSTNAME_VERIFIER` field removed
 : Use `org.apache.http.conn.ssl.DefaultHostnameVerifier` instead.
 
+`com.intellij.openapi.util.BuildNumber.getBuildNumber()` method removed
+: See `BuildNumber.asString`, `BuildNumber.getBaselineVersion()` and `BuildNumber.getComponents()` as alternatives.
+
+`com.intellij.remoteServer.configuration.deployment.DeploymentConfigurationManager.createAndRunConfiguration(ServerType, RemoteServer)` method removed
+: Use `DeploymentConfigurationManager.createAndRunConfiguration(ServerType, RemoteServer, DeploymentSourceType)` instead. 
+
+### VCS
 `com.intellij.openapi.vcs.changes.ui.ChangesListView.UNVERSIONED_FILES_DATA_KEY` field removed
 : Use `com.intellij.openapi.vcs.changes.ui.ChangesListView.UNVERSIONED_FILE_PATHS_DATA_KEY` instead.
 
@@ -115,11 +116,12 @@ NOTE: You are allowed to prettify the pattern using markdown-features:
 `com.intellij.openapi.vcs.VcsVFSListener.myExceptions` field removed
 : Use `com.intellij.openapi.vcs.VcsVFSListener.myProcessor.acquireExceptions()` or `com.intellij.openapi.vcs.VcsVFSListener.myProcessor.addException(VcsException exception)` instead.
 
-`com.intellij.openapi.util.BuildNumber.getBuildNumber()` method removed
-: See `BuildNumber.asString`, `BuildNumber.getBaselineVersion()` and `BuildNumber.getComponents()` as alternatives.
+### Test Framework
+`com.intellij.testFramework.PlatformTestUtil.registerExtension(ExtensionsArea, T, Disposable)` method removed
+: Use `com.intellij.testFramework.ServiceContainerUtil#registerExtension` instead.
 
-`com.intellij.remoteServer.configuration.deployment.DeploymentConfigurationManager.createAndRunConfiguration(ServerType, RemoteServer)` method removed
-: Use `DeploymentConfigurationManager.createAndRunConfiguration(ServerType, RemoteServer, DeploymentSourceType)` instead. 
+`com.intellij.testFramework.PlatformTestUtil.registerExtension(ExtensionsArea, BaseExtensionPointName, T, Disposable)` method removed
+: Use `com.intellij.testFramework.ServiceContainerUtil#registerExtension` instead.
 
 ## Changes in Java plugin 2019.3
 

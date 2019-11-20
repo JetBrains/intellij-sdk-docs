@@ -23,9 +23,9 @@ As described in [Modules Specific to Functionality](/basics/getting_started/plug
 See the SDK code sample [`pycharm_basics`](https://github.com/JetBrains/intellij-sdk-docs/tree/master/code_samples/product_specific/pycharm_basics/) for an example configuration.
 
 ## Available PyCharm APIs
-The APIs from the set of [Modules Available in All Products](/basics/getting_started/plugin_compatibility.md#modules-available-in-all-products) can be used in PyCharm plugins.
-APIs for PyCharm Professional are defined in the plugin [Python](https://plugins.jetbrains.com/plugin/631-python).
-The APIs for PyCharm Community are defined in the plugin [Python Community Edition](https://plugins.jetbrains.com/plugin/7322-python-community-edition/).
+The plugin [Python](https://plugins.jetbrains.com/plugin/631-python) defines the APIs for PyCharm Professional.
+The plugin [Python Community Edition](https://plugins.jetbrains.com/plugin/7322-python-community-edition) defines the APIs for PyCharm Community.
+These plugins include the modules `openapi` and `python-psi-api`.
 These are considered stable APIs, but care should be taken to test your plugin with any version of PyCharm you wish to support.
 
 ## Open Source Plugins for PyCharm

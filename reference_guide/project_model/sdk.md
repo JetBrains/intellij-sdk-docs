@@ -61,3 +61,6 @@ To let user select an SDK, see [ProjectJdksEditor](upsource:///java/idea-ui/src/
 However, it is not recommended to use "SDK" in non-IntelliJ IDEA IDEs. Although "SDK" is available in most JetBrains products, `ProjectJdksEditor` is specific to Java, making the operation around "SDK" difficult.
 The most recommended way of managing your "SDK" settings is to create a [`CustomStepProjectGenerator`](upsource:///platform/lang-impl/src/com/intellij/ide/util/projectWizard/CustomStepProjectGenerator.java)
 implementation and save settings in a [`PersistentStateComponent`](/basics/persisting_state_of_components.md).
+
+## Assisting in setting up SDK
+Register your implementation of [ProjectSdkSetupValidator](upsource:///platform/lang-impl/src/com/intellij/codeInsight/daemon/ProjectSdkSetupValidator.java) in extension point `com.intellij.projectSdkSetupValidator` to provide quick fix.

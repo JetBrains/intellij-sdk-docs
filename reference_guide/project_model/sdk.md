@@ -44,7 +44,7 @@ See the following [code sample](../../code_samples/project_model/src/com/intelli
 
 To create your own SDK, You need to create a class extends [SdkType](upsource:///platform/lang-api/src/com/intellij/openapi/projectRoots/SdkType.java), leave `saveAdditionalData` blank, and register it in the `com.intellij.sdkType` extension point.
 
-To make your SDK settings persistant, you should override `setupSdkPaths` and save your settings by `modificator.commitChanges()`:
+To make your SDK settings persistent, you should override `setupSdkPaths` and save your settings by `modificator.commitChanges()`:
 
 ```java
 @Override
@@ -58,6 +58,6 @@ public boolean setupSdkPaths(@NotNull Sdk sdk, @NotNull SdkModel sdkModel) {
 
 To let user select an SDK, see [ProjectJdksEditor](upsource:///java/idea-ui/src/com/intellij/openapi/projectRoots/ui/ProjectJdksEditor.java).
 
-However, it is not recommended to use "SDK" in non-IDEA IDEs. Although "SDK" is available in most JB products, `ProjectJdksEditor` is IntelliJ-specific, making the operation around "SDK" difficult.
+However, it is not recommended to use "SDK" in non-IntelliJ IDEA IDEs. Although "SDK" is available in most JetBrains products, `ProjectJdksEditor` is specific to Java, making the operation around "SDK" difficult.
 The most recommended way of managing your "SDK" settings is to create a [`CustomStepProjectGenerator`](upsource:///platform/lang-impl/src/com/intellij/ide/util/projectWizard/CustomStepProjectGenerator.java)
 implementation and save settings in a [`PersistentStateComponent`](/basics/persisting_state_of_components.md).

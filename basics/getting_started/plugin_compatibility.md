@@ -97,6 +97,25 @@ Consequently, Java dependencies are expressed differently in `plugin.xml` depend
   * `plugin.xml` _allowable_ alternative include `<depends>com.intellij.java</depends>`
   * `build.gradle` _required_ to include `intellij.plugins 'java'` 
 
+## Exploring Module and Plugin APIs
+Once the [dependency on a module or plugin](/basics/plugin_structure/plugin_dependencies.md#) is declared in `plugin.xml`, it's useful to explore the packages and classes available in that dependency.
+The section below gives some recommended procedures for discovering what's available in a module or plugin.
+These procedures assume a plugin project has the `build.gradle` and `plugin.xml` dependencies configured correctly.
+
+### Exploring APIs as a Consumer
+Exploring the available packages and classes in a plugin or module utilizes features in the IntelliJ IDEA IDE.
+
+If the project is not up to date, [Reimport the Gradle project](https://www.jetbrains.com/help/idea/work-with-gradle-projects.html#gradle_refresh_project) as a first step.
+Reimporting the project will automatically update the dependencies.
+In the Project Window, select Project View and scroll to the bottom to see [External Libraries](https://www.jetbrains.com/help/idea/project-tool-window.html#content_pane).
+Look for the library `Gradle:unzipped.com.jetbrains.plugins:foo:`, where "foo" matches, or is similar to, the contents of the `<depends>` tags in `plugin.xml` or the `intellij.plugins` declaration in `build.gradle`.
+The image below shows the External Libraries for the example plugin project configuration explained in [Configuring build.gradle](/products/dev_alternate_products.md#configuring-buildgradle-using-the-intellij-idea-product-attribute) and [Configuring plugin.xml](/products/dev_alternate_products.md#configuring-pluginxml). 
+
+![Example PhpStorm Project Libraries](img/php_prj_libs.png){:width="700px"}
+
+Expand the External Library (as shown) to reveal the JAR files contained in the library.
+Drill down into the JAR files to expose the packages and (decompiled) classes.
+
 
 ## Verifying Dependency
 Before marking a plugin project as _dependent only on modules in a target product_ in addition to `com.intellij.modules.platform`, verify the plugin isn't implicitly dependent on any APIs that are specific to IntelliJ IDEA. 

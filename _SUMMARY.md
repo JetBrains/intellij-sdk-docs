@@ -244,7 +244,7 @@
     * [Existing Third Party Plugins](products/phpstorm/existing_plugins.md)
 * [PyCharm](products/pycharm.md)
 * [Rider](products/rider.md)
-* RubyMine
+* [RubyMine](products/rubymine.md)
 * WebStorm
 
 ## Part IX - Custom IDEs

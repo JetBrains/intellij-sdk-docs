@@ -61,6 +61,9 @@ NOTE: You are allowed to prettify the pattern using markdown-features:
 
 ## Changes in IntelliJ Platform 2020.1
 
+`com.intellij.compiler.ant` package removed
+: 'Generate Ant build' functionality is removed from the IDE. Delete the code extending this or replace it with a dependency on the `generate-ant` plugin.
+
 `com.intellij.codeInsight.editorActions.SelectionQuotingTypedHandler.DequotingFilter` class renamed to `com.intellij.codeInsight.editorActions.SelectionQuotingTypedHandler.UnquotingFilter`
 : Use `com.intellij.codeInsight.editorActions.SelectionQuotingTypedHandler.UnquotingFilter` instead.
 

@@ -16,3 +16,6 @@ upsource:
 
 github_repo: JetBrains/intellij-sdk-docs
 youtrack_project: IJSDK
+
+exclude:
+  - code_samples

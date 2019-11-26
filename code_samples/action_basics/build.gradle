@@ -20,7 +20,7 @@ dependencies {
 
 // See https://github.com/JetBrains/gradle-intellij-plugin/
 intellij {
-  version '2019.1'
+  version '2019.2.4'
   updateSinceUntilBuild = false
 }
 patchPluginXml {

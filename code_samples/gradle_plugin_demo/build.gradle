@@ -3,6 +3,11 @@ plugins {
   id "org.jetbrains.intellij" version "0.4.14"
 }
 
+group 'org.intellij.sdk'
+version '0.0.1'
+
+sourceCompatibility = 1.8
+
 repositories {
   mavenCentral()
 }
@@ -14,11 +19,11 @@ dependencies {
 // See https://github.com/JetBrains/gradle-intellij-plugin/
 intellij {
   // Define IntelliJ Platform API version to use for building this plugin
-  version '2019.1'
+  version '2019.2.4'
 }
 
 patchPluginXml {
-  untilBuild = '201.*'
+  version = project.version
 }
 
-sourceCompatibility = 1.8
+

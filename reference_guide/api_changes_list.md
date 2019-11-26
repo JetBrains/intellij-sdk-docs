@@ -58,6 +58,7 @@ NOTE: You are allowed to prettify the pattern using markdown-features:
 IntelliJ API may be occasionally changed between releases leading to incompatibilities of existing plugins with newer IDE builds. 
 
 Compatibility with newer IDEs can easily be verified for plugins hosted on the [JetBrains plugin repository](../plugin_repository/index.md) using the builtin [Plugin Verifier](https://blog.jetbrains.com/platform/2018/07/plugins-repository-now-integrates-with-the-plugin-verification-tool/).
+For non-public plugins, [intellij-plugin-verifier](https://github.com/JetBrains/intellij-plugin-verifier) can be used standalone as well.
   
 The following pages list the breaking changes in IDE/plugin releases with required/recommended steps to take by plugin authors. 
 

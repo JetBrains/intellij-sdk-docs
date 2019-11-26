@@ -62,10 +62,10 @@ For non-public plugins, [intellij-plugin-verifier](https://github.com/JetBrains/
   
 The following pages list the breaking changes in IDE/plugin releases with required/recommended steps to take by plugin authors. 
 
-* [**Changes in 2020.***](api_changes_list_2020.md)
-* [**Changes in 2019.***](api_changes_list_2019.md)
-* [**Changes in 2018.***](api_changes_list_2018.md)
-* [**Changes in 2017.***](api_changes_list_2017.md)
-* [**Changes in 2016.***](api_changes_list_2016.md)
+* [**Changes in 2020.***](api_changes/api_changes_list_2020.md)
+* [**Changes in 2019.***](api_changes/api_changes_list_2019.md)
+* [**Changes in 2018.***](api_changes/api_changes_list_2018.md)
+* [**Changes in 2017.***](api_changes/api_changes_list_2017.md)
+* [**Changes in 2016.***](api_changes/api_changes_list_2016.md)
 
 > **NOTE** Changes from API marked with [`org.jetbrains.annotations.ApiStatus.@Experimental/ScheduledForRemoval`](upsource:///platform/util/src/org/jetbrains/annotations/ApiStatus.java) are not listed here, as incompatible changes are to be expected.

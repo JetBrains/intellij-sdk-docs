@@ -142,5 +142,5 @@ The compatibility information determines if plugins are available at the plugin 
 
 ## Platform API Version Compatibility
 The API of _IntelliJ Platform_ and bundled plugins may change between releases. 
-The significant changes that may break plugins are listed on [Incompatible Changes in IntelliJ Platform and Plugins API](/reference_guide/api_changes_list.md) page.
+The significant changes that may break plugins are listed on [Incompatible Changes in IntelliJ Platform and Plugins API](/reference_guide/api_changes/api_changes_list.md) page.
 

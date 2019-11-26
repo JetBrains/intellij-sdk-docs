@@ -1,5 +1,7 @@
 ---
 title: Incompatible Changes in IntelliJ Platform and Plugins API
+redirect_from:
+  - /reference_guide/api_changes_list.html
 ---
 
 <!--

@@ -6,7 +6,7 @@ The [gradle-intellij-plugin](https://github.com/JetBrains/gradle-intellij-plugin
 The plugin takes care of the dependencies of your plugin project - both the base IDE and other plugin dependencies.
 
 It also provides tasks to run the IDE with your plugin and to publish your plugin to the [JetBrains plugins repository](/plugin_repository/index.md). 
-To make sure that your plugin is not affected by [API changes](/reference_guide/api_changes_list.md) which may happen between major releases of the platform, you can easily build your plugin against many versions of the base IDE.
+To make sure that your plugin is not affected by [API changes](/reference_guide/api_changes/api_changes_list.md) which may happen between major releases of the platform, you can easily build your plugin against many versions of the base IDE.
 
 > **WARNING** When adding additional repositories to your Gradle build script, make sure to always use HTTPS protocol.
 

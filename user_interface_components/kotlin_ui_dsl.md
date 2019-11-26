@@ -2,7 +2,7 @@
 title: Kotlin UI DSL
 ---
 
-> **WARNING** Please note the Kotlin UI DSL is in active development and [breaking changes](../reference_guide/api_changes_list.md) can occur between major releases.
+> **WARNING** Please note the Kotlin UI DSL is in active development and [breaking changes](../reference_guide/api_changes/api_changes_list.md) can occur between major releases.
 
 > **NOTE** This document covers the Kotlin UI DSL in IntelliJ Platform 2019.2. A lot of the features described in this document are not available for plugins targeting earlier versions.
 

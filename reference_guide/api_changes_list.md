@@ -3,6 +3,8 @@ title: Incompatible Changes in IntelliJ Platform and Plugins API
 ---
 
 <!--
+=============== DO NOT RENAME OR MOVE THIS FILE ===============
+
 Before documenting a breaking API change, please, make sure that the change cannot be avoided 
 in an alternative way.
 

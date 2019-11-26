@@ -28,7 +28,14 @@ On the first screen, the type of project is configured:
 * Specify the _Project SDK_ based on the Java 8 JDK.
   This SDK will be the default JRE used to run Gradle, and the JDK version used to compile the plugin Java source.
   Based on the Project SDK, the IntelliJ IDEA Gradle Plugin will download the corresponding version of the IntelliJ Platform-based IDE automatically.
-* In the _Additional Libraries and Frameworks_ panel, select _Java_ and _IntelliJ Platform Plugin_, then click _Next_.
+* In the _Additional Libraries and Frameworks_ panel, select _Java_ and _IntelliJ Platform Plugin_.
+  These settings will be used for the remainder of this tutorial.
+* Optionally:
+  * To include support for the Kotlin language in the plugin, check the _Kotlin/JVM_ box (circled in green below.)
+    This option can be selected with or without the _Java_ language.
+  * To create the `build.gradle` file as a Kotlin build script rather than Groovy, check the _Kotlin DSL build script_ box (circled in magenta below.)
+
+Then click _Next_:
 
 ![Select the Gradle facet in the Project Creation Wizard](img/step1_new_gradle_project.png){:width="800px"}
 

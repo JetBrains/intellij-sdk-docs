@@ -11,7 +11,7 @@ The configuration of GoLand plugin projects follows the methods described in [Co
 
 The table below summarizes the `gradle-intellij-plugin` attributes to set in the `build.gradle` file for a GoLand plugin project:
 
-| `gradle-intellij-plugin` Attribute | <br>Attribute Value |
+| `gradle-intellij-plugin`<br>Attribute| <br>Attribute Value |
 |-----------|-------|
 | [`intellij.type`](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md#intellij-platform-properties) | `IU` for IntelliJ IDEA Ultimate.  |
 | [`intellij.version`](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md#intellij-platform-properties) | Set to the same `IU` BRANCH.BUILD as the GoLand target version, e.g. `192.7142.36` |

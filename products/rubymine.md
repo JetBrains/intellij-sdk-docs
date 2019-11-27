@@ -18,7 +18,7 @@ The table below summarizes the `gradle-intellij-plugin` attributes to set in the
 | [`intellij.plugins`](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md#intellij-platform-properties) | `org.jetbrains.plugins.ruby:2019.2.20191029` for the Ruby plugin.<br>See below for Ruby plugin version information. |
 | [`runIde.ideaDirectory`](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md#running-dsl) | Path to locally installed target version of RubyMine. For example, on macOS:<br>`/Users/<user name>/Library/Application Support/JetBrains/Toolbox/apps/RubyMine/ch-0/192.7142.37/RubyMine.app/Contents` |
 
-The required `org.jetbrains.plugins.go` plugin isn't compatible with IntelliJ IDEA Community edition but is compatible with IntelliJ IDEA Ultimate (`IU`) edition.
+The required `org.jetbrains.plugins.ruby` plugin isn't compatible with IntelliJ IDEA Community edition but is compatible with IntelliJ IDEA Ultimate (`IU`) edition.
 Product compatibility is determined from the Ruby plugin [version page](https://plugins.jetbrains.com/plugin/1293-ruby/versions). 
 The Ruby plugin isn't bundled with `IU`, so the Ruby plugin version must be explicitly declared to support the target RubyMine (and `IU`) BRANCH.BUILD version. 
 The correct Ruby plugin version is also determined from the Ruby plugin version page.

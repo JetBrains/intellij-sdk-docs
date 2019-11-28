@@ -87,11 +87,11 @@ public class EditorIllustrationAction extends AnAction {
 **Note:**
 `Editor` also allows access to different models of text representation. 
 The model classes are located in [editor](upsource:///platform/editor-ui-api/src/com/intellij/openapi/editor), and include:
-* [CaretModel.java](upsource:///platform/editor-ui-api/src/com/intellij/openapi/editor/CaretModel.java),
-* [FoldingModel.java](upsource:///platform/editor-ui-api/src/com/intellij/openapi/editor/FoldingModel.java),
-* [IndentsModel.java](upsource:///platform/editor-ui-api/src/com/intellij/openapi/editor/IndentsModel.java),
-* [ScrollingModel.java](upsource:///platform/editor-ui-api/src/com/intellij/openapi/editor/ScrollingModel.java),
-* [SoftWrapModel.java](upsource:///platform/editor-ui-api/src/com/intellij/openapi/editor/SoftWrapModel.java)
+* [CaretModel](upsource:///platform/editor-ui-api/src/com/intellij/openapi/editor/CaretModel.java),
+* [FoldingModel](upsource:///platform/editor-ui-api/src/com/intellij/openapi/editor/FoldingModel.java),
+* [IndentsModel](upsource:///platform/editor-ui-api/src/com/intellij/openapi/editor/IndentsModel.java),
+* [ScrollingModel](upsource:///platform/editor-ui-api/src/com/intellij/openapi/editor/ScrollingModel.java),
+* [SoftWrapModel](upsource:///platform/editor-ui-api/src/com/intellij/openapi/editor/SoftWrapModel.java)
 
 
 ## Safely Replacing Selected Text in the Document

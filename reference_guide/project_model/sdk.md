@@ -6,7 +6,7 @@ Every project uses a Software Development Kit (SDK). For Java projects, the SDK 
 
 ## Getting project SDK information
 
-Main information about the project SDK can be accessed via [ProjectRootManager.java](upsource:///platform/projectModel-api/src/com/intellij/openapi/roots/ProjectRootManager.java) like the following example shows
+Main information about the project SDK can be accessed via [ProjectRootManager](upsource:///platform/projectModel-api/src/com/intellij/openapi/roots/ProjectRootManager.java) like the following example shows
 
 ```java
 Sdk projectSdk = ProjectRootManager.getInstance(project).getProjectSdk();
@@ -42,9 +42,9 @@ See the following [code sample](https://github.com/JetBrains/intellij-sdk-docs/t
 
 ## Working with your own SDK
 
-To create your own SDK, You need to create a class extends [SdkType](upsource:///platform/lang-api/src/com/intellij/openapi/projectRoots/SdkType.java), leave `saveAdditionalData` blank, and register it in the `com.intellij.sdkType` extension point.
+To create your own SDK, provide a class extending [SdkType](upsource:///platform/lang-api/src/com/intellij/openapi/projectRoots/SdkType.java), leave `saveAdditionalData` blank, and register it in the `com.intellij.sdkType` extension point.
 
-To make your SDK settings persistent, you should override `setupSdkPaths` and save your settings by `modificator.commitChanges()`:
+To make SDK settings persistent, override `setupSdkPaths` and save settings by `modificator.commitChanges()`:
 
 ```java
 @Override

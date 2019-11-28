@@ -6,6 +6,8 @@ title: Incompatible Changes in IntelliJ Platform and Plugins API 2016.*
 See the note on how to document new problems on the main page reference_guide/api_changes_list.md 
 -->
 
+Please see [Incompatible API Changes](/reference_guide/api_changes_list.md) on how to verify compatibility.
+
 # 2016.3 
 
 ## Changes in IntelliJ Platform 2016.3

@@ -55,6 +55,8 @@ NOTE: You are allowed to prettify the pattern using markdown-features:
  3) both code quotes and links: [`org.example.Foo`](https://github.com/JetBrains/intellij-community/tree/master/)
 -->
 
+Please see [Incompatible API Changes](/reference_guide/api_changes_list.md) on how to verify compatibility.
+
 > **NOTE** Changes from API marked with [`org.jetbrains.annotations.ApiStatus.@Experimental/ScheduledForRemoval`](upsource:///platform/util/src/org/jetbrains/annotations/ApiStatus.java) are not listed here, as incompatible changes are to be expected.
 
 # 2019.3

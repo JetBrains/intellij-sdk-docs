@@ -18,7 +18,7 @@ A keyboard shortcut can also initiate the action.
 
 ![Editor Basics Menu](img/basics.png){:width="600px"}
 
-The source code for the Java class behind the menu action is [EditorAreaIllustration.java](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/editor_basics/src/main/java/org/intellij/sdk/editor/EditorAreaIllustration.java). 
+The source code for the Java class behind the menu action is [EditorAreaIllustration](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/editor_basics/src/main/java/org/intellij/sdk/editor/EditorAreaIllustration.java). 
 The focus of discussion will be the `EditorAreaIllustration.actionPerformed()` method. 
 For more information about creating action classes, see the [Actions Tutorial](/tutorials/action_system.md) which covers the topic in depth.
 

@@ -52,6 +52,6 @@ The implementation of `StructureViewTreeElement.getChildren()` needs to be match
 The latter method returns an array of `PsiElement`\-derived classes which can be shown as structure view elements, and is used to select the Structure View item matching the cursor position when the structure view is first opened or when the `Autoscroll from source` option is used.
 
 **Example:**
-[StructureViewElement](upsource:///plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/structureView/PropertiesStructureViewElement.java)
+[StructureViewTreeElement](upsource:///plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/editor/PropertyStructureViewElement.java)
 for
 [Properties language plugin](upsource:///plugins/properties/)

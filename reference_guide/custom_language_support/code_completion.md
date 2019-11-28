@@ -30,13 +30,13 @@ which collects all declarations passed to its `processDeclarations()` method and
 ### Contributor-based Completion
 
 Implementing the
-[CompletionContributor](upsource:///platform/lang-api/src/com/intellij/codeInsight/completion/CompletionContributor.java)
+[CompletionContributor](upsource:///platform/analysis-api/src/com/intellij/codeInsight/completion/CompletionContributor.java)
 interface gives you the greatest control over the operation of code completion for your language.
 
 > **NOTE** Note that the JavaDoc of that class contains a detailed FAQ for implementing code completion.
 
 The core scenario of using
-[CompletionContributor](upsource:///platform/lang-api/src/com/intellij/codeInsight/completion/CompletionContributor.java)
+[CompletionContributor](upsource:///platform/analysis-api/src/com/intellij/codeInsight/completion/CompletionContributor.java)
 consists of calling the `extend()` method and passing in the *pattern* specifying the context in which this completion variant is applicable, as well as a *completion provider* which generates the items to show in the completion list.
 
 Keep in mind that the pattern is checked against the leaf PSI element. If you
@@ -52,10 +52,10 @@ for completing keywords in MANIFEST.MF files.
 
 #### Lookup Items
 Items shown in the completion list are represented by instances of the
-[LookupElement](upsource:///platform/lang-api/src/com/intellij/codeInsight/lookup/LookupElement.java)
+[LookupElement](upsource:///platform/analysis-api/src/com/intellij/codeInsight/lookup/LookupElement.java)
 interface.
 These instances are normally created through the
-[LookupElementBuilder](upsource:///platform/lang-api/src/com/intellij/codeInsight/lookup/LookupElementBuilder.java)
+[LookupElementBuilder](upsource:///platform/analysis-api/src/com/intellij/codeInsight/lookup/LookupElementBuilder.java)
 class.
 
 For every lookup element, you can specify the following attributes:

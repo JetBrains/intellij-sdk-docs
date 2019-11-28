@@ -68,9 +68,9 @@ The position of the toolbar above or below the list depends on the platform unde
 To use a toolbar decorator:
 
 *  If you need to support removing and reordering of items in a list box, make sure the model of your list implements the
-   [EditableModel](upsource:///platform/util/src/com/intellij/util/ui/EditableModel.java)
+   [EditableModel](upsource:///platform/util/ui/src/com/intellij/util/ui/EditableModel.java)
    interface.
-   [CollectionListModel](upsource:///platform/platform-api/src/com/intellij/ui/CollectionListModel.java)
+   [CollectionListModel](upsource:///platform/util/ui/src/com/intellij/ui/CollectionListModel.java)
    is a handy model class that implements this interface.
 
 *  Call

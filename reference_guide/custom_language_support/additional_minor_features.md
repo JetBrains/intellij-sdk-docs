@@ -96,7 +96,7 @@ EP: `com.intellij.declarationRangeHandler`
 
 [DeclarationRangeHandler](upsource:///platform/lang-api/src/com/intellij/codeInsight/hint/DeclarationRangeHandler.java)
 provides *View \| Context Info* for custom languages with structure view implementation based on a
-[TreeBasedStructureViewBuilder](upsource:///platform/structure-view-api/src/com/intellij/ide/structureView/TreeBasedStructureViewBuilder.java).
+[TreeBasedStructureViewBuilder](upsource:///platform/editor-ui-api/src/com/intellij/ide/structureView/TreeBasedStructureViewBuilder.java).
 
 
 ### Spellchecking

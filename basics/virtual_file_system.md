@@ -42,11 +42,11 @@ From the point of view of the caller, refresh operations can be either synchrono
 
 Both synchronous and asynchronous refreshes can be initiated from any thread. If a refresh is initiated from a background thread, the calling thread must not hold a read action, because otherwise a deadlock would occur. See [IntelliJ Platform Architectural Overview](/basics/architectural_overview/general_threading_rules.md) for more details on the threading model and read/write actions.
 
-The same threading requirements also apply to functions like [LocalFileSystem.refreshAndFindFileByPath()](upsource:///platform/platform-api/src/com/intellij/openapi/vfs/LocalFileSystem.java), which perform a partial refresh if the file with the specified path is not found in the snapshot.
+The same threading requirements also apply to functions like [LocalFileSystem.refreshAndFindFileByPath()](upsource:///platform/analysis-api/src/com/intellij/openapi/vfs/LocalFileSystem.java), which perform a partial refresh if the file with the specified path is not found in the snapshot.
 
 In nearly all cases, using asynchronous refreshes is strongly preferred. If there is some code that needs to be executed after the refresh is complete, the code should be passed as a `postRunnable` parameter to one of the refresh methods:
  
-* [RefreshQueue.createSession()](upsource:///platform/platform-api/src/com/intellij/openapi/vfs/newvfs/RefreshQueue.java)<!--#L36-->
+* [RefreshQueue.createSession()](upsource:///platform/analysis-api/src/com/intellij/openapi/vfs/newvfs/RefreshQueue.java)<!--#L36-->
 * [VirtualFile.refresh()](upsource:///platform/core-api/src/com/intellij/openapi/vfs/VirtualFile.java)<!--#L681-->
  
 Synchronous refreshes can cause deadlocks in some cases, depending on which locks are held by the thread invoking the refresh operation.

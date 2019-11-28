@@ -39,15 +39,15 @@ The `VirtualFileManager.addVirtualFileListener()` method allows you to receive n
 
 ## Are there any utilities for analyzing and manipulating virtual files?
 
-[`VfsUtil`](upsource:///platform/core-api/src/com/intellij/openapi/vfs/VfsUtil.java) and [`VfsUtilCore`](upsource:///platform/core-api/src/com/intellij/openapi/vfs/VfsUtilCore.java) provide utility methods for analyzing files in the Virtual File System.
+[`VfsUtil`](upsource:///platform/analysis-api/src/com/intellij/openapi/vfs/VfsUtil.java) and [`VfsUtilCore`](upsource:///platform/core-api/src/com/intellij/openapi/vfs/VfsUtilCore.java) provide utility methods for analyzing files in the Virtual File System.
 
-You can use [`ProjectLocator`](upsource:///platform/core-api/src/com/intellij/openapi/project/ProjectLocator.java) to find the projects that contain a given virtual file.
+You can use [`ProjectLocator`](upsource:///platform/projectModel-api/src/com/intellij/openapi/project/ProjectLocator.java) to find the projects that contain a given virtual file.
 
 ## How do I extend VFS?
 
 To provide an alternative file system implementation (for example, an FTP file system), implement the [VirtualFileSystem](upsource:///platform/core-api/src/com/intellij/openapi/vfs/VirtualFileSystem.java) class (most likely you'll also need to implement `VirtualFile`), and register your implementation as an [application component](/basics/plugin_structure/plugin_components.md).
 
-To hook into operations performed in the local file system (for example, if you are developing a version control system integration that needs custom rename/move handling), implement the [LocalFileOperationsHandler](upsource:///platform/platform-api/src/com/intellij/openapi/vfs/LocalFileOperationsHandler.java) interface and register it through the`LocalFileSystem.registerAuxiliaryFileOperationsHandler` method.
+To hook into operations performed in the local file system (for example, if you are developing a version control system integration that needs custom rename/move handling), implement the [LocalFileOperationsHandler](upsource:///platform/analysis-api/src/com/intellij/openapi/vfs/LocalFileOperationsHandler.java) interface and register it through the`LocalFileSystem.registerAuxiliaryFileOperationsHandler` method.
 
 ## What are the rules for working with VFS?
 

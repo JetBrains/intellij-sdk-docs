@@ -105,7 +105,7 @@ public void doChange(Context context) {
 *Existing resources*
 
 *  *MessageBus* instances are available via
-[ComponentManager.getMessageBus()](upsource:///platform/core-api/src/com/intellij/openapi/components/ComponentManager.java)<!--#L85-->
+[ComponentManager.getMessageBus()](upsource:///platform/extensions/src/com/intellij/openapi/components/ComponentManager.java)<!--#L85-->
 (many standard interfaces implement it, e.g.
 [Application](upsource:///platform/core-api/src/com/intellij/openapi/application/Application.java),
 [Project](upsource:///platform/core-api/src/com/intellij/openapi/project/Project.java);

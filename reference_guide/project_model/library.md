@@ -3,14 +3,14 @@ title: Library
 ---
 
 A library is an archive of compiled code (such as JAR files) that your modules depend on.
-The IntelliJ Platform supports three types of libraries:
 
-* **Module Library**: the library classes are visible only in this module and the library information is recorded in the module *.iml file.
-* **Project Library**: the library classes are visible within the project and the library information is recorded in the project *.ipr file or in .idea/libraries.
-* **Global Library**: the library information is recorded in the applicationLibraries.xml file into the `<User Home>/.IntelliJIdea/config/options` directory. Global libraries are similar to project libraries, but are visible for the different projects.
+The IntelliJ Platform supports three types of libraries:
+* **Module Library**: the library classes are visible only in this module and the library information is recorded in the module `.iml` file.
+* **Project Library**: the library classes are visible within the project and the library information is recorded under `.idea/libraries` directory or in the project `.ipr` file.
+* **Global Library**: the library information is recorded in the `applicationLibraries.xml` file in `<User Home>/.IntelliJIdea/config/options` directory. Global libraries are similar to project libraries, but are visible for different projects.
 
 For more information about libraries, refer to
-[Library](https://www.jetbrains.com/help/idea/working-with-libraries.html).
+[Libraries](https://www.jetbrains.com/help/idea/working-with-libraries.html).
 
 ## Accessing Libraries and Jars
 
@@ -20,8 +20,7 @@ provides functionality for working with project libraries and jars.
 
 ### How do I get a list of libraries a module depends on?
 
-To get the list of libraries that a module depends on, use `OrderEnumerator.forEachLibrary` method. 
-The following snippet demonstrates how you can do this:
+To get the list of libraries that a module depends on, use `OrderEnumerator.forEachLibrary` as follows. 
 
 ```java
 final List<String> libraryNames = new ArrayList<String>();
@@ -32,12 +31,12 @@ ModuleRootManager.getInstance(module).orderEntries().forEachLibrary(library -> {
 Messages.showInfoMessage(StringUtil.join(libraryNames, "\n"), "Libraries in Module");
 ```
 
-This sample code outputs a list of libraries that the `module` module depends on.
+This sample code outputs a list of libraries that the given module depends on.
 
 ### How do I get a list of all libraries?
 
-To manage the lists of application and project libraries, the [LibraryTable](upsource:///platform/projectModel-api/src/com/intellij/openapi/roots/libraries/LibraryTable.java) 
-class is used. The list of application-level library tables is accessed by calling `LibraryTablesRegistrar.getInstance().getLibraryTable()`,
+To manage the lists of application and project libraries, use [LibraryTable](upsource:///platform/projectModel-api/src/com/intellij/openapi/roots/libraries/LibraryTable.java). 
+The list of application-level library tables is accessed by calling `LibraryTablesRegistrar.getInstance().getLibraryTable()`,
 whereas the list of project-level library tables is accessed through `LibraryTablesRegistrar.getInstance().getLibraryTable(Project)`.
 Once you have a `LibraryTable`, you can get the libraries in it by calling `LibraryTable.getLibraries()`.
 
@@ -48,7 +47,7 @@ OrderEntryUtil.getModuleLibraries(ModuleRootManager.getInstance(module));
 
 ### How do I get the library content?
 
-The `Library` class provides the `getUrls` method you can use to get a list of source roots and classes the library includes. To clarify, consider the following code snippet:
+[`Library`](upsource:///platform/projectModel-api/src/com/intellij/openapi/roots/libraries/Library.java) provides the `getUrls()` method you can use to get a list of source roots and classes the library includes. To clarify, consider the following code snippet:
 
 ```java
 StringBuilder roots = new StringBuilder("The " + lib.getName() + " library includes:\n");
@@ -62,8 +61,6 @@ for (String each : lib.getUrls(OrderRootType.CLASSES)) {
 }
 Messages.showInfoMessage(roots.toString(), "Library Info");
 ```
-
-In this sample code, `lib` is of the [Library](upsource:///platform/projectModel-api/src/com/intellij/openapi/roots/libraries/Library.java) type.
 
 ### How do I create a library?
 

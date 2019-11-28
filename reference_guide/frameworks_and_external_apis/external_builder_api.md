@@ -90,8 +90,8 @@ Snapshots are named like "ExternalBuild\-\{date\}.snapshot".
 Specifying `-Dprofiling.mode=false` will turn profiling off.
 Please capture a couple of snapshots for the situations in which you believe the build should work much faster than it does.
 
-Please create an issue in the issue tracker and attach generated \*.snapshot files to it or upload them to
-[ftp://ftp.intellij.net/.uploads](ftp://ftp.intellij.net/.uploads) and specify links in the issue.
+Please create an issue in the issue tracker and attach generated \*.snapshot files to it or upload them
+as [described here](https://intellij-support.jetbrains.com/hc/en-us/articles/206869619) and specify links in the issue.
 Please also provide details about the memory and other VM settings for the build process you were using.
 
 

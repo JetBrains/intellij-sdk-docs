@@ -64,10 +64,10 @@ It provides syntax highlighting and other useful features for editing JFlex file
 Lexers must never abort prematurely because of an invalid character.
 
 **Example**:
-[`Lexer`](upsource:///plugins/properties/src/com/intellij/lang/properties/parsing/Properties.flex)
+- [`Lexer`](upsource:///plugins/properties/src/com/intellij/lang/properties/parsing/Properties.flex)
 definition for
 [Properties language plugin](upsource:///plugins/properties)
-
+- [Custom Language Support Tutorial: Lexer](/tutorials/custom_language_support/lexer_and_parser_definition.md)
 
 Types of tokens for lexers are defined by instances of
 [`IElementType`](upsource:///platform/core-api/src/com/intellij/psi/tree/IElementType.java).

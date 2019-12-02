@@ -11,7 +11,7 @@ Download and install either IntelliJ IDEA Ultimate or IntelliJ IDEA Community Ed
 ### 1.2. Check out Community Edition Source Files
 
 Download the IntelliJ IDEA Community Edition source files as described in the IntelliJ IDEA Community Edition 
-[`README`](upsource:///README.md) file.
+[README](upsource:///README.md) file.
 
 ### 1.3. Install Required Plugins
 

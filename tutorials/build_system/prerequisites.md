@@ -104,7 +104,7 @@ The New Project Wizard produces the `my_gradle_plugin` project `build.gradle` fi
 * The _Group ID_ from the Wizard [Project Naming Screen](#project-naming-screen) is the `project.group` value.
 * The _Version_ from the Wizard [Project Naming Screen](#project-naming-screen) is the `project.version` value.
 * The `sourceCompatibility` line is injected to enforce using Java 8 JDK to compile Java source.
-* The only comment in the file is a link to the [`README.md`](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md) for the IntelliJ IDEA Gradle plugin, which is a reference for the DSLs defined by the plugin.
+* The only comment in the file is a link to the [README.md](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md) for the IntelliJ IDEA Gradle plugin, which is a reference for the DSLs defined by the plugin.
 * The value of the Setup DSL attribute `intellij.version` specifies the version of the IntelliJ Platform to be used to build the plugin.
   It defaults to the version of IntelliJ IDEA that was used to run the New Project Wizard.
 * The value of the Patching DSL attribute `patchPluginXml.changeNotes` is set to place holder text.

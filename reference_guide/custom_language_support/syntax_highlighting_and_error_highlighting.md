@@ -22,9 +22,10 @@ New functionality about Language Defaults and support for additional color schem
 [Color Scheme Management](/reference_guide/color_scheme_management.md).
 
 
+The syntax and error highlighting is performed on multiple levels: Lexer, Parser and (External) Annotator.
+
 ### Lexer
 
-The syntax and error highlighting is performed on multiple levels.
 The first level of syntax highlighting is based on the lexer output, and is provided through the
 [`SyntaxHighlighter`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/fileTypes/SyntaxHighlighter.java)
 interface.
@@ -37,11 +38,11 @@ for bad characters
 [`HighlighterColors.BAD_CHARACTER`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/editor/HighlighterColors.java)
 can be used.
 
-**Example:**
-[`SyntaxHighlighter`](upsource:///plugins/properties/properties-psi-api/src/com/intellij/lang/properties/PropertiesHighlighter.java)
+**Examples:**
+- [`SyntaxHighlighter`](upsource:///plugins/properties/properties-psi-api/src/com/intellij/lang/properties/PropertiesHighlighter.java)
 implementation for
 [Properties language plugin](upsource:///plugins/properties/)
-
+- [Custom Language Support Tutorial: Syntax Highlighter](/tutorials/custom_language_support/syntax_highlighter_and_color_settings_page.md)
 
 ### Parser
 
@@ -72,11 +73,13 @@ with an empty message and then call
 [`Annotation.setTextAttributes()`](upsource:///platform/analysis-api/src/com/intellij/lang/annotation/Annotation.java)
 to specify the text attributes key for the highlighting.
 
-**Example:**
-[`Annotator`](upsource:///plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/PropertiesAnnotator.java)
+> **NOTE** See also [Code Inspections](code_inspections_and_intentions.md) which offer a more fine-grained control and some additional features.
+
+**Examples:**
+- [`Annotator`](upsource:///plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/PropertiesAnnotator.java)
 for
 [Properties language plugin](upsource:///plugins/properties/)
-
+- [Custom Language Support Tutorial: Annotator](/tutorials/custom_language_support/annotator.md)
 
 ### External tool
 
@@ -90,16 +93,17 @@ It uses the same
 [`AnnotationHolder`](upsource:///platform/analysis-api/src/com/intellij/lang/annotation/AnnotationHolder.java)
 interface for converting the output of the external tool into editor highlighting.
 
-### Color settings
+## Color settings
 
 The plugin can also provide a configuration interface to allow the user to configure the colors used for highlighting specific items.
 In order to do that, it should provide an implementation of
 [`ColorSettingPage`](upsource:///platform/lang-api/src/com/intellij/openapi/options/colors/ColorSettingsPage.java)
 and register it in the `com.intellij.colorSettingsPage` extension point.
 
-**Example**:
-[`ColorSettingsPage`](upsource:///plugins/properties/src/com/intellij/openapi/options/colors/pages/PropertiesColorsPage.java)
+The _Export to HTML_ feature uses the same syntax highlighting mechanism as the editor, so it will work automatically for custom languages which provide a syntax highlighter.
+
+**Examples**:
+- [`ColorSettingsPage`](upsource:///plugins/properties/src/com/intellij/openapi/options/colors/pages/PropertiesColorsPage.java)
 for
 [Properties language plugin](upsource:///plugins/properties/)
-
-The `Export to HTML` feature uses the same syntax highlighting mechanism as the editor, so it will work automatically for custom languages which provide a syntax highlighter.
+- [Custom Language Support Tutorial: Color Settings Page](/tutorials/custom_language_support/syntax_highlighter_and_color_settings_page.md)

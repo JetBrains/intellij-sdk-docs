@@ -2,8 +2,9 @@
 title: Writing Tests For Plugins
 ---
 
+> **NOTE** Please see [Testing Plugins](/basics/testing_plugins.md) for a general introduction.
 
-In this tutorial you will learn how to write and run automated tests for your plugin.
+In this tutorial you will learn how to write and run automated tests for a custom language plugin.
 
 As an example we will take the plugin implemented in the [Custom Language Support](/tutorials/custom_language_support_tutorial.md) and cover its code with functional tests.
 
@@ -18,4 +19,4 @@ As an example we will take the plugin implemented in the [Custom Language Suppor
 *  [9. Commenter Test](writing_tests_for_plugins/commenter_test.md)
 *  [10. Reference Test](writing_tests_for_plugins/reference_test.md)
 
-The final code can be found on [GitHub](https://github.com/JetBrains/SimplePlugin).
+The final code can be found in the [SamplePlugin repo on GitHub](https://github.com/JetBrains/intellij-sdk-docs/tree/master/code_samples/simple_language_plugin).

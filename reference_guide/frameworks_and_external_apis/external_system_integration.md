@@ -22,7 +22,7 @@ That means that we can separate external system-specific logic and general IDE p
 ## Project data domain
 
 **General**  
-External system wrapper is required to be able to build project info on the basis of the given external system config. That information is built using in terms of [DataNode](upsource:///platform/external-system-api/src/com/intellij/openapi/externalSystem/model/DataNode.java), [Key](upsource:///platform/external-system-api/src/com/intellij/openapi/externalSystem/model/Key.java) and [ExternalEntityData](upsource:///platform/external-system-api/src/com/intellij/openapi/externalSystem/model/project/ExternalEntityData.java).
+External system wrapper is required to be able to build project info on the basis of the given external system config. That information is built using in terms of [`DataNode`](upsource:///platform/external-system-api/src/com/intellij/openapi/externalSystem/model/DataNode.java), [Key](upsource:///platform/external-system-api/src/com/intellij/openapi/externalSystem/model/Key.java) and [ExternalEntityData](upsource:///platform/external-system-api/src/com/intellij/openapi/externalSystem/model/project/ExternalEntityData.java).
 
 ![DataNode](/reference_guide/img/data-node.png)
 
@@ -38,7 +38,7 @@ The IDE provides a set of built-in *Key*s and *ExternalEntityData*s but any exte
 
 ## Managing project data
 
-We need to process project data is built on external system config basis. Here comes [ProjectDataService](upsource:///platform/external-system-api/src/com/intellij/openapi/externalSystem/service/project/manage/ProjectDataService.java). It is a strategy which knows how to manage particular *ExternalEntityData*. For example, when we want to import a project from external model, we can start by the top level *DataNode* which references project info and then import its data using corresponding service.
+We need to process project data is built on external system config basis. Here comes [`ProjectDataService`](upsource:///platform/external-system-api/src/com/intellij/openapi/externalSystem/service/project/manage/ProjectDataService.java). It is a strategy which knows how to manage particular *ExternalEntityData*. For example, when we want to import a project from external model, we can start by the top level *DataNode* which references project info and then import its data using corresponding service.
 
 Custom services can be defined via *'externalProjectDataService'* extension.
 
@@ -46,14 +46,14 @@ The good thing is that we can separate project parsing and management here. That
 
 ## Importing from external model
 
-IntelliJ platform provides standard API for that. Namely, [ProjectImportBuilder](upsource:///java/idea-ui/src/com/intellij/projectImport/ProjectImportBuilder.java) and [ProjectImportProvider](upsource:///java/idea-ui/src/com/intellij/projectImport/ProjectImportProvider.java). There are two classes built on *template method* pattern - [AbstractExternalProjectImportBuilder](upsource:///java/idea-ui/src/com/intellij/openapi/externalSystem/service/project/wizard/AbstractExternalProjectImportBuilder.java) and [AbstractExternalProjectImportProvider](upsource:///java/idea-ui/src/com/intellij/openapi/externalSystem/service/project/wizard/AbstractExternalProjectImportProvider.java). They might be sub-classes and that concrete implementations should be registered at IoC descriptor (plugin.xml).
+IntelliJ platform provides standard API for that. Namely, [`ProjectImportBuilder`](upsource:///java/idea-ui/src/com/intellij/projectImport/ProjectImportBuilder.java) and [ProjectImportProvider](upsource:///java/idea-ui/src/com/intellij/projectImport/ProjectImportProvider.java). There are two classes built on *template method* pattern - [AbstractExternalProjectImportBuilder](upsource:///java/idea-ui/src/com/intellij/openapi/externalSystem/service/project/wizard/AbstractExternalProjectImportBuilder.java) and [AbstractExternalProjectImportProvider](upsource:///java/idea-ui/src/com/intellij/openapi/externalSystem/service/project/wizard/AbstractExternalProjectImportProvider.java). They might be sub-classes and that concrete implementations should be registered at IoC descriptor (plugin.xml).
 
 Here is an example from the gradle integration plugin:
 
     <projectImportProvider implementation="org.jetbrains.plugins.gradle.service.settings.GradleProjectImportProvider"/>
     <projectImportBuilder implementation="org.jetbrains.plugins.gradle.service.settings.GradleProjectImportBuilder"/>
 
-Note that [AbstractExternalProjectImportBuilder](upsource:///java/idea-ui/src/com/intellij/openapi/externalSystem/service/project/wizard/AbstractExternalProjectImportBuilder.java) is built on top of the 'external system settings' controls.
+Note that [`AbstractExternalProjectImportBuilder`](upsource:///java/idea-ui/src/com/intellij/openapi/externalSystem/service/project/wizard/AbstractExternalProjectImportBuilder.java) is built on top of the 'external system settings' controls.
 
 ## Auto-import
 
@@ -67,12 +67,12 @@ Built-in support covers only root config files of linked external projects. Howe
 
 # Settings
 
-The general idea is that all external system settings controls are represented by implementations of [ExternalSystemSettingsControl](upsource:///platform/external-system-impl/src/com/intellij/openapi/externalSystem/util/ExternalSystemSettingsControl.java) interface. There are also external system project-local settings and global external system settings. So, basically particular external system settings UI looks as below:
+The general idea is that all external system settings controls are represented by implementations of [`ExternalSystemSettingsControl`](upsource:///platform/external-system-impl/src/com/intellij/openapi/externalSystem/util/ExternalSystemSettingsControl.java) interface. There are also external system project-local settings and global external system settings. So, basically particular external system settings UI looks as below:
 
 ![Configurable](/reference_guide/img/configurable.png)
 
-It's recommended to extend from [AbstractExternalProjectSettingsControl](upsource:///platform/external-system-impl/src/com/intellij/openapi/externalSystem/service/settings/AbstractExternalProjectSettingsControl.java) for implementing project-level settings control as it already handles some of them.
+It's recommended to extend from [`AbstractExternalProjectSettingsControl`](upsource:///platform/external-system-impl/src/com/intellij/openapi/externalSystem/service/settings/AbstractExternalProjectSettingsControl.java) for implementing project-level settings control as it already handles some of them.
 
-Similar approach is used for providing 'import from external system' UI - implementation is expected to extend [AbstractImportFromExternalSystemControl](upsource:///java/idea-ui/src/com/intellij/openapi/externalSystem/service/settings/AbstractImportFromExternalSystemControl.java) and it has not linked external projects list but target external project path control:
+Similar approach is used for providing 'import from external system' UI - implementation is expected to extend [`AbstractImportFromExternalSystemControl`](upsource:///java/idea-ui/src/com/intellij/openapi/externalSystem/service/settings/AbstractImportFromExternalSystemControl.java) and it has not linked external projects list but target external project path control:
 
 ![Import from external system](/reference_guide/img/import.png)

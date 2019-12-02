@@ -8,13 +8,13 @@ In this framework, the plugin specifies the *constraints* on the spacing between
 The process of formatting a file or a file fragment consists of the following main steps:
 
 *  The _formatting model builder_ (
-   [FormattingModelBuilder](upsource:///platform/lang-api/src/com/intellij/formatting/FormattingModelBuilder.java)
+   [`FormattingModelBuilder`](upsource:///platform/lang-api/src/com/intellij/formatting/FormattingModelBuilder.java)
    ), implemented by the plugin, provides a formatting model (
-   [FormattingModel](upsource:///platform/lang-api/src/com/intellij/formatting/FormattingModel.java)
+   [`FormattingModel`](upsource:///platform/lang-api/src/com/intellij/formatting/FormattingModel.java)
    ) for the document to be formatted
 
 *  The formatting model is requested to build the structure of the file as applies to formatting, as a tree of _blocks_ (
-   [Block](upsource:///platform/lang-api/src/com/intellij/formatting/Block.java)
+   [`Block`](upsource:///platform/lang-api/src/com/intellij/formatting/Block.java)
    ) with associated indent, wrap, alignment and spacing settings.
 
 *  The formatting engine calculates the sequence of whitespace characters (spaces, tabs and/or line breaks) that needs to be placed at every block boundary, based on the formatting model provided by the plugin.
@@ -28,7 +28,7 @@ If the formatting operation does not affect the entire file (for example, if the
 For every block, the plugin specifies the following properties:
 
 *  The _spacing_ (
-   [Spacing](upsource:///platform/lang-api/src/com/intellij/formatting/Spacing.java)
+   [`Spacing`](upsource:///platform/lang-api/src/com/intellij/formatting/Spacing.java)
    ) specifies what spaces or line breaks are inserted between the specified children of the block.
    The spacing object specifies the minimum and maximum number of spaces that must be placed between the specified child blocks, the minimum number of line breaks to place there, and whether the existing line breaks and blank lines should be preserved.
    The formatting model can also specify that the spacing between the specified blocks may not be modified by the formatter.
@@ -39,19 +39,19 @@ For every block, the plugin specifies the following properties:
    If the formatting model does not specify an indent, the "continuation without first" mode is used, which means that the first block in a sequence of blocks with that type is not indented and the following blocks are indented with a continuation indent.
 
 *  The _wrap_ (
-   [Wrap](upsource:///platform/lang-api/src/com/intellij/formatting/Wrap.java)
+   [`Wrap`](upsource:///platform/lang-api/src/com/intellij/formatting/Wrap.java)
    ) specifies whether the content of the block is wrapped to the next line.
    Wrapping is performed by inserting a line break before the block content.
    The plugin can specify that a particular block is never wrapped, always wrapped, or wrapped only if it exceeds the right margin.
 
 *  The _alignment_ (
-   [Alignment](upsource:///platform/lang-api/src/com/intellij/formatting/Alignment.java)
+   [`Alignment`](upsource:///platform/lang-api/src/com/intellij/formatting/Alignment.java)
    ) specifies which blocks should be aligned with each other.
    If two blocks with the alignment property set to the same object instance are placed in different lines, and if the second block is the first non-whitespace block in its line, the formatter inserts white spaces before the second block so that it starts from the same column as the first one.
 
 For each of these properties, a number of special use settings exists, which are described in the JavaDoc comments for the respective classes.
 See also
-[SpacingBuilder](upsource:///platform/lang-api/src/com/intellij/formatting/SpacingBuilder.java)
+[`SpacingBuilder`](upsource:///platform/lang-api/src/com/intellij/formatting/SpacingBuilder.java)
 which aids in building rule-based configuration.
 
 An important special case in using the formatter is the smart indent performed when the user presses the `Enter` key in a source code file.
@@ -64,7 +64,7 @@ Code formatting can be suppressed per region via [special comments](https://yout
 ### Code Style Settings
 
 To specify the default indent size for the language provided by your plugin, and to allow the user to configure the tab size and indent size you need to implement the
-[FileTypeIndentOptionsProvider](upsource:///platform/lang-api/src/com/intellij/psi/codeStyle/FileTypeIndentOptionsProvider.java)
+[`FileTypeIndentOptionsProvider`](upsource:///platform/lang-api/src/com/intellij/psi/codeStyle/FileTypeIndentOptionsProvider.java)
 interface and to register the implementation in the `fileTypeIndentOptionsProvider` extension point.
 The return value of `createIndentOptions()` determines the default indent size.
 
@@ -74,5 +74,5 @@ The return value of `createIndentOptions()` determines the default indent size.
 Allows custom languages to provide user-configurable arrangement/grouping rules for element types supported by language plugin.
 Rules can be refined via modifiers and name, ordering can be applied additionally.
 Please see
-[Rearranger](upsource:///platform/lang-api/src/com/intellij/psi/codeStyle/arrangement/Rearranger.java)
+[`Rearranger`](upsource:///platform/lang-api/src/com/intellij/psi/codeStyle/arrangement/Rearranger.java)
 and related for JavaDoc.

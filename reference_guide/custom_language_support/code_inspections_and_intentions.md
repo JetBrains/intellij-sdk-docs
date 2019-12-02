@@ -5,11 +5,11 @@ title: Code Inspections and Intentions
 ### Inspections
 
 The code inspections for custom languages use the same API as all other code inspections, based on the
-[LocalInspectionTool](upsource:///platform/analysis-api/src/com/intellij/codeInspection/LocalInspectionTool.java)
+[`LocalInspectionTool`](upsource:///platform/analysis-api/src/com/intellij/codeInspection/LocalInspectionTool.java)
 class.
 
 The functionality of
-[LocalInspectionTool](upsource:///platform/analysis-api/src/com/intellij/codeInspection/LocalInspectionTool.java)
+[`LocalInspectionTool`](upsource:///platform/analysis-api/src/com/intellij/codeInspection/LocalInspectionTool.java)
 partially duplicates that of
 [Annotator](./syntax_highlighting_and_error_highlighting.md#annotator).
 
@@ -33,7 +33,7 @@ for
 
 The code intentions for custom languages also use the regular API for intentions.
 The intention classes need to implement the
-[IntentionAction](upsource:///platform/analysis-api/src/com/intellij/codeInsight/intention/IntentionAction.java)
+[`IntentionAction`](upsource:///platform/analysis-api/src/com/intellij/codeInsight/intention/IntentionAction.java)
 interface and to be registered using the `com.intellij.intentionAction` extension point in your *plugin.xml*.
 
 **Example:**

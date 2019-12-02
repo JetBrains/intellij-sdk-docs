@@ -36,7 +36,7 @@ file.accept(new JavaRecursiveElementVisitor() {
 In many cases, you can also use more specific APIs for top-down navigation. For example, if you need to get a list of
 all methods in a Java class, you can do that using a visitor, but a much easier way to do that is to call `PsiClass.getMethods()`.
 
-The [PsiTreeUtil class](upsource:///platform/core-api/src/com/intellij/psi/util/PsiTreeUtil.java) contains a number of
+[`PsiTreeUtil`](upsource:///platform/core-api/src/com/intellij/psi/util/PsiTreeUtil.java) contains a number of
 general-purpose, language-independent functions for PSI tree navigation, some of which (for example, `findChildrenOfType`)
 perform top-down navigation.
 

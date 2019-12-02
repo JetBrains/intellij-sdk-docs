@@ -37,7 +37,7 @@ Messages.showInfoMessage("Source roots for the " + projectName + " plugin:\n" + 
 
 ### Checking if a file belongs to a project
 
-Use [ProjectFileIndex](upsource:///platform/projectModel-api/src/com/intellij/openapi/roots/ProjectFileIndex.java) to get this information:
+Use [`ProjectFileIndex`](upsource:///platform/projectModel-api/src/com/intellij/openapi/roots/ProjectFileIndex.java) to get this information:
 ```java
 ProjectFileIndex projectFileIndex = ProjectRootManager.getInstance(project).getFileIndex();
 ```

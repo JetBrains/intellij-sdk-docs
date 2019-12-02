@@ -6,7 +6,7 @@ Every project uses a Software Development Kit (SDK). For Java projects, the SDK 
 
 ## Getting project SDK information
 
-Main information about the project SDK can be accessed via [ProjectRootManager](upsource:///platform/projectModel-api/src/com/intellij/openapi/roots/ProjectRootManager.java) like the following example shows
+Main information about the project SDK can be accessed via [`ProjectRootManager`](upsource:///platform/projectModel-api/src/com/intellij/openapi/roots/ProjectRootManager.java) like the following example shows
 
 ```java
 Sdk projectSdk = ProjectRootManager.getInstance(project).getProjectSdk();
@@ -42,7 +42,7 @@ See the following [code sample](https://github.com/JetBrains/intellij-sdk-docs/t
 
 ## Working with your own SDK
 
-To create your own SDK, provide a class extending [SdkType](upsource:///platform/lang-api/src/com/intellij/openapi/projectRoots/SdkType.java), leave `saveAdditionalData` blank, and register it in the `com.intellij.sdkType` extension point.
+To create your own SDK, provide a class extending [`SdkType`](upsource:///platform/lang-api/src/com/intellij/openapi/projectRoots/SdkType.java), leave `saveAdditionalData` blank, and register it in the `com.intellij.sdkType` extension point.
 
 To make SDK settings persistent, override `setupSdkPaths` and save settings by `modificator.commitChanges()`:
 
@@ -56,11 +56,11 @@ public boolean setupSdkPaths(@NotNull Sdk sdk, @NotNull SdkModel sdkModel) {
 }
 ```
 
-To let user select an SDK, see [ProjectJdksEditor](upsource:///java/idea-ui/src/com/intellij/openapi/projectRoots/ui/ProjectJdksEditor.java).
+To let user select an SDK, see [`ProjectJdksEditor`](upsource:///java/idea-ui/src/com/intellij/openapi/projectRoots/ui/ProjectJdksEditor.java).
 
 However, it is not recommended to use "SDK" in non-IntelliJ IDEA IDEs. Although "SDK" is available in most JetBrains products, `ProjectJdksEditor` is specific to Java, making the operation around "SDK" difficult.
 The most recommended way of managing your "SDK" settings is to create a [`CustomStepProjectGenerator`](upsource:///platform/lang-impl/src/com/intellij/ide/util/projectWizard/CustomStepProjectGenerator.java)
 implementation and save settings in a [`PersistentStateComponent`](/basics/persisting_state_of_components.md).
 
 ## Assisting in setting up SDK
-Register your implementation of [ProjectSdkSetupValidator](upsource:///platform/lang-impl/src/com/intellij/codeInsight/daemon/ProjectSdkSetupValidator.java) in extension point `com.intellij.projectSdkSetupValidator` to provide quick fix.
+Register your implementation of [`ProjectSdkSetupValidator`](upsource:///platform/lang-impl/src/com/intellij/codeInsight/daemon/ProjectSdkSetupValidator.java) in extension point `com.intellij.projectSdkSetupValidator` to provide quick fix.

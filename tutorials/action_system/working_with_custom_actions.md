@@ -4,18 +4,18 @@ title: 1. Registering an Action
 
 
 An action is technically a class, derived from the
-[AnAction](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java)
+[`AnAction`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java)
 class.
 To update the state of the action, the method `AnAction.update(AnActionEvent)` is called by the IntelliJ Platform framework.
 The object of type
-[AnActionEvent](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnActionEvent.java)
+[`AnActionEvent`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnActionEvent.java)
 passed to this method carries the information about the current context for the action,
 and in particular, the specific presentation which needs to be updated.
 
 
 ### 1.1. Creating actions
 
-To create a new action we need to extend the [AnAction](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java)
+To create a new action we need to extend the [`AnAction`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java)
 class. As an example we will do that in the `SimplePopDialogAction` class in the `register_actions` code sample.
 
 ```java
@@ -31,7 +31,7 @@ only within the context of a `Project` will cause the `Project` to be kept in me
 
 ### 1.2. Overriding actionPerformed()
 
-The [AnAction](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java)
+The [`AnAction`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java)
 class is abstract, and classes that extend it must override the `AnAction.actionPerformed(AnActionEvent)` method.
 This method should contain the code to be executed when the action has been invoked.
 In this case `SimplePopDialogAction.actionPerformed(AnActionEvent)` doesn't do anything yet.
@@ -109,7 +109,7 @@ In order to make the action do something we need to add code to the `SimplePopDi
 The following code gets information from the `anActionEvent` input parameter and constructs a simple message dialog.
 A generic icon, and the `description` and `text` attributes from the invoking menu action are displayed.
 
-For demonstration purposes the `AnActionEvent.getData()` method tests if a [Navigatable](upsource:///platform/core-api/src/com/intellij/pom/Navigatable.java) 
+For demonstration purposes the `AnActionEvent.getData()` method tests if a [`Navigatable`](upsource:///platform/core-api/src/com/intellij/pom/Navigatable.java) 
 object is available, meaning e.g. an element has been selected in the editor. If so, information about 
 the selected element is opportunistically added to the dialog.
 
@@ -149,14 +149,14 @@ public void update(AnActionEvent anActionEvent) {
 ```
 
 Parameter `anActionEvent` carries information on the invocation place and data available. Note the `update()` method does
-not check to see if a [Navigatable](upsource:///platform/core-api/src/com/intellij/pom/Navigatable.java) object is available
+not check to see if a [`Navigatable`](upsource:///platform/core-api/src/com/intellij/pom/Navigatable.java) object is available
 before enabling `SimplePopDialogAction`. This is done for the purposes of demonstration code.  
 
 **Note** This method can be called frequently: for instance, if an action is added to a toolbar, it will be updated twice a second.
 This means that this method is supposed to _work really fast_; no real work should be done at this phase.
 For example, checking selection in a tree or a list, is considered valid but working with the file system is not.
 If you cannot understand the state of the action fast you should do it in the
-[AnActionEvent](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnActionEvent.java)
+[`AnActionEvent`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnActionEvent.java)
 method and notify the user that the action cannot be executed if it's the case.
 
 

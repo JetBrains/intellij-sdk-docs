@@ -19,7 +19,7 @@ Querying a file-based index gets you the set of files matching a certain conditi
 
 ## Dumb mode
 
-Indexing is a potentially long process. It's performed in background, and during this time, IDE's features are restricted to the ones that don't require index: basic text editing, version control etc. This restriction is managed by [DumbService](upsource:///platform/core-api/src/com/intellij/openapi/project/DumbService.java).
+Indexing is a potentially long process. It's performed in background, and during this time, IDE's features are restricted to the ones that don't require index: basic text editing, version control etc. This restriction is managed by [`DumbService`](upsource:///platform/core-api/src/com/intellij/openapi/project/DumbService.java).
 
 `DumbService` provides API to query whether the IDE is currently in "dumb" mode (where index access is not allowed) or "smart" mode (with all index built and ready to use). It also provides ways of delaying code execution until indices are ready. Please see its javadoc for more details.
 
@@ -31,4 +31,4 @@ Sometimes, the following conditions hold:
 * eagerly calculating the data for the entire project during indexing isn't needed (e.g. it slows down the indexing, and/or this data probably will ever be needed for a minor subset of all project files)
 * the data can be recalculated lazily on request without major performance penalties
 
-In such cases, file-based index can be used, but file gists provide a way to perform data calculation lazily, caching on disk, and a more lightweight API. Please see [VirtualFileGist](upsource:///platform/indexing-api/src/com/intellij/util/gist/VirtualFileGist.java) and [PsiFileGist](upsource:///platform/indexing-api/src/com/intellij/util/gist/PsiFileGist.java) documentation.
+In such cases, file-based index can be used, but file gists provide a way to perform data calculation lazily, caching on disk, and a more lightweight API. Please see [`VirtualFileGist`](upsource:///platform/indexing-api/src/com/intellij/util/gist/VirtualFileGist.java) and [PsiFileGist](upsource:///platform/indexing-api/src/com/intellij/util/gist/PsiFileGist.java) documentation.

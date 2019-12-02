@@ -43,7 +43,7 @@ Use the `ModuleManager.getModules()` method.
 
 _Order entries_ include SDK, libraries and other modules the module uses. With the *IntelliJ IDEA* UI, you can view order entries for a module on the [Dependencies](https://www.jetbrains.com/help/idea/dependencies-tab.html) tab of the *Project Structure* dialog box.
 
-To explore the [module dependencies](https://www.jetbrains.com/help/idea/dependencies-tab.html), use the [OrderEnumerator](upsource:///platform/projectModel-api/src/com/intellij/openapi/roots/OrderEnumerator.java) class.
+To explore the [module dependencies](https://www.jetbrains.com/help/idea/dependencies-tab.html), use the [`OrderEnumerator`](upsource:///platform/projectModel-api/src/com/intellij/openapi/roots/OrderEnumerator.java) class.
 
 The following code snippet illustrates how you can get classpath (classes root of all dependencies) for a module:
 
@@ -53,7 +53,7 @@ VirtualFile[] roots = ModuleRootManager.getInstance(module).orderEntries().class
 
 ### How do I get the SDK the module uses?
 
-Use the `ModuleRootManager.getSdk()` method. This method returns a value of the [Sdk](upsource:///platform/projectModel-api/src/com/intellij/openapi/projectRoots/Sdk.java) type.
+Use the `ModuleRootManager.getSdk()` method. This method returns a value of the [`Sdk`](upsource:///platform/projectModel-api/src/com/intellij/openapi/projectRoots/Sdk.java) type.
 
 The following code snippet illustrates how you can get detailed information on SDK the specified module uses:
 
@@ -102,7 +102,7 @@ String moduleName = module == null ? "Module not found" : module.getName();
 
 ### Accessing module roots
 
-Information about module roots can be accessed via [ModuleRootManager](upsource:///platform/projectModel-api/src/com/intellij/openapi/roots/ModuleRootManager.java).
+Information about module roots can be accessed via [`ModuleRootManager`](upsource:///platform/projectModel-api/src/com/intellij/openapi/roots/ModuleRootManager.java).
 For example, the following snippet shows how to access the content roots of a module:
 
 ```java

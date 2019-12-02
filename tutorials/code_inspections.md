@@ -47,7 +47,7 @@ The details of the `comparing_references_inspection` implementation illustrate t
 
 ### Plugin Configuration File
 The `comparing_references_inspection` is described as a `<localInspection>` type within the `<extensions>` elements in the `comparing_references_inspection` plugin configuration ([plugin.xml](https://github.com/JetBrains/intellij-sdk-docs/tree/master/code_samples/comparing_references_inspection/resources/META-INF/plugin.xml)) file.
-Under the hood, inspection types are described as an `<extensionPoint>` in [LangExtensionPoints.xml](upsource:///platform/platform-resources/src/META-INF/LangExtensionPoints.xml):
+Under the hood, inspection types are described as an `<extensionPoint>` in [`LangExtensionPoints.xml`](upsource:///platform/platform-resources/src/META-INF/LangExtensionPoints.xml):
 * The `localInspection` type is used for inspections that operate on one file at a time, and also operate as the user edits the file.
 * The `globalInspection` type is used for inspections that operate across multiple files, and the associated fix might, for example, refactor code between files.
 * The `inspectionToolProvider` type is not deprecated but `localInspection` is preferred.
@@ -60,7 +60,7 @@ Note that some attributes are not displayed to the user, so they are never local
 As an alternative, inspections can define all of the attribute information (except `implementationClass`) by overriding methods in the inspection implementation class.
 
 ### Inspection Implementation Java Class  
-Inspection implementations for Java files, like [`ComparingReferencesInspection`](https://github.com/JetBrains/intellij-sdk-docs/tree/master/code_samples/comparing_references_inspection/source/com/intellij/codeInspection/ComparingReferencesInspection.java), are often based on the Java class [AbstractBaseJavaLocalInspectionTool](upsource:///java/java-analysis-api/src/com/intellij/codeInspection/AbstractBaseJavaLocalInspectionTool.java).
+Inspection implementations for Java files, like [`ComparingReferencesInspection`](https://github.com/JetBrains/intellij-sdk-docs/tree/master/code_samples/comparing_references_inspection/source/com/intellij/codeInspection/ComparingReferencesInspection.java), are often based on the Java class [`AbstractBaseJavaLocalInspectionTool`](upsource:///java/java-analysis-api/src/com/intellij/codeInspection/AbstractBaseJavaLocalInspectionTool.java).
 The `AbstractBaseJavaLocalInspectionTool` implementation class offers methods to inspect Java classes, fields, and methods.
 
 More generally, `localInspection` types are based on the class [`LocalInspectionTool`](upsource:///platform/analysis-api/src/com/intellij/codeInspection/LocalInspectionTool.java).

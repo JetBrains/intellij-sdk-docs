@@ -49,7 +49,7 @@ Connection will use that *default handler* when storing *(topic-handler)* mappin
 *  it's possible to explicitly release acquired resources (*disconnect()* method).
 Also it can be plugged to standard semi-automatic disposing 
 (
-[Disposable](upsource:///platform/util/src/com/intellij/openapi/Disposable.java)
+[`Disposable`](upsource:///platform/util/src/com/intellij/openapi/Disposable.java)
 );
 
 ## Putting altogether
@@ -105,14 +105,14 @@ public void doChange(Context context) {
 *Existing resources*
 
 *  *MessageBus* instances are available via
-[ComponentManager.getMessageBus()](upsource:///platform/extensions/src/com/intellij/openapi/components/ComponentManager.java)<!--#L85-->
+[`ComponentManager.getMessageBus()`](upsource:///platform/extensions/src/com/intellij/openapi/components/ComponentManager.java)<!--#L85-->
 (many standard interfaces implement it, e.g.
-[Application](upsource:///platform/core-api/src/com/intellij/openapi/application/Application.java),
-[Project](upsource:///platform/core-api/src/com/intellij/openapi/project/Project.java);
+[`Application`](upsource:///platform/core-api/src/com/intellij/openapi/application/Application.java),
+[`Project`](upsource:///platform/core-api/src/com/intellij/openapi/project/Project.java);
 
 *  number of public topics are used by the *IntelliJ Platform*, e.g.
-[AppTopics](upsource:///platform/platform-api/src/com/intellij/AppTopics.java),
-[ProjectTopics](upsource:///platform/projectModel-api/src/com/intellij/ProjectTopics.java)
+[`AppTopics`](upsource:///platform/platform-api/src/com/intellij/AppTopics.java),
+[`ProjectTopics`](upsource:///platform/projectModel-api/src/com/intellij/ProjectTopics.java)
 etc.
 So, it's possible to subscribe to them in order to receive information about the processing;
 

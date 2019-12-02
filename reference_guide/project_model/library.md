@@ -35,7 +35,7 @@ This sample code outputs a list of libraries that the given module depends on.
 
 ### How do I get a list of all libraries?
 
-To manage the lists of application and project libraries, use [LibraryTable](upsource:///platform/projectModel-api/src/com/intellij/openapi/roots/libraries/LibraryTable.java). 
+To manage the lists of application and project libraries, use [`LibraryTable`](upsource:///platform/projectModel-api/src/com/intellij/openapi/roots/libraries/LibraryTable.java). 
 The list of application-level library tables is accessed by calling `LibraryTablesRegistrar.getInstance().getLibraryTable()`,
 whereas the list of project-level library tables is accessed through `LibraryTablesRegistrar.getInstance().getLibraryTable(Project)`.
 Once you have a `LibraryTable`, you can get the libraries in it by calling `LibraryTable.getLibraries()`.
@@ -75,7 +75,7 @@ To create a library, you need to perform the following steps:
   * Add contents to the library (see below)
   * For a module-level library, commit the modifiable model returned by `ModuleRootManager.getInstance(module).getModifiableModel()`.
   
-For module-level libraries, you can also use simplified APIs in the [ModuleRootModificationUtil](upsource:///platform/projectModel-api/src/com/intellij/openapi/roots/ModuleRootModificationUtil.java)
+For module-level libraries, you can also use simplified APIs in the [`ModuleRootModificationUtil`](upsource:///platform/projectModel-api/src/com/intellij/openapi/roots/ModuleRootModificationUtil.java)
 class to add a library with a single API call. You can find an example of using these APIs in the [sample plugin](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/project_model/src/com/intellij/tutorials/project/model/ModificationAction.java).
 
 ### How do I add contents to a library or modify it?
@@ -93,7 +93,7 @@ Use `ModuleRootModificationUtil.addDependency(module, library)` from under a wri
 
 ### Checking Belonging to a Library
 
-The [ProjectFileIndex](upsource:///platform/projectModel-api/src/com/intellij/openapi/roots/ProjectFileIndex.java) interface implements a number of methods you can use to check whether the specified file belongs to the project library classes or library sources.
+The [`ProjectFileIndex`](upsource:///platform/projectModel-api/src/com/intellij/openapi/roots/ProjectFileIndex.java) interface implements a number of methods you can use to check whether the specified file belongs to the project library classes or library sources.
 You can use the following methods:
 
 * To check if a specified virtual file is a compiled class file use

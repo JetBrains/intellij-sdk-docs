@@ -28,20 +28,20 @@ The extension point attributes specify all the data which is necessary to displa
 *  The `icon` to display on the tool window button (13x13 pixels)
 
 In addition to that, you specify the *factory class*  - the name of a class implementing the
-[ToolWindowFactory](upsource:///platform/platform-api/src/com/intellij/openapi/wm/ToolWindowFactory.java)
+[`ToolWindowFactory`](upsource:///platform/platform-api/src/com/intellij/openapi/wm/ToolWindowFactory.java)
 interface.
 When the user clicks on the tool window button, the `createToolWindowContent()` method of the factory class is called, and initializes the UI of the tool window.
 This procedure ensures that unused tool windows don't cause any overhead in startup time or memory usage: if a user does not interact with the tool window of your plugin, no plugin code will be loaded or executed.
 
 If the tool window of your plugin doesn't need to be displayed for all projects, you can also specify the *conditionClass*  attribute - the qualified name of a class implementing the
-[Condition\<Project\>](upsource:///platform/util-rt/src/com/intellij/openapi/util/Condition.java)
+[`Condition\<Project\>`](upsource:///platform/util-rt/src/com/intellij/openapi/util/Condition.java)
 interface (this can be the same class as the tool window factory implementation).
 If the condition returns `false`, the tool window will not be displayed.
 Note that the condition is evaluated only once when the project is loaded;
 if you'd like to show your and hide tool window dynamically while the user is working with the project, you need to use the second method for tool window registration.
 
 The second method involves simply calling
-[ToolWindowManager.registerToolWindow()](upsource:///platform/platform-api/src/com/intellij/openapi/wm/ToolWindowManager.java)
+[`ToolWindowManager.registerToolWindow()`](upsource:///platform/platform-api/src/com/intellij/openapi/wm/ToolWindowManager.java)
 from your plugin code.
 The method has multiple overloads that can be used depending on your task.
 If you use an overload that takes a component, the component becomes the first content (tab) displayed in the tool window.
@@ -51,21 +51,21 @@ Because of that, tool windows are normally disabled while building indices, unle
 
 As mentioned previously, tool windows can contain multiple tabs, or contents.
 To manage the contents of a tool window, you can call
-[ToolWindow.getContentManager()](upsource:///platform/platform-api/src/com/intellij/openapi/wm/ToolWindow.java).
+[`ToolWindow.getContentManager()`](upsource:///platform/platform-api/src/com/intellij/openapi/wm/ToolWindow.java).
 To add a tab (content), you first need to create it by calling
-[ContentManager.getFactory().createContent()](upsource:///platform/platform-api/src/com/intellij/ui/content/ContentManager.java),
+[`ContentManager.getFactory().createContent()`](upsource:///platform/platform-api/src/com/intellij/ui/content/ContentManager.java),
 and then to add it to the tool window using
-[ContentManager.addContent()](upsource:///platform/platform-api/src/com/intellij/ui/content/ContentManager.java).
+[`ContentManager.addContent()`](upsource:///platform/platform-api/src/com/intellij/ui/content/ContentManager.java).
 
 You can control whether the user is allowed to close tabs either globally or on a per-tab basis.
 The former is done by passing the `canCloseContents` parameter to the `registerToolWindow()` function, or by specifying
 `canCloseContents="true"` in *plugin.xml*.  The default value is `false`; Calling setClosable(true) on ContentManager content will be ignored unless `canCloseContents` is explicityly set.
 If closing tabs is enabled in general, you can disable closing of specific tabs by calling
-[Content.setCloseable(false)](upsource:///platform/platform-api/src/com/intellij/ui/content/Content.java).
+[`Content.setCloseable(false)`](upsource:///platform/platform-api/src/com/intellij/ui/content/Content.java).
 
 ## How to Create a Tool Window?
 
-The IntelliJ Platform provides the _toolWindow_ [extension point](/basics/plugin_structure/plugin_extensions_and_extension_points.md) that you can use to create and configure your custom tool windows. This extension point is declared using the [ToolWindowEP](upsource:///platform/platform-api/src/com/intellij/openapi/wm/ToolWindowEP.java) bean class.
+The IntelliJ Platform provides the _toolWindow_ [extension point](/basics/plugin_structure/plugin_extensions_and_extension_points.md) that you can use to create and configure your custom tool windows. This extension point is declared using the [`ToolWindowEP`](upsource:///platform/platform-api/src/com/intellij/openapi/wm/ToolWindowEP.java) bean class.
 
 To create a tool window, first declare an extension to the _toolWindow_ extension point.
 
@@ -73,7 +73,7 @@ To create a tool window, first declare an extension to the _toolWindow_ extens
 
 To create a plugin that displays a custom tool window, perform the following steps:
 
-1. In your plugin project, create a Java class that implements the [ToolWindowFactory](upsource:///platform/platform-api/src/com/intellij/openapi/wm/ToolWindowFactory.java)interface.
+1. In your plugin project, create a Java class that implements the [`ToolWindowFactory`](upsource:///platform/platform-api/src/com/intellij/openapi/wm/ToolWindowFactory.java)interface.
 2. In this class, override the `createToolWindowContent` method. This method specifies the content for your tool window.
 3. In the plugin configuration file plugin.xml, create the `<extensions defaultExtensionNs="com.intellij">...</extensions>` section.
 4. To this section, add the `<toolWindow>` element, and for this element, set the following attributes declared in the ToolWindowEP bean class:
@@ -82,7 +82,7 @@ To create a plugin that displays a custom tool window, perform the following ste
     - **secondary** (optional): when true, the tool window button will be shown on the lower part of the tool window bar. Default value is false.
     - **factoryClass** (required): specifies the Java class implementing the ToolWindowFactory interface (see Step 1).
     - **icon** (optional): specifies path to the icon that identifies the tool window, if any.
-    - **conditionClass** (optional): specifies a Java class that implements the [Condition](upsource:///platform/util-rt/src/com/intellij/openapi/util/Condition.java) interface. Using this class, you can define conditions to be met to display tool window button. In the Condition class, you should override the value method: if this method returns false, the tool window button is not displayed on tool window bar.
+    - **conditionClass** (optional): specifies a Java class that implements the [`Condition`](upsource:///platform/util-rt/src/com/intellij/openapi/util/Condition.java) interface. Using this class, you can define conditions to be met to display tool window button. In the Condition class, you should override the value method: if this method returns false, the tool window button is not displayed on tool window bar.
 
 To clarify the above procedure, consider the following fragment of the `plugin.xml` file:
 

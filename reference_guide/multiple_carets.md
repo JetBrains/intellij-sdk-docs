@@ -15,9 +15,9 @@ Currently, the most recent caret is considered the primary one.
 ## Core functionality
 
 Core logic related to multi-caret implementation such as accessing currently existing carets, adding and removing carets, is available via
-[CaretModel](upsource:///platform/editor-ui-api/src/com/intellij/openapi/editor/CaretModel.java)
+[`CaretModel`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/editor/CaretModel.java)
 interface, some changes also have been made in
-[SelectionModel](upsource:///platform/editor-ui-api/src/com/intellij/openapi/editor/SelectionModel.java)
+[`SelectionModel`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/editor/SelectionModel.java)
 interface.
 Check Javadoc of those interfaces for details.
 
@@ -35,7 +35,7 @@ Correspondingly, block-selection-related methods in SelectionModel interface hav
 ### EditorAction and EditorActionHandler
 
 When
-[EditorActionHandler](upsource:///platform/platform-api/src/com/intellij/openapi/editor/actionSystem/EditorActionHandler.java) is invoked, an additional parameter will be passed to it — a caret instance on which it should operate, or `null` if it's invoked without any caret context.
+[`EditorActionHandler`](upsource:///platform/platform-api/src/com/intellij/openapi/editor/actionSystem/EditorActionHandler.java) is invoked, an additional parameter will be passed to it — a caret instance on which it should operate, or `null` if it's invoked without any caret context.
 If the handler invokes another handler (delegate handler for the same `actionId` or a completely unrelated handler), that parameter should normally be passed to the delegate unchanged (unless no context caret has been provided to the handler, but it needs to invoke another handler on a specific caret).
 Of course, the handler can just ignore the caret parameter if its functionality is not related to caret/selection position.
 
@@ -60,26 +60,26 @@ At the moment there's no need to make any changes in the handlers to support mul
 
 ### TypedActionHandler, TypedHandlerDelegate
 
-[TypedActionHandler](upsource:///platform/platform-api/src/com/intellij/openapi/editor/actionSystem/TypedActionHandler.java)
+[`TypedActionHandler`](upsource:///platform/platform-api/src/com/intellij/openapi/editor/actionSystem/TypedActionHandler.java)
 and
-[TypedHandlerDelegate](upsource:///platform/lang-api/src/com/intellij/codeInsight/editorActions/TypedHandlerDelegate.java)
+[`TypedHandlerDelegate`](upsource:///platform/lang-api/src/com/intellij/codeInsight/editorActions/TypedHandlerDelegate.java)
 implementations are invoked only once for each typed character.
 If those handlers need to support multiple carets, they will need to implement that explicitly.
 
-[EditorModificationUtil](upsource:///platform/platform-api/src/com/intellij/openapi/editor/EditorModificationUtil.java).
+[`EditorModificationUtil`](upsource:///platform/platform-api/src/com/intellij/openapi/editor/EditorModificationUtil.java).
 _typeInStringAtCaretHonorMultipleCarets_ utility method is available to do the most common task in this case — inserting the same text into all caret positions and/or moving all carets relatively to their current position.
 Examples of its usage:
 
-*  [TypedAction](upsource:///platform/platform-api/src/com/intellij/openapi/editor/actionSystem/TypedAction.java).
+*  [`TypedAction`](upsource:///platform/platform-api/src/com/intellij/openapi/editor/actionSystem/TypedAction.java).
 
-*  [XmlGtTypedHandler](upsource:///xml/impl/src/com/intellij/codeInsight/editorActions/XmlGtTypedHandler.java).
+*  [`XmlGtTypedHandler`](upsource:///xml/impl/src/com/intellij/codeInsight/editorActions/XmlGtTypedHandler.java).
 
 -----------
 **Note**:
 Starting from IDEA 14,
-[TypedHandlerDelegate](upsource:///platform/lang-api/src/com/intellij/codeInsight/editorActions/TypedHandlerDelegate.java)
+[`TypedHandlerDelegate`](upsource:///platform/lang-api/src/com/intellij/codeInsight/editorActions/TypedHandlerDelegate.java)
 implementations are invoked automatically for each caret. If one wants to implement custom multicaret behaviour on typing,
-[TypedActionHandler](upsource:///platform/platform-api/src/com/intellij/openapi/editor/actionSystem/TypedActionHandler.java)
+[`TypedActionHandler`](upsource:///platform/platform-api/src/com/intellij/openapi/editor/actionSystem/TypedActionHandler.java)
 needs to be provided instead.
 
 -----------
@@ -87,9 +87,9 @@ needs to be provided instead.
 ## Code insight actions
 
 Existing actions inheriting from
-[CodeInsightAction](upsource:///platform/lang-api/src/com/intellij/codeInsight/actions/CodeInsightAction.java) will work for primary caret only.
+[`CodeInsightAction`](upsource:///platform/lang-api/src/com/intellij/codeInsight/actions/CodeInsightAction.java) will work for primary caret only.
 To support multiple carets, one should inherit
-[MultiCaretCodeInsightAction](upsource:///platform/lang-impl/src/com/intellij/codeInsight/actions/MultiCaretCodeInsightAction.java)
+[`MultiCaretCodeInsightAction`](upsource:///platform/lang-impl/src/com/intellij/codeInsight/actions/MultiCaretCodeInsightAction.java)
 instead (each caret might have a different editor and PSI instance, so using the old API is not possible).
 It is available since IDEA 14.
 

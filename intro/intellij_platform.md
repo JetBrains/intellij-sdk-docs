@@ -44,6 +44,7 @@ The following IDEs are based on the IntelliJ Platform:
 * JetBrains IDEs
   * [AppCode](https://www.jetbrains.com/objc/)
   * [CLion](https://www.jetbrains.com/clion/)
+  * [Comma](https://commaide.com/)
   * [DataGrip](https://www.jetbrains.com/datagrip/)
   * [GoLand](https://www.jetbrains.com/go/)
   * [IntelliJ IDEA](https://www.jetbrains.com/idea/)

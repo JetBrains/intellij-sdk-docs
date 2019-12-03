@@ -74,7 +74,8 @@ interface Bar extends com.intellij.util.xml.DomElement {
 ```
 
 Next, you should create a [`DomFileDescription`](upsource:///xml/dom-openapi/src/com/intellij/util/xml/DomFileDescription.java) object, pass to its constructor the root tag name and root element interface, and register it with extension point `com.intellij.dom.fileDescription`.
-If your plugin targets 2019.1 or later, please use extension point `com.intellij.dom.fileMetaData` instead and specify `rootTagName` and `domVersion`/`stubVersion` in `plugin.xml`.
+
+> **NOTE** If your plugin targets 2019.1 or later, please use extension point `com.intellij.dom.fileMetaData` instead and specify `rootTagName` and `domVersion`/`stubVersion` in `plugin.xml`.
 
 You can now get the file element from [`DomManager`](upsource:///xml/dom-openapi/src/com/intellij/util/xml/DomManager.java). To get the "239" value, you only have to write the following code:
 
@@ -267,24 +268,23 @@ The index parameter in the last example means the index in the merged collection
 ### Dynamic Definition
 You can extend existing DOM model at runtime by implementing `com.intellij.util.xml.reflect.DomExtender<T>`. Register it in "extenderClass" attribute of EP `com.intellij.dom.extender`, where "domClass" specifies DOM class `<T>` to be extended. [`DomExtensionsRegistrar`](upsource:///xml/dom-openapi/src/com/intellij/util/xml/reflect/DomExtensionsRegistrar.java) provides various methods to register dynamic attributes and children.
 
-_13.1_
 If the contributed elements depend on anything other than plain XML file content (used framework version, libraries in classpath, ...), make sure to return `false` from `DomExtender#supportsStubs`.
 
 ### Generating DOM from existing XSD
 DOM can be generated automatically from existing XSD/DTD. Output correctness/completeness will largely depend on the input scheme and may require additional manual adjustments.
 
-Follow these steps (12.1 or later):
+Follow these steps:
 
-* Run IntelliJ IDEA with "Plugin DevKit" enabled and add JVM option `-Didea.is.internal=true`
-* Select Tools -> Internal Actions -> DevKit -> Generate DOM Model
+* Run IntelliJ IDEA with _Plugin DevKit_ enabled in [internal mode](/reference_guide/internal_actions/enabling_internal.md)
+* Select *Tools \| Internal Actions \| DevKit \| Generate DOM Model*
 * Select Scheme file and set options, then click "Generate" to generate sources
 * Modify generated sources according to your needs
 
 ### IDE support
-_IntelliJ IDEA 13_
+_Plugin DevKit_ supports the following features for working with DOM related code:
 
-* [`DomElement`](upsource:///xml/dom-openapi/src/com/intellij/util/xml/DomElement.java): provide implicit usages for all DOM-related methods defined in inheriting classes (to suppress "unused method" warning)
-* [`DomElementVisitor`](upsource:///xml/dom-openapi/src/com/intellij/util/xml/DomElementVisitor.java): provide implicit usages for all DOM-related visitor methods defined in inheriting classes (to suppress "unused method" warning)
+* [`DomElement`](upsource:///xml/dom-openapi/src/com/intellij/util/xml/DomElement.java) - provide implicit usages for all DOM-related methods defined in inheriting classes (to suppress "unused method" warning)
+* [`DomElementVisitor`](upsource:///xml/dom-openapi/src/com/intellij/util/xml/DomElementVisitor.java) - provide implicit usages for all DOM-related visitor methods defined in inheriting classes (to suppress "unused method" warning)
 
 ## Working with the DOM
 
@@ -301,7 +301,7 @@ public abstract class TypeChooser {
 }
 ```
 
-Here, the first method (`chooseType()`) does exactly what it is named after (chooses the particular type, most often it's a class). The second one (`distinguishTag()`) acts in reverse: it modifies a tag so that when the element is read from an XML file next time (for example, after the user has closed and opened the project again), the newly created DOM element will implement the same interface and no model data will be lost. And, finally, `getChooserTypes()` just returns all the types that could be returned by `chooseType()`.
+Here, the first method (`chooseType()`) does exactly what it is named after (chooses the particular type, most often it's a class). The second one (`distinguishTag()`) acts in reverse: it modifies a tag so that when the element is read from an XML file next time (for example, after the user has closed and opened the project again), the newly created DOM element will implement the same interface and no model data will be lost. Finally, `getChooserTypes()` just returns all the types that could be returned by `chooseType()`.
 
 To make your `TypeChooser` work, register it in your overridden `DomFileDescription.initializeFileDescription()` method by calling `registerTypeChooser()`.
 
@@ -420,9 +420,9 @@ Extend [`DomModelFactory`](upsource:///xml/dom-openapi/src/com/intellij/util/xml
 Example can be found in Struts 2 plugin (package `com.intellij.struts2.dom.struts.model`).
 
 ### DOM Stubs
-_Please use it sparingly and only for heavily accessed parts in your DOM model, as it increases disk space usage/indexing run time_
+> **NOTE** Please use it sparingly and only for heavily accessed parts in your DOM model, as it increases disk space usage/indexing run time.
 
-DOM elements can be stubbed, so (costly) access to XML/PSI is not necessary (see TODO [Indexing and PSI Stubs] for similar feature for custom languages). Performance relevant elements, tag or attribute getters can simply be annotated with `@com.intellij.util.xml.Stubbed`.
+DOM elements can be stubbed, so (costly) access to XML/PSI is not necessary (see [Indexing and PSI Stubs](/basics/indexing_and_psi_stubs.md) for similar feature for custom languages). Performance relevant elements, tag or attribute getters can simply be annotated with `@com.intellij.util.xml.Stubbed`.
 Return `true` from `DomFileDescription#hasStubs` and increase `DomFileDescription#getStubVersion` whenever you change `@Stubbed` annotations usage in your DOM hierarchy to trigger proper rebuilding of Stubs during indexing.
 
 ## Building a DOM-based GUI

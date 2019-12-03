@@ -16,7 +16,7 @@ There are two main scenarios for the use of tool windows in a plugin.
 In the first scenario (used by the Ant and Commander plugins, for example), a tool window button is always visible, and the user can activate it and interact with the plugin functionality at any time.
 In the second scenario (used by the `Analyze Dependencies` action, for example), the tool window is created to show the results of a specific operation, and can be closed by the user after the operation is completed.
 
-In the first scenario, the tool window is registered in *plugin.xml* using the `<toolWindow>` extension point.
+In the first scenario, the tool window is registered in *plugin.xml* using the `com.intellij.toolWindow` extension point.
 The extension point attributes specify all the data which is necessary to display the tool window button:
 
 *  The `id` of the tool window (corresponds to the text displayed on the tool window button)
@@ -65,9 +65,7 @@ If closing tabs is enabled in general, you can disable closing of specific tabs 
 
 ## How to Create a Tool Window?
 
-The IntelliJ Platform provides the _toolWindow_ [extension point](/basics/plugin_structure/plugin_extensions_and_extension_points.md) that you can use to create and configure your custom tool windows. This extension point is declared using the [`ToolWindowEP`](upsource:///platform/platform-api/src/com/intellij/openapi/wm/ToolWindowEP.java) bean class.
-
-To create a tool window, first declare an extension to the _toolWindow_ extension point.
+The IntelliJ Platform provides the `com.intellij.toolWindow` [extension point](/basics/plugin_structure/plugin_extensions_and_extension_points.md) that you can use to create and configure your custom tool windows. This extension point is declared using the [`ToolWindowEP`](upsource:///platform/platform-api/src/com/intellij/openapi/wm/ToolWindowEP.java) bean class.
 
 ### Creation of Plugin
 

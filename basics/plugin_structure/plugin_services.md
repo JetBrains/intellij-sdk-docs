@@ -12,9 +12,9 @@ The *IntelliJ Platform* offers three types of services: _application level_ serv
 
 To declare a service, you can use the following extension points in the IntelliJ Platform:
 
-* `applicationService`: designed to declare an application level service.
-* `projectService`: designed to declare a project level service.
-* `moduleService`: designed to declare a module level service.
+* `com.intellij.applicationService`: designed to declare an application level service.
+* `com.intellij.projectService`: designed to declare a project level service.
+* `com.intellij.moduleService`: designed to declare a module level service.
 
 **To declare a service:**
 

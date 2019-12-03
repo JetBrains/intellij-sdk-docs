@@ -22,7 +22,7 @@ When you access the index, you specify the key that you're interested in and get
 
 A fairly simple file-based index implementation is the [UI Designer bound forms index](upsource:///plugins/ui-designer/src/com/intellij/uiDesigner/binding/FormClassIndex.java). Refer to it as an example to understand this topic better.
 
-Each specific index implementation is a class extending [`FileBasedIndexExtension`](upsource:///platform/indexing-api/src/com/intellij/util/indexing/FileBasedIndexExtension.java). A file-based index should be registered in the `<fileBasedIndex>` extension point.
+Each specific index implementation is a class extending [`FileBasedIndexExtension`](upsource:///platform/indexing-api/src/com/intellij/util/indexing/FileBasedIndexExtension.java). A file-based index should be registered in the `com.intellij.fileBasedIndex` extension point.
 
 An implementation of a file-based index consists of the following main parts:
 

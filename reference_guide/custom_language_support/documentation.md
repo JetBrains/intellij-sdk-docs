@@ -4,7 +4,7 @@ title: Documentation
 
 To provide different kinds of documentation support (tooltips on **Ctrl-hover**, quick documentation popup etc.), the plugin needs to provide an implementation of the
 [`DocumentationProvider`](upsource:///platform/analysis-api/src/com/intellij/lang/documentation/DocumentationProvider.java)
-interface and register it in the `lang.documentationProvider` extension point.
+interface and register it in the `com.intellij.lang.documentationProvider` extension point.
 A standard base class for such implementations is available in the class
 [`AbstractDocumentationProvider`](upsource:///platform/analysis-api/src/com/intellij/lang/documentation/AbstractDocumentationProvider.java).
 

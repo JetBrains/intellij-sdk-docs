@@ -65,7 +65,7 @@ Code formatting can be suppressed per region via [special comments](https://yout
 
 To specify the default indent size for the language provided by your plugin, and to allow the user to configure the tab size and indent size you need to implement the
 [`FileTypeIndentOptionsProvider`](upsource:///platform/lang-api/src/com/intellij/psi/codeStyle/FileTypeIndentOptionsProvider.java)
-interface and to register the implementation in the `fileTypeIndentOptionsProvider` extension point.
+interface and to register the implementation in the `com.intellij.fileTypeIndentOptionsProvider` extension point.
 The return value of `createIndentOptions()` determines the default indent size.
 
 ### Rearranger

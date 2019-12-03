@@ -7,7 +7,7 @@ The _IntelliJ Platform_ is very large, and very capable, and its size and scope 
 ## Essential concepts
 
 - [Getting Started](/basics/getting_started.md) with plugins.
-- [Testing plugins](/basics/testing_plugins.md).
+- [Testing plugins](/basics/testing_plugins/testing_plugins.md).
 - Component model - the _IntelliJ Platform_ is a component based application, and is responsible for creating components and injecting dependencies. Understanding this is necessary for building plugins.
 - [Extension points](/basics/plugin_structure/plugin_extensions_and_extension_points.md) - how to register components with extension points, and how to find out what extension points are available.
 - [Virtual files](/basics/architectural_overview/virtual_file.md) - all file access should go through the Virtual File System which abstracts and caches the file system. This means you can work with files that are on the local file system, in a zip file or are old versions from version control.

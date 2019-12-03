@@ -7,9 +7,9 @@ The test fixture creates a *test project* environment. Unless you customize the 
 [`LightPlatformCodeInsightFixtureTestCase`](upsource:///platform/testFramework/src/com/intellij/testFramework/fixtures/LightPlatformCodeInsightFixtureTestCase.java) (renamed to `BasePlatformTestCase` in 2019.2) uses an in-memory implementation; if you set up the test environment by calling `IdeaTestFixtureFactory.createCodeInsightFixture`, you can specify the implementation to use.
 
 > **WARNING** If your tests use the in-memory implementation, and you abort the execution of your tests, the persisted filesystem caches may get out of sync with the in-memory structures, and you may get spurious errors in your tests.
-> If you get an unexpected error after a series of successful runs, **try running the test again**, and if that doesn't help, **delete the "system" subdirectory** in your sandbox directory (specified via `sandboxDirectory` for Gradle setups or in the *IntelliJ Platform* SDK settings for Devkit setups) .
+> If you get an unexpected error after a series of successful runs, **try rerunning the test**, and if that doesn't help, **delete the "system" subdirectory** in your [sandbox directory](/basics/ide_development_instance.md#the-development-instance-sandbox-directory).
 
-In your plugin, you normally store the test data for your tests (such as files on which plugin features will be executed and expected output files) in the `testdata` directory. This is just a directory under the content root of your plugin, but not under a source root. Files in `testdata` are normally not valid source code and must not be compiled.
+In your plugin, you normally store the test data for your tests (such as files on which plugin features will be executed and expected output files) in the `testdata` directory. This is just a directory under the content root of your plugin, but not under a source root. Files in `testdata` usually are not valid source code and must not be compiled.
 
 To specify the location of `testdata`, you must override the `getTestDataPath()` method. The default implementation assumes running as part of the *IntelliJ Platform* source tree and is not appropriate for third-party plugins.
 
@@ -23,8 +23,10 @@ Most operations in plugin tests require a file open in the in-memory editor, in 
 
 Alternatively, you can use one of the other methods which take parameters annotated with [`@TestDataFile`](upsource:///platform/testFramework/src/com/intellij/testFramework/TestDataFile.java). These methods copy the specified files from the `testdata` directory to the test project directory, open the first of the specified files in the in-memory editor, and then perform the requested operation such as highlighting or code completion.
 
-When a file is opened in the in-memory editor, special markup in the file content can be used to specify the caret position or selection. You can use one of the following markers:
+### Special Markup
+When a file is opened in the in-memory editor, special markup in the file content can be used to specify the caret position or selection.
 
+You can use one of the following markers:
 * `<caret>` specifies the position where the caret should be placed.
 * `<selection>` and `</selection>` specify the start and end of the text range to be selected.
 * `<block>` and `</block>` specify the start and end points of the column selection.

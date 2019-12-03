@@ -28,7 +28,7 @@ The Program Structure Interface builds the syntactic and semantic models for lot
 
 Describes how to extend and interact with various features that use the PSI layer, such as code completion, navigation, <kbd>Alt</kbd>+<kbd>Enter</kbd> items, intentions, refactorings and more. See also the section on Custom Languages below for language specific features that are only applicable when adding support for a new language.
 
-#### [Part VI - Testing](/basics/testing_plugins.md)
+#### [Part VI - Testing](/basics/testing_plugins/testing_plugins.md)
 
 Describes the available infrastructure for writing automated tests covering the functionality of plugins.
 

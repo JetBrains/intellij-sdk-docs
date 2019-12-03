@@ -54,7 +54,7 @@ The following IDEs are based on the IntelliJ Platform:
   * [RubyMine](https://www.jetbrains.com/ruby/) 
   * [WebStorm](https://www.jetbrains.com/webstorm/) 
 * [Android Studio](https://developer.android.com/studio/index.html) IDE from Google.
-* [Comma](https://commaide.com/) IDE for Perl
+* [Comma](https://commaide.com/) IDE for Raku (formerly known as Perl 6)
 * [CUBA Studio](https://www.cuba-platform.com/)
 * [Cursive](https://cursive-ide.com/) IDE for Clojure 
 

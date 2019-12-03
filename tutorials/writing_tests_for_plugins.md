@@ -2,7 +2,7 @@
 title: Writing Tests For Plugins
 ---
 
-> **NOTE** Please see [Testing Plugins](/basics/testing_plugins.md) for a general introduction.
+> **NOTE** Please see [Testing Plugins](/basics/testing_plugins/testing_plugins.md) for a general introduction.
 
 In this tutorial you will learn how to write and run automated tests for a custom language plugin.
 

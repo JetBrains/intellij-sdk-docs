@@ -163,7 +163,7 @@
 
 ## Part VI - Testing
 
-* [Testing Plugins](basics/testing_plugins.md)
+* [Testing Plugins](basics/testing_plugins/testing_plugins.md)
 * [Tests and Fixtures](basics/testing_plugins/tests_and_fixtures.md)
 * [Light and Heavy Tests](basics/testing_plugins/light_and_heavy_tests.md)
 * [Test Project and Testdata Directories](basics/testing_plugins/test_project_and_testdata_directories.md)

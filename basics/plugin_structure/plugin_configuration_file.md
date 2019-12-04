@@ -3,7 +3,11 @@ title: Plugin Configuration File - plugin.xml
 ---
 
 The following is a sample plugin configuration file. This sample showcases and describes all elements that can be used in the `plugin.xml` file.
+Additional information about configuring `<actions>` is available in the [Actions](/basics/action_system.md#registering-actions) section in Part II.
 
+Limited HTML elements are allowed within `<description>` and `<changed-notes>` elements.
+However, content containing HTML elements must be surrounded by `<![CDATA[  ]]>` tags. 
+Allowed HTML elements include text formatting, paragraphs, and lists. 
 ```xml
 <!-- `url` specifies the URL of the plugin homepage (can be opened from "Plugins" settings dialog) -->
 <idea-plugin url="https://www.jetbrains.com/idea">
@@ -27,12 +31,14 @@ The following is a sample plugin configuration file. This sample showcases and d
        For plugins that add language/platform/framework support, the description MUST specify 
        the version of the corresponding language/platform/framework.
        Don't mention the IDE compatibility. E.g. don't say "Adds support to IntelliJ IDEA for..."
-       Displayed in the "Plugins" settings dialog and the plugin repository Web interface. -->
+       Displayed in the "Plugins" settings dialog and the plugin repository Web interface. 
+       Simple HTML elements can be included between <![CDATA[  ]]> tags.  -->
   <description>Integrates Volume Snapshot Service W10</description>
 
   <!-- Description of changes in the latest version of the plugin.
-       Displayed in the "Plugins" settings dialog and the plugin repository Web interface.  -->
-  <change-notes>Initial release of the plugin.</change-notes>
+       Displayed in the "Plugins" settings dialog and the plugin repository Web interface.
+       Simple HTML elements can be included between <![CDATA[  ]]> tags.  -->
+ <change-notes>Initial release of the plugin.</change-notes>
 
   <!-- Plugin version
        Recommended format is BRANCH.BUILD.FIX (MAJOR.MINOR.FIX)
@@ -43,7 +49,7 @@ The following is a sample plugin configuration file. This sample showcases and d
        The optional "url" attribute specifies the URL of the vendor homepage.
        The optional "email" attribute specifies the e-mail address of the vendor.
        Displayed in the "Plugins" settings dialog and the plugin repository Web interface. -->
-   <vendor url="https://www.jetbrains.com" email="support@jetbrains.com">A Company Inc.</vendor>
+   <vendor url="https://www.company.com" email="support@company.com">A Company Inc.</vendor>
 
   <!-- Mandatory dependencies on plugins or modules.
        The FQN module names in <depends> elements are used to determine IDE compatibility for the plugin.
@@ -102,7 +108,7 @@ The following is a sample plugin configuration file. This sample showcases and d
     </component>
   </module-components>
 
-  <!-- Actions -->
+  <!-- Actions   -->
   <actions>
     <action id="VssIntegration.GarbageCollection" class="com.foo.impl.CollectGarbage" text="Collect _Garbage" description="Run garbage collector">
       <keyboard-shortcut first-keystroke="control alt G" second-keystroke="C" keymap="$default"/>

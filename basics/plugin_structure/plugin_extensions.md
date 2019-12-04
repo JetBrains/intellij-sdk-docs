@@ -1,66 +1,28 @@
 ---
-title: Plugin Extensions and Extension Points
+title: Plugin Extensions
+redirect_from:
+    /basics/plugin_structure/plugin_extensions_and_extension_points.html
 ---
 
-The *IntelliJ Platform* provides the concept of _extensions_ and _extension points_ that allows a plugin to interact with other plugins or with the IDE itself.
+_Extensions_ are the most common way for a plugin to extend the functionality of the IntelliJ Platform in a way
+that is not as straightforward as adding an action to a menu or toolbar. The following are some of the most common
+tasks accomplished using extensions:
 
-## Extension points
+  * The `<toolWindow>` extension point allows plugins to add [tool windows](/user_interface_components/tool_windows.md) 
+  (panels displayed at the sides of the IDE user interface);
+  * The `<applicationConfigurable>` and `<projectConfigurable>` extension points allow plugins to add pages to the
+    Settings/Preferences dialog;
+  * [Custom language plugins](/reference_guide/custom_language_support.md) use many extension points
+    to extend various language support features in the IDE.
 
-If you want your plugin to allow other plugins to extend its functionality, in the plugin, you must declare one or several _extension points_.  Each extension point defines a class or an interface that is allowed to access this point.
+There are more than 1000 extension points available in the platform and the bundled plugins, allowing to customize 
+different parts of the IDE behavior.
 
-## Extensions
-
-If you want your plugin to extend the functionality of other plugins or the *IntelliJ Platform*, you must declare one or several _extensions_.
-
-## How to declare extensions and extension points
-
-You can declare extensions and extension points in the plugin configuration file `plugin.xml`, within the `<extensions>` and `<extensionPoints>` sections, respectively.
-
-**To declare an extension point**
-
-In the `<extensionPoints>` section, insert a child element `<extensionPoint>` that defines the extension point name and the name of a bean class or an interface that is allowed to extend the plugin functionality in the `name`, `beanClass` and `interface` attributes, respectively.
-
-To clarify this procedure, consider the following sample section of the plugin.xml file:
-
-```xml
-<extensionPoints>
-  <extensionPoint name="MyExtensionPoint1" beanClass="MyPlugin.MyBeanClass1">
-  <extensionPoint name="MyExtensionPoint2" interface="MyPlugin.MyInterface">
-</extensionPoints>
-```
-
-* The `interface` attribute sets an interface the plugin that contributes to the extension point must implement.
-* The `beanClass` attribute sets a bean class that specifies one or several properties annotated with the [`@Attribute`](upsource:///platform/util/src/com/intellij/util/xmlb/annotations/Attribute.java) annotation.
-
-The plugin that contributes to the extension point will read those properties from the `plugin.xml` file.
-
-To clarify this, consider the following sample `MyBeanClass1` bean class used in the above `plugin.xml` file:
-
-```java
-public class MyBeanClass1 extends AbstractExtensionPointBean {
-  @Attribute("key")
-  public String key;
-
-  @Attribute("implementationClass")
-  public String implementationClass;
-
-  public String getKey() {
-    return key;
-  }
-
-  public String getClass() {
-    return implementationClass;
-  }
-}
-```
-
-To declare an extension designed to access the `MyExtensionPoint1` extension point, your `plugin.xml` file must contain the `<MyExtensionPoint1>` tag with the `key` and `implementationClass` attributes set to appropriate values (see sample below).
-
-**To declare an extension**
+## Declaring Extensions 
 
 > **TIP** Auto-completion is available for all these steps.
 
-1. For the `<extensions>` element, set the `defaultExtensionNs` attribute to one of the following values:
+1. Add an `<extensions>` element to your plugin.xml if it's not yet present there. Set the `defaultExtensionNs` attribute to one of the following values:
     * `com.intellij`, if your plugin extends the IntelliJ Platform core functionality.
     * `{ID of a plugin}`, if your plugin extends a functionality of another plugin.
 2. Add a new child element to the `<extensions>` element. The child element name must match the name of the extension point you want the extension to access.

@@ -66,7 +66,7 @@ The following is a sample plugin configuration file. This sample showcases and d
        `action.[pluginID].[ActionID].text` -->
   <resource-bundle>messages.MyPluginBundle</resource-bundle>
 
-  <!-- Plugin's application components -->
+  <!-- Plugin's application components (note that components are deprecated and should not be used in new plugins)  -->
   <application-components>
     <component>
       <!-- Component's interface class -->
@@ -77,7 +77,7 @@ The following is a sample plugin configuration file. This sample showcases and d
     </component>
   </application-components>
 
-  <!-- Plugin's project components -->
+  <!-- Plugin's project components (note that components are deprecated and should not be used in new plugins) -->
   <project-components>
     <component>
       <!-- Interface and implementation classes are the same -->
@@ -95,7 +95,7 @@ The following is a sample plugin configuration file. This sample showcases and d
     </component>
   </project-components>
 
-  <!-- Plugin's module components -->
+  <!-- Plugin's module components (note that components are deprecated and should not be used in new plugins)  -->
   <module-components>
     <component>
       <implementation-class>com.foo.Component3</implementation-class>
@@ -127,8 +127,18 @@ The following is a sample plugin configuration file. This sample showcases and d
        tag matches the name of the extension point, and the
        "implementation" class specifies the name of the class
        added to the extension point. -->
-  <extensions xmlns="VssIntegration">
+  <extensions defaultExtensionNs="VssIntegration">
     <testExtensionPoint implementation="com.foo.impl.MyExtensionImpl"/>
   </extensions>
+  
+  <!-- Application-level listeners -->
+  <applicationListeners>
+      <listener class="com.foo.impl.MyListener" topic="com.intellij.openapi.vfs.newvfs.BulkFileListener"/>
+  </applicationListeners>
+
+  <!-- Project-level listeners -->
+  <projectListeners>
+      <listener class="com.foo.impl.MyToolwindowListener" topic="com.intellij.openapi.wm.ex.ToolWindowManagerListener"/>
+  </projectListeners>
 </idea-plugin>
 ```

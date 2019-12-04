@@ -66,7 +66,7 @@ Compatibility with newer IDEs can easily be verified for plugins hosted on the [
 
 For non-public plugins, [intellij-plugin-verifier](https://github.com/JetBrains/intellij-plugin-verifier) can be used standalone as well.
   
-Consider using the following inspections to get additional alerts in the IDE for code that uses unstable API features:
+Consider using the following IDE inspections to get additional alerts about code that uses unstable API features:
 - JVM languages \| Unstable API Usage
 - JVM languages \| Unstable type is used in signature
   

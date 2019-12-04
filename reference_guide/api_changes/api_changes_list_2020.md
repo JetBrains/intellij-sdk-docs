@@ -72,3 +72,6 @@ Please see [Incompatible API Changes](/reference_guide/api_changes_list.md) on h
 `com.intellij.codeInsight.TargetElementUtilBase` class removed
 : Use `com.intellij.codeInsight.TargetElementUtil` instead.
 
+`com.intellij.psi.stubs.PrebuiltStubsProviderBase` class now extends `com.intellij.index.PrebuiltIndexProvider` and inherits its abstract method `getIndexRoot()`
+: Use `com.intellij.psi.stubs.PlatformPrebuiltStubsProviderBase` instead.
+

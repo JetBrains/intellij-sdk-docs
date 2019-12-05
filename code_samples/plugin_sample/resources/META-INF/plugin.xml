@@ -28,31 +28,6 @@
   <!-- Resource bundle from which the text of plugin descriptions, action names and etc. will be loaded -->
   <resource-bundle>org.jetbrains.tutorials.sample.PluginSampleBundle</resource-bundle>
 
-  <!-- Plugin's application components -->
-  <application-components>
-    <component>
-      <!-- Component's interface class -->
-      <interface-class>org.jetbrains.tutorials.sample.DummyApplicationComponent</interface-class>
-      <!-- Component's implementation class -->
-      <implementation-class>org.jetbrains.tutorials.sample.DummyApplicationComponentImpl</implementation-class>
-    </component>
-  </application-components>
-
-  <!-- Plugin's project components -->
-  <project-components>
-    <component>
-      <!-- Interface and implementation classes are the same -->
-      <interface-class>org.jetbrains.tutorials.sample.DummyProjectComponent</interface-class>
-      <implementation-class>org.jetbrains.tutorials.sample.DummyProjectComponentImpl</implementation-class>
-      <!-- If the "workspace" option is set "true", the component saves its state to the .iws file
-        instead of the .ipr file.  Note that the <option> element is used only if the component implements the JDOMExternalizable interface. Otherwise, the use of the <option> element takes no effect.-->
-
-      <option name="workspace" value="true"/>
-      <!-- If the "loadForDefaultProject" tag is present, the project component is instantiated also for the default project. -->
-      <loadForDefaultProject/>
-    </component>
-  </project-components>
-
   <!-- Actions -->
   <actions>
     <!-- The <action> element defines an action to register.

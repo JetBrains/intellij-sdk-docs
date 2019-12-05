@@ -8,14 +8,14 @@ _Extensions_ are the most common way for a plugin to extend the functionality of
 that is not as straightforward as adding an action to a menu or toolbar. The following are some of the most common
 tasks accomplished using extensions:
 
-  * The `<toolWindow>` extension point allows plugins to add [tool windows](/user_interface_components/tool_windows.md) 
+  * The `com.intellij.toolWindow` extension point allows plugins to add [tool windows](/user_interface_components/tool_windows.md) 
   (panels displayed at the sides of the IDE user interface);
-  * The `<applicationConfigurable>` and `<projectConfigurable>` extension points allow plugins to add pages to the
+  * The `com.intellij.applicationConfigurable` and `com.intellij.projectConfigurable` extension points allow plugins to add pages to the
     Settings/Preferences dialog;
   * [Custom language plugins](/reference_guide/custom_language_support.md) use many extension points
     to extend various language support features in the IDE.
 
-There are more than 1000 extension points available in the platform and the bundled plugins, allowing to customize 
+There are [more than 1000 extension](#how-to-get-the-extension-points-list) points available in the platform and the bundled plugins, allowing to customize 
 different parts of the IDE behavior.
 
 ## Declaring Extensions 
@@ -31,22 +31,23 @@ different parts of the IDE behavior.
     * If the extension point was declared using the `beanClass` attribute, for newly added child element, set all attributes annotated with the [`@Attribute`](upsource:///platform/util/src/com/intellij/util/xmlb/annotations/Attribute.java) annotations in the specified bean class.
 
 
-To clarify this procedure, consider the following sample section of the `plugin.xml` file that defines two extensions designed to access the `appStarter` and `applicationConfigurable` extension points in the *IntelliJ Platform* and one extension to access the `MyExtensionPoint1` extension point in a test plugin:
+To clarify this procedure, consider the following sample section of the `plugin.xml` file that defines two extensions designed to access the `com.intellij.appStarter` and `com.intellij.projectTemplatesFactory` extension points in the *IntelliJ Platform* and one extension to access the `another.plugin.myExtensionPoint` extension point in another plugin `another.plugin`:
 
 ```xml
 <!-- Declare extensions to access extension points in the IntelliJ Platform.
-     These extension points have been declared using the "interface" attribute.
+     These extension points have been declared using "interface".
  -->
   <extensions defaultExtensionNs="com.intellij">
-    <appStarter implementation="MyTestPackage.MyTestExtension1" />
-    <applicationConfigurable implementation="MyTestPackage.MyTestExtension2" />
+    <appStarter implementation="com.myplugin.MyAppStarter" />
+    <projectTemplatesFactory implementation="com.myplugin.MyProjectTemplatesFactory" />
   </extensions>
 
-<!-- Declare extensions to access extension points in a custom plugin
-     The MyExtensionPoint1 extension point has been declared using *beanClass* attribute.
+<!-- Declare extensions to access extension points in a custom plugin "another.plugin"
+     The "myExtensionPoint" extension point has been declared using "beanClass" 
+     and exposes custom properties "key" and "implementationClass".
 -->
-  <extensions defaultExtensionNs="MyPluginID">
-     <MyExtensionPoint1 key="keyValue" implementationClass="MyTestPackage.MyClassImpl"></MyExtensionPoint1>
+  <extensions defaultExtensionNs="another.plugin">
+     <myExtensionPoint key="keyValue" implementationClass="com.myplugin.MyExtensionPointImpl" />
   </extensions>
 ```
 ### Extension default properties

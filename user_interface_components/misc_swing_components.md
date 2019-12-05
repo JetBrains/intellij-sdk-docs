@@ -45,3 +45,8 @@ The
 class is JetBrains' implementation of the tab control, used for editor tabs and a few other components.
 It has a significantly different look & feel compared to the standard Swing tabs, and looks less native on the macOS platform, so it's up to you to choose which tab control would be more appropriate for your plugin.
 
+### SwingX/SwingLabs Components
+
+IntelliJ includes a fork of SwingLabs which includes multiple swing components such as `JXCollapsiblePane`, `JXTable`, `JXLoginPane` etc. 
+
+These can be very useful when building complex UIs. 

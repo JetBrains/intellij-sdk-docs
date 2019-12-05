@@ -2,7 +2,7 @@
 title: Plugin Listeners
 ---
 
-> **NOTE** Defining listeners in plugin.xml is supported starting with the version 2019.3 of the platform.
+> **NOTE** Defining listeners in `plugin.xml` is supported starting with the version 2019.3 of the platform.
 
 _Listeners_ allow plugins to declaratively subscribe to events delivered through the
 [message bus](/reference_guide/messaging_infrastructure.md). You can define both application- and project-level
@@ -14,7 +14,7 @@ during application startup or project opening.
 
 ## Defining Application-Level Listeners
 
-To define an application-level listener, add the following section to your plugin.xml:
+To define an application-level listener, add the following section to your `plugin.xml`:
 
 ```xml
 <applicationListeners>

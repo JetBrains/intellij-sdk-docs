@@ -20,7 +20,7 @@ different parts of the IDE behavior.
 
 ## Declaring Extensions 
 
-> **TIP** Auto-completion is available for all these steps.
+> **TIP** Auto-completion, Quick Documentation and other code insight features are available on extension point tags and attributes.
 
 1. Add an `<extensions>` element to your plugin.xml if it's not yet present there. Set the `defaultExtensionNs` attribute to one of the following values:
     * `com.intellij`, if your plugin extends the IntelliJ Platform core functionality.

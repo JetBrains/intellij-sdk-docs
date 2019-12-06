@@ -70,6 +70,9 @@ public interface ChangeActionNotifier {
 
 ![Subscribing](img/subscribe.png)
 
+> **NOTE** If targeting 2019.3 or later, use [declarative registration](/basics/plugin_structure/plugin_listeners.md) if possible.
+
+
 ```java
 public void init(MessageBus bus) {
     bus.connect().subscribe(ActionTopics.CHANGE_ACTION_TOPIC, new ChangeActionNotifier() {

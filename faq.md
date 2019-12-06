@@ -130,6 +130,7 @@ This FAQ is a topical index of questions that have been asked (and answered) on 
 *  [How do I provide syntax and error highlighting in a combo box editor?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206800495-EditorTextField-in-3403-How-to-get-an-Editor-that-does-error-highlighting-)
 *  [How can I get notified when my tool window is activated?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206800405-How-can-i-run-some-code-when-a-ToolWindow-activates)
 *  [How can I provide Close and Rerun buttons in my Usage View window?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206146779-How-to-get-a-Close-button-in-an-own-Usage-View-)
+*  [How can I display the SDK list in a JComboBox?](https://stackoverflow.com/questions/51499884/how-to-display-the-sdk-list-in-a-jcombobox)
 
 ## General
 *  [How do I get the currently active project outside of an AnAction?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206763335-Getting-active-project-)

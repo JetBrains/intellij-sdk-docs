@@ -24,6 +24,7 @@ The following problem patterns are supported:
 <class name>.<method name>(<human-readable parameters>) method visibility changed from <before> to <after>
 <class name>.<method name>(<human-readable parameters>) method marked final
 <class name> (class|interface) now (extends|implements) <class name> and inherits its final method <method name>(<human-readable parameters>)?
+<class name> (class|interface) now (extends|implements) <class name> and inherits its abstract method <method name>(<human-readable parameters>)?
 
 <class name>(<human-readable parameters>) constructor removed
 <class name>(<human-readable parameters>) constructor parameter <type> removed

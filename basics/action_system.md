@@ -3,7 +3,9 @@ title: Action System
 ---
 
 ## Introduction
-The system of actions allows plugins to add their own items to IDEA menus and toolbars.  An action is a class, derived from the [`com.intellij.openapi.actionSystem.AnAction`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java), whose `actionPerformed()` method is called when the menu item or toolbar button is selected.
+The system of actions allows plugins to add their own items to IDEA menus and toolbars.  
+An action is a class, derived from [`AnAction`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java).
+The `AnAction.actionPerformed()` method is called when the menu item or toolbar button is selected.
 For example, one of the action classes is responsible for the **File \| Open File...** menu item and for the **Open File** toolbar button.
 
 * bullet list
@@ -15,19 +17,19 @@ Subgroups of the group can form submenus of the menu.
 Action groups are discussed in more depth as part of the [Grouping Actions](/tutorials/action_system/grouping_action.md) tutorial.
 
 Every action and action group has an unique identifier. 
-Identifiers of the standard IDEA actions are defined in [`com.intellij.openapi.actionSystem.IdeActions`](upsource:///platform/platform-api/src/com/intellij/openapi/actionSystem/IdeActions.java).
+Identifiers of the standard IDEA actions are defined in [`IdeActions`](upsource:///platform/platform-api/src/com/intellij/openapi/actionSystem/IdeActions.java).
 
 Every action can be included in multiple groups, and thus appear in multiple places within the IDEA user interface. 
-Different places where actions can appear are defined by constants in [`com.intellij.openapi.actionSystem.ActionPlaces`](upsource:///platform/platform-api/src/com/intellij/openapi/actionSystem/ActionPlaces.java). 
-For every place where the action appears, a new [`com.intellij.ide.presentation.Presentation`](upsource:///platform/platform-api/src/com/intellij/ide/presentation/Presentation.java) is created. 
+Different places where actions can appear are defined by constants in [`ActionPlaces`](upsource:///platform/platform-api/src/com/intellij/openapi/actionSystem/ActionPlaces.java). 
+For every place where the action appears, a new [`Presentation`](upsource:///platform/platform-api/src/com/intellij/ide/presentation/Presentation.java) is created. 
 Thus, the same action can have different text or icons when it appears in different places of the user interface. 
 Different presentations for the action are created by copying the presentation returned by the `AnAction.getTemplatePresentation()` method.
 
 To update the state of the action, the method `AnAction.update()` is periodically called by IDEA. 
-The [`com.intellij.openapi.actionSystem.AnActionEvent`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnActionEvent.java) object passed to this method carries the information about the current context for the action, and in particular, the specific presentation which needs to be updated.
+The [`AnActionEvent`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnActionEvent.java) object passed to this method carries the information about the current context for the action, and in particular, the specific presentation which needs to be updated.
 
 To retrieve the information about the current state of the IDE, including the active project, the selected file, the selection in the editor and so on, the method `AnActionEvent.getData()` can be used. 
-Different data keys that can be passed to that method are defined in [`com.intellij.openapi.actionSystem.CommonDataKeys`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/CommonDataKeys.java).
+Different data keys that can be passed to that method are defined in [`CommonDataKeys`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/CommonDataKeys.java).
 Using the data keys, the `AnAction.update()` method can enable or disable an action.
 The `AnActionEvent` instance is also passed to the `AnAction.actionPerformed()` method.
 
@@ -39,7 +41,8 @@ There are two main ways to register an action: either by listing it in the `<act
 
 ### Registering Actions in plugin.xml
 
-Registering actions in `plugin.xml` is demonstrated in the following example. The example section of `plugin.xml` demonstrates all elements which can be used in the `<actions>` section, and describes the meaning of each element.
+Registering actions in `plugin.xml` is demonstrated in the following example. 
+The example section of `plugin.xml` demonstrates all elements which can be used in the `<actions>` section, and describes the meaning of each element.
 
 ```xml
 <!-- Actions -->
@@ -143,15 +146,15 @@ Registering actions in `plugin.xml` is demonstrated in the following example. Th
 
 To register an action from code, two steps are required.
 
-* First, an instance of the class derived from `AnAction` must be passed to the `registerAction()` method of [`com.intellij.openapi.actionSystem.ActionManager`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/ActionManager.java), to associate the action with an ID.
+* First, an instance of the class derived from `AnAction` must be passed to the `registerAction()` method of [`ActionManager`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/ActionManager.java), to associate the action with an ID.
 * Second, the action needs to be added to one or more groups. 
-  To get an instance of an action group by ID, it is necessary to call `ActionManager.getAction()` and cast the returned value to [`com.intellij.openapi.actionSystem.DefaultActionGroup`](upsource:///platform/platform-api/src/com/intellij/openapi/actionSystem/DefaultActionGroup.java).
+  To get an instance of an action group by ID, it is necessary to call `ActionManager.getAction()` and cast the returned value to [`DefaultActionGroup`](upsource:///platform/platform-api/src/com/intellij/openapi/actionSystem/DefaultActionGroup.java).
 
 ## Building UI from Actions
 
-If a plugin needs to include a toolbar or popup menu built from a group of actions in its own user interface, that can be accomplished through [`com.intellij.openapi.actionSystem.ActionPopupMenu`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/ActionPopupMenu.java) and [`com.intellij.openapi.actionSystem.ActionToolbar`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/ActionToolbar.java). 
-These objects can be created through calls to `ActionManager.createActionPopupMenu()` and `ActionManager.createActionToolbar()`. 
+If a plugin needs to include a toolbar or popup menu built from a group of actions in its own user interface, that can be accomplished through [`ActionPopupMenu`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/ActionPopupMenu.java) and [`ActionToolbar`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/ActionToolbar.java). 
+These objects can be created through calls to the `ActionManager.createActionPopupMenu()` and `createActionToolbar()` methods. 
 To get a Swing component from such an object, simply call the respective `getComponent()` method.
 
-If your action toolbar is attached to a specific component (for example, a panel in a tool window), you usually need to call `ActionToolbar.setTargetComponent()` and pass the instance of the related component as a parameter. 
+If an action toolbar is attached to a specific component (for example, a panel in a tool window), call `ActionToolbar.setTargetComponent()` and pass the instance of the related component as a parameter. 
 This ensures that the state of the toolbar buttons depends on the state of the related component, and not on the current focus location within the IDE frame.

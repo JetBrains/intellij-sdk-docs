@@ -61,6 +61,8 @@ The following properties are available always:
 ### Extension properties code insight
 Several tooling features are available to help configuring bean class extension points in `plugin.xml`.
 
+Properties annotated with [`@RequiredElement`](upsource:///platform/extensions/src/com/intellij/openapi/extensions/RequiredElement.java) are inserted automatically and validated (2019.3 and later).
+
 Property names matching the following list will resolve to FQN:
 - `implementation`
 - `className`

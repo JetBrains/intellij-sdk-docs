@@ -80,6 +80,8 @@ Property name `language` will automatically resolve to all present `Language` ID
 
 Specifying `@org.jetbrains.annotations.Nls` verifies capitalization of UI text properties according to given `capitalization` value (2019.2 and later).
 
+Attributes with `Enum` type support code insight with _lowerSnakeCased_ notation (2020.1 and later).
+
 ## How to get the extension points list?
 
 To get a list of extension points available in the *IntelliJ Platform* core, consult the `<extensionPoints>` section of the following XML configuration files:

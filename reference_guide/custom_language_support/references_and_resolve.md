@@ -38,6 +38,8 @@ to a ResourceBundle in the
 [Properties language plugin](upsource:///plugins/properties)
 - [Custom Language Support Tutorial: Reference Contributor](/tutorials/custom_language_support/reference_contributor.md)
 
+> **TIP** Please see also _Cache results of heavy computations_ in [Working with PSI efficiently](/reference_guide/performance/performance.md#working-with-psi-efficiently).
+
 There's a set of interfaces which can be used as a base for implementing resolve support, namely the
 [`PsiScopeProcessor`](upsource:///platform/core-api/src/com/intellij/psi/scope/PsiScopeProcessor.java) interface and the
 [`PsiElement.processDeclarations()`](upsource:///platform/core-api/src/com/intellij/psi/PsiElement.java)

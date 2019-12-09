@@ -36,6 +36,7 @@ The process of resolving references is distinct from parsing, and is not perform
 not always successful. If the code currently open in the IDE does not compile, or in other situations, it's normal
 for `PsiReference.resolve()` to return `null`, and if you work with references, you need to be able to handle that in your code.
 
+> **TIP** Please see also _Cache results of heavy computations_ in [Working with PSI efficiently](/reference_guide/performance/performance.md#working-with-psi-efficiently).
 
 ## Contributed References
 

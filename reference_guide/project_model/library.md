@@ -12,6 +12,8 @@ The IntelliJ Platform supports three types of libraries:
 For more information about libraries, refer to
 [Libraries](https://www.jetbrains.com/help/idea/working-with-libraries.html).
 
+A particular type of programmatically defined libraries is [Predefined Libraries](#predefined-libraries).
+
 ## Accessing Libraries and Jars
 
 Package
@@ -118,3 +120,9 @@ to see how the method mentioned above can be applied.
 
 More details on libraries can be found in this
 [code sample](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/project_model/src/com/intellij/tutorials/project/model/LibrariesAction.java)
+
+## Predefined Libraries
+EP: `com.intellij.additionalLibraryRootsProvider`
+
+[`AdditionalLibraryRootsProvider`](upsource:///platform/projectModel-impl/src/com/intellij/openapi/roots/AdditionalLibraryRootsProvider.java) 
+Allows providing synthetic/predefined libraries ([`SyntheticLibrary`](upsource:///platform/projectModel-impl/src/com/intellij/openapi/roots/SyntheticLibrary.java)) in a project without exposing them in the model. By default, they're also hidden from UI.

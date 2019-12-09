@@ -67,9 +67,6 @@ Please see [Incompatible API Changes](/reference_guide/api_changes_list.md) on h
 `com.intellij.compiler.ant` package removed
 : 'Generate Ant build' functionality is removed from the IDE. Delete the code extending this or replace it with a dependency on the `generate-ant` plugin.
 
-`com.intellij.codeInsight.editorActions.SelectionQuotingTypedHandler.DequotingFilter` class renamed to `com.intellij.codeInsight.editorActions.SelectionQuotingTypedHandler.UnquotingFilter`
-: Use `com.intellij.codeInsight.editorActions.SelectionQuotingTypedHandler.UnquotingFilter` instead.
-
 `com.intellij.codeInsight.TargetElementUtilBase` class removed
 : Use `com.intellij.codeInsight.TargetElementUtil` instead.
 

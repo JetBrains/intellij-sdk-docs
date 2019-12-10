@@ -59,7 +59,7 @@ The most efficient way to listen to VFS events is to implement the `BulkFileList
 A non-blocking variant [`AsyncFileListener`](upsource:///platform/core-api/src/com/intellij/openapi/vfs/AsyncFileListener.java) is also available in 2019.2 or later.
 See [How do I get notified when VFS changes?](/basics/architectural_overview/virtual_file.md#how-do-i-get-notified-when-vfs-changes) for implementation details.
 
-> **Note** VFS listeners are application level, and will receive events for changes happening in *all* the projects opened by the user. You may need to filter out events which aren't relevant to your task.
+> **WARNING** VFS listeners are application level and will receive events for changes happening in *all* the projects opened by the user. You may need to filter out events that aren't relevant to your task (e.g., via [`ProjectFileIndex#isInContent()`](upsource:///platform/projectModel-api/src/com/intellij/openapi/roots/ProjectFileIndex.java)).
 
 VFS events are sent both before and after each change, and you can access the old contents of the file in the before event. Note that events caused by a refresh are sent after the changes have already occurred on disk - so when you process the `beforeFileDeletion` event, for example, the file has already been deleted from disk. However, it is still present in the VFS snapshot, and you can access its last contents using the VFS API.
 

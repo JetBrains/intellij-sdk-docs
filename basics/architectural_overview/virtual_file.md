@@ -35,6 +35,8 @@ If you do need to create a file through VFS, you can use the `VirtualFile.create
 
 ## How do I get notified when VFS changes?
 
+> **NOTE** See [Virtual file system events](/basics/virtual_file_system.md#virtual-file-system-events) for important details.
+
 Implement the [`BulkFileListener`](upsource:///platform/core-api/src/com/intellij/openapi/vfs/newvfs/BulkFileListener.java) interface and subscribe to the [message bus](/reference_guide/messaging_infrastructure.md) topic `VirtualFileManager.VFS_CHANGES`. For example:
 
 ```java
@@ -47,9 +49,9 @@ project.getMessageBus().connect().subscribe(VirtualFileManager.VFS_CHANGES, new 
 ```
 See [Message Infrastructure](/reference_guide/messaging_infrastructure.md) and [Plugin Listeners](/basics/plugin_structure/plugin_listeners.md) for more details.
 
-For a non-blocking alternative, starting with version 2019.3 of the platform, see [`AsyncFileListener`](upsource:///platform/core-api/src/com/intellij/openapi/vfs/AsyncFileListener.java)
+For a non-blocking alternative, starting with version 2019.2 of the platform, see [`AsyncFileListener`](upsource:///platform/core-api/src/com/intellij/openapi/vfs/AsyncFileListener.java)
 
-Plugins targeting versions 2017.2 or older of the platform can use the now deprecated ~`VirtualFileManager.addVirtualFileListener()`~ method which allows you to receive notifications about all changes in the VFS.
+Plugins targeting versions 2017.2 or older of the platform can use the now deprecated `VirtualFileManager.addVirtualFileListener()` method which allows you to receive notifications about all changes in the VFS.
 
 ## Are there any utilities for analyzing and manipulating virtual files?
 

@@ -118,7 +118,7 @@ Expand the External Library (as shown) to reveal the JAR files contained in the 
 Drill down into the JAR files to expose the packages and (decompiled) classes.
 
 ### Exploring APIs as an Extender
-If a project is dependent on a plugin or module, in some cases the project can also [extend](/basics/plugin_structure/plugin_extensions_and_extension_points.md) the functionality available from the plugin or module.
+If a project is dependent on a plugin or module, in some cases the project can also [extend](/basics/plugin_structure/plugin_extensions.md) the functionality available from the plugin or module.
 
 To browse the opportunities for extension, start by placing the cursor on the contents of the `<depends>` elements in the project's `plugin.xml` file.
 Use the [Go to Declaration](https://www.jetbrains.com/help/idea/navigating-through-the-source-code.html#go_to_declaration) IDE feature to navigate to the `plugin.xml` file for the plugin on which the project depends.

@@ -65,7 +65,7 @@ If closing tabs is enabled in general, you can disable closing of specific tabs 
 
 ## How to Create a Tool Window?
 
-The IntelliJ Platform provides the `com.intellij.toolWindow` [extension point](/basics/plugin_structure/plugin_extensions_and_extension_points.md) that you can use to create and configure your custom tool windows. This extension point is declared using the [`ToolWindowEP`](upsource:///platform/platform-api/src/com/intellij/openapi/wm/ToolWindowEP.java) bean class.
+The IntelliJ Platform provides the `com.intellij.toolWindow` [extension point](/basics/plugin_structure/plugin_extensions.md) that you can use to create and configure your custom tool windows. This extension point is declared using the [`ToolWindowEP`](upsource:///platform/platform-api/src/com/intellij/openapi/wm/ToolWindowEP.java) bean class.
 
 ### Creation of Plugin
 

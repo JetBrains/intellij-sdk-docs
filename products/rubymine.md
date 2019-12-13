@@ -32,7 +32,7 @@ The dependency declaration is illustrated in the `plugin.xml` snippet below:
 ```
 
 ## Available RubyMine APIs
-Use the [Exploring APIs as a Consumer](/basics/getting_started/plugin_compatibility.html#exploring-apis-as-a-consumer) process to identify the library `ruby.jar`.
+Use the [Exploring APIs as a Consumer](/basics/getting_started/plugin_compatibility.md#exploring-apis-as-a-consumer) process to identify the library `ruby.jar`.
 Test your plugin with any version of RubyMine you intend to support.
 
 ## Open Source Plugins for RubyMine

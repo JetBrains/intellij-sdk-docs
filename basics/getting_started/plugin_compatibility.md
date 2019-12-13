@@ -98,7 +98,7 @@ Consequently, Java dependencies are expressed differently in `plugin.xml` depend
   * `build.gradle` _required_ to include `intellij.plugins 'java'` 
 
 ## Exploring Module and Plugin APIs
-Once the [dependency on a module or plugin](/basics/plugin_structure/plugin_dependencies.md#) is declared in `plugin.xml`, it's useful to explore the packages and classes available in that dependency.
+Once the [dependency on a module or plugin](/basics/plugin_structure/plugin_dependencies.md) is declared in `plugin.xml`, it's useful to explore the packages and classes available in that dependency.
 The section below gives some recommended procedures for discovering what's available in a module or plugin on which a project depends.
 These procedures assume a project has the `build.gradle` and `plugin.xml` dependencies configured correctly.
 

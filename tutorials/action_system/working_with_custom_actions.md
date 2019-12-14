@@ -35,7 +35,7 @@ public class PopupDialogAction extends AnAction {
 }
 ```
 
-> **Warning** `AnAction` classes do not have class fields of any kind to prevent memory leaks.
+> **Warning** `AnAction` classes do not have class fields of any kind. This restriction prevents memory leaks.
 For more information about why, see [Action Implementation](/basics/action_system.md#action-implementation). 
 
 At this stage, `update()` implicitly defaults to always enable this action.
@@ -47,7 +47,7 @@ Before fleshing out those methods, to complete this minimal implementation `Popu
 ## Registering a Custom Action
 Actions can be registered by declaring them in code or by declaring them in the `<actions>` section of a plugin configuration (`plugin.xml`) file. 
 This section describes using IDE tooling - the New Action Form - to add a declaration to the `plugin.xml` file, and then tuning registration attributes manually.
-A more comprehensive explanation of action registration is available in the [Registering Actions](/basics/action_system.md#registering-actions) section of this guide.
+A more comprehensive explanation of action registration is available in the [Action Registration](/basics/action_system.md#registering-actions) section of this guide.
 
 ### Registering an Action with the New Action Form
 IntelliJ IDEA has an embedded inspection that spots unregistered actions. 
@@ -89,8 +89,7 @@ would contain:
 The `<action>` element declares the _Action ID_ (`id`,) _Class Name_ (`class`,) _Name_ (`text`,) and _Description_ from the **New Action** form.
 The `<add-to-group>` element declares where the action will appear and mirrors the names of entries from the form. 
 
-This declaration is adequate, but more attributes can be added.
-These attributes are discussed in the next section.
+This declaration is adequate, but adding more attributes is discussed in the next section.
 
 ### Setting Registration Attributes Manually
 An action declaration can be added manually to the `plugin.xml` file.
@@ -98,7 +97,7 @@ An exhaustive list of declaration elements and attributes is presented in [Regis
 Attributes are added by selecting them from the **New Action** form, or by editing the registration declaration directly in the plugin.xml file.
 
 The `<action>` declaration for `PopupDialogAction` in the `action_basics` [plugin.xml](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/action_basics/src/main/resources/META-INF/plugin.xml) file.
-It also contains an attribute for an [`Icon`](upsource:///plugins/javaee/core/javaee-api/com/intellij/javaee/model/xml/Icon.java), and encloses elements declaring keyboard and mouse shortcuts. 
+It also contains an attribute for an [`Icon`](https://docs.oracle.com/javase/8/docs/api/javax/swing/Icon.html), and encloses elements declaring keyboard and mouse shortcuts. 
 The full declaration is:
 ```xml
     <action id="org.intellij.sdk.action.PopupDialogAction" class="org.intellij.sdk.action.PopupDialogAction"
@@ -109,7 +108,6 @@ The full declaration is:
     </action>
 ```
 
-See the [Registering Actions in plugin.xml](/basics/action_system.md#registering-actions-in-pluginxml) section for the syntax requirements of these declarations. 
 
 ## Testing the Minimal Custom Action Implementation
 After performing the steps described above, compile and run the plugin to see the newly created action available as a Tools Menu item:
@@ -125,7 +123,7 @@ However, neither method implements any code to perform useful work.
 
 This section describes adding useful code to these methods.
 The `update()` method defaults to always enable the action, which is satisfactory for intermediate testing.
-So the `actionPerformed()` will be developed first.
+So `actionPerformed()` will be developed first.
 
 ### Extending the actionPerformed Method
 Adding code to the `PopupDialogAction.actionPerformed()` method makes the action do something useful. 

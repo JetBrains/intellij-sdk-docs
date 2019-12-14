@@ -12,6 +12,7 @@ Registration determines where an action appears in the IDE UI.
 Once implemented and registered, an action receives callbacks from the IntelliJ Platform in response to user gestures.
 
 The [Creating Actions](/tutorials/action_system/working_with_custom_actions.md) tutorial describes the process of adding a custom action to a plugin.
+The [Grouping Actions](/tutorials/action_system/grouping_action.md) tutorial demonstrates three types of groups that can contain actions.
 The rest of this page is an overview of actions as an extension point.
 
 * bullet list
@@ -32,13 +33,14 @@ Every IntelliJ Platform action should override `AnAction.update()` and must over
   The state (enabled, visible) of an action determines whether the action is available in the UI of an IDE.
   An object of type [`AnActionEvent`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnActionEvent.java) is passed to this method, and it contains the information about the current context for the action.
   Actions are made available by changing state in the [Presentation](upsource:///platform/platform-api/src/com/intellij/ide/presentation/Presentation.java) object associated with the event context.
-  As explained in [Overriding the `AnAction.update()`  Method](#overriding-the-anactionupdate-method), it is vital `update()` works quickly and returns execution to the IntelliJ Platform. 
+  As explained in [Overriding the `AnAction.update()`  Method](#overriding-the-anactionupdate-method), it is vital `update()` methods _execute quickly_ and return execution to the IntelliJ Platform. 
 * An action's method `AnAction.actionPerformed()` is called by the IntelliJ Platform if it is available and selected by the user.
   This method does the heavy lifting for the action - it contains the code to be executed when the action is invoked.
   The `actionPerformed()` method also receives `AnActionEvent` as a parameter, which can be used to access projects, files, selection, etc. 
-  See [Overriding the `AnAction.actionPerformed()` Method](#overriding-the-anactionactionperformed-method) for more information about overriding this method.
+  See [Overriding the `AnAction.actionPerformed()` Method](#overriding-the-anactionactionperformed-method) for more information.
   
 There are other methods to override in the `AnAction` class, such as for changing the default `Presentation` object for the action.
+There is also a use case for overriding action constructors when registering them with dynamic action groups, which is demonstrated in the [Grouping Actions](/tutorials/action_system/grouping_action.md#adding-child-actions-to-the-dynamic-group) tutorial. 
 However, the `update()` and `actionPerformed()` methods are essential to basic operation.
 
 ### Overriding the AnAction.update Method
@@ -55,7 +57,7 @@ For example, checking selection in a tree or a list is considered valid, but wor
 The `AnActionEvent` object passed to `update()` carries information about the current context for the action.
 Context information is available from the methods of `AnActionEvent`, providing information such as the Presentation, and whether the action is triggered from a Toolbar.
 Additional context information is available using the method `AnActionEvent.getData()`. 
-Keys defined in [`CommonDataKeys`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/CommonDataKeys.java) are passed to the `getData()` method to retrieve information about objects such as the `Project`, `Editor`, `PsiFile`, and other information.
+Keys defined in [`CommonDataKeys`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/CommonDataKeys.java) are passed to the `getData()` method to retrieve objects such as `Project`, `Editor`, `PsiFile`, and other information.
 Accessing this information is relatively light-weight and is suited for `AnAction.update()`.
 
 #### Enabling and Setting Visibility for an Action
@@ -74,7 +76,7 @@ If an action is enabled, the `AnAction.actionPerformed()` can be called if an ac
 A menu action will be shown in the UI location specified in the registration.
 A toolbar action will display its enabled (or selected) icon, depending on the user interaction.
 
-When an action is disabled, the `AnAction.actionPerformed()` will not be called.
+When an action is disabled `AnAction.actionPerformed()` will not be called.
 Toolbar actions will display their respective icons for the disabled state.
 The visibility of a disabled action in a menu depends on whether the host menu (e.g. "ToolsMenu") containing the action has the `compact` attribute set.
 See [Grouping Actions](#grouping-actions) for more information about the `compact` attribute, and the visibility of menu actions.
@@ -100,6 +102,7 @@ An example of inspecting PSI elements is demonstrated in the SDK code sample `ac
 ### Action IDs
 Every action and action group has a unique identifier.
 Basing the identifier for a custom action on the FQN of the implementation is the best practice, assuming the package incorporates the `<id>` of the plugin.
+An action must have a unique identifier for each place it is used in the IDE UI, even though the FQN of the implementation is the same.
 Definitions of identifiers for the standard IntelliJ Platform actions are in [`IdeActions`](upsource:///platform/platform-api/src/com/intellij/openapi/actionSystem/IdeActions.java).
 
 ### Grouping Actions
@@ -108,6 +111,7 @@ A group of actions can form a toolbar or a menu.
 Subgroups of a group can form submenus of a menu.
 
 Actions can be included in multiple groups, and thus appear in multiple places within the IDE UI. 
+An action must have a unique identifier for each place it appears in the IDE UI.
 The places where actions can appear are defined by constants in [`ActionPlaces`](upsource:///platform/platform-api/src/com/intellij/openapi/actionSystem/ActionPlaces.java). 
 Group IDs for the IntelliJ Platform are defined in [PlatformActions](upsource:///platform/platform-resources/src/idea/PlatformActions.xml). 
 
@@ -127,17 +131,17 @@ Some menus like **Tools** have the `compact` attribute set, so there isn't a way
 | :-----: | :------------: | :----------------: | :----------------: | :---------------------: |
 |    F    |       T        |         T          |        T           |         F            |
 |    F    |       T        |         F          |        F           |         x            |
-| ***F*** |       F        |         T          |     ***T***        |         T            |
+| ***F*** |       F        |         T          |     ***T***        |      ***T***         |
 |    F    |       F        |         F          |        F           |         x            |
 |    T    |       T        |         T          |        T           |         F            |
 |    T    |       T        |         F          |        F           |         x            |
 | ***T*** |       F        |         T          |     ***F***        |         x            |
 |    T    |       F        |         F          |        F           |         x            |
 
-See the [Grouping Actions](/tutorials/action_system/grouping_action.md) tutorial for more information about grouping actions.
+See the [Grouping Actions](/tutorials/action_system/grouping_action.md) tutorial for examples of creating action groups.
 
 ## Registering Actions
-There are two main ways to register an action: either by listing it in the `<actions>` section of the `plugin.xml` file or through Java code.
+There are two main ways to register an action: either by listing it in the `<actions>` section of a plugin's `plugin.xml` file, or through code.
 
 ### Registering Actions in plugin.xml
 Registering actions in `plugin.xml` is demonstrated in the following example, which documents all elements and attributes that can be used in the `<actions>` section, and describes the meaning of each element.

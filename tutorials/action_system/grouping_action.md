@@ -4,7 +4,9 @@ title: Grouping Actions
 
 If an implementation requires several actions, or there are simply too many actions that overload the menu, the actions can be placed into groups.
 This tutorial demonstrates adding an action to an existing group, creating a new action group, and action groups with a variable number of actions.
-The sample code discussed in this tutorial is from the code sample `action_basics`.
+The sample code discussed in this tutorial is from the code sample [`action_basics`].
+
+Some content in this tutorial assumes the reader is familiar with the tutorial for [Creating Actions](working_with_custom_actions.md).
 
 * bullet list
 {:toc}
@@ -14,15 +16,15 @@ In this first example, the action group will be available as a top-level menu it
 The group is based on a default IntelliJ Platform implementation.
 
 ### Creating Simple Groups
-Grouping can be registered by adding a `<group>` element to the `<actions>` section in [plugin.xml](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/action_basics/src/main/resources/META-INF/plugin.xml).
+Grouping can be registered by adding a `<group>` element to the `<actions>` section of a plugin's `plugin.xml` file.
 This example has no `class` attribute in the `<group>` element because the IntelliJ Platform framework will supply a default implementation class for the group. 
 This default implementation is used if a set of actions belonging to the group is static, i.e. does not change at runtime, which is the majority of cases.
 The `id` attribute must be unique, so incorporating the plugin ID or package name is the best practice.
 
 The `popup` attribute determines whether actions in the group are placed in a submenu.
-The `icon` attribute specifies the FQN of an `Icon` object to be displayed.
-No `compact` attribute is specified.
-See []() for more information about these attributes.
+The `icon` attribute specifies the FQN of an [`Icon`](https://docs.oracle.com/javase/8/docs/api/javax/swing/Icon.html) object to be displayed.
+No `compact` attribute is specified, which means this group will support submenus.
+See [Registering Actions in plugin.xml](/basics/action_system.md#registering-actions-in-pluginxml) for more information about these attributes.
 
 ```xml
     <group id="org.intellij.sdk.action.GroupedActions" text="Static Grouped Actions" popup="true" icon="ActionBasicsIcons.Sdk_default_icon">
@@ -33,7 +35,7 @@ See []() for more information about these attributes.
 The following sample shows how to use an `<add-to-group>` element to place a custom action group relative to an entry in the **Tools** menu. 
 The attribute `relative-to-action` references the action `id` for `PopupDialogAction`, which is not a native IntelliJ menu entry. 
 Rather `PopupDialogAction` is defined in the same [plugin.xml](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/action_basics/src/main/resources/META-INF/plugin.xml) file.
-The group is placed after the entry for the action `PopupDialogAction` - see [Creating Actions](working_with_custom_actions.md#registering-an-action-with-the-new-action-form) for the tutorial about placing this single action at the top of the **Tools** menu.
+This group is placed after the single entry for the action `PopupDialogAction`, as defined in the tutorial [Creating Actions](working_with_custom_actions.md#registering-an-action-with-the-new-action-form).
 
 ```xml
     <group id="org.intellij.sdk.action.GroupedActions" text="Static Grouped Actions" popup="true" icon="ActionBasicsIcons.Sdk_default_icon">
@@ -57,19 +59,24 @@ The action in this group will display the menu text "A Group Action".
     </group>
 ```
 
-After performing the steps described above the action group and its content will be available in the **Tools** menu:
+After performing the steps described above the action group and its content will be available in the **Tools** menu.
+The underlying `PopupDialogAction` implementation is reused for two entries in the **Tools** menu:
+* Once for the top menu entry **Tools \| Pop Dialog Action** with the action `id` equal to `org.intellij.sdk.action.PopupDialogAction` as set in the [Creating Actions](/tutorials/action_system/working_with_custom_actions.md#registering-an-action-with-the-new-action-form) tutorial.
+* A section time for the menu entry **Tools \| Static Grouped Actions \| A Group Action** with the action `id` equal to `org.intellij.sdk.action.GroupPopDialogAction`.
 
 ![Simple Action Group](img/grouped_action.png){:width="550px"}
     
   
 ## Implementing Custom Action Group Classes
 In some cases, the specific behavior of a group of actions needs to depend on the context.
+The solution is analagous to making a [single action entry dependent on context](working_with_custom_actions.md#extending-the-update-method). 
+
 The steps below show how to make a group of actions available and visible if certain conditions are met.
-In this case, the condition is having an instance of an editor is available. This condition is needed because the custom
-action group will be added to an IntelliJ menu that is only enabled for editing.
+In this case, the condition is having an instance of an editor is available. 
+This condition is needed because the custom action group will be added to an IntelliJ menu that is only enabled for editing.
 
 ### Extending DefaultActionGroup
-[`DefaultActionGroup`](upsource:///platform/platform-api/src/com/intellij/openapi/actionSystem/DefaultActionGroup.java) is an implementation of [`ActionGroup`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/ActionGroup.java).
+The [`DefaultActionGroup`](upsource:///platform/platform-api/src/com/intellij/openapi/actionSystem/DefaultActionGroup.java) is an implementation of [`ActionGroup`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/ActionGroup.java).
 The `DefaultActionGroup` class is used to add child actions and separators between them to a group.
 This class is used if a set of actions belonging to the group does not change at runtime, which is the majority of cases.
 
@@ -86,10 +93,11 @@ to create the `CustomDefaultActionGroup` class in the `action_basics` code sampl
 ```
 
 ### Registering the Custom Action Group
-As in the case with the static action group, the action `<group>` should be declared in the *`<actions>`* section of the [plugin.xml](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/action_basics/src/main/resources/META-INF/plugin.xml) file. 
-Note:
-  * The presence of the `class` attribute in the `<group>` element, which tells the IntelliJ Platform framework to use `CustomDefaultActionGroup` rather than the default implementation.
-  * The `<add-to-group>` element specifies adding the group in the first position of the existing `EditorPopupMenu`.
+As in the case with the static action group, the action `<group>` should be declared in the `<actions>` section of the`plugin.xml` file, for example, the [action_basics](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/action_basics/src/main/resources/META-INF/plugin.xml) plugin. 
+The declaration below shows:
+* The presence of the `class` attribute in the `<group>` element, which tells the IntelliJ Platform framework to use `CustomDefaultActionGroup` rather than the default implementation.
+* Setting the group's `popup` attribute to allow submenus. 
+* The `<add-to-group>` element specifies adding the group in the first position of the existing `EditorPopupMenu`.
 
 ```xml
    <group id="org.jetbrains.tutorials.actions.ExampleCustomDefaultActionGroup" 
@@ -101,9 +109,9 @@ Note:
 
 ### Adding Actions to the Custom Group
 As in [Static Grouped Actions](#adding-a-new-action-to-the-static-grouped-actions), the `PopupDialogAction` action is added as an `<action>` element in the `<group>` element. 
-Note:
+In the declaration below, note:
   * The `class` attribute in the `<action>` element has the same FQN to reuse this action implementation.
-  * The `id` attribute is unique to distinguish it from the use of the `PopupDialogAction` class in [Static Grouped Actions](#adding-a-new-action-to-the-static-grouped-actions).
+  * The `id` attribute is unique to distinguish it from other uses of the implementation in the Action System.
    
 ```xml
     <group id="org.intellij.sdk.action.CustomDefaultActionGroup" class="org.intellij.sdk.action.CustomDefaultActionGroup" popup="true"
@@ -142,7 +150,8 @@ If a set of actions belonging to a custom group will vary depending on the conte
 The set of actions in the `ActionGroup` is dynamically defined.
 
 ### Creating Variable Action Group
-To create a group of actions with a variable number of actions, extend `ActionGroup.java` to create the `DynamicActionGroup` class in the `action_basics` code sample:
+To create a group of actions with a variable number of actions, extend `ActionGroup`.
+For example, as in the `action_basics` class [`DynamicActionGroup`](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/action_basics/src/main/java/org/intellij/sdk/action/DynamicActionGroup.java) code:
 
 ```java
 public class DynamicActionGroup extends ActionGroup {
@@ -159,12 +168,13 @@ When enabled, this group will appear at the entry just below the [Static Grouped
     </group>
 ```
 
-> **Note** If a`<group>` element's `class` attribute names a class derived from `ActionGroup`, then any static `<action>` declarations in the group will throw an exception. 
+> **Warning** If a`<group>` element's `class` attribute names a class derived from `ActionGroup`, then any static `<action>` declarations in that group will throw an exception. 
 For a statically defined group, use `DefaultActionGroup`.
 
 ### Adding Child Actions to the Dynamic Group
 To add actions to the `DynamicActionGroup`, a non-empty array of `AnAction` instances should be returned from the `DynamicActionGroup.getChildren()` method. 
-Here again, reuse the `PopupDialogAction` action class as an example.
+Here again, reuse the `PopupDialogAction` implementation.
+This use case is why `PopupDialogAction` overrides a constructor:
 
 ```java
 public class DynamicActionGroup extends ActionGroup {

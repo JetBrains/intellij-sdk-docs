@@ -28,7 +28,14 @@ On the first screen, the type of project is configured:
 * Specify the _Project SDK_ based on the Java 8 JDK.
   This SDK will be the default JRE used to run Gradle, and the JDK version used to compile the plugin Java source.
   Based on the Project SDK, the IntelliJ IDEA Gradle Plugin will download the corresponding version of the IntelliJ Platform-based IDE automatically.
-* In the _Additional Libraries and Frameworks_ panel, select _Java_ and _IntelliJ Platform Plugin_, then click _Next_.
+* In the _Additional Libraries and Frameworks_ panel, select _Java_ and _IntelliJ Platform Plugin_.
+  These settings will be used for the remainder of this tutorial.
+* Optionally:
+  * To include support for the Kotlin language in the plugin, check the _Kotlin/JVM_ box (circled in green below.)
+    This option can be selected with or without the _Java_ language.
+  * To create the `build.gradle` file as a Kotlin build script rather than Groovy, check the _Kotlin DSL build script_ box (circled in magenta below.)
+
+Then click _Next_:
 
 ![Select the Gradle facet in the Project Creation Wizard](img/step1_new_gradle_project.png){:width="800px"}
 
@@ -97,7 +104,7 @@ The New Project Wizard produces the `my_gradle_plugin` project `build.gradle` fi
 * The _Group ID_ from the Wizard [Project Naming Screen](#project-naming-screen) is the `project.group` value.
 * The _Version_ from the Wizard [Project Naming Screen](#project-naming-screen) is the `project.version` value.
 * The `sourceCompatibility` line is injected to enforce using Java 8 JDK to compile Java source.
-* The only comment in the file is a link to the [`README.md`](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md) for the IntelliJ IDEA Gradle plugin, which is a reference for the DSLs defined by the plugin.
+* The only comment in the file is a link to the [README.md](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md) for the IntelliJ IDEA Gradle plugin, which is a reference for the DSLs defined by the plugin.
 * The value of the Setup DSL attribute `intellij.version` specifies the version of the IntelliJ Platform to be used to build the plugin.
   It defaults to the version of IntelliJ IDEA that was used to run the New Project Wizard.
 * The value of the Patching DSL attribute `patchPluginXml.changeNotes` is set to place holder text.
@@ -105,7 +112,7 @@ The New Project Wizard produces the `my_gradle_plugin` project `build.gradle` fi
 ```groovy
   plugins {
       id 'java'
-      id 'org.jetbrains.intellij' version '0.4.13'
+      id 'org.jetbrains.intellij' version '0.4.15'
   }
   
   group 'com.your.company'

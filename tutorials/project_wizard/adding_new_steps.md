@@ -14,7 +14,7 @@ to know how to do it.
 ## 1. Register Module Builder
 
 Project configuration settings depend on the project's module type. 
-Register a new *moduleBuilder* extension point in the `plugin.xml` configuration file.
+Register a new `com.intellij.moduleBuilder` extension point in the `plugin.xml` configuration file.
 
 
 ```xml

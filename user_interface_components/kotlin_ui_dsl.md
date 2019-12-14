@@ -223,11 +223,11 @@ checkBox(message("checkbox.smart.tab.reuse"),
 
 ## Integrating panels with property bindings
 
-A panel returned by the `panel` method is an instance of `DialogPanel`. This base class supports the standard `apply`, `reset`, and `isModified` methods.
+A panel returned by the `panel` method is an instance of [`DialogPanel`](upsource:///platform/platform-api/src/com/intellij/openapi/ui/DialogPanel.kt). This base class supports the standard `apply`, `reset`, and `isModified` methods.
 
 ### Dialogs
 
-If you're using a `DialogPanel` as the main panel of a `DialogWrapper`, the `apply` method will be automatically called when the dialog is closed with the OK action. The other methods are unused in this case.
+If you're using a [`DialogPanel`](upsource:///platform/platform-api/src/com/intellij/openapi/ui/DialogPanel.kt) as the main panel of a `DialogWrapper`, the `apply` method will be automatically called when the dialog is closed with the OK action. The other methods are unused in this case.
 
 Use the `focused` method to specify which control should be focused when 
 the dialog is initialized:
@@ -242,7 +242,7 @@ return panel {
 
 ### Configurables
 
-If you're using the UI DSL to implement a `Configurable`, use `BoundConfigurable` as the base class. In this case, the `Configurable` methods will be automatically delegated to the panel.
+If you're using the UI DSL to implement a [`Configurable`](upsource:///platform/platform-api/src/com/intellij/openapi/options/Configurable.java), use [`BoundConfigurable`](upsource:///platform/platform-api/src/com/intellij/openapi/options/BoundConfigurable.kt) as the base class. In this case, the `Configurable` methods will be automatically delegated to the panel.
 
 ## Enabling and Disabling Controls
 

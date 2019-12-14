@@ -34,9 +34,9 @@ The tag name specifies the severity of the expected highlighting. The following 
 
 The tag can also have the following optional attributes:
 
-* `descr` - expected message associated with the highlighter (if not specified, any text will match; if the message contains a quotation mark, it can be escaped by putting two backslash characters before it)
+* `descr` expected message associated with the highlighter (if not specified, any text will match; if the message contains a quotation mark, it can be escaped by putting two backslash characters before it)
 * `foregroundColor`, `backgroundColor`, `effectColor` expected colors for the highlighting
-* `effectType` expected effect type for the highlighting (see `EffectType` enum for possible values)
+* `effectType` expected effect type for the highlighting (see [`EffectType`](upsource:///platform/core-api/src/com/intellij/openapi/editor/markup/EffectType.java))
 * `fontType` expected font style for the highlighting (0 - normal, 1 - bold, 2 - italic, 3 - bold italic)
 
 > **Note** *Nested* tags are **supported**: 

@@ -10,7 +10,7 @@ For example, one of the action classes is responsible for the **File \| Open Fil
 Actions are organized into groups, which, in turn, can contain other groups. A group of actions can form a toolbar or a menu.
 Subgroups of the group can form submenus of the menu.
 
-Every action and action group has an unique identifier. Identifiers of many of the standard IDEA actions are defined in the [IdeActions](upsource:///platform/platform-api/src/com/intellij/openapi/actionSystem/IdeActions.java) class.
+Every action and action group has an unique identifier. Identifiers of many of the standard IDEA actions are defined in the [`IdeActions`](upsource:///platform/platform-api/src/com/intellij/openapi/actionSystem/IdeActions.java) class.
 
 Every action can be included in multiple groups, and thus appear in multiple places within the IDEA user interface. Different places where actions can appear are defined by constants in the [`ActionPlaces`](upsource:///platform/platform-api/src/com/intellij/openapi/actionSystem/ActionPlaces.java) interface. For every place where the action appears, a new [`Presentation`](upsource:///platform/platform-api/src/com/intellij/ide/presentation/Presentation.java) is created. Thus, the same action can have different text or icons when it appears in different places of the user interface. Different presentations for the action are created by copying the presentation returned by the `AnAction.getTemplatePresentation()` method.
 
@@ -130,62 +130,8 @@ Registering actions in `plugin.xml` is demonstrated in the following example. Th
 
 To register an action from code, two steps are required.
 
-* First, an instance of the class derived from `AnAction` must be passed to the `registerAction` method of the [ActionManager](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/ActionManager.java) class, to associate the action with an ID.
-* Second, the action needs to be added to one or more groups. To get an instance of an action group by ID, it is necessary to call `ActionManager.getAction()` and cast the returned value to the [DefaultActionGroup](upsource:///platform/platform-api/src/com/intellij/openapi/actionSystem/DefaultActionGroup.java) class.
-
-You can create a plugin that registers actions on IDEA startup using the following procedure.
-
-**To register an action on IDEA startup**
-
-* Create a new class that implements the [`ApplicationComponent`](upsource:///platform/core-api/src/com/intellij/openapi/components/ApplicationComponent.java) interface.
-* In this class, override the `getComponentName`, `initComponent`, and `disposeComponent` methods.
-* Register this class in the `<application-components>` section of the plugin.xml file.
-
-To clarify the above procedure, consider the following sample Java class `MyPluginRegistration` that registers an action defined in a custom `TextBoxes` class and adds a new menu command to the *Window*  menu group on the main menu:
-
-```java
-public class MyPluginRegistration implements ApplicationComponent {
-  // Returns the component name (any unique string value).
-  @NotNull public String getComponentName() {
-    return "MyPlugin";
-  }
-
-
-  // If you register the MyPluginRegistration class in the <application-components> section of
-  // the plugin.xml file, this method is called on IDEA start-up.
-  public void initComponent() {
-    ActionManager am = ActionManager.getInstance();
-    TextBoxes action = new TextBoxes();
-
-    // Passes an instance of your custom TextBoxes class to the registerAction method of the ActionManager class.
-    am.registerAction("MyPluginAction", action);
-
-    // Gets an instance of the WindowMenu action group.
-    DefaultActionGroup windowM = (DefaultActionGroup) am.getAction("WindowMenu");
-
-    // Adds a separator and a new menu command to the WindowMenu group on the main menu.
-    windowM.addSeparator();
-    windowM.add(action);
-  }
-
-  // Disposes system resources.
-  public void disposeComponent() {
-  }
-}
-```
-
-Note, that the sample `TextBoxes` class is described in [Getting Started with Plugin Development](/basics/getting_started.md).
-
-To ensure that your plugin is initialized on IDEA start-up, make the following changes to the `<application-components>` section of the `plugin.xml` file:
-
-```xml
-<application-components>
-  <!-- Add your application components here -->
-  <component>
-    <implementation-class>MypackageName.MyPluginRegistration</implementation-class>
-  </component>
-</application-components>
-```
+* First, an instance of the class derived from `AnAction` must be passed to the `registerAction` method of the [`ActionManager`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/ActionManager.java) class, to associate the action with an ID.
+* Second, the action needs to be added to one or more groups. To get an instance of an action group by ID, it is necessary to call `ActionManager.getAction()` and cast the returned value to the [`DefaultActionGroup`](upsource:///platform/platform-api/src/com/intellij/openapi/actionSystem/DefaultActionGroup.java) class.
 
 ## Building UI from Actions
 

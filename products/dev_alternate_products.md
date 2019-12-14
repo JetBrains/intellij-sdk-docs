@@ -99,7 +99,7 @@ Use the Gradle plugin attribute `intellij.plugins` to declare a dependency.
 See the specific product pages in Part VIII for the _targetIDE_ plugin or module name.
 
 The best practice is to modify the `runIde {}` task to use a local installation of _targetIDE_ as the [IDE Development Instance](/basics/ide_development_instance.md).
-Set the `runIde.ideaDirectory` attribute to the (user-specific) absolute path of the _targetIDE_ application.
+Set the `runIde.ideDirectory` attribute to the (user-specific) absolute path of the _targetIDE_ application.
 The exact path format varies by operating system.
 
 This snippet is an example for configuring the Setup and Running DSLs in a `build.gradle` specific to developing a plugin for _targetIDE_.
@@ -117,16 +117,20 @@ This snippet is an example for configuring the Setup and Running DSLs in a `buil
   runIde {
       // Absolute path to the installed targetIDE to use as IDE Development Instance
       // Note the Contents directory must be added at the end of the path for macOS.
-      ideaDirectory '/Users/jhake/Library/Application Support/JetBrains/Toolbox/apps/PhpStorm/ch-0/192.7142.41/PhpStorm.app/Contents'
+      ideDirectory '/Users/<user name>/Library/Application Support/JetBrains/Toolbox/apps/PhpStorm/ch-0/192.7142.41/PhpStorm.app/Contents'
   }
 ```
 
 ## Configuring plugin.xml
 As discussed on the [Plugin Dependencies](/basics/getting_started/plugin_compatibility.md#declaring-plugin-dependencies) page of this guide, a plugin's dependency on [Modules Specific to Functionality](/basics/getting_started/plugin_compatibility.md#modules-specific-to-functionality) must be declared in `plugin.xml`. 
-When using product-specific features (APIs), a dependency on the product module must be declared, as shown in the code snippet below.
+When using features (APIs) specific to the target product, a dependency on the target product module must be declared, as shown in the code snippet below.
 Otherwise, if only general IntelliJ Platform features (APIs) are used, then a dependency on `com.intellij.modules.platform` must be declared as discussed in [Plugin Compatibility with IntelliJ Platform Products](/basics/getting_started/plugin_compatibility.md).
+
+> **NOTE** In the special case of a plugin project declaring dependencies only on other plugins, it must also declare a dependency on `com.intellij.modules.platform`. Otherwise, the plugin project is considered to be legacy and will only load in IntelliJ IDEA. 
+
 Continuing with the example of developing a plugin for PhpStorm:
 ```xml
   <!-- Targeting PhpStorm, so is dependent on the PHP plugin -->
   <depends>com.jetbrains.php</depends>
+  <depends>com.intellij.modules.platform</depends>
 ```

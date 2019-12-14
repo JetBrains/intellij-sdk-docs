@@ -7,7 +7,7 @@ Icons and images are used widely by IntelliJ Platform plugins. Plugins need icon
 > **NOTE** Plugin Icons, which represent a plugin itself, have different requirements than icons and images used within a plugin.
 For more information see the [Plugin Icon](/basics/plugin_structure/plugin_icon_file.md) page. 
 
-> **TIP** Plugins should reuse existing platform icons whenever possible, see [AllIcons](upsource:///platform/util/src/com/intellij/icons/AllIcons.java). A detailed [design guideline](https://jetbrains.design/intellij/principles/icons/) is available for creating custom icons.
+> **TIP** Plugins should reuse existing platform icons whenever possible, see [`AllIcons`](upsource:///platform/util/src/com/intellij/icons/AllIcons.java). A detailed [design guideline](https://jetbrains.design/intellij/principles/icons/) is available for creating custom icons.
   
 ## How to organize and how to use icons?
 
@@ -15,7 +15,7 @@ The best way to deal with icons and other image resources is to put them to a de
 
 ![Icons](img/icons1.png)
 
-The `getIcon()` method of [`com.intellij.openapi.util.IconLoader`](upsource:///platform/util/src/com/intellij/openapi/util/IconLoader.java) can be used to access the icons. Then define a class or an interface with icon constants in a top-level package called `icons`:
+The `getIcon()` method of [`IconLoader`](upsource:///platform/util/ui/src/com/intellij/openapi/util/IconLoader.java) can be used to access the icons. Then define a class or an interface with icon constants in a top-level package called `icons`:
 
 ```java
 package icons;

@@ -15,10 +15,10 @@ The following are referenced in the tutorial:
 * The [editor_basics](https://github.com/JetBrains/intellij-sdk-docs/tree/master/code_samples/editor_basics/) plugin code sample,
 * [editor-ui-api package](upsource:///platform/editor-ui-api),
 * Those not found in editor-ui-api package:
-  * [EditorActionManager](upsource:///platform/platform-api/src/com/intellij/openapi/editor/actionSystem/EditorActionManager.java),
-  * [EditorActionHandler](upsource:///platform/platform-api/src/com/intellij/openapi/editor/actionSystem/EditorActionHandler.java),
-  * [TypedActionHandler](upsource:///platform/platform-api/src/com/intellij/openapi/editor/actionSystem/TypedActionHandler.java),
-  * [TypedAction](upsource:///platform/platform-api/src/com/intellij/openapi/editor/actionSystem/TypedAction.java).
+  * [`EditorActionManager`](upsource:///platform/platform-api/src/com/intellij/openapi/editor/actionSystem/EditorActionManager.java),
+  * [`EditorActionHandler`](upsource:///platform/platform-api/src/com/intellij/openapi/editor/actionSystem/EditorActionHandler.java),
+  * [`TypedActionHandler`](upsource:///platform/platform-api/src/com/intellij/openapi/editor/actionSystem/TypedActionHandler.java),
+  * [`TypedAction`](upsource:///platform/platform-api/src/com/intellij/openapi/editor/actionSystem/TypedAction.java).
 
 **Related topics:** 
 * [Action System](/tutorials/action_system.md)

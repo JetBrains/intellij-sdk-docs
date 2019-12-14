@@ -3,6 +3,8 @@ title: Incompatible Changes in IntelliJ Platform and Plugins API
 ---
 
 <!--
+=============== DO NOT RENAME OR MOVE THIS FILE ===============
+
 Before documenting a breaking API change, please, make sure that the change cannot be avoided 
 in an alternative way.
 
@@ -24,6 +26,7 @@ The following problem patterns are supported:
 <class name>.<method name>(<human-readable parameters>) method visibility changed from <before> to <after>
 <class name>.<method name>(<human-readable parameters>) method marked final
 <class name> (class|interface) now (extends|implements) <class name> and inherits its final method <method name>(<human-readable parameters>)?
+<class name> (class|interface) now (extends|implements) <class name> and inherits its abstract method <method name>(<human-readable parameters>)?
 
 <class name>(<human-readable parameters>) constructor removed
 <class name>(<human-readable parameters>) constructor parameter <type> removed
@@ -55,9 +58,19 @@ NOTE: You are allowed to prettify the pattern using markdown-features:
  3) both code quotes and links: [`org.example.Foo`](https://github.com/JetBrains/intellij-community/tree/master/)
 -->
 
-IntelliJ API may be occasionally changed between releases leading to incompatibilities of existing plugins with newer IDE builds. 
+IntelliJ API may be occasionally changed between releases, leading to incompatibilities of existing plugins with newer IDE builds. 
 
-Compatibility with newer IDEs can easily be verified for plugins hosted on the [JetBrains plugin repository](../plugin_repository/index.md) using the builtin [Plugin Verifier](https://blog.jetbrains.com/platform/2018/07/plugins-repository-now-integrates-with-the-plugin-verification-tool/).
+> **NOTE** Starting with 2020.1 release, IntelliJ Platform–based IDEs will use compatibility check information provided by the [JetBrains plugin repository](/plugin_repository/index.md) to highlight possible compatibility issues to users directly in the IDE's "Plugins" manager. 
+Therefore, it is important to keep your plugins up to date with regard to the existing and upcoming API changes.
+
+Compatibility with newer IDEs can easily be verified for plugins hosted on the [JetBrains plugin repository](/plugin_repository/index.md) using the built-in [Plugin Verifier](https://blog.jetbrains.com/platform/2018/07/plugins-repository-now-integrates-with-the-plugin-verification-tool/).
+
+For non-public plugins, [intellij-plugin-verifier](https://github.com/JetBrains/intellij-plugin-verifier) can be used standalone as well.
+  
+Consider using the following IDE inspections to get additional alerts about code that uses unstable API features:
+- JVM languages \| Unstable API Usage
+- JVM languages \| Unstable type is used in signature
+  
   
 The following pages list the breaking changes in IDE/plugin releases with required/recommended steps to take by plugin authors. 
 

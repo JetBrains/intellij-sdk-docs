@@ -2,10 +2,15 @@
 title: Creating Your First Plugin
 ---
 
-This documentation section will help you get started with developing plugins for the *IntelliJ Platform*. You can use either [IntelliJ IDEA Community Edition](https://www.jetbrains.com/idea/download/) or [IntelliJ IDEA Ultimate](https://www.jetbrains.com/idea/download/) as your IDE.  Both include the complete set of plugin development tools. To become more familiar with *IntelliJ IDEA*, please refer to the [IntelliJ IDEA Web Help](https://www.jetbrains.com/idea/help/).
+This documentation section will help you get started with developing plugins for the *IntelliJ Platform*. You can use either [IntelliJ IDEA Community Edition](https://www.jetbrains.com/idea/download/) or [IntelliJ IDEA Ultimate](https://www.jetbrains.com/idea/download/) as your IDE (it is highly recommended to use the latest available version).  Both include the complete set of plugin development tools. To become more familiar with *IntelliJ IDEA*, please refer to the [IntelliJ IDEA Web Help](https://www.jetbrains.com/idea/help/).
 
-There are two possible workflows for building plugins. The recommended workflow for new projects is
-to [use Gradle](#using-gradle). The old [Plugin DevKit](#using-devkit) workflow still supports existing projects.
+There are two supported workflows available for building plugins. 
+The recommended workflow for new projects is to [use Gradle](#using-gradle). 
+The old [Plugin DevKit](#using-devkit) workflow still supports existing projects.
+
+If a new plugin will be Scala-based, a plugin development workflow [sbt-idea-plugin](https://github.com/JetBrains/sbt-idea-plugin), is available.
+The workflow is analogous to the Gradle workflow but tailored to developing IntelliJ Platform plugins in Scala.
+JetBrains does not officially support this Scala workflow, and at this time the workflow has only minimal documentation.
 
 The Gradle workflow offers these advantages:
 * Gradle in general:

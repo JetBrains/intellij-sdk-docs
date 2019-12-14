@@ -89,7 +89,7 @@ All keys must follow this Naming Pattern:
 | Word | Use for | Example |
 |------|---------|---------|
 | **`foreground`**  | Text color. | `Label.foreground` |
-| **`background`**  | Background color for objects with text. | `Label.foreground` |
+| **`background`**  | Background color for objects with text. | `Label.background` |
 | **`<part>Color`** | Objects with a single color (do not have foreground/background). Do not use the word “Color” separately, always use with the “part” word. <br/><br/>_The word “Color” shows that this is a color property. Otherwise, it can be confused with a property of another type._ | `Popup.borderColor` <br/> `Group.separatorColor` |
 
 #### State

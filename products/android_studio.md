@@ -53,7 +53,7 @@ The snippet below is an example of configuring the Setup and Running DSLs in a `
   runIde {
       // Absolute path to installed target v3.5 Android Studio to use as IDE Development Instance
       // The "Contents" directory is macOS specific.
-      ideaDirectory '/Applications/Android Studio.app/Contents'
+      ideDirectory '/Applications/Android Studio.app/Contents'
   }
 ```
 
@@ -67,8 +67,13 @@ Otherwise, if only general IntelliJ Platform features (APIs) are used, then a de
 
 ## Additional Articles and Resources
 * Discussion of extending Android Lint - [How to Register Androidlintinspectionbase in Intellijidea Plugin](https://intellij-support.jetbrains.com/hc/en-us/community/posts/360005018559-How-to-register-AndroidLintInspectionBase-in-IntellijIdea-Plugin)  
+* Grzegorz Matyszczak's article _"How I Automated Creating Files for a New Screen with My Own Android Studio Plugin"_.
+* Marcos Holgado's article series _"Write an Android Studio Plugin"_.
+
+<!--
 * Grzegorz Matyszczak's article [How I Automated Creating Files for a New Screen with My Own Android Studio Plugin](https://proandroiddev.com/how-i-automated-creating-files-for-a-new-screen-with-my-own-android-studio-plugin-5d54b14ba6fa)
 * Marcos Holgado's article series [Write an Android Studio Plugin (Part 1)](https://proandroiddev.com/write-an-android-studio-plugin-part-1-creating-a-basic-plugin-af956c4f8b50)
+-->
 
 ## Open Source Plugins for Android Studio
 When learning new development configurations, it is helpful to have some representative projects for reference:  

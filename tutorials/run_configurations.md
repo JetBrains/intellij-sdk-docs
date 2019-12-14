@@ -30,7 +30,7 @@ Add new *configurationType* extension to the
 ## 2. Implement ConfigurationType
 
 Implement 
-[ConfigurationType](upsource:///platform/lang-api/src/com/intellij/execution/configurations/ConfigurationType.java) 
+[`ConfigurationType`](upsource:///platform/lang-api/src/com/intellij/execution/configurations/ConfigurationType.java) 
 interface registered in the Step 1.
 
 ```java
@@ -66,7 +66,7 @@ public class DemoRunConfigurationType implements ConfigurationType {
 ## 3. Implement a ConfigurationFactory
 
 Implement a new
-[ConfigurationFactory](upsource:///platform/lang-api/src/com/intellij/execution/configurations/ConfigurationFactory.java)
+[`ConfigurationFactory`](upsource:///platform/lang-api/src/com/intellij/execution/configurations/ConfigurationFactory.java)
 through which custom run configurations will be created.
 
 ```java
@@ -95,10 +95,10 @@ public class DemoConfigurationFactory extends ConfigurationFactory {
 To make your changes visible from the UI, implement a new Run Configuration.
 
 **Note:** In most of the cases you can derive a custom Run Configuration class from the
-[RunConfigurationBase](upsource:///platform/lang-api/src/com/intellij/execution/configurations/RunConfigurationBase.java).
+[`RunConfigurationBase`](upsource:///platform/lang-api/src/com/intellij/execution/configurations/RunConfigurationBase.java).
 If you need to implement specific settings externalization rules and I/O behaviour, 
 use 
-[RunConfiguration](upsource:///platform/lang-api/src/com/intellij/execution/configurations/RunConfiguration.java)
+[`RunConfiguration`](upsource:///platform/lang-api/src/com/intellij/execution/configurations/RunConfiguration.java)
 interface.
 
 ```java

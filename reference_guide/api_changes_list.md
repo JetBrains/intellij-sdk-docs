@@ -8,7 +8,8 @@ title: Incompatible Changes in IntelliJ Platform and Plugins API
 Before documenting a breaking API change, please, make sure that the change cannot be avoided 
 in an alternative way.
 
-APIs marked with @ApiStatus.Experimental, @ApiStatus.Internal or @ApiStatus.ScheduledForRemoval don't need to be documented.
+APIs 
+with @ApiStatus.Experimental, @ApiStatus.Internal or @ApiStatus.ScheduledForRemoval don't need to be documented.
 
 To document a new incompatible change, add a new line with the problem pattern
 followed by a 2nd line with ": "-prefixed human-readable description and recommended fix/action.
@@ -27,6 +28,7 @@ The following problem patterns are supported:
 <class name>.<method name>(<human-readable parameters>) method marked final
 <class name> (class|interface) now (extends|implements) <class name> and inherits its final method <method name>(<human-readable parameters>)?
 <class name> (class|interface) now (extends|implements) <class name> and inherits its abstract method <method name>(<human-readable parameters>)?
+<class name>.<method name> method <parameter name> parameter marked @<class name>
 
 <class name>(<human-readable parameters>) constructor removed
 <class name>(<human-readable parameters>) constructor parameter <type> removed
@@ -46,6 +48,7 @@ where
 <class name> is a fully-qualified name of the class, e.g. com.intellij.openapi.actionSystem.AnAction$InnerClass.
 <method name> is the exact method's name. Note that constructors have dedicated patterns.
 <human-readable parameters> is a string representing parameters, which are not necessarily fully qualified. They do not affect the parser. For example, instead of (java.lang.Object, java.util.List, int) you are free to write (Object, List<String>, int)
+<parameter name> is exact name of the method's parameter
 <property name> is a full name of a property from .properties file, like "some.action.description"
 <bundle name> is a fully qualified name of the property bundle, which includes its package, like "message.IdeBundle"
 

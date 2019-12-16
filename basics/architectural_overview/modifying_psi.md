@@ -17,20 +17,20 @@ for more information on commands and write actions.
 ## Creating the New PSI
 
 The PSI elements to add to the tree, or to replace existing PSI elements, are normally *created from text*.
-In the most general case, you use the `createFileFromText` method of [`PsiFileFactory`](upsource:///platform/core-api/src/com/intellij/psi/PsiFileFactory.java)
+In the most general case, you use the `createFileFromText()` method of [`PsiFileFactory`](upsource:///platform/core-api/src/com/intellij/psi/PsiFileFactory.java)
 to create a new file that contains the code construct which you need to add to the tree or to use as a replacement
 for an existing element, traverse the resulting tree to locate the specific element that you need, and then pass that
 element to `add()` or `replace()`.
 
 Most languages provide factory methods which let you create specific code constructs more easily. For example,
 the [`PsiJavaParserFacade`](upsource:///java/java-psi-api/src/com/intellij/psi/PsiJavaParserFacade.java) class
-contains methods such as `createMethodFromText`, which creates a Java method from the given text.
+contains methods such as `createMethodFromText()`, which creates a Java method from the given text.
 
 When you're implementing refactorings, intentions or inspection quickfixes that work with existing code, the text that
-you pass to the various `createFromText` methods will combine hard-coded fragments and fragments of code taken from
+you pass to the various `createFromText()` methods will combine hard-coded fragments and fragments of code taken from
 the existing file. For small code fragments (individual identifiers), you can simply append the text from the existing
 code to the text of the code fragment you're building. In that case, you need to make sure that the resulting text is 
-syntactically correct, otherwise the `createFromText` method will throw an exception. 
+syntactically correct, otherwise the `createFromText()` method will throw an exception. 
 
 For larger code fragments, it's best to perform the modification in several steps: 
 
@@ -63,7 +63,7 @@ equalsCall.getArgumentList().getExpressions()[0].replace(rExpr);
 PsiExpression result = (PsiExpression) binaryExpression.replace(equalsCall);
 ```
 
-Just as everywhere else in the IntelliJ Platform API, the text passed to `createFileFromText` and other `createFromText`
+Just as everywhere else in the IntelliJ Platform API, the text passed to `createFileFromText()` and other `createFromText()`
 methods must use only `\n` as line separators.
 
 
@@ -101,6 +101,6 @@ the user's code style settings and inserted into the correct place of the file.
 In some cases, you need to perform a PSI modification and then to perform an operation on the document you've just
 modified through the PSI (for example, start a live template). In this case, you need to call a special method that
 completes the PSI-based post-processing (such as formatting) and commits the changes to the document. The method
-you need to call is called `doPostponedOperationsAndUnblockDocument`, and it's defined in the
+you need to call is called `doPostponedOperationsAndUnblockDocument()`, and it's defined in the
 [`PsiDocumentManager`](upsource:///platform/core-api/src/com/intellij/psi/PsiDocumentManager.java) class.
 

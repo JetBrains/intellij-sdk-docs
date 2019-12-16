@@ -75,8 +75,35 @@ Please see [Incompatible API Changes](/reference_guide/api_changes_list.md) on h
 `com.intellij.psi.stubs.PrebuiltStubsProviderBase` class now extends `com.intellij.index.PrebuiltIndexProvider` and inherits its abstract method `getIndexRoot()`
 : Use `com.intellij.psi.stubs.PlatformPrebuiltStubsProviderBase` instead.
 
-`com.intellij.psi.PsiElementVisitor` method `visitElement` parameter marked `@NotNull` 
-: Remove `?`s in your Kotlin code.
+`com.intellij.psi.PsiElementVisitor.visitElement` method `PsiElement` parameter marked `@NotNull` 
+: This may break source-compatibility with inheritors written in Kotlin if they declare parameter type as nullable.
 
-`com.intellij.codeInspection.unused.ImplicitPropertyUsageProvider` method `isUsed` parameter marked `@NotNull`
-: Remove `?`s in your Kotlin code.
+`com.intellij.psi.PsiElementVisitor.visitFile` method `PsiFile` parameter marked `@NotNull` 
+: This may break source-compatibility with inheritors written in Kotlin if they declare parameter type as nullable.
+
+`com.intellij.psi.PsiElementVisitor.visitBinaryFile` method `PsiBinaryFile` parameter marked `@NotNull` 
+: This may break source-compatibility with inheritors written in Kotlin if they declare parameter type as nullable.
+
+`com.intellij.psi.PsiElementVisitor.visitPlainTextFile` method `PsiPlainTextFile` parameter marked `@NotNull` 
+: This may break source-compatibility with inheritors written in Kotlin if they declare parameter type as nullable.
+
+`com.intellij.psi.PsiElementVisitor.visitErrorElement` method `PsiErrorElement` parameter marked `@NotNull` 
+: This may break source-compatibility with inheritors written in Kotlin if they declare parameter type as nullable.
+
+`com.intellij.psi.PsiElementVisitor.visitPlainText` method `PsiPlainText` parameter marked `@NotNull` 
+: This may break source-compatibility with inheritors written in Kotlin if they declare parameter type as nullable.
+
+`com.intellij.psi.PsiElementVisitor.visitDirectory` method `PsiDirectory` parameter marked `@NotNull` 
+: This may break source-compatibility with inheritors written in Kotlin if they declare parameter type as nullable.
+
+`com.intellij.psi.PsiElementVisitor.visitComment` method `PsiComment` parameter marked `@NotNull` 
+: This may break source-compatibility with inheritors written in Kotlin if they declare parameter type as nullable.
+
+`com.intellij.psi.PsiElementVisitor.visitWhiteSpace` method `PsiWhiteSpace` parameter marked `@NotNull` 
+: This may break source-compatibility with inheritors written in Kotlin if they declare parameter type as nullable.
+
+`com.intellij.psi.PsiElementVisitor.visitOuterLanguageElement` method `OuterLanguageElement` parameter marked `@NotNull` 
+: This may break source-compatibility with inheritors written in Kotlin if they declare parameter type as nullable.
+
+`com.intellij.codeInspection.unused.ImplicitPropertyUsageProvider.isUsed` method `Property` parameter marked `@NotNull`
+: This may break source-compatibility with inheritors written in Kotlin if they declare parameter type as nullable.

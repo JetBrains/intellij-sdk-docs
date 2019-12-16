@@ -73,3 +73,8 @@ Please see [Incompatible API Changes](/reference_guide/api_changes_list.md) on h
 `com.intellij.psi.stubs.PrebuiltStubsProviderBase` class now extends `com.intellij.index.PrebuiltIndexProvider` and inherits its abstract method `getIndexRoot()`
 : Use `com.intellij.psi.stubs.PlatformPrebuiltStubsProviderBase` instead.
 
+`com.intellij.psi.PsiElementVisitor` method `visitElement` parameter marked `@NotNull`. 
+: Remove `?`s in your Kotlin code.
+
+`com.intellij.codeInspection.unused.ImplicitPropertyUsageProvider` method `isUsed` parameter marked `@NotNull`.
+: Remove `?`s in your Kotlin code.

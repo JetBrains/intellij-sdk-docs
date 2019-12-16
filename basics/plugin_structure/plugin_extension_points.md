@@ -25,8 +25,8 @@ _myPlugin/META-INF/plugin.xml_
   <id>my.plugin</id>
   
   <extensionPoints>
-    <extensionPoint name="myExtensionPoint1" beanClass="com.myplugin.MyBeanClass">
-    <extensionPoint name="myExtensionPoint2" interface="com.myplugin.MyInterface">
+    <extensionPoint name="myExtensionPoint1" beanClass="com.myplugin.MyBeanClass"/>
+    <extensionPoint name="myExtensionPoint2" interface="com.myplugin.MyInterface"/>
   </extensionPoints>
 
 </idea-plugin>

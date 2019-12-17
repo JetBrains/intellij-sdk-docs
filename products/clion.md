@@ -14,9 +14,9 @@ The table below summarizes the `gradle-intellij-plugin` attributes to set in the
 | `gradle-intellij-plugin` Attribute | <br>Attribute Value |
 |-----------|-------|
 | [`intellij.type`](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md#intellij-platform-properties) | `CL` for the product CLion  |
-| [`intellij.version`](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md#intellij-platform-properties) | Set to the targeted CLion version, e.g. `2019.2.5` |
+| [`intellij.version`](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md#intellij-platform-properties) | Set to the targeted CLion version, e.g. `2019.3.1` |
+| [`intellij.plugins`](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md#intellij-platform-properties) | No specific declaration is needed. |
 | [`intellij.downloadSources`](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md#intellij-platform-properties) | `false` is required because no public source code is available. |
- | [`intellij.plugins`](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md#intellij-platform-properties) | No specific declaration is needed. |
 | [`runIde.ideaDirectory`](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md#running-dsl) | Not needed; the Development Instance will automatically match intellij.type |
 
 The dependency on the CLion APIs must be declared in the `plugin.xml` file.
@@ -27,7 +27,7 @@ As described in [Modules Specific to Functionality](/basics/getting_started/plug
 ```
 
 ## Available CLion APIs
-Use the [Exploring APIs as a Consumer](/basics/getting_started/plugin_compatibility.html#exploring-apis-as-a-consumer) process to identify the JAR files under the External Library `Gradle: com.jetbrains:clion`.
+Use the [Exploring APIs as a Consumer](/basics/getting_started/plugin_compatibility.html#exploring-apis-as-a-consumer) process to identify the JAR files under the External Library `Gradle:com.jetbrains:clion:<version>`.
 Test your plugin with versions of CLion you intend to support.
 
 ## Open Source Plugins for CLion

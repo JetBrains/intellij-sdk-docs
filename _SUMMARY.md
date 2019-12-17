@@ -233,7 +233,7 @@
 * [Compatibility with Multiple Products](basics/getting_started/plugin_compatibility.md)
 * [Android Studio](products/android_studio.md)
 * AppCode
-* CLion
+* [CLion](products/clion.md)
 * DataGrip
 * [GoLand](products/goland.md)
 * [IntelliJ IDEA](products/idea.md)

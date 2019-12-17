@@ -85,6 +85,8 @@ Redirects enable the site URL to automatically show the `README.html` file - `ht
 It is also useful to redirect when renaming or moving files. 
 Multiple redirects can be added to the YAML header.
 
+> **NOTE** Please update all existing internal links to the new page location.
+
 ### Table of Contents for a Page
 The site is configured to use the [Kramdown Markdown converter](http://kramdown.gettalong.org), which adds some extra features over traditional Markdown.
 For example, "attribute lists" that can apply attributes to the generated elements.

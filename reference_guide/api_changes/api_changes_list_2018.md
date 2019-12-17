@@ -10,6 +10,8 @@ See the note on how to document new problems on the main page reference_guide/ap
 
 -->
 
+Please see [Incompatible API Changes](/reference_guide/api_changes_list.md) on how to verify compatibility.
+
 > **NOTE** Changes from API marked with [`org.jetbrains.annotations.ApiStatus.@Experimental/ScheduledForRemoval`](upsource:///platform/util/src/org/jetbrains/annotations/ApiStatus.java) are not listed here, as incompatible changes are to be expected.
 
 # 2018.3 
@@ -17,25 +19,25 @@ See the note on how to document new problems on the main page reference_guide/ap
 ## Changes in IntelliJ Platform 2018.3
 
 `com.intellij.openapi.externalSystem.action.ExternalSystemAction.isEnabled` method `AnActionEvent` parameter marked `@NotNull`
-: Remove `?`s in your Kotlin code.
+: This may break source-compatibility with inheritors written in Kotlin if they declare parameter type as nullable.
 
 `com.intellij.openapi.externalSystem.action.ExternalSystemAction.isVisible` method `AnActionEvent` parameter marked `@NotNull`
-: Remove `?`s in your Kotlin code.
+: This may break source-compatibility with inheritors written in Kotlin if they declare parameter type as nullable.
 
 `com.intellij.openapi.actionSystem.AnAction.actionPerformed` method `AnActionEvent` parameter marked `@NotNull`
-: Remove `?`s in your Kotlin code.
+: This may break source-compatibility with inheritors written in Kotlin if they declare parameter type as nullable.
 
 `com.intellij.openapi.actionSystem.DataContext.getData` method `dataId` parameter marked `@NotNull`
-: Remove `?`s in your Kotlin code.
+: This may break source-compatibility with inheritors written in Kotlin if they declare parameter type as nullable.
 
 `com.intellij.openapi.actionSystem.ToggleAction.isSelected` method `AnActionEvent` parameter marked `@NotNull`
-: Remove `?`s in your Kotlin code.
+: This may break source-compatibility with inheritors written in Kotlin if they declare parameter type as nullable.
 
 `com.intellij.openapi.actionSystem.ToggleAction.setSelected` method `AnActionEvent` parameter marked `@NotNull`
-: Remove `?`s in your Kotlin code.
+: This may break source-compatibility with inheritors written in Kotlin if they declare parameter type as nullable.
 
 `com.intellij.openapi.actionSystem.DataProvider.getData` method `dataId` parameter marked `@NotNull`
-: Remove `?`s in your Kotlin code.
+: This may break source-compatibility with inheritors written in Kotlin if they declare parameter type as nullable.
 
 `com.intellij.psi.meta.PsiMetaData.getDependences` method removed
 : Use `com.intellij.psi.meta.PsiMetaData.getDependencies` instead.

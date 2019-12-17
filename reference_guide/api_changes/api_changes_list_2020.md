@@ -24,6 +24,8 @@ The following problem patterns are supported:
 <class name>.<method name>(<human-readable parameters>) method visibility changed from <before> to <after>
 <class name>.<method name>(<human-readable parameters>) method marked final
 <class name> (class|interface) now (extends|implements) <class name> and inherits its final method <method name>(<human-readable parameters>)?
+<class name> (class|interface) now (extends|implements) <class name> and inherits its abstract method <method name>(<human-readable parameters>)?
+<class name>.<method name> method <parameter name> parameter marked @<class name>
 
 <class name>(<human-readable parameters>) constructor removed
 <class name>(<human-readable parameters>) constructor parameter <type> removed
@@ -43,6 +45,7 @@ where
 <class name> is a fully-qualified name of the class, e.g. com.intellij.openapi.actionSystem.AnAction$InnerClass.
 <method name> is the exact method's name. Note that constructors have dedicated patterns.
 <human-readable parameters> is a string representing parameters, which are not necessarily fully qualified. They do not affect the parser. For example, instead of (java.lang.Object, java.util.List, int) you are free to write (Object, List<String>, int)
+<parameter name> is exact name of the method's parameter
 <property name> is a full name of a property from .properties file, like "some.action.description"
 <bundle name> is a fully qualified name of the property bundle, which includes its package, like "message.IdeBundle"
 
@@ -55,15 +58,52 @@ NOTE: You are allowed to prettify the pattern using markdown-features:
  3) both code quotes and links: [`org.example.Foo`](https://github.com/JetBrains/intellij-community/tree/master/)
 -->
 
+Please see [Incompatible API Changes](/reference_guide/api_changes_list.md) on how to verify compatibility.
+
 > **NOTE** Changes from API marked with [`org.jetbrains.annotations.ApiStatus.@Experimental/ScheduledForRemoval`](upsource:///platform/util/src/org/jetbrains/annotations/ApiStatus.java) are not listed here, as incompatible changes are to be expected.
 
 # 2020.1
 
 ## Changes in IntelliJ Platform 2020.1
 
-`com.intellij.codeInsight.editorActions.SelectionQuotingTypedHandler.DequotingFilter` class renamed to `com.intellij.codeInsight.editorActions.SelectionQuotingTypedHandler.UnquotingFilter`
-: Use `com.intellij.codeInsight.editorActions.SelectionQuotingTypedHandler.UnquotingFilter` instead.
+`com.intellij.compiler.ant` package removed
+: 'Generate Ant build' functionality is removed from the IDE. Delete the code extending this or replace it with a dependency on the `generate-ant` plugin.
 
 `com.intellij.codeInsight.TargetElementUtilBase` class removed
-: Use `com.intellij.codeInsight.TargetElementUtil` extension point instead.
+: Use `com.intellij.codeInsight.TargetElementUtil` instead.
 
+`com.intellij.psi.stubs.PrebuiltStubsProviderBase` class now extends `com.intellij.index.PrebuiltIndexProvider` and inherits its abstract method `getIndexRoot()`
+: Use `com.intellij.psi.stubs.PlatformPrebuiltStubsProviderBase` instead.
+
+`com.intellij.psi.PsiElementVisitor.visitElement` method `PsiElement` parameter marked `@NotNull` 
+: This may break source-compatibility with inheritors written in Kotlin if they declare parameter type as nullable.
+
+`com.intellij.psi.PsiElementVisitor.visitFile` method `PsiFile` parameter marked `@NotNull` 
+: This may break source-compatibility with inheritors written in Kotlin if they declare parameter type as nullable.
+
+`com.intellij.psi.PsiElementVisitor.visitBinaryFile` method `PsiBinaryFile` parameter marked `@NotNull` 
+: This may break source-compatibility with inheritors written in Kotlin if they declare parameter type as nullable.
+
+`com.intellij.psi.PsiElementVisitor.visitPlainTextFile` method `PsiPlainTextFile` parameter marked `@NotNull` 
+: This may break source-compatibility with inheritors written in Kotlin if they declare parameter type as nullable.
+
+`com.intellij.psi.PsiElementVisitor.visitErrorElement` method `PsiErrorElement` parameter marked `@NotNull` 
+: This may break source-compatibility with inheritors written in Kotlin if they declare parameter type as nullable.
+
+`com.intellij.psi.PsiElementVisitor.visitPlainText` method `PsiPlainText` parameter marked `@NotNull` 
+: This may break source-compatibility with inheritors written in Kotlin if they declare parameter type as nullable.
+
+`com.intellij.psi.PsiElementVisitor.visitDirectory` method `PsiDirectory` parameter marked `@NotNull` 
+: This may break source-compatibility with inheritors written in Kotlin if they declare parameter type as nullable.
+
+`com.intellij.psi.PsiElementVisitor.visitComment` method `PsiComment` parameter marked `@NotNull` 
+: This may break source-compatibility with inheritors written in Kotlin if they declare parameter type as nullable.
+
+`com.intellij.psi.PsiElementVisitor.visitWhiteSpace` method `PsiWhiteSpace` parameter marked `@NotNull` 
+: This may break source-compatibility with inheritors written in Kotlin if they declare parameter type as nullable.
+
+`com.intellij.psi.PsiElementVisitor.visitOuterLanguageElement` method `OuterLanguageElement` parameter marked `@NotNull` 
+: This may break source-compatibility with inheritors written in Kotlin if they declare parameter type as nullable.
+
+`com.intellij.codeInspection.unused.ImplicitPropertyUsageProvider.isUsed` method `Property` parameter marked `@NotNull`
+: This may break source-compatibility with inheritors written in Kotlin if they declare parameter type as nullable.

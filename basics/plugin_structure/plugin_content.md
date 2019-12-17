@@ -2,48 +2,49 @@
 title: Plugin Content
 ---
 
-There are two possible ways of organizing plugin content:
+The plugin `jar` file must contain:
+- the configuration file (`META-INF/plugin.xml`) ([Plugin Configuration File](plugin_configuration_file.md))
+- the classes that implement the plugin functionality 
+- recommended: plugin logo file(s) (`META-INF/pluginIcon*.svg`) ([Plugin Logo](plugin_icon_file.md)) 
 
-1. A plugin consisting of one `.jar` file placed in the plugins directory:
 
-    The archive should contain the configuration file (`META-INF/plugin.xml`), 
-    plugin icon files (`META-INF/pluginIcon*.svg`), 
-    and the classes that implement the plugin functionality. The configuration file 
-    specifies the plugin name, description, version, vendor, the supported IntelliJ IDEA version, 
-    plugin components, actions and action groups, and action user interface placement.
-    See the [Plugin Icon File](plugin_icon_file.md) page for more information about plugin icon SVG files.
+### Plugin Without Dependencies 
+A plugin consisting of a single `.jar` file is placed in the `/plugins` directory.
 
-   ```
+```
+.IntelliJIDEAx0/
+└── plugins
+    └── sample.jar
+        ├── com/foo/...
+        │   ...
+        │   ...
+        └── META-INF
+            ├── plugin.xml
+            ├── pluginIcon.svg
+            └── pluginIcon_dark.svg
+```
+
+
+### Plugin With Dependencies 
+The plugin `.jar` file is placed in the `/lib` folder under the plugin's "root" folder, together with all required bundled libraries.
+
+All jars from the `/lib` folder are automatically added to the classpath (see also [Plugin Class Loaders](plugin_class_loaders.md)).
+   
+```
    .IntelliJIDEAx0/
-     plugins/
-       sample.jar/
-         com/foo/...
-         ...
-         ...
-         META-INF/
-           plugin.xml
-           pluginIcon.svg
-           pluginIcon_dark.svg
-   ```
-
-
-2. Plugin files located in a `.jar` file that is placed in the lib folder:
-
-   ```
-   .IntelliJIDEAx0/
-     plugins/
-       Sample/
-         lib/
-           libfoo.jar
-           libbar.jar
-           Sample.jar/
-             com/foo/...
-             ...
-             ...
-             META-INF/
-               plugin.xml
-               pluginIcon.svg
-               pluginIcon_dark.svg
-   ```
-
-   All jars from the `lib` folder are automatically added to the classpath.
+   └── plugins
+       └── sample
+           └── lib
+               ├── lib_foo.jar
+               ├── lib_bar.jar
+               │   ...
+               │   ...
+               └── sample.jar
+                   ├── com/foo/...
+                   │   ...
+                   │   ...
+                   └── META-INF
+                       ├── plugin.xml
+                       ├── pluginIcon.svg
+                       └── pluginIcon_dark.svg
+```

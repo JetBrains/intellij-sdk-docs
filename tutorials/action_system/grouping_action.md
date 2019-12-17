@@ -41,7 +41,7 @@ Rather `SimpleAction` is defined in the same
 #### 2.1.3. Creating an action for the simple action group
 
 To create an action we need to extend the
-[AnAction.java](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java)
+[`AnAction`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java)
 class. This example uses the `SimplePopDialogAction` class, which pops a dialog to give users feedback when a 
 menu item is chosen. See the [Registering an Action](working_with_custom_actions.md)
 page for more information about this class.
@@ -75,15 +75,15 @@ action group will be added to an IntelliJ menu that is only enabled for editing.
 
 #### 2.2.1. Extending DefaultActionGroup
 
-[DefaultActionGroup.java](upsource:///platform/platform-api/src/com/intellij/openapi/actionSystem/DefaultActionGroup.java)
+[`DefaultActionGroup`](upsource:///platform/platform-api/src/com/intellij/openapi/actionSystem/DefaultActionGroup.java)
 is an implementation of
-[ActionGroup.java](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/ActionGroup.java).
+[`ActionGroup`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/ActionGroup.java).
 The `DefaultActionGroup` class is used to add child actions and separators between them to a group.
 This class is used if a set of actions belonging to the group does not change at runtime, which is the majority of all the cases.
 (See section 2.3 for groups with variable child actions at runtime.)
 
 As an example we will extend 
-[DefaultActionGroup.java](upsource:///platform/platform-api/src/com/intellij/openapi/actionSystem/DefaultActionGroup.java) 
+[`DefaultActionGroup`](upsource:///platform/platform-api/src/com/intellij/openapi/actionSystem/DefaultActionGroup.java) 
 to create the `CustomDefaultActionGroup` class in the `register_actions` code sample:
 
 ```java
@@ -169,7 +169,7 @@ will also have an icon:
 ### 2.3. Action groups with a variable actions set
 
 If a set of actions belonging to a custom actions group will vary depending on the context, the group must extend 
-[ActionGroup.java](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/ActionGroup.java).
+[`ActionGroup`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/ActionGroup.java).
 In this case set of actions to be grouped are dynamically defined.
 
 #### 2.3.1. Creating variable action group

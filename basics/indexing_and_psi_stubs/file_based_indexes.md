@@ -22,7 +22,7 @@ When you access the index, you specify the key that you're interested in and get
 
 A fairly simple file-based index implementation is the [UI Designer bound forms index](upsource:///plugins/ui-designer/src/com/intellij/uiDesigner/binding/FormClassIndex.java). Refer to it as an example to understand this topic better.
 
-Each specific index implementation is a class extending [FileBasedIndexExtension](upsource:///platform/indexing-api/src/com/intellij/util/indexing/FileBasedIndexExtension.java). A file-based index should be registered in the `<fileBasedIndex>` extension point.
+Each specific index implementation is a class extending [`FileBasedIndexExtension`](upsource:///platform/indexing-api/src/com/intellij/util/indexing/FileBasedIndexExtension.java). A file-based index should be registered in the `com.intellij.fileBasedIndex` extension point.
 
 An implementation of a file-based index consists of the following main parts:
 
@@ -34,15 +34,15 @@ An implementation of a file-based index consists of the following main parts:
 * `getInputFilter()` allows to restrict the indexing only to a certain set of files.
 * `getVersion()` returns the version of the index implementation. The index is automatically rebuilt if the current version differs from the version of the index implementation used to build the index.
 
-If you don't need to associate any value with the files (i.e. your value type is Void), you can simplify the implementation by using [ScalarIndexExtension](upsource:///platform/indexing-impl/src/com/intellij/util/indexing/ScalarIndexExtension.java) as the base class.
+If you don't need to associate any value with the files (i.e. your value type is Void), you can simplify the implementation by using [`ScalarIndexExtension`](upsource:///platform/indexing-impl/src/com/intellij/util/indexing/ScalarIndexExtension.java) as the base class.
 
-> **Note** The data returned by `DataIndexer.map()` must depend only on input data passed to the method, and must not depend on any external files. Otherwise your index will not be correctly updated when the external data changes, and you will have stale data in your index.
+> **WARNING** The data returned by `DataIndexer.map()` must depend only on input data passed to the method, and must not depend on any external files. Otherwise your index will not be correctly updated when the external data changes, and you will have stale data in your index.
 
 > **Note** Please see `com.intellij.util.indexing.DebugAssertions` on how to enable additional debugging assertions during development to assert correct index implementation.
 
 ## Accessing a file-based index
 
-Access to file-based indexes is performed through the [FileBasedIndex](upsource:///platform/indexing-api/src/com/intellij/util/indexing/FileBasedIndex.java) class.
+Access to file-based indexes is performed through the [`FileBasedIndex`](upsource:///platform/indexing-api/src/com/intellij/util/indexing/FileBasedIndex.java) class.
 
 The following primary operations are supported:
 
@@ -54,7 +54,7 @@ The following primary operations are supported:
 * `getContainingFiles()` allows to obtain all files in which a specific key was encountered.
 * `processValues()` allows to iterate though all files in which a specific key was encountered and to access the associated values at the same time.
 
-> **Note** Nested index access is forbidden as it might lead to a deadlock. Collect all necessary data from index A first, then process results while accessing index B.
+> **WARNING** Nested index access is forbidden as it might lead to a deadlock. Collect all necessary data from index A first, then process results while accessing index B.
 
 ## Standard indexes
 

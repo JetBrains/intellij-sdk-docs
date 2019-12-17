@@ -36,6 +36,7 @@ The process of resolving references is distinct from parsing, and is not perform
 not always successful. If the code currently open in the IDE does not compile, or in other situations, it's normal
 for `PsiReference.resolve()` to return `null`, and if you work with references, you need to be able to handle that in your code.
 
+> **TIP** Please see also _Cache results of heavy computations_ in [Working with PSI efficiently](/reference_guide/performance/performance.md#working-with-psi-efficiently).
 
 ## Contributed References
 
@@ -75,7 +76,7 @@ To handle this, it provides a reference that can be resolved to multiple possibl
 Such references implement the [`PsiPolyVariantReference`](upsource:///platform/core-api/src/com/intellij/psi/PsiPolyVariantReference.java) interface.
 
 For resolving a `PsiPolyVariantReference`, you call its `multiResolve()` method. The call returns an array of
-[`ResolveResult`](upsource:///platform/core-api/src/com/intellij/psi/PsiResolveResult.java) objects. Each of the
+[`ResolveResult`](upsource:///platform/core-api/src/com/intellij/psi/ResolveResult.java) objects. Each of the
 objects identifies a PSI element and also specifies whether the result is valid. For example, if you have multiple
 Java method overloads and a call with arguments not matching any of the overloads, you will get
 back `ResolveResult` objects for all of the overloads, and `isValidResult()` will return false for all of them.
@@ -87,7 +88,7 @@ As you already know, resolving a reference means going from a usage to the corre
 navigation in the opposite direction - from a declaration to its usages - you need to perform a **references search**.
 
 To perform a references search, you use the 
-[`ReferencesSearch`](upsource:///platform/indexing-api/com/intellij/psi/search/searches/ReferencesSearch.java) class.
+[`ReferencesSearch`](upsource:///platform/indexing-api/src/com/intellij/psi/search/searches/ReferencesSearch.java) class.
 To perform a search, you need to specify the *element* to search for, and optionally other parameters such as the
 scope in which the reference needs to be searched. You get back a *query* object that allows you to get all results
 as an array, or to iterate over the results one by one. If you don't need to collect all the results, it's more efficient

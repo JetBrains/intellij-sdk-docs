@@ -33,10 +33,12 @@
 * [Plugin Structure](basics/plugin_structure.md)
     * [Plugin Content](basics/plugin_structure/plugin_content.md)
     * [Plugin Class Loaders](basics/plugin_structure/plugin_class_loaders.md)
-    * [Plugin Components](basics/plugin_structure/plugin_components.md)
-    * [Plugin Services](basics/plugin_structure/plugin_services.md)
-    * [Plugin Extensions and Extension Points](basics/plugin_structure/plugin_extensions_and_extension_points.md)
     * [Plugin Actions](basics/plugin_structure/plugin_actions.md)
+    * [Plugin Extensions](basics/plugin_structure/plugin_extensions.md)
+    * [Plugin Services](basics/plugin_structure/plugin_services.md)
+    * [Plugin Listeners](basics/plugin_structure/plugin_listeners.md)
+    * [Plugin Extension Points](basics/plugin_structure/plugin_extension_points.md)
+    * [Plugin Components](basics/plugin_structure/plugin_components.md)
     * [Plugin Configuration File](basics/plugin_structure/plugin_configuration_file.md)
     * [Plugin Logo (Icon)](basics/plugin_structure/plugin_icon_file.md)
     * [Plugin Dependencies](basics/plugin_structure/plugin_dependencies.md)
@@ -163,7 +165,7 @@
 
 ## Part VI - Testing
 
-* [Testing Plugins](basics/testing_plugins.md)
+* [Testing Plugins](basics/testing_plugins/testing_plugins.md)
 * [Tests and Fixtures](basics/testing_plugins/tests_and_fixtures.md)
 * [Light and Heavy Tests](basics/testing_plugins/light_and_heavy_tests.md)
 * [Test Project and Testdata Directories](basics/testing_plugins/test_project_and_testdata_directories.md)
@@ -188,7 +190,6 @@
     * [Go to Class and Go to Symbol](reference_guide/custom_language_support/go_to_class_and_go_to_symbol.md)
     * [Documentation](reference_guide/custom_language_support/documentation.md)
     * [Additional Minor Features](reference_guide/custom_language_support/additional_minor_features.md)
-    * To do Explorer
     * Parameter Info
     * Parameter Hints
 * [Custom Language Support Tutorial](tutorials/custom_language_support_tutorial.md)
@@ -234,7 +235,7 @@
 * AppCode
 * [CLion](products/clion.md)
 * DataGrip
-* GoLand
+* [GoLand](products/goland.md)
 * [IntelliJ IDEA](products/idea.md)
     * [Tomcat Integration](reference_guide/tomcat_integration.md)
     * [Spring API](reference_guide/frameworks_and_external_apis/spring_api.md)
@@ -244,8 +245,8 @@
     * [Existing Third Party Plugins](products/phpstorm/existing_plugins.md)
 * [PyCharm](products/pycharm.md)
 * [Rider](products/rider.md)
-* RubyMine
-* WebStorm
+* [RubyMine](products/rubymine.md)
+* [WebStorm](products/webstorm.md)
 
 ## Part IX - Custom IDEs
 * Build Your Own IDE

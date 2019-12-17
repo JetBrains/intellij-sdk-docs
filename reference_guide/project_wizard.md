@@ -11,7 +11,7 @@ Working with the project wizard can be illustrated with the
 
 Additional support for specific tools and technologies is usually done via implementing some certain module type which is attached to the project.
 New module type should be derived from the class
-[ModuleType](upsource:///platform/lang-api/src/com/intellij/openapi/module/ModuleType.java).
+[`ModuleType`](upsource:///platform/lang-api/src/com/intellij/openapi/module/ModuleType.java).
 
 
 ## Project Wizard
@@ -34,11 +34,11 @@ To create a new module type and an extension
 <moduleType id="MY_MODULE" implementationClass="st.redline.smalltalk.module.MyModuleType"/>
 ```
 to the
-[plugin.xml](https://github.com/bulenkov/RedlineSmalltalk/blob/master/resources/META-INF/plugin.xml).
+[`plugin.xml`](https://github.com/bulenkov/RedlineSmalltalk/blob/master/resources/META-INF/plugin.xml).
 A custom module type should extend the
-[ModuleType](upsource:///platform/lang-api/src/com/intellij/openapi/module/ModuleType.java)
+[`ModuleType`](upsource:///platform/lang-api/src/com/intellij/openapi/module/ModuleType.java)
 generic from
-[ModuleBuilder](upsource:///platform/lang-api/src/com/intellij/ide/util/projectWizard/ModuleBuilder.java).
+[`ModuleBuilder`](upsource:///platform/lang-api/src/com/intellij/ide/util/projectWizard/ModuleBuilder.java).
 The following
 [module type implementation](https://github.com/bulenkov/RedlineSmalltalk/blob/master/src/st/redline/smalltalk/module/RsModuleType.java)
 of a custom module type show how this instance can be registered and implemented.
@@ -46,7 +46,7 @@ of a custom module type show how this instance can be registered and implemented
 ### Implementing Module Builder
 
 To set up a new module environment
-[ModuleBuilder](upsource:///platform/lang-api/src/com/intellij/ide/util/projectWizard/ModuleBuilder.java)
+[`ModuleBuilder`](upsource:///platform/lang-api/src/com/intellij/ide/util/projectWizard/ModuleBuilder.java)
 class should be extended and registered as an extension point like the following snippet shows:
 
 ```xml
@@ -71,17 +71,17 @@ Functionality which is mandatory to implement consists of:
    ```
 
 See
-[JavaModuleBuilder](upsource:///java/openapi/src/com/intellij/ide/util/projectWizard/JavaModuleBuilder.java)
+[`JavaModuleBuilder`](upsource:///java/openapi/src/com/intellij/ide/util/projectWizard/JavaModuleBuilder.java)
 to understand better how to implement a module builder.
 
 If your module type is based on the java module and meant to support Java as well, extending
-[JavaModuleBuilder](upsource:///java/openapi/src/com/intellij/ide/util/projectWizard/JavaModuleBuilder.java)
+[`JavaModuleBuilder`](upsource:///java/openapi/src/com/intellij/ide/util/projectWizard/JavaModuleBuilder.java)
 is enough.
 No extension point needs to be registered.
 Refer to
 [SmallTalk module type](https://github.com/bulenkov/RedlineSmalltalk/blob/master/src/st/redline/smalltalk/module/RsModuleType.java)
 to see how
-[JavaModuleBuilder](upsource:///java/openapi/src/com/intellij/ide/util/projectWizard/JavaModuleBuilder.java)
+[`JavaModuleBuilder`](upsource:///java/openapi/src/com/intellij/ide/util/projectWizard/JavaModuleBuilder.java)
 can be derived.
 
 ### Implementing Module Builder Listener
@@ -89,7 +89,7 @@ can be derived.
 Module builder listener reacts on a new module creation, which could be done either as a part of the project creation process,
 or as adding a new module to the already existing project.
 To provide a certain behavior right after a module has been created, module builder should implement
-[ModuleBuilderListener](upsource:///platform/lang-api/src/com/intellij/ide/util/projectWizard/ModuleBuilderListener.java)
+[`ModuleBuilderListener`](upsource:///platform/lang-api/src/com/intellij/ide/util/projectWizard/ModuleBuilderListener.java)
 Method
 
 ```java
@@ -115,9 +115,9 @@ The following
 [implementation](https://github.com/bulenkov/RedlineSmalltalk/blob/master/src/st/redline/smalltalk/module/RsModuleWizardStep.java)
 for the SmallTalk project type illustrates how a custom wizard step can be created.
 The
-[RsModuleWizardStep](https://github.com/bulenkov/RedlineSmalltalk/blob/master/src/st/redline/smalltalk/module/RsModuleWizardStep.java)
+[`RsModuleWizardStep`](https://github.com/bulenkov/RedlineSmalltalk/blob/master/src/st/redline/smalltalk/module/RsModuleWizardStep.java)
 class is derived from
-[ModuleWizardStep](upsource:///platform/lang-api/src/com/intellij/ide/util/projectWizard/ModuleWizardStep.java),
+[`ModuleWizardStep`](upsource:///platform/lang-api/src/com/intellij/ide/util/projectWizard/ModuleWizardStep.java),
 which has two methods to be overridden:
 
 *  ```java
@@ -139,7 +139,7 @@ documentation section.
 
 ## Implementing Project Structure Detector
 
-To support the creation of your module when a project is imported from existing sources, extend [ProjectStructureDetector](upsource:///java/idea-ui/src/com/intellij/ide/util/projectWizard/importSources/ProjectStructureDetector.java).
+To support the creation of your module when a project is imported from existing sources, extend [`ProjectStructureDetector`](upsource:///java/idea-ui/src/com/intellij/ide/util/projectWizard/importSources/ProjectStructureDetector.java).
 
 To detect your files your module supports implement
 

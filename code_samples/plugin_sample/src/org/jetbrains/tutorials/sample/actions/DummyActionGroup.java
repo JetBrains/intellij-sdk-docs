@@ -6,7 +6,7 @@ import org.jetbrains.annotations.NotNull;
 /**
  * @author Anna Bulenkova
  */
-public class DummyActionGroup extends ActionGroup {
+public class DummyActionGroup extends DefaultActionGroup {
   @NotNull
   @Override
   public AnAction[] getChildren(AnActionEvent anActionEvent) {

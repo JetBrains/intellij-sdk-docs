@@ -54,7 +54,9 @@ The following IDEs are based on the IntelliJ Platform:
   * [RubyMine](https://www.jetbrains.com/ruby/) 
   * [WebStorm](https://www.jetbrains.com/webstorm/) 
 * [Android Studio](https://developer.android.com/studio/index.html) IDE from Google.
-* [CUBA Studio](https://www.cuba-platform.com/) 
+* [Comma](https://commaide.com/) IDE for Raku (formerly known as Perl 6)
+* [CUBA Studio](https://www.cuba-platform.com/)
+* [Cursive](https://cursive-ide.com/) IDE for Clojure 
 
 #### Rider
 JetBrains [Rider](https://www.jetbrains.com/rider/) uses the IntelliJ Platform differently than other IntelliJ based IDEs. It uses the IntelliJ Platform to provide the user interface for a C# and .NET IDE, with the standard IntelliJ editors, tool windows, debugging experience and so on. It also integrates into the standard Find Usages and Search Everywhere UI, and makes use of code completion, syntax highlighting, and so on.

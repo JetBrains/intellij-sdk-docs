@@ -97,7 +97,7 @@ An exhaustive list of declaration elements and attributes is presented in [Regis
 Attributes are added by selecting them from the **New Action** form, or by editing the registration declaration directly in the plugin.xml file.
 
 The `<action>` declaration for `PopupDialogAction` in the `action_basics` [plugin.xml](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/action_basics/src/main/resources/META-INF/plugin.xml) file.
-It also contains an attribute for an [`Icon`](https://docs.oracle.com/javase/8/docs/api/javax/swing/Icon.html), and encloses elements declaring keyboard and mouse shortcuts. 
+It also contains an attribute for an [`Icon`](/reference_guide/work_with_icons_and_images.md), and encloses elements declaring keyboard and mouse shortcuts. 
 The full declaration is:
 ```xml
     <action id="org.intellij.sdk.action.PopupDialogAction" class="org.intellij.sdk.action.PopupDialogAction"

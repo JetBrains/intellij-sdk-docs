@@ -80,8 +80,8 @@
     * [Exposing Theme Metadata](reference_guide/ui_themes/themes_metadata.md)
 * [Actions](basics/action_system.md)
     * [Actions Tutorial](tutorials/action_system.md)
-        * [1. Registering an Action](tutorials/action_system/working_with_custom_actions.md)
-        * [2. Grouping Actions](tutorials/action_system/grouping_action.md)
+        * [Creating Actions](tutorials/action_system/working_with_custom_actions.md)
+        * [Grouping Actions](tutorials/action_system/grouping_action.md)
 * Settings
     * [Persisting State of Components](basics/persisting_state_of_components.md)
     * [Persisting Sensitive Data](basics/persisting_sensitive_data.md)

@@ -25,7 +25,7 @@ To set up your plugin development environment:
    ![Set Home Directory](img/set_home_directory.png)
 <br/>
 <br/>      
-*  Select **1.8** as the default Java SDK. See the _IntelliJ Build Configuration_ section of [Check Out And Build Community Edition](upsource:///README.md) for instructions about creating **1.8** JSDK.
+*  Select **1.8** as the default Java SDK. See the _IntelliJ Build Configuration_ section of [Check Out And Build Community Edition](upsource:///README.md) for instructions about creating **1.8** Java SDK.
 
    ![Set IDEA JDK](img/set_java_sdk.png)
 <br/>
@@ -41,7 +41,7 @@ To set up your plugin development environment:
 <br/>
 <br/>
 *  Specify the **Sandbox Home** directory.  
-   The *Sandbox Home* directory stores the settings of the IDE development instance launched from a Plugin Project's **Run** configration.
+   The *Sandbox Home* directory stores the settings of the IDE development instance launched from a Plugin Project's **Run** configuration.
    Shown below is the default *Sandbox Home* directory for a user on Mac OS X. Any directory can be chosen as the *Sandbox Home* location. 
    Use the ellipsis button (shown below) to define a custom location.  
    

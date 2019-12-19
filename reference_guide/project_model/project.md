@@ -44,7 +44,7 @@ ProjectFileIndex projectFileIndex = ProjectRootManager.getInstance(project).getF
 
 ### How do I get the content or source root to which the specified file or directory belongs?
 
-Use the `ProjectFileIndex.getContentRootForFile` and `ProjectFileIndex.getSourceRootForFile` methods. For example:
+Use the `ProjectFileIndex.getContentRootForFile()` and `ProjectFileIndex.getSourceRootForFile()` methods. For example:
 
 ```java
 VirtualFile moduleContentRoot = ProjectRootManager.getInstance(project).getFileIndex().getContentRootForFile(virtualFileOrDirectory);
@@ -55,13 +55,10 @@ Note that this method returns `null` if the file or directory does not belong to
  
 ### How do I check whether a file or directory is related to the project libraries?
 
-The `ProjectFileIndex` interface implements a number of methods you can use to check whether the specified file belongs to the project library classes or library sources.
-
-You can use the following methods:
-
-* `ProjectFileIndex.`**`isLibraryClassFile`**`(virtualFile)`: Returns `true` if the specified `virtualFile` is a compiled class file.
-* `ProjectFileIndex.`**`isInLibraryClasses`**`(virtualFileorDirectory)`: Returns `true` if the specified `virtualFileorDirectory` belongs to library classes.
-* `ProjectFileIndex.`**`isInLibrarySource`**`(virtualFileorDirectory)`: Returns `true` if the specified `virtualFileorDirectory` belongs to library sources.
+The `ProjectFileIndex` interface implements a number of methods you can use to check whether the specified file belongs to the project library classes or library sources:
+* `isLibraryClassFile(virtualFile)`: Returns `true` if the specified `virtualFile` is a compiled class file.
+* `isInLibraryClasses(virtualFileorDirectory)`: Returns `true` if the specified `virtualFileorDirectory` belongs to library classes.
+* `isInLibrarySource(virtualFileorDirectory)`: Returns `true` if the specified `virtualFileorDirectory` belongs to library sources.
 
 ### How do I get the project SDK?
 
@@ -77,7 +74,7 @@ Note that by default, the project modules use the project SDK. Optionally, you c
 
 ## Changing the project structure
 
-Utility classes used for modifying the project structure can be found in the package [projectModel-impl.openapi](upsource:///platform/projectModel-impl/src/com/intellij/openapi). Its [roots](upsource:///platform/projectModel-impl/src/com/intellij/openapi/roots/) subpackage contains instances and utilities intended for work with project and module source roots, including [ModuleRootModificationUtil](upsource:///platform/projectModel-api/src/com/intellij/openapi/roots/ModuleRootModificationUtil.java) and [ProjectRootUtil](upsource:///platform/projectModel-impl/src/com/intellij/openapi/projectRoots/impl/ProjectRootUtil.java). Project structure
+Utility classes used for modifying the project structure can be found in the package [projectModel-impl.openapi](upsource:///platform/projectModel-impl/src/com/intellij/openapi). Its [roots](upsource:///platform/projectModel-impl/src/com/intellij/openapi/roots/) subpackage contains instances and utilities intended for work with project and module source roots, including [`ModuleRootModificationUtil`](upsource:///platform/projectModel-api/src/com/intellij/openapi/roots/ModuleRootModificationUtil.java) and [`ProjectRootUtil`](upsource:///platform/projectModel-impl/src/com/intellij/openapi/projectRoots/impl/ProjectRootUtil.java). Project structure
 changes need to be performed in a [write action](/basics/architectural_overview/general_threading_rules.md#readwrite-lock).
 
 Refer to the [basic example](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/project_model/src/com/intellij/tutorials/project/model/ModificationAction.java) of on-the-fly project structure modification to learn how it can be implemented.

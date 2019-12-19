@@ -24,7 +24,7 @@ As described in [Modules Specific to Functionality](/basics/getting_started/plug
 Consequently, without the `com.intellij.modules.platform` declaration the plugin is assumed to be a [legacy plugin](/basics/getting_started/plugin_compatibility.md#declaring-plugin-dependencies) and will not load in WebStorm.
 
 ## Available WebStorm APIs
-Use the [Exploring APIs as a Consumer](/basics/getting_started/plugin_compatibility.html#exploring-apis-as-a-consumer) process to identify the libraries `JavaScriptLanguage.jar`, and `javascript-openapi.jar`.
+Use the [Exploring APIs as a Consumer](/basics/getting_started/plugin_compatibility.md#exploring-apis-as-a-consumer) process to identify the libraries `JavaScriptLanguage.jar`, and `javascript-openapi.jar`.
 Test your plugin with any version of WebStorm you wish to support.
 
 ## Open Source Plugins for WebStorm

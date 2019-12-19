@@ -12,20 +12,9 @@ That question might be broad or narrowly-focused, but either way, our goal is to
 
 The style of the _Intellij Platform SDK_ documentation is captured by using a markup language named [_Markdown_](https://github.github.com/gfm/).
 The following sections describe the SDK documentation style in terms of the Markdown formats:
-* [Documentation Markup Style](#documentation-markup-style)
-  * [Page Format](#page-format)
-  * [Redirects](#redirects)
-  * [Table of Contents for a Page](#table-of-contents-for-a-page)
-  * [Text Format Conventions](#text-format-conventions)
-  * [Liquid tags and filters](#liquid-tags-and-filters)
-  * [Syntax highlighting](#syntax-highlighting)
-  * [Tables](#tables)
-  * [Links](#links)
-  * [Callouts](#notes-and-callouts)
-  * [Images](#images)
-* [_SUMMARY.md Site Table of Contents](#summary-site-table-of-contents)
-* [Repository Submodules](#repository-submodules)
 
+* bullet list
+{:toc}
 
 ## Documentation Markup Style
 By default, when building the site, all files are copied to the destination `_site` folder. 

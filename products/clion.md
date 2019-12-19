@@ -27,7 +27,7 @@ As described in [Modules Specific to Functionality](/basics/getting_started/plug
 ```
 
 ## Available CLion APIs
-Use the [Exploring APIs as a Consumer](/basics/getting_started/plugin_compatibility.html#exploring-apis-as-a-consumer) process to identify the JAR files under the External Library `Gradle:com.jetbrains:clion:<version>`.
+Use the [Exploring APIs as a Consumer](/basics/getting_started/plugin_compatibility.md#exploring-apis-as-a-consumer) process to identify the JAR files under the External Library `Gradle:com.jetbrains:clion:<version>`.
 Test your plugin with versions of CLion you intend to support.
 
 ## Open Source Plugins for CLion

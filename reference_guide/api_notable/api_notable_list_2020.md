@@ -5,6 +5,9 @@ title: Notable Changes in IntelliJ Platform and Plugins API 2020.*
 # 2020.1 
 
 ## Notable Changes in IntelliJ Platform 2020.1
+Dynamic Plugins
+: [Compatible plugins](/basics/plugin_structure/dynamic_plugins.md) can be installed, updated and uninstalled without requiring IDE restart.
+
 [`com.intellij.openapi.application.TransactionGuard`](upsource:///platform/core-api/src/com/intellij/openapi/application/TransactionGuard.java) deprecated
 : Usage is deprecated and can be replaced with `com.intellij.openapi.application.Application.invokeLater()` in most cases, please consult Javadoc for more details.
 

@@ -5,7 +5,7 @@ title: Plugin Components
 > **WARNING** When writing new plugins, you should avoid creating components, and you should migrate existing components in your plugins to services, extensions or listeners (see below).
 
 Plugin components are a legacy feature supported for compatibility with plugins created for older versions of the
-IntelliJ Platform. Plugins using components do not support dynamic loading (the ability to install, update and
+IntelliJ Platform. Plugins using components do not support [dynamic loading](dynamic_plugins.md) (the ability to install, update and
 uninstall plugins without restarting the IDE). 
 
 Plugin components are defined using `<application-components>`, `<project-components>` and `<module-components>`

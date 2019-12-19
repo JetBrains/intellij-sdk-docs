@@ -166,43 +166,20 @@ Converting a DevKit-based plugin project to a Gradle-based plugin project can be
 
 
 ## Running a Simple Gradle-Based IntelliJ Platform Plugin
-Before running [`my_gradle_project`](#components-of-a-wizard-generated-gradle-intellij-platform-plugin), some code needs to be added to provide simple functionality.
-* Using the code below, add a `HelloAction.java` class to the `src/main/java/` folder.
-  For the sake of simplicity, no Java package is being used in this example. 
+Gradle projects are run from the IDE's Gradle Tool window.
 
-```java
-  import com.intellij.openapi.actionSystem.*;
-  import com.intellij.openapi.project.Project;
-  import com.intellij.openapi.ui.Messages;
-  
-  public class HelloAction extends AnAction {
-    public HelloAction() {
-      super("Hello");
-    }
-  
-    public void actionPerformed(AnActionEvent event) {
-      Project project = event.getProject();
-      Messages.showMessageDialog(project, "Hello world!", "Greeting", Messages.getInformationIcon());
-    }
-  }
-```
+### Adding Code to the Project
+Before running [`my_gradle_project`](#components-of-a-wizard-generated-gradle-intellij-platform-plugin), some code could be added to provide simple functionality.
+See the [Creating Actions](/tutorials/action_system/working_with_custom_actions.md) tutorial for step-by-step instructions for adding a menu action. 
 
-* Add the code below to the `<actions>` section of the `plugin.xml` file: 
-
-```xml
-  <group id="MyPlugin.SampleMenu" text="Greeting" description="Greeting menu">
-    <add-to-group group-id="MainMenu" anchor="last"/>
-    <action id="Myplugin.Textboxes" class="HelloAction" text="Hello" description="Says hello"/>
-  </group>
-```
- 
-* Open the Gradle tool window and search for the `runIde` task. 
-  If it’s not in the list, hit the [Refresh](https://www.jetbrains.com/help/idea/jetgradle-tool-window.html#1eeec055) button at the top of the Gradle window. 
-  Or [Create a new Gradle Run Configuration](https://www.jetbrains.com/help/idea/create-run-debug-configuration-gradle-tasks.html).
+### Executing the plugin 
+Open the Gradle tool window and search for the `runIde` task: 
+* If it’s not in the list, hit the [Refresh](https://www.jetbrains.com/help/idea/jetgradle-tool-window.html#1eeec055) button at the top of the Gradle window. 
+* Or [Create a new Gradle Run Configuration](https://www.jetbrains.com/help/idea/create-run-debug-configuration-gradle-tasks.html).
   
 ![Gradle Tool Window](img/gradle_tasks_in_tool_window.png){:width="398px"}
    
-* Double-click on the _runIde_ task to execute it.
-  See the IntelliJ IDEA help for more information about [Working with Gradle tasks](https://www.jetbrains.com/help/idea/gradle.html#96bba6c3).
+Double-click on the _runIde_ task to execute it.
+See the IntelliJ IDEA help for more information about [Working with Gradle tasks](https://www.jetbrains.com/help/idea/gradle.html#96bba6c3).
 
-Finally, when `my_gradle_plugin` launches in the IDE development instance, there should be a new **Greeting** main menu to the right of the **Help** menu. 
+Finally, when `my_gradle_plugin` launches in the IDE development instance, there should be a new menu under the **Tools** menu. 

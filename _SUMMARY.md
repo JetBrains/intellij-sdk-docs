@@ -24,7 +24,6 @@
     * [Using DevKit](basics/getting_started/using_dev_kit.md)
         * [Setting Up a Development Environment](basics/getting_started/setting_up_environment.md)
         * [Creating a Plugin Project](basics/getting_started/creating_plugin_project.md)
-        * [Creating an Action](basics/getting_started/creating_an_action.md)
         * [Running and Debugging a Plugin](basics/getting_started/running_and_debugging_a_plugin.md)
         * [Deploying a Plugin](basics/getting_started/deploying_plugin.md)
         * [Publishing a Plugin](basics/getting_started/publishing_plugin.md)

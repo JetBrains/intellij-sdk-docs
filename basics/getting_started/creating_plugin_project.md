@@ -1,5 +1,7 @@
 ---
 title: Creating a Plugin Project
+redirect_from:
+  - /basics/getting_started/creating_an_action.html
 ---
 
 > **NOTE** For new projects, it is recommend to use [Gradle](/tutorials/build_system.md).
@@ -32,3 +34,6 @@ For more information, refer to the [IntelliJ IDEA Web Help](https://www.jetbrain
 
    ![Set Plugin Module SDK](img/set_plugin_module_sdk.png)
 
+### Adding Code to the Project
+Before running the new project add some code to provide simple functionality.
+See the [Creating Actions](/tutorials/action_system/working_with_custom_actions.md) tutorial for step-by-step instructions for adding a menu action. 

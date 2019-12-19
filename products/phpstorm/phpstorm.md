@@ -23,9 +23,8 @@ The recommended best practice is to use PhpStorm for testing.
 
 > **Note** The OpenAPI is available for PhpStorm 6 and above.
 
-### Configuring build.gradle for PhpStorm Plugin Projects using Gradle
 Configuration of a Gradle-based PhpStorm plugin project is used as a tutorial in the section [Configuring Plugin Projects using the IntelliJ IDEA Product Attribute](/products/dev_alternate_products.md#configuring-plugin-projects-using-the-intellij-idea-product-attribute).
-Many important details are provided, such as choosing a version of IntelliJ IDEA Ultimate given a targeted version of PhpStorm.
+Many techniques are discussed, such as choosing a version of IntelliJ IDEA Ultimate given a targeted version of PhpStorm.
 The table below summarizes the `gradle-intellij-plugin` attributes to set in the `build.gradle` file for a PhpStorm plugin project:
 
 | `gradle-intellij-plugin` Attribute | <br>Attribute Value |
@@ -36,18 +35,6 @@ The table below summarizes the `gradle-intellij-plugin` attributes to set in the
 | [`runIde.ideaDirectory`](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md#running-dsl) | Path to locally installed target version of PhpStorm. For example, on macOS:<br>`/Users/<user name>/Library/Application Support/JetBrains/Toolbox/apps/PhpStorm/ch-0/193.5233.101/PhpStorm.app/Contents` |
 
 The version of the PHP plugin is explicitly declared because it isn't bundled with IntelliJ IDEA Ultimate Edition. 
-Select a [version](https://plugins.jetbrains.com/plugin/6610-php/versions) of the PHP plugin that is compatible with the IntelliJ Idea Ultimate version.
+Select a [version](https://plugins.jetbrains.com/plugin/6610-php/versions) of the PHP plugin that is compatible with the `intellij.version`.
 
-Add the [dependencies](#declaring-dependencies-in-pluginxml) to the plugin project's `plugin.xml` file
-
-### Configuring PhpStorm Plugin Projects using DevKit
-If you are using a DevKit workflow to develop plugins for PhpStorm, the recommended approach is to base the plugin project SDK on a local installation of PhpStorm. 
-An alternative approach is to base the plugin project SDK on a local installation of IntelliJ IDEA Ultimate with the PHP plugin.
-
-The [Plugin Dependencies](/basics/plugin_structure/plugin_dependencies.md) page describes adding dependencies to the DevKit development environments. 
-Follow the instructions to add the PHP OpenAPI classes to the classpath of your plugin.
-Add the `php-openapi.jar` and `php.jar` libraries to the classpath of your project's SDK. 
-These libraries are located in `<your_installation_of_PhpStorm>/plugins/php/lib` directory.
-
-### Declaring Dependencies in plugin.xml
-The dependency on the PHP plugin APIs must be declared in the `plugin.xml` file as shown in the tutorial [Configuring plugin.xml](/products/dev_alternate_products.md#configuring-pluginxml) section.
+The dependency on the PHP plugin APIs must be declared in the `plugin.xml` file, as shown in the tutorial [Configuring plugin.xml](/products/dev_alternate_products.md#configuring-pluginxml) section.

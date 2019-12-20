@@ -14,7 +14,7 @@ To declare a service, you can use the following extension points in the IntelliJ
 
 * `com.intellij.applicationService`: designed to declare an application level service.
 * `com.intellij.projectService`: designed to declare a project level service.
-* `com.intellij.moduleService`: designed to declare a module level service.
+* `com.intellij.moduleService`: designed to declare a module level service. Consider not using module services because it can lead to increased memory usage for a project with a lot of modules.
 
 **To declare a service:**
 
@@ -45,14 +45,21 @@ If `serviceInterface` isn't specified, it's supposed to have the same value as `
 
 ## Retrieving a service
 
+Getting service doesn't need read action and can be performed from any thread. If service requested from several threads, it will be initialized in the first thread and another threads will be blocked until service is not fully initialized. 
+
 To instantiate your service, in Java code, use the following syntax:
 
 ```java
 MyApplicationService applicationService = ServiceManager.getService(MyApplicationService.class);
 
-MyProjectService projectService = ServiceManager.getService(project, MyProjectService.class);
+MyProjectService projectService = project.getService(MyProjectService.class)
+```
 
-MyModuleService moduleService = ModuleServiceManager.getService(module, MyModuleService.class);
+In Kotlin code you can use convenient methods:
+```kotlin
+MyApplicationService applicationService = service<MyApplicationService>()
+
+MyProjectService projectService = project<service<MyProjectService>()
 ```
 
 ### Sample Plugin

@@ -8,6 +8,18 @@ The *IntelliJ Platform* ensures that only one instance of a service is loaded ev
 
 The *IntelliJ Platform* offers three types of services: _application level_ services, _project level_ services and _module level_ services.
 
+## Light Service
+
+Service that is not going to be overridden. No need to register it in a `plugin.xml`.
+
+To register: annotate class using [@Service](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/openapi/components/Service.java) annotation. If service is written in Java and not Kotlin, mark class as `final`.
+ 
+Restrictions:
+
+* constructor injection is not supported (since it is deprecated), but project level service can define constructor that accepts `Project`, and module level `Module`.
+* if service it is a [PersistentStateComponent](https://www.jetbrains.org/intellij/sdk/docs/basics/persisting_state_of_components.html), roaming must be disabled (`roamingType` is set to `RoamingType.DISABLED`).
+* service class must be `final`.
+
 ## How to Declare a Service?
 
 To declare a service, you can use the following extension points in the IntelliJ Platform:

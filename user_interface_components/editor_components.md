@@ -39,3 +39,22 @@ This can be accomplished with the following steps:
    [`EditorTextField`](upsource:///platform/platform-impl/src/com/intellij/ui/EditorTextField.java)
    constructor or its `setDocument()` method.
 
+E.g.:
+
+```java
+PsiFile psiFile = PsiDocumentManager.getInstance(editor.getProject()).getPsiFile(editor.getDocument());
+PsiElement element = psiFile.findElementAt(editor.getCaretModel().getOffset());
+
+PsiExpressionCodeFragment code = JavaCodeFragmentFactory.getInstance(editor.getProject()).createExpressionCodeFragment("", element, null, true);
+Document document = PsiDocumentManager.getInstance(editor.getProject()).getDocument(code);
+
+EditorTextField myInput = new EditorTextField(document, editor.getProject(), JavaFileType.INSTANCE);
+```
+
+**TIPS**: 
+
+* When creating more than one field you need two separate documents. This is accomplished by using separate instances of the `PsiExpressionCodeFragment`
+
+* `setText` no longer works for the input field. However, the `createExpressionCodeFragment` accepts the text fore the field as an argument. As such you can replace the empty string and create a new document in leau of `setText()`
+
+* You can replace instances of `JTextField` in the GUI builder with custom replace using the right click in your IDE. Make sure to use "Custom Create" so you can set the initialization code properly

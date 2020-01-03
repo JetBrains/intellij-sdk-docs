@@ -61,4 +61,8 @@
     </action>
   </actions>
 
+  <extensions defaultExtensionNs="com.intellij">
+    <typedHandler implementation="org.intellij.sdk.editor.MyTypedHandler"/>
+  </extensions>
+
 </idea-plugin>

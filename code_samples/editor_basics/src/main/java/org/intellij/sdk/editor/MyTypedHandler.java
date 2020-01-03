@@ -2,31 +2,30 @@
 
 package org.intellij.sdk.editor;
 
-import com.intellij.openapi.actionSystem.DataContext;
+import com.intellij.codeInsight.editorActions.TypedHandlerDelegate;
 import com.intellij.openapi.command.WriteCommandAction;
-import com.intellij.openapi.editor.*;
-import com.intellij.openapi.editor.actionSystem.TypedActionHandler;
+import com.intellij.openapi.editor.Document;
+import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.project.Project;
+import com.intellij.psi.PsiFile;
 import org.jetbrains.annotations.NotNull;
 
 /**
- * This is a custom TypedActionHandler that handles actions activated
+ * This is a custom TypedHandlerDelegate that handles actions activated
  * keystrokes in the editor.
  * The execute method inserts a fixed string at Offset 0 of the document.
  * Document changes are made in the context of a write action.
- * MyTypedHandler is registered by static code in the EditorHandlerIllustration class.
- *
- * @see com.intellij.openapi.editor.actionSystem.TypedActionHandler
  */
-class MyTypedHandler implements TypedActionHandler {
+class MyTypedHandler extends TypedHandlerDelegate {
+  @NotNull
   @Override
-  public void execute(@NotNull Editor editor, char c, @NotNull DataContext dataContext) {
+  public Result charTyped(char c, @NotNull Project project, @NotNull Editor editor, @NotNull PsiFile file) {
     // Get the document and project
     final Document document = editor.getDocument();
-    final Project project = editor.getProject();
     // Construct the runnable to substitute the string at offset 0 in the document
     Runnable runnable = () -> document.insertString(0, "editor_basics\n");
     // Make the document change in the context of a write action.
     WriteCommandAction.runWriteCommandAction(project, runnable);
+    return Result.STOP;
   }
 }

@@ -14,20 +14,6 @@ import org.jetbrains.annotations.NotNull;
  * @see com.intellij.openapi.actionSystem.AnAction
  */
 public class EditorHandlerIllustration extends AnAction {
-  
-  /**
-   * This block of static code does not pertain to this class.
-   * It registers the custom MyTypedHandler, a TypedActionHandler
-   * that handles actions activated by typing in the editor.
-   * This registration code just needs to appear in a class (like AnAction class)
-   * that gets instantiated as part of IntelliJ startup.
-   */
-  static {
-    final EditorActionManager actionManager = EditorActionManager.getInstance();
-    final TypedAction typedAction = actionManager.getTypedAction();
-    typedAction.setupHandler(new MyTypedHandler());
-  }
-  
   /**
    * Clones a new caret at a higher Logical Position line number.
    * @param e  Event related to this action

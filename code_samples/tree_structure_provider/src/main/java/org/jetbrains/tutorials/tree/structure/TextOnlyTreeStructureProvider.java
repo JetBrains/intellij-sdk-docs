@@ -33,7 +33,7 @@ public class TextOnlyTreeStructureProvider implements TreeStructureProvider {
 
   @Nullable
   @Override
-  public Object getData(Collection<AbstractTreeNode> collection, String s) {
+  public Object getData(@NotNull Collection<AbstractTreeNode> selected, @NotNull String dataId) {
     return null;
   }
 }

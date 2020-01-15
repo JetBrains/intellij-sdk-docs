@@ -18,7 +18,7 @@ In a product with 15+ years of lifetime that has gone through a large number of 
 Another consequence of our testing approach is what our test framework does not provide:
 
 * We do not provide a recommended approach to mocking. We have a few tests in our codebase that use JMock, but in general, we find it difficult to mock all of the interactions with *IntelliJ Platform* components that your plugin class will need to have, and we recommend working with real components instead.
-* We do not provide a general-purpose framework for Swing UI testing. You can try using tools such as [FEST](https://code.google.com/p/fest/) or [Sikuli](http://sikulix.com/) for plugin UI testing, but we don't use either of them and cannot provide any guidelines for their use. Internally, we use manual testing for testing our Swing UIs.
+* We do not provide a general-purpose framework for Swing UI testing. You can try using tools such as [FEST](https://code.google.com/p/fest/) or [Sikuli](http://sikulix.com/) for plugin UI testing, but we don't use either of them and cannot provide any guidelines for their use. Internally, we use manual testing for testing our Swing UIs. Please do not use _platform/testGuiFramework_, it is reserved for internal use.
 
 ## Topics
 * [Tests and Fixtures](tests_and_fixtures.md)

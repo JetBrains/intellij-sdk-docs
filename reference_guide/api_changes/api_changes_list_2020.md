@@ -66,6 +66,8 @@ Please see [Incompatible API Changes](/reference_guide/api_changes_list.md) on h
 
 ## Changes in IntelliJ Platform 2020.1
 
+Java code in the platform migrated to TYPE_USE nullability annotations. Due to some problems in Kotlin compiler an existing Kotlin code might become incompilable in rare cases if a platform method written in Java that returns an array and annotated as `@Nullable` or `@NotNull`, is used or overridden from the Kotlin code.
+
 `com.intellij.compiler.ant` package removed
 : 'Generate Ant build' functionality is removed from the IDE. Delete the code extending this or replace it with a dependency on the `generate-ant` plugin.
 

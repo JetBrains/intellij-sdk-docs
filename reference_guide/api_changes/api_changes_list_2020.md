@@ -69,6 +69,9 @@ Please see [Incompatible API Changes](/reference_guide/api_changes_list.md) on h
 `com.intellij.compiler.ant` package removed
 : 'Generate Ant build' functionality is removed from the IDE. Delete the code extending this or replace it with a dependency on the `generate-ant` plugin.
 
+`org.jetbrains.jps.incremental.ModuleLevelBuilder.getCompilableFileExtensions` marked abstract
+: Implement it in `ModuleLevelBuilder`'s implementation.
+
 `com.intellij.codeInsight.TargetElementUtilBase` class removed
 : Use `com.intellij.codeInsight.TargetElementUtil` instead.
 

@@ -112,5 +112,8 @@ Please see [Incompatible API Changes](/reference_guide/api_changes_list.md) on h
 `com.intellij.codeInspection.unused.ImplicitPropertyUsageProvider.isUsed` method `Property` parameter marked `@NotNull`
 : This may break source-compatibility with inheritors written in Kotlin if they declare parameter type as nullable.
 
+`com.intellij.lang.ReadOnlyASTNode` class removed
+: Use `com.intellij.testFramework.ReadOnlyLightVirtualFile`-based PSI instead.
+
 Java code migrated to use `TYPE_USE` nullability annotations
 : Due to some problems in Kotlin compiler existing Kotlin code might become incompilable in rare cases if a method written in Java returning an array and annotated as `@Nullable` or `@NotNull` is used or overridden.

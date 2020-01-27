@@ -15,3 +15,6 @@ Dynamic Plugins
 : Please see `RecursionManager.CachingPreventedException` Javadoc and [this issue](https://youtrack.jetbrains.com/issue/IDEA-228809) for details. 
 
 ## Notable Changes in IntelliJ IDEA
+
+EOL for JetBrains TFS Plugin
+: Please use [Azure DevOps](https://plugins.jetbrains.com/plugin/7981-azure-devops) plugin instead, see [blog post](https://blog.jetbrains.com/idea/2020/01/end-of-support-for-tfs-2014-and-older/) for more details.

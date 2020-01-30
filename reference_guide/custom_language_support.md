@@ -16,6 +16,8 @@ source code.
 If you prefer a full example to the detailed description offered on this page, please check out a step-by-step tutorial how to define custom language support on example of ".properties" files:
 [Custom Language Support Tutorial](/tutorials/custom_language_support_tutorial.md)
 
+The webinar [How We Built Comma, the Raku IDE, on the IntelliJ Platform](https://blog.jetbrains.com/platform/2020/01/webinar-recording-how-we-built-comma-the-raku-ide-on-the-intellij-platform/) offers an excellent introduction as well.
+
 Providing custom language support includes the following major steps:
 
 * [Registering File Type](/reference_guide/custom_language_support/registering_file_type.md)

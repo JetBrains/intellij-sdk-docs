@@ -50,8 +50,7 @@ To set up a new module environment
 class should be extended and registered as an extension point like the following snippet shows:
 
 ```xml
-<extensions>
-    <!--Place your extensions here-->
+<extensions defaultExtensionNs="com.intellij">
     <moduleBuilder builderClass="org.jetbrains.plugins.ruby.rails.facet.versions.MyModuleBuilder"/>
 </extensions>
 ```

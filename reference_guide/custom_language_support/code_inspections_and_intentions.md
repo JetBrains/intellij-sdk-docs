@@ -36,7 +36,6 @@ The intention classes need to implement the
 [`IntentionAction`](upsource:///platform/analysis-api/src/com/intellij/codeInsight/intention/IntentionAction.java)
 interface and to be registered using the `com.intellij.intentionAction` extension point in your *plugin.xml*.
 
-**Example:**
-A
-[simple intention action](upsource:///plugins/groovy/src/org/jetbrains/plugins/groovy/intentions/control/SplitIfIntention.java)
-for Groovy
+**Examples:**
+- A [simple intention action](upsource:///plugins/groovy/src/org/jetbrains/plugins/groovy/intentions/control/SplitIfIntention.java) for Groovy
+- [Custom Language Support Tutorial: Quick Fix](/tutorials/custom_language_support/quick_fix.md)

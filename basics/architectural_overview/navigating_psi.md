@@ -37,7 +37,7 @@ In many cases, you can also use more specific APIs for top-down navigation. For 
 all methods in a Java class, you can do that using a visitor, but a much easier way to do that is to call `PsiClass.getMethods()`.
 
 [`PsiTreeUtil`](upsource:///platform/core-api/src/com/intellij/psi/util/PsiTreeUtil.java) contains a number of
-general-purpose, language-independent functions for PSI tree navigation, some of which (for example, `findChildrenOfType`)
+general-purpose, language-independent functions for PSI tree navigation, some of which (for example, `findChildrenOfType()`)
 perform top-down navigation.
 
 ## Bottom-up navigation

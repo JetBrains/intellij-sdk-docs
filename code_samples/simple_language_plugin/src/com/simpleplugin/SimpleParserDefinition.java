@@ -27,16 +27,19 @@ public class SimpleParserDefinition implements ParserDefinition {
   }
 
   @NotNull
+  @Override
   public TokenSet getCommentTokens() {
     return COMMENTS;
   }
 
   @NotNull
+  @Override
   public TokenSet getStringLiteralElements() {
     return TokenSet.EMPTY;
   }
 
   @NotNull
+  @Override
   public PsiParser createParser(final Project project) {
     return new SimpleParser();
   }
@@ -46,15 +49,18 @@ public class SimpleParserDefinition implements ParserDefinition {
     return FILE;
   }
 
+  @Override
   public PsiFile createFile(FileViewProvider viewProvider) {
     return new SimpleFile(viewProvider);
   }
 
+  @Override
   public SpaceRequirements spaceExistenceTypeBetweenTokens(ASTNode left, ASTNode right) {
     return SpaceRequirements.MAY;
   }
 
   @NotNull
+  @Override
   public PsiElement createElement(ASTNode node) {
     return SimpleTypes.Factory.createElement(node);
   }

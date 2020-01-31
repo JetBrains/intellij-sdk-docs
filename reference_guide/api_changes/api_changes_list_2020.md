@@ -36,6 +36,7 @@ The following problem patterns are supported:
 <class name>.<field name> field type changed from <before> to <after>
 <class name>.<field name> field visibility changed from <before> to <after>
 
+<class name>.<method name>(<human-readable parameters>) marked abstract
 <class name>.<method name>(<human-readable parameters>) abstract method added
 <class name> class moved to package <package name>
 
@@ -68,6 +69,9 @@ Please see [Incompatible API Changes](/reference_guide/api_changes_list.md) on h
 
 `com.intellij.compiler.ant` package removed
 : 'Generate Ant build' functionality is removed from the IDE. Delete the code extending this or replace it with a dependency on the `generate-ant` plugin.
+
+`org.jetbrains.jps.incremental.ModuleLevelBuilder.getCompilableFileExtensions` marked abstract
+: Implement it in `ModuleLevelBuilder`'s implementation.
 
 `com.intellij.codeInsight.TargetElementUtilBase` class removed
 : Use `com.intellij.codeInsight.TargetElementUtil` instead.
@@ -107,3 +111,9 @@ Please see [Incompatible API Changes](/reference_guide/api_changes_list.md) on h
 
 `com.intellij.codeInspection.unused.ImplicitPropertyUsageProvider.isUsed` method `Property` parameter marked `@NotNull`
 : This may break source-compatibility with inheritors written in Kotlin if they declare parameter type as nullable.
+
+`com.intellij.lang.ReadOnlyASTNode` class removed
+: Use `com.intellij.testFramework.ReadOnlyLightVirtualFile`-based PSI instead.
+
+Java code migrated to use `TYPE_USE` nullability annotations
+: Due to some problems in Kotlin compiler existing Kotlin code might become incompilable in rare cases if a method written in Java returning an array and annotated as `@Nullable` or `@NotNull` is used or overridden.

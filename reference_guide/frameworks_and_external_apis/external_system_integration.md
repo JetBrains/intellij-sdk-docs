@@ -22,7 +22,7 @@ That means that we can separate external system-specific logic and general IDE p
 ## Project data domain
 
 **General**  
-External system wrapper is required to be able to build project info on the basis of the given external system config. That information is built using in terms of [`DataNode`](upsource:///platform/external-system-api/src/com/intellij/openapi/externalSystem/model/DataNode.java), [Key](upsource:///platform/external-system-api/src/com/intellij/openapi/externalSystem/model/Key.java) and [ExternalEntityData](upsource:///platform/external-system-api/src/com/intellij/openapi/externalSystem/model/project/ExternalEntityData.java).
+External system wrapper is required to be able to build project info on the basis of the given external system config. That information is built using in terms of [`DataNode`](upsource:///platform/external-system-api/src/com/intellij/openapi/externalSystem/model/DataNode.java), [`Key`](upsource:///platform/external-system-api/src/com/intellij/openapi/externalSystem/model/Key.java) and [`ExternalEntityData`](upsource:///platform/external-system-api/src/com/intellij/openapi/externalSystem/model/project/ExternalEntityData.java).
 
 ![DataNode](/reference_guide/img/data-node.png)
 
@@ -46,7 +46,7 @@ The good thing is that we can separate project parsing and management here. That
 
 ## Importing from external model
 
-IntelliJ platform provides standard API for that. Namely, [`ProjectImportBuilder`](upsource:///java/idea-ui/src/com/intellij/projectImport/ProjectImportBuilder.java) and [ProjectImportProvider](upsource:///java/idea-ui/src/com/intellij/projectImport/ProjectImportProvider.java). There are two classes built on *template method* pattern - [AbstractExternalProjectImportBuilder](upsource:///java/idea-ui/src/com/intellij/openapi/externalSystem/service/project/wizard/AbstractExternalProjectImportBuilder.java) and [AbstractExternalProjectImportProvider](upsource:///java/idea-ui/src/com/intellij/openapi/externalSystem/service/project/wizard/AbstractExternalProjectImportProvider.java). They might be sub-classes and that concrete implementations should be registered at IoC descriptor (plugin.xml).
+IntelliJ platform provides standard API for that. Namely, [`ProjectImportBuilder`](upsource:///java/idea-ui/src/com/intellij/projectImport/ProjectImportBuilder.java) and [`ProjectImportProvider`](upsource:///java/idea-ui/src/com/intellij/projectImport/ProjectImportProvider.java). There are two classes built on *template method* pattern - [`AbstractExternalProjectImportBuilder`](upsource:///java/idea-ui/src/com/intellij/openapi/externalSystem/service/project/wizard/AbstractExternalProjectImportBuilder.java) and [`AbstractExternalProjectImportProvider`](upsource:///java/idea-ui/src/com/intellij/openapi/externalSystem/service/project/wizard/AbstractExternalProjectImportProvider.java). They might be sub-classes and that concrete implementations should be registered at IoC descriptor (plugin.xml).
 
 Here is an example from the gradle integration plugin:
 
@@ -57,13 +57,27 @@ Note that [`AbstractExternalProjectImportBuilder`](upsource:///java/idea-ui/src/
 
 ## Auto-import
 
-It's possible to configure external system integration to automatically refresh project structure when external project's config file is modified. Basically, end-user should check corresponding box at external system settings for that:
+It's possible to configure external system integration to automatically refresh project structure when external project's config files are modified.
 
-![Auto-import](/reference_guide/img/use-auto-import.png)
+> **TIP** Since 2020.1, auto-import cannot be disabled by user.
 
-Built-in support covers only root config files of linked external projects. However, there is a possible situation that particular external project has more config files which affect resulting project structure as well (for example, it might be a multi-project where every sub-project has its own config file). That's why it's possible to enhance that processing by making target external system implementation (*ExternalSystemManager*) implement *ExternalSystemAutoImportAware*. That allows to provide custom logic for mapping file modification events to the target external project affected by that.
+### Auto-Import for `ExternalSystemManager` implementation
 
-**Note:** *ExternalSystemAutoImportAware.getAffectedExternalProjectPath()* is called quite often, that's why it's expected to return control as soon as possible. Helper *CachingExternalSystemAutoImportAware* class might be used for caching, i.e. *ExternalSystemManager* which implements *ExternalSystemAutoImportAware* can have a field like *'new CachingExternalSystemAutoImportAware(new MyExternalSystemAutoImportAware())'* and delegate *ExternalSystemAutoImportAware.getAffectedExternalProjectPath()* calls to it.
+Describe project's settings files to track by having external system `ExternalSystemManager` implement [`ExternalSystemAutoImportAware`](upsource:///platform/external-system-api/src/com/intellij/openapi/externalSystem/ExternalSystemAutoImportAware.java).
+
+> **NOTE** `ExternalSystemAutoImportAware.getAffectedExternalProjectPath()` is called quite often, that’s why it’s expected to return control as soon as possible. Helper `CachingExternalSystemAutoImportAware` class might be used for caching, i.e. `ExternalSystemManager` which implements `ExternalSystemAutoImportAware` can have a field like `new CachingExternalSystemAutoImportAware(new MyExternalSystemAutoImportAware())` and delegate `ExternalSystemAutoImportAware.getAffectedExternalProjectPath()` calls to it.
+
+### Auto-Import for standalone external systems
+
+Some external systems don’t have `ExternalSystemManager` (e.g., Maven), but they also can use auto-import core to track changes in settings files. For this, implement `ExternalSystemProjectAware` interface that describes settings files for tracking and an action to reload project model. 
+Then register the instance with `ExternalSystemProjectTracker` to start tracking. 
+
+> **NOTE** Multiple `ExternalSystemProjectAware` instances can correspond to a single external system. It allows performing project reload differently depending on the set of settings files (project aware per settings file, per module, per external project, etc.).
+
+
+### Icon for reload notification
+Since 2020.1, the icon for reload notification can be specified per external system. Implement `ExternalSystemIconProvider` and register via `com.intellij.externalIconProvider` extension point in `plugin.xml`. Alternatively, set `reloadIcon` field external system implements `ExternalSystemIconProvider` directly.
+
 
 # Settings
 

@@ -40,7 +40,7 @@ The core scenario of using
 consists of calling the `extend()` method and passing in the *pattern* specifying the context in which this completion variant is applicable, as well as a *completion provider* which generates the items to show in the completion list.
 
 Keep in mind that the pattern is checked against the leaf PSI element. If you
-want to match a composite element, use `withParent` or `withSuperParent`
+want to match a composite element, use `withParent()` or `withSuperParent()`
 methods.
 
 **Examples**:

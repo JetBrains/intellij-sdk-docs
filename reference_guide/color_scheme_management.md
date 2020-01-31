@@ -45,10 +45,10 @@ If the scheme designer doesn't have a language plug-in, he will not be able to f
 ## Providing Attributes for Specific Schemes
 
 A language plug-in may provide default text attributes for "Default" and "Darcula" bundled schemes or basically for any other scheme if the scheme's name is known.
-This can be done in `plugin.xml` by adding an extension with a name of the file containing desired text attributes, for example:
+This can be done in `plugin.xml` by adding an `com.intellij.additionalTextAttributes` extension providing the name of the file containing desired text attributes, for example:
 
 ```xml
-<extensions ...>
+<extensions defaultExtensionNs="com.intellij">
 ..
   <additionalTextAttributes scheme="Default" file="colorSchemes/MyLangDefault.xml"/>
 ..

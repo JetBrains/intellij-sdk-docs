@@ -42,9 +42,9 @@ See the following [code sample](https://github.com/JetBrains/intellij-sdk-docs/t
 
 ## Working with your own SDK
 
-To create your own SDK, provide a class extending [`SdkType`](upsource:///platform/lang-api/src/com/intellij/openapi/projectRoots/SdkType.java), leave `saveAdditionalData` blank, and register it in the `com.intellij.sdkType` extension point.
+To create your own SDK, provide a class extending [`SdkType`](upsource:///platform/lang-api/src/com/intellij/openapi/projectRoots/SdkType.java), leave `saveAdditionalData()` blank, and register it in the `com.intellij.sdkType` extension point.
 
-To make SDK settings persistent, override `setupSdkPaths` and save settings by `modificator.commitChanges()`:
+To make SDK settings persistent, override `setupSdkPaths()` and save settings by `modificator.commitChanges()`:
 
 ```java
 @Override

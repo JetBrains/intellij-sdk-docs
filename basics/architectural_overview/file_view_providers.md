@@ -4,7 +4,7 @@ title: File View Providers
 
 A file view provider ([`FileViewProvider`](upsource:///platform/core-api/src/com/intellij/psi/FileViewProvider.java)) manages access to multiple PSI trees within a single file.
 
-For example, a JSPX page has a separate PSI tree for the Java code in it (`PsiJavaFile`), a separate tree for the XML code (`XmlFile`), and a separate tree for JSP as a whole [`JspFile`](upsource:///java/jsp-openapi/src/com/intellij/psi/jsp/JspFile.java)).
+For example, a JSPX page has a separate PSI tree for the Java code in it (`PsiJavaFile`), a separate tree for the XML code (`XmlFile`), and a separate tree for JSP as a whole ([`JspFile`](upsource:///java/jsp-openapi/src/com/intellij/psi/jsp/JspFile.java)).
 
 Each of the PSI trees covers the entire contents of the file, and contains special "outer language elements" in the places where contents in a different language can be found.
 
@@ -29,7 +29,7 @@ Implement [`FileViewProviderFactory`](upsource:///platform/core-api/src/com/inte
 
 Register as follows in `plugin.xml`:
 ```xml
-<extensions>
+<extensions defaultExtensionNs="com.intellij">
   <fileType.fileViewProviderFactory filetype="%file_type%" implementationClass="com.plugin.MyFileViewProviderFactory" />
 </extensions>
 ```

@@ -50,7 +50,7 @@ mechanism to support plugins. There are several service interfaces (e.g. [`Build
 
 ### Registering a plugin for External Builder
 
-Sources of a plugin for External Builder should be put in a separate module. By convention such module has name '...-jps-plugin' and its sources are placed under 'jps-plugin' directory in the main plugin directory. Use `<compileServer.plugin>` extension to add the plugin to classpath of external build process, the plugin jar should be named `<jps module name>.jar`. 'Build' \| 'Prepare Plugin Module for deployment' action will automatically pack 'jps-plugin' part to a separate jar accordingly.
+Sources of a plugin for External Builder should be put in a separate module. By convention such module has name '...-jps-plugin' and its sources are placed under 'jps-plugin' directory in the main plugin directory. Use `com.intellij.compileServer.plugin` extension to add the plugin to classpath of external build process, the plugin jar should be named `<jps module name>.jar`. 'Build' \| 'Prepare Plugin Module for deployment' action will automatically pack 'jps-plugin' part to a separate jar accordingly.
 
 ### Debugging a plugin for External Builder
 
@@ -114,7 +114,7 @@ In IntelliJ Platform versions before version 14.1 log4j configuration was stored
 The project model in External Build process is provided by JPS (*JetBrains Project System*).
 A project is represented by [`JpsProject`](upsource:///jps/model-api/src/org/jetbrains/jps/model/JpsProject.java), a module by [`JpsModule`](upsource:///jps/model-api/src/org/jetbrains/jps/model/JpsProject.java) and so on.
 If your compiler depends on something that isn't added to the model yet (e.g. some facet settings),
-you need to extend the JPS model (use `JpsGwtModuleExtension` as a reference implementation) and provide implementation of
+you need to extend the JPS model (use `JpsOsmorcModuleExtension` as a reference implementation) and provide implementation of
 [`JpsModelSerializerExtension`](upsource:///jps/model-serialization/src/org/jetbrains/jps/model/serialization/JpsModelSerializerExtension.java) to load the configuration from project files.
 
 #### Implementing builder

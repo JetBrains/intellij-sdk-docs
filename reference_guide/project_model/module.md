@@ -78,7 +78,7 @@ String[] dependentModulesNames = moduleRootManager.getDependencyModuleNames();
 
 Use the `ModuleManager.getModuleDependentModules(module)` method.
 
-Note that you can also check whether a module (*module1*) depends on another specified module (*module2*) using the `ModuleManager.isModuleDependent` method in the following way:
+Note that you can also check whether a module (*module1*) depends on another specified module (*module2*) using the `ModuleManager.isModuleDependent()` method in the following way:
 
 ```java
 boolean isDependent = ModuleManager.getInstance(project).isModuleDependent(module1,module2);
@@ -111,7 +111,7 @@ VirtualFile[] contentRoots = ModuleRootManager.getInstance(module).getContentRoo
 
 ### Checking belonging to a module source root
 
-To check if a virtual file or directory belongs to a module source root, use the `ProjectFileIndex.getSourceRootForFile` method. This method returns `null` if the file or directory does not belong to any source root of modules in the project.
+To check if a virtual file or directory belongs to a module source root, use the `ProjectFileIndex.getSourceRootForFile()` method. This method returns `null` if the file or directory does not belong to any source root of modules in the project.
 
 ```java
 VirtualFile moduleSourceRoot = ProjectRootManager.getInstance(project).getFileIndex().getSourceRootForFile(virtualFileOrDirectory);

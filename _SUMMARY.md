@@ -234,7 +234,7 @@
 * [Android Studio](products/android_studio.md)
 * AppCode
 * [CLion](products/clion.md)
-* DataGrip
+* [DataGrip](products/data_grip.md)
 * [GoLand](products/goland.md)
 * [IntelliJ IDEA](products/idea.md)
     * [Tomcat Integration](reference_guide/tomcat_integration.md)

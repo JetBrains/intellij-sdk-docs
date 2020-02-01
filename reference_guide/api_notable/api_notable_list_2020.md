@@ -2,6 +2,8 @@
 title: Notable Changes in IntelliJ Platform and Plugins API 2020.*
 ---
 
+We've published our roadmap for the IntelliJ Platform for 2020: [Part I](https://blog.jetbrains.com/idea/2019/12/intellij-platform-roadmap-for-2020/) [Part II](https://blog.jetbrains.com/idea/2020/01/intellij-based-ide-features-roadmap-for-2020/)
+
 # 2020.1 
 
 ## Notable Changes in IntelliJ Platform 2020.1

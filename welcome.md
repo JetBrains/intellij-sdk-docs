@@ -22,6 +22,8 @@ See [Recently Updated](recently_updated.md) for latest changes. Follow [JBPlatfo
 
 Upgrading your plugin to the latest platform release? Make sure to check [Incompatible Changes](reference_guide/api_changes_list.md) as well as [Notable Changes and Features](reference_guide/api_notable/api_notable.md). 
 
+We've published our roadmap for the IntelliJ Platform for 2020: [Part I](https://blog.jetbrains.com/idea/2019/12/intellij-platform-roadmap-for-2020/) [Part II](https://blog.jetbrains.com/idea/2020/01/intellij-based-ide-features-roadmap-for-2020/)
+
 > **NOTE** If your plugin depends on Java functionality and targets 2019.2 or later, please make sure to follow the steps from this [blog post](https://blog.jetbrains.com/platform/2019/06/java-functionality-extracted-as-a-plugin/).
 
 ## Open Source

@@ -12,7 +12,7 @@ import java.util.*;
 
 public class SimpleUtil {
   public static List<SimpleProperty> findProperties(Project project, String key) {
-    List<SimpleProperty> result = null;
+    List<SimpleProperty> result = new ArrayList<>();
     Collection<VirtualFile> virtualFiles =
             FileTypeIndex.getFiles(SimpleFileType.INSTANCE, GlobalSearchScope.allScope(project));
     for (VirtualFile virtualFile : virtualFiles) {
@@ -22,9 +22,6 @@ public class SimpleUtil {
         if (properties != null) {
           for (SimpleProperty property : properties) {
             if (key.equals(property.getKey())) {
-              if (result == null) {
-                result = new ArrayList<SimpleProperty>();
-              }
               result.add(property);
             }
           }

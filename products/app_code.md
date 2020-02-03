@@ -3,7 +3,7 @@ title: AppCode Plugin Development
 ---
 
 ## Introduction
-Plugin projects targeting AppCode can be developed using IntelliJ IDEA with the `gradle-intellij-plugin`.
+Plugin projects targeting [AppCode](https://www.jetbrains.com/objc/) can be developed using IntelliJ IDEA with the `gradle-intellij-plugin`.
 
 ## Configuring Plugin Projects Targeting AppCode
 The Gradle configuration of AppCode plugin projects uses neither Product-Specific nor IntelliJ IDEA Attributes.

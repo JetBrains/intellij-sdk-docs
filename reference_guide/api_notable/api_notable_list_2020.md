@@ -16,6 +16,9 @@ Dynamic Plugins
 `RecursionManager.assertOnMissedCache()` enabled by default in tests
 : Please see `RecursionManager.CachingPreventedException` Javadoc and [this issue](https://youtrack.jetbrains.com/issue/IDEA-228809) for details. 
 
+`ResolveCache` using `IdempotenceChecker` in tests
+: Reports when the same reference resolves to non-equivalent results in different threads, see [`IdempotenceChecker`](upsource:///platform/core-impl/src/com/intellij/util/IdempotenceChecker.java).
+
 ## Notable Changes in IntelliJ IDEA
 
 EOL for JetBrains TFS Plugin

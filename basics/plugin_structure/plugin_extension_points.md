@@ -105,7 +105,7 @@ A gutter icon for the `ExtensionPointName` declaration allows navigating to the 
 To support [Dynamic Plugins](dynamic_plugins.md) (2020.1 and later), an extension point must adhere to specific usage rules:
 
 - extensions are enumerated on every use and extensions instances are not stored anywhere
-- alternatively, an `ExtensionPointChangeListener` can perform necessary updates of data structures (register via `ExtensionPointName#addExtensionPointListener()`)
+- alternatively, an `ExtensionPointChangeListener` can perform necessary updates of data structures (register via `ExtensionPointName.addExtensionPointListener()`)
 
 Extension points matching these conditions can then be marked as _dynamic_ by adding `dynamic="true"` in their declaration:
 ```xml

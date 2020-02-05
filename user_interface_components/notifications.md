@@ -42,7 +42,7 @@ If the current Project is known, please use overload with `Project` parameter, s
 
 The text of the notification can include HTML tags.
 
-Use `Notification#addAction(AnAction)` to add links below the content, use [`NotificationAction`](upsource:///platform/platform-api/src/com/intellij/notification/NotificationAction.java) for convenience. 
+Use `Notification.addAction(AnAction)` to add links below the content, use [`NotificationAction`](upsource:///platform/platform-api/src/com/intellij/notification/NotificationAction.java) for convenience. 
 
 The `groupDisplayId` parameter of the
 [`Notification`](upsource:///platform/platform-api/src/com/intellij/notification/Notification.java)

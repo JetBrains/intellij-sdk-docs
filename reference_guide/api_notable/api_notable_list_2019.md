@@ -42,7 +42,7 @@ Create HTML representation of code
 : Use `com.intellij.openapi.editor.richcopy.HtmlSyntaxInfoUtil` to create Lexer-based highlighted code samples, e.g. for usage in documentation. 
 
 View \| Appearance \| Description in Tree Views
-: Toggles showing additional details in UI (e.g. modification timestamp in Project View) see `UISettings#getShowInplaceComments`.
+: Toggles showing additional details in UI (e.g. modification timestamp in Project View) see `UISettings.getShowInplaceComments()`.
 
 New API for Editor Inlay Hints
 : Allows a variety of presentations (incl. custom painting), mouse event handling and exposing settings in _Editor \| Inlay Hints_. See `com.intellij.codeInsight.hints.InlayHintsProvider`.

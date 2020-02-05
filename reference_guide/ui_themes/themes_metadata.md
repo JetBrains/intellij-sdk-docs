@@ -68,7 +68,7 @@ The following minimal sample demonstrates all details required when exposing UI 
 
 > **TIP** Do not remove existing keys, but deprecate them instead to help Theme authors upgrade their existing themes.
 
-Color keys can be used via `JBColor#namedColor` providing defaults for Light and Dark theme:
+Color keys can be used via `JBColor.namedColor()` providing defaults for Light and Dark theme:
 ```java
   private static final Color SECTION_HEADER_FOREGROUND =
     JBColor.namedColor("Plugins.SectionHeader.foreground", new JBColor(0x787878, 0x999999));

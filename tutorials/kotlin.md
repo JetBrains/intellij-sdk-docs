@@ -108,8 +108,8 @@ to [Plugin Dependencies](/basics/plugin_structure/plugin_dependencies.md) for in
 
 There are a number of [open source Kotlin projects](https://github.com/search?l=Kotlin&q=+intellij&ref=searchresults&type=Repositories) built on the IntelliJ Platform. For a readily available source of up to date examples and applications of the Kotlin language for building developer tools with the IntelliJ Platform, developers may look to these projects for inspiration:
 
-* [intellij-rust](https://github.com/intellij-rust/intellij-rust)
-* [haskell-idea-plugin](https://github.com/atsky/haskell-idea-plugin)
-* [intellij-markdown](https://github.com/valich/intellij-markdown)
 * [IntelliJ-presentation-assistant](https://github.com/chashnikov/IntelliJ-presentation-assistant)
-* [leanpub-plugin](https://github.com/hhariri/leanpub-plugin)
+* [Rust](https://github.com/intellij-rust/intellij-rust)
+* [HashiCorp Terraform / HCL language support](https://github.com/VladRassokhin/intellij-hcl)
+* [TeXiFy IDEA](https://github.com/Hannah-Sten/TeXiFy-IDEA)
+* [Makefile support](https://github.com/kropp/intellij-makefile)

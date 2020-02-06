@@ -1,4 +1,4 @@
-package com.simpleplugin;
+package com.intellij.sdk.language;
 
 import com.intellij.application.options.CodeStyle;
 import com.intellij.codeInsight.completion.CompletionType;
@@ -9,21 +9,22 @@ import com.intellij.psi.codeStyle.CodeStyleManager;
 import com.intellij.testFramework.fixtures.LightJavaCodeInsightFixtureTestCase;
 import com.intellij.usageView.UsageInfo;
 import com.intellij.util.containers.ContainerUtil;
-import com.simpleplugin.psi.SimpleProperty;
+import com.intellij.sdk.language.psi.SimpleProperty;
 
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 
 public class SimpleCodeInsightTest extends LightJavaCodeInsightFixtureTestCase {
-  @Override
-  protected void setUp() throws Exception {
-    super.setUp();
-  }
 
-  // path to test data file directory relative to working directory in the run configuration for this test.
+  /**
+   *
+   * @return path to test data file directory relative to working directory in the run configuration for this test.
+   */
   @Override
-  protected String getTestDataPath() { return "testData"; }
+  protected String getTestDataPath() {
+    return "src/test/testData";
+  }
 
   public void testCompletion() {
     myFixture.configureByFiles("CompleteTestData.java", "DefaultTestData.simple");

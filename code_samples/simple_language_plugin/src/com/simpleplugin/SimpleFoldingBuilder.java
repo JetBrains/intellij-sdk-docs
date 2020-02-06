@@ -3,6 +3,7 @@ package com.simpleplugin;
 import com.intellij.lang.ASTNode;
 import com.intellij.lang.folding.*;
 import com.intellij.openapi.editor.*;
+import com.intellij.openapi.project.DumbAware;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.TextRange;
 import com.intellij.psi.*;
@@ -12,7 +13,7 @@ import org.jetbrains.annotations.*;
 
 import java.util.*;
 
-public class SimpleFoldingBuilder extends FoldingBuilderEx {
+public class SimpleFoldingBuilder extends FoldingBuilderEx implements DumbAware {
   @NotNull
   @Override
   public FoldingDescriptor[] buildFoldRegions(@NotNull PsiElement root, @NotNull Document document, boolean quick) {
@@ -52,7 +53,18 @@ public class SimpleFoldingBuilder extends FoldingBuilderEx {
   @Nullable
   @Override
   public String getPlaceholderText(@NotNull ASTNode node) {
-    return "...";
+    String retTxt = "...";
+    if ( node.getPsi() instanceof PsiLiteralExpression ) {
+      PsiLiteralExpression nodeElement = (PsiLiteralExpression) node.getPsi();
+      String key = ((String) nodeElement.getValue()).substring("simple:".length());
+      final List< SimpleProperty > properties = SimpleUtil.findProperties(nodeElement.getProject(), key);
+      String place = properties.get(0).getValue();
+      // IMPORTANT: keys can come with no values, so a test for null is needed
+      // IMPORTANT: Convert embedded \n to backslash n, so that the string will look
+      // like it has LF embedded in it and embedded " to escaped "
+      return place == null ? retTxt : place.replaceAll("\n", "\\n").replaceAll("\"", "\\\\\"");
+    }
+    return retTxt;
   }
 
   @Override

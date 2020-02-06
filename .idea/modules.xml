@@ -15,10 +15,8 @@
       <module fileurl="file://$PROJECT_DIR$/code_samples/psi_demo/psi_demo.iml" filepath="$PROJECT_DIR$/code_samples/psi_demo/psi_demo.iml" group="code_samples" />
       <module fileurl="file://$PROJECT_DIR$/code_samples/register_actions/register_actions.iml" filepath="$PROJECT_DIR$/code_samples/register_actions/register_actions.iml" group="code_samples" />
       <module fileurl="file://$PROJECT_DIR$/code_samples/run_configuration/run_configuration.iml" filepath="$PROJECT_DIR$/code_samples/run_configuration/run_configuration.iml" group="code_samples" />
-      <module fileurl="file://$PROJECT_DIR$/code_samples/simple_language_plugin/simple_language_plugin.iml" filepath="$PROJECT_DIR$/code_samples/simple_language_plugin/simple_language_plugin.iml" group="code_samples" />
       <module fileurl="file://$PROJECT_DIR$/code_samples/theme_basics/theme_basics.iml" filepath="$PROJECT_DIR$/code_samples/theme_basics/theme_basics.iml" group="code_samples" />
       <module fileurl="file://$PROJECT_DIR$/code_samples/tool_window/tool_window.iml" filepath="$PROJECT_DIR$/code_samples/tool_window/tool_window.iml" group="code_samples" />
-      <module fileurl="file://$PROJECT_DIR$/code_samples/tree_structure_provider/tree_structure_provider.iml" filepath="$PROJECT_DIR$/code_samples/tree_structure_provider/tree_structure_provider.iml" group="code_samples" />
     </modules>
   </component>
 </project>

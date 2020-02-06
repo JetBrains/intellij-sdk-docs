@@ -7,7 +7,7 @@ redirect_from:
 ---
 
 ## Introduction
-PhpStorm is an IntelliJ Platform-based product. 
+[PhpStorm](https://www.jetbrains.com/phpstorm/) is an IntelliJ Platform-based product. 
 Plugins for PhpStorm are developed in Java using the Ultimate edition of IntelliJ IDEA. 
 The [PsiViewer plugin](https://plugins.jetbrains.com/plugin/227-psiviewer) is also recommended.
 

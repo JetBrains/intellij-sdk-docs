@@ -232,7 +232,7 @@
 * [Developing for Multiple Products](products/dev_alternate_products.md)
 * [Compatibility with Multiple Products](basics/getting_started/plugin_compatibility.md)
 * [Android Studio](products/android_studio.md)
-* AppCode
+* [AppCode](products/app_code.md)
 * [CLion](products/clion.md)
 * [DataGrip](products/data_grip.md)
 * [GoLand](products/goland.md)

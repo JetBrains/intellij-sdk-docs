@@ -3,7 +3,7 @@ title: Android Studio Plugin Development
 ---
 
 ## Introduction 
-Android Studio plugins extend or add functionality to the Android Studio IDE.
+Android Studio plugins extend or add functionality to the [Android Studio IDE](https://developer.android.com/studio).
 Plugins can be written in Kotlin or Java, or a mix of both, and are created using IntelliJ IDEA and the [IntelliJ Platform](/intro/intellij_platform.md).
 It's also helpful to be familiar with [Java Swing](https://docs.oracle.com/javase/8/javase-clienttechnologies.htm).
 Once completed, plugins can be packaged and distributed at [plugins.jetbrains.com](https://plugins.jetbrains.com).

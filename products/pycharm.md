@@ -3,7 +3,7 @@ title: PyCharm Plugin Development
 ---
 
 ## Introduction
-PyCharm is an IntelliJ Platform-based product.
+[PyCharm](https://www.jetbrains.com/pycharm/) is an IntelliJ Platform-based product.
 Plugin projects for PyCharm can be developed using IntelliJ IDEA with the `gradle-intellij-plugin`.
 
 ## Configuring Plugin Projects Targeting PyCharm

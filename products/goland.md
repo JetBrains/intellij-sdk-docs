@@ -3,7 +3,7 @@ title: GoLand Plugin Development
 ---
 
 ## Introduction
-GoLand is an IntelliJ Platform-based product.
+[GoLand](https://www.jetbrains.com/go/) is an IntelliJ Platform-based product.
 Plugin projects for GoLand can be developed using IntelliJ IDEA with the `gradle-intellij-plugin`.
 
 ## Configuring Plugin Projects Targeting GoLand

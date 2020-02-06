@@ -3,7 +3,7 @@ title: WebStorm Plugin Development
 ---
 
 ## Introduction
-WebStorm is an IntelliJ Platform-based product.
+[WebStorm](https://www.jetbrains.com/webstorm/) is an IntelliJ Platform-based product.
 Plugin projects for WebStorm can be developed using IntelliJ IDEA with the `gradle-intellij-plugin`.
 
 ## Configuring Plugin Projects Targeting WebStorm

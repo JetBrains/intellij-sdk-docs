@@ -3,7 +3,7 @@ title: DataGrip Plugin Development
 ---
 
 ## Introduction
-DataGrip is an IntelliJ Platform-based product.
+[DataGrip](https://www.jetbrains.com/datagrip/) is an IntelliJ Platform-based product.
 Plugin projects targeting DataGrip can be developed using IntelliJ IDEA with the `gradle-intellij-plugin`.
 
 ## Configuring Plugin Projects Targeting DataGrip

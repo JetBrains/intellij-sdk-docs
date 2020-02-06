@@ -3,7 +3,7 @@ title: RubyMine Plugin Development
 ---
 
 ## Introduction
-RubyMine is an IntelliJ Platform-based product.
+[RubyMine](https://www.jetbrains.com/ruby/) is an IntelliJ Platform-based product.
 Plugin projects for RubyMine can be developed using IntelliJ IDEA with the `gradle-intellij-plugin`.
 
 ## Configuring Plugin Projects Targeting RubyMine

@@ -1,3 +1,5 @@
+// Copyright 2000-2020 JetBrains s.r.o. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
+
 package org.intellij.sdk.codeInspection;
 
 import com.intellij.codeInspection.*;
@@ -18,8 +20,8 @@ import java.util.StringTokenizer;
 import static com.siyeh.ig.psiutils.ExpressionUtils.isNullLiteral;
 
 /**
- * @author max
- * @author jhake
+ * Implements an inspection to detect when object references are compared using 'a==b' or 'a!=b'
+ * The quick fix converts these comparisons to 'a.equals(b) or '!a.equals(b)' respectively.
  */
 public class ComparingReferencesInspection extends AbstractBaseJavaLocalInspectionTool {
   private static final Logger LOG = Logger.getInstance("#com.intellij.codeInspection.ComparingReferencesInspection");
@@ -46,7 +48,7 @@ public class ComparingReferencesInspection extends AbstractBaseJavaLocalInspecti
     JPanel panel = new JPanel(new FlowLayout(FlowLayout.LEFT));
     final JTextField checkedClasses = new JTextField(CHECKED_CLASSES);
     checkedClasses.getDocument().addDocumentListener(new DocumentAdapter() {
-      public void textChanged(DocumentEvent event) {
+      public void textChanged(@NotNull DocumentEvent event) {
         CHECKED_CLASSES = checkedClasses.getText();
       }
     });

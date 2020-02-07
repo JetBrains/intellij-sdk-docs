@@ -16,7 +16,6 @@
       <module fileurl="file://$PROJECT_DIR$/code_samples/simple_language_plugin/simple_language_plugin.iml" filepath="$PROJECT_DIR$/code_samples/simple_language_plugin/simple_language_plugin.iml" group="code_samples" />
       <module fileurl="file://$PROJECT_DIR$/code_samples/theme_basics/theme_basics.iml" filepath="$PROJECT_DIR$/code_samples/theme_basics/theme_basics.iml" group="code_samples" />
       <module fileurl="file://$PROJECT_DIR$/code_samples/tool_window/tool_window.iml" filepath="$PROJECT_DIR$/code_samples/tool_window/tool_window.iml" group="code_samples" />
-      <module fileurl="file://$PROJECT_DIR$/code_samples/tree_structure_provider/tree_structure_provider.iml" filepath="$PROJECT_DIR$/code_samples/tree_structure_provider/tree_structure_provider.iml" group="code_samples" />
     </modules>
   </component>
 </project>

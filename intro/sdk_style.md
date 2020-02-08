@@ -102,38 +102,61 @@ See the [Jekyll site](https://jekyllrb.com/docs/liquid/) for more details.
 Consistent text styles are used to standardize references and keywords:
 * Menu paths are formatted as bold with pipe characters separating each level: \*\*Preferences \\\| Editor\*\* (**Preferences \| Editor**)
 * Keywords and quotations are formatted as italic: \_UI Theme\_ (_UI Theme_)
-* File names and paths, in-paragraph code fragments, and language keywords are formatted as code: \`interface\` (`interface`), 
+* File names and paths, and language keywords are formatted as code: \`interface\` (`interface`)
+  See [Syntax Highlighting](#syntax-highlighting) for more details about representing in-paragraph code fragments.
 * File formats are shown as all capital letters: PNG and XML.
 * File name extensions are not capitalized when part of a full file name, path, or URL: `filename.ext`.
+* Represent keyboard shortcuts with HTML elements: `press <kbd>Alt</kbd>+<kbd>Insert</kbd>` becomes "press <kbd>Alt</kbd>+<kbd>Insert</kbd>"
 * [Links](#links) have a particular format depending on the type of link.
 
+### Terminology
 Consistent terminology helps the reader grasp new concepts more quickly:
 * The open source code in the GitHub repository `intellij-community` is known as the _IntelliJ Platform_.
   Use the full phrase in SDK documentation.
 * IDEs based on the IntelliJ Platform are described as _IntelliJ Platform-based IDEs_.
-  Once that term is used on a page, after that authors may use IDEs 
-* When referring to JetBrains products always use the full name such as _IntelliJ IDEA_.
+  Once that term is used on a page, authors may use _IDEs_ 
+* When referring to JetBrains products always use the full name such as _IntelliJ IDEA Ultimate Edition_.
+  However, only use product names when extensibility or functionality is particular to a product.
 
-### Syntax highlighting
-Source code can be represented by using [GitHub Flavoured Markdown](https://help.github.com/articles/github-flavored-markdown/) code fences, which are three backticks:
+### Syntax Highlighting
+In-paragraph code fragments and IntelliJ Platform APIs are formatted according to these rules:
+* Avoid using qualifiers like "`foo` interface" or "`foo` abstract class."
+  Just refer to `foo`.
+* Use the FQN when first introducing an extension point on a page.
+  Rather than `stubIndex`, introduce `com.intellij.stubindex`.
+  Subsequent mentions on the page can be `stubIndex`.
+  Exception: the FQN is not used when an extension point is introduced in an upsource [link](#links).
+* Method names always use empty parentheses: `bar()`. 
+  Method names are prefixed with the class/interface name when needed for clarity: `foo.bar()`.
 
-    ```
-    // Source code goes here...
-    ```
+Source code can be represented by using [GitHub Flavoured Markdown](https://help.github.com/articles/github-flavored-markdown/) code fences, which are three backticks:  
 
-Syntax highlighting can be applied by specifying the language after the first set of ticks:
+        ```
+            // Source code goes here...
+        ```
 
-    ```csharp
-    // Some C# code
-    ```
+Syntax highlighting can be applied by specifying the language after the first set of ticks:  
 
-    ```java
-    // Some Java code
-    ```
+        ```csharp
+            // Some C# code
+        ```
 
-Here is the list of [supported languages](https://github.com/jneen/rouge/wiki/List-of-supported-languages-and-lexers), and also [Kotlin](https://kotlinlang.org), of course.
+        ```java
+            // Some Java code
+        ```  
 
-Please keep code samples concise and avoid any unnecessary "surrounding" code or import statements. 
+Here is the list of [supported languages](https://github.com/jneen/rouge/wiki/List-of-supported-languages-and-lexers), and also [Kotlin](https://kotlinlang.org), of course. 
+
+Whole files can be imported on a page.
+The advantage is the code can come from code_samples, so it will be live code that isn't silently stale.
+The disadvantage is the file may contain a large class, too large for the documentation page to be effective.  
+
+        ```java 
+            // include statement 
+        ``` 
+ 
+In any case, please keep code samples concise and avoid any unnecessary "surrounding" code or import statements. 
+
 
 <!-- //TODO: Not currently supported by rouge, or by the site's CSS
 
@@ -166,7 +189,10 @@ Links to files in the IntelliJ Platform (`intellij-community`) repository use `u
 The `upsource:///` URI effectively points to the root of the `intellij-community` repository.
 * `[README.md](upsource:///README.md)` for links to general files in the repository.
 * `[`\`AnAction\``](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java)` for links to source code files for interfaces and classes.
-  Note the use of \`\` characters surrounding the class name in the link.
+  * Note the use of \`\` characters surrounding the class name in the link. 
+  * When linking to an API in this manner the FQN isn't necessary in the link.
+  * Be judicious when using such links.
+    Generally only one link is needed for a given file on a documentation page.
 
 General links have one of the following formats:
 * `[External site](https://example.org)` links to an external site.

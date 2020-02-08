@@ -75,16 +75,18 @@ code_samples/
     src/
       main/
         java/
+          org.intellij.sdk.foo/
           icons/
-            FooBasicsIcons.java
+            SdkIcons.java     # The standard SDK icon class
         resources/
           icons/
-            sdk.svg           # The standard SDK icon for menus, etc.
+            sdk_16.svg        # The standard SDK icon for menus, etc.
           META-INF/
             plugin.xml        # The plugin configuration file
             pluginIcon.svg    # The standard SDK plugin icon
       test/                   # Omit if there are no tests
         java/
+          org.intellij.sdk.foo/
         resources/
     build.gradle
     gradlew
@@ -104,21 +106,17 @@ Comments in SDK code sample `build.gradle` files should only draw attention to t
 For SDK code samples, a few alterations are needed to the default build.gradle file produced by the plugin wizard:
 * Maintain the Gradle properties `version` (`project.version`) and `group` (`project.group`).
   See the [Plugin Gradle Properties](/tutorials/build_system/prerequisites.md#plugin-gradle-properties-and-plugin-configuration-file-elements) section for how these Gradle properties relate to the elements in `plugin.xml`.
-* Add the following statements to the [Setup DSL](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md#setup-dsl) (`intellij{}`) section:
+* Add the following statement to the [Setup DSL](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md#setup-dsl) (`intellij{}`) section:
   ```groovy
       // Prevents patching <idea-version> attributes in plugin.xml
       updateSinceUntilBuild = false 
-      // Define a shared sandbox directory for running code sample plugins within an IDE.
-      sandboxDirectory = file("${project.projectDir}/../_idea-sandbox")
   ``` 
-* Remove the [Patching DSL](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md#patching-dsl) (`patchPluginXml{}`) section.
-  It is not needed in SDK samples.
-* Add the `javadoc` task to build documentation for the code sample:
+* Add the following statement to the [Patching DSL](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md#patching-dsl) (`patchPluginXml{}`) section:
   ```groovy
-    // Force javadoc rebuild before jar is built
-    jar.dependsOn javadoc
-  ```
-
+      // Patches <version> value in plugin.xml
+      version = project.version
+  ```   
+  
 ## plugin.xml Conventions
 A consistent structure for the [`plugin.xml`](/basics/plugin_structure/plugin_configuration_file.md) configuration file of an SDK code sample is important because we want to draw attention to the unique parts of the file for a plugin.
 Inconsistent element order is visually noisy.
@@ -135,7 +133,7 @@ The sequence of elements in an SDK code sample `plugin.xml` file is:
   * FIX corresponds to changes that fix problems without significant refactoring.
 * `<idea-version>` Set the attributes:
   * `since-build` attribute to the earliest compatible build number of the IntelliJ Platform.
-    The default for SDK samples is "173".
+    The default for SDK samples is "193".
   * `until-build` Omit this attribute for new sample plugins.
     SDK code samples are reviewed before every major release (20XX.1) to ensure compatibility with the latest IntelliJ Platform.
     Add this attribute if a plugin sample is deprecated with a release of the IntelliJ Platform.

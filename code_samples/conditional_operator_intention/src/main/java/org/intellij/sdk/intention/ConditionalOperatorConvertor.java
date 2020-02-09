@@ -3,6 +3,8 @@
 
 package org.intellij.sdk.intention;
 
+import com.intellij.codeInsight.intention.IntentionAction;
+import com.intellij.codeInsight.intention.PsiElementBaseIntentionAction;
 import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.project.Project;
 import com.intellij.psi.*;
@@ -34,7 +36,7 @@ public class ConditionalOperatorConvertor extends PsiElementBaseIntentionAction 
    * "auto-show" state of intentions.
    * It is also the directory name for the descriptions.
    *
-   * @see     com.intellij.codeInsight.intention.IntentionManager#registerIntentionAndMetaData(IntentionAction, String...)
+   * @see     com.intellij.codeInsight.intention.IntentionManager#registerIntentionAndMetaData
    * @return  the intention family name.
    */
   @NotNull

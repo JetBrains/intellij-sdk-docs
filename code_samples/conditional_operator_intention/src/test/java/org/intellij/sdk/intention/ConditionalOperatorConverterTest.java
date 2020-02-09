@@ -1,6 +1,6 @@
 // Copyright 2000-2019 JetBrains s.r.o. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
 
-package testPlugin;
+package org.intellij.sdk.intention;
 
 import com.intellij.codeInsight.intention.IntentionAction;
 import com.intellij.openapi.application.PathManager;
@@ -18,9 +18,9 @@ import org.junit.*;
  * This test requires Editor > Code Style set to Default IDE
  */
 
-public class YourTest extends UsefulTestCase {
+public class ConditionalOperatorConverterTest extends UsefulTestCase {
   protected CodeInsightTestFixture myFixture;
-  final String dataPath = PathManager.getResourceRoot(YourTest.class, "/testPlugin/YourTest.class");
+  final String dataPath = PathManager.getResourceRoot(ConditionalOperatorConverterTest.class, "/testPlugin/ConditionalOperatorConverterTest.class");
 
   @Before
 

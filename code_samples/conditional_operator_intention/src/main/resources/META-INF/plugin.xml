@@ -2,7 +2,7 @@
 
 <idea-plugin>
   <!--  Unique id for this plugin. Must stay constant for the life of the plugin.  -->
-  <id>ConditionalOperatorConverter</id>
+  <id>org.intellij.sdk.intention</id>
 
   <!-- Text to display as name on Preferences/Settings | Plugin page -->
   <name>SDK Conditional Operator Converter</name>
@@ -37,7 +37,7 @@
 
   <extensions defaultExtensionNs="com.intellij">
     <intentionAction>
-      <className>com.intellij.codeInsight.intention.ConditionalOperatorConvertor</className>
+      <className>org.intellij.sdk.intention.ConditionalOperatorConvertor</className>
       <category>SDK Intentions</category>
     </intentionAction>
   </extensions>

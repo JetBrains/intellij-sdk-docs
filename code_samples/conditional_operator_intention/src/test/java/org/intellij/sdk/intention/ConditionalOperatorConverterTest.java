@@ -1,6 +1,6 @@
 // Copyright 2000-2019 JetBrains s.r.o. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
 
-package testPlugin;
+package org.intellij.sdk.intention;
 
 import com.intellij.codeInsight.intention.IntentionAction;
 import com.intellij.openapi.application.PathManager;
@@ -18,29 +18,17 @@ import org.junit.*;
  * This test requires Editor > Code Style set to Default IDE
  */
 
-public class YourTest extends UsefulTestCase {
-  protected CodeInsightTestFixture myFixture;
-  final String dataPath = PathManager.getResourceRoot(YourTest.class, "/testPlugin/YourTest.class");
+public class ConditionalOperatorConverterTest extends LightJavaCodeInsightFixtureTestCase {
 
-  @Before
-
-  public void setUp() throws Exception {
-
-    final IdeaTestFixtureFactory fixtureFactory = IdeaTestFixtureFactory.getFixtureFactory();
-    final TestFixtureBuilder<IdeaProjectTestFixture> testFixtureBuilder = fixtureFactory.createFixtureBuilder(getName());
-    myFixture = JavaTestFixtureFactory.getFixtureFactory().createCodeInsightFixture(testFixtureBuilder.getFixture());
-    myFixture.setTestDataPath(dataPath);
-    final JavaModuleFixtureBuilder builder = testFixtureBuilder.addModule(JavaModuleFixtureBuilder.class);
-
-    builder.addContentRoot(myFixture.getTempDirPath()).addSourceRoot("");
-    builder.setMockJdkLevel(JavaModuleFixtureBuilder.MockJdkLevel.jdk15);
-    myFixture.setUp();
-
-  }
-
-  @After
-  public void tearDown() throws Exception {
-    myFixture.tearDown();
+  /**
+   * Defines path to files used for running tests
+   *
+   * @return The path from this module's root directory ($MODULE_WORKING_DIR$) to the
+   * directory containing files for these tests.
+   */
+  @Override
+  protected String getTestDataPath() {
+    return "src/test/resources";
   }
 
   protected void doTest(String testName, String hint) {

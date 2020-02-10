@@ -1,8 +1,10 @@
 
 // Copyright 2000-2019 JetBrains s.r.o. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
 
-package com.intellij.codeInsight.intention;
+package org.intellij.sdk.intention;
 
+import com.intellij.codeInsight.intention.IntentionAction;
+import com.intellij.codeInsight.intention.PsiElementBaseIntentionAction;
 import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.project.Project;
 import com.intellij.psi.*;
@@ -17,7 +19,7 @@ import org.jetbrains.annotations.*;
  * @author dsl
  */
 @NonNls
-public class ConditionalOperatorConvertor extends PsiElementBaseIntentionAction implements IntentionAction {
+public class ConditionalOperatorConverter extends PsiElementBaseIntentionAction implements IntentionAction {
 
   /**
    * If this action is applicable, returns the text to be shown in the list of
@@ -34,7 +36,6 @@ public class ConditionalOperatorConvertor extends PsiElementBaseIntentionAction 
    * "auto-show" state of intentions.
    * It is also the directory name for the descriptions.
    *
-   * @see     com.intellij.codeInsight.intention.IntentionManager#registerIntentionAndMetaData(IntentionAction, String...)
    * @return  the intention family name.
    */
   @NotNull
@@ -94,7 +95,7 @@ public class ConditionalOperatorConvertor extends PsiElementBaseIntentionAction 
    *   @param  element   a reference to the PSI element currently under the caret
    *   @throws IncorrectOperationException Thrown by underlying (Psi model) write action context
    *   when manipulation of the psi tree fails.
-   *   @see ConditionalOperatorConvertor#startInWriteAction()
+   *   @see ConditionalOperatorConverter#startInWriteAction()
    */
   public void invoke(@NotNull Project project, Editor editor, PsiElement element) throws IncorrectOperationException {
 

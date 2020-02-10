@@ -3,7 +3,7 @@
 IntelliJ Platform SDK Documentation
 =======
 
-Welcome to the repository for [IntelliJ Platform SDK Documentation](http://www.jetbrains.org/intellij/sdk/docs/) site.
+Welcome to the repository for [IntelliJ Platform SDK Documentation](https://www.jetbrains.org/intellij/sdk/docs/) site.
 
 ## Reporting Bugs
 Please report any content inconsistencies, outdated materials, cosmetic issues and other defects you find in the docs and samples by submitting an issue to

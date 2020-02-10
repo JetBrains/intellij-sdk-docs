@@ -44,6 +44,15 @@ Continuing from the example [above](#determining-a-jetbrains-runtime-version), t
 
 ![Setting Run Configuration JRE](img/jbr_runconfig.png){:width="900px"}
 
+## Enabling Auto-Reload
+> **NOTE** Starting in 2020.1, this is available for compatible [dynamic plugins](/basics/plugin_structure/dynamic_plugins.md).
+
+When adding system property `idea.auto.reload.plugins` in the [run configuration](getting_started/running_and_debugging_a_plugin.md) (DevKit-based) or [**runIde**](/tutorials/build_system/prerequisites.md#running-a-simple-gradle-based-intellij-platform-plugin) task (Gradle-based), dynamic plugins are reloaded automatically when their JARs are modified.
+This allows a much faster development cycle by avoiding a full restart of the development instance after code changes.
+
+For [Gradle-based plugins](/tutorials/build_system/prerequisites.md) using `gradle-intellij-plugin` v0.4.17 or later, this property is set automatically.
+
+
 ## The Development Instance Sandbox Directory 
 The _Sandbox Home_ directory contains the [settings, caches, logs, and plugins](#development-instance-settings-caches-logs-and-plugins) for a Development Instance of the IDE. 
 This information is stored in a different location than for the [installed IDE itself](https://intellij-support.jetbrains.com/hc/en-us/articles/206544519-Directories-used-by-the-IDE-to-store-settings-caches-plugins-and-logs).

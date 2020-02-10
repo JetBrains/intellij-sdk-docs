@@ -118,8 +118,8 @@ Please see [Incompatible API Changes](/reference_guide/api_changes_list.md) on h
 Java code migrated to use `TYPE_USE` nullability annotations
 : Due to some problems in Kotlin compiler existing Kotlin code might become incompilable in rare cases if a method written in Java returning an array and annotated as `@Nullable` or `@NotNull` is used or overridden.
 
-`com.intellij.navigation.ChooseByNameContributorEx.processNames` method `Processor` parameter type changed from `Processor<String>` to ``Processor<? extends String>``
+`com.intellij.navigation.ChooseByNameContributorEx.processNames` method parameter type changed from `Processor<String>` to ``Processor<? extends String>``
 : This may break source-compatibility with inheritors written in Kotlin.
 
-`com.intellij.navigation.ChooseByNameContributorEx.processElementsWithName` method `Processor` parameter type changed from `Processor<NavigationItem>` to ``Processor<? extends NavigationItem>``
+`com.intellij.navigation.ChooseByNameContributorEx.processElementsWithName` method parameter type changed from `Processor<NavigationItem>` to ``Processor<? extends NavigationItem>``
 : This may break source-compatibility with inheritors written in Kotlin.

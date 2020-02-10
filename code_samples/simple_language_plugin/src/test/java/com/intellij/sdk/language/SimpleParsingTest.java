@@ -17,7 +17,7 @@ public class SimpleParsingTest extends ParsingTestCase {
    */
   @Override
   protected String getTestDataPath() {
-    return "src/test/testData";
+    return "src/test/resources";
   }
 
   @Override

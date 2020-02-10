@@ -23,9 +23,4 @@ public class SimpleFile extends PsiFileBase {
   public String toString() {
     return "Simple File";
   }
-  
-  @Override
-  public Icon getIcon(int flags) {
-    return super.getIcon(flags);
-  }
 }

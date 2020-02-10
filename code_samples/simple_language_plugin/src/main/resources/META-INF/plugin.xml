@@ -12,7 +12,7 @@
   <version>2.0.0</version>
 
   <!-- Compatible with the following versions of IntelliJ Platform
-        At least 2019.2 is required. Otherwise, a FileTypeFactor must be registered as an extension.
+        At least 2019.2 is required. Otherwise, FileTypeFactor must be registered as an extension.
         See the extensions section below. -->
   <idea-version since-build="192.2"/>
 
@@ -43,6 +43,7 @@
     <fileType name="Simple file" implementationClass="com.intellij.sdk.language.SimpleFileType" fieldName="INSTANCE"
             language="Simple" extensions="simple"/>
     <!-- Only required for versions of the IntelliJ Platform prior to v2019.2.
+         Use fileTypeFactory extension point INSTEAD of fileType.
     <fileTypeFactory implementation="com.intellij.sdk.language.SimpleFileTypeFactory"/>
     -->
     <lang.parserDefinition language="Simple" implementationClass="com.intellij.sdk.language.SimpleParserDefinition"/>

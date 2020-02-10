@@ -27,13 +27,13 @@ public class SimpleFoldingBuilder extends FoldingBuilderEx implements DumbAware 
     // Get a collection of the literal expressions in the document below root
     Collection< PsiLiteralExpression > literalExpressions =
           PsiTreeUtil.findChildrenOfType(root, PsiLiteralExpression.class);
-    // Evaluate the collection, using only Simple language literalExpressions
+    // Evaluate the collection
     for ( final PsiLiteralExpression literalExpression : literalExpressions ) {
       String value = literalExpression.getValue() instanceof String ? (String) literalExpression.getValue() : null;
       if ( value != null && value.startsWith(SIMPLE_PREFIX_STR + SIMPLE_SEPARATOR_STR) ) {
         Project project = literalExpression.getProject();
         String key = value.substring(SIMPLE_PREFIX_STR.length() + SIMPLE_SEPARATOR_STR.length());
-        // Get a list of properties for the project
+        // Get a list of all properties for a given key in the project
         final List< SimpleProperty > properties = SimpleUtil.findProperties(project, key);
         if ( properties.size() == 1 ) {
           // Add a folding descriptor for the literal expression at this node.
@@ -52,7 +52,6 @@ public class SimpleFoldingBuilder extends FoldingBuilderEx implements DumbAware 
    * @param node  Node corresponding to PsiLiteralExpression containing a string in the format
    *              SIMPLE_PREFIX_STR + SIMPLE_SEPARATOR_STR + Key, where Key is
    *              defined by the Simple language file.
-   * @return String corresponding to the "website" key.
    */
   @Nullable
   @Override

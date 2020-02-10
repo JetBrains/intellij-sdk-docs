@@ -11,15 +11,12 @@ import org.jetbrains.annotations.NotNull;
 
 public class SimpleCompletionContributor extends CompletionContributor {
   public SimpleCompletionContributor() {
-    // Register the completion providers
     extend( CompletionType.BASIC,
             PlatformPatterns.psiElement(SimpleTypes.VALUE).withLanguage(SimpleLanguage.INSTANCE),
             new CompletionProvider<CompletionParameters>() {
-                  // Define candidate completions
                   public void addCompletions(@NotNull CompletionParameters parameters,
                                              ProcessingContext context,
                                              @NotNull CompletionResultSet resultSet) {
-                    // Create a completion independent of context for Simple language
                     resultSet.addElement(LookupElementBuilder.create("Hello"));
                   }
             }

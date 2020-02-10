@@ -13,8 +13,3 @@ public class SimpleRefactoringSupportProvider extends RefactoringSupportProvider
     return (elementToRename instanceof SimpleProperty);
   }
 }
-
-/*
-2020-01-10 21:59:36,392 [  74521]   WARN - name.RenamePsiElementProcessor - org.jetbrains.kotlin.idea.refactoring.rename.RenameKotlinTypeParameterProcessor overrides deprecated findReferences(..).
-Override findReferences(PsiElement, SearchScope, boolean) instead.
-*/

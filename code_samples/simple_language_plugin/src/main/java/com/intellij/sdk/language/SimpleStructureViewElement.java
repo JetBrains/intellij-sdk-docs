@@ -18,57 +18,56 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SimpleStructureViewElement implements StructureViewTreeElement, SortableTreeElement {
-  private NavigatablePsiElement element;
-  
+  private NavigatablePsiElement myElement;
+
   public SimpleStructureViewElement(NavigatablePsiElement element) {
-    this.element = element;
+    this.myElement = element;
   }
-  
+
   @Override
   public Object getValue() {
-    return element;
+    return myElement;
   }
-  
+
   @Override
   public void navigate(boolean requestFocus) {
-    element.navigate(requestFocus);
+    myElement.navigate(requestFocus);
   }
-  
+
   @Override
   public boolean canNavigate() {
-    return element.canNavigate();
+    return myElement.canNavigate();
   }
-  
+
   @Override
   public boolean canNavigateToSource() {
-    return element.canNavigateToSource();
+    return myElement.canNavigateToSource();
   }
-  
+
   @NotNull
   @Override
   public String getAlphaSortKey() {
-    String name = element.getName();
+    String name = myElement.getName();
     return name != null ? name : "";
   }
-  
+
   @NotNull
   @Override
   public ItemPresentation getPresentation() {
-    ItemPresentation presentation = element.getPresentation();
+    ItemPresentation presentation = myElement.getPresentation();
     return presentation != null ? presentation : new PresentationData();
   }
-  
+
   @Override
   public TreeElement[] getChildren() {
-    if (element instanceof SimpleFile) {
-      SimpleProperty[] properties = PsiTreeUtil.getChildrenOfType(element, SimpleProperty.class);
+    if (myElement instanceof SimpleFile) {
+      SimpleProperty[] properties = PsiTreeUtil.getChildrenOfType(myElement, SimpleProperty.class);
       List<TreeElement> treeElements = new ArrayList<TreeElement>(properties.length);
       for (SimpleProperty property : properties) {
         treeElements.add(new SimpleStructureViewElement((SimplePropertyImpl) property));
       }
       return treeElements.toArray(new TreeElement[treeElements.size()]);
-    } else {
-      return EMPTY_ARRAY;
     }
+    return EMPTY_ARRAY;
   }
 }

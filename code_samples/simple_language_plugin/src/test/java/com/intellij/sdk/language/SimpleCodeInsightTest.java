@@ -23,7 +23,7 @@ public class SimpleCodeInsightTest extends LightJavaCodeInsightFixtureTestCase {
    */
   @Override
   protected String getTestDataPath() {
-    return "src/test/testData";
+    return "src/test/resources";
   }
 
   public void testCompletion() {

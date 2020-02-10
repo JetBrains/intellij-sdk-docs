@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/code_samples/comparing_references_inspection/comparing_references_inspection.iml" filepath="$PROJECT_DIR$/code_samples/comparing_references_inspection/comparing_references_inspection.iml" group="code_samples" />
-      <module fileurl="file://$PROJECT_DIR$/code_samples/conditional_operator_intention/conditional_operator_intention.iml" filepath="$PROJECT_DIR$/code_samples/conditional_operator_intention/conditional_operator_intention.iml" group="code_samples" />
       <module fileurl="file://$PROJECT_DIR$/.idea/intellij-sdk-docs.iml" filepath="$PROJECT_DIR$/.idea/intellij-sdk-docs.iml" />
       <module fileurl="file://$PROJECT_DIR$/code_samples/live_templates/live_templates.iml" filepath="$PROJECT_DIR$/code_samples/live_templates/live_templates.iml" group="code_samples" />
       <module fileurl="file://$PROJECT_DIR$/code_samples/max_opened_projects/max_opened_projects.iml" filepath="$PROJECT_DIR$/code_samples/max_opened_projects/max_opened_projects.iml" group="code_samples" />

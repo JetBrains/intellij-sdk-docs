@@ -12,7 +12,7 @@ import java.util.*;
 
 public class SimpleUtil {
   
-  // Searches the entire project for Simple language files with instances of the Simple property
+  // Searches the entire project for Simple language files with instances of the Simple property with the given key
   public static List<SimpleProperty> findProperties(Project project, String key) {
     List<SimpleProperty> result = null;
     Collection<VirtualFile> virtualFiles =

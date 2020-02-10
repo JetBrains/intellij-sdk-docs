@@ -37,7 +37,7 @@
 
   <extensions defaultExtensionNs="com.intellij">
     <intentionAction>
-      <className>org.intellij.sdk.intention.ConditionalOperatorConvertor</className>
+      <className>org.intellij.sdk.intention.ConditionalOperatorConverter</className>
       <category>SDK Intentions</category>
     </intentionAction>
   </extensions>

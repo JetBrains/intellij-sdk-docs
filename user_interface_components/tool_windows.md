@@ -33,11 +33,8 @@ interface.
 When the user clicks on the tool window button, the `createToolWindowContent()` method of the factory class is called, and initializes the UI of the tool window.
 This procedure ensures that unused tool windows don't cause any overhead in startup time or memory usage: if a user does not interact with the tool window of your plugin, no plugin code will be loaded or executed.
 
-If the tool window of your plugin doesn't need to be displayed for all projects, you can also specify the *conditionClass*  attribute - the qualified name of a class implementing the
-[`Condition\<Project\>`](upsource:///platform/util-rt/src/com/intellij/openapi/util/Condition.java)
-interface (this can be the same class as the tool window factory implementation).
-If the condition returns `false`, the tool window will not be displayed.
-Note that the condition is evaluated only once when the project is loaded;
+If the tool window of your plugin doesn't need to be displayed for all projects, you can also implement the *isApplicable(Project)*  method.
+Note that the method is invoked only once when the project is loaded;
 if you'd like to show your and hide tool window dynamically while the user is working with the project, you need to use the second method for tool window registration.
 
 The second method involves simply calling
@@ -80,7 +77,6 @@ To create a plugin that displays a custom tool window, perform the following ste
     - **secondary** (optional): when true, the tool window button will be shown on the lower part of the tool window bar. Default value is false.
     - **factoryClass** (required): specifies the Java class implementing the ToolWindowFactory interface (see Step 1).
     - **icon** (optional): specifies path to the icon that identifies the tool window, if any.
-    - **conditionClass** (optional): specifies a Java class that implements the [`Condition`](upsource:///platform/util-rt/src/com/intellij/openapi/util/Condition.java) interface. Using this class, you can define conditions to be met to display tool window button. In the Condition class, you should override the value method: if this method returns false, the tool window button is not displayed on tool window bar.
 
 To clarify the above procedure, consider the following fragment of the `plugin.xml` file:
 

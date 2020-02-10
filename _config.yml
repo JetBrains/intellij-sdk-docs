@@ -3,7 +3,7 @@ product_name: IntelliJ Platform SDK
 product_version:
 product_type: DevGuide
 
-url: http://www.jetbrains.org
+url: https://www.jetbrains.org
 baseurl: /intellij/sdk/docs/
 
 description: Documentation for working with and extending the IntelliJ Platform SDK

@@ -2,63 +2,31 @@
 title: 7. Annotator
 ---
 
-Annotator helps highlight and annotate any code based on specific rules.
+An [Annotator](/reference_guide/custom_language_support/syntax_highlighting_and_error_highlighting.md#annotator) helps highlight and annotate any code based on specific rules.
+This section adds annotation functionality to support the Simple language in the context of Java code.
 
-### 7.1. Define an annotator
+* bullet item
+{:toc} 
 
-In this tutorial we will annotate usages of our properties within Java code.
-Let's consider a literal which starts with *"simple:"* as a usage of our property.
-
+## 7.1. Define an Annotator
+The `SimpleAnnotator` subclasses [`Annotator`](upsource:///platform/analysis-api/src/com/intellij/lang/annotation/Annotator.java).
+Consider a literal string that starts with "simple:" as a prefix of a Simple language key.
+It isn't part of the Simple language, but it is a useful convention for detecting Simple language keys embedded as string literals in other languages, like Java.
+Annotate the `simple:key` literal expression, and differentiate between a well-formed vs. an unresolved property: 
 ```java
-package com.simpleplugin;
-
-import com.intellij.lang.annotation.*;
-import com.intellij.openapi.editor.DefaultLanguageHighlighterColors;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.util.TextRange;
-import com.intellij.psi.*;
-import com.simpleplugin.psi.SimpleProperty;
-import org.jetbrains.annotations.NotNull;
-
-import java.util.List;
-
-public class SimpleAnnotator implements Annotator {
-  @Override
-  public void annotate(@NotNull final PsiElement element, @NotNull AnnotationHolder holder) {
-    if (element instanceof PsiLiteralExpression) {
-      PsiLiteralExpression literalExpression = (PsiLiteralExpression) element;
-      String value = literalExpression.getValue() instanceof String ? (String) literalExpression.getValue() : null;
-
-      if (value != null && value.startsWith("simple" + ":")) {
-        Project project = element.getProject();
-        String key = value.substring(7);
-        List<SimpleProperty> properties = SimpleUtil.findProperties(project, key);
-        if (properties.size() == 1) {
-          TextRange range = new TextRange(element.getTextRange().getStartOffset() + 8,
-                                          element.getTextRange().getEndOffset() - 1);
-          Annotation annotation = holder.createInfoAnnotation(range, null);
-          annotation.setTextAttributes(DefaultLanguageHighlighterColors.LINE_COMMENT);
-        } else if (properties.size() == 0) {
-          TextRange range = new TextRange(element.getTextRange().getStartOffset() + 8,
-                                          element.getTextRange().getEndOffset() - 1);
-          holder.createErrorAnnotation(range, "Unresolved property");
-        }
-      }
-    }
-  }
-}
+{%  include /code_samples/simple_language/src/main/java/com/intellij/sdk/language/SimpleAnnotator.java %}
 ```
 
-### 7.2. Register the annotator
-
+## 7.2. Register the Annotator
+Using an extension point, register the Simple language annotator class  with the IntelliJ Platform:
 ```xml
-<annotator language="JAVA" implementationClass="com.simpleplugin.SimpleAnnotator"/>
+  <extensions defaultExtensionNs="com.intellij">
+    <annotator language="JAVA" implementationClass="com.intellij.sdk.language.SimpleAnnotator"/>
+  </extensions>
 ```
 
-### 7.3. Run the project
-
-Let's define the following Java file and check if the IDE resolves a property.
-
+## 7.3. Run the Project
+As a test, define the following Java file containing a Simple language `prefix:value` pair:
 ```java
 public class Test {
     public static void main(String[] args) {
@@ -67,9 +35,12 @@ public class Test {
 }
 ```
 
-![Annotator](img/annotator.png)
+Open this Java file in an IDE Development Instance running the `simple_language` plugin to check if the IDE resolves a property: 
 
-If we type an undefined property name, it will annotate the code with a error.
+![Annotator](img/annotator.png){:width="800px"}
 
-![Unresolved property](img/unresolved_property.png)
+If the property is an undefined name, the annotator will annotate the code with an error.
 
+![Unresolved property](img/unresolved_property.png){:width="800px"}
+
+Try changing the Simple language [color settings](/tutorials/custom_language_support/syntax_highlighter_and_color_settings_page.md#run-the-project-1) to differentiate the annotation from the default language color settings.

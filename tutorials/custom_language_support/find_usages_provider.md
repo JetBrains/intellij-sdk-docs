@@ -8,7 +8,7 @@ A scanner breaks the text into words, defines the context for each word and pass
 ### 11.1. Define a find usages provider
 
 ```java
-{% include /code_samples/simple_language_plugin/src/com/simpleplugin/SimpleFindUsagesProvider.java %}
+{% include /code_samples/simple_language_plugin/src/main/java/com/intellij/sdk/language/SimpleFindUsagesProvider.java %}
 ```
 
 ### 11.2. Register the find usages provider

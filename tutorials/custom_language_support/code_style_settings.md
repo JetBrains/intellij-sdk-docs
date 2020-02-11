@@ -7,13 +7,13 @@ Code style settings allow defining formatting options. A code style settings pro
 ### 16.1. Define code style settings
 
 ```java
-{% include /code_samples/simple_language_plugin/src/com/simpleplugin/SimpleCodeStyleSettings.java %}
+{% include /code_samples/simple_language_plugin/src/main/java/com/intellij/sdk/language/SimpleCodeStyleSettings.java %}
 ```
 
 ### 16.2. Define code style settings provider
 
 ```java
-{% include /code_samples/simple_language_plugin/src/com/simpleplugin/SimpleCodeStyleSettingsProvider.java %}
+{% include /code_samples/simple_language_plugin/src/main/java/com/intellij/sdk/language/SimpleCodeStyleSettingsProvider.java %}
 ```
 
 ### 16.3. Register the code style settings provider
@@ -25,7 +25,7 @@ Code style settings allow defining formatting options. A code style settings pro
 ### 16.4. Define language code style settings provider
 
 ```java
-{% include /code_samples/simple_language_plugin/src/com/simpleplugin/SimpleLanguageCodeStyleSettingsProvider.java %}
+{% include /code_samples/simple_language_plugin/src/main/java/com/intellij/sdk/language/SimpleLanguageCodeStyleSettingsProvider.java %}
 ```
 
 ### 16.5. Register the language code style settings provider

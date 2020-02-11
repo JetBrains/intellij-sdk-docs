@@ -10,7 +10,7 @@ The easiest way to provide completion is to use a completion contributor.
 Let's provide custom completion for values in property files.
 
 ```java
-{% include /code_samples/simple_language_plugin/src/com/simpleplugin/SimpleCompletionContributor.java %}
+{% include /code_samples/simple_language_plugin/src/main/java/com/intellij/sdk/language/SimpleCompletionContributor.java %}
 ```
 
 ### 9.2. Register the completion contributor

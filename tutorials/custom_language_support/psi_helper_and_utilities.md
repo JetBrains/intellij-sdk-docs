@@ -10,7 +10,7 @@ If we want to have custom methods in PSI classes we need to define them separate
 Let's define a utility class with these helper methods.
 
 ```java
-package com.simpleplugin.psi.impl;
+package com.intellij.sdk.language.psi.impl;
 
 import com.intellij.lang.ASTNode;
 import com.intellij.navigation.ItemPresentation;
@@ -53,20 +53,20 @@ To tell which methods for which PSI classes must be used we specify methods for 
 
 ```java
 {
-  parserClass="com.simpleplugin.parser.SimpleParser"
+  parserClass="com.intellij.sdk.language.parser.SimpleParser"
 
   extends="com.intellij.extapi.psi.ASTWrapperPsiElement"
 
   psiClassPrefix="Simple"
   psiImplClassSuffix="Impl"
-  psiPackage="com.simpleplugin.psi"
-  psiImplPackage="com.simpleplugin.psi.impl"
+  psiPackage="com.intellij.sdk.language.psi"
+  psiImplPackage="com.intellij.sdk.language.psi.impl"
 
-  elementTypeHolderClass="com.simpleplugin.psi.SimpleTypes"
-  elementTypeClass="com.simpleplugin.psi.SimpleElementType"
-  tokenTypeClass="com.simpleplugin.psi.SimpleTokenType"
+  elementTypeHolderClass="com.intellij.sdk.language.psi.SimpleTypes"
+  elementTypeClass="com.intellij.sdk.language.psi.SimpleElementType"
+  tokenTypeClass="com.intellij.sdk.language.psi.SimpleTokenType"
 
-  psiImplUtilClass="com.simpleplugin.psi.impl.SimplePsiImplUtil"
+  psiImplUtilClass="com.intellij.sdk.language.psi.impl.SimplePsiImplUtil"
 }
 
 simpleFile ::= item_*
@@ -84,5 +84,5 @@ Now we need a utility class to search PSI elements for defined properties over t
 We will use this utility later when implementing code assistance.
 
 ```java
-{% include /code_samples/simple_language_plugin/src/com/simpleplugin/SimpleUtil.java %}
+{% include /code_samples/simple_language_plugin/src/main/java/com/intellij/sdk/language/SimpleUtil.java %}
 ```

@@ -46,7 +46,7 @@ Regenerate the parser by right clicking on the `Simple.bnf` file and selecting _
 ### 13.3. Define a go to symbol contributor
 
 ```java
-{% include /code_samples/simple_language_plugin/src/com/simpleplugin/SimpleChooseByNameContributor.java %}
+{% include /code_samples/simple_language_plugin/src/main/java/com/intellij/sdk/language/SimpleChooseByNameContributor.java %}
 ```
 
 ### 13.4. Register the go to symbol contributor

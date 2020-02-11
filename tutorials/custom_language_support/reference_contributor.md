@@ -11,11 +11,11 @@ Resolving references means the ability to go from the usage of an element to its
 ### 10.1. Define a base named element class
 
 ```java
-{% include /code_samples/simple_language_plugin/src/com/simpleplugin/psi/SimpleNamedElement.java %}
+{% include /code_samples/simple_language_plugin/src/main/java/com/intellij/sdk/language/psi/SimpleNamedElement.java %}
 ```
 
 ```java
-{% include /code_samples/simple_language_plugin/src/com/simpleplugin/psi/impl/SimpleNamedElementImpl.java %}
+{% include /code_samples/simple_language_plugin/src/main/java/com/intellij/sdk/language/psi/impl/SimpleNamedElementImpl.java %}
 ```
 
 ### 10.2. Define helper methods for generated PSI elements
@@ -93,10 +93,10 @@ Don't forget to regenerate the parser! Right click on the `Simple.bnf` file and 
 
 ### 10.5. Define a reference
 
-Now we need to define a reference class to resolve a property from it's usage.
+Now we need to define a reference class to resolve a property from its usage.
 
 ```java
-{% include /code_samples/simple_language_plugin/src/com/simpleplugin/SimpleReference.java %}
+{% include /code_samples/simple_language_plugin/src/main/java/com/intellij/sdk/language/SimpleReference.java %}
 ```
 
 ### 10.6. Define a reference contributor
@@ -105,7 +105,7 @@ A reference contributor allows you to provide references from elements in other 
 Let's contribute a reference to each usage of a property.
 
 ```java
-{% include /code_samples/simple_language_plugin/src/com/simpleplugin/SimpleReferenceContributor.java %}
+{% include /code_samples/simple_language_plugin/src/main/java/com/intellij/sdk/language/SimpleReferenceContributor.java %}
 ```
 
 ### 10.7. Register the reference contributor
@@ -129,7 +129,7 @@ As you see the IDE now resolves the property and provides completion.
 To allow in-place refactoring we should specify it explicitly in a refactoring support provider.
 
 ```java
-{% include /code_samples/simple_language_plugin/src/com/simpleplugin/SimpleRefactoringSupportProvider.java %}
+{% include /code_samples/simple_language_plugin/src/main/java/com/intellij/sdk/language/SimpleRefactoringSupportProvider.java %}
 ```
 
 ### 10.10. Register the refactoring support provider

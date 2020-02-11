@@ -10,7 +10,7 @@ The easiest way to create a lexer is to use [JFlex](https://jflex.de/)
 Define */com/simpleplugin/Simple.flex* file with rules for our lexer.
 
 ```java
-{% include /code_samples/simple_language_plugin/src/com/simpleplugin/Simple.flex %}
+{% include /code_samples/simple_language_plugin/src/main/java/com/intellij/sdk/language/Simple.flex %}
 ```
 
 ### 4.2. Generate a lexer class
@@ -25,7 +25,7 @@ After that, the IDE generates the lexer: *com.simpleplugin.SimpleLexer*.
 ### 4.3. Define an adapter
 
 ```java
-{% include /code_samples/simple_language_plugin/src/com/simpleplugin/SimpleLexerAdapter.java %}
+{% include /code_samples/simple_language_plugin/src/main/java/com/intellij/sdk/language/SimpleLexerAdapter.java %}
 ```
 
 ### 4.4. Define a root file
@@ -33,13 +33,13 @@ After that, the IDE generates the lexer: *com.simpleplugin.SimpleLexer*.
 Create the class in the `com.simpleplugin.psi` namespace.
 
 ```java
-{% include /code_samples/simple_language_plugin/src/com/simpleplugin/psi/SimpleFile.java %}
+{% include /code_samples/simple_language_plugin/src/main/java/com/intellij/sdk/language/psi/SimpleFile.java %}
 ```
 
 ### 4.5. Define a parser definition
 
 ```java
-{% include /code_samples/simple_language_plugin/src/com/simpleplugin/SimpleParserDefinition.java %}
+{% include /code_samples/simple_language_plugin/src/main/java/com/intellij/sdk/language/SimpleParserDefinition.java %}
 ```
 
 ### 4.6. Register the parser definition

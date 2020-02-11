@@ -8,7 +8,7 @@ title: 2. Language and File Type
 Note the case of the name of the language - `Simple`.
 
 ```java
-{% include /code_samples/simple_language_plugin/src/com/simpleplugin/SimpleLanguage.java %}
+{% include /code_samples/simple_language_plugin/src/main/java/com/intellij/sdk/language/SimpleLanguage.java %}
 ```
 
 ### 2.2. Define an icon
@@ -18,13 +18,13 @@ Copy the
 to **com.simpleplugin.icons** package.
 
 ```java
-{% include /code_samples/simple_language_plugin/src/com/simpleplugin/SimpleIcons.java %}
+{% include /code_samples/simple_language_plugin/src/main/java/com/intellij/sdk/language/SimpleIcons.java %}
 ```
 
 ### 2.3. Define a file type
 
 ```java
-{% include /code_samples/simple_language_plugin/src/com/simpleplugin/SimpleFileType.java %}
+{% include /code_samples/simple_language_plugin/src/main/java/com/intellij/sdk/language/SimpleFileType.java %}
 ```
 
 ### 2.4. Define a file type factory
@@ -32,7 +32,7 @@ to **com.simpleplugin.icons** package.
 > **NOTE** When targeting 2019.2 or later only, please see [2.5.B](#b-register-file-type-20192-or-later)
 
 ```java
-{% include /code_samples/simple_language_plugin/src/com/simpleplugin/SimpleFileTypeFactory.java %}
+{% include /code_samples/simple_language_plugin/src/main/java/com/intellij/sdk/language/SimpleFileTypeFactory.java %}
 ```
 
 ### 2.5. Register the file type factory

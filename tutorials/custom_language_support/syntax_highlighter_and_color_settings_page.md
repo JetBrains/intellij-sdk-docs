@@ -6,13 +6,13 @@ title: 5. Syntax Highlighter and Color Settings Page
 ### 5.1. Define a syntax highlighter
 
 ```java
-{% include /code_samples/simple_language_plugin/src/com/simpleplugin/SimpleSyntaxHighlighter.java %}
+{% include /code_samples/simple_language_plugin/src/main/java/com/intellij/sdk/language/SimpleSyntaxHighlighter.java %}
 ```
 
 ### 5.2. Define a syntax highlighter factory
 
 ```java
-{% include /code_samples/simple_language_plugin/src/com/simpleplugin/SimpleSyntaxHighlighterFactory.java %}
+{% include /code_samples/simple_language_plugin/src/main/java/com/intellij/sdk/language/SimpleSyntaxHighlighterFactory.java %}
 ```
 
 ### 5.3. Register the syntax highlighter factory
@@ -28,7 +28,7 @@ title: 5. Syntax Highlighter and Color Settings Page
 ### 5.5. Define a color settings page
 
 ```java
-{% include /code_samples/simple_language_plugin/src/com/simpleplugin/SimpleColorSettingsPage.java %}
+{% include /code_samples/simple_language_plugin/src/main/java/com/intellij/sdk/language/SimpleColorSettingsPage.java %}
 ```
 
 ### 5.6. Register the color settings page

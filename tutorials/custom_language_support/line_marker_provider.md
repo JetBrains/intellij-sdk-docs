@@ -10,7 +10,7 @@ These icons may provide navigation to related code.
 Let's annotate usages of our properties within Java code and provide navigation to the definition of these properties.
 
 ```java
-{% include /code_samples/simple_language_plugin/src/com/simpleplugin/SimpleLineMarkerProvider.java %}
+{% include /code_samples/simple_language_plugin/src/main/java/com/intellij/sdk/language/SimpleLineMarkerProvider.java %}
 ```
 
 ## More technical details for implementers

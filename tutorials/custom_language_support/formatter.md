@@ -10,7 +10,7 @@ The formatter uses the blocks to receive formatting rules for each PSI element.
 Our goal is to cover each PSI element with such block. Since each block builds own children blocks we can generate extra blocks or skip any PSI elements.
 
 ```java
-{% include /code_samples/simple_language_plugin/src/com/simpleplugin/SimpleBlock.java %}
+{% include /code_samples/simple_language_plugin/src/main/java/com/intellij/sdk/language/SimpleBlock.java %}
 ```
 
 ### 15.2. Define a formatting model builder
@@ -18,7 +18,7 @@ Our goal is to cover each PSI element with such block. Since each block builds o
 Let's define a formatter which removes extra spaces except the single ones around the property separator.
 
 ```java
-{% include /code_samples/simple_language_plugin/src/com/simpleplugin/SimpleFormattingModelBuilder.java %}
+{% include /code_samples/simple_language_plugin/src/main/java/com/intellij/sdk/language/SimpleFormattingModelBuilder.java %}
 ```
 
 ### 15.3. Register the formatter

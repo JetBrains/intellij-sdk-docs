@@ -7,7 +7,7 @@ title: 3. Grammar and Parser
 Create a file in the `com.simpleplugin.psi` package.
 
 ```java
-{% include /code_samples/simple_language_plugin/src/com/simpleplugin/psi/SimpleTokenType.java %}
+{% include /code_samples/simple_language_plugin/src/main/java/com/intellij/sdk/language/psi/SimpleTokenType.java %}
 ```
 
 ### 3.2. Define an element type
@@ -15,7 +15,7 @@ Create a file in the `com.simpleplugin.psi` package.
 Create a file in the `com.simpleplugin.psi` package.
 
 ```java
-{% include /code_samples/simple_language_plugin/src/com/simpleplugin/psi/SimpleElementType.java %}
+{% include /code_samples/simple_language_plugin/src/main/java/com/intellij/sdk/language/psi/SimpleElementType.java %}
 ```
 
 ### 3.3. Define grammar

@@ -18,7 +18,7 @@ Welcome to the _IntelliJ Platform_ SDK. This is the primary source of documentat
 * [**Useful Links**](/appendix/resources/useful_links.md)
 
 ## Updates
-See [Recently Updated](recently_updated.md) for latest changes. Follow [JBPlatform](https://twitter.com/JBPlatform/) on Twitter and visit [JetBrains Platform Blog](https://blog.jetbrains.com/platform/) for latest announcements.
+See [Recently Updated](recently_updated.md) ([RSS](https://github.com/JetBrains/intellij-sdk-docs/commits/master.atom)) for latest changes. Follow [JBPlatform](https://twitter.com/JBPlatform/) on Twitter and visit [JetBrains Platform Blog](https://blog.jetbrains.com/platform/) for latest announcements.
 
 Upgrading your plugin to the latest platform release? Make sure to check [Incompatible Changes](reference_guide/api_changes_list.md) as well as [Notable Changes and Features](reference_guide/api_notable/api_notable.md). 
 

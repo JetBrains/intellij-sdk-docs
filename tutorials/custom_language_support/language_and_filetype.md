@@ -14,7 +14,7 @@ Note the case of the name of the language - `Simple`.
 ### 2.2. Define an icon
 
 Copy the
-[icon](https://raw.githubusercontent.com/JetBrains/intellij-sdk-docs/master/code_samples/simple_language_plugin/src/com/simpleplugin/icons/jar-gray.png)
+[icon](https://raw.githubusercontent.com/JetBrains/intellij-sdk-docs/master/code_samples/simple_language_plugin/src/main/resources/icons/jar-gray.png)
 to **com.simpleplugin.icons** package.
 
 ```java

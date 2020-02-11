@@ -42,21 +42,21 @@ The following problem patterns are supported:
 
 <property name> property removed from resource bundle <bundle name>
 
-where 
-<class name> is a fully-qualified name of the class, e.g. com.intellij.openapi.actionSystem.AnAction$InnerClass.
+where the placeholders must be enclosed in code quotes (`name`):
+
+<class name> is a fully-qualified name of the class, e.g. `com.intellij.openapi.actionSystem.AnAction$InnerClass`.
 <method name> is the exact method's name. Note that constructors have dedicated patterns.
 <human-readable parameters> is a string representing parameters, which are not necessarily fully qualified. They do not affect the parser. For example, instead of (java.lang.Object, java.util.List, int) you are free to write (Object, List<String>, int)
 <parameter name> is exact name of the method's parameter
-<property name> is a full name of a property from .properties file, like "some.action.description"
-<bundle name> is a fully qualified name of the property bundle, which includes its package, like "message.IdeBundle"
+<property name> is a full name of a property from .properties file, like `some.action.description`
+<bundle name> is a fully qualified name of the property bundle, which includes its package, like `message.IdeBundle`
 
-NOTE: If a change you're trying to document doesn't match any of the above patterns, fill in a ticket in the YouTrack. 
+NOTE: If a code change you're trying to document doesn't match any of the above patterns, fill in a ticket in the YouTrack. 
 An example of a ticket is https://youtrack.jetbrains.com/issue/PR-1218. Until supported, you may document the change as you prefer, and I will correct it later.
 
-NOTE: You are allowed to prettify the pattern using markdown-features:
- 1) code quotes: `org.example.Foo.methodName`
- 2) links [org.example.Foo](https://github.com/JetBrains/intellij-community/tree/master/)
- 3) both code quotes and links: [`org.example.Foo`](https://github.com/JetBrains/intellij-community/tree/master/)
+NOTE: You are allowed to prettify the pattern using links: [`org.example.Foo`](https://github.com/JetBrains/intellij-community/tree/master/)
+
+NOTE: Entries not starting with code quotes (`name`) can be added to document non-code changes and will be skipped in API verification.
 -->
 
 Please see [Incompatible API Changes](/reference_guide/api_changes_list.md) on how to verify compatibility.

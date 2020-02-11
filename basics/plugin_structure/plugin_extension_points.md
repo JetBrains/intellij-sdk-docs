@@ -26,7 +26,7 @@ _myPlugin/META-INF/plugin.xml_
   
   <extensionPoints>
     <extensionPoint name="myExtensionPoint1" beanClass="com.myplugin.MyBeanClass"/>
-    <extensionPoint name="myExtensionPoint2" interface="com.myplugin.MyInterface"/>
+    <extensionPoint name="myExtensionPoint2" interface="com.myplugin.MyInterface" area="IDEA_PROJECT"/>
   </extensionPoints>
 
 </idea-plugin>
@@ -35,6 +35,10 @@ _myPlugin/META-INF/plugin.xml_
 * The `name` attribute assigns a unique name for this extension point, it will be prefixed with the plugin's `<id>` automatically.
 * The `beanClass` attribute sets a bean class that specifies one or several properties annotated with the [`@Attribute`](upsource:///platform/util/src/com/intellij/util/xmlb/annotations/Attribute.java) annotation.
 * The `interface` attribute sets an interface the plugin that contributes to the extension point must implement.
+* The `area` attribute determines the scope in which the extension will be instantiated. As extensions should be stateless, it is not recommended to use non-default.
+  * `IDEA_APPLICATION` for Application (default)
+  * `IDEA_PROJECT` for Project 
+  * `IDEA_MODULE` for Module
 
 The plugin that contributes to the extension point will read those properties from the `plugin.xml` file.
 

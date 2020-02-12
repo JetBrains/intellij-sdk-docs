@@ -10,25 +10,28 @@ The formatter controls spaces, indents, wrap, and alignment.
 {:toc}
 
 ## 15.1. Define a Block
-The formatting model builds represents the formatting structure of a file as a tree of [`Block`](upsource:///platform/lang-api/src/com/intellij/formatting/Block.java) objects, with associated indent, wrap, alignment and spacing setting
+The formatting model represents the formatting structure of a file as a tree of [`Block`](upsource:///platform/lang-api/src/com/intellij/formatting/Block.java) objects, with associated indent, wrap, alignment and spacing settings.
 The goal is to cover each PSI element with such a block. 
 Since each block builds its children's blocks, it can generate extra blocks or skip any PSI elements.
+Define `SimpleBlock` based on [`AbstractBlock`](upsource:///platform/lang-impl/src/com/intellij/psi/formatter/common/AbstractBlock.java)
 ```java
-{% include /code_samples/simple_language/src/main/java/com/intellij/sdk/language/SimpleBlock.java %}
+{% include /code_samples/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleBlock.java %}
 ```
 
 ## 15.2. Define a Formatting Model Builder
-Define a formatter which removes extra spaces except the single spaces around the property separator.
-For example, reformat `foo  =    bar` to `foo = bar`.
+Define a formatter that removes extra spaces except for the single spaces around the property separator.
+For example, reformat "foo  = &nbsp;&nbsp;&nbsp;&nbsp;bar" to `foo = bar`.
+Create `SimpleFormattingModelBuilder` by subclassing [`FormattingModelBuilder`](upsource:///platform/lang-api/src/com/intellij/formatting/FormattingModelBuilder.java).
 ```java
-{% include /code_samples/simple_language/src/main/java/com/intellij/sdk/language/SimpleFormattingModelBuilder.java %}
+{% include /code_samples/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleFormattingModelBuilder.java %}
 ```
 
 ## 15.3. Register the Formatter
-The `SimpleFormattingModelBuilder` implementation is registered with the IntelliJ Platform in `plugin.xml` using the `lang.formatter` extension point. 
+The `SimpleFormattingModelBuilder` implementation is registered with the IntelliJ Platform in the plugin configuration file using the `lang.formatter` extension point. 
 ```xml
  <extensions defaultExtensionNs="com.intellij">
-   <lang.formatter language="Simple" implementationClass="com.intellij.sdk.language.SimpleFormattingModelBuilder"/>
+    <lang.formatter language="Simple"  
+            implementationClass="org.intellij.sdk.language.SimpleFormattingModelBuilder"/>
   </extensions>
 ```
 

@@ -10,12 +10,12 @@ These markers can provide navigation targets to related code.
 
 ## 8.1. Define a Line Marker Provider
 A line marker provider annotates usages of Simple language properties within Java code and provides navigation to the definition of these properties.
-The visual marker will be a Simple language icon in the gutter of the Editor window.
+The visual marker is a Simple language icon in the gutter of the Editor window.
 
-The Simple language marker provider is subclassed from [`RelatedItemLineMarkerProvider`](upsource:///platform/lang-api/src/com/intellij/codeInsight/daemon/RelatedItemLineMarkerProvider.java).
+The Simple language marker provider subclasses [`RelatedItemLineMarkerProvider`](upsource:///platform/lang-api/src/com/intellij/codeInsight/daemon/RelatedItemLineMarkerProvider.java).
 For this example, override the `collectNavigationMarkers()` method to collect usage of a Simple language [key and separators](/tutorials/custom_language_support/language_and_filetype.md#define-the-language): 
 ```java
-{% include /code_samples/simple_language/src/main/java/com/intellij/sdk/language/SimpleLineMarkerProvider.java %}
+{% include /code_samples/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleLineMarkerProvider.java %}
 ```
 
 ## 8.2. Best Practices for Implementing Line Marker Providers
@@ -45,7 +45,7 @@ For performance reasons, inspection, and specifically the [`LineMarkersPass`](up
 * The first pass is for all elements visible in the Editor window,
 * The second pass is for the rest of the elements in the file.
 
-If providers return nothing for either area, the line markers are cleared.
+If providers return nothing for either area, the line markers get cleared.
 However, if a method like `actionPerformed()` is not completely visible in the Editor window (as shown in the image above,) and `MyWrongLineMarkerProvider()` returns marker info for the `PsiMethod` instead of `PsiIdentifier`, then:
 * The first pass removes line marker info because whole `PsiMethod` isn't visible. 
 * The second pass tries to add a line marker because `MyWrongLineMarkerProvider()` is called for the `PsiMethod`. 
@@ -62,15 +62,16 @@ public class MyCorrectLineMarkerProvider implements LineMarkerProvider {
 ```
 
 ## 8.3. Register the Line Marker Provider
-The `SimpleLineMarkerProvider` implementation is registered with the IntelliJ Platform using the `codeInsight.lineMarkerProvider` extension point.
+The `SimpleLineMarkerProvider` implementation is registered with the IntelliJ Platform in the plugin configuration file using the `codeInsight.lineMarkerProvider` extension point.
 ```xml
   <extensions defaultExtensionNs="com.intellij">
-    <codeInsight.lineMarkerProvider language="JAVA" implementationClass="com.intellij.sdk.language.SimpleLineMarkerProvider"/>
+    <codeInsight.lineMarkerProvider language="JAVA" 
+            implementationClass="org.intellij.sdk.language.SimpleLineMarkerProvider"/>
   </extensions>
 ```
 
 ## 8.4. Run the Project
-Run the `simple_language` plugin in a Development Instance and open the [Test file](/tutorials/custom_language_support/annotator.md#run-the-project).
+Run the `simple_language_plugin` in a Development Instance and open the [Test file](/tutorials/custom_language_support/annotator.md#run-the-project).
 Now the icon appears next to line 3 on the gutter.
 A user can click on the icon to navigate to the property definition.
 

@@ -5,7 +5,7 @@ title: 7. Annotator
 An [Annotator](/reference_guide/custom_language_support/syntax_highlighting_and_error_highlighting.md#annotator) helps highlight and annotate any code based on specific rules.
 This section adds annotation functionality to support the Simple language in the context of Java code.
 
-* bullet item
+* bullet list
 {:toc} 
 
 ## 7.1. Define an Annotator
@@ -14,14 +14,14 @@ Consider a literal string that starts with "simple:" as a prefix of a Simple lan
 It isn't part of the Simple language, but it is a useful convention for detecting Simple language keys embedded as string literals in other languages, like Java.
 Annotate the `simple:key` literal expression, and differentiate between a well-formed vs. an unresolved property: 
 ```java
-{%  include /code_samples/simple_language/src/main/java/com/intellij/sdk/language/SimpleAnnotator.java %}
+{% include /code_samples/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleAnnotator.java %}
 ```
 
 ## 7.2. Register the Annotator
 Using an extension point, register the Simple language annotator class  with the IntelliJ Platform:
 ```xml
   <extensions defaultExtensionNs="com.intellij">
-    <annotator language="JAVA" implementationClass="com.intellij.sdk.language.SimpleAnnotator"/>
+    <annotator language="JAVA" implementationClass="org.intellij.sdk.language.SimpleAnnotator"/>
   </extensions>
 ```
 
@@ -35,11 +35,11 @@ public class Test {
 }
 ```
 
-Open this Java file in an IDE Development Instance running the `simple_language` plugin to check if the IDE resolves a property: 
+Open this Java file in an IDE Development Instance running the `simple_language_plugin` to check if the IDE resolves a property: 
 
 ![Annotator](img/annotator.png){:width="800px"}
 
-If the property is an undefined name, the annotator will annotate the code with an error.
+If the property is an undefined name, the annotator flags the code with an error.
 
 ![Unresolved property](img/unresolved_property.png){:width="800px"}
 

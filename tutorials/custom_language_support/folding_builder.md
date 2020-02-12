@@ -3,38 +3,41 @@ title: 12. Folding Builder
 ---
 
 A folding builder identifies the folding regions in the code.
-In this step of the tutorial the folding builder is used to identify folding regions and replace the regions with specific text.
-Rather than the usual practice of using a folding builder to collapse a class, method, or comments to fewer lines, the folding builder will replace Simple language keys with their corresponding values.
+In this step of the tutorial, the folding builder is used to identify folding regions and replace the regions with specific text.
+Rather than the usual practice of using a folding builder to collapse a class, method, or comments to fewer lines, the folding builder replaces Simple language keys with their corresponding values.
 
 * bullet list
 {:toc}
 
 ## 12.1. Define a Folding Builder
-The `SimpleFoldingBuilder` will replace usages of properties with their values by default.
+The `SimpleFoldingBuilder` replaces usages of properties with their values by default.
 Start by subclassing [`FoldingBuilderEx`](upsource:///community/platform/core-api/src/com/intellij/lang/folding/FoldingBuilderEx.java)
+
 Note that `SimpleFoldingBuilder` also implements `DumbAware`, which means the class is allowed to run in dumb mode, when indices are in background update.
+Implementing `DumbAware` is required for successful operation and testing.
 
 The `buildFoldRegions()` method searches down a PSI tree from `root` to find all literal expressions containing the [simple prefix](/tutorials/custom_language_support/annotator.md#define-an-annotator) `simple:`.
-The remainder of such a string is considered to contain a Simple language key, and so the text range is stored as a [`FoldingDescriptor`](upsource:///platform/core-api/src/com/intellij/lang/folding/FoldingDescriptor.java).
+The remainder of such a string is expected to contain a Simple language key, and so the text range is stored as a [`FoldingDescriptor`](upsource:///platform/core-api/src/com/intellij/lang/folding/FoldingDescriptor.java).
 
 The `getPlaceholderText()` method retrieves the Simple language value corresponding to the key associated with the (ASTNode) provided.
-The IntelliJ Platform uses the value to substitute for the key when the code is folded.
+The IntelliJ Platform uses the value to substitute for the key when the code gets folded.
 
 ```java
-{% include /code_samples/simple_language/src/main/java/com/intellij/sdk/language/SimpleFoldingBuilder.java %}
+{% include /code_samples/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleFoldingBuilder.java %}
 ```
 
 ## 12.2. Register the Folding Builder
-The `SimpleFoldingBuilder` implementation is registered with the IntelliJ Platform using the `lang.foldingBuilder` extension point.
+The `SimpleFoldingBuilder` implementation is registered with the IntelliJ Platform in the plugin configuration file using the `lang.foldingBuilder` extension point.
 ```xml
   <extensions defaultExtensionNs="com.intellij">
-    <lang.foldingBuilder language="JAVA" implementationClass="com.intellij.sdk.language.SimpleFoldingBuilder"/>
+    <lang.foldingBuilder language="JAVA" 
+            implementationClass="org.intellij.sdk.language.SimpleFoldingBuilder"/>
   </extensions>
 ```
 
 ## 12.3. Run the Project
-Rebuild the project, and run `simple_language` in a Development Instance.
-Now when a Java file is opened in the Editor it shows the property's value instead of the key.
+Rebuild the project, and run `simple_language_plugin` in a Development Instance.
+Now when a Java file is opened in the Editor, it shows the property's value instead of the key.
 This is because `SimpleFoldingBuilder.isCollapsedByDefault()` always returns `true`.
 Try using **Code \| Folding \| Expand All** to show the key rather than the value.
 

@@ -2,33 +2,26 @@
 title: 7. Folding Test
 ---
 
-In this test we will check if the folding builder, implemented in the
-[Folding Builder](/tutorials/custom_language_support/folding_builder.md)
-section of the
-[Custom Language Support Tutorial](/tutorials/custom_language_support_tutorial.md),
-works as we expect.
+This test verifies the Simple language folding builder, implemented in the [Folding Builder](/tutorials/custom_language_support/folding_builder.md) section of the Custom Language Support Tutorial, works as expected.
 
-### 7.1. Define test data
+> **NOTE** A folding builder must implement [`DumbAware`](upsource:///platform/core-api/src/com/intellij/openapi/project/DumbAware.java) to pass tests. See [Define a Folding Builder](/tutorials/custom_language_support/folding_builder.md#define-a-folding-builder) for more information.
 
-Create a file *FoldingTestData.java*.
-
+## 7.1. Define Test Data
+Create a file `FoldingTestData.java` in the `testData` directory.
+This java file contains markup instructions for three different cases of code folding.
 ```java
-public class Test {
-    public static void main(String[] args)<fold text=' { '> {
-        </fold>System.out.println("<fold text='http://en.wikipedia.org/'>simple:website</fold>");<fold text=' }'>
-    }</fold>
-}
+{% include /code_samples/simple_language_plugin/src/test/testData/FoldingTestData.java %}
 ```
 
-### 7.2. Define a test
-
+## 7.2. Define a Test
+Add the `testFolding()` method to the `SimpleCodeInsightTest` class [previously defined](completion_test.md#define-a-test).
+This test method reuses the `DefaultTestData.simple` properties file. 
 ```java
-public void testFolding() {
-    myFixture.configureByFiles("DefaultTestData.simple");
+  public void testFolding() {
+    myFixture.configureByFile("DefaultTestData.simple");
     myFixture.testFolding(getTestDataPath() + "/FoldingTestData.java");
-}
+  }
 ```
 
-### 7.3. Run the test
-
-Run the test and make sure it's green.
+## 7.3. Run the Test
+[Run](completion_test.md#run-the-test) the test and make sure it's green.

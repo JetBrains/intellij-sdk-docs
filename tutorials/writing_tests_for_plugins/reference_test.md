@@ -2,35 +2,30 @@
 title: 10. Reference Test
 ---
 
+This test checks if references functionality, implemented in the [Reference Contributor](/tutorials/custom_language_support/reference_contributor.md) section of the Custom Language Support Tutorial, works as expected.
 
-In this test we will check if references, implemented in the
-[Reference Contributor](/tutorials/custom_language_support/reference_contributor.md)
-section of the
-[Custom Language Support Tutorial](/tutorials/custom_language_support_tutorial.md),
-works as we expect.
+## 10.1. Define Test Data
+This test reuses the Simple language properties file `DefaultTestData.simple`.
 
-### 10.1. Define test data
-
-Create a file *ReferenceTestData.java*.
+Create the test file `ReferenceTestData.java` in the `testData` directory.
+This file has one Simple language prefix and key, with the caret placed after the key.
 
 ```java
-public class Test {
-    public static void main(String[] args) {
-        System.out.println("simple:website<caret>");
-    }
-}
+{% include /code_samples/simple_language_plugin/src/test/testData/ReferenceTestData.java %}
 ```
 
-### 10.2. Define a test method
+## 10.2. Define a Test Method
+Add the `testReference()` method to the `SimpleCodeInsightTest` class [previously defined](completion_test.md#define-a-test).
+This test is configured by the test files.
+The fixture gets the `PsiElement` at the caret, then compares its value with the known value of that key.
 
 ```java
-public void testReference() {
+  public void testReference() {
     myFixture.configureByFiles("ReferenceTestData.java", "DefaultTestData.simple");
     PsiElement element = myFixture.getFile().findElementAt(myFixture.getCaretOffset()).getParent();
     assertEquals("http://en.wikipedia.org/", ((SimpleProperty) element.getReferences()[0].resolve()).getValue());
-}
+  }
 ```
 
-### 10.3. Run the test
-
-Run the test and make sure it's green.
+## 10.3. Run the Test
+[Run](completion_test.md#run-the-test) the test and make sure it's green.

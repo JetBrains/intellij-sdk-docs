@@ -2,51 +2,31 @@
 title: 8. Find Usages Test
 ---
 
-In this test we will check if the find usages provider, implemented in the
-[Find Usages Provider](/tutorials/custom_language_support/find_usages_provider.md)
-section of the
-[Custom Language Support Tutorial](/tutorials/custom_language_support_tutorial.md),
-works correctly.
+This test ensures the find usages provider, implemented in the [Find Usages Provider](/tutorials/custom_language_support/find_usages_provider.md) section of the Custom Language Support Tutorial, works correctly.
 
-### 8.1. Define test data
-
-Create a file *FindUsagesTestData.simple*.
+## 8.1. Define test data
+Create the `FindUsagesTestData.simple` properties file in the `testData` directory.
 
 ```bash
-# You are reading the ".properties" entry.
-! The exclamation mark can also mark text as comments.
-<caret>website = http://en.wikipedia.org/
-
-language = English
-# The backslash below tells the application to continue reading
-# the value onto the next line.
-message = Welcome to \
-          Wikipedia!
-# Add spaces to the key
-key\ with\ spaces = This is the value that could be looked up with the key "key with spaces".
-# Unicode
-tab : \u0009
+{% include /code_samples/simple_language_plugin/src/test/testData/FindUsagesTestData.simple %}
 ```
 
-Create a file *FindUsagesTestData.java*.
+Create the test file `FindUsagesTestData.java`, which contains one embedded Simple language prefix and key.
 
 ```java
-public class Test {
-    public static void main(String[] args) {
-        System.out.println("simple:website");
-    }
-}
+{% include /code_samples/simple_language_plugin/src/test/testData/FindUsagesTestData.java %}
 ```
 
-### 8.2. Define a test method
+## 8.2. Define a Test Method
+Add the `testFindUsages()` method to the `SimpleCodeInsightTest` class [previously defined](completion_test.md#define-a-test).
+This test verifies the find usage functionality will identify the "key with spaces".
 
 ```java
-public void testFindUsages() {
+  public void testFindUsages() {
     Collection<UsageInfo> usageInfos = myFixture.testFindUsages("FindUsagesTestData.simple", "FindUsagesTestData.java");
     assertEquals(1, usageInfos.size());
-}
+  }
 ```
 
-### 8.3. Run the test
-
-Run the test and make sure it's green.
+## 8.3. Run the Test
+[Run](completion_test.md#run-the-test) the test and make sure it's green.

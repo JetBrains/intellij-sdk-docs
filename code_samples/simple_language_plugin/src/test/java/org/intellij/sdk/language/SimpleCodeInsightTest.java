@@ -40,7 +40,7 @@ public class SimpleCodeInsightTest extends LightJavaCodeInsightFixtureTestCase {
   }
 
   public void testFormatter() {
-    myFixture.configureByFiles("FormatterTestData.simple");
+    myFixture.configureByFile("FormatterTestData.simple");
     CodeStyle.getLanguageSettings(myFixture.getFile()).SPACE_AROUND_ASSIGNMENT_OPERATORS = true;
     CodeStyle.getLanguageSettings(myFixture.getFile()).KEEP_BLANK_LINES_IN_CODE = 2;
     WriteCommandAction.writeCommandAction(getProject()).run(() -> {
@@ -57,7 +57,7 @@ public class SimpleCodeInsightTest extends LightJavaCodeInsightFixtureTestCase {
   }
 
   public void testFolding() {
-    myFixture.configureByFiles("DefaultTestData.simple");
+    myFixture.configureByFile("DefaultTestData.simple");
     myFixture.testFolding(getTestDataPath() + "/FoldingTestData.java");
   }
 

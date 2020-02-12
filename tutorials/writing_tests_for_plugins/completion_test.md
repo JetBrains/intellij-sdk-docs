@@ -2,15 +2,17 @@
 title: 3. Completion Test
 ---
 
-This test checks if code completion, implemented in the [Reference Contributor](/tutorials/custom_language_support/reference_contributor.md) section of the Custom Language Support Tutorial, works as expected.
+This test checks if the Simple language code completion functionality, implemented in the [Reference Contributor](/tutorials/custom_language_support/reference_contributor.md) section of the Custom Language Support Tutorial, works as expected.
 
 ## 3.1. Define Test Data
-Create an input Simple file `DefaultTestData.simple` for the test.
+Create the `DefaultTestData.simple` properties file in the `testData` directory.
+
 ```bash
 {% include /code_samples/simple_language_plugin/src/test/testData/DefaultTestData.simple %}
 ```
 
-Create an input java file `CompleteTestData.java` for the test.
+Create a test input Java file `CompleteTestData.java` in the `testData` directory.
+This file contains a Simple language snippet within the Java.
 ```java
 {% include /code_samples/simple_language_plugin/src/test/testData/CompleteTestData.java %}
 ```
@@ -18,7 +20,14 @@ Create an input java file `CompleteTestData.java` for the test.
 ## 3.2. Define a Test
 Subclass `LightJavaCodeInsightFixtureTestCase` to create `SimpleCodeInsightTest`.
 Override `getTestDataPath()`, and return the path from the root of this plugin module to the `testData` directory.
-At this point only one test is defined, `testCompletion()`.
+
+At this point only one test is defined in `SimpleCodeInsightTest`: `testCompletion()`.
+This method:
+* Configures the test using the two input files.
+* Calls the basic completion functionality.
+  Behind the scenes, this method call creates a list of possible elements to complete the embedded Simple language reference.
+* Checks the list of possible element names to ensure it contains all Simple language completion possibilities.
+
 ```java
 public class SimpleCodeInsightTest extends LightJavaCodeInsightFixtureTestCase {
   @Override
@@ -36,5 +45,10 @@ public class SimpleCodeInsightTest extends LightJavaCodeInsightFixtureTestCase {
 }
 ```
 
-## 3.3. Run the test
-As [before](parsing_test.md#run-the-test), run the test and make sure it's green.
+## 3.3. Run the Test
+Run the test by:
+* Opening the Gradle Tool Window.
+* Drill down to the `simple_language_plugin`.
+  You may need to reimport it as a Gradle project.
+* Drill down under `simple_language_plugin` to the *test* task under *verification*.
+* Run the *test* task.

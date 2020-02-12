@@ -2,14 +2,16 @@
 title: 2. Parsing Test
 ---
 
-The first test checks if the parser, implemented in the [Lexer and Parser Definition](/tutorials/custom_language_support/lexer_and_parser_definition.md) section of the Custom Language Support Tutorial, works as expected.
+The first test checks if the Simple language parser, implemented in the [Lexer and Parser Definition](/tutorials/custom_language_support/lexer_and_parser_definition.md) section of the Custom Language Support Tutorial, works as expected.
 
 ## 2.1. Update Grammar and Regenerate the Parser
 Before creating the parsing test, ensure the parser definition (`Simple.bnf`) includes the lines shown below.
-These additional lines facilitate testing mangled keys.
+These additional lines facilitate testing incorrect keys.
+
 If the lines below are not present in `Simple.bnf`, replace the existing `property` definition with the lines below.
 Don't forget to regenerate the parser after updating the file! 
 Right-click on the `Simple.bnf` file and select **Generate Parser Code**.
+
 ```java
 property ::= (KEY? SEPARATOR VALUE?) | KEY {
   pin=3
@@ -22,7 +24,7 @@ private recover_property ::= !(KEY|SEPARATOR|COMMENT)
 ```
 
 ## 2.2. Define Input Test Data
-Create a file *ParsingTestData.simple* in the *testData* folder.
+Create the *ParsingTestData.simple* properties file in the *testData* folder.
 Note the last few lines define a purposely incorrect key.
 ```bash
 {% include /code_samples/simple_language_plugin/src/test/testData/ParsingTestData.simple %}

@@ -50,5 +50,7 @@ Run the test by:
 * Opening the Gradle Tool Window.
 * Drill down to the `simple_language_plugin`.
   You may need to reimport it as a Gradle project.
-* Drill down under `simple_language_plugin` to the *test* task under *verification*.
+* Drill down under `simple_language_plugin` to *Tasks*, *verification*, *test* task.
 * Run the *test* task.
+
+The results are displayed in the **Run** Window, and also written to the `simple_language_plugin/build/test-results/test/` directory.

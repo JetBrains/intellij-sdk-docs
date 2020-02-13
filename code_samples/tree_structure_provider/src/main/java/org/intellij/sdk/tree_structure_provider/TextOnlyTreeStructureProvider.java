@@ -1,4 +1,6 @@
-package org.jetbrains.tutorials.tree.structure;
+// Copyright 2000-2020 JetBrains s.r.o. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
+
+package org.intellij.sdk.tree_structure_provider;
 
 import com.intellij.ide.projectView.*;
 import com.intellij.ide.projectView.impl.nodes.PsiFileNode;
@@ -9,16 +11,13 @@ import org.jetbrains.annotations.*;
 
 import java.util.*;
 
-/**
- * @author Anna Bulenkova
- */
 public class TextOnlyTreeStructureProvider implements TreeStructureProvider {
   @NotNull
   @Override
   public Collection<AbstractTreeNode> modify(@NotNull AbstractTreeNode parent,
                                              @NotNull Collection<AbstractTreeNode> children,
                                              ViewSettings settings) {
-    ArrayList<AbstractTreeNode> nodes = new ArrayList<AbstractTreeNode>();
+    ArrayList<AbstractTreeNode> nodes = new ArrayList<>();
     for (AbstractTreeNode child : children) {
       if (child instanceof PsiFileNode) {
         VirtualFile file = ((PsiFileNode) child).getVirtualFile();

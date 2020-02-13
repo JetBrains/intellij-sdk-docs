@@ -11,7 +11,7 @@ Rather than the usual practice of using a folding builder to collapse a class, m
 
 ## 12.1. Define a Folding Builder
 The `SimpleFoldingBuilder` replaces usages of properties with their values by default.
-Start by subclassing [`FoldingBuilderEx`](upsource:///community/platform/core-api/src/com/intellij/lang/folding/FoldingBuilderEx.java)
+Start by subclassing [`FoldingBuilderEx`](upsource:///platform/core-api/src/com/intellij/lang/folding/FoldingBuilderEx.java)
 
 Note that `SimpleFoldingBuilder` also implements [`DumbAware`](upsource:///platform/core-api/src/com/intellij/openapi/project/DumbAware.java), which means the class is allowed to run in dumb mode, when indices are in background update.
 
@@ -28,7 +28,7 @@ The IntelliJ Platform uses the value to substitute for the key when the code get
 ```
 
 ## 12.2. Register the Folding Builder
-The `SimpleFoldingBuilder` implementation is registered with the IntelliJ Platform in the plugin configuration file using the `lang.foldingBuilder` extension point.
+The `SimpleFoldingBuilder` implementation is registered with the IntelliJ Platform in the plugin configuration file using the `com.intellij.lang.foldingBuilder` extension point.
 ```xml
   <extensions defaultExtensionNs="com.intellij">
     <lang.foldingBuilder language="JAVA" 

@@ -10,16 +10,22 @@ Resolving references means the ability to go from the usage of an element to its
 * bullet list
 {:toc}
 
-### 10.1. Define a Named Element Class
-The simplified class diagram below shows how the Simple Language fulfills the need to implement `PsiNamedElement`.
-The `SimpleNamedElement` interface is subclassed from [`PsiNameIdentifierOwner`](). 
-The `SimpleNamedElementImpl` class implements the `SimpleNamedElement` interface and extends [`ASTWrapperPsiElement`](upsource:///platform/core-impl/src/com/intellij/extapi/psi/ASTWrapperPsiElement.java).
+## 10.1. Define a Named Element Class
+The classes below show how the Simple Language fulfills the need to implement `PsiNamedElement`.
 
-![SimpleNamedElementImpl class hierarchy](img/simple_named_element.png){:width="400px"}
+The `SimpleNamedElement` interface is subclassed from [`PsiNameIdentifierOwner`](upsource:///platform/core-api/src/com/intellij/psi/PsiNameIdentifierOwner.java).
+```java
+{% include /code_samples/simple_language_plugin/src/main/java/org/intellij/sdk/language/psi/SimpleNamedElement.java %}
+```
+ 
+The `SimpleNamedElementImpl` class implements the `SimpleNamedElement` interface and extends [`ASTWrapperPsiElement`](upsource:///platform/core-impl/src/com/intellij/extapi/psi/ASTWrapperPsiElement.java).
+```java
+{% include /code_samples/simple_language_plugin/src/main/java/org/intellij/sdk/language/psi/impl/SimpleNamedElementImpl.java %}
+```
  
 ## 10.2. Define Helper Methods for Generated PSI Elements
 Modify `SimplePsiImplUtil` to support new methods that get added to the PSI class for Simple Language. 
-Note that `SimpleElementFactory` isn't defined until the [next step](#103-define-an-element-factory), so for now it shows as an error.  
+Note that `SimpleElementFactory` isn't defined until the [next step](#define-an-element-factory), so for now it shows as an error.  
 
 ```java
 public class SimplePsiImplUtil {
@@ -106,7 +112,7 @@ Contribute a reference to each usage of a property:
 ```
 
 ## 10.7. Register the Reference Contributor
-The `SimpleReferenceContributor` implementation is registered with the IntelliJ Platform using the `psi.referenceContributor` extension point.
+The `SimpleReferenceContributor` implementation is registered with the IntelliJ Platform using the `com.intellij.psi.referenceContributor` extension point.
 ```xml
   <extensions defaultExtensionNs="com.intellij">
     <psi.referenceContributor implementation="org.intellij.sdk.language.SimpleReferenceContributor"/>
@@ -132,7 +138,7 @@ As long as an element is a `SimpleProperty` it is allowed to be refactored:
 ```
 
 ## 10.10. Register the Refactoring Support Provider
-The `SimpleRefactoringSupportProvider` implementation is registered with the IntelliJ Platform in the plugin configuration file using the `lang.refactoringSupport` extension point.
+The `SimpleRefactoringSupportProvider` implementation is registered with the IntelliJ Platform in the plugin configuration file using the `com.intellij.lang.refactoringSupport` extension point.
 ```xml
   <extensions defaultExtensionNs="com.intellij">
     <lang.refactoringSupport language="Simple"  

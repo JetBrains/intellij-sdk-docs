@@ -17,7 +17,7 @@ See the comments in `FindUsagesProvider` for more information.
 ```
 
 ## 11.2. Register the Find Usages Provider
-The `SimpleFindUsagesProvider` implementation is registered with the IntelliJ Platform in the plugin configuration file using the `lang.findUsagesProvider` extension point.
+The `SimpleFindUsagesProvider` implementation is registered with the IntelliJ Platform in the plugin configuration file using the `com.intellij.lang.findUsagesProvider` extension point.
 ```xml
   <extensions defaultExtensionNs="com.intellij">
     <lang.findUsagesProvider language="Simple" 

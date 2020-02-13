@@ -46,7 +46,7 @@ The Simple Language parser is defined by subclassing [`ParserDefinition`](upsour
 
 ## 4.6. Register the Parser Definition
 Registering the parser definition in the `plugin.xml` file makes it available to the IntelliJ Platform.
-Use the `lang.parserDefinition` extension point for registration.
+Use the `com.intellij.lang.parserDefinition` extension point for registration.
 For example, see `simple_language_plugin/src/main/resources/META-INF/plugin.xml`.
 ```xml
   <extensions defaultExtensionNs="com.intellij">

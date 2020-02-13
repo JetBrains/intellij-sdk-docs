@@ -27,7 +27,7 @@ Create `SimpleFormattingModelBuilder` by subclassing [`FormattingModelBuilder`](
 ```
 
 ## 15.3. Register the Formatter
-The `SimpleFormattingModelBuilder` implementation is registered with the IntelliJ Platform in the plugin configuration file using the `lang.formatter` extension point. 
+The `SimpleFormattingModelBuilder` implementation is registered with the IntelliJ Platform in the plugin configuration file using the `com.intellij.lang.formatter` extension point. 
 ```xml
  <extensions defaultExtensionNs="com.intellij">
     <lang.formatter language="Simple"  

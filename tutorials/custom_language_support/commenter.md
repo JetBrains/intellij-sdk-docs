@@ -16,7 +16,7 @@ This commenter defines the line comment prefix as "#".
 ```
 
 ## 17.2. Register the Commenter
-The `SimpleCommenter` implementation is registered with the IntelliJ Platform in the plugin configuration file using the `lang.commenter` extension point. 
+The `SimpleCommenter` implementation is registered with the IntelliJ Platform in the plugin configuration file using the `com.intellij.lang.commenter` extension point. 
 ```xml
   <extensions defaultExtensionNs="com.intellij">
     <lang.commenter language="Simple" implementationClass="org.intellij.sdk.language.SimpleCommenter"/>

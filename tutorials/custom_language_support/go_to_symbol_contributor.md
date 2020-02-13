@@ -54,7 +54,7 @@ To enable the `simple_language_plugin` to contribute items to **Navigate \| Clas
 ```
 
 ## 13.4. Register the Go To Symbol Contributor
-The `SimpleChooseByNameContributor` implementation is registered with the IntelliJ Platform in the plugin configuration file using the `gotoSymbolContributor` extension point.
+The `SimpleChooseByNameContributor` implementation is registered with the IntelliJ Platform in the plugin configuration file using the `com.intellij.gotoSymbolContributor` extension point.
 ```xml
   <extensions defaultExtensionNs="com.intellij">
     <gotoSymbolContributor 

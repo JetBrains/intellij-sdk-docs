@@ -17,7 +17,7 @@ This rudimentary completion contributor always adds "Hello" to the results set, 
 ```
 
 ## 9.2. Register the Completion Contributor
-The `SimpleCompletionContributor` implementation is registered in the plugin configuration file with the IntelliJ Platform using the `completion.contributor` extension point.
+The `SimpleCompletionContributor` implementation is registered in the plugin configuration file with the IntelliJ Platform using the `com.intellij.completion.contributor` extension point.
 ```xml
   <extensions defaultExtensionNs="com.intellij">
     <completion.contributor language="Simple" 

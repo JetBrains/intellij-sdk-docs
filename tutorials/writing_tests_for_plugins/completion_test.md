@@ -18,7 +18,7 @@ This file contains a Simple Language snippet within the Java.
 ```
 
 ## 3.2. Define a Test
-Subclass `LightJavaCodeInsightFixtureTestCase` to create `SimpleCodeInsightTest`.
+Subclass [`LightJavaCodeInsightFixtureTestCase`](upsource:///java/testFramework/src/com/intellij/testFramework/fixtures/LightJavaCodeInsightFixtureTestCase.java) to create `SimpleCodeInsightTest`.
 Override `getTestDataPath()`, and return the path from the root of this plugin module to the `testData` directory.
 
 At this point only one test is defined in `SimpleCodeInsightTest`: `testCompletion()`.

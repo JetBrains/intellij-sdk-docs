@@ -25,7 +25,7 @@ Here, `SimpleSyntaxHighlighterFactory` subclasses [`SyntaxHighlighterFactory`](u
 ```
 
 ### 5.3. Register the Syntax Highlighter Factory
-Register the factory with the IntelliJ Platform in the plugin configuration file.
+Register the factory with the IntelliJ Platform in the plugin configuration file using the `com.intellij.lang.syntaxHighlighterFactory` extension point.
 ```xml
   <extensions defaultExtensionNs="com.intellij">
     <lang.syntaxHighlighterFactory language="Simple" 
@@ -47,7 +47,7 @@ The `SimpleColorSettingsPage` implements [`ColorSettingsPage`](upsource:///platf
 ```
 
 ### 5.6. Register the Color Settings Page
-The settings page for Simple Language colors gets registered as an extension in the plugin configuration file. 
+Register the Simple Language color settings page with the IntelliJ Platform in the plugin configuration file using the `com.intellij.colorSettingsPage` extension point.  
 ```xml
   <extensions defaultExtensionNs="com.intellij">
     <colorSettingsPage implementation="org.intellij.sdk.language.SimpleColorSettingsPage"/>

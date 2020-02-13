@@ -61,7 +61,7 @@ The `SimpleFileTypeFactory` is registered with the IntelliJ Platform using the `
 ```
 
 ## 2.6. Run the Project
-Create an empty file with the extension `\*.simple`, and IntelliJ IDEA automatically associates it with our language.
+Create an empty file with the extension `*.simple`, and IntelliJ IDEA automatically associates it with our language.
 Note the appearance of the Simple Language file icon next to the `test.simple` file in the **Project Tool Window**, and the editor tab for the file.
 
 ![File Type Factory](img/file_type_factory.png){:width="800px"}

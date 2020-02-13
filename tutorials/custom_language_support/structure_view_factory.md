@@ -3,7 +3,7 @@ title: 14. Structure View Factory
 ---
 
 The [structure view](/reference_guide/custom_language_support/structure_view.md) in the IntelliJ Platform-based IDE can be customized for a specific file type, including Simple Language.
-Creating a structure view factory allows showing the structure of any file in a **Structure** tool window for easy navigation between items.
+Creating a structure view factory allows showing the structure of any file in a **Structure** Tool Window for easy navigation between items.
 
 * bullet list
 {:toc}
@@ -32,7 +32,7 @@ The `SortableTreeElement` represents an item in a smart tree that allows using t
 ```
 
 ## 14.4. Register the Structure View Factory
-The `SimpleStructureViewFactory` implementation is registered with the IntelliJ Platform in the plugin configuration file using the `lang.psiStructureViewFactory` extension point.
+The `SimpleStructureViewFactory` implementation is registered with the IntelliJ Platform in the plugin configuration file using the `com.intellij.lang.psiStructureViewFactory` extension point.
 ```xml
   <extensions defaultExtensionNs="com.intellij">
     <lang.psiStructureViewFactory language="Simple" 

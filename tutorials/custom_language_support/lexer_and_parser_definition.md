@@ -9,7 +9,7 @@ The easiest way to create a lexer is to use [JFlex](https://jflex.de/)
 {:toc}
 
 ## 4.1. Define a Lexer
-Define a `Simple.flex` file with rules for the Simple language lexer, as demonstrated in `org.intellij.sdk.language.Simple.flex`.
+Define a `Simple.flex` file with rules for the Simple Language lexer, as demonstrated in `org.intellij.sdk.language.Simple.flex`.
 ```java
 {% include /code_samples/simple_language_plugin/src/main/java/org/intellij/sdk/language/Simple.flex %}
 ```
@@ -33,13 +33,13 @@ This is done by subclassing [`FlexAdapter`](upsource:///platform/core-api/src/co
 ```
 
 ## 4.4. Define a Root File
-The `SimpleFile` implementation is the top-level node of the [tree of `PsiElements`](/reference_guide/custom_language_support/implementing_parser_and_psi.md) for a Simple language file.
+The `SimpleFile` implementation is the top-level node of the [tree of `PsiElements`](/reference_guide/custom_language_support/implementing_parser_and_psi.md) for a Simple Language file.
 ```java
 {% include /code_samples/simple_language_plugin/src/main/java/org/intellij/sdk/language/psi/SimpleFile.java %}
 ```
 
 ## 4.5. Define a Parser
-The Simple language parser is defined by subclassing [`ParserDefinition`](upsource:///platform/core-api/src/com/intellij/lang/ParserDefinition.java). 
+The Simple Language parser is defined by subclassing [`ParserDefinition`](upsource:///platform/core-api/src/com/intellij/lang/ParserDefinition.java). 
 ```java
 {% include /code_samples/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleParserDefinition.java %}
 ```

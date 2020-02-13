@@ -2,14 +2,14 @@
 title: 4. Annotator Test
 ---
 
-This test checks if the Simple language annotator functionality, implemented in the [Annotator](/tutorials/custom_language_support/annotator.md) section of the Custom Language Support Tutorial, works as expected.
+This test checks if the Simple Language annotator functionality, implemented in the [Annotator](/tutorials/custom_language_support/annotator.md) section of the Custom Language Support Tutorial, works as expected.
 
 ## 4.1. Define Input Test Data
 The `DefaultTestData.simple` properties file is reused for this test.
 
 Create an input test file `AnnotatorTestData.java` in the `testData` directory.
-This file contains two instances of Simple language embedded in the Java code.
-The first instance is a valid use of the `simple:` prefix followed by the Simple language key `website`.
+This file contains two instances of Simple Language embedded in the Java code.
+The first instance is a valid use of the `simple:` prefix followed by the Simple Language key `website`.
 The second is a valid prefix but an invalid key, as noted by the test `<error>` [highlighting](/basics/testing_plugins/testing_highlighting.md).
 ```java
 public class Test {

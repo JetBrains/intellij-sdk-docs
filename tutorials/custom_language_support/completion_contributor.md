@@ -3,13 +3,13 @@ title: 9. Completion Contributor
 ---
 
 Custom languages provide code completion using one of [two approaches](/reference_guide/custom_language_support/code_completion.md).
-The Simple language plugin implements the less complex of the two methods, reference completion.
+The Simple Language plugin implements the less complex of the two methods, reference completion.
 
 * bullet list
 {:toc}
 
 ## 9.1. Define a Completion Contributor
-For this tutorial, the `simple_language_plugin` provides custom completion for values in Simple language property files.
+For this tutorial, the `simple_language_plugin` provides custom completion for values in Simple Language property files.
 Create a completion contributor by subclassing [`CompletionContributor`](upsource:///platform/analysis-api/src/com/intellij/codeInsight/completion/CompletionContributor.java).
 This rudimentary completion contributor always adds "Hello" to the results set, regardless of context:
 ```java

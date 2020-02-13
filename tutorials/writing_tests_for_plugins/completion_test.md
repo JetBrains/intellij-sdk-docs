@@ -2,7 +2,7 @@
 title: 3. Completion Test
 ---
 
-This test checks if the Simple language code completion functionality, implemented in the [Reference Contributor](/tutorials/custom_language_support/reference_contributor.md) section of the Custom Language Support Tutorial, works as expected.
+This test checks if the Simple Language code completion functionality, implemented in the [Reference Contributor](/tutorials/custom_language_support/reference_contributor.md) section of the Custom Language Support Tutorial, works as expected.
 
 ## 3.1. Define Test Data
 Create the `DefaultTestData.simple` properties file in the `testData` directory.
@@ -12,7 +12,7 @@ Create the `DefaultTestData.simple` properties file in the `testData` directory.
 ```
 
 Create a test input Java file `CompleteTestData.java` in the `testData` directory.
-This file contains a Simple language snippet within the Java.
+This file contains a Simple Language snippet within the Java.
 ```java
 {% include /code_samples/simple_language_plugin/src/test/testData/CompleteTestData.java %}
 ```
@@ -25,8 +25,8 @@ At this point only one test is defined in `SimpleCodeInsightTest`: `testCompleti
 This method:
 * Configures the test using the two input files.
 * Calls the basic completion functionality.
-  Behind the scenes, this method call creates a list of possible elements to complete the embedded Simple language reference.
-* Checks the list of possible element names to ensure it contains all Simple language completion possibilities.
+  Behind the scenes, this method call creates a list of possible elements to complete the embedded Simple Language reference.
+* Checks the list of possible element names to ensure it contains all Simple Language completion possibilities.
 
 ```java
 public class SimpleCodeInsightTest extends LightJavaCodeInsightFixtureTestCase {

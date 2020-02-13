@@ -11,14 +11,14 @@ Resolving references means the ability to go from the usage of an element to its
 {:toc}
 
 ### 10.1. Define a Named Element Class
-The simplified class diagram below shows how the Simple language fulfills the need to implement `PsiNamedElement`.
+The simplified class diagram below shows how the Simple Language fulfills the need to implement `PsiNamedElement`.
 The `SimpleNamedElement` interface is subclassed from [`PsiNameIdentifierOwner`](). 
 The `SimpleNamedElementImpl` class implements the `SimpleNamedElement` interface and extends [`ASTWrapperPsiElement`](upsource:///platform/core-impl/src/com/intellij/extapi/psi/ASTWrapperPsiElement.java).
 
 ![SimpleNamedElementImpl class hierarchy](img/simple_named_element.png){:width="400px"}
  
 ## 10.2. Define Helper Methods for Generated PSI Elements
-Modify `SimplePsiImplUtil` to support new methods that get added to the PSI class for Simple language. 
+Modify `SimplePsiImplUtil` to support new methods that get added to the PSI class for Simple Language. 
 Note that `SimpleElementFactory` isn't defined until the [next step](#103-define-an-element-factory), so for now it shows as an error.  
 
 ```java
@@ -98,7 +98,7 @@ The latter enables the reference to resolve to more than one element or to resol
 ```
 
 ## 10.6. Define a Reference Contributor
-A reference contributor allows the `simple_language_plugin` to provide references to Simple language from elements in other languages such as Java.
+A reference contributor allows the `simple_language_plugin` to provide references to Simple Language from elements in other languages such as Java.
 Create `SimpleReferenceContributor` by subclassing [`PsiReferenceContributor`](upsource:///platform/core-api/src/com/intellij/psi/PsiReferenceContributor.java).
 Contribute a reference to each usage of a property:
 ```java

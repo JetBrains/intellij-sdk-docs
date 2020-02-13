@@ -4,14 +4,14 @@ title: 8. Find Usages Test
 
 This test ensures the find usages provider, implemented in the [Find Usages Provider](/tutorials/custom_language_support/find_usages_provider.md) section of the Custom Language Support Tutorial, works correctly.
 
-## 8.1. Define test data
+## 8.1. Define the Test Data
 Create the `FindUsagesTestData.simple` properties file in the `testData` directory.
 
 ```bash
 {% include /code_samples/simple_language_plugin/src/test/testData/FindUsagesTestData.simple %}
 ```
 
-Create the test file `FindUsagesTestData.java`, which contains one embedded Simple language prefix and key.
+Create the test file `FindUsagesTestData.java`, which contains one embedded Simple Language prefix and key.
 
 ```java
 {% include /code_samples/simple_language_plugin/src/test/testData/FindUsagesTestData.java %}

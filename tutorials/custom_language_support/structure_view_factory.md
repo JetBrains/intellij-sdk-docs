@@ -2,7 +2,7 @@
 title: 14. Structure View Factory
 ---
 
-The [structure view](/reference_guide/custom_language_support/structure_view.md) in the IntelliJ Platform-based IDE can be customized for a specific file type, including Simple language.
+The [structure view](/reference_guide/custom_language_support/structure_view.md) in the IntelliJ Platform-based IDE can be customized for a specific file type, including Simple Language.
 Creating a structure view factory allows showing the structure of any file in a **Structure** tool window for easy navigation between items.
 
 * bullet list
@@ -43,6 +43,6 @@ The `SimpleStructureViewFactory` implementation is registered with the IntelliJ 
 ## 14.5. Run the Project
 Rebuild the project, and run `simple_language_plugin` in a Development Instance.
 Open the `test.simple` file and choose **View \| Tool Windows \| Structure**.
-The IDE now supports a structure view of the Simple language:
+The IDE now supports a structure view of the Simple Language:
 
 ![Structure View](img/structure_view.png){:width="800px"}

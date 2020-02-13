@@ -4,7 +4,7 @@ title: 12. Folding Builder
 
 A folding builder identifies the folding regions in the code.
 In this step of the tutorial, the folding builder is used to identify folding regions and replace the regions with specific text.
-Rather than the usual practice of using a folding builder to collapse a class, method, or comments to fewer lines, the folding builder replaces Simple language keys with their corresponding values.
+Rather than the usual practice of using a folding builder to collapse a class, method, or comments to fewer lines, the folding builder replaces Simple Language keys with their corresponding values.
 
 * bullet list
 {:toc}
@@ -18,9 +18,9 @@ Note that `SimpleFoldingBuilder` also implements [`DumbAware`](upsource:///platf
 > **NOTE** A folding builder must implement [`DumbAware`](upsource:///platform/core-api/src/com/intellij/openapi/project/DumbAware.java) to function in this tutorial and pass tests. 
 
 The `buildFoldRegions()` method searches down a PSI tree from `root` to find all literal expressions containing the [simple prefix](/tutorials/custom_language_support/annotator.md#define-an-annotator) `simple:`.
-The remainder of such a string is expected to contain a Simple language key, and so the text range is stored as a [`FoldingDescriptor`](upsource:///platform/core-api/src/com/intellij/lang/folding/FoldingDescriptor.java).
+The remainder of such a string is expected to contain a Simple Language key, and so the text range is stored as a [`FoldingDescriptor`](upsource:///platform/core-api/src/com/intellij/lang/folding/FoldingDescriptor.java).
 
-The `getPlaceholderText()` method retrieves the Simple language value corresponding to the key associated with the (ASTNode) provided.
+The `getPlaceholderText()` method retrieves the Simple Language value corresponding to the key associated with the (ASTNode) provided.
 The IntelliJ Platform uses the value to substitute for the key when the code gets folded.
 
 ```java

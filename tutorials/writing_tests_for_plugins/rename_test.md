@@ -2,7 +2,7 @@
 title: 6. Rename Test
 ---
 
-This test verifies the Simple language in-place rename functionality, implemented in the [Reference Contributor](/tutorials/custom_language_support/reference_contributor.md) section of the Custom Language Support Tutorial, works as expected.
+This test verifies the Simple Language in-place rename functionality, implemented in the [Reference Contributor](/tutorials/custom_language_support/reference_contributor.md) section of the Custom Language Support Tutorial, works as expected.
 
 ## 6.1. Define Input Test Data
 Create the `RenameTestData.simple` properties file in the `testData` directory.
@@ -12,7 +12,7 @@ Create the `RenameTestData.simple` properties file in the `testData` directory.
 ```
 
 Create the file `RenameTestData.java` in the `testData` directory.
-This file contains one Simple language reference embedded in Java, with the [caret position](/basics/testing_plugins/test_project_and_testdata_directories.md#special-markup) placed just after a Simple language key.
+This file contains one Simple Language reference embedded in Java, with the [caret position](/basics/testing_plugins/test_project_and_testdata_directories.md#special-markup) placed just after a Simple Language key.
 
 ```java
 {% include /code_samples/simple_language_plugin/src/test/testData/RenameTestData.java %}
@@ -30,7 +30,7 @@ Note the `website =` in `RenameTestData.simple` should be renamed to `websiteUrl
 ## 6.3. Define a Test Method
 Add the `testRename()` method to the `SimpleCodeInsightTest` class [previously defined](completion_test.md#define-a-test).
 * Again, this method configures the test fixture by using the test files.
-* The fixture then renames the Simple language element at the caret in `RenameTestData.java`.
+* The fixture then renames the Simple Language element at the caret in `RenameTestData.java`.
 * It then compares the input and output property files, ignoring whitespace.
  
 ```java

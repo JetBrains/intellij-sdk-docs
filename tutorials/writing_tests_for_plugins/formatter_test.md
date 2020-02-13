@@ -2,7 +2,7 @@
 title: 5. Formatter Test
 ---
 
-This test checks if the Simple language formatter, implemented in the [Formatter](/tutorials/custom_language_support/formatter.md) section of the Custom Language Support Tutorial, works as expected.
+This test checks if the Simple Language formatter, implemented in the [Formatter](/tutorials/custom_language_support/formatter.md) section of the Custom Language Support Tutorial, works as expected.
 
 ## 5.1. Define Test Data
 Create the `FormatterTestData.simple` properties file in the `testData` directory.
@@ -14,7 +14,7 @@ Create the `FormatterTestData.simple` properties file in the `testData` director
 ## 5.2. Define a Test Method
 Add the `testFormatter()` method to the `SimpleCodeInsightTest` class [previously defined](completion_test.md#define-a-test).
 * Again, this method configures the test fixture by using the test file.
-* The code style Simple language settings for spaces and blank lines are set.
+* The code style Simple Language settings for spaces and blank lines are set.
 * The file is then formatted according to the settings.
 * The formatted file is compared to the expected results in the benchmark file `DefaultTestData.simple`.
 

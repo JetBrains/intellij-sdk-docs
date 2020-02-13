@@ -2,8 +2,8 @@
 title: 3. Grammar and Parser
 ---
 
-In order for the IntelliJ Platform to parse a Simple language file, [tokens and elements](/reference_guide/custom_language_support/implementing_parser_and_psi.md) must be defined based on [`IElementType`](upsource:///platform/core-api/src/com/intellij/psi/tree/IElementType.java). 
-The Simple language grammar must also be defined to generate a parser.
+In order for the IntelliJ Platform to parse a Simple Language file, [tokens and elements](/reference_guide/custom_language_support/implementing_parser_and_psi.md) must be defined based on [`IElementType`](upsource:///platform/core-api/src/com/intellij/psi/tree/IElementType.java). 
+The Simple Language grammar must also be defined to generate a parser.
  
 * bullet item
 {:toc}
@@ -21,7 +21,7 @@ Create the `SimpleElementType` in the `org.intellij.sdk.language.psi` package by
 ```
 
 ## 3.3. Define the Grammar
-Define a grammar for the Simple language in the `com/intellij/sdk/language/Simple.bnf` file.
+Define a grammar for the Simple Language in the `com/intellij/sdk/language/Simple.bnf` file.
 ```java
 {
   parserClass="org.intellij.sdk.language.parser.SimpleParser"

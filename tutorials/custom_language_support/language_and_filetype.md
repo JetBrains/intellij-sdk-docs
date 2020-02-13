@@ -17,15 +17,15 @@ The `SimpleLanguage` class is defined in the `org.intellij.sdk.language` package
 ```
 
 ## 2.2. Define an Icon
-The [icon](https://raw.githubusercontent.com/JetBrains/intellij-sdk-docs/master/code_samples/simple_language_plugin/src/com/simpleplugin/icons/jar-gray.png) for the Simple language is defined by the `SimpleIcons` class. 
-There is nothing uniquely Simple language-specific about [defining the icon](/reference_guide/work_with_icons_and_images.md) itself.
+The [icon](https://raw.githubusercontent.com/JetBrains/intellij-sdk-docs/master/code_samples/simple_language_plugin/src/com/simpleplugin/icons/jar-gray.png) for the Simple Language is defined by the `SimpleIcons` class. 
+There is nothing uniquely Simple Language-specific about [defining the icon](/reference_guide/work_with_icons_and_images.md) itself.
 The definition follows a pattern similar to defining, e.g., `SdkIcons`. 
 ```java
 {% include /code_samples/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleIcons.java %}
 ```
 
 ## 2.3. Define a FileType
-The Simple language file type is defined by subclassing [`LanguageFileType`](upsource:///platform/core-api/src/com/intellij/openapi/fileTypes/LanguageFileType.java):
+The Simple Language file type is defined by subclassing [`LanguageFileType`](upsource:///platform/core-api/src/com/intellij/openapi/fileTypes/LanguageFileType.java):
 ```java
 {% include /code_samples/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleFileType.java %}
 ```
@@ -62,6 +62,6 @@ The `SimpleFileTypeFactory` is registered with the IntelliJ Platform using the `
 
 ## 2.6. Run the Project
 Create an empty file with the extension `\*.simple`, and IntelliJ IDEA automatically associates it with our language.
-Note the appearance of the Simple language file icon next to the `test.simple` file in the **Project Tool Window**, and the editor tab for the file.
+Note the appearance of the Simple Language file icon next to the `test.simple` file in the **Project Tool Window**, and the editor tab for the file.
 
 ![File Type Factory](img/file_type_factory.png){:width="800px"}

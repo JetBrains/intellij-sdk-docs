@@ -9,11 +9,11 @@ These markers can provide navigation targets to related code.
 {:toc}
 
 ## 8.1. Define a Line Marker Provider
-A line marker provider annotates usages of Simple language properties within Java code and provides navigation to the definition of these properties.
-The visual marker is a Simple language icon in the gutter of the Editor window.
+A line marker provider annotates usages of Simple Language properties within Java code and provides navigation to the definition of these properties.
+The visual marker is a Simple Language icon in the gutter of the Editor window.
 
-The Simple language marker provider subclasses [`RelatedItemLineMarkerProvider`](upsource:///platform/lang-api/src/com/intellij/codeInsight/daemon/RelatedItemLineMarkerProvider.java).
-For this example, override the `collectNavigationMarkers()` method to collect usage of a Simple language [key and separators](/tutorials/custom_language_support/language_and_filetype.md#define-the-language): 
+The Simple Language marker provider subclasses [`RelatedItemLineMarkerProvider`](upsource:///platform/lang-api/src/com/intellij/codeInsight/daemon/RelatedItemLineMarkerProvider.java).
+For this example, override the `collectNavigationMarkers()` method to collect usage of a Simple Language [key and separators](/tutorials/custom_language_support/language_and_filetype.md#define-the-language): 
 ```java
 {% include /code_samples/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleLineMarkerProvider.java %}
 ```

@@ -5,10 +5,10 @@ title: 10. Reference Test
 This test checks if references functionality, implemented in the [Reference Contributor](/tutorials/custom_language_support/reference_contributor.md) section of the Custom Language Support Tutorial, works as expected.
 
 ## 10.1. Define Test Data
-This test reuses the Simple language properties file `DefaultTestData.simple`.
+This test reuses the Simple Language properties file `DefaultTestData.simple`.
 
 Create the test file `ReferenceTestData.java` in the `testData` directory.
-This file has one Simple language prefix and key, with the caret placed after the key.
+This file has one Simple Language prefix and key, with the caret placed after the key.
 
 ```java
 {% include /code_samples/simple_language_plugin/src/test/testData/ReferenceTestData.java %}

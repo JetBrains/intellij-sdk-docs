@@ -2,7 +2,7 @@
 title: 2. Parsing Test
 ---
 
-The first test checks if the Simple language parser, implemented in the [Lexer and Parser Definition](/tutorials/custom_language_support/lexer_and_parser_definition.md) section of the Custom Language Support Tutorial, works as expected.
+The first test checks if the Simple Language parser, implemented in the [Lexer and Parser Definition](/tutorials/custom_language_support/lexer_and_parser_definition.md) section of the Custom Language Support Tutorial, works as expected.
 
 ## 2.1. Update Grammar and Regenerate the Parser
 Before creating the parsing test, ensure the parser definition (`Simple.bnf`) includes the lines shown below.
@@ -45,13 +45,13 @@ Create a file *ParsingTestData.txt* with the copied PSI tree.
 {% include /code_samples/simple_language_plugin/src/test/testData/ParsingTestData.txt %}
 ```
 
-## 2.4. Define a parsing test
+## 2.4. Define a Parsing Test
 Subclass [`ParsingTestCase`](upsource:///platform/testFramework/src/com/intellij/testFramework/ParsingTestCase.java) to create `SimpleParsingTest`:
 ```java
 {% include /code_samples/simple_language_plugin/src/test/java/org/intellij/sdk/language/SimpleParsingTest.java %}
 ```
 
-## 2.5. Run the test
+## 2.5. Run the Test
 Run the test by:
 * Opening the Gradle Tool Window.
 * Drill down to the `simple_language_plugin`.

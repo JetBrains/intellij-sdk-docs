@@ -9,7 +9,7 @@ The [`Commenter`](upsource:///platform/core-api/src/com/intellij/lang/Commenter.
 {:toc}
 
 ## 17.1. Define a Commenter
-The Simple language commenter subclasses `Commenter`.
+The Simple Language commenter subclasses `Commenter`.
 This commenter defines the line comment prefix as "#".
 ```java
 {% include /code_samples/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleCommenter.java %}

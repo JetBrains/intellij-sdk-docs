@@ -2,7 +2,7 @@
 title: 7. Folding Test
 ---
 
-This test verifies the Simple language folding builder, implemented in the [Folding Builder](/tutorials/custom_language_support/folding_builder.md) section of the Custom Language Support Tutorial, works as expected.
+This test verifies the Simple Language folding builder, implemented in the [Folding Builder](/tutorials/custom_language_support/folding_builder.md) section of the Custom Language Support Tutorial, works as expected.
 
 > **NOTE** A folding builder must implement [`DumbAware`](upsource:///platform/core-api/src/com/intellij/openapi/project/DumbAware.java) to pass tests. See [Define a Folding Builder](/tutorials/custom_language_support/folding_builder.md#define-a-folding-builder) for more information.
 

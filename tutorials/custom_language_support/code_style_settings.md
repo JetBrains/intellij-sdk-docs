@@ -10,14 +10,14 @@ This example creates a settings/preferences page that uses the default language 
 {:toc}
 
 ## 16.1. Define Code Style Settings
-Define a code style settings for Simple language by subclassing [`CustomCodeStyleSettings`](upsource:///platform/lang-api/src/com/intellij/psi/codeStyle/CustomCodeStyleSettings.java).
+Define a code style settings for Simple Language by subclassing [`CustomCodeStyleSettings`](upsource:///platform/lang-api/src/com/intellij/psi/codeStyle/CustomCodeStyleSettings.java).
 ```java
 {% include /code_samples/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleCodeStyleSettings.java %}
 ```
 
 ## 16.2. Define Code Style Settings Provider
-The code style settings provider gives the IntelliJ Platform a standard way to instantiate `CustomCodeStyleSettings` for the Simple language. 
-Define a code style settings provider for Simple language by subclassing [`CodeStyleSettingsProvider`](upsource:///platform/lang-api/src/com/intellij/psi/codeStyle/CodeStyleSettingsProvider.java).
+The code style settings provider gives the IntelliJ Platform a standard way to instantiate `CustomCodeStyleSettings` for the Simple Language. 
+Define a code style settings provider for Simple Language by subclassing [`CodeStyleSettingsProvider`](upsource:///platform/lang-api/src/com/intellij/psi/codeStyle/CodeStyleSettingsProvider.java).
 ```java
 {% include /code_samples/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleCodeStyleSettingsProvider.java %}
 ```
@@ -31,7 +31,7 @@ The `SimpleCodeStyleSettingsProvider` implementation is registered with the Inte
 ```
 
 ## 16.4. Define the Language Code Style Settings Provider
-Define a code style settings provider for Simple language by subclassing [`LanguageCodeStyleSettingsProvider`](upsource:///platform/lang-api/src/com/intellij/psi/codeStyle/LanguageCodeStyleSettingsProvider.java), which provides common code style settings for a specific language.
+Define a code style settings provider for Simple Language by subclassing [`LanguageCodeStyleSettingsProvider`](upsource:///platform/lang-api/src/com/intellij/psi/codeStyle/LanguageCodeStyleSettingsProvider.java), which provides common code style settings for a specific language.
 ```java
 {% include /code_samples/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleLanguageCodeStyleSettingsProvider.java %}
 ```
@@ -46,6 +46,6 @@ The `SimpleLanguageCodeStyleSettingsProvider` implementation is registered with 
 ```
 
 ## 16.6. Run the project
-In the IDE Development Instance, open the Simple language code formatting page: **Preferences/Settings \| Editor \| Code Style \| Simple**.
+In the IDE Development Instance, open the Simple Language code formatting page: **Preferences/Settings \| Editor \| Code Style \| Simple**.
 
 ![Code Style Settings](img/code_style_settings.png)

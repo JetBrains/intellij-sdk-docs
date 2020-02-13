@@ -47,10 +47,15 @@ public class SimpleCodeInsightTest extends LightJavaCodeInsightFixtureTestCase {
 
 ## 3.3. Run the Test
 Run the test by:
-* Opening the Gradle Tool Window.
-* Drill down to the `simple_language_plugin`.
+* Opening the **Gradle** Tool Window.
+* Select the `simple_language_plugin`.
   You may need to reimport it as a Gradle project.
 * Drill down under `simple_language_plugin` to *Tasks*, *verification*, *test* task.
 * Run the *test* task.
 
-The results are displayed in the **Run** Window, and also written to the `simple_language_plugin/build/test-results/test/` directory.
+The results are displayed in the **Run** Tool Window, and also written to the `simple_language_plugin/build/test-results/test/` directory.
+
+If the **Run** Tool Window displays the error *Test events were not received*, do the following:
+* In the **Gradle** Tool Window, drill down under `simple_language_plugin` to *Tasks*, *build*, *clean* task.
+* Run the *clean* task, which deletes the `simple_language_plugin/build/` directory.
+* Retry the test.

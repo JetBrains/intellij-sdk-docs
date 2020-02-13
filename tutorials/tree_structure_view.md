@@ -23,7 +23,7 @@ Add new *treeStructureProvider* extension to the
 
 ```java
 <extensions defaultExtensionNs="com.intellij">
-  <treeStructureProvider implementation="org.jetbrains.tutorials.tree.structure.TextOnlyTreeStructureProvider"/>
+  <treeStructureProvider implementation="TextOnlyTreeStructureProvider"/>
 </extensions>
 ```
 
@@ -53,7 +53,7 @@ To implement Tree Structure nodes filtering logic, override `modify()` method.
 The example below shows how to filter out all the Project View nodes except those which correspond to text files and directories.
 
 ```java
-{% include /code_samples/tree_structure_provider/src/main/java/org/jetbrains/tutorials/tree/structure/TextOnlyTreeStructureProvider.java %}
+{% include /code_samples/tree_structure_provider/src/main/java/org/intellij/sdk/tree_structure_provider/TextOnlyTreeStructureProvider.java %}
 ```
 
 ## 4. Compile and Run the Plugin

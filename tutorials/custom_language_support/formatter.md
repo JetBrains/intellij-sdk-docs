@@ -2,33 +2,41 @@
 title: 15. Formatter
 ---
 
-*A formatter allows to reformat the code automatically based on code style settings.*
+The IntelliJ Platform includes a powerful framework for implementing formatting for custom languages.
+A [formatter](/reference_guide/custom_language_support/code_formatting.md) enables reformatting code automatically based on code style settings.
+The formatter controls spaces, indents, wrap, and alignment.
 
-### 15.1. Define a block
+* bullet list
+{:toc}
 
-The formatter uses the blocks to receive formatting rules for each PSI element.
-Our goal is to cover each PSI element with such block. Since each block builds own children blocks we can generate extra blocks or skip any PSI elements.
-
+## 15.1. Define a Block
+The formatting model represents the formatting structure of a file as a tree of [`Block`](upsource:///platform/lang-api/src/com/intellij/formatting/Block.java) objects, with associated indent, wrap, alignment and spacing settings.
+The goal is to cover each PSI element with such a block. 
+Since each block builds its children's blocks, it can generate extra blocks or skip any PSI elements.
+Define `SimpleBlock` based on [`AbstractBlock`](upsource:///platform/lang-impl/src/com/intellij/psi/formatter/common/AbstractBlock.java)
 ```java
-{% include /code_samples/simple_language_plugin/src/main/java/com/intellij/sdk/language/SimpleBlock.java %}
+{% include /code_samples/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleBlock.java %}
 ```
 
-### 15.2. Define a formatting model builder
-
-Let's define a formatter which removes extra spaces except the single ones around the property separator.
-
+## 15.2. Define a Formatting Model Builder
+Define a formatter that removes extra spaces except for the single spaces around the property separator.
+For example, reformat "foo  = &nbsp;&nbsp;&nbsp;&nbsp;bar" to `foo = bar`.
+Create `SimpleFormattingModelBuilder` by subclassing [`FormattingModelBuilder`](upsource:///platform/lang-api/src/com/intellij/formatting/FormattingModelBuilder.java).
 ```java
-{% include /code_samples/simple_language_plugin/src/main/java/com/intellij/sdk/language/SimpleFormattingModelBuilder.java %}
+{% include /code_samples/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleFormattingModelBuilder.java %}
 ```
 
-### 15.3. Register the formatter
-
+## 15.3. Register the Formatter
+The `SimpleFormattingModelBuilder` implementation is registered with the IntelliJ Platform in the plugin configuration file using the `lang.formatter` extension point. 
 ```xml
-<lang.formatter language="Simple" implementationClass="com.simpleplugin.SimpleFormattingModelBuilder"/>
+ <extensions defaultExtensionNs="com.intellij">
+    <lang.formatter language="Simple"  
+            implementationClass="org.intellij.sdk.language.SimpleFormattingModelBuilder"/>
+  </extensions>
 ```
 
-### 15.4. Run the project
+## 15.4. Run the Project
+Add some extra spaces around the `=` separator between `language` and `English`.
+Reformat the code by selecting **Code \| Show Reformat File Dialog** and choose **Run**.
 
-Now add some extra spaces and reformat the code via **Code \| Reformat Code**.
-
-![Formatter](img/formatter.png)
+![Formatter](img/formatter.png){:width="800px"}

@@ -2,57 +2,62 @@
 title: 4. Lexer and Parser Definition
 ---
 
-The lexer defines how the contents of a file is broken into tokens.
+The lexical analyzer defines how the [contents of a file are broken into tokens](/reference_guide/custom_language_support/implementing_lexer.md), which is the basis for supporting custom language features.
 The easiest way to create a lexer is to use [JFlex](https://jflex.de/)
 
-### 4.1. Define a lexer
+* bullet item
+{:toc}
 
-Define */com/simpleplugin/Simple.flex* file with rules for our lexer.
-
+## 4.1. Define a Lexer
+Define a `Simple.flex` file with rules for the Simple Language lexer, as demonstrated in `org.intellij.sdk.language.Simple.flex`.
 ```java
-{% include /code_samples/simple_language_plugin/src/main/java/com/intellij/sdk/language/Simple.flex %}
+{% include /code_samples/simple_language_plugin/src/main/java/org/intellij/sdk/language/Simple.flex %}
 ```
 
-### 4.2. Generate a lexer class
+## 4.2. Generate a Lexer Class
+Now generate a lexer class via **JFlex Generator** from the context menu on `Simple.flex` file.
 
-Now we can generate a lexer class via *JFlex Generator* from the context menu on `Simple.flex` file.
-The Grammar-Kit plugin uses JFlex lexer generation.
-If you run it for the first time, it offers you to choose a folder to download the JFlex library and skeleton to.
-Choose the project root directory.
+The Grammar-Kit plugin uses the JFlex lexer generation.
+When running for the first time, JFlex prompts for a destination folder to download the JFlex library and skeleton.
+Choose the project root directory, for example `code_samples/simple_language_plugin`.
 
-After that, the IDE generates the lexer: *com.simpleplugin.SimpleLexer*.
+After that, the IDE generates the lexer under the `gen` directory, for example in `simple_language_plugin/src/main/gen/org/intellij/sdk/language/SimpleLexer`.
 
-### 4.3. Define an adapter
+See [Implementing Lexer](/reference_guide/custom_language_support/implementing_lexer.md) for more information about using _JFlex_ with the IntelliJ Platform.
 
+## 4.3. Define a Lexer Adapter
+The JFlex lexer needs to be adapted to the IntelliJ Platform Lexer API.
+This is done by subclassing [`FlexAdapter`](upsource:///platform/core-api/src/com/intellij/lexer/FlexAdapter.java). 
 ```java
-{% include /code_samples/simple_language_plugin/src/main/java/com/intellij/sdk/language/SimpleLexerAdapter.java %}
+{% include /code_samples/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleLexerAdapter.java %}
 ```
 
-### 4.4. Define a root file
-
-Create the class in the `com.simpleplugin.psi` namespace.
-
+## 4.4. Define a Root File
+The `SimpleFile` implementation is the top-level node of the [tree of `PsiElements`](/reference_guide/custom_language_support/implementing_parser_and_psi.md) for a Simple Language file.
 ```java
-{% include /code_samples/simple_language_plugin/src/main/java/com/intellij/sdk/language/psi/SimpleFile.java %}
+{% include /code_samples/simple_language_plugin/src/main/java/org/intellij/sdk/language/psi/SimpleFile.java %}
 ```
 
-### 4.5. Define a parser definition
-
+## 4.5. Define a Parser
+The Simple Language parser is defined by subclassing [`ParserDefinition`](upsource:///platform/core-api/src/com/intellij/lang/ParserDefinition.java). 
 ```java
-{% include /code_samples/simple_language_plugin/src/main/java/com/intellij/sdk/language/SimpleParserDefinition.java %}
+{% include /code_samples/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleParserDefinition.java %}
 ```
 
-### 4.6. Register the parser definition
-
+## 4.6. Register the Parser Definition
+Registering the parser definition in the `plugin.xml` file makes it available to the IntelliJ Platform.
+Use the `lang.parserDefinition` extension point for registration.
+For example, see `simple_language_plugin/src/main/resources/META-INF/plugin.xml`.
 ```xml
-<lang.parserDefinition language="Simple" implementationClass="com.simpleplugin.SimpleParserDefinition"/>
+  <extensions defaultExtensionNs="com.intellij">
+    <lang.parserDefinition language="Simple" 
+            implementationClass="org.intellij.sdk.language.SimpleParserDefinition"/>
+  </extensions>
 ```
 
-### 4.7. Run the project
-
-Create a properties file with the following content:
-
-```
+## 4.7. Run the Project
+With the `simple_language_plugin` loaded in a Development Instance, create a `test.simple` properties file with the following content: 
+```text
 # You are reading the ".properties" entry.
 ! The exclamation mark can also mark text as comments.
 website = http://en.wikipedia.org/
@@ -69,4 +74,4 @@ tab : \u0009
 
 Now open the *PsiViewer* tool window and check how the lexer breaks the content of the file into tokens, and the parser parsed the tokens into PSI elements.
 
-![PSI Elements](img/psi_elements.png)
+![PSI Elements](img/psi_elements.png){:width="900px"}

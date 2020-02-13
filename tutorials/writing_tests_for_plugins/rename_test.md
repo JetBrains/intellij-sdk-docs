@@ -2,72 +2,44 @@
 title: 6. Rename Test
 ---
 
+This test verifies the Simple Language in-place rename functionality, implemented in the [Reference Contributor](/tutorials/custom_language_support/reference_contributor.md) section of the Custom Language Support Tutorial, works as expected.
 
-In this test we will check if in-place rename, implemented in the
-[Reference Contributor](/tutorials/custom_language_support/reference_contributor.md)
-section of the
-[Custom Language Support Tutorial](/tutorials/custom_language_support_tutorial.md), works as we expect.
-
-### 6.1. Define input test data
-
-Create a file *RenameTestData.simple*.
+## 6.1. Define Input Test Data
+Create the `RenameTestData.simple` properties file in the `testData` directory.
 
 ```bash
-# You are reading the ".properties" entry.
-! The exclamation mark can also mark text as comments.
-website = http://en.wikipedia.org/
-
-language = English
-# The backslash below tells the application to continue reading
-# the value onto the next line.
-message = Welcome to \
-          Wikipedia!
-# Add spaces to the key
-key\ with\ spaces = This is the value that could be looked up with the key "key with spaces".
-# Unicode
-tab : \u0009
+{% include /code_samples/simple_language_plugin/src/test/testData/RenameTestData.simple %}
 ```
 
-Create a file *RenameTestData.java*.
+Create the file `RenameTestData.java` in the `testData` directory.
+This file contains one Simple Language reference embedded in Java, with the [caret position](/basics/testing_plugins/test_project_and_testdata_directories.md#special-markup) placed just after a Simple Language key.
 
 ```java
-public class Test {
-    public static void main(String[] args) {
-        System.out.println("simple:website<caret>");
-    }
-}
+{% include /code_samples/simple_language_plugin/src/test/testData/RenameTestData.java %}
 ```
 
-### 6.2. Create output test data
-
-Create a file *RenameTestDataAfter.simple*.
+## 6.2. Create Output Test Data
+Create the `RenameTestDataAfter.simple` properties file in the `testData` directory.
+This file contains the expected outcome of the test.
+Note the `website =` in `RenameTestData.simple` should be renamed to `websiteUrl =` by the test.
 
 ```bash
-# You are reading the ".properties" entry.
-! The exclamation mark can also mark text as comments.
-websiteUrl = http://en.wikipedia.org/
-
-language = English
-# The backslash below tells the application to continue reading
-# the value onto the next line.
-message = Welcome to \
-          Wikipedia!
-# Add spaces to the key
-key\ with\ spaces = This is the value that could be looked up with the key "key with spaces".
-# Unicode
-tab : \u0009
+{% include /code_samples/simple_language_plugin/src/test/testData/RenameTestDataAfter.simple %}
 ```
 
-### 6.3. Define a test method
-
+## 6.3. Define a Test Method
+Add the `testRename()` method to the `SimpleCodeInsightTest` class [previously defined](completion_test.md#define-a-test).
+* Again, this method configures the test fixture by using the test files.
+* The fixture then renames the Simple Language element at the caret in `RenameTestData.java`.
+* It then compares the input and output property files, ignoring whitespace.
+ 
 ```java
-public void testRename() {
+  public void testRename() {
     myFixture.configureByFiles("RenameTestData.java", "RenameTestData.simple");
     myFixture.renameElementAtCaret("websiteUrl");
     myFixture.checkResultByFile("RenameTestData.simple", "RenameTestDataAfter.simple", false);
-}
+  }
 ```
 
-### 6.4. Run the test
-
-Run the test and make sure it's green.
+## 6.4. Run the Test
+[Run](completion_test.md#run-the-test) the test and make sure it's green.

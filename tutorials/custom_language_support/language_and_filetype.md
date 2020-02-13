@@ -2,63 +2,66 @@
 title: 2. Language and File Type
 ---
 
+The IntelliJ Platform [determines file type](/reference_guide/custom_language_support/registering_file_type.md) by examining the name of a file.
+Each language has [Language](upsource:///platform/core-api/src/com/intellij/lang/Language.java) and [LanguageFileType](upsource:///platform/core-api/src/com/intellij/openapi/fileTypes/LanguageFileType.java) objects defining the language.
+Register the `LanguageFileType` with the IntelliJ Platform in the plugin configuration file. 
 
-### 2.1. Define a language
+* bullet item
+{:toc}
 
-Note the case of the name of the language - `Simple`.
-
+## 2.1. Define the Language
+The language implemented in this tutorial is named "Simple" - note the case of the name.
+The `SimpleLanguage` class is defined in the `org.intellij.sdk.language` package of the `simple_language_plugin` code sample:
 ```java
-{% include /code_samples/simple_language_plugin/src/main/java/com/intellij/sdk/language/SimpleLanguage.java %}
+{% include /code_samples/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleLanguage.java %}
 ```
 
-### 2.2. Define an icon
-
-Copy the
-[icon](https://raw.githubusercontent.com/JetBrains/intellij-sdk-docs/master/code_samples/simple_language_plugin/src/main/resources/icons/jar-gray.png)
-to **com.simpleplugin.icons** package.
-
+## 2.2. Define an Icon
+The [icon](https://raw.githubusercontent.com/JetBrains/intellij-sdk-docs/master/code_samples/simple_language_plugin/src/com/simpleplugin/icons/jar-gray.png) for the Simple Language is defined by the `SimpleIcons` class. 
+There is nothing uniquely Simple Language-specific about [defining the icon](/reference_guide/work_with_icons_and_images.md) itself.
+The definition follows a pattern similar to defining, e.g., `SdkIcons`. 
 ```java
-{% include /code_samples/simple_language_plugin/src/main/java/com/intellij/sdk/language/SimpleIcons.java %}
+{% include /code_samples/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleIcons.java %}
 ```
 
-### 2.3. Define a file type
-
+## 2.3. Define a FileType
+The Simple Language file type is defined by subclassing [`LanguageFileType`](upsource:///platform/core-api/src/com/intellij/openapi/fileTypes/LanguageFileType.java):
 ```java
-{% include /code_samples/simple_language_plugin/src/main/java/com/intellij/sdk/language/SimpleFileType.java %}
+{% include /code_samples/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleFileType.java %}
 ```
 
-### 2.4. Define a file type factory
-
-> **NOTE** When targeting 2019.2 or later only, please see [2.5.B](#b-register-file-type-20192-or-later)
-
-```java
-{% include /code_samples/simple_language_plugin/src/main/java/com/intellij/sdk/language/SimpleFileTypeFactory.java %}
-```
-
-### 2.5. Register the file type factory
-
-In plugin.xml add:
-
+## 2.4. Register the FileType Directly
+Direct registration is necessary when targeting version 2019.2 (and later) of the IntelliJ Platform.
+No `FileTypeFactory` is required.
+Instead, the file type is registered of file type is done via the `com.intellij.fileType` extension point in `plugin.xml`: 
 ```xml
-<extensions defaultExtensionNs="com.intellij">
-      <fileTypeFactory implementation="com.simpleplugin.SimpleFileTypeFactory"/>
-</extensions>
+  <extensions defaultExtensionNs="com.intellij">
+    <fileType name="Simple file" implementationClass="org.intellij.sdk.language.SimpleFileType" 
+            fieldName="INSTANCE" language="Simple" extensions="simple"/>
+  </extensions>
 ```
 
-### 2.5.B. Register file type (2019.2 or later)
+Skip to [section 2.6](#run-the-project).
 
-When matching via file extension, pattern or exact file name, registration of file type should be done via `com.intellij.fileType` extension point instead of implementing dedicated `FileTypeFactory`. 
+## 2.5. Register the FileType Using a Factory
+This pattern is necessary when targeting versions of the IntelliJ Platform prior to 2019.2
 
+### 2.5.1 Define a FileType Factory
+First, define `SimpleFileTypeFactory` as a subclass of [`FileTypeFactory`](upsource:///platform/platform-api/src/com/intellij/openapi/fileTypes/FileTypeFactory.java).
+```java
+{% include /code_samples/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleFileTypeFactory.java %}
+```
+
+### 2.5.2 Register the FileType Factory
+The `SimpleFileTypeFactory` is registered with the IntelliJ Platform using the `com.intellij.openapi.fileTypes.FileTypeFactory` extension point in `plugin.xml`.
 ```xml
-<extensions defaultExtensionNs="com.intellij">
-    <fileType name="Simple file" implementationClass="com.simpleplugin.SimpleFileType" fieldName="INSTANCE" 
-              language="Simple" extensions="simple"/>
-</extensions>
+  <extensions defaultExtensionNs="com.intellij">
+    <fileTypeFactory implementation="org.intellij.sdk.language.SimpleFileTypeFactory"/>
+  </extensions>
 ```
 
-### 2.6. Run the project
+## 2.6. Run the Project
+Create an empty file with the extension `\*.simple`, and IntelliJ IDEA automatically associates it with our language.
+Note the appearance of the Simple Language file icon next to the `test.simple` file in the **Project Tool Window**, and the editor tab for the file.
 
-Create a file with extension *.simple*
-and IntelliJ IDEA will automatically associate it with our language.
-
-![File Type Factory](img/file_type_factory.png)
+![File Type Factory](img/file_type_factory.png){:width="800px"}

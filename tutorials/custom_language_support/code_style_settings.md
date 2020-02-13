@@ -2,38 +2,50 @@
 title: 16. Code Style Setting
 ---
 
-Code style settings allow defining formatting options. A code style settings provider will create an instance of the settings, and also create an options page in order to edit them. In this example, we'll create a page that uses the default language code style settings, customised by a language code style settings provider.
+[Code style settings](/reference_guide/custom_language_support/code_formatting.md#code-style-settings) enable defining formatting options. 
+A code style settings provider creates an instance of the settings and also creates an options page in settings/preferences. 
+This example creates a settings/preferences page that uses the default language code style settings, customized by a language code style settings provider.
 
-### 16.1. Define code style settings
+* bullet list
+{:toc}
 
+## 16.1. Define Code Style Settings
+Define a code style settings for Simple Language by subclassing [`CustomCodeStyleSettings`](upsource:///platform/lang-api/src/com/intellij/psi/codeStyle/CustomCodeStyleSettings.java).
 ```java
-{% include /code_samples/simple_language_plugin/src/main/java/com/intellij/sdk/language/SimpleCodeStyleSettings.java %}
+{% include /code_samples/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleCodeStyleSettings.java %}
 ```
 
-### 16.2. Define code style settings provider
-
+## 16.2. Define Code Style Settings Provider
+The code style settings provider gives the IntelliJ Platform a standard way to instantiate `CustomCodeStyleSettings` for the Simple Language. 
+Define a code style settings provider for Simple Language by subclassing [`CodeStyleSettingsProvider`](upsource:///platform/lang-api/src/com/intellij/psi/codeStyle/CodeStyleSettingsProvider.java).
 ```java
-{% include /code_samples/simple_language_plugin/src/main/java/com/intellij/sdk/language/SimpleCodeStyleSettingsProvider.java %}
+{% include /code_samples/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleCodeStyleSettingsProvider.java %}
 ```
 
-### 16.3. Register the code style settings provider
-
+## 16.3. Register the Code Style Settings Provider
+The `SimpleCodeStyleSettingsProvider` implementation is registered with the IntelliJ Platform in the plugin configuration file using the `codeStyleSettingsProvider` extension point. 
 ```xml
-<codeStyleSettingsProvider implementation="com.simpleplugin.SimpleCodeStyleSettingsProvider"/>
+  <extensions defaultExtensionNs="com.intellij">
+    <codeStyleSettingsProvider implementation="org.intellij.sdk.language.SimpleCodeStyleSettingsProvider"/>
+  </extensions>
 ```
 
-### 16.4. Define language code style settings provider
-
+## 16.4. Define the Language Code Style Settings Provider
+Define a code style settings provider for Simple Language by subclassing [`LanguageCodeStyleSettingsProvider`](upsource:///platform/lang-api/src/com/intellij/psi/codeStyle/LanguageCodeStyleSettingsProvider.java), which provides common code style settings for a specific language.
 ```java
-{% include /code_samples/simple_language_plugin/src/main/java/com/intellij/sdk/language/SimpleLanguageCodeStyleSettingsProvider.java %}
+{% include /code_samples/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleLanguageCodeStyleSettingsProvider.java %}
 ```
 
-### 16.5. Register the language code style settings provider
-
+## 16.5. Register the Language Code Style Settings Provider
+The `SimpleLanguageCodeStyleSettingsProvider` implementation is registered with the IntelliJ Platform in the plugin configuration file using the `langCodeStyleSettingsProvider` extension point. 
 ```xml
-<langCodeStyleSettingsProvider implementation="com.simpleplugin.SimpleLanguageCodeStyleSettingsProvider"/>
+ <extensions defaultExtensionNs="com.intellij">
+    <langCodeStyleSettingsProvider 
+            implementation="org.intellij.sdk.language.SimpleLanguageCodeStyleSettingsProvider"/>
+ </extensions>
 ```
 
-### 16.6. Run the project
+## 16.6. Run the project
+In the IDE Development Instance, open the Simple Language code formatting page: **Preferences/Settings \| Editor \| Code Style \| Simple**.
 
 ![Code Style Settings](img/code_style_settings.png)

@@ -1,4 +1,4 @@
-package org.jetbrains.tutorials.run.configuration;
+package org.jetbrains.sdk.runConfiguration;
 
 import com.intellij.execution.configurations.*;
 import com.intellij.openapi.components.BaseState;

@@ -1,4 +1,4 @@
-package org.jetbrains.tutorials.run.configuration;
+package org.jetbrains.sdk.runConfiguration;
 
 import com.intellij.openapi.options.*;
 import com.intellij.openapi.ui.*;
@@ -19,7 +19,7 @@ public class DemoSettingsEditor extends SettingsEditor<DemoRunConfiguration> {
   }
 
   @Override
-  protected void applyEditorTo(@NotNull DemoRunConfiguration demoRunConfiguration) throws ConfigurationException {
+  protected void applyEditorTo(@NotNull DemoRunConfiguration demoRunConfiguration) {
     demoRunConfiguration.setScriptName(myScriptName.getComponent().getText());
   }
 
@@ -30,7 +30,7 @@ public class DemoSettingsEditor extends SettingsEditor<DemoRunConfiguration> {
   }
 
   private void createUIComponents() {
-    myScriptName = new LabeledComponent<TextFieldWithBrowseButton>();
+    myScriptName = new LabeledComponent<>();
     myScriptName.setComponent(new TextFieldWithBrowseButton());
   }
 }

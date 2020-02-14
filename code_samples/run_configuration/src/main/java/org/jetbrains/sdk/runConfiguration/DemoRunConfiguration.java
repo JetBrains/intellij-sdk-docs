@@ -1,4 +1,4 @@
-package org.jetbrains.tutorials.run.configuration;
+package org.jetbrains.sdk.runConfiguration;
 
 import com.intellij.execution.*;
 import com.intellij.execution.configurations.*;
@@ -40,8 +40,7 @@ public class DemoRunConfiguration extends RunConfigurationBase<DemoRunConfigurat
   }
 
   @Override
-  public void checkConfiguration() throws RuntimeConfigurationException {
-
+  public void checkConfiguration() {
   }
 
   @Nullable

@@ -23,7 +23,7 @@ Add new *configurationType* extension to the
 
 ```xml
 <extensions defaultExtensionNs="com.intellij">
-  <configurationType implementation="org.jetbrains.tutorials.run.configuration.DemoRunConfigurationType"/>
+  <configurationType implementation="org.jetbrains.sdk.runConfiguration.DemoRunConfigurationType"/>
 </extensions>
 ```
 

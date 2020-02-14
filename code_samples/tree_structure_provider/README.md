@@ -10,9 +10,6 @@ documentation page for more information.
 
 ## Implemented Extension Points
 
-> By defining extension points in your plugin, you can allow other plugins to extend the functionality of your plugin.
-> [Read more](https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_extension_points.html)
-
 | Extension Point | Implementation Class | Interface |
 | --------------- | -------------------- | --------- |
 | treeStructureProvider | [TextOnlyTreeStructureProvider][treeStructureProvider_class] | [TreeStructureProvider][treeStructureProvider_interface] |

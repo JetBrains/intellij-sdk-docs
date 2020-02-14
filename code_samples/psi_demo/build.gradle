@@ -26,6 +26,3 @@ intellij {
 patchPluginXml {
   version = project.version
 }
-
-// Force javadoc rebuild before jar is built
-jar.dependsOn javadoc

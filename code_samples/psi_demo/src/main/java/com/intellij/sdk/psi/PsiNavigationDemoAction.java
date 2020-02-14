@@ -1,4 +1,4 @@
-package com.intellij.tutorials.psi;
+package com.intellij.sdk.psi;
 
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;

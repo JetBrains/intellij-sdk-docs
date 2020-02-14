@@ -10,7 +10,7 @@
   <depends>com.intellij.modules.java</depends>
 
   <actions>
-    <action class="com.intellij.tutorials.psi.PsiNavigationDemoAction" id="PsiNavigationDemo" text="PSI Navigation Demo...">
+    <action class="com.intellij.sdk.psi.PsiNavigationDemoAction" id="PsiNavigationDemo" text="PSI Navigation Demo...">
       <add-to-group group-id="ToolsMenu" anchor="last"/>
     </action>
   </actions>

@@ -1,0 +1,40 @@
+<idea-plugin>
+
+  <id>org.intellij.sdk.liveTemplates</id>
+
+  <!-- Text to display as name on Preferences/Settings | Plugin page  -->
+  <name>SDK: Live Templates Sample Project</name>
+
+  <!-- The version of this plugin -->
+  <version>2.0.0</version>
+
+  <!-- Compatible with the following versions of IntelliJ Platform - needed for plugin logo -->
+  <idea-version since-build="191"/>
+
+  <!-- Product and plugin compatibility requirements -->
+  <depends>com.intellij.modules.lang</depends>
+
+  <!-- Text to display as description on Preferences/Settings | Plugin page  -->
+  <description>
+    <![CDATA[
+      Demonstrates implementing live templates for Markdown language.<br> Adds an entry to the <b>Preferences | Editor | Live Templates</b> dialog.
+    ]]>
+  </description>
+  <change-notes>
+    <![CDATA[
+      <ul>
+        <li><b>2.0.0</b> Convert to Gradle-based plugin, change plugin ID</li>
+        <li><b>1.0.0</b> Release 2018.3 and earlier.</li>
+      </ul>
+    ]]>
+  </change-notes>
+
+  <!-- Text to display as company information on Preferences/Settings | Plugin page -->
+  <vendor url="https://plugins.jetbrains.com">IntelliJ Platform SDK</vendor>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <defaultLiveTemplatesProvider implementation="org.intellij.sdk.liveTemplates.MarkdownTemplateProvider"/>
+    <liveTemplateContext implementation="org.intellij.sdk.liveTemplates.MarkdownContext"/>
+  </extensions>
+
+</idea-plugin>

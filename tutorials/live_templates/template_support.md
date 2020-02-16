@@ -30,14 +30,14 @@ Once confident the Live Template produces the expected result (consider testing 
 </templateSet>
 ```
 
-Copy this file into your plugin's resources, (eg. `project/resource/liveTemplates/Markdown.xml`.
+Copy this file into your plugin's resources, (eg. `resources/liveTemplates/Markdown.xml`.
 
 ## Implement DefaultLiveTemplatesProvider
 
 The [`DefaultLiveTemplatesProvider`](upsource:///platform/lang-impl/src/com/intellij/codeInsight/template/impl/DefaultLiveTemplatesProvider.java) tells us where to find the Live Template settings file. Make sure to include the full path to the file, relative to the resources directory, excluding the file name.
 
 ```java
-{% include /code_samples/live_templates/src/MarkdownTemplateProvider.java %}
+{% include /code_samples/live_templates/src/main/java/org/intellij/sdk/liveTemplates/MarkdownTemplateProvider.java %}
 ```
 
 ## Implement TemplateContextType
@@ -45,7 +45,7 @@ The [`DefaultLiveTemplatesProvider`](upsource:///platform/lang-impl/src/com/inte
 A [`TemplateContextType`](upsource:///platform/lang-api/src/com/intellij/codeInsight/template/TemplateContextType.java) tells us where the live template is applicable.
 
 ```java
-{% include /code_samples/live_templates/src/MarkdownContext.java %}
+{% include /code_samples/live_templates/src/main/java/org/intellij/sdk/liveTemplates/MarkdownContext.java%}
 ```
 
 Once you define the `TemplateContextType`, be sure to add the assigned context type to the previously created Live Template settings file. Under `<template>...</template>` add the following context:
@@ -59,11 +59,13 @@ Once you define the `TemplateContextType`, be sure to add the assigned context t
 It is not always necessary to define your own `TemplateContextType`, as there are many existing template contexts already defined in the IntelliJ Platform. Consider reusing one of the [many existing template contexts](upsource:///platform/lang-api/src/com/intellij/codeInsight/template/TemplateContextType.java) if you are augmenting language support to an existing area.
 
 ## Register Extension Points
-
+Using the `com.intellij.defaultLiveTemplatesProvider` and `com.intellij.liveTemplateContext` extension points, regsiter the implementations with the IntelliJ Platform.
 ```xml
-{% include /code_samples/live_templates/resources/META-INF/plugin.xml %}
+  <extensions defaultExtensionNs="com.intellij">
+    <defaultLiveTemplatesProvider implementation="org.intellij.sdk.liveTemplates.MarkdownTemplateProvider"/>
+    <liveTemplateContext implementation="org.intellij.sdk.liveTemplates.MarkdownContext"/>
+  </extensions>
 ```
 
 ## Check Plugin
-
 Now check that the plugin is working correctly. Run the plugin and verify there is a new entry under *File \| Settings \| Live Templates \| Markdown \| \[*. Finally, create a new file `Test.md` and confirm that the Live Template works.

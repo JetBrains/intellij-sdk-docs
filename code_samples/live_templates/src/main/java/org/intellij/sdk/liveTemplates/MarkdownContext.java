@@ -1,3 +1,5 @@
+package org.intellij.sdk.liveTemplates;
+
 import com.intellij.codeInsight.template.TemplateContextType;
 import com.intellij.psi.PsiFile;
 import org.jetbrains.annotations.NotNull;

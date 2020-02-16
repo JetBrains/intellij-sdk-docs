@@ -1,3 +1,5 @@
+package org.intellij.sdk.liveTemplates;
+
 import com.intellij.codeInsight.template.impl.DefaultLiveTemplatesProvider;
 import org.jetbrains.annotations.Nullable;
 

@@ -1,5 +1,5 @@
 <idea-plugin>
-  <id>live_templates</id>
+  <id>org.intellij.sdk.liveTemplates</id>
   <name>Live Templates</name>
   <version>1.0</version>
   <vendor>JetBrains</vendor>
@@ -19,7 +19,6 @@
   <extensions defaultExtensionNs="com.intellij">
     <defaultLiveTemplatesProvider implementation="MarkdownTemplateProvider"/>
     <liveTemplateContext implementation="MarkdownContext"/>
-
   </extensions>
 
 </idea-plugin>

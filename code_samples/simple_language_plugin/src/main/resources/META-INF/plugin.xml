@@ -3,7 +3,7 @@
 <idea-plugin>
 
   <!--  Unique id for this plugin. Must stay constant for the life of the plugin.  -->
-  <id>org.intellij.sdk.simple_language</id>
+  <id>org.intellij.sdk.language</id>
 
   <!-- Text to display as name on Preferences/Settings | Plugin page  -->
   <name>SDK: Simple Language Sample Project</name>

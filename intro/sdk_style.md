@@ -89,7 +89,7 @@ E.g. the following list item will be replaced by links to all of the header item
 ```
 
 Further Kramdown features are described on the [converter page](https://kramdown.gettalong.org/converter/html.html), and attribute lists are described on the [syntax page](http://kramdown.gettalong.org/syntax.html). 
-Note that source code formatting is configured to use [GitHub Flavoured Mardown](https://help.github.com/articles/github-flavored-markdown/) and "code fences", see below.
+Note that source code formatting is configured to use [GitHub Flavoured Markdown](https://help.github.com/articles/github-flavored-markdown/) and "code fences", see below.
 
 ### Liquid tags and filters
 Jekyll uses the [Liquid](https://shopify.github.io/liquid/) templating language to process files. 

@@ -1,4 +1,4 @@
-package com.intellij.tutorials.module;
+package org.intellij.sdk.module;
 
 import com.intellij.ide.util.projectWizard.*;
 import com.intellij.openapi.Disposable;
@@ -7,9 +7,6 @@ import com.intellij.openapi.options.ConfigurationException;
 import com.intellij.openapi.roots.ModifiableRootModel;
 import org.jetbrains.annotations.Nullable;
 
-/**
- * @author Anna Bulenkova
- */
 public class DemoModuleBuilder extends ModuleBuilder {
   @Override
   public void setupRootModel(ModifiableRootModel model) throws ConfigurationException {

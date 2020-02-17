@@ -1,16 +1,14 @@
-package com.intellij.tutorials.module;
+package org.intellij.sdk.module;
 
 import com.intellij.icons.AllIcons;
 import com.intellij.ide.util.projectWizard.*;
 import com.intellij.openapi.module.*;
 import com.intellij.openapi.roots.ui.configuration.ModulesProvider;
+import icons.SdkIcons;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
 
-/**
- * @author Anna Bulenkova
- */
 public class DemoModuleType extends ModuleType<DemoModuleBuilder> {
   private static final String ID = "DEMO_MODULE_TYPE";
 
@@ -43,7 +41,7 @@ public class DemoModuleType extends ModuleType<DemoModuleBuilder> {
 
   @Override
   public Icon getNodeIcon(@Deprecated boolean b) {
-    return AllIcons.General.Information;
+    return SdkIcons.Sdk_default_icon;
   }
 
   @NotNull

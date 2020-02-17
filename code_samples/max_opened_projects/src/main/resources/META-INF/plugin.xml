@@ -35,12 +35,12 @@
 
   <project-components>
     <component>
-      <implementation-class>MyPackage.MaxProject</implementation-class>
+      <implementation-class>org.intellij.sdk.maxOpenPrj.MaxProject</implementation-class>
     </component>
   </project-components>
 
   <extensions defaultExtensionNs="com.intellij">
-    <applicationService serviceInterface="MyPackage.MyCounter"
-                        serviceImplementation="MyPackage.MyCounter"/>
+    <applicationService serviceInterface="org.intellij.sdk.maxOpenPrj.MyCounter"
+                        serviceImplementation="org.intellij.sdk.maxOpenPrj.MyCounter"/>
   </extensions>
 </idea-plugin>

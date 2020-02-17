@@ -15,9 +15,8 @@ repositories {
 // See https://github.com/JetBrains/gradle-intellij-plugin/
 intellij {
     version '2019.3.3'
+    updateSinceUntilBuild = false
 }
 patchPluginXml {
-    changeNotes """
-      Add change notes here.<br>
-      <em>most HTML tags may be used</em>"""
+    version = project.version
 }

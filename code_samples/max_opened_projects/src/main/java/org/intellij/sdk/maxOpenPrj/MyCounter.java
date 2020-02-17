@@ -1,4 +1,4 @@
-package MyPackage;
+package org.intellij.sdk.maxOpenPrj;
 
 /**
  * Created by IntelliJ IDEA.

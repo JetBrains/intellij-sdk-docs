@@ -1,4 +1,4 @@
-package MyPackage;
+package org.intellij.sdk.maxOpenPrj;
 
 import com.intellij.openapi.components.*;
 import com.intellij.openapi.project.*;

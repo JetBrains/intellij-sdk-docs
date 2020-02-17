@@ -59,7 +59,7 @@ Once you define the `TemplateContextType`, be sure to add the assigned context t
 It is not always necessary to define your own `TemplateContextType`, as there are many existing template contexts already defined in the IntelliJ Platform. Consider reusing one of the [many existing template contexts](upsource:///platform/lang-api/src/com/intellij/codeInsight/template/TemplateContextType.java) if you are augmenting language support to an existing area.
 
 ## Register Extension Points
-Using the `com.intellij.defaultLiveTemplatesProvider` and `com.intellij.liveTemplateContext` extension points, regsiter the implementations with the IntelliJ Platform.
+Using the `com.intellij.defaultLiveTemplatesProvider` and `com.intellij.liveTemplateContext` extension points, register the implementations with the IntelliJ Platform.
 ```xml
   <extensions defaultExtensionNs="com.intellij">
     <defaultLiveTemplatesProvider implementation="org.intellij.sdk.liveTemplates.MarkdownTemplateProvider"/>

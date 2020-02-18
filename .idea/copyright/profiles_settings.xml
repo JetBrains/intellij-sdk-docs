@@ -1,3 +1,10 @@
 <component name="CopyrightManager">
-  <settings default="" />
+  <settings default="IntelliJ Platform SDK">
+    <module2copyright>
+      <element module="All" copyright="IntelliJ Platform SDK" />
+    </module2copyright>
+    <LanguageOptions name="__TEMPLATE__">
+      <option name="block" value="false" />
+    </LanguageOptions>
+  </settings>
 </component>

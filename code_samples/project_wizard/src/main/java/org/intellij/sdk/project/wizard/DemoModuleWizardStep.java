@@ -1,4 +1,4 @@
-package org.jetbrains.tutorials.project.wizard;
+package org.intellij.sdk.project.wizard;
 
 import com.intellij.ide.util.projectWizard.*;
 import com.intellij.openapi.module.ModuleType;

@@ -4,7 +4,6 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/intellij-sdk-docs.iml" filepath="$PROJECT_DIR$/.idea/intellij-sdk-docs.iml" />
       <module fileurl="file://$PROJECT_DIR$/code_samples/plugin_sample/plugin_sample.iml" filepath="$PROJECT_DIR$/code_samples/plugin_sample/plugin_sample.iml" group="code_samples" />
-      <module fileurl="file://$PROJECT_DIR$/code_samples/project_model/project_model.iml" filepath="$PROJECT_DIR$/code_samples/project_model/project_model.iml" group="code_samples" />
       <module fileurl="file://$PROJECT_DIR$/code_samples/project_view_pane/project_view_pane.iml" filepath="$PROJECT_DIR$/code_samples/project_view_pane/project_view_pane.iml" group="code_samples" />
       <module fileurl="file://$PROJECT_DIR$/code_samples/project_wizard/project_wizard.iml" filepath="$PROJECT_DIR$/code_samples/project_wizard/project_wizard.iml" group="code_samples" />
       <module fileurl="file://$PROJECT_DIR$/code_samples/theme_basics/theme_basics.iml" filepath="$PROJECT_DIR$/code_samples/theme_basics/theme_basics.iml" group="code_samples" />

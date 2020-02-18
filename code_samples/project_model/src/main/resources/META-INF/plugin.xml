@@ -20,7 +20,7 @@
   <!-- Text to display as description on Preferences/Settings | Plugin page  -->
   <description>
     <![CDATA[
-      Demonstrates various aspects of interacting with project model.<br>Adds <i>SDK Demo $$$$</i> to <b>####</b>
+      Demonstrates various aspects of interacting with project model.<br>Adds menu items to <b>Tools</b> and <b>Editor Context</b> menus.
     ]]>
   </description>
   <change-notes>

@@ -1,5 +1,3 @@
-// Copyright 2000-2020. JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
-
 package org.intellij.sdk.project.model;
 
 import com.intellij.openapi.actionSystem.*;
@@ -54,10 +52,14 @@ public class LibrariesAction extends AnAction {
           }
         }
       }
+      String fileAndLibs;
       if (jars.length() > 0) {
-        Messages.showInfoMessage("Libraries for file " + virtualFile.getName() + ": " + jars.toString(),
-                                 "Libraries Info");
+        fileAndLibs = virtualFile.getName() + ": " + jars.toString();
+      } else {
+        fileAndLibs = "None";
       }
+      Messages.showInfoMessage("Libraries for file: " + fileAndLibs,
+              "Libraries Info");
     }
   }
 }

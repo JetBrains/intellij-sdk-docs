@@ -23,7 +23,7 @@ public class ShowSourceRootsActions extends AnAction {
     for (VirtualFile file : vFiles) {
       sourceRootsList.append(file.getUrl()).append("\n");
     }
-    Messages.showInfoMessage("Source roots for the " + projectName + " plugin:\n" + sourceRootsList,
+    Messages.showInfoMessage("Source roots for the " + projectName + " plugin:\n" + sourceRootsList.toString(),
                              "Project Properties");
   }
 

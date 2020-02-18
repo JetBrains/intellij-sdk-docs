@@ -1,0 +1,71 @@
+<!-- Copyright 2000-2020. JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+
+<idea-plugin>
+
+  <!--  Unique id for this plugin. Must stay constant for the life of the plugin.  -->
+  <id>org.intellij.sdk.projectModel</id>
+
+  <!-- Text to display as name on Preferences/Settings | Plugin page  -->
+  <name>SDK: Project Model Sample Project</name>
+
+  <!-- The version of this plugin -->
+  <version>2.0.0</version>
+
+  <!-- Compatible with the following versions of IntelliJ Platform -->
+  <idea-version since-build="191"/>
+
+  <!-- Product and plugin compatibility requirements -->
+  <depends>com.intellij.modules.java</depends>
+
+  <!-- Text to display as description on Preferences/Settings | Plugin page  -->
+  <description>
+    <![CDATA[
+      Demonstrates various aspects of interacting with project model.<br>Adds <i>SDK Demo $$$$</i> to <b>####</b>
+    ]]>
+  </description>
+  <change-notes>
+    <![CDATA[
+      <ul>
+        <li><b>2.0.0</b> Convert to Gradle-based plugin, change plugin ID</li>
+        <li><b>1.0.0</b> Release 2018.3 and earlier.</li>
+      </ul>
+    ]]>
+  </change-notes>
+
+  <!-- Text to display as company information on Preferences/Settings | Plugin page -->
+  <vendor url="https://plugins.jetbrains.com">IntelliJ Platform SDK</vendor>
+
+  <actions>
+    <action id="ProjectModel.SourceRoots" class="org.intellij.sdk.project.model.ShowSourceRootsActions"
+            text="Show Source Roots"
+            description="Illustrates how to get source roots"
+            icon="SdkIcons.Sdk_default_icon">
+      <add-to-group group-id="ToolsMenu" anchor="first"/>
+    </action>
+    <action id="ProjectModel.ProjectSdk" class="org.intellij.sdk.project.model.ProjectSdkAction"
+            text="Show Sdk Info"
+            description="Illustrates how to get Sdk info"
+            icon="SdkIcons.Sdk_default_icon">
+      <add-to-group group-id="ToolsMenu" anchor="after" relative-to-action="ProjectModel.SourceRoots"/>
+    </action>
+    <action id="ProjectModel.ProjectFileIndex"
+            class="org.intellij.sdk.project.model.ProjectFileIndexSampleAction"
+            text="FileProjectIndex in Action"
+            description="Illustrates how to get source roots"
+            icon="SdkIcons.Sdk_default_icon">
+      <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+    </action>
+    <action id="ProjectModel.ModificationAction" class="org.intellij.sdk.project.model.ModificationAction"
+            text="Project Modification in Action"
+            description="Illustrates how to get source roots"
+            icon="SdkIcons.Sdk_default_icon">
+      <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+    </action>
+    <action id="ProjectModel.LibrariesAction" class="org.intellij.sdk.project.model.LibrariesAction"
+            text="Libraries for File"
+            description="Illustrates accessing libraries"
+            icon="SdkIcons.Sdk_default_icon">
+      <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+    </action>
+  </actions>
+</idea-plugin>

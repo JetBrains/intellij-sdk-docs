@@ -1,4 +1,4 @@
-package org.jetbrains.tutorials.view.pane;
+package org.intellij.sdk.view.pane;
 
 import com.intellij.icons.AllIcons;
 import com.intellij.ide.projectView.*;

@@ -4,10 +4,10 @@
 <idea-plugin>
 
   <!-- Unique identifier of the plugin. Cannot be changed between the plugin versions. -->
-  <id>org.intellij.sdk.kotlin_demo</id>
+  <id>org.intellij.sdk.kotlinDemo</id>
 
   <!-- Plugin name -->
-  <name>SDK: kotlin_demo</name>
+  <name>SDK: Kotlin Demo</name>
 
   <!-- Plugin version, in MAJOR.MINOR.FIX format -->
   <version>2.0.0</version>

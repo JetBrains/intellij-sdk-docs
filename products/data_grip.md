@@ -32,5 +32,5 @@ As described in [Modules Specific to Functionality](/basics/getting_started/plug
 Consequently, without the `com.intellij.modules.platform` declaration the plugin is assumed to be a [legacy plugin](/basics/getting_started/plugin_compatibility.md#declaring-plugin-dependencies) and will not load in DataGrip.
 
 ## Available DataGrip APIs
-Use the [Exploring APIs as a Consumer](/basics/getting_started/plugin_compatibility.html#exploring-apis-as-a-consumer) process to identify the libraries in `DatabaseTools`.
+Use the [Exploring APIs as a Consumer](/basics/getting_started/plugin_compatibility.md#exploring-apis-as-a-consumer) process to identify the libraries in `DatabaseTools`.
 Test your plugin with any version of DataGrip you wish to support.

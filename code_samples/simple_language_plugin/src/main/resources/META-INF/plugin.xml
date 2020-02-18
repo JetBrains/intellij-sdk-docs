@@ -3,7 +3,7 @@
 <idea-plugin>
 
   <!--  Unique id for this plugin. Must stay constant for the life of the plugin.  -->
-  <id>org.intellij.sdk.simple_language</id>
+  <id>org.intellij.sdk.language</id>
 
   <!-- Text to display as name on Preferences/Settings | Plugin page  -->
   <name>SDK: Simple Language Sample Project</name>
@@ -12,7 +12,7 @@
   <version>2.0.0</version>
 
   <!-- Compatible with the following versions of IntelliJ Platform
-        At least 2019.2 is required. Otherwise, FileTypeFactor must be registered as an extension.
+        At least 2019.2 is required. Otherwise, FileTypeFactory must be registered as an extension.
         See the extensions section below. -->
   <idea-version since-build="192.2"/>
 

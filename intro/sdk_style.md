@@ -89,7 +89,7 @@ E.g. the following list item will be replaced by links to all of the header item
 ```
 
 Further Kramdown features are described on the [converter page](https://kramdown.gettalong.org/converter/html.html), and attribute lists are described on the [syntax page](http://kramdown.gettalong.org/syntax.html). 
-Note that source code formatting is configured to use [GitHub Flavoured Mardown](https://help.github.com/articles/github-flavored-markdown/) and "code fences", see below.
+Note that source code formatting is configured to use [GitHub Flavoured Markdown](https://help.github.com/articles/github-flavored-markdown/) and "code fences", see below.
 
 ### Liquid tags and filters
 Jekyll uses the [Liquid](https://shopify.github.io/liquid/) templating language to process files. 
@@ -120,14 +120,14 @@ Consistent terminology helps the reader grasp new concepts more quickly:
 
 ### Syntax Highlighting
 In-paragraph code fragments and IntelliJ Platform APIs are formatted according to these rules:
-* Avoid using qualifiers like "`foo` interface" or "`foo` abstract class."
-  Just refer to `foo`.
+* Avoid using qualifiers like "`Foo` interface" or "`Foo` abstract class".
+  Just refer to `Foo`.
 * Use the FQN when first introducing an extension point on a page.
-  Rather than `stubIndex`, introduce `com.intellij.stubindex`.
+  Rather than `stubIndex`, introduce `com.intellij.stubIndex`.
   Subsequent mentions on the page can be `stubIndex`.
   Exception: the FQN is not used when an extension point is introduced in an upsource [link](#links).
-* Method names always use empty parentheses: `bar()`. 
-  Method names are prefixed with the class/interface name when needed for clarity: `foo.bar()`.
+* Method names always use empty parentheses: "call `bar()` to apply". 
+  Method names are prefixed with the class/interface name when needed for clarity: `Foo.bar()`.
 
 Source code can be represented by using [GitHub Flavoured Markdown](https://help.github.com/articles/github-flavored-markdown/) code fences, which are three backticks:  
 
@@ -148,7 +148,7 @@ Syntax highlighting can be applied by specifying the language after the first se
 Here is the list of [supported languages](https://github.com/jneen/rouge/wiki/List-of-supported-languages-and-lexers), and also [Kotlin](https://kotlinlang.org), of course. 
 
 Whole files can be imported on a page.
-The advantage is the code can come from code_samples, so it will be live code that isn't silently stale.
+The advantage is the code can come from `code_samples` directory, so it will be live code that isn't silently stale.
 The disadvantage is the file may contain a large class, too large for the documentation page to be effective.  
 
         ```java 

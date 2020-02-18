@@ -59,7 +59,7 @@ and then to add it to the tool window using
 
 You can control whether the user is allowed to close tabs either globally or on a per-tab basis.
 The former is done by passing the `canCloseContents` parameter to the `registerToolWindow()` function, or by specifying
-`canCloseContents="true"` in *plugin.xml*.  The default value is `false`; Calling setClosable(true) on ContentManager content will be ignored unless `canCloseContents` is explicityly set.
+`canCloseContents="true"` in *plugin.xml*.  The default value is `false`; Calling setClosable(true) on ContentManager content will be ignored unless `canCloseContents` is explicitly set.
 If closing tabs is enabled in general, you can disable closing of specific tabs by calling
 [`Content.setCloseable(false)`](upsource:///platform/platform-api/src/com/intellij/ui/content/Content.java).
 

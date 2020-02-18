@@ -1,5 +1,5 @@
 <idea-plugin>
-  <id>com.jetbrains.sdk.theme_basics</id>
+  <id>com.jetbrains.sdk.themeBasics</id>
   <name>SDK Theme Basics</name>
   <version>0.1</version>
   <vendor email="support-email@company.com" url="https://blog.jetbrains.com/platform/">JetBrains Plugin Platform SDK</vendor>

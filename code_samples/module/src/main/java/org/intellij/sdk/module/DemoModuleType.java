@@ -31,13 +31,13 @@ public class DemoModuleType extends ModuleType<DemoModuleBuilder> {
   @NotNull
   @Override
   public String getName() {
-    return "Demo Module Type";
+    return "SDK Module Type";
   }
 
   @NotNull
   @Override
   public String getDescription() {
-    return "Demo Module Type";
+    return "Example Custom Module Type";
   }
 
 

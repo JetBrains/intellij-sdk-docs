@@ -15,7 +15,7 @@ repositories {
 // See https://github.com/JetBrains/gradle-intellij-plugin/
 intellij {
   // Define IntelliJ Platform API version to use for building this plugin
-  version '2019.2.4'
+  version '2019.3.3'
 }
 
 patchPluginXml {

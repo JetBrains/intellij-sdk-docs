@@ -87,4 +87,12 @@ public class MyToolwindowListener implements ToolWindowManagerListener {
         // handle the state change
     }
 }
-```
+```                  
+
+## Additional attributes
+
+Registration of listeners can be restricted using the following attributes:
+
+- `os` - allows to restrict listener to given OS, e.g., `os="windows"` for Windows only (2020.1 and later)
+- `activeInTestMode` - set to `false` to disable listener if `com.intellij.openapi.application.Application.isUnitTestMode()`==`true` 
+- `activeInHeadlessMode` - set to `false` to disable listener if `com.intellij.openapi.application.Application.isHeadlessEnvironment()`==`true`. Also covers `activeInTestMode` as test mode implies headless mode. 

@@ -3,5 +3,9 @@
   <component name="CompilerConfiguration">
     <addNotNullAssertions enabled="false" />
     <wildcardResourcePatterns />
+    <bytecodeTargetLevel>
+      <module name="project_wizard.main" target="1.8" />
+      <module name="project_wizard.test" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

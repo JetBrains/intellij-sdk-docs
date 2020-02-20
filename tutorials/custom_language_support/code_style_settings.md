@@ -1,6 +1,7 @@
 ---
 title: 16. Code Style Setting
 ---
+<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 [Code style settings](/reference_guide/custom_language_support/code_formatting.md#code-style-settings) enable defining formatting options. 
 A code style settings provider creates an instance of the settings and also creates an options page in settings/preferences. 

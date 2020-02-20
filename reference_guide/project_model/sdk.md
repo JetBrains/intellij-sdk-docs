@@ -1,6 +1,7 @@
 ---
 title: SDK
 ---
+<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 Every project uses a Software Development Kit (SDK). 
 For Java projects, the SDK is referred to as the JDK (Java Development Kit). 

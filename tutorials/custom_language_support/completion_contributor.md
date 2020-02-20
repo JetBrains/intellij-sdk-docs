@@ -1,6 +1,7 @@
 ---
 title: 9. Completion Contributor
 ---
+<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 Custom languages provide code completion using one of [two approaches](/reference_guide/custom_language_support/code_completion.md).
 The Simple Language plugin implements the less complex of the two methods, reference completion.

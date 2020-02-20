@@ -1,6 +1,7 @@
 ---
 title: Virtual File System
 ---
+<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 The virtual file system (VFS) is a component of *IntelliJ Platform* that encapsulates most of its activity for working with files. It serves the following main purposes:
 

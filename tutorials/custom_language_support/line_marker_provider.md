@@ -1,6 +1,7 @@
 ---
 title: 8. Line Marker Provider
 ---
+<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 Line markers help annotate code with icons on the gutter.
 These markers can provide navigation targets to related code.

@@ -1,6 +1,7 @@
 ---
 title: Publishing a plugin
 ---
+<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 When your plugin is ready you can publish it to a plugin repository so that other users can install it. 
 You can choose to publish it on the [JetBrains Plugin Repository](https://plugins.jetbrains.com)

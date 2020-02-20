@@ -1,6 +1,7 @@
 ---
 title: Module
 ---
+<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 A _module_ is a discrete unit of functionality that can be run, tested, and debugged independently. Modules include such things as source code, build scripts, unit tests, deployment descriptors, etc.
 

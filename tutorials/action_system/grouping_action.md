@@ -1,6 +1,7 @@
 ---
 title: Grouping Actions
 ---
+<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 If an implementation requires several actions, or there are simply too many actions that overload the menu, the actions can be placed into groups.
 This tutorial demonstrates adding an action to an existing group, creating a new action group, and action groups with a variable number of actions.

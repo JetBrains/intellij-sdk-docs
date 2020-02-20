@@ -1,6 +1,7 @@
 ---
 title: 9. Commenter Test
 ---
+<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 This test will check if the commenter, implemented in the [Commenter](/tutorials/custom_language_support/commenter.md) section of the Custom Language Support Tutorial, works as expected.
 

@@ -1,6 +1,7 @@
 ---
 title: References and Resolve
 ---
+<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 One of the most important and tricky parts in implementing a custom language PSI is resolving references.
 Resolving references gives users the ability to navigate from a PSI element usage (accessing a variable, calling a method and so on) to the declaration of that element (the variable's definition, a method declaration and so on).

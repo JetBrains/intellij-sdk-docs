@@ -1,6 +1,7 @@
 ---
 title: Supporting Module Types
 ---
+<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 *IntelliJ Platform* provides a set of standard module types. However, an application might need a  module of a type that isn't supported yet.
 This tutorial shows how to register a new module type and link it to the project creation procedure and the UI.

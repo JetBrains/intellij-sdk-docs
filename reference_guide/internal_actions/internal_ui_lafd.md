@@ -1,6 +1,7 @@
 ---
 title: Internal Actions - LaF Defaults
 ---
+<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 The _LaF Defaults_ window provides a key-value pair lookup for UI Controls.
 It also allows interactive prototyping of UI Control color changes. 

@@ -1,6 +1,7 @@
 ---
 title: Custom Language Support Tutorial
 ---
+<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 In this tutorial we will add support for a [.properties](https://en.wikipedia.org/wiki/.properties) language and its usages within Java code.
 IntelliJ Platform support for custom languages is discussed in more depth in the [Custom Language](/reference_guide/custom_language_support.md) section.

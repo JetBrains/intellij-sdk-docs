@@ -1,7 +1,7 @@
 ---
 title: Rename Refactoring
 ---
-
+<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 The operation of the Rename refactoring is quite similar to that of Find Usages.
 It uses the same rules for locating the element to be renamed, and the same index of words for locating the files which may have references to the element being renamed.

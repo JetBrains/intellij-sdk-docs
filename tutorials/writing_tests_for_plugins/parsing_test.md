@@ -1,6 +1,7 @@
 ---
 title: 2. Parsing Test
 ---
+<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 The first test checks if the Simple Language parser, implemented in the [Lexer and Parser Definition](/tutorials/custom_language_support/lexer_and_parser_definition.md) section of the Custom Language Support Tutorial, works as expected.
 

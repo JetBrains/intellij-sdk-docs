@@ -3,6 +3,7 @@ title: Testing Plugins
 redirect_from:
   - /basics/testing_plugins.html
 ---
+<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 Most of the tests in the *IntelliJ Platform* codebase are *model level functional tests*. What this means is the following:
 

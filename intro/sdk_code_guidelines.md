@@ -1,6 +1,7 @@
 ---
 title: Guidelines for Creating IntelliJ Platform SDK Code Samples
 ---
+<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 This document describes the coding guidelines used for authoring open-source IntelliJ Platform SDK code samples.
 Before you begin, please read this page thoroughly, as well as the [Code of Conduct](/CODE_OF_CONDUCT.md) and [License](https://github.com/JetBrains/intellij-sdk-docs/blob/master/LICENSE.txt) documents.

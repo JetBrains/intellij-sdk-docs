@@ -1,6 +1,7 @@
 ---
 title: PSI References
 ---
+<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 A *reference* in a PSI tree is an object that represents a link from a *usage* of a certain element in the code
 to the corresponding *declaration*. *Resolving* a reference means locating the declaration to which a specific usage

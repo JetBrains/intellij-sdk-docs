@@ -1,6 +1,7 @@
 ---
 title: 7. Annotator
 ---
+<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 An [Annotator](/reference_guide/custom_language_support/syntax_highlighting_and_error_highlighting.md#annotator) helps highlight and annotate any code based on specific rules.
 This section adds annotation functionality to support the Simple Language in the context of Java code.

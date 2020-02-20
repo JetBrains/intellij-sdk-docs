@@ -1,6 +1,7 @@
 ---
 title: Run Configurations
 ---
+<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 *Run Configurations* allow users to run a certain type of external processes from within the IDE, e.g. a script, an application, a server, etc. You can provide UI for the user to specify execution options, as well as an option to create a run configuration based on a specific location in the source code.
 

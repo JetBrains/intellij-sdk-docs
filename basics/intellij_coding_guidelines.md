@@ -1,6 +1,7 @@
 ---
 title: IntelliJ Platform Coding Guidelines
 ---
+<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 If you are writing code that you would like to contribute to the IntelliJ Platform (either as a patch or as a plugin), following these guidelines will make it easier for the JetBrains development team to review and accept your changes.
 

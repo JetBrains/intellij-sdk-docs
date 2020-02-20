@@ -1,6 +1,7 @@
 ---
 title: Plugin Components
 ---
+<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 > **WARNING** When writing new plugins, you should avoid creating components, and you should migrate existing components in your plugins to services, extensions or listeners (see below).
 

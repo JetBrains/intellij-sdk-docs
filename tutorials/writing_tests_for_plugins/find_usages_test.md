@@ -1,6 +1,7 @@
 ---
 title: 8. Find Usages Test
 ---
+<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 This test ensures the find usages provider, implemented in the [Find Usages Provider](/tutorials/custom_language_support/find_usages_provider.md) section of the Custom Language Support Tutorial, works correctly.
 

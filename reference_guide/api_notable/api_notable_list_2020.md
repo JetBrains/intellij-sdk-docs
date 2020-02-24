@@ -20,6 +20,9 @@ Dynamic Plugins
 `ResolveCache` using `IdempotenceChecker` in tests
 : Reports when the same reference resolves to non-equivalent results in different threads, see [`IdempotenceChecker`](upsource:///platform/core-impl/src/com/intellij/util/IdempotenceChecker.java).
 
+Refactoring dialog: builtin "Open in editor" option
+: Set `addOpenInEditorCheckbox` constructor parameter to enable it in custom `RefactoringDialog` implementation.
+
 ## Notable Changes in IntelliJ IDEA
 
 EOL for JetBrains TFS Plugin

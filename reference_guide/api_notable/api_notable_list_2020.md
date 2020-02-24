@@ -24,3 +24,7 @@ Dynamic Plugins
 
 EOL for JetBrains TFS Plugin
 : Please use [Azure DevOps](https://plugins.jetbrains.com/plugin/7981-azure-devops) plugin instead, see [blog post](https://blog.jetbrains.com/idea/2020/01/end-of-support-for-tfs-2014-and-older/) for more details.
+
+Unbundled plugins
+: Several plugins (Cloud Foundry, Google App Engine) for no longer actively maintained technology have been unbundled. 
+If your plugin depends on them, users will need to install them from the [JetBrains plugin repository](https://plugins.jetbrains.com).

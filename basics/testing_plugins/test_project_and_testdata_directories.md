@@ -1,6 +1,7 @@
 ---
 title: Test Project and Testdata Directories
 ---
+<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 The test fixture creates a *test project* environment. Unless you customize the project creation, the test project will have one module with one source root called `src`. The files for the test project exist either in a temporary directory or in an in-memory file system, depending on which implementation of [`TempDirTestFixture`](upsource:///platform/testFramework/src/com/intellij/testFramework/fixtures/TempDirTestFixture.java) is used.
 

@@ -1,6 +1,7 @@
 ---
 title: Plugin Dependencies
 ---
+<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 A plugin may depend on classes from other plugins, either bundled, third-party, or by the same author.
 This document describes the syntax for declaring plugin dependencies and optional plugin dependencies.

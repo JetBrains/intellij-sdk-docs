@@ -1,6 +1,7 @@
 ---
 title: Navigating the PSI
 ---
+<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 There are three main ways to navigate the PSI: *top-down*, *bottom-up*, and using *references*. In the first scenario, 
 you have a PSI file or another higher-level element (for example, a method), and you need to find all elements that match a

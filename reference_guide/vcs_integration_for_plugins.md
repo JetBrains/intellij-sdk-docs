@@ -1,8 +1,7 @@
 ---
 title: VCS Integration Plugins
 ---
-
-
+<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 This page gives an overview of the Version Control Integration API in IntelliJ IDEA 7.0.
 Most of the concepts described here also apply to IntelliJ IDEA 6.0.

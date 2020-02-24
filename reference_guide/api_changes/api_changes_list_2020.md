@@ -1,6 +1,7 @@
 ---
 title: Incompatible Changes in IntelliJ Platform and Plugins API 2020.*
 ---
+<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 <!--
 Before documenting a breaking API change, please, make sure that the change cannot be avoided 

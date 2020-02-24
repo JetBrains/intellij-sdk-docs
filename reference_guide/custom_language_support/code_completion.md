@@ -1,6 +1,7 @@
 ---
 title: Code Completion
 ---
+<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 There are two main types of code completion that can be provided by custom language plugins: reference completion and contributor-based completion.
 

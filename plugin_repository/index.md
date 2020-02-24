@@ -12,6 +12,7 @@ redirect_from:
   - /plugin_repository/custom_channels.html
 
 ---
+<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 JetBrains provides an official plugins repository [plugins.jetbrains.com](https://plugins.jetbrains.com) for all IntelliJ Platform-based IDEs, 
 as well as TeamCity (limited functionality).

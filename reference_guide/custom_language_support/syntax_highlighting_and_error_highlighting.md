@@ -1,6 +1,7 @@
 ---
 title: Syntax Highlighting and Error Highlighting
 ---
+<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 The class used to specify how a particular range of text should be highlighted is called
 [`TextAttributesKey`](upsource:///platform/core-api/src/com/intellij/openapi/editor/colors/TextAttributesKey.java).

@@ -1,6 +1,7 @@
 ---
 title: Documents
 ---
+<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 A document is an editable sequence of Unicode characters, which typically corresponds to the text contents of a virtual file. Line breaks in a document are _always_ normalized to `\n`. The *IntelliJ Platform* handles encoding and line break conversions when loading and saving documents transparently.
 

@@ -1,7 +1,7 @@
 ---
 title: XML DOM API
 ---
-
+<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 <!-- TODO content: DOM <=> PSI, Go To Symbol, editor gutter icon->DOM -->
 

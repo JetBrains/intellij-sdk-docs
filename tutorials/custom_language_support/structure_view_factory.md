@@ -1,6 +1,7 @@
 ---
 title: 14. Structure View Factory
 ---
+<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 The [structure view](/reference_guide/custom_language_support/structure_view.md) in the IntelliJ Platform-based IDE can be customized for a specific file type, including Simple Language.
 Creating a structure view factory allows showing the structure of any file in a **Structure** Tool Window for easy navigation between items.

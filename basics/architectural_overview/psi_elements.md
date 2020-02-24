@@ -1,6 +1,7 @@
 ---
 title: PSI Elements
 ---
+<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 A PSI (Program Structure Interface) file represents a hierarchy of PSI elements (so-called _PSI trees_). A single PSI file (itself being a PSI element) may contain several PSI trees in specific programming languages. A PSI element, in its turn, can have child PSI elements.
 

@@ -1,6 +1,7 @@
 ---
 title: Guidelines for Creating IntelliJ Platform SDK Code Samples
 ---
+<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 This document describes the coding guidelines used for authoring open-source IntelliJ Platform SDK code samples.
 Before you begin, please read this page thoroughly, as well as the [Code of Conduct](/CODE_OF_CONDUCT.md) and [License](https://github.com/JetBrains/intellij-sdk-docs/blob/master/LICENSE.txt) documents.
@@ -35,9 +36,10 @@ Each roadmap should contain:
 ## Plugin Copyright Statements
 Use the standard intellij-community copyright notice in all sample plugins authored by JetBrains:
 ```text  
-Copyright 2000-$today.year JetBrains s.r.o. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file."  
+Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file."  
 ```
-The copyright statement must appear in every source file with the `$today.year` [Velocity](https://www.jetbrains.com/help/idea/copyright-profiles.html) template resolved.
+
+> **NOTE** The copyright statement must appear at the top of every source file. Use the [IntelliJ Platform SDK](https://github.com/JetBrains/intellij-sdk-docs/tree/master/.idea/copyright) copyright profile. 
 
 ## Directory Naming Conventions for SDK Plugins
 For _basic_ samples, the plugin directory name is derived from the IntelliJ Platform extension points demonstrated.

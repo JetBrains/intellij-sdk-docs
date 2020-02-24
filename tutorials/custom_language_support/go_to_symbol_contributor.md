@@ -1,6 +1,7 @@
 ---
 title: 13. Go To Symbol Contributor
 ---
+<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 A _Go to Symbol Contributor_ helps the user to navigate to any PSI element by its name.
 

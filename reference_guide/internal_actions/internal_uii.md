@@ -1,6 +1,7 @@
 ---
 title: Internal Actions - UI Inspector
 ---
+<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 The _UI Inspector_ is a tool to interrogate elements of the IntelliJ IDEA UI to get an internal description of each element.
 UI elements can be tested interactively by clicking on the element while the _UI Inspector_ is enabled.

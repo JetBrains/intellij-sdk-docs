@@ -3,6 +3,7 @@ title: IDE Development Instances
 redirect_from:
   - /basics/settings_caches_logs.html
 ---
+<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 A JetBrains feature for developing plugins is running or debugging a plugin project from within an IntelliJ Platform-based IDE such as IntelliJ IDEA. 
 Selecting the [**Run**](getting_started/running_and_debugging_a_plugin.md) menu for a DevKit-based project, or the [**runIde**](/tutorials/build_system/prerequisites.md#running-a-simple-gradle-based-intellij-platform-plugin) task for a Gradle-based project will launch a _Development Instance_ of the IDE with the plugin enabled.

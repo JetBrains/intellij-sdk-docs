@@ -1,6 +1,7 @@
 ---
 title: Basics of working with the Editor
 ---
+<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 This tutorial will lead you through the series of steps showing how to work with the IntelliJ Platform Editor, how to access and modify text it contains, and how to handle events sent to the editor. 
 * [1. Working With Text](editor_basics/working_with_text.md)

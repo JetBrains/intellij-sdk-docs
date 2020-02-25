@@ -23,6 +23,9 @@ Dynamic Plugins
 Refactoring dialog: builtin "Open in editor" option
 : Set `addOpenInEditorCheckbox` constructor parameter to enable it in custom `RefactoringDialog` implementation.
 
+Configurable status bar widgets
+: Use extension point `com.intellij.statusBarWidgetFactory` to provide widgets that can be disabled or reordered. 
+
 ## Notable Changes in IntelliJ IDEA
 
 EOL for JetBrains TFS Plugin

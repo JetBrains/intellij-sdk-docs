@@ -2,8 +2,10 @@
 
 package org.intellij.sdk.maxOpenPrj;
 
-import com.intellij.openapi.components.*;
-import com.intellij.openapi.project.*;
+import com.intellij.openapi.components.ProjectComponent;
+import com.intellij.openapi.components.ServiceManager;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.ui.Messages;
 import org.jetbrains.annotations.NotNull;
 
@@ -33,23 +35,23 @@ public class MaxProject implements ProjectComponent {
 
   public void projectOpened() {
     // called when project is opened
-    MyCounter CommandCounter = ServiceManager.getService(MyCounter.class);
+    MyCounter commandCounter = ServiceManager.getService(MyCounter.class);
 
-    if (CommandCounter.IncreaseCounter() == -1) {
-      Messages.showMessageDialog(
-          "The maximum number of opened projects exceeds " + String.valueOf(CommandCounter.MaxCount) +
-          " projects!", "Error", Messages.getErrorIcon());
-      ProjectManager PM = ProjectManager.getInstance();
-      Project[] AllProjects = PM.getOpenProjects();
-      Project project = AllProjects[AllProjects.length - 1];
-      PM.closeProject(project);
+    if (commandCounter.increaseCounter() == -1) {
+      final String errorMessage = String.format(
+              "The maximum number of opened projects exceeds %d projects!", commandCounter.maxCount);
+      Messages.showMessageDialog(errorMessage, "Error", Messages.getErrorIcon());
+      ProjectManager pm = ProjectManager.getInstance();
+      Project[] allProjects = pm.getOpenProjects();
+      Project project = allProjects[allProjects.length - 1];
+      pm.closeProject(project);
     }
   }
 
 
   public void projectClosed() {
     // called when project is being closed
-    MyCounter CommandCounter = ServiceManager.getService(MyCounter.class);
-    CommandCounter.DecreaseCounter();
+    MyCounter commandCounter = ServiceManager.getService(MyCounter.class);
+    commandCounter.decreaseCounter();
   }
 }

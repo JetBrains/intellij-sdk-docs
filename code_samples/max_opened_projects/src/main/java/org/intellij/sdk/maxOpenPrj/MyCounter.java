@@ -10,23 +10,20 @@ package org.intellij.sdk.maxOpenPrj;
  * To change this template use File | Settings | File Templates.
  */
 public class MyCounter {
-  private int Count = 0;
   // Sets the maximum allowed number of opened projects.
-  public final int MaxCount = 3;
+  public final int maxCount = 3;
+  private int count = 0;
 
   public MyCounter() {
-
-
   }
 
-  public int IncreaseCounter() {
-    Count++;
-    return (Count > MaxCount) ? -1 : Count;
+  public int increaseCounter() {
+    return (++count > maxCount) ? -1 : count;
   }
 
-  public int DecreaseCounter() {
-    Count--;
-    return (Count > MaxCount) ? -1 : Count;
+  @SuppressWarnings("UnusedReturnValue")
+  public int decreaseCounter() {
+    return (--count > maxCount) ? -1 : count;
   }
 
 }

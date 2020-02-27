@@ -11,7 +11,8 @@
       * [SDK Code Sample Guidelines](intro/sdk_code_guidelines.md)
     * [Code of Conduct](CODE_OF_CONDUCT.md)
 * [Getting Help](intro/getting_help.md)
-* [Recently Updated](recently_updated.md)
+* [Content Updates](intro/content_updates.md)
+    * [Recently Updated](recently_updated.md)
 
 ## Part I - Plugins
 * [Introduction](basics.md)

@@ -125,6 +125,9 @@ Java code migrated to use `TYPE_USE` nullability annotations
 `com.intellij.navigation.ChooseByNameContributorEx.processElementsWithName` method parameter type changed from `Processor<NavigationItem>` to ``Processor<? extends NavigationItem>``
 : This may break source-compatibility with inheritors written in Kotlin.
 
+
+## Changes in Python plugin 2020.1
+
 `com.jetbrains.python.psi.PyCallExpression.PyMarkedCallee` class removed
 : Use `com.jetbrains.python.psi.types.PyCallableType` instead.
 

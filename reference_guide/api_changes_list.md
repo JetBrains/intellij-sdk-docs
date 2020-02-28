@@ -64,8 +64,10 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 
 IntelliJ API may be occasionally changed between releases, leading to incompatibilities of existing plugins with newer IDE builds. 
 
+<!--
 > **NOTE** Starting with 2020.1 release, IntelliJ Platform–based IDEs will use compatibility check information provided by the [JetBrains plugin repository](/plugin_repository/index.md) to highlight possible compatibility issues to users directly in the IDE's "Plugins" manager. 
 Therefore, it is important to keep your plugins up to date with regard to the existing and upcoming API changes.
+-->
 
 Compatibility with newer IDEs can easily be verified for plugins hosted on the [JetBrains plugin repository](/plugin_repository/index.md) using the built-in [Plugin Verifier](https://blog.jetbrains.com/platform/2018/07/plugins-repository-now-integrates-with-the-plugin-verification-tool/).
 

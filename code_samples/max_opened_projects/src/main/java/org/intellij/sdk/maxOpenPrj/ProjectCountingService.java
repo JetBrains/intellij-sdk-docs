@@ -12,10 +12,25 @@ import com.intellij.openapi.project.ProjectManager;
 public class ProjectCountingService {
   // Sets the maximum allowed number of opened projects.
   private final int MAX_OPEN_PRJ_LIMIT = 3;
+  // The count of open projects must always be >= 0
+  private int openProjectCount = 0;
 
-  public boolean projLimitExceeded() {
-    ProjectManager prjMgr = ProjectManager.getInstance();
-    return prjMgr.getOpenProjects().length > MAX_OPEN_PRJ_LIMIT;
+  public void incrProjectCount() {
+    if (openProjectCount < 0) {
+      openProjectCount = 0;
+    }
+    openProjectCount++;
+  }
+
+  public void decrProjectCount() {
+    openProjectCount--;
+    if (openProjectCount < 0) {
+      openProjectCount = 0;
+    }
+  }
+
+  public boolean projectLimitExceeded() {
+    return openProjectCount > MAX_OPEN_PRJ_LIMIT;
   }
 
 }

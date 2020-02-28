@@ -74,7 +74,7 @@ _anotherPlugin/META-INF/plugin.xml_
   <id>another.plugin</id>
                          
   <!-- declare dependency on plugin defining extension point -->               
-  <depends>my.plugin</id>
+  <depends>my.plugin</depends>
         
   <!-- use "my.plugin" namespace -->
   <extensions defaultExtensionNs="my.plugin">

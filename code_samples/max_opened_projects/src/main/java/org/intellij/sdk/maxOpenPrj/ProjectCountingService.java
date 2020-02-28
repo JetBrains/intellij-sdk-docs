@@ -2,9 +2,6 @@
 
 package org.intellij.sdk.maxOpenPrj;
 
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.project.ProjectManager;
-
 /**
  * Application service implementation to keep a running count of
  * how many projects are open at a given time.

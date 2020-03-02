@@ -3,7 +3,7 @@
 <idea-plugin>
 
   <!--  Unique id for this plugin. Must stay constant for the life of the plugin.  -->
-  <id>org.intellij.sdk.maxOpenPrj</id>
+  <id>org.intellij.sdk.maxOpenProjects</id>
 
   <!-- Text to display as name on Preferences/Settings | Plugin page  -->
   <name>SDK: Maximum Open Projects Sample</name>
@@ -36,10 +36,10 @@
   <vendor url="https://plugins.jetbrains.com">IntelliJ Platform SDK</vendor>
 
   <applicationListeners>
-    <listener class="org.intellij.sdk.maxOpenPrj.ProjectOpenCloseListener" topic="com.intellij.openapi.project.ProjectManagerListener"/>
+    <listener class="org.intellij.sdk.maxOpenProjects.ProjectOpenCloseListener" topic="com.intellij.openapi.project.ProjectManagerListener"/>
   </applicationListeners>
 
   <extensions defaultExtensionNs="com.intellij">
-    <applicationService serviceImplementation="org.intellij.sdk.maxOpenPrj.ProjectCountingService"/>
+    <applicationService serviceImplementation="org.intellij.sdk.maxOpenProjects.ProjectCountingService"/>
   </extensions>
 </idea-plugin>

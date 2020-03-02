@@ -1,6 +1,6 @@
 // Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
 
-package org.intellij.sdk.maxOpenPrj;
+package org.intellij.sdk.maxOpenProjects;
 
 /**
  * Application service implementation to keep a running count of
@@ -12,14 +12,14 @@ public class ProjectCountingService {
   // The count of open projects must always be >= 0
   private int myOpenProjectCount = 0;
 
-   public void incrProjectCount() {
-    myOpenProjectCount = verifyProjectCount(myOpenProjectCount);
+  public void incrProjectCount() {
+    validateProjectCount();
     myOpenProjectCount++;
   }
 
   public void decrProjectCount() {
     myOpenProjectCount--;
-    myOpenProjectCount = verifyProjectCount(myOpenProjectCount);
+    validateProjectCount();
   }
 
   public boolean projectLimitExceeded() {
@@ -32,12 +32,9 @@ public class ProjectCountingService {
 
   /**
    * Anti-bugging to ensure the count of open projects never goes below zero.
-   * @param openProjectCount    The count of currently open projects
-   * @return                    0 if openProjectCount<0
-   *                            openProjectCount otherwise
    */
-  private int verifyProjectCount(int openProjectCount) {
-    return openProjectCount<0 ? 0 : openProjectCount;
+  private void validateProjectCount() {
+    myOpenProjectCount = Math.max(myOpenProjectCount, 0);
   }
 
 }

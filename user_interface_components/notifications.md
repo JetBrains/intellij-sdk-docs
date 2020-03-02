@@ -48,7 +48,49 @@ The `groupDisplayId` parameter of the
 [`Notification`](upsource:///platform/platform-api/src/com/intellij/notification/Notification.java)
 constructor specifies a notification type.
 The user can choose the display type corresponding to each notification type under `Settings | Appearance and Behavior | Notifications`.
-To specify the preferred display type, you need to call
-[`Notifications.Bus.register()`](upsource:///platform/platform-api/src/com/intellij/notification/Notifications.java)
-before displaying any notifications.
+To specify the preferred display type, you need to use
+[`NotificationGroup`](upsource:///platform/platform-api/src/com/intellij/notification/NotificationGroup.java) 
+to create notifications.
 
+### Example
+
+Simple use of notifications using
+[`NotificationGroup`](upsource:///platform/platform-api/src/com/intellij/notification/NotificationGroup.java).
+
+```java
+public class MyInformationNotifier {
+  private final NotificationGroup myNotificationGroup;
+
+  public MyInformationNotifier(String displayId) {
+    this.myNotificationGroup = findOrCreateNotificationGroup(displayId);
+  }
+
+  private static NotificationGroup findOrCreateNotificationGroup(String displayId) {
+    final NotificationGroup notificationGroup = NotificationGroup.findRegisteredGroup(displayId);
+    if (notificationGroup != null) {
+      return notificationGroup;
+    } else {
+      return NotificationGroup.balloonGroup(displayId);
+    }
+  }
+
+  public Notification notify(String content) {
+    return notify(null, content);
+  }
+
+  public Notification notify(Project project, String content) {
+    final Notification notification = myNotificationGroup.createNotification(content, NotificationType.INFORMATION);
+    notification.notify(project);
+    return notification;
+  }
+}
+```
+
+Usage of the class with
+[`NotificationGroup`](upsource:///platform/platform-api/src/com/intellij/notification/NotificationGroup.java)
+above.
+
+```java
+MyInformationNotifier myInformationNotifier = new MyInformationNotifier("My notification group");
+myInformationNotifier.notify("Success");
+```

@@ -6,6 +6,7 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ServiceManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManagerListener;
+import com.intellij.openapi.ui.Messages;
 import org.intellij.sdk.utils.SdkBalloonHelper;
 import org.jetbrains.annotations.NotNull;
 
@@ -15,7 +16,7 @@ import org.jetbrains.annotations.NotNull;
  * Depends on org.intellij.sdk.utils.SdkBalloonHelper
  */
 public class ProjectOpenCloseListener implements ProjectManagerListener {
-  private static final String MAX_OPEN_PROJ_DISCLAIM = "This is an IntelliJ Platform SDK demo.<br><br>";
+  private static final String MAX_OPEN_PROJ_DISCLAIM = "\nThis is an IntelliJ Platform SDK demo message.\n\n";
 
   /**
    * Invoked on project open.

@@ -8,26 +8,36 @@ package org.intellij.sdk.maxOpenPrj;
  */
 public class ProjectCountingService {
   // Sets the maximum allowed number of opened projects.
-  private final int MAX_OPEN_PRJ_LIMIT = 3;
+  private final static int MAX_OPEN_PRJ_LIMIT = 3;
   // The count of open projects must always be >= 0
-  private int openProjectCount = 0;
+  private int myOpenProjectCount = 0;
 
-  public void incrProjectCount() {
-    if (openProjectCount < 0) {
-      openProjectCount = 0;
-    }
-    openProjectCount++;
+   public void incrProjectCount() {
+    myOpenProjectCount = verifyProjectCount(myOpenProjectCount);
+    myOpenProjectCount++;
   }
 
   public void decrProjectCount() {
-    openProjectCount--;
-    if (openProjectCount < 0) {
-      openProjectCount = 0;
-    }
+    myOpenProjectCount--;
+    myOpenProjectCount = verifyProjectCount(myOpenProjectCount);
   }
 
   public boolean projectLimitExceeded() {
-    return openProjectCount > MAX_OPEN_PRJ_LIMIT;
+    return myOpenProjectCount > MAX_OPEN_PRJ_LIMIT;
+  }
+
+  public int getProjectCount() {
+    return myOpenProjectCount;
+  }
+
+  /**
+   * Anti-bugging to ensure the count of open projects never goes below zero.
+   * @param openProjectCount    The count of currently open projects
+   * @return                    0 if openProjectCount<0
+   *                            openProjectCount otherwise
+   */
+  private int verifyProjectCount(int openProjectCount) {
+    return openProjectCount<0 ? 0 : openProjectCount;
   }
 
 }

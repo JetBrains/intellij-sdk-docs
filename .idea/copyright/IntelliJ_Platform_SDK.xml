@@ -1,0 +1,7 @@
+<component name="CopyrightManager">
+  <copyright>
+    <option name="allowReplaceRegexp" value="JetBrains s.r.o. Use of this" />
+    <option name="notice" value="Copyright 2000-&amp;#36;today.year JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.&#10;" />
+    <option name="myName" value="IntelliJ Platform SDK" />
+  </copyright>
+</component>

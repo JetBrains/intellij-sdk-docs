@@ -52,7 +52,7 @@ To specify the preferred display type, you need to use
 [`NotificationGroup`](upsource:///platform/platform-api/src/com/intellij/notification/NotificationGroup.java) 
 to create notifications.
 
-### Example
+#### Example
 
 Simple use of notifications using
 [`NotificationGroup`](upsource:///platform/platform-api/src/com/intellij/notification/NotificationGroup.java).

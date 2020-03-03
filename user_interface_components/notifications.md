@@ -58,28 +58,15 @@ Simple use of notifications using
 [`NotificationGroup`](upsource:///platform/platform-api/src/com/intellij/notification/NotificationGroup.java).
 
 ```java
-public class MyInformationNotifier {
-  private final NotificationGroup myNotificationGroup;
-
-  public MyInformationNotifier(String displayId) {
-    this.myNotificationGroup = findOrCreateNotificationGroup(displayId);
-  }
-
-  private static NotificationGroup findOrCreateNotificationGroup(String displayId) {
-    final NotificationGroup notificationGroup = NotificationGroup.findRegisteredGroup(displayId);
-    if (notificationGroup != null) {
-      return notificationGroup;
-    } else {
-      return NotificationGroup.balloonGroup(displayId);
-    }
-  }
+public class MyGroovyDSLErrorsNotifier {
+  private final NotificationGroup NOTIFICATION_GROUP = new NotificationGroup("Groovy DSL errors", NotificationDisplayType.BALLOON, true);
 
   public Notification notify(String content) {
     return notify(null, content);
   }
 
   public Notification notify(Project project, String content) {
-    final Notification notification = myNotificationGroup.createNotification(content, NotificationType.INFORMATION);
+    final Notification notification = NOTIFICATION_GROUP.createNotification(content, NotificationType.ERROR);
     notification.notify(project);
     return notification;
   }
@@ -91,6 +78,6 @@ Usage of the class with
 above.
 
 ```java
-MyInformationNotifier myInformationNotifier = new MyInformationNotifier("My notification group");
-myInformationNotifier.notify("Success");
+MyGroovyDSLErrorsNotifier myGroovyDSLErrorsNotifier = new MyGroovyDSLErrorsNotifier();
+myGroovyDSLErrorsNotifier.notify("Some Groovy DSL error text");
 ```

@@ -48,7 +48,36 @@ The `groupDisplayId` parameter of the
 [`Notification`](upsource:///platform/platform-api/src/com/intellij/notification/Notification.java)
 constructor specifies a notification type.
 The user can choose the display type corresponding to each notification type under `Settings | Appearance and Behavior | Notifications`.
-To specify the preferred display type, you need to call
-[`Notifications.Bus.register()`](upsource:///platform/platform-api/src/com/intellij/notification/Notifications.java)
-before displaying any notifications.
+To specify the preferred display type, you need to use
+[`NotificationGroup`](upsource:///platform/platform-api/src/com/intellij/notification/NotificationGroup.java) 
+to create notifications.
 
+### Example
+
+Simple use of notifications using
+[`NotificationGroup`](upsource:///platform/platform-api/src/com/intellij/notification/NotificationGroup.java).
+
+```java
+public class MyGroovyDSLErrorsNotifier {
+  private final NotificationGroup NOTIFICATION_GROUP = new NotificationGroup("Groovy DSL errors", NotificationDisplayType.BALLOON, true);
+
+  public Notification notify(String content) {
+    return notify(null, content);
+  }
+
+  public Notification notify(Project project, String content) {
+    final Notification notification = NOTIFICATION_GROUP.createNotification(content, NotificationType.ERROR);
+    notification.notify(project);
+    return notification;
+  }
+}
+```
+
+Usage of the class with
+[`NotificationGroup`](upsource:///platform/platform-api/src/com/intellij/notification/NotificationGroup.java)
+above.
+
+```java
+MyGroovyDSLErrorsNotifier myGroovyDSLErrorsNotifier = new MyGroovyDSLErrorsNotifier();
+myGroovyDSLErrorsNotifier.notify("Some Groovy DSL error text");
+```

@@ -45,6 +45,10 @@ Sdk projectSdk = ProjectRootManager.getInstance(project).getProjectSdk();
   
 See the [project_model](https://github.com/JetBrains/intellij-sdk-docs/tree/master/code_samples/project_model/src/main/java/org/intellij/sdk/project/model/ProjectSdkAction.java) code sample to get more familiar with SDK manipulation toolset.
 
+## Available SDKs
+
+[`ProjectJdkTable`](upsource:///platform/projectModel-api/src/com/intellij/openapi/projectRoots/ProjectJdkTable.java) can be used to query and modify configured SDKs.
+
 ## Working with a Custom SDK
 
 To create a custom SDK, provide a class extending [`SdkType`](upsource:///platform/lang-api/src/com/intellij/openapi/projectRoots/SdkType.java), leave `saveAdditionalData()` blank, and register it in the `com.intellij.sdkType` extension point.

@@ -15,7 +15,7 @@
     * [Recently Updated](recently_updated.md)
 
 ## Part I - Plugins
-* [Quick Start Guide](basics.md)
+* [Quick Start Guide](basics/basics.md)
     * [Types of Plugins](basics/types_of_plugins.md)
 * [Getting Started](basics/getting_started.md)
     * [Using Gradle](tutorials/build_system.md)

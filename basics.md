@@ -11,4 +11,4 @@ It will familiarize you with the working environment, project structure, and fre
 * [Plugin Structure](basics/plugin_structure.md)
 * [Kotlin for Plugin Developers](/tutorials/kotlin.md)
 * [IDE Development Instances](basics/ide_development_instance.md)
-* [Plugin development FAQ](faq.md)
+* [Plugin development FAQ](basics/faq.md)

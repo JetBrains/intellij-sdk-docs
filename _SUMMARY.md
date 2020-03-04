@@ -52,7 +52,7 @@
     * [UI Inspector](reference_guide/internal_actions/internal_uii.md)
     * [Laf Defaults](reference_guide/internal_actions/internal_ui_lafd.md)
 * [Optimizing Performance](reference_guide/performance/performance.md)
-* [Plugin Development FAQ](faq.md)
+* [Plugin Development FAQ](basics/faq.md)
 
 ## Part II - Base Platform
 * [Fundamentals](platform/fundamentals.md)

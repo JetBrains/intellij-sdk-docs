@@ -37,7 +37,7 @@ Describes the available infrastructure for writing automated tests covering the 
 
 Plugins frequently extend support for existing languages, such as adding inspections to Java files. This section describes how to add support to the _IntelliJ Platform_ for a new language, that isn't supported by default, creating parsers, syntactic and semantic models and all the features that build on top.
 
-#### [Part VIII - Product Specific](/products/idea.md)
+#### [Part VIII - Product Specific](/products/dev_alternate_products.md)
 
 A lot of the functionality in the _IntelliJ Platform_ is language and product agnostic. For example, code inspections work the same in Java as they do in Ruby, it is just the syntax trees and semantic information that is different. This section describes product specific features, such as specific project model differences and how to target them in a plugin.
 
@@ -51,7 +51,7 @@ This part has been moved to [JetBrains Marketplace documentation](https://plugin
 
 #### [Appendix I - Resources](/appendix/resources/useful_links.md)
 
-Links to useful resources, such as the IntelliJ Community Edition source code, the Plugin Development forum and the Jetbrains Platform Slack.
+Links to useful resources, such as the IntelliJ Community Edition source code, the Plugin Development forum and the JetBrains Platform Slack.
 
 #### [Appendix II - Changes](/reference_guide/api_changes_list.md)
 

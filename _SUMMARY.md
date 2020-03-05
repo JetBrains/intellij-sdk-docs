@@ -1,6 +1,6 @@
 # Summary
 
-* [Introduction](welcome.md)
+* [Introduction](intro/welcome.md)
 * [The IntelliJ Platform](intro/intellij_platform.md)
     * [Contributing to the IntelliJ Platform](basics/platform_contributions.md)
     * [IntelliJ Platform Coding Guidelines](basics/intellij_coding_guidelines.md)

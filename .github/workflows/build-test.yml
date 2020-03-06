@@ -13,7 +13,6 @@ jobs:
       - name: Install dependencies
         run: |
           git submodule update --init --remote
-          gem install bundler:2.0.1
           bundle install
       - name: Build
         run: |

@@ -1,0 +1,19 @@
+name: build-test
+on: pull_request
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: ruby:2.6
+    steps:
+      - uses: actions/checkout@v2
+      - run: git submodule update --init --remote
+      - run: gem install bundler:2.0.1
+      - run: bundle install
+      - run: |
+          dpkg-reconfigure --frontend=noninteractive locales && update-locale LANG=C.UTF-8
+          export LC_ALL=C.UTF-8
+          export LANG=en_US.UTF-8
+          export LANGUAGE=en_US.UTF-8
+          rake build

@@ -3,15 +3,20 @@ on: pull_request
 
 jobs:
   build:
+    name: Build test
     runs-on: ubuntu-latest
     container:
       image: ruby:2.6
     steps:
-      - uses: actions/checkout@v2
-      - run: git submodule update --init --remote
-      - run: gem install bundler:2.0.1
-      - run: bundle install
-      - run: |
+      - name: Fetch sources
+        uses: actions/checkout@v2
+      - name: Install dependencies
+        run: |
+          git submodule update --init --remote
+          gem install bundler:2.0.1
+          bundle install
+      - name: Build
+        run: |
           dpkg-reconfigure --frontend=noninteractive locales && update-locale LANG=C.UTF-8
           export LC_ALL=C.UTF-8
           export LANG=en_US.UTF-8

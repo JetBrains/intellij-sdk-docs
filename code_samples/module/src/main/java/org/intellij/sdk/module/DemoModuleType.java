@@ -38,9 +38,8 @@ public class DemoModuleType extends ModuleType<DemoModuleBuilder> {
   @NotNull
   @Override
   public String getDescription() {
-    return "Example Custom Module Type";
+    return "Example custom module type";
   }
-
 
   @NotNull
   @Override

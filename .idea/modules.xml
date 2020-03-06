@@ -2,8 +2,69 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/SDK_Code_Samples.iml" filepath="$PROJECT_DIR$/.idea/modules/SDK_Code_Samples.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/action_basics/action.iml" filepath="$PROJECT_DIR$/.idea/modules/action_basics/action.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/action_basics/action.main.iml" filepath="$PROJECT_DIR$/.idea/modules/action_basics/action.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/action_basics/action.test.iml" filepath="$PROJECT_DIR$/.idea/modules/action_basics/action.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/comparing_references_inspection/comparing_references_inspection.iml" filepath="$PROJECT_DIR$/.idea/modules/comparing_references_inspection/comparing_references_inspection.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/comparing_references_inspection/comparing_references_inspection.main.iml" filepath="$PROJECT_DIR$/.idea/modules/comparing_references_inspection/comparing_references_inspection.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/comparing_references_inspection/comparing_references_inspection.test.iml" filepath="$PROJECT_DIR$/.idea/modules/comparing_references_inspection/comparing_references_inspection.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/conditional_operator_intention/conditional_operator_intention.iml" filepath="$PROJECT_DIR$/.idea/modules/conditional_operator_intention/conditional_operator_intention.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/conditional_operator_intention/conditional_operator_intention.main.iml" filepath="$PROJECT_DIR$/.idea/modules/conditional_operator_intention/conditional_operator_intention.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/conditional_operator_intention/conditional_operator_intention.test.iml" filepath="$PROJECT_DIR$/.idea/modules/conditional_operator_intention/conditional_operator_intention.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/editor_basics/editor.iml" filepath="$PROJECT_DIR$/.idea/modules/editor_basics/editor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/editor_basics/editor.main.iml" filepath="$PROJECT_DIR$/.idea/modules/editor_basics/editor.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/editor_basics/editor.test.iml" filepath="$PROJECT_DIR$/.idea/modules/editor_basics/editor.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/facet_basics/facet.iml" filepath="$PROJECT_DIR$/.idea/modules/facet_basics/facet.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/facet_basics/facet.main.iml" filepath="$PROJECT_DIR$/.idea/modules/facet_basics/facet.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/facet_basics/facet.test.iml" filepath="$PROJECT_DIR$/.idea/modules/facet_basics/facet.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/framework_basics/framework.iml" filepath="$PROJECT_DIR$/.idea/modules/framework_basics/framework.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/framework_basics/framework.main.iml" filepath="$PROJECT_DIR$/.idea/modules/framework_basics/framework.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/framework_basics/framework.test.iml" filepath="$PROJECT_DIR$/.idea/modules/framework_basics/framework.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/inspection_basics/inspection.iml" filepath="$PROJECT_DIR$/.idea/modules/inspection_basics/inspection.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/inspection_basics/inspection.main.iml" filepath="$PROJECT_DIR$/.idea/modules/inspection_basics/inspection.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/inspection_basics/inspection.test.iml" filepath="$PROJECT_DIR$/.idea/modules/inspection_basics/inspection.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/intellij-sdk-docs.iml" filepath="$PROJECT_DIR$/.idea/intellij-sdk-docs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/kotlin_demo/kotlin.iml" filepath="$PROJECT_DIR$/.idea/modules/kotlin_demo/kotlin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/kotlin_demo/kotlin.main.iml" filepath="$PROJECT_DIR$/.idea/modules/kotlin_demo/kotlin.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/kotlin_demo/kotlin.test.iml" filepath="$PROJECT_DIR$/.idea/modules/kotlin_demo/kotlin.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/live_templates/live_templates.iml" filepath="$PROJECT_DIR$/.idea/modules/live_templates/live_templates.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/live_templates/live_templates.main.iml" filepath="$PROJECT_DIR$/.idea/modules/live_templates/live_templates.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/live_templates/live_templates.test.iml" filepath="$PROJECT_DIR$/.idea/modules/live_templates/live_templates.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/max_opened_projects/maxOpenProjects.iml" filepath="$PROJECT_DIR$/.idea/modules/max_opened_projects/maxOpenProjects.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/module/module.iml" filepath="$PROJECT_DIR$/.idea/modules/module/module.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/module/module.main.iml" filepath="$PROJECT_DIR$/.idea/modules/module/module.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/module/module.test.iml" filepath="$PROJECT_DIR$/.idea/modules/module/module.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/max_opened_projects/org.intellij.sdk.maxOpenProjects.main.iml" filepath="$PROJECT_DIR$/.idea/modules/max_opened_projects/org.intellij.sdk.maxOpenProjects.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/max_opened_projects/org.intellij.sdk.maxOpenProjects.test.iml" filepath="$PROJECT_DIR$/.idea/modules/max_opened_projects/org.intellij.sdk.maxOpenProjects.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/project_wizard/projectWizard.iml" filepath="$PROJECT_DIR$/.idea/modules/project_wizard/projectWizard.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/project_wizard/projectWizard.main.iml" filepath="$PROJECT_DIR$/.idea/modules/project_wizard/projectWizard.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/project_wizard/projectWizard.test.iml" filepath="$PROJECT_DIR$/.idea/modules/project_wizard/projectWizard.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/project_model/project_model.iml" filepath="$PROJECT_DIR$/.idea/modules/project_model/project_model.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/project_model/project_model.main.iml" filepath="$PROJECT_DIR$/.idea/modules/project_model/project_model.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/project_model/project_model.test.iml" filepath="$PROJECT_DIR$/.idea/modules/project_model/project_model.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/project_view_pane/project_view_pane.iml" filepath="$PROJECT_DIR$/.idea/modules/project_view_pane/project_view_pane.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/project_view_pane/project_view_pane.main.iml" filepath="$PROJECT_DIR$/.idea/modules/project_view_pane/project_view_pane.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/project_view_pane/project_view_pane.test.iml" filepath="$PROJECT_DIR$/.idea/modules/project_view_pane/project_view_pane.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/psi_demo/psi.iml" filepath="$PROJECT_DIR$/.idea/modules/psi_demo/psi.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/psi_demo/psi.main.iml" filepath="$PROJECT_DIR$/.idea/modules/psi_demo/psi.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/psi_demo/psi.test.iml" filepath="$PROJECT_DIR$/.idea/modules/psi_demo/psi.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/product_specific/pycharm_basics/pycharm.iml" filepath="$PROJECT_DIR$/.idea/modules/product_specific/pycharm_basics/pycharm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/product_specific/pycharm_basics/pycharm.main.iml" filepath="$PROJECT_DIR$/.idea/modules/product_specific/pycharm_basics/pycharm.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/product_specific/pycharm_basics/pycharm.test.iml" filepath="$PROJECT_DIR$/.idea/modules/product_specific/pycharm_basics/pycharm.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/run_configuration/runConfiguration.iml" filepath="$PROJECT_DIR$/.idea/modules/run_configuration/runConfiguration.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/run_configuration/runConfiguration.main.iml" filepath="$PROJECT_DIR$/.idea/modules/run_configuration/runConfiguration.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/run_configuration/runConfiguration.test.iml" filepath="$PROJECT_DIR$/.idea/modules/run_configuration/runConfiguration.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/simple_language_plugin/simple_language_plugin.iml" filepath="$PROJECT_DIR$/.idea/modules/simple_language_plugin/simple_language_plugin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/simple_language_plugin/simple_language_plugin.main.iml" filepath="$PROJECT_DIR$/.idea/modules/simple_language_plugin/simple_language_plugin.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/simple_language_plugin/simple_language_plugin.test.iml" filepath="$PROJECT_DIR$/.idea/modules/simple_language_plugin/simple_language_plugin.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/code_samples/theme_basics/theme_basics.iml" filepath="$PROJECT_DIR$/code_samples/theme_basics/theme_basics.iml" group="code_samples" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/tool_window/toolWindow.iml" filepath="$PROJECT_DIR$/.idea/modules/tool_window/toolWindow.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/tool_window/toolWindow.main.iml" filepath="$PROJECT_DIR$/.idea/modules/tool_window/toolWindow.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/tool_window/toolWindow.test.iml" filepath="$PROJECT_DIR$/.idea/modules/tool_window/toolWindow.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/tree_structure_provider/treeStructureProvider.iml" filepath="$PROJECT_DIR$/.idea/modules/tree_structure_provider/treeStructureProvider.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/tree_structure_provider/treeStructureProvider.main.iml" filepath="$PROJECT_DIR$/.idea/modules/tree_structure_provider/treeStructureProvider.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/tree_structure_provider/treeStructureProvider.test.iml" filepath="$PROJECT_DIR$/.idea/modules/tree_structure_provider/treeStructureProvider.test.iml" />
     </modules>
   </component>
 </project>

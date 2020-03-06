@@ -12,11 +12,10 @@ jobs:
       - name: Fetch Sources
         uses: actions/checkout@v2
       - name: Install Dependencies
-        run: |
-          git submodule update --init --remote
-          bundle install
+        run: git submodule update --init --remote
       - name: Build
         run: |
+          bundle install
           dpkg-reconfigure --frontend=noninteractive locales && update-locale LANG=C.UTF-8
           export LC_ALL=C.UTF-8
           export LANG=en_US.UTF-8
@@ -24,7 +23,7 @@ jobs:
           rake build
 
   samples:
-    name: Samples - ${{ matrix.plugin }}
+    name: Code Samples / ${{ matrix.plugin }}
     runs-on: ubuntu-latest
     strategy:
       matrix:

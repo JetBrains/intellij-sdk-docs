@@ -23,11 +23,13 @@ public class ImagesProjectViewPane extends AbstractProjectViewPSIPane {
     super(project);
   }
 
+  @NotNull
   @Override
   public String getTitle() {
     return "SDK-Images";
   }
 
+  @NotNull
   @Override
   public javax.swing.Icon getIcon() {
     return AllIcons.FileTypes.Custom;
@@ -44,6 +46,7 @@ public class ImagesProjectViewPane extends AbstractProjectViewPSIPane {
     return 10;
   }
 
+  @NotNull
   @Override
   public SelectInTarget createSelectInTarget() {
     return new ProjectViewSelectInTarget(myProject) {
@@ -66,23 +69,26 @@ public class ImagesProjectViewPane extends AbstractProjectViewPSIPane {
     };
   }
 
+  @NotNull
   @Override
   protected ProjectAbstractTreeStructureBase createStructure() {
     return new ProjectTreeStructure(myProject, ID) {
       @Override
-      protected AbstractTreeNode createRoot(Project project, ViewSettings settings) {
+      protected AbstractTreeNode createRoot(@NotNull Project project, @NotNull ViewSettings settings) {
         return new ImagesProjectNode(project);
       }
 
+      @NotNull
       @Override
-      public Object[] getChildElements(Object element) {
+      public Object[] getChildElements(@NotNull Object element) {
         return super.getChildElements(element);
       }
     };
   }
 
+  @NotNull
   @Override
-  protected ProjectViewTree createTree(DefaultTreeModel model) {
+  protected ProjectViewTree createTree(@NotNull DefaultTreeModel model) {
     return new ProjectViewTree(myProject, model) {
       @Override
       public boolean isRootVisible() {
@@ -91,8 +97,9 @@ public class ImagesProjectViewPane extends AbstractProjectViewPSIPane {
     };
   }
 
+  @NotNull
   @Override
-  protected AbstractTreeUpdater createTreeUpdater(AbstractTreeBuilder builder) {
+  protected AbstractTreeUpdater createTreeUpdater(@NotNull AbstractTreeBuilder builder) {
     return new AbstractTreeUpdater(builder);
   }
 }

@@ -21,7 +21,7 @@ public class SimpleFoldingBuilder extends FoldingBuilderEx implements DumbAware 
     // Initialize the group of folding regions that will expand/collapse together.
     FoldingGroup group = FoldingGroup.newGroup(SimpleAnnotator.SIMPLE_PREFIX_STR);
     // Initialize the list of folding regions
-    List< FoldingDescriptor > descriptors = new ArrayList< FoldingDescriptor >();
+    List< FoldingDescriptor > descriptors = new ArrayList<>();
     // Get a collection of the literal expressions in the document below root
     Collection< PsiLiteralExpression > literalExpressions =
           PsiTreeUtil.findChildrenOfType(root, PsiLiteralExpression.class);

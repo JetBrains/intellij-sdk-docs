@@ -19,7 +19,7 @@ import javax.swing.*;
 public class DemoFacetType extends FacetType<DemoFacet, DemoFacetConfiguration> {
   public static final String FACET_ID = "DEMO_FACET_ID";
   public static final String FACET_NAME = "SDK Facet";
-  public static final FacetTypeId<DemoFacet> DEMO_FACET_TYPE_ID = new FacetTypeId<DemoFacet>(FACET_ID);
+  public static final FacetTypeId<DemoFacet> DEMO_FACET_TYPE_ID = new FacetTypeId<>(FACET_ID);
 
   public DemoFacetType() {
     super(DEMO_FACET_TYPE_ID, FACET_ID, FACET_NAME);

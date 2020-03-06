@@ -63,7 +63,7 @@ public class SimpleStructureViewElement implements StructureViewTreeElement, Sor
   public TreeElement[] getChildren() {
     if (myElement instanceof SimpleFile) {
       List<SimpleProperty> properties = PsiTreeUtil.getChildrenOfTypeAsList(myElement, SimpleProperty.class);
-      List<TreeElement> treeElements = new ArrayList<TreeElement>(properties.size());
+      List<TreeElement> treeElements = new ArrayList<>(properties.size());
       for (SimpleProperty property : properties) {
         treeElements.add(new SimpleStructureViewElement((SimplePropertyImpl) property));
       }

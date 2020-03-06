@@ -76,14 +76,14 @@ public class ImagesProjectNode extends AbstractTreeNode<VirtualFile> {
   @NotNull
   @Override
   public Collection<? extends AbstractTreeNode> getChildren() {
-    final List<VirtualFile> files = new ArrayList<VirtualFile>(0);
+    final List<VirtualFile> files = new ArrayList<>(0);
     for (VirtualFile file : getValue().getChildren()) {
       if (getImagesFiles(myProject).contains(file)) {
         files.add(file);
       }
     }
     if (files.isEmpty()) return Collections.emptyList();
-    final List<AbstractTreeNode> nodes = new ArrayList<AbstractTreeNode>(files.size());
+    final List<AbstractTreeNode> nodes = new ArrayList<>(files.size());
     final boolean alwaysOnTop = ProjectView.getInstance(myProject).isFoldersAlwaysOnTop("");
     Collections.sort(files, (o1, o2) -> {
       if (alwaysOnTop) {

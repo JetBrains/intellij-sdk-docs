@@ -10,8 +10,6 @@ import icons.ActionBasicsIcons;
 
 /**
  * Creates an action group to contain menu actions. See plugin.xml declarations.
- * @author Anna Bulenkova
- * @author jhake
  */
 public class CustomDefaultActionGroup extends DefaultActionGroup {
   

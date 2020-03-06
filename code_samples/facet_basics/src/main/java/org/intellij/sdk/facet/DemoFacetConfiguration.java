@@ -11,10 +11,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * Provides a custom implementation of the Configuration class for org.intellij.sdk.facet.DemoFacet.
- *
- * @author Anna Bulenkova
- * @author John Hake
+ * Provides a custom implementation of the Configuration class for {@link DemoFacet}.
  */
 public class DemoFacetConfiguration implements FacetConfiguration, PersistentStateComponent<DemoFacetState> {
 

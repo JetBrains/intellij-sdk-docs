@@ -10,11 +10,9 @@ import org.jetbrains.annotations.*;
 import javax.swing.*;
 
 /**
- * Defines the type, id, and name of the org.intellij.sdk.facet.DemoFacet. Provides creation of org.intellij.sdk.facet.DemoFacet
+ * Defines the type, id, and name of the {@link DemoFacet}. Provides creation of DemoFacet
  * and associated Configuration.
  * Allows application of this facet to all ModuleTypes.
- *
- * @author Anna Bulenkova
  */
 public class DemoFacetType extends FacetType<DemoFacet, DemoFacetConfiguration> {
   public static final String FACET_ID = "DEMO_FACET_ID";

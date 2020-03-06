@@ -24,9 +24,6 @@ import org.jetbrains.annotations.NotNull;
 import javax.swing.*;
 import java.util.*;
 
-/**
- * @author Anna Bulenkova
- */
 public class ImagesProjectNode extends AbstractTreeNode<VirtualFile> {
   private static final Key<Set<VirtualFile>> IMAGES_PROJECT_DIRS = Key.create("images.files.or.directories");
 

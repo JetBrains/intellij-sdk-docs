@@ -18,9 +18,6 @@ import org.jetbrains.annotations.NotNull;
 
 import javax.swing.tree.DefaultTreeModel;
 
-/**
- * @author Anna Bulenkova
- */
 public class ImagesProjectViewPane extends AbstractProjectViewPSIPane {
   public static final String ID = "IMAGES";
 

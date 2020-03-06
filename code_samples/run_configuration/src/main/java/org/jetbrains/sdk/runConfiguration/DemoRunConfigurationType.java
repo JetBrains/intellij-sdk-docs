@@ -2,15 +2,13 @@
 
 package org.jetbrains.sdk.runConfiguration;
 
-import com.intellij.execution.configurations.*;
+import com.intellij.execution.configurations.ConfigurationFactory;
+import com.intellij.execution.configurations.ConfigurationType;
 import com.intellij.icons.AllIcons;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
 
-/**
- * @author Anna Bulenkova
- */
 public class DemoRunConfigurationType implements ConfigurationType {
   @NotNull
   @Override

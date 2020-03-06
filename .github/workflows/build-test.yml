@@ -43,7 +43,6 @@ jobs:
             ${{ runner.os }}-gradle-
       - name: Fetch Sources
         uses: actions/checkout@v2
-        run: git submodule update --init --remote
       - name: Build Plugin
         run: cd code_samples/action_basics && gradle buildPlugin
       - name: Verify Plugins

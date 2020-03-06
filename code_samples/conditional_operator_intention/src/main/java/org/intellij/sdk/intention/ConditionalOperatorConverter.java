@@ -97,7 +97,7 @@ public class ConditionalOperatorConverter extends PsiElementBaseIntentionAction 
    *   when manipulation of the psi tree fails.
    *   @see ConditionalOperatorConverter#startInWriteAction()
    */
-  public void invoke(@NotNull Project project, Editor editor, PsiElement element) throws IncorrectOperationException {
+  public void invoke(@NotNull Project project, Editor editor, @NotNull PsiElement element) throws IncorrectOperationException {
 
     // Get the factory for making new PsiElements, and the code style manager to format new statements
     final PsiElementFactory factory = JavaPsiFacade.getInstance(project).getElementFactory();

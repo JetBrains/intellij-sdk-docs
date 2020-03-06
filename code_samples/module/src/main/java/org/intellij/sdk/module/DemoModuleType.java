@@ -2,9 +2,10 @@
 
 package org.intellij.sdk.module;
 
-import com.intellij.icons.AllIcons;
-import com.intellij.ide.util.projectWizard.*;
-import com.intellij.openapi.module.*;
+import com.intellij.ide.util.projectWizard.ModuleWizardStep;
+import com.intellij.ide.util.projectWizard.WizardContext;
+import com.intellij.openapi.module.ModuleType;
+import com.intellij.openapi.module.ModuleTypeManager;
 import com.intellij.openapi.roots.ui.configuration.ModulesProvider;
 import icons.SdkIcons;
 import org.jetbrains.annotations.NotNull;
@@ -41,6 +42,7 @@ public class DemoModuleType extends ModuleType<DemoModuleBuilder> {
   }
 
 
+  @NotNull
   @Override
   public Icon getNodeIcon(@Deprecated boolean b) {
     return SdkIcons.Sdk_default_icon;

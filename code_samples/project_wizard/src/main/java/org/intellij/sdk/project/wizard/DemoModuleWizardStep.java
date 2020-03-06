@@ -2,7 +2,9 @@
 
 package org.intellij.sdk.project.wizard;
 
-import com.intellij.ide.util.projectWizard.*;
+import com.intellij.ide.util.projectWizard.ModuleBuilder;
+import com.intellij.ide.util.projectWizard.ModuleWizardStep;
+import com.intellij.ide.util.projectWizard.WizardContext;
 import com.intellij.openapi.module.ModuleType;
 import com.intellij.openapi.options.ConfigurationException;
 import com.intellij.openapi.roots.ModifiableRootModel;
@@ -15,7 +17,7 @@ import javax.swing.*;
  * @author Anna Bulenkova
  */
 public class DemoModuleWizardStep extends ModuleBuilder {
-  public void setupRootModel(ModifiableRootModel modifiableRootModel) throws ConfigurationException {
+  public void setupRootModel(@NotNull ModifiableRootModel modifiableRootModel) throws ConfigurationException {
 
   }
 

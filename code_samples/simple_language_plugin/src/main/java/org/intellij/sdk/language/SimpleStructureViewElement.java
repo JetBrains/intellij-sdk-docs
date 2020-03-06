@@ -58,6 +58,7 @@ public class SimpleStructureViewElement implements StructureViewTreeElement, Sor
     return presentation != null ? presentation : new PresentationData();
   }
 
+  @NotNull
   @Override
   public TreeElement[] getChildren() {
     if (myElement instanceof SimpleFile) {

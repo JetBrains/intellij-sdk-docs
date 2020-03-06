@@ -15,7 +15,6 @@
 
   <!-- Product and plugin compatibility requirements - uses action system and kotlin -->
   <depends>com.intellij.modules.platform</depends>
-  <depends>org.jetbrains.kotlin</depends>
 
   <!-- Description of the plugin. Displayed in the "Plugins" settings dialog and in the
          plugin repository Web interface. -->

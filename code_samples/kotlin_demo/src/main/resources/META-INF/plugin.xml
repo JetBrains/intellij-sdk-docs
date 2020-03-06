@@ -41,9 +41,9 @@
   <vendor url="https://plugins.jetbrains.com">IntelliJ Platform SDK</vendor>
 
   <actions>
-    <group id="MyPlugin.TestMeu" text="Greeting" description="Greeting menu">
+    <group id="MyPlugin.GreetingMenu" text="Greeting" description="Greeting menu">
       <add-to-group group-id="MainMenu" anchor="last"/>
-      <action id="Myplugin.Textboxes" class="HelloAction" text="Hello" description="Says hello"/>
+      <action id="MyPlugin.Hello" class="HelloAction" text="Hello" description="Says hello"/>
     </group>
   </actions>
 

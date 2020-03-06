@@ -2,15 +2,15 @@ name: build-test
 on: pull_request
 
 jobs:
-  build:
-    name: Build test
+  docs:
+    name: Docs
     runs-on: ubuntu-latest
     container:
       image: ruby:2.6
     steps:
-      - name: Fetch sources
+      - name: Fetch Sources
         uses: actions/checkout@v2
-      - name: Install dependencies
+      - name: Install Dependencies
         run: |
           git submodule update --init --remote
           bundle install
@@ -21,3 +21,34 @@ jobs:
           export LANG=en_US.UTF-8
           export LANGUAGE=en_US.UTF-8
           rake build
+
+  samples:
+    name: Samples - ${{ matrix.plugin }}
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        plugin:
+          - action_basics
+    container:
+      image: gradle:jdk8
+    steps:
+      - name: Setup NodeJS
+        uses: actions/setup-node@v1
+      - name: Cache Gradle Dependencies
+        uses: actions/cache@v1
+        with:
+          path: ~/.gradle/caches
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle') }}
+          restore-keys: |
+            ${{ runner.os }}-gradle-
+      - name: Fetch Sources
+        uses: actions/checkout@v2
+        run: git submodule update --init --remote
+      - name: Build Plugin
+        run: cd code_samples/action_basics && gradle buildPlugin
+      - name: Verify Plugins
+        uses: thepieterdc/intellij-plugin-verifier-action@v1.1.0
+        with:
+          plugin: './code_samples/action_basics/build/distributions/action-2.0.0.zip'
+          versions: 2019.3.3
+

@@ -34,17 +34,10 @@ jobs:
     steps:
       - name: Setup NodeJS
         uses: actions/setup-node@v1
-      - name: Cache Gradle Dependencies
-        uses: actions/cache@v1
-        with:
-          path: ~/.gradle/caches
-          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle') }}
-          restore-keys: |
-            ${{ runner.os }}-gradle-
       - name: Fetch Sources
         uses: actions/checkout@v2
       - name: Build Plugin
-        run: cd code_samples/action_basics && gradle buildPlugin
+        run: cd code_samples/${{ matrix.plugin }} && gradle buildPlugin
       - name: Verify Plugins
         uses: thepieterdc/intellij-plugin-verifier-action@v1.1.0
         with:

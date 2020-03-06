@@ -54,7 +54,7 @@ To implement Tree Structure nodes filtering logic, override `modify()` method.
 The example below shows how to filter out all the Project View nodes except those which correspond to text files and directories.
 
 ```java
-{% include /main/java/org/intellij/sdk/treeStructureProvider/TextOnlyTreeStructureProvider.java %}
+{% include /code_samples/tree_structure_provider/src/main/java/org/intellij/sdk/treeStructureProvider/TextOnlyTreeStructureProvider.java %}
 ```
 
 ## 4. Compile and Run the Plugin

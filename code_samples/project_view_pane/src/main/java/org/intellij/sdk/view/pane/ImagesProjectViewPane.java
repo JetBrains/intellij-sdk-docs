@@ -6,12 +6,17 @@ import com.intellij.icons.AllIcons;
 import com.intellij.ide.SelectInTarget;
 import com.intellij.ide.impl.ProjectViewSelectInTarget;
 import com.intellij.ide.projectView.ViewSettings;
-import com.intellij.ide.projectView.impl.*;
-import com.intellij.ide.util.treeView.*;
+import com.intellij.ide.projectView.impl.AbstractProjectViewPSIPane;
+import com.intellij.ide.projectView.impl.ProjectAbstractTreeStructureBase;
+import com.intellij.ide.projectView.impl.ProjectTreeStructure;
+import com.intellij.ide.projectView.impl.ProjectViewTree;
+import com.intellij.ide.util.treeView.AbstractTreeBuilder;
+import com.intellij.ide.util.treeView.AbstractTreeNode;
+import com.intellij.ide.util.treeView.AbstractTreeUpdater;
 import com.intellij.openapi.project.Project;
-import org.jetbrains.annotations.*;
+import org.jetbrains.annotations.NotNull;
 
-import javax.swing.tree.*;
+import javax.swing.tree.DefaultTreeModel;
 
 /**
  * @author Anna Bulenkova
@@ -56,7 +61,6 @@ public class ImagesProjectViewPane extends AbstractProjectViewPSIPane {
         return "images";
       }
 
-      @Nullable
       @Override
       public String getMinorViewId() {
         return "images";

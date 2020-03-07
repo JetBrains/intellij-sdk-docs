@@ -36,7 +36,7 @@ public class SimpleUtil {
   }
   
   public static List<SimpleProperty> findProperties(Project project) {
-    List<SimpleProperty> result = new ArrayList<SimpleProperty>();
+    List<SimpleProperty> result = new ArrayList<>();
     Collection<VirtualFile> virtualFiles =
           FileTypeIndex.getFiles(SimpleFileType.INSTANCE, GlobalSearchScope.allScope(project));
     for (VirtualFile virtualFile : virtualFiles) {

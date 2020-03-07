@@ -9,7 +9,7 @@ import com.intellij.ide.util.treeView.smartTree.TreeElement;
 import com.intellij.navigation.ItemPresentation;
 import com.intellij.psi.NavigatablePsiElement;
 import com.intellij.psi.util.PsiTreeUtil;
-import org.intellij.sdk.language.psi.*;
+import org.intellij.sdk.language.psi.SimpleFile;
 import org.intellij.sdk.language.psi.SimpleProperty;
 import org.intellij.sdk.language.psi.impl.SimplePropertyImpl;
 import org.jetbrains.annotations.NotNull;
@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SimpleStructureViewElement implements StructureViewTreeElement, SortableTreeElement {
-  private NavigatablePsiElement myElement;
+  private final NavigatablePsiElement myElement;
 
   public SimpleStructureViewElement(NavigatablePsiElement element) {
     this.myElement = element;
@@ -58,15 +58,16 @@ public class SimpleStructureViewElement implements StructureViewTreeElement, Sor
     return presentation != null ? presentation : new PresentationData();
   }
 
+  @NotNull
   @Override
   public TreeElement[] getChildren() {
     if (myElement instanceof SimpleFile) {
-      SimpleProperty[] properties = PsiTreeUtil.getChildrenOfType(myElement, SimpleProperty.class);
-      List<TreeElement> treeElements = new ArrayList<TreeElement>(properties.length);
+      List<SimpleProperty> properties = PsiTreeUtil.getChildrenOfTypeAsList(myElement, SimpleProperty.class);
+      List<TreeElement> treeElements = new ArrayList<>(properties.size());
       for (SimpleProperty property : properties) {
         treeElements.add(new SimpleStructureViewElement((SimplePropertyImpl) property));
       }
-      return treeElements.toArray(new TreeElement[treeElements.size()]);
+      return treeElements.toArray(new TreeElement[0]);
     }
     return EMPTY_ARRAY;
   }

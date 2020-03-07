@@ -14,7 +14,7 @@ public class SimpleChooseByNameContributor implements ChooseByNameContributor {
   @Override
   public String[] getNames(Project project, boolean includeNonProjectItems) {
     List<SimpleProperty> properties = SimpleUtil.findProperties(project);
-    List<String> names = new ArrayList<String>(properties.size());
+    List<String> names = new ArrayList<>(properties.size());
     for (SimpleProperty property : properties) {
       if (property.getKey() != null && property.getKey().length() > 0) {
         names.add(property.getKey());

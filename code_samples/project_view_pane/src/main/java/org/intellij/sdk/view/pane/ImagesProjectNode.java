@@ -3,16 +3,20 @@
 package org.intellij.sdk.view.pane;
 
 import com.intellij.icons.AllIcons;
-import com.intellij.ide.projectView.*;
-import com.intellij.ide.projectView.impl.ProjectViewImpl;
+import com.intellij.ide.projectView.PresentationData;
+import com.intellij.ide.projectView.ProjectView;
 import com.intellij.ide.util.treeView.AbstractTreeNode;
 import com.intellij.openapi.Disposable;
 import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectUtil;
-import com.intellij.openapi.util.*;
+import com.intellij.openapi.util.Disposer;
+import com.intellij.openapi.util.Key;
 import com.intellij.openapi.util.text.StringUtil;
-import com.intellij.openapi.vfs.*;
+import com.intellij.openapi.vfs.LocalFileSystem;
+import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.vfs.VirtualFileEvent;
+import com.intellij.openapi.vfs.VirtualFileListener;
 import com.intellij.psi.search.FilenameIndex;
 import com.intellij.util.Alarm;
 import org.jetbrains.annotations.NotNull;
@@ -20,9 +24,6 @@ import org.jetbrains.annotations.NotNull;
 import javax.swing.*;
 import java.util.*;
 
-/**
- * @author Anna Bulenkova
- */
 public class ImagesProjectNode extends AbstractTreeNode<VirtualFile> {
   private static final Key<Set<VirtualFile>> IMAGES_PROJECT_DIRS = Key.create("images.files.or.directories");
 
@@ -58,7 +59,7 @@ public class ImagesProjectNode extends AbstractTreeNode<VirtualFile> {
   private Set<VirtualFile> getImagesFiles(Project project) {
     Set<VirtualFile> files = project.getUserData(IMAGES_PROJECT_DIRS);
     if (files == null) {
-      files = new HashSet<VirtualFile>();
+      files = new HashSet<>();
       project.putUserData(IMAGES_PROJECT_DIRS, files);
     }
     return files;
@@ -72,27 +73,24 @@ public class ImagesProjectNode extends AbstractTreeNode<VirtualFile> {
   @NotNull
   @Override
   public Collection<? extends AbstractTreeNode> getChildren() {
-    final List<VirtualFile> files = new ArrayList<VirtualFile>(0);
+    final List<VirtualFile> files = new ArrayList<>(0);
     for (VirtualFile file : getValue().getChildren()) {
       if (getImagesFiles(myProject).contains(file)) {
         files.add(file);
       }
     }
     if (files.isEmpty()) return Collections.emptyList();
-    final List<AbstractTreeNode> nodes = new ArrayList<AbstractTreeNode>(files.size());
-     final boolean alwaysOnTop = ((ProjectViewImpl) ProjectView.getInstance(myProject)).isFoldersAlwaysOnTop("");
-    Collections.sort(files, new Comparator<VirtualFile>() {
-      @Override
-      public int compare(VirtualFile o1, VirtualFile o2) {
-        if (alwaysOnTop) {
-          final boolean d1 = o1.isDirectory();
-          final boolean d2 = o2.isDirectory();
-          if (d1 && !d2) return -1;
-          if (!d1 && d2) return 1;
-        }
-
-        return StringUtil.naturalCompare(o1.getName(), o2.getName());
+    final List<AbstractTreeNode> nodes = new ArrayList<>(files.size());
+    final boolean alwaysOnTop = ProjectView.getInstance(myProject).isFoldersAlwaysOnTop("");
+    Collections.sort(files, (o1, o2) -> {
+      if (alwaysOnTop) {
+        final boolean d1 = o1.isDirectory();
+        final boolean d2 = o2.isDirectory();
+        if (d1 && !d2) return -1;
+        if (!d1 && d2) return 1;
       }
+
+      return StringUtil.naturalCompare(o1.getName(), o2.getName());
     });
     for (VirtualFile file : files) {
       nodes.add(new ImagesProjectNode(myProject, file));
@@ -158,8 +156,8 @@ public class ImagesProjectNode extends AbstractTreeNode<VirtualFile> {
                 @Override
                 public void run() {
                   ProjectView.getInstance(myProject)
-                             .getProjectViewPaneById(ImagesProjectViewPane.ID)
-                             .updateFromRoot(true);
+                          .getProjectViewPaneById(ImagesProjectViewPane.ID)
+                          .updateFromRoot(true);
                 }
               });
             }

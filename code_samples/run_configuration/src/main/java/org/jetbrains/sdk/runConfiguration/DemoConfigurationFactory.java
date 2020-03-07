@@ -8,9 +8,6 @@ import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-/**
- * @author Anna Bulenkova
- */
 public class DemoConfigurationFactory extends ConfigurationFactory {
   private static final String FACTORY_NAME = "Demo configuration factory";
 

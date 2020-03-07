@@ -24,7 +24,7 @@ public class SimpleReference extends PsiReferenceBase<PsiElement> implements Psi
   public ResolveResult[] multiResolve(boolean incompleteCode) {
     Project project = myElement.getProject();
     final List<SimpleProperty> properties = SimpleUtil.findProperties(project, key);
-    List<ResolveResult> results = new ArrayList<ResolveResult>();
+    List<ResolveResult> results = new ArrayList<>();
     for (SimpleProperty property : properties) {
       results.add(new PsiElementResolveResult(property));
     }
@@ -43,7 +43,7 @@ public class SimpleReference extends PsiReferenceBase<PsiElement> implements Psi
   public Object[] getVariants() {
     Project project = myElement.getProject();
     List<SimpleProperty> properties = SimpleUtil.findProperties(project);
-    List<LookupElement> variants = new ArrayList<LookupElement>();
+    List<LookupElement> variants = new ArrayList<>();
     for (final SimpleProperty property : properties) {
       if (property.getKey() != null && property.getKey().length() > 0) {
         variants.add(LookupElementBuilder

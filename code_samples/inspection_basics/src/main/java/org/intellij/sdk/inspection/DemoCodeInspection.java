@@ -6,9 +6,6 @@ import com.intellij.codeInspection.LocalInspectionTool;
 import com.intellij.codeInspection.ProblemsHolder;
 import org.jetbrains.annotations.NotNull;
 
-/**
- * @author Anna Bulenkova
- */
 public class DemoCodeInspection extends LocalInspectionTool {
   
   /**

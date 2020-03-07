@@ -4,229 +4,138 @@
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
+        <compositeConfiguration>
+          <compositeBuild compositeDefinitionSource="SCRIPT">
+            <builds>
+              <build path="$PROJECT_DIR$/code_samples/action_basics" name="action">
+                <projects>
+                  <project path="$PROJECT_DIR$/code_samples/action_basics" />
+                </projects>
+              </build>
+              <build path="$PROJECT_DIR$/code_samples/comparing_references_inspection" name="comparing_references_inspection">
+                <projects>
+                  <project path="$PROJECT_DIR$/code_samples/comparing_references_inspection" />
+                </projects>
+              </build>
+              <build path="$PROJECT_DIR$/code_samples/conditional_operator_intention" name="conditional_operator_intention">
+                <projects>
+                  <project path="$PROJECT_DIR$/code_samples/conditional_operator_intention" />
+                </projects>
+              </build>
+              <build path="$PROJECT_DIR$/code_samples/editor_basics" name="editor">
+                <projects>
+                  <project path="$PROJECT_DIR$/code_samples/editor_basics" />
+                </projects>
+              </build>
+              <build path="$PROJECT_DIR$/code_samples/facet_basics" name="facet">
+                <projects>
+                  <project path="$PROJECT_DIR$/code_samples/facet_basics" />
+                </projects>
+              </build>
+              <build path="$PROJECT_DIR$/code_samples/framework_basics" name="framework">
+                <projects>
+                  <project path="$PROJECT_DIR$/code_samples/framework_basics" />
+                </projects>
+              </build>
+              <build path="$PROJECT_DIR$/code_samples/inspection_basics" name="inspection">
+                <projects>
+                  <project path="$PROJECT_DIR$/code_samples/inspection_basics" />
+                </projects>
+              </build>
+              <build path="$PROJECT_DIR$/code_samples/kotlin_demo" name="kotlin">
+                <projects>
+                  <project path="$PROJECT_DIR$/code_samples/kotlin_demo" />
+                </projects>
+              </build>
+              <build path="$PROJECT_DIR$/code_samples/live_templates" name="live_templates">
+                <projects>
+                  <project path="$PROJECT_DIR$/code_samples/live_templates" />
+                </projects>
+              </build>
+              <build path="$PROJECT_DIR$/code_samples/max_opened_projects" name="maxOpenProjects">
+                <projects>
+                  <project path="$PROJECT_DIR$/code_samples/max_opened_projects" />
+                </projects>
+              </build>
+              <build path="$PROJECT_DIR$/code_samples/module" name="module">
+                <projects>
+                  <project path="$PROJECT_DIR$/code_samples/module" />
+                </projects>
+              </build>
+              <build path="$PROJECT_DIR$/code_samples/product_specific/pycharm_basics" name="pycharm">
+                <projects>
+                  <project path="$PROJECT_DIR$/code_samples/product_specific/pycharm_basics" />
+                </projects>
+              </build>
+              <build path="$PROJECT_DIR$/code_samples/project_model" name="project_model">
+                <projects>
+                  <project path="$PROJECT_DIR$/code_samples/project_model" />
+                </projects>
+              </build>
+              <build path="$PROJECT_DIR$/code_samples/project_view_pane" name="project_view_pane">
+                <projects>
+                  <project path="$PROJECT_DIR$/code_samples/project_view_pane" />
+                </projects>
+              </build>
+              <build path="$PROJECT_DIR$/code_samples/project_wizard" name="projectWizard">
+                <projects>
+                  <project path="$PROJECT_DIR$/code_samples/project_wizard" />
+                </projects>
+              </build>
+              <build path="$PROJECT_DIR$/code_samples/psi_demo" name="psi">
+                <projects>
+                  <project path="$PROJECT_DIR$/code_samples/psi_demo" />
+                </projects>
+              </build>
+              <build path="$PROJECT_DIR$/code_samples/run_configuration" name="runConfiguration">
+                <projects>
+                  <project path="$PROJECT_DIR$/code_samples/run_configuration" />
+                </projects>
+              </build>
+              <build path="$PROJECT_DIR$/code_samples/simple_language_plugin" name="simple_language_plugin">
+                <projects>
+                  <project path="$PROJECT_DIR$/code_samples/simple_language_plugin" />
+                </projects>
+              </build>
+              <build path="$PROJECT_DIR$/code_samples/tool_window" name="toolWindow">
+                <projects>
+                  <project path="$PROJECT_DIR$/code_samples/tool_window" />
+                </projects>
+              </build>
+              <build path="$PROJECT_DIR$/code_samples/tree_structure_provider" name="treeStructureProvider">
+                <projects>
+                  <project path="$PROJECT_DIR$/code_samples/tree_structure_provider" />
+                </projects>
+              </build>
+            </builds>
+          </compositeBuild>
+        </compositeConfiguration>
+        <option name="delegatedBuild" value="true" />
+        <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/code_samples/action_basics" />
-        <option name="gradleJvm" value="1.8" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/code_samples/_gradleCompositeBuild" />
         <option name="modules">
           <set>
+            <option value="$PROJECT_DIR$/code_samples/_gradleCompositeBuild" />
             <option value="$PROJECT_DIR$/code_samples/action_basics" />
-          </set>
-        </option>
-        <option name="useQualifiedModuleNames" value="true" />
-      </GradleProjectSettings>
-      <GradleProjectSettings>
-        <option name="distributionType" value="DEFAULT_WRAPPED" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/code_samples/comparing_references_inspection" />
-        <option name="gradleJvm" value="1.8" />
-        <option name="modules">
-          <set>
             <option value="$PROJECT_DIR$/code_samples/comparing_references_inspection" />
-          </set>
-        </option>
-        <option name="useQualifiedModuleNames" value="true" />
-      </GradleProjectSettings>
-      <GradleProjectSettings>
-        <option name="disableWrapperSourceDistributionNotification" value="true" />
-        <option name="distributionType" value="DEFAULT_WRAPPED" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/code_samples/conditional_operator_intention" />
-        <option name="gradleJvm" value="1.8" />
-        <option name="modules">
-          <set>
             <option value="$PROJECT_DIR$/code_samples/conditional_operator_intention" />
-          </set>
-        </option>
-        <option name="useQualifiedModuleNames" value="true" />
-      </GradleProjectSettings>
-      <GradleProjectSettings>
-        <option name="delegatedBuild" value="true" />
-        <option name="testRunner" value="GRADLE" />
-        <option name="distributionType" value="DEFAULT_WRAPPED" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/code_samples/editor_basics" />
-        <option name="gradleJvm" value="1.8" />
-        <option name="modules">
-          <set>
             <option value="$PROJECT_DIR$/code_samples/editor_basics" />
-          </set>
-        </option>
-        <option name="useQualifiedModuleNames" value="true" />
-      </GradleProjectSettings>
-      <GradleProjectSettings>
-        <option name="distributionType" value="DEFAULT_WRAPPED" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/code_samples/facet_basics" />
-        <option name="gradleHome" value="C:/Program Files (x86)/Gradle/gradle-2.9" />
-        <option name="gradleJvm" value="1.8" />
-        <option name="modules">
-          <set>
             <option value="$PROJECT_DIR$/code_samples/facet_basics" />
-          </set>
-        </option>
-        <option name="useQualifiedModuleNames" value="true" />
-      </GradleProjectSettings>
-      <GradleProjectSettings>
-        <option name="distributionType" value="DEFAULT_WRAPPED" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/code_samples/framework_basics" />
-        <option name="gradleHome" value="C:/Program Files (x86)/Gradle/gradle-2.9" />
-        <option name="gradleJvm" value="1.8" />
-        <option name="modules">
-          <set>
             <option value="$PROJECT_DIR$/code_samples/framework_basics" />
-          </set>
-        </option>
-        <option name="useQualifiedModuleNames" value="true" />
-      </GradleProjectSettings>
-      <GradleProjectSettings>
-        <option name="delegatedBuild" value="true" />
-        <option name="testRunner" value="GRADLE" />
-        <option name="distributionType" value="DEFAULT_WRAPPED" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/code_samples/inspection_basics" />
-        <option name="gradleJvm" value="1.8" />
-        <option name="modules">
-          <set>
             <option value="$PROJECT_DIR$/code_samples/inspection_basics" />
-          </set>
-        </option>
-        <option name="useQualifiedModuleNames" value="true" />
-      </GradleProjectSettings>
-      <GradleProjectSettings>
-        <option name="delegatedBuild" value="true" />
-        <option name="testRunner" value="GRADLE" />
-        <option name="distributionType" value="DEFAULT_WRAPPED" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/code_samples/kotlin_demo" />
-        <option name="gradleJvm" value="1.8" />
-        <option name="modules">
-          <set>
             <option value="$PROJECT_DIR$/code_samples/kotlin_demo" />
-          </set>
-        </option>
-        <option name="useQualifiedModuleNames" value="true" />
-      </GradleProjectSettings>
-      <GradleProjectSettings>
-        <option name="distributionType" value="DEFAULT_WRAPPED" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/code_samples/live_templates" />
-        <option name="gradleJvm" value="1.8" />
-        <option name="modules">
-          <set>
             <option value="$PROJECT_DIR$/code_samples/live_templates" />
-          </set>
-        </option>
-        <option name="useQualifiedModuleNames" value="true" />
-      </GradleProjectSettings>
-      <GradleProjectSettings>
-        <option name="distributionType" value="DEFAULT_WRAPPED" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/code_samples/max_opened_projects" />
-        <option name="gradleJvm" value="1.8" />
-        <option name="modules">
-          <set>
             <option value="$PROJECT_DIR$/code_samples/max_opened_projects" />
-          </set>
-        </option>
-        <option name="useQualifiedModuleNames" value="true" />
-      </GradleProjectSettings>
-      <GradleProjectSettings>
-        <option name="distributionType" value="DEFAULT_WRAPPED" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/code_samples/module" />
-        <option name="gradleJvm" value="1.8" />
-        <option name="modules">
-          <set>
             <option value="$PROJECT_DIR$/code_samples/module" />
-          </set>
-        </option>
-        <option name="useQualifiedModuleNames" value="true" />
-      </GradleProjectSettings>
-      <GradleProjectSettings>
-        <option name="distributionType" value="DEFAULT_WRAPPED" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/code_samples/product_specific/pycharm_basics" />
-        <option name="gradleJvm" value="1.8" />
-        <option name="modules">
-          <set>
             <option value="$PROJECT_DIR$/code_samples/product_specific/pycharm_basics" />
-          </set>
-        </option>
-        <option name="useQualifiedModuleNames" value="true" />
-      </GradleProjectSettings>
-      <GradleProjectSettings>
-        <option name="distributionType" value="DEFAULT_WRAPPED" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/code_samples/project_model" />
-        <option name="gradleJvm" value="1.8" />
-        <option name="modules">
-          <set>
             <option value="$PROJECT_DIR$/code_samples/project_model" />
-          </set>
-        </option>
-        <option name="useQualifiedModuleNames" value="true" />
-      </GradleProjectSettings>
-      <GradleProjectSettings>
-        <option name="distributionType" value="DEFAULT_WRAPPED" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/code_samples/project_view_pane" />
-        <option name="gradleJvm" value="1.8" />
-        <option name="modules">
-          <set>
             <option value="$PROJECT_DIR$/code_samples/project_view_pane" />
-          </set>
-        </option>
-        <option name="useQualifiedModuleNames" value="true" />
-      </GradleProjectSettings>
-      <GradleProjectSettings>
-        <option name="distributionType" value="DEFAULT_WRAPPED" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/code_samples/project_wizard" />
-        <option name="gradleJvm" value="1.8" />
-        <option name="modules">
-          <set>
             <option value="$PROJECT_DIR$/code_samples/project_wizard" />
-          </set>
-        </option>
-        <option name="useQualifiedModuleNames" value="true" />
-      </GradleProjectSettings>
-      <GradleProjectSettings>
-        <option name="distributionType" value="DEFAULT_WRAPPED" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/code_samples/psi_demo" />
-        <option name="gradleJvm" value="1.8" />
-        <option name="modules">
-          <set>
             <option value="$PROJECT_DIR$/code_samples/psi_demo" />
-          </set>
-        </option>
-        <option name="useQualifiedModuleNames" value="true" />
-      </GradleProjectSettings>
-      <GradleProjectSettings>
-        <option name="distributionType" value="DEFAULT_WRAPPED" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/code_samples/run_configuration" />
-        <option name="gradleJvm" value="1.8" />
-        <option name="modules">
-          <set>
             <option value="$PROJECT_DIR$/code_samples/run_configuration" />
-          </set>
-        </option>
-        <option name="useQualifiedModuleNames" value="true" />
-      </GradleProjectSettings>
-      <GradleProjectSettings>
-        <option name="distributionType" value="DEFAULT_WRAPPED" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/code_samples/simple_language_plugin" />
-        <option name="gradleJvm" value="1.8" />
-        <option name="modules">
-          <set>
             <option value="$PROJECT_DIR$/code_samples/simple_language_plugin" />
-          </set>
-        </option>
-        <option name="useQualifiedModuleNames" value="true" />
-      </GradleProjectSettings>
-      <GradleProjectSettings>
-        <option name="distributionType" value="DEFAULT_WRAPPED" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/code_samples/tool_window" />
-        <option name="gradleJvm" value="1.8" />
-        <option name="modules">
-          <set>
             <option value="$PROJECT_DIR$/code_samples/tool_window" />
-          </set>
-        </option>
-        <option name="useQualifiedModuleNames" value="true" />
-      </GradleProjectSettings>
-      <GradleProjectSettings>
-        <option name="distributionType" value="DEFAULT_WRAPPED" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/code_samples/tree_structure_provider" />
-        <option name="gradleJvm" value="1.8" />
-        <option name="modules">
-          <set>
             <option value="$PROJECT_DIR$/code_samples/tree_structure_provider" />
           </set>
         </option>

@@ -7,11 +7,12 @@ import com.intellij.openapi.Disposable;
 import com.intellij.openapi.module.ModuleType;
 import com.intellij.openapi.options.ConfigurationException;
 import com.intellij.openapi.roots.ModifiableRootModel;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public class DemoModuleBuilder extends ModuleBuilder {
   @Override
-  public void setupRootModel(ModifiableRootModel model) throws ConfigurationException {
+  public void setupRootModel(@NotNull ModifiableRootModel model) throws ConfigurationException {
 
   }
 

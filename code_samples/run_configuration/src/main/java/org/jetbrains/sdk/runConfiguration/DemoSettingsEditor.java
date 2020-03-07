@@ -2,15 +2,13 @@
 
 package org.jetbrains.sdk.runConfiguration;
 
-import com.intellij.openapi.options.*;
-import com.intellij.openapi.ui.*;
+import com.intellij.openapi.options.SettingsEditor;
+import com.intellij.openapi.ui.LabeledComponent;
+import com.intellij.openapi.ui.TextFieldWithBrowseButton;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
 
-/**
- * @author Anna Bulenkova
- */
 public class DemoSettingsEditor extends SettingsEditor<DemoRunConfiguration> {
   private JPanel myPanel;
   private LabeledComponent<TextFieldWithBrowseButton> myScriptName;

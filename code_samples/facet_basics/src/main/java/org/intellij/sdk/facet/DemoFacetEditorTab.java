@@ -15,9 +15,7 @@ import java.awt.*;
 
 /**
  * Provides the JPanel to be displayed in the facet UI.
- * Manages validation and modification of the org.intellij.sdk.facet.DemoFacet state.
- *
- * @author John Hake
+ * Manages validation and modification of the {@link DemoFacet} state.
  */
 public class DemoFacetEditorTab extends FacetEditorTab {
   private static final String FACET_PANEL_PROMPT = "Path To SDK: ";

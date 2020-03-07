@@ -6,7 +6,7 @@
     <id>com.jetbrains.psidemo</id>
 
     <!-- Text to display as name on Preferences/Settings | Plugin page  -->
-    <name>SDK: PSI demo</name>
+    <name>SDK: PSI Demo</name>
 
     <!-- The version of this plugin -->
     <version>2.0.0</version>

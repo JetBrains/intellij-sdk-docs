@@ -1,18 +1,43 @@
 <!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 <idea-plugin>
-  <id>com.jetbrains.psidemo</id>
-  <name>PSI Demo</name>
-  <version>1.0</version>
-  <vendor>JetBrains</vendor>
 
-  <idea-version since-build="173.0"/>
+  <!--  Unique id for this plugin. Must stay constant for the life of the plugin.  -->
+  <id>org.jetbrains.sdk.psi</id>
+
+  <!-- Text to display as name on Preferences/Settings | Plugin page  -->
+  <name>SDK: PSI Demo</name>
+
+  <!-- The version of this plugin -->
+  <version>2.0.0</version>
+
+  <!-- Compatible with the following versions of IntelliJ Platform -->
+  <idea-version since-build="191"/>
 
   <!-- Product and plugin compatibility requirements -->
   <depends>com.intellij.modules.java</depends>
 
+  <!-- Text to display as description on Preferences/Settings | Plugin page  -->
+  <description>
+    <![CDATA[
+      Demonstrates working with the PSI Navigation.
+    ]]>
+  </description>
+  <change-notes>
+    <![CDATA[
+      <ul>
+        <li><b>2.0.0</b> Convert to Gradle-based plugin</li>
+        <li><b>1.0.0</b> Release 2018.3 and earlier.</li>
+      </ul>
+    ]]>
+  </change-notes>
+
+  <!-- Text to display as company information on Preferences/Settings | Plugin page -->
+  <vendor url="https://plugins.jetbrains.com">IntelliJ Platform SDK</vendor>
+
   <actions>
-    <action class="com.intellij.sdk.psi.PsiNavigationDemoAction" id="PsiNavigationDemo" text="PSI Navigation Demo...">
+    <action class="org.jetbrains.sdk.psi.PsiNavigationDemoAction" id="PsiNavigationDemo"
+            text="PSI Navigation Demo...">
       <add-to-group group-id="ToolsMenu" anchor="last"/>
     </action>
   </actions>

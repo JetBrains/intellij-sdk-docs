@@ -3,7 +3,7 @@
 <idea-plugin>
 
     <!--  Unique id for this plugin. Must stay constant for the life of the plugin.  -->
-    <id>com.jetbrains.psidemo</id>
+    <id>org.jetbrains.sdk.psi</id>
 
     <!-- Text to display as name on Preferences/Settings | Plugin page  -->
     <name>SDK: PSI Demo</name>
@@ -36,7 +36,7 @@
     <vendor url="https://plugins.jetbrains.com">IntelliJ Platform SDK</vendor>
 
     <actions>
-        <action class="com.intellij.sdk.psi.PsiNavigationDemoAction" id="PsiNavigationDemo"
+        <action class="org.jetbrains.sdk.psi.PsiNavigationDemoAction" id="PsiNavigationDemo"
                 text="PSI Navigation Demo...">
             <add-to-group group-id="ToolsMenu" anchor="last"/>
         </action>

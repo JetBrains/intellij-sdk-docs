@@ -5,7 +5,7 @@ title: Grouping Actions
 
 If an implementation requires several actions, or there are simply too many actions that overload the menu, the actions can be placed into groups.
 This tutorial demonstrates adding an action to an existing group, creating a new action group, and action groups with a variable number of actions.
-The sample code discussed in this tutorial is from the code sample [`action_basics`].
+The sample code discussed in this tutorial is from the code sample [`action_basics`](https://github.com/JetBrains/intellij-sdk-docs/tree/master/code_samples/action_basics).
 
 Some content in this tutorial assumes the reader is familiar with the tutorial for [Creating Actions](working_with_custom_actions.md).
 
@@ -19,7 +19,7 @@ The group is based on a default IntelliJ Platform implementation.
 ### Creating Simple Groups
 Grouping can be registered by adding a `<group>` element to the `<actions>` section of a plugin's `plugin.xml` file.
 This example has no `class` attribute in the `<group>` element because the IntelliJ Platform framework will supply a default implementation class for the group. 
-This default implementation is used if a set of actions belonging to the group is static, i.e. does not change at runtime, which is the majority of cases.
+This default implementation is used if a set of actions belonging to the group is static, i.e., does not change at runtime, which is the majority of cases.
 The `id` attribute must be unique, so incorporating the plugin ID or package name is the best practice.
 
 The `popup` attribute determines whether actions in the group are placed in a submenu.
@@ -74,7 +74,7 @@ The solution is analagous to making a [single action entry dependent on context]
 
 The steps below show how to make a group of actions available and visible if certain conditions are met.
 In this case, the condition is having an instance of an editor is available. 
-This condition is needed because the custom action group will be added to an IntelliJ menu that is only enabled for editing.
+This condition is needed because the custom action group is added to an IntelliJ menu that is only enabled for editing.
 
 ### Extending DefaultActionGroup
 The [`DefaultActionGroup`](upsource:///platform/platform-api/src/com/intellij/openapi/actionSystem/DefaultActionGroup.java) is an implementation of [`ActionGroup`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/ActionGroup.java).
@@ -147,7 +147,7 @@ The new group will also have an icon:
   
 
 ## Action Groups with Variable Actions Sets
-If a set of actions belonging to a custom group will vary depending on the context, the group must extend [`ActionGroup`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/ActionGroup.java).
+If a set of actions belonging to a custom group varies depending on the context, the group must extend [`ActionGroup`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/ActionGroup.java).
 The set of actions in the `ActionGroup` is dynamically defined.
 
 ### Creating Variable Action Group
@@ -161,7 +161,7 @@ public class DynamicActionGroup extends ActionGroup {
 
 ### Registering a Variable Action Group
 To register the dynamic menu group, a `<group>` attribute needs to be placed in the `<actions>` section of [plugin.xml](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/action_basics/src/main/resources/META-INF/plugin.xml).
-When enabled, this group will appear at the entry just below the [Static Grouped Actions](#binding-action-groups-to-ui-components) in the **Tools** menu:
+When enabled, this group appears at the entry just below the [Static Grouped Actions](#binding-action-groups-to-ui-components) in the **Tools** menu:
 ```xml
     <group id="org.intellij.sdk.action.DynamicActionGroup" class="org.intellij.sdk.action.DynamicActionGroup" popup="true"
             text="Dynamically Grouped Actions" description="SDK dynamically grouped action example" icon="ActionBasicsIcons.Sdk_default_icon">
@@ -169,7 +169,7 @@ When enabled, this group will appear at the entry just below the [Static Grouped
     </group>
 ```
 
-> **Warning** If a`<group>` element's `class` attribute names a class derived from `ActionGroup`, then any static `<action>` declarations in that group will throw an exception. 
+> **Warning** If a`<group>` element's `class` attribute names a class derived from `ActionGroup`, then any static `<action>` declarations in that group throw an exception. 
 For a statically defined group, use `DefaultActionGroup`.
 
 ### Adding Child Actions to the Dynamic Group

@@ -39,9 +39,10 @@
   <actions>
     <!-- See https://www.jetbrains.org/intellij/sdk/docs/basics/action_system.html#registering-actions-in-pluginxml
           for information about the elements and attributes used for actions and groups. -->
-    <!-- This <action> element adds a static menu item in first position of the Tools menu that shows PopupDialogAction. -->
+    <!-- The <action> element adds a static menu item in first position of the Tools menu that shows PopupDialogAction.  -->
     <action id="org.intellij.sdk.action.PopupDialogAction" class="org.intellij.sdk.action.PopupDialogAction"
-            text="Pop Dialog Action" description="SDK action example" icon="ActionBasicsIcons.Sdk_default_icon">
+            text="Action Basics Plugin: Pop Dialog Action" description="SDK action example" icon="ActionBasicsIcons.Sdk_default_icon">
+      <override-text place="MainMenu" text="Pop Dialog Action"/>
       <keyboard-shortcut first-keystroke="control alt A" second-keystroke="C" keymap="$default"/>
       <mouse-shortcut keystroke="control button3 doubleClick" keymap="$default"/>
       <add-to-group group-id="ToolsMenu" anchor="first"/>

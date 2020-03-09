@@ -16,8 +16,9 @@ repositories {
 
 // See https://github.com/JetBrains/gradle-intellij-plugin/
 intellij {
-  version '2019.3.3'
-  updateSinceUntilBuild = false
+  // Uncomment the version line below when the product releases
+//  version '2020.1'
+  sameSinceUntilBuild = true
 }
 patchPluginXml {
   version = project.version

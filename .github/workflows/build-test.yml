@@ -11,6 +11,13 @@ jobs:
     steps:
       - name: Fetch Sources
         uses: actions/checkout@v2
+      - name: Setup Cache
+        uses: actions/cache@v1
+        with:
+          path: vendor/bundle
+          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-gems-
       - name: Install Dependencies
         run: |
           git submodule update --init --remote
@@ -55,5 +62,12 @@ jobs:
     steps:
       - name: Fetch Sources
         uses: actions/checkout@v2
+      - name: Setup Cache
+        uses: actions/cache@v1
+        with:
+          path: ~/.gradle/caches
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle') }}
+          restore-keys: |
+            ${{ runner.os }}-gradle-
       - name: Verify Plugin
         run: gradle -p code_samples/${{ matrix.plugin }} verifyPlugin

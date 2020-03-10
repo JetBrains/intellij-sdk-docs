@@ -17,7 +17,7 @@ Allowed HTML elements include text formatting, paragraphs, and lists.
   <!-- Plugin name. It should be short and descriptive but does 
        not have to be identical to the name of the JAR file. 
        Displayed in the "Plugins" settings dialog and the plugin repository Web interface. -->
-  <name>VssIntegration</name>
+  <name>Vss Integration</name>
 
   <!-- Unique identifier of the plugin. Should be FQN.
        Cannot be changed between the plugin versions.
@@ -40,18 +40,18 @@ Allowed HTML elements include text formatting, paragraphs, and lists.
   <!-- Description of changes in the latest version of the plugin.
        Displayed in the "Plugins" settings dialog and the plugin repository Web interface.
        Simple HTML elements can be included between <![CDATA[  ]]> tags.  -->
- <change-notes>Initial release of the plugin.</change-notes>
+  <change-notes>Initial release of the plugin.</change-notes>
 
   <!-- Plugin version
        Recommended format is BRANCH.BUILD.FIX (MAJOR.MINOR.FIX)
        Displayed in the "Plugins" settings dialog and the plugin repository Web interface.  -->
-   <version>1.0.0</version>
+  <version>1.0.0</version>
 
   <!-- The vendor of the plugin.
        The optional "url" attribute specifies the URL of the vendor homepage.
        The optional "email" attribute specifies the e-mail address of the vendor.
        Displayed in the "Plugins" settings dialog and the plugin repository Web interface. -->
-   <vendor url="https://www.company.com" email="support@company.com">A Company Inc.</vendor>
+  <vendor url="https://www.company.com" email="support@company.com">A Company Inc.</vendor>
 
   <!-- Mandatory dependencies on plugins or modules.
        The FQN module names in <depends> elements are used to determine IDE compatibility for the plugin.
@@ -116,7 +116,7 @@ Allowed HTML elements include text formatting, paragraphs, and lists.
     </component>
   </module-components>
 
-  <!-- Actions   -->
+  <!-- Actions -->
   <actions>
     <action id="VssIntegration.GarbageCollection" class="com.foo.impl.CollectGarbage" text="Collect _Garbage" description="Run garbage collector">
       <keyboard-shortcut first-keystroke="control alt G" second-keystroke="C" keymap="$default"/>
@@ -147,12 +147,12 @@ Allowed HTML elements include text formatting, paragraphs, and lists.
   
   <!-- Application-level listeners -->
   <applicationListeners>
-      <listener class="com.foo.impl.MyListener" topic="com.intellij.openapi.vfs.newvfs.BulkFileListener"/>
+    <listener class="com.foo.impl.MyListener" topic="com.intellij.openapi.vfs.newvfs.BulkFileListener"/>
   </applicationListeners>
 
   <!-- Project-level listeners -->
   <projectListeners>
-      <listener class="com.foo.impl.MyToolwindowListener" topic="com.intellij.openapi.wm.ex.ToolWindowManagerListener"/>
+    <listener class="com.foo.impl.MyToolwindowListener" topic="com.intellij.openapi.wm.ex.ToolWindowManagerListener"/>
   </projectListeners>
 </idea-plugin>
 ```

@@ -157,12 +157,14 @@ public class DemoSettingsEditor extends SettingsEditor<DemoRunConfiguration> {
     @NotNull
     @Override
     protected JComponent createEditor() {
+        createUIComponents();
         return myPanel;
     }
 
     private void createUIComponents() {
         myMainClass = new LabeledComponent<ComponentWithBrowseButton>();
         myMainClass.setComponent(new TextFieldWithBrowseButton());
+        myPanel = new JPanel();
     }
 }
 ```

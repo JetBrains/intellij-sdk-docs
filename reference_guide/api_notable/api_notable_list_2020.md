@@ -26,6 +26,9 @@ Refactoring dialog: builtin "Open in editor" option
 Configurable status bar widgets
 : Use extension point `com.intellij.statusBarWidgetFactory` to provide widgets that can be disabled or reordered. 
 
+[DefaultLiveTemplatesProvider](upsource:///platform/lang-impl/src/com/intellij/codeInsight/template/impl/DefaultLiveTemplatesProvider.java) is deprecated.
+: Use extension point `com.intellij.defaultLiveTemplates` instead.
+
 ## Notable Changes in IntelliJ IDEA
 
 EOL for JetBrains TFS Plugin

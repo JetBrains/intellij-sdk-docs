@@ -81,6 +81,35 @@ The following types of values can be persisted:
 * maps
 * enums
 
+For other types you can extend the
+[`com.intellij.util.xmlb.Converter`](upsource:///platform/util/src/com/intellij/util/xmlb/Converter.java)
+abstract class:
+
+```java
+class LocalDateTimeConverter extends Converter<LocalDateTime> {
+  public LocalDateTime fromString(String value) {
+    final long epochMilli = Long.parseLong(value);
+    final ZoneId zoneId = ZoneId.systemDefault();
+    return Instant.ofEpochMilli(epochMilli).atZone(zoneId).toLocalDateTime();
+  }
+
+  public String toString(LocalDateTime value) {
+    final ZoneId zoneId = ZoneId.systemDefault();
+    final long toEpochMilli = value.atZone(zoneId).toInstant().toEpochMilli();
+    return Long.toString(toEpochMilli);
+  }
+}
+```
+
+And use the converter above with the `@com.intellij.util.xmlb.annotations.OptionTag` annotation:
+
+```java
+class State {
+  @OptionTag(converter = LocalDateTimeConverter.class)
+  public LocalDateTime dateTime;
+}
+```
+
 To exclude a public field or bean property from serialization, annotate the field or getter with `@com.intellij.util.xmlb.annotations.Transient`.
 
 Note that the state class must have a default constructor. It should return the default state of the component (one used if there is nothing persisted in the XML files yet).

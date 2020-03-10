@@ -9,6 +9,7 @@ Additional information about configuring `<actions>` is available in the [Action
 Limited HTML elements are allowed within `<description>` and `<changed-notes>` elements.
 However, content containing HTML elements must be surrounded by `<![CDATA[  ]]>` tags. 
 Allowed HTML elements include text formatting, paragraphs, and lists. 
+
 ```xml
 <!-- `url` specifies the URL of the plugin homepage (can be opened from "Plugins" settings dialog) -->
 <idea-plugin url="https://www.jetbrains.com/idea">
@@ -73,7 +74,9 @@ Allowed HTML elements include text formatting, paragraphs, and lists.
        `action.[pluginID].[ActionID].text` -->
   <resource-bundle>messages.MyPluginBundle</resource-bundle>
 
-  <!-- Plugin's application components (note that components are deprecated and should not be used in new plugins)  -->
+  <!-- Plugin's application components (note that components are deprecated and should not be used in new plugins) 
+       See https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_components.html for migration steps
+  -->
   <application-components>
     <component>
       <!-- Component's interface class -->
@@ -84,7 +87,9 @@ Allowed HTML elements include text formatting, paragraphs, and lists.
     </component>
   </application-components>
 
-  <!-- Plugin's project components (note that components are deprecated and should not be used in new plugins) -->
+  <!-- Plugin's project components (note that components are deprecated and should not be used in new plugins) 
+       See https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_components.html for migration steps
+  -->
   <project-components>
     <component>
       <!-- Interface and implementation classes are the same -->
@@ -102,7 +107,9 @@ Allowed HTML elements include text formatting, paragraphs, and lists.
     </component>
   </project-components>
 
-  <!-- Plugin's module components (note that components are deprecated and should not be used in new plugins)  -->
+  <!-- Plugin's module components (note that components are deprecated and should not be used in new plugins)  
+       See https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_components.html for migration steps
+  -->
   <module-components>
     <component>
       <implementation-class>com.foo.Component3</implementation-class>

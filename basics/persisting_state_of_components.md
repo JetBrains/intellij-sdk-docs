@@ -20,7 +20,7 @@ Since all plugins share the same namespace, it is highly recommended to prefix k
 The [`com.intellij.openapi.components.PersistentStateComponent`](upsource:///platform/projectModel-api/src/com/intellij/openapi/components/PersistentStateComponent.java) interface gives you the most flexibility for defining the values to be persisted, their format, and storage location.
 
 To use it:
-- mark a [service](plugin_structure/plugin_services.md) or a [component](plugin_structure/plugin_components.md) as implementing the `PersistentStateComponent` interface
+- mark a [service](plugin_structure/plugin_services.md) as implementing the `PersistentStateComponent` interface
 - define the state class
 - specify the storage location using `@com.intellij.openapi.components.State`
 

@@ -34,8 +34,12 @@
   <vendor url="https://plugins.jetbrains.com">IntelliJ Platform SDK</vendor>
 
   <extensions defaultExtensionNs="com.intellij">
+    <!-- Declare where the IntelliJ Platform should look to find XML-based Live Templates   -->
     <defaultLiveTemplates file="/liveTemplates/Markdown"/>
+    <!-- Declare the implementation for determining the context for applying Live Templates   -->
     <liveTemplateContext implementation="org.intellij.sdk.liveTemplates.MarkdownContext"/>
+    <!-- Declare implementation-based Live Template -->
+    <liveTemplateMacro implementation="org.intellij.sdk.liveTemplates.TitleCaseMacro"/>
   </extensions>
 
 </idea-plugin>

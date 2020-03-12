@@ -14,14 +14,13 @@ Allowed HTML elements include text formatting, paragraphs, and lists.
 <!-- `url` specifies the URL of the plugin homepage (can be opened from "Plugins" settings dialog) -->
 <idea-plugin url="https://www.jetbrains.com/idea">
 
-  <!-- Plugin name. It should be short and descriptive but does 
-       not have to be identical to the name of the JAR file. 
+  <!-- Plugin name. It should be short and descriptive and in Title Case. 
        Displayed in the "Plugins" settings dialog and the plugin repository Web interface. -->
   <name>Vss Integration</name>
 
   <!-- Unique identifier of the plugin. Should be FQN.
        Cannot be changed between the plugin versions.
-       If not specified, assumed to be equal to <name>. This can have brittle results. -->
+       If not specified, <name> will be used (not recommended). -->
   <id>com.jetbrains.vssintegration</id>
 
   <!-- Description of the plugin. 
@@ -71,7 +70,7 @@ Allowed HTML elements include text formatting, paragraphs, and lists.
 
   <!-- Resource bundle (/messages/MyPluginBundle.properties) to be used
        with `key` attributes in extension points and implicit keys like
-       `action.[pluginID].[ActionID].text` -->
+       `action.[ActionID].text` -->
   <resource-bundle>messages.MyPluginBundle</resource-bundle>
 
   <!-- Plugin's application components (note that components are deprecated and should not be used in new plugins) 
@@ -125,9 +124,8 @@ Allowed HTML elements include text formatting, paragraphs, and lists.
 
   <!-- Extension points defined by the plugin.
        Extension points are registered by a plugin so that other
-       plugins can provide this plugin with certain data. The
-       "beanClass" attribute specifies the class the implementations
-       of which can be used for the extension point. -->
+       plugins can provide this plugin with certain data. 
+  -->
   <extensionPoints>
     <extensionPoint name="testExtensionPoint" beanClass="com.foo.impl.MyExtensionBean"/>
   </extensionPoints>

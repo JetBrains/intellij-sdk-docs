@@ -6,7 +6,7 @@ title: Plugin Configuration File - plugin.xml
 The following is a sample plugin configuration file. This sample showcases and describes all elements that can be used in the `plugin.xml` file.
 Additional information about configuring `<actions>` is available in the [Actions](/basics/action_system.md#registering-actions) section in Part II.
 
-Limited HTML elements are allowed within `<description>` and `<changed-notes>` elements.
+Limited HTML elements are allowed within `<description>` and `<change-notes>` elements.
 However, content containing HTML elements must be surrounded by `<![CDATA[  ]]>` tags. 
 Allowed HTML elements include text formatting, paragraphs, and lists. 
 

@@ -10,13 +10,12 @@
       <option name="MARKDOWN" value="true"/>
     </context>
   </template>
-  <template name="tc"
+  <template name="mc"
             value="$TITLE$"
-            shortcut="NONE"
             description="SDK: Convert to title case"
             toReformat="true"
             toShortenFQNames="false">
-    <variable name="TITLE" expression="TitleCase(String)" defaultValue="" alwaysStopAt="true" />
+    <variable name="TITLE" expression="titleCase(SELECTION)" defaultValue="the quick brown fox jumped over the lazy dog" alwaysStopAt="true" />
     <context>
       <option name="MARKDOWN" value="true" />
     </context>

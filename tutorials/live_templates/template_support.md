@@ -70,8 +70,8 @@ Consider reusing one of the many existing template context types that inherit fr
 ## Completing the Live Template Implementation 
 Depending on the version of the IntelliJ Platform, different steps are used to complete implementation of the feature.
 
-### IntelliJ Platform Versions v2020.1 and Later
-For v2020.1 and later, follow this section to register the extension points and then proceed to the [Check Plugin](#check-plugin) section.
+### Versions 2020.1 and Later
+For the IntelliJ Platform 2020.1 and later, follow this section to register the extension points and then proceed to the [Check Plugin](#check-plugin) section.
 
 #### Register Extension Points
 Using the `com.intellij.defaultLiveTemplates` and `com.intellij.liveTemplateContext` extension points, register the implementations with the IntelliJ Platform.
@@ -86,7 +86,7 @@ The filename does not include the file extension.
 ```
 Now go to the [Check Plugin](#check-plugin) section to test the template.
 
-### IntelliJ Platform Versions v2019.3 and Earlier
+### Versions 2019.3 and Earlier
 For older versions of the IntelliJ Platform follow this section to complete the implementation and register the extension points.
 Then proceed to the [Check Plugin](#check-plugin) section.
  

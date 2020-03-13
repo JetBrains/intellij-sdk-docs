@@ -10,7 +10,7 @@ import org.jetbrains.annotations.NotNull;
 public class TitleCaseMacro extends MacroBase {
 
   public TitleCaseMacro() {
-    super("TitleCase", "TitleCase(String)");
+    super("titleCase", "titleCase(String)");
   }
 
   /**

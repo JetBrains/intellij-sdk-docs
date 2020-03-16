@@ -3,7 +3,7 @@ title: 1. Adding Live Template Support
 ---
 <!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-This tutorial is based on the IntelliJ Platform code sample [`live_templates`](https://github.com/JetBrains/intellij-sdk-docs/tree/master/code_samples/live_templates).
+This tutorial is based on the SDK code sample [`live_templates`](https://github.com/JetBrains/intellij-sdk-docs/tree/master/code_samples/live_templates).
 
 * bullet
 {:toc}
@@ -46,8 +46,9 @@ Copy this file into the [plugin's resources folder](https://github.com/JetBrains
 
 ## Implement TemplateContextType
 A [`TemplateContextType`](upsource:///platform/lang-api/src/com/intellij/codeInsight/template/TemplateContextType.java) tells the IntelliJ Platform where the Live Template is applicable: Markdown files.
-The IntelliJ Platform does not define the `MARKDOWN` context ID, so this class defines it.
-A file's extension determines the applicable context.
+Every context must have a unique `TemplateContextType` defined for it, and many context types are defined by the Platform.
+The `MarkdownContext` class defines it for Markdown files.
+Ultimately, a file's extension determines the applicable Markdown context.
 
 ```java
 {% include /code_samples/live_templates/src/main/java/org/intellij/sdk/liveTemplates/MarkdownContext.java%}
@@ -68,15 +69,14 @@ It is not always necessary to define your own `TemplateContextType`, as there ar
 Consider reusing one of the many existing template context types that inherit from `TemplateContextType` if you are augmenting language support to an existing area.
 
 ## Completing the Live Template Implementation 
-Depending on the version of the IntelliJ Platform, different steps are used to complete implementation of the feature.
+Depending on the version of the IntelliJ Platform, different steps are used to complete the implementation of the feature.
 
 ### Versions 2020.1 and Later
-For the IntelliJ Platform 2020.1 and later, follow this section to register the extension points and then proceed to the [Check Plugin](#check-plugin) section.
+For 2020.1 and later, follow this section to register the extension points and then proceed to the [Check Plugin](#check-plugin) section.
 
 #### Register Extension Points
 Using the `com.intellij.defaultLiveTemplates` and `com.intellij.liveTemplateContext` extension points, register the implementations with the IntelliJ Platform.
-The `file` attribute in the `defaultLiveTemplates` element only specifies `path/filename` under the `src/main/resources` folder, where the IntelliJ Platform expects to find it.
-In this example, having "liveTemplates" in the pathname is coincidental and has no particular significance.
+The `file` attribute in the `defaultLiveTemplates` element specifies `path/filename` under the `src/main/resources` folder.
 The filename does not include the file extension.
 ```xml
   <extensions defaultExtensionNs="com.intellij">
@@ -91,7 +91,7 @@ For older versions of the IntelliJ Platform follow this section to complete the 
 Then proceed to the [Check Plugin](#check-plugin) section.
  
 #### Implement DefaultLiveTemplatesProvider
-The `MarkdownTemplateProvider` tells the IntelliJ Platform where to find the Live Template settings file. 
+The `MarkdownTemplateProvider` tells the Platform where to find the Live Template settings file. 
 Make sure to include the full path to the file, relative to the `src/main/resources` directory, excluding the file extension.
 ```java
 package org.intellij.sdk.liveTemplates;
@@ -114,7 +114,7 @@ public class MarkdownTemplateProvider implements DefaultLiveTemplatesProvider {
 ```
 
 #### Register Extension Points
-Using the com.intellij.defaultLiveTemplatesProvider and com.intellij.liveTemplateContext extension points, register the implementations with the IntelliJ Platform.
+Using the `com.intellij.defaultLiveTemplatesProvider` and `com.intellij.liveTemplateContext` extension points, register the implementations with the IntelliJ Platform.
 ```xml
   <extensions defaultExtensionNs="com.intellij">
     <defaultLiveTemplatesProvider implementation="org.intellij.sdk.liveTemplates.MarkdownTemplateProvider"/>
@@ -122,9 +122,7 @@ Using the com.intellij.defaultLiveTemplatesProvider and com.intellij.liveTemplat
   </extensions>
 ```
 
-Now go to the [Check Plugin](#check-plugin) section to test the template.
-
 ## Check Plugin
 Now verify the plugin is working correctly. 
-Run the plugin in a Development Instance and verify there is a new entry under **File \| Settings \| Live Templates \| Markdown \| \{** (SDK: New link reference). 
-Finally, create a new file `Test.md` and confirm that the Live Template works by entering a <kbd>{</kbd> character and then pressing <kbd>Tab</kbd>
+Run the plugin in a Development Instance and verify there is a new entry under **Settings/Preferenes \| Live Templates \| Markdown \| \{ (SDK: New link reference)**. 
+Finally, create a new file `Test.md` and confirm that the Live Template works by entering a <kbd>{</kbd> character and then pressing <kbd>Tab</kbd>.

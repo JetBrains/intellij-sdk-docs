@@ -32,7 +32,9 @@ If the project is using [Gradle](/tutorials/build_system.md) with a Kotlin build
 intellij {
         setPlugins("org.jetbrains.kotlin:1.3.11-release-IJ2018.3-1")
 }
-```
+```                      
+
+> **NOTE** Transitive dependencies required for tests must currently be [specified explicitly](https://github.com/JetBrains/gradle-intellij-plugin/issues/38). 
 
 #### 2.2 DevKit
 If the project is using [DevKit](/basics/getting_started/using_dev_kit.md), add the JARs of the plugin on which the project depends to the **classpath** of the *IntelliJ Platform SDK*.

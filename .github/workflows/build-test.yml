@@ -1,0 +1,72 @@
+name: build-test
+on: [push, pull_request]
+
+jobs:
+  docs:
+    name: Docs
+    runs-on: ubuntu-latest
+    container:
+      image: ruby:2.6
+    steps:
+      - name: Fetch Sources
+        uses: actions/checkout@v2
+      - name: Setup Cache
+        uses: actions/cache@v1
+        with:
+          path: vendor/bundle
+          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-gems-
+      - name: Install Dependencies
+        run: |
+          git submodule update --init --remote
+          gem install bundler:2.0.1
+          bundle install
+      - name: Build
+        run: |
+          dpkg-reconfigure --frontend=noninteractive locales && update-locale LANG=C.UTF-8
+          export LC_ALL=C.UTF-8
+          export LANG=en_US.UTF-8
+          export LANGUAGE=en_US.UTF-8
+          rake build
+
+  samples:
+    name: Code Samples / ${{ matrix.plugin }}
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        plugin:
+          - action_basics
+          - comparing_references_inspection
+          - conditional_operator_intention
+          - editor_basics
+          - facet_basics
+          - framework_basics
+          - inspection_basics
+          - kotlin_demo
+          - live_templates
+          - max_opened_projects
+          - module
+          - product_specific/pycharm_basics
+          - project_model
+          - project_view_pane
+          - project_wizard
+          - psi_demo
+          - run_configuration
+          - simple_language_plugin
+          - tool_window
+          - tree_structure_provider
+    container:
+      image: gradle:jdk8
+    steps:
+      - name: Fetch Sources
+        uses: actions/checkout@v2
+      - name: Setup Cache
+        uses: actions/cache@v1
+        with:
+          path: ~/.gradle/caches
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle') }}
+          restore-keys: |
+            ${{ runner.os }}-gradle-
+      - name: Verify Plugin
+        run: gradle -p code_samples/${{ matrix.plugin }} verifyPlugin

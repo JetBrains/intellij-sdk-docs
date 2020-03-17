@@ -6,16 +6,18 @@ import com.intellij.icons.AllIcons;
 import com.intellij.ide.SelectInTarget;
 import com.intellij.ide.impl.ProjectViewSelectInTarget;
 import com.intellij.ide.projectView.ViewSettings;
-import com.intellij.ide.projectView.impl.*;
-import com.intellij.ide.util.treeView.*;
+import com.intellij.ide.projectView.impl.AbstractProjectViewPSIPane;
+import com.intellij.ide.projectView.impl.ProjectAbstractTreeStructureBase;
+import com.intellij.ide.projectView.impl.ProjectTreeStructure;
+import com.intellij.ide.projectView.impl.ProjectViewTree;
+import com.intellij.ide.util.treeView.AbstractTreeBuilder;
+import com.intellij.ide.util.treeView.AbstractTreeNode;
+import com.intellij.ide.util.treeView.AbstractTreeUpdater;
 import com.intellij.openapi.project.Project;
-import org.jetbrains.annotations.*;
+import org.jetbrains.annotations.NotNull;
 
-import javax.swing.tree.*;
+import javax.swing.tree.DefaultTreeModel;
 
-/**
- * @author Anna Bulenkova
- */
 public class ImagesProjectViewPane extends AbstractProjectViewPSIPane {
   public static final String ID = "IMAGES";
 
@@ -23,11 +25,13 @@ public class ImagesProjectViewPane extends AbstractProjectViewPSIPane {
     super(project);
   }
 
+  @NotNull
   @Override
   public String getTitle() {
     return "SDK-Images";
   }
 
+  @NotNull
   @Override
   public javax.swing.Icon getIcon() {
     return AllIcons.FileTypes.Custom;
@@ -44,6 +48,7 @@ public class ImagesProjectViewPane extends AbstractProjectViewPSIPane {
     return 10;
   }
 
+  @NotNull
   @Override
   public SelectInTarget createSelectInTarget() {
     return new ProjectViewSelectInTarget(myProject) {
@@ -53,7 +58,6 @@ public class ImagesProjectViewPane extends AbstractProjectViewPSIPane {
         return "images";
       }
 
-      @Nullable
       @Override
       public String getMinorViewId() {
         return "images";
@@ -66,23 +70,26 @@ public class ImagesProjectViewPane extends AbstractProjectViewPSIPane {
     };
   }
 
+  @NotNull
   @Override
   protected ProjectAbstractTreeStructureBase createStructure() {
     return new ProjectTreeStructure(myProject, ID) {
       @Override
-      protected AbstractTreeNode createRoot(Project project, ViewSettings settings) {
+      protected AbstractTreeNode createRoot(@NotNull Project project, @NotNull ViewSettings settings) {
         return new ImagesProjectNode(project);
       }
 
+      @NotNull
       @Override
-      public Object[] getChildElements(Object element) {
+      public Object[] getChildElements(@NotNull Object element) {
         return super.getChildElements(element);
       }
     };
   }
 
+  @NotNull
   @Override
-  protected ProjectViewTree createTree(DefaultTreeModel model) {
+  protected ProjectViewTree createTree(@NotNull DefaultTreeModel model) {
     return new ProjectViewTree(myProject, model) {
       @Override
       public boolean isRootVisible() {
@@ -91,8 +98,9 @@ public class ImagesProjectViewPane extends AbstractProjectViewPSIPane {
     };
   }
 
+  @NotNull
   @Override
-  protected AbstractTreeUpdater createTreeUpdater(AbstractTreeBuilder builder) {
+  protected AbstractTreeUpdater createTreeUpdater(@NotNull AbstractTreeBuilder builder) {
     return new AbstractTreeUpdater(builder);
   }
 }

@@ -23,7 +23,7 @@ public class SimpleBlock extends AbstractBlock {
   
   @Override
   protected List<Block> buildChildren() {
-    List<Block> blocks = new ArrayList<Block>();
+    List<Block> blocks = new ArrayList<>();
     ASTNode child = myNode.getFirstChildNode();
     while (child != null) {
       if (child.getElementType() != TokenType.WHITE_SPACE) {

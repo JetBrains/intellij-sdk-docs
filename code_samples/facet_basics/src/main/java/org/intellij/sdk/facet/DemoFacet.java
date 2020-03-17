@@ -8,7 +8,6 @@ import com.intellij.openapi.module.Module;
 
 /**
  * Demo Facet class. Everything is handled by the super class.
- * @author Anna Bulenkova
  */
 public class DemoFacet extends Facet<DemoFacetConfiguration> {
 

@@ -6,21 +6,21 @@ title: Plugin Configuration File - plugin.xml
 The following is a sample plugin configuration file. This sample showcases and describes all elements that can be used in the `plugin.xml` file.
 Additional information about configuring `<actions>` is available in the [Actions](/basics/action_system.md#registering-actions) section in Part II.
 
-Limited HTML elements are allowed within `<description>` and `<changed-notes>` elements.
+Limited HTML elements are allowed within `<description>` and `<change-notes>` elements.
 However, content containing HTML elements must be surrounded by `<![CDATA[  ]]>` tags. 
 Allowed HTML elements include text formatting, paragraphs, and lists. 
+
 ```xml
 <!-- `url` specifies the URL of the plugin homepage (can be opened from "Plugins" settings dialog) -->
 <idea-plugin url="https://www.jetbrains.com/idea">
 
-  <!-- Plugin name. It should be short and descriptive but does 
-       not have to be identical to the name of the JAR file. 
+  <!-- Plugin name. It should be short and descriptive and in Title Case. 
        Displayed in the "Plugins" settings dialog and the plugin repository Web interface. -->
-  <name>VssIntegration</name>
+  <name>Vss Integration</name>
 
   <!-- Unique identifier of the plugin. Should be FQN.
        Cannot be changed between the plugin versions.
-       If not specified, assumed to be equal to <name>. This can have brittle results. -->
+       If not specified, <name> will be used (not recommended). -->
   <id>com.jetbrains.vssintegration</id>
 
   <!-- Description of the plugin. 
@@ -39,18 +39,18 @@ Allowed HTML elements include text formatting, paragraphs, and lists.
   <!-- Description of changes in the latest version of the plugin.
        Displayed in the "Plugins" settings dialog and the plugin repository Web interface.
        Simple HTML elements can be included between <![CDATA[  ]]> tags.  -->
- <change-notes>Initial release of the plugin.</change-notes>
+  <change-notes>Initial release of the plugin.</change-notes>
 
   <!-- Plugin version
        Recommended format is BRANCH.BUILD.FIX (MAJOR.MINOR.FIX)
        Displayed in the "Plugins" settings dialog and the plugin repository Web interface.  -->
-   <version>1.0.0</version>
+  <version>1.0.0</version>
 
   <!-- The vendor of the plugin.
        The optional "url" attribute specifies the URL of the vendor homepage.
        The optional "email" attribute specifies the e-mail address of the vendor.
        Displayed in the "Plugins" settings dialog and the plugin repository Web interface. -->
-   <vendor url="https://www.company.com" email="support@company.com">A Company Inc.</vendor>
+  <vendor url="https://www.company.com" email="support@company.com">A Company Inc.</vendor>
 
   <!-- Mandatory dependencies on plugins or modules.
        The FQN module names in <depends> elements are used to determine IDE compatibility for the plugin.
@@ -70,10 +70,12 @@ Allowed HTML elements include text formatting, paragraphs, and lists.
 
   <!-- Resource bundle (/messages/MyPluginBundle.properties) to be used
        with `key` attributes in extension points and implicit keys like
-       `action.[pluginID].[ActionID].text` -->
+       `action.[ActionID].text` -->
   <resource-bundle>messages.MyPluginBundle</resource-bundle>
 
-  <!-- Plugin's application components (note that components are deprecated and should not be used in new plugins)  -->
+  <!-- Plugin's application components (note that components are deprecated and should not be used in new plugins) 
+       See https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_components.html for migration steps
+  -->
   <application-components>
     <component>
       <!-- Component's interface class -->
@@ -84,7 +86,9 @@ Allowed HTML elements include text formatting, paragraphs, and lists.
     </component>
   </application-components>
 
-  <!-- Plugin's project components (note that components are deprecated and should not be used in new plugins) -->
+  <!-- Plugin's project components (note that components are deprecated and should not be used in new plugins) 
+       See https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_components.html for migration steps
+  -->
   <project-components>
     <component>
       <!-- Interface and implementation classes are the same -->
@@ -102,14 +106,16 @@ Allowed HTML elements include text formatting, paragraphs, and lists.
     </component>
   </project-components>
 
-  <!-- Plugin's module components (note that components are deprecated and should not be used in new plugins)  -->
+  <!-- Plugin's module components (note that components are deprecated and should not be used in new plugins)  
+       See https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_components.html for migration steps
+  -->
   <module-components>
     <component>
       <implementation-class>com.foo.Component3</implementation-class>
     </component>
   </module-components>
 
-  <!-- Actions   -->
+  <!-- Actions -->
   <actions>
     <action id="VssIntegration.GarbageCollection" class="com.foo.impl.CollectGarbage" text="Collect _Garbage" description="Run garbage collector">
       <keyboard-shortcut first-keystroke="control alt G" second-keystroke="C" keymap="$default"/>
@@ -118,9 +124,8 @@ Allowed HTML elements include text formatting, paragraphs, and lists.
 
   <!-- Extension points defined by the plugin.
        Extension points are registered by a plugin so that other
-       plugins can provide this plugin with certain data. The
-       "beanClass" attribute specifies the class the implementations
-       of which can be used for the extension point. -->
+       plugins can provide this plugin with certain data. 
+  -->
   <extensionPoints>
     <extensionPoint name="testExtensionPoint" beanClass="com.foo.impl.MyExtensionBean"/>
   </extensionPoints>
@@ -140,12 +145,12 @@ Allowed HTML elements include text formatting, paragraphs, and lists.
   
   <!-- Application-level listeners -->
   <applicationListeners>
-      <listener class="com.foo.impl.MyListener" topic="com.intellij.openapi.vfs.newvfs.BulkFileListener"/>
+    <listener class="com.foo.impl.MyListener" topic="com.intellij.openapi.vfs.newvfs.BulkFileListener"/>
   </applicationListeners>
 
   <!-- Project-level listeners -->
   <projectListeners>
-      <listener class="com.foo.impl.MyToolwindowListener" topic="com.intellij.openapi.wm.ex.ToolWindowManagerListener"/>
+    <listener class="com.foo.impl.MyToolwindowListener" topic="com.intellij.openapi.wm.ex.ToolWindowManagerListener"/>
   </projectListeners>
 </idea-plugin>
 ```

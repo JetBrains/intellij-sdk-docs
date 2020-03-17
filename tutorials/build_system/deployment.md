@@ -12,6 +12,10 @@ Please see the guide page for manually [publishing a plugin](../../basics/gettin
 * bullet list
 {:toc}
 
+## Building Distribution
+For manual distribution or local installation, invoke `gradle buildPlugin` target to create the plugin distribution.
+The resulting JAR/ZIP is located in `build/distributions` and can then be [installed](https://www.jetbrains.com/help/idea/managing-plugins.html#installing-plugins-from-disk) manually.
+
 ## Providing Your Hub Permanent Token to Gradle
 To deploy a plugin to the plugin repository, you need to supply your [JetBrains Hub Permanent Token](https://plugins.jetbrains.com/docs/marketplace/plugin-upload.html). 
 This page describes three options to supply your _Hub Permanent Token_ via Gradle using: 

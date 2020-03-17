@@ -9,6 +9,10 @@ See [Recently Updated](/recently_updated.md) ([RSS](https://github.com/JetBrains
 
 # 2020
 
+## March
+JCEF Support (_Experimental Feature_) 
+: Allows [embedding](/reference_guide/jcef.md) Chromium-based browser in the IDE.
+
 ## February
 
 All Code Samples converted to Gradle

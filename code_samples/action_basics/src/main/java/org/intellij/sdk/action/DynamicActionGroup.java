@@ -15,25 +15,25 @@ import org.jetbrains.annotations.NotNull;
  * DynamicActionGroup is based on ActionGroup because menu children are determined
  * on rules other than just positional constraints.
  *
- * @author Anna Bulenkova
  * @see ActionGroup
  */
 public class DynamicActionGroup extends ActionGroup {
-  
+
   /**
    * Returns an array of menu actions for the group.
    *
-   * @param  e Event received when the associated group-id menu is chosen.
+   * @param e Event received when the associated group-id menu is chosen.
    * @return AnAction[]  An instance of AnAction, in this case containing a single instance of the
    * PopupDialogAction class.
    */
   @NotNull
   @Override
   public AnAction[] getChildren(AnActionEvent e) {
-    return new AnAction[]{ new PopupDialogAction("Action Added at Runtime",
-                                                 "Dynamic Action Demo",
-                                                 ActionBasicsIcons.Sdk_default_icon)
+    return new AnAction[]{
+            new PopupDialogAction("Action Added at Runtime",
+                    "Dynamic Action Demo",
+                    ActionBasicsIcons.Sdk_default_icon)
     };
   }
-  
+
 }

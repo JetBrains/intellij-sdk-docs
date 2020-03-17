@@ -41,6 +41,7 @@ Multi-part build numbers can also be used in the `since-build` and `until-build`
 
 | Branch number                                                   | IntelliJ Platform version |
 |-----------------------------------------------------------------|---------------------------|
+| [201](https://github.com/JetBrains/intellij-community/tree/201) | 2020.1                    |
 | [193](https://github.com/JetBrains/intellij-community/tree/193) | 2019.3                    |
 | [192](https://github.com/JetBrains/intellij-community/tree/192) | 2019.2                    |
 | [191](https://github.com/JetBrains/intellij-community/tree/191) | 2019.1                    |

@@ -2,7 +2,8 @@
 
 package org.jetbrains.sdk.runConfiguration;
 
-import com.intellij.execution.*;
+import com.intellij.execution.ExecutionException;
+import com.intellij.execution.Executor;
 import com.intellij.execution.configurations.*;
 import com.intellij.execution.process.OSProcessHandler;
 import com.intellij.execution.process.ProcessHandler;
@@ -11,11 +12,9 @@ import com.intellij.execution.process.ProcessTerminatedListener;
 import com.intellij.execution.runners.ExecutionEnvironment;
 import com.intellij.openapi.options.SettingsEditor;
 import com.intellij.openapi.project.Project;
-import org.jetbrains.annotations.*;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
-/**
- * @author Anna Bulenkova
- */
 public class DemoRunConfiguration extends RunConfigurationBase<DemoRunConfigurationOptions> {
   protected DemoRunConfiguration(Project project, ConfigurationFactory factory, String name) {
     super(project, factory, name);

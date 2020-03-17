@@ -1,6 +1,6 @@
 # Summary
 
-* [Introduction](welcome.md)
+* [Introduction](intro/welcome.md)
 * [The IntelliJ Platform](intro/intellij_platform.md)
     * [Contributing to the IntelliJ Platform](basics/platform_contributions.md)
     * [IntelliJ Platform Coding Guidelines](basics/intellij_coding_guidelines.md)
@@ -15,7 +15,7 @@
     * [Recently Updated](recently_updated.md)
 
 ## Part I - Plugins
-* [Quick Start Guide](basics.md)
+* [Quick Start Guide](basics/basics.md)
     * [Types of Plugins](basics/types_of_plugins.md)
 * [Getting Started](basics/getting_started.md)
     * [Using Gradle](tutorials/build_system.md)
@@ -52,7 +52,7 @@
     * [UI Inspector](reference_guide/internal_actions/internal_uii.md)
     * [Laf Defaults](reference_guide/internal_actions/internal_ui_lafd.md)
 * [Optimizing Performance](reference_guide/performance/performance.md)
-* [Plugin Development FAQ](faq.md)
+* [Plugin Development FAQ](basics/faq.md)
 
 ## Part II - Base Platform
 * [Fundamentals](platform/fundamentals.md)
@@ -74,6 +74,7 @@
     * [Icons and Images](reference_guide/work_with_icons_and_images.md)
     * [Color Scheme Management](reference_guide/color_scheme_management.md)
     * [Kotlin UI DSL](user_interface_components/kotlin_ui_dsl.md)
+* [JCEF](reference_guide/jcef.md)
 * [UI Themes](reference_guide/ui_themes/themes_intro.md)
     * [Creating UI Themes](reference_guide/ui_themes/themes.md)
     * [Customizing a UI Theme](reference_guide/ui_themes/themes_customize.md)

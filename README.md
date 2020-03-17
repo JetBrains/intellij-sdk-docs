@@ -60,16 +60,16 @@ A set of Rake tasks, a Make-like program implemented in Ruby, provides short com
 
 #### Building Site from Sources
  
-*  Make sure you are in a project root directory
+*  Make sure you are in the project root directory
 *  To build static site content run
-   ```
+   ```bash
    rake build
    ```
    
 #### Previewing
 
 *  To start the web-server run
-    ```
+    ```bash
     rake preview
     ```
 *  Open the address

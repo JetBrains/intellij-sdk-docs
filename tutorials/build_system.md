@@ -18,7 +18,6 @@ To make sure that your plugin is not affected by [API changes](/reference_guide/
 > **Note** Please make sure to always upgrade to the latest version of `gradle-intellij-plugin`.
 Follow releases on [GitHub](https://github.com/JetBrains/gradle-intellij-plugin/releases). 
  
-The following tutorial refers to materials that can be found in the included [gradle_plugin_demo](https://github.com/JetBrains/intellij-sdk-docs/tree/master/code_samples/gradle_plugin_demo) project. 
 Below are a series of guides to developing and deploying Gradle-based IntelliJ Platform Plugins:  
 *  [1. Getting Started with Gradle-Based Plugins](build_system/prerequisites.md)
 *  [2. Configuring Gradle-Based Plugins](build_system/gradle_guide.md)

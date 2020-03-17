@@ -1,4 +1,3 @@
-
 // Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
 
 package org.intellij.sdk.intention;
@@ -15,8 +14,6 @@ import org.jetbrains.annotations.*;
 
 /**
  * Implements an intention action to replace a ternary statement with if-then-else
- *
- * @author dsl
  */
 @NonNls
 public class ConditionalOperatorConverter extends PsiElementBaseIntentionAction implements IntentionAction {
@@ -97,7 +94,7 @@ public class ConditionalOperatorConverter extends PsiElementBaseIntentionAction 
    *   when manipulation of the psi tree fails.
    *   @see ConditionalOperatorConverter#startInWriteAction()
    */
-  public void invoke(@NotNull Project project, Editor editor, PsiElement element) throws IncorrectOperationException {
+  public void invoke(@NotNull Project project, Editor editor, @NotNull PsiElement element) throws IncorrectOperationException {
 
     // Get the factory for making new PsiElements, and the code style manager to format new statements
     final PsiElementFactory factory = JavaPsiFacade.getInstance(project).getElementFactory();

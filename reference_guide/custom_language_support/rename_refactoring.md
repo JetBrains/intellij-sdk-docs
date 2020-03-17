@@ -21,9 +21,8 @@ implementation for a
 [Properties language plugin](upsource:///plugins/properties)
 
 
-Another interface related to the Rename refactoring is
-[`NamesValidator`](upsource:///platform/lang-api/src/com/intellij/lang/refactoring/NamesValidator.java).
-This interface allows a plugin to check if the name entered by the user in the `Rename` dialog is a valid identifier (and not a keyword) according to the custom language rules.
+### Name Validation
+[`NamesValidator`](upsource:///platform/lang-api/src/com/intellij/lang/refactoring/NamesValidator.java) allows a plugin to check if the name entered by the user in the `Rename` dialog is a valid identifier (and not a keyword) according to the custom language rules.
 If an implementation of this interface is not provided by the plugin, Java rules for validating identifiers are used.
 Implementations of
 [`NamesValidator`](upsource:///platform/lang-api/src/com/intellij/lang/refactoring/NamesValidator.java)
@@ -35,6 +34,7 @@ for
 [Properties language plugin](upsource:///plugins/properties)
 
 
+### Custom Rename UI and Workflow
 Further customization of the Rename refactoring processing is possible on multiple levels.
 Providing a custom implementation of the
 [`RenameHandler`](upsource:///platform/lang-api/src/com/intellij/refactoring/rename/RenameHandler.java)

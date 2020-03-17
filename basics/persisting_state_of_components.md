@@ -3,7 +3,7 @@ title: Persisting State of Components
 ---
 <!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-The *IntelliJ Platform* provides an API that allows components or services to persist their state between restarts of the IDE. You can use either a simple API to persist a few values, or persist the state of more complicated components using the [`PersistentStateComponent`](upsource:///platform/core-api/src/com/intellij/openapi/components/PersistentStateComponent.java) interface.
+The *IntelliJ Platform* provides an API that allows components or services to persist their state between restarts of the IDE. You can use either a simple API to persist a few values or persist the state of more complicated components using the [`PersistentStateComponent`](upsource:///platform/core-api/src/com/intellij/openapi/components/PersistentStateComponent.java) interface.
 
 > **WARNING** If you need to persist sensitive data like passwords, please see [Persisting Sensitive Data](persisting_sensitive_data.md).
 
@@ -13,14 +13,14 @@ If the only thing that your plugin needs to persist is a few simple values, the 
 
 Use the `PropertiesComponent.getInstance()` method for storing application-level values, and the `PropertiesComponent.getInstance(Project)` method for storing project-level values.
 
-Since all plugins share the same namespace, it is highly recommended to prefix key names (e.g. using your plugin ID).
+Since all plugins share the same namespace, it is highly recommended to prefix key names (e.g., using your plugin ID).
 
 ## Using PersistentStateComponent
 
-The [`com.intellij.openapi.components.PersistentStateComponent`](upsource:///platform/projectModel-api/src/com/intellij/openapi/components/PersistentStateComponent.java) interface gives you the most flexibility for defining the values to be persisted, their format and storage location.
+The [`com.intellij.openapi.components.PersistentStateComponent`](upsource:///platform/projectModel-api/src/com/intellij/openapi/components/PersistentStateComponent.java) interface gives you the most flexibility for defining the values to be persisted, their format, and storage location.
 
 To use it:
-- mark a [service](plugin_structure/plugin_services.md) or a [component](plugin_structure/plugin_components.md) as implementing the `PersistentStateComponent` interface
+- mark a [service](plugin_structure/plugin_services.md) as implementing the `PersistentStateComponent` interface
 - define the state class
 - specify the storage location using `@com.intellij.openapi.components.State`
 
@@ -81,6 +81,33 @@ The following types of values can be persisted:
 * maps
 * enums
 
+For other types, extend [`com.intellij.util.xmlb.Converter`](upsource:///platform/util/src/com/intellij/util/xmlb/Converter.java):
+
+```java
+class LocalDateTimeConverter extends Converter<LocalDateTime> {
+  public LocalDateTime fromString(String value) {
+    final long epochMilli = Long.parseLong(value);
+    final ZoneId zoneId = ZoneId.systemDefault();
+    return Instant.ofEpochMilli(epochMilli).atZone(zoneId).toLocalDateTime();
+  }
+
+  public String toString(LocalDateTime value) {
+    final ZoneId zoneId = ZoneId.systemDefault();
+    final long toEpochMilli = value.atZone(zoneId).toInstant().toEpochMilli();
+    return Long.toString(toEpochMilli);
+  }
+}
+```
+
+Define the converter above in `@com.intellij.util.xmlb.annotations.OptionTag` or `@com.intellij.util.xmlb.annotations.Attribute`:
+
+```java
+class State {
+  @OptionTag(converter = LocalDateTimeConverter.class)
+  public LocalDateTime dateTime;
+}
+```
+
 To exclude a public field or bean property from serialization, annotate the field or getter with `@com.intellij.util.xmlb.annotations.Transient`.
 
 Note that the state class must have a default constructor. It should return the default state of the component (one used if there is nothing persisted in the XML files yet).
@@ -98,7 +125,7 @@ It has the following fields:
 
 The simplest ways of specifying the `@Storage` annotation are as follows (since 2016.x; for previous versions, please see [old version](https://github.com/JetBrains/intellij-sdk-docs/blob/5dcb02991cf828a7d4680d125ce56b4c10234146/basics/persisting_state_of_components.md) of this document):
 
-* `@Storage("yourName.xml")` If component is project-level — for `.ipr` based projects standard project file will be used automatically; you don't need to specify anything.
+* `@Storage("yourName.xml")` If a component is project-level — for `.ipr` based projects standard project file is used automatically - no need to specify anything.
 
 * `@Storage(StoragePathMacros.WORKSPACE_FILE)` for values stored in the workspace file.
 
@@ -110,7 +137,7 @@ The `roamingType` parameter of the `@Storage` annotation specifies the roaming t
 
 ## Customizing the XML format of persisted values
 
-Please consider using annotation parameters only to achieve backward compatibility. Otherwise feel free to file issues about serialization cosmetics.
+Please consider using annotation parameters only to achieve backward compatibility. Otherwise, please feel free to file issues about serialization cosmetics.
 
 If you want to use the default bean serialization but need to customize the storage format in XML (for example, for compatibility with previous versions of your plugin or externally defined XML formats), you can use the `@Tag`, `@Attribute`, `@Property`, `@MapAnnotation`, `@AbstractCollection` annotations. 
 

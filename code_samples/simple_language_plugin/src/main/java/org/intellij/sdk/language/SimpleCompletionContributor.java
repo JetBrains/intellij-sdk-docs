@@ -15,7 +15,7 @@ public class SimpleCompletionContributor extends CompletionContributor {
             PlatformPatterns.psiElement(SimpleTypes.VALUE).withLanguage(SimpleLanguage.INSTANCE),
             new CompletionProvider<CompletionParameters>() {
                   public void addCompletions(@NotNull CompletionParameters parameters,
-                                             ProcessingContext context,
+                                             @NotNull ProcessingContext context,
                                              @NotNull CompletionResultSet resultSet) {
                     resultSet.addElement(LookupElementBuilder.create("Hello"));
                   }

@@ -26,6 +26,9 @@ Refactoring dialog: builtin "Open in editor" option
 Configurable status bar widgets
 : Use extension point `com.intellij.statusBarWidgetFactory` to provide widgets that can be disabled or reordered. 
 
+JCEF Support (_Experimental Feature_) 
+: Allows [embedding](/reference_guide/jcef.md) Chromium-based browser in the IDE.
+
 ## Notable Changes in IntelliJ IDEA
 
 EOL for JetBrains TFS Plugin

@@ -125,6 +125,15 @@ Java code migrated to use `TYPE_USE` nullability annotations
 `com.intellij.navigation.ChooseByNameContributorEx.processElementsWithName` method parameter type changed from `Processor<NavigationItem>` to ``Processor<? extends NavigationItem>``
 : This may break source-compatibility with inheritors written in Kotlin.
 
+Images module functionality (package `org.intellij.images.*`) extracted to plugin
+: The dependency [must be declared](/basics/plugin_structure/plugin_dependencies.md) explicitly now:
+  * Add `<depends>com.intellij.platform.images</depends>` in `plugin.xml`
+  * Add to `build.gradle`:
+    ```groovy
+    intellij {
+      plugins = ['platform-images']
+    }
+    ```
 
 ## Changes in Python plugin 2020.1
 

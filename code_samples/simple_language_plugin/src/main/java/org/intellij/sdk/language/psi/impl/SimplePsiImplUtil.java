@@ -7,7 +7,9 @@ import com.intellij.navigation.ItemPresentation;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiFile;
 import org.intellij.sdk.language.SimpleIcons;
-import org.intellij.sdk.language.psi.*;
+import org.intellij.sdk.language.psi.SimpleElementFactory;
+import org.intellij.sdk.language.psi.SimpleProperty;
+import org.intellij.sdk.language.psi.SimpleTypes;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
@@ -22,7 +24,7 @@ public class SimplePsiImplUtil {
       return null;
     }
   }
-  
+
   public static String getValue(SimpleProperty element) {
     ASTNode valueNode = element.getNode().findChildByType(SimpleTypes.VALUE);
     if (valueNode != null) {
@@ -31,11 +33,11 @@ public class SimplePsiImplUtil {
       return null;
     }
   }
-  
+
   public static String getName(SimpleProperty element) {
     return getKey(element);
   }
-  
+
   public static PsiElement setName(SimpleProperty element, String newName) {
     ASTNode keyNode = element.getNode().findChildByType(SimpleTypes.KEY);
     if (keyNode != null) {
@@ -45,8 +47,8 @@ public class SimplePsiImplUtil {
     }
     return element;
   }
-  
-  public static PsiElement getNameIdentifier( SimpleProperty element) {
+
+  public static PsiElement getNameIdentifier(SimpleProperty element) {
     ASTNode keyNode = element.getNode().findChildByType(SimpleTypes.KEY);
     if (keyNode != null) {
       return keyNode.getPsi();
@@ -54,28 +56,27 @@ public class SimplePsiImplUtil {
       return null;
     }
   }
-  
-  public static ItemPresentation getPresentation( final SimpleProperty element) {
+
+  public static ItemPresentation getPresentation(final SimpleProperty element) {
     return new ItemPresentation() {
       @Nullable
       @Override
       public String getPresentableText() {
         return element.getKey();
       }
-      
+
       @Nullable
       @Override
       public String getLocationString() {
         PsiFile containingFile = element.getContainingFile();
         return containingFile == null ? null : containingFile.getName();
       }
-      
-      @Nullable
+
       @Override
-      public Icon getIcon( boolean unused) {
+      public Icon getIcon(boolean unused) {
         return SimpleIcons.FILE;
       }
     };
   }
-  
+
 }

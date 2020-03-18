@@ -6,7 +6,7 @@
   <id>org.intellij.sdk.runConfiguration</id>
 
   <!-- Text to display as name on Preferences/Settings | Plugin page  -->
-  <name>Run Configuration Demo</name>
+  <name>SDK: Run Configuration Demo</name>
 
   <!-- The version of this plugin -->
   <version>2.0.0</version>

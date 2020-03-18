@@ -21,7 +21,7 @@ It describes definitions of the actions, extensions, or listeners provided by th
 
 | Name | Implementation Class | Interface |
 | ---- | -------------------- | --------- |
-| toolWindow | [MyToolWindowFactory][toolWindow_class] | [ToolWindowFactory][toolWindow_interface] |
+| toolWindow | [MyToolWindowFactory][toolWindow_implementation] | [ToolWindowFactory][toolWindow_interface] |
 
 [Extension Points documentation][docs_ep]
 
@@ -57,5 +57,6 @@ invoked inside the `MyToolWindowFactory` implementation.
 [docs_sdk]: https://www.jetbrains.org/intellij/sdk/docs/intro/about.html
 [docs_ep]: https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_extension_points.html
 [docs_run]: https://www.jetbrains.org/intellij/sdk/docs/tutorials/build_system/prerequisites.html#running-a-simple-gradle-based-intellij-platform-plugin
-[toolWindow_class]: ./src/main/java/org/intellij/sdk/toolWindow/MyToolWindowFactory.java
+
+[toolWindow_implementation]: ./src/main/java/org/intellij/sdk/toolWindow/MyToolWindowFactory.java
 [toolWindow_interface]: https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/wm/ToolWindowFactory.java

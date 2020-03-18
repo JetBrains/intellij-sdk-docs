@@ -21,7 +21,7 @@ It describes definitions of the actions, extensions, or listeners provided by th
 
 | Name | Implementation Class | Interface |
 | ---- | -------------------- | --------- |
-| treeStructureProvider | [TextOnlyTreeStructureProvider][treeStructureProvider_class] | [TreeStructureProvider][treeStructureProvider_interface] |
+| treeStructureProvider | [TextOnlyTreeStructureProvider][treeStructureProvider_implementation] | [TreeStructureProvider][treeStructureProvider_interface] |
 
 [Extension Points documentation][docs_ep]
 
@@ -53,5 +53,6 @@ files are presented.
 [docs_sdk]: https://www.jetbrains.org/intellij/sdk/docs/intro/about.html
 [docs_ep]: https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_extension_points.html
 [docs_run]: https://www.jetbrains.org/intellij/sdk/docs/tutorials/build_system/prerequisites.html#running-a-simple-gradle-based-intellij-platform-plugin
-[treeStructureProvider_class]: ./src/main/java/org/intellij/sdk/treeStructureProvider/TextOnlyTreeStructureProvider.java
+
+[treeStructureProvider_implementation]: ./src/main/java/org/intellij/sdk/treeStructureProvider/TextOnlyTreeStructureProvider.java
 [treeStructureProvider_interface]: https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/ide/projectView/TreeStructureProvider.java

@@ -26,8 +26,8 @@ Refactoring dialog: builtin "Open in editor" option
 Configurable status bar widgets
 : Use extension point `com.intellij.statusBarWidgetFactory` to provide widgets that can be disabled or reordered. 
 
-Override text presentation for actions depending on context.
-: Set the [`override-text`](/basics/action_system.md#setting-the-override-text-element-for-an-action) element within the `action` declaration in `plugin.xml`.
+Override text presentation for actions depending on menu context. 
+: Set the `<override-text>` element within the `<action>` declaration in `plugin.xml`.
 
 ## Notable Changes in IntelliJ IDEA
 

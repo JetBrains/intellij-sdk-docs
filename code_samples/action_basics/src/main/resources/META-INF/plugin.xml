@@ -7,13 +7,6 @@
   <!-- Text to display as name on Preferences/Settings | Plugin page -->
   <name>SDK: Action Sample Project</name>
 
-  <!-- The version of this plugin -->
-  <version>2.0.0</version>
-
-  <!-- Compatible with the following versions of IntelliJ Platform:
-        version 2018.3 (build #183) and newer. -->
-  <idea-version since-build="191"/>
-
   <!-- Indicate this plugin can be loaded in all IntelliJ Platform-based products. -->
   <depends>com.intellij.modules.platform</depends>
 
@@ -45,7 +38,6 @@
       <override-text place="MainMenu" text="Pop Dialog Action"/>
       <keyboard-shortcut first-keystroke="control alt A" second-keystroke="C" keymap="$default"/>
       <mouse-shortcut keystroke="control button3 doubleClick" keymap="$default"/>
-      <add-to-group group-id="ToolsMenu" anchor="first"/>
     </action>
     <!-- All of the following menu groups add the action PopupDialogAction to menus in different ways.
           Note that even though these groups reuse the same action class, in each use the action ids are unique. -->

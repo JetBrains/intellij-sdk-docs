@@ -16,8 +16,7 @@ repositories {
 
 // See https://github.com/JetBrains/gradle-intellij-plugin/
 intellij {
-  // Uncomment the version line below when the product releases
-//  version '2020.1'
+  version '201-EAP-SNAPSHOT'
   sameSinceUntilBuild = true
 }
 patchPluginXml {

@@ -150,19 +150,17 @@ Registering actions in `plugin.xml` is demonstrated in the following reference e
 
 > **Tip** Beginning in 2020.1, an alternate version of an action's menu text can be declared for use depending on where an action appears.
 
-By using the `override-text` element introduced in v2020.1 of the IntelliJ Platform, the menu text for an action can be different depending on context: menu location, toolbar, etc.
-In the `action` element reference example (below) with `id` attribute `VssIntegration.GarbageCollection`, the default is to use the verbose text "Garbage Collector: Collect _Garbage."
-The `add-to-group` element declares the action is to be added to the Tools Menu.
+By using the `<override-text>` element introduced in 2020.1 of the IntelliJ Platform, the menu text for an action can be different depending on context: menu location, toolbar, etc.
 
-However, the `override-text` element declares that text for `VssIntegration.GarbageCollection` displayed anywhere in the Main Menu system should be the compact text version "Collect _Garbage."
+In the `action` element reference example (below) with `id` attribute `VssIntegration.GarbageCollection`, the default is to use the menu text "Garbage Collector: Collect _Garbage."
+The `add-to-group` element declares the action is added to the Tools Menu.
+
+However, the `override-text` element declares that text for `VssIntegration.GarbageCollection` displayed anywhere in the Main Menu system should be the alternate text "Collect _Garbage."
 The Tools Menu is part of the Main Menu, so the displayed menu text is "Collect _Garbage."
-A different context, such as searching for the action using **Help \| Find Action...**,  displays the verbose text "Garbage Collector: Collect _Garbage" to give the user additional information about the action.
+A different context, such as searching for the action using **Help \| Find Action...**,  displays the default text "Garbage Collector: Collect _Garbage" to give the user additional information about the action.
 
-The example uses `MainMenu` for the `place` attribute in the `override-text` element, which is broad in scope.
-The `place` attribute could be finer granularity if the action is to be added to more than one location in the main menu.
-For example, the `override-text` element for `VssIntegration.GarbageCollection` might only specify a `place` element of `ToolsMenu`.
-Then additional `add-to-group` elements could specify other `group-id` attributes, such as `HelpMenu`.
-For each `add-to-group` unique `group-id` attribute, an additional `override-text` element could be added with a matching `place` attribute.
+A second `override-text` element uses `place` and `use-text-of-place` attributes to declare the same version of the text used in the Main Menu is also used in the Editor Popup Menu.
+Additional `override-text` elements could be used to specify additional places where the Main Menu text should be used. 
 
 #### Action Declaration Reference
 The places where actions can appear are defined by constants in [`ActionPlaces`](upsource:///platform/platform-api/src/com/intellij/openapi/actionSystem/ActionPlaces.java). 
@@ -189,11 +187,15 @@ This, and additional information can also be found by using the [Code Completion
   <action id="VssIntegration.GarbageCollection" class="com.foo.impl.CollectGarbage" text="Garbage Collector: Collect _Garbage" 
                 description="Run garbage collector" icon="icons/garbage.png">
     <!-- The <override-text> element defines an alternate version of the text for the menu action.
-         The mandatory "text" attribute defines the brief-version text to be displayed for the action.
+         The mandatory "text" attribute defines the text to be displayed for the action.
          The mandatory "place" attribute declares where the alternate text should be used. In this example,
          any time the action is displayed in the IDE Main Menu (and submenus) the override-text
-         version should be used.  -->
+         version should be used.  
+         The second <override-text> element uses the alternate attribute "use-text-of-place" to define
+         a location (EditorPopup) to use the same text as is used in MainMenu. It is a way to specify 
+         use of alternate menu text in multiple discrete menu groups. -->
     <override-text place="MainMenu" text="Collect _Garbage"/>
+    <override-text place="EditorPopup" use-text-of-place="MainMenu"/>
     <!-- The <add-to-group> node specifies that the action should be added
          to an existing group. An action can be added to several groups.
          The mandatory "group-id" attribute specifies the ID of the group

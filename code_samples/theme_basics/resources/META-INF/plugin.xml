@@ -1,34 +1,42 @@
 <!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 <idea-plugin>
-  <id>com.jetbrains.sdk.themeBasics</id>
-  <name>SDK Theme Basics</name>
+
+  <!--  Unique id for this plugin. Must stay constant for the life of the plugin.  -->
+  <id>org.intellij.sdk..themeBasics</id>
+
+  <!-- Text to display as name on Preferences/Settings | Plugin page -->
+  <name>SDK: Theme Basics</name>
+
+  <!-- The version of this plugin -->
   <version>0.1</version>
-  <vendor email="support-email@company.com" url="https://blog.jetbrains.com/platform/">JetBrains Plugin Platform SDK</vendor>
 
-  <description><![CDATA[
-      IntelliJ Platform SDK code sample to illustrate creating <em>UI Themes</em>.
-    ]]></description>
-
-  <change-notes><![CDATA[
-      <ul>
-      <li>0.1   Initial release. Basic theme functionality.</li>
-      </ul>
-    ]]></change-notes>
-
-  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+  <!-- Compatible with the following versions of IntelliJ Platform:
+        version 2018.3 (build #183) and newer. -->
   <idea-version since-build="191"/>
 
-  <!-- Product and plugin compatibility requirements -->
+  <!-- Indicate this plugin can be loaded in all IntelliJ Platform-based products. -->
   <depends>com.intellij.modules.platform</depends>
+
+  <description>
+    <![CDATA[
+      IntelliJ Platform SDK code sample to illustrate creating <em>UI Themes</em>.
+    ]]>
+  </description>
+  <change-notes>
+    <![CDATA[
+      <ul>
+        <li><b>0.1</b> Initial release. Basic theme functionality.</li>
+      </ul>
+    ]]>
+  </change-notes>
+
+  <!-- Text to display as company information on Preferences/Settings | Plugin page -->
+  <vendor url="https://plugins.jetbrains.com">IntelliJ Platform SDK</vendor>
 
   <extensions defaultExtensionNs="com.intellij">
     <!-- Add your extensions here -->
     <themeProvider id="eb9b7461-397b-4b98-a422-224fc0a74564" path="/theme_basics.theme.json"/>
   </extensions>
-
-  <actions>
-    <!-- Add your actions here -->
-  </actions>
 
 </idea-plugin>

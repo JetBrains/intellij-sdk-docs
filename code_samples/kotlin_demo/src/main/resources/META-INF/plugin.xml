@@ -1,30 +1,28 @@
 <!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+
 <idea-plugin>
 
-  <!-- Unique identifier of the plugin. Cannot be changed between the plugin versions. -->
+  <!--  Unique id for this plugin. Must stay constant for the life of the plugin.  -->
   <id>org.intellij.sdk.kotlin</id>
 
-  <!-- Plugin name -->
+  <!-- Text to display as name on Preferences/Settings | Plugin page -->
   <name>SDK: Kotlin Demo</name>
 
-  <!-- Plugin version, in MAJOR.MINOR.FIX format -->
+  <!-- The version of this plugin -->
   <version>2.0.0</version>
 
   <!-- Minimum and maximum build numbers of IDEA compatible with the plugin. -->
   <idea-version since-build="191.0"/>
 
-  <!-- Product and plugin compatibility requirements - uses action system and kotlin -->
+  <!-- Indicate this plugin can be loaded in all IntelliJ Platform-based products. -->
   <depends>com.intellij.modules.platform</depends>
 
-  <!-- Description of the plugin. Displayed in the "Plugins" settings dialog and in the
-         plugin repository Web interface. -->
+  <!-- Text to display as description on Preferences/Settings | Plugin page  -->
   <description>
     <![CDATA[
     Adds a <i>Greeting</i> menu group anchored last in the <b>Main Menu</b>
     ]]>
   </description>
-
-  <!-- Description of changes in each version of the plugin. -->
   <change-notes>
     <![CDATA[
       <ul>
@@ -34,10 +32,7 @@
     ]]>
   </change-notes>
 
-  <!-- The vendor of the plugin.
-         The optional "url" attribute specifies the URL of the vendor homepage.
-         The optional "email" attribute specifies the e-mail address of the vendor.
-  -->
+  <!-- Text to display as company information on Preferences/Settings | Plugin page -->
   <vendor url="https://plugins.jetbrains.com">IntelliJ Platform SDK</vendor>
 
   <actions>

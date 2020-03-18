@@ -5,7 +5,7 @@
   <!--  Unique id for this plugin. Must stay constant for the life of the plugin.  -->
   <id>org.intellij.sdk.editor</id>
 
-  <!-- Text to display as name on Preferences/Settings | Plugin page  -->
+  <!-- Text to display as name on Preferences/Settings | Plugin page -->
   <name>SDK: Editor Sample Project</name>
 
   <!-- The version of this plugin -->

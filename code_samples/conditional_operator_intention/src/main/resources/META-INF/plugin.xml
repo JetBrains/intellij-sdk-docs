@@ -1,11 +1,12 @@
 <!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 <idea-plugin>
+
   <!--  Unique id for this plugin. Must stay constant for the life of the plugin.  -->
   <id>org.intellij.sdk.intention</id>
 
   <!-- Text to display as name on Preferences/Settings | Plugin page -->
-  <name>SDK Conditional Operator Converter</name>
+  <name>SDK: Conditional Operator Converter</name>
 
   <!-- The version of this plugin -->
   <version>2.0.0</version>

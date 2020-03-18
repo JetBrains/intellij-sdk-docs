@@ -5,7 +5,7 @@
   <!--  Unique id for this plugin. Must stay constant for the life of the plugin.  -->
   <id>org.jetbrains.tutorials.ProjectWizard</id>
 
-  <!-- Text to display as name on Preferences/Settings | Plugin page  -->
+  <!-- Text to display as name on Preferences/Settings | Plugin page -->
   <name>SDK: Project Wizard Demo</name>
 
   <!-- The version of this plugin -->

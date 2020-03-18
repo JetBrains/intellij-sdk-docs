@@ -2,7 +2,7 @@
 <idea-plugin>
 
   <!-- Unique identifier of the plugin. Cannot be changed between the plugin versions. -->
-  <id>org.intellij.sdk.kotlinDemo</id>
+  <id>org.intellij.sdk.kotlin</id>
 
   <!-- Plugin name -->
   <name>SDK: Kotlin Demo</name>
@@ -43,7 +43,7 @@
   <actions>
     <group id="MyPlugin.GreetingMenu" text="Greeting" description="Greeting menu">
       <add-to-group group-id="MainMenu" anchor="last"/>
-      <action id="MyPlugin.Hello" class="HelloAction" text="Hello" description="Says hello"/>
+      <action id="MyPlugin.Hello" class="org.intellij.sdk.kotlin.HelloAction" text="Hello" description="Says hello"/>
     </group>
   </actions>
 

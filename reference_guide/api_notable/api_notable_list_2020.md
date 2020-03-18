@@ -29,6 +29,9 @@ Configurable status bar widgets
 JCEF Support (_Experimental Feature_) 
 : Allows [embedding](/reference_guide/jcef.md) Chromium-based browser in the IDE.
 
+[DefaultLiveTemplatesProvider](upsource:///platform/lang-impl/src/com/intellij/codeInsight/template/impl/DefaultLiveTemplatesProvider.java) is deprecated.
+: Use extension point `com.intellij.defaultLiveTemplates` instead.
+
 ## Notable Changes in IntelliJ IDEA
 
 EOL for JetBrains TFS Plugin

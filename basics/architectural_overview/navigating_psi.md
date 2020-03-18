@@ -65,4 +65,4 @@ PsiClass containingClass = containingMethod.getContainingClass();
 ```
 
 To see how the navigation works in practice, please refer to the 
-[code sample](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/psi_demo/src/main/java/com/intellij/sdk/psi/PsiNavigationDemoAction.java).
+[code sample](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/psi_demo/src/main/java/org/jetbrains/sdk/psi/PsiNavigationDemoAction.java).

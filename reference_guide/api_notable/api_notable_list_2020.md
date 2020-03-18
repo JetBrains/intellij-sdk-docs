@@ -32,6 +32,9 @@ JCEF Support (_Experimental Feature_)
 [DefaultLiveTemplatesProvider](upsource:///platform/lang-impl/src/com/intellij/codeInsight/template/impl/DefaultLiveTemplatesProvider.java) is deprecated.
 : Use extension point `com.intellij.defaultLiveTemplates` instead.
 
+Override text presentation for actions depending on menu context. 
+: Set the `<override-text>` element within the `<action>` declaration in `plugin.xml`.
+
 ## Notable Changes in IntelliJ IDEA
 
 EOL for JetBrains TFS Plugin

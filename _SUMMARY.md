@@ -84,7 +84,7 @@
     * [Actions Tutorial](tutorials/action_system.md)
         * [Creating Actions](tutorials/action_system/working_with_custom_actions.md)
         * [Grouping Actions](tutorials/action_system/grouping_action.md)
-* Settings
+* [Settings](basics/settings.md)
     * [Persisting State of Components](basics/persisting_state_of_components.md)
     * [Persisting Sensitive Data](basics/persisting_sensitive_data.md)
     * Editing Settings
@@ -152,7 +152,7 @@
         * File Templates
     * QuickDoc
     * [Intentions](tutorials/code_intentions.md)
-* Analysing
+* [Analysing](basics/analyzing.md)
     * Annotator
     * [Inspections](tutorials/code_inspections.md)
         * Profiles
@@ -160,7 +160,7 @@
         * Suppressing Highlights
         * Structural Search
 * Refactoring
-* Project View
+* [Project View](basics/project_view.md)
     * [Modifying Project View Structure](tutorials/tree_structure_view.md)
 * Unit Testing
 * [Build System](reference_guide/project_model/build_system.md)

@@ -28,5 +28,8 @@ All extension points provided by the plugin must adhere to specific usage rules 
 ### Configurables depending on Extension Points
 Any `Configurable` which depends on dynamic extension points must implement `Configurable.WithEpDependencies`.
 
+### No use of service overrides
+Application, project and module services declared with `overrides="true"` are not allowed.
+
 ## Plugin Load/Unload Events
 Register `com.intellij.ide.plugins.DynamicPluginListener` [listener](plugin_listeners.md) to receive updates on plugin load/unload events.

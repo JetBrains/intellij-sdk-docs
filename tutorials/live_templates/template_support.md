@@ -1,9 +1,13 @@
 ---
-title: 1. Adding Live Template Support
+title: Adding Live Templates to a Plugin
 ---
 <!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-This tutorial is based on the SDK code sample [`live_templates`](https://github.com/JetBrains/intellij-sdk-docs/tree/master/code_samples/live_templates).
+This tutorial illustrates how to add default Custom Live Templates to an IntelliJ Platform plugin, and assign valid contexts for these templates based on the surrounding code and file type. 
+In addition, the tutorial discusses how to export existing Live Templates, and bundle them within a plugin.
+Any Live Template that can be created and exported can be added to a plugin by following the Template Creation, Export, and Extension Point Registration processes.
+
+This tutorial uses the SDK code sample [`live_templates`](https://github.com/JetBrains/intellij-sdk-docs/tree/master/code_samples/live_templates).
 
 * bullet
 {:toc}
@@ -77,10 +81,9 @@ For 2020.1 and later, follow this section to register the extension points and t
 #### Register Extension Points
 Using the `com.intellij.defaultLiveTemplates` and `com.intellij.liveTemplateContext` extension points, register the implementations with the IntelliJ Platform.
 The `file` attribute in the `defaultLiveTemplates` element specifies `path/filename` under the `src/main/resources` folder.
-The filename does not include the file extension.
 ```xml
   <extensions defaultExtensionNs="com.intellij">
-    <defaultLiveTemplates file="/liveTemplates/Markdown"/>
+    <defaultLiveTemplates file="/liveTemplates/Markdown.xml"/>
     <liveTemplateContext implementation="org.intellij.sdk.liveTemplates.MarkdownContext"/>
   </extensions>
 ```

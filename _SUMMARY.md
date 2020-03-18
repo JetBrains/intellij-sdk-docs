@@ -141,13 +141,14 @@
 ## Part V - Features
 * Navigation
     * Go To Symbol
-* Editing
+* [Editing](basics/editing.md)
     * Code Completion
-    * Templates
+    * [Templates](basics/templates.md)
         * [Live Templates](tutorials/live_templates.md)
-            * [1. Adding Live Template Support](tutorials/live_templates/template_support.md)
+            * [Adding Live Templates to a Plugin](tutorials/live_templates/template_support.md)
+            * [Creating New Functions for Live Templates](tutorials/live_templates/new_macros.md)
+            * Surround Templates
         * File Templates
-        * Surround Templates
     * QuickDoc
     * [Intentions](tutorials/code_intentions.md)
 * Analysing

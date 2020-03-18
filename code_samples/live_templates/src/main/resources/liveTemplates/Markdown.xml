@@ -15,7 +15,7 @@
             description="SDK: Convert to title case"
             toReformat="true"
             toShortenFQNames="false">
-    <variable name="TITLE" expression="titleCase(SELECTION)" defaultValue="the quick brown fox jumped over the lazy dog" alwaysStopAt="true" />
+    <variable name="TITLE" expression="titleCase(SELECTION)" defaultValue="the quick brown fox" alwaysStopAt="true" />
     <context>
       <option name="MARKDOWN" value="true" />
     </context>

@@ -8,7 +8,6 @@ import com.intellij.openapi.util.text.StringUtil;
 import org.jetbrains.annotations.NotNull;
 
 public class TitleCaseMacro extends MacroBase {
-
   public TitleCaseMacro() {
     super("titleCase", "titleCase(String)");
   }
@@ -22,9 +21,11 @@ public class TitleCaseMacro extends MacroBase {
 
   @Override
   protected Result calculateResult(@NotNull Expression[] params, ExpressionContext context, boolean quick) {
+    // Retrieve the text from the macro or selection, if any is available.
     String text = getTextResult(params, context, true);
     if (text != null) {
       if (text.length() > 0) {
+        // Capitalize the start of every word
         text = StringUtil.toTitleCase(text);
       }
       return new TextResult(text);

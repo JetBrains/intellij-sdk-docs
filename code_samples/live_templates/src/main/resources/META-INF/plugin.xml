@@ -2,14 +2,11 @@
 
 <idea-plugin>
 
+  <!--  Unique id for this plugin. Must stay constant for the life of the plugin.  -->
   <id>org.intellij.sdk.liveTemplates</id>
 
   <!-- Text to display as name on Preferences/Settings | Plugin page  -->
   <name>SDK: Live Templates Sample Project</name>
-
-  <!-- The <version> of this plugin is set by patchPluginXml.version in build.gradle -->
-
-  <!-- The <idea-version> compatibility of this plugin is set by intellij.sameSinceUntilBuild in build.gradle -->
 
   <!-- Product and plugin compatibility requirements -->
   <depends>com.intellij.modules.lang</depends>
@@ -34,11 +31,8 @@
   <vendor url="https://plugins.jetbrains.com">IntelliJ Platform SDK</vendor>
 
   <extensions defaultExtensionNs="com.intellij">
-    <!-- Declare where the IntelliJ Platform should look to find XML-based Live Templates   -->
-    <defaultLiveTemplates file="/liveTemplates/Markdown"/>
-    <!-- Declare the implementation for determining the context for applying Live Templates   -->
+    <defaultLiveTemplates file="/liveTemplates/Markdown.xml"/>
     <liveTemplateContext implementation="org.intellij.sdk.liveTemplates.MarkdownContext"/>
-    <!-- Declare implementation-based Live Template -->
     <liveTemplateMacro implementation="org.intellij.sdk.liveTemplates.TitleCaseMacro"/>
   </extensions>
 

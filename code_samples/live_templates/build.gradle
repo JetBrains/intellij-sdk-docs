@@ -16,12 +16,9 @@ repositories {
 
 // See https://github.com/JetBrains/gradle-intellij-plugin/
 intellij {
-  version 'LATEST-EAP-SNAPSHOT'
-
-  // Sets <idea-version> in plugin.xml
+  version '201-EAP-SNAPSHOT'
   sameSinceUntilBuild = true
 }
 patchPluginXml {
-  // Sets <version> in plugin.xml
   version = project.version
 }

@@ -8,11 +8,6 @@
   <!-- Text to display as name on Preferences/Settings | Plugin page  -->
   <name>SDK: Maximum Open Projects Sample</name>
 
-  <!-- The version of this plugin is set by build.gradle -->
-
-  <!-- The idea-version of this plugin is overwritten by build.gradle -->
-  <idea-version since-build="193"/>
-
   <!-- Product and plugin compatibility requirements -->
   <depends>com.intellij.modules.platform</depends>
 

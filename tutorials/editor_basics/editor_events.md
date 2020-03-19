@@ -33,7 +33,7 @@ Note that this action class is registered to appear on the Editor context menu.
             class="org.intellij.sdk.editor.EditorHandlerIllustration"
             text="Editor Add Caret"
             description="Adds a second caret below the existing one."
-            icon="EditorBasicsIcons.Sdk_default_icon">
+            icon="SdkIcons.Sdk_default_icon">
       <add-to-group group-id="EditorPopupMenu" anchor="first"/>
     </action>
 </action>

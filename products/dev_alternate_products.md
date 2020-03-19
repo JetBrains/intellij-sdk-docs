@@ -79,7 +79,7 @@ If the product version isn't clear on the _About_ screen, consult the individual
 
 The [Other IntelliJ IDEA Versions](https://www.jetbrains.com/idea/download/other.html) page is a way to find build numbers for every product version.
 Additional ways include hovering over the version number for a product in ToolBox, or examining the _About_ screen for IntelliJ IDEA Community.
-In this example, IntelliJ IDEA Community Edition (which defines the IntelliJ Platform) for v2019.2.4 is build number `192.7142.36`.
+In this example, IntelliJ IDEA Community Edition (which defines the IntelliJ Platform) for 2019.2.4 is build number `192.7142.36`.
 Although the FIX versions are different, this is not uncommon between products, and the builds are still compatible. 
 The BRANCH and BUILD numbers match, therefore in this PhpStorm example: 
 * The _targetIDE_ is PhpStorm, build `192.7142.41`, 

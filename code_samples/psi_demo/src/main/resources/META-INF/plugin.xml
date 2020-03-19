@@ -3,16 +3,10 @@
 <idea-plugin>
 
   <!--  Unique id for this plugin. Must stay constant for the life of the plugin.  -->
-  <id>org.jetbrains.sdk.psi</id>
+  <id>org.intellij.sdk.psi</id>
 
   <!-- Text to display as name on Preferences/Settings | Plugin page  -->
   <name>SDK: PSI Demo</name>
-
-  <!-- The version of this plugin -->
-  <version>2.0.0</version>
-
-  <!-- Compatible with the following versions of IntelliJ Platform -->
-  <idea-version since-build="191"/>
 
   <!-- Product and plugin compatibility requirements -->
   <depends>com.intellij.modules.java</depends>

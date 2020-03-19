@@ -28,7 +28,7 @@ No `compact` attribute is specified, which means this group will support submenu
 See [Registering Actions in plugin.xml](/basics/action_system.md#registering-actions-in-pluginxml) for more information about these attributes.
 
 ```xml
-    <group id="org.intellij.sdk.action.GroupedActions" text="Static Grouped Actions" popup="true" icon="ActionBasicsIcons.Sdk_default_icon">
+    <group id="org.intellij.sdk.action.GroupedActions" text="Static Grouped Actions" popup="true" icon="SdkIcons.Sdk_default_icon">
     </group>
 ```
 
@@ -39,7 +39,7 @@ Rather `PopupDialogAction` is defined in the same [plugin.xml](https://github.co
 This group is placed after the single entry for the action `PopupDialogAction`, as defined in the tutorial [Creating Actions](working_with_custom_actions.md#registering-an-action-with-the-new-action-form).
 
 ```xml
-    <group id="org.intellij.sdk.action.GroupedActions" text="Static Grouped Actions" popup="true" icon="ActionBasicsIcons.Sdk_default_icon">
+    <group id="org.intellij.sdk.action.GroupedActions" text="Static Grouped Actions" popup="true" icon="SdkIcons.Sdk_default_icon">
       <add-to-group group-id="ToolsMenu" anchor="after" relative-to-action="org.intellij.sdk.action.PopupDialogAction"/>
     </group>
 ```
@@ -52,10 +52,10 @@ A unique `id` supports reuse of action classes in more than one menu or group.
 The action in this group will display the menu text "A Group Action".
 
 ```xml
-    <group id="org.intellij.sdk.action.GroupedActions" text="Static Grouped Actions" popup="true" icon="ActionBasicsIcons.Sdk_default_icon">
+    <group id="org.intellij.sdk.action.GroupedActions" text="Static Grouped Actions" popup="true" icon="SdkIcons.Sdk_default_icon">
       <add-to-group group-id="ToolsMenu" anchor="after" relative-to-action="org.intellij.sdk.action.PopupDialogAction"/>
       <action class="org.intellij.sdk.action.PopupDialogAction" id="org.intellij.sdk.action.GroupPopDialogAction"
-              text="A Group Action" description="SDK static grouped action example" icon="ActionBasicsIcons.Sdk_default_icon">
+              text="A Group Action" description="SDK static grouped action example" icon="SdkIcons.Sdk_default_icon">
       </action>
     </group>
 ```
@@ -116,10 +116,10 @@ In the declaration below, note:
    
 ```xml
     <group id="org.intellij.sdk.action.CustomDefaultActionGroup" class="org.intellij.sdk.action.CustomDefaultActionGroup" popup="true"
-            text="Popup Grouped Actions" description="Custom defaultActionGroup demo" icon="ActionBasicsIcons.Sdk_default_icon">
+            text="Popup Grouped Actions" description="Custom defaultActionGroup demo" icon="SdkIcons.Sdk_default_icon">
       <add-to-group group-id="EditorPopupMenu" anchor="first"/>
       <action class="org.intellij.sdk.action.PopupDialogAction" id="org.intellij.sdk.action.CustomGroupedAction"
-              text="A Popup Action" description="SDK popup grouped action example" icon="ActionBasicsIcons.Sdk_default_icon"/>
+              text="A Popup Action" description="SDK popup grouped action example" icon="SdkIcons.Sdk_default_icon"/>
     </group>
 ```
 
@@ -135,7 +135,7 @@ public class CustomDefaultActionGroup extends DefaultActionGroup {
     Editor editor = event.getData(CommonDataKeys.EDITOR);
     event.getPresentation().setEnabled(editor != null);
     // Take this opportunity to set an icon for the menu entry.
-    event.getPresentation().setIcon(ActionBasicsIcons.Sdk_default_icon);
+    event.getPresentation().setIcon(SdkIcons.Sdk_default_icon);
   }
 }
 ```
@@ -164,7 +164,7 @@ To register the dynamic menu group, a `<group>` attribute needs to be placed in 
 When enabled, this group appears at the entry just below the [Static Grouped Actions](#binding-action-groups-to-ui-components) in the **Tools** menu:
 ```xml
     <group id="org.intellij.sdk.action.DynamicActionGroup" class="org.intellij.sdk.action.DynamicActionGroup" popup="true"
-            text="Dynamically Grouped Actions" description="SDK dynamically grouped action example" icon="ActionBasicsIcons.Sdk_default_icon">
+            text="Dynamically Grouped Actions" description="SDK dynamically grouped action example" icon="SdkIcons.Sdk_default_icon">
       <add-to-group group-id="ToolsMenu" anchor="after" relative-to-action="org.intellij.sdk.action.GroupedActions"/>
     </group>
 ```
@@ -184,7 +184,7 @@ public class DynamicActionGroup extends ActionGroup {
   public AnAction[] getChildren(AnActionEvent e) {
     return new AnAction[]{ new PopupDialogAction("Action Added at Runtime",
                                                  "Dynamic Action Demo",
-                                                 ActionBasicsIcons.Sdk_default_icon) };
+                                                 SdkIcons.Sdk_default_icon) };
   }
 }
 ```

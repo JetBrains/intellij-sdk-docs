@@ -36,7 +36,7 @@
   <vendor url="https://plugins.jetbrains.com">IntelliJ Platform SDK</vendor>
 
   <actions>
-    <action class="org.jetbrains.sdk.psi.PsiNavigationDemoAction" id="PsiNavigationDemo"
+    <action class="org.intellij.sdk.psi.PsiNavigationDemoAction" id="PsiNavigationDemo"
             text="PSI Navigation Demo...">
       <add-to-group group-id="ToolsMenu" anchor="last"/>
     </action>

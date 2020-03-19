@@ -2,15 +2,17 @@
 
 <idea-plugin>
 
+  <!--  Unique id for this plugin. Must stay constant for the life of the plugin.  -->
   <id>org.intellij.sdk.liveTemplates</id>
 
-  <!-- Text to display as name on Preferences/Settings | Plugin page  -->
+  <!-- Text to display as name on Preferences/Settings | Plugin page -->
   <name>SDK: Live Templates Sample Project</name>
 
   <!-- The version of this plugin -->
   <version>2.0.0</version>
 
-  <!-- Compatible with the following versions of IntelliJ Platform - needed for plugin logo -->
+  <!-- Compatible with the following versions of IntelliJ Platform:
+        version 2018.3 (build #183) and newer. -->
   <idea-version since-build="191"/>
 
   <!-- Product and plugin compatibility requirements -->
@@ -25,6 +27,7 @@
   <change-notes>
     <![CDATA[
       <ul>
+        <li><b>2.1.0</b> Use com.intellij.defaultLiveTemplates, add custom macro.</li>
         <li><b>2.0.0</b> Convert to Gradle-based plugin, change plugin ID</li>
         <li><b>1.0.0</b> Release 2018.3 and earlier.</li>
       </ul>
@@ -35,8 +38,9 @@
   <vendor url="https://plugins.jetbrains.com">IntelliJ Platform SDK</vendor>
 
   <extensions defaultExtensionNs="com.intellij">
-    <defaultLiveTemplatesProvider implementation="org.intellij.sdk.liveTemplates.MarkdownTemplateProvider"/>
+    <defaultLiveTemplates file="/liveTemplates/Markdown.xml"/>
     <liveTemplateContext implementation="org.intellij.sdk.liveTemplates.MarkdownContext"/>
+    <liveTemplateMacro implementation="org.intellij.sdk.liveTemplates.TitleCaseMacro"/>
   </extensions>
 
 </idea-plugin>

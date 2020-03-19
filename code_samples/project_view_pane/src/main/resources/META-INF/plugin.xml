@@ -1,6 +1,6 @@
 <!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-<idea-plugin url="www.jetbrains.com">
+<idea-plugin>
 
   <!--  Unique id for this plugin. Must stay constant for the life of the plugin.  -->
   <id>org.jetbrains.plugins.sample.ProjectViewPane</id>

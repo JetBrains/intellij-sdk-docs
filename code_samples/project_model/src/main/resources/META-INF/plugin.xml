@@ -68,4 +68,5 @@
       <add-to-group group-id="EditorPopupMenu" anchor="last"/>
     </action>
   </actions>
+
 </idea-plugin>

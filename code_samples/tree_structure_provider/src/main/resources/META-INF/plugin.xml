@@ -14,7 +14,7 @@
   <!-- Compatible with the following versions of IntelliJ Platform -->
   <idea-version since-build="193.3"/>
 
-  <!-- Product and plugin compatibility requirements -->
+  <!-- Indicate this plugin can be loaded in all IntelliJ Platform-based products. -->
   <depends>com.intellij.modules.platform</depends>
 
   <!-- Text to display as description on Preferences/Settings | Plugin page  -->

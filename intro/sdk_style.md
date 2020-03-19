@@ -126,10 +126,16 @@ Consistent terminology helps the reader grasp new concepts more quickly:
 In-paragraph code fragments and IntelliJ Platform APIs are formatted according to these rules:
 * Avoid using qualifiers like "`Foo` interface" or "`Foo` abstract class".
   Just refer to `Foo`.
-* Use the FQN when first introducing an extension point on a page.
+* The FQN is used for the first reference to an interface or class on a page.
+  Rather than `AnAction`, introduce it as `com.intellij.openapi.actionSystem.AnAction`.
+  Subsequent references on the page can be `AnAction`.
+  Exception: the FQN is not used with an upsource [link](#links).
+* Use the FQN when first introducing an extension point (EP) on a page.
   Rather than `stubIndex`, introduce `com.intellij.stubIndex`.
   Subsequent mentions on the page can be `stubIndex`.
   Exception: the FQN is not used when an extension point is introduced in an upsource [link](#links).
+* For XML elements, use the tag notation with syntax highlighting: `<idea-version>`.
+  Attributes are shown with syntax highlighting, and attribute values are shown in quotes: `since-build="191"`
 * Method names always use empty parentheses: "call `bar()` to apply". 
   Method names are prefixed with the class/interface name when needed for clarity: `Foo.bar()`.
 

@@ -30,7 +30,7 @@ JCEF Support (_Experimental Feature_)
 : Allows [embedding](/reference_guide/jcef.md) Chromium-based browser in the IDE.
 
 Override text presentation for actions depending on menu context. 
-: Set the `<override-text>` element within the `<action>` declaration in `plugin.xml`.
+: Set the [`<override-text>`](/basics/action_system.md#setting-the-override-text-element-for-an-action) element within the `<action>` declaration in `plugin.xml`.
 
 ## Notable Changes in IntelliJ IDEA
 

@@ -8,12 +8,6 @@
   <!-- Text to display as name on Preferences/Settings | Plugin page  -->
   <name>SDK: Module Type Sample Project</name>
 
-  <!-- The version of this plugin -->
-  <version>2.0.0</version>
-
-  <!-- Compatible with the following versions of IntelliJ Platform -->
-  <idea-version since-build="191"/>
-
   <!-- Product and plugin compatibility requirements -->
   <depends>com.intellij.modules.platform</depends>
 

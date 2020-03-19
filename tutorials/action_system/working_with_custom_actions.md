@@ -103,7 +103,7 @@ It also contains an attribute for an [`Icon`](/reference_guide/work_with_icons_a
 The full declaration is:
 ```xml
     <action id="org.intellij.sdk.action.PopupDialogAction" class="org.intellij.sdk.action.PopupDialogAction"
-            text="Action Basics Plugin: Pop Dialog Action" description="SDK action example" icon="ActionBasicsIcons.Sdk_default_icon">
+            text="Action Basics Plugin: Pop Dialog Action" description="SDK action example" icon="SdkIcons.Sdk_default_icon">
       <override-text place="MainMenu" text="Pop Dialog Action"/>
       <keyboard-shortcut first-keystroke="control alt A" second-keystroke="C" keymap="$default"/>
       <mouse-shortcut keystroke="control button3 doubleClick" keymap="$default"/>

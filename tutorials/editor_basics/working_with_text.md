@@ -30,7 +30,7 @@ The `EditorIllustrationAction` action is registered in the group `EditorPopupMen
             class="org.intellij.sdk.editor.EditorIllustrationAction"
             text="Editor Replace Text"
             description="Replaces selected text with 'Replacement'."
-            icon="EditorBasicsIcons.Sdk_default_icon">
+            icon="SdkIcons.Sdk_default_icon">
       <add-to-group group-id="EditorPopupMenu" anchor="first"/>
     </action>
 ```

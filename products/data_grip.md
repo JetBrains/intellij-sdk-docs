@@ -20,7 +20,7 @@ The table below summarizes the `gradle-intellij-plugin` attributes to set in the
 | [`intellij.version`](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md#intellij-platform-properties) | `2019.3` Set to the same version as the DataGrip target version, as set by `runIde.ideDirectory` |
 | [`intellij.plugins`](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md#intellij-platform-properties) | `plugins 'DatabaseTools'` Dependency on the bundled `DatabaseTools` plugin. |
 | [`runIde.ideDirectory`](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md#running-dsl) | Path to locally installed target version of DataGrip. For example, for macOS:<br>`/Users/<user name>/Library/Application Support/JetBrains/Toolbox/apps/datagrip/ch-0/193.5233.139/DataGrip.app/Contents` |
-| [`runIde.jvmArgs`](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md#running-dsl) | `jvmArgs '-Didea.platform.prefix=DataGrip'`<br>Only required for `gradle-intellij-plugin` v0.4.16 or earlier. |
+| [`runIde.jvmArgs`](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md#running-dsl) | `jvmArgs '-Didea.platform.prefix=DataGrip'`<br>Only required for `gradle-intellij-plugin` 0.4.16 or earlier. |
 
 The additional attribute `runIde.jvmArgs` is required for versions of the `gradle-intellij-plugin` 0.4.16 and earlier.
 This attribute declares that Gradle should use the DataGrip platform to run/debug plugins in a development instance.

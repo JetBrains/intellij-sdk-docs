@@ -8,12 +8,6 @@
   <!-- Text to display as name on Preferences/Settings | Plugin page -->
   <name>SDK: Editor Sample Project</name>
 
-  <!-- The version of this plugin -->
-  <version>2.0.0</version>
-
-  <!-- Compatible with the following versions of IntelliJ Platform -->
-  <idea-version since-build="191"/>
-
   <!-- Product and plugin compatibility requirements -->
   <depends>com.intellij.modules.platform</depends>
 
@@ -40,14 +34,14 @@
             class="org.intellij.sdk.editor.EditorIllustrationAction"
             text="Editor Replace Text"
             description="Replaces selected text with 'Replacement'."
-            icon="EditorBasicsIcons.Sdk_default_icon">
+            icon="SdkIcons.Sdk_default_icon">
       <add-to-group group-id="EditorPopupMenu" anchor="first"/>
     </action>
     <action id="EditorBasics.EditorHandlerIllustration"
             class="org.intellij.sdk.editor.EditorHandlerIllustration"
             text="Editor Add Caret"
             description="Adds a second caret below the existing one."
-            icon="EditorBasicsIcons.Sdk_default_icon">
+            icon="SdkIcons.Sdk_default_icon">
       <add-to-group group-id="EditorPopupMenu" anchor="first"/>
     </action>
     <!-- Place this entry first in the popup menu; it's always enabled if a project and editor are open -->
@@ -55,7 +49,7 @@
             class="org.intellij.sdk.editor.EditorAreaIllustration"
             text="Caret Position"
             description="Reports information about the caret position."
-            icon="EditorBasicsIcons.Sdk_default_icon">
+            icon="SdkIcons.Sdk_default_icon">
       <keyboard-shortcut keymap="$default" first-keystroke="control alt G"/>
       <add-to-group group-id="EditorPopupMenu" anchor="first"/>
     </action>

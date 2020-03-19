@@ -31,7 +31,7 @@ The IntelliJ Platform is Open Source, under the [Apache license](upsource:///LIC
 While this guide refers to the IntelliJ Platform as a separate entity, there is no "IntelliJ Platform" GitHub repo. Instead, the platform is considered to be an almost complete overlap with the IntelliJ IDEA Community Edition, which is a free and Open Source version of IntelliJ IDEA Ultimate (the GitHub repo linked above is the [JetBrains/intellij-community](https://github.com/JetBrains/intellij-community) repo).
 
 The version of the IntelliJ Platform is defined by the version of the corresponding release of IntelliJ IDEA Community Edition. 
-For example, to build a plugin against IntelliJ IDEA (v2019.1.1,) build #191.6707.61, means specifying the same build number tag to get the correct Intellij Platform files from the `intellij-community` repo. 
+For example, to build a plugin against IntelliJ IDEA (2019.1.1,) build #191.6707.61, means specifying the same build number tag to get the correct Intellij Platform files from the `intellij-community` repo. 
 See the [build number ranges](/basics/getting_started/build_number_ranges.md) page for more information about build numbers corresponding to version numbering.
 
 Typically, an IDE that is based on the IntelliJ Platform will include the `intellij-community` repo as a Git submodule and provide configuration to describe which plugins from the `intellij-community`, and which custom plugins will make up the product. This is how the IDEA Ultimate team work, and they contribute code to both the custom plugins and the IntelliJ Platform itself.

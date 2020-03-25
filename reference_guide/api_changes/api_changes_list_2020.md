@@ -64,6 +64,13 @@ Please see [Incompatible API Changes](/reference_guide/api_changes_list.md) on h
 
 > **NOTE** Changes from API marked with [`org.jetbrains.annotations.ApiStatus.@Experimental/ScheduledForRemoval`](upsource:///platform/util/src/org/jetbrains/annotations/ApiStatus.java) are not listed here, as incompatible changes are to be expected.
 
+# 2020.2
+
+## Changes in IntelliJ Platform 2020.2
+
+`com.intellij.psi.util.PsiTreeUtil.processElements(element, processor)` method parameter type changed from `PsiElementProcessor` to `PsiElementProcessor<PsiElement>`
+: This may break source-compatibility with clients that pass more specific processor. Passing more specific processor was illegal before as well because the `processElements` passes every descendant `PsiElement` to the processor regardless of its type. However, this worked with some poorly written clients, e.g. `PsiElementProcessor.CollectFilteredElements` and `PsiElementProcessor.FindFilteredElement` (both deprecated now). To simplify the migration, a new three-arg `processElements(element, elementClass, processor)` is introduced that actually filters by element class, so in most cases, the simplest migration would be to add a wanted element class as a second argument. However, it's advised to use `SyntaxTraverser` API instead, which is more rich and flexible.
+
 # 2020.1
 
 ## Changes in IntelliJ Platform 2020.1

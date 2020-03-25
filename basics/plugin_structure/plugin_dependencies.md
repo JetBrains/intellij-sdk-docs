@@ -6,6 +6,8 @@ title: Plugin Dependencies
 A plugin may depend on classes from other plugins, either bundled, third-party, or by the same author.
 This document describes the syntax for declaring plugin dependencies and optional plugin dependencies.
 For more information about dependencies on the IntelliJ Platform modules, see Part II of this document: [Plugin Compatibility with IntelliJ Platform Products](/basics/getting_started/plugin_compatibility.md).
+
+> **NOTE** It is not possible to specify the minimum/maximum version for the dependent plugin. ([Issue](https://youtrack.jetbrains.com/issue/IDEABKL-7906))
  
 To express dependencies on classes from other plugins or modules, perform the following three required steps:
 

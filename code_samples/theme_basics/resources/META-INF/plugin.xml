@@ -12,7 +12,7 @@
   <version>0.1</version>
 
   <!-- Compatible with the following versions of IntelliJ Platform:
-        version 2018.3 (build #183) and newer. -->
+        version 2019.1 and newer. -->
   <idea-version since-build="191"/>
 
   <!-- Indicate this plugin can be loaded in all IntelliJ Platform-based products. -->
@@ -35,7 +35,6 @@
   <vendor url="https://plugins.jetbrains.com">IntelliJ Platform SDK</vendor>
 
   <extensions defaultExtensionNs="com.intellij">
-    <!-- Add your extensions here -->
     <themeProvider id="eb9b7461-397b-4b98-a422-224fc0a74564" path="/theme_basics.theme.json"/>
   </extensions>
 

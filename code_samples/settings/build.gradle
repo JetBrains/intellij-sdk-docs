@@ -1,0 +1,25 @@
+plugins {
+    id 'java'
+    id 'org.jetbrains.intellij' version '0.4.17'
+}
+
+group 'org.intellij.sdk'
+version '0.1'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+// See https://github.com/JetBrains/gradle-intellij-plugin/
+intellij {
+    version '201-EAP-SNAPSHOT'
+    sameSinceUntilBuild = true
+}
+
+patchPluginXml {
+    version = project.version
+}

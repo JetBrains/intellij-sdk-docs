@@ -14,10 +14,10 @@ The first instance is a valid use of the `simple:` prefix followed by the Simple
 The second is a valid prefix but an invalid key, as noted by the test `<error>` [highlighting](/basics/testing_plugins/testing_highlighting.md).
 ```java
 public class Test {
-    public static void main(String[] args) {
-        System.out.println("simple:website");
-        System.out.println("simple:<error descr="Unresolved property">websit"</error>);
-    }
+  public static void main(String[] args) {
+    System.out.println("simple:website");
+    System.out.println("simple:<error descr="Unresolved property">websit</error>");
+  }
 }
 ```
 

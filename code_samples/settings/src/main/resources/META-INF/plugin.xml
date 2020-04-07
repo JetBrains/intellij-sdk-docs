@@ -30,9 +30,8 @@
   <vendor url="https://plugins.jetbrains.com">IntelliJ Platform SDK</vendor>
 
   <extensions defaultExtensionNs="com.intellij">
-    <applicationConfigurable groupId="tools" instance="org.intellij.sdk.settings.ui.TodoConfigurable"
-                             id="org.intellij.sdk.settings.todo" displayName="SDK: Settings"/>
-    <applicationService serviceImplementation="org.intellij.sdk.settings.persist.TodoConfiguration"/>
+    <applicationConfigurable groupId="tools" instance="org.intellij.sdk.settings.AppSettingsConfigurable"
+                             id="org.intellij.sdk.settings.AppSettingsConfigurable" displayName="SDK: Application Settings Example"/>
   </extensions>
 
 </idea-plugin>

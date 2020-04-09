@@ -84,10 +84,11 @@
     * [Actions Tutorial](tutorials/action_system.md)
         * [Creating Actions](tutorials/action_system/working_with_custom_actions.md)
         * [Grouping Actions](tutorials/action_system/grouping_action.md)
-* [Settings](basics/settings.md)
+* [Persistence](basics/settings.md)
     * [Persisting State of Components](basics/persisting_state_of_components.md)
     * [Persisting Sensitive Data](basics/persisting_sensitive_data.md)
-    * Editing Settings
+    * [Settings](reference_guide/settings_ref.md)
+    * Settings Tutorial
 * [Files](basics/architectural_overview/files.md)
     * [Virtual File System](basics/virtual_file_system.md)
     * [Virtual Files](basics/architectural_overview/virtual_file.md)

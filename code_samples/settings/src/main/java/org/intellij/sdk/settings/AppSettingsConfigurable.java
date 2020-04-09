@@ -2,12 +2,9 @@
 
 package org.intellij.sdk.settings;
 
-import com.intellij.ide.ui.UINumericRange;
 import com.intellij.openapi.options.Configurable;
 import com.intellij.openapi.options.ConfigurationException;
-import com.intellij.openapi.ui.ComboBox;
 import org.jetbrains.annotations.Nls;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
@@ -15,8 +12,13 @@ import java.util.Objects;
 
 public class AppSettingsConfigurable implements Configurable {
 
-  private AppSettingsConfigPanel myConfigPanel;
+  private AppSettingsPanel myConfigPanel;
 
+  public AppSettingsConfigurable() {
+    myConfigPanel = null;
+  }
+
+  // TODO: 4/21/20 Is there a way to read what's declared in the EP and return it here?
   /**
    * Returns the visible name of the configurable component.
    * Note, that this method must return the display name
@@ -29,26 +31,6 @@ public class AppSettingsConfigurable implements Configurable {
   @Override
   public String getDisplayName() {
     return "SDK: Application Settings Example";
-  }
-
-  @Override
-  public boolean isModified(@NotNull JTextField textField, @NotNull String value) {
-    return false;
-  }
-
-  @Override
-  public boolean isModified(@NotNull JTextField textField, int value, @NotNull UINumericRange range) {
-    return false;
-  }
-
-  @Override
-  public boolean isModified(@NotNull JToggleButton toggleButton, boolean value) {
-    return false;
-  }
-
-  @Override
-  public <T> boolean isModified(@NotNull ComboBox<T> comboBox, T value) {
-    return false;
   }
 
   /**
@@ -72,7 +54,7 @@ public class AppSettingsConfigurable implements Configurable {
   @Nullable
   @Override
   public JComponent createComponent() {
-    myConfigPanel = new AppSettingsConfigPanel(getDisplayName());
+    myConfigPanel = new AppSettingsPanel();
     return myConfigPanel.getPanel();
   }
 
@@ -84,7 +66,10 @@ public class AppSettingsConfigurable implements Configurable {
    */
   @Override
   public boolean isModified() {
-    return false;
+    AppSettingsState settings = AppSettingsState.getInstance();
+    boolean modified = !myConfigPanel.getPanelTextFieldValue().equals(settings.getMyText());
+    modified |= myConfigPanel.getPanelCheckBoxValue() != settings.getMyBool();
+    return modified;
   }
 
   /**
@@ -95,7 +80,9 @@ public class AppSettingsConfigurable implements Configurable {
    */
   @Override
   public void apply() throws ConfigurationException {
-
+    AppSettingsState settings = AppSettingsState.getInstance();
+      settings.setMyText(myConfigPanel.getPanelTextFieldValue());
+      settings.setMyBool(myConfigPanel.getPanelCheckBoxValue());
   }
 
   /**
@@ -104,6 +91,9 @@ public class AppSettingsConfigurable implements Configurable {
    */
   @Override
   public void reset() {
+    AppSettingsState settings = AppSettingsState.getInstance();
+    myConfigPanel.setPanelTextFieldValue(settings.getMyText());
+    myConfigPanel.setPanelCheckBoxValue(settings.getMyBool());
   }
 
   /**
@@ -112,14 +102,7 @@ public class AppSettingsConfigurable implements Configurable {
    */
   @Override
   public void disposeUIResources() {
-
+    myConfigPanel = null;
   }
 
-  /**
-   * Called when 'Cancel' is pressed in the Settings dialog.
-   */
-  @Override
-  public void cancel() {
-
-  }
 }

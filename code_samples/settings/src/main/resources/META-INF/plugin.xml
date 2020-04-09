@@ -32,6 +32,7 @@
   <extensions defaultExtensionNs="com.intellij">
     <applicationConfigurable groupId="tools" instance="org.intellij.sdk.settings.AppSettingsConfigurable"
                              id="org.intellij.sdk.settings.AppSettingsConfigurable" displayName="SDK: Application Settings Example"/>
+    <applicationService serviceImplementation="org.intellij.sdk.settings.AppSettingsState"/>
   </extensions>
 
 </idea-plugin>

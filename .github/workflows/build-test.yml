@@ -1,4 +1,4 @@
-name: build-test
+name: Build, Test, Mirror
 on: [push, pull_request]
 
 jobs:
@@ -70,3 +70,21 @@ jobs:
             ${{ runner.os }}-gradle-
       - name: Verify Plugin
         run: gradle -p code_samples/${{ matrix.plugin }} verifyPlugin
+
+  mirror:
+    name: Code Samples Mirror
+    if: github.ref == 'refs/heads/master'
+    needs: samples
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install SSH key
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.SSH_KEY }}
+          known_hosts: ${{ secrets.KNOWN_HOSTS }}
+      - name: Prepare Mirror
+        run: |
+          git clone --bare git@github.com:JetBrains/intellij-sdk-docs.git .
+          git branch | grep -v "master" | xargs git branch -D
+          git filter-branch --prune-empty --subdirectory-filter code_samples master
+          git push --mirror git@github.com:JetBrains/intellij-sdk-code-samples.git

@@ -2,7 +2,7 @@
 
 plugins {
   id 'java'
-  id 'org.jetbrains.intellij' version '0.4.17'
+  id 'org.jetbrains.intellij' version '0.4.18'
 }
 
 group 'org.intellij.sdk'
@@ -16,7 +16,7 @@ repositories {
 
 // See https://github.com/JetBrains/gradle-intellij-plugin/
 intellij {
-  version '201-EAP-SNAPSHOT'
+  version '2020.1'
   sameSinceUntilBuild = true
 }
 patchPluginXml {

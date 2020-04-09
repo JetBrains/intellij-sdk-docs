@@ -5,6 +5,7 @@ title: File and Class Choosers
 
 ## File Choosers
 
+### Via Dialog
 To let a user choose a file, directory or multiple files, use the
 [`FileChooser.chooseFiles()`](upsource:///platform/platform-api/src/com/intellij/openapi/fileChooser/FileChooser.java)
 method.
@@ -15,17 +16,21 @@ This is the only overload which will display a native file open dialog on macOS.
 The
 [`FileChooserDescriptor`](upsource:///platform/platform-api/src/com/intellij/openapi/fileChooser/FileChooserDescriptor.java)
 class allows you to control which files can be selected.
-The constructor parameters specify whether files and/or directories can be selected, and whether multiple selection is allowed.
+The constructor parameters specify whether files and/or directories can be selected, and whether multiple selection is allowed (see [FileChooserDescriptorFactory](upsource:///platform/platform-api/src/com/intellij/openapi/fileChooser/FileChooserDescriptorFactory.java) for common variants).
+
 For more fine-grained control over the allowed selection, you can overload the `isFileSelectable()` method.
-You can also customize the presentation of files by overloading `getIcon()`, `getName()` and `getComment()` methods on
-[`FileChooserDescriptor`](upsource:///platform/platform-api/src/com/intellij/openapi/fileChooser/FileChooserDescriptor.java).
-Note that the native Mac OS X file chooser does not support most of the customizations, so if you rely on them, you need to use an overload of `chooseFiles()` which displays the standard *IntelliJ Platform* dialog.
+You can also customize the presentation of files by overriding `getIcon()`, `getName()` and `getComment()` methods.
+Note that the native macOS file chooser does not support most of the customizations, so if you rely on them, you need to use an overload of `chooseFiles()` which displays the standard *IntelliJ Platform* dialog.
+
+### Via Textfield
 
 A very common way of using file choosers is to use a text field for entering the path with an ellipsis button ("...") for showing the file chooser.
 To create such a control, use the
 [`TextFieldWithBrowseButton`](upsource:///platform/platform-api/src/com/intellij/openapi/ui/TextFieldWithBrowseButton.java)
 component and call the `addBrowseFolderListener()` method on it to set up the file chooser.
 As an added bonus, this will enable filename completion when entering paths in the text box.
+
+### Via Tree
 
 An alternative UI for selecting files, which works best when the most common way of selecting a file is by typing its name, is available through the
 [`TreeFileChooserFactory`](upsource:///platform/lang-api/src/com/intellij/ide/util/TreeFileChooserFactory.java) class.

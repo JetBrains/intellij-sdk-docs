@@ -23,7 +23,7 @@ There are lots of futures included into this plugin, such as Symfony-specific co
 Magicento is a paid PhpStorm plugin for Magento developers. Free limited version is available.
 Features include: Goto for factories and template paths, autocomplete for factories, xml files and class names, documentation for xml nodes, evaluation of PHP code inside Magento environment, and much more to come!
 
-* [Official Magicento Web Site](http://magicento.com/)
+* [Official Magicento Web Site](https://magicento.com/)
 * [GitHub](https://github.com/enriquepiatti/Magicento)
 * [Magicento in PhpStorm Plugins Repository](https://plugins.jetbrains.com/plugin/7089-magicento)
 

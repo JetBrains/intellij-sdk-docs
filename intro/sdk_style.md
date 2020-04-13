@@ -81,7 +81,7 @@ Multiple redirects can be added to the YAML header.
 > **NOTE** Please update all existing internal links to the new page location.
 
 ### Table of Contents for a Page
-The site is configured to use the [Kramdown Markdown converter](http://kramdown.gettalong.org), which adds some extra features over traditional Markdown.
+The site is configured to use the [Kramdown Markdown converter](https://kramdown.gettalong.org), which adds some extra features over traditional Markdown.
 For example, "attribute lists" that can apply attributes to the generated elements.
 
 One useful attribute is `{:toc}`, which can be applied to a list item, which will get replaced with a list of links to header items. 
@@ -92,7 +92,7 @@ E.g. the following list item will be replaced by links to all of the header item
   {:toc}
 ```
 
-Further Kramdown features are described on the [converter page](https://kramdown.gettalong.org/converter/html.html), and attribute lists are described on the [syntax page](http://kramdown.gettalong.org/syntax.html). 
+Further Kramdown features are described on the [converter page](https://kramdown.gettalong.org/converter/html.html), and attribute lists are described on the [syntax page](https://kramdown.gettalong.org/syntax.html). 
 Note that source code formatting is configured to use [GitHub Flavoured Markdown](https://help.github.com/articles/github-flavored-markdown/) and "code fences", see below.
 
 ### Liquid tags and filters

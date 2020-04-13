@@ -24,7 +24,7 @@ The fixture gets the `PsiElement` at the caret, then compares its value with the
   public void testReference() {
     myFixture.configureByFiles("ReferenceTestData.java", "DefaultTestData.simple");
     PsiElement element = myFixture.getFile().findElementAt(myFixture.getCaretOffset()).getParent();
-    assertEquals("http://en.wikipedia.org/", ((SimpleProperty) element.getReferences()[0].resolve()).getValue());
+    assertEquals("https://en.wikipedia.org/", ((SimpleProperty) element.getReferences()[0].resolve()).getValue());
   }
 ```
 

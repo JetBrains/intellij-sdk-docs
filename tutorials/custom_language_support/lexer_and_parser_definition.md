@@ -61,7 +61,7 @@ With the `simple_language_plugin` loaded in a Development Instance, create a `te
 ```text
 # You are reading the ".properties" entry.
 ! The exclamation mark can also mark text as comments.
-website = http://en.wikipedia.org/
+website = https://en.wikipedia.org/
 language = English
 # The backslash below tells the application to continue reading
 # the value onto the next line.

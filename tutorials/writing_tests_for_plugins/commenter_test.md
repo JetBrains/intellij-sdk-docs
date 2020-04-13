@@ -13,12 +13,12 @@ It again calls the line comment action to remove the comment character and verif
 
 ```java
   public void testCommenter() {
-    myFixture.configureByText(SimpleFileType.INSTANCE, "<caret>website = http://en.wikipedia.org/");
+    myFixture.configureByText(SimpleFileType.INSTANCE, "<caret>website = https://en.wikipedia.org/");
     CommentByLineCommentAction commentAction = new CommentByLineCommentAction();
     commentAction.actionPerformedImpl(getProject(), myFixture.getEditor());
-    myFixture.checkResult("#website = http://en.wikipedia.org/");
+    myFixture.checkResult("#website = https://en.wikipedia.org/");
     commentAction.actionPerformedImpl(getProject(), myFixture.getEditor());
-    myFixture.checkResult("website = http://en.wikipedia.org/");
+    myFixture.checkResult("website = https://en.wikipedia.org/");
   }
 ```
 

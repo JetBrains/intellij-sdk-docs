@@ -1,6 +1,6 @@
 # You are reading the ".properties" entry.
 ! The exclamation mark can also mark text as comments.
-websiteUrl = http://en.wikipedia.org/
+websiteUrl = https://en.wikipedia.org/
 
 language = English
 # The backslash below tells the application to continue reading

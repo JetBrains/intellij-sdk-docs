@@ -62,7 +62,7 @@ macOS comes with Ruby already installed. The only steps required are:
 
 #### Windows
 
-* Install [Ruby 2](https://rubyinstaller.org) and the [Ruby 2 DevKit](http://rubyinstaller.org/downloads/) (one of the gems needs to build a native component)
+* Install [Ruby 2](https://rubyinstaller.org) and the [Ruby 2 DevKit](https://rubyinstaller.org/downloads/) (one of the gems needs to build a native component)
     * After installing the DevKit, make sure to edit the `config.yml` file to point to the Ruby installation
 
 This installation is easier if you use [Chocolatey](https://chocolatey.org), a package manager for Windows:

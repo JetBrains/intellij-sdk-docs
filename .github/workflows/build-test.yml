@@ -69,11 +69,13 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gradle-
       - name: Verify Plugin
-        run: gradle -p code_samples/${{ matrix.plugin }} verifyPlugin
+        run: |
+          gradle -p code_samples/${{ matrix.plugin }} verifyPlugin
+          gradle -p code_samples/${{ matrix.plugin }} test
 
   mirror:
     name: Code Samples Mirror
-    if: github.ref == 'refs/heads/master'
+    if: github.ref == 'refs/heads/master' && github.repository == 'JetBrains/intellij-sdk-docs'
     needs: samples
     runs-on: ubuntu-latest
     steps:

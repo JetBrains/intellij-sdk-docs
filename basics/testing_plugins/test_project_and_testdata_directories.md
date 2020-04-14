@@ -24,6 +24,8 @@ Most operations in plugin tests require a file open in the in-memory editor, in 
 
 Alternatively, you can use one of the other methods which take parameters annotated with [`@TestDataFile`](upsource:///platform/testFramework/src/com/intellij/testFramework/TestDataFile.java). These methods copy the specified files from the `testdata` directory to the test project directory, open the first of the specified files in the in-memory editor, and then perform the requested operation such as highlighting or code completion.
 
+> **TIP** The IDE supports smart navigation between test code and related test data file(s), see this [blog post](https://blog.jetbrains.com/platform/2017/10/improvements-in-testing-intellij-platform-plugins/) for more details.
+
 ### Special Markup
 When a file is opened in the in-memory editor, special markup in the file content can be used to specify the caret position or selection.
 

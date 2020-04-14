@@ -69,9 +69,9 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gradle-
       - name: Verify Plugin
-        run: |
-          gradle -p code_samples/${{ matrix.plugin }} verifyPlugin
-          gradle -p code_samples/${{ matrix.plugin }} test
+        run: gradle -p code_samples/${{ matrix.plugin }} verifyPlugin
+      - name: Test Plugin
+        run: gradle -p code_samples/${{ matrix.plugin }} test
 
   mirror:
     name: Code Samples Mirror

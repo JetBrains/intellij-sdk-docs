@@ -5,9 +5,9 @@ title: Plugin Listeners
 
 > **NOTE** Defining listeners in `plugin.xml` is supported starting with version 2019.3 of the platform.
 
-_Listeners_ allow plugins to declaratively subscribe to events delivered through the
-[message bus](/reference_guide/messaging_infrastructure.md). You can define both application- and project-level
-listeners.
+_Listeners_ allow plugins to declaratively subscribe to events delivered through the message bus (see [Messaging infrastructure](/reference_guide/messaging_infrastructure.md) for details). 
+
+You can define both application- and project-level listeners.
 
 Declarative registration of listeners allows you to achieve better performance compared to registering listeners
 from code, because listener instances are created lazily (the first time an event is sent to the topic), and not

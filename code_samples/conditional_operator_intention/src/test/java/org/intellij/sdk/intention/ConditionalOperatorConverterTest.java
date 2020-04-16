@@ -4,25 +4,6 @@ package org.intellij.sdk.intention;
 import com.intellij.codeInsight.intention.IntentionAction;
 import com.intellij.testFramework.fixtures.LightJavaCodeInsightFixtureTestCase;
 import org.junit.Assert;
-import org.junit.Test;
-
-/**
- * Created by IntelliJ IDEA.
- * User: Alexey.Chursin
- * Date: Sep 13, 2010
- * Time: 9:35:50 PM
- * To change this template use File | Settings | File Templates.
- * This test requires Editor > Code Style set to Default IDE
- */
-
-/**
- * Created by IntelliJ IDEA.
- * User: Alexey.Chursin
- * Date: Sep 13, 2010
- * Time: 9:35:50 PM
- * To change this template use File | Settings | File Templates.
- * This test requires Editor > Code Style set to Default IDE
- */
 
 public class ConditionalOperatorConverterTest extends LightJavaCodeInsightFixtureTestCase {
 
@@ -45,8 +26,7 @@ public class ConditionalOperatorConverterTest extends LightJavaCodeInsightFixtur
     myFixture.checkResultByFile(testName + ".after.java");
   }
 
-  @Test
-  public void test() {
+  public void testIntention() {
     doTest("before.template", "SDK Convert ternary operator to if statement");
   }
 

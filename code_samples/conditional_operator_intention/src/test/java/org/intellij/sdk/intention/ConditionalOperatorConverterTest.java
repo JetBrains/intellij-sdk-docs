@@ -3,11 +3,9 @@
 package org.intellij.sdk.intention;
 
 import com.intellij.codeInsight.intention.IntentionAction;
-import com.intellij.openapi.application.PathManager;
-import com.intellij.testFramework.UsefulTestCase;
-import com.intellij.testFramework.builders.JavaModuleFixtureBuilder;
-import com.intellij.testFramework.fixtures.*;
-import org.junit.*;
+import com.intellij.testFramework.fixtures.LightJavaCodeInsightFixtureTestCase;
+import org.junit.Assert;
+import org.junit.Test;
 
 /**
  * Created by IntelliJ IDEA.

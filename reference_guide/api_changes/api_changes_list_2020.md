@@ -70,8 +70,10 @@ Please see [Incompatible API Changes](/reference_guide/api_changes_list.md) on h
 
 `com.intellij.psi.util.PsiTreeUtil.processElements(element, processor)` method parameter type changed from `PsiElementProcessor` to `PsiElementProcessor<PsiElement>`
 : This may break source-compatibility with clients that pass more specific processor. Passing more specific processor was illegal before as well because the `processElements` passes every descendant `PsiElement` to the processor regardless of its type. However, this worked with some poorly written clients, e.g. `PsiElementProcessor.CollectFilteredElements` and `PsiElementProcessor.FindFilteredElement` (both deprecated now). To simplify the migration, a new three-arg `processElements(element, elementClass, processor)` is introduced that actually filters by element class, so in most cases, the simplest migration would be to add a wanted element class as a second argument. However, it's advised to use `SyntaxTraverser` API instead, which is more rich and flexible.
+
 `com.maddyhome.idea.copyright.util.FileTypeUtil.getFileTypeByName(String)` method removed
 : This was an internal utility method not intended for use in plugins. Use `FileTypeManager.getInstance().findFileTypeByName()` instead.
+
 
 # 2020.1
 

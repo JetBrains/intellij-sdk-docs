@@ -5,15 +5,16 @@ package org.intellij.sdk.inspection;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiElementVisitor;
 import com.intellij.psi.PsiPlainTextFile;
+import org.jetbrains.annotations.NotNull;
 
 public class DemoInspectionVisitor extends PsiElementVisitor {
   @Override
-  public void visitElement(PsiElement element) {
+  public void visitElement(@NotNull PsiElement element) {
     super.visitElement(element);
   }
 
   @Override
-  public void visitPlainTextFile(PsiPlainTextFile file) {
+  public void visitPlainTextFile(@NotNull PsiPlainTextFile file) {
     super.visitPlainTextFile(file);
   }
 }

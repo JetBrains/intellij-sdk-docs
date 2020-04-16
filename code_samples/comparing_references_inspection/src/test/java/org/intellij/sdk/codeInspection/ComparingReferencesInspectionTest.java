@@ -24,7 +24,7 @@ public class ComparingReferencesInspectionTest extends LightJavaCodeInsightFixtu
    */
   @Override
   protected String getTestDataPath() {
-    return "src/test/resources";
+    return "src/test/testData";
   }
 
   /**

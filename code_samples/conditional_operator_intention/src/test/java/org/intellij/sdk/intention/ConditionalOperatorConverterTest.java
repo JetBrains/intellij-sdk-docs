@@ -15,6 +15,15 @@ import org.junit.Test;
  * This test requires Editor > Code Style set to Default IDE
  */
 
+/**
+ * Created by IntelliJ IDEA.
+ * User: Alexey.Chursin
+ * Date: Sep 13, 2010
+ * Time: 9:35:50 PM
+ * To change this template use File | Settings | File Templates.
+ * This test requires Editor > Code Style set to Default IDE
+ */
+
 public class ConditionalOperatorConverterTest extends LightJavaCodeInsightFixtureTestCase {
 
   /**

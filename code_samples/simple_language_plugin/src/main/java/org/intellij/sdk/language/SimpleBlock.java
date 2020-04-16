@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SimpleBlock extends AbstractBlock {
-  private SpacingBuilder spacingBuilder;
+  private final SpacingBuilder spacingBuilder;
   
   protected SimpleBlock(@NotNull ASTNode node, @Nullable Wrap wrap, @Nullable Alignment alignment,
                         SpacingBuilder spacingBuilder) {

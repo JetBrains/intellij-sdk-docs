@@ -28,7 +28,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Collection;
 
 class SimpleCreatePropertyQuickFix extends BaseIntentionAction {
-  private String key;
+  private final String key;
   
   SimpleCreatePropertyQuickFix(String key) {
     this.key = key;

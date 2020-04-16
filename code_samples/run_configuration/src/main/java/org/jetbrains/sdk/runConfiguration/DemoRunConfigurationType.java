@@ -18,7 +18,7 @@ public class DemoRunConfigurationType implements ConfigurationType {
 
   @Override
   public String getConfigurationTypeDescription() {
-    return "Demo Run Configuration Type";
+    return "Demo run configuration type";
   }
 
   @Override

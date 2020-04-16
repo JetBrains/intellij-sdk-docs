@@ -70,11 +70,8 @@ public class ConditionalOperatorConverter extends PsiElementBaseIntentionAction 
       // Is this token part of a fully formed conditional, i.e. a ternary?
       if (token.getParent() instanceof PsiConditionalExpression) {
         final PsiConditionalExpression conditionalExpression = (PsiConditionalExpression) token.getParent();
-        if (conditionalExpression.getThenExpression() == null
-            || conditionalExpression.getElseExpression() == null) {
-          return false;
-        }
-        return true;    // Satisfies all criteria; call back invoke method
+        return conditionalExpression.getThenExpression() != null
+                && conditionalExpression.getElseExpression() != null;// Satisfies all criteria; call back invoke method
       }
       return false;
     }

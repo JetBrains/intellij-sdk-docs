@@ -18,7 +18,7 @@ public class SimpleFileType extends LanguageFileType {
   @NotNull
   @Override
   public String getName() {
-    return "Simple file";
+    return "Simple File";
   }
 
   @NotNull

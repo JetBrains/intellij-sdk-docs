@@ -69,14 +69,25 @@ IntelliJ API may be occasionally changed between releases, leading to incompatib
 Therefore, it is important to keep your plugins up to date with regard to the existing and upcoming API changes.
 -->
 
+## Verifying Compatibility
+
+### Plugin Verifier
 Compatibility with newer IDEs can easily be verified for plugins hosted on the [JetBrains plugin repository](/plugin_repository/index.md) using the built-in [Plugin Verifier](https://blog.jetbrains.com/platform/2018/07/plugins-repository-now-integrates-with-the-plugin-verification-tool/).
 
-For non-public plugins, [intellij-plugin-verifier](https://github.com/JetBrains/intellij-plugin-verifier) can be used standalone as well.
+For local verification or non-public plugins, [intellij-plugin-verifier](https://github.com/JetBrains/intellij-plugin-verifier) can be used standalone as well.
+Integration in [Gradle build](/tutorials/build_system.md) is currently possible via some additional scripts, please see [this issue](https://github.com/JetBrains/gradle-intellij-plugin/issues/385) for details.
+
+If your plugin is hosted on GitHub, it is also readily made available via these GitHub Actions:
+- [IntelliJ Platform Plugin Verifier](https://github.com/marketplace/actions/intellij-platform-plugin-verifier)
+- [IntelliJ Plugin Verifier](https://github.com/marketplace/actions/intellij-plugin-verifier)   
   
+### IDE Support  
 Consider using the following IDE inspections to get additional alerts about code that uses unstable API features:
 - JVM languages \| Unstable API Usage
 - JVM languages \| Unstable type is used in signature
   
+  
+## Known Breaking Changes  
   
 The following pages list the breaking changes in IDE/plugin releases with required/recommended steps to take by plugin authors. 
 

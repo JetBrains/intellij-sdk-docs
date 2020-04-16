@@ -12,7 +12,7 @@ import org.jetbrains.annotations.Nullable;
 
 public class DemoModuleBuilder extends ModuleBuilder {
   @Override
-  public void setupRootModel(@NotNull ModifiableRootModel model) throws ConfigurationException {
+  public void setupRootModel(@NotNull ModifiableRootModel model) {
 
   }
 

@@ -14,7 +14,7 @@ import org.jetbrains.annotations.NotNull;
 import javax.swing.*;
 
 public class DemoModuleWizardStep extends ModuleBuilder {
-  public void setupRootModel(@NotNull ModifiableRootModel modifiableRootModel) throws ConfigurationException {
+  public void setupRootModel(@NotNull ModifiableRootModel modifiableRootModel) {
 
   }
 

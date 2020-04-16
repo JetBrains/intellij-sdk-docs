@@ -25,7 +25,7 @@ public class ConditionalOperatorConverterTest extends LightJavaCodeInsightFixtur
    */
   @Override
   protected String getTestDataPath() {
-    return "src/test/resources";
+    return "src/test/testData";
   }
 
   protected void doTest(String testName, String hint) {

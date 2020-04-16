@@ -151,7 +151,6 @@ public class ImagesProjectNode extends AbstractTreeNode<VirtualFile> {
             public void run() {
               getImagesFiles(project).clear();
               scanImages(project);
-              //noinspection SSBasedInspection
               SwingUtilities.invokeLater(new Runnable() {
                 @Override
                 public void run() {

@@ -81,7 +81,7 @@ public class ImagesProjectNode extends AbstractTreeNode<VirtualFile> {
     if (files.isEmpty()) return Collections.emptyList();
     final List<AbstractTreeNode<?>> nodes = new ArrayList<>(files.size());
     final boolean alwaysOnTop = ProjectView.getInstance(myProject).isFoldersAlwaysOnTop("");
-    Collections.sort(files, (o1, o2) -> {
+    files.sort((o1, o2) -> {
       if (alwaysOnTop) {
         final boolean d1 = o1.isDirectory();
         final boolean d2 = o2.isDirectory();

@@ -24,8 +24,8 @@ public class PopupDialogAction extends AnAction {
    */
   @Override
   public void actionPerformed(@NotNull AnActionEvent event) {
-    Project proj = event.getProject();
-    Messages.showMessageDialog(proj,
+    Project project = event.getProject();
+    Messages.showMessageDialog(project,
                                "Popup dialog action",
                                "Greetings from PyCharm Basics Plugin",
                                Messages.getInformationIcon());

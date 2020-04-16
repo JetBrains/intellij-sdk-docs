@@ -6,8 +6,9 @@ title: 1. Tests Prerequisites
 This page discusses the steps to configure a plugin project for creating tests.
 
 ## 1.1. Create a Folder for Tests
-Open the plugin project and under the `src` directory create a separate folder `test`.
-Under `test`, create the `java` folder for test source code, and the folder `testData` for test resources.
+Open the plugin project, and under the `src` directory create a separate folder `test`.
+Under `test`, create the `java` folder for test source code, and the folder `testData` for test data files and reimport the Gradle project.
+
 ```text
 └── src
     ├── main
@@ -17,16 +18,14 @@ Under `test`, create the `java` folder for test source code, and the folder `tes
         ├── java
         └── testData
 ```
-Mark the `java` folder as a test source root via the context menu `Mark Directory As`  &rarr; `Test Source Root`.
-Similarly, mark the `testData` folder as a test resource root via the context menu `Mark Directory As`  &rarr; `Test Resources Root`.
 
 ## 1.2. Set the Run Configuration Parameters
 Because some of the tests use Java files as test data, the tests need to mock up the project SDK.
 IntelliJ IDEA does everything automatically when the utility class [`LightJavaCodeInsightFixtureTestCase`](upsource:///java/testFramework/src/com/intellij/testFramework/fixtures/LightJavaCodeInsightFixtureTestCase.java) is used as the basis for the tests.
 
 The system properties are defined in the `build.gradle` file using the snippet shown below.
-The "/path/to/community/" is set to the absolute path to the root directory of the local intellij-community source on the machine running the tests.
-For example, on macOS the "path/to/community/" might be `/Users/<user name>/Documents/<community source root>/`
+The `/path/to/community/` is set to the absolute path to the root directory of the local intellij-community source on the machine running the tests.
+For example, on macOS the `path/to/community/` might be `/Users/<user name>/Documents/<IJ community source root>/`
 ```groovy
   test {
     systemProperty "idea.home.path", "/path/to/community/"

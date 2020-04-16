@@ -6,7 +6,6 @@ import com.intellij.icons.AllIcons;
 import com.intellij.ide.projectView.PresentationData;
 import com.intellij.ide.projectView.ProjectView;
 import com.intellij.ide.util.treeView.AbstractTreeNode;
-import com.intellij.openapi.Disposable;
 import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectUtil;
@@ -125,12 +124,7 @@ public class ImagesProjectNode extends AbstractTreeNode<VirtualFile> {
     LocalFileSystem.getInstance().addVirtualFileListener(new VirtualFileListener() {
       {
         final VirtualFileListener me = this;
-        Disposer.register(project, new Disposable() {
-          @Override
-          public void dispose() {
-            LocalFileSystem.getInstance().removeVirtualFileListener(me);
-          }
-        });
+        Disposer.register(project, () -> LocalFileSystem.getInstance().removeVirtualFileListener(me));
       }
 
       @Override
@@ -147,19 +141,12 @@ public class ImagesProjectNode extends AbstractTreeNode<VirtualFile> {
         final String filename = event.getFileName().toLowerCase();
         if (filename.endsWith(".png") || filename.endsWith(".jpg")) {
           alarm.cancelAllRequests();
-          alarm.addRequest(new Runnable() {
-            public void run() {
-              getImagesFiles(project).clear();
-              scanImages(project);
-              SwingUtilities.invokeLater(new Runnable() {
-                @Override
-                public void run() {
-                  ProjectView.getInstance(myProject)
-                          .getProjectViewPaneById(ImagesProjectViewPane.ID)
-                          .updateFromRoot(true);
-                }
-              });
-            }
+          alarm.addRequest(() -> {
+            getImagesFiles(project).clear();
+            scanImages(project);
+            SwingUtilities.invokeLater(() -> ProjectView.getInstance(myProject)
+                    .getProjectViewPaneById(ImagesProjectViewPane.ID)
+                    .updateFromRoot(true));
           }, 1000);
         }
       }

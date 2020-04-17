@@ -23,7 +23,7 @@ different parts of the IDE behavior.
 
 > **TIP** Auto-completion, Quick Documentation and other code insight features are available on extension point tags and attributes.
 
-1. Add an `<extensions>` element to your plugin.xml if it's not yet present there. Set the `defaultExtensionNs` attribute to one of the following values:
+1. Add an `<extensions>` element to your `plugin.xml` if it's not yet present there. Set the `defaultExtensionNs` attribute to one of the following values:
     * `com.intellij`, if your plugin extends the IntelliJ Platform core functionality.
     * `{ID of a plugin}`, if your plugin extends a functionality of another plugin.
 2. Add a new child element to the `<extensions>` element. The child element name must match the name of the extension point you want the extension to access.

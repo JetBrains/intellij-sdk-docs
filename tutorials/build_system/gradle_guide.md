@@ -91,7 +91,7 @@ The Gradle version is in defined in a project's `gradle-wrapper.properties`.
 ### Patching the Plugin Configuration File
 A plugin project's `plugin.xml` file has element values that are "patched" at build time from the attributes of the `patchPluginXml` ([Patching DSL](https://github.com/JetBrains/gradle-intellij-plugin#patching-dsl)) task. 
 As many as possible of the attributes in the Patching DSL will be substituted into the corresponding element values in a plugin project's `plugin.xml` file:
-* If a `patchPluginXml` attribute default value is defined, the attribute value will be patched in plugin.xml _regardless of whether the `patchPluginXml` task appears in the `build.gradle` file_.
+* If a `patchPluginXml` attribute default value is defined, the attribute value will be patched in `plugin.xml` _regardless of whether the `patchPluginXml` task appears in the `build.gradle` file_.
   * For example, the default values for the attributes `patchPluginXml.sinceBuild` and `patchPluginXml.untilBuild` are defined based on the declared (or default) value of `intellij.version`.
     So by default `patchPluginXml.sinceBuild` and `patchPluginXml.untilBuild` are substituted into the `<idea-version>` element's `since-build` and `until-build` attributes in the `plugin.xml` file.
 * If a `patchPluginXml` attribute value is explicitly defined, the attribute value will be substituted in `plugin.xml`.

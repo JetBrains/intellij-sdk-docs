@@ -47,7 +47,7 @@ The good thing is that we can separate project parsing and management here. That
 
 ## Importing from external model
 
-IntelliJ platform provides standard API for that. Namely, [`ProjectImportBuilder`](upsource:///java/idea-ui/src/com/intellij/projectImport/ProjectImportBuilder.java) and [`ProjectImportProvider`](upsource:///java/idea-ui/src/com/intellij/projectImport/ProjectImportProvider.java). There are two classes built on *template method* pattern - [`AbstractExternalProjectImportBuilder`](upsource:///java/idea-ui/src/com/intellij/openapi/externalSystem/service/project/wizard/AbstractExternalProjectImportBuilder.java) and [`AbstractExternalProjectImportProvider`](upsource:///java/idea-ui/src/com/intellij/openapi/externalSystem/service/project/wizard/AbstractExternalProjectImportProvider.java). They might be sub-classes and that concrete implementations should be registered at IoC descriptor (plugin.xml).
+IntelliJ platform provides standard API for that. Namely, [`ProjectImportBuilder`](upsource:///java/idea-ui/src/com/intellij/projectImport/ProjectImportBuilder.java) and [`ProjectImportProvider`](upsource:///java/idea-ui/src/com/intellij/projectImport/ProjectImportProvider.java). There are two classes built on *template method* pattern - [`AbstractExternalProjectImportBuilder`](upsource:///java/idea-ui/src/com/intellij/openapi/externalSystem/service/project/wizard/AbstractExternalProjectImportBuilder.java) and [`AbstractExternalProjectImportProvider`](upsource:///java/idea-ui/src/com/intellij/openapi/externalSystem/service/project/wizard/AbstractExternalProjectImportProvider.java). Concrete implementations are registered in `plugin.xml`.
 
 Here is an example from the gradle integration plugin:
 

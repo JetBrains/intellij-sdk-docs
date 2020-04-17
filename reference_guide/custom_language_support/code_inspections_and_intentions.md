@@ -35,7 +35,7 @@ for
 The code intentions for custom languages also use the regular API for intentions.
 The intention classes need to implement the
 [`IntentionAction`](upsource:///platform/analysis-api/src/com/intellij/codeInsight/intention/IntentionAction.java)
-interface and to be registered using the `com.intellij.intentionAction` extension point in your *plugin.xml*.
+interface and are registered using the `com.intellij.intentionAction` extension point in `plugin.xml`.
 
 **Examples:**
 - A [simple intention action](upsource:///plugins/groovy/src/org/jetbrains/plugins/groovy/intentions/control/SplitIfIntention.java) for Groovy

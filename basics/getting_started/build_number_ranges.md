@@ -12,6 +12,8 @@ title: Build Number Ranges
 
 Use this reference of build number ranges to specify the correct `since-build` and `until-build` values in your plugin descriptor.
 
+> **NOTE** Compatibility with specified version range (and compatible products) should always be verified using [Plugin Verifier](/reference_guide/api_changes_list.md#verifying-compatibility) to ensure binary compatibility.
+
 Starting with IntelliJ IDEA 9 beta, a multi-part build number is used, such as `IU-162.94`.
 
 The number consists of the following parts:

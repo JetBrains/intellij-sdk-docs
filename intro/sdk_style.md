@@ -126,7 +126,7 @@ Consistent terminology helps the reader grasp new concepts more quickly:
 In-paragraph code fragments and IntelliJ Platform APIs are formatted according to these rules:
 * Avoid using qualifiers like "`Foo` interface" or "`Foo` abstract class".
   Just refer to `Foo`.
-* The FQN is used for the first reference to an interface or class on a page.
+* The FQN is used for the first reference to an interface, class or package on a page.
   Rather than `AnAction`, introduce it as `com.intellij.openapi.actionSystem.AnAction`.
   Subsequent references on the page can be `AnAction`.
   Exception: the FQN is not used with an upsource [link](#links).

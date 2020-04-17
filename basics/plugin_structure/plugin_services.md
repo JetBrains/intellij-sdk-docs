@@ -63,7 +63,7 @@ If `serviceInterface` isn't specified, it's supposed to have the same value as `
 To provide custom implementation for test/headless environment, specify `testServiceImplementation`/`headlessImplementation` additionally.
 
 Project/Module level service constructor can take `Project`/`Module` argument, respectively.
-Please note that using constructor injection is deprecated (and not supported in [Light Services](#light-services)), other dependencies should be acquired only when needed in corresponding methods.
+> **NOTE** Please note that using constructor injection is deprecated (and not supported in [Light Services](#light-services)) for performance reasons. Other dependencies should be [acquired only when needed](#retrieving-a-service) in all corresponding methods.
 
 To improve startup performance, avoid any heavy initializations in the constructor.
 

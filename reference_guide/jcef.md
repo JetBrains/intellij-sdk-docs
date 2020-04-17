@@ -45,15 +45,15 @@ Or in order to just open it in a separate window:
 
 ## API
 
-### `com.intellij.ui.jcef.JBCefApp`
+### [`com.intellij.ui.jcef.JBCefApp`](upsource:///platform/platform-api/src/com/intellij/ui/jcef/JBCefApp.java)
 Performs JCEF auto-initialization, manages its lifecycle, and provides `JBCefClient` instances.
 
-### `com.intellij.ui.jcef.JBCefClient`
+### [`com.intellij.ui.jcef.JBCefClient`](upsource:///platform/platform-api/src/com/intellij/ui/jcef/JBCefClient.java)
 Is tied to every browser component explicitly or implicitly. Used for adding handlers to the associated browser.
 The same instance can be shared among multiple browsers. It is up to the developer to use a shared or per-browser instance, depending on the handlers' logic.
 If a client was created explicitly, it should be disposed by the developer; otherwise, it is disposed automatically following the associated browser instance disposal.
 
-### `com.intellij.ui.jcef.JBCefBrowser`
+### [`com.intellij.ui.jcef.JBCefBrowser`](upsource:///platform/platform-api/src/com/intellij/ui/jcef/JBCefBrowser.java)
 Provides the browser UI component:
 
 ```java
@@ -87,7 +87,7 @@ The simplest way to add a browser component to your UI:
   myPanel.add(new JBCefBrowser(“https://www.jetbrains.com”).getComponent());
 ```
 
-### `com.intellij.ui.jcef.JBCefJSQuery`
+### [`com.intellij.ui.jcef.JBCefJSQuery`](upsource:///platform/platform-api/src/com/intellij/ui/jcef/JBCefJSQuery.java)
 
 Provides JS query callback mechanism.
 

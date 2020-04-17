@@ -30,4 +30,4 @@ Any `Configurable` which depends on dynamic extension points must implement `Con
 Application, project and module services declared with `overrides="true"` are not allowed.
 
 ## Plugin Load/Unload Events
-Register `com.intellij.ide.plugins.DynamicPluginListener` [listener](plugin_listeners.md) to receive updates on plugin load/unload events.
+Register [`com.intellij.ide.plugins.DynamicPluginListener`](upsource:///platform/platform-impl/src/com/intellij/ide/plugins/DynamicPlugins.kt) [listener](plugin_listeners.md) to receive updates on plugin load/unload events.

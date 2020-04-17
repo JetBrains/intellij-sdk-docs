@@ -67,7 +67,7 @@ implementations are invoked only once for each typed character.
 If those handlers need to support multiple carets, they will need to implement that explicitly.
 
 [`EditorModificationUtil`](upsource:///platform/platform-api/src/com/intellij/openapi/editor/EditorModificationUtil.java).
-_typeInStringAtCaretHonorMultipleCarets_ utility method is available to do the most common task in this case — inserting the same text into all caret positions and/or moving all carets relatively to their current position.
+`typeInStringAtCaretHonorMultipleCarets()` method is available to do the most common task in this case — inserting the same text into all caret positions and/or moving all carets relatively to their current position.
 Examples of its usage:
 
 *  [`TypedAction`](upsource:///platform/platform-api/src/com/intellij/openapi/editor/actionSystem/TypedAction.java).
@@ -91,5 +91,3 @@ Existing actions inheriting from
 To support multiple carets, one should inherit
 [`MultiCaretCodeInsightAction`](upsource:///platform/lang-impl/src/com/intellij/codeInsight/actions/MultiCaretCodeInsightAction.java)
 instead (each caret might have a different editor and PSI instance, so using the old API is not possible).
-It is available since IDEA 14.
-

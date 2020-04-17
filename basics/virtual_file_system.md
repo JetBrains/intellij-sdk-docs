@@ -56,7 +56,7 @@ Synchronous refreshes can cause deadlocks in some cases, depending on which lock
 
 All changes happening in the virtual file system, either as a result of refresh operations or caused by user's actions, are reported as _virtual file system events_. VFS events are always fired in the event dispatch thread, and in a write action.
 
-The most efficient way to listen to VFS events is to implement the `BulkFileListener` interface and to subscribe with it to the [`VirtualFileManager.VFS_CHANGES`](upsource:///platform/core-api/src/com/intellij/openapi/vfs/VirtualFileManager.java)<!--#L34--> topic.
+The most efficient way to listen to VFS events is to implement [`BulkFileListener`](upsource:///platform/core-api/src/com/intellij/openapi/vfs/newvfs/BulkFileListener.java) and to subscribe with it to the [`VirtualFileManager.VFS_CHANGES`](upsource:///platform/core-api/src/com/intellij/openapi/vfs/VirtualFileManager.java)<!--#L34--> topic.
 A non-blocking variant [`AsyncFileListener`](upsource:///platform/core-api/src/com/intellij/openapi/vfs/AsyncFileListener.java) is also available in 2019.2 or later.
 See [How do I get notified when VFS changes?](/basics/architectural_overview/virtual_file.md#how-do-i-get-notified-when-vfs-changes) for implementation details.
 

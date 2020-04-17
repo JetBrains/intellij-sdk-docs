@@ -3,7 +3,7 @@ title: Persisting State of Components
 ---
 <!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-The *IntelliJ Platform* provides an API that allows components or services to persist their state between restarts of the IDE. You can use either a simple API to persist a few values or persist the state of more complicated components using the [`PersistentStateComponent`](upsource:///platform/core-api/src/com/intellij/openapi/components/PersistentStateComponent.java) interface.
+The *IntelliJ Platform* provides an API that allows components or services to persist their state between restarts of the IDE. You can use either a simple API to persist a few values or persist the state of more complicated components using the [`PersistentStateComponent`](upsource:///platform/projectModel-api/src/com/intellij/openapi/components/PersistentStateComponent.java) interface.
 
 > **WARNING** If you need to persist sensitive data like passwords, please see [Persisting Sensitive Data](persisting_sensitive_data.md).
 

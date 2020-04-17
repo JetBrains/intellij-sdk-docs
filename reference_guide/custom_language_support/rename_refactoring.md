@@ -43,7 +43,7 @@ interface allows you to entirely replace the UI and workflow of the rename refac
 at all.
 
 **Example**:
-[`RenameHandler`](upsource:///plugins/properties/src/com/intellij/lang/properties/refactoring/rename/ResourceBundleFromEditorRenameHandler.java)
+[`RenameHandler`](upsource:///plugins/properties/properties-resource-bundle-editor/src/com/intellij/lang/properties/refactoring/rename/ResourceBundleFromEditorRenameHandler.java)
 for renaming a resource bundle in the
 [Properties language plugin](upsource:///plugins/properties)
 

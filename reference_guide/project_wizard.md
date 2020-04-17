@@ -18,7 +18,7 @@ New module type should be derived from the class
 ## Project Wizard
 
 Main utilities to configure a custom project wizard can be found in the package
-[lang-api.ide.util.projectWizard](upsource:///platform/lang-api/src/com/intellij/ide/util/projectWizard).
+[`lang-api.ide.util.projectWizard`](upsource:///platform/lang-api/src/com/intellij/ide/util/projectWizard).
 These classes and interfaces serve the following purposes:
 
 * Modification of the configuration wizard view

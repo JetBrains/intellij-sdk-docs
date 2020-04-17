@@ -20,7 +20,7 @@ Every type there is represented as an instance of [`ConfigurationType`](upsource
 <configurationType implementation="org.jetbrains.plugins.gradle.service.execution.GradleExternalTaskConfigurationType" />
 ```
 
-The easiest way to implement this interface is to use the [`ConfigurationTypeBase`](upsource:////platform/lang-api/src/com/intellij/execution/configurations/runConfigurationType.kt) base class. In order to use it, you need to inherit from it and to provide the configuration type parameters (ID, name, description and icon) as constructor parameters. In addition to that, you need to call the [`addFactory()`](upsource:///platform/lang-api/src/com/intellij/execution/configurations/ConfigurationTypeBase.java)<!--#L46--> method to add a configuration factory.
+The easiest way to implement this interface is to use the [`ConfigurationTypeBase`](upsource:///platform/lang-api/src/com/intellij/execution/configurations/runConfigurationType.kt) base class. In order to use it, you need to inherit from it and to provide the configuration type parameters (ID, name, description and icon) as constructor parameters. In addition to that, you need to call the [`addFactory()`](upsource:///platform/lang-api/src/com/intellij/execution/configurations/ConfigurationTypeBase.java)<!--#L46--> method to add a configuration factory.
 
 ## Configuration factory
 
@@ -75,7 +75,7 @@ Most run configurations contain references to classes, files or directories in t
 
 In order to support that, your run configuration needs to implement the [`RefactoringListenerProvider`](upsource:///platform/lang-api/src/com/intellij/execution/configurations/RefactoringListenerProvider.java) interface.
 
-In your implementation of `getRefactoringElementListener()`, you need to check whether the element being refactored is the one that your run configuration refers to, and if it is, you return a [`RefactoringElementListener`](upsource:///platform/lang-api/src/com/intellij/refactoring/listeners/RefactoringElementListener.java) that updates your configuration according to the new name and location of the element.
+In your implementation of `getRefactoringElementListener()`, you need to check whether the element being refactored is the one that your run configuration refers to, and if it is, you return a [`RefactoringElementListener`](upsource:///platform/analysis-api/src/com/intellij/refactoring/listeners/RefactoringElementListener.java) that updates your configuration according to the new name and location of the element.
 
 ## Creating configurations from context
 
@@ -84,12 +84,12 @@ interface and to register it as `<runConfigurationProducer>` in your `plugin.xml
 
 The two main methods that you need to implement are:
 
-* `setupConfigurationFromContext` receives a blank configuration of your type and a `ConfigurationContext` containing information about a source code location (accessible by calling `getLocation()` or `getPsiLocation()`). Your implementation needs to check whether the location is applicable for your configuration type (for example, if it's in a file of the language you're supporting). If not, you need to return false, and if it is, you need to put the correct context-specific settings into the run configuration and return true.
-* `isConfigurationFromContext` checks if the specified configuration of your type was created from the specified context. Implementing this method allows you to reuse an existing run configuration which is applicable to the current context instead of creating a new one and possibly ignoring the customisations the user has performed in the existing one.
+* `setupConfigurationFromContext()` receives a blank configuration of your type and a `ConfigurationContext` containing information about a source code location (accessible by calling `getLocation()` or `getPsiLocation()`). Your implementation needs to check whether the location is applicable for your configuration type (for example, if it's in a file of the language you're supporting). If not, you need to return false, and if it is, you need to put the correct context-specific settings into the run configuration and return true.
+* `isConfigurationFromContext()` checks if the specified configuration of your type was created from the specified context. Implementing this method allows you to reuse an existing run configuration which is applicable to the current context instead of creating a new one and possibly ignoring the customisations the user has performed in the existing one.
 
 Note that, in order to support automatic naming of configurations created from context, your configuration should use
 [`LocatableConfigurationBase`](upsource:///platform/lang-api/src/com/intellij/execution/configurations/LocatableConfigurationBase.java) as the base class.
 
 ## Running from the gutter
 
-Take a look at `RunLineMarkerContributor` and its implementations.
+Take a look at [`RunLineMarkerContributor`](upsource:///platform/execution-impl/src/com/intellij/execution/lineMarker/RunLineMarkerContributor.java) and its implementations.

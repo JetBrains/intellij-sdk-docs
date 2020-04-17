@@ -49,13 +49,13 @@ The `groupDisplayId` parameter of the
 constructor specifies a notification type.
 The user can choose the display type corresponding to each notification type under `Settings | Appearance and Behavior | Notifications`.
 To specify the preferred display type, you need to use
-[`NotificationGroup`](upsource:///platform/platform-api/src/com/intellij/notification/NotificationGroup.java) 
+[`NotificationGroup`](upsource:///platform/platform-api/src/com/intellij/notification/NotificationGroup.kt) 
 to create notifications.
 
 #### Example
 
 Simple use of notifications using
-[`NotificationGroup`](upsource:///platform/platform-api/src/com/intellij/notification/NotificationGroup.java).
+[`NotificationGroup`](upsource:///platform/platform-api/src/com/intellij/notification/NotificationGroup.kt).
 
 ```java
 public class MyGroovyDSLErrorsNotifier {
@@ -74,7 +74,7 @@ public class MyGroovyDSLErrorsNotifier {
 ```
 
 Usage of the class with
-[`NotificationGroup`](upsource:///platform/platform-api/src/com/intellij/notification/NotificationGroup.java)
+[`NotificationGroup`](upsource:///platform/platform-api/src/com/intellij/notification/NotificationGroup.kt)
 above.
 
 ```java

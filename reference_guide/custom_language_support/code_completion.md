@@ -16,7 +16,7 @@ either on the reference at the caret location or on a dummy reference that would
 This method needs to return an array of objects containing either strings,
 [`PsiElement`](upsource:///platform/core-api/src/com/intellij/psi/PsiElement.java)
 instances or instances of the
-[`LookupElement`](upsource:///platform/lang-api/src/com/intellij/codeInsight/lookup/LookupElement.java)
+[`LookupElement`](upsource:///platform/analysis-api/src/com/intellij/codeInsight/lookup/LookupElement.java)
 class (see [Lookup Items](#lookup-items) below).
 If a
 [`PsiElement`](upsource:///platform/core-api/src/com/intellij/psi/PsiElement.java)

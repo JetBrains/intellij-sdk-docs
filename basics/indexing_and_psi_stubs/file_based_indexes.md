@@ -35,7 +35,7 @@ An implementation of a file-based index consists of the following main parts:
 * `getInputFilter()` allows to restrict the indexing only to a certain set of files.
 * `getVersion()` returns the version of the index implementation. The index is automatically rebuilt if the current version differs from the version of the index implementation used to build the index.
 
-If you don't need to associate any value with the files (i.e. your value type is Void), you can simplify the implementation by using [`ScalarIndexExtension`](upsource:///platform/indexing-impl/src/com/intellij/util/indexing/ScalarIndexExtension.java) as the base class.
+If you don't need to associate any value with the files (i.e. your value type is Void), you can simplify the implementation by using [`ScalarIndexExtension`](upsource:///platform/indexing-api/src/com/intellij/util/indexing/ScalarIndexExtension.java) as the base class.
 
 > **WARNING** The data returned by `DataIndexer.map()` must depend only on input data passed to the method, and must not depend on any external files. Otherwise your index will not be correctly updated when the external data changes, and you will have stale data in your index.
 
@@ -66,4 +66,4 @@ The *IntelliJ Platform* contains a number of standard file-based indexes. The mo
 
 Generally, the word index should be accessed indirectly by using helper methods of the [`PsiSearchHelper`](upsource:///platform/indexing-api/src/com/intellij/psi/search/PsiSearchHelper.java) class.
 
-The second index is [`FilenameIndex`](upsource:///platform/indexing-impl/src/com/intellij/psi/search/FilenameIndex.java). It provides a quick way to find all files matching a certain file name. [`FileTypeIndex`](upsource:///platform/indexing-impl/src/com/intellij/psi/search/FileTypeIndex.java) serves a similar goal: it allows to quickly find all files of a certain file type.
+The second index is [`FilenameIndex`](upsource:///platform/indexing-api/src/com/intellij/psi/search/FilenameIndex.java). It provides a quick way to find all files matching a certain file name. [`FileTypeIndex`](upsource:///platform/indexing-api/src/com/intellij/psi/search/FileTypeIndex.java) serves a similar goal: it allows to quickly find all files of a certain file type.

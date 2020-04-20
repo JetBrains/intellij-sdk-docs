@@ -20,7 +20,7 @@ The *IntelliJ Platform* offers three types of services: _application level_ serv
 
 A service not going to be overridden does not need to be registered in `plugin.xml` (see [How To Declare a Service](#how-to-declare-a-service)).
 
-Instead, annotate service class with [@Service](upsource:///platform/core-api/src/com/intellij/openapi/components/Service.java).
+Instead, annotate service class with [@Service](upsource:///platform/core-api/src/com/intellij/openapi/components/Service.java). See [Project Level Service](#project-service-sample) below for sample. 
  
 Restrictions:
 
@@ -62,8 +62,8 @@ If `serviceInterface` isn't specified, it's supposed to have the same value as `
 
 To provide custom implementation for test/headless environment, specify `testServiceImplementation`/`headlessImplementation` additionally.
 
-Project/Module level service constructor can take `Project`/`Module` argument, respectively.
-> **NOTE** Please note that using constructor injection is deprecated (and not supported in [Light Services](#light-services)) for performance reasons. Other dependencies should be [acquired only when needed](#retrieving-a-service) in all corresponding methods.
+Project/Module level service constructor can take `Project`/`Module` argument.
+> **NOTE** Please note that using constructor injection is deprecated (and not supported in [Light Services](#light-services)) for performance reasons. Other dependencies should be [acquired only when needed](#retrieving-a-service) in all corresponding methods (see `someServiceMethod()` in [Project Service Sample](#project-service-sample)).
 
 To improve startup performance, avoid any heavy initializations in the constructor.
 
@@ -84,6 +84,28 @@ In Kotlin code, use convenience methods:
 MyApplicationService applicationService = service<MyApplicationService>()
 
 MyProjectService projectService = project.service<MyProjectService>()
+```
+
+### Project Service Sample
+This minimal sample shows [light](#light-services) `ProjectService` interacting with another project level service `AnotherService` (not shown here).
+
+_ProjectService.java_
+```java         
+  @Service
+  public final class ProjectService {
+
+     private final Project myProject;
+
+     public ProjectService(Project project) {
+       myProject = project;
+     }                     
+
+     public void someServiceMethod(String parameter) {
+       AnotherService anotherService = myProject.getService(AnotherService.class); 
+       String result = anotherService.anotherServiceMethod(parameter, false);
+       // do some more stuff
+     }
+  }
 ```
 
 ### Sample Plugin

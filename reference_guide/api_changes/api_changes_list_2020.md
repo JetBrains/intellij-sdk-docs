@@ -74,6 +74,9 @@ Please see [Incompatible API Changes](/reference_guide/api_changes_list.md) on h
 `com.maddyhome.idea.copyright.util.FileTypeUtil.getFileTypeByName(String)` method removed
 : This was an internal utility method not intended for use in plugins. Use `FileTypeManager.getInstance().findFileTypeByName()` instead.
 
+`javassist` package removed
+: [Javassist](https://github.com/jboss-javassist/javassist) library was removed, bundle it with your plugin instead.
+
 
 # 2020.1
 

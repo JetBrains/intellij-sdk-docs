@@ -134,9 +134,11 @@ Continuing the example, search the PHP plugin's `plugin.xml` file for:
 
 ## Verifying Dependency
 Before marking a plugin project as _dependent only on modules in a target product_ in addition to `com.intellij.modules.platform`, verify the plugin isn't implicitly dependent on any APIs that are specific to IntelliJ IDEA. 
-To verify a plugin project's independence, create an SDK pointing to an installation of the intended target IntelliJ Platform-based product, e.g., PhpStorm, rather than IntelliJ IDEA. 
+
+For [Gradle-based](/tutorials/build_system.md) projects, [Plugin Verifier](/reference_guide/api_changes_list.md#plugin-verifier) can be used to ensure compatibility with all specified target IDEs.
+
+For [DevKit-based](/basics/getting_started/using_dev_kit.md) projects, create an SDK pointing to an installation of the intended target IntelliJ Platform-based product, e.g., PhpStorm, rather than IntelliJ IDEA. 
 Use the same development version of the IntelliJ platform as the targeted product. 
-Additional product-specific information about developing for the IntelliJ Platform is documented in Part VIII.
 
 Based on the tables above, the [JetBrains plugin repository](https://plugins.jetbrains.com/) automatically detects the JetBrains products with which a plugin is compatible, and makes the compatibility information available to plugin authors. 
 The compatibility information determines if plugins are available at the plugin repository to users of a particular JetBrains product.  

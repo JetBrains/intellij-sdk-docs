@@ -25,6 +25,10 @@ Using the `com.intellij.annotator` extension point in the plugin configuration f
     <annotator language="JAVA" implementationClass="org.intellij.sdk.language.SimpleAnnotator"/>
   </extensions>
 ```
+The plugin depends on com.intellij.psi.PsiLiteralExpression at runtime and since intellij 2019.2 we need to specify these dependencies in plugin.xml:
+```xml
+<depends>com.intellij.modules.java</depends>
+```
 
 ## 7.3. Run the Project
 As a test, define the following Java file containing a Simple Language `prefix:value` pair:

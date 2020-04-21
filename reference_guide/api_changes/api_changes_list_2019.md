@@ -62,7 +62,7 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 
 Please see [Incompatible API Changes](/reference_guide/api_changes_list.md) on how to verify compatibility.
 
-> **NOTE** Changes from API marked with [`org.jetbrains.annotations.ApiStatus.@Experimental/ScheduledForRemoval`](upsource:///platform/util/src/org/jetbrains/annotations/ApiStatus.java) are not listed here, as incompatible changes are to be expected.
+> **NOTE** Changes from API marked with `org.jetbrains.annotations.ApiStatus.@Experimental/ScheduledForRemoval` are not listed here, as incompatible changes are to be expected.
 
 # 2019.3
 

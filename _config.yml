@@ -13,6 +13,7 @@ upsource:
   server: upsource.jetbrains.com
   repo: idea-ce
   commit: 9276f4bbfb20dac51cdc0d675aef80b7f639a378
+  tag: 201.6668.121
 
 github_repo: JetBrains/intellij-sdk-docs
 youtrack_project: IJSDK

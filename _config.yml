@@ -8,7 +8,7 @@ baseurl: /intellij/sdk/docs/
 
 description: Documentation for working with and extending the IntelliJ Platform SDK
 
-# This is tag 201.6668.121 (2019.1)
+# This is tag 201.6668.121 (2020.1)
 upsource:
   server: upsource.jetbrains.com
   repo: idea-ce

@@ -7,7 +7,7 @@ The *IntelliJ Platform* provides an API that allows components or services to pe
 
 > **WARNING** If you need to persist sensitive data like passwords, please see [Persisting Sensitive Data](persisting_sensitive_data.md).
 
-## Using PropertiesComponent for simple non-roamable persistence
+## Using PropertiesComponent for Simple Non-Roamable Persistence
 
 If the only thing that your plugin needs to persist is a few simple values, the easiest way to do so is to use the [`com.intellij.ide.util.PropertiesComponent`](upsource:///platform/core-api/src/com/intellij/ide/util/PropertiesComponent.java) service. It can be used for saving both application-level values and project-level values (stored in the workspace file). Roaming is disabled for `PropertiesComponent`, so use it only for temporary, non-roamable properties.
 
@@ -26,7 +26,7 @@ To use it:
 
 Note that instances of extensions cannot persist their state by implementing `PersistentStateComponent`. If your extension needs to have a persistent state, you need to define a separate service responsible for managing that state.
 
-### Implementing the PersistentStateComponent interface
+### Implementing the PersistentStateComponent Interface
 
 The implementation of `PersistentStateComponent` needs to be parameterized with the type of the state class. The state class can either be a separate JavaBean class, or the class implementing `PersistentStateComponent` itself.
 
@@ -69,9 +69,9 @@ class MyService implements PersistentStateComponent<MyService> {
 }
 ```
 
-### Implementing the state class
+### Implementing the State Class
 
-The implementation of `PersistentStateComponent` works by serializing public fields, [annotated](upsource:///platform/util/src/com/intellij/util/xmlb/annotations) private fields and bean properties into an XML format. 
+The implementation of `PersistentStateComponent` works by serializing public fields, [annotated](upsource:///platform/util/src/com/intellij/util/xmlb/annotations) private fields (see also [Customizing the XML format of persisted values](#customizing-the-xml-format-of-persisted-values)) and bean properties into an XML format. 
 
 The following types of values can be persisted:
 * numbers (both primitive types, such as `int`, and boxed types, such as `Integer`)
@@ -114,7 +114,7 @@ Note that the state class must have a default constructor. It should return the 
 
 State class should have an `equals` method, but if it is not implemented, state objects will be compared by fields. When using Kotlin, use [Data Classes](https://kotlinlang.org/docs/reference/data-classes.html).
 
-### Defining the storage location
+### Defining the Storage Location
 
 To specify where exactly the persisted values will be stored, you need to add a `@State` annotation to the `PersistentStateComponent` class. 
 
@@ -135,17 +135,17 @@ By specifying a different value for the `value` parameter (`file` before 2016.x)
 
 The `roamingType` parameter of the `@Storage` annotation specifies the roaming type when the Settings Repository plugin is used.
 
-## Customizing the XML format of persisted values
+## Customizing the XML Format of Persisted Values
 
-Please consider using annotation parameters only to achieve backward compatibility. Otherwise, please feel free to file issues about serialization cosmetics.
+> **NOTE** Please consider using annotation parameters only to achieve backward compatibility. Otherwise, please feel free to file issues about serialization cosmetics.
 
 If you want to use the default bean serialization but need to customize the storage format in XML (for example, for compatibility with previous versions of your plugin or externally defined XML formats), you can use the `@Tag`, `@Attribute`, `@Property`, `@MapAnnotation`, `@AbstractCollection` annotations. 
 
-Please see `com.intellij.util.xmlb.annotations`'s `package.html` for more information.
+Please see `com.intellij.util.xmlb.annotations`'s [`package.html`](upsource:///platform/util/src/com/intellij/util/xmlb/annotations/package.html) for more information.
 
 If the state that you need to serialize doesn't map cleanly to a JavaBean, you can use `org.jdom.Element` as the state class. In that case, you can use the `getState()` method to build an XML element with an arbitrary structure, which will then be saved directly in the state XML file. In the `loadState()` method, you can deserialize the JDOM element tree using any custom logic. Please note this is not recommended and should be avoided whenever possible.
 
-## Persistent component lifecycle
+## Persistent Component Lifecycle
 
 The `loadState()` method is called after the component has been created (only if there is some non-default state persisted for the component), and after the XML file with the persisted state is changed externally (for example, if the project file was updated from the version control system). In the latter case, the component is responsible for updating the UI and other related components according to the changed state.
 

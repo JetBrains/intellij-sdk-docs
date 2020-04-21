@@ -26,7 +26,7 @@ To reuse the *IntelliJ Platform* implementation of the
 the plugin returns a
 [`TreeBasedStructureViewBuilder`](upsource:///platform/editor-ui-api/src/com/intellij/ide/structureView/TreeBasedStructureViewBuilder.java)
 from its
-[`PsiStructureViewFactory.getStructureViewBuilder()`](upsource:///platform/editor-ui-api/src/com/intellij/lang/PsiStructureViewFactory.java)<!--#L35-->
+[`PsiStructureViewFactory.getStructureViewBuilder()`](upsource:///platform/editor-ui-api/src/com/intellij/lang/PsiStructureViewFactory.java)
 method.
 As the model for the builder, the plugin can specify a subclass of
 [`TextEditorBasedStructureViewModel`](upsource:///platform/editor-ui-api/src/com/intellij/ide/structureView/TextEditorBasedStructureViewModel.java),

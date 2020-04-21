@@ -16,7 +16,7 @@ Creating a fully correct AST node from scratch is quite difficult.
 Thus, surprisingly, the easiest way to get the replacement node is to create a dummy file in the custom language so that it would contain the necessary node in its parse tree, build the parse tree and extract the necessary node from it.
 
 **Example:**
-[`setName()`](upsource:///plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/psi/impl/PropertyImpl.java)<!--#L58-->
+[`setName()`](upsource:///plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/psi/impl/PropertyImpl.java)
 implementation for a
 [Properties language plugin](upsource:///plugins/properties)
 

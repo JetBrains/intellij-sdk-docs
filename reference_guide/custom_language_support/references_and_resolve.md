@@ -60,9 +60,9 @@ The implementation of resolve based on the standard helper classes contains of t
 
 *  A function which walks the PSI tree up from the reference location until the resolve has successfully completed or until the end of the resolve scope has been reached.
    If the target of the reference is located in a different file, the file can be located, for example, using
-   [`FilenameIndex.getFilesByName()`](upsource:///platform/indexing-impl/src/com/intellij/psi/search/FilenameIndex.java)
+   [`FilenameIndex.getFilesByName()`](upsource:///platform/indexing-api/src/com/intellij/psi/search/FilenameIndex.java)
    (if the file name is known) or by iterating through all custom language files in the project (`iterateContent()` in the
-   [`FileIndex`](upsource:///platform/indexing-impl/src/com/intellij/psi/search/FilenameIndex.java)
+   [`ProjectFileIndex`](upsource:///platform/projectModel-api/src/com/intellij/openapi/roots/ProjectFileIndex.java)
    interface obtained from
    [`ProjectRootManager.getFileIndex()`](upsource:///platform/projectModel-api/src/com/intellij/openapi/roots/ProjectRootManager.java)
    ).

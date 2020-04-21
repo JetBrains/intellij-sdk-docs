@@ -42,7 +42,7 @@ The colors for Simple Language Key, Separator, and Value highlighting default to
 
 ## 5.5. Define a Color Settings Page
 The color settings page adds the ability for users to customize color settings for the highlighting in Simple Language files. 
-The `SimpleColorSettingsPage` implements [`ColorSettingsPage`](upsource:///platform/lang-api/src/com/intellij/openapi/options/colors/ColorSettingsPage.java). 
+The `SimpleColorSettingsPage` implements [`ColorSettingsPage`](upsource:///platform/platform-api/src/com/intellij/openapi/options/colors/ColorSettingsPage.java). 
 ```java
 {% include /code_samples/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleColorSettingsPage.java %}
 ```

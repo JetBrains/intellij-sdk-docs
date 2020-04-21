@@ -42,7 +42,7 @@ Note the condition is evaluated only once when the project is loaded;
 to show and hide a tool window dynamically while the user is working with the project use the second method for tool window registration.
 
 The second method involves simply calling
-[`ToolWindowManager.registerToolWindow()`](upsource:///platform/platform-api/src/com/intellij/openapi/wm/ToolWindowManager.java)
+[`ToolWindowManager.registerToolWindow()`](upsource:///platform/platform-api/src/com/intellij/openapi/wm/ToolWindowManager.kt)
 from the plugin code.
 The method has multiple overloads that can be used depending on the task.
 When using an overload that takes a component, the component becomes the first content (tab) displayed in the tool window.

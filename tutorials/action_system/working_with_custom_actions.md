@@ -133,7 +133,7 @@ The search shows the verbose menu text in a context outside of the Main Menu:
 Selecting the action from the menu, keyboard/mouse shortcuts, or Find Action won't do anything at this point because the implementations are empty.
 However, it confirms the new entry appears at **Tools \| Pop Dialog Action** and **Help \| Find Action...**.
 
-## Developing the AnAction Methods
+## Developing the `AnAction` Methods
 At this point, the new action `PopupDialogAction` is registered with the IntelliJ Platform and functions in the sense that  `update()` and `actionPerformed()` are called in response to user interaction with the IDE Tools menu.
 However, neither method implements any code to perform useful work.
 
@@ -141,7 +141,7 @@ This section describes adding useful code to these methods.
 The `update()` method defaults to always enable the action, which is satisfactory for intermediate testing.
 So `actionPerformed()` will be developed first.
 
-### Extending the actionPerformed Method
+### Extending the `actionPerformed()` Method
 Adding code to the `PopupDialogAction.actionPerformed()` method makes the action do something useful. 
 The code below gets information from the `anActionEvent` input parameter and constructs a message dialog.
 A generic icon, and the `dlgMsg` and `dlgTitle` attributes from the invoking menu action are displayed.
@@ -168,7 +168,7 @@ See [Determining the Action Context](/basics/action_system.md#determining-the-ac
   }
 ```
 
-### Extending the update Method
+### Extending the `update()` Method
 Adding code to `PopupDialogAction.update()` gives finer control of the action's visibility and availability.
 The action's state and(or) presentation can be dynamically changed depending on the context. 
 

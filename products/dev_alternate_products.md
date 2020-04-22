@@ -32,7 +32,7 @@ However, not all products have an `intellij.type` attribute defined by the `grad
 For example, PhpStorm.
 If the target product does not have an `intellij.type` attribute defined, then the best approach is to configure the project by using the [IntelliJ IDEA Attribute](#configuring-buildgradle-using-the-intellij-idea-product-attribute). 
 
-### Configuring Plugin Projects using a Product-Specific Attribute
+### Configuring Plugin Projects Using a Product-Specific Attribute
 If the `gradle-intellij-plugin` supports a target product directly, there will be an `intellij.type` [attribute](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md#intellij-platform-properties) defined.
 Specifying the target as a product-specific `intellij.type` attribute has two advantages:
 * The APIs available to the plugin will be limited to only what is defined in the target product.
@@ -50,7 +50,7 @@ No additional product-specific configuration needs to be set in `build.gradle`:
     }
 ```
 
-### Configuring Plugin Projects using the IntelliJ IDEA Product Attribute
+### Configuring Plugin Projects Using the IntelliJ IDEA Product Attribute
 If the `gradle-intellij-plugin` does not directly support an IntelliJ Platform-based product, the `build.gradle` file can still be configured to target the desired product.
 In this case, the `build.gradle` file is configured to use IntelliJ IDEA (Community or Ultimate Edition) as the basis for the available APIs.
 This does have the drawback that APIs not specific to the target product might accidentally be included in the plugin project.

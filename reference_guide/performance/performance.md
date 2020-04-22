@@ -3,9 +3,11 @@ title: Optimizing Performance
 ---
 <!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-## Working with PSI efficiently
+## Working with PSI Efficiently
 
-#### Avoid `PsiElement` methods which are expensive with deep trees
+#### Avoid Expensive Methods in `PsiElement`
+
+Avoid `PsiElement` methods which are expensive with deep trees.
 
 `getText()` traverses the whole tree under the given element and concatenates strings, consider `textMatches()` instead.
 
@@ -15,8 +17,9 @@ File and project often can be computed once per some analysis and then stored in
 
 Additionally, `getText()`, `getNode()`, `getTextRange()`, etc., all need AST, which can be quite an expensive operation. See below.
 
-#### Avoid loading too many parsed trees or documents into memory at the same time
+#### Avoid Using Many PSI Trees/Documents 
 
+Avoid loading too many parsed trees or documents into memory at the same time.
 Ideally, only AST nodes from files open in the editor should be present in the memory.
 Everything else, even if it's needed for resolve/highlighting purposes, can be accessed via PSI interfaces,
 but its implementations should [use stubs](/basics/indexing_and_psi_stubs/stub_indexes.md) underneath, which are less CPU- and memory-expensive.
@@ -33,7 +36,7 @@ need documents, consider saving the information you need to provide in a [custom
 If you still need documents, then at least ensure you load them one by one and don't hold them on
 strong references to let GC free the memory as quickly as possible. 
 
-#### Cache results of heavy computations
+#### Cache Results of Heavy Computations
 
 These include `PsiElement.getReference(s)`, `PsiReference.resolve()` (and `multiResolve()` and other equivalents),
 expression types, type inference results, control flow graphs, etc.
@@ -44,9 +47,9 @@ If the information you cache depends only on a subtree of the current PSI elemen
 (and nothing else: no resolve results or other files), you can cache it in a field in that `PsiElement` and drop the cache
 in an override of `ASTDelegatePsiElement.subtreeChanged()`.
   
-## Improving indexing performance
+## Improving Indexing Performance
 
-#### Avoid using AST
+#### Avoid Using AST
 
 Use lexer information instead of parsed trees if possible.
 
@@ -56,14 +59,14 @@ Make sure to traverse only the nodes you need to.
 For stub index, implement [`LightStubBuilder`](upsource:///platform/core-impl/src/com/intellij/psi/stubs/LightStubBuilder.java). For other indices, you can get the light AST manually 
 via `((PsiDependentFileContent) fileContent).getLighterAST()`.
 
-#### Consider prebuilt stubs
+#### Consider Prebuilt Stubs
 
 If your language has a massive standard library, which is mostly the same for all users, you can avoid stub-indexing it
 in each installation by providing prebuilt stubs with your distribution. See [`PrebuiltStubsProvider`](upsource:///platform/lang-impl/src/com/intellij/psi/stubs/PrebuiltStubs.kt) extension.
 
-## Avoiding UI freezes
+## Avoiding UI Freezes
 
-#### Don't perform long operations in UI thread
+#### Do not Perform Long Operations in UI Thread
 
 In particular, don't traverse VFS, parse PSI, resolve references or query `FileBasedIndex`.
 

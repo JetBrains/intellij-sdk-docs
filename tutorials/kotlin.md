@@ -67,7 +67,7 @@ repositories {
 
 Please note that you should **not** include `kotlin-runtime` and `kotlin-stdlib` jars with your plugin because Kotlin guarantees backward- and forward- binary compatibility.
 
-### 3.1. Use Kotlin to write Gradle script
+### 3.1. Use Kotlin to Write Gradle Script
 
 Starting with 4.4, Gradle supports `build.gradle.kts`, an alternative to `build.gradle` written in Kotlin.
 
@@ -100,7 +100,7 @@ intellij {
 
 The best way to create user interfaces with Kotlin is to use a [type safe DSL](/user_interface_components/kotlin_ui_dsl.md) for building forms. Using GUI designer with Kotlin is currently [not supported](https://youtrack.jetbrains.com/issue/KT-6660). 
 
-## 5. Handling Kotlin code
+## 5. Handling Kotlin Code
 
 If you need to write a plugin that processes Kotlin code, you need to add a dependency on the Kotlin plugin. Please refer
 to [Plugin Dependencies](/basics/plugin_structure/plugin_dependencies.md) for information on how to do that.

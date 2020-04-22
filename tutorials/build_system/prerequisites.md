@@ -173,7 +173,7 @@ Gradle projects are run from the IDE's Gradle Tool window.
 Before running [`my_gradle_project`](#components-of-a-wizard-generated-gradle-intellij-platform-plugin), some code could be added to provide simple functionality.
 See the [Creating Actions](/tutorials/action_system/working_with_custom_actions.md) tutorial for step-by-step instructions for adding a menu action. 
 
-### Executing the plugin 
+### Executing the Plugin 
 Open the Gradle tool window and search for the `runIde` task: 
 * If it’s not in the list, hit the [Refresh](https://www.jetbrains.com/help/idea/jetgradle-tool-window.html#1eeec055) button at the top of the Gradle window. 
 * Or [Create a new Gradle Run Configuration](https://www.jetbrains.com/help/idea/create-run-debug-configuration-gradle-tasks.html).

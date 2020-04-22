@@ -24,7 +24,7 @@ The three default executors provided by the *IntelliJ Platform* by default are _
 
 As a plugin developer, you normally don't need to implement the `Executor` interface. However, it can be useful, for example, if you're implementing a profiler integration and want to provide the possibility to execute any configuration with profiling.
 
-## Running a process
+## Running a Process
 
 The `RunProfileState` interface comes up in every run configuration implementation as the return value `RunProfile.getState()`. It describes a process which is ready to be started and holds the information like the command line, current working directory, and environment variables for the process to be started. (The existence of `RunProfileState` as a separate step in the execution flow allows run configuration extensions and other components to patch the configuration and to modify the parameters before it gets executed.)
 
@@ -34,7 +34,7 @@ Alternatively, if the process you need to run is a JVM-based one, you can use th
 
 To monitor the execution of a process and capture its output, the [`OSProcessHandler`](upsource:///platform/platform-util-io/src/com/intellij/execution/process/OSProcessHandler.java) class is normally used. Once you've created an instance of `OSProcessHandler` from either a command line or a Process object, you need to call the `startNotify()` method to start capturing its output. You may also want to attach a [`ProcessTerminatedListener`](upsource:///platform/platform-api/src/com/intellij/execution/process/ProcessTerminatedListener.java) to the `OSProcessHandler`, so that the exit status of the process will be displayed in the console.
 
-## Displaying the process output
+## Displaying Process Output
 
 If you're using `CommandLineState`, a console view will be automatically created and attached to the output of the process. Alternatively, you can arrange this yourself:
 
@@ -47,6 +47,6 @@ Console [filters](upsource:///platform/lang-api/src/com/intellij/execution/filte
 
 Two common filter implementations you may want to reuse are [`RegexpFilter`](upsource:///platform/lang-api/src/com/intellij/execution/filters/RegexpFilter.java) and [`UrlFilter`](upsource:///platform/lang-api/src/com/intellij/execution/filters/UrlFilter.java).
 
-## Starting a run configuration from code
+## Starting a Run Configuration from Code
 
 If you have an existing run configuration that you need to execute, the easiest way to do so is to use [`ProgramRunnerUtil.executeConfiguration()`](upsource:///platform/execution-impl/src/com/intellij/execution/ProgramRunnerUtil.java). The method takes a [`Project`](upsource:///platform/core-api/src/com/intellij/openapi/project/Project.java), a [`RunnerAndConfigurationSettings`](upsource:///platform/lang-api/src/com/intellij/execution/RunnerAndConfigurationSettings.java), as well as an [`Executor`](upsource:///platform/lang-api/src/com/intellij/execution/Executor.java). To get the `RunnerAndConfigurationSettings` for an existing configuration, you can use, for example, `RunManager.getConfigurationSettings(ConfigurationType)`. As the last parameter, you normally pass either `DefaultRunExecutor.getRunExecutorInstance()` or `DefaultDebugExecutor.getDebugExecutorInstance()`.

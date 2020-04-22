@@ -38,7 +38,7 @@ By default, if a PSI element extends `StubBasedPsiElement`, all elements of that
 
 It's essential to make sure that all information stored in the stub tree depends only on the contents of the file for which stubs are being built, and does not depend on any external files. Otherwise the stub tree will not be rebuilt when an external dependency changes, and you will have stale and incorrect data in the stub tree.
 
-## Stub indexes
+## Stub Indexes
 
 When building the stub tree, you can at the same time put some data about the stub elements into a number of indexes, which then can be used to find the PSI elements by the corresponding key. Unlike file-based indexes, stub indexes do not support storing custom data as values; the value is always a PSI element. Keys in stub indexes are normally strings (such as class names); other data types are also supported if desired.
 

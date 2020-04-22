@@ -95,7 +95,7 @@ E.g. the following list item will be replaced by links to all of the header item
 Further Kramdown features are described on the [converter page](https://kramdown.gettalong.org/converter/html.html), and attribute lists are described on the [syntax page](https://kramdown.gettalong.org/syntax.html). 
 Note that source code formatting is configured to use [GitHub Flavoured Markdown](https://help.github.com/articles/github-flavored-markdown/) and "code fences", see below.
 
-### Liquid tags and filters
+### Liquid Tags and Filters
 Jekyll uses the [Liquid](https://shopify.github.io/liquid/) templating language to process files. 
 This process means standard Liquid tags and filters are available. 
 There should be little need to use them, however, as the Markdown format is already quite rich. 
@@ -218,7 +218,7 @@ General links have one of the following formats:
   * `[Link to the section on another page](Page2.md#another-section)` links to a heading on another page. 
 
 
-### Notes and callouts
+### Notes and Callouts
 Notes and callouts can be specified using the blockquote syntax. 
 The converter looks at the first following word to see if it is bold. 
 If so, it applies a callout style. 

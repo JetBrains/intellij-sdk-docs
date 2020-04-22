@@ -1,5 +1,5 @@
 ---
-title: Messaging infrastructure
+title: Messaging Infrastructure
 ---
 <!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
@@ -28,7 +28,7 @@ This class serves as an endpoint at the messaging infrastructure. I.e. clients a
 *  *listener class*  that is a business interface for particular topic.
 Subscribers register implementation of this interface at the messaging infrastructure and publishers may later retrieve object that conforms (IS-A) to it and call any method defined there. Messaging infrastructure takes care on dispatching that to all subscribers of the topic, i.e. the same method with the same arguments will be called on the registered callbacks;
 
-## Message bus
+## Message Bus
 
 Is the core of the messaging system. Is used at the following scenarios:
 
@@ -52,7 +52,7 @@ Also it can be plugged to standard semi-automatic disposing
 [`Disposable`](upsource:///platform/util/src/com/intellij/openapi/Disposable.java)
 );
 
-## Putting altogether
+## Putting Altogether
 
 *Defining business interface and topic*
 
@@ -157,7 +157,7 @@ Broadcast configuration is defined per-topic. Following options are available:
 
 *  _TO\_PARENT_;
 
-# Nested messages
+# Nested Messages
 
 _Nested message_ is a message sent (directly or indirectly) during another message processing.
 The IntelliJ Platform's Messaging infrastructure guarantees that all messages sent to particular topic will be delivered at the sending order.
@@ -182,7 +182,7 @@ Let's see what happens if someone sends a message to the target topic:
 
 # Tips'n'tricks
 
-## Relief listeners management
+## Relief Listeners Management
 
 Messaging infrastructure is very light-weight, so, it's possible to reuse it at local sub-systems in order to relief
 [Observers](https://en.wikipedia.org/wiki/Observer_pattern) construction. Let's see what is necessary to do then:
@@ -201,7 +201,7 @@ Let's compare that with a manual implementation:
 
 4. Manually iterate all listeners and call target callback in all places where new event is fired;
 
-## Avoid shared data modification from subscribers
+## Avoid Shared Data Modification from Subscribers
 
 We had a problem in a situation when two subscribers tried to modify the same document
 ([IDEA-71701](https://youtrack.jetbrains.com/issue/IDEA-71701)).

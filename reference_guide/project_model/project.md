@@ -78,7 +78,7 @@ changes need to be performed in a [write action](/basics/architectural_overview/
 
 Refer to the [project_model](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/project_model/src/main/java/org/intellij/sdk/project/model/ModificationAction.java) code sample to learn how project structure modification can be implemented.
 
-## Receiving Notifications about Project Structure Changes
+## Receiving Notifications About Project Structure Changes
 To receive notifications about changes in project structure (modules or libraries being added or removed, module dependencies being changed, and so on), use the [message bus](/reference_guide/messaging_infrastructure.md) and the `ProjectTopics.PROJECT_ROOTS` topic:
 
 ```java

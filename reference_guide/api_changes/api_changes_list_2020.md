@@ -150,7 +150,7 @@ Images module functionality (package `org.intellij.images.*`) extracted to plugi
     }
     ```
 
-## Changes in Python plugin 2020.1
+## Changes in Python Plugin 2020.1
 
 `com.jetbrains.python.psi.PyCallExpression.PyMarkedCallee` class removed
 : Use `com.jetbrains.python.psi.types.PyCallableType` instead.

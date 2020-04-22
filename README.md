@@ -12,7 +12,7 @@ Please report any content inconsistencies, outdated materials, cosmetic issues a
 ## Working With the Site Locally
 To check out and run a local copy of the site follow the steps described below.
 
-### Pre-requirements
+### Pre-Requirements
 
 *  Make sure you have a 
    [git client](https://git-scm.com/downloads)

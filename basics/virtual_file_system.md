@@ -37,7 +37,7 @@ The VFS itself does not honor ignored files listed in **Settings \| File Types \
 
 During the lifetime of a running instance of an IntelliJ Platform IDE, multiple `VirtualFile` instances may correspond to the same disk file. They are equal, have the same `hashCode` and share the user data.
 
-## Synchronous and asynchronous refreshes
+## Synchronous and Asynchronous Refreshes
 
 From the point of view of the caller, refresh operations can be either synchronous or asynchronous. In fact, the refresh operations are executed according to their own threading policy, and the synchronous flag simply means that the calling thread will be blocked until the refresh operation (which will most likely run on a different thread) is completed.
 
@@ -52,7 +52,7 @@ In nearly all cases, using asynchronous refreshes is strongly preferred. If ther
  
 Synchronous refreshes can cause deadlocks in some cases, depending on which locks are held by the thread invoking the refresh operation.
 
-## Virtual file system events
+## Virtual File System Events
 
 All changes happening in the virtual file system, either as a result of refresh operations or caused by user's actions, are reported as _virtual file system events_. VFS events are always fired in the event dispatch thread, and in a write action.
 

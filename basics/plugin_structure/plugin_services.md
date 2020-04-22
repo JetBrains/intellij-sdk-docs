@@ -67,7 +67,7 @@ Project/Module level service constructor can take `Project`/`Module` argument.
 
 To improve startup performance, avoid any heavy initializations in the constructor.
 
-## Retrieving a service
+## Retrieving a Service
 
 Getting service doesn't need read action and can be performed from any thread. If service is requested from several threads, it will be initialized in the first thread, and other threads will be blocked until service is fully initialized. 
 

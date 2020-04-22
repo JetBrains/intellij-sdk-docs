@@ -51,7 +51,7 @@ The `SimpleLanguageCodeStyleSettingsProvider` implementation is registered with 
  </extensions>
 ```
 
-## 16.6. Run the project
+## 16.6. Run the Project
 In the IDE Development Instance, open the Simple Language code formatting page: **Preferences/Settings \| Editor \| Code Style \| Simple**.
 
 ![Code Style Settings](img/code_style_settings.png)

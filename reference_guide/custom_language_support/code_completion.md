@@ -28,7 +28,7 @@ and a different implementation of
 [`PsiScopeProcessor`](upsource:///platform/core-api/src/com/intellij/psi/scope/PsiScopeProcessor.java)
 which collects all declarations passed to its `processDeclarations()` method and returns them as an array for filling the completion list.
 
-### Contributor-based Completion
+### Contributor-Based Completion
 
 Implementing the
 [`CompletionContributor`](upsource:///platform/analysis-api/src/com/intellij/codeInsight/completion/CompletionContributor.java)

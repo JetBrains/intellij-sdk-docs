@@ -60,7 +60,7 @@ Register the Simple Language color settings page with the IntelliJ Platform in t
   </extensions>
 ```
 
-### 5.7. Run the project
+### 5.7. Run the Project
 In the IDE Development Instance, open the Simple Language highlight settings page: **Preferences/Settings \| Editor \| Color Scheme \| Simple**.
 Each color initially inherits from a _Language Defaults_ value.
 

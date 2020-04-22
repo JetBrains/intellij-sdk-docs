@@ -1,5 +1,5 @@
 ---
-title: File-based Indexes
+title: File-Based Indexes
 ---
 <!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
@@ -19,7 +19,7 @@ When the index implementation indexes a file, it receives the content of a file 
 
 When you access the index, you specify the key that you're interested in and get back the list of files in which the key occurs and the value associated with each file.
 
-## Implementing a file-based index
+## Implementing a File-Based Index
 
 A fairly simple file-based index implementation is the [UI Designer bound forms index](upsource:///plugins/ui-designer/src/com/intellij/uiDesigner/binding/FormClassIndex.java). Refer to it as an example to understand this topic better.
 
@@ -41,7 +41,7 @@ If you don't need to associate any value with the files (i.e. your value type is
 
 > **Note** Please see `com.intellij.util.indexing.DebugAssertions` on how to enable additional debugging assertions during development to assert correct index implementation.
 
-## Accessing a file-based index
+## Accessing a File-Based Index
 
 Access to file-based indexes is performed through the [`FileBasedIndex`](upsource:///platform/indexing-api/src/com/intellij/util/indexing/FileBasedIndex.java) class.
 
@@ -57,7 +57,7 @@ The following primary operations are supported:
 
 > **WARNING** Nested index access is forbidden as it might lead to a deadlock. Collect all necessary data from index A first, then process results while accessing index B.
 
-## Standard indexes
+## Standard Indexes
 
 The *IntelliJ Platform* contains a number of standard file-based indexes. The most useful indexes for plugin developers are:
 

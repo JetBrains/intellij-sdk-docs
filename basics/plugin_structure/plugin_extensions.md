@@ -52,7 +52,7 @@ To clarify this procedure, consider the following sample section of the `plugin.
   </extensions>
 ```
 
-### Extension default properties
+### Extension Default Properties
 The following properties are available always:
 
 - `id` - unique ID
@@ -60,7 +60,7 @@ The following properties are available always:
 - `os` - allows to restrict extension to given OS, e.g., `os="windows"` registers the extension on Windows only 
 
 
-### Extension properties code insight
+### Extension Properties Code Insight
 Several tooling features are available to help configuring bean class extension points in `plugin.xml`.
 
 Properties annotated with [`@RequiredElement`](upsource:///platform/extensions/src/com/intellij/openapi/extensions/RequiredElement.java) are inserted automatically and validated (2019.3 and later).

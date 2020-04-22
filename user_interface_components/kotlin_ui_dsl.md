@@ -224,7 +224,7 @@ checkBox(message("checkbox.smart.tab.reuse"),
        comment = message("checkbox.smart.tab.reuse.inline.help"))
 ```
 
-## Integrating panels with property bindings
+## Integrating Panels with Property Bindings
 
 A panel returned by the `panel` method is an instance of [`DialogPanel`](upsource:///platform/platform-api/src/com/intellij/openapi/ui/DialogPanel.kt). This base class supports the standard `apply`, `reset`, and `isModified` methods.
 
@@ -288,6 +288,6 @@ val panel = panel {
 
 ## FAQ
 
-### One cell is minimum, second one is maximum
+### One Cell Is Minimum, Second One Is Maximum
 
 Set `CCFlags.growX` and `CCFlags.pushX` for some component in the second cell.

@@ -6,7 +6,7 @@ title: Supporting Module Types
 *IntelliJ Platform* provides a set of standard module types. However, an application might need a  module of a type that isn't supported yet.
 This tutorial shows how to register a new module type and link it to the project creation procedure and the UI.
 
-## Pre-requirements
+## Pre-Requirements
 
 Create an empty plugin project, see [Creating a Plugin Project](/tutorials/build_system.md).
 

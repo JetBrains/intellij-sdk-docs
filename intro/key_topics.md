@@ -5,7 +5,7 @@ title: Key Topics
 
 The _IntelliJ Platform_ is very large, and very capable, and its size and scope can initially be very daunting. This page is intended to list the key topics that a plugin author would be interested in, and provide quick links to the most common extension points.
 
-## Essential concepts
+## Essential Concepts
 
 - [Getting Started](/basics/getting_started.md) with plugins.
 - [Testing plugins](/basics/testing_plugins/testing_plugins.md).
@@ -13,11 +13,11 @@ The _IntelliJ Platform_ is very large, and very capable, and its size and scope 
 - [Extension points](/basics/plugin_structure/plugin_extensions.md) - how to register components with extension points, and how to find out what extension points are available.
 - [Virtual files](/basics/architectural_overview/virtual_file.md) - all file access should go through the Virtual File System which abstracts and caches the file system. This means you can work with files that are on the local file system, in a zip file or are old versions from version control.
 
-## Code model
+## Code Model
 
 The _IntelliJ Platform_'s code model is called the PSI - the [Program Structure Interface](/basics/architectural_overview/psi.md). The PSI parses code, builds indexes and creates a semantic model.
 
-## Common extension points
+## Common Extension Points
 
 The _IntelliJ Platform_ is extremely extensible, and most features and services can be extended. Some of the common extension points are:
 

@@ -275,7 +275,7 @@ You can extend existing DOM model at runtime by implementing `com.intellij.util.
 
 If the contributed elements depend on anything other than plain XML file content (used framework version, libraries in classpath, ...), make sure to return `false` from `DomExtender.supportsStubs()`.
 
-### Generating DOM from existing XSD
+### Generating DOM from Existing XSD
 DOM can be generated automatically from existing XSD/DTD. Output correctness/completeness will largely depend on the input scheme and may require additional manual adjustments.
 
 Follow these steps:
@@ -285,7 +285,7 @@ Follow these steps:
 * Select Scheme file and set options, then click "Generate" to generate sources
 * Modify generated sources according to your needs
 
-### IDE support
+### IDE Support
 _Plugin DevKit_ supports the following features for working with DOM related code:
 
 * [`DomElement`](upsource:///xml/dom-openapi/src/com/intellij/util/xml/DomElement.java) - provide implicit usages for all DOM-related methods defined in inheriting classes (to suppress "unused method" warning)
@@ -347,7 +347,7 @@ If you want to be notified on every change in the DOM model, add `DomEventListen
 #### Highlighting Annotations
 The DOM supports error checking and highlighting. It's based on annotations which you add to the DOM element in a special place (don't confuse these annotations with the ones of Java 5 — they are very different). You need to implement the [`DomElementAnnotator`](upsource:///xml/dom-openapi/src/com/intellij/util/xml/highlighting/DomElementsAnnotator.java) interface, and override `DomFileDescription.createAnnotator()` method, and create this annotator there. In `DomElementsAnnotator.annotate(DomElement element, DomElementsProblemsHolder annotator)` you should report about all errors and warnings in the element's sub-tree to the annotator (`DomElementsProblemsHolder.createProblem()`). You should return this annotator in the corresponding virtual method of the `DomFileDescription`.
 
-#### Automatic highlighting (BasicDomElementsInspection)
+#### Automatic Highlighting (BasicDomElementsInspection)
 The following errors can be highlighted automatically by providing an instance of `BasicDomElementsInspection`:
 
 - `@Required` element missing or having empty text
@@ -418,7 +418,7 @@ The case just described is simple, but rare. More often, you really have to inco
 Now you only have to let DOM know that you wish to use this implementation every time you're creating a model element that should implement the necessary interface. Simply register it using
 extension point `com.intellij.dom.implementation` and DOM will generate at run-time the class that not only implements the needed interface, but also extends your abstract class.
 
-### Models across multiple files
+### Models Across Multiple Files
 Many frameworks require a set of XML configuration files ("fileset") to work as one model, so resolving/navigation works across all related DOM files.
 Depending on implementation/plugin, providing filesets implicitly (using existing framework's setup in project) or via user configuration (usually via dedicated `Facet`) can be achieved.
 
@@ -431,7 +431,7 @@ Example can be found in Struts 2 plugin (package `com.intellij.struts2.dom.strut
 DOM elements can be stubbed, so (costly) access to XML/PSI is not necessary (see [Indexing and PSI Stubs](/basics/indexing_and_psi_stubs.md) for similar feature for custom languages). Performance relevant elements, tag or attribute getters can simply be annotated with `@com.intellij.util.xml.Stubbed`.
 Return `true` from `DomFileDescription.hasStubs()` and increase `DomFileDescription.getStubVersion()` whenever you change `@Stubbed` annotations usage in your DOM hierarchy to trigger proper rebuilding of Stubs during indexing.
 
-## Building a DOM-based GUI
+## Building a DOM-Based GUI
 
 ### Forms
 All forms that deal with DOM are organized in a special way. They support two main things: getting data from XML into the UI, and saving UI data to XML. The former is called resetting, the latter — committing. There's [`Committable`](upsource:///xml/dom-openapi/src/com/intellij/util/xml/ui/Committable.java) interface that has corresponding methods: `commit()` and `reset()`. There's also a way of structuring your forms into smaller parts, namely the Composite pattern: [`CompositeCommittable`](upsource:///xml/dom-openapi/src/com/intellij/util/xml/ui/CompositeCommittable.java). Methods `commit()` and `reset()` are invoked automatically on editor tab switch or undo. So you only need to ensure that all your Swing structure is organized in a tree of `CompositeCommittable`, and all the hard work will be done by the IDE.
@@ -460,7 +460,7 @@ The control is bound to a non-editable `JComboBox`, so it can be used to choose 
 ##### BooleanEnumControl
 Sometimes, when there are only 2 alternatives, it's convenient to use a check box instead of combo box. This control is designed specially for such cases. While being (and being bound to) a check box, the control edits not just "true" or "false", but any two String values, or two enum elements. In the last case, it has a boolean _invertedOrder_ parameter, to specify which element corresponds to the checked state. By default _invertedOrder_ is set to `false`, so the first element corresponds to the unchecked state, and the second — to the checked one. If you set the parameter to `true`, the states will swap.
 
-### Editor-based Controls
+### Editor-Based Controls
 Please note that editor-based controls are built on IntelliJ Platform's `Editor` instead of standard `JTextField`. Since there's currently no way to instantiate Editor directly through the Open API, controls are bound to special `JPanel` inheritors, and their `bind()` method adds the necessary content to those panels.
 
 ##### TextControl

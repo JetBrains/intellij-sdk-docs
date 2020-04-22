@@ -10,13 +10,13 @@ To get familiar with the concept of a Run Configuration refer
 section of 
 [IntelliJ IDEA Web Help](https://www.jetbrains.com/idea/help/intellij-idea.html)
 
-## Pre-requirements
+## Pre-Requirements
 
 Create an empty plugin project.
 See 
 [Creating a Plugin Project](/basics/getting_started/creating_plugin_project.md).
 
-## 1. Register a new ConfigurationType
+## 1. Register a New ConfigurationType
 
 Add new *configurationType* extension to the 
 [plugin.xml](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/run_configuration/src/main/resources/META-INF/plugin.xml)

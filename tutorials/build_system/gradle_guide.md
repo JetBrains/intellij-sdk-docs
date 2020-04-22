@@ -70,7 +70,7 @@ Every version of the IntelliJ Platform has a corresponding version of the [JetBr
 A different version of the runtime can be used by specifying the `runIde.jbrVersion` attribute, describing a version of the JetBrains Runtime that should be used by the IDE Development Instance.
 The Gradle plugin will fetch the specified JetBrains Runtime as needed.
 
-### Managing Directories used by the Gradle Plugin
+### Managing Directories Used by the Gradle Plugin
 There are several attributes to control where the Gradle plugin places directories for downloads and for use by the IDE Development Instance.
 
 The location of the [sandbox home](/basics/ide_development_instance.md#sandbox-home-location-for-gradle-based-plugin-projects) directory and its subdirectories can be controlled with Gradle plugin attributes.

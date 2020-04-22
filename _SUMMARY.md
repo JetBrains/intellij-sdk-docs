@@ -124,7 +124,7 @@
 * [External System Integration](reference_guide/frameworks_and_external_apis/external_system_integration.md)
 
 ## Part IV - PSI
-* [What is the PSI?](basics/architectural_overview/psi.md)
+* [What Is the PSI?](basics/architectural_overview/psi.md)
 * [PSI Files](basics/architectural_overview/psi_files.md)
 * [File View Providers](basics/architectural_overview/file_view_providers.md)
 * [PSI Elements](basics/architectural_overview/psi_elements.md)
@@ -133,7 +133,7 @@
 * [Modifying the PSI](basics/architectural_overview/modifying_psi.md)
 * [PSI Cookbook](basics/psi_cookbook.md)
 * [Indexing and PSI Stubs](basics/indexing_and_psi_stubs.md)
-    * [File-based indexes](basics/indexing_and_psi_stubs/file_based_indexes.md)
+    * [File-Based Indexes](basics/indexing_and_psi_stubs/file_based_indexes.md)
     * [Stub Indexes](basics/indexing_and_psi_stubs/stub_indexes.md)
 * Element Patterns
 * Unified AST

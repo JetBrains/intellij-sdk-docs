@@ -141,7 +141,7 @@ If a component has a gradient color, add the words “start” and “end” for
 #### Capitalization 
 Capitalize Object and SubObject. Use lowerCamelCase for property.
 
-#### Do not use
+#### Do Not Use
 
 | Do not use | Use instead |
 |------------|-------------|
@@ -150,7 +150,7 @@ Capitalize Object and SubObject. Use lowerCamelCase for property.
 | `Text` | `Foreground` |
 | `darcula` _and other look-and-feel names_ | _Omit_ | 
 
-#### Swing legacy
+#### Swing Legacy
 
 Some color keys are not named according to the rules above. Such keys are inherited from Java Swing and cannot be renamed for compatibility reasons.
 Do not use naming patterns from the legacy keys.

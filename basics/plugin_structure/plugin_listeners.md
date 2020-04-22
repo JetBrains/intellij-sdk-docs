@@ -61,7 +61,7 @@ public class MyVfsListener implements BulkFileListener {
 }
 ```
 
-## Defining Project-level Listeners
+## Defining Project-Level Listeners
 
 Project-level listeners are registered in the same way, except that the top-level tag is 
 `<projectListeners>`. They can be used to listen to project-level events, for example, tool window operations:
@@ -90,7 +90,7 @@ public class MyToolwindowListener implements ToolWindowManagerListener {
 }
 ```                  
 
-## Additional attributes
+## Additional Attributes
 
 Registration of listeners can be restricted using the following attributes:
 

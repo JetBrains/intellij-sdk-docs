@@ -11,7 +11,7 @@ of
 
 Series of step below show how to filter out and keep visible only text files and directories in the Project View Panel. 
 
-## Pre-requirements
+## Pre-Requirements
 
 Create an empty plugin project.
 See 
@@ -48,7 +48,7 @@ public class TextOnlyTreeStructureProvider implements TreeStructureProvider {
 }
 ```
 
-## 3. Override modify() method
+## 3. Override modify() Method
 
 To implement Tree Structure nodes filtering logic, override `modify()` method.
 The example below shows how to filter out all the Project View nodes except those which correspond to text files and directories.

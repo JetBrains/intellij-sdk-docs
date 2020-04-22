@@ -35,7 +35,7 @@ This method call registers the `SimpleCreatePropertyQuickFix` as the Intention A
 {% include /code_samples/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleAnnotator.java %}
 ```
 
-## 18.4. Run the project
+## 18.4. Run the Project
 Open the test [Java file](/tutorials/custom_language_support/annotator.md#run-the-project) in an IDE Development Instance running the `simple_language_plugin`.
 
 To test `SimpleCreatePropertyQuickFix`, change `simple:website` to `simple:website.url`.

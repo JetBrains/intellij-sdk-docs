@@ -36,7 +36,7 @@ Please see [Incompatible API Changes](/reference_guide/api_changes_list.md) on h
 `org.jetbrains.kotlin.idea.configuration.KotlinProjectConfigurator.addLibraryDependency` abstract method added
 : You need to implement this method and add the logic for updating the configuration in your build system.
 
-## Changes in DataGrip and Database Tools plugin 2017.3
+## Changes in DataGrip and Database Tools Plugin 2017.3
 
 `com.intellij.database.dataSource.DataSourceManager` class removed
 : Use `com.intellij.database.psi.DbPsiFacade` instead.
@@ -53,7 +53,7 @@ Please see [Incompatible API Changes](/reference_guide/api_changes_list.md) on h
 `com.intellij.database.view.DatabaseView.getTreeBuilder` method removed
 : Use `LangDataKeys.PSI_ELEMENT_ARRAY.get(event)` to get Database view selection.
 
-## Changes in PhpStorm and PHP plugin 2017.3
+## Changes in PhpStorm and PHP Plugin 2017.3
 
 `com.jetbrains.php.lang.psi.elements.Function.getReturnType()` method return type changed from `PsiElement` to `PhpReturnType`
 : Before method had been returning a `com.jetbrains.php.lang.psi.elements.ClassReference`. Now method returns `com.jetbrains.php.lang.psi.elements.PhpReturnType`. Method `ReturnType.getClassReference()` can be used if you need just a `ClassReference`. If you need to get the `PhpType`, use `com.jetbrains.php.lang.psi.elements.Function.getReturnType.getType()` method instead.

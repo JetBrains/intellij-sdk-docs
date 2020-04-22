@@ -7,7 +7,7 @@ Please make sure to read the [Code of Conduct](../CODE_OF_CONDUCT.md).
 
 #### Participate in the Community
 
-##### Participate in newsgroups and forums  
+##### Participate in Newsgroups and Forums  
 There are several community [forums and newsgroups](https://intellij-support.jetbrains.com/hc/en-us/community/topics) you can join to discuss the IntelliJ Platform. The forums are an excellent source for users and contributors interested in having technical discussions, answering questions, or resolving potential issues for newcomers.
 
 ##### Link to jetbrains.org
@@ -18,28 +18,28 @@ Help promote the platform and IDE by using your blog, Twitter, Facebook, or subm
 
 #### Help Others Learn
 
-##### Write documents  
+##### Write Documents
 We're always looking for new articles about IntelliJ IDEA features as well as documentation for the IntelliJ Platform. You can write tutorials, how-tos, sample applications, or just share your experience with the IntelliJ Platform. You can publish your documentation on an website or blog, or submit a [pull request](/CONTRIBUTING.md) to the SDK Docs.
 
-##### Produce screencasts  
+##### Produce Screencasts
 Screencasts have recently become very popular as a way to show other developers how to use the tool effectively. You can record a screencast about a particular feature or use case you discovered and would like to share it with the community.
 
 #### Contribute Code
 
-##### File a bug report  
+##### File a Bug Report
 Bug reports take little time to file and are very helpful to developers. This is one of the easiest contributions you can make. When you discover a problem with the IDE or the platform, please report it. Make sure you provide information about your environment (OS, JDK version), steps to reproduce the issue, as well as a written description of the problem. You can file a bug in our [YouTrack issue tracker](https://youtrack.jetbrains.com/issues/IDEA).
 Before submitting an issue, please search for already submitted ones describing the same problem - and if you find one, feel free to vote for it.
 
-##### Help us triage existing bug reports  
+##### Help Triage Existing Bug Reports
 Over the years, users have submitted thousands of issues to the IntelliJ issue tracker. Many of the unresolved issues are no longer applicable to the latest version of IntelliJ IDEA, are duplicates, or require additional information to be resolved. Leaving comments notifying about the status of such issues helps the team keep the issue tracker clean and useful for everyone.
 
-##### Write a plugin  
+##### Write a Plugin
 One of the best ways to contribute a larger piece of code, adding extra functionality to IntelliJ IDEA, is by writing a plug-in. You can submit a plug-in to the [IntelliJ IDEA plug-in repository](https://plugins.jetbrains.com/), making it available for all IntelliJ IDEA users. When writing a plug-in, you have control over the code and don't need to sign the contribution agreement. 
 
-##### Submit a patch  
+##### Submit a Patch
 If you would like to improve the code in the IntelliJ Platform or the core functionality of IntelliJ IDEA, you can submit a patch in [IntelliJ's YouTrack bug database](https://youtrack.jetbrains.com/issues/IDEA) . You can either file a new issue with the patch attached, or attach a patch to an issue submitted by another user. When writing a patch, please make sure to follow the [IntelliJ Coding Guidelines](intellij_coding_guidelines.md).  
 Alternatively, you can fork [the IntelliJ IDEA repository on GitHub](https://github.com/JetBrains/intellij-community), make the changes in your fork and send us a pull request.
 A developer will review your patch and, if it meets the [quality criteria](intellij_coding_guidelines.md) and fits well with the rest of the code, you'll be notified about the acceptance of the patch. You will also need to sign the [contribution agreement](https://www.jetbrains.org/display/IJOS/Contributor+Agreement) in order to complete your contribution.
 
-##### Become a committer and commit code directly
+##### Become a Committer
 Developers with a long history of submitting high-quality patches can gain direct commit rights.

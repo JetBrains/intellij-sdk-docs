@@ -14,7 +14,7 @@ There are two types of extension points:
  * _Bean_ extension points allow other plugins to extend your plugins with _data_. You specify the fully qualified
    name of an extension class, and other plugins will provide data which will be turned into instances of that class.  
 
-## How to declare extension points
+## How to Declare Extension Points
 
 You can declare extensions and extension points in the plugin configuration file `plugin.xml`, within the `<extensions>` and `<extensionPoints>` sections, respectively.
 
@@ -89,7 +89,7 @@ _anotherPlugin/META-INF/plugin.xml_
 </idea-plugin>
 ```
 
-## Using extension points
+## Using Extension Points
 To refer to all registered extension instances at runtime, declare an [`ExtensionPointName`](upsource:///platform/extensions/src/com/intellij/openapi/extensions/ExtensionPointName.java) passing in the fully-qualified name matching its [declaration in `plugin.xml`](#how-to-declare-extension-points).
 
 _myPlugin/src/com/myplugin/MyExtensionUsingService.java_
@@ -111,7 +111,7 @@ public class MyExtensionUsingService {
 
 A gutter icon for the `ExtensionPointName` declaration allows navigating to the corresponding `<extensionPoint>` declaration in `plugin.xml`.
 
-## Dynamic extension points
+## Dynamic Extension Points
 To support [Dynamic Plugins](dynamic_plugins.md) (2020.1 and later), an extension point must adhere to specific usage rules:
 
 - extensions are enumerated on every use and extensions instances are not stored anywhere

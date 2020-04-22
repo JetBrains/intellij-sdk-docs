@@ -3,7 +3,7 @@ title: General Threading Rules
 ---
 <!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-## Read/write lock
+## Read/Write Lock
 
 In general, code-related data structures in the *IntelliJ Platform* are covered by a single reader/writer lock. This applies to PSI, VFS and project root model.
 
@@ -49,7 +49,7 @@ The `checkCanceled()` should be called often enough to guarantee smooth cancella
 have a lot of `checkCanceled()` calls inside. But if your process does lengthy non-PSI activity, you might need to
 insert explicit `checkCanceled()` calls so that it happens frequently, e.g. on each _Nth_ loop iteration.
 
-## Read action cancellability
+## Read Action Cancellability
 
 Background threads shouldn't take plain read actions for a long time. The reason is that if the UI thread needs a write action (e.g. the user types something), it must be acquired as soon as possible, otherwise the UI will freeze until all background threads have released their read actions.
 

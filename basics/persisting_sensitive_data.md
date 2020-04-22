@@ -5,10 +5,10 @@ title: Persisting Sensitive Data
 
 The Credentials Store API allows you to securely store sensitive user data, like passwords, server URLs, etc.
 
-## How to use
+## How to Use
 Use [`PasswordSafe`](upsource:///platform/platform-api/src/com/intellij/ide/passwordSafe/PasswordSafe.kt) to work with credentials.
 
-### Retrieve stored credentials
+### Retrieve Stored Credentials
 
 ```java
     String key = null; // e.g. serverURL, accountID
@@ -27,7 +27,7 @@ Use [`PasswordSafe`](upsource:///platform/platform-api/src/com/intellij/ide/pass
     }    
 ```
 
-### Store credentials
+### Store Credentials
 
 ```java
     CredentialAttributes credentialAttributes = createCredentialAttributes(serverId); // see previous sample

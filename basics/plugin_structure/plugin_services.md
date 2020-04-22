@@ -90,6 +90,7 @@ MyProjectService projectService = project.service<MyProjectService>()
 This minimal sample shows [light](#light-services) `ProjectService` interacting with another project level service `AnotherService` (not shown here).
 
 _ProjectService.java_
+
 ```java         
   @Service
   public final class ProjectService {

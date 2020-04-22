@@ -13,12 +13,14 @@ The Simple Language plugin implements the less complex of the two methods, refer
 For this tutorial, the `simple_language_plugin` provides custom completion for values in Simple Language property files.
 Create a completion contributor by subclassing [`CompletionContributor`](upsource:///platform/analysis-api/src/com/intellij/codeInsight/completion/CompletionContributor.java).
 This rudimentary completion contributor always adds "Hello" to the results set, regardless of context:
+
 ```java
 {% include /code_samples/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleCompletionContributor.java %}
 ```
 
 ## 9.2. Register the Completion Contributor
 The `SimpleCompletionContributor` implementation is registered in the plugin configuration file with the IntelliJ Platform using the `com.intellij.completion.contributor` extension point.
+
 ```xml
   <extensions defaultExtensionNs="com.intellij">
     <completion.contributor language="Simple" 

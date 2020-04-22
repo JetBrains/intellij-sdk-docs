@@ -23,12 +23,14 @@ Add a new `com.intellij.moduleType` implementation with the IntelliJ Platform in
 
 ## 2. Implement ModuleType Interface
 Create the `DemoModuleType` implementation based on [`ModuleType`](upsource:///platform/lang-api/src/com/intellij/openapi/module/ModuleType.java).
+
 ```java
 {% include /code_samples/module/src/main/java/org/intellij/sdk/module/DemoModuleType.java %}
 ```
 
 ## 3. Implement Custom Module Builder
 Create `DemoModuleBuilder` based on [`ModuleBuilder`](upsource:///platform/lang-api/src/com/intellij/ide/util/projectWizard/ModuleBuilder.java).
+
 ```java
 {% include /code_samples/module/src/main/java/org/intellij/sdk/module/DemoModuleBuilder.java %}
 ```
@@ -36,6 +38,7 @@ Create `DemoModuleBuilder` based on [`ModuleBuilder`](upsource:///platform/lang-
 ## 4. Provide Custom Wizard Steps
 Provide a straightforward implementation of UI components for the project creating stage.
 Create a generic `DemoModuleWizardStep` based on [ModuleWizardStep](upsource:///platform/lang-api/src/com/intellij/ide/util/projectWizard/ModuleWizardStep.java)
+
 ```java
 {% include /code_samples/module/src/main/java/org/intellij/sdk/module/DemoModuleWizardStep.java %}
 ```

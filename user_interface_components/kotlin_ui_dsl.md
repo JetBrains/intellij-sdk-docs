@@ -76,6 +76,7 @@ There are two ways to add child components. The recommended way is to use factor
   ```
 
 These methods also support **property bindings**, allowing you to automatically load the value displayed in the component from a property and to store it back. The easiest way to do that is to pass a reference to a Kotlin bound property:
+
 ```kotlin
 checkBox("Show tabs in single row", uiSettings::scrollTabLayoutInEditor)
 ```
@@ -92,13 +93,14 @@ Alternatively, many factory methods support specifying a getter/setter pair for 
 ```
 
 If you want to add a component for which there are no factory methods, you can simply invoke an instance of your component, using the `()` overloaded operator:
-  ```kotlin
+
+```kotlin
   val userField = JTextField(credentials?.userName)
   panel() {
     row { userField(grow, wrap) }
   }
   // use userField variable somehow
-  ```
+```
 
 ## Supported Components
 

@@ -52,6 +52,7 @@ The format of an `updatePlugins.xml` file is simply a list of sequential element
   </plugin>
 </plugins>
 ```
+
 <br>
 **Note:** 
 * An `updatePlugins.xml` file must contain at least one set of `<plugin></plugin>` elements.  

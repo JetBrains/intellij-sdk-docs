@@ -11,18 +11,21 @@ The Simple Language grammar must also be defined to generate a parser.
 
 ## 3.1. Define a Token Type
 Create `SimpleTokenType` in the `org.intellij.sdk.language.psi` package (see the `simple_language_plugin` code sample) by subclassing `IElementType`.
+
 ```java
 {% include /code_samples/simple_language_plugin/src/main/java/org/intellij/sdk/language/psi/SimpleTokenType.java %}
 ```
 
 ## 3.2. Define an Element Type
 Create the `SimpleElementType` in the `org.intellij.sdk.language.psi` package by subclassing `IElementType`.
+
 ```java
 {% include /code_samples/simple_language_plugin/src/main/java/org/intellij/sdk/language/psi/SimpleElementType.java %}
 ```
 
 ## 3.3. Define the Grammar
 Define a grammar for the Simple Language in the `com/intellij/sdk/language/Simple.bnf` file.
+
 ```java
 {
   parserClass="org.intellij.sdk.language.parser.SimpleParser"

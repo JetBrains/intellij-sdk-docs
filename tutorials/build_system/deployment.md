@@ -30,6 +30,7 @@ You can store the Hub Token in [Gradle properties](https://docs.gradle.org/curre
 
 If you place a `gradle.properties` file containing your Hub Permanent Token in your project's root directory, please ensure your version control tool ignores this file. 
 For example in Git, you can add the following line to your `.gitignore` file:
+
 ```
 gradle.properties
 ```
@@ -43,6 +44,7 @@ intellijPublishToken=YOUR_HUB_TOKEN_HERE
 ```
 
 Then refer to these values in `publishPlugin` task in your `build.gradle` file:
+
 ```groovy
 publishPlugin {
     token intellijPublishToken
@@ -52,6 +54,7 @@ publishPlugin {
 ### Using Environment Variables
 Alternatively, and possibly slightly safer because you cannot accidentally commit your token to version control, you can provide your token via an environment variable. 
 For example, start by defining an environment variable such as:
+
 ```bash
 export ORG_GRADLE_PROJECT_intellijPublishToken='YOUR_HUB_TOKEN_HERE'
 ```
@@ -61,6 +64,7 @@ Environment variables visible to all processes need to be defined in [Environmen
 
 Now provide the environment variable in the run configuration with which you run the `publishPlugin` task locally. 
 To do so, create a Gradle run configuration (if not already done), choose your Gradle project, specify the `publishPlugin` task, and then add the environment variable. 
+
 ```groovy
 publishPlugin {
   token = System.getenv("ORG_GRADLE_PROJECT_intellijPublishToken")
@@ -83,6 +87,7 @@ You may wish to verify this by [installing your plugin from disk](https://www.je
 ### Publishing a Plugin
 Once you are confident the plugin works as intended, make sure the plugin version is updated, as the JetBrains Plugin repository won't accept multiple artifacts with the same version. 
 To deploy a new version of your plugin to the JetBrains plugin repository, execute the following Gradle command:  
+
 ```bash
 gradle publishPlugin
 ```
@@ -93,6 +98,7 @@ If successfully deployed, any users who currently have your plugin installed on 
 ### Specifying a Release Channel
 You may also deploy plugins to a release channel of your choosing, by configuring the `publishPlugin.channels` property. 
 For example:
+
 ```groovy
 publishPlugin {
     channels 'beta'

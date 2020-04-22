@@ -166,6 +166,7 @@ Starting on the left end of the line, and using the arrow key to advance a line-
     System.out.println( str );
   }
 ```
+
 The apparent discontinuity in Logical Position is because the RTL portion of the string is treated (or counted) in the logical character order in which it would be written. 
 The apparent continuity in Visual Position is because the RTL portion of the string is counted in the visual order in which it is displayed in the code.
 

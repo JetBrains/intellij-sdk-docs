@@ -143,6 +143,7 @@ Images module functionality (package `org.intellij.images.*`) extracted to plugi
 : The dependency [must be declared](/basics/plugin_structure/plugin_dependencies.md) explicitly now:
   * Add `<depends>com.intellij.platform.images</depends>` in `plugin.xml`
   * Add to `build.gradle`:
+    
     ```groovy
     intellij {
       plugins = ['platform-images']

@@ -34,6 +34,7 @@ To create a new module type and an extension
 ```xml
 <moduleType id="MY_MODULE" implementationClass="st.redline.smalltalk.module.MyModuleType"/>
 ```
+
 to the
 [`plugin.xml`](https://github.com/bulenkov/RedlineSmalltalk/blob/master/resources/META-INF/plugin.xml).
 A custom module type should extend the
@@ -95,6 +96,7 @@ Method
 ```java
 public void moduleCreated(@NotNull final Module module);
 ```
+
 executed tasks right after a module has been created,
 these may include configuring roots looking up for an SDK and setting it up, adding a specific facet if required and others.
 For more details please see the following
@@ -108,6 +110,7 @@ Adding new steps to the module wizard can be done by overriding the
 ```java
 public ModuleWizardStep[] createWizardSteps(WizardContext wizardContext, ModulesProvider modulesProvider);
 ```
+
 method in a custom
 [module builder](https://github.com/bulenkov/RedlineSmalltalk/blob/master/src/st/redline/smalltalk/module/RsModuleBuilder.java).
 If this method returns a non-empty array of ModuleWizardStep objects, new steps will be shown in their indexing order while creating a new module.

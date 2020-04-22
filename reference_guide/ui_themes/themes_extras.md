@@ -30,6 +30,7 @@ The next step is to add the color scheme to the UI Theme plugin project:
   The `value` is the name of the editor color scheme file.
 
 The example below adds an editor scheme named "Lightning" to the _Theme Basics_ custom UI Theme:
+
 ```json
 {
   "name": "Theme Basics",
@@ -45,11 +46,13 @@ The example below adds an editor scheme named "Lightning" to the _Theme Basics_ 
 When an editor color scheme is exported as a file, the color options appear as `name`-`value` attributes of `option` elements.
 The `name` is the aspect of the editor to be changed, and the `value` is the new color in six-digit RGB or eight-digit RGBA hexadecimal notation.
 For example, the snippet below sets the color of the line numbers displayed in the editor:
+
 ```xml
 <colors>
   <option name="LINE_NUMBERS_COLOR" value="999999" />
 </colors>
 ```
+
 For additional examples of `name` and `value` attributes, review the editor color scheme XML file for the [High Contrast editor scheme](upsource:///platform/platform-resources/src/themes/highContrastScheme.xml).
 
 ### Customizing Version Control File Status Colors
@@ -57,6 +60,7 @@ As [described above](#creating-a-custom-editor-scheme-using-settingspreferences)
 No other procedure is necessary to customize these colors.
 In the exported color scheme file the `name` is the VCS file status, and the `value` is the new color corresponding to that status.
 For example, customized VCS colors for a subset of file statuses will appear in the editor scheme file as:
+
 ```xml
 <colors>
   <option name="FILESTATUS_ADDED" value="62cc47" />
@@ -65,6 +69,7 @@ For example, customized VCS colors for a subset of file statuses will appear in 
 </colors>
 
 ```
+
 For additional examples of `FILESTATUS` color `name` attributes, see the editor color scheme XML file for the [High Contrast editor scheme](upsource:///platform/platform-resources/src/themes/highContrastScheme.xml).
 
 ### Customizing Editor Scroll Bar Colors
@@ -82,6 +87,7 @@ In some cases `usage` itself can be compound such as `ScrollBar.Mac.Transparent.
 In these compound cases, the last portion of the compound `usage` still describes where the color is to be applied.
 
 Note that the following example snippet uses an eight-digit hexadecimal color `value` to give `ScrollBar.Mac.thumbColor` transparency:
+
 ```xml
 <color>
 <option name="ScrollBar.Mac.trackColor" value="000000"/>
@@ -142,6 +148,7 @@ A `value` of 100 is opaque.
 
 The following example adds an image of the Austrian countryside to the _Theme Basics_
 Theme description file:
+
 ```json
 {
   "name": "Theme Basics",

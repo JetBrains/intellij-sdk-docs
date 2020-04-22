@@ -59,6 +59,7 @@ As SVG icons can be scaled arbitrarily, they provide better results on HiDPI env
 A base size denoting the size (in the user space) of the rendered image in 1x scale should be provided. The size is set via the `width` and `height` attributes omitting the size units. If unspecified, it defaults to 16x16 pixels.
 
 A minimal SVG icon file:
+
 ```xml
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16">
  <rect width="100%" height="100%" fill="green"/>

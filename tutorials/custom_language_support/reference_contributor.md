@@ -15,11 +15,13 @@ Resolving references means the ability to go from the usage of an element to its
 The classes below show how the Simple Language fulfills the need to implement `PsiNamedElement`.
 
 The `SimpleNamedElement` interface is subclassed from [`PsiNameIdentifierOwner`](upsource:///platform/core-api/src/com/intellij/psi/PsiNameIdentifierOwner.java).
+
 ```java
 {% include /code_samples/simple_language_plugin/src/main/java/org/intellij/sdk/language/psi/SimpleNamedElement.java %}
 ```
  
 The `SimpleNamedElementImpl` class implements the `SimpleNamedElement` interface and extends [`ASTWrapperPsiElement`](upsource:///platform/core-impl/src/com/intellij/extapi/psi/ASTWrapperPsiElement.java).
+
 ```java
 {% include /code_samples/simple_language_plugin/src/main/java/org/intellij/sdk/language/psi/impl/SimpleNamedElementImpl.java %}
 ```
@@ -63,6 +65,7 @@ public class SimplePsiImplUtil {
 
 ## 10.3. Define an Element Factory
 The `SimpleElementFactory` provides methods for creating `SimpleFile`.
+
 ```java
 package org.intellij.sdk.language.psi;
 
@@ -88,6 +91,7 @@ public class SimpleElementFactory {
 Now make corresponding changes to the `Simple.bnf` grammar file by replacing the `property` definition with the lines below.
 Don't forget to regenerate the parser after updating the file! 
 Right-click on the `Simple.bnf` file and select **Generate Parser Code**.
+
 ```java
 property ::= (KEY? SEPARATOR VALUE?) | KEY {
   mixin="org.intellij.sdk.language.psi.impl.SimpleNamedElementImpl"
@@ -100,6 +104,7 @@ property ::= (KEY? SEPARATOR VALUE?) | KEY {
 Now define a reference class to resolve a property from its usage.
 This requires extending [`PsiReferenceBase`](upsource:///platform/core-api/src/com/intellij/psi/PsiReferenceBase.java) and implementing [`PsiPolyVariantReference`](upsource:///platform/core-api/src/com/intellij/psi/PsiPolyVariantReference.java). 
 The latter enables the reference to resolve to more than one element or to resolve result(s) for a superset of valid resolve cases.
+
 ```java
 {% include /code_samples/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleReference.java %}
 ```
@@ -108,12 +113,14 @@ The latter enables the reference to resolve to more than one element or to resol
 A reference contributor allows the `simple_language_plugin` to provide references to Simple Language from elements in other languages such as Java.
 Create `SimpleReferenceContributor` by subclassing [`PsiReferenceContributor`](upsource:///platform/core-api/src/com/intellij/psi/PsiReferenceContributor.java).
 Contribute a reference to each usage of a property:
+
 ```java
 {% include /code_samples/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleReferenceContributor.java %}
 ```
 
 ## 10.7. Register the Reference Contributor
 The `SimpleReferenceContributor` implementation is registered with the IntelliJ Platform using the `com.intellij.psi.referenceContributor` extension point.
+
 ```xml
   <extensions defaultExtensionNs="com.intellij">
     <psi.referenceContributor implementation="org.intellij.sdk.language.SimpleReferenceContributor"/>
@@ -134,12 +141,14 @@ The [Rename refactoring](https://www.jetbrains.com/help/idea/rename-refactorings
 Support for in-place refactoring is specified explicitly in a refactoring support provider.
 Create `SimpleRefactoringSupportProvider` by subclassing [`RefactoringSupportProvider`](upsource:///platform/lang-api/src/com/intellij/lang/refactoring/RefactoringSupportProvider.java)
 As long as an element is a `SimpleProperty` it is allowed to be refactored:
+
 ```java
 {% include /code_samples/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleRefactoringSupportProvider.java %}
 ```
 
 ## 10.10. Register the Refactoring Support Provider
 The `SimpleRefactoringSupportProvider` implementation is registered with the IntelliJ Platform in the plugin configuration file using the `com.intellij.lang.refactoringSupport` extension point.
+
 ```xml
   <extensions defaultExtensionNs="com.intellij">
     <lang.refactoringSupport language="Simple"  

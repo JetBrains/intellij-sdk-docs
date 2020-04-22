@@ -14,12 +14,14 @@ The `SimpleAnnotator` subclasses [`Annotator`](upsource:///platform/analysis-api
 Consider a literal string that starts with "simple:" as a prefix of a Simple Language key.
 It isn't part of the Simple Language, but it is a useful convention for detecting Simple Language keys embedded as string literals in other languages, like Java.
 Annotate the `simple:key` literal expression, and differentiate between a well-formed vs. an unresolved property: 
+
 ```java
 {% include /code_samples/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleAnnotator.java %}
 ```
 
 ## 7.2. Register the Annotator
 Using the `com.intellij.annotator` extension point in the plugin configuration file, register the Simple Language annotator class with the IntelliJ Platform:
+
 ```xml
   <extensions defaultExtensionNs="com.intellij">
     <annotator language="JAVA" implementationClass="org.intellij.sdk.language.SimpleAnnotator"/>
@@ -28,6 +30,7 @@ Using the `com.intellij.annotator` extension point in the plugin configuration f
 
 ## 7.3. Run the Project
 As a test, define the following Java file containing a Simple Language `prefix:value` pair:
+
 ```java
 public class Test {
     public static void main(String[] args) {

@@ -21,6 +21,7 @@ You can declare extensions and extension points in the plugin configuration file
 To declare extension points in your plugin, add an `<extensionPoints>` section to your `plugin.xml`. Then insert a child element `<extensionPoint>` that defines the extension point name and the name of a bean class or an interface that is allowed to extend the plugin functionality in the `name`, `beanClass` and `interface` attributes, respectively.
 
 _myPlugin/META-INF/plugin.xml_
+
 ```xml            
 <idea-plugin>
   <id>my.plugin</id>
@@ -46,6 +47,7 @@ The plugin that contributes to the extension point will read those properties fr
 To clarify this, consider the following sample `MyBeanClass` bean class used in the above `plugin.xml` file:
 
 _myPlugin/src/com/myplugin/MyBeanClass.java_
+
 ```java
 public class MyBeanClass extends AbstractExtensionPointBean {
   @Attribute("key")
@@ -69,6 +71,7 @@ public class MyBeanClass extends AbstractExtensionPointBean {
 For above extension points usage in _anotherPlugin_ would look like this (see also [Declaring Extensions](plugin_extensions.md#declaring-extensions)):
  
 _anotherPlugin/META-INF/plugin.xml_
+
 ```xml
 <idea-plugin>
   <id>another.plugin</id>
@@ -90,6 +93,7 @@ _anotherPlugin/META-INF/plugin.xml_
 To refer to all registered extension instances at runtime, declare an [`ExtensionPointName`](upsource:///platform/extensions/src/com/intellij/openapi/extensions/ExtensionPointName.java) passing in the fully-qualified name matching its [declaration in `plugin.xml`](#how-to-declare-extension-points).
 
 _myPlugin/src/com/myplugin/MyExtensionUsingService.java_
+
 ```java 
 public class MyExtensionUsingService {
  
@@ -104,6 +108,7 @@ public class MyExtensionUsingService {
     }
 }
 ```
+
 A gutter icon for the `ExtensionPointName` declaration allows navigating to the corresponding `<extensionPoint>` declaration in `plugin.xml`.
 
 ## Dynamic extension points
@@ -113,6 +118,7 @@ To support [Dynamic Plugins](dynamic_plugins.md) (2020.1 and later), an extensio
 - alternatively, an `ExtensionPointChangeListener` can perform necessary updates of data structures (register via `ExtensionPointName.addExtensionPointListener()`)
 
 Extension points matching these conditions can then be marked as _dynamic_ by adding `dynamic="true"` in their declaration:
+
 ```xml
   <extensionPoints>
     <extensionPoint name="myDynamicExtensionPoint" beanClass="com.myplugin.MyBeanClass" dynamic="true" />

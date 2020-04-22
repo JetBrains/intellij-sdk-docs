@@ -60,6 +60,7 @@ To display a list of available IntelliJ Platform modules, invoke the [code compl
 ### 3.1 Configuring plugin.xml
 In the `plugin.xml`, add a `<depends>` tag with the ID of the dependency plugin as its content.
 Continuing with the example from [Section 2](#2-project-setup) above, the dependency declaration in `plugin.xml` would be:
+
 ```xml
 <depends>org.jetbrains.kotlin</depends>
 ```
@@ -72,6 +73,7 @@ add `optional="true" config-file="otherconfig.xml"` to the `<depends>` tag.
 
 For example, if a plugin project adds additional highlighting for Java and Kotlin files, use the following setup. 
 The main `plugin.xml` will define an annotator for Java and specify an optional dependency on the Kotlin plugin:
+
 ```xml
 <idea-plugin>
    ...
@@ -84,6 +86,7 @@ The main `plugin.xml` will define an annotator for Java and specify an optional 
 ```
 
 Then create a file called `withKotlin.xml`, in the same directory as the main `plugin.xml` file. In that file, define an annotator for Kotlin:
+
 ```xml
 <idea-plugin>
    <extensions defaultExtensionNs="com.intellij">

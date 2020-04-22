@@ -12,12 +12,14 @@ The [`Commenter`](upsource:///platform/core-api/src/com/intellij/lang/Commenter.
 ## 17.1. Define a Commenter
 The Simple Language commenter subclasses `Commenter`.
 This commenter defines the line comment prefix as "#".
+
 ```java
 {% include /code_samples/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleCommenter.java %}
 ```
 
 ## 17.2. Register the Commenter
 The `SimpleCommenter` implementation is registered with the IntelliJ Platform in the plugin configuration file using the `com.intellij.lang.commenter` extension point. 
+
 ```xml
   <extensions defaultExtensionNs="com.intellij">
     <lang.commenter language="Simple" implementationClass="org.intellij.sdk.language.SimpleCommenter"/>

@@ -51,6 +51,7 @@ To clarify this procedure, consider the following sample section of the `plugin.
      <myExtensionPoint key="keyValue" implementationClass="com.myplugin.MyExtensionPointImpl" />
   </extensions>
 ```
+
 ### Extension default properties
 The following properties are available always:
 
@@ -71,6 +72,7 @@ Property names matching the following list will resolve to FQN:
 - ending with `Class` (case-sensitive)
 
 A required parent type can be specified in the extension point declaration via nested `<with>`:
+
 ```xml
     <extensionPoint name="myExtension" beanClass="MyExtensionBean">
       <with attribute="psiElementClass" implements="com.intellij.psi.PsiElement"/>

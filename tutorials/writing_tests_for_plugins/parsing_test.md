@@ -27,6 +27,7 @@ private recover_property ::= !(KEY|SEPARATOR|COMMENT)
 ## 2.2. Define Input Test Data
 Create the *ParsingTestData.simple* properties file in the *testData* folder.
 Note the last few lines define a purposely incorrect key.
+
 ```bash
 {% include /code_samples/simple_language_plugin/src/test/testData/ParsingTestData.simple %}
 ```
@@ -49,6 +50,7 @@ Create a file *ParsingTestData.txt* with the copied PSI tree.
 ## 2.4. Define a Parsing Test
 Subclass [`ParsingTestCase`](upsource:///platform/testFramework/src/com/intellij/testFramework/ParsingTestCase.java) to create `SimpleParsingTest`:
 Override `getTestDataPath()`, and return the path from the root of this plugin module to the `testData` directory.
+
 ```java
 {% include /code_samples/simple_language_plugin/src/test/java/org/intellij/sdk/language/SimpleParsingTest.java %}
 ```

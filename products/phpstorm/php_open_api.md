@@ -61,8 +61,6 @@ public interface PhpTypeProvider2 {
 Our implementation: includes a Completion contributor for the parameter values too.
 
 ```java
-/**
- */
 public class PhpStaticFactoryTypeProvider extends CompletionContributor implements PhpTypeProvider2 {
  
   private static final Key<CachedValue<Map<String, Map<String, String>>>> STATIC_FACTORY_TYPE_MAP =

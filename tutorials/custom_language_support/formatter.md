@@ -15,6 +15,7 @@ The formatting model represents the formatting structure of a file as a tree of 
 The goal is to cover each PSI element with such a block. 
 Since each block builds its children's blocks, it can generate extra blocks or skip any PSI elements.
 Define `SimpleBlock` based on [`AbstractBlock`](upsource:///platform/lang-impl/src/com/intellij/psi/formatter/common/AbstractBlock.java)
+
 ```java
 {% include /code_samples/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleBlock.java %}
 ```
@@ -23,12 +24,14 @@ Define `SimpleBlock` based on [`AbstractBlock`](upsource:///platform/lang-impl/s
 Define a formatter that removes extra spaces except for the single spaces around the property separator.
 For example, reformat "foo  = &nbsp;&nbsp;&nbsp;&nbsp;bar" to `foo = bar`.
 Create `SimpleFormattingModelBuilder` by subclassing [`FormattingModelBuilder`](upsource:///platform/lang-api/src/com/intellij/formatting/FormattingModelBuilder.java).
+
 ```java
 {% include /code_samples/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleFormattingModelBuilder.java %}
 ```
 
 ## 15.3. Register the Formatter
 The `SimpleFormattingModelBuilder` implementation is registered with the IntelliJ Platform in the plugin configuration file using the `com.intellij.lang.formatter` extension point. 
+
 ```xml
  <extensions defaultExtensionNs="com.intellij">
     <lang.formatter language="Simple"  

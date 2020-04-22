@@ -27,6 +27,7 @@ The correct Ruby plugin version is also determined from the Ruby plugin version 
 The dependency on the Ruby plugin APIs must be declared in the `plugin.xml` file.
 As described in [Modules Specific to Functionality](/basics/getting_started/plugin_compatibility.md#modules-specific-to-functionality) table, the `<depends>` elements must contain `com.intellij.modules.ruby`.
 The dependency declaration is illustrated in the `plugin.xml` snippet below:
+
 ```xml
   <!-- Requires the Ruby plugin -->
    <depends>com.intellij.modules.ruby</depends> 

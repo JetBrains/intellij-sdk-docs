@@ -10,6 +10,7 @@ This test verifies the Simple Language folding builder, implemented in the [Fold
 ## 7.1. Define Test Data
 Create a file `FoldingTestData.java` in the `testData` directory.
 This java file contains markup instructions for three different cases of code folding.
+
 ```java
 {% include /code_samples/simple_language_plugin/src/test/testData/FoldingTestData.java %}
 ```
@@ -17,6 +18,7 @@ This java file contains markup instructions for three different cases of code fo
 ## 7.2. Define a Test
 Add the `testFolding()` method to the `SimpleCodeInsightTest` class [previously defined](completion_test.md#define-a-test).
 This test method reuses the `DefaultTestData.simple` properties file. 
+
 ```java
   public void testFolding() {
     myFixture.configureByFile("DefaultTestData.simple");

@@ -162,6 +162,7 @@ public class DynamicActionGroup extends ActionGroup {
 ### Registering a Variable Action Group
 To register the dynamic menu group, a `<group>` attribute needs to be placed in the `<actions>` section of [`plugin`.xml](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/action_basics/src/main/resources/META-INF/plugin.xml).
 When enabled, this group appears at the entry just below the [Static Grouped Actions](#binding-action-groups-to-ui-components) in the **Tools** menu:
+
 ```xml
     <group id="org.intellij.sdk.action.DynamicActionGroup" class="org.intellij.sdk.action.DynamicActionGroup" popup="true"
             text="Dynamically Grouped Actions" description="SDK dynamically grouped action example" icon="SdkIcons.Sdk_default_icon">

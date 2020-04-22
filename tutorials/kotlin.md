@@ -12,7 +12,7 @@ In addition to [null safety](https://kotlinlang.org/docs/reference/null-safety.h
 Likewise, it is easy to customize the behavior of internal classes in IntelliJ IDEA, with [extensions](https://kotlinlang.org/docs/reference/extensions.html). For example, it is common practice to [guard logging statements](https://www.slf4j.org/faq.html#logging_performance) to avoid the cost of parameter construction, leading to the following ceremony when using the log:
 
 ```java
-if(logger.isDebugEnabled()) {
+if (logger.isDebugEnabled()) {
   logger.debug("...");
 }
 ```

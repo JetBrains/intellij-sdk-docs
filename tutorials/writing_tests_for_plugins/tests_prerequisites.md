@@ -26,6 +26,7 @@ IntelliJ IDEA does everything automatically when the utility class [`LightJavaCo
 The system properties are defined in the `build.gradle` file using the snippet shown below.
 The `/path/to/community/` is set to the absolute path to the root directory of the local intellij-community source on the machine running the tests.
 For example, on macOS the `path/to/community/` might be `/Users/<user name>/Documents/<IJ community source root>/`
+
 ```groovy
   test {
     systemProperty "idea.home.path", "/path/to/community/"

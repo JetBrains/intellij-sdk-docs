@@ -45,6 +45,7 @@ Messages.showInfoMessage("Source roots for the " + projectName + " plugin:\n" + 
 
 ### Checking if a File Belongs to a Project
 Use [`ProjectFileIndex`](upsource:///platform/projectModel-api/src/com/intellij/openapi/roots/ProjectFileIndex.java) to get this information:
+
 ```java
 ProjectFileIndex projectFileIndex = ProjectRootManager.getInstance(project).getFileIndex();
 ```
@@ -52,6 +53,7 @@ ProjectFileIndex projectFileIndex = ProjectRootManager.getInstance(project).getF
 ### Getting the Content or Source Root to Which the a File or Directory Belongs
 Use the `ProjectFileIndex.getContentRootForFile()` and `ProjectFileIndex.getSourceRootForFile()` methods. 
 For example:
+
 ```java
 VirtualFile moduleContentRoot = ProjectRootManager.getInstance(project).getFileIndex().getContentRootForFile(virtualFileOrDirectory);
 VirtualFile moduleSourceRoot = ProjectRootManager.getInstance(project).getFileIndex().getSourceRootForFile(virtualFileOrDirectory);

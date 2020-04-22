@@ -76,6 +76,7 @@ For executing JS code and callbacks (see below), use the wrapped `CefBrowser` in
 By default, `JBCefBrowser` is created with implicit `JBCefClient` (disposed automatically). It is possible to pass your own `JBCefClient` (disposed by the developer). 
 
 For accessing:
+
 ```java
   JBCefClient getJBCefClient();
 ```

@@ -42,6 +42,7 @@ Specifying the target as a product-specific `intellij.type` attribute has two ad
 A `build.gradle` snippet setting a plugin project to target PyCharm is shown below.
 The `gradle-intellij-plugin` will fetch the matching build of PyCharm Professional to define the APIs available, and use that build of PyCharm (and associated JetBrains runtime) as the Development Instance.
 No additional product-specific configuration needs to be set in `build.gradle`:
+
 ```groovy
     intellij {
       version '2019.2.3'
@@ -104,6 +105,7 @@ Set the `runIde.ideDirectory` attribute to the (user-specific) absolute path of 
 The exact path format varies by operating system.
 
 This snippet is an example for configuring the Setup and Running DSLs in a `build.gradle` specific to developing a plugin for _targetIDE_.
+
 ```groovy
   intellij {
     // Define IntelliJ Platform against which to build the plugin project.
@@ -130,6 +132,7 @@ Otherwise, if only general IntelliJ Platform features (APIs) are used, then a de
 > **NOTE** In the special case of a plugin project declaring dependencies only on other plugins, it must also declare a dependency on `com.intellij.modules.platform`. Otherwise, the plugin project is considered to be legacy and will only load in IntelliJ IDEA. 
 
 Continuing with the example of developing a plugin for PhpStorm:
+
 ```xml
   <!-- Targeting PhpStorm, so is dependent on the PHP plugin -->
   <depends>com.jetbrains.php</depends>

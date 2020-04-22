@@ -33,6 +33,7 @@ It's _not_ correct to create chained calls like
 file.getDocument().getRootTag().findFirstSubTag("foo").
 findSubTags("bar")[1].getValue().getTrimmedText()
 ```
+
 because each call here may return `null`.
 
 So the code would probably look like this: 
@@ -223,6 +224,7 @@ One more common case in DTD and Schemas is when children have the same tag name 
 ```java
 List<Entity> getEntities();
 ```
+
 There's also an annotation `@SubTagList` where you can explicitly specify the tag name.
 
 Returned collections cannot be modified directly. To delete an element from collection, just call `undefine()` on this element. The tag will then be removed, and element will become invalid (`DomElement.isValid() == false`). Note that this behavior differs from that of fixed-number children and attributes: they are always valid, even after `undefine()`. Again, unlike those children types, collection children always have valid underlying XML tags.
@@ -238,6 +240,7 @@ which adds an element to wherever you want, or
 ```java
 Entity addEntity();
 ```
+
 which adds a new DOM element to the end of the collection. Please note the singular tense of the word "Entity". That's because here we deal with one `Entity` object, while in the collection getter we dealt with potentially many entities.
 
 Now, you can do anything you want with the returned value: modify, define the tag's value, children, etc.
@@ -255,6 +258,7 @@ List<Bar> getBars();
 @SubTagsList({"foo", "bar"})
 List<FooBar> getMergedListOfFoosAndBars();
 ```
+
 The annotation here is mandatory - we cannot guess several tag names from one method name.
 
 To add elements to such mixed collections, you should create "add" methods for each possible tag name:
@@ -263,6 +267,7 @@ To add elements to such mixed collections, you should create "add" methods for e
 @SubTagsList(value={"foo","bar"}, tagName="foo") Fubar addFoo();
 @SubTagsList(value={"foo","bar"}, tagName="bar") Fubar addBar(int index);
 ```
+
 The index parameter in the last example means the index in the merged collection, not in the collection of tags named "bar".
 
 ### Dynamic Definition
@@ -405,6 +410,7 @@ GenericDomValue<String> getVeryLongName()
 @PropertyAccessor("very-long-name")
 GenericDomValue<String> getName()
 ```
+
 In this case, the second method will return just the same as the first one. If there were "foo.bar.name" instead of "very-long-name" in the annotation, the system would actually call `getFoo().getBar().getName()` and return the result to you. Such annotations are useful when you're extending some interface that is inconsistent with your model, or you try to extract a common super-interface from two model interfaces with differently named children that have the same sense (see `<ejb-ref>` and `<ejb-local-ref>`).
 
 The case just described is simple, but rare. More often, you really have to incorporate some logic into your model. Then nothing except Java code helps you. And it will. Add the desired methods to your interface, then create an abstract class implementing the interface, and implement there only methods that you added manually and that are not directly connected to your XML model. Note that the class should have a constructor with no arguments.
@@ -523,6 +529,7 @@ public class ConverterComponent extends BasicDomElementComponent<Converter> {
     }
 }
 ```
+
 All the fields here are now bound to controls in a GUI form.
 
 Very often you'll have to create your own file editor. Then, to use all the binding and undo functionality, it's suggested to inherit your [`FileEditorProvider`](upsource:///platform/platform-api/src/com/intellij/openapi/fileEditor/FileEditorProvider.java) from [`PerspectiveFileEditorProvider`](upsource:///xml/dom-openapi/src/com/intellij/util/xml/ui/PerspectiveFileEditorProvider.java), create an instance of [`DomFileEditor`](upsource:///xml/dom-openapi/src/com/intellij/util/xml/ui/DomFileEditor.java) there, and pass a [`BasicDomElementComponent`](upsource:///xml/dom-openapi/src/com/intellij/util/xml/ui/BasicDomElementComponent.java). To easily create an editor with a caption at the top, like in our EJB and JSF, you may use the static method `DomFileEditor.createDomFileEditor()`. `DomFileEditor` automatically listens to all changes in the document corresponding to the given DOM element, and therefore refreshes your component on undo. If you want to listen to changes in additional documents, use the methods `addWatchedDocument()`, `removeWatchedDocument()`, `addWatchedElement()`, `removeWatchedElement()` in `DomFileEditor`.

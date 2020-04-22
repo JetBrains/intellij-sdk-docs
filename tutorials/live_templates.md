@@ -8,6 +8,7 @@ When a user types the designated abbreviation followed by a configurable *expans
 
 For example, consider a `for` loop. Typically, the end user would need to type `for(int i = 0; i < 10; i++) {<Enter><Tab><Enter><Enter>}<Up>`. 
 This pattern may be shortened to `fori<Tab>` and the remaining contents will be expanded, leaving the following structure:
+
 ```
 for(int i = [|]; i < []; i++) {
     []

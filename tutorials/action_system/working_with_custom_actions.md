@@ -20,6 +20,7 @@ Classes that extend it should override `AnAction.update()`, and must override `A
 * The `actionPerformed()` method implements the code that executes when an action is invoked by the user.
 
 As an example, [`PopupDialogAction`](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/action_basics/src/main/java/org/intellij/sdk/action/PopupDialogAction.java) overrides `AnAction` for the `action_basics` code sample.
+
 ```java
 public class PopupDialogAction extends AnAction {
    
@@ -78,6 +79,7 @@ In this case, `PopupDialogAction` would be available in the **Tools** menu, it w
 
 After finishing the **New Action** form and applying the changes, the `<actions>` section of the plugin's `plugins.xml` file
 would contain:
+
 ```xml
   <actions>
     <action id="org.intellij.sdk.action.PopupDialogAction" class="org.intellij.sdk.action.PopupDialogAction" 
@@ -101,6 +103,7 @@ The `<action>` declaration for `PopupDialogAction` in the `action_basics` [plugi
 It also contains an attribute for an [`Icon`](/reference_guide/work_with_icons_and_images.md) and encloses elements declaring text overrides, keyboard and mouse shortcuts, and to which menu group the action should be added.
 
 The full declaration is:
+
 ```xml
     <action id="org.intellij.sdk.action.PopupDialogAction" class="org.intellij.sdk.action.PopupDialogAction"
             text="Action Basics Plugin: Pop Dialog Action" description="SDK action example" icon="SdkIcons.Sdk_default_icon">

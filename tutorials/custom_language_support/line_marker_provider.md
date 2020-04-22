@@ -15,6 +15,7 @@ The visual marker is a Simple Language icon in the gutter of the Editor window.
 
 The Simple Language marker provider subclasses [`RelatedItemLineMarkerProvider`](upsource:///platform/lang-api/src/com/intellij/codeInsight/daemon/RelatedItemLineMarkerProvider.java).
 For this example, override the `collectNavigationMarkers()` method to collect usage of a Simple Language [key and separators](/tutorials/custom_language_support/language_and_filetype.md#define-the-language): 
+
 ```java
 {% include /code_samples/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleLineMarkerProvider.java %}
 ```
@@ -32,6 +33,7 @@ The `collectNavigationMarkers()` method should:
 
 What happens when a `LineMarkerProvider` returns marker information for a `PsiElement` that is a higher node in the PSI tree?
 For example, if `MyWrongLineMarkerProvider()` erroneously returns a `PsiMethod` instead of a `PsiIdentifier` element:
+
 ```java
 public class MyWrongLineMarkerProvider implements LineMarkerProvider {
   public LineMarkerInfo getLineMarkerInfo(@NotNull PsiElement element) {
@@ -53,6 +55,7 @@ However, if a method like `actionPerformed()` is not completely visible in the E
 
 As a result, _the line marker icon would blink annoyingly_.
 To fix this problem, rewrite `MyWrongLineMarkerProvider` to return info for `PsiIdentifier` instead of `PsiMethod` as shown below:
+
 ```java
 public class MyCorrectLineMarkerProvider implements LineMarkerProvider {
   public LineMarkerInfo getLineMarkerInfo(@NotNull PsiElement element) {
@@ -64,6 +67,7 @@ public class MyCorrectLineMarkerProvider implements LineMarkerProvider {
 
 ## 8.3. Register the Line Marker Provider
 The `SimpleLineMarkerProvider` implementation is registered with the IntelliJ Platform in the plugin configuration file using the `com.intellij.codeInsight.lineMarkerProvider` extension point.
+
 ```xml
   <extensions defaultExtensionNs="com.intellij">
     <codeInsight.lineMarkerProvider language="JAVA" 

@@ -37,6 +37,7 @@ Maintaining a Theme is more manageable if _Named Colors_ are globally defined in
 After that, the Named Color can be used instead of a hexadecimal description of the color.
 For example, defining the Named Color `basicBackground` and then using it to set the background color for panels.
 (Don't be concerned with the `"ui"` syntax in the example below, it will be discussed in [Custom UI Control Colors](#custom-ui-control-colors).)
+
 ```json
 {
   "name": "theme_basics",
@@ -62,6 +63,7 @@ Default global icon colors are customized by adding key-value pairs to a `"Color
 The `ColorPalette` must be inserted in the `icons` section.
 
 In the following example the `key` - the default red color (#DB5860) used for `Action` icons in the _Light_ Theme - is overridden to the `value` of a different color (#D61A26):
+
 ```json
 {
   "icons": {
@@ -71,6 +73,7 @@ In the following example the `key` - the default red color (#DB5860) used for `A
   }
 }
 ```  
+
 This color substitution is applied throughout the IDE UI.
 
 ### Custom Icon Palette Colors
@@ -92,6 +95,7 @@ The list of available icon `Actions` and `Objects` keys are provided by the comp
 ![Color Palette Popup](img/theme_colorpalette_popup.png){:width="600px"}
 
 For example, the following key-value pair changes the color for  all blue-colored icons on toolbars to the color #5BC0DE:
+
 ```json
 {
   "icons": {
@@ -101,6 +105,7 @@ For example, the following key-value pair changes the color for  all blue-colore
   }
 }
 ```
+
 This more specific change to the `Actions.Blue` color overrides the default definition. 
 It will also, in the narrower context of blue `Actions` icons, supersede any global color overrides of the default blue icon color.
 
@@ -118,6 +123,7 @@ This path is derived from the `AllIcons.[Group].[IconName]` path in icon section
 For example, the _Build_ (hammer) icon in the toolbar has the path `Allcons.Actions.Compile` as reported by the UI Inspector. 
 Therefore the `key` for the _Build_ icon is `/actions/compile.svg`. 
 The `value` is the file name of the replacement icon, located in the `resources` folder of the UI Theme plugin project:
+
 ```json
 {
   "icons": {
@@ -125,6 +131,7 @@ The `value` is the file name of the replacement icon, located in the `resources`
   }
 }
 ```
+
 The color of a replaced icon takes precedence over any `ColorPalette` overrides.
 
 ## Customizing UI Controls
@@ -151,6 +158,7 @@ A key-value pair is inserted in this section, but only the `property` portion of
 The `value` is the custom color. 
 
 The following example would change the default background color to #AED7E3 for all UI controls:
+
 ```json
 {
   "ui": {
@@ -160,6 +168,7 @@ The following example would change the default background color to #AED7E3 for a
   }
 }
 ```
+
 Note that the wildcard `"*": {}` section must be within the `"ui": {}` section.
 
 #### Customizing the Color of Specific UI Control Types
@@ -167,6 +176,7 @@ The color of a specific UI control types are changed by adding a key-value pair 
 The `key` is the full `element.property` format and the `value` is the custom color.
   
 The following example sets the background color for all labels to the color #F6E9C9
+
 ```json
 {
   "ui": {
@@ -177,6 +187,7 @@ The following example sets the background color for all labels to the color #F6E
   }
 }
 ```
+
 The `Label.background` entry supersedes, in the narrower context of label backgrounds, any default color as well as any wildcard color assigned to backgrounds.
 
 #### Customizing the Color of UI Tabs
@@ -243,6 +254,7 @@ Methods for identifying UI control keys are in the [Finding Attribute Keys for U
 The appearance of borders for specific UI control types are customized by adding a key-value pair to the `"ui": {}` section of a Theme description file. 
 
 The following example sets a new border width and color for all windows:
+
 ```json
 {
   "ui": {
@@ -250,6 +262,7 @@ The following example sets a new border width and color for all windows:
   }
 }
 ```
+
 In this example the customized border supersedes the default definition and 
 any global color override.
 

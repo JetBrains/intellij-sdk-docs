@@ -1,5 +1,5 @@
 ---
-title: Working with text
+title: Working with Text
 ---
 <!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
@@ -25,6 +25,7 @@ The source code for the Java class in this example is [EditorIllustrationAction]
 To register the action, we must add the corresponding elements to the `<actions>` section of the plugin configuration file [plugin.xml](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/editor_basics/src/main/resources/META-INF/plugin.xml). 
 For more information, refer to the [Registering Actions](/tutorials/action_system/working_with_custom_actions.md#registering-a-custom-action) section of the Actions Tutorial.
 The `EditorIllustrationAction` action is registered in the group `EditorPopupMenu` so it will be available from the context menu when focus is on the editor:
+
 ```xml
     <action id="EditorBasics.EditorIllustrationAction"
             class="org.intellij.sdk.editor.EditorIllustrationAction"
@@ -49,6 +50,7 @@ Additional steps will show how to check these conditions through obtaining insta
 ### Getting an Instance of the Active Editor from an Action Event
 Using the [`AnActionEvent`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnActionEvent.java) event passed into the `update` method, a reference to an instance of the `Editor` can be obtained by calling `getData(CommonDataKeys.EDITOR)`. 
 Similarly, to obtain a project reference, we use the `getProject()` method.
+
 ```java
 public class EditorIllustrationAction extends AnAction {
     @Override
@@ -70,14 +72,16 @@ After making sure a project is open, and an instance of the `Editor` is obtained
 The [`SelectionModel`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/editor/SelectionModel.java) interface is accessed from the `Editor` object. 
 Determining whether some text is selected is accomplished by calling the `SelectionModel.hasSelection()` method. 
 Here's how the `EditorIllustrationAction.update(AnActionEvent e)` method should look:
+
 ```java
 public class EditorIllustrationAction extends AnAction {
   @Override
   public void update(@NotNull final AnActionEvent e) {
-    //Get required data keys
+    // Get required data keys
     final Project project = e.getProject();
     final Editor editor = e.getData(CommonDataKeys.EDITOR);
-    //Set visibility only in case of existing project and editor and if a selection exists
+    
+    // Set visibility only in case of existing project and editor and if a selection exists
     e.getPresentation().setEnabledAndVisible( project != null 
                                               && editor != null 
                                               && editor.getSelectionModel().hasSelection() );
@@ -118,6 +122,7 @@ This example changes the document within a [`WriteCommandAction`](upsource:///pl
 The complete `EditorIllustrationAction.actionPerformed()` method is shown below:
 * Note the selection in the document is replaced by a string using a method on the `Document` object, but the method call is wrapped in a write action.
 * After the document change, the new text is de-selected by a call to the primary caret.
+
 ```java
 public class EditorIllustrationAction extends AnAction {
   @Override
@@ -126,15 +131,18 @@ public class EditorIllustrationAction extends AnAction {
     final Editor editor = e.getRequiredData(CommonDataKeys.EDITOR);
     final Project project = e.getRequiredData(CommonDataKeys.PROJECT);
     final Document document = editor.getDocument();
+    
     // Work off of the primary caret to get the selection info
     Caret primaryCaret = editor.getCaretModel().getPrimaryCaret();
     int start = primaryCaret.getSelectionStart();
     int end = primaryCaret.getSelectionEnd();
+    
     // Replace the selection with a fixed string.
     // Must do this document change in a write action context.
     WriteCommandAction.runWriteCommandAction(project, () ->
         document.replaceString(start, end, "editor_basics")
     );
+    
     // De-select the text range that was just replaced
     primaryCaret.removeSelection();
   }

@@ -1,0 +1,56 @@
+@startuml
+actor User #babdd1
+participant IP as "IntelliJ\nPlatform" #babdd1
+participant MC as "MyConfigurable"
+note left of IP: IDE layer not shown\nfor simplicity.
+== Initialization == 
+User -> IP : Open Settings
+IP -> User : Opens Settings Dialog
+note left: MySettings are not\nselected on Dialog open. 
+User -> IP : Select MySettings\nin Dialog Menu
+IP -> MC : MyConfigurable()
+MC -> IP : 
+IP -> MC : createComponent()
+MC -> IP : JComponent
+IP -> MC : reset()
+MC -> IP :
+IP -> MC : isModified()
+MC -> IP : false
+IP -> User : Settings Dialog\nDisplays MySettings
+note left: Settings Dialog Apply button\n& Reset are disabled.
+== User Selects Cancel Button == 
+User -> IP : Press Cancel
+IP -> MC : disposeUIResources()
+MC -> IP :
+IP -> User : Settings Dialog Closes
+== User Changes Settings == 
+User -> IP : Changes a MySetting
+IP -> MC : isModified()
+MC -> IP : true
+IP -> User : Update Settings Dialog
+note left: Settings Dialog Apply button\n& Reset are enabled.
+== User Selects Reset (Only Available with Changed Settings) == 
+User -> IP : Presses Reset
+IP -> MC : reset()
+MC -> IP :
+IP -> MC : isModified()
+MC -> IP : false
+IP -> User : Update Settings Dialog
+note left: Settings Dialog Apply button\n& Reset are disabled.
+== User Selects Apply Button (Only Enabled with Changed Settings) == 
+User -> IP : Presses Apply Button
+IP -> MC : isModified()
+MC -> IP : true
+IP -> MC : apply()
+MC -> IP : 
+IP -> MC : isModified()
+MC -> IP : false
+IP -> User : 
+note left: Settings Dialog Apply button\n& Reset are disabled.
+== User Selects OK Button == 
+User -> IP : Press OK
+note over IP, MC : If any MySettings have been changed, the method\ncalls from the Apply sequence happen first.
+IP -> MC : disposeUIResources()
+MC -> IP : 
+note left: Settings Dialog Closes
+@enduml

@@ -50,8 +50,9 @@ Continuing from the example [above](#determining-a-jetbrains-runtime-version), t
 
 When adding system property `idea.auto.reload.plugins` in the [run configuration](getting_started/running_and_debugging_a_plugin.md) (DevKit-based) or [**runIde**](/tutorials/build_system/prerequisites.md#running-a-simple-gradle-based-intellij-platform-plugin) task (Gradle-based), dynamic plugins are reloaded automatically when their JARs are modified.
 This allows a much faster development cycle by avoiding a full restart of the development instance after code changes.
-
 For [Gradle-based plugins](/tutorials/build_system/prerequisites.md) using `gradle-intellij-plugin` 0.4.17 or later, this property is set automatically.
+
+To disable auto-reload, set `idea.auto.reload.plugins` to `false` explicitly (2020.1.2+).
 
 
 ## The Development Instance Sandbox Directory 

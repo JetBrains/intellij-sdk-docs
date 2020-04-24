@@ -23,7 +23,7 @@ See [Implementations for Settings Extension Points](#implementations-for-setting
 
 >**Note** For performance reasons, the recommended approach is to declare as much information as possible about a settings' implementation using attributes in an EP. If it is not declared, the component must be loaded to retrieve it from the implementation, degrading UI responsiveness.
 
-### EP for Declaring Application Level Settings
+### EP for Declaring Application Settings
 Settings at the Application level use the `com.intellij.applicationConfigurable` EP.
 Application-level Settings that implement the `Configurable` interface must have a default constructor with no arguments.
 
@@ -36,7 +36,7 @@ See [Attributes for Settings EP](#attributes-for-settings-ep) for details.
   </extensions>
 ``` 
 
-### EP for Declaring Project Level Settings
+### EP for Declaring Project Settings
 Project level Settings use the `com.intellij.projectConfigurable` EP.
 A `Configurable` implementation for Project-level Settings must declare a constructor with a single argument of type [`Project`](upsource:///platform/core-api/src/com/intellij/openapi/project/Project.java).
 
@@ -44,8 +44,8 @@ An example `projectConfigurable` EP declaration is shown below.
 See [Attributes for Settings EP](#attributes-for-settings-ep) for details.
 ```xml
   <extensions defaultExtensionNs="com.intellij">
-    <projectConfigurable groupId="tools" instance="org.intellij.sdk.settings.AppSettingsConfigurable"
-            id="org.intellij.sdk.settings.AppSettingsConfigurable" displayName="SDK: Application Settings Example"/>
+    <projectConfigurable groupId="tools" instance="org.intellij.sdk.settings.PrjSettingsConfigurable"
+            id="org.intellij.sdk.settings.PrjSettingsConfigurable" displayName="SDK: Project Settings Example"/>
   </extensions>
 ``` 
 
@@ -57,10 +57,10 @@ This section provides some additional clarification of those comments.
 #### Table of Attributes
 The attributes supported by `applicationConfigurable` and `projectConfigurable` EPs are in the table below:
 
-[//]: # (TODO: If parentId is preferred, should the attribute values under parentId rather than groupId?)
+[//]: # (TODO: If parentId is preferred over groupId, should the attribute values be under parentId rather than groupId?)
   
 | Attribute | Implementation<br>Basis | Optional/<br>Required | Value |
-|:---   |  :---:  |  :---:  |:---  |
+|:---   |  :---:  |  :---   |:---  |
 | `instance` | `Configurable` | R | FQN of implementation.<br>See [Implementations for Settings Extension Points](#implementations-for-settings-extension-points) for more information about `Configurable`. |
 | `provider` | `ConfigurableProvider` | R | FQN of implementation.<br>See [Implementations for Settings Extension Points](#implementations-for-settings-extension-points) for more information about `ConfigurableProvider`. |
 | `nonDefaultProject` | `Configurable` | R | Required _only_ for the `projectConfigurable` (project settings) EP.<br>`true` = show settings for all projects _except_ the [default project](https://www.jetbrains.com/help/idea/configure-project-settings.md#new-default-settings).<br>`false` = show settings for all projects. |
@@ -72,7 +72,7 @@ The attributes supported by `applicationConfigurable` and `projectConfigurable` 
 | `groupWeight` | `Configurable`<br>`ConfigurableProvider` | O | Specifies the weight (stacking order) of this component within a group or a parent configurable component.<br>Default: The default weight is 0, meaning lowest in the order.<br>If one child in a group or a parent component has non-zero weight, all children will be sorted descending by their weight. If the weights are equal, the components will be sorted ascending by their display name. |
 | `dynamic` | `Configurable.Composite` | O | This component's children are dynamically calculated by calling the `getConfigurables()` method.<br>Not recommended because it requires loading additional classes while building a settings tree. If possible, use XML attributes instead. |
 | `childrenEPName` | `Configurable` | O | Specifies the FQN name of the extension point that will be used to calculate the children of this component. |
-| ~~`implementation`~~ | N/A | X | Deprecated |  
+| ~~`implementation`~~ | N/A | Deprecated |   |  
 
 **Notes:**  
 1) Only one of these two attributes can be specified.  
@@ -82,7 +82,7 @@ The attributes supported by `applicationConfigurable` and `projectConfigurable` 
 The table below shows the allowed values for the `groupId` attribute of the `applicationConfigurable` and `projectConfigurable` EPs.
 See the [previous section](#table-of-attributes) for all supported attributes.
 
-[//]: # (TODO: Should groupId=other be listed if it is not used by IDEA)
+[//]: # (TODO: Should groupId=other be listed if it is not used by IDEA?)
 
 | Attribute | Value |
 |:---   |:---  |
@@ -113,28 +113,34 @@ One way of declaring a parent-child relationship is by using two different decla
 This form can be used regardless of whether the parent settings are in the same plugin.
 As long as the `parentId` is known, a plugin can add settings as a child.
 
-For example, here are two declarations for project settings.
-The first is added to the `tools` group, and the second is added to the `id` of the parent:
+For example, below are two declarations for project settings.
+The first is added to the `tools` group, and the second is added to the `id` of the parent.
+The `id` of the second, child `projectConfigurable` essentially adds a suffix to the `id` of the parent.
+See the [attributes](#attributes-for-nested-configurable-ep) section.
+ 
 ```xml
   <extensions defaultExtensionNs="com.intellij">
-    <projectConfigurable groupId="tools" id="com.intellij.sdk.tasks" displayName="Tasks" nonDefaultProject="true"
+    <projectConfigurable groupId="tools" id="com.intellij.sdk.tasks" displayName="Tasks" 
+                         nonDefaultProject="true"
                          instance="com.intellij.sdk.TaskConfigurable"/>
     
-    <projectConfigurable parentId="com.intellij.sdk.tasks" id="com.intellij.sdk.tasks.servers" displayName="Servers" nonDefaultProject="true"
+    <projectConfigurable parentId="com.intellij.sdk.tasks" id="com.intellij.sdk.tasks.servers" displayName="Servers" 
+                         nonDefaultProject="true"
                          instance="com.intellij.sdk.TaskRepositoriesConfigurable"/>
   </extensions>
 ```
 
 A shorthand for this declarative approach is using the `com.intellij.configurable` EP.
-This approach nests the child Settings' declaration within the `projectConfigurable` or `applicationConfigurable` EP by using the `configurable` EP. 
-There isn't a `parentId` for the `configurable` EP.
+This approach nests the child Settings' declaration within the `projectConfigurable` or `applicationConfigurable` EP. 
+There isn't a `parentId` for the child `configurable` EP.
 Instead, formatting restrictions are placed on the `id` attribute.
-See the [attributes](#attributes-for-nested-settings-configurable) section.
+See the [attributes](#attributes-for-nested-configurable-ep) section.
 
 The example below demonstrates a `configurable` EP declaration.
-Using `configurable` EP would not be possible if the example Task Configurable (parent) Settings were declared in another plugin or file.
+Using `configurable` EP would not be possible if the example `Tasks` `Configurable` (parent) Settings were declared in another plugin or file.
 In that case, multiple `projectConfigurable` or `applicationConfigurable` EPs would be used as shown above. 
 However, within the parent `projectConfigurable` EP declaration below, more `configurable` declarations can be added. 
+
 ```xml
   <extensions defaultExtensionNs="com.intellij">
     <projectConfigurable groupId="tools" id="com.intellij.sdk.tasks" displayName="Tasks" nonDefaultProject="true"
@@ -145,8 +151,8 @@ However, within the parent `projectConfigurable` EP declaration below, more `con
   </extensions>
 ```
 
-#### Attributes for Nested Settings Configurable EP
-There is only one attribute unique to the `configurable` EP.
+#### Attributes for Nested Configurable EP
+There is only one unique attribute when declaring a child Settings EP.
 The `id` attribute becomes compound:
 
 | Attribute | Optional/<br>Required | Value |
@@ -161,16 +167,14 @@ Implementations for `projectConfigurable` and `applicationConfigurable` EPs can 
 * A copy of the [`ConfigurableProvider`](upsource:///platform/platform-api/src/com/intellij/openapi/options/ConfigurableProvider.java) class, which hides a configurable component from the Settings dialog so that it can be configured based on runtime conditions.
 
 ### The Configurable Interface
-The `Configurable` interface is a subtype of [`UnnamedConfigurable`](upsource:///platform/platform-api/src/com/intellij/openapi/options/UnnamedConfigurable.java).
-Most Settings in the `intellij-community` code base implement `Configurable` or one of its subtypes, such as [`SearchableConfigurable`](upsource:///platform/platform-api/src/com/intellij/openapi/options/SearchableConfigurable.java).
-
+Many Settings in the `intellij-community` code base implement `Configurable` or one of its subtypes, such as [`SearchableConfigurable`](upsource:///platform/platform-api/src/com/intellij/openapi/options/SearchableConfigurable.java). 
 Readers are encouraged to review the Javadoc comments for `Configurable`.
-These comments are pretty complete, but some key points are supplemented here. 
+The comments are fairly complete, but some key points are supplemented here. 
 
 #### Constructors
 Implementations must meet several requirements for constructors. 
-An implementation for Application Settings, declared using the [`applicationConfiguration` EP](#ep-for-declaring-application-level-settings), must have a default constructor with no arguments. 
-An implementation for Project Settings, declared using the [`projectSettings` EP](#ep-for-declaring-project-level-settings), must declare a constructor with a single argument of type [`Project`](upsource:///platform/core-api/src/com/intellij/openapi/project/Project.java).
+An implementation for Application Settings, declared using the [`applicationConfiguration` EP](#ep-for-declaring-application-settings), must have a default constructor with no arguments. 
+An implementation for Project Settings, declared using the [`projectSettings` EP](#ep-for-declaring-project-settings), must declare a constructor with a single argument of type [`Project`](upsource:///platform/core-api/src/com/intellij/openapi/project/Project.java).
 For performance reasons, do not create any Swing components in a constructor.
 
 > **Warning** The IntelliJ Platform may instantiate a `Configurable` implementation on a background thread, so creating Swing components in a constructor is discouraged.  
@@ -189,23 +193,35 @@ Using the `Composite` interface incurs the penalty of loading child classes whil
 
 [//]: # (TODO: Should I discuss Configurable.TopComponentController, TopComponentProvider, VariableProjectAppLevel, or WithEpDependencies?)
 
-#### Additional Configurable Interfaces and Implementations
-[//]: # (TODO: Are there any IntelliJ Platform interfaces of particular interest to developers, such as perhaps SearchableConfigurable?)
-[//]: # (TODO: Are there any IntelliJ Platform implementations of particular interest to developers - there are ~90?)
+#### Additional Interfaces Based on Configurable
+There are about 90 interfaces and classes based on `Configurable` in the IntelliJ Platform code base.
+These subtypes have been specialized for particular kinds of settings.
+Consequently, reviewing interfaces such as `SearchableConfigurable` is advisable.
 
+[//]: # (TODO: Are there any IntelliJ Platform implementations of particular interest to developers - perhaps SearchableConfigurable?)
 
-#### Sequences
-Diagrams with IntelliJ Platform for use-cases:
-* User selects myPrefs
-* User changes setting
-* User presses Reset
-* User presses Cancel
-* User presses Apply
+#### IntelliJ Platform Interactions with Configurable
+The sequences shown below illustrate the interactions between the IntelliJ Platform and a generic implementation of custom settings.
+For simplicity, the _User_ is shown interacting directly with the IntelliJ Platform.
+Similarly, interactions within the plugin aren't shown.
+
+For these diagrams, it is assumed `my_plugin` has added:
+* `MySettings` - custom settings, saved persistently by `my_plugin`. 
+  The IDE Settings dialog displays `MySettings` in a custom Swing form provided by `my_plugin`. 
+* `MyConfigurable` - a custom implementation of `Configurable` for `MySettings`
+
+![settings sequence](img/settings_sequence.png){:width="600px"}
 
 
 ### The ConfigurableProvider Class
-The [`ConfigurableProvider`](upsource:///platform/platform-api/src/com/intellij/openapi/options/ConfigurableProvider.java) class allows an implementation to evaluate runtime circumstances and decide whether to provide a Settings configuration implementation.
-By opting not to provide a `Configuration` implementation in some circumstances, the `ConfigurableProvider` opts out of the Settings display and modification process.
-The use of `ConfigurableProvider` as a basis for a Settings implementation is declared using [attributes](#table-of-attributes) in the EP declaration.
+The [`ConfigurableProvider`](upsource:///platform/platform-api/src/com/intellij/openapi/options/ConfigurableProvider.java) class has an implementation to evaluate runtime circumstances and decide whether to provide a Settings configuration implementation.
+The IntelliJ Platform first calls the `canCreateConfigurable()`, which evaluates runtime conditions to determine if Settings changes make sense in the current context.
+If Settings make sense to change, `canCreateConfigurable()` returns `true`.
+In that case the IntelliJ Platform calls `createConfigurable()`, which returns the `Configurable` object for this Settings implementation.
 
 > **Warning** Implementations should not subclass `ConfigurableProvider`. Instead, create a light-weight implementation with the same methods. 
+
+By choosing not to provide a `Configuration` implementation in some circumstances, the `ConfigurableProvider` opts out of the Settings display and modification process.
+The use of `ConfigurableProvider` as a basis for a Settings implementation is declared using [attributes](#table-of-attributes) in the EP declaration.
+
+

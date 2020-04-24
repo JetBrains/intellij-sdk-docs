@@ -124,7 +124,7 @@ The New Project Wizard produces the `my_gradle_plugin` project `build.gradle` fi
       mavenCentral()
   } 
   dependencies {
-      testCompile group: 'junit', name: 'junit', version: '4.12'
+      testImplementation group: 'junit', name: 'junit', version: '4.12'
   }
   
   // See https://github.com/JetBrains/gradle-intellij-plugin/

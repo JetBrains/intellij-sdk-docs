@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/code_samples/_gradleCompositeBuild" />
+    <file type="web" url="file://$PROJECT_DIR$/code_samples/action_basics" />
+    <file type="web" url="file://$PROJECT_DIR$/code_samples/comparing_references_inspection" />
+    <file type="web" url="file://$PROJECT_DIR$/code_samples/conditional_operator_intention" />
+    <file type="web" url="file://$PROJECT_DIR$/code_samples/editor_basics" />
+    <file type="web" url="file://$PROJECT_DIR$/code_samples/facet_basics" />
+    <file type="web" url="file://$PROJECT_DIR$/code_samples/framework_basics" />
+    <file type="web" url="file://$PROJECT_DIR$/code_samples/inspection_basics" />
+    <file type="web" url="file://$PROJECT_DIR$/code_samples/kotlin_demo" />
+    <file type="web" url="file://$PROJECT_DIR$/code_samples/live_templates" />
+    <file type="web" url="file://$PROJECT_DIR$/code_samples/max_opened_projects" />
+    <file type="web" url="file://$PROJECT_DIR$/code_samples/module" />
+    <file type="web" url="file://$PROJECT_DIR$/code_samples/product_specific/pycharm_basics" />
+    <file type="web" url="file://$PROJECT_DIR$/code_samples/project_model" />
+    <file type="web" url="file://$PROJECT_DIR$/code_samples/project_view_pane" />
+    <file type="web" url="file://$PROJECT_DIR$/code_samples/project_wizard" />
+    <file type="web" url="file://$PROJECT_DIR$/code_samples/psi_demo" />
+    <file type="web" url="file://$PROJECT_DIR$/code_samples/run_configuration" />
+    <file type="web" url="file://$PROJECT_DIR$/code_samples/simple_language_plugin" />
+    <file type="web" url="file://$PROJECT_DIR$/code_samples/tool_window" />
+    <file type="web" url="file://$PROJECT_DIR$/code_samples/tree_structure_provider" />
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="false" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build" />
   </component>

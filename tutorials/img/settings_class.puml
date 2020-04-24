@@ -1,0 +1,27 @@
+@startuml
+' Set style and layout parameters
+top to bottom direction
+skinparam note {
+  BackgroundColor #F2F6FA
+  BorderColor #424649
+}
+hide empty members
+
+' Define the objects in the diagram
+interface "com.intellij.openapi.options.Configurable" as Configurable
+interface "com.intellij.openapi.components.PersistentStateComponent<T>" as PersistentStateComponent
+package "org.intellij.sdk.settings" #DFEAF4 {
+  class AppSettingsConfigurable
+    note left: Acts as\nController
+  class AppSettingsState
+    note bottom: Provides Persistent\nStorage
+  class AppSettingsComponent
+    note right: Provides JPanel\nfor Settings Dialog
+}
+
+' Define the class relationships
+Configurable <|.. AppSettingsConfigurable
+PersistentStateComponent <|.. AppSettingsState
+AppSettingsConfigurable *-- AppSettingsComponent
+AppSettingsConfigurable - AppSettingsState : AppSettingsState.getInstance()
+@enduml

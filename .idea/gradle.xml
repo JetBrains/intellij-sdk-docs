@@ -92,6 +92,11 @@
                   <project path="$PROJECT_DIR$/code_samples/run_configuration" />
                 </projects>
               </build>
+              <build path="$PROJECT_DIR$/code_samples/settings" name="settings">
+                <projects>
+                  <project path="$PROJECT_DIR$/code_samples/settings" />
+                </projects>
+              </build>
               <build path="$PROJECT_DIR$/code_samples/simple_language_plugin" name="simple_language_plugin">
                 <projects>
                   <project path="$PROJECT_DIR$/code_samples/simple_language_plugin" />
@@ -134,6 +139,7 @@
             <option value="$PROJECT_DIR$/code_samples/project_wizard" />
             <option value="$PROJECT_DIR$/code_samples/psi_demo" />
             <option value="$PROJECT_DIR$/code_samples/run_configuration" />
+            <option value="$PROJECT_DIR$/code_samples/settings" />
             <option value="$PROJECT_DIR$/code_samples/simple_language_plugin" />
             <option value="$PROJECT_DIR$/code_samples/tool_window" />
             <option value="$PROJECT_DIR$/code_samples/tree_structure_provider" />

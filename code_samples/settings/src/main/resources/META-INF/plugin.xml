@@ -1,0 +1,39 @@
+<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+
+<idea-plugin>
+
+  <!--  Unique id for this plugin. Must stay constant for the life of the plugin.  -->
+  <id>org.intellij.sdk.settings</id>
+
+  <!-- Text to display as name on Preferences/Settings | Plugin page -->
+  <name>SDK: Settings Example Project</name>
+
+  <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+       on how to target different products -->
+  <depends>com.intellij.modules.platform</depends>
+
+  <!-- Text to display as description on Preferences/Settings | Plugin page  -->
+  <description>
+    <![CDATA[
+      Demonstrates implementing a custom settings panel.<br>Adds a settings panel to the <b>Settings/Preferences</b> panel under <b>Tools</b>.
+    ]]>
+  </description>
+  <change-notes>
+    <![CDATA[
+      <ul>
+        <li><b>1.0</b> Initial SDK settings content release for 2020.1</li>
+      </ul>
+    ]]>
+  </change-notes>
+
+  <!-- Text to display as company information on Preferences/Settings | Plugin page -->
+  <vendor url="https://plugins.jetbrains.com">IntelliJ Platform SDK</vendor>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <applicationConfigurable parentId="tools" instance="org.intellij.sdk.settings.AppSettingsConfigurable"
+                             id="org.intellij.sdk.settings.AppSettingsConfigurable"
+                             displayName="SDK: Application Settings Example"/>
+    <applicationService serviceImplementation="org.intellij.sdk.settings.AppSettingsState"/>
+  </extensions>
+
+</idea-plugin>

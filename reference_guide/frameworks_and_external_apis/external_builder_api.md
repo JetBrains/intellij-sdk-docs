@@ -3,6 +3,8 @@ title: External Builder API and Plugins
 ---
 <!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
+> **NOTE** Adding JPS support to your plugin requires Java plugin to be present for it to work. Please see [Plugin Dependencies](/basics/plugin_structure/plugin_dependencies.md) on how to setup your plugin with required dependency.
+
 ### External Build Process Workflow
 
 When the user invokes an action that involves executing an external build (Make, Build Artifacts, etc.), the following steps happen:

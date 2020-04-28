@@ -41,7 +41,7 @@ Instead, the file type is registered of file type is done via the `com.intellij.
 
 ```xml
   <extensions defaultExtensionNs="com.intellij">
-    <fileType name="Simple file" implementationClass="org.intellij.sdk.language.SimpleFileType" 
+    <fileType name="Simple File" implementationClass="org.intellij.sdk.language.SimpleFileType" 
             fieldName="INSTANCE" language="Simple" extensions="simple"/>
   </extensions>
 ```

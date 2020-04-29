@@ -11,9 +11,9 @@ class.
 Each AST node has an associated element type
 [`IElementType`](upsource:///platform/core-api/src/com/intellij/psi/tree/IElementType.java)
 instance, and the element types are defined by the language plugin.
-The top-level node of the AST tree for a file needs to have a special element type, implementing the
+The top-level node of the AST tree for a file needs to have a special element type which extends the
 [`IFileElementType`](upsource:///platform/core-api/src/com/intellij/psi/tree/IFileElementType.java)
-interface.
+class.
 
 The AST nodes have a direct mapping to text ranges in the underlying document.
 The bottom-most nodes of the AST match individual tokens returned by the lexer, and higher level nodes match multiple-token fragments.

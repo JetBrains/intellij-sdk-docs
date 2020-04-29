@@ -5,7 +5,9 @@ title: User Interface Components
 
 The IntelliJ Platform includes a large number of custom Swing components. Using those components in your plugins will ensure that your plugin looks and works consistently with the UI of the rest of the IDE, and can often reduce the code size compared to using the default Swing components.
 
-> **TIP** The recommended way of building UIs on the IntelliJ Platform (2019.2 and later) is the
+> **TIP** Use [UI Inspector](/reference_guide/internal_actions/internal_uii.md) to locate the underlying Swing component implementation or to inspect an existing UI at runtime.
+
+> **NOTE** The recommended way of building UIs on the IntelliJ Platform (2019.2 and later) is using
 [Kotlin UI DSL](/user_interface_components/kotlin_ui_dsl.md).
 
 The following components are particularly noteworthy:

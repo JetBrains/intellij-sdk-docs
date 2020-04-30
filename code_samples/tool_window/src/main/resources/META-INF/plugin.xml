@@ -31,7 +31,7 @@
   <vendor url="https://plugins.jetbrains.com">IntelliJ Platform SDK</vendor>
 
   <extensions defaultExtensionNs="com.intellij">
-    <toolWindow id="Sample Calendar" secondary="true" icon="/toolWindow/plus.png" anchor="right"
+    <toolWindow id="Sample Calendar" secondary="true" icon="AllIcons.General.Modified" anchor="right"
                 factoryClass="org.intellij.sdk.toolWindow.MyToolWindowFactory"/>
   </extensions>
 

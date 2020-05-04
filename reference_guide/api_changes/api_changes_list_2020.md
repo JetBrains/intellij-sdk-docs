@@ -77,7 +77,7 @@ Please see [Incompatible API Changes](/reference_guide/api_changes_list.md) on h
 `javassist` package removed
 : [Javassist](https://github.com/jboss-javassist/javassist) library was removed, bundle it with your plugin instead.
 
-`com.intellij.compiler.backwardRefs.LanguageCompilerRefAdapter#INSTANCES` field removed
+`com.intellij.compiler.backwardRefs.LanguageCompilerRefAdapter.INSTANCES` field removed
 : This field leaked instances of plugin's extensions on plugin unloading. Use `com.intellij.compiler.backwardRefs.LanguageCompilerRefAdapter#EP_NAME.getExtensionList()` directly instead.  
 
 # 2020.1

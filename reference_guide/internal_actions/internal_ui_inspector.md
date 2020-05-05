@@ -26,3 +26,5 @@ The _UI Inspector_ displays that the icon has the internal path `Allcons.Actions
 
 ![Internal Icon Info](img/internal_uii_icon_info.png)
 
+## Providing Additional Properties
+Custom Swing components can provide additional properties to be displayed in the _UI Inspector_ dialog via [`UiInspectorContextProvider`](upsource:///platform/platform-impl/src/com/intellij/internal/inspector/UiInspectorContextProvider.java) (2020.1 and later). 

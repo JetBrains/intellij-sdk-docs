@@ -50,7 +50,7 @@
     * [Internal Actions](reference_guide/internal_actions/interal_actions_menu.md)
     * [UI Tools](reference_guide/internal_actions/internal_ui_sub.md)
         * [UI Inspector](reference_guide/internal_actions/internal_ui_inspector.md)
-        * [Laf Defaults](reference_guide/internal_actions/internal_ui_lafd.md)
+        * [LaF Defaults](reference_guide/internal_actions/internal_ui_laf_defaults.md)
 * [Optimizing Performance](reference_guide/performance/performance.md)
 * [Plugin Development FAQ](basics/faq.md)
 

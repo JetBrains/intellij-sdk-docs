@@ -9,4 +9,4 @@ Click on the following topics to learn more about the _Internal Actions_ menu.
 * [Enabling Internal Mode](enabling_internal.md) in IntelliJ IDEA.
 * [The Internal Actions Menu](interal_actions_menu.md)
 * [The UI Inspector](internal_ui_inspector.md)
-* [The LaF Defaults Tool](internal_ui_lafd.md)
+* [The LaF Defaults Tool](internal_ui_laf_defaults.md)

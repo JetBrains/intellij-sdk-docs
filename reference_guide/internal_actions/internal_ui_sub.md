@@ -10,4 +10,4 @@ If the menu item **Tools \| Internal Actions \| UI** is not available in Intelli
 ## The Tools Available on the UI Submenu
 
 * [UI Inspector](internal_ui_inspector.md)
-* [LaF Defaults](internal_ui_lafd.md)
+* [LaF Defaults](internal_ui_laf_defaults.md)

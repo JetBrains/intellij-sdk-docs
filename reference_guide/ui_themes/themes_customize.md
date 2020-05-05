@@ -284,5 +284,5 @@ In the Quick Documentation popup the format is e.g. _Since: 2019.2_.
 The Code Completion popup is similar, but it the format is e.g. _[Since 2019.2]_.
 
 ### Finding a UI Control Key Using Laf Defaults UI
-Using the [Laf Defaults](/reference_guide/internal_actions/internal_ui_lafd.md) inspector, enter the `element` portion of the key. 
+Using the [Laf Defaults](/reference_guide/internal_actions/internal_ui_laf_defaults.md) inspector, enter the `element` portion of the key. 
 The Laf Defaults inspector will prompt with a list of UI Control keys and their default color.

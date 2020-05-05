@@ -49,8 +49,8 @@
     * [Enabling Internal Mode](reference_guide/internal_actions/enabling_internal.md)
     * [Internal Actions](reference_guide/internal_actions/interal_actions_menu.md)
     * [UI Tools](reference_guide/internal_actions/internal_ui_sub.md)
-    * [UI Inspector](reference_guide/internal_actions/internal_uii.md)
-    * [Laf Defaults](reference_guide/internal_actions/internal_ui_lafd.md)
+        * [UI Inspector](reference_guide/internal_actions/internal_uii.md)
+        * [Laf Defaults](reference_guide/internal_actions/internal_ui_lafd.md)
 * [Optimizing Performance](reference_guide/performance/performance.md)
 * [Plugin Development FAQ](basics/faq.md)
 

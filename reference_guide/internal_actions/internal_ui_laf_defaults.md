@@ -18,7 +18,7 @@ The _LaF Defaults_ window has two columns representing key-value pairs for UI Co
 * The _Name_ column contains the UI Control `key` for each IntelliJ Platform UI element available at runtime.
 * The _Value_ column contains the UI Control color `value` for each IntelliJ Platform UI element. 
 
-## Using the the LaF Panel
+## Using the LaF Panel
 
 ### Finding UI Controls 
 The _LaF Defaults_ window is used interactively by entering a UI element type - e.g. `Panel` - in the _Filter_ text box at the top.

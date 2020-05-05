@@ -168,6 +168,8 @@ Group IDs for the IntelliJ Platform are defined in [`PlatformActions.xml`](upsou
 
 This, and additional information can also be found by using the [Code Completion](https://www.jetbrains.com/help/idea/auto-completing-code.html#invoke-basic-completion), [Quick Definition](https://www.jetbrains.com/help/idea/viewing-reference-information.html#view-definition-symbols) and [Quick Documentation](https://www.jetbrains.com/help/idea/viewing-reference-information.html#inline-quick-documentation) features.
 
+> **TIP** To lookup existing Action ID (e.g. for use in `relative-to-action`), [UI Inspector](/reference_guide/internal_actions/internal_ui_inspector.md) can be used.
+
 ```xml
 <!-- Actions -->
 <actions>

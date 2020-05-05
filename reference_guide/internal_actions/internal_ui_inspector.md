@@ -15,12 +15,13 @@ If the menu item **Tools \| Internal Actions \| UI \| UI Inspector** is not avai
 Before using the _UI Inspector_, it must be enabled by selecting the menu item **Tools \| Internal Actions \| UI \| UI Inspector**.
 The enabled state of the _UI Inspector_ is modal; it remains enabled until it is disabled by selecting the _UI Inspector_ menu item again. 
 
-When enabled, the _UI Inspector_ menu entry displays a check mark.
-
 ## Using the UI Inspector
-While enabled, centering the cursor on a UI element and pressing _control-alt_ when _clicking_ the mouse reveals the internal description of the UI element.
+While enabled, centering the cursor on a UI element and pressing <kbd>Control/Cmd</kbd>+<kbd>Alt</kbd> when _clicking_ the mouse reveals the properties of the Swing component.
 
-For example, to get information about the build (hammer) icon on the toolbar, put the cursor on the icon and press _control-alt_ while clicking the mouse.
+> **TIP** If the component relates to an [Action](/basics/action_system.md) (e.g. Action Button or Menu Item), the Action class name and its ID will be shown.
+
+For example, to get information about the _Build Project_ button's icon (hammer) on the toolbar (highlighted in green), put the mouse cursor on the icon and press <kbd>Control/Cmd</kbd>+<kbd>Alt</kbd> while clicking the mouse.
+
 The _UI Inspector_ displays that the icon has the internal path `Allcons.Actions.Compile`:
 
 ![Internal Icon Info](img/internal_uii_icon_info.png)

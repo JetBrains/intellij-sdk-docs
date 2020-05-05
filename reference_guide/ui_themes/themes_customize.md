@@ -118,7 +118,7 @@ An icon replacement is described within the `icon {}` section of a Theme descrip
 Note that icon replacement key-value pairs appear outside of the `ColorPalette` section. 
 
 For icon substitutions, the `key` is the path to the default icon image.
-This path is derived from the `AllIcons.[Group].[IconName]` path in icon section reported by the [UI Inspector](/reference_guide/internal_actions/internal_uii.md).  
+This path is derived from the `AllIcons.[Group].[IconName]` path in icon section reported by the [UI Inspector](/reference_guide/internal_actions/internal_ui_inspector.md).  
 
 For example, the _Build_ (hammer) icon in the toolbar has the path `Allcons.Actions.Compile` as reported by the UI Inspector. 
 Therefore the `key` for the _Build_ icon is `/actions/compile.svg`. 

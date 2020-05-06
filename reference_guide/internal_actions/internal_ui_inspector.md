@@ -30,6 +30,7 @@ Various components used in the IntelliJ Platform expose additional properties. T
 | Type | Place | Properties |
 |------|-----------|------------|
 | [`AnAction`](/basics/action_system.md) | Action Button<br>Menu Item | `Action` - [`AnAction`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java) implementation<br>`Action ID` - Action `id`<br>`Action Plugin ID` - contributing plugin |
+| [`ActionToolbar`](/basics/action_system.md) | Action Toolbar | `Toolbar Group` - Action Group ID<br>`All Groups` - contained Action Group IDs |
 | [`DialogWrapper`](/user_interface_components/dialog_wrapper.md) | Modal Dialog | `dialogWrapperClass` - [`DialogWrapper`](upsource:///platform/platform-api/src/com/intellij/openapi/ui/DialogWrapper.java) implementation |
 | [`GutterMark`](upsource:///platform/editor-ui-api/src/com/intellij/codeInsight/daemon/GutterMark.java) | Editor Gutter Icon | `gutter renderer` - [`GutterMark`](upsource:///platform/editor-ui-api/src/com/intellij/codeInsight/daemon/GutterMark.java) implementation |
 | [`IntentionAction`/`QuickFix`](/reference_guide/custom_language_support/code_inspections_and_intentions.md) | Popup Menu in Editor | `intention action`/`quick fix` - [`IntentionAction`](upsource:///platform/analysis-api/src/com/intellij/codeInsight/intention/IntentionAction.java) / [`QuickFix`](upsource:///platform/analysis-api/src/com/intellij/codeInspection/QuickFix.java) implementation |

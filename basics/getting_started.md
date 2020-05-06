@@ -9,22 +9,20 @@ There are two supported workflows available for building plugins.
 The recommended workflow for new projects is to [use Gradle](#using-gradle). 
 The old [Plugin DevKit](#using-devkit) workflow still supports existing projects.
 
-If a new plugin will be Scala-based, a plugin development workflow [sbt-idea-plugin](https://github.com/JetBrains/sbt-idea-plugin), is available.
-The workflow is analogous to the Gradle workflow but tailored to developing IntelliJ Platform plugins in Scala.
-JetBrains does not officially support this Scala workflow, and at this time the workflow has only minimal documentation.
+> **NOTE** If a new plugin will be Scala-based, a dedicated SBT plugin [sbt-idea-plugin](https://github.com/JetBrains/sbt-idea-plugin) is available. 
 
-The Gradle workflow offers these advantages:
-* Gradle in general:
+The Gradle workflow offers a number of advantages:
   * Representations of source sets, modules, and projects are portable,
   * Projects of any size or complexity usually require scripts for build management, which Gradle handles natively,
   * Training, documentation, and community help for general Gradle topics are widely available.
-* Specific to development of IntelliJ Platform plugins with the Gradle plugin for IntelliJ IDEA:
+
+Specific to development of IntelliJ Platform plugins with the Gradle plugin for IntelliJ IDEA:
   * Changing plugin targets is easier because it is all done in `build.gradle`:
       * Switching the version of the target IntelliJ Platform (IDE),
       * Changing the target IntelliJ Platform-based IDE, e.g., from IntelliJ IDEA to PyCharm,
       * Running a plugin against alternate versions of the JetBrains runtime.
-  * Gradle is fully integrated with IntelliJ Platform-based IDE CI builds and [plugins.jetbrains.com](https://plugins.jetbrains.com), so it is easy to customize and extend the build and publishing processes. 
-  * Gradle has built-in verification for `plugin.xml` module dependency and use of version-specific IntelliJ Platform APIs, the same checks as on [plugins.jetbrains.com](https://plugins.jetbrains.com).
+  * Gradle is fully integrated with Continuous Integration systems and [plugins.jetbrains.com](https://plugins.jetbrains.com), so it is easy to customize and extend the build and publishing processes. 
+  * Built-in verification task for `plugin.xml` and plugin distribution structure, the same checks as on [plugins.jetbrains.com](https://plugins.jetbrains.com).
 
 ## Using Gradle
 

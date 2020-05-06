@@ -11,6 +11,8 @@ inspection on all plugin descriptor files (required `plugin.xml` as well as any 
 For plugins hosted on the [JetBrains plugin repository](/plugin_repository/index.md) the built-in [Plugin Verifier](https://blog.jetbrains.com/platform/2018/07/plugins-repository-now-integrates-with-the-plugin-verification-tool/)
 will run these checks automatically. See [Plugin Verifier](/reference_guide/api_changes_list.md#plugin-verifier) for more information on how to run it locally.
 
+During development, [Enabling Auto-Reload](/basics/ide_development_instance.md#enabling-auto-reload) will allow code changes to take effect immediately in the sandbox IDE instance.
+
 ### No Use of Components
 No Components must be used; existing ones [must be migrated](plugin_components.md) to services, extensions or listeners.
 

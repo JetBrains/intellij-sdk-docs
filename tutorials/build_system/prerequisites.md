@@ -113,7 +113,7 @@ The New Project Wizard produces the `my_gradle_plugin` project `build.gradle` fi
 ```groovy
   plugins {
       id 'java'
-      id 'org.jetbrains.intellij' version '0.4.18'
+      id 'org.jetbrains.intellij' version '0.4.20'
   }
   
   group 'com.your.company'

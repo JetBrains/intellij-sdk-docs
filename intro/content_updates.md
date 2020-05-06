@@ -9,6 +9,10 @@ See [Recently Updated](/recently_updated.md) ([RSS](https://github.com/JetBrains
 
 # 2020
 
+## May
+UI Inspector
+: Inspect Swing components and associated data (like `AnAction` for menu item) using [UI Inspector](/reference_guide/internal_actions/internal_ui_inspector.md). 
+
 ## March
 JCEF Support (_Experimental Feature_) 
 : Allows [embedding](/reference_guide/jcef.md) Chromium-based browser in the IDE.

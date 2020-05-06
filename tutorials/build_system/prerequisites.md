@@ -25,16 +25,17 @@ It guides you through the Gradle project creation process with four screens.
 
 ### New Project Configuration Screen
 On the first screen, the type of project is configured:
-* From the _product category_ pane on the left, choose _Gradle_.
-* Specify the _Project SDK_ based on the **Java 8** JDK.
+* From the _project type_ pane on the left, choose _Gradle_.
+* Specify the _Project SDK_ based on the **Java 8** JDK. 
   This SDK will be the default JRE used to run Gradle, and the JDK version used to compile the plugin Java source.
   Based on the Project SDK, the IntelliJ IDEA Gradle Plugin will download the corresponding version of the IntelliJ Platform-based IDE automatically.
 * In the _Additional Libraries and Frameworks_ panel, select _Java_ and _IntelliJ Platform Plugin_.
   These settings will be used for the remainder of this tutorial.
-* Optionally:
-  * To include support for the Kotlin language in the plugin, check the _Kotlin/JVM_ box (circled in green below.)
-    This option can be selected with or without the _Java_ language.
-  * To create the `build.gradle` file as a Kotlin build script rather than Groovy, check the _Kotlin DSL build script_ box (circled in magenta below.)
+
+Optionally:
+  * To include support for the Kotlin language in the plugin, check the _Kotlin/JVM_ box (circled in green below).
+    This option can be selected with or without the _Java_ language. See [Kotlin for Plugin Developers](/tutorials/kotlin.md) for more information.
+  * To create the `build.gradle` file as a Kotlin build script (`build.gradle.kts`) rather than Groovy, check the _Kotlin DSL build script_ box (circled in magenta below).
 
 Then click _Next_:
 
@@ -101,14 +102,14 @@ The New Project Wizard produces the `my_gradle_plugin` project `build.gradle` fi
   The IntelliJ IDEA Gradle plugin dynamically creates a `buildscript{}`.
 * Two plugins to Gradle are explicitly declared:
   * The [Gradle Java](https://docs.gradle.org/current/userguide/java_plugin.html) plugin.
-  * The [IntelliJ IDEA Gradle plugin](https://github.com/JetBrains/gradle-intellij-plugin/).
+  * The [gradle-intellij-plugin](https://github.com/JetBrains/gradle-intellij-plugin/).
 * The _Group ID_ from the Wizard [Project Naming Screen](#project-naming-screen) is the `project.group` value.
 * The _Version_ from the Wizard [Project Naming Screen](#project-naming-screen) is the `project.version` value.
 * The `sourceCompatibility` line is injected to enforce using Java 8 JDK to compile Java source.
-* The only comment in the file is a link to the [README.md](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md) for the IntelliJ IDEA Gradle plugin, which is a reference for the DSLs defined by the plugin.
+* The only comment in the file is a link to the [README.md](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md) for the gradle-intellij-plugin, which is a reference for its configuration DSL.
 * The value of the Setup DSL attribute `intellij.version` specifies the version of the IntelliJ Platform to be used to build the plugin.
   It defaults to the version of IntelliJ IDEA that was used to run the New Project Wizard.
-* The value of the Patching DSL attribute `patchPluginXml.changeNotes` is set to place holder text.
+* The value of the Patching DSL attribute `patchPluginXml.changeNotes` is set to a place holder text.
 
 ```groovy
   plugins {
@@ -129,7 +130,7 @@ The New Project Wizard produces the `my_gradle_plugin` project `build.gradle` fi
   
   // See https://github.com/JetBrains/gradle-intellij-plugin/
   intellij {
-      version '2019.1'
+      version '2020.1'
   }
   patchPluginXml {
       changeNotes """

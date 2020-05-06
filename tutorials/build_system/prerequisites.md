@@ -26,7 +26,7 @@ It guides you through the Gradle project creation process with four screens.
 ### New Project Configuration Screen
 On the first screen, the type of project is configured:
 * From the _product category_ pane on the left, choose _Gradle_.
-* Specify the _Project SDK_ based on the Java 8 JDK.
+* Specify the _Project SDK_ based on the **Java 8** JDK.
   This SDK will be the default JRE used to run Gradle, and the JDK version used to compile the plugin Java source.
   Based on the Project SDK, the IntelliJ IDEA Gradle Plugin will download the corresponding version of the IntelliJ Platform-based IDE automatically.
 * In the _Additional Libraries and Frameworks_ panel, select _Java_ and _IntelliJ Platform Plugin_.

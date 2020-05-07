@@ -39,6 +39,7 @@
       <override-text place="MainMenu" text="Pop Dialog Action"/>
       <keyboard-shortcut first-keystroke="control alt A" second-keystroke="C" keymap="$default"/>
       <mouse-shortcut keystroke="control button3 doubleClick" keymap="$default"/>
+      <add-to-group group-id="ToolsMenu" anchor="first"/>
     </action>
     <!-- All of the following menu groups add the action PopupDialogAction to menus in different ways.
           Note that even though these groups reuse the same action class, in each use the action ids are unique. -->

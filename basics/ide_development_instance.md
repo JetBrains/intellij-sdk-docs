@@ -52,7 +52,7 @@ When adding system property `idea.auto.reload.plugins` in the [run configuration
 This allows a much faster development cycle by avoiding a full restart of the development instance after code changes.
 For [Gradle-based plugins](/tutorials/build_system/prerequisites.md) using `gradle-intellij-plugin` 0.4.17 or later, this property is set automatically.
 
-To disable auto-reload, set `idea.auto.reload.plugins` to `false` explicitly (2020.1.2+).
+To disable auto-reload, set `idea.auto.reload.plugins` to `false` explicitly (2020.1.2+). Please note that any unloading problems in production environment will ask the user to restart the IDE.
 
 
 ## The Development Instance Sandbox Directory 

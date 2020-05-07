@@ -20,7 +20,9 @@ The Wizard creates all the necessary project files based on a few template input
 Before creating a new Gradle project, familiarize yourself with the IntelliJ IDEA help topic [Creating a new Gradle project](https://www.jetbrains.com/help/idea/getting-started-with-gradle.html#create_gradle_project), which is a tutorial for creating general Gradle projects in IntelliJ IDEA.
 This page emphasizes the steps in the process for creating IntelliJ Platform plugin projects that are Gradle-based.
 
-Launch the [New Project Wizard](https://www.jetbrains.com/help/idea/gradle.html#project_create_gradle).
+> **WARNING** Please note that Gradle 6.1 has a [known bug](https://github.com/gradle/gradle/issues/11966) that prevents using it for developing plugins, please upgrade to 6.1.1 or later.
+
+>Launch the [New Project Wizard](https://www.jetbrains.com/help/idea/gradle.html#project_create_gradle).
 It guides you through the Gradle project creation process with four screens.
 
 ### New Project Configuration Screen

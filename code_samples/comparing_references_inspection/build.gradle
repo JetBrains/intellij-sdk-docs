@@ -31,6 +31,10 @@ intellij {
   sameSinceUntilBuild = true
 }
 
+runIde{
+  buildSearchableOptions.enabled = false
+}
+
 patchPluginXml {
   version = project.version
 }

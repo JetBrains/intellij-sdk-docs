@@ -19,6 +19,11 @@ intellij {
   version = '2020.1'
   sameSinceUntilBuild = true
 }
+
+runIde{
+  buildSearchableOptions.enabled = false
+}
+
 patchPluginXml {
   version = project.version
 }

@@ -66,4 +66,6 @@ Now that the grammar is defined generate a parser with PSI classes via **Generat
 This step generates a parser and PSI elements in the `/src/main/gen` folder of the project.
 Mark this folder as *Generated Sources Root* and make sure everything compiles without errors.
 
+> **TIP** Gradle plugin [gradle-grammarkit-plugin](https://github.com/JetBrains/gradle-grammar-kit-plugin) can be used alternatively.
+
 ![Parser](img/generated_parser.png){:width="800px"}

@@ -25,6 +25,8 @@ Choose the project root directory, for example `code_samples/simple_language_plu
 
 After that, the IDE generates the lexer under the `gen` directory, for example in `simple_language_plugin/src/main/gen/org/intellij/sdk/language/SimpleLexer`.
 
+> **TIP** Gradle plugin [gradle-grammarkit-plugin](https://github.com/JetBrains/gradle-grammar-kit-plugin) can be used alternatively.
+
 See [Implementing Lexer](/reference_guide/custom_language_support/implementing_lexer.md) for more information about using _JFlex_ with the IntelliJ Platform.
 
 ## 4.3. Define a Lexer Adapter

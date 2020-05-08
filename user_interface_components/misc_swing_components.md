@@ -45,3 +45,6 @@ The
 class is JetBrains' implementation of the tab control, used for editor tabs and a few other components.
 It has a significantly different look & feel compared to the standard Swing tabs, and looks less native on the macOS platform, so it's up to you to choose which tab control would be more appropriate for your plugin.
 
+
+### Toolbars
+See [Building UI from Actions](/basics/action_system.md#building-ui-from-actions) on how to create `AnAction`-based toolbars.

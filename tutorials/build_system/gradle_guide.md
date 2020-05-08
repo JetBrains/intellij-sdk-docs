@@ -4,7 +4,8 @@ title: Configuring Gradle for IntelliJ Platform Plugins
 <!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 This page serves as a guide to Gradle-based plugin configuration for _IntelliJ Platform_ projects.
-The IntelliJ IDEA Ultimate and Community editions bundle the Gradle and Plugin DevKit plugins to support Gradle-based development. 
+The IntelliJ IDEA Ultimate and Community editions bundle the _Gradle_ and _Plugin DevKit_ plugins to support Gradle-based development. 
+
 The [Getting Started with Gradle](prerequisites.md) page provides a tutorial for creating Gradle-based IntelliJ Platform plugins.
 It may be useful to review the IntelliJ Platform page, particularly the description of versioning in the [Open Source](/intro/intellij_platform.md#open-source) section.
 
@@ -13,14 +14,14 @@ It may be useful to review the IntelliJ Platform page, particularly the descript
 * bullet list
 {:toc}
 
-## Overview of the IntelliJ IDEA Gradle Plugin 
-The IntelliJ IDEA Gradle plugin is built from the open-source project `gradle-intellij-plugin`.
-The plugin adds Gradle tasks for the `build.gradle` file that enable developing IntelliJ Platform plugins.
-The [README](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md) file for the `gradle-intellij-plugin` project is the reference for configuring these tasks.
+## Overview of the Gradle Plugin 
+The Gradle plugin is built from the open-source project [gradle-intellij-plugin](https://github.com/JetBrains/gradle-intellij-plugin).
+This plugin adds Gradle tasks that enable developing IntelliJ Platform plugins.
+The [README](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md) file has a reference for configuring these tasks.
  
 When getting started, there are several items to note on the README page:
-* At the top of the page, the [latest production version](https://github.com/JetBrains/gradle-intellij-plugin#the-latest-version) of the IntelliJ IDEA Gradle plugin is listed.
-* Also at the top is the minimum version of Gradle required to support the IntelliJ IDEA Gradle plugin.
+* At the top of the page, the [latest production version](https://github.com/JetBrains/gradle-intellij-plugin#the-latest-version) of the plugin is listed. It is advised to upgrade to the latest available version regularly.
+* Also, at the top is the minimum required version of Gradle.
 * The table of extended Gradle [Tasks](https://github.com/JetBrains/gradle-intellij-plugin#tasks) has a succinct description for each task added by the plugin.
   This documentation will focus on the configuration and use four of those tasks:
   * [Setup DSL](https://github.com/JetBrains/gradle-intellij-plugin#setup-dsl) - `intellij { ... }`.
@@ -84,9 +85,10 @@ However, it can be controlled by setting the `intellij.ideaDependencyCachePath` 
 ### Controlling Downloads by the Gradle Plugin
 As mentioned in the section about [configuring the intellij platform](#configuring-the-gradle-plugin-for-building-intellij-platform-plugin-projects) used for building plugin projects, the Gradle plugin will fetch the version of the IntelliJ Platform specified by the default or by the `intellij` attributes.
 Standardizing the versions of the Gradle plugin and Gradle system across projects will minimize the time spent downloading versions.
+
 There are controls for managing the IntelliJ IDEA Gradle plugin version, and the version of Gradle itself.
 The Gradle plugin version is defined in the `plugins {}` section of a project's `build.gradle` file.
-The Gradle version is in defined in a project's `gradle-wrapper.properties`.
+The Gradle version is defined in `<PROJECT ROOT>/gradle/wrapper/gradle-wrapper.properties`.
 
 ### Patching the Plugin Configuration File
 A plugin project's `plugin.xml` file has element values that are "patched" at build time from the attributes of the `patchPluginXml` ([Patching DSL](https://github.com/JetBrains/gradle-intellij-plugin#patching-dsl)) task. 
@@ -135,5 +137,5 @@ IntelliJ Platform plugins targeting IntelliJ IDEA have the most straightforward 
 * Set the appropriate attributes for [patching the `plugin.xml` file](#patching-the-plugin-configuration-file).
 
 ### Plugins Targeting Alternate IntelliJ Platform-Based IDEs
-Gradle also supports developing plugins to run in IDEs that are based on the IntelliJ Platform, but are not IntelliJ IDEA.
+Gradle also supports developing plugins to run in IDEs that are based on the IntelliJ Platform.
 For more information, see the [Developing for Multiple Products](/products/dev_alternate_products.md) page of this guide.

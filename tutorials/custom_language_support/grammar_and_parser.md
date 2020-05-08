@@ -26,7 +26,7 @@ Create the `SimpleElementType` in the `org.intellij.sdk.language.psi` package by
 ## 3.3. Define the Grammar
 Define a grammar for the Simple Language in the `com/intellij/sdk/language/Simple.bnf` file.
 
-```java
+```properties
 {
   parserClass="org.intellij.sdk.language.parser.SimpleParser"
 
@@ -52,6 +52,8 @@ property ::= (KEY? SEPARATOR VALUE?) | KEY
 ```
 
 As shown, a properties file can contain properties, comments, and line breaks.
+
+Please see [Grammar Kit](https://github.com/JetBrains/Grammar-Kit) documentation for more details on BNF syntax.
 
 The grammar defines the flexibility of the support for a language.
 The above grammar specifies that a property may have or may not have key and value.

@@ -29,6 +29,10 @@ intellij {
   sameSinceUntilBuild = true
 }
 
+buildSearchableOptions {
+  enabled = false
+}
+
 compileKotlin {
   kotlinOptions.jvmTarget = "1.8"
 }

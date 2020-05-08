@@ -21,8 +21,8 @@ intellij {
   sameSinceUntilBuild = true
 }
 
-runIde{
-  buildSearchableOptions.enabled = false
+buildSearchableOptions {
+  enabled = false
 }
 
 patchPluginXml {

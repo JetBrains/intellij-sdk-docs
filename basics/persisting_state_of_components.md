@@ -145,6 +145,11 @@ Please see `com.intellij.util.xmlb.annotations`'s [`package.html`](upsource:///p
 
 If the state that you need to serialize doesn't map cleanly to a JavaBean, you can use `org.jdom.Element` as the state class. In that case, you can use the `getState()` method to build an XML element with an arbitrary structure, which will then be saved directly in the state XML file. In the `loadState()` method, you can deserialize the JDOM element tree using any custom logic. Please note this is not recommended and should be avoided whenever possible.
 
+## Migrating Persisted Values
+
+If the underlying persistence model or storage format has changed, a [`ConverterProvider`](upsource:///platform/lang-impl/src/com/intellij/conversion/ConverterProvider.java) can provide 
+[`ProjectConverter`](upsource:///platform/lang-impl/src/com/intellij/conversion/ProjectConverter.java) whose `getAdditionalAffectedFiles()` method returns affected files to migrate and performs programmatic migration of stored values.
+
 ## Persistent Component Lifecycle
 
 The `loadState()` method is called after the component has been created (only if there is some non-default state persisted for the component), and after the XML file with the persisted state is changed externally (for example, if the project file was updated from the version control system). In the latter case, the component is responsible for updating the UI and other related components according to the changed state.

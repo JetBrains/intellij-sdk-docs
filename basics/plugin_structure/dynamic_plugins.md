@@ -5,6 +5,8 @@ title: Dynamic Plugins
 
 Starting with 2020.1 release, the ability to install, update and uninstall plugins without restarting the IDE is available in the IntelliJ Platform. During plugin development, this also allows avoiding restarts of the [IDE Development Instance](/basics/ide_development_instance.md#enabling-auto-reload) after every code change. 
 
+> **NOTE** If a plugin _requires_ restart (e.g., due to using native libraries) specify `restart-required="true"` for `<idea-plugin>` root tag in `plugin.xml`.
+
 For a plugin to support this, all restrictions listed below must be met. To verify a plugin locally, run _Plugin DevKit | Plugin descriptor | Plugin.xml dynamic plugin verification_ 
 inspection on all plugin descriptor files (required `plugin.xml` as well as any additional files).
 

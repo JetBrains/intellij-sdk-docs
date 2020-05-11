@@ -15,3 +15,5 @@ Classes used to manipulate run configurations can be split into the following gr
 This diagram shows the main classes:
 
 ![Architecture](img/classes.png)
+
+See [Run Configurations Tutorial](/tutorials/run_configurations.md) for a fully working sample.

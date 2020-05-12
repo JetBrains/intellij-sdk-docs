@@ -33,33 +33,6 @@ jobs:
   gradleValidation:
     name: Gradle Wrapper
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        plugin:
-          - action_basics
-          - comparing_references_inspection
-          - conditional_operator_intention
-          - editor_basics
-          - facet_basics
-          - framework_basics
-          - inspection_basics
-          - kotlin_demo
-          - live_templates
-          - max_opened_projects
-          - module
-          - product_specific/pycharm_basics
-          - project_model
-          - project_view_pane
-          - project_wizard
-          - psi_demo
-          - run_configuration
-          - simple_language_plugin
-          - tool_window
-          - tree_structure_provider
-    defaults:
-      run:
-        shell: bash
-        working-directory: code_samples/${{ matrix.plugin }}
     steps:
       - name: Fetch Sources
         uses: actions/checkout@v2

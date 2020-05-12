@@ -73,7 +73,15 @@ class MyService implements PersistentStateComponent<MyService> {
 
 The implementation of `PersistentStateComponent` works by serializing public fields, [annotated](upsource:///platform/util/src/com/intellij/util/xmlb/annotations) private fields (see also [Customizing the XML format of persisted values](#customizing-the-xml-format-of-persisted-values)), and bean properties into an XML format. 
 
+To exclude a public field or bean property from serialization, annotate the field or getter with `@com.intellij.util.xmlb.annotations.Transient`.
+
+Note that the state class must have a default constructor. It should return the default state of the component (one used if there is nothing persisted in the XML files yet).
+
+State class should have an `equals()` method, but if it is not implemented, state objects are compared by fields. When using Kotlin, use [Data Classes](https://kotlinlang.org/docs/reference/data-classes.html).
+
+
 The following types of values can be persisted:
+
 * numbers (both primitive types, such as `int`, and boxed types, such as `Integer`)
 * booleans
 * strings
@@ -108,11 +116,6 @@ class State {
 }
 ```
 
-To exclude a public field or bean property from serialization, annotate the field or getter with `@com.intellij.util.xmlb.annotations.Transient`.
-
-Note that the state class must have a default constructor. It should return the default state of the component (one used if there is nothing persisted in the XML files yet).
-
-State class should have an `equals()` method, but if it is not implemented, state objects are compared by fields. When using Kotlin, use [Data Classes](https://kotlinlang.org/docs/reference/data-classes.html).
 
 ### Defining the Storage Location
 

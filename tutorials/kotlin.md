@@ -45,10 +45,8 @@ Kotlin. To learn more about building IntelliJ Platform plugins with Kotlin, this
 ## 2. Adding Kotlin Support
 
 Plugins targeting the IntelliJ Platform versions 143 and above are easy to migrate: just start writing Kotlin.
-The necessary Kotlin plugins and libraries are already bundled with the IDE, requiring no further configuration.
-For version 142 or below, you will need to install and configure dependencies to the Kotlin runtime (in addition
-to installing the Kotlin plugin itself, for code assistance and tooling support). For detailed instructions,
-please refer to the [Kotlin documentation](https://kotlinlang.org/docs/tutorials/getting-started.html).
+The IDE already bundles the necessary Kotlin plugins and libraries, requiring no further configuration.
+For detailed instructions, please refer to the [Kotlin documentation](https://kotlinlang.org/docs/tutorials/getting-started.html).
 
 ## 3. Kotlin Gradle Plugin
 
@@ -154,8 +152,8 @@ for building forms. Using GUI designer with Kotlin is currently [not supported](
 
 ## 5. Handling Kotlin Code
 
-If you need to write a plugin that processes Kotlin code, you need to add a dependency on the Kotlin plugin. Please refer
-to [Plugin Dependencies](/basics/plugin_structure/plugin_dependencies.md) for information on how to do that.
+If a plugin processes Kotlin code (e.g., providing inspections), it needs to add a dependency on the Kotlin plugin (Plugin ID `org.jetbrains.kotlin`) itself.
+Please refer to [Plugin Dependencies](/basics/plugin_structure/plugin_dependencies.md) for more information.
 
 ## 6. Examples
 

@@ -79,7 +79,13 @@ Please see [Incompatible API Changes](/reference_guide/api_changes_list.md) on h
 
 `com.intellij.compiler.backwardRefs.LanguageCompilerRefAdapter.INSTANCES` field removed
 : This field leaked instances of plugin's extensions on plugin unloading. Use `com.intellij.compiler.backwardRefs.LanguageCompilerRefAdapter#EP_NAME.getExtensionList()` directly instead.  
-                
+
+`groovy.util.GroovyTestCase` class removed
+: Add `org.codehaus.groovy:groovy-test` dependency.
+
+`groovy.util.GroovyTestSuite` class removed
+: Add `org.codehaus.groovy:groovy-test` denendency.
+
 ### VCS
   
 `com.intellij.diff.util.DiffUserDataKeysEx.REVISION_INFO` field removed

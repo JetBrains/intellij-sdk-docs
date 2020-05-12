@@ -26,11 +26,16 @@ sourceSets {
 // See https://github.com/JetBrains/gradle-intellij-plugin/
 intellij {
   version = '2020.1'
-  sameSinceUntilBuild = true
 }
 
 buildSearchableOptions {
   enabled = false
+}
+
+patchPluginXml {
+  version = project.version
+  sinceBuild = '201'
+  untilBuild = '201.*'
 }
 
 compileKotlin {

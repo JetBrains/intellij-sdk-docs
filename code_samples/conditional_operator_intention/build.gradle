@@ -28,7 +28,6 @@ test {
 intellij {
   version = '2020.1'
   plugins = ['java']
-  sameSinceUntilBuild = true
 }
 
 buildSearchableOptions {
@@ -37,4 +36,6 @@ buildSearchableOptions {
 
 patchPluginXml {
   version = project.version
+  sinceBuild = '201'
+  untilBuild = '201.*'
 }

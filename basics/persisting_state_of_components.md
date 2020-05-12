@@ -9,11 +9,11 @@ The *IntelliJ Platform* provides an API that allows components or services to pe
 
 ## Using PropertiesComponent for Simple Non-Roamable Persistence
 
-If the only thing that your plugin needs to persist is a few simple values, the easiest way to do so is to use the [`com.intellij.ide.util.PropertiesComponent`](upsource:///platform/core-api/src/com/intellij/ide/util/PropertiesComponent.java) service. It can be used for saving both application-level values and project-level values (stored in the workspace file). Roaming is disabled for `PropertiesComponent`, so use it only for temporary, non-roamable properties.
+If the plugin needs to persist just a few simple values, the easiest way to do so is to use the [`com.intellij.ide.util.PropertiesComponent`](upsource:///platform/core-api/src/com/intellij/ide/util/PropertiesComponent.java) service. It can be used for saving both application-level values and project-level values (stored in the workspace file). Roaming is disabled for `PropertiesComponent`, so use it only for temporary, non-roamable properties.
 
 Use the `PropertiesComponent.getInstance()` method for storing application-level values, and the `PropertiesComponent.getInstance(Project)` method for storing project-level values.
 
-Since all plugins share the same namespace, it is highly recommended to prefix key names (e.g., using your plugin ID).
+Since all plugins share the same namespace, it is highly recommended to prefix key names (e.g., using plugin ID).
 
 ## Using PersistentStateComponent
 
@@ -71,7 +71,7 @@ class MyService implements PersistentStateComponent<MyService> {
 
 ### Implementing the State Class
 
-The implementation of `PersistentStateComponent` works by serializing public fields, [annotated](upsource:///platform/util/src/com/intellij/util/xmlb/annotations) private fields (see also [Customizing the XML format of persisted values](#customizing-the-xml-format-of-persisted-values)) and bean properties into an XML format. 
+The implementation of `PersistentStateComponent` works by serializing public fields, [annotated](upsource:///platform/util/src/com/intellij/util/xmlb/annotations) private fields (see also [Customizing the XML format of persisted values](#customizing-the-xml-format-of-persisted-values)), and bean properties into an XML format. 
 
 The following types of values can be persisted:
 * numbers (both primitive types, such as `int`, and boxed types, such as `Integer`)
@@ -112,15 +112,15 @@ To exclude a public field or bean property from serialization, annotate the fiel
 
 Note that the state class must have a default constructor. It should return the default state of the component (one used if there is nothing persisted in the XML files yet).
 
-State class should have an `equals` method, but if it is not implemented, state objects will be compared by fields. When using Kotlin, use [Data Classes](https://kotlinlang.org/docs/reference/data-classes.html).
+State class should have an `equals()` method, but if it is not implemented, state objects are compared by fields. When using Kotlin, use [Data Classes](https://kotlinlang.org/docs/reference/data-classes.html).
 
 ### Defining the Storage Location
 
-To specify where exactly the persisted values will be stored, you need to add a `@State` annotation to the `PersistentStateComponent` class. 
+To specify where exactly the persisted values are stored, add `@State` annotation to the `PersistentStateComponent` class. 
 
 It has the following fields:
 * `name` (required) — specifies the name of the state (name of the root tag in XML).
-* `storages` — one or more of `@com.intellij.openapi.components.Storage` annotations to specify the storage locations. Optional for project-level values — standard project file will be used in this case.
+* `storages` — one or more of `@com.intellij.openapi.components.Storage` annotations to specify the storage locations. Optional for project-level values — standard project file is used in this case.
 * `reloadable` (optional) — if set to false, complete project (or application) reload is required when the XML file is changed externally and the state has changed.
 
 The simplest ways of specifying the `@Storage` annotation are as follows (since 2016.x; for previous versions, please see [old version](https://github.com/JetBrains/intellij-sdk-docs/blob/5dcb02991cf828a7d4680d125ce56b4c10234146/basics/persisting_state_of_components.md) of this document):
@@ -129,7 +129,7 @@ The simplest ways of specifying the `@Storage` annotation are as follows (since 
 
 * `@Storage(StoragePathMacros.WORKSPACE_FILE)` for values stored in the workspace file.
 
-By specifying a different value for the `value` parameter (`file` before 2016.x), the state will be persisted in a different file. 
+By specifying a different value for the `value` parameter (`file` before 2016.x), the state is persisted in a different file. 
 
 > **NOTE** For application-level components it is strongly recommended to use a custom file, using of `other.xml` is deprecated.
 
@@ -143,7 +143,7 @@ If you want to use the default bean serialization but need to customize the stor
 
 Please see `com.intellij.util.xmlb.annotations`'s [`package.html`](upsource:///platform/util/src/com/intellij/util/xmlb/annotations/package.html) for more information.
 
-If the state that you need to serialize doesn't map cleanly to a JavaBean, you can use `org.jdom.Element` as the state class. In that case, you can use the `getState()` method to build an XML element with an arbitrary structure, which will then be saved directly in the state XML file. In the `loadState()` method, you can deserialize the JDOM element tree using any custom logic. Please note this is not recommended and should be avoided whenever possible.
+If the state you need to serialize doesn't map cleanly to a JavaBean, you can use `org.jdom.Element` as the state class. In that case, you can use the `getState()` method to build an XML element with an arbitrary structure, which then is saved directly in the state XML file. In the `loadState()` method, you can deserialize the JDOM element tree using any custom logic. Please note this is not recommended and should be avoided whenever possible.
 
 ## Migrating Persisted Values
 
@@ -164,5 +164,5 @@ Implementations can store the state in attributes and sub-elements manually, or 
 
 Components save their state in the following files:
 
-* Project-level: project (`.ipr`) file. However, if the workspace option in the `plugin.xml` file is set to `true`, then workspace (`.iws`) file will be used instead.
+* Project-level: project (`.ipr`) file. However, if the workspace option in the `plugin.xml` file is set to `true`, then workspace (`.iws`) file is used instead.
 * Module-level: module (`.iml`) file.

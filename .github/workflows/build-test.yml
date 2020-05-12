@@ -31,7 +31,7 @@ jobs:
           rake build
 
   gradleValidation:
-    name: Gradle Wrapper
+    name: Gradle Wrappers
     runs-on: ubuntu-latest
     steps:
       - name: Fetch Sources

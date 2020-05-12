@@ -9,6 +9,23 @@ This section adds annotation functionality to support the Simple Language in the
 * bullet list
 {:toc} 
 
+## Required Project Configuration Changes
+Classes defined in this step of the tutorial depend on `com.intellij.psi.PsiLiteralExpression` at runtime.
+Using `PsiLiteralExpression` [introduces a dependency](/basics/getting_started/plugin_compatibility.md#modules-specific-to-functionality) on `com.intellij.modules.java`.
+Beginning in version 2019.2 of the IntelliJ Platform these dependencies are declared in `plugin.xml`:
+
+```xml
+  <depends>com.intellij.modules.java</depends>
+```
+
+The dependency is also declared in the `build.gradle` file:
+
+```groovy
+intellij {
+  plugins = ['java']
+}
+```
+
 ## 7.1. Define an Annotator
 The `SimpleAnnotator` subclasses [`Annotator`](upsource:///platform/analysis-api/src/com/intellij/lang/annotation/Annotator.java).
 Consider a literal string that starts with "simple:" as a prefix of a Simple Language key.
@@ -18,6 +35,8 @@ Annotate the `simple:key` literal expression, and differentiate between a well-f
 ```java
 {% include /code_samples/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleAnnotator.java %}
 ```
+
+> **Tip** If the above code is copied at this stage of the tutorial, then remove the line below the comment "** Tutorial step 18.3 …" The quick fix class in that line is not defined until later in the tutorial.
 
 ## 7.2. Register the Annotator
 Using the `com.intellij.annotator` extension point in the plugin configuration file, register the Simple Language annotator class with the IntelliJ Platform:

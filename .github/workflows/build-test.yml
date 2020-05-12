@@ -30,8 +30,18 @@ jobs:
           export LANGUAGE=en_US.UTF-8
           rake build
 
+  gradleValidation:
+    name: Gradle Wrappers
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch Sources
+        uses: actions/checkout@v2
+      - name: Gradle Wrapper Validation
+        uses: gradle/wrapper-validation-action@v1
+
   samples:
     name: Code Samples / ${{ matrix.plugin }}
+    needs: gradleValidation
     runs-on: ubuntu-latest
     strategy:
       matrix:

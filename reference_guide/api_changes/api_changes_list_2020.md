@@ -84,7 +84,7 @@ Please see [Incompatible API Changes](/reference_guide/api_changes_list.md) on h
 : Add `org.codehaus.groovy:groovy-test` dependency.
 
 `groovy.util.GroovyTestSuite` class removed
-: Add `org.codehaus.groovy:groovy-test` denendency.
+: Add `org.codehaus.groovy:groovy-test` dependency.
 
 ### VCS
   

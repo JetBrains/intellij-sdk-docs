@@ -48,6 +48,24 @@ Or in order to just open it in a separate window:
 ### [`com.intellij.ui.jcef.JBCefApp`](upsource:///platform/platform-api/src/com/intellij/ui/jcef/JBCefApp.java)
 Performs JCEF auto-initialization, manages its lifecycle, and provides `JBCefClient` instances.
 
+Before using JCEF, `JBCefApp.isSupported()` check must be called:
+
+```java
+    if (!JBCefApp.isSupported()) {
+      // Fallback to an alternative browser-less solution
+      return;
+    }                 
+
+    // Use JCEF
+```                               
+
+JCEF can be unsupported when:
+- It’s not available in the IDE runtime (the IDE is started with an alternative OpenJDK).
+- Its version is not compatible with the running IDE.
+
+To avoid the above problems, the IDE should be run with the bundled JBR.
+
+
 ### [`com.intellij.ui.jcef.JBCefClient`](upsource:///platform/platform-api/src/com/intellij/ui/jcef/JBCefClient.java)
 Is tied to every browser component explicitly or implicitly. Used for adding handlers to the associated browser.
 The same instance can be shared among multiple browsers. It is up to the developer to use a shared or per-browser instance, depending on the handlers' logic.

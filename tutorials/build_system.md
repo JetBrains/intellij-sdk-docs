@@ -17,6 +17,6 @@ To make sure that your plugin is not affected by [API changes](/reference_guide/
 Follow releases on [GitHub](https://github.com/JetBrains/gradle-intellij-plugin/releases). 
  
 Below are a series of guides to developing and deploying Gradle-based IntelliJ Platform Plugins:  
-*  [1. Getting Started with Gradle-Based Plugins](build_system/prerequisites.md)
-*  [2. Configuring Gradle-Based Plugins](build_system/gradle_guide.md)
-*  [3. Deploying a Plugin with Gradle](build_system/deployment.md)
+*  [1. Getting Started with Gradle](build_system/prerequisites.md)
+*  [2. Configuring Gradle Projects](build_system/gradle_guide.md)
+*  [3. Publishing Plugins with Gradle](build_system/deployment.md)

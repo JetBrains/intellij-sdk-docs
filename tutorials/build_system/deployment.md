@@ -93,7 +93,7 @@ gradle publishPlugin
 ```
 
 Now check the most recent version of your plugin appears on the [JetBrains Plugins Repository](https://plugins.jetbrains.com/). 
-If successfully deployed, any users who currently have your plugin installed on an eligible version of the IntelliJ Platform are notified of a new update available on the following restart.
+If successfully deployed, any users who currently have your plugin installed on an eligible version of the IntelliJ Platform are notified of a new update available as soon as the update has been verified.
 
 ### Specifying a Release Channel
 You may also deploy plugins to a release channel of your choosing, by configuring the `publishPlugin.channels` property. 
@@ -108,8 +108,10 @@ publishPlugin {
 When empty, this uses the default plugin repository, available to all [JetBrains Plugins Repository](https://plugins.jetbrains.com/) users. 
 However, you can publish to an arbitrarily-named channel. 
 These non-default release channels are treated as separate repositories. 
+
 When using a non-default release channel, users need to add a new [custom plugin repository](https://www.jetbrains.com/help/idea/managing-plugins.html#repos) to install your plugin. 
 For example, if you specify `publishPlugin.channels 'canary'`, then users need to add the `https://plugins.jetbrains.com/plugins/canary/list` repository to install the plugin and receive updates. 
+
 Popular channel names include:
 * `alpha`: https://plugins.jetbrains.com/plugins/alpha/list
 * `beta`: https://plugins.jetbrains.com/plugins/beta/list

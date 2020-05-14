@@ -5,6 +5,14 @@ title: Notable Changes in IntelliJ Platform and Plugins API 2020.*
 
 We've published our roadmap for the IntelliJ Platform for 2020: [Part I](https://blog.jetbrains.com/idea/2019/12/intellij-platform-roadmap-for-2020/) [Part II](https://blog.jetbrains.com/idea/2020/01/intellij-based-ide-features-roadmap-for-2020/)
 
+# 2020.2 
+
+## Notable Changes in IntelliJ Platform 2020.2
+
+Constructor Injection in `Configurable` forbidden
+: Please obtain necessary components only when needed (logged as ERROR now). 
+
+
 # 2020.1 
 
 ## Notable Changes in IntelliJ Platform 2020.1
@@ -29,7 +37,7 @@ Configurable status bar widgets
 JCEF Support (_Experimental Feature_) 
 : Allows [embedding](/reference_guide/jcef.md) Chromium-based browser in the IDE.
 
-Override text presentation for actions depending on menu context. 
+Override text presentation for actions depending on menu context 
 : Set the [`<override-text>`](/basics/action_system.md#setting-the-override-text-element-for-an-action) element within the `<action>` declaration in `plugin.xml`.
 
 Changes in Project Open/Import

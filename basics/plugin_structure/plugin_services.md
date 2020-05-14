@@ -3,9 +3,9 @@ title: Plugin Services
 ---
 <!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-A _service_ is a plugin component loaded on demand when your plugin calls the `getService()` method of the [`ServiceManager`](upsource:///platform/core-api/src/com/intellij/openapi/components/ServiceManager.java) class.
+A _service_ is a plugin component loaded on demand when your plugin calls the `getService()` method of [`ServiceManager`](upsource:///platform/core-api/src/com/intellij/openapi/components/ServiceManager.java).
 
-The *IntelliJ Platform* ensures that only one instance of a service is loaded even though the service is called several times.
+The *IntelliJ Platform* ensures that only one instance of a service is loaded even though it is called several times.
 
 A service must have an implementation class which is used for service instantiation. 
 A service may also have an interface class which is used to obtain the service instance and provides API of the service.
@@ -21,13 +21,13 @@ For the latter two, a separate instance of the service is created for each insta
 
 A service not going to be overridden does not need to be registered in `plugin.xml` (see [How To Declare a Service](#how-to-declare-a-service)).
 
-Instead, annotate service class with [@Service](upsource:///platform/core-api/src/com/intellij/openapi/components/Service.java). See [Project Level Service](#project-service-sample) below for sample. 
+Instead, annotate service class with [`@Service`](upsource:///platform/core-api/src/com/intellij/openapi/components/Service.java). See [Project Level Service](#project-service-sample) below for sample. 
  
 Restrictions:
 
-* Constructor injection is not supported (since it is deprecated).
-* If service is a [PersistentStateComponent](/basics/persisting_state_of_components.md), roaming must be disabled (`roamingType` is set to `RoamingType.DISABLED`).
 * Service class must be `final`.
+* Constructor injection is not supported (since it is deprecated).
+* If service is a [PersistentStateComponent](/basics/persisting_state_of_components.md), roaming must be disabled (`roamingType = RoamingType.DISABLED`).
 
 ## How to Declare a Service?
 
@@ -72,7 +72,7 @@ To improve startup performance, avoid any heavy initializations in the construct
 
 Getting service doesn't need read action and can be performed from any thread. If service is requested from several threads, it will be initialized in the first thread, and other threads will be blocked until service is fully initialized. 
 
-To instantiate the service in Java code:
+To retrieves a service in Java code:
 
 ```java
 MyApplicationService applicationService = ServiceManager.getService(MyApplicationService.class);
@@ -81,10 +81,11 @@ MyProjectService projectService = project.getService(MyProjectService.class)
 ```
 
 In Kotlin code, use convenience methods:
-```kotlin
-MyApplicationService applicationService = service<MyApplicationService>()
 
-MyProjectService projectService = project.service<MyProjectService>()
+```kotlin
+val applicationService = service<MyApplicationService>()
+
+val projectService = project.service<MyProjectService>()
 ```
 
 ### Project Service Sample

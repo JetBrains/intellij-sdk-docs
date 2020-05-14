@@ -4,16 +4,17 @@ title: Custom Language Support
 <!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 *IntelliJ Platform* is a powerful platform for building development tools targeting *any* language.
-Most of IDE features consist of language-independent and language-specific parts, and you can support a particular feature for your language with a small amount of effort:
-you just need to implement the language-specific part, and the language-independent part is provided for you by the platform.
+Most of the IDE features consist of language-independent (provided by the platform) and language-specific parts.
+Supporting a particular feature for a new language can be achieved with a small amount of effort: 
+a plugin must implement only the language-specific part.
 
-This part of the documentation will explain the main concepts of the *Language API* and will guide you through the sequence of steps which are usually required to develop a custom language plugin.
+This part of the documentation explains the main concepts of the *Language API* and guides you through the sequence of steps that are usually required to develop a custom language plugin.
 You can obtain additional information about the *Language API* from the JavaDoc comments for the *Language API* classes and from the source code of the Properties language support, which is part of the
 [IntelliJ IDEA Community Edition](https://github.com/JetBrains/intellij-community)
 source code.
 
 
-If you prefer a full example to the detailed description offered on this page, please check out a step-by-step tutorial on how to define custom language support for _Simple Language_:
+If you prefer a full example to the detailed descriptions offered in this section, please check out a step-by-step tutorial on how to create custom language support for _Simple Language_:
 [Custom Language Support Tutorial](/tutorials/custom_language_support_tutorial.md). Corresponding steps from the tutorial are linked under "Examples" section on each page of this reference.
 
 The webinar [How We Built Comma, the Raku IDE, on the IntelliJ Platform](https://blog.jetbrains.com/platform/2020/01/webinar-recording-how-we-built-comma-the-raku-ide-on-the-intellij-platform/) offers an excellent introduction as well.
@@ -37,5 +38,3 @@ Providing custom language support includes the following major steps:
 * [Documentation](/reference_guide/custom_language_support/documentation.md)
 * [Additional Minor Features](/reference_guide/custom_language_support/additional_minor_features.md)
 
-
-Please ask questions or suggest missing topics in [plugin development forum](https://intellij-support.jetbrains.com/hc/en-us/community/topics/200366979-IntelliJ-IDEA-Open-API-and-Plugin-Development).

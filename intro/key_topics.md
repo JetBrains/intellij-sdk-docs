@@ -7,7 +7,7 @@ The _IntelliJ Platform_ is very large, and very capable, and its size and scope 
 
 ## Essential Concepts
 
-- [Getting Started](/basics/getting_started.md) with plugins.
+- [Creating Your First Plugin](/basics/getting_started.md).
 - [Testing plugins](/basics/testing_plugins/testing_plugins.md).
 - Component model - the _IntelliJ Platform_ is a component based application, and is responsible for creating components and injecting dependencies. Understanding this is necessary for building plugins.
 - [Extension points](/basics/plugin_structure/plugin_extensions.md) - how to register components with extension points, and how to find out what extension points are available.

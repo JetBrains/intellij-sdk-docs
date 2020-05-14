@@ -17,7 +17,7 @@
 ## Part I - Plugins
 * [Quick Start Guide](basics/basics.md)
     * [Types of Plugins](basics/types_of_plugins.md)
-* [Getting Started](basics/getting_started.md)
+* [Creating Your First Plugin](basics/getting_started.md)
     * [Using Gradle](tutorials/build_system.md)
         * [Getting Started with Gradle](tutorials/build_system/prerequisites.md)
         * [Configuring Gradle Projects](tutorials/build_system/gradle_guide.md)

@@ -16,7 +16,7 @@ Welcome to the _IntelliJ Platform_ SDK. This is the primary source of documentat
 * [**About this Guide**](about.md)
     * [**Key Topics**](key_topics.md)
 * [**Getting Help**](getting_help.md)
-* [**Getting Started**](/basics/getting_started.md)
+* [**Creating Your First Plugin**](/basics/getting_started.md)
 * [**Useful Links**](/appendix/resources/useful_links.md)
 
 ## Updates

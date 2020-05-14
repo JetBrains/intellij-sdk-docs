@@ -18,48 +18,19 @@ The resulting JAR/ZIP is located in `build/distributions` and can then be [insta
 
 ## Providing Your Hub Permanent Token to Gradle
 To deploy a plugin to the JetBrains Plugins Repository, you need to supply your [JetBrains Hub Permanent Token](https://plugins.jetbrains.com/docs/marketplace/plugin-upload.html). 
-This page describes three options to supply your _Hub Permanent Token_ via Gradle using: 
-* Gradle properties, 
+
+This section describes two options to supply your _Hub Permanent Token_ via Gradle using: 
 * Environment variables,
 * Parameters to the Gradle task.
 
-### Using Gradle Properties
-You can store the Hub Token in [Gradle properties](https://docs.gradle.org/current/userguide/build_environment.html#sec:gradle_configuration_properties). 
-
-> **WARNING** You must not check the Gradle properties file containing the Hub Token into source control.
-
-If you place a `gradle.properties` file containing your Hub Permanent Token in your project's root directory, please ensure your version control tool ignores this file. 
-For example in Git, you can add the following line to your `.gitignore` file:
-
-```
-gradle.properties
-```
-
-To add the Hub Token to a Gradle properties file, place the following information in:
-* The file `GRADLE_HOME/gradle.properties`,
-* Or inside a file called `gradle.properties` under your project's root directory.
-
-```text
-intellijPublishToken=YOUR_HUB_TOKEN_HERE
-```
-
-Then refer to these values in `publishPlugin` task in your `build.gradle` file:
-
-```groovy
-publishPlugin {
-    token intellijPublishToken
-}
-```
-
 ### Using Environment Variables
-Alternatively, and possibly slightly safer because you cannot accidentally commit your token to version control, you can provide your token via an environment variable. 
-For example, start by defining an environment variable such as:
+Start by defining an environment variable such as:
 
 ```bash
 export ORG_GRADLE_PROJECT_intellijPublishToken='YOUR_HUB_TOKEN_HERE'
 ```
 
-> **Note** On macOS systems environment variables defined in `.bash_profile` are only visible to processes you run from bash. 
+> **Note** On macOS systems, environment variables defined in `.bash_profile` are only visible to processes you run from bash. 
 Environment variables visible to all processes need to be defined in [Environment.plist](https://developer.apple.com/library/archive/qa/qa1067/_index.html)
 
 Now provide the environment variable in the run configuration with which you run the `publishPlugin` task locally. 
@@ -75,7 +46,7 @@ Note that you still need to put some default values (can be empty) in the Gradle
 
 ### Using Parameters for the Gradle Task
 Similar to using environment variables, you can also pass your token as a parameter to the Gradle task.
-For example, you can to provide the parameter `-Dorg.gradle.project.intellijPublishToken=YOUR_HUB_TOKEN_HERE` on the command line or by putting it in the arguments of your run configuration.
+For example, you can to provide the parameter `-Dorg.gradle.project.intellijPublishToken=YOUR_HUB_TOKEN_HERE` on the command line or by putting it in the arguments of your Gradle run configuration.
 
 Note that also, in this case, you still need to put some default values in your Gradle properties.
 
@@ -86,6 +57,7 @@ You may wish to verify this by [installing your plugin from disk](https://www.je
 
 ### Publishing a Plugin
 Once you are confident the plugin works as intended, make sure the plugin version is updated, as the JetBrains Plugins Repository won't accept multiple artifacts with the same version. 
+
 To deploy a new version of your plugin to the JetBrains Plugins Repository, execute the following Gradle command:  
 
 ```bash
@@ -109,7 +81,7 @@ When empty, this uses the default plugin repository, available to all [JetBrains
 However, you can publish to an arbitrarily-named channel. 
 These non-default release channels are treated as separate repositories. 
 
-When using a non-default release channel, users need to add a new [custom plugin repository](https://www.jetbrains.com/help/idea/managing-plugins.html#repos) to install your plugin. 
+When using a non-default release channel, users need to configure a new [custom plugin repository](https://www.jetbrains.com/help/idea/managing-plugins.html#repos) in their IDE to install your plugin. 
 For example, if you specify `publishPlugin.channels 'canary'`, then users need to add the `https://plugins.jetbrains.com/plugins/canary/list` repository to install the plugin and receive updates. 
 
 Popular channel names include:

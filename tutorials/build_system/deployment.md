@@ -3,7 +3,7 @@ title: Publishing Plugins with Gradle
 ---
 <!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-Once you have configured Gradle support, you can automatically build and deploy your plugin to the [JetBrains Plugin Repository](https://plugins.jetbrains.com). 
+Once you have configured Gradle support, you can automatically build and deploy your plugin to the [JetBrains Plugins Repository](https://plugins.jetbrains.com). 
 To automatically deploy a plugin, you need to have _already published the plugin to the plugin repository at least once._ 
 Please see the guide page for manually [publishing a plugin](../../basics/getting_started/publishing_plugin.md) for the first time.
 
@@ -17,7 +17,7 @@ For manual distribution or local installation, invoke `gradle buildPlugin` targe
 The resulting JAR/ZIP is located in `build/distributions` and can then be [installed](https://www.jetbrains.com/help/idea/managing-plugins.html#installing-plugins-from-disk) manually.
 
 ## Providing Your Hub Permanent Token to Gradle
-To deploy a plugin to the plugin repository, you need to supply your [JetBrains Hub Permanent Token](https://plugins.jetbrains.com/docs/marketplace/plugin-upload.html). 
+To deploy a plugin to the JetBrains Plugins Repository, you need to supply your [JetBrains Hub Permanent Token](https://plugins.jetbrains.com/docs/marketplace/plugin-upload.html). 
 This page describes three options to supply your _Hub Permanent Token_ via Gradle using: 
 * Gradle properties, 
 * Environment variables,
@@ -85,14 +85,14 @@ The first step when deploying a plugin is to confirm that it works correctly.
 You may wish to verify this by [installing your plugin from disk](https://www.jetbrains.com/help/idea/managing-plugins.html) on a fresh instance of your target IDE(s). 
 
 ### Publishing a Plugin
-Once you are confident the plugin works as intended, make sure the plugin version is updated, as the JetBrains Plugin repository won't accept multiple artifacts with the same version. 
-To deploy a new version of your plugin to the JetBrains plugin repository, execute the following Gradle command:  
+Once you are confident the plugin works as intended, make sure the plugin version is updated, as the JetBrains Plugins Repository won't accept multiple artifacts with the same version. 
+To deploy a new version of your plugin to the JetBrains Plugins Repository, execute the following Gradle command:  
 
 ```bash
 gradle publishPlugin
 ```
 
-Now check the most recent version of your plugin appears on the [Plugin Repository](https://plugins.jetbrains.com/). 
+Now check the most recent version of your plugin appears on the [JetBrains Plugins Repository](https://plugins.jetbrains.com/). 
 If successfully deployed, any users who currently have your plugin installed on an eligible version of the IntelliJ Platform are notified of a new update available on the following restart.
 
 ### Specifying a Release Channel
@@ -105,7 +105,7 @@ publishPlugin {
 }
 ```
 
-When empty, this uses the default plugin repository, available to all [JetBrains plugin repository](https://plugins.jetbrains.com/) users. 
+When empty, this uses the default plugin repository, available to all [JetBrains Plugins Repository](https://plugins.jetbrains.com/) users. 
 However, you can publish to an arbitrarily-named channel. 
 These non-default release channels are treated as separate repositories. 
 When using a non-default release channel, users need to add a new [custom plugin repository](https://www.jetbrains.com/help/idea/managing-plugins.html#repos) to install your plugin. 

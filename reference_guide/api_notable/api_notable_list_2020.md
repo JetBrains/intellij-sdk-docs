@@ -46,4 +46,4 @@ EOL for JetBrains TFS Plugin
 
 Unbundled plugins
 : Several plugins (Cloud Foundry, Google App Engine) for no longer actively maintained technology have been unbundled. 
-If your plugin depends on them, users will need to install them from the [JetBrains plugin repository](https://plugins.jetbrains.com).
+If your plugin depends on them, users will need to install them from the [JetBrains Plugins Repository](https://plugins.jetbrains.com).

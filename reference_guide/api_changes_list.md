@@ -65,14 +65,14 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 IntelliJ API may be occasionally changed between releases, leading to incompatibilities of existing plugins with newer IDE builds. 
 
 <!--
-> **NOTE** Starting with 2020.1 release, IntelliJ Platform–based IDEs will use compatibility check information provided by the [JetBrains plugin repository](https://plugins.jetbrains.com) to highlight possible compatibility issues to users directly in the IDE's "Plugins" manager. 
+> **NOTE** Starting with 2020.1 release, IntelliJ Platform–based IDEs will use compatibility check information provided by the [JetBrains Plugins Repository](https://plugins.jetbrains.com) to highlight possible compatibility issues to users directly in the IDE's "Plugins" manager. 
 Therefore, it is important to keep your plugins up to date with regard to the existing and upcoming API changes.
 -->
 
 ## Verifying Compatibility
 
 ### Plugin Verifier
-Compatibility with newer IDEs can easily be verified for plugins hosted on the [JetBrains plugin repository](https://plugins.jetbrains.com) using the built-in [Plugin Verifier](https://blog.jetbrains.com/platform/2018/07/plugins-repository-now-integrates-with-the-plugin-verification-tool/).
+Compatibility with newer IDEs can easily be verified for plugins hosted on the [JetBrains Plugins Repository](https://plugins.jetbrains.com) using the built-in [Plugin Verifier](https://blog.jetbrains.com/platform/2018/07/plugins-repository-now-integrates-with-the-plugin-verification-tool/).
 
 For local verification or non-public plugins, [intellij-plugin-verifier](https://github.com/JetBrains/intellij-plugin-verifier) can be used standalone as well.
 Integration in [Gradle build](/tutorials/build_system.md) is currently possible via some additional scripts, please see [this issue](https://github.com/JetBrains/gradle-intellij-plugin/issues/385) for details.

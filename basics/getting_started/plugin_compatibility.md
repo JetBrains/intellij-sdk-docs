@@ -140,7 +140,7 @@ For [Gradle-based](/tutorials/build_system.md) projects, [Plugin Verifier](/refe
 For [DevKit-based](/basics/getting_started/using_dev_kit.md) projects, create an SDK pointing to an installation of the intended target IntelliJ Platform-based product, e.g., PhpStorm, rather than IntelliJ IDEA. 
 Use the same development version of the IntelliJ platform as the targeted product. 
 
-Based on the tables above, the [JetBrains plugin repository](https://plugins.jetbrains.com/) automatically detects the JetBrains products with which a plugin is compatible, and makes the compatibility information available to plugin authors. 
+Based on the tables above, the [JetBrains Plugins Repository](https://plugins.jetbrains.com/) automatically detects the JetBrains products with which a plugin is compatible, and makes the compatibility information available to plugin authors. 
 The compatibility information determines if plugins are available at the plugin repository to users of a particular JetBrains product.  
 
 ## Platform API Version Compatibility

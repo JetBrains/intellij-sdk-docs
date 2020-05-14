@@ -1,7 +1,8 @@
 ---
-title: Plugin Repository
+title: Plugin Repository [moved]
 
 redirect_from:
+  - /plugin_repository/index.html
   - /plugin_repository/api/api_reference.html
   - /plugin_repository/api/plugin_upload.html
   - /plugin_repository/api/plugins_list.html

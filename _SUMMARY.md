@@ -255,7 +255,7 @@
 * Licensing
 
 ## Part X - Plugin Repository \[moved]
-* [Overview](plugin_repository/index.md)
+* [Overview](appendix/plugin_repository_obsolete.md)
 
 ## Appendix I - Resources
 

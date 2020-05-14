@@ -45,7 +45,7 @@ A lot of the functionality in the _IntelliJ Platform_ is language and product ag
 
 Documents how to use the _IntelliJ Platform_ to create a new, custom IDE, rather than plugins to an existing product, e.g. like WebStorm, or Android Studio.
 
-#### [Part X - Plugin Repository](/plugin_repository/index.md)
+#### [Part X - Plugin Repository](/appendix/plugin_repository_obsolete.md)
 
 This part has been moved to [JetBrains Marketplace documentation](https://plugins.jetbrains.com/docs/marketplace/about-marketplace.html).
 

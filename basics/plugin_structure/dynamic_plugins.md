@@ -10,7 +10,7 @@ Starting with 2020.1 release, the ability to install, update and uninstall plugi
 For a plugin to support this, all restrictions listed below must be met. To verify a plugin locally, run _Plugin DevKit | Plugin descriptor | Plugin.xml dynamic plugin verification_ 
 inspection on all plugin descriptor files (required `plugin.xml` as well as any additional files).
 
-For plugins hosted on the [JetBrains plugin repository](/plugin_repository/index.md) the built-in [Plugin Verifier](https://blog.jetbrains.com/platform/2018/07/plugins-repository-now-integrates-with-the-plugin-verification-tool/)
+For plugins hosted on the [JetBrains plugin repository](https://plugins.jetbrains.com) the built-in [Plugin Verifier](https://blog.jetbrains.com/platform/2018/07/plugins-repository-now-integrates-with-the-plugin-verification-tool/)
 will run these checks automatically. See [Plugin Verifier](/reference_guide/api_changes_list.md#plugin-verifier) for more information on how to run it locally.
 
 During development, [Enabling Auto-Reload](/basics/ide_development_instance.md#enabling-auto-reload) will allow code changes to take effect immediately in the sandbox IDE instance.

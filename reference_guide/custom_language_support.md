@@ -13,8 +13,8 @@ You can obtain additional information about the *Language API* from the JavaDoc 
 source code.
 
 
-If you prefer a full example to the detailed description offered on this page, please check out a step-by-step tutorial how to define custom language support on example of ".properties" files:
-[Custom Language Support Tutorial](/tutorials/custom_language_support_tutorial.md)
+If you prefer a full example to the detailed description offered on this page, please check out a step-by-step tutorial on how to define custom language support for _Simple Language_:
+[Custom Language Support Tutorial](/tutorials/custom_language_support_tutorial.md). Corresponding steps from the tutorial are linked under "Examples" section on each page of this reference.
 
 The webinar [How We Built Comma, the Raku IDE, on the IntelliJ Platform](https://blog.jetbrains.com/platform/2020/01/webinar-recording-how-we-built-comma-the-raku-ide-on-the-intellij-platform/) offers an excellent introduction as well.
 

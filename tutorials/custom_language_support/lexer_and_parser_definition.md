@@ -3,8 +3,10 @@ title: 4. Lexer and Parser Definition
 ---
 <!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-The lexical analyzer defines how the [contents of a file are broken into tokens](/reference_guide/custom_language_support/implementing_lexer.md), which is the basis for supporting custom language features.
+The lexical analyzer defines how the contents of a file are broken into tokens, which is the basis for supporting custom language features.
 The easiest way to create a lexer is to use [JFlex](https://jflex.de/).
+
+**Reference**: [Implementing Lexer](/reference_guide/custom_language_support/implementing_lexer.md) 
 
 * bullet item
 {:toc}

@@ -4,8 +4,10 @@ title: 15. Formatter
 <!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 The IntelliJ Platform includes a powerful framework for implementing formatting for custom languages.
-A [formatter](/reference_guide/custom_language_support/code_formatting.md) enables reformatting code automatically based on code style settings.
+A formatter enables reformatting code automatically based on code style settings.
 The formatter controls spaces, indents, wrap, and alignment.
+
+**Reference**: [Code Formatter](/reference_guide/custom_language_support/code_formatting.md) 
 
 * bullet list
 {:toc}

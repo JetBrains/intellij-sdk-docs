@@ -33,7 +33,7 @@ provides better performance (because of its support for incremental analysis) an
 The code intentions for custom languages also use the regular API for intentions.
 The intention classes need to implement the
 [`IntentionAction`](upsource:///platform/analysis-api/src/com/intellij/codeInsight/intention/IntentionAction.java)
-interface and are registered using the `com.intellij.intentionAction` extension point in `plugin.xml`.
+interface and are registered using the `com.intellij.intentionAction` extension point.
 
 **Examples:**
 - [Code Intentions Tutorial](/tutorials/code_intentions.md)

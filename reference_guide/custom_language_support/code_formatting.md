@@ -62,12 +62,18 @@ If the block before the cursor is incomplete (contains elements that the user wi
 **New in IntelliJ IDEA 13**:
 Code formatting can be suppressed per region via [special comments](https://youtrack.jetbrains.com/issue/IDEA-56995#comment=27-605969).
 
+**Example**:
+[Custom Language Support Tutorial: Formatter](/tutorials/custom_language_support/formatter.md)
+
 ### Code Style Settings
 
 To specify the default indent size for the language provided by your plugin, and to allow the user to configure the tab size and indent size you need to implement the
 [`FileTypeIndentOptionsProvider`](upsource:///platform/lang-api/src/com/intellij/psi/codeStyle/FileTypeIndentOptionsProvider.java)
 interface and to register the implementation in the `com.intellij.fileTypeIndentOptionsProvider` extension point.
 The return value of `createIndentOptions()` determines the default indent size.
+
+**Example**:
+[Custom Language Support Tutorial: Code Style Settings](/tutorials/custom_language_support/code_style_settings.md)
 
 ### Rearranger
 

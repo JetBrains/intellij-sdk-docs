@@ -5,6 +5,8 @@ title: 13. Go To Symbol Contributor
 
 A _Go to Symbol Contributor_ helps the user to navigate to any PSI element by its name.
 
+**Reference**: [Go to Class and Go to Symbol](/reference_guide/custom_language_support/go_to_class_and_go_to_symbol.md) 
+
 * bullet list
 {:toc}
 

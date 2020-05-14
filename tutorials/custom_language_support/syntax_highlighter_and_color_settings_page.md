@@ -3,9 +3,11 @@ title: 5. Syntax Highlighter and Color Settings Page
 ---
 <!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-The first level of [syntax highlighting](/reference_guide/custom_language_support/syntax_highlighting_and_error_highlighting.md#lexer) is based on the lexer output, and is provided by `SyntaxHighlighter`.
-A plugin can also define [color settings](/reference_guide/custom_language_support/syntax_highlighting_and_error_highlighting.md#color-settings) based on `ColorSettingPage` so the user can configure highlight colors.
+The first level of syntax highlighting is based on the lexer output, and is provided by `SyntaxHighlighter`.
+A plugin can also define color settings based on `ColorSettingPage` so the user can configure highlight colors.
 The `SimpleSyntaxHighlighter`, `SimpleSyntaxHighlighterFactory`, and `SimpleColorSettingsPage` discussed on this page are demonstrated in the `simple_language_plugin` code sample.
+
+**Reference**: [Syntax Highlighting and Error Highlighting](/reference_guide/custom_language_support/syntax_highlighting_and_error_highlighting.md) 
 
 * bullet list
 {:toc}

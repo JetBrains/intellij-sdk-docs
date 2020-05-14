@@ -6,6 +6,8 @@ title: 18. Quick Fix
 A quick fix for a custom language supports the IntelliJ Platform-based IDE feature [Intention Actions](https://www.jetbrains.com/help/idea/intention-actions.html#apply-intention-actions). 
 For the Simple Language, this tutorial adds a quick fix that helps to define an unresolved property from its usage.
 
+**Reference**: [Code Inspections and Intentions](/reference_guide/custom_language_support/code_inspections_and_intentions.md) 
+
 * bullet list
 {:toc}
 

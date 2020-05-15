@@ -99,7 +99,7 @@ Consequently, Java dependencies are expressed differently in `plugin.xml` depend
   * `plugin.xml` include `<depends>com.intellij.modules.java</depends>`
 * Syntax for 2019.2 and later releases:
   * `plugin.xml` _allowable_ alternative include `<depends>com.intellij.java</depends>`
-  * `build.gradle` _required_ to include `intellij.plugins 'java'` 
+  * `build.gradle` _required_ to include `intellij { plugins 'java' }` 
 
 ## Exploring Module and Plugin APIs
 Once the [dependency on a module or plugin](/basics/plugin_structure/plugin_dependencies.md) is declared in `plugin.xml`, it's useful to explore the packages and classes available in that dependency.

@@ -24,50 +24,50 @@ Note that `String message` is not a reference, and cannot be resolved. Instead, 
 refer to any name defined elsewhere; instead, it defines a name by itself.
 
 A reference is an instance of a class implementing the [`PsiReference`](upsource:///platform/core-api/src/com/intellij/psi/PsiReference.java) interface.
-Note that references are distinct from PSI elements. You can obtain the references created by a PSI element by calling
-`PsiElement.getReferences()`, and can go back from a reference to an element by calling `PsiReference.getElement()`.
+Note that references are distinct from PSI elements. References created by a PSI element are returned from
+`PsiElement.getReferences()`, the underlying PSI element of a reference can be obtained from `PsiReference.getElement()`.
 
-To *resolve* the reference - to locate the declaration being referenced - you call `PsiReference.resolve()`. It's very
+To *resolve* the reference - to locate the declaration being referenced - call `PsiReference.resolve()`. It's very
 important to understand the difference between `PsiReference.getElement()` and `PsiReference.resolve()`. The former method returns the _source_
 of a reference, while the latter returns its _target_. In the example above, for the `message` reference, `getElement()`
 will return the `message` identifier on the second line of the snippet, and `resolve()` will return the `message` identifier
 on the first line (inside the parameter list).
 
-The process of resolving references is distinct from parsing, and is not performed at the same time. Moreover, it is
+The process of resolving references is distinct from parsing and is not performed at the same time. Moreover, it is
 not always successful. If the code currently open in the IDE does not compile, or in other situations, it's normal
-for `PsiReference.resolve()` to return `null`, and if you work with references, you need to be able to handle that in your code.
+for `PsiReference.resolve()` to return `null` - all code working with references must be prepared to handle that.
 
 > **TIP** Please see also _Cache results of heavy computations_ in [Working with PSI efficiently](/reference_guide/performance/performance.md#working-with-psi-efficiently).
 
 ## Contributed References
 
-In addition to references defined by the semantics of the programming language, IntelliJ IDEA recognizes many references
-which are determined by the semantics of the APIs and frameworks used in your code. Consider the following example:
+In addition to references defined by the semantics of the programming language, the IDE recognizes many references
+which are determined by the semantics of the APIs and frameworks used in code. Consider the following example:
 
 ```java
 File f = new File("foo.txt");
 ```
 
 Here, "foo.txt" has no special meaning from the point of view of the Java syntax - it's just a string literal. However,
-if you open this example in IntelliJ IDEA, and if you have a file called "foo.txt" in the same directory, you'll notice
-that you're able to Ctrl-click on "foo.txt" and navigate to the file. This works because IntelliJ IDEA recognizes the
+opening this example in IntelliJ IDEA and having a file called "foo.txt" in the same directory, one
+can <kbd>Ctrl/Cmd</kbd>-Click on "foo.txt" and navigate to the file. This works because the IDE recognizes the
 semantics of `new File(...)` and _contributes a reference_ into the string literal passed as a parameter to the method.
 
-Normally, references can be contributed into elements which don't have their own references, such as string literals
-and comments. References are also often contributed into non-code files, such as XML or JSON.
+Typically, references can be contributed to elements that don't have their own references, such as string literals
+and comments. References are also often contributed to non-code files, such as XML or JSON.
 
 Contributing references is one of the most common ways to extend an existing language. For example, your plugin can
 contribute references to Java code, even though the Java PSI is part of the platform and not defined in your plugin.
 
-To contribute your own references, see the [reference contributor tutorial](/tutorials/custom_language_support/reference_contributor.md).
+To contribute references, see the [reference contributor tutorial](/tutorials/custom_language_support/reference_contributor.md).
 
 
 ## References with Optional or Multiple Resolve Results
 
-In the simplest case, a reference resolves to a single element, and if the resolve fails, this means that the
-code is incorrect and the IDE needs to highlight it as an error. However, there are cases when the situation is different.
+In the simplest case, a reference resolves to a single element, and if resolving fails, the
+code is incorrect, and the IDE needs to highlight it as an error. However, there are cases when the situation is different.
 
-The first case is *soft references*. Consider the `new File("foo.txt")` example above. If IntelliJ IDEA can't find
+The first case is *soft references*. Consider the `new File("foo.txt")` example above. If the IDE can't find
 the file "foo.txt", it doesn't mean that an error needs to be highlighted - maybe the file is only available at runtime.
 Such references return `true` from the `PsiReference.isSoft()` method.
 
@@ -80,25 +80,19 @@ For resolving a `PsiPolyVariantReference`, you call its `multiResolve()` method.
 [`ResolveResult`](upsource:///platform/core-api/src/com/intellij/psi/ResolveResult.java) objects. Each of the
 objects identifies a PSI element and also specifies whether the result is valid. For example, if you have multiple
 Java method overloads and a call with arguments not matching any of the overloads, you will get
-back `ResolveResult` objects for all of the overloads, and `isValidResult()` will return false for all of them.
+back `ResolveResult` objects for all of the overloads, and `isValidResult()` returns `false` for all of them.
 
 
 ## Searching for References
 
-As you already know, resolving a reference means going from a usage to the corresponding declaration. To perform the
-navigation in the opposite direction - from a declaration to its usages - you need to perform a **references search**.
+As you already know, resolving a reference means going from usage to the corresponding declaration. To perform the
+navigation in the opposite direction - from a declaration to its usages - perform a **references search**. 
 
-To perform a references search, you use the 
-[`ReferencesSearch`](upsource:///platform/indexing-api/src/com/intellij/psi/search/searches/ReferencesSearch.java) class.
-To perform a search, you need to specify the *element* to search for, and optionally other parameters such as the
-scope in which the reference needs to be searched. You get back a *query* object that allows you to get all results
-as an array, or to iterate over the results one by one. If you don't need to collect all the results, it's more efficient
-to use the iteration, because it allows you to stop the processing once you've found the element you need.
-
+To perform a search using [`ReferencesSearch`](upsource:///platform/indexing-api/src/com/intellij/psi/search/searches/ReferencesSearch.java), specify the *element* to search for, and optionally other parameters such as the
+scope in which the reference needs to be searched. The created [`Query`](upsource:///platform/core-api/src/com/intellij/util/Query.java) allows obtaining all results
+at once or iterating over the results one by one. The latter allows stopping processing as soon as the first (matching) result has been found.
 
 ## Implementing References
 
-The documentation above covers the key points of accessing references. If you need to create your own references
-(if you're implementing a custom language or a reference contributor for an existing language),
-please refer to the [guide](/reference_guide/custom_language_support/references_and_resolve.md) and
-[tutorial](/tutorials/custom_language_support/reference_contributor.md) for implementing references.
+Please refer to the [guide](/reference_guide/custom_language_support/references_and_resolve.md) and
+corresponding [tutorial](/tutorials/custom_language_support/reference_contributor.md) for more information.

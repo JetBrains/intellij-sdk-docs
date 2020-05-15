@@ -12,6 +12,8 @@ We've published our roadmap for the IntelliJ Platform for 2020: [Part I](https:/
 Constructor Injection in `Configurable` forbidden
 : Please obtain necessary components only when needed (logged as ERROR now). 
 
+`com.intellij.openapi.vfs.VirtualFileLookup`
+: Locates `VirtualFile` from given `java.nio.file.Path` or `java.io.File`. See also `VirtualFile.toNioPath()`. 
 
 # 2020.1 
 

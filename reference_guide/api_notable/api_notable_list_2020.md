@@ -18,6 +18,9 @@ Constructor Injection in `Configurable` forbidden
 Tooltip descriptions for icons
 : Register resource bundle via extension point `com.intellij.iconDescriptionBundle` to provide tooltips automatically for all `SimpleColoredComponent` renderers. 
 
+Specify incompatibility with Module
+: A plugin can [mark itself incompatible](/basics/getting_started/plugin_compatibility.md#declaring-incompatibility-with-module) if IDE contains specified module.
+
 
 # 2020.1 
 

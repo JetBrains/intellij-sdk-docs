@@ -40,6 +40,9 @@ A _module_ represents a built-in plugin that is a non-removable part of a produc
 Some modules are available in all products, and some modules are available only in some, or even just one product. 
 This section identifies and discusses modules of both types.
 
+### Declaring Incompatibility with Module
+Starting in 2020.2, a plugin can declare incompatibility with an arbitrary module by specifying `<incompatible-with>` containing module ID in its `plugin.xml`.
+
 ### Modules Available in All Products
 A core set of modules are available in all products based on the IntelliJ Platform. 
 These modules provide a set of shared functionality. 

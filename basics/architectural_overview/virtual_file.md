@@ -10,7 +10,9 @@ The VFS level deals only with binary content. You can get or set the contents of
 ## How do I get a virtual file?
 
 * From an action: `e.getData(PlatformDataKeys.VIRTUAL_FILE)`. If you are interested in multiple selection, you can also use `e.getData(PlatformDataKeys.VIRTUAL_FILE_ARRAY)`.
-* From a path in the local file system: `LocalFileSystem.getInstance().findFileByIoFile()`
+* From a path in the local file system: 
+  - `LocalFileSystem.getInstance().findFileByIoFile()`
+  - `com.intellij.openapi.vfs.VirtualFileLookup` (2020.2 and later)
 * From a PSI file: `psiFile.getVirtualFile()` (may return null if the PSI file exists only in memory)
 * From a document: `FileDocumentManager.getInstance().getFile()`
 

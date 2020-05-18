@@ -3,7 +3,7 @@ title: Working with Icons and Images
 ---
 <!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-Icons and images are used widely by IntelliJ Platform plugins. Plugins need icons mostly for actions, custom components renderers, tool windows and so on.
+Icons and images are used widely by IntelliJ Platform plugins. Plugins need icons mostly for actions, custom components renderers, tool windows, and so on.
 
 > **NOTE** Plugin Icons, which represent a plugin itself, have different requirements than icons and images used within a plugin.
 For more information see the [Plugin Icon](/basics/plugin_structure/plugin_icon_file.md) page. 
@@ -12,11 +12,13 @@ For more information see the [Plugin Icon](/basics/plugin_structure/plugin_icon_
   
 ## How to organize and how to use icons?
 
-The best way to deal with icons and other image resources is to put them to a dedicated source root, say *"icons"* or *"resources"*.
+The best way to deal with icons and other image resources is to put them to a dedicated source root marked as *Resources Root*, say `icons` or `resources`.
 
-![Icons](img/icons1.png)
+The `getIcon()` method of [`IconLoader`](upsource:///platform/util/ui/src/com/intellij/openapi/util/IconLoader.java) can be used to access the icons. 
 
-The `getIcon()` method of [`IconLoader`](upsource:///platform/util/ui/src/com/intellij/openapi/util/IconLoader.java) can be used to access the icons. Then define a class or an interface with icon constants in a top-level package called `icons`:
+> **NOTE** The path to the icon passed in as argument to `IconLoader.getIcon()` must start with leading `/`
+
+Then define a class or an interface with icon constants in a top-level package called `icons`:
 
 ```java
 package icons;
@@ -28,7 +30,7 @@ public interface DemoPluginIcons {
 }
 ```
 
-Use these constants inside `plugin.xml` as well. Note that the package name `icons` will be automatically prefixed, and shouldn't be added manually.
+Use these constants inside `plugin.xml` as well. Note that the package name `icons` will be automatically prefixed, and must not be added manually.
 
 ```xml
 <action id="DemoPlugin.DemoAction"

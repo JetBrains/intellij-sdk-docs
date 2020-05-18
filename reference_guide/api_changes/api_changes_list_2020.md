@@ -86,6 +86,9 @@ Please see [Incompatible API Changes](/reference_guide/api_changes_list.md) on h
 `groovy.util.GroovyTestSuite` class removed
 : Add `org.codehaus.groovy:groovy-test` dependency.
 
+`groovy.json.internal` package removed
+: Use classes from `org.apache.groovy.json.internal` package.
+
 ### VCS
   
 `com.intellij.diff.util.DiffUserDataKeysEx.REVISION_INFO` field removed

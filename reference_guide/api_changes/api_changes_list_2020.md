@@ -94,6 +94,13 @@ Please see [Incompatible API Changes](/reference_guide/api_changes_list.md) on h
 `com.intellij.codeInsight.actions.FormatChangedTextUtil.getChangedElements(Project, Change[], Function)` method removed
 : Use `com.intellij.codeInsight.actions.VcsFacadeImpl.getVcsInstance().getChangedElements(...)` instead. 
 
+### Javaee plugins have been refactored
+Plugin “com.intellij.javaee” (“Java EE: EJB, JPA, Servlets”)  has been splitted to: 
+ 1. “com.inteellij.javaee”(“Java EE Platform”) is the main plugin other javaee/jakarta plugins depend on
+ 2. com.intellij.javaee.app.servers.integration (Java EE: Application Servers Integration) implementation-detail="true"
+ 3. com.intellij.javaee.ejb (Java EE: Enterprise Java Beans(EJB))
+ 4. com.intellij.javaee.jpa (Java EE: JPA)
+ 5. com.intellij.javaee.web (Java EE: Web/Servlets)
 
 # 2020.1
 

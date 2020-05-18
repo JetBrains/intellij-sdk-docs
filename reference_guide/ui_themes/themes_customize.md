@@ -55,7 +55,7 @@ For example, defining the Named Color `basicBackground` and then using it to set
 ```
 
 ## Customizing Icons
-UI themes can customize the color of default IntelliJ IDEA UI icons, or substitute custom icons for the default ones. 
+UI themes can customize the color of default IntelliJ Platform UI icons, or substitute custom icons for the default ones. 
 Customization is done by adding an `"icons": {}` section to the Theme description file.
 
 ### Overriding the Global Color of Icons
@@ -80,7 +80,7 @@ This color substitution is applied throughout the IDE UI.
 Icon Palettes are predefined UI Theme color keys, each describing a single color in an `Actions` or `Objects` context. 
 
 #### Icon Colors in "Actions" and "Objects" Contexts
-IntelliJ IDEA has default icon colors defined for `Actions` and `Objects` contexts. 
+IntelliJ Platform has default icon colors defined for `Actions` and `Objects` contexts. 
 * `Actions` are Theme keys for icons that appear in the context of toolbars, and represent actions such as _Compile_, _Run_, or _Debug_. 
 * `Objects` are Theme keys for icons that appear in the contexts of lists and trees, and represent entities like files, symbols, or run and debug configurations.
 
@@ -110,7 +110,7 @@ This more specific change to the `Actions.Blue` color overrides the default defi
 It will also, in the narrower context of blue `Actions` icons, supersede any global color overrides of the default blue icon color.
 
 ### Custom Icons
-The default IntelliJ IDEA UI icons can be replaced by custom icons. 
+The default IntelliJ Platform UI icons can be replaced by custom icons. 
 The file format for icons is SVG. 
 The [JetBrains Platform UI Guideline for Icons](https://jetbrains.design/intellij/principles/icons/) has detailed specifications for icons. 
 
@@ -135,7 +135,7 @@ The `value` is the file name of the replacement icon, located in the `resources`
 The color of a replaced icon takes precedence over any `ColorPalette` overrides.
 
 ## Customizing UI Controls
-UI Themes can change the appearance of more general controls in the IntelliJ IDEA UI. 
+UI Themes can change the appearance of more general controls in the IntelliJ Platform UI. 
 Examples of these controls are labels, buttons, checkboxes, trees, lists, and menus.
 
 ### Custom UI Control Colors
@@ -272,7 +272,7 @@ Some keys and strategies for applying them can be gleaned from the [UI Theme ref
 For a general search, here some suggested methods for locating UI control keys.
 
 ### Finding a UI Control Key Using Code Completion in the Editor
-The preferred method of finding UI control keys is to use the [Code Completion](https://www.jetbrains.com/help/idea/auto-completing-code.html#Auto-Completing_Code.xml) feature in the IntelliJ IDEA editor. 
+The preferred method of finding UI control keys is to use the [Code Completion](https://www.jetbrains.com/help/idea/auto-completing-code.html#Auto-Completing_Code.xml) feature in the editor. 
 Note that some keys presented by the code completion feature may be deprecated. 
 New entries in the `"ui": {}` section will invoke the code completion popup, as shown below:
 

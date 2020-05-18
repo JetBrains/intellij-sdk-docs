@@ -34,7 +34,7 @@ Before submitting an issue, please search for already submitted ones describing 
 Over the years, users have submitted thousands of issues to the IntelliJ issue tracker. Many of the unresolved issues are no longer applicable to the latest version of IntelliJ IDEA, are duplicates, or require additional information to be resolved. Leaving comments notifying about the status of such issues helps the team keep the issue tracker clean and useful for everyone.
 
 ##### Write a Plugin
-One of the best ways to contribute a larger piece of code, adding extra functionality to IntelliJ IDEA, is by writing a plug-in. You can submit a plug-in to the [IntelliJ IDEA plug-in repository](https://plugins.jetbrains.com/), making it available for all IntelliJ IDEA users. When writing a plug-in, you have control over the code and don't need to sign the contribution agreement. 
+One of the best ways to contribute a larger piece of code, adding extra functionality to IntelliJ IDEA or any of the other IntelliJ Platform based IDEs, is by writing a plug-in. You can submit a plug-in to the [IntelliJ IDEA plug-in repository](https://plugins.jetbrains.com/), making it available for all IntelliJ IDEA users. When writing a plug-in, you have control over the code and don't need to sign the contribution agreement. 
 
 ##### Submit a Patch
 If you would like to improve the code in the IntelliJ Platform or the core functionality of IntelliJ IDEA, you can submit a patch in [IntelliJ's YouTrack bug database](https://youtrack.jetbrains.com/issues/IDEA) . You can either file a new issue with the patch attached, or attach a patch to an issue submitted by another user. When writing a patch, please make sure to follow the [IntelliJ Coding Guidelines](intellij_coding_guidelines.md).  

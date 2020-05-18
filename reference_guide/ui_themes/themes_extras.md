@@ -3,7 +3,7 @@ title: UI Themes - Editor Schemes and Background Images
 ---
 <!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-UI Themes can also provide custom color and font settings, as well as custom images for display in the IntelliJ IDEA application window.
+UI Themes can also provide custom color and font settings, as well as custom images for display in the IDE application window.
  
 ## Adding a Custom Editor Scheme
 Users of IntelliJ Platform-based IDEs, such as Intellij IDEA, can set preferences to configure the colors and fonts used in the Editor. 
@@ -56,7 +56,7 @@ For example, the snippet below sets the color of the line numbers displayed in t
 For additional examples of `name` and `value` attributes, review the editor color scheme XML file for the [High Contrast editor scheme](upsource:///platform/platform-resources/src/themes/highContrastScheme.xml).
 
 ### Customizing Version Control File Status Colors
-As [described above](#creating-a-custom-editor-scheme-using-settingspreferences), colors corresponding to the VCS status of files can be customized and exported via the [IntelliJ IDEA Preferences/Settings](https://www.jetbrains.com/help/idea/file-status-highlights.html).
+As [described above](#creating-a-custom-editor-scheme-using-settingspreferences), colors corresponding to the VCS status of files can be customized and exported via the [Preferences/Settings](https://www.jetbrains.com/help/idea/file-status-highlights.html).
 No other procedure is necessary to customize these colors.
 In the exported color scheme file the `name` is the VCS file status, and the `value` is the new color corresponding to that status.
 For example, customized VCS colors for a subset of file statuses will appear in the editor scheme file as:

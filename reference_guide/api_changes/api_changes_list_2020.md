@@ -89,6 +89,15 @@ Please see [Incompatible API Changes](/reference_guide/api_changes_list.md) on h
 `groovy.json.internal` package removed
 : Use classes from `org.apache.groovy.json.internal` package.
 
+### Java EE
+Java EE plugins split
+: Plugin `com.intellij.javaee` _Java EE: EJB, JPA, Servlets_ has been split to: 
+- `com.inteellij.javaee` _Java EE Platform_ - main plugin other JavaEE/Jakarta plugins depend on
+- `com.intellij.javaee.app.servers.integration` _Java EE: Application Servers Integration_
+- `com.intellij.javaee.ejb` _Java EE: Enterprise Java Beans (EJB)_
+- `com.intellij.javaee.jpa` _Java EE: JPA_
+- `com.intellij.javaee.web` _Java EE: Web/Servlets_
+
 ### VCS
   
 `com.intellij.diff.util.DiffUserDataKeysEx.REVISION_INFO` field removed

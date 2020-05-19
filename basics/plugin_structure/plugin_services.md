@@ -12,16 +12,23 @@ A service may also have an interface class which is used to obtain the service i
 
 A service needing a shutdown hook/cleanup routine can implement [`Disposable`](upsource:///platform/util/src/com/intellij/openapi/Disposable.java) and perform necessary work in `dispose()`.
 
+#### Types
 The *IntelliJ Platform* offers three types of services: _application level_ services (global singleton), _project level_ services, and _module level_ services. 
 For the latter two, a separate instance of the service is created for each instance of its corresponding scope, see [Project Model Introduction](/basics/project_structure.md). 
 
 > **NOTE** Please consider not using module level services because it can lead to increased memory usage for projects with many modules.
 
+#### Constructor
+Project/Module level service constructors can have `Project`/`Module` argument.
+To improve startup performance, avoid any heavy initializations in the constructor.
+
+> **NOTE** Please note that using constructor injection is deprecated (and not supported in [Light Services](#light-services)) for performance reasons. Other dependencies should be [acquired only when needed](#retrieving-a-service) in all corresponding methods (see `someServiceMethod()` in [Project Service Sample](#project-service-sample)).
+
 ## Light Services
 
 > **NOTE** Light Services are available since IntelliJ Platform 2019.3.
 
-A service not going to be overridden does not need to be registered in `plugin.xml` (see [How To Declare a Service](#how-to-declare-a-service)).
+A service not going to be overridden does not need to be registered in `plugin.xml` (see [Declaring a Service](#declaring-a-service)).
 Instead, annotate service class with [`@Service`](upsource:///platform/core-api/src/com/intellij/openapi/components/Service.java). 
 The service instance will be created in scope according to caller (see [Retrieving a Service](#retrieving-a-service)). 
  
@@ -33,7 +40,7 @@ Restrictions:
 
 See [Project Level Service](#project-service-sample) below for a sample. 
 
-## How to Declare a Service?
+## Declaring a Service
 
 Distinct extension points are provided for each type:
 
@@ -67,11 +74,6 @@ If `serviceInterface` isn't specified, it's supposed to have the same value as `
 
 To provide custom implementation for test/headless environment, specify `testServiceImplementation`/`headlessImplementation` additionally.
 
-Project/Module level service constructor can take `Project`/`Module` argument.
-> **NOTE** Please note that using constructor injection is deprecated (and not supported in [Light Services](#light-services)) for performance reasons. Other dependencies should be [acquired only when needed](#retrieving-a-service) in all corresponding methods (see `someServiceMethod()` in [Project Service Sample](#project-service-sample)).
-
-To improve startup performance, avoid any heavy initializations in the constructor.
-
 ## Retrieving a Service
 
 Getting service doesn't need read action and can be performed from any thread. If service is requested from several threads, it will be initialized in the first thread, and other threads will be blocked until service is fully initialized. 
@@ -92,7 +94,7 @@ val applicationService = service<MyApplicationService>()
 val projectService = project.service<MyProjectService>()
 ```
 
-### Project Service Sample
+## Project Service Sample
 This minimal sample shows [light](#light-services) `ProjectService` interacting with another project level service `AnotherService` (not shown here).
 
 _ProjectService.java_
@@ -115,7 +117,7 @@ _ProjectService.java_
   }
 ```
 
-### Sample Plugin
+## Sample Plugin
 
 This sample plugin illustrates how to create and use a plugin service. This plugin has an application service counting the number of currently opened projects in the IDE. If this number exceeds the maximum allowed number of simultaneously opened projects, the plugin displays a warning message.
 

@@ -14,7 +14,7 @@ There are two types of extension points:
  * _Bean_ extension points allow other plugins to extend your plugins with _data_. You specify the fully qualified
    name of an extension class, and other plugins will provide data which will be turned into instances of that class.  
 
-## How to Declare Extension Points
+## Declaring Extension Points
 
 You can declare extensions and extension points in the plugin configuration file `plugin.xml`, within the `<extensions>` and `<extensionPoints>` sections, respectively.
 
@@ -28,21 +28,23 @@ _myPlugin/META-INF/plugin.xml_
   
   <extensionPoints>
     <extensionPoint name="myExtensionPoint1" beanClass="com.myplugin.MyBeanClass"/>
-    <extensionPoint name="myExtensionPoint2" interface="com.myplugin.MyInterface" area="IDEA_PROJECT"/>
+    <extensionPoint name="myExtensionPoint2" interface="com.myplugin.MyInterface"/>
   </extensionPoints>
 
 </idea-plugin>
 ```
 
-* The `name` attribute assigns a unique name for this extension point, it will be prefixed with the plugin's `<id>` automatically.
-* The `beanClass` attribute sets a bean class that specifies one or several properties annotated with the [`@Attribute`](upsource:///platform/util/src/com/intellij/util/xmlb/annotations/Attribute.java) annotation.
-* The `interface` attribute sets an interface the plugin that contributes to the extension point must implement.
-* The `area` attribute determines the scope in which the extension will be instantiated. As extensions should be stateless, it is not recommended to use non-default.
-  * `IDEA_APPLICATION` for Application (default)
-  * `IDEA_PROJECT` for Project 
-  * `IDEA_MODULE` for Module
+The `name` attribute assigns a unique name for this extension point, it will be prefixed with the plugin's `<id>` automatically.
+
+The `beanClass` attribute sets a bean class that specifies one or several properties annotated with the [`@Attribute`](upsource:///platform/util/src/com/intellij/util/xmlb/annotations/Attribute.java) annotation.
+The `interface` attribute sets an interface the plugin that contributes to the extension point must implement.
+
+The `area` attribute determines the scope in which the extension will be instantiated. As extensions should be stateless, it is **not** recommended to use non-default.
+Must be one of `IDEA_APPLICATION` for Application (default), `IDEA_PROJECT` for Project, or `IDEA_MODULE` for Module scope.
 
 The plugin that contributes to the extension point will read those properties from the `plugin.xml` file.
+
+### Sample
 
 To clarify this, consider the following sample `MyBeanClass` bean class used in the above `plugin.xml` file:
 
@@ -50,6 +52,7 @@ _myPlugin/src/com/myplugin/MyBeanClass.java_
 
 ```java
 public class MyBeanClass extends AbstractExtensionPointBean {
+  
   @Attribute("key")
   public String key;
 

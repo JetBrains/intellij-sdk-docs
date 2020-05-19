@@ -22,14 +22,16 @@ For the latter two, a separate instance of the service is created for each insta
 > **NOTE** Light Services are available since IntelliJ Platform 2019.3.
 
 A service not going to be overridden does not need to be registered in `plugin.xml` (see [How To Declare a Service](#how-to-declare-a-service)).
-
-Instead, annotate service class with [`@Service`](upsource:///platform/core-api/src/com/intellij/openapi/components/Service.java). See [Project Level Service](#project-service-sample) below for sample. 
+Instead, annotate service class with [`@Service`](upsource:///platform/core-api/src/com/intellij/openapi/components/Service.java). 
+The service instance will be created in scope according to caller (see [Retrieving a Service](#retrieving-a-service)). 
  
 Restrictions:
 
 * Service class must be `final`.
 * Constructor injection is not supported (since it is deprecated).
 * If service is a [PersistentStateComponent](/basics/persisting_state_of_components.md), roaming must be disabled (`roamingType = RoamingType.DISABLED`).
+
+See [Project Level Service](#project-service-sample) below for a sample. 
 
 ## How to Declare a Service?
 

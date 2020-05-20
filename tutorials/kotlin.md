@@ -157,7 +157,7 @@ Please refer to [Plugin Dependencies](/basics/plugin_structure/plugin_dependenci
 
 ## 6. Caution
 
-Plugins *must* use Kotlin classes to implement all entities declared in the [plugin configuration file](/basics/plugin_structure/plugin_configuration_file.md). When registering an extension, the platform uses a dependency injection framework to instantiate these classes. For this reason, plugins *must not* use [Kotlin objects](https://kotlinlang.org/docs/reference/object-declarations.html) for any entities declared in the `plugin.xml` file.
+Plugins *must* use Kotlin classes to implement declarations in the [plugin configuration file](/basics/plugin_structure/plugin_configuration_file.md). When registering an extension, the platform uses a dependency injection framework to instantiate these classes. For this reason, plugins *must not* use [Kotlin objects](https://kotlinlang.org/docs/reference/object-declarations.html) to implement any `plugin.xml` declarations.
 
 ## 7. Examples
 

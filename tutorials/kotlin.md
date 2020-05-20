@@ -155,7 +155,11 @@ for building forms. Using GUI designer with Kotlin is currently [not supported](
 If a plugin processes Kotlin code (e.g., providing inspections), it needs to add a dependency on the Kotlin plugin (Plugin ID `org.jetbrains.kotlin`) itself.
 Please refer to [Plugin Dependencies](/basics/plugin_structure/plugin_dependencies.md) for more information.
 
-## 6. Examples
+## 6. Advice
+
+[Objects](https://kotlinlang.org/docs/reference/object-declarations.html) in Kotlin are known to interfere with the way the platform instantiates singletons. For this reason, it is reccoemended to not to use `object`s for any entities that are referenced in the [plugin configuration file](https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_configuration_file.html).
+
+## 7. Examples
 
 There are a number of [open source Kotlin projects](https://github.com/search?l=Kotlin&q=+intellij&ref=searchresults&type=Repositories)
 built on the IntelliJ Platform. For a readily available source of up to date examples and applications of the Kotlin

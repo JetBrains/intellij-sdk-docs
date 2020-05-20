@@ -155,9 +155,9 @@ for building forms. Using GUI designer with Kotlin is currently [not supported](
 If a plugin processes Kotlin code (e.g., providing inspections), it needs to add a dependency on the Kotlin plugin (Plugin ID `org.jetbrains.kotlin`) itself.
 Please refer to [Plugin Dependencies](/basics/plugin_structure/plugin_dependencies.md) for more information.
 
-## 6. Advice
+## 6. Caution
 
-[Objects](https://kotlinlang.org/docs/reference/object-declarations.html) in Kotlin are known to interfere with the way the platform instantiates singletons. For this reason, it is recommended not to use `object`s for any entities that are referenced in the [plugin configuration file](/basics/plugin_structure/plugin_configuration_file.md).
+Plugins *must* use Kotlin classes to implement all entities declared in the [plugin configuration file](/basics/plugin_structure/plugin_configuration_file.md). When registering an extension, the platform uses a dependency injection framework to instantiate these classes. For this reason, plugins *must not* use [Kotlin objects](https://kotlinlang.org/docs/reference/object-declarations.html) for any entities declared in the `plugin.xml` file.
 
 ## 7. Examples
 

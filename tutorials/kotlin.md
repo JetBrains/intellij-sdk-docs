@@ -157,7 +157,7 @@ Please refer to [Plugin Dependencies](/basics/plugin_structure/plugin_dependenci
 
 ## 6. Advice
 
-[Objects](https://kotlinlang.org/docs/reference/object-declarations.html) in Kotlin are known to interfere with the way the platform instantiates singletons. For this reason, it is reccoemended to not to use `object`s for any entities that are referenced in the [plugin configuration file](https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_configuration_file.html).
+[Objects](https://kotlinlang.org/docs/reference/object-declarations.html) in Kotlin are known to interfere with the way the platform instantiates singletons. For this reason, it is reccoemended to not to use `object`s for any entities that are referenced in the [plugin configuration file](/basics/plugin_structure/plugin_configuration_file.html).
 
 ## 7. Examples
 

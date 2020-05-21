@@ -11,7 +11,7 @@ import org.jetbrains.annotations.NotNull;
 import javax.swing.*;
 
 /**
- * This class has responsibility for creating and managing a JPanel for the Settings Dialog.
+ * Supports creating and managing a JPanel for the Settings Dialog.
  */
 public class AppSettingsComponent {
   private final JPanel myMainPanel;

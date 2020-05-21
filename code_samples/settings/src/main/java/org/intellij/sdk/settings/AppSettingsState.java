@@ -11,8 +11,8 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * This class is responsible for storing the application settings in a persistent way.
- * The State and Storage macros define the name of the data and the file name where
+ * Supports storing the application settings in a persistent way.
+ * The State and Storage annotations define the name of the data and the file name where
  * these persistent application settings are stored.
  */
 @State(

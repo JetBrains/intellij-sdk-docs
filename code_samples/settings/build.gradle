@@ -1,6 +1,6 @@
 plugins {
     id 'java'
-    id 'org.jetbrains.intellij' version '0.4.18'
+    id 'org.jetbrains.intellij' version '0.4.21'
 }
 
 group 'org.intellij.sdk'
@@ -13,9 +13,14 @@ repositories {
 // See https://github.com/JetBrains/gradle-intellij-plugin/
 intellij {
     version '2020.1'
-    sameSinceUntilBuild = true
+}
+
+buildSearchableOptions {
+    enabled = false
 }
 
 patchPluginXml {
     version = project.version
+    sinceBuild = '201'
+    untilBuild = '201.*'
 }

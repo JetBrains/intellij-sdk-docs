@@ -11,10 +11,9 @@ import javax.swing.*;
 
 /**
  * Provides controller functionality for application settings.
- * See com.intellij.openapi.options.Configurable for additional documentation.
 */
 public class AppSettingsConfigurable implements Configurable {
-  private AppSettingsComponent mySettingsComponent = null;
+  private AppSettingsComponent mySettingsComponent;
 
   // A default constructor with no arguments is required because this implementation
   // is registered as an applicationConfigurable EP

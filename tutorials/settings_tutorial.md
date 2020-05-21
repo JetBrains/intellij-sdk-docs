@@ -42,13 +42,13 @@ As discussed in [Implementing the PersistentStateComponent Interface](/basics/pe
 {% include /code_samples/settings/src/main/java/org/intellij/sdk/settings/AppSettingsState.java %}
 ```
 
-#### Storage Macro
-The [`@State`](upsource:///platform/projectModel-api/src/com/intellij/openapi/components/State.java) macro, located just above the class declaration, [defines the data storage location](/basics/persisting_state_of_components.md#defining-the-storage-location).
+#### Storage Annotation
+The [`@State`](upsource:///platform/projectModel-api/src/com/intellij/openapi/components/State.java) annotation, located just above the class declaration, [defines the data storage location](/basics/persisting_state_of_components.md#defining-the-storage-location).
 For `AppSettingsState`, the data `name` parameter is the FQN of the class.
 Using FQN is a best practice to follow, and is required if custom data gets stored in the standard project or workspace files.
 
-The `storages` parameter utilizes the [`@Storage`](upsource:///platform/projectModel-api/src/com/intellij/openapi/components/Storage.java) macro to define a custom file name for the `AppSettingsState` data.
-In this case, the file is located in the `options` directory of the [configuration directory](https://www.jetbrains.com/help/idea/tuning-the-ide.html?_ga=2.150184054.1363126807.1588191212-22652347.1575391521#config-directory) for the IDE.
+The `storages` parameter utilizes the [`@Storage`](upsource:///platform/projectModel-api/src/com/intellij/openapi/components/Storage.java) annotation to define a custom file name for the `AppSettingsState` data.
+In this case, the file is located in the `options` directory of the [configuration directory](https://www.jetbrains.com/help/idea/tuning-the-ide.html#config-directory) for the IDE.
 
 #### Persistent Data Fields
 The `AppSettingState` implementation has two public fields: a `String` and a `boolean`.
@@ -58,7 +58,7 @@ See [Implementing the State Class](/basics/persisting_state_of_components.md#imp
 #### AppSettingState Methods
 The fields are so limited and straightforward for this class that encapsulation is not used for simplicity.
 All that's needed for functionality is to override the two methods called by the IntelliJ Platform when a new component state is loaded (`PersistentStateComponent.loadState()`), and when a state is saved (`PersistentStateComponent.getState()`). 
-See `PersistentStateComponent` for more information about these methods. 
+See [`PersistentStateComponent`](upsource:///platform/projectModel-api/src/com/intellij/openapi/components/PersistentStateComponent.java) for more information about these methods. 
 
 One static convenience method has been added - `AppSettingState.getInstance()` - which allows `AppSettingsConfigurable` to easily acquire a reference to `AppSettingState`.
 
@@ -120,6 +120,6 @@ Click on the **OK** button to close the Settings dialog and save the changes.
 Exit the Development Instance.
 
 Open the file `SdkSettingsPlugin.xml` to see the Settings persistently stored.
-In this demonstration the file resides in `code_samples/settings/build/idea-sandbox/config/options/`, but see [IDE Development Instances](/basics/ide_development_instance.md) for the general Development Instance case, or [Default IDE directories](https://www.jetbrains.com/help/idea/tuning-the-ide.html?_ga=2.146292852.1769557795.1588604136-22652347.1575391521#default-dirs) if you are testing the `settings` plugin directly in an IDE.
+In this demonstration the file resides in `code_samples/settings/build/idea-sandbox/config/options/`, but see [IDE Development Instances](/basics/ide_development_instance.md) for the general Development Instance case, or [Default IDE directories](https://www.jetbrains.com/help/idea/tuning-the-ide.html#default-dirs) if you are testing the `settings` plugin directly in an IDE.
 
 !["Persisted Settings"](img/settings_persisted.png){:width="600px"}

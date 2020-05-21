@@ -59,18 +59,18 @@ This section provides some additional clarification of those comments.
 #### Table of Attributes
 The attributes supported by `com.intellij.applicationConfigurable` and `com.intellij.projectConfigurable` EPs are in the table below:
 
-| Attribute |Implementation<br>Basis |Required&ensp; |&ensp; &ensp; Attribute Value |
+| Attribute |Implementation<br>Basis | Required&ensp;&ensp; | Attribute<br>Value  |
 | :---------- | :----- | :--------: |:------ |
 | `instance` | `Configurable` | (1) | FQN of implementation. See [The Configurable Interface](#the-configurable-interface) for more information. |
 | `provider` | `ConfigurableProvider` | (1) | FQN of implementation. See [The ConfigurableProvider Class](#the-configurableprovider-class) for more information. |
-| `nonDefaultProject`&ensp; | `Configurable` | Y | Applicable _only_ to the `com.intellij.projectConfigurable` (project Settings) EP.<br>`true` = show Settings for all projects _except_ the [default project](https://www.jetbrains.com/help/idea/configure-project-settings.html#new-default-settings).<br>`false` = show Settings for all projects. |
+| `nonDefaultProject`  | `Configurable` | Y | Applicable _only_ to the `com.intellij.projectConfigurable` (project Settings) EP.<br>`true` = show Settings for all projects _except_ the [default project](https://www.jetbrains.com/help/idea/configure-project-settings.html#new-default-settings).<br>`false` = show Settings for all projects. |
 | `displayName` | `Configurable`<br>`ConfigurableProvider` | (2) | The non-localized Settings name visible to users, which is needed for the Settings dialog left-side menu.<br>For a _localized_ visible name omit `displayName` and use the `key` and `bundle` attributes. |
 | `key` and<br>`bundle` | `Configurable`<br>`ConfigurableProvider` | (2) | The [localization](/reference_guide/localization_guide.md) key and bundle for the Settings name visible to users.<br>For non-localized visible names omit `key` and `bundle` and use `displayName`. |
 | `id` | `Configurable`<br>`ConfigurableProvider` | Y | The unique, FQN identifier for this implementation.<br>The FQN should be based on the plugin `id` to ensure uniqueness. |
 | `parentId` | `Configurable`<br>`ConfigurableProvider` | Y | This attribute is used to create a hierarchy of Settings. This component is declared one of the specified `parentId` component's children. Typically used for placing a Settings panel within the Settings Dialog menu. Acceptable values for `parentId` are given in [Values for Parent ID Attribute](#values-for-parent-id-attribute).<br>`groupId` is deprecated.(3) |
-| `groupWeight` | `Configurable`<br>`ConfigurableProvider` |   | Specifies the weight (stacking order) of this component within the group of a parent configurable component. The default weight is 0, meaning lowest in the order.<br>If one child in a group or a parent component has non-zero weight, all children will be sorted descending by their weight. If the weights are equal, the components will be sorted ascending by their display name. |
-| `dynamic` | `Configurable.Composite` |   | This component's children are dynamically calculated by calling the `getConfigurables()` method.<br>Not recommended because it requires loading additional classes while building a Settings tree. If possible, use XML attributes instead. |
-| `childrenEPName` | `Configurable` |   | Specifies the FQN name of the Extension Point that will be used to calculate the children of this component. |
+| `groupWeight` | `Configurable`<br>`ConfigurableProvider` | N | Specifies the weight (stacking order) of this component within the group of a parent configurable component. The default weight is 0, meaning lowest in the order.<br>If one child in a group or a parent component has non-zero weight, all children will be sorted descending by their weight. If the weights are equal, the components will be sorted ascending by their display name. |
+| `dynamic` | `Configurable.Composite` | N | This component's children are dynamically calculated by calling the `getConfigurables()` method.<br>Not recommended because it requires loading additional classes while building a Settings tree. If possible, use XML attributes instead. |
+| `childrenEPName` | `Configurable` | N | Specifies the FQN name of the Extension Point that will be used to calculate the children of this component. |
 
 **Attribute Notes:**  
 1) Either `instance` or `provider` must be specified depending on the implementation.   
@@ -86,19 +86,19 @@ See the [previous section](#table-of-attributes) for all supported attributes.
 |_default_ | `other`  | If neither `parentId` nor `groupId` attribute is set, the component is added to the `other` Settings group. This is undesirable; see `other` group description.  |
 |`appearance` | Appearance & Behavior | This child group contains Settings to personalize IDE appearance, such as: changing themes and font size. Also, it covers Settings to customize behavior such as keymaps, configuring plugins, and system Settings such as password policies, HTTP proxy, updates, and more.  |
 |`build` | Build, Execution, Deployment |  Child group containing Settings to configure project integration with different build tools, modify the default compiler Settings, manage server access configurations, customize the debugger behavior, etc.  |
-|`build.tools`&nbsp;| Build Integration | A subgroup of `build`. This subgroup configures project integration with build tools such as Maven, Gradle, or Gant. |
+|`build.tools` | Build Integration | A subgroup of `build`. This subgroup configures project integration with build tools such as Maven, Gradle, or Gant. |
 |`editor` | Editor | Child group containing Settings to personalize source code appearance, such as fonts, highlighting styles, indents, etc. It also contains Settings to customize the editor's appearance, such as line numbers, caret placement, tabs, source code inspections, setting up templates, and file encodings.  | |
 |`language` | Languages and Frameworks | Child group containing Settings related to specific language frameworks and technologies used in the project. |
 |`tools` | 3rd Party Settings | Child group containing Settings to configure integration with third-party applications, specify the SSH Terminal connection Settings, manage server certificates and tasks, configure diagrams layout, etc. |
 |`root` | Super Parent | The invisible parent of all existing groups. Not used except for IDEs built on top of the IntelliJ Platform, or extensive suites of Settings. You should not place settings in this group. |
-|`other` | Catch-all | The IntelliJ Platform no longer uses this group. It was a catch-all child category containing Settings related to non-bundled custom plugins that are not assigned to any other category. Use the `tools` group instead.  |
-|`project` | Project-related Settings | The IntelliJ Platform no longer uses this group. It was intended to store some project-related settings. You should not place settings in this group. |
+|`other` | Catch-all | The IntelliJ Platform no longer uses this group. Do not use this group. Use the `tools` group instead.  |
+|`project` | Project-related Settings | The IntelliJ Platform no longer uses this group. It was intended to store some project-related settings. Do not use this group. |
 
 
 ## Implementations for Settings Extension Points
 Implementations for `com.intellij.projectConfigurable` and `com.intellij.applicationConfigurable` EPs can have one of two bases: 
 * The [`Configurable`](upsource:///platform/platform-api/src/com/intellij/openapi/options/Configurable.java) interface, which provides a named configurable component with a Swing form.
-  Most of the Settings providers in the `intellij-community` code base are based on the `Configurable` interface or one of its sub- or supertypes.
+  Most Settings providers are based on the `Configurable` interface or one of its sub- or supertypes.
 * The [`ConfigurableProvider`](upsource:///platform/platform-api/src/com/intellij/openapi/options/ConfigurableProvider.java) class, which can hide a configurable component from the Settings dialog based on runtime conditions.
 
 ### The Configurable Interface
@@ -109,25 +109,24 @@ Readers are encouraged to review the Javadoc comments for `Configurable`.
 Implementations must meet several requirements for constructors. 
 * Application Settings implementations, declared using the [`applicationConfiguration` EP](#declaring-application-settings), must have a default constructor with no arguments. 
 * Project Settings implementations, declared using the [`projectSettings` EP](#declaring-project-settings), must declare a constructor with a single argument of type [`Project`](upsource:///platform/core-api/src/com/intellij/openapi/project/Project.java).
+* Beginning in 2020.2, constructor injection (other than for `Project`) is not allowed.
 
-For a `Configurable` implementation correctly declared using an EP, the implementation's constructor is not called by the IntelliJ Platform until a user chooses the corresponding Settings `displayName` in the Settings Dialog menu.
-For performance reasons, do not create any Swing components in a constructor.
+For a `Configurable` implementation correctly declared using an EP, the implementation's constructor is not invoked by the IntelliJ Platform until a user chooses the corresponding Settings `displayName` in the Settings Dialog menu.
 
 > **Warning** The IntelliJ Platform may instantiate a `Configurable` implementation on a background thread, so creating Swing components in a constructor can degrade UI responsiveness.  
 
 #### IntelliJ Platform Interactions with Configurable
-Interactions between the IntelliJ Platform and a generic implementation of the `Configurable` interface are documented in the source file.
+The instantiation of a generic `Configurable` implementation is documented in the interface file.
 A few high-level points are reviewed here:
-* After calling `Configurable.createComponent()`, the IntelliJ Platform immediately calls `Configurable.reset()` to initialize the values of the Settings.
-  So initialization of Setting values in the constructor or `createComponent()` is unnecessary.
+* The `Configurable.reset()` method is invoked immediately after `Configurable.createComponent()`. 
+  Initialization of Setting values in the constructor or `createComponent()` is unnecessary.
 * See the [Constructors](#constructors) section for information about when a Settings object is instantiated.
-* Once instantiated, a `Configurable` instance is valid until the user presses **OK** or **Cancel** in the Settings Dialog.
-  * The object's lifetime continues regardless of whether the implementation's Settings are changed, or the user chooses a different entry on the Settings Dialog menu. 
-  * The IntelliJ Platform calls an implementation's `Configurable.disposeUIResources()` when the Settings dialog is closing.
+* Once instantiated, a `Configurable` instance's lifetime continues regardless of whether the implementation's Settings are changed, or the user chooses a different entry on the Settings Dialog menu.
+* A `Configurable` instance's lifetime ends when **OK** or **Cancel** is selected in the Settings Dialog.
+  An instance's `Configurable.disposeUIResources()` is called when the Settings Dialog is closing.
 
 #### Configurable Marker Interfaces
-Implementations based on `Configurable` can have nested interfaces, which provide additional flexibility in the implementation.
-See the `Configurable` interface file for details.
+Implementations based on `Configurable` can implement marker interfaces, which provide additional flexibility in the implementation.
  
 The following nested interfaces are markers, which convey information about the form to the IntelliJ Platform:
   * `Configurable.NoScroll` - Notifies the Settings dialog not to add scroll bars to the form.

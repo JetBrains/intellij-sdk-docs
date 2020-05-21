@@ -89,6 +89,12 @@ Please see [Incompatible API Changes](/reference_guide/api_changes_list.md) on h
 `groovy.json.internal` package removed
 : Use classes from `org.apache.groovy.json.internal` package.
 
+`com.intellij.openapi.externalSystem.service.execution.TaskCompletionProvider(Project, ProjectSystemId, TextAccessor, Options)` constructor parameter type changed from `groovyjarjarcommonscli.Options` to `org.apache.commons.cli.Options`
+: Update inheritors accordingly.
+
+`org.jetbrains.plugins.gradle.service.execution.cmd.GradleCommandLineOptionsProvider.getSupportedOptions()` method return type changed from `groovyjarjarcommonscli.Options` to `org.apache.commons.cli.Options`
+: Update call sites accordingly.
+
 ### Java EE
 Java EE plugins split
 : Plugin `com.intellij.javaee` _Java EE: EJB, JPA, Servlets_ has been split to: 

@@ -74,7 +74,7 @@ The following table lists(1) modules or built-in plugins that provide specific f
 | Module or Plugin for `<depends>` Element<br>Declaration in `plugin.xml` File | <br>Functionality  | IntelliJ Platform-Based<br>Product Compatibility  | 
 |------------------------------------------------------------------------------|--------------------|------------------------------------------|
 | `com.intellij.modules.java` See (2) below. <br>`com.intellij.java` | **Java** language PSI Model, Inspections, Intentions, Completion, Refactoring, Test Framework  | IntelliJ IDEA, Android Studio |
-| `com.intellij.modules.ultimate`      | All functionality unique to IntelliJ IDEA Ultimate | IntelliJ IDEA Ultimate Edition                                            |
+| `com.intellij.modules.ultimate`      | All functionality unique to IntelliJ IDEA Ultimate | IntelliJ IDEA Ultimate                                            |
 | `com.intellij.modules.androidstudio` | Android SDK Platform, Build Tools, Platform Tools, SDK Tools | Android Studio                                                          |
 | `com.intellij.modules.appcode`       | CocoaPods, Core Data Objects, Device & Simulator Support  | AppCode                                                                    |
 | `com.intellij.modules.cidr.lang`     | **C, C++, Objective-C/C++** language PSI Model, Swift/Objective-C Interaction, Inspections, Intentions, Completion, Refactoring, Test Framework  | AppCode, CLion |

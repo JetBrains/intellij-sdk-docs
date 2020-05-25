@@ -37,9 +37,9 @@ The Simple Language file type is defined by subclassing [`LanguageFileType`](ups
 ```
 
 ## 2.4. Register the FileType Directly
-Direct registration is necessary when targeting version 2019.2 (and later) of the IntelliJ Platform.
-No `FileTypeFactory` is required.
-Instead, the file type is registered of file type is done via the `com.intellij.fileType` extension point in `plugin.xml`: 
+Direct registration is possible when targeting version 2019.2 (and later) of the IntelliJ Platform - no `FileTypeFactory` is required.
+
+Instead, the file type is registered via the `com.intellij.fileType` extension point in `plugin.xml`: 
 
 ```xml
   <extensions defaultExtensionNs="com.intellij">
@@ -48,7 +48,7 @@ Instead, the file type is registered of file type is done via the `com.intellij.
   </extensions>
 ```
 
-Skip to [section 2.6](#run-the-project).
+Skip to [section 2.6](#26-run-the-project).
 
 ## 2.5. Register the FileType Using a Factory
 This pattern is necessary when targeting versions of the IntelliJ Platform prior to 2019.2
@@ -61,7 +61,7 @@ First, define `SimpleFileTypeFactory` as a subclass of [`FileTypeFactory`](upsou
 ```
 
 ### 2.5.2 Register the FileType Factory
-The `SimpleFileTypeFactory` is registered with the IntelliJ Platform using the `com.intellij.openapi.fileTypes.FileTypeFactory` extension point in `plugin.xml`.
+The `SimpleFileTypeFactory` is registered using the `com.intellij.openapi.fileTypes.FileTypeFactory` extension point in `plugin.xml`.
 
 ```xml
   <extensions defaultExtensionNs="com.intellij">

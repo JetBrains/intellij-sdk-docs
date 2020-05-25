@@ -80,6 +80,9 @@ Please see [Incompatible API Changes](/reference_guide/api_changes_list.md) on h
 `com.intellij.compiler.backwardRefs.LanguageCompilerRefAdapter.INSTANCES` field removed
 : This field leaked instances of plugin's extensions on plugin unloading. Use `com.intellij.compiler.backwardRefs.LanguageCompilerRefAdapter#EP_NAME.getExtensionList()` directly instead.  
 
+`groovy.util.AntBuilder` class removed
+: Add `org.codehaus.groovy:groovy-ant` dependency.
+
 `groovy.util.GroovyTestCase` class removed
 : Add `org.codehaus.groovy:groovy-test` dependency.
 
@@ -98,7 +101,7 @@ Please see [Incompatible API Changes](/reference_guide/api_changes_list.md) on h
 `com.intellij.openapi.editor.markup.MarkupModel.addLineHighlighter(TextAttributesKey, int, int)` abstract method added
 : Use it instead of `com.intellij.openapi.editor.markup.MarkupModel.addLineHighlighter(int, int, TextAttributes)`
 
-`com.intellij.openapi.editor.markup.MarkupModel.addRangeHighlighter(TextAttributesKey, int, int, int, HighlighterTargetArea)` abstract method added
+`com.intellij.openapi.editor.markup.MarkupModel#addRangeHighlighter(TextAttributesKey, int, int, int, HighlighterTargetArea)` abstract method added
 : Use it instead of `com.intellij.openapi.editor.markup.MarkupModel.addRangeHighlighter(int, int, int, TextAttributes, HighlighterTargetArea)`
 
 ### Java EE

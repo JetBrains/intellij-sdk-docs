@@ -95,6 +95,12 @@ Please see [Incompatible API Changes](/reference_guide/api_changes_list.md) on h
 `org.jetbrains.plugins.gradle.service.execution.cmd.GradleCommandLineOptionsProvider.getSupportedOptions()` method return type changed from `groovyjarjarcommonscli.Options` to `org.apache.commons.cli.Options`
 : Update call sites accordingly.
 
+`com.intellij.openapi.editor.markup.MarkupModel.addLineHighlighter(TextAttributesKey, int, int)` abstract method added
+: Use it instead of `com.intellij.openapi.editor.markup.MarkupModel.addLineHighlighter(int, int, TextAttributes)`
+
+`com.intellij.openapi.editor.markup.MarkupModel#addRangeHighlighter(TextAttributesKey, int, int, int, HighlighterTargetArea)` abstract method added
+: Use it instead of `com.intellij.openapi.editor.markup.MarkupModel.addRangeHighlighter(int, int, int, TextAttributes, HighlighterTargetArea)`
+
 ### Java EE
 Java EE plugins split
 : Plugin `com.intellij.javaee` _Java EE: EJB, JPA, Servlets_ has been split to: 

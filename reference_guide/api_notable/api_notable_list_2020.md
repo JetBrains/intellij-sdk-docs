@@ -21,6 +21,8 @@ Tooltip descriptions for icons
 Specify incompatibility with Module
 : A plugin can [mark itself incompatible](/basics/getting_started/plugin_compatibility.md#declaring-incompatibility-with-module) if IDE contains specified module.
 
+`com.intellij.openapi.editor.markup.MarkupModel` methods using `TextAttributesKey`
+: To support on-the-fly Editor color scheme switching, change calls from methods taking `TextAttributes`.
 
 # 2020.1 
 

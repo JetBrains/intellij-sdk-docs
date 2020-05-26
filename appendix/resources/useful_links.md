@@ -16,12 +16,11 @@ The following links represent useful resources for working with the _IntelliJ Pl
 
 ### Tooling
 * [IDE Settings, Caches, Logs, and Plugins](https://intellij-support.jetbrains.com/hc/en-us/articles/206544519-Directories-used-by-the-IDE-to-store-settings-caches-plugins-and-logs)
-* [IntelliJ Platform Artifacts Repository](/reference_guide/intellij_artifacts.md)
-* [Gradle Plugin for Grammar-Kit](https://github.com/hurricup/gradle-grammar-kit-plugin)
-* [Gradle IntelliJ Plugin](https://github.com/JetBrains/gradle-intellij-plugin)
-* [IntelliJ Plugin Verifier](https://github.com/JetBrains/intellij-plugin-verifier)
 * [Internal Actions Menu](/reference_guide/internal_actions/internal_actions_intro.md)
+* [IntelliJ Platform Artifacts Repository](/reference_guide/intellij_artifacts.md)
+* [IntelliJ Plugin Verifier](https://github.com/JetBrains/intellij-plugin-verifier) (see also [Verifying Compatibility](/reference_guide/api_changes_list.md#verifying-compatibility))
 
-### Help
-* [Community SDK Forum](https://intellij-support.jetbrains.com/hc/en-us/community/topics/200366979-IntelliJ-IDEA-Open-API-and-Plugin-Development)
-* [#intellij-platform on JetBrains Platform Slack](https://plugins.jetbrains.com/slack/)
+### Plugins
+* [PsiViewer](https://plugins.jetbrains.com/plugin/227-psiviewer)
+* [Grammar-Kit](https://github.com/JetBrains/Grammar-Kit) & [Grammar-Kit Folder](https://plugins.jetbrains.com/plugin/12983-grammar-kit-folder)
+* [Indices Viewer](https://plugins.jetbrains.com/plugin/13029-indices-viewer/)

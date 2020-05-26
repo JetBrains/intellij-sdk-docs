@@ -25,7 +25,7 @@ For each element type that you want to store in the stub tree, you need to perfo
 
 The following steps need to be performed only once for each language that supports stubs:
 
-* Change the file element type for your language (the element type that you return from `ParserDefinition.getFileNodeType()`) to a class that extends `IStubFileElementType`.
+* Change the file element type for your language (the element type that you return from `ParserDefinition.getFileNodeType()`) to a class that extends [`IStubFileElementType`](upsource:///platform/core-impl/src/com/intellij/psi/tree/IStubFileElementType.java).
 * In your `plugin.xml`, define the `com.intellij.stubElementTypeHolder` extension and specify the interface which contains the `IElementType` constants used by your language's parser as well as `externalIdPrefix` if possible ([example](upsource:///plugins/properties/src/META-INF/plugin.xml)).
 
 For serializing string data, e.g. element names, in stubs, we recommend to use `StubOutputStream.writeName()` and `StubInputStream.readName()` methods. These methods ensure that each unique identifier is stored only once in the data stream.  This reduces the size of the serialized stub tree data.

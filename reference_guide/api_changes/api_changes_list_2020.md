@@ -119,13 +119,13 @@ Please see [Incompatible API Changes](/reference_guide/api_changes_list.md) on h
 `com.intellij.psi.impl.include.FileIncludeProvider.registerFileTypesUsedForIndexing` method parameter type changed from ``Consumer<FileType>`` to ``Consumer<? super FileType>``
 : This may break source-compatibility with inheritors written in Kotlin.
 
-`com.intellij.codeInsight.highlighting.HighlightUsagesHandlerBase.selectTargets` method parameter type change from ``List<T>`` to ``List<? extends T>``
+`com.intellij.codeInsight.highlighting.HighlightUsagesHandlerBase.selectTargets` method parameter type changed from ``List<T>`` to ``List<? extends T>``
 : This may break source-compatibility with inheritors written in Kotlin.
 
-`com.intellij.codeInsight.highlighting.HighlightUsagesHandlerBase.selectTargets` method parameter type change from ``Consumer<List<? extends T>>`` to ``Consumer<? super List<? extends T>>``
+`com.intellij.codeInsight.highlighting.HighlightUsagesHandlerBase.selectTargets` method parameter type changed from ``Consumer<List<? extends T>>`` to ``Consumer<? super List<? extends T>>``
 : This may break source-compatibility with inheritors written in Kotlin.
 
-`com.intellij.codeInsight.highlighting.HighlightUsagesHandlerBase.computeUsages` method parameter type change from ``List<T>`` to ``List<? extends T>``
+`com.intellij.codeInsight.highlighting.HighlightUsagesHandlerBase.computeUsages` method parameter type changed from ``List<T>`` to ``List<? extends T>``
 : This may break source-compatibility with inheritors written in Kotlin.
 
 

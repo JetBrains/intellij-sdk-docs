@@ -104,6 +104,31 @@ Please see [Incompatible API Changes](/reference_guide/api_changes_list.md) on h
 `com.intellij.openapi.editor.markup.MarkupModel.addRangeHighlighter(TextAttributesKey, int, int, int, HighlighterTargetArea)` abstract method added
 : Use it instead of `MarkupModel.addRangeHighlighter(int, int, int, TextAttributes, HighlighterTargetArea)`
 
+`com.intellij.codeInsight.daemon.LineMarkerProvider.getLineMarkerInfo` method return type changed from ``LineMarkerInfo`` to ``LineMarkerInfo<?>``
+: This may break source-compatibility with inheritors written in Kotlin.
+
+`com.intellij.codeInsight.daemon.LineMarkerProvider.collectSlowLineMarkers` method parameter type changed from ``List<PsiElement>`` to ``List<? extends PsiElement>``
+: This may break source-compatibility with inheritors written in Kotlin.
+
+`com.intellij.codeInsight.daemon.LineMarkerProvider.collectSlowLineMarkers` method parameter type changed from ``List<PsiElement>`` to ``Collection<? super LineMarkerInfo<?>>``
+: This may break source-compatibility with inheritors written in Kotlin.
+
+`com.intellij.util.indexing.FileBasedIndex.FileTypeSpecificInputFilter.registerFileTypesUsedForIndexing` method parameter type changed from ``Consumer<FileType>`` to ``Consumer<? super FileType>``
+: This may break source-compatibility with inheritors written in Kotlin.
+
+`com.intellij.psi.impl.include.FileIncludeProvider.registerFileTypesUsedForIndexing` method parameter type changed from ``Consumer<FileType>`` to ``Consumer<? super FileType>``
+: This may break source-compatibility with inheritors written in Kotlin.
+
+`com.intellij.codeInsight.highlighting.HighlightUsagesHandlerBase.selectTargets` method parameter type change from ``List<T>`` to ``List<? extends T>``
+: This may break source-compatibility with inheritors written in Kotlin.
+
+`com.intellij.codeInsight.highlighting.HighlightUsagesHandlerBase.selectTargets` method parameter type change from ``Consumer<List<? extends T>>`` to ``Consumer<? super List<? extends T>>``
+: This may break source-compatibility with inheritors written in Kotlin.
+
+`com.intellij.codeInsight.highlighting.HighlightUsagesHandlerBase.computeUsages` method parameter type change from ``List<T>`` to ``List<? extends T>``
+: This may break source-compatibility with inheritors written in Kotlin.
+
+
 ### Java EE
 Java EE plugins split
 : Plugin `com.intellij.javaee` _Java EE: EJB, JPA, Servlets_ has been split to: 

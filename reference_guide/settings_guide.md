@@ -125,6 +125,8 @@ A few high-level points are reviewed here:
 * A `Configurable` instance's lifetime ends when **OK** or **Cancel** is selected in the Settings Dialog.
   An instance's `Configurable.disposeUIResources()` is called when the Settings Dialog is closing.
 
+To open Settings dialog or show specific `Configurable`, see [`ShowSettingsUtil`](upsource:///platform/platform-api/src/com/intellij/openapi/options/ShowSettingsUtil.java).
+
 #### Configurable Marker Interfaces
 Implementations based on `Configurable` can implement marker interfaces, which provide additional flexibility in the implementation.
  

@@ -137,6 +137,12 @@ Please see [Incompatible API Changes](/reference_guide/api_changes_list.md) on h
 : Use `com.intellij.codeInsight.actions.VcsFacadeImpl.getVcsInstance().getChangedElements(...)` instead. 
 
 
+## Changes in Groovy Plugin 2020.2
+
+`org.jetbrains.plugins.groovy.formatter.AlignmentProvider.addPair` method parameter type changed from `Boolean` to `boolean`
+: Please adjust/recompile the code.
+
+
 ## Changes in Java EE Plugins 2020.2
 
 Java EE plugins split

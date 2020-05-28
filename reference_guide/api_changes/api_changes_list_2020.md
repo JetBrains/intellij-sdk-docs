@@ -128,16 +128,6 @@ Please see [Incompatible API Changes](/reference_guide/api_changes_list.md) on h
 `com.intellij.codeInsight.highlighting.HighlightUsagesHandlerBase.computeUsages` method parameter type changed from ``List<T>`` to ``List<? extends T>``
 : This may break source-compatibility with inheritors written in Kotlin.
 
-
-### Java EE
-Java EE plugins split
-: Plugin `com.intellij.javaee` _Java EE: EJB, JPA, Servlets_ has been split to: 
-- `com.inteellij.javaee` _Java EE Platform_ - main plugin other JavaEE/Jakarta plugins depend on
-- `com.intellij.javaee.app.servers.integration` _Java EE: Application Servers Integration_
-- `com.intellij.javaee.ejb` _Java EE: Enterprise Java Beans (EJB)_
-- `com.intellij.javaee.jpa` _Java EE: JPA_
-- `com.intellij.javaee.web` _Java EE: Web/Servlets_
-
 ### VCS
   
 `com.intellij.diff.util.DiffUserDataKeysEx.REVISION_INFO` field removed
@@ -147,10 +137,22 @@ Java EE plugins split
 : Use `com.intellij.codeInsight.actions.VcsFacadeImpl.getVcsInstance().getChangedElements(...)` instead. 
 
 
+## Changes in Java EE Plugins 2020.2
+
+Java EE plugins split
+: Plugin `com.intellij.javaee` _Java EE: EJB, JPA, Servlets_ has been split to: 
+- `com.inteellij.javaee` _Java EE Platform_ - main plugin other JavaEE/Jakarta plugins depend on
+- `com.intellij.javaee.app.servers.integration` _Java EE: Application Servers Integration_
+- `com.intellij.javaee.ejb` _Java EE: Enterprise Java Beans (EJB)_
+- `com.intellij.javaee.jpa` _Java EE: JPA_
+- `com.intellij.javaee.web` _Java EE: Web/Servlets_
+
+
 ## Changes in JavaScript Plugin 2020.2
 
 `com.intellij.lang.javascript.linter.jslint` package removed
 : JSLint functionality has been unbundled and moved to a separate plugin. [Issue](https://youtrack.jetbrains.com/issue/WEB-44511)
+
 
 
 # 2020.1

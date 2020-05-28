@@ -147,6 +147,12 @@ Java EE plugins split
 : Use `com.intellij.codeInsight.actions.VcsFacadeImpl.getVcsInstance().getChangedElements(...)` instead. 
 
 
+## Changes in JavaScript Plugin 2020.2
+
+`com.intellij.lang.javascript.linter.jslint` package removed
+: JSLint functionality has been unbundled and moved to a separate plugin. [Issue](https://youtrack.jetbrains.com/issue/WEB-44511)
+
+
 # 2020.1
 
 ## Changes in IntelliJ Platform 2020.1

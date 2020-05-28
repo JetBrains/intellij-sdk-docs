@@ -62,11 +62,6 @@
                   <project path="$PROJECT_DIR$/code_samples/module" />
                 </projects>
               </build>
-              <build path="$PROJECT_DIR$/code_samples/product_specific/pycharm_basics" name="pycharm">
-                <projects>
-                  <project path="$PROJECT_DIR$/code_samples/product_specific/pycharm_basics" />
-                </projects>
-              </build>
               <build path="$PROJECT_DIR$/code_samples/project_model" name="project_model">
                 <projects>
                   <project path="$PROJECT_DIR$/code_samples/project_model" />
@@ -133,7 +128,6 @@
             <option value="$PROJECT_DIR$/code_samples/live_templates" />
             <option value="$PROJECT_DIR$/code_samples/max_opened_projects" />
             <option value="$PROJECT_DIR$/code_samples/module" />
-            <option value="$PROJECT_DIR$/code_samples/product_specific/pycharm_basics" />
             <option value="$PROJECT_DIR$/code_samples/project_model" />
             <option value="$PROJECT_DIR$/code_samples/project_view_pane" />
             <option value="$PROJECT_DIR$/code_samples/project_wizard" />
@@ -145,7 +139,6 @@
             <option value="$PROJECT_DIR$/code_samples/tree_structure_provider" />
           </set>
         </option>
-        <option name="useQualifiedModuleNames" value="true" />
       </GradleProjectSettings>
     </option>
   </component>

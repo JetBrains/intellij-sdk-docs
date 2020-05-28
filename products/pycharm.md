@@ -23,6 +23,7 @@ The dependency on the PyCharm APIs must be declared in the `plugin.xml` file.
 As described in [Configuring the plugin.xml File](dev_alternate_products.md#configuring-pluginxml), the `<depends>` tags must declare `com.intellij.modules.python`.
 
 See the SDK code sample [`pycharm_basics`](https://github.com/JetBrains/intellij-sdk-docs/tree/master/code_samples/product_specific/pycharm_basics/) for an example configuration.
+Please note that this code sample must be imported into Gradle explicitly, as it is not included in the `_gradleCompositeBuild`.
 
 ## Available PyCharm APIs
 The plugin [Python](https://plugins.jetbrains.com/plugin/631-python) defines the APIs for PyCharm Professional.

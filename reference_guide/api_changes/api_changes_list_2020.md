@@ -64,7 +64,7 @@ Please see [Incompatible API Changes](/reference_guide/api_changes_list.md) on h
 
 > **NOTE** Changes from API marked with `org.jetbrains.annotations.ApiStatus.@Experimental/ScheduledForRemoval` are not listed here, as incompatible changes are to be expected.
 
-# 2020.2
+# 2020.2 (Early Access Preview)
 
 ## Changes in IntelliJ Platform 2020.2
 

@@ -56,8 +56,8 @@ Use lexer information instead of parsed trees if possible.
 If impossible, use light AST which doesn't create memory-hungry AST nodes inside, so traversing it might be faster. 
 Make sure to traverse only the nodes you need to.
 
-For stub index, implement [`LightStubBuilder`](upsource:///platform/core-impl/src/com/intellij/psi/stubs/LightStubBuilder.java). For other indices, you can get the light AST manually 
-via `((PsiDependentFileContent) fileContent).getLighterAST()`.
+For stub index, implement [`LightStubBuilder`](upsource:///platform/core-impl/src/com/intellij/psi/stubs/LightStubBuilder.java).
+For other indices, you can obtain the light AST manually via `((PsiDependentFileContent) fileContent).getLighterAST()`.
 
 #### Consider Prebuilt Stubs
 
@@ -71,7 +71,7 @@ in each installation by providing prebuilt stubs with your distribution. See [`P
 In particular, don't traverse VFS, parse PSI, resolve references or query `FileBasedIndex`.
 
 There are cases when the platform itself invokes such expensive code (e.g., resolve in `AnAction.update()`).
-We're trying to eliminate them. Meanwhile, you can try to speed up what you can in your language, it'll be beneficial anyway, as it'll also improve
+We're trying to eliminate them. Meanwhile, you can try to speed up what you can in your plugin, it'll be beneficial anyway, as it'll also improve
 background highlighting performance.
 
 `WriteAction`s currently have to happen on UI thread, so to speed them up, you can try moving as much as possible

@@ -59,6 +59,8 @@ Make sure to traverse only the nodes you need to.
 For stub index, implement [`LightStubBuilder`](upsource:///platform/core-impl/src/com/intellij/psi/stubs/LightStubBuilder.java).
 For other indices, you can obtain the light AST manually via `((PsiDependentFileContent) fileContent).getLighterAST()`.
 
+If a custom language contains lazy-parseable elements that never or rarely contain any stubs, consider implementing `StubBuilder.skipChildProcessingWhenBuildingStubs()` (preferably using Lexer/node text).
+
 #### Consider Prebuilt Stubs
 
 If your language has a massive standard library, which is mostly the same for all users, you can avoid stub-indexing it

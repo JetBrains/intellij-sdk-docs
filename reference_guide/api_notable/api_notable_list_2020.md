@@ -12,8 +12,8 @@ We've published our roadmap for the IntelliJ Platform for 2020: [Part I](https:/
 Constructor Injection in `Configurable` forbidden
 : Please obtain necessary components only when needed (logged as ERROR now). 
 
-`com.intellij.openapi.vfs.VirtualFileLookup`
-: Locates `VirtualFile` from given `java.nio.file.Path` or `java.io.File`. See also `VirtualFile.toNioPath()`.
+`VirtualFile` lookup via `Path`
+: Added `VirtualFileManager.findFileByNioPath()`/`refreshAndFindFileByNioPath()`. See also `VirtualFile.toNioPath()`.
 
 Tooltip descriptions for icons
 : Register resource bundle via extension point `com.intellij.iconDescriptionBundle` to provide tooltips automatically for all `SimpleColoredComponent` renderers. 

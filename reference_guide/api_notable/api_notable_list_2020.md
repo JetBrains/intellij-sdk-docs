@@ -24,6 +24,9 @@ Specify incompatibility with Module
 `com.intellij.openapi.editor.markup.MarkupModel` methods using `TextAttributesKey`
 : To support on-the-fly Editor color scheme switching, change calls from methods taking `TextAttributes`.
 
+Support for WebP images
+: The platform now bundles support for images in [WebP](https://en.wikipedia.org/wiki/WebP) format.
+
 # 2020.1 
 
 ## Notable Changes in IntelliJ Platform 2020.1

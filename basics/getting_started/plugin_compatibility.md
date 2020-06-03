@@ -74,19 +74,19 @@ The following table lists(1) modules or built-in plugins that provide specific f
 | Module or Plugin for `<depends>` Element<br>Declaration in `plugin.xml` File | <br>Functionality  | IntelliJ Platform-Based<br>Product Compatibility  | 
 |------------------------------------------------------------------------------|--------------------|------------------------------------------|
 | `com.intellij.modules.java` See (2) below. <br>`com.intellij.java` | **Java** language PSI Model, Inspections, Intentions, Completion, Refactoring, Test Framework  | IntelliJ IDEA, Android Studio |
-| `com.intellij.modules.ultimate`      | All functionality unique to IntelliJ IDEA Ultimate | IntelliJ IDEA Ultimate                                            |
-| `com.intellij.modules.androidstudio` | Android SDK Platform, Build Tools, Platform Tools, SDK Tools | Android Studio                                                          |
-| `com.intellij.modules.appcode`       | CocoaPods, Core Data Objects, Device & Simulator Support  | AppCode                                                                    |
+| `com.intellij.modules.androidstudio` | Android SDK Platform, Build Tools, Platform Tools, SDK Tools | Android Studio  |
+| `com.intellij.modules.appcode`       | CocoaPods, Core Data Objects, Device & Simulator Support  | AppCode  |
 | `com.intellij.modules.cidr.lang`     | **C, C++, Objective-C/C++** language PSI Model, Swift/Objective-C Interaction, Inspections, Intentions, Completion, Refactoring, Test Framework  | AppCode, CLion |
-| `com.intellij.modules.cidr.debugger` | Debugger Watches, Evaluations, Breakpoints, Inline Debugging  | AppCode, CLion, RubyMine                                               |
-| `com.intellij.modules.clion`         | CMake, Profiler, Embedded Development, Remote Development, Remote Debug, Disassembly | CLion                                           |
-| `com.intellij.database`              | **Database Tools and SQL** language PSI Model, Inspections, Completion, Refactoring, Queries | DataGrip, IntelliJ IDEA Ultimate, AppCode, PhpStorm, PyCharm Professional, RubyMine, CLion, GoLand, Rider, and WebStorm if the Database Tools and SQL plugin is installed.|
-| `com.intellij.modules.go`            | **Go** language PSI Model, Inspections, Intentions, Completion, Refactoring, Test Framework  | GoLand                                  |
+| `com.intellij.modules.cidr.debugger` | Debugger Watches, Evaluations, Breakpoints, Inline Debugging  | AppCode, CLion, RubyMine |
+| `com.intellij.modules.clion`         | CMake, Profiler, Embedded Development, Remote Development, Remote Debug, Disassembly | CLion |
+| `com.intellij.database`              | **Database Tools and SQL** language PSI Model, Inspections, Completion, Refactoring, Queries | DataGrip, IntelliJ IDEA Ultimate, AppCode, PhpStorm, PyCharm Professional, RubyMine, CLion, GoLand, Rider, and WebStorm if the Database Tools and SQL plugin is installed. |
+| `com.intellij.modules.go`            | **Go** language PSI Model, Inspections, Intentions, Completion, Refactoring, Test Framework  | GoLand |
 | `com.intellij.modules.python`        | **Python** language PSI Model, Inspections, Intentions, Completion, Refactoring, Test Framework  | PyCharm, and other products if the Python plugin is installed.  |
-| `com.intellij.modules.rider`         | Connection to **ReSharper** Process in Background   | Rider                                                                            |
-| `com.intellij.modules.ruby`          | **Ruby** language PSI Model, Inspections, Intentions, Completion, Refactoring, Test Framework  | RubyMine, and IntelliJ IDEA Ultimate if the Ruby plugin is installed.  |
-| `com.jetbrains.php`                  | **PHP** language PSI Model, Inspections, Intentions, Completion, Refactoring, Test Framework | PhpStorm, and other products if the PHP plugin is installed.  |
-| `JavaScript`                         | **JavaScript** language PSI Model, Inspections, Intentions, Completion, Refactoring, Test Framework  | WebStorm, and other products if the JavaScript plugin is installed |
+| `com.intellij.modules.rider`         | Connection to **ReSharper** Process in Background | Rider |
+| `com.intellij.modules.ruby`          | **Ruby** language PSI Model, Inspections, Intentions, Completion, Refactoring, Test Framework  | RubyMine, and IntelliJ IDEA Ultimate if the Ruby plugin is installed. |
+| `com.intellij.modules.ultimate`      | Licensing | All commercial IDEs (IntelliJ IDEA Ultimate, PhpStorm, DataGrip, ...) |
+| `com.jetbrains.php`                  | **PHP** language PSI Model, Inspections, Intentions, Completion, Refactoring, Test Framework | PhpStorm, and other products if the PHP plugin is installed. |
+| `JavaScript`                         | **JavaScript** language PSI Model, Inspections, Intentions, Completion, Refactoring, Test Framework  | WebStorm, and other products if the JavaScript plugin is installed. |
 
 **Notes about Module and Plugin Dependency:**  
 **(1)** This table is not exhaustive, there are other modules currently available in JetBrains' IntelliJ Platform-based IDEs. 

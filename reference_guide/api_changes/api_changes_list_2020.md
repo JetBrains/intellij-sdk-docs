@@ -68,6 +68,9 @@ Please see [Incompatible API Changes](/reference_guide/api_changes_list.md) on h
 
 ## Changes in IntelliJ Platform 2020.2
 
+Support for JavaFX deprecated
+: Plugins should migrate to [JCEF](/reference_guide/jcef.md). Alternatively, add an explicit dependency on [JavaFX Runtime for Plugins](https://plugins.jetbrains.com/plugin/14250-javafx-runtime-for-plugins). 
+
 `com.intellij.psi.util.PsiTreeUtil.processElements(element, processor)` method parameter type changed from `PsiElementProcessor` to `PsiElementProcessor<PsiElement>`
 : This may break source-compatibility with clients that pass more specific processor. Passing more specific processor was illegal before as well because the `processElements` passes every descendant `PsiElement` to the processor regardless of its type. However, this worked with some poorly written clients, e.g. `PsiElementProcessor.CollectFilteredElements` and `PsiElementProcessor.FindFilteredElement` (both deprecated now). To simplify the migration, a new three-arg `processElements(element, elementClass, processor)` is introduced that actually filters by element class, so in most cases, the simplest migration would be to add a wanted element class as a second argument. However, it's advised to use `SyntaxTraverser` API instead, which is more rich and flexible.
 

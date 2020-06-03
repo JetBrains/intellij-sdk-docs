@@ -3,7 +3,8 @@ title: JCEF - Java Chromium Embedded Framework
 ---
 <!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-> **WARNING** JCEF is available since 2020.1 as an **experimental feature**. We plan to deprecate using JavaFX in 3rd party plugins and switch to JCEF.
+> **WARNING** JCEF is available since 2020.1 as an **experimental feature**. We plan to deprecate using JavaFX in 3rd party plugins and switch to JCEF in 2020.2. 
+> To continue using JavaFX in 2020.2 or later, an explicit dependency on [JavaFX Runtime for Plugins](https://plugins.jetbrains.com/plugin/14250-javafx-runtime-for-plugins) must be added.
 
 JCEF is a Java port of [CEF](https://bitbucket.org/chromiumembedded/cef/wiki/Home) framework for embedding [Chromium-based browsers](https://www.chromium.org/Home) in applications using Swing.
 

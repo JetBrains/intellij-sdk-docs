@@ -160,6 +160,12 @@ Java EE plugins split
 : JSLint functionality has been unbundled and moved to a separate plugin. [Issue](https://youtrack.jetbrains.com/issue/WEB-44511)
 
 
+## Changes in PhpStorm and PHP Plugin 2020.2
+
+Added Union Types Support
+: Please see [PhpStorm Breaking Changes](/products/phpstorm/php_open_api_breaking_changes.md).
+
+
 
 # 2020.1
 

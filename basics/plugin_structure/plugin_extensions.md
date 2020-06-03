@@ -80,7 +80,9 @@ A required parent type can be specified in the extension point declaration via n
     </extensionPoint>
 ```
 
-Property name `language`/`action` resolves to all present `Language`/`<action>` IDs, respectively.
+Property name `language` (or ending in `*Language`, 2020.2+) resolves to all present `Language` IDs.
+
+Similarly, `action` resolves to all registered `<action>` IDs.
 
 Specifying `@org.jetbrains.annotations.Nls` verifies capitalization of UI text properties according to given `capitalization` value (2019.2 and later).
 

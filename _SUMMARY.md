@@ -247,6 +247,7 @@
     * [Spring API](reference_guide/frameworks_and_external_apis/spring_api.md)
 * [PhpStorm](products/phpstorm/phpstorm.md)
     * [Working with the PHP Open API](products/phpstorm/php_open_api.md)
+        * [Breaking Changes](products/phpstorm/php_open_api_breaking_changes.md)
     * [Existing Third Party Plugins](products/phpstorm/existing_plugins.md)
 * [PyCharm](products/pycharm.md)
 * [Rider](products/rider.md)

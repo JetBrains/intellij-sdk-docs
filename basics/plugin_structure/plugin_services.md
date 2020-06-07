@@ -78,7 +78,7 @@ To provide custom implementation for test/headless environment, specify `testSer
 
 Getting service doesn't need read action and can be performed from any thread. If service is requested from several threads, it will be initialized in the first thread, and other threads will be blocked until service is fully initialized. 
 
-To retrieves a service in Java code:
+To retrieve a service in Java code:
 
 ```java
 MyApplicationService applicationService = ServiceManager.getService(MyApplicationService.class);

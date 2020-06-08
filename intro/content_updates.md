@@ -10,6 +10,9 @@ See [Recently Updated](/recently_updated.md) ([RSS](https://github.com/JetBrains
 # 2020
 
 ## May
+Settings (Preferences)
+: Added [guide](/reference_guide/settings_guide.md) and [tutorial](/tutorials/settings_tutorial.md) on integrating with IDE Settings dialog.
+
 UI Inspector
 : Inspect Swing components and associated data (like `AnAction` for menu item) using [UI Inspector](/reference_guide/internal_actions/internal_ui_inspector.md). 
 

@@ -9,6 +9,10 @@ See [Recently Updated](/recently_updated.md) ([RSS](https://github.com/JetBrains
 
 # 2020
 
+## June
+Disposer & Disposable
+: Added [reference](/basics/disposers.md) discussing resource cleanup/management.
+
 ## May
 Settings (Preferences)
 : Added [guide](/reference_guide/settings_guide.md) and [tutorial](/tutorials/settings_tutorial.md) on integrating with IDE Settings dialog.

@@ -10,7 +10,7 @@ The *IntelliJ Platform* ensures that only one instance of a service is loaded ev
 A service must have an implementation class which is used for service instantiation. 
 A service may also have an interface class which is used to obtain the service instance and provides API of the service.
 
-A service needing a shutdown hook/cleanup routine can implement [`Disposable`](upsource:///platform/util/src/com/intellij/openapi/Disposable.java) and perform necessary work in `dispose()`.
+A service needing a shutdown hook/cleanup routine can implement [`Disposable`](upsource:///platform/util/src/com/intellij/openapi/Disposable.java) and perform necessary work in `dispose()` (see [Automatically Disposed Objects](/basics/disposers.md#automatically-disposed-objects)).
 
 #### Types
 The *IntelliJ Platform* offers three types of services: _application level_ services (global singleton), _project level_ services, and _module level_ services. 

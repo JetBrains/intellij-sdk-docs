@@ -57,7 +57,7 @@
 ## Part II - Base Platform
 * [Fundamentals](platform/fundamentals.md)
     * Component Model
-    * [Disposers](basics/disposers.md)
+    * [Disposer and Disposable](basics/disposers.md)
     * [Threading](basics/architectural_overview/general_threading_rules.md)
         * Background Tasks
     * [Messaging Infrastructure](reference_guide/messaging_infrastructure.md)

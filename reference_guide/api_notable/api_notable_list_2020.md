@@ -27,6 +27,9 @@ Specify incompatibility with Module
 Support for WebP images
 : The platform now bundles support for images in [WebP](https://en.wikipedia.org/wiki/WebP) format.
 
+FileType mapping via hashbang (`#!`)
+: Specify `hashBangs` attribute in `com.intellij.fileType` extension point. [Issue](https://youtrack.jetbrains.com/issue/IDEA-175757)
+
 # 2020.1 
 
 ## Notable Changes in IntelliJ Platform 2020.1

@@ -109,6 +109,8 @@ That way the values for these parameters do not appear in two places in the sour
 The Gradle plugin will add the necessary elements as part of the patching process.
 For those `patchPluginXml` attributes that contain descriptions such as `changeNotes` and `pluginDescription`, a `CDATA` block is not necessary when using HTML elements.
 
+> **TIP** To maintain and generate an up-to-date changelog, try using [Gradle Changelog Plugin](https://github.com/JetBrains/gradle-changelog-plugin).
+
 As discussed in [Components of a Wizard-Generated Gradle IntelliJ Platform Plugin](prerequisites.md#components-of-a-wizard-generated-gradle-intellij-platform-plugin), the Gradle properties `project.version`, `project.group`, and `rootProject.name` are all generated based on the input to the Wizard.
 However, the `gradle-intellij-plugin` does not combine and substitute those Gradle properties for the default `<id>` and `<name>` elements in the `plugin.xml` file.
 

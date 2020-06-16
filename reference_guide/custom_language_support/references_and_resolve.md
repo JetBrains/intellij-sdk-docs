@@ -26,7 +26,7 @@ The main method of the
 [`PsiReference`](upsource:///platform/core-api/src/com/intellij/psi/PsiReference.java)
 interface is `resolve()`, which returns the element to which the reference points, or `null` if it was not possible to resolve the reference to a valid element (for example, should it point to an undefined class). The resolved element should implement the [`PsiNamedElement`](upsource:///platform/core-api/src/com/intellij/psi/PsiNamedElement.java) interface.
 
-> **NOTE** While it may occur that the referencing element and the referenced element both have a name, only the element which **introduces** the name (e.g. the definition `int x = 42`) need to implement the [`PsiNamedElement`](upsource:///platform/core-api/src/com/intellij/psi/PsiNamedElement.java) interface. The referencing element at the point of usage (e.g. the `x` in the expression `x + 1`) should not implement `PsiNamedElement` since it itself does not _have_ a name.
+> **NOTE** While it may occur that the referencing element and the referenced element both have a name, only the element which **introduces** the name (e.g. the definition `int x = 42`) needs to implement the [`PsiNamedElement`](upsource:///platform/core-api/src/com/intellij/psi/PsiNamedElement.java) interface. The referencing element at the point of usage (e.g. the `x` in the expression `x + 1`) should not implement `PsiNamedElement` since it itself does not _have_ a name.
 
 > **TIP** In order to enable more advanced IntelliJ functionality, prefer implementing [`PsiNameIdentifierOwner`](upsource:///platform/core-api/src/com/intellij/psi/PsiNameIdentifierOwner.java) over [`PsiNamedElement`](upsource:///platform/core-api/src/com/intellij/psi/PsiNamedElement.java) where possible.
 

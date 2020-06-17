@@ -21,7 +21,7 @@ Here are the main components of the messaging API.
 
 This class serves as an endpoint at the messaging infrastructure. I.e. clients are allowed to subscribe to the topic within particular bus and to send messages to particular topic within particular bus.
 
-![Topic](img/topic.png)
+![Topic](img/topic.svg)
 
 *  *display name*  just a human-readable name used for logging/monitoring purposes;
 *  *broadcast direction*  will be explained in details at Broadcasting. Default value is *TO\_CHILDREN*;
@@ -38,7 +38,7 @@ Is the core of the messaging system. Is used at the following scenarios:
 
 Manages all subscriptions for particular client within particular bus.
 
-![Connection](img/connection.png)
+![Connection](img/connection.svg)
 
 *  keeps number of *topic handler* mappings (callbacks to invoke when message for the target topic is received)
 *Note*: not more than one handler per-topic within the same connection is allowed;
@@ -68,7 +68,7 @@ public interface ChangeActionNotifier {
 
 *Subscribing*
 
-![Subscribing](img/subscribe.png)
+![Subscribing](img/subscribe.svg)
 
 > **NOTE** If targeting 2019.3 or later, use [declarative registration](/basics/plugin_structure/plugin_listeners.md) if possible.
 
@@ -90,7 +90,7 @@ public void init(MessageBus bus) {
 
 *Publishing*
 
-![Publishing](img/publish.png)
+![Publishing](img/publish.svg)
 
 ```java
 public void doChange(Context context) {
@@ -123,13 +123,13 @@ So, it's possible to subscribe to them in order to receive information about the
 
 Message buses can be organised into hierarchies. Moreover, the *IntelliJ Platform* has them already:
 
-![Standard hierarchy](img/standard-hierarchy.png)
+![Standard hierarchy](img/standard_hierarchy.svg)
 
 That allows to notify subscribers registered in one message bus on messages sent to another message bus.
 
 *Example:*
 
-![Parent-child broadcast](img/parent-child-broadcast.png)
+![Parent-child broadcast](img/parent_child_broadcast.svg)
 
 Here we have a simple hierarchy (*application bus* is a parent of *project bus*) with three subscribers for the same topic.
 
@@ -166,7 +166,7 @@ The IntelliJ Platform's Messaging infrastructure guarantees that all messages se
 
 Suppose we have the following configuration:
 
-![Nested messages](img/nested-config.png)
+![Nested messages](img/nested_config.svg)
 
 Let's see what happens if someone sends a message to the target topic:
 

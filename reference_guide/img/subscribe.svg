@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="109px" preserveAspectRatio="none" style="width:897px;height:109px;" version="1.1" viewBox="0 0 897 109" width="897px" zoomAndPan="magnify"><defs><filter height="300%" id="fdln4uiboadgg" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><ellipse cx="16" cy="75" fill="#000000" filter="url(#fdln4uiboadgg)" rx="10" ry="10" style="stroke: none; stroke-width: 1.0;"/><polygon fill="#F8F8F8" filter="url(#fdln4uiboadgg)" points="79,63,91,75,79,87,67,75,79,63" style="stroke: #383838; stroke-width: 1.5;"/><rect fill="#F8F8F8" filter="url(#fdln4uiboadgg)" height="52.9766" rx="12.5" ry="12.5" style="stroke: #383838; stroke-width: 1.5;" width="114" x="284" y="8.5"/><text fill="#000000" font-family="Roboto" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="87" x="297.5" y="32.0352">Get message</text><text fill="#000000" font-family="Roboto" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="94" x="294" y="48.5234">bus reference</text><rect fill="#F8F8F8" filter="url(#fdln4uiboadgg)" height="52.9766" rx="12.5" ry="12.5" style="stroke: #383838; stroke-width: 1.5;" width="145" x="552" y="8.5"/><text fill="#000000" font-family="Roboto" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="125" x="562" y="32.0352">Create connection</text><text fill="#000000" font-family="Roboto" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="69" x="590" y="48.5234">to the bus</text><rect fill="#F8F8F8" filter="url(#fdln4uiboadgg)" height="36.4883" rx="12.5" ry="12.5" style="stroke: #383838; stroke-width: 1.5;" width="87" x="738" y="62"/><text fill="#000000" font-family="Roboto" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="67" x="748" y="85.5352">Subscribe</text><ellipse cx="876" cy="80" fill="none" filter="url(#fdln4uiboadgg)" rx="10" ry="10" style="stroke: #000000; stroke-width: 1.0;"/><ellipse cx="876.5" cy="80.5" fill="#000000" rx="6" ry="6" style="stroke: none; stroke-width: 1.0;"/><!--MD5=[15135c0701b46fe61dd2d2e8eac44cb3]
+link start to #118--><path d="M26,75 C35.34,75 50.16,75 61.59,75 " fill="none" id="start-&gt;#118" style="stroke: #383838; stroke-width: 1.0;"/><polygon fill="#383838" points="66.89,75,57.89,71,61.89,75,57.89,79,66.89,75" style="stroke: #383838; stroke-width: 1.0;"/><text fill="#000000" font-family="Roboto" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="0" x="58.9531" y="93.1725"/><!--MD5=[e601120d78014dd199bf06f550140f6f]
+link #118 to Get message\nbus reference--><path d="M89.56,73.53 C119.73,68.89 214.66,54.28 278.58,44.45 " fill="none" id="#118-&gt;Get message\nbus reference" style="stroke: #383838; stroke-width: 1.0;"/><polygon fill="#383838" points="283.9,43.63,274.3981,41.0388,278.9576,44.3871,275.6094,48.9466,283.9,43.63" style="stroke: #383838; stroke-width: 1.0;"/><text fill="#000000" font-family="Roboto" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="151" x="112" y="43.5352">don't have connection</text><!--MD5=[e6e995dc7ca7c46e7a5add9ba0a5c4d7]
+link Get message\nbus reference to Create connection\nto the bus--><path d="M398.29,35 C440.86,35 499.79,35 546.69,35 " fill="none" id="Get message\nbus reference-&gt;Create connection\nto the bus" style="stroke: #383838; stroke-width: 1.0;"/><polygon fill="#383838" points="551.77,35,542.77,31,546.77,35,542.77,39,551.77,35" style="stroke: #383838; stroke-width: 1.0;"/><!--MD5=[10d386b9872602d0e8aed9cde3a7a12f]
+link Create connection\nto the bus to Subscribe--><path d="M697.1,55.79 C709.32,59.33 721.73,62.94 733.11,66.24 " fill="none" id="Create connection\nto the bus-&gt;Subscribe" style="stroke: #383838; stroke-width: 1.0;"/><polygon fill="#383838" points="737.93,67.64,730.3926,61.3007,733.1262,66.2532,728.1737,68.9868,737.93,67.64" style="stroke: #383838; stroke-width: 1.0;"/><!--MD5=[3902186ca2a054370c6e1ae1830913a3]
+link #118 to Subscribe--><path d="M91,75.08 C164.73,75.6 588.33,78.63 732.48,79.66 " fill="none" id="#118-&gt;Subscribe" style="stroke: #383838; stroke-width: 1.0;"/><polygon fill="#383838" points="737.9,79.7,728.9346,75.623,732.9002,79.6571,728.866,83.6227,737.9,79.7" style="stroke: #383838; stroke-width: 1.0;"/><text fill="#000000" font-family="Roboto" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="112" x="419" y="73.5352">have connection</text><!--MD5=[66353aef4f4573c09dd245c4b2d80a44]
+link Subscribe to end--><path d="M825.23,80 C837.89,80 850.91,80 860.45,80 " fill="none" id="Subscribe-&gt;end" style="stroke: #383838; stroke-width: 1.0;"/><polygon fill="#383838" points="865.64,80,856.64,76,860.64,80,856.64,84,865.64,80" style="stroke: #383838; stroke-width: 1.0;"/><!--MD5=[7fad79b176e06d19fc86b2d1ba2ebbd0]
+@startuml
+skinparam monochrome true
+skinparam shadowing true
+
+skinparam DefaultFontName Roboto
+skinparam DefaultMonospacedFontName "Roboto Mono"
+
+skinparam DefaultFontSize 14
+skinparam DefaultTextAlignment center
+skinparam NoteTextAlignment left
+
+skinparam ActivityBorderThickness 1
+skinparam PartitionBorderThickness 1.5
+left to right direction
+
+(*) - -> if "" then
+  - -> [don't have connection] "Get message\nbus reference"
+  - -> "Create connection\nto the bus"
+  - -> "Subscribe"
+else
+  - -> [have connection] "Subscribe"
+endif
+- -> (*)
+@enduml
+
+PlantUML version 1.2020.09(Sun May 10 03:51:06 PDT 2020)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Java Version: 11.0.6+8-b765.40
+Operating System: Mac OS X
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>

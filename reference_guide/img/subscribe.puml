@@ -1,5 +1,4 @@
 @startuml
-!include ../../buildUML/jb-plantuml-theme.puml
 left to right direction
 
 ' Define the activity
@@ -11,5 +10,4 @@ else
   --> [have connection] "Subscribe"
 endif
 --> (*)
-
 @enduml

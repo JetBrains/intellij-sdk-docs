@@ -1,5 +1,4 @@
 @startuml
-!include ../../buildUML/jb-plantuml-theme.puml
 hide empty members
 hide circle
 top to bottom direction

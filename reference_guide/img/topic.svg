@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="106px" preserveAspectRatio="none" style="width:441px;height:106px;" version="1.1" viewBox="0 0 441 106" width="441px" zoomAndPan="magnify"><defs><filter height="300%" id="f1a5f7qxp0anyk" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[1d7f89d46fe5890de77e49145f8259d3]
+class Topic--><rect fill="#F8F8F8" filter="url(#f1a5f7qxp0anyk)" height="70.9766" id="Topic" style="stroke: #383838; stroke-width: 1.5;" width="244" x="6" y="16"/><ellipse cx="20" cy="31" fill="#C2C2C2" rx="10" ry="10" style="stroke: #383838; stroke-width: 1.0;"/><path d="M22.3896,35.7061 Q21.9111,35.9521 21.3848,36.0752 Q20.8584,36.1982 20.2773,36.1982 Q18.2129,36.1982 17.126,34.8379 Q16.0391,33.4775 16.0391,30.9072 Q16.0391,28.3301 17.126,26.9697 Q18.2129,25.6094 20.2773,25.6094 Q20.8584,25.6094 21.3916,25.7324 Q21.9248,25.8555 22.3896,26.1016 L22.3896,28.3438 Q21.8701,27.8652 21.3813,27.6431 Q20.8926,27.4209 20.373,27.4209 Q19.2656,27.4209 18.7017,28.2993 Q18.1377,29.1777 18.1377,30.9072 Q18.1377,32.6299 18.7017,33.5083 Q19.2656,34.3867 20.373,34.3867 Q20.8926,34.3867 21.3813,34.1646 Q21.8701,33.9424 22.3896,33.4639 Z "/><a href="https://github.com/JetBrains/intellij-community/blob/master/platform/extensions/src/com/intellij/util/messages/Topic.java" target="_top" title="com.intellij.util.messages.Topic" xlink:actuate="onRequest" xlink:href="https://github.com/JetBrains/intellij-community/blob/master/platform/extensions/src/com/intellij/util/messages/Topic.java" xlink:show="new" xlink:title="com.intellij.util.messages.Topic" xlink:type="simple"><text fill="#1C1C1C" font-family="Roboto" font-size="14" lengthAdjust="spacingAndGlyphs" text-decoration="underline" textLength="214" x="33" y="36.291">com.intellij.util.messages.Topic</text></a><line style="stroke: #383838; stroke-width: 1.5;" x1="7" x2="249" y1="46" y2="46"/><text fill="#000000" font-family="Roboto" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="108" x="12" y="63.5352">+displayName()</text><text fill="#000000" font-family="Roboto" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="151" x="12" y="80.0234">+broadcastDirection()</text><!--MD5=[8eaccf46e44cd9185ecd868a6bcfa3ae]
+class ListenerClass--><rect fill="#F8F8F8" filter="url(#f1a5f7qxp0anyk)" height="87.4648" id="ListenerClass" style="stroke: #383838; stroke-width: 1.5;" width="120" x="310" y="8"/><ellipse cx="324" cy="23" fill="#C2C2C2" rx="10" ry="10" style="stroke: #383838; stroke-width: 1.0;"/><path d="M326.3896,27.7061 Q325.9111,27.9521 325.3848,28.0752 Q324.8584,28.1982 324.2773,28.1982 Q322.2129,28.1982 321.126,26.8379 Q320.0391,25.4775 320.0391,22.9072 Q320.0391,20.3301 321.126,18.9697 Q322.2129,17.6094 324.2773,17.6094 Q324.8584,17.6094 325.3916,17.7324 Q325.9248,17.8555 326.3896,18.1016 L326.3896,20.3438 Q325.8701,19.8652 325.3813,19.6431 Q324.8926,19.4209 324.373,19.4209 Q323.2656,19.4209 322.7017,20.2993 Q322.1377,21.1777 322.1377,22.9072 Q322.1377,24.6299 322.7017,25.5083 Q323.2656,26.3867 324.373,26.3867 Q324.8926,26.3867 325.3813,26.1646 Q325.8701,25.9424 326.3896,25.4639 Z "/><text fill="#000000" font-family="Roboto" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="90" x="337" y="28.291">ListenerClass</text><line style="stroke: #383838; stroke-width: 1.5;" x1="311" x2="429" y1="38" y2="38"/><text fill="#000000" font-family="Roboto" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="83" x="316" y="55.5352">+method1()</text><text fill="#000000" font-family="Roboto" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="12" x="316" y="72.0234">...</text><text fill="#000000" font-family="Roboto" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="84" x="316" y="88.5117">+methodN()</text><!--MD5=[ac22afb7b8a06c286e18092d44f495e3]
+link Topic to ListenerClass--><path d="M262.05,51.5 C262.05,51.5 286.04,51.5 296.75,51.5 " fill="none" id="Topic-ListenerClass" style="stroke: #383838; stroke-width: 1.0;"/><polygon fill="#383838" points="309.97,51.5,300.97,47.5,304.97,51.5,300.97,55.5,309.97,51.5" style="stroke: #383838; stroke-width: 1.0;"/><line style="stroke: #383838; stroke-width: 1.0;" x1="304.97" x2="296.97" y1="51.5" y2="51.5"/><polygon fill="#FFFFFF" points="250.05,51.5,256.05,55.5,262.05,51.5,256.05,47.5,250.05,51.5" style="stroke: #383838; stroke-width: 1.0;"/><text fill="#000000" font-family="Roboto" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="9" x="288.8617" y="66.0116">1</text><!--MD5=[9eb62a90896ab149e6c4251c7f353082]
+@startuml
+skinparam monochrome true
+skinparam shadowing true
+
+skinparam DefaultFontName Roboto
+skinparam DefaultMonospacedFontName "Roboto Mono"
+
+skinparam DefaultFontSize 14
+skinparam DefaultTextAlignment center
+skinparam NoteTextAlignment left
+
+skinparam ActivityBorderThickness 1
+skinparam PartitionBorderThickness 1.5
+skinparam classAttributeIconSize 0
+hide empty fields
+hide empty methods
+left to right direction
+
+class "[[https://github.com/JetBrains/intellij-community/blob/master/platform/extensions/src/com/intellij/util/messages/Topic.java{com.intellij.util.messages.Topic} com.intellij.util.messages.Topic]]" as Topic {
+  +displayName()
+  +broadcastDirection()
+  }
+class ListenerClass {
+  +method1()
+  {method} ...
+  +methodN()
+  }
+
+Topic o- -> "1 " ListenerClass
+@enduml
+
+PlantUML version 1.2020.09(Sun May 10 03:51:06 PDT 2020)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Java Version: 11.0.6+8-b765.40
+Operating System: Mac OS X
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>

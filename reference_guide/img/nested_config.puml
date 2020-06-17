@@ -1,9 +1,7 @@
 @startuml
-!include ../../buildUML/jb-plantuml-theme.puml
 hide empty members
 hide circle
 top to bottom direction
-
 
 ' Define the objects in the diagram
 class "bus" as B

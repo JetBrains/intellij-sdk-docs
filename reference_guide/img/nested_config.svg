@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="217px" preserveAspectRatio="none" style="width:272px;height:217px;" version="1.1" viewBox="0 0 272 217" width="272px" zoomAndPan="magnify"><defs><filter height="300%" id="flxjwaxnzvwzg" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[69c451c751c414e37549b782190fef46]
+class B--><rect fill="#F8F8F8" filter="url(#flxjwaxnzvwzg)" height="26.4883" id="B" style="stroke: #383838; stroke-width: 1.5;" width="31" x="117.5" y="8"/><text fill="#000000" font-family="Roboto" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="25" x="120.5" y="26.5352">bus</text><!--MD5=[926f502e143d9ea62a9e3ce25d7b4f6f]
+class C1--><rect fill="#F8F8F8" filter="url(#flxjwaxnzvwzg)" height="26.4883" id="C1" style="stroke: #383838; stroke-width: 1.5;" width="91" x="20.5" y="94"/><text fill="#000000" font-family="Roboto" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="85" x="23.5" y="112.5352">connection1</text><!--MD5=[7a6ae922897b32380e18008d17b1b0ef]
+class C2--><rect fill="#F8F8F8" filter="url(#flxjwaxnzvwzg)" height="26.4883" id="C2" style="stroke: #383838; stroke-width: 1.5;" width="91" x="155.5" y="94"/><text fill="#000000" font-family="Roboto" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="85" x="158.5" y="112.5352">connection2</text><!--MD5=[ff7477c05a4730a20b075d2da276f30b]
+class TH1--><rect fill="#F8F8F8" filter="url(#flxjwaxnzvwzg)" height="26.4883" id="TH1" style="stroke: #383838; stroke-width: 1.5;" width="110" x="6" y="180"/><text fill="#000000" font-family="Roboto" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="104" x="9" y="198.5352">topic-handler1</text><!--MD5=[4c45aca55c8e2764fd8117a16b309977]
+class TH2--><rect fill="#F8F8F8" filter="url(#flxjwaxnzvwzg)" height="26.4883" id="TH2" style="stroke: #383838; stroke-width: 1.5;" width="110" x="151" y="180"/><text fill="#000000" font-family="Roboto" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="104" x="154" y="198.5352">topic-handler2</text><!--MD5=[5abb68ef7a7f90cc1b51845dea6e069f]
+reverse link B to C1--><path d="M114.98,44.59 C102.3,60.49 85.82,81.15 75.58,93.99 " fill="none" id="B&lt;-C1" style="stroke: #383838; stroke-width: 1.0;"/><polygon fill="#383838" points="123.4,34.04,116.5299,36.2311,115.9101,43.4156,122.7802,41.2244,123.4,34.04" style="stroke: #383838; stroke-width: 1.0;"/><!--MD5=[0ee95caecf4a1a8ef3cc171bfc43413c]
+reverse link B to C2--><path d="M151.29,44.59 C164.16,60.49 180.88,81.15 191.28,93.99 " fill="none" id="B&lt;-C2" style="stroke: #383838; stroke-width: 1.0;"/><polygon fill="#383838" points="142.74,34.04,143.4042,41.2205,150.2877,43.3691,149.6236,36.1886,142.74,34.04" style="stroke: #383838; stroke-width: 1.0;"/><!--MD5=[5d46ac34b92e80d9aff51a38fec452c6]
+reverse link C1 to TH1--><path d="M64.49,133.42 C63.57,148.87 62.43,167.89 61.72,179.99 " fill="none" id="C1&lt;-TH1" style="stroke: #383838; stroke-width: 1.0;"/><polygon fill="#383838" points="65.28,120.04,60.9309,125.792,64.5676,132.0188,68.9167,126.2669,65.28,120.04" style="stroke: #383838; stroke-width: 1.0;"/><!--MD5=[451bd3fd46f9c7411704c3f16b961f36]
+reverse link C2 to TH2--><path d="M202.51,133.42 C203.43,148.87 204.57,167.89 205.28,179.99 " fill="none" id="C2&lt;-TH2" style="stroke: #383838; stroke-width: 1.0;"/><polygon fill="#383838" points="201.72,120.04,198.0833,126.2669,202.4324,132.0188,206.0691,125.792,201.72,120.04" style="stroke: #383838; stroke-width: 1.0;"/><!--MD5=[02e4f7af3af7a3cc615eb74f50574e98]
+@startuml
+skinparam monochrome true
+skinparam shadowing true
+
+skinparam DefaultFontName Roboto
+skinparam DefaultMonospacedFontName "Roboto Mono"
+
+skinparam DefaultFontSize 14
+skinparam DefaultTextAlignment center
+skinparam NoteTextAlignment left
+
+skinparam ActivityBorderThickness 1
+skinparam PartitionBorderThickness 1.5
+hide empty members
+hide circle
+top to bottom direction
+
+class "bus" as B
+
+class "connection1" as C1
+class "connection2" as C2
+
+class "topic-handler1" as TH1
+class "topic-handler2" as TH2
+
+B *- - C1
+B *- - C2
+
+C1 *- - TH1
+C2 *- - TH2
+@enduml
+
+PlantUML version 1.2020.09(Sun May 10 03:51:06 PDT 2020)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Java Version: 11.0.6+8-b765.40
+Operating System: Mac OS X
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>

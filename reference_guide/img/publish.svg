@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="121px" preserveAspectRatio="none" style="width:712px;height:121px;" version="1.1" viewBox="0 0 712 121" width="712px" zoomAndPan="magnify"><defs><filter height="300%" id="f1qiawlhfa818j" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><ellipse cx="16" cy="59" fill="#000000" filter="url(#f1qiawlhfa818j)" rx="10" ry="10" style="stroke: none; stroke-width: 1.0;"/><rect fill="#F8F8F8" filter="url(#f1qiawlhfa818j)" height="52.9766" rx="12.5" ry="12.5" style="stroke: #383838; stroke-width: 1.5;" width="114" x="66" y="32.5"/><text fill="#000000" font-family="Roboto" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="87" x="79.5" y="56.0352">Get message</text><text fill="#000000" font-family="Roboto" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="94" x="76" y="72.5234">bus reference</text><rect fill="#F8F8F8" filter="url(#f1qiawlhfa818j)" height="69.4648" rx="12.5" ry="12.5" style="stroke: #383838; stroke-width: 1.5;" width="133" x="220" y="24.5"/><text fill="#000000" font-family="Roboto" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="80" x="246.5" y="48.0352">Ask the bus</text><text fill="#000000" font-family="Roboto" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="102" x="235.5" y="64.5234">for a particular</text><text fill="#000000" font-family="Roboto" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="113" x="230" y="81.0117">topic's publisher</text><rect fill="#F8F8F8" filter="url(#f1qiawlhfa818j)" height="69.4648" rx="12.5" ry="12.5" style="stroke: #383838; stroke-width: 1.5;" width="95" x="393" y="24.5"/><text fill="#000000" font-family="Roboto" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="71" x="405" y="48.0352">Call target</text><text fill="#000000" font-family="Roboto" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="75" x="403" y="64.5234">method on</text><text fill="#000000" font-family="Roboto" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="65" x="408" y="81.0117">publisher</text><rect fill="#F8F8F8" filter="url(#f1qiawlhfa818j)" height="102.4414" rx="12.5" ry="12.5" style="stroke: #383838; stroke-width: 1.5;" width="113" x="528" y="8"/><text fill="#000000" font-family="Roboto" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="73" x="548" y="31.5352">Messaging</text><text fill="#000000" font-family="Roboto" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="56" x="556.5" y="48.0234">calls the</text><text fill="#000000" font-family="Roboto" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="93" x="538" y="64.5117">same method</text><text fill="#000000" font-family="Roboto" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="63" x="553" y="81">on target</text><text fill="#000000" font-family="Roboto" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="60" x="554.5" y="97.4883">handlers</text><ellipse cx="691" cy="59" fill="none" filter="url(#f1qiawlhfa818j)" rx="10" ry="10" style="stroke: #000000; stroke-width: 1.0;"/><ellipse cx="691.5" cy="59.5" fill="#000000" rx="6" ry="6" style="stroke: none; stroke-width: 1.0;"/><!--MD5=[db7bc576abd41ebbc81687471622818c]
+link start to Get message\nbus reference--><path d="M26.32,59 C34.54,59 47.3,59 60.86,59 " fill="none" id="start-&gt;Get message\nbus reference" style="stroke: #383838; stroke-width: 1.0;"/><polygon fill="#383838" points="65.88,59,56.88,55,60.88,59,56.88,63,65.88,59" style="stroke: #383838; stroke-width: 1.0;"/><!--MD5=[97ec6985a6323c4c4cd3376c8b0065a9]
+link Get message\nbus reference to Ask the bus\nfor a particular\ntopic's publisher--><path d="M180.03,59 C191.17,59 203.01,59 214.57,59 " fill="none" id="Get message\nbus reference-&gt;Ask the bus\nfor a particular\ntopic's publisher" style="stroke: #383838; stroke-width: 1.0;"/><polygon fill="#383838" points="219.86,59,210.86,55,214.86,59,210.86,63,219.86,59" style="stroke: #383838; stroke-width: 1.0;"/><!--MD5=[3cc530e465bc010462a36a11e15e380c]
+link Ask the bus\nfor a particular\ntopic's publisher to Call target\nmethod on\npublisher--><path d="M353.29,59 C364.84,59 376.71,59 387.8,59 " fill="none" id="Ask the bus\nfor a particular\ntopic's publisher-&gt;Call target\nmethod on\npublisher" style="stroke: #383838; stroke-width: 1.0;"/><polygon fill="#383838" points="392.84,59,383.84,55,387.84,59,383.84,63,392.84,59" style="stroke: #383838; stroke-width: 1.0;"/><!--MD5=[540c37973707ace5e2cda49c4a5db4fe]
+link Call target\nmethod on\npublisher to Messaging\ncalls the\nsame method\non target\nhandlers--><path d="M488.39,59 C499.32,59 511.11,59 522.55,59 " fill="none" id="Call target\nmethod on\npublisher-&gt;Messaging\ncalls the\nsame method\non target\nhandlers" style="stroke: #383838; stroke-width: 1.0;"/><polygon fill="#383838" points="527.78,59,518.78,55,522.78,59,518.78,63,527.78,59" style="stroke: #383838; stroke-width: 1.0;"/><!--MD5=[ddd16144f23f8b64b933762bd4135676]
+link Messaging\ncalls the\nsame method\non target\nhandlers to end--><path d="M641.12,59 C653.87,59 666.36,59 675.52,59 " fill="none" id="Messaging\ncalls the\nsame method\non target\nhandlers-&gt;end" style="stroke: #383838; stroke-width: 1.0;"/><polygon fill="#383838" points="680.77,59,671.7815,54.9743,675.77,58.9857,671.7586,62.9743,680.77,59" style="stroke: #383838; stroke-width: 1.0;"/><!--MD5=[1b1780b41fbe3be593bebb2036e3d7ef]
+@startuml
+skinparam monochrome true
+skinparam shadowing true
+
+skinparam DefaultFontName Roboto
+skinparam DefaultMonospacedFontName "Roboto Mono"
+
+skinparam DefaultFontSize 14
+skinparam DefaultTextAlignment center
+skinparam NoteTextAlignment left
+
+skinparam ActivityBorderThickness 1
+skinparam PartitionBorderThickness 1.5
+left to right direction
+
+(*) - -> "Get message\nbus reference"
+  - -> "Ask the bus\nfor a particular\ntopic's publisher"
+  - -> "Call target\nmethod on\npublisher"
+  - -> "Messaging\ncalls the\nsame method\non target\nhandlers"
+- -> (*)
+@enduml
+
+PlantUML version 1.2020.09(Sun May 10 03:51:06 PDT 2020)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Java Version: 11.0.6+8-b765.40
+Operating System: Mac OS X
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>

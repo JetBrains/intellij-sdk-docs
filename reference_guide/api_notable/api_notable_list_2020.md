@@ -30,6 +30,9 @@ Support for WebP images
 FileType mapping via hashbang (`#!`)
 : Specify `hashBangs` attribute in `com.intellij.fileType` extension point. [Issue](https://youtrack.jetbrains.com/issue/IDEA-175757)
 
+Add information to About dialog
+: Implement `com.intellij.ide.AboutPopupDescriptionProvider` and register in `com.intellij.aboutInfoProvider` extension point.
+
 # 2020.1 
 
 ## Notable Changes in IntelliJ Platform 2020.1

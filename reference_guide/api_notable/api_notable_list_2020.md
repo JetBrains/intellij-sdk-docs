@@ -37,6 +37,9 @@ Unbundled plugins
 : Several plugins (ASP, CFML, Flash/Flex, GWT, JBoss Seam Pageflow, JBoss Seam, JBoss jBPM, OSGi, Play Framework, Resin, Seam Navigation, Tapestry, Virgo/dmServer) for no longer actively maintained technology have been unbundled. 
 If your plugin depends on them, users will need to install them from the [JetBrains Plugins Repository](https://plugins.jetbrains.com).
 
+Previewing Intention/Quick Fix
+: To support preview in intention popup, suitable `FileModifier` must be provided (default implementation `FileModifier.getFileModifierForPreview()` works for most cases). 
+
 # 2020.1 
 
 ## Notable Changes in IntelliJ Platform 2020.1

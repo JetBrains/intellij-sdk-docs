@@ -164,12 +164,12 @@ val panel = panel {
 }
 ```
 
-To specify the size of a text field, either pass the `columns` parameter as shown in the `intTextField` example above, or specify the `growPolicy` parameter:
+To specify the size of a text field, either pass the `columns` parameter as shown in the `intTextField` example above, or use `growPolicy()`:
 
 ```kotlin
 val userField = JTextField(credentials?.userName)
 val panel = panel {
-    row("Username:") { userField(growPolicy = GrowPolicy.SHORT_TEXT) }
+    row("Username:") { userField().growPolicy(GrowPolicy.SHORT_TEXT) }
 }
 ```
 

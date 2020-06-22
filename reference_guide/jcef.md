@@ -8,7 +8,7 @@ title: JCEF - Java Chromium Embedded Framework
 
 JCEF is a Java port of [CEF](https://bitbucket.org/chromiumembedded/cef/wiki/Home) framework for embedding [Chromium-based browsers](https://www.chromium.org/Home) in applications using Swing.
 
-Embedding of the browser component inside the IDE allows amongst others:
+Embedding of the browser component inside the IDE allows amongst others:
 
 - rendering HTML content
 - previewing generated HTML (e.g., from Markdown) 

@@ -151,7 +151,7 @@ The API of _IntelliJ Platform_ and bundled plugins may change between releases.
 The significant changes that may break plugins are listed on [Incompatible Changes in IntelliJ Platform and Plugins API](/reference_guide/api_changes_list.md) page.
 
 ## Developing for the Specific Build Number Ranges
-If a project dependent on the API that is changing in time or was recently introduced, it is not possible to provide one version of the plugin for all the IDE versions at once. To resolve the compatibility issue between the multiple platform versions and release a plugin in the specific version across the different [Build Number Ranges](/basics/getting_started/build_number_ranges.md), it would be necessary to use some custom solution introducing branching model.
+If a project is dependent on the API that is changing in time or was recently introduced, it is not possible to provide one version of the plugin for all the IDE versions at once. To resolve the compatibility issue between the multiple platform versions and release a plugin in the specific version across the different [Build Number Ranges](/basics/getting_started/build_number_ranges.md), it would be necessary to use some custom solution introducing branching model.
 
 Let's consider the following scenario - we have created a plugin targeting the 2019.3.* IntelliJ Platform with minimum and maximum build properties specified in the `plugin.xml` configuration file:
 

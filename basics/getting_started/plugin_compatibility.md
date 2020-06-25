@@ -150,3 +150,53 @@ The compatibility information determines if plugins are available at the plugin 
 The API of _IntelliJ Platform_ and bundled plugins may change between releases. 
 The significant changes that may break plugins are listed on [Incompatible Changes in IntelliJ Platform and Plugins API](/reference_guide/api_changes_list.md) page.
 
+## Developing for the Specific Build Number Ranges
+If a project dependent on the API that is changing in time or was recently introduced, it is not possible to provide one version of the plugin for all the IDE versions at once. To resolve the compatibility issue between the multiple platform versions and release a plugin in the specific version across the different [Build Number Ranges](/basics/getting_started/build_number_ranges.md), it would be necessary to use some custom solution introducing branching model.
+
+Let's consider the following scenario - we have created a plugin targeting the 2019.3.* IntelliJ Platform with minimum and maximum build properties specified in the `plugin.xml` configuration file:
+
+```xml
+<idea-plugin>
+  <!-- ... -->
+  <idea-version since-build="193" until-build="193.*"/>
+  <!-- ... -->
+</idea-plugin>
+``` 
+
+To make it flexible is to use [gradle-intellij-plugin](https://github.com/JetBrains/gradle-intellij-plugin) and provide the `since-build` and `until-build` properties via Gradle configuration:
+
+```groovy
+intellij {
+  updateSinceUntilBuild = true
+}
+
+patchPluginXml {
+  sinceBuild = pluginSinceBuild
+  untilBuild = pluginUntilBuild
+}
+```
+
+Extract build number ranges to the `gradle.properties` file:
+
+```properties
+pluginSinceBuild=193
+pluginUntilBuild=193.*
+```
+
+Create the `.gitattributes` file with a [merge strategy](https://git-scm.com/book/en/v2/Customizing-Git-Git-Attributes#_merge_strategies) defined, which allows us to keep the `gradle.properties` excluded from the merging in case there are some changes made and preserve our local file unchanged.
+
+```
+gradle.properties merge=ours
+```
+
+With the assumption that our default branch contains the plugin supporting the latest IntelliJ Platform, we can adjust our configuration with ease as soon as the next major version becomes available - i.e. `2020.1` - and contains a new feature that is out of the scope for the `2019.3.*` IDEs. At this point, our main branch is going to be forked as `idea-193` branch, whereas the main one will override the `gradle.properties` with:
+
+```properties
+pluginSinceBuild=201
+pluginUntilBuild=201.*
+```
+
+Having the `2019.3` target separated from the `2020.1`, we can implement a new feature using i.e. [JCEF](https://www.jetbrains.org/intellij/sdk/docs/reference_guide/jcef.html) introduced with that version.
+
+To keep all the branches in sync, we should rely on the most recent branch in the hierarchy - the branch next to the main one, `idea-193` will consume all the changes from `2020.1` targeted implementation. The `gradle.properties` file will be automatically ignored, so `idea-193` will have no `since-build` and `until-build` properties affected. In case of any [incompatible changes](https://www.jetbrains.org/intellij/sdk/docs/reference_guide/api_changes_list.html) detected, the branch should be patched with proper adjustments and verified with the [Plugin Verifier](https://blog.jetbrains.com/platform/2018/07/plugins-repository-now-integrates-with-the-plugin-verification-tool) tool.
+If our project supports any older IDEs targets, changes from `idea-193` with mentioned patches have to be merged into `idea-192` in a waterfall manner.

@@ -18,6 +18,7 @@
 * [Quick Start Guide](basics/basics.md)
     * [Types of Plugins](basics/types_of_plugins.md)
 * [Creating Your First Plugin](basics/getting_started.md)
+    * [Using GitHub Template](tutorials/github_template.md)
     * [Using Gradle](tutorials/build_system.md)
         * [Getting Started with Gradle](tutorials/build_system/prerequisites.md)
         * [Configuring Gradle Projects](tutorials/build_system/gradle_guide.md)

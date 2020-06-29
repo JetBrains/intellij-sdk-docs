@@ -8,6 +8,8 @@ The IntelliJ IDEA Ultimate and Community editions bundle the necessary plugins t
 These IntelliJ IDEA plugins are _Gradle_ and _Plugin DevKit_, which are enabled by default.
 To verify these plugins are installed and enabled, see the help section about [Managing Plugins](https://www.jetbrains.com/help/idea/managing-plugins.html).
 
+> **TIP** [IntelliJ Platform Plugin Template](https://github.com/JetBrains/intellij-platform-plugin-template) makes it easier to create and maintain your IDE plugins, having the Gradle plugin already integrated and CI covered with GitHub Actions.
+
 > **WARNING** When adding additional repositories to your Gradle build script, make sure to always use HTTPS protocol.
 
 * bullet list

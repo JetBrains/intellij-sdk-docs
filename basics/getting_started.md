@@ -5,8 +5,8 @@ title: Creating Your First Plugin
 
 This documentation section will help you get started with developing plugins for the *IntelliJ Platform*. You can use either [IntelliJ IDEA Community Edition](https://www.jetbrains.com/idea/download/) or [IntelliJ IDEA Ultimate](https://www.jetbrains.com/idea/download/) as your IDE (it is highly recommended to use the latest available version).  Both include the complete set of plugin development tools. To become more familiar with *IntelliJ IDEA*, please refer to the [IntelliJ IDEA Web Help](https://www.jetbrains.com/idea/help/).
 
-There are two supported workflows available for building plugins. 
-The recommended workflow for new projects is to [use Gradle](#using-gradle). 
+There are three supported workflows available for building plugins. 
+The recommended workflow for new projects is to [use GitHub Template](#using-github-template) or to [use Gradle](#using-gradle) to create everything from scratch.
 The old [Plugin DevKit](#using-devkit) workflow still supports existing projects.
 
 > **NOTE** If a new plugin will be Scala-based, a dedicated SBT plugin [sbt-idea-plugin](https://github.com/JetBrains/sbt-idea-plugin) is available. 
@@ -23,6 +23,10 @@ Specific to development of IntelliJ Platform plugins with the Gradle plugin for 
       * Running a plugin against alternate versions of the JetBrains runtime.
   * Gradle is fully integrated with Continuous Integration systems and [plugins.jetbrains.com](https://plugins.jetbrains.com), so it is easy to customize and extend the build and publishing processes. 
   * Built-in verification task for `plugin.xml` and plugin distribution structure, the same checks as on [plugins.jetbrains.com](https://plugins.jetbrains.com).
+
+## Using GitHub Template
+
+* [Developing plugins using GitHub Template](/tutorials/github_template.md)
 
 ## Using Gradle
 

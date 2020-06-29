@@ -2,7 +2,7 @@
 title: IntelliJ Platform Plugin Template
 ---
 
-[**IntelliJ Platform Plugin Template**][jb:download-ij] is a repository that provides a pure boilerplate template
+[**IntelliJ Platform Plugin Template**][gh:ippt] is a repository that provides a pure boilerplate template
 to make it easier to create a new plugin project.
 
 The main goal of this template is to speed up the setup phase of plugin development for both new and experienced
@@ -18,6 +18,5 @@ Once this is complete, the project is ready to be cloned to your local environme
 
 For more details, please refer to the [IntelliJ Platform Plugin Template][gh:ippt] project documentation.
 
-[gh:template]: https://help.github.com/en/enterprise/2.20/user/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template
 [gh:ippt]: https://github.com/JetBrains/intellij-platform-plugin-template
 [jb:download-ij]: https://www.jetbrains.com/idea/download

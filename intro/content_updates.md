@@ -10,6 +10,9 @@ See [Recently Updated](/recently_updated.md) ([RSS](https://github.com/JetBrains
 # 2020
 
 ## June
+GitHub IntelliJ Platform Plugin Template
+: Create new plugins with a preconfigured project scaffold and CI in [one click](/tutorials/github_template.md).
+
 Disposer & Disposable
 : Added [reference](/basics/disposers.md) discussing resource cleanup/management.
 

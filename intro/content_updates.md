@@ -10,6 +10,9 @@ See [Recently Updated](/recently_updated.md) ([RSS](https://github.com/JetBrains
 # 2020
 
 ## June
+Dynamic Plugins update
+: Added new sections _Code_ and _Troubleshooting_ to [Dynamic Plugins](/basics/plugin_structure/dynamic_plugins.md).
+
 GitHub IntelliJ Platform Plugin Template
 : Create new plugins with a preconfigured project scaffold and CI in [one click](/tutorials/github_template.md).
 

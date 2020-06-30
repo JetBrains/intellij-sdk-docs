@@ -2,7 +2,7 @@
 
 plugins {
   id 'java'
-  id 'org.jetbrains.intellij' version '0.4.16'
+  id 'org.jetbrains.intellij' version '0.4.21'
 }
 
 group 'org.intellij.sdk'
@@ -18,6 +18,8 @@ test {
   // This path value is machine-specific placeholder text.
   // Set idea.home.path to the absolute path to the intellij-community source
   // on your local machine.
+  // Use variants described in https://docs.gradle.org/current/userguide/build_environment.html
+  // for real world projects.
   systemProperty "idea.home.path", "/Users/jhake/Documents/source/comm"
 }
 
@@ -25,16 +27,21 @@ test {
 sourceSets.main.java.srcDirs 'src/main/gen'
 
 dependencies {
-  testCompile group: 'junit', name: 'junit', version: '4.12'
+  testImplementation group: 'junit', name: 'junit', version: '4.12'
 }
 
 // See https://github.com/JetBrains/gradle-intellij-plugin/
 intellij {
-  version '2019.3.3'
-  plugins 'java'
-  updateSinceUntilBuild = false
+  version = '2020.1'
+  plugins = ['java']
+}
+
+buildSearchableOptions {
+  enabled = false
 }
 
 patchPluginXml {
   version = project.version
+  sinceBuild = '201'
+  untilBuild = '201.*'
 }

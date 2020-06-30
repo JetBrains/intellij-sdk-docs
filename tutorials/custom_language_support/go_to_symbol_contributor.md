@@ -5,6 +5,8 @@ title: 13. Go To Symbol Contributor
 
 A _Go to Symbol Contributor_ helps the user to navigate to any PSI element by its name.
 
+**Reference**: [Go to Class and Go to Symbol](/reference_guide/custom_language_support/go_to_class_and_go_to_symbol.md) 
+
 * bullet list
 {:toc}
 
@@ -12,6 +14,7 @@ A _Go to Symbol Contributor_ helps the user to navigate to any PSI element by it
 To specify how a PSI element looks like in the **Go To Symbol** popup window, **Structure** tool window, or other components, it should implement `getPresentation()`.
 This method gets defined in the utility class `SimplePsiImplUtil`, and the parser and PSI classes must be regenerated.
 Add the following method to `SimplePsiImplUtil`:
+
 ```java
 public static ItemPresentation getPresentation(final SimpleProperty element) {
     return new ItemPresentation() {
@@ -40,6 +43,7 @@ public static ItemPresentation getPresentation(final SimpleProperty element) {
 Now add the `SimplePsiImplUtil.getPresentation()` to the `property` methods definition in the `Simple.bnf` grammar file by replacing the `property` definition with the lines below.
 Don't forget to regenerate the parser after updating the file! 
 Right-click on the `Simple.bnf` file and select **Generate Parser Code**.
+
 ```java
 property ::= (KEY? SEPARATOR VALUE?) | KEY {
   mixin="org.intellij.sdk.language.psi.impl.SimpleNamedElementImpl"
@@ -50,12 +54,14 @@ property ::= (KEY? SEPARATOR VALUE?) | KEY {
 
 ## 13.3. Define a Go to Symbol Contributor
 To enable the `simple_language_plugin` to contribute items to **Navigate \| Class..., File..., Symbol...** lists, subclass [`ChooseByNameContributor`](upsource:///platform/lang-api/src/com/intellij/navigation/ChooseByNameContributor.java) to create `SimpleChooseByNameContributor`:
+
 ```java
 {% include /code_samples/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleChooseByNameContributor.java %}
 ```
 
 ## 13.4. Register the Go To Symbol Contributor
 The `SimpleChooseByNameContributor` implementation is registered with the IntelliJ Platform in the plugin configuration file using the `com.intellij.gotoSymbolContributor` extension point.
+
 ```xml
   <extensions defaultExtensionNs="com.intellij">
     <gotoSymbolContributor 

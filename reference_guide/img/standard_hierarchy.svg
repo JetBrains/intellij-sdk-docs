@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="49px" preserveAspectRatio="none" style="width:418px;height:49px;" version="1.1" viewBox="0 0 418 49" width="418px" zoomAndPan="magnify"><defs><filter height="300%" id="f332uld9n4kk6" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[cd07344a80c53f6735430047176be71f]
+class AB--><rect fill="#F8F8F8" filter="url(#f332uld9n4kk6)" height="26.4883" id="AB" style="stroke: #383838; stroke-width: 1.5;" width="111" x="6" y="8"/><text fill="#000000" font-family="Roboto" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="105" x="9" y="26.5352">application bus</text><!--MD5=[562978db86ac36b29d57db113b203393]
+class PB--><rect fill="#F8F8F8" filter="url(#f332uld9n4kk6)" height="26.4883" id="PB" style="stroke: #383838; stroke-width: 1.5;" width="83" x="177" y="8"/><text fill="#000000" font-family="Roboto" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="77" x="180" y="26.5352">project bus</text><!--MD5=[2916ee572578080aeed684cfcd51fe32]
+class MB--><rect fill="#F8F8F8" filter="url(#f332uld9n4kk6)" height="26.4883" id="MB" style="stroke: #383838; stroke-width: 1.5;" width="87" x="320" y="8"/><text fill="#000000" font-family="Roboto" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="81" x="323" y="26.5352">module bus</text><!--MD5=[b34b903977778f6e15b67d5d61f7d5e9]
+reverse link AB to PB--><path d="M130.32,21 C146.24,21 162.7,21 176.98,21 " fill="none" id="AB&lt;-PB" style="stroke: #383838; stroke-width: 1.0;"/><polygon fill="#FFFFFF" points="117.15,21,123.15,25,129.15,21,123.15,17,117.15,21" style="stroke: #383838; stroke-width: 1.0;"/><text fill="#000000" font-family="Roboto" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="7" x="161.9608" y="35.9602">*</text><!--MD5=[d4275642ac8e9423a6422f9e799928f6]
+reverse link PB to MB--><path d="M273.24,21 C288.62,21 305.18,21 319.81,21 " fill="none" id="PB&lt;-MB" style="stroke: #383838; stroke-width: 1.0;"/><polygon fill="#FFFFFF" points="260.1,21,266.1,25,272.1,21,266.1,17,260.1,21" style="stroke: #383838; stroke-width: 1.0;"/><text fill="#000000" font-family="Roboto" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="7" x="304.9942" y="35.8602">*</text><!--MD5=[8417eed2b647e8dd5b66ac41dafce44e]
+@startuml
+skinparam monochrome true
+skinparam shadowing true
+
+skinparam DefaultFontName Roboto
+skinparam DefaultMonospacedFontName "Roboto Mono"
+
+skinparam DefaultFontSize 14
+skinparam DefaultTextAlignment center
+skinparam NoteTextAlignment left
+
+skinparam ActivityBorderThickness 1
+skinparam PartitionBorderThickness 1.5
+hide empty members
+hide circle
+left to right direction
+
+class "application bus" as AB
+class "project bus" as PB
+class "module bus" as MB
+
+AB o- - "*" PB
+PB o- - "*" MB
+@enduml
+
+PlantUML version 1.2020.09(Sun May 10 03:51:06 PDT 2020)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Java Version: 11.0.6+8-b765.40
+Operating System: Mac OS X
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>

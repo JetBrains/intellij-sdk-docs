@@ -12,7 +12,7 @@ import org.jetbrains.annotations.*;
 import java.util.*;
 
 public class SimpleReference extends PsiReferenceBase<PsiElement> implements PsiPolyVariantReference {
-  private String key;
+  private final String key;
   
   public SimpleReference(@NotNull PsiElement element, TextRange textRange) {
     super(element, textRange);

@@ -25,15 +25,16 @@ The `editor_basics` code sample adds an **Editor Add Caret** menu item to the ed
 The source code for the Java action class is [EditorHandlerIllustration](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/editor_basics/src/main/java/org/intellij/sdk/editor/EditorHandlerIllustration.java), a subclass of `AnAction`. 
 For more information about creating action classes, see the [Actions Tutorial](/tutorials/action_system.md) which covers the topic in depth. 
 
-The `EditorHandlerIllustration` action is registered in the `editor_basic` [plugin.xml](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/editor_basics/src/main/resources/META-INF/plugin.xml) file. 
+The `EditorHandlerIllustration` action is registered in the _editor_basic_ [`plugin.xml`](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/editor_basics/src/main/resources/META-INF/plugin.xml) file. 
 Note that this action class is registered to appear on the Editor context menu. 
+
 ```xml
 <actions>
     <action id="EditorBasics.EditorHandlerIllustration"
             class="org.intellij.sdk.editor.EditorHandlerIllustration"
             text="Editor Add Caret"
             description="Adds a second caret below the existing one."
-            icon="EditorBasicsIcons.Sdk_default_icon">
+            icon="SdkIcons.Sdk_default_icon">
       <add-to-group group-id="EditorPopupMenu" anchor="first"/>
     </action>
 </action>
@@ -47,12 +48,14 @@ Only if the following conditions are met in the `EditorHandlerIllustration.updat
 * There is at least one caret active in the editor. 
 
 After ensuring that `Project` and `Editor` objects are available, the `Editor` object is used to verify there is at least one caret: 
+
 ```java
 public class EditorHandlerIllustration extends AnAction {
   @Override
   public void update(@NotNull final AnActionEvent e) {
     final Project project = e.getProject();
     final Editor editor = e.getData(CommonDataKeys.EDITOR);
+
     // Make sure at least one caret is available
     boolean menuAllowed = false;
     if (editor != null && project != null) {
@@ -72,6 +75,7 @@ The `EditorActionManager` class provides a static method to do this.
 To request the correct `EditorActionHandler` from `EditorActionManager`, consult the [`IdeActions`](upsource:///platform/platform-api/src/com/intellij/openapi/actionSystem/IdeActions.java) interface for the correct constant to pass into the `EditorActionManager.getActionHandler()` method. 
 For cloning a caret below the primary caret, the constant is `ACTION_EDITOR_CLONE_CARET_BELOW`. 
 Based on that constant, the `EditorActionManager` returns an instance of [`CloneCaretActionHandler`](upsource:///platform/platform-impl/src/com/intellij/openapi/editor/actions/CloneCaretActionHandler.java), a subclass of `EditorActionHandler`. 
+
 ```java
     // Snippet from EditorHandlerIllustration.actionPerformed()
     final EditorActionManager actionManager = EditorActionManager.getInstance();
@@ -80,6 +84,7 @@ Based on that constant, the `EditorActionManager` returns an instance of [`Clone
 
 ### Using an EditorActionHandler to Clone the Caret
 To clone the caret requires only calling the `EditorActionHandler.execute()` method and passing in the appropriate context. 
+
 ```java
 public class EditorHandlerIllustration extends AnAction {
   @Override
@@ -109,6 +114,7 @@ This method is called every time a key is pressed when the Editor Tool Window ha
 In the following example, the `MyTypedHandler.execute()` method inserts "editor_basics\n" at the zero [caret Offset](coordinates_system.md#caret-offset) position when a keystroke event occurs. 
 As explained in [Working with Text](working_with_text.md#safely-replacing-selected-text-in-the-document), safe modifications to the document must be in the context of a write action. 
 So although a method on the `Document` interface does the `String` insertion, the write action ensures a stable context. 
+
 ```java
 class MyTypedHandler implements TypedActionHandler {
   @Override
@@ -127,6 +133,7 @@ The registration is done through the [`TypedAction`](upsource:///platform/platfo
 
 As is shown in the snippet below, the `EditorActionManager` is used to get access to the `TypedAction` class. 
 The method `TypedAction.setupHandler()` is used to register the custom `MyTypedHandler` class: 
+
 ```java
 public class EditorHandlerIllustration extends AnAction {
     static {

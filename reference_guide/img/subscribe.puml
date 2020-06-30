@@ -1,0 +1,13 @@
+@startuml
+left to right direction
+
+' Define the activity
+(*) --> if "" then
+  --> [don't have connection] "Get message\nbus reference"
+  --> "Create connection\nto the bus"
+  --> "Subscribe"
+else
+  --> [have connection] "Subscribe"
+endif
+--> (*)
+@enduml

@@ -37,7 +37,7 @@ The VFS itself does not honor ignored files listed in **Settings \| File Types \
 
 During the lifetime of a running instance of an IntelliJ Platform IDE, multiple `VirtualFile` instances may correspond to the same disk file. They are equal, have the same `hashCode` and share the user data.
 
-## Synchronous and asynchronous refreshes
+## Synchronous and Asynchronous Refreshes
 
 From the point of view of the caller, refresh operations can be either synchronous or asynchronous. In fact, the refresh operations are executed according to their own threading policy, and the synchronous flag simply means that the calling thread will be blocked until the refresh operation (which will most likely run on a different thread) is completed.
 
@@ -47,16 +47,16 @@ The same threading requirements also apply to functions like [`LocalFileSystem.r
 
 In nearly all cases, using asynchronous refreshes is strongly preferred. If there is some code that needs to be executed after the refresh is complete, the code should be passed as a `postRunnable` parameter to one of the refresh methods:
  
-* [`RefreshQueue.createSession()`](upsource:///platform/analysis-api/src/com/intellij/openapi/vfs/newvfs/RefreshQueue.java)<!--#L36-->
-* [`VirtualFile.refresh()`](upsource:///platform/core-api/src/com/intellij/openapi/vfs/VirtualFile.java)<!--#L681-->
+* [`RefreshQueue.createSession()`](upsource:///platform/analysis-api/src/com/intellij/openapi/vfs/newvfs/RefreshQueue.java)
+* [`VirtualFile.refresh()`](upsource:///platform/core-api/src/com/intellij/openapi/vfs/VirtualFile.java)
  
 Synchronous refreshes can cause deadlocks in some cases, depending on which locks are held by the thread invoking the refresh operation.
 
-## Virtual file system events
+## Virtual File System Events
 
 All changes happening in the virtual file system, either as a result of refresh operations or caused by user's actions, are reported as _virtual file system events_. VFS events are always fired in the event dispatch thread, and in a write action.
 
-The most efficient way to listen to VFS events is to implement the `BulkFileListener` interface and to subscribe with it to the [`VirtualFileManager.VFS_CHANGES`](upsource:///platform/core-api/src/com/intellij/openapi/vfs/VirtualFileManager.java)<!--#L34--> topic.
+The most efficient way to listen to VFS events is to implement [`BulkFileListener`](upsource:///platform/core-api/src/com/intellij/openapi/vfs/newvfs/BulkFileListener.java) and to subscribe with it to the [`VirtualFileManager.VFS_CHANGES`](upsource:///platform/core-api/src/com/intellij/openapi/vfs/VirtualFileManager.java) topic.
 A non-blocking variant [`AsyncFileListener`](upsource:///platform/core-api/src/com/intellij/openapi/vfs/AsyncFileListener.java) is also available in 2019.2 or later.
 See [How do I get notified when VFS changes?](/basics/architectural_overview/virtual_file.md#how-do-i-get-notified-when-vfs-changes) for implementation details.
 
@@ -64,6 +64,6 @@ See [How do I get notified when VFS changes?](/basics/architectural_overview/vir
 
 VFS events are sent both before and after each change, and you can access the old contents of the file in the before event. Note that events caused by a refresh are sent after the changes have already occurred on disk - so when you process the `beforeFileDeletion` event, for example, the file has already been deleted from disk. However, it is still present in the VFS snapshot, and you can access its last contents using the VFS API.
 
-Note that a refresh operation fires events only for changes in files that have been loaded in the snapshot. For example, if you accessed a `VirtualFile` for a directory but never loaded its contents using [`VirtualFile.getChildren()`](upsource:///platform/core-api/src/com/intellij/openapi/vfs/VirtualFile.java)<!--#L135-->, you may not get `fileCreated` notifications when files are created in that directory.
+Note that a refresh operation fires events only for changes in files that have been loaded in the snapshot. For example, if you accessed a `VirtualFile` for a directory but never loaded its contents using [`VirtualFile.getChildren()`](upsource:///platform/core-api/src/com/intellij/openapi/vfs/VirtualFile.java), you may not get `fileCreated` notifications when files are created in that directory.
 
 If you loaded only a single file in a directory using `VirtualFile.findChild()`, you will get notifications for changes to that file, but you may not get created/deleted notifications for other files in the same directory.

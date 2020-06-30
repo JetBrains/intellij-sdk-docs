@@ -3,7 +3,7 @@ title: Working with Icons and Images
 ---
 <!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-Icons and images are used widely by IntelliJ Platform plugins. Plugins need icons mostly for actions, custom components renderers, tool windows and so on.
+Icons and images are used widely by IntelliJ Platform plugins. Plugins need icons mostly for actions, custom components renderers, tool windows, and so on.
 
 > **NOTE** Plugin Icons, which represent a plugin itself, have different requirements than icons and images used within a plugin.
 For more information see the [Plugin Icon](/basics/plugin_structure/plugin_icon_file.md) page. 
@@ -12,11 +12,13 @@ For more information see the [Plugin Icon](/basics/plugin_structure/plugin_icon_
   
 ## How to organize and how to use icons?
 
-The best way to deal with icons and other image resources is to put them to a dedicated source root, say *"icons"* or *"resources"*.
+The best way to deal with icons and other image resources is to put them to a dedicated source root marked as *Resources Root*, say `icons` or `resources`.
 
-![Icons](img/icons1.png)
+The `getIcon()` method of [`IconLoader`](upsource:///platform/util/ui/src/com/intellij/openapi/util/IconLoader.java) can be used to access the icons. 
 
-The `getIcon()` method of [`IconLoader`](upsource:///platform/util/ui/src/com/intellij/openapi/util/IconLoader.java) can be used to access the icons. Then define a class or an interface with icon constants in a top-level package called `icons`:
+> **NOTE** The path to the icon passed in as argument to `IconLoader.getIcon()` must start with leading `/`
+
+Then define a class or an interface with icon constants in a top-level package called `icons`:
 
 ```java
 package icons;
@@ -28,7 +30,7 @@ public interface DemoPluginIcons {
 }
 ```
 
-Use these constants inside `plugin.xml` as well. Note that the package name `icons` will be automatically prefixed, and shouldn't be added manually.
+Use these constants inside `plugin.xml` as well. Note that the package name `icons` will be automatically prefixed, and must not be added manually.
 
 ```xml
 <action id="DemoPlugin.DemoAction"
@@ -38,7 +40,7 @@ Use these constants inside `plugin.xml` as well. Note that the package name `ico
         icon="DemoPluginIcons.DEMO_ACTION"/>
 ```
 
-### Image formats
+### Image Formats
 
 IntelliJ Platform supports Retina displays and has dark theme called Darcula. Thus, every icon should have a dedicated variant for Retina devices and Darcula theme. In some cases, you can skip dark variants if the original icon looks good under Darcula.
 
@@ -51,7 +53,7 @@ Required icon sizes depend on the usage as listed in the following table:
 | Editor gutter          | 12x12 |
 
 
-#### SVG format
+#### SVG Format
 > **NOTE** SVG icons are supported since 2018.2.
 
 As SVG icons can be scaled arbitrarily, they provide better results on HiDPI environments or when used in combination with bigger screen fonts (e.g., in presentation mode).
@@ -59,6 +61,7 @@ As SVG icons can be scaled arbitrarily, they provide better results on HiDPI env
 A base size denoting the size (in the user space) of the rendered image in 1x scale should be provided. The size is set via the `width` and `height` attributes omitting the size units. If unspecified, it defaults to 16x16 pixels.
 
 A minimal SVG icon file:
+
 ```xml
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16">
  <rect width="100%" height="100%" fill="green"/>
@@ -67,7 +70,7 @@ A minimal SVG icon file:
 
 The naming notation used for PNG icons (see below) is still relevant. However, the `@2x` version of an SVG icon should still provide the same base size. The icon graphics of such an icon can be expressed in more details via double precision. If the icon graphics are simple enough so that it renders perfectly in every scale, then the `@2x` version can be omitted. 
 
-#### PNG format 
+#### PNG Format 
 > **NOTE** Please consider using SVG icons if your plugin targets 2018.2+.
 
 All icon files must be placed in the same directory following this naming pattern (replace `.png` with `.svg` for SVG icons):

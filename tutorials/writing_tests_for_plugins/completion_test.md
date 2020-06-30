@@ -14,6 +14,7 @@ Create the `DefaultTestData.simple` properties file in the `testData` directory.
 
 Create a test input Java file `CompleteTestData.java` in the `testData` directory.
 This file contains a Simple Language snippet within the Java.
+
 ```java
 {% include /code_samples/simple_language_plugin/src/test/testData/CompleteTestData.java %}
 ```

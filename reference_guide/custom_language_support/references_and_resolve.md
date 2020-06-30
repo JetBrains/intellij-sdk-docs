@@ -26,7 +26,7 @@ The main method of the
 [`PsiReference`](upsource:///platform/core-api/src/com/intellij/psi/PsiReference.java)
 interface is `resolve()`, which returns the element to which the reference points, or `null` if it was not possible to resolve the reference to a valid element (for example, should it point to an undefined class). The resolved element should implement the [`PsiNamedElement`](upsource:///platform/core-api/src/com/intellij/psi/PsiNamedElement.java) interface.
 
-> **NOTE** While both the referencing element and the referenced element both have a name, only the element which **introduces** the name (e.g. the definition `int x = 42`) needs to implement the [`PsiNamedElement`](upsource:///platform/core-api/src/com/intellij/psi/PsiNamedElement.java) interface. It is not necessary for the referencing element at the point of usage (e.g. the `x` in the expression `x + 1`) to implement `PsiNamedElement`.
+> **NOTE** While it may occur that the referencing element and the referenced element both have a name, only the element which **introduces** the name (e.g. the definition `int x = 42`) needs to implement the [`PsiNamedElement`](upsource:///platform/core-api/src/com/intellij/psi/PsiNamedElement.java) interface. The referencing element at the point of usage (e.g. the `x` in the expression `x + 1`) should not implement `PsiNamedElement` since it itself does not _have_ a name.
 
 > **TIP** In order to enable more advanced IntelliJ functionality, prefer implementing [`PsiNameIdentifierOwner`](upsource:///platform/core-api/src/com/intellij/psi/PsiNameIdentifierOwner.java) over [`PsiNamedElement`](upsource:///platform/core-api/src/com/intellij/psi/PsiNamedElement.java) where possible.
 
@@ -39,7 +39,7 @@ to a ResourceBundle in the
 [Properties language plugin](upsource:///plugins/properties)
 - [Custom Language Support Tutorial: Reference Contributor](/tutorials/custom_language_support/reference_contributor.md)
 
-> **TIP** Please see also _Cache results of heavy computations_ in [Working with PSI efficiently](/reference_guide/performance/performance.md#working-with-psi-efficiently).
+> **TIP** To optimize `getReferences()` performance, consider implementing [`HintedReferenceHost`](upsource:///platform/core-api/src/com/intellij/psi/HintedReferenceHost.java) to provide additional hints. Please see also _Cache Results of Heavy Computations_ in [Working with PSI efficiently](/reference_guide/performance/performance.md#working-with-psi-efficiently).
 
 There's a set of interfaces which can be used as a base for implementing resolve support, namely the
 [`PsiScopeProcessor`](upsource:///platform/core-api/src/com/intellij/psi/scope/PsiScopeProcessor.java) interface and the
@@ -60,9 +60,9 @@ The implementation of resolve based on the standard helper classes contains of t
 
 *  A function which walks the PSI tree up from the reference location until the resolve has successfully completed or until the end of the resolve scope has been reached.
    If the target of the reference is located in a different file, the file can be located, for example, using
-   [`FilenameIndex.getFilesByName()`](upsource:///platform/indexing-impl/src/com/intellij/psi/search/FilenameIndex.java)
+   [`FilenameIndex.getFilesByName()`](upsource:///platform/indexing-api/src/com/intellij/psi/search/FilenameIndex.java)
    (if the file name is known) or by iterating through all custom language files in the project (`iterateContent()` in the
-   [`FileIndex`](upsource:///platform/indexing-impl/src/com/intellij/psi/search/FilenameIndex.java)
+   [`ProjectFileIndex`](upsource:///platform/projectModel-api/src/com/intellij/openapi/roots/ProjectFileIndex.java)
    interface obtained from
    [`ProjectRootManager.getFileIndex()`](upsource:///platform/projectModel-api/src/com/intellij/openapi/roots/ProjectRootManager.java)
    ).

@@ -11,6 +11,9 @@ This FAQ is a topical index of questions that have been asked (and answered) on 
 ## Open-Source Plugins
 *  [How do I compile the Scala plugin?](https://github.com/jetbrains/intellij-scala#setting-up-the-project)
 
+## Unresolved Classes after Upgrading to 2019.2 or later
+*  [Java functionality extracted as a plugin](https://blog.jetbrains.com/platform/2019/06/java-functionality-extracted-as-a-plugin/)
+
 ## Action System
 *  [How do I trigger actions programmatically?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206130119-Triggering-AnAction-instances-)
 *  [How do I add a main menu item?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206750335-Add-new-Main-menu-option-for-plugin)

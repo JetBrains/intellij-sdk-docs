@@ -5,7 +5,7 @@ title: Adding New Steps to Project Wizard
 
 This tutorial shows how to add an extra step to the Project Wizard to provide additional project configuration settings.
 
-## Pre-requirements
+## Pre-Requirements
 
 Create an empty plugin project.
 See [Creating a Plugin Project](/tutorials/build_system.md)

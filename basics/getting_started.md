@@ -5,26 +5,28 @@ title: Creating Your First Plugin
 
 This documentation section will help you get started with developing plugins for the *IntelliJ Platform*. You can use either [IntelliJ IDEA Community Edition](https://www.jetbrains.com/idea/download/) or [IntelliJ IDEA Ultimate](https://www.jetbrains.com/idea/download/) as your IDE (it is highly recommended to use the latest available version).  Both include the complete set of plugin development tools. To become more familiar with *IntelliJ IDEA*, please refer to the [IntelliJ IDEA Web Help](https://www.jetbrains.com/idea/help/).
 
-There are two supported workflows available for building plugins. 
-The recommended workflow for new projects is to [use Gradle](#using-gradle). 
+There are three supported workflows available for building plugins. 
+The recommended workflow for new projects is to [use GitHub Template](#using-github-template) or to [use Gradle](#using-gradle) to create everything from scratch.
 The old [Plugin DevKit](#using-devkit) workflow still supports existing projects.
 
-If a new plugin will be Scala-based, a plugin development workflow [sbt-idea-plugin](https://github.com/JetBrains/sbt-idea-plugin), is available.
-The workflow is analogous to the Gradle workflow but tailored to developing IntelliJ Platform plugins in Scala.
-JetBrains does not officially support this Scala workflow, and at this time the workflow has only minimal documentation.
+> **NOTE** If a new plugin will be Scala-based, a dedicated SBT plugin [sbt-idea-plugin](https://github.com/JetBrains/sbt-idea-plugin) is available. 
 
-The Gradle workflow offers these advantages:
-* Gradle in general:
+The Gradle workflow offers a number of advantages:
   * Representations of source sets, modules, and projects are portable,
   * Projects of any size or complexity usually require scripts for build management, which Gradle handles natively,
   * Training, documentation, and community help for general Gradle topics are widely available.
-* Specific to development of IntelliJ Platform plugins with the Gradle plugin for IntelliJ IDEA:
+
+Specific to development of IntelliJ Platform plugins with the Gradle plugin for IntelliJ IDEA:
   * Changing plugin targets is easier because it is all done in `build.gradle`:
       * Switching the version of the target IntelliJ Platform (IDE),
       * Changing the target IntelliJ Platform-based IDE, e.g., from IntelliJ IDEA to PyCharm,
       * Running a plugin against alternate versions of the JetBrains runtime.
-  * Gradle is fully integrated with IntelliJ Platform-based IDE CI builds and [plugins.jetbrains.com](https://plugins.jetbrains.com), so it is easy to customize and extend the build and publishing processes. 
-  * Gradle has built-in verification for `plugin.xml` module dependency and use of version-specific IntelliJ Platform APIs, the same checks as on [plugins.jetbrains.com](https://plugins.jetbrains.com).
+  * Gradle is fully integrated with Continuous Integration systems and [plugins.jetbrains.com](https://plugins.jetbrains.com), so it is easy to customize and extend the build and publishing processes. 
+  * Built-in verification task for `plugin.xml` and plugin distribution structure, the same checks as on [plugins.jetbrains.com](https://plugins.jetbrains.com).
+
+## Using GitHub Template
+
+* [Developing plugins using GitHub Template](/tutorials/github_template.md)
 
 ## Using Gradle
 
@@ -37,7 +39,7 @@ The Gradle workflow offers these advantages:
 * [Developing plugins using DevKit](getting_started/using_dev_kit.md)
     * [Setting Up a Development Environment](getting_started/setting_up_environment.md)
     * [Creating a Plugin Project](getting_started/creating_plugin_project.md)
-    * [Creating an Action](/tutorials/action_system/working_with_custom_actions.md)
+    * [Creating Actions](/tutorials/action_system/working_with_custom_actions.md)
     * [Running and Debugging a Plugin](getting_started/running_and_debugging_a_plugin.md)
     * [Deploying a Plugin](getting_started/deploying_plugin.md)
-    * [Publishing a plugin to plugin repository](getting_started/publishing_plugin.md)
+    * [Publishing a Plugin](getting_started/publishing_plugin.md)

@@ -24,7 +24,7 @@ public class ComparingReferencesInspectionTest extends LightJavaCodeInsightFixtu
    */
   @Override
   protected String getTestDataPath() {
-    return "src/test/resources";
+    return "src/test/testData";
   }
 
   /**
@@ -34,7 +34,7 @@ public class ComparingReferencesInspectionTest extends LightJavaCodeInsightFixtu
    *
    * @param testName The name of the test file before comparing references inspection.
    */
-  protected void doTest(@NotNull String testName) throws Throwable {
+  protected void doTest(@NotNull String testName) {
     // Initialize the test based on the testData file
     myFixture.configureByFile(testName + ".java");
     // Initialize the inspection and get a list of highlighted

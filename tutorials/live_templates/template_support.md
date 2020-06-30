@@ -18,6 +18,7 @@ Get started by [creating a new Live Template](https://www.jetbrains.com/idea/hel
 * Assign the template the abbreviation "**{**".
 * Assign the description "**SDK: New link reference**". 
 * Paste the following snippet into the *Template text* field:
+
 ```text
 [$TEXT$]($LINK$)$END$
 ```
@@ -61,6 +62,7 @@ Ultimately, a file's extension determines the applicable Markdown context.
 > **Note** Once the `MarkdownContext` is defined, be sure to add the new context type to the previously created Live Template settings file. 
 
 Within the `<template>...</template>` elements in the `Markdown.xml` [Live Template definition file](#export-the-live-template), add the following context elements:
+
 ```xml
     <variable.../>
     <context>
@@ -81,12 +83,14 @@ For 2020.1 and later, follow this section to register the extension points and t
 #### Register Extension Points
 Using the `com.intellij.defaultLiveTemplates` and `com.intellij.liveTemplateContext` extension points, register the implementations with the IntelliJ Platform.
 The `file` attribute in the `defaultLiveTemplates` element specifies `path/filename` under the `src/main/resources` folder.
+
 ```xml
   <extensions defaultExtensionNs="com.intellij">
     <defaultLiveTemplates file="/liveTemplates/Markdown.xml"/>
     <liveTemplateContext implementation="org.intellij.sdk.liveTemplates.MarkdownContext"/>
   </extensions>
 ```
+
 Now go to the [Check Plugin](#check-plugin) section to test the template.
 
 ### Versions 2019.3 and Earlier
@@ -96,6 +100,7 @@ Then proceed to the [Check Plugin](#check-plugin) section.
 #### Implement DefaultLiveTemplatesProvider
 The `MarkdownTemplateProvider` tells the Platform where to find the Live Template settings file. 
 Make sure to include the full path to the file, relative to the `src/main/resources` directory, excluding the file extension.
+
 ```java
 package org.intellij.sdk.liveTemplates;
 
@@ -118,6 +123,7 @@ public class MarkdownTemplateProvider implements DefaultLiveTemplatesProvider {
 
 #### Register Extension Points
 Using the `com.intellij.defaultLiveTemplatesProvider` and `com.intellij.liveTemplateContext` extension points, register the implementations with the IntelliJ Platform.
+
 ```xml
   <extensions defaultExtensionNs="com.intellij">
     <defaultLiveTemplatesProvider implementation="org.intellij.sdk.liveTemplates.MarkdownTemplateProvider"/>

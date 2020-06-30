@@ -28,7 +28,7 @@ Colors are defined by six-digit RGB or eight-digit RGBA hexadecimal notation.
 ### UI Theme Reference Implementations
 When learning new syntax, it is often useful to have some existing implementations for reference.
 For example, refer to the [Theme description file](upsource:///platform/platform-resources/src/themes/HighContrast.theme.json) for the IntelliJ IDEA _High Contrast_ Theme.
-It may also be helpful to review some of the [UI Themes available](https://plugins.jetbrains.com/search?headline=164-theme&tags=Theme) at the JetBrains Plugin Repository.
+It may also be helpful to review some of the [UI Themes available](https://plugins.jetbrains.com/search?headline=164-theme&tags=Theme) at the JetBrains Plugins Repository.
 
 ## Defining Named Colors
 Colors can always be defined individually as six-digit RGB or eight-digit RGBA hexadecimal notation.
@@ -37,6 +37,7 @@ Maintaining a Theme is more manageable if _Named Colors_ are globally defined in
 After that, the Named Color can be used instead of a hexadecimal description of the color.
 For example, defining the Named Color `basicBackground` and then using it to set the background color for panels.
 (Don't be concerned with the `"ui"` syntax in the example below, it will be discussed in [Custom UI Control Colors](#custom-ui-control-colors).)
+
 ```json
 {
   "name": "theme_basics",
@@ -54,7 +55,7 @@ For example, defining the Named Color `basicBackground` and then using it to set
 ```
 
 ## Customizing Icons
-UI themes can customize the color of default IntelliJ IDEA UI icons, or substitute custom icons for the default ones. 
+UI themes can customize the color of default IntelliJ Platform UI icons, or substitute custom icons for the default ones. 
 Customization is done by adding an `"icons": {}` section to the Theme description file.
 
 ### Overriding the Global Color of Icons
@@ -62,6 +63,7 @@ Default global icon colors are customized by adding key-value pairs to a `"Color
 The `ColorPalette` must be inserted in the `icons` section.
 
 In the following example the `key` - the default red color (#DB5860) used for `Action` icons in the _Light_ Theme - is overridden to the `value` of a different color (#D61A26):
+
 ```json
 {
   "icons": {
@@ -71,13 +73,14 @@ In the following example the `key` - the default red color (#DB5860) used for `A
   }
 }
 ```  
+
 This color substitution is applied throughout the IDE UI.
 
 ### Custom Icon Palette Colors
 Icon Palettes are predefined UI Theme color keys, each describing a single color in an `Actions` or `Objects` context. 
 
 #### Icon Colors in "Actions" and "Objects" Contexts
-IntelliJ IDEA has default icon colors defined for `Actions` and `Objects` contexts. 
+IntelliJ Platform has default icon colors defined for `Actions` and `Objects` contexts. 
 * `Actions` are Theme keys for icons that appear in the context of toolbars, and represent actions such as _Compile_, _Run_, or _Debug_. 
 * `Objects` are Theme keys for icons that appear in the contexts of lists and trees, and represent entities like files, symbols, or run and debug configurations.
 
@@ -92,6 +95,7 @@ The list of available icon `Actions` and `Objects` keys are provided by the comp
 ![Color Palette Popup](img/theme_colorpalette_popup.png){:width="600px"}
 
 For example, the following key-value pair changes the color for  all blue-colored icons on toolbars to the color #5BC0DE:
+
 ```json
 {
   "icons": {
@@ -101,11 +105,12 @@ For example, the following key-value pair changes the color for  all blue-colore
   }
 }
 ```
+
 This more specific change to the `Actions.Blue` color overrides the default definition. 
 It will also, in the narrower context of blue `Actions` icons, supersede any global color overrides of the default blue icon color.
 
 ### Custom Icons
-The default IntelliJ IDEA UI icons can be replaced by custom icons. 
+The default IntelliJ Platform UI icons can be replaced by custom icons. 
 The file format for icons is SVG. 
 The [JetBrains Platform UI Guideline for Icons](https://jetbrains.design/intellij/principles/icons/) has detailed specifications for icons. 
 
@@ -113,11 +118,12 @@ An icon replacement is described within the `icon {}` section of a Theme descrip
 Note that icon replacement key-value pairs appear outside of the `ColorPalette` section. 
 
 For icon substitutions, the `key` is the path to the default icon image.
-This path is derived from the `AllIcons.[Group].[IconName]` path in icon section reported by the [UI Inspector](/reference_guide/internal_actions/internal_uii.md).  
+This path is derived from the `AllIcons.[Group].[IconName]` path in icon section reported by the [UI Inspector](/reference_guide/internal_actions/internal_ui_inspector.md).  
 
 For example, the _Build_ (hammer) icon in the toolbar has the path `Allcons.Actions.Compile` as reported by the UI Inspector. 
 Therefore the `key` for the _Build_ icon is `/actions/compile.svg`. 
 The `value` is the file name of the replacement icon, located in the `resources` folder of the UI Theme plugin project:
+
 ```json
 {
   "icons": {
@@ -125,10 +131,11 @@ The `value` is the file name of the replacement icon, located in the `resources`
   }
 }
 ```
+
 The color of a replaced icon takes precedence over any `ColorPalette` overrides.
 
 ## Customizing UI Controls
-UI Themes can change the appearance of more general controls in the IntelliJ IDEA UI. 
+UI Themes can change the appearance of more general controls in the IntelliJ Platform UI. 
 Examples of these controls are labels, buttons, checkboxes, trees, lists, and menus.
 
 ### Custom UI Control Colors
@@ -151,6 +158,7 @@ A key-value pair is inserted in this section, but only the `property` portion of
 The `value` is the custom color. 
 
 The following example would change the default background color to #AED7E3 for all UI controls:
+
 ```json
 {
   "ui": {
@@ -160,6 +168,7 @@ The following example would change the default background color to #AED7E3 for a
   }
 }
 ```
+
 Note that the wildcard `"*": {}` section must be within the `"ui": {}` section.
 
 #### Customizing the Color of Specific UI Control Types
@@ -167,6 +176,7 @@ The color of a specific UI control types are changed by adding a key-value pair 
 The `key` is the full `element.property` format and the `value` is the custom color.
   
 The following example sets the background color for all labels to the color #F6E9C9
+
 ```json
 {
   "ui": {
@@ -177,6 +187,7 @@ The following example sets the background color for all labels to the color #F6E
   }
 }
 ```
+
 The `Label.background` entry supersedes, in the narrower context of label backgrounds, any default color as well as any wildcard color assigned to backgrounds.
 
 #### Customizing the Color of UI Tabs
@@ -243,6 +254,7 @@ Methods for identifying UI control keys are in the [Finding Attribute Keys for U
 The appearance of borders for specific UI control types are customized by adding a key-value pair to the `"ui": {}` section of a Theme description file. 
 
 The following example sets a new border width and color for all windows:
+
 ```json
 {
   "ui": {
@@ -250,6 +262,7 @@ The following example sets a new border width and color for all windows:
   }
 }
 ```
+
 In this example the customized border supersedes the default definition and 
 any global color override.
 
@@ -259,7 +272,7 @@ Some keys and strategies for applying them can be gleaned from the [UI Theme ref
 For a general search, here some suggested methods for locating UI control keys.
 
 ### Finding a UI Control Key Using Code Completion in the Editor
-The preferred method of finding UI control keys is to use the [Code Completion](https://www.jetbrains.com/help/idea/auto-completing-code.html#Auto-Completing_Code.xml) feature in the IntelliJ IDEA editor. 
+The preferred method of finding UI control keys is to use the [Code Completion](https://www.jetbrains.com/help/idea/auto-completing-code.html#Auto-Completing_Code.xml) feature in the editor. 
 Note that some keys presented by the code completion feature may be deprecated. 
 New entries in the `"ui": {}` section will invoke the code completion popup, as shown below:
 
@@ -270,6 +283,6 @@ It appears as the _Since_ attribute in editor popups.
 In the Quick Documentation popup the format is e.g. _Since: 2019.2_.
 The Code Completion popup is similar, but it the format is e.g. _[Since 2019.2]_.
 
-### Finding a UI Control Key using Laf Defaults UI
-Using the [Laf Defaults](/reference_guide/internal_actions/internal_ui_lafd.md) inspector, enter the `element` portion of the key. 
+### Finding a UI Control Key Using Laf Defaults UI
+Using the [Laf Defaults](/reference_guide/internal_actions/internal_ui_laf_defaults.md) inspector, enter the `element` portion of the key. 
 The Laf Defaults inspector will prompt with a list of UI Control keys and their default color.

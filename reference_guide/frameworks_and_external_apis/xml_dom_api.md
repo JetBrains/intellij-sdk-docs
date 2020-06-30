@@ -33,6 +33,7 @@ It's _not_ correct to create chained calls like
 file.getDocument().getRootTag().findFirstSubTag("foo").
 findSubTags("bar")[1].getValue().getTrimmedText()
 ```
+
 because each call here may return `null`.
 
 So the code would probably look like this: 
@@ -223,6 +224,7 @@ One more common case in DTD and Schemas is when children have the same tag name 
 ```java
 List<Entity> getEntities();
 ```
+
 There's also an annotation `@SubTagList` where you can explicitly specify the tag name.
 
 Returned collections cannot be modified directly. To delete an element from collection, just call `undefine()` on this element. The tag will then be removed, and element will become invalid (`DomElement.isValid() == false`). Note that this behavior differs from that of fixed-number children and attributes: they are always valid, even after `undefine()`. Again, unlike those children types, collection children always have valid underlying XML tags.
@@ -238,6 +240,7 @@ which adds an element to wherever you want, or
 ```java
 Entity addEntity();
 ```
+
 which adds a new DOM element to the end of the collection. Please note the singular tense of the word "Entity". That's because here we deal with one `Entity` object, while in the collection getter we dealt with potentially many entities.
 
 Now, you can do anything you want with the returned value: modify, define the tag's value, children, etc.
@@ -255,6 +258,7 @@ List<Bar> getBars();
 @SubTagsList({"foo", "bar"})
 List<FooBar> getMergedListOfFoosAndBars();
 ```
+
 The annotation here is mandatory - we cannot guess several tag names from one method name.
 
 To add elements to such mixed collections, you should create "add" methods for each possible tag name:
@@ -263,6 +267,7 @@ To add elements to such mixed collections, you should create "add" methods for e
 @SubTagsList(value={"foo","bar"}, tagName="foo") Fubar addFoo();
 @SubTagsList(value={"foo","bar"}, tagName="bar") Fubar addBar(int index);
 ```
+
 The index parameter in the last example means the index in the merged collection, not in the collection of tags named "bar".
 
 ### Dynamic Definition
@@ -270,7 +275,7 @@ You can extend existing DOM model at runtime by implementing `com.intellij.util.
 
 If the contributed elements depend on anything other than plain XML file content (used framework version, libraries in classpath, ...), make sure to return `false` from `DomExtender.supportsStubs()`.
 
-### Generating DOM from existing XSD
+### Generating DOM from Existing XSD
 DOM can be generated automatically from existing XSD/DTD. Output correctness/completeness will largely depend on the input scheme and may require additional manual adjustments.
 
 Follow these steps:
@@ -280,7 +285,7 @@ Follow these steps:
 * Select Scheme file and set options, then click "Generate" to generate sources
 * Modify generated sources according to your needs
 
-### IDE support
+### IDE Support
 _Plugin DevKit_ supports the following features for working with DOM related code:
 
 * [`DomElement`](upsource:///xml/dom-openapi/src/com/intellij/util/xml/DomElement.java) - provide implicit usages for all DOM-related methods defined in inheriting classes (to suppress "unused method" warning)
@@ -342,7 +347,7 @@ If you want to be notified on every change in the DOM model, add `DomEventListen
 #### Highlighting Annotations
 The DOM supports error checking and highlighting. It's based on annotations which you add to the DOM element in a special place (don't confuse these annotations with the ones of Java 5 — they are very different). You need to implement the [`DomElementAnnotator`](upsource:///xml/dom-openapi/src/com/intellij/util/xml/highlighting/DomElementsAnnotator.java) interface, and override `DomFileDescription.createAnnotator()` method, and create this annotator there. In `DomElementsAnnotator.annotate(DomElement element, DomElementsProblemsHolder annotator)` you should report about all errors and warnings in the element's sub-tree to the annotator (`DomElementsProblemsHolder.createProblem()`). You should return this annotator in the corresponding virtual method of the `DomFileDescription`.
 
-#### Automatic highlighting (BasicDomElementsInspection)
+#### Automatic Highlighting (BasicDomElementsInspection)
 The following errors can be highlighted automatically by providing an instance of `BasicDomElementsInspection`:
 
 - `@Required` element missing or having empty text
@@ -405,6 +410,7 @@ GenericDomValue<String> getVeryLongName()
 @PropertyAccessor("very-long-name")
 GenericDomValue<String> getName()
 ```
+
 In this case, the second method will return just the same as the first one. If there were "foo.bar.name" instead of "very-long-name" in the annotation, the system would actually call `getFoo().getBar().getName()` and return the result to you. Such annotations are useful when you're extending some interface that is inconsistent with your model, or you try to extract a common super-interface from two model interfaces with differently named children that have the same sense (see `<ejb-ref>` and `<ejb-local-ref>`).
 
 The case just described is simple, but rare. More often, you really have to incorporate some logic into your model. Then nothing except Java code helps you. And it will. Add the desired methods to your interface, then create an abstract class implementing the interface, and implement there only methods that you added manually and that are not directly connected to your XML model. Note that the class should have a constructor with no arguments.
@@ -412,7 +418,7 @@ The case just described is simple, but rare. More often, you really have to inco
 Now you only have to let DOM know that you wish to use this implementation every time you're creating a model element that should implement the necessary interface. Simply register it using
 extension point `com.intellij.dom.implementation` and DOM will generate at run-time the class that not only implements the needed interface, but also extends your abstract class.
 
-### Models across multiple files
+### Models Across Multiple Files
 Many frameworks require a set of XML configuration files ("fileset") to work as one model, so resolving/navigation works across all related DOM files.
 Depending on implementation/plugin, providing filesets implicitly (using existing framework's setup in project) or via user configuration (usually via dedicated `Facet`) can be achieved.
 
@@ -425,7 +431,7 @@ Example can be found in Struts 2 plugin (package `com.intellij.struts2.dom.strut
 DOM elements can be stubbed, so (costly) access to XML/PSI is not necessary (see [Indexing and PSI Stubs](/basics/indexing_and_psi_stubs.md) for similar feature for custom languages). Performance relevant elements, tag or attribute getters can simply be annotated with `@com.intellij.util.xml.Stubbed`.
 Return `true` from `DomFileDescription.hasStubs()` and increase `DomFileDescription.getStubVersion()` whenever you change `@Stubbed` annotations usage in your DOM hierarchy to trigger proper rebuilding of Stubs during indexing.
 
-## Building a DOM-based GUI
+## Building a DOM-Based GUI
 
 ### Forms
 All forms that deal with DOM are organized in a special way. They support two main things: getting data from XML into the UI, and saving UI data to XML. The former is called resetting, the latter — committing. There's [`Committable`](upsource:///xml/dom-openapi/src/com/intellij/util/xml/ui/Committable.java) interface that has corresponding methods: `commit()` and `reset()`. There's also a way of structuring your forms into smaller parts, namely the Composite pattern: [`CompositeCommittable`](upsource:///xml/dom-openapi/src/com/intellij/util/xml/ui/CompositeCommittable.java). Methods `commit()` and `reset()` are invoked automatically on editor tab switch or undo. So you only need to ensure that all your Swing structure is organized in a tree of `CompositeCommittable`, and all the hard work will be done by the IDE.
@@ -454,7 +460,7 @@ The control is bound to a non-editable `JComboBox`, so it can be used to choose 
 ##### BooleanEnumControl
 Sometimes, when there are only 2 alternatives, it's convenient to use a check box instead of combo box. This control is designed specially for such cases. While being (and being bound to) a check box, the control edits not just "true" or "false", but any two String values, or two enum elements. In the last case, it has a boolean _invertedOrder_ parameter, to specify which element corresponds to the checked state. By default _invertedOrder_ is set to `false`, so the first element corresponds to the unchecked state, and the second — to the checked one. If you set the parameter to `true`, the states will swap.
 
-### Editor-based Controls
+### Editor-Based Controls
 Please note that editor-based controls are built on IntelliJ Platform's `Editor` instead of standard `JTextField`. Since there's currently no way to instantiate Editor directly through the Open API, controls are bound to special `JPanel` inheritors, and their `bind()` method adds the necessary content to those panels.
 
 ##### TextControl
@@ -523,6 +529,7 @@ public class ConverterComponent extends BasicDomElementComponent<Converter> {
     }
 }
 ```
+
 All the fields here are now bound to controls in a GUI form.
 
 Very often you'll have to create your own file editor. Then, to use all the binding and undo functionality, it's suggested to inherit your [`FileEditorProvider`](upsource:///platform/platform-api/src/com/intellij/openapi/fileEditor/FileEditorProvider.java) from [`PerspectiveFileEditorProvider`](upsource:///xml/dom-openapi/src/com/intellij/util/xml/ui/PerspectiveFileEditorProvider.java), create an instance of [`DomFileEditor`](upsource:///xml/dom-openapi/src/com/intellij/util/xml/ui/DomFileEditor.java) there, and pass a [`BasicDomElementComponent`](upsource:///xml/dom-openapi/src/com/intellij/util/xml/ui/BasicDomElementComponent.java). To easily create an editor with a caption at the top, like in our EJB and JSF, you may use the static method `DomFileEditor.createDomFileEditor()`. `DomFileEditor` automatically listens to all changes in the document corresponding to the given DOM element, and therefore refreshes your component on undo. If you want to listen to changes in additional documents, use the methods `addWatchedDocument()`, `removeWatchedDocument()`, `addWatchedElement()`, `removeWatchedElement()` in `DomFileEditor`.

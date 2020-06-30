@@ -35,6 +35,7 @@ Each roadmap should contain:
 
 ## Plugin Copyright Statements
 Use the standard intellij-community copyright notice in all sample plugins authored by JetBrains:
+
 ```text  
 Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file."  
 ```
@@ -88,6 +89,7 @@ Standardized structure not only makes the samples simpler to navigate and unders
 
 Note that directories below the plugin root folder should not have underscore characters, and should use camelCase if needed.
 The following is an example directory structure for a `foo_basics` plugin.
+
 ```text
 code_samples/
   foo_basics/
@@ -164,7 +166,7 @@ The sequence of elements in an SDK code sample `plugin.xml` file is:
 * `<vendor>` Set the value to `IntelliJ Platform SDK`.
   Set the attributes:
   * `email` omit this attribute. 
-  * `url` to the JetBrains plugin repository `"https://plugins.jetbrains.com"`
+  * `url` to the JetBrains Plugins Repository `"https://plugins.jetbrains.com"`
 * The remainder of the [plugin configuration elements](/basics/plugin_structure/plugin_configuration_file.md) should only appear if they are needed by a specific plugin.
 
 ## Testing

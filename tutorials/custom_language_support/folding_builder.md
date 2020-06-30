@@ -30,6 +30,7 @@ The IntelliJ Platform uses the value to substitute for the key when the code get
 
 ## 12.2. Register the Folding Builder
 The `SimpleFoldingBuilder` implementation is registered with the IntelliJ Platform in the plugin configuration file using the `com.intellij.lang.foldingBuilder` extension point.
+
 ```xml
   <extensions defaultExtensionNs="com.intellij">
     <lang.foldingBuilder language="JAVA" 

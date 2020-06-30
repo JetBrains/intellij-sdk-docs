@@ -73,8 +73,7 @@ public class DemoFacetEditorTab extends FacetEditorTab {
    */
   @Override
   public boolean isModified() {
-    boolean foo = !Comparing.equal(mySettings.getDemoFacetState(), myPath.getText().trim());
-    return foo;
+    return !Comparing.equal(mySettings.getDemoFacetState(), myPath.getText().trim());
   }
   
   /**

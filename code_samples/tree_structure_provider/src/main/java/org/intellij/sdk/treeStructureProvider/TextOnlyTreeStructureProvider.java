@@ -14,11 +14,11 @@ import java.util.*;
 public class TextOnlyTreeStructureProvider implements TreeStructureProvider {
   @NotNull
   @Override
-  public Collection<AbstractTreeNode> modify(@NotNull AbstractTreeNode parent,
-                                             @NotNull Collection<AbstractTreeNode> children,
+  public Collection<AbstractTreeNode<?>> modify(@NotNull AbstractTreeNode<?> parent,
+                                             @NotNull Collection<AbstractTreeNode<?>> children,
                                              ViewSettings settings) {
-    ArrayList<AbstractTreeNode> nodes = new ArrayList<>();
-    for (AbstractTreeNode child : children) {
+    ArrayList<AbstractTreeNode<?>> nodes = new ArrayList<>();
+    for (AbstractTreeNode<?> child : children) {
       if (child instanceof PsiFileNode) {
         VirtualFile file = ((PsiFileNode) child).getVirtualFile();
         if (file != null && !file.isDirectory() && !(file.getFileType() instanceof PlainTextFileType)) {
@@ -32,7 +32,7 @@ public class TextOnlyTreeStructureProvider implements TreeStructureProvider {
 
   @Nullable
   @Override
-  public Object getData(@NotNull Collection<AbstractTreeNode> selected, @NotNull String dataId) {
+  public Object getData(@NotNull Collection<AbstractTreeNode<?>> selected, @NotNull String dataId) {
     return null;
   }
 }

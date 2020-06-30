@@ -1,5 +1,5 @@
 ---
-title: About this Guide
+title: About This Guide
 ---
 <!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
@@ -45,7 +45,7 @@ A lot of the functionality in the _IntelliJ Platform_ is language and product ag
 
 Documents how to use the _IntelliJ Platform_ to create a new, custom IDE, rather than plugins to an existing product, e.g. like WebStorm, or Android Studio.
 
-#### [Part X - Plugin Repository](/plugin_repository/index.md)
+#### [Part X - Plugin Repository](/appendix/plugin_repository_obsolete.md)
 
 This part has been moved to [JetBrains Marketplace documentation](https://plugins.jetbrains.com/docs/marketplace/about-marketplace.html).
 

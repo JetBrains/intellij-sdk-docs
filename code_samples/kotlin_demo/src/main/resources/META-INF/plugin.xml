@@ -8,12 +8,6 @@
   <!-- Text to display as name on Preferences/Settings | Plugin page -->
   <name>SDK: Kotlin Demo</name>
 
-  <!-- The version of this plugin -->
-  <version>2.0.0</version>
-
-  <!-- Minimum and maximum build numbers of IDEA compatible with the plugin. -->
-  <idea-version since-build="191.0"/>
-
   <!-- Indicate this plugin can be loaded in all IntelliJ Platform-based products. -->
   <depends>com.intellij.modules.platform</depends>
 

@@ -10,15 +10,13 @@ To get familiar with the concept of a Run Configuration refer
 section of 
 [IntelliJ IDEA Web Help](https://www.jetbrains.com/idea/help/intellij-idea.html)
 
-## Pre-requirements
+## Pre-Requirements
 
-Create an empty plugin project.
-See 
-[Creating a Plugin Project](/basics/getting_started/creating_plugin_project.md).
+Create an empty plugin project as described in [Creating a Plugin Project](/basics/getting_started.md).
 
-## 1. Register a new ConfigurationType
+## 1. Register a New ConfigurationType
 
-Add new *configurationType* extension to the 
+Add new `configurationType` extension to the 
 [plugin.xml](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/run_configuration/src/main/resources/META-INF/plugin.xml)
 
 ```xml
@@ -128,9 +126,12 @@ public class DemoRunConfiguration extends RunConfigurationBase {
 
 ## 5. Create and Implement Run Configuration UI Form
 
+Make sure _UI Designer_ plugin is [enabled](https://www.jetbrains.com/help/idea/managing-plugins.html).
+
 Create a new 
-[UI form] 
+[UI form](https://www.jetbrains.com/help/idea/designing-gui-major-steps.html) 
 that defines, how an inner part of the new Run Configuration should look like.
+
 Default Run Configuration will be looking like this:
 
 ![Default Run Configuration Look](run_configurations/img/ui_form.png)

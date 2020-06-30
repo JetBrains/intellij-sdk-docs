@@ -8,14 +8,6 @@
   <!-- Text to display as name on Preferences/Settings | Plugin page  -->
   <name>SDK: Simple Language Sample Project</name>
 
-  <!-- The version of this plugin -->
-  <version>2.0.0</version>
-
-  <!-- Compatible with the following versions of IntelliJ Platform
-        At least 2019.2 is required. Otherwise, FileTypeFactory must be registered as an extension.
-        See the extensions section below. -->
-  <idea-version since-build="192.2"/>
-
   <!-- Product and plugin compatibility requirements -->
   <depends>com.intellij.modules.platform</depends>
   <depends>com.intellij.modules.java</depends>
@@ -40,8 +32,8 @@
   <vendor url="https://plugins.jetbrains.com">IntelliJ Platform SDK</vendor>
 
   <extensions defaultExtensionNs="com.intellij">
-    <fileType name="Simple file" implementationClass="org.intellij.sdk.language.SimpleFileType" fieldName="INSTANCE"
-              language="Simple" extensions="simple"/>
+    <fileType name="Simple File" implementationClass="org.intellij.sdk.language.SimpleFileType" fieldName="INSTANCE"
+              language="Simple" extensions="simple" />
     <!-- Only required for versions of the IntelliJ Platform prior to v2019.2.
          Use fileTypeFactory extension point INSTEAD of fileType.
     <fileTypeFactory implementation="org.intellij.sdk.language.SimpleFileTypeFactory"/>

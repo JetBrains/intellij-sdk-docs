@@ -5,6 +5,41 @@ title: Notable Changes in IntelliJ Platform and Plugins API 2020.*
 
 We've published our roadmap for the IntelliJ Platform for 2020: [Part I](https://blog.jetbrains.com/idea/2019/12/intellij-platform-roadmap-for-2020/) [Part II](https://blog.jetbrains.com/idea/2020/01/intellij-based-ide-features-roadmap-for-2020/)
 
+# 2020.2 
+
+## Notable Changes in IntelliJ Platform 2020.2
+
+Constructor Injection in `Configurable` forbidden
+: Please obtain necessary components only when needed (logged as ERROR now). 
+
+`VirtualFile` lookup via `Path`
+: Added `VirtualFileManager.findFileByNioPath()`/`refreshAndFindFileByNioPath()`. See also `VirtualFile.toNioPath()`.
+
+Tooltip descriptions for icons
+: Register resource bundle via extension point `com.intellij.iconDescriptionBundle` to provide tooltips automatically for all `SimpleColoredComponent` renderers. 
+
+Specify incompatibility with Module
+: A plugin can [mark itself incompatible](/basics/getting_started/plugin_compatibility.md#declaring-incompatibility-with-module) if IDE contains specified module.
+
+`com.intellij.openapi.editor.markup.MarkupModel` methods using `TextAttributesKey`
+: To support on-the-fly Editor color scheme switching, change calls from methods taking `TextAttributes`.
+
+Support for WebP images
+: The platform now bundles support for images in [WebP](https://en.wikipedia.org/wiki/WebP) format.
+
+FileType mapping via hashbang (`#!`)
+: Specify `hashBangs` attribute in `com.intellij.fileType` extension point. [Issue](https://youtrack.jetbrains.com/issue/IDEA-175757)
+
+Add information to About dialog
+: Implement `com.intellij.ide.AboutPopupDescriptionProvider` and register in `com.intellij.aboutInfoProvider` extension point.
+
+Unbundled plugins
+: Several plugins (ASP, CFML, Flash/Flex, GWT, JBoss Seam Pageflow, JBoss Seam, JBoss jBPM, OSGi, Play Framework, Resin, Seam Navigation, Tapestry, Virgo/dmServer) for no longer actively maintained technology have been unbundled. 
+If your plugin depends on them, users will need to install them from the [JetBrains Plugins Repository](https://plugins.jetbrains.com).
+
+Previewing Intention/Quick Fix
+: To support preview in intention popup, suitable `FileModifier` must be provided (default implementation `FileModifier.getFileModifierForPreview()` works for most cases). 
+
 # 2020.1 
 
 ## Notable Changes in IntelliJ Platform 2020.1
@@ -29,8 +64,15 @@ Configurable status bar widgets
 JCEF Support (_Experimental Feature_) 
 : Allows [embedding](/reference_guide/jcef.md) Chromium-based browser in the IDE.
 
-[DefaultLiveTemplatesProvider](upsource:///platform/lang-impl/src/com/intellij/codeInsight/template/impl/DefaultLiveTemplatesProvider.java) is deprecated.
-: Use extension point `com.intellij.defaultLiveTemplates` instead.
+Override text presentation for actions depending on menu context 
+: Set the [`<override-text>`](/basics/action_system.md#setting-the-override-text-element-for-an-action) element within the `<action>` declaration in `plugin.xml`.
+
+Changes in Project Open/Import
+: **Import from Existing Sources** has been removed from the Welcome Screen, leaving only **Open or Import**, which calls a different extension than the one previously used to contribute a wizard step to **Import from Existing Sources** (which is still available in the **File** menu).
+To support **Open or Import**, a plugin must provide [`ProjectOpenProcessor`](upsource:///platform/platform-api/src/com/intellij/projectImport/ProjectOpenProcessor.java).
+`ProjectOpenProcessor.canOpenProject()` should return `true` for the folder selected by the user only if it guarantees `doOpenProject()` can handle it.
+If there are several matching processors, a simple choice dialog is shown.
+If additional manual configuration is necessary, a modal dialog can be shown in `doOpenProject()` - however, it is highly recommended performing all setup automatically (like Maven and Gradle plugins do).
 
 ## Notable Changes in IntelliJ IDEA
 
@@ -39,4 +81,4 @@ EOL for JetBrains TFS Plugin
 
 Unbundled plugins
 : Several plugins (Cloud Foundry, Google App Engine) for no longer actively maintained technology have been unbundled. 
-If your plugin depends on them, users will need to install them from the [JetBrains plugin repository](https://plugins.jetbrains.com).
+If your plugin depends on them, users will need to install them from the [JetBrains Plugins Repository](https://plugins.jetbrains.com).

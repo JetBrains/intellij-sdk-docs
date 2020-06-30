@@ -5,9 +5,11 @@ title: Plugin Listeners
 
 > **NOTE** Defining listeners in `plugin.xml` is supported starting with version 2019.3 of the platform.
 
-_Listeners_ allow plugins to declaratively subscribe to events delivered through the
-[message bus](/reference_guide/messaging_infrastructure.md). You can define both application- and project-level
-listeners.
+> **NOTE** NOTE: Listener implementations must be stateless and may not implement life-cycle (e.g., `Disposable`).
+
+_Listeners_ allow plugins to declaratively subscribe to events delivered through the message bus (see [Messaging infrastructure](/reference_guide/messaging_infrastructure.md) for details). 
+
+You can define both application- and project-level listeners.
 
 Declarative registration of listeners allows you to achieve better performance compared to registering listeners
 from code, because listener instances are created lazily (the first time an event is sent to the topic), and not
@@ -61,7 +63,7 @@ public class MyVfsListener implements BulkFileListener {
 }
 ```
 
-## Defining Project-level Listeners
+## Defining Project-Level Listeners
 
 Project-level listeners are registered in the same way, except that the top-level tag is 
 `<projectListeners>`. They can be used to listen to project-level events, for example, tool window operations:
@@ -90,7 +92,7 @@ public class MyToolwindowListener implements ToolWindowManagerListener {
 }
 ```                  
 
-## Additional attributes
+## Additional Attributes
 
 Registration of listeners can be restricted using the following attributes:
 

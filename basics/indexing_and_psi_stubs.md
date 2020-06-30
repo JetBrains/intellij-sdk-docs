@@ -19,7 +19,7 @@ Querying a file-based index gets you the set of files matching a certain conditi
 >> **TIP** [Indices Viewer](https://plugins.jetbrains.com/plugin/13029-indices-viewer/) is a plugin that helps inspecting indices' contents and properties. 
 Please see also [Improving indexing performance](/reference_guide/performance/performance.md#improving-indexing-performance).
 
-## Dumb mode
+## Dumb Mode
 
 Indexing is a potentially long process. It's performed in background, and during this time, IDE's features are restricted to the ones that don't require index: basic text editing, version control etc. This restriction is managed by [`DumbService`](upsource:///platform/core-api/src/com/intellij/openapi/project/DumbService.java).
 

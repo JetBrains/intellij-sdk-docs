@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="217px" preserveAspectRatio="none" style="width:281px;height:217px;" version="1.1" viewBox="0 0 281 217" width="281px" zoomAndPan="magnify"><defs><filter height="300%" id="f1ieo8q2h74ejp" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[62ac8497b13c043b65381b6f7663a459]
+class MessageBus--><rect fill="#F8F8F8" filter="url(#f1ieo8q2h74ejp)" height="26.4883" id="MessageBus" style="stroke: #383838; stroke-width: 1.5;" width="89" x="93" y="8"/><text fill="#000000" font-family="Roboto" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="83" x="96" y="26.5352">MessageBus</text><!--MD5=[5ec082c23ec24c6da48a0a09ba33c2f9]
+class MessageBusConnection--><rect fill="#F8F8F8" filter="url(#f1ieo8q2h74ejp)" height="26.4883" id="MessageBusConnection" style="stroke: #383838; stroke-width: 1.5;" width="168" x="53.5" y="94"/><text fill="#000000" font-family="Roboto" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="162" x="56.5" y="112.5352">MessageBusConnection</text><!--MD5=[8877a16d0f905795619db580f65f8005]
+class DH--><rect fill="#F8F8F8" filter="url(#f1ieo8q2h74ejp)" height="26.4883" id="DH" style="stroke: #383838; stroke-width: 1.5;" width="113" x="6" y="180"/><text fill="#000000" font-family="Roboto" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="107" x="9" y="198.5352">Default Handler</text><!--MD5=[6248ca3ba3593139a1835033a2c878c3]
+class TH--><rect fill="#F8F8F8" filter="url(#f1ieo8q2h74ejp)" height="26.4883" id="TH" style="stroke: #383838; stroke-width: 1.5;" width="116" x="154.5" y="180"/><text fill="#000000" font-family="Roboto" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="110" x="157.5" y="198.5352">(Topic-Handler)</text><!--MD5=[2f9b0f036ad36751351f32062502d1bf]
+reverse link MessageBus to MessageBusConnection--><path d="M137.5,47.42 C137.5,62.87 137.5,81.89 137.5,93.99 " fill="none" id="MessageBus&lt;-MessageBusConnection" style="stroke: #383838; stroke-width: 1.0;"/><polygon fill="#FFFFFF" points="137.5,34.04,133.5,40.04,137.5,46.04,141.5,40.04,137.5,34.04" style="stroke: #383838; stroke-width: 1.0;"/><text fill="#000000" font-family="Roboto" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="9" x="126.6438" y="56.2542">1</text><text fill="#000000" font-family="Roboto" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="7" x="129.0563" y="82.8585">*</text><!--MD5=[694b0ba889badc6ddf35d27abf73e2bf]
+reverse link MessageBusConnection to DH--><path d="M117.74,130.13 C103.49,146.09 84.8,167.02 73.23,179.99 " fill="none" id="MessageBusConnection&lt;-DH" style="stroke: #383838; stroke-width: 1.0;"/><polygon fill="#FFFFFF" points="126.75,120.04,119.7705,121.853,118.7596,128.9929,125.7391,127.1799,126.75,120.04" style="stroke: #383838; stroke-width: 1.0;"/><text fill="#000000" font-family="Roboto" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="26" x="46.2936" y="168.8585">0..1</text><!--MD5=[a5132fa3e16fbe2ae7d5791cc22442e3]
+reverse link MessageBusConnection to TH--><path d="M157.26,130.13 C171.51,146.09 190.2,167.02 201.77,179.99 " fill="none" id="MessageBusConnection&lt;-TH" style="stroke: #383838; stroke-width: 1.0;"/><polygon fill="#383838" points="148.25,120.04,149.2609,127.1799,156.2404,128.9929,155.2295,121.853,148.25,120.04" style="stroke: #383838; stroke-width: 1.0;"/><text fill="#000000" font-family="Roboto" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="7" x="188.9001" y="168.8585">*</text><!--MD5=[b58aa49172ce2323d0ee656e8e74ed8a]
+@startuml
+skinparam monochrome true
+skinparam shadowing true
+
+skinparam DefaultFontName Roboto
+skinparam DefaultMonospacedFontName "Roboto Mono"
+
+skinparam DefaultFontSize 14
+skinparam DefaultTextAlignment center
+skinparam NoteTextAlignment left
+
+skinparam ActivityBorderThickness 1
+skinparam PartitionBorderThickness 1.5
+hide empty members
+hide circle
+top to bottom direction
+
+
+class MessageBus
+class MessageBusConnection
+class "Default Handler" as DH
+class "(Topic-Handler)" as TH
+
+MessageBus "1" o- - "*" MessageBusConnection
+MessageBusConnection o- - "0..1" DH
+MessageBusConnection *- - "*" TH
+@enduml
+
+PlantUML version 1.2020.09(Sun May 10 03:51:06 PDT 2020)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Java Version: 11.0.6+8-b765.40
+Operating System: Mac OS X
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>

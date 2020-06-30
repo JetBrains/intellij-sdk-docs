@@ -1,5 +1,5 @@
 ---
-title: Supporting multiple carets
+title: Supporting Multiple Carets
 ---
 <!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
@@ -12,7 +12,7 @@ When after some action two or more carets end up in the same visual position, th
 There's a concept of 'primary' caret — the one on which non-multi-caret-aware actions and the actions which need a single-point document context (like code completion) will operate.
 Currently, the most recent caret is considered the primary one.
 
-## Core functionality
+## Core Functionality
 
 Core logic related to multi-caret implementation such as accessing currently existing carets, adding and removing carets, is available via
 [`CaretModel`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/editor/CaretModel.java)
@@ -30,7 +30,7 @@ So the behaviour of legacy code (not using Caret interface) will depend on the c
 Correspondingly, block-selection-related methods in SelectionModel interface have changed behaviour — `hasBlockSelection()` will always return false, `setBlockSelection()` will create a multi-caret selection equivalent to the requested block selection.
 `getBlockSelectionStarts()` and `getBlockSelectionEnds()` methods work in multi-caret state, returning all selected regions.
 
-## Editor actions
+## Editor Actions
 
 ### EditorAction and EditorActionHandler
 
@@ -41,7 +41,7 @@ Of course, the handler can just ignore the caret parameter if its functionality 
 
 If the handler needs to implement multi-caret functionality it can do so explicitly in the overridden `doExecute` method, but if it just needs that method to be invoked for each caret, it suffices to pass a parameter to `EditorActionHandler` constructor to make `doExecute` called for each caret when the handler is invoked without a specific caret context.
 
-### Editor action delegates
+### Editor Action Delegates
 
 The following delegates are available:
 
@@ -56,7 +56,7 @@ The following delegates are available:
 
 At the moment there's no need to make any changes in the handlers to support multiple carets — they are already invoked for each caret.
 
-## Typing actions
+## Typing Actions
 
 ### TypedActionHandler, TypedHandlerDelegate
 
@@ -67,7 +67,7 @@ implementations are invoked only once for each typed character.
 If those handlers need to support multiple carets, they will need to implement that explicitly.
 
 [`EditorModificationUtil`](upsource:///platform/platform-api/src/com/intellij/openapi/editor/EditorModificationUtil.java).
-_typeInStringAtCaretHonorMultipleCarets_ utility method is available to do the most common task in this case — inserting the same text into all caret positions and/or moving all carets relatively to their current position.
+`typeInStringAtCaretHonorMultipleCarets()` method is available to do the most common task in this case — inserting the same text into all caret positions and/or moving all carets relatively to their current position.
 Examples of its usage:
 
 *  [`TypedAction`](upsource:///platform/platform-api/src/com/intellij/openapi/editor/actionSystem/TypedAction.java).
@@ -84,12 +84,10 @@ needs to be provided instead.
 
 -----------
 
-## Code insight actions
+## Code Insight Actions
 
 Existing actions inheriting from
 [`CodeInsightAction`](upsource:///platform/lang-api/src/com/intellij/codeInsight/actions/CodeInsightAction.java) will work for primary caret only.
 To support multiple carets, one should inherit
 [`MultiCaretCodeInsightAction`](upsource:///platform/lang-impl/src/com/intellij/codeInsight/actions/MultiCaretCodeInsightAction.java)
 instead (each caret might have a different editor and PSI instance, so using the old API is not possible).
-It is available since IDEA 14.
-

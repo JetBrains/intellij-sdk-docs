@@ -45,10 +45,12 @@ public class SimpleCodeInsightTest extends LightJavaCodeInsightFixtureTestCase {
     myFixture.configureByFile("FormatterTestData.simple");
     CodeStyle.getLanguageSettings(myFixture.getFile()).SPACE_AROUND_ASSIGNMENT_OPERATORS = true;
     CodeStyle.getLanguageSettings(myFixture.getFile()).KEEP_BLANK_LINES_IN_CODE = 2;
-    WriteCommandAction.writeCommandAction(getProject()).run(() -> {
-      CodeStyleManager.getInstance(getProject()).reformatText(myFixture.getFile(),
-                                   ContainerUtil.newArrayList(myFixture.getFile().getTextRange()));
-    });
+    WriteCommandAction.writeCommandAction(getProject()).run(() ->
+            CodeStyleManager.getInstance(getProject()).reformatText(
+                    myFixture.getFile(),
+                    ContainerUtil.newArrayList(myFixture.getFile().getTextRange())
+            )
+    );
     myFixture.checkResultByFile("DefaultTestData.simple");
   }
 
@@ -69,17 +71,17 @@ public class SimpleCodeInsightTest extends LightJavaCodeInsightFixtureTestCase {
   }
 
   public void testCommenter() {
-    myFixture.configureByText(SimpleFileType.INSTANCE, "<caret>website = http://en.wikipedia.org/");
+    myFixture.configureByText(SimpleFileType.INSTANCE, "<caret>website = https://en.wikipedia.org/");
     CommentByLineCommentAction commentAction = new CommentByLineCommentAction();
     commentAction.actionPerformedImpl(getProject(), myFixture.getEditor());
-    myFixture.checkResult("#website = http://en.wikipedia.org/");
+    myFixture.checkResult("#website = https://en.wikipedia.org/");
     commentAction.actionPerformedImpl(getProject(), myFixture.getEditor());
-    myFixture.checkResult("website = http://en.wikipedia.org/");
+    myFixture.checkResult("website = https://en.wikipedia.org/");
   }
 
   public void testReference() {
     myFixture.configureByFiles("ReferenceTestData.java", "DefaultTestData.simple");
     PsiElement element = myFixture.getFile().findElementAt(myFixture.getCaretOffset()).getParent();
-    assertEquals("http://en.wikipedia.org/", ((SimpleProperty) element.getReferences()[0].resolve()).getValue());
+    assertEquals("https://en.wikipedia.org/", ((SimpleProperty) element.getReferences()[0].resolve()).getValue());
   }
 }

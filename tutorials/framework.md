@@ -6,7 +6,7 @@ title: Supporting Frameworks
 The following tutorial shows how to support a custom framework type for a project and make this framework type embedded in a project wizard as a UI component.n
 The examples in this tutorial rely heavily on the [framework_basics](https://github.com/JetBrains/intellij-sdk-docs/tree/master/code_samples/framework_basics) code sample.
 
-## 1. Creating a new framework
+## 1. Creating a New Framework
 In oder to make a custom framework available and configurable for a project the [`FrameworkTypeEx`](upsource:///java/idea-ui/src/com/intellij/framework/FrameworkTypeEx.java) class needs to be extended, in this example to make the [DemoFramework](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/framework_basics/src/main/java/org/intellij/sdk/framework/DemoFramework.java) class.
 
 ```java
@@ -14,9 +14,9 @@ public class DemoFramework extends FrameworkTypeEx {
 }
 ```
 
-## 2. Registering framework
+## 2. Registering Framework
 The newly created framework class should be registered as an extension point by adding `com.intellij.framework.type` extension in  
-[plugin.xml](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/framework_basics/src/main/resources/META-INF/plugin.xml)
+[`plugin.xml`](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/framework_basics/src/main/resources/META-INF/plugin.xml)
 configuration file:
 
 ```xml
@@ -25,7 +25,7 @@ configuration file:
 </extensions>
 ```
 
-## 3. Setting up mandatory attributes
+## 3. Setting up Mandatory Attributes
 The framework component should have a unique name passed as a string literal to the constructor. 
 It is best if this is the FQN name of the class:
 
@@ -56,7 +56,7 @@ public class DemoFramework extends FrameworkTypeEx {
 }
 ```
 
-## 4. Creating provider for enabling framework support
+## 4. Creating Provider for Enabling Framework Support
 To make the framework set up available while executing the steps to create a project, the 
 `DemoFramework.createProvider()` method must be implemented to return an object of type [`FrameworkSupportInModuleConfigurable`](upsource:///java/idea-ui/src/com/intellij/framework/addSupport/FrameworkSupportInModuleConfigurable.java), which adds the framework to a module. 
 In this example the framework is added to any [`ModuleType`](upsource:///platform/lang-api/src/com/intellij/openapi/module/ModuleType.java) without checking, which is usually not the case.

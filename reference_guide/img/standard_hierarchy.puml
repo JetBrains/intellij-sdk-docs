@@ -1,0 +1,14 @@
+@startuml
+hide empty members
+hide circle
+left to right direction
+
+' Define the objects in the diagram
+class "application bus" as AB
+class "project bus" as PB
+class "module bus" as MB
+
+' Define the class relationships
+AB o-- "*" PB
+PB o-- "*" MB
+@enduml

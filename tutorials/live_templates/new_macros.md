@@ -34,6 +34,7 @@ The XML representation of an example Live Template using the new `titleCase` fun
 There is only one variable, `TITLE`.
 The expression for `TITLE` evaluates to the `titleCase` function provided by the plugin.
 The argument to the `titleCase` function is `SELECTION`, which tells the IntelliJ Platform to operate on the current selection.
+
 ```xml
 <template name="mc"
         value="$TITLE$"
@@ -49,6 +50,7 @@ The argument to the `titleCase` function is `SELECTION`, which tells the Intelli
  
 ## Register Extension Point
 Using the `com.intellij.liveTemplateMacro` extension point, register the implementation with the IntelliJ Platform.
+
 ```xml
   <extensions defaultExtensionNs="com.intellij">
     <liveTemplateMacro implementation="org.intellij.sdk.liveTemplates.TitleCaseMacro"/>

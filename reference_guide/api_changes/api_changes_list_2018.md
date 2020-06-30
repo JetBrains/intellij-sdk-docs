@@ -13,7 +13,7 @@ See the note on how to document new problems on the main page reference_guide/ap
 
 Please see [Incompatible API Changes](/reference_guide/api_changes_list.md) on how to verify compatibility.
 
-> **NOTE** Changes from API marked with [`org.jetbrains.annotations.ApiStatus.@Experimental/ScheduledForRemoval`](upsource:///platform/util/src/org/jetbrains/annotations/ApiStatus.java) are not listed here, as incompatible changes are to be expected.
+> **NOTE** Changes from API marked with `org.jetbrains.annotations.ApiStatus.@Experimental/ScheduledForRemoval` are not listed here, as incompatible changes are to be expected.
 
 # 2018.3 
 
@@ -95,7 +95,7 @@ Please see [Incompatible API Changes](/reference_guide/api_changes_list.md) on h
 `com.intellij.ide.structureView.newStructureView.StructureViewComponent.getTreeBuilder` method removed 
 : Use `queueUpdate` and `getTree` instead.
 
-## Changes in PhpStorm and PHP plugin 2018.1
+## Changes in PhpStorm and PHP Plugin 2018.1
 
 `com.jetbrains.php.lang.documentation.phpdoc.parser.PhpDocElementTypes.DOC_COMMENT` field type changed from `com.intellij.psi.tree.ILazyParseableElementType` to `com.jetbrains.php.lang.documentation.phpdoc.psi.stubs.PhpDocCommentElementType` 
 : In most of the cases, it's enough to recompile the code. It may also be needed to check that the code doesn't rely on the field's type.

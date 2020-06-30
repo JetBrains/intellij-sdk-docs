@@ -30,8 +30,8 @@ To work with projects and project files, use the following classes and interface
 * [`ProjectManager`](upsource:///platform/projectModel-api/src/com/intellij/openapi/project/ProjectManager.java)
 * [`ProjectFileIndex`](upsource:///platform/projectModel-api/src/com/intellij/openapi/roots/ProjectFileIndex.java)
 
-Other classes for working with the project model are located in the [projectModel-api.openapi](upsource:///platform/projectModel-api/src/com/intellij/openapi) package. 
-Basic API classes and interfaces for the concepts of [project](upsource:///platform/core-api/src/com/intellij/openapi/project/Project.java), [module](upsource:///platform/core-api/src/com/intellij/openapi/module/Module.java), [application](upsource:///platform/core-api/src/com/intellij/openapi/application/Application.java) and [component](upsource:///platform/core-api/src/com/intellij/openapi/components/ProjectComponent.java) are placed in the [core-api.openapi](upsource:///platform/core-api/src/com/intellij/openapi) package.
+Other classes for working with the project model are located in the [`projectModel-api.openapi`](upsource:///platform/projectModel-api/src/com/intellij/openapi) package. 
+Basic API classes and interfaces for the concepts of [`Project`](upsource:///platform/core-api/src/com/intellij/openapi/project/Project.java), [`Module`](upsource:///platform/core-api/src/com/intellij/openapi/module/Module.java) and [`Application`](upsource:///platform/core-api/src/com/intellij/openapi/application/Application.java)  are placed in the [`core-api.openapi`](upsource:///platform/core-api/src/com/intellij/openapi) package.
 
 ### Getting a List of Source Roots for All Modules in a Project
 Use the `ProjectRootManager.getContentSourceRoots()` method. To clarify this, consider the following code snippet:
@@ -45,6 +45,7 @@ Messages.showInfoMessage("Source roots for the " + projectName + " plugin:\n" + 
 
 ### Checking if a File Belongs to a Project
 Use [`ProjectFileIndex`](upsource:///platform/projectModel-api/src/com/intellij/openapi/roots/ProjectFileIndex.java) to get this information:
+
 ```java
 ProjectFileIndex projectFileIndex = ProjectRootManager.getInstance(project).getFileIndex();
 ```
@@ -52,6 +53,7 @@ ProjectFileIndex projectFileIndex = ProjectRootManager.getInstance(project).getF
 ### Getting the Content or Source Root to Which the a File or Directory Belongs
 Use the `ProjectFileIndex.getContentRootForFile()` and `ProjectFileIndex.getSourceRootForFile()` methods. 
 For example:
+
 ```java
 VirtualFile moduleContentRoot = ProjectRootManager.getInstance(project).getFileIndex().getContentRootForFile(virtualFileOrDirectory);
 VirtualFile moduleSourceRoot = ProjectRootManager.getInstance(project).getFileIndex().getSourceRootForFile(virtualFileOrDirectory);
@@ -62,8 +64,8 @@ Note that this method returns `null` if the file or directory does not belong to
 ### Checking Whether a File or Directory Is Related to the Project Libraries
 The [`ProjectFileIndex`](upsource:///platform/projectModel-api/src/com/intellij/openapi/roots/ProjectFileIndex.java) interface implements a number of methods you can use to check whether the specified file belongs to the project library classes or library sources:
 * `isLibraryClassFile()`: Returns `true` if the specified `virtualFile` is a compiled class file.
-* `isInLibraryClasses()`: Returns `true` if the specified `virtualFileorDirectory` belongs to library classes.
-* `isInLibrarySource()`: Returns `true` if the specified `virtualFileorDirectory` belongs to library sources.
+* `isInLibraryClasses()`: Returns `true` if the specified `virtualFileOrDirectory` belongs to library classes.
+* `isInLibrarySource()`: Returns `true` if the specified `virtualFileOrDirectory` belongs to library sources.
 
 ### Getting the Project SDK
 Note that by default, the project modules use the project SDK. 
@@ -71,12 +73,12 @@ Optionally, you can configure an individual SDK for each module.
 See [SDK](sdk.md) for more details.
 
 ## Changing the Project Structure
-Utility classes used for modifying the project structure can be found in the package [projectModel-impl.openapi](upsource:///platform/projectModel-impl/src/com/intellij/openapi). Its [roots](upsource:///platform/projectModel-impl/src/com/intellij/openapi/roots/) subpackage contains instances and utilities intended for work with project and module source roots, including [`ModuleRootModificationUtil`](upsource:///platform/projectModel-api/src/com/intellij/openapi/roots/ModuleRootModificationUtil.java) and [`ProjectRootUtil`](upsource:///platform/projectModel-impl/src/com/intellij/openapi/projectRoots/impl/ProjectRootUtil.java). Project structure
+Utility classes used for modifying the project structure can be found in the package [`projectModel-impl.openapi`](upsource:///platform/projectModel-impl/src/com/intellij/openapi). Its [`roots`](upsource:///platform/projectModel-impl/src/com/intellij/openapi/roots/) subpackage contains instances and utilities intended for work with project and module source roots, including [`ModuleRootModificationUtil`](upsource:///platform/projectModel-api/src/com/intellij/openapi/roots/ModuleRootModificationUtil.java) and [`ProjectRootUtil`](upsource:///platform/projectModel-impl/src/com/intellij/openapi/projectRoots/impl/ProjectRootUtil.java). Project structure
 changes need to be performed in a [write action](/basics/architectural_overview/general_threading_rules.md#readwrite-lock).
 
-Refer to the [`project_model`](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/project_model/src/main/java/org/intellij/sdk/project/model/ModificationAction.java) code sample to learn how project structure modification can be implemented.
+Refer to the [project_model](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/project_model/src/main/java/org/intellij/sdk/project/model/ModificationAction.java) code sample to learn how project structure modification can be implemented.
 
-## Receiving Notifications about Project Structure Changes
+## Receiving Notifications About Project Structure Changes
 To receive notifications about changes in project structure (modules or libraries being added or removed, module dependencies being changed, and so on), use the [message bus](/reference_guide/messaging_infrastructure.md) and the `ProjectTopics.PROJECT_ROOTS` topic:
 
 ```java

@@ -20,6 +20,7 @@ Classes that extend it should override `AnAction.update()`, and must override `A
 * The `actionPerformed()` method implements the code that executes when an action is invoked by the user.
 
 As an example, [`PopupDialogAction`](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/action_basics/src/main/java/org/intellij/sdk/action/PopupDialogAction.java) overrides `AnAction` for the `action_basics` code sample.
+
 ```java
 public class PopupDialogAction extends AnAction {
    
@@ -39,14 +40,14 @@ public class PopupDialogAction extends AnAction {
 > **Warning** `AnAction` classes do not have class fields of any kind. This restriction prevents memory leaks.
 For more information about why, see [Action Implementation](/basics/action_system.md#action-implementation). 
 
-At this stage, `update()` implicitly defaults to always enable this action.
+At this stage, `update()` implicitly defaults always to enable this action.
 The implementation of `actionPerformed()` does nothing.
-These methods will be more fully implemented in [Developing the AnAction Methods](#developing-the-anaction-methods) below.
+These methods fully implemented in [Developing the AnAction Methods](#developing-the-anaction-methods) below.
 
-Before fleshing out those methods, to complete this minimal implementation `PopupDialogAction` must be registered with the IntelliJ Platform.
+Before fleshing out those methods, to complete this minimal implementation, `PopupDialogAction` must be registered with the IntelliJ Platform.
 
 ## Registering a Custom Action
-Actions can be registered by declaring them in code or by declaring them in the `<actions>` section of a plugin configuration (`plugin.xml`) file. 
+Actions are registered by declaring them in code or by declaring them in the `<actions>` section of a plugin configuration (`plugin.xml`) file. 
 This section describes using IDE tooling - the New Action Form - to add a declaration to the `plugin.xml` file, and then tuning registration attributes manually.
 A more comprehensive explanation of action registration is available in the [Action Registration](/basics/action_system.md#registering-actions) section of this guide.
 
@@ -71,13 +72,14 @@ The fields of the form are:
 * _Name_ - The text to appear in the menu.
 * _Description_ - Hint text to be displayed.
 * _Add to Group_ - The action group - menu or toolbar - to which the action is added.
-  Clicking in the list of groups and typing will invoke a search, such as "ToolsMenu." 
+  Clicking in the list of groups and typing invokes a search, such as "ToolsMenu." 
 * _Anchor_ - Where the menu action should be placed in the **Tools** menu relative to the other actions in that menu.  
 
 In this case, `PopupDialogAction` would be available in the **Tools** menu, it would be placed at the top, and would have no shortcuts.
 
 After finishing the **New Action** form and applying the changes, the `<actions>` section of the plugin's `plugins.xml` file
 would contain:
+
 ```xml
   <actions>
     <action id="org.intellij.sdk.action.PopupDialogAction" class="org.intellij.sdk.action.PopupDialogAction" 
@@ -98,27 +100,40 @@ An exhaustive list of declaration elements and attributes is presented in [Regis
 Attributes are added by selecting them from the **New Action** form, or by editing the registration declaration directly in the plugin.xml file.
 
 The `<action>` declaration for `PopupDialogAction` in the `action_basics` [plugin.xml](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/action_basics/src/main/resources/META-INF/plugin.xml) file.
-It also contains an attribute for an [`Icon`](/reference_guide/work_with_icons_and_images.md), and encloses elements declaring keyboard and mouse shortcuts. 
+It also contains an attribute for an [`Icon`](/reference_guide/work_with_icons_and_images.md) and encloses elements declaring text overrides, keyboard and mouse shortcuts, and to which menu group the action should be added.
+
 The full declaration is:
+
 ```xml
     <action id="org.intellij.sdk.action.PopupDialogAction" class="org.intellij.sdk.action.PopupDialogAction"
-            text="Pop Dialog Action" description="SDK action example" icon="ActionBasicsIcons.Sdk_default_icon">
+            text="Action Basics Plugin: Pop Dialog Action" description="SDK action example" icon="SdkIcons.Sdk_default_icon">
+      <override-text place="MainMenu" text="Pop Dialog Action"/>
       <keyboard-shortcut first-keystroke="control alt A" second-keystroke="C" keymap="$default"/>
       <mouse-shortcut keystroke="control button3 doubleClick" keymap="$default"/>
       <add-to-group group-id="ToolsMenu" anchor="first"/>
     </action>
 ```
 
+#### Using Override-Text for an Action
+By using the `override-text` element introduced in 2020.1 of the IntelliJ Platform, the action text can be different depending on the context of where the action appears: menu, toolbar, etc.
+The example above uses this element to ensure the shorter text "Pop Dialog Action" is shown anywhere the action appears in the Main Menu structure.
+Otherwise, the default, more explanatory text "Action Basics Plugin: Pop Dialog Action" is shown.
+For more information, see [Setting the Override-Text Element for an Action](/basics/action_system.md#setting-the-override-text-element-for-an-action)
 
 ## Testing the Minimal Custom Action Implementation
-After performing the steps described above, compile and run the plugin to see the newly created action available as a Tools Menu item:
+After performing the steps described above, compile and run the plugin to see the newly created action available as a Tools Menu item, which is within the context of the Main Menu:
 
-!["Register action" quick fix](img/tools_menu_item_action.png){:width="350px"}
+!["Register action"](img/tools_menu_item_action.png){:width="350px"}
 
-Selecting the action from the menu or using the keyboard shortcuts won't do anything because the implementations are empty.
-However, it confirms the new entry appears at **Tools \| Pop Dialog Action**
+To see the alternate, more verbose text declared by the `override-text` element, use **Help \| Find Action...** and search for "Pop Dialog Action".
+The search shows the verbose menu text in a context outside of the Main Menu:
 
-## Developing the AnAction Methods
+!["Override Text Display"](img/find_action.png){:width="500px"}
+
+Selecting the action from the menu, keyboard/mouse shortcuts, or Find Action won't do anything at this point because the implementations are empty.
+However, it confirms the new entry appears at **Tools \| Pop Dialog Action** and **Help \| Find Action...**.
+
+## Developing the `AnAction` Methods
 At this point, the new action `PopupDialogAction` is registered with the IntelliJ Platform and functions in the sense that  `update()` and `actionPerformed()` are called in response to user interaction with the IDE Tools menu.
 However, neither method implements any code to perform useful work.
 
@@ -126,7 +141,7 @@ This section describes adding useful code to these methods.
 The `update()` method defaults to always enable the action, which is satisfactory for intermediate testing.
 So `actionPerformed()` will be developed first.
 
-### Extending the actionPerformed Method
+### Extending the `actionPerformed()` Method
 Adding code to the `PopupDialogAction.actionPerformed()` method makes the action do something useful. 
 The code below gets information from the `anActionEvent` input parameter and constructs a message dialog.
 A generic icon, and the `dlgMsg` and `dlgTitle` attributes from the invoking menu action are displayed.
@@ -153,7 +168,7 @@ See [Determining the Action Context](/basics/action_system.md#determining-the-ac
   }
 ```
 
-### Extending the update Method
+### Extending the `update()` Method
 Adding code to `PopupDialogAction.update()` gives finer control of the action's visibility and availability.
 The action's state and(or) presentation can be dynamically changed depending on the context. 
 

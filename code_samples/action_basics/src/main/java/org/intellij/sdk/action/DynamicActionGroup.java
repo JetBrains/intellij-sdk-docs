@@ -5,7 +5,7 @@ package org.intellij.sdk.action;
 import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import icons.ActionBasicsIcons;
+import icons.SdkIcons;
 import org.jetbrains.annotations.NotNull;
 
 /**
@@ -32,7 +32,7 @@ public class DynamicActionGroup extends ActionGroup {
     return new AnAction[]{
             new PopupDialogAction("Action Added at Runtime",
                     "Dynamic Action Demo",
-                    ActionBasicsIcons.Sdk_default_icon)
+                    SdkIcons.Sdk_default_icon)
     };
   }
 

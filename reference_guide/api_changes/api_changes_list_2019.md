@@ -62,7 +62,7 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 
 Please see [Incompatible API Changes](/reference_guide/api_changes_list.md) on how to verify compatibility.
 
-> **NOTE** Changes from API marked with [`org.jetbrains.annotations.ApiStatus.@Experimental/ScheduledForRemoval`](upsource:///platform/util/src/org/jetbrains/annotations/ApiStatus.java) are not listed here, as incompatible changes are to be expected.
+> **NOTE** Changes from API marked with `org.jetbrains.annotations.ApiStatus.@Experimental/ScheduledForRemoval` are not listed here, as incompatible changes are to be expected.
 
 # 2019.3
 
@@ -133,17 +133,17 @@ Please see [Incompatible API Changes](/reference_guide/api_changes_list.md) on h
 `com.intellij.testFramework.fixtures.DefaultLightProjectDescriptor.getModuleType()` method removed
 : Use `com.intellij.testFramework.fixtures.DefaultLightProjectDescriptor.getModuleTypeId()` instead (see `com.intellij.openapi.module.ModuleTypeId`).
 
-## Changes in Java plugin 2019.3
+## Changes in Java Plugin 2019.3
 
 `com.intellij.codeInspection.magicConstant.MagicCompletionContributor.getAllowedValues(PsiElement)` method return type changed from `com.intellij.codeInspection.magicConstant.MagicConstantInspection.AllowedValues` to `com.intellij.codeInspection.magicConstant.MagicConstantUtils.AllowedValues`
 : Use new type instead.
 
-## Changes in Groovy plugin 2019.3
+## Changes in Groovy Plugin 2019.3
 
 `org.jetbrains.plugins.groovy.extensions.GroovyScriptTypeDetector(GroovyScriptType, String[])` constructor removed
 : Use constructor `GroovyScriptTypeDetector(GroovyScriptType)` instead, and `com.intellij.fileType` to register additional extensions.
 
-## Changes in Cucumber plugin 2019.3
+## Changes in Cucumber Plugin 2019.3
 
 `org.jetbrains.plugins.cucumber.javascript.CucumberJavaScriptStepDefinitionCreator#createStepDefinition(GherkinStep, PsiFile)` method removed
 : Use `org.jetbrains.plugins.cucumber.javascript.CucumberJavaScriptStepDefinitionCreator#createStepDefinition(GherkinStep, PsiFile, boolean)` instead. 
@@ -157,7 +157,7 @@ Please see [Incompatible API Changes](/reference_guide/api_changes_list.md) on h
 `org.jetbrains.plugins.cucumber.CucumberJvmExtensionPoint#getGlues()` method removed
 : Java specific method was moved to CucumberJava implementation. 
  
-## Changes in DataGrip and Database Tools plugin 2019.3
+## Changes in DataGrip and Database Tools Plugin 2019.3
 
 `com.intellij.sql.dialects.mssql.MssqlDialect` class renamed to `com.intellij.sql.dialects.mssql.MsDialect`
 : Do not use SQL dialect classes directly.
@@ -168,12 +168,12 @@ Please see [Incompatible API Changes](/reference_guide/api_changes_list.md) on h
 `com.intellij.sql.dialects.postgres.PostgresDialect` class renamed to `com.intellij.sql.dialects.postgres.PgDialect`
 : Do not use SQL dialect classes directly.
 
-## Changes in RubyMine and Ruby plugin 2019.3
+## Changes in RubyMine and Ruby Plugin 2019.3
 
 `org.jetbrains.plugins.ruby.ruby.codeInsight.types.RubyTypeProvider.createTypeBySymbolFromProviders(Symbol symbol, Context context)` method parameter `Context` removed
 : This was done as part of [`RUBY-24760`](https://youtrack.jetbrains.com/issue/RUBY-24760) in order to move to new Context-less approach.
 
-## Changes in PyCharm and Python plugin 2019.3
+## Changes in PyCharm and Python Plugin 2019.3
 
 `com.jetbrains.python.inspections.PythonVisitorFilter` class moved to package `com.jetbrains.python.psi`
 
@@ -274,7 +274,7 @@ Recompile your code to pick up the new signature.
 `com.intellij.openapi.util.KeyedExtensionCollector.getExtensions()` method marked final
 : Remove custom implementation.
 
-## Changes in DataGrip and Database Tools plugin 2019.1
+## Changes in DataGrip and Database Tools Plugin 2019.1
 
 `com.intellij.sql.psi.SqlTokens.SQL_IDENT` field type changed from `com.intellij.sql.psi.impl.SqlTokenType` to `com.intellij.sql.psi.SqlTokenType`
 : In most of the cases, it's enough to recompile the code. It may also be needed to check that the code doesn't rely on the field's type.

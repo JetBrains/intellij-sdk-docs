@@ -1,0 +1,28 @@
+@startuml
+hide empty members
+hide circle
+top to bottom direction
+
+' Define the objects in the diagram
+class "application bus" as AB
+class "project bus" as PB
+class "connection1" as C1
+
+class "connection2" as C2
+class "connection3" as C3
+class "topic1-handler1" as T1H1
+
+class "topic1-handler2" as T1H2
+class "topic1-handler3" as T1H3
+
+' Define the class relationships
+AB o-- PB
+AB *-- C1
+
+PB *-- C2
+PB *-- C3
+C1 *-- T1H1
+
+C2 *-- T1H2
+C3 *-- T1H3
+@enduml

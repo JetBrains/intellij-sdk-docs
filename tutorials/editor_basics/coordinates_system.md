@@ -27,6 +27,7 @@ For more information about creating action classes, see the [Actions Tutorial](/
 The properties of a caret can be accessed by obtaining an instance of the [`CaretModel`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/editor/CaretModel.java) object. 
 As in the [Working with Text](working_with_text.md) tutorial, the `AnActionEvent` is used to get the `Editor` object.
 The `Editor` object provides access to the `CaretModel` object, as shown below:
+
 ```java
 public class EditorAreaIllustration extends AnAction {
     @Override
@@ -96,6 +97,7 @@ The comments on each line illustrate how the Soft Wrap portion of Logical line t
 ![Caret Visual Position with Soft-Wrap](img/vis_pos_soft_wrap.png){:width="800px"} 
 
 The Logical and Visual Position objects for a caret are obtained from the [`Caret`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/editor/Caret.java) object, as shown in the code snippet below. 
+
 ```java
 public class EditorAreaIllustration extends AnAction {
     @Override
@@ -158,13 +160,13 @@ Starting on the left end of the line, and using the arrow key to advance a line-
 * As the cursor advances to the right, both Logical and Visual column values increase.
 
 ```java
-  import static java.nio.charset.StandardCharsets.UTF_8;
   public void showNow() {
 //234567890123456789012345678901234567890123456789012345678901234567890
-    String str = new String("تعطي يونيكود رقما فريدا لكل حرف".getBytes(), UTF_8);
+    String str = new String("تعطي يونيكود رقما فريدا لكل حرف".getBytes(), java.nio.charset.StandardCharsets.UTF_8);
     System.out.println( str );
   }
 ```
+
 The apparent discontinuity in Logical Position is because the RTL portion of the string is treated (or counted) in the logical character order in which it would be written. 
 The apparent continuity in Visual Position is because the RTL portion of the string is counted in the visual order in which it is displayed in the code.
 
@@ -188,6 +190,7 @@ This apparent discrepancy is actually correct because the Offset includes the ne
 ## Displaying Caret Positions
 To display the values of caret Logical and Visual positions, and Offset, a
 `Messages.showInfoMessage()` method shows them in the form of notification as the action is performed.
+
 ```java
 public class EditorAreaIllustration extends AnAction {
 
@@ -195,16 +198,17 @@ public class EditorAreaIllustration extends AnAction {
     // Get access to the editor and caret model.
     final Editor editor = e.getRequiredData(CommonDataKeys.EDITOR);
     final CaretModel caretModel = editor.getCaretModel();
+    
     // Getting the primary caret ensures we get the correct one of a possible many.
     final Caret primaryCaret = caretModel.getPrimaryCaret();
     // Get the caret information
     LogicalPosition logicalPos = primaryCaret.getLogicalPosition();
     VisualPosition visualPos = primaryCaret.getVisualPosition();
     int caretOffset = primaryCaret.getOffset();
+    
     // Build and display the caret report.
-    StringBuilder report = new StringBuilder(logicalPos.toString() + "\n");
-    report.append(visualPos.toString() + "\n");
-    report.append("Offset: " + caretOffset);
+    String report = logicalPos.toString() + "\n" + visualPos.toString() + "\n" +
+            "Offset: " + caretOffset;
     Messages.showInfoMessage(report.toString(), "Caret Parameters Inside The Editor");
   }
 

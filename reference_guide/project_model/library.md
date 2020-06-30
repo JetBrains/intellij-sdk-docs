@@ -19,10 +19,11 @@ A particular type of programmatically defined libraries is [Predefined Libraries
 {:toc}
 
 ## Accessing Libraries and Jars
-Package [libraries](upsource:///platform/projectModel-api/src/com/intellij/openapi/roots/libraries) provides functionality for working with project libraries and jars.
+Package [`libraries`](upsource:///platform/projectModel-api/src/com/intellij/openapi/roots/libraries) provides functionality for working with project libraries and jars.
 
 ### Getting a List of Libraries a Module Depends On
 To get the list of libraries that a module depends on, use `OrderEnumerator.forEachLibrary` as follows. 
+
 ```java
 final List<String> libraryNames = new ArrayList<String>();
 ModuleRootManager.getInstance(module).orderEntries().forEachLibrary(library -> {
@@ -41,6 +42,7 @@ whereas the list of project-level library tables is accessed through `LibraryTab
 Once you have a `LibraryTable`, you can get the libraries in it by calling `LibraryTable.getLibraries()`.
 
 To get the list of all module libraries defined in a given module, use the following API:
+
 ```java
 OrderEntryUtil.getModuleLibraries(ModuleRootManager.getInstance(module));
 ```
@@ -48,6 +50,7 @@ OrderEntryUtil.getModuleLibraries(ModuleRootManager.getInstance(module));
 ### Getting the Library Content
 [`Library`](upsource:///platform/projectModel-api/src/com/intellij/openapi/roots/libraries/Library.java) provides the `getUrls()` method you can use to get a list of source roots and classes the library includes. 
 To clarify, consider the following code snippet:  
+
 ```java
 StringBuilder roots = new StringBuilder("The " + lib.getName() + " library includes:\n");
 roots.append("Sources:\n");

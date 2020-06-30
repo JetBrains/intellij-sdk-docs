@@ -2,7 +2,7 @@
 
 plugins {
   id 'java'
-  id 'org.jetbrains.intellij' version '0.4.16'
+  id 'org.jetbrains.intellij' version '0.4.21'
 }
 
 group 'com.intellij.sdk'
@@ -16,11 +16,16 @@ repositories {
 
 // See https://github.com/JetBrains/gradle-intellij-plugin/
 intellij {
-  version '2019.3.3'
-  type 'PY'
-  updateSinceUntilBuild = false
+  version = '2020.1'
+  type = 'PY'
+}
+
+buildSearchableOptions {
+  enabled = false
 }
 
 patchPluginXml {
   version = project.version
+  sinceBuild = '201'
+  untilBuild = '201.*'
 }

@@ -76,6 +76,7 @@ There are two ways to add child components. The recommended way is to use factor
   ```
 
 These methods also support **property bindings**, allowing you to automatically load the value displayed in the component from a property and to store it back. The easiest way to do that is to pass a reference to a Kotlin bound property:
+
 ```kotlin
 checkBox("Show tabs in single row", uiSettings::scrollTabLayoutInEditor)
 ```
@@ -92,13 +93,14 @@ Alternatively, many factory methods support specifying a getter/setter pair for 
 ```
 
 If you want to add a component for which there are no factory methods, you can simply invoke an instance of your component, using the `()` overloaded operator:
-  ```kotlin
+
+```kotlin
   val userField = JTextField(credentials?.userName)
   panel() {
     row { userField(grow, wrap) }
   }
   // use userField variable somehow
-  ```
+```
 
 ## Supported Components
 
@@ -162,12 +164,12 @@ val panel = panel {
 }
 ```
 
-To specify the size of a text field, either pass the `columns` parameter as shown in the `intTextField` example above, or specify the `growPolicy` parameter:
+To specify the size of a text field, either pass the `columns` parameter as shown in the `intTextField` example above, or use `growPolicy()`:
 
 ```kotlin
 val userField = JTextField(credentials?.userName)
 val panel = panel {
-    row("Username:") { userField(growPolicy = GrowPolicy.SHORT_TEXT) }
+    row("Username:") { userField().growPolicy(GrowPolicy.SHORT_TEXT) }
 }
 ```
 
@@ -222,7 +224,7 @@ checkBox(message("checkbox.smart.tab.reuse"),
        comment = message("checkbox.smart.tab.reuse.inline.help"))
 ```
 
-## Integrating panels with property bindings
+## Integrating Panels with Property Bindings
 
 A panel returned by the `panel` method is an instance of [`DialogPanel`](upsource:///platform/platform-api/src/com/intellij/openapi/ui/DialogPanel.kt). This base class supports the standard `apply`, `reset`, and `isModified` methods.
 
@@ -286,6 +288,6 @@ val panel = panel {
 
 ## FAQ
 
-### One cell is minimum, second one is maximum
+### One Cell Is Minimum, Second One Is Maximum
 
 Set `CCFlags.growX` and `CCFlags.pushX` for some component in the second cell.

@@ -36,23 +36,25 @@ The particular example in that section discusses configuring a plugin project fo
 Here are the steps to configure the `build.gradle` file for developing a plugin to target Android Studio:
 * The Gradle plugin attributes describing the configuration of the [IntelliJ Platform used to build the plugin project](/tutorials/build_system/gradle_guide.md#configuring-the-gradle-plugin-for-building-intellij-platform-plugin-projects) must be explicitly set. 
   Continuing with the example [above](#matching-versions-of-the-intellij-platform-with-the-android-studio-version), set the `intellij.version` value to `191.8026.42`.
+  Alternatively, specify `intellij.localPath` to refer to a local installation of Android Studio.
 * Android Studio plugin projects that use APIs from the `android` plugin must declare a dependency on that plugin.
  Declare the dependency in `build.gradle` using the Gradle plugin `intellij.plugins` attribute, which in this case lists the [directory name](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md#intellij-platform-properties) of the plugin.
 * The best practice is to use the target version of Android Studio as the IDE Development Instance.
   Set the Development Instance to the (user-specific) absolute path to the target Android Studio application.
 
 The snippet below is an example of configuring the Setup and Running DSLs in a `build.gradle` specific to developing a plugin targeted at Android Studio.
+
 ```groovy
   intellij {
     // Define IntelliJ Platform against which to build the plugin project.
-    version '191.8026.42'  // Same IntelliJ IDEA version (2019.1.4) as target v3.5 Android Studio   
+    version '191.8026.42'  // Same IntelliJ IDEA version (2019.1.4) as target 3.5 Android Studio   
     type 'IC'              // Use IntelliJ IDEA CE because it's the basis of the IntelliJ Platform   
     // Require the Android plugin, Gradle will match the plugin version to intellij.version 
     plugins 'android'     
   }
   
   runIde {
-      // Absolute path to installed target v3.5 Android Studio to use as IDE Development Instance
+      // Absolute path to installed target 3.5 Android Studio to use as IDE Development Instance
       // The "Contents" directory is macOS specific.
       ideDirectory '/Applications/Android Studio.app/Contents'
   }
@@ -62,23 +64,19 @@ The snippet below is an example of configuring the Setup and Running DSLs in a `
 As discussed in the [Plugin Dependencies](/basics/getting_started/plugin_compatibility.md#declaring-plugin-dependencies) section of this guide, a plugin's dependency on [Modules Specific to Functionality](/basics/getting_started/plugin_compatibility.md#modules-specific-to-functionality) must be declared in `plugin.xml`. 
 When using Android Studio-specific features (APIs), a dependency on `com.intellij.modules.androidstudio` must be declared as shown in the code snippet below.
 Otherwise, if only general IntelliJ Platform features (APIs) are used, then a dependency on `com.intellij.modules.platform` must be declared as discussed in [Plugin Compatibility with IntelliJ Platform Products](/basics/getting_started/plugin_compatibility.md).
+
 ```xml
   <depends>com.intellij.modules.androidstudio</depends>
 ```
 
 ## Additional Articles and Resources
-* Discussion of extending Android Lint - [How to Register Androidlintinspectionbase in Intellijidea Plugin](https://intellij-support.jetbrains.com/hc/en-us/community/posts/360005018559-How-to-register-AndroidLintInspectionBase-in-IntellijIdea-Plugin)  
-* Grzegorz Matyszczak's article _"How I Automated Creating Files for a New Screen with My Own Android Studio Plugin"_.
-* Marcos Holgado's article series _"Write an Android Studio Plugin"_.
-
-<!--
+* Discussion of extending Android Lint - [How to Register AndroidLintInspectionBase in IntelliJIdea Plugin](https://intellij-support.jetbrains.com/hc/en-us/community/posts/360005018559-How-to-register-AndroidLintInspectionBase-in-IntellijIdea-Plugin)  
 * Grzegorz Matyszczak's article [How I Automated Creating Files for a New Screen with My Own Android Studio Plugin](https://proandroiddev.com/how-i-automated-creating-files-for-a-new-screen-with-my-own-android-studio-plugin-5d54b14ba6fa)
 * Marcos Holgado's article series [Write an Android Studio Plugin (Part 1)](https://proandroiddev.com/write-an-android-studio-plugin-part-1-creating-a-basic-plugin-af956c4f8b50)
--->
 
 ## Open Source Plugins for Android Studio
 When learning new development configurations, it is helpful to have some representative projects for reference:  
-* [ADB Idea](https://github.com/pbreault/adb-idea) plugin for Android Studio and Intellij IDEA that speeds Android development.
-* [Android postfix plugin](https://github.com/takahirom/android-postfix-plugin) for AndroidStudio. 
+* [ADB Idea](https://github.com/pbreault/adb-idea) plugin for Android Studio and Intellij IDEA that speeds up Android development.
+* [Android postfix plugin](https://github.com/takahirom/android-postfix-plugin) for Android Studio. 
 * [Flutter Plugin](https://github.com/flutter/flutter-intellij).
 * Bal Sikandar's [list of Android Studio plugins](https://github.com/balsikandar/Android-Studio-Plugins).

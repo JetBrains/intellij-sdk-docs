@@ -16,5 +16,5 @@ Please see [Facet Basics](https://github.com/JetBrains/intellij-sdk-docs/tree/ma
 ### Managing Facets
 To create, search and access the list of facets for a module use [`FacetManager`](upsource:///platform/lang-api/src/com/intellij/facet/FacetManager.java).
 
-### Facet-based Tool Window
+### Facet-Based Tool Window
 A [tool window](/user_interface_components/tool_windows.md) dependent on the existence of given facet(s) can be registered via `com.intellij.facet.toolWindow` extension point.

@@ -62,7 +62,117 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 
 Please see [Incompatible API Changes](/reference_guide/api_changes_list.md) on how to verify compatibility.
 
-> **NOTE** Changes from API marked with [`org.jetbrains.annotations.ApiStatus.@Experimental/ScheduledForRemoval`](upsource:///platform/util/src/org/jetbrains/annotations/ApiStatus.java) are not listed here, as incompatible changes are to be expected.
+> **NOTE** Changes from API marked with `org.jetbrains.annotations.ApiStatus.@Experimental/ScheduledForRemoval` are not listed here, as incompatible changes are to be expected.
+
+# 2020.2
+
+## Changes in IntelliJ Platform 2020.2
+
+Support for JavaFX deprecated
+: Plugins should migrate to [JCEF](/reference_guide/jcef.md). Alternatively, add an explicit dependency on [JavaFX Runtime for Plugins](https://plugins.jetbrains.com/plugin/14250-javafx-runtime-for-plugins). 
+
+`com.intellij.psi.util.PsiTreeUtil.processElements(element, processor)` method parameter type changed from `PsiElementProcessor` to `PsiElementProcessor<PsiElement>`
+: This may break source-compatibility with clients that pass more specific processor. Passing more specific processor was illegal before as well because the `processElements` passes every descendant `PsiElement` to the processor regardless of its type. However, this worked with some poorly written clients, e.g. `PsiElementProcessor.CollectFilteredElements` and `PsiElementProcessor.FindFilteredElement` (both deprecated now). To simplify the migration, a new three-arg `processElements(element, elementClass, processor)` is introduced that actually filters by element class, so in most cases, the simplest migration would be to add a wanted element class as a second argument. However, it's advised to use `SyntaxTraverser` API instead, which is more rich and flexible.
+
+`com.maddyhome.idea.copyright.util.FileTypeUtil.getFileTypeByName(String)` method removed
+: This was an internal utility method not intended for use in plugins. Use `FileTypeManager.getInstance().findFileTypeByName()` instead.
+
+`javassist` package removed
+: [Javassist](https://github.com/jboss-javassist/javassist) library was removed, bundle it with your plugin instead.
+
+`com.intellij.compiler.backwardRefs.LanguageCompilerRefAdapter.INSTANCES` field removed
+: This field leaked instances of plugin's extensions on plugin unloading. Use `com.intellij.compiler.backwardRefs.LanguageCompilerRefAdapter#EP_NAME.getExtensionList()` directly instead.  
+
+`groovy.util.AntBuilder` class removed
+: Add `org.codehaus.groovy:groovy-ant` dependency.
+
+`groovy.util.GroovyTestCase` class removed
+: Add `org.codehaus.groovy:groovy-test` dependency.
+
+`groovy.util.GroovyTestSuite` class removed
+: Add `org.codehaus.groovy:groovy-test` dependency.
+
+`groovy.json.internal` package removed
+: Use classes from `org.apache.groovy.json.internal` package.
+
+`com.intellij.openapi.externalSystem.service.execution.TaskCompletionProvider(Project, ProjectSystemId, TextAccessor, Options)` constructor parameter type changed from `groovyjarjarcommonscli.Options` to `org.apache.commons.cli.Options`
+: Update inheritors accordingly.
+
+`org.jetbrains.plugins.gradle.service.execution.cmd.GradleCommandLineOptionsProvider.getSupportedOptions()` method return type changed from `groovyjarjarcommonscli.Options` to `org.apache.commons.cli.Options`
+: Update call sites accordingly.
+
+`com.intellij.openapi.editor.markup.MarkupModel.addLineHighlighter(TextAttributesKey, int, int)` abstract method added
+: Use it instead of `MarkupModel.addLineHighlighter(int, int, TextAttributes)`
+
+`com.intellij.openapi.editor.markup.MarkupModel.addRangeHighlighter(TextAttributesKey, int, int, int, HighlighterTargetArea)` abstract method added
+: Use it instead of `MarkupModel.addRangeHighlighter(int, int, int, TextAttributes, HighlighterTargetArea)`
+
+`com.intellij.codeInsight.daemon.LineMarkerProvider.getLineMarkerInfo` method return type changed from ``LineMarkerInfo`` to ``LineMarkerInfo<?>``
+: This may break source-compatibility with inheritors written in Kotlin.
+
+`com.intellij.codeInsight.daemon.LineMarkerProvider.collectSlowLineMarkers` method parameter type changed from ``List<PsiElement>`` to ``List<? extends PsiElement>``
+: This may break source-compatibility with inheritors written in Kotlin.
+
+`com.intellij.codeInsight.daemon.LineMarkerProvider.collectSlowLineMarkers` method parameter type changed from ``List<PsiElement>`` to ``Collection<? super LineMarkerInfo<?>>``
+: This may break source-compatibility with inheritors written in Kotlin.
+
+`com.intellij.util.indexing.FileBasedIndex.FileTypeSpecificInputFilter.registerFileTypesUsedForIndexing` method parameter type changed from ``Consumer<FileType>`` to ``Consumer<? super FileType>``
+: This may break source-compatibility with inheritors written in Kotlin.
+
+`com.intellij.psi.impl.include.FileIncludeProvider.registerFileTypesUsedForIndexing` method parameter type changed from ``Consumer<FileType>`` to ``Consumer<? super FileType>``
+: This may break source-compatibility with inheritors written in Kotlin.
+
+`com.intellij.codeInsight.highlighting.HighlightUsagesHandlerBase.selectTargets` method parameter type changed from ``List<T>`` to ``List<? extends T>``
+: This may break source-compatibility with inheritors written in Kotlin.
+
+`com.intellij.codeInsight.highlighting.HighlightUsagesHandlerBase.selectTargets` method parameter type changed from ``Consumer<List<? extends T>>`` to ``Consumer<? super List<? extends T>>``
+: This may break source-compatibility with inheritors written in Kotlin.
+
+`com.intellij.codeInsight.highlighting.HighlightUsagesHandlerBase.computeUsages` method parameter type changed from ``List<T>`` to ``List<? extends T>``
+: This may break source-compatibility with inheritors written in Kotlin.
+
+`com.intellij.pom.java.LanguageLevel.JDK_13_PREVIEW` field removed
+: Please remove plugin code supporting Java 13 language level features. IntelliJ IDEA supports preview features of the latest Java release as well as one upcoming release (if available). 
+
+
+### VCS
+  
+`com.intellij.diff.util.DiffUserDataKeysEx.REVISION_INFO` field removed
+: Use `com.intellij.diff.DiffVcsDataKeys.REVISION_INFO` instead. 
+
+`com.intellij.codeInsight.actions.FormatChangedTextUtil.getChangedElements(Project, Change[], Function)` method removed
+: Use `com.intellij.codeInsight.actions.VcsFacadeImpl.getVcsInstance().getChangedElements(...)` instead. 
+
+
+## Changes in Groovy Plugin 2020.2
+
+`org.jetbrains.plugins.groovy.formatter.AlignmentProvider.addPair` method parameter type changed from `Boolean` to `boolean`
+: Please adjust/recompile the code.
+
+
+## Changes in Java EE Plugins 2020.2
+
+Java EE plugins split
+: Plugin `com.intellij.javaee` _Java EE: EJB, JPA, Servlets_ has been split to: 
+- `com.inteellij.javaee` _Java EE Platform_ - main plugin other JavaEE/Jakarta plugins depend on
+- `com.intellij.javaee.app.servers.integration` _Java EE: Application Servers Integration_
+- `com.intellij.javaee.ejb` _Java EE: Enterprise Java Beans (EJB)_
+- `com.intellij.javaee.jpa` _Java EE: JPA_
+- `com.intellij.javaee.web` _Java EE: Web/Servlets_
+
+
+## Changes in JavaScript Plugin 2020.2
+
+`com.intellij.lang.javascript.linter.jslint` package removed
+: JSLint functionality has been unbundled and moved to a separate plugin. [Issue](https://youtrack.jetbrains.com/issue/WEB-44511)
+
+
+## Changes in PhpStorm and PHP Plugin 2020.2
+
+Added Union Types Support
+: Please see [PhpStorm Breaking Changes](/products/phpstorm/php_open_api_breaking_changes.md).
+
+
 
 # 2020.1
 
@@ -129,13 +239,14 @@ Images module functionality (package `org.intellij.images.*`) extracted to plugi
 : The dependency [must be declared](/basics/plugin_structure/plugin_dependencies.md) explicitly now:
   * Add `<depends>com.intellij.platform.images</depends>` in `plugin.xml`
   * Add to `build.gradle`:
+    
     ```groovy
     intellij {
       plugins = ['platform-images']
     }
     ```
 
-## Changes in Python plugin 2020.1
+## Changes in Python Plugin 2020.1
 
 `com.jetbrains.python.psi.PyCallExpression.PyMarkedCallee` class removed
 : Use `com.jetbrains.python.psi.types.PyCallableType` instead.

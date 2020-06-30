@@ -19,6 +19,7 @@ All available UI Customization Keys that can be used in [Custom Themes](themes_c
 The following minimal sample demonstrates all details required when exposing UI customization keys of your plugin's UI.
 
 `/resources/META-INF/plugin.xml`:
+
 ```xml
 <idea-plugin> 
   [...]
@@ -27,10 +28,10 @@ The following minimal sample demonstrates all details required when exposing UI 
   </extensions>    
   [...]
 </idea-plugin>
-
 ```
 
 `/resources/META-INF/MyPlugin.themeMetadata.json`:
+
 ```json 
 {
   "name": "My Plugin",
@@ -47,7 +48,6 @@ The following minimal sample demonstrates all details required when exposing UI 
     }
   ]
 }
-
 ```     
 
 ### Attributes
@@ -69,6 +69,7 @@ The following minimal sample demonstrates all details required when exposing UI 
 > **TIP** Do not remove existing keys, but deprecate them instead to help Theme authors upgrade their existing themes.
 
 Color keys can be used via `JBColor.namedColor()` providing defaults for Light and Dark theme:
+
 ```java
   private static final Color SECTION_HEADER_FOREGROUND =
     JBColor.namedColor("Plugins.SectionHeader.foreground", new JBColor(0x787878, 0x999999));
@@ -140,7 +141,7 @@ If a component has a gradient color, add the words “start” and “end” for
 #### Capitalization 
 Capitalize Object and SubObject. Use lowerCamelCase for property.
 
-#### Do not use
+#### Do Not Use
 
 | Do not use | Use instead |
 |------------|-------------|
@@ -149,7 +150,7 @@ Capitalize Object and SubObject. Use lowerCamelCase for property.
 | `Text` | `Foreground` |
 | `darcula` _and other look-and-feel names_ | _Omit_ | 
 
-#### Swing legacy
+#### Swing Legacy
 
 Some color keys are not named according to the rules above. Such keys are inherited from Java Swing and cannot be renamed for compatibility reasons.
 Do not use naming patterns from the legacy keys.

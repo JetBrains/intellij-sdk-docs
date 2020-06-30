@@ -1,0 +1,10 @@
+@startuml
+left to right direction
+
+' Define the activity
+(*) --> "Get message\nbus reference"
+  --> "Ask the bus\nfor a particular\ntopic's publisher"
+  --> "Call target\nmethod on\npublisher"
+  --> "Messaging\ncalls the\nsame method\non target\nhandlers"
+--> (*)
+@enduml

@@ -12,7 +12,8 @@ There are multiple ways to enable internal mode, but the simplest is within Inte
 This selection opens IntelliJ IDEA's `idea.properties` file.
 If it does not exist, IntelliJ IDEA will prompt to create one.
 * Add the line shown below to the `idea.properties` file:
-```
+
+```properties
 idea.is.internal=true
 ```
 * Save the `idea.properties` file and restart IntelliJ IDEA.

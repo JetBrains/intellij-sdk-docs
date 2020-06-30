@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="303px" preserveAspectRatio="none" style="width:423px;height:303px;" version="1.1" viewBox="0 0 423 303" width="423px" zoomAndPan="magnify"><defs><filter height="300%" id="f115d3lj2jz7rn" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[cd07344a80c53f6735430047176be71f]
+class AB--><rect fill="#F8F8F8" filter="url(#f115d3lj2jz7rn)" height="26.4883" id="AB" style="stroke: #383838; stroke-width: 1.5;" width="111" x="222" y="8"/><text fill="#000000" font-family="Roboto" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="105" x="225" y="26.5352">application bus</text><!--MD5=[562978db86ac36b29d57db113b203393]
+class PB--><rect fill="#F8F8F8" filter="url(#f115d3lj2jz7rn)" height="26.4883" id="PB" style="stroke: #383838; stroke-width: 1.5;" width="83" x="171" y="94"/><text fill="#000000" font-family="Roboto" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="77" x="174" y="112.5352">project bus</text><!--MD5=[926f502e143d9ea62a9e3ce25d7b4f6f]
+class C1--><rect fill="#F8F8F8" filter="url(#f115d3lj2jz7rn)" height="26.4883" id="C1" style="stroke: #383838; stroke-width: 1.5;" width="91" x="298" y="94"/><text fill="#000000" font-family="Roboto" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="85" x="301" y="112.5352">connection1</text><!--MD5=[7a6ae922897b32380e18008d17b1b0ef]
+class C2--><rect fill="#F8F8F8" filter="url(#f115d3lj2jz7rn)" height="26.4883" id="C2" style="stroke: #383838; stroke-width: 1.5;" width="91" x="34" y="180"/><text fill="#000000" font-family="Roboto" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="85" x="37" y="198.5352">connection2</text><!--MD5=[bea21b96b087d2a6cd694f21a9e60e60]
+class C3--><rect fill="#F8F8F8" filter="url(#f115d3lj2jz7rn)" height="26.4883" id="C3" style="stroke: #383838; stroke-width: 1.5;" width="91" x="167" y="180"/><text fill="#000000" font-family="Roboto" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="85" x="170" y="198.5352">connection3</text><!--MD5=[3119829b56730b205615da85fbee2fd5]
+class T1H1--><rect fill="#F8F8F8" filter="url(#f115d3lj2jz7rn)" height="26.4883" id="T1H1" style="stroke: #383838; stroke-width: 1.5;" width="119" x="293" y="180"/><text fill="#000000" font-family="Roboto" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="113" x="296" y="198.5352">topic1-handler1</text><!--MD5=[cbe9cf75be102b01d481a458d073720d]
+class T1H2--><rect fill="#F8F8F8" filter="url(#f115d3lj2jz7rn)" height="26.4883" id="T1H2" style="stroke: #383838; stroke-width: 1.5;" width="119" x="6" y="266"/><text fill="#000000" font-family="Roboto" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="113" x="9" y="284.5352">topic1-handler2</text><!--MD5=[6d68aa1aef529b2011d6536b7dc28f2e]
+class T1H3--><rect fill="#F8F8F8" filter="url(#f115d3lj2jz7rn)" height="26.4883" id="T1H3" style="stroke: #383838; stroke-width: 1.5;" width="119" x="160" y="266"/><text fill="#000000" font-family="Roboto" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="113" x="163" y="284.5352">topic1-handler3</text><!--MD5=[b34b903977778f6e15b67d5d61f7d5e9]
+reverse link AB to PB--><path d="M260.02,44.59 C247.72,60.49 231.73,81.15 221.8,93.99 " fill="none" id="AB&lt;-PB" style="stroke: #383838; stroke-width: 1.0;"/><polygon fill="#FFFFFF" points="268.19,34.04,261.3549,36.3381,260.8474,43.5314,267.6825,41.2332,268.19,34.04" style="stroke: #383838; stroke-width: 1.0;"/><!--MD5=[adeab773214358b4ec5fc8a9ab419ebc]
+reverse link AB to C1--><path d="M295.25,44.59 C307.74,60.49 323.97,81.15 334.06,93.99 " fill="none" id="AB&lt;-C1" style="stroke: #383838; stroke-width: 1.0;"/><polygon fill="#383838" points="286.96,34.04,287.5181,41.2295,294.3692,43.4795,293.8111,36.29,286.96,34.04" style="stroke: #383838; stroke-width: 1.0;"/><!--MD5=[02ae765cdd6f37931dacef091dd941fa]
+reverse link PB to C2--><path d="M182.45,126.98 C156.71,143.24 120.43,166.15 98.52,179.99 " fill="none" id="PB&lt;-C2" style="stroke: #383838; stroke-width: 1.0;"/><polygon fill="#383838" points="193.44,120.04,186.231,119.8641,183.296,126.4509,190.505,126.6268,193.44,120.04" style="stroke: #383838; stroke-width: 1.0;"/><!--MD5=[ef9f97f6182d99c2a922b717bc2d5146]
+reverse link PB to C3--><path d="M212.5,133.42 C212.5,148.87 212.5,167.89 212.5,179.99 " fill="none" id="PB&lt;-C3" style="stroke: #383838; stroke-width: 1.0;"/><polygon fill="#383838" points="212.5,120.04,208.5,126.04,212.5,132.04,216.5,126.04,212.5,120.04" style="stroke: #383838; stroke-width: 1.0;"/><!--MD5=[450b28281f7b85415e09b5c7f2cd02c5]
+reverse link C1 to T1H1--><path d="M346.22,133.42 C347.88,148.87 349.92,167.89 351.21,179.99 " fill="none" id="C1&lt;-T1H1" style="stroke: #383838; stroke-width: 1.0;"/><polygon fill="#383838" points="344.79,120.04,341.4522,126.4321,346.0689,131.9717,349.4067,125.5795,344.79,120.04" style="stroke: #383838; stroke-width: 1.0;"/><!--MD5=[ee8db070aa383ed8f24504308525533d]
+reverse link C2 to T1H2--><path d="M75.34,218.94 C72.75,234.48 69.54,253.77 67.5,265.99 " fill="none" id="C2&lt;-T1H2" style="stroke: #383838; stroke-width: 1.0;"/><polygon fill="#383838" points="77.49,206.04,72.5552,211.2981,75.5108,217.8757,80.4456,212.6176,77.49,206.04" style="stroke: #383838; stroke-width: 1.0;"/><!--MD5=[7e297d0e187f42122b737afea7d4ddd4]
+reverse link C3 to T1H3--><path d="M214.62,219.42 C215.91,234.87 217.49,253.89 218.5,265.99 " fill="none" id="C3&lt;-T1H3" style="stroke: #383838; stroke-width: 1.0;"/><polygon fill="#383838" points="213.5,206.04,210.015,212.353,214.502,217.9981,217.987,211.685,213.5,206.04" style="stroke: #383838; stroke-width: 1.0;"/><!--MD5=[891360ff0616a82d54b0a01a14f4fe6a]
+@startuml
+skinparam monochrome true
+skinparam shadowing true
+
+skinparam DefaultFontName Roboto
+skinparam DefaultMonospacedFontName "Roboto Mono"
+
+skinparam DefaultFontSize 14
+skinparam DefaultTextAlignment center
+skinparam NoteTextAlignment left
+
+skinparam ActivityBorderThickness 1
+skinparam PartitionBorderThickness 1.5
+hide empty members
+hide circle
+top to bottom direction
+
+class "application bus" as AB
+class "project bus" as PB
+class "connection1" as C1
+
+class "connection2" as C2
+class "connection3" as C3
+class "topic1-handler1" as T1H1
+
+class "topic1-handler2" as T1H2
+class "topic1-handler3" as T1H3
+
+AB o- - PB
+AB *- - C1
+
+PB *- - C2
+PB *- - C3
+C1 *- - T1H1
+
+C2 *- - T1H2
+C3 *- - T1H3
+@enduml
+
+PlantUML version 1.2020.09(Sun May 10 03:51:06 PDT 2020)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Java Version: 11.0.6+8-b765.40
+Operating System: Mac OS X
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>

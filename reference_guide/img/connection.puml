@@ -1,0 +1,17 @@
+@startuml
+hide empty members
+hide circle
+top to bottom direction
+
+
+' Define the objects in the diagram
+class MessageBus
+class MessageBusConnection
+class "Default Handler" as DH
+class "(Topic-Handler)" as TH
+
+' Define the class relationships
+MessageBus "1" o-- "*" MessageBusConnection
+MessageBusConnection o-- "0..1" DH
+MessageBusConnection *-- "*" TH
+@enduml

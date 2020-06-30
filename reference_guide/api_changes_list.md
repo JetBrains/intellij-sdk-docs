@@ -65,18 +65,29 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 IntelliJ API may be occasionally changed between releases, leading to incompatibilities of existing plugins with newer IDE builds. 
 
 <!--
-> **NOTE** Starting with 2020.1 release, IntelliJ Platform–based IDEs will use compatibility check information provided by the [JetBrains plugin repository](/plugin_repository/index.md) to highlight possible compatibility issues to users directly in the IDE's "Plugins" manager. 
+> **NOTE** Starting with 2020.1 release, IntelliJ Platform–based IDEs will use compatibility check information provided by the [JetBrains Plugins Repository](https://plugins.jetbrains.com) to highlight possible compatibility issues to users directly in the IDE's "Plugins" manager. 
 Therefore, it is important to keep your plugins up to date with regard to the existing and upcoming API changes.
 -->
 
-Compatibility with newer IDEs can easily be verified for plugins hosted on the [JetBrains plugin repository](/plugin_repository/index.md) using the built-in [Plugin Verifier](https://blog.jetbrains.com/platform/2018/07/plugins-repository-now-integrates-with-the-plugin-verification-tool/).
+## Verifying Compatibility
 
-For non-public plugins, [intellij-plugin-verifier](https://github.com/JetBrains/intellij-plugin-verifier) can be used standalone as well.
+### Plugin Verifier
+Compatibility with newer IDEs can easily be verified for plugins hosted on the [JetBrains Plugins Repository](https://plugins.jetbrains.com) using the built-in [Plugin Verifier](https://blog.jetbrains.com/platform/2018/07/plugins-repository-now-integrates-with-the-plugin-verification-tool/).
+
+For local verification or non-public plugins, [intellij-plugin-verifier](https://github.com/JetBrains/intellij-plugin-verifier) can be used standalone as well.
+Integration in [Gradle build](/tutorials/build_system.md) is currently possible via some additional scripts, please see [this issue](https://github.com/JetBrains/gradle-intellij-plugin/issues/385) for details.
+
+If your plugin is hosted on GitHub, it is also readily made available via these GitHub Actions:
+- [IntelliJ Platform Plugin Verifier](https://github.com/marketplace/actions/intellij-platform-plugin-verifier)
+- [IntelliJ Plugin Verifier](https://github.com/marketplace/actions/intellij-plugin-verifier)   
   
+### IDE Support  
 Consider using the following IDE inspections to get additional alerts about code that uses unstable API features:
 - JVM languages \| Unstable API Usage
 - JVM languages \| Unstable type is used in signature
   
+  
+## Known Breaking Changes  
   
 The following pages list the breaking changes in IDE/plugin releases with required/recommended steps to take by plugin authors. 
 
@@ -86,4 +97,4 @@ The following pages list the breaking changes in IDE/plugin releases with requir
 * [**Changes in 2017.***](api_changes/api_changes_list_2017.md)
 * [**Changes in 2016.***](api_changes/api_changes_list_2016.md)
 
-> **NOTE** Changes from API marked with [`org.jetbrains.annotations.ApiStatus.@Experimental/ScheduledForRemoval`](upsource:///platform/util/src/org/jetbrains/annotations/ApiStatus.java) are not listed here, as incompatible changes are to be expected.
+> **NOTE** Changes from API marked with `org.jetbrains.annotations.ApiStatus.@Experimental/ScheduledForRemoval` are not listed here, as incompatible changes are to be expected.

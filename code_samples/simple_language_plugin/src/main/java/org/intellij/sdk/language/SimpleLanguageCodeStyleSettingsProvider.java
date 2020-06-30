@@ -27,7 +27,7 @@ public class SimpleLanguageCodeStyleSettingsProvider extends LanguageCodeStyleSe
   public String getCodeSample(@NotNull SettingsType settingsType) {
     return "# You are reading the \".properties\" entry.\n" +
                  "! The exclamation mark can also mark text as comments.\n" +
-                 "website = http://en.wikipedia.org/\n" +
+                 "website = https://en.wikipedia.org/\n" +
                  "\n" +
                  "language = English\n" +
                  "# The backslash below tells the application to continue reading\n" +

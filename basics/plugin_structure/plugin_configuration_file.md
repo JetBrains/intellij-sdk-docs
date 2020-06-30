@@ -10,6 +10,8 @@ Limited HTML elements are allowed within `<description>` and `<change-notes>` el
 However, content containing HTML elements must be surrounded by `<![CDATA[  ]]>` tags. 
 Allowed HTML elements include text formatting, paragraphs, and lists. 
 
+When using Gradle, a number of metadata elements will be provided at build time by [`patchPluginXml` task](/tutorials/build_system/gradle_guide.md#patching-the-plugin-configuration-file).
+
 ```xml
 <!-- `url` specifies the URL of the plugin homepage (can be opened from "Plugins" settings dialog) -->
 <idea-plugin url="https://www.jetbrains.com/idea">

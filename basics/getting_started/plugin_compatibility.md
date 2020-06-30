@@ -40,6 +40,9 @@ A _module_ represents a built-in plugin that is a non-removable part of a produc
 Some modules are available in all products, and some modules are available only in some, or even just one product. 
 This section identifies and discusses modules of both types.
 
+### Declaring Incompatibility with Module
+Starting in 2020.2, a plugin can declare incompatibility with an arbitrary module by specifying `<incompatible-with>` containing module ID in its `plugin.xml`.
+
 ### Modules Available in All Products
 A core set of modules are available in all products based on the IntelliJ Platform. 
 These modules provide a set of shared functionality. 
@@ -71,19 +74,19 @@ The following table lists(1) modules or built-in plugins that provide specific f
 | Module or Plugin for `<depends>` Element<br>Declaration in `plugin.xml` File | <br>Functionality  | IntelliJ Platform-Based<br>Product Compatibility  | 
 |------------------------------------------------------------------------------|--------------------|------------------------------------------|
 | `com.intellij.modules.java` See (2) below. <br>`com.intellij.java` | **Java** language PSI Model, Inspections, Intentions, Completion, Refactoring, Test Framework  | IntelliJ IDEA, Android Studio |
-| `com.intellij.modules.ultimate`      | All functionality unique to IntelliJ IDEA Ultimate | IntelliJ IDEA Ultimate Edition                                            |
-| `com.intellij.modules.androidstudio` | Android SDK Platform, Build Tools, Platform Tools, SDK Tools | Android Studio                                                          |
-| `com.intellij.modules.appcode`       | CocoaPods, Core Data Objects, Device & Simulator Support  | AppCode                                                                    |
+| `com.intellij.modules.androidstudio` | Android SDK Platform, Build Tools, Platform Tools, SDK Tools | Android Studio  |
+| `com.intellij.modules.appcode`       | CocoaPods, Core Data Objects, Device & Simulator Support  | AppCode  |
 | `com.intellij.modules.cidr.lang`     | **C, C++, Objective-C/C++** language PSI Model, Swift/Objective-C Interaction, Inspections, Intentions, Completion, Refactoring, Test Framework  | AppCode, CLion |
-| `com.intellij.modules.cidr.debugger` | Debugger Watches, Evaluations, Breakpoints, Inline Debugging  | AppCode, CLion, RubyMine                                               |
-| `com.intellij.modules.clion`         | CMake, Profiler, Embedded Development, Remote Development, Remote Debug, Disassembly | CLion                                           |
-| `com.intellij.database`              | **Database Tools and SQL** language PSI Model, Inspections, Completion, Refactoring, Queries | DataGrip, IntelliJ IDEA Ultimate, AppCode, PhpStorm, PyCharm Professional, RubyMine, CLion, GoLand, Rider, and WebStorm if the Database Tools and SQL plugin is installed.|
-| `com.intellij.modules.go`            | **Go** language PSI Model, Inspections, Intentions, Completion, Refactoring, Test Framework  | GoLand                                  |
+| `com.intellij.modules.cidr.debugger` | Debugger Watches, Evaluations, Breakpoints, Inline Debugging  | AppCode, CLion, RubyMine |
+| `com.intellij.modules.clion`         | CMake, Profiler, Embedded Development, Remote Development, Remote Debug, Disassembly | CLion |
+| `com.intellij.database`              | **Database Tools and SQL** language PSI Model, Inspections, Completion, Refactoring, Queries | DataGrip, IntelliJ IDEA Ultimate, AppCode, PhpStorm, PyCharm Professional, RubyMine, CLion, GoLand, Rider, and WebStorm if the Database Tools and SQL plugin is installed. |
+| `com.intellij.modules.go`            | **Go** language PSI Model, Inspections, Intentions, Completion, Refactoring, Test Framework  | GoLand |
 | `com.intellij.modules.python`        | **Python** language PSI Model, Inspections, Intentions, Completion, Refactoring, Test Framework  | PyCharm, and other products if the Python plugin is installed.  |
-| `com.intellij.modules.rider`         | Connection to **ReSharper** Process in Background   | Rider                                                                            |
-| `com.intellij.modules.ruby`          | **Ruby** language PSI Model, Inspections, Intentions, Completion, Refactoring, Test Framework  | RubyMine, and IntelliJ IDEA Ultimate if the Ruby plugin is installed.  |
-| `com.jetbrains.php`                  | **PHP** language PSI Model, Inspections, Intentions, Completion, Refactoring, Test Framework | PhpStorm, and other products if the PHP plugin is installed.  |
-| `JavaScript`                         | **JavaScript** language PSI Model, Inspections, Intentions, Completion, Refactoring, Test Framework  | WebStorm, and other products if the JavaScript plugin is installed |
+| `com.intellij.modules.rider`         | Connection to **ReSharper** Process in Background | Rider |
+| `com.intellij.modules.ruby`          | **Ruby** language PSI Model, Inspections, Intentions, Completion, Refactoring, Test Framework  | RubyMine, and IntelliJ IDEA Ultimate if the Ruby plugin is installed. |
+| `com.intellij.modules.ultimate`      | Licensing | All commercial IDEs (IntelliJ IDEA Ultimate, PhpStorm, DataGrip, ...) |
+| `com.jetbrains.php`                  | **PHP** language PSI Model, Inspections, Intentions, Completion, Refactoring, Test Framework | PhpStorm, and other products if the PHP plugin is installed. |
+| `JavaScript`                         | **JavaScript** language PSI Model, Inspections, Intentions, Completion, Refactoring, Test Framework  | WebStorm, and other products if the JavaScript plugin is installed. |
 
 **Notes about Module and Plugin Dependency:**  
 **(1)** This table is not exhaustive, there are other modules currently available in JetBrains' IntelliJ Platform-based IDEs. 
@@ -96,7 +99,7 @@ Consequently, Java dependencies are expressed differently in `plugin.xml` depend
   * `plugin.xml` include `<depends>com.intellij.modules.java</depends>`
 * Syntax for 2019.2 and later releases:
   * `plugin.xml` _allowable_ alternative include `<depends>com.intellij.java</depends>`
-  * `build.gradle` _required_ to include `intellij.plugins 'java'` 
+  * `build.gradle` _required_ to include `intellij { plugins 'java' }` 
 
 ## Exploring Module and Plugin APIs
 Once the [dependency on a module or plugin](/basics/plugin_structure/plugin_dependencies.md) is declared in `plugin.xml`, it's useful to explore the packages and classes available in that dependency.
@@ -134,11 +137,13 @@ Continuing the example, search the PHP plugin's `plugin.xml` file for:
 
 ## Verifying Dependency
 Before marking a plugin project as _dependent only on modules in a target product_ in addition to `com.intellij.modules.platform`, verify the plugin isn't implicitly dependent on any APIs that are specific to IntelliJ IDEA. 
-To verify a plugin project's independence, create an SDK pointing to an installation of the intended target IntelliJ Platform-based product, e.g., PhpStorm, rather than IntelliJ IDEA. 
-Use the same development version of the IntelliJ platform as the targeted product. 
-Additional product-specific information about developing for the IntelliJ Platform is documented in Part VIII.
 
-Based on the tables above, the [JetBrains plugin repository](https://plugins.jetbrains.com/) automatically detects the JetBrains products with which a plugin is compatible, and makes the compatibility information available to plugin authors. 
+For [Gradle-based](/tutorials/build_system.md) projects, [Plugin Verifier](/reference_guide/api_changes_list.md#plugin-verifier) can be used to ensure compatibility with all specified target IDEs.
+
+For [DevKit-based](/basics/getting_started/using_dev_kit.md) projects, create an SDK pointing to an installation of the intended target IntelliJ Platform-based product, e.g., PhpStorm, rather than IntelliJ IDEA. 
+Use the same development version of the IntelliJ platform as the targeted product. 
+
+Based on the tables above, the [JetBrains Plugins Repository](https://plugins.jetbrains.com/) automatically detects the JetBrains products with which a plugin is compatible, and makes the compatibility information available to plugin authors. 
 The compatibility information determines if plugins are available at the plugin repository to users of a particular JetBrains product.  
 
 ## Platform API Version Compatibility

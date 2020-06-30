@@ -1,0 +1,20 @@
+@startuml
+skinparam classAttributeIconSize 0
+hide empty fields
+hide empty methods
+left to right direction
+
+' Define the objects in the diagram
+class "[[https://github.com/JetBrains/intellij-community/blob/master/platform/extensions/src/com/intellij/util/messages/Topic.java{com.intellij.util.messages.Topic} com.intellij.util.messages.Topic]]" as Topic {
+  +displayName()
+  +broadcastDirection()
+  }
+class ListenerClass {
+  +method1()
+  {method} ...
+  +methodN()
+  }
+
+' Define the class relationships
+Topic o--> "1 " ListenerClass
+@enduml

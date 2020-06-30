@@ -12,6 +12,10 @@ title: Build Number Ranges
 
 Use this reference of build number ranges to specify the correct `since-build` and `until-build` values in your plugin descriptor.
 
+When using Gradle, setting the actual values in `plugin.xml` is usually managed by the `patchPluginXml` task, see [Patching the Plugin Configuration File](/tutorials/build_system/gradle_guide.md#patching-the-plugin-configuration-file) for details.  
+
+> **NOTE** Compatibility with specified version range (and compatible products) should always be verified using [Plugin Verifier](/reference_guide/api_changes_list.md#verifying-compatibility) to ensure binary compatibility.
+
 Starting with IntelliJ IDEA 9 beta, a multi-part build number is used, such as `IU-162.94`.
 
 The number consists of the following parts:
@@ -35,12 +39,13 @@ Multi-part build numbers can also be used in the `since-build` and `until-build`
 
 > **NOTE** Specific build numbers and their corresponding release version are available via _Previous Releases_ on the corresponding product's download page, e.g. [Previous IntelliJ IDEA Releases](https://www.jetbrains.com/idea/download/previous.html).
 
-### IntelliJ Platform based products of recent IDE versions
+### IntelliJ Platform Based Products of Recent IDE Versions
 
 > **TIP** Which versions should your plugin support? We've collected some insights based on download statistics in [Statistics: Product Versions in Use](https://plugins.jetbrains.com/docs/marketplace/product-versions-in-use-statistics.html).
 
 | Branch number                                                   | IntelliJ Platform version |
 |-----------------------------------------------------------------|---------------------------|
+| [202](https://github.com/JetBrains/intellij-community/tree/202) | 2020.2                    |
 | [201](https://github.com/JetBrains/intellij-community/tree/201) | 2020.1                    |
 | [193](https://github.com/JetBrains/intellij-community/tree/193) | 2019.3                    |
 | [192](https://github.com/JetBrains/intellij-community/tree/192) | 2019.2                    |
@@ -56,7 +61,7 @@ Multi-part build numbers can also be used in the `since-build` and `until-build`
 
 Note that there is no `170`. In the `YYYY.R` versioning scheme, the `R` part starts at 1.
 
-### IntelliJ Platform based products of pre-2016.2 IDE versions
+### IntelliJ Platform Based Products of Pre-2016.2 IDE Versions
 
 | Branch number | Product version |
 |---------------|-----------------|
@@ -83,7 +88,7 @@ Note that there is no `170`. In the `YYYY.R` versioning scheme, the `R` part sta
 
 ## History
 
-### Build numbers for IntelliJ IDEA versions
+### Build Numbers for IntelliJ IDEA Versions
 
 | IntelliJ IDEA version | Build number  |
 |-----------------------|---------------|
@@ -108,7 +113,7 @@ Note that there is no `170`. In the `YYYY.R` versioning scheme, the `R` part sta
 | 9.0.1                 | 93.94         |
 | 9.0                   | 93.13         |
 
-### Build numbers for IntelliJ IDEA pre-9.0
+### Build Numbers for IntelliJ IDEA Pre-9.0
 
 Before IntelliJ IDEA 9.0, linear build numbers were used, with the following ranges:
 

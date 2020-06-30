@@ -16,7 +16,7 @@ either on the reference at the caret location or on a dummy reference that would
 This method needs to return an array of objects containing either strings,
 [`PsiElement`](upsource:///platform/core-api/src/com/intellij/psi/PsiElement.java)
 instances or instances of the
-[`LookupElement`](upsource:///platform/lang-api/src/com/intellij/codeInsight/lookup/LookupElement.java)
+[`LookupElement`](upsource:///platform/analysis-api/src/com/intellij/codeInsight/lookup/LookupElement.java)
 class (see [Lookup Items](#lookup-items) below).
 If a
 [`PsiElement`](upsource:///platform/core-api/src/com/intellij/psi/PsiElement.java)
@@ -28,7 +28,7 @@ and a different implementation of
 [`PsiScopeProcessor`](upsource:///platform/core-api/src/com/intellij/psi/scope/PsiScopeProcessor.java)
 which collects all declarations passed to its `processDeclarations()` method and returns them as an array for filling the completion list.
 
-### Contributor-based Completion
+### Contributor-Based Completion
 
 Implementing the
 [`CompletionContributor`](upsource:///platform/analysis-api/src/com/intellij/codeInsight/completion/CompletionContributor.java)

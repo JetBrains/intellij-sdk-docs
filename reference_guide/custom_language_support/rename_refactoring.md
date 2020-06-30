@@ -3,7 +3,7 @@ title: Rename Refactoring
 ---
 <!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-The operation of the Rename refactoring is quite similar to that of Find Usages.
+The operation of the Rename refactoring is quite similar to that of [Find Usages](find_usages.md).
 It uses the same rules for locating the element to be renamed, and the same index of words for locating the files which may have references to the element being renamed.
 
 When the rename refactoring is performed, the method
@@ -15,11 +15,9 @@ Both of these methods perform basically the same action: replace the underlying 
 Creating a fully correct AST node from scratch is quite difficult.
 Thus, surprisingly, the easiest way to get the replacement node is to create a dummy file in the custom language so that it would contain the necessary node in its parse tree, build the parse tree and extract the necessary node from it.
 
-**Example:**
-[`setName()`](upsource:///plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/psi/impl/PropertyImpl.java)<!--#L58-->
-implementation for a
-[Properties language plugin](upsource:///plugins/properties)
-
+**Examples:**
+- [`setName()`](upsource:///plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/psi/impl/PropertyImpl.java) implementation for a [Properties language plugin](upsource:///plugins/properties)
+- [Custom Language Support Tutorial: Reference Contributor](/tutorials/custom_language_support/reference_contributor.md)
 
 ### Name Validation
 [`NamesValidator`](upsource:///platform/lang-api/src/com/intellij/lang/refactoring/NamesValidator.java) allows a plugin to check if the name entered by the user in the `Rename` dialog is a valid identifier (and not a keyword) according to the custom language rules.
@@ -43,7 +41,7 @@ interface allows you to entirely replace the UI and workflow of the rename refac
 at all.
 
 **Example**:
-[`RenameHandler`](upsource:///plugins/properties/src/com/intellij/lang/properties/refactoring/rename/ResourceBundleFromEditorRenameHandler.java)
+[`RenameHandler`](upsource:///plugins/properties/properties-resource-bundle-editor/src/com/intellij/lang/properties/refactoring/rename/ResourceBundleFromEditorRenameHandler.java)
 for renaming a resource bundle in the
 [Properties language plugin](upsource:///plugins/properties)
 

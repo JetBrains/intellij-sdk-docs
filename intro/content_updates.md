@@ -9,6 +9,17 @@ See [Recently Updated](/recently_updated.md) ([RSS](https://github.com/JetBrains
 
 # 2020
 
+## June
+Disposer & Disposable
+: Added [reference](/basics/disposers.md) discussing resource cleanup/management.
+
+## May
+Settings (Preferences)
+: Added [guide](/reference_guide/settings_guide.md) and [tutorial](/tutorials/settings_tutorial.md) on integrating with IDE Settings dialog.
+
+UI Inspector
+: Inspect Swing components and associated data (like `AnAction` for menu item) using [UI Inspector](/reference_guide/internal_actions/internal_ui_inspector.md). 
+
 ## March
 JCEF Support (_Experimental Feature_) 
 : Allows [embedding](/reference_guide/jcef.md) Chromium-based browser in the IDE.

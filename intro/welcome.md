@@ -7,6 +7,7 @@ redirect_from:
 <!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 [![official JetBrains project](https://jb.gg/badges/official-flat-square.svg)](https://confluence.jetbrains.com/display/ALL/JetBrains+on+GitHub)
+[![Twitter Follow](https://img.shields.io/twitter/follow/JBPlatform?style=flat-square)](https://twitter.com/JBPlatform/)
 
 Welcome to the _IntelliJ Platform_ SDK. This is the primary source of documentation for extending the _IntelliJ Platform_, by creating plugins, custom language support or building a custom IDE.
 

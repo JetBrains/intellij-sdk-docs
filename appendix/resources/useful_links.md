@@ -9,9 +9,9 @@ The following links represent useful resources for working with the _IntelliJ Pl
 
 ### Repositories
 * [IntelliJ SDK Documentation](https://github.com/JetBrains/intellij-sdk-docs)
+* [IntelliJ Platform Plugin Template](https://github.com/JetBrains/intellij-platform-plugin-template)
 * [IntelliJ Community Edition](https://github.com/JetBrains/intellij-community)
 * [IntelliJ Plugins](https://github.com/JetBrains/intellij-plugins)
-* [IntelliJ Scala Plugin](https://github.com/JetBrains/intellij-scala)
 * [Open Source Plugins](https://plugins.jetbrains.com/search?correctionAllowed=true&pr=&orderBy=name&search=&should_have_source=true)
 
 ### Tooling

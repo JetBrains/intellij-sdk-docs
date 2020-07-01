@@ -118,7 +118,7 @@ Every element which can be renamed or referenced (a class definition, a method d
 interface, with methods `getName()` and `setName()`.
 
 A number of functions which can be used for implementing and using the PSI can be found in the `com.intellij.psi.util` package, and in particular in the
-[`PsiUtil`](upsource:///java/java-psi-api/src/com/intellij/psi/util/PsiUtil.java)
+[`PsiUtilCore`](upsource:///platform/core-api/src/com/intellij/psi/util/PsiUtilCore.java)
 and
 [`PsiTreeUtil`](upsource:///platform/core-api/src/com/intellij/psi/util/PsiTreeUtil.java)
 classes.

@@ -11,7 +11,14 @@ For more information about dependencies on the IntelliJ Platform modules, see Pa
  
 To express dependencies on classes from other plugins or modules, perform the following three required steps:
 
-## 1. Preparing Sandbox
+## 1. Locating Plugin ID and Preparing Sandbox
+For plugins published on [JetBrains Plugins Repository](https://plugins.jetbrains.com)
+- open plugin's detail page 
+- select _Versions_ tab
+- open detail page for the desired version
+
+Otherwise, locate the plugin's main JAR file containing `META-INF/plugin.xml` descriptor with `<id>` tag (or `<name>` if not specified).
+
 If the plugin is not bundled with the target IDE, run the (sandbox) [IDE Development Instance](/basics/ide_development_instance.md) of your target IDE and install the plugin there.
 
 ## 2. Project Setup

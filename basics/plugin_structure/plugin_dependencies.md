@@ -58,8 +58,6 @@ select the plugin JAR file or files:
   If you're not sure which JAR to add, you can add all of them.
 * For non-bundled plugins, the plugin JAR files are located in `config/plugins/<pluginname>` or `config/plugins/<pluginname>/lib` under the directory specified as "Sandbox Home" in the IntelliJ Platform Plugin SDK settings.
 
-![Adding Plugin to Classpath](img/add_plugin_dependency.png)
-
 ## 3. Dependency Declaration in plugin.xml
 Regardless of whether a plugin project uses [Modules Available in All Products](/basics/getting_started/plugin_compatibility.md#modules-available-in-all-products), or [Modules Specific to Functionality](/basics/getting_started/plugin_compatibility.md#modules-specific-to-functionality), the correct module must be listed as a dependency in `plugin.xml`. 
 If a project depends on another plugin, the dependency must be declared like a module.

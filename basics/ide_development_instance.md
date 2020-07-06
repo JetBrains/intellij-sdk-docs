@@ -40,10 +40,8 @@ In this situation no additional configuration is required.
 ### Setting a JetBrains Runtime for DevKit-Based Plugin Projects
 The [Run Configuration](https://www.jetbrains.com/help/idea/creating-and-editing-run-debug-configurations.html#edit) for a DevKit-based plugin project controls the JDK used to run and debug a plugin project in a Development Instance.
 The default Run Configuration uses the same JDK for building the plugin project and running the plugin in a Development Instance.
-To change the runtime for the Development Instance, set the _JRE:_ field in the Run Configuration edit dialog to use a downloaded JetBrains Runtime.
-Continuing from the example [above](#determining-a-jetbrains-runtime-version), the _JRE:_ field is set to use `jbrx-8u212-osx-x64-1566_8`
+To change the runtime for the Development Instance, set the _JRE_ field in the Run Configuration edit dialog to use a downloaded JetBrains Runtime.
 
-![Setting Run Configuration JRE](img/jbr_runconfig.png){:width="900px"}
 
 ## Enabling Auto-Reload
 > **NOTE** Starting in 2020.1, this is available for compatible [dynamic plugins](/basics/plugin_structure/dynamic_plugins.md).

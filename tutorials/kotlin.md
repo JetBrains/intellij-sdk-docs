@@ -44,6 +44,8 @@ Kotlin. To learn more about building IntelliJ Platform plugins with Kotlin, this
 
 ## 2. Adding Kotlin Support
 
+> **TIP** The [GitHub Template](/tutorials/github_template.md) provides a preconfigured project using Kotlin.
+
 Plugins targeting the IntelliJ Platform versions 143 and above are easy to migrate: just start writing Kotlin.
 The IDE already bundles the necessary Kotlin plugins and libraries, requiring no further configuration.
 For detailed instructions, please refer to the [Kotlin documentation](https://kotlinlang.org/docs/tutorials/getting-started.html).
@@ -100,7 +102,7 @@ intellij {
 
 Starting with 4.4, Gradle supports `build.gradle.kts`, an alternative to `build.gradle` written in Kotlin.
 
-There're many good resources for learning how to write build scripts for an IntelliJ plugin with Kotlin script, like
+There are many good resources for learning how to write build scripts for an IntelliJ plugin with Kotlin script, like
 [intellij-rust](https://github.com/intellij-rust/intellij-rust/blob/master/build.gradle.kts),
 [julia-intellij](https://github.com/ice1000/julia-intellij/blob/master/build.gradle.kts),
 [covscript-intellij](https://github.com/covscript/covscript-intellij/blob/master/build.gradle.kts) or

@@ -21,15 +21,15 @@ Use [`PasswordSafe`](upsource:///platform/platform-api/src/com/intellij/ide/pass
 
     // or get password only
     String password = PasswordSafe.getInstance().getPassword(credentialAttributes);    
-    
-    private CredentialAttributes createCredentialAttributes(String key) {
-        return new CredentialAttributes(CredentialAttributesKt.generateServiceName("MySystem", key));        
-    }    
 ```
 
 ### Store Credentials
 
 ```java
+    private CredentialAttributes createCredentialAttributes(String key) {
+        return new CredentialAttributes(CredentialAttributesKt.generateServiceName("MySystem", key));        
+    }
+
     CredentialAttributes credentialAttributes = createCredentialAttributes(serverId); // see previous sample
     Credentials credentials = new Credentials(username, password);
     PasswordSafe.getInstance().set(credentialAttributes, credentials);

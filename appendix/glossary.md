@@ -74,7 +74,7 @@ Stubs
 
 ## V
 Version Control System _(VCS)_
-: [Version Control System](/reference_guide/vcs_integration_for_plugins.md)
+: The API for [Version Control System](/reference_guide/vcs_integration_for_plugins.md) allows accessing builtin as well as adding custom implementations. 
 
 Virtual File _(VF)_
 : A [Virtual File](/basics/architectural_overview/virtual_file.md) represents a file in a &rarr; _Virtual File System_.

@@ -264,6 +264,7 @@
 
 ## Appendix I - Resources
 
+* [Glossary](appendix/glossary.md)
 * [Useful Links](appendix/resources/useful_links.md)
 * [Consulting](appendix/resources/consulting.md)
 

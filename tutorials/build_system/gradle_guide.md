@@ -45,8 +45,10 @@ IntelliJ IDEA then indexes the build and any associated source code and JetBrain
 
 #### IntelliJ Platform Configuration
 Explicitly setting the [Setup DSL](https://github.com/JetBrains/gradle-intellij-plugin#setup-dsl) attributes `intellij.version` and `intellij.type` tells the Gradle plugin to use that configuration of the IntelliJ Platform to build the plugin project.
+                                    
+All available platform versions can be browsed in the [IntelliJ Platform Artifacts Repositories](/reference_guide/intellij_artifacts.md).
 
-If a local installation of the target IDE is the desired type and version of the IntelliJ Platform, use `intellij.localPath` to point to that installation.
+If the chosen platform version is not available in the repositories, or a local installation of the target IDE is the desired type and version of the IntelliJ Platform, use `intellij.localPath` to point to that installation.
 If the `intellij.localPath` attribute is set, do not set the `intellij.version` and `intellij.type` attributes as this could result in undefined behavior.
 
 #### Plugin Dependencies

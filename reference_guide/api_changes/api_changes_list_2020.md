@@ -162,7 +162,7 @@ Support for JavaFX deprecated
 `org.jetbrains.plugins.github.pullrequest.ui.GHCompletableFutureLoadingModel()` constructor removed
 : Model was made disposable and it is now required to pass parent disposable in constructor
 
-`org.jetbrains.plugins.github.util.GithubGitHelper#getPossibleRemoteUrlCoordinates` method removed
+`org.jetbrains.plugins.github.util.GithubGitHelper.getPossibleRemoteUrlCoordinates()` method removed
 : Use `org.jetbrains.plugins.github.util.GHProjectRepositoriesManager.getKnownRepositories()` instead
 
 ## Changes in Groovy Plugin 2020.2

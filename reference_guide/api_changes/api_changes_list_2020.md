@@ -64,6 +64,14 @@ Please see [Incompatible API Changes](/reference_guide/api_changes_list.md) on h
 
 > **NOTE** Changes from API marked with `org.jetbrains.annotations.ApiStatus.@Experimental/ScheduledForRemoval` are not listed here, as incompatible changes are to be expected.
 
+# 2020.3
+
+## Changes in IntelliJ Platform 2020.3
+                 
+`com.intellij.openapi.application.NonBlockingReadAction.finishOnUiThread` method parameter type changed from ``Consumer<T>`` to ``Consumer<? super T>``
+: This may break source-compatibility with inheritors written in Kotlin.
+
+
 # 2020.2
 
 ## Changes in IntelliJ Platform 2020.2

@@ -3,7 +3,7 @@ title: Color Scheme Management
 ---
 <!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-# Preface
+## Preface
 
 Color scheme management in IntelliJ IDEA 12.1 was changed to ease the work of scheme designers and make schemes look equally well for different programming languages even if not designed specifically for these languages. 
 Previously language plug-ins were using fixed default colors incompatible, for example, with dark schemes.
@@ -12,9 +12,9 @@ The new implementation allows to specify a dependency on a set of standard text 
 New color schemes have got a new `.icls` (Idea CoLor Scheme) extension to avoid confusion about compatibility problems with older platform versions:
 if only standard attributes are set, they will not be used by the version prior to 12.1 and this will result in different highlighting colors.
 
-# Plug-in Developers
+## Plug-in Developers
 
-## Text Attribute Key Dependency
+### Text Attribute Key Dependency
 
 The easiest and the best way to specify highlighting text attributes is to specify a dependency on one of standard keys defined in [`DefaultLanguageHighlighterColors`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/editor/DefaultLanguageHighlighterColors.java):
 
@@ -43,7 +43,7 @@ Remember that using fixed default attributes *will force*  a scheme designer to 
 Otherwise its default colors may visually conflict with a color scheme.
 If the scheme designer doesn't have a language plug-in, he will not be able to fix this at all.
 
-## Providing Attributes for Specific Schemes
+### Providing Attributes for Specific Schemes
 
 A language plug-in may provide default text attributes for "Default" and "Darcula" bundled schemes or basically for any other scheme if the scheme's name is known.
 This can be done in `plugin.xml` by adding an `com.intellij.additionalTextAttributes` extension providing the name of the file containing desired text attributes, for example:
@@ -84,9 +84,9 @@ The file itself is an extract from a color scheme with required attributes, for 
 A scheme designer may need to check that these copied attributes do not conflict with his/her color scheme although in this case the plug-in is installed and it should not cause any problems.
 Anyway, try to stick with a simple key dependency if possible (note that it works well for "Darcula" too), provide explicit attributes only if really necessary.
 
-# Scheme Designers
+## Scheme Designers
 
-## A Typical Workflow for a New Scheme Creation
+### A Typical Workflow for a New Scheme Creation
 
 *  Choose a scheme which will be used as a base, for example "Default"
 
@@ -104,7 +104,7 @@ In most cases this may not be needed but there are two cases which may require a
     This can be fixed either by resetting all the attributes to restore the inheritance from Language Defaults (see below) or by setting other colors suitable for the scheme.
     The first way is preferable since it will require less effort to change the color scheme later.
 
-## Text Attributes Inheritance
+### Text Attributes Inheritance
 
 For many language text attributes which do not have any values there will be a line indicating that the attributes are inherited from a certain section/attributes, for example: "Keyword (Language Defaults)".
 If an element has *any*  attributes set, only these attributes are used, all attributes from the base element are ignored.

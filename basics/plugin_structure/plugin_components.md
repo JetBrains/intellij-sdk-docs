@@ -11,7 +11,8 @@ uninstall plugins without restarting the IDE).
 
 Plugin components are defined using `<application-components>`, `<project-components>`, and `<module-components>`
 tags in a `plugin.xml` file. 
-
+                            
+## Migration
 To migrate existing code from components to more modern APIs, please use the following guidelines:
 
   * To manage some state or logic that is only needed when the user performs a specific operation,

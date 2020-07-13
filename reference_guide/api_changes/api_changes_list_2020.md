@@ -151,6 +151,16 @@ Support for JavaFX deprecated
 `com.intellij.codeInsight.actions.FormatChangedTextUtil.getChangedElements(Project, Change[], Function)` method removed
 : Use `com.intellij.codeInsight.actions.VcsFacadeImpl.getVcsInstance().getChangedElements(...)` instead. 
 
+## GitHub
+
+`org.jetbrains.plugins.github.util.LazyCancellableBackgroundProcessValue(ProgressManager)` constructor removed
+: Required for more tight control of task scheduling. Use `org.jetbrains.plugins.github.util.LazyCancellableBackgroundProcessValue.Companion#create(ProgressManager, (ProgressIndicator) -> T)` instead of subclassing
+
+`org.jetbrains.plugins.github.util.LazyCancellableBackgroundProcessValue.compute(ProgressIndicator)` method return type changed from `T` to `CompletableFuture<T>`
+: Required for more tight control of task scheduling. Use `org.jetbrains.plugins.github.util.LazyCancellableBackgroundProcessValue.Companion#create(ProgressManager, (ProgressIndicator) -> T)` instead of subclassing
+
+`org.jetbrains.plugins.github.pullrequest.ui.GHCompletableFutureLoadingModel()` constructor removed
+: Model was made disposable and it is now required to pass parent disposable in constructor
 
 ## Changes in Groovy Plugin 2020.2
 

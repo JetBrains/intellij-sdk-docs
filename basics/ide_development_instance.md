@@ -8,6 +8,8 @@ redirect_from:
 A JetBrains feature for developing plugins is running or debugging a plugin project from within an IntelliJ Platform-based IDE such as IntelliJ IDEA. 
 Selecting the [**runIde**](/tutorials/build_system/prerequisites.md#running-a-simple-gradle-based-intellij-platform-plugin) task for a Gradle-based project (or [**Run**](getting_started/running_and_debugging_a_plugin.md) menu for a DevKit-based project) will launch a _Development Instance_ of the IDE with the plugin enabled.
 This page describes how to control some of the settings for the Development Instance.
+                                            
+> **TIP** Please see also [Advanced Configuration](https://www.jetbrains.com/help/idea/tuning-the-ide.html) for general VM options and properties.
 
 ## Using a JetBrains Runtime for the Development Instance
 A common use case is to develop (build) a plugin project against a JDK, e.g. Java 8, and then run or debug the plugin in a Development Instance of the IDE.

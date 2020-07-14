@@ -68,7 +68,7 @@ When using Gradle, a number of metadata elements will be provided at build time 
   <depends optional="true" config-file="mysecondplugin.xml">com.MySecondPlugin</depends>
 
   <!-- Minimum and maximum build of IDE compatible with the plugin -->
-  <idea-version since-build="183" until-build="183.*"/>
+  <idea-version since-build="193" until-build="193.*"/>
 
   <!-- Resource bundle (/messages/MyPluginBundle.properties) to be used
        with `key` attributes in extension points and implicit keys like

@@ -140,7 +140,7 @@ There is no IntelliJ Platform-related reason they should as they serve different
 The `<name>` element (used as the plugin's display name) is often the same as `rootProject.name`, but can be more explanatory.
 
 The `<id>` value must be a unique identifier over all plugins, typically a concatenation of the specified _GroupId_ and _ArtifactId_.
-
+Please note that it is impossible to change the `<id>` of a published plugin without losing automatic updates for existing installations.
 
 ## Adding Gradle Support to an Existing DevKit-Based IntelliJ Platform Plugin
 Converting a [DevKit-based](/basics/getting_started/using_dev_kit.md) plugin project to a Gradle-based plugin project can be done using the New Project Wizard to create a Gradle-based project around the existing DevKit-based project: 

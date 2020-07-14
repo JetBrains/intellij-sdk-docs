@@ -72,10 +72,10 @@ When using Gradle, a number of metadata elements will be provided at build time 
 
   <!-- Resource bundle (/messages/MyPluginBundle.properties) to be used
        with `key` attributes in extension points and implicit keys like
-       `action.[ActionID].text` -->
+       `action.[ActionID].text|description` -->
   <resource-bundle>messages.MyPluginBundle</resource-bundle>
 
-  <!-- Plugin's application components (note that components are deprecated and should not be used in new plugins) 
+  <!-- Plugin's application components / DEPRECATED - do not use in new plugins 
        See https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_components.html for migration steps
   -->
   <application-components>
@@ -88,7 +88,7 @@ When using Gradle, a number of metadata elements will be provided at build time 
     </component>
   </application-components>
 
-  <!-- Plugin's project components (note that components are deprecated and should not be used in new plugins) 
+  <!-- Plugin's project components / DEPRECATED - do not use in new plugins 
        See https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_components.html for migration steps
   -->
   <project-components>
@@ -108,7 +108,7 @@ When using Gradle, a number of metadata elements will be provided at build time 
     </component>
   </project-components>
 
-  <!-- Plugin's module components (note that components are deprecated and should not be used in new plugins)  
+  <!-- Plugin's module components / DEPRECATED - do not use in new plugins
        See https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_components.html for migration steps
   -->
   <module-components>
@@ -134,7 +134,7 @@ When using Gradle, a number of metadata elements will be provided at build time 
 
   <!-- Extensions which the plugin adds to extension points
        defined by the IntelliJ Platform or by other plugins.
-       The "defaultExtensionNs " attribute must be set to the
+       The "defaultExtensionNs" attribute must be set to the
        ID of the plugin defining the extension point, or to 
        "com.intellij" if the extension point is defined by the
        IntelliJ Platform. The name of the tag within the <extensions>

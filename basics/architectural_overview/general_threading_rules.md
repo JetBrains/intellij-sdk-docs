@@ -6,20 +6,21 @@ title: General Threading Rules
 ## Read/Write Lock
 
 In general, code-related data structures in the *IntelliJ Platform* are covered by a single reader/writer lock. 
-This applies to PSI, VFS, and project root model.
 
-Reading data is allowed from any thread. 
+You must not access the model outside a read or write action for the following subsystems:
+- PSI 
+- VFS
+- project root model.
+
+**Reading** data is allowed from any thread. 
 Reading data from the UI thread does not require any special effort. 
 However, read operations performed from any other thread need to be wrapped in a read action by using `ApplicationManager.getApplication().runReadAction()` or, shorter, [`ReadAction`](upsource:///platform/core-api/src/com/intellij/openapi/application/ReadAction.java) `run()`/`compute()`.
-
-Writing data is only allowed from the UI thread, and write operations always need to be wrapped in a write action with `ApplicationManager.getApplication().runWriteAction()` or, shorter, [`WriteAction`](upsource:///platform/core-api/src/com/intellij/openapi/application/WriteAction.java) `run()`/`compute()`.
-
-Modifying the model is only allowed from write-safe contexts, including user actions and `invokeLater()` calls from them (see the next section).
-You may not modify PSI, VFS, or project model from inside UI renderers or `SwingUtilities.invokeLater()` calls.
-
-You must not access the model outside a read or write action.
 The corresponding objects are not guaranteed to survive between several consecutive read actions.
 As a rule of thumb, whenever starting a read action, check if PSI/VFS/project/module is still valid.
+
+**Writing** data is only allowed from the UI thread, and write operations always need to be wrapped in a write action with `ApplicationManager.getApplication().runWriteAction()` or, shorter, [`WriteAction`](upsource:///platform/core-api/src/com/intellij/openapi/application/WriteAction.java) `run()`/`compute()`.
+Modifying the model is only allowed from write-safe contexts, including user actions and `invokeLater()` calls from them (see the next section).
+You may not modify PSI, VFS, or project model from inside UI renderers or `SwingUtilities.invokeLater()` calls.
 
 
 ## Modality and `invokeLater()`

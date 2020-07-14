@@ -6,22 +6,30 @@ This page lists notable additions and updates to the SDK documentation and code 
 
 See [Recently Updated](/recently_updated.md) ([RSS](https://github.com/JetBrains/intellij-sdk-docs/commits/master.atom)) for a detailed changelog.
 
-
 # 2020
 
 ## June
+
+Dynamic Plugins update
+: Added new sections _Code_ and _Troubleshooting_ to [Dynamic Plugins](/basics/plugin_structure/dynamic_plugins.md).
+
+GitHub IntelliJ Platform Plugin Template
+: Create new plugins with a preconfigured project scaffold and CI in [one click](/tutorials/github_template.md).
+
 Disposer & Disposable
 : Added [reference](/basics/disposers.md) discussing resource cleanup/management.
 
 ## May
+
 Settings (Preferences)
 : Added [guide](/reference_guide/settings_guide.md) and [tutorial](/tutorials/settings_tutorial.md) on integrating with IDE Settings dialog.
 
 UI Inspector
-: Inspect Swing components and associated data (like `AnAction` for menu item) using [UI Inspector](/reference_guide/internal_actions/internal_ui_inspector.md). 
+: Inspect Swing components and associated data (like `AnAction` for menu item) using [UI Inspector](/reference_guide/internal_actions/internal_ui_inspector.md).
 
 ## March
-JCEF Support (_Experimental Feature_) 
+
+JCEF Support (_Experimental Feature_)
 : Allows [embedding](/reference_guide/jcef.md) Chromium-based browser in the IDE.
 
 ## February
@@ -37,17 +45,15 @@ Custom Language Support Tutorial converted to Gradle
 Targeting specific IDEs
 : [Part VIII - Product Specific](/basics/getting_started/plugin_compatibility.md) has been expanded massively, now also covering each IDE with its own dedicated page.
 
-
 # 2019
 
 ## December
 
 Dynamic Plugins support
-: Added starting point [Dynamic Plugins](/basics/plugin_structure/dynamic_plugins.md) for migrating plugins (IntelliJ Platform 2020.1 and later). 
+: Added starting point [Dynamic Plugins](/basics/plugin_structure/dynamic_plugins.md) for migrating plugins (IntelliJ Platform 2020.1 and later).
 
 Plugin Components migration
 : Components being a legacy feature, the [updated page](/basics/plugin_structure/plugin_components.md) describes migrating them to modern replacement API.
-
 
 ## October
 

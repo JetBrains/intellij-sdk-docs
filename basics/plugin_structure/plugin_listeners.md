@@ -5,7 +5,7 @@ title: Plugin Listeners
 
 > **NOTE** Defining listeners in `plugin.xml` is supported starting with version 2019.3 of the platform.
 
-> **NOTE** NOTE: Listener implementations must be stateless and may not implement life-cycle (e.g., `Disposable`).
+> **NOTE** Listener implementations must be stateless and may not implement life-cycle (e.g., `Disposable`).
 
 _Listeners_ allow plugins to declaratively subscribe to events delivered through the message bus (see [Messaging infrastructure](/reference_guide/messaging_infrastructure.md) for details). 
 

@@ -3,15 +3,13 @@ title: Notifications
 ---
 <!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-## Notifications
-
 One of the leading design principles is avoiding the use of modal message boxes for notifying the user about errors and other situations that may warrant the user's attention.
 As a replacement, the *IntelliJ Platform* provides multiple non-modal notification UI options.
 
 ### Dialogs
 
-When working in a modal dialog, instead of checking the validity of the input when the `OK` button is pressed and notifying the user about invalid data with a modal dialog, the recommended approach is to use
-[`DialogBuilder.doValidate()`](upsource:///platform/platform-api/src/com/intellij/openapi/ui/DialogBuilder.java),
+When working in dialog, instead of checking the validity of the input when the _OK_ button is pressed and notifying the user about invalid data with a modal dialog, the recommended approach is to use
+[`DialogWrapper.doValidate()`](upsource:///platform/platform-api/src/com/intellij/openapi/ui/DialogWrapper.java),
 which was described previously.
 
 ### Editor Hints

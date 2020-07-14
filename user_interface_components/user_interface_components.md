@@ -8,7 +8,7 @@ The IntelliJ Platform includes a large number of custom Swing components. Using 
 > **TIP** Use [UI Inspector](/reference_guide/internal_actions/internal_ui_inspector.md) to locate the underlying Swing component implementation or to inspect an existing UI at runtime.
 
 > **NOTE** The recommended way of building UIs on the IntelliJ Platform (2019.2 and later) is using
-[Kotlin UI DSL](/user_interface_components/kotlin_ui_dsl.md).
+[Kotlin UI DSL](/user_interface_components/kotlin_ui_dsl.md). Using GUI designer with Kotlin is currently [not supported](https://youtrack.jetbrains.com/issue/KT-6660). 
 
 The following components are particularly noteworthy:
 

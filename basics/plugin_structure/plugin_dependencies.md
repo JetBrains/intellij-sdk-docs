@@ -11,7 +11,14 @@ For more information about dependencies on the IntelliJ Platform modules, see Pa
  
 To express dependencies on classes from other plugins or modules, perform the following three required steps:
 
-## 1. Preparing Sandbox
+## 1. Locating Plugin ID and Preparing Sandbox
+For plugins published on [JetBrains Plugins Repository](https://plugins.jetbrains.com)
+- open plugin's detail page 
+- select _Versions_ tab
+- open detail page for the desired version
+
+Otherwise, locate the plugin's main JAR file containing `META-INF/plugin.xml` descriptor with `<id>` tag (or `<name>` if not specified).
+
 If the plugin is not bundled with the target IDE, run the (sandbox) [IDE Development Instance](/basics/ide_development_instance.md) of your target IDE and install the plugin there.
 
 ## 2. Project Setup
@@ -38,7 +45,9 @@ intellij {
 
 > **NOTE** Transitive dependencies required for tests must currently be [specified explicitly](https://github.com/JetBrains/gradle-intellij-plugin/issues/38). 
 
-#### 2.2 DevKit
+### 2.2 DevKit
+> **TIP** Existing DevKit-based projects can be converted to use [Gradle setup](/tutorials/build_system/prerequisites.md#adding-gradle-support-to-an-existing-devkit-based-intellij-platform-plugin) where managing dependencies is fully automated.
+
 If the project is using [DevKit](/basics/getting_started/using_dev_kit.md), add the JARs of the plugin on which the project depends to the **classpath** of the *IntelliJ Platform SDK*.
 
 > **WARNING** Do not add the plugin JARs as a library: this will fail at runtime because the IntelliJ Platform will load two separate copies of the dependency plugin classes.
@@ -48,8 +57,6 @@ select the plugin JAR file or files:
 * For bundled plugins, the plugin JAR files are located in `plugins/<pluginname>` or `plugins/<pluginname>/lib` under the main installation directory.
   If you're not sure which JAR to add, you can add all of them.
 * For non-bundled plugins, the plugin JAR files are located in `config/plugins/<pluginname>` or `config/plugins/<pluginname>/lib` under the directory specified as "Sandbox Home" in the IntelliJ Platform Plugin SDK settings.
-
-![Adding Plugin to Classpath](img/add_plugin_dependency.png)
 
 ## 3. Dependency Declaration in plugin.xml
 Regardless of whether a plugin project uses [Modules Available in All Products](/basics/getting_started/plugin_compatibility.md#modules-available-in-all-products), or [Modules Specific to Functionality](/basics/getting_started/plugin_compatibility.md#modules-specific-to-functionality), the correct module must be listed as a dependency in `plugin.xml`. 

@@ -5,7 +5,7 @@ title: Publishing a Plugin
 
 When your plugin is ready you can publish it to a plugin repository so that other users can install it. 
 You can choose to publish it on the [JetBrains Plugins Repository](https://plugins.jetbrains.com)
-or a custom plugin repository. 
+or a [custom plugin repository](/basics/getting_started/update_plugins_format.md). 
 
 ### Publishing to the JetBrains Plugins Repository
 To upload your plugin to the [JetBrains Plugins Repository](https://plugins.jetbrains.com), 

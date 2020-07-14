@@ -11,7 +11,8 @@ uninstall plugins without restarting the IDE).
 
 Plugin components are defined using `<application-components>`, `<project-components>`, and `<module-components>`
 tags in a `plugin.xml` file. 
-
+                            
+## Migration
 To migrate existing code from components to more modern APIs, please use the following guidelines:
 
   * To manage some state or logic that is only needed when the user performs a specific operation,
@@ -23,5 +24,5 @@ To migrate existing code from components to more modern APIs, please use the fol
     Plugin code should only be executed when projects are opened or when the user invokes an action of a plugin. If this cannot be avoided, add a [listener](plugin_listeners.md) subscribing to the [AppLifecycleListener](upsource:///platform/platform-impl/src/com/intellij/ide/AppLifecycleListener.java) topic.
   * To execute code when a project is being opened, provide [StartupActivity](upsource:///platform/core-api/src/com/intellij/openapi/startup/StartupActivity.java) implementation and register an [extension](plugin_extensions.md) for the `com.intellij.postStartupActivity` or `com.intellij.backgroundPostStartupActivity` extension point (the latter is supported starting with version 2019.3 of the platform).
   * To execute code on project closing or application shutdown, implement the `Disposable` interface in a [Service](plugin_services.md)
-    and place the code in the `dispose()` method, or use `Disposer.register()` passing a `Project` or `Application` instance
-    as the `parent` argument.
+    and place the code in the `dispose()` method. Alternatively, use `Disposer.register()` passing a `Project` or `Application` service instance
+    as the `parent` argument (see [Choosing a Disposable Parent](/basics/disposers.md#choosing-a-disposable-parent)).

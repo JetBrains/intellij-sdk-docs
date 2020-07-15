@@ -33,7 +33,7 @@ Framework integration consists of improved code insight features which are typic
 * Specific code insight
 * Direct access to framework-specific functionality
 
-Refer to the [Struts 2 plugin](https://plugins.jetbrains.com/plugin/1698) as an example of framework integration.
+Refer to the [Struts 2 plugin](https://github.com/JetBrains/intellij-plugins/tree/master/struts2) as an example of framework integration.
 
 ## Tool Integration
 
@@ -49,4 +49,4 @@ Refer to the [Gerrit integration](https://plugins.jetbrains.com/plugin/7272?pr=i
 
 ## User Interface Add-Ons
 
-Plugins in this category apply various changes to the standard user interface of the IDE. Some newly added components are interactive and provide new functionality, while others are limited to visual modifications only. The [Background Image](https://plugins.jetbrains.com/plugin/72) plugin may serve as an example.
+Plugins in this category apply various changes to the standard user interface of the IDE. Some newly added components are interactive and provide new functionality, while others are limited to visual modifications only. The [Random Background](https://plugins.jetbrains.com/plugin/9692-random-background) plugin may serve as an example.

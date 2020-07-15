@@ -25,7 +25,8 @@ The JetBrains Runtime is determined from the JDK version used to build the plugi
 If a plugin is being developed against the Java 8 SE Development Kit 8 for macOS, for example, `jdk-8u212-macosx-x64.dmg`.
 (This example will use macOS, but Windows and Linux follow the same procedure.)
 To acquire the compatible JetBrains Runtime:
-* Go to the [JetBrains Bintray site](https://bintray.com/jetbrains/intellij-jbr).
+* Go to the [JetBrains Runtime Site](https://confluence.jetbrains.com/display/JBR/JetBrains+Runtime) for general information and latest build
+* Open [Release notes](https://confluence.jetbrains.com/display/JBR/Release+notes) page to access all releases.
 * Select the package name corresponding to the platform and SDK version.
   In this case the package name is `jbrsdk8-osx-x64` for **j**et **b**rains **r**untime _sdk_ version 8, macOS x64 hardware.
 * On the macOS package page of the JetBrains Bintray site, select the **Files** menu.

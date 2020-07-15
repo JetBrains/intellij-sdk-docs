@@ -1,6 +1,7 @@
 # IntelliJ Platform SDK Code Samples
 
 [![official JetBrains project](https://jb.gg/badges/official.svg)][jb:confluence-on-gh]
+[![JetBrains IntelliJ Platform SDK Docs](https://jb.gg/badges/docs.svg)][jb:docs]
 [![Twitter Follow](https://img.shields.io/twitter/follow/JBPlatform?style=flat)][jb:twitter]
 [![Build](https://github.com/JetBrains/intellij-sdk-docs/workflows/Build/badge.svg)][gh:build]
 [![Slack](https://img.shields.io/badge/Slack-%23intellij--platform-blue)][jb:slack]
@@ -42,6 +43,7 @@ organized.
 [gh:template]: https://github.com/JetBrains/intellij-platform-plugin-template
 
 [jb:confluence-on-gh]: https://confluence.jetbrains.com/display/ALL/JetBrains+on+GitHub
+[jb:docs]: http://www.jetbrains.org/intellij/sdk/docs
 [jb:products]: https://www.jetbrains.com/products.html
 [jb:slack]: https://plugins.jetbrains.com/slack
 [jb:twitter]: https://twitter.com/JBPlatform

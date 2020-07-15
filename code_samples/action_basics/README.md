@@ -36,9 +36,6 @@ or listeners provided by the plugin.
 
 [Actions documentation][docs:actions]
 
-## Function
-
-
 [docs]: http://www.jetbrains.org/intellij/sdk/docs
 [docs:actions]: https://www.jetbrains.org/intellij/sdk/docs/basics/action_system.html
 [docs:gradle]: https://jetbrains.org/intellij/sdk/docs/tutorials/build_system.html

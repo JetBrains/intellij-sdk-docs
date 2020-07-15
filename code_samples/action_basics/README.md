@@ -1,4 +1,4 @@
-[🔙 IntelliJ Platform SDK Code Samples](../README.md) [![JetBrains IntelliJ Platform SDK Docs](https://jb.gg/badges/docs.svg)][docs]
+[↩️ &nbsp; IntelliJ Platform SDK Code Samples](../README.md) <br/> [![JetBrains IntelliJ Platform SDK Docs](https://jb.gg/badges/docs.svg)][docs]
 
 # Action Basics
 

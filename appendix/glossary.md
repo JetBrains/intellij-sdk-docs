@@ -49,6 +49,9 @@ Local History _(LVCS)_
 : A builtin &rarr; _Version Control System_ tracking all changes in the project locally.
 
 ## J
+                           
+JetBrains Project System _(JPS)_
+: Represents the project model in [External Build](/reference_guide/frameworks_and_external_apis/external_builder_api.md#accessing-project-model-and-configuration-from-external-build) process.
 
 JetBrains Runtime _(JBR)_
 : The [JetBrains Runtime](/basics/ide_development_instance.md#using-a-jetbrains-runtime-for-the-development-instance) is the default bundled runtime for all IntelliJ Platform-based IDEs by JetBrains.

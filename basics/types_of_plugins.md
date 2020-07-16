@@ -7,10 +7,24 @@ Products based on the *IntelliJ Platform* can be modified and adjusted for custo
 
 The most common types of plugins include:
 
+* UI Themes
 * Custom language support
 * Framework integration
 * Tool integration
 * User interface add-ons
+
+## UI Themes
+
+[UI Themes](/reference_guide/ui_themes/themes_intro.md) give designers the ability to customize the appearance of built-in IDE UI elements.
+Custom UI Themes can:
+
+* substitute icons,
+* change the colors of icons and UI controls,
+* alter the borders and insets of UI controls,
+* provide custom editor schemes,
+* add background images.
+
+The [UI Themes available for download](https://plugins.jetbrains.com/search?headline=164-theme&tags=Theme) illustrate the creative possibilities.
 
 ## Custom Language Support
 

@@ -1,5 +1,5 @@
 # Comparing References Inspection [![JetBrains IntelliJ Platform SDK Docs](https://jb.gg/badges/docs.svg)][docs]
-Reference: [Code Inspections in SDK Docs][docs:code_inspections]
+Reference: [Code Inspections in IntelliJ SDK Docs][docs:code_inspections]
 
 ## Quickstart
 
@@ -21,11 +21,11 @@ or listeners provided by the plugin.
 
 ### Extension Points
 
-| Name            | Implementation Class                                                | Interface                          |
-| --------------- | ------------------------------------------------------------------- | ---------------------------------- |
-| localInspection | [ComparingReferencesInspection][file:ComparingReferencesInspection] | [AbstractBJLIT][sdk:AbstractBJLIT] |
+| Name            | Implementation Class                                                | Interface                                                |
+| --------------- | ------------------------------------------------------------------- | -------------------------------------------------------- |
+| localInspection | [ComparingReferencesInspection][file:ComparingReferencesInspection] | [AbstractBaseJavaLocalInspectionTool][sdk:AbstractBJLIT] |
 
-[Extension Points documentation][docs:ep]
+Reference: [Plugin Extension Points in IntelliJ SDK Docs][docs:ep]
 
 [docs]: http://www.jetbrains.org/intellij/sdk/docs
 [docs:code_inspections]: https://www.jetbrains.org/intellij/sdk/docs/tutorials/code_inspections.html
@@ -36,5 +36,5 @@ or listeners provided by the plugin.
 [file:ComparingReferencesInspection]: ./src/main/java/org/intellij/sdk/codeInspection/ComparingReferencesInspection.java
 [file:plugin.xml]: ./src/main/resources/META-INF/plugin.xml
 
-[sdk:AbstractBJLIT]: https://github.com/JetBrains/intellij-community/blob/master/java/java-analysis-api/src/com/intellij/codeInspection/AbstractBJLIT.java
+[sdk:AbstractBJLIT]: https://github.com/JetBrains/intellij-community/blob/master/java/java-analysis-api/src/com/intellij/codeInspection/AbstractBaseJavaLocalInspectionTool.java
 

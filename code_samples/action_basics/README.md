@@ -1,5 +1,5 @@
 # Action Basics [![JetBrains IntelliJ Platform SDK Docs](https://jb.gg/badges/docs.svg)][docs]
-Reference: [IntelliJ Action System Tutorial in SDK Docs][docs:actions]
+Reference: [Action System in IntelliJ SDK Docs][docs:actions]
 
 ## Quickstart
 
@@ -34,7 +34,7 @@ or listeners provided by the plugin.
 | `org.intellij.sdk.action.CustomDefaultActionGroup` | [CustomDefaultActionGroup][file:CustomDefaultActionGroup] | [ActionGroup][sdk:ActionGroup] |
 | `org.intellij.sdk.action.DynamicActionGroup`       | [DynamicActionGroup][file:DynamicActionGroup]             | [ActionGroup][sdk:ActionGroup] |
 
-[Actions documentation][docs:actions]
+Reference: [Action System in IntelliJ SDK Docs][docs:actions]
 
 [docs]: http://www.jetbrains.org/intellij/sdk/docs
 [docs:actions]: https://www.jetbrains.org/intellij/sdk/docs/basics/action_system.html

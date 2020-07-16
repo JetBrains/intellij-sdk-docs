@@ -1,5 +1,5 @@
-[↩️ &nbsp; IntelliJ Platform SDK Code Samples](../README.md)
 # Action Basics [![JetBrains IntelliJ Platform SDK Docs](https://jb.gg/badges/docs.svg)][docs]
+Reference: [IntelliJ Action System Tutorial in SDK Docs][docs:actions]
 
 ## Quickstart
 

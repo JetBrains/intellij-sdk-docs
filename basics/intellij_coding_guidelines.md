@@ -5,19 +5,19 @@ title: IntelliJ Platform Coding Guidelines
 
 If you are writing code that you would like to contribute to the IntelliJ Platform (either as a patch or as a plugin), following these guidelines will make it easier for the JetBrains development team to review and accept your changes.
 
-#### Following the Latest Source Code
+## Following the Latest Source Code
 
 If you submit patches, we strongly recommend building your patches against the latest version of the code from the Git repository. The easiest way to do so is to clone the JetBrains Git repository, track your work in Git, and create patches using the "git format-patch" command.
 
-#### General Architectural Principles
+## General Architectural Principles
 
 Please do your best to follow common Java architectural principles. "Effective Java" by Joshua Bloch is a good place to start.
 
-#### Tests
+## Tests
 
 Most of the existing functionality of IntelliJ IDEA is covered by functional tests. If the area you're modifying is covered by tests, you must run the tests and make sure that your changes do not introduce any new test failures. It's also strongly recommended that you provide new functional tests that cover the bugs you fix or the new features that you add.
 
-#### Code Formatting
+## Code Formatting
 
 We're generally pretty lax about code formatting, but at least the following conventions must be observed:
 
@@ -27,15 +27,15 @@ We're generally pretty lax about code formatting, but at least the following con
 
 The easiest way to follow our code formatting guidelines is to reformat your code submissions using the shared code style, which is included in the IntelliJ IDEA Community Edition project directory.
 
-#### Inspections
+## Inspections
 
 The IntelliJ IDEA Community Edition project includes a shared inspection profile. We strongly recommend making sure that the code you submit does not contain any warnings highlighted by the inspections configured in that inspection profile.
 
-#### JavaDoc Comments
+## JavaDoc Comments
 
 If your code adds new OpenAPI interfaces, classes, methods or extension points, you must provide JavaDoc comments describing the parameters and intended usage of the APIs. Providing JavaDoc or other comments for other parts of the code is a good idea but isn't required.
 
-#### Commits
+## Commits
 
 To avoid unnecessary work when reviewing your changes, please follow these guidelines:
 

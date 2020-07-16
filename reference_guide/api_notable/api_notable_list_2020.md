@@ -43,6 +43,9 @@ Previewing Intention/Quick Fix
 Delegate Run Anything/Terminal commands to IDE features
 : Switch to matching IDE feature by implementing `com.intellij.terminal.TerminalShellCommandHandler` (extension point `com.intellij.terminal.shellCommandHandler`). [Blog post](https://blog.jetbrains.com/idea/2020/07/run-ide-features-from-the-terminal/)
 
+Deprecating JavaFX in favor of JCEF
+: We recommend switching to [JCEF](/reference_guide/jcef.md), please see [blog post](https://blog.jetbrains.com/platform/2020/07/javafx-and-jcef-in-the-intellij-platform/) for details.
+
 # 2020.1 
 
 ## Notable Changes in IntelliJ Platform 2020.1

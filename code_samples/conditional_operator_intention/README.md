@@ -3,7 +3,7 @@
 
 ## Quickstart
 
-Conditional Operator Converter code sample project provides an intention for converting the *ternary operator*
+Conditional Operator Converter provides an intention for converting the *ternary operator*
 into the *if* statement, i.e.:
 
 ```java
@@ -41,7 +41,7 @@ Conditional Operator Converter
 plugin depends on the [IntelliJ Platform SDK][docs] and [Gradle][docs:gradle] as a build system.
 
 The main plugin definition file is stored in the [plugin.xml][file:plugin.xml] file, which is created accordingly
-to the [Plugin Configuration File documentation][docs:pluginxml]. It describes definitions of the actions, extensions,
+to the [Plugin Configuration File documentation][docs:plugin.xml]. It describes definitions of the actions, extensions,
 or listeners provided by the plugin.
 
 ### Extension Points
@@ -52,11 +52,12 @@ or listeners provided by the plugin.
 
 *Reference: [Plugin Extension Points in IntelliJ SDK Docs][docs:ep]*
 
+
 [docs]: http://www.jetbrains.org/intellij/sdk/docs
 [docs:conditional_operator_intention]: https://www.jetbrains.org/intellij/sdk/docs/tutorials/code_intentions.html
 [docs:ep]: https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_extension_points.html
-[docs:gradle]: https://jetbrains.org/intellij/sdk/docs/tutorials/build_system.html
-[docs:pluginxml]: https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_configuration_file.html
+[docs:gradle]: https://www.jetbrains.org/intellij/sdk/docs/tutorials/build_system.html
+[docs:plugin.xml]: https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_configuration_file.html
 
 [file:ConditionalOperatorConverter]: ./src/main/java/org/intellij/sdk/intention/ConditionalOperatorConverter.java
 [file:plugin.xml]: ./src/main/resources/META-INF/plugin.xml

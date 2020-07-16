@@ -1,37 +1,64 @@
-[IntelliJ Platform SDK Code Samples](../README.md)
-
-# Conditional Operator Converter
+# Conditional Operator Converter [![JetBrains IntelliJ Platform SDK Docs](https://jb.gg/badges/docs.svg)][docs]
+*Reference: [Code Intentions in IntelliJ SDK Docs][docs:conditional_operator_intention]*
 
 ## Quickstart
 
-TODO
+Conditional Operator Converter code sample project provides an intention for converting the *ternary operator*
+into the *if* statement, i.e.:
+
+```java
+public class X {
+  void f(boolean isMale) {
+    String title = isMale ? "Mr." : "Ms.";
+    System.out.println("title = " + title);
+ }
+}
+```
+
+will become:
+
+```java
+public class X {
+  void f(boolean isMale) {
+    String title;
+    if (isMale) {
+      title = "Mr.";
+    } else {
+      title = "Ms.";
+    }
+    System.out.println("title = " + title);
+  }
+}
+```
+
+To invoke the intention action, it is necessary to place the caret on the `?` character of the ternary operator.
+The converter in the `isAvailable` method, has defined the token check to match `JavaTokenType.QUEST`, which is `?`
+character. 
 
 ## Structure
 
-The plugin was developed using the [IntelliJ Platform SDK][docs_sdk].
+Conditional Operator Converter
+plugin depends on the [IntelliJ Platform SDK][docs] and [Gradle][docs:gradle] as a build system.
 
-The main file is [plugin.xml][plugin.xml], which is created accordingly to the [Plugin Configuration File documentation][docs_pluginxml].
-It describes definitions of the actions, extensions, or listeners provided by the plugin:
+The main plugin definition file is stored in the [plugin.xml][file:plugin.xml] file, which is created accordingly
+to the [Plugin Configuration File documentation][docs:pluginxml]. It describes definitions of the actions, extensions,
+or listeners provided by the plugin.
 
 ### Extension Points
 
-| Name | Implementation Class | Interface |
-| ---- | -------------------- | --------- |
-| intentionAction | [ConditionalOperatorConverter][intentionAction_implementation] | [PsiElementBaseIntentionAction][intentionAction_interface] |
+| Name            | Implementation Class                                              | Interface                                                          |
+| --------------- | ----------------------------------------------------------------- | ------------------------------------------------------------------ |
+| intentionAction | [ConditionalOperatorConverter][file:ConditionalOperatorConverter] | [PsiElementBaseIntentionAction][sdk:PsiElementBaseIntentionAction] |
 
-[Extension Points documentation][docs_ep]
+*Reference: [Plugin Extension Points in IntelliJ SDK Docs][docs:ep]*
 
-## Function
+[docs]: http://www.jetbrains.org/intellij/sdk/docs
+[docs:conditional_operator_intention]: https://www.jetbrains.org/intellij/sdk/docs/tutorials/code_intentions.html
+[docs:ep]: https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_extension_points.html
+[docs:gradle]: https://jetbrains.org/intellij/sdk/docs/tutorials/build_system.html
+[docs:pluginxml]: https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_configuration_file.html
 
-TODO
+[file:ConditionalOperatorConverter]: ./src/main/java/org/intellij/sdk/intention/ConditionalOperatorConverter.java
+[file:plugin.xml]: ./src/main/resources/META-INF/plugin.xml
 
-[plugin.xml]: ./src/main/resources/META-INF/plugin.xml
-[docs_tool_windows]: https://www.jetbrains.org/intellij/sdk/docs/user_interface_components/tool_windows.html
-[docs_pluginxml]: https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_configuration_file.html
-[docs_sdk]: https://www.jetbrains.org/intellij/sdk/docs/intro/about.html
-[docs_ep]: https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_extension_points.html
-[docs_listeners]: https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_listeners.html
-[docs_run]: https://www.jetbrains.org/intellij/sdk/docs/tutorials/build_system/prerequisites.html#running-a-simple-gradle-based-intellij-platform-plugin
-
-[intentionAction_implementation]: ./src/main/java/org/intellij/sdk/intention/ConditionalOperatorConverter.java
-[intentionAction_interface]: https://github.com/JetBrains/intellij-community/blob/master/platform/lang-api/src/com/intellij/codeInsight/intention/PsiElementBaseIntentionAction.java
+[sdk:PsiElementBaseIntentionAction]: https://github.com/JetBrains/intellij-community/blob/master/platform/lang-api/src/com/intellij/codeInsight/intention/PsiElementBaseIntentionAction.java

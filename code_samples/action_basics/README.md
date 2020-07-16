@@ -1,5 +1,5 @@
 # Action Basics [![JetBrains IntelliJ Platform SDK Docs](https://jb.gg/badges/docs.svg)][docs]
-Reference: [Action System in IntelliJ SDK Docs][docs:actions]
+*Reference: [Action System in IntelliJ SDK Docs][docs:actions]*
 
 ## Quickstart
 
@@ -18,7 +18,8 @@ in three different ways:
 
 ## Structure
 
-Action Basics plugin depends on the [IntelliJ Platform SDK][docs] and [Gradle][docs:gradle] as a build system.
+Action Basics
+plugin depends on the [IntelliJ Platform SDK][docs] and [Gradle][docs:gradle] as a build system.
 
 The main plugin definition file is stored in the [plugin.xml][file:plugin.xml] file, which is created accordingly
 to the [Plugin Configuration File documentation][docs:pluginxml]. It describes definitions of the actions, extensions,
@@ -34,7 +35,7 @@ or listeners provided by the plugin.
 | `org.intellij.sdk.action.CustomDefaultActionGroup` | [CustomDefaultActionGroup][file:CustomDefaultActionGroup] | [ActionGroup][sdk:ActionGroup] |
 | `org.intellij.sdk.action.DynamicActionGroup`       | [DynamicActionGroup][file:DynamicActionGroup]             | [ActionGroup][sdk:ActionGroup] |
 
-Reference: [Action System in IntelliJ SDK Docs][docs:actions]
+*Reference: [Action System in IntelliJ SDK Docs][docs:actions]*
 
 [docs]: http://www.jetbrains.org/intellij/sdk/docs
 [docs:actions]: https://www.jetbrains.org/intellij/sdk/docs/basics/action_system.html

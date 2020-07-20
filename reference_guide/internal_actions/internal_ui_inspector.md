@@ -20,7 +20,7 @@ While enabled, centering the cursor on a UI element and pressing <kbd>Control/Cm
 
 For example, to get information about the _Build Project_ button's icon (hammer) on the toolbar (highlighted in green), put the mouse cursor on the icon and press <kbd>Control/Cmd</kbd>+<kbd>Alt</kbd> while clicking the mouse.
 
-The _UI Inspector_ displays that the icon has the internal path `Allcons.Actions.Compile`:
+The _UI Inspector_ displays that the icon has the internal path `AllIcons.Actions.Compile`:
 
 ![Internal Icon Info](img/internal_uii_icon_info.png)
 

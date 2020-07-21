@@ -28,6 +28,10 @@ Configuration of a Gradle-based PhpStorm plugin project is used as a tutorial in
 Many techniques are discussed, such as choosing a version of IntelliJ IDEA Ultimate given a targeted version of PhpStorm.
 The table below summarizes the `gradle-intellij-plugin` attributes to set in the `build.gradle` file for a PhpStorm plugin project:
 
+The table below summarizes the `gradle-intellij-plugin` attributes to set in the plugin project's `build.gradle` file.
+Click on an entry in the table's *Attribute* column to go to the documentation about that attribute.
+To see how these attributes appear in the `build.gradle` file for PhpStorm, see [Configuring build.gradle using the IntelliJ IDEA Product Attribute](/products/dev_alternate_products.md#configuring-buildgradle-using-the-intellij-idea-product-attribute).
+
 | `gradle-intellij-plugin` Attribute | <br>Attribute Value |
 |-----------|-------|
 | [`intellij.type`](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md#intellij-platform-properties) | `IU` for IntelliJ IDEA Ultimate. (The required PHP plugin isn't compatible with IntelliJ IDEA Community Edition.) |

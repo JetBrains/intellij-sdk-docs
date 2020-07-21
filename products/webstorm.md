@@ -8,9 +8,11 @@ title: WebStorm Plugin Development
 Plugin projects for WebStorm can be developed using IntelliJ IDEA with the `gradle-intellij-plugin`.
 
 ## Configuring Plugin Projects Targeting WebStorm
-The configuration of WebStorm plugin projects follows the methods described in [Configuring Plugin Projects using the IntelliJ IDEA Product Attribute](dev_alternate_products.md#configuring-plugin-projects-using-the-intellij-idea-product-attribute), and [Configuring the plugin.xml File](dev_alternate_products.md#configuring-pluginxml).
+The configuration of WebStorm plugin projects follows the methods described in [Configuring Plugin Projects using the IntelliJ IDEA Product Attribute](dev_alternate_products.md#configuring-plugin-projects-using-the-intellij-idea-product-attribute) and [Configuring the plugin.xml File](dev_alternate_products.md#configuring-pluginxml) for PhpStorm.
 
-The table below summarizes the `gradle-intellij-plugin` attributes to set in the `build.gradle` file:
+The table below summarizes the `gradle-intellij-plugin` attributes to set in the plugin project's `build.gradle` file.
+Click on an entry in the table's *Attribute* column to go to the documentation about that attribute.
+To see how these attributes appear in a similar `build.gradle` file for PhpStorm, see [Configuring build.gradle using the IntelliJ IDEA Product Attribute](/products/dev_alternate_products.md#configuring-buildgradle-using-the-intellij-idea-product-attribute).
 
 | `gradle-intellij-plugin` Attribute | Attribute Value |
 |-----------|-------|

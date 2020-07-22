@@ -34,4 +34,4 @@ Run the `simple_language_plugin` in a Development Instance and open the [`test.s
 Erase the property "English" and invoke [Basic Code Completion](https://www.jetbrains.com/help/idea/auto-completing-code.html#invoke-basic-completion). 
 The choice "Hello" is shown:
 
-![Completion](img/completion.png){:width="800px"}
+![Completion](img/completion.png)

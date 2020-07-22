@@ -32,4 +32,4 @@ Select **Code \| Comment with Line Comment**.
 The line is converted to a comment.
 Select **Code \| Comment with Line Comment** again, and the comment is converted back to active code.
 
-![Commenter](img/commenter.png){:width="800px"}
+![Commenter](img/commenter.png)

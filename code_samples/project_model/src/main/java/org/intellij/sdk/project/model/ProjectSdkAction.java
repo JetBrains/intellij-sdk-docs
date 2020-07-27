@@ -15,10 +15,13 @@ public class ProjectSdkAction extends AnAction {
   public void actionPerformed(@NotNull final AnActionEvent event) {
     Project project = event.getProject();
     if (project != null) {
-      String projectSDKName = ProjectRootManager.getInstance(project).getProjectSdkName();
-      String newProjectSdkName = "New Sdk Name";
-      ProjectRootManager.getInstance(project).setProjectSdkName(newProjectSdkName);
-      Messages.showInfoMessage(projectSDKName + " has changed to " + newProjectSdkName, "Project Sdk Info");
+      Sdk sdk = ProjectRootManager.getInstance(project).getProjectSdk();
+      if (sdk != null) {
+        String projectSDKName = sdk.getName();
+        String newProjectSdkName = "New Sdk Name";
+        ProjectRootManager.getInstance(project).setProjectSdkName(newProjectSdkName, sdk.getSdkType().getName());
+        Messages.showInfoMessage(projectSDKName + " has changed to " + newProjectSdkName, "Project Sdk Info");
+      }
     }
   }
 

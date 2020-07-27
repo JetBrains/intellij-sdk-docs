@@ -17,9 +17,9 @@ _- Sample 1_ - Sample implementation
 ### Brace Matching
 EP: `com.intellij.lang.braceMatcher`
 
-[`PairedBraceMatcher`](upsource:///platform/lang-api/src/com/intellij/lang/PairedBraceMatcher.java)
+[`PairedBraceMatcher`](upsource:///platform/analysis-api/src/com/intellij/lang/PairedBraceMatcher.java)
 Returns an array of brace pairs (
-[`BracePair`](upsource:///platform/lang-api/src/com/intellij/lang/BracePair.java)
+[`BracePair`](upsource:///platform/analysis-api/src/com/intellij/lang/BracePair.java)
 ) specifying the characters for the opening and closing braces and the lexer token types for these characters.
 (In principle, it is possible to return multi-character tokens, like "begin" and "end", as the start and end tokens of a brace pair.
 The IDE will match such braces, but the highlighting for such braces will not be fully correct.)

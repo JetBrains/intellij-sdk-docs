@@ -100,5 +100,5 @@ To get a list of extension points available in the *IntelliJ Platform* core, con
 - [`FormatterExtensionPoints.xml`](upsource:///platform/platform-resources/src/META-INF/FormatterExtensionPoints.xml)
 - [`EditorExtensionPoints.xml`](upsource:///platform/platform-resources/src/META-INF/EditorExtensionPoints.xml)
 - [`PlatformExtensionPoints.xml`](upsource:///platform/platform-resources/src/META-INF/PlatformExtensionPoints.xml)
-- [`VcsExtensionPoints.xml`](upsource:///platform/platform-resources/src/META-INF/VcsExtensionPoints.xml)
+- [`VcsExtensionPoints.xml`](upsource:///platform/vcs-impl/resources/META-INF/VcsExtensionPoints.xml)
 

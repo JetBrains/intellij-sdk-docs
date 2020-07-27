@@ -7,6 +7,7 @@ import com.intellij.facet.ui.FacetEditorTab;
 import com.intellij.facet.ui.FacetValidatorsManager;
 import com.intellij.openapi.options.ConfigurationException;
 import com.intellij.openapi.util.Comparing;
+import com.intellij.openapi.util.text.StringUtil;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.NotNull;
 
@@ -73,7 +74,7 @@ public class DemoFacetEditorTab extends FacetEditorTab {
    */
   @Override
   public boolean isModified() {
-    return !Comparing.equal(mySettings.getDemoFacetState(), myPath.getText().trim());
+    return !StringUtil.equals(mySettings.getDemoFacetState(), myPath.getText().trim());
   }
   
   /**

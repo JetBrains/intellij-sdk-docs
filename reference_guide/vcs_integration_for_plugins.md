@@ -9,33 +9,26 @@ This page gives an overview of the Version Control Integration API.
 
 ### FilePath
 
-A [`FilePath`](upsource:///platform/vcs-api/vcs-api-core/src/com/intellij/openapi/vcs/FilePath.java)
+A [`FilePath`](upsource:///platform/platform-api/src/com/intellij/openapi/vcs/FilePath.java)
 represents a path to a file or directory on disk or in the VCS repository.
 Unlike a
 [`VirtualFile`](upsource:///platform/core-api/src/com/intellij/openapi/vfs/VirtualFile.java),
-a
-[`FilePath`](upsource:///platform/vcs-api/vcs-api-core/src/com/intellij/openapi/vcs/FilePath.java)
-can represent a path to a file which doesn't exist on disk.
-The main difference between a
-[`FilePath`](upsource:///platform/vcs-api/vcs-api-core/src/com/intellij/openapi/vcs/FilePath.java)
-and a
+a `FilePath` can represent a path to a file which doesn't exist on disk.
+The main difference between a `FilePath` and a
 [`java.io.File`](https://docs.oracle.com/javase/8/docs/api/java/io/File.html)
 is that a
-[`FilePath`](upsource:///platform/vcs-api/vcs-api-core/src/com/intellij/openapi/vcs/FilePath.java)
-caches the
-[`VirtualFile`](upsource:///platform/core-api/src/com/intellij/openapi/vfs/VirtualFile.java)
+`FilePath` caches the [`VirtualFile`](upsource:///platform/core-api/src/com/intellij/openapi/vfs/VirtualFile.java)
 corresponding to the path, so it can be retrieved without doing a VFS search.
 
 To create instances of
-[`FilePath`](upsource:///platform/vcs-api/vcs-api-core/src/com/intellij/openapi/vcs/FilePath.java),
+[`FilePath`](upsource:///platform/platform-api/src/com/intellij/openapi/vcs/FilePath.java),
 the
 [`VcsContextFactory`](upsource:///platform/vcs-api/src/com/intellij/openapi/vcs/actions/VcsContextFactory.java)
 API is used.
 It can be accessed as`PeerFactory.getInstance().getVcsContextFactory()`
 
-[`FilePath`](upsource:///platform/vcs-api/vcs-api-core/src/com/intellij/openapi/vcs/FilePath.java)
-representing paths in a VCS repository, rather than local paths, are created using
-`VcsContextFactory.createFilePathOnNonLocal()`. `FilePath.isNonLocal()` returns true for such files.
+`FilePath` representing paths in a VCS repository, rather than local paths, are created using
+`VcsContextFactory.createFilePathOnNonLocal()`. The `FilePath.isNonLocal()` method returns `true` for such files.
 
 ### Revision Number
 

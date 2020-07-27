@@ -2,15 +2,21 @@
 
 package org.intellij.sdk.language;
 
-import com.intellij.lang.annotation.*;
+import com.intellij.lang.annotation.AnnotationBuilder;
+import com.intellij.lang.annotation.AnnotationHolder;
+import com.intellij.lang.annotation.Annotator;
+import com.intellij.openapi.editor.DefaultLanguageHighlighterColors;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.TextRange;
-import com.intellij.psi.*;
+import com.intellij.psi.PsiElement;
+import com.intellij.psi.PsiLiteralExpression;
 import org.intellij.sdk.language.psi.SimpleProperty;
 import org.jetbrains.annotations.NotNull;
-import com.intellij.openapi.editor.DefaultLanguageHighlighterColors;
 
 import java.util.List;
+
+import static com.intellij.lang.annotation.HighlightSeverity.ERROR;
+import static com.intellij.lang.annotation.HighlightSeverity.INFORMATION;
 
 
 public class SimpleAnnotator implements Annotator {
@@ -40,21 +46,21 @@ public class SimpleAnnotator implements Annotator {
     Project project = element.getProject();
     List<SimpleProperty> properties = SimpleUtil.findProperties(project, possibleProperties);
 
-    // Set the annotations using the text ranges.
-    Annotation keyAnnotation = holder.createInfoAnnotation(prefixRange, null);
-    keyAnnotation.setTextAttributes(DefaultLanguageHighlighterColors.KEYWORD);
-    Annotation separatorAnnotation = holder.createInfoAnnotation(separatorRange, null);
-    separatorAnnotation.setTextAttributes(SimpleSyntaxHighlighter.SEPARATOR);
+    // Set the annotations using the text ranges - Normally there would be one range, set by the element itself.
+    holder.newAnnotation(INFORMATION, "").range(prefixRange).textAttributes(DefaultLanguageHighlighterColors.KEYWORD).create();
+    holder.newAnnotation(INFORMATION, "").range(separatorRange).textAttributes(SimpleSyntaxHighlighter.SEPARATOR).create();
     if (properties.isEmpty()) {
       // No well-formed property found following the key-separator
-      Annotation badProperty = holder.createErrorAnnotation(keyRange, "Unresolved property");
-      badProperty.setTextAttributes(SimpleSyntaxHighlighter.BAD_CHARACTER);
+      AnnotationBuilder builder = holder.newAnnotation(ERROR, "Unresolved property").range(keyRange);
+      // Force the text attributes to Simple syntax bad character
+      builder.textAttributes(SimpleSyntaxHighlighter.BAD_CHARACTER);
       // ** Tutorial step 18.3 - Add a quick fix for the string containing possible properties
-      badProperty.registerFix(new SimpleCreatePropertyQuickFix(possibleProperties));
+      builder.withFix(new SimpleCreatePropertyQuickFix(possibleProperties));
+      // Finish creating new annotation
+      builder.create();
     } else {
-      // Found at least one property
-      Annotation annotation = holder.createInfoAnnotation(keyRange, null);
-      annotation.setTextAttributes(SimpleSyntaxHighlighter.VALUE);
+      // Found at least one property, force the text attributes to Simple syntax value character
+      holder.newAnnotation(INFORMATION, "").range(keyRange).textAttributes(SimpleSyntaxHighlighter.VALUE).create();
     }
   }
 

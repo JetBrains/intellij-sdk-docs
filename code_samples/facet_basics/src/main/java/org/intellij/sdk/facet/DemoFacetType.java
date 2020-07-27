@@ -3,7 +3,8 @@
 package org.intellij.sdk.facet;
 
 import com.intellij.facet.*;
-import com.intellij.openapi.module.*;
+import com.intellij.openapi.module.Module;
+import com.intellij.openapi.module.ModuleType;
 import icons.SdkIcons;
 import org.jetbrains.annotations.*;
 

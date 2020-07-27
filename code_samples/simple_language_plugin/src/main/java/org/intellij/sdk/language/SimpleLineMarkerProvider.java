@@ -15,7 +15,7 @@ import java.util.*;
 public class SimpleLineMarkerProvider extends RelatedItemLineMarkerProvider {
   @Override
   protected void collectNavigationMarkers( @NotNull PsiElement element,
-                                           @NotNull Collection< ? super RelatedItemLineMarkerInfo > result ) {
+                                           @NotNull Collection< ? super RelatedItemLineMarkerInfo<?> > result ) {
     // This must be an element with a literal expression as a parent
     if ( !(element instanceof PsiJavaTokenImpl) || !(element.getParent() instanceof PsiLiteralExpression) ) return;
     

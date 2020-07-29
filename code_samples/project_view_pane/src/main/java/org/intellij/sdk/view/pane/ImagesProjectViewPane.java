@@ -97,6 +97,7 @@ public class ImagesProjectViewPane extends AbstractProjectViewPSIPane {
     };
   }
 
+  //  Awaiting refactoring of AbstractProjectViewPSIPane#createTreeUpdater
   @NotNull
   @Override
   protected AbstractTreeUpdater createTreeUpdater(@NotNull AbstractTreeBuilder builder) {

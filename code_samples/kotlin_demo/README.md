@@ -1,5 +1,5 @@
 # Kotlin Demo [![JetBrains IntelliJ Platform SDK Docs](https://jb.gg/badges/docs.svg)][docs]
-*Reference: [Code Inspections in IntelliJ SDK Docs][docs:code_inspections]*
+*Reference: [Kotlin for Plugin Developers in IntelliJ SDK Docs][docs:kotlin]*
 
 ## Quickstart
 
@@ -28,7 +28,7 @@ or listeners provided by the plugin.
 
 [docs]: http://www.jetbrains.org/intellij/sdk/docs
 [docs:actions]: https://www.jetbrains.org/intellij/sdk/docs/basics/action_system.html
-[docs:code_inspections]: https://jetbrains.org/intellij/sdk/docs/tutorials/code_inspections.html
+[docs:kotlin]: https://jetbrains.org/intellij/sdk/docs/tutorials/kotlin.html
 [docs:ep]: https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_extension_points.html
 [docs:gradle]: https://www.jetbrains.org/intellij/sdk/docs/tutorials/build_system.html
 [docs:plugin.xml]: https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_configuration_file.html

@@ -31,6 +31,7 @@ or listeners provided by the plugin.
 [docs:gradle]: https://www.jetbrains.org/intellij/sdk/docs/tutorials/build_system.html
 [docs:plugin.xml]: https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_configuration_file.html
 
+[file:plugin.xml]: ./src/main/resources/META-INF/plugin.xml
 [file:DemoFramework]: ./src/main/java/org/intellij/sdk/framework/DemoFramework.java
 
 [sdk:FrameworkTypeEx]: https://github.com/JetBrains/intellij-community/blob/master/java/idea-ui/src/com/intellij/framework/FrameworkTypeEx.java

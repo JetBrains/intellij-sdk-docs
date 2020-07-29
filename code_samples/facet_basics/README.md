@@ -35,6 +35,7 @@ or listeners provided by the plugin.
 [docs:gradle]: https://www.jetbrains.org/intellij/sdk/docs/tutorials/build_system.html
 [docs:plugin.xml]: https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_configuration_file.html
 
+[file:plugin.xml]: ./src/main/resources/META-INF/plugin.xml
 [file:DemoFacetType]: ./src/main/java/org/intellij/sdk/facet/DemoFacetType.java
 
 [sdk:FacetType]: https://github.com/JetBrains/intellij-community/blob/master/platform/lang-api/src/com/intellij/facet/FacetType.java

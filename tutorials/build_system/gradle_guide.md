@@ -6,7 +6,7 @@ title: Configuring Gradle Projects
 This page serves as a guide to Gradle-based plugin configuration for _IntelliJ Platform_ projects.
 The IntelliJ IDEA Ultimate and Community editions bundle the _Gradle_ and _Plugin DevKit_ plugins to support Gradle-based development. 
 
-The [Getting Started with Gradle](prerequisites.md) page provides a tutorial for creating Gradle-based IntelliJ Platform plugins.
+The [Getting Started with Gradle](gradle_prerequisites.md) page provides a tutorial for creating Gradle-based IntelliJ Platform plugins.
 It may be useful to review the IntelliJ Platform page, particularly the description of versioning in the [Open Source](/intro/intellij_platform.md#open-source) section.
 
 > **WARNING** When adding additional repositories to your Gradle build script, make sure to always use HTTPS protocol.
@@ -113,7 +113,7 @@ For those `patchPluginXml` attributes that contain descriptions such as `changeN
 
 > **TIP** To maintain and generate an up-to-date changelog, try using [Gradle Changelog Plugin](https://github.com/JetBrains/gradle-changelog-plugin).
 
-As discussed in [Components of a Wizard-Generated Gradle IntelliJ Platform Plugin](prerequisites.md#components-of-a-wizard-generated-gradle-intellij-platform-plugin), the Gradle properties `project.version`, `project.group`, and `rootProject.name` are all generated based on the input to the Wizard.
+As discussed in [Components of a Wizard-Generated Gradle IntelliJ Platform Plugin](gradle_prerequisites.md#components-of-a-wizard-generated-gradle-intellij-platform-plugin), the Gradle properties `project.version`, `project.group`, and `rootProject.name` are all generated based on the input to the Wizard.
 However, the `gradle-intellij-plugin` does not combine and substitute those Gradle properties for the default `<id>` and `<name>` elements in the `plugin.xml` file.
 
 The best practice is to keep `project.version` current. 

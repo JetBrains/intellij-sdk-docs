@@ -15,7 +15,7 @@ Here are some useful things to know before authoring SDK content and submitting 
 
 This site runs via [Jekyll](https://jekyllrb.com), which is a popular static site generator, written in Ruby. It can be hosted locally to ensure that any changes are correct. Once set up, running the site is as easy as calling `rake preview`.
 
-Alternatively, the site can also be hosted in a [Docker container](https://www.docker.com). On Mac and Windows, this means the site is hosted in a virtual machine. Docker maintains this container, building it based on the instructions in the [`Dockerfile`](Dockerfile). All dependencies (Ruby, etc.) are automatically installed when building the image, which reduces the manual configuration steps. The Docker image is also used to build the [published site](https://www.jetbrains.org/intellij/sdk/docs/index.html), so it is a known working environment.
+Alternatively, the site can also be hosted in a [Docker container](https://www.docker.com). On Mac and Windows, this means the site is hosted in a virtual machine. Docker maintains this container, building it based on the instructions in the [`Dockerfile`](https://github.com/JetBrains/intellij-sdk-docs/blob/master/Dockerfile). All dependencies (Ruby, etc.) are automatically installed when building the image, which reduces the manual configuration steps. The Docker image is also used to build the [published site](https://www.jetbrains.org/intellij/sdk/docs/index.html), so it is a known working environment.
 
 ### Developing Documentation with Docker
 

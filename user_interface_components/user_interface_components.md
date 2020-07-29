@@ -12,7 +12,7 @@ The IntelliJ Platform includes a large number of custom Swing components. Using 
 
 The following components are particularly noteworthy:
 
-*  Menus and toolbars are built using the [Action System](/basics/action_system.md)
+*  Menus and toolbars are built using the [Action System](/basics/basic_action_system.md)
 *  [Tool Windows](/user_interface_components/tool_windows.md)
 *  [Dialogs](/user_interface_components/dialog_wrapper.md)
 *  [Popups](/user_interface_components/popups.md)

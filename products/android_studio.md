@@ -12,9 +12,9 @@ Once completed, plugins can be packaged and distributed at [plugins.jetbrains.co
 Android Studio plugins are not Android modules or apps to run in the Android operating system, such as on a smartphone or tablet.
 
 ## Configuring IntelliJ Platform Projects for Android Studio Plugin Development
-To create a new Android Studio plugin project, follow the tutorial on the [Getting Started with Gradle](/tutorials/build_system/prerequisites.md) page.
+To create a new Android Studio plugin project, follow the tutorial on the [Getting Started with Gradle](/tutorials/build_system/gradle_prerequisites.md) page.
 The tutorial produces a skeleton project suitable to use as a starting point for an Android Studio plugin.
-On the [New Project Configuration Screen](/tutorials/build_system/prerequisites.md#new-project-configuration-screen) of the New Project Wizard tutorial, choose Gradle from the product category pane as described in the tutorial, **not** _Android_.
+On the [New Project Configuration Screen](/tutorials/build_system/gradle_prerequisites.md#new-project-configuration-screen) of the New Project Wizard tutorial, choose Gradle from the product category pane as described in the tutorial, **not** _Android_.
   
 Some minor modifications to the skeleton project are needed, as discussed below.
 

@@ -8,7 +8,7 @@ This tutorial shows how to register a new module type and link it to the project
 
 ## Pre-Requirements
 
-Create an empty plugin project, see [Creating a Plugin Project](/tutorials/build_system.md).
+Create an empty plugin project, see [Creating a Plugin Project](/tutorials/gradle_build_system.md).
 
 > **NOTE** The UI for selecting module types and the creation of modules through project wizard is IntelliJ IDEA-specific.
 

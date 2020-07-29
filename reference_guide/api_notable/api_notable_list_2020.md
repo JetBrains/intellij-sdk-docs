@@ -74,7 +74,7 @@ JCEF Support (_Experimental Feature_)
 : Allows [embedding](/reference_guide/jcef.md) Chromium-based browser in the IDE.
 
 Override text presentation for actions depending on menu context 
-: Set the [`<override-text>`](/basics/action_system.md#setting-the-override-text-element-for-an-action) element within the `<action>` declaration in `plugin.xml`.
+: Set the [`<override-text>`](/basics/basic_action_system.md#setting-the-override-text-element-for-an-action) element within the `<action>` declaration in `plugin.xml`.
 
 Changes in Project Open/Import
 : **Import from Existing Sources** has been removed from the Welcome Screen, leaving only **Open or Import**, which calls a different extension than the one previously used to contribute a wizard step to **Import from Existing Sources** (which is still available in the **File** menu).

@@ -68,7 +68,7 @@ Read Action
 &rarr; _Write Action_
 
 Run Configuration _(RC)_
-: A [Run Configuration](/basics/run_configurations.md) allows running external processes from within the IDE.
+: A [Run Configuration](/basics/basic_run_configurations.md) allows running external processes from within the IDE.
 
 ## S
 

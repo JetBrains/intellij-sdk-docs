@@ -11,7 +11,7 @@ To develop plugins you will need to use _IntelliJ IDEA Ultimate Edition_ version
 
 ### Setting up IntelliJ Platform SDK
 
-> **NOTE** This applies to [Plugin DevKit](/basics/getting_started/using_dev_kit.md) projects only. For [Gradle](/tutorials/build_system.md) projects, simply add dependency to bundled Spring plugin `com.intellij.spring`.
+> **NOTE** This applies to [Plugin DevKit](/basics/getting_started/using_dev_kit.md) projects only. For [Gradle](/tutorials/gradle_build_system.md) projects, simply add dependency to bundled Spring plugin `com.intellij.spring`.
 
 ##### New SDK
 Please create an IntelliJ Platform SDK to include all minimum required files.

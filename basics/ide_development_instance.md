@@ -6,7 +6,7 @@ redirect_from:
 <!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 A JetBrains feature for developing plugins is running or debugging a plugin project from within an IntelliJ Platform-based IDE such as IntelliJ IDEA. 
-Selecting the [**runIde**](/tutorials/build_system/prerequisites.md#running-a-simple-gradle-based-intellij-platform-plugin) task for a Gradle-based project (or [**Run**](getting_started/running_and_debugging_a_plugin.md) menu for a DevKit-based project) will launch a _Development Instance_ of the IDE with the plugin enabled.
+Selecting the [**runIde**](/tutorials/build_system/gradle_prerequisites.md#running-a-simple-gradle-based-intellij-platform-plugin) task for a Gradle-based project (or [**Run**](getting_started/running_and_debugging_a_plugin.md) menu for a DevKit-based project) will launch a _Development Instance_ of the IDE with the plugin enabled.
 This page describes how to control some of the settings for the Development Instance.
                                             
 > **TIP** Please see also [Advanced Configuration](https://www.jetbrains.com/help/idea/tuning-the-ide.html) for general VM options and properties.
@@ -49,9 +49,9 @@ To change the runtime for the Development Instance, set the _JRE_ field in the R
 ## Enabling Auto-Reload
 > **NOTE** Starting in 2020.1, this is available for compatible [dynamic plugins](/basics/plugin_structure/dynamic_plugins.md).
 
-When adding system property `idea.auto.reload.plugins` in the [run configuration](getting_started/running_and_debugging_a_plugin.md) (DevKit-based) or [**runIde**](/tutorials/build_system/prerequisites.md#running-a-simple-gradle-based-intellij-platform-plugin) task (Gradle-based), dynamic plugins are reloaded automatically when their JARs are modified.
+When adding system property `idea.auto.reload.plugins` in the [run configuration](getting_started/running_and_debugging_a_plugin.md) (DevKit-based) or [**runIde**](/tutorials/build_system/gradle_prerequisites.md#running-a-simple-gradle-based-intellij-platform-plugin) task (Gradle-based), dynamic plugins are reloaded automatically when their JARs are modified.
 This allows a much faster development cycle by avoiding a full restart of the development instance after code changes.
-For [Gradle-based plugins](/tutorials/build_system/prerequisites.md) using `gradle-intellij-plugin` 0.4.17 or later, this property is set automatically.
+For [Gradle-based plugins](/tutorials/build_system/gradle_prerequisites.md) using `gradle-intellij-plugin` 0.4.17 or later, this property is set automatically.
 
 To disable auto-reload, set `idea.auto.reload.plugins` to `false` explicitly (2020.1.2+). Please note that any unloading problems in production environment will ask the user to restart the IDE.
 
@@ -62,7 +62,7 @@ This information is stored in a different location than for the [installed IDE i
 
 ### Sandbox Home Location for Gradle-Based Plugin Projects
 For Gradle-based plugins, the default Sandbox Home location is defined by the IntelliJ Platform `gradle-intellij-plugin`. 
-See [Configuring a Gradle Plugin Project](/tutorials/build_system/prerequisites.md) for more information about specifying a Sandbox Home location. 
+See [Configuring a Gradle Plugin Project](/tutorials/build_system/gradle_prerequisites.md) for more information about specifying a Sandbox Home location. 
 The default Sandbox Home location for Gradle-based plugin projects is:
 * **Windows** `<Project Dir>\build\idea-sandbox`
 * **Linux or macOS** `<Project Dir>/build/idea-sandbox`

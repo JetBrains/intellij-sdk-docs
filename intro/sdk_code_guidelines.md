@@ -117,17 +117,17 @@ code_samples/
 ```
 
 ## build.gradle Conventions 
-New SDK code samples should be developed [using Gradle](/tutorials/build_system.md). 
+New SDK code samples should be developed [using Gradle](/tutorials/gradle_build_system.md). 
 As of this writing, the use of Gradle in SDK code samples still relies heavily on the `plugin.xml` for specifying the plugin configuration.
 At a later, second phase, the SDK code samples will transition to rely more on the Gradle configuration. 
 
-The default contents of a `build.gradle` file are produced by the [New Project Wizard](/tutorials/build_system/prerequisites.md#creating-a-gradle-based-intellij-platform-plugin-with-new-project-wizard). 
+The default contents of a `build.gradle` file are produced by the [New Project Wizard](/tutorials/build_system/gradle_prerequisites.md#creating-a-gradle-based-intellij-platform-plugin-with-new-project-wizard). 
 A consistent structure for an SDK code sample's `build.gradle` file is important for clarity and is based on the default produced by the project wizard. 
 Comments in SDK code sample `build.gradle` files should only draw attention to the parts of the Gradle configuration that are unique for a plugin.
 
 For SDK code samples, a few alterations are needed to the default `build.gradle` file produced by the plugin wizard:
 * Maintain the Gradle properties `version` (`project.version`) and `group` (`project.group`).
-  See the [Plugin Gradle Properties](/tutorials/build_system/prerequisites.md#plugin-gradle-properties-and-plugin-configuration-file-elements) section for how these Gradle properties relate to the elements in `plugin.xml`.
+  See the [Plugin Gradle Properties](/tutorials/build_system/gradle_prerequisites.md#plugin-gradle-properties-and-plugin-configuration-file-elements) section for how these Gradle properties relate to the elements in `plugin.xml`.
 * Add the following statement to the [Setup DSL](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md#setup-dsl) (`intellij{}`) section:
   ```groovy
       // Prevents patching <idea-version> attributes in plugin.xml

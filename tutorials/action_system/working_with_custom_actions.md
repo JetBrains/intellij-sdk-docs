@@ -38,7 +38,7 @@ public class PopupDialogAction extends AnAction {
 ```
 
 > **Warning** `AnAction` classes do not have class fields of any kind. This restriction prevents memory leaks.
-For more information about why, see [Action Implementation](/basics/action_system.md#action-implementation). 
+For more information about why, see [Action Implementation](/basics/basic_action_system.md#action-implementation). 
 
 At this stage, `update()` implicitly defaults always to enable this action.
 The implementation of `actionPerformed()` does nothing.
@@ -49,7 +49,7 @@ Before fleshing out those methods, to complete this minimal implementation, `Pop
 ## Registering a Custom Action
 Actions are registered by declaring them in code or by declaring them in the `<actions>` section of a plugin configuration (`plugin.xml`) file. 
 This section describes using IDE tooling - the New Action Form - to add a declaration to the `plugin.xml` file, and then tuning registration attributes manually.
-A more comprehensive explanation of action registration is available in the [Action Registration](/basics/action_system.md#registering-actions) section of this guide.
+A more comprehensive explanation of action registration is available in the [Action Registration](/basics/basic_action_system.md#registering-actions) section of this guide.
 
 ### Registering an Action with the New Action Form
 IntelliJ IDEA has an embedded inspection that spots unregistered actions. 
@@ -96,7 +96,7 @@ This declaration is adequate, but adding more attributes is discussed in the nex
 
 ### Setting Registration Attributes Manually
 An action declaration can be added manually to the `plugin.xml` file.
-An exhaustive list of declaration elements and attributes is presented in [Registering Actions in plugin.xml](/basics/action_system.md#registering-actions-in-pluginxml).
+An exhaustive list of declaration elements and attributes is presented in [Registering Actions in plugin.xml](/basics/basic_action_system.md#registering-actions-in-pluginxml).
 Attributes are added by selecting them from the **New Action** form, or by editing the registration declaration directly in the plugin.xml file.
 
 The `<action>` declaration for `PopupDialogAction` in the `action_basics` [plugin.xml](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/action_basics/src/main/resources/META-INF/plugin.xml) file.
@@ -118,7 +118,7 @@ The full declaration is:
 By using the `override-text` element introduced in 2020.1 of the IntelliJ Platform, the action text can be different depending on the context of where the action appears: menu, toolbar, etc.
 The example above uses this element to ensure the shorter text "Pop Dialog Action" is shown anywhere the action appears in the Main Menu structure.
 Otherwise, the default, more explanatory text "Action Basics Plugin: Pop Dialog Action" is shown.
-For more information, see [Setting the Override-Text Element for an Action](/basics/action_system.md#setting-the-override-text-element-for-an-action)
+For more information, see [Setting the Override-Text Element for an Action](/basics/basic_action_system.md#setting-the-override-text-element-for-an-action)
 
 ## Testing the Minimal Custom Action Implementation
 After performing the steps described above, compile and run the plugin to see the newly created action available as a Tools Menu item, which is within the context of the Main Menu:
@@ -150,7 +150,7 @@ However, code in this method could manipulate a project, invoke an inspection, c
 For demonstration purposes the `AnActionEvent.getData()` method tests if a [`Navigatable`](upsource:///platform/core-api/src/com/intellij/pom/Navigatable.java) object is available. 
 If so, information about the selected element is added to the dialog. 
 
-See [Determining the Action Context](/basics/action_system.md#determining-the-action-context) for more information about accessing information from the `AnActionEvent` input parameter. 
+See [Determining the Action Context](/basics/basic_action_system.md#determining-the-action-context) for more information about accessing information from the `AnActionEvent` input parameter. 
 
 ```java
   @Override
@@ -172,14 +172,14 @@ See [Determining the Action Context](/basics/action_system.md#determining-the-ac
 Adding code to `PopupDialogAction.update()` gives finer control of the action's visibility and availability.
 The action's state and(or) presentation can be dynamically changed depending on the context. 
 
-> **Warning** This method needs to _execute very quickly_. For more information about this constraint, see the warning in [Overriding the AnAction.update Method](/basics/action_system.md#overriding-the-anactionupdate-method).
+> **Warning** This method needs to _execute very quickly_. For more information about this constraint, see the warning in [Overriding the AnAction.update Method](/basics/basic_action_system.md#overriding-the-anactionupdate-method).
 
 In this example, the `update()` method relies on a `Project` object being available. 
 This requirement means the user must have at least one project open in the IDE for the `PopupDialogAction` to be available.
 So the `update()` method disables the action for contexts where a `Project` object isn't defined.
 
 The availability (enabled and visible) is set on the `Presentation` object.
-Setting both the enabled state and visibility produces consistent behavior despite possible host menu settings, as discussed in [Grouping Actions](/basics/action_system.md#grouping-actions).
+Setting both the enabled state and visibility produces consistent behavior despite possible host menu settings, as discussed in [Grouping Actions](/basics/basic_action_system.md#grouping-actions).
 
 ```java
   @Override
@@ -192,7 +192,7 @@ Setting both the enabled state and visibility produces consistent behavior despi
 
 The `update()` method does not check to see if a `Navigatable` object is available before enabling `PopupDialogAction`. 
 This check is unnecessary because using the `Navigatable` object is opportunistic in `actionPerformed()`. 
-See [Determining the Action Context](/basics/action_system.md#determining-the-action-context) for more information about accessing information from the `AnActionEvent` input parameter. 
+See [Determining the Action Context](/basics/basic_action_system.md#determining-the-action-context) for more information about accessing information from the `AnActionEvent` input parameter. 
 
 ### Other Method Overrides
 A constructor is overridden in `PopupDialogAction`, but this is an artifact of reusing this class for a dynamically created menu action.

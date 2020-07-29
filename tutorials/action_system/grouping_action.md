@@ -25,7 +25,7 @@ The `id` attribute must be unique, so incorporating the plugin ID or package nam
 The `popup` attribute determines whether actions in the group are placed in a submenu.
 The `icon` attribute specifies the FQN of an [`Icon`](/reference_guide/work_with_icons_and_images.md) object to be displayed.
 No `compact` attribute is specified, which means this group will support submenus.
-See [Registering Actions in plugin.xml](/basics/action_system.md#registering-actions-in-pluginxml) for more information about these attributes.
+See [Registering Actions in plugin.xml](/basics/basic_action_system.md#registering-actions-in-pluginxml) for more information about these attributes.
 
 ```xml
     <group id="org.intellij.sdk.action.GroupedActions" text="Static Grouped Actions" popup="true" icon="SdkIcons.Sdk_default_icon">

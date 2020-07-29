@@ -52,7 +52,7 @@ For detailed instructions, please refer to the [Kotlin documentation](https://ko
 
 ## 3. Kotlin Gradle Plugin
 
-For plugins already using the [Gradle Build System](build_system.md), or those that require precise control over
+For plugins already using the [Gradle Build System](gradle_build_system.md), or those that require precise control over
 the Kotlin build process, we recommend using the
 [kotlin-gradle-plugin](https://kotlinlang.org/docs/reference/using-gradle.html#configuring-dependencies).
 This [Gradle plugin](https://mvnrepository.com/artifact/org.jetbrains.kotlin/kotlin-gradle-plugin-core) greatly

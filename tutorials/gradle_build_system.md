@@ -1,5 +1,7 @@
 ---
 title: Building Plugins with Gradle
+redirect_from:
+  - /build_system.html
 ---
 <!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
@@ -20,6 +22,6 @@ Follow releases on [GitHub](https://github.com/JetBrains/gradle-intellij-plugin/
 
 Below are a series of guides to developing and deploying Gradle-based IntelliJ Platform Plugins:
 
-* [Getting Started with Gradle](build_system/prerequisites.md)
+* [Getting Started with Gradle](build_system/gradle_prerequisites.md)
 * [Configuring Gradle Projects](build_system/gradle_guide.md)
 * [Publishing Plugins with Gradle](build_system/deployment.md)

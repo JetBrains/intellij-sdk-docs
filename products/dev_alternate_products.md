@@ -16,7 +16,7 @@ All of the Gradle configuration attributes described here are discussed in-depth
 {:toc}
 
 ## Getting Started
-To create a new Gradle plugin project, follow the tutorial on the [Getting Started with Gradle](/tutorials/build_system/prerequisites.md) page.
+To create a new Gradle plugin project, follow the tutorial on the [Getting Started with Gradle](/tutorials/build_system/gradle_prerequisites.md) page.
 The tutorial produces a skeleton Gradle project suitable to use as a starting point.
 
 Modifications are needed to the skeleton project's `build.gradle` and `plugin.xml` files, as described below, and on the individual product pages in Part VIII.

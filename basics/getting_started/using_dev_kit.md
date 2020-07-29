@@ -3,7 +3,7 @@ title: Using DevKit
 ---
 <!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-> **NOTE** For new projects, it is highly recommended to use [Gradle](/tutorials/build_system.md).
+> **NOTE** For new projects, it is highly recommended to use [Gradle](/tutorials/gradle_build_system.md).
 
 _Plugin DevKit_ is a bundled IntelliJ IDEA plugin for developing plugins for the IntelliJ Platform using IntelliJ IDEA's
 own build system. It provides its custom SDK type and a set of actions for building plugins within the IDE.

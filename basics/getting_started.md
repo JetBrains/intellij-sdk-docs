@@ -30,8 +30,8 @@ Specific to development of IntelliJ Platform plugins with the Gradle plugin for 
 
 ## Using Gradle
 
-* [Developing plugins using Gradle](/tutorials/build_system.md)
-    * [Getting Started with Gradle](/tutorials/build_system/prerequisites.md)
+* [Developing plugins using Gradle](/tutorials/gradle_build_system.md)
+    * [Getting Started with Gradle](/tutorials/build_system/gradle_prerequisites.md)
     * [Configuring Gradle Projects](/tutorials/build_system/gradle_guide.md)
     * [Publishing Plugins with Gradle](/tutorials/build_system/deployment.md)
 

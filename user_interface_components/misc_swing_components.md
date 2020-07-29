@@ -40,4 +40,4 @@ It has a significantly different look & feel compared to the standard Swing tabs
 
 
 ### Toolbars
-See [Building UI from Actions](/basics/action_system.md#building-ui-from-actions) on how to create `AnAction`-based toolbars.
+See [Building UI from Actions](/basics/basic_action_system.md#building-ui-from-actions) on how to create `AnAction`-based toolbars.

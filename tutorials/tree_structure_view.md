@@ -15,7 +15,7 @@ Series of step below show how to filter out and keep visible only text files and
 
 Create an empty plugin project.
 See 
-[Creating a Plugin Project](/tutorials/build_system/prerequisites.md).
+[Creating a Plugin Project](/tutorials/build_system/gradle_prerequisites.md).
 
 ## 1. Register Custom TreeStructure Provider
 

@@ -27,7 +27,7 @@ Depending on the chosen development workflow (Gradle or DevKit), one of the two 
 ### 2.1 Gradle
 > **NOTE** Please see the `plugins` attribute [gradle-intellij-plugin: Configuration](https://github.com/JetBrains/gradle-intellij-plugin#configuration) for acceptable values.
 
-If the project is using [Gradle](/tutorials/build_system.md) with a Groovy build script to build the plugin, add the dependency to the `plugins` parameter of the `intellij` block in your `build.gradle`, for example:
+If the project is using [Gradle](/tutorials/gradle_build_system.md) with a Groovy build script to build the plugin, add the dependency to the `plugins` parameter of the `intellij` block in your `build.gradle`, for example:
 
 ```groovy
 intellij {
@@ -46,7 +46,7 @@ intellij {
 > **NOTE** Transitive dependencies required for tests must currently be [specified explicitly](https://github.com/JetBrains/gradle-intellij-plugin/issues/38). 
 
 ### 2.2 DevKit
-> **TIP** Existing DevKit-based projects can be converted to use [Gradle setup](/tutorials/build_system/prerequisites.md#adding-gradle-support-to-an-existing-devkit-based-intellij-platform-plugin) where managing dependencies is fully automated.
+> **TIP** Existing DevKit-based projects can be converted to use [Gradle setup](/tutorials/build_system/gradle_prerequisites.md#adding-gradle-support-to-an-existing-devkit-based-intellij-platform-plugin) where managing dependencies is fully automated.
 
 If the project is using [DevKit](/basics/getting_started/using_dev_kit.md), add the JARs of the plugin on which the project depends to the **classpath** of the *IntelliJ Platform SDK*.
 

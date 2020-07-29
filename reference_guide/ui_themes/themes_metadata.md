@@ -1,18 +1,6 @@
 ---
 title: Exposing Theme Metadata
 ---
-<style>
-  table {
-    width:100%;
-  }
-  th:first-child, td:first-child {
-    width: 15%;
-  }
-  th:last-child, td:last-child {
-    width: 30%;
-  }
-</style>
-
 
 All available UI Customization Keys that can be used in [Custom Themes](themes_customize.md) must be defined in a dedicated `*.themeMetadata.json` file which is registered via `com.intellij.themeMetadataProvider` extension point. 
 
@@ -22,11 +10,9 @@ The following minimal sample demonstrates all details required when exposing UI 
 
 ```xml
 <idea-plugin> 
-  [...]
   <extensions defaultExtensionNs="com.intellij">
     <themeMetadataProvider path="/META-INF/MyPlugin.themeMetadata.json"/>
   </extensions>    
-  [...]
 </idea-plugin>
 ```
 

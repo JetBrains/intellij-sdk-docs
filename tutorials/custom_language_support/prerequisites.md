@@ -16,5 +16,5 @@ Make sure that the bundled *Plugin DevKit* plugin is enabled.
 Install and enable [Grammar-Kit](https://plugins.jetbrains.com/plugin/6606-grammar-kit) and [PsiViewer](https://plugins.jetbrains.com/plugin/227-psiviewer) plugins.
 
 ### 1.4. Create a Project
-Create an [IntelliJ Platform Plugin project](/tutorials/build_system/prerequisites.md).
+Create an [IntelliJ Platform Plugin project](/tutorials/build_system/gradle_prerequisites.md).
 

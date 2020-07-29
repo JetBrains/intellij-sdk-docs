@@ -14,4 +14,4 @@ Subgroups of the group can form submenus of a menu.
 
 The user can customize all registered actions via [Menus and Toolbars](https://www.jetbrains.com/help/idea/customize-actions-menus-and-toolbars.html) settings.  
 
-Please see [Action System](/basics/action_system.md) on how to create and register actions in the IDE.
+Please see [Action System](/basics/basic_action_system.md) on how to create and register actions in the IDE.

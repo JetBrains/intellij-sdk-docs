@@ -12,13 +12,13 @@ sourceCompatibility = 1.8
 
 repositories {
   mavenCentral()
-  maven { url "https://www.jetbrains.com/intellij-repository/snapshots/" }
 }
 
 // See https://github.com/JetBrains/gradle-intellij-plugin/
 intellij {
-  version = '202-EAP-SNAPSHOT'
+  version = '2020.2'
   type = 'PY'
+  downloadSources = false
 }
 
 buildSearchableOptions {

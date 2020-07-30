@@ -256,7 +256,7 @@ any global color override.
 
 ## Finding Attribute Keys for UI Controls
 There are hundreds of UI control `element.property` keys defined in the IntelliJ Platform UI. 
-Some keys and strategies for applying them can be gleaned from the [UI Theme reference implementations](#UI-Theme-Reference-Implementations). 
+Some keys and strategies for applying them can be gleaned from the [UI Theme reference implementations](#ui-theme-reference-implementations). 
 For a general search, here some suggested methods for locating UI control keys.
 
 ### Finding a UI Control Key Using Code Completion in the Editor

@@ -66,7 +66,7 @@ Messages.showInfoMessage(roots.toString(), "Library Info");
 
 ### Creating a Library
 To create a library, perform the following steps: 
-  * Get a [write action](../../basics/architectural_overview/general_threading_rules.md#readwrite-lock)
+  * Get a [write action](../../basics/architectural_overview/general_threading_rules.md#read-write-lock)
   * Obtain the library table to which you want to add the library. Use one of the following, depending on the library level:
       * `LibraryTablesRegistrar.getInstance().getLibraryTable()`
       * `LibraryTablesRegistrar.getInstance().getLibraryTable(Project)`
@@ -80,7 +80,7 @@ You can find an example of using these APIs in the [project_model](https://githu
 
 ### Adding Contents or Modifying a Library
 To add or change the roots of a library, you need to perform the following steps: 
-  * Get a [write action](../../basics/architectural_overview/general_threading_rules.md#readwrite-lock)
+  * Get a [write action](../../basics/architectural_overview/general_threading_rules.md#read-write-lock)
   * Get a **modifiable model** for the library, using `Library.getModifiableModel()`
   * Use methods such as `Library.ModifiableModel.addRoot()` to perform the necessary changes
   * Commit the model using `Library.ModifiableModel.commit()`.

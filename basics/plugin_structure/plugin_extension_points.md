@@ -93,7 +93,7 @@ _anotherPlugin/META-INF/plugin.xml_
 ```
 
 ## Using Extension Points
-To refer to all registered extension instances at runtime, declare an [`ExtensionPointName`](upsource:///platform/extensions/src/com/intellij/openapi/extensions/ExtensionPointName.java) passing in the fully-qualified name matching its [declaration in `plugin.xml`](#how-to-declare-extension-points).
+To refer to all registered extension instances at runtime, declare an [`ExtensionPointName`](upsource:///platform/extensions/src/com/intellij/openapi/extensions/ExtensionPointName.java) passing in the fully-qualified name matching its [declaration in `plugin.xml`](#declaring-extension-points).
 
 _myPlugin/src/com/myplugin/MyExtensionUsingService.java_
 

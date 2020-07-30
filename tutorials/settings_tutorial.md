@@ -25,7 +25,7 @@ The `AppSettingsState` class persistently stores the custom Settings.
 It is based on the [IntelliJ Platform Persistence Model](/basics/persisting_state_of_components.md#using-persistentstatecomponent).
 
 ### Declaring AppSettingsState
-Given a [Light Service](/basics/plugin_structure/plugin_services.md#light-services) is not used, the persistent data class must be declared as a [Service](/basics/plugin_structure/plugin_services.md#how-to-declare-a-service) EP in the `plugin.xml` file.
+Given a [Light Service](/basics/plugin_structure/plugin_services.md#light-services) is not used, the persistent data class must be declared as a [Service](/basics/plugin_structure/plugin_services.md#declaring-a-service) EP in the `plugin.xml` file.
 If these were Project Settings, the `com.intellij.projectService` EP would be used.
 However, because these are Application Settings, the `com.intellij.applicationService` EP is used with the FQN of the implementation class:
 

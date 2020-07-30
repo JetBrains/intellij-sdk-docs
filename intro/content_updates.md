@@ -35,7 +35,7 @@ JCEF Support (_Experimental Feature_)
 ## February
 
 All Code Samples converted to Gradle
-: [All samples](https://github.com/JetBrains/intellij-sdk-docs/tree/master/code_samples) now use the [recommended solution](/tutorials/build_system.md) of setting up plugin projects.
+: [All samples](https://github.com/JetBrains/intellij-sdk-docs/tree/master/code_samples) now use the [recommended solution](/tutorials/gradle_build_system.md) of setting up plugin projects.
 
 ## January
 

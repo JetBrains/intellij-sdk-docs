@@ -3,7 +3,7 @@ title: General Threading Rules
 ---
 <!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-## Read/Write Lock
+## Read-Write Lock
 
 In general, code-related data structures in the *IntelliJ Platform* are covered by a single reader/writer lock. 
 

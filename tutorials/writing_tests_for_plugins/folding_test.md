@@ -7,7 +7,7 @@ This test verifies the Simple Language folding builder, implemented in the [Fold
 
 > **NOTE** A folding builder must implement [`DumbAware`](upsource:///platform/core-api/src/com/intellij/openapi/project/DumbAware.java) to pass tests. See [Define a Folding Builder](/tutorials/custom_language_support/folding_builder.md#define-a-folding-builder) for more information.
 
-## 7.1. Define Test Data
+## Define Test Data
 Create a file `FoldingTestData.java` in the `testData` directory.
 This java file contains markup instructions for three different cases of code folding.
 
@@ -15,7 +15,7 @@ This java file contains markup instructions for three different cases of code fo
 {% include /code_samples/simple_language_plugin/src/test/testData/FoldingTestData.java %}
 ```
 
-## 7.2. Define a Test
+## Define a Test
 Add the `testFolding()` method to the `SimpleCodeInsightTest` class [previously defined](completion_test.md#define-a-test).
 This test method reuses the `DefaultTestData.simple` properties file. 
 
@@ -26,5 +26,5 @@ This test method reuses the `DefaultTestData.simple` properties file.
   }
 ```
 
-## 7.3. Run the Test
+## Run the Test
 [Run](completion_test.md#run-the-test) the test and make sure it's green.

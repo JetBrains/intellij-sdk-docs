@@ -5,7 +5,7 @@ title: 6. Rename Test
 
 This test verifies the Simple Language in-place rename functionality, implemented in the [Reference Contributor](/tutorials/custom_language_support/reference_contributor.md) section of the Custom Language Support Tutorial, works as expected.
 
-## 6.1. Define Input Test Data
+## Define Input Test Data
 Create the `RenameTestData.simple` properties file in the `testData` directory.
 
 ```bash
@@ -19,7 +19,7 @@ This file contains one Simple Language reference embedded in Java, with the [car
 {% include /code_samples/simple_language_plugin/src/test/testData/RenameTestData.java %}
 ```
 
-## 6.2. Create Output Test Data
+## Create Output Test Data
 Create the `RenameTestDataAfter.simple` properties file in the `testData` directory.
 This file contains the expected outcome of the test.
 Note the `website =` in `RenameTestData.simple` should be renamed to `websiteUrl =` by the test.
@@ -28,7 +28,7 @@ Note the `website =` in `RenameTestData.simple` should be renamed to `websiteUrl
 {% include /code_samples/simple_language_plugin/src/test/testData/RenameTestDataAfter.simple %}
 ```
 
-## 6.3. Define a Test Method
+## Define a Test Method
 Add the `testRename()` method to the `SimpleCodeInsightTest` class [previously defined](completion_test.md#define-a-test).
 * Again, this method configures the test fixture by using the test files.
 * The fixture then renames the Simple Language element at the caret in `RenameTestData.java`.
@@ -42,5 +42,5 @@ Add the `testRename()` method to the `SimpleCodeInsightTest` class [previously d
   }
 ```
 
-## 6.4. Run the Test
+## Run the Test
 [Run](completion_test.md#run-the-test) the test and make sure it's green.

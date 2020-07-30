@@ -9,14 +9,14 @@ The [`Commenter`](upsource:///platform/core-api/src/com/intellij/lang/Commenter.
 * bullet list
 {:toc}
 
-## 17.1. Define a Commenter
+## Define a Commenter
 The commenter for Simple Language defines the line comment prefix as `#`.
 
 ```java
 {% include /code_samples/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleCommenter.java %}
 ```
 
-## 17.2. Register the Commenter
+## Register the Commenter
 The `SimpleCommenter` implementation is registered in the plugin configuration file using the `com.intellij.lang.commenter` extension point. 
 
 ```xml
@@ -25,8 +25,8 @@ The `SimpleCommenter` implementation is registered in the plugin configuration f
   </extensions>
 ```
 
-## 17.3. Run the Project
-Open the example Simple Language [properties file ](/tutorials/custom_language_support/lexer_and_parser_definition.md#47-run-the-project) in the IDE Development Instance.
+## Run the Project
+Open the example Simple Language [properties file ](/tutorials/custom_language_support/lexer_and_parser_definition.md#run-the-project) in the IDE Development Instance.
 Place the cursor at the `website` line.
 Select **Code \| Comment with Line Comment**.
 The line is converted to a comment.

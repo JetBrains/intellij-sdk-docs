@@ -9,7 +9,7 @@ These markers can provide navigation targets to related code.
 * bullet list
 {:toc}
 
-## 8.1. Define a Line Marker Provider
+## Define a Line Marker Provider
 A line marker provider annotates usages of Simple Language properties within Java code and provides navigation to the definition of these properties.
 The visual marker is a Simple Language icon in the gutter of the Editor window.
 
@@ -20,7 +20,7 @@ For this example, override the `collectNavigationMarkers()` method to collect us
 {% include /code_samples/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleLineMarkerProvider.java %}
 ```
 
-## 8.2. Best Practices for Implementing Line Marker Providers
+## Best Practices for Implementing Line Marker Providers
 This section addresses important details about implementing a marker provider.
 The `collectNavigationMarkers()` method should:
 * Only return line marker information consistent with the element passed into the method. 
@@ -65,7 +65,7 @@ public class MyCorrectLineMarkerProvider implements LineMarkerProvider {
 }
 ```
 
-## 8.3. Register the Line Marker Provider
+## Register the Line Marker Provider
 The `SimpleLineMarkerProvider` implementation is registered with the IntelliJ Platform in the plugin configuration file using the `com.intellij.codeInsight.lineMarkerProvider` extension point.
 
 ```xml
@@ -75,7 +75,7 @@ The `SimpleLineMarkerProvider` implementation is registered with the IntelliJ Pl
   </extensions>
 ```
 
-## 8.4. Run the Project
+## Run the Project
 Run the `simple_language_plugin` in a Development Instance and open the [Test file](/tutorials/custom_language_support/annotator.md#run-the-project).
 Now the icon appears next to line 3 on the gutter.
 A user can click on the icon to navigate to the property definition.

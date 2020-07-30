@@ -5,7 +5,7 @@ title: 3. Completion Test
 
 This test checks if the Simple Language code completion functionality, implemented in the [Reference Contributor](/tutorials/custom_language_support/reference_contributor.md) section of the Custom Language Support Tutorial, works as expected.
 
-## 3.1. Define Test Data
+## Define Test Data
 Create the `DefaultTestData.simple` properties file in the `testData` directory.
 
 ```bash
@@ -19,7 +19,7 @@ This file contains a Simple Language snippet within the Java.
 {% include /code_samples/simple_language_plugin/src/test/testData/CompleteTestData.java %}
 ```
 
-## 3.2. Define a Test
+## Define a Test
 Subclass [`LightJavaCodeInsightFixtureTestCase`](upsource:///java/testFramework/src/com/intellij/testFramework/fixtures/LightJavaCodeInsightFixtureTestCase.java) to create `SimpleCodeInsightTest`.
 Override `getTestDataPath()`, and return the path from the root of this plugin module to the `testData` directory.
 
@@ -47,7 +47,7 @@ public class SimpleCodeInsightTest extends LightJavaCodeInsightFixtureTestCase {
 }
 ```
 
-## 3.3. Run the Test
+## Run the Test
 Run the test by:
 * Opening the **Gradle** Tool Window.
 * Select the `simple_language_plugin`.

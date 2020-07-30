@@ -10,7 +10,7 @@ Rather than the usual practice of using a folding builder to collapse a class, m
 * bullet list
 {:toc}
 
-## 12.1. Define a Folding Builder
+## Define a Folding Builder
 The `SimpleFoldingBuilder` replaces usages of properties with their values by default.
 Start by subclassing [`FoldingBuilderEx`](upsource:///platform/core-api/src/com/intellij/lang/folding/FoldingBuilderEx.java)
 
@@ -28,7 +28,7 @@ The IntelliJ Platform uses the value to substitute for the key when the code get
 {% include /code_samples/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleFoldingBuilder.java %}
 ```
 
-## 12.2. Register the Folding Builder
+## Register the Folding Builder
 The `SimpleFoldingBuilder` implementation is registered with the IntelliJ Platform in the plugin configuration file using the `com.intellij.lang.foldingBuilder` extension point.
 
 ```xml
@@ -38,7 +38,7 @@ The `SimpleFoldingBuilder` implementation is registered with the IntelliJ Platfo
   </extensions>
 ```
 
-## 12.3. Run the Project
+## Run the Project
 Rebuild the project, and run `simple_language_plugin` in a Development Instance.
 Now when a Java file is opened in the Editor, it shows the property's value instead of the key.
 This is because `SimpleFoldingBuilder.isCollapsedByDefault()` always returns `true`.

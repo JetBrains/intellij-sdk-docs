@@ -12,14 +12,14 @@ This example creates a settings/preferences page that uses the default language 
 * bullet list
 {:toc}
 
-## 16.1. Define Code Style Settings
+## Define Code Style Settings
 Define a code style settings for Simple Language by subclassing [`CustomCodeStyleSettings`](upsource:///platform/lang-api/src/com/intellij/psi/codeStyle/CustomCodeStyleSettings.java).
 
 ```java
 {% include /code_samples/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleCodeStyleSettings.java %}
 ```
 
-## 16.2. Define Code Style Settings Provider
+## Define Code Style Settings Provider
 The code style settings provider gives the IntelliJ Platform a standard way to instantiate `CustomCodeStyleSettings` for the Simple Language. 
 Define a code style settings provider for Simple Language by subclassing [`CodeStyleSettingsProvider`](upsource:///platform/lang-api/src/com/intellij/psi/codeStyle/CodeStyleSettingsProvider.java).
 
@@ -27,7 +27,7 @@ Define a code style settings provider for Simple Language by subclassing [`CodeS
 {% include /code_samples/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleCodeStyleSettingsProvider.java %}
 ```
 
-## 16.3. Register the Code Style Settings Provider
+## Register the Code Style Settings Provider
 The `SimpleCodeStyleSettingsProvider` implementation is registered with the IntelliJ Platform in the plugin configuration file using the `com.intellij.codeStyleSettingsProvider` extension point. 
 
 ```xml
@@ -36,14 +36,14 @@ The `SimpleCodeStyleSettingsProvider` implementation is registered with the Inte
   </extensions>
 ```
 
-## 16.4. Define the Language Code Style Settings Provider
+## Define the Language Code Style Settings Provider
 Define a code style settings provider for Simple Language by subclassing [`LanguageCodeStyleSettingsProvider`](upsource:///platform/lang-api/src/com/intellij/psi/codeStyle/LanguageCodeStyleSettingsProvider.java), which provides common code style settings for a specific language.
 
 ```java
 {% include /code_samples/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleLanguageCodeStyleSettingsProvider.java %}
 ```
 
-## 16.5. Register the Language Code Style Settings Provider
+## Register the Language Code Style Settings Provider
 The `SimpleLanguageCodeStyleSettingsProvider` implementation is registered with the IntelliJ Platform in the plugin configuration file using the `com.intellij.langCodeStyleSettingsProvider` extension point. 
 
 ```xml
@@ -53,7 +53,7 @@ The `SimpleLanguageCodeStyleSettingsProvider` implementation is registered with 
  </extensions>
 ```
 
-## 16.6. Run the Project
+## Run the Project
 In the IDE Development Instance, open the Simple Language code formatting page: **Preferences/Settings \| Editor \| Code Style \| Simple**.
 
 ![Code Style Settings](img/code_style_settings.png)

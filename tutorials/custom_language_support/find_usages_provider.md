@@ -11,7 +11,7 @@ A scanner breaks the text into words and defines the context for each word.
 * bullet list
 {:toc}
 
-## 11.1. Define a Find Usages Provider
+## Define a Find Usages Provider
 The `SimpleFindUsagesProvider` implements [`FindUsagesProvider`](upsource:///platform/indexing-api/src/com/intellij/lang/findUsages/FindUsagesProvider.java). 
 Using the [`DefaultWordsScanner`](upsource:///platform/indexing-api/src/com/intellij/lang/cacheBuilder/DefaultWordsScanner.java) ensures the scanner implementation is thread-safe.
 See the comments in `FindUsagesProvider` for more information.
@@ -20,7 +20,7 @@ See the comments in `FindUsagesProvider` for more information.
 {% include /code_samples/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleFindUsagesProvider.java %}
 ```
 
-## 11.2. Register the Find Usages Provider
+## Register the Find Usages Provider
 The `SimpleFindUsagesProvider` implementation is registered with the IntelliJ Platform in the plugin configuration file using the `com.intellij.lang.findUsagesProvider` extension point.
 
 ```xml
@@ -30,7 +30,7 @@ The `SimpleFindUsagesProvider` implementation is registered with the IntelliJ Pl
   </extensions>
 ```
 
-## 11.3. Run the Project
+## Run the Project
 Rebuild the project, and run `simple_language_plugin` in a Development Instance.
 The IDE now supports [Find Usages](https://www.jetbrains.com/help/idea/find-highlight-usages.html) for any property with a reference:
 

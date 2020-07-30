@@ -28,7 +28,7 @@ intellij {
 }
 ```
 
-## 7.1. Define an Annotator
+## Define an Annotator
 The `SimpleAnnotator` subclasses [`Annotator`](upsource:///platform/analysis-api/src/com/intellij/lang/annotation/Annotator.java).
 Consider a literal string that starts with "simple:" as a prefix of a Simple Language key.
 It isn't part of the Simple Language, but it is a useful convention for detecting Simple Language keys embedded as string literals in other languages, like Java.
@@ -42,7 +42,7 @@ Annotate the `simple:key` literal expression, and differentiate between a well-f
 
 > **Tip** If the above code is copied at this stage of the tutorial, then remove the line below the comment "** Tutorial step 18.3 …" The quick fix class in that line is not defined until later in the tutorial.
 
-## 7.2. Register the Annotator
+## Register the Annotator
 Using the `com.intellij.annotator` extension point in the plugin configuration file, register the Simple Language annotator class with the IntelliJ Platform:
 
 ```xml
@@ -51,7 +51,7 @@ Using the `com.intellij.annotator` extension point in the plugin configuration f
   </extensions>
 ```
 
-## 7.3. Run the Project
+## Run the Project
 As a test, define the following Java file containing a Simple Language `prefix:value` pair:
 
 ```java
@@ -70,4 +70,4 @@ If the property is an undefined name, the annotator flags the code with an error
 
 ![Unresolved property](img/unresolved_property.png){:width="800px"}
 
-Try changing the Simple Language [color settings](/tutorials/custom_language_support/syntax_highlighter_and_color_settings_page.md#run-the-project-1) to differentiate the annotation from the default language color settings.
+Try changing the Simple Language [color settings](/tutorials/custom_language_support/syntax_highlighter_and_color_settings_page.md#run-the-project) to differentiate the annotation from the default language color settings.

@@ -178,7 +178,7 @@ Please perform these steps _additionally_ to setting up Spring API support (see 
 * add to _sourcepath_
 	* `$IDEA_HOME$/lib/src/src_spring-boot-openapi.zip`
 
-### plugin.xml
+### Update plugin.xml
 Add `<depends>com.intellij.spring.boot</depends>` to your `plugin.xml` to require "Spring Boot" plugin to be activated. All available extension points are provided under `com.intellij.spring.boot` prefix.
 
 ### Spring Boot Library

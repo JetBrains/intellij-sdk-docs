@@ -1,5 +1,5 @@
 ---
-title: Project Wizard. Adding Support for Creating New Project Types.
+title: Project Wizard - Adding Support for Creating New Project Types.
 ---
 <!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
@@ -15,7 +15,7 @@ New module type should be derived from the class
 [`ModuleType`](upsource:///platform/lang-api/src/com/intellij/openapi/module/ModuleType.java).
 
 
-## Project Wizard
+## Custom Project Wizard
 
 Main utilities to configure a custom project wizard can be found in the package
 [`lang-api.ide.util.projectWizard`](upsource:///platform/lang-api/src/com/intellij/ide/util/projectWizard).

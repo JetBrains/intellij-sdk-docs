@@ -25,7 +25,7 @@ Symbol completion in plain text editor (VCS Commit Message)
 User-customizable date/time formatting
 : Use `com.intellij.util.text.JBDateFormat#getFormatter()` to use configured format from `Settings | Appearance & Behavior | System Settings | Date Formats`.                  
                            
-## Notable Changes in IntelliJ IDEA
+## Notable Changes in IntelliJ IDEA 2019.3
 
 Unbundled plugins
 : Several plugins (Heroku integration, RubyMotion support, Java Applets Support) for no longer actively maintained technology have been moved to a [separate repository](https://github.com/JetBrains/intellij-obsolete-plugins/). 
@@ -76,7 +76,7 @@ New API for Editor Inlay Hints
 : Returns dedicated message when invalid SDK path was chosen (e.g., JRE instead of JDK). 
 
 
-## Notable Changes in IntelliJ IDEA
+## Notable Changes in IntelliJ IDEA 2019.2
 
 Java functionality extracted as plugin
 : If your plugin depends on Java, it must be specified now, please see [blog post](https://blog.jetbrains.com/platform/2019/06/java-functionality-extracted-as-a-plugin/) for details.

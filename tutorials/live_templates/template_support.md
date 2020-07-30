@@ -121,7 +121,7 @@ public class MarkdownTemplateProvider implements DefaultLiveTemplatesProvider {
 }
 ```
 
-#### Register Extension Points
+#### Register DefaultLiveTemplatesProvider Extension Point
 Using the `com.intellij.defaultLiveTemplatesProvider` and `com.intellij.liveTemplateContext` extension points, register the implementations with the IntelliJ Platform.
 
 ```xml

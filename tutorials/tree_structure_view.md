@@ -17,7 +17,7 @@ Create an empty plugin project.
 See 
 [Creating a Plugin Project](/tutorials/build_system/gradle_prerequisites.md).
 
-## 1. Register Custom TreeStructure Provider
+## Register Custom TreeStructure Provider
 
 Add new *treeStructureProvider* extension to the
 [plugin.xml](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/tree_structure_provider/src/main/resources/META-INF/plugin.xml)
@@ -28,7 +28,7 @@ Add new *treeStructureProvider* extension to the
 </extensions>
 ```
 
-## 2. Implement Custom TreeStructureProvider
+## Implement Custom TreeStructureProvider
 
 To provide custom Structure View behaviour you need to implement TreeStructureProvider interface.  
 
@@ -48,7 +48,7 @@ public class TextOnlyTreeStructureProvider implements TreeStructureProvider {
 }
 ```
 
-## 3. Override modify() Method
+## Override modify() Method
 
 To implement Tree Structure nodes filtering logic, override `modify()` method.
 The example below shows how to filter out all the Project View nodes except those which correspond to text files and directories.
@@ -57,7 +57,7 @@ The example below shows how to filter out all the Project View nodes except thos
 {% include /code_samples/tree_structure_provider/src/main/java/org/intellij/sdk/treeStructureProvider/TextOnlyTreeStructureProvider.java %}
 ```
 
-## 4. Compile and Run the Plugin
+## Compile and Run the Plugin
 
 Compile and run the code sample from this tutorial.
 Refer to 

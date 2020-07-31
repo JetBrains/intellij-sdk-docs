@@ -14,7 +14,7 @@ section of
 
 Create an empty plugin project as described in [Creating a Plugin Project](/basics/getting_started.md).
 
-## 1. Register a New ConfigurationType
+## Register a New ConfigurationType
 
 Add new `configurationType` extension to the 
 [plugin.xml](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/run_configuration/src/main/resources/META-INF/plugin.xml)
@@ -25,7 +25,7 @@ Add new `configurationType` extension to the
 </extensions>
 ```
 
-## 2. Implement ConfigurationType
+## Implement ConfigurationType
 
 Implement 
 [`ConfigurationType`](upsource:///platform/lang-api/src/com/intellij/execution/configurations/ConfigurationType.java) 
@@ -61,7 +61,7 @@ public class DemoRunConfigurationType implements ConfigurationType {
 }
 ```
 
-## 3. Implement a ConfigurationFactory
+## Implement a ConfigurationFactory
 
 Implement a new
 [`ConfigurationFactory`](upsource:///platform/lang-api/src/com/intellij/execution/configurations/ConfigurationFactory.java)
@@ -88,7 +88,7 @@ public class DemoConfigurationFactory extends ConfigurationFactory {
 
 ```
 
-## 4. Implement a Run Configuration
+## Implement a Run Configuration
 
 To make your changes visible from the UI, implement a new Run Configuration.
 
@@ -124,7 +124,7 @@ public class DemoRunConfiguration extends RunConfigurationBase {
 }
 ```
 
-## 5. Create and Implement Run Configuration UI Form
+## Create and Implement Run Configuration UI Form
 
 Make sure _UI Designer_ plugin is [enabled](https://www.jetbrains.com/help/idea/managing-plugins.html).
 
@@ -136,7 +136,7 @@ Default Run Configuration will be looking like this:
 
 ![Default Run Configuration Look](run_configurations/img/ui_form.png)
 
-## 6. Bind the UI Form
+## Bind the UI Form
 
 The UI Form should be bound with a Java class responsible for handling UI components logic.
 
@@ -168,7 +168,7 @@ public class DemoSettingsEditor extends SettingsEditor<DemoRunConfiguration> {
 }
 ```
 
-## 7. Compile and Run the Plugin
+## Compile and Run the Plugin
 
 Refer to 
 [Running and Debugging a Plugin](/basics/getting_started/running_and_debugging_a_plugin.md).

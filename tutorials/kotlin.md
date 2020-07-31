@@ -3,7 +3,7 @@ title: Kotlin for Plugin Developers
 ---
 <!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-## 1. Why Kotlin?
+## Why Kotlin?
 
 Using Kotlin to write plugins for the IntelliJ Platform is very similar to writing plugins in Java. Existing plugin
 developers can get started by converting boilerplate Java classes to their Kotlin equivalents by using
@@ -42,7 +42,7 @@ Now we can directly write `logger.debug { "..." }` to receive all the benefits o
 verbosity. With practice, you will be able to recognize many idioms in the IntelliJ Platform that can be simplified with
 Kotlin. To learn more about building IntelliJ Platform plugins with Kotlin, this tutorial will help you get started.
 
-## 2. Adding Kotlin Support
+## Adding Kotlin Support
 
 > **TIP** The [GitHub Template](/tutorials/github_template.md) provides a preconfigured project using Kotlin.
 
@@ -50,7 +50,7 @@ Plugins targeting the IntelliJ Platform versions 143 and above are easy to migra
 The IDE already bundles the necessary Kotlin plugins and libraries, requiring no further configuration.
 For detailed instructions, please refer to the [Kotlin documentation](https://kotlinlang.org/docs/tutorials/getting-started.html).
 
-## 3. Kotlin Gradle Plugin
+## Kotlin Gradle Plugin
 
 For plugins already using the [Gradle Build System](gradle_build_system.md), or those that require precise control over
 the Kotlin build process, we recommend using the
@@ -98,7 +98,7 @@ intellij {
 }
 ```
 
-### 3.1. Use Kotlin to Write Gradle Script
+### Use Kotlin to Write Gradle Script
 
 Starting with 4.4, Gradle supports `build.gradle.kts`, an alternative to `build.gradle` written in Kotlin.
 
@@ -147,21 +147,21 @@ intellij {
 }
 ```
 
-## 4. UI in Kotlin
+## UI in Kotlin
 
 The best way to create user interfaces with Kotlin is to use a [type safe DSL](/user_interface_components/kotlin_ui_dsl.md)
 for building forms. Using GUI designer with Kotlin is currently [not supported](https://youtrack.jetbrains.com/issue/KT-6660). 
 
-## 5. Handling Kotlin Code
+## Handling Kotlin Code
 
 If a plugin processes Kotlin code (e.g., providing inspections), it needs to add a dependency on the Kotlin plugin (Plugin ID `org.jetbrains.kotlin`) itself.
 Please refer to [Plugin Dependencies](/basics/plugin_structure/plugin_dependencies.md) for more information.
 
-## 6. Caution
+## Caution
 
 Plugins *must* use Kotlin classes to implement declarations in the [plugin configuration file](/basics/plugin_structure/plugin_configuration_file.md). When registering an extension, the platform uses a dependency injection framework to instantiate these classes. For this reason, plugins *must not* use [Kotlin objects](https://kotlinlang.org/docs/reference/object-declarations.html) to implement any `plugin.xml` declarations.
 
-## 7. Examples
+## Examples
 
 There are a number of [open source Kotlin projects](https://github.com/search?l=Kotlin&q=+intellij&ref=searchresults&type=Repositories)
 built on the IntelliJ Platform. For a readily available source of up to date examples and applications of the Kotlin

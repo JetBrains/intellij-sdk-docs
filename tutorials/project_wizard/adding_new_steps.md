@@ -11,7 +11,7 @@ Create an empty plugin project.
 See [Creating a Plugin Project](/tutorials/gradle_build_system.md)
 to know how to do it.
 
-## 1. Register Module Builder
+## Register Module Builder
 Project configuration settings depend on the project's module type. 
 Register a new `com.intellij.moduleBuilder` extension point in the `plugin.xml` configuration file. 
 
@@ -23,7 +23,7 @@ Register a new `com.intellij.moduleBuilder` extension point in the `plugin.xml` 
   </extensions>
 ```
 
-## 2. Create a Custom Module Builder
+## Create a Custom Module Builder
 
 Extend [`ModuleBuilder`](upsource:///platform/lang-api/src/com/intellij/ide/util/projectWizard/ModuleBuilder.java) class to provide custom configuration.
 
@@ -35,7 +35,7 @@ public class DemoModuleWizardStep extends ModuleBuilder {
 }
 ```
 
-## 3. Define Module Type
+## Define Module Type
 Set a module type for the extra wizard step to provide. In this example, choose an `EMPTY` module type.
 
 ```java
@@ -50,7 +50,7 @@ public class DemoModuleWizardStep extends ModuleBuilder {
 }
 ```
 
-## 4. Design and Implement Wizard Steps
+## Design and Implement Wizard Steps
 Provide an implementation of a custom UI component to be added to the Wizard.
 In this case, leave it as a label.
 
@@ -82,7 +82,7 @@ public class DemoModuleWizardStep extends ModuleBuilder {
 }
 ```
 
-## 5. Checking UI Appearance  
+## Checking UI Appearance  
 After compiling and running the plugin, create a new project using a source-compiled instance of *IntelliJ IDEA*.
 
 ![New Project](img/empty_project.png)

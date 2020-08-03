@@ -3,15 +3,6 @@ title: Plugin Compatibility with IntelliJ Platform Products
 ---
 <!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-<style>
-  table {
-    width:100%;
-  }
-  th:first-child, td:first-child {
-    width: 32%;
-  }
-</style>
-
 ## Introduction
 All products based on the _IntelliJ Platform_ are built on the same underlying API. 
 Some of these products share features built on top of the platform, such as Java support in IntelliJ IDEA and Android Studio. 

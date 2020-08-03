@@ -1,46 +1,51 @@
-[IntelliJ Platform SDK Code Samples](../README.md)
-
-# Maximum Open Projects Sample
+# Maximum Open Projects Sample [![JetBrains IntelliJ Platform SDK Docs](https://jb.gg/badges/docs.svg)][docs]
+*Reference: [Plugin Services in IntelliJ SDK Docs][docs:plugin_services]*
 
 ## Quickstart
 
-TODO
+Maximum Open Projects Sample implements a `ProjectManagerListener` with two methods implemented to check if the current
+projects has been opened or closed. Each method refers to the `ProjectCountingService` service registered
+as an `applicationService` extension point. It provides methods to increase and decrease global counter of the currently
+opened projects in the IDE. After opening each one, a message dialog is presented to the user with the current number.
 
 ## Structure
 
-The plugin was developed using the [IntelliJ Platform SDK][docs_sdk].
+Maximum Open Projects Sample
+plugin depends on the [IntelliJ Platform SDK][docs] and [Gradle][docs:gradle] as a build system.
 
-The main file is [plugin.xml][plugin.xml], which is created accordingly to the [Plugin Configuration File documentation][docs_pluginxml].
-It describes definitions of the actions, extensions, or listeners provided by the plugin:
+The main plugin definition file is stored in the [plugin.xml][file:plugin.xml] file, which is created accordingly
+to the [Plugin Configuration File documentation][docs:plugin.xml]. It describes definitions of the actions, extensions,
+or listeners provided by the plugin.
 
 ### Extension Points
 
-| Name | Implementation Class | Interface |
-| ---- | -------------------- | --------- |
-| applicationService | [ProjectCountingService][applicationService_implementation] | - |
+| Name               | Implementation Class                                  | Interface                                      |
+| ------------------ | ----------------------------------------------------- | ---------------------------------------------- |
+| applicationService | [ProjectCountingService][file:ProjectCountingService] |                                                |
 
-[Extension Points documentation][docs_ep]
+*Reference: [Plugin Extension Points in IntelliJ SDK Docs][docs:ep]*
 
 ### Application Listeners
 
-| Name | Implementation Class | Topic |
-| ---- | -------------------- | --------- |
-| listener | [ProjectOpenCloseListener][applicationListener_implementation] | [ProjectManagerListener][applicationListener_topic] |
+| Name     | Implementation Class                                      | Interface                                            |
+| -------- | --------------------------------------------------------- | ---------------------------------------------------- |
+| listener | [ProjectOpenCloseListener][file:ProjectOpenCloseListener] | [ProjectManagerListener][sdk:ProjectManagerListener] |
 
-[Extension Points documentation][docs_listeners]
+*Reference: [Plugin Listeners in IntelliJ SDK Docs][docs:listeners]*
 
-## Function
+[docs]: http://www.jetbrains.org/intellij/sdk/docs
+[docs:actions]: https://www.jetbrains.org/intellij/sdk/docs/basics/action_system.html
+[docs:plugin_services]: https://jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_services.html
+[docs:ep]: https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_extension_points.html
+[docs:gradle]: https://www.jetbrains.org/intellij/sdk/docs/tutorials/build_system.html
+[docs:plugin.xml]: https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_configuration_file.html
+[docs:listeners]: https://jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_listeners.html
 
-TODO
+[file:plugin.xml]: ./src/main/resources/META-INF/plugin.xml
+[file:ProjectCountingService]: ./src/main/java/org/intellij/sdk/maxOpenProjects/ProjectCountingService.java
+[file:ProjectOpenCloseListener]: ./src/main/java/org/intellij/sdk/maxOpenProjects/ProjectOpenCloseListener.java
 
-[plugin.xml]: ./src/main/resources/META-INF/plugin.xml
-[docs_tool_windows]: https://www.jetbrains.org/intellij/sdk/docs/user_interface_components/tool_windows.html
-[docs_pluginxml]: https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_configuration_file.html
-[docs_sdk]: https://www.jetbrains.org/intellij/sdk/docs/intro/about.html
-[docs_ep]: https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_extension_points.html
-[docs_listeners]: https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_listeners.html
-[docs_run]: https://www.jetbrains.org/intellij/sdk/docs/tutorials/build_system/prerequisites.html#running-a-simple-gradle-based-intellij-platform-plugin
+[sdk:ProjectManagerListener]: https://github.com/JetBrains/intellij-community/blob/master/platform/projectModel-api/src/com/intellij/openapi/project/ProjectManagerListener.java
 
-[applicationService_implementation]: ./src/main/java/org/intellij/sdk/maxOpenProjects/ProjectCountingService.java
 [applicationListener_implementation]: ./src/main/java/org/intellij/sdk/maxOpenProjects/ProjectCountingService.java
 [applicationListener_topic]: https://github.com/JetBrains/intellij-community/blob/master/platform/projectModel-api/src/com/intellij/openapi/project/ProjectManagerListener.java

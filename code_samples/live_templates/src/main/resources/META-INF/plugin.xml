@@ -6,7 +6,7 @@
   <id>org.intellij.sdk.liveTemplates</id>
 
   <!-- Text to display as name on Preferences/Settings | Plugin page -->
-  <name>SDK: Live Templates Sample Project</name>
+  <name>SDK: Live Templates Sample</name>
 
   <!-- Product and plugin compatibility requirements -->
   <depends>com.intellij.modules.lang</depends>

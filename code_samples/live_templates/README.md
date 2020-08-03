@@ -1,4 +1,4 @@
-# Live Templates Sample Project [![JetBrains IntelliJ Platform SDK Docs](https://jb.gg/badges/docs.svg)][docs]
+# Live Templates Sample [![JetBrains IntelliJ Platform SDK Docs](https://jb.gg/badges/docs.svg)][docs]
 *Reference: [Live Templates in IntelliJ SDK Docs][docs:live_templates]*
 
 ## Quickstart

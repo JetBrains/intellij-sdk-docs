@@ -1,36 +1,38 @@
-[IntelliJ Platform SDK Code Samples](../README.md)
-
-# PyCharm Sample Project
+# PyCharm Sample [![JetBrains IntelliJ Platform SDK Docs](https://jb.gg/badges/docs.svg)][docs]
+*Reference: [PyCharm Plugin Development in IntelliJ SDK Docs][docs:pycharm]*
 
 ## Quickstart
 
-TODO
+PyCharm Sample is a plugin that depends on the PyCharm IDE having the proper dependencies specified
+in the Gradle configuration file. Implementation utilizes a simple action added to the *MainMenu* group
+thta displays a message dialog after invoking.
 
 ## Structure
 
-The plugin was developed using the [IntelliJ Platform SDK][docs_sdk].
+PyCharm Sample
+plugin depends on the [IntelliJ Platform SDK][docs] and [Gradle][docs:gradle] as a build system.
 
-The main file is [plugin.xml][plugin.xml], which is created accordingly to the [Plugin Configuration File documentation][docs_pluginxml].
-It describes definitions of the actions, extensions, or listeners provided by the plugin:
+The main plugin definition file is stored in the [plugin.xml][file:plugin.xml] file, which is created accordingly
+to the [Plugin Configuration File documentation][docs:plugin.xml]. It describes definitions of the actions, extensions,
+or listeners provided by the plugin.
 
 ### Actions
 
-| Name | Implementation Class | Interface |
-| ---- | -------------------- | --------- |
-| PopupDialogAction | [PopupDialogAction][PopupDialogAction_implementation] | [AnAction][PopupDialogAction_interface] |
+| Name              | Implementation Class                        | Interface                |
+| ----------------- | ------------------------------------------- | ------------------------ |
+| PopupDialogAction | [PopupDialogAction][file:PopupDialogAction] | [AnAction][sdk:AnAction] |
 
-[Actions documentation][docs_actions]
+*Reference: [Action System in IntelliJ SDK Docs][docs:actions]*
 
-## Function
+[docs]: http://www.jetbrains.org/intellij/sdk/docs
+[docs:actions]: https://www.jetbrains.org/intellij/sdk/docs/basics/action_system.html
+[docs:pycharm]: https://jetbrains.org/intellij/sdk/docs/products/pycharm.html
+[docs:ep]: https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_extension_points.html
+[docs:gradle]: https://www.jetbrains.org/intellij/sdk/docs/tutorials/build_system.html
+[docs:plugin.xml]: https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_configuration_file.html
+[docs:listeners]: https://jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_listeners.html
 
-TODO
+[file:plugin.xml]: ./src/main/resources/META-INF/plugin.xml
+[file:PopupDialogAction]: ./src/main/java/org/intellij/sdk/pycharm/PopupDialogAction.java
 
-[plugin.xml]: ./src/main/resources/META-INF/plugin.xml
-[docs_tool_windows]: https://www.jetbrains.org/intellij/sdk/docs/user_interface_components/tool_windows.html
-[docs_pluginxml]: https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_configuration_file.html
-[docs_sdk]: https://www.jetbrains.org/intellij/sdk/docs/intro/about.html
-[docs_actions]: https://www.jetbrains.org/intellij/sdk/docs/basics/action_system.html
-[docs_run]: https://www.jetbrains.org/intellij/sdk/docs/tutorials/build_system/prerequisites.html#running-a-simple-gradle-based-intellij-platform-plugin
-
-[PopupDialogAction_implementation]: ./src/main/java/com/intellij/sdk/pycharm/PopupDialogAction.java
-[PopupDialogAction_interface]: https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java
+[sdk:AnAction]: https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java

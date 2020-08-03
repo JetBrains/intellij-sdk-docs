@@ -6,7 +6,7 @@
   <id>org.intellij.sdk.pycharm</id>
 
   <!-- Text to display as name on Preferences/Settings | Plugin page -->
-  <name>SDK: PyCharm Sample Project</name>
+  <name>SDK: PyCharm Sample</name>
 
   <!-- Requires the python plugin to run -->
   <depends>com.intellij.modules.python</depends>

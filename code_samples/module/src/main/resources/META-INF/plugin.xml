@@ -6,7 +6,7 @@
   <id>org.intellij.sdk.module</id>
 
   <!-- Text to display as name on Preferences/Settings | Plugin page  -->
-  <name>SDK: Module Type Sample Project</name>
+  <name>SDK: Module Type Sample</name>
 
   <!-- Product and plugin compatibility requirements -->
   <depends>com.intellij.modules.platform</depends>

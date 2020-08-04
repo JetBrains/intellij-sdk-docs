@@ -1,6 +1,6 @@
 // Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
 
-// Composite Build for all SDK Code Sample projects
+// Composite Build for all SDK Code Sample projects (excluding those under /product_specific/ to reduce dependencies)
 
 rootProject.name = 'SDK Code Samples'
 

@@ -57,7 +57,7 @@ Use the following guidelines to choose the correct parent:
 using `Disposable.dispose()`. Note that it's always best to specify a parent for such a disposable (e.g., a project-level service),
 so that there is no memory leak if the `Disposable.dispose()` call is not reached because of an exception or a programming error.
 
-> **Warning** Even though `Application` and `Project` implement `Disposable`, they must NEVER be used as parent disposables in plugin code.
+> **WARNING** Even though `Application` and `Project` implement `Disposable`, they must NEVER be used as parent disposables in plugin code.
 Disposables registered using those objects as parents will not be disposed when the plugin is unloaded, leading to memory leaks.
 
 The flexibility of the `Disposer` API means that if the parent instance is chosen unwisely, the child may consume resources for longer than required. 
@@ -96,7 +96,7 @@ You can use `Disposer.isDisposed()` to check whether a `Disposable` has already 
 This check is useful, for example, for an asynchronous callback to a  `Disposable` that may be disposed before the callback is executed.
 In such a case, the best strategy is usually to do nothing and return early.
 
-> **Warning** Non-disposed objects shouldn't hold onto references to disposed objects, as this constitutes a memory leak. Once a `Disposable` is released, it should be completely inactive, and there's no reason to refer to it anymore.
+> **WARNING** Non-disposed objects shouldn't hold onto references to disposed objects, as this constitutes a memory leak. Once a `Disposable` is released, it should be completely inactive, and there's no reason to refer to it anymore.
 
 ### Ending a Disposable Lifecycle
 A plugin can manually end a `Disposable` lifecycle by calling `Disposer.dispose(Disposable)`. 
@@ -135,7 +135,7 @@ Regardless, it illustrates the basic pattern, which is:
 * The `Foo` disposable is registered as a child of `parentDisposable` in the constructor.
 * The `dispose()` method consolidates the necessary release actions and will be called by the `Disposer`.
 
-> **Warning** Never call `Disposable.dispose()` directly because it bypasses the parent-child relationships established in `Disposer`. Always call `Disposer.dispose(Disposable)` instead. 
+> **WARNING** Never call `Disposable.dispose()` directly because it bypasses the parent-child relationships established in `Disposer`. Always call `Disposer.dispose(Disposable)` instead. 
 
 ## Diagnosing Disposer Leaks
 
@@ -171,7 +171,7 @@ The following snippet represents the sort of "memory leak detected" error encoun
         …
 ```
 
-> **Tip** The first part of the callstack is unrelated to diagnosing the memory leak. Instead, pay attention to the second part of the call stack, after `Caused by: java.lang.Throwable`.
+> **TIP** The first part of the callstack is unrelated to diagnosing the memory leak. Instead, pay attention to the second part of the call stack, after `Caused by: java.lang.Throwable`.
 
 In this specific case, the IntelliJ Platform ([`CoreProgressManager`](upsource:///platform/core-impl/src/com/intellij/openapi/progress/impl/CoreProgressManager.java)) started a task that contained the `DynamicWizard` code.
 That code, in turn, allocated a `Project` that was never disposed by the time the application exited. 

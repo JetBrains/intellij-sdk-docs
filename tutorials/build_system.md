@@ -15,7 +15,7 @@ To make sure that your plugin is not affected by [API changes](/reference_guide/
 
 > **WARNING** When adding additional repositories to your Gradle build script, make sure to always use HTTPS protocol.
 
-> **Note** Please make sure to always upgrade to the latest version of `gradle-intellij-plugin`.
+> **NOTE** Please make sure to always upgrade to the latest version of `gradle-intellij-plugin`.
 Follow releases on [GitHub](https://github.com/JetBrains/gradle-intellij-plugin/releases).
 
 Below are a series of guides to developing and deploying Gradle-based IntelliJ Platform Plugins:

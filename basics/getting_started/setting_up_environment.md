@@ -23,7 +23,7 @@ To set up your plugin development environment:
 <br/>
 <br/>
 *  Specify the installation folder of *IntelliJ IDEA Community Edition* as the home directory.
-> **warning** You may use IntelliJ IDEA Ultimate as an alternative, but debugging the core code will only work with the *Community Edition*.
+> **WARNING** You may use IntelliJ IDEA Ultimate as an alternative, but debugging the core code will only work with the *Community Edition*.
 
    ![Set Home Directory](img/set_home_directory.png)
 <br/>

@@ -23,7 +23,7 @@ The rest of this page is an overview of actions as an extension point.
 An action is a class derived from the abstract class [`AnAction`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java).
 The IntelliJ Platform calls methods of an action when a user interacts with a menu item or toolbar button. 
 
-> **Warning** Classes based on `AnAction` do not have class fields of any kind. This is because an instance of `AnAction` class
+> **WARNING** Classes based on `AnAction` do not have class fields of any kind. This is because an instance of `AnAction` class
 exists for the entire lifetime of the application. If `AnAction` class uses a field to store data that has a shorter 
 lifetime and doesn't clear this data promptly, the data leaks. For example, any `AnAction` data that exists 
 only within the context of a `Project` causes the `Project` to be kept in memory after the user has closed it.
@@ -48,11 +48,11 @@ However, the `update()` and `actionPerformed()` methods are essential to basic o
 The method `AnAction.update()` is periodically called by the IntelliJ Platform in response to user gestures.
 The `update()` method gives an action to evaluate the current context and enable or disable its functionality.
 
-> **Warning** The `AnAction.update()` method can be called frequently, and on a UI thread.
+> **WARNING** The `AnAction.update()` method can be called frequently, and on a UI thread.
 This method needs to _execute very quickly_; no real work should be performed in this method.
 For example, checking selection in a tree or a list is considered valid, but working with the file system is not.
 
-> **Tip** If the new state of an action cannot be determined quickly, then evaluation should be performed in the `AnAction.actionPerformed()` method, and notify the user that the action cannot be executed if the context isn't suitable. 
+> **TIP** If the new state of an action cannot be determined quickly, then evaluation should be performed in the `AnAction.actionPerformed()` method, and notify the user that the action cannot be executed if the context isn't suitable. 
 
 #### Determining the Action Context
 The `AnActionEvent` object passed to `update()` carries information about the current context for the action.
@@ -82,7 +82,7 @@ Toolbar actions display their respective icons for the disabled state.
 The visibility of a disabled action in a menu depends on whether the host menu (e.g. "ToolsMenu") containing the action has the `compact` attribute set.
 See [Grouping Actions](#grouping-actions) for more information about the `compact` attribute, and the visibility of menu actions.
 
-> **Note** If an action is added to a toolbar, its `update()` can be called if there was any user activity or focus transfer. 
+> **NOTE** If an action is added to a toolbar, its `update()` can be called if there was any user activity or focus transfer. 
 If the action's availability changes in the absence of these events, then call [`ActivityTracker.getInstance().inc()`](upsource:///platform/platform-api/src/com/intellij/ide/ActivityTracker.java) to notify the action subsystem to update all toolbar actions. 
 
 An example of enabling a menu action based on whether a project is open is demonstrated in [`PopupDialogAction.update()`](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/action_basics/src/main/java/org/intellij/sdk/action/PopupDialogAction.java) method. 
@@ -148,7 +148,7 @@ Registering actions in `plugin.xml` is demonstrated in the following reference e
 
 #### Setting the Override-Text Element for an Action
 
-> **Tip** Beginning in 2020.1, an alternate version of an action's menu text can be declared for use depending on where an action appears.
+> **TIP** Beginning in 2020.1, an alternate version of an action's menu text can be declared for use depending on where an action appears.
 
 By using the `<override-text>` element introduced in 2020.1 of the IntelliJ Platform, the menu text for an action can be different depending on context: menu location, toolbar, etc.
 

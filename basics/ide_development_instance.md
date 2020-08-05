@@ -8,6 +8,8 @@ redirect_from:
 A JetBrains feature for developing plugins is running or debugging a plugin project from within an IntelliJ Platform-based IDE such as IntelliJ IDEA. 
 Selecting the [**runIde**](/tutorials/build_system/prerequisites.md#running-a-simple-gradle-based-intellij-platform-plugin) task for a Gradle-based project (or [**Run**](getting_started/running_and_debugging_a_plugin.md) menu for a DevKit-based project) will launch a _Development Instance_ of the IDE with the plugin enabled.
 This page describes how to control some of the settings for the Development Instance.
+                                            
+> **TIP** Please see also [Advanced Configuration](https://www.jetbrains.com/help/idea/tuning-the-ide.html) for general VM options and properties.
 
 ## Using a JetBrains Runtime for the Development Instance
 A common use case is to develop (build) a plugin project against a JDK, e.g. Java 8, and then run or debug the plugin in a Development Instance of the IDE.
@@ -23,7 +25,8 @@ The JetBrains Runtime is determined from the JDK version used to build the plugi
 If a plugin is being developed against the Java 8 SE Development Kit 8 for macOS, for example, `jdk-8u212-macosx-x64.dmg`.
 (This example will use macOS, but Windows and Linux follow the same procedure.)
 To acquire the compatible JetBrains Runtime:
-* Go to the [JetBrains Bintray site](https://bintray.com/jetbrains/intellij-jbr).
+* Go to the [JetBrains Runtime Site](https://confluence.jetbrains.com/display/JBR/JetBrains+Runtime) for general information and latest build
+* Open [Release notes](https://confluence.jetbrains.com/display/JBR/Release+notes) page to access all releases.
 * Select the package name corresponding to the platform and SDK version.
   In this case the package name is `jbrsdk8-osx-x64` for **j**et **b**rains **r**untime _sdk_ version 8, macOS x64 hardware.
 * On the macOS package page of the JetBrains Bintray site, select the **Files** menu.

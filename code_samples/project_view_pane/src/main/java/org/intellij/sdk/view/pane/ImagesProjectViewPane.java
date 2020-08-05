@@ -11,7 +11,6 @@ import com.intellij.ide.projectView.impl.ProjectAbstractTreeStructureBase;
 import com.intellij.ide.projectView.impl.ProjectTreeStructure;
 import com.intellij.ide.projectView.impl.ProjectViewTree;
 import com.intellij.ide.util.treeView.AbstractTreeBuilder;
-import com.intellij.ide.util.treeView.AbstractTreeNode;
 import com.intellij.ide.util.treeView.AbstractTreeUpdater;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
@@ -75,7 +74,7 @@ public class ImagesProjectViewPane extends AbstractProjectViewPSIPane {
   protected ProjectAbstractTreeStructureBase createStructure() {
     return new ProjectTreeStructure(myProject, ID) {
       @Override
-      protected AbstractTreeNode createRoot(@NotNull Project project, @NotNull ViewSettings settings) {
+      protected ImagesProjectNode createRoot(@NotNull Project project, @NotNull ViewSettings settings) {
         return new ImagesProjectNode(project);
       }
 
@@ -98,6 +97,7 @@ public class ImagesProjectViewPane extends AbstractProjectViewPSIPane {
     };
   }
 
+  //  Awaiting refactoring of AbstractProjectViewPSIPane#createTreeUpdater
   @NotNull
   @Override
   protected AbstractTreeUpdater createTreeUpdater(@NotNull AbstractTreeBuilder builder) {

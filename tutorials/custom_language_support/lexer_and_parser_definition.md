@@ -19,6 +19,11 @@ To include those files, the project's `sourceSets` must be expanded by inserting
   sourceSets.main.java.srcDirs 'src/main/gen'
 ```
 
+Or the following line in the project's `build.gradle.kts` file:
+```kotlin
+  sourceSets["main"].java.srcDirs("src/main/gen")
+```
+
 ## 4.1. Define a Lexer
 Define a `Simple.flex` file with rules for the Simple Language lexer, as demonstrated in `org.intellij.sdk.language.Simple.flex`.
 
@@ -93,4 +98,4 @@ tab : \u0009
 
 Now open the *PsiViewer* tool window and check how the lexer breaks the content of the file into tokens, and the parser parsed the tokens into PSI elements.
 
-![PSI Elements](img/psi_elements.png){:width="900px"}
+![PSI Elements](img/psi_elements.png)

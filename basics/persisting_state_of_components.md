@@ -13,7 +13,7 @@ If the plugin needs to persist just a few simple values, the easiest way to do s
 
 Use the `PropertiesComponent.getInstance()` method for storing application-level values, and the `PropertiesComponent.getInstance(Project)` method for storing project-level values.
 
-Since all plugins share the same namespace, it is highly recommended to prefix key names (e.g., using plugin ID).
+Since all plugins share the same namespace, it is highly recommended to prefix key names (e.g., using plugin ID `com.myplugin.myCustomSetting`).
 
 ## Using PersistentStateComponent
 

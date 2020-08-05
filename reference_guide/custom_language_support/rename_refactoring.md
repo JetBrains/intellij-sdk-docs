@@ -20,14 +20,12 @@ Thus, surprisingly, the easiest way to get the replacement node is to create a d
 - [Custom Language Support Tutorial: Reference Contributor](/tutorials/custom_language_support/reference_contributor.md)
 
 ### Name Validation
-[`NamesValidator`](upsource:///platform/lang-api/src/com/intellij/lang/refactoring/NamesValidator.java) allows a plugin to check if the name entered by the user in the `Rename` dialog is a valid identifier (and not a keyword) according to the custom language rules.
+[`NamesValidator`](upsource:///platform/analysis-api/src/com/intellij/lang/refactoring/NamesValidator.java) allows a plugin to check if the name entered by the user in the `Rename` dialog is a valid identifier (and not a keyword) according to the custom language rules.
 If an implementation of this interface is not provided by the plugin, Java rules for validating identifiers are used.
-Implementations of
-[`NamesValidator`](upsource:///platform/lang-api/src/com/intellij/lang/refactoring/NamesValidator.java)
-are registered in the `com.intellij.lang.namesValidator` extension point.
+Implementations of `NamesValidator` are registered in the `com.intellij.lang.namesValidator` extension point.
 
 **Example**:
-[`NamesValidator`](upsource:///plugins/properties/src/com/intellij/lang/properties/PropertiesNamesValidator.java)
+[`PropertiesNamesValidator`](upsource:///plugins/properties/src/com/intellij/lang/properties/PropertiesNamesValidator.java)
 for
 [Properties language plugin](upsource:///plugins/properties)
 

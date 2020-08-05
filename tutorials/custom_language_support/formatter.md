@@ -46,4 +46,4 @@ The `SimpleFormattingModelBuilder` implementation is registered with the Intelli
 Add some extra spaces around the `=` separator between `language` and `English`.
 Reformat the code by selecting **Code \| Show Reformat File Dialog** and choose **Run**.
 
-![Formatter](img/formatter.png){:width="800px"}
+![Formatter](img/formatter.png)

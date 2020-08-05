@@ -43,7 +43,7 @@ Register the factory with the IntelliJ Platform in the plugin configuration file
 Open the example Simple Language [properties file ](/tutorials/custom_language_support/lexer_and_parser_definition.md#run-the-project) (`test.simple`) in the IDE Development Instance.
 The colors for Simple Language Key, Separator, and Value highlighting default to the IDE _Language Defaults_ for Keyword, Braces, Operators, and Strings, respectively.
 
-![Syntax highlighter](img/syntax_highlighter.png){:width="800px"}
+![Syntax highlighter](img/syntax_highlighter.png)
 
 ## 5.5. Define a Color Settings Page
 The color settings page adds the ability for users to customize color settings for the highlighting in Simple Language files. 
@@ -66,4 +66,4 @@ Register the Simple Language color settings page with the IntelliJ Platform in t
 In the IDE Development Instance, open the Simple Language highlight settings page: **Preferences/Settings \| Editor \| Color Scheme \| Simple**.
 Each color initially inherits from a _Language Defaults_ value.
 
-![Color Settings Page](img/color_settings_page.png){:width="800px"}
+![Color Settings Page](img/color_settings_page.png)

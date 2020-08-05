@@ -10,7 +10,9 @@ Plugin projects for RubyMine can be developed using IntelliJ IDEA with the `grad
 ## Configuring Plugin Projects Targeting RubyMine
 The configuration of RubyMine plugin projects follows the methods described in [Configuring Plugin Projects using the IntelliJ IDEA Product Attribute](dev_alternate_products.md#configuring-plugin-projects-using-the-intellij-idea-product-attribute), and [Configuring the plugin.xml File](dev_alternate_products.md#configuring-pluginxml).
 
-The table below summarizes the `gradle-intellij-plugin` attributes to set in the `build.gradle` file for a RubyMine plugin project:
+The table below summarizes the `gradle-intellij-plugin` attributes to set in the `build.gradle` file for a RubyMine plugin project. 
+Click on an entry in the table's *Attribute* column to go to the documentation about that attribute.
+To see how these attributes appear in a similar `build.gradle` file for PhpStorm, see [Configuring build.gradle using the IntelliJ IDEA Product Attribute](/products/dev_alternate_products.md#configuring-buildgradle-using-the-intellij-idea-product-attribute).
 
 | `gradle-intellij-plugin` Attribute | Attribute Value |
 |-----------|-------|

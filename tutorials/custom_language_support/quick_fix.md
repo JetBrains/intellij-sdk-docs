@@ -49,6 +49,6 @@ Choose "Create Property".
 The IDE opens the `test.simple` file and adds `website.url` as a new key.
 Add the new value `jetbrains.com` for the new `website.url` key.
 
-![New Property](img/new_property.png){:width="800px"}
+![New Property](img/new_property.png)
 
 Now switch back to the Java file; the new key is highlighted as valid. 

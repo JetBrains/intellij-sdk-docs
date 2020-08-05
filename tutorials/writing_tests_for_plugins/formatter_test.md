@@ -35,4 +35,4 @@ Add the `testFormatter()` method to the `SimpleCodeInsightTest` class [previousl
 ## 5.3. Run the Test
 [Run](completion_test.md#run-the-test) the test and make sure it's green.
 
->> **TIP** See also [`FormatterTestCase`](upsource:///platform/testFramework/src/com/intellij/psi/formatter/FormatterTestCase.java) as convenient base class.
+> **TIP** See also [`FormatterTestCase`](upsource:///platform/testFramework/src/com/intellij/psi/formatter/FormatterTestCase.java) as convenient base class.

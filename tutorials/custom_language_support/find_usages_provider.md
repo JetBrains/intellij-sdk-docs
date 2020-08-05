@@ -34,4 +34,4 @@ The `SimpleFindUsagesProvider` implementation is registered with the IntelliJ Pl
 Rebuild the project, and run `simple_language_plugin` in a Development Instance.
 The IDE now supports [Find Usages](https://www.jetbrains.com/help/idea/find-highlight-usages.html) for any property with a reference:
 
-![Find Usages](img/find_usages.png){:width="800px"}
+![Find Usages](img/find_usages.png)

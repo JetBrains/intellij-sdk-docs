@@ -16,8 +16,9 @@ repositories {
 
 // See https://github.com/JetBrains/gradle-intellij-plugin/
 intellij {
-  version = '2020.1'
+  version = '2020.2'
   type = 'PY'
+  downloadSources = false
 }
 
 buildSearchableOptions {
@@ -26,6 +27,6 @@ buildSearchableOptions {
 
 patchPluginXml {
   version = project.version
-  sinceBuild = '201'
-  untilBuild = '201.*'
+  sinceBuild = '202'
+  untilBuild = '202.*'
 }

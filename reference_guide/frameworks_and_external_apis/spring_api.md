@@ -46,11 +46,11 @@ A fileset usually corresponds to an actual application context configuration at 
 As an API-user, you will usually rather work with `SpringModel` (which is built on top of fileset(s)).
 
 ## API Updates
-> **Note** 2017.3: `LocalXmlModel#setActiveProfiles` & `LocalAnnotationModel#setActiveProfiles` have been deprecated and will be removed in 2018.1.
+> **NOTE** 2017.3: `LocalXmlModel#setActiveProfiles` & `LocalAnnotationModel#setActiveProfiles` have been deprecated and will be removed in 2018.1.
 
-> **Note** Starting with 2016.2, internal representation of bean _type_ has been changed from `PsiClass` to `PsiType`, please note deprecations.
+> **NOTE** Starting with 2016.2, internal representation of bean _type_ has been changed from `PsiClass` to `PsiType`, please note deprecations.
 
-> **Note** Some core classes have been changed in 14(.1), please see "_Version 14(.1)_" notes for info on how to replace existing API-calls.
+> **NOTE** Some core classes have been changed in 14(.1), please see "_Version 14(.1)_" notes for info on how to replace existing API-calls.
 
 ## How Do I...
 

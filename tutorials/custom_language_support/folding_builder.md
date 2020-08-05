@@ -44,4 +44,4 @@ Now when a Java file is opened in the Editor, it shows the property's value inst
 This is because `SimpleFoldingBuilder.isCollapsedByDefault()` always returns `true`.
 Try using **Code \| Folding \| Expand All** to show the key rather than the value.
 
-![Folding](img/folding.png){:width="800px"}
+![Folding](img/folding.png)

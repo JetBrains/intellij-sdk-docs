@@ -52,4 +52,4 @@ Rebuild the project, and run `simple_language_plugin` in a Development Instance.
 Open the `test.simple` file and choose **View \| Tool Windows \| Structure**.
 The IDE now supports a structure view of the Simple Language:
 
-![Structure View](img/structure_view.png){:width="800px"}
+![Structure View](img/structure_view.png)

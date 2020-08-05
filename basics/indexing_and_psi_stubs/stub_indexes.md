@@ -34,7 +34,7 @@ If you need to change the stored binary format for the stubs (for example, if yo
 
 By default, if a PSI element extends `StubBasedPsiElement`, all elements of that type will be stored in the stub tree. If you need more precise control over which elements are stored, override `IStubElementType.shouldCreateStub()` and return `false` for elements which should not be included in the stub tree.
 
-> **Note** The exclusion is not recursive: if some elements of the element for which you returned false are also stub-based PSI elements, they will be included in the stub tree.
+> **NOTE** The exclusion is not recursive: if some elements of the element for which you returned false are also stub-based PSI elements, they will be included in the stub tree.
 
 It's essential to make sure that all information stored in the stub tree depends only on the contents of the file for which stubs are being built, and does not depend on any external files. Otherwise the stub tree will not be rebuilt when an external dependency changes, and you will have stale and incorrect data in the stub tree.
 

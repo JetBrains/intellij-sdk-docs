@@ -69,8 +69,9 @@ if ((n>=0)) {
 ```
 
 ##### Testing the Plugin
+> **NOTE** Please note that running the test requires setting system property `idea.home.path` in `test {}` block of `build.gradle`
 
-The sample plugin contains the `YourTest` Java class in the `testSource/testPlugin/` package and the test data in the `testData/` directory. 
-To perform the plugin test, run the `YourTest.test()` method.
+The sample plugin contains the `ConditionalOperatorConverterTest` Java class and the test data in the `test/testData/` directory. 
+To perform the plugin test, run the `ConditionalOperatorConverterTest.testIntention()` method.
 
 For detailed information about testing and all related procedures, refer to [Testing](https://www.jetbrains.com/help/idea/performing-tests.html) in the **IntelliJ IDEA** Web Help.

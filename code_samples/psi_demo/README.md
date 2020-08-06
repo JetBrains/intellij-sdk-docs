@@ -1,37 +1,42 @@
-[IntelliJ Platform SDK Code Samples](../README.md)
-
-# PSI Demo
+# PSI Demo [![JetBrains IntelliJ Platform SDK Docs](https://jb.gg/badges/docs.svg)][docs]
+*Reference: [Navigating the PSI in IntelliJ SDK Docs][docs:navigating_psi]*
 
 ## Quickstart
 
-TODO
+PSI Demo project demonstrates working with the PSI Navigation by implementing `AnAction` that through the message
+dialog, informs about:
+- an element at the caret,
+- containing method,
+- containing class,
+- local variables.
 
 ## Structure
 
-The plugin was developed using the [IntelliJ Platform SDK][docs_sdk].
+PSI Demo
+plugin depends on the [IntelliJ Platform SDK][docs] and [Gradle][docs:gradle] as a build system.
 
-The main file is [plugin.xml][plugin.xml], which is created accordingly to the [Plugin Configuration File documentation][docs_pluginxml].
-It describes definitions of the actions, extensions, or listeners provided by the plugin:
+The main plugin definition file is stored in the [plugin.xml][file:plugin.xml] file, which is created accordingly
+to the [Plugin Configuration File documentation][docs:plugin.xml]. It describes definitions of the actions, extensions,
+or listeners provided by the plugin.
 
 ### Actions
 
-| Name | Implementation Class | Interface |
-| ---- | -------------------- | --------- |
-| action | [TextOnlyTreeStructureProvider][PsiNavigationDemo_implementation] | [AnAction][PsiNavigationDemo_interface] |
+| Name          | Implementation Class                              | Interface                          |
+| ------------- | ------------------------------------------------- | ---------------------------------- |
+| action | [TextOnlyTreeStructureProvider][file:PsiNavigationDemoAction] | [AnAction][sdk:AnAction] |
 
-[Actions documentation][docs_actions]
+*Reference: [Action System in IntelliJ SDK Docs][docs:actions]*
 
-## Function
 
-TODO
+[docs]: http://www.jetbrains.org/intellij/sdk/docs
+[docs:actions]: https://www.jetbrains.org/intellij/sdk/docs/basics/action_system.html
+[docs:navigating_psi]: https://jetbrains.org/intellij/sdk/docs/basics/architectural_overview/navigating_psi.html
+[docs:ep]: https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_extension_points.html
+[docs:gradle]: https://www.jetbrains.org/intellij/sdk/docs/tutorials/build_system.html
+[docs:plugin.xml]: https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_configuration_file.html
+[docs:listeners]: https://jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_listeners.html
 
-[plugin.xml]: ./src/main/resources/META-INF/plugin.xml
-[docs_tree_structure_view]: https://www.jetbrains.org/intellij/sdk/docs/tutorials/tree_structure_view.html
-[docs_pluginxml]: https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_configuration_file.html
-[docs_sdk]: https://www.jetbrains.org/intellij/sdk/docs/intro/about.html
-[docs_ep]: https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_extension_points.html
-[docs_run]: https://www.jetbrains.org/intellij/sdk/docs/tutorials/build_system/prerequisites.html#running-a-simple-gradle-based-intellij-platform-plugin
-[docs_actions]: https://www.jetbrains.org/intellij/sdk/docs/basics/action_system.html
+[file:plugin.xml]: ./src/main/resources/META-INF/plugin.xml
+[file:PsiNavigationDemoAction]: ./src/main/java/org/intellij/sdk/psi/PsiNavigationDemoAction.java
 
-[PsiNavigationDemo_implementation]: ./src/main/java/org/jetbrains/sdk/psi/PsiNavigationDemoAction.java
-[PsiNavigationDemo_interface]: https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java
+[sdk:AnAction]: https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java

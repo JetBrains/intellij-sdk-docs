@@ -21,8 +21,8 @@ Specific to development of IntelliJ Platform plugins with the Gradle plugin for 
       * Switching the version of the target IntelliJ Platform (IDE),
       * Changing the target IntelliJ Platform-based IDE, e.g., from IntelliJ IDEA to PyCharm,
       * Running a plugin against alternate versions of the JetBrains runtime.
-  * Gradle is fully integrated with Continuous Integration systems and [plugins.jetbrains.com](https://plugins.jetbrains.com), so it is easy to customize and extend the build and publishing processes. 
-  * Built-in verification task for `plugin.xml` and plugin distribution structure, the same checks as on [plugins.jetbrains.com](https://plugins.jetbrains.com).
+  * Gradle is fully integrated with Continuous Integration systems and [JetBrains Plugin Repository](https://plugins.jetbrains.com), so it is easy to customize and extend the build and publishing processes. 
+  * Built-in verification task for `plugin.xml` and plugin distribution structure, the same checks as on [JetBrains Plugin Repository](https://plugins.jetbrains.com).
 
 ## Using GitHub Template
 

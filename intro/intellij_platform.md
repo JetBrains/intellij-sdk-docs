@@ -18,7 +18,7 @@ The IntelliJ Platform includes parsers and a PSI model for a number of languages
 
 ## Plugins
 
-Products built on the IntelliJ Platform are extensible applications, with the platform being responsible for the creation of components, and the injection of dependencies into classes. The IntelliJ Platform fully supports plugins, and JetBrains hosts a [plugin repository](https://plugins.jetbrains.com) that can be used to distribute plugins that support one or more of the products. It is also possible to host your own repositories, and distribute plugins separately.
+Products built on the IntelliJ Platform are extensible applications, with the platform being responsible for the creation of components, and the injection of dependencies into classes. The IntelliJ Platform fully supports plugins, and JetBrains hosts [JetBrains Plugin Repository](https://plugins.jetbrains.com) that can be used to distribute plugins that support one or more of the products. It is also possible to host your own repositories, and distribute plugins separately.
 
 Plugins can extend the platform in lots of ways, from adding a simple menu item to adding support for a complete language, build system and debugger. A lot of the existing functionality in the IntelliJ Platform is written as plugins that can be included or excluded depending on the needs of the end product. See the [Quick Start Guide](/basics/basics.md) for more details.
 

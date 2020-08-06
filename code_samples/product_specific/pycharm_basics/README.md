@@ -4,8 +4,8 @@
 ## Quickstart
 
 PyCharm Sample is a plugin that depends on the PyCharm IDE having the proper dependencies specified
-in the Gradle configuration file. Implementation utilizes a simple action added to the *MainMenu* group
-thta displays a message dialog after invoking.
+in the Gradle configuration file. Implementation utilizes a simple action added to the *MainMenu* group displaying
+a message dialog after invoking.
 
 ## Structure
 

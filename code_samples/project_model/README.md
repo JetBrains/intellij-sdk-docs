@@ -1,49 +1,50 @@
-[IntelliJ Platform SDK Code Samples](../README.md)
-
-# Project Model Sample Project
+# Project Model Sample [![JetBrains IntelliJ Platform SDK Docs](https://jb.gg/badges/docs.svg)][docs]
+*Reference: [PyCharm Plugin Development in IntelliJ SDK Docs][docs:pycharm]*
 
 ## Quickstart
 
-TODO
+Project Model Sample project provides five actions that present data extracted using `ProjectRootManager` instance
+in the message dialogs. Within the implemented actions, you will be able to:
+- fetch libraries used in the project,
+- retrieve the information about the module details,
+- rename the used SDK,
+- get the content source roots,
+- or extend the project dependencies with an additional library.
 
 ## Structure
 
-The plugin was developed using the [IntelliJ Platform SDK][docs_sdk].
+Project Model Sample
+plugin depends on the [IntelliJ Platform SDK][docs] and [Gradle][docs:gradle] as a build system.
 
-The main file is [plugin.xml][plugin.xml], which is created accordingly to the [Plugin Configuration File documentation][docs_pluginxml].
-It describes definitions of the actions, extensions, or listeners provided by the plugin:
+The main plugin definition file is stored in the [plugin.xml][file:plugin.xml] file, which is created accordingly
+to the [Plugin Configuration File documentation][docs:plugin.xml]. It describes definitions of the actions, extensions,
+or listeners provided by the plugin.
 
 ### Actions
 
-| Name | Implementation Class | Interface |
-| ---- | -------------------- | --------- |
-| SourceRoots | [ShowSourceRootsActions][SourceRoots_implementation] | [AnAction][SourceRoots_interface] |
-| ProjectSdk | [ProjectSdkAction][ProjectSdk_implementation] | [AnAction][ProjectSdk_interface] |
-| ProjectFileIndex | [ProjectFileIndexSampleAction][ProjectFileIndex_implementation] | [AnAction][ProjectFileIndex_interface] |
-| ModificationAction | [ModificationAction][ModificationAction_implementation] | [AnAction][ModificationAction_interface] |
-| LibrariesAction | [LibrariesAction][LibrariesAction_implementation] | [AnAction][LibrariesAction_interface] |
+| Name               | Implementation Class                                              | Interface                |
+| ------------------ | ----------------------------------------------------------------- | ------------------------ |
+| SourceRoots        | [ShowSourceRootsActions][file:ShowSourceRootsActions]             | [AnAction][sdk:AnAction] |
+| ProjectSdk         | [ProjectSdkAction][file:ProjectSdkAction]                         | [AnAction][sdk:AnAction] |
+| ProjectFileIndex   | [ProjectFileIndexSampleAction][file:ProjectFileIndexSampleAction] | [AnAction][sdk:AnAction] |
+| ModificationAction | [ModificationAction][file:ModificationAction]                     | [AnAction][sdk:AnAction] |
+| LibrariesAction    | [LibrariesAction][file:LibrariesAction]                           | [AnAction][sdk:AnAction] |
 
-[Actions documentation][docs_actions]
+*Reference: [Action System in IntelliJ SDK Docs][docs:actions]*
 
-## Function
+[docs]: http://www.jetbrains.org/intellij/sdk/docs
+[docs:actions]: https://www.jetbrains.org/intellij/sdk/docs/basics/action_system.html
+[docs:pycharm]: https://jetbrains.org/intellij/sdk/docs/products/pycharm.html
+[docs:ep]: https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_extension_points.html
+[docs:gradle]: https://www.jetbrains.org/intellij/sdk/docs/tutorials/build_system.html
+[docs:plugin.xml]: https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_configuration_file.html
+[docs:listeners]: https://jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_listeners.html
 
-TODO
+[file:plugin.xml]: ./src/main/resources/META-INF/plugin.xml
+[file:ShowSourceRootsActions]: ./src/main/java/org/intellij/sdk/project/model/ShowSourceRootsActions.java
+[file:ProjectSdkAction]: ./src/main/java/org/intellij/sdk/project/model/ProjectSdkAction.java
+[file:ProjectFileIndexSampleAction]: ./src/main/java/org/intellij/sdk/project/model/ProjectFileIndexSampleAction.java
+[file:ModificationAction]: ./src/main/java/org/intellij/sdk/project/model/ModificationAction.java
+[file:LibrariesAction]: ./src/main/java/org/intellij/sdk/project/model/LibrariesAction.java
 
-[plugin.xml]: ./src/main/resources/META-INF/plugin.xml
-[docs_tool_windows]: https://www.jetbrains.org/intellij/sdk/docs/user_interface_components/tool_windows.html
-[docs_pluginxml]: https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_configuration_file.html
-[docs_sdk]: https://www.jetbrains.org/intellij/sdk/docs/intro/about.html
-[docs_ep]: https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_extension_points.html
-[docs_run]: https://www.jetbrains.org/intellij/sdk/docs/tutorials/build_system/prerequisites.html#running-a-simple-gradle-based-intellij-platform-plugin
-[docs_actions]: https://www.jetbrains.org/intellij/sdk/docs/basics/action_system.html
-
-[SourceRoots_implementation]: ./src/main/java/org/intellij/sdk/project/model/ShowSourceRootsActions.java
-[SourceRoots_interface]: https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java
-[ProjectSdk_implementation]: ./src/main/java/org/intellij/sdk/project/model/ProjectSdkAction.java
-[ProjectSdk_interface]: https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java
-[ProjectFileIndex_implementation]: ./src/main/java/org/intellij/sdk/project/model/ProjectFileIndexSampleAction.java
-[ProjectFileIndex_interface]: https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java
-[ModificationAction_implementation]: ./src/main/java/org/intellij/sdk/project/model/ModificationAction.java
-[ModificationAction_interface]: https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java
-[LibrariesAction_implementation]: ./src/main/java/org/intellij/sdk/project/model/LibrariesAction.java
-[LibrariesAction_interface]: https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java
+[sdk:AnAction]: https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java

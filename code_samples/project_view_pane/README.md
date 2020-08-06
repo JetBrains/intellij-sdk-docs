@@ -1,36 +1,38 @@
-[IntelliJ Platform SDK Code Samples](../README.md)
-
-# Project View Pane Demo
+# Project View Pane Demo [![JetBrains IntelliJ Platform SDK Docs](https://jb.gg/badges/docs.svg)][docs]
+*Reference: [Plugin Services in IntelliJ SDK Docs][docs:project_view]*
 
 ## Quickstart
 
-TODO
+The current demo describes an implementation of the `projectViewPane` extension point, which allows to create
+an additional presentation type for the Project view pane. `ImagesProjectViewPane` limits the project tree to the images
+only.
 
 ## Structure
 
-The plugin was developed using the [IntelliJ Platform SDK][docs_sdk].
+Project View Pane Demo
+plugin depends on the [IntelliJ Platform SDK][docs] and [Gradle][docs:gradle] as a build system.
 
-The main file is [plugin.xml][plugin.xml], which is created accordingly to the [Plugin Configuration File documentation][docs_pluginxml].
-It describes definitions of the actions, extensions, or listeners provided by the plugin:
+The main plugin definition file is stored in the [plugin.xml][file:plugin.xml] file, which is created accordingly
+to the [Plugin Configuration File documentation][docs:plugin.xml]. It describes definitions of the actions, extensions,
+or listeners provided by the plugin.
 
 ### Extension Points
 
-| Name | Implementation Class | Interface |
-| ---- | -------------------- | --------- |
-| projectViewPane | [ImagesProjectViewPane][projectViewPane_implementation] | [AbstractProjectViewPSIPane][projectViewPane_interface] |
+| Name            | Implementation Class                                | Interface                                                    |
+| --------------- | --------------------------------------------------- | ------------------------------------------------------------ |
+| projectViewPane | [ImagesProjectViewPane][file:ImagesProjectViewPane] | [AbstractProjectViewPSIPane][sdk:AbstractProjectViewPSIPane] |
 
-[Extension Points documentation][docs_ep]
+*Reference: [Plugin Extension Points in IntelliJ SDK Docs][docs:ep]*
 
-## Function
+[docs]: http://www.jetbrains.org/intellij/sdk/docs
+[docs:actions]: https://www.jetbrains.org/intellij/sdk/docs/basics/action_system.html
+[docs:project_view]: https://jetbrains.org/intellij/sdk/docs/basics/project_view.html
+[docs:ep]: https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_extension_points.html
+[docs:gradle]: https://www.jetbrains.org/intellij/sdk/docs/tutorials/build_system.html
+[docs:plugin.xml]: https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_configuration_file.html
+[docs:listeners]: https://jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_listeners.html
 
-TODO
+[file:plugin.xml]: ./src/main/resources/META-INF/plugin.xml
+[file:ImagesProjectViewPane]: ./src/main/java/org/intellij/sdk/view/pane/ImagesProjectViewPane.java
 
-[plugin.xml]: ./src/main/resources/META-INF/plugin.xml
-[docs_tool_windows]: https://www.jetbrains.org/intellij/sdk/docs/user_interface_components/tool_windows.html
-[docs_pluginxml]: https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_configuration_file.html
-[docs_sdk]: https://www.jetbrains.org/intellij/sdk/docs/intro/about.html
-[docs_ep]: https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_extension_points.html
-[docs_run]: https://www.jetbrains.org/intellij/sdk/docs/tutorials/build_system/prerequisites.html#running-a-simple-gradle-based-intellij-platform-plugin
-
-[projectViewPane_implementation]: ./src/main/java/org/intellij/sdk/view/pane/ImagesProjectViewPane.java
-[projectViewPane_interface]: https://github.com/JetBrains/intellij-community/blob/master/platform/lang-impl/src/com/intellij/ide/projectView/impl/AbstractProjectViewPSIPane.java
+[sdk:AbstractProjectViewPSIPane]: https://github.com/JetBrains/intellij-community/blob/master/platform/lang-impl/src/com/intellij/ide/projectView/impl/AbstractProjectViewPSIPane.java

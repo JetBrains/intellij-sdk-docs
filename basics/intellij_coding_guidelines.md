@@ -22,7 +22,7 @@ Most of the existing functionality of IntelliJ IDEA is covered by functional tes
 We're generally pretty lax about code formatting, but at least the following conventions must be observed:
 
 - 2 space indents in source files
-- **my** prefix for instance variables and **our** prefix for class variables
+- **my** prefix for instance variables and **our** prefix for class variables
 - new source code files must include a copyright statement with the Apache 2 license and the name of the contributor.
 
 The easiest way to follow our code formatting guidelines is to reformat your code submissions using the shared code style, which is included in the IntelliJ IDEA Community Edition project directory.

@@ -87,7 +87,10 @@ To clarify the above procedure, consider the following fragment of the `plugin.x
 
 ```xml
 <extensions defaultExtensionNs="com.intellij">
-    <toolWindow id="My Sample Tool Window" icon="/myPackage/toolWindowIcon.svg" anchor="right" factoryClass="myPackage.MyToolWindowFactory"/>
+    <toolWindow id="My Sample Tool Window" 
+                icon="/myPackage/toolWindowIcon.svg" 
+                anchor="right" 
+                factoryClass="myPackage.MyToolWindowFactory"/>
 </extensions>
 ```
 

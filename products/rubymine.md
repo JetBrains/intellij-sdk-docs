@@ -32,7 +32,7 @@ The dependency declaration is illustrated in the `plugin.xml` snippet below:
 
 ```xml
   <!-- Requires the Ruby plugin -->
-   <depends>com.intellij.modules.ruby</depends> 
+  <depends>com.intellij.modules.ruby</depends> 
 ```
 
 ## Available RubyMine APIs

@@ -5,6 +5,7 @@ package org.intellij.sdk.view.pane;
 import com.intellij.icons.AllIcons;
 import com.intellij.ide.SelectInTarget;
 import com.intellij.ide.impl.ProjectViewSelectInTarget;
+import com.intellij.ide.projectView.BaseProjectTreeBuilder;
 import com.intellij.ide.projectView.ViewSettings;
 import com.intellij.ide.projectView.impl.AbstractProjectViewPSIPane;
 import com.intellij.ide.projectView.impl.ProjectAbstractTreeStructureBase;
@@ -54,12 +55,12 @@ public class ImagesProjectViewPane extends AbstractProjectViewPSIPane {
 
       @Override
       public String toString() {
-        return "images";
+        return ID;
       }
 
       @Override
       public String getMinorViewId() {
-        return "images";
+        return ID;
       }
 
       @Override
@@ -78,10 +79,10 @@ public class ImagesProjectViewPane extends AbstractProjectViewPSIPane {
         return new ImagesProjectNode(project);
       }
 
-      @NotNull
+      // Children will be searched in async mode
       @Override
-      public Object[] getChildElements(@NotNull Object element) {
-        return super.getChildElements(element);
+      public boolean isToBuildChildrenInBackground(@NotNull Object element) {
+        return true;
       }
     };
   }
@@ -89,7 +90,7 @@ public class ImagesProjectViewPane extends AbstractProjectViewPSIPane {
   @NotNull
   @Override
   protected ProjectViewTree createTree(@NotNull DefaultTreeModel model) {
-    return new ProjectViewTree(myProject, model) {
+    return new ProjectViewTree(model) {
       @Override
       public boolean isRootVisible() {
         return true;
@@ -97,11 +98,17 @@ public class ImagesProjectViewPane extends AbstractProjectViewPSIPane {
     };
   }
 
-  //  Awaiting refactoring of AbstractProjectViewPSIPane#createTreeUpdater
+  //  Legacy code, awaiting refactoring of AbstractProjectViewPSIPane#createBuilder
+  @Override
+  protected BaseProjectTreeBuilder createBuilder(@NotNull DefaultTreeModel treeModel) {
+    return null;
+  }
+
+  //  Legacy code, awaiting refactoring of AbstractProjectViewPSIPane#createTreeUpdater
   @NotNull
   @Override
   protected AbstractTreeUpdater createTreeUpdater(@NotNull AbstractTreeBuilder builder) {
-    return new AbstractTreeUpdater(builder);
+    throw new IllegalStateException("ImagesProjectViewPane tree is async now");
   }
 }
 

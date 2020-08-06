@@ -126,22 +126,20 @@ Implicit in using [`LocalInspectionTool`](upsource:///platform/analysis-api/src/
   If a short name is not provided by the plugin, the IntelliJ Platform computes one.
   
 ### Inspection Unit Test
+> **NOTE** Please note that running the test requires setting system property `idea.home.path` in `test {}` block of `build.gradle`
+
 The `comparing_references_inspection` code sample provides a unit test for the inspection.
 See the [Testing Plugins](/basics/testing_plugins/testing_plugins.md) section for general information about plugin testing.
 
-The `comparing_references_inspection` test is based on the [`UsefulTestCase`](upsource:///platform/testFramework/src/com/intellij/testFramework/UsefulTestCase.java) class, part of the JUnit framework APIs.
+The `comparing_references_inspection` test is based on the [`UsefulTestCase`](upsource:///platform/testFramework/src/com/intellij/testFramework/UsefulTestCase.java) class, part of the JUnit framework APIs.
 This class handles much of the underlying boilerplate for tests.
 
-By convention, the folder `<project root>/testSource/testPlugin/` contains the test source code and must be marked as a "Tests" folder.
-If it is not, a DevKit project cannot find the source code.
-
-By convention, the folder `<project root>/testData/` contains the test files and must be marked as a "Test Resources" folder.
+By convention, the folder `<project root>/testData/` contains the test files.
 The folder contains pairs of files for each test using the name convention `*.java` and `*.after.java`.
 
-In the case of `comparing_references_inspection` the test files are `before.java` and `before.after.java`, and `before1.java` and `before1.after.java`.
-The choice of `before` and `before1` is arbitrary.
+In the case of `comparing_references_inspection` the test files are `Eq.java` / `Eq.after.java`, and `Neq.java` / `Neq.after.java`.
 
-The `comparing_references_inspection` tests run the inspection on the `*.java files`, implement the quick fix, and compare the results with the respective `*.after.java` files.
+The `comparing_references_inspection` tests run the inspection on the `*.java` files, implement the quick fix, and compare the results with the respective `*.after.java` files.
 
 
 ## Running the Comparing References Inspection Code Sample

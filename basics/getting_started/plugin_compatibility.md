@@ -47,8 +47,8 @@ Starting in 2020.2, a plugin can declare incompatibility with an arbitrary modul
 A core set of modules are available in all products based on the IntelliJ Platform. 
 These modules provide a set of shared functionality. 
 The following table lists modules that are currently available in all products. 
-
->**Note** All plugins should declare a dependency on **`com.intellij.modules.platform`** as an indication of dependence on shared functionality. 
+ 
+> **NOTE** All plugins should declare a dependency on **`com.intellij.modules.platform`** as an indication of dependence on shared functionality. 
 
 | Module for `<depends>` Element<br>Declaration in `plugin.xml` File | <br>Functionality                                                                | 
 |--------------------------------------|----------------------------------------------------------------------------------------------------------------|

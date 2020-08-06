@@ -57,7 +57,8 @@ Simple use of notifications using
 
 ```java
 public class MyGroovyDSLErrorsNotifier {
-  private final NotificationGroup NOTIFICATION_GROUP = new NotificationGroup("Groovy DSL errors", NotificationDisplayType.BALLOON, true);
+  private final NotificationGroup NOTIFICATION_GROUP = 
+          new NotificationGroup("Groovy DSL errors", NotificationDisplayType.BALLOON, true);
 
   public Notification notify(String content) {
     return notify(null, content);

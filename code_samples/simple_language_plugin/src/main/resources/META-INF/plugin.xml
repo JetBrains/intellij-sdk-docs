@@ -6,7 +6,7 @@
   <id>org.intellij.sdk.language</id>
 
   <!-- Text to display as name on Preferences/Settings | Plugin page  -->
-  <name>SDK: Simple Language Sample Project</name>
+  <name>SDK: Simple Language Sample</name>
 
   <!-- Product and plugin compatibility requirements -->
   <depends>com.intellij.modules.platform</depends>

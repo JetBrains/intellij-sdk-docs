@@ -1,37 +1,39 @@
-[IntelliJ Platform SDK Code Samples](../README.md)
-
-# Run Configuration Demo
+# Run Configuration Demo [![JetBrains IntelliJ Platform SDK Docs](https://jb.gg/badges/docs.svg)][docs]
+*Reference: [Run Configurations in IntelliJ SDK Docs][docs:run_configurations]*
 
 ## Quickstart
 
-TODO
+Run Configuration example project provides an implementation of the `configurationType` extension point responsible
+for adding new options for the Run/Debug Configurations. In this example, a new *Demo* configuration is added together
+with `ConfigurationFactory` instance that collects run/debug properties - `scriptName` in this case.
 
 ## Structure
 
-The plugin was developed using the [IntelliJ Platform SDK][docs_sdk].
+Run Configuration Demo
+plugin depends on the [IntelliJ Platform SDK][docs] and [Gradle][docs:gradle] as a build system.
 
-The main file is [plugin.xml][plugin.xml], which is created accordingly to the [Plugin Configuration File documentation][docs_pluginxml].
-It describes definitions of the actions, extensions, or listeners provided by the plugin:
+The main plugin definition file is stored in the [plugin.xml][file:plugin.xml] file, which is created accordingly
+to the [Plugin Configuration File documentation][docs:plugin.xml]. It describes definitions of the actions, extensions,
+or listeners provided by the plugin.
 
 ### Extension Points
 
-| Name | Implementation Class | Interface |
-| ---- | -------------------- | --------- |
-| configurationType | [DemoRunConfigurationType][configurationType_implementation] | [ConfigurationType][configurationType_interface] |
+| Name              | Implementation Class                                      | Interface                                  |
+| ----------------- | --------------------------------------------------------- | ------------------------------------------ |
+| configurationType | [DemoRunConfigurationType][file:DemoRunConfigurationType] | [ConfigurationType][sdk:ConfigurationType] |
 
-[Extension Points documentation][docs_ep]
-
-## Function
-
-TODO
+*Reference: [Plugin Extension Points in IntelliJ SDK Docs][docs:ep]*
 
 
-[plugin.xml]: ./src/main/resources/META-INF/plugin.xml
-[docs_tree_structure_view]: https://www.jetbrains.org/intellij/sdk/docs/tutorials/tree_structure_view.html
-[docs_pluginxml]: https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_configuration_file.html
-[docs_sdk]: https://www.jetbrains.org/intellij/sdk/docs/intro/about.html
-[docs_ep]: https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_extension_points.html
-[docs_run]: https://www.jetbrains.org/intellij/sdk/docs/tutorials/build_system/prerequisites.html#running-a-simple-gradle-based-intellij-platform-plugin
+[docs]: http://www.jetbrains.org/intellij/sdk/docs
+[docs:actions]: https://www.jetbrains.org/intellij/sdk/docs/basics/action_system.html
+[docs:run_configurations]: https://jetbrains.org/intellij/sdk/docs/basics/run_configurations.html
+[docs:ep]: https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_extension_points.html
+[docs:gradle]: https://www.jetbrains.org/intellij/sdk/docs/tutorials/build_system.html
+[docs:plugin.xml]: https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_configuration_file.html
+[docs:listeners]: https://jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_listeners.html
 
-[configurationType_implementation]: ./src/main/java/org/jetbrains/sdk/runConfiguration/DemoRunConfigurationType.java
-[configurationType_interface]: https://github.com/JetBrains/intellij-community/blob/master/platform/lang-api/src/com/intellij/execution/configurations/ConfigurationType.java
+[file:plugin.xml]: ./src/main/resources/META-INF/plugin.xml
+[file:DemoRunConfigurationType]: ./src/main/java/org/jetbrains/sdk/runConfiguration/DemoRunConfigurationType.java
+
+[sdk:ConfigurationType]: https://github.com/JetBrains/intellij-community/blob/master/platform/lang-api/src/com/intellij/execution/configurations/ConfigurationType.java

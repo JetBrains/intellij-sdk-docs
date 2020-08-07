@@ -53,6 +53,6 @@ This part has been moved to [JetBrains Marketplace documentation](https://plugin
 
 Links to useful resources, such as the IntelliJ Community Edition source code, the Plugin Development forum and the JetBrains Platform Slack.
 
-#### [Appendix II - Changes](/reference_guide/api_changes_list.md)
+#### [Appendix II - API Changes](/reference_guide/api_changes_list.md)
 
 Provides a list of [backwards-incompatible](/reference_guide/api_changes_list.md) API changes as well as [notable changes and new features](/reference_guide/api_notable/api_notable.md) in each major release of the IntelliJ Platform.

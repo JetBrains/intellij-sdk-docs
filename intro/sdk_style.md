@@ -174,7 +174,7 @@ Source code can be represented by using [GitHub Flavoured Markdown](https://help
             // Source code goes here...
         ```
 
-> **Note** Source code blocks must have one blank line before and after them.
+> **NOTE** Source code blocks must have one blank line before and after them.
 
 Syntax highlighting can be applied by specifying the language after the first set of ticks:  
 

@@ -6,7 +6,7 @@ title: Plugins Targeting IntelliJ Platform-Based IDEs
 ## Introduction 
 Plugin projects can target IDEs other than IntelliJ IDEA, as long as the products are based on the [IntelliJ Platform](/intro/intellij_platform.md).
 Such plugins are developed much like plugin projects that target IntelliJ IDEA, and can be written in Kotlin or Java, or a mix of both.
-Once completed, the plugins can be packaged and distributed at [plugins.jetbrains.com](https://plugins.jetbrains.com).
+Once completed, the plugins can be packaged and distributed at [JetBrains Plugin Repository](https://plugins.jetbrains.com).
 
 Project configuration attributes common to projects targeting products other than IntelliJ IDEA are described here. 
 Details particular to an IntelliJ Platform-based product are described on the individual product pages in Part VIII.

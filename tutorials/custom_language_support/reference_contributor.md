@@ -6,7 +6,7 @@ title: 10. Reference Contributor
 The references functionality is one of the most important parts in the implementation of custom language support.
 Resolving references means the ability to go from the usage of an element to its declaration, completion, rename refactoring, find usages, etc.
 
-> **Note** Every PSI element that can be renamed or referenced needs to implement [`PsiNamedElement`](upsource:///platform/core-api/src/com/intellij/psi/PsiNamedElement.java) interface.
+> **NOTE** Every PSI element that can be renamed or referenced needs to implement [`PsiNamedElement`](upsource:///platform/core-api/src/com/intellij/psi/PsiNamedElement.java) interface.
 
 **Reference**: [References and Resolve](/reference_guide/custom_language_support/references_and_resolve.md) 
 

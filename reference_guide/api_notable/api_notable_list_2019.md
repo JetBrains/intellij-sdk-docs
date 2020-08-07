@@ -3,9 +3,9 @@ title: Notable Changes in IntelliJ Platform and Plugins API 2019.*
 ---
 <!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-# 2019.3 
+## 2019.3 
 
-## Notable Changes in IntelliJ Platform 2019.3
+### Notable Changes in IntelliJ Platform 2019.3
 
 `PlatformTestCase` renamed to `HeavyPlatformTestCase`
 : Now reflects its "heavy test" characteristics (see [Light and Heavy Tests](/basics/testing_plugins/light_and_heavy_tests.md)).
@@ -25,16 +25,16 @@ Symbol completion in plain text editor (VCS Commit Message)
 User-customizable date/time formatting
 : Use `com.intellij.util.text.JBDateFormat#getFormatter()` to use configured format from `Settings | Appearance & Behavior | System Settings | Date Formats`.                  
                            
-## Notable Changes in IntelliJ IDEA 2019.3
+### Notable Changes in IntelliJ IDEA 2019.3
 
 Unbundled plugins
 : Several plugins (Heroku integration, RubyMotion support, Java Applets Support) for no longer actively maintained technology have been moved to a [separate repository](https://github.com/JetBrains/intellij-obsolete-plugins/). 
 If your plugin depends on them, users will need to install them from the [JetBrains Plugins Repository](https://plugins.jetbrains.com).
                            
                            
-# 2019.2 
+## 2019.2 
 
-## Notable Changes in IntelliJ Platform 2019.2
+### Notable Changes in IntelliJ Platform 2019.2
 
 Quickfixes for file-level notifications
 : Consistent with other quickfixes, the menu now shows names of fixes, not names of problems themselves. [Issue](https://youtrack.jetbrains.com/issue/IDEA-216731)
@@ -76,7 +76,7 @@ New API for Editor Inlay Hints
 : Returns dedicated message when invalid SDK path was chosen (e.g., JRE instead of JDK). 
 
 
-## Notable Changes in IntelliJ IDEA 2019.2
+### Notable Changes in IntelliJ IDEA 2019.2
 
 Java functionality extracted as plugin
 : If your plugin depends on Java, it must be specified now, please see [blog post](https://blog.jetbrains.com/platform/2019/06/java-functionality-extracted-as-a-plugin/) for details.
@@ -86,9 +86,9 @@ Unbundled plugins
 
 
 
-# 2019.1 
+## 2019.1 
 
-## Notable Changes in IntelliJ Platform 2019.1
+### Notable Changes in IntelliJ Platform 2019.1
 
 `com.intellij.testFramework.InspectionTestCase` changed to light test
 : Use dedicated `ProjectDescriptor` or rollback project setup changes in `tearDown()` (see [Light and Heavy Tests](/basics/testing_plugins/light_and_heavy_tests.md)). 

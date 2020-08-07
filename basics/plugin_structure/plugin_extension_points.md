@@ -27,8 +27,11 @@ _myPlugin/META-INF/plugin.xml_
   <id>my.plugin</id>
   
   <extensionPoints>
-    <extensionPoint name="myExtensionPoint1" beanClass="com.myplugin.MyBeanClass"/>
-    <extensionPoint name="myExtensionPoint2" interface="com.myplugin.MyInterface"/>
+    <extensionPoint name="myExtensionPoint1" 
+                    beanClass="com.myplugin.MyBeanClass"/>
+    
+    <extensionPoint name="myExtensionPoint2" 
+                    interface="com.myplugin.MyInterface"/>
   </extensionPoints>
 
 </idea-plugin>
@@ -84,7 +87,8 @@ _anotherPlugin/META-INF/plugin.xml_
         
   <!-- use "my.plugin" namespace -->
   <extensions defaultExtensionNs="my.plugin">
-    <myExtensionPoint1 key="someKey" implementationClass="another.some.implementation.class"/>  
+    <myExtensionPoint1 key="someKey" 
+                       implementationClass="another.some.implementation.class"/>  
 
     <myExtensionPoint2 implementation="another.MyInterfaceImpl"/>
   </extension>
@@ -100,7 +104,8 @@ _myPlugin/src/com/myplugin/MyExtensionUsingService.java_
 ```java 
 public class MyExtensionUsingService {
  
-    private static final ExtensionPointName<MyBeanClass> EP_NAME = ExtensionPointName.create("my.plugin.myExtensionPoint1");
+    private static final ExtensionPointName<MyBeanClass> EP_NAME = 
+      ExtensionPointName.create("my.plugin.myExtensionPoint1");
     
     public void useExtensions() {
       for (MyBeanClass extension : EP_NAME.getExtensionList()) {
@@ -124,7 +129,9 @@ Extension points matching these conditions can then be marked as _dynamic_ by ad
 
 ```xml
   <extensionPoints>
-    <extensionPoint name="myDynamicExtensionPoint" beanClass="com.myplugin.MyBeanClass" dynamic="true" />
+    <extensionPoint name="myDynamicExtensionPoint" 
+                    beanClass="com.myplugin.MyBeanClass" 
+                    dynamic="true" />
   </extensionPoints>
 ```
 

@@ -170,7 +170,7 @@ When enabled, this group appears at the entry just below the [Static Grouped Act
     </group>
 ```
 
-> **Warning** If a`<group>` element's `class` attribute names a class derived from `ActionGroup`, then any static `<action>` declarations in that group throw an exception. 
+> **WARNING** If a`<group>` element's `class` attribute names a class derived from `ActionGroup`, then any static `<action>` declarations in that group throw an exception. 
 For a statically defined group, use `DefaultActionGroup`.
 
 ### Adding Child Actions to the Dynamic Group

@@ -13,7 +13,7 @@ The following are some of the most common tasks accomplished using extensions:
   * The `com.intellij.toolWindow` extension point allows plugins to add [tool windows](/user_interface_components/tool_windows.md) 
   (panels displayed at the sides of the IDE user interface);
   * The `com.intellij.applicationConfigurable` and `com.intellij.projectConfigurable` extension points allow plugins to add pages to the
-    Settings/Preferences dialog;
+    [Settings/Preferences dialog](/basics/settings.md);
   * [Custom language plugins](/reference_guide/custom_language_support.md) use many extension points
     to extend various language support features in the IDE.
 
@@ -49,7 +49,8 @@ To clarify this procedure, consider the following sample section of the `plugin.
      and exposes custom properties "key" and "implementationClass".
 -->
   <extensions defaultExtensionNs="another.plugin">
-     <myExtensionPoint key="keyValue" implementationClass="com.myplugin.MyExtensionPointImpl" />
+     <myExtensionPoint key="keyValue" 
+                       implementationClass="com.myplugin.MyExtensionPointImpl" />
   </extensions>
 ```
 

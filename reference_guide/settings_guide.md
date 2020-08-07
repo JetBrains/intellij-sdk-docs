@@ -22,8 +22,8 @@ Many [attributes](#settings-declaration-attributes) are shared between the EP de
 
 Application and Project Settings typically provide an implementation based on the [`Configurable`](upsource:///platform/platform-api/src/com/intellij/openapi/options/Configurable.java) interface because they do not have runtime dependencies. 
 See [Implementations for Settings Extension Points](#implementations-for-settings-extension-points) for more information.
-
->**Note** For performance reasons, the recommended approach is to declare as much information as possible about a Settings' implementation using attributes in the Extension Point. If it is not declared, the component must be loaded to retrieve it from the implementation, degrading UI responsiveness.
+ 
+> **NOTE** For performance reasons, the recommended approach is to declare as much information as possible about a Settings' implementation using attributes in the Extension Point. If it is not declared, the component must be loaded to retrieve it from the implementation, degrading UI responsiveness.
 
 ### Declaring Application Settings
 Settings at the Application level use the `com.intellij.applicationConfigurable` EP.
@@ -113,7 +113,7 @@ Implementations must meet several requirements for constructors.
 
 For a `Configurable` implementation correctly declared using an EP, the implementation's constructor is not invoked by the IntelliJ Platform until a user chooses the corresponding Settings `displayName` in the Settings Dialog menu.
 
-> **Warning** The IntelliJ Platform may instantiate a `Configurable` implementation on a background thread, so creating Swing components in a constructor can degrade UI responsiveness.  
+> **WARNING** The IntelliJ Platform may instantiate a `Configurable` implementation on a background thread, so creating Swing components in a constructor can degrade UI responsiveness.  
 
 #### IntelliJ Platform Interactions with Configurable
 The instantiation of a generic `Configurable` implementation is documented in the interface file.

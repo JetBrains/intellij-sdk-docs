@@ -1,4 +1,4 @@
-# Working with PlantUML
+## Working with PlantUML
 These are temporary instructions, pending a move of more [diagrams and utilities](https://github.com/JetBrains/intellij-community/tree/master/platform/docs) from the IntelliJ Platform codebase.
 
 * If you are unfamiliar with PlantUML, review the [quick start](https://plantuml.com/starting) instructions. 

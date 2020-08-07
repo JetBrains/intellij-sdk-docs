@@ -74,15 +74,11 @@ Examples of its usage:
 
 *  [`XmlGtTypedHandler`](upsource:///xml/impl/src/com/intellij/codeInsight/editorActions/XmlGtTypedHandler.java).
 
------------
-**Note**:
-Starting from IDEA 14,
+> **NOTE** Starting from version 14,
 [`TypedHandlerDelegate`](upsource:///platform/lang-api/src/com/intellij/codeInsight/editorActions/TypedHandlerDelegate.java)
 implementations are invoked automatically for each caret. If one wants to implement custom multicaret behaviour on typing,
 [`TypedActionHandler`](upsource:///platform/platform-api/src/com/intellij/openapi/editor/actionSystem/TypedActionHandler.java)
 needs to be provided instead.
-
------------
 
 ## Code Insight Actions
 

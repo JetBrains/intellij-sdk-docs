@@ -30,7 +30,7 @@ Start by defining an environment variable such as:
 export ORG_GRADLE_PROJECT_intellijPublishToken='YOUR_HUB_TOKEN_HERE'
 ```
 
-> **Note** On macOS systems, environment variables defined in `.bash_profile` are only visible to processes you run from bash. 
+> **NOTE** On macOS systems, environment variables defined in `.bash_profile` are only visible to processes you run from bash. 
 Environment variables visible to all processes need to be defined in [Environment.plist](https://developer.apple.com/library/archive/qa/qa1067/_index.html)
 
 Now provide the environment variable in the run configuration with which you run the `publishPlugin` task locally. 

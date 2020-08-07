@@ -39,7 +39,7 @@ If you don't need to associate any value with the files (i.e., your value type i
 
 > **WARNING** The data returned by `DataIndexer.map()` must depend only on input data passed to the method, and must not depend on any external files. Otherwise, your index will not be correctly updated when the external data changes, and you will have stale data in your index.
 
-> **Note** Please see `com.intellij.util.indexing.DebugAssertions` on how to enable additional debugging assertions during development to assert correct index implementation.
+> **NOTE** Please see `com.intellij.util.indexing.DebugAssertions` on how to enable additional debugging assertions during development to assert correct index implementation.
 
 ## Accessing a File-Based Index
 
@@ -49,7 +49,7 @@ The following primary operations are supported:
 
 * `getAllKeys()` and `processAllKeys()` allow obtaining the list of all keys found in files, which are a part of the specified project.
 
-> **Note** The returned data is guaranteed to contain all keys found in up-to-date project content, but may also include additional keys not currently found in the project.
+> **NOTE** The returned data is guaranteed to contain all keys found in up-to-date project content, but may also include additional keys not currently found in the project.
 
 * `getValues()` allows to get all values associated with a specific key but not the files in which they were found.
 * `getContainingFiles()` allows to collect all files in which a specific key was encountered.

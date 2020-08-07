@@ -48,7 +48,7 @@ The following minimal sample demonstrates all details required when exposing UI 
     - `since` - The release number (e.g. `[2019.2]`) when this UI customization key was exposed. 
                 A release number prior to 2019.2 is valid.
 
-> **Note** Support for the `since` attribute began with version 2019.2, so this attribute is only displayed in versions 2019.2 and later.
+> **NOTE** Support for the `since` attribute began with version 2019.2, so this attribute is only displayed in versions 2019.2 and later.
       
 > **TIP** It is highly recommended to always provide a `description` entry, so Theme authors can understand usages.
 

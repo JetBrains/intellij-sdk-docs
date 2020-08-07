@@ -22,7 +22,7 @@ The IntelliJ IDEA Ultimate Edition (with the PHP plugin) must be used for develo
 However, this IntelliJ IDEA Ultimate configuration runs the risk of accidentally using some APIs that are not available in PhpStorm.
 The recommended best practice is to use PhpStorm for testing.
 
-> **Note** The OpenAPI is available for PhpStorm 6 and above.
+> **NOTE** The OpenAPI is available for PhpStorm 6 and above.
 
 Configuration of a Gradle-based PhpStorm plugin project is used as a tutorial in the section [Configuring Plugin Projects using the IntelliJ IDEA Product Attribute](/products/dev_alternate_products.md#configuring-plugin-projects-using-the-intellij-idea-product-attribute).
 Many techniques are discussed, such as choosing a version of IntelliJ IDEA Ultimate given a targeted version of PhpStorm.

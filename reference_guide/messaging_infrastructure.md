@@ -3,21 +3,21 @@ title: Messaging Infrastructure
 ---
 <!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-# Purpose
+## Purpose
 
 The purpose of this document is to introduce the messaging infrastructure available in the IntelliJ Platform to developers and plugin writers. It is intended to answer why, when and how to use it.
 
-# Rationale
+## Rationale
 
 So, what is messaging in the IntelliJ Platform and why do we need it? Basically, its implementation of
 [Observer pattern](https://en.wikipedia.org/wiki/Observer_pattern)
 that provides additional features like _broadcasting on hierarchy_ and special _nested events_ processing (_nested event_ here is a situation when new event is fired (directly or indirectly) from the callback of another event).
 
-# Design
+## Design
 
 Here are the main components of the messaging API.
 
-## Topic
+### Topic
 
 This class serves as an endpoint at the messaging infrastructure. I.e. clients are allowed to subscribe to the topic within particular bus and to send messages to particular topic within particular bus.
 
@@ -28,13 +28,13 @@ This class serves as an endpoint at the messaging infrastructure. I.e. clients a
 *  *listener class*  that is a business interface for particular topic.
 Subscribers register implementation of this interface at the messaging infrastructure and publishers may later retrieve object that conforms (IS-A) to it and call any method defined there. Messaging infrastructure takes care on dispatching that to all subscribers of the topic, i.e. the same method with the same arguments will be called on the registered callbacks;
 
-## Message Bus
+### Message Bus
 
 Is the core of the messaging system. Is used at the following scenarios:
 
 ![Bus](img/bus.png)
 
-## Connection
+### Connection
 
 Manages all subscriptions for particular client within particular bus.
 
@@ -52,7 +52,7 @@ Also it can be plugged to standard semi-automatic disposing
 [`Disposable`](upsource:///platform/util/src/com/intellij/openapi/Disposable.java)
 );
 
-## Putting Altogether
+### Putting Altogether
 
 *Defining business interface and topic*
 
@@ -119,7 +119,7 @@ public void doChange(Context context) {
 etc.
 So, it's possible to subscribe to them in order to receive information about the processing;
 
-# Broadcasting
+## Broadcasting
 
 Message buses can be organised into hierarchies. Moreover, the *IntelliJ Platform* has them already:
 
@@ -157,7 +157,7 @@ Broadcast configuration is defined per-topic. Following options are available:
 
 *  _TO\_PARENT_;
 
-# Nested Messages
+## Nested Messages
 
 _Nested message_ is a message sent (directly or indirectly) during another message processing.
 The IntelliJ Platform's Messaging infrastructure guarantees that all messages sent to particular topic will be delivered at the sending order.
@@ -180,9 +180,9 @@ Let's see what happens if someone sends a message to the target topic:
 
 *  _handler1_ receives _message2_;
 
-# Tips'n'tricks
+## Tips'n'tricks
 
-## Relief Listeners Management
+### Relief Listeners Management
 
 Messaging infrastructure is very light-weight, so, it's possible to reuse it at local sub-systems in order to relief
 [Observers](https://en.wikipedia.org/wiki/Observer_pattern) construction. Let's see what is necessary to do then:
@@ -201,7 +201,7 @@ Let's compare that with a manual implementation:
 
 4. Manually iterate all listeners and call target callback in all places where new event is fired;
 
-## Avoid Shared Data Modification from Subscribers
+### Avoid Shared Data Modification from Subscribers
 
 We had a problem in a situation when two subscribers tried to modify the same document
 ([IDEA-71701](https://youtrack.jetbrains.com/issue/IDEA-71701)).

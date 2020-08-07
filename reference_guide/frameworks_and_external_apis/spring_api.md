@@ -9,15 +9,15 @@ A popular plugin using Spring API is [hybris integration](https://plugins.jetbra
 
 To develop plugins you will need to use _IntelliJ IDEA Ultimate Edition_ version 13.1 or higher.
 
-### Setting up IntelliJ Platform SDK
+## Setting up IntelliJ Platform SDK
 
 > **NOTE** This applies to [Plugin DevKit](/basics/getting_started/using_dev_kit.md) projects only. For [Gradle](/tutorials/gradle_build_system.md) projects, simply add dependency to bundled Spring plugin `com.intellij.spring`.
 
-##### New SDK
+### New SDK
 Please create an IntelliJ Platform SDK to include all minimum required files.
 Then add `$IDEA_HOME$/plugins/Spring/lib/spring.jar` to its _classpath_ (_not_ to your plugin module's dependencies).
 
-##### Existing SDK
+### Existing SDK
 Follow these steps to modify existing IntelliJ Platform SDK:
 
 * add to _classpath_ (_not_ to your plugin module's dependencies)
@@ -46,11 +46,11 @@ A fileset usually corresponds to an actual application context configuration at 
 As an API-user, you will usually rather work with `SpringModel` (which is built on top of fileset(s)).
 
 ## API Updates
-> **Note** 2017.3: `LocalXmlModel#setActiveProfiles` & `LocalAnnotationModel#setActiveProfiles` have been deprecated and will be removed in 2018.1.
+> **NOTE** 2017.3: `LocalXmlModel#setActiveProfiles` & `LocalAnnotationModel#setActiveProfiles` have been deprecated and will be removed in 2018.1.
 
-> **Note** Starting with 2016.2, internal representation of bean _type_ has been changed from `PsiClass` to `PsiType`, please note deprecations.
+> **NOTE** Starting with 2016.2, internal representation of bean _type_ has been changed from `PsiClass` to `PsiType`, please note deprecations.
 
-> **Note** Some core classes have been changed in 14(.1), please see "_Version 14(.1)_" notes for info on how to replace existing API-calls.
+> **NOTE** Some core classes have been changed in 14(.1), please see "_Version 14(.1)_" notes for info on how to replace existing API-calls.
 
 ## How Do I...
 
@@ -61,62 +61,62 @@ _2016.2_ See `com.intellij.spring.SpringLibraryUtil` to obtain information about
 
 ### Spring Model
 
-##### Obtain Spring Model by File, PsiElement, ...
+#### Obtain Spring Model by File, PsiElement, ...
 See `SpringManager#getSpringModel(s)...` and `com.intellij.spring.model.utils.SpringModelUtils`.
 
-##### Contribute Implicit Model
+#### Contribute Implicit Model
 See `com.intellij.spring.SpringModelProvider` to provide implicit filesets (e.g. provided by another framework in specific configuration file).
 
 _Version 15_
 See `com.intellij.spring.facet.SpringAutodetectedFileSet` for a convenient base class. Please note that autodetected filesets cannot be edited/modified by users in Spring facet.
 
-##### Customize Implicit Models Configuration
+#### Customize Implicit Models Configuration
 _2017.1_ See `com.intellij.spring.facet.SpringFileSetEditorCustomization` to customize presentation and/or add extra settings/actions for specific autodetected filesets.
 
-##### Contribute Implicit Beans
+#### Contribute Implicit Beans
 See `com.intellij.spring.model.jam.CustomComponentsDiscoverer` or `com.intellij.spring.model.SpringImplicitBeansProviderBase` to provide implicit (framework-specific) beans (e.g. "servletContext" by Spring MVC).
 
 _Version 15_
 `CustomComponentsDiscoverer` has been split into `com.intellij.spring.model.custom.CustomLocalComponentsDiscoverer` and `com.intellij.spring.model.custom.CustomModuleComponentsDiscoverer` respectively.
 
-##### Contribute Custom Bean Scope
+#### Contribute Custom Bean Scope
 _Version 14_
 See `com.intellij.spring.model.scope.SpringCustomBeanScope` to provide custom (e.g. framework specific) bean scopes.
 
-##### Obtain/Create Spring Profiles
+#### Obtain/Create Spring Profiles
 _Version 14.1_
 `com.intellij.spring.profiles.SpringProfilesFactory`
 
 ### Beans
 
-##### Search for Bean by Name
+#### Search for Bean by Name
 `com.intellij.spring.CommonSpringModel#findBeanByName`
 
 _Version 14_: `com.intellij.spring.model.utils.SpringModelSearchers#findBean`
 
-##### Search for Beans by Type
+#### Search for Beans by Type
 Choose one of `com.intellij.spring.CommonSpringModel#findBeansByPsiClassXXX` variants (please note deprecated methods).
 
 _Version 14_: `com.intellij.spring.model.utils.SpringModelSearchers#findBeans`
 
 _Version 16_: note deprecation of `SpringModelSearchParameters.BeanClass#withInheritors(GlobalSearchScope)`
 
-##### Find out if Bean with Given Name/Type Exists
+#### Find out if Bean with Given Name/Type Exists
 _Version 14_: `com.intellij.spring.model.utils.SpringModelSearchers#doesBeanExist` (please note deprecated methods)
 
-##### Mark Bean as Infrastructure Bean
+#### Mark Bean as Infrastructure Bean
 _Version 14_: implement `SpringInfrastructureBean`, such beans obtain special icon and can be filtered in various places in UI.
 
 ### XML Configuration
 All support for XML-based Spring configuration files is provided via [DOM-API](xml_dom_api.md).
 
-##### Add Support for Additional Spring Namespace
+#### Add Support for Additional Spring Namespace
 See EP `com.intellij.spring.dom.SpringCustomNamespaces`, registered namespace-key must match the one registered with your DOM elements via `@Namespace`.
 Register available elements via standard `DomExtender<Beans>` EP or `com.intellij.spring.dom.SpringCustomNamespaces#registerExtensions` (Version 14).
 
 Please pay attention to `getModelVersion` and `getStubVersion` (see javadoc).
 
-##### Add Reference to Spring Bean in DomElement
+#### Add Reference to Spring Bean in DomElement
 Use the following template:
 
 ```java
@@ -128,7 +128,7 @@ GenericAttributeValue<SpringBeanPointer> getMyAttributeName();
 
 ### Code Configuration
 
-##### Add Reference to Spring Bean in JamElement
+#### Add Reference to Spring Bean in JamElement
 _Version 14_
 
 ```java
@@ -137,7 +137,7 @@ JamStringAttributeMeta.Single<SpringBeanPointer> ATTRIBUTE_META =
         new SpringBeanReferenceJamConverter("fqn.to.required.class"));
 ```
 
-##### @AliasFor
+#### @AliasFor
 _Version 16_
 See `com.intellij.spring.model.aliasFor.SpringAliasForUtils` to obtain corresponding `@AliasFor` JAM.
 
@@ -147,21 +147,21 @@ See `com.intellij.spring.spi.SpringSpiManager`.
 
 ### IDE Features
 
-##### Add Inspections to Spring Validator
+#### Add Inspections to Spring Validator
 Add additional inspections (e.g. for custom namespace) to Spring Validator (*Settings|Compiler|Validation*) via EP `com.intellij.spring.SpringInspectionsRegistry$Contributor`.
 
-##### Add Additional Files to Spring Validator
+#### Add Additional Files to Spring Validator
 _Version 14.1_
 Additional files to be processed by inspections registered with Spring Validator (e.g. specific `.properties` configuration files) can be registered via  `com.intellij.spring.SpringInspectionsRegistry$AdditionalFilesContributor`
 
-##### Configure Spring Support for Other Frameworks
+#### Configure Spring Support for Other Frameworks
 Use `com.intellij.spring.facet.SpringConfigurator` to provide "automatic" configuration when Spring facet is added via framework wizard.
 
-##### UI/Presentation
+#### UI/Presentation
 Please do not reference bean icons from `SpringApiIcons` directly, but use `SpringPresentationProvider` to re-use unified icon/bean name. See `SpringBeansPsiElementCellRenderer` for popup/list renderer.
 
 
-# Spring Boot
+## Spring Boot
 _2018.1_
 
 Spring Boot API allows to extend/access Spring Boot specific support in the IDE.

@@ -6,9 +6,9 @@ This page lists notable additions and updates to the SDK documentation and code 
 
 See [Recently Updated](/recently_updated.md) ([RSS](https://github.com/JetBrains/intellij-sdk-docs/commits/master.atom)) for a detailed changelog.
 
-# 2020
+## 2020
 
-## June
+### June
 
 Dynamic Plugins update
 : Added new sections _Code_ and _Troubleshooting_ to [Dynamic Plugins](/basics/plugin_structure/dynamic_plugins.md).
@@ -19,7 +19,7 @@ GitHub IntelliJ Platform Plugin Template
 Disposer & Disposable
 : Added [reference](/basics/disposers.md) discussing resource cleanup/management.
 
-## May
+### May
 
 Settings (Preferences)
 : Added [guide](/reference_guide/settings_guide.md) and [tutorial](/tutorials/settings_tutorial.md) on integrating with IDE Settings dialog.
@@ -27,17 +27,17 @@ Settings (Preferences)
 UI Inspector
 : Inspect Swing components and associated data (like `AnAction` for menu item) using [UI Inspector](/reference_guide/internal_actions/internal_ui_inspector.md).
 
-## March
+### March
 
 JCEF Support (_Experimental Feature_)
 : Allows [embedding](/reference_guide/jcef.md) Chromium-based browser in the IDE.
 
-## February
+### February
 
 All Code Samples converted to Gradle
 : [All samples](https://github.com/JetBrains/intellij-sdk-docs/tree/master/code_samples) now use the [recommended solution](/tutorials/build_system.md) of setting up plugin projects.
 
-## January
+### January
 
 Custom Language Support Tutorial converted to Gradle
 : The [corresponding tutorial](/tutorials/custom_language_support_tutorial.md) and [Testing a Custom Language Plugin](/tutorials/writing_tests_for_plugins.md) have been updated and enhanced as well.
@@ -45,9 +45,9 @@ Custom Language Support Tutorial converted to Gradle
 Targeting specific IDEs
 : [Part VIII - Product Specific](/basics/getting_started/plugin_compatibility.md) has been expanded massively, now also covering each IDE with its own dedicated page.
 
-# 2019
+## 2019
 
-## December
+### December
 
 Dynamic Plugins support
 : Added starting point [Dynamic Plugins](/basics/plugin_structure/dynamic_plugins.md) for migrating plugins (IntelliJ Platform 2020.1 and later).
@@ -55,17 +55,17 @@ Dynamic Plugins support
 Plugin Components migration
 : Components being a legacy feature, the [updated page](/basics/plugin_structure/plugin_components.md) describes migrating them to modern replacement API.
 
-## October
+### October
 
 Part X - Plugin Repository moved
 : All contents have been moved to [JetBrains Marketplace](https://plugins.jetbrains.com/docs/marketplace/about-marketplace.html) documentation.
 
-## July
+### July
 
 New page: Optimizing Performance
 : [How to improve performance](/reference_guide/performance/performance.md) working with PSI, indexing, and avoiding UI freezes.
 
-## May
+### May
 
 New Page: Kotlin UI DSL
 : [Describes preferred way](/user_interface_components/kotlin_ui_dsl.md) of building UI/dialogs for IntelliJ Platform 2019.2 and later.

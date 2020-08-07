@@ -1,4 +1,4 @@
-# Summary
+## Summary
 
 * [Introduction](intro/welcome.md)
 * [The IntelliJ Platform](intro/intellij_platform.md)

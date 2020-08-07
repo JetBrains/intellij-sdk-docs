@@ -5,9 +5,9 @@ title: Notable Changes in IntelliJ Platform and Plugins API 2020.*
 
 We've published our roadmap for the IntelliJ Platform for 2020: [Part I](https://blog.jetbrains.com/idea/2019/12/intellij-platform-roadmap-for-2020/) [Part II](https://blog.jetbrains.com/idea/2020/01/intellij-based-ide-features-roadmap-for-2020/)
 
-# 2020.2 
+## 2020.2 
 
-## Notable Changes in IntelliJ Platform 2020.2
+### Notable Changes in IntelliJ Platform 2020.2
 
 Constructor Injection in `Configurable` forbidden
 : Please obtain necessary components only when needed (logged as ERROR now). 
@@ -52,9 +52,9 @@ Adopting builder-style API of the new `AnnotationHolder.newAnnotation()` API.
 ASM Library 8.0.1 
 : Updated from 7.0.1.
 
-# 2020.1 
+## 2020.1 
 
-## Notable Changes in IntelliJ Platform 2020.1
+### Notable Changes in IntelliJ Platform 2020.1
 Dynamic Plugins
 : [Compatible plugins](/basics/plugin_structure/dynamic_plugins.md) can be installed, updated and uninstalled without requiring IDE restart.
 
@@ -86,7 +86,7 @@ To support **Open or Import**, a plugin must provide [`ProjectOpenProcessor`](up
 If there are several matching processors, a simple choice dialog is shown.
 If additional manual configuration is necessary, a modal dialog can be shown in `doOpenProject()` - however, it is highly recommended performing all setup automatically (like Maven and Gradle plugins do).
 
-## Notable Changes in IntelliJ IDEA
+### Notable Changes in IntelliJ IDEA
 
 EOL for JetBrains TFS Plugin
 : Please use [Azure DevOps](https://plugins.jetbrains.com/plugin/7981-azure-devops) plugin instead, see [blog post](https://blog.jetbrains.com/idea/2020/01/end-of-support-for-tfs-2014-and-older/) for more details.

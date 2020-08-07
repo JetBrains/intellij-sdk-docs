@@ -64,17 +64,17 @@ Please see [Incompatible API Changes](/reference_guide/api_changes_list.md) on h
 
 > **NOTE** Changes from API marked with `org.jetbrains.annotations.ApiStatus.@Experimental/ScheduledForRemoval` are not listed here, as incompatible changes are to be expected.
 
-# 2020.3
+## 2020.3
 
-## Changes in IntelliJ Platform 2020.3
+### Changes in IntelliJ Platform 2020.3
                  
 `com.intellij.openapi.application.NonBlockingReadAction.finishOnUiThread` method parameter type changed from ``Consumer<T>`` to ``Consumer<? super T>``
 : This may break source-compatibility with inheritors written in Kotlin.
 
 
-# 2020.2
+## 2020.2
 
-## Changes in IntelliJ Platform 2020.2
+### Changes in IntelliJ Platform 2020.2
 
 Support for JavaFX deprecated
 : Plugins should migrate to [JCEF](/reference_guide/jcef.md). Alternatively, add an explicit dependency on [JavaFX Runtime for Plugins](https://plugins.jetbrains.com/plugin/14250-javafx-runtime-for-plugins). 
@@ -143,7 +143,7 @@ Support for JavaFX deprecated
 : Please remove plugin code supporting Java 13 language level features. IntelliJ IDEA supports preview features of the latest Java release as well as one upcoming release (if available). 
 
 
-### VCS
+#### VCS
   
 `com.intellij.diff.util.DiffUserDataKeysEx.REVISION_INFO` field removed
 : Use `com.intellij.diff.DiffVcsDataKeys.REVISION_INFO` instead. 
@@ -151,7 +151,7 @@ Support for JavaFX deprecated
 `com.intellij.codeInsight.actions.FormatChangedTextUtil.getChangedElements(Project, Change[], Function)` method removed
 : Use `com.intellij.codeInsight.actions.VcsFacadeImpl.getVcsInstance().getChangedElements(...)` instead. 
 
-## Changes in GitHub Plugin 2020.2
+### Changes in GitHub Plugin 2020.2
 
 `org.jetbrains.plugins.github.util.LazyCancellableBackgroundProcessValue(ProgressManager)` constructor removed
 : Required for more tight control of task scheduling. Use `org.jetbrains.plugins.github.util.LazyCancellableBackgroundProcessValue.Companion#create(ProgressManager, (ProgressIndicator) -> T)` instead of subclassing
@@ -165,13 +165,13 @@ Support for JavaFX deprecated
 `org.jetbrains.plugins.github.util.GithubGitHelper.getPossibleRemoteUrlCoordinates()` method removed
 : Use `org.jetbrains.plugins.github.util.GHProjectRepositoriesManager.getKnownRepositories()` instead
 
-## Changes in Groovy Plugin 2020.2
+### Changes in Groovy Plugin 2020.2
 
 `org.jetbrains.plugins.groovy.formatter.AlignmentProvider.addPair` method parameter type changed from `Boolean` to `boolean`
 : Please adjust/recompile the code.
 
 
-## Changes in Java EE Plugins 2020.2
+### Changes in Java EE Plugins 2020.2
 
 Java EE plugins split
 : Plugin `com.intellij.javaee` _Java EE: EJB, JPA, Servlets_ has been split to: 
@@ -182,22 +182,22 @@ Java EE plugins split
 - `com.intellij.javaee.web` _Java EE: Web/Servlets_
 
 
-## Changes in JavaScript Plugin 2020.2
+### Changes in JavaScript Plugin 2020.2
 
 `com.intellij.lang.javascript.linter.jslint` package removed
 : JSLint functionality has been unbundled and moved to a separate plugin. [Issue](https://youtrack.jetbrains.com/issue/WEB-44511)
 
 
-## Changes in PhpStorm and PHP Plugin 2020.2
+### Changes in PhpStorm and PHP Plugin 2020.2
 
 Added Union Types Support
 : Please see [PhpStorm Breaking Changes](/products/phpstorm/php_open_api_breaking_changes.md).
 
 
 
-# 2020.1
+## 2020.1
 
-## Changes in IntelliJ Platform 2020.1
+### Changes in IntelliJ Platform 2020.1
 
 `com.intellij.compiler.ant` package removed
 : 'Generate Ant build' functionality is removed from the IDE. Delete the code extending this or replace it with a dependency on the `generate-ant` plugin.
@@ -267,7 +267,7 @@ Images module functionality (package `org.intellij.images.*`) extracted to plugi
     }
     ```
 
-## Changes in Python Plugin 2020.1
+### Changes in Python Plugin 2020.1
 
 `com.jetbrains.python.psi.PyCallExpression.PyMarkedCallee` class removed
 : Use `com.jetbrains.python.psi.types.PyCallableType` instead.

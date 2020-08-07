@@ -3,14 +3,8 @@ title: External System Integration
 ---
 <!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-# Purpose
-
 This page provides high-level overview of *External System* sub-system.
-
-# Rationale
-
-There are multiple project management systems ([Apache Maven](https://maven.apache.org/), [Gradle](https://www.gradle.org/), [sbt](https://www.scala-sbt.org/) etc) and it's good to support them at the IDE. Luckily, they all provide a similar set of facilities from the integration point of view:
-
+There are multiple project management systems ([Apache Maven](https://maven.apache.org/), [Gradle](https://www.gradle.org/), [sbt](https://www.scala-sbt.org/) etc) and it's good to support them at the IDE. Luckily, they all provide a similar set of facilities from the integration point of view: 
 *   build IDE project from external system config (`pom.xml`, `build.gradle` etc);
 *   provide a list of available tasks;
 *   allow to execute a particular task;
@@ -18,9 +12,9 @@ There are multiple project management systems ([Apache Maven](https://maven.apac
 
 That means that we can separate external system-specific logic and general IDE processing. *'External system'* sub-system provides simple API for wrapping external system and extensible IDE-specific processing logic.
 
-# Project Management
+## Project Management
 
-## Project Data Domain
+### Project Data Domain
 
 **General**  
 External system wrapper is required to be able to build project info on the basis of the given external system config. That information is built using in terms of [`DataNode`](upsource:///platform/external-system-api/src/com/intellij/openapi/externalSystem/model/DataNode.java), [`Key`](upsource:///platform/external-system-api/src/com/intellij/openapi/externalSystem/model/Key.java) and [`ExternalEntityData`](upsource:///platform/external-system-api/src/com/intellij/openapi/externalSystem/model/project/ExternalEntityData.java).
@@ -37,7 +31,7 @@ For example, simple one-module project might look as below:
 **Consequence**  
 The IDE provides a set of built-in *Key*s and *ExternalEntityData*s but any external system integration or third-party plugin developer might enhance project data by defining her own *Key* and *ExternalEntityData* and storing them at a child of appropriate *DataNode*.
 
-## Managing Project Data
+### Managing Project Data
 
 We need to process project data is built on external system config basis. Here comes [`ProjectDataService`](upsource:///platform/external-system-api/src/com/intellij/openapi/externalSystem/service/project/manage/ProjectDataService.java). It is a strategy which knows how to manage particular *ExternalEntityData*. For example, when we want to import a project from external model, we can start by the top level *DataNode* which references project info and then import its data using corresponding service.
 
@@ -45,7 +39,7 @@ Custom services can be defined via *'externalProjectDataService'* extension.
 
 The good thing is that we can separate project parsing and management here. That means that a set of *DataNode*, *Key* and *ProjectDataServices* can be introduced for particular technology and then every external system integration can build corresponding data if necessary using it.
 
-## Importing from External Model
+### Importing from External Model
 
 IntelliJ platform provides standard API for that. Namely, [`ProjectImportBuilder`](upsource:///java/idea-ui/src/com/intellij/projectImport/ProjectImportBuilder.java) and [`ProjectImportProvider`](upsource:///java/idea-ui/src/com/intellij/projectImport/ProjectImportProvider.java). There are two classes built on *template method* pattern - [`AbstractExternalProjectImportBuilder`](upsource:///java/idea-ui/src/com/intellij/openapi/externalSystem/service/project/wizard/AbstractExternalProjectImportBuilder.java) and [`AbstractExternalProjectImportProvider`](upsource:///java/idea-ui/src/com/intellij/openapi/externalSystem/service/project/wizard/AbstractExternalProjectImportProvider.java). Concrete implementations are registered in `plugin.xml`.
 
@@ -80,7 +74,7 @@ Then register the instance with `ExternalSystemProjectTracker` to start tracking
 Since 2020.1, the icon for reload notification can be specified per external system. Implement `ExternalSystemIconProvider` and register via `com.intellij.externalIconProvider` extension point in `plugin.xml`. Alternatively, set `reloadIcon` field external system implements `ExternalSystemIconProvider` directly.
 
 
-# Settings
+## Settings
 
 The general idea is that all external system settings controls are represented by implementations of [`ExternalSystemSettingsControl`](upsource:///platform/external-system-impl/src/com/intellij/openapi/externalSystem/util/ExternalSystemSettingsControl.java) interface. There are also external system project-local settings and global external system settings. So, basically particular external system settings UI looks as below:
 

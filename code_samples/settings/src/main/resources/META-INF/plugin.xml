@@ -6,7 +6,7 @@
   <id>org.intellij.sdk.settings</id>
 
   <!-- Text to display as name on Preferences/Settings | Plugin page -->
-  <name>SDK: Settings Example Project</name>
+  <name>SDK: Settings Example</name>
 
   <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
        on how to target different products -->

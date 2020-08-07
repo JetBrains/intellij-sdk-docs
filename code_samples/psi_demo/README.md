@@ -21,9 +21,9 @@ or listeners provided by the plugin.
 
 ### Actions
 
-| Name          | Implementation Class                              | Interface                          |
-| ------------- | ------------------------------------------------- | ---------------------------------- |
-| action | [TextOnlyTreeStructureProvider][file:PsiNavigationDemoAction] | [AnAction][sdk:AnAction] |
+| Name   | Implementation Class                                    | Interface                |
+| ------ | ------------------------------------------------------- | ------------------------ |
+| action | [PsiNavigationDemoAction][file:PsiNavigationDemoAction] | [AnAction][sdk:AnAction] |
 
 *Reference: [Action System in IntelliJ SDK Docs][docs:actions]*
 

@@ -6,7 +6,7 @@
   <id>org.intellij.sdk.toolWindow</id>
 
   <!-- Text to display as name on Preferences/Settings | Plugin page  -->
-  <name>SDK: Tool Window Sample Project</name>
+  <name>SDK: Tool Window Sample</name>
 
   <!-- Indicate this plugin can be loaded in all IntelliJ Platform-based products. -->
   <depends>com.intellij.modules.platform</depends>

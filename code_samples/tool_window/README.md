@@ -1,6 +1,5 @@
-[IntelliJ Platform SDK Code Samples](../README.md)
-
-# Tool Window
+# Tool Window Sample [![JetBrains IntelliJ Platform SDK Docs](https://jb.gg/badges/docs.svg)][docs]
+*Reference: [Tool Windows in IntelliJ SDK Docs][docs:tool_windows]*
 
 ## Quickstart
 
@@ -12,20 +11,12 @@ See the [Tool Windows][docs_tool_windows] documentation page for more informatio
 
 ## Structure
 
-The plugin was developed using the [IntelliJ Platform SDK][docs_sdk].
+Tool Window Sample
+plugin depends on the [IntelliJ Platform SDK][docs] and [Gradle][docs:gradle] as a build system.
 
-The main file is [plugin.xml][plugin.xml], which is created accordingly to the [Plugin Configuration File documentation][docs_pluginxml].
-It describes definitions of the actions, extensions, or listeners provided by the plugin:
-
-### Extension Points
-
-| Name | Implementation Class | Interface |
-| ---- | -------------------- | --------- |
-| toolWindow | [MyToolWindowFactory][toolWindow_implementation] | [ToolWindowFactory][toolWindow_interface] |
-
-[Extension Points documentation][docs_ep]
-
-## Function
+The main plugin definition file is stored in the [plugin.xml][file:plugin.xml] file, which is created accordingly
+to the [Plugin Configuration File documentation][docs:plugin.xml]. It describes definitions of the actions, extensions,
+or listeners provided by the plugin.
 
 When the plugin is built and run in the IntelliJ IDE (ref. [Running a Simple Gradle-Based IntelliJ Platform Plugin][docs_run]),
 it registers a `ToolWindowFactory` extension, which adds a new Tool Window component to te one of the IDE window's sides.
@@ -50,13 +41,24 @@ Current implementation displays a `JPanel` component containing simple icons and
 system date, time, and timezone. Component is provided by the `MyToolWindow` class through the `getContent()` method
 invoked inside the `MyToolWindowFactory` implementation. 
 
+### Extension Points
 
-[plugin.xml]: ./src/main/resources/META-INF/plugin.xml
-[docs_tool_windows]: https://www.jetbrains.org/intellij/sdk/docs/user_interface_components/tool_windows.html
-[docs_pluginxml]: https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_configuration_file.html
-[docs_sdk]: https://www.jetbrains.org/intellij/sdk/docs/intro/about.html
-[docs_ep]: https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_extension_points.html
-[docs_run]: https://www.jetbrains.org/intellij/sdk/docs/tutorials/build_system/prerequisites.html#running-a-simple-gradle-based-intellij-platform-plugin
+| Name       | Implementation Class                            | Interface                                  |
+| ---------- | ----------------------------------------------- | ------------------------------------------ |
+| toolWindow | [MyToolWindowFactory][file:MyToolWindowFactory] | [ToolWindowFactory][sdk:ToolWindowFactory] |
 
-[toolWindow_implementation]: ./src/main/java/org/intellij/sdk/toolWindow/MyToolWindowFactory.java
-[toolWindow_interface]: https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/wm/ToolWindowFactory.java
+*Reference: [Plugin Extension Points in IntelliJ SDK Docs][docs:ep]*
+
+
+[docs]: http://www.jetbrains.org/intellij/sdk/docs
+[docs:actions]: https://www.jetbrains.org/intellij/sdk/docs/basics/action_system.html
+[docs:tool_windows]: https://jetbrains.org/intellij/sdk/docs/user_interface_components/tool_windows.html
+[docs:ep]: https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_extension_points.html
+[docs:gradle]: https://www.jetbrains.org/intellij/sdk/docs/tutorials/build_system.html
+[docs:plugin.xml]: https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_configuration_file.html
+[docs:listeners]: https://jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_listeners.html
+
+[file:plugin.xml]: ./src/main/resources/META-INF/plugin.xml
+
+[file:MyToolWindowFactory]: ./src/main/java/org/intellij/sdk/toolWindow/MyToolWindowFactory.java
+[sdk:ToolWindowFactory]: https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/wm/ToolWindowFactory.java

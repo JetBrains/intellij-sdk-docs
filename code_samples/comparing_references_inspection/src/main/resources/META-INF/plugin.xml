@@ -2,8 +2,8 @@
 
 <idea-plugin>
 
-  <!--  Unique id for this plugin. Must stay constant for the life of the plugin.  -->
-  <id>org.intelliJ.sdk.codeInspection</id>
+  <!-- Unique id for this plugin. Must stay constant for the life of the plugin. -->
+  <id>org.intellij.sdk.codeInspection</id>
 
   <!-- Text to display as name on Preferences/Settings | Plugin page -->
   <name>SDK: Comparing References Inspection Sample</name>
@@ -11,7 +11,7 @@
   <!-- Evaluates java PSI -->
   <depends>com.intellij.modules.java</depends>
 
-  <!-- Text to display as description on Preferences/Settings | Plugin page  -->
+  <!-- Text to display as description on Preferences/Settings | Plugin page -->
   <description>
     <![CDATA[
       Demonstrates implementing a Local Inspection Tool.<br> Adds entries to
@@ -32,30 +32,30 @@
   <vendor url="https://plugins.jetbrains.com">IntelliJ Platform SDK</vendor>
 
   <extensions defaultExtensionNs="com.intellij">
+    <!--
+      Extend the IntelliJ Platform local inspection type, and connect it to the implementation class in this plugin.
+      <localInspection> type element is applied within the scope of a file under edit.
+      It is preferred over <inspectionToolProvider>
+        @see intellij.platform.resources.LangExtensionPoints
+        @see com.intellij.codeInspection.InspectionProfileEntry
 
-    <!--  Extend the IntelliJ Platform local inspection type, and connect it to the implementation class
-          in this plugin.
-          <localInspection> type element is applied within the scope of a file under edit.
-              It is preferred over <inspectionToolProvider>
-              @see intellij.platform.resources.LangExtensionPoints
-              @see com.intellij.codeInspection.InspectionProfileEntry
-          Attributes:
-            language= Language ID
-            shortName= Not specified, will be computed by the underlying implementation classes.
-            displayName= The string to be shown in the Preferences | Editor | Inspections panel
-                The displayName gets registered to identify this inspection.
-                Can be localized using key= and bundle= attributes instead.
-            groupPath= Defines the outermost grouping for this inspection in
-                the Preferences | Editor | Inspections panel. Not localized.
-            groupBundle= Name of *.bundle file to translate groupKey.
-                In this case reuse an IntelliJ Platform bundle file from intellij.platform.resources.en
-            groupKey= Key to use for translation subgroup name using groupBundle file.
-                In this case reuse the IntelliJ Platform subcategory "Probable bugs"
-            enabledByDefault= Inspection state when Inspections panel is created.
-            level= The default level of error found by this inspection, e.g. INFO, ERROR, etc.
-                @see com.intellij.codeHighlighting.HighlightDisplayLevel
-            implementationClass= FQN of inspection implementation
-           -->
+      Attributes:
+        language= Language ID
+        shortName= Not specified, will be computed by the underlying implementation classes.
+        displayName= The string to be shown in the Preferences | Editor | Inspections panel
+            The displayName gets registered to identify this inspection.
+            Can be localized using key= and bundle= attributes instead.
+        groupPath= Defines the outermost grouping for this inspection in
+            the Preferences | Editor | Inspections panel. Not localized.
+        groupBundle= Name of *.bundle file to translate groupKey.
+            In this case reuse an IntelliJ Platform bundle file from intellij.platform.resources.en
+        groupKey= Key to use for translation subgroup name using groupBundle file.
+            In this case reuse the IntelliJ Platform subcategory "Probable bugs"
+        enabledByDefault= Inspection state when Inspections panel is created.
+        level= The default level of error found by this inspection, e.g. INFO, ERROR, etc.
+            @see com.intellij.codeHighlighting.HighlightDisplayLevel
+        implementationClass= FQN of inspection implementation
+    -->
     <localInspection language="JAVA"
                      displayName="SDK: '==' or '!=' used instead of 'equals()'"
                      groupPath="Java"
@@ -64,7 +64,6 @@
                      enabledByDefault="true"
                      level="WARNING"
                      implementationClass="org.intellij.sdk.codeInspection.ComparingReferencesInspection"/>
-
   </extensions>
 
 </idea-plugin>

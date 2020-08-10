@@ -2,17 +2,17 @@
 
 <idea-plugin>
 
-  <!--  Unique id for this plugin. Must stay constant for the life of the plugin.  -->
+  <!-- Unique id for this plugin. Must stay constant for the life of the plugin. -->
   <id>org.intellij.sdk.language</id>
 
-  <!-- Text to display as name on Preferences/Settings | Plugin page  -->
+  <!-- Text to display as name on Preferences/Settings | Plugin page -->
   <name>SDK: Simple Language Sample</name>
 
   <!-- Product and plugin compatibility requirements -->
   <depends>com.intellij.modules.platform</depends>
   <depends>com.intellij.modules.java</depends>
 
-  <!-- Text to display as description on Preferences/Settings | Plugin page  -->
+  <!-- Text to display as description on Preferences/Settings | Plugin page -->
   <description>
     <![CDATA[
       Demonstrates how to add custom language support to an IntelliJ Platform-based IDE. <br>Defines a new language,
@@ -38,9 +38,10 @@
   <extensions defaultExtensionNs="com.intellij">
     <fileType name="Simple File" implementationClass="org.intellij.sdk.language.SimpleFileType" fieldName="INSTANCE"
               language="Simple" extensions="simple"/>
-    <!-- Only required for versions of the IntelliJ Platform prior to v2019.2.
-         Use fileTypeFactory extension point INSTEAD of fileType.
-    <fileTypeFactory implementation="org.intellij.sdk.language.SimpleFileTypeFactory"/>
+    <!--
+      Only required for versions of the IntelliJ Platform prior to v2019.2.
+      Use fileTypeFactory extension point INSTEAD of fileType.
+      <fileTypeFactory implementation="org.intellij.sdk.language.SimpleFileTypeFactory"/>
     -->
     <lang.parserDefinition language="Simple" implementationClass="org.intellij.sdk.language.SimpleParserDefinition"/>
     <lang.syntaxHighlighterFactory language="Simple"

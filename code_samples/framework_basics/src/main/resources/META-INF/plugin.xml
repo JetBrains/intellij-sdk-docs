@@ -2,16 +2,16 @@
 
 <idea-plugin>
 
-  <!--  Unique id for this plugin. Must stay constant for the life of the plugin.  -->
+  <!-- Unique id for this plugin. Must stay constant for the life of the plugin. -->
   <id>org.intellij.sdk.framework</id>
 
-  <!-- Text to display as name on Preferences/Settings | Plugin page  -->
-  <name>SDK: Framework Sample Project</name>
+  <!-- Text to display as name on Preferences/Settings | Plugin page -->
+  <name>SDK: Framework Sample</name>
 
   <!-- Product and plugin compatibility requirements -->
   <depends>com.intellij.modules.java</depends>
 
-  <!-- Text to display as description on Preferences/Settings | Plugin page  -->
+  <!-- Text to display as description on Preferences/Settings | Plugin page -->
   <description>
     <![CDATA[
       Demonstrates basic Framework support. <br>Adds <i>SDK Demo Framework</i> to

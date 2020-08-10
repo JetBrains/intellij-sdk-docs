@@ -6,12 +6,12 @@
   <id>org.intellij.sdk.action</id>
 
   <!-- Text to display as name on Preferences/Settings | Plugin page -->
-  <name>SDK: Action Sample Project</name>
+  <name>SDK: Action Sample</name>
 
   <!-- Indicate this plugin can be loaded in all IntelliJ Platform-based products. -->
   <depends>com.intellij.modules.platform</depends>
 
-  <!-- Text to display as description on Preferences/Settings | Plugin page  -->
+  <!-- Text to display as description on Preferences/Settings | Plugin page -->
   <description>
     <![CDATA[
       Demonstrates implementing Action and Action Group patterns.<br> Adds entries to the Tools menu.

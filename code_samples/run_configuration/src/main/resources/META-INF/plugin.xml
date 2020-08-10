@@ -2,16 +2,16 @@
 
 <idea-plugin>
 
-  <!--  Unique id for this plugin. Must stay constant for the life of the plugin.  -->
+  <!-- Unique id for this plugin. Must stay constant for the life of the plugin. -->
   <id>org.intellij.sdk.runConfiguration</id>
 
-  <!-- Text to display as name on Preferences/Settings | Plugin page  -->
+  <!-- Text to display as name on Preferences/Settings | Plugin page -->
   <name>SDK: Run Configuration Demo</name>
 
   <!-- Product and plugin compatibility requirements -->
   <depends>com.intellij.modules.platform</depends>
 
-  <!-- Text to display as description on Preferences/Settings | Plugin page  -->
+  <!-- Text to display as description on Preferences/Settings | Plugin page -->
   <description>
     <![CDATA[
       Illustration of working with run configurations

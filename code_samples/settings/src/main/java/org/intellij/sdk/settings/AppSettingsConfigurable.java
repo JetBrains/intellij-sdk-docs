@@ -10,8 +10,9 @@ import javax.swing.*;
 
 /**
  * Provides controller functionality for application settings.
-*/
+ */
 public class AppSettingsConfigurable implements Configurable {
+
   private AppSettingsComponent mySettingsComponent;
 
   // A default constructor with no arguments is required because this implementation

@@ -16,16 +16,23 @@ import com.intellij.psi.PsiFile;
 import org.jetbrains.annotations.NotNull;
 
 public class LibrariesAction extends AnAction {
+
   @Override
   public void update(@NotNull final AnActionEvent event) {
     Project project = event.getProject();
-    if (project == null) return;
+    if (project == null) {
+      return;
+    }
     Navigatable element = event.getData(CommonDataKeys.NAVIGATABLE);
     if (element instanceof PsiClass) {
       PsiFile psiFile = ((PsiClass) element).getContainingFile();
-      if (psiFile == null) return;
+      if (psiFile == null) {
+        return;
+      }
       VirtualFile virtualFile = psiFile.getVirtualFile();
-      if (virtualFile == null) return;
+      if (virtualFile == null) {
+        return;
+      }
       event.getPresentation().setEnabledAndVisible(true);
     }
   }
@@ -33,22 +40,32 @@ public class LibrariesAction extends AnAction {
   @Override
   public void actionPerformed(@NotNull AnActionEvent event) {
     Project project = event.getProject();
-    if (project == null) return;
+    if (project == null) {
+      return;
+    }
     Navigatable element = event.getData(CommonDataKeys.NAVIGATABLE);
     if (element instanceof PsiClass) {
       PsiFile psiFile = ((PsiClass) element).getContainingFile();
-      if (psiFile == null) return;
+      if (psiFile == null) {
+        return;
+      }
       VirtualFile virtualFile = psiFile.getVirtualFile();
-      if (virtualFile == null) return;
+      if (virtualFile == null) {
+        return;
+      }
       final ProjectFileIndex fileIndex = ProjectRootManager.getInstance(project).getFileIndex();
       StringBuilder jars = new StringBuilder();
       for (OrderEntry orderEntry : fileIndex.getOrderEntriesForFile(virtualFile)) {
         if (orderEntry instanceof LibraryOrderEntry) {
           final LibraryOrderEntry libraryEntry = (LibraryOrderEntry) orderEntry;
           final Library library = libraryEntry.getLibrary();
-          if (library == null) continue;
+          if (library == null) {
+            continue;
+          }
           VirtualFile[] files = library.getFiles(OrderRootType.CLASSES);
-          if (files.length == 0) continue;
+          if (files.length == 0) {
+            continue;
+          }
           for (VirtualFile jar : files) {
             jars.append(jar.getName()).append(", ");
           }
@@ -64,4 +81,5 @@ public class LibrariesAction extends AnAction {
               "Libraries Info");
     }
   }
+
 }

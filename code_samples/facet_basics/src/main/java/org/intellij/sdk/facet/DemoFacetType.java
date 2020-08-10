@@ -19,6 +19,7 @@ import javax.swing.*;
  * Allows application of this facet to all ModuleTypes.
  */
 public class DemoFacetType extends FacetType<DemoFacet, DemoFacetConfiguration> {
+
   public static final String FACET_ID = "DEMO_FACET_ID";
   public static final String FACET_NAME = "SDK Facet";
   public static final FacetTypeId<DemoFacet> DEMO_FACET_TYPE_ID = new FacetTypeId<>(FACET_ID);
@@ -50,4 +51,5 @@ public class DemoFacetType extends FacetType<DemoFacet, DemoFacetConfiguration> 
   public Icon getIcon() {
     return SdkIcons.Sdk_default_icon;
   }
+
 }

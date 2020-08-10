@@ -6,7 +6,6 @@ import com.intellij.facet.ui.FacetEditorContext;
 import com.intellij.facet.ui.FacetEditorTab;
 import com.intellij.facet.ui.FacetValidatorsManager;
 import com.intellij.openapi.options.ConfigurationException;
-import com.intellij.openapi.util.Comparing;
 import com.intellij.openapi.util.text.StringUtil;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.NotNull;
@@ -19,11 +18,12 @@ import java.awt.*;
  * Manages validation and modification of the {@link DemoFacet} state.
  */
 public class DemoFacetEditorTab extends FacetEditorTab {
+
   private static final String FACET_PANEL_PROMPT = "Path To SDK: ";
-  
+
   private final DemoFacetState mySettings;
   private final JTextField myPath;
-  
+
   /**
    * Only org.intellij.sdk.facet.DemoFacetState is captured so it can be updated per user changes
    * in the EditorTab.
@@ -37,7 +37,7 @@ public class DemoFacetEditorTab extends FacetEditorTab {
     mySettings = state;
     myPath = new JTextField(state.getDemoFacetState());
   }
-  
+
   /**
    * Provides the JPanel displayed in the Preferences | Facet UI
    *
@@ -53,8 +53,8 @@ public class DemoFacetEditorTab extends FacetEditorTab {
     facetPanel.add(top, BorderLayout.NORTH);
     return facetPanel;
   }
-  
-  
+
+
   /**
    * @return the name of this facet for display in this editor tab.
    */
@@ -63,7 +63,7 @@ public class DemoFacetEditorTab extends FacetEditorTab {
   public String getDisplayName() {
     return DemoFacetType.FACET_NAME;
   }
-  
+
   /**
    * Determines if the facet state entered in the UI differs
    * from the currently stored state.
@@ -76,10 +76,11 @@ public class DemoFacetEditorTab extends FacetEditorTab {
   public boolean isModified() {
     return !StringUtil.equals(mySettings.getDemoFacetState(), myPath.getText().trim());
   }
-  
+
   /**
    * Stores new facet state (text) entered by the user.
    * Called when {@link #isModified()} returns true.
+   *
    * @throws ConfigurationException if anything generates an exception.
    */
   @Override
@@ -88,11 +89,11 @@ public class DemoFacetEditorTab extends FacetEditorTab {
     try {
       String newTextContent = myPath.getText();
       mySettings.setDemoFacetState(newTextContent);
-    } catch(Exception e) {
+    } catch (Exception e) {
       throw new ConfigurationException(e.toString());
     }
   }
-  
+
   /**
    * Copies current org.intellij.sdk.facet.DemoFacetState into the myPath UI element.
    * This method is called each time this editor tab is needed for display.
@@ -101,5 +102,5 @@ public class DemoFacetEditorTab extends FacetEditorTab {
   public void reset() {
     myPath.setText(mySettings.getDemoFacetState());
   }
-  
+
 }

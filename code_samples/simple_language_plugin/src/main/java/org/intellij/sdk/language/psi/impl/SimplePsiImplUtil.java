@@ -15,6 +15,7 @@ import org.jetbrains.annotations.Nullable;
 import javax.swing.*;
 
 public class SimplePsiImplUtil {
+
   public static String getKey(SimpleProperty element) {
     ASTNode keyNode = element.getNode().findChildByType(SimpleTypes.KEY);
     if (keyNode != null) {

@@ -2,23 +2,27 @@
 
 package org.intellij.sdk.language;
 
-import com.intellij.codeInsight.lookup.*;
+import com.intellij.codeInsight.lookup.LookupElement;
+import com.intellij.codeInsight.lookup.LookupElementBuilder;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.TextRange;
 import com.intellij.psi.*;
 import org.intellij.sdk.language.psi.SimpleProperty;
-import org.jetbrains.annotations.*;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class SimpleReference extends PsiReferenceBase<PsiElement> implements PsiPolyVariantReference {
+
   private final String key;
-  
+
   public SimpleReference(@NotNull PsiElement element, TextRange textRange) {
     super(element, textRange);
     key = element.getText().substring(textRange.getStartOffset(), textRange.getEndOffset());
   }
-  
+
   @NotNull
   @Override
   public ResolveResult[] multiResolve(boolean incompleteCode) {
@@ -30,14 +34,14 @@ public class SimpleReference extends PsiReferenceBase<PsiElement> implements Psi
     }
     return results.toArray(new ResolveResult[results.size()]);
   }
-  
+
   @Nullable
   @Override
   public PsiElement resolve() {
     ResolveResult[] resolveResults = multiResolve(false);
     return resolveResults.length == 1 ? resolveResults[0].getElement() : null;
   }
-  
+
   @NotNull
   @Override
   public Object[] getVariants() {
@@ -47,11 +51,12 @@ public class SimpleReference extends PsiReferenceBase<PsiElement> implements Psi
     for (final SimpleProperty property : properties) {
       if (property.getKey() != null && property.getKey().length() > 0) {
         variants.add(LookupElementBuilder
-                           .create(property).withIcon(SimpleIcons.FILE)
-                           .withTypeText(property.getContainingFile().getName())
+                .create(property).withIcon(SimpleIcons.FILE)
+                .withTypeText(property.getContainingFile().getName())
         );
       }
     }
     return variants.toArray();
   }
+
 }

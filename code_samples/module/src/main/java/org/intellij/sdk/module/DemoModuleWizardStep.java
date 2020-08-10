@@ -7,6 +7,7 @@ import com.intellij.ide.util.projectWizard.ModuleWizardStep;
 import javax.swing.*;
 
 public class DemoModuleWizardStep extends ModuleWizardStep {
+
   @Override
   public JComponent getComponent() {
     return new JLabel("Provide some setting here");
@@ -16,4 +17,5 @@ public class DemoModuleWizardStep extends ModuleWizardStep {
   public void updateDataModel() {
     //todo update model according to UI
   }
+
 }

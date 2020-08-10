@@ -8,9 +8,11 @@ import com.intellij.psi.*;
 import com.intellij.util.ProcessingContext;
 import org.jetbrains.annotations.NotNull;
 
-import static org.intellij.sdk.language.SimpleAnnotator.*;
+import static org.intellij.sdk.language.SimpleAnnotator.SIMPLE_PREFIX_STR;
+import static org.intellij.sdk.language.SimpleAnnotator.SIMPLE_SEPARATOR_STR;
 
 public class SimpleReferenceContributor extends PsiReferenceContributor {
+
   @Override
   public void registerReferenceProviders(@NotNull PsiReferenceRegistrar registrar) {
     registrar.registerReferenceProvider(PlatformPatterns.psiElement(PsiLiteralExpression.class),
@@ -31,4 +33,5 @@ public class SimpleReferenceContributor extends PsiReferenceContributor {
               }
             });
   }
+
 }

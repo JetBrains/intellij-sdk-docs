@@ -17,10 +17,11 @@ import org.jetbrains.annotations.NotNull;
  * @see com.intellij.openapi.actionSystem.AnAction
  */
 public class EditorAreaIllustration extends AnAction {
-  
+
   /**
    * Displays a message with information about the current caret.
-   * @param e  Event related to this action
+   *
+   * @param e Event related to this action
    */
   @Override
   public void actionPerformed(@NotNull final AnActionEvent e) {
@@ -38,12 +39,13 @@ public class EditorAreaIllustration extends AnAction {
             "Offset: " + caretOffset;
     Messages.showInfoMessage(report, "Caret Parameters Inside The Editor");
   }
-  
+
   /**
    * Sets visibility and enables this action menu item if:
-   *   A project is open,
-   *   An editor is active,
-   * @param e  Event related to this action
+   * A project is open,
+   * An editor is active,
+   *
+   * @param e Event related to this action
    */
   @Override
   public void update(@NotNull final AnActionEvent e) {
@@ -53,4 +55,5 @@ public class EditorAreaIllustration extends AnAction {
     //Set visibility only in case of existing project and editor
     e.getPresentation().setEnabledAndVisible(project != null && editor != null);
   }
+
 }

@@ -71,4 +71,5 @@ public class DemoFramework extends FrameworkTypeEx {
   public Icon getIcon() {
     return SdkIcons.Sdk_default_icon;
   }
+
 }

@@ -18,19 +18,28 @@ import com.intellij.psi.PsiFile;
 import org.jetbrains.annotations.NotNull;
 
 public class ModificationAction extends AnAction {
+
   @Override
   public void actionPerformed(@NotNull final AnActionEvent event) {
     Project project = event.getProject();
-    if (project == null) return;
+    if (project == null) {
+      return;
+    }
     Navigatable element = event.getData(CommonDataKeys.NAVIGATABLE);
     if (element instanceof PsiClass) {
       PsiFile file = ((PsiClass) element).getContainingFile();
-      if (file == null) return;
+      if (file == null) {
+        return;
+      }
       final VirtualFile virtualFile = file.getVirtualFile();
-      if (virtualFile == null) return;
+      if (virtualFile == null) {
+        return;
+      }
       final ProjectFileIndex fileIndex = ProjectRootManager.getInstance(project).getFileIndex();
       final Module module = fileIndex.getModuleForFile(virtualFile);
-      if (module == null) return;
+      if (module == null) {
+        return;
+      }
       if (!ModuleRootManager.getInstance(module).getFileIndex().isInContent(virtualFile)) {
         ModuleRootModificationUtil.addModuleLibrary(module, virtualFile.getUrl());
       }
@@ -44,4 +53,5 @@ public class ModificationAction extends AnAction {
     Navigatable element = event.getData(CommonDataKeys.NAVIGATABLE);
     event.getPresentation().setEnabledAndVisible(project != null && element != null);
   }
+
 }

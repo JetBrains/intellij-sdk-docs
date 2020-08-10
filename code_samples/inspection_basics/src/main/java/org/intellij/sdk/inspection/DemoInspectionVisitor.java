@@ -8,6 +8,7 @@ import com.intellij.psi.PsiPlainTextFile;
 import org.jetbrains.annotations.NotNull;
 
 public class DemoInspectionVisitor extends PsiElementVisitor {
+
   @Override
   public void visitElement(@NotNull PsiElement element) {
     super.visitElement(element);
@@ -17,4 +18,5 @@ public class DemoInspectionVisitor extends PsiElementVisitor {
   public void visitPlainTextFile(@NotNull PsiPlainTextFile file) {
     super.visitPlainTextFile(file);
   }
+
 }

@@ -12,13 +12,14 @@ import icons.SdkIcons;
  * Creates an action group to contain menu actions. See plugin.xml declarations.
  */
 public class CustomDefaultActionGroup extends DefaultActionGroup {
-  
+
   /**
    * Given CustomDefaultActionGroup is derived from ActionGroup, in this context
    * update() determines whether the action group itself should be enabled or disabled.
    * Requires an editor to be active in order to enable the group functionality.
+   *
+   * @param event Event received when the associated group-id menu is chosen.
    * @see com.intellij.openapi.actionSystem.AnAction#update(AnActionEvent)
-   * @param event  Event received when the associated group-id menu is chosen.
    */
   @Override
   public void update(AnActionEvent event) {
@@ -28,4 +29,5 @@ public class CustomDefaultActionGroup extends DefaultActionGroup {
     // Take this opportunity to set an icon for the menu entry.
     event.getPresentation().setIcon(SdkIcons.Sdk_default_icon);
   }
+
 }

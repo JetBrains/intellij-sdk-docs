@@ -46,7 +46,7 @@ Intention
 ## L
 
 Local History _(LVCS)_
-: A builtin &rarr; _Version Control System_ tracking all changes in the project locally.
+: A builtin &rarr; _Version Control System_ tracking all changes in the project [locally](https://www.jetbrains.com/help/idea/local-history.html).
 
 ## J
                            

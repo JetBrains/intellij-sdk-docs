@@ -6,6 +6,7 @@ import com.intellij.icons.AllIcons;
 import com.intellij.ide.projectView.PresentationData;
 import com.intellij.ide.projectView.ProjectView;
 import com.intellij.ide.util.treeView.AbstractTreeNode;
+import com.intellij.openapi.application.ReadAction;
 import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectUtil;
@@ -44,14 +45,23 @@ public class ImagesProjectNode extends AbstractTreeNode<VirtualFile> {
     addAllByExt(project, "svg");
   }
 
+  // Creates a collection of image files asynchronously
   private void addAllByExt(Project project, String ext) {
     final Set<VirtualFile> imagesFiles = getImagesFiles(project);
     final VirtualFile projectDir = ProjectUtil.guessProjectDir(project);
-    for (VirtualFile file : FilenameIndex.getAllFilesByExt(project, ext)) {
-      while (file != null && !file.equals(projectDir)) {
-        imagesFiles.add(file);
-        file = file.getParent();
+
+    try {
+      final Collection<VirtualFile> files = ReadAction.compute(() -> FilenameIndex.getAllFilesByExt(project, ext));
+
+      for (VirtualFile file : files) {
+        while (file != null && !file.equals(projectDir)) {
+          imagesFiles.add(file);
+          file = file.getParent();
+        }
       }
+
+    } catch (Throwable throwable) {
+      throwable.printStackTrace();
     }
   }
 

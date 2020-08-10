@@ -40,7 +40,7 @@ Use these constants inside `plugin.xml` as well. Note that the package name `ico
         icon="DemoPluginIcons.DEMO_ACTION"/>
 ```
 
-### Image Formats
+## Image Formats
 
 IntelliJ Platform supports Retina displays and has dark theme called Darcula. Thus, every icon should have a dedicated variant for Retina devices and Darcula theme. In some cases, you can skip dark variants if the original icon looks good under Darcula.
 
@@ -53,7 +53,7 @@ Required icon sizes depend on the usage as listed in the following table:
 | Editor gutter          | 12x12 |
 
 
-#### SVG Format
+### SVG Format
 > **NOTE** SVG icons are supported since 2018.2.
 
 As SVG icons can be scaled arbitrarily, they provide better results on HiDPI environments or when used in combination with bigger screen fonts (e.g., in presentation mode).
@@ -70,7 +70,7 @@ A minimal SVG icon file:
 
 The naming notation used for PNG icons (see below) is still relevant. However, the `@2x` version of an SVG icon should still provide the same base size. The icon graphics of such an icon can be expressed in more details via double precision. If the icon graphics are simple enough so that it renders perfectly in every scale, then the `@2x` version can be omitted. 
 
-#### PNG Format 
+### PNG Format 
 > **NOTE** Please consider using SVG icons if your plugin targets 2018.2+.
 
 All icon files must be placed in the same directory following this naming pattern (replace `.png` with `.svg` for SVG icons):

@@ -51,7 +51,7 @@ for completing keywords in MANIFEST.MF files.
 
 
 
-#### Lookup Items
+### Lookup Items
 Items shown in the completion list are represented by instances of the
 [`LookupElement`](upsource:///platform/analysis-api/src/com/intellij/codeInsight/lookup/LookupElement.java)
 interface.

@@ -48,7 +48,8 @@ to the listener interface class:
 
 ```xml
 <applicationListeners>
-  <listener class="myPlugin.MyVfsListener" topic="com.intellij.openapi.vfs.newvfs.BulkFileListener"/>
+  <listener class="myPlugin.MyVfsListener" 
+            topic="com.intellij.openapi.vfs.newvfs.BulkFileListener"/>
 </applicationListeners>
 ```
 
@@ -70,7 +71,8 @@ Project-level listeners are registered in the same way, except that the top-leve
 
 ```xml
 <projectListeners>
-    <listener class="MyToolwindowListener" topic="com.intellij.openapi.wm.ex.ToolWindowManagerListener" />
+    <listener class="MyToolwindowListener" 
+              topic="com.intellij.openapi.wm.ex.ToolWindowManagerListener" />
 </projectListeners>
 ```
 

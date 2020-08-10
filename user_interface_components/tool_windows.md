@@ -5,7 +5,7 @@ title: Tool Windows
 
 ## Tool Windows
 
-_Tool windows_ are child windows of the IDE used to display information. These windows generally have their own toolbars (referred to as _tool window bars_) along the outer edges of the main window containing one or more _tool window buttons_, which activate panels displayed on the left, bottom and right sides of the main IDE window. For detailed information about tool windows, please see [IntelliJ IDEA Web Help ](https://www.jetbrains.com/idea/help/tool-windows.html).
+_Tool windows_ are child windows of the IDE used to display information. These windows generally have their own toolbars (referred to as _tool window bars_) along the outer edges of the main window containing one or more _tool window buttons_, which activate panels displayed on the left, bottom and right sides of the main IDE window. For detailed information about tool windows, please see [IntelliJ IDEA Web Help ](https://www.jetbrains.com/idea/help/tool-windows.html).
 
 Each side contains two tool window groups, the primary and the secondary one, and only one tool window from each group can be active at a time.
 
@@ -66,43 +66,46 @@ If closing tabs is enabled in general, a plugin can disable closing of specific 
 
 ## How to Create a Tool Window?
 
-The IntelliJ Platform provides the `com.intellij.toolWindow` [extension point](/basics/plugin_structure/plugin_extensions.md) to create and configure custom tool windows. This extension point is declared using the [`ToolWindowEP`](upsource:///platform/platform-api/src/com/intellij/openapi/wm/ToolWindowEP.java) bean class.
+The IntelliJ Platform provides the `com.intellij.toolWindow` [extension point](/basics/plugin_structure/plugin_extensions.md) to create and configure custom tool windows. This extension point is declared using the [`ToolWindowEP`](upsource:///platform/platform-api/src/com/intellij/openapi/wm/ToolWindowEP.java) bean class.
 
 ### Creation of Plugin
 
 To create a plugin that displays a custom tool window, perform the following steps:
 
 1. In a plugin project, create a class implementing [`ToolWindowFactory`](upsource:///platform/platform-api/src/com/intellij/openapi/wm/ToolWindowFactory.java).
-2. In this class, override the `createToolWindowContent` method. This method specifies the content for the tool window.
-3. In the plugin configuration file `plugin.xml`, create the `<extensions defaultExtensionNs="com.intellij">...</extensions>` section.
-4. To this section, add the `<toolWindow>` element, and for this element, set the following attributes declared in the `ToolWindowEP` bean class:
-    - `id` (required): specifies the tool window caption.
-    - `anchor` (required): specifies the tool window bar where the tool window button will be displayed. Possible values: "left", "right", or "bottom."
-    - `secondary` (optional): when `true`, the tool window button will be shown on the lower part of the tool window bar. Default value is `false`.
-    - `factoryClass` (required): specifies the class implementing the `ToolWindowFactory` interface (see Step 1).
-    - `icon` (optional): specifies path to the icon that identifies the tool window, if any.
-    - `conditionClass` (optional): specifies a class that implements [`Condition<Project>`](upsource:///platform/util-rt/src/com/intellij/openapi/util/Condition.java). Using this class, define conditions to be met to display tool window button. When returning `false`, the tool window button is not displayed on tool window bar.
+2. In this class, override the `createToolWindowContent` method. This method specifies the content for the tool window.
+3. In the plugin configuration file `plugin.xml`, create the `<extensions defaultExtensionNs="com.intellij">...</extensions>` section.
+4. To this section, add the `<toolWindow>` element, and for this element, set the following attributes declared in the `ToolWindowEP` bean class:
+    - `id` (required): specifies the tool window caption.
+    - `anchor` (required): specifies the tool window bar where the tool window button will be displayed. Possible values: "left", "right", or "bottom."
+    - `secondary` (optional): when `true`, the tool window button will be shown on the lower part of the tool window bar. Default value is `false`.
+    - `factoryClass` (required): specifies the class implementing the `ToolWindowFactory` interface (see Step 1).
+    - `icon` (optional): specifies path to the icon that identifies the tool window, if any.
+    - `conditionClass` (optional): specifies a class that implements [`Condition<Project>`](upsource:///platform/util-rt/src/com/intellij/openapi/util/Condition.java). Using this class, define conditions to be met to display tool window button. When returning `false`, the tool window button is not displayed on tool window bar.
 
 To clarify the above procedure, consider the following fragment of the `plugin.xml` file:
 
 ```xml
 <extensions defaultExtensionNs="com.intellij">
-    <toolWindow id="My Sample Tool Window" icon="/myPackage/toolWindowIcon.svg" anchor="right" factoryClass="myPackage.MyToolWindowFactory"/>
+    <toolWindow id="My Sample Tool Window" 
+                icon="/myPackage/toolWindowIcon.svg" 
+                anchor="right" 
+                factoryClass="myPackage.MyToolWindowFactory"/>
 </extensions>
 ```
 
 ### Sample Plugin
 
-To clarify how to develop plugins that create tool windows, consider the **toolWindow** sample plugin available in the [code_samples](https://github.com/JetBrains/intellij-sdk-docs/tree/master/code_samples/) directory of the SDK documentation. This plugin creates the **Sample Calendar** tool window that displays the system date, time and time zone.
+To clarify how to develop plugins that create tool windows, consider the **toolWindow** sample plugin available in the [code_samples](https://github.com/JetBrains/intellij-sdk-docs/tree/master/code_samples/) directory of the SDK documentation. This plugin creates the **Sample Calendar** tool window that displays the system date, time and time zone.
 
 **To run the toolWindow plugin**
 
-1. Start **IntelliJ IDEA** and open the **tool_window** project saved into the [code_samples/tool_window](https://github.com/JetBrains/intellij-sdk-docs/tree/master/code_samples/tool_window) directory.
+1. Start **IntelliJ IDEA** and open the **tool_window** project saved into the [code_samples/tool_window](https://github.com/JetBrains/intellij-sdk-docs/tree/master/code_samples/tool_window) directory.
 2. Ensure that the project settings are valid for the environment. If necessary, modify the project settings.
-To view or modify the project settings, open the [Project Structure](https://www.jetbrains.com/help/idea/project-structure-dialog.html) dialog.
-3. Run the plugin by choosing the **Run | Run** on the main menu.
-If necessary, change the [Run/Debug Configurations](https://www.jetbrains.com/help/idea/run-debug-configuration-plugin.html).
+To view or modify the project settings, open the [Project Structure](https://www.jetbrains.com/help/idea/project-structure-dialog.html) dialog.
+3. Run the plugin by choosing the **Run | Run** on the main menu.
+If necessary, change the [Run/Debug Configurations](https://www.jetbrains.com/help/idea/run-debug-configuration-plugin.html).
 
-The plugin creates the **Sample Calendar** tool window. When opened, this tool window is similar to the following screen:
+The plugin creates the **Sample Calendar** tool window. When opened, this tool window is similar to the following screen:
 
 ![Sample Calendar](img/sample_calendar.png)

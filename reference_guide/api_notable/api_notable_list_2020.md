@@ -46,9 +46,6 @@ Delegate Run Anything/Terminal commands to IDE features
 Deprecating JavaFX in favor of JCEF
 : We recommend switching to [JCEF](/reference_guide/jcef.md), please see [blog post](https://blog.jetbrains.com/platform/2020/07/javafx-and-jcef-in-the-intellij-platform/) for details.
 
-Adopting builder-style API of the new `AnnotationHolder.newAnnotation()` API.
-: The previous`AnnotationHolder.createXXXAnnotation()` methods are deprecated. Please use the new [`AnnotationHolder`](upsource:///platform/analysis-api/src/com/intellij/lang/annotation/AnnotationHolder.java) API and [`AnnotationBuilder`](upsource:///platform/analysis-api/src/com/intellij/lang/annotation/AnnotationBuilder.java)
-           
 ASM Library 8.0.1 
 : Updated from 7.0.1.
 

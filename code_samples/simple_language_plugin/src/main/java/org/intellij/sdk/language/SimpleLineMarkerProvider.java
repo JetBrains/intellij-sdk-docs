@@ -28,13 +28,16 @@ public class SimpleLineMarkerProvider extends RelatedItemLineMarkerProvider {
     // The literal expression must start with the Simple language literal expression
     PsiLiteralExpression literalExpression = (PsiLiteralExpression) element.getParent();
     String value = literalExpression.getValue() instanceof String ? (String) literalExpression.getValue() : null;
-    if ((value == null) || !value.startsWith(SimpleAnnotator.SIMPLE_PREFIX_STR + SimpleAnnotator.SIMPLE_SEPARATOR_STR)) {
+    if ((value == null) ||
+            !value.startsWith(SimpleAnnotator.SIMPLE_PREFIX_STR + SimpleAnnotator.SIMPLE_SEPARATOR_STR)) {
       return;
     }
 
     // Get the Simple language property usage
     Project project = element.getProject();
-    String possibleProperties = value.substring(SimpleAnnotator.SIMPLE_PREFIX_STR.length() + SimpleAnnotator.SIMPLE_SEPARATOR_STR.length());
+    String possibleProperties = value.substring(
+            SimpleAnnotator.SIMPLE_PREFIX_STR.length() + SimpleAnnotator.SIMPLE_SEPARATOR_STR.length()
+    );
     final List<SimpleProperty> properties = SimpleUtil.findProperties(project, possibleProperties);
     if (properties.size() > 0) {
       // Add the property to a collection of line marker info

@@ -15,7 +15,8 @@
   <description>
     <![CDATA[
       Tree Structure Provider showing only plain text files.
-      <br>See the <a href="https://www.jetbrains.org/intellij/sdk/docs/tutorials/tree_structure_view.html">Tree Structure View</a> for more information.
+      <br>See the <a href="https://www.jetbrains.org/intellij/sdk/docs/tutorials/tree_structure_view.html">Tree
+      Structure View</a> for more information.
     ]]>
   </description>
   <change-notes>

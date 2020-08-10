@@ -14,8 +14,10 @@
   <!-- Text to display as description on Preferences/Settings | Plugin page  -->
   <description>
     <![CDATA[
-      This sample plugin illustrates how to create your custom tool window.
-      <br>See the <a href="https://www.jetbrains.org/intellij/sdk/docs/user_interface_components/tool_windows.html">Tool Windows</a> for more information.
+      This sample plugin illustrates how to create your custom tool window.<br>
+      See the
+      <a href="https://www.jetbrains.org/intellij/sdk/docs/user_interface_components/tool_windows.html">Tool Windows</a>
+      for more information.
     ]]>
   </description>
   <change-notes>

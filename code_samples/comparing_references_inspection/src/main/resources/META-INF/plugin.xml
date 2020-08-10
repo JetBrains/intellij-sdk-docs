@@ -14,7 +14,8 @@
   <!-- Text to display as description on Preferences/Settings | Plugin page  -->
   <description>
     <![CDATA[
-      Demonstrates implementing a Local Inspection Tool.<br> Adds entries to <b>Preferences | Editor | Inspections | Java | Probable Bugs</b>.
+      Demonstrates implementing a Local Inspection Tool.<br> Adds entries to
+      <b>Preferences | Editor | Inspections | Java | Probable Bugs</b>.
     ]]>
   </description>
   <change-notes>
@@ -56,13 +57,13 @@
             implementationClass= FQN of inspection implementation
            -->
     <localInspection language="JAVA"
-            displayName="SDK: '==' or '!=' used instead of 'equals()'"
-            groupPath="Java"
-            groupBundle="messages.InspectionsBundle"
-            groupKey="group.names.probable.bugs"
-            enabledByDefault="true"
-            level="WARNING"
-            implementationClass="org.intellij.sdk.codeInspection.ComparingReferencesInspection"/>
+                     displayName="SDK: '==' or '!=' used instead of 'equals()'"
+                     groupPath="Java"
+                     groupBundle="messages.InspectionsBundle"
+                     groupKey="group.names.probable.bugs"
+                     enabledByDefault="true"
+                     level="WARNING"
+                     implementationClass="org.intellij.sdk.codeInspection.ComparingReferencesInspection"/>
 
   </extensions>
 

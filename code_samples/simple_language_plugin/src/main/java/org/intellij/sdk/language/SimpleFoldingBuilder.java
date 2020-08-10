@@ -38,7 +38,9 @@ public class SimpleFoldingBuilder extends FoldingBuilderEx implements DumbAware 
       String value = literalExpression.getValue() instanceof String ? (String) literalExpression.getValue() : null;
       if (value != null && value.startsWith(SimpleAnnotator.SIMPLE_PREFIX_STR + SimpleAnnotator.SIMPLE_SEPARATOR_STR)) {
         Project project = literalExpression.getProject();
-        String key = value.substring(SimpleAnnotator.SIMPLE_PREFIX_STR.length() + SimpleAnnotator.SIMPLE_SEPARATOR_STR.length());
+        String key = value.substring(
+                SimpleAnnotator.SIMPLE_PREFIX_STR.length() + SimpleAnnotator.SIMPLE_SEPARATOR_STR.length()
+        );
         // Get a list of all properties for a given key in the project
         final List<SimpleProperty> properties = SimpleUtil.findProperties(project, key);
         if (properties.size() == 1) {
@@ -66,7 +68,9 @@ public class SimpleFoldingBuilder extends FoldingBuilderEx implements DumbAware 
     String retTxt = "...";
     if (node.getPsi() instanceof PsiLiteralExpression) {
       PsiLiteralExpression nodeElement = (PsiLiteralExpression) node.getPsi();
-      String key = ((String) nodeElement.getValue()).substring(SimpleAnnotator.SIMPLE_PREFIX_STR.length() + SimpleAnnotator.SIMPLE_SEPARATOR_STR.length());
+      String key = ((String) nodeElement.getValue()).substring(
+              SimpleAnnotator.SIMPLE_PREFIX_STR.length() + SimpleAnnotator.SIMPLE_SEPARATOR_STR.length()
+      );
       final List<SimpleProperty> properties = SimpleUtil.findProperties(nodeElement.getProject(), key);
       String place = properties.get(0).getValue();
       // IMPORTANT: keys can come with no values, so a test for null is needed

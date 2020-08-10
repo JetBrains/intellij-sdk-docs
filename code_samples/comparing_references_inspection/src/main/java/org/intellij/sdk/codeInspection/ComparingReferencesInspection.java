@@ -26,7 +26,8 @@ import static com.siyeh.ig.psiutils.ExpressionUtils.isNullLiteral;
 public class ComparingReferencesInspection extends AbstractBaseJavaLocalInspectionTool {
 
   // Defines the text of the quick fix intention
-  public static final String QUICK_FIX_NAME = "SDK: " + InspectionsBundle.message("inspection.comparing.references.use.quickfix");
+  public static final String QUICK_FIX_NAME = "SDK: " +
+          InspectionsBundle.message("inspection.comparing.references.use.quickfix");
   private static final Logger LOG = Logger.getInstance("#com.intellij.codeInspection.ComparingReferencesInspection");
   private final CriQuickFix myQuickFix = new CriQuickFix();
   // This string holds a list of classes relevant to this inspection.
@@ -75,7 +76,8 @@ public class ComparingReferencesInspection extends AbstractBaseJavaLocalInspecti
        *  found a problem. It reuses a string from the inspections bundle.
        */
       @NonNls
-      private final String DESCRIPTION_TEMPLATE = "SDK " + InspectionsBundle.message("inspection.comparing.references.problem.descriptor");
+      private final String DESCRIPTION_TEMPLATE = "SDK " +
+              InspectionsBundle.message("inspection.comparing.references.problem.descriptor");
 
       /**
        * Avoid defining visitors for both Reference and Binary expressions.

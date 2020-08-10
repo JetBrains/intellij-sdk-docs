@@ -14,13 +14,17 @@
   <!-- Text to display as description on Preferences/Settings | Plugin page  -->
   <description>
     <![CDATA[
-      Demonstrates adding application services and listeners. Shows warning dialog when more than 3 open projects is exceeded.
+      Demonstrates adding application services and listeners. Shows warning dialog when more than 3 open projects
+      is exceeded.
     ]]>
   </description>
   <change-notes>
     <![CDATA[
       <ul>
-        <li><b>2.1.0</b> Remove project component and use listener instead. No longer denies opening additional projects. Just notifies the user.</li>
+        <li>
+          <b>2.1.0</b> Remove project component and use listener instead. No longer denies opening additional
+          projects. Just notifies the user.
+        </li>
         <li><b>2.0.0</b> Convert to Gradle-based plugin.</li>
         <li><b>1.0.0</b> Release 2018.3 and earlier.</li>
       </ul>
@@ -31,7 +35,8 @@
   <vendor url="https://plugins.jetbrains.com">IntelliJ Platform SDK</vendor>
 
   <applicationListeners>
-    <listener class="org.intellij.sdk.maxOpenProjects.ProjectOpenCloseListener" topic="com.intellij.openapi.project.ProjectManagerListener"/>
+    <listener class="org.intellij.sdk.maxOpenProjects.ProjectOpenCloseListener"
+              topic="com.intellij.openapi.project.ProjectManagerListener"/>
   </applicationListeners>
 
   <extensions defaultExtensionNs="com.intellij">

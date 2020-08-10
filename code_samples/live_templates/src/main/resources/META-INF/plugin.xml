@@ -14,7 +14,8 @@
   <!-- Text to display as description on Preferences/Settings | Plugin page  -->
   <description>
     <![CDATA[
-      Demonstrates implementing live templates for Markdown language.<br> Adds an entry to the <b>Preferences | Editor | Live Templates</b> dialog.
+      Demonstrates implementing live templates for Markdown language.<br> Adds an entry to the
+      <b>Preferences | Editor | Live Templates</b> dialog.
     ]]>
   </description>
   <change-notes>

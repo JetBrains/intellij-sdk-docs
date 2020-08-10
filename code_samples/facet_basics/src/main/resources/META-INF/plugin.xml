@@ -14,7 +14,8 @@
   <!-- Text to display as description on Preferences/Settings | Plugin page  -->
   <description>
     <![CDATA[
-    Demonstrates implementing the custom Facet pattern.<br>Adds <em>SDK Facet</em> to the Project Structure | Project Settings | Facets menu.
+    Demonstrates implementing the custom Facet pattern.<br>Adds <em>SDK Facet</em>
+    to the Project Structure | Project Settings | Facets menu.
     ]]>
   </description>
   <change-notes>

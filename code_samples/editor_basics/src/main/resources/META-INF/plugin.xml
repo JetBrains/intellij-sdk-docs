@@ -14,8 +14,10 @@
   <!-- Text to display as description on Preferences/Settings | Plugin page  -->
   <description>
     <![CDATA[
-        Illustrates various basic Editor APIs. Requires at least project to be open, and a file open in the editor to see the menu items this plugin adds to the editor popup menu.<br>Mouse over each of this plugin's menu items to see hints in the lower left corner of the IDE.
-      ]]>
+        Illustrates various basic Editor APIs. Requires at least project to be open, and a file open in the editor
+        to see the menu items this plugin adds to the editor popup menu.<br>Mouse over each of this plugin's menu items
+        to see hints in the lower left corner of the IDE.
+    ]]>
   </description>
   <change-notes>
     <![CDATA[

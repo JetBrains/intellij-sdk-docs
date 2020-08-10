@@ -18,7 +18,6 @@ import java.awt.*;
  * Manages validation and modification of the {@link DemoFacet} state.
  */
 public class DemoFacetEditorTab extends FacetEditorTab {
-
   private static final String FACET_PANEL_PROMPT = "Path To SDK: ";
 
   private final DemoFacetState mySettings;
@@ -33,7 +32,8 @@ public class DemoFacetEditorTab extends FacetEditorTab {
    * @param validator Facet validator manager, can be used to get and apply a custom validator for
    *                  this facet.
    */
-  public DemoFacetEditorTab(@NotNull DemoFacetState state, @NotNull FacetEditorContext context, @NotNull FacetValidatorsManager validator) {
+  public DemoFacetEditorTab(@NotNull DemoFacetState state, @NotNull FacetEditorContext context,
+                            @NotNull FacetValidatorsManager validator) {
     mySettings = state;
     myPath = new JTextField(state.getDemoFacetState());
   }
@@ -80,7 +80,6 @@ public class DemoFacetEditorTab extends FacetEditorTab {
   /**
    * Stores new facet state (text) entered by the user.
    * Called when {@link #isModified()} returns true.
-   *
    * @throws ConfigurationException if anything generates an exception.
    */
   @Override
@@ -89,7 +88,7 @@ public class DemoFacetEditorTab extends FacetEditorTab {
     try {
       String newTextContent = myPath.getText();
       mySettings.setDemoFacetState(newTextContent);
-    } catch (Exception e) {
+    } catch(Exception e) {
       throw new ConfigurationException(e.toString());
     }
   }

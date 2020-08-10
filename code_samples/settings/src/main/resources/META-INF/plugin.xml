@@ -15,7 +15,8 @@
   <!-- Text to display as description on Preferences/Settings | Plugin page  -->
   <description>
     <![CDATA[
-      Demonstrates implementing a custom settings panel.<br>Adds a settings panel to the <b>Settings/Preferences</b> panel under <b>Tools</b>.
+      Demonstrates implementing a custom settings panel.<br>Adds a settings panel to the <b>Settings/Preferences</b>
+      panel under <b>Tools</b>.
     ]]>
   </description>
   <change-notes>

@@ -14,7 +14,8 @@
   <!-- Text to display as description on Preferences/Settings | Plugin page  -->
   <description>
     <![CDATA[
-        Basic example of working with code inspections. Adds entry to <b>Preferences | Editor | Inspections | SDK | Example Tools</b>.
+        Basic example of working with code inspections. Adds entry to
+        <b>Preferences | Editor | Inspections | SDK | Example Tools</b>.
     ]]>
   </description>
   <change-notes>

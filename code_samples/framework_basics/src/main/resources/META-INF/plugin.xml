@@ -14,7 +14,8 @@
   <!-- Text to display as description on Preferences/Settings | Plugin page  -->
   <description>
     <![CDATA[
-      Demonstrates basic Framework support. <br>Adds <i>SDK Demo Framework</i> to <b>File | New | Project | IntelliJ Platform Plugin</b>
+      Demonstrates basic Framework support. <br>Adds <i>SDK Demo Framework</i> to
+      <b>File | New | Project | IntelliJ Platform Plugin</b>
     ]]>
   </description>
   <change-notes>

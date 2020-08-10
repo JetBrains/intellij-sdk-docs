@@ -16,7 +16,9 @@
     <![CDATA[
       Illustration of working with run configurations
       <br>
-      See the <a href="https://www.jetbrains.org/intellij/sdk/docs/basics/run_configurations.html">Run Configurations</a> for more information.
+      See the
+      <a href="https://www.jetbrains.org/intellij/sdk/docs/basics/run_configurations.html">Run Configurations</a>
+      for more information.
     ]]>
   </description>
   <change-notes>

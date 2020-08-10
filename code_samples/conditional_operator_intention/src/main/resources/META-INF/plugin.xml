@@ -15,7 +15,8 @@
   <!-- Text to display as description on Preferences/Settings | Plugin page  -->
   <description>
     <![CDATA[
-      Intention action that suggests converting a ternary operator into an 'if' block.<br>Adds entry to <b>Preferences | Editor | Intentions | SDK Intentions<b>.
+      Intention action that suggests converting a ternary operator into an 'if' block.<br>
+      Adds entry to <b>Preferences | Editor | Intentions | SDK Intentions<b>.
     ]]>
   </description>
   <change-notes>

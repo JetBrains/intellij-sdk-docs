@@ -26,7 +26,7 @@ or listeners provided by the plugin.
 *Reference: [Action System in IntelliJ SDK Docs][docs:actions]*
 
 
-[docs]: http://www.jetbrains.org/intellij/sdk/docs
+[docs]: https://www.jetbrains.org/intellij/sdk/docs
 [docs:actions]: https://www.jetbrains.org/intellij/sdk/docs/basics/action_system.html
 [docs:kotlin]: https://jetbrains.org/intellij/sdk/docs/tutorials/kotlin.html
 [docs:ep]: https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_extension_points.html

@@ -28,7 +28,7 @@ or listeners provided by the plugin.
 *Reference: [Plugin Extension Points in IntelliJ SDK Docs][docs:ep]*
 
 
-[docs]: http://www.jetbrains.org/intellij/sdk/docs
+[docs]: https://www.jetbrains.org/intellij/sdk/docs
 [docs:actions]: https://www.jetbrains.org/intellij/sdk/docs/basics/action_system.html
 [docs:facet_basics]: https://www.jetbrains.org/intellij/sdk/docs/reference_guide/project_model/facet.html
 [docs:ep]: https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_extension_points.html

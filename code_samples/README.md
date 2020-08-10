@@ -43,7 +43,7 @@ organized.
 [gh:template]: https://github.com/JetBrains/intellij-platform-plugin-template
 
 [jb:confluence-on-gh]: https://confluence.jetbrains.com/display/ALL/JetBrains+on+GitHub
-[jb:docs]: http://www.jetbrains.org/intellij/sdk/docs
+[jb:docs]: https://www.jetbrains.org/intellij/sdk/docs
 [jb:products]: https://www.jetbrains.com/products.html
 [jb:slack]: https://plugins.jetbrains.com/slack
 [jb:twitter]: https://twitter.com/JBPlatform

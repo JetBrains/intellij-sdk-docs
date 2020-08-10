@@ -38,7 +38,7 @@ or listeners provided by the plugin.
 *Reference: [Action System in IntelliJ SDK Docs][docs:actions]*
 
 
-[docs]: http://www.jetbrains.org/intellij/sdk/docs
+[docs]: https://www.jetbrains.org/intellij/sdk/docs
 [docs:actions]: https://www.jetbrains.org/intellij/sdk/docs/basics/action_system.html
 [docs:gradle]: https://www.jetbrains.org/intellij/sdk/docs/tutorials/build_system.html
 [docs:plugin.xml]: https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_configuration_file.html

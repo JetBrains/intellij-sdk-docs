@@ -29,7 +29,7 @@ or listeners provided by the plugin.
 *Reference: [Plugin Extension Points in IntelliJ SDK Docs][docs:ep]*
 
 
-[docs]: http://www.jetbrains.org/intellij/sdk/docs
+[docs]: https://www.jetbrains.org/intellij/sdk/docs
 [docs:code_inspections]: https://www.jetbrains.org/intellij/sdk/docs/tutorials/code_inspections.html
 [docs:ep]: https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_extension_points.html
 [docs:gradle]: https://www.jetbrains.org/intellij/sdk/docs/tutorials/build_system.html

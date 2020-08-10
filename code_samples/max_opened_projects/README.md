@@ -33,7 +33,7 @@ or listeners provided by the plugin.
 
 *Reference: [Plugin Listeners in IntelliJ SDK Docs][docs:listeners]*
 
-[docs]: http://www.jetbrains.org/intellij/sdk/docs
+[docs]: https://www.jetbrains.org/intellij/sdk/docs
 [docs:actions]: https://www.jetbrains.org/intellij/sdk/docs/basics/action_system.html
 [docs:plugin_services]: https://jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_services.html
 [docs:ep]: https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_extension_points.html

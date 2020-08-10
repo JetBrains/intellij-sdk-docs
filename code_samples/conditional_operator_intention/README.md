@@ -62,4 +62,4 @@ or listeners provided by the plugin.
 [file:ConditionalOperatorConverter]: ./src/main/java/org/intellij/sdk/intention/ConditionalOperatorConverter.java
 [file:plugin.xml]: ./src/main/resources/META-INF/plugin.xml
 
-[sdk:PsiElementBaseIntentionAction]: https://github.com/JetBrains/intellij-community/blob/master/platform/lang-api/src/com/intellij/codeInsight/intention/PsiElementBaseIntentionAction.java
+[sdk:PsiElementBaseIntentionAction]: upsource:///platform/lang-api/src/com/intellij/codeInsight/intention/PsiElementBaseIntentionAction.java

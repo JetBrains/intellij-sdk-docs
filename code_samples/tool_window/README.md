@@ -59,4 +59,4 @@ or listeners provided by the plugin.
 [file:plugin.xml]: ./src/main/resources/META-INF/plugin.xml
 [file:MyToolWindowFactory]: ./src/main/java/org/intellij/sdk/toolWindow/MyToolWindowFactory.java
 
-[sdk:ToolWindowFactory]: https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/wm/ToolWindowFactory.java
+[sdk:ToolWindowFactory]: upsource:///platform/platform-api/src/com/intellij/openapi/wm/ToolWindowFactory.java

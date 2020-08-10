@@ -35,4 +35,4 @@ or listeners provided by the plugin.
 [file:plugin.xml]: ./src/main/resources/META-INF/plugin.xml
 [file:ImagesProjectViewPane]: ./src/main/java/org/intellij/sdk/view/pane/ImagesProjectViewPane.java
 
-[sdk:AbstractProjectViewPSIPane]: https://github.com/JetBrains/intellij-community/blob/master/platform/lang-impl/src/com/intellij/ide/projectView/impl/AbstractProjectViewPSIPane.java
+[sdk:AbstractProjectViewPSIPane]: upsource:///platform/lang-impl/src/com/intellij/ide/projectView/impl/AbstractProjectViewPSIPane.java

@@ -36,4 +36,4 @@ or listeners provided by the plugin.
 [file:plugin.xml]: ./src/main/resources/META-INF/plugin.xml
 [file:DemoRunConfigurationType]: ./src/main/java/org/jetbrains/sdk/runConfiguration/DemoRunConfigurationType.java
 
-[sdk:ConfigurationType]: https://github.com/JetBrains/intellij-community/blob/master/platform/lang-api/src/com/intellij/execution/configurations/ConfigurationType.java
+[sdk:ConfigurationType]: upsource:///platform/lang-api/src/com/intellij/execution/configurations/ConfigurationType.java

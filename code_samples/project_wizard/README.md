@@ -35,4 +35,4 @@ or listeners provided by the plugin.
 [file:plugin.xml]: ./src/main/resources/META-INF/plugin.xml
 [file:DemoModuleWizardStep]: ./src/main/java/org/intellij/sdk/project/wizard/DemoModuleWizardStep.java
 
-[sdk:ModuleBuilder]: https://github.com/JetBrains/intellij-community/blob/master/platform/lang-api/src/com/intellij/ide/util/projectWizard/ModuleBuilder.java
+[sdk:ModuleBuilder]: upsource:///platform/lang-api/src/com/intellij/ide/util/projectWizard/ModuleBuilder.java

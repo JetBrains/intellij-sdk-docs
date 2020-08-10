@@ -40,5 +40,5 @@ or listeners provided by the plugin.
 [file:MarkdownContext]: ./src/main/java/org/intellij/sdk/liveTemplates/MarkdownContext.java
 [file:TitleCaseMacro]: ./src/main/java/org/intellij/sdk/liveTemplates/TitleCaseMacro.java
 
-[sdk:TemplateContextType]: https://github.com/JetBrains/intellij-community/blob/master/platform/lang-api/src/com/intellij/codeInsight/template/TemplateContextType.java
-[sdk:MacroBase]: https://github.com/JetBrains/intellij-community/blob/master/platform/lang-impl/src/com/intellij/codeInsight/template/macro/MacroBase.java
+[sdk:TemplateContextType]: upsource:///platform/analysis-api/src/com/intellij/codeInsight/template/TemplateContextType.java
+[sdk:MacroBase]: upsource:///platform/lang-impl/src/com/intellij/codeInsight/template/macro/MacroBase.java

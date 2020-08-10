@@ -38,4 +38,4 @@ or listeners provided by the plugin.
 [file:plugin.xml]: ./src/main/resources/META-INF/plugin.xml
 [file:DemoFacetType]: ./src/main/java/org/intellij/sdk/facet/DemoFacetType.java
 
-[sdk:FacetType]: https://github.com/JetBrains/intellij-community/blob/master/platform/lang-api/src/com/intellij/facet/FacetType.java
+[sdk:FacetType]: upsource:///platform/lang-api/src/com/intellij/facet/FacetType.java

@@ -35,4 +35,4 @@ or listeners provided by the plugin.
 [file:plugin.xml]: ./src/main/resources/META-INF/plugin.xml
 [file:DemoModuleType]: ./src/main/java/org/intellij/sdk/module/DemoModuleType.java
 
-[sdk:ModuleType]: https://github.com/JetBrains/intellij-community/blob/master/platform/lang-api/src/com/intellij/openapi/module/ModuleType.java
+[sdk:ModuleType]: upsource:///platform/lang-api/src/com/intellij/openapi/module/ModuleType.java

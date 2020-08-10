@@ -55,4 +55,4 @@ or listeners provided by the plugin.
 [file:plugin.xml]: ./src/main/resources/META-INF/plugin.xml
 [file:TextOnlyTreeStructureProvider]: ./src/main/java/org/intellij/sdk/treeStructureProvider/TextOnlyTreeStructureProvider.java
 
-[sdk:TreeStructureProvider]: https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/ide/projectView/TreeStructureProvider.java
+[sdk:TreeStructureProvider]: upsource:///platform/editor-ui-api/src/com/intellij/ide/projectView/TreeStructureProvider.java

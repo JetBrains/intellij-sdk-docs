@@ -35,4 +35,4 @@ or listeners provided by the plugin.
 [file:plugin.xml]: ./src/main/resources/META-INF/plugin.xml
 [file:DemoCodeInspection]: ./src/main/java/org/intellij/sdk/inspection/DemoCodeInspection.java
 
-[sdk:LocalInspectionTool]: https://github.com/JetBrains/intellij-community/blob/master/platform/analysis-api/src/com/intellij/codeInspection/LocalInspectionTool.java
+[sdk:LocalInspectionTool]: upsource:///platform/analysis-api/src/com/intellij/codeInspection/LocalInspectionTool.java

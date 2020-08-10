@@ -45,4 +45,4 @@ or listeners provided by the plugin.
 [file:ProjectCountingService]: ./src/main/java/org/intellij/sdk/maxOpenProjects/ProjectCountingService.java
 [file:ProjectOpenCloseListener]: ./src/main/java/org/intellij/sdk/maxOpenProjects/ProjectOpenCloseListener.java
 
-[sdk:ProjectManagerListener]: https://github.com/JetBrains/intellij-community/blob/master/platform/projectModel-api/src/com/intellij/openapi/project/ProjectManagerListener.java
+[sdk:ProjectManagerListener]: upsource:///platform/projectModel-api/src/com/intellij/openapi/project/ProjectManagerListener.java

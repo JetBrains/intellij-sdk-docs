@@ -34,4 +34,4 @@ or listeners provided by the plugin.
 [file:plugin.xml]: ./src/main/resources/META-INF/plugin.xml
 [file:DemoFramework]: ./src/main/java/org/intellij/sdk/framework/DemoFramework.java
 
-[sdk:FrameworkTypeEx]: https://github.com/JetBrains/intellij-community/blob/master/java/idea-ui/src/com/intellij/framework/FrameworkTypeEx.java
+[sdk:FrameworkTypeEx]: upsource:///java/idea-ui/src/com/intellij/framework/FrameworkTypeEx.java

@@ -39,5 +39,5 @@ or listeners provided by the plugin.
 [file:AppSettingsConfigurable]: ./src/main/java/org/intellij/sdk/settings/AppSettingsConfigurable.java
 [file:AppSettingsState]: ./src/main/java/org/intellij/sdk/settings/AppSettingsState.java
 
-[sdk:Configurable]: https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/openapi/options/Configurable.java
-[sdk:PersistentStateComponent]: https://github.com/JetBrains/intellij-community/blob/master/platform/projectModel-api/src/com/intellij/openapi/components/PersistentStateComponent.java
+[sdk:Configurable]: upsource:///platform/platform-api/src/com/intellij/openapi/options/Configurable.java
+[sdk:PersistentStateComponent]: upsource:///platform/projectModel-api/src/com/intellij/openapi/components/PersistentStateComponent.java

@@ -47,4 +47,4 @@ or listeners provided by the plugin.
 [file:ModificationAction]: ./src/main/java/org/intellij/sdk/project/model/ModificationAction.java
 [file:LibrariesAction]: ./src/main/java/org/intellij/sdk/project/model/LibrariesAction.java
 
-[sdk:AnAction]: https://github.com/JetBrains/intellij-community/blob/master/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java
+[sdk:AnAction]: upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java

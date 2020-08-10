@@ -38,4 +38,4 @@ or listeners provided by the plugin.
 [file:ComparingReferencesInspection]: ./src/main/java/org/intellij/sdk/codeInspection/ComparingReferencesInspection.java
 [file:plugin.xml]: ./src/main/resources/META-INF/plugin.xml
 
-[sdk:AbstractBJLIT]: https://github.com/JetBrains/intellij-community/blob/master/java/java-analysis-api/src/com/intellij/codeInspection/AbstractBaseJavaLocalInspectionTool.java
+[sdk:AbstractBJLIT]: upsource:///java/java-analysis-api/src/com/intellij/codeInspection/AbstractBaseJavaLocalInspectionTool.java

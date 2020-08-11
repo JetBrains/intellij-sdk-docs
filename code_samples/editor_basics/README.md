@@ -21,11 +21,11 @@ are available in the Editor context menu:
 
 ### Actions
 
-| Name                        | Implementation Class                                        | Interface                |
-| --------------------------- | ----------------------------------------------------------- | ------------------------ |
-| EditorIllustrationAction    | [EditorIllustrationAction][file:EditorIllustrationAction]   | [AnAction][sdk:AnAction] |
-| EditorHandlerIllustration   | [EditorHandlerIllustration][file:EditorHandlerIllustration] | [AnAction][sdk:AnAction] |
-| LogicalPositionIllustration | [EditorAreaIllustration][file:EditorAreaIllustration]       | [AnAction][sdk:AnAction] |
+| Name                                       | Implementation Class                                        | Interface                |
+| ------------------------------------------ | ----------------------------------------------------------- | ------------------------ |
+| `EditorBasics.EditorIllustrationAction`    | [EditorIllustrationAction][file:EditorIllustrationAction]   | [AnAction][sdk:AnAction] |
+| `EditorBasics.EditorHandlerIllustration`   | [EditorHandlerIllustration][file:EditorHandlerIllustration] | [AnAction][sdk:AnAction] |
+| `EditorBasics.LogicalPositionIllustration` | [EditorAreaIllustration][file:EditorAreaIllustration]       | [AnAction][sdk:AnAction] |
 
 *Reference: [Action System in IntelliJ SDK Docs][docs:actions]*
 

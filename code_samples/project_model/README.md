@@ -13,13 +13,13 @@ in the message dialogs. Within the implemented actions, you will be able to:
 
 ### Actions
 
-| Name               | Implementation Class                                              | Interface                |
-| ------------------ | ----------------------------------------------------------------- | ------------------------ |
-| SourceRoots        | [ShowSourceRootsActions][file:ShowSourceRootsActions]             | [AnAction][sdk:AnAction] |
-| ProjectSdk         | [ProjectSdkAction][file:ProjectSdkAction]                         | [AnAction][sdk:AnAction] |
-| ProjectFileIndex   | [ProjectFileIndexSampleAction][file:ProjectFileIndexSampleAction] | [AnAction][sdk:AnAction] |
-| ModificationAction | [ModificationAction][file:ModificationAction]                     | [AnAction][sdk:AnAction] |
-| LibrariesAction    | [LibrariesAction][file:LibrariesAction]                           | [AnAction][sdk:AnAction] |
+| Name                              | Implementation Class                                              | Interface                |
+| --------------------------------- | ----------------------------------------------------------------- | ------------------------ |
+| `ProjectModel.SourceRoots`        | [ShowSourceRootsActions][file:ShowSourceRootsActions]             | [AnAction][sdk:AnAction] |
+| `ProjectModel.ProjectSdk`         | [ProjectSdkAction][file:ProjectSdkAction]                         | [AnAction][sdk:AnAction] |
+| `ProjectModel.ProjectFileIndex`   | [ProjectFileIndexSampleAction][file:ProjectFileIndexSampleAction] | [AnAction][sdk:AnAction] |
+| `ProjectModel.ModificationAction` | [ModificationAction][file:ModificationAction]                     | [AnAction][sdk:AnAction] |
+| `ProjectModel.LibrariesAction`    | [LibrariesAction][file:LibrariesAction]                           | [AnAction][sdk:AnAction] |
 
 *Reference: [Action System in IntelliJ SDK Docs][docs:actions]*
 

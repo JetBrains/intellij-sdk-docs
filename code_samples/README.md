@@ -16,8 +16,7 @@ organized.
 
 ## Structure
 
-Comparing References Inspection Sample
-plugin depends on the [IntelliJ Platform SDK][docs] and [Gradle][docs:gradle] as a build system.
+Code Samples depend on the [IntelliJ Platform SDK][docs] and [Gradle][docs:gradle] as a build system.
 
 The main plugin definition file is stored in the `plugin.xml` file, which is created accordingly
 to the [Plugin Configuration File documentation][docs:plugin.xml]. It describes definitions of the actions, extensions,

@@ -37,7 +37,7 @@ character.
 
 ### Extension Points
 
-| Name                           | Implementation Class                                              | Interface                                                          |
+| Name                           | Implementation                                                    | Extension Point Class                                              |
 | ------------------------------ | ----------------------------------------------------------------- | ------------------------------------------------------------------ |
 | `com.intellij.intentionAction` | [ConditionalOperatorConverter][file:ConditionalOperatorConverter] | [PsiElementBaseIntentionAction][sdk:PsiElementBaseIntentionAction] |
 

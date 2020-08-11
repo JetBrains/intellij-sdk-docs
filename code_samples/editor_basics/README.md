@@ -13,7 +13,7 @@ are available in the Editor context menu:
 
 ### Extension Points
 
-| Name                        | Implementation Class                  | Interface                                        |
+| Name                        | Implementation                        | Extension Point Class                            |
 | --------------------------- | ------------------------------------- | ------------------------------------------------ |
 | `com.intellij.typedHandler` | [MyTypedHandler][file:MyTypedHandler] | [TypedHandlerDelegate][sdk:TypedHandlerDelegate] |
 
@@ -21,7 +21,7 @@ are available in the Editor context menu:
 
 ### Actions
 
-| ID                                         | Implementation Class                                        | Interface                |
+| ID                                         | Implementation                                              | Extension Point Class    |
 | ------------------------------------------ | ----------------------------------------------------------- | ------------------------ |
 | `EditorBasics.EditorIllustrationAction`    | [EditorIllustrationAction][file:EditorIllustrationAction]   | [AnAction][sdk:AnAction] |
 | `EditorBasics.EditorHandlerIllustration`   | [EditorHandlerIllustration][file:EditorHandlerIllustration] | [AnAction][sdk:AnAction] |

@@ -13,7 +13,7 @@ invoked inside the `MyToolWindowFactory` implementation.
 
 ### Extension Points
 
-| Name                      | Implementation Class                            | Interface                                  |
+| Name                      | Implementation                                  | Extension Point Class                      |
 | ------------------------- | ----------------------------------------------- | ------------------------------------------ |
 | `com.intellij.toolWindow` | [MyToolWindowFactory][file:MyToolWindowFactory] | [ToolWindowFactory][sdk:ToolWindowFactory] |
 

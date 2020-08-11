@@ -8,7 +8,7 @@ within the Project Wizard. This sample implementation adds a new *SDK Demo Frame
 
 ### Extension Points
 
-| Name                          | Implementation Class                | Interface                              |
+| Name                          | Implementation                      | Extension Point Class                  |
 | ----------------------------- | ----------------------------------- | -------------------------------------- |
 | `com.intellij.framework.type` | [DemoFramework][file:DemoFramework] | [FrameworkTypeEx][sdk:FrameworkTypeEx] |
 

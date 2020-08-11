@@ -9,7 +9,7 @@ Inspection, enabled by default, uses a visitor passing all PSI elements with no 
 
 ### Extension Points
 
-| Name                           | Implementation Class                          | Interface                                      |
+| Name                           | Implementation                                | Extension Point Class                          |
 | ------------------------------ | --------------------------------------------- | ---------------------------------------------- |
 | `com.intellij.localInspection` | [DemoCodeInspection][file:DemoCodeInspection] | [LocalInspectionTool][sdk:LocalInspectionTool] |
 

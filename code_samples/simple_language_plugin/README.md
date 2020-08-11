@@ -8,7 +8,7 @@ features.
 
 ### Extension Points
 
-| Name                                          | Implementation Class                                                                    | Interface                                                                  |
+| Name                                          | Implementation                                                                          | Extension Point Class                                                      |
 | --------------------------------------------- | --------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
 | `com.intellij.fileType`                       | [SimpleFileType][file:SimpleFileType]                                                   | [LanguageFileType][sdk:LanguageFileType]                                   |
 | `com.intellij.lang.parserDefinition`          | [SimpleParserDefinition][file:SimpleParserDefinition]                                   | [ParserDefinition][sdk:ParserDefinition]                                   |

@@ -10,7 +10,7 @@ This project illustrates a custom Application-level Settings through the impleme
 
 ### Extension Points
 
-| Name                                   | Implementation Class                                    | Interface                                                |
+| Name                                   | Implementation                                          | Extension Point Class                                    |
 | -------------------------------------- | ------------------------------------------------------- | -------------------------------------------------------- |
 | `com.intellij.applicationConfigurable` | [AppSettingsConfigurable][file:AppSettingsConfigurable] | [Configurable][sdk:Configurable]                         |
 | `com.intellij.applicationService`      | [AppSettingsState][file:AppSettingsState]               | [PersistentStateComponent][sdk:PersistentStateComponent] |

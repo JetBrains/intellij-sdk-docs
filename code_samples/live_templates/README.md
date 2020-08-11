@@ -10,7 +10,7 @@ Live Templates Sample Project implements two example live templates for the Mark
 
 ### Extension Points
 
-| Name                                | Implementation Class                    | Interface                                      |
+| Name                                | Implementation                          | Extension Point Class                          |
 | ----------------------------------- | --------------------------------------- | ---------------------------------------------- |
 | `com.intellij.defaultLiveTemplates` | [Markdown][file:Markdown]               |                                                |
 | `com.intellij.liveTemplateContext`  | [MarkdownContext][file:MarkdownContext] | [TemplateContextType][sdk:TemplateContextType] |

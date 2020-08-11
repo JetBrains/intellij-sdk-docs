@@ -12,7 +12,7 @@ dialog, informs about:
 
 ### Actions
 
-| ID                  | Implementation Class                                    | Interface                |
+| ID                  | Implementation                                          | Extension Point Class    |
 | ------------------- | ------------------------------------------------------- | ------------------------ |
 | `PsiNavigationDemo` | [PsiNavigationDemoAction][file:PsiNavigationDemoAction] | [AnAction][sdk:AnAction] |
 

@@ -12,7 +12,7 @@ specified by the `FacetConfiguration` implementation - path to the SDK in this c
 
 ### Extension Points
 
-| Name                     | Implementation Class                | Interface                  |
+| Name                     | Implementation                      | Extension Point Class      |
 | ------------------------ | ----------------------------------- | -------------------------- |
 | `com.intellij.facetType` | [DemoFacetType][file:DemoFacetType] | [FacetType][sdk:FacetType] |
 

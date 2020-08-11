@@ -10,7 +10,7 @@ Action, added to the Main Menu, shows a message dialog when invoked.
 
 ### Actions
 
-| ID               | Implementation Class            | Interface                |
+| ID               | Implementation                  | Extension Point Class    |
 | ---------------- | ------------------------------- | ------------------------ |
 | `MyPlugin.Hello` | [HelloAction][file:HelloAction] | [AnAction][sdk:AnAction] |
 

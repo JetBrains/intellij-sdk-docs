@@ -9,7 +9,7 @@ a message dialog after invoking.
 
 ### Actions
 
-| ID                                           | Implementation Class                        | Interface                |
+| ID                                           | Implementation                              | Extension Point Class    |
 | -------------------------------------------- | ------------------------------------------- | ------------------------ |
 | `org.intellij.sdk.pycharm.PopupDialogAction` | [PopupDialogAction][file:PopupDialogAction] | [AnAction][sdk:AnAction] |
 

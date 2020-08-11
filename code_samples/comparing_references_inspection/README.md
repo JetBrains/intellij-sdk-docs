@@ -13,7 +13,7 @@ converted using *Quick Fix* to `a.equals(b)` or `!a.equals(b)` respectively.
 
 ### Extension Points
 
-| Name                           | Implementation Class                                                | Interface                                                |
+| Name                           | Implementation                                                      | Extension Point Class                                    |
 | ------------------------------ | ------------------------------------------------------------------- | -------------------------------------------------------- |
 | `com.intellij.localInspection` | [ComparingReferencesInspection][file:ComparingReferencesInspection] | [AbstractBaseJavaLocalInspectionTool][sdk:AbstractBJLIT] |
 

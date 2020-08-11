@@ -10,15 +10,15 @@ opened projects in the IDE. After opening each one, a message dialog is presente
 
 ### Extension Points
 
-| Name                              | Implementation Class                                  | Interface |
-| --------------------------------- | ----------------------------------------------------- | --------- |
-| `com.intellij.applicationService` | [ProjectCountingService][file:ProjectCountingService] |           |
+| Name                              | Implementation                                        | Extension Point Class |
+| --------------------------------- | ----------------------------------------------------- | --------------------- |
+| `com.intellij.applicationService` | [ProjectCountingService][file:ProjectCountingService] |                       |
 
 *Reference: [Plugin Extension Points in IntelliJ SDK Docs][docs:ep]*
 
 ### Application Listeners
 
-| Name     | Implementation Class                                      | Interface                                            |
+| Name     | Implementation                                            | Extension Point Class                                |
 | -------- | --------------------------------------------------------- | ---------------------------------------------------- |
 | listener | [ProjectOpenCloseListener][file:ProjectOpenCloseListener] | [ProjectManagerListener][sdk:ProjectManagerListener] |
 

@@ -9,7 +9,7 @@ only.
 
 ### Extension Points
 
-| Name                           | Implementation Class                                | Interface                                                    |
+| Name                           | Implementation                                      | Extension Point Class                                        |
 | ------------------------------ | --------------------------------------------------- | ------------------------------------------------------------ |
 | `com.intellij.projectViewPane` | [ImagesProjectViewPane][file:ImagesProjectViewPane] | [AbstractProjectViewPSIPane][sdk:AbstractProjectViewPSIPane] |
 

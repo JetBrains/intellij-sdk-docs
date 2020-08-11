@@ -24,9 +24,9 @@ or listeners provided by the plugin.
 
 ### Extension Points
 
-| Name                         | Implementation Class                                    | Interface |
-| ---------------------------- | ------------------------------------------------------- | --------- |
-| `com.intellij.themeProvider` | [theme_basics.theme.json][file:theme_basics.theme.json] |           |
+| Name                         | Implementation                                          | Extension Point Class |
+| ---------------------------- | ------------------------------------------------------- | --------------------- |
+| `com.intellij.themeProvider` | [theme_basics.theme.json][file:theme_basics.theme.json] |                       |
 
 *Reference: [Plugin Extension Points in IntelliJ SDK Docs][docs:ep]*
 

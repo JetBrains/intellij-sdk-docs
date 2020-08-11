@@ -9,7 +9,7 @@ with `ConfigurationFactory` instance that collects run/debug properties - `scrip
 
 ### Extension Points
 
-| Name                             | Implementation Class                                      | Interface                                  |
+| Name                             | Implementation                                            | Extension Point Class                      |
 | -------------------------------- | --------------------------------------------------------- | ------------------------------------------ |
 | `com.intellij.configurationType` | [DemoRunConfigurationType][file:DemoRunConfigurationType] | [ConfigurationType][sdk:ConfigurationType] |
 

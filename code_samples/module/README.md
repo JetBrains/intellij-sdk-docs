@@ -9,7 +9,7 @@ with extra steps present for additional module configuration.
 
 ### Extension Points
 
-| Name                      | Implementation Class                  | Interface                    |
+| Name                      | Implementation                        | Extension Point Class        |
 | ------------------------- | ------------------------------------- | ---------------------------- |
 | `com.intellij.moduleType` | [DemoModuleType][file:DemoModuleType] | [ModuleType][sdk:ModuleType] |
 

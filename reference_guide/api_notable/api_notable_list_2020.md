@@ -48,6 +48,9 @@ Deprecating JavaFX in favor of JCEF
 
 ASM Library 8.0.1 
 : Updated from 7.0.1.
+               
+Validating Lexer for editor highlighting
+: Lexer is wrapped using `ValidatingLexerWrapper` to verify it generates continuous sequence of tokens and doesn't stall during iteration.
 
 ## 2020.1 
 

@@ -19,10 +19,10 @@ or listeners provided by the plugin.
 
 ### Extension Points
 
-| Name                    | Implementation Class                                    | Interface                                                |
-| ----------------------- | ------------------------------------------------------- | -------------------------------------------------------- |
-| applicationConfigurable | [AppSettingsConfigurable][file:AppSettingsConfigurable] | [Configurable][sdk:Configurable]                         |
-| applicationService      | [AppSettingsState][file:AppSettingsState]               | [PersistentStateComponent][sdk:PersistentStateComponent] |
+| Name                                   | Implementation Class                                    | Interface                                                |
+| -------------------------------------- | ------------------------------------------------------- | -------------------------------------------------------- |
+| `com.intellij.applicationConfigurable` | [AppSettingsConfigurable][file:AppSettingsConfigurable] | [Configurable][sdk:Configurable]                         |
+| `com.intellij.applicationService`      | [AppSettingsState][file:AppSettingsState]               | [PersistentStateComponent][sdk:PersistentStateComponent] |
 
 *Reference: [Plugin Extension Points in IntelliJ SDK Docs][docs:ep]*
 

@@ -19,11 +19,11 @@ or listeners provided by the plugin.
 
 ### Extension Points
 
-| Name                 | Implementation Class                    | Interface                                      |
-| -------------------- | --------------------------------------- | ---------------------------------------------- |
-| defaultLiveTemplates | [Markdown][file:Markdown]               |                                                |
-| liveTemplateContext  | [MarkdownContext][file:MarkdownContext] | [TemplateContextType][sdk:TemplateContextType] |
-| liveTemplateMacro    | [TitleCaseMacro][file:TitleCaseMacro]   | [MacroBase][sdk:MacroBase]                     |
+| Name                                | Implementation Class                    | Interface                                      |
+| ----------------------------------- | --------------------------------------- | ---------------------------------------------- |
+| `com.intellij.defaultLiveTemplates` | [Markdown][file:Markdown]               |                                                |
+| `com.intellij.liveTemplateContext`  | [MarkdownContext][file:MarkdownContext] | [TemplateContextType][sdk:TemplateContextType] |
+| `com.intellij.liveTemplateMacro`    | [TitleCaseMacro][file:TitleCaseMacro]   | [MacroBase][sdk:MacroBase]                     |
 
 *Reference: [Plugin Extension Points in IntelliJ SDK Docs][docs:ep]*
 

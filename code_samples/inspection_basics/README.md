@@ -18,9 +18,9 @@ or listeners provided by the plugin.
 
 ### Extension Points
 
-| Name            | Implementation Class                          | Interface                                      |
-| --------------- | --------------------------------------------- | ---------------------------------------------- |
-| localInspection | [DemoCodeInspection][file:DemoCodeInspection] | [LocalInspectionTool][sdk:LocalInspectionTool] |
+| Name                           | Implementation Class                          | Interface                                      |
+| ------------------------------ | --------------------------------------------- | ---------------------------------------------- |
+| `com.intellij.localInspection` | [DemoCodeInspection][file:DemoCodeInspection] | [LocalInspectionTool][sdk:LocalInspectionTool] |
 
 *Reference: [Plugin Extension Points in IntelliJ SDK Docs][docs:ep]*
 

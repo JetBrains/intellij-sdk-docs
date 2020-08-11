@@ -37,9 +37,9 @@ or listeners provided by the plugin.
 
 ### Extension Points
 
-| Name                  | Implementation Class                                                | Interface                                          |
-| --------------------- | ------------------------------------------------------------------- | -------------------------------------------------- |
-| treeStructureProvider | [TextOnlyTreeStructureProvider][file:TextOnlyTreeStructureProvider] | [TreeStructureProvider][sdk:TreeStructureProvider] |
+| Name                                 | Implementation Class                                                | Interface                                          |
+| ------------------------------------ | ------------------------------------------------------------------- | -------------------------------------------------- |
+| `com.intellij.treeStructureProvider` | [TextOnlyTreeStructureProvider][file:TextOnlyTreeStructureProvider] | [TreeStructureProvider][sdk:TreeStructureProvider] |
 
 *Reference: [Plugin Extension Points in IntelliJ SDK Docs][docs:ep]*
 

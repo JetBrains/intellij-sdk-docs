@@ -17,9 +17,9 @@ or listeners provided by the plugin.
 
 ### Extension Points
 
-| Name           | Implementation Class                | Interface                              |
-| -------------- | ----------------------------------- | -------------------------------------- |
-| framework.type | [DemoFramework][file:DemoFramework] | [FrameworkTypeEx][sdk:FrameworkTypeEx] |
+| Name                          | Implementation Class                | Interface                              |
+| ----------------------------- | ----------------------------------- | -------------------------------------- |
+| `com.intellij.framework.type` | [DemoFramework][file:DemoFramework] | [FrameworkTypeEx][sdk:FrameworkTypeEx] |
 
 *Reference: [Plugin Extension Points in IntelliJ SDK Docs][docs:ep]*
 

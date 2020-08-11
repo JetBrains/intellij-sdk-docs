@@ -18,9 +18,9 @@ or listeners provided by the plugin.
 
 ### Extension Points
 
-| Name       | Implementation Class                  | Interface                    |
-| ---------- | ------------------------------------- | ---------------------------- |
-| moduleType | [DemoModuleType][file:DemoModuleType] | [ModuleType][sdk:ModuleType] |
+| Name                      | Implementation Class                  | Interface                    |
+| ------------------------- | ------------------------------------- | ---------------------------- |
+| `com.intellij.moduleType` | [DemoModuleType][file:DemoModuleType] | [ModuleType][sdk:ModuleType] |
 
 *Reference: [Plugin Extension Points in IntelliJ SDK Docs][docs:ep]*
 

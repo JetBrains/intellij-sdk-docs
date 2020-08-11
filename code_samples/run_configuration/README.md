@@ -18,9 +18,9 @@ or listeners provided by the plugin.
 
 ### Extension Points
 
-| Name              | Implementation Class                                      | Interface                                  |
-| ----------------- | --------------------------------------------------------- | ------------------------------------------ |
-| configurationType | [DemoRunConfigurationType][file:DemoRunConfigurationType] | [ConfigurationType][sdk:ConfigurationType] |
+| Name                             | Implementation Class                                      | Interface                                  |
+| -------------------------------- | --------------------------------------------------------- | ------------------------------------------ |
+| `com.intellij.configurationType` | [DemoRunConfigurationType][file:DemoRunConfigurationType] | [ConfigurationType][sdk:ConfigurationType] |
 
 *Reference: [Plugin Extension Points in IntelliJ SDK Docs][docs:ep]*
 

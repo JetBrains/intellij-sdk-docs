@@ -46,9 +46,9 @@ or listeners provided by the plugin.
 
 ### Extension Points
 
-| Name            | Implementation Class                                              | Interface                                                          |
-| --------------- | ----------------------------------------------------------------- | ------------------------------------------------------------------ |
-| intentionAction | [ConditionalOperatorConverter][file:ConditionalOperatorConverter] | [PsiElementBaseIntentionAction][sdk:PsiElementBaseIntentionAction] |
+| Name                           | Implementation Class                                              | Interface                                                          |
+| ------------------------------ | ----------------------------------------------------------------- | ------------------------------------------------------------------ |
+| `com.intellij.intentionAction` | [ConditionalOperatorConverter][file:ConditionalOperatorConverter] | [PsiElementBaseIntentionAction][sdk:PsiElementBaseIntentionAction] |
 
 *Reference: [Plugin Extension Points in IntelliJ SDK Docs][docs:ep]*
 

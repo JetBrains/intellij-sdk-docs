@@ -17,25 +17,25 @@ or listeners provided by the plugin.
 
 ### Extension Points
 
-| Name                           | Implementation Class                                                                    | Interface                                                                  |
-| ------------------------------ | --------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
-| fileType                       | [SimpleFileType][file:SimpleFileType]                                                   | [LanguageFileType][sdk:LanguageFileType]                                   |
-| lang.parserDefinition          | [SimpleParserDefinition][file:SimpleParserDefinition]                                   | [ParserDefinition][sdk:ParserDefinition]                                   |
-| lang.syntaxHighlighterFactory  | [SimpleSyntaxHighlighterFactory][file:SimpleSyntaxHighlighterFactory]                   | [SyntaxHighlighterFactory][sdk:SyntaxHighlighterFactory]                   |
-| colorSettingsPage              | [SimpleColorSettingsPage][file:SimpleColorSettingsPage]                                 | [ColorSettingsPage][sdk:ColorSettingsPage]                                 |
-| annotator                      | [SimpleAnnotator][file:SimpleAnnotator]                                                 | [Annotator][sdk:Annotator]                                                 |
-| codeInsight.lineMarkerProvider | [SimpleLineMarkerProvider][file:SimpleLineMarkerProvider]                               | [RelatedItemLineMarkerProvider][sdk:RelatedItemLineMarkerProvider]         |
-| completion.contributor         | [SimpleCompletionContributor][file:SimpleCompletionContributor]                         | [CompletionContributor][sdk:CompletionContributor]                         |
-| psi.referenceContributor       | [SimpleReferenceContributor][file:SimpleReferenceContributor]                           | [PsiReferenceContributor][sdk:PsiReferenceContributor]                     |
-| lang.refactoringSupport        | [SimpleRefactoringSupportProvider][file:SimpleRefactoringSupportProvider]               | [RefactoringSupportProvider][sdk:RefactoringSupportProvider]               |
-| lang.findUsagesProvider        | [SimpleFindUsagesProvider][file:SimpleFindUsagesProvider]                               | [FindUsagesProvider][sdk:FindUsagesProvider]                               |
-| lang.foldingBuilder            | [SimpleFoldingBuilder][file:SimpleFoldingBuilder]                                       | [FoldingBuilderEx][sdk:FoldingBuilderEx]                                   |
-| gotoSymbolContributor          | [SimpleChooseByNameContributor][file:SimpleChooseByNameContributor]                     | [ChooseByNameContributor][sdk:ChooseByNameContributor]                     |
-| lang.psiStructureViewFactory   | [SimpleStructureViewFactory][file:SimpleStructureViewFactory]                           | [PsiStructureViewFactory][sdk:PsiStructureViewFactory]                     |
-| lang.formatter                 | [SimpleFormattingModelBuilder][file:SimpleFormattingModelBuilder]                       | [FormattingModelBuilder][sdk:FormattingModelBuilder]                       |
-| codeStyleSettingsProvider      | [SimpleCodeStyleSettingsProvider][file:SimpleCodeStyleSettingsProvider]                 | [CodeStyleSettingsProvider][sdk:CodeStyleSettingsProvider]                 |
-| langCodeStyleSettingsProvider  | [SimpleLanguageCodeStyleSettingsProvider][file:SimpleLanguageCodeStyleSettingsProvider] | [LanguageCodeStyleSettingsProvider][sdk:LanguageCodeStyleSettingsProvider] |
-| lang.commenter                 | [SimpleCommenter][file:SimpleCommenter]                                                 | [Commenter][sdk:Commenter]                                                 |
+| Name                                          | Implementation Class                                                                    | Interface                                                                  |
+| --------------------------------------------- | --------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| `com.intellij.fileType`                       | [SimpleFileType][file:SimpleFileType]                                                   | [LanguageFileType][sdk:LanguageFileType]                                   |
+| `com.intellij.lang.parserDefinition`          | [SimpleParserDefinition][file:SimpleParserDefinition]                                   | [ParserDefinition][sdk:ParserDefinition]                                   |
+| `com.intellij.lang.syntaxHighlighterFactory`  | [SimpleSyntaxHighlighterFactory][file:SimpleSyntaxHighlighterFactory]                   | [SyntaxHighlighterFactory][sdk:SyntaxHighlighterFactory]                   |
+| `com.intellij.colorSettingsPage`              | [SimpleColorSettingsPage][file:SimpleColorSettingsPage]                                 | [ColorSettingsPage][sdk:ColorSettingsPage]                                 |
+| `com.intellij.annotator`                      | [SimpleAnnotator][file:SimpleAnnotator]                                                 | [Annotator][sdk:Annotator]                                                 |
+| `com.intellij.codeInsight.lineMarkerProvider` | [SimpleLineMarkerProvider][file:SimpleLineMarkerProvider]                               | [RelatedItemLineMarkerProvider][sdk:RelatedItemLineMarkerProvider]         |
+| `com.intellij.completion.contributor`         | [SimpleCompletionContributor][file:SimpleCompletionContributor]                         | [CompletionContributor][sdk:CompletionContributor]                         |
+| `com.intellij.psi.referenceContributor`       | [SimpleReferenceContributor][file:SimpleReferenceContributor]                           | [PsiReferenceContributor][sdk:PsiReferenceContributor]                     |
+| `com.intellij.lang.refactoringSupport`        | [SimpleRefactoringSupportProvider][file:SimpleRefactoringSupportProvider]               | [RefactoringSupportProvider][sdk:RefactoringSupportProvider]               |
+| `com.intellij.lang.findUsagesProvider`        | [SimpleFindUsagesProvider][file:SimpleFindUsagesProvider]                               | [FindUsagesProvider][sdk:FindUsagesProvider]                               |
+| `com.intellij.lang.foldingBuilder`            | [SimpleFoldingBuilder][file:SimpleFoldingBuilder]                                       | [FoldingBuilderEx][sdk:FoldingBuilderEx]                                   |
+| `com.intellij.gotoSymbolContributor`          | [SimpleChooseByNameContributor][file:SimpleChooseByNameContributor]                     | [ChooseByNameContributor][sdk:ChooseByNameContributor]                     |
+| `com.intellij.lang.psiStructureViewFactory`   | [SimpleStructureViewFactory][file:SimpleStructureViewFactory]                           | [PsiStructureViewFactory][sdk:PsiStructureViewFactory]                     |
+| `com.intellij.lang.formatter`                 | [SimpleFormattingModelBuilder][file:SimpleFormattingModelBuilder]                       | [FormattingModelBuilder][sdk:FormattingModelBuilder]                       |
+| `com.intellij.codeStyleSettingsProvider`      | [SimpleCodeStyleSettingsProvider][file:SimpleCodeStyleSettingsProvider]                 | [CodeStyleSettingsProvider][sdk:CodeStyleSettingsProvider]                 |
+| `com.intellij.langCodeStyleSettingsProvider`  | [SimpleLanguageCodeStyleSettingsProvider][file:SimpleLanguageCodeStyleSettingsProvider] | [LanguageCodeStyleSettingsProvider][sdk:LanguageCodeStyleSettingsProvider] |
+| `com.intellij.lang.commenter`                 | [SimpleCommenter][file:SimpleCommenter]                                                 | [Commenter][sdk:Commenter]                                                 |
 
 *Reference: [Plugin Extension Points in IntelliJ SDK Docs][docs:ep]*
 

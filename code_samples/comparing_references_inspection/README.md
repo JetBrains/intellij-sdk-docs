@@ -22,9 +22,9 @@ or listeners provided by the plugin.
 
 ### Extension Points
 
-| Name            | Implementation Class                                                | Interface                                                |
-| --------------- | ------------------------------------------------------------------- | -------------------------------------------------------- |
-| localInspection | [ComparingReferencesInspection][file:ComparingReferencesInspection] | [AbstractBaseJavaLocalInspectionTool][sdk:AbstractBJLIT] |
+| Name                           | Implementation Class                                                | Interface                                                |
+| ------------------------------ | ------------------------------------------------------------------- | -------------------------------------------------------- |
+| `com.intellij.localInspection` | [ComparingReferencesInspection][file:ComparingReferencesInspection] | [AbstractBaseJavaLocalInspectionTool][sdk:AbstractBJLIT] |
 
 *Reference: [Plugin Extension Points in IntelliJ SDK Docs][docs:ep]*
 

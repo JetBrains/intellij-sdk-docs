@@ -21,9 +21,9 @@ or listeners provided by the plugin.
 
 ### Extension Points
 
-| Name      | Implementation Class                | Interface                  |
-| --------- | ----------------------------------- | -------------------------- |
-| facetType | [DemoFacetType][file:DemoFacetType] | [FacetType][sdk:FacetType] |
+| Name                     | Implementation Class                | Interface                  |
+| ------------------------ | ----------------------------------- | -------------------------- |
+| `com.intellij.facetType` | [DemoFacetType][file:DemoFacetType] | [FacetType][sdk:FacetType] |
 
 *Reference: [Plugin Extension Points in IntelliJ SDK Docs][docs:ep]*
 

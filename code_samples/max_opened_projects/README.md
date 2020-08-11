@@ -19,9 +19,9 @@ or listeners provided by the plugin.
 
 ### Extension Points
 
-| Name               | Implementation Class                                  | Interface                                      |
-| ------------------ | ----------------------------------------------------- | ---------------------------------------------- |
-| applicationService | [ProjectCountingService][file:ProjectCountingService] |                                                |
+| Name                              | Implementation Class                                  | Interface                                      |
+| --------------------------------- | ----------------------------------------------------- | ---------------------------------------------- |
+| `com.intellij.applicationService` | [ProjectCountingService][file:ProjectCountingService] |                                                |
 
 *Reference: [Plugin Extension Points in IntelliJ SDK Docs][docs:ep]*
 

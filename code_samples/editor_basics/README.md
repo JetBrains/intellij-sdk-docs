@@ -22,9 +22,9 @@ or listeners provided by the plugin.
 
 ### Extension Points
 
-| Name         | Implementation Class                  | Interface                                        |
-| ------------ | ------------------------------------- | ------------------------------------------------ |
-| typedHandler | [MyTypedHandler][file:MyTypedHandler] | [TypedHandlerDelegate][sdk:TypedHandlerDelegate] |
+| Name                        | Implementation Class                  | Interface                                        |
+| --------------------------- | ------------------------------------- | ------------------------------------------------ |
+| `com.intellij.typedHandler` | [MyTypedHandler][file:MyTypedHandler] | [TypedHandlerDelegate][sdk:TypedHandlerDelegate] |
 
 *Reference: [Plugin Extension Points in IntelliJ SDK Docs][docs:ep]*
 

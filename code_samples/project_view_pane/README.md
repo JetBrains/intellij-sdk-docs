@@ -18,9 +18,9 @@ or listeners provided by the plugin.
 
 ### Extension Points
 
-| Name            | Implementation Class                                | Interface                                                    |
-| --------------- | --------------------------------------------------- | ------------------------------------------------------------ |
-| projectViewPane | [ImagesProjectViewPane][file:ImagesProjectViewPane] | [AbstractProjectViewPSIPane][sdk:AbstractProjectViewPSIPane] |
+| Name                           | Implementation Class                                | Interface                                                    |
+| ------------------------------ | --------------------------------------------------- | ------------------------------------------------------------ |
+| `com.intellij.projectViewPane` | [ImagesProjectViewPane][file:ImagesProjectViewPane] | [AbstractProjectViewPSIPane][sdk:AbstractProjectViewPSIPane] |
 
 *Reference: [Plugin Extension Points in IntelliJ SDK Docs][docs:ep]*
 

@@ -41,9 +41,9 @@ or listeners provided by the plugin.
 
 ### Extension Points
 
-| Name       | Implementation Class                            | Interface                                  |
-| ---------- | ----------------------------------------------- | ------------------------------------------ |
-| toolWindow | [MyToolWindowFactory][file:MyToolWindowFactory] | [ToolWindowFactory][sdk:ToolWindowFactory] |
+| Name                      | Implementation Class                            | Interface                                  |
+| ------------------------- | ----------------------------------------------- | ------------------------------------------ |
+| `com.intellij.toolWindow` | [MyToolWindowFactory][file:MyToolWindowFactory] | [ToolWindowFactory][sdk:ToolWindowFactory] |
 
 *Reference: [Plugin Extension Points in IntelliJ SDK Docs][docs:ep]*
 

@@ -17,9 +17,9 @@ or listeners provided by the plugin.
 
 ### Extension Points
 
-| Name          | Implementation Class                              | Interface                          |
-| ------------- | ------------------------------------------------- | ---------------------------------- |
-| moduleBuilder | [DemoModuleWizardStep][file:DemoModuleWizardStep] | [ModuleBuilder][sdk:ModuleBuilder] |
+| Name                         | Implementation Class                              | Interface                          |
+| ---------------------------- | ------------------------------------------------- | ---------------------------------- |
+| `com.intellij.moduleBuilder` | [DemoModuleWizardStep][file:DemoModuleWizardStep] | [ModuleBuilder][sdk:ModuleBuilder] |
 
 *Reference: [Plugin Extension Points in IntelliJ SDK Docs][docs:ep]*
 

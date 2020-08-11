@@ -7,24 +7,8 @@ Tree Structure Provider sample project implements `treeStructureProvider` Extens
 the structure of the project tree in the Project View panel. This implementation limits the presented files
 to the Plain Text files only.
 
-When the plugin is built and run in the IntelliJ IDE (ref. [Running a Simple Gradle-Based IntelliJ Platform Plugin][docs_run]),
-it registers a `TreeStructureProvider` extension, which modifies the Project View presentation structure.
-
-Project View, when collecting the elements for the tree presentation, triggers `AbstractTreeStructure.getChildElements`
-method which refers to the registered `TreeStructureProvider` instances. Each of the provider holds a `modify` method
-which alters the list of the tree nodes to present:
-
-```java
-public Collection<AbstractTreeNode> modify(@NotNull AbstractTreeNode parent,
-                                           @NotNull Collection<AbstractTreeNode> children,
-                                           ViewSettings settings)
-```
-
-Current implementation iterates through the `children` list of `AbstractTreeNode` objects and checks if a node
-is of the `PsiFileNode` (tree view also contains nodes other than files or directories - such as libraries and scratches).
-In the next step, there is a `VirtualFile` extracted out of the `PsiFileNode` and tested if it is a directory or a file
-of the `PlainTextFileType` type. Otherwise, an element is not included in the results list, so only directories and plain text
-files are presented. 
+Current implementation checks if a Project View nodes represents directories or file of the `PlainTextFileType` type.
+Otherwise, an element is not included in the results list, so only directories and plain text files are rendered. 
 
 ### Extension Points
 

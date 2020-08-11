@@ -3,28 +3,9 @@
 
 ## Quickstart
 
-Tool windows are child windows of the IDE used to display information. These windows generally have their own toolbars
+Tool Windows are child windows of the IDE used to display information. These windows generally have their own toolbars
 (referred to as tool window bars) along the outer edges of the main window containing one or more tool window buttons,
 which activate panels displayed on the left, bottom, and right sides of the main IDE window.
-
-When the plugin is built and run in the IntelliJ IDE (ref. [Running a Simple Gradle-Based IntelliJ Platform Plugin][docs_run]),
-it registers a `ToolWindowFactory` extension, which adds a new Tool Window component to te one of the IDE window's sides.
-
-After clicking on the tool window button, that has been placed on the right side, IDE invokes the `createToolWindowContent`
-method specified in the `MyToolWindowFactory` class.
-
-```java
-public void createToolWindowContent(@NotNull Project project, @NotNull ToolWindow toolWindow)
-```
-
-Within the function, it is possible to access the current `ToolWindow` instance, which allows to pass any kind
-of the `JComponent` to the `ContentManager`:
-
-```java
-ContentFactory contentFactory = ContentFactory.SERVICE.getInstance();
-Content content = contentFactory.createContent(myComponent, "", false);
-toolWindow.getContentManager().addContent(content);
-```
 
 Current implementation displays a `JPanel` component containing simple icons and information regarding the actual
 system date, time, and timezone. Component is provided by the `MyToolWindow` class through the `getContent()` method

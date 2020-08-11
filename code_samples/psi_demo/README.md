@@ -12,7 +12,7 @@ dialog, informs about:
 
 ### Actions
 
-| Name                | Implementation Class                                    | Interface                |
+| ID                  | Implementation Class                                    | Interface                |
 | ------------------- | ------------------------------------------------------- | ------------------------ |
 | `PsiNavigationDemo` | [PsiNavigationDemoAction][file:PsiNavigationDemoAction] | [AnAction][sdk:AnAction] |
 

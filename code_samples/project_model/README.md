@@ -13,7 +13,7 @@ in the message dialogs. Within the implemented actions, you will be able to:
 
 ### Actions
 
-| Name                              | Implementation Class                                              | Interface                |
+| ID                                | Implementation Class                                              | Interface                |
 | --------------------------------- | ----------------------------------------------------------------- | ------------------------ |
 | `ProjectModel.SourceRoots`        | [ShowSourceRootsActions][file:ShowSourceRootsActions]             | [AnAction][sdk:AnAction] |
 | `ProjectModel.ProjectSdk`         | [ProjectSdkAction][file:ProjectSdkAction]                         | [AnAction][sdk:AnAction] |

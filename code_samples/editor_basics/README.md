@@ -21,7 +21,7 @@ are available in the Editor context menu:
 
 ### Actions
 
-| Name                                       | Implementation Class                                        | Interface                |
+| ID                                         | Implementation Class                                        | Interface                |
 | ------------------------------------------ | ----------------------------------------------------------- | ------------------------ |
 | `EditorBasics.EditorIllustrationAction`    | [EditorIllustrationAction][file:EditorIllustrationAction]   | [AnAction][sdk:AnAction] |
 | `EditorBasics.EditorHandlerIllustration`   | [EditorHandlerIllustration][file:EditorHandlerIllustration] | [AnAction][sdk:AnAction] |

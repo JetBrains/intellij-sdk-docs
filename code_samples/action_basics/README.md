@@ -18,7 +18,7 @@ in three different ways:
 
 ### Actions
 
-| Name                                               | Implementation Class                                      | Interface                      |
+| ID                                                 | Implementation Class                                      | Interface                      |
 | -------------------------------------------------- | --------------------------------------------------------- | ------------------------------ |
 | `org.intellij.sdk.action.PopupDialogAction`        | [PopupDialogAction][file:PopupDialogAction]               | [AnAction][sdk:AnAction]       |
 | `org.intellij.sdk.action.GroupPopDialogAction`     | [PopupDialogAction][file:PopupDialogAction]               | [AnAction][sdk:AnAction]       |

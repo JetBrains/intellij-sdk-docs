@@ -8,15 +8,6 @@ implemented by the [HelloAction.kt][file:HelloAction] Kotlin class.
 
 Action, added to the Main Menu, shows a message dialog when invoked.
 
-## Structure
-
-Kotlin Demo
-plugin depends on the [IntelliJ Platform SDK][docs] and [Gradle][docs:gradle] as a build system.
-
-The main plugin definition file is stored in the [plugin.xml][file:plugin.xml] file, which is created accordingly
-to the [Plugin Configuration File documentation][docs:plugin.xml]. It describes definitions of the actions, extensions,
-or listeners provided by the plugin.
-
 ### Actions
 
 | Name   | Implementation Class            | Interface                |
@@ -29,11 +20,7 @@ or listeners provided by the plugin.
 [docs]: https://www.jetbrains.org/intellij/sdk/docs
 [docs:actions]: https://www.jetbrains.org/intellij/sdk/docs/basics/action_system.html
 [docs:kotlin]: https://jetbrains.org/intellij/sdk/docs/tutorials/kotlin.html
-[docs:ep]: https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_extensions.html
-[docs:gradle]: https://www.jetbrains.org/intellij/sdk/docs/tutorials/build_system.html
-[docs:plugin.xml]: https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_configuration_file.html
 
-[file:plugin.xml]: ./src/main/resources/META-INF/plugin.xml
 [file:HelloAction]: ./src/main/kotlin/org/intellij/sdk/kotlin/HelloAction.kt
 
 [sdk:AnAction]: upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java

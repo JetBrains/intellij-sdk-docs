@@ -14,7 +14,21 @@ a pure boilerplate template. Plugin Template makes it easier to create a new plu
 the project scaffold and CI using GitHub Actions, linking to the proper documentation pages, and keeping everything
 organized.
 
-| Code sample                                                            | Description                                                                                                                                            |
+## Structure
+
+Comparing References Inspection Sample
+plugin depends on the [IntelliJ Platform SDK][docs] and [Gradle][docs:gradle] as a build system.
+
+The main plugin definition file is stored in the `plugin.xml` file, which is created accordingly
+to the [Plugin Configuration File documentation][docs:plugin.xml]. It describes definitions of the actions, extensions,
+or listeners provided by the plugin.
+
+## Code Samples
+
+In the following table, you may find all available samples provided in the separated directories as stand-alone
+projects available for running with the Gradle `:runIde` task.
+ 
+| Code Sample                                                            | Description                                                                                                                                            |
 | ---------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | [Action Basics](./action_basics)                                       | Action and Action Group patterns implementation, adds entries to the Tools menu.                                                                       |
 | [Comparing References Inspection](./comparing_references_inspection)   | Local Inspection Tool, adds entries to `Preferences \| Editor \| Inspections \| Java \| Probable Bugs`.                                                |
@@ -47,3 +61,7 @@ organized.
 [jb:products]: https://www.jetbrains.com/products.html
 [jb:slack]: https://plugins.jetbrains.com/slack
 [jb:twitter]: https://twitter.com/JBPlatform
+
+[docs]: https://www.jetbrains.org/intellij/sdk/docs
+[docs:gradle]: https://www.jetbrains.org/intellij/sdk/docs/tutorials/build_system.html
+[docs:plugin.xml]: https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_configuration_file.html

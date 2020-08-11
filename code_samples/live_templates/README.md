@@ -8,15 +8,6 @@ Live Templates Sample Project implements two example live templates for the Mark
 - New link reference - by typing the `{<TAB>`, following template will be inserted: `[$TEXT$]($LINK$)$END$`
 - Convert to title case - retrieves the text from the macro or selection, if any is available.
 
-## Structure
-
-Live Templates Sample Project
-plugin depends on the [IntelliJ Platform SDK][docs] and [Gradle][docs:gradle] as a build system.
-
-The main plugin definition file is stored in the [plugin.xml][file:plugin.xml] file, which is created accordingly
-to the [Plugin Configuration File documentation][docs:plugin.xml]. It describes definitions of the actions, extensions,
-or listeners provided by the plugin.
-
 ### Extension Points
 
 | Name                                | Implementation Class                    | Interface                                      |
@@ -29,13 +20,9 @@ or listeners provided by the plugin.
 
 
 [docs]: https://www.jetbrains.org/intellij/sdk/docs
-[docs:actions]: https://www.jetbrains.org/intellij/sdk/docs/basics/action_system.html
 [docs:live_templates]: https://jetbrains.org/intellij/sdk/docs/tutorials/live_templates.html
 [docs:ep]: https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_extensions.html
-[docs:gradle]: https://www.jetbrains.org/intellij/sdk/docs/tutorials/build_system.html
-[docs:plugin.xml]: https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_configuration_file.html
 
-[file:plugin.xml]: ./src/main/resources/META-INF/plugin.xml
 [file:Markdown]: ./src/main/resources/liveTemplates/Markdown.xml
 [file:MarkdownContext]: ./src/main/java/org/intellij/sdk/liveTemplates/MarkdownContext.java
 [file:TitleCaseMacro]: ./src/main/java/org/intellij/sdk/liveTemplates/TitleCaseMacro.java

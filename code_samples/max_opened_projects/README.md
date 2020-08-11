@@ -8,20 +8,11 @@ projects has been opened or closed. Each method refers to the `ProjectCountingSe
 as an `applicationService` extension point. It provides methods to increase and decrease global counter of the currently
 opened projects in the IDE. After opening each one, a message dialog is presented to the user with the current number.
 
-## Structure
-
-Maximum Open Projects Sample
-plugin depends on the [IntelliJ Platform SDK][docs] and [Gradle][docs:gradle] as a build system.
-
-The main plugin definition file is stored in the [plugin.xml][file:plugin.xml] file, which is created accordingly
-to the [Plugin Configuration File documentation][docs:plugin.xml]. It describes definitions of the actions, extensions,
-or listeners provided by the plugin.
-
 ### Extension Points
 
-| Name                              | Implementation Class                                  | Interface                                      |
-| --------------------------------- | ----------------------------------------------------- | ---------------------------------------------- |
-| `com.intellij.applicationService` | [ProjectCountingService][file:ProjectCountingService] |                                                |
+| Name                              | Implementation Class                                  | Interface |
+| --------------------------------- | ----------------------------------------------------- | --------- |
+| `com.intellij.applicationService` | [ProjectCountingService][file:ProjectCountingService] |           |
 
 *Reference: [Plugin Extension Points in IntelliJ SDK Docs][docs:ep]*
 
@@ -34,14 +25,10 @@ or listeners provided by the plugin.
 *Reference: [Plugin Listeners in IntelliJ SDK Docs][docs:listeners]*
 
 [docs]: https://www.jetbrains.org/intellij/sdk/docs
-[docs:actions]: https://www.jetbrains.org/intellij/sdk/docs/basics/action_system.html
 [docs:plugin_services]: https://jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_services.html
 [docs:ep]: https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_extensions.html
-[docs:gradle]: https://www.jetbrains.org/intellij/sdk/docs/tutorials/build_system.html
-[docs:plugin.xml]: https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_configuration_file.html
 [docs:listeners]: https://jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_listeners.html
 
-[file:plugin.xml]: ./src/main/resources/META-INF/plugin.xml
 [file:ProjectCountingService]: ./src/main/java/org/intellij/sdk/maxOpenProjects/ProjectCountingService.java
 [file:ProjectOpenCloseListener]: ./src/main/java/org/intellij/sdk/maxOpenProjects/ProjectOpenCloseListener.java
 

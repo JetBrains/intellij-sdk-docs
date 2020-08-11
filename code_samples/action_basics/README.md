@@ -16,15 +16,6 @@ in three different ways:
 - by adding action item to the `ToolsMenu` group, available in Tools menu,
 - by adding action item to the `EditorPopupMenu` group, available in Editor's context menu.
 
-## Structure
-
-Action Sample Project
-plugin depends on the [IntelliJ Platform SDK][docs] and [Gradle][docs:gradle] as a build system.
-
-The main plugin definition file is stored in the [plugin.xml][file:plugin.xml] file, which is created accordingly
-to the [Plugin Configuration File documentation][docs:plugin.xml]. It describes definitions of the actions, extensions,
-or listeners provided by the plugin.
-
 ### Actions
 
 | Name                                               | Implementation Class                                      | Interface                      |
@@ -40,13 +31,10 @@ or listeners provided by the plugin.
 
 [docs]: https://www.jetbrains.org/intellij/sdk/docs
 [docs:actions]: https://www.jetbrains.org/intellij/sdk/docs/basics/action_system.html
-[docs:gradle]: https://www.jetbrains.org/intellij/sdk/docs/tutorials/build_system.html
-[docs:plugin.xml]: https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_configuration_file.html
 
 [file:PopupDialogAction]: ./src/main/java/org/intellij/sdk/action/PopupDialogAction.java
 [file:CustomDefaultActionGroup]: ./src/main/java/org/intellij/sdk/action/CustomDefaultActionGroup.java
 [file:DynamicActionGroup]: ./src/main/java/org/intellij/sdk/action/DynamicActionGroup.java
-[file:plugin.xml]: ./src/main/resources/META-INF/plugin.xml
 
 [sdk:AnAction]: upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java
 [sdk:ActionGroup]: upsource:///platform/platform-api/src/com/intellij/openapi/actionSystem/ActionInGroup.java

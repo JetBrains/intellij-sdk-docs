@@ -6,15 +6,6 @@
 Defines a new language, _Simple language_ with support for syntax highlighting, annotations, code completion, and other
 features.
 
-## Structure
-
-Simple Language Sample
-plugin depends on the [IntelliJ Platform SDK][docs] and [Gradle][docs:gradle] as a build system.
-
-The main plugin definition file is stored in the [plugin.xml][file:plugin.xml] file, which is created accordingly
-to the [Plugin Configuration File documentation][docs:plugin.xml]. It describes definitions of the actions, extensions,
-or listeners provided by the plugin.
-
 ### Extension Points
 
 | Name                                          | Implementation Class                                                                    | Interface                                                                  |
@@ -41,14 +32,9 @@ or listeners provided by the plugin.
 
 
 [docs]: https://www.jetbrains.org/intellij/sdk/docs
-[docs:actions]: https://www.jetbrains.org/intellij/sdk/docs/basics/action_system.html
 [docs:custom_language_support_tutorial]: https://jetbrains.org/intellij/sdk/docs/tutorials/custom_language_support_tutorial.html
 [docs:ep]: https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_extensions.html
-[docs:gradle]: https://www.jetbrains.org/intellij/sdk/docs/tutorials/build_system.html
-[docs:plugin.xml]: https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_configuration_file.html
-[docs:listeners]: https://jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_listeners.html
 
-[file:plugin.xml]: ./src/main/resources/META-INF/plugin.xml
 [file:SimpleFileType]: ./src/main/java/org/intellij/sdk/language/SimpleFileType.java
 [file:SimpleParserDefinition]: ./src/main/java/org/intellij/sdk/language/SimpleParserDefinition.java
 [file:SimpleSyntaxHighlighterFactory]: ./src/main/java/org/intellij/sdk/language/SimpleSyntaxHighlighterFactory.java

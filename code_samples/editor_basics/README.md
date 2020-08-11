@@ -11,15 +11,6 @@ are available in the Editor context menu:
 - Editor Add Caret - adds extra caret below the current one,
 - Caret Position - shows message dialog with information about the caret position.
 
-## Structure
-
-Editor Sample Project
-plugin depends on the [IntelliJ Platform SDK][docs] and [Gradle][docs:gradle] as a build system.
-
-The main plugin definition file is stored in the [plugin.xml][file:plugin.xml] file, which is created accordingly
-to the [Plugin Configuration File documentation][docs:plugin.xml]. It describes definitions of the actions, extensions,
-or listeners provided by the plugin.
-
 ### Extension Points
 
 | Name                        | Implementation Class                  | Interface                                        |
@@ -43,10 +34,7 @@ or listeners provided by the plugin.
 [docs:actions]: https://www.jetbrains.org/intellij/sdk/docs/basics/action_system.html
 [docs:editor_basics]: https://www.jetbrains.org/intellij/sdk/docs/tutorials/editor_basics.html
 [docs:ep]: https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_extensions.html
-[docs:gradle]: https://www.jetbrains.org/intellij/sdk/docs/tutorials/build_system.html
-[docs:plugin.xml]: https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_configuration_file.html
 
-[file:plugin.xml]: ./src/main/resources/META-INF/plugin.xml
 [file:MyTypedHandler]: ./src/main/java/org/intellij/sdk/editor/MyTypedHandler.java
 [file:EditorIllustrationAction]: ./src/main/java/org/intellij/sdk/editor/EditorIllustrationAction.java
 [file:EditorHandlerIllustration]: ./src/main/java/org/intellij/sdk/editor/EditorHandlerIllustration.java

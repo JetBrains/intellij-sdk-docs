@@ -30,15 +30,6 @@ Current implementation displays a `JPanel` component containing simple icons and
 system date, time, and timezone. Component is provided by the `MyToolWindow` class through the `getContent()` method
 invoked inside the `MyToolWindowFactory` implementation. 
 
-## Structure
-
-Tool Window Sample
-plugin depends on the [IntelliJ Platform SDK][docs] and [Gradle][docs:gradle] as a build system.
-
-The main plugin definition file is stored in the [plugin.xml][file:plugin.xml] file, which is created accordingly
-to the [Plugin Configuration File documentation][docs:plugin.xml]. It describes definitions of the actions, extensions,
-or listeners provided by the plugin.
-
 ### Extension Points
 
 | Name                      | Implementation Class                            | Interface                                  |
@@ -49,14 +40,9 @@ or listeners provided by the plugin.
 
 
 [docs]: https://www.jetbrains.org/intellij/sdk/docs
-[docs:actions]: https://www.jetbrains.org/intellij/sdk/docs/basics/action_system.html
 [docs:tool_windows]: https://jetbrains.org/intellij/sdk/docs/user_interface_components/tool_windows.html
 [docs:ep]: https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_extensions.html
-[docs:gradle]: https://www.jetbrains.org/intellij/sdk/docs/tutorials/build_system.html
-[docs:plugin.xml]: https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_configuration_file.html
-[docs:listeners]: https://jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_listeners.html
 
-[file:plugin.xml]: ./src/main/resources/META-INF/plugin.xml
 [file:MyToolWindowFactory]: ./src/main/java/org/intellij/sdk/toolWindow/MyToolWindowFactory.java
 
 [sdk:ToolWindowFactory]: upsource:///platform/platform-api/src/com/intellij/openapi/wm/ToolWindowFactory.java

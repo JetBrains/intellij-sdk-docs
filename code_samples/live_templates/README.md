@@ -31,7 +31,7 @@ or listeners provided by the plugin.
 [docs]: https://www.jetbrains.org/intellij/sdk/docs
 [docs:actions]: https://www.jetbrains.org/intellij/sdk/docs/basics/action_system.html
 [docs:live_templates]: https://jetbrains.org/intellij/sdk/docs/tutorials/live_templates.html
-[docs:ep]: https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_extension_points.html
+[docs:ep]: https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_extensions.html
 [docs:gradle]: https://www.jetbrains.org/intellij/sdk/docs/tutorials/build_system.html
 [docs:plugin.xml]: https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_configuration_file.html
 

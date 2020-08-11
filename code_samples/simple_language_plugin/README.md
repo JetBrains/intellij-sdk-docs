@@ -43,7 +43,7 @@ or listeners provided by the plugin.
 [docs]: https://www.jetbrains.org/intellij/sdk/docs
 [docs:actions]: https://www.jetbrains.org/intellij/sdk/docs/basics/action_system.html
 [docs:custom_language_support_tutorial]: https://jetbrains.org/intellij/sdk/docs/tutorials/custom_language_support_tutorial.html
-[docs:ep]: https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_extension_points.html
+[docs:ep]: https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_extensions.html
 [docs:gradle]: https://www.jetbrains.org/intellij/sdk/docs/tutorials/build_system.html
 [docs:plugin.xml]: https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_configuration_file.html
 [docs:listeners]: https://jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_listeners.html

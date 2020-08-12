@@ -22,4 +22,5 @@ public class SimpleCompletionContributor extends CompletionContributor {
             }
     );
   }
+
 }

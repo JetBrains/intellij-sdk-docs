@@ -25,6 +25,7 @@ import javax.swing.*;
 import java.util.*;
 
 public class ImagesProjectNode extends AbstractTreeNode<VirtualFile> {
+
   private static final Key<Set<VirtualFile>> IMAGES_PROJECT_DIRS = Key.create("images.files.or.directories");
 
   public ImagesProjectNode(final Project project) {
@@ -88,15 +89,21 @@ public class ImagesProjectNode extends AbstractTreeNode<VirtualFile> {
         files.add(file);
       }
     }
-    if (files.isEmpty()) return Collections.emptyList();
+    if (files.isEmpty()) {
+      return Collections.emptyList();
+    }
     final List<AbstractTreeNode<?>> nodes = new ArrayList<>(files.size());
     final boolean alwaysOnTop = ProjectView.getInstance(myProject).isFoldersAlwaysOnTop("");
     files.sort((o1, o2) -> {
       if (alwaysOnTop) {
         final boolean d1 = o1.isDirectory();
         final boolean d2 = o2.isDirectory();
-        if (d1 && !d2) return -1;
-        if (!d1 && d2) return 1;
+        if (d1 && !d2) {
+          return -1;
+        }
+        if (!d1 && d2) {
+          return 1;
+        }
       }
 
       return StringUtil.naturalCompare(o1.getName(), o2.getName());
@@ -162,5 +169,5 @@ public class ImagesProjectNode extends AbstractTreeNode<VirtualFile> {
       }
     });
   }
-}
 
+}

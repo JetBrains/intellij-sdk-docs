@@ -13,4 +13,5 @@ class HelloAction : DumbAwareAction() {
     val project = event.getData(PlatformDataKeys.PROJECT)
     Messages.showMessageDialog(project, "Hello from Kotlin!", "Greeting", Messages.getInformationIcon())
   }
+
 }

@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SimpleStructureViewElement implements StructureViewTreeElement, SortableTreeElement {
+
   private final NavigatablePsiElement myElement;
 
   public SimpleStructureViewElement(NavigatablePsiElement element) {
@@ -71,4 +72,5 @@ public class SimpleStructureViewElement implements StructureViewTreeElement, Sor
     }
     return EMPTY_ARRAY;
   }
+
 }

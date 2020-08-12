@@ -23,7 +23,9 @@ public class ProjectOpenCloseListener implements ProjectManagerListener {
   @Override
   public void projectOpened(@NotNull Project project) {
     // Ensure this isn't part of testing
-    if (ApplicationManager.getApplication().isUnitTestMode()) return;
+    if (ApplicationManager.getApplication().isUnitTestMode()) {
+      return;
+    }
     // Get the counting service
     ProjectCountingService projectCountingService = ServiceManager.getService(ProjectCountingService.class);
     // Increment the project count
@@ -46,7 +48,9 @@ public class ProjectOpenCloseListener implements ProjectManagerListener {
   @Override
   public void projectClosed(@NotNull Project project) {
     // Ensure this isn't part of testing
-    if (ApplicationManager.getApplication().isUnitTestMode()) return;
+    if (ApplicationManager.getApplication().isUnitTestMode()) {
+      return;
+    }
     // Get the counting service
     ProjectCountingService projectCountingService = ServiceManager.getService(ProjectCountingService.class);
     // Decrement the count because a project just closed

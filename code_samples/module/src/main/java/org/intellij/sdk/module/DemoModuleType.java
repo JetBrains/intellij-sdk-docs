@@ -13,6 +13,7 @@ import org.jetbrains.annotations.NotNull;
 import javax.swing.*;
 
 public class DemoModuleType extends ModuleType<DemoModuleBuilder> {
+
   private static final String ID = "DEMO_MODULE_TYPE";
 
   public DemoModuleType() {
@@ -54,4 +55,5 @@ public class DemoModuleType extends ModuleType<DemoModuleBuilder> {
                                               @NotNull ModulesProvider modulesProvider) {
     return super.createWizardSteps(wizardContext, moduleBuilder, modulesProvider);
   }
+
 }

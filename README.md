@@ -1,6 +1,7 @@
-[![official JetBrains project](https://jb.gg/badges/official-flat-square.svg)](https://confluence.jetbrains.com/display/ALL/JetBrains+on+GitHub)
-[![Twitter Follow](https://img.shields.io/twitter/follow/JBPlatform?style=flat-square)](https://twitter.com/JBPlatform/) 
-[![Slack](https://img.shields.io/badge/Slack-%23intellij--platform-blue)](https://plugins.jetbrains.com/slack)
+[![official JetBrains project](https://jb.gg/badges/official.svg)][jb:confluence-on-gh]
+[![Twitter Follow](https://img.shields.io/twitter/follow/JBPlatform?style=flat)][jb:twitter]
+[![Build](https://github.com/JetBrains/intellij-sdk-docs/workflows/Build/badge.svg)][gh:build]
+[![Slack](https://img.shields.io/badge/Slack-%23intellij--platform-blue)][jb:slack]
 
 ## IntelliJ Platform SDK Documentation
 
@@ -14,3 +15,8 @@ Please report any content inconsistencies, outdated materials, cosmetic issues, 
 ## Working With the Site Locally
 To check out and run a local copy of the site, follow the steps outlined in [Contributing](https://www.jetbrains.org/intellij/sdk/docs/CONTRIBUTING.html).
 
+[gh:build]: https://github.com/JetBrains/intellij-sdk-docs/actions?query=workflow%3ABuild
+
+[jb:confluence-on-gh]: https://confluence.jetbrains.com/display/ALL/JetBrains+on+GitHub
+[jb:slack]: https://plugins.jetbrains.com/slack
+[jb:twitter]: https://twitter.com/JBPlatform

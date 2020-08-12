@@ -14,16 +14,17 @@ import javax.swing.*;
  * Supports creating and managing a JPanel for the Settings Dialog.
  */
 public class AppSettingsComponent {
+
   private final JPanel myMainPanel;
   private final JBTextField myUserNameText = new JBTextField();
-  private final JBCheckBox myIdeaUserStatus = new JBCheckBox("Do You Use IntelliJ IDEA? ");
+  private final JBCheckBox myIdeaUserStatus = new JBCheckBox("Do you use IntelliJ IDEA? ");
 
   public AppSettingsComponent() {
     myMainPanel = FormBuilder.createFormBuilder()
-                  .addLabeledComponent(new JBLabel("Enter User Name: "), myUserNameText, 1, false)
-                  .addComponent(myIdeaUserStatus, 1)
-                  .addComponentFillVertically(new JPanel(), 0)
-                  .getPanel();
+            .addLabeledComponent(new JBLabel("Enter user name: "), myUserNameText, 1, false)
+            .addComponent(myIdeaUserStatus, 1)
+            .addComponentFillVertically(new JPanel(), 0)
+            .getPanel();
   }
 
   public JPanel getPanel() {

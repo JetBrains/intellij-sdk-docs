@@ -2,16 +2,16 @@
 
 <idea-plugin>
 
-  <!--  Unique id for this plugin. Must stay constant for the life of the plugin.  -->
+  <!-- Unique id for this plugin. Must stay constant for the life of the plugin. -->
   <id>org.intellij.sdk.module</id>
 
-  <!-- Text to display as name on Preferences/Settings | Plugin page  -->
-  <name>SDK: Module Type Sample Project</name>
+  <!-- Text to display as name on Preferences/Settings | Plugin page -->
+  <name>SDK: Module Type Sample</name>
 
   <!-- Product and plugin compatibility requirements -->
   <depends>com.intellij.modules.platform</depends>
 
-  <!-- Text to display as description on Preferences/Settings | Plugin page  -->
+  <!-- Text to display as description on Preferences/Settings | Plugin page -->
   <description>
     <![CDATA[
       Demonstrates example of working with module types<br>Adds <i>SDK Demo Module</i> to <b>File | New | Project...</b>

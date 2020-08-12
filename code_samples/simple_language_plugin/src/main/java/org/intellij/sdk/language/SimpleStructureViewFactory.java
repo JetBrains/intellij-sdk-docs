@@ -12,6 +12,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public class SimpleStructureViewFactory implements PsiStructureViewFactory {
+
   @Nullable
   @Override
   public StructureViewBuilder getStructureViewBuilder(@NotNull final PsiFile psiFile) {
@@ -23,4 +24,5 @@ public class SimpleStructureViewFactory implements PsiStructureViewFactory {
       }
     };
   }
+
 }

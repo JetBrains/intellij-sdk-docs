@@ -13,6 +13,10 @@
       </indentOptions>
     </codeStyleSettings>
     <codeStyleSettings language="JAVA">
+      <option name="BLANK_LINES_AFTER_CLASS_HEADER" value="1" />
+      <option name="BLANK_LINES_BEFORE_CLASS_END" value="1" />
+      <option name="IF_BRACE_FORCE" value="3" />
+      <option name="WRAP_ON_TYPING" value="0" />
       <indentOptions>
         <option name="INDENT_SIZE" value="2" />
         <option name="TAB_SIZE" value="2" />

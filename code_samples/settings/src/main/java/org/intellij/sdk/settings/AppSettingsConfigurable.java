@@ -3,7 +3,6 @@
 package org.intellij.sdk.settings;
 
 import com.intellij.openapi.options.Configurable;
-import com.intellij.openapi.options.ConfigurationException;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.Nullable;
 
@@ -11,8 +10,9 @@ import javax.swing.*;
 
 /**
  * Provides controller functionality for application settings.
-*/
+ */
 public class AppSettingsConfigurable implements Configurable {
+
   private AppSettingsComponent mySettingsComponent;
 
   // A default constructor with no arguments is required because this implementation
@@ -45,7 +45,7 @@ public class AppSettingsConfigurable implements Configurable {
   }
 
   @Override
-  public void apply() throws ConfigurationException {
+  public void apply() {
     AppSettingsState settings = AppSettingsState.getInstance();
     settings.userId = mySettingsComponent.getUserNameText();
     settings.ideaStatus = mySettingsComponent.getIdeaUserStatus();

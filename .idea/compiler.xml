@@ -35,8 +35,6 @@
       <module name="module" target="1.8" />
       <module name="module.main" target="1.8" />
       <module name="module.test" target="1.8" />
-      <module name="org.intellij.sdk.maxOpenProjects.main" target="1.8" />
-      <module name="org.intellij.sdk.maxOpenProjects.test" target="1.8" />
       <module name="project_model" target="1.8" />
       <module name="project_model.main" target="1.8" />
       <module name="project_model.test" target="1.8" />

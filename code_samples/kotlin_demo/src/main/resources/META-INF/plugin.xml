@@ -2,7 +2,7 @@
 
 <idea-plugin>
 
-  <!--  Unique id for this plugin. Must stay constant for the life of the plugin.  -->
+  <!-- Unique id for this plugin. Must stay constant for the life of the plugin. -->
   <id>org.intellij.sdk.kotlin</id>
 
   <!-- Text to display as name on Preferences/Settings | Plugin page -->
@@ -11,10 +11,10 @@
   <!-- Indicate this plugin can be loaded in all IntelliJ Platform-based products. -->
   <depends>com.intellij.modules.platform</depends>
 
-  <!-- Text to display as description on Preferences/Settings | Plugin page  -->
+  <!-- Text to display as description on Preferences/Settings | Plugin page -->
   <description>
     <![CDATA[
-    Adds a <i>Greeting</i> menu group anchored last in the <b>Main Menu</b>
+      Adds a <i>Greeting</i> menu group anchored last in the <b>Main Menu</b>
     ]]>
   </description>
   <change-notes>

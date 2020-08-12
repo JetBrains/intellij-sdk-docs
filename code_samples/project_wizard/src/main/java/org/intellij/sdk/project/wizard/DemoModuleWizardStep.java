@@ -13,11 +13,11 @@ import org.jetbrains.annotations.NotNull;
 import javax.swing.*;
 
 public class DemoModuleWizardStep extends ModuleBuilder {
-  public void setupRootModel(@NotNull ModifiableRootModel modifiableRootModel) {
 
+  public void setupRootModel(@NotNull ModifiableRootModel modifiableRootModel) {
   }
 
-  public ModuleType getModuleType() {
+  public ModuleType<?> getModuleType() {
     return ModuleType.EMPTY; //or it could be other module type
   }
 
@@ -36,4 +36,5 @@ public class DemoModuleWizardStep extends ModuleBuilder {
       }
     }};
   }
+
 }

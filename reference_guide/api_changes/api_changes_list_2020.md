@@ -193,7 +193,11 @@ Java EE plugins split
 Added Union Types Support
 : Please see [PhpStorm Breaking Changes](/products/phpstorm/php_open_api_breaking_changes.md).
 
+                              
+### Changes in Kotlin Plugin 1.4
 
+`org.jetbrains.kotlin.idea.core.formatter.KotlinCodeStyleSettings.PACKAGES_TO_USE_STAR_IMPORTS` field type changed from `PackageEntryTable` to `KotlinPackageEntryTable`
+: This change was required to implement import layout order for Kotlin. `KotlinPackageEntryTable` can be used in the same manner as `PackageEntryTable`.
 
 ## 2020.1
 

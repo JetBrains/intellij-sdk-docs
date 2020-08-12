@@ -35,7 +35,7 @@ See [Registering Actions in plugin.xml](/basics/action_system.md#registering-act
 ### Binding Action Groups to UI Components
 The following sample shows how to use an `<add-to-group>` element to place a custom action group relative to an entry in the **Tools** menu. 
 The attribute `relative-to-action` references the action `id` for `PopupDialogAction`, which is not a native IntelliJ menu entry. 
-Rather `PopupDialogAction` is defined in the same [`plugin.xml`](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/action_basics/src/main/resources/META-INF/plugin.xml) file.
+Rather `PopupDialogAction` is defined in the same [`plugin.xml`](https://github.com/JetBrains/intellij-sdk-code-samples/tree/master/action_basics/src/main/resources/META-INF/plugin.xml) file.
 This group is placed after the single entry for the action `PopupDialogAction`, as defined in the tutorial [Creating Actions](working_with_custom_actions.md#registering-an-action-with-the-new-action-form).
 
 ```xml
@@ -94,7 +94,7 @@ to create the `CustomDefaultActionGroup` class in the `action_basics` code sampl
 ```
 
 ### Registering the Custom Action Group
-As in the case with the static action group, the action `<group>` should be declared in the `<actions>` section of the `plugin.xml` file, for example, the [action_basics](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/action_basics/src/main/resources/META-INF/plugin.xml) plugin. 
+As in the case with the static action group, the action `<group>` should be declared in the `<actions>` section of the `plugin.xml` file, for example, the [action_basics](https://github.com/JetBrains/intellij-sdk-code-samples/tree/master/action_basics/src/main/resources/META-INF/plugin.xml) plugin. 
 The declaration below shows:
 * The presence of the `class` attribute in the `<group>` element, which tells the IntelliJ Platform framework to use `CustomDefaultActionGroup` rather than the default implementation.
 * Setting the group's `popup` attribute to allow submenus. 
@@ -152,7 +152,7 @@ The set of actions in the `ActionGroup` is dynamically defined.
 
 ### Creating Variable Action Group
 To create a group of actions with a variable number of actions, extend `ActionGroup`.
-For example, as in the `action_basics` class [`DynamicActionGroup`](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/action_basics/src/main/java/org/intellij/sdk/action/DynamicActionGroup.java) code:
+For example, as in the `action_basics` class [`DynamicActionGroup`](https://github.com/JetBrains/intellij-sdk-code-samples/tree/master/action_basics/src/main/java/org/intellij/sdk/action/DynamicActionGroup.java) code:
 
 ```java
 public class DynamicActionGroup extends ActionGroup {
@@ -160,7 +160,7 @@ public class DynamicActionGroup extends ActionGroup {
 ```
 
 ### Registering a Variable Action Group
-To register the dynamic menu group, a `<group>` attribute needs to be placed in the `<actions>` section of [`plugin`.xml](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/action_basics/src/main/resources/META-INF/plugin.xml).
+To register the dynamic menu group, a `<group>` attribute needs to be placed in the `<actions>` section of [`plugin`.xml](https://github.com/JetBrains/intellij-sdk-code-samples/tree/master/action_basics/src/main/resources/META-INF/plugin.xml).
 When enabled, this group appears at the entry just below the [Static Grouped Actions](#binding-action-groups-to-ui-components) in the **Tools** menu:
 
 ```xml

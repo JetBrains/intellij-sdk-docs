@@ -20,7 +20,7 @@ See
 ## 1. Register Custom TreeStructure Provider
 
 Add new *treeStructureProvider* extension to the
-[plugin.xml](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/tree_structure_provider/src/main/resources/META-INF/plugin.xml)
+[plugin.xml](https://github.com/JetBrains/intellij-sdk-code-samples/tree/master/tree_structure_provider/src/main/resources/META-INF/plugin.xml)
 
 ```java
 <extensions defaultExtensionNs="com.intellij">

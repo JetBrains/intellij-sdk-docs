@@ -20,9 +20,9 @@ It may be helpful to open that project in an IntelliJ Platform-based IDE, build 
 
 ## Creating a New Menu Action
 In this example, we access the `Editor` from an action. 
-The source code for the Java class in this example is [EditorIllustrationAction](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/editor_basics/src/main/java/org/intellij/sdk/editor/EditorIllustrationAction.java).
+The source code for the Java class in this example is [EditorIllustrationAction](https://github.com/JetBrains/intellij-sdk-code-samples/tree/master/editor_basics/src/main/java/org/intellij/sdk/editor/EditorIllustrationAction.java).
 
-To register the action, we must add the corresponding elements to the `<actions>` section of the plugin configuration file [plugin.xml](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/editor_basics/src/main/resources/META-INF/plugin.xml). 
+To register the action, we must add the corresponding elements to the `<actions>` section of the plugin configuration file [plugin.xml](https://github.com/JetBrains/intellij-sdk-code-samples/tree/master/editor_basics/src/main/resources/META-INF/plugin.xml). 
 For more information, refer to the [Registering Actions](/tutorials/action_system/working_with_custom_actions.md#registering-a-custom-action) section of the Actions Tutorial.
 The `EditorIllustrationAction` action is registered in the group `EditorPopupMenu` so it will be available from the context menu when focus is on the editor:
 

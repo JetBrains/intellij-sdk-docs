@@ -9,16 +9,13 @@
 Learn how to build plugins using IntelliJ Platform SDK for the [JetBrains products][jb:products] by experimenting with
 our code samples. These samples show you how features work and help you jumpstart your plugins.
 
-There is also [IntelliJ Platform Plugin Template][gh:template] project available, which is a repository that provides
-a pure boilerplate template. Plugin Template makes it easier to create a new plugin project by preconfiguring
-the project scaffold and CI using GitHub Actions, linking to the proper documentation pages, and keeping everything
-organized.
+There is also [IntelliJ Platform Plugin Template][gh:template] project available.
 
 ## Structure
 
 Code Samples depend on the [IntelliJ Platform SDK][docs] and [Gradle][docs:gradle] as a build system.
 
-The main plugin definition file is stored in the `plugin.xml` file, which is created accordingly
+The main plugin definition file is stored in the `plugin.xml` file, which is created according
 to the [Plugin Configuration File documentation][docs:plugin.xml]. It describes definitions of the actions, extensions,
 or listeners provided by the plugin.
 

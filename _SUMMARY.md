@@ -17,6 +17,7 @@
 ## Part I - Plugins
 * [Quick Start Guide](basics/basics.md)
     * [Main Types of Plugins](basics/types_of_plugins.md)
+* [Code Samples](https://github.com/JetBrains/intellij-sdk-code-samples)
 * [Creating Your First Plugin](basics/getting_started.md)
     * [Using GitHub Template](tutorials/github_template.md)
     * [Using Gradle](tutorials/build_system.md)

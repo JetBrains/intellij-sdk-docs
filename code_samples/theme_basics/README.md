@@ -5,7 +5,7 @@
 
 Custom UI Themes are available beginning in version 2019.1.
 
-Creating a custom UI Theme is a process of choosing a base IDE Theme (Light or Darcula) then changing aspect
+Creating a custom UI Theme is a process of choosing a base IDE Theme (Light or Darcula) then changing aspects
 of the base Theme definition. Custom UI Themes can:
 - substitute icons,
 - change the colors of icons and UI controls,
@@ -18,7 +18,7 @@ of the base Theme definition. Custom UI Themes can:
 Theme Basics
 plugin depends on the [IntelliJ Platform SDK][docs] and [DevKit][docs:devkit] as a build system.
 
-The main plugin definition file is stored in the [plugin.xml][file:plugin.xml] file, which is created accordingly
+The main plugin definition file is stored in the [plugin.xml][file:plugin.xml] file, which is created according
 to the [Plugin Configuration File documentation][docs:plugin.xml]. It describes definitions of the actions, extensions,
 or listeners provided by the plugin.
 

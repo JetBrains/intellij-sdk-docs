@@ -40,7 +40,7 @@
               language="Simple" extensions="simple"/>
     <!--
       Only required for versions of the IntelliJ Platform prior to v2019.2.
-      Use fileTypeFactory extension point INSTEAD of fileType.
+      Use 'com.intellij.fileTypeFactory' extension point INSTEAD of above 'com.intellij.fileType'.
       <fileTypeFactory implementation="org.intellij.sdk.language.SimpleFileTypeFactory"/>
     -->
     <lang.parserDefinition language="Simple" implementationClass="org.intellij.sdk.language.SimpleParserDefinition"/>

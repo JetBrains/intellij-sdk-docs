@@ -20,7 +20,7 @@ See
 ## 1. Register Custom TreeStructure Provider
 
 Add new *treeStructureProvider* extension to the
-[plugin.xml](https://github.com/JetBrains/intellij-sdk-code-samples/tree/master/tree_structure_provider/src/main/resources/META-INF/plugin.xml)
+[plugin.xml](https://github.com/JetBrains/intellij-sdk-code-samples/blob/master/tree_structure_provider/src/main/resources/META-INF/plugin.xml)
 
 ```java
 <extensions defaultExtensionNs="com.intellij">
@@ -69,5 +69,5 @@ After going through the steps described above you can see only text files and di
 
 
 Check out 
-[plugin source code](https://github.com/JetBrains/intellij-sdk-docs/tree/master/code_samples/tree_structure_provider)
+[plugin source code](https://github.com/JetBrains/intellij-sdk-code-samples/tree/master/tree_structure_provider)
 and build the project to see how TreeStructureView provider works in practice.

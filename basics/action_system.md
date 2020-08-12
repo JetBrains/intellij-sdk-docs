@@ -85,7 +85,7 @@ See [Grouping Actions](#grouping-actions) for more information about the `compac
 > **NOTE** If an action is added to a toolbar, its `update()` can be called if there was any user activity or focus transfer. 
 If the action's availability changes in the absence of these events, then call [`ActivityTracker.getInstance().inc()`](upsource:///platform/platform-api/src/com/intellij/ide/ActivityTracker.java) to notify the action subsystem to update all toolbar actions. 
 
-An example of enabling a menu action based on whether a project is open is demonstrated in [`PopupDialogAction.update()`](https://github.com/JetBrains/intellij-sdk-code-samples/tree/master/action_basics/src/main/java/org/intellij/sdk/action/PopupDialogAction.java) method. 
+An example of enabling a menu action based on whether a project is open is demonstrated in [`PopupDialogAction.update()`](https://github.com/JetBrains/intellij-sdk-code-samples/blob/master/action_basics/src/main/java/org/intellij/sdk/action/PopupDialogAction.java) method. 
 
 ### Overriding the AnAction.actionPerformed Method
 When the user selects an enabled action, be it from a menu or toolbar, the action's `AnAction.actionPerformed()` method is called. 
@@ -98,7 +98,7 @@ The code that executes in the `AnAction.actionPerformed()` method should execute
 
 <!-- TODO: does this all happen inside a transaction? Does that ensure the undo step? -->
 
-An example of inspecting PSI elements is demonstrated in the SDK code sample `action_basics` [`PopupDialogAction.actionPerformed()`](https://github.com/JetBrains/intellij-sdk-code-samples/tree/master/action_basics/src/main/java/org/intellij/sdk/action/PopupDialogAction.java) method. 
+An example of inspecting PSI elements is demonstrated in the SDK code sample `action_basics` [`PopupDialogAction.actionPerformed()`](https://github.com/JetBrains/intellij-sdk-code-samples/blob/master/action_basics/src/main/java/org/intellij/sdk/action/PopupDialogAction.java) method. 
 
 ### Action IDs
 Every action and action group has a unique identifier.

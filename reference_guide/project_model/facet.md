@@ -9,7 +9,7 @@ A module can have multiple facets. E.g. Spring Framework specific configuration 
 For more information about facets see [Adding Support for Frameworks and Technologies](https://www.jetbrains.com/help/idea/adding-support-for-frameworks-and-technologies.html) and the help page for the [Facets dialog](https://www.jetbrains.com/help/idea/facet-page.html) in the IntelliJ IDEA Web Help.
 
 ## Facet Basics Sample
-Please see [Facet Basics](https://github.com/JetBrains/intellij-sdk-docs/tree/master/code_samples/facet_basics) sample plugin project.
+Please see [Facet Basics](https://github.com/JetBrains/intellij-sdk-code-samples/tree/master/facet_basics) sample plugin project.
 
 ## Working with Facets
 

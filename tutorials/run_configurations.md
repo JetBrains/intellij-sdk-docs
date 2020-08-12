@@ -17,7 +17,7 @@ Create an empty plugin project as described in [Creating a Plugin Project](/basi
 ## 1. Register a New ConfigurationType
 
 Add new `configurationType` extension to the 
-[plugin.xml](https://github.com/JetBrains/intellij-sdk-code-samples/tree/master/run_configuration/src/main/resources/META-INF/plugin.xml)
+[plugin.xml](https://github.com/JetBrains/intellij-sdk-code-samples/blob/master/run_configuration/src/main/resources/META-INF/plugin.xml)
 
 ```xml
 <extensions defaultExtensionNs="com.intellij">

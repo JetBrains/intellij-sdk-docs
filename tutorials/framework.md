@@ -4,10 +4,10 @@ title: Supporting Frameworks
 <!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 The following tutorial shows how to support a custom framework type for a project and make this framework type embedded in a project wizard as a UI component.
-The examples in this tutorial rely heavily on the [framework_basics](https://github.com/JetBrains/intellij-sdk-docs/tree/master/code_samples/framework_basics) code sample.
+The examples in this tutorial rely heavily on the [framework_basics](https://github.com/JetBrains/intellij-sdk-code-samples/tree/master/framework_basics) code sample.
 
 ## 1. Creating a New Framework
-In oder to make a custom framework available and configurable for a project the [`FrameworkTypeEx`](upsource:///java/idea-ui/src/com/intellij/framework/FrameworkTypeEx.java) class needs to be extended, in this example to make the [DemoFramework](https://github.com/JetBrains/intellij-sdk-code-samples/tree/master/framework_basics/src/main/java/org/intellij/sdk/framework/DemoFramework.java) class.
+In oder to make a custom framework available and configurable for a project the [`FrameworkTypeEx`](upsource:///java/idea-ui/src/com/intellij/framework/FrameworkTypeEx.java) class needs to be extended, in this example to make the [DemoFramework](https://github.com/JetBrains/intellij-sdk-code-samples/blob/master/framework_basics/src/main/java/org/intellij/sdk/framework/DemoFramework.java) class.
 
 ```java
 public class DemoFramework extends FrameworkTypeEx {
@@ -16,7 +16,7 @@ public class DemoFramework extends FrameworkTypeEx {
 
 ## 2. Registering Framework
 The newly created framework class should be registered as an extension point by adding `com.intellij.framework.type` extension in  
-[`plugin.xml`](https://github.com/JetBrains/intellij-sdk-code-samples/tree/master/framework_basics/src/main/resources/META-INF/plugin.xml)
+[`plugin.xml`](https://github.com/JetBrains/intellij-sdk-code-samples/blob/master/framework_basics/src/main/resources/META-INF/plugin.xml)
 configuration file:
 
 ```xml

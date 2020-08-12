@@ -9,7 +9,7 @@ By registering actions, you can add your own menu items, toolbar buttons and key
 * [Grouping Actions](action_system/grouping_action.md)
 
 
-The source code for the [`action_basics`](https://github.com/JetBrains/intellij-sdk-docs/tree/master/code_samples/action_basics) code sample is used throughout this tutorial.
+The source code for the [`action_basics`](https://github.com/JetBrains/intellij-sdk-code-samples/tree/master/action_basics) code sample is used throughout this tutorial.
 
 
 

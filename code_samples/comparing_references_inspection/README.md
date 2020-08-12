@@ -6,10 +6,9 @@
 Comparing References Inspection Sample demonstrates the implementation
 of the [Code Inspections][docs:code_inspections] feature for Java classes. 
 
-The plugin inspects your Java code and highlights the fragments containing the comparison of the two `String` or `Date`
-variables. If such check uses `==` or `!=` expression, an inspection provides a *quick fix* action that proposes
-to replace it with `.equals()` instead. I.e., detected object references compared using `a == b` or `a != b` will be
-converted using *Quick Fix* to `a.equals(b)` or `!a.equals(b)` respectively.
+The plugin inspects your Java code and highlights any fragments containing the comparison of two `String` or `Date`
+variables. If such a check finds a comparison using the `==` or !`=` operators instead of the `.equals()` method,
+the plugin proposes a *quick-fix* action.
 
 ### Extension Points
 

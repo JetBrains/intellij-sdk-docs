@@ -3,8 +3,7 @@
 
 ## Quickstart
 
-Conditional Operator Converter provides an intention for converting the *ternary operator*
-into the *if* statement, i.e.:
+Conditional Operator Converter provides an intention for converting the *ternary operator* into the *if* statement, i.e.:
 
 ```java
 public class X {
@@ -32,8 +31,7 @@ public class X {
 ```
 
 To invoke the intention action, it is necessary to place the caret on the `?` character of the ternary operator.
-The converter in the `isAvailable` method, has defined the token check to match `JavaTokenType.QUEST`, which is `?`
-character. 
+The converter in the `isAvailable` method, has defined the token check to match `JavaTokenType.QUEST`, which is `?` character.
 
 ### Extension Points
 

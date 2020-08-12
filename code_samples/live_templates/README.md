@@ -5,8 +5,8 @@
 
 Live Templates Sample Project implements two example live templates for the Markdown language:
 
-- New link reference - by typing the `{<TAB>`, following template will be inserted: `[$TEXT$]($LINK$)$END$`
-- Convert to title case - retrieves the text from the macro or selection, if any is available.
+- New link reference - by typing the `{<TAB>`, the following template will be inserted: `[$TEXT$]($LINK$)$END$`
+- Convert to title case - retrieves the text from the macro or selection, if available.
 
 ### Extension Points
 

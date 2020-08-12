@@ -3,12 +3,11 @@
 
 ## Quickstart
 
-Facets extend base IDE features with additional frameworks support by providing additional libraries, dependencies,
-technologies, and UI elements for configuring framework-specific settings.
+Facets extend base IDE features with additional frameworks support by providing additional libraries, dependencies, technologies, and UI elements for configuring framework-specific settings.
 
 Facet Basics represents configuration specific for a particular framework or technology, associated with a module.
-SDK Facet is available to use in the `Project Settings > Facets` section and allows to specify any configuration
-specified by the `FacetConfiguration` implementation - path to the SDK in this case.
+SDK Facet is available to use in the `Project Settings > Facets` section.
+It allows us to specify any configuration specified by the `FacetConfiguration` implementation - path to the SDK in this case.
 
 ### Extension Points
 

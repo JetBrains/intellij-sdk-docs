@@ -3,8 +3,7 @@
 
 ## Quickstart
 
-Simple Kotlin Demo project is an example of the Kotlin-based plugin providing the most straight forward action
-implemented by the [HelloAction.kt][file:HelloAction] Kotlin class.
+Simple Kotlin Demo project is an example of the Kotlin-based plugin that provides the most straightforward action implemented by the [HelloAction.kt][file:HelloAction] Kotlin class.
 
 Action, added to the Main Menu, shows a message dialog when invoked.
 

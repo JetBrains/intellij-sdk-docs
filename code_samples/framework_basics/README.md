@@ -3,8 +3,8 @@
 
 ## Quickstart
 
-Framework Sample Project is providing a [DemoFramework][file:DemoFramework] which allows to embed a framework support
-within the Project Wizard. This sample implementation adds a new *SDK Demo Framework* support in the Java type project.
+Framework Sample Project provides a [DemoFramework][file:DemoFramework], which allows embedding framework support within the Project Wizard.
+This sample implementation adds a new *SDK Demo Framework* support in the Java type project.
 
 ### Extension Points
 

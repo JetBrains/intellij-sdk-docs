@@ -3,8 +3,7 @@
 
 ## Quickstart
 
-Defines a new language, _Simple language_ with support for syntax highlighting, annotations, code completion, and other
-features.
+Defines a new language, _Simple language_ with support for syntax highlighting, annotations, code completion, and other features.
 
 ### Extension Points
 

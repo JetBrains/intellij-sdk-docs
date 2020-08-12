@@ -3,11 +3,10 @@
 
 ## Quickstart
 
-Editor Sample Project provides a [TypedHandlerDelegate][sdk:TypedHandlerDelegate] implementation, which inserts
-`editor_basics` on the top of the edited document any time user types a character. In addition, three actions
-are available in the Editor context menu:
+Editor Sample Project provides a [TypedHandlerDelegate][sdk:TypedHandlerDelegate] implementation, which inserts `editor_basics` on the top of the edited document any time user types a character.
+In addition, three actions are available in the Editor context menu:
 
-- Editor Replace Text - replaces selected text with `editor_basics`,
+- Editor Replace Text - replaces the selected text with `editor_basics`,
 - Editor Add Caret - adds extra caret below the current one,
 - Caret Position - shows message dialog with information about the caret position.
 

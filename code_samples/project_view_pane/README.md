@@ -3,9 +3,8 @@
 
 ## Quickstart
 
-The current demo describes an implementation of the `projectViewPane` extension point, which allows to create
-an additional presentation type for the Project view pane. `ImagesProjectViewPane` limits the project tree to the images
-only.
+The current demo describes an implementation of the `projectViewPane` extension point, which allows creating an additional presentation type for the Project view pane.
+`ImagesProjectViewPane` limits the project tree to the images only.
 
 ### Extension Points
 

@@ -3,16 +3,12 @@
 
 ## Quickstart
 
-Action Sample Project demonstrates registering actions process in a various configuration.
-Each action is an extension of the [`AnAction`][sdk:AnAction] abstract class and brings the possibility
-of extending IDE with an event performed with the user interaction - i.e. clicking the button, using keyboard
-or mouse shortcuts.
+Action Sample Project demonstrates registering actions process in various configurations.
+Each action is an extension of the [`AnAction`][sdk:AnAction] abstract class and brings the possibility of extending IDE with an event performed with the user interaction - i.e., clicking the button, using the keyboard or mouse shortcuts.
 
-Plugin registers the [`PopupDialogAction`][file:PopupDialogAction] action, which provides a popup dialog as a feedback,
-in three different ways:
+Plugin registers the [`PopupDialogAction`][file:PopupDialogAction] action, which provides a popup dialog as a feedback, in three different ways:
 
-- by assigning the keyboard (<kbd>Ctrl/Cmd</kbd>+<kbd>Alt</kbd>+<kbd>A</kbd>, <kbd>C</kbd>) and mouse shortcuts
-  (<kbd>Ctrl/Cmd</kbd> + <kbd>Mouse Button 3</kbd> + <kbd>Double Click</kbd>),
+- by assigning the keyboard (<kbd>Ctrl/Cmd</kbd>+<kbd>Alt</kbd>+<kbd>A</kbd>, <kbd>C</kbd>) and mouse shortcuts (<kbd>Ctrl/Cmd</kbd> + <kbd>Mouse Button 3</kbd> + <kbd>Double Click</kbd>),
 - by adding action item to the `ToolsMenu` group, available in Tools menu,
 - by adding action item to the `EditorPopupMenu` group, available in Editor's context menu.
 

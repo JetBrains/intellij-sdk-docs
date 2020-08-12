@@ -3,13 +3,11 @@
 
 ## Quickstart
 
-Tool Windows are child windows of the IDE used to display information. These windows generally have their own toolbars
-(referred to as tool window bars) along the outer edges of the main window containing one or more tool window buttons,
-which activate panels displayed on the left, bottom, and right sides of the main IDE window.
+Tool Windows are child windows of the IDE used to display information.
+These windows generally have their toolbars (referred to as tool window bars) along the outer edges of the main window containing one or more tool window buttons, which activate panels displayed on the left, bottom, and right sides of the main IDE window.
 
-The current implementation displays a `JPanel` component containing simple icons and information about the actual
-system date, time, and timezone. Component is provided by the `MyToolWindow` class through the `getContent()` method
-invoked inside the `MyToolWindowFactory` implementation. 
+The current implementation displays a `JPanel` component containing simple icons and information about the actual system date, time, and timezone.
+Component is provided by the `MyToolWindow` class through the `getContent()` method invoked inside the `MyToolWindowFactory` implementation.
 
 ### Extension Points
 

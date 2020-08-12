@@ -3,8 +3,8 @@
 
 ## Quickstart
 
-This demo project shows how to add an extra step to the Project Wizard to provide additional project configuration
-settings. The new step contains a simple `JLabel` element as an example presentation of the new step content.
+This demo project shows how to add an extra step to the Project Wizard to provide additional project configuration settings.
+The new step contains a simple `JLabel` element as an example presentation of the new step content.
 
 ### Extension Points
 

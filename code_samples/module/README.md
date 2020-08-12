@@ -3,9 +3,8 @@
 
 ## Quickstart
 
-Sample project that presents an implementation of the `moduleType` extension point, which adds a new module type
-to the *New Module* Project Wizard. Module with a custom name, description and icon set provides a `ModuleBuilder`
-with extra steps present for additional module configuration.
+The sample project that presents an implementation of the `moduleType` extension point, which adds a new module type to the *New Module* Project Wizard.
+Module with a custom name, description, and icon set provides a `ModuleBuilder` with extra steps present for additional module configuration.
 
 ### Extension Points
 

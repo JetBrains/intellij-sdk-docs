@@ -3,8 +3,7 @@
 
 ## Quickstart
 
-PSI Demo project demonstrates working with the PSI Navigation by implementing `AnAction` that through the message
-dialog, informs about:
+PSI Demo project demonstrates working with the PSI Navigation by implementing `AnAction` that through the message dialog, informs about:
 - an element at the caret,
 - containing method,
 - containing class,

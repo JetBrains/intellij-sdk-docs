@@ -1,9 +1,9 @@
+# IntelliJ Platform SDK Documentation
+
 [![official JetBrains project](https://jb.gg/badges/official.svg)][jb:confluence-on-gh]
 [![Twitter Follow](https://img.shields.io/twitter/follow/JBPlatform?style=flat)][jb:twitter]
 [![Build](https://github.com/JetBrains/intellij-sdk-docs/workflows/Build/badge.svg)][gh:build]
 [![Slack](https://img.shields.io/badge/Slack-%23intellij--platform-blue)][jb:slack]
-
-## IntelliJ Platform SDK Documentation
 
 Welcome to the repository for [IntelliJ Platform SDK Documentation](https://www.jetbrains.org/intellij/sdk/docs/) site.
 

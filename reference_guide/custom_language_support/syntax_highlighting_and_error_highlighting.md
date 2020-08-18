@@ -16,6 +16,9 @@ Highlighting from multiple `TextAttributesKey` items can be layered - for exampl
 New functionality about Language Defaults and support for additional color schemes as detailed in
 [Color Scheme Management](/reference_guide/color_scheme_management.md).
 
+                             
+> **TIP** To force re-highlighting, use 
+> [`DaemonCodeAnalyzer.restart()`](upsource:///platform/analysis-api/src/com/intellij/codeInsight/daemon/DaemonCodeAnalyzer.java).
 
 The syntax and error highlighting is performed on multiple levels: Lexer, Parser and (External) Annotator.
 

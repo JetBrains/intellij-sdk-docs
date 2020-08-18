@@ -22,7 +22,7 @@ By default, when building the site, all files are copied to the destination `_si
 Some files are excluded in the `_config.yml` and `sdkdocs-template/jekyll/_config-defaults.yml` files. 
 The documentation files themselves are [Markdown](https://github.github.com/gfm/) files (`*.md`) that get automatically converted to HTML when the site is built.
 
-### Liquid tags and filters
+### Liquid Tags and Filters
 Jekyll uses the [Liquid](https://shopify.github.io/liquid/) templating language to process files. 
 This process means standard Liquid tags and filters are available. 
 There should be little need to use them, however, as the Markdown format is already quite rich. 
@@ -79,7 +79,7 @@ Lorem ipsum...
 ```
 
 The redirect will create an `index.html` file that will automatically redirect to the generated `README.html` file. 
-Redirects enable the site URL to automatically show the `README.html` file - `http://localhost:4001/foo-test/` will try to load `index.html`, which will automatically redirect to `README.html`.
+Redirects enable the site URL to show the `README.html` file automatically - `http://localhost:4001/foo-test/` will try to load `index.html`, which will automatically redirect to `README.html`.
 
 It is also useful to redirect when renaming or moving files. 
 Multiple redirects can be added to the YAML header.
@@ -107,7 +107,7 @@ Consistent terminology helps the reader grasp new concepts more quickly:
 * The open-source code in the GitHub repository `intellij-community` is known as the _IntelliJ Platform_.
   Use the full phrase in the SDK documentation.
 * IDEs based on the IntelliJ Platform are described as _IntelliJ Platform-based IDEs_.
-  Once that term is used on a page, authors may use _IDEs_ 
+  Once that term is used on a page, authors may use _IDEs_.
 * When referring to JetBrains products always use the full name such as _IntelliJ IDEA Ultimate Edition_.
   However, only use product names when extensibility or functionality is particular to a product.
 
@@ -116,11 +116,11 @@ Consistent text styles are used to standardize references and keywords:
 * Menu paths are formatted as bold with pipe characters separating each level: \*\*Settings/Preferences \\\| Editor\*\* (**Settings/Preferences \| Editor**)
   Menu paths to settings always start with "Settings/Preferences" to cover all platforms.
 * Non-code keywords and quotations, or the names of non-code files, are formatted as italic style: \_UI Theme\_ (_UI Theme_), \_README.md\_ (_README.md_.) 
-  Examples of this file type include: _LICENSE.txt_ and _README.md_. 
+  Examples of this file type include _LICENSE.txt_ and _README.md_. 
 * Code keywords, or the names of files containing source code, are formatted as code style: \`interface\` (`interface`), \`plugin.xml\` (`plugin.xml`), \`AnAction\` (`AnAction`) 
-  Examples of this file type include: `build.gradle`, `AnAction.java` or `theme_basics.theme.json`.
+  Examples of this file type include `build.gradle`, `AnAction.java` or `theme_basics.theme.json`.
 * File formats are shown as all capital letters: PNG and XML.
-* File name extensions are not capitalized when part of a full file name, path, or URL: `filename.ext`.
+* Filename extensions are not capitalized when part of a full filename, path, or URL: `filename.ext`.
 * Represent keyboard shortcuts with HTML elements: `press <kbd>Alt</kbd>+<kbd>Insert</kbd>` becomes "press <kbd>Alt</kbd>+<kbd>Insert</kbd>"
 * See [Guidelines for Highlighting Syntax](#guidelines-for-highlighting-syntax) for more best practices for representing code fragments.
 * See [Links to IntelliJ Platform Source](#links-to-intellij-platform-source) for more details about representing names of source files in links.
@@ -247,12 +247,12 @@ The example below will be displayed as a callout, styled as a "note":
     
 
 The styles available for callouts are:
-* TODO - Do not use in the SDK documentation.
+* TODO - Do not use it in the SDK documentation.
   Instead, temporarily embed `[//]: # (TODO: description)` comments. 
   This format isn't visible in the HTML but is recognized by IDE inspections.
 * TIP - Information that makes the reader more productive.
 * NOTE - Information that is important for the reader to understand.
-  This callout is reserved for important points and concepts.
+  This callout is reserved for essential points and concepts.
 * WARNING - Information that is critical for the user to understand to prevent failures or errors.
 
 > **TIP** TODO/todo comments are discouraged in the master branch of `intellij-sdk-docs`. 
@@ -268,7 +268,7 @@ Images in this documentation are generally screenshots.
 The preferred image format is PNG at 144 DPI resolution.
 A resolution of 72 DPI is acceptable but may look blurry on high-resolution monitors.
 
-It is important to reduce the size of image files to prevent bloating the repository and impacting the performance of the documentation site.
+It is crucial to reduce the size of image files to prevent bloating the repository and impacting the performance of the documentation site.
 Resize an image to be nearly the desired width on a documentation page.
 Reducing an image's dimensions is the most effective way to reduce image file size. 
 Also, optimize the image files using a tool such as the [PNG optimizer](https://plugins.jetbrains.com/plugin/7942-png-optimizer).
@@ -313,4 +313,4 @@ The contents can be split into "parts" by separating the list into several lists
 
 If a node doesn't have a link but is just plain text, it will still appear in the table of contents but will be greyed out and not clickable. 
 It acts as a placeholder for a documentation item. 
-A placeholder is useful to keep track of what should be documented, but hasn't yet, and can be useful to show readers that the topic exists, but isn't yet documented (Pull Requests always welcome!).
+A placeholder is useful to keep track of what should be documented, but hasn't yet, and can be helpful to show readers that the topic exists, but isn't yet documented (Pull Requests always welcome!).

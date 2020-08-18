@@ -5,7 +5,7 @@ title: Guidelines for Creating IntelliJ Platform SDK Code Samples
 
 This document describes the coding guidelines used for authoring open-source IntelliJ Platform SDK code samples.
 Before you begin, please read this page thoroughly, as well as the [Code of Conduct](/CODE_OF_CONDUCT.md) and [License](https://github.com/JetBrains/intellij-sdk-docs/blob/master/LICENSE.txt) documents.
-For information about contributing to the IntelliJ Platform itself visit [Contributing to the IntelliJ Platform](/basics/platform_contributions.md).
+For information about contributing to the IntelliJ Platform itself, visit [Contributing to the IntelliJ Platform](/basics/platform_contributions.md).
 
   * Dummy list item
   {:toc}
@@ -58,16 +58,16 @@ Instead, concatenate a long name into camelCase such as `maxOpenedProjects`
 ## Group and Artifact ID
 When creating a Gradle-based IntelliJ Platform plugin, the plugin's Maven coordinates (`Group ID`, `Artifact ID`, `Version`) are defined.
 
-The `Group ID` for SDK plugins is always `org.intellij.sdk`.
+The `Group ID` for the SDK plugins is always `org.intellij.sdk`.
 
-The `Artifact ID` is a succinct derivative of the plugin directory name.
+The `Artifact ID` is a brief derivative of the plugin directory name.
 An `Artifact ID` should not contain symbols.
 
 For _basic_ code samples, it is not necessary to include "basic" in the `Artifact ID`.
 For example, the `foo_basics` directory name would have the `Artifact ID` `foo`.
 
 A plugin with a longer directory name, such as `conditional_operator_intention`, could have the more succinct `Artifact ID` of `conditionalOperatorIntention`.
-(For legacy reasons, the `conditional_operator_intention` plugin uses a more succinct `Artifact ID`.)
+(For legacy reasons, the `conditional_operator_intention` plugin uses a more concise `Artifact ID`.)
 
 ## Plugin ID Conventions
 The plugin ID appears between `<id>` elements in the `plugin.xml` file.
@@ -122,7 +122,7 @@ As of this writing, the use of Gradle in SDK code samples still relies heavily o
 At a later, second phase, the SDK code samples will transition to rely more on the Gradle configuration. 
 
 The default contents of a `build.gradle` file are produced by the [New Project Wizard](/tutorials/build_system/prerequisites.md#creating-a-gradle-based-intellij-platform-plugin-with-new-project-wizard). 
-A consistent structure for an SDK code sample's `build.gradle` file is important for clarity and is based on the default produced by the project wizard. 
+A consistent structure for an SDK code sample's `build.gradle` file is essential for clarity and is based on the default produced by the project wizard. 
 Comments in SDK code sample `build.gradle` files should only draw attention to the parts of the Gradle configuration that are unique for a plugin.
 
 For SDK code samples, a few alterations are needed to the default `build.gradle` file produced by the plugin wizard:
@@ -146,7 +146,7 @@ Comment profusely about unique elements and configurations, and comment sparingl
 The sequence of elements in an SDK code sample `plugin.xml` file is:
 * `<id>` Use the fully qualified [Plugin ID](#plugin-id-conventions).
 * `<name>` The name value does not have to match the [Plugin Directory Name](#directory-naming-conventions-for-sdk-plugins).
-  The name is used for display purposes, and should reflect the functionality of the plugin.
+  The name is used for display purposes and should reflect the functionality of the plugin.
   The name must start with "SDK: ".
 * `<version>` The code sample's version in MAJOR.MINOR.FIX format.
   * MAJOR corresponds to a significant upgrade in functionality.
@@ -167,7 +167,7 @@ The sequence of elements in an SDK code sample `plugin.xml` file is:
   Set the attributes:
   * `email` omit this attribute. 
   * `url` to the JetBrains Plugins Repository `"https://plugins.jetbrains.com"`
-* The remainder of the [plugin configuration elements](/basics/plugin_structure/plugin_configuration_file.md) should only appear if they are needed by a specific plugin.
+* The remainder of the [plugin configuration elements](/basics/plugin_structure/plugin_configuration_file.md) should only appear a specific plugin needs them.
 
 ## Testing
 IntelliJ Platform SDK code samples should be built and tested against the `since-build` version.
@@ -178,6 +178,6 @@ Testers should complete the following checklist.
 Here the term "IDE" means the IntelliJ Platform-based IDE in which the plugin is designed to run:
 * The plugin should load in the IDE.
 * The correct information about the plugin should display in the **Preferences \| Plugins** panel.
-* If applicable, the plugin UI such as tool windows, menu additions, etc. should display correctly.
+* If applicable, the plugin UI, such as tool windows, menu additions, etc. should display correctly.
 * The functionality of the plugin should be tested with a sample file.
 * If applicable, the plugin should pass unit tests.

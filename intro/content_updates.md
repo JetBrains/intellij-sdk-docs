@@ -25,7 +25,7 @@ Settings (Preferences)
 : Added [guide](/reference_guide/settings_guide.md) and [tutorial](/tutorials/settings_tutorial.md) on integrating with IDE Settings dialog.
 
 UI Inspector
-: Inspect Swing components and associated data (like `AnAction` for menu item) using [UI Inspector](/reference_guide/internal_actions/internal_ui_inspector.md).
+: Inspect Swing components and associated data (like `AnAction` for menu item) using the [UI Inspector](/reference_guide/internal_actions/internal_ui_inspector.md).
 
 ### March
 

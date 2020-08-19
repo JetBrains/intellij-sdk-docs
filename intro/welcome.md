@@ -20,6 +20,7 @@ Welcome to the _IntelliJ Platform_ SDK - the primary source of documentation for
 * [**Getting Help**](getting_help.md)
 * [**Creating Your First Plugin**](/basics/getting_started.md)
 * [**Useful Links**](/appendix/resources/useful_links.md)
+* [**Readme Badges**](/appendix/resources/readme_badges.md)
 
 ## Updates
 

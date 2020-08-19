@@ -28,7 +28,7 @@ The [UI Themes available for download](https://plugins.jetbrains.com/search?head
 
 ## Custom Language Support
 
-Custom language support provides basic functionality for working with a particular programming language. This includes:
+Custom language support provides basic functionality for working with a particular programming language, that includes:
 
 * File type recognition
 * Lexical analysis
@@ -42,7 +42,7 @@ Refer to the [Custom Language Support Tutorial](/tutorials/custom_language_suppo
 
 ## Framework Integration
 
-Framework integration consists of improved code insight features which are typical for a given framework, as well as the option to use framework-specific functionality directly from the IDE. Sometimes it also includes language support elements for a custom syntax or DSL.
+Framework integration consists of improved code insight features, which are typical for a given framework, as well as the option to use framework-specific functionality directly from the IDE. Sometimes it also includes language support elements for a custom syntax or DSL.
 
 * Specific code insight
 * Direct access to framework-specific functionality
@@ -51,9 +51,7 @@ Refer to the [Struts 2 plugin](https://github.com/JetBrains/intellij-plugins/tre
 
 ## Tool Integration
 
-Tool integration makes it possible to manipulate third-party tools and components directly from the IDE without switching contexts.
- 
-This implies:
+Tool integration makes it possible to manipulate third-party tools and components directly from the IDE without switching contexts, that implies:
 
 * Implementation of additional actions 
 * Related UI components

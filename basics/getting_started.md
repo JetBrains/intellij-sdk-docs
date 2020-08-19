@@ -11,13 +11,13 @@ The old [Plugin DevKit](#using-devkit) workflow still supports existing projects
 
 > **NOTE** If a new plugin will be Scala-based, a dedicated SBT plugin [sbt-idea-plugin](https://github.com/JetBrains/sbt-idea-plugin) is available. 
 
-The Gradle workflow offers a number of advantages:
+The Gradle workflow offers several advantages:
   * Representations of source sets, modules, and projects are portable,
   * Projects of any size or complexity usually require scripts for build management, which Gradle handles natively,
   * Training, documentation, and community help for general Gradle topics are widely available.
 
 Specific to development of IntelliJ Platform plugins with the Gradle plugin for IntelliJ IDEA:
-  * Changing plugin targets is easier because it is all done in `build.gradle`:
+  * Changing plugin targets is more comfortable because it is all done in `build.gradle`:
       * Switching the version of the target IntelliJ Platform (IDE),
       * Changing the target IntelliJ Platform-based IDE, e.g., from IntelliJ IDEA to PyCharm,
       * Running a plugin against alternate versions of the JetBrains runtime.

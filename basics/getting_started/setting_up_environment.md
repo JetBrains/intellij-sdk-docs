@@ -9,8 +9,8 @@ title: Setting Up a Development Environment
 
 Use the following checklist to ensure that you are ready to develop your custom plugins.
 
-- **Get IntelliJ IDEA CE source code** on your local computer. Getting IntelliJ IDEA CE source code is not a requirement for plugin development, but having it makes debugging your plugins much easier. For detailed instructions refer to the _Getting IntelliJ IDEA Community Edition Source Code_ section of [Check Out And Build Community Edition](upsource:///README.md). Note that building IntelliJ IDEA CE from source code is not required for plugin development.
-- **Plugin DevKit** plugin must be [enabled in IntelliJ IDEA](https://www.jetbrains.com/help/idea/managing-plugins.html)
+- **Get IntelliJ IDEA CE source code** on your local computer. Getting IntelliJ IDEA CE source code is not a requirement for plugin development, but having it makes debugging your plugins much more straightforward. For detailed instructions, refer to the _Getting IntelliJ IDEA Community Edition Source Code_ section of [Check Out And Build Community Edition](upsource:///README.md). Note that building IntelliJ IDEA CE from source code is not required for plugin development.
+- **Plugin DevKit** plugin must be [enabled in IntelliJ IDEA](https://www.jetbrains.com/help/idea/managing-plugins.html).
 - **IntelliJ Platform SDK** must be configured for your IDEA project. For more information, see below.
   
 ### Configuring IntelliJ Platform SDK
@@ -22,7 +22,7 @@ To set up your plugin development environment:
    ![Create IntelliJ Platform SDK](img/create_intellij_idea_sdk.png)
 <br/>
 <br/>
-*  Specify the installation folder of *IntelliJ IDEA Community Edition* as the home directory.
+*  Specify the installation folder of the *IntelliJ IDEA Community Edition* as the home directory.
 > **WARNING** You may use IntelliJ IDEA Ultimate as an alternative, but debugging the core code will only work with the *Community Edition*.
 
    ![Set Home Directory](img/set_home_directory.png)

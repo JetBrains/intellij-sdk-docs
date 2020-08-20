@@ -7,6 +7,13 @@ Adding badges to the README files to the open-source projects is a common practi
 
 Below there are listed a few ones related to the IntelliJ SDK and plugins development provided by [shields.io](https://shields.io) and [espend.de](https://www.espend.de):
 
+> **NOTE** The following code snippets contain `:pluginId` and `:packageName` placeholders.
+>
+> `:pluginId` can be obtained from your plugin page URL, like: `https://plugins.jetbrains.com/plugin/6954-kotlin` - in this case, it's `6954`.
+>
+> `:pluginId` for shields.io accepts also a string ID that can be found in *Versions* tab, like `https://plugins.jetbrains.com/plugin/6954-kotlin/versions`.
+>
+> `:packageName` for ReSharper accepts only string ID.
 
 ## Downloads
 

@@ -267,7 +267,7 @@
 
 * [Glossary](appendix/glossary.md)
 * [Useful Links](appendix/resources/useful_links.md)
-* [Readme Badges](appendix/resources/readme_badges.md)
+* [Marketing](appendix/resources/marketing.md)
 * [Consulting](appendix/resources/consulting.md)
 
 ## Appendix II - API Changes

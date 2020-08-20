@@ -1,9 +1,21 @@
 ---
-title: Readme Badges
+title: Marketing
 ---
 <!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-Adding badges to the README files to the open-source projects is a common practice for providing additional information to the users.
+## Embeddable Widgets
+
+The Marketplace provides embeddable widgets that you can place on your website with a simple code snippet:
+
+- Embeddable Plugin Card - renders an information card with the plugin name, icon, description, last update, and downloads counter,
+- Embeddable "Install Plugin" Button - provides a button that allows installing your plugin right in the user's IDE, if it is currently open.
+
+For more details, please follow the [Embeddable Content](https://plugins.jetbrains.com/docs/marketplace/embeddable-content.html) section in the JetBrains Marketplace doc.
+
+
+## Readme Badges
+
+Adding badges to the README files to the open-source projects is common for providing additional information to the users.
 
 Below there are listed a few ones related to the IntelliJ SDK and plugins development provided by [shields.io](https://shields.io) and [espend.de](https://www.espend.de):
 
@@ -11,11 +23,11 @@ Below there are listed a few ones related to the IntelliJ SDK and plugins develo
 >
 > `:pluginId` can be obtained from your plugin page URL, like: `https://plugins.jetbrains.com/plugin/6954-kotlin` - in this case, it's `6954`.
 >
-> `:pluginId` for shields.io accepts also a string ID that can be found in *Versions* tab, like `https://plugins.jetbrains.com/plugin/6954-kotlin/versions`.
+> `:pluginId` for shields.io also accepts a string ID that can be found in *Versions* tab, like `https://plugins.jetbrains.com/plugin/6954-kotlin/versions`.
 >
 > `:packageName` for ReSharper accepts only string ID.
 
-## Downloads
+### Downloads
 
 **IntelliJ Plugins**
 
@@ -42,7 +54,7 @@ Below there are listed a few ones related to the IntelliJ SDK and plugins develo
 ```
 
 
-## Rating
+### Rating
 
 **IntelliJ Plugin Numeric Rating**
 
@@ -59,7 +71,7 @@ Below there are listed a few ones related to the IntelliJ SDK and plugins develo
 ```
 
 
-## Version
+### Version
 
 **IntelliJ Plugins**
 
@@ -88,7 +100,7 @@ Below there are listed a few ones related to the IntelliJ SDK and plugins develo
 ```
 
 
-## Other Badges
+### Other Badges
 
 **GitHub Actions Workflow**
 

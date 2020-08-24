@@ -7,6 +7,8 @@ When your plugin is ready, you can publish it to a plugin repository so that oth
 You can choose to publish it on the [JetBrains Plugins Repository](https://plugins.jetbrains.com)
 or a [custom plugin repository](/basics/getting_started/update_plugins_format.md). 
 
+> **TIP** Please see [Marketing](/appendix/resources/marketing.md) for remarks on how to prepare your plugin for optimal presentation.
+
 ### Publishing to the JetBrains Plugins Repository
 To upload your plugin to the [JetBrains Plugins Repository](https://plugins.jetbrains.com), 
 you must log in with your personal JetBrains Account.

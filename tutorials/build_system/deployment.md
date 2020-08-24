@@ -7,6 +7,8 @@ Once you have configured Gradle support, you can automatically build and deploy 
 To automatically deploy a plugin, you need to have _already published the plugin to the plugin repository at least once._ 
 Please see the guide page for manually [publishing a plugin](../../basics/getting_started/publishing_plugin.md) for the first time.
 
+> **TIP** Please see [Marketing](/appendix/resources/marketing.md) for remarks on how to prepare your plugin for optimal presentation.
+
 > **WARNING** When adding additional repositories to your Gradle build script, make sure always to use HTTPS protocol.
 
 * bullet list

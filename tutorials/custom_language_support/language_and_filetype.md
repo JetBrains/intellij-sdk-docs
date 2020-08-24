@@ -18,7 +18,7 @@ The `SimpleLanguage` class is defined in the `org.intellij.sdk.language` package
 ```
 
 ## Define an Icon
-The [icon](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/simple_language_plugin/src/main/resources/icons/jar-gray.png) for the Simple Language is defined by the `SimpleIcons` class. 
+The [icon](https://github.com/JetBrains/intellij-sdk-code-samples/blob/master/simple_language_plugin/src/main/resources/icons/jar-gray.png) for the Simple Language is defined by the `SimpleIcons` class. 
 There is nothing uniquely Simple Language-specific about [defining the icon](/reference_guide/work_with_icons_and_images.md) itself.
 The definition follows a pattern similar to defining, e.g., `SdkIcons`. 
 

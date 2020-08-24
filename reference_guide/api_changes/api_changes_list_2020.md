@@ -62,7 +62,7 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 
 Please see [Incompatible API Changes](/reference_guide/api_changes_list.md) on how to verify compatibility.
 
-> **NOTE** Changes from API marked with `org.jetbrains.annotations.ApiStatus.@Experimental/ScheduledForRemoval` are not listed here, as incompatible changes are to be expected.
+> **NOTE** Changes from API marked with `org.jetbrains.annotations.ApiStatus.@Experimental`/`ScheduledForRemoval` are not listed here, as incompatible changes are to be expected.
 
 ## 2020.3
 
@@ -193,7 +193,11 @@ Java EE plugins split
 Added Union Types Support
 : Please see [PhpStorm Breaking Changes](/products/phpstorm/php_open_api_breaking_changes.md).
 
+                              
+### Changes in Kotlin Plugin 1.4
 
+`org.jetbrains.kotlin.idea.core.formatter.KotlinCodeStyleSettings.PACKAGES_TO_USE_STAR_IMPORTS` field type changed from `PackageEntryTable` to `KotlinPackageEntryTable`
+: This change was required to implement import layout order for Kotlin. `KotlinPackageEntryTable` can be used in the same manner as `PackageEntryTable`.
 
 ## 2020.1
 

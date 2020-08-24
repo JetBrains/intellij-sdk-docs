@@ -20,6 +20,7 @@ import static com.intellij.lang.annotation.HighlightSeverity.INFORMATION;
 
 
 public class SimpleAnnotator implements Annotator {
+
   // Define strings for the Simple language prefix - used for annotations, line markers, etc.
   public static final String SIMPLE_PREFIX_STR = "simple";
   public static final String SIMPLE_SEPARATOR_STR = ":";
@@ -27,12 +28,16 @@ public class SimpleAnnotator implements Annotator {
   @Override
   public void annotate(@NotNull final PsiElement element, @NotNull AnnotationHolder holder) {
     // Ensure the Psi Element is an expression
-    if (!(element instanceof PsiLiteralExpression)) return;
+    if (!(element instanceof PsiLiteralExpression)) {
+      return;
+    }
 
     // Ensure the Psi element contains a string that starts with the key and separator
     PsiLiteralExpression literalExpression = (PsiLiteralExpression) element;
     String value = literalExpression.getValue() instanceof String ? (String) literalExpression.getValue() : null;
-    if ((value == null) || !value.startsWith(SIMPLE_PREFIX_STR + SIMPLE_SEPARATOR_STR)) return;
+    if ((value == null) || !value.startsWith(SIMPLE_PREFIX_STR + SIMPLE_SEPARATOR_STR)) {
+      return;
+    }
 
     // Define the text ranges (start is inclusive, end is exclusive)
     // "simple:key"
@@ -47,8 +52,10 @@ public class SimpleAnnotator implements Annotator {
     List<SimpleProperty> properties = SimpleUtil.findProperties(project, possibleProperties);
 
     // Set the annotations using the text ranges - Normally there would be one range, set by the element itself.
-    holder.newAnnotation(INFORMATION, "").range(prefixRange).textAttributes(DefaultLanguageHighlighterColors.KEYWORD).create();
-    holder.newAnnotation(INFORMATION, "").range(separatorRange).textAttributes(SimpleSyntaxHighlighter.SEPARATOR).create();
+    holder.newAnnotation(INFORMATION, "")
+            .range(prefixRange).textAttributes(DefaultLanguageHighlighterColors.KEYWORD).create();
+    holder.newAnnotation(INFORMATION, "")
+            .range(separatorRange).textAttributes(SimpleSyntaxHighlighter.SEPARATOR).create();
     if (properties.isEmpty()) {
       // No well-formed property found following the key-separator
       AnnotationBuilder builder = holder.newAnnotation(ERROR, "Unresolved property").range(keyRange);

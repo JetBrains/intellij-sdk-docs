@@ -2,20 +2,22 @@
 
 <idea-plugin>
 
-  <!--  Unique id for this plugin. Must stay constant for the life of the plugin.  -->
+  <!-- Unique id for this plugin. Must stay constant for the life of the plugin. -->
   <id>org.intellij.sdk.toolWindow</id>
 
-  <!-- Text to display as name on Preferences/Settings | Plugin page  -->
-  <name>SDK: Tool Window Sample Project</name>
+  <!-- Text to display as name on Preferences/Settings | Plugin page -->
+  <name>SDK: Tool Window Sample</name>
 
   <!-- Indicate this plugin can be loaded in all IntelliJ Platform-based products. -->
   <depends>com.intellij.modules.platform</depends>
 
-  <!-- Text to display as description on Preferences/Settings | Plugin page  -->
+  <!-- Text to display as description on Preferences/Settings | Plugin page -->
   <description>
     <![CDATA[
-      This sample plugin illustrates how to create your custom tool window.
-      <br>See the <a href="https://www.jetbrains.org/intellij/sdk/docs/user_interface_components/tool_windows.html">Tool Windows</a> for more information.
+      This sample plugin illustrates how to create your custom tool window.<br>
+      See the
+      <a href="https://www.jetbrains.org/intellij/sdk/docs/user_interface_components/tool_windows.html">Tool Windows</a>
+      for more information.
     ]]>
   </description>
   <change-notes>

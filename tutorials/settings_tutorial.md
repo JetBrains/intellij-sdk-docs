@@ -9,11 +9,11 @@ The IDE displays the Settings in response to a user choosing **Settings/Preferen
 Custom Settings are displayed and function just like those native to the IDE.
 
 ## Overview of a Custom Settings Implementation
-Using the SDK code sample [`settings`](https://github.com/JetBrains/intellij-sdk-docs/tree/master/code_samples/settings), this tutorial illustrates the steps to create custom Application-level Settings. 
+Using the SDK code sample [`settings`](https://github.com/JetBrains/intellij-sdk-code-samples/tree/master/settings), this tutorial illustrates the steps to create custom Application-level Settings. 
 Many IntelliJ Platform Settings implementations use fewer classes, but the `settings` code sample factors the functionality into three classes for clarity : 
-* The [`AppSettingsConfigurable`](https://github.com/JetBrains/intellij-sdk-docs/tree/master/code_samples/settings/src/main/java/org/intellij/sdk/settings/AppSettingsConfigurable.java) is analogous to a Controller in the MVC model - it interacts with the other two Settings classes and the IntelliJ Platform, 
-* The [`AppSettingsState`](https://github.com/JetBrains/intellij-sdk-docs/tree/master/code_samples/settings/src/main/java/org/intellij/sdk/settings/AppSettingsState.java) is like a Model because it stores the Settings persistently, 
-* The [`AppSettingsComponent`](https://github.com/JetBrains/intellij-sdk-docs/tree/master/code_samples/settings/src/main/java/org/intellij/sdk/settings/AppSettingsComponent.java) is similar to a View because it displays and captures edits to the values of the Settings. 
+* The [`AppSettingsConfigurable`](https://github.com/JetBrains/intellij-sdk-code-samples/blob/master/settings/src/main/java/org/intellij/sdk/settings/AppSettingsConfigurable.java) is analogous to a Controller in the MVC model - it interacts with the other two Settings classes and the IntelliJ Platform, 
+* The [`AppSettingsState`](https://github.com/JetBrains/intellij-sdk-code-samples/blob/master/settings/src/main/java/org/intellij/sdk/settings/AppSettingsState.java) is like a Model because it stores the Settings persistently, 
+* The [`AppSettingsComponent`](https://github.com/JetBrains/intellij-sdk-code-samples/blob/master/settings/src/main/java/org/intellij/sdk/settings/AppSettingsComponent.java) is similar to a View because it displays and captures edits to the values of the Settings. 
 
 The structure of the implementation is the same for Project Settings, but there are minor differences in the [`Configurable` implementation](/reference_guide/settings_guide.md#constructors) and [Extension Point (EP) declaration](/reference_guide/settings_guide.md#declaring-project-settings).
 
@@ -60,7 +60,7 @@ See [`PersistentStateComponent`](upsource:///platform/projectModel-api/src/com/i
 One static convenience method has been added - `AppSettingState.getInstance()` - which allows `AppSettingsConfigurable` to easily acquire a reference to `AppSettingState`.
 
 ## The AppSettingsComponent Class
-The role of the [`AppSettingsComponent`](https://github.com/JetBrains/intellij-sdk-docs/tree/master/code_samples/settings/src/main/java/org/intellij/sdk/settings/AppSettingsComponent.java) is to provide a `JPanel` for the custom Settings to the IDE Settings Dialog.
+The role of the [`AppSettingsComponent`](https://github.com/JetBrains/intellij-sdk-code-samples/blob/master/settings/src/main/java/org/intellij/sdk/settings/AppSettingsComponent.java) is to provide a `JPanel` for the custom Settings to the IDE Settings Dialog.
 The `AppSettingsComponent` has-a `JPanel`, and is responsible for its lifetime. 
 The `AppSettingsComponent` is instantiated by `AppSettingsConfigurable`. 
  
@@ -77,7 +77,7 @@ The rest of the class are simple accessors and mutators to encapsulate the UI co
 
 
 ## The AppSettingsConfigurable Class
-The methods of [`AppSettingsConfigurable`](https://github.com/JetBrains/intellij-sdk-docs/tree/master/code_samples/settings/src/main/java/org/intellij/sdk/settings/AppSettingsConfigurable.java) are called by the IntelliJ Platform, and `AppSettingsConfigurable` in turn interacts with `AppSettingsComponent` and `AppSettingState`.
+The methods of [`AppSettingsConfigurable`](https://github.com/JetBrains/intellij-sdk-code-samples/blob/master/settings/src/main/java/org/intellij/sdk/settings/AppSettingsConfigurable.java) are called by the IntelliJ Platform, and `AppSettingsConfigurable` in turn interacts with `AppSettingsComponent` and `AppSettingState`.
 
 ### Declaring the AppSettingsConfigurable
 As described in [Declaring Application Settings](/reference_guide/settings_guide.md#declaring-application-settings), the `com.intellij.applicationConfigurable` is used as the EP. 

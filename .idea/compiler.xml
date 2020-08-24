@@ -4,8 +4,64 @@
     <addNotNullAssertions enabled="false" />
     <wildcardResourcePatterns />
     <bytecodeTargetLevel>
-      <module name="org.intellij.sdk.maxOpenProjects.main" target="1.8" />
-      <module name="org.intellij.sdk.maxOpenProjects.test" target="1.8" />
+      <module name="action" target="1.8" />
+      <module name="action.main" target="1.8" />
+      <module name="action.test" target="1.8" />
+      <module name="comparing_references_inspection" target="1.8" />
+      <module name="comparing_references_inspection.main" target="1.8" />
+      <module name="comparing_references_inspection.test" target="1.8" />
+      <module name="conditional_operator_intention" target="1.8" />
+      <module name="conditional_operator_intention.main" target="1.8" />
+      <module name="conditional_operator_intention.test" target="1.8" />
+      <module name="editor" target="1.8" />
+      <module name="editor.main" target="1.8" />
+      <module name="editor.test" target="1.8" />
+      <module name="facet" target="1.8" />
+      <module name="facet.main" target="1.8" />
+      <module name="facet.test" target="1.8" />
+      <module name="framework" target="1.8" />
+      <module name="framework.main" target="1.8" />
+      <module name="framework.test" target="1.8" />
+      <module name="inspection" target="1.8" />
+      <module name="inspection.main" target="1.8" />
+      <module name="inspection.test" target="1.8" />
+      <module name="kotlin" target="1.8" />
+      <module name="kotlin.main" target="1.8" />
+      <module name="kotlin.test" target="1.8" />
+      <module name="live_templates" target="1.8" />
+      <module name="live_templates.main" target="1.8" />
+      <module name="live_templates.test" target="1.8" />
+      <module name="maxOpenProjects" target="1.8" />
+      <module name="module" target="1.8" />
+      <module name="module.main" target="1.8" />
+      <module name="module.test" target="1.8" />
+      <module name="project_model" target="1.8" />
+      <module name="project_model.main" target="1.8" />
+      <module name="project_model.test" target="1.8" />
+      <module name="project_view_pane" target="1.8" />
+      <module name="project_view_pane.main" target="1.8" />
+      <module name="project_view_pane.test" target="1.8" />
+      <module name="projectWizard" target="1.8" />
+      <module name="projectWizard.main" target="1.8" />
+      <module name="projectWizard.test" target="1.8" />
+      <module name="psi" target="1.8" />
+      <module name="psi.main" target="1.8" />
+      <module name="psi.test" target="1.8" />
+      <module name="pycharm" target="1.8" />
+      <module name="pycharm.main" target="1.8" />
+      <module name="pycharm.test" target="1.8" />
+      <module name="runConfiguration" target="1.8" />
+      <module name="runConfiguration.main" target="1.8" />
+      <module name="runConfiguration.test" target="1.8" />
+      <module name="simple_language_plugin" target="1.8" />
+      <module name="simple_language_plugin.main" target="1.8" />
+      <module name="simple_language_plugin.test" target="1.8" />
+      <module name="toolWindow" target="1.8" />
+      <module name="toolWindow.main" target="1.8" />
+      <module name="toolWindow.test" target="1.8" />
+      <module name="treeStructureProvider" target="1.8" />
+      <module name="treeStructureProvider.main" target="1.8" />
+      <module name="treeStructureProvider.test" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

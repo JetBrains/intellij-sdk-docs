@@ -6,22 +6,22 @@ title: 3. Handling Editor Events
 The previous tutorial [Editor Coordinate Systems](coordinates_system.md) described working with caret coordinate systems in an editor window. 
 Caret position was discussed in terms of Logical Position, Visual Position, and Offset. 
 This tutorial introduces the Editor Action system, which handles actions activated by keystroke events in the editor. 
-Two classes from the [editor_basics](https://github.com/JetBrains/intellij-sdk-docs/tree/master/code_samples/editor_basics) code sample are used to illustrate: 
+Two classes from the [editor_basics](https://github.com/JetBrains/intellij-sdk-code-samples/tree/master/editor_basics) code sample are used to illustrate: 
 * Using an IntelliJ Platform [`EditorActionHandler`](upsource:///platform/platform-api/src/com/intellij/openapi/editor/actionSystem/EditorActionHandler.java) to manipulate a caret. 
 * Creating and registering a custom [`TypedActionHandler`](upsource:///platform/platform-api/src/com/intellij/openapi/editor/actionSystem/TypedActionHandler.java) to intercept keystrokes and change the document. 
 
 ## Using an IntelliJ Platform EditorActionHandler
-In this portion of the tutorial, the [editor_basics](https://github.com/JetBrains/intellij-sdk-docs/tree/master/code_samples/editor_basics) code sample is used to demonstrate cloning an existing caret. 
+In this portion of the tutorial, the [editor_basics](https://github.com/JetBrains/intellij-sdk-code-samples/tree/master/editor_basics) code sample is used to demonstrate cloning an existing caret. 
 A custom action class will use `EditorActionManager` to access a specific `EditorActionHandler` for caret cloning. 
 The `editor_basics` code sample adds an **Editor Add Caret** menu item to the editor context menu: 
 
 ![Editor Basics Menu](img/basics.png){:width="600px"}
 
 ### Creating the Menu Action Class
-The source code for the Java action class is [EditorHandlerIllustration](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/editor_basics/src/main/java/org/intellij/sdk/editor/EditorHandlerIllustration.java), a subclass of `AnAction`. 
+The source code for the Java action class is [EditorHandlerIllustration](https://github.com/JetBrains/intellij-sdk-code-samples/blob/master/editor_basics/src/main/java/org/intellij/sdk/editor/EditorHandlerIllustration.java), a subclass of `AnAction`. 
 For more information about creating action classes, see the [Actions Tutorial](/tutorials/action_system.md) which covers the topic in depth. 
 
-The `EditorHandlerIllustration` action is registered in the _editor_basic_ [`plugin.xml`](https://github.com/JetBrains/intellij-sdk-docs/blob/master/code_samples/editor_basics/src/main/resources/META-INF/plugin.xml) file. 
+The `EditorHandlerIllustration` action is registered in the _editor_basic_ [`plugin.xml`](https://github.com/JetBrains/intellij-sdk-code-samples/blob/master/editor_basics/src/main/resources/META-INF/plugin.xml) file. 
 Note that this action class is registered to appear on the Editor context menu. 
 
 ```xml

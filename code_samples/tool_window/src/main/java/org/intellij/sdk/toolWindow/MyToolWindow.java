@@ -8,6 +8,7 @@ import javax.swing.*;
 import java.util.Calendar;
 
 public class MyToolWindow {
+
   private JButton refreshToolWindowButton;
   private JButton hideToolWindowButton;
   private JLabel currentDate;
@@ -46,4 +47,5 @@ public class MyToolWindow {
   public JPanel getContent() {
     return myToolWindowContent;
   }
+
 }

@@ -30,9 +30,7 @@ public class DynamicActionGroup extends ActionGroup {
   @Override
   public AnAction[] getChildren(AnActionEvent e) {
     return new AnAction[]{
-            new PopupDialogAction("Action Added at Runtime",
-                    "Dynamic Action Demo",
-                    SdkIcons.Sdk_default_icon)
+            new PopupDialogAction("Action Added at Runtime", "Dynamic Action Demo", SdkIcons.Sdk_default_icon)
     };
   }
 

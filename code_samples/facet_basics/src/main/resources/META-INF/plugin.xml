@@ -2,7 +2,7 @@
 
 <idea-plugin>
 
-  <!--  Unique id for this plugin. Must stay constant for the life of the plugin.  -->
+  <!-- Unique id for this plugin. Must stay constant for the life of the plugin. -->
   <id>org.intellij.sdk.facet</id>
 
   <!-- Text to display as name on Preferences/Settings | Plugin page -->
@@ -11,10 +11,11 @@
   <!-- Product and plugin compatibility requirements -->
   <depends>com.intellij.modules.lang</depends>
 
-  <!-- Text to display as description on Preferences/Settings | Plugin page  -->
+  <!-- Text to display as description on Preferences/Settings | Plugin page -->
   <description>
     <![CDATA[
-    Demonstrates implementing the custom Facet pattern.<br>Adds <em>SDK Facet</em> to the Project Structure | Project Settings | Facets menu.
+      Demonstrates implementing the custom Facet pattern.<br>Adds <em>SDK Facet</em>
+      to the Project Structure | Project Settings | Facets menu.
     ]]>
   </description>
   <change-notes>

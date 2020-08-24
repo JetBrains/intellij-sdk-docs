@@ -57,7 +57,7 @@ As an API-user, you will usually rather work with `SpringModel` (which is built 
 ### Spring Setup
 To check availability of Spring/Spring Facet etc. see `com.intellij.spring.model.utils.SpringCommonUtils`.
 
-_2016.2_ See `com.intellij.spring.SpringLibraryUtil` to obtain information about exact version of Spring in use.
+_2016.2_ See `com.intellij.spring.SpringLibraryUtil` to obtain information about the exact version of Spring in use.
 
 ### Spring Model
 
@@ -65,7 +65,7 @@ _2016.2_ See `com.intellij.spring.SpringLibraryUtil` to obtain information about
 See `SpringManager#getSpringModel(s)...` and `com.intellij.spring.model.utils.SpringModelUtils`.
 
 #### Contribute Implicit Model
-See `com.intellij.spring.SpringModelProvider` to provide implicit filesets (e.g. provided by another framework in specific configuration file).
+See `com.intellij.spring.SpringModelProvider` to provide implicit filesets (e.g. provided by another framework in a specific configuration file).
 
 _Version 15_
 See `com.intellij.spring.facet.SpringAutodetectedFileSet` for a convenient base class. Please note that autodetected filesets cannot be edited/modified by users in Spring facet.
@@ -185,7 +185,7 @@ Add `<depends>com.intellij.spring.boot</depends>` to your `plugin.xml` to requir
 Use `com.intellij.spring.boot.library.SpringBootLibraryUtil` to query version and availability of common additional libraries.
 
 ### Custom Configuration Files Format
-`com.intellij.spring.boot.model.SpringBootModelConfigFileContributor` allows to add support for custom config file formats.    
+`com.intellij.spring.boot.model.SpringBootModelConfigFileContributor` allows adding support for custom config file formats.    
                                             
 ### Auto-Configuration Support
 Existing `Condition` implementations can be simulated at design time in IDE via `com.intellij.spring.boot.model.autoconfigure.conditions.ConditionalContributor`.
@@ -195,7 +195,7 @@ Custom `@ConditionalOn...` annotations implementing `com.intellij.spring.boot.mo
 ### Spring Initializr
 requires `spring-boot-initializr.jar`
 
-`com.intellij.spring.boot.initializr.SpringInitializrModuleBuilderPostTask` allows to perform custom setup steps after creation of module (e.g. setup integration with build system).
+`com.intellij.spring.boot.initializr.SpringInitializrModuleBuilderPostTask` allows performing custom setup steps after creation of module (e.g. setup integration with build system).
 
 ### Endpoint Tab
 _2018.2_ - requires `spring-boot-run.jar`

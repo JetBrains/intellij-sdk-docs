@@ -7,7 +7,9 @@ Once you have configured Gradle support, you can automatically build and deploy 
 To automatically deploy a plugin, you need to have _already published the plugin to the plugin repository at least once._ 
 Please see the guide page for manually [publishing a plugin](../../basics/getting_started/publishing_plugin.md) for the first time.
 
-> **WARNING** When adding additional repositories to your Gradle build script, make sure to always use HTTPS protocol.
+> **TIP** Please see [Marketing](/appendix/resources/marketing.md) for remarks on how to prepare your plugin for optimal presentation.
+
+> **WARNING** When adding additional repositories to your Gradle build script, make sure always to use HTTPS protocol.
 
 ## Building Distribution
 For manual distribution or local installation, invoke `gradle buildPlugin` target to create the plugin distribution.
@@ -27,8 +29,8 @@ Start by defining an environment variable such as:
 export ORG_GRADLE_PROJECT_intellijPublishToken='YOUR_HUB_TOKEN_HERE'
 ```
 
-> **NOTE** On macOS systems, environment variables defined in `.bash_profile` are only visible to processes you run from bash. 
-Environment variables visible to all processes need to be defined in [Environment.plist](https://developer.apple.com/library/archive/qa/qa1067/_index.html)
+> **NOTE** On macOS systems, environment variables set in `.bash_profile` are only visible to processes you run from bash. 
+Environment variables visible to all processes need to be defined in [Environment.plist](https://developer.apple.com/library/archive/qa/qa1067/_index.html).
 
 Now provide the environment variable in the run configuration with which you run the `publishPlugin` task locally. 
 To do so, create a Gradle run configuration (if not already done), choose your Gradle project, specify the `publishPlugin` task, and then add the environment variable. 
@@ -53,7 +55,7 @@ The first step when deploying a plugin is to confirm that it works correctly.
 You may wish to verify this by [installing your plugin from disk](https://www.jetbrains.com/help/idea/managing-plugins.html) on a fresh instance of your target IDE(s). 
 
 ### Publishing a Plugin
-Once you are confident the plugin works as intended, make sure the plugin version is updated, as the JetBrains Plugins Repository won't accept multiple artifacts with the same version. 
+Once you are confident, the plugin works as intended, make sure the plugin version is updated, as the JetBrains Plugins Repository won't accept multiple artifacts with the same version. 
 
 To deploy a new version of your plugin to the JetBrains Plugins Repository, execute the following Gradle command:  
 
@@ -61,8 +63,8 @@ To deploy a new version of your plugin to the JetBrains Plugins Repository, exec
 gradle publishPlugin
 ```
 
-Now check the most recent version of your plugin appears on the [JetBrains Plugins Repository](https://plugins.jetbrains.com/). 
-If successfully deployed, any users who currently have your plugin installed on an eligible version of the IntelliJ Platform are notified of a new update available as soon as the update has been verified.
+Now check the most recent version of your plugin that appears on the [JetBrains Plugins Repository](https://plugins.jetbrains.com/). 
+If successfully deployed, any users who currently have your plugin installed on an available version of the IntelliJ Platform are notified of a new update available as soon as the update has been verified.
 
 ### Specifying a Release Channel
 You may also deploy plugins to a release channel of your choosing, by configuring the `publishPlugin.channels` property. 
@@ -75,7 +77,7 @@ publishPlugin {
 ```
 
 When empty, this uses the default plugin repository, available to all [JetBrains Plugins Repository](https://plugins.jetbrains.com/) users. 
-However, you can publish to an arbitrarily-named channel. 
+However, you can publish it to an arbitrarily-named channel. 
 These non-default release channels are treated as separate repositories. 
 
 When using a non-default release channel, users need to configure a new [custom plugin repository](https://www.jetbrains.com/help/idea/managing-plugins.html#repos) in their IDE to install your plugin. 

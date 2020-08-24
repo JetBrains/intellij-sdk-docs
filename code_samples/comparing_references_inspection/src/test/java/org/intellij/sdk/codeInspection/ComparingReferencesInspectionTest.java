@@ -52,14 +52,14 @@ public class ComparingReferencesInspectionTest extends LightJavaCodeInsightFixtu
   /**
    * Test the "==" case
    */
-  public void testRelationalEq() throws Throwable {
+  public void testRelationalEq() {
     doTest("Eq");
   }
 
   /**
    * Test the "!=" case
    */
-  public void testRelationalNeq() throws Throwable {
+  public void testRelationalNeq() {
     doTest("Neq");
   }
 

@@ -20,6 +20,7 @@ public class DemoFacetConfiguration implements FacetConfiguration, PersistentSta
 
   /**
    * Called by the IntelliJ Platform when saving this facet's state persistently.
+   *
    * @return a component state. All properties, public and annotated fields are serialized.
    * Only values which differ from default (i.e. the value of newly instantiated class) are serialized.
    * {@code null} value indicates that the returned state won't be stored, and
@@ -30,7 +31,7 @@ public class DemoFacetConfiguration implements FacetConfiguration, PersistentSta
   public DemoFacetState getState() {
     return myFacetState;
   }
-  
+
   /**
    * Called by the IntelliJ Platform when this facet's state is loaded.
    * The method can and will be called several times, if
@@ -40,7 +41,7 @@ public class DemoFacetConfiguration implements FacetConfiguration, PersistentSta
   public void loadState(@NotNull DemoFacetState state) {
     myFacetState = state;
   }
-  
+
   /**
    * Creates a set of editor tabs for this facet, potentially one per context.
    *
@@ -51,7 +52,7 @@ public class DemoFacetConfiguration implements FacetConfiguration, PersistentSta
   @Override
   public FacetEditorTab[] createEditorTabs(FacetEditorContext context, FacetValidatorsManager manager) {
     return new FacetEditorTab[]{
-          new DemoFacetEditorTab(myFacetState, context, manager)
+            new DemoFacetEditorTab(myFacetState, context, manager)
     };
   }
 

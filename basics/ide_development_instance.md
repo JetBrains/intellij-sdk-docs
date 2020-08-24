@@ -12,8 +12,8 @@ This page describes how to control some of the settings for the Development Inst
 > **TIP** Please see also [Advanced Configuration](https://www.jetbrains.com/help/idea/tuning-the-ide.html) for general VM options and properties.
 
 ## Using a JetBrains Runtime for the Development Instance
-A common use case is to develop (build) a plugin project against a JDK, e.g. Java 8, and then run or debug the plugin in a Development Instance of the IDE.
-In such a situation, it is important the Development Instance uses a JetBrains Runtime (JBR) rather than the JDK used to build the plugin project.
+A common use case is to develop (build) a plugin project against a JDK, e.g., Java 8, and then run or debug the plugin in a Development Instance of the IDE.
+In such a situation, Development Instance must use a JetBrains Runtime (JBR) rather than the JDK used to build the plugin project.
 
 The JetBrains Runtime is an environment for running IntelliJ Platform-based IDEs on Windows, macOS, and Linux. 
 It has some modifications by JetBrains, such as fixes for native crashes not present in official JDK builds.
@@ -25,10 +25,10 @@ The JetBrains Runtime is determined from the JDK version used to build the plugi
 If a plugin is being developed against the Java 8 SE Development Kit 8 for macOS, for example, `jdk-8u212-macosx-x64.dmg`.
 (This example will use macOS, but Windows and Linux follow the same procedure.)
 To acquire the compatible JetBrains Runtime:
-* Go to the [JetBrains Runtime Site](https://confluence.jetbrains.com/display/JBR/JetBrains+Runtime) for general information and latest build
-* Open [Release notes](https://confluence.jetbrains.com/display/JBR/Release+notes) page to access all releases.
+* Go to the [JetBrains Runtime Site](https://confluence.jetbrains.com/display/JBR/JetBrains+Runtime) for general information and the latest build.
+* Open the [Release notes](https://confluence.jetbrains.com/display/JBR/Release+notes) page to access all releases.
 * Select the package name corresponding to the platform and SDK version.
-  In this case the package name is `jbrsdk8-osx-x64` for **j**et **b**rains **r**untime _sdk_ version 8, macOS x64 hardware.
+  In this case, the package name is `jbrsdk8-osx-x64` for **J**et**B**rains **R**untime _SDK_ version 8, macOS x64 hardware.
 * On the macOS package page of the JetBrains Bintray site, select the **Files** menu.
 * In the list of files, find the name that satisfies:
   * The version and build number match the JDK used to build the plugin project.
@@ -53,7 +53,7 @@ When adding system property `idea.auto.reload.plugins` in the [run configuration
 This allows a much faster development cycle by avoiding a full restart of the development instance after code changes.
 For [Gradle-based plugins](/tutorials/build_system/gradle_prerequisites.md) using `gradle-intellij-plugin` 0.4.17 or later, this property is set automatically.
 
-To disable auto-reload, set `idea.auto.reload.plugins` to `false` explicitly (2020.1.2+). Please note that any unloading problems in production environment will ask the user to restart the IDE.
+To disable auto-reload, set `idea.auto.reload.plugins` to `false` explicitly (2020.1.2+). Please note that any unloading problems in a production environment will ask the user to restart the IDE.
 
 
 ## The Development Instance Sandbox Directory 
@@ -76,7 +76,7 @@ The default Sandbox Home directory location for DevKit-based plugin projects is:
 * **macOS** `~/Library/Caches/<product_system_name><product_version>/plugins-sandbox/`
 
 ### Development Instance Settings, Caches, Logs, and Plugins
-Within the Sandbox Home directory are subdirectories pertaining to the Development Instance:
+Within the Sandbox Home directory are subdirectories of the Development Instance:
 * `config` contains settings for the IDE instance.
 * `plugins` contains folders for each plugin being run in the IDE instance. 
 * `system/caches` or `system\caches` holds the IDE instance data.

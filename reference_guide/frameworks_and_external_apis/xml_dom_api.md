@@ -538,7 +538,7 @@ Very often you'll have to create your own file editor. Then, to use all the bind
 Thank you for your time and attention. We hope you've found this article really useful. You are welcome to post your questions and comments to our [Open API and Plugin Development Forum](https://intellij-support.jetbrains.com/hc/en-us/community/topics/200366979-IntelliJ-IDEA-Open-API-and-Plugin-Development).
 
 ### Further Material
-The following bundled open source plugins make (heavy) use of DOM:
+The following bundled open-source plugins make (heavy) use of DOM:
 
 - [Android](https://github.com/JetBrains/android)
 - [Ant](upsource:///plugins/ant)

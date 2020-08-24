@@ -4,10 +4,10 @@ package org.intellij.sdk.liveTemplates;
 
 import com.intellij.codeInsight.template.TemplateActionContext;
 import com.intellij.codeInsight.template.TemplateContextType;
-import com.intellij.psi.PsiFile;
 import org.jetbrains.annotations.NotNull;
 
 public class MarkdownContext extends TemplateContextType {
+
   protected MarkdownContext() {
     super("MARKDOWN", "Markdown");
   }

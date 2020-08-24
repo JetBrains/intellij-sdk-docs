@@ -17,6 +17,7 @@ import org.jetbrains.annotations.NotNull;
  * Document changes are made in the context of a write action.
  */
 class MyTypedHandler extends TypedHandlerDelegate {
+
   @NotNull
   @Override
   public Result charTyped(char c, @NotNull Project project, @NotNull Editor editor, @NotNull PsiFile file) {
@@ -28,4 +29,5 @@ class MyTypedHandler extends TypedHandlerDelegate {
     WriteCommandAction.runWriteCommandAction(project, runnable);
     return Result.STOP;
   }
+
 }

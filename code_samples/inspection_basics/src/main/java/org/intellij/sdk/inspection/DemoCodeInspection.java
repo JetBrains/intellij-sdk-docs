@@ -7,7 +7,7 @@ import com.intellij.codeInspection.ProblemsHolder;
 import org.jetbrains.annotations.NotNull;
 
 public class DemoCodeInspection extends LocalInspectionTool {
-  
+
   /**
    * This method is overridden to provide a custom visitor
    * The visitor must not be recursive and must be thread-safe.
@@ -21,4 +21,5 @@ public class DemoCodeInspection extends LocalInspectionTool {
   public DemoInspectionVisitor buildVisitor(@NotNull ProblemsHolder holder, boolean isOnTheFly) {
     return new DemoInspectionVisitor();
   }
+
 }

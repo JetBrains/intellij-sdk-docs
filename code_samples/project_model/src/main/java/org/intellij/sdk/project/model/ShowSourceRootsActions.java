@@ -11,18 +11,23 @@ import com.intellij.openapi.vfs.VirtualFile;
 import org.jetbrains.annotations.NotNull;
 
 public class ShowSourceRootsActions extends AnAction {
+
   @Override
   public void actionPerformed(@NotNull final AnActionEvent event) {
     Project project = event.getProject();
-    if (project == null) return;
+    if (project == null) {
+      return;
+    }
     String projectName = project.getName();
     StringBuilder sourceRootsList = new StringBuilder();
     VirtualFile[] vFiles = ProjectRootManager.getInstance(project).getContentSourceRoots();
     for (VirtualFile file : vFiles) {
       sourceRootsList.append(file.getUrl()).append("\n");
     }
-    Messages.showInfoMessage("Source roots for the " + projectName + " plugin:\n" + sourceRootsList.toString(),
-                             "Project Properties");
+    Messages.showInfoMessage(
+            "Source roots for the " + projectName + " plugin:\n" + sourceRootsList.toString(),
+            "Project Properties"
+    );
   }
 
   @Override
@@ -31,4 +36,5 @@ public class ShowSourceRootsActions extends AnAction {
     event.getPresentation().setEnabled(visibility);
     event.getPresentation().setVisible(visibility);
   }
+
 }

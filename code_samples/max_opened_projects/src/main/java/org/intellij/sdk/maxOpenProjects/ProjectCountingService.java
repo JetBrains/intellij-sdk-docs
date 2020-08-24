@@ -7,6 +7,7 @@ package org.intellij.sdk.maxOpenProjects;
  * how many projects are open at a given time.
  */
 public class ProjectCountingService {
+
   // Sets the maximum allowed number of opened projects.
   private final static int MAX_OPEN_PRJ_LIMIT = 3;
   // The count of open projects must always be >= 0

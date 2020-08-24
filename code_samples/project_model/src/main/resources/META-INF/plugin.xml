@@ -2,19 +2,20 @@
 
 <idea-plugin>
 
-  <!--  Unique id for this plugin. Must stay constant for the life of the plugin.  -->
+  <!-- Unique id for this plugin. Must stay constant for the life of the plugin. -->
   <id>org.intellij.sdk.project.model</id>
 
-  <!-- Text to display as name on Preferences/Settings | Plugin page  -->
-  <name>SDK: Project Model Sample Project</name>
+  <!-- Text to display as name on Preferences/Settings | Plugin page -->
+  <name>SDK: Project Model Sample</name>
 
   <!-- Product and plugin compatibility requirements -->
   <depends>com.intellij.modules.java</depends>
 
-  <!-- Text to display as description on Preferences/Settings | Plugin page  -->
+  <!-- Text to display as description on Preferences/Settings | Plugin page -->
   <description>
     <![CDATA[
-      Demonstrates various aspects of interacting with project model.<br>Adds menu items to <b>Tools</b> and <b>Editor Context</b> menus.
+      Demonstrates various aspects of interacting with project model.<br>Adds menu items to
+      <b>Tools</b> and <b>Editor Context</b> menus.
     ]]>
   </description>
   <change-notes>

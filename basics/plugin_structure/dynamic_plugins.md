@@ -50,9 +50,13 @@ Application, project and module services declared with `overrides="true"` are no
 
 Loading/Unloading a plugin clears all cached values created using `CachedValuesManager`.
 
-### Do Not Store PSI
+### Do not Store PSI
 
 Do not store references to PSI elements in objects which can survive plugin loading or unloading, use `SmartPsiElementPointer` instead.
+
+### Do not Use FileType/Language as Map Key
+
+Replace with `String` from `Language.getID()`/`FileType.getName()`.
 
 ### Plugin Load/Unload Events
 

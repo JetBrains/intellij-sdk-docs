@@ -11,8 +11,10 @@ import org.jetbrains.annotations.NotNull;
  * for versions of the IntelliJ Platform prior to v2019.2
  */
 public class SimpleFileTypeFactory extends FileTypeFactory {
+
   @Override
   public void createFileTypes(@NotNull FileTypeConsumer fileTypeConsumer) {
     fileTypeConsumer.consume(SimpleFileType.INSTANCE);
   }
+
 }

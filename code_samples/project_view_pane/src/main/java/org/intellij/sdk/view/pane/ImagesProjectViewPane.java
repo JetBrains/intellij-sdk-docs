@@ -19,6 +19,7 @@ import org.jetbrains.annotations.NotNull;
 import javax.swing.tree.DefaultTreeModel;
 
 public class ImagesProjectViewPane extends AbstractProjectViewPSIPane {
+
   public static final String ID = "IMAGES";
 
   protected ImagesProjectViewPane(Project project) {
@@ -110,5 +111,5 @@ public class ImagesProjectViewPane extends AbstractProjectViewPSIPane {
   protected AbstractTreeUpdater createTreeUpdater(@NotNull AbstractTreeBuilder builder) {
     throw new IllegalStateException("ImagesProjectViewPane tree is async now");
   }
-}
 
+}

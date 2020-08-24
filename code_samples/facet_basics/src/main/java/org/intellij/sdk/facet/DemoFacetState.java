@@ -9,6 +9,7 @@ import org.jetbrains.annotations.NotNull;
  * In this case it is just a string containing a path to an SDK.
  */
 public class DemoFacetState {
+
   static final String DEMO_FACET_INIT_PATH = "";
 
   public String myPathToSdk;

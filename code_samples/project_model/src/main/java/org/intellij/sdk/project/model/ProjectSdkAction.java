@@ -11,6 +11,7 @@ import com.intellij.openapi.ui.Messages;
 import org.jetbrains.annotations.NotNull;
 
 public class ProjectSdkAction extends AnAction {
+
   @Override
   public void actionPerformed(@NotNull final AnActionEvent event) {
     Project project = event.getProject();
@@ -33,4 +34,5 @@ public class ProjectSdkAction extends AnAction {
       event.getPresentation().setEnabledAndVisible(sdk != null);
     }
   }
+
 }

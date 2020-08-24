@@ -163,7 +163,7 @@ Plugins *must* use Kotlin classes to implement declarations in the [plugin confi
 
 ## Examples
 
-There are a number of [open source Kotlin projects](https://github.com/search?l=Kotlin&q=+intellij&ref=searchresults&type=Repositories)
+There are a number of [open-source Kotlin projects](https://github.com/search?l=Kotlin&q=+intellij&ref=searchresults&type=Repositories)
 built on the IntelliJ Platform. For a readily available source of up to date examples and applications of the Kotlin
 language for building developer tools with the IntelliJ Platform, developers may look to these projects for inspiration:
 

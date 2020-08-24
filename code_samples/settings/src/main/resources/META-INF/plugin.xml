@@ -2,20 +2,21 @@
 
 <idea-plugin>
 
-  <!--  Unique id for this plugin. Must stay constant for the life of the plugin.  -->
+  <!-- Unique id for this plugin. Must stay constant for the life of the plugin. -->
   <id>org.intellij.sdk.settings</id>
 
   <!-- Text to display as name on Preferences/Settings | Plugin page -->
-  <name>SDK: Settings Example Project</name>
+  <name>SDK: Settings Example</name>
 
   <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
        on how to target different products -->
   <depends>com.intellij.modules.platform</depends>
 
-  <!-- Text to display as description on Preferences/Settings | Plugin page  -->
+  <!-- Text to display as description on Preferences/Settings | Plugin page -->
   <description>
     <![CDATA[
-      Demonstrates implementing a custom settings panel.<br>Adds a settings panel to the <b>Settings/Preferences</b> panel under <b>Tools</b>.
+      Demonstrates implementing a custom settings panel.<br>Adds a settings panel to the <b>Settings/Preferences</b>
+      panel under <b>Tools</b>.
     ]]>
   </description>
   <change-notes>

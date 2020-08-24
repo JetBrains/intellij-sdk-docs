@@ -7,7 +7,7 @@ redirect_from:
 
 > **NOTE** For new projects, it is highly recommended to use [Gradle](/tutorials/gradle_build_system.md).
 
-This section explains how you can create a new plugin project from scratch using the New Project wizard.  Optionally, you can import an existing project or import a project from external models. You can also add a new plugin module to an existing *IntelliJ Platform* project.
+This section explains how you can create a new plugin project from scratch using the New Project wizard.  Optionally, you can import an existing project or import a project from external models. You can also add a new plugin module to a current *IntelliJ Platform* project.
 For more information, refer to the [IntelliJ IDEA Web Help](https://www.jetbrains.com/idea/help/new-project-wizard.html).
 
 ### To Create an IntelliJ Platform Plugin Project:
@@ -17,11 +17,11 @@ For more information, refer to the [IntelliJ IDEA Web Help](https://www.jetbrain
 
    ![New Project Wizard](img/new_project_wizard.png)
 
-*  Set *IntelliJ Platform Plugin* project type
-*  Click **Next**
-*  Set desired project name
-*  Click **Finish** to generate project structure files
-*  Go to **File \| Project Structure** to customize project settings if required
+*  Set *IntelliJ Platform Plugin* project type.
+*  Click **Next**.
+*  Set the desired project name.
+*  Click **Finish** to generate project structure files.
+*  Go to **File \| Project Structure** to customize project settings if required.
 
 ### To Create an IntelliJ Platform Plugin Module
 *  Select **File \| New \| Module** and choose the *IntelliJ Platform Plugin* module type
@@ -36,5 +36,5 @@ For more information, refer to the [IntelliJ IDEA Web Help](https://www.jetbrain
    ![Set Plugin Module SDK](img/set_plugin_module_sdk.png)
 
 ### Adding Code to the Project
-Before running the new project add some code to provide simple functionality.
+Before running the new project, add some code to provide simple functionality.
 See the [Creating Actions](/tutorials/action_system/working_with_custom_actions.md) tutorial for step-by-step instructions for adding a menu action. 

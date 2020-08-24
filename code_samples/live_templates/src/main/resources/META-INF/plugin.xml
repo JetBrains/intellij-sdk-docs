@@ -2,19 +2,20 @@
 
 <idea-plugin>
 
-  <!--  Unique id for this plugin. Must stay constant for the life of the plugin.  -->
+  <!-- Unique id for this plugin. Must stay constant for the life of the plugin. -->
   <id>org.intellij.sdk.liveTemplates</id>
 
   <!-- Text to display as name on Preferences/Settings | Plugin page -->
-  <name>SDK: Live Templates Sample Project</name>
+  <name>SDK: Live Templates Sample</name>
 
   <!-- Product and plugin compatibility requirements -->
   <depends>com.intellij.modules.lang</depends>
 
-  <!-- Text to display as description on Preferences/Settings | Plugin page  -->
+  <!-- Text to display as description on Preferences/Settings | Plugin page -->
   <description>
     <![CDATA[
-      Demonstrates implementing live templates for Markdown language.<br> Adds an entry to the <b>Preferences | Editor | Live Templates</b> dialog.
+      Demonstrates implementing live templates for Markdown language.<br> Adds an entry to the
+      <b>Preferences | Editor | Live Templates</b> dialog.
     ]]>
   </description>
   <change-notes>

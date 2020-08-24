@@ -19,7 +19,7 @@ Creating new Gradle-based IntelliJ Platform plugin projects is performed using t
 The Wizard creates all the necessary project files based on a few template inputs.
 
 Before creating a new Gradle project, familiarize yourself with the help topic [Creating a new Gradle project](https://www.jetbrains.com/help/idea/getting-started-with-gradle.html#create_gradle_project), which is a tutorial for creating general Gradle projects in IntelliJ IDEA.
-This page emphasizes the steps in the process for creating IntelliJ Platform plugin projects that are Gradle-based.
+This page emphasizes the steps in the process of creating IntelliJ Platform plugin projects that are Gradle-based.
 
 > **WARNING** Please note that Gradle 6.1 has a [known bug](https://github.com/gradle/gradle/issues/11966) that prevents using it for developing plugins, please upgrade to 6.1.1 or later.
 
@@ -44,7 +44,7 @@ Then click _Next_:
 ![Select Gradle in the Project Creation Wizard](img/step1_new_gradle_project.png){:width="800px"}
 
 ### Project Naming/Artifact Coordinates Screen
-Expand _Artifact Coordinates_ section and specify a [GroupId, ArtifactId, and Version](https://www.jetbrains.com/help/idea/gradle.html#project_create_gradle) using [Maven naming](https://maven.apache.org/guides/mini/guide-naming-conventions.html) conventions.
+Expand the _Artifact Coordinates_ section and specify a [GroupId, ArtifactId, and Version](https://www.jetbrains.com/help/idea/gradle.html#project_create_gradle) using [Maven naming](https://maven.apache.org/guides/mini/guide-naming-conventions.html) conventions.
 * _GroupId_ is typically a Java package name, and it is used for the Gradle property `project.group` value in the project's `build.gradle` file.
   For this example, enter `com.your.company`.
 * _ArtifactId_ is the default name of the project JAR file (without version).
@@ -136,7 +136,7 @@ The generated `my_gradle_plugin` project `build.gradle` file:
 The Gradle properties `rootProject.name` and `project.group` will not, in general, match the respective [plugin configuration file](/basics/plugin_structure/plugin_configuration_file.md) `plugin.xml` elements `<name>` and `<id>`.
 There is no IntelliJ Platform-related reason they should as they serve different functions.
 
-The `<name>` element (used as the plugin's display name) is often the same as `rootProject.name`, but can be more explanatory.
+The `<name>` element (used as the plugin's display name) is often the same as `rootProject.name`, but it can be more explanatory.
 
 The `<id>` value must be a unique identifier over all plugins, typically a concatenation of the specified _GroupId_ and _ArtifactId_.
 Please note that it is impossible to change the `<id>` of a published plugin without losing automatic updates for existing installations.
@@ -148,7 +148,7 @@ Converting a [DevKit-based](/basics/getting_started/using_dev_kit.md) plugin pro
   * `.idea` directory
   * `[modulename].iml` file
   * `out` directory
-* Arrange the existing source files within the project directory in Gradle [SourceSet](https://docs.gradle.org/current/userguide/java_plugin.html#sec:java_project_layout) format. 
+* Arrange the existing source files within the project directory in the Gradle [SourceSet](https://docs.gradle.org/current/userguide/java_plugin.html#sec:java_project_layout) format. 
 * Use the New Project Wizard as though creating a [new Gradle project](#creating-a-gradle-based-intellij-platform-plugin-with-new-project-wizard) from scratch.
 * On the [Project Naming/Artifact Coordinates Screen](#project-namingartifact-coordinates-screen) set the values to:
   * _GroupId_ to the existing package in the initial source set.
@@ -165,7 +165,7 @@ Converting a [DevKit-based](/basics/getting_started/using_dev_kit.md) plugin pro
 Gradle projects are run from the IDE's Gradle Tool window.
 
 ### Adding Code to the Project
-Before running [`my_gradle_project`](#components-of-a-wizard-generated-gradle-intellij-platform-plugin), some code could be added to provide simple functionality.
+Before running [`my_gradle_project`](#components-of-a-wizard-generated-gradle-intellij-platform-plugin), some code can be added to provide simple functionality.
 See the [Creating Actions](/tutorials/action_system/working_with_custom_actions.md) tutorial for step-by-step instructions for adding a menu action. 
 
 ### Executing the Plugin 

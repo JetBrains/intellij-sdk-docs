@@ -9,6 +9,7 @@ import org.jetbrains.annotations.Nullable;
 import javax.swing.*;
 
 public class SimpleFileType extends LanguageFileType {
+
   public static final SimpleFileType INSTANCE = new SimpleFileType();
 
   private SimpleFileType() {
@@ -38,4 +39,5 @@ public class SimpleFileType extends LanguageFileType {
   public Icon getIcon() {
     return SimpleIcons.FILE;
   }
+
 }

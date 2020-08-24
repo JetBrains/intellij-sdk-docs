@@ -35,3 +35,4 @@ When learning new plugin development it is helpful to have some representative p
 * [JS Toolbox](https://github.com/andresdominguez/jsToolbox) 
 * [Require.​js](https://github.com/Fedott/WebStormRequireJsPlugin)
 * [deep-js-completion](https://github.com/klesun/deep-js-completion)
+* [Run Configuration for TypeScript](https://plugins.jetbrains.com/plugin/10841-run-configuration-for-typescript)

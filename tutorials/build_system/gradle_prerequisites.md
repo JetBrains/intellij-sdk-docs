@@ -14,9 +14,6 @@ To verify these plugins are installed and enabled, see the help section about [M
 
 > **WARNING** When adding additional repositories to your Gradle build script, make sure to always use HTTPS protocol.
 
-* bullet list
-{:toc}
-
 ## Creating a Gradle-Based IntelliJ Platform Plugin with New Project Wizard
 Creating new Gradle-based IntelliJ Platform plugin projects is performed using the [New Project Wizard](https://www.jetbrains.com/help/idea/gradle.html#project_create_gradle).
 The Wizard creates all the necessary project files based on a few template inputs.

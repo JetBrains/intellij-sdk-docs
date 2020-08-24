@@ -10,9 +10,6 @@ However, the actions of a plugin must first be defined and registered with the I
 
 Using the SDK code sample `action_basics`, this tutorial illustrates the steps to create an action for a plugin. 
 
-* bullet list
-{:toc}
-
 ## Creating a Custom Action
 Custom actions extend the abstract class [`AnAction`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java). 
 Classes that extend it should override `AnAction.update()`, and must override `AnAction.actionPerformed()`. 

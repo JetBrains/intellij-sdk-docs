@@ -10,9 +10,6 @@ Resolving references means the ability to go from the usage of an element to its
 
 **Reference**: [References and Resolve](/reference_guide/custom_language_support/references_and_resolve.md) 
 
-* bullet list
-{:toc}
-
 ## Define a Named Element Class
 The classes below show how the Simple Language fulfills the need to implement `PsiNamedElement`.
 

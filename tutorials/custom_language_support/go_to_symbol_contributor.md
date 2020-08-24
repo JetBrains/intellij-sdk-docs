@@ -7,9 +7,6 @@ A _Go to Symbol Contributor_ helps the user to navigate to any PSI element by it
 
 **Reference**: [Go to Class and Go to Symbol](/reference_guide/custom_language_support/go_to_class_and_go_to_symbol.md) 
 
-* bullet list
-{:toc}
-
 ## Define a Helper Method for Generated PSI Elements
 To specify how a PSI element looks like in the **Go To Symbol** popup window, **Structure** tool window, or other components, it should implement `getPresentation()`.
 This method gets defined in the utility class `SimplePsiImplUtil`, and the parser and PSI classes must be regenerated.

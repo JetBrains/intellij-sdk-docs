@@ -7,9 +7,6 @@ This document describes the coding guidelines used for authoring open-source Int
 Before you begin, please read this page thoroughly, as well as the [Code of Conduct](/CODE_OF_CONDUCT.md) and [License](https://github.com/JetBrains/intellij-sdk-docs/blob/master/LICENSE.txt) documents.
 For information about contributing to the IntelliJ Platform itself visit [Contributing to the IntelliJ Platform](/basics/platform_contributions.md).
 
-  * Dummy list item
-  {:toc}
-  
 ## Objectives
 Keep the following considerations in mind while authoring an SDK code sample:
 * The purpose of an SDK sample is to demonstrate an implementation pattern of the IntelliJ Platform.

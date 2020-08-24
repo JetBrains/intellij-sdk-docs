@@ -6,9 +6,6 @@ title: 8. Line Marker Provider
 Line markers help annotate code with icons on the gutter.
 These markers can provide navigation targets to related code.
 
-* bullet list
-{:toc}
-
 ## Define a Line Marker Provider
 A line marker provider annotates usages of Simple Language properties within Java code and provides navigation to the definition of these properties.
 The visual marker is a Simple Language icon in the gutter of the Editor window.

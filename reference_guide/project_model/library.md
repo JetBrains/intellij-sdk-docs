@@ -15,9 +15,6 @@ For more information about libraries, refer to
 
 A particular type of programmatically defined libraries is [Predefined Libraries](#predefined-libraries).
 
-* bullet list
-{:toc}
-
 ## Accessing Libraries and Jars
 Package [`libraries`](upsource:///platform/projectModel-api/src/com/intellij/openapi/roots/libraries) provides functionality for working with project libraries and jars.
 

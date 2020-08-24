@@ -7,9 +7,6 @@ A folding builder identifies the folding regions in the code.
 In this step of the tutorial, the folding builder is used to identify folding regions and replace the regions with specific text.
 Rather than the usual practice of using a folding builder to collapse a class, method, or comments to fewer lines, the folding builder replaces Simple Language keys with their corresponding values.
 
-* bullet list
-{:toc}
-
 ## Define a Folding Builder
 The `SimpleFoldingBuilder` replaces usages of properties with their values by default.
 Start by subclassing [`FoldingBuilderEx`](upsource:///platform/core-api/src/com/intellij/lang/folding/FoldingBuilderEx.java)

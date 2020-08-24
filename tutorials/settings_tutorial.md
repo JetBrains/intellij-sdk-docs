@@ -8,9 +8,6 @@ As discussed in the [_Settings_ Guide](/reference_guide/settings_guide.md), plug
 The IDE displays the Settings in response to a user choosing **Settings/Preferences**. 
 Custom Settings are displayed and function just like those native to the IDE.
 
-* bullet list
-{:toc}
-
 ## Overview of a Custom Settings Implementation
 Using the SDK code sample [`settings`](https://github.com/JetBrains/intellij-sdk-docs/tree/master/code_samples/settings), this tutorial illustrates the steps to create custom Application-level Settings. 
 Many IntelliJ Platform Settings implementations use fewer classes, but the `settings` code sample factors the functionality into three classes for clarity : 

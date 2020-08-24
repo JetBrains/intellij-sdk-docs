@@ -12,10 +12,6 @@ _Someone reading technical content is usually looking to answer a specific quest
 That question might be broad or narrowly-focused, but either way, our goal is to provide answers without distraction._
 
 The style of the _Intellij Platform SDK_ documentation is captured by using a markup language named [_Markdown_](https://github.github.com/gfm/).
-The following sections describe the SDK documentation style in terms of the Markdown formats:
-
-* bullet list
-{:toc}
 
 ## Documentation Markup
 By default, when building the site, all files are copied to the destination `_site` folder. 

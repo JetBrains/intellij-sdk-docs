@@ -11,9 +11,6 @@ It may be useful to review the IntelliJ Platform page, particularly the descript
 
 > **WARNING** When adding additional repositories to your Gradle build script, make sure to always use HTTPS protocol.
 
-* bullet list
-{:toc}
-
 ## Overview of the Gradle Plugin 
 The Gradle plugin is built from the open-source project [gradle-intellij-plugin](https://github.com/JetBrains/gradle-intellij-plugin).
 This plugin adds Gradle tasks that enable developing IntelliJ Platform plugins.

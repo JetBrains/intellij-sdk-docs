@@ -18,9 +18,6 @@ The [Creating Actions](/tutorials/action_system/working_with_custom_actions.md) 
 The [Grouping Actions](/tutorials/action_system/grouping_action.md) tutorial demonstrates three types of groups that can contain actions.
 The rest of this page is an overview of actions as an extension point.
 
-* bullet list
-{:toc}
-
 ## Action Implementation
 An action is a class derived from the abstract class [`AnAction`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java).
 The IntelliJ Platform calls methods of an action when a user interacts with a menu item or toolbar button. 

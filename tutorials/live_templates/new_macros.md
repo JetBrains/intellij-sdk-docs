@@ -10,9 +10,6 @@ This tutorial illustrates how to add custom functions to an IntelliJ Platform pl
 As an example, a function is created to convert a selection to Title Case.
 Refer to the SDK code sample [`live_templates`](https://github.com/JetBrains/intellij-sdk-docs/tree/master/code_samples/live_templates).
 
-* bullet
-{:toc}
-
 ## Implementing a New Function
 Under the hood, the predefined functions for Live Templates are called _macros_.
 A new custom function for Live Templates is implemented in `TitleCaseMacro`, which extends [`MacroBase`](upsource:///platform/lang-impl/src/com/intellij/codeInsight/template/macro/MacroBase.java).

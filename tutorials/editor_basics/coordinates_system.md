@@ -8,9 +8,6 @@ The examples replaced selected text in a document by using information about the
 
 Every caret has a set of properties describing its position in one of several coordinate systems. 
 This tutorial describes how to access information about the caret(s) in an editor. 
-The tutorial presents the following sections:
-* bullet list
-{:toc}
 
 ## Introduction
 In this tutorial, the [editor_basics](https://github.com/JetBrains/intellij-sdk-docs/tree/master/code_samples/editor_basics) code sample is used to explore caret positions. 

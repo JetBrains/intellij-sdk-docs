@@ -10,9 +10,6 @@ Previously this page referred to Plugin Logos as _Plugin Icons_.
 **Note:** icons and images used within a plugin have different requirements. 
 See [Working with Icons and Images](/reference_guide/work_with_icons_and_images.md) for more information.
 
-* bullet list
-{:toc}
-
 ## Introduction
 Plugin Logos are shown in the [JetBrains Plugins Repository](https://plugins.jetbrains.com). 
 They also appear in the Settings/Preferences [Plugin Manager](https://www.jetbrains.com/help/idea/managing-plugins.html) UI in IntelliJ Platform-based IDEs. 

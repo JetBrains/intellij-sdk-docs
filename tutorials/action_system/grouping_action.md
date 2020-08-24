@@ -9,9 +9,6 @@ The sample code discussed in this tutorial is from the code sample [`action_basi
 
 Some content in this tutorial assumes the reader is familiar with the tutorial for [Creating Actions](working_with_custom_actions.md).
 
-* bullet list
-{:toc}
-
 ## Simple Action Groups
 In this first example, the action group will be available as a top-level menu item, and actions are represented as drop-down menu items.
 The group is based on a default IntelliJ Platform implementation.

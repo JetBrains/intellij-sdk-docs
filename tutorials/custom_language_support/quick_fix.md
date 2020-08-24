@@ -8,9 +8,6 @@ For the Simple Language, this tutorial adds a quick fix that helps to define an 
 
 **Reference**: [Code Inspections and Intentions](/reference_guide/custom_language_support/code_inspections_and_intentions.md) 
 
-* bullet list
-{:toc}
-
 ## Update the Element Factory
 The `SimpleElementFactory` is updated to include two new methods to support the user choice of creating a new property for the Simple Language quick fix.
 The new `createCRLF()` method supports adding a newline to the end of the [`test.simple`](/tutorials/custom_language_support/lexer_and_parser_definition.md#run-the-project) file before adding a new property. 

@@ -9,9 +9,6 @@ Register the `LanguageFileType` with the IntelliJ Platform in the plugin configu
 
 **Reference**: [Registering a File Type](/reference_guide/custom_language_support/registering_file_type.md) 
 
-* bullet item
-{:toc}
-
 ## Define the Language
 The language implemented in this tutorial is named "Simple" - note the case of the name.
 The `SimpleLanguage` class is defined in the `org.intellij.sdk.language` package of the `simple_language_plugin` code sample:

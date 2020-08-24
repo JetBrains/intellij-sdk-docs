@@ -8,9 +8,6 @@ Creating a structure view factory allows showing the structure of any file in a 
 
 **Reference**: [Structure View](/reference_guide/custom_language_support/structure_view.md) 
 
-* bullet list
-{:toc}
-
 ## Define a Structure View Factory
 The structure view factory implements [`PsiStructureViewFactory`](upsource:///platform/editor-ui-api/src/com/intellij/lang/PsiStructureViewFactory.java).
 The `getStructureViewBuilder()` implementation reuses the IntelliJ Platform class [`TreeBasedStructureViewBuilder`](upsource:///platform/editor-ui-api/src/com/intellij/ide/structureView/TreeBasedStructureViewBuilder.java).

@@ -8,9 +8,6 @@ The Simple Language grammar must also be defined to generate a parser.
  
 **Reference**: [Implementing a Parser and PSI](/reference_guide/custom_language_support/implementing_parser_and_psi.md) 
 
-* bullet item
-{:toc}
-
 ## Define a Token Type
 Create `SimpleTokenType` in the `org.intellij.sdk.language.psi` package (see the `simple_language_plugin` code sample) by subclassing `IElementType`.
 

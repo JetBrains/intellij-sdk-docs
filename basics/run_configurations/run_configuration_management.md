@@ -5,9 +5,6 @@ title: Run Configuration Management
 
 This document describes main classes to work with run configurations and common use case.
 
-* Dummy table of contents
-{:toc}
-
 ## Configuration Type
 
 The starting point for implementing any run configuration type is the [`ConfigurationType`](upsource:///platform/lang-api/src/com/intellij/execution/configurations/ConfigurationType.java) interface. The list of available configuration types is shown when a user opens the _'Edit run configurations'_ dialog and executes _'Add'_ action:

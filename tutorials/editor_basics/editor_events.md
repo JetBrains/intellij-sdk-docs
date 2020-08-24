@@ -10,10 +10,6 @@ Two classes from the [editor_basics](https://github.com/JetBrains/intellij-sdk-d
 * Using an IntelliJ Platform [`EditorActionHandler`](upsource:///platform/platform-api/src/com/intellij/openapi/editor/actionSystem/EditorActionHandler.java) to manipulate a caret. 
 * Creating and registering a custom [`TypedActionHandler`](upsource:///platform/platform-api/src/com/intellij/openapi/editor/actionSystem/TypedActionHandler.java) to intercept keystrokes and change the document. 
 
-The tutorial presents the following sections: 
-* bullet list
-{:toc}
-
 ## Using an IntelliJ Platform EditorActionHandler
 In this portion of the tutorial, the [editor_basics](https://github.com/JetBrains/intellij-sdk-docs/tree/master/code_samples/editor_basics) code sample is used to demonstrate cloning an existing caret. 
 A custom action class will use `EditorActionManager` to access a specific `EditorActionHandler` for caret cloning. 

@@ -8,9 +8,6 @@ This section adds annotation functionality to support the Simple Language in the
 
 **Reference**: [Annotator](/reference_guide/custom_language_support/syntax_highlighting_and_error_highlighting.md#annotator) 
 
-* bullet list
-{:toc} 
-
 ## Required Project Configuration Changes
 Classes defined in this step of the tutorial depend on `com.intellij.psi.PsiLiteralExpression` at runtime.
 Using `PsiLiteralExpression` [introduces a dependency](/basics/getting_started/plugin_compatibility.md#modules-specific-to-functionality) on `com.intellij.modules.java`.

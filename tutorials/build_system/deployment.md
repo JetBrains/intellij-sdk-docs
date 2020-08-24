@@ -9,9 +9,6 @@ Please see the guide page for manually [publishing a plugin](../../basics/gettin
 
 > **WARNING** When adding additional repositories to your Gradle build script, make sure to always use HTTPS protocol.
 
-* bullet list
-{:toc}
-
 ## Building Distribution
 For manual distribution or local installation, invoke `gradle buildPlugin` target to create the plugin distribution.
 The resulting JAR/ZIP is located in `build/distributions` and can then be [installed](https://www.jetbrains.com/help/idea/managing-plugins.html#installing-plugins-from-disk) either manually or uploaded to a [custom plugin repository](/basics/getting_started/update_plugins_format.md).

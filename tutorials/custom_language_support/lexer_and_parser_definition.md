@@ -8,9 +8,6 @@ The easiest way to create a lexer is to use [JFlex](https://jflex.de/).
 
 **Reference**: [Implementing Lexer](/reference_guide/custom_language_support/implementing_lexer.md) 
 
-* bullet item
-{:toc}
-
 ## Required Project Configuration Change
 The previous tutorial step [Grammar and Parser](grammar_and_parser.md), and this page, generate source files in the directory `src/main/gen`.
 To include those files, the project's `sourceSets` must be expanded by inserting the following line in the project's `build.gradle` file:

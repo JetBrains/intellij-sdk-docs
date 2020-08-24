@@ -10,9 +10,6 @@ Underlying those shared features are shared components.
 When authoring a plugin for the IntelliJ Platform, it is important to understand and declare dependencies on these components. 
 Otherwise, it may not be possible to load or run the plugin in a product because the components on which it depends aren't available.
 
-* bullet list
-{:toc}
-
 ## Declaring Plugin Dependencies
 For the purposes of dependencies, a _module_ can be thought of like a built-in plugin that ships as a non-removable part of a product. 
 A working definition of a dependency is that a plugin project cannot be run without the module present in an IntelliJ Platform-based product. 

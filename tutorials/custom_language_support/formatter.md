@@ -9,9 +9,6 @@ The formatter controls spaces, indents, wrap, and alignment.
 
 **Reference**: [Code Formatter](/reference_guide/custom_language_support/code_formatting.md) 
 
-* bullet list
-{:toc}
-
 ## Define a Block
 The formatting model represents the formatting structure of a file as a tree of [`Block`](upsource:///platform/lang-api/src/com/intellij/formatting/Block.java) objects, with associated indent, wrap, alignment and spacing settings.
 The goal is to cover each PSI element with such a block. 

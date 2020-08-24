@@ -11,9 +11,6 @@ However, suppose the custom Settings are rich enough to require multiple levels?
 For example, a custom Setting implementation has multiple sub-Settings implementations.
 Extension Point declarations can create this kind of multilayer Settings hierarchy.
  
-* bullet list
-{:toc}
-
 ## Extension Points for Parent-Child Settings Relationships
 There are multiple ways of creating parent-child relationships in groups of Settings: in implementations, or Extension Point declarations. 
 However, there are performance penalties for creating these relationships in implementations because the objects must be instantiated to determine the relationships. 

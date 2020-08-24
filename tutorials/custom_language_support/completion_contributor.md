@@ -7,9 +7,6 @@ Custom languages provide code completion using one of two approaches: Contributo
 
 **Reference**: [Code Completion](/reference_guide/custom_language_support/code_completion.md) 
 
-* bullet list
-{:toc}
-
 ## Define a Completion Contributor
 For this tutorial, the `simple_language_plugin` provides custom completion for values in Simple Language property files.
 Create a completion contributor by subclassing [`CompletionContributor`](upsource:///platform/analysis-api/src/com/intellij/codeInsight/completion/CompletionContributor.java).

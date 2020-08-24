@@ -9,9 +9,6 @@ Any Live Template that can be created and exported can be added to a plugin by f
 
 This tutorial uses the SDK code sample [`live_templates`](https://github.com/JetBrains/intellij-sdk-docs/tree/master/code_samples/live_templates).
 
-* bullet
-{:toc}
-
 ## Template Creation
 Get started by [creating a new Live Template](https://www.jetbrains.com/idea/help/creating-and-editing-live-templates.html) within the IntelliJ Platform-based IDE:
 * Add a new Template Group, "Markdown" and create a new Live Template under this group. 

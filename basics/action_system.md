@@ -162,6 +162,36 @@ A different context, such as searching for the action using **Help \| Find Actio
 A second `override-text` element uses `place` and `use-text-of-place` attributes to declare the same version of the text used in the Main Menu is also used in the Editor Popup Menu.
 Additional `override-text` elements could be used to specify additional places where the Main Menu text should be used. 
 
+An example of using `<override-text>` is demonstrated in the [Creating Actions](/tutorials/action_system/working_with_custom_actions.md#using-override-text-for-an-action) tutorial.
+
+#### Localizing Actions and Groups
+Action and group localization use resource bundles containing property files, each file consisting of `key=value` pairs.
+The [`action_basics`](https://github.com/JetBrains/intellij-sdk-code-samples/tree/master/action_basics) plugin demonstrates using a resource bundle to localize the group and action entries added to the Editor Popup Menu.
+
+When localizing actions and groups, the `text=""` and `description=""` attributes are not declared in `plugin.xml`. 
+Instead, those attribute values vary depending on the locale and get declared in a resource bundle.
+
+The name and location of the resource bundle must be declared in the `plugin.xml` file.
+In the case of `action_basics`, only a default localization resource bundle is provided: 
+
+```xml
+  <resource-bundle>messages.BasicActionsBundle</resource-bundle>
+```
+
+For Actions, the `key` in property files incorporates the action `id` in this specific structure:
+* `action.<action-id>.text=Translated Action Text`  
+* `action.<action-id>.description=Translated Action Description` 
+
+If `<override-text>` is used for an action `id`, the `key` includes the `<place>` attribute:
+* `action.<action-id>.<place>.text=Place-dependent Translated Action Text` 
+* `action.<action-id>.<place>.description=Place-dependent Translated Action Description` 
+
+For Groups, the `key` in the property files incorporates the group `id` in this specific structure:
+* `group.<group-id>.text=Translated Group Text` 
+* `group.<group-id>.description=Translated Group Description` 
+
+See [Extending DefaultActionGroup](/tutorials/action_system/grouping_action.md#extending-defaultactiongroup) for a tutorial of localizing Actions and Groups.
+ 
 #### Action Declaration Reference
 The places where actions can appear are defined by constants in [`ActionPlaces`](upsource:///platform/platform-api/src/com/intellij/openapi/actionSystem/ActionPlaces.java). 
 Group IDs for the IntelliJ Platform are defined in [`PlatformActions.xml`](upsource:///platform/platform-resources/src/idea/PlatformActions.xml). 
@@ -247,6 +277,12 @@ This, and additional information can also be found by using the [Code Completion
            a <mouse-shortcut> element. See <keyboard-shortcut> for documentation.  -->
     <mouse-shortcut keymap="$default" keystroke="control button3 doubleClick"/>
   </action>
+  <!--  This action declares neither a text nor description attribute. If it has 
+        a resource bundle declared the text and descriptions will be retrieved
+        based on the action-id incorporated in the key for a translated string -->
+  <action id="sdk.action.PopupDialogAction" class="sdk.action.PopupDialogAction"
+        icon="SdkIcons.Sdk_default_icon">
+  </action> 
   <!-- The <group> element defines an action group. <action>, <group> and 
        <separator> elements defined within it are automatically included in the group.
        The mandatory "id" attribute specifies a unique identifier for the action.

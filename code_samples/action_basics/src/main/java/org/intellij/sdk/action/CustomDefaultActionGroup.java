@@ -26,7 +26,7 @@ public class CustomDefaultActionGroup extends DefaultActionGroup {
     // Enable/disable depending on whether user is editing
     Editor editor = event.getData(CommonDataKeys.EDITOR);
     event.getPresentation().setEnabled(editor != null);
-    // Take this opportunity to set an icon for the menu entry.
+    // Take this opportunity to set an icon for the group.
     event.getPresentation().setIcon(SdkIcons.Sdk_default_icon);
   }
 

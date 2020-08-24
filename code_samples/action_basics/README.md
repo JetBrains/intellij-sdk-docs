@@ -1,16 +1,19 @@
-# Action Sample Project [![JetBrains IntelliJ Platform SDK Docs](https://jb.gg/badges/docs.svg)][docs]
+# Action Basics Sample Project [![JetBrains IntelliJ Platform SDK Docs](https://jb.gg/badges/docs.svg)][docs]
 *Reference: [Action System in IntelliJ SDK Docs][docs:actions]*
 
 ## Quickstart
 
-Action Sample Project demonstrates registering actions process in various configurations.
-Each action is an extension of the [`AnAction`][sdk:AnAction] abstract class and brings the possibility of extending IDE with an event performed with the user interaction - i.e., clicking the button, using the keyboard or mouse shortcuts.
+The Action Basics Sample Project demonstrates the process of registering actions in various configurations.
+Each action is an extension of the [`AnAction`][sdk:AnAction] abstract class and brings the possibility of extending the IDE with an event performed with the user interaction - i.e., clicking the button, using the keyboard or mouse shortcuts.
 
-Plugin registers the [`PopupDialogAction`][file:PopupDialogAction] action, which provides a popup dialog as a feedback, in three different ways:
-
+This Plugin registers the [`PopupDialogAction`][file:PopupDialogAction] action, which provides a popup dialog as a feedback, in three different ways:
 - by assigning the keyboard (<kbd>Ctrl/Cmd</kbd>+<kbd>Alt</kbd>+<kbd>A</kbd>, <kbd>C</kbd>) and mouse shortcuts (<kbd>Ctrl/Cmd</kbd> + <kbd>Mouse Button 3</kbd> + <kbd>Double Click</kbd>),
-- by adding action item to the `ToolsMenu` group, available in Tools menu,
-- by adding action item to the `EditorPopupMenu` group, available in Editor's context menu.
+- by adding an action to the `ToolsMenu` directly, and as part of new groups added to the Tools menu,
+- by adding an action to a new group in the `EditorPopupMenu`, which is the Editor's context menu.
+
+Additional features of the plugin:
+- [Using the `<override-text>`][docs:action-override] element in an `<action>` element is demonstrated in the `plugin.xml` declaration to add the `PopupDialogAction` action directly to the `ToolsMenu`.
+- [Localization of action and group][docs:action-locale] `text` and `description` attributes using a `<resource-bundle>` is demonstrated in the declaration to add a new group to the `EditorPopupMenu`. 
 
 ### Actions
 
@@ -27,6 +30,8 @@ Plugin registers the [`PopupDialogAction`][file:PopupDialogAction] action, which
 
 [docs]: https://www.jetbrains.org/intellij/sdk/docs
 [docs:actions]: https://www.jetbrains.org/intellij/sdk/docs/basics/action_system.html
+[docs:action-override]: https://www.jetbrains.org/intellij/sdk/docs/basics/action_system.html#setting-the-override-text-element-for-an-action
+[docs:action-locale]: https://www.jetbrains.org/intellij/sdk/docs/basics/action_system.html#localizing-actions-and-groups
 
 [file:PopupDialogAction]: ./src/main/java/org/intellij/sdk/action/PopupDialogAction.java
 [file:CustomDefaultActionGroup]: ./src/main/java/org/intellij/sdk/action/CustomDefaultActionGroup.java

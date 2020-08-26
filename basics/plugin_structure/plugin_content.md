@@ -12,7 +12,7 @@ The plugin `jar` file must contain:
 ### Plugin Without Dependencies 
 A plugin consisting of a single `.jar` file is placed in the `/plugins` directory.
 
-```
+```text
 .IntelliJIDEAx0/
 └── plugins
     └── sample.jar
@@ -31,7 +31,7 @@ The plugin `.jar` file is placed in the `/lib` folder under the plugin's "root" 
 
 All jars from the `/lib` folder are automatically added to the classpath (see also [Plugin Class Loaders](plugin_class_loaders.md)).
    
-```
+```text
    .IntelliJIDEAx0/
    └── plugins
        └── sample

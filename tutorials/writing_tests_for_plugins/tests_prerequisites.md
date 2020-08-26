@@ -12,8 +12,8 @@ Under `test`, create the `java` folder for test source code, and the folder `tes
 ```text
 └── src
     ├── main
-    │   ├── java
-    │   └── resources
+    │   ├── java
+    │   └── resources
     └── test
         ├── java
         └── testData

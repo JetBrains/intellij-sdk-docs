@@ -34,24 +34,24 @@ Below there are listed a few ones related to the IntelliJ SDK and plugins develo
 **IntelliJ Plugins**
 
 ![Downloads](https://img.shields.io/badge/downloads-10M-brightgreen)
-```
+```markdown
 ![Downloads](https://img.shields.io/jetbrains/plugin/d/:pluginId)
 ```
 
 ![Downloads](https://img.shields.io/badge/downloads-10M-blue)
-```
+```markdown
 ![Downloads](http://phpstorm.espend.de/badge/:pluginId/downloads)
 ```
 
 ![Downloads Last Month](https://img.shields.io/badge/downloads-10%20k%20last%20month-blue)
-```
+```markdown
 ![Downloads Last Month](http://phpstorm.espend.de/badge/:pluginId/last-month)
 ```
 
 **ReSharper Plugins**
 
 ![Downloads](https://img.shields.io/badge/downloads-90k-brightgreen)
-```
+```markdown
 ![Downloads](https://img.shields.io/resharper/dt/:packageName)
 ```
 
@@ -61,14 +61,14 @@ Below there are listed a few ones related to the IntelliJ SDK and plugins develo
 **IntelliJ Plugin Numeric Rating**
 
 ![Rating](https://img.shields.io/badge/rating-4.5%2F5-brightgreen)
-```
+```markdown
 ![Rating](https://img.shields.io/jetbrains/plugin/r/rating/:pluginId)
 ```
 
 **IntelliJ Plugin Stars Rating**
 
 ![Rating](https://img.shields.io/badge/rating-%E2%98%85%E2%98%85%E2%98%85%E2%98%85%C2%BD-brightgreen)
-```
+```markdown
 ![Rating](https://img.shields.io/jetbrains/plugin/r/stars/:pluginId)
 ```
 
@@ -78,26 +78,26 @@ Below there are listed a few ones related to the IntelliJ SDK and plugins develo
 **IntelliJ Plugins**
 
 ![Version](https://img.shields.io/badge/jetbrains%20plugin-v1.7-blue)
-```
+```markdown
 ![Version](https://img.shields.io/jetbrains/plugin/v/:pluginId)
 ```
 
 ![Version](https://img.shields.io/badge/version-v1.7-569AC7)
-```
+```markdown
 ![Version](http://phpstorm.espend.de/badge/:pluginId/version)
 ```
 
 **ReSharper Plugins**
 
 ![Version](https://img.shields.io/badge/resharper-v2017.2.0-blue)
-```
+```markdown
 ![Version](https://img.shields.io/resharper/v/:packageName)
 ```
 
 **ReSharper Plugins (incl. pre-releases)**
 
 ![Version](https://img.shields.io/badge/resharper-v2017.3.0--pre0001-yellow)
-```
+```markdown
 ![Version](https://img.shields.io/resharper/v/:packageName?include_prereleases)
 ```
 
@@ -107,27 +107,27 @@ Below there are listed a few ones related to the IntelliJ SDK and plugins develo
 **GitHub Actions Workflow**
 
 ![Build](https://github.com/JetBrains/intellij-sdk-docs/workflows/Build/badge.svg)
-```
+```markdown
 ![Build](https://github.com/USERNAME/REPOSITORY_NAME/workflows/WORKFLOW_NAME/badge.svg)
 ```
 
 **JetBrains IntelliJ Platform SDK Docs**
 
 [![JetBrains IntelliJ Platform SDK Docs](https://jb.gg/badges/docs.svg)](http://www.jetbrains.org/intellij/sdk/docs)
-```
+```markdown
 [![JetBrains IntelliJ Platform SDK Docs](https://jb.gg/badges/docs.svg)](http://www.jetbrains.org/intellij/sdk/docs)
 ```
 
 **JetBrains Platform Slack**
 
 [![Slack](https://img.shields.io/badge/Slack-%23intellij--platform-blue)](https://plugins.jetbrains.com/slack)
-```
+```markdown
 [![Slack](https://img.shields.io/badge/Slack-%23intellij--platform-blue)](https://plugins.jetbrains.com/slack)
 ```
 
 **@JBPlatform Twitter**
 
 [![Twitter Follow](https://img.shields.io/twitter/follow/JBPlatform?style=flat)](https://twitter.com/JBPlatform)
-```
+```markdown
 [![Twitter Follow](https://img.shields.io/twitter/follow/JBPlatform?style=flat)](https://twitter.com/JBPlatform)
 ```

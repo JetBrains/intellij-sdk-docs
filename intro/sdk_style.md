@@ -116,28 +116,28 @@ For example, `## Introduction` gets the ID of `introduction`, and can be linked 
 
 #### General Links
 General Markdown links have the default Markdown link style:
-* `[Gradle](https://gradle.org)` ([Gradle](https://gradle.org)) links to an external site, such as companies, articles, etc.
+* `[Gradle](https://gradle.org)`{:disable-links} ([Gradle](https://gradle.org)) links to an external site, such as companies, articles, etc.
 * Linking to pages within the SDK documentation:
-  * `[SDK doc page in current directory](Page2.md)` links to an SDK doc page in the same directory as the current page. 
+  * `[SDK doc page in current directory](Page2.md)`{:disable-links} links to an SDK doc page in the same directory as the current page. 
     Note that the extension is `.md`, _NOT_ `.html`.
-  * `[SDK page in another folder](/Folder2/Page2.md)` links to a page in another folder. 
+  * `[SDK page in another folder](/Folder2/Page2.md)`{:disable-links} links to a page in another folder. 
     Note the URL is navigating from the project root.
 This format works even if the site is hosted in a sub-folder. 
     Relative links also work (`../Folder2/Page2.md`).
 * Linking to specific _sections_ on pages in the SDK documentation.
   The anchor name will be all lower case, and spaces are replaced with `-`, e.g. `## Page setup` becomes `#page-setup`.
   Once the anchor (`#`) character of the link is entered, the IDE code completion feature shows the available sections. 
-  * `[Link to a section on the current page](#another-section)` links to a heading on the current page.
-  * `[Link to the section on another page](Page2.md#another-section)` links to a heading on another page. 
+  * `[Link to a section on the current page](#another-section)`{:disable-links} links to a heading on the current page.
+  * `[Link to the section on another page](Page2.md#another-section)`{:disable-links} links to a heading on another page. 
 
 #### Links to IntelliJ Platform Source
 Links to files in the IntelliJ Platform (`intellij-community`) repository use `upsource:///` instead of the full URL to the repository.
 The `upsource:///` URI effectively points to the root of the `intellij-community` repository.
-* `[_README.md_](upsource:///README.md)` links to general, non-code information files, use _italic_ style. ([_README.md_](upsource:///README.md))
+* `[_README.md_](upsource:///README.md)`{:disable-links} links to general, non-code information files, use _italic_ style. ([_README.md_](upsource:///README.md))
   Examples of this file type include _LICENSE.txt_ and _README.md_. 
-* `[`\`plugin.xml\``](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java)` links to declarative source code files, use `code` style. ([`plugin.xml`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java))
+* `[`\`plugin.xml\``](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java)`{:disable-links} links to declarative source code files, use `code` style. ([`plugin.xml`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java))
   Examples of this file type include: `settings.gradle`, `plugin.xml` or `theme_basics.theme.json`.
-* `[`\`AnAction\``](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java)` links to source files for code objects like interfaces and classes.  
+* `[`\`AnAction\``](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java)`{:disable-links} links to source files for code objects like interfaces and classes.  
   Examples of this file type include: `Project.java`, and `HelloAction.kt`.
   * Note the use of \`\` characters surrounding the class name in the link. 
   * When linking to an API in this manner, the FQN isn't necessary in the link.

@@ -258,7 +258,7 @@ The following example sets a new border width and color for all windows:
 ```json
 {
   "ui": {
-    "Window.border" : "4, 4, 4, 4, E6E6E6"
+    "Window.border" : "4,4,4,4,E6E6E6"
   }
 }
 ```

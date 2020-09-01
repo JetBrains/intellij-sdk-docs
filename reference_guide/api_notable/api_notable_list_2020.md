@@ -86,7 +86,7 @@ To support **Open or Import**, a plugin must provide [`ProjectOpenProcessor`](up
 If there are several matching processors, a simple choice dialog is shown.
 If additional manual configuration is necessary, a modal dialog can be shown in `doOpenProject()` - however, it is highly recommended performing all setup automatically (like Maven and Gradle plugins do).
 
-### Notable Changes in IntelliJ IDEA
+### Notable Changes in IntelliJ IDEA 2020.1
 
 EOL for JetBrains TFS Plugin
 : Please use [Azure DevOps](https://plugins.jetbrains.com/plugin/7981-azure-devops) plugin instead, see [blog post](https://blog.jetbrains.com/idea/2020/01/end-of-support-for-tfs-2014-and-older/) for more details.

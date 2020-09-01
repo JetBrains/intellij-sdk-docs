@@ -70,6 +70,8 @@ Please see [Incompatible API Changes](/reference_guide/api_changes_list.md) on h
                  
 `com.intellij.openapi.application.NonBlockingReadAction.finishOnUiThread` method parameter type changed from ``Consumer<T>`` to ``Consumer<? super T>``
 : This may break source-compatibility with inheritors written in Kotlin.
+                                                      
+### Changes in Python Plugin 2020.3
 
 All parameters in `com.jetbrains.python.psi.PyElementVisitor` marked `@NotNull`
 : This may break source-compatibility with inheritors written in Kotlin.

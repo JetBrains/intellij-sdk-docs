@@ -40,7 +40,7 @@ class MyService implements PersistentStateComponent<MyService.State> {
     public String value;
   }
 
-  State myState;
+  private State myState = new State();
 
   public State getState() {
     return myState;

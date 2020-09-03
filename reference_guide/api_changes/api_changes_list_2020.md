@@ -275,6 +275,7 @@ Images module functionality (package `org.intellij.images.*`) extracted to plugi
       plugins = ['platform-images']
     }
     ```
+  * If your plugin depends on other plugins using `com.intellij.platform.images` (e.g., CSS), please make sure to use `gradle-intellij-plugin` >=0.4.19 
 
 ### Changes in Python Plugin 2020.1
 

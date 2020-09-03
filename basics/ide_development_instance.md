@@ -47,13 +47,21 @@ To change the runtime for the Development Instance, set the _JRE_ field in the R
 
 
 ## Enabling Auto-Reload
-> **NOTE** Starting in 2020.1, this is available for compatible [dynamic plugins](/basics/plugin_structure/dynamic_plugins.md).
 
-When adding system property `idea.auto.reload.plugins` in the [run configuration](getting_started/running_and_debugging_a_plugin.md) (DevKit-based) or [**runIde**](/tutorials/build_system/prerequisites.md#running-a-simple-gradle-based-intellij-platform-plugin) task (Gradle-based), dynamic plugins are reloaded automatically when their JARs are modified.
-This allows a much faster development cycle by avoiding a full restart of the development instance after code changes.
+Starting in 2020.1, this is available for compatible [dynamic plugins](/basics/plugin_structure/dynamic_plugins.md).
+This allows a much faster development cycle by avoiding a full restart of the development instance after detecting code changes (when JARs are modified).
+
+Please note that any unloading problems in a production environment will ask the user to restart the IDE.
+
+### Gradle plugin 0.4.22 and Later
+Enabled by default for target platform 2020.2 or later.
+Set `autoReloadPlugins = true` in [**runIde**](/tutorials/build_system/prerequisites.md#running-a-simple-gradle-based-intellij-platform-plugin) task to enable it for earlier platform versions or `autoReloadPlugins = false` to disable it explicitly.
+
+### Gradle plugin 0.4.21 and Earlier/DevKit 
+Add system property `idea.auto.reload.plugins` in the [run configuration](getting_started/running_and_debugging_a_plugin.md) (DevKit-based) or [**runIde**](/tutorials/build_system/prerequisites.md#running-a-simple-gradle-based-intellij-platform-plugin) task (Gradle-based).
 For [Gradle-based plugins](/tutorials/build_system/prerequisites.md) using `gradle-intellij-plugin` 0.4.17 or later, this property is set automatically.
 
-To disable auto-reload, set `idea.auto.reload.plugins` to `false` explicitly (2020.1.2+). Please note that any unloading problems in a production environment will ask the user to restart the IDE.
+To disable auto-reload, set `idea.auto.reload.plugins` to `false` explicitly (2020.1.2+).
 
 
 ## The Development Instance Sandbox Directory 

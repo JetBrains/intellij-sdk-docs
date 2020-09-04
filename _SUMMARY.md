@@ -49,7 +49,6 @@
 * [Kotlin for Plugin Developers](tutorials/kotlin.md)
 * [Internal Actions Menu](reference_guide/internal_actions/internal_actions_intro.md)
     * [Enabling Internal Mode](reference_guide/internal_actions/enabling_internal.md)
-    * [Internal Actions](reference_guide/internal_actions/interal_actions_menu.md)
     * [UI Tools](reference_guide/internal_actions/internal_ui_sub.md)
         * [UI Inspector](reference_guide/internal_actions/internal_ui_inspector.md)
         * [LaF Defaults](reference_guide/internal_actions/internal_ui_laf_defaults.md)

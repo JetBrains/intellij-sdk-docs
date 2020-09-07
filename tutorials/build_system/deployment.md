@@ -15,7 +15,7 @@ Please see the guide page for manually [publishing a plugin](../../basics/gettin
 {:toc}
 
 ## Building Distribution
-For manual distribution or local installation, invoke `gradle buildPlugin` target to create the plugin distribution.
+For manual distribution or local installation, invoke `buildPlugin` Gradle task to create the plugin distribution.
 The resulting JAR/ZIP is located in `build/distributions` and can then be [installed](https://www.jetbrains.com/help/idea/managing-plugins.html#installing-plugins-from-disk) either manually or uploaded to a [custom plugin repository](/basics/getting_started/update_plugins_format.md).
 
 ## Providing Your Hub Permanent Token to Gradle
@@ -60,11 +60,7 @@ You may wish to verify this by [installing your plugin from disk](https://www.je
 ### Publishing a Plugin
 Once you are confident, the plugin works as intended, make sure the plugin version is updated, as the JetBrains Plugins Repository won't accept multiple artifacts with the same version. 
 
-To deploy a new version of your plugin to the JetBrains Plugins Repository, execute the following Gradle command:  
-
-```bash
-gradle publishPlugin
-```
+To deploy a new version of your plugin to the JetBrains Plugins Repository, invoke `publishPlugin` Gradle task.  
 
 Now check the most recent version of your plugin that appears on the [JetBrains Plugins Repository](https://plugins.jetbrains.com/). 
 If successfully deployed, any users who currently have your plugin installed on an available version of the IntelliJ Platform are notified of a new update available as soon as the update has been verified.

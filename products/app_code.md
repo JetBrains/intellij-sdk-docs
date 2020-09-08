@@ -6,6 +6,8 @@ title: AppCode Plugin Development
 ## Introduction
 Plugin projects targeting [AppCode](https://www.jetbrains.com/objc/) can be developed using IntelliJ IDEA with the `gradle-intellij-plugin`.
 
+> **TIP** Qualifying Open Source projects can [apply for free licenses](https://www.jetbrains.com/community/opensource/) of JetBrains products.
+
 ## Configuring Plugin Projects Targeting AppCode
 The Gradle configuration of AppCode plugin projects uses neither Product-Specific nor IntelliJ IDEA Attributes.
 Instead, configure AppCode plugin projects to use the `intellij.localPath` attribute.

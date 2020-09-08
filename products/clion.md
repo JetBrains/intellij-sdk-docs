@@ -7,6 +7,8 @@ title: CLion Plugin Development
 [CLion](https://www.jetbrains.com/clion/) is an IntelliJ Platform-based product.
 Plugin projects for CLion can be developed using IntelliJ IDEA with the `gradle-intellij-plugin`.
 
+> **TIP** Qualifying Open Source projects can [apply for free licenses](https://www.jetbrains.com/community/opensource/) of JetBrains products.
+
 ## Configuring Plugin Projects Targeting CLion
 The configuration of CLion plugin projects follows the methods described in [Configuring Plugin Projects using a Product-Specific Attribute](dev_alternate_products.md#configuring-plugin-projects-using-a-product-specific-attribute), and [Configuring the plugin.xml File](dev_alternate_products.md#configuring-pluginxml).
 

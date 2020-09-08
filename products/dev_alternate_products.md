@@ -12,6 +12,8 @@ Project configuration attributes common to projects targeting products other tha
 Details particular to an IntelliJ Platform-based product are described on the individual product pages in Part VIII.
 All of the Gradle configuration attributes described here are discussed in-depth on the [Configuring Gradle for IntelliJ Platform Plugins](/tutorials/build_system/gradle_guide.md) and the `gradle-intellij-plugin` [README](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md) pages.
 
+> **TIP** Qualifying Open Source projects can [apply for free licenses](https://www.jetbrains.com/community/opensource/) of JetBrains products.
+
 * bullet list
 {:toc}
 

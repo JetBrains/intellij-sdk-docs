@@ -24,4 +24,3 @@ The following are referenced in the tutorial:
 **Related topics:**
 * [Action System](/tutorials/action_system.md)
 * [Threading Issues](/basics/architectural_overview/general_threading_rules.md)
-

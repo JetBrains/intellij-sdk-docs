@@ -38,4 +38,3 @@ Providing custom language support includes the following major steps:
 * [Go to Class and Go to Symbol](/reference_guide/custom_language_support/go_to_class_and_go_to_symbol.md)
 * [Documentation](/reference_guide/custom_language_support/documentation.md)
 * [Additional Minor Features](/reference_guide/custom_language_support/additional_minor_features.md)
-

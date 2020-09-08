@@ -9,4 +9,3 @@ For more information, see:
 * [Settings Guide](/reference_guide/settings_guide.md) for information about Settings Extension Points and implementations.
 * [Custom Settings Groups](/reference_guide/settings_groups.md) for information about creating custom Settings groups and parent-child relationships.
 * [Settings Tutorial](/tutorials/settings_tutorial.md) for step-by-step instructions for creating a simple set of custom Settings.
-

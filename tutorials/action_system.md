@@ -10,7 +10,3 @@ By registering actions, you can add your own menu items, toolbar buttons and key
 
 
 The source code for the [`action_basics`](https://github.com/JetBrains/intellij-sdk-code-samples/tree/master/action_basics) code sample is used throughout this tutorial.
-
-
-
-

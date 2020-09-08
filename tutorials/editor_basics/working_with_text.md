@@ -148,5 +148,3 @@ public class EditorIllustrationAction extends AnAction {
   }
 }
 ```
-
-

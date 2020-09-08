@@ -27,4 +27,3 @@ The following components are particularly noteworthy:
     *  Messages
     *  JBSplitter
     *  JBTabs
-

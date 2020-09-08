@@ -110,4 +110,3 @@ In most cases this may not be needed but there are two cases which may require a
 For many language text attributes which do not have any values there will be a line indicating that the attributes are inherited from a certain section/attributes, for example: "Keyword (Language Defaults)".
 If an element has *any*  attributes set, only these attributes are used, all attributes from the base element are ignored.
 To *restore*  the inheritance uncheck all the boxes and click *Apply*.
-

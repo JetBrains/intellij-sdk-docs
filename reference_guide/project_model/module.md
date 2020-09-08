@@ -132,4 +132,3 @@ project.getMessageBus().connect().subscribe(ProjectTopics.MODULES, new ModuleLis
   }
 });
 ```
-

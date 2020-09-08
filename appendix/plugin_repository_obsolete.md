@@ -30,4 +30,3 @@ For your convenience pages previously part of this documentation are linked belo
   * [Plugin Developers List](https://plugins.jetbrains.com/docs/marketplace/plugin-developers-list.html)
 * [Plugin Recommendations](https://plugins.jetbrains.com/docs/marketplace/intellij-plugin-recommendations.html)
 * [Custom Release Channels](https://plugins.jetbrains.com/docs/marketplace/custom-release-channels.html)
-

@@ -34,6 +34,3 @@ Color changes can be specified as RGB, hexadecimal, or using the color picker.
 Pressing the _Choose_ button changes the UI Control color immediately.
 
 UI Control colors can be reset using the _Choose Color_ window, or by resetting the [UI Theme](https://www.jetbrains.com/help/idea/settings-appearance.html).
-
-
-

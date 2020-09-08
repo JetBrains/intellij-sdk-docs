@@ -17,4 +17,3 @@ Install and enable [Grammar-Kit](https://plugins.jetbrains.com/plugin/6606-gramm
 
 ### 1.4. Create a Project
 Create an [IntelliJ Platform Plugin project](/tutorials/build_system/prerequisites.md).
-

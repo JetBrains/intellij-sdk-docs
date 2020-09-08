@@ -99,12 +99,3 @@ public FrameworkSupportInModuleProvider createProvider() {
 After compiling and running the code sample above an extra option for configuring the newly created Demo custom framework should be available in the Project Wizard:
 
 ![Custom Framework Support](framework/img/custom_framework.png)
-
-
-
-
-
-
-
-
-

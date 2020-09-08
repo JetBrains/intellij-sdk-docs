@@ -141,4 +141,3 @@ Please see [Incompatible API Changes](/reference_guide/api_changes_list.md) on h
 
 `com.jetbrains.php.lang.documentation.phpdoc.psi.impl.tags.PhpDocMethodImpl` superclass changed from `com.jetbrains.php.lang.documentation.phpdoc.psi.impl.PhpDocPsiElementImpl` to `com.jetbrains.php.lang.psi.elements.impl.PhpNamedElementImpl`
 : It's necessary to check that the code doesn't rely on the superclass.
-

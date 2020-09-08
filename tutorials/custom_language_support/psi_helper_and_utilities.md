@@ -80,4 +80,3 @@ This utility will be used later when implementing [code completion](https://www.
 ```java
 {% include /code_samples/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleUtil.java %}
 ```
-

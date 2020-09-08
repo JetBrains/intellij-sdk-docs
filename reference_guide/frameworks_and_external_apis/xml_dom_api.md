@@ -466,7 +466,7 @@ Please note that editor-based controls are built on IntelliJ Platform's `Editor`
 This control allows you to edit simple string values. The control is bound to a `TextPanel` component. There's also an inheritor of that panel — `MultiLineTextPanel`. If you bind a `StringControl` to it, a big editor will appear on the screen. In case you don't have space for a big editor, bind it to a `BigTextPanel`. Then it will be filled with a text editor, and the browse button will be added to open a dialog with the big editor where you can type a longer string.
 
 ##### PsiClassControl
-This is a one-line editor with a browse button that opens the standard  class selection dialog. The control accepts class names only. It is bound to `PsiClassPanel`.
+This is a one-line editor with a browse button that opens the standard class selection dialog. The control accepts class names only. It is bound to `PsiClassPanel`.
 
 ![PsiClassControl](img/xml_dom_api/psiclasscontrol.gif)
 

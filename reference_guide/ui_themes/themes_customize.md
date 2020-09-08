@@ -93,7 +93,7 @@ The list of available icon `Actions` and `Objects` keys are provided by the edit
 
 ![Color Palette Popup](img/theme_colorpalette_popup.png){:width="600px"}
 
-For example, the following key-value pair changes the color for  all blue-colored icons on toolbars to the color #5BC0DE:
+For example, the following key-value pair changes the color fo ll blue-colored icons on toolbars to the color #5BC0DE:
 
 ```json
 {
@@ -262,7 +262,7 @@ The following example sets a new border width and color for all windows:
 }
 ```
 
-In this example, the customized border supersedes the default definition and  any global color override.
+In this example, the customized border supersedes the default definition an ny global color override.
 
 ## Finding Attribute Keys for UI Controls
 There are hundreds of UI control `element.property` keys defined in the IntelliJ Platform UI.

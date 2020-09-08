@@ -20,7 +20,7 @@ In order to enable multiple localizations per installation without localization 
 
 ## Content and Layout of resources_en.jar
 
-Property files  usually contain messages, menu items, dialog labels texts etc.
+Property file sually contain messages, menu items, dialog labels texts etc.
 For every such file localized jar should contain translated version that is placed to exactly the same path relative to the jar root and has exactly the same name as original file plus locale identifier.
 For example ***messages/ActionsBundle.properties*** file from ***resources_en.jar*** should have its translated version ***messages/ActionsBundle_ja.properties*** file in ***resources_ja.jar***.
 All property files should be ASCII encoded with *\uXXXX* sequences used for characters that have no their representation in ASCII range.

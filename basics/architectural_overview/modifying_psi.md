@@ -16,7 +16,7 @@ In the most general case, you use the `createFileFromText()` method of [`PsiFile
 
 Most languages provide factory methods which let you create specific code constructs more easily. For example, the [`PsiJavaParserFacade`](upsource:///java/java-psi-api/src/com/intellij/psi/PsiJavaParserFacade.java) class contains methods such as `createMethodFromText()`, which creates a Java method from the given text.
 
-When you're implementing refactorings, intentions or inspection quickfixes that work with existing code, the text that you pass to the various `createFromText()` methods will combine hard-coded fragments and fragments of code taken from the existing file. For small code fragments (individual identifiers), you can simply append the text from the existing code to the text of the code fragment you're building. In that case, you need to make sure that the resulting text is  syntactically correct, otherwise the `createFromText()` method will throw an exception.
+When you're implementing refactorings, intentions or inspection quickfixes that work with existing code, the text that you pass to the various `createFromText()` methods will combine hard-coded fragments and fragments of code taken from the existing file. For small code fragments (individual identifiers), you can simply append the text from the existing code to the text of the code fragment you're building. In that case, you need to make sure that the resulting text is syntactically correct, otherwise the `createFromText()` method will throw an exception.
 
 For larger code fragments, it's best to perform the modification in several steps:
 

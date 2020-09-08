@@ -55,7 +55,7 @@ Sources of a plugin for External Builder should be put in a separate module. By 
 
 **If your test IDE is IntelliJ IDEA 16.0 or newer**
 
-Switch on "Debug Build Process" toggle action (available via 'Find Action') in the test IDE. After that every time compilation is run, the build  process will wait for debugger connection on some (random) port and will show the port number in the status bar. In working copy of IDE a "Remote" run configuration should be created and pointed to this port. If you often need to debug external builders and want to reuse the created "Remote" run configuration you may fix the port number by adding the following VM option to the plugin run configuration:
+Switch on "Debug Build Process" toggle action (available via 'Find Action') in the test IDE. After that every time compilation is run, the build process will wait for debugger connection on some (random) port and will show the port number in the status bar. In working copy of IDE a "Remote" run configuration should be created and pointed to this port. If you often need to debug external builders and want to reuse the created "Remote" run configuration you may fix the port number by adding the following VM option to the plugin run configuration:
 
 ```
 -Dcompiler.process.debug.port=<port-number>
@@ -71,7 +71,7 @@ Start IDE with your plugin with the following VM option
 ```
 
 
-After that every time compilation is run in the test IDE, the build  process will wait for debugger connection on this port and only then proceed.  In working copy of IDE a "Remote" run configuration should be created and pointed to this port. Specifying port "-1" will disable debugging mode.
+After that every time compilation is run in the test IDE, the build process will wait for debugger connection on this port and only then proceed.  In working copy of IDE a "Remote" run configuration should be created and pointed to this port. Specifying port "-1" will disable debugging mode.
 
 ### Profiling External Build Process
 
@@ -103,7 +103,7 @@ The log file is located under the directory
 
 There both `build-log.log` and `build-log.properties` files can be found.
 The `build-log.properties` is a log4j configuration file, where the log level and desired logging categories can be adjusted.
-This file contains logging from all  build sessions, including those from the auto-make.
+This file contains logging from all build sessions, including those from the auto-make.
 
 In IntelliJ Platform versions before version 14.1 log4j configuration was stored in `build-log.xml`.
 

@@ -69,7 +69,7 @@ We're trying to eliminate them. Meanwhile, you can try to speed up what you can 
 `WriteAction`s currently have to happen on UI thread, so to speed them up, you can try moving as much as possible out of write action into a preparation step which can be then invoked in background (e.g., using `ReadAction.nonBlocking()`).
 
 Don't do anything expensive in event listeners. Ideally, you should only clear some caches.
-You can also schedule background processing of events, but be prepared that some new events might be delivered before your background processing starts, and thus the world might have changed by that moment or  even in the middle of background processing. Consider using [`MergingUpdateQueue`](upsource:///platform/platform-api/src/com/intellij/util/ui/update/MergingUpdateQueue.java) and `ReadAction.nonBlocking()` to mitigate these issues.
+You can also schedule background processing of events, but be prepared that some new events might be delivered before your background processing starts, and thus the world might have changed by that moment o ven in the middle of background processing. Consider using [`MergingUpdateQueue`](upsource:///platform/platform-api/src/com/intellij/util/ui/update/MergingUpdateQueue.java) and `ReadAction.nonBlocking()` to mitigate these issues.
 
 Massive batches of VFS events can be pre-processed in background, see [`AsyncFileListener`](upsource:///platform/core-api/src/com/intellij/openapi/vfs/AsyncFileListener.java) (2019.2 or later).
 

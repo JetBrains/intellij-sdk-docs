@@ -6,7 +6,7 @@ title: Kotlin for Plugin Developers
 ## 1. Why Kotlin?
 
 Using Kotlin to write plugins for the IntelliJ Platform is very similar to writing plugins in Java.
-Existing plugin developers can get started by converting boilerplate Java classes to their Kotlin equivalents by using the [J2K compiler](https://kotlinlang.org/docs/tutorials/mixing-java-kotlin-intellij.html#converting-an-existing-java-file-to-kotlin-with-j2k) bundled with the IntelliJ Platform (versions  143.+), and developers can easily mix and match Kotlin classes with their existing Java code.
+Existing plugin developers can get started by converting boilerplate Java classes to their Kotlin equivalents by using the [J2K compiler](https://kotlinlang.org/docs/tutorials/mixing-java-kotlin-intellij.html#converting-an-existing-java-file-to-kotlin-with-j2k) bundled with the IntelliJ Platform (version 43.+), and developers can easily mix and match Kotlin classes with their existing Java code.
 
 In addition to [null safety](https://kotlinlang.org/docs/reference/null-safety.html) and [type-safe builders](https://kotlinlang.org/docs/reference/type-safe-builders.html), the Kotlin language offers many convenient features for plugin development, which make plugins easier to read and simpler to maintain.
 Much like [Kotlin for Android](https://kotlinlang.org/docs/tutorials/kotlin-android.html), the IntelliJ Platform makes extensive use of callbacks, which are easy to express as [lambdas](https://kotlinlang.org/docs/reference/lambdas.html) in Kotlin.

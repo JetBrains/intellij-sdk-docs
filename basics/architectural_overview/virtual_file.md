@@ -8,7 +8,8 @@ A [`VirtualFile`](upsource:///platform/core-api/src/com/intellij/openapi/vfs/Vir
 Most commonly, a virtual file is a file in a local file system.
 However, the *IntelliJ Platform* supports multiple pluggable file system implementations, so virtual files can also represent classes in a JAR file, old revisions of files loaded from a version control repository, and so on.
 
-The VFS level deals only with binary content. Contents of a `VirtualFile` are treated as a stream of bytes, but concepts like encodings and line separators are handled on higher system levels.
+The VFS level deals only with binary content.
+Contents of a `VirtualFile` are treated as a stream of bytes, but concepts like encodings and line separators are handled on higher system levels.
 
 ## How do I get a virtual file?
 
@@ -48,7 +49,8 @@ If a file is deleted, its corresponding VirtualFile instance becomes invalid (`i
 
 ## How do I create a virtual file?
 
-Usually, you don't. As a general rule, files are created either through the PSI API or through the regular `java.io.File` API.
+Usually, you don't.
+As a general rule, files are created either through the PSI API or through the regular `java.io.File` API.
 
 If one needs to create a file through VFS, use `VirtualFile.createChildData()` to create a `VirtualFile` instance and `VirtualFile.setBinaryContent()` to write some data to the file.
 
@@ -56,7 +58,8 @@ If one needs to create a file through VFS, use `VirtualFile.createChildData()` t
 
 > **NOTE** See [Virtual file system events](/basics/virtual_file_system.md#virtual-file-system-events) for important details.
 
-Implement [`BulkFileListener`](upsource:///platform/core-api/src/com/intellij/openapi/vfs/newvfs/BulkFileListener.java) and subscribe to the [message bus](/reference_guide/messaging_infrastructure.md) topic `VirtualFileManager.VFS_CHANGES`. For example:
+Implement [`BulkFileListener`](upsource:///platform/core-api/src/com/intellij/openapi/vfs/newvfs/BulkFileListener.java) and subscribe to the [message bus](/reference_guide/messaging_infrastructure.md) topic `VirtualFileManager.VFS_CHANGES`.
+For example:
 
 ```java
 project.getMessageBus().connect().subscribe(VirtualFileManager.VFS_CHANGES, new BulkFileListener() {

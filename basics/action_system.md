@@ -23,7 +23,10 @@ The rest of this page is an overview of actions as an extension point.
 An action is a class derived from the abstract class [`AnAction`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java).
 The IntelliJ Platform calls methods of an action when a user interacts with a menu item or toolbar button.
 
-> **WARNING** Classes based on `AnAction` do not have class fields of any kind. This is because an instance of `AnAction` class exists for the entire lifetime of the application. If the `AnAction` class uses a field to store data that has a shorter lifetime and doesn't clear this data promptly, the data leaks. For example, any `AnAction` data that exists only within the context of a `Project` causes the `Project` to be kept in memory after the user has closed it.
+> **WARNING** Classes based on `AnAction` do not have class fields of any kind.
+> This is because an instance of `AnAction` class exists for the entire lifetime of the application.
+> If the `AnAction` class uses a field to store data that has a shorter lifetime and doesn't clear this data promptly, the data leaks.
+> For example, any `AnAction` data that exists only within the context of a `Project` causes the `Project` to be kept in memory after the user has closed it.
 
 ### Principal Implementation Overrides
 Every IntelliJ Platform action should override `AnAction.update()` and must override `AnAction.actionPerformed()`.
@@ -100,7 +103,8 @@ An example of inspecting PSI elements is demonstrated in the SDK code sample `ac
 ### Action IDs
 Every action and action group has a unique identifier.
 Basing the identifier for a custom action on the FQN of the implementation is the best practice, assuming the package incorporates the `<id>` of the plugin.
-An action must have a unique identifier for each place. It is used in the IDE UI, even though the FQN of the implementation is the same.
+An action must have a unique identifier for each place.
+It is used in the IDE UI, even though the FQN of the implementation is the same.
 Definitions of identifiers for the standard IntelliJ Platform actions are in [`IdeActions`](upsource:///platform/platform-api/src/com/intellij/openapi/actionSystem/IdeActions.java).
 
 ### Grouping Actions

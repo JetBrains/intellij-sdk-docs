@@ -5,7 +5,8 @@ title: Messaging Infrastructure
 
 ## Purpose
 
-The purpose of this document is to introduce the messaging infrastructure available in the IntelliJ Platform to developers and plugin writers. It is intended to answer why, when and how to use it.
+The purpose of this document is to introduce the messaging infrastructure available in the IntelliJ Platform to developers and plugin writers.
+It is intended to answer why, when and how to use it.
 
 ## Rationale
 
@@ -17,18 +18,21 @@ Here are the main components of the messaging API.
 
 ### Topic
 
-This class serves as an endpoint at the messaging infrastructure. I.e. clients are allowed to subscribe to the topic within particular bus and to send messages to particular topic within particular bus.
+This class serves as an endpoint at the messaging infrastructure.
+I.e. clients are allowed to subscribe to the topic within particular bus and to send messages to particular topic within particular bus.
 
 ![Topic](img/topic.svg)
 
 * *display name* just a human-readable name used for logging/monitoring purposes;
 * *broadcast direction* will be explained in details at Broadcasting. Default value is *TO\_CHILDREN*;
 * *listener class* that is a business interface for particular topic.
-  Subscribers register implementation of this interface at the messaging infrastructure and publishers may later retrieve object that conforms (IS-A) to it and call any method defined there. Messaging infrastructure takes care on dispatching that to all subscribers of the topic, i.e. the same method with the same arguments will be called on the registered callbacks;
+  Subscribers register implementation of this interface at the messaging infrastructure and publishers may later retrieve object that conforms (IS-A) to it and call any method defined there.
+  Messaging infrastructure takes care on dispatching that to all subscribers of the topic, i.e. the same method with the same arguments will be called on the registered callbacks;
 
 ### Message Bus
 
-Is the core of the messaging system. Is used at the following scenarios:
+Is the core of the messaging system.
+Is used at the following scenarios:
 
 ![Bus](img/bus.png)
 
@@ -107,7 +111,8 @@ public void doChange(Context context) {
 
 ## Broadcasting
 
-Message buses can be organised into hierarchies. Moreover, the *IntelliJ Platform* has them already:
+Message buses can be organised into hierarchies.
+Moreover, the *IntelliJ Platform* has them already:
 
 ![Standard hierarchy](img/standard_hierarchy.svg)
 
@@ -134,7 +139,8 @@ No hard reference to the project-level subscriber will be stored at application-
 
 *Options*
 
-Broadcast configuration is defined per-topic. Following options are available:
+Broadcast configuration is defined per-topic.
+Following options are available:
 
 * TO\_CHILDREN_ (default);
 * _NONE_;
@@ -163,7 +169,8 @@ Let's see what happens if someone sends a message to the target topic:
 
 ### Relief Listeners Management
 
-Messaging infrastructure is very light-weight, so, it's possible to reuse it at local sub-systems in order to relief [Observers](https://en.wikipedia.org/wiki/Observer_pattern) construction. Let's see what is necessary to do then:
+Messaging infrastructure is very light-weight, so, it's possible to reuse it at local sub-systems in order to relief [Observers](https://en.wikipedia.org/wiki/Observer_pattern) construction.
+Let's see what is necessary to do then:
 
 1. Define business interface to work with;
 2. Create shared message bus and topic that uses the interface above (_shared_ here means that either _subject_ or _observers_ know about them);

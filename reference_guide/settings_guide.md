@@ -23,7 +23,8 @@ Many [attributes](#settings-declaration-attributes) are shared between the EP de
 Application and Project Settings typically provide an implementation based on the [`Configurable`](upsource:///platform/platform-api/src/com/intellij/openapi/options/Configurable.java) interface because they do not have runtime dependencies.
 See [Implementations for Settings Extension Points](#implementations-for-settings-extension-points) for more information.
 
-> **NOTE** For performance reasons, the recommended approach is to declare as much information as possible about a Settings' implementation using attributes in the Extension Point. If it is not declared, the component must be loaded to retrieve it from the implementation, degrading UI responsiveness.
+> **NOTE** For performance reasons, the recommended approach is to declare as much information as possible about a Settings' implementation using attributes in the Extension Point.
+> If it is not declared, the component must be loaded to retrieve it from the implementation, degrading UI responsiveness.
 
 ### Declaring Application Settings
 Settings at the Application level use the `com.intellij.applicationConfigurable` EP.

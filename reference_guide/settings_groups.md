@@ -82,7 +82,8 @@ For the child of a parent, the `id` attribute becomes compound:
 |:---   |  :---:  |:---  |
 | `id` | Y | Compound FQN of implementation based on `com.intellij.openapi.options.Configurable` in the form: `XX.YY` where:<br>`XX` is the parent Settings component FQN-based id.<br>`YY` is unique to the child among other siblings.  |
 
-> **TIP** All children share the parent's `id` as the basis of their own `id`. All children have an `id` suffix that is unique among their siblings.
+> **TIP** All children share the parent's `id` as the basis of their own `id`.
+> All children have an `id` suffix that is unique among their siblings.
 
 ## Implementations for Parent-Child Settings
 Implementations can be based on [`Configurable`](upsource:///platform/platform-api/src/com/intellij/openapi/options/Configurable.java), [`ConfigurableProvider`](upsource:///platform/platform-api/src/com/intellij/openapi/options/ConfigurableProvider.java) or one of their subtypes.

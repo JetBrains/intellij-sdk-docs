@@ -35,9 +35,10 @@ On the first screen, the type of project is configured:
   These settings will be used for the remainder of this tutorial.
 
 Optionally:
-  * To include support for the Kotlin language in the plugin, check the _Kotlin/JVM_ box (circled in green below).
-    This option can be selected with or without the _Java_ language. See [Kotlin for Plugin Developers](/tutorials/kotlin.md) for more information.
-  * To create the `build.gradle` file as a Kotlin build script (`build.gradle.kts`) rather than Groovy, check the _Kotlin DSL build script_ box (circled in magenta below).
+* To include support for the Kotlin language in the plugin, check the _Kotlin/JVM_ box (circled in green below).
+  This option can be selected with or without the _Java_ language.
+  See [Kotlin for Plugin Developers](/tutorials/kotlin.md) for more information.
+* To create the `build.gradle` file as a Kotlin build script (`build.gradle.kts`) rather than Groovy, check the _Kotlin DSL build script_ box (circled in magenta below).
 
 Then click _Next_:
 

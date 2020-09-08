@@ -13,9 +13,15 @@ Here are some useful things to know before authoring SDK content and submitting 
 
 ## Setting Up the Documentation Build Environment
 
-This site runs via [Jekyll](https://jekyllrb.com), which is a popular static site generator, written in Ruby. It can be hosted locally to ensure that any changes are correct. Once set up, running the site is as easy as calling `rake preview`.
+This site runs via [Jekyll](https://jekyllrb.com), which is a popular static site generator, written in Ruby.
+It can be hosted locally to ensure that any changes are correct.
+Once set up, running the site is as easy as calling `rake preview`.
 
-Alternatively, the site can also be hosted in a [Docker container](https://www.docker.com). On Mac and Windows, this means the site is hosted in a virtual machine. Docker maintains this container, building it based on the instructions in the [`Dockerfile`](Dockerfile). All dependencies (Ruby, etc.) are automatically installed when building the image, which reduces the manual configuration steps. The Docker image is also used to build the [published site](https://www.jetbrains.org/intellij/sdk/docs/index.html), so it is a known working environment.
+Alternatively, the site can also be hosted in a [Docker container](https://www.docker.com).
+On Mac and Windows, this means the site is hosted in a virtual machine.
+Docker maintains this container, building it based on the instructions in the [`Dockerfile`](Dockerfile).
+All dependencies (Ruby, etc.) are automatically installed when building the image, which reduces the manual configuration steps.
+The Docker image is also used to build the [published site](https://www.jetbrains.org/intellij/sdk/docs/index.html), so it is a known working environment.
 
 ### Developing Documentation with Docker
 
@@ -31,15 +37,22 @@ Follow these steps to work with Docker:
     * Start the Docker container called `intellij-sdk-docs`.
     * Forward port 4000 from the Docker container to port 4000 on the Docker client.
 
-    > **NOTE** For Windows and Mac, this means port 4000 of the Docker container is forwarded to port 4000 of the Docker virtual machine, not `localhost`. For Linux, the Docker client is the host machine, so `localhost:4000` is forwarded to port 4000 on the Docker container.
+    > **NOTE** For Windows and Mac, this means port 4000 of the Docker container is forwarded to port 4000 of the Docker virtual machine, not `localhost`.
+    > For Linux, the Docker client is the host machine, so `localhost:4000` is forwarded to port 4000 on the Docker container.
     >
-    > To hit the container's port 4000 from Windows or the Mac, it is necessary to hit the IP address of the Docker client (virtual machine). Use `docker-machine ip default` to get the IP address of the Docker client. Use `X.X.X.X:4000` to hit the client in the virtual machine, which is mapped to the container's port 4000.
+    > To hit the container's port 4000 from Windows or the Mac, it is necessary to hit the IP address of the Docker client (virtual machine).
+    > Use `docker-machine ip default` to get the IP address of the Docker client.
+    > Use `X.X.X.X:4000` to hit the client in the virtual machine, which is mapped to the container's port 4000.
     >
-    > Alternatively, modify the virtual machine's settings to forward port 4000 automatically to `localhost`. See this [blog post](https://acaird.github.io/computers/2014/11/16/docker-virtualbox-host-networking) for more details.
+    > Alternatively, modify the virtual machine's settings to forward port 4000 automatically to `localhost`.
+    > See this [blog post](https://acaird.github.io/computers/2014/11/16/docker-virtualbox-host-networking) for more details.
 
-    * Mount the current directory (`$PWD` is a Unix style environment variable. You can use `%CD%` on Windows, or specify the full path) as `/usr/src/app` inside the Docker container. The Docker image will see the `intellij-sdk-docs` repository as the folder `/usr/src/app`.
+    * Mount the current directory (`$PWD` is a Unix style environment variable.
+      You can use `%CD%` on Windows, or specify the full path) as `/usr/src/app` inside the Docker container.
+      The Docker image will see the `intellij-sdk-docs` repository as the folder `/usr/src/app`.
 
-    > **NOTE** If running on Windows in an MSYS bash script (e.g., the "Docker Quickstart Terminal"), the path to the local folder needs to be properly escaped, or the MSYS environment will translate the paths to standard Windows path, and causing an error such as `invalid value "C:\\Users\\...;C:\\Program Files\\Git\\usr\\src\\app" for flag -v`. To fix this problem, prefix the full path with double slashes, e.g., `-v //c/Users/...`, or `docker run -p 4000:4000 -v /$PWD:/usr/src/app intellij-sdk-docs` (note the leading slash before `$PWD`).
+    > **NOTE** If running on Windows in an MSYS bash script (e.g., the "Docker Quickstart Terminal"), the path to the local folder needs to be properly escaped, or the MSYS environment will translate the paths to standard Windows path, and causing an error such as `invalid value "C:\\Users\\...;C:\\Program Files\\Git\\usr\\src\\app" for flag -v`.
+    > To fix this problem, prefix the full path with double slashes, e.g., `-v //c/Users/...`, or `docker run -p 4000:4000 -v /$PWD:/usr/src/app intellij-sdk-docs` (note the leading slash before `$PWD`).
 
     * Run the commands in the Dockerfile's `CMD` instruction to execute:
   * `rake bootstrap`, which ensures all of the prerequisites are installed,
@@ -52,11 +65,13 @@ To build the documentation site, you need:
 
 * Ruby 2 - Jekyll is a Ruby application.
 * Ruby 2 DevKit (for Windows) - Some of Jekyll's dependencies need to be compiled, and require the DevKit to be installed.
-* `gem install bundler` - the site uses [Bundler](https://bundler.io) to manage gem dependencies within the repository, rather than globally installing to the local operating system. Run this command to install the Bundler toolset globally.
+* `gem install bundler` - the site uses [Bundler](https://bundler.io) to manage gem dependencies within the repository, rather than globally installing to the local operating system.
+  Run this command to install the Bundler toolset globally.
 
 #### macOS
 
-macOS comes with Ruby already installed. The only steps required are:
+macOS comes with Ruby already installed.
+The only steps required are:
 
 * `gem install bundler`
 
@@ -73,20 +88,23 @@ This installation is easier if you use [Chocolatey](https://chocolatey.org), a p
     * By default, this is `C:\tools\DevKit\config.yml`
     * Add the line `- C:\tools\ruby21` (including the leading minus sign)
 
-> **NOTE** Before running the `rake bootstrap` step listed below, please run the `devkitvars.bat` file from the DevKit. E.g. `C:\tools\DevKit\devkitvars.bat`
+> **NOTE** Before running the `rake bootstrap` step listed below, please run the `devkitvars.bat` file from the DevKit.
+> E.g. `C:\tools\DevKit\devkitvars.bat`
 
 ### Bootstrapping the Documentation Build Environment
 
 1. Ensure Bundler is installed - `gem install bundler`.
 2. On Windows, ensure the `devkitvars.bat` file has been run in the current command prompt (e.g., `c:\tools\DevKit\devkitvars.bat`).
 3. Clone the documentation site.
-4. Initialize and update the `sdkdocs-template` submodule - `git submodule init` and `git submodule update`
+4. Initialize and update the `sdkdocs-template` submodule - `git submodule init` and `git submodule update`.
 5. `rake bootstrap` - this uses Bundler to download all required gems.
 6. `rake preview` - this will build the site, and host it in a local webserver.
 
 ### Building and Previewing the Site
 
-To build and test the site, run `rake preview`. This will build the site and host it using the config provided. The URL of the hosted website is displayed on the screen and depends on the `baseurl` field defined in `_config.yml`.
+To build and test the site, run `rake preview`.
+This will build the site and host it using the config provided.
+The URL of the hosted website is displayed on the screen and depends on the `baseurl` field defined in `_config.yml`.
 
 > **NOTE** You must use `localhost` as hostname, _NOT_ 0.0.0.0, otherwise fonts fail to load.
 

@@ -36,7 +36,8 @@ When using Kotlin, use [Kotlin UI DSL](kotlin_ui_dsl.md) to provide the dialog's
 
 > **TIP** Existing dialogs can be inspected at runtime using [UI Inspector](/reference_guide/internal_actions/internal_ui_inspector.md), e.g., to locate the underlying implementation of UI components.
 
-To display the dialog, call the `show()` method and then use the `getExitCode()` method to check how the dialog was closed. The `showAndGet()` method can be used to combine these two calls.
+To display the dialog, call the `show()` method and then use the `getExitCode()` method to check how the dialog was closed.
+The `showAndGet()` method can be used to combine these two calls.
 
 To customize the buttons displayed in the dialog (replacing the standard _OK_/_Cancel_/_Help_ set of buttons), override either the `createActions()` or `createLeftActions()` methods.
 Both of these methods return an array of Swing Action objects.

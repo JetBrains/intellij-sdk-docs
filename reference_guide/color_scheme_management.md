@@ -8,7 +8,8 @@ title: Color Scheme Management
 Color scheme management in IntelliJ IDEA 12.1 was changed to ease the work of scheme designers and make schemes look equally well for different programming languages even if not designed specifically for these languages.
 Previously language plug-ins were using fixed default colors incompatible, for example, with dark schemes.
 
-The new implementation allows to specify a dependency on a set of standard text attributes which are linked to a scheme but not to any specific language. Language-specific attributes still can be set by a scheme designer if needed but it's optional.
+The new implementation allows to specify a dependency on a set of standard text attributes which are linked to a scheme but not to any specific language.
+Language-specific attributes still can be set by a scheme designer if needed but it's optional.
 New color schemes have got a new `.icls` (Idea CoLor Scheme) extension to avoid confusion about compatibility problems with older platform versions:
 if only standard attributes are set, they will not be used by the version prior to 12.1 and this will result in different highlighting colors.
 

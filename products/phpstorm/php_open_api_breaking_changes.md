@@ -35,7 +35,8 @@ After 2020.2:
 ```
 
 ## Deprecated `PhpReturnType.getClassReference()`
-As of PhpStorm 2020.2, `PhpReturnType.getClassReference()` is deprecated, since there can be multiple class references. This method also became nullable, since in earlier versions an incomplete `?` type was parsed just as a question mark, but now it is parsed as `PhpTypeDeclaration` with empty `getClassReferences()`.
+As of PhpStorm 2020.2, `PhpReturnType.getClassReference()` is deprecated, since there can be multiple class references.
+This method also became nullable, since in earlier versions an incomplete `?` type was parsed just as a question mark, but now it is parsed as `PhpTypeDeclaration` with empty `getClassReferences()`.
 
 Before 2020.2:
 

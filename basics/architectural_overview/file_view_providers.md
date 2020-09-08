@@ -19,7 +19,8 @@ A `FileViewProvider` instance corresponds to a single `VirtualFile`, a single `D
 ## What can I do with a FileViewProvider?
 
 * To get the set of all languages for which PSI trees exist in a file: `fileViewProvider.getLanguages()`
-* To get the PSI tree for a particular language: `fileViewProvider.getPsi(language)`. For example, to get the PSI tree for XML, use `fileViewProvider.getPsi(XMLLanguage.INSTANCE)`.
+* To get the PSI tree for a particular language: `fileViewProvider.getPsi(language)`.
+  For example, to get the PSI tree for XML, use `fileViewProvider.getPsi(XMLLanguage.INSTANCE)`.
 * To find an element of a particular language at the specified offset in the file: `fileViewProvider.findElementAt(offset, language)`
 
 ## How do I extend the FileViewProvider?

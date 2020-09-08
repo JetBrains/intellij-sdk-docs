@@ -3,7 +3,8 @@ title: Plugin Configuration File - plugin.xml
 ---
 <!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-The following is a sample plugin configuration file. This sample showcases and describes all elements that can be used in the `plugin.xml` file.
+The following is a sample plugin configuration file.
+This sample showcases and describes all elements that can be used in the `plugin.xml` file.
 Additional information about configuring `<actions>` is available in the [Actions](/basics/action_system.md#registering-actions) section in Part II.
 
 Limited HTML elements are allowed within `<description>` and `<change-notes>` elements.

@@ -22,7 +22,8 @@ The process of formatting a file or a file fragment consists of the following ma
 
 *  The formatting model is requested to insert the calculated whitespace characters at necessary positions in the file.
 
-The structure of blocks is usually built in such a way that it mirrors the PSI structure of the file - for example, in Java code, the top-level formatting block covers the entire file, its children cover individual classes in the file, blocks on the next level cover methods inside classes, and so on. The formatter modifies only the characters between blocks, and the tree of blocks must be built in such a way that the bottom-level blocks cover all non-whitespace characters in the file: otherwise the characters between blocks may be deleted by the formatter.
+The structure of blocks is usually built in such a way that it mirrors the PSI structure of the file - for example, in Java code, the top-level formatting block covers the entire file, its children cover individual classes in the file, blocks on the next level cover methods inside classes, and so on.
+The formatter modifies only the characters between blocks, and the tree of blocks must be built in such a way that the bottom-level blocks cover all non-whitespace characters in the file: otherwise the characters between blocks may be deleted by the formatter.
 
 If the formatting operation does not affect the entire file (for example, if the formatter is called to format the pasted block of text), a complete tree of blocks is not built - rather, only blocks for the text range covered by the formatting operation and their parents are built.
 

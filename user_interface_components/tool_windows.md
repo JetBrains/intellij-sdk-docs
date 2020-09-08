@@ -5,7 +5,9 @@ title: Tool Windows
 
 ## Tool Windows
 
-_Tool windows_ are child windows of the IDE used to display information. These windows generally have their own toolbars (referred to as _tool window bars_) along the outer edges of the main window containing one or more _tool window buttons_, which activate panels displayed on the left, bottom and right sides of the main IDE window. For detailed information about tool windows, please see [IntelliJ IDEA Web Help ](https://www.jetbrains.com/idea/help/tool-windows.html).
+_Tool windows_ are child windows of the IDE used to display information.
+These windows generally have their own toolbars (referred to as _tool window bars_) along the outer edges of the main window containing one or more _tool window buttons_, which activate panels displayed on the left, bottom and right sides of the main IDE window.
+For detailed information about tool windows, please see [IntelliJ IDEA Web Help ](https://www.jetbrains.com/idea/help/tool-windows.html).
 
 Each side contains two tool window groups, the primary and the secondary one, and only one tool window from each group can be active at a time.
 
@@ -50,12 +52,14 @@ To manage the contents of a tool window, call [`ToolWindow.getContentManager()`]
 To add a tab (content), first create it by calling [`ContentManager.getFactory().createContent()`](upsource:///platform/platform-api/src/com/intellij/ui/content/ContentManager.java), and then to add it to the tool window using [`ContentManager.addContent()`](upsource:///platform/platform-api/src/com/intellij/ui/content/ContentManager.java).
 
 A plugin can control whether the user is allowed to close tabs either globally or on a per-tab basis.
-The former is done by passing the `canCloseContents` parameter to the `registerToolWindow()` function, or by specifying `canCloseContents="true"` in `plugin.xml`. The default value is `false`; calling `setClosable(true)` on `ContentManager` content will be ignored unless `canCloseContents` is explicitly set.
+The former is done by passing the `canCloseContents` parameter to the `registerToolWindow()` function, or by specifying `canCloseContents="true"` in `plugin.xml`.
+The default value is `false`; calling `setClosable(true)` on `ContentManager` content will be ignored unless `canCloseContents` is explicitly set.
 If closing tabs is enabled in general, a plugin can disable closing of specific tabs by calling [`Content.setCloseable(false)`](upsource:///platform/platform-api/src/com/intellij/ui/content/Content.java).
 
 ## How to Create a Tool Window?
 
-The IntelliJ Platform provides the `com.intellij.toolWindow` [extension point](/basics/plugin_structure/plugin_extensions.md) to create and configure custom tool windows. This extension point is declared using the [`ToolWindowEP`](upsource:///platform/platform-api/src/com/intellij/openapi/wm/ToolWindowEP.java) bean class.
+The IntelliJ Platform provides the `com.intellij.toolWindow` [extension point](/basics/plugin_structure/plugin_extensions.md) to create and configure custom tool windows.
+This extension point is declared using the [`ToolWindowEP`](upsource:///platform/platform-api/src/com/intellij/openapi/wm/ToolWindowEP.java) bean class.
 
 ### Creation of Plugin
 
@@ -85,7 +89,8 @@ To clarify the above procedure, consider the following fragment of the `plugin.x
 
 ### Sample Plugin
 
-To clarify how to develop plugins that create tool windows, consider the **toolWindow** sample plugin available in the [code_samples](https://github.com/JetBrains/intellij-sdk-code-samples/tree/master/tool_window) directory of the SDK documentation. This plugin creates the **Sample Calendar** tool window that displays the system date, time and time zone.
+To clarify how to develop plugins that create tool windows, consider the **toolWindow** sample plugin available in the [code_samples](https://github.com/JetBrains/intellij-sdk-code-samples/tree/master/tool_window) directory of the SDK documentation.
+This plugin creates the **Sample Calendar** tool window that displays the system date, time and time zone.
 
 **To run the toolWindow plugin**
 
@@ -95,6 +100,7 @@ To view or modify the project settings, open the [Project Structure](https://www
 3. Run the plugin by choosing the **Run | Run** on the main menu.
 If necessary, change the [Run/Debug Configurations](https://www.jetbrains.com/help/idea/run-debug-configuration-plugin.html).
 
-The plugin creates the **Sample Calendar** tool window. When opened, this tool window is similar to the following screen:
+The plugin creates the **Sample Calendar** tool window.
+When opened, this tool window is similar to the following screen:
 
 ![Sample Calendar](img/sample_calendar.png)

@@ -22,7 +22,8 @@ For the latter two, a separate instance of the service is created for each insta
 Project/Module level service constructors can have `Project`/`Module` argument.
 To improve startup performance, avoid any heavy initializations in the constructor.
 
-> **NOTE** Please note that using constructor injection is deprecated (and not supported in [Light Services](#light-services)) for performance reasons. Other dependencies should be [acquired only when needed](#retrieving-a-service) in all corresponding methods (see `someServiceMethod()` in [Project Service Sample](#project-service-sample)).
+> **NOTE** Please note that using constructor injection is deprecated (and not supported in [Light Services](#light-services)) for performance reasons.
+> Other dependencies should be [acquired only when needed](#retrieving-a-service) in all corresponding methods (see `someServiceMethod()` in [Project Service Sample](#project-service-sample)).
 
 ## Light Services
 
@@ -76,7 +77,8 @@ To provide custom implementation for test/headless environment, specify `testSer
 
 ## Retrieving a Service
 
-Getting service doesn't need read action and can be performed from any thread. If service is requested from several threads, it will be initialized in the first thread, and other threads will be blocked until service is fully initialized.
+Getting service doesn't need read action and can be performed from any thread.
+If service is requested from several threads, it will be initialized in the first thread, and other threads will be blocked until service is fully initialized.
 
 To retrieve a service in Java code:
 
@@ -119,7 +121,9 @@ _ProjectService.java_
 
 ## Sample Plugin
 
-This sample plugin illustrates how to create and use a plugin service. This plugin has an application service counting the number of currently opened projects in the IDE. If this number exceeds the maximum allowed number of simultaneously opened projects, the plugin displays a warning message.
+This sample plugin illustrates how to create and use a plugin service.
+This plugin has an application service counting the number of currently opened projects in the IDE.
+If this number exceeds the maximum allowed number of simultaneously opened projects, the plugin displays a warning message.
 
 **To install and run the sample plugin**
 

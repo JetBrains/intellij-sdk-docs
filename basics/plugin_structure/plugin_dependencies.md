@@ -73,7 +73,9 @@ Continuing with the example from [Section 2](#2-project-setup) above, the depend
 
 
 ## Optional Plugin Dependencies
-A project can also specify an optional plugin dependency. In this case, the plugin will load even if the plugin it depends on is not installed or enabled, but part of the functionality of the plugin will not be available. In order to do that, add `optional="true" config-file="otherconfig.xml"` to the `<depends>` tag.
+A project can also specify an optional plugin dependency.
+In this case, the plugin will load even if the plugin it depends on is not installed or enabled, but part of the functionality of the plugin will not be available.
+In order to do that, add `optional="true" config-file="otherconfig.xml"` to the `<depends>` tag.
 
 For example, if a plugin project adds additional highlighting for Java and Kotlin files, use the following setup.
 The main `plugin.xml` will define an annotator for Java and specify an optional dependency on the Kotlin plugin:
@@ -91,7 +93,8 @@ _plugin.xml_
 </idea-plugin>
 ```
 
-Then create a file called `withKotlin.xml`, in the same directory as the main `plugin.xml` file. In that file, define an annotator for Kotlin:
+Then create a file called `withKotlin.xml`, in the same directory as the main `plugin.xml` file.
+In that file, define an annotator for Kotlin:
 
 _withKotlin.xml_
 

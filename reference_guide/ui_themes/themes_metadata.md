@@ -152,7 +152,8 @@ Capitalize Object and SubObject. Use lowerCamelCase for property.
 
 #### Swing Legacy
 
-Some color keys are not named according to the rules above. Such keys are inherited from Java Swing and cannot be renamed for compatibility reasons.
+Some color keys are not named according to the rules above.
+Such keys are inherited from Java Swing and cannot be renamed for compatibility reasons.
 Do not use naming patterns from the legacy keys.
 
 Examples of Swing keys:
@@ -169,4 +170,5 @@ Metadata is split up as follows:
 
 New keys should be added to `IntelliJPlatform.themeMetadata.json` only (or corresponding "local" `*.themeMetadata.json` file of the plugin if applicable).
 
-Please make sure to add a `description` and use `since` and `deprecated` attributes explained in [Attributes](#attributes). Respect [Key Naming Scheme](#key-naming-scheme) and keep alphabetical ordering of keys.
+Please make sure to add a `description` and use `since` and `deprecated` attributes explained in [Attributes](#attributes).
+Respect [Key Naming Scheme](#key-naming-scheme) and keep alphabetical ordering of keys.

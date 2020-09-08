@@ -117,7 +117,8 @@ public abstract DirectoryProcessingResult detectRoots(@NotNull File dir, @NotNul
 
 Refer to the [Smalltalk project structure detector](https://github.com/bulenkov/RedlineSmalltalk/blob/master/src/st/redline/smalltalk/module/RsProjectStructureDetector.java)
 
-But detecting the files is not enough, you also need to create a module for the project if appropriate by implementing `setupProjectStructure()`. Here is an example that creates a module if no other modules exist in the project structure.
+But detecting the files is not enough, you also need to create a module for the project if appropriate by implementing `setupProjectStructure()`.
+Here is an example that creates a module if no other modules exist in the project structure.
 
 ```java
 @Override

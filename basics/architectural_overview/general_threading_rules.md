@@ -66,7 +66,9 @@ If a process does lengthy non-PSI activity, insert explicit `checkCanceled()` ca
 
 ## Read Action Cancellability
 
-Background threads shouldn't take plain read actions for a long time. The reason is that if the UI thread needs a write action (e.g., the user types something),  it must be acquired as soon as possible. Otherwise, the UI will freeze until all background threads have released their read actions.
+Background threads shouldn't take plain read actions for a long time.
+The reason is that if the UI thread needs a write action (e.g., the user types something), it must be acquired as soon as possible.
+Otherwise, the UI will freeze until all background threads have released their read actions.
 
 The best-known approach is to cancel background read actions whenever there's a write action about to occur, and restart that background read action later from scratch.
 Editor highlighting, code completion, Goto Class/File/... actions all work like this.

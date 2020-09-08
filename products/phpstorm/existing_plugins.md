@@ -20,7 +20,8 @@ There are many features included in this plugin, such as Symfony-specific comple
 ## Laravel
 The Laravel plugin is a free plugin for Laravel developers.
 
-It provides code completion and navigation for various Laravel components: controllers, routes, views, configuration, services, and translations. You can also use Laravel-specific live templates for generating various Laravel entities.
+It provides code completion and navigation for various Laravel components: controllers, routes, views, configuration, services, and translations.
+You can also use Laravel-specific live templates for generating various Laravel entities.
 
 * [GitHub](https://github.com/Haehnchen/idea-php-laravel-plugin)
 * [Laravel Development in PhpStorm](https://www.jetbrains.com/help/phpstorm/laravel.html)
@@ -36,7 +37,8 @@ It provides a wide array of code generation and code completion features and inc
 * [Laravel Development in PhpStorm](https://www.jetbrains.com/help/phpstorm/laravel.html)
 
 ## Magicento
-Magicento is a paid PhpStorm plugin for Magento developers. A free limited version is available.
+Magicento is a paid PhpStorm plugin for Magento developers.
+A free limited version is available.
 Features include: Goto for factories and template paths, autocomplete for factories, XML files and class names, documentation for XML nodes, evaluation of PHP code inside the Magento environment, and much more to come!
 
 * [Official Magicento Web Site](https://magicento.com/)
@@ -45,7 +47,9 @@ Features include: Goto for factories and template paths, autocomplete for factor
 
 ## YiiStorm
 YiiStorm is a plugin for PhpStorm IDE that is adding code navigation enhancements for Yii framework based projects.
-Features are: Going from render and renderPartial to the view file. Includes controllers, partials, and widgets. Supports all ways of specifying a view: themes, smarty .tpl views and external actions; Going from model name in relations() to the model class; Going from the $this->widget('path.to.widget.Class') call to the widget class; Going from controller actions() to action class.
+Features are: Going from render and renderPartial to the view file.
+Includes controllers, partials, and widgets.
+Supports all ways of specifying a view: themes, smarty .tpl views and external actions; Going from model name in relations() to the model class; Going from the $this->widget('path.to.widget.Class') call to the widget class; Going from controller actions() to action class.
 
 * [GitHub](https://github.com/cmazx/yiistorm)
 * [YiiStorm in PhpStorm Plugins Repository](https://plugins.jetbrains.com/plugin/7182-yiistorm)

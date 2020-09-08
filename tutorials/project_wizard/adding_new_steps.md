@@ -35,7 +35,8 @@ public class DemoModuleWizardStep extends ModuleBuilder {
 ```
 
 ## 3. Define Module Type
-Set a module type for the extra wizard step to provide. In this example, choose an `EMPTY` module type.
+Set a module type for the extra wizard step to provide.
+In this example, choose an `EMPTY` module type.
 
 ```java
 public class DemoModuleWizardStep extends ModuleBuilder {

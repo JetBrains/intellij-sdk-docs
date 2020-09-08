@@ -3,7 +3,8 @@ title: Main Types of Plugins
 ---
 <!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-Products based on the *IntelliJ Platform* can be modified and adjusted for custom purposes by adding plugins. All downloadable plugins are available at the [JetBrains Plugins Repository](https://plugins.jetbrains.com/).
+Products based on the *IntelliJ Platform* can be modified and adjusted for custom purposes by adding plugins.
+All downloadable plugins are available at the [JetBrains Plugins Repository](https://plugins.jetbrains.com/).
 
 The most common types of plugins include:
 
@@ -42,7 +43,8 @@ Refer to the [Custom Language Support Tutorial](/tutorials/custom_language_suppo
 
 ## Framework Integration
 
-Framework integration consists of improved code insight features, which are typical for a given framework, as well as the option to use framework-specific functionality directly from the IDE. Sometimes it also includes language support elements for a custom syntax or DSL.
+Framework integration consists of improved code insight features, which are typical for a given framework, as well as the option to use framework-specific functionality directly from the IDE.
+Sometimes it also includes language support elements for a custom syntax or DSL.
 
 * Specific code insight
 * Direct access to framework-specific functionality
@@ -61,4 +63,6 @@ Refer to the [Gerrit integration](https://plugins.jetbrains.com/plugin/7272?pr=i
 
 ## User Interface Add-Ons
 
-Plugins in this category apply various changes to the standard user interface of the IDE. Some newly added components are interactive and provide new functionality, while others are limited to visual modifications only. The [Random Background](https://plugins.jetbrains.com/plugin/9692-random-background) plugin may serve as an example.
+Plugins in this category apply various changes to the standard user interface of the IDE.
+Some newly added components are interactive and provide new functionality, while others are limited to visual modifications only.
+The [Random Background](https://plugins.jetbrains.com/plugin/9692-random-background) plugin may serve as an example.

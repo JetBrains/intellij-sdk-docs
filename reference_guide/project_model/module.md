@@ -3,21 +3,20 @@ title: Module
 ---
 <!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-A _module_ is a discrete unit of functionality that can be run, tested, and debugged independently. Modules include such things as source code, build scripts, unit tests, deployment descriptors, etc.
+A _module_ is a discrete unit of functionality that can be run, tested, and debugged independently.
+Modules include such things as source code, build scripts, unit tests, deployment descriptors, etc.
 
 The key components of a module are:
-  * **Content roots** - the directories where the files belonging to the module (source code, resources, etc.)
-    are stored. Each directory can belong to one and only one module; it's not possible to share a content root
-    between multiple modules.
-  * **Source roots** - A content root can have multiple **source roots** underneath it. Source roots can have different types:
-   regular source roots, test source roots, resource roots, etc. In IntelliJ IDEA, source roots are used as roots of the package hierarchy
-   structure (Java classes directly under a source root will be in the root package). Source roots can also be used to
-   implement more fine-grained dependency checks (code under a regular source root cannot depend on code under a test
-   source root).
-   > **NOTE**  Not all other IntelliJ Platform-based IDEs use source roots.
-  * **Order entries** - the dependencies of a module, which are stored in an ordered list. A dependency can be a reference
-    to an [SDK](sdk.md), a [library](library.md), or another module.
-  * **[Facets](facet.md)** - the list of framework-specific configuration entries.
+* **Content roots** - the directories where the files belonging to the module (source code, resources, etc.) are stored.
+  Each directory can belong to one and only one module; it's not possible to share a content root between multiple modules.
+* **Source roots** - A content root can have multiple **source roots** underneath it.
+  Source roots can have different types: regular source roots, test source roots, resource roots, etc.
+  In IntelliJ IDEA, source roots are used as roots of the package hierarchy structure (Java classes directly under a source root will be in the root package).
+  Source roots can also be used to implement more fine-grained dependency checks (code under a regular source root cannot depend on code under a test source root).
+  > **NOTE**  Not all other IntelliJ Platform-based IDEs use source roots.
+* **Order entries** - the dependencies of a module, which are stored in an ordered list.
+  A dependency can be a reference to an [SDK](sdk.md), a [library](library.md), or another module.
+* **[Facets](facet.md)** - the list of framework-specific configuration entries.
 
 In addition to that, a module can store other settings, such as a module-specific [SDK](sdk.md), compile output path settings, etc.
 Plugins can store additional data associated with a module by creating facets or module-level components.
@@ -41,7 +40,8 @@ Use the `ModuleManager.getModules()` method.
 
 ### How do I get dependencies and classpath of a module?
 
-_Order entries_ include SDK, libraries and other modules the module uses. With the *IntelliJ IDEA* UI, you can view order entries for a module on the [Dependencies](https://www.jetbrains.com/help/idea/dependencies-tab.html) tab of the *Project Structure* dialog box.
+_Order entries_ include SDK, libraries and other modules the module uses.
+With the *IntelliJ IDEA* UI, you can view order entries for a module on the [Dependencies](https://www.jetbrains.com/help/idea/dependencies-tab.html) tab of the *Project Structure* dialog box.
 
 To explore the [module dependencies](https://www.jetbrains.com/help/idea/dependencies-tab.html), use the [`OrderEnumerator`](upsource:///platform/projectModel-api/src/com/intellij/openapi/roots/OrderEnumerator.java) class.
 
@@ -53,7 +53,8 @@ VirtualFile[] roots = ModuleRootManager.getInstance(module).orderEntries().class
 
 ### How do I get the SDK the module uses?
 
-Use the `ModuleRootManager.getSdk()` method. This method returns a value of the [`Sdk`](upsource:///platform/projectModel-api/src/com/intellij/openapi/projectRoots/Sdk.java) type.
+Use the `ModuleRootManager.getSdk()` method.
+This method returns a value of the [`Sdk`](upsource:///platform/projectModel-api/src/com/intellij/openapi/projectRoots/Sdk.java) type.
 
 The following code snippet illustrates how you can get detailed information on SDK the specified module uses:
 
@@ -66,7 +67,8 @@ String jdkInfo = "Module: " + module.getName() + " SDK: " + SDK.getName() + " SD
 
 ### How do I get a list of modules on which this module directly depends?
 
-Use the `ModuleRootManager.getDependencies()` method to get an array of the `Module` type values or the `ModuleRootManager.getDependencyModuleNames()` to get an array of module names. To clarify, consider the following code snippet:
+Use the `ModuleRootManager.getDependencies()` method to get an array of the `Module` type values or the `ModuleRootManager.getDependencyModuleNames()` to get an array of module names.
+To clarify, consider the following code snippet:
 
 ```java
 ModuleRootManager moduleRootManager = ModuleRootManager.getInstance(module);
@@ -111,7 +113,8 @@ VirtualFile[] contentRoots = ModuleRootManager.getInstance(module).getContentRoo
 
 ### Checking Belonging to a Module Source Root
 
-To check if a virtual file or directory belongs to a module source root, use the `ProjectFileIndex.getSourceRootForFile()` method. This method returns `null` if the file or directory does not belong to any source root of modules in the project.
+To check if a virtual file or directory belongs to a module source root, use the `ProjectFileIndex.getSourceRootForFile()` method.
+This method returns `null` if the file or directory does not belong to any source root of modules in the project.
 
 ```java
 VirtualFile moduleSourceRoot = ProjectRootManager.getInstance(project).getFileIndex().getSourceRootForFile(virtualFileOrDirectory);

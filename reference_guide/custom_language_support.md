@@ -12,7 +12,8 @@ This part of the documentation explains the main concepts of the *Language API* 
 You can obtain additional information about the *Language API* from the JavaDoc comments for the *Language API* classes and from the source code of the Properties language support, which is part of the [IntelliJ IDEA Community Edition](https://github.com/JetBrains/intellij-community) source code.
 
 If you prefer a full example to the detailed descriptions offered in this section, please check out a step-by-step tutorial on how to create custom language support for _Simple Language_:
-[Custom Language Support Tutorial](/tutorials/custom_language_support_tutorial.md). Corresponding steps from the tutorial are linked under "Examples" section on each page of this reference.
+[Custom Language Support Tutorial](/tutorials/custom_language_support_tutorial.md).
+Corresponding steps from the tutorial are linked under "Examples" section on each page of this reference.
 
 The webinar [How We Built Comma, the Raku IDE, on the IntelliJ Platform](https://blog.jetbrains.com/platform/2020/01/webinar-recording-how-we-built-comma-the-raku-ide-on-the-intellij-platform/) offers an excellent introduction as well.
 

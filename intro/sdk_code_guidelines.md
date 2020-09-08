@@ -40,7 +40,8 @@ Use the standard intellij-community copyright notice in all sample plugins autho
 Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file."
 ```
 
-> **NOTE** The copyright statement must appear at the top of every source file. Use the [IntelliJ Platform SDK](https://github.com/JetBrains/intellij-sdk-docs/tree/master/.idea/copyright) copyright profile.
+> **NOTE** The copyright statement must appear at the top of every source file.
+> Use the [IntelliJ Platform SDK](https://github.com/JetBrains/intellij-sdk-docs/tree/master/.idea/copyright) copyright profile.
 
 ## Directory Naming Conventions for SDK Plugins
 For _basic_ samples, the plugin directory name is derived from the IntelliJ Platform extension points demonstrated.

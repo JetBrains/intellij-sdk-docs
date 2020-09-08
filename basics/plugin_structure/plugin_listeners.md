@@ -39,7 +39,8 @@ messageBus.connect().subscribe(VirtualFileManager.VFS_CHANGES, new BulkFileListe
 });
 ```
 
-To use declarative registration, you no longer need to reference the `Topic` instance. Instead, you refer directly to the listener interface class:
+To use declarative registration, you no longer need to reference the `Topic` instance.
+Instead, you refer directly to the listener interface class:
 
 ```xml
 <applicationListeners>
@@ -61,8 +62,8 @@ public class MyVfsListener implements BulkFileListener {
 
 ## Defining Project-Level Listeners
 
-Project-level listeners are registered in the same way, except that the top-level tag is
-`<projectListeners>`. They can be used to listen to project-level events, for example, tool window operations:
+Project-level listeners are registered in the same way, except that the top-level tag is `<projectListeners>`.
+They can be used to listen to project-level events, for example, tool window operations:
 
 ```xml
 <projectListeners>
@@ -94,4 +95,5 @@ Registration of listeners can be restricted using the following attributes:
 
 - `os` - allows to restrict listener to given OS, e.g., `os="windows"` for Windows only (2020.1 and later)
 - `activeInTestMode` - set to `false` to disable listener if `com.intellij.openapi.application.Application.isUnitTestMode()`==`true`
-- `activeInHeadlessMode` - set to `false` to disable listener if `com.intellij.openapi.application.Application.isHeadlessEnvironment()`==`true`. Also covers `activeInTestMode` as test mode implies headless mode.
+- `activeInHeadlessMode` - set to `false` to disable listener if `com.intellij.openapi.application.Application.isHeadlessEnvironment()`==`true`.
+  Also covers `activeInTestMode` as test mode implies headless mode.

@@ -5,7 +5,8 @@ title: Plugins Targeting IntelliJ Platform-Based IDEs
 
 ## Introduction
 Plugin projects can target IDEs other than IntelliJ IDEA, as long as the products are based on the [IntelliJ Platform](/intro/intellij_platform.md).
-Such plugins are developed much like plugin projects that target IntelliJ IDEA. They can be written in Kotlin or Java, or a mix of both.
+Such plugins are developed much like plugin projects that target IntelliJ IDEA.
+They can be written in Kotlin or Java, or a mix of both.
 Once completed, the plugins can be packaged and distributed at [JetBrains Plugin Repository](https://plugins.jetbrains.com).
 
 Project configuration attributes common to projects targeting products other than IntelliJ IDEA are described here.
@@ -130,7 +131,8 @@ As discussed on the [Plugin Dependencies](/basics/getting_started/plugin_compati
 When using features (APIs) specific to the target product, a dependency on the target product module must be declared, as shown in the code snippet below.
 Otherwise, if only general IntelliJ Platform features (APIs) are used, then a dependency on `com.intellij.modules.platform` must be declared as discussed in [Plugin Compatibility with IntelliJ Platform Products](/basics/getting_started/plugin_compatibility.md).
 
-> **NOTE** In the particular case of a plugin project declaring dependencies only on other plugins, it must also declare a dependency on `com.intellij.modules.platform`. Otherwise, the plugin project is considered to be legacy and will only load in IntelliJ IDEA.
+> **NOTE** In the particular case of a plugin project declaring dependencies only on other plugins, it must also declare a dependency on `com.intellij.modules.platform`.
+> Otherwise, the plugin project is considered to be legacy and will only load in IntelliJ IDEA.
 
 Continuing with the example of developing a plugin for PhpStorm:
 

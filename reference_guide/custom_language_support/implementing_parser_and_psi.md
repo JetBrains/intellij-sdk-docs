@@ -67,6 +67,7 @@ Every element which can be renamed or referenced (a class definition, a method d
 
 A number of functions which can be used for implementing and using the PSI can be found in the `com.intellij.psi.util` package, and in particular in the [`PsiUtilCore`](upsource:///platform/core-api/src/com/intellij/psi/util/PsiUtilCore.java) and [`PsiTreeUtil`](upsource:///platform/core-api/src/com/intellij/psi/util/PsiTreeUtil.java) classes.
 
-> **TIP** A very helpful tool for debugging the PSI implementation is the [PsiViewer plugin](https://plugins.jetbrains.com/plugin/227-psiviewer). It can show you the structure of the PSI built by your plugin, the properties of every PSI element and highlight its text range.
+> **TIP** A very helpful tool for debugging the PSI implementation is the [PsiViewer plugin](https://plugins.jetbrains.com/plugin/227-psiviewer).
+> It can show you the structure of the PSI built by your plugin, the properties of every PSI element and highlight its text range.
 
 Please see [Indexing and PSI Stubs](/basics/indexing_and_psi_stubs.md) for advanced topics.

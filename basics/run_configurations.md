@@ -9,7 +9,8 @@ title: Run Configurations
 
 Classes used to manipulate run configurations can be split into the following groups:
 
-* [Run configuration management](/basics/run_configurations/run_configuration_management.md). This includes creation, persistence, and modification.
+* [Run configuration management](/basics/run_configurations/run_configuration_management.md).
+  This includes creation, persistence, and modification.
 * [Execution](/basics/run_configurations/run_configuration_execution.md).
 
 This diagram shows the main classes:

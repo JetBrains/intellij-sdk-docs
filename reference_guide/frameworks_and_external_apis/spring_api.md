@@ -11,7 +11,8 @@ To develop plugins, you will need to use _IntelliJ IDEA Ultimate Edition_ versio
 
 ## Setting up IntelliJ Platform SDK
 
-> **NOTE** This applies to [Plugin DevKit](/basics/getting_started/using_dev_kit.md) projects only. For [Gradle](/tutorials/build_system.md) projects, simply add dependency to bundled Spring plugin `com.intellij.spring`.
+> **NOTE** This applies to [Plugin DevKit](/basics/getting_started/using_dev_kit.md) projects only.
+> For [Gradle](/tutorials/build_system.md) projects, simply add dependency to bundled Spring plugin `com.intellij.spring`.
 
 ### New SDK
 Please create an IntelliJ Platform SDK to include all minimum required files.
@@ -29,11 +30,12 @@ Follow these steps to modify the existing IntelliJ Platform SDK:
 ### General Notes
 If you use other Spring functionality (e.g., Spring EL) in your plugin, add all required JARs to your IntelliJ Platform SDK classpath to make your plugin's tests work.
 
-
-Please use only Spring-related functionality exposed in `spring-api.jar` (where your plugin is provided). Using any other "internal" (implementation) classes from Spring plugin itself (`spring.jar`) is _not_ supported.
+Please use only Spring-related functionality exposed in `spring-api.jar` (where your plugin is provided).
+Using any other "internal" (implementation) classes from Spring plugin itself (`spring.jar`) is _not_ supported.
 
 ### plugin.xml
-Add `<depends>com.intellij.spring</depends>` to your `plugin.xml` to require "Spring Support" plugin to be activated. All available extension points are provided under `com.intellij.spring` prefix.
+Add `<depends>com.intellij.spring</depends>` to your `plugin.xml` to require "Spring Support" plugin to be activated.
+All available extension points are provided under `com.intellij.spring` prefix.
 Note that the "Spring Support" plugin itself has dependencies on a few other plugins which need to be enabled in your sandbox (see notifications on startup).
 
 ## Main Concepts
@@ -41,7 +43,8 @@ A Spring facet can be attached to a Module. (Nearly) All Spring functionality re
 
 Spring facets usually contain one more user-configured or automatically provided filesets, which group a set of Spring related configuration files (XML, Code, .properties, or other configuration files).
 
-A fileset usually corresponds to an actual application context configuration at runtime. Hierarchies can be modeled by depending on another fileset (possibly from another module).
+A fileset usually corresponds to an actual application context configuration at runtime.
+Hierarchies can be modeled by depending on another fileset (possibly from another module).
 
 As an API-user, you will usually instead work with `SpringModel` (built on top of fileset(s)).
 
@@ -68,7 +71,8 @@ See `SpringManager#getSpringModel(s)...` and `com.intellij.spring.model.utils.Sp
 See `com.intellij.spring.SpringModelProvider` to provide implicit filesets (e.g. provided by another framework in a specific configuration file).
 
 _Version 15_
-See `com.intellij.spring.facet.SpringAutodetectedFileSet` for a convenient base class. Please note that autodetected filesets cannot be edited/modified by users in Spring facet.
+See `com.intellij.spring.facet.SpringAutodetectedFileSet` for a convenient base class.
+Please note that autodetected filesets cannot be edited/modified by users in Spring facet.
 
 #### Customize Implicit Models Configuration
 _2017.1_ See `com.intellij.spring.facet.SpringFileSetEditorCustomization` to customize presentation and/or add extra settings/actions for specific autodetected filesets.
@@ -158,7 +162,8 @@ Additional files to be processed by inspections registered with Spring Validator
 Use `com.intellij.spring.facet.SpringConfigurator` to provide "automatic" configuration when Spring facet is added via framework wizard.
 
 #### UI/Presentation
-Please do not reference bean icons from `SpringApiIcons` directly, but use `SpringPresentationProvider` to re-use unified icon/bean name. See `SpringBeansPsiElementCellRenderer` for popup/list renderer.
+Please do not reference bean icons from `SpringApiIcons` directly, but use `SpringPresentationProvider` to re-use unified icon/bean name.
+See `SpringBeansPsiElementCellRenderer` for popup/list renderer.
 
 
 ## Spring Boot
@@ -179,7 +184,8 @@ Please perform these steps _additionally_ to setting up Spring API support (see 
    * `$IDEA_HOME$/lib/src/src_spring-boot-openapi.zip`
 
 ### plugin.xml
-Add `<depends>com.intellij.spring.boot</depends>` to your `plugin.xml` to require "Spring Boot" plugin to be activated. All available extension points are provided under `com.intellij.spring.boot` prefix.
+Add `<depends>com.intellij.spring.boot</depends>` to your `plugin.xml` to require "Spring Boot" plugin to be activated.
+All available extension points are provided under `com.intellij.spring.boot` prefix.
 
 ### Spring Boot Library
 Use `com.intellij.spring.boot.library.SpringBootLibraryUtil` to query version and availability of common additional libraries.
@@ -200,4 +206,5 @@ requires `spring-boot-initializr.jar`
 ### Endpoint Tab
 _2018.2_ - requires `spring-boot-run.jar`
 
-Use EP `com.intellij.spring.boot.run.endpoint` to add custom actuator endpoint tabs. Any settings should be exposed in "Spring Boot" settings tab via `com.intellij.spring.boot.run.endpointTabConfigurable` EP.
+Use EP `com.intellij.spring.boot.run.endpoint` to add custom actuator endpoint tabs.
+Any settings should be exposed in "Spring Boot" settings tab via `com.intellij.spring.boot.run.endpointTabConfigurable` EP.

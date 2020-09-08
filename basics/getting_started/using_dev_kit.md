@@ -5,7 +5,8 @@ title: Using DevKit
 
 > **NOTE** For new projects, it is highly recommended to use [Gradle](/tutorials/build_system.md).
 
-_Plugin DevKit_ is a bundled IntelliJ IDEA plugin for developing plugins for the IntelliJ Platform using IntelliJ IDEA's build system. It provides its custom SDK type and a set of actions for building plugins within the IDE.
+_Plugin DevKit_ is a bundled IntelliJ IDEA plugin for developing plugins for the IntelliJ Platform using IntelliJ IDEA's build system.
+It provides its custom SDK type and a set of actions for building plugins within the IDE.
 
 In this section:
 

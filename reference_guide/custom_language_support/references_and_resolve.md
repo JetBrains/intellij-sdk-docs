@@ -11,22 +11,27 @@ This feature is needed in order to support the _Go to Declaration_ action invoke
 
 All PSI elements which work as references (for which the _Go to Declaration_ action applies) need to implement the
 [`PsiElement.getReference()`](upsource:///platform/core-api/src/com/intellij/psi/PsiElement.java) method and to return a [`PsiReference`](upsource:///platform/core-api/src/com/intellij/psi/PsiReference.java) implementation from that method.
-The [`PsiReference`](upsource:///platform/core-api/src/com/intellij/psi/PsiReference.java) interface can be implemented by the same class as [`PsiElement`](upsource:///platform/core-api/src/com/intellij/psi/PsiElement.java), or by a different class. An element can also contain multiple references (for example, a string literal can contain multiple substrings which are valid full-qualified class names), in which case it can implement [`PsiElement.getReferences()`](upsource:///platform/core-api/src/com/intellij/psi/PsiElement.java) and return the references as an array.
+The [`PsiReference`](upsource:///platform/core-api/src/com/intellij/psi/PsiReference.java) interface can be implemented by the same class as [`PsiElement`](upsource:///platform/core-api/src/com/intellij/psi/PsiElement.java), or by a different class.
+An element can also contain multiple references (for example, a string literal can contain multiple substrings which are valid full-qualified class names), in which case it can implement [`PsiElement.getReferences()`](upsource:///platform/core-api/src/com/intellij/psi/PsiElement.java) and return the references as an array.
 
-The main method of the [`PsiReference`](upsource:///platform/core-api/src/com/intellij/psi/PsiReference.java) interface is `resolve()`, which returns the element to which the reference points, or `null` if it was not possible to resolve the reference to a valid element (for example, should it point to an undefined class). The resolved element should implement the [`PsiNamedElement`](upsource:///platform/core-api/src/com/intellij/psi/PsiNamedElement.java) interface.
+The main method of the [`PsiReference`](upsource:///platform/core-api/src/com/intellij/psi/PsiReference.java) interface is `resolve()`, which returns the element to which the reference points, or `null` if it was not possible to resolve the reference to a valid element (for example, should it point to an undefined class).
+The resolved element should implement the [`PsiNamedElement`](upsource:///platform/core-api/src/com/intellij/psi/PsiNamedElement.java) interface.
 
-> **NOTE** While it may occur that the referencing element and the referenced element both have a name, only the element which **introduces** the name (e.g. the definition `int x = 42`) needs to implement the [`PsiNamedElement`](upsource:///platform/core-api/src/com/intellij/psi/PsiNamedElement.java) interface. The referencing element at the point of usage (e.g. the `x` in the expression `x + 1`) should not implement `PsiNamedElement` since it itself does not _have_ a name.
+> **NOTE** While it may occur that the referencing element and the referenced element both have a name, only the element which **introduces** the name (e.g. the definition `int x = 42`) needs to implement the [`PsiNamedElement`](upsource:///platform/core-api/src/com/intellij/psi/PsiNamedElement.java) interface.
+> The referencing element at the point of usage (e.g. the `x` in the expression `x + 1`) should not implement `PsiNamedElement` since it itself does not _have_ a name.
 
 > **TIP** In order to enable more advanced IntelliJ functionality, prefer implementing [`PsiNameIdentifierOwner`](upsource:///platform/core-api/src/com/intellij/psi/PsiNameIdentifierOwner.java) over [`PsiNamedElement`](upsource:///platform/core-api/src/com/intellij/psi/PsiNamedElement.java) where possible.
 
-A counterpart to the `resolve()` method is `isReferenceTo()`, which checks if the reference resolves to the specified element. The latter method can be implemented by calling `resolve()` and comparing the result with the passed PSI element, but additional optimizations are possible (for example, performing the tree walk only if the element text is equal to the text of the reference).
+A counterpart to the `resolve()` method is `isReferenceTo()`, which checks if the reference resolves to the specified element.
+The latter method can be implemented by calling `resolve()` and comparing the result with the passed PSI element, but additional optimizations are possible (for example, performing the tree walk only if the element text is equal to the text of the reference).
 
 
 **Examples**:
 - [Reference](upsource:///plugins/properties/src/com/intellij/lang/properties/ResourceBundleReference.java) to a ResourceBundle in the [Properties language plugin](upsource:///plugins/properties)
 - [Custom Language Support Tutorial: Reference Contributor](/tutorials/custom_language_support/reference_contributor.md)
 
-> **TIP** To optimize `getReferences()` performance, consider implementing [`HintedReferenceHost`](upsource:///platform/core-api/src/com/intellij/psi/HintedReferenceHost.java) to provide additional hints. Please see also _Cache Results of Heavy Computations_ in [Working with PSI efficiently](/reference_guide/performance/performance.md#working-with-psi-efficiently).
+> **TIP** To optimize `getReferences()` performance, consider implementing [`HintedReferenceHost`](upsource:///platform/core-api/src/com/intellij/psi/HintedReferenceHost.java) to provide additional hints.
+> Please see also _Cache Results of Heavy Computations_ in [Working with PSI efficiently](/reference_guide/performance/performance.md#working-with-psi-efficiently).
 
 There's a set of interfaces which can be used as a base for implementing resolve support, namely the [`PsiScopeProcessor`](upsource:///platform/core-api/src/com/intellij/psi/scope/PsiScopeProcessor.java) interface and the [`PsiElement.processDeclarations()`](upsource:///platform/core-api/src/com/intellij/psi/PsiElement.java) method.
 These interfaces have a number of extra complexities which are not necessary for most custom languages (like support for substituting Java generics types), but they are required if the custom language can have references to Java code.

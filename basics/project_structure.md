@@ -32,12 +32,14 @@ A _library_ is an archive of compiled code (such as JAR files) on which modules 
 The IntelliJ Platform supports three types of libraries:
 * **Module Library**: the library classes are visible only in this module and the library information is recorded in the module's `.iml` file.
 * **Project Library**: the library classes are visible within the project and the library information is recorded in the project's `.ipr` file or in `.idea/libraries`.
-* **Global Library**: the library information is recorded in the `applicationLibraries.xml` file in the `~/.IntelliJIdea/config/options` directory. Global libraries are similar to project libraries, but are visible for different projects.
+* **Global Library**: the library information is recorded in the `applicationLibraries.xml` file in the `~/.IntelliJIdea/config/options` directory.
+  Global libraries are similar to project libraries, but are visible for different projects.
 
 For more information about libraries, refer to [Library](https://www.jetbrains.com/help/idea/working-with-libraries.html).
 
 ### SDK
-Every project uses a Software Development Kit (_SDK_). For Java projects, SDK is referred to as JDK (Java Development Kit).
+Every project uses a Software Development Kit (_SDK_).
+For Java projects, SDK is referred to as JDK (Java Development Kit).
 
 The SDK determines which API library is used to build the project.
 If a project is multi-module, the project SDK is common for all modules within the project by default.

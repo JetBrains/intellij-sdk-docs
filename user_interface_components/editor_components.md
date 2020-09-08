@@ -40,6 +40,10 @@ EditorTextField myInput = new EditorTextField(document, editor.getProject(), Jav
 
 **TIPS**:
 
-* When creating more than one field two separate documents are needed. This is accomplished by using separate instances of `PsiExpressionCodeFragment`.
-* `setText()` no longer works for the input field. However, `createExpressionCodeFragment()` accepts the text for the field as an argument. The empty string can be replaced and create a new document in lieu of `setText()`.
-* Instances of `JTextField` in the GUI builder can be replaced with a custom replacement component using the right click in your IDE. Make sure to use "Custom Create", so the initialization code works properly.
+* When creating more than one field two separate documents are needed.
+  This is accomplished by using separate instances of `PsiExpressionCodeFragment`.
+* `setText()` no longer works for the input field.
+  However, `createExpressionCodeFragment()` accepts the text for the field as an argument.
+  The empty string can be replaced and create a new document in lieu of `setText()`.
+* Instances of `JTextField` in the GUI builder can be replaced with a custom replacement component using the right click in your IDE.
+  Make sure to use "Custom Create", so the initialization code works properly.

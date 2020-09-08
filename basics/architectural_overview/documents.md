@@ -48,7 +48,8 @@ To create a `Document` instance that isn't bound to anything, use `EditorFactory
 
 ## What are the rules of working with Documents?
 
-The general read/write action rules are in effect. Besides, any operations which modify the contents of the document must be wrapped in a command (`CommandProcessor.getInstance().executeCommand()`).
+The general read/write action rules are in effect.
+Besides, any operations which modify the contents of the document must be wrapped in a command (`CommandProcessor.getInstance().executeCommand()`).
 `executeCommand()` calls can be nested, and the outermost `executeCommand()` call is added to the undo stack.
 If multiple documents are modified within a command, undoing this command will, by default, show a confirmation dialog to the user.
 
@@ -60,4 +61,5 @@ All text strings passed to `Document` modification methods (`setText()`, `insert
 ## Are there any utilities available for working with Documents?
 
 [`DocumentUtil`](upsource:///platform/core-impl/src/com/intellij/util/DocumentUtil.java) contains utility methods for `Document` processing.
-This allows you to get information like the text offsets of particular lines. This is particularly useful when you need text location/offset information about a given `PsiElement`.
+This allows you to get information like the text offsets of particular lines.
+This is particularly useful when you need text location/offset information about a given `PsiElement`.

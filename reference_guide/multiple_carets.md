@@ -8,7 +8,8 @@ title: Supporting Multiple Carets
 Support for multiple independent carets has been added to editor implementation in IDEA 13.1.
 Most editor actions (keyboard navigation, text insertion and deletion, etc.) will be applied to each caret independently.
 Each caret has its own associated selection, which is a continuous range of document characters (can be empty).
-When after some action two or more carets end up in the same visual position, they are merged into a single caret with their associated selections merged into a single one. A similar thing will happen when selections for several carets become overlapped: only one of the carets will remain, and the selections will be merged.
+When after some action two or more carets end up in the same visual position, they are merged into a single caret with their associated selections merged into a single one.
+A similar thing will happen when selections for several carets become overlapped: only one of the carets will remain, and the selections will be merged.
 There's a concept of 'primary' caret — the one on which non-multi-caret-aware actions and the actions which need a single-point document context (like code completion) will operate.
 Currently, the most recent caret is considered the primary one.
 
@@ -19,7 +20,8 @@ Check Javadoc of those interfaces for details.
 
 Notable changes from old behaviour:
 
-* Previously existing methods in `CaretModel` and `SelectionModel` to query and modify caret and selection positions work by default on the primary caret now. In the context of `CaretModel.runForEachCaret` method though, they operate on the current caret.
+* Previously existing methods in `CaretModel` and `SelectionModel` to query and modify caret and selection positions work by default on the primary caret now.
+  In the context of `CaretModel.runForEachCaret` method though, they operate on the current caret.
   So the behaviour of legacy code (not using Caret interface) will depend on the context of its invocation.
 
 * Block selection doesn't exist as a separate concept anymore.
@@ -65,7 +67,8 @@ Examples of its usage:
 * [`TypedAction`](upsource:///platform/platform-api/src/com/intellij/openapi/editor/actionSystem/TypedAction.java).
 * [`XmlGtTypedHandler`](upsource:///xml/impl/src/com/intellij/codeInsight/editorActions/XmlGtTypedHandler.java).
 
-> **NOTE** Starting from version 14, [`TypedHandlerDelegate`](upsource:///platform/lang-api/src/com/intellij/codeInsight/editorActions/TypedHandlerDelegate.java) implementations are invoked automatically for each caret. If one wants to implement custom multicaret behaviour on typing, [`TypedActionHandler`](upsource:///platform/platform-api/src/com/intellij/openapi/editor/actionSystem/TypedActionHandler.java) needs to be provided instead.
+> **NOTE** Starting from version 14, [`TypedHandlerDelegate`](upsource:///platform/lang-api/src/com/intellij/codeInsight/editorActions/TypedHandlerDelegate.java) implementations are invoked automatically for each caret.
+> If one wants to implement custom multicaret behaviour on typing, [`TypedActionHandler`](upsource:///platform/platform-api/src/com/intellij/openapi/editor/actionSystem/TypedActionHandler.java) needs to be provided instead.
 
 ## Code Insight Actions
 

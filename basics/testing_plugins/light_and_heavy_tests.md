@@ -5,7 +5,8 @@ title: Light and Heavy Tests
 
 Plugin tests run in a real, rather than mocked, *IntelliJ Platform* environment and use real implementations for most of the application and project components/services.
 
-Loading and initializing all the project components and services for a project to run tests is a quite expensive operation, and we want to avoid doing it for each test. Dependently on the loading and execution time, we make a difference between *heavy* tests and *light* tests available in *IntelliJ Platform* test framework:
+Loading and initializing all the project components and services for a project to run tests is a quite expensive operation, and we want to avoid doing it for each test.
+Dependently on the loading and execution time, we make a difference between *heavy* tests and *light* tests available in *IntelliJ Platform* test framework:
 
 * *Heavy* tests create a new project for each test.
 * *Light* tests reuse a project from the previous test run when possible.
@@ -23,7 +24,8 @@ The standard way of writing a light test is to extend the following classes:
 
 > **NOTE** In 2019.2, `LightPlatformCodeInsightFixtureTestCase` has been renamed to `BasePlatformTestCase` and `LightCodeInsightFixtureTestCase` to `LightJavaCodeInsightFixtureTestCase` respectively.
 
-When writing a light test, you can specify the requirements for the project that you need to have in your test, such as the module type, the configured SDK, facets, libraries, etc. You do so by extending the [`LightProjectDescriptor`](upsource:///platform/testFramework/src/com/intellij/testFramework/LightProjectDescriptor.java) class and returning your project descriptor from `getProjectDescriptor()`.
+When writing a light test, you can specify the requirements for the project that you need to have in your test, such as the module type, the configured SDK, facets, libraries, etc.
+You do so by extending the [`LightProjectDescriptor`](upsource:///platform/testFramework/src/com/intellij/testFramework/LightProjectDescriptor.java) class and returning your project descriptor from `getProjectDescriptor()`.
 Before executing each test, the project will be reused if the test case returns the same project descriptor (usually stored in static final field) as the previous one, or recreated if the descriptor is different (`equals() = false`).
 
 

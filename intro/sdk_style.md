@@ -47,7 +47,8 @@ Typically, this header is empty, although it is required by Jekyll (if omitted, 
 The YAML header can contain data that is used when generating the site.
 For example, the page title can be specified as a simple piece of Markdown - `# Title`, or it can be specified in the YAML, and the page template displays it appropriately:
 
-> **NOTE** The page copyright notice should appear immediately below the YAML header, as shown below. Use the [IntelliJ Platform SDK](https://github.com/JetBrains/intellij-sdk-docs/tree/master/.idea/copyright) copyright profile.
+> **NOTE** The page copyright notice should appear immediately below the YAML header, as shown below.
+> Use the [IntelliJ Platform SDK](https://github.com/JetBrains/intellij-sdk-docs/tree/master/.idea/copyright) copyright profile.
 
 ```yaml
 ---

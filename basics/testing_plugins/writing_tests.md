@@ -13,4 +13,6 @@ However, for many common cases, the framework provides helper methods that can m
 * `findSingleIntention()` in combination with `launchAction()` simulate the invocation of an intention action or inspection quickfix with the specified name.
 * `renameElementAtCaret()` or `rename()` simulate the execution of a rename refactoring.
 
-To compare the results of executing the action with the expected results, you can use the `checkResultByFile()` method. The file with the expected results can also contain [markup](test_project_and_testdata_directories.md#special-markup) to specify the expected caret position or selected text range. If you're testing an action that modifies multiple files (a project-wide refactoring, for example), you can compare an entire directory under the test project with the expected output using `PlatformTestUtil.assertDirectoriesEqual()`.
+To compare the results of executing the action with the expected results, you can use the `checkResultByFile()` method.
+The file with the expected results can also contain [markup](test_project_and_testdata_directories.md#special-markup) to specify the expected caret position or selected text range.
+If you're testing an action that modifies multiple files (a project-wide refactoring, for example), you can compare an entire directory under the test project with the expected output using `PlatformTestUtil.assertDirectoriesEqual()`.

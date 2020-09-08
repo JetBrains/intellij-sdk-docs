@@ -7,7 +7,7 @@ Spring API allows 3rd party plugins to re-use, integrate with or extend existing
 
 A popular plugin using Spring API is [hybris integration](https://plugins.jetbrains.com/plugin/7525-hybris-integration).
 
-To develop plugins you will need to use _IntelliJ IDEA Ultimate Edition_ version 13.1 or higher.
+To develop plugins, you will need to use _IntelliJ IDEA Ultimate Edition_ version 13.1 or higher.
 
 ## Setting up IntelliJ Platform SDK
 
@@ -18,39 +18,39 @@ Please create an IntelliJ Platform SDK to include all minimum required files.
 Then add `$IDEA_HOME$/plugins/Spring/lib/spring.jar` to its _classpath_ (_not_ to your plugin module's dependencies).
 
 ### Existing SDK
-Follow these steps to modify existing IntelliJ Platform SDK:
+Follow these steps to modify the existing IntelliJ Platform SDK:
 
 * add to _classpath_ (_not_ to your plugin module's dependencies)
-	* `$IDEA_HOME$/plugins/Spring/lib/spring-api.jar` _not in recent versions, merged into `spring.jar`_
-	* `$IDEA_HOME$/plugins/Spring/lib/spring.jar`
+   * `$IDEA_HOME$/plugins/Spring/lib/spring-api.jar` _not in recent versions, merged into `spring.jar`_
+   * `$IDEA_HOME$/plugins/Spring/lib/spring.jar`
 * add to _sourcepath_
-	* `$IDEA_HOME$/lib/src/src_spring-openapi.zip`
+   * `$IDEA_HOME$/lib/src/src_spring-openapi.zip`
 
 ### General Notes
-If you use other Spring functionality (e.g. Spring EL) in your plugin, make sure to add all required JARs to your IntelliJ Platform SDK classpath to make your plugin's tests work.
+If you use other Spring functionality (e.g., Spring EL) in your plugin, add all required JARs to your IntelliJ Platform SDK classpath to make your plugin's tests work.
 
 
-Please use only Spring-related functionality exposed in `spring-api.jar` (where sources are provided) in your plugin. Using any other "internal" (implementation) classes from Spring plugin itself (`spring.jar`) is _not_ supported.
+Please use only Spring-related functionality exposed in `spring-api.jar` (where your plugin is provided). Using any other "internal" (implementation) classes from Spring plugin itself (`spring.jar`) is _not_ supported.
 
 ### plugin.xml
 Add `<depends>com.intellij.spring</depends>` to your `plugin.xml` to require "Spring Support" plugin to be activated. All available extension points are provided under `com.intellij.spring` prefix.
-Note that "Spring Support" plugin itself has dependencies to a few other plugins which need to be enabled in your sandbox (see notifications on startup).
+Note that the "Spring Support" plugin itself has dependencies on a few other plugins which need to be enabled in your sandbox (see notifications on startup).
 
 ## Main Concepts
-A Spring facet can be attached on a Module. (Nearly) All Spring functionality requires an existing and properly setup Spring facet.
+A Spring facet can be attached to a Module. (Nearly) All Spring functionality requires an existing and adequately setup Spring facet.
 
-Spring facets usually contain one more user-configured or automatically provided filesets, which group a set of Spring related configuration files (XML, Code, .properties or other configuration files).
+Spring facets usually contain one more user-configured or automatically provided filesets, which group a set of Spring related configuration files (XML, Code, .properties, or other configuration files).
 
-A fileset usually corresponds to an actual application context configuration at runtime. Hierarchies can be modeled by depending on another fileset (possibly from  another module).
+A fileset usually corresponds to an actual application context configuration at runtime. Hierarchies can be modeled by depending on another fileset (possibly from another module).
 
-As an API-user, you will usually rather work with `SpringModel` (which is built on top of fileset(s)).
+As an API-user, you will usually instead work with `SpringModel` (built on top of fileset(s)).
 
 ## API Updates
 > **NOTE** 2017.3: `LocalXmlModel#setActiveProfiles` & `LocalAnnotationModel#setActiveProfiles` have been deprecated and will be removed in 2018.1.
 
-> **NOTE** Starting with 2016.2, internal representation of bean _type_ has been changed from `PsiClass` to `PsiType`, please note deprecations.
+> **NOTE** Starting with 2016.2, the internal representation of bean _type_ has been changed from `PsiClass` to `PsiType`, please note deprecations.
 
-> **NOTE** Some core classes have been changed in 14(.1), please see "_Version 14(.1)_" notes for info on how to replace existing API-calls.
+> **NOTE** Some core classes have been changed in 14(.1); please see "_Version 14(.1)_" notes for info on how to replace existing API-calls.
 
 ## How Do I...
 
@@ -105,7 +105,7 @@ _Version 16_: note deprecation of `SpringModelSearchParameters.BeanClass#withInh
 _Version 14_: `com.intellij.spring.model.utils.SpringModelSearchers#doesBeanExist` (please note deprecated methods)
 
 #### Mark Bean as Infrastructure Bean
-_Version 14_: implement `SpringInfrastructureBean`, such beans obtain special icon and can be filtered in various places in UI.
+_Version 14_: implement `SpringInfrastructureBean`, such beans obtain a special icon and can be filtered in various places in UI.
 
 ### XML Configuration
 All support for XML-based Spring configuration files is provided via [DOM-API](xml_dom_api.md).
@@ -164,7 +164,7 @@ Please do not reference bean icons from `SpringApiIcons` directly, but use `Spri
 ## Spring Boot
 _2018.1_
 
-Spring Boot API allows to extend/access Spring Boot specific support in the IDE.
+Spring Boot API allows extending/accessing Spring Boot specific support in the IDE.
 
 > **WARNING** While we try to maintain compatibility, please be prepared for a less strict policy. 
 
@@ -172,11 +172,11 @@ Spring Boot API allows to extend/access Spring Boot specific support in the IDE.
 Please perform these steps _additionally_ to setting up Spring API support (see [here](#setting-up-intellij-platform-sdk)):
 
 * add to _classpath_ (_not_ to your plugin module's dependencies)
-	* `$IDEA_HOME$/plugins/SpringBoot/lib/spring-boot.jar`
-	* `$IDEA_HOME$/plugins/SpringBoot/lib/spring-boot-initializr.jar` (optional)
-	* `$IDEA_HOME$/plugins/SpringBoot/lib/spring-boot-run.jar` (optional)
+   * `$IDEA_HOME$/plugins/SpringBoot/lib/spring-boot.jar`
+   * `$IDEA_HOME$/plugins/SpringBoot/lib/spring-boot-initializr.jar` (optional)
+   * `$IDEA_HOME$/plugins/SpringBoot/lib/spring-boot-run.jar` (optional)
 * add to _sourcepath_
-	* `$IDEA_HOME$/lib/src/src_spring-boot-openapi.zip`
+   * `$IDEA_HOME$/lib/src/src_spring-boot-openapi.zip`
 
 ### plugin.xml
 Add `<depends>com.intellij.spring.boot</depends>` to your `plugin.xml` to require "Spring Boot" plugin to be activated. All available extension points are provided under `com.intellij.spring.boot` prefix.

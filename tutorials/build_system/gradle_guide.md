@@ -9,7 +9,7 @@ The IntelliJ IDEA Ultimate and Community editions bundle the _Gradle_ and _Plugi
 The [Getting Started with Gradle](prerequisites.md) page provides a tutorial for creating Gradle-based IntelliJ Platform plugins.
 It may be useful to review the IntelliJ Platform page, particularly the description of versioning in the [Open Source](/intro/intellij_platform.md#open-source) section.
 
-> **WARNING** When adding additional repositories to your Gradle build script, make sure always to use HTTPS protocol.
+> **WARNING** When adding additional repositories to your Gradle build script, always use HTTPS protocol.
 
 * bullet list
 {:toc}

@@ -37,5 +37,5 @@ Test your plugin with versions of CLion you intend to support.
 
 ## Open Source Plugins for CLion
 When learning new APIs, it is helpful to have some representative projects for reference:
-* [C/C+​+​ Coverage](https://github.com/zero9178/C-Cpp-Coverage-for-CLion)
-* [C/C+​+​ Single File Execution](https://github.com/corochann/SingleFileExecutionPlugin)
+* [C/C++ Coverage](https://github.com/zero9178/C-Cpp-Coverage-for-CLion)
+* [C/C++ Single File Execution](https://github.com/corochann/SingleFileExecutionPlugin)

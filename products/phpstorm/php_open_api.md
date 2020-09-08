@@ -44,7 +44,7 @@ public interface PhpTypeProvider2 {
  
   /**
    * @param element to deduce type for - using only LOCAL info. <b>THIS IS MOST CRUCIAL ASPECT TO FOLLOW</b>
-   * @return type for element, null if no insight. You can return a custom signature here to be later decoded by method below.
+   * @return type for element, null if no insight. You can return a custom signature here to be later decoded by the method below.
    */
   @Nullable
   String getType(PsiElement element);

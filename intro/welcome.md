@@ -10,7 +10,7 @@ redirect_from:
 [![Twitter Follow](https://img.shields.io/twitter/follow/JBPlatform?style=flat-square)](https://twitter.com/JBPlatform/)
 [![Slack](https://img.shields.io/badge/Slack-%23intellij--platform-blue)](https://plugins.jetbrains.com/slack)
 
-Welcome to the _IntelliJ Platform_ SDK - the primary source of documentation for extending the _IntelliJ Platform_ by creating plugins, custom language support or building a custom IDE.
+Welcome to the _IntelliJ Platform_ SDK - the primary source of documentation for extending the _IntelliJ Platform_ by creating plugins, custom language support, or building a custom IDE.
 
 ## Getting Started
 
@@ -35,6 +35,6 @@ Are you upgrading your plugin to the latest platform release? Make sure to check
 ## Open Source
 
 This guide is Open Source and licensed under Apache 2.0. The source (as Markdown) is [hosted on GitHub](https://github.com/JetBrains/intellij-sdk-docs).
-Please see [CONTRIBUTING.md](/CONTRIBUTING.md) for details on how to host the docs locally and contribute.
+Please see [CONTRIBUTING.md](/CONTRIBUTING.md) for details on hosting the docs locally and contributing.
 
-Please see [Getting Help](getting_help.md) if you encounter bugs in this guide or require help with missing content. 
+Please see [Getting Help](getting_help.md) if you encounter bugs in this guide or require missing content. 

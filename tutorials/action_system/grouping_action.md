@@ -4,7 +4,7 @@ title: Grouping Actions
 <!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 If an implementation requires several actions, or there are simply too many actions that overload the menu, the actions can be placed into groups.
-This tutorial demonstrates adding an action to an existing group, creating a new action group, and action groups with a variable number of actions.
+This tutorial demonstrates adding an action to an existing group, creating a new action group, and action groups with various actions.
 The sample code discussed in this tutorial is from the code sample [`action_basics`](https://github.com/JetBrains/intellij-sdk-code-samples/tree/master/code_samples/action_basics).
 
 Some content in this tutorial assumes the reader is familiar with the tutorial for [Creating Actions](working_with_custom_actions.md).
@@ -34,7 +34,7 @@ See [Registering Actions in plugin.xml](/basics/action_system.md#registering-act
 
 ### Binding Action Groups to UI Components
 The following sample shows how to use an `<add-to-group>` element to place a custom action group relative to an entry in the **Tools** menu. 
-The attribute `relative-to-action` references the action `id` for `PopupDialogAction`, which is not a native IntelliJ menu entry. 
+The attribute `relative-to-action` references the action `id` for `PopupDialogAction`, not a native IntelliJ menu entry. 
 Rather `PopupDialogAction` is defined in the same [`plugin.xml`](https://github.com/JetBrains/intellij-sdk-code-samples/blob/master/action_basics/src/main/resources/META-INF/plugin.xml) file.
 This group is placed after the single entry for the action `PopupDialogAction`, as defined in the tutorial [Creating Actions](working_with_custom_actions.md#registering-an-action-with-the-new-action-form).
 
@@ -60,7 +60,7 @@ The action in this group will display the menu text "A Group Action".
     </group>
 ```
 
-After performing the steps described above the action group and its content will be available in the **Tools** menu.
+After performing the steps described above, the action group and its content will be available in the **Tools** menu.
 The underlying `PopupDialogAction` implementation is reused for two entries in the **Tools** menu:
 * Once for the top menu entry **Tools \| Pop Dialog Action** with the action `id` equal to `org.intellij.sdk.action.PopupDialogAction` as set in the [Creating Actions](/tutorials/action_system/working_with_custom_actions.md#registering-an-action-with-the-new-action-form) tutorial.
 * A section time for the menu entry **Tools \| Static Grouped Actions \| A Group Action** with the action `id` equal to `org.intellij.sdk.action.GroupPopDialogAction`.
@@ -79,7 +79,7 @@ This condition is needed because the custom action group is added to an IntelliJ
 ### Extending DefaultActionGroup
 The [`DefaultActionGroup`](upsource:///platform/platform-api/src/com/intellij/openapi/actionSystem/DefaultActionGroup.java) is an implementation of [`ActionGroup`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/ActionGroup.java).
 The `DefaultActionGroup` class is used to add child actions and separators between them to a group.
-This class is used if a set of actions belonging to the group does not change at runtime, which is the majority of cases.
+This class is used if a set of actions belonging to the group does not change at runtime.
 
 As an example, extend [`DefaultActionGroup`](upsource:///platform/platform-api/src/com/intellij/openapi/actionSystem/DefaultActionGroup.java) 
 to create the `CustomDefaultActionGroup` class in the `action_basics` code sample:
@@ -121,7 +121,7 @@ The `<group>` element declaration below shows:
 As in [Static Grouped Actions](#adding-a-new-action-to-the-static-grouped-actions), the `PopupDialogAction` action is added as an `<action>` element in the `<group>` element. 
 In the `<action>` element declaration below:
 * The `class` attribute in the `<action>` element has the same FQN to reuse this action implementation.
-* The `id` attribute is unique to distinguish it from other uses of the implementation in the Action System.
+* The `id` attribute is unique to distinguish it from other uses of the Action System implementation.
 * The `text` and `description` attributes are omitted in the `<action>` declaration; they are instead defined using the localization resource bundle.
 * The SDK icon is declared for use with this action.
    
@@ -214,6 +214,6 @@ public class DynamicActionGroup extends ActionGroup {
 }
 ```
 
-After providing the implementation of `DynamicActionGroup` and making it return a non-empty array of actions, the third position in the **Tools** Menu will contain a new group of actions:
+After providing the implementation of `DynamicActionGroup` and making it return a non-empty array of actions, the third position in the **Tools** menu will contain a new group of actions:
 
 ![Dynamic Action Group](img/dynamic_action_group.png){:width="600px"}

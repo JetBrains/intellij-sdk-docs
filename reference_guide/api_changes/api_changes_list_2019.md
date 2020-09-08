@@ -4,12 +4,65 @@ title: Incompatible Changes in IntelliJ Platform and Plugins API 2019.*
 <!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 <!--
-See the note on how to document new problems on the main page reference_guide/api_changes_list.md 
+Before documenting a breaking API change, please, make sure that the change cannot be avoided 
+in an alternative way.
+
+APIs marked with @ApiStatus.Experimental, @ApiStatus.Internal, or @ApiStatus.ScheduledForRemoval don't need to be documented.
+
+To document a new incompatible change, add a new line with the problem pattern
+followed by a 2nd line with ": "-prefixed human-readable description and recommended fix/action.
+
+The following problem patterns are supported:
+
+<package name> package removed
+<class name> class removed
+<class name> class renamed to <new class name>
+
+<class name>.<method name>(<human-readable parameters>) method removed
+<class name>.<method name>(<human-readable parameters>) method return type changed from <before> to <after>
+<class name>.<method name>(<human-readable parameters>) method parameter <type> removed
+<class name>.<method name>(<human-readable parameters>) method parameter type changed from <before> to <after>
+<class name>.<method name>(<human-readable parameters>) method visibility changed from <before> to <after>
+<class name>.<method name>(<human-readable parameters>) method marked final
+<class name> (class|interface) now (extends|implements) <class name> and inherits its final method <method name>(<human-readable parameters>)?
+<class name> (class|interface) now (extends|implements) <class name> and inherits its abstract method <method name>(<human-readable parameters>)?
+<class name>.<method name> method <parameter name> parameter marked @<class name>
+
+<class name>(<human-readable parameters>) constructor removed
+<class name>(<human-readable parameters>) constructor parameter <type> removed
+<class name>(<human-readable parameters>) constructor parameter type changed from <before> to <after>
+<class name>(<human-readable parameters>) constructor visibility changed from <before> to <after>
+
+<class name>.<field name> field removed
+<class name>.<field name> field type changed from <before> to <after>
+<class name>.<field name> field visibility changed from <before> to <after>
+
+<class name>.<method name>(<human-readable parameters>) marked abstract
+<class name>.<method name>(<human-readable parameters>) abstract method added
+<class name> class moved to package <package name>
+
+<property name> property removed from resource bundle <bundle name>
+
+where the placeholders must be enclosed in code quotes (`name`):
+
+<class name> is a fully-qualified name of the class, e.g. `com.intellij.openapi.actionSystem.AnAction$InnerClass`.
+<method name> is the exact method's name. Note that constructors have dedicated patterns.
+<human-readable parameters> is a string representing parameters, which are not necessarily fully qualified. They do not affect the parser. For example, instead of (java.lang.Object, java.util.List, int) you are free to write (Object, List<String>, int)
+<parameter name> is exact name of the method's parameter
+<property name> is a full name of a property from .properties file, like `some.action.description`
+<bundle name> is a fully qualified name of the property bundle, which includes its package, like `message.IdeBundle`
+
+NOTE: If a code change you're trying to document doesn't match any of the above patterns, fill in a ticket in the YouTrack. 
+An example of a ticket is https://youtrack.jetbrains.com/issue/PR-1218. Until supported, you may document the change as you prefer, and I will correct it later.
+
+NOTE: You are allowed to prettify the pattern using links: [`org.example.Foo`](https://github.com/JetBrains/intellij-community/tree/master/)
+
+NOTE: Entries not starting with code quotes (`name`) can be added to document non-code changes and be skipped in API verification.
 -->
 
 Please see [Incompatible API Changes](/reference_guide/api_changes_list.md) on how to verify compatibility.
 
-> **NOTE** Changes from API marked with `org.jetbrains.annotations.ApiStatus.@Experimental`/`ScheduledForRemoval` are not listed here, as incompatible changes are to be expected.
+> **NOTE** Changes from API marked with `org.jetbrains.annotations.ApiStatus.@Experimental`/`ScheduledForRemoval` are not listed here, as incompatible changes are expected.
 
 ## 2019.3
 
@@ -159,14 +212,14 @@ Constructor injection referring to extension points not supported
 : [Java-WebSocket](https://github.com/TooTallNate/Java-WebSocket) library was removed, bundle it with your plugin instead.
 
 `com.intellij.ui.layout.Cell.invoke$default(Cell, JComponent, CCFlags[], int, GrowPolicy, String, int, Object)` method parameter type changed
-: Signature of this function has been seriously changed without possibility to keep the old function. Change invocations and overriding of that function according to new parameters and recompile the code. 
+: The signature of this function has been seriously changed without the possibility to keep the old function. Change invocations and overriding of that function according to new parameters and recompile the code. 
 
 `com.intellij.ui.layout.Row.label$default(Row, String, int, UIUtil.ComponentStyle, UIUtil.FontColor, boolean, int, Object)` method removed
 : This method has been pulled up to the base class `Cell`; since it has default parameters, it's a binary breaking change in Kotlin.
 Recompile your code to pick up the new signature.
 
 `com.yourkit` package removed
-: YourKit library has been extracted into the separate plugin which is not bundled in all IDEs by default. YourKit library is a library for profiling IDE, and its util classes shouldn't be used for general purpose. Instead of `com.yourkit.util.Strings` please use  `org.apache.commons.lang.StringUtils`.  Instead of `com.yourkit.util.ArrayUtil` please use `org.apache.commons.lang.ArrayUtils`.
+: YourKit library has been extracted into the separate plugin, which is not bundled in all IDEs by default. YourKit library is a library for profiling IDE, and its util classes shouldn't be used for general purposes. Instead of `com.yourkit.util.Strings` please use  `org.apache.commons.lang.StringUtils`.  Instead of `com.yourkit.util.ArrayUtil` please use `org.apache.commons.lang.ArrayUtils`.
 
 `org.jetbrains.intellij.build.ProductProperties.yourkitAgentBinariesDirectoryPath` field removed
 : Please bundle [performanceTesting plugin](https://plugins.jetbrains.com/plugin/7819-performance-testing) in case you would like to bundle YourKit profiler within your IDE.
@@ -201,7 +254,7 @@ Recompile your code to pick up the new signature.
 ### Changes in IntelliJ Platform 2019.1
 
 `kotlinx.coroutines.experimental` package removed 
-: Bundled Kotlin library is updated to 1.3 so the plugins must [migrate](https://blog.jetbrains.com/kotlin/2018/09/kotlin-1-3-rc-is-here-migrate-your-coroutines/) to the stable versions of coroutines.
+: Bundled Kotlin library is updated to 1.3, so the plugins must [migrate](https://blog.jetbrains.com/kotlin/2018/09/kotlin-1-3-rc-is-here-migrate-your-coroutines/) to the stable versions of coroutines.
 
 `com.intellij.openapi.vcs.impl.ProjectLevelVcsManagerImpl(Project, FileStatusManager, FileIndexFacade, ProjectManager, DefaultVcsRootPolicy, VcsFileListenerContextHelper)` constructor removed 
 : Use `com.intellij.openapi.vcs.impl.ProjectLevelVcsManagerImpl.<init>(Project, FileStatusManager, FileIndexFacade, ProjectManager, DefaultVcsRootPolicy)`.

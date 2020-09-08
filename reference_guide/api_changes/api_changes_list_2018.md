@@ -13,7 +13,7 @@ See the note on how to document new problems on the main page reference_guide/ap
 
 Please see [Incompatible API Changes](/reference_guide/api_changes_list.md) on how to verify compatibility.
 
-> **NOTE** Changes from API marked with `org.jetbrains.annotations.ApiStatus.@Experimental`/`ScheduledForRemoval` are not listed here, as incompatible changes are to be expected.
+> **NOTE** Changes from API marked with `org.jetbrains.annotations.ApiStatus.@Experimental`/`ScheduledForRemoval` are not listed here, as incompatible changes are expected.
 
 ## 2018.3 
 
@@ -90,7 +90,7 @@ Please see [Incompatible API Changes](/reference_guide/api_changes_list.md) on h
 : Use `org.jetbrains.idea.svn.api.ClientFactory` instead.
 
 `clojure` package removed 
-: Clojure 1.8 jars are removed from IntelliJ Ultimate package, provide your own jars if needed.
+: Clojure 1.8 jars are removed from the IntelliJ Ultimate package; provide your own jars if needed.
 
 `com.intellij.ide.structureView.newStructureView.StructureViewComponent.getTreeBuilder` method removed 
 : Use `queueUpdate` and `getTree` instead.

@@ -9,13 +9,13 @@ Please see the guide page for manually [publishing a plugin](../../basics/gettin
 
 > **TIP** Please see [Marketing](/appendix/resources/marketing.md) for remarks on how to prepare your plugin for optimal presentation.
 
-> **WARNING** When adding additional repositories to your Gradle build script, make sure always to use HTTPS protocol.
+> **WARNING** When adding additional repositories to your Gradle build script, always use HTTPS protocol.
 
 * bullet list
 {:toc}
 
 ## Building Distribution
-For manual distribution or local installation, invoke `buildPlugin` Gradle task to create the plugin distribution.
+For manual distribution or local installation, invoke the `buildPlugin` Gradle task to create the plugin distribution.
 The resulting JAR/ZIP is located in `build/distributions` and can then be [installed](https://www.jetbrains.com/help/idea/managing-plugins.html#installing-plugins-from-disk) either manually or uploaded to a [custom plugin repository](/basics/getting_started/update_plugins_format.md).
 
 ## Providing Your Hub Permanent Token to Gradle
@@ -47,8 +47,8 @@ publishPlugin {
 Note that you still need to put some default values (can be empty) in the Gradle properties because otherwise, you will get a compilation error.
 
 ### Using Parameters for the Gradle Task
-Similar to using environment variables, you can also pass your token as a parameter to the Gradle task.
-For example, you can to provide the parameter `-Dorg.gradle.project.intellijPublishToken=YOUR_HUB_TOKEN_HERE` on the command line or by putting it in the arguments of your Gradle run configuration.
+Like using environment variables, you can also pass your token as a parameter to the Gradle task.
+For example, you can provide the parameter `-Dorg.gradle.project.intellijPublishToken=YOUR_HUB_TOKEN_HERE` on the command line or by putting it in the arguments of your Gradle run configuration.
 
 Note that also, in this case, you still need to put some default values in your Gradle properties.
 
@@ -60,9 +60,9 @@ You may wish to verify this by [installing your plugin from disk](https://www.je
 ### Publishing a Plugin
 Once you are confident, the plugin works as intended, make sure the plugin version is updated, as the JetBrains Plugins Repository won't accept multiple artifacts with the same version. 
 
-To deploy a new version of your plugin to the JetBrains Plugins Repository, invoke `publishPlugin` Gradle task.  
+To deploy a new version of your plugin to the JetBrains Plugins Repository, invoke the `publishPlugin` Gradle task.  
 
-Now check the most recent version of your plugin that appears on the [JetBrains Plugins Repository](https://plugins.jetbrains.com/). 
+Now check the most recent version of your plugin on the [JetBrains Plugins Repository](https://plugins.jetbrains.com/). 
 If successfully deployed, any users who currently have your plugin installed on an available version of the IntelliJ Platform are notified of a new update available as soon as the update has been verified.
 
 ### Specifying a Release Channel
@@ -87,4 +87,4 @@ Popular channel names include:
 * `beta`: https://plugins.jetbrains.com/plugins/beta/list
 * `eap`: https://plugins.jetbrains.com/plugins/eap/list
 
-More information about the available configuration options is in the [documentation of the intellij gradle plugin](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md#publishing-dsl).
+More information about the available configuration options is in the [documentation of the IntelliJ Gradle plugin](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md#publishing-dsl).

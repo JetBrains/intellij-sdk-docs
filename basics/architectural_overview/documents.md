@@ -21,11 +21,11 @@ From a PSI file
 
 ## What can I do with a Document?
 
-You may perform any operations that access or modify the file contents on "plain text" level (as a sequence of characters, not as a tree of PSI elements).
+You may perform any operations that access or modify the file contents on the "plain text" level (as a sequence of characters, not as a tree of PSI elements).
 
 ## Where does a Document come from?
 
-Document instances are created when some operation needs to access the text contents of a file (in particular, this is needed to build the PSI for a file).
+Document instances are created when some operation needs to access the text contents of a file (in particular, this is necessary to build the PSI for a file).
 Also, document instances not linked to any virtual files can be created temporarily, for example, representing the contents of a text editor field in a dialog.
 
 ## How long does a Document persist?
@@ -44,11 +44,11 @@ To create a `Document` instance that isn't bound to anything, use `EditorFactory
 
 * `Document.addDocumentListener()` allows receiving notifications about changes in a particular `Document` instance.
 * `EditorFactory.getEventMulticaster().addDocumentListener()` allows receiving notifications about changes in all open documents.
-* Subscribe to `AppTopics.FILE_DOCUMENT_SYNC` on any level bus to receive notifications when a `Document` is saved or reloaded from disk.
+* Subscribe to `AppTopics.FILE_DOCUMENT_SYNC` on any level bus receives notifications when a `Document` is saved or reloaded from disk.
 
 ## What are the rules of working with Documents?
 
-The general read/write action rules are in effect. In addition to that, any operations which modify the contents of the document must be wrapped in a command (`CommandProcessor.getInstance().executeCommand()`). 
+The general read/write action rules are in effect. Besides, any operations which modify the contents of the document must be wrapped in a command (`CommandProcessor.getInstance().executeCommand()`). 
 `executeCommand()` calls can be nested, and the outermost `executeCommand()` call is added to the undo stack. 
 If multiple documents are modified within a command, undoing this command will, by default, show a confirmation dialog to the user.
 

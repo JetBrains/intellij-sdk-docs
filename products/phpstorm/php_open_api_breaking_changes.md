@@ -7,8 +7,8 @@ title: Breaking Changes
 PhpStorm 2020.2 introduced support for [PHP union types](https://wiki.php.net/rfc/union_types_v2), which resulted in some PSI-breaking changes. 
 
 In earlier versions, type hints in parameters, properties, and return types were parsed inconsistently:
-* Return types used a separate `PhpReturnType` wrapper element, which contained the nullability question mark and the class reference of the actual type.
-* Parameters and properties used no wrapper element: class references together with nullability question mark were plain children of `Parameter` or `CLASS_FIELDS`. 
+* Return types used a separate `PhpReturnType` wrapper element, which contained the nullability question mark and the actual type's class reference.
+* Parameters and properties used no wrapper element: class references and nullability question mark were plain children of `Parameter` or `CLASS_FIELDS`. 
 
 As of PhpStorm 2020.2, class references with the question mark are uniformly wrapped into the `PhpTypeDeclaration` element, which is the parent for `PhpReturnType`, `PhpFieldType`, and `PhpParameterType`. 
 

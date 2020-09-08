@@ -10,8 +10,7 @@ To verify these plugins are installed and enabled, see the help section about [M
 
 > **TIP** [IntelliJ Platform Plugin Template](https://github.com/JetBrains/intellij-platform-plugin-template) makes it easier to create and maintain your IDE plugins, having the Gradle plugin already integrated and CI covered with GitHub Actions.
 
-> **WARNING** When adding additional repositories to your Gradle build script, make sure always to use HTTPS protocol.
-
+> **WARNING** When adding additional repositories to your Gradle build script, always use HTTPS protocol.
 * bullet list
 {:toc}
 

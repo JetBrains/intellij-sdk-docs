@@ -3,7 +3,7 @@ title: Dynamic Plugins
 ---
 <!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-Starting with 2020.1 release, the ability to install, update and uninstall plugins without restarting the IDE is available in the IntelliJ Platform.
+Starting with the 2020.1 release, installing, updating, and uninstall plugins without restarting the IDE is available in the IntelliJ Platform.
 During plugin development, [Auto-Reload](/basics/ide_development_instance.md#enabling-auto-reload) also allows code changes to take effect immediately in the sandbox IDE instance.
 
 > **NOTE** If a plugin _requires_ restart (e.g., due to using native libraries) specify `require-restart="true"` for `<idea-plugin>` root tag in `plugin.xml`.
@@ -18,21 +18,21 @@ will run these checks automatically. See [Plugin Verifier](/reference_guide/api_
 
 ### No Use of Components
 
-No Components must be used; existing ones [must be migrated](plugin_components.md) to services, extensions or listeners.
+No Components must be used; existing ones [must be migrated](plugin_components.md) to services, extensions, or listeners.
 
 ### Action Group Requires ID
 
-All `<group>`s must declare a unique `id`.
+All `<group>'s must declare a unique `id`.
 
 ### Use Only Dynamic Extensions
 
-All extensions, whether defined in the platform itself or coming from other plugins, must be marked as dynamic (see next paragraph).
+Whether defined in the platform itself or coming from other plugins, all extensions must be marked as dynamic (see next paragraph).
 
 Some deprecated extension points (e.g., `com.intellij.configurationProducer`) are intentionally non-dynamic, and their usage should be migrated to the corresponding replacement.
 
 ### Mark Extension Points as Dynamic
 
-All extension points provided by the plugin must adhere to specific usage rules and then [be declared](plugin_extension_points.md#dynamic-extension-points) ready for dynamic use explicitly.
+The plugin's extension points must adhere to specific usage rules and then [be declared](plugin_extension_points.md#dynamic-extension-points) ready for dynamic use explicitly.
 
 ### Configurables Depending on Extension Points
 
@@ -40,11 +40,11 @@ Any `Configurable` which depends on dynamic extension points must implement `Con
 
 ### No Use of Service Overrides
 
-Application, project and module services declared with `overrides="true"` are not allowed.
+Application, project, and module services declared with `overrides=" true" ` are not allowed.
 
 ## Code
 
-> **NOTE** Loading and unloading plugins happens in EDT and under write action.
+> **NOTE** Loading and unloading plugins happens in EDT and underwrite action.
 
 ### CachedValue
 
@@ -52,7 +52,7 @@ Loading/Unloading a plugin clears all cached values created using `CachedValuesM
 
 ### Do not Store PSI
 
-Do not store references to PSI elements in objects which can survive plugin loading or unloading, use `SmartPsiElementPointer` instead.
+Do not store references to PSI elements in objects which can survive plugin loading or unloading; use `SmartPsiElementPointer` instead.
 
 ### Do not Use FileType/Language as Map Key
 
@@ -62,7 +62,7 @@ Replace with `String` from `Language.getID()`/`FileType.getName()`.
 
 Register [`com.intellij.ide.plugins.DynamicPluginListener`](upsource:///platform/platform-impl/src/com/intellij/ide/plugins/DynamicPlugins.kt) [application listener](plugin_listeners.md) to receive updates on plugin load/unload events.
 
-This can be used to e.g. cancel long-running activities or disallow unload due to ongoing processes.
+This can be used to e.g., cancel long-running activities or disallow unload due to ongoing processes.
 
 ## Troubleshooting
 

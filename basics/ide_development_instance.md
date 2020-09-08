@@ -12,7 +12,7 @@ This page describes how to control some of the settings for the Development Inst
 > **TIP** Please see also [Advanced Configuration](https://www.jetbrains.com/help/idea/tuning-the-ide.html) for general VM options and properties.
 
 ## Using a JetBrains Runtime for the Development Instance
-A common use case is to develop (build) a plugin project against a JDK, e.g., Java 8, and then run or debug the plugin in a Development Instance of the IDE.
+An everyday use case is to develop (build) a plugin project against a JDK, e.g., Java 8, and then run or debug the plugin in a Development Instance of the IDE.
 In such a situation, Development Instance must use a JetBrains Runtime (JBR) rather than the JDK used to build the plugin project.
 
 The JetBrains Runtime is an environment for running IntelliJ Platform-based IDEs on Windows, macOS, and Linux. 
@@ -22,7 +22,7 @@ To produce accurate results while running or debugging a plugin project in a Dev
 
 ### Determining a JetBrains Runtime Version
 The JetBrains Runtime is determined from the JDK version used to build the plugin project.
-If a plugin is being developed against the Java 8 SE Development Kit 8 for macOS, for example, `jdk-8u212-macosx-x64.dmg`.
+If a plugin is being developed against the Java 8 SE Development Kit 8 for macOS, `jdk-8u212-macosx-x64.dmg`.
 (This example will use macOS, but Windows and Linux follow the same procedure.)
 To acquire the compatible JetBrains Runtime:
 * Go to the [JetBrains Runtime Site](https://confluence.jetbrains.com/display/JBR/JetBrains+Runtime) for general information and the latest build.
@@ -34,7 +34,7 @@ To acquire the compatible JetBrains Runtime:
   * The version and build number match the JDK used to build the plugin project.
     For example, `jbrx-8u252-osx-x64` matches the Java 8 JDK, build 252: `jdk-8u252-macosx-x64`.
   * Pick the highest JetBrains Runtime build number available.
-    For example, as of this writing, the file is `jbrx-8u252-osx-x64-b1649.2.tar.gz`, meaning build 1649.2 for this JetBrains Runtime matching Java 8 JDK build 252.
+    For example, the file is `jbrx-8u252-osx-x64-b1649.2.tar.gz`, meaning build 1649.2 for this JetBrains Runtime matching Java 8 JDK build 252.
 
 ### Setting a JetBrains Runtime for Gradle-Based Plugin Projects
 By default, the Gradle plugin will fetch and use the version of the JetBrains Runtime for the Development Instance corresponding to the version of the IntelliJ Platform used for building the plugin project.
@@ -43,7 +43,7 @@ If required, an alternative version can be specified using `jbrVersion` attribut
 ### Setting a JetBrains Runtime for DevKit-Based Plugin Projects
 The [Run Configuration](https://www.jetbrains.com/help/idea/run-debug-configuration.html) for a DevKit-based plugin project controls the JDK used to run and debug a plugin project in a Development Instance.
 The default Run Configuration uses the same JDK for building the plugin project and running the plugin in a Development Instance.
-To change the runtime for the Development Instance, set the _JRE_ field in the Run Configuration edit dialog to use a downloaded JetBrains Runtime.
+To change the runtime for the Development Instance, set the _JRE_ field in the Run Configuration edit dialog to downloaded JetBrains Runtime.
 
 
 ## Enabling Auto-Reload

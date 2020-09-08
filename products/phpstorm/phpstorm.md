@@ -39,7 +39,7 @@ To see how these attributes appear in the `build.gradle` file for PhpStorm, see 
 | [`intellij.plugins`](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md#intellij-platform-properties) | `com.jetbrains.php:193.5233.102` for the PHP plugin.<br>See below for PHP plugin version information. |
 | [`runIde.ideDirectory`](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md#running-dsl) | Path to locally installed target version of PhpStorm. For example, on macOS:<br>`/Users/<user name>/Library/Application Support/JetBrains/Toolbox/apps/PhpStorm/ch-0/193.5233.101/PhpStorm.app/Contents` |
 
-The version of the PHP plugin is explicitly declared because it isn't bundled with IntelliJ IDEA Ultimate Edition. 
-Select a [version](https://plugins.jetbrains.com/plugin/6610-php/versions) of the PHP plugin that is compatible with the `intellij.version`.
+The PHP plugin version is explicitly declared because it isn't bundled with IntelliJ IDEA Ultimate Edition. 
+Select a [version](https://plugins.jetbrains.com/plugin/6610-php/versions) of the PHP plugin compatible with the `intellij.version`.
 
 The dependency on the PHP plugin APIs must be declared in the `plugin.xml` file, as shown in the tutorial [Configuring plugin.xml](/products/dev_alternate_products.md#configuring-pluginxml) section.

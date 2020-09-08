@@ -6,7 +6,7 @@ title: 1. Tests Prerequisites
 This page discusses the steps to configure a plugin project for creating tests.
 
 ## 1.1. Create a Folder for Tests
-Open the plugin project, and under the `src` directory create a separate folder `test`.
+Open the plugin project, and under the `src` directory, create a separate folder `test`.
 Under `test`, create the `java` folder for test source code, and the folder `testData` for test data files and reimport the Gradle project.
 
 ```text
@@ -24,7 +24,7 @@ Because some of the tests use Java files as test data, the tests need to mock up
 IntelliJ IDEA does everything automatically when the utility class [`LightJavaCodeInsightFixtureTestCase`](upsource:///java/testFramework/src/com/intellij/testFramework/fixtures/LightJavaCodeInsightFixtureTestCase.java) is used as the basis for the tests.
 
 The system properties are defined in the `build.gradle` file using the snippet shown below.
-The `/path/to/community/` is set to the absolute path to the root directory of the local intellij-community source on the machine running the tests.
+The `/path/to/community/` is set to the absolute path to the local intellij-community source's root directory on the machine running the tests.
 For example, on macOS the `path/to/community/` might be `/Users/<user name>/Documents/<IJ community source root>/`
 
 ```groovy

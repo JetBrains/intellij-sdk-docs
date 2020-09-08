@@ -21,7 +21,7 @@ Editor: content between text lines
 ### Notable Changes in IntelliJ Platform 2018.2
 
 _Run Anything_ (**Double CTRL**)
-: Allows executing predefined activities using a popup with smart completion, e.g. [Gradle Tasks](https://www.jetbrains.com/help/idea/gradle.html#gradle_tasks), executing Run Configurations, ... see [`RunAnythingProvider`](upsource:///platform/lang-impl/src/com/intellij/ide/actions/runAnything/activity/RunAnythingProvider.java)
+: Allows executing predefined activities using a popup with smart completion, e.g., [Gradle Tasks](https://www.jetbrains.com/help/idea/gradle.html#gradle_tasks), executing Run Configurations, ... see [`RunAnythingProvider`](upsource:///platform/lang-impl/src/com/intellij/ide/actions/runAnything/activity/RunAnythingProvider.java)
 
 JPS: Report exception in IDE
-: Ability to report exceptions from build process. [Issue](https://youtrack.jetbrains.com/issue/IDEA-187115)
+: Ability to report exceptions from the build process. [Issue](https://youtrack.jetbrains.com/issue/IDEA-187115)

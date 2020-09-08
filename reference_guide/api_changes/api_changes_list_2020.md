@@ -7,7 +7,7 @@ title: Incompatible Changes in IntelliJ Platform and Plugins API 2020.*
 Before documenting a breaking API change, please, make sure that the change cannot be avoided 
 in an alternative way.
 
-APIs marked with @ApiStatus.Experimental, @ApiStatus.Internal or @ApiStatus.ScheduledForRemoval don't need to be documented.
+APIs marked with @ApiStatus.Experimental, @ApiStatus.Internal, or @ApiStatus.ScheduledForRemoval don't need to be documented.
 
 To document a new incompatible change, add a new line with the problem pattern
 followed by a 2nd line with ": "-prefixed human-readable description and recommended fix/action.
@@ -57,12 +57,12 @@ An example of a ticket is https://youtrack.jetbrains.com/issue/MP-1218. Until su
 
 NOTE: You are allowed to prettify the pattern using links: [`org.example.Foo`](https://github.com/JetBrains/intellij-community/tree/master/)
 
-NOTE: Entries not starting with code quotes (`name`) can be added to document non-code changes and will be skipped in API verification.
+NOTE: Entries not starting with code quotes (`name`) can be added to document non-code changes and be skipped in API verification.
 -->
 
 Please see [Incompatible API Changes](/reference_guide/api_changes_list.md) on how to verify compatibility.
 
-> **NOTE** Changes from API marked with `org.jetbrains.annotations.ApiStatus.@Experimental`/`ScheduledForRemoval` are not listed here, as incompatible changes are to be expected.
+> **NOTE** Changes from API marked with `org.jetbrains.annotations.ApiStatus.@Experimental`/`ScheduledForRemoval` are not listed here, as incompatible changes are expected.
 
 ## 2020.3
                               
@@ -94,7 +94,7 @@ Support for JavaFX deprecated
 : Plugins should migrate to [JCEF](/reference_guide/jcef.md). Alternatively, add an explicit dependency on [JavaFX Runtime for Plugins](https://plugins.jetbrains.com/plugin/14250-javafx-runtime-for-plugins). 
 
 `com.intellij.psi.util.PsiTreeUtil.processElements(element, processor)` method parameter type changed from `PsiElementProcessor` to `PsiElementProcessor<PsiElement>`
-: This may break source-compatibility with clients that pass more specific processor. Passing more specific processor was illegal before as well because the `processElements` passes every descendant `PsiElement` to the processor regardless of its type. However, this worked with some poorly written clients, e.g. `PsiElementProcessor.CollectFilteredElements` and `PsiElementProcessor.FindFilteredElement` (both deprecated now). To simplify the migration, a new three-arg `processElements(element, elementClass, processor)` is introduced that actually filters by element class, so in most cases, the simplest migration would be to add a wanted element class as a second argument. However, it's advised to use `SyntaxTraverser` API instead, which is more rich and flexible.
+: This may break source-compatibility with clients that pass a more specific processor. Passing a more specific processor was illegal before because the `processElements` passes every descendant `PsiElement` to the processor regardless of its type. However, this worked with some poorly written clients, e.g. `PsiElementProcessor.CollectFilteredElements` and `PsiElementProcessor.FindFilteredElement` (both deprecated now). To simplify the migration, a new three-arg `processElements(element, elementClass, processor)` is introduced that filters by element class. In most cases, the simplest migration would be to add a wanted element class as a second argument. However, it's advised to use `SyntaxTraverser` API instead, which is more rich and flexible.
 
 `com.maddyhome.idea.copyright.util.FileTypeUtil.getFileTypeByName(String)` method removed
 : This was an internal utility method not intended for use in plugins. Use `FileTypeManager.getInstance().findFileTypeByName()` instead.
@@ -154,7 +154,7 @@ Support for JavaFX deprecated
 : This may break source-compatibility with inheritors written in Kotlin.
 
 `com.intellij.pom.java.LanguageLevel.JDK_13_PREVIEW` field removed
-: Please remove plugin code supporting Java 13 language level features. IntelliJ IDEA supports preview features of the latest Java release as well as one upcoming release (if available). 
+: Please remove the plugin code supporting Java 13 language level features. IntelliJ IDEA supports preview features of the latest Java release and one upcoming release (if available). 
 
 
 #### VCS
@@ -266,7 +266,7 @@ Added Union Types Support
 : Use `com.intellij.testFramework.ReadOnlyLightVirtualFile`-based PSI instead.
 
 Java code migrated to use `TYPE_USE` nullability annotations
-: Due to some problems in Kotlin compiler existing Kotlin code might become incompilable in rare cases if a method written in Java returning an array and annotated as `@Nullable` or `@NotNull` is used or overridden.
+: Due to some problems in Kotlin compiler, existing Kotlin code might become incompatible in rare cases if a method is written in Java returning an array and annotated as `@Nullable` or `@NotNull` is used or overridden.
 
 `com.intellij.navigation.ChooseByNameContributorEx.processNames` method parameter type changed from `Processor<String>` to ``Processor<? extends String>``
 : This may break source-compatibility with inheritors written in Kotlin.

@@ -20,7 +20,7 @@ you must log in with your personal JetBrains Account.
 
 **To upload your plugin to JetBrains Plugins Repository:**
 
-1. [Login to JetBrains Plugins Repository](https://plugins.jetbrains.com/author/me) with your personal JetBrains account.
+1. [Log in to JetBrains Plugins Repository](https://plugins.jetbrains.com/author/me) with your personal JetBrains account.
 2. On your Profile page that opens, click **Add new plugin**.
 3. Fill in the **Add new plugin** form that opens and click the **Add the plugin** button to upload your plugin.
 

@@ -9,7 +9,7 @@ Plugins can be written in Kotlin or Java, or a mix of both, and are created usin
 It's also helpful to be familiar with [Java Swing](https://docs.oracle.com/javase/8/javase-clienttechnologies.htm).
 Once completed, plugins can be packaged and distributed at [JetBrains Plugin Repository](https://plugins.jetbrains.com).
 
-Android Studio plugins are not Android modules or apps to run in the Android operating system, such as on a smartphone or tablet.
+Android Studio plugins are not Android modules or apps to run in the Android operating system, such as smartphones or tablets.
 
 ## Configuring IntelliJ Platform Projects for Android Studio Plugin Development
 To create a new Android Studio plugin project, follow the tutorial on the [Getting Started with Gradle](/tutorials/build_system/prerequisites.md) page.

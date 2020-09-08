@@ -11,9 +11,7 @@ _Listeners_ allow plugins to declaratively subscribe to events delivered through
 
 You can define both application- and project-level listeners.
 
-Declarative registration of listeners allows you to achieve better performance compared to registering listeners
-from code, because listener instances are created lazily (the first time an event is sent to the topic), and not
-during application startup or project opening.
+Declarative registration of listeners allows you to achieve better performance compared to registering listeners from code, because listener instances are created lazily (the first time an event is sent to the topic), and not during application startup or project opening.
 
 ## Defining Application-Level Listeners
 
@@ -27,11 +25,9 @@ To define an application-level listener, add the following section to your `plug
 
 The `topic` attribute specifies the listener interface corresponding to the type of events you want to receive.
 Normally, this is the interface used as the type parameter of the [`Topic`](upsource:///platform/extensions/src/com/intellij/util/messages/Topic.java) instance for the type of events.
-The `class` attribute specifies the class in your plugin that implements the listener interface and receives
-the events. 
+The `class` attribute specifies the class in your plugin that implements the listener interface and receives the events. 
 
-As a specific example, if you want to receive events about all changes in the virtual file system, you need
-to implement the `BulkFileListener` interface, corresponding to the topic `VirtualFileManager.VFS_CHANGES`.
+As a specific example, if you want to receive events about all changes in the virtual file system, you need to implement the `BulkFileListener` interface, corresponding to the topic `VirtualFileManager.VFS_CHANGES`.
 To subscribe to this topic from code, you could use something like the following snippet:
 
 ```java
@@ -43,8 +39,7 @@ messageBus.connect().subscribe(VirtualFileManager.VFS_CHANGES, new BulkFileListe
 });
 ```
 
-To use declarative registration, you no longer need to reference the `Topic` instance. Instead, you refer directly
-to the listener interface class:
+To use declarative registration, you no longer need to reference the `Topic` instance. Instead, you refer directly to the listener interface class:
 
 ```xml
 <applicationListeners>
@@ -76,8 +71,7 @@ Project-level listeners are registered in the same way, except that the top-leve
 </projectListeners>
 ```
 
-The class implementing the listener interface can define a one-argument constructor accepting a `Project`,
-and it will receive the instance of the project for which the listener is created:
+The class implementing the listener interface can define a one-argument constructor accepting a `Project`, and it will receive the instance of the project for which the listener is created:
 
 ```java
 public class MyToolwindowListener implements ToolWindowManagerListener {

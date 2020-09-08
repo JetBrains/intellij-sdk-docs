@@ -206,7 +206,7 @@ public class PhpStaticFactoryTypeProvider extends CompletionContributor implemen
 }
 ```
 
-to make completion work registration is required:
+To make completion work registration is required:
 
 ```xml
 <completion.contributor language="PHP" implementationClass="com.jetbrains.php.lang.psi.resolve.types.PhpStaticFactoryTypeProvider"/>

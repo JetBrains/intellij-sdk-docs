@@ -46,13 +46,11 @@ That way, it is run after all possible indexing processes have been completed.
 
 ## Background processes and `ProcessCanceledException`
 
-Background progresses are managed by [`ProgressManager`](upsource:///platform/core-api/src/com/intellij/openapi/progress/ProgressManager.java) class, 
-which has plenty of methods to execute the given code with a modal (dialog), non-modal (visible in the status bar), or invisible progress. 
+Background progresses are managed by [`ProgressManager`](upsource:///platform/core-api/src/com/intellij/openapi/progress/ProgressManager.java) class,  which has plenty of methods to execute the given code with a modal (dialog), non-modal (visible in the status bar), or invisible progress. 
 In all cases, the code is executed on a background thread, which is associated with a [`ProgressIndicator`](upsource:///platform/core-api/src/com/intellij/openapi/progress/ProgressIndicator.java) object.
 The current thread's indicator can be retrieved any time via `ProgressIndicatorProvider.getGlobalProgressIndicator()`.
 
-For visible progress, threads can use `ProgressIndicator` to notify the user about current status:
-e.g., set text or visual fraction of the work done.
+For visible progress, threads can use `ProgressIndicator` to notify the user about current status: e.g., set text or visual fraction of the work done.
 
 Progress indicators also provide means to handle cancellation of background processes, either by the user (pressing the _Cancel_ button) or from code (e.g., when the current operation becomes obsolete due to some changes in the project).
 The progress can be marked as canceled by calling `ProgressIndicator.cancel()`.
@@ -68,8 +66,7 @@ If a process does lengthy non-PSI activity, insert explicit `checkCanceled()` ca
 
 ## Read Action Cancellability
 
-Background threads shouldn't take plain read actions for a long time. The reason is that if the UI thread needs a write action (e.g., the user types something), 
-it must be acquired as soon as possible. Otherwise, the UI will freeze until all background threads have released their read actions.
+Background threads shouldn't take plain read actions for a long time. The reason is that if the UI thread needs a write action (e.g., the user types something),  it must be acquired as soon as possible. Otherwise, the UI will freeze until all background threads have released their read actions.
 
 The best-known approach is to cancel background read actions whenever there's a write action about to occur, and restart that background read action later from scratch.
 Editor highlighting, code completion, Goto Class/File/... actions all work like this.

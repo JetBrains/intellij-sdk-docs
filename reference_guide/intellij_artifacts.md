@@ -5,8 +5,7 @@ title: IntelliJ Platform Artifacts Repositories
 
 > **WARNING** When using additional repositories, make sure to use HTTPS always.
 
-JetBrains maintains public repositories that host artifacts related to the IntelliJ Platform, such as binaries and source code. These 
-repositories make artifacts more accessible for plugin developers.
+JetBrains maintains public repositories that host artifacts related to the IntelliJ Platform, such as binaries and source code. These repositories make artifacts more accessible for plugin developers.
 
 The IntelliJ Platform artifacts repositories are:
 * [Releases repository](https://www.jetbrains.com/intellij-repository/releases/) for release versions by [build number](/basics/getting_started/build_number_ranges.md).

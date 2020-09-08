@@ -8,8 +8,7 @@ This tutorial shows how to add an extra step to the Project Wizard to provide ad
 ## Pre-Requirements
 
 Create an empty plugin project.
-See [Creating a Plugin Project](/tutorials/build_system.md)
-to know how to do it.
+See [Creating a Plugin Project](/tutorials/build_system.md) to know how to do it.
 
 ## 1. Register Module Builder
 Project configuration settings depend on the project's module type. 

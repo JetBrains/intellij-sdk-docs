@@ -24,9 +24,7 @@ Property files  usually contain messages, menu items, dialog labels texts etc.
 For every such file localized jar should contain translated version that is placed to exactly the same path relative to the jar root and has exactly the same name as original file plus locale identifier.
 For example ***messages/ActionsBundle.properties*** file from ***resources_en.jar*** should have its translated version ***messages/ActionsBundle_ja.properties*** file in ***resources_ja.jar***.
 All property files should be ASCII encoded with *\uXXXX* sequences used for characters that have no their representation in ASCII range.
-See
-[native2ascii](https://docs.oracle.com/javase/7/docs/technotes/tools/solaris/native2ascii.html)
-tool for more details.
+See [native2ascii](https://docs.oracle.com/javase/7/docs/technotes/tools/solaris/native2ascii.html) tool for more details.
 
 Property values mostly follow MessageFormat rules.
 
@@ -47,8 +45,7 @@ All the HTML files should be UTF-8 encoded.
 
 *  **Tips of the day**  follow the same pattern inspections and intentions do.
 For instance translation of ***/tips/AdaptiveWelcome.html*** goes to ***/tips_ja/AdaptiveWelcome.html***.
-The only thing special about tips is they use special pattern for denoting shortcuts like *EnterAction*;
-will be replaced to keystroke mapped to *EnterAction* in currently used keymap at run-time.
+The only thing special about tips is they use special pattern for denoting shortcuts like *EnterAction*; will be replaced to keystroke mapped to *EnterAction* in currently used keymap at run-time.
 So please make sure you leave such sequences intact while translating.
 Remember UTF-8 encoding.
 

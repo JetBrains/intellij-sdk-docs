@@ -51,9 +51,7 @@ For every block, the plugin specifies the following properties:
    If two blocks with the alignment property set to the same object instance are placed in different lines, and if the second block is the first non-whitespace block in its line, the formatter inserts white spaces before the second block so that it starts from the same column as the first one.
 
 For each of these properties, a number of special use settings exists, which are described in the JavaDoc comments for the respective classes.
-See also
-[`SpacingBuilder`](upsource:///platform/lang-api/src/com/intellij/formatting/SpacingBuilder.java)
-which aids in building rule-based configuration.
+See also [`SpacingBuilder`](upsource:///platform/lang-api/src/com/intellij/formatting/SpacingBuilder.java) which aids in building rule-based configuration.
 
 An important special case in using the formatter is the smart indent performed when the user presses the `Enter` key in a source code file.
 To determine the indent for the new line, the formatter engine calls the method `getChildAttributes()` on either the block immediately before the caret or the parent of that block, depending on the return value of the `isIncomplete()` method for the block before the caret.
@@ -67,9 +65,7 @@ Code formatting can be suppressed per region via [special comments](https://yout
 
 ### Code Style Settings
 
-To specify the default indent size for the language provided by your plugin, and to allow the user to configure the tab size and indent size you need to implement the
-[`FileTypeIndentOptionsProvider`](upsource:///platform/lang-api/src/com/intellij/psi/codeStyle/FileTypeIndentOptionsProvider.java)
-interface and to register the implementation in the `com.intellij.fileTypeIndentOptionsProvider` extension point.
+To specify the default indent size for the language provided by your plugin, and to allow the user to configure the tab size and indent size you need to implement the [`FileTypeIndentOptionsProvider`](upsource:///platform/lang-api/src/com/intellij/psi/codeStyle/FileTypeIndentOptionsProvider.java) interface and to register the implementation in the `com.intellij.fileTypeIndentOptionsProvider` extension point.
 The return value of `createIndentOptions()` determines the default indent size.
 
 **Example**:
@@ -80,6 +76,4 @@ The return value of `createIndentOptions()` determines the default indent size.
 **New in IntelliJ IDEA 12:**
 Allows custom languages to provide user-configurable arrangement/grouping rules for element types supported by language plugin.
 Rules can be refined via modifiers and name, ordering can be applied additionally.
-Please see
-[`Rearranger`](upsource:///platform/lang-api/src/com/intellij/psi/codeStyle/arrangement/Rearranger.java)
-and related for JavaDoc.
+Please see [`Rearranger`](upsource:///platform/lang-api/src/com/intellij/psi/codeStyle/arrangement/Rearranger.java) and related for JavaDoc.

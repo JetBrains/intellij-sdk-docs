@@ -20,13 +20,9 @@ The `Disposer` supports chaining `Disposables` in parent-child relationships.
 ## Automatically Disposed Objects
 
 A number of objects are disposed automatically by the platform if they implement the `Disposable` interface.
-The most important type of such objects is [services](/basics/plugin_structure/plugin_services.md). Application-level
-services are automatically disposed by the platform when the IDE is closed, or the plugin providing the service is
-unloaded. Project-level services are disposed when the project is closed or the plugin is unloaded.
+The most important type of such objects is [services](/basics/plugin_structure/plugin_services.md). Application-level services are automatically disposed by the platform when the IDE is closed, or the plugin providing the service is unloaded. Project-level services are disposed when the project is closed or the plugin is unloaded.
 
-Note that extensions registered in `plugin.xml` are *not* automatically disposed. If an extension requires executing
-some code to dispose it, you need to define a service and to put the code in its `dispose()` method or use it as a parent
-disposable.
+Note that extensions registered in `plugin.xml` are *not* automatically disposed. If an extension requires executing some code to dispose it, you need to define a service and to put the code in its `dispose()` method or use it as a parent disposable.
 
 
 ## The Disposer Singleton
@@ -53,9 +49,7 @@ Use the following guidelines to choose the correct parent:
 * For resources required for the entire lifetime of a plugin, use an application or project level [service](/basics/plugin_structure/plugin_services.md).
 * For resources required while a [dialog](/user_interface_components/dialog_wrapper.md) is displayed, use `DialogWrapper.getDisposable()`.
 * For resources required while a [tool window](/user_interface_components/tool_windows.md) tab is displayed, pass your instance implementing `Disposable` to `Content.setDisposer()`.
-* For resources with a shorter lifetime, create a disposable using `Disposer.newDisposable()` and dispose it manually
-using `Disposable.dispose()`. Note that it's always best to specify a parent for such a disposable (e.g., a project-level service),
-so that there is no memory leak if the `Disposable.dispose()` call is not reached because of an exception or a programming error.
+* For resources with a shorter lifetime, create a disposable using `Disposer.newDisposable()` and dispose it manually using `Disposable.dispose()`. Note that it's always best to specify a parent for such a disposable (e.g., a project-level service), so that there is no memory leak if the `Disposable.dispose()` call is not reached because of an exception or a programming error.
 
 > **WARNING** Even though `Application` and `Project` implement `Disposable`, they must NEVER be used as parent disposables in plugin code.
 Disposables registered using those objects as parents will not be disposed when the plugin is unloaded, leading to memory leaks.
@@ -64,14 +58,11 @@ The flexibility of the `Disposer` API means that if the parent instance is chose
 Continuing to use resources when they are no longer needed can be a severe source of contention due to leaving some zombie objects behind as a result of each invocation.
 An additional challenge is that these kinds of issues won't be reported by the regular leak checker utilities, because technically, it's not a memory leak from the test suite perspective.
 
-For example, if a UI component created for a specific operation uses a project-level service as a parent disposable,
-the entire component will remain in memory after the operation is complete. This creates memory pressure and can waste
-CPU cycles on processing events that are no longer relevant for anything.
+For example, if a UI component created for a specific operation uses a project-level service as a parent disposable, the entire component will remain in memory after the operation is complete. This creates memory pressure and can waste CPU cycles on processing events that are no longer relevant for anything.
 
 ### Registering Listeners with Parent Disposable
 
-Many IntelliJ Platform APIs for registering listeners either require passing a parent disposable or have overloads that
-take a parent disposable. For example:
+Many IntelliJ Platform APIs for registering listeners either require passing a parent disposable or have overloads that take a parent disposable. For example:
 
 ```java
 public abstract class EditorFactory {
@@ -82,14 +73,11 @@ public abstract class EditorFactory {
 }
 ```
 
-Methods with a `parentDisposable` parameter automatically unsubscribe the listener when the corresponding parent disposable
-is disposed. Using such methods is always preferable to removing listeners explicitly from the `dispose` method, because
-it requires less code and is easier to verify for correctness.
+Methods with a `parentDisposable` parameter automatically unsubscribe the listener when the corresponding parent disposable is disposed. Using such methods is always preferable to removing listeners explicitly from the `dispose` method, because it requires less code and is easier to verify for correctness.
 
 To choose the correct parent disposable, use the guidelines from the previous section.
 
-The same rules apply to [message bus](/reference_guide/messaging_infrastructure.md) connections. Always pass a parent disposable to `MessageBus.connect()`, and make sure
-it has the shortest possible lifetime.
+The same rules apply to [message bus](/reference_guide/messaging_infrastructure.md) connections. Always pass a parent disposable to `MessageBus.connect()`, and make sure it has the shortest possible lifetime.
 
 ### Determining Disposal Status
 You can use `Disposer.isDisposed()` to check whether a `Disposable` has already been disposed. 
@@ -106,8 +94,7 @@ This method handles recursively disposing of all the `Disposable` child descenda
 
 Creating a class requires implementing the `Disposable` interface and defining the `dispose()` method.
 
-In many cases, when the object implements `Disposable` only to be used as a parent disposable, the implementation of the
-method will be completely empty.
+In many cases, when the object implements `Disposable` only to be used as a parent disposable, the implementation of the method will be completely empty.
 
 An example of a non-trivial `dispose` implementation is shown below:
 

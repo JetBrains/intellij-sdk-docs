@@ -15,9 +15,7 @@ public class DemoFramework extends FrameworkTypeEx {
 ```
 
 ## 2. Registering Framework
-The newly created framework class should be registered as an extension point by adding `com.intellij.framework.type` extension in  
-[`plugin.xml`](https://github.com/JetBrains/intellij-sdk-code-samples/blob/master/framework_basics/src/main/resources/META-INF/plugin.xml)
-configuration file:
+The newly created framework class should be registered as an extension point by adding `com.intellij.framework.type` extension in   [`plugin.xml`](https://github.com/JetBrains/intellij-sdk-code-samples/blob/master/framework_basics/src/main/resources/META-INF/plugin.xml) configuration file:
 
 ```xml
 <extensions defaultExtensionNs="com.intellij">

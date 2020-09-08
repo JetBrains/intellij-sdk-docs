@@ -20,16 +20,9 @@ In addition to that, to support _Safe Delete_, a plugin needs to implement two t
 
 
 **Example:**
-[`delete()`](upsource:///plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/psi/impl/PropertyImpl.java)
-implementation for a Property in 
-[Properties language plugin](upsource:///plugins/properties/)
+[`delete()`](upsource:///plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/psi/impl/PropertyImpl.java) implementation for a Property in  [Properties language plugin](upsource:///plugins/properties/)
 
-
-If needed, it's possible to further customize how _Safe Delete_ is performed for a particular type of element (e.g., how references are searched)
-via [`SafeDeleteProcessorDelegate`](upsource:///platform/lang-impl/src/com/intellij/refactoring/safeDelete/SafeDeleteProcessorDelegate.java).
-
+If needed, it's possible to further customize how _Safe Delete_ is performed for a particular type of element (e.g., how references are searched) via [`SafeDeleteProcessorDelegate`](upsource:///platform/lang-impl/src/com/intellij/refactoring/safeDelete/SafeDeleteProcessorDelegate.java).
 
 **Example**:
-[`SafeDeleteProcessorDelegate`](upsource:///plugins/properties/src/com/intellij/lang/properties/refactoring/PropertiesFilesSafeDeleteProcessor.java)
-implementation for
-[Properties language plugin](upsource:///plugins/properties)
+[`SafeDeleteProcessorDelegate`](upsource:///plugins/properties/src/com/intellij/lang/properties/refactoring/PropertiesFilesSafeDeleteProcessor.java) implementation for [Properties language plugin](upsource:///plugins/properties)

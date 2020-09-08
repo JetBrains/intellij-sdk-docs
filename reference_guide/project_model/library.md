@@ -10,8 +10,7 @@ The IntelliJ Platform supports three types of libraries:
 * **Project Library**: the library classes are visible within the project and the library information is recorded under `.idea/libraries` directory or in the project `.ipr` file.
 * **Global Library**: the library information is recorded in the `applicationLibraries.xml` file in `<User Home>/.IntelliJIdea/config/options` directory. Global libraries are similar to project libraries, but are visible for different projects.
 
-For more information about libraries, refer to
-[Libraries](https://www.jetbrains.com/help/idea/working-with-libraries.html).
+For more information about libraries, refer to [Libraries](https://www.jetbrains.com/help/idea/working-with-libraries.html).
 
 A particular type of programmatically defined libraries is [Predefined Libraries](#predefined-libraries).
 
@@ -37,8 +36,7 @@ This sample code outputs a list of libraries that the given module depends on.
 
 ### Getting a List of All Libraries
 To manage the lists of application and project libraries, use [`LibraryTable`](upsource:///platform/projectModel-api/src/com/intellij/openapi/roots/libraries/LibraryTable.java). 
-The list of application-level library tables is accessed by calling `LibraryTablesRegistrar.getInstance().getLibraryTable()`,
-whereas the list of project-level library tables is accessed through `LibraryTablesRegistrar.getInstance().getLibraryTable()`.
+The list of application-level library tables is accessed by calling `LibraryTablesRegistrar.getInstance().getLibraryTable()`, whereas the list of project-level library tables is accessed through `LibraryTablesRegistrar.getInstance().getLibraryTable()`.
 Once you have a `LibraryTable`, you can get the libraries in it by calling `LibraryTable.getLibraries()`.
 
 To get the list of all module libraries defined in a given module, use the following API:

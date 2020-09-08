@@ -415,8 +415,7 @@ In this case, the second method will return just the same as the first one. If t
 
 The case just described is simple, but rare. More often, you really have to incorporate some logic into your model. Then nothing except Java code helps you. And it will. Add the desired methods to your interface, then create an abstract class implementing the interface, and implement there only methods that you added manually and that are not directly connected to your XML model. Note that the class should have a constructor with no arguments.
 
-Now you only have to let DOM know that you wish to use this implementation every time you're creating a model element that should implement the necessary interface. Simply register it using
-extension point `com.intellij.dom.implementation` and DOM will generate at run-time the class that not only implements the needed interface, but also extends your abstract class.
+Now you only have to let DOM know that you wish to use this implementation every time you're creating a model element that should implement the necessary interface. Simply register it using extension point `com.intellij.dom.implementation` and DOM will generate at run-time the class that not only implements the needed interface, but also extends your abstract class.
 
 ### Models Across Multiple Files
 Many frameworks require a set of XML configuration files ("fileset") to work as one model, so resolving/navigation works across all related DOM files.

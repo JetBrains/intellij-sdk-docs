@@ -79,16 +79,14 @@ In your implementation of `getRefactoringElementListener()`, you need to check w
 
 ## Creating Configurations from Context
 
-Many plugins support automatic creation of run configurations from context, so that the user can click, for example, on an application or test class and automatically run it using the correct run configuration type. In order to support that, you need to provide an implementation of the [`RunConfigurationProducer`](upsource:///platform/lang-api/src/com/intellij/execution/actions/RunConfigurationProducer.java)
-interface and to register it as `<runConfigurationProducer>` in your `plugin.xml`. (Note that this API has been redesigned in IntelliJ IDEA 13; the old [`RuntimeConfigurationProducer`](upsource:///platform/lang-api/src/com/intellij/execution/junit/RuntimeConfigurationProducer.java) is a much more confusing version of the same API).
+Many plugins support automatic creation of run configurations from context, so that the user can click, for example, on an application or test class and automatically run it using the correct run configuration type. In order to support that, you need to provide an implementation of the [`RunConfigurationProducer`](upsource:///platform/lang-api/src/com/intellij/execution/actions/RunConfigurationProducer.java) interface and to register it as `<runConfigurationProducer>` in your `plugin.xml`. (Note that this API has been redesigned in IntelliJ IDEA 13; the old [`RuntimeConfigurationProducer`](upsource:///platform/lang-api/src/com/intellij/execution/junit/RuntimeConfigurationProducer.java) is a much more confusing version of the same API).
 
 The two main methods that you need to implement are:
 
 * `setupConfigurationFromContext()` receives a blank configuration of your type and a `ConfigurationContext` containing information about a source code location (accessible by calling `getLocation()` or `getPsiLocation()`). Your implementation needs to check whether the location is applicable for your configuration type (for example, if it's in a file of the language you're supporting). If not, you need to return false, and if it is, you need to put the correct context-specific settings into the run configuration and return true.
 * `isConfigurationFromContext()` checks if the specified configuration of your type was created from the specified context. Implementing this method allows you to reuse an existing run configuration which is applicable to the current context instead of creating a new one and possibly ignoring the customisations the user has performed in the existing one.
 
-Note that, in order to support automatic naming of configurations created from context, your configuration should use
-[`LocatableConfigurationBase`](upsource:///platform/lang-api/src/com/intellij/execution/configurations/LocatableConfigurationBase.java) as the base class.
+Note that, in order to support automatic naming of configurations created from context, your configuration should use [`LocatableConfigurationBase`](upsource:///platform/lang-api/src/com/intellij/execution/configurations/LocatableConfigurationBase.java) as the base class.
 
 ## Running from the Gutter
 

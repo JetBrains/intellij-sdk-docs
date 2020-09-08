@@ -4,13 +4,11 @@ title: Incompatible Changes in IntelliJ Platform and Plugins API 2020.*
 <!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 <!--
-Before documenting a breaking API change, please, make sure that the change cannot be avoided 
-in an alternative way.
+Before documenting a breaking API change, please, make sure that the change cannot be avoided in an alternative way.
 
 APIs marked with @ApiStatus.Experimental, @ApiStatus.Internal, or @ApiStatus.ScheduledForRemoval don't need to be documented.
 
-To document a new incompatible change, add a new line with the problem pattern
-followed by a 2nd line with ": "-prefixed human-readable description and recommended fix/action.
+To document a new incompatible change, add a new line with the problem pattern followed by a 2nd line with ": "-prefixed human-readable description and recommended fix/action.
 
 The following problem patterns are supported:
 
@@ -43,7 +41,7 @@ The following problem patterns are supported:
 
 <property name> property removed from resource bundle <bundle name>
 
-where the placeholders must be enclosed in code quotes (`name`):
+Where the placeholders must be enclosed in code quotes (`name`):
 
 <class name> is a fully-qualified name of the class, e.g. `com.intellij.openapi.actionSystem.AnAction$InnerClass`.
 <method name> is the exact method's name. Note that constructors have dedicated patterns.

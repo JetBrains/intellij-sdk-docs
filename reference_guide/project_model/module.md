@@ -19,8 +19,7 @@ The key components of a module are:
     to an [SDK](sdk.md), a [library](library.md), or another module.
   * **[Facets](facet.md)** - the list of framework-specific configuration entries.
 
-In addition to that, a module can store other settings, such as a module-specific [SDK](sdk.md), compile output path
-settings, etc. 
+In addition to that, a module can store other settings, such as a module-specific [SDK](sdk.md), compile output path settings, etc. 
 Plugins can store additional data associated with a module by creating facets or module-level components.
 
 
@@ -120,8 +119,7 @@ VirtualFile moduleSourceRoot = ProjectRootManager.getInstance(project).getFileIn
 
 ## Receiving Notifications About Module Changes
 
-To receive notifications about module changes (modules being added, removed or renamed),
-use the [message bus](/reference_guide/messaging_infrastructure.md) and the `ProjectTopics.MODULES` topic:
+To receive notifications about module changes (modules being added, removed or renamed), use the [message bus](/reference_guide/messaging_infrastructure.md) and the `ProjectTopics.MODULES` topic:
 
 ```java
 project.getMessageBus().connect().subscribe(ProjectTopics.MODULES, new ModuleListener() {

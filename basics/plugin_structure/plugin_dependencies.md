@@ -52,8 +52,7 @@ If the project is using [DevKit](/basics/getting_started/using_dev_kit.md), add 
 
 > **WARNING** Do not add the plugin JARs as a library: this will fail at runtime because the IntelliJ Platform will load two separate copies of the dependency plugin classes.
 
-To do that, open the Project Structure dialog, select the SDK used in the project, press the + button in the Classpath tab, and
-select the plugin JAR file or files:
+To do that, open the Project Structure dialog, select the SDK used in the project, press the + button in the Classpath tab, and select the plugin JAR file or files:
 * For bundled plugins, the plugin JAR files are located in `plugins/<pluginname>` or `plugins/<pluginname>/lib` under the main installation directory.
   If you're not sure which JAR to add, you can add all of them.
 * For non-bundled plugins, the plugin JAR files are located in `config/plugins/<pluginname>` or `config/plugins/<pluginname>/lib` under the directory specified as "Sandbox Home" in the IntelliJ Platform Plugin SDK settings.
@@ -74,9 +73,7 @@ Continuing with the example from [Section 2](#2-project-setup) above, the depend
 
 
 ## Optional Plugin Dependencies
-A project can also specify an optional plugin dependency. In this case, the plugin will load even if the plugin it depends on
-is not installed or enabled, but part of the functionality of the plugin will not be available. In order to do that,
-add `optional="true" config-file="otherconfig.xml"` to the `<depends>` tag.
+A project can also specify an optional plugin dependency. In this case, the plugin will load even if the plugin it depends on is not installed or enabled, but part of the functionality of the plugin will not be available. In order to do that, add `optional="true" config-file="otherconfig.xml"` to the `<depends>` tag.
 
 For example, if a plugin project adds additional highlighting for Java and Kotlin files, use the following setup. 
 The main `plugin.xml` will define an annotator for Java and specify an optional dependency on the Kotlin plugin:

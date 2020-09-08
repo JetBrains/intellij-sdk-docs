@@ -5,14 +5,11 @@ title: Custom Language Support
 
 *IntelliJ Platform* is a powerful platform for building development tools targeting *any* language.
 Most of the IDE features consist of language-independent (provided by the platform) and language-specific parts.
-Supporting a particular feature for a new language can be achieved with a small amount of effort: 
+Supporting a particular feature for a new language can be achieved with a small amount of effort:
 a plugin must implement only the language-specific part.
 
 This part of the documentation explains the main concepts of the *Language API* and guides you through the sequence of steps that are usually required to develop a custom language plugin.
-You can obtain additional information about the *Language API* from the JavaDoc comments for the *Language API* classes and from the source code of the Properties language support, which is part of the
-[IntelliJ IDEA Community Edition](https://github.com/JetBrains/intellij-community)
-source code.
-
+You can obtain additional information about the *Language API* from the JavaDoc comments for the *Language API* classes and from the source code of the Properties language support, which is part of the [IntelliJ IDEA Community Edition](https://github.com/JetBrains/intellij-community) source code.
 
 If you prefer a full example to the detailed descriptions offered in this section, please check out a step-by-step tutorial on how to create custom language support for _Simple Language_:
 [Custom Language Support Tutorial](/tutorials/custom_language_support_tutorial.md). Corresponding steps from the tutorial are linked under "Examples" section on each page of this reference.

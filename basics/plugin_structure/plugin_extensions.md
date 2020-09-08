@@ -5,8 +5,7 @@ redirect_from:
 ---
 <!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-_Extensions_ are the most common way for a plugin to extend the functionality of the IntelliJ Platform in a way
-that is not as straightforward as adding an action to a menu or toolbar. 
+_Extensions_ are the most common way for a plugin to extend the functionality of the IntelliJ Platform in a way that is not as straightforward as adding an action to a menu or toolbar. 
 
 The following are some of the most common tasks accomplished using extensions:
 
@@ -17,8 +16,7 @@ The following are some of the most common tasks accomplished using extensions:
   * [Custom language plugins](/reference_guide/custom_language_support.md) use many extension points
     to extend various language support features in the IDE.
 
-There are [more than 1000 extension](#how-to-get-the-extension-points-list) points available in the platform and the bundled plugins, allowing to customize 
-different parts of the IDE behavior.
+There are [more than 1000 extension](#how-to-get-the-extension-points-list) points available in the platform and the bundled plugins, allowing to customize different parts of the IDE behavior.
 
 ## Declaring Extensions 
 

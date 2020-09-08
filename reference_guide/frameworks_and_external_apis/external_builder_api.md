@@ -45,9 +45,7 @@ To pass custom data between the invocation of the same builder between multiple 
 
 ### Services and Extensions in External Builder
 
-The external builder process uses the standard Java
-[services](https://docs.oracle.com/javase/8/docs/api/java/util/ServiceLoader.html)
-mechanism to support plugins. There are several service interfaces (e.g. [`BuilderService`](upsource:///jps/jps-builders/src/org/jetbrains/jps/incremental/BuilderService.java) which can be implemented in plugins to extend the builder functionality. An implementation of a service need to be registered by creating `META-INF/services/<service-interface-fqn>` file containing the qualified name of the implementation class. E.g. `BuilderService` implementations are registered in `META-INF/services/org.jetbrains.jps.incremental.BuilderService` file. These files don't have extensions so you need to map corresponding patterns to text files in IDE settings.
+The external builder process uses the standard Java [services](https://docs.oracle.com/javase/8/docs/api/java/util/ServiceLoader.html) mechanism to support plugins. There are several service interfaces (e.g. [`BuilderService`](upsource:///jps/jps-builders/src/org/jetbrains/jps/incremental/BuilderService.java) which can be implemented in plugins to extend the builder functionality. An implementation of a service need to be registered by creating `META-INF/services/<service-interface-fqn>` file containing the qualified name of the implementation class. E.g. `BuilderService` implementations are registered in `META-INF/services/org.jetbrains.jps.incremental.BuilderService` file. These files don't have extensions so you need to map corresponding patterns to text files in IDE settings.
 
 ### Registering a Plugin for External Builder
 
@@ -91,8 +89,7 @@ Snapshots are named like "ExternalBuild\-\{date\}.snapshot".
 Specifying `-Dprofiling.mode=false` will turn profiling off.
 Please capture a couple of snapshots for the situations in which you believe the build should work much faster than it does.
 
-Please create an issue in the issue tracker and attach generated \*.snapshot files to it or upload them
-as [described here](https://intellij-support.jetbrains.com/hc/en-us/articles/206869619) and specify links in the issue.
+Please create an issue in the issue tracker and attach generated \*.snapshot files to it or upload them as [described here](https://intellij-support.jetbrains.com/hc/en-us/articles/206869619) and specify links in the issue.
 Please also provide details about the memory and other VM settings for the build process you were using.
 
 
@@ -114,9 +111,7 @@ In IntelliJ Platform versions before version 14.1 log4j configuration was stored
 
 The project model in External Build process is provided by JPS (*JetBrains Project System*).
 A project is represented by [`JpsProject`](upsource:///jps/model-api/src/org/jetbrains/jps/model/JpsProject.java), a module by [`JpsModule`](upsource:///jps/model-api/src/org/jetbrains/jps/model/JpsProject.java) and so on.
-If your compiler depends on something that isn't added to the model yet (e.g. some facet settings),
-you need to extend the JPS model (use `JpsOsmorcModuleExtension` as a reference implementation) and provide implementation of
-[`JpsModelSerializerExtension`](upsource:///jps/model-serialization/src/org/jetbrains/jps/model/serialization/JpsModelSerializerExtension.java) to load the configuration from project files.
+If your compiler depends on something that isn't added to the model yet (e.g. some facet settings), you need to extend the JPS model (use `JpsOsmorcModuleExtension` as a reference implementation) and provide implementation of [`JpsModelSerializerExtension`](upsource:///jps/model-serialization/src/org/jetbrains/jps/model/serialization/JpsModelSerializerExtension.java) to load the configuration from project files.
 
 #### Implementing Builder
 

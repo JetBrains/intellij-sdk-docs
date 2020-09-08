@@ -73,8 +73,7 @@ Optionally, you can configure an individual SDK for each module.
 See [SDK](sdk.md) for more details.
 
 ## Changing the Project Structure
-Utility classes used for modifying the project structure can be found in the package [`projectModel-impl.openapi`](upsource:///platform/projectModel-impl/src/com/intellij/openapi). Its [`roots`](upsource:///platform/projectModel-impl/src/com/intellij/openapi/roots/) subpackage contains instances and utilities intended for work with project and module source roots, including [`ModuleRootModificationUtil`](upsource:///platform/projectModel-api/src/com/intellij/openapi/roots/ModuleRootModificationUtil.java) and [`ProjectRootUtil`](upsource:///platform/projectModel-impl/src/com/intellij/openapi/projectRoots/impl/ProjectRootUtil.java). Project structure
-changes need to be performed in a [write action](/basics/architectural_overview/general_threading_rules.md#readwrite-lock).
+Utility classes used for modifying the project structure can be found in the package [`projectModel-impl.openapi`](upsource:///platform/projectModel-impl/src/com/intellij/openapi). Its [`roots`](upsource:///platform/projectModel-impl/src/com/intellij/openapi/roots/) subpackage contains instances and utilities intended for work with project and module source roots, including [`ModuleRootModificationUtil`](upsource:///platform/projectModel-api/src/com/intellij/openapi/roots/ModuleRootModificationUtil.java) and [`ProjectRootUtil`](upsource:///platform/projectModel-impl/src/com/intellij/openapi/projectRoots/impl/ProjectRootUtil.java). Project structure changes need to be performed in a [write action](/basics/architectural_overview/general_threading_rules.md#readwrite-lock).
 
 Refer to the [project_model](https://github.com/JetBrains/intellij-sdk-code-samples/blob/master/project_model/src/main/java/org/intellij/sdk/project/model/ModificationAction.java) code sample to learn how project structure modification can be implemented.
 

@@ -23,8 +23,7 @@ The rest of this page is an overview of actions as an extension point.
 An action is a class derived from the abstract class [`AnAction`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java).
 The IntelliJ Platform calls methods of an action when a user interacts with a menu item or toolbar button. 
 
-> **WARNING** Classes based on `AnAction` do not have class fields of any kind. This is because an instance of `AnAction` class
-exists for the entire lifetime of the application. If the `AnAction` class uses a field to store data that has a shorter lifetime and doesn't clear this data promptly, the data leaks. For example, any `AnAction` data that exists only within the context of a `Project` causes the `Project` to be kept in memory after the user has closed it.
+> **WARNING** Classes based on `AnAction` do not have class fields of any kind. This is because an instance of `AnAction` class exists for the entire lifetime of the application. If the `AnAction` class uses a field to store data that has a shorter lifetime and doesn't clear this data promptly, the data leaks. For example, any `AnAction` data that exists only within the context of a `Project` causes the `Project` to be kept in memory after the user has closed it.
 
 ### Principal Implementation Overrides 
 Every IntelliJ Platform action should override `AnAction.update()` and must override `AnAction.actionPerformed()`.

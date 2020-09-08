@@ -84,8 +84,7 @@ IntelliJ Platform has default icon colors defined for `Actions` and `Objects` co
 * `Actions` are Theme keys for icons that appear in the context of toolbars and represent actions such as _Compile_, _Run_, or _Debug_. 
 * `Objects` are Theme keys for icons that appear in the contexts of lists and trees, and represent entities like files, symbols, or run and debug configurations.
 
-The [JetBrains Platform UI Guideline for Icons](https://jetbrains.design/intellij/principles/icons/)
-defines the default hexadecimal RGB values of colors for `Actions` and `Objects` keys. 
+The [JetBrains Platform UI Guideline for Icons](https://jetbrains.design/intellij/principles/icons/) defines the default hexadecimal RGB values of colors for `Actions` and `Objects` keys. 
 Note that this document refers to `Objects` keys as "Noun icons."
 
 #### Customizing "Actions" and "Objects" Icon Colors
@@ -263,8 +262,7 @@ The following example sets a new border width and color for all windows:
 }
 ```
 
-In this example, the customized border supersedes the default definition and 
-any global color override.
+In this example, the customized border supersedes the default definition and  any global color override.
 
 ## Finding Attribute Keys for UI Controls
 There are hundreds of UI control `element.property` keys defined in the IntelliJ Platform UI. 

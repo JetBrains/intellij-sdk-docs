@@ -118,8 +118,7 @@ See examples above.
 
 ### Radio Buttons
 
-Radio button groups are created using the `buttonGroup` block. There are two ways to use it. If the selected radio button corresponds to a specific value of a single
-property, pass the property binding to the `buttonGroup` method and the specific values to `radioButton` functions:
+Radio button groups are created using the `buttonGroup` block. There are two ways to use it. If the selected radio button corresponds to a specific value of a single property, pass the property binding to the `buttonGroup` method and the specific values to `radioButton` functions:
 
 ```kotlin
 buttonGroup(mySettings::providerType) {
@@ -232,8 +231,7 @@ A panel returned by the `panel` method is an instance of [`DialogPanel`](upsourc
 
 If you're using a [`DialogPanel`](upsource:///platform/platform-api/src/com/intellij/openapi/ui/DialogPanel.kt) as the main panel of a `DialogWrapper`, the `apply` method will be automatically called when the dialog is closed with the OK action. The other methods are unused in this case.
 
-Use the `focused` method to specify which control should be focused when 
-the dialog is initialized:
+Use the `focused` method to specify which control should be focused when  the dialog is initialized:
 
 ```kotlin
 return panel {
@@ -257,8 +255,8 @@ checkBox("Show tabs in single row", uiSettings::scrollTabLayoutInEditor)
 ```
 
 The available predicates are:
-  * `selected` to check the selected state of a checkbox or radio button
-  * `selectedValueIs` and `selectedValueMatches` to check the selected item in a combobox.
+* `selected` to check the selected state of a checkbox or radio button
+* `selectedValueIs` and `selectedValueMatches` to check the selected item in a combobox.
   
 Predicates can be combined with `and` and `or` infix functions:
 

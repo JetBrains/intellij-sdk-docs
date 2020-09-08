@@ -66,18 +66,18 @@ For the [example](#creating-a-gradle-based-intellij-platform-plugin-with-new-pro
 my_gradle_plugin
 ├── build.gradle
 ├── gradle
-│   └── wrapper
-│       ├── gradle-wrapper.jar
-│       └── gradle-wrapper.properties
+│   └── wrapper
+│       ├── gradle-wrapper.jar
+│       └── gradle-wrapper.properties
 ├── gradlew
 ├── gradlew.bat
 ├── settings.gradle
 └── src
     ├── main
-    │   ├── java
-    │   └── resources
-    │       └── META-INF
-    │           └── plugin.xml
+    │   ├── java
+    │   └── resources
+    │       └── META-INF
+    │           └── plugin.xml
     └── test
         ├── java
         └── resources

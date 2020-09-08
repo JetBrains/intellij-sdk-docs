@@ -24,7 +24,7 @@ The standard way of writing a light test is to extend the following classes:
 > **NOTE** In 2019.2, `LightPlatformCodeInsightFixtureTestCase` has been renamed to `BasePlatformTestCase` and `LightCodeInsightFixtureTestCase` to `LightJavaCodeInsightFixtureTestCase` respectively.
 
 When writing a light test, you can specify the requirements for the project that you need to have in your test, such as the module type, the configured SDK, facets, libraries, etc. You do so by extending the [`LightProjectDescriptor`](upsource:///platform/testFramework/src/com/intellij/testFramework/LightProjectDescriptor.java) class and returning your project descriptor from `getProjectDescriptor()`.
-Before executing each test, the project will be reused if the test case returns the same project descriptor as the previous one, or recreated if the descriptor is different.
+Before executing each test, the project will be reused if the test case returns the same project descriptor (usually stored in static final field) as the previous one, or recreated if the descriptor is different (`equals() = false`).
 
 
 ## Heavy Tests

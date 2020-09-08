@@ -24,7 +24,7 @@ The main plugin definition file is stored in the `plugin.xml` file, which is cre
 ## Code Samples
 
 In the following table, you may find all available samples provided in the separated directories as stand-alone projects available for running with the Gradle `:runIde` task.
- 
+
 | Code Sample                                                            | Description                                                                                                                                            |
 | ---------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | [Action Basics](./action_basics)                                       | Action and Action Group patterns implementation, adds entries to the Tools menu.                                                                       |

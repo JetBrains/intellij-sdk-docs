@@ -17,7 +17,7 @@ This java file contains markup instructions for three different cases of code fo
 
 ## 7.2. Define a Test
 Add the `testFolding()` method to the `SimpleCodeInsightTest` class [previously defined](completion_test.md#define-a-test).
-This test method reuses the `DefaultTestData.simple` properties file. 
+This test method reuses the `DefaultTestData.simple` properties file.
 
 ```java
   public void testFolding() {

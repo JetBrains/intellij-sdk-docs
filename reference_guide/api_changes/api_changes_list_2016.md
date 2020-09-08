@@ -4,12 +4,12 @@ title: Incompatible Changes in IntelliJ Platform and Plugins API 2016.*
 <!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 <!--
-See the note on how to document new problems on the main page reference_guide/api_changes_list.md 
+See the note on how to document new problems on the main page reference_guide/api_changes_list.md
 -->
 
 Please see [Incompatible API Changes](/reference_guide/api_changes_list.md) on how to verify compatibility.
 
-## 2016.3 
+## 2016.3
 
 ### Changes in IntelliJ Platform 2016.3
 
@@ -17,7 +17,7 @@ Please see [Incompatible API Changes](/reference_guide/api_changes_list.md) on h
 : Implement this method or extend [`com.intellij.openapi.application.ApplicationAdapter`](upsource:////platform/core-api/src/com/intellij/openapi/application/ApplicationAdapter.java) class instead of implementing the interface.
 
 
-## 2016.2 
+## 2016.2
 
 ### Changes in IntelliJ Platform 2016.2
 

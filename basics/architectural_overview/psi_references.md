@@ -59,7 +59,7 @@ For resolving a `PsiPolyVariantReference`, you call its `multiResolve()` method.
 
 ## Searching for References
 
-As you already know, resolving a reference means going from usage to the corresponding declaration. To perform the navigation in the opposite direction - from a declaration to its usages - perform a **references search**. 
+As you already know, resolving a reference means going from usage to the corresponding declaration. To perform the navigation in the opposite direction - from a declaration to its usages - perform a **references search**.
 
 To perform a search using [`ReferencesSearch`](upsource:///platform/indexing-api/src/com/intellij/psi/search/searches/ReferencesSearch.java), specify the *element* to search for, and optionally other parameters such as the scope in which the reference needs to be searched. The created [`Query`](upsource:///platform/core-api/src/com/intellij/util/Query.java) allows obtaining all results at once or iterating over the results one by one. The latter allows stopping processing as soon as the first (matching) result has been found.
 

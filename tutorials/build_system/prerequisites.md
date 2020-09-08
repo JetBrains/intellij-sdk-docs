@@ -29,7 +29,7 @@ It guides you through the Gradle project creation process with two screens.
 ### New Project Configuration Screen
 On the first screen, the type of project is configured:
 * From the _project type_ pane on the left, choose _Gradle_.
-* Specify the _Project SDK_ based on the **Java 8** JDK. 
+* Specify the _Project SDK_ based on the **Java 8** JDK.
   This SDK will be the default JRE used to run Gradle, and the JDK version used to compile the plugin Java sources.
 * In the _Additional Libraries and Frameworks_ panel, select _Java_ and _IntelliJ Platform Plugin_.
   These settings will be used for the remainder of this tutorial.
@@ -50,12 +50,12 @@ Expand the _Artifact Coordinates_ section and specify a [GroupId, ArtifactId, an
 * _ArtifactId_ is the default name of the project JAR file (without version).
   It is also used for the Gradle property `rootProject.name` value in the project's `settings.gradle` file.
   For this example, enter `my_gradle_plugin`.
-* _Version_ is used for the Gradle property `project.version` value in the `build.gradle` file. 
+* _Version_ is used for the Gradle property `project.version` value in the `build.gradle` file.
   For this example, enter `1.0`.
 
 The _Name_ field is synced automatically with the specified _ArtifactId_.
 
-Specify the path for the new project in _Location_ and click _Finish_ to continue and generate the project. 
+Specify the path for the new project in _Location_ and click _Finish_ to continue and generate the project.
 
 
 ### Components of a Wizard-Generated Gradle IntelliJ Platform Plugin
@@ -96,18 +96,18 @@ The generated `my_gradle_plugin` project `build.gradle` file:
       id 'java'
       id 'org.jetbrains.intellij' version '0.4.22'
   }
-  
+
   group 'com.your.company'
-  version '1.0' 
+  version '1.0'
   sourceCompatibility = 1.8
-  
+
   repositories {
       mavenCentral()
-  } 
+  }
   dependencies {
       testImplementation group: 'junit', name: 'junit', version: '4.12'
   }
-  
+
   // See https://github.com/JetBrains/gradle-intellij-plugin/
   intellij {
       version '2020.1'
@@ -142,19 +142,19 @@ The `<id>` value must be a unique identifier over all plugins, typically a conca
 Please note that it is impossible to change the `<id>` of a published plugin without losing automatic updates for existing installations.
 
 ## Adding Gradle Support to an Existing DevKit-Based IntelliJ Platform Plugin
-Converting a [DevKit-based](/basics/getting_started/using_dev_kit.md) plugin project to a Gradle-based plugin project can be done using the New Project Wizard to create a Gradle-based project around the existing DevKit-based project: 
+Converting a [DevKit-based](/basics/getting_started/using_dev_kit.md) plugin project to a Gradle-based plugin project can be done using the New Project Wizard to create a Gradle-based project around the existing DevKit-based project:
 * Ensure the directory containing the DevKit-based IntelliJ Platform plugin project can be fully recovered if necessary.
 * Delete all the artifacts of the DevKit-based project:
   * `.idea` directory
   * `[modulename].iml` file
   * `out` directory
-* Arrange the existing source files within the project directory in the Gradle [SourceSet](https://docs.gradle.org/current/userguide/java_plugin.html#sec:java_project_layout) format. 
+* Arrange the existing source files within the project directory in the Gradle [SourceSet](https://docs.gradle.org/current/userguide/java_plugin.html#sec:java_project_layout) format.
 * Use the New Project Wizard as though creating a [new Gradle project](#creating-a-gradle-based-intellij-platform-plugin-with-new-project-wizard) from scratch.
 * On the [Project Naming/Artifact Coordinates Screen](#project-namingartifact-coordinates-screen) set the values to:
   * _GroupId_ to the existing package in the initial source set.
   * _ArtifactId_ to the name of the existing plugin.
   * _Version_ to the same as the existing plugin.
-  * _Name_ to the name of the existing plugin. 
+  * _Name_ to the name of the existing plugin.
     (It should be pre-filled from the _ArtifactId_)
   * Set the _Location_ to the directory of the existing plugin.
 * Click _Finish_ to create the new Gradle-based plugin.
@@ -166,16 +166,16 @@ Gradle projects are run from the IDE's Gradle Tool window.
 
 ### Adding Code to the Project
 Before running [`my_gradle_project`](#components-of-a-wizard-generated-gradle-intellij-platform-plugin), some code can be added to provide simple functionality.
-See the [Creating Actions](/tutorials/action_system/working_with_custom_actions.md) tutorial for step-by-step instructions for adding a menu action. 
+See the [Creating Actions](/tutorials/action_system/working_with_custom_actions.md) tutorial for step-by-step instructions for adding a menu action.
 
-### Executing the Plugin 
-Open the Gradle tool window and search for the `runIde` task: 
-* If it’s not in the list, hit the [Refresh](https://www.jetbrains.com/help/idea/jetgradle-tool-window.html#1eeec055) button at the top of the Gradle window. 
+### Executing the Plugin
+Open the Gradle tool window and search for the `runIde` task:
+* If it’s not in the list, hit the [Refresh](https://www.jetbrains.com/help/idea/jetgradle-tool-window.html#1eeec055) button at the top of the Gradle window.
 * Or [Create a new Gradle Run Configuration](https://www.jetbrains.com/help/idea/create-run-debug-configuration-gradle-tasks.html).
-  
+
 ![Gradle Tool Window](img/gradle_tasks_in_tool_window.png){:width="398px"}
-   
+
 Double-click on the _runIde_ task to execute it.
 See the IntelliJ IDEA help for more information about [Working with Gradle tasks](https://www.jetbrains.com/help/idea/gradle.html#96bba6c3).
 
-Finally, when `my_gradle_plugin` launches in the IDE development instance, there should be a new menu under the **Tools** menu. 
+Finally, when `my_gradle_plugin` launches in the IDE development instance, there should be a new menu under the **Tools** menu.

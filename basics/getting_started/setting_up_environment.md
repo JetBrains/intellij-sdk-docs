@@ -12,9 +12,9 @@ Use the following checklist to ensure that you are ready to develop your custom 
 - **Get IntelliJ IDEA CE source code** on your local computer. Getting IntelliJ IDEA CE source code is not a requirement for plugin development, but having it makes debugging your plugins much more straightforward. For detailed instructions, refer to the _Getting IntelliJ IDEA Community Edition Source Code_ section of [Check Out And Build Community Edition](upsource:///README.md). Note that building IntelliJ IDEA CE from source code is not required for plugin development.
 - **Plugin DevKit** plugin must be [enabled in IntelliJ IDEA](https://www.jetbrains.com/help/idea/managing-plugins.html).
 - **IntelliJ Platform SDK** must be configured for your IDEA project. For more information, see below.
-  
+
 ### Configuring IntelliJ Platform SDK
-  
+
 To set up your plugin development environment:
 
 *  Create a new *IntelliJ Platform SDK* under **File \| Project Structure**:
@@ -27,7 +27,7 @@ To set up your plugin development environment:
 
    ![Set Home Directory](img/set_home_directory.png)
 <br/>
-<br/>      
+<br/>
 *  Select **1.8** as the default Java SDK. See the _IntelliJ Build Configuration_ section of [Check Out And Build Community Edition](upsource:///README.md) for instructions about creating **1.8** Java SDK.
 
    ![Set IDEA JDK](img/set_java_sdk.png)
@@ -43,12 +43,11 @@ To set up your plugin development environment:
    ![Specify Source Paths](img/community_sources_directory.png)
 <br/>
 <br/>
-*  Specify the **Sandbox Home** directory.  
+*  Specify the **Sandbox Home** directory.
    The *Sandbox Home* directory stores the settings of the IDE development instance launched from a Plugin Project's **Run** configuration.
-   Shown below is the default *Sandbox Home* directory for a user on Mac OS X. Any directory can be chosen as the *Sandbox Home* location. 
-   Use the ellipsis button (shown below) to define a custom location.  
-   
-   See the [IDE Development Instances](/basics/ide_development_instance.md) page for more information about default *Sandbox Home* directory
-   locations and contents.  
-  
+   Shown below is the default *Sandbox Home* directory for a user on Mac OS X. Any directory can be chosen as the *Sandbox Home* location.
+   Use the ellipsis button (shown below) to define a custom location.
+
+   See the [IDE Development Instances](/basics/ide_development_instance.md) page for more information about default *Sandbox Home* directory locations and contents.
+
    ![Specify Sandbox Path](img/plugins-sandbox.png)

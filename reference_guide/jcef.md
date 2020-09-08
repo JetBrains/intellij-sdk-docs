@@ -3,7 +3,7 @@ title: JCEF - Java Chromium Embedded Framework
 ---
 <!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-> **WARNING** JCEF is available since 2020.1 as an **experimental feature**. We plan to deprecate using JavaFX in 3rd party plugins and switch to JCEF in 2020.2. 
+> **WARNING** JCEF is available since 2020.1 as an **experimental feature**. We plan to deprecate using JavaFX in 3rd party plugins and switch to JCEF in 2020.2.
 > To continue using JavaFX in 2020.2 or later, an explicit dependency on [JavaFX Runtime for Plugins](https://plugins.jetbrains.com/plugin/14250-javafx-runtime-for-plugins) must be added.
 > Please see also blog post [JavaFX and JCEF in the IntelliJ Platform](https://blog.jetbrains.com/platform/2020/07/javafx-and-jcef-in-the-intellij-platform/) for summary of plans.
 
@@ -12,11 +12,11 @@ JCEF is a Java port of [CEF](https://bitbucket.org/chromiumembedded/cef/wiki/Hom
 Embedding of the browser component inside the IDE allows amongst others:
 
 - rendering HTML content
-- previewing generated HTML (e.g., from Markdown) 
+- previewing generated HTML (e.g., from Markdown)
 
-## Enabling JCEF       
+## Enabling JCEF
 > **NOTE** JCEF is available and enabled by default in 2020.2.
-                                              
+
 Using JCEF requires using a dedicated JetBrains Runtime, please follow these [installation instructions](https://youtrack.jetbrains.com/issue/IDEA-231833#focus=streamItem-27-3993099.0-0) on how to obtain and activate it in your IDE.
 Enable `ide.browser.jcef.enabled` in Registry dialog (invoke **Help \| Find Action** and type "Registry") and restart the IDE for changes to take effect.
 
@@ -58,10 +58,10 @@ Before using JCEF, `JBCefApp.isSupported()` check must be called:
     if (!JBCefApp.isSupported()) {
       // Fallback to an alternative browser-less solution
       return;
-    }                 
+    }
 
     // Use JCEF
-```                               
+```
 
 JCEF can be unsupported when:
 - It’s not available in the IDE runtime (the IDE is started with an alternative OpenJDK).
@@ -95,7 +95,7 @@ For executing JS code and callbacks (see below), use the wrapped `CefBrowser` in
   getCefBrowser().executeJavaScript(String code, String url, int line);
 ```
 
-By default, `JBCefBrowser` is created with implicit `JBCefClient` (disposed automatically). It is possible to pass your own `JBCefClient` (disposed by the developer). 
+By default, `JBCefBrowser` is created with implicit `JBCefClient` (disposed automatically). It is possible to pass your own `JBCefClient` (disposed by the developer).
 
 For accessing:
 
@@ -122,13 +122,13 @@ It’s simpler to illustrate it by an example. Say, we want to open a link in an
   // Create a JS query instance
   final JBCefJSQuery myJSQueryOpenInBrowser =
   JBCefJSQuery.create(myJBCefBrowser);
-  
+
   // Add a query handler
   myJSQueryOpenInBrowser.addHandler((link) -> {
             MarkdownAccessor.getSafeOpenerAccessor().openLink(link);
           return null; // can respond back to JS with JBCefJSQuery.Response
         });
-  
+
   // Inject the query callback into JS
   myCefBrowser.executeJavaScript(
   "window.JavaPanelBridge = {" +
@@ -137,7 +137,7 @@ It’s simpler to illustrate it by an example. Say, we want to open a link in an
               "}" +
         "};",
         getCefBrowser().getURL(), 0);
-  
+
   // Dispose the query when necessary
   Disposer.dispose(myJSQueryOpenInBrowser);
 ```

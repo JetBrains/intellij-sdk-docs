@@ -24,7 +24,7 @@ Click on an entry in the table's *Attribute* column to go to the documentation a
 | [`runIde.ideDirectory`](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md#running-dsl) | Not needed; the Development Instance will automatically match intellij.type |
 
 The dependency on the CLion APIs must be declared in the `plugin.xml` file.
-As described in [Modules Specific to Functionality](/basics/getting_started/plugin_compatibility.md#modules-specific-to-functionality) table, the `<depends>` elements should contain the CLion module, as illustrated in the `plugin.xml` snippet below: 
+As described in [Modules Specific to Functionality](/basics/getting_started/plugin_compatibility.md#modules-specific-to-functionality) table, the `<depends>` elements should contain the CLion module, as illustrated in the `plugin.xml` snippet below:
 
 ```xml
   <!-- Required for core CLion functionality -->

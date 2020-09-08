@@ -36,5 +36,5 @@ The [`ElementDescriptionLocation`](upsource:///platform/core-api/src/com/intelli
 **Example:**
 [`ElementDescriptionProvider`](upsource:///plugins/properties/src/com/intellij/lang/properties/PropertiesDescriptionProvider.java) for [Properties language plugin](upsource:///plugins/properties/)
 
-> **TIP** In cases like function parameters and local variables, consider overriding  [`PsiElement.getUseScope()`](upsource:///platform/core-api/src/com/intellij/psi/PsiElement.java) to return a narrower scope. 
+> **TIP** In cases like function parameters and local variables, consider overriding  [`PsiElement.getUseScope()`](upsource:///platform/core-api/src/com/intellij/psi/PsiElement.java) to return a narrower scope.
 For instance, you might return just the scope of the nearest function definition. This optimization can greatly reduce  the number of files that need to be parsed--and references that need to be resolved--when renaming a function parameter or local variable.

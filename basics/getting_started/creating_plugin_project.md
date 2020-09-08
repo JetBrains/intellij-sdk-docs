@@ -37,4 +37,4 @@ For more information, refer to the [IntelliJ IDEA Web Help](https://www.jetbrain
 
 ### Adding Code to the Project
 Before running the new project, add some code to provide simple functionality.
-See the [Creating Actions](/tutorials/action_system/working_with_custom_actions.md) tutorial for step-by-step instructions for adding a menu action. 
+See the [Creating Actions](/tutorials/action_system/working_with_custom_actions.md) tutorial for step-by-step instructions for adding a menu action.

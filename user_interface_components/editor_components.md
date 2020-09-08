@@ -14,7 +14,7 @@ The following attributes can be specified:
 * The file type according to which the text in the text field is parsed;
 * Whether the text field is read-only or editable;
 * Whether the text field is single-line or multiline.
-                                        
+
 Further customizations are possible by subclassing and overriding `createEditor()`.
 
 A common use case for `EditorTextField` is entering the name of a Java class or package.
@@ -38,7 +38,7 @@ Document document = PsiDocumentManager.getInstance(editor.getProject()).getDocum
 EditorTextField myInput = new EditorTextField(document, editor.getProject(), JavaFileType.INSTANCE);
 ```
 
-**TIPS**: 
+**TIPS**:
 
 * When creating more than one field two separate documents are needed. This is accomplished by using separate instances of `PsiExpressionCodeFragment`.
 * `setText()` no longer works for the input field. However, `createExpressionCodeFragment()` accepts the text for the field as an argument. The empty string can be replaced and create a new document in lieu of `setText()`.

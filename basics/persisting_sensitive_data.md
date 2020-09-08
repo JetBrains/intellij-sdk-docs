@@ -13,18 +13,18 @@ Use [`PasswordSafe`](upsource:///platform/platform-api/src/com/intellij/ide/pass
 ```java
     String key = null; // e.g. serverURL, accountID
     CredentialAttributes credentialAttributes = createCredentialAttributes(key);
-    
+
     Credentials credentials = PasswordSafe.getInstance().get(credentialAttributes);
     if (credentials != null) {
       String password = credentials.getPasswordAsString();
     }
 
     // or get password only
-    String password = PasswordSafe.getInstance().getPassword(credentialAttributes);    
-    
+    String password = PasswordSafe.getInstance().getPassword(credentialAttributes);
+
     private CredentialAttributes createCredentialAttributes(String key) {
-        return new CredentialAttributes(CredentialAttributesKt.generateServiceName("MySystem", key));        
-    }    
+        return new CredentialAttributes(CredentialAttributesKt.generateServiceName("MySystem", key));
+    }
 ```
 
 ### Store Credentials

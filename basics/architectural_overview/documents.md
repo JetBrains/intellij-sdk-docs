@@ -3,7 +3,7 @@ title: Documents
 ---
 <!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-A [`Document`](upsource:///platform/core-api/src/com/intellij/openapi/editor/Document.java) is an editable sequence of Unicode characters, typically corresponding to the text contents of a [virtual file](virtual_file.md). 
+A [`Document`](upsource:///platform/core-api/src/com/intellij/openapi/editor/Document.java) is an editable sequence of Unicode characters, typically corresponding to the text contents of a [virtual file](virtual_file.md).
 
 Line breaks in a document are _always_ normalized to `\n`.
 The *IntelliJ Platform* handles encoding and line break conversions when loading and saving documents transparently.
@@ -30,14 +30,14 @@ Also, document instances not linked to any virtual files can be created temporar
 
 ## How long does a Document persist?
 
-Document instances are weakly referenced from `VirtualFile` instances. 
-Thus, an unmodified `Document` instance can be garbage-collected if no one references it, and a new instance is created if the document contents are reaccessed later. 
+Document instances are weakly referenced from `VirtualFile` instances.
+Thus, an unmodified `Document` instance can be garbage-collected if no one references it, and a new instance is created if the document contents are reaccessed later.
 
 > **WARNING** Storing `Document` references in long-term data structures of a plugin will cause memory leaks.
 
 ## How do I create a Document?
 
-For creating a new file on disk, please do not create a `Document` but a PSI file and get its `Document`. 
+For creating a new file on disk, please do not create a `Document` but a PSI file and get its `Document`.
 To create a `Document` instance that isn't bound to anything, use `EditorFactory.createDocument()`.
 
 ## How do I get notified when Documents change?
@@ -48,8 +48,8 @@ To create a `Document` instance that isn't bound to anything, use `EditorFactory
 
 ## What are the rules of working with Documents?
 
-The general read/write action rules are in effect. Besides, any operations which modify the contents of the document must be wrapped in a command (`CommandProcessor.getInstance().executeCommand()`). 
-`executeCommand()` calls can be nested, and the outermost `executeCommand()` call is added to the undo stack. 
+The general read/write action rules are in effect. Besides, any operations which modify the contents of the document must be wrapped in a command (`CommandProcessor.getInstance().executeCommand()`).
+`executeCommand()` calls can be nested, and the outermost `executeCommand()` call is added to the undo stack.
 If multiple documents are modified within a command, undoing this command will, by default, show a confirmation dialog to the user.
 
 If the file corresponding to a `Document` is read-only (for example, not checked out from the version control system), document modifications will fail.
@@ -59,5 +59,5 @@ All text strings passed to `Document` modification methods (`setText()`, `insert
 
 ## Are there any utilities available for working with Documents?
 
-[`DocumentUtil`](upsource:///platform/core-impl/src/com/intellij/util/DocumentUtil.java) contains utility methods for `Document` processing. 
+[`DocumentUtil`](upsource:///platform/core-impl/src/com/intellij/util/DocumentUtil.java) contains utility methods for `Document` processing.
 This allows you to get information like the text offsets of particular lines. This is particularly useful when you need text location/offset information about a given `PsiElement`.

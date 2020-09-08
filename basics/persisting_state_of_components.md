@@ -35,7 +35,7 @@ In the former case, the state class instance is typically stored as a field in t
 ```java
 @State(...)
 class MyService implements PersistentStateComponent<MyService.State> {
-  
+
   static class State {
     public String value;
   }
@@ -71,7 +71,7 @@ class MyService implements PersistentStateComponent<MyService> {
 
 ### Implementing the State Class
 
-The implementation of `PersistentStateComponent` works by serializing public fields, [annotated](upsource:///platform/util/src/com/intellij/util/xmlb/annotations) private fields (see also [Customizing the XML format of persisted values](#customizing-the-xml-format-of-persisted-values)), and bean properties into an XML format. 
+The implementation of `PersistentStateComponent` works by serializing public fields, [annotated](upsource:///platform/util/src/com/intellij/util/xmlb/annotations) private fields (see also [Customizing the XML format of persisted values](#customizing-the-xml-format-of-persisted-values)), and bean properties into an XML format.
 
 To exclude a public field or bean property from serialization, annotate the field or getter with `@com.intellij.util.xmlb.annotations.Transient`.
 
@@ -119,7 +119,7 @@ class State {
 
 ### Defining the Storage Location
 
-To specify where precisely the persisted values are stored, add `@State` annotation to the `PersistentStateComponent` class. 
+To specify where precisely the persisted values are stored, add `@State` annotation to the `PersistentStateComponent` class.
 
 It has the following fields:
 * `name` (required) — specifies the name of the state (name of the root tag in XML).
@@ -132,7 +132,7 @@ The simplest ways of specifying the `@Storage` annotation are as follows (since 
 
 * `@Storage(StoragePathMacros.WORKSPACE_FILE)` for values stored in the workspace file.
 
-The state is persisted in a separate file by specifying a different value for the `value` parameter (`file` before 2016.x). 
+The state is persisted in a separate file by specifying a different value for the `value` parameter (`file` before 2016.x).
 
 > **NOTE** For application-level components, it is strongly recommended to use a custom file, using of `other.xml` is deprecated.
 
@@ -142,7 +142,7 @@ The `roamingType` parameter of the `@Storage` annotation specifies the roaming t
 
 > **NOTE** Please consider using annotation parameters only to achieve backward compatibility. Otherwise, please feel free to file issues about serialization cosmetics.
 
-If you want to use the default bean serialization but need to customize the storage format in XML (for example, for compatibility with previous versions of your plugin or externally defined XML formats), you can use the `@Tag`, `@Attribute`, `@Property`, `@MapAnnotation`, `@AbstractCollection` annotations. 
+If you want to use the default bean serialization but need to customize the storage format in XML (for example, for compatibility with previous versions of your plugin or externally defined XML formats), you can use the `@Tag`, `@Attribute`, `@Property`, `@MapAnnotation`, `@AbstractCollection` annotations.
 
 Please see `com.intellij.util.xmlb.annotations`'s [`package.html`](upsource:///platform/util/src/com/intellij/util/xmlb/annotations/package.html) for more information.
 

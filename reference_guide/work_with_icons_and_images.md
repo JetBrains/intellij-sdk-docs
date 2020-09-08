@@ -6,15 +6,15 @@ title: Working with Icons and Images
 Icons and images are used widely by IntelliJ Platform plugins. Plugins need icons mostly for actions, custom components renderers, tool windows, and so on.
 
 > **NOTE** Plugin Icons, which represent a plugin itself, have different requirements than icons and images used within a plugin.
-For more information see the [Plugin Icon](/basics/plugin_structure/plugin_icon_file.md) page. 
+For more information see the [Plugin Icon](/basics/plugin_structure/plugin_icon_file.md) page.
 
 > **TIP** Plugins should reuse existing platform icons whenever possible, see [`AllIcons`](upsource:///platform/util/src/com/intellij/icons/AllIcons.java). A detailed [design guideline](https://jetbrains.design/intellij/principles/icons/) is available for creating custom icons.
-  
+
 ## How to organize and how to use icons?
 
 The best way to deal with icons and other image resources is to put them to a dedicated source root marked as *Resources Root*, say `icons` or `resources`.
 
-The `getIcon()` method of [`IconLoader`](upsource:///platform/util/ui/src/com/intellij/openapi/util/IconLoader.java) can be used to access the icons. 
+The `getIcon()` method of [`IconLoader`](upsource:///platform/util/ui/src/com/intellij/openapi/util/IconLoader.java) can be used to access the icons.
 
 > **NOTE** The path to the icon passed in as argument to `IconLoader.getIcon()` must start with leading `/`
 
@@ -68,9 +68,9 @@ A minimal SVG icon file:
 </svg>
 ```
 
-The naming notation used for PNG icons (see below) is still relevant. However, the `@2x` version of an SVG icon should still provide the same base size. The icon graphics of such an icon can be expressed in more details via double precision. If the icon graphics are simple enough so that it renders perfectly in every scale, then the `@2x` version can be omitted. 
+The naming notation used for PNG icons (see below) is still relevant. However, the `@2x` version of an SVG icon should still provide the same base size. The icon graphics of such an icon can be expressed in more details via double precision. If the icon graphics are simple enough so that it renders perfectly in every scale, then the `@2x` version can be omitted.
 
-### PNG Format 
+### PNG Format
 > **NOTE** Please consider using SVG icons if your plugin targets 2018.2+.
 
 All icon files must be placed in the same directory following this naming pattern (replace `.png` with `.svg` for SVG icons):

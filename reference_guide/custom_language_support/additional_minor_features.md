@@ -53,7 +53,7 @@ EP: `com.intellij.lang.smartEnterProcessor`
 
 [`SmartEnterProcessor`](upsource:///platform/lang-api/src/com/intellij/codeInsight/editorActions/smartEnter/SmartEnterProcessor.java) handles *Edit \| Complete Statement* (e.g., autocomplete missing semicolon/parentheses).
 
-              
+
 ### Naming Suggestions
 EP: `com.intellij.nameSuggestionProvider`
 
@@ -96,5 +96,5 @@ EP: `com.intellij.referenceInjector`
 
 ### Color Preview/Chooser
 EP: `com.intellij.colorProvider`
- 
+
 [`ElementColorProvider`](upsource:///platform/lang-api/src/com/intellij/openapi/editor/ElementColorProvider.java) renders gutter icon for element containing color information.

@@ -5,15 +5,15 @@ title: General Threading Rules
 
 ## Read/Write Lock
 
-In general, code-related data structures in the *IntelliJ Platform* are covered by a single reader/writer lock. 
+In general, code-related data structures in the *IntelliJ Platform* are covered by a single reader/writer lock.
 
 You must not access the model outside a read or write action for the following subsystems:
-- PSI 
+- PSI
 - VFS
 - project root model.
 
-**Reading** data is allowed from any thread. 
-Reading data from the UI thread does not require any special effort. 
+**Reading** data is allowed from any thread.
+Reading data from the UI thread does not require any special effort.
 However, read operations performed from any other thread need to be wrapped in a read action by using `ApplicationManager.getApplication().runReadAction()` or, shorter, [`ReadAction`](upsource:///platform/core-api/src/com/intellij/openapi/application/ReadAction.java) `run()`/`compute()`.
 The corresponding objects are not guaranteed to survive between several consecutive read actions.
 As a rule of thumb, whenever starting a read action, check if the PSI/VFS/project/module is still valid.
@@ -26,13 +26,13 @@ You may not modify PSI, VFS, or project model from inside UI renderers or `Swing
 ## Modality and `invokeLater()`
 
 To pass control from a background thread to the event dispatch thread, instead of the standard `SwingUtilities.invokeLater()`, plugins should use `ApplicationManager.getApplication().invokeLater()`.
-The latter API allows specifying the _modality state_ ([`ModalityState`](upsource:///platform/core-api/src/com/intellij/openapi/application/ModalityState.java)) for the call, i.e., the stack of modal dialogs under which the call is allowed to execute: 
+The latter API allows specifying the _modality state_ ([`ModalityState`](upsource:///platform/core-api/src/com/intellij/openapi/application/ModalityState.java)) for the call, i.e., the stack of modal dialogs under which the call is allowed to execute:
 
 `ModalityState.NON_MODAL`
-: The operation will be executed after all modal dialogs are closed. If any of the open (unrelated) project displays a per-project modal dialog, the action will be performed after the dialog is closed. 
+: The operation will be executed after all modal dialogs are closed. If any of the open (unrelated) project displays a per-project modal dialog, the action will be performed after the dialog is closed.
 
 `ModalityState.stateForComponent()`
-: The operation can be executed when the topmost shown dialog is the one that contains the specified component or is one of its parent dialogs. 
+: The operation can be executed when the topmost shown dialog is the one that contains the specified component or is one of its parent dialogs.
 
 None specified
 : `ModalityState.defaultModalityState()` will be used. This is the optimal choice in most cases that uses the current modality state when invoked from UI thread. It has special handling for background processes started with `ProgressManager`: `invokeLater()` from such a process may run in the same dialog that the process started.
@@ -40,13 +40,13 @@ None specified
 `ModalityState.any()`
 : The operation will be executed as soon as possible regardless of modal dialogs. Please note that modifying PSI, VFS, or project model is prohibited from such runnable.
 
-If a UI thread activity needs to access [file-based index](/basics/indexing_and_psi_stubs.md) (e.g., it's doing any project-wide PSI analysis, resolves references, etc.), please use `DumbService.smartInvokeLater()`. 
+If a UI thread activity needs to access [file-based index](/basics/indexing_and_psi_stubs.md) (e.g., it's doing any project-wide PSI analysis, resolves references, etc.), please use `DumbService.smartInvokeLater()`.
 That way, it is run after all possible indexing processes have been completed.
 
 
 ## Background processes and `ProcessCanceledException`
 
-Background progresses are managed by [`ProgressManager`](upsource:///platform/core-api/src/com/intellij/openapi/progress/ProgressManager.java) class,  which has plenty of methods to execute the given code with a modal (dialog), non-modal (visible in the status bar), or invisible progress. 
+Background progresses are managed by [`ProgressManager`](upsource:///platform/core-api/src/com/intellij/openapi/progress/ProgressManager.java) class,  which has plenty of methods to execute the given code with a modal (dialog), non-modal (visible in the status bar), or invisible progress.
 In all cases, the code is executed on a background thread, which is associated with a [`ProgressIndicator`](upsource:///platform/core-api/src/com/intellij/openapi/progress/ProgressIndicator.java) object.
 The current thread's indicator can be retrieved any time via `ProgressIndicatorProvider.getGlobalProgressIndicator()`.
 
@@ -60,7 +60,7 @@ This call throws a special unchecked [`ProcessCanceledException`](upsource:///pl
 All code working with PSI, or in other kinds of background processes, must be prepared for [`ProcessCanceledException`](upsource:///platform/util/src/com/intellij/openapi/progress/ProcessCanceledException.java) being thrown from any point.
 This exception should never be logged but rethrown, and it'll be handled in the infrastructure that started the process.
 
-The `checkCanceled()` should be called often enough to guarantee the process's smooth cancellation. 
+The `checkCanceled()` should be called often enough to guarantee the process's smooth cancellation.
 PSI internals have a lot of `checkCanceled()` calls inside.
 If a process does lengthy non-PSI activity, insert explicit `checkCanceled()` calls so that it happens frequently, e.g., on each _Nth_ loop iteration.
 
@@ -72,8 +72,8 @@ The best-known approach is to cancel background read actions whenever there's a 
 Editor highlighting, code completion, Goto Class/File/... actions all work like this.
 
 To achieve that, the lengthy background operation is started with a `ProgressIndicator`, and a dedicated listener cancels that indicator when write action is initiated.
-The next time the background thread calls `checkCanceled()`, a `ProcessCanceledException` is thrown, and the thread should stop its operation (and finish the read action) as soon as possible. 
- 
+The next time the background thread calls `checkCanceled()`, a `ProcessCanceledException` is thrown, and the thread should stop its operation (and finish the read action) as soon as possible.
+
 There are two recommended ways of doing this:
 
 * If on UI thread, call `ReadAction.nonBlocking()` which returns [`NonBlockingReadAction`](upsource:///platform/core-api/src/com/intellij/openapi/application/NonBlockingReadAction.java)

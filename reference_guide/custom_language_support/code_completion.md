@@ -45,7 +45,7 @@ These instances are normally created through the [`LookupElementBuilder`](upsour
 For every lookup element, you can specify the following attributes:
 
 * Text. Shown left-aligned.
-* Tail text. Shown next to the main item text, is not used for prefix matching, and can be used, for example, to show the parameter list of the method. 
+* Tail text. Shown next to the main item text, is not used for prefix matching, and can be used, for example, to show the parameter list of the method.
 * Type text. Shown right-aligned in the lookup list and can be used to show the return type or containing class of a method, for example.
 * Icon
 * Text attributes. Bold, Strikeout, etc.

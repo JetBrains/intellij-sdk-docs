@@ -18,7 +18,7 @@ There are many features included in this plugin, such as Symfony-specific comple
 * [Symfony plugin in PhpStorm Plugins Repository](https://plugins.jetbrains.com/plugin/7219-symfony-support)
 
 ## Laravel
-The Laravel plugin is a free plugin for Laravel developers. 
+The Laravel plugin is a free plugin for Laravel developers.
 
 It provides code completion and navigation for various Laravel components: controllers, routes, views, configuration, services, and translations. You can also use Laravel-specific live templates for generating various Laravel entities.
 

@@ -46,7 +46,7 @@ This page gives a list of recipes for the most common operations for working wit
 ```java
 PsiJavaFile javaFile = (PsiJavaFile) psiClass.getContainingFile();
 PsiPackage pkg = JavaPsiFacade.getInstance(project).findPackage(javaFile.getPackageName());
-```        
+```
 
 or
 

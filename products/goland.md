@@ -23,12 +23,12 @@ To see how these attributes appear in a similar `build.gradle` file for PhpStorm
 | [`intellij.plugins`](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md#intellij-platform-properties) | `org.jetbrains.plugins.go:193.5233.102.83` for the Go plugin.<br>See below for Go plugin version information.                                                                                      |
 | [`runIde.ideDirectory`](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md#running-dsl)               | Path to locally installed target version of GoLand. For example, on macOS:<br>`/Users/<user name>/Library/Application Support/JetBrains/Toolbox/apps/Goland/ch-0/193.5233.112/GoLand.app/Contents` |
 
-The Go plugin version is explicitly declared because it isn't bundled with IntelliJ IDEA Ultimate Edition. 
-Select a [version](https://plugins.jetbrains.com/plugin/9568-go/versions) of the Go plugin compatible with the IntelliJ Idea Ultimate version. 
+The Go plugin version is explicitly declared because it isn't bundled with IntelliJ IDEA Ultimate Edition.
+Select a [version](https://plugins.jetbrains.com/plugin/9568-go/versions) of the Go plugin compatible with the IntelliJ Idea Ultimate version.
 
 The dependency on the Go plugin APIs must be declared in the `plugin.xml` file.
 As described in [Modules Specific to Functionality](/basics/getting_started/plugin_compatibility.md#modules-specific-to-functionality) table, the `<depends>` tags must declare `com.intellij.modules.go`.
-The `plugin.xml` file must also declare a dependency on `com.intellij.modules.platform` as explained in [Configuring the plugin.xml File](dev_alternate_products.md#configuring-pluginxml). 
+The `plugin.xml` file must also declare a dependency on `com.intellij.modules.platform` as explained in [Configuring the plugin.xml File](dev_alternate_products.md#configuring-pluginxml).
 The dependency declaration is illustrated in the `plugin.xml` snippet below:
 
 ```xml

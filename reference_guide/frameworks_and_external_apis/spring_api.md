@@ -166,7 +166,7 @@ _2018.1_
 
 Spring Boot API allows extending/accessing Spring Boot specific support in the IDE.
 
-> **WARNING** While we try to maintain compatibility, please be prepared for a less strict policy. 
+> **WARNING** While we try to maintain compatibility, please be prepared for a less strict policy.
 
 ### Setting up
 Please perform these steps _additionally_ to setting up Spring API support (see [here](#setting-up-intellij-platform-sdk)):
@@ -185,12 +185,12 @@ Add `<depends>com.intellij.spring.boot</depends>` to your `plugin.xml` to requir
 Use `com.intellij.spring.boot.library.SpringBootLibraryUtil` to query version and availability of common additional libraries.
 
 ### Custom Configuration Files Format
-`com.intellij.spring.boot.model.SpringBootModelConfigFileContributor` allows adding support for custom config file formats.    
-                                            
+`com.intellij.spring.boot.model.SpringBootModelConfigFileContributor` allows adding support for custom config file formats.
+
 ### Auto-Configuration Support
 Existing `Condition` implementations can be simulated at design time in IDE via `com.intellij.spring.boot.model.autoconfigure.conditions.ConditionalContributor`.
 
-Custom `@ConditionalOn...` annotations implementing `com.intellij.spring.boot.model.autoconfigure.conditions.jam.ConditionalOnJamElement` will be added into evaluation automatically.              
+Custom `@ConditionalOn...` annotations implementing `com.intellij.spring.boot.model.autoconfigure.conditions.jam.ConditionalOnJamElement` will be added into evaluation automatically.
 
 ### Spring Initializr
 requires `spring-boot-initializr.jar`

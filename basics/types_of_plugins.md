@@ -53,7 +53,7 @@ Refer to the [Struts 2 plugin](https://github.com/JetBrains/intellij-plugins/tre
 
 Tool integration makes it possible to manipulate third-party tools and components directly from the IDE without switching contexts, that implies:
 
-* Implementation of additional actions 
+* Implementation of additional actions
 * Related UI components
 * Access to external resources
 

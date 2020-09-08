@@ -31,7 +31,7 @@ In addition to that, specify the *factory class*  - the name of a class implemen
 When the user clicks on the tool window button, the `createToolWindowContent()` method of the factory class is called, and initializes the UI of the tool window.
 This procedure ensures that unused tool windows don't cause any overhead in startup time or memory usage: if a user does not interact with the tool window of a plugin, no plugin code will be loaded or executed.
 
-If the tool window of a plugin doesn't need to be displayed for all projects: 
+If the tool window of a plugin doesn't need to be displayed for all projects:
 * For versions 2020.1 and later, also implement the `isApplicable(Project)` method.
 * For versions 2019.3 and earlier, also specify the `conditionClass` attribute for the `<toolWindow>` element: the FQN of a class implementing [`Condition<Project>`](upsource:///platform/util-rt/src/com/intellij/openapi/util/Condition.java), which can be the same class as the tool window factory implementation.
   See [Creation of Plugin](#creation-of-plugin) for more information.
@@ -76,9 +76,9 @@ To clarify the above procedure, consider the following fragment of the `plugin.x
 
 ```xml
 <extensions defaultExtensionNs="com.intellij">
-    <toolWindow id="My Sample Tool Window" 
-                icon="/myPackage/toolWindowIcon.svg" 
-                anchor="right" 
+    <toolWindow id="My Sample Tool Window"
+                icon="/myPackage/toolWindowIcon.svg"
+                anchor="right"
                 factoryClass="myPackage.MyToolWindowFactory"/>
 </extensions>
 ```

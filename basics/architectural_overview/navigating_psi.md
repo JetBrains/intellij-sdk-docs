@@ -10,7 +10,7 @@ There are three main ways to navigate the PSI: *top-down*, *bottom-up*, and usin
 
 The most common way to perform top-down navigation is to use a *visitor*. To use a visitor, you create a class (usually an anonymous inner class) that extends the base visitor class, override the methods that handle the elements you're interested in, and pass the visitor instance it to `PsiElement.accept()`.
 
-The base classes for visitors are language-specific. For example, if you need to process elements in a Java file, you extend `JavaRecursiveElementVisitor` and override the methods corresponding to the Java element types you're interested in. 
+The base classes for visitors are language-specific. For example, if you need to process elements in a Java file, you extend `JavaRecursiveElementVisitor` and override the methods corresponding to the Java element types you're interested in.
 
 The following snippet shows the use of a visitor to find all Java local variable declarations:
 

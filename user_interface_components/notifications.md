@@ -29,7 +29,7 @@ If the current Project is known, please use overload with `Project` parameter, s
 
 The text of the notification can include HTML tags.
 
-Use `Notification.addAction(AnAction)` to add links below the content, use [`NotificationAction`](upsource:///platform/platform-api/src/com/intellij/notification/NotificationAction.java) for convenience. 
+Use `Notification.addAction(AnAction)` to add links below the content, use [`NotificationAction`](upsource:///platform/platform-api/src/com/intellij/notification/NotificationAction.java) for convenience.
 
 The `groupDisplayId` parameter of the [`Notification`](upsource:///platform/platform-api/src/com/intellij/notification/Notification.java) constructor specifies a notification type.
 The user can choose the display type corresponding to each notification type under `Settings | Appearance and Behavior | Notifications`.
@@ -41,7 +41,7 @@ Simple use of notifications using [`NotificationGroup`](upsource:///platform/pla
 
 ```java
 public class MyGroovyDSLErrorsNotifier {
-  private final NotificationGroup NOTIFICATION_GROUP = 
+  private final NotificationGroup NOTIFICATION_GROUP =
           new NotificationGroup("Groovy DSL errors", NotificationDisplayType.BALLOON, true);
 
   public Notification notify(String content) {

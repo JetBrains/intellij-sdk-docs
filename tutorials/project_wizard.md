@@ -11,7 +11,7 @@ Configuring Project Wizard automatically allows you to do the following:
 3. Handling activities during project creation
 4. Initial environment configuration
 
-**Note:** 
+**Note:**
 
 Main utilities to configure a custom project wizard can be found in the package
 [lang-api.ide.util.projectWizard](upsource:///platform/lang-api/src/com/intellij/ide/util/projectWizard).

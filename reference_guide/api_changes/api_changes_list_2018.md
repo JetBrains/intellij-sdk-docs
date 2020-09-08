@@ -5,9 +5,9 @@ title: Incompatible Changes in IntelliJ Platform and Plugins API 2018.*
 
 <!--
 
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
-See the note on how to document new problems on the main page reference_guide/api_changes_list.md 
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+See the note on how to document new problems on the main page reference_guide/api_changes_list.md
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 -->
 
@@ -15,7 +15,7 @@ Please see [Incompatible API Changes](/reference_guide/api_changes_list.md) on h
 
 > **NOTE** Changes from API marked with `org.jetbrains.annotations.ApiStatus.@Experimental`/`ScheduledForRemoval` are not listed here, as incompatible changes are expected.
 
-## 2018.3 
+## 2018.3
 
 ### Changes in IntelliJ Platform 2018.3
 
@@ -45,7 +45,7 @@ Please see [Incompatible API Changes](/reference_guide/api_changes_list.md) on h
 
 
 ## 2018.2
- 
+
 ### Changes in IntelliJ Platform 2018.2
 
 `com.intellij.util.Query.forEach` method parameter type changed from `Processor<Result>` to `Processor<? super Result>`
@@ -63,17 +63,17 @@ Please see [Incompatible API Changes](/reference_guide/api_changes_list.md) on h
 `com.intellij.util.InstanceofQuery` class type parameter `T` added
 : Set this parameter at call sites to base query type.
 
-`com.intellij.task.ProjectTaskManager.build` method parameter type changed from `Artifact[]` to `ProjectModelBuildableElement[]` 
+`com.intellij.task.ProjectTaskManager.build` method parameter type changed from `Artifact[]` to `ProjectModelBuildableElement[]`
 : In most of the cases, it's enough to recompile the code.
 
-`com.intellij.task.ProjectTaskManager.rebuild` method parameter type changed from `Artifact[]` to `ProjectModelBuildableElement[]` 
+`com.intellij.task.ProjectTaskManager.rebuild` method parameter type changed from `Artifact[]` to `ProjectModelBuildableElement[]`
 : In most of the cases, it's enough to recompile the code.
 
-`org.apache.batik.script.InterpreterFactory.createInterpreter` abstract method added 
+`org.apache.batik.script.InterpreterFactory.createInterpreter` abstract method added
 : Update `InterpreterFactory` implementations accordingly.
 
 
-## 2018.1 
+## 2018.1
 
 ### Changes in IntelliJ Platform 2018.1
 
@@ -83,27 +83,27 @@ Please see [Incompatible API Changes](/reference_guide/api_changes_list.md) on h
 `com.google.common.util.concurrent.Futures.get` method removed
 : Use `com.google.common.util.concurrent.Futures.getChecked` instead.
 
-[`org.tmatesoft.svn`](https://svnkit.com/index.html) package removed 
+[`org.tmatesoft.svn`](https://svnkit.com/index.html) package removed
 : Use classes from `org.jetbrains.idea.svn` instead.
 
 `org.jetbrains.idea.svn.svnkit.SvnKitManager` class removed
 : Use `org.jetbrains.idea.svn.api.ClientFactory` instead.
 
-`clojure` package removed 
+`clojure` package removed
 : Clojure 1.8 jars are removed from the IntelliJ Ultimate package; provide your own jars if needed.
 
-`com.intellij.ide.structureView.newStructureView.StructureViewComponent.getTreeBuilder` method removed 
+`com.intellij.ide.structureView.newStructureView.StructureViewComponent.getTreeBuilder` method removed
 : Use `queueUpdate` and `getTree` instead.
 
 ### Changes in PhpStorm and PHP Plugin 2018.1
 
-`com.jetbrains.php.lang.documentation.phpdoc.parser.PhpDocElementTypes.DOC_COMMENT` field type changed from `com.intellij.psi.tree.ILazyParseableElementType` to `com.jetbrains.php.lang.documentation.phpdoc.psi.stubs.PhpDocCommentElementType` 
+`com.jetbrains.php.lang.documentation.phpdoc.parser.PhpDocElementTypes.DOC_COMMENT` field type changed from `com.intellij.psi.tree.ILazyParseableElementType` to `com.jetbrains.php.lang.documentation.phpdoc.psi.stubs.PhpDocCommentElementType`
 : In most of the cases, it's enough to recompile the code. It may also be needed to check that the code doesn't rely on the field's type.
 
 `com.jetbrains.php.lang.documentation.phpdoc.parser.PhpDocElementTypes.phpDocSpecialTag` field type changed from `com.intellij.psi.tree.ILazyParseableElementType` to `com.jetbrains.php.lang.documentation.phpdoc.psi.stubs.PhpDocMethodTagElementType`
 : In most of the cases, it's enough to recompile the code. It may also be needed to check that the code doesn't rely on the field's type.
 
-`com.jetbrains.php.lang.documentation.phpdoc.parser.PhpDocElementTypes.phpDocTag` field type changed from `com.jetbrains.php.lang.documentation.phpdoc.psi.PhpDocElementType` to `com.jetbrains.php.lang.documentation.phpdoc.psi.stubs.PhpDocTagElementType` 
+`com.jetbrains.php.lang.documentation.phpdoc.parser.PhpDocElementTypes.phpDocTag` field type changed from `com.jetbrains.php.lang.documentation.phpdoc.psi.PhpDocElementType` to `com.jetbrains.php.lang.documentation.phpdoc.psi.stubs.PhpDocTagElementType`
 : In most of the cases, it's enough to recompile the code. It may also be needed to check that the code doesn't rely on the field's type.
 
 `com.jetbrains.php.lang.documentation.phpdoc.parser.PhpDocElementTypes.phpDocReturn` field type changed from `com.jetbrains.php.lang.documentation.phpdoc.psi.PhpDocElementType` to `com.jetbrains.php.lang.documentation.phpdoc.psi.stubs.PhpDocTagElementType`

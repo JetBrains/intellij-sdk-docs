@@ -35,7 +35,7 @@ These plugins include the modules `openapi` and `python-psi-api`.
 These are considered stable APIs, but care should be taken to test your plugin with any version of PyCharm you wish to support.
 
 ## Additional Articles and Resources
-* [Webinar Recording: "Live Development of a PyCharm Plugin" with Joachim Ansorg](https://blog.jetbrains.com/pycharm/2019/01/webinar-recording-live-development-of-a-pycharm-plugin-with-joachim-ansorg/) 
+* [Webinar Recording: "Live Development of a PyCharm Plugin" with Joachim Ansorg](https://blog.jetbrains.com/pycharm/2019/01/webinar-recording-live-development-of-a-pycharm-plugin-with-joachim-ansorg/)
 
 ## Open Source Plugins for PyCharm
 When learning new development configurations, it is helpful to have some representative projects for reference:

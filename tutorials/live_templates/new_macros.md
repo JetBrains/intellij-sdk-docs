@@ -6,7 +6,7 @@ title: Creating New Functions for Live Templates
 The [Predefined Functions](https://www.jetbrains.com/help/idea/template-variables.html?s=quick#predefined_functions) are the building blocks for creating [Parameterized Templates and Surround Templates](https://www.jetbrains.com/help/idea/using-live-templates.html?s=quick#live_templates_types).
 However, sometimes the Predefined Functions are not enough.
 
-This tutorial illustrates how to add custom functions to an IntelliJ Platform plugin and make them available for use by Live Templates. 
+This tutorial illustrates how to add custom functions to an IntelliJ Platform plugin and make them available for use by Live Templates.
 As an example, a function is created to convert a selection to Title Case.
 Refer to the SDK code sample [`live_templates`](https://github.com/JetBrains/intellij-sdk-code-samples/tree/master/live_templates).
 
@@ -18,7 +18,7 @@ Under the hood, the predefined functions for Live Templates are called _macros_.
 A new custom function for Live Templates is implemented in `TitleCaseMacro`, which extends [`MacroBase`](upsource:///platform/lang-impl/src/com/intellij/codeInsight/template/macro/MacroBase.java).
 Three `TitleCaseMacro` methods are of particular interest:
 * The `TitleCaseMacro()` constructor passes the name and description of the macro to the parent constructor.
-* The `isAcceptableInContext()` method tests whether the macro is available in the current context. 
+* The `isAcceptableInContext()` method tests whether the macro is available in the current context.
   The test relies on the [`MarkdownContext`](template_support.md#implement-templatecontexttype) object previously defined in the `live_templates` plugin.
 * The `calculateResult()` method gets invoked when the titleCase function is used in a Live Template.
   The text to be capitalized is retrieved from the Live Template and converted to Title Case.
@@ -47,7 +47,7 @@ The argument to the `titleCase` function is `SELECTION`, which tells the Intelli
   </context>
 </template>
 ```
- 
+
 ## Register Extension Point
 Using the `com.intellij.liveTemplateMacro` extension point, register the implementation with the IntelliJ Platform.
 
@@ -58,7 +58,7 @@ Using the `com.intellij.liveTemplateMacro` extension point, register the impleme
 ```
 
 ## Check Plugin
-Now verify the plugin is working correctly. 
+Now verify the plugin is working correctly.
 * Run the plugin in a Development Instance.
 * Create a new file `testing.md` and enter several words in lower case.
 * Highlight the text and enter <kbd>⌥⌘J</kbd> to open the Select Template popup.
@@ -67,6 +67,6 @@ Now verify the plugin is working correctly.
 ![Convert to title case](img/invoke_titleCase.png){:width="700px"}
 
 Test that the Live Template works by entering <kbd>m</kbd> or <kbd>return</kbd>.
-The text will change to have each word capitalized: 
+The text will change to have each word capitalized:
 
 ![Converted to title case](img/applied_titleCase.png){:width="700px"}

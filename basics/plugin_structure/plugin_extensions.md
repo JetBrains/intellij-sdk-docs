@@ -5,11 +5,11 @@ redirect_from:
 ---
 <!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-_Extensions_ are the most common way for a plugin to extend the functionality of the IntelliJ Platform in a way that is not as straightforward as adding an action to a menu or toolbar. 
+_Extensions_ are the most common way for a plugin to extend the functionality of the IntelliJ Platform in a way that is not as straightforward as adding an action to a menu or toolbar.
 
 The following are some of the most common tasks accomplished using extensions:
 
-  * The `com.intellij.toolWindow` extension point allows plugins to add [tool windows](/user_interface_components/tool_windows.md) 
+  * The `com.intellij.toolWindow` extension point allows plugins to add [tool windows](/user_interface_components/tool_windows.md)
   (panels displayed at the sides of the IDE user interface);
   * The `com.intellij.applicationConfigurable` and `com.intellij.projectConfigurable` extension points allow plugins to add pages to the
     [Settings/Preferences dialog](/basics/settings.md);
@@ -18,7 +18,7 @@ The following are some of the most common tasks accomplished using extensions:
 
 There are [more than 1000 extension](#how-to-get-the-extension-points-list) points available in the platform and the bundled plugins, allowing to customize different parts of the IDE behavior.
 
-## Declaring Extensions 
+## Declaring Extensions
 
 > **TIP** Auto-completion, Quick Documentation and other code insight features are available on extension point tags and attributes.
 
@@ -43,11 +43,11 @@ To clarify this procedure, consider the following sample section of the `plugin.
   </extensions>
 
 <!-- Declare extensions to access extension points in a custom plugin "another.plugin"
-     The "myExtensionPoint" extension point has been declared using "beanClass" 
+     The "myExtensionPoint" extension point has been declared using "beanClass"
      and exposes custom properties "key" and "implementationClass".
 -->
   <extensions defaultExtensionNs="another.plugin">
-     <myExtensionPoint key="keyValue" 
+     <myExtensionPoint key="keyValue"
                        implementationClass="com.myplugin.MyExtensionPointImpl" />
   </extensions>
 ```
@@ -57,7 +57,7 @@ The following properties are available always:
 
 - `id` - unique ID
 - `order` - allows to order all defined extensions using `first`, `last` or `before|after [id]` respectively
-- `os` - allows restricting extension to given OS, e.g., `os="windows"` registers the extension on Windows only 
+- `os` - allows restricting extension to given OS, e.g., `os="windows"` registers the extension on Windows only
 
 
 ### Extension Properties Code Insight

@@ -12,7 +12,7 @@ title: Build Number Ranges
 
 Use this reference of build number ranges to specify the correct `since-build` and `until-build` values in your plugin descriptor.
 
-When using Gradle, setting the actual values in `plugin.xml` is usually managed by the `patchPluginXml` task, see [Patching the Plugin Configuration File](/tutorials/build_system/gradle_guide.md#patching-the-plugin-configuration-file) for details.  
+When using Gradle, setting the actual values in `plugin.xml` is usually managed by the `patchPluginXml` task, see [Patching the Plugin Configuration File](/tutorials/build_system/gradle_guide.md#patching-the-plugin-configuration-file) for details.
 
 > **NOTE** Compatibility with specified version range (and compatible products) should always be verified using [Plugin Verifier](/reference_guide/api_changes_list.md#verifying-compatibility) to ensure binary compatibility.
 

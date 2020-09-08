@@ -11,13 +11,13 @@ Avoid `PsiElement` methods which are expensive with deep trees.
 
 `getText()` traverses the whole tree under the given element and concatenates strings, consider `textMatches()` instead.
 
-`getTextRange()`, `getContainingFile()`, `getProject()` traverse the tree up to the file, which can be long in very nested trees. If you only need PSI element length, use `getTextLength()`. 
+`getTextRange()`, `getContainingFile()`, `getProject()` traverse the tree up to the file, which can be long in very nested trees. If you only need PSI element length, use `getTextLength()`.
 
 File and project often can be computed once per some analysis and then stored in fields or passed via parameters.
 
 Additionally, `getText()`, `getNode()`, `getTextRange()`, etc., all need AST, which can be quite an expensive operation. See below.
 
-#### Avoid Using Many PSI Trees/Documents 
+#### Avoid Using Many PSI Trees/Documents
 
 Avoid loading too many parsed trees or documents into memory at the same time.
 Ideally, only AST nodes from files open in the editor should be present in the memory.
@@ -28,8 +28,8 @@ If stubs don't suit your case well (e.g., the information you need is large and/
 You can use [`AstLoadingFilter`](upsource:///platform/core-api/src/com/intellij/util/AstLoadingFilter.java) in production and `PsiManagerEx.setAssertOnFileLoadingFilter()` in tests to ensure you're not loading AST accidentally.
 
 The same applies to documents: only the ones opened in editors should be loaded.
-Usually, you shouldn't need document contents (as most information can be retrieved from PSI). If you nevertheless need documents, consider saving the information you need to provide in a [custom index or gist](/basics/indexing_and_psi_stubs.md) to get it more cheaply later. 
-If you still need documents, then at least ensure you load them one by one and don't hold them on strong references to let GC free the memory as quickly as possible. 
+Usually, you shouldn't need document contents (as most information can be retrieved from PSI). If you nevertheless need documents, consider saving the information you need to provide in a [custom index or gist](/basics/indexing_and_psi_stubs.md) to get it more cheaply later.
+If you still need documents, then at least ensure you load them one by one and don't hold them on strong references to let GC free the memory as quickly as possible.
 
 #### Cache Results of Heavy Computations
 
@@ -38,14 +38,14 @@ These include `PsiElement.getReference(s)`, `PsiReference.resolve()` (and `multi
 Usually, [`CachedValue`](upsource:///platform/core-api/src/com/intellij/psi/util/CachedValue.java) works well.
 
 If the information you cache depends only on a subtree of the current PSI element (and nothing else: no resolve results or other files), you can cache it in a field in that `PsiElement` and drop the cache in an override of `ASTDelegatePsiElement.subtreeChanged()`.
-  
+
 ## Improving Indexing Performance
 
 #### Avoid Using AST
 
 Use lexer information instead of parsed trees if possible.
 
-If impossible, use light AST which doesn't create memory-hungry AST nodes inside, so traversing it might be faster. 
+If impossible, use light AST which doesn't create memory-hungry AST nodes inside, so traversing it might be faster.
 Make sure to traverse only the nodes you need to.
 
 For stub index, implement [`LightStubBuilder`](upsource:///platform/core-impl/src/com/intellij/psi/stubs/LightStubBuilder.java).
@@ -71,7 +71,7 @@ We're trying to eliminate them. Meanwhile, you can try to speed up what you can 
 Don't do anything expensive in event listeners. Ideally, you should only clear some caches.
 You can also schedule background processing of events, but be prepared that some new events might be delivered before your background processing starts, and thus the world might have changed by that moment or  even in the middle of background processing. Consider using [`MergingUpdateQueue`](upsource:///platform/platform-api/src/com/intellij/util/ui/update/MergingUpdateQueue.java) and `ReadAction.nonBlocking()` to mitigate these issues.
 
-Massive batches of VFS events can be pre-processed in background, see [`AsyncFileListener`](upsource:///platform/core-api/src/com/intellij/openapi/vfs/AsyncFileListener.java) (2019.2 or later). 
+Massive batches of VFS events can be pre-processed in background, see [`AsyncFileListener`](upsource:///platform/core-api/src/com/intellij/openapi/vfs/AsyncFileListener.java) (2019.2 or later).
 
 #### Don't block EDT by long non-cancellable `ReadAction`s in background threads
 

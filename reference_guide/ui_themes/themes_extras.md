@@ -4,22 +4,22 @@ title: UI Themes - Editor Schemes and Background Images
 <!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 UI Themes can also provide custom color and font settings, as well as custom images for display in the IDE application window.
- 
+
 ## Adding a Custom Editor Scheme
-Users of IntelliJ Platform-based IDEs, such as Intellij IDEA, can set preferences to configure the colors and fonts used in the Editor. 
+Users of IntelliJ Platform-based IDEs, such as Intellij IDEA, can set preferences to configure the colors and fonts used in the Editor.
 These custom color and font settings are called _Editor Color Schemes_.
 
 ### Creating a Custom Editor Scheme Using Settings/Preferences
 Custom editor color schemes can be specified and exported using the IDE _Settings/Preferences_ dialog.
 Note that editor [Colors and Fonts](https://www.jetbrains.com/help/idea/configuring-colors-and-fonts.html), and [Colors for Version Control File Status](https://www.jetbrains.com/help/idea/file-status-highlights.html) are customized in different sections of _Settings/Preferences_.
 
-Use the following procedure to customize an editor color scheme for a UI Theme: 
-* Create the desired custom editor color scheme using the IDE preferences. 
+Use the following procedure to customize an editor color scheme for a UI Theme:
+* Create the desired custom editor color scheme using the IDE preferences.
 * Export the custom editor color scheme to the desired file name.
   In this example, the file is exported to `Lightning.icls`
 * Once exported, change the file extension from `*.icls` to `*.xml`.
   In this example, the result is `Lightning.xml`.
-* See [Customizing Editor Scroll Bar Colors](#customizing-editor-scroll-bar-colors) to change the colors of editor scroll bars. 
+* See [Customizing Editor Scroll Bar Colors](#customizing-editor-scroll-bar-colors) to change the colors of editor scroll bars.
 
 ### Incorporating the Editor Color Scheme in the Custom UI Theme
 The next step is to add the color scheme to the UI Theme plugin project:
@@ -83,7 +83,7 @@ At this time there isn't code completion functionality for changing custom color
 
 #### Editor Scroll Bar Attribute Name Format
 The typical format of a scroll bar `name` attribute is `ScrollBar.usage`, where `usage` describes where the color is to be applied.
-In some cases `usage` itself can be compound such as `ScrollBar.Mac.Transparent.thumbColor`. 
+In some cases `usage` itself can be compound such as `ScrollBar.Mac.Transparent.thumbColor`.
 In these compound cases, the last portion of the compound `usage` still describes where the color is to be applied.
 
 Note that the following example snippet uses an eight-digit hexadecimal color `value` to give `ScrollBar.Mac.thumbColor` transparency:
@@ -96,54 +96,54 @@ Note that the following example snippet uses an eight-digit hexadecimal color `v
 ```
 
 #### Editor Scroll Bar Attribute Names
-A list of scroll bar `name` attributes is in the [High Contrast editor scheme](upsource:///platform/platform-resources/src/themes/highContrastScheme.xml) file. 
+A list of scroll bar `name` attributes is in the [High Contrast editor scheme](upsource:///platform/platform-resources/src/themes/highContrastScheme.xml) file.
 These name attributes cannot be accessed from anywhere in the IDE UI at this time, so they must be manually added to an editor color scheme XML file.
 
 The following list explains the `usage` format of the `name` attribute, i.e. where a custom scroll bar color is applied:
-* `*.trackColor` — The scroll bar thumb moves across this area. 
+* `*.trackColor` — The scroll bar thumb moves across this area.
   At this time the vertical scrollbar track color and transparency cannot be customized.
 * `*.thumbColor` — The movable rectangle that corresponds to the visible content's size.
 * `*.thumbBorderColor` — The thumb border.
-* `*.hoverTrackColor` — Same `usage` as above but for hover. 
+* `*.hoverTrackColor` — Same `usage` as above but for hover.
   At this time the vertical scrollbar hover track color and transparency cannot be customized.
 * `*.hoverThumbColor` — Same `usage` as above but for hover.
 * `*.hoverThumbBorderColor` — Same `usage` as above but for hover.
 
-The `name` attribute patterns are enumerated below. 
+The `name` attribute patterns are enumerated below.
 
 **Platform Independent Name Attributes**
 
-The horizontal scroll bar background color is set by `ScrollBar.background`.  
+The horizontal scroll bar background color is set by `ScrollBar.background`.
 This background color is visible only if the horizontal scroll bar's `*.trackColor` has transparency.
 
 At this time the vertical scrollbar background color cannot be customized.
 
-**Windows/Linux Name Attributes** 
+**Windows/Linux Name Attributes**
 
 The `name` attributes for Windows and Linux scroll bars have the pattern `ScrollBar.Transparent.*`, where the wildcard portion corresponds to the `usage` definitions above.
 
-**macOS Name Attributes** 
+**macOS Name Attributes**
 
-The `name` attribute pattern for the vertical scroll bar is `ScrollBar.Mac.*`. 
+The `name` attribute pattern for the vertical scroll bar is `ScrollBar.Mac.*`.
 
 The `name` attribute pattern for the horizontal scroll bar depends on the macOS preferences _Show scroll bars_ setting:
   * `ScrollBar.Mac.*` when the _Always_ setting is selected.
-  * `ScrollBar.Mac.Transparent.*` when the _When scrolling_ setting is selected.  
+  * `ScrollBar.Mac.Transparent.*` when the _When scrolling_ setting is selected.
 
 The wildcard portion of these patterns corresponds to the `usage` definitions above.
 
 
 ## Adding a Custom Background Image
-The IDE supports setting an image as a background in the application window. 
+The IDE supports setting an image as a background in the application window.
 Users can do this manually in [Preferences](https://www.jetbrains.com/help/idea/setting-background-image.html).
 
 UI Themes support specifying a background image as a key-value pair in the `"background": {}` section of a Theme description file:
 * The `image` key uses the file name of the image as the value.
-The background image is placed in the UI Theme plugin project's resources folder. 
-* The `transparency` key uses a `value` of 1-100. 
+The background image is placed in the UI Theme plugin project's resources folder.
+* The `transparency` key uses a `value` of 1-100.
 A `value` of 100 is opaque.
 * The `fill` key uses a value of `scale`, meaning to expand the image to fill the space as the window gets resized.
-* The `anchor` key uses a value of `center`, meaning to locate the center of the image in the center of the window. 
+* The `anchor` key uses a value of `center`, meaning to locate the center of the image in the center of the window.
 
 
 The following example adds an image of the Austrian countryside to the _Theme Basics_

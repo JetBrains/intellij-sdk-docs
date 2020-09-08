@@ -5,9 +5,9 @@ title: 2. Language and File Type
 
 The IntelliJ Platform determines file type by examining the name of a file.
 Each language has [Language](upsource:///platform/core-api/src/com/intellij/lang/Language.java) and [LanguageFileType](upsource:///platform/core-api/src/com/intellij/openapi/fileTypes/LanguageFileType.java) objects defining the language.
-Register the `LanguageFileType` with the IntelliJ Platform in the plugin configuration file. 
+Register the `LanguageFileType` with the IntelliJ Platform in the plugin configuration file.
 
-**Reference**: [Registering a File Type](/reference_guide/custom_language_support/registering_file_type.md) 
+**Reference**: [Registering a File Type](/reference_guide/custom_language_support/registering_file_type.md)
 
 * bullet item
 {:toc}
@@ -21,9 +21,9 @@ The `SimpleLanguage` class is defined in the `org.intellij.sdk.language` package
 ```
 
 ## 2.2. Define an Icon
-The [icon](https://github.com/JetBrains/intellij-sdk-code-samples/blob/master/simple_language_plugin/src/main/resources/icons/jar-gray.png) for the Simple Language is defined by the `SimpleIcons` class. 
+The [icon](https://github.com/JetBrains/intellij-sdk-code-samples/blob/master/simple_language_plugin/src/main/resources/icons/jar-gray.png) for the Simple Language is defined by the `SimpleIcons` class.
 There is nothing uniquely Simple Language-specific about [defining the icon](/reference_guide/work_with_icons_and_images.md) itself.
-The definition follows a pattern similar to defining, e.g., `SdkIcons`. 
+The definition follows a pattern similar to defining, e.g., `SdkIcons`.
 
 ```java
 {% include /code_samples/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleIcons.java %}
@@ -39,11 +39,11 @@ The Simple Language file type is defined by subclassing [`LanguageFileType`](ups
 ## 2.4. Register the FileType Directly
 Direct registration is possible when targeting version 2019.2 (and later) of the IntelliJ Platform - no `FileTypeFactory` is required.
 
-Instead, the file type is registered via the `com.intellij.fileType` extension point in `plugin.xml`: 
+Instead, the file type is registered via the `com.intellij.fileType` extension point in `plugin.xml`:
 
 ```xml
   <extensions defaultExtensionNs="com.intellij">
-    <fileType name="Simple File" implementationClass="org.intellij.sdk.language.SimpleFileType" 
+    <fileType name="Simple File" implementationClass="org.intellij.sdk.language.SimpleFileType"
             fieldName="INSTANCE" language="Simple" extensions="simple"/>
   </extensions>
 ```

@@ -22,7 +22,7 @@ It can be accessed as`PeerFactory.getInstance().getVcsContextFactory()`
 ### Revision Number
 
 A [`VcsRevisionNumber`](upsource:///platform/vcs-api/vcs-api-core/src/com/intellij/openapi/vcs/history/VcsRevisionNumber.java) represents a revision number of the file.
-If the VCS stores revision numbers as simple integers, the standard [`VcsRevisionNumber`](upsource:///platform/vcs-api/vcs-api-core/ rc/com/intellij/openapi/vcs/history/VcsRevisionNumber.java). Int implementation can be used 
+If the VCS stores revision numbers as simple integers, the standard [`VcsRevisionNumber`](upsource:///platform/vcs-api/vcs-api-core/ rc/com/intellij/openapi/vcs/history/VcsRevisionNumber.java). Int implementation can be used
 If the VCS has a more complex format of revision numbers (like CVS, which uses a series of numbers delimited with dots), the plugin can provide a custom implementation.
 
 ### ContentRevision

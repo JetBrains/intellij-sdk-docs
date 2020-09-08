@@ -12,7 +12,7 @@ There are two types of extension points:
    extension point, you specify an interface, and other plugins will provide classes implementing that interface.
    You'll then be able to invoke methods on those interfaces.
  * _Bean_ extension points allow other plugins to extend your plugins with _data_. You specify the fully qualified
-   name of an extension class, and other plugins will provide data which will be turned into instances of that class.  
+   name of an extension class, and other plugins will provide data which will be turned into instances of that class.
 
 ## Declaring Extension Points
 
@@ -22,15 +22,15 @@ To declare extension points in your plugin, add an `<extensionPoints>` section t
 
 _myPlugin/META-INF/plugin.xml_
 
-```xml            
+```xml
 <idea-plugin>
   <id>my.plugin</id>
-  
+
   <extensionPoints>
-    <extensionPoint name="myExtensionPoint1" 
+    <extensionPoint name="myExtensionPoint1"
                     beanClass="com.myplugin.MyBeanClass"/>
-    
-    <extensionPoint name="myExtensionPoint2" 
+
+    <extensionPoint name="myExtensionPoint2"
                     interface="com.myplugin.MyInterface"/>
   </extensionPoints>
 
@@ -55,7 +55,7 @@ _myPlugin/src/com/myplugin/MyBeanClass.java_
 
 ```java
 public class MyBeanClass extends AbstractExtensionPointBean {
-  
+
   @Attribute("key")
   public String key;
 
@@ -75,20 +75,20 @@ public class MyBeanClass extends AbstractExtensionPointBean {
 > **TIP** See [Extension properties code insight](plugin_extensions.md#extension-properties-code-insight) on how to provide smart completion/validation.
 
 For above extension points usage in _anotherPlugin_ would look like this (see also [Declaring Extensions](plugin_extensions.md#declaring-extensions)):
- 
+
 _anotherPlugin/META-INF/plugin.xml_
 
 ```xml
 <idea-plugin>
   <id>another.plugin</id>
-                         
-  <!-- declare dependency on plugin defining extension point -->               
+
+  <!-- declare dependency on plugin defining extension point -->
   <depends>my.plugin</depends>
-        
+
   <!-- use "my.plugin" namespace -->
   <extensions defaultExtensionNs="my.plugin">
-    <myExtensionPoint1 key="someKey" 
-                       implementationClass="another.some.implementation.class"/>  
+    <myExtensionPoint1 key="someKey"
+                       implementationClass="another.some.implementation.class"/>
 
     <myExtensionPoint2 implementation="another.MyInterfaceImpl"/>
   </extension>
@@ -101,22 +101,22 @@ To refer to all registered extension instances at runtime, declare an [`Extensio
 
 _myPlugin/src/com/myplugin/MyExtensionUsingService.java_
 
-```java 
+```java
 public class MyExtensionUsingService {
- 
-    private static final ExtensionPointName<MyBeanClass> EP_NAME = 
+
+    private static final ExtensionPointName<MyBeanClass> EP_NAME =
       ExtensionPointName.create("my.plugin.myExtensionPoint1");
-    
+
     public void useExtensions() {
       for (MyBeanClass extension : EP_NAME.getExtensionList()) {
-        String key = extension.getKey();  
+        String key = extension.getKey();
         String clazz = extension.getClass();
         // ...
       }
     }
 }
 ```
-                                                                  
+
 A gutter icon for the `ExtensionPointName` declaration allows navigating to the corresponding `<extensionPoint>` declaration in `plugin.xml`.
 
 ## Dynamic Extension Points
@@ -129,8 +129,8 @@ Extension points matching these conditions can then be marked as _dynamic_ by ad
 
 ```xml
   <extensionPoints>
-    <extensionPoint name="myDynamicExtensionPoint" 
-                    beanClass="com.myplugin.MyBeanClass" 
+    <extensionPoint name="myDynamicExtensionPoint"
+                    beanClass="com.myplugin.MyBeanClass"
                     dynamic="true" />
   </extensionPoints>
 ```

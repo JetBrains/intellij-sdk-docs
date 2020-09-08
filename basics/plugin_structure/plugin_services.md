@@ -7,14 +7,14 @@ A _service_ is a plugin component loaded on demand when your plugin calls the `g
 
 The *IntelliJ Platform* ensures that only one instance of a service is loaded even though it is called several times.
 
-A service must have an implementation class which is used for service instantiation. 
+A service must have an implementation class which is used for service instantiation.
 A service may also have an interface class which is used to obtain the service instance and provides API of the service.
 
 A service needing a shutdown hook/cleanup routine can implement [`Disposable`](upsource:///platform/util/src/com/intellij/openapi/Disposable.java) and perform necessary work in `dispose()` (see [Automatically Disposed Objects](/basics/disposers.md#automatically-disposed-objects)).
 
 #### Types
-The *IntelliJ Platform* offers three types of services: _application level_ services (global singleton), _project level_ services, and _module level_ services. 
-For the latter two, a separate instance of the service is created for each instance of its corresponding scope, see [Project Model Introduction](/basics/project_structure.md). 
+The *IntelliJ Platform* offers three types of services: _application level_ services (global singleton), _project level_ services, and _module level_ services.
+For the latter two, a separate instance of the service is created for each instance of its corresponding scope, see [Project Model Introduction](/basics/project_structure.md).
 
 > **NOTE** Please consider not using module level services because it can lead to increased memory usage for projects with many modules.
 
@@ -29,16 +29,16 @@ To improve startup performance, avoid any heavy initializations in the construct
 > **NOTE** Light Services are available since IntelliJ Platform 2019.3.
 
 A service not going to be overridden does not need to be registered in `plugin.xml` (see [Declaring a Service](#declaring-a-service)).
-Instead, annotate service class with [`@Service`](upsource:///platform/core-api/src/com/intellij/openapi/components/Service.java). 
-The service instance will be created in scope according to caller (see [Retrieving a Service](#retrieving-a-service)). 
- 
+Instead, annotate service class with [`@Service`](upsource:///platform/core-api/src/com/intellij/openapi/components/Service.java).
+The service instance will be created in scope according to caller (see [Retrieving a Service](#retrieving-a-service)).
+
 Restrictions:
 
 * Service class must be `final`.
 * Constructor injection is not supported (since it is deprecated).
 * If service is a [PersistentStateComponent](/basics/persisting_state_of_components.md), roaming must be disabled (`roamingType = RoamingType.DISABLED`).
 
-See [Project Level Service](#project-service-sample) below for a sample. 
+See [Project Level Service](#project-service-sample) below for a sample.
 
 ## Declaring a Service
 
@@ -61,11 +61,11 @@ To clarify the service declaration procedure, consider the following fragment of
 ```xml
 <extensions defaultExtensionNs="com.intellij">
   <!-- Declare the application level service -->
-  <applicationService serviceInterface="mypackage.MyApplicationService" 
+  <applicationService serviceInterface="mypackage.MyApplicationService"
                       serviceImplementation="mypackage.MyApplicationServiceImpl" />
 
   <!-- Declare the project level service -->
-  <projectService serviceInterface="mypackage.MyProjectService" 
+  <projectService serviceInterface="mypackage.MyProjectService"
                   serviceImplementation="mypackage.MyProjectServiceImpl" />
 </extensions>
 ```
@@ -76,7 +76,7 @@ To provide custom implementation for test/headless environment, specify `testSer
 
 ## Retrieving a Service
 
-Getting service doesn't need read action and can be performed from any thread. If service is requested from several threads, it will be initialized in the first thread, and other threads will be blocked until service is fully initialized. 
+Getting service doesn't need read action and can be performed from any thread. If service is requested from several threads, it will be initialized in the first thread, and other threads will be blocked until service is fully initialized.
 
 To retrieve a service in Java code:
 
@@ -99,7 +99,7 @@ This minimal sample shows [light](#light-services) `ProjectService` interacting 
 
 _ProjectService.java_
 
-```java         
+```java
   @Service
   public final class ProjectService {
 
@@ -107,10 +107,10 @@ _ProjectService.java_
 
      public ProjectService(Project project) {
        myProject = project;
-     }                     
+     }
 
      public void someServiceMethod(String parameter) {
-       AnotherService anotherService = myProject.getService(AnotherService.class); 
+       AnotherService anotherService = myProject.getService(AnotherService.class);
        String result = anotherService.anotherServiceMethod(parameter, false);
        // do some more stuff
      }

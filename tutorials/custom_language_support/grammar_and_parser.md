@@ -3,10 +3,10 @@ title: 3. Grammar and Parser
 ---
 <!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-In order for the IntelliJ Platform to parse a Simple Language file, tokens and elements must be defined based on [`IElementType`](upsource:///platform/core-api/src/com/intellij/psi/tree/IElementType.java). 
+In order for the IntelliJ Platform to parse a Simple Language file, tokens and elements must be defined based on [`IElementType`](upsource:///platform/core-api/src/com/intellij/psi/tree/IElementType.java).
 The Simple Language grammar must also be defined to generate a parser.
- 
-**Reference**: [Implementing a Parser and PSI](/reference_guide/custom_language_support/implementing_parser_and_psi.md) 
+
+**Reference**: [Implementing a Parser and PSI](/reference_guide/custom_language_support/implementing_parser_and_psi.md)
 
 * bullet item
 {:toc}

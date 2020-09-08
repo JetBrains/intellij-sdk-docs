@@ -3,10 +3,10 @@ title: Light and Heavy Tests
 ---
 <!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-Plugin tests run in a real, rather than mocked, *IntelliJ Platform* environment and use real implementations for most of the application and project components/services. 
+Plugin tests run in a real, rather than mocked, *IntelliJ Platform* environment and use real implementations for most of the application and project components/services.
 
 Loading and initializing all the project components and services for a project to run tests is a quite expensive operation, and we want to avoid doing it for each test. Dependently on the loading and execution time, we make a difference between *heavy* tests and *light* tests available in *IntelliJ Platform* test framework:
- 
+
 * *Heavy* tests create a new project for each test.
 * *Light* tests reuse a project from the previous test run when possible.
 
@@ -29,7 +29,7 @@ Before executing each test, the project will be reused if the test case returns 
 
 ## Heavy Tests
 
-> **NOTE** If you need to set up a multi-module project for your tests, you **must** write a heavy test. 
+> **NOTE** If you need to set up a multi-module project for your tests, you **must** write a heavy test.
 
 > **NOTE** In 2019.3, `PlatformTestCase` has been renamed to `HeavyPlatformTestCase` reflecting its "heavy test" characteristics.
 

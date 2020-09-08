@@ -8,8 +8,8 @@ redirect_from:
 <!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 ## Introduction
-[PhpStorm](https://www.jetbrains.com/phpstorm/) is an IntelliJ Platform-based product. 
-Plugins for PhpStorm are developed in Java using the Ultimate edition of IntelliJ IDEA. 
+[PhpStorm](https://www.jetbrains.com/phpstorm/) is an IntelliJ Platform-based product.
+Plugins for PhpStorm are developed in Java using the Ultimate edition of IntelliJ IDEA.
 The [PsiViewer plugin](https://plugins.jetbrains.com/plugin/227-psiviewer) is also recommended.
 
 This page describes configuring plugin projects targeting PhpStorm.
@@ -39,7 +39,7 @@ To see how these attributes appear in the `build.gradle` file for PhpStorm, see 
 | [`intellij.plugins`](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md#intellij-platform-properties) | `com.jetbrains.php:193.5233.102` for the PHP plugin.<br>See below for PHP plugin version information. |
 | [`runIde.ideDirectory`](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md#running-dsl) | Path to locally installed target version of PhpStorm. For example, on macOS:<br>`/Users/<user name>/Library/Application Support/JetBrains/Toolbox/apps/PhpStorm/ch-0/193.5233.101/PhpStorm.app/Contents` |
 
-The PHP plugin version is explicitly declared because it isn't bundled with IntelliJ IDEA Ultimate Edition. 
+The PHP plugin version is explicitly declared because it isn't bundled with IntelliJ IDEA Ultimate Edition.
 Select a [version](https://plugins.jetbrains.com/plugin/6610-php/versions) of the PHP plugin compatible with the `intellij.version`.
 
 The dependency on the PHP plugin APIs must be declared in the `plugin.xml` file, as shown in the tutorial [Configuring plugin.xml](/products/dev_alternate_products.md#configuring-pluginxml) section.

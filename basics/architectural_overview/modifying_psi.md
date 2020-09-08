@@ -16,15 +16,15 @@ In the most general case, you use the `createFileFromText()` method of [`PsiFile
 
 Most languages provide factory methods which let you create specific code constructs more easily. For example, the [`PsiJavaParserFacade`](upsource:///java/java-psi-api/src/com/intellij/psi/PsiJavaParserFacade.java) class contains methods such as `createMethodFromText()`, which creates a Java method from the given text.
 
-When you're implementing refactorings, intentions or inspection quickfixes that work with existing code, the text that you pass to the various `createFromText()` methods will combine hard-coded fragments and fragments of code taken from the existing file. For small code fragments (individual identifiers), you can simply append the text from the existing code to the text of the code fragment you're building. In that case, you need to make sure that the resulting text is  syntactically correct, otherwise the `createFromText()` method will throw an exception. 
+When you're implementing refactorings, intentions or inspection quickfixes that work with existing code, the text that you pass to the various `createFromText()` methods will combine hard-coded fragments and fragments of code taken from the existing file. For small code fragments (individual identifiers), you can simply append the text from the existing code to the text of the code fragment you're building. In that case, you need to make sure that the resulting text is  syntactically correct, otherwise the `createFromText()` method will throw an exception.
 
-For larger code fragments, it's best to perform the modification in several steps: 
+For larger code fragments, it's best to perform the modification in several steps:
 
  * create a replacement tree fragment from text, leaving placeholders for the user code fragments;
  * replace the placeholders with the user code fragments;
  * replace the element in the original source file with the replacement tree.
 
-This ensures that the formatting of the user code is preserved and that the modification doesn't introduce any unwanted whitespace changes.  
+This ensures that the formatting of the user code is preserved and that the modification doesn't introduce any unwanted whitespace changes.
 
 As an example of this approach, see the quickfix in the `ComparingReferencesInspection` example:
 
@@ -65,6 +65,6 @@ When working with PSI modification functions, you should never create individual
 Also, when working with Java code (or with code in other languages with a similar import mechanism such as Groovy or Python), you should never create imports manually. Instead, you should insert fully-qualified names into the code you're generating, and then call the `shortenClassReferences()` method in the  [`JavaCodeStyleManager`](upsource:///java/java-psi-api/src/com/intellij/psi/codeStyle/JavaCodeStyleManager.java) (or the equivalent API for the language you're working with). This ensures that the imports are created according to the user's code style settings and inserted into the correct place of the file.
 
 
-## Combining PSI and Document Modifications 
+## Combining PSI and Document Modifications
 
 In some cases, you need to perform a PSI modification and then to perform an operation on the document you've just modified through the PSI (for example, start a live template). In this case, you need to call a special method that completes the PSI-based post-processing (such as formatting) and commits the changes to the document. The method you need to call is called `doPostponedOperationsAndUnblockDocument()`, and it's defined in the [`PsiDocumentManager`](upsource:///platform/core-api/src/com/intellij/psi/PsiDocumentManager.java) class.

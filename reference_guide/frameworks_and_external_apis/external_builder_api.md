@@ -102,7 +102,7 @@ The log file is located under the directory
 ```
 
 There both `build-log.log` and `build-log.properties` files can be found.
-The `build-log.properties` is a log4j configuration file, where the log level and desired logging categories can be adjusted. 
+The `build-log.properties` is a log4j configuration file, where the log level and desired logging categories can be adjusted.
 This file contains logging from all  build sessions, including those from the auto-make.
 
 In IntelliJ Platform versions before version 14.1 log4j configuration was stored in `build-log.xml`.

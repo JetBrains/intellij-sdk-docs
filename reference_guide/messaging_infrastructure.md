@@ -128,7 +128,7 @@ We get the following if *topic1* defines broadcast direction as *TO\_CHILDREN*:
 
 We don't need to bother with memory management of subscribers that are bound to child buses but interested in parent bus-level events.
 
-Consider the example above we may want to have project-specific functionality that reacts to the application-level events. 
+Consider the example above we may want to have project-specific functionality that reacts to the application-level events.
 All we need to do is to subscribe to the target topic within the *project bus*.
 No hard reference to the project-level subscriber will be stored at application-level then, i.e. we just avoided memory leak on project re-opening.
 

@@ -3,10 +3,10 @@ title: Tree Structure View
 ---
 <!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-This tutorial is meant to illustrate how the project tree structure view appearance can be modified programmatically. 
+This tutorial is meant to illustrate how the project tree structure view appearance can be modified programmatically.
 If you need to know more about basic concepts of a project view in IntelliJ-based IDEs, please refer to [Exploring The Project Structure](https://www.jetbrains.com/idea/help/exploring-the-project-structure.html#d164891e120) of  [IntelliJ IDEA Web Help](https://www.jetbrains.com/idea/help/intellij-idea.html).
 
-Series of step below show how to filter out and keep visible only text files and directories in the Project View Panel. 
+Series of step below show how to filter out and keep visible only text files and directories in the Project View Panel.
 
 ## Pre-Requirements
 
@@ -25,7 +25,7 @@ Add new *treeStructureProvider* extension to the [plugin.xml](https://github.com
 
 ## 2. Implement Custom TreeStructureProvider
 
-To provide custom Structure View behaviour you need to implement TreeStructureProvider interface.  
+To provide custom Structure View behaviour you need to implement TreeStructureProvider interface.
 
 ```java
 public class TextOnlyTreeStructureProvider implements TreeStructureProvider {

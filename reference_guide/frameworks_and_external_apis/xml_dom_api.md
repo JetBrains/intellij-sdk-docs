@@ -36,8 +36,8 @@ findSubTags("bar")[1].getValue().getTrimmedText()
 
 because each call here may return `null`.
 
-So the code would probably look like this: 
-                
+So the code would probably look like this:
+
 ```java
 XmlFile file = ...;
 final XmlDocument document = file.getDocument();
@@ -133,9 +133,9 @@ enum CmpVersion implements NamedEnum {
     CmpVersion_2_X ("2.x");
 
     private final String value;
-    
-    private CmpVersion(String value) { 
-        this.value = value; 
+
+    private CmpVersion(String value) {
+        this.value = value;
     }
 
     public String getValue() { return value; }
@@ -338,7 +338,7 @@ DOM also has a kind of reflection, called "Generic Info". One would use it to be
 #### Presentation
 <!-- TODO: using @Presentation -->
 
-`DomElement.getPresentation()` returns an instance of [`ElementPresentation`](upsource:///xml/dom-openapi/src/com/intellij/util/xml/ElementPresentation.java), an interface that knows presentable element type, name, and sometimes even its icon. Presentations are actually obtained from presentation factory objects that, like ClassChoosers's, should be registered in [`ElementPresentationManager`](upsource:///xml/dom-openapi/src/com/intellij/util/xml/ElementPresentationManager.java) as early as possible. You can specify type name and icon for all elements of some class, ways of getting type name, icon and presentable name for particular objects. When not specified, presentable name is taken from the object itself, if it contains a method annotated with `@NameValue` annotation, that returns `String` or `GenericValue`. If there's no such method, it will return `null`. For `DomElement`, there's another way to get this presentable name: 
+`DomElement.getPresentation()` returns an instance of [`ElementPresentation`](upsource:///xml/dom-openapi/src/com/intellij/util/xml/ElementPresentation.java), an interface that knows presentable element type, name, and sometimes even its icon. Presentations are actually obtained from presentation factory objects that, like ClassChoosers's, should be registered in [`ElementPresentationManager`](upsource:///xml/dom-openapi/src/com/intellij/util/xml/ElementPresentationManager.java) as early as possible. You can specify type name and icon for all elements of some class, ways of getting type name, icon and presentable name for particular objects. When not specified, presentable name is taken from the object itself, if it contains a method annotated with `@NameValue` annotation, that returns `String` or `GenericValue`. If there's no such method, it will return `null`. For `DomElement`, there's another way to get this presentable name:
 `DomElement.getGenericInfo().getElementName()`.
 
 #### Events
@@ -479,7 +479,7 @@ There is a special table component where each row represents one collection chil
 
 What is a column info? It's just a somewhat more comfortable way to work with the table model. It uses Java 5 generics and is more object-oriented. So, it's named `ColumnInfo<Item,Aspect>`, where `Item` is a type variable corresponding to the type of elements in the collection, and `Aspect` is a type variable corresponding to this particular column information type: `String`, `PsiClass`, `Boolean`, etc. The basic things that a column knows are: column name, column class, reading value (Aspect `valueOf(Item)`), writing value (`setValue(Item item, Aspect aspect)`), cell renderer (`getRenderer(Item)`), cell "editability" (`isCellEditable(Item)`), cell editor (`getEditor(Item)`), etc.
 
-There are a lot of predefined column infos, so you'll probably never create a new one. 
+There are a lot of predefined column infos, so you'll probably never create a new one.
 
 First, if a collection child is a `GenericDomValue`, it's usually convenient to edit it directly in the table. For this, you may need one of the following classes: `StringColumnInfo`, `BooleanColumnInfo`, or more generic `GenericValueColumnInfo`. But such collections are encountered very rarely.
 

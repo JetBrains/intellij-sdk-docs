@@ -4,7 +4,7 @@ title: Configuring Gradle Projects
 <!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 This page serves as a guide to the Gradle-based plugin configuration for _IntelliJ Platform_ projects.
-The IntelliJ IDEA Ultimate and Community editions bundle the _Gradle_ and _Plugin DevKit_ plugins to support Gradle-based development. 
+The IntelliJ IDEA Ultimate and Community editions bundle the _Gradle_ and _Plugin DevKit_ plugins to support Gradle-based development.
 
 The [Getting Started with Gradle](prerequisites.md) page provides a tutorial for creating Gradle-based IntelliJ Platform plugins.
 It may be useful to review the IntelliJ Platform page, particularly the description of versioning in the [Open Source](/intro/intellij_platform.md#open-source) section.
@@ -14,11 +14,11 @@ It may be useful to review the IntelliJ Platform page, particularly the descript
 * bullet list
 {:toc}
 
-## Overview of the Gradle Plugin 
+## Overview of the Gradle Plugin
 The Gradle plugin is built from the open-source project [gradle-intellij-plugin](https://github.com/JetBrains/gradle-intellij-plugin).
 This plugin adds Gradle tasks that enable developing IntelliJ Platform plugins.
 The [README](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md) file has a reference for configuring these tasks.
- 
+
 When getting started, there are several items to note on the README page:
 * At the top of the page, the [latest production version](https://github.com/JetBrains/gradle-intellij-plugin#the-latest-version) of the plugin is listed. It is advised to upgrade to the latest available version regularly.
 * Also, at the top is the minimum required version of Gradle.
@@ -38,14 +38,14 @@ This section presents a guided tour of Gradle plugin attributes to achieve the c
 ### Configuring the Gradle Plugin for Building IntelliJ Platform Plugin Projects
 By default, the Gradle plugin will build a plugin project against the IntelliJ Platform defined by the latest EAP snapshot of the IntelliJ IDEA Community Edition.
 
-> **NOTE** Using EAP versions of the IntelliJ Platform requires adding the _Snapshots repository_ to the `build.gradle` file (see [IntelliJ Platform Artifacts Repositories](/reference_guide/intellij_artifacts.md)). 
+> **NOTE** Using EAP versions of the IntelliJ Platform requires adding the _Snapshots repository_ to the `build.gradle` file (see [IntelliJ Platform Artifacts Repositories](/reference_guide/intellij_artifacts.md)).
 
 If a matching version of the specified IntelliJ Platform is not available on the local machine, the Gradle plugin downloads the correct version and type.
 IntelliJ IDEA then indexes the build and any associated source code and JetBrains Java Runtime.
 
 #### IntelliJ Platform Configuration
 Explicitly setting the [Setup DSL](https://github.com/JetBrains/gradle-intellij-plugin#setup-dsl) attributes `intellij.version` and `intellij.type` tells the Gradle plugin to use that configuration of the IntelliJ Platform to create the plugin project.
-                                    
+
 All available platform versions can be browsed in the [IntelliJ Platform Artifacts Repositories](/reference_guide/intellij_artifacts.md).
 
 If the chosen platform version is not available in the repositories, or a local installation of the target IDE is the desired type and version of the IntelliJ Platform, use `intellij.localPath` to point to that installation.
@@ -78,7 +78,7 @@ The Gradle plugin will fetch the specified JetBrains Runtime as needed.
 There are several attributes to control where the Gradle plugin places directories for downloads and use by the IDE Development Instance.
 
 The location of the [sandbox home](/basics/ide_development_instance.md#sandbox-home-location-for-gradle-based-plugin-projects) directory and its subdirectories can be controlled with Gradle plugin attributes.
-The `intellij.sandboxDirectory` attribute is used to set the path for the sandbox directory to be used while running the plugin in an IDE Development Instance. 
+The `intellij.sandboxDirectory` attribute is used to set the path for the sandbox directory to be used while running the plugin in an IDE Development Instance.
 Locations of the sandbox [subdirectories](/basics/ide_development_instance.md#development-instance-settings-caches-logs-and-plugins) can be controlled using the `runIde.configDirectory`, `runIde.pluginsDirectory`, and `runIde.systemDirectory` attributes.
 If the `intellij.sandboxDirectory` path is explicitly set, the subdirectory attributes default to the new sandbox directory.
 
@@ -94,17 +94,17 @@ The plugin version is defined in the `plugins {}` section of a project's `build.
 The version of the Gradle is defined in `<PROJECT ROOT>/gradle/wrapper/gradle-wrapper.properties`.
 
 ### Patching the Plugin Configuration File
-A plugin project's `plugin.xml` file has element values that are "patched" at build time from the attributes of the `patchPluginXml` task ([Patching DSL](https://github.com/JetBrains/gradle-intellij-plugin#patching-dsl)). 
+A plugin project's `plugin.xml` file has element values that are "patched" at build time from the attributes of the `patchPluginXml` task ([Patching DSL](https://github.com/JetBrains/gradle-intellij-plugin#patching-dsl)).
 As many as possible of the attributes in the Patching DSL will be substituted into the corresponding element values in a plugin project's `plugin.xml` file:
 * If a `patchPluginXml` attribute default value is defined, the attribute value will be patched in `plugin.xml` _regardless of whether the `patchPluginXml` task appears in the `build.gradle` file_.
   * For example, the default values for the attributes `patchPluginXml.sinceBuild` and `patchPluginXml.untilBuild` are defined based on the declared (or default) value of `intellij.version`.
     So by default `patchPluginXml.sinceBuild` and `patchPluginXml.untilBuild` are substituted into the `<idea-version>` element's `since-build` and `until-build` attributes in the `plugin.xml` file.
 * If a `patchPluginXml` attribute value is explicitly defined, the attribute value will be substituted in `plugin.xml`.
-  * If both `patchPluginXml.sinceBuild` and `patchPluginXml.untilBuild` attributes are explicitly set, both are substituted in `plugin.xml`. 
+  * If both `patchPluginXml.sinceBuild` and `patchPluginXml.untilBuild` attributes are explicitly set, both are substituted in `plugin.xml`.
   * If one attribute is explicitly set (e.g. `patchPluginXml.sinceBuild`) and one is not (e.g. `patchPluginXml.untilBuild` has a default value,) both attributes are patched at their respective (explicit and default) values.
 * For **no substitution** of the `<idea-version>` element's `since-build` and `until-build` attributes, one of the following must appear in the `build.gradle` file:
   * Either set `intellij.updateSinceUntilBuild = false`, which will disable substituting both `since-build` and `until-build` attributes,
-  * Or, for independent control, set `patchPluginXml.sinceBuild(null)` and `patchPluginXml.untilBuild(null)` depending on whether the intention is to disable one or both substitutions. 
+  * Or, for independent control, set `patchPluginXml.sinceBuild(null)` and `patchPluginXml.untilBuild(null)` depending on whether the intention is to disable one or both substitutions.
 
 A best practice to avoid confusion is to replace the elements in `plugin.xml` the Gradle plugin will patch that with a comment.
 That way, the values for these parameters do not appear in two places in the source code.
@@ -116,8 +116,8 @@ For those `patchPluginXml` attributes that contain descriptions such as `changeN
 As discussed in [Components of a Wizard-Generated Gradle IntelliJ Platform Plugin](prerequisites.md#components-of-a-wizard-generated-gradle-intellij-platform-plugin), the Gradle properties `project.version`, `project.group`, and `rootProject.name` are all generated based on the input to the Wizard.
 However, the `gradle-intellij-plugin` does not combine and substitute those Gradle properties for the default `<id>` and `<name>` elements in the `plugin.xml` file.
 
-The best practice is to keep `project.version` current. 
-By default, if you modify `project.version` in `build.gradle`, the Gradle plugin will automatically update the `<version>` value in the `plugin.xml` file. 
+The best practice is to keep `project.version` current.
+By default, if you modify `project.version` in `build.gradle`, the Gradle plugin will automatically update the `<version>` value in the `plugin.xml` file.
 This practice keeps all version declarations synchronized.
 
 ### Publishing with the Gradle Plugin
@@ -132,13 +132,13 @@ This section reviews some of the more common configurations.
 ### Plugins Targeting IntelliJ IDEA
 IntelliJ Platform plugins targeting IntelliJ IDEA have the most straightforward Gradle plugin configuration.
 * Determine the version of [IntelliJ IDEA to use for building the plugin project](#configuring-the-gradle-plugin-for-building-intellij-platform-plugin-projects); this is the desired version of the IntelliJ Platform.
-  This can be EAP (default) or determined from the [build number ranges](/basics/getting_started/build_number_ranges.md). 
-  * If a production version of IntelliJ IDEA is the desired target, set the `intellij` [version attributes](#intellij-platform-configuration) accordingly. 
-  * Set the necessary [plugin dependencies](#plugin-dependencies), if any. 
-* If the plugin project should be run or debugged in an IDE Development Instance based on the same IntelliJ IDEA version, no further attributes need to be set for the IDE Development Instance. 
-  This is the default behavior and is the most common use case. 
+  This can be EAP (default) or determined from the [build number ranges](/basics/getting_started/build_number_ranges.md).
+  * If a production version of IntelliJ IDEA is the desired target, set the `intellij` [version attributes](#intellij-platform-configuration) accordingly.
+  * Set the necessary [plugin dependencies](#plugin-dependencies), if any.
+* If the plugin project should be run or debugged in an IDE Development Instance based on the same IntelliJ IDEA version, no further attributes need to be set for the IDE Development Instance.
+  This is the default behavior and is the most common use case.
   * If the plugin project should be run or debugged in an IDE Development Instance based on an alternate version of the IntelliJ Platform, set the [Running](#running-against-alternate-versions-and-types-of-intellij-platform-based-ides) DSL attribute accordingly.
-  * If the plugin project should be run using a JetBrains Runtime other than the default for the IDE Development Instance, specify the [JetBrains Runtime version](#running-against-alternate-versions-of-the-jetbrains-runtime). 
+  * If the plugin project should be run using a JetBrains Runtime other than the default for the IDE Development Instance, specify the [JetBrains Runtime version](#running-against-alternate-versions-of-the-jetbrains-runtime).
 * Set the appropriate attributes for [patching the `plugin.xml` file](#patching-the-plugin-configuration-file).
 
 ### Plugins Targeting Alternate IntelliJ Platform-Based IDEs

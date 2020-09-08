@@ -11,7 +11,7 @@ The functionality of [`LocalInspectionTool`](upsource:///platform/analysis-api/s
 
 The main differences are:
 - supports batch analysis of code (through the **Analyze \| Inspect Code...** action)
-- the possibility to turn off the inspection (globally or by suppressing them on various levels) 
+- the possibility to turn off the inspection (globally or by suppressing them on various levels)
 - ability to configure the inspection options.
 
 If none of that is required and the analysis only needs to run in the active editor, [Annotator](syntax_highlighting_and_error_highlighting.md#annotator) provides better performance (because of its support for incremental analysis) and more flexibility for highlighting errors.

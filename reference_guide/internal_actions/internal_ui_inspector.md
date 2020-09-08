@@ -13,7 +13,7 @@ If the menu item **Tools \| Internal Actions \| UI \| UI Inspector** is not avai
 
 ## Enabling the UI Inspector
 Before using the _UI Inspector_, it must be enabled by selecting the menu item **Tools \| Internal Actions \| UI \| UI Inspector**.
-The enabled state of the _UI Inspector_ is modal; it remains enabled until it is disabled by selecting the _UI Inspector_ menu item again. 
+The enabled state of the _UI Inspector_ is modal; it remains enabled until it is disabled by selecting the _UI Inspector_ menu item again.
 
 ## Using the UI Inspector
 While enabled, centering the cursor on a UI element and pressing <kbd>Control/Cmd</kbd>+<kbd>Alt</kbd> when _clicking_ the mouse reveals the properties of the Swing component.
@@ -36,4 +36,4 @@ Various components used in the IntelliJ Platform expose additional properties. T
 | [`IntentionAction`/`QuickFix`](/reference_guide/custom_language_support/code_inspections_and_intentions.md) | Popup Menu in Editor | `intention action`/`quick fix` - [`IntentionAction`](upsource:///platform/analysis-api/src/com/intellij/codeInsight/intention/IntentionAction.java) / [`QuickFix`](upsource:///platform/analysis-api/src/com/intellij/codeInspection/QuickFix.java) implementation |
 | [`Tree`](/user_interface_components/lists_and_trees.md) | Tree | `treeModelClass` - `javax.swing.tree.TreeModel` implementation |
 
-Custom Swing components can also provide additional properties via [`UiInspectorContextProvider`](upsource:///platform/platform-impl/src/com/intellij/internal/inspector/UiInspectorContextProvider.java) (2020.1 and later). 
+Custom Swing components can also provide additional properties via [`UiInspectorContextProvider`](upsource:///platform/platform-impl/src/com/intellij/internal/inspector/UiInspectorContextProvider.java) (2020.1 and later).

@@ -7,7 +7,7 @@ title: Plugin Listeners
 
 > **NOTE** Listener implementations must be stateless and may not implement life-cycle (e.g., `Disposable`).
 
-_Listeners_ allow plugins to declaratively subscribe to events delivered through the message bus (see [Messaging infrastructure](/reference_guide/messaging_infrastructure.md) for details). 
+_Listeners_ allow plugins to declaratively subscribe to events delivered through the message bus (see [Messaging infrastructure](/reference_guide/messaging_infrastructure.md) for details).
 
 You can define both application- and project-level listeners.
 
@@ -25,7 +25,7 @@ To define an application-level listener, add the following section to your `plug
 
 The `topic` attribute specifies the listener interface corresponding to the type of events you want to receive.
 Normally, this is the interface used as the type parameter of the [`Topic`](upsource:///platform/extensions/src/com/intellij/util/messages/Topic.java) instance for the type of events.
-The `class` attribute specifies the class in your plugin that implements the listener interface and receives the events. 
+The `class` attribute specifies the class in your plugin that implements the listener interface and receives the events.
 
 As a specific example, if you want to receive events about all changes in the virtual file system, you need to implement the `BulkFileListener` interface, corresponding to the topic `VirtualFileManager.VFS_CHANGES`.
 To subscribe to this topic from code, you could use something like the following snippet:
@@ -43,7 +43,7 @@ To use declarative registration, you no longer need to reference the `Topic` ins
 
 ```xml
 <applicationListeners>
-  <listener class="myPlugin.MyVfsListener" 
+  <listener class="myPlugin.MyVfsListener"
             topic="com.intellij.openapi.vfs.newvfs.BulkFileListener"/>
 </applicationListeners>
 ```
@@ -61,12 +61,12 @@ public class MyVfsListener implements BulkFileListener {
 
 ## Defining Project-Level Listeners
 
-Project-level listeners are registered in the same way, except that the top-level tag is 
+Project-level listeners are registered in the same way, except that the top-level tag is
 `<projectListeners>`. They can be used to listen to project-level events, for example, tool window operations:
 
 ```xml
 <projectListeners>
-    <listener class="MyToolwindowListener" 
+    <listener class="MyToolwindowListener"
               topic="com.intellij.openapi.wm.ex.ToolWindowManagerListener" />
 </projectListeners>
 ```
@@ -86,12 +86,12 @@ public class MyToolwindowListener implements ToolWindowManagerListener {
         // handle the state change
     }
 }
-```                  
+```
 
 ## Additional Attributes
 
 Registration of listeners can be restricted using the following attributes:
 
 - `os` - allows to restrict listener to given OS, e.g., `os="windows"` for Windows only (2020.1 and later)
-- `activeInTestMode` - set to `false` to disable listener if `com.intellij.openapi.application.Application.isUnitTestMode()`==`true` 
-- `activeInHeadlessMode` - set to `false` to disable listener if `com.intellij.openapi.application.Application.isHeadlessEnvironment()`==`true`. Also covers `activeInTestMode` as test mode implies headless mode. 
+- `activeInTestMode` - set to `false` to disable listener if `com.intellij.openapi.application.Application.isUnitTestMode()`==`true`
+- `activeInHeadlessMode` - set to `false` to disable listener if `com.intellij.openapi.application.Application.isHeadlessEnvironment()`==`true`. Also covers `activeInTestMode` as test mode implies headless mode.

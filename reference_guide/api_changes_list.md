@@ -52,7 +52,7 @@ Where the placeholders must be enclosed in code quotes (`name`):
 <property name> is a full name of a property from .properties file, like `some.action.description`
 <bundle name> is a fully qualified name of the property bundle, which includes its package, like `message.IdeBundle`
 
-NOTE: If a code change you're trying to document doesn't match any of the above patterns, fill in a ticket in the YouTrack. 
+NOTE: If a code change you're trying to document doesn't match any of the above patterns, fill in a ticket in the YouTrack.
 An example of a ticket is https://youtrack.jetbrains.com/issue/MP-1218. Until supported, you may document the change as you prefer, and I will correct it later.
 
 NOTE: You are allowed to prettify the pattern using links: [`org.example.Foo`](https://github.com/JetBrains/intellij-community/tree/master/)
@@ -60,11 +60,11 @@ NOTE: You are allowed to prettify the pattern using links: [`org.example.Foo`](h
 NOTE: Entries not starting with code quotes (`name`) can be added to document non-code changes and will be skipped in API verification.
 -->
 
-IntelliJ API may be occasionally changed between releases, leading to incompatibilities of existing plugins with newer IDE builds. 
+IntelliJ API may be occasionally changed between releases, leading to incompatibilities of existing plugins with newer IDE builds.
 
 <!--
-> **NOTE** Starting with 2020.1 release, IntelliJ Platform–based IDEs will use compatibility check information provided by the [JetBrains Plugins Repository](https://plugins.jetbrains.com) to highlight possible compatibility issues to users directly in the IDE's "Plugins" manager. 
-Therefore, it is important to keep your plugins up to date with regard to the existing and upcoming API changes.
+> **NOTE** Starting with 2020.1 release, IntelliJ Platform–based IDEs will use compatibility check information provided by the [JetBrains Plugins Repository](https://plugins.jetbrains.com) to highlight possible compatibility issues to users directly in the IDE's "Plugins" manager.
+> Therefore, it is important to keep your plugins up to date with regard to the existing and upcoming API changes.
 -->
 
 ## Verifying Compatibility
@@ -77,17 +77,17 @@ Integration in [Gradle build](/tutorials/build_system.md) is currently possible 
 
 If your plugin is hosted on GitHub, it is also readily made available via these GitHub Actions:
 - [IntelliJ Platform Plugin Verifier](https://github.com/marketplace/actions/intellij-platform-plugin-verifier)
-- [IntelliJ Plugin Verifier](https://github.com/marketplace/actions/intellij-plugin-verifier)   
-  
-### IDE Support  
+- [IntelliJ Plugin Verifier](https://github.com/marketplace/actions/intellij-plugin-verifier)
+
+### IDE Support
 Consider using the following IDE inspections to get additional alerts about code that uses unstable API features:
 - JVM languages \| Unstable API Usage
 - JVM languages \| Unstable type is used in signature
-  
-  
-## Known Breaking Changes  
-  
-The following pages list the breaking changes in IDE/plugin releases with required/recommended steps to take by plugin authors. 
+
+
+## Known Breaking Changes
+
+The following pages list the breaking changes in IDE/plugin releases with required/recommended steps to take by plugin authors.
 
 * [**Changes in 2020.***](api_changes/api_changes_list_2020.md)
 * [**Changes in 2019.***](api_changes/api_changes_list_2019.md)

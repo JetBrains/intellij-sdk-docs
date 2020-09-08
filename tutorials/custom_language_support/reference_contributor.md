@@ -8,7 +8,7 @@ Resolving references means the ability to go from the usage of an element to its
 
 > **NOTE** Every PSI element that can be renamed or referenced needs to implement [`PsiNamedElement`](upsource:///platform/core-api/src/com/intellij/psi/PsiNamedElement.java) interface.
 
-**Reference**: [References and Resolve](/reference_guide/custom_language_support/references_and_resolve.md) 
+**Reference**: [References and Resolve](/reference_guide/custom_language_support/references_and_resolve.md)
 
 * bullet list
 {:toc}
@@ -21,16 +21,16 @@ The `SimpleNamedElement` interface is subclassed from [`PsiNameIdentifierOwner`]
 ```java
 {% include /code_samples/simple_language_plugin/src/main/java/org/intellij/sdk/language/psi/SimpleNamedElement.java %}
 ```
- 
+
 The `SimpleNamedElementImpl` class implements the `SimpleNamedElement` interface and extends [`ASTWrapperPsiElement`](upsource:///platform/core-impl/src/com/intellij/extapi/psi/ASTWrapperPsiElement.java).
 
 ```java
 {% include /code_samples/simple_language_plugin/src/main/java/org/intellij/sdk/language/psi/impl/SimpleNamedElementImpl.java %}
 ```
- 
+
 ## 10.2. Define Helper Methods for Generated PSI Elements
-Modify `SimplePsiImplUtil` to support new methods that get added to the PSI class for Simple Language. 
-Note that `SimpleElementFactory` isn't defined until the [next step](#define-an-element-factory), so for now it shows as an error.  
+Modify `SimplePsiImplUtil` to support new methods that get added to the PSI class for Simple Language.
+Note that `SimpleElementFactory` isn't defined until the [next step](#define-an-element-factory), so for now it shows as an error.
 
 ```java
 public class SimplePsiImplUtil {
@@ -91,20 +91,20 @@ public class SimpleElementFactory {
 
 ## 10.4. Update Grammar and Regenerate the Parser
 Now make corresponding changes to the `Simple.bnf` grammar file by replacing the `property` definition with the lines below.
-Don't forget to regenerate the parser after updating the file! 
+Don't forget to regenerate the parser after updating the file!
 Right-click on the `Simple.bnf` file and select **Generate Parser Code**.
 
 ```java
 property ::= (KEY? SEPARATOR VALUE?) | KEY {
   mixin="org.intellij.sdk.language.psi.impl.SimpleNamedElementImpl"
-  implements="org.intellij.sdk.language.psi.SimpleNamedElement" 
+  implements="org.intellij.sdk.language.psi.SimpleNamedElement"
   methods=[getKey getValue getName setName getNameIdentifier]
 }
 ```
 
 ## 10.5. Define a Reference
 Now define a reference class to resolve a property from its usage.
-This requires extending [`PsiReferenceBase`](upsource:///platform/core-api/src/com/intellij/psi/PsiReferenceBase.java) and implementing [`PsiPolyVariantReference`](upsource:///platform/core-api/src/com/intellij/psi/PsiPolyVariantReference.java). 
+This requires extending [`PsiReferenceBase`](upsource:///platform/core-api/src/com/intellij/psi/PsiReferenceBase.java) and implementing [`PsiPolyVariantReference`](upsource:///platform/core-api/src/com/intellij/psi/PsiPolyVariantReference.java).
 The latter enables the reference to resolve to more than one element or to resolve result(s) for a superset of valid resolve cases.
 
 ```java
@@ -153,7 +153,7 @@ The `SimpleRefactoringSupportProvider` implementation is registered with the Int
 
 ```xml
   <extensions defaultExtensionNs="com.intellij">
-    <lang.refactoringSupport language="Simple"  
+    <lang.refactoringSupport language="Simple"
             implementationClass="org.intellij.sdk.language.SimpleRefactoringSupportProvider"/>
   </extensions>
 ```

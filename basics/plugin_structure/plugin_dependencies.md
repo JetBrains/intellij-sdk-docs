@@ -8,12 +8,12 @@ This document describes the syntax for declaring plugin dependencies and optiona
 For more information about dependencies on the IntelliJ Platform modules, see Part II of this document: [Plugin Compatibility with IntelliJ Platform Products](/basics/getting_started/plugin_compatibility.md).
 
 > **NOTE** It is not possible to specify the minimum/maximum version for the dependent plugin. ([Issue](https://youtrack.jetbrains.com/issue/IDEABKL-7906))
- 
+
 To express dependencies on classes from other plugins or modules, perform the following three required steps:
 
 ## 1. Locating Plugin ID and Preparing Sandbox
 For plugins published on [JetBrains Plugins Repository](https://plugins.jetbrains.com)
-- open plugin's detail page 
+- open plugin's detail page
 - select _Versions_ tab
 - open detail page for the desired version
 
@@ -41,9 +41,9 @@ When using Kotlin build script, use `setPlugins()` within the `intellij` block, 
 intellij {
     setPlugins("org.another.plugin:1.0")
 }
-```                      
+```
 
-> **NOTE** Transitive dependencies required for tests must currently be [specified explicitly](https://github.com/JetBrains/gradle-intellij-plugin/issues/38). 
+> **NOTE** Transitive dependencies required for tests must currently be [specified explicitly](https://github.com/JetBrains/gradle-intellij-plugin/issues/38).
 
 ### 2.2 DevKit
 > **TIP** Existing DevKit-based projects can be converted to use [Gradle setup](/tutorials/build_system/prerequisites.md#adding-gradle-support-to-an-existing-devkit-based-intellij-platform-plugin) where managing dependencies is fully automated.
@@ -58,7 +58,7 @@ To do that, open the Project Structure dialog, select the SDK used in the projec
 * For non-bundled plugins, the plugin JAR files are located in `config/plugins/<pluginname>` or `config/plugins/<pluginname>/lib` under the directory specified as "Sandbox Home" in the IntelliJ Platform Plugin SDK settings.
 
 ## 3. Dependency Declaration in plugin.xml
-Regardless of whether a plugin project uses [Modules Available in All Products](/basics/getting_started/plugin_compatibility.md#modules-available-in-all-products), or [Modules Specific to Functionality](/basics/getting_started/plugin_compatibility.md#modules-specific-to-functionality), the correct module must be listed as a dependency in `plugin.xml`. 
+Regardless of whether a plugin project uses [Modules Available in All Products](/basics/getting_started/plugin_compatibility.md#modules-available-in-all-products), or [Modules Specific to Functionality](/basics/getting_started/plugin_compatibility.md#modules-specific-to-functionality), the correct module must be listed as a dependency in `plugin.xml`.
 If a project depends on another plugin, the dependency must be declared like a module.
 If only general IntelliJ Platform features (APIs) are used, then a default dependency on `com.intellij.modules.platform` must be declared.
 To display a list of available IntelliJ Platform modules, invoke the [code completion](https://www.jetbrains.com/help/idea/auto-completing-code.html#4eac28ba) feature for the `<depends>` element contents while editing the plugin project's `plugin.xml` file.
@@ -75,7 +75,7 @@ Continuing with the example from [Section 2](#2-project-setup) above, the depend
 ## Optional Plugin Dependencies
 A project can also specify an optional plugin dependency. In this case, the plugin will load even if the plugin it depends on is not installed or enabled, but part of the functionality of the plugin will not be available. In order to do that, add `optional="true" config-file="otherconfig.xml"` to the `<depends>` tag.
 
-For example, if a plugin project adds additional highlighting for Java and Kotlin files, use the following setup. 
+For example, if a plugin project adds additional highlighting for Java and Kotlin files, use the following setup.
 The main `plugin.xml` will define an annotator for Java and specify an optional dependency on the Kotlin plugin:
 
 _plugin.xml_

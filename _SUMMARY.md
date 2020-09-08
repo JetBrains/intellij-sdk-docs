@@ -44,7 +44,7 @@
     * [Plugin Configuration File](basics/plugin_structure/plugin_configuration_file.md)
     * [Plugin Logo (Icon)](basics/plugin_structure/plugin_icon_file.md)
     * [Plugin Dependencies](basics/plugin_structure/plugin_dependencies.md)
-* [Dynamic Plugins](basics/plugin_structure/dynamic_plugins.md)    
+* [Dynamic Plugins](basics/plugin_structure/dynamic_plugins.md)
 * [IntelliJ Platform Artifacts Repositories](reference_guide/intellij_artifacts.md)
 * [Kotlin for Plugin Developers](tutorials/kotlin.md)
 * [Internal Actions Menu](reference_guide/internal_actions/internal_actions_intro.md)

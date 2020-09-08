@@ -15,11 +15,11 @@ To provide the last two features, the VFS manages a _persistent snapshot_ of som
 
 The snapshot is application level, not project level - so, if some file (for example, a class in the JDK) is referenced by multiple projects, only one copy of its contents will be stored in the VFS.
 
-All VFS access operations go through the snapshot. 
+All VFS access operations go through the snapshot.
 
 If some information is requested through the VFS APIs and is not available in the snapshot, it is loaded from disk and stored into the snapshot. If the information is available in the snapshot, the snapshot data is returned. The contents of files and the lists of files in directories are stored in the snapshot only if that specific information was accessed. Otherwise, only file metadata like name, length, timestamp, attributes are stored.
 
-> **NOTE** This means that the state of the file system and the file contents displayed in the IntelliJ Platform UI comes from the snapshot, which may not always match the actual contents of the disk. 
+> **NOTE** This means that the state of the file system and the file contents displayed in the IntelliJ Platform UI comes from the snapshot, which may not always match the actual contents of the disk.
 > For example, in some cases deleted files can still be visible in the UI for some time before the deletion is picked up by the IntelliJ Platform.
 
 The snapshot is updated from disk during _refresh operations_, which generally happen asynchronously. All write operations made through the VFS are synchronous - i.e., the contents are saved to disk immediately.
@@ -47,10 +47,10 @@ Both synchronous and asynchronous refreshes can be initiated from any thread. If
 The same threading requirements also apply to functions like [`LocalFileSystem.refreshAndFindFileByPath()`](upsource:///platform/analysis-api/src/com/intellij/openapi/vfs/LocalFileSystem.java), which perform a partial refresh if the file with the specified path is not found in the snapshot.
 
 In nearly all cases, using asynchronous refreshes is strongly preferred. If there is some code that needs to be executed after the refresh is complete, the code should be passed as a `postRunnable` parameter to one of the refresh methods:
- 
+
 * [`RefreshQueue.createSession()`](upsource:///platform/analysis-api/src/com/intellij/openapi/vfs/newvfs/RefreshQueue.java)
 * [`VirtualFile.refresh()`](upsource:///platform/core-api/src/com/intellij/openapi/vfs/VirtualFile.java)
- 
+
 Synchronous refreshes can cause deadlocks in some cases, depending on which locks are held by the thread invoking the refresh operation.
 
 ## Virtual File System Events

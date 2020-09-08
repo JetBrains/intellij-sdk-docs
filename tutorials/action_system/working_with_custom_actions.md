@@ -4,18 +4,18 @@ title: Creating Actions
 <!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 ## Introduction
-Plugins can add actions to existing IDE menus and toolbars, as well as add new menus and toolbars. 
-The IntelliJ Platform calls the actions of plugins in response to user interactions with the IDE. 
-However, the actions of a plugin must first be defined and registered with the IntelliJ Platform. 
+Plugins can add actions to existing IDE menus and toolbars, as well as add new menus and toolbars.
+The IntelliJ Platform calls the actions of plugins in response to user interactions with the IDE.
+However, the actions of a plugin must first be defined and registered with the IntelliJ Platform.
 
-Using the SDK code sample `action_basics`, this tutorial illustrates the steps to create an action for a plugin. 
+Using the SDK code sample `action_basics`, this tutorial illustrates the steps to create an action for a plugin.
 
 * bullet list
 {:toc}
 
 ## Creating a Custom Action
-Custom actions extend the abstract class [`AnAction`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java). 
-Classes that extend it should override `AnAction.update()`, and must override `AnAction.actionPerformed()`. 
+Custom actions extend the abstract class [`AnAction`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java).
+Classes that extend it should override `AnAction.update()`, and must override `AnAction.actionPerformed()`.
 * The `update()` method implements the code that enables or disables an action.
 * The `actionPerformed()` method implements the code that executes when an action is invoked by the user.
 
@@ -23,22 +23,22 @@ As an example, [`PopupDialogAction`](https://github.com/JetBrains/intellij-sdk-c
 
 ```java
 public class PopupDialogAction extends AnAction {
-   
+
   @Override
   public void update(AnActionEvent e) {
     // Using the event, evaluate the context, and enable or disable the action.
   }
-  
+
   @Override
   public void actionPerformed(@NotNull AnActionEvent e) {
     // Using the event, implement an action. For example, create and show a dialog.
   }
-  
+
 }
 ```
 
 > **WARNING** `AnAction` classes do not have class fields of any kind. This restriction prevents memory leaks.
-For more information about why, see [Action Implementation](/basics/action_system.md#action-implementation). 
+For more information about why, see [Action Implementation](/basics/action_system.md#action-implementation).
 
 At this stage, `update()` implicitly defaults always to enable this action.
 The implementation of `actionPerformed()` does nothing.
@@ -47,19 +47,19 @@ These methods fully implemented in [Developing the AnAction Methods](#developing
 Before fleshing out those methods, to complete this minimal implementation, `PopupDialogAction` must be registered with the IntelliJ Platform.
 
 ## Registering a Custom Action
-Actions are registered by declaring them in code or by declaring them in the `<actions>` section of a plugin configuration (`plugin.xml`) file. 
+Actions are registered by declaring them in code or by declaring them in the `<actions>` section of a plugin configuration (`plugin.xml`) file.
 This section describes using IDE tooling - the New Action Form - to add a declaration to the `plugin.xml` file, and then tuning registration attributes manually.
 A more comprehensive explanation of action registration is available in the [Action Registration](/basics/action_system.md#registering-actions) section of this guide.
 
 ### Registering an Action with the New Action Form
-IntelliJ IDEA has an embedded inspection that spots unregistered actions. 
-Verify the inspection is enabled at **Settings/Preferences \| Editor \| Inspections \| Plugin DevKit \| Code \| Component/Action not registered**. 
+IntelliJ IDEA has an embedded inspection that spots unregistered actions.
+Verify the inspection is enabled at **Settings/Preferences \| Editor \| Inspections \| Plugin DevKit \| Code \| Component/Action not registered**.
 Here is an example for this stage of the `PopupDialogAction` class:
 
 !["Action never used" inspection](img/action_never_used.png){:width="600px"}
 
 To register `PopupDialogAction` and set up its basic attributes press ***Alt + Shift + Enter***.
-Fill out the **New Action** form to set up the parameters for `PopupDialogAction`: 
+Fill out the **New Action** form to set up the parameters for `PopupDialogAction`:
 
 ![New Action](img/new_action.png){:width="800px"}
 
@@ -72,8 +72,8 @@ The fields of the form are:
 * _Name_ - The text to appear in the menu.
 * _Description_ - Hint text to be displayed.
 * _Add to Group_ - The action group - menu or toolbar - to which the action is added.
-  Clicking in the list of groups and typing invokes a search, such as "ToolsMenu." 
-* _Anchor_ - Where the menu action should be placed in the **Tools** menu relative to the other actions in that menu.  
+  Clicking in the list of groups and typing invokes a search, such as "ToolsMenu."
+* _Anchor_ - Where the menu action should be placed in the **Tools** menu relative to the other actions in that menu.
 
 In this case, `PopupDialogAction` would be available in the **Tools** menu, it would be placed at the top, and would have no shortcuts.
 
@@ -81,7 +81,7 @@ After finishing the **New Action** form and applying the changes, the `<actions>
 
 ```xml
   <actions>
-    <action id="org.intellij.sdk.action.PopupDialogAction" class="org.intellij.sdk.action.PopupDialogAction" 
+    <action id="org.intellij.sdk.action.PopupDialogAction" class="org.intellij.sdk.action.PopupDialogAction"
           text="Pop Dialog Action" description="SDK action example">
       <add-to-group group-id="ToolsMenu" anchor="first"/>
     </action>
@@ -89,7 +89,7 @@ After finishing the **New Action** form and applying the changes, the `<actions>
 ```
 
 The `<action>` element declares the _Action ID_ (`id`,) _Class Name_ (`class`,) _Name_ (`text`,) and _Description_ from the **New Action** form.
-The `<add-to-group>` element declares where the action will appear and mirrors the names of entries from the form. 
+The `<add-to-group>` element declares where the action will appear and mirrors the names of entries from the form.
 
 This declaration is adequate, but adding more attributes is discussed in the next section.
 
@@ -141,15 +141,15 @@ The `update()` method defaults to always enable the action, which is satisfactor
 So `actionPerformed()` will be developed first.
 
 ### Extending the `actionPerformed()` Method
-Adding code to the `PopupDialogAction.actionPerformed()` method makes the action do something useful. 
+Adding code to the `PopupDialogAction.actionPerformed()` method makes the action do something useful.
 The code below gets information from the `anActionEvent` input parameter and constructs a message dialog.
 A generic icon, and the `dlgMsg` and `dlgTitle` attributes from the invoking menu action are displayed.
 However, code in this method could manipulate a project, invoke an inspection, change the contents of a file, etc.
 
-For demonstration purposes the `AnActionEvent.getData()` method tests if a [`Navigatable`](upsource:///platform/core-api/src/com/intellij/pom/Navigatable.java) object is available. 
-If so, information about the selected element is added to the dialog. 
+For demonstration purposes the `AnActionEvent.getData()` method tests if a [`Navigatable`](upsource:///platform/core-api/src/com/intellij/pom/Navigatable.java) object is available.
+If so, information about the selected element is added to the dialog.
 
-See [Determining the Action Context](/basics/action_system.md#determining-the-action-context) for more information about accessing information from the `AnActionEvent` input parameter. 
+See [Determining the Action Context](/basics/action_system.md#determining-the-action-context) for more information about accessing information from the `AnActionEvent` input parameter.
 
 ```java
   @Override
@@ -169,11 +169,11 @@ See [Determining the Action Context](/basics/action_system.md#determining-the-ac
 
 ### Extending the `update()` Method
 Adding code to `PopupDialogAction.update()` gives finer control of the action's visibility and availability.
-The action's state and(or) presentation can be dynamically changed depending on the context. 
+The action's state and(or) presentation can be dynamically changed depending on the context.
 
 > **WARNING** This method needs to _execute very quickly_. For more information about this constraint, see the warning in [Overriding the AnAction.update Method](/basics/action_system.md#overriding-the-anactionupdate-method).
 
-In this example, the `update()` method relies on a `Project` object being available. 
+In this example, the `update()` method relies on a `Project` object being available.
 This requirement means the user must have at least one project open in the IDE for the `PopupDialogAction` to be available.
 So the `update()` method disables the action for contexts where a `Project` object isn't defined.
 
@@ -189,9 +189,9 @@ Setting both the enabled state and visibility produces consistent behavior despi
   }
 ```
 
-The `update()` method does not check to see if a `Navigatable` object is available before enabling `PopupDialogAction`. 
-This check is unnecessary because using the `Navigatable` object is opportunistic in `actionPerformed()`. 
-See [Determining the Action Context](/basics/action_system.md#determining-the-action-context) for more information about accessing information from the `AnActionEvent` input parameter. 
+The `update()` method does not check to see if a `Navigatable` object is available before enabling `PopupDialogAction`.
+This check is unnecessary because using the `Navigatable` object is opportunistic in `actionPerformed()`.
+See [Determining the Action Context](/basics/action_system.md#determining-the-action-context) for more information about accessing information from the `AnActionEvent` input parameter.
 
 ### Other Method Overrides
 A constructor is overridden in `PopupDialogAction`, but this is an artifact of reusing this class for a dynamically created menu action.

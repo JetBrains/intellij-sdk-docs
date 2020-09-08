@@ -62,7 +62,7 @@ The following primary operations are supported:
 The *IntelliJ Platform* contains several standard file-based indexes. The most useful indexes for plugin developers are:
 
 ### Word Index
-  
+
 Generally, the word index should be accessed indirectly by using helper methods of the [`PsiSearchHelper`](upsource:///platform/indexing-api/src/com/intellij/psi/search/PsiSearchHelper.java) class.
 
 ### File Name Index

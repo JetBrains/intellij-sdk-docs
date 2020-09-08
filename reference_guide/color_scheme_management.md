@@ -5,7 +5,7 @@ title: Color Scheme Management
 
 ## Preface
 
-Color scheme management in IntelliJ IDEA 12.1 was changed to ease the work of scheme designers and make schemes look equally well for different programming languages even if not designed specifically for these languages. 
+Color scheme management in IntelliJ IDEA 12.1 was changed to ease the work of scheme designers and make schemes look equally well for different programming languages even if not designed specifically for these languages.
 Previously language plug-ins were using fixed default colors incompatible, for example, with dark schemes.
 
 The new implementation allows to specify a dependency on a set of standard text attributes which are linked to a scheme but not to any specific language. Language-specific attributes still can be set by a scheme designer if needed but it's optional.
@@ -19,7 +19,7 @@ if only standard attributes are set, they will not be used by the version prior 
 The easiest and the best way to specify highlighting text attributes is to specify a dependency on one of standard keys defined in [`DefaultLanguageHighlighterColors`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/editor/DefaultLanguageHighlighterColors.java):
 
 ```java
-static final TextAttributesKey MY_KEYWORD = 
+static final TextAttributesKey MY_KEYWORD =
   TextAttributesKey.createTextAttributesKey("MY_KEYWORD", DefaultLanguageHighlighterColors.KEYWORD);
 ```
 
@@ -30,13 +30,13 @@ If neither are defined, it will further fall back to a default scheme.
 Text attribute keys can be chained, for example you can define another key as:
 
 ```java
-static final TextAttributesKey MY_PREDEFINED_SYMBOL = 
+static final TextAttributesKey MY_PREDEFINED_SYMBOL =
   TextAttributesKey.createTextAttributesKey("MY_PREDEFINED_SYMBOL", MY_KEYWORD);
 ```
 
 The rule is the same: if text attributes can not be found by `MY_PREDEFINED_SYMBOL` key or are empty, the color scheme manager will search for `MY_KEYWORD` and if not found (empty) will further look for `DEFAULT_KEYWORD`.
 
-> **NOTE** A use of fixed default attributes is _strongly discouraged_.  
+> **NOTE** A use of fixed default attributes is _strongly discouraged_.
 
 If you are not sure which base key to use, it's better to pick the most generic one, for example, `DefaultLanguageHighlighterColors.IDENTIFIER`.
 Remember that using fixed default attributes *will force*  a scheme designer to set up a color for this element explicitly.

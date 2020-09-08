@@ -28,4 +28,3 @@ patchPluginXml {
   sinceBuild = '202'
   untilBuild = '202.*'
 }
-

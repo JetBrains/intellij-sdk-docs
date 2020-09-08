@@ -24,4 +24,3 @@ includeBuild '../settings'
 includeBuild '../simple_language_plugin'
 includeBuild '../tool_window'
 includeBuild '../tree_structure_provider'
-

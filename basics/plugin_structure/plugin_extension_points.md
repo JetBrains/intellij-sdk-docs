@@ -5,18 +5,18 @@ title: Plugin Extension Points
 
 > **NOTE** See [Plugin Extensions](plugin_extensions.md) for _using_ extension points in your plugin.
 
-By defining _extension points_ in your plugin, you can allow other plugins to extend the functionality of your plugin.
+By defining _extension points_ in your plugin, you can allow other plugins to extend your plugin's functionality.
 There are two types of extension points:
 
 * _Interface_ extension points allow other plugins to extend your plugins with _code_.
   When you define an interface extension point, you specify an interface, and other plugins will provide classes implementing that interface.
   You'll then be able to invoke methods on those interfaces.
 * _Bean_ extension points allow other plugins to extend your plugins with _data_.
-  You specify the fully qualified name of an extension class, and other plugins will provide data which will be turned into instances of that class.
+  You specify the fully qualified name of an extension class, and other plugins will provide data that will be turned into instances of that class.
 
 ## Declaring Extension Points
 
-You can declare extensions and extension points in the plugin configuration file `plugin.xml`, within the `<extensions>` and `<extensionPoints>` sections, respectively.
+You can declare extensions and extension points in the plugin configuration file `plugin.xml`, within the `<extensions>` and `<extensionPoints>` sections.
 
 To declare extension points in your plugin, add an `<extensionPoints>` section to your `plugin.xml`.
 Then insert a child element `<extensionPoint>` that defines the extension point name and the name of a bean class or an interface that is allowed to extend the plugin functionality in the `name`, `beanClass` and `interface` attributes, respectively.
@@ -38,7 +38,7 @@ _myPlugin/META-INF/plugin.xml_
 </idea-plugin>
 ```
 
-The `name` attribute assigns a unique name for this extension point, it will be prefixed with the plugin's `<id>` automatically.
+The `name` attribute assigns a unique name for this extension point. It will be prefixed with the plugin's `<id>` automatically.
 
 The `beanClass` attribute sets a bean class that specifies one or several properties annotated with the [`@Attribute`](upsource:///platform/util/src/com/intellij/util/xmlb/annotations/Attribute.java) annotation.
 The `interface` attribute sets an interface the plugin that contributes to the extension point must implement.
@@ -138,4 +138,4 @@ Extension points matching these conditions can then be marked as _dynamic_ by ad
 ```
 
 > **NOTE** All non-dynamic extension points are highlighted via _Plugin DevKit \| Plugin descriptor \| Plugin.xml dynamic plugin verification_ inspection available in IntelliJ IDEA 2020.1 or later.
-> Previous versions also highlight `dynamic` attribute as "experimental".
+> Previous versions also highlight the `dynamic` attribute as "experimental".

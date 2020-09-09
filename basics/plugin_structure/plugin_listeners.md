@@ -3,7 +3,7 @@ title: Plugin Listeners
 ---
 <!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-> **NOTE** Defining listeners in `plugin.xml` is supported starting with version 2019.3 of the platform.
+> **NOTE** Defining listeners in `plugin.xml` is supported, starting with version 2019.3.
 
 > **NOTE** Listener implementations must be stateless and may not implement life-cycle (e.g., `Disposable`).
 
@@ -11,7 +11,7 @@ _Listeners_ allow plugins to declaratively subscribe to events delivered through
 
 You can define both application- and project-level listeners.
 
-Declarative registration of listeners allows you to achieve better performance compared to registering listeners from code, because listener instances are created lazily (the first time an event is sent to the topic), and not during application startup or project opening.
+Declarative registration of listeners allows you to achieve better performance than registering listeners from code, because listener instances are created lazily (the first time an event is sent to the topic), not during application startup or project opening.
 
 ## Defining Application-Level Listeners
 
@@ -24,10 +24,10 @@ To define an application-level listener, add the following section to your `plug
 ```
 
 The `topic` attribute specifies the listener interface corresponding to the type of events you want to receive.
-Normally, this is the interface used as the type parameter of the [`Topic`](upsource:///platform/extensions/src/com/intellij/util/messages/Topic.java) instance for the type of events.
+Usually, this is the interface used as the type parameter of the [`Topic`](upsource:///platform/extensions/src/com/intellij/util/messages/Topic.java) instance for the type of events.
 The `class` attribute specifies the class in your plugin that implements the listener interface and receives the events.
 
-As a specific example, if you want to receive events about all changes in the virtual file system, you need to implement the `BulkFileListener` interface, corresponding to the topic `VirtualFileManager.VFS_CHANGES`.
+As a specific example, if you want to receive events about all virtual file system changes, you need to implement the `BulkFileListener` interface, corresponding to the topic `VirtualFileManager.VFS_CHANGES`.
 To subscribe to this topic from code, you could use something like the following snippet:
 
 ```java
@@ -96,4 +96,4 @@ Registration of listeners can be restricted using the following attributes:
 - `os` - allows to restrict listener to given OS, e.g., `os="windows"` for Windows only (2020.1 and later)
 - `activeInTestMode` - set to `false` to disable listener if `com.intellij.openapi.application.Application.isUnitTestMode()`==`true`
 - `activeInHeadlessMode` - set to `false` to disable listener if `com.intellij.openapi.application.Application.isHeadlessEnvironment()`==`true`.
-  Also covers `activeInTestMode` as test mode implies headless mode.
+  Also, covers `activeInTestMode` as test mode implies a headless mode.

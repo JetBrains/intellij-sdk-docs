@@ -7,8 +7,8 @@ A _service_ is a plugin component loaded on demand when your plugin calls the `g
 
 The *IntelliJ Platform* ensures that only one instance of a service is loaded even though it is called several times.
 
-A service must have an implementation class which is used for service instantiation.
-A service may also have an interface class which is used to obtain the service instance and provides API of the service.
+A service must have an implementation class that is used for service instantiation.
+A service may also have an interface class used to obtain the service instance and provide the service's API.
 
 A service needing a shutdown hook/cleanup routine can implement [`Disposable`](upsource:///platform/util/src/com/intellij/openapi/Disposable.java) and perform necessary work in `dispose()` (see [Automatically Disposed Objects](/basics/disposers.md#automatically-disposed-objects)).
 
@@ -16,10 +16,10 @@ A service needing a shutdown hook/cleanup routine can implement [`Disposable`](u
 The *IntelliJ Platform* offers three types of services: _application level_ services (global singleton), _project level_ services, and _module level_ services.
 For the latter two, a separate instance of the service is created for each instance of its corresponding scope, see [Project Model Introduction](/basics/project_structure.md).
 
-> **NOTE** Please consider not using module level services because it can lead to increased memory usage for projects with many modules.
+> **NOTE** Please consider not using module-level services because it can increase memory usage for projects with many modules.
 
 #### Constructor
-Project/Module level service constructors can have `Project`/`Module` argument.
+Project/Module level service constructors can have a `Project`/`Module` argument.
 To improve startup performance, avoid any heavy initializations in the constructor.
 
 > **NOTE** Please note that using constructor injection is deprecated (and not supported in [Light Services](#light-services)) for performance reasons.
@@ -31,7 +31,7 @@ To improve startup performance, avoid any heavy initializations in the construct
 
 A service not going to be overridden does not need to be registered in `plugin.xml` (see [Declaring a Service](#declaring-a-service)).
 Instead, annotate service class with [`@Service`](upsource:///platform/core-api/src/com/intellij/openapi/components/Service.java).
-The service instance will be created in scope according to caller (see [Retrieving a Service](#retrieving-a-service)).
+The service instance will be created in scope according to the caller (see [Retrieving a Service](#retrieving-a-service)).
 
 Restrictions:
 
@@ -55,7 +55,7 @@ Distinct extension points are provided for each type:
 2. In the *New* menu, choose *Plugin DevKit* and click *Application Service*, *Project Service* or *Module Service* (not recommended, see Note above) depending on the type of service you need to use.
 3. In the dialog box that opens, you can specify service interface and implementation, or just a service class if you uncheck *Separate interface from implementation* checkbox.
 
-The IDE will generate new Java interface and class (or just a class if you unchecked *Separate interface from implementation* checkbox) and register the new service in `plugin.xml` file.
+The IDE will generate a new Java interface and class (or just a class if you unchecked *Separate interface from implementation* checkbox) and register the new service in the `plugin.xml` file.
 
 To clarify the service declaration procedure, consider the following fragment of the `plugin.xml` file:
 
@@ -77,7 +77,7 @@ To provide custom implementation for test/headless environment, specify `testSer
 
 ## Retrieving a Service
 
-Getting service doesn't need read action and can be performed from any thread.
+Getting service doesn't need to read action and can be performed from any thread.
 If service is requested from several threads, it will be initialized in the first thread, and other threads will be blocked until service is fully initialized.
 
 To retrieve a service in Java code:

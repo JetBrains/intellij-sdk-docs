@@ -4,10 +4,11 @@ title: Syntax Highlighting and Error Highlighting
 <!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 The class used to specify how a particular range of text should be highlighted is called [`TextAttributesKey`](upsource:///platform/core-api/src/com/intellij/openapi/editor/colors/TextAttributesKey.java).
-An instance of this class is created for every distinct type of item which should be highlighted (keyword, number, string and so on).
-The `TextAttributesKey` defines the default attributes which are applied to items of the corresponding type (for example, keywords are bold, numbers are blue, strings are bold and green).
-The mapping of the `TextAttributesKey` to specific attributes used in an editor is defined by the [`EditorColorsScheme`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/editor/colors/EditorColorsScheme.java) class, and can be configured by the user if the plugin provides an appropriate configuration interface.
-Highlighting from multiple `TextAttributesKey` items can be layered - for example, one key may define an item's boldness and another its color.
+An instance of this class is created for every distinct type of item that should be highlighted (keyword, number, string, etc.).
+The `TextAttributesKey` defines the default attributes applied to items of the corresponding type (for example, keywords are bold, numbers are blue, strings are bold and green).
+The mapping of the `TextAttributesKey` to specific attributes used in an editor is defined by the [`EditorColorsScheme`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/editor/colors/EditorColorsScheme.java) class. 
+It can be configured by the user if the plugin provides an appropriate configuration interface.
+Highlighting from multiple `TextAttributesKey` items can be layered - for example, one key may define an item's boldness and another color.
 
 **Note:**
 New functionality about Language Defaults and support for additional color schemes as detailed in [Color Scheme Management](/reference_guide/color_scheme_management.md).
@@ -15,12 +16,12 @@ New functionality about Language Defaults and support for additional color schem
 > **TIP** To force re-highlighting, use
 > [`DaemonCodeAnalyzer.restart()`](upsource:///platform/analysis-api/src/com/intellij/codeInsight/daemon/DaemonCodeAnalyzer.java).
 
-The syntax and error highlighting is performed on multiple levels: Lexer, Parser and (External) Annotator.
+The syntax and error highlighting are performed on multiple levels: Lexer, Parser, and (External) Annotator.
 
 ### Lexer
 
-The first level of syntax highlighting is based on the lexer output, and is provided through the [`SyntaxHighlighter`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/fileTypes/SyntaxHighlighter.java) interface.
-The syntax highlighter returns the `TextAttributesKey` instances for each token type which needs special highlighting.
+The first syntax highlighting level is based on the lexer output and is provided through the [`SyntaxHighlighter`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/fileTypes/SyntaxHighlighter.java) interface.
+The syntax highlighter returns the `TextAttributesKey` instances for each token type, which needs special highlighting.
 For highlighting lexer errors, the standard `TextAttributesKey` for bad characters [`HighlighterColors.BAD_CHARACTER`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/editor/HighlighterColors.java) can be used.
 
 **Examples:**
@@ -30,12 +31,12 @@ For highlighting lexer errors, the standard `TextAttributesKey` for bad characte
 ### Parser
 
 The second level of error highlighting happens during parsing.
-If a particular sequence of tokens is invalid according to the grammar of the language, the [`PsiBuilder.error()`](upsource:///platform/core-api/src/com/intellij/lang/PsiBuilder.java) method can be used to highlight the invalid tokens and display an error message showing why they are not valid.
+If a particular sequence of tokens is invalid according to the grammar of the language, the [`PsiBuilder.error()`](upsource:///platform/core-api/src/com/intellij/lang/PsiBuilder.java) method can highlight the invalid tokens and display an error message showing why they are not valid.
 
 ### Annotator
 
 The third level of highlighting is performed through the [`Annotator`](upsource:///platform/analysis-api/src/com/intellij/lang/annotation/Annotator.java) interface.
-A plugin can register one or more annotators in the `com.intellij.annotator` extension point, and these annotators are called during the background highlighting pass to process the elements in the PSI tree of the custom language.
+A plugin can register one or more annotators in the `com.intellij.annotator` extension point, and these annotators are called during the background highlighting pass to process the elements in the custom language's PSI tree.
 Annotators can analyze not only the syntax, but also the semantics using PSI, and thus can provide much more complex syntax and error highlighting logic.
 The annotator can also provide quick fixes to problems it detects.
 
@@ -61,7 +62,7 @@ It uses the same [`AnnotationHolder`](upsource:///platform/analysis-api/src/com/
 The plugin can also provide a configuration interface to allow the user to configure the colors used for highlighting specific items.
 In order to do that, it should provide an implementation of [`ColorSettingPage`](upsource:///platform/platform-api/src/com/intellij/openapi/options/colors/ColorSettingsPage.java) and register it in the `com.intellij.colorSettingsPage` extension point.
 
-The _Export to HTML_ feature uses the same syntax highlighting mechanism as the editor, so it will work automatically for custom languages which provide a syntax highlighter.
+The _Export to HTML_ feature uses the same syntax highlighting mechanism as the editor, so it will work automatically for custom languages, which provide a syntax highlighter.
 
 **Examples**:
 - [`ColorSettingsPage`](upsource:///plugins/properties/src/com/intellij/openapi/options/colors/pages/PropertiesColorsPage.java) for [Properties language plugin](upsource:///plugins/properties/)

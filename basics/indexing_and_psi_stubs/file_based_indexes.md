@@ -4,7 +4,7 @@ title: File-Based Indexes
 <!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 File-based indexes are based on a Map/Reduce architecture.
-Each index has a specific type of key and a particular type of value.
+Each index has a specific type of key and a particular kind of value.
 
 The key is what's later used to retrieve data from the index.
 
@@ -12,11 +12,11 @@ The key is what's later used to retrieve data from the index.
 
 The value is arbitrary data, which is associated with the key in the index.
 
-*Example:* in the word index, the value is a mask indicating in which context the word occurs (code, string literal or comment).
+*Example:* in the word index, the value is a mask indicating how context the word occurs (code, a string literal, or comment).
 
-In the simplest case, when we only need to know in what files some data is present, the value has type `Void` and is not stored in the index.
+In the simplest case, when we only need to know what files some data is present, the value has type `Void` and is not stored in the index.
 
-When the index implementation indexes a file, it receives the content of a file and returns a map from the keys found in the file to the associated values.
+When the index implementation indexes a file, it receives a file's content and returns a map from the keys found in the file to the associated values.
 
 When you access the index, you specify the key you're interested in and get back the list of files in which the key occurs, and the value associated with each file.
 
@@ -37,11 +37,11 @@ An implementation of a file-based index consists of the following main parts:
 * `getValueExternalizer()` returns the value serializer responsible for storing values in a serialized binary format.
 * `getInputFilter()` allows restricting the indexing only to a certain set of files.
 * `getVersion()` returns the version of the index implementation.
-  The index is automatically rebuilt if the current version differs from the version of the index implementation used to build the index.
+  The index is automatically rebuilt if the current version differs from the version of the index implementation used to build it.
 
 If you don't need to associate any value with the files (i.e., your value type is `Void`), you can simplify the implementation by using [`ScalarIndexExtension`](upsource:///platform/indexing-api/src/com/intellij/util/indexing/ScalarIndexExtension.java) as the base class.
 
-> **WARNING** The data returned by `DataIndexer.map()` must depend only on input data passed to the method, and must not depend on any external files.
+> **WARNING** The data returned by `DataIndexer.map()` must depend only on input data passed to the method, and must not rely on any external files.
 > Otherwise, your index will not be correctly updated when the external data changes, and you will have stale data in your index.
 
 > **NOTE** Please see `com.intellij.util.indexing.DebugAssertions` on how to enable additional debugging assertions during development to assert correct index implementation.
@@ -54,11 +54,11 @@ The following primary operations are supported:
 
 * `getAllKeys()` and `processAllKeys()` allow obtaining the list of all keys found in files, which are a part of the specified project.
 
-> **NOTE** The returned data is guaranteed to contain all keys found in up-to-date project content, but may also include additional keys not currently found in the project.
+> **NOTE** The returned data is guaranteed to contain all keys found in up-to-date project content and include additional keys not currently located in the project.
 
 * `getValues()` allows to get all values associated with a specific key but not the files in which they were found.
-* `getContainingFiles()` allows to collect all files in which a specific key was encountered.
-* `processValues()` allows iterating though all files in which a specific key was encountered and accessing the associated values at the same time.
+* `getContainingFiles()` allows collecting all files in which a particular key was encountered.
+* `processValues()` allows iterating through all files in which a specific key was encountered and accessing the associated values simultaneously.
 
 > **WARNING** Nested index access is forbidden as it might lead to a deadlock.
 > Collect all necessary data from index A first, then process results while accessing index B.

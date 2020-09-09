@@ -8,11 +8,11 @@ The virtual file system (VFS) is a component of the *IntelliJ Platform* that enc
 It serves the following main purposes:
 
 * Providing a universal API for working with files regardless of their actual location (on disk, in an archive, on an HTTP server, etc.)
-* Tracking file modifications and providing both old and new versions of the file content when a modification is detected.
+* Tracking file modifications and providing both old and new versions of the file content when a change is detected.
 * Providing a possibility to associate additional persistent data with a file in the VFS.
 
-To provide the last two features, the VFS manages a _persistent snapshot_ of some of the contents of the user's hard disk.
-The snapshot stores only those files which have been requested at least once through the VFS API, and is asynchronously updated to match the changes happening on the disk.
+To provide the last two features, the VFS manages a _persistent snapshot_ of some of the user's hard disk contents.
+The snapshot stores only those files requested at least once through the VFS API and is asynchronously updated to match the disk's changes.
 
 The snapshot is application level, not project level - so, if some file (for example, a class in the JDK) is referenced by multiple projects, only one copy of its contents will be stored in the VFS.
 
@@ -23,10 +23,10 @@ If the information is available in the snapshot, the snapshot data is returned.
 The contents of files and the lists of files in directories are stored in the snapshot only if that specific information was accessed.
 Otherwise, only file metadata like name, length, timestamp, attributes are stored.
 
-> **NOTE** This means that the state of the file system and the file contents displayed in the IntelliJ Platform UI comes from the snapshot, which may not always match the actual contents of the disk.
-> For example, in some cases deleted files can still be visible in the UI for some time before the deletion is picked up by the IntelliJ Platform.
+> **NOTE** This means that the state of the file system and the file contents displayed in the IntelliJ Platform UI comes from the snapshot, which may not always match the disk's actual contents.
+> For example, in some cases, deleted files can still be visible in the UI for some time before the deletion is picked up by the IntelliJ Platform.
 
-The snapshot is updated from disk during _refresh operations_, which generally happen asynchronously.
+The snapshot is updated from disk during _refresh operations_, which generally happens asynchronously.
 All write operations made through the VFS are synchronous - i.e., the contents are saved to disk immediately.
 
 A refresh operation synchronizes the state of a part of the VFS with the actual disk contents.
@@ -42,22 +42,22 @@ If a file watcher is available, a refresh operation looks only at the files that
 If no file watcher is present, a refresh operation walks through all directories and files in the refresh scope.
 
 Refresh operations are based on file timestamps.
-If the contents of a file were changed, but its timestamp remained the same, the *IntelliJ Platform* will not pick up the updated contents.
+If a file's contents were changed, but its timestamp remained the same, the *IntelliJ Platform* will not pick up the updated contents.
 
 There is currently no facility for removing files from the snapshot.
-If a file was loaded there once, it remains there forever unless it was deleted from the disk and a refresh operation was called on one of its parent directories.
+If a file was loaded there once, it remains there forever unless it was deleted from the disk, and a refresh operation was called on one of its parent directories.
 
-The VFS itself does not honor ignored files listed in **Settings \| Editor \| File Types** and folders to ignore and excluded folders listed in **Project Structure \| Modules \| Sources \| Excluded**.
+The VFS itself does not honor ignored files listed in **Settings \| Editor \| File Types** and folders to ignore and exclude folders listed in **Project Structure [] Modules \| Sources \| Excluded**.
 If the application code accesses them, the VFS will load and return their contents.
 In most cases, the ignored files and excluded folders must be skipped from processing by higher-level code.
 
 During the lifetime of a running instance of an IntelliJ Platform IDE, multiple `VirtualFile` instances may correspond to the same disk file.
-They are equal, have the same `hashCode` and share, the user data.
+They are equal, have the same `hashCode`, and share the user data.
 
 ## Synchronous and Asynchronous Refreshes
 
 From the point of view of the caller, refresh operations can be either synchronous or asynchronous.
-In fact, the refresh operations are executed according to their own threading policy, and the synchronous flag simply means that the calling thread will be blocked until the refresh operation (which will most likely run on a different thread) is completed.
+In fact, the refresh operations are executed according to their own threading policy. The synchronous flag simply means that the calling thread will be blocked until the refresh operation (which will most likely run on a different thread) is completed.
 
 Both synchronous and asynchronous refreshes can be initiated from any thread.
 If a refresh is initiated from a background thread, the calling thread must not hold a read action, because otherwise, a deadlock would occur.
@@ -71,12 +71,12 @@ If there is some code that needs to be executed after the refresh is complete, t
 * [`RefreshQueue.createSession()`](upsource:///platform/analysis-api/src/com/intellij/openapi/vfs/newvfs/RefreshQueue.java)
 * [`VirtualFile.refresh()`](upsource:///platform/core-api/src/com/intellij/openapi/vfs/VirtualFile.java)
 
-Synchronous refreshes can cause deadlocks in some cases, depending on which locks are held by the thread invoking the refresh operation.
+Synchronous refreshes can cause deadlocks, depending on which locks are held by the thread invoking the refresh operation.
 
 ## Virtual File System Events
 
-All changes happening in the virtual file system, either as a result of refresh operations or caused by user actions, are reported as _virtual file system events_.
-VFS events are always fired in the event dispatch thread, and in a write action.
+All changes happening in the virtual file system, either due to refresh operations or caused by user actions, are reported as _virtual file system events_.
+VFS events are always fired in the event dispatch thread and in a write action.
 
 The most efficient way to listen to VFS events is to implement [`BulkFileListener`](upsource:///platform/core-api/src/com/intellij/openapi/vfs/newvfs/BulkFileListener.java) and to subscribe with it to the [`VirtualFileManager.VFS_CHANGES`](upsource:///platform/core-api/src/com/intellij/openapi/vfs/VirtualFileManager.java) topic.
 A non-blocking variant [`AsyncFileListener`](upsource:///platform/core-api/src/com/intellij/openapi/vfs/AsyncFileListener.java) is also available in 2019.2 or later.
@@ -86,7 +86,7 @@ See [How do I get notified when VFS changes?](/basics/architectural_overview/vir
 > You may need to filter out events that aren't relevant to your task (e.g., via [`ProjectFileIndex.isInContent()`](upsource:///platform/projectModel-api/src/com/intellij/openapi/roots/ProjectFileIndex.java)).
 
 VFS events are sent both before and after each change, and you can access the old contents of the file in the before event.
-Note that events caused by a refresh are sent after the changes have already occurred on disk - so when you process the `beforeFileDeletion` event, for example, the file has already been deleted from disk.
+Note that events caused by a refresh are sent after the changes have already occurred on disk. So when you process the `beforeFileDeletion` event, for example, the file has already been deleted from disk.
 However, it is still present in the VFS snapshot, and you can access its last contents using the VFS API.
 
 Note that a refresh operation fires events only for changes in files that have been loaded in the snapshot.

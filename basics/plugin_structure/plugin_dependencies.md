@@ -7,7 +7,7 @@ A plugin may depend on classes from other plugins, either bundled, third-party, 
 This document describes the syntax for declaring plugin dependencies and optional plugin dependencies.
 For more information about dependencies on the IntelliJ Platform modules, see Part II of this document: [Plugin Compatibility with IntelliJ Platform Products](/basics/getting_started/plugin_compatibility.md).
 
-> **NOTE** It is not possible to specify the minimum/maximum version for the dependent plugin. ([Issue](https://youtrack.jetbrains.com/issue/IDEABKL-7906))
+> **NOTE** It is impossible to specify the minimum/maximum version for the dependent plugin. ([Issue](https://youtrack.jetbrains.com/issue/IDEABKL-7906))
 
 To express dependencies on classes from other plugins or modules, perform the following three required steps:
 
@@ -27,7 +27,7 @@ Depending on the chosen development workflow (Gradle or DevKit), one of the two 
 ### 2.1 Gradle
 > **NOTE** Please see the `plugins` attribute [gradle-intellij-plugin: Configuration](https://github.com/JetBrains/gradle-intellij-plugin#configuration) for acceptable values.
 
-If the project is using [Gradle](/tutorials/build_system.md) with a Groovy build script to build the plugin, add the dependency to the `plugins` parameter of the `intellij` block in your `build.gradle`, for example:
+If the project uses [Gradle](/tutorials/build_system.md) with a Groovy build script to build the plugin, add the dependency to the `plugins` parameter of the `intellij` block in your `build.gradle`, for example:
 
 ```groovy
 intellij {
@@ -48,7 +48,7 @@ intellij {
 ### 2.2 DevKit
 > **TIP** Existing DevKit-based projects can be converted to use [Gradle setup](/tutorials/build_system/prerequisites.md#adding-gradle-support-to-an-existing-devkit-based-intellij-platform-plugin) where managing dependencies is fully automated.
 
-If the project is using [DevKit](/basics/getting_started/using_dev_kit.md), add the JARs of the plugin on which the project depends to the **classpath** of the *IntelliJ Platform SDK*.
+If the project uses [DevKit](/basics/getting_started/using_dev_kit.md), add the JARs of the plugin on which the project depends on the **classpath** of the *IntelliJ Platform SDK*.
 
 > **WARNING** Do not add the plugin JARs as a library: this will fail at runtime because the IntelliJ Platform will load two separate copies of the dependency plugin classes.
 
@@ -64,7 +64,7 @@ If only general IntelliJ Platform features (APIs) are used, then a default depen
 To display a list of available IntelliJ Platform modules, invoke the [code completion](https://www.jetbrains.com/help/idea/auto-completing-code.html#4eac28ba) feature for the `<depends>` element contents while editing the plugin project's `plugin.xml` file.
 
 ### 3.1 Configuring plugin.xml
-In the `plugin.xml`, add a `<depends>` tag with the ID of the dependency plugin as its content.
+In the `plugin.xml`, add a `<depends>` tag with the dependency plugin's ID as its content.
 Continuing with the example from [Section 2](#2-project-setup) above, the dependency declaration in `plugin.xml` would be:
 
 ```xml
@@ -74,7 +74,7 @@ Continuing with the example from [Section 2](#2-project-setup) above, the depend
 
 ## Optional Plugin Dependencies
 A project can also specify an optional plugin dependency.
-In this case, the plugin will load even if the plugin it depends on is not installed or enabled, but part of the functionality of the plugin will not be available.
+In this case, the plugin will load even if the plugin depends on is not installed or enabled, but part of the plugin's functionality will not be available.
 In order to do that, add `optional="true" config-file="otherconfig.xml"` to the `<depends>` tag.
 
 For example, if a plugin project adds additional highlighting for Java and Kotlin files, use the following setup.

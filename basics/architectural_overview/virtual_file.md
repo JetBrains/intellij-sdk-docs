@@ -42,7 +42,7 @@ Invoking a VFS refresh might be necessary for accessing a file that has just bee
 
 ## How long does a virtual file persist?
 
-A particular file on disk is represented by equal `VirtualFile` instances for the entire lifetime of the IDE process.
+A particular file on disk is represented by equal `VirtualFile` instances for the IDE process's entire lifetime.
 There may be several instances corresponding to the same file, and they can be garbage-collected.
 The file is a `UserDataHolder`, and the user data is shared between those equal instances.
 If a file is deleted, its corresponding VirtualFile instance becomes invalid (`isValid()` returns `false`), and operations cause exceptions.

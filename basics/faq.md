@@ -18,7 +18,7 @@ This FAQ is a topical index of questions that have been asked (and answered) on 
 *  [How do I add a main menu item?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206750335-Add-new-Main-menu-option-for-plugin)
 *  [How do I customize the "New..." menu?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206765055-Overriding-the-New-context-menu-in-the-Project-view)
 *  [How do I customize the compiler output context menu?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206142169-How-to-add-a-menu-item-below-Exclude-From-Compile-)
-*  [How do I get the context of an action (selected file, active project etc.)?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206756455-Question-about-Actions)
+*  [How do I get the context of an action (selected file, active project, etc.)?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206756455-Question-about-Actions)
 *  [How do I change the icon of an action dynamically?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206763405-How-to-dynamically-change-icons-in-the-tool-bar-)
 *  [How do I add icons to the IDEA toolbar?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206151289-How-to-add-icons-to-the-toolbar-)
 *  [Where do I get the list of built-in action IDs?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206126699-List-of-built-in-action-ID-s-)

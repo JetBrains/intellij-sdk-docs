@@ -5,7 +5,7 @@ redirect_from:
 ---
 <!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-_Extensions_ are the most common way for a plugin to extend the functionality of the IntelliJ Platform in a way that is not as straightforward as adding an action to a menu or toolbar.
+_Extensions_ are the most common way for a plugin to extend the IntelliJ Platform's functionality in a way that is not as straightforward as adding an action to a menu or toolbar.
 
 The following are some of the most common tasks accomplished using extensions:
 
@@ -20,16 +20,16 @@ There are [more than 1000 extension](#how-to-get-the-extension-points-list) poin
 
 ## Declaring Extensions
 
-> **TIP** Auto-completion, Quick Documentation and other code insight features are available on extension point tags and attributes.
+> **TIP** Auto-completion, Quick Documentation, and other code insight features are available on extension point tags and attributes.
 
 1. Add an `<extensions>` element to your `plugin.xml` if it's not yet present there.
    Set the `defaultExtensionNs` attribute to one of the following values:
     * `com.intellij`, if your plugin extends the IntelliJ Platform core functionality.
-    * `{ID of a plugin}`, if your plugin extends a functionality of another plugin.
+    * `{ID of a plugin}`, if your plugin extends the functionality of another plugin.
 2. Add a new child element to the `<extensions>` element.
    The child element name must match the name of the extension point you want the extension to access.
 3. Depending on the type of the extension point, do one of the following:
-    * If the extension point was declared using the `interface` attribute, for newly added child element, set the `implementation` attribute to the name of the class that implements the specified interface.
+    * If the extension point was declared using the `interface` attribute, for newly added child element, set the `implementation` attribute to the class's name that implements the specified interface.
     * If the extension point was declared using the `beanClass` attribute, for newly added child element, set all attributes annotated with the [`@Attribute`](upsource:///platform/util/src/com/intellij/util/xmlb/annotations/Attribute.java) annotations in the specified bean class.
 
 
@@ -85,13 +85,13 @@ Property name `language` (or ending in `*Language`, 2020.2+) resolves to all pre
 
 Similarly, `action` resolves to all registered `<action>` IDs.
 
-Specifying `@org.jetbrains.annotations.Nls` verifies capitalization of UI text properties according to given `capitalization` value (2019.2 and later).
+Specifying `@org.jetbrains.annotations.Nls` verifies UI text properties' capitalization according to given `capitalization` value (2019.2 and later).
 
 Attributes with `Enum` type support code insight with _lowerSnakeCased_ notation (2020.1 and later).
 
 ## How to get the extension points list?
 
-All available extension points for the specified namespace can be listed by using auto-completion inside `<extensions>` block.
+All available extension points for the specified namespace can be listed using auto-completion inside the `<extensions>` block.
 
 To get a list of extension points available in the *IntelliJ Platform* core, consult the `<extensionPoints>` section of the following XML configuration files:
 

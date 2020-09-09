@@ -57,7 +57,7 @@ Note the different areas of transparent padding used for each shape:
 <br>
 
 ### Plugin Logo Colors
-If the plugin’s technology already has a logo, use its colors.
+If the plugin's technology already has a logo, use its colors.
 Check the license terms before using the logo.
 If there is no existing logo, or its use is prohibited, create a custom logo based on the [Action Colors Palette](https://jetbrains.design/intellij/principles/icons/#action-icons) in the IntelliJ Platform UI Guidelines for Icons.
 
@@ -66,8 +66,8 @@ If there is no existing logo, or its use is prohibited, create a custom logo bas
 | _The YouTrack Plugin Logo uses<br>the YouTrack product logo_ | _The Keymap Plugin Logo uses a color<br>from the Action Colors Palette_ |
 
 Ensure a Plugin Logo is visible on both light and dark backgrounds.
-If one Plugin Logo design does not work on both light and dark backgrounds, then create separate light and dark versions of the Plugin Logo.
-The examples below illustrate how a Plugin Logo design may work well for a light background but not so well for a dark background.
+If one Plugin Logo design does not work on both light and dark backgrounds, create separate light and dark versions of the Plugin Logo.
+The examples below illustrate how a Plugin Logo design may work well for a light background but not for a dark background.
 Consequently, a separate Plugin Logo for dark backgrounds is needed.
 
 | ![Plugin Logo on Light UI Theme](img/light_version.png){:width="225px"} | ![Light Plugin Logo on Dark UI Theme](img/dark_bad.png){:width="225px"} | ![Plugin Logo for Dark UI Theme](img/dark_good.png){:width="225px"} |
@@ -86,9 +86,9 @@ Name the Plugin Logo files according to the following conventions:
 
 
 ## Adding Plugin Logo Files to a Plugin Project
-The Plugin Logo files must be in the `META-INF` folder of the plugin distribution file, i.e. the `*.jar` or `*.zip` file you upload to the plugin repository and install into a JetBrains IDE.
+The Plugin Logo files must be in the `META-INF` folder of the plugin distribution file, i.e., the `*.jar` or `*.zip` file you upload to the plugin repository and install into a JetBrains IDE.
 
-To include Plugin Logo files in your distribution file, place the Plugin Logo files into a plugin project's `resources/META-INF` folder.
+Include Plugin Logo files in your distribution file and place the Plugin Logo files into a plugin project's `resources/META-INF` folder.
 Note that this requirement is the same regardless of using DevKit or Gradle for developing a plugin.
 For example:
 

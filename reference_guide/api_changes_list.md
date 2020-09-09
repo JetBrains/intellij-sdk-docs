@@ -6,9 +6,9 @@ title: Incompatible Changes in IntelliJ Platform and Plugins API
 <!--
 =============== DO NOT RENAME OR MOVE THIS FILE ===============
 
-Before documenting a breaking API change, please, make sure that the change cannot be avoided in an alternative way.
+Before documenting a breaking API change, please ensure that the change cannot be avoided in an alternative way.
 
-APIs marked with @ApiStatus.Experimental, @ApiStatus.Internal or @ApiStatus.ScheduledForRemoval don't need to be documented.
+APIs marked with @ApiStatus.Experimental, @ApiStatus.Internal, or @ApiStatus.ScheduledForRemoval don't need to be documented.
 
 To document a new incompatible change, add a new line with the problem pattern followed by a 2nd line with ": "-prefixed human-readable description and recommended fix/action.
 
@@ -50,21 +50,21 @@ Where the placeholders must be enclosed in code quotes (`name`):
 <human-readable parameters> is a string representing parameters, which are not necessarily fully qualified. They do not affect the parser. For example, instead of (java.lang.Object, java.util.List, int) you are free to write (Object, List<String>, int)
 <parameter name> is exact name of the method's parameter
 <property name> is a full name of a property from .properties file, like `some.action.description`
-<bundle name> is a fully qualified name of the property bundle, which includes its package, like `message.IdeBundle`
+<bundle name> is a fully qualified name of the property bundle, including its package, like `message.IdeBundle`
 
 NOTE: If a code change you're trying to document doesn't match any of the above patterns, fill in a ticket in the YouTrack.
 An example of a ticket is https://youtrack.jetbrains.com/issue/MP-1218. Until supported, you may document the change as you prefer, and I will correct it later.
 
 NOTE: You are allowed to prettify the pattern using links: [`org.example.Foo`](https://github.com/JetBrains/intellij-community/tree/master/)
 
-NOTE: Entries not starting with code quotes (`name`) can be added to document non-code changes and will be skipped in API verification.
+NOTE: Entries not starting with code quotes (`name`) can be added to document non-code changes and be skipped in API verification.
 -->
 
-IntelliJ API may be occasionally changed between releases, leading to incompatibilities of existing plugins with newer IDE builds.
+IntelliJ API may be occasionally changed between releases, leading to existing plugins' incompatibilities with newer IDE builds.
 
 <!--
-> **NOTE** Starting with 2020.1 release, IntelliJ Platform–based IDEs will use compatibility check information provided by the [JetBrains Plugins Repository](https://plugins.jetbrains.com) to highlight possible compatibility issues to users directly in the IDE's "Plugins" manager.
-> Therefore, it is important to keep your plugins up to date with regard to the existing and upcoming API changes.
+> **NOTE** Starting with the 2020.1 release, IntelliJ Platform-based IDEs will use compatibility check information provided by the [JetBrains Plugins Repository](https://plugins.jetbrains.com) to highlight possible compatibility issues to users directly in the IDE's "Plugins" manager.
+> Therefore, it is essential to keep your plugins up to date about the existing and upcoming API changes.
 -->
 
 ## Verifying Compatibility
@@ -75,7 +75,7 @@ Compatibility with newer IDEs can easily be verified for plugins hosted on the [
 For local verification or non-public plugins, [intellij-plugin-verifier](https://github.com/JetBrains/intellij-plugin-verifier) can be used standalone as well.
 Integration in [Gradle build](/tutorials/build_system.md) is currently possible via some additional scripts, please see [this issue](https://github.com/JetBrains/gradle-intellij-plugin/issues/385) for details.
 
-If your plugin is hosted on GitHub, it is also readily made available via these GitHub Actions:
+If your plugin is hosted on GitHub, it is also readily available via these GitHub Actions:
 - [IntelliJ Platform Plugin Verifier](https://github.com/marketplace/actions/intellij-platform-plugin-verifier)
 - [IntelliJ Plugin Verifier](https://github.com/marketplace/actions/intellij-plugin-verifier)
 
@@ -95,4 +95,4 @@ The following pages list the breaking changes in IDE/plugin releases with requir
 * [**Changes in 2017.***](api_changes/api_changes_list_2017.md)
 * [**Changes in 2016.***](api_changes/api_changes_list_2016.md)
 
-> **NOTE** Changes from API marked with `org.jetbrains.annotations.ApiStatus.@Experimental`/`ScheduledForRemoval` are not listed here, as incompatible changes are to be expected.
+> **NOTE** Changes from API marked with `org.jetbrains.annotations.ApiStatus.@Experimental`/`ScheduledForRemoval` are not listed here, as incompatible changes are expected.

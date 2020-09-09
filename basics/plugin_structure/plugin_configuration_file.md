@@ -21,20 +21,20 @@ When using Gradle, a number of metadata elements will be provided at build time 
        Displayed in the "Plugins" settings dialog and the plugin repository Web interface. -->
   <name>Vss Integration</name>
 
-  <!-- Unique identifier of the plugin. Should be FQN.
-       Cannot be changed between the plugin versions.
+  <!-- Unique identifier of the plugin. It should be FQN.
+       It cannot be changed between the plugin versions.
        If not specified, <name> will be used (not recommended). -->
   <id>com.jetbrains.vssintegration</id>
 
   <!-- Description of the plugin.
        Should be short and to the point.
-       Start the description with a verb in present simple form such as
+       Start the description with a verb in a present simple form such as
        "integrates", "synchronizes", "adds support for" or "lets you view".
-       Don’t use marketing adjectives like “simple”, “lightweight”, or “professional”.
-       Don’t repeat the name of the plugin.
+       Don't use marketing adjectives like "simple", "lightweight", or "professional".
+       Don't repeat the name of the plugin.
        For plugins that add language/platform/framework support, the description MUST specify
        the version of the corresponding language/platform/framework.
-       Don't mention the IDE compatibility. E.g. don't say "Adds support to IntelliJ IDEA for..."
+       Don't mention the IDE compatibility. E.g., don't say "Adds support to IntelliJ IDEA for..."
        Displayed in the "Plugins" settings dialog and the plugin repository Web interface.
        Simple HTML elements can be included between <![CDATA[  ]]> tags.  -->
   <description>Integrates Volume Snapshot Service W10</description>
@@ -50,15 +50,15 @@ When using Gradle, a number of metadata elements will be provided at build time 
   <version>1.0.0</version>
 
   <!-- The vendor of the plugin.
-       The optional "url" attribute specifies the URL of the vendor homepage.
-       The optional "email" attribute specifies the e-mail address of the vendor.
+       The optional "URL" attribute specifies the URL of the vendor homepage.
+       The optional "email" attribute specifies the email address of the vendor.
        Displayed in the "Plugins" settings dialog and the plugin repository Web interface. -->
   <vendor url="https://www.company.com" email="support@company.com">A Company Inc.</vendor>
 
   <!-- Mandatory dependencies on plugins or modules.
        The FQN module names in <depends> elements are used to determine IDE compatibility for the plugin.
        Include at least the module shown below to indicate compatibility with IntelliJ Platform-based products.
-       Also include dependencies on other plugins as needed.
+       Also, include dependencies on other plugins as needed.
        See "Compatibility with Multiple Products" and "Plugin Dependencies" for more information.  -->
   <depends>com.intellij.modules.platform</depends>
   <depends>com.third.party.plugin</depends>
@@ -125,7 +125,7 @@ When using Gradle, a number of metadata elements will be provided at build time 
     </action>
   </actions>
 
-  <!-- Extension points defined by the plugin.
+  <!-- Extension points are defined by the plugin.
        Extension points are registered by a plugin so that other
        plugins can provide this plugin with certain data.
   -->
@@ -156,4 +156,4 @@ When using Gradle, a number of metadata elements will be provided at build time 
     <listener class="com.foo.impl.MyToolwindowListener" topic="com.intellij.openapi.wm.ex.ToolWindowManagerListener"/>
   </projectListeners>
 </idea-plugin>
-```
+`"

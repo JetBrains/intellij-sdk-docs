@@ -3,7 +3,7 @@ title: Additional Minor Features
 ---
 <!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-A number of minor features are listed in the following format:
+Many minor features are listed in the following format:
 
 _EP: `fully.qualified.extensionPointName`_ - Extension Point Name (must be specified in `plugin.xml`)
 
@@ -18,17 +18,17 @@ EP: `com.intellij.lang.braceMatcher`
 [`PairedBraceMatcher`](upsource:///platform/analysis-api/src/com/intellij/lang/PairedBraceMatcher.java)
 Returns an array of brace pairs ([`BracePair`](upsource:///platform/analysis-api/src/com/intellij/lang/BracePair.java)) specifying the characters for the opening and closing braces and the lexer token types for these characters.
 (In principle, it is possible to return multi-character tokens, like "begin" and "end", as the start and end tokens of a brace pair.
-The IDE will match such braces, but the highlighting for such braces will not be fully correct.)
+The IDE will match such braces, but the highlighting for such braces will not be entirely correct.)
 
 Certain types of braces can be marked as structural.
-Structural braces have higher priority than regular braces: they are matched with each other even if there are unmatched braces of other types between them.
+Structural braces have higher priority than regular braces: they are matched with each other even if there are unmatched braces of different types between them.
 An opening non-structural brace is not matched with a closing one if one of them is inside a pair of matched structural braces and another is outside.
 
 
 ### Comment Code
 EP: `com.intellij.lang.commenter`
 
-[`Commenter`](upsource:///platform/core-api/src/com/intellij/lang/Commenter.java) returns the prefix for the line comment, and the prefix and suffix for the block comment, if supported by the language.
+[`Commenter`](upsource:///platform/core-api/src/com/intellij/lang/Commenter.java) returns the prefix for the line comment, and the prefix and suffix for the block comment if supported by the language.
 
 - [`Commenter`](upsource:///plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/PropertiesCommenter.java) for [Properties language plugin](upsource:///plugins/properties/)
 - [Custom Language Support Tutorial: Commenter](/tutorials/custom_language_support/commenter.md)
@@ -37,7 +37,7 @@ EP: `com.intellij.lang.commenter`
 ### Code Folding
 EP: `com.intellij.lang.foldingBuilder`
 
-[`FoldingBuilder`](upsource:///platform/core-api/src/com/intellij/lang/folding/FoldingBuilder.java) returns the list of text ranges that are foldable (as an array of [`FoldingDescriptor`](upsource:///platform/core-api/src/com/intellij/lang/folding/FoldingDescriptor.java) objects), the replacement text which is shown for each range when it is folded, and the default state of each folding region (folded or unfolded).
+[`FoldingBuilder`](upsource:///platform/core-api/src/com/intellij/lang/folding/FoldingBuilder.java) returns the list of foldable text ranges (as an array of [`FoldingDescriptor`](upsource:///platform/core-api/src/com/intellij/lang/folding/FoldingDescriptor.java) objects), the replacement text which is shown for each range when it is folded, and the default state of each folding region (folded or unfolded).
 
 - [Custom Language Support Tutorial: Folding Builder](/tutorials/custom_language_support/folding_builder.md)
 
@@ -63,7 +63,7 @@ EP: `com.intellij.nameSuggestionProvider`
 ### Semantic Highlight Usages
 EP: `com.intellij.highlightUsagesHandlerFactory`
 
-[`HighlightUsagesHandlerFactory`](upsource:///platform/lang-impl/src/com/intellij/codeInsight/highlighting/HighlightUsagesHandlerFactory.java) allows highlighting e.g. Exit Points or Exceptions.
+[`HighlightUsagesHandlerFactory`](upsource:///platform/lang-impl/src/com/intellij/codeInsight/highlighting/HighlightUsagesHandlerFactory.java) allows highlighting e.g., Exit Points or Exceptions.
 
 ### Parameter Info
 EP: `com.intellij.codeInsight.parameterInfo`

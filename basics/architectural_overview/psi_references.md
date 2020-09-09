@@ -3,9 +3,9 @@ title: PSI References
 ---
 <!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-A *reference* in a PSI tree is an object that represents a link from a *usage* of a certain element in the code to the corresponding *declaration*. *Resolving* a reference means locating the declaration to which a specific usage refers.
+A *reference* in a PSI tree is an object that represents a link from a *usage* of a particular element in the code to the corresponding *declaration*. *Resolving* a reference means locating the declaration to which a specific usage refers.
 
-The most common type of references is defined by language semantics.
+The most common type of reference is defined by language semantics.
 For example, consider a simple Java method:
 
 ```java
@@ -15,10 +15,10 @@ public void hello(String message) {
 ```
 
 This simple code fragment contains five references.
-The references created by the identifiers `String`, `System`, `out` and `println` can be resolved to the corresponding declarations in the JDK: the `String` and `System` classes, the `out` field and the `println` method.
+The references created by the identifiers `String`, `System`, `out`, and `println` can be resolved to the corresponding declarations in the JDK: the `String` and `System` classes, the `out` field, and the `println` method.
 The reference created by the second occurrence of the `message` identifier in `println(message)` can be resolved to the `message` parameter, declared by `String message` in the method header.
 
-Note that `String message` is not a reference, and cannot be resolved.
+Note that `String message` is not a reference and cannot be resolved.
 Instead, it's a _declaration_.
 It does not refer to any name defined elsewhere; instead, it defines a name by itself.
 
@@ -39,7 +39,7 @@ If the code currently open in the IDE does not compile, or in other situations, 
 
 ## Contributed References
 
-In addition to references defined by the semantics of the programming language, the IDE recognizes many references which are determined by the semantics of the APIs and frameworks used in code.
+In addition to references defined by the semantics of the programming language, the IDE recognizes many references determined by the semantics of the APIs and frameworks used in code.
 Consider the following example:
 
 ```java
@@ -78,7 +78,7 @@ Such references implement the [`PsiPolyVariantReference`](upsource:///platform/c
 For resolving a `PsiPolyVariantReference`, you call its `multiResolve()` method.
 The call returns an array of [`ResolveResult`](upsource:///platform/core-api/src/com/intellij/psi/ResolveResult.java) objects.
 Each of the objects identifies a PSI element and also specifies whether the result is valid.
-For example, if you have multiple Java method overloads and a call with arguments not matching any of the overloads, you will get back `ResolveResult` objects for all of the overloads, and `isValidResult()` returns `false` for all of them.
+For example, suppose you have multiple Java method overloads and a call with arguments not matching any of the overloads. In that case, you will get back `ResolveResult` objects for all of the overloads, and `isValidResult()` returns `false` for all of them.
 
 
 ## Searching for References

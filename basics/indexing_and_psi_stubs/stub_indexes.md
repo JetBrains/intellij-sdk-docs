@@ -42,8 +42,8 @@ The following steps need to be performed only once for each language that suppor
 For serializing string data, e.g. element names, in stubs, we recommend to use `StubOutputStream.writeName()` and `StubInputStream.readName()` methods.
 These methods ensure that each unique identifier is stored only once in the data stream.  This reduces the size of the serialized stub tree data.
 
-If you need to change the stored binary format for the stubs (for example, if you want to keep some additional data or some new elements), make sure that you advance the stub version returned from `IStubFileElementType.getStubVersion()` for your language.
-This will cause the stubs and stub indices to be rebuilt and will avoid mismatches between the stored data format and the code trying to load it.
+If you need to change the stored binary format for the stubs (for example, if you want to store some additional data or some new elements), make sure you advance the stub version returned from `IStubFileElementType.getStubVersion()` for your language.
+This will cause the stubs and stub indices to be rebuilt, and will avoid mismatches between the stored data format, and the code trying to load it.
 
 By default, if a PSI element extends `StubBasedPsiElement`, all elements of that type will be stored in the stub tree.
 If you need more precise control over which elements are stored, override `IStubElementType.shouldCreateStub()` and return `false` for elements that should not be included in the stub tree.
@@ -57,7 +57,7 @@ Otherwise, the stub tree will not be rebuilt when external dependency changes, a
 
 ## Stub Indexes
 
-When building the stub tree, you can, at the same time, put some data about the stub elements into many indexes, which then can be used to find the PSI elements by the corresponding key.
+When building the stub tree, you can, at the same time, put some data about the stub elements into a number of indexes, which then can be used to find the PSI elements by the corresponding key.
 Unlike file-based indexes, stub indexes do not support storing custom data as values; the value is always a PSI element.
 Keys in stub indexes are typically strings (such as class names); other data types are also supported if desired.
 

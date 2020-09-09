@@ -16,7 +16,7 @@ This section briefly discusses the IDEA project structure, project components, a
 For more information about projects and their components, refer to [Project](https://www.jetbrains.com/help/idea/about-projects.html), [Module](https://www.jetbrains.com/help/idea/creating-and-managing-modules.html), [Library](https://www.jetbrains.com/help/idea/working-with-libraries.html), [Facet](https://www.jetbrains.com/help/idea/adding-support-for-frameworks-and-technologies.html#facets) in the IntelliJ IDEA Web Help.
 
 ### Project
-In the IntelliJ Platform, a _project_ encapsulates all of a project's source code and libraries and builds instructions into a single organizational unit.
+In the IntelliJ Platform, a _project_ encapsulates all of a project's source code, libraries, and build instructions into a single organizational unit.
 Everything done using the IntelliJ Platform SDK is done within the context of a project.
 A project defines collections referred to as _modules_ and _libraries_.
 Depending on the project's logical and functional requirements, you can create a _single-module_ or a _multi-module_ project.

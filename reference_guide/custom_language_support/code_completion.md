@@ -5,7 +5,7 @@ title: Code Completion
 
 Two main types of code completion can be provided by custom language plugins: reference completion and contributor-based completion.
 
-Reference completion is more comfortable to implement but supports only the necessary completion action.
+Reference completion is easier to implement, but supports only the basic completion action.
 Contributor-based completion provides more features, supports all three completion types (basic, smart, and class name), and can be used, for example, to implement keyword completion.
 
 ### Reference Completion
@@ -25,7 +25,7 @@ To provide completion variants by a `PsiSymbolReference` implement
 
 ### Contributor-Based Completion
 
-Implementing the [`CompletionContributor`](upsource:///platform/analysis-api/src/com/intellij/codeInsight/completion/CompletionContributor.java) interface gives you the most excellent control over the operation of code completion for your language.
+Implementing the [`CompletionContributor`](upsource:///platform/analysis-api/src/com/intellij/codeInsight/completion/CompletionContributor.java) interface gives you the greatest control over the operation of code completion for your language.
 
 > **NOTE** Note that the JavaDoc of that class contains a detailed FAQ for implementing code completion.
 
@@ -47,7 +47,7 @@ For every lookup element, you can specify the following attributes:
 
 * Text. Shown left-aligned.
 * Tail text. Shown next to the main item text, is not used for prefix matching, and can be used, for example, to show the parameter list of the method.
-* Type text. Shown right-aligned in the lookup list and can be used to show the return type or containing a class of a method, for example.
+* Type text. Shown right-aligned in the lookup list and can be used to show the return type or containing class of a method, for example.
 * Icon
 * Text attributes. Bold, Strikeout, etc.
 * Insert handler. The insert handler is a callback which is called when the item is selected and can be used to perform additional modifications of the text (for example, to put in the parentheses for a method call)

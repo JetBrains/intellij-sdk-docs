@@ -48,7 +48,7 @@ intellij {
 ### 2.2 DevKit
 > **TIP** Existing DevKit-based projects can be converted to use [Gradle setup](/tutorials/build_system/prerequisites.md#adding-gradle-support-to-an-existing-devkit-based-intellij-platform-plugin) where managing dependencies is fully automated.
 
-If the project uses [DevKit](/basics/getting_started/using_dev_kit.md), add the JARs of the plugin on which the project depends on the **classpath** of the *IntelliJ Platform SDK*.
+If the project uses [DevKit](/basics/getting_started/using_dev_kit.md), add the JARs of the plugin on which the project depends to the **classpath** of the *IntelliJ Platform SDK*.
 
 > **WARNING** Do not add the plugin JARs as a library: this will fail at runtime because the IntelliJ Platform will load two separate copies of the dependency plugin classes.
 

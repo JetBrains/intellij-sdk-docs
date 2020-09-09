@@ -59,7 +59,7 @@ Use `com.intellij.compileServer.plugin` extension to add the plugin to the class
 **If your test IDE is IntelliJ IDEA 16.0 or newer**
 
 Switch on "Debug Build Process" toggle action (available via 'Find Action') in the test IDE.
-After that, every time compilation is run, the build process will wait for debugger connection on some (random) port and show the status bar's port number.
+After that every time compilation is run, the build process will wait for debugger connection on some (random) port and will show the port number in the status bar.
 In a working copy of IDE, a "Remote" run configuration should be created and pointed to this port.
 Suppose you often need to debug external builders and want to reuse the created "Remote" run configuration. In that case, you may fix the port number by adding the following VM option to the plugin run configuration:
 

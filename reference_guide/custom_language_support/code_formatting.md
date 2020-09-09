@@ -3,7 +3,7 @@ title: Code Formatter
 ---
 <!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-The IntelliJ Platform includes a robust framework for implementing custom language formatters.
+The IntelliJ Platform includes a powerful framework for implementing custom language formatters.
 In this framework, the plugin specifies the *constraints* on the spacing between different syntax elements.
 The formatting engine, provided by the IDE, calculates the smallest number of whitespace modifications that need to be performed on the file to make it match the constraints.
 
@@ -58,7 +58,7 @@ For every block, the plugin specifies the following properties:
 For each of these properties, several particular use settings exist, described in the JavaDoc comments for the respective classes.
 See also [`SpacingBuilder`](upsource:///platform/lang-api/src/com/intellij/formatting/SpacingBuilder.java), which aids in building rule-based configuration.
 
-A particular critical case in using the formatter is the smart indent performed when the user presses the `Enter` key in a source code file.
+An important special case in using the formatter is the smart indent performed when the user presses the `Enter` key in a source code file.
 To determine the indent for the new line, the formatter engine calls the method `getChildAttributes()` on either the block immediately before the caret or the parent of that block, depending on the return value of the `isIncomplete()` method for the block before the caret.
 If the block before the cursor is incomplete (contains elements that the user will probably type but has not yet typed, like a closing parenthesis of the parameter list or the trailing semicolon of a statement), `getChildAttributes()` is called on the block before the caret; otherwise, it's called on the parent block.
 
@@ -80,5 +80,5 @@ The return value of `createIndentOptions()` determines the default indent size.
 
 **New in IntelliJ IDEA 12:**
 Allows custom languages to provide user-configurable arrangement/grouping rules for element types supported by language plugin.
-Rules can be refined via modifiers and name, orders can be applied additionally.
+Rules can be refined via modifiers and name, ordering can be applied additionally.
 Please see [`Rearranger`](upsource:///platform/lang-api/src/com/intellij/psi/codeStyle/arrangement/Rearranger.java) and related for JavaDoc.

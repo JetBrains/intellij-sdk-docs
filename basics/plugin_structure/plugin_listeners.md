@@ -3,7 +3,7 @@ title: Plugin Listeners
 ---
 <!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-> **NOTE** Defining listeners in `plugin.xml` is supported, starting with version 2019.3.
+> **NOTE** Defining listeners in `plugin.xml` is supported starting with version 2019.3 of the platform.
 
 > **NOTE** Listener implementations must be stateless and may not implement life-cycle (e.g., `Disposable`).
 
@@ -96,4 +96,4 @@ Registration of listeners can be restricted using the following attributes:
 - `os` - allows to restrict listener to given OS, e.g., `os="windows"` for Windows only (2020.1 and later)
 - `activeInTestMode` - set to `false` to disable listener if `com.intellij.openapi.application.Application.isUnitTestMode()`==`true`
 - `activeInHeadlessMode` - set to `false` to disable listener if `com.intellij.openapi.application.Application.isHeadlessEnvironment()`==`true`.
-  Also, covers `activeInTestMode` as test mode implies a headless mode.
+  Also, covers `activeInTestMode` as test mode implies headless mode.

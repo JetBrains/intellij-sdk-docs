@@ -23,7 +23,7 @@ Implementations of `ProgramRunner.execute()` go through the following steps to e
 
 The [`Executor`](upsource:///platform/lang-api/src/com/intellij/execution/Executor.java) interface describes a specific way of executing any possible run configuration.
 
-The three default executors provided by the *IntelliJ Platform* by default are _Run_, _Debug_, and _Run with Coverage_.  Each executor gets its own toolbar button, which starts the selected run configuration using this executor, and its own context menu item for creating a configuration using this executor.
+The three default executors provided by the *IntelliJ Platform* by default are _Run_, _Debug_, and _Run with Coverage_.  Each executor gets its own toolbar button, which starts the selected run configuration using this executor, and its own context menu item for starting a configuration using this executor.
 
 As a plugin developer, you usually don't need to implement the `Executor` interface.
 However, it can be useful, for example, if you're implementing a profiler integration and want to provide the possibility to execute any configuration with profiling.

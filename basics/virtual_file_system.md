@@ -12,7 +12,7 @@ It serves the following main purposes:
 * Providing a possibility to associate additional persistent data with a file in the VFS.
 
 To provide the last two features, the VFS manages a _persistent snapshot_ of some of the user's hard disk contents.
-The snapshot stores only those files requested at least once through the VFS API and is asynchronously updated to match the disk's changes.
+The snapshot stores only those files which have been requested at least once through the VFS API, and is asynchronously updated to match the changes happening on the disk.
 
 The snapshot is application level, not project level - so, if some file (for example, a class in the JDK) is referenced by multiple projects, only one copy of its contents will be stored in the VFS.
 
@@ -26,7 +26,7 @@ Otherwise, only file metadata like name, length, timestamp, attributes are store
 > **NOTE** This means that the state of the file system and the file contents displayed in the IntelliJ Platform UI comes from the snapshot, which may not always match the disk's actual contents.
 > For example, in some cases, deleted files can still be visible in the UI for some time before the deletion is picked up by the IntelliJ Platform.
 
-The snapshot is updated from disk during _refresh operations_, which generally happens asynchronously.
+The snapshot is updated from disk during _refresh operations_, which generally happen asynchronously.
 All write operations made through the VFS are synchronous - i.e., the contents are saved to disk immediately.
 
 A refresh operation synchronizes the state of a part of the VFS with the actual disk contents.
@@ -47,7 +47,7 @@ If a file's contents were changed, but its timestamp remained the same, the *Int
 There is currently no facility for removing files from the snapshot.
 If a file was loaded there once, it remains there forever unless it was deleted from the disk, and a refresh operation was called on one of its parent directories.
 
-The VFS itself does not honor ignored files listed in **Settings \| Editor \| File Types** and folders to ignore and exclude folders listed in **Project Structure [] Modules \| Sources \| Excluded**.
+The VFS itself does not honor ignored files listed in **Settings \| Editor \| File Types** and folders to ignore and excluded folders listed in **Project Structure \| Modules \| Sources \| Excluded**.
 If the application code accesses them, the VFS will load and return their contents.
 In most cases, the ignored files and excluded folders must be skipped from processing by higher-level code.
 

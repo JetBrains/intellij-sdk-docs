@@ -60,8 +60,8 @@ The format of an `updatePlugins.xml` file is simply a list of sequential element
 Can additional elements be added to `updatePlugins.xml`? Yes, but it's advisable only if needed.
 The additional elements will have to be synchronized with each plugin's `plugin.xml` file.
 
-During plugin installation, the JetBrains IDE reads the plugin JAR/ZIP file and, after that, displays more information about the plugin.
-Additional information might help a user select a plugin when [browsing the custom plugin repository](https://www.jetbrains.com/help/idea/managing-plugins.html#repos) before installation? The answer depends on the plugins and repository consumers.
+During plugin installation the JetBrains IDE reads the plugin JAR/ZIP file, and thereafter displays more information about the plugin.
+What additional information might help a user select a plugin when [browsing the custom plugin repository](https://www.jetbrains.com/help/idea/managing-plugins.html#repos) before installation? The answer depends on the plugins and repository consumers.
 Here are the candidate elements:
 
 | Element                                                      |  Effects & Requirements     |

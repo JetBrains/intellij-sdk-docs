@@ -80,6 +80,6 @@ This ensures that the imports are created according to the user's code style set
 
 ## Combining PSI and Document Modifications
 
-In some cases, you need to perform a PSI modification and then perform an operation on the document you've just modified through the PSI (for example, start a live template).
-In this case, you need to call a particular method that completes the PSI-based post-processing (such as formatting) and commits the document's changes.
+In some cases, you need to perform a PSI modification and then to perform an operation on the document you've just modified through the PSI (for example, start a live template).
+In this case, you need to call a special method that completes the PSI-based post-processing (such as formatting) and commits the changes to the document.
 The method you need to call is called `doPostponedOperationsAndUnblockDocument()`, and it's defined in the [`PsiDocumentManager`](upsource:///platform/core-api/src/com/intellij/psi/PsiDocumentManager.java) class.

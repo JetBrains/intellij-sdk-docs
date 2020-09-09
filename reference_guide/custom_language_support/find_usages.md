@@ -30,7 +30,7 @@ The steps of the _Find Usages_ action are the following:
 * After the usages are collected, results are shown in the usages pane.
   The text shown for each found element is taken from the [`FindUsagesProvider.getNodeText()`](upsource:///platform/indexing-api/src/com/intellij/lang/findUsages/FindUsagesProvider.java) method.
 
-To have the title of the found element be correctly displayed in the Find Usages tool window title, you need to provide an implementation of the [`ElementDescriptionProvider`](upsource:///platform/core-api/src/com/intellij/psi/ElementDescriptionProvider.java) interface.
+To have the title of the found element be correctly displayed in the title of the Find Usages tool window, you need to provide an implementation of the [`ElementDescriptionProvider`](upsource:///platform/core-api/src/com/intellij/psi/ElementDescriptionProvider.java) interface.
 The [`ElementDescriptionLocation`](upsource:///platform/core-api/src/com/intellij/psi/ElementDescriptionLocation.java) passed to the provider in this case will be an instance of [`UsageViewLongNameLocation`](upsource:///platform/lang-impl/src/com/intellij/usageView/UsageViewLongNameLocation.java).
 
 **Example:**

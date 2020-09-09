@@ -77,7 +77,7 @@ To provide custom implementation for test/headless environment, specify `testSer
 
 ## Retrieving a Service
 
-Getting service doesn't need to read action and can be performed from any thread.
+Getting service doesn't need read action and can be performed from any thread.
 If service is requested from several threads, it will be initialized in the first thread, and other threads will be blocked until service is fully initialized.
 
 To retrieve a service in Java code:

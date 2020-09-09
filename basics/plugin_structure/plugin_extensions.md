@@ -29,7 +29,7 @@ There are [more than 1000 extension](#how-to-get-the-extension-points-list) poin
 2. Add a new child element to the `<extensions>` element.
    The child element name must match the name of the extension point you want the extension to access.
 3. Depending on the type of the extension point, do one of the following:
-    * If the extension point was declared using the `interface` attribute, for newly added child element, set the `implementation` attribute to the class's name that implements the specified interface.
+    * If the extension point was declared using the `interface` attribute, for newly added child element, set the `implementation` attribute to the name of the class that implements the specified interface.
     * If the extension point was declared using the `beanClass` attribute, for newly added child element, set all attributes annotated with the [`@Attribute`](upsource:///platform/util/src/com/intellij/util/xmlb/annotations/Attribute.java) annotations in the specified bean class.
 
 

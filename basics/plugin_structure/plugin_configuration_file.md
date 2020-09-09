@@ -50,8 +50,8 @@ When using Gradle, a number of metadata elements will be provided at build time 
   <version>1.0.0</version>
 
   <!-- The vendor of the plugin.
-       The optional "URL" attribute specifies the URL of the vendor homepage.
-       The optional "email" attribute specifies the email address of the vendor.
+       The optional "url" attribute specifies the URL of the vendor homepage.
+       The optional "email" attribute specifies the e-mail address of the vendor.
        Displayed in the "Plugins" settings dialog and the plugin repository Web interface. -->
   <vendor url="https://www.company.com" email="support@company.com">A Company Inc.</vendor>
 
@@ -125,7 +125,7 @@ When using Gradle, a number of metadata elements will be provided at build time 
     </action>
   </actions>
 
-  <!-- Extension points are defined by the plugin.
+  <!-- Extension points defined by the plugin.
        Extension points are registered by a plugin so that other
        plugins can provide this plugin with certain data.
   -->

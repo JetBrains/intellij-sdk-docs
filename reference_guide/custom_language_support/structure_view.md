@@ -21,11 +21,11 @@ As the builder model, the plugin can specify a subclass of [`TextEditorBasedStru
 
 
 The main method to override is `getRoot()`, which returns the instance of a class implementing the [`StructureViewTreeElement`](upsource:///platform/editor-ui-api/src/com/intellij/ide/structureView/StructureViewTreeElement.java) interface.
-There exists no standard implementation of this interface, so a plugin will need to implement it thoroughly.
+There exists no standard implementation of this interface, so a plugin will need to implement it completely.
 
 The structure view tree is usually built as a partial mirror of the PSI tree.
 In the implementation of `StructureViewTreeElement.getChildren()`, the plugin can specify which of the child elements of a specific PSI tree node need to be represented as elements in the structure view.
-Another critical method is `getPresentation()`, which can be used to customize the text, attributes, and icon used to represent an element in the structure view.
+Another important method is `getPresentation()`, which can be used to customize the text, attributes, and icon used to represent an element in the structure view.
 
 The implementation of `StructureViewTreeElement.getChildren()` needs to be matched by `TextEditorBasedStructureViewModel.getSuitableClasses()`.
 The latter method returns an array of `PsiElement`\-derived classes, which can be shown as structure view elements.

@@ -55,7 +55,7 @@ An example of a ticket is https://youtrack.jetbrains.com/issue/MP-1218. Until su
 
 NOTE: You are allowed to prettify the pattern using links: [`org.example.Foo`](https://github.com/JetBrains/intellij-community/tree/master/)
 
-NOTE: Entries not starting with code quotes (`name`) can be added to document non-code changes and be skipped in API verification.
+NOTE: Entries not starting with code quotes (`name`) can be added to document non-code changes  and will be skipped in API verification.
 -->
 
 Please see [Incompatible API Changes](/reference_guide/api_changes_list.md) on how to verify compatibility.
@@ -262,7 +262,7 @@ Added Union Types Support
 : Use `com.intellij.testFramework.ReadOnlyLightVirtualFile`-based PSI instead.
 
 Java code migrated to use `TYPE_USE` nullability annotations
-: Due to some problems in Kotlin compiler, existing Kotlin code might become incompatible in rare cases if a method is written in Java returning an array and annotated as `@Nullable` or `@NotNull` is used or overridden.
+: Due to some problems in Kotlin compiler, existing Kotlin code might become incompilable in rare cases if a method is written in Java returning an array and annotated as `@Nullable` or `@NotNull` is used or overridden.
 
 `com.intellij.navigation.ChooseByNameContributorEx.processNames` method parameter type changed from `Processor<String>` to ``Processor<? extends String>``
 : This may break source-compatibility with inheritors written in Kotlin.

@@ -27,7 +27,7 @@ A plugin consisting of a single `.jar` file is placed in the `/plugins` director
 
 
 ### Plugin With Dependencies
-The plugin `.jar` file is placed in the `/lib` folder under the plugin's "root" folder and all required bundled libraries.
+The plugin `.jar` file is placed in the `/lib` folder under the plugin's "root" folder, together with all required bundled libraries.
 
 All jars from the `/lib` folder are automatically added to the classpath (see also [Plugin Class Loaders](plugin_class_loaders.md)).
 

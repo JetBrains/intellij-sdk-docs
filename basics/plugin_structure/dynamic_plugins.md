@@ -3,7 +3,7 @@ title: Dynamic Plugins
 ---
 <!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-Starting with the 2020.1 release, installing, updating, and uninstall plugins without restarting the IDE is available in the IntelliJ Platform.
+Starting with the 2020.1 release, installing, updating, and uninstalling plugins without restarting the IDE is available in the IntelliJ Platform.
 During plugin development, [Auto-Reload](/basics/ide_development_instance.md#enabling-auto-reload) also allows code changes to take effect immediately in the sandbox IDE instance.
 
 > **NOTE** If a plugin _requires_ restart (e.g., due to using native libraries) specify `require-restart="true"` for `<idea-plugin>` root tag in `plugin.xml`.
@@ -40,11 +40,11 @@ Any `Configurable` which depends on dynamic extension points must implement `Con
 
 ### No Use of Service Overrides
 
-Application, project, and module services declared with `overrides=" true" ` are not allowed.
+Application, project, and module services declared with `overrides="true"` are not allowed.
 
 ## Code
 
-> **NOTE** Loading and unloading plugins happens in EDT and underwrite action.
+> **NOTE** Loading and unloading plugins happens in EDT and under write action.
 
 ### CachedValue
 

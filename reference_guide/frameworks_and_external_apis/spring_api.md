@@ -30,7 +30,7 @@ Follow these steps to modify the existing IntelliJ Platform SDK:
 ### General Notes
 If you use other Spring functionality (e.g., Spring EL) in your plugin, add all required JARs to your IntelliJ Platform SDK classpath to make your plugin's tests work.
 
-Please use only Spring-related functionality exposed in `spring-api.jar` (where your plugin is provided).
+Please use only Spring-related functionality exposed in `spring-api.jar` (where sources are provided) in your plugin.
 Using any other "internal" (implementation) classes from Spring plugin itself (`spring.jar`) is _not_ supported.
 
 ### plugin.xml

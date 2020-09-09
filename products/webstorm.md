@@ -25,7 +25,7 @@ To see how these attributes appear in a similar `build.gradle` file for PhpStorm
 
 The dependency on the WebStorm APIs must be declared in the `plugin.xml` file.
 As described in [Modules Specific to Functionality](/basics/getting_started/plugin_compatibility.md#modules-specific-to-functionality) table, the `<depends>` tags must declare `JavaScriptLanguage`.
-**Note** that for WebStorm, the plugin.xml file must also declare a dependency on `com.intellij.modules.platformx` because `JavaScriptLanguage` is not recognized as a module.
+**Note** that for WebStorm, the plugin.xml file must also declare a dependency on `com.intellij.modules.platform` because `JavaScriptLanguage` is not recognized as a module.
 Consequently, without the `com.intellij.modules.platform` declaration the plugin is assumed to be a [legacy plugin](/basics/getting_started/plugin_compatibility.md#declaring-plugin-dependencies) and will not load in WebStorm.
 
 ## Available WebStorm APIs

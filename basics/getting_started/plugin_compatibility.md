@@ -68,7 +68,7 @@ For example, the `com.intellij.modules.python` module supports the Python langua
 If a plugin uses this module's functionality, such as Python-specific inspections and refactoring, it must declare a dependency on this module.
 
 Note that not all products define and declare modules.
-For example, PhpStorm does not have its own module, but its product depends on (and ships with) the PHP language plugin.
+For example, PhpStorm does not have its own module, but the product itself depends on (and ships with) the PHP language plugin. 
 A plugin project is compatible with PHP functionality if it declares a dependency on this PHP language plugin.
 
 The following table lists(1) modules or built-in plugins that provide specific functionality, and the products currently ship with them.

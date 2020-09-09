@@ -38,7 +38,7 @@ None specified
 : `ModalityState.defaultModalityState()` will be used. This is the optimal choice in most cases that uses the current modality state when invoked from UI thread. It has special handling for background processes started with `ProgressManager`: `invokeLater()` from such a process may run in the same dialog that the process started.
 
 `ModalityState.any()`
-: The operation will be executed as soon as possible regardless of modal dialogs. Please note that modifying PSI, VFS, or project model is prohibited from such runnable.
+: The operation will be executed as soon as possible regardless of modal dialogs. Please note that modifying PSI, VFS, or project model is prohibited from such runnables.
 
 If a UI thread activity needs to access [file-based index](/basics/indexing_and_psi_stubs.md) (e.g., it's doing any project-wide PSI analysis, resolves references, etc.), please use `DumbService.smartInvokeLater()`.
 That way, it is run after all possible indexing processes have been completed.
@@ -50,7 +50,7 @@ Background progresses are managed by [`ProgressManager`](upsource:///platform/co
 In all cases, the code is executed on a background thread, which is associated with a [`ProgressIndicator`](upsource:///platform/core-api/src/com/intellij/openapi/progress/ProgressIndicator.java) object.
 The current thread's indicator can be retrieved any time via `ProgressIndicatorProvider.getGlobalProgressIndicator()`.
 
-For visible progress, threads can use `ProgressIndicator` to notify the user about current status: e.g., set text or visual fraction of the work done.
+For visible progresses, threads can use `ProgressIndicator` to notify the user about current status: e.g., set text or visual fraction of the work done.
 
 Progress indicators also provide means to handle cancellation of background processes, either by the user (pressing the _Cancel_ button) or from code (e.g., when the current operation becomes obsolete due to some changes in the project).
 The progress can be marked as canceled by calling `ProgressIndicator.cancel()`.

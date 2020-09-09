@@ -7,7 +7,7 @@ A file view provider ([`FileViewProvider`](upsource:///platform/core-api/src/com
 
 For example, a JSPX page has a separate PSI tree for the Java code in it (`PsiJavaFile`), a separate tree for the XML code (`XmlFile`), and a separate tree for JSP as a whole ([`JspFile`](upsource:///java/jsp-openapi/src/com/intellij/psi/jsp/JspFile.java)).
 
-Each of the PSI trees covers the entire contents of the file and contains unique "outer language elements" in the places where contents in a different language can be found.
+Each of the PSI trees covers the entire contents of the file and contains special "outer language elements" in the places where contents in a different language can be found.
 
 A `FileViewProvider` instance corresponds to a single `VirtualFile`, a single `Document`, and can retrieve multiple `PsiFile` instances.
 

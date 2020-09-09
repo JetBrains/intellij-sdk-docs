@@ -3,7 +3,7 @@ title: Persisting State of Components
 ---
 <!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-The *IntelliJ Platform* provides an API that allows components or services to persist their state between the IDE restarts.
+The *IntelliJ Platform* provides an API that allows components or services to persist their state between restarts of the IDE.
 You can use either a simple API to persist a few values or persist the state of more complicated components using the [`PersistentStateComponent`](upsource:///platform/projectModel-api/src/com/intellij/openapi/components/PersistentStateComponent.java) interface.
 
 > **WARNING** If you need to persist sensitive data like passwords, please see [Persisting Sensitive Data](persisting_sensitive_data.md).
@@ -27,8 +27,8 @@ To use it:
 - define the state class
 - specify the storage location using `@com.intellij.openapi.components.State`
 
-Note that instances of extensions cannot persist in their state by implementing `PersistentStateComponent`.
-If your extension needs to have a persistent state, you need to define a separate service responsible for managing it.
+Note that instances of extensions cannot persist their state by implementing `PersistentStateComponent`.
+If your extension needs to have a persistent state, you need to define a separate service responsible for managing that state.
 
 ### Implementing the PersistentStateComponent Interface
 
@@ -130,7 +130,7 @@ To specify where precisely the persisted values are stored, add `@State` annotat
 
 It has the following fields:
 * `name` (required) — specifies the name of the state (name of the root tag in XML).
-* `storages` — one or more of `@com.intellij.openapi.components.Storage` annotations to determine the storage locations.
+* `storages` — one or more of `@com.intellij.openapi.components.Storage` annotations to specify the storage locations.
   Optional for project-level values — standard project file is used in this case.
 * `reloadable` (optional) — if set to false, complete project (or application) reload is required when the XML file is changed externally, and the state has changed.
 
@@ -166,8 +166,7 @@ If the underlying persistence model or storage format has changed, a [`Converter
 
 ## Persistent Component Lifecycle
 
-The `loadState()` method is called after the component has been created (only if some non-default state persisted for the component).
-After the XML file with the persisted state is changed externally (for example, if the project file was updated from the version control system).
+The `loadState()` method is called after the component has been created (only if there is some non-default state persisted for the component), and after the XML file with the persisted state is changed externally (for example, if the project file was updated from the version control system).
 In the latter case, the component is responsible for updating the UI and other related components according to the changed state.
 
 The `getState()` method is called every time the settings are saved (for example, on frame deactivation or when closing the IDE).

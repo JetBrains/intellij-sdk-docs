@@ -28,6 +28,13 @@ and a different implementation of
 [`PsiScopeProcessor`](upsource:///platform/core-api/src/com/intellij/psi/scope/PsiScopeProcessor.java)
 which collects all declarations passed to its `processDeclarations()` method and returns them as an array for filling the completion list.
 
+#### Reference Completion (2020.3)
+
+> **WARNING** This API is currently in development and thus in experimental state
+
+To provide completion variants by a `PsiSymbolReference` implement
+[`PsiCompletableReference`](upsource:///platform/core-api/src/com/intellij/model/psi/PsiCompletableReference.java).
+
 ### Contributor-Based Completion
 
 Implementing the

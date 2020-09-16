@@ -228,11 +228,11 @@ The site is also configured to highlight a range of files in the source code, by
 The Kramdown parser also supports tables. 
 The syntax is to use the pipe (`|`) and minus symbols:
 
-    ```md
-    | Column 1 | Column 2 | Column 3 |
-    |----------|----------|----------|
-    | Blah     | Blah     | Blah     |
-    ```
+```md
+| Column 1 | Column 2 | Column 3 |
+|----------|----------|----------|
+| Blah     | Blah     | Blah     |
+```
 
 
 ### Notes and Callouts
@@ -275,11 +275,15 @@ Also, optimize the image files using a tool such as the [PNG optimizer](https://
 
 Images are embedded in a document by adding a Markdown link to the image like so:
 
+```md
     ![Alt text](path-to-img.png)
+```
 
 If the width of an image needs to be adjusted, use Kramdown markup:
 
+```md
     ![Alt text](path-to-img.png){:width="42px"}
+```
 
 
 ## _SUMMARY Site Table of Contents

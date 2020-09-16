@@ -38,4 +38,4 @@ Additional features of the plugin:
 [file:DynamicActionGroup]: ./src/main/java/org/intellij/sdk/action/DynamicActionGroup.java
 
 [sdk:AnAction]: upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java
-[sdk:ActionGroup]: upsource:///platform/platform-api/src/com/intellij/openapi/actionSystem/ActionInGroup.java
+[sdk:ActionGroup]: upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/ActionGroup.java

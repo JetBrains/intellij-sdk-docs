@@ -11,6 +11,11 @@ our code samples. These samples show you how features work and help you jumpstar
 
 There is also [IntelliJ Platform Plugin Template][gh:template] project available.
 
+## Target Platform
+
+All Code Samples target the latest GA platform release.
+Previous releases are made available via [tags](https://github.com/JetBrains/intellij-sdk-code-samples/tags). 
+
 ## Structure
 
 Code Samples depend on the [IntelliJ Platform SDK][docs] and [Gradle][docs:gradle] as a build system.

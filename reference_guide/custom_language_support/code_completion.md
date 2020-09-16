@@ -33,7 +33,7 @@ which collects all declarations passed to its `processDeclarations()` method and
 > **WARNING** This API is available starting from 2020.3 and currently in development and thus in experimental state.
 
 To provide completion variants by a `PsiSymbolReference` implement
-[`PsiCompletableReference`](upsource:///platform/core-api/src/com/intellij/model/psi/PsiCompletableReference.java).
+[`PsiCompletableReference`](upsource:///platform/analysis-api/src/com/intellij/model/psi/PsiCompletableReference.java).
 
 ### Contributor-Based Completion
 

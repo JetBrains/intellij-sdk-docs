@@ -32,9 +32,11 @@ References are implementations of
 References from PSI elements are implementations of 
 [`PsiSymbolReference`](upsource:///platform/core-api/src/com/intellij/model/psi/PsiSymbolReference.java) interface.
 
-The main method of `SymbolReference` is `resolveReference()`, which returns the collection of symbols to which the reference points, plus additional data.
+The main method of `SymbolReference` is `resolveReference()`, which returns the collection of symbols to which the reference points, 
+plus additional data.
 If it is not possible to resolve the reference, for example, if it points to an undefined class, an empty collection gets returned.  
-A counterpart to the `resolveReference()` method is `SymbolReference.resolvesTo()`, which checks if the reference resolves to the specified element. 
+A counterpart to the `resolveReference()` method is `SymbolReference.resolvesTo()`, 
+which checks if the reference resolves to the specified element. 
 This method can be implemented to walk the tree only if the element's text is equal to the reference's text.
 
 For convenience, if the reference can possibly be resolved:

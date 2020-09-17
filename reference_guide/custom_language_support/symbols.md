@@ -6,7 +6,8 @@ title: Symbols
 > **WARNING** This API is available starting from 2020.3 and currently in development and thus in experimental state.
 
 A symbol is a semantic element in some model, e.g., language model or framework model. 
-The IntelliJ Platform uses [`Symbol`](upsource:///platform/core-api/src/com/intellij/model/Symbol.java) to represent symbols, and `Symbol` serves as a link between Platform APIs, such as navigation, finding usages, or renaming. 
+The IntelliJ Platform uses [`Symbol`](upsource:///platform/core-api/src/com/intellij/model/Symbol.java) to represent symbols, 
+and `Symbol` serves as a link between Platform APIs, such as navigation, finding usages, or renaming. 
 The platform obtains the target symbol from a [declaration](declarations_and_references.md#declarations) 
 or by resolving a [reference](declarations_and_references.md#references), and then uses it to perform an action.
 The `PsiElement` is considered as an element in the source tree (enhanced `ASTNode`). `Symbol` decouples semantic actions from PSI.

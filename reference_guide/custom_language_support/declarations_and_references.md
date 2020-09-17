@@ -50,12 +50,12 @@ For convenience, if the reference can possibly be resolved:
 
 Own references are the references found in PSI elements, which are considered as references by the language.
 
-To provide own references by the `PsiElement`, implement 
+To provide Own references by the `PsiElement`, implement 
 [`PsiElement.getOwnReferences()`](upsource:///platform/core-api/src/com/intellij/psi/PsiElement.java) in the `PsiElement`.
 If the element contains a single reference, `Collections.singletonList()` can be used
 
 **Example:**
-PSI element representing `x` in `x * 2` Java expression has an own reference to a local Java variable, e.g., `var x = 42`, 
+PSI element representing `x` in `x * 2` Java expression has an Own reference to a local Java variable, e.g., `var x = 42`, 
 because this is a reference from Java language point of view, and Java language support uses it, e.g., for code analysis.
 
 
@@ -66,8 +66,8 @@ The language support should not rely on their existence/absence, because they mi
 
 External references might be contributed to PSI elements
 that implement [`PsiExternalReferenceHost`](upsource:///platform/core-api/src/com/intellij/model/psi/PsiExternalReferenceHost.java). 
-To allow other plugins to contribute the references of the `PsiElement`, implement `PsiExternalReferenceHost` in the `PsiElement`. 
-To contribute an external reference to the existing `PsiExternalReferenceHost`, implement and register 
+To allow other plugins to contribute references of `PsiElement`, implement `PsiExternalReferenceHost` in the `PsiElement`. 
+To contribute an External reference to the existing `PsiExternalReferenceHost`, implement and register 
 [`PsiSymbolReferenceProvider`](upsource:///platform/core-api/src/com/intellij/model/psi/PsiSymbolReferenceProvider.java).
 
 **Example:**
@@ -84,7 +84,7 @@ To provide an Implicit reference, implement and register
 [`ImplicitReferenceProvider`](upsource:///platform/core-api/src/com/intellij/model/psi/ImplicitReferenceProvider.java).
 
 **Example:**
-`var` keyword in `var x = new Person()` Java declaration has an implicit reference, 
+`var` keyword in `var x = new Person()` Java declaration has an Implicit reference, 
 because it doesn't make sense to obtain the reference by the target class. At the same time it's possible:  
 - to navigate to the class by ctrl-clicking `var`; 
 - to start a refactoring (e.g., rename) from the class targeted by this reference;

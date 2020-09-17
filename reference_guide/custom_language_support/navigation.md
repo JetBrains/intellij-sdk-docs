@@ -40,6 +40,6 @@ To provide navigation targets by a `Symbol`, either:
 
 ## Showing Usages
 
-If there are no navigation targets available, then the IDE starts finding usages of the target symbol 
+If there are no navigation targets available, then the IntelliJ Platform starts finding usages of the target symbol 
 obtained by resolving a [reference](declarations_and_references.md#references) 
 or from a [declaration](declarations_and_references.md#declarations). 

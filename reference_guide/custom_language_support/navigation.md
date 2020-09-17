@@ -7,7 +7,7 @@ title: Navigation
 
 The _Go to Declaration or Usages_ action is performed in several steps.
 
-## Direct navigation
+## Direct Navigation
 
 Direct navigation is the navigation from `PsiElement` to another `PsiElement`, 
 such as navigation from `break` keyword to the end of a loop in Java, without showing any popups.
@@ -16,12 +16,12 @@ To provide `PsiElement` for direct navigation, implement and register
 [`DirectNavigationProvider`](upsource:///platform/core-api/src/com/intellij/navigation/DirectNavigationProvider.java).
 
 
-## `Symbol` navigation
+## Symbol Navigation
 
 If there is no direct navigation available under the caret, then the platform proceeds with `Symbol` navigation.
 
 After obtaining the target symbols by resolving a [reference](declarations_and_references.md#references), 
-the platform computes the navigation targets. 
+the IntelliJ Platform computes the navigation targets. 
 If there are several target symbols or several navigation targets defined for a symbol, 
 then the IDE shows the navigation popup to ask the user to choose where to go.
 
@@ -33,12 +33,12 @@ instances (where to go and what to show in the popup).
 To provide navigation targets by a `Symbol`, either:
 - implement and register 
   [`SymbolNavigationProvider`](upsource:///platform/core-api/src/com/intellij/navigation/SymbolNavigationProvider.java);
-- implement 
+- or implement 
   [`NavigatableSymbol`](upsource:///platform/core-api/src/com/intellij/navigation/NavigatableSymbol.java)
   in the `Symbol`.
 
 
-## Showing usages
+## Showing Usages
 
 If there are no navigation targets available, then the IDE starts finding usages of the target symbol 
 obtained by resolving a [reference](declarations_and_references.md#references) 

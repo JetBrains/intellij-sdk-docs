@@ -11,7 +11,10 @@ We've published our roadmap for the IntelliJ Platform for 2020: [Part I](https:/
 
 Reparsing of `IReparseableLeafElementType`
 : For elements whose 'IElementType' implements this interface, platform attempts reparse when a modification is made right before or after the leaf element preventing reparsing the whole file.
-
+      
+Generating HTML fragments
+: Use `com.intellij.openapi.util.text.HtmlBuilder` for generating formatted content, e.g., for [Documentation](/reference_guide/custom_language_support/documentation.md).
+                                                                                                             
 ## 2020.2
 
 ### Notable Changes in IntelliJ Platform 2020.2

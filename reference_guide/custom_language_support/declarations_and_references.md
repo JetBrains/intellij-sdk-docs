@@ -10,9 +10,9 @@ title: Declarations and References
 Each [symbol](symbols.md) may be declared in zero or more places, for example:
 - JVM package is a symbol with several declarations (split packages);
 - C# partial class is a symbol with several declarations;
-- property key is a symbol possibly declared in several files simultaneously;
-- Java local variable is a symbol with a single declaration;
-- file is a symbol without declarations; it has only references.
+- a property key is a symbol possibly declared in several files simultaneously;
+- a Java local variable is a symbol with a single declaration;
+- and a file is a symbol without declarations; it has only references.
 
 Declarations are implementations of
 [`SymbolDeclaration`](upsource:///platform/core-api/src/com/intellij/model/SymbolDeclaration.java). 
@@ -22,7 +22,7 @@ Declarations in PSI elements are implementations of
 To report a declaration in a PSI element, either:
 - implement and register 
   [`PsiSymbolDeclarationProvider`](upsource:///platform/core-api/src/com/intellij/model/psi/PsiSymbolDeclarationProvider.java);
-- implement `PsiSymbolDeclaration` directly in the `PsiElement`.
+- or implement `PsiSymbolDeclaration` directly in the `PsiElement`.
 
 
 ## References
@@ -32,11 +32,10 @@ References are implementations of
 References from PSI elements are implementations of 
 [`PsiSymbolReference`](upsource:///platform/core-api/src/com/intellij/model/psi/PsiSymbolReference.java) interface.
 
-The main method of `SymbolReference` interface is `resolveReference()`, which returns the collection of results 
-(symbols to which the reference points plus additional data), or an empty collection if it was not possible to resolve the reference 
-(for example, should it point to an undefined class). A counterpart to the `resolveReference()` method is `resolvesTo()`, 
-which checks if the reference resolves to the specified element. The `resolvesTo()` method can be implemented 
-to perform the tree walk only if the element text is equal to the text of the reference.
+The main method of `SymbolReference` is `resolveReference()`, which returns the collection of symbols to which the reference points, plus additional data.
+If it is not possible to resolve the reference, for example, if it points to an undefined class, an empty collection gets returned.  
+A counterpart to the `resolveReference()` method is `SymbolReference.resolvesTo()`, which checks if the reference resolves to the specified element. 
+This method can be implemented to walk the tree only if the element's text is equal to the reference's text.
 
 For convenience, if the reference can possibly be resolved:
 - with a single result, then it might be extended from 
@@ -60,7 +59,7 @@ PSI element representing `x` in `x * 2` Java expression has an own reference to 
 because this is a reference from Java language point of view, and Java language support uses it, e.g., for code analysis.
 
 
-### External references
+### External References
 
 External references are the references which are not considered as references by the host language. 
 The language support should not rely on their existence/absence, because they might be contributed by other plugins.
@@ -76,12 +75,12 @@ PSI element representing `"users.txt"` in `new File("users.txt")` Java expressio
 but there is a plugin which _knows_ that this literal references a file name, and provides such reference.
 
 
-### Implicit references
+### Implicit References
 
 Implicit references are the references which should be part of the mechanism to obtain a target by a reference, 
 without the inverse ability to search or rename such references by a target.
 
-To provide an implicit reference, implement and register 
+To provide an Implicit reference, implement and register 
 [`ImplicitReferenceProvider`](upsource:///platform/core-api/src/com/intellij/model/psi/ImplicitReferenceProvider.java).
 
 **Example:**

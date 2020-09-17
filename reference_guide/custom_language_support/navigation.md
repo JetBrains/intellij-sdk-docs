@@ -18,7 +18,7 @@ To provide `PsiElement` for direct navigation, implement and register
 
 ## Symbol Navigation
 
-If there is no direct navigation available under the caret, then the platform proceeds with `Symbol` navigation.
+If there is no direct navigation available under the caret, then the IntelliJ Platform proceeds with `Symbol` navigation.
 
 After obtaining the target symbols by resolving a [reference](declarations_and_references.md#references), 
 the IntelliJ Platform computes the navigation targets. 

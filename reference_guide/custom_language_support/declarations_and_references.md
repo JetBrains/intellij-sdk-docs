@@ -8,8 +8,8 @@ title: Declarations and References
 ## Declarations
 
 Each [symbol](symbols.md) may be declared in zero or more places, for example:
-- JVM package is a symbol with several declarations (split packages);
-- C# partial class is a symbol with several declarations;
+- a JVM package is a symbol with several declarations (split packages);
+- a C# partial class is a symbol with several declarations;
 - a property key is a symbol possibly declared in several files simultaneously;
 - a Java local variable is a symbol with a single declaration;
 - and a file is a symbol without declarations; it has only references.

@@ -26,6 +26,8 @@ Providing custom language support includes the following major steps:
 * [Implementing Parser and PSI](/reference_guide/custom_language_support/implementing_parser_and_psi.md)
 * [Syntax Highlighting and Error Highlighting](/reference_guide/custom_language_support/syntax_highlighting_and_error_highlighting.md)
 * [References and Resolve](/reference_guide/custom_language_support/references_and_resolve.md)
+* [Symbols](/reference_guide/custom_language_support/symbols.md)
+* [Declarations and References](/reference_guide/custom_language_support/declarations_and_references.md)
 * [Code Completion](/reference_guide/custom_language_support/code_completion.md)
 * [Find Usages](/reference_guide/custom_language_support/find_usages.md)
 * [Rename Refactoring](/reference_guide/custom_language_support/rename_refactoring.md)

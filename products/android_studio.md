@@ -80,3 +80,8 @@ When learning new development configurations, it is helpful to have some represe
 * [Android postfix plugin](https://github.com/takahirom/android-postfix-plugin) for Android Studio. 
 * [Flutter Plugin](https://github.com/flutter/flutter-intellij).
 * Bal Sikandar's [list of Android Studio plugins](https://github.com/balsikandar/Android-Studio-Plugins).
+                        
+## FAQ
+
+### How To Sync Gradle Project
+Use `com.android.tools.idea.gradle.project.sync.GradleSyncInvoker.requestProjectSync()` for programmatic synchronization.

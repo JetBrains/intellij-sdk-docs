@@ -28,6 +28,7 @@ Providing custom language support includes the following major steps:
 * [References and Resolve](/reference_guide/custom_language_support/references_and_resolve.md)
 * [Symbols](/reference_guide/custom_language_support/symbols.md)
 * [Declarations and References](/reference_guide/custom_language_support/declarations_and_references.md)
+* [Navigation](/reference_guide/custom_language_support/navigation.md)
 * [Code Completion](/reference_guide/custom_language_support/code_completion.md)
 * [Find Usages](/reference_guide/custom_language_support/find_usages.md)
 * [Rename Refactoring](/reference_guide/custom_language_support/rename_refactoring.md)

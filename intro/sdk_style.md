@@ -153,8 +153,8 @@ The `upsource:///` URI effectively points to the root of the `intellij-community
   Examples of this file type include _LICENSE.txt_ and _README.md_. 
 * `[`\`plugin.xml\``](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java)` links to declarative source code files, use `code` style. ([`plugin.xml`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java))
   Examples of this file type include: `settings.gradle`, `plugin.xml` or `theme_basics.theme.json`.
-* `[`\`AnAction\``](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java)` links to source files for code objects like interfaces and classes.  
-  Examples of this file type include: `Project.java`, and `HelloAction.kt`.
+* `[`\`AnAction\``](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java)` links to source files for code objects like interfaces and classes, use `code` style but without the file extension. [`AnAction`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java)
+  Examples of this file type include Java and Kotlin.
   * Note the use of \`\` characters surrounding the class name in the link. 
   * When linking to an API in this manner, the FQN isn't necessary in the link.
   * No file extension (*.java, *.kt, *.py, etc.) is used by convention.
@@ -180,15 +180,8 @@ In-paragraph code fragments and IntelliJ Platform APIs are formatted according t
   Method names are prefixed with the class/interface name when needed for clarity: `Foo.bar()`.
 
 ### Source Code
-Source code can be represented by using [GitHub Flavoured Markdown](https://help.github.com/articles/github-flavored-markdown/) code fences, which are three backticks:  
-
-        ```
-            // Source code goes here...
-        ```
-
-> **NOTE** Source code blocks must have one blank line before and after them.
-
-Syntax highlighting can be applied by specifying the language after the first set of ticks:  
+Source code is represented by using [GitHub Flavoured Markdown](https://help.github.com/articles/github-flavored-markdown/) code fences, which are three backticks.
+Syntax highlighting is applied by specifying the language after the first set of ticks:
 
         ```csharp
             // Some C# code
@@ -199,6 +192,8 @@ Syntax highlighting can be applied by specifying the language after the first se
         ```  
 
 Here is the list of [supported languages](https://github.com/jneen/rouge/wiki/List-of-supported-languages-and-lexers), and also [Kotlin](https://kotlinlang.org), of course. 
+
+> **NOTE** Source code blocks must have one blank line before and after them, and must have a language specification for highlighting.
 
 Whole files can be imported on a page using an include statement within code fences.
 Search the documentation for `% include` to get the correct include statement syntax.

@@ -72,7 +72,8 @@ Please see [Incompatible API Changes](/reference_guide/api_changes_list.md) on h
 Now the children are flattened: brackets for all the dimensions are direct children of the `PsiTypeElement` that represent the multi-dimensional array. This change doesn't break source or binary compatibility but may produce behavioral changes in the code that traverses the tree of Java source files.
 
 `com.intellij.psi.PsiAnnotation.getOwner` method now returns `PsiType` instead of `PsiTypeElement` for type annotations in Java source files.
-This allows to identify where type annotation belongs to if it's attached to an inner class or a particular dimension of multi-dimensional array. This change doesn't break source or binary compatibility but may produce behavioral changes for callers.
+This change supports identifying whether a type annotation is attached to an inner class or a particular dimension of a multi-dimensional array.
+This change doesn't break source or binary compatibility but may produce behavioral changes for callers.
 
 `com.intellij.openapi.application.NonBlockingReadAction.finishOnUiThread` method parameter type changed from ``Consumer<T>`` to ``Consumer<? super T>``
 : This may break source-compatibility with inheritors written in Kotlin.

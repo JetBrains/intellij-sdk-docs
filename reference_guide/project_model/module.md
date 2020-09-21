@@ -11,8 +11,10 @@ The key components of a module are:
   Each directory can belong to one and only one module; it's not possible to share a content root between multiple modules.
 * **Source roots** - A content root can have multiple **source roots** underneath it.
   Source roots can have different types: regular source roots, test source roots, resource roots, etc.
-  In IntelliJ IDEA, source roots are used as roots of the package hierarchy structure (Java classes directly under a source root will be in the root package).
-  Source roots can also be used to implement more fine-grained dependency checks (code under a regular source root cannot depend on code under a test source root).
+  In IntelliJ IDEA, source roots are used as roots of the package hierarchy structure. 
+  Java classes directly under a source root will be in the root package.
+  Source roots can also be used to implement more fine-grained dependency checks. 
+  Code under a regular source root cannot depend on code under a test source root.
   > **NOTE**  Not all other IntelliJ Platform-based IDEs use source roots.
 * **Order entries** - the dependencies of a module, which are stored in an ordered list.
   A dependency can be a reference to an [SDK](sdk.md), a [library](library.md), or another module.

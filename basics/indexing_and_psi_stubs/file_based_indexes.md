@@ -14,7 +14,7 @@ The value is arbitrary data, which is associated with the key in the index.
 
 *Example:* in the word index, the value is a mask indicating in which context the word occurs (code, string literal, or comment).
 
-In the simplest case, when we only need to know what files some data is present, the value has type `Void` and is not stored in the index.
+In the simplest case, when we only need to know in what files some data is present, the value has type `Void` and is not stored in the index.
 
 When the index implementation indexes a file, it receives a file's content and returns a map from the keys found in the file to the associated values.
 

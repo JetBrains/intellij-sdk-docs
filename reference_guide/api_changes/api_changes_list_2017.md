@@ -9,7 +9,7 @@ See the note on how to document new problems on the main page reference_guide/ap
 
 Please see [Incompatible API Changes](/reference_guide/api_changes_list.md) on how to verify compatibility.
 
-> **NOTE** Changes from API marked with `org.jetbrains.annotations.ApiStatus.@Experimental`/`ScheduledForRemoval` are not listed here, as incompatible changes are expected.
+> **NOTE** Changes from API marked with `org.jetbrains.annotations.ApiStatus.@Experimental`/`ScheduledForRemoval` are not listed here, as incompatible changes are to be expected.
 
 ## 2017.3
 
@@ -25,7 +25,7 @@ Please see [Incompatible API Changes](/reference_guide/api_changes_list.md) on h
 : Use classes from `org.apache.commons.imaging` instead.
 
 `com.intellij.psi.MultiplePsiFilesPerDocumentFileViewProvider.getLanguages` abstract method added
-: Implementation of this class is supposed to have several languages, so you need to explicitly implement it and return them all.
+: An implementation of this class is supposed to have several languages, so you need to explicitly implement the method and return them all.
 
 `org.jetbrains.kotlin.idea.configuration.KotlinProjectConfigurator.changeCoroutineConfiguration` abstract method added
 : You need to implement this method and add the logic for updating the configuration in your build system.

@@ -60,7 +60,7 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 
 Please see [Incompatible API Changes](/reference_guide/api_changes_list.md) on how to verify compatibility.
 
-> **NOTE** Changes from API marked with `org.jetbrains.annotations.ApiStatus.@Experimental`/`ScheduledForRemoval` are not listed here, as incompatible changes are expected.
+> **NOTE** Changes from API marked with `org.jetbrains.annotations.ApiStatus.@Experimental`/`ScheduledForRemoval` are not listed here, as incompatible changes are to be expected.
 
 ## 2020.3
                               
@@ -156,7 +156,8 @@ Support for JavaFX deprecated
 : This may break source-compatibility with inheritors written in Kotlin.
 
 `com.intellij.pom.java.LanguageLevel.JDK_13_PREVIEW` field removed
-: Please remove the plugin code supporting Java 13 language level features. IntelliJ IDEA supports preview features of the latest Java release and one upcoming release (if available).
+: Please remove the plugin code supporting Java 13 language level features.
+IntelliJ IDEA supports preview features of the latest Java release and one upcoming release (if available).
 
 
 #### VCS
@@ -268,7 +269,7 @@ Added Union Types Support
 : Use `com.intellij.testFramework.ReadOnlyLightVirtualFile`-based PSI instead.
 
 Java code migrated to use `TYPE_USE` nullability annotations
-: Due to some problems in Kotlin compiler, existing Kotlin code might become incompilable in rare cases if a method is written in Java returning an array and annotated as `@Nullable` or `@NotNull` is used or overridden.
+: In rare cases existing Kotlin code might become uncompilable due to some problems in the Kotlin compiler: if a method is used or overridden, and is written in Java, and returns an array annotated as `@Nullable` or `@NotNull`.
 
 `com.intellij.navigation.ChooseByNameContributorEx.processNames` method parameter type changed from `Processor<String>` to ``Processor<? extends String>``
 : This may break source-compatibility with inheritors written in Kotlin.

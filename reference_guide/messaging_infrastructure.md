@@ -19,15 +19,16 @@ Here are the main components of the messaging API.
 ### Topic
 
 This class serves as an endpoint at the messaging infrastructure.
-I.e. clients are allowed to subscribe to the topic within particular bus and to send messages to particular topic within particular bus.
+I.e., clients are allowed to subscribe to a specific topic within a bus and send messages to that topic within that particular bus.
 
 ![Topic](img/topic.svg)
 
 * *display name* just a human-readable name used for logging/monitoring purposes;
 * *broadcast direction* will be explained in details at Broadcasting. Default value is *TO\_CHILDREN*;
 * *listener class* that is a business interface for particular topic.
-  Subscribers register implementation of this interface at the messaging infrastructure and publishers may later retrieve object that conforms (IS-A) to it and call any method defined there.
-  Messaging infrastructure takes care on dispatching that to all subscribers of the topic, i.e. the same method with the same arguments will be called on the registered callbacks;
+  Subscribers register an implementation of this interface at the messaging infrastructure.
+  Publishers later retrieve objects that conform to the interface (IS-A) and call any methods defined on those implementations.
+  The messaging infrastructure takes care of dispatching the message to all subscribers of the topic by calling the same method with the same arguments on the registered implementation callbacks;
 
 ### Message Bus
 
@@ -105,8 +106,8 @@ public void doChange(Context context) {
 *Existing resources*
 
 * *MessageBus* instances are available via [`ComponentManager.getMessageBus()`](upsource:///platform/extensions/src/com/intellij/openapi/components/ComponentManager.java)
-  (many standard interfaces implement it, e.g. [`Application`](upsource:///platform/core-api/src/com/intellij/openapi/application/Application.java), [`Project`](upsource:///platform/core-api/src/com/intellij/openapi/project/Project.java))
-* number of public topics are used by the *IntelliJ Platform*, e.g. [`AppTopics`](upsource:///platform/platform-api/src/com/intellij/AppTopics.java), [`ProjectTopics`](upsource:///platform/projectModel-api/src/com/intellij/ProjectTopics.java) etc.
+  Many standard interfaces implement a message bus, e.g., [`Application`](upsource:///platform/core-api/src/com/intellij/openapi/application/Application.java) and [`Project`](upsource:///platform/core-api/src/com/intellij/openapi/project/Project.java).
+* A number of public topics are used by the *IntelliJ Platform*, e.g., [`AppTopics`](upsource:///platform/platform-api/src/com/intellij/AppTopics.java), [`ProjectTopics`](upsource:///platform/projectModel-api/src/com/intellij/ProjectTopics.java), etc.
   So, it's possible to subscribe to them in order to receive information about the processing;
 
 ## Broadcasting
@@ -135,12 +136,12 @@ We don't need to bother with memory management of subscribers that are bound to 
 
 Consider the example above we may want to have project-specific functionality that reacts to the application-level events.
 All we need to do is to subscribe to the target topic within the *project bus*.
-No hard reference to the project-level subscriber will be stored at application-level then, i.e. we just avoided memory leak on project re-opening.
+No hard reference to the project-level subscriber will be stored at application-level then, i.e., we just avoided memory leak on project re-opening.
 
 *Options*
 
 Broadcast configuration is defined per-topic.
-Following options are available:
+The following options are available:
 
 * TO\_CHILDREN_ (default);
 * _NONE_;
@@ -169,7 +170,7 @@ Let's see what happens if someone sends a message to the target topic:
 
 ### Relief Listeners Management
 
-Messaging infrastructure is very light-weight, so, it's possible to reuse it at local sub-systems in order to relief [Observers](https://en.wikipedia.org/wiki/Observer_pattern) construction.
+Messaging infrastructure is very light-weight, so, it's possible to reuse it at local sub-systems in order to relieve [Observers](https://en.wikipedia.org/wiki/Observer_pattern) construction.
 Let's see what is necessary to do then:
 
 1. Define business interface to work with;

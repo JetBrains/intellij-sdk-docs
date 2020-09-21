@@ -7,7 +7,10 @@ A PSI (Program Structure Interface) file is the root of a structure representing
 
 The [`PsiFile`](upsource:///platform/core-api/src/com/intellij/psi/PsiFile.java) class is the common base class for all PSI files, while files in a specific language are usually represented by its subclasses.  For example, the [`PsiJavaFile`](upsource:///java/java-psi-api/src/com/intellij/psi/PsiJavaFile.java) class represents a Java file, and the [`XmlFile`](upsource:///xml/xml-psi-api/src/com/intellij/psi/xml/XmlFile.java) class represents an XML file.
 
-Unlike `VirtualFile` and `Document`, which have application scope (even if multiple projects are open, each file is represented by the same `VirtualFile` instance), PSI has project scope (the same file is represented by numerous `PsiFile` instances if the file belongs to multiple projects open at the same time).
+Unlike `VirtualFile` and `Document`, which have application scope (even if multiple projects are open, each file is represented by the same `VirtualFile` instance).
+A PSI has project scope.
+The same file is represented by one `PsiFile` instance for each open project to which the file belongs.
+In contrast, `VirtualFile` and Document have application scope; files are represented by the same VirtualFile instance, even if multiple projects are open.
 
 ## How do I get a PSI file?
 

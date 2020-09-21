@@ -40,4 +40,4 @@ This guide is Open Source and licensed under Apache 2.0.
 The source (as Markdown) is [hosted on GitHub](https://github.com/JetBrains/intellij-sdk-docs).
 Please see [CONTRIBUTING.md](/CONTRIBUTING.md) for details on hosting the docs locally and contributing.
 
-Please see [Getting Help](getting_help.md) if you encounter bugs in this guide or require missing content.
+Please see [Getting Help](getting_help.md) if you encounter bugs in this guide or require help with missing content.

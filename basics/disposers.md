@@ -4,7 +4,7 @@ title: Disposer and Disposable
 <!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 The IntelliJ Platform's [`Disposer`](upsource:///platform/util/src/com/intellij/openapi/util/Disposer.java) facilitates resource cleanup.
-Suppose a subsystem keeps a set of resources alive coincident with a parent object's lifetime. In that case, the subsystem's resources should be registered with the `Disposer` to be released before or at the same time as the parent object.
+If a subsystem keeps a set of resources alive coincident with a parent object's lifetime, the subsystem's resources should be registered with the `Disposer` to be released before or at the same time as the parent object.
 
 The most common resource type managed by `Disposer` is listeners, but there are other possible types:
 * File handles, and database connections,
@@ -173,7 +173,7 @@ The following snippet represents the sort of "memory leak detected" error encoun
 
 In this specific case, the IntelliJ Platform ([`CoreProgressManager`](upsource:///platform/core-impl/src/com/intellij/openapi/progress/impl/CoreProgressManager.java)) started a task that contained the `DynamicWizard` code.
 In turn, that code allocated a `Project` that was never disposed by the time the application exited.
-That is a right place to start digging.
+That is a promising place to start digging.
 
 The above memory leak was ultimately caused by failing to pass a `Project` instance to a function responsible for registering it for disposal.
 Often the fix for a memory leak is as simple as understanding the memory scope of the object being allocated - usually a UI container, project, or application - and making sure a `Disposer.register()` call is made appropriately for it.

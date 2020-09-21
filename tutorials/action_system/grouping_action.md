@@ -120,7 +120,7 @@ The `<group>` element declaration below shows:
 As in [Static Grouped Actions](#adding-a-new-action-to-the-static-grouped-actions), the `PopupDialogAction` action is added as an `<action>` element in the `<group>` element.
 In the `<action>` element declaration below:
 * The `class` attribute in the `<action>` element has the same FQN to reuse this action implementation.
-* The `id` attribute is unique to distinguish it from other uses of the Action System implementation.
+* The `id` attribute is unique to distinguish it from other uses of the implementation in the Action System.
 * The `text` and `description` attributes are omitted in the `<action>` declaration; they are instead defined using the localization resource bundle.
 * The SDK icon is declared for use with this action.
 

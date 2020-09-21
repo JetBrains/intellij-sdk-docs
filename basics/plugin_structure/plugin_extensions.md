@@ -85,7 +85,7 @@ Property name `language` (or ending in `*Language`, 2020.2+) resolves to all pre
 
 Similarly, `action` resolves to all registered `<action>` IDs.
 
-Specifying `@org.jetbrains.annotations.Nls` verifies UI text properties' capitalization according to given `capitalization` value (2019.2 and later).
+Specifying `@org.jetbrains.annotations.Nls` validates a UI `String` capitalization according to the text property `Capitalization` enum value (2019.2 and later).
 
 Attributes with `Enum` type support code insight with _lowerSnakeCased_ notation (2020.1 and later).
 

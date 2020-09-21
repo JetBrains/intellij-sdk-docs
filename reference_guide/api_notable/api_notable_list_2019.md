@@ -64,7 +64,7 @@ New API for Editor Inlay Hints
 : When registering file type via file extension, pattern or exact file name matching, use extension point `com.intellij.fileType` instead (see [Sample](/tutorials/custom_language_support/language_and_filetype.md#b-register-file-type-20192-or-later)).
 
 `@org.jetbrains.annotations.ApiStatus.NonExtendable`
-: Indicates that the annotated API class, interface, or method must not be extended, implemented, or overridden by external plugins but can only be obtained or instantiated (for classes and interfaces) or called (for methods).
+: Indicates that the annotated API class, interface, or method must not get extended, implemented, or overridden by external plugins but can only be obtained or instantiated for classes and interfaces, or called for methods.
 
 `@org.jetbrains.annotations.ApiStatus.OverrideOnly`
 : Indicates that the annotated method is part of SPI (Service Provider Interface), which is intended to be only implemented or overridden but never called by external plugins.

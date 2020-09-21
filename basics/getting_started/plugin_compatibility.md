@@ -16,7 +16,7 @@ title: Plugin Compatibility with IntelliJ Platform Products
 All products based on the _IntelliJ Platform_ are built on the same underlying API.
 Some of these products share features built on top of the platform, such as Java support in IntelliJ IDEA and Android Studio.
 Underlying those shared features are shared components.
-When authoring a plugin for the IntelliJ Platform, it is vital to understand and declare these components' dependencies.
+When authoring a plugin for the IntelliJ Platform, it is important to understand and declare dependencies on these components. 
 Otherwise, it may not be possible to load or run the plugin in a product because the components on which it depends aren't available.
 
 > **TIP** Qualifying Open Source projects can [apply for free licenses](https://www.jetbrains.com/community/opensource/) of JetBrains products.
@@ -71,7 +71,7 @@ Note that not all products define and declare modules.
 For example, PhpStorm does not have its own module, but the product itself depends on (and ships with) the PHP language plugin. 
 A plugin project is compatible with PHP functionality if it declares a dependency on this PHP language plugin.
 
-The following table lists(1) modules or built-in plugins that provide specific functionality, and the products currently ship with them.
+The following table lists(1) modules or built-in plugins that provide specific functionality, and the products currently shipping with them.
 
 | Module or Plugin for `<depends>` Element<br>Declaration in `plugin.xml` File | <br>Functionality  | IntelliJ Platform-Based<br>Product Compatibility  |
 |------------------------------------------------------------------------------|--------------------|------------------------------------------|
@@ -91,7 +91,7 @@ The following table lists(1) modules or built-in plugins that provide specific f
 | `JavaScript`                         | **JavaScript** language PSI Model, Inspections, Intentions, Completion, Refactoring, Test Framework  | WebStorm, and other products if the JavaScript plugin is installed. |
 
 **Notes about Module and Plugin Dependency:**
-**(1)** This table is not exhaustive; other modules currently available in JetBrains' IntelliJ Platform-based IDEs.
+**(1)** This table is not exhaustive; other modules are currently available in JetBrains' IntelliJ Platform-based IDEs.
 To see a list of modules, invoke the [code completion](https://www.jetbrains.com/help/idea/auto-completing-code.html#4eac28ba) feature for the `<depends>` element contents while editing the `plugin.xml` file.
 
 **(2)** The [Java language functionality](https://blog.jetbrains.com/platform/2019/06/java-functionality-extracted-as-a-plugin/) was extracted as a plugin in version 2019.2 of the IntelliJ Platform.

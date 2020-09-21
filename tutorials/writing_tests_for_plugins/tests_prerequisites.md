@@ -6,7 +6,7 @@ title: 1. Tests Prerequisites
 This page discusses the steps to configure a plugin project for creating tests.
 
 ## 1.1. Create a Folder for Tests
-Open the plugin project, and under the `src` directory, create a separate folder `test`.
+Open the plugin project and create a separate folder named `test` under the `src` directory.
 Under `test`, create the `java` folder for test source code, and the folder `testData` for test data files and reimport the Gradle project.
 
 ```text

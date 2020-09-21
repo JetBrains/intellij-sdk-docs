@@ -33,26 +33,21 @@ Rather, only blocks for the text range covered by the formatting operation and t
 
 For every block, the plugin specifies the following properties:
 
-*  The _spacing_ (
-   [`Spacing`](upsource:///platform/lang-api/src/com/intellij/formatting/Spacing.java)
-   ) specifies what spaces or line breaks are inserted between the specified children of the block.
+*  The _spacing_ ([`Spacing`](upsource:///platform/lang-api/src/com/intellij/formatting/Spacing.java)) specifies what spaces or line breaks are inserted between the specified children of the block.
    The spacing object specifies the minimum and maximum number of spaces that must be placed between the specified child blocks, the minimum number of line breaks to put there, and whether the existing line breaks and blank lines should be preserved.
    The formatting model can also specify that the spacing between the specified blocks may not be modified by the formatter.
 
 *  The _indent_ specifies how the block is indented relative to its parent block.
    There are different modes of indenting defined by factory methods in the Indent class.
    The most commonly used are the none indent (which means the child block is not indented), the regular indent (the child block is indented by the number of spaces specified in the **Project Code Style \| General \| Indent** setting), and the continuation indent (based on **Project Code Style \| General \| Continuation Indent** setting).
-   Suppose the formatting model does not specify an indent. In that case, the "continuation without first" mode is used, which means that the first block in a sequence of blocks with that type is not indented, and the following blocks are indented with a continuation indent.
+   If the formatting model does not specify an indent, the "continuation without first" mode is used. 
+   This default means that the first block in a sequence of blocks with that type is not indented, and the following blocks are indented with a continuation indent.
 
-*  The _wrap_ (
-   [`Wrap`](upsource:///platform/lang-api/src/com/intellij/formatting/Wrap.java)
-   ) specifies whether the content of the block is wrapped to the next line.
+*  The _wrap_ ([`Wrap`](upsource:///platform/lang-api/src/com/intellij/formatting/Wrap.java)) specifies whether the content of the block is wrapped to the next line.
    Wrapping is performed by inserting a line break before the block content.
    The plugin can specify that a particular block is never wrapped, always wrapped, or wrapped only if it exceeds the right margin.
 
-*  The _alignment_ (
-   [`Alignment`](upsource:///platform/lang-api/src/com/intellij/formatting/Alignment.java)
-   ) specifies which blocks should be aligned with each other.
+*  The _alignment_ ([`Alignment`](upsource:///platform/lang-api/src/com/intellij/formatting/Alignment.java)) specifies which blocks should be aligned with each other.
    If two blocks with the alignment property set to the same object instance are placed in different lines, and if the second block is the first non-whitespace block in its line, the formatter inserts white spaces before the second block, so that it starts from the same column as the first one.
 
 For each of these properties, several particular use settings exist, described in the JavaDoc comments for the respective classes.

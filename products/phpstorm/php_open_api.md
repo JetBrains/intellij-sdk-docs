@@ -38,7 +38,7 @@ public interface PhpTypeProvider2 {
   ExtensionPointName<PhpTypeProvider2> EP_NAME = ExtensionPointName.create("com.intellij.php.typeProvider2");
 
   /**
-   * @retur our custom signature key, i.e. "?". Do not use any of PhpTypeSignatureKey.XXX constants though!
+   * @return Your custom signature key, i.e. "?". Do not use any of PhpTypeSignatureKey.XXX constants though!
    */
   char getKey();
 

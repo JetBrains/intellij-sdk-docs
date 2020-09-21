@@ -42,7 +42,7 @@ Every project uses a Software Development Kit (_SDK_).
 For Java projects, SDK is referred to as JDK (Java Development Kit).
 
 The SDK determines which API library is used to build the project.
-If a project is multi-module, the project SDK is standard for all modules within the project by default.
+If a project is multi-module, the project SDK is common for all modules within the project by default.
 Optionally, a project can configure an individual SDK for each module.
 
 For more information about SDKs, see [Working with SDKs](https://www.jetbrains.com/help/idea/working-with-sdks.html) in the IntelliJ IDEA Web Help.
@@ -50,7 +50,7 @@ For more information about SDKs, see [Working with SDKs](https://www.jetbrains.c
 ### Facet
 A _facet_ represents a certain configuration, specific for a particular framework/technology associated with a module.
 A module can have multiple facets.
-E.g., Spring specific configuration is stored in a Spring facet.
+E.g., Spring-specific configuration is stored in a Spring facet.
 
 Facets are documented under [Facet](https://www.jetbrains.com/help/idea/adding-support-for-frameworks-and-technologies.html#facets) and [Language and Framework Specific Guidelines](https://www.jetbrains.com/help/idea/language-and-framework-specific-guidelines.html) in the IntelliJ IDEA Web Help.
 

@@ -21,10 +21,9 @@ A version of the JetBrains Runtime is bundled with all IntelliJ Platform-based I
 To produce accurate results while running or debugging a plugin project in a Development Instance, follow the procedures below to ensure the Development Instance uses a JetBrains Runtime.
 
 ### Determining a JetBrains Runtime Version
-The JetBrains Runtime is determined from the JDK version used to build the plugin project.
-If a plugin is being developed against the Java 8 SE Development Kit 8 for macOS, `jdk-8u212-macosx-x64.dmg`.
-(This example will use macOS, but Windows and Linux follow the same procedure.)
-To acquire the compatible JetBrains Runtime:
+The JetBrains Runtime is determined from the JDK version used to build the plugin project, regardless of whether it is built on macOS, Windows, or Linux.
+For example, if a plugin is developed against the Java 8 SE Development Kit 8 for macOS (`jdk-8u212-macosx-x64.dmg`) to acquire the compatible JetBrains Runtime:
+
 * Go to the [JetBrains Runtime Site](https://confluence.jetbrains.com/display/JBR/JetBrains+Runtime) for general information and the latest build.
 * Open the [Release notes](https://confluence.jetbrains.com/display/JBR/Release+notes) page to access all releases.
 * Select the package name corresponding to the platform and SDK version.
@@ -43,7 +42,7 @@ If required, an alternative version can be specified using `jbrVersion` attribut
 ### Setting a JetBrains Runtime for DevKit-Based Plugin Projects
 The [Run Configuration](https://www.jetbrains.com/help/idea/run-debug-configuration.html) for a DevKit-based plugin project controls the JDK used to run and debug a plugin project in a Development Instance.
 The default Run Configuration uses the same JDK for building the plugin project and running the plugin in a Development Instance.
-To change the runtime for the Development Instance, set the _JRE_ field in the Run Configuration edit dialog to downloaded JetBrains Runtime.
+To change the runtime for the Development Instance, set the _JRE_ field in the Run Configuration edit dialog to download a JetBrains Runtime.
 
 
 ## Enabling Auto-Reload

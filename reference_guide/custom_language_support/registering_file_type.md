@@ -5,7 +5,7 @@ title: Registering a File Type
 
 The first step in developing a custom language plugin is registering a file type associated with the language.
 
-The IDE determines the type of a file typically by looking at its file name or extension.
+The IDE typically determines the type of a file by looking at its file name or extension.
 In 2020.2, support for mapping via _hashbang_ is available via `hashBangs` attribute in `com.intellij.fileType` extension point.
 
 A custom language file type is a class derived from [`LanguageFileType`](upsource:///platform/core-api/src/com/intellij/openapi/fileTypes/LanguageFileType.java), which passes a [`Language`](upsource:///platform/core-api/src/com/intellij/lang/Language.java) subclass to its base class constructor.

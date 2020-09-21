@@ -240,7 +240,7 @@ This base class supports the standard `apply`, `reset`, and `isModified` methods
 If you're using a [`DialogPanel`](upsource:///platform/platform-api/src/com/intellij/openapi/ui/DialogPanel.kt) as the main panel of a `DialogWrapper`, the `apply` method will be automatically called when the dialog is closed with the OK action.
 The other methods are unused in this case.
 
-Use the `focused` method to specify which control should be focused whe he dialog is initialized:
+Use the `focused` method to specify which control should be focused when the dialog is initialized:
 
 ```kotlin
 return panel {

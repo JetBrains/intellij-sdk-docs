@@ -64,7 +64,7 @@ IntelliJ API may be occasionally changed between releases, leading to existing p
 
 <!--
 > **NOTE** Starting with the 2020.1 release, IntelliJ Platform-based IDEs will use compatibility check information provided by the [JetBrains Plugins Repository](https://plugins.jetbrains.com) to highlight possible compatibility issues to users directly in the IDE's "Plugins" manager.
-> Therefore, it is essential to keep your plugins up to date about the existing and upcoming API changes.
+> Therefore, it is essential to keep your plugins up to date with the existing and upcoming API changes.
 -->
 
 ## Verifying Compatibility
@@ -95,4 +95,4 @@ The following pages list the breaking changes in IDE/plugin releases with requir
 * [**Changes in 2017.***](api_changes/api_changes_list_2017.md)
 * [**Changes in 2016.***](api_changes/api_changes_list_2016.md)
 
-> **NOTE** Changes from API marked with `org.jetbrains.annotations.ApiStatus.@Experimental`/`ScheduledForRemoval` are not listed here, as incompatible changes are expected.
+> **NOTE** Changes from API marked with `org.jetbrains.annotations.ApiStatus.@Experimental`/`ScheduledForRemoval` are not listed here, as incompatible changes are to be expected.

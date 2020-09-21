@@ -57,7 +57,7 @@ The types of tokens which are treated as whitespace or comments are defined by t
 
 The token set returned from [`ParserDefinition.getCommentTokens()`](upsource:///platform/core-api/src/com/intellij/lang/ParserDefinition.java) is also used to search for TODO items.
 
-To better understand the process of building a PSI tree for simple expression, you can refer to the following diagram:
+To better understand the process of building a PSI tree for a simple expression, you can refer to the following diagram:
 
 ![PsiBuilder](img/PsiBuilder.gif)
 
@@ -67,7 +67,7 @@ Every element which can be renamed or referenced (a class definition, a method d
 
 Several functions which can be used for implementing and using the PSI can be found in the `com.intellij.psi.util` package, and in particular in the [`PsiUtilCore`](upsource:///platform/core-api/src/com/intellij/psi/util/PsiUtilCore.java) and [`PsiTreeUtil`](upsource:///platform/core-api/src/com/intellij/psi/util/PsiTreeUtil.java) classes.
 
-> **TIP** A beneficial tool for debugging the PSI implementation is the [PsiViewer plugin](https://plugins.jetbrains.com/plugin/227-psiviewer).
+> **TIP** A useful tool for debugging the PSI implementation is the [PsiViewer plugin](https://plugins.jetbrains.com/plugin/227-psiviewer).
 > It can show you the PSI structure built by your plugin, the properties of every PSI element, and highlight its text range.
 
 Please see [Indexing and PSI Stubs](/basics/indexing_and_psi_stubs.md) for advanced topics.

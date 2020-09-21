@@ -11,7 +11,8 @@ _Listeners_ allow plugins to declaratively subscribe to events delivered through
 
 You can define both application- and project-level listeners.
 
-Declarative registration of listeners allows you to achieve better performance than registering listeners from code, because listener instances are created lazily (the first time an event is sent to the topic), not during application startup or project opening.
+Declarative registration of listeners allows you to achieve better performance than registering listeners from code. 
+The advantage is because listener instances get created lazily - the first time an event is sent to the topic - and not during application startup or project opening.
 
 ## Defining Application-Level Listeners
 

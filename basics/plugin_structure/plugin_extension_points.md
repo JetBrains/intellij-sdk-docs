@@ -38,7 +38,8 @@ _myPlugin/META-INF/plugin.xml_
 </idea-plugin>
 ```
 
-The `name` attribute assigns a unique name for this extension point. It will be prefixed with the plugin's `<id>` automatically.
+The `name` attribute assigns a unique name for this extension point. 
+It will be prefixed with the plugin's `<id>` automatically.
 
 The `beanClass` attribute sets a bean class that specifies one or several properties annotated with the [`@Attribute`](upsource:///platform/util/src/com/intellij/util/xmlb/annotations/Attribute.java) annotation.
 The `interface` attribute sets an interface the plugin that contributes to the extension point must implement.

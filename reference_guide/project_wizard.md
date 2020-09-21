@@ -101,7 +101,7 @@ The [`RsModuleWizardStep`](https://github.com/bulenkov/RedlineSmalltalk/blob/mas
 ## Facet
 
 Facets in IntelliJ are the way to store multiple kinds of module-specific settings, for instance to make a language support or framework available in some given module.
-To understand facets better from the point of view of an end-user, please see [Facet](/reference_guide/project_model/facet.md) documentation section.
+To understand facets better from the point of view of an end-user, please see the [Facet](/reference_guide/project_model/facet.md) documentation section.
 
 
 ## Implementing Project Structure Detector

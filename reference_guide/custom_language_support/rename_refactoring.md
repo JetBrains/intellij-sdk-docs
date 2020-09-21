@@ -4,7 +4,7 @@ title: Rename Refactoring
 <!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 The Rename refactoring operation is quite similar to that of [Find Usages](find_usages.md).
-It uses the same rules for locating the element to be renamed and the same index of words for finding the files that may have references to the renamed element.
+It uses the same rules for locating the element to be renamed and the same index of words for finding the files that may have references to the element being renamed.
 
 When the rename refactoring is performed, the method [`PsiNamedElement.setName()`](upsource:///platform/core-api/src/com/intellij/psi/PsiNamedElement.java) is called for the renamed element, and [`PsiReference.handleElementRename()`](upsource:///platform/core-api/src/com/intellij/psi/PsiReference.java) is called for all references to the renamed element.
 These methods perform basically the same action: replace the underlying AST node of the PSI element with the node containing the new text entered by the user.

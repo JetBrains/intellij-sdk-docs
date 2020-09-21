@@ -63,7 +63,7 @@ In this example the framework is added to any [`ModuleType`](upsource:///platfor
 @NotNull
 @Override
 public FrameworkSupportInModuleProvider createProvider() {
-    retur ew FrameworkSupportInModuleProvider() {
+    return new FrameworkSupportInModuleProvider() {
         @NotNull
         @Override
         public FrameworkTypeEx getFrameworkType() {

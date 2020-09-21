@@ -104,7 +104,7 @@ See the specific product pages in Part VIII for the _targetIDE_ plugin or module
 
 The best practice is to modify the `runIde {}` task to use a local installation of _targetIDE_ as the [IDE Development Instance](/basics/ide_development_instance.md).
 Set the `runIde.ideDirectory` attribute to the (user-specific) absolute path of the _targetIDE_ application.
-The exact path format varies by the operating system.
+The exact path format varies by operating system.
 
 This snippet is an example for configuring the Setup and Running DSLs in a `build.gradle` specific to developing a plugin for _targetIDE_.
 

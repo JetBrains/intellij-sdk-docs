@@ -124,7 +124,7 @@ There’s no direct access to JS DOM from Java (like in JavaFX WebView, see also
 Still, JCEF provides an asynchronous way to communicate to JS.
 
 It’s simpler to illustrate it by an example.
-Say, we want to open a link in an external browser (see it in [`MarkdownJCEFHtmlPanel`](upsource:///plugins/markdown/src/org/intellij/plugins/markdown/ui/preview/jcef/MarkdownJCEFHtmlPanel.java)):
+Say we want to open a link in an external browser, and see it in [`MarkdownJCEFHtmlPanel`](upsource:///plugins/markdown/src/org/intellij/plugins/markdown/ui/preview/jcef/MarkdownJCEFHtmlPanel.java):
 
 ```java
   // Create a JS query instance

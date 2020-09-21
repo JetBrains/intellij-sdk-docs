@@ -11,7 +11,7 @@ Avoid `PsiElement` methods which are expensive with deep trees.
 
 `getText()` traverses the whole tree under the given element and concatenates strings, consider `textMatches()` instead.
 
-`getTextRange()`, `getContainingFile()`, `getProject()` traverse the tree up to the file, which can be long in very nested trees.
+`getTextRange()`, `getContainingFile()`, and `getProject()` traverse the tree up to the file, which can be long in very nested trees.
 If you only need PSI element length, use `getTextLength()`.
 
 File and project often can be computed once per some analysis and then stored in fields or passed via parameters.
@@ -75,7 +75,7 @@ Meanwhile, you can try to speed up what you can in your plugin, it'll be benefic
 
 Don't do anything expensive in event listeners.
 Ideally, you should only clear some caches.
-You can also schedule background processing of events, but be prepared that some new events might be delivered before your background processing starts, and thus the world might have changed by that moment o ven in the middle of background processing.
+You can also schedule background processing of events, but be prepared that some new events might be delivered before your background processing starts, and thus the world might have changed by that moment or even in the middle of background processing.
 Consider using [`MergingUpdateQueue`](upsource:///platform/platform-api/src/com/intellij/util/ui/update/MergingUpdateQueue.java) and `ReadAction.nonBlocking()` to mitigate these issues.
 
 Massive batches of VFS events can be pre-processed in background, see [`AsyncFileListener`](upsource:///platform/core-api/src/com/intellij/openapi/vfs/AsyncFileListener.java) (2019.2 or later).

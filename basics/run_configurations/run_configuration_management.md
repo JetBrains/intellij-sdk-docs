@@ -86,12 +86,14 @@ Most run configurations contain references to classes, files, or directories in 
 
 To support that, your run configuration needs to implement the [`RefactoringListenerProvider`](upsource:///platform/lang-api/src/com/intellij/execution/configurations/RefactoringListenerProvider.java) interface.
 
-In your implementation of `getRefactoringElementListener()`, you need to check whether the refactored element is the one that your run configuration refers to. If it is, you return a [`RefactoringElementListener`](upsource:///platform/analysis-api/src/com/intellij/refactoring/listeners/RefactoringElementListener.java) that updates your configuration according to the new name and location of the element.
+In your implementation of `getRefactoringElementListener()`, you need to check whether the refactored element is the one that your run configuration refers to. 
+If it is, you return a [`RefactoringElementListener`](upsource:///platform/analysis-api/src/com/intellij/refactoring/listeners/RefactoringElementListener.java) that updates your configuration according to the new name and location of the element.
 
 ## Creating Configurations from Context
 
 Many plugins support automatic creation of run configurations from context so that the user can click, for example, on an application or test class and automatically run it using the correct run configuration type.
-To support that, you need to provide an implementation of the [`RunConfigurationProducer`](upsource:///platform/lang-api/src/com/intellij/execution/actions/RunConfigurationProducer.java) interface and to register it as `<runConfigurationProducer>` in your `plugin.xml`. (Note that this API has been redesigned in IntelliJ IDEA 13; the old [`RuntimeConfigurationProducer`](upsource:///platform/lang-api/src/com/intellij/execution/junit/RuntimeConfigurationProducer.java) is a much more confusing version of the same API).
+To support that, you need to provide an implementation of the [`RunConfigurationProducer`](upsource:///platform/lang-api/src/com/intellij/execution/actions/RunConfigurationProducer.java) interface and to register it as `<runConfigurationProducer>` in your `plugin.xml`. 
+This API was redesigned in IntelliJ IDEA 13; the previous [`RuntimeConfigurationProducer`](upsource:///platform/lang-api/src/com/intellij/execution/junit/RuntimeConfigurationProducer.java) is a much more confusing version of the same API.
 
 The two main methods that you need to implement are:
 

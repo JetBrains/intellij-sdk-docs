@@ -9,7 +9,7 @@ For example, one of the action classes is responsible for the **File \| Open Fil
 
 Actions in the IntelliJ Platform require a [code implementation](#action-implementation) and must be [registered](#registering-actions) with the IntelliJ Platform.
 The action implementation determines the contexts in which an action is available, and its functionality when selected in the UI.
-Registration determines where action appears in the IDE UI.
+Registration determines where an action appears in the IDE UI.
 Once implemented and registered, an action receives callbacks from the IntelliJ Platform in response to user gestures.
 
 The [Creating Actions](/tutorials/action_system/working_with_custom_actions.md) tutorial describes the process of adding a custom action to a plugin.
@@ -37,7 +37,7 @@ Every IntelliJ Platform action should override `AnAction.update()` and must over
   As explained in [Overriding the `AnAction.update()`  Method](#overriding-the-anactionupdate-method), it is vital `update()` methods _execute quickly_ and return execution to the IntelliJ Platform.
 * An action's method `AnAction.actionPerformed()` is called by the IntelliJ Platform if available and selected by the user.
   This method does the heavy lifting for the action - it contains the code executed when the action gets invoked.
-  The `actionPerformed()` method also receives `AnActionEvent` as a parameter used to access projects, files, selection, etc.
+  The `actionPerformed()` method also receives `AnActionEvent` as a parameter, which is used to access projects, files, selection, etc.
   See [Overriding the `AnAction.actionPerformed()` Method](#overriding-the-anactionactionperformed-method) for more information.
 
 There are other methods to override in the `AnAction` class, such as changing the default `Presentation` object for the action.
@@ -67,7 +67,7 @@ An action's enable/disable state and visibility are set using methods of the `Pr
 
 The default `Presentation` object is a set of descriptive information about a menu or toolbar action.
 Every context for an action - it might appear in multiple menus, toolbars, or Navigation search locations - has a unique presentation.
-Attributes such as an action's text, description, and icons and visibility and enable/disable state, is stored in the presentation.
+Attributes such as an action's text, description, and icons and visibility and enable/disable state, are stored in the presentation.
 The attributes in a presentation get initialized from the [action registration](#registering-actions).
 However, some can be changed at runtime using the methods of the `Presentation` object associated with an action.
 
@@ -79,7 +79,7 @@ A toolbar action displays its enabled (or selected) icon, depending on the user 
 
 When an action is disabled `AnAction.actionPerformed()` will not be called.
 Toolbar actions display their respective icons for the disabled state.
-The visibility of a disabled action in a menu depends on whether the host menu (e.g., "ToolsMenu") containing the `compact` attribute set.
+The visibility of a disabled action in a menu depends on whether the host menu (e.g., "ToolsMenu") containing the action has the `compact` attribute set.
 See [Grouping Actions](#grouping-actions) for more information about the `compact` attribute and menu actions' visibility.
 
 > **NOTE** If an action is added to a toolbar, its `update()` can be called if there was any user activity or focus transfer.
@@ -91,10 +91,10 @@ An example of enabling a menu action based on whether a project is open is demon
 When the user selects an enabled action, be it from a menu or toolbar, the action's `AnAction.actionPerformed()` method is called.
 This method contains the code executed to perform the action, and it is here that the real work gets done.
 
-Using the `AnActionEvent` methods and `CommonDataKeys`, objects such as the `Project`, `Editor`, `PsiFile`, and other information is available.
+By using the `AnActionEvent` methods and `CommonDataKeys`, objects such as the `Project`, `Editor`, `PsiFile`, and other information is available.
 For example, the `actionPerformed()` method can modify, remove, or add PSI elements to a file open in the editor.
 
-The code that executes in the `AnAction.actionPerformed()` method should execute efficiently, but it does not meet the same stringent requirements as the `update()` method.
+The code that executes in the `AnAction.actionPerformed()` method should execute efficiently, but it does not have to meet the same stringent requirements as the `update()` method.
 
 <!-- TODO: does this all happen inside a transaction? Does that ensure the undo step? -->
 
@@ -112,22 +112,22 @@ Groups organize actions into logical UI structures, which in turn can contain ot
 A group of actions can form a toolbar or a menu.
 Subgroups of a group can form submenus of a menu.
 
-Actions can be included in multiple groups, and thus appear in numerous places within the IDE UI.
+Actions can be included in multiple groups, and thus appear in different places within the IDE UI.
 An action must have a unique identifier for each place it appears in the IDE UI.
 See the [Action Declaration Reference](#action-declaration-reference) section for information about how to specify locations in the IDE UI.
 
 <!-- TODO: Reconcile ActionPlaces vs. PlatformActions -->
 
 #### Presentation
-Every place where the action appears, a new [`Presentation`](upsource:///platform/platform-api/src/com/intellij/ide/presentation/Presentation.java) is created.
-Therefore, the same action can have different text or icons when it appears in other user interface places.
+A new [`Presentation`](upsource:///platform/platform-api/src/com/intellij/ide/presentation/Presentation.java) gets created for every place where the action appears.
+Therefore, the same action can have different text or icons when it appears in different places of the user interface.
 Different presentations for the action are created by copying the Presentation returned by the `AnAction.getTemplatePresentation()` method.
 
 #### Compact Attribute
 A group's "compact" attribute specifies whether an action within that group is visible when disabled.
 See [Registering Actions in plugin.xml](#registering-actions-in-pluginxml) for an explanation of how the `compact` attribute is set for a group.
 If the `compact` attribute is `true` for a menu group, an action in the menu only appears if its state is both enabled and visible.
-In contrast, if the `compact` attribute is `false`, the menu's action appears if its state is disabled but visible.
+In contrast, if the `compact` attribute is `false`, an action in the menu appears if its state is disabled but visible.
 Some menus like **Tools** have the `compact` attribute set, so there isn't a way to show an action on the tools menu if it is not enabled.
 
 | Host Menu<br>`compact` Setting | Action Enabled | Visibility Enabled | Menu Item Visible? | Menu Item Appears Gray? |
@@ -235,7 +235,7 @@ This, and additional information can also be found by using the [Code Completion
          to which the action is added.
          The group must be implemented by an instance of the DefaultActionGroup class.
          The mandatory "anchor" attribute specifies the position of the
-         group's action relative to other actions. It can have the values
+         action in the relative to other actions. It can have the values
          "first", "last", "before" and "after".
          The "relative-to-action" attribute is mandatory if the anchor
          is set to "before" and "after", and specifies the action before or after which

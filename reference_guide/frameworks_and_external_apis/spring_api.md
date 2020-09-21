@@ -39,14 +39,15 @@ All available extension points are provided under `com.intellij.spring` prefix.
 Note that the "Spring Support" plugin itself has dependencies on a few other plugins which need to be enabled in your sandbox (see notifications on startup).
 
 ## Main Concepts
-A Spring facet can be attached to a Module. (Nearly) All Spring functionality requires an existing and adequately setup Spring facet.
+A Spring facet can be attached to a Module. 
+Nearly all Spring functionality requires an existing and correctly setup Spring facet.
 
 Spring facets usually contain one more user-configured or automatically provided filesets, which group a set of Spring related configuration files (XML, Code, .properties, or other configuration files).
 
 A fileset usually corresponds to an actual application context configuration at runtime.
 Hierarchies can be modeled by depending on another fileset (possibly from another module).
 
-As an API-user, you will usually instead work with `SpringModel` (built on top of fileset(s)).
+As an API-user, you will usually prefer working with `SpringModel`, which is built on top of fileset(s).
 
 ## API Updates
 > **NOTE** 2017.3: `LocalXmlModel#setActiveProfiles` & `LocalAnnotationModel#setActiveProfiles` have been deprecated and will be removed in 2018.1.

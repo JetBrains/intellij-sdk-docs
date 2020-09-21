@@ -82,28 +82,24 @@ The file itself is an extract from a color scheme with required attributes, for 
 ```
 
 *Note:*  When the scheme is copied via "Save as..." all its attributes, including the ones defined in the extension, will be copied to the new scheme.
-A scheme designer may need to check that these copied attributes do not conflict with his/her color scheme, although in this case, the plug-in is installed, and it should not cause any problems.
+A scheme designer may need to check that these copied attributes do not conflict with his/her color scheme, although in this case the plug-in is installed, and it should not cause any problems.
 Anyway, try to stick with a simple key dependency if possible (note that it works well for "Darcula") and provide explicit attributes only if necessary.
 
 ## Scheme Designers
 
 ### A Typical Workflow for a New Scheme Creation
 
-*  Choose a scheme which will be used as a base, for example, "Default"
+* Choose a scheme which will be used as a base, for example, "Default"
+* Click "Save As.." and give a name for the new scheme
+* First set attributes in *General*  section and proceed with *Language Defaults*
+* Check all the languages and adjust language-specific text attributes if necessary.
+  In most cases this may not be needed, but two cases may require an extra action:
 
-*  Click "Save As.." and give a name for the new scheme
-
-*  First set attributes in *General*  section and proceed with *Language Defaults*
-
-*  Check all the languages and adjust language-specific text attributes if necessary.
-In most cases, this may not be needed, but two cases may require an extra action:
-
-    *  There is an obsolete plug-in which does not use the new color scheme management API and therefore does not utilize the attributes set in "Language Defaults".
-    Ideally, a report must be created for the language plug-in so that its author will fix it eventually.
-
-    *  A plug-in intentionally sets some default colors and, if the scheme was created from a default one, the colors are copied to the newly created scheme.
-    This can be fixed either by resetting all the attributes to restore the inheritance from Language Defaults (see below) or setting other colors suitable for the scheme.
-    The first way is preferable since it will require less effort to change the color scheme later.
+    * There is an obsolete plug-in which does not use the new color scheme management API and therefore does not utilize the attributes set in "Language Defaults".
+      Ideally, a report must be created for the language plug-in so that its author will fix it eventually.
+    * A plug-in intentionally sets some default colors and, if the scheme was created from a default one, the colors are copied to the newly created scheme.
+      This can be fixed either by resetting all the attributes to restore the inheritance from Language Defaults (see below) or by setting other colors suitable for the scheme.
+      The first way is preferable since it will require less effort to change the color scheme later.
 
 ### Text Attributes Inheritance
 

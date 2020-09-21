@@ -22,8 +22,7 @@ The `FilePath.isNonLocal()` method returns `true` for such files.
 ### Revision Number
 
 A [`VcsRevisionNumber`](upsource:///platform/vcs-api/vcs-api-core/src/com/intellij/openapi/vcs/history/VcsRevisionNumber.java) represents a revision number of the file.
-If the VCS stores revision numbers as simple integers, the standard [`VcsRevisionNumber`](upsource:///platform/vcs-api/vcs-api-core/src/com/intellij/openapi/vcs/history/VcsRevisionNumber.java).
-Int implementation can be used
+If the VCS stores revision numbers as simple integers, the standard [`VcsRevisionNumber`](upsource:///platform/vcs-api/vcs-api-core/src/com/intellij/openapi/vcs/history/VcsRevisionNumber.java) `Int` implementation can be used.
 If the VCS has a more complex format of revision numbers (like CVS, which uses a series of numbers delimited with dots), the plugin can provide a custom implementation.
 
 ### ContentRevision
@@ -75,8 +74,7 @@ There are two main kinds of changelists:
   For VCSes which use per-file commit (like CVS), the plugin can use heuristics to group a sequence of individual file commits into a
   [`CommittedChangeList`](upsource:///platform/vcs-api/src/com/intellij/openapi/vcs/versionBrowser/CommittedChangeList.java)
 
-> **NOTE** The *Unversioned Files*, *Locally Deleted Files* etc.
-> Nodes in the *Changes* view are not actually changelists, and files under those nodes are not represented by Change objects.
+> **NOTE** The *Unversioned Files*, *Locally Deleted Files*, etc., nodes in the *Changes* view are not actually change lists, and files under those nodes are not represented by `ChangeList` objects.
 
 ## Plugin Components
 

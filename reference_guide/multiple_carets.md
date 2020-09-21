@@ -73,4 +73,5 @@ Examples of its usage:
 ## Code Insight Actions
 
 Existing actions inheriting from [`CodeInsightAction`](upsource:///platform/lang-api/src/com/intellij/codeInsight/actions/CodeInsightAction.java) will work for primary caret only.
-To support multiple carets, one should inherit [`MultiCaretCodeInsightAction`](upsource:///platform/lang-impl/src/com/intellij/codeInsight/actions/MultiCaretCodeInsightAction.java) instead (each caret might have a different editor and PSI instance, so using the old API is not possible).
+To support multiple carets, one should subclass [`MultiCaretCodeInsightAction`](upsource:///platform/lang-impl/src/com/intellij/codeInsight/actions/MultiCaretCodeInsightAction.java) instead. 
+Each caret might have a different editor and PSI instance, so using the old API is not possible.

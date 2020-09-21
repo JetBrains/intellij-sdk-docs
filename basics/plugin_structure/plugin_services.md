@@ -77,7 +77,7 @@ To provide custom implementation for test/headless environment, specify `testSer
 
 ## Retrieving a Service
 
-Getting service doesn't need read action and can be performed from any thread.
+Getting service doesn't need a read action and can be performed from any thread.
 If service is requested from several threads, it will be initialized in the first thread, and other threads will be blocked until service is fully initialized.
 
 To retrieve a service in Java code:
@@ -123,7 +123,7 @@ _ProjectService.java_
 
 This sample plugin illustrates how to create and use a plugin service.
 This plugin has an application service counting the number of currently opened projects in the IDE.
-If this number exceeds the maximum allowed number of simultaneously opened projects, the plugin displays a warning message.
+If this number exceeds the maximum number of simultaneously opened projects allowed by the plugin, it displays a warning message.
 
 **To install and run the sample plugin**
 

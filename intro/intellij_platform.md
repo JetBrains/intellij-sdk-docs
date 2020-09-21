@@ -8,9 +8,10 @@ It is used to power JetBrains products such as [IntelliJ IDEA](https://www.jetbr
 It is also Open Source and can be used by third parties to build IDEs, such as [Android Studio](https://developer.android.com/studio/index.html) from Google.
 
 The IntelliJ Platform provides all of the infrastructures that these IDEs need to provide rich language tooling support.
-It gives a component-driven, cross-platform JVM based application host with a high-level user interface toolkit for creating tool windows, tree views, and lists (supporting fast search) as well as popup menus and dialogs.
+It is a component-driven, cross-platform JVM based application host with a high-level user interface toolkit for creating tool windows, tree views, and lists (supporting fast search) as well as popup menus and dialogs.
 
-It also includes an image editor and a full-text editor and provides abstract implementations of syntax highlighting, code folding, code completion, and other rich text editing features.
+The IntelliJ Platform has a full-text editor with abstract implementations of syntax highlighting, code folding, code completion, and other rich text editing features. 
+An image editor is also included.
 
 Furthermore, it includes open APIs to build standard IDE functionality, such as a project model and a build system.
 It also provides an infrastructure for a rich debugging experience, with language-agnostic advanced breakpoint support, call stacks, watch windows, and expression evaluation.

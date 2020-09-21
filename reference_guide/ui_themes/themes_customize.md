@@ -28,14 +28,14 @@ Colors are defined by six-digit RGB or eight-digit RGBA hexadecimal notation.
 ### UI Theme Reference Implementations
 When learning new syntax, it is often useful to have some existing implementations for reference.
 For example, refer to the [Theme description file](upsource:///platform/platform-resources/src/themes/HighContrast.theme.json) for the IntelliJ IDEA _High Contrast_ Theme.
-It may also help review some of the [UI Themes available](https://plugins.jetbrains.com/search?headline=164-theme&tags=Theme) at the JetBrains Plugins Repository.
+It may also help to review some of the [UI Themes available](https://plugins.jetbrains.com/search?headline=164-theme&tags=Theme) at the JetBrains Plugins Repository.
 
 ## Defining Named Colors
 Colors can always be defined individually as six-digit RGB or eight-digit RGBA hexadecimal notation.
 However, Theme definitions often use the same color in multiple places.
 Maintaining a Theme is more manageable if _Named Colors_ are globally defined in a `colors {}` block as part of the `*.theme.json` file.
 After that, the Named Color can be used instead of a hexadecimal description of the color.
-For example, defining the Named Color `basicBackground` and then using it to set the panels' background color.
+For example, defining the Named Color `basicBackground` and then using it to set the background color of panels.
 (Don't be concerned with the `"ui"` syntax in the example below; it will be discussed in [Custom UI Control Colors](#custom-ui-control-colors).)
 
 ```json
@@ -77,11 +77,11 @@ In the following example, the `key` - the default red color (#DB5860) used for `
 This color substitution is applied throughout the IDE UI.
 
 ### Custom Icon Palette Colors
-Icon Palettes are predefined UI Theme color keys, describing a single color in an `Actions` or `Objects` context.
+Icon Palettes are predefined UI Theme color keys that describe a single color in an `Actions` or `Objects` context.
 
 #### Icon Colors in "Actions" and "Objects" Contexts
 IntelliJ Platform has default icon colors defined for `Actions` and `Objects` contexts.
-* `Actions` are Theme keys for icons that appear in the context of toolbars and represent actions such as _Compile_, _Run_, or _Debug_.
+* `Actions` are Theme keys for icons that appear in the context of toolbars, and represent actions such as _Compile_, _Run_, or _Debug_.
 * `Objects` are Theme keys for icons that appear in the contexts of lists and trees, and represent entities like files, symbols, or run and debug configurations.
 
 The [JetBrains Platform UI Guideline for Icons](https://jetbrains.design/intellij/principles/icons/) defines the default hexadecimal RGB values of colors for `Actions` and `Objects` keys.
@@ -93,7 +93,7 @@ The list of available icon `Actions` and `Objects` keys are provided by the edit
 
 ![Color Palette Popup](img/theme_colorpalette_popup.png){:width="600px"}
 
-For example, the following key-value pair changes the color fo ll blue-colored icons on toolbars to the color #5BC0DE:
+For example, the following key-value pair changes the color for all blue-colored icons on toolbars to the color `#5BC0DE`:
 
 ```json
 {
@@ -245,12 +245,12 @@ The format of keys for borders is `element.property`, where:
   * `border` is the border width (in pixels) specified as a top, left, bottom, and right widths.
   Border color is also (optionally) specified as hexadecimal RGB, e.g. "E6E6E6" with no "#" character.
   * `borderInsets` is the inset distance (in pixels) from the edge of the `element` to the border.
-  It is specified as a top, left, bottom, and right insets.
+  It is specified as top, left, bottom, and right insets.
 
 Methods for identifying UI control keys are in the [Finding Attribute Keys for UI Controls](#finding-attribute-keys-for-ui-controls) section.
 
 #### Customizing the Border Appearance of Specific UI Controls
-The appearance of borders for specific UI control types is customized by adding a key-value pair to the `"ui": {}` section of a Theme description file.
+Adding a key-value pair to the `"ui": {}` section of a Theme description file customizes the appearance of borders for specific UI control types.
 
 The following example sets a new border width and color for all windows:
 
@@ -262,7 +262,7 @@ The following example sets a new border width and color for all windows:
 }
 ```
 
-In this example, the customized border supersedes the default definition an ny global color override.
+In this example, the customized border supersedes the default definition and any global color override.
 
 ## Finding Attribute Keys for UI Controls
 There are hundreds of UI control `element.property` keys defined in the IntelliJ Platform UI.

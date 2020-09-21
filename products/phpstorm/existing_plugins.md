@@ -10,7 +10,7 @@ This page lists some example PhpStorm plugins created by third-party developers.
 ## Symfony
 The Symfony plugin is a free plugin for Symfony framework developers.
 
-There are many features included in this plugin, such as Symfony-specific completion and navigation for symbols, templates, service containers, Doctrine, translations, routes, forms, events, and more.
+There are lots of features included into this plugin, such as Symfony-specific completion and navigation for symbols, templates, service container, Doctrine, translations, routes, forms, events, and more.
 
 * [Official Symfony plugin Web Site](https://symfony2-plugin.espend.de/)
 * [GitHub](https://github.com/Haehnchen/idea-php-symfony2-plugin)

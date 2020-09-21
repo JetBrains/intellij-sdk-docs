@@ -11,7 +11,7 @@ You can use either a simple API to persist a few values or persist the state of 
 ## Using PropertiesComponent for Simple Non-Roamable Persistence
 
 If the plugin needs to persist just a few simple values, the easiest way to do so is to use the [`com.intellij.ide.util.PropertiesComponent`](upsource:///platform/core-api/src/com/intellij/ide/util/PropertiesComponent.java) service.
-It can save both application-level values and project-level values (stored in the workspace file).
+It can save both application-level values and project-level values in the workspace file.
 Roaming is disabled for `PropertiesComponent`, so use it only for temporary, non-roamable properties.
 
 Use the `PropertiesComponent.getInstance()` method for storing application-level values, and the `PropertiesComponent.getInstance(Project)` method for storing project-level values.
@@ -81,7 +81,7 @@ The implementation of `PersistentStateComponent` works by serializing public fie
 To exclude a public field or bean property from serialization, annotate the field or getter with `@com.intellij.util.xmlb.annotations.Transient`.
 
 Note that the state class must have a default constructor.
-It should return the component's default state (one used if there is nothing persisted in the XML files yet).
+It should return the component's default state: the one used if there is nothing persisted in the XML files yet.
 
 State class should have an `equals()` method, but state objects are compared by fields if it is not implemented.
 When using Kotlin, use [Data Classes](https://kotlinlang.org/docs/reference/data-classes.html).
@@ -140,7 +140,7 @@ The simplest ways of specifying the `@Storage` annotation are as follows (since 
 
 * `@Storage(StoragePathMacros.WORKSPACE_FILE)` for values stored in the workspace file.
 
-The state is persisted in a separate file by specifying a different value for the `value` parameter (`file` before 2016.x).
+The state is persisted in a separate file by specifying a different setting for the `value` parameter, which was the `file` parameter before 2016.x.
 
 > **NOTE** For application-level components, it is strongly recommended to use a custom file, using of `other.xml` is deprecated.
 

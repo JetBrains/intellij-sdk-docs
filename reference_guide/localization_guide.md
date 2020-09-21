@@ -20,7 +20,7 @@ In order to enable multiple localizations per installation without localization 
 
 ## Content and Layout of resources_en.jar
 
-Property file sually contain messages, menu items, dialog labels texts etc.
+Property files usually contain messages, menu items, dialog labels texts etc.
 For every such file localized jar should contain translated version that is placed to exactly the same path relative to the jar root and has exactly the same name as original file plus locale identifier.
 For example ***messages/ActionsBundle.properties*** file from ***resources_en.jar*** should have its translated version ***messages/ActionsBundle_ja.properties*** file in ***resources_ja.jar***.
 All property files should be ASCII encoded with *\uXXXX* sequences used for characters that have no their representation in ASCII range.
@@ -28,8 +28,9 @@ See [native2ascii](https://docs.oracle.com/javase/7/docs/technotes/tools/solaris
 
 Property values mostly follow MessageFormat rules.
 
-> **NOTE** Due to historic reasons main menu, toolbar, popup menus and other actions have their mnemonic char prefixed with `\_` (underscore) char while all other mnemonics like those for checkboxes, buttons etc.
-use `&` (ampersand) sign for the same purpose.  Moreover one can encounter `&&` (double ampersand) in some places, which denote alternative mnemonic to be used under MacOS X (mnemonics mapped to `U`, `I`, `O`, `N` chars won't work there).  Generally, use the same mnemonic denotation used in original property value and everything will be OK.
+> **NOTE** Due to historic reasons main menu, toolbar, popup menus and other actions have their mnemonic char prefixed with `\_` (underscore) char while all other mnemonics like those for checkboxes, buttons etc. use `&` (ampersand) sign for the same purpose.  
+> Moreover one can encounter `&&` (double ampersand) in some places, which denote alternative mnemonic to be used under MacOS X (mnemonics mapped to `U`, `I`, `O`, `N` chars won't work there).  
+> Generally, use the same mnemonic denotation used in the original property value and everything will be OK.
 
 ## Components Location
 

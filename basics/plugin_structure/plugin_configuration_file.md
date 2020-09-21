@@ -156,4 +156,4 @@ When using Gradle, a number of metadata elements will be provided at build time 
     <listener class="com.foo.impl.MyToolwindowListener" topic="com.intellij.openapi.wm.ex.ToolWindowManagerListener"/>
   </projectListeners>
 </idea-plugin>
-`"
+```

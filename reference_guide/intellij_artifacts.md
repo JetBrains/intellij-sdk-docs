@@ -53,14 +53,14 @@ Portions of the module name expressed in `camelCase` format are divided and used
 
 The table below shows some example module names and their corresponding groupId and artifactId.
 
-| Module Name                    | groupId                         | artifactId |
-|--------------------------------|---------------------------------|----------------|
-|intellij.java.compiler.antTasks | com.jetbrains.intellij.java     | java-compiler-ant-tasks |
-|intellij.java.debugger          | com.jetbrains.intellij.java     | java-debugger |
-|intellij.platform.util          | com.jetbrains.intellij.platform | util |
-|intellij.platform.vcs.log       | com.jetbrains.intellij.platform | vcs-log |
-|intellij.spring                 | com.jetbrains.intellij.spring   | spring |
-|intellij.xml.impl               | com.jetbrains.intellij.xml      | xml-impl |
+| Module Name                     | groupId                         | artifactId              |
+| ------------------------------- | ------------------------------- | ----------------------- |
+| intellij.java.compiler.antTasks | com.jetbrains.intellij.java     | java-compiler-ant-tasks |
+| intellij.java.debugger          | com.jetbrains.intellij.java     | java-debugger           |
+| intellij.platform.util          | com.jetbrains.intellij.platform | util                    |
+| intellij.platform.vcs.log       | com.jetbrains.intellij.platform | vcs-log                 |
+| intellij.spring                 | com.jetbrains.intellij.spring   | spring                  |
+| intellij.xml.impl               | com.jetbrains.intellij.xml      | xml-impl                |
 
 The artifact _version_ can be specified in one of several ways because each artifact [at the Repository URLs](#specify-the-repository-url) has multiple versions available:
 * Specify release build versions as _MAJOR[.MINOR][.FIX]_. For example `14`, or `14.1`, or `14.1.1`
@@ -80,7 +80,6 @@ For example, to specify the `jps-model-serialization` module:
   * _artifactId_ = `jps-model-serialization`
   * _classifier_ = `""`
   * _packaging_ = `jar`
-
 
 ## Gradle Example for an Individual Module from the IntelliJ Platform
 This section presents an example of using a Gradle script to incorporate an IntelliJ Platform module and repository in a `build.gradle` file.
@@ -110,5 +109,4 @@ dependencies {
 
 Note:
  * The artifact version (`182.2949.4`) must match in both statements.
- * In this example `jps-model-serialization` declares the APIs and `jps-model-impl` provides the implementation, so both
-   are required dependencies.
+ * In this example `jps-model-serialization` declares the APIs and `jps-model-impl` provides the implementation, so both are required dependencies.

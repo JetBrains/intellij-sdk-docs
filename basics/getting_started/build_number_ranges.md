@@ -51,7 +51,7 @@ Usually you should omit the product ID and use only the branch number and build 
 > **TIP** Which versions should your plugin support? We've collected some insights based on download statistics in [Statistics: Product Versions in Use](https://plugins.jetbrains.com/docs/marketplace/product-versions-in-use-statistics.html).
 
 | Branch number                                                   | IntelliJ Platform version |
-|-----------------------------------------------------------------|---------------------------|
+| --------------------------------------------------------------- | ------------------------- |
 | [202](https://github.com/JetBrains/intellij-community/tree/202) | 2020.2                    |
 | [201](https://github.com/JetBrains/intellij-community/tree/201) | 2020.1                    |
 | [193](https://github.com/JetBrains/intellij-community/tree/193) | 2019.3                    |
@@ -71,35 +71,35 @@ In the `YYYY.R` versioning scheme, the `R` part starts at 1.
 
 ### IntelliJ Platform Based Products of Pre-2016.2 IDE Versions
 
-| Branch number | Product version |
-|---------------|-----------------|
+|  Branch number                                                  |  Product version                                                                                                                       |
+| --------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
 | [145](https://github.com/JetBrains/intellij-community/tree/145) | IntelliJ IDEA 2016.1, AppCode 2016.1, CLion 2016.1, DataGrip 2016.1, PhpStorm 2016.1, PyCharm 2016.1, RubyMine 2016.1, WebStorm 2016.1 |
-| [143](https://github.com/JetBrains/intellij-community/tree/143) | IntelliJ IDEA 15, AppCode 3.3, CLion 1.2, DataGrip 1.0, PhpStorm 10, PyCharm 5, RubyMine 8, WebStorm 11 |
-| [141](https://github.com/JetBrains/intellij-community/tree/141) | IntelliJ IDEA 14.1, Android Studio 1.3, PyCharm 4.1, WebStorm 10 |
-| [139](https://github.com/JetBrains/intellij-community/tree/139) | IntelliJ IDEA 14, PhpStorm 8, PyCharm 4, RubyMine 7, WebStorm 9 |
-| [135](https://github.com/JetBrains/intellij-community/tree/135) | IntelliJ IDEA 13.1, WebStorm 8 |
-| [133](https://github.com/JetBrains/intellij-community/tree/133) | IntelliJ IDEA 13, PhpStorm 7, PyCharm 3.1, WebStorm 7 |
-| [131](https://github.com/JetBrains/intellij-community/tree/131) | PhpStorm 7, PyCharm 3.0, WebStorm 7 |
-| [129](https://github.com/JetBrains/intellij-community/tree/129) | IntelliJ IDEA 12.1, bug-fix updates for PyCharm 2.7 and PhpStorm/WebStorm 6.0 |
-| [127](https://github.com/JetBrains/intellij-community/tree/127) | AppCode 2.0, PhpStorm/WebStorm 6.0 |
-| [125](https://github.com/JetBrains/intellij-community/tree/125) | PyCharm 2.7, RubyMine 5.0 |
-| [123](https://github.com/JetBrains/intellij-community/tree/123) | IntelliJ IDEA 12 |
-| [121](https://github.com/JetBrains/intellij-community/tree/121) | AppCode 1.6, PyCharm 2.6, PhpStorm/WebStorm 5.0 |
-| [119](https://github.com/JetBrains/intellij-community/tree/119) | RubyMine 4.5 |
-| [117](https://github.com/JetBrains/intellij-community/tree/117) | IntelliJ IDEA 11.1, AppCode 1.5, PyCharm 2.5, RubyMine 4.0.x, PhpStorm/WebStorm 4.0 |
-| 111           | IntelliJ IDEA 11.0 |
-| 107           | IntelliJ IDEA 10.5 |
-| 103           | IntelliJ IDEA 10.0.2+ |
-| 99            | IntelliJ IDEA 10.0+ |
-| 95            | IntelliJ IDEA 9.0.2+ |
-| 93            | IntelliJ IDEA 9.0 |
+| [143](https://github.com/JetBrains/intellij-community/tree/143) | IntelliJ IDEA 15, AppCode 3.3, CLion 1.2, DataGrip 1.0, PhpStorm 10, PyCharm 5, RubyMine 8, WebStorm 11                                |
+| [141](https://github.com/JetBrains/intellij-community/tree/141) | IntelliJ IDEA 14.1, Android Studio 1.3, PyCharm 4.1, WebStorm 10                                                                       |
+| [139](https://github.com/JetBrains/intellij-community/tree/139) | IntelliJ IDEA 14, PhpStorm 8, PyCharm 4, RubyMine 7, WebStorm 9                                                                        |
+| [135](https://github.com/JetBrains/intellij-community/tree/135) | IntelliJ IDEA 13.1, WebStorm 8                                                                                                         |
+| [133](https://github.com/JetBrains/intellij-community/tree/133) | IntelliJ IDEA 13, PhpStorm 7, PyCharm 3.1, WebStorm 7                                                                                  |
+| [131](https://github.com/JetBrains/intellij-community/tree/131) | PhpStorm 7, PyCharm 3.0, WebStorm 7                                                                                                    |
+| [129](https://github.com/JetBrains/intellij-community/tree/129) | IntelliJ IDEA 12.1, bug-fix updates for PyCharm 2.7 and PhpStorm/WebStorm 6.0                                                          |
+| [127](https://github.com/JetBrains/intellij-community/tree/127) | AppCode 2.0, PhpStorm/WebStorm 6.0                                                                                                     |
+| [125](https://github.com/JetBrains/intellij-community/tree/125) | PyCharm 2.7, RubyMine 5.0                                                                                                              |
+| [123](https://github.com/JetBrains/intellij-community/tree/123) | IntelliJ IDEA 12                                                                                                                       |
+| [121](https://github.com/JetBrains/intellij-community/tree/121) | AppCode 1.6, PyCharm 2.6, PhpStorm/WebStorm 5.0                                                                                        |
+| [119](https://github.com/JetBrains/intellij-community/tree/119) | RubyMine 4.5                                                                                                                           |
+| [117](https://github.com/JetBrains/intellij-community/tree/117) | IntelliJ IDEA 11.1, AppCode 1.5, PyCharm 2.5, RubyMine 4.0.x, PhpStorm/WebStorm 4.0                                                    |
+| 111                                                             | IntelliJ IDEA 11.0                                                                                                                     |
+| 107                                                             | IntelliJ IDEA 10.5                                                                                                                     |
+| 103                                                             | IntelliJ IDEA 10.0.2+                                                                                                                  |
+| 99                                                              | IntelliJ IDEA 10.0+                                                                                                                    |
+| 95                                                              | IntelliJ IDEA 9.0.2+                                                                                                                   |
+| 93                                                              | IntelliJ IDEA 9.0                                                                                                                      |
 
 ## History
 
 ### Build Numbers for IntelliJ IDEA Versions
 
 | IntelliJ IDEA version | Build number  |
-|-----------------------|---------------|
+| --------------------- | ------------- |
 | 12.0                  | 123.72        |
 | 11.1.3                | 117.798       |
 | 11.1.2                | 117.418       |
@@ -126,7 +126,7 @@ In the `YYYY.R` versioning scheme, the `R` part starts at 1.
 Before IntelliJ IDEA 9.0, linear build numbers were used, with the following ranges:
 
 | IntelliJ IDEA version | Build number range |
-|-----------------------|--------------------|
+| --------------------- | ------------------ |
 | 8.1.x                 | 9500-9999          |
 | 8.0.x                 | 9100-9499          |
 | 8.0                   | 8000-9099          |
@@ -141,7 +141,7 @@ Before IntelliJ IDEA 9.0, linear build numbers were used, with the following ran
 The build number for each release:
 
 | IntelliJ IDEA version | Build number |
-|-----------------------|--------------|
+| --------------------- | ------------ |
 | 8.1                   | 9732         |
 | 8.0.1                 | 9164         |
 | 8.0                   | 9013         |

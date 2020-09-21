@@ -40,10 +40,15 @@ To remove stored credentials, pass `null` for the `credentials` parameter.
 ## Storage
 The default storage format depends on the OS.
 
-| OS      | Storage |
-|---------|---------|
-| Windows | File in [KeePass](https://keepass.info) format |
-| macOS   | Keychain using [Security Framework](https://developer.apple.com/documentation/security/keychain_services) |
-| Linux   | [Secret Service API](https://specifications.freedesktop.org/secret-service/latest/) using [libsecret](https://wiki.gnome.org/Projects/Libsecret) |
+| OS      | Storage                                               |
+| ------- | ----------------------------------------------------- |
+| Windows | File in [KeePass][Windows] format                     |
+| macOS   | Keychain using [Security Framework][macOS]            |
+| Linux   | [Secret Service API][linux] using [libsecret][linux2] |
+
+[Windows]: https://keepass.info
+[macOS]: https://developer.apple.com/documentation/security/keychain_services
+[linux]: https://specifications.freedesktop.org/secret-service/latest/
+[linux]: https://wiki.gnome.org/Projects/Libsecret
 
 Users can override the default behavior in Preferences \| Appearance & Behavior \| System Settings \| Passwords.

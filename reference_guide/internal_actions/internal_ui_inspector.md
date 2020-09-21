@@ -28,13 +28,23 @@ The _UI Inspector_ displays that the icon has the internal path `AllIcons.Action
 Various components used in the IntelliJ Platform expose additional properties.
 These can be useful to locate the underlying implementation, related Action, etc.
 
-| Type | Place | Properties |
-|------|-----------|------------|
-| [`AnAction`](/basics/action_system.md) | Action Button<br>Menu Item | `Action` - [`AnAction`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java) implementation<br>`Action ID` - Action `id`<br>`Action Plugin ID` - contributing plugin |
-| [`ActionToolbar`](/basics/action_system.md) | Action Toolbar | `Toolbar Group` - Action Group ID<br>`All Groups` - contained Action Group IDs |
-| [`DialogWrapper`](/user_interface_components/dialog_wrapper.md) | Modal Dialog | `dialogWrapperClass` - [`DialogWrapper`](upsource:///platform/platform-api/src/com/intellij/openapi/ui/DialogWrapper.java) implementation |
-| [`GutterMark`](upsource:///platform/editor-ui-api/src/com/intellij/codeInsight/daemon/GutterMark.java) | Editor Gutter Icon | `gutter renderer` - [`GutterMark`](upsource:///platform/editor-ui-api/src/com/intellij/codeInsight/daemon/GutterMark.java) implementation |
-| [`IntentionAction`/`QuickFix`](/reference_guide/custom_language_support/code_inspections_and_intentions.md) | Popup Menu in Editor | `intention action`/`quick fix` - [`IntentionAction`](upsource:///platform/analysis-api/src/com/intellij/codeInsight/intention/IntentionAction.java) / [`QuickFix`](upsource:///platform/analysis-api/src/com/intellij/codeInspection/QuickFix.java) implementation |
-| [`Tree`](/user_interface_components/lists_and_trees.md) | Tree | `treeModelClass` - `javax.swing.tree.TreeModel` implementation |
+| Type                                            | Place                      | Properties                                                                                                                   |
+| ----------------------------------------------- | -------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| [`AnAction`][ActionSystem]                      | Action Button<br>Menu Item | `Action` - [`AnAction`][us:AnAction] implementation<br>`Action ID` - Action `id`<br>`Action Plugin ID` - contributing plugin |
+| [`ActionToolbar`][ActionSystem]                 | Action Toolbar             | `Toolbar Group` - Action Group ID<br>`All Groups` - contained Action Group IDs                                               |
+| [`DialogWrapper`][DialogWrapper]                | Modal Dialog               | `dialogWrapperClass` - [`DialogWrapper`][us:DialogWrapper] implementation                                                    |
+| [`GutterMark`][us:GutterMark]                   | Editor Gutter Icon         | `gutter renderer` - [`GutterMark`][us:GutterMark] implementation                                                             |
+| [`IntentionAction`/`QuickFix`][IntentionAction] | Popup Menu in Editor       | `intention action`/`quick fix` - [`IntentionAction`][us:IntentionAction] / [`QuickFix`][us:QuickFix] implementation          |
+| [`Tree`][Tree]                                  | Tree                       | `treeModelClass` - `javax.swing.tree.TreeModel` implementation                                                               |
+
+[ActionSystem]: /basics/action_system.md
+[DialogWrapper]: /user_interface_components/dialog_wrapper.md
+[Tree]: /user_interface_components/lists_and_trees.md
+[IntentionAction]: /reference_guide/custom_language_support/code_inspections_and_intentions.md
+[us:AnAction]: upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java
+[us:GutterMark]: upsource:///platform/editor-ui-api/src/com/intellij/codeInsight/daemon/GutterMark.java
+[us:DialogWrapper]: upsource:///platform/platform-api/src/com/intellij/openapi/ui/DialogWrapper.java
+[us:IntentionAction]: upsource:///platform/analysis-api/src/com/intellij/codeInsight/intention/IntentionAction.java
+[us:QuickFix]: upsource:///platform/analysis-api/src/com/intellij/codeInspection/QuickFix.java
 
 Custom Swing components can also provide additional properties via [`UiInspectorContextProvider`](upsource:///platform/platform-impl/src/com/intellij/internal/inspector/UiInspectorContextProvider.java) (2020.1 and later).

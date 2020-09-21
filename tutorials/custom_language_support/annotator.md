@@ -6,10 +6,10 @@ title: 7. Annotator
 An `Annotator` helps highlight and annotate any code based on specific rules.
 This section adds annotation functionality to support the Simple Language in the context of Java code.
 
-**Reference**: [Annotator](/reference_guide/custom_language_support/syntax_highlighting_and_error_highlighting.md#annotator) 
+**Reference**: [Annotator](/reference_guide/custom_language_support/syntax_highlighting_and_error_highlighting.md#annotator)
 
 * bullet list
-{:toc} 
+{:toc}
 
 ## Required Project Configuration Changes
 Classes defined in this step of the tutorial depend on `com.intellij.psi.PsiLiteralExpression` at runtime.
@@ -34,7 +34,7 @@ Consider a literal string that starts with "simple:" as a prefix of a Simple Lan
 It isn't part of the Simple Language, but it is a useful convention for detecting Simple Language keys embedded as string literals in other languages, like Java.
 Annotate the `simple:key` literal expression, and differentiate between a well-formed vs. an unresolved property.
 
-> **NOTE** The use of new `AnnotationHolder` syntax starting 2020.2, which uses the builder format. 
+> **NOTE** The use of new `AnnotationHolder` syntax starting 2020.2, which uses the builder format.
 
 ```java
 {% include /code_samples/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleAnnotator.java %}
@@ -62,7 +62,7 @@ public class Test {
 }
 ```
 
-Open this Java file in an IDE Development Instance running the `simple_language_plugin` to check if the IDE resolves a property: 
+Open this Java file in an IDE Development Instance running the `simple_language_plugin` to check if the IDE resolves a property:
 
 ![Annotator](img/annotator.png){:width="800px"}
 

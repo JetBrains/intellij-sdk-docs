@@ -7,7 +7,9 @@ title: IntelliJ Platform Plugin Template
 
 The main goal of this template is to speed up the setup phase of plugin development for both new and experienced developers by preconfiguring the project scaffold and CI, linking to the proper documentation pages, and keeping everything organized.
 
-GitHub Template allows you to create a new repository from the scaffold without having to copy and paste content, clone repositories, or clear the history manually. All you have to do is click the <kbd>Use this template</kbd> button on the GitHub project page. After that, the GitHub Actions workflow will be triggered to override or remove any template-specific configurations, such as the plugin name, current changelog, etc.
+GitHub Template allows you to create a new repository from the scaffold without having to copy and paste content, clone repositories, or clear the history manually.
+All you have to do is click the <kbd>Use this template</kbd> button on the GitHub project page.
+After that, the GitHub Actions workflow will be triggered to override or remove any template-specific configurations, such as the plugin name, current changelog, etc.
 
 Once this is complete, the project is ready to be cloned to your local environment and opened with [IntelliJ IDEA][jb:download-ij].
 

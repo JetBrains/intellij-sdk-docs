@@ -4,13 +4,11 @@ title: Incompatible Changes in IntelliJ Platform and Plugins API 2020.*
 <!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 <!--
-Before documenting a breaking API change, please, make sure that the change cannot be avoided 
-in an alternative way.
+Before documenting a breaking API change, please, make sure that the change cannot be avoided in an alternative way.
 
-APIs marked with @ApiStatus.Experimental, @ApiStatus.Internal or @ApiStatus.ScheduledForRemoval don't need to be documented.
+APIs marked with @ApiStatus.Experimental, @ApiStatus.Internal, or @ApiStatus.ScheduledForRemoval don't need to be documented.
 
-To document a new incompatible change, add a new line with the problem pattern
-followed by a 2nd line with ": "-prefixed human-readable description and recommended fix/action.
+To document a new incompatible change, add a new line with the problem pattern followed by a 2nd line with ": "-prefixed human-readable description and recommended fix/action.
 
 The following problem patterns are supported:
 
@@ -43,7 +41,7 @@ The following problem patterns are supported:
 
 <property name> property removed from resource bundle <bundle name>
 
-where the placeholders must be enclosed in code quotes (`name`):
+Where the placeholders must be enclosed in code quotes (`name`):
 
 <class name> is a fully-qualified name of the class, e.g. `com.intellij.openapi.actionSystem.AnAction$InnerClass`.
 <method name> is the exact method's name. Note that constructors have dedicated patterns.
@@ -52,12 +50,12 @@ where the placeholders must be enclosed in code quotes (`name`):
 <property name> is a full name of a property from .properties file, like `some.action.description`
 <bundle name> is a fully qualified name of the property bundle, which includes its package, like `message.IdeBundle`
 
-NOTE: If a code change you're trying to document doesn't match any of the above patterns, fill in a ticket in the YouTrack. 
+NOTE: If a code change you're trying to document doesn't match any of the above patterns, fill in a ticket in the YouTrack.
 An example of a ticket is https://youtrack.jetbrains.com/issue/MP-1218. Until supported, you may document the change as you prefer, and I will correct it later.
 
 NOTE: You are allowed to prettify the pattern using links: [`org.example.Foo`](https://github.com/JetBrains/intellij-community/tree/master/)
 
-NOTE: Entries not starting with code quotes (`name`) can be added to document non-code changes and will be skipped in API verification.
+NOTE: Entries not starting with code quotes (`name`) can be added to document non-code changes  and will be skipped in API verification.
 -->
 
 Please see [Incompatible API Changes](/reference_guide/api_changes_list.md) on how to verify compatibility.
@@ -68,9 +66,14 @@ Please see [Incompatible API Changes](/reference_guide/api_changes_list.md) on h
                               
 ### Changes in IntelliJ Platform 2020.3
 
+The PSI structure of multi-dimensional arrays in Java source files changed (see `com.intellij.psi.PsiTypeElement`)
+: Now the children are flattened: brackets for all the dimensions are direct children of the `PsiTypeElement` that represent the multi-dimensional array. This change doesn't break source or binary compatibility but may produce behavioral changes in the code that traverses the tree of Java source files.
+
+The `com.intellij.psi.PsiAnnotation.getOwner` method now returns `PsiType` instead of `PsiTypeElement` for type annotations in Java source files
+: This change supports identifying whether a type annotation is attached to an inner class or a particular dimension of a multi-dimensional array.
+This change doesn't break source or binary compatibility but may produce behavioral changes for callers.
 `com.intellij.openapi.application.NonBlockingReadAction.finishOnUiThread` method parameter type changed from ``Consumer<T>`` to ``Consumer<? super T>``
 : This may break source-compatibility with inheritors written in Kotlin.
-                                                      
 ### Changes in Java Plugin 2019.3
 
 The PSI structure of multi-dimensional arrays in Java source files changed (see `com.intellij.psi.PsiTypeElement`)
@@ -79,7 +82,6 @@ The PSI structure of multi-dimensional arrays in Java source files changed (see 
 The `com.intellij.psi.PsiAnnotation.getOwner` method now returns `PsiType` instead of `PsiTypeElement` for type annotations in Java source files
 : This change supports identifying whether a type annotation is attached to an inner class or a particular dimension of a multi-dimensional array.
 This change doesn't break source or binary compatibility but may produce behavioral changes for callers.
-
 ### Changes in Python Plugin 2020.3
 
 All parameters in `com.jetbrains.python.psi.PyElementVisitor` marked `@NotNull`
@@ -91,10 +93,10 @@ All parameters in `com.jetbrains.python.psi.PyElementVisitor` marked `@NotNull`
 ### Changes in IntelliJ Platform 2020.2
 
 Support for JavaFX deprecated
-: Plugins should migrate to [JCEF](/reference_guide/jcef.md). Alternatively, add an explicit dependency on [JavaFX Runtime for Plugins](https://plugins.jetbrains.com/plugin/14250-javafx-runtime-for-plugins). 
+: Plugins should migrate to [JCEF](/reference_guide/jcef.md). Alternatively, add an explicit dependency on [JavaFX Runtime for Plugins](https://plugins.jetbrains.com/plugin/14250-javafx-runtime-for-plugins).
 
 `com.intellij.psi.util.PsiTreeUtil.processElements(element, processor)` method parameter type changed from `PsiElementProcessor` to `PsiElementProcessor<PsiElement>`
-: This may break source-compatibility with clients that pass more specific processor. Passing more specific processor was illegal before as well because the `processElements` passes every descendant `PsiElement` to the processor regardless of its type. However, this worked with some poorly written clients, e.g. `PsiElementProcessor.CollectFilteredElements` and `PsiElementProcessor.FindFilteredElement` (both deprecated now). To simplify the migration, a new three-arg `processElements(element, elementClass, processor)` is introduced that actually filters by element class, so in most cases, the simplest migration would be to add a wanted element class as a second argument. However, it's advised to use `SyntaxTraverser` API instead, which is more rich and flexible.
+: This may break source-compatibility with clients that pass a more specific processor. Passing a more specific processor was illegal before because the `processElements` passes every descendant `PsiElement` to the processor regardless of its type. However, this worked with some poorly written clients, e.g. `PsiElementProcessor.CollectFilteredElements` and `PsiElementProcessor.FindFilteredElement` (both deprecated now). To simplify the migration, a new three-arg `processElements(element, elementClass, processor)` is introduced that filters by element class. In most cases, the simplest migration would be to add a wanted element class as a second argument. However, it's advised to use `SyntaxTraverser` API instead, which is more rich and flexible.
 
 `com.maddyhome.idea.copyright.util.FileTypeUtil.getFileTypeByName(String)` method removed
 : This was an internal utility method not intended for use in plugins. Use `FileTypeManager.getInstance().findFileTypeByName()` instead.
@@ -103,7 +105,7 @@ Support for JavaFX deprecated
 : [Javassist](https://github.com/jboss-javassist/javassist) library was removed, bundle it with your plugin instead.
 
 `com.intellij.compiler.backwardRefs.LanguageCompilerRefAdapter.INSTANCES` field removed
-: This field leaked instances of plugin's extensions on plugin unloading. Use `com.intellij.compiler.backwardRefs.LanguageCompilerRefAdapter#EP_NAME.getExtensionList()` directly instead.  
+: This field leaked instances of plugin's extensions on plugin unloading. Use `com.intellij.compiler.backwardRefs.LanguageCompilerRefAdapter#EP_NAME.getExtensionList()` directly instead.
 
 `groovy.util.AntBuilder` class removed
 : Add `org.codehaus.groovy:groovy-ant` dependency.
@@ -154,16 +156,17 @@ Support for JavaFX deprecated
 : This may break source-compatibility with inheritors written in Kotlin.
 
 `com.intellij.pom.java.LanguageLevel.JDK_13_PREVIEW` field removed
-: Please remove plugin code supporting Java 13 language level features. IntelliJ IDEA supports preview features of the latest Java release as well as one upcoming release (if available). 
+: Please remove the plugin code supporting Java 13 language level features.
+IntelliJ IDEA supports preview features of the latest Java release and one upcoming release (if available).
 
 
 #### VCS
-  
+
 `com.intellij.diff.util.DiffUserDataKeysEx.REVISION_INFO` field removed
-: Use `com.intellij.diff.DiffVcsDataKeys.REVISION_INFO` instead. 
+: Use `com.intellij.diff.DiffVcsDataKeys.REVISION_INFO` instead.
 
 `com.intellij.codeInsight.actions.FormatChangedTextUtil.getChangedElements(Project, Change[], Function)` method removed
-: Use `com.intellij.codeInsight.actions.VcsFacadeImpl.getVcsInstance().getChangedElements(...)` instead. 
+: Use `com.intellij.codeInsight.actions.VcsFacadeImpl.getVcsInstance().getChangedElements(...)` instead.
 
 ### Changes in GitHub Plugin 2020.2
 
@@ -188,7 +191,7 @@ Support for JavaFX deprecated
 ### Changes in Java EE Plugins 2020.2
 
 Java EE plugins split
-: Plugin `com.intellij.javaee` _Java EE: EJB, JPA, Servlets_ has been split to: 
+: Plugin `com.intellij.javaee` _Java EE: EJB, JPA, Servlets_ has been split to:
 - `com.inteellij.javaee` _Java EE Platform_ - main plugin other JavaEE/Jakarta plugins depend on
 - `com.intellij.javaee.app.servers.integration` _Java EE: Application Servers Integration_
 - `com.intellij.javaee.ejb` _Java EE: Enterprise Java Beans (EJB)_
@@ -207,7 +210,7 @@ Java EE plugins split
 Added Union Types Support
 : Please see [PhpStorm Breaking Changes](/products/phpstorm/php_open_api_breaking_changes.md).
 
-                              
+
 ### Changes in Kotlin Plugin 1.4
 
 `org.jetbrains.kotlin.idea.core.formatter.KotlinCodeStyleSettings.PACKAGES_TO_USE_STAR_IMPORTS` field type changed from `PackageEntryTable` to `KotlinPackageEntryTable`
@@ -229,34 +232,34 @@ Added Union Types Support
 `com.intellij.psi.stubs.PrebuiltStubsProviderBase` class now extends `com.intellij.index.PrebuiltIndexProvider` and inherits its abstract method `getIndexRoot()`
 : Use `com.intellij.psi.stubs.PlatformPrebuiltStubsProviderBase` instead.
 
-`com.intellij.psi.PsiElementVisitor.visitElement` method `PsiElement` parameter marked `@NotNull` 
+`com.intellij.psi.PsiElementVisitor.visitElement` method `PsiElement` parameter marked `@NotNull`
 : This may break source-compatibility with inheritors written in Kotlin if they declare parameter type as nullable.
 
-`com.intellij.psi.PsiElementVisitor.visitFile` method `PsiFile` parameter marked `@NotNull` 
+`com.intellij.psi.PsiElementVisitor.visitFile` method `PsiFile` parameter marked `@NotNull`
 : This may break source-compatibility with inheritors written in Kotlin if they declare parameter type as nullable.
 
-`com.intellij.psi.PsiElementVisitor.visitBinaryFile` method `PsiBinaryFile` parameter marked `@NotNull` 
+`com.intellij.psi.PsiElementVisitor.visitBinaryFile` method `PsiBinaryFile` parameter marked `@NotNull`
 : This may break source-compatibility with inheritors written in Kotlin if they declare parameter type as nullable.
 
-`com.intellij.psi.PsiElementVisitor.visitPlainTextFile` method `PsiPlainTextFile` parameter marked `@NotNull` 
+`com.intellij.psi.PsiElementVisitor.visitPlainTextFile` method `PsiPlainTextFile` parameter marked `@NotNull`
 : This may break source-compatibility with inheritors written in Kotlin if they declare parameter type as nullable.
 
-`com.intellij.psi.PsiElementVisitor.visitErrorElement` method `PsiErrorElement` parameter marked `@NotNull` 
+`com.intellij.psi.PsiElementVisitor.visitErrorElement` method `PsiErrorElement` parameter marked `@NotNull`
 : This may break source-compatibility with inheritors written in Kotlin if they declare parameter type as nullable.
 
-`com.intellij.psi.PsiElementVisitor.visitPlainText` method `PsiPlainText` parameter marked `@NotNull` 
+`com.intellij.psi.PsiElementVisitor.visitPlainText` method `PsiPlainText` parameter marked `@NotNull`
 : This may break source-compatibility with inheritors written in Kotlin if they declare parameter type as nullable.
 
-`com.intellij.psi.PsiElementVisitor.visitDirectory` method `PsiDirectory` parameter marked `@NotNull` 
+`com.intellij.psi.PsiElementVisitor.visitDirectory` method `PsiDirectory` parameter marked `@NotNull`
 : This may break source-compatibility with inheritors written in Kotlin if they declare parameter type as nullable.
 
-`com.intellij.psi.PsiElementVisitor.visitComment` method `PsiComment` parameter marked `@NotNull` 
+`com.intellij.psi.PsiElementVisitor.visitComment` method `PsiComment` parameter marked `@NotNull`
 : This may break source-compatibility with inheritors written in Kotlin if they declare parameter type as nullable.
 
-`com.intellij.psi.PsiElementVisitor.visitWhiteSpace` method `PsiWhiteSpace` parameter marked `@NotNull` 
+`com.intellij.psi.PsiElementVisitor.visitWhiteSpace` method `PsiWhiteSpace` parameter marked `@NotNull`
 : This may break source-compatibility with inheritors written in Kotlin if they declare parameter type as nullable.
 
-`com.intellij.psi.PsiElementVisitor.visitOuterLanguageElement` method `OuterLanguageElement` parameter marked `@NotNull` 
+`com.intellij.psi.PsiElementVisitor.visitOuterLanguageElement` method `OuterLanguageElement` parameter marked `@NotNull`
 : This may break source-compatibility with inheritors written in Kotlin if they declare parameter type as nullable.
 
 `com.intellij.codeInspection.unused.ImplicitPropertyUsageProvider.isUsed` method `Property` parameter marked `@NotNull`
@@ -266,7 +269,7 @@ Added Union Types Support
 : Use `com.intellij.testFramework.ReadOnlyLightVirtualFile`-based PSI instead.
 
 Java code migrated to use `TYPE_USE` nullability annotations
-: Due to some problems in Kotlin compiler existing Kotlin code might become incompilable in rare cases if a method written in Java returning an array and annotated as `@Nullable` or `@NotNull` is used or overridden.
+: In rare cases existing Kotlin code might become uncompilable due to some problems in the Kotlin compiler: if a method is used or overridden, and is written in Java, and returns an array annotated as `@Nullable` or `@NotNull`.
 
 `com.intellij.navigation.ChooseByNameContributorEx.processNames` method parameter type changed from `Processor<String>` to ``Processor<? extends String>``
 : This may break source-compatibility with inheritors written in Kotlin.
@@ -278,13 +281,13 @@ Images module functionality (package `org.intellij.images.*`) extracted to plugi
 : The dependency [must be declared](/basics/plugin_structure/plugin_dependencies.md) explicitly now:
   * Add `<depends>com.intellij.platform.images</depends>` in `plugin.xml`
   * Add to `build.gradle`:
-    
+
     ```groovy
     intellij {
       plugins = ['platform-images']
     }
     ```
-  * If your plugin depends on other plugins using `com.intellij.platform.images` (e.g., CSS), please make sure to use `gradle-intellij-plugin` >=0.4.19 
+  * If your plugin depends on other plugins using `com.intellij.platform.images` (e.g., CSS), please make sure to use `gradle-intellij-plugin` >=0.4.19
 
 ### Changes in Python Plugin 2020.1
 

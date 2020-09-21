@@ -15,9 +15,7 @@ public class DemoFramework extends FrameworkTypeEx {
 ```
 
 ## 2. Registering Framework
-The newly created framework class should be registered as an extension point by adding `com.intellij.framework.type` extension in  
-[`plugin.xml`](https://github.com/JetBrains/intellij-sdk-code-samples/blob/master/framework_basics/src/main/resources/META-INF/plugin.xml)
-configuration file:
+The newly created framework class should be registered as an extension point by adding `com.intellij.framework.type` extension in   [`plugin.xml`](https://github.com/JetBrains/intellij-sdk-code-samples/blob/master/framework_basics/src/main/resources/META-INF/plugin.xml) configuration file:
 
 ```xml
 <extensions defaultExtensionNs="com.intellij">
@@ -26,7 +24,7 @@ configuration file:
 ```
 
 ## 3. Setting up Mandatory Attributes
-The framework component should have a unique name passed as a string literal to the constructor. 
+The framework component should have a unique name passed as a string literal to the constructor.
 It is best if this is the FQN name of the class:
 
 ```java
@@ -57,15 +55,15 @@ public class DemoFramework extends FrameworkTypeEx {
 ```
 
 ## 4. Creating Provider for Enabling Framework Support
-To make the framework set up available while executing the steps to create a project, the 
-`DemoFramework.createProvider()` method must be implemented to return an object of type [`FrameworkSupportInModuleConfigurable`](upsource:///java/idea-ui/src/com/intellij/framework/addSupport/FrameworkSupportInModuleConfigurable.java), which adds the framework to a module. 
+To make the framework set up available while executing the steps to create a project, the
+`DemoFramework.createProvider()` method must be implemented to return an object of type [`FrameworkSupportInModuleConfigurable`](upsource:///java/idea-ui/src/com/intellij/framework/addSupport/FrameworkSupportInModuleConfigurable.java), which adds the framework to a module.
 In this example the framework is added to any [`ModuleType`](upsource:///platform/lang-api/src/com/intellij/openapi/module/ModuleType.java) without checking, which is usually not the case.
 
 ```java
 @NotNull
 @Override
 public FrameworkSupportInModuleProvider createProvider() {
-    return  new FrameworkSupportInModuleProvider() {
+    return new FrameworkSupportInModuleProvider() {
         @NotNull
         @Override
         public FrameworkTypeEx getFrameworkType() {
@@ -98,15 +96,6 @@ public FrameworkSupportInModuleProvider createProvider() {
 }
 ```
 
-After compiling and running the code sample above an extra option for configuring the newly created Demo custom framework should be available in the Project Wizard: 
+After compiling and running the code sample above an extra option for configuring the newly created Demo custom framework should be available in the Project Wizard:
 
 ![Custom Framework Support](framework/img/custom_framework.png)
-
-
-
-
-
-
-
-
-

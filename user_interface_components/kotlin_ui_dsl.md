@@ -5,7 +5,8 @@ title: Kotlin UI DSL
 
 > **WARNING** Please note the Kotlin UI DSL is in active development and [breaking changes](../reference_guide/api_changes_list.md) can occur between major releases.
 
-> **NOTE** This document covers the Kotlin UI DSL in IntelliJ Platform 2019.2. A lot of the features described in this document are not available for plugins targeting earlier versions.
+> **NOTE** This document covers the Kotlin UI DSL in IntelliJ Platform 2019.2.
+> A lot of the features described in this document are not available for plugins targeting earlier versions.
 
 ## Layout Structure
 
@@ -29,7 +30,8 @@ The label for the row can be specified as a parameter for the `row` method:
 row("Parameters") { ... }
 ```
 
-Rows can be nested. Components in a nested row block are considered to be subordinate to the containing row and are indented accordingly.
+Rows can be nested.
+Components in a nested row block are considered to be subordinate to the containing row and are indented accordingly.
 
 ```kotlin
 row {
@@ -70,12 +72,15 @@ row {
 
 ## Adding Components
 
-There are two ways to add child components. The recommended way is to use factory methods `label`, `button`, `radioButton`, `hint`, `link`, etc. It allows you to create consistent UI and reuse common patterns.
+There are two ways to add child components.
+The recommended way is to use factory methods `label`, `button`, `radioButton`, `hint`, `link`, etc.
+It allows you to create consistent UI and reuse common patterns.
   ```kotlin
   note("""Do not have an account? <a href="https://account.jetbrains.com/login">Sign Up</a>""", span, wrap)
   ```
 
-These methods also support **property bindings**, allowing you to automatically load the value displayed in the component from a property and to store it back. The easiest way to do that is to pass a reference to a Kotlin bound property:
+These methods also support **property bindings**, allowing you to automatically load the value displayed in the component from a property and to store it back.
+The easiest way to do that is to pass a reference to a Kotlin bound property:
 
 ```kotlin
 checkBox("Show tabs in single row", uiSettings::scrollTabLayoutInEditor)
@@ -118,8 +123,9 @@ See examples above.
 
 ### Radio Buttons
 
-Radio button groups are created using the `buttonGroup` block. There are two ways to use it. If the selected radio button corresponds to a specific value of a single
-property, pass the property binding to the `buttonGroup` method and the specific values to `radioButton` functions:
+Radio button groups are created using the `buttonGroup` block.
+There are two ways to use it.
+If the selected radio button corresponds to a specific value of a single property, pass the property binding to the `buttonGroup` method and the specific values to `radioButton` functions:
 
 ```kotlin
 buttonGroup(mySettings::providerType) {
@@ -226,14 +232,15 @@ checkBox(message("checkbox.smart.tab.reuse"),
 
 ## Integrating Panels with Property Bindings
 
-A panel returned by the `panel` method is an instance of [`DialogPanel`](upsource:///platform/platform-api/src/com/intellij/openapi/ui/DialogPanel.kt). This base class supports the standard `apply`, `reset`, and `isModified` methods.
+A panel returned by the `panel` method is an instance of [`DialogPanel`](upsource:///platform/platform-api/src/com/intellij/openapi/ui/DialogPanel.kt).
+This base class supports the standard `apply`, `reset`, and `isModified` methods.
 
 ### Dialogs
 
-If you're using a [`DialogPanel`](upsource:///platform/platform-api/src/com/intellij/openapi/ui/DialogPanel.kt) as the main panel of a `DialogWrapper`, the `apply` method will be automatically called when the dialog is closed with the OK action. The other methods are unused in this case.
+If you're using a [`DialogPanel`](upsource:///platform/platform-api/src/com/intellij/openapi/ui/DialogPanel.kt) as the main panel of a `DialogWrapper`, the `apply` method will be automatically called when the dialog is closed with the OK action.
+The other methods are unused in this case.
 
-Use the `focused` method to specify which control should be focused when 
-the dialog is initialized:
+Use the `focused` method to specify which control should be focused when the dialog is initialized:
 
 ```kotlin
 return panel {
@@ -245,11 +252,13 @@ return panel {
 
 ### Configurables
 
-If you're using the UI DSL to implement a [`Configurable`](upsource:///platform/platform-api/src/com/intellij/openapi/options/Configurable.java), use [`BoundConfigurable`](upsource:///platform/platform-api/src/com/intellij/openapi/options/BoundConfigurable.kt) as the base class. In this case, the `Configurable` methods will be automatically delegated to the panel.
+If you're using the UI DSL to implement a [`Configurable`](upsource:///platform/platform-api/src/com/intellij/openapi/options/Configurable.java), use [`BoundConfigurable`](upsource:///platform/platform-api/src/com/intellij/openapi/options/BoundConfigurable.kt) as the base class.
+In this case, the `Configurable` methods will be automatically delegated to the panel.
 
 ## Enabling and Disabling Controls
 
-Use the `enableIf` method to bind the enabled state of a control to the values entered in other controls. The parameter of the method is a **predicate**.
+Use the `enableIf` method to bind the enabled state of a control to the values entered in other controls.
+The parameter of the method is a **predicate**.
 
 ```kotlin
 checkBox("Show tabs in single row", uiSettings::scrollTabLayoutInEditor)
@@ -257,9 +266,9 @@ checkBox("Show tabs in single row", uiSettings::scrollTabLayoutInEditor)
 ```
 
 The available predicates are:
-  * `selected` to check the selected state of a checkbox or radio button
-  * `selectedValueIs` and `selectedValueMatches` to check the selected item in a combobox.
-  
+* `selected` to check the selected state of a checkbox or radio button
+* `selectedValueIs` and `selectedValueMatches` to check the selected item in a combobox.
+
 Predicates can be combined with `and` and `or` infix functions:
 
 ```kotlin

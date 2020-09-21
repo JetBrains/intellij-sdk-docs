@@ -11,7 +11,7 @@ Plugins can create and store Settings to capture their configuration in a way th
 The User Interface (UI) for these custom Settings can be added to the [IDE Settings dialog](https://www.jetbrains.com/help/idea/settings-preferences-dialog.html).
 
 Settings can [affect different levels](https://www.jetbrains.com/help/idea/configuring-project-and-ide-settings.html) of scope.
-This document describes adding custom Settings at the Project and Application (or Global, IDE) levels. 
+This document describes adding custom Settings at the Project and Application (or Global, IDE) levels.
 
 * bullet list
 {:toc}
@@ -20,10 +20,11 @@ This document describes adding custom Settings at the Project and Application (o
 Custom Settings implementations are declared in a plugin's configuration (`plugin.xml`) file using one of two Extension Points (EPs), depending on the level of the Settings.
 Many [attributes](#settings-declaration-attributes) are shared between the EP declarations.
 
-Application and Project Settings typically provide an implementation based on the [`Configurable`](upsource:///platform/platform-api/src/com/intellij/openapi/options/Configurable.java) interface because they do not have runtime dependencies. 
+Application and Project Settings typically provide an implementation based on the [`Configurable`](upsource:///platform/platform-api/src/com/intellij/openapi/options/Configurable.java) interface because they do not have runtime dependencies.
 See [Implementations for Settings Extension Points](#implementations-for-settings-extension-points) for more information.
- 
-> **NOTE** For performance reasons, the recommended approach is to declare as much information as possible about a Settings' implementation using attributes in the Extension Point. If it is not declared, the component must be loaded to retrieve it from the implementation, degrading UI responsiveness.
+
+> **NOTE** For performance reasons, the recommended approach is to declare as much information as possible about a Settings' implementation using attributes in the Extension Point.
+> If it is not declared, the component must be loaded to retrieve it from the implementation, degrading UI responsiveness.
 
 ### Declaring Application Settings
 Settings at the Application level use the `com.intellij.applicationConfigurable` EP.
@@ -36,7 +37,7 @@ See [Settings Declaration Attributes](#settings-declaration-attributes) for more
     <applicationConfigurable parentId="tools" instance="org.company.ApplicationSettingsConfigurable"
             id="org.company.ApplicationSettingsConfigurable" displayName="My Application Settings"/>
   </extensions>
-``` 
+```
 
 ### Declaring Project Settings
 Project level Settings use the `com.intellij.projectConfigurable` EP.
@@ -50,9 +51,9 @@ See [Settings Declaration Attributes](#settings-declaration-attributes) for deta
             id="org.company.ProjectSettingsConfigurable" displayName="My Project Settings"
             nonDefaultProject="true"/>
   </extensions>
-``` 
+```
 
-### Settings Declaration Attributes 
+### Settings Declaration Attributes
 Readers are encouraged to review the Javadoc comments for [`Configurable`](upsource:///platform/platform-api/src/com/intellij/openapi/options/Configurable.java) because the attribute information applies to `ConfigurableProvider` as well as `Configurable`, as noted.
 This section provides some additional clarification of those comments.
 
@@ -72,13 +73,13 @@ The attributes supported by `com.intellij.applicationConfigurable` and `com.inte
 | `dynamic` | `Configurable.Composite` | N | This component's children are dynamically calculated by calling the `getConfigurables()` method.<br>Not recommended because it requires loading additional classes while building a Settings tree. If possible, use XML attributes instead. |
 | `childrenEPName` | `Configurable` | N | Specifies the FQN name of the Extension Point that will be used to calculate the children of this component. |
 
-**Attribute Notes:**  
-1) Either `instance` or `provider` must be specified depending on the implementation.   
-2) One of these attribute sets must be specified depending on whether the displayed Settings name is localized.   
+**Attribute Notes:**
+1) Either `instance` or `provider` must be specified depending on the implementation.
+2) One of these attribute sets must be specified depending on whether the displayed Settings name is localized.
 3) If both `groupId` and `parentId` are specified, a warning is logged. Also, see _default_ entry in [Values for Parent ID Attribute](#values-for-parent-id-attribute).
 
 #### Values for Parent ID Attribute
-The table below shows the allowed values for the `parentId` attribute.  
+The table below shows the allowed values for the `parentId` attribute.
 See the [previous section](#table-of-attributes) for all supported attributes.
 
 | `parentId` Value | Group | Details |
@@ -96,29 +97,29 @@ See the [previous section](#table-of-attributes) for all supported attributes.
 
 
 ## Implementations for Settings Extension Points
-Implementations for `com.intellij.projectConfigurable` and `com.intellij.applicationConfigurable` EPs can have one of two bases: 
+Implementations for `com.intellij.projectConfigurable` and `com.intellij.applicationConfigurable` EPs can have one of two bases:
 * The [`Configurable`](upsource:///platform/platform-api/src/com/intellij/openapi/options/Configurable.java) interface, which provides a named configurable component with a Swing form.
   Most Settings providers are based on the `Configurable` interface or one of its sub- or supertypes.
 * The [`ConfigurableProvider`](upsource:///platform/platform-api/src/com/intellij/openapi/options/ConfigurableProvider.java) class, which can hide a configurable component from the Settings dialog based on runtime conditions.
 
 ### The Configurable Interface
-Many Settings in the `intellij-community` code base implement `Configurable` or one of its subtypes, such as [`SearchableConfigurable`](upsource:///platform/platform-api/src/com/intellij/openapi/options/SearchableConfigurable.java). 
+Many Settings in the `intellij-community` code base implement `Configurable` or one of its subtypes, such as [`SearchableConfigurable`](upsource:///platform/platform-api/src/com/intellij/openapi/options/SearchableConfigurable.java).
 Readers are encouraged to review the Javadoc comments for `Configurable`.
 
 #### Constructors
-Implementations must meet several requirements for constructors. 
-* Application Settings implementations, declared using the [`applicationConfiguration` EP](#declaring-application-settings), must have a default constructor with no arguments. 
+Implementations must meet several requirements for constructors.
+* Application Settings implementations, declared using the [`applicationConfiguration` EP](#declaring-application-settings), must have a default constructor with no arguments.
 * Project Settings implementations, declared using the [`projectSettings` EP](#declaring-project-settings), must declare a constructor with a single argument of type [`Project`](upsource:///platform/core-api/src/com/intellij/openapi/project/Project.java).
 * Beginning in 2020.2, constructor injection (other than for `Project`) is not allowed.
 
 For a `Configurable` implementation correctly declared using an EP, the implementation's constructor is not invoked by the IntelliJ Platform until a user chooses the corresponding Settings `displayName` in the Settings Dialog menu.
 
-> **WARNING** The IntelliJ Platform may instantiate a `Configurable` implementation on a background thread, so creating Swing components in a constructor can degrade UI responsiveness.  
+> **WARNING** The IntelliJ Platform may instantiate a `Configurable` implementation on a background thread, so creating Swing components in a constructor can degrade UI responsiveness.
 
 #### IntelliJ Platform Interactions with Configurable
 The instantiation of a generic `Configurable` implementation is documented in the interface file.
 A few high-level points are reviewed here:
-* The `Configurable.reset()` method is invoked immediately after `Configurable.createComponent()`. 
+* The `Configurable.reset()` method is invoked immediately after `Configurable.createComponent()`.
   Initialization of Setting values in the constructor or `createComponent()` is unnecessary.
 * See the [Constructors](#constructors) section for information about when a Settings object is instantiated.
 * Once instantiated, a `Configurable` instance's lifetime continues regardless of whether the implementation's Settings are changed, or the user chooses a different entry on the Settings Dialog menu.
@@ -129,11 +130,11 @@ To open Settings dialog or show specific `Configurable`, see [`ShowSettingsUtil`
 
 #### Configurable Marker Interfaces
 Implementations based on `Configurable` can implement marker interfaces, which provide additional flexibility in the implementation.
- 
+
 The following nested interfaces are markers, which convey information about the form to the IntelliJ Platform:
   * `Configurable.NoScroll` - Notifies the Settings dialog not to add scroll bars to the form.
     By default, a plugin's Settings component is put into a scrollable pane.
-    However, a Settings panel can have a `JTree`, which requires its own `JScrollPane`. 
+    However, a Settings panel can have a `JTree`, which requires its own `JScrollPane`.
     So `NoScroll` interface should be used to remove the outer `JScrollPane`.
   * `Configurable.NoMargin` - Notifies the Settings dialog not to add an empty border to the form.
     By default, an empty border is added for a plugin's Settings component.
@@ -144,7 +145,7 @@ These subtypes are based on `com.intellij.openapi.options.ConfigurableEP`.
 For example, **Settings/Preferences \| Editor \| General \|Appearance** allows adding Settings via [`EditorSmartKeysConfigurableEP`](upsource:///platform/lang-impl/src/com/intellij/application/options/editor/EditorSmartKeysConfigurableEP.java) and `com.intellij.editorSmartKeysConfigurable` EP.
 
 ### The ConfigurableProvider Class
-The [`ConfigurableProvider`](upsource:///platform/platform-api/src/com/intellij/openapi/options/ConfigurableProvider.java) class only provides a `Configurable` implementation if its runtime conditions are met. 
+The [`ConfigurableProvider`](upsource:///platform/platform-api/src/com/intellij/openapi/options/ConfigurableProvider.java) class only provides a `Configurable` implementation if its runtime conditions are met.
 The IntelliJ Platform first calls the `ConfigurableProvider.canCreateConfigurable()`, which evaluates runtime conditions to determine if Settings changes make sense in the current context.
 If the Settings make sense to display, `canCreateConfigurable()` returns `true`.
 In that case the IntelliJ Platform calls `ConfigurableProvider.createConfigurable()`, which returns the `Configurable` object for its Settings implementation.

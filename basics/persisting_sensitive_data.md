@@ -3,7 +3,7 @@ title: Persisting Sensitive Data
 ---
 <!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-The Credentials Store API allows you to securely store sensitive user data, like passwords, server URLs, etc.
+The Credentials Store API allows you to store sensitive user data securely, like passwords, server URLs, etc.
 
 ## How to Use
 Use [`PasswordSafe`](upsource:///platform/platform-api/src/com/intellij/ide/passwordSafe/PasswordSafe.kt) to work with credentials.
@@ -13,18 +13,18 @@ Use [`PasswordSafe`](upsource:///platform/platform-api/src/com/intellij/ide/pass
 ```java
     String key = null; // e.g. serverURL, accountID
     CredentialAttributes credentialAttributes = createCredentialAttributes(key);
-    
+
     Credentials credentials = PasswordSafe.getInstance().get(credentialAttributes);
     if (credentials != null) {
       String password = credentials.getPasswordAsString();
     }
 
     // or get password only
-    String password = PasswordSafe.getInstance().getPassword(credentialAttributes);    
-    
+    String password = PasswordSafe.getInstance().getPassword(credentialAttributes);
+
     private CredentialAttributes createCredentialAttributes(String key) {
-        return new CredentialAttributes(CredentialAttributesKt.generateServiceName("MySystem", key));        
-    }    
+        return new CredentialAttributes(CredentialAttributesKt.generateServiceName("MySystem", key));
+    }
 ```
 
 ### Store Credentials
@@ -35,10 +35,10 @@ Use [`PasswordSafe`](upsource:///platform/platform-api/src/com/intellij/ide/pass
     PasswordSafe.getInstance().set(credentialAttributes, credentials);
 ```
 
-To remove stored credentials, pass `null` for `credentials` parameter.
+To remove stored credentials, pass `null` for the `credentials` parameter.
 
 ## Storage
-Default storage format depends on OS.
+The default storage format depends on the OS.
 
 | OS      | Storage |
 |---------|---------|

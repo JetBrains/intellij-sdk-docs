@@ -3,7 +3,8 @@
 
 ## Quickstart
 
-Project Model Sample project provides five actions that present data extracted using `ProjectRootManager` instance in the message dialogs. Within the implemented actions, you will be able to:
+Project Model Sample project provides five actions that present data extracted using `ProjectRootManager` instance in the message dialogs.
+Within the implemented actions, you will be able to:
 - fetch libraries used in the project,
 - retrieve the information about the module details,
 - rename the used SDK,

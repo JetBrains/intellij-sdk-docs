@@ -59,7 +59,7 @@ ASM Library 8.0.1
 : Updated from 7.0.1.
 
 Validating Lexer for editor highlighting
-: Lexer is wrapped using `ValidatingLexerWrapper` to verify it generates continuous sequence of tokens and doesn't stall during iteration.
+: Lexer is wrapped using `ValidatingLexerWrapper` to verify it generates a continuous sequence of tokens and doesn't stall during iteration.
 
 ## 2020.1
 
@@ -75,7 +75,7 @@ Dynamic Plugins
 : Please see `RecursionManager.CachingPreventedException` Javadoc and [this issue](https://youtrack.jetbrains.com/issue/IDEA-228809) for details.
 
 `ResolveCache` using `IdempotenceChecker` in tests
-: Reports when the same reference resolves to non-equivalent results in different threads, see [`IdempotenceChecker`](upsource:///platform/core-impl/src/com/intellij/util/IdempotenceChecker.java).
+: Reports when the same reference resolves non-equivalent results in different threads, see [`IdempotenceChecker`](upsource:///platform/core-impl/src/com/intellij/util/IdempotenceChecker.java).
 
 Refactoring dialog: builtin "Open in editor" option
 : Set `addOpenInEditorCheckbox` constructor parameter to enable it in custom `RefactoringDialog` implementation.

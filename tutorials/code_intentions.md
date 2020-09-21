@@ -3,14 +3,14 @@ title: Code Intentions
 ---
 <!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-This topic describes the [conditional_operator_intention](https://github.com/JetBrains/intellij-sdk-code-samples/tree/master/conditional_operator_intention), a sample plugin that adds a new [intention action](https://www.jetbrains.com/help/idea/intention-actions.html) to the IntelliJ Platform Intentions list. 
+This topic describes the [conditional_operator_intention](https://github.com/JetBrains/intellij-sdk-code-samples/tree/master/conditional_operator_intention), a sample plugin that adds a new [intention action](https://www.jetbrains.com/help/idea/intention-actions.html) to the IntelliJ Platform Intentions list.
 In addition, the sample plugin contains a JUnit-based test.
 
 ## About Intention Actions
 
-The **IntelliJ Platform** analyzes your code and helps handle situations that may result in errors. 
-When a possible problem is suspected, the IDE suggests an appropriate intention action, denoted with special icons. 
-For more information, refer to [Intention Actions](https://www.jetbrains.com/help/idea/intention-actions.html) in the **IntelliJ IDEA** Web Help. 
+The **IntelliJ Platform** analyzes your code and helps handle situations that may result in errors.
+When a possible problem is suspected, the IDE suggests an appropriate intention action, denoted with special icons.
+For more information, refer to [Intention Actions](https://www.jetbrains.com/help/idea/intention-actions.html) in the **IntelliJ IDEA** Web Help.
 
 You can view a list of all available intention actions using the [Intention List](https://www.jetbrains.com/help/idea/intention-actions.html#intention-settings) provided by the IDE.
 
@@ -18,7 +18,7 @@ You can view a list of all available intention actions using the [Intention List
 
 1. Open the **Settings** dialog box.
 2. Under **IDE Settings**, click **Intentions**. This displays the list of all intention actions currently available in **IntelliJ IDEA**.
-- The intention actions are grouped according to the areas of their use.  
+- The intention actions are grouped according to the areas of their use.
 - To enable/disable an intention action, select/deselect the check box to its left.
 
 ## Techniques Used
@@ -32,7 +32,7 @@ The [conditional_operator_intention](https://github.com/JetBrains/intellij-sdk-c
 
 ## Sample Plugin
 
-The **ConditionalOperatorConverter** sample plugin is available in the `<%IntelliJ SDK Docs project%>/code_samples/conditional_operator_intention` directory. 
+The **ConditionalOperatorConverter** sample plugin is available in the `<%IntelliJ SDK Docs project%>/code_samples/conditional_operator_intention` directory.
 When launched, this plugin adds the **Convert ternary operator if statement** item to the **Conditional Operator** node in the IDEA Intentions list:
 
 ![](img/IntentionsList.png)
@@ -47,7 +47,7 @@ When launched, this plugin adds the **Convert ternary operator if statement** it
 
 #### How does it work?
 
-The plugin analyzes symbols under the cursor in your code opened in the IDEA editor. 
+The plugin analyzes symbols under the cursor in your code opened in the IDEA editor.
 If the cursor is positioned on the "?" conditional operator, **IntelliJ IDEA** proposes to replace this conditional (ternary) operator with the "if-then-else" statement:
 
 ![](img/TernaryOperator.png)
@@ -71,7 +71,7 @@ if ((n>=0)) {
 ##### Testing the Plugin
 > **NOTE** Please note that running the test requires setting system property `idea.home.path` in `test {}` block of `build.gradle`
 
-The sample plugin contains the `ConditionalOperatorConverterTest` Java class and the test data in the `test/testData/` directory. 
+The sample plugin contains the `ConditionalOperatorConverterTest` Java class and the test data in the `test/testData/` directory.
 To perform the plugin test, run the `ConditionalOperatorConverterTest.testIntention()` method.
 
 For detailed information about testing and all related procedures, refer to [Testing](https://www.jetbrains.com/help/idea/performing-tests.html) in the **IntelliJ IDEA** Web Help.

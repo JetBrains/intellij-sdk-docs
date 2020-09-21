@@ -14,7 +14,7 @@ A line marker provider annotates usages of Simple Language properties within Jav
 The visual marker is a Simple Language icon in the gutter of the Editor window.
 
 The Simple Language marker provider subclasses [`RelatedItemLineMarkerProvider`](upsource:///platform/lang-api/src/com/intellij/codeInsight/daemon/RelatedItemLineMarkerProvider.java).
-For this example, override the `collectNavigationMarkers()` method to collect usage of a Simple Language [key and separators](/tutorials/custom_language_support/language_and_filetype.md#define-the-language): 
+For this example, override the `collectNavigationMarkers()` method to collect usage of a Simple Language [key and separators](/tutorials/custom_language_support/language_and_filetype.md#define-the-language):
 
 ```java
 {% include /code_samples/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleLineMarkerProvider.java %}
@@ -23,12 +23,12 @@ For this example, override the `collectNavigationMarkers()` method to collect us
 ## 8.2. Best Practices for Implementing Line Marker Providers
 This section addresses important details about implementing a marker provider.
 The `collectNavigationMarkers()` method should:
-* Only return line marker information consistent with the element passed into the method. 
+* Only return line marker information consistent with the element passed into the method.
   For example, do not return a _class_ marker if `getLineMarkerInfo()` was called with an element that corresponds to a _method_.
-* Return line marker information for the appropriate element at the correct scope of the PSI tree. 
-  For example, do not return method marker for [`PsiMethod`](upsource:///java/java-psi-api/src/com/intellij/psi/PsiMethod.java). 
-  Instead, return it for the [`PsiIdentifier`](upsource:///java/java-psi-api/src/com/intellij/psi/PsiIdentifier.java) which contains the name of the method. 
-  
+* Return line marker information for the appropriate element at the correct scope of the PSI tree.
+  For example, do not return method marker for [`PsiMethod`](upsource:///java/java-psi-api/src/com/intellij/psi/PsiMethod.java).
+  Instead, return it for the [`PsiIdentifier`](upsource:///java/java-psi-api/src/com/intellij/psi/PsiIdentifier.java) which contains the name of the method.
+
 ![Line Marker Location](img/line_marker_location.png){:width="900px"}
 
 What happens when a `LineMarkerProvider` returns marker information for a `PsiElement` that is a higher node in the PSI tree?
@@ -50,8 +50,8 @@ For performance reasons, inspection, and specifically the [`LineMarkersPass`](up
 
 If providers return nothing for either area, the line markers get cleared.
 However, if a method like `actionPerformed()` is not completely visible in the Editor window (as shown in the image above,) and `MyWrongLineMarkerProvider()` returns marker info for the `PsiMethod` instead of `PsiIdentifier`, then:
-* The first pass removes line marker info because whole `PsiMethod` isn't visible. 
-* The second pass tries to add a line marker because `MyWrongLineMarkerProvider()` is called for the `PsiMethod`. 
+* The first pass removes line marker info because whole `PsiMethod` isn't visible.
+* The second pass tries to add a line marker because `MyWrongLineMarkerProvider()` is called for the `PsiMethod`.
 
 As a result, _the line marker icon would blink annoyingly_.
 To fix this problem, rewrite `MyWrongLineMarkerProvider` to return info for `PsiIdentifier` instead of `PsiMethod` as shown below:
@@ -70,7 +70,7 @@ The `SimpleLineMarkerProvider` implementation is registered with the IntelliJ Pl
 
 ```xml
   <extensions defaultExtensionNs="com.intellij">
-    <codeInsight.lineMarkerProvider language="JAVA" 
+    <codeInsight.lineMarkerProvider language="JAVA"
             implementationClass="org.intellij.sdk.language.SimpleLineMarkerProvider"/>
   </extensions>
 ```

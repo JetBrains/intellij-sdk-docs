@@ -24,7 +24,7 @@ Click on an entry in the table's *Attribute* column to go to the documentation a
 | [`runIde.ideDirectory`](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md#running-dsl) | Not needed; the Development Instance will automatically match intellij.type |
 
 The dependency on the CLion APIs must be declared in the `plugin.xml` file.
-As described in [Modules Specific to Functionality](/basics/getting_started/plugin_compatibility.md#modules-specific-to-functionality) table, the `<depends>` elements should contain the CLion module, as illustrated in the `plugin.xml` snippet below: 
+As described in [Modules Specific to Functionality](/basics/getting_started/plugin_compatibility.md#modules-specific-to-functionality) table, the `<depends>` elements should contain the CLion module, as illustrated in the `plugin.xml` snippet below:
 
 ```xml
   <!-- Required for core CLion functionality -->
@@ -37,5 +37,5 @@ Test your plugin with versions of CLion you intend to support.
 
 ## Open Source Plugins for CLion
 When learning new APIs, it is helpful to have some representative projects for reference:
-* [C/C+​+​ Coverage](https://github.com/zero9178/C-Cpp-Coverage-for-CLion)
-* [C/C+​+​ Single File Execution](https://github.com/corochann/SingleFileExecutionPlugin)
+* [C/C++ Coverage](https://github.com/zero9178/C-Cpp-Coverage-for-CLion)
+* [C/C++ Single File Execution](https://github.com/corochann/SingleFileExecutionPlugin)

@@ -33,7 +33,7 @@ Add the `testRename()` method to the `SimpleCodeInsightTest` class [previously d
 * Again, this method configures the test fixture by using the test files.
 * The fixture then renames the Simple Language element at the caret in `RenameTestData.java`.
 * It then compares the input and output property files, ignoring whitespace.
- 
+
 ```java
   public void testRename() {
     myFixture.configureByFiles("RenameTestData.java", "RenameTestData.simple");

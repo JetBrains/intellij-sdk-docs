@@ -7,9 +7,9 @@ A file view provider ([`FileViewProvider`](upsource:///platform/core-api/src/com
 
 For example, a JSPX page has a separate PSI tree for the Java code in it (`PsiJavaFile`), a separate tree for the XML code (`XmlFile`), and a separate tree for JSP as a whole ([`JspFile`](upsource:///java/jsp-openapi/src/com/intellij/psi/jsp/JspFile.java)).
 
-Each of the PSI trees covers the entire contents of the file, and contains special "outer language elements" in the places where contents in a different language can be found.
+Each of the PSI trees covers the entire contents of the file and contains special "outer language elements" in the places where contents in a different language can be found.
 
-A `FileViewProvider` instance corresponds to a single `VirtualFile`, a single `Document`, and can be used to retrieve multiple `PsiFile` instances.
+A `FileViewProvider` instance corresponds to a single `VirtualFile`, a single `Document`, and can retrieve multiple `PsiFile` instances.
 
 ## How do I get a FileViewProvider?
 
@@ -19,7 +19,8 @@ A `FileViewProvider` instance corresponds to a single `VirtualFile`, a single `D
 ## What can I do with a FileViewProvider?
 
 * To get the set of all languages for which PSI trees exist in a file: `fileViewProvider.getLanguages()`
-* To get the PSI tree for a particular language: `fileViewProvider.getPsi(language)`. For example, to get the PSI tree for XML, use `fileViewProvider.getPsi(XMLLanguage.INSTANCE)`.
+* To get the PSI tree for a particular language: `fileViewProvider.getPsi(language)`.
+  For example, to get the PSI tree for XML, use `fileViewProvider.getPsi(XMLLanguage.INSTANCE)`.
 * To find an element of a particular language at the specified offset in the file: `fileViewProvider.findElementAt(offset, language)`
 
 ## How do I extend the FileViewProvider?

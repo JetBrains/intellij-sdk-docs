@@ -19,5 +19,3 @@ idea.is.internal=true
 * Save the `idea.properties` file and restart IntelliJ IDEA.
 
 The Internal Actions menu is available in **Tools \| Internal Actions**.
-
-

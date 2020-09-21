@@ -6,8 +6,8 @@
 [![Build](https://github.com/JetBrains/intellij-sdk-docs/workflows/Build/badge.svg)][gh:build]
 [![Slack](https://img.shields.io/badge/Slack-%23intellij--platform-blue)][jb:slack]
 
-Learn how to build plugins using IntelliJ Platform SDK for the [JetBrains products][jb:products] by experimenting with
-our code samples. These samples show you how features work and help you jumpstart your plugins.
+Learn how to build plugins using IntelliJ Platform SDK for the [JetBrains products][jb:products] by experimenting with our code samples.
+These samples show you how features work and help you jumpstart your plugins.
 
 There is also [IntelliJ Platform Plugin Template][gh:template] project available.
 
@@ -20,15 +20,13 @@ Previous releases are made available via [tags](https://github.com/JetBrains/int
 
 Code Samples depend on the [IntelliJ Platform SDK][docs] and [Gradle][docs:gradle] as a build system.
 
-The main plugin definition file is stored in the `plugin.xml` file, which is created according
-to the [Plugin Configuration File documentation][docs:plugin.xml]. It describes definitions of the actions, extensions,
-or listeners provided by the plugin.
+The main plugin definition file is stored in the `plugin.xml` file, which is created according to the [Plugin Configuration File documentation][docs:plugin.xml].
+It describes definitions of the actions, extensions, or listeners provided by the plugin.
 
 ## Code Samples
 
-In the following table, you may find all available samples provided in the separated directories as stand-alone
-projects available for running with the Gradle `:runIde` task.
- 
+In the following table, you may find all available samples provided in the separated directories as stand-alone projects available for running with the Gradle `:runIde` task.
+
 | Code Sample                                                            | Description                                                                                                                                            |
 | ---------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | [Action Basics](./action_basics)                                       | Action and Action Group patterns implementation, adds entries to the Tools menu.                                                                       |

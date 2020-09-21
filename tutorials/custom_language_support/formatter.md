@@ -7,14 +7,14 @@ The IntelliJ Platform includes a powerful framework for implementing formatting 
 A formatter enables reformatting code automatically based on code style settings.
 The formatter controls spaces, indents, wrap, and alignment.
 
-**Reference**: [Code Formatter](/reference_guide/custom_language_support/code_formatting.md) 
+**Reference**: [Code Formatter](/reference_guide/custom_language_support/code_formatting.md)
 
 * bullet list
 {:toc}
 
 ## 15.1. Define a Block
 The formatting model represents the formatting structure of a file as a tree of [`Block`](upsource:///platform/lang-api/src/com/intellij/formatting/Block.java) objects, with associated indent, wrap, alignment and spacing settings.
-The goal is to cover each PSI element with such a block. 
+The goal is to cover each PSI element with such a block.
 Since each block builds its children's blocks, it can generate extra blocks or skip any PSI elements.
 Define `SimpleBlock` based on [`AbstractBlock`](upsource:///platform/lang-impl/src/com/intellij/psi/formatter/common/AbstractBlock.java).
 
@@ -33,11 +33,11 @@ Create `SimpleFormattingModelBuilder` by subclassing [`FormattingModelBuilder`](
 ```
 
 ## 15.3. Register the Formatter
-The `SimpleFormattingModelBuilder` implementation is registered with the IntelliJ Platform in the plugin configuration file using the `com.intellij.lang.formatter` extension point. 
+The `SimpleFormattingModelBuilder` implementation is registered with the IntelliJ Platform in the plugin configuration file using the `com.intellij.lang.formatter` extension point.
 
 ```xml
  <extensions defaultExtensionNs="com.intellij">
-    <lang.formatter language="Simple"  
+    <lang.formatter language="Simple"
             implementationClass="org.intellij.sdk.language.SimpleFormattingModelBuilder"/>
   </extensions>
 ```

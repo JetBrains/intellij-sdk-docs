@@ -34,4 +34,3 @@ public class DemoSettingsEditor extends SettingsEditor<DemoRunConfiguration> {
     myScriptName.setComponent(new TextFieldWithBrowseButton());
   }
 }
-

@@ -47,7 +47,7 @@ For convenience, if the reference can possibly be resolved:
 [`SymbolResolveResult.fromSymbol()`](upsource:///platform/core-api/src/com/intellij/model/SymbolResolveResult.java) might be used.
 
 
-### Own references
+### Own References
 
 Own references are the references found in PSI elements, which are considered as references by the language.
 

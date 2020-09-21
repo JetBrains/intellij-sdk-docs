@@ -5,9 +5,9 @@ title: Internal Actions - UI Submenu
 
 The Internal Actions UI submenu provides IntelliJ Platform plugin developers with a suite of tools to help develop, debug, and test their IntelliJ Platform project UI.
 
-If the menu item **Tools \| Internal Actions \| UI** is not available in IntelliJ IDEA, then the first step is to [enable internal mode](enabling_internal.md)
+> **TIP** If the menu item **Tools \| Internal Actions** is not available in IntelliJ IDEA, then the first step is to [Enabling Internal Mode](enabling_internal.md)
 
 ## The Tools Available on the UI Submenu
-
-* [UI Inspector](internal_ui_inspector.md)
-* [LaF Defaults](internal_ui_laf_defaults.md)
+Here are some tools available on the UI submenu of the Internal Actions menu:
+* [UI Inspector](internal_ui_inspector.md) is a tool to get an internal description with each UI element's properties.
+* [LaF Defaults](internal_ui_laf_defaults.md) provides a way to lookup the key-value pair for a UI element, and the ability to prototype the color of UI Controls.

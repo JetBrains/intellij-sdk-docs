@@ -2,7 +2,7 @@
 title: Exposing Theme Metadata
 ---
 
-All available UI Customization Keys that can be used in [Custom Themes](themes_customize.md) must be defined in a dedicated `*.themeMetadata.json` file which is registered via `com.intellij.themeMetadataProvider` extension point. 
+All available UI Customization Keys that can be used in [Custom Themes](themes_customize.md) must be defined in a dedicated `*.themeMetadata.json` file which is registered via `com.intellij.themeMetadataProvider` extension point.
 
 The following minimal sample demonstrates all details required when exposing UI customization keys of your plugin's UI.
 
@@ -18,7 +18,7 @@ The following minimal sample demonstrates all details required when exposing UI 
 
 `/resources/META-INF/MyPlugin.themeMetadata.json`:
 
-```json 
+```json
 {
   "name": "My Plugin",
   "fixed": false,
@@ -34,7 +34,7 @@ The following minimal sample demonstrates all details required when exposing UI 
     }
   ]
 }
-```     
+```
 
 ### Attributes
 - `name` - Human-readable name, e.g., plugin name
@@ -45,11 +45,11 @@ The following minimal sample demonstrates all details required when exposing UI 
     - `description` - Description to be shown to Theme authors editing `*.theme.json` files
     - `deprecated` - `true` when key is deprecated, please provide explanation and/or replacement in `description` if available
     - `source` - FQN of the underlying UI component implementation
-    - `since` - The release number (e.g. `[2019.2]`) when this UI customization key was exposed. 
+    - `since` - The release number (e.g. `[2019.2]`) when this UI customization key was exposed.
                 A release number prior to 2019.2 is valid.
 
 > **NOTE** Support for the `since` attribute began with version 2019.2, so this attribute is only displayed in versions 2019.2 and later.
-      
+
 > **TIP** It is highly recommended to always provide a `description` entry, so Theme authors can understand usages.
 
 > **TIP** Do not remove existing keys, but deprecate them instead to help Theme authors upgrade their existing themes.
@@ -59,7 +59,7 @@ Color keys can be used via `JBColor.namedColor()` providing defaults for Light a
 ```java
   private static final Color SECTION_HEADER_FOREGROUND =
     JBColor.namedColor("Plugins.SectionHeader.foreground", new JBColor(0x787878, 0x999999));
-```                                                                                         
+```
 
 Other keys can be obtained via `javax.swing.UIManager#getXXX()` methods.
 
@@ -112,19 +112,19 @@ If a part is common among several components, use the same name for it. Notable 
 
 #### SubObject
 Use a subobject when creating keys for one of the following:
-- An implementation variation. Usually has a similar set of UI property keys as the parent object. Examples: 
+- An implementation variation. Usually has a similar set of UI property keys as the parent object. Examples:
   - Default button: `Button.Default.background`
-  - Tool window notification: `Notification.ToolWindow.errorBackground` 
+  - Tool window notification: `Notification.ToolWindow.errorBackground`
 - An internal smaller component of a complex component with its own UI and behavior. Examples:
   - Tool window tab: `ToolWindow.HeaderTab.inactiveBackground`
-  - The hint text at the bottom of a popup: `Popup.Advertiser.background` 
+  - The hint text at the bottom of a popup: `Popup.Advertiser.background`
 
 #### Gradient Color
 If a component has a gradient color, add the words “start” and “end” for the beginning and ending of a gradient. Examples:
 - `Button.startBorderColor` / `Button.endBorderColor`
 - `SearchMatch.startBackground` / `SearchMatch.endBackground`
 
-#### Capitalization 
+#### Capitalization
 Capitalize Object and SubObject. Use lowerCamelCase for property.
 
 #### Do Not Use
@@ -134,11 +134,12 @@ Capitalize Object and SubObject. Use lowerCamelCase for property.
 | `Color` _as a separate word_ | `<Part>Color` |
 | `Outline` | `borderColor` |
 | `Text` | `Foreground` |
-| `darcula` _and other look-and-feel names_ | _Omit_ | 
+| `darcula` _and other look-and-feel names_ | _Omit_ |
 
 #### Swing Legacy
 
-Some color keys are not named according to the rules above. Such keys are inherited from Java Swing and cannot be renamed for compatibility reasons.
+Some color keys are not named according to the rules above.
+Such keys are inherited from Java Swing and cannot be renamed for compatibility reasons.
 Do not use naming patterns from the legacy keys.
 
 Examples of Swing keys:
@@ -155,4 +156,5 @@ Metadata is split up as follows:
 
 New keys should be added to `IntelliJPlatform.themeMetadata.json` only (or corresponding "local" `*.themeMetadata.json` file of the plugin if applicable).
 
-Please make sure to add a `description` and use `since` and `deprecated` attributes explained in [Attributes](#attributes). Respect [Key Naming Scheme](#key-naming-scheme) and keep alphabetical ordering of keys.
+Please make sure to add a `description` and use `since` and `deprecated` attributes explained in [Attributes](#attributes).
+Respect [Key Naming Scheme](#key-naming-scheme) and keep alphabetical ordering of keys.

@@ -6,7 +6,7 @@ title: Glossary
 ## A
 
 Abstract Syntax Tree _(AST)_
-: The [Abstract Syntax Tree](/reference_guide/custom_language_support/implementing_parser_and_psi.md) represents the structure of source input files. 
+: The [Abstract Syntax Tree](/reference_guide/custom_language_support/implementing_parser_and_psi.md) represents the structure of source input files.
 &rarr; _Program Structure Interface_
 
 Annotator
@@ -49,7 +49,7 @@ Local History _(LVCS)_
 : A builtin &rarr; _Version Control System_ tracking all changes in the project [locally](https://www.jetbrains.com/help/idea/local-history.html).
 
 ## J
-                           
+
 JetBrains Project System _(JPS)_
 : Represents the project model in [External Build](/reference_guide/frameworks_and_external_apis/external_builder_api.md#accessing-project-model-and-configuration-from-external-build) process.
 
@@ -77,13 +77,13 @@ Stubs
 
 ## V
 Version Control System _(VCS)_
-: The API for [Version Control System](/reference_guide/vcs_integration_for_plugins.md) allows accessing builtin as well as adding custom implementations. 
+: The API for [Version Control System](/reference_guide/vcs_integration_for_plugins.md) allows accessing builtin as well as adding custom implementations.
 
 Virtual File _(VF)_
 : A [Virtual File](/basics/architectural_overview/virtual_file.md) represents a file in a &rarr; _Virtual File System_.
 
 Virtual File System _(VFS)_
-: A [Virtual File System](/basics/virtual_file_system.md) provides a unified API for working with files represented as &rarr; _Virtual File_. 
+: A [Virtual File System](/basics/virtual_file_system.md) provides a unified API for working with files represented as &rarr; _Virtual File_.
 
 
 ## W

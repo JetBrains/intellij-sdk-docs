@@ -7,6 +7,8 @@ title: DataGrip Plugin Development
 [DataGrip](https://www.jetbrains.com/datagrip/) is an IntelliJ Platform-based product.
 Plugin projects targeting DataGrip can be developed using IntelliJ IDEA with the `gradle-intellij-plugin`.
 
+> **TIP** Qualifying Open Source projects can [apply for free licenses](https://www.jetbrains.com/community/opensource/) of JetBrains products.
+
 ## Configuring Plugin Projects Targeting DataGrip
 The configuration of DataGrip plugin projects follows the methods described in [Configuring Plugin Projects using the IntelliJ IDEA Product Attribute](dev_alternate_products.md#configuring-plugin-projects-using-the-intellij-idea-product-attribute), and [Configuring the plugin.xml File](dev_alternate_products.md#configuring-pluginxml).
 
@@ -27,7 +29,7 @@ To see how these attributes appear in a similar `build.gradle` file for PhpStorm
 The additional attribute `runIde.jvmArgs` is required for versions of the `gradle-intellij-plugin` 0.4.16 and earlier.
 This attribute declares that Gradle should use the DataGrip platform to run/debug plugins in a development instance.
 It is not required for building plugins and manually installing them in DataGrip.
-Benign, but redundant attribute if used for later versions of the `gradle-intellj-plugin`. 
+Benign, but redundant attribute if used for later versions of the `gradle-intellj-plugin`.
 
 The dependency on the DataGrip APIs must be declared in the `plugin.xml` file.
 As described in [Modules Specific to Functionality](/basics/getting_started/plugin_compatibility.md#modules-specific-to-functionality) table, the `<depends>` tags must declare `com.intellij.database`.

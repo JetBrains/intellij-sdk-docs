@@ -7,19 +7,19 @@ title: Marketing
 
 ## Embeddable Widgets
 
-The Marketplace provides embeddable widgets that you can place on your website with a simple code snippet:
+[JetBrains Marketplace](https://plugins.jetbrains.com) provides embeddable widgets that you can place on your website with a simple code snippet:
 
-- Embeddable Plugin Card - renders an information card with the plugin name, icon, description, last update, and downloads counter,
-- Embeddable "Install Plugin" Button - provides a button that allows installing your plugin right in the user's IDE, if it is currently open.
+- Embeddable **Plugin Card** - renders an information card with the plugin name, icon, description, last update, and downloads counter,
+- Embeddable **Install Plugin** Button - provides a button that allows installing your plugin right in the user's IDE, if it is currently open.
 
-For more details, please follow the [Embeddable Content](https://plugins.jetbrains.com/docs/marketplace/embeddable-content.html) section in the JetBrains Marketplace doc.
+For more details, please follow the [Embeddable Content](https://plugins.jetbrains.com/docs/marketplace/embeddable-content.html) section in the JetBrains Marketplace documentation.
 
 
 ## Readme Badges
 
-Adding badges to the README files to the open-source projects is common for providing additional information to the users.
+Adding badges to the README files in open-source projects is common for providing additional information for users.
 
-Below there are listed a few ones related to the IntelliJ SDK and plugins development provided by [shields.io](https://shields.io) and [espend.de](https://www.espend.de):
+Below are listed a few related to the IntelliJ SDK and plugins development provided by [shields.io](https://shields.io) and [espend.de](https://www.espend.de):
 
 > **NOTE** The following code snippets contain `:pluginId` and `:packageName` placeholders.
 >

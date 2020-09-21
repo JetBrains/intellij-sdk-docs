@@ -24,7 +24,7 @@ public class SimplePsiImplUtil {
       return null;
     }
   }
-  
+
   public static String getValue(SimpleProperty element) {
     ASTNode valueNode = element.getNode().findChildByType(SimpleTypes.VALUE);
     if (valueNode != null) {
@@ -36,7 +36,7 @@ public class SimplePsiImplUtil {
 }
 ```
 
-The parser generates the `SimpleProperty` interface referenced in the code above. 
+The parser generates the `SimpleProperty` interface referenced in the code above.
 
 ## Update Grammar and Regenerate the Parser
 Now the utility class is added to the grammar file via the `psiImplUtilClass` attribute.
@@ -77,4 +77,3 @@ This utility will be used later when implementing [code completion](https://www.
 ```java
 {% include /code_samples/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleUtil.java %}
 ```
-

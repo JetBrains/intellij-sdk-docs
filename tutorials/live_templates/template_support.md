@@ -3,7 +3,7 @@ title: Adding Live Templates to a Plugin
 ---
 <!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-This tutorial illustrates how to add default Custom Live Templates to an IntelliJ Platform plugin, and assign valid contexts for these templates based on the surrounding code and file type. 
+This tutorial illustrates how to add default Custom Live Templates to an IntelliJ Platform plugin, and assign valid contexts for these templates based on the surrounding code and file type.
 In addition, the tutorial discusses how to export existing Live Templates, and bundle them within a plugin.
 Any Live Template that can be created and exported can be added to a plugin by following the Template Creation, Export, and Extension Point Registration processes.
 
@@ -11,9 +11,9 @@ This tutorial uses the SDK code sample [`live_templates`](https://github.com/Jet
 
 ## Template Creation
 Get started by [creating a new Live Template](https://www.jetbrains.com/idea/help/creating-and-editing-live-templates.html) within the IntelliJ Platform-based IDE:
-* Add a new Template Group, "Markdown" and create a new Live Template under this group. 
+* Add a new Template Group, "Markdown" and create a new Live Template under this group.
 * Assign the template the abbreviation "**{**".
-* Assign the description "**SDK: New link reference**". 
+* Assign the description "**SDK: New link reference**".
 * Paste the following snippet into the *Template text* field:
 
 ```text
@@ -28,15 +28,15 @@ There are many other [predefined functions](https://www.jetbrains.com/idea/help/
 > **TIP** Consider iteratively testing the Live Template using the current editor and a markdown file to minimize debugging later.
 
 ## Export the Live Template
-Once the Live Template produces the expected result, [export the Live Template](https://www.jetbrains.com/help/idea/sharing-live-templates.html). 
+Once the Live Template produces the expected result, [export the Live Template](https://www.jetbrains.com/help/idea/sharing-live-templates.html).
 The export produces a file called `Markdown.xml` with the following contents:
 
 ```xml
 <templateSet group="Markdown">
-  <template name="{" 
-            value="[$TEXT$]($LINK$)$END$" 
-            description="SDK: New link reference" 
-            toReformat="false" 
+  <template name="{"
+            value="[$TEXT$]($LINK$)$END$"
+            description="SDK: New link reference"
+            toReformat="false"
             toShortenFQNames="false">
     <variable name="TEXT" expression="" defaultValue="" alwaysStopAt="true" />
     <variable name="LINK" expression="complete()" defaultValue="" alwaysStopAt="true" />
@@ -56,7 +56,7 @@ Ultimately, a file's extension determines the applicable Markdown context.
 {% include /code_samples/live_templates/src/main/java/org/intellij/sdk/liveTemplates/MarkdownContext.java%}
 ```
 
-> **NOTE** Once the `MarkdownContext` is defined, be sure to add the new context type to the previously created Live Template settings file. 
+> **NOTE** Once the `MarkdownContext` is defined, be sure to add the new context type to the previously created Live Template settings file.
 
 Within the `<template>...</template>` elements in the `Markdown.xml` [Live Template definition file](#export-the-live-template), add the following context elements:
 
@@ -68,10 +68,10 @@ Within the `<template>...</template>` elements in the `Markdown.xml` [Live Templ
   </template>
 ```
 
-It is not always necessary to define your own `TemplateContextType`, as there are many existing template contexts already defined in the IntelliJ Platform. 
+It is not always necessary to define your own `TemplateContextType`, as there are many existing template contexts already defined in the IntelliJ Platform.
 Consider reusing one of the many existing template context types that inherit from `TemplateContextType` if you are augmenting language support to an existing area.
 
-## Completing the Live Template Implementation 
+## Completing the Live Template Implementation
 Depending on the version of the IntelliJ Platform, different steps are used to complete the implementation of the feature.
 
 ### Versions 2020.1 and Later
@@ -93,9 +93,9 @@ Now go to the [Check Plugin](#check-plugin) section to test the template.
 ### Versions 2019.3 and Earlier
 For older versions of the IntelliJ Platform follow this section to complete the implementation and register the extension points.
 Then proceed to the [Check Plugin](#check-plugin) section.
- 
+
 #### Implement DefaultLiveTemplatesProvider
-The `MarkdownTemplateProvider` tells the Platform where to find the Live Template settings file. 
+The `MarkdownTemplateProvider` tells the Platform where to find the Live Template settings file.
 Make sure to include the full path to the file, relative to the `src/main/resources` directory, excluding the file extension.
 
 ```java
@@ -129,6 +129,6 @@ Using the `com.intellij.defaultLiveTemplatesProvider` and `com.intellij.liveTemp
 ```
 
 ## Check Plugin
-Now verify the plugin is working correctly. 
-Run the plugin in a Development Instance and verify there is a new entry under **Settings/Preferenes \| Live Templates \| Markdown \| \{ (SDK: New link reference)**. 
+Now verify the plugin is working correctly.
+Run the plugin in a Development Instance and verify there is a new entry under **Settings/Preferenes \| Live Templates \| Markdown \| \{ (SDK: New link reference)**.
 Finally, create a new file `Test.md` and confirm that the Live Template works by entering a <kbd>{</kbd> character and then pressing <kbd>Tab</kbd>.

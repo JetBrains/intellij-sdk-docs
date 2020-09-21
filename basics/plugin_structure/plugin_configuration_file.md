@@ -3,12 +3,13 @@ title: Plugin Configuration File - plugin.xml
 ---
 <!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-The following is a sample plugin configuration file. This sample showcases and describes all elements that can be used in the `plugin.xml` file.
+The following is a sample plugin configuration file.
+This sample showcases and describes all elements that can be used in the `plugin.xml` file.
 Additional information about configuring `<actions>` is available in the [Actions](/basics/basic_action_system.md#registering-actions) section in Part II.
 
 Limited HTML elements are allowed within `<description>` and `<change-notes>` elements.
-However, content containing HTML elements must be surrounded by `<![CDATA[  ]]>` tags. 
-Allowed HTML elements include text formatting, paragraphs, and lists. 
+However, content containing HTML elements must be surrounded by `<![CDATA[  ]]>` tags.
+Allowed HTML elements include text formatting, paragraphs, and lists.
 
 When using Gradle, a number of metadata elements will be provided at build time by [`patchPluginXml` task](/tutorials/build_system/gradle_guide.md#patching-the-plugin-configuration-file).
 
@@ -16,25 +17,25 @@ When using Gradle, a number of metadata elements will be provided at build time 
 <!-- `url` specifies the URL of the plugin homepage (can be opened from "Plugins" settings dialog) -->
 <idea-plugin url="https://www.jetbrains.com/idea">
 
-  <!-- Plugin name. It should be short and descriptive and in Title Case. 
+  <!-- Plugin name. It should be short and descriptive and in Title Case.
        Displayed in the "Plugins" settings dialog and the plugin repository Web interface. -->
   <name>Vss Integration</name>
 
-  <!-- Unique identifier of the plugin. Should be FQN.
-       Cannot be changed between the plugin versions.
+  <!-- Unique identifier of the plugin. It should be FQN.
+       It cannot be changed between the plugin versions.
        If not specified, <name> will be used (not recommended). -->
   <id>com.jetbrains.vssintegration</id>
 
-  <!-- Description of the plugin. 
+  <!-- Description of the plugin.
        Should be short and to the point.
-       Start the description with a verb in present simple form such as 
+       Start the description with a verb in a present simple form such as
        "integrates", "synchronizes", "adds support for" or "lets you view".
-       Don’t use marketing adjectives like “simple”, “lightweight”, or “professional”.
-       Don’t repeat the name of the plugin.
-       For plugins that add language/platform/framework support, the description MUST specify 
+       Don't use marketing adjectives like "simple", "lightweight", or "professional".
+       Don't repeat the name of the plugin.
+       For plugins that add language/platform/framework support, the description MUST specify
        the version of the corresponding language/platform/framework.
-       Don't mention the IDE compatibility. E.g. don't say "Adds support to IntelliJ IDEA for..."
-       Displayed in the "Plugins" settings dialog and the plugin repository Web interface. 
+       Don't mention the IDE compatibility. E.g., don't say "Adds support to IntelliJ IDEA for..."
+       Displayed in the "Plugins" settings dialog and the plugin repository Web interface.
        Simple HTML elements can be included between <![CDATA[  ]]> tags.  -->
   <description>Integrates Volume Snapshot Service W10</description>
 
@@ -57,7 +58,7 @@ When using Gradle, a number of metadata elements will be provided at build time 
   <!-- Mandatory dependencies on plugins or modules.
        The FQN module names in <depends> elements are used to determine IDE compatibility for the plugin.
        Include at least the module shown below to indicate compatibility with IntelliJ Platform-based products.
-       Also include dependencies on other plugins as needed.
+       Also, include dependencies on other plugins as needed.
        See "Compatibility with Multiple Products" and "Plugin Dependencies" for more information.  -->
   <depends>com.intellij.modules.platform</depends>
   <depends>com.third.party.plugin</depends>
@@ -75,7 +76,7 @@ When using Gradle, a number of metadata elements will be provided at build time 
        `action.[ActionID].text|description` -->
   <resource-bundle>messages.MyPluginBundle</resource-bundle>
 
-  <!-- Plugin's application components / DEPRECATED - do not use in new plugins 
+  <!-- Plugin's application components / DEPRECATED - do not use in new plugins
        See https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_components.html for migration steps
   -->
   <application-components>
@@ -88,7 +89,7 @@ When using Gradle, a number of metadata elements will be provided at build time 
     </component>
   </application-components>
 
-  <!-- Plugin's project components / DEPRECATED - do not use in new plugins 
+  <!-- Plugin's project components / DEPRECATED - do not use in new plugins
        See https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_components.html for migration steps
   -->
   <project-components>
@@ -126,7 +127,7 @@ When using Gradle, a number of metadata elements will be provided at build time 
 
   <!-- Extension points defined by the plugin.
        Extension points are registered by a plugin so that other
-       plugins can provide this plugin with certain data. 
+       plugins can provide this plugin with certain data.
   -->
   <extensionPoints>
     <extensionPoint name="testExtensionPoint" beanClass="com.foo.impl.MyExtensionBean"/>
@@ -135,7 +136,7 @@ When using Gradle, a number of metadata elements will be provided at build time 
   <!-- Extensions which the plugin adds to extension points
        defined by the IntelliJ Platform or by other plugins.
        The "defaultExtensionNs" attribute must be set to the
-       ID of the plugin defining the extension point, or to 
+       ID of the plugin defining the extension point, or to
        "com.intellij" if the extension point is defined by the
        IntelliJ Platform. The name of the tag within the <extensions>
        tag matches the name of the extension point, and the
@@ -144,7 +145,7 @@ When using Gradle, a number of metadata elements will be provided at build time 
   <extensions defaultExtensionNs="VssIntegration">
     <testExtensionPoint implementation="com.foo.impl.MyExtensionImpl"/>
   </extensions>
-  
+
   <!-- Application-level listeners -->
   <applicationListeners>
     <listener class="com.foo.impl.MyListener" topic="com.intellij.openapi.vfs.newvfs.BulkFileListener"/>

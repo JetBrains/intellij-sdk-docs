@@ -27,5 +27,5 @@ Live Templates Sample Project implements two example live templates for the Mark
 [file:MarkdownContext]: ./src/main/java/org/intellij/sdk/liveTemplates/MarkdownContext.java
 [file:TitleCaseMacro]: ./src/main/java/org/intellij/sdk/liveTemplates/TitleCaseMacro.java
 
-[sdk:TemplateContextType]: upsource:///platform/analysis-api/src/com/intellij/codeInsight/template/TemplateContextType.java
+[sdk:TemplateContextType]: upsource:///platform/lang-api/src/com/intellij/codeInsight/template/TemplateContextType.java
 [sdk:MacroBase]: upsource:///platform/lang-impl/src/com/intellij/codeInsight/template/macro/MacroBase.java

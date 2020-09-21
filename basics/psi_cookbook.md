@@ -3,7 +3,8 @@ title: PSI Cookbook
 ---
 <!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-This page gives a list of recipes for the most common operations for working with the PSI (Program Structure Interface). Unlike [Developing Custom Language Plugins](/reference_guide/custom_language_support.md), it talks about working with the PSI of existing languages (such as Java).
+This page gives recipes for the most common operations for working with the PSI (Program Structure Interface).
+Unlike [Developing Custom Language Plugins](/reference_guide/custom_language_support.md), it talks about working with the PSI of existing languages (such as Java).
 
 > **TIP** Please see also [Working with PSI efficiently](/reference_guide/performance/performance.md#working-with-psi-efficiently).
 
@@ -46,7 +47,7 @@ This page gives a list of recipes for the most common operations for working wit
 ```java
 PsiJavaFile javaFile = (PsiJavaFile) psiClass.getContainingFile();
 PsiPackage pkg = JavaPsiFacade.getInstance(project).findPackage(javaFile.getPackageName());
-```        
+```
 
 or
 

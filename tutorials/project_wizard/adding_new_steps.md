@@ -8,12 +8,11 @@ This tutorial shows how to add an extra step to the Project Wizard to provide ad
 ## Pre-Requirements
 
 Create an empty plugin project.
-See [Creating a Plugin Project](/tutorials/gradle_build_system.md)
-to know how to do it.
+See [Creating a Plugin Project](/tutorials/gradle_build_system.md) to know how to do it.
 
 ## Register Module Builder
-Project configuration settings depend on the project's module type. 
-Register a new `com.intellij.moduleBuilder` extension point in the `plugin.xml` configuration file. 
+Project configuration settings depend on the project's module type.
+Register a new `com.intellij.moduleBuilder` extension point in the `plugin.xml` configuration file.
 
 ```xml
   <extensions defaultExtensionNs="com.intellij">
@@ -36,7 +35,8 @@ public class DemoModuleWizardStep extends ModuleBuilder {
 ```
 
 ## Define Module Type
-Set a module type for the extra wizard step to provide. In this example, choose an `EMPTY` module type.
+Set a module type for the extra wizard step to provide.
+In this example, choose an `EMPTY` module type.
 
 ```java
 public class DemoModuleWizardStep extends ModuleBuilder {
@@ -62,7 +62,7 @@ public class DemoModuleWizardStep extends ModuleBuilder {
     }
 
     public ModuleType getModuleType() {
-        return ModuleType.EMPTY; 
+        return ModuleType.EMPTY;
     }
 
     @Override
@@ -82,13 +82,13 @@ public class DemoModuleWizardStep extends ModuleBuilder {
 }
 ```
 
-## Checking UI Appearance  
+## Checking UI Appearance
 After compiling and running the plugin, create a new project using a source-compiled instance of *IntelliJ IDEA*.
 
 ![New Project](img/empty_project.png)
 
 Choose an *Empty Module* type, click next, and get to the just added extra step.
- 
-![Extra Step](img/extra_step.png) 
+
+![Extra Step](img/extra_step.png)
 
 Modify and tune the UI component depending on requirements.

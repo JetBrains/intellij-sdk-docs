@@ -3,11 +3,14 @@ title: PSI Files
 ---
 <!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-A PSI (Program Structure Interface) file is the root of a structure representing the contents of a file as a hierarchy of elements in a particular programming language.
+A PSI (Program Structure Interface) file is the root of a structure representing a file's contents as a hierarchy of elements in a particular programming language.
 
 The [`PsiFile`](upsource:///platform/core-api/src/com/intellij/psi/PsiFile.java) class is the common base class for all PSI files, while files in a specific language are usually represented by its subclasses.  For example, the [`PsiJavaFile`](upsource:///java/java-psi-api/src/com/intellij/psi/PsiJavaFile.java) class represents a Java file, and the [`XmlFile`](upsource:///xml/xml-psi-api/src/com/intellij/psi/xml/XmlFile.java) class represents an XML file.
 
-Unlike `VirtualFile` and `Document`, which have application scope (even if multiple projects are open, each file is represented by the same `VirtualFile` instance), PSI has project scope (the same file is represented by multiple `PsiFile` instances if the file belongs to multiple projects open at the same time).
+Unlike `VirtualFile` and `Document`, which have application scope (even if multiple projects are open, each file is represented by the same `VirtualFile` instance).
+A PSI has project scope.
+The same file is represented by one `PsiFile` instance for each open project to which the file belongs.
+In contrast, `VirtualFile` and Document have application scope; files are represented by the same VirtualFile instance, even if multiple projects are open.
 
 ## How do I get a PSI file?
 
@@ -27,7 +30,7 @@ To iterate over the elements in a file, use `psiFile.accept(new PsiRecursiveElem
 
 As PSI is language-dependent, PSI files are created through the [`Language`](upsource:///platform/core-api/src/com/intellij/lang/Language.java) object, by using the `LanguageParserDefinitions.INSTANCE.forLanguage(language).createFile(fileViewProvider)` method.
 
-Like documents, PSI files are created on demand when the PSI is accessed for a particular file.
+Like documents, PSI files are created on-demand when the PSI is accessed for a particular file.
 
 ## How long do PSI files persist?
 
@@ -45,7 +48,8 @@ To save the PSI file to disk, use the [`PsiDirectory`](upsource:///platform/core
 
 ## How do I extend PSI?
 
-PSI can be extended to support additional languages through custom language plugins. For more details on developing custom language plugins, see the [Custom Language Support](/reference_guide/custom_language_support.md) reference guide.
+PSI can be extended to support additional languages through custom language plugins.
+For more details on developing custom language plugins, see the [Custom Language Support](/reference_guide/custom_language_support.md) reference guide.
 
 ## What are the rules for working with PSI?
 

@@ -5,7 +5,7 @@ title: 9. Completion Contributor
 
 Custom languages provide code completion using one of two approaches: Contributor and Reference-based (see [10. Reference Contributor](reference_contributor.md)) completion.
 
-**Reference**: [Code Completion](/reference_guide/custom_language_support/code_completion.md) 
+**Reference**: [Code Completion](/reference_guide/custom_language_support/code_completion.md)
 
 ## Define a Completion Contributor
 For this tutorial, the `simple_language_plugin` provides custom completion for values in Simple Language property files.
@@ -21,14 +21,14 @@ The `SimpleCompletionContributor` implementation is registered in the plugin con
 
 ```xml
   <extensions defaultExtensionNs="com.intellij">
-    <completion.contributor language="Simple" 
+    <completion.contributor language="Simple"
             implementationClass="org.intellij.sdk.language.SimpleCompletionContributor"/>
   </extensions>
 ```
 
 ## Run the Project
 Run the `simple_language_plugin` in a Development Instance and open the [`test.simple`](/tutorials/custom_language_support/lexer_and_parser_definition.md#run-the-project) file.
-Erase the property "English" and invoke [Basic Code Completion](https://www.jetbrains.com/help/idea/auto-completing-code.html#invoke-basic-completion). 
+Erase the property "English" and invoke [Basic Code Completion](https://www.jetbrains.com/help/idea/auto-completing-code.html#invoke-basic-completion).
 The choice "Hello" is shown:
 
 ![Completion](img/completion.png)

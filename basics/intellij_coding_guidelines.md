@@ -7,7 +7,8 @@ If you are writing code that you would like to contribute to the IntelliJ Platfo
 
 ## Following the Latest Source Code
 
-If you submit patches, we strongly recommend building your patches against the latest version of the code from the Git repository. The easiest way to do so is to clone the JetBrains Git repository, track your work in Git, and create patches using the "git format-patch" command.
+If you submit patches, we strongly recommend building your patches against the latest version of the code from the Git repository.
+The easiest way to do so is to clone the JetBrains Git repository, track your work in Git, and create patches using the "git format-patch" command.
 
 ## General Architectural Principles
 
@@ -15,7 +16,9 @@ Please do your best to follow common Java architectural principles. "Effective J
 
 ## Tests
 
-Functional tests cover most of the existing functionality of IntelliJ IDEA. If tests cover the area you're modifying, you must run the tests and make sure that your changes do not introduce any new test failures. It's also strongly recommended that you provide new functional tests that cover the bugs you fix or the new features that you add.
+Functional tests cover most of the existing functionality of IntelliJ IDEA.
+If tests cover the area you're modifying, you must run the tests and make sure that your changes do not introduce any new test failures.
+It's also strongly recommended that you provide new functional tests that cover the bugs you fix or the new features that you add.
 
 ## Code Formatting
 
@@ -29,19 +32,25 @@ The easiest way to follow our code formatting guidelines is to reformat your cod
 
 ## Inspections
 
-The IntelliJ IDEA Community Edition project includes a shared inspection profile. We strongly recommend making sure that the code you submit does not contain any warnings highlighted by the inspections configured in that inspection profile.
+The IntelliJ IDEA Community Edition project includes a shared inspection profile.
+We strongly recommend making sure that the code you submit does not contain any warnings highlighted by the inspections configured in that inspection profile.
 
 ## JavaDoc Comments
 
-If your code adds new OpenAPI interfaces, classes, methods, or extension points, you must provide JavaDoc comments describing the parameters and intended usage of the APIs. Providing JavaDoc or other comments for other parts of the code is a good idea but isn't required.
+If your code adds new OpenAPI interfaces, classes, methods, or extension points, you must provide JavaDoc comments describing the parameters and intended usage of the APIs.
+Providing JavaDoc or other comments for other parts of the code is a good idea but isn't required.
 
 ## Commits
 
 To avoid unnecessary work when reviewing your changes, please follow these guidelines:
 
-- Look through all of your changes in your patch or pull request before you submit it to us. Make sure that everything you've changed is there for a reason.
-- Please don't include unfinished work to the patch. Make sure that it doesn't contain any TODO comments. If you added some code and ended up not needing it, please make sure that you delete it before you submit your patch.
-- Please don't include any changes that affect formatting, fixing "yellow code" (warnings), or code style along with actual changes that fix a bug or implement a feature. No one likes to leave poor code, but remember that having these changes mixed complicates the process of review.
+- Look through all of your changes in your patch or pull request before you submit it to us.
+  Make sure that everything you've changed is there for a reason.
+- Please don't include unfinished work to the patch.
+  Make sure that it doesn't contain any TODO comments.
+  If you added some code and ended up not needing it, please make sure that you delete it before you submit your patch.
+- Please don't include any changes that affect formatting, fixing "yellow code" (warnings), or code style along with actual changes that fix a bug or implement a feature.
+  No one likes to leave poor code, but remember that having these changes mixed complicates the process of review.
 - Please don't fix multiple problems within a single patch or pull request.
 - Please don't commit your changes to configuration files (runConfigurations/IDEA.xml, codeStyleSettings.xml, misc.xml, etc.) unless it is essential for the fix itself.
 - Please avoid moving or renaming classes unless it is necessary for the fix.

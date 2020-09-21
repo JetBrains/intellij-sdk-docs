@@ -10,7 +10,7 @@ Before creating the parsing test, ensure the parser definition (`Simple.bnf`) in
 These additional lines facilitate testing incorrect keys.
 
 If the lines below are not present in `Simple.bnf`, replace the existing `property` definition with the lines below.
-Don't forget to regenerate the parser after updating the file! 
+Don't forget to regenerate the parser after updating the file!
 Right-click on the `Simple.bnf` file and select **Generate Parser Code**.
 
 ```java

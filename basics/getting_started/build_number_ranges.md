@@ -4,7 +4,7 @@ title: Build Number Ranges
 
 Use this reference of build number ranges to specify the correct `since-build` and `until-build` values in your plugin descriptor.
 
-When using Gradle, setting the actual values in `plugin.xml` is usually managed by the `patchPluginXml` task, see [Patching the Plugin Configuration File](/tutorials/build_system/gradle_guide.md#patching-the-plugin-configuration-file) for details.  
+When using Gradle, setting the actual values in `plugin.xml` is usually managed by the `patchPluginXml` task, see [Patching the Plugin Configuration File](/tutorials/build_system/gradle_guide.md#patching-the-plugin-configuration-file) for details.
 
 > **NOTE** Compatibility with specified version range (and compatible products) should always be verified using [Plugin Verifier](/reference_guide/api_changes_list.md#verifying-compatibility) to ensure binary compatibility.
 
@@ -16,11 +16,17 @@ The number consists of the following parts:
 * Branch number (`162`)
 * Build number in the branch (`94`)
 
-Since version 2016.2 of the *IntelliJ Platform*, branch numbers are based on the `YYYY.R` [IDE release version numbers](https://blog.jetbrains.com/blog/2016/03/09/jetbrains-toolbox-release-and-versioning-changes/). The branch number takes the last two digits of the year, and the `R` release number. For example, `162` for 2016.2, `163` for 2016.3, `171` for 2017.1. In this scheme `IU-162.94` corresponds to the 2016.2 release.
+Since version 2016.2 of the *IntelliJ Platform*, branch numbers are based on the `YYYY.R` [IDE release version numbers](https://blog.jetbrains.com/blog/2016/03/09/jetbrains-toolbox-release-and-versioning-changes/).
+The branch number takes the last two digits of the year and the `R` release number.
+For example, `162` for 2016.2, `163` for 2016.3, `171` for 2017.1.
+In this scheme, `IU-162.94` corresponds to the 2016.2 release.
 
-Starting with 2016.2 the build number may also have multiple components: `IU-162.94`, `IU-162.94.11`, `IU-162.94.11.256.42`. This gives more flexibility for third-party plugins and IDE developers. Plugins may specify compatibility versions more precisely; IDE vendors may have build numbers that are based on a specific *IntelliJ Platform* version and also specify additional internal version (e.g. `256.42` in `XX-162.94.11.256.42`) to allow plugin developers for their IDE to specify compatibility.
+Starting with 2016.2, the build number may also have multiple components: `IU-162.94`, `IU-162.94.11`, `IU-162.94.11.256.42`.
+This gives more flexibility for third-party plugins and IDE developers.
+Plugins may specify compatibility versions more precisely; IDE vendors may have build numbers based on a specific *IntelliJ Platform* version and specify additional internal version (e.g. `256.42` in `XX-162.94.11.256.42`) to allow plugin developers for their IDE to specify compatibility.
 
-Multi-part build numbers can also be used in the `since-build` and `until-build` attributes of `idea-version`. Usually you should omit the product ID and use only the branch number and build number, for example:
+Multi-part build numbers can also be used in the `since-build` and `until-build` attributes of `idea-version`.
+Usually you should omit the product ID and use only the branch number and build number, for example:
 
 ```xml
 <idea-version since-build="94.539"/>
@@ -51,7 +57,8 @@ Multi-part build numbers can also be used in the `since-build` and `until-build`
 | [163](https://github.com/JetBrains/intellij-community/tree/163) | 2016.3                    |
 | [162](https://github.com/JetBrains/intellij-community/tree/162) | 2016.2                    |
 
-Note that there is no `170`. In the `YYYY.R` versioning scheme, the `R` part starts at 1.
+Note that there is no `170`.
+In the `YYYY.R` versioning scheme, the `R` part starts at 1.
 
 ### IntelliJ Platform Based Products of Pre-2016.2 IDE Versions
 

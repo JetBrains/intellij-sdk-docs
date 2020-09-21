@@ -2,7 +2,7 @@
 
 plugins {
   id 'java'
-  id 'org.jetbrains.intellij' version '0.4.21'
+  id 'org.jetbrains.intellij' version '0.4.22'
 }
 
 group 'org.intellij.sdk'

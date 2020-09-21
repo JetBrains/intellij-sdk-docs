@@ -13,7 +13,7 @@ This Plugin registers the [`PopupDialogAction`][file:PopupDialogAction] action, 
 
 Additional features of the plugin:
 - [Using the `<override-text>`][docs:action-override] element in an `<action>` element is demonstrated in the `plugin.xml` declaration to add the `PopupDialogAction` action directly to the `ToolsMenu`.
-- [Localization of action and group][docs:action-locale] `text` and `description` attributes using a `<resource-bundle>` is demonstrated in the declaration to add a new group to the `EditorPopupMenu`. 
+- [Localization of action and group][docs:action-locale] `text` and `description` attributes using a `<resource-bundle>` is demonstrated in the declaration to add a new group to the `EditorPopupMenu`.
 
 ### Actions
 
@@ -38,4 +38,4 @@ Additional features of the plugin:
 [file:DynamicActionGroup]: ./src/main/java/org/intellij/sdk/action/DynamicActionGroup.java
 
 [sdk:AnAction]: upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java
-[sdk:ActionGroup]: upsource:///platform/platform-api/src/com/intellij/openapi/actionSystem/ActionInGroup.java
+[sdk:ActionGroup]: upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/ActionGroup.java

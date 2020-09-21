@@ -9,14 +9,14 @@ Examples of the plugin approach are the IntelliJ Platform SDK code samples [insp
 In addition, the comparing_references_inspection code sample demonstrates implementing a unit test.
 
 You can also create custom inspections through the IntelliJ IDEA user interface.
-See [Code Inspection](https://www.jetbrains.com/idea/webhelp/code-inspection.html) and [Creating Custom Inspections](https://www.jetbrains.com/idea/help/creating-custom-inspections.html) for more information. 
+See [Code Inspection](https://www.jetbrains.com/idea/webhelp/code-inspection.html) and [Creating Custom Inspections](https://www.jetbrains.com/idea/help/creating-custom-inspections.html) for more information.
 
 ## Creating an Inspection Plugin
 
 The [comparing_references_inspection](https://github.com/JetBrains/intellij-sdk-code-samples/tree/master/comparing_references_inspection) code sample adds a new inspection to the **Java | Probable Bugs** group in the [Inspections list](https://www.jetbrains.com/help/idea/inspections-settings.html).
-The inspection reports when the `==` or `!=` operator is used between Java expressions of reference types.  
+The inspection reports when the `==` or `!=` operator is used between Java expressions of reference types.
 It illustrates the components for a custom inspection plugin:
-* Describing an [inspection](#plugin-configuration-file) in the plugin configuration file. 
+* Describing an [inspection](#plugin-configuration-file) in the plugin configuration file.
 * Implementing a [local inspection class](#inspection-implementation-java-class) to inspect Java code in the IntelliJ Platform-based IDE editor.
 * Creating a [visitor](#visitor-implementation-class) to traverse the `PsiTree` of the Java file being edited, inspecting for problematic syntax.
 * Implementing a [quick fix](#quick-fix-implementation) class to correct syntax problems by altering the `PsiTree` as needed.
@@ -27,7 +27,7 @@ It illustrates the components for a custom inspection plugin:
 
 Although the IntelliJ Platform SDK code samples illustrate implementations of these components, it is often useful to see examples of inspections implemented in the _intellij_community_ code base.
 This process can help find inspection descriptions and implementations based on what is visible in the IDE UI.
-The overall approach works for inspections aimed at other languages as well. 
+The overall approach works for inspections aimed at other languages as well.
 * Find an existing inspection that is similar to the one you want to implement in the **Preferences | Editor | Inspections** panel.
   Note the display name of the inspection.
   For example, the Java/Probable Bugs inspection "Object comparison using '==', instead of 'equals()'" is very similar to `comparing_references_inspection`.
@@ -43,7 +43,7 @@ The overall approach works for inspections aimed at other languages as well.
 ## Creating an Inspection
 The [comparing_references_inspection](https://github.com/JetBrains/intellij-sdk-code-samples/tree/master/comparing_references_inspection) code sample reports when the `==` or `!=` operators are used between Java expressions of reference types.
 The user can apply a quick fix to change `a==b` to `a.equals(b)`, or `a!=b` to `!a.equals(b)`.
-  
+
 The details of the `comparing_references_inspection` implementation illustrate the components of an inspection plugin.
 
 ### Plugin Configuration File
@@ -54,13 +54,13 @@ Under the hood, inspection types are described as an `<extensionPoint>` in [`Lan
 * The `inspectionToolProvider` type is not deprecated but `localInspection` is preferred.
 
 The minimum inspection description must contain the `implementationClass` attribute.
-As shown in the `comparing_references_inspection` plugin configuration file, other attributes can be defined in the `localInspection` element, either with or without localization. 
+As shown in the `comparing_references_inspection` plugin configuration file, other attributes can be defined in the `localInspection` element, either with or without localization.
 In most cases, it is simplest to define the attributes in the plugin configuration file because the underlying parent classes handle most of the class responsibilities based on the configuration file description.
 Note that some attributes are not displayed to the user, so they are never localized.
 
 As an alternative, inspections can define all of the attribute information (except `implementationClass`) by overriding methods in the inspection implementation class.
 
-### Inspection Implementation Java Class  
+### Inspection Implementation Java Class
 Inspection implementations for Java files, like [`ComparingReferencesInspection`](https://github.com/JetBrains/intellij-sdk-code-samples/blob/master/comparing_references_inspection/src/main/java/org/intellij/sdk/codeInspection/ComparingReferencesInspection.java), are often based on the Java class [`AbstractBaseJavaLocalInspectionTool`](upsource:///java/java-analysis-api/src/com/intellij/codeInspection/AbstractBaseJavaLocalInspectionTool.java).
 The `AbstractBaseJavaLocalInspectionTool` implementation class offers methods to inspect Java classes, fields, and methods.
 
@@ -85,7 +85,7 @@ The overridden `ComparingReferencesInspection` methods are discussed in the sect
 The visitor class evaluates whether elements of the file's `PsiTree` are of interest to an inspection.
 
 The `ComparingReferencesInspection.buildVisitor()` method creates an anonymous visitor class based on [`JavaElementVisitor`](upsource:///java/java-psi-api/src/com/intellij/psi/JavaElementVisitor.java) to traverse the `PsiTree` of the Java file being edited, inspecting for suspect syntax.
-The anonymous class overrides three methods in particular. 
+The anonymous class overrides three methods in particular.
 * `visitReferenceExpression()` to prevent any duplicate visitation of reference-type expressions.
 * `visitBinaryExpression()`, which does all the heavy lifting.
   It is called to evaluate a `PsiBinaryExpression`, and it checks to see if the operands are `==` or `!=`, and if the operands are classes relevant to this inspection.
@@ -116,15 +116,15 @@ Note that the IntelliJ Platform provides most of the UI displayed in the _Inspec
 As long as the inspection attributes and inspection description are defined correctly, the IntelliJ Platform displays the information in the _Inspections Preferences_ UI.
 
 ### Inspection Description
-The inspection description is an HTML file. 
+The inspection description is an HTML file.
 The description is displayed in the upper right panel of the _Inspections Preferences_ dialog when an inspection is selected from the list.
-  
+
 Implicit in using [`LocalInspectionTool`](upsource:///platform/analysis-api/src/com/intellij/codeInspection/LocalInspectionTool.java) in the class hierarchy of the inspection implementation means following some conventions.
 * The inspection description file is expected to be located under `<plugin root dir>/resources/inspectionDescriptions/`.
   If the inspection description file is to be located elsewhere, override `getDescriptionUrl()` in the inspection implementation class.
 * The name of the description file is expected to be the inspection `<short name>.html` as provided by the inspection description or the inspection implementation class.
   If a short name is not provided by the plugin, the IntelliJ Platform computes one.
-  
+
 ### Inspection Unit Test
 > **NOTE** Please note that running the test requires setting system property `idea.home.path` in `test {}` block of `build.gradle`
 
@@ -144,7 +144,7 @@ The `comparing_references_inspection` tests run the inspection on the `*.java` f
 
 ## Running the Comparing References Inspection Code Sample
 The [comparing_references_inspection](https://github.com/JetBrains/intellij-sdk-code-samples/tree/master/comparing_references_inspection) code sample adds a new inspection to the **Java | Probable Bugs** group in the [Inspections list](https://www.jetbrains.com/help/idea/inspections-settings.html).
-The inspection reports when the `==` or `!=` operator is used between Java expressions of reference types.  
+The inspection reports when the `==` or `!=` operator is used between Java expressions of reference types.
 
 To run the sample plugin:
 * Start **IntelliJ IDEA**, open the `intellij-sdk-docs` project, and highlight the [comparing_references_inspection](https://github.com/JetBrains/intellij-sdk-code-samples/tree/master/comparing_references_inspection) module.
@@ -154,11 +154,11 @@ To run the sample plugin:
 
 ### Configuring the Plugin
 
-Once the plugin is launched, you can set the plugin options. 
+Once the plugin is launched, you can set the plugin options.
 You can specify the Java classes to participate in the code inspection and the severity level of the found probable bugs.
 
-On the IDEA main menu, open the **Preferences | Editor | Inspections** dialog. 
-In the list of the IntelliJ IDEA _Java_ inspections, expand the _Probable bugs_ node, and then click _SDK: '==' or '!=' instead of 'equals()'_.  
+On the IDEA main menu, open the **Preferences | Editor | Inspections** dialog.
+In the list of the IntelliJ IDEA _Java_ inspections, expand the _Probable bugs_ node, and then click _SDK: '==' or '!=' instead of 'equals()'_.
 
 ![](img/comparingReferences_options.png)
 
@@ -169,12 +169,12 @@ Under **Options**, you can specify the following plugin settings:
 
 ### How does it work?
 
-The plugin inspects your code opened in the IntelliJ IDEA editor or the code you are typing. 
+The plugin inspects your code opened in the IntelliJ IDEA editor or the code you are typing.
 The plugin highlights the code fragments where two variables of the reference type are separated by `==` or `!=` and proposes to replace this code fragment with `.equals()`:
 
 ![](img/comparingReferences.png)
 
-In this example, the `str1` and `str2` are variables of the String type. 
+In this example, the `str1` and `str2` are variables of the String type.
 Clicking _SDK: Use equals()_ replaces:
 
 ```java

@@ -6,7 +6,7 @@ title: 14. Structure View Factory
 The structure view can be customized for a specific file type.
 Creating a structure view factory allows showing the structure of any file in a _Structure_ Tool Window for easy navigation between items in the current editor.
 
-**Reference**: [Structure View](/reference_guide/custom_language_support/structure_view.md) 
+**Reference**: [Structure View](/reference_guide/custom_language_support/structure_view.md)
 
 ## Define a Structure View Factory
 The structure view factory implements [`PsiStructureViewFactory`](upsource:///platform/editor-ui-api/src/com/intellij/lang/PsiStructureViewFactory.java).
@@ -18,7 +18,7 @@ At this point the project will not compile until `SimpleStructureViewModel` is [
 ```
 
 ## Define a Structure View Model
-The `SimpleStructureViewModel` is created by implementing [`StructureViewModel`](upsource:///platform/editor-ui-api/src/com/intellij/ide/structureView/StructureViewModel.java), which defines the model for data displayed in the standard structure view. 
+The `SimpleStructureViewModel` is created by implementing [`StructureViewModel`](upsource:///platform/editor-ui-api/src/com/intellij/ide/structureView/StructureViewModel.java), which defines the model for data displayed in the standard structure view.
 It also extends [`StructureViewModelBase`](upsource:///platform/editor-ui-api/src/com/intellij/ide/structureView/StructureViewModelBase.java), an implementation that links the model to a text editor.
 
 ```java
@@ -28,7 +28,7 @@ It also extends [`StructureViewModelBase`](upsource:///platform/editor-ui-api/sr
 ## Define a Structure View Element
 The `SimpleStructureViewElement` implements [`StructureViewTreeElement`](upsource:///platform/editor-ui-api/src/com/intellij/ide/structureView/StructureViewTreeElement.java) and [`SortableTreeElement`](upsource:///platform/editor-ui-api/src/com/intellij/ide/util/treeView/smartTree/SortableTreeElement.java).
 The `StructureViewTreeElement` represents an element in the Structure View tree model.
-The `SortableTreeElement` represents an item in a smart tree that allows using text other than the presentable text as a key for alphabetic sorting. 
+The `SortableTreeElement` represents an item in a smart tree that allows using text other than the presentable text as a key for alphabetic sorting.
 
 ```java
 {% include /code_samples/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleStructureViewElement.java %}
@@ -39,7 +39,7 @@ The `SimpleStructureViewFactory` implementation is registered with the IntelliJ 
 
 ```xml
   <extensions defaultExtensionNs="com.intellij">
-    <lang.psiStructureViewFactory language="Simple" 
+    <lang.psiStructureViewFactory language="Simple"
             implementationClass="org.intellij.sdk.language.SimpleStructureViewFactory"/>
   </extensions>
 ```

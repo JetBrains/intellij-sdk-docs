@@ -13,7 +13,7 @@ Start by subclassing [`FoldingBuilderEx`](upsource:///platform/core-api/src/com/
 
 Note that `SimpleFoldingBuilder` also implements [`DumbAware`](upsource:///platform/core-api/src/com/intellij/openapi/project/DumbAware.java), which means the class is allowed to run in dumb mode, when indices are in background update.
 
-> **NOTE** A folding builder must implement [`DumbAware`](upsource:///platform/core-api/src/com/intellij/openapi/project/DumbAware.java) to function in this tutorial and pass tests. 
+> **NOTE** A folding builder must implement [`DumbAware`](upsource:///platform/core-api/src/com/intellij/openapi/project/DumbAware.java) to function in this tutorial and pass tests.
 
 The `buildFoldRegions()` method searches down a PSI tree from `root` to find all literal expressions containing the [simple prefix](/tutorials/custom_language_support/annotator.md#define-an-annotator) `simple:`.
 The remainder of such a string is expected to contain a Simple Language key, and so the text range is stored as a [`FoldingDescriptor`](upsource:///platform/core-api/src/com/intellij/lang/folding/FoldingDescriptor.java).
@@ -30,7 +30,7 @@ The `SimpleFoldingBuilder` implementation is registered with the IntelliJ Platfo
 
 ```xml
   <extensions defaultExtensionNs="com.intellij">
-    <lang.foldingBuilder language="JAVA" 
+    <lang.foldingBuilder language="JAVA"
             implementationClass="org.intellij.sdk.language.SimpleFoldingBuilder"/>
   </extensions>
 ```

@@ -5,7 +5,7 @@ title: 13. Go To Symbol Contributor
 
 A _Go to Symbol Contributor_ helps the user to navigate to any PSI element by its name.
 
-**Reference**: [Go to Class and Go to Symbol](/reference_guide/custom_language_support/go_to_class_and_go_to_symbol.md) 
+**Reference**: [Go to Class and Go to Symbol](/reference_guide/custom_language_support/go_to_class_and_go_to_symbol.md)
 
 ## Define a Helper Method for Generated PSI Elements
 To specify how a PSI element looks like in the **Go To Symbol** popup window, **Structure** tool window, or other components, it should implement `getPresentation()`.
@@ -38,13 +38,13 @@ public static ItemPresentation getPresentation(final SimpleProperty element) {
 
 ## Update Grammar and Regenerate the Parser
 Now add the `SimplePsiImplUtil.getPresentation()` to the `property` methods definition in the `Simple.bnf` grammar file by replacing the `property` definition with the lines below.
-Don't forget to regenerate the parser after updating the file! 
+Don't forget to regenerate the parser after updating the file!
 Right-click on the `Simple.bnf` file and select **Generate Parser Code**.
 
 ```java
 property ::= (KEY? SEPARATOR VALUE?) | KEY {
   mixin="org.intellij.sdk.language.psi.impl.SimpleNamedElementImpl"
-  implements="org.intellij.sdk.language.psi.SimpleNamedElement" 
+  implements="org.intellij.sdk.language.psi.SimpleNamedElement"
   methods=[getKey getValue getName setName getNameIdentifier getPresentation]
 }
 ```
@@ -61,7 +61,7 @@ The `SimpleChooseByNameContributor` implementation is registered with the Intell
 
 ```xml
   <extensions defaultExtensionNs="com.intellij">
-    <gotoSymbolContributor 
+    <gotoSymbolContributor
             implementation="org.intellij.sdk.language.SimpleChooseByNameContributor"/>
   </extensions>
 ```

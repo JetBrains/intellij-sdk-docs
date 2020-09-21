@@ -5,10 +5,7 @@ title: Run Configurations
 
 These series of steps show how to register and implement a simple Run Configuration.
 Run Configurations are used to run internal and external processes from within *IntelliJ Platform* based products.
-To get familiar with the concept of a Run Configuration refer
-[Run/Debug Configuration](https://www.jetbrains.com/idea/help/run-debug-configuration.html)
-section of 
-[IntelliJ IDEA Web Help](https://www.jetbrains.com/idea/help/intellij-idea.html)
+To get familiar with the concept of a Run Configuration refer [Run/Debug Configuration](https://www.jetbrains.com/idea/help/run-debug-configuration.html) section of  [IntelliJ IDEA Web Help](https://www.jetbrains.com/idea/help/intellij-idea.html)
 
 ## Pre-Requirements
 
@@ -16,8 +13,7 @@ Create an empty plugin project as described in [Creating a Plugin Project](/basi
 
 ## Register a New ConfigurationType
 
-Add new `configurationType` extension to the 
-[plugin.xml](https://github.com/JetBrains/intellij-sdk-code-samples/blob/master/run_configuration/src/main/resources/META-INF/plugin.xml)
+Add new `configurationType` extension to the [plugin.xml](https://github.com/JetBrains/intellij-sdk-code-samples/blob/master/run_configuration/src/main/resources/META-INF/plugin.xml)
 
 ```xml
 <extensions defaultExtensionNs="com.intellij">
@@ -27,9 +23,7 @@ Add new `configurationType` extension to the
 
 ## Implement ConfigurationType
 
-Implement 
-[`ConfigurationType`](upsource:///platform/lang-api/src/com/intellij/execution/configurations/ConfigurationType.java) 
-interface registered in the Step 1.
+Implement  [`ConfigurationType`](upsource:///platform/lang-api/src/com/intellij/execution/configurations/ConfigurationType.java)  interface registered in the Step 1.
 
 ```java
 public class DemoRunConfigurationType implements ConfigurationType {
@@ -63,9 +57,7 @@ public class DemoRunConfigurationType implements ConfigurationType {
 
 ## Implement a ConfigurationFactory
 
-Implement a new
-[`ConfigurationFactory`](upsource:///platform/lang-api/src/com/intellij/execution/configurations/ConfigurationFactory.java)
-through which custom run configurations will be created.
+Implement a new [`ConfigurationFactory`](upsource:///platform/lang-api/src/com/intellij/execution/configurations/ConfigurationFactory.java) through which custom run configurations will be created.
 
 ```java
 public class DemoConfigurationFactory extends ConfigurationFactory {
@@ -92,12 +84,8 @@ public class DemoConfigurationFactory extends ConfigurationFactory {
 
 To make your changes visible from the UI, implement a new Run Configuration.
 
-**Note:** In most of the cases you can derive a custom Run Configuration class from the
-[`RunConfigurationBase`](upsource:///platform/lang-api/src/com/intellij/execution/configurations/RunConfigurationBase.java).
-If you need to implement specific settings externalization rules and I/O behaviour, 
-use 
-[`RunConfiguration`](upsource:///platform/lang-api/src/com/intellij/execution/configurations/RunConfiguration.java)
-interface.
+**Note:** In most of the cases you can derive a custom Run Configuration class from the [`RunConfigurationBase`](upsource:///platform/lang-api/src/com/intellij/execution/configurations/RunConfigurationBase.java).
+If you need to implement specific settings externalization rules and I/O behaviour, use [`RunConfiguration`](upsource:///platform/lang-api/src/com/intellij/execution/configurations/RunConfiguration.java) interface.
 
 ```java
 public class DemoRunConfiguration extends RunConfigurationBase {
@@ -128,9 +116,7 @@ public class DemoRunConfiguration extends RunConfigurationBase {
 
 Make sure _UI Designer_ plugin is [enabled](https://www.jetbrains.com/help/idea/managing-plugins.html).
 
-Create a new 
-[UI form](https://www.jetbrains.com/help/idea/designing-gui-major-steps.html) 
-that defines, how an inner part of the new Run Configuration should look like.
+Create a new  [UI form](https://www.jetbrains.com/help/idea/designing-gui-major-steps.html)  that defines, how an inner part of the new Run Configuration should look like.
 
 Default Run Configuration will be looking like this:
 
@@ -170,10 +156,8 @@ public class DemoSettingsEditor extends SettingsEditor<DemoRunConfiguration> {
 
 ## Compile and Run the Plugin
 
-Refer to 
-[Running and Debugging a Plugin](/basics/getting_started/running_and_debugging_a_plugin.md).
+Refer to [Running and Debugging a Plugin](/basics/getting_started/running_and_debugging_a_plugin.md).
 
-After going through the steps described above you can create a custom Run Configuration
-from your plugin.
+After going through the steps described above you can create a custom Run Configuration from your plugin.
 
 ![New Run Configuration Type](run_configurations/img/new_run_configuration.png)

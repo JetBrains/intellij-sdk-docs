@@ -5,17 +5,18 @@ title: Virtual Files
 
 A [`VirtualFile`](upsource:///platform/core-api/src/com/intellij/openapi/vfs/VirtualFile.java) (VF) is the *IntelliJ Platform's* representation of a file in a [Virtual File System (VFS)](/basics/virtual_file_system.md).
 
-Most commonly, a virtual file is a file in a local file system. 
+Most commonly, a virtual file is a file in a local file system.
 However, the *IntelliJ Platform* supports multiple pluggable file system implementations, so virtual files can also represent classes in a JAR file, old revisions of files loaded from a version control repository, and so on.
 
-The VFS level deals only with binary content. Contents of a `VirtualFile` are treated as a stream of bytes, but concepts like encodings and line separators are handled on higher system levels.
+The VFS level deals only with binary content.
+Contents of a `VirtualFile` are treated as a stream of bytes, but concepts like encodings and line separators are handled on higher system levels.
 
 ## How do I get a virtual file?
 
 From an action
 : `e.getData(PlatformDataKeys.VIRTUAL_FILE)` or `e.getData(PlatformDataKeys.VIRTUAL_FILE_ARRAY)` for multiple selection
 
-From a path in the local file system: 
+From a path in the local file system:
 :  - `LocalFileSystem.getInstance().findFileByIoFile()`
 - `VirtualFileManager.findFileByNioPath()`/`refreshAndFindFileByNioPath()` (2020.2 and later)
 
@@ -27,7 +28,7 @@ From a document
 
 ## What can I do with it?
 
-Typical file operations are available, such as traverse the file system, get file contents, rename, move, or delete. 
+Typical file operations are available, such as traverse the file system, get file contents, rename, move, or delete.
 Recursive iteration should be performed using `VfsUtilCore.iterateChildrenRecursively()` to prevent endless loops caused by recursive symlinks.
 
 ## Where does it come from?
@@ -41,14 +42,15 @@ Invoking a VFS refresh might be necessary for accessing a file that has just bee
 
 ## How long does a virtual file persist?
 
-A particular file on disk is represented by equal `VirtualFile` instances for the entire lifetime of the IDE process.
-There may be several instances corresponding to the same file, and they can be garbage-collected. 
-The file is a `UserDataHolder`, and the user data is shared between those equal instances. 
+A particular file on disk is represented by equal `VirtualFile` instances for the IDE process's entire lifetime.
+There may be several instances corresponding to the same file, and they can be garbage-collected.
+The file is a `UserDataHolder`, and the user data is shared between those equal instances.
 If a file is deleted, its corresponding VirtualFile instance becomes invalid (`isValid()` returns `false`), and operations cause exceptions.
 
 ## How do I create a virtual file?
 
-Usually, you don't. As a general rule, files are created either through the PSI API or through the regular `java.io.File` API.
+Usually, you don't.
+As a general rule, files are created either through the PSI API or through the regular `java.io.File` API.
 
 If one needs to create a file through VFS, use `VirtualFile.createChildData()` to create a `VirtualFile` instance and `VirtualFile.setBinaryContent()` to write some data to the file.
 
@@ -56,7 +58,8 @@ If one needs to create a file through VFS, use `VirtualFile.createChildData()` t
 
 > **NOTE** See [Virtual file system events](/basics/virtual_file_system.md#virtual-file-system-events) for important details.
 
-Implement [`BulkFileListener`](upsource:///platform/core-api/src/com/intellij/openapi/vfs/newvfs/BulkFileListener.java) and subscribe to the [message bus](/reference_guide/messaging_infrastructure.md) topic `VirtualFileManager.VFS_CHANGES`. For example:
+Implement [`BulkFileListener`](upsource:///platform/core-api/src/com/intellij/openapi/vfs/newvfs/BulkFileListener.java) and subscribe to the [message bus](/reference_guide/messaging_infrastructure.md) topic `VirtualFileManager.VFS_CHANGES`.
+For example:
 
 ```java
 project.getMessageBus().connect().subscribe(VirtualFileManager.VFS_CHANGES, new BulkFileListener() {

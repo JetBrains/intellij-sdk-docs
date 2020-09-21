@@ -21,7 +21,8 @@ For example, the [`PsiJavaParserFacade`](upsource:///java/java-psi-api/src/com/i
 
 When you're implementing refactorings, intentions, or inspection quickfixes that work with existing code, the text that you pass to the various `createFromText()` methods will combine hard-coded fragments and fragments of code taken from the existing file.
 For small code fragments (individual identifiers), you can simply append the text from the existing code to the text of the code fragment you're building.
-In that case, you need to make sure that the resulting text is syntactically correct. Otherwise the `createFromText()` method will throw an exception.
+In that case, you need to make sure that the resulting text is syntactically correct.
+Otherwise the `createFromText()` method will throw an exception.
 
 For larger code fragments, it's best to perform the modification in several steps:
 

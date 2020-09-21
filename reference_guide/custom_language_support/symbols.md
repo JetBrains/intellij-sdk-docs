@@ -27,5 +27,5 @@ and not bound to a `Project` since DB elements might be shared between projects.
 ## Lifecycle
 
 The `Symbol` instance is expected to stay valid within a single read action, which means it's safe to pass the instance to different APIs.
-A `Symbol` instance should not be referenced between read actions. One should create a pointer via `Symbol.createPointer()` 
-in the current read action, and then call `Pointer.dereference()` to obtain a `Symbol` instance in the subsequent read action.
+A `Symbol` instance should not be referenced between read actions.
+One should create a pointer via `Symbol.createPointer()`  in the current read action, and then call `Pointer.dereference()` to obtain a `Symbol` instance in the subsequent read action.

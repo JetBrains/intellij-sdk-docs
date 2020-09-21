@@ -32,7 +32,8 @@ public interface DemoPluginIcons {
 }
 ```
 
-Use these constants inside `plugin.xml` as well. Note that the package name `icons` will be automatically prefixed, and must not be added manually.
+Use these constants inside `plugin.xml` as well.
+Note that the package name `icons` will be automatically prefixed, and must not be added manually.
 
 ```xml
 <action id="DemoPlugin.DemoAction"

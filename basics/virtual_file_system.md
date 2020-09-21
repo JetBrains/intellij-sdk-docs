@@ -57,7 +57,8 @@ They are equal, have the same `hashCode`, and share the user data.
 ## Synchronous and Asynchronous Refreshes
 
 From the point of view of the caller, refresh operations can be either synchronous or asynchronous.
-In fact, the refresh operations are executed according to their own threading policy. The synchronous flag simply means that the calling thread will be blocked until the refresh operation (which will most likely run on a different thread) is completed.
+In fact, the refresh operations are executed according to their own threading policy.
+The synchronous flag simply means that the calling thread will be blocked until the refresh operation (which will most likely run on a different thread) is completed.
 
 Both synchronous and asynchronous refreshes can be initiated from any thread.
 If a refresh is initiated from a background thread, the calling thread must not hold a read action, because otherwise, a deadlock would occur.
@@ -86,7 +87,8 @@ See [How do I get notified when VFS changes?](/basics/architectural_overview/vir
 > You may need to filter out events that aren't relevant to your task (e.g., via [`ProjectFileIndex.isInContent()`](upsource:///platform/projectModel-api/src/com/intellij/openapi/roots/ProjectFileIndex.java)).
 
 VFS events are sent both before and after each change, and you can access the old contents of the file in the before event.
-Note that events caused by a refresh are sent after the changes have already occurred on disk. So when you process the `beforeFileDeletion` event, for example, the file has already been deleted from disk.
+Note that events caused by a refresh are sent after the changes have already occurred on disk.
+So when you process the `beforeFileDeletion` event, for example, the file has already been deleted from disk.
 However, it is still present in the VFS snapshot, and you can access its last contents using the VFS API.
 
 Note that a refresh operation fires events only for changes in files that have been loaded in the snapshot.

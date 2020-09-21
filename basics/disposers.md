@@ -62,7 +62,8 @@ The `Disposer` API's flexibility means that if the parent instance is chosen unw
 Continuing to use resources when they are no longer needed can be a severe source of contention due to leaving some zombie objects behind due to each invocation.
 An additional challenge is that these kinds of issues won't be reported by the regular leak checker utilities, because technically, it's not a memory leak from the test suite perspective.
 
-For example, suppose a UI component created for a specific operation uses a project-level service as a parent disposable. In that case, the entire component will remain in memory after the operation is complete.
+For example, suppose a UI component created for a specific operation uses a project-level service as a parent disposable.
+In that case, the entire component will remain in memory after the operation is complete.
 This creates memory pressure and can waste CPU cycles on processing events that are no longer relevant.
 
 ### Registering Listeners with Parent Disposable

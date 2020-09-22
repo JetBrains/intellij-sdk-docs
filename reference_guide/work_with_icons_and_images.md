@@ -20,27 +20,46 @@ The `getIcon()` method of [`IconLoader`](upsource:///platform/util/ui/src/com/in
 
 > **NOTE** The path to the icon passed in as argument to `IconLoader.getIcon()` must start with leading `/`
 
-Then define a class or an interface with icon constants in a top-level package called `icons`:
+Then define a class/interface in a top-level package called `icons` holding icon constants as static fields:
 
 ```java
 package icons;
 
 public interface DemoPluginIcons {
-  Icon STRUCTURE_TOOL_WINDOW = IconLoader.getIcon("/icons/toolWindowStructure.png");
-  Icon MY_LANG_FILE_TYPE = IconLoader.getIcon("/icons/myLangFileType.png");
-  Icon DEMO_ACTION = IconLoader.getIcon("/icons/demoAction.png");
+  Icon DemoAction = IconLoader.getIcon("/icons/demoAction.png");
+  Icon StructureToolWindow = IconLoader.getIcon("/icons/toolWindowStructure.png");
+  Icon FileType = IconLoader.getIcon("/icons/myLangFileType.png");
 }
 ```
 
-Use these constants inside `plugin.xml` as well.
-Note that the package name `icons` will be automatically prefixed, and must not be added manually.
+When using Kotlin, fields must be annotated with `@JvmField`:
+
+```kotlin
+package icons
+
+object DemoPluginIcons {
+  
+  @JvmField
+  val DemoAction = IconLoader.getIcon("/icons/demoAction.png")
+
+  // ...
+}
+```
+
+Use these constants inside `plugin.xml` as well when specifying `icon` attribute for `<action>` or extension points.
+Note that the package name `icons` will be automatically prefixed and must not be added manually.
 
 ```xml
-<action id="DemoPlugin.DemoAction"
-        class="com.jetbrains.demoplugin.actions.DemoAction"
-        text="Demo Action"
-        description="This is just a demo"
-        icon="DemoPluginIcons.DEMO_ACTION"/>
+<actions>
+    <action id="DemoPlugin.DemoAction"
+            icon="DemoPluginIcons.DemoAction" [...] />
+</actions>
+
+<extensions defaultExtensionNs="com.intellij">
+    <toolWindow id="CustomStructure"
+                icon="DemoPluginIcons.StructureToolWindow" [...] />
+</extensions>
+
 ```
 
 ## Image Formats

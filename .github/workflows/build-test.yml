@@ -11,7 +11,7 @@ jobs:
       - name: Fetch Sources
         uses: actions/checkout@v2
       - name: Setup Cache
-        uses: actions/cache@v1
+        uses: actions/cache@v2
         with:
           path: vendor/bundle
           key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
@@ -29,6 +29,39 @@ jobs:
           export LANG=en_US.UTF-8
           export LANGUAGE=en_US.UTF-8
           rake build
+
+  documentedProblemsPageVerification:
+    name: Documented Problems Page Verification
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch Sources
+        uses: actions/checkout@v2
+      - name: Get Plugin Verifier Version
+        id: get-version
+        run: |
+          echo "::set-output name=version::$(curl -Ss https://api.bintray.com/packages/jetbrains/intellij-plugin-service/intellij-plugin-verifier/versions/_latest | jq -r '.name')"
+        shell: bash
+      - name: Setup Cache
+        id: cache
+        uses: actions/cache@v2
+        with:
+          path: ~/.verifier
+          key: ${{ runner.os }}-verifier-${{ steps.get-version.outputs.version }}
+      - name: Setup Java
+        uses: actions/setup-java@v1
+        with:
+          java-version: 1.8
+      - name: Download Plugin Verifier
+        if: steps.cache.outputs.cache-hit != 'true'
+        env:
+          VERSION: ${{ steps.get-version.outputs.version }}
+        run: |
+          mkdir -p ~/.verifier/
+          curl -L --output ~/.verifier/verifier-all.jar https://dl.bintray.com/jetbrains/intellij-plugin-service/org/jetbrains/intellij/plugins/verifier-cli/$VERSION/verifier-cli-$VERSION-all.jar
+      - name: Run Plugin Verifier
+        run: |
+          REF=${GITHUB_HEAD_REF:-$GITHUB_REF}
+          java -cp ~/.verifier/verifier-all.jar com.jetbrains.pluginverifier.filtering.documented.DocumentedProblemsPageVerifierMain $GITHUB_REPOSITORY ${REF##*/}
 
   gradleValidation:
     name: Gradle Wrappers
@@ -72,7 +105,7 @@ jobs:
       - name: Fetch Sources
         uses: actions/checkout@v2
       - name: Setup Cache
-        uses: actions/cache@v1
+        uses: actions/cache@v2
         with:
           path: ~/.gradle/caches
           key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle') }}

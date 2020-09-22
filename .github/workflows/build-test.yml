@@ -30,6 +30,22 @@ jobs:
           export LANGUAGE=en_US.UTF-8
           rake build
 
+  documentedProblemsPageVerification:
+    name: Documented Problems Page Verification
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup Java
+        uses: actions/setup-java@v1
+        with:
+          java-version: 1.8
+      - name: Fetch Sources
+        uses: actions/checkout@v2
+      - name: Get IntelliJ Plugin Verifier
+        run: |
+          VERSION=$(curl -Ss https://api.bintray.com/packages/jetbrains/intellij-plugin-service/intellij-plugin-verifier/versions/_latest | jq -r '.name')
+          curl -L --output verifier-all.jar https://dl.bintray.com/jetbrains/intellij-plugin-service/org/jetbrains/intellij/plugins/verifier-cli/$VERSION/verifier-cli-$VERSION-all.jar
+          java -cp ./verifier-all.jar com.jetbrains.pluginverifier.filtering.documented.DocumentedProblemsPageVerifierMain $GITHUB_REPOSITORY ${GITHUB_REF##*/}
+
   gradleValidation:
     name: Gradle Wrappers
     runs-on: ubuntu-latest

@@ -55,6 +55,8 @@ jobs:
           java-version: 1.8
       - name: Download Plugin Verifier
         if: steps.cache.outputs.cache-hit != 'true'
+        env:
+          VERSION: ${{ steps.get-version.outputs.version }}
         run: |
           mkdir -p ~/verifier/
           curl -L --output ~/verifier/verifier-all.jar https://dl.bintray.com/jetbrains/intellij-plugin-service/org/jetbrains/intellij/plugins/verifier-cli/$VERSION/verifier-cli-$VERSION-all.jar

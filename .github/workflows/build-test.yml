@@ -11,7 +11,7 @@ jobs:
       - name: Fetch Sources
         uses: actions/checkout@v2
       - name: Setup Cache
-        uses: actions/cache@v1
+        uses: actions/cache@v2
         with:
           path: vendor/bundle
           key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
@@ -34,17 +34,33 @@ jobs:
     name: Documented Problems Page Verification
     runs-on: ubuntu-latest
     steps:
+      - name: Fetch Sources
+        uses: actions/checkout@v2
+      - name: Get Plugin Verifier Version
+        id: get-version
+        run: |
+          echo "::set-output version=date::$(curl -Ss https://api.bintray.com/packages/jetbrains/intellij-plugin-service/intellij-plugin-verifier/versions/_latest | jq -r '.name')"
+        shell: bash
+      - name: Setup Cache
+        id: cache
+        uses: actions/cache@v1
+        with:
+          path: ~/.verifier
+          key: ${{ runner.os }}-verifier-${{ steps.get-version.outputs.version }}
+          restore-keys: |
+            ${{ runner.os }}-verifier-
       - name: Setup Java
         uses: actions/setup-java@v1
         with:
           java-version: 1.8
-      - name: Fetch Sources
-        uses: actions/checkout@v2
-      - name: Get IntelliJ Plugin Verifier
+      - name: Download Plugin Verifier
+        if: steps.cache.outputs.cache-hit != 'true'
         run: |
-          VERSION=$(curl -Ss https://api.bintray.com/packages/jetbrains/intellij-plugin-service/intellij-plugin-verifier/versions/_latest | jq -r '.name')
-          curl -L --output verifier-all.jar https://dl.bintray.com/jetbrains/intellij-plugin-service/org/jetbrains/intellij/plugins/verifier-cli/$VERSION/verifier-cli-$VERSION-all.jar
-          java -cp ./verifier-all.jar com.jetbrains.pluginverifier.filtering.documented.DocumentedProblemsPageVerifierMain $GITHUB_REPOSITORY ${GITHUB_REF##*/}
+          mkdir -p ~/verifier/
+          curl -L --output ~/verifier/verifier-all.jar https://dl.bintray.com/jetbrains/intellij-plugin-service/org/jetbrains/intellij/plugins/verifier-cli/$VERSION/verifier-cli-$VERSION-all.jar
+      - name: Run Plugin Verifier
+        run: |
+          java -cp ~/verifier/verifier-all.jar com.jetbrains.pluginverifier.filtering.documented.DocumentedProblemsPageVerifierMain $GITHUB_REPOSITORY ${GITHUB_REF##*/}
 
   gradleValidation:
     name: Gradle Wrappers
@@ -88,7 +104,7 @@ jobs:
       - name: Fetch Sources
         uses: actions/checkout@v2
       - name: Setup Cache
-        uses: actions/cache@v1
+        uses: actions/cache@v2
         with:
           path: ~/.gradle/caches
           key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle') }}

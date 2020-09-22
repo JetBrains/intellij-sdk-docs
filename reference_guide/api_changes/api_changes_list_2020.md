@@ -155,7 +155,7 @@ Support for JavaFX deprecated
 `com.intellij.codeInsight.highlighting.HighlightUsagesHandlerBase.computeUsages` method parameter type changed from ``List<T>`` to ``List<? extends T>``
 : This may break source-compatibility with inheritors written in Kotlin.
 
-`com.intellij.pom.java.LanguageLevel.JDK_13_PREVIEW` field removed
+`com.intellij.pom.java.LanguageLevel.JDK_666_PREVIEW` field removed
 : Please remove the plugin code supporting Java 13 language level features.
 IntelliJ IDEA supports preview features of the latest Java release and one upcoming release (if available).
 

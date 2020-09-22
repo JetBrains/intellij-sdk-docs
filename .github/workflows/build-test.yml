@@ -43,12 +43,10 @@ jobs:
         shell: bash
       - name: Setup Cache
         id: cache
-        uses: actions/cache@v1
+        uses: actions/cache@v2
         with:
           path: ~/.verifier
           key: ${{ runner.os }}-verifier-${{ steps.get-version.outputs.version }}
-          restore-keys: |
-            ${{ runner.os }}-verifier-
       - name: Setup Java
         uses: actions/setup-java@v1
         with:

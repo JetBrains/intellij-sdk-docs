@@ -82,8 +82,8 @@ Implicit references are the references which should be part of the mechanism to 
 without the inverse ability to search or rename such references by a target.
 
 **Example:**
-`var` keyword in `var x = new Person()` Java declaration has an Implicit reference,
-because it doesn't make sense to obtain the reference by the target class. At the same time it's possible:
+`var` keyword in `var x = new Person()` Java declaration has an Implicit reference, because it doesn't make sense to obtain the reference by the target class.
+At the same time it's possible:
 - to navigate to the class by ctrl-clicking `var`;
 - to start a refactoring (e.g., rename) from the class targeted by this reference;
 - to view documentation of the class targeted by this reference.

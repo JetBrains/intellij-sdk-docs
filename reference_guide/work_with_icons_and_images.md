@@ -32,7 +32,8 @@ public interface DemoPluginIcons {
 }
 ```
 
-Use these constants inside `plugin.xml` as well. Note that the package name `icons` will be automatically prefixed, and must not be added manually.
+Use these constants inside `plugin.xml` as well.
+Note that the package name `icons` will be automatically prefixed, and must not be added manually.
 
 ```xml
 <action id="DemoPlugin.DemoAction"
@@ -50,11 +51,11 @@ In some cases, you can skip dark variants if the original icon looks good under 
 
 Required icon sizes depend on the usage as listed in the following table:
 
-| Usage | Icon Size (pixels) |
-|-------|--------------------|
-| Node, Action, Filetype | 16x16 |
-| Tool window            | 13x13 |
-| Editor gutter          | 12x12 |
+| Usage                  | Icon Size (pixels) |
+| ---------------------- | ------------------ |
+| Node, Action, Filetype | 16x16              |
+| Tool window            | 13x13              |
+| Editor gutter          | 12x12              |
 
 
 ### SVG Format
@@ -93,9 +94,9 @@ The `IconLoader` class will load the icon that matches the best depending on the
 
 Here are examples of *toolWindowStructure.png* icon representations:
 
-| Theme/Resolution | File name                         | Image |
-|------------------|-----------------------------------|-------|
-| Default          | `toolWindowStructure.png`         | ![Tool Window Structure](img/toolWindowStructure.png) |
-| Darcula          | `toolWindowStructure_dark.png`    | ![Tool Window Structure, dark](img/toolWindowStructure_dark.png) |
-| Default + Retina | `toolWindowStructure@2x.png`      | ![Tool Window Structure, retina](img/toolWindowStructure@2x.png) |
+| Theme/Resolution | File name                         | Image                                                                       |
+| ---------------- | --------------------------------- | --------------------------------------------------------------------------- |
+| Default          | `toolWindowStructure.png`         | ![Tool Window Structure](img/toolWindowStructure.png)                       |
+| Darcula          | `toolWindowStructure_dark.png`    | ![Tool Window Structure, dark](img/toolWindowStructure_dark.png)            |
+| Default + Retina | `toolWindowStructure@2x.png`      | ![Tool Window Structure, retina](img/toolWindowStructure@2x.png)            |
 | Darcula + Retina | `toolWindowStructure@2x_dark.png` | ![Tool Window Structure, retina, dark](img/toolWindowStructure@2x_dark.png) |

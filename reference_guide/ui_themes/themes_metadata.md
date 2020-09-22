@@ -73,23 +73,23 @@ All keys must follow this Naming Pattern:
 
 #### Property
 
-| Word | Use for | Example |
-|------|---------|---------|
-| **`foreground`**  | Text color. | `Label.foreground` |
-| **`background`**  | Background color for objects with text. | `Label.background` |
+| Word              | Use for                                                                                                                                                                                                                                                                    | Example                                          |
+| ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------ |
+| **`foreground`**  | Text color.                                                                                                                                                                                                                                                                | `Label.foreground`                               |
+| **`background`**  | Background color for objects with text.                                                                                                                                                                                                                                    | `Label.background`                               |
 | **`<part>Color`** | Objects with a single color (do not have foreground/background). Do not use the word “Color” separately, always use with the “part” word. <br/><br/>_The word “Color” shows that this is a color property. Otherwise, it can be confused with a property of another type._ | `Popup.borderColor` <br/> `Group.separatorColor` |
 
 #### State
 
-| Word | Use for | Example |
-|------|---------|---------|
-| ~~**`Active`**~~ | Enabled components, default state. Omit this word. The default state does not need explicit naming. | `Notification.background` |
-| **`Inactive`**   | Enabled components that might be perceived as interactive but are actually not. Example: a tree with visible selection but not in focus. Goes after other state words. | `Tree.inactiveBackground` <br/> `ToolWindow.HeaderTab.hoverInactiveBackground` |
-| **`Focused`**    | The current focused component. | `Button.focusedBorderColor` |
-| **`Selected`**   | A selected tab or any other control that has equally meaningful selected and inactive states. | `ToolWindow.HeaderTab.selectedBackground` |
-| **`Hover`** <br/> **`Pressed`** | An action as indicated in states. | `Link.hoverForeground` <br/> `Link.pressedForeground` |
-| **`Error`** <br/> **`Warning`** <br/> **`Success`** | Validation states. [See example](https://jetbrains.design/intellij/principles/validation_errors/) in the guide article. | `ValidationTooltip.errorBackground` <br/> `ValidationTooltip.warningBorderColor` |
-| **`Disabled`**   | Unavailable components. | `Label.disabledForeground` |
+| Word                                                | Use for                                                                                                                                                                | Example                                                                          |
+| --------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| ~~**`Active`**~~                                    | Enabled components, default state. Omit this word. The default state does not need explicit naming.                                                                    | `Notification.background`                                                        |
+| **`Inactive`**                                      | Enabled components that might be perceived as interactive but are actually not. Example: a tree with visible selection but not in focus. Goes after other state words. | `Tree.inactiveBackground` <br/> `ToolWindow.HeaderTab.hoverInactiveBackground`   |
+| **`Focused`**                                       | The current focused component.                                                                                                                                         | `Button.focusedBorderColor`                                                      |
+| **`Selected`**                                      | A selected tab or any other control that has equally meaningful selected and inactive states.                                                                          | `ToolWindow.HeaderTab.selectedBackground`                                        |
+| **`Hover`** <br/> **`Pressed`**                     | An action as indicated in states.                                                                                                                                      | `Link.hoverForeground` <br/> `Link.pressedForeground`                            |
+| **`Error`** <br/> **`Warning`** <br/> **`Success`** | Validation states. [See example](https://jetbrains.design/intellij/principles/validation_errors/) in the guide article.                                                | `ValidationTooltip.errorBackground` <br/> `ValidationTooltip.warningBorderColor` |
+| **`Disabled`**                                      | Unavailable components.                                                                                                                                                | `Label.disabledForeground`                                                       |
 
 #### Part
 
@@ -97,18 +97,18 @@ A part is an internal element of a component, e.g., an arrow button in a combo b
 
 If a part is common among several components, use the same name for it. Notable examples of common parts:
 
-| Common parts| Use for | Example |
-|-------------|---------|---------|
-| **`Accelerator`** <br/> **`Shortcut`** | Shortcut foreground. | `Menu.acceleratorForeground` <br/> `Editor.shortcutForeground` |
-| **`Border`** | A line around a component. | `NavBar.borderColor` |
-| **`Caret`** | The vertical line that denotes typing place. | `TextField.caretForeground` |
-| **`ModifiedItem`** | An object that has been modified but not yet saved. <br/><br/>_Example: change anything in the Settings dialog, the setting group name in the tree becomes blue._ | `Tree.modifiedItemForeground` |
-| **`Focus`** | Wide focus border around a component. | `Component.focusColor` <br/><br/>_“Component” is a special key that sets common properties for several basic input components._ |
-| **`Info`** | Secondary labels with additional useful information. Usually appear in gray color to the right or below a regular label. | `CompletionPopup.infoForeground` |
-| **`Icon`** | An icon that is created with a source code (not an image file). | `Table.sortIconColor` |
-| **`Selection`** | The focus place in a component with selectable text. Can be in a typed text or in a list or tree. <br/> Goes before other state words (for historical reasons). | `TextField.selectionForeground` <br/> `Tree.selectionInactiveBackground` |
-| **`Separator`** | A horizontal or vertical line inside a component. Can be with a label. | `Menu.separatorColor` |
-| **`Shadow`** | A shadow below a component. | `Button.shadowColor` |
+| Common parts                           | Use for                                                                                                                                                           | Example                                                                                                                         |
+| -------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| **`Accelerator`** <br/> **`Shortcut`** | Shortcut foreground.                                                                                                                                              | `Menu.acceleratorForeground` <br/> `Editor.shortcutForeground`                                                                  |
+| **`Border`**                           | A line around a component.                                                                                                                                        | `NavBar.borderColor`                                                                                                            |
+| **`Caret`**                            | The vertical line that denotes typing place.                                                                                                                      | `TextField.caretForeground`                                                                                                     |
+| **`ModifiedItem`**                     | An object that has been modified but not yet saved. <br/><br/>_Example: change anything in the Settings dialog, the setting group name in the tree becomes blue._ | `Tree.modifiedItemForeground`                                                                                                   |
+| **`Focus`**                            | Wide focus border around a component.                                                                                                                             | `Component.focusColor` <br/><br/>_“Component” is a special key that sets common properties for several basic input components._ |
+| **`Info`**                             | Secondary labels with additional useful information. Usually appear in gray color to the right or below a regular label.                                          | `CompletionPopup.infoForeground`                                                                                                |
+| **`Icon`**                             | An icon that is created with a source code (not an image file).                                                                                                   | `Table.sortIconColor`                                                                                                           |
+| **`Selection`**                        | The focus place in a component with selectable text. Can be in a typed text or in a list or tree. <br/> Goes before other state words (for historical reasons).   | `TextField.selectionForeground` <br/> `Tree.selectionInactiveBackground`                                                        |
+| **`Separator`**                        | A horizontal or vertical line inside a component. Can be with a label.                                                                                            | `Menu.separatorColor`                                                                                                           |
+| **`Shadow`**                           | A shadow below a component.                                                                                                                                       | `Button.shadowColor`                                                                                                            |
 
 #### SubObject
 Use a subobject when creating keys for one of the following:
@@ -129,12 +129,12 @@ Capitalize Object and SubObject. Use lowerCamelCase for property.
 
 #### Do Not Use
 
-| Do not use | Use instead |
-|------------|-------------|
-| `Color` _as a separate word_ | `<Part>Color` |
-| `Outline` | `borderColor` |
-| `Text` | `Foreground` |
-| `darcula` _and other look-and-feel names_ | _Omit_ |
+| Do not use                                | Use instead   |
+| ----------------------------------------- | ------------- |
+| `Color` _as a separate word_              | `<Part>Color` |
+| `Outline`                                 | `borderColor` |
+| `Text`                                    | `Foreground`  |
+| `darcula` _and other look-and-feel names_ | _Omit_        |
 
 #### Swing Legacy
 

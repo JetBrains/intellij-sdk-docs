@@ -17,7 +17,8 @@ This plugin adds Gradle tasks that enable developing IntelliJ Platform plugins.
 The [README](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md) file has a reference for configuring these tasks.
 
 When getting started, there are several items to note on the README page:
-* At the top of the page, the [latest production version](https://github.com/JetBrains/gradle-intellij-plugin#the-latest-version) of the plugin is listed. It is advised to upgrade to the latest available version regularly.
+* At the top of the page, the [latest production version](https://github.com/JetBrains/gradle-intellij-plugin#the-latest-version) of the plugin is listed.
+  It is advised to upgrade to the latest available version regularly.
 * Also, at the top is the minimum required version of Gradle.
 * The table of extended Gradle [Tasks](https://github.com/JetBrains/gradle-intellij-plugin#tasks) has a succinct description for each task added by the plugin.
   This documentation will focus on the configuration and use four of those tasks:

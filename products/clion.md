@@ -15,13 +15,16 @@ The configuration of CLion plugin projects follows the methods described in [Con
 The table below summarizes the `gradle-intellij-plugin` attributes to set in the plugin project's `build.gradle` file.
 Click on an entry in the table's *Attribute* column to go to the documentation about that attribute.
 
-| `gradle-intellij-plugin` Attribute | Attribute Value |
-|-----------|-------|
-| [`intellij.type`](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md#intellij-platform-properties) | `CL` for the product CLion  |
-| [`intellij.version`](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md#intellij-platform-properties) | Set to the targeted CLion version, e.g. `2019.3.1` |
-| [`intellij.plugins`](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md#intellij-platform-properties) | No specific declaration is needed. |
-| [`intellij.downloadSources`](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md#intellij-platform-properties) | `false` is required because no public source code is available. |
-| [`runIde.ideDirectory`](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md#running-dsl) | Not needed; the Development Instance will automatically match intellij.type |
+| `gradle-intellij-plugin` Attribute       | Attribute Value                                                                |
+| ---------------------------------------- | ------------------------------------------------------------------------------ |
+| [`intellij.type`][properties]            | `CL` for the product CLion.                                                    |
+| [`intellij.version`][properties]         | Set to the targeted CLion version, e.g. `2019.3.1`.                            |
+| [`intellij.plugins`][properties]         | No specific declaration is needed.                                             |
+| [`intellij.downloadSources`][properties] | `false` is required because no public source code is available.                |
+| [`runIde.ideDirectory`][dsl]             | Not needed; the Development Instance will automatically match `intellij.type`. |
+
+[properties]: https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md#intellij-platform-properties
+[dsl]: https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md#running-dsl
 
 The dependency on the CLion APIs must be declared in the `plugin.xml` file.
 As described in [Modules Specific to Functionality](/basics/getting_started/plugin_compatibility.md#modules-specific-to-functionality) table, the `<depends>` elements should contain the CLion module, as illustrated in the `plugin.xml` snippet below:

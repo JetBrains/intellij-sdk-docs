@@ -211,7 +211,7 @@ The syntax is to use the pipe (`|`) and minus symbols:
 
 ```md
 | Column 1 | Column 2 | Column 3 |
-|----------|----------|----------|
+| -------- | -------- | -------- |
 | Blah     | Blah     | Blah     |
 ```
 

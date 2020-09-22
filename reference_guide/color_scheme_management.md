@@ -104,5 +104,6 @@ Anyway, try to stick with a simple key dependency if possible (note that it work
 ### Text Attributes Inheritance
 
 For many language text attributes that do not have any values, there will be a line indicating that the attributes are inherited from a specific section/attributes, such as "Keyword (Language Defaults)".
-If an element has *any*  attributes set, only these attributes are used. All attributes from the base element are ignored.
+If an element has *any*  attributes set, only these attributes are used.
+All attributes from the base element are ignored.
 To *restore*  the inheritance, unchecks all the boxes, and click *Apply*.

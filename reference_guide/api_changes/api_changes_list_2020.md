@@ -68,6 +68,12 @@ Please see [Incompatible API Changes](/reference_guide/api_changes_list.md) on h
 
 `com.intellij.openapi.application.NonBlockingReadAction.finishOnUiThread` method parameter type changed from ``Consumer<T>`` to ``Consumer<? super T>``
 : This may break source-compatibility with inheritors written in Kotlin.
+                                              
+`com.intellij.openapi.diagnostic.ErrorReportSubmitter.submit` method parameter type changed from ``Consumer<SubmittedReportInfo>`` to ``Consumer<? super SubmittedReportInfo>``
+: This may break source-compatibility with inheritors written in Kotlin.
+
+`com.intellij.execution.ui.ConsoleView.attachToProcess` method `ProcessHandler` parameter marked `@NotNull`
+: This may break source-compatibility with inheritors written in Kotlin if they declare parameter type as nullable.
 
 ### Changes in Java Plugin 2019.3
 

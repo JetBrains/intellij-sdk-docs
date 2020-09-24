@@ -32,7 +32,10 @@ Executing code on application startup should be avoided whenever possible becaus
 
 ### Project Open
 
-To execute code when a project is being opened, provide [StartupActivity](upsource:///platform/core-api/src/com/intellij/openapi/startup/StartupActivity.java) implementation and register an [extension](plugin_extensions.md) for the `com.intellij.postStartupActivity` or `com.intellij.backgroundPostStartupActivity` extension point (the latter is supported starting with version 2019.3 of the platform).
+To execute code when a project is being opened, use one of these two [extensions](plugin_extensions.md):
+
+- [StartupActivity](upsource:///platform/core-api/src/com/intellij/openapi/startup/StartupActivity.java) registered via `com.intellij.postStartupActivity` for immediate execution
+- [StartupActivity.Background](upsource:///platform/core-api/src/com/intellij/openapi/startup/StartupActivity.java) registered via `com.intellij.backgroundPostStartupActivity` for execution with 5 seconds delay (2019.3 or later)
 
 ### Application/Project Close
 

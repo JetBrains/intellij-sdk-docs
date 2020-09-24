@@ -28,7 +28,11 @@ To subscribe to events, use a [listener](plugin_listeners.md) or create an [exte
 
 ### Application Startup
 
-Executing code on application startup should be avoided whenever possible because it slows down startup. Plugin code should only be executed when projects are opened (see [Project Open](#project-open)) or when the user invokes an action of a plugin. If this cannot be avoided, add a [listener](plugin_listeners.md) subscribing to the [AppLifecycleListener](upsource:///platform/platform-impl/src/com/intellij/ide/AppLifecycleListener.java) topic.
+Executing code on application startup should be avoided whenever possible because it slows down startup.
+Plugin code should only be executed when projects are opened (see [Project Open](#project-open)) or when the user invokes an action of a plugin.
+If this cannot be avoided, add a [listener](plugin_listeners.md) subscribing to the [AppLifecycleListener](upsource:///platform/platform-impl/src/com/intellij/ide/AppLifecycleListener.java) topic.
+
+To execute an activity in background on IDE startup (e.g., to warm up caches), use [`PreloadingActivity`](upsource:///platform/platform-impl/src/com/intellij/openapi/application/PreloadingActivity.java).
 
 ### Project Open
 
@@ -39,7 +43,8 @@ To execute code when a project is being opened, use one of these two [extensions
 
 `com.intellij.backgroundPostStartupActivity`
 : [StartupActivity.Background](upsource:///platform/core-api/src/com/intellij/openapi/startup/StartupActivity.java) for execution with 5 seconds delay in background thread (2019.3 or later).
-                                                      
+
+Any long-running or CPU intensive tasks should be made visible to users by using `ProgressManager.run(Task.Backgroundable)`.
 Access to indices must be wrapped with `DumbService`, see also [General Threading Rules](/basics/architectural_overview/general_threading_rules.md).  
 
 ### Application/Project Close

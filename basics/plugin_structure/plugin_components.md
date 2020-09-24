@@ -34,8 +34,13 @@ Executing code on application startup should be avoided whenever possible becaus
 
 To execute code when a project is being opened, use one of these two [extensions](plugin_extensions.md):
 
-- [StartupActivity](upsource:///platform/core-api/src/com/intellij/openapi/startup/StartupActivity.java) registered via `com.intellij.postStartupActivity` for immediate execution
-- [StartupActivity.Background](upsource:///platform/core-api/src/com/intellij/openapi/startup/StartupActivity.java) registered via `com.intellij.backgroundPostStartupActivity` for execution with 5 seconds delay (2019.3 or later)
+`com.intellij.postStartupActivity`
+: [StartupActivity](upsource:///platform/core-api/src/com/intellij/openapi/startup/StartupActivity.java) for immediate execution on EDT. Implement `DumbAware` to indicate activity can run in background thread (in parallel with other such tasks). 
+
+`com.intellij.backgroundPostStartupActivity`
+: [StartupActivity.Background](upsource:///platform/core-api/src/com/intellij/openapi/startup/StartupActivity.java) for execution with 5 seconds delay in background thread (2019.3 or later).
+                                                      
+Access to indices must be wrapped with `DumbService`, see also [General Threading Rules](/basics/architectural_overview/general_threading_rules.md).  
 
 ### Application/Project Close
 

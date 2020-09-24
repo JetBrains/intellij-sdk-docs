@@ -25,7 +25,7 @@ There are [more than 1000 extension](#how-to-get-the-extension-points-list) poin
 1. Add an `<extensions>` element to your `plugin.xml` if it's not yet present there.
    Set the `defaultExtensionNs` attribute to one of the following values:
     * `com.intellij`, if your plugin extends the IntelliJ Platform core functionality.
-    * `{ID of a plugin}`, if your plugin extends the functionality of another plugin.
+    * `{ID of a plugin}`, if your plugin extends the functionality of another plugin (must configure [Plugin Dependencies](plugin_dependencies.md)).
 2. Add a new child element to the `<extensions>` element.
    The child element name must match the name of the extension point you want the extension to access.
 3. Depending on the type of the extension point, do one of the following:

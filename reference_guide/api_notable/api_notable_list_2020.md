@@ -14,7 +14,13 @@ Reparsing of `IReparseableLeafElementType`
       
 Generating HTML fragments
 : Use `com.intellij.openapi.util.text.HtmlBuilder` for generating formatted content, e.g., for [Documentation](/reference_guide/custom_language_support/documentation.md).
-                                                                                                             
+                         
+### Notable Changes in JavaScript Plugin 2020.3
+
+Published Javascript Testframework
+: This allows using existing test base classes, see [WebStorm Plugin Development](/products/webstorm.md#javascript-testframework) page for details.
+                                           
+                                         
 ## 2020.2
 
 ### Notable Changes in IntelliJ Platform 2020.2

@@ -34,6 +34,9 @@ Consequently, without the `com.intellij.modules.platform` declaration the plugin
 ## Available WebStorm APIs
 Use the [Exploring APIs as a Consumer](/basics/getting_started/plugin_compatibility.md#exploring-apis-as-a-consumer) process to identify the libraries `JavaScriptLanguage.jar`, and `javascript-openapi.jar`.
 Test your plugin with any version of WebStorm you wish to support.
+                       
+### Javascript Testframework
+To use existing test base classes, specify `com.jetbrains.intellij.javascript:javascript-test-framework:$VERSION$` as `testImplementation` dependency explicitly (see [IntelliJ Platform Artifacts Repositories](/reference_guide/intellij_artifacts.md#gradle-example-for-an-individual-module-from-the-intellij-platform)) (2020.3 and later).
 
 ## Open Source Plugins for WebStorm
 When learning new plugin development it is helpful to have some representative projects for reference:

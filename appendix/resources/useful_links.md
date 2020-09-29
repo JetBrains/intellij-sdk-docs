@@ -24,6 +24,7 @@ The following links represent useful resources for working with the _IntelliJ Pl
 * [PsiViewer](https://plugins.jetbrains.com/plugin/227-psiviewer)
 * [Grammar-Kit](https://github.com/JetBrains/Grammar-Kit) & [Grammar-Kit Folder](https://plugins.jetbrains.com/plugin/12983-grammar-kit-folder)
 * [Indices Viewer](https://plugins.jetbrains.com/plugin/13029-indices-viewer/)
+* [IDE Perf](https://plugins.jetbrains.com/plugin/15104-ide-perf)
 
 ### Webinars
 * [How We Built Comma, the Raku IDE, on the IntelliJ Platform](https://blog.jetbrains.com/platform/2020/01/webinar-recording-how-we-built-comma-the-raku-ide-on-the-intellij-platform/) Jonathan Worthington, 2020

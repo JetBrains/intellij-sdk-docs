@@ -84,6 +84,11 @@ The `com.intellij.psi.PsiAnnotation.getOwner` method now returns `PsiType` inste
 : This change supports identifying whether a type annotation is attached to an inner class or a particular dimension of a multi-dimensional array.
 This change doesn't break source or binary compatibility but may produce behavioral changes for callers.
 
+### Changes in PhpStorm and PHP Plugin 2020.3
+
+Added PHP 8 support
+: See [Breaking Changes in PhpStorm 2020.3](/products/phpstorm/php_open_api_breaking_changes_203.md).
+
 ### Changes in Python Plugin 2020.3
 
 All parameters in `com.jetbrains.python.psi.PyElementVisitor` marked `@NotNull`
@@ -210,7 +215,7 @@ Java EE plugins split
 ### Changes in PhpStorm and PHP Plugin 2020.2
 
 Added Union Types Support
-: Please see [PhpStorm Breaking Changes](/products/phpstorm/php_open_api_breaking_changes.md).
+: See [Breaking Changes in PhpStorm 2020.2](/products/phpstorm/php_open_api_breaking_changes_202.md).
 
 
 ### Changes in Kotlin Plugin 1.4

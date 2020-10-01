@@ -14,7 +14,10 @@ Reparsing of `IReparseableLeafElementType`
       
 Generating HTML fragments
 : Use `com.intellij.openapi.util.text.HtmlBuilder` for generating formatted content, e.g., for [Documentation](/reference_guide/custom_language_support/documentation.md).
-                         
+
+Extensible HTML Lexer/Parser
+: Implement `com.intellij.html.embedding.HtmlEmbeddedContentSupport` and register in `com.intellij.html.embeddedContentSupport` extension point to embed arbitrary tokens into any tag or attribute.                         
+
 ### Notable Changes in JavaScript Plugin 2020.3
 
 Published Javascript Testframework

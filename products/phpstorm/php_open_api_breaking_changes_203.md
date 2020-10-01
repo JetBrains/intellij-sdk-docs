@@ -3,10 +3,10 @@ title: Incompatible PHP OpenAPI changes in PhpStorm 2020.3
 ---
 <!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-# PHP 8 Support
+## PHP 8 Support
 PhpStorm 2020.3 introduces support for the upcoming PHP 8, which results in several noticeable changes in the PhpStorm internals.
 
-## Throw Expression
+### Throw Expression
 In PHP 8, the [throw expression has been converted to a statement](https://wiki.php.net/rfc/throw_expression), so that it can now be used in arrow functions and coalescing and ternary expressions.
 
 The following changes were introduced:
@@ -20,7 +20,7 @@ The following changes were introduced:
 
 See the [YouTrack issue](https://youtrack.jetbrains.com/issue/WI-54357) for details.
 
-## Trailing Comma in Parameter Lists
+### Trailing Comma in Parameter Lists
 Previously supported only in argument lists, [trailing commas can now be used in parameter lists](https://wiki.php.net/rfc/trailing_comma_in_parameter_list), as well.
 
 The following changes were introduced:
@@ -30,7 +30,7 @@ The following changes were introduced:
 
 See the [YouTrack issue](https://youtrack.jetbrains.com/issue/WI-54481) for details.
 
-## Non-Capturing Catches
+### Non-Capturing Catches
 With this PHP 8 change, it is now possible to catch exceptions [without capturing them to variables](https://wiki.php.net/rfc/non-capturing_catches).
 
 The following changes were introduced:
@@ -38,7 +38,7 @@ The following changes were introduced:
 
 See the [YouTrack issue](https://youtrack.jetbrains.com/issue/WI-54484) for details.
 
-## Constructor Property Promotion
+### Constructor Property Promotion
 The new shorthand syntax allows defining class properties by [“promoting” the constructor parameters](https://wiki.php.net/rfc/constructor_promotion) with a visibility keyword (`public`, `protected`, or `private`).
 
 The following changes were introduced:
@@ -46,7 +46,7 @@ The following changes were introduced:
 
 See the [YouTrack issue](https://youtrack.jetbrains.com/issue/WI-54485) for details.
 
-## Nullsafe Operator
+### Nullsafe Operator
 The [new nullsafe operator](https://wiki.php.net/rfc/nullsafe_operator) `?->` with full short-circuiting allows applying the null-coalescing behavior to method calls, thus eliminating the need for additional null checks.
 
 The following changes were introduced:
@@ -54,7 +54,7 @@ The following changes were introduced:
 
 See the [YouTrack issue](https://youtrack.jetbrains.com/issue/WI-54639) for details.
 
-## Named Parameters
+### Named Parameters
 With [named parameters](https://wiki.php.net/rfc/named_params), you can pass arguments to a function based on the parameter name, rather than its position.
 
 The following changes were introduced:
@@ -62,7 +62,7 @@ The following changes were introduced:
 
 See the [YouTrack issue](https://youtrack.jetbrains.com/issue/WI-54640) for details.
 
-## Attributes
+### Attributes
 With [attributes](https://wiki.php.net/rfc/attributes_v2), you can provide structured, syntactic metadata to declarations of classes, properties, functions, methods, parameters, and constants.
 
 The following changes were introduced:
@@ -76,7 +76,7 @@ The following changes were introduced:
 
 See the [YouTrack issue](https://youtrack.jetbrains.com/issue/WI-53163) for details.
 
-## Match Expression
+### Match Expression
 New [match expressions](https://wiki.php.net/rfc/match_expression_v2) provide functionality similar to `switch`, but with safer semantics and the ability to return values.
 
 The following changes were introduced:

@@ -5,5 +5,5 @@ title: Incompatible PHP OpenAPI changes in PhpStorm
 
 The following pages list the breaking changes in IDE releases with required/recommended steps to take by plugin authors.
 
-* [**Changes in 2020.2**](php_open_api_breaking_changes_2002.md)
-* [**Changes in 2020.3**](php_open_api_breaking_changes_2003.md)
+* [**Changes in 2020.3**](php_open_api_breaking_changes_203.md)
+* [**Changes in 2020.2**](php_open_api_breaking_changes_202.md)

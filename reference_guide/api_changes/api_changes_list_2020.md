@@ -87,7 +87,7 @@ This change doesn't break source or binary compatibility but may produce behavio
 ### Changes in PhpStorm and PHP Plugin 2020.3
 
 Added PHP 8 support
-: See [Breaking Changes in PhpStorm 2020.3](/products/phpstorm/php_open_api_breaking_changes_2020_3.md).
+: See [Breaking Changes in PhpStorm 2020.3](/products/phpstorm/php_open_api_breaking_changes_203.md).
 
 ### Changes in Python Plugin 2020.3
 
@@ -215,7 +215,7 @@ Java EE plugins split
 ### Changes in PhpStorm and PHP Plugin 2020.2
 
 Added Union Types Support
-: See [Breaking Changes in PhpStorm 2020.2](/products/phpstorm/php_open_api_breaking_changes_2002.md).
+: See [Breaking Changes in PhpStorm 2020.2](/products/phpstorm/php_open_api_breaking_changes_202.md).
 
 
 ### Changes in Kotlin Plugin 1.4

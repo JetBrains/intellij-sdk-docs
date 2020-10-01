@@ -9,6 +9,7 @@ The examples replaced selected text in a document by using information about the
 Every caret has a set of properties describing its position in one of several coordinate systems.
 This tutorial describes how to access information about the caret(s) in an editor.
 The tutorial presents the following sections:
+
 * bullet list
 {:toc}
 

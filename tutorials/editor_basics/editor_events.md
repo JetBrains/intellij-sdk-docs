@@ -11,6 +11,7 @@ Two classes from the [editor_basics](https://github.com/JetBrains/intellij-sdk-c
 * Creating and registering a custom [`TypedActionHandler`](upsource:///platform/platform-api/src/com/intellij/openapi/editor/actionSystem/TypedActionHandler.java) to intercept keystrokes and change the document.
 
 The tutorial presents the following sections:
+
 * bullet list
 {:toc}
 

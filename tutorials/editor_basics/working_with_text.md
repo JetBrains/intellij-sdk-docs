@@ -6,6 +6,7 @@ title: Working with Text
 This tutorial shows how to use actions to access a caret placed in a document open in an editor.
 Using information about the caret, replace selected text in a document with a string.
 The tutorial presents the following sections:
+
 * bullet list
 {:toc}
 

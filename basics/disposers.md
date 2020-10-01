@@ -15,6 +15,7 @@ A `Disposable` is an interface for any object providing a `Disposable.dispose()`
 
 The `Disposer` supports chaining `Disposables` in parent-child relationships.
 
+* bullet list
 {:toc}
 
 ## Automatically Disposed Objects

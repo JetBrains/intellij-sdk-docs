@@ -8,6 +8,7 @@ Before you begin contributing content to the SDK, please read this page thorough
 For information about contributing to the IntelliJ Platform itself, please visit [Contributing to the IntelliJ Platform](/basics/platform_contributions.md).
 
 Here are some useful things to know before authoring SDK content and submitting your Pull Request.
+
 * Dummy list item
 {:toc}
 

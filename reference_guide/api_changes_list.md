@@ -80,14 +80,14 @@ If your plugin is hosted on GitHub, it is also readily available via these GitHu
 - [IntelliJ Plugin Verifier](https://github.com/marketplace/actions/intellij-plugin-verifier)
 
 ### IDE Support
-Consider using the following IDE inspections to get additional alerts about code that uses unstable API features:
+Consider using the following [IDE inspections](https://www.jetbrains.com/help/idea/code-inspection.html) to get additional alerts about code that uses unstable API features:
 - JVM languages \| Unstable API Usage
 - JVM languages \| Unstable type is used in signature
 
 
 ## Known Breaking Changes
 
-The following pages list the breaking changes in IDE/plugin releases with required/recommended steps to take by plugin authors.
+The following pages list the breaking changes in IDE and plugin releases with required/recommended steps to take by plugin authors.
 
 * [**Changes in 2020.***](api_changes/api_changes_list_2020.md)
 * [**Changes in 2019.***](api_changes/api_changes_list_2019.md)

@@ -2,33 +2,33 @@ name: Build
 on: [push, pull_request]
 
 jobs:
-  docs:
-    name: Docs
-    runs-on: ubuntu-latest
-    container:
-      image: ruby:2.6
-    steps:
-      - name: Fetch Sources
-        uses: actions/checkout@v2
-      - name: Setup Cache
-        uses: actions/cache@v2
-        with:
-          path: vendor/bundle
-          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-gems-
-      - name: Install Dependencies
-        run: |
-          git submodule update --init --remote
-          gem install bundler:2.0.1
-          bundle install
-      - name: Build
-        run: |
-          dpkg-reconfigure --frontend=noninteractive locales && update-locale LANG=C.UTF-8
-          export LC_ALL=C.UTF-8
-          export LANG=en_US.UTF-8
-          export LANGUAGE=en_US.UTF-8
-          rake build
+#  docs:
+#    name: Docs
+#    runs-on: ubuntu-latest
+#    container:
+#      image: ruby:2.6
+#    steps:
+#      - name: Fetch Sources
+#        uses: actions/checkout@v2
+#      - name: Setup Cache
+#        uses: actions/cache@v2
+#        with:
+#          path: vendor/bundle
+#          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+#          restore-keys: |
+#            ${{ runner.os }}-gems-
+#      - name: Install Dependencies
+#        run: |
+#          git submodule update --init --remote
+#          gem install bundler:2.0.1
+#          bundle install
+#      - name: Build
+#        run: |
+#          dpkg-reconfigure --frontend=noninteractive locales && update-locale LANG=C.UTF-8
+#          export LC_ALL=C.UTF-8
+#          export LANG=en_US.UTF-8
+#          export LANGUAGE=en_US.UTF-8
+#          rake build
 
   documentedProblemsPageVerification:
     name: Documented Problems Page Verification
@@ -60,76 +60,81 @@ jobs:
           curl -L --output ~/.verifier/verifier-all.jar https://dl.bintray.com/jetbrains/intellij-plugin-service/org/jetbrains/intellij/plugins/verifier-cli/$VERSION/verifier-cli-$VERSION-all.jar
       - name: Run Plugin Verifier
         run: |
+          echo "GITHUB_ACTOR=$GITHUB_ACTOR"
+          echo "GITHUB_REPOSITORY=$GITHUB_REPOSITORY"
+          echo "/github/workflow/event.json:"
+          cat /github/workflow/event.json
+          echo "=========="
           REF=${GITHUB_HEAD_REF:-$GITHUB_REF}
           java -cp ~/.verifier/verifier-all.jar com.jetbrains.pluginverifier.filtering.documented.DocumentedProblemsPageVerifierMain $GITHUB_REPOSITORY ${REF##*/}
 
-  gradleValidation:
-    name: Gradle Wrappers
-    runs-on: ubuntu-latest
-    steps:
-      - name: Fetch Sources
-        uses: actions/checkout@v2
-      - name: Gradle Wrapper Validation
-        uses: gradle/wrapper-validation-action@v1
-
-  samples:
-    name: Code Samples / ${{ matrix.plugin }}
-    needs: gradleValidation
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        plugin:
-          - action_basics
-          - comparing_references_inspection
-          - conditional_operator_intention
-          - editor_basics
-          - facet_basics
-          - framework_basics
-          - inspection_basics
-          - kotlin_demo
-          - live_templates
-          - max_opened_projects
-          - module
-          - product_specific/pycharm_basics
-          - project_model
-          - project_view_pane
-          - project_wizard
-          - psi_demo
-          - run_configuration
-          - simple_language_plugin
-          - tool_window
-          - tree_structure_provider
-    container:
-      image: gradle:jdk8
-    steps:
-      - name: Fetch Sources
-        uses: actions/checkout@v2
-      - name: Setup Cache
-        uses: actions/cache@v2
-        with:
-          path: ~/.gradle/caches
-          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle') }}
-          restore-keys: |
-            ${{ runner.os }}-gradle-
-      - name: Verify Plugin
-        run: gradle -p code_samples/${{ matrix.plugin }} verifyPlugin
-      - name: Test Plugin
-        run: gradle -p code_samples/${{ matrix.plugin }} test
-
-  mirror:
-    name: Code Samples Mirror
-    if: github.ref == 'refs/heads/master' && github.repository == 'JetBrains/intellij-sdk-docs'
-    needs: samples
-    runs-on: ubuntu-latest
-    steps:
-      - name: Install SSH key
-        uses: shimataro/ssh-key-action@v2
-        with:
-          key: ${{ secrets.SSH_KEY }}
-          known_hosts: ${{ secrets.KNOWN_HOSTS }}
-      - name: Prepare Mirror
-        run: |
-          git clone --bare git@github.com:JetBrains/intellij-sdk-docs.git .
-          git branch | grep -v "master" | xargs git branch -D
-          git filter-branch --prune-empty --subdirectory-filter code_samples master
-          git push --mirror git@github.com:JetBrains/intellij-sdk-code-samples.git
+#  gradleValidation:
+#    name: Gradle Wrappers
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Fetch Sources
+#        uses: actions/checkout@v2
+#      - name: Gradle Wrapper Validation
+#        uses: gradle/wrapper-validation-action@v1
+#
+#  samples:
+#    name: Code Samples / ${{ matrix.plugin }}
+#    needs: gradleValidation
+#    runs-on: ubuntu-latest
+#    strategy:
+#      matrix:
+#        plugin:
+#          - action_basics
+#          - comparing_references_inspection
+#          - conditional_operator_intention
+#          - editor_basics
+#          - facet_basics
+#          - framework_basics
+#          - inspection_basics
+#          - kotlin_demo
+#          - live_templates
+#          - max_opened_projects
+#          - module
+#          - product_specific/pycharm_basics
+#          - project_model
+#          - project_view_pane
+#          - project_wizard
+#          - psi_demo
+#          - run_configuration
+#          - simple_language_plugin
+#          - tool_window
+#          - tree_structure_provider
+#    container:
+#      image: gradle:jdk8
+#    steps:
+#      - name: Fetch Sources
+#        uses: actions/checkout@v2
+#      - name: Setup Cache
+#        uses: actions/cache@v2
+#        with:
+#          path: ~/.gradle/caches
+#          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle') }}
+#          restore-keys: |
+#            ${{ runner.os }}-gradle-
+#      - name: Verify Plugin
+#        run: gradle -p code_samples/${{ matrix.plugin }} verifyPlugin
+#      - name: Test Plugin
+#        run: gradle -p code_samples/${{ matrix.plugin }} test
+#
+#  mirror:
+#    name: Code Samples Mirror
+#    if: github.ref == 'refs/heads/master' && github.repository == 'JetBrains/intellij-sdk-docs'
+#    needs: samples
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Install SSH key
+#        uses: shimataro/ssh-key-action@v2
+#        with:
+#          key: ${{ secrets.SSH_KEY }}
+#          known_hosts: ${{ secrets.KNOWN_HOSTS }}
+#      - name: Prepare Mirror
+#        run: |
+#          git clone --bare git@github.com:JetBrains/intellij-sdk-docs.git .
+#          git branch | grep -v "master" | xargs git branch -D
+#          git filter-branch --prune-empty --subdirectory-filter code_samples master
+#          git push --mirror git@github.com:JetBrains/intellij-sdk-code-samples.git

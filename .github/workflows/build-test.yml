@@ -63,6 +63,11 @@ jobs:
           PR_REPOSITORY=$(jq -re ".pull_request.head.repo.full_name // empty" $GITHUB_EVENT_PATH)
           REPOSITORY=${PR_REPOSITORY:-$GITHUB_REPOSITORY}
           REF=${GITHUB_HEAD_REF:-$GITHUB_REF}
+
+          echo "PR_REPOSITORY=$PR_REPOSITORY"
+          echo "REPOSITORY=$REPOSITORY"
+          echo "REF=$REF"
+          echo "${REF##*/}"
           java -cp ~/.verifier/verifier-all.jar com.jetbrains.pluginverifier.filtering.documented.DocumentedProblemsPageVerifierMain $REPOSITORY ${REF##*/}
 
 #  gradleValidation:

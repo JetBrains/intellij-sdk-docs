@@ -63,7 +63,7 @@ jobs:
           echo "GITHUB_ACTOR=$GITHUB_ACTOR"
           echo "GITHUB_REPOSITORY=$GITHUB_REPOSITORY"
           echo "/github/workflow/event.json:"
-          cat /github/workflow/event.json
+          cat $GITHUB_EVENT_PATH
           echo "=========="
           REF=${GITHUB_HEAD_REF:-$GITHUB_REF}
           java -cp ~/.verifier/verifier-all.jar com.jetbrains.pluginverifier.filtering.documented.DocumentedProblemsPageVerifierMain $GITHUB_REPOSITORY ${REF##*/}

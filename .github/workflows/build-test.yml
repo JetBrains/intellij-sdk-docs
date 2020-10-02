@@ -61,6 +61,12 @@ jobs:
       - name: Run Plugin Verifier
         run: |
           PR_REF=$(jq -re ".pull_request.head.repo.full_name // empty" $GITHUB_EVENT_PATH)
+
+          echo "/github/workflow/event.json:"
+          cat $GITHUB_EVENT_PATH
+          echo "=========="
+
+          echo "PR_REF=$PR_REF"
           REF=${PR_REF:-$GITHUB_REF}
           java -cp ~/.verifier/verifier-all.jar com.jetbrains.pluginverifier.filtering.documented.DocumentedProblemsPageVerifierMain $GITHUB_REPOSITORY ${REF##*/}
 

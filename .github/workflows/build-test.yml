@@ -60,12 +60,8 @@ jobs:
           curl -L --output ~/.verifier/verifier-all.jar https://dl.bintray.com/jetbrains/intellij-plugin-service/org/jetbrains/intellij/plugins/verifier-cli/$VERSION/verifier-cli-$VERSION-all.jar
       - name: Run Plugin Verifier
         run: |
-          echo "GITHUB_ACTOR=$GITHUB_ACTOR"
-          echo "GITHUB_REPOSITORY=$GITHUB_REPOSITORY"
-          echo "/github/workflow/event.json:"
-          cat $GITHUB_EVENT_PATH
-          echo "=========="
-          REF=${GITHUB_HEAD_REF:-$GITHUB_REF}
+          PR_REF=$(jq -re ".pull_request.head.repo.full_name // empty" $GITHUB_EVENT_PATH)
+          REF=${PR_REF:-$GITHUB_REF}
           java -cp ~/.verifier/verifier-all.jar com.jetbrains.pluginverifier.filtering.documented.DocumentedProblemsPageVerifierMain $GITHUB_REPOSITORY ${REF##*/}
 
 #  gradleValidation:

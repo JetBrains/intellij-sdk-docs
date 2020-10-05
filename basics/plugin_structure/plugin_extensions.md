@@ -25,7 +25,7 @@ There are [more than 1000 extension](#how-to-get-the-extension-points-list) poin
 1. Add an `<extensions>` element to your `plugin.xml` if it's not yet present there.
    Set the `defaultExtensionNs` attribute to one of the following values:
     * `com.intellij`, if your plugin extends the IntelliJ Platform core functionality.
-    * `{ID of a plugin}`, if your plugin extends the functionality of another plugin.
+    * `{ID of a plugin}`, if your plugin extends the functionality of another plugin (must configure [Plugin Dependencies](plugin_dependencies.md)).
 2. Add a new child element to the `<extensions>` element.
    The child element name must match the name of the extension point you want the extension to access.
 3. Depending on the type of the extension point, do one of the following:
@@ -66,6 +66,7 @@ The following properties are available always:
 Several tooling features are available to help configure bean class extension points in `plugin.xml`.
 
 Properties annotated with [`@RequiredElement`](upsource:///platform/extensions/src/com/intellij/openapi/extensions/RequiredElement.java) are inserted automatically and validated (2019.3 and later).
+If the given property is allowed to have an explicit empty value, set `allowEmpty` to `true` (2020.3 and later).
 
 Property names matching the following list will resolve to FQN:
 - `implementation`

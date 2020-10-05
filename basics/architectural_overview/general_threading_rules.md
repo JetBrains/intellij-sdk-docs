@@ -8,9 +8,9 @@ title: General Threading Rules
 In general, code-related data structures in the *IntelliJ Platform* are covered by a single reader/writer lock.
 
 You must not access the model outside a read or write action for the following subsystems:
-- PSI
-- VFS
-- project root model.
+- [Program Structure Interface](/basics/architectural_overview/psi.md) (PSI)
+- [Virtual File System](/basics/virtual_file_system.md) (VFS)
+- [Project root model](/basics/project_structure.md).
 
 **Reading** data is allowed from any thread.
 Reading data from the UI thread does not require any special effort.
@@ -25,7 +25,7 @@ You may not modify PSI, VFS, or project model from inside UI renderers or `Swing
 
 ## Modality and `invokeLater()`
 
-To pass control from a background thread to the event dispatch thread, instead of the standard `SwingUtilities.invokeLater()`, plugins should use `ApplicationManager.getApplication().invokeLater()`.
+To pass control from a background thread to the [Event Dispatch Thread](https://docs.oracle.com/javase/tutorial/uiswing/concurrency/dispatch.html) (EDT), instead of the standard `SwingUtilities.invokeLater()`, plugins should use `ApplicationManager.getApplication().invokeLater()`.
 The latter API allows specifying the _modality state_ ([`ModalityState`](upsource:///platform/core-api/src/com/intellij/openapi/application/ModalityState.java)) for the call, i.e., the stack of modal dialogs under which the call is allowed to execute:
 
 `ModalityState.NON_MODAL`

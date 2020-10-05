@@ -28,12 +28,15 @@ To see how these attributes appear in a similar `build.gradle` file for PhpStorm
 
 The dependency on the WebStorm APIs must be declared in the `plugin.xml` file.
 As described in [Modules Specific to Functionality](/basics/getting_started/plugin_compatibility.md#modules-specific-to-functionality) table, the `<depends>` tags must declare `JavaScriptLanguage`.
-**Note** that for WebStorm, the plugin.xml file must also declare a dependency on `com.intellij.modules.platform` because `JavaScriptLanguage` is not recognized as a module.
+**Note** that for WebStorm, the `plugin.xml` file must also declare a dependency on `com.intellij.modules.platform` because `JavaScriptLanguage` is not recognized as a module.
 Consequently, without the `com.intellij.modules.platform` declaration the plugin is assumed to be a [legacy plugin](/basics/getting_started/plugin_compatibility.md#declaring-plugin-dependencies) and will not load in WebStorm.
 
 ## Available WebStorm APIs
 Use the [Exploring APIs as a Consumer](/basics/getting_started/plugin_compatibility.md#exploring-apis-as-a-consumer) process to identify the libraries `JavaScriptLanguage.jar`, and `javascript-openapi.jar`.
 Test your plugin with any version of WebStorm you wish to support.
+                       
+### Javascript Testframework
+To use existing test base classes, specify `com.jetbrains.intellij.javascript:javascript-test-framework:$VERSION$` as `testImplementation` dependency explicitly (see [IntelliJ Platform Artifacts Repositories](/reference_guide/intellij_artifacts.md#gradle-example-for-an-individual-module-from-the-intellij-platform)) (2020.3 and later).
 
 ## Open Source Plugins for WebStorm
 When learning new plugin development it is helpful to have some representative projects for reference:

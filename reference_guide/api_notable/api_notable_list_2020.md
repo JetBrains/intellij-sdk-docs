@@ -16,7 +16,8 @@ Generating HTML fragments
 : Use `com.intellij.openapi.util.text.HtmlBuilder` for generating formatted content, e.g., for [Documentation](/reference_guide/custom_language_support/documentation.md).
 
 Extensible HTML Lexer/Parser
-: Implement `com.intellij.html.embedding.HtmlEmbeddedContentSupport` and register in `com.intellij.html.embeddedContentSupport` extension point to embed arbitrary tokens into any tag or attribute.                         
+: Implement `com.intellij.html.embedding.HtmlEmbeddedContentSupport` and register in `com.intellij.html.embeddedContentSupport` extension point to embed arbitrary tokens into any tag or attribute.   
+Please note that old API from `com.intellij.lexer.BaseHtmlLexer` is no longer working.
 
 ### Notable Changes in JavaScript Plugin 2020.3
 

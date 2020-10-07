@@ -10,6 +10,7 @@ import org.jetbrains.annotations.NotNull;
 import javax.swing.*;
 
 public class DemoSettingsEditor extends SettingsEditor<DemoRunConfiguration> {
+
   private JPanel myPanel;
   private LabeledComponent<TextFieldWithBrowseButton> myScriptName;
 
@@ -33,4 +34,5 @@ public class DemoSettingsEditor extends SettingsEditor<DemoRunConfiguration> {
     myScriptName = new LabeledComponent<>();
     myScriptName.setComponent(new TextFieldWithBrowseButton());
   }
+
 }

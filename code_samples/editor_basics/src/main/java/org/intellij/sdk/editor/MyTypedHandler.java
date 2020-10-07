@@ -11,8 +11,7 @@ import com.intellij.psi.PsiFile;
 import org.jetbrains.annotations.NotNull;
 
 /**
- * This is a custom TypedHandlerDelegate that handles actions activated
- * keystrokes in the editor.
+ * This is a custom {@link TypedHandlerDelegate} that handles actions activated keystrokes in the editor.
  * The execute method inserts a fixed string at Offset 0 of the document.
  * Document changes are made in the context of a write action.
  */

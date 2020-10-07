@@ -20,7 +20,7 @@ import java.util.StringTokenizer;
 import static com.siyeh.ig.psiutils.ExpressionUtils.isNullLiteral;
 
 /**
- * Implements an inspection to detect when object references are compared using 'a==b' or 'a!=b'
+ * Implements an inspection to detect when object references are compared using 'a==b' or 'a!=b'.
  * The quick fix converts these comparisons to 'a.equals(b) or '!a.equals(b)' respectively.
  */
 public class ComparingReferencesInspection extends AbstractBaseJavaLocalInspectionTool {
@@ -38,8 +38,7 @@ public class ComparingReferencesInspection extends AbstractBaseJavaLocalInspecti
   /**
    * This method is called to get the panel describing the inspection.
    * It is called every time the user selects the inspection in preferences.
-   * The user has the option to edit the list of CHECKED_CLASSES.
-   * Adds a document listener to see if
+   * The user has the option to edit the list of {@link #CHECKED_CLASSES}.
    *
    * @return panel to display inspection information.
    */
@@ -57,8 +56,8 @@ public class ComparingReferencesInspection extends AbstractBaseJavaLocalInspecti
   }
 
   /**
-   * This method is overridden to provide a custom visitor
-   * that inspects expressions with relational operators '==' and '!='
+   * This method is overridden to provide a custom visitor.
+   * that inspects expressions with relational operators '==' and '!='.
    * The visitor must not be recursive and must be thread-safe.
    *
    * @param holder     object for visitor to register problems found.
@@ -72,8 +71,8 @@ public class ComparingReferencesInspection extends AbstractBaseJavaLocalInspecti
     return new JavaElementVisitor() {
 
       /**
-       *  This string defines the short message shown to a user signaling the inspection
-       *  found a problem. It reuses a string from the inspections bundle.
+       * This string defines the short message shown to a user signaling the inspection found a problem.
+       * It reuses a string from the inspections bundle.
        */
       @NonNls
       private final String DESCRIPTION_TEMPLATE = "SDK " +
@@ -82,21 +81,18 @@ public class ComparingReferencesInspection extends AbstractBaseJavaLocalInspecti
       /**
        * Avoid defining visitors for both Reference and Binary expressions.
        *
-       * @param psiReferenceExpression  The expression to be evaluated.
+       * @param psiReferenceExpression The expression to be evaluated.
        */
       @Override
       public void visitReferenceExpression(PsiReferenceExpression psiReferenceExpression) {
       }
 
       /**
-       * Evaluate binary psi expressions to see if they contain
-       * relational operators '==' and '!=', AND they contain
-       * classes contained in CHECKED_CLASSES. The evaluation
-       * ignores expressions comparing an object to null.
-       * IF this criteria is met, add the expression to the
-       * problems list.
+       * Evaluate binary psi expressions to see if they contain relational operators '==' and '!=', AND they contain
+       * classes contained in CHECKED_CLASSES. The evaluation ignores expressions comparing an object to null.
+       * IF this criteria is met, add the expression to the problems list.
        *
-       * @param expression  The binary expression to be evaluated.
+       * @param expression The binary expression to be evaluated.
        */
       @Override
       public void visitBinaryExpression(PsiBinaryExpression expression) {
@@ -123,9 +119,9 @@ public class ComparingReferencesInspection extends AbstractBaseJavaLocalInspecti
       /**
        * Verifies the input is the correct {@code PsiType} for this inspection.
        *
-       * @param type  The {@code PsiType} to be examined for a match
-       * @return      {@code true} if input is {@code PsiClassType} and matches
-       *                 one of the classes in the CHECKED_CLASSES list.
+       * @param type The {@code PsiType} to be examined for a match
+       * @return {@code true} if input is {@code PsiClassType} and matches one of the classes
+       * in the {@link ComparingReferencesInspection#CHECKED_CLASSES} list.
        */
       private boolean isCheckedType(PsiType type) {
         if (!(type instanceof PsiClassType)) {
@@ -145,8 +141,8 @@ public class ComparingReferencesInspection extends AbstractBaseJavaLocalInspecti
   }
 
   /**
-   * This class provides a solution to inspection problem expressions by manipulating
-   * the PSI tree to use a.equals(b) instead of '==' or '!='
+   * This class provides a solution to inspection problem expressions by manipulating the PSI tree to use 'a.equals(b)'
+   * instead of '==' or '!='.
    */
   private static class CriQuickFix implements LocalQuickFix {
 
@@ -163,8 +159,7 @@ public class ComparingReferencesInspection extends AbstractBaseJavaLocalInspecti
     }
 
     /**
-     * This method manipulates the PSI tree to replace 'a==b' with 'a.equals(b)
-     * or 'a!=b' with '!a.equals(b)'
+     * This method manipulates the PSI tree to replace 'a==b' with 'a.equals(b)' or 'a!=b' with '!a.equals(b)'.
      *
      * @param project    The project that contains the file being edited.
      * @param descriptor A problem found by this inspection.

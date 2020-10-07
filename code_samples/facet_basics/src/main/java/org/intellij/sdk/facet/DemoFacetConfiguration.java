@@ -34,8 +34,7 @@ public class DemoFacetConfiguration implements FacetConfiguration, PersistentSta
 
   /**
    * Called by the IntelliJ Platform when this facet's state is loaded.
-   * The method can and will be called several times, if
-   * config files were externally changed while IDEA running.
+   * The method can and will be called several times, if config files were externally changed while IDEA running.
    */
   @Override
   public void loadState(@NotNull DemoFacetState state) {
@@ -47,7 +46,7 @@ public class DemoFacetConfiguration implements FacetConfiguration, PersistentSta
    *
    * @param context The context in which a facet is being added/deleted, or modified.
    * @param manager The manager which can be used to access custom validators.
-   * @return Array of DemoFacetEditorTabs. In this case size is always 1.
+   * @return Array of {@link DemoFacetEditorTab}. In this case size is always 1.
    */
   @Override
   public FacetEditorTab[] createEditorTabs(FacetEditorContext context, FacetValidatorsManager manager) {

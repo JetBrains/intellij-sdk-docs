@@ -9,6 +9,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public class DemoConfigurationFactory extends ConfigurationFactory {
+
   private static final String FACTORY_NAME = "Demo configuration factory";
 
   protected DemoConfigurationFactory(ConfigurationType type) {
@@ -32,4 +33,5 @@ public class DemoConfigurationFactory extends ConfigurationFactory {
   public Class<? extends BaseState> getOptionsClass() {
     return DemoRunConfigurationOptions.class;
   }
+
 }

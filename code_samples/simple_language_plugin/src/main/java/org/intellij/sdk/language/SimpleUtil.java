@@ -18,7 +18,13 @@ import java.util.List;
 
 public class SimpleUtil {
 
-  // Searches the entire project for Simple language files with instances of the Simple property with the given key
+  /**
+   * Searches the entire project for Simple language files with instances of the Simple property with the given key.
+   *
+   * @param project current project
+   * @param key     to check
+   * @return matching properties
+   */
   public static List<SimpleProperty> findProperties(Project project, String key) {
     List<SimpleProperty> result = new ArrayList<>();
     Collection<VirtualFile> virtualFiles =

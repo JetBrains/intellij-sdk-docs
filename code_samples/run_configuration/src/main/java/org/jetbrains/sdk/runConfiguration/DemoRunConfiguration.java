@@ -16,6 +16,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public class DemoRunConfiguration extends RunConfigurationBase<DemoRunConfigurationOptions> {
+
   protected DemoRunConfiguration(Project project, ConfigurationFactory factory, String name) {
     super(project, factory, name);
   }
@@ -58,4 +59,5 @@ public class DemoRunConfiguration extends RunConfigurationBase<DemoRunConfigurat
       }
     };
   }
+
 }

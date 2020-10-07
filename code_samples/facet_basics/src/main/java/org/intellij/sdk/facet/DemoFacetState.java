@@ -27,5 +27,4 @@ public class DemoFacetState {
     myPathToSdk = newPath;
   }
 
-
 }

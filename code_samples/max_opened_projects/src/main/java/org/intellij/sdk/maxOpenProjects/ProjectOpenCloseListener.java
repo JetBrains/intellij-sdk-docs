@@ -11,7 +11,7 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Listener to detect project open and close.
- * Depends on org.intellij.sdk.maxOpenProjects.ProjectCountingService
+ * Depends on {@link ProjectCountingService}
  */
 public class ProjectOpenCloseListener implements ProjectManagerListener {
 

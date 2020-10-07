@@ -15,7 +15,7 @@ import org.jetbrains.annotations.NotNull;
 /**
  * Menu action to clone a new caret based on an existing one.
  *
- * @see com.intellij.openapi.actionSystem.AnAction
+ * @see AnAction
  */
 public class EditorHandlerIllustration extends AnAction {
 
@@ -39,9 +39,11 @@ public class EditorHandlerIllustration extends AnAction {
 
   /**
    * Enables and sets visibility of this action menu item if:
-   * A project is open,
-   * An editor is active,
-   * At least one caret exists
+   * <ul>
+   *   <li>a project is open</li>
+   *   <li>an editor is active</li>
+   *   <li>at least one caret exists</li>
+   * </ul>
    *
    * @param e Event related to this action
    */

@@ -14,9 +14,9 @@ import org.jetbrains.annotations.Nullable;
 import javax.swing.*;
 
 /**
- * Defines the type, id, and name of the {@link DemoFacet}. Provides creation of DemoFacet
- * and associated Configuration.
- * Allows application of this facet to all ModuleTypes.
+ * Defines the type, id, and name of the {@link DemoFacet}.
+ * Provides creation of {@link DemoFacet} and associated Configuration.
+ * Allows application of this facet to all {@link ModuleType} instances.
  */
 public class DemoFacetType extends FacetType<DemoFacet, DemoFacetConfiguration> {
 

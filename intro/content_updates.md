@@ -7,6 +7,11 @@ This page lists notable additions and updates to the SDK documentation and code 
 See [Recently Updated](/recently_updated.md) ([RSS](https://github.com/JetBrains/intellij-sdk-docs/commits/master.atom)) for a detailed changelog.
 
 ## 2020
+             
+### August
+
+README added to Code Samples
+: All code samples used in this guide now come with `README` making it easier to browse them. They can be conveniently accessed via a [separate GitHub repository](https://github.com/JetBrains/intellij-sdk-code-samples).
 
 ### June
 

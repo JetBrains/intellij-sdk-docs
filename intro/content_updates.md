@@ -3,6 +3,8 @@ title: Content Updates
 ---
 
 This page lists notable additions and updates to the SDK documentation and code samples.
+       
+Follow [JBPlatform](https://twitter.com/JBPlatform/) on Twitter and visit [JetBrains Platform Blog](https://blog.jetbrains.com/platform/) for the latest announcements.
 
 See [Recently Updated](/recently_updated.md) ([RSS](https://github.com/JetBrains/intellij-sdk-docs/commits/master.atom)) for a detailed changelog.
 

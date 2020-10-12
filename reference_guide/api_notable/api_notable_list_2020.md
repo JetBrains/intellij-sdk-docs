@@ -8,6 +8,9 @@ We've published our roadmap for the IntelliJ Platform for 2020: [Part I](https:/
 ## 2020.3
 
 ### Notable Changes in IntelliJ Platform 2020.3
+                           
+IntelliJ Platform migrated to Java 11
+: Using Java 11 is now required, please see [blog post](https://blog.jetbrains.com/platform/2020/09/intellij-project-migrates-to-java-11/).
 
 Reparsing of `IReparseableLeafElementType`
 : For elements whose `IElementType` implements this interface, platform attempts reparse when a modification is made right before or after the leaf element preventing reparsing the whole file.

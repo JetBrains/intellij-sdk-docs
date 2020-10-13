@@ -75,6 +75,9 @@ Please see [Incompatible API Changes](/reference_guide/api_changes_list.md) on h
 `com.intellij.execution.ui.ConsoleView.attachToProcess` method `ProcessHandler` parameter marked `@NotNull`
 : This may break source-compatibility with inheritors written in Kotlin if they declare parameter type as nullable.
 
+`com.intellij.util.indexing.FileContentImpl(VirtualFile, byte[])` constructor removed
+: Constructors of `FileContentImpl` were replaced with factory methods. Use `FileContentImpl#createByContent(VirtualFile, byte[])`
+
 ### Changes in Java Plugin 2019.3
 
 The PSI structure of multi-dimensional arrays in Java source files changed (see `com.intellij.psi.PsiTypeElement`)

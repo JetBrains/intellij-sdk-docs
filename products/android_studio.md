@@ -61,6 +61,12 @@ The snippet below is an example of configuring the Setup and Running DSLs in a `
 ```
 
 ### Configuring the Plugin plugin.xml File
+When using APIs from the `android` plugin, declare a dependency:
+
+```xml
+  <depends>org.jetbrains.android</depends>
+```
+
 As discussed in the [Plugin Dependencies](/basics/getting_started/plugin_compatibility.md#declaring-plugin-dependencies) section of this guide, a plugin's dependency on [Modules Specific to Functionality](/basics/getting_started/plugin_compatibility.md#modules-specific-to-functionality) must be declared in `plugin.xml`.
 When using Android Studio-specific features (APIs), a dependency on `com.intellij.modules.androidstudio` must be declared as shown in the code snippet below.
 Otherwise, if only general IntelliJ Platform features (APIs) are used, then a dependency on `com.intellij.modules.platform` must be declared as discussed in [Plugin Compatibility with IntelliJ Platform Products](/basics/getting_started/plugin_compatibility.md).

@@ -78,6 +78,9 @@ Please see [Incompatible API Changes](/reference_guide/api_changes_list.md) on h
 `com.intellij.util.indexing.FileContentImpl(VirtualFile, byte[])` constructor removed
 : Constructors of `FileContentImpl` were replaced with factory methods. Use `FileContentImpl#createByContent(VirtualFile, byte[])`
 
+`com.intellij.spellchecker.quickfixes.ChangeTo(java.lang.String)` constructor removed
+: Constructor was replaced with `com.intellij.spellchecker.quickfixes.ChangeTo.<init>(String, PsiElement, TextRange)`
+
 `com.intellij.spellchecker.tokenizer.SpellcheckingStrategy.getDefaultRegularFixes(boolean, String, @Nullable PsiElement)` method removed
 : method replaced with `com.intellij.spellchecker.tokenizer.SpellcheckingStrategy.getDefaultRegularFixes(boolean, String, @Nullable PsiElement, @NotNull TextRange)`
 

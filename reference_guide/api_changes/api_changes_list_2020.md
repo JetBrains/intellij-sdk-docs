@@ -76,13 +76,13 @@ Please see [Incompatible API Changes](/reference_guide/api_changes_list.md) on h
 : This may break source-compatibility with inheritors written in Kotlin if they declare parameter type as nullable.
 
 `com.intellij.util.indexing.FileContentImpl(VirtualFile, byte[])` constructor removed
-: Constructors of `FileContentImpl` were replaced with factory methods. Use `FileContentImpl#createByContent(VirtualFile, byte[])`
+: Constructors of `FileContentImpl` were replaced with factory methods, use `FileContentImpl#createByContent(VirtualFile, byte[])`.
 
-`com.intellij.spellchecker.quickfixes.ChangeTo(java.lang.String)` constructor removed
-: Constructor was replaced with `com.intellij.spellchecker.quickfixes.ChangeTo.<init>(String, PsiElement, TextRange)`
+`com.intellij.spellchecker.quickfixes.ChangeTo(String)` constructor removed
+: Replaced with `ChangeTo(String, PsiElement, TextRange)`.
 
-`com.intellij.spellchecker.tokenizer.SpellcheckingStrategy.getDefaultRegularFixes(boolean, String, @Nullable PsiElement)` method removed
-: method replaced with `com.intellij.spellchecker.tokenizer.SpellcheckingStrategy.getDefaultRegularFixes(boolean, String, @Nullable PsiElement, @NotNull TextRange)`
+`com.intellij.spellchecker.tokenizer.SpellcheckingStrategy.getDefaultRegularFixes(boolean, String, PsiElement)` method removed
+: Replaced with `SpellcheckingStrategy.getDefaultRegularFixes(boolean, String, PsiElement, TextRange)`.
 
 ### Changes in Java Plugin 2019.3
 

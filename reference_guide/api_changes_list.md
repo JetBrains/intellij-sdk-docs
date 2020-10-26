@@ -87,6 +87,8 @@ Consider using the following [IDE inspections](https://www.jetbrains.com/help/id
 
 ## Known Breaking Changes
 
+> **TIP** Follow [JBPlatform](https://twitter.com/JBPlatform/) on Twitter and visit [JetBrains Platform Blog](https://blog.jetbrains.com/platform/) for the latest announcements.
+
 The following pages list the breaking changes in IDE and plugin releases with required/recommended steps to take by plugin authors.
 
 * [**Changes in 2021.***](api_changes/api_changes_list_2021.md)

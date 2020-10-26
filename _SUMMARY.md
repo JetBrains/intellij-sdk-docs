@@ -277,6 +277,7 @@
 ## Appendix II - API Changes
 
 * [Incompatible API Changes](reference_guide/api_changes_list.md)
+    * [2021.*](reference_guide/api_changes/api_changes_list_2021.md)
     * [2020.*](reference_guide/api_changes/api_changes_list_2020.md)
     * [2019.*](reference_guide/api_changes/api_changes_list_2019.md)
     * [2018.*](reference_guide/api_changes/api_changes_list_2018.md)

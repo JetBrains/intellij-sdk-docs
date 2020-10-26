@@ -26,9 +26,9 @@ Then define a class/interface in a top-level package called `icons` holding icon
 package icons;
 
 public interface DemoPluginIcons {
-  Icon DemoAction = IconLoader.getIcon("/icons/demoAction.png");
-  Icon StructureToolWindow = IconLoader.getIcon("/icons/toolWindowStructure.png");
-  Icon FileType = IconLoader.getIcon("/icons/myLangFileType.png");
+  Icon DemoAction = IconLoader.getIcon("/icons/demoAction.png", DemoPluginIcons.class);
+  Icon StructureToolWindow = IconLoader.getIcon("/icons/toolWindowStructure.png", DemoPluginIcons.class);
+  Icon FileType = IconLoader.getIcon("/icons/myLangFileType.png", DemoPluginIcons.class);
 }
 ```
 
@@ -40,7 +40,7 @@ package icons
 object DemoPluginIcons {
   
   @JvmField
-  val DemoAction = IconLoader.getIcon("/icons/demoAction.png")
+  val DemoAction = IconLoader.getIcon("/icons/demoAction.png", javaClass)
 
   // ...
 }

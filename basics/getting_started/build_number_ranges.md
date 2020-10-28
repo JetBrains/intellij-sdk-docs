@@ -52,6 +52,7 @@ Usually you should omit the product ID and use only the branch number and build 
 
 | Branch number                                                   | IntelliJ Platform version |
 | --------------------------------------------------------------- | ------------------------- |
+| [203](https://github.com/JetBrains/intellij-community/tree/203) | 2020.3                    |
 | [202](https://github.com/JetBrains/intellij-community/tree/202) | 2020.2                    |
 | [201](https://github.com/JetBrains/intellij-community/tree/201) | 2020.1                    |
 | [193](https://github.com/JetBrains/intellij-community/tree/193) | 2019.3                    |

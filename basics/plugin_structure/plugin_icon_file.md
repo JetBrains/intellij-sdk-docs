@@ -19,6 +19,8 @@ They also appear in the Settings/Preferences [Plugin Manager](https://www.jetbra
 Whether online or in the product UI, a Plugin Logo helps users to identify a plugin more quickly in a list, as shown below:
 
 ![Example Product Plugin Preferences Dialog](img/plugin_prefs.png){:width="800px"}
+                                
+> **NOTE** When browsing [custom plugin repositories](/basics/getting_started/update_plugins_format.md), there is no support for showing logos for plugins hosted there but not yet installed.
 
 ## Plugin Logo Requirements
 For a Plugin Logo to be displayed correctly within an IntelliJ Platform-based IDE, it must:

@@ -38,6 +38,8 @@ Custom language support provides basic functionality for working with a particul
 * Code insight and code completion
 * Inspections and quick-fixes
 * Intention actions
+                                           
+Plugins can also augment existing (bundled) custom languages, e.g., by providing additional inspections, intentions, or any other features.
 
 Refer to the [Custom Language Support Tutorial](/tutorials/custom_language_support_tutorial.md) to learn more about the topic.
 

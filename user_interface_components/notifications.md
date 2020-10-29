@@ -47,6 +47,8 @@ Please see the following two paragraphs for setup, depending on the target platf
 
 Registered instances can then be obtained via their `id`.
 
+> **TIP** Code insight is available for parameters expecting notification group `id`.
+
 ```java
 public class MyNotifier {
 

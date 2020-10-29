@@ -77,9 +77,9 @@ For local verification or non-public plugins, [intellij-plugin-verifier](https:/
 Integration in [Gradle build](/tutorials/build_system.md) is possible using the `runPluginVerifier` task, please see [Gradle IntelliJ Plugin - Plugin Verifier DSL](https://github.com/JetBrains/gradle-intellij-plugin#plugin-verifier-dsl) for details.
 
 You can easily integrate it within your CI by running that task as another quality check step.
-Check the [IntelliJ Platform Plugin Template workflow](https://github.com/JetBrains/intellij-platform-plugin-template/blob/main/.github/workflows/build.yml) configuration file to get an insight on how simple is that.
+Check the IntelliJ Platform Plugin Template [GitHub workflow configuration file](https://github.com/JetBrains/intellij-platform-plugin-template/blob/main/.github/workflows/build.yml) as sample.
 
-If your plugin is hosted on GitHub and you are not using Gradle, consider using the following GitHub Actions:
+If your plugin is hosted on GitHub and you are not using Gradle, consider using the following third-party GitHub Actions:
 - [IntelliJ Platform Plugin Verifier](https://github.com/marketplace/actions/intellij-platform-plugin-verifier)
 - [IntelliJ Plugin Verifier](https://github.com/marketplace/actions/intellij-plugin-verifier)
 

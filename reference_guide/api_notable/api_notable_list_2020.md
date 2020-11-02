@@ -11,6 +11,9 @@ We've published our roadmap for the IntelliJ Platform for 2020: [Part I](https:/
                            
 IntelliJ Platform migrated to Java 11
 : Using Java 11 is now required, please see [blog post](https://blog.jetbrains.com/platform/2020/09/intellij-project-migrates-to-java-11/).
+                    
+Internal changes in Project Model
+: Internal changes related to a significant redesign of the representation of project models have been made, please see [blog post](https://blog.jetbrains.com/platform/2020/10/new-implementation-of-project-model-interfaces-in-2020-3/) for details. This shouldn’t affect any plugins using the IntelliJ API properly and which don’t access internal classes.
 
 Reparsing of `IReparseableLeafElementType`
 : For elements whose `IElementType` implements this interface, platform attempts reparse when a modification is made right before or after the leaf element preventing reparsing the whole file.

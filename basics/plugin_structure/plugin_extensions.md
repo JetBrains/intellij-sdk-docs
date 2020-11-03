@@ -60,7 +60,8 @@ The following properties are available always:
 - `id` - unique ID
 - `order` - allows to order all defined extensions using `first`, `last` or `before|after [id]` respectively
 - `os` - allows restricting extension to given OS, e.g., `os="windows"` registers the extension on Windows only
-
+                     
+If an extension instance needs to "opt out" in certain scenarios, it can throw [`ExtensionNotApplicableException`](upsource:///platform/extensions/src/com/intellij/openapi/extensions/ExtensionNotApplicableException.java) in its constructor.
 
 ### Extension Properties Code Insight
 Several tooling features are available to help configure bean class extension points in `plugin.xml`.

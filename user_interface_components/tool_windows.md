@@ -15,34 +15,40 @@ Each tool window can show multiple tabs (or "contents", as they are called in th
 For example, the Run tool window displays a tab for each active run configuration, and the Changes/Version Control tool window displays a fixed set of tabs depending on the version control system used in the project.
 
 There are two main scenarios for the use of tool windows in a plugin.
-In the first scenario (used by the Ant and Commander plugins, for example), a tool window button is always visible, and the user can activate it and interact with the plugin functionality at any time.
-In the second scenario (used by the _Analyze Dependencies_ action, for example), the tool window is created to show the results of a specific operation, and can be closed by the user after the operation is completed.
+Using declarative setup, a tool window button is always visible, and the user can activate it and interact with the plugin functionality at any time.
+Alternatively, using programmatic setup, the tool window is created to show the results of a specific operation, and can be closed by the user after the operation is completed.
 
-In the first scenario, the tool window is registered in `plugin.xml` using the `com.intellij.toolWindow` extension point.
+### Declarative Setup
+
+The tool window is registered in `plugin.xml` using the `com.intellij.toolWindow` extension point.
 The extension point attributes specify all the data which is necessary to display the tool window button:
 
 *  The `id` of the tool window (corresponds to the text displayed on the tool window button)
 
-*  The `anchor`, meaning the side of the screen on which the tool window is displayed ("left", "right" or "bottom")
+*  The `anchor`, meaning the side of the screen on which the tool window is displayed ("left" (default), "right" or "bottom")
 
 *  The `secondary` attribute, specifying whether the tool window is displayed in the primary or the secondary group
 
-*  The `icon` to display on the tool window button (13x13 pixels)
+*  The `icon` to display on the tool window button (13x13 pixels, see [Working with Icons and Images](/reference_guide/work_with_icons_and_images.md))
 
-In addition to that, specify the *factory class*  - the name of a class implementing the [`ToolWindowFactory`](upsource:///platform/platform-api/src/com/intellij/openapi/wm/ToolWindowFactory.java) interface.
+In addition to that, specify the `factoryClass` attribute - the name of a class implementing the [`ToolWindowFactory`](upsource:///platform/platform-api/src/com/intellij/openapi/wm/ToolWindowFactory.java) interface.
 When the user clicks on the tool window button, the `createToolWindowContent()` method of the factory class is called, and initializes the UI of the tool window.
-This procedure ensures that unused tool windows don't cause any overhead in startup time or memory usage: if a user does not interact with the tool window of a plugin, no plugin code will be loaded or executed.
+This procedure ensures that unused tool windows don't cause any overhead in startup time or memory usage: if a user does not interact with the tool window, no plugin code will be loaded or executed.
 
 If the tool window of a plugin doesn't need to be displayed for all projects:
 * For versions 2020.1 and later, also implement the `isApplicable(Project)` method.
-* For versions 2019.3 and earlier, also specify the `conditionClass` attribute for the `<toolWindow>` element: the FQN of a class implementing [`Condition<Project>`](upsource:///platform/util-rt/src/com/intellij/openapi/util/Condition.java), which can be the same class as the tool window factory implementation.
+* For versions 2019.3 and earlier, also specify the `conditionClass` attribute: the FQN of a class implementing [`Condition<Project>`](upsource:///platform/util-rt/src/com/intellij/openapi/util/Condition.java), which can be the same class as the tool window factory implementation.
   See [Creation of Plugin](#creation-of-plugin) for more information.
 
 Note the condition is evaluated only once when the project is loaded; to show and hide a tool window dynamically while the user is working with the project use the second method for tool window registration.
+            
+### Programmatic Setup
 
 The second method involves simply calling [`ToolWindowManager.registerToolWindow()`](upsource:///platform/platform-api/src/com/intellij/openapi/wm/ToolWindowManager.kt) from the plugin code.
 The method has multiple overloads that can be used depending on the task.
 When using an overload that takes a component, the component becomes the first content (tab) displayed in the tool window.
+                     
+## Contents (Tabs)
 
 Displaying the contents of many tool windows requires access to the indices.
 Because of that, tool windows are normally disabled while building indices, unless `true` is passed as the value of `canWorkInDumbMode` to the `registerToolWindow()` function.

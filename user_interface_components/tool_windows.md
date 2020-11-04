@@ -41,7 +41,9 @@ If the tool window of a plugin doesn't need to be displayed for all projects:
   See [Creation of Plugin](#creation-of-plugin) for more information.
 
 Note the condition is evaluated only once when the project is loaded; to show and hide a tool window dynamically while the user is working with the project use the second method for tool window registration.
-            
+              
+To provide a localized text for the tool window button, specify matching `toolwindow.stripe.[id]` message key (escape spaces with `_`) in your [message bundle](/reference_guide/localization_guide.md) (code insight supported in 2020.3 and later).
+
 ### Programmatic Setup
 
 The second method involves simply calling [`ToolWindowManager.registerToolWindow()`](upsource:///platform/platform-api/src/com/intellij/openapi/wm/ToolWindowManager.kt) from the plugin code.

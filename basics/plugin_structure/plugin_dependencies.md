@@ -12,12 +12,14 @@ For more information about dependencies on the IntelliJ Platform modules, see Pa
 To express dependencies on classes from other plugins or modules, perform the following three required steps:
 
 ## 1. Locating Plugin ID and Preparing Sandbox
+A compatible version must be chosen carefully according to the plugin's [compatibility](/basics/getting_started/build_number_ranges.md). 
+
 For plugins published on [JetBrains Plugins Repository](https://plugins.jetbrains.com)
 - open plugin's detail page
 - select _Versions_ tab
-- open detail page for the desired version
+- open detail page for the desired version, displaying the _Compatibility Range_ and _Plugin ID_
 
-Otherwise, locate the plugin's main JAR file containing `META-INF/plugin.xml` descriptor with `<id>` tag (or `<name>` if not specified).
+For bundled and non-public plugins, locate the plugin's main JAR file containing `META-INF/plugin.xml` descriptor with `<id>` tag (or `<name>` if not specified).
 
 If the plugin is not bundled with the target IDE, run the (sandbox) [IDE Development Instance](/basics/ide_development_instance.md) of your target IDE and install the plugin there.
 
@@ -52,7 +54,7 @@ If the project uses [DevKit](/basics/getting_started/using_dev_kit.md), add the 
 
 > **WARNING** Do not add the plugin JARs as a library: this will fail at runtime because the IntelliJ Platform will load two separate copies of the dependency plugin classes.
 
-To do that, open the Project Structure dialog, select the SDK used in the project, press the + button in the Classpath tab, and select the plugin JAR file or files:
+To do that, open the Project Structure dialog, select the SDK used in the project, press the <kbd>+</kbd> button in the Classpath tab, and select the plugin JAR file or files:
 * For bundled plugins, the plugin JAR files are located in `plugins/<pluginname>` or `plugins/<pluginname>/lib` under the main installation directory.
   If you're not sure which JAR to add, you can add all of them.
 * For non-bundled plugins, the plugin JAR files are located in `config/plugins/<pluginname>` or `config/plugins/<pluginname>/lib` under the directory specified as "Sandbox Home" in the IntelliJ Platform Plugin SDK settings.
@@ -61,6 +63,7 @@ To do that, open the Project Structure dialog, select the SDK used in the projec
 Regardless of whether a plugin project uses [Modules Available in All Products](/basics/getting_started/plugin_compatibility.md#modules-available-in-all-products), or [Modules Specific to Functionality](/basics/getting_started/plugin_compatibility.md#modules-specific-to-functionality), the correct module must be listed as a dependency in `plugin.xml`.
 If a project depends on another plugin, the dependency must be declared like a module.
 If only general IntelliJ Platform features (APIs) are used, then a default dependency on `com.intellij.modules.platform` must be declared.
+
 To display a list of available IntelliJ Platform modules, invoke the [code completion](https://www.jetbrains.com/help/idea/auto-completing-code.html#4eac28ba) feature for the `<depends>` element contents while editing the plugin project's `plugin.xml` file.
 
 ### 3.1 Configuring plugin.xml

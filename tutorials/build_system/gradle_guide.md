@@ -121,7 +121,7 @@ The best practice is to keep `project.version` current.
 By default, if you modify `project.version` in `build.gradle`, the Gradle plugin will automatically update the `<version>` value in the `plugin.xml` file.
 This practice keeps all version declarations synchronized.
 
-### Verifying plugin
+### Verifying Plugin
 The Gradle plugin provides two tasks that allow for running integrity and compatibility tests:
 - `verifyPlugin` - validates completeness and contents of `plugin.xml` descriptors as well as plugin’s archive structure,
 - `runPluginVerifier` - runs the [IntelliJ Plugin Verifier](https://github.com/JetBrains/intellij-plugin-verifier) tool to check the binary compatibility with specified IntelliJ IDE builds.

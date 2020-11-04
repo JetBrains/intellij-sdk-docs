@@ -45,3 +45,6 @@ Sometimes, the following conditions hold:
 
 A file-based index can be used in such cases, but file gists provide a way to perform data calculation lazily, caching on disk, and a more lightweight API.
 Please see [`VirtualFileGist`](upsource:///platform/indexing-api/src/com/intellij/util/gist/VirtualFileGist.java) and [`PsiFileGist`](upsource:///platform/indexing-api/src/com/intellij/util/gist/PsiFileGist.java) documentation.
+
+**Example:**
+- [`ImageInfoIndex`](upsource:///images/src/org/intellij/images/index/ImageInfoIndex.java) calculating image dimensions/bit depth needed to be displayed in specific parts of UI.  

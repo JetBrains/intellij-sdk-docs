@@ -9,7 +9,7 @@
   <name>SDK: Conditional Operator Converter</name>
 
   <!-- Product and plugin compatibility requirements -->
-  <depends>com.intellij.modules.java</depends>
+  <depends>com.intellij.java</depends>
   <depends>com.intellij.modules.platform</depends>
 
   <!-- Text to display as description on Preferences/Settings | Plugin page -->

@@ -53,7 +53,7 @@ When using an overload that takes a component, the component becomes the first c
 ## Contents (Tabs)
 
 Displaying the contents of many tool windows requires access to the indices.
-Because of that, tool windows are normally disabled while building indices, unless `true` is passed as the value of `canWorkInDumbMode` to the `registerToolWindow()` function.
+Because of that, tool windows are normally disabled while building indices unless the `ToolWindowFactory` implements [`DumbAware`](upsource:///platform/core-api/src/com/intellij/openapi/project/DumbAware.java). For programmatic setup, parameter `canWorkInDumbMode` must be set to `true` in calls to `registerToolWindow()`.
 
 As mentioned previously, tool windows can contain multiple tabs, or contents.
 To manage the contents of a tool window, call [`ToolWindow.getContentManager()`](upsource:///platform/platform-api/src/com/intellij/openapi/wm/ToolWindow.java).

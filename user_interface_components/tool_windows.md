@@ -38,7 +38,6 @@ This procedure ensures that unused tool windows don't cause any overhead in star
 If the tool window of a plugin doesn't need to be displayed for all projects:
 * For versions 2020.1 and later, also implement the `isApplicable(Project)` method.
 * For versions 2019.3 and earlier, also specify the `conditionClass` attribute: the FQN of a class implementing [`Condition<Project>`](upsource:///platform/util-rt/src/com/intellij/openapi/util/Condition.java), which can be the same class as the tool window factory implementation.
-  See [Creation of Plugin](#creation-of-plugin) for more information.
 
 Note the condition is evaluated only once when the project is loaded; to show and hide a tool window dynamically while the user is working with the project use the second method for tool window registration.
               

@@ -64,43 +64,7 @@ The former is done by passing the `canCloseContents` parameter to the `registerT
 The default value is `false`; calling `setClosable(true)` on `ContentManager` content will be ignored unless `canCloseContents` is explicitly set.
 If closing tabs is enabled in general, a plugin can disable closing of specific tabs by calling [`Content.setCloseable(false)`](upsource:///platform/platform-api/src/com/intellij/ui/content/Content.java).
 
-## How to Create a Tool Window?
-
-The IntelliJ Platform provides the `com.intellij.toolWindow` [extension point](/basics/plugin_structure/plugin_extensions.md) to create and configure custom tool windows.
-This extension point is declared using the [`ToolWindowEP`](upsource:///platform/platform-api/src/com/intellij/openapi/wm/ToolWindowEP.java) bean class.
-
-### Creation of Plugin
-
-To create a plugin that displays a custom tool window, perform the following steps:
-
-1. In a plugin project, create a class implementing [`ToolWindowFactory`](upsource:///platform/platform-api/src/com/intellij/openapi/wm/ToolWindowFactory.java).
-2. In this class, override the `createToolWindowContent` method.
-   This method specifies the content for the tool window.
-3. In the plugin configuration file `plugin.xml`, create the `<extensions defaultExtensionNs="com.intellij">...</extensions>` section.
-4. To this section, add the `<toolWindow>` element, and for this element, set the following attributes declared in the `ToolWindowEP` bean class:
-    - `id` (required): specifies the tool window caption.
-    - `anchor` (required): specifies the tool window bar where the tool window button will be displayed.
-      Possible values: "left", "right", or "bottom."
-    - `secondary` (optional): when `true`, the tool window button will be shown on the lower part of the tool window bar.
-      Default value is `false`.
-    - `factoryClass` (required): specifies the class implementing the `ToolWindowFactory` interface (see Step 1).
-    - `icon` (optional): specifies path to the icon that identifies the tool window, if any.
-    - `conditionClass` (optional): specifies a class that implements [`Condition<Project>`](upsource:///platform/util-rt/src/com/intellij/openapi/util/Condition.java).
-      Using this class, define conditions to be met to display tool window button.
-      When returning `false`, the tool window button is not displayed on tool window bar.
-
-To clarify the above procedure, consider the following fragment of the `plugin.xml` file:
-
-```xml
-<extensions defaultExtensionNs="com.intellij">
-    <toolWindow id="My Sample Tool Window"
-                icon="/myPackage/toolWindowIcon.svg"
-                anchor="right"
-                factoryClass="myPackage.MyToolWindowFactory"/>
-</extensions>
-```
-
-### Sample Plugin
+## Sample Plugin
 
 To clarify how to develop plugins that create tool windows, consider the **toolWindow** sample plugin available in the [code_samples](https://github.com/JetBrains/intellij-sdk-code-samples/tree/master/tool_window) directory of the SDK documentation.
 This plugin creates the **Sample Calendar** tool window that displays the system date, time and time zone.

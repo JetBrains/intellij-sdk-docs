@@ -114,8 +114,6 @@ Actions can be included in multiple groups, and thus appear in different places 
 An action must have a unique identifier for each place it appears in the IDE UI.
 See the [Action Declaration Reference](#action-declaration-reference) section for information about how to specify locations in the IDE UI.
 
-<!-- TODO: Reconcile ActionPlaces vs. PlatformActions -->
-
 #### Presentation
 A new [`Presentation`](upsource:///platform/platform-api/src/com/intellij/ide/presentation/Presentation.java) gets created for every place where the action appears.
 Therefore, the same action can have different text or icons when it appears in different places of the user interface.
@@ -176,6 +174,10 @@ To allow using alternative names in search, add one or more `<synonym>` elements
 ```
 
 To provide a localized synonym, specify `key` instead of `text` attribute.
+                             
+#### Disabling Search for Group
+_2020.3_
+To exclude a group from appearing in **Help \| Find Action** results (e.g., _New..._ popup), specify `searchable="false"`.
 
 #### Localizing Actions and Groups
 Action and group localization use resource bundles containing property files named `*Bundle.properties`, each file consisting of `key=value` pairs.

@@ -299,7 +299,7 @@ This, and additional information can also be found by using the [Code Completion
   </action>
   <!-- The <group> element defines an action group. <action>, <group> and
        <separator> elements defined within it are automatically included in the group.
-       The mandatory "id" attribute specifies a unique identifier for the action.
+       The mandatory "id" attribute specifies a unique identifier for the group.
        The optional "class" attribute specifies the FQN of
        the class implementing the group. If not specified,
        com.intellij.openapi.actionSystem.DefaultActionGroup is used.

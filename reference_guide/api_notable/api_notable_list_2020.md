@@ -24,7 +24,10 @@ Generating HTML fragments
 Extensible HTML Lexer/Parser
 : Implement `com.intellij.html.embedding.HtmlEmbeddedContentSupport` and register in `com.intellij.html.embeddedContentSupport` extension point to embed arbitrary tokens into any tag or attribute.   
 Please note that old API from `com.intellij.lexer.BaseHtmlLexer` is no longer working.
-                                     
+
+Action System
+: New features in [Action System](/basics/action_system.md): `<override-text>` works now for `<group>` as well, `<synonym>` provides alternative names when searching for actions, and groups can be excluded from search results.
+
 Welcome Screen customization
 : To provide additional custom tabs, implement `com.intellij.openapi.wm.WelcomeTabFactory` and register in `com.intellij.welcomeTabFactory` extension point.
 

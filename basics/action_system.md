@@ -147,11 +147,11 @@ There are two main ways to register an action: either by listing it in the `<act
 ### Registering Actions in plugin.xml
 Registering actions in `plugin.xml` is demonstrated in the following reference examples, which document all elements and attributes used in the `<actions>` section and describe each element's meaning.
 
-#### Setting the Override-Text Element for an Action
+#### Setting the Override-Text Element
 
-> **TIP** Beginning in 2020.1, an alternate version of an action's menu text can be declared for use depending on where an action appears.
-
-Using the `<override-text>` element introduced in 2020.1 of the IntelliJ Platform, the menu text for an action can be different depending on context: menu location, toolbar, etc.
+Beginning in 2020.1, an alternate version of an action's menu text can be declared for use depending on where an action appears.
+Using the `<override-text>` element, the menu text for an action can be different depending on context: menu location, toolbar, etc.
+This is also available for groups in 2020.3 and later.
 
 In the `action` element reference example (below) with `id` attribute `VssIntegration.GarbageCollection`, the default is to use the menu text "Garbage Collector: Collect _Garbage."
 The `add-to-group` element declares the action is added to the Tools Menu.
@@ -179,17 +179,21 @@ In the case of `action_basics`, only a default localization resource bundle is p
   <resource-bundle>messages.BasicActionsBundle</resource-bundle>
 ```
 
-For Actions, the `key` in property files incorporates the action `id` in this specific structure:
+##### Actions
+For Actions, the key in property files incorporates the action `id` in this specific structure:
 * `action.<action-id>.text=Translated Action Text`
 * `action.<action-id>.description=Translated Action Description`
 
-If `<override-text>` is used for an action `id`, the `key` includes the `<place>` attribute:
+_2020.1 and later_ If `<override-text>` is used for an action `id`, the key includes the `<place>` attribute:
 * `action.<action-id>.<place>.text=Place-dependent Translated Action Text`
-* `action.<action-id>.<place>.description=Place-dependent Translated Action Description`
 
+##### Groups
 For Groups, the `key` in the property files incorporates the group `id` in this specific structure:
 * `group.<group-id>.text=Translated Group Text`
 * `group.<group-id>.description=Translated Group Description`
+
+_2020.3 and later_ If `<override-text>` is used for an group `id`, the key includes the `<place>` attribute:
+* `group.<group-id>.<place>.text=Place-dependent Translated Group Text`
 
 See [Extending DefaultActionGroup](/tutorials/action_system/grouping_action.md#extending-defaultactiongroup) for a tutorial of localizing Actions and Groups.
 

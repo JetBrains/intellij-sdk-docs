@@ -162,6 +162,20 @@ A second `override-text` element uses `place` and `use-text-of-place` attributes
 Additional `override-text` elements could be used to specify other places where the Main Menu text should be used.
 
 An example of using `<override-text>` is demonstrated in the [Creating Actions](/tutorials/action_system/working_with_custom_actions.md#using-override-text-for-an-action) tutorial.
+                             
+#### Setting the Synonym Element
+_2020.3_
+Users can locate actions via their name by invoking **Help \| Find Action**.
+
+To allow using alternative names in search, add one or more `<synonym>` elements inside `<action>` or `<reference>`:
+
+```xml
+  <action id="MyAction" text="My Action Name" ...>
+    <synonym text="Another Search Term"/> 
+  </action>
+```
+
+To provide a localized synonym, specify `key` instead of `text` attribute.
 
 #### Localizing Actions and Groups
 Action and group localization use resource bundles containing property files named `*Bundle.properties`, each file consisting of `key=value` pairs.
@@ -242,6 +256,8 @@ This, and additional information can also be found by using the [Code Completion
          use of alternate menu text in multiple discrete menu groups. -->
     <override-text place="MainMenu" text="Collect _Garbage"/>
     <override-text place="EditorPopup" use-text-of-place="MainMenu"/>
+    <!-- Provide alternative names for searching action by name -->
+    <synonym text="GC"/>
     <!-- The <add-to-group> node specifies that the action should be added
          to an existing group. An action can be added to several groups.
          The mandatory "group-id" attribute specifies the ID of the group

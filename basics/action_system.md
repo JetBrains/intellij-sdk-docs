@@ -7,7 +7,7 @@ title: Action System
 The actions system is an extension point that allows plugins to add their items to IntelliJ Platform-based IDE menus and toolbars.
 For example, one of the action classes is responsible for the **File \| Open File...** menu item and the **Open File** toolbar button.
 
-Actions in the IntelliJ Platform require a [code implementation](#action-implementation) and must be [registered](#registering-actions) with the IntelliJ Platform.
+Actions in the IntelliJ Platform require a [code implementation](#action-implementation) and must be [registered](#registering-actions).
 The action implementation determines the contexts in which an action is available, and its functionality when selected in the UI.
 Registration determines where an action appears in the IDE UI.
 Once implemented and registered, an action receives callbacks from the IntelliJ Platform in response to user gestures.
@@ -96,8 +96,6 @@ For example, the `actionPerformed()` method can modify, remove, or add PSI eleme
 
 The code that executes in the `AnAction.actionPerformed()` method should execute efficiently, but it does not have to meet the same stringent requirements as the `update()` method.
 
-<!-- TODO: does this all happen inside a transaction? Does that ensure the undo step? -->
-
 An example of inspecting PSI elements is demonstrated in the SDK code sample `action_basics` [`PopupDialogAction.actionPerformed()`](https://github.com/JetBrains/intellij-sdk-code-samples/blob/master/action_basics/src/main/java/org/intellij/sdk/action/PopupDialogAction.java) method.
 
 ### Action IDs
@@ -179,7 +177,8 @@ In the case of `action_basics`, only a default localization resource bundle (`/r
   <resource-bundle>messages.BasicActionsBundle</resource-bundle>
 ```
 
-_2020.1 and later_ If necessary, a dedicated resource bundle to use for actions and groups can be defined on `<actions>`:
+_2020.1_
+If necessary, a dedicated resource bundle to use for actions and groups can be defined on `<actions>`:
 
 ```xml
   <actions resource-bundle="messages.MyActionsBundle">
@@ -192,7 +191,8 @@ For Actions, the key in property files incorporates the action `id` in this spec
 * `action.<action-id>.text=Translated Action Text`
 * `action.<action-id>.description=Translated Action Description`
 
-_2020.1 and later_ If `<override-text>` is used for an action `id`, the key includes the `<place>` attribute:
+_2020.1_
+If `<override-text>` is used for an action `id`, the key includes the `<place>` attribute:
 * `action.<action-id>.<place>.text=Place-dependent Translated Action Text`
 
 ##### Groups
@@ -200,7 +200,8 @@ For Groups, the `key` in the property files incorporates the group `id` in this 
 * `group.<group-id>.text=Translated Group Text`
 * `group.<group-id>.description=Translated Group Description`
 
-_2020.3 and later_ If `<override-text>` is used for an group `id`, the key includes the `<place>` attribute:
+_2020.3_ 
+If `<override-text>` is used for an group `id`, the key includes the `<place>` attribute:
 * `group.<group-id>.<place>.text=Place-dependent Translated Group Text`
 
 See [Extending DefaultActionGroup](/tutorials/action_system/grouping_action.md#extending-defaultactiongroup) for a tutorial of localizing Actions and Groups.

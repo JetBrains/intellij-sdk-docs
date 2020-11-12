@@ -166,17 +166,25 @@ Additional `override-text` elements could be used to specify other places where 
 An example of using `<override-text>` is demonstrated in the [Creating Actions](/tutorials/action_system/working_with_custom_actions.md#using-override-text-for-an-action) tutorial.
 
 #### Localizing Actions and Groups
-Action and group localization use resource bundles containing property files, each file consisting of `key=value` pairs.
+Action and group localization use resource bundles containing property files named `*Bundle.properties`, each file consisting of `key=value` pairs.
 The [`action_basics`](https://github.com/JetBrains/intellij-sdk-code-samples/tree/master/action_basics) plugin demonstrates using a resource bundle to localize the group and action entries added to the Editor Popup Menu.
 
-When localizing actions and groups, the `text=""` and `description=""` attributes are not declared in `plugin.xml`.
+When localizing actions and groups, the `text` and `description` attributes are not declared in `plugin.xml`.
 Instead, those attribute values vary depending on the locale and get declared in a resource bundle.
 
 The name and location of the resource bundle must be declared in the `plugin.xml` file.
-In the case of `action_basics`, only a default localization resource bundle is provided:
+In the case of `action_basics`, only a default localization resource bundle (`/resources/messages/BasicActionsBundle.properties`) is provided:
 
 ```xml
   <resource-bundle>messages.BasicActionsBundle</resource-bundle>
+```
+
+_2020.1 and later_ If necessary, a dedicated resource bundle to use for actions and groups can be defined on `<actions>`:
+
+```xml
+  <actions resource-bundle="messages.MyActionsBundle">
+    <!-- action/group defined here will use keys from MyActionsBundle.properties -->
+  </actions>
 ```
 
 ##### Actions

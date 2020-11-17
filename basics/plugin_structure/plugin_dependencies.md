@@ -77,18 +77,25 @@ Continuing with the example from [Section 2](#2-project-setup) above, the depend
 
 ## Optional Plugin Dependencies
 A project can also specify an optional plugin dependency.
-In this case, the plugin will load even if the plugin depends on is not installed or enabled, but part of the plugin's functionality will not be available.
-In order to do that, add `optional="true" config-file="otherconfig.xml"` to the `<depends>` tag.
+In this case, the plugin will load even if the plugin it depends on is not installed or enabled, but part of the plugin's functionality will not be available.
 
-For example, if a plugin project adds additional highlighting for Java and Kotlin files, use the following setup.
-The main `plugin.xml` will define an annotator for Java and specify an optional dependency on the Kotlin plugin:
+Declare additional `optional="true"` and `config-file` attribute pointing to optional plugin descriptor file:
+
+```xml
+  <depends optional="true" config-file="myPluginId-optionalPluginName.xml">dependency.plugin.id</depends> 
+```
+                                                                         
+> **NOTE** Additional plugin descriptor files must follow the naming pattern `myPluginId-$NAME$.xml` resulting in unique filenames to prevent problems with classloaders in tests ([Details](https://youtrack.jetbrains.com/issue/IDEA-205964)).
+
+For example, if a plugin adds additional highlighting for Java and Kotlin files, use the following setup.
+The main `plugin.xml` will define an annotator for Java and specify an optional dependency on the Kotlin plugin (`org.jetbrains.kotlin`):
 
 _plugin.xml_
 
 ```xml
 <idea-plugin>
    ...
-   <depends optional="true" config-file="withKotlin.xml">org.jetbrains.kotlin</depends>
+   <depends optional="true" config-file="myPluginId-withKotlin.xml">org.jetbrains.kotlin</depends>
 
    <extensions defaultExtensionNs="com.intellij">
       <annotator language="JAVA" implementationClass="com.example.MyJavaAnnotator"/>
@@ -96,10 +103,10 @@ _plugin.xml_
 </idea-plugin>
 ```
 
-Then create a file called `withKotlin.xml`, in the same directory as the main `plugin.xml` file.
+Then create a file called `myPluginId-withKotlin.xml`, in the same directory as the main `plugin.xml` file.
 In that file, define an annotator for Kotlin:
 
-_withKotlin.xml_
+_myPluginId-withKotlin.xml_
 
 ```xml
 <idea-plugin>

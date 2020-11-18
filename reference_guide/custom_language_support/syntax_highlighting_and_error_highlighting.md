@@ -80,5 +80,8 @@ In previous versions, call `AnnotationHolder.createInfoAnnotation()` with an emp
 ## External Tool
 
 Finally, if the custom language employs external tools for validating files in the language (for example, uses the Xerces library for XML schema validation), it can provide an implementation of the [`ExternalAnnotator`](upsource:///platform/analysis-api/src/com/intellij/lang/annotation/ExternalAnnotator.java) interface and register it in `com.intellij.externalAnnotator` extension point.
+
 The [`ExternalAnnotator`](upsource:///platform/analysis-api/src/com/intellij/lang/annotation/ExternalAnnotator.java) highlighting has the lowest priority and is invoked only after all other background processing has completed.
 It uses the same [`AnnotationHolder`](upsource:///platform/analysis-api/src/com/intellij/lang/annotation/AnnotationHolder.java) interface for converting the output of the external tool into editor highlighting.
+                              
+To skip running specific `ExternalAnnotator` for given file, register [`ExternalAnnotatorsFilter`](upsource:///platform/analysis-api/src/com/intellij/lang/ExternalAnnotatorsFilter.java) extension in `com.intellij.daemon.externalAnnotatorsFilter` extension point.

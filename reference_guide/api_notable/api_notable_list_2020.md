@@ -34,6 +34,9 @@ Welcome Screen customization
 File Type association with the IDE
 : To control file type association with the IDE in the operating system, implement `com.intellij.openapi.fileTypes.OSFileIdeAssociation`. 
 
+Reader Mode customization
+: Implement `com.intellij.codeInsight.actions.ReaderModeProvider` and register in `com.intellij.readerModeProvider` extension point to apply custom settings for files rendered in reader mode.
+
 ### Notable Changes in JavaScript Plugin 2020.3
 
 Published Javascript Testframework

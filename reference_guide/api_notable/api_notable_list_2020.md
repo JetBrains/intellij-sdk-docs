@@ -30,6 +30,9 @@ Action System
 
 Welcome Screen customization
 : To provide additional custom tabs, implement `com.intellij.openapi.wm.WelcomeTabFactory` and register in `com.intellij.welcomeTabFactory` extension point.
+                                      
+File Type association with the IDE
+: To control file type association with the IDE in the operating system, implement `com.intellij.openapi.fileTypes.OSFileIdeAssociation`. 
 
 ### Notable Changes in JavaScript Plugin 2020.3
 

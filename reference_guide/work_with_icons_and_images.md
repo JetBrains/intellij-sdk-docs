@@ -9,7 +9,7 @@ Plugins need icons mostly for actions, custom components renderers, tool windows
 > **NOTE** Plugin Icons, which represent a plugin itself, have different requirements than icons and images used within a plugin.
 For more information see the [Plugin Icon](/basics/plugin_structure/plugin_icon_file.md) page.
 
-> **TIP** Plugins should reuse existing platform icons whenever possible, see [`AllIcons`](upsource:///platform/util/src/com/intellij/icons/AllIcons.java).
+> **TIP** Plugins should reuse existing platform icons whenever possible, see [Icons list](https://jetbrains.design/intellij/resources/icons_list/) and [`AllIcons`](upsource:///platform/util/src/com/intellij/icons/AllIcons.java).
 > A detailed [design guideline](https://jetbrains.design/intellij/principles/icons/) is available for creating custom icons.
 
 ## How to organize and how to use icons?

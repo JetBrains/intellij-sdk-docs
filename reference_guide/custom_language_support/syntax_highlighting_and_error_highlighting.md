@@ -44,6 +44,8 @@ When the file is changed, the annotator is called incrementally to process only 
 
 To highlight a region of text as a warning or error, the annotator calls `createErrorAnnotation()` or `createWarningAnnotation()` on the [`AnnotationHolder`](upsource:///platform/analysis-api/src/com/intellij/lang/annotation/AnnotationHolder.java) object passed to it, and optionally calls `registerFix()` on the returned [`Annotation`](upsource:///platform/analysis-api/src/com/intellij/lang/annotation/Annotation.java) object to add a quick fix for the error or warning.
 To apply additional syntax highlighting, the annotator can call [`AnnotationHolder.createInfoAnnotation()`](upsource:///platform/analysis-api/src/com/intellij/lang/annotation/AnnotationHolder.java) with an empty message and then call [`Annotation.setTextAttributes()`](upsource:///platform/analysis-api/src/com/intellij/lang/annotation/Annotation.java) to specify the text attributes key for the highlighting.
+                                      
+See [Inspections](https://jetbrains.design/intellij/text/inspections/) topic in _IntelliJ Platform UI Guidelines_ on how to write message texts for highlighting/quick fixes.
 
 > **NOTE** See also [Code Inspections](code_inspections_and_intentions.md) which offer a more fine-grained control and some additional features.
 

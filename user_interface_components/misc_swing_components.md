@@ -31,4 +31,7 @@ The [`JBTabs`](upsource:///platform/platform-api/src/com/intellij/ui/tabs/JBTabs
 It has a significantly different look & feel compared to the standard Swing tabs, and looks less native on the macOS platform, so it's up to the developer to choose which tab control would be more appropriate.
 
 ### Toolbars
-See [Building UI from Actions](/basics/action_system.md#building-ui-from-actions) on how to create `AnAction`-based toolbars.
+
+See [Toolbar](https://jetbrains.design/intellij/controls/toolbar/) in _IntelliJ Platform UI Guidelines_ for an overview.
+
+[Building UI from Actions](/basics/action_system.md#building-ui-from-actions) covers creating `AnAction`-based toolbars.

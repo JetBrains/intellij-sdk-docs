@@ -10,6 +10,8 @@ In addition, the comparing_references_inspection code sample demonstrates implem
 
 You can also create custom inspections through the IntelliJ IDEA user interface.
 See [Code Inspection](https://www.jetbrains.com/idea/webhelp/code-inspection.html) and [Creating Custom Inspections](https://www.jetbrains.com/idea/help/creating-custom-inspections.html) for more information.
+                     
+See [Inspections](https://jetbrains.design/intellij/text/inspections/) topic in _IntelliJ Platform UI Guidelines_ on naming, writing description, and message texts for inspections.
 
 ## Creating an Inspection Plugin
 

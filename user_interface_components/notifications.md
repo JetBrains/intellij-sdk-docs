@@ -5,6 +5,8 @@ title: Notifications
 
 One of the leading design principles is avoiding the use of modal message boxes for notifying the user about errors and other situations that may warrant the user's attention. As a replacement, the *IntelliJ Platform* provides multiple non-modal notification UI options.
 
+For an overview, refer to [Notifications](https://jetbrains.design/intellij/controls/notifications/) in _IntelliJ Platform UI Guidelines_.
+
 ### Dialogs
 
 When working in dialog, instead of checking the validity of the input when the _OK_ button is pressed and notifying the user about invalid data with a modal dialog, the recommended approach is to use [`DialogWrapper.doValidate()`](upsource:///platform/platform-api/src/com/intellij/openapi/ui/DialogWrapper.java), which was described previously.
@@ -22,6 +24,8 @@ It has two main advantages:
 
 * The user can control the way each notification type is displayed under `Settings | Appearance & Behavior | Notifications`
 * All displayed notifications are gathered in the Event Log tool window and can be reviewed later
+         
+For UI reference, see [Balloon](https://jetbrains.design/intellij/controls/balloon/) in _IntelliJ Platform UI Guidelines_.
 
 The specific method used to display a notification is [`Notifications.Bus.notify()`](upsource:///platform/platform-api/src/com/intellij/notification/Notifications.java). If the current Project is known, please use overload with `Project` parameter, so the notification is shown in its associated frame.
 

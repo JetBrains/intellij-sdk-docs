@@ -38,13 +38,13 @@ class SimpleCreatePropertyQuickFix extends BaseIntentionAction {
   @NotNull
   @Override
   public String getText() {
-    return "Create property";
+    return "Create property '" + key + "'";
   }
 
   @NotNull
   @Override
   public String getFamilyName() {
-    return "Simple properties";
+    return "Create property";
   }
 
   @Override

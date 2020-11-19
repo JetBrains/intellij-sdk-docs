@@ -10,5 +10,7 @@ The `getQuickNavigateInfo()` method returns the text to be displayed when the us
 
 When generating complete documentation via `generateDoc()`, use [`DocumentationMarkup`](upsource:///platform/analysis-api/src/com/intellij/lang/documentation/DocumentationMarkup.java) to layout contents (see JavaDoc for details).
 
+Additional custom actions can be added to documentation inlays and documentation popup via `com.intellij.codeInsight.documentation.DocumentationActionProvider` registered in `com.intellij.documentationActionProvider` extension point. (2020.3)
+
 **Example**:
 [`DocumentationProvider`](upsource:///plugins/properties/src/com/intellij/lang/properties/PropertiesDocumentationProvider.java) for [Properties language plugin](upsource:///plugins/properties/)

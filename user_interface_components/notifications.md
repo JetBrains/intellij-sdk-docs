@@ -76,7 +76,7 @@ public class MyNotifier {
           new NotificationGroup("Custom Notification Group", NotificationDisplayType.BALLOON, true);
 
   public static void notifyError(@Nullable Project project, String content) {
-    NOTIFICATION_GROUP.createNotification(content, NotificationType.ERROR);
+    NOTIFICATION_GROUP.createNotification(content, NotificationType.ERROR)
                       .notify(project);
   }
 

@@ -83,6 +83,9 @@ Please see [Incompatible API Changes](/reference_guide/api_changes_list.md) on h
 
 `com.intellij.spellchecker.tokenizer.SpellcheckingStrategy.getDefaultRegularFixes(boolean, String, PsiElement)` method removed
 : Replaced with `SpellcheckingStrategy.getDefaultRegularFixes(boolean, String, PsiElement, TextRange)`.
+                           
+`com.intellij.psi.stubs.IStubElementType.createStub` method parameter type changed from `StubElement` to ``StubElement<?>``
+: This may break source-compatibility with inheritors written in Kotlin.
 
 ### Changes in Java Plugin 2019.3
 

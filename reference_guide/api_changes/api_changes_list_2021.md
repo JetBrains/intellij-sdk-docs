@@ -66,6 +66,6 @@ Please see [Incompatible API Changes](/reference_guide/api_changes_list.md) on h
                               
 ### Changes in IntelliJ Platform 2021.1
 
-com.intellij.util.io.PersistentHashMap.isCorrupted() method removed
-: the storage checks for corrupted automatically, there is no need of any explicit additional checks. This method was indended for tests only
+`com.intellij.util.io.PersistentHashMap.isCorrupted` method removed
+: The storage checks for corruption automatically, there is no need of any explicit additional checks.
 

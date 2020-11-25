@@ -43,21 +43,18 @@ See [Project Level Service](#project-service-sample) below for a sample.
 
 ## Declaring a Service
 
-Distinct extension points are provided for each type:
+To register a non-[Light Service](#light-services), distinct extension points are provided for each type:
 
 * `com.intellij.applicationService` - application level service
 * `com.intellij.projectService` - project level service
 * `com.intellij.moduleService` - module level service (not recommended, see Note above)
+                                  
+To expose service API, create separate class for `serviceInterface` and extend it in corresponding class registered in `serviceImplementation`.
+If `serviceInterface` isn't specified, it's supposed to have the same value as `serviceImplementation`.
 
-**To declare a service:**
+To provide custom implementation for test/headless environment, specify `testServiceImplementation`/`headlessImplementation` additionally.
 
-1. In your project, open the context menu of the destination package and click *New* (or press <kbd>Alt</kbd>+<kbd>Insert</kbd>).
-2. In the *New* menu, choose *Plugin DevKit* and click *Application Service*, *Project Service* or *Module Service* (not recommended, see Note above) depending on the type of service you need to use.
-3. In the dialog box that opens, you can specify service interface and implementation, or just a service class if you uncheck *Separate interface from implementation* checkbox.
-
-The IDE will generate a new Java interface and class (or just a class if you unchecked *Separate interface from implementation* checkbox) and register the new service in the `plugin.xml` file.
-
-To clarify the service declaration procedure, consider the following fragment of the `plugin.xml` file:
+_plugin.xml_
 
 ```xml
 <extensions defaultExtensionNs="com.intellij">
@@ -70,10 +67,6 @@ To clarify the service declaration procedure, consider the following fragment of
                   serviceImplementation="mypackage.MyProjectServiceImpl" />
 </extensions>
 ```
-
-If `serviceInterface` isn't specified, it's supposed to have the same value as `serviceImplementation`.
-
-To provide custom implementation for test/headless environment, specify `testServiceImplementation`/`headlessImplementation` additionally.
 
 ## Retrieving a Service
 
@@ -97,7 +90,7 @@ val projectService = project.service<MyProjectService>()
 ```
 
 ## Project Service Sample
-This minimal sample shows [light](#light-services) `ProjectService` interacting with another project level service `AnotherService` (not shown here).
+This minimal sample shows [Light Service](#light-services) `ProjectService` interacting with another project level service `AnotherService` (not shown here).
 
 _ProjectService.java_
 

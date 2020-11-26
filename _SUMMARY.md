@@ -270,6 +270,7 @@
 ## Appendix I - Resources
 
 * [Glossary](appendix/glossary.md)
+* [Extension Point List](appendix/resources/extension_point_list.md)
 * [Useful Links](appendix/resources/useful_links.md)
 * [Marketing](appendix/resources/marketing.md)
 * [Consulting](appendix/resources/consulting.md)

@@ -2,7 +2,7 @@
 
 plugins {
   id 'java'
-  id 'org.jetbrains.intellij' version '0.6.4'
+  id 'org.jetbrains.intellij' version '0.6.5'
 }
 
 group 'org.intellij.sdk'
@@ -14,20 +14,20 @@ repositories {
   mavenCentral()
 }
 
+dependencies {
+  testImplementation group: 'junit', name: 'junit', version: '4.12'
+}
+
 test {
   // Set idea.home.path to the absolute path to the intellij-community source
   // on your local machine.
   systemProperty "idea.home.path", "/Users/jhake/Documents/source/comm"
 }
 
-dependencies {
-  testImplementation group: 'junit', name: 'junit', version: '4.12'
-}
-
 // See https://github.com/JetBrains/gradle-intellij-plugin/
 intellij {
   version = '2020.2'
-  plugins = ['java']
+  plugins = ['com.intellij.java']
 }
 
 buildSearchableOptions {

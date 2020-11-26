@@ -93,14 +93,9 @@ Attributes with `Enum` type support code insight with _lowerSnakeCased_ notation
 
 ## How to get the extension points list?
 
-All available extension points for the specified namespace can be listed using auto-completion inside the `<extensions>` block.
+[Extension Point List](/appendix/resources/extension_point_list.md) contains all available in *IntelliJ Platform* and from bundled plugins in IntelliJ IDEA.
 
-To get a list of extension points available in the *IntelliJ Platform* core, consult the `<extensionPoints>` section of the following XML configuration files:
+Alternatively (or when using 3rd party extension points), all available extension points for the specified namespace can be listed using auto-completion inside the `<extensions>` block.
+Use **View \| Quick Documentation** in the lookup list to access more information about the extension point and implementation (if applicable).
 
-- [`LangExtensionPoints.xml`](upsource:///platform/platform-resources/src/META-INF/LangExtensionPoints.xml)
-- [`CompletionExtensionPoints.xml`](upsource:///platform/platform-resources/src/META-INF/CompletionExtensionPoints.xml)
-- [`RefactoringExtensionPoints.xml`](upsource:///platform/platform-resources/src/META-INF/RefactoringExtensionPoints.xml)
-- [`FormatterExtensionPoints.xml`](upsource:///platform/platform-resources/src/META-INF/FormatterExtensionPoints.xml)
-- [`EditorExtensionPoints.xml`](upsource:///platform/platform-resources/src/META-INF/EditorExtensionPoints.xml)
-- [`PlatformExtensionPoints.xml`](upsource:///platform/platform-resources/src/META-INF/PlatformExtensionPoints.xml)
-- [`VcsExtensionPoints.xml`](upsource:///platform/vcs-impl/resources/META-INF/VcsExtensionPoints.xml)
+

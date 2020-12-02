@@ -9,7 +9,12 @@ Follow [JBPlatform](https://twitter.com/JBPlatform/) on Twitter and visit [JetBr
 See [Recently Updated](/recently_updated.md) ([RSS](https://github.com/JetBrains/intellij-sdk-docs/commits/master.atom)) for a detailed changelog.
 
 ## 2020
-             
+                   
+### November
+
+Extension Point List
+: All EPs [available in IJ Platform and Android](/appendix/resources/extension_point_list.md) can now be browsed conveniently.
+
 ### August
 
 README added to Code Samples

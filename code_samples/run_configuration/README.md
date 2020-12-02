@@ -8,9 +8,9 @@ In this example, a new *Demo* configuration is added together with `Configuratio
 
 ### Extension Points
 
-| Name                             | Implementation                                            | Extension Point Class                      |
-| -------------------------------- | --------------------------------------------------------- | ------------------------------------------ |
-| `com.intellij.configurationType` | [DemoRunConfigurationType][file:DemoRunConfigurationType] | [ConfigurationType][sdk:ConfigurationType] |
+| Name                             | Implementation                                            | Extension Point Class |
+| -------------------------------- | --------------------------------------------------------- | --------------------- |
+| `com.intellij.configurationType` | [DemoRunConfigurationType][file:DemoRunConfigurationType] | `ConfigurationType`   |
 
 *Reference: [Plugin Extension Points in IntelliJ SDK Docs][docs:ep]*
 
@@ -20,5 +20,3 @@ In this example, a new *Demo* configuration is added together with `Configuratio
 [docs:ep]: https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_extensions.html
 
 [file:DemoRunConfigurationType]: ./src/main/java/org/jetbrains/sdk/runConfiguration/DemoRunConfigurationType.java
-
-[sdk:ConfigurationType]: upsource:///platform/lang-api/src/com/intellij/execution/configurations/ConfigurationType.java

@@ -11,9 +11,9 @@ Otherwise, an element is not included in the results list, so only directories a
 
 ### Extension Points
 
-| Name                                 | Implementation                                                      | Extension Point Class                              |
-| ------------------------------------ | ------------------------------------------------------------------- | -------------------------------------------------- |
-| `com.intellij.treeStructureProvider` | [TextOnlyTreeStructureProvider][file:TextOnlyTreeStructureProvider] | [TreeStructureProvider][sdk:TreeStructureProvider] |
+| Name                                 | Implementation                                                      | Extension Point Class   |
+| ------------------------------------ | ------------------------------------------------------------------- | ----------------------- |
+| `com.intellij.treeStructureProvider` | [TextOnlyTreeStructureProvider][file:TextOnlyTreeStructureProvider] | `TreeStructureProvider` |
 
 *Reference: [Plugin Extension Points in IntelliJ SDK Docs][docs:ep]*
 
@@ -23,5 +23,3 @@ Otherwise, an element is not included in the results list, so only directories a
 [docs:ep]: https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_extensions.html
 
 [file:TextOnlyTreeStructureProvider]: ./src/main/java/org/intellij/sdk/treeStructureProvider/TextOnlyTreeStructureProvider.java
-
-[sdk:TreeStructureProvider]: upsource:///platform/editor-ui-api/src/com/intellij/ide/projectView/TreeStructureProvider.java

@@ -13,13 +13,13 @@ Within the implemented actions, you will be able to:
 
 ### Actions
 
-| ID                                | Implementation                                                    | Extension Point Class    |
-| --------------------------------- | ----------------------------------------------------------------- | ------------------------ |
-| `ProjectModel.SourceRoots`        | [ShowSourceRootsActions][file:ShowSourceRootsActions]             | [AnAction][sdk:AnAction] |
-| `ProjectModel.ProjectSdk`         | [ProjectSdkAction][file:ProjectSdkAction]                         | [AnAction][sdk:AnAction] |
-| `ProjectModel.ProjectFileIndex`   | [ProjectFileIndexSampleAction][file:ProjectFileIndexSampleAction] | [AnAction][sdk:AnAction] |
-| `ProjectModel.ModificationAction` | [ModificationAction][file:ModificationAction]                     | [AnAction][sdk:AnAction] |
-| `ProjectModel.LibrariesAction`    | [LibrariesAction][file:LibrariesAction]                           | [AnAction][sdk:AnAction] |
+| ID                                | Implementation                                                    | Base Action Class |
+| --------------------------------- | ----------------------------------------------------------------- | ----------------- |
+| `ProjectModel.SourceRoots`        | [ShowSourceRootsActions][file:ShowSourceRootsActions]             | `AnAction`        |
+| `ProjectModel.ProjectSdk`         | [ProjectSdkAction][file:ProjectSdkAction]                         | `AnAction`        |
+| `ProjectModel.ProjectFileIndex`   | [ProjectFileIndexSampleAction][file:ProjectFileIndexSampleAction] | `AnAction`        |
+| `ProjectModel.ModificationAction` | [ModificationAction][file:ModificationAction]                     | `AnAction`        |
+| `ProjectModel.LibrariesAction`    | [LibrariesAction][file:LibrariesAction]                           | `AnAction`        |
 
 *Reference: [Action System in IntelliJ SDK Docs][docs:actions]*
 
@@ -33,5 +33,3 @@ Within the implemented actions, you will be able to:
 [file:ProjectFileIndexSampleAction]: ./src/main/java/org/intellij/sdk/project/model/ProjectFileIndexSampleAction.java
 [file:ModificationAction]: ./src/main/java/org/intellij/sdk/project/model/ModificationAction.java
 [file:LibrariesAction]: ./src/main/java/org/intellij/sdk/project/model/LibrariesAction.java
-
-[sdk:AnAction]: upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java

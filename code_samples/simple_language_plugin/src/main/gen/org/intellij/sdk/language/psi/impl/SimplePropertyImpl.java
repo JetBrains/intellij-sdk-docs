@@ -21,6 +21,7 @@ public class SimplePropertyImpl extends SimpleNamedElementImpl implements Simple
     visitor.visitProperty(this);
   }
 
+  @Override
   public void accept(@NotNull PsiElementVisitor visitor) {
     if (visitor instanceof SimpleVisitor) accept((SimpleVisitor)visitor);
     else super.accept(visitor);

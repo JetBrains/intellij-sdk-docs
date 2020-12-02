@@ -87,7 +87,7 @@ Please see [Incompatible API Changes](/reference_guide/api_changes_list.md) on h
 `com.intellij.psi.stubs.IStubElementType.createStub` method parameter type changed from `StubElement` to ``StubElement<?>``
 : This may break source-compatibility with inheritors written in Kotlin.
 
-### Changes in Java Plugin 2019.3
+### Changes in Java Plugin 2020.3
 
 The PSI structure of multi-dimensional arrays in Java source files changed (see `com.intellij.psi.PsiTypeElement`)
 : Now the children are flattened: brackets for all the dimensions are direct children of the `PsiTypeElement` that represent the multi-dimensional array. This change doesn't break source or binary compatibility but may produce behavioral changes in the code that traverses the tree of Java source files.

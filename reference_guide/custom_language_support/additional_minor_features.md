@@ -91,7 +91,7 @@ EP: `com.intellij.spellchecker.support`
 ### Reference Injection
 EP: `com.intellij.referenceInjector`
 
-[`ReferenceInjector`](upsource:///platform/lang-api/src/com/intellij/psi/injection/ReferenceInjector.java) allows users to inject pre-defined references (e.g., "Encoding", "File Reference") into `PsiLanguageInjectionHost` elements (IntelliLang plugin required).
+[`ReferenceInjector`](upsource:///platform/analysis-api/src/com/intellij/psi/injection/ReferenceInjector.java) allows users to inject pre-defined references (e.g., "Encoding", "File Reference") into `PsiLanguageInjectionHost` elements (IntelliLang plugin required).
 
 
 ### Color Preview/Chooser

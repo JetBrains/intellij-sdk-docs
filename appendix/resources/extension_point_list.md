@@ -13,7 +13,7 @@ title: Extension Point List
   }
 </style>
 
-1148 Extension Points
+1184 Extension Points
 
 ### Note Legend
 
@@ -32,8 +32,8 @@ title: Extension Point List
 |  | com.intellij.codeInsight.signatureHelp | [`SignatureHelpProvider`](upsource:///platform/analysis-api/src/com/intellij/codeInsight/signatureHelp/SignatureHelpProvider.java) | 
 |  | com.intellij.codeInspection.InspectionExtension | [`InspectionExtensionsFactory`](upsource:///platform/analysis-api/src/com/intellij/codeInspection/lang/InspectionExtensionsFactory.java) | 
 |  | com.intellij.completion.contributor | [`CompletionContributor`](upsource:///platform/analysis-api/src/com/intellij/codeInsight/completion/CompletionContributor.java) | 
-|  | com.intellij.completion.ignoringDumbnessAllowed | `n/a` | 
 |  | com.intellij.completion.skip | [`CompletionPreselectSkipper`](upsource:///platform/analysis-api/src/com/intellij/codeInsight/completion/CompletionPreselectSkipper.java) | 
+|  | com.intellij.documentationProvider | [`DocumentationProvider`](upsource:///platform/analysis-api/src/com/intellij/lang/documentation/DocumentationProvider.java) | 
 |  ![Project-Level](https://img.shields.io/badge/-Project--Level-yellow) | com.intellij.fileContextProvider | [`FileContextProvider`](upsource:///platform/core-api/src/com/intellij/psi/FileContextProvider.java) | 
 |  | com.intellij.fileLookupInfoProvider | [`FileLookupInfoProvider`](upsource:///platform/analysis-api/src/com/intellij/psi/file/FileLookupInfoProvider.java) | 
 |  | com.intellij.globalInspection | [`GlobalInspectionTool`](upsource:///platform/analysis-api/src/com/intellij/codeInspection/GlobalInspectionTool.java) | 
@@ -45,6 +45,8 @@ title: Extension Point List
 |  | com.intellij.lang.documentationProvider | [`DocumentationProvider`](upsource:///platform/analysis-api/src/com/intellij/lang/documentation/DocumentationProvider.java) | 
 |  | com.intellij.lang.inspectionSuppressor | [`InspectionSuppressor`](upsource:///platform/analysis-api/src/com/intellij/codeInspection/InspectionSuppressor.java) | 
 |  | com.intellij.languageInjector | [`LanguageInjector`](upsource:///platform/analysis-api/src/com/intellij/psi/LanguageInjector.java) | 
+|  | com.intellij.liveTemplateContext | [`TemplateContextType`](upsource:///platform/analysis-api/src/com/intellij/codeInsight/template/TemplateContextType.java) | 
+|  | com.intellij.liveTemplateMacro | [`Macro`](upsource:///platform/analysis-api/src/com/intellij/codeInsight/template/Macro.java) | 
 |  | com.intellij.localInspection | [`LocalInspectionTool`](upsource:///platform/analysis-api/src/com/intellij/codeInspection/LocalInspectionTool.java) | 
 |  | com.intellij.weigher | [`Weigher`](upsource:///platform/analysis-api/src/com/intellij/psi/Weigher.java) | 
 
@@ -54,6 +56,8 @@ title: Extension Point List
 |---|---|---|
 |  ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | com.intellij.completionData | [~~`CompletionData`~~](upsource:///platform/analysis-impl/src/com/intellij/codeInsight/completion/CompletionData.java) | 
 |  | com.intellij.elementLookupRenderer | [~~`ElementLookupRenderer`~~](upsource:///platform/analysis-impl/src/com/intellij/codeInsight/lookup/impl/ElementLookupRenderer.java) | 
+|  | com.intellij.liveTemplateOptionalProcessor | [`TemplateOptionalProcessor`](upsource:///platform/analysis-impl/src/com/intellij/codeInsight/template/impl/TemplateOptionalProcessor.java) | 
+|  | com.intellij.liveTemplatePreprocessor | [`TemplatePreprocessor`](upsource:///platform/analysis-impl/src/com/intellij/codeInsight/template/impl/TemplatePreprocessor.java) | 
 |  | com.intellij.outerLanguageRangePatcher | [`OuterLanguageRangePatcher`](upsource:///platform/analysis-impl/src/com/intellij/psi/templateLanguages/TemplateDataElementType.java) | 
 |  | com.intellij.psi.fileReferenceHelper | [`FileReferenceHelper`](upsource:///platform/analysis-impl/src/com/intellij/psi/impl/source/resolve/reference/impl/providers/FileReferenceHelper.java) | 
 |  | com.intellij.resolveScopeEnlarger | [`ResolveScopeEnlarger`](upsource:///platform/analysis-impl/src/com/intellij/psi/ResolveScopeEnlarger.java) | 
@@ -109,7 +113,7 @@ title: Extension Point List
 |  ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | com.android.run.androidLaunchTaskContributor | [`AndroidLaunchTaskContributor`](upsource:///android/android/src/com/android/tools/idea/run/AndroidLaunchTaskContributor.java) | 
 |  ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | com.android.run.deployTargetProvider | [`DeployTargetProvider`](upsource:///android/android/src/com/android/tools/idea/run/editor/DeployTargetProvider.java) | 
 |  ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | com.android.run.deviceNameRenderer | [`DeviceNameRendererEx`](upsource:///android/android/src/com/android/tools/idea/ddms/DeviceNameRendererEx.java) | 
-|  ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | com.android.tools.gradleModelProvider | [`GradleModelProvider`](upsource:///android/android/src/com/android/tools/idea/gradle/dsl/api/GradleModelProvider.java) | 
+|  ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | com.android.tools.gradleModelProvider | [`GradleModelProvider`](upsource:///plugins/gradle-dsl/src/com/android/tools/idea/gradle/dsl/api/GradleModelProvider.java) | 
 |  ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | com.android.tools.idea.databinding.layoutBindingSupport | [`LayoutBindingSupport`](upsource:///android/android/src/com/android/tools/idea/databinding/LayoutBindingSupport.kt) | 
 |  ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | com.android.tools.idea.explorer.fileOpener | `n/a` | 
 |  ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | com.android.tools.idea.lang.databinding.dataBindingCompletionSupport | [`DataBindingCompletionSupport`](upsource:///android/android/src/com/android/tools/idea/lang/databinding/DataBindingCompletionSupport.kt) | 
@@ -199,13 +203,14 @@ title: Extension Point List
 | Note | Extension Point | Implementation |
 |---|---|---|
 |  | com.intellij.properties.alphaUnsortedInspectionSuppressor | [`AlphaUnsortedPropertiesFileInspectionSuppressor`](upsource:///plugins/properties/properties-psi-impl/src/com/intellij/codeInspection/unsorted/AlphaUnsortedPropertiesFileInspectionSuppressor.java) | 
+|  | com.intellij.properties.duplicatePropertyKeyAnnotationSuppressor | [`DuplicatePropertyKeyAnnotationSuppressor`](upsource:///plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/DuplicatePropertyKeyAnnotationSuppressor.java) | 
 |  | com.intellij.properties.implicitPropertyUsageProvider | [`ImplicitPropertyUsageProvider`](upsource:///plugins/properties/properties-psi-impl/src/com/intellij/codeInspection/unused/ImplicitPropertyUsageProvider.java) | 
 
 ## [com.intellij.stats.completion](upsource:///plugins/stats-collector/resources/META-INF/plugin.xml)
 
 | Note | Extension Point | Implementation |
 |---|---|---|
-|  | com.intellij.stats.completion.policy | [`CompletionStatsPolicy`](upsource:///plugins/stats-collector/src/com/intellij/stats/CompletionStatsPolicy.kt) | 
+|  | com.intellij.stats.completion.policy | [`CompletionStatsPolicy`](upsource:///plugins/stats-collector/src/com/intellij/stats/completion/CompletionStatsPolicy.kt) | 
 
 ## [com.intellij.tasks](upsource:///plugins/tasks/tasks-core/resources/META-INF/plugin.xml)
 
@@ -310,7 +315,7 @@ title: Extension Point List
 
 | Note | Extension Point | Implementation |
 |---|---|---|
-|  ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | com.android.tools.idea.customview.preview.customViewEditorNotificationProvider | [`Provider`](upsource:///platform/platform-api/src/com/intellij/ui/EditorNotifications.java) | 
+|  ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | com.android.tools.idea.customview.<br>preview.customViewEditorNotificationProvider | [`Provider`](upsource:///platform/platform-api/src/com/intellij/ui/EditorNotifications.java) | 
 
 ## [designer.xml](upsource:///android/designer/src/META-INF/designer.xml)
 
@@ -419,6 +424,7 @@ title: Extension Point List
 |  | com.intellij.externalSystemOutputParserProvider | [`ExternalSystemOutputParserProvider`](upsource:///platform/external-system-impl/src/com/intellij/openapi/externalSystem/service/execution/ExternalSystemOutputParserProvider.java) | 
 |  | com.intellij.externalSystemSettingsListener | [`ExternalSystemSettingsListenerEx`](upsource:///platform/external-system-api/src/com/intellij/openapi/externalSystem/settings/ExternalSystemSettingsListenerEx.kt) | 
 |  | com.intellij.externalSystemTaskNotificationListener | [`ExternalSystemTaskNotificationListener`](upsource:///platform/external-system-api/src/com/intellij/openapi/externalSystem/model/task/ExternalSystemTaskNotificationListener.java) | 
+|  ![Experimental API](https://img.shields.io/badge/-Experimental_API-red) | com.intellij.externalSystemUnlinkedProjectAware | [`ExternalSystemUnlinkedProjectAware`](upsource:///platform/external-system-api/src/com/intellij/openapi/externalSystem/autolink/ExternalSystemUnlinkedProjectAware.kt) | 
 |  | com.intellij.externalSystemViewContributor | [`ExternalSystemViewContributor`](upsource:///platform/external-system-impl/src/com/intellij/openapi/externalSystem/view/ExternalSystemViewContributor.java) | 
 |  ![Experimental API](https://img.shields.io/badge/-Experimental_API-red) | com.intellij.externalSystemWorkspaceContributor | [`Contributor`](upsource:///platform/external-system-impl/src/com/intellij/openapi/externalSystem/service/project/ExternalProjectsWorkspaceImpl.java) | 
 
@@ -426,25 +432,25 @@ title: Extension Point List
 
 | Note | Extension Point | Implementation |
 |---|---|---|
-|  ![Experimental API](https://img.shields.io/badge/-Experimental_API-red) | com.intellij.codeStyleSettingsModifier | [`CodeStyleSettingsModifier`](upsource:///platform/lang-api/src/com/intellij/psi/codeStyle/modifier/CodeStyleSettingsModifier.java) | 
-|  | com.intellij.disabledIndentRangesProvider | [`DisabledIndentRangesProvider`](upsource:///platform/lang-impl/src/com/intellij/psi/impl/source/DisabledIndentRangesProvider.java) | 
-|  ![Experimental API](https://img.shields.io/badge/-Experimental_API-red) | com.intellij.externalFormatProcessor | [`ExternalFormatProcessor`](upsource:///platform/lang-impl/src/com/intellij/psi/codeStyle/ExternalFormatProcessor.java) | 
-|  | com.intellij.fileCodeStyleProvider | [`FileCodeStyleProvider`](upsource:///platform/lang-api/src/com/intellij/psi/codeStyle/FileCodeStyleProvider.java) | 
-|  | com.intellij.fileIndentOptionsProvider | [`FileIndentOptionsProvider`](upsource:///platform/lang-api/src/com/intellij/psi/codeStyle/FileIndentOptionsProvider.java) | 
+|  ![Experimental API](https://img.shields.io/badge/-Experimental_API-red) | com.intellij.codeStyleSettingsModifier | [`CodeStyleSettingsModifier`](upsource:///platform/code-style-api/src/com/intellij/psi/codeStyle/modifier/CodeStyleSettingsModifier.java) | 
+|  | com.intellij.disabledIndentRangesProvider | [`DisabledIndentRangesProvider`](upsource:///platform/code-style-impl/src/com/intellij/psi/impl/source/DisabledIndentRangesProvider.java) | 
+|  ![Experimental API](https://img.shields.io/badge/-Experimental_API-red) | com.intellij.externalFormatProcessor | [`ExternalFormatProcessor`](upsource:///platform/code-style-impl/src/com/intellij/psi/codeStyle/ExternalFormatProcessor.java) | 
+|  | com.intellij.fileCodeStyleProvider | [`FileCodeStyleProvider`](upsource:///platform/code-style-api/src/com/intellij/psi/codeStyle/FileCodeStyleProvider.java) | 
+|  | com.intellij.fileIndentOptionsProvider | [`FileIndentOptionsProvider`](upsource:///platform/code-style-api/src/com/intellij/psi/codeStyle/FileIndentOptionsProvider.java) | 
 |  | com.intellij.fileTypeIndentOptionsProvider | [`FileTypeIndentOptionsProvider`](upsource:///platform/lang-api/src/com/intellij/psi/codeStyle/FileTypeIndentOptionsProvider.java) | 
-|  | com.intellij.lang.formatter | [`FormattingModelBuilder`](upsource:///platform/lang-api/src/com/intellij/formatting/FormattingModelBuilder.java) | 
-|  | com.intellij.lang.formatter.newLineIndentMarkerProvider | [`NewLineIndentMarkerProvider`](upsource:///platform/lang-impl/src/com/intellij/psi/impl/source/codeStyle/NewLineIndentMarkerProvider.java) | 
-|  | com.intellij.lang.formatter.restriction | [`LanguageFormattingRestriction`](upsource:///platform/lang-api/src/com/intellij/lang/LanguageFormattingRestriction.java) | 
+|  | com.intellij.lang.formatter | [`FormattingModelBuilder`](upsource:///platform/code-style-api/src/com/intellij/formatting/FormattingModelBuilder.java) | 
+|  | com.intellij.lang.formatter.newLineIndentMarkerProvider | [`NewLineIndentMarkerProvider`](upsource:///platform/code-style-impl/src/com/intellij/psi/impl/source/codeStyle/NewLineIndentMarkerProvider.java) | 
+|  | com.intellij.lang.formatter.restriction | [`LanguageFormattingRestriction`](upsource:///platform/code-style-api/src/com/intellij/lang/LanguageFormattingRestriction.java) | 
 |  | com.intellij.lang.formatting.extractor | [`LangCodeStyleExtractor`](upsource:///platform/lang-api/src/com/intellij/psi/codeStyle/extractor/differ/LangCodeStyleExtractor.java) | 
 |  | com.intellij.lang.importOptimizer | [`ImportOptimizer`](upsource:///platform/lang-api/src/com/intellij/lang/ImportOptimizer.java) | 
 |  | com.intellij.lang.indentStrategy | [`IndentStrategy`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/editor/IndentStrategy.java) | 
 |  | com.intellij.lang.lineWrapStrategy | [`LineWrapPositionStrategy`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/editor/LineWrapPositionStrategy.java) | 
-|  | com.intellij.lang.rearranger | [`Rearranger`](upsource:///platform/lang-api/src/com/intellij/psi/codeStyle/arrangement/Rearranger.java) | 
-|  | com.intellij.lang.whiteSpaceFormattingStrategy | [`WhiteSpaceFormattingStrategy`](upsource:///platform/lang-impl/src/com/intellij/psi/formatter/WhiteSpaceFormattingStrategy.java) | 
+|  | com.intellij.lang.rearranger | [`Rearranger`](upsource:///platform/code-style-api/src/com/intellij/psi/codeStyle/arrangement/Rearranger.java) | 
+|  | com.intellij.lang.whiteSpaceFormattingStrategy | [`WhiteSpaceFormattingStrategy`](upsource:///platform/code-style-impl/src/com/intellij/psi/formatter/WhiteSpaceFormattingStrategy.java) | 
 |  | com.intellij.langCodeStyleSettingsProvider | [`LanguageCodeStyleSettingsProvider`](upsource:///platform/lang-api/src/com/intellij/psi/codeStyle/LanguageCodeStyleSettingsProvider.java) | 
 |  | com.intellij.lineIndentProvider | [`LineIndentProvider`](upsource:///platform/lang-api/src/com/intellij/psi/codeStyle/lineIndent/LineIndentProvider.java) | 
-|  | com.intellij.postFormatProcessor | [`PostFormatProcessor`](upsource:///platform/lang-impl/src/com/intellij/psi/impl/source/codeStyle/PostFormatProcessor.java) | 
-|  | com.intellij.preFormatProcessor | [`PreFormatProcessor`](upsource:///platform/lang-impl/src/com/intellij/psi/impl/source/codeStyle/PreFormatProcessor.java) | 
+|  | com.intellij.postFormatProcessor | [`PostFormatProcessor`](upsource:///platform/code-style-impl/src/com/intellij/psi/impl/source/codeStyle/PostFormatProcessor.java) | 
+|  | com.intellij.preFormatProcessor | [`PreFormatProcessor`](upsource:///platform/code-style-impl/src/com/intellij/psi/impl/source/codeStyle/PreFormatProcessor.java) | 
 |  | com.intellij.predefinedCodeStyle | [`PredefinedCodeStyle`](upsource:///platform/lang-api/src/com/intellij/psi/codeStyle/PredefinedCodeStyle.java) | 
 |  | com.intellij.rearranger.ui | [`Factory`](upsource:///platform/lang-api/src/com/intellij/psi/codeStyle/arrangement/std/ArrangementUiComponent.java) | 
 
@@ -454,6 +460,8 @@ title: Extension Point List
 |---|---|---|
 |  | Git4Idea.GitCheckinExplicitMovementProvider | [`GitCheckinExplicitMovementProvider`](upsource:///plugins/git4idea/src/git4idea/checkin/GitCheckinExplicitMovementProvider.java) | 
 |  | Git4Idea.GitHttpAuthDataProvider | [`GitHttpAuthDataProvider`](upsource:///plugins/git4idea/src/git4idea/remote/GitHttpAuthDataProvider.java) | 
+|  | Git4Idea.gitFetchHandler | [`GitFetchHandler`](upsource:///plugins/git4idea/src/git4idea/fetch/GitFetchHandler.kt) | 
+|  | Git4Idea.gitProtectedBranchProvider | [`GitProtectedBranchProvider`](upsource:///plugins/git4idea/src/git4idea/config/GitProtectedBranchProvider.kt) | 
 |  | Git4Idea.gitRepositoryHostingService | [`GitRepositoryHostingService`](upsource:///plugins/git4idea/src/git4idea/remote/GitRepositoryHostingService.java) | 
 
 ## [google-app-engine-plugin.xml](upsource:///plugins/google-app-engine/resources/META-INF/google-app-engine-plugin.xml)
@@ -476,10 +484,19 @@ title: Extension Point List
 |  | com.intellij.definitionsSearch | [`QueryExecutor`](upsource:///platform/core-api/src/com/intellij/util/QueryExecutor.java) | 
 |  | com.intellij.fileBasedIndex | [`FileBasedIndexExtension`](upsource:///platform/indexing-api/src/com/intellij/util/indexing/FileBasedIndexExtension.java) | 
 |  | com.intellij.fileBasedIndexInfrastructureExtension | [`FileBasedIndexInfrastructureExtension`](upsource:///platform/lang-impl/src/com/intellij/util/indexing/FileBasedIndexInfrastructureExtension.java) | 
+|  ![Experimental API](https://img.shields.io/badge/-Experimental_API-red) | com.intellij.findModelExtension | [`FindModelExtension`](upsource:///platform/indexing-api/src/com/intellij/find/FindModelExtension.java) | 
+|  ![Experimental API](https://img.shields.io/badge/-Experimental_API-red) | com.intellij.indexableFilesContributor | [`IndexableFilesContributor`](upsource:///platform/indexing-api/src/com/intellij/util/indexing/roots/IndexableFilesContributor.java) | 
 |  | com.intellij.indexedRootsProvider | [`IndexableSetContributor`](upsource:///platform/indexing-api/src/com/intellij/util/indexing/IndexableSetContributor.java) | 
 |  ![Experimental API](https://img.shields.io/badge/-Experimental_API-red) | com.intellij.indexingFlavor | [`FileIndexingFlavorProvider`](upsource:///platform/core-api/src/com/intellij/util/indexing/flavor/FileIndexingFlavorProvider.java) | 
+|  | com.intellij.projectIndexingHistoryListener | [`ProjectIndexingHistoryListener`](upsource:///platform/lang-impl/src/com/intellij/util/indexing/diagnostic/IndexDiagnosticDumper.kt) | 
 |  | com.intellij.referencesSearch | [`QueryExecutor`](upsource:///platform/core-api/src/com/intellij/util/QueryExecutor.java) | 
 |  | com.intellij.stubIndex | [`StubIndexExtension`](upsource:///platform/indexing-api/src/com/intellij/psi/stubs/StubIndexExtension.java) | 
+
+## [Inspect.xml](upsource:///platform/inspect/resources/META-INF/Inspect.xml)
+
+| Note | Extension Point | Implementation |
+|---|---|---|
+|  | com.intellij.inspectResultsConsumer | [`InspectResultsConsumer`](upsource:///platform/inspect/src/com/intellij/codeInspection/InspectResultsConsumer.java) | 
 
 ## [InspectionGadgets.xml](upsource:///plugins/InspectionGadgets/src/META-INF/InspectionGadgets.xml)
 
@@ -537,7 +554,7 @@ title: Extension Point List
 |  | com.intellij.compiler.buildTargetScopeProvider | [`BuildTargetScopeProvider`](upsource:///java/compiler/impl/src/com/intellij/compiler/impl/BuildTargetScopeProvider.java) | 
 |  ![Project-Level](https://img.shields.io/badge/-Project--Level-yellow) | com.intellij.compiler.inspectionValidator | [`InspectionValidator`](upsource:///java/compiler/openapi/src/com/intellij/openapi/compiler/util/InspectionValidator.java) | 
 |  | com.intellij.compiler.optionsManager | [`CompilerOptionsFilter`](upsource:///java/compiler/impl/src/com/intellij/compiler/options/CompilerOptionsFilter.java) | 
-|  ![Project-Level](https://img.shields.io/badge/-Project--Level-yellow) | com.intellij.compiler.task | `n/a` | 
+|  ![Project-Level](https://img.shields.io/badge/-Project--Level-yellow) | com.intellij.compiler.task | [`CompileTask`](upsource:///java/compiler/openapi/src/com/intellij/openapi/compiler/CompileTask.java) | 
 |  | com.intellij.compiler.updateResourcesBuildContributor | [`UpdateResourcesBuildContributor`](upsource:///java/compiler/impl/src/com/intellij/compiler/impl/UpdateResourcesBuildContributor.java) | 
 |  ![Project-Level](https://img.shields.io/badge/-Project--Level-yellow) | com.intellij.compilerFactory | [~~`CompilerFactory`~~](upsource:///java/compiler/openapi/src/com/intellij/openapi/compiler/CompilerFactory.java) | 
 |  ![Project-Level](https://img.shields.io/badge/-Project--Level-yellow) | com.intellij.compilerSettingsFactory | [~~`CompilerSettingsFactory`~~](upsource:///java/compiler/openapi/src/com/intellij/compiler/CompilerSettingsFactory.java) | 
@@ -611,6 +628,7 @@ title: Extension Point List
 |  | com.intellij.refactoring.moveInnerClassUsagesHandler | [`MoveInnerClassUsagesHandler`](upsource:///java/java-impl/src/com/intellij/refactoring/move/moveInner/MoveInnerClassUsagesHandler.java) | 
 |  | com.intellij.refactoring.moveInnerHandler | [`MoveInnerHandler`](upsource:///java/java-impl/src/com/intellij/refactoring/move/moveInner/MoveInnerHandler.java) | 
 |  | com.intellij.refactoring.moveMemberHandler | [`MoveMemberHandler`](upsource:///java/java-impl/src/com/intellij/refactoring/move/moveMembers/MoveMemberHandler.java) | 
+|  | com.intellij.refactoring.overrideMethodProcessor | [`OverrideMethodsProcessor`](upsource:///java/java-impl/src/com/intellij/refactoring/OverrideMethodsProcessor.java) | 
 |  | com.intellij.refactoring.pullUpHelperFactory | [`PullUpHelperFactory`](upsource:///java/openapi/src/com/intellij/refactoring/memberPullUp/PullUpHelperFactory.java) | 
 |  | com.intellij.refactoring.safeDelete.JavaSafeDeleteDelegate | [`JavaSafeDeleteDelegate`](upsource:///java/openapi/src/com/intellij/refactoring/safeDelete/JavaSafeDeleteDelegate.java) | 
 |  | com.intellij.repositoryLibrary | `n/a` | 
@@ -701,6 +719,7 @@ title: Extension Point List
 |  | com.intellij.codeInsight.lineMarkerProvider | [`LineMarkerProvider`](upsource:///platform/lang-api/src/com/intellij/codeInsight/daemon/LineMarkerProvider.java) | 
 |  | com.intellij.codeInsight.overrideMethod | [`LanguageCodeInsightActionHandler`](upsource:///platform/lang-api/src/com/intellij/lang/LanguageCodeInsightActionHandler.java) | 
 |  | com.intellij.codeInsight.parameterInfo | [`ParameterInfoHandler`](upsource:///platform/lang-api/src/com/intellij/lang/parameterInfo/ParameterInfoHandler.java) | 
+|  | com.intellij.codeInsight.parameterInfo.controller.provider | [`ParameterInfoControllerProvider`](upsource:///platform/lang-impl/src/com/intellij/codeInsight/hint/ParameterInfoControllerProvider.java) | 
 |  | com.intellij.codeInsight.parameterInfo.listener | [`ParameterInfoListener`](upsource:///platform/lang-impl/src/com/intellij/codeInsight/hint/ParameterInfoListener.java) | 
 |  | com.intellij.codeInsight.parameterNameHints | [`InlayParameterHintsProvider`](upsource:///platform/lang-api/src/com/intellij/codeInsight/hints/InlayParameterHintsProvider.java) | 
 |  | com.intellij.codeInsight.surroundWithRangeAdjuster | [`SurroundWithRangeAdjuster`](upsource:///platform/lang-api/src/com/intellij/codeInsight/generation/surroundWith/SurroundWithRangeAdjuster.java) | 
@@ -741,7 +760,6 @@ title: Extension Point List
 |  | com.intellij.defaultTemplatePropertiesProvider | [`DefaultTemplatePropertiesProvider`](upsource:///platform/lang-api/src/com/intellij/ide/fileTemplates/DefaultTemplatePropertiesProvider.java) | 
 |  | com.intellij.definitionsScopedSearch | [`QueryExecutor`](upsource:///platform/core-api/src/com/intellij/util/QueryExecutor.java) | 
 |  ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | com.intellij.diffPreviewProvider | [`DiffPreviewProvider`](upsource:///platform/diff-api/src/com/intellij/openapi/diff/impl/settings/DiffPreviewProvider.java) | 
-|  | com.intellij.documentationProvider | [`DocumentationProvider`](upsource:///platform/analysis-api/src/com/intellij/lang/documentation/DocumentationProvider.java) | 
 |  | com.intellij.dynamicContextProvider | [`DynamicContextProvider`](upsource:///platform/lang-impl/src/com/intellij/openapi/paths/DynamicContextProvider.java) | 
 |  | com.intellij.editorAppearanceConfigurable | [`UnnamedConfigurable`](upsource:///platform/platform-api/src/com/intellij/openapi/options/UnnamedConfigurable.java) | 
 |  | com.intellij.editorOptionsProvider | [`EditorOptionsProvider`](upsource:///platform/platform-impl/src/com/intellij/application/options/editor/EditorOptionsProvider.java) | 
@@ -775,7 +793,7 @@ title: Extension Point List
 |  | com.intellij.framework.detector | [`FrameworkDetector`](upsource:///platform/lang-api/src/com/intellij/framework/detection/FrameworkDetector.java) | 
 |  | com.intellij.generalCodeStyleOptionsProvider | [`GeneralCodeStyleOptionsProvider`](upsource:///platform/lang-impl/src/com/intellij/application/options/GeneralCodeStyleOptionsProvider.java) | 
 |  | com.intellij.generatedSourcesFilter | [`GeneratedSourcesFilter`](upsource:///platform/analysis-api/src/com/intellij/openapi/roots/GeneratedSourcesFilter.java) | 
-|  ![Experimental API](https://img.shields.io/badge/-Experimental_API-red) | com.intellij.globalIndexFilter | [`GlobalIndexFilter`](upsource:///platform/lang-impl/src/com/intellij/util/indexing/GlobalIndexFilter.java) | 
+|  | com.intellij.globalIndexFilter | [`GlobalIndexFilter`](upsource:///platform/lang-impl/src/com/intellij/util/indexing/GlobalIndexFilter.java) | 
 |  | com.intellij.goto.nonProjectScopeDisabler | `n/a` | 
 |  | com.intellij.gotoActionAliasMatcher | [`GotoActionAliasMatcher`](upsource:///platform/lang-impl/src/com/intellij/ide/util/gotoByName/GotoActionAliasMatcher.java) | 
 |  | com.intellij.gotoClassContributor | [`ChooseByNameContributor`](upsource:///platform/lang-api/src/com/intellij/navigation/ChooseByNameContributor.java) | 
@@ -797,7 +815,6 @@ title: Extension Point List
 |  | com.intellij.implicitUsageProvider | [`ImplicitUsageProvider`](upsource:///platform/analysis-api/src/com/intellij/codeInsight/daemon/ImplicitUsageProvider.java) | 
 |  | com.intellij.importFilteringRule | [`ImportFilteringRule`](upsource:///platform/usageView/src/com/intellij/usages/rules/ImportFilteringRule.java) | 
 |  | com.intellij.include.provider | [`FileIncludeProvider`](upsource:///platform/lang-impl/src/com/intellij/psi/impl/include/FileIncludeProvider.java) | 
-|  ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) ![Experimental API](https://img.shields.io/badge/-Experimental_API-red) | com.intellij.indexImporterFactory | [`IndexImporterFactory`](upsource:///platform/lang-impl/src/com/intellij/index/IndexImporterFactory.java) | 
 |  | com.intellij.indexPatternBuilder | [`IndexPatternBuilder`](upsource:///platform/indexing-impl/src/com/intellij/psi/impl/search/IndexPatternBuilder.java) | 
 |  ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | com.intellij.indexPatternProvider | [`IndexPatternProvider`](upsource:///platform/indexing-api/src/com/intellij/psi/search/IndexPatternProvider.java) | 
 |  | com.intellij.indexPatternSearch | [`QueryExecutor`](upsource:///platform/core-api/src/com/intellij/util/QueryExecutor.java) | 
@@ -811,6 +828,7 @@ title: Extension Point List
 |  | com.intellij.lang.commenter | [`Commenter`](upsource:///platform/core-api/src/com/intellij/lang/Commenter.java) | 
 |  ![Experimental API](https://img.shields.io/badge/-Experimental_API-red) | com.intellij.lang.directNavigationProvider | [`DirectNavigationProvider`](upsource:///platform/core-api/src/com/intellij/navigation/DirectNavigationProvider.java) | 
 |  | com.intellij.lang.documentationFixer | [`DocCommentFixer`](upsource:///platform/lang-impl/src/com/intellij/codeInsight/documentation/DocCommentFixer.java) | 
+|  | com.intellij.lang.documentationToolWindowManager | [`DocToolWindowManager`](upsource:///platform/lang-impl/src/com/intellij/codeInsight/documentation/DocToolWindowManager.java) | 
 |  | com.intellij.lang.fileViewProviderFactory | [`FileViewProviderFactory`](upsource:///platform/core-api/src/com/intellij/psi/FileViewProviderFactory.java) | 
 |  | com.intellij.lang.findUsagesProvider | [`FindUsagesProvider`](upsource:///platform/indexing-api/src/com/intellij/lang/findUsages/FindUsagesProvider.java) | 
 |  | com.intellij.lang.foldingBuilder | [`FoldingBuilder`](upsource:///platform/core-api/src/com/intellij/lang/folding/FoldingBuilder.java) | 
@@ -822,19 +840,13 @@ title: Extension Point List
 |  | com.intellij.lang.structureViewExtension | [`StructureViewExtension`](upsource:///platform/structure-view-impl/src/com/intellij/ide/structureView/StructureViewExtension.java) | 
 |  | com.intellij.lang.substitutor | [`LanguageSubstitutor`](upsource:///platform/core-api/src/com/intellij/psi/LanguageSubstitutor.java) | 
 |  | com.intellij.lang.surroundDescriptor | [`SurroundDescriptor`](upsource:///platform/lang-api/src/com/intellij/lang/surroundWith/SurroundDescriptor.java) | 
-|  | com.intellij.lang.symbolSearchTarget | [`SymbolSearchTargetFactory`](upsource:///platform/lang-impl/src/com/intellij/find/usages/SymbolSearchTargetFactory.java) | 
-|  | com.intellij.lang.symbolTextSearcher | [`SymbolTextSearcher`](upsource:///platform/lang-impl/src/com/intellij/find/usages/SymbolTextSearcher.java) | 
-|  | com.intellij.lang.symbolUsageHandler | [`SymbolUsageHandlerFactory`](upsource:///platform/lang-impl/src/com/intellij/find/usages/SymbolUsageHandlerFactory.java) | 
+|  | com.intellij.lang.symbolSearchTarget | [`SymbolSearchTargetFactory`](upsource:///platform/lang-impl/src/com/intellij/find/usages/symbol/SymbolSearchTargetFactory.java) | 
 |  | com.intellij.lang.syntaxHighlighter | [`SyntaxHighlighter`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/fileTypes/SyntaxHighlighter.java) | 
 |  | com.intellij.lang.treePatcher | [`TreePatcher`](upsource:///platform/core-impl/src/com/intellij/psi/templateLanguages/TreePatcher.java) | 
 |  | com.intellij.lang.unwrapDescriptor | [`UnwrapDescriptor`](upsource:///platform/lang-impl/src/com/intellij/codeInsight/unwrap/UnwrapDescriptor.java) | 
 |  | com.intellij.library.presentationProvider | [`LibraryPresentationProvider`](upsource:///platform/lang-impl/src/com/intellij/openapi/roots/libraries/LibraryPresentationProvider.java) | 
 |  | com.intellij.library.type | [`LibraryType`](upsource:///platform/lang-impl/src/com/intellij/openapi/roots/libraries/LibraryType.java) | 
 |  | com.intellij.librarySettingsProvider | [`LibrarySettingsProvider`](upsource:///platform/lang-impl/src/com/intellij/openapi/roots/ui/configuration/LibrarySettingsProvider.java) | 
-|  | com.intellij.liveTemplateContext | [`TemplateContextType`](upsource:///platform/lang-api/src/com/intellij/codeInsight/template/TemplateContextType.java) | 
-|  | com.intellij.liveTemplateMacro | [`Macro`](upsource:///platform/lang-api/src/com/intellij/codeInsight/template/Macro.java) | 
-|  | com.intellij.liveTemplateOptionalProcessor | [`TemplateOptionalProcessor`](upsource:///platform/lang-impl/src/com/intellij/codeInsight/template/impl/TemplateOptionalProcessor.java) | 
-|  | com.intellij.liveTemplatePreprocessor | [`TemplatePreprocessor`](upsource:///platform/lang-impl/src/com/intellij/codeInsight/template/impl/TemplatePreprocessor.java) | 
 |  | com.intellij.liveTemplateSubstitutor | [`TemplateSubstitutor`](upsource:///platform/lang-impl/src/com/intellij/codeInsight/template/TemplateSubstitutor.java) | 
 |  | com.intellij.longLineInspectionPolicy | [`LongLineInspectionPolicy`](upsource:///platform/lang-impl/src/com/intellij/codeInspection/longLine/LongLineInspectionPolicy.java) | 
 |  | com.intellij.macro | [`Macro`](upsource:///platform/execution-impl/src/com/intellij/ide/macro/Macro.java) | 
@@ -881,13 +893,14 @@ title: Extension Point List
 |  | com.intellij.psiViewerExtension | [`PsiViewerExtension`](upsource:///platform/lang-impl/src/com/intellij/internal/psiView/PsiViewerExtension.java) | 
 |  | com.intellij.qualifiedNameProvider | [`QualifiedNameProvider`](upsource:///platform/lang-impl/src/com/intellij/ide/actions/QualifiedNameProvider.java) | 
 |  | com.intellij.readWriteAccessDetector | [`ReadWriteAccessDetector`](upsource:///platform/core-api/src/com/intellij/codeInsight/highlighting/ReadWriteAccessDetector.java) | 
-|  | com.intellij.readerModeProvider | [`ReaderModeProvider`](upsource:///platform/lang-impl/src/com/intellij/codeInsight/actions/ReaderModeProvider.kt) | 
+|  | com.intellij.readerModeMatcher | [`ReaderModeMatcher`](upsource:///platform/editor-ui-api/src/com/intellij/codeInsight/actions/ReaderModeMatcher.kt) | 
+|  | com.intellij.readerModeProvider | [`ReaderModeProvider`](upsource:///platform/editor-ui-api/src/com/intellij/codeInsight/actions/ReaderModeProvider.kt) | 
 |  | com.intellij.refGraphAnnotator | [`RefGraphAnnotator`](upsource:///platform/analysis-api/src/com/intellij/codeInspection/reference/RefGraphAnnotator.java) | 
 |  | com.intellij.referenceImporter | [`ReferenceImporter`](upsource:///platform/analysis-impl/src/com/intellij/codeInsight/daemon/ReferenceImporter.java) | 
-|  | com.intellij.referenceInjector | [`ReferenceInjector`](upsource:///platform/lang-api/src/com/intellij/psi/injection/ReferenceInjector.java) | 
+|  | com.intellij.referenceInjector | [`ReferenceInjector`](upsource:///platform/analysis-api/src/com/intellij/psi/injection/ReferenceInjector.java) | 
 |  | com.intellij.referenceProviderType | [`PsiReferenceProvider`](upsource:///platform/core-api/src/com/intellij/psi/PsiReferenceProvider.java) | 
 |  | com.intellij.retypeFileAssistant | [`RetypeFileAssistant`](upsource:///platform/lang-impl/src/com/intellij/internal/retype/RetypeFileAction.kt) | 
-|  ![Project-Level](https://img.shields.io/badge/-Project--Level-yellow) | com.intellij.roots.watchedRootsProvider | [`WatchedRootsProvider`](upsource:///platform/lang-api/src/com/intellij/openapi/roots/WatchedRootsProvider.java) | 
+|  | com.intellij.roots.watchedRootsProvider | [`WatchedRootsProvider`](upsource:///platform/lang-api/src/com/intellij/openapi/roots/WatchedRootsProvider.java) | 
 |  | com.intellij.runAnything.commandCustomizer | [`RunAnythingCommandCustomizer`](upsource:///platform/lang-impl/src/com/intellij/ide/actions/runAnything/commands/RunAnythingCommandCustomizer.java) | 
 |  | com.intellij.runAnything.commandHandler | [`RunAnythingCommandHandler`](upsource:///platform/lang-impl/src/com/intellij/ide/actions/runAnything/handlers/RunAnythingCommandHandler.java) | 
 |  | com.intellij.runAnything.executionProvider | [`RunAnythingProvider`](upsource:///platform/lang-impl/src/com/intellij/ide/actions/runAnything/activity/RunAnythingProvider.java) | 
@@ -903,7 +916,7 @@ title: Extension Point List
 |  | com.intellij.runningApplicationUpdaterProvider | [`RunningApplicationUpdaterProvider`](upsource:///platform/execution-impl/src/com/intellij/execution/update/RunningApplicationUpdaterProvider.java) | 
 |  | com.intellij.saveFileAsTemplateHandler | [`SaveFileAsTemplateHandler`](upsource:///platform/lang-impl/src/com/intellij/ide/actions/SaveFileAsTemplateHandler.java) | 
 |  | com.intellij.scopeDescriptorProvider | [`ScopeDescriptorProvider`](upsource:///platform/lang-impl/src/com/intellij/ide/util/scopeChooser/ScopeDescriptorProvider.java) | 
-|  ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | com.intellij.scopeParserExtension | [`PackageSetParserExtension`](upsource:///platform/lang-impl/src/com/intellij/psi/search/scope/packageSet/PackageSetParserExtension.java) | 
+|  | com.intellij.scopeParserExtension | [`PackageSetParserExtension`](upsource:///platform/lang-impl/src/com/intellij/psi/search/scope/packageSet/PackageSetParserExtension.java) | 
 |  | com.intellij.scratch.creationHelper | [`ScratchFileCreationHelper`](upsource:///platform/lang-impl/src/com/intellij/ide/scratch/ScratchFileCreationHelper.java) | 
 |  | com.intellij.scratch.rootType | [`RootType`](upsource:///platform/lang-api/src/com/intellij/ide/scratch/RootType.java) | 
 |  | com.intellij.sdkDownload | [`SdkDownload`](upsource:///platform/lang-impl/src/com/intellij/openapi/roots/ui/configuration/projectRoot/SdkDownload.java) | 
@@ -912,7 +925,7 @@ title: Extension Point List
 |  | com.intellij.searchEverywhereClassifier | [`SearchEverywhereClassifier`](upsource:///platform/lang-impl/src/com/intellij/ide/actions/SearchEverywhereClassifier.java) | 
 |  | com.intellij.searchEverywhereContributor | [`SearchEverywhereContributorFactory`](upsource:///platform/lang-api/src/com/intellij/ide/actions/searcheverywhere/SearchEverywhereContributorFactory.java) | 
 |  ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | com.intellij.searchEverywhereResultsEqualityProvider | [`SEResultsEqualityProvider`](upsource:///platform/lang-impl/src/com/intellij/ide/actions/searcheverywhere/SEResultsEqualityProvider.java) | 
-|  ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | com.intellij.searchScopesProvider | [`SearchScopeProvider`](upsource:///platform/analysis-impl/src/com/intellij/psi/search/SearchScopeProvider.java) | 
+|  | com.intellij.searchScopesProvider | [`SearchScopeProvider`](upsource:///platform/analysis-impl/src/com/intellij/psi/search/SearchScopeProvider.java) | 
 |  | com.intellij.searcher | [`Searcher`](upsource:///platform/indexing-api/src/com/intellij/model/search/Searcher.java) | 
 |  | com.intellij.semContributor | [`SemContributor`](upsource:///platform/lang-api/src/com/intellij/semantic/SemContributor.java) | 
 |  ![Experimental API](https://img.shields.io/badge/-Experimental_API-red) | com.intellij.serviceViewContributor | [`ServiceViewContributor`](upsource:///platform/lang-api/src/com/intellij/execution/services/ServiceViewContributor.java) | 
@@ -926,7 +939,7 @@ title: Extension Point List
 |  | com.intellij.symbolPresentation | [`SymbolPresentationProvider`](upsource:///platform/core-api/src/com/intellij/model/presentation/SymbolPresentationProvider.java) | 
 |  | com.intellij.targetElementEvaluator | [`TargetElementEvaluator`](upsource:///platform/core-impl/src/com/intellij/codeInsight/TargetElementEvaluator.java) | 
 |  | com.intellij.targetElementUtilExtender | [`TargetElementUtilExtender`](upsource:///platform/lang-impl/src/com/intellij/codeInsight/TargetElementUtilExtender.java) | 
-|  | com.intellij.templateCompletionProcessor | [`TemplateCompletionProcessor`](upsource:///platform/lang-impl/src/com/intellij/codeInsight/template/macro/TemplateCompletionProcessor.java) | 
+|  | com.intellij.templateCompletionProcessor | [`TemplateCompletionProcessor`](upsource:///platform/analysis-impl/src/com/intellij/codeInsight/template/macro/TemplateCompletionProcessor.java) | 
 |  | com.intellij.testActionProvider | [`ToggleModelActionProvider`](upsource:///platform/testRunner/src/com/intellij/execution/testframework/ToggleModelActionProvider.java) | 
 |  | com.intellij.testCreator | [`TestCreator`](upsource:///platform/lang-api/src/com/intellij/testIntegration/TestCreator.java) | 
 |  | com.intellij.testFinder | [`TestFinder`](upsource:///platform/lang-api/src/com/intellij/testIntegration/TestFinder.java) | 
@@ -953,6 +966,13 @@ title: Extension Point List
 |  | com.intellij.usageViewElementsListener | [`UsageViewElementsListener`](upsource:///platform/usageView/src/com/intellij/usages/impl/UsageViewElementsListener.java) | 
 |  | com.intellij.usageViewFactory | [`UsageViewFactory`](upsource:///platform/usageView/src/com/intellij/usages/impl/UsageViewFactory.java) | 
 |  | com.intellij.virtualFileQualifiedNameProvider | [`VirtualFileQualifiedNameProvider`](upsource:///platform/lang-impl/src/com/intellij/ide/actions/CopyReferenceAction.java) | 
+
+## [lint-plugin.xml](upsource:///android/lint/src/META-INF/lint-plugin.xml)
+
+| Note | Extension Point | Implementation |
+|---|---|---|
+|  ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | com.android.tools.idea.lint.common.lintIdeSupport | [`LintIdeSupport`](upsource:///android/lint/src/com/android/tools/idea/lint/common/LintIdeSupport.kt) | 
+|  ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | com.android.tools.idea.lint.common.lintQuickFixProvider | [`LintIdeQuickFixProvider`](upsource:///android/lint/src/com/android/tools/idea/lint/common/LintIdeQuickFixProvider.java) | 
 
 ## [ManifestSupport.xml](upsource:///java/manifest/src/META-INF/ManifestSupport.xml)
 
@@ -1032,6 +1052,13 @@ title: Extension Point List
 |---|---|---|
 |  | org.jetbrains.idea.eclipse.natureImporter | [`EclipseNatureImporter`](upsource:///plugins/eclipse/src/org/jetbrains/idea/eclipse/importWizard/EclipseNatureImporter.java) | 
 
+## [org.jetbrains.idea.gradle.dsl.impl](upsource:///plugins/gradle-dsl-impl/resources/META-INF/plugin.xml)
+
+| Note | Extension Point | Implementation |
+|---|---|---|
+|  | org.jetbrains.idea.gradle.dsl.parserFactory | [`GradleDslConverterFactory`](upsource:///plugins/gradle-dsl-impl/src/com/android/tools/idea/gradle/dsl/parser/GradleDslConverterFactory.java) | 
+|  ![Experimental API](https://img.shields.io/badge/-Experimental_API-red) | org.jetbrains.idea.gradle.dsl.upToDateChecker | [`UpToDateChecker`](upsource:///plugins/gradle-dsl-impl/src/com/android/tools/idea/gradle/dsl/UpToDateChecker.java) | 
+
 ## [org.jetbrains.idea.maven](upsource:///plugins/maven/src/main/resources/META-INF/plugin.xml)
 
 | Note | Extension Point | Implementation |
@@ -1106,6 +1133,8 @@ title: Extension Point List
 |  | com.intellij.diff.merge.external.AutomaticExternalMergeTool | [`AutomaticExternalMergeTool`](upsource:///platform/diff-api/src/com/intellij/diff/merge/external/AutomaticExternalMergeTool.java) | 
 |  | com.intellij.directoryProjectConfigurator | [`DirectoryProjectConfigurator`](upsource:///platform/platform-impl/src/com/intellij/platform/DirectoryProjectConfigurator.java) | 
 |  | com.intellij.directoryProjectGenerator | [`DirectoryProjectGenerator`](upsource:///platform/platform-impl/src/com/intellij/platform/DirectoryProjectGenerator.java) | 
+|  ![Experimental API](https://img.shields.io/badge/-Experimental_API-red) | com.intellij.documentWriteAccessGuard | [`DocumentWriteAccessGuard`](upsource:///platform/core-impl/src/com/intellij/openapi/editor/impl/DocumentWriteAccessGuard.java) | 
+|  | com.intellij.documentationActionProvider | [`DocumentationActionProvider`](upsource:///platform/lang-impl/src/com/intellij/codeInsight/documentation/DocumentationActionProvider.java) | 
 |  | com.intellij.dynamicActionConfigurationCustomizer | [`DynamicActionConfigurationCustomizer`](upsource:///platform/platform-impl/src/com/intellij/openapi/actionSystem/impl/DynamicActionConfigurationCustomizer.java) | 
 |  | com.intellij.editor.injectedFileChangesHandlerProvider | [`InjectedFileChangesHandlerProvider`](upsource:///platform/editor-ui-api/src/com/intellij/injected/editor/InjectedFileChangesHandlerProvider.java) | 
 |  | com.intellij.editor.linePainter | [`EditorLinePainter`](upsource:///platform/platform-impl/src/com/intellij/openapi/editor/EditorLinePainter.java) | 
@@ -1151,10 +1180,13 @@ title: Extension Point List
 |  | com.intellij.iconDescriptionBundle | `n/a` | 
 |  ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | com.intellij.iconLayerProvider | [`IconLayerProvider`](upsource:///platform/core-api/src/com/intellij/ide/IconLayerProvider.java) | 
 |  ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) ![Project-Level](https://img.shields.io/badge/-Project--Level-yellow) | com.intellij.ideRootPaneNorth | [`IdeRootPaneNorthExtension`](upsource:///platform/platform-api/src/com/intellij/openapi/wm/IdeRootPaneNorthExtension.java) | 
+|  | com.intellij.interactiveCourseFactory | [`InteractiveCourseFactory`](upsource:///platform/platform-api/src/com/intellij/openapi/wm/InteractiveCourseFactory.kt) | 
 |  | com.intellij.itemPresentationProvider | [`ItemPresentationProvider`](upsource:///platform/core-api/src/com/intellij/navigation/ItemPresentationProvider.java) | 
 |  | com.intellij.iw.actionProvider | [`InspectionWidgetActionProvider`](upsource:///platform/platform-api/src/com/intellij/openapi/editor/markup/InspectionWidgetActionProvider.kt) | 
 |  | com.intellij.jbProtocolCommand | [`JBProtocolCommand`](upsource:///platform/platform-impl/src/com/intellij/openapi/application/JBProtocolCommand.java) | 
+|  ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | com.intellij.jcef.appRequiredArgumentsProvider | [`JBCefAppRequiredArgumentsProvider`](upsource:///platform/platform-api/src/com/intellij/ui/jcef/JBCefAppRequiredArgumentsProvider.kt) | 
 |  | com.intellij.jdkDownloader.jdkInstallerListener | [`JdkInstallerListener`](upsource:///platform/lang-impl/src/com/intellij/openapi/projectRoots/impl/jdkDownloader/JdkInstaller.kt) | 
+|  | com.intellij.jdkUpdateCheckContributor | [`JdkUpdateCheckContributor`](upsource:///platform/lang-impl/src/com/intellij/openapi/projectRoots/impl/jdkDownloader/JdkUpdater.kt) | 
 |  | com.intellij.jps.plugin | `n/a` | 
 |  | com.intellij.keymapExtension | [`KeymapExtension`](upsource:///platform/platform-api/src/com/intellij/openapi/keymap/KeymapExtension.java) | 
 |  ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | com.intellij.lafProvider | [`LafProvider`](upsource:///platform/platform-impl/src/com/intellij/ide/ui/LafProvider.java) | 
@@ -1165,8 +1197,9 @@ title: Extension Point List
 |  ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | com.intellij.notification.group | `n/a` | 
 |  ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | com.intellij.notification.parentGroup | `n/a` | 
 |  | com.intellij.notificationAllowlist | `n/a` | 
+|  | com.intellij.notificationGroup | `n/a` | 
 |  | com.intellij.notificationWhitelist | `n/a` | 
-|  ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | com.intellij.obsoleteStorage | `n/a` | 
+|  | com.intellij.obsoleteStorage | `n/a` | 
 |  | com.intellij.pathMacroContributor | [`PathMacroContributor`](upsource:///platform/core-api/src/com/intellij/openapi/application/PathMacroContributor.java) | 
 |  | com.intellij.pathMacroExpandableProtocol | `n/a` | 
 |  | com.intellij.pathMacroFilter | [`PathMacroFilter`](upsource:///jps/model-serialization/src/com/intellij/openapi/application/PathMacroFilter.java) | 
@@ -1206,6 +1239,8 @@ title: Extension Point List
 |  | com.intellij.statistics.applicationUsagesCollector | [`ApplicationUsagesCollector`](upsource:///platform/statistics/src/com/intellij/internal/statistic/service/fus/collectors/ApplicationUsagesCollector.java) | 
 |  ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | com.intellij.statistics.collectorExtension | [`FeatureUsageCollectorExtension`](upsource:///platform/statistics/src/com/intellij/internal/statistic/service/fus/collectors/FeatureUsageCollectorExtension.java) | 
 |  | com.intellij.statistics.counterUsagesCollector | [`FeatureUsagesCollector`](upsource:///platform/statistics/src/com/intellij/internal/statistic/service/fus/collectors/FeatureUsagesCollector.java) | 
+|  | com.intellij.statistics.gotItTooltipAllowlist | `n/a` | 
+|  | com.intellij.statistics.notificationIdsHolder | [`NotificationIdsHolder`](upsource:///platform/platform-impl/src/com/intellij/notification/impl/NotificationIdsHolder.java) | 
 |  | com.intellij.statistics.projectUsagesCollector | [`ProjectUsagesCollector`](upsource:///platform/statistics/src/com/intellij/internal/statistic/service/fus/collectors/ProjectUsagesCollector.java) | 
 |  | com.intellij.statistics.validation.customValidationRule | [`CustomValidationRule`](upsource:///platform/statistics/src/com/intellij/internal/statistic/eventLog/validator/rules/impl/CustomValidationRule.java) | 
 |  | com.intellij.statistics.validation.customWhiteListRule | [~~`CustomWhiteListRule`~~](upsource:///platform/statistics/src/com/intellij/internal/statistic/eventLog/validator/rules/impl/CustomWhiteListRule.java) | 
@@ -1215,10 +1250,11 @@ title: Extension Point List
 |  | com.intellij.stripTrailingSpacesFilterFactory | [`StripTrailingSpacesFilterFactory`](upsource:///platform/core-api/src/com/intellij/openapi/editor/StripTrailingSpacesFilterFactory.java) | 
 |  ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | com.intellij.systemProperty | `n/a` | 
 |  ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | com.intellij.testStatusListener | [`TestStatusListener`](upsource:///platform/testRunner/src/com/intellij/execution/testframework/TestStatusListener.java) | 
-|  ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | com.intellij.themeMetadataProvider | `n/a` | 
+|  | com.intellij.textEditorCustomizer | [`TextEditorCustomizer`](upsource:///platform/platform-impl/src/com/intellij/openapi/fileEditor/impl/text/TextEditorCustomizer.java) | 
+|  | com.intellij.themeMetadataProvider | `n/a` | 
 |  | com.intellij.themeProvider | `n/a` | 
 |  | com.intellij.tipAndTrick | `n/a` | 
-|  ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) ![Project-Level](https://img.shields.io/badge/-Project--Level-yellow) | com.intellij.titleInfoProvider | [`TitleInfoProvider`](upsource:///platform/platform-impl/src/com/intellij/openapi/wm/impl/TitleInfoProvider.kt) | 
+|  ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | com.intellij.titleInfoProvider | [`TitleInfoProvider`](upsource:///platform/platform-impl/src/com/intellij/openapi/wm/impl/TitleInfoProvider.kt) | 
 |  | com.intellij.toolWindow | [`ToolWindowFactory`](upsource:///platform/platform-api/src/com/intellij/openapi/wm/ToolWindowFactory.java) | 
 |  | com.intellij.toolWindowAllowlist | `n/a` | 
 |  | com.intellij.trailingSpacesOptionsProvider | [`TrailingSpacesOptionsProvider`](upsource:///platform/platform-api/src/com/intellij/openapi/fileEditor/TrailingSpacesOptionsProvider.java) | 
@@ -1238,6 +1274,7 @@ title: Extension Point List
 |  | com.intellij.webHelpProvider | [`WebHelpProvider`](upsource:///platform/platform-api/src/com/intellij/openapi/help/WebHelpProvider.java) | 
 |  | com.intellij.welcomeFrameProvider | [`WelcomeFrameProvider`](upsource:///platform/platform-api/src/com/intellij/openapi/wm/WelcomeFrameProvider.java) | 
 |  ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | com.intellij.welcomeScreen | [`WelcomeScreenProvider`](upsource:///platform/platform-api/src/com/intellij/openapi/wm/WelcomeScreenProvider.java) | 
+|  ![Experimental API](https://img.shields.io/badge/-Experimental_API-red) | com.intellij.welcomeScreenCustomization | [`WelcomeScreenCustomization`](upsource:///platform/platform-api/src/com/intellij/openapi/wm/WelcomeScreenCustomization.java) | 
 |  | com.intellij.welcomeTabFactory | [`WelcomeTabFactory`](upsource:///platform/platform-api/src/com/intellij/openapi/wm/WelcomeTabFactory.java) | 
 |  | org.jetbrains.javaScriptDebuggerStarter | [`JavaScriptDebuggerStarter`](upsource:///platform/platform-impl/src/com/intellij/ide/browsers/JavaScriptDebuggerStarter.java) | 
 |  | org.jetbrains.urlOpener | [`UrlOpener`](upsource:///platform/platform-api/src/com/intellij/ide/browsers/UrlOpener.java) | 
@@ -1274,8 +1311,10 @@ title: Extension Point List
 |  | Pythonid.breakpointHandler | [`PyBreakpointHandlerFactory`](upsource:///python/src/com/jetbrains/python/debugger/PyBreakpointHandlerFactory.java) | 
 |  ![Experimental API](https://img.shields.io/badge/-Experimental_API-red) | Pythonid.condaSdkCustomizer | [`PyCondaSdkCustomizer`](upsource:///python/src/com/jetbrains/python/sdk/conda/PyCondaSdkCustomizer.kt) | 
 |  | Pythonid.consoleOptionsProvider | [`PyConsoleOptionsProvider`](upsource:///python/src/com/jetbrains/python/console/PyConsoleOptionsProvider.java) | 
+|  | Pythonid.dataViewPanelFactory | [`PyDataViewPanelFactory`](upsource:///python/src/com/jetbrains/python/debugger/containerview/PyDataViewPanelFactory.java) | 
 |  | Pythonid.debugSessionFactory | [`PyDebugSessionFactory`](upsource:///python/src/com/jetbrains/python/debugger/PyDebugSessionFactory.java) | 
 |  | Pythonid.documentationLinkProvider | [`PythonDocumentationLinkProvider`](upsource:///python/openapi/src/com/jetbrains/python/documentation/PythonDocumentationLinkProvider.java) | 
+|  ![Experimental API](https://img.shields.io/badge/-Experimental_API-red) | Pythonid.interpreterTargetEnvironmentFactory | [`PythonInterpreterTargetEnvironmentFactory`](upsource:///python/src/com/jetbrains/python/run/PythonInterpreterTargetEnvironmentFactory.kt) | 
 |  | Pythonid.magicLiteral | [`PyMagicLiteralExtensionPoint`](upsource:///python/python-psi-impl/src/com/jetbrains/python/magicLiteral/PyMagicLiteralExtensionPoint.java) | 
 |  ![Experimental API](https://img.shields.io/badge/-Experimental_API-red) | Pythonid.packageManagerProvider | [`PyPackageManagerProvider`](upsource:///python/src/com/jetbrains/python/packaging/PyCustomPackageManagers.kt) | 
 |  | Pythonid.pep8ProblemSuppressor | [`Pep8ProblemSuppressor`](upsource:///python/src/com/jetbrains/python/validation/Pep8ProblemSuppressor.java) | 
@@ -1289,7 +1328,6 @@ title: Extension Point List
 |  | Pythonid.pyTestConfigurationSelector | [`PyTestConfigurationSelector`](upsource:///python/src/com/jetbrains/python/testing/PyTestConfigurationSelector.kt) | 
 |  | Pythonid.pyTestFixtureExtension | [`PyTestFixtureExtension`](upsource:///python/src/com/jetbrains/python/testing/pyTestFixtures/PyTestFixtureExtension.kt) | 
 |  | Pythonid.pythonCommandLineEnvironmentProvider | [`PythonCommandLineEnvironmentProvider`](upsource:///python/src/com/jetbrains/python/run/PythonCommandLineEnvironmentProvider.java) | 
-|  | Pythonid.pythonDocumentationQuickInfoProvider | [`PythonDocumentationQuickInfoProvider`](upsource:///python/openapi/src/com/jetbrains/python/documentation/PythonDocumentationQuickInfoProvider.java) | 
 |  | Pythonid.pythonSdkComparator | [`PySdkComparator`](upsource:///python/src/com/jetbrains/python/sdk/PySdkComparator.java) | 
 |  | Pythonid.remoteConsoleProcessCreator | [`PythonConsoleRemoteProcessCreator`](upsource:///python/src/com/jetbrains/python/console/PythonConsoleRemoteProcessCreator.kt) | 
 |  | Pythonid.remoteInterpreterManager | [`PythonRemoteInterpreterManager`](upsource:///python/src/com/jetbrains/python/remote/PythonRemoteInterpreterManager.java) | 
@@ -1298,6 +1336,7 @@ title: Extension Point List
 |  | Pythonid.remoteSkeletonGeneratorFactory | [`PyRemoteSkeletonGeneratorFactory`](upsource:///python/src/com/jetbrains/python/remote/PyRemoteSkeletonGeneratorFactory.java) | 
 |  | Pythonid.runConfigurationEditorExtension | [`PyRunConfigurationEditorExtension`](upsource:///python/src/com/jetbrains/python/run/PyRunConfigurationEditorExtension.java) | 
 |  | Pythonid.runConfigurationExtension | [`PythonRunConfigurationExtension`](upsource:///python/src/com/jetbrains/python/run/PythonRunConfigurationExtension.java) | 
+|  ![Experimental API](https://img.shields.io/badge/-Experimental_API-red) | Pythonid.runConfigurationTargetEnvironmentAdjuster | [`PythonRunConfigurationTargetEnvironmentAdjuster`](upsource:///python/src/com/jetbrains/python/run/PythonRunConfigurationTargetEnvironmentAdjuster.kt) | 
 |  | Pythonid.runnableScriptFilter | [`RunnableScriptFilter`](upsource:///python/src/com/jetbrains/python/run/RunnableScriptFilter.java) | 
 |  | Pythonid.sshInterpreterManager | [`PythonSshInterpreterManager`](upsource:///python/src/com/jetbrains/python/remote/PythonSshInterpreterManager.java) | 
 |  | Pythonid.unresolvedReferenceQuickFixProvider | [`PyUnresolvedReferenceQuickFixProvider`](upsource:///python/openapi/src/com/jetbrains/python/inspections/PyUnresolvedReferenceQuickFixProvider.java) | 
@@ -1319,6 +1358,7 @@ title: Extension Point List
 |  | Pythonid.pyOverridingMethodsSearch | [`QueryExecutor`](upsource:///platform/core-api/src/com/intellij/util/QueryExecutor.java) | 
 |  | Pythonid.pyReferenceResolveProvider | [`PyReferenceResolveProvider`](upsource:///python/python-psi-api/src/com/jetbrains/python/psi/resolve/PyReferenceResolveProvider.java) | 
 |  | Pythonid.pySuperMethodsSearch | [`QueryExecutor`](upsource:///platform/core-api/src/com/intellij/util/QueryExecutor.java) | 
+|  | Pythonid.pythonDocumentationQuickInfoProvider | [`PythonDocumentationQuickInfoProvider`](upsource:///python/python-psi-api/src/com/jetbrains/python/documentation/PythonDocumentationQuickInfoProvider.java) | 
 |  | Pythonid.resolveResultRater | [`PyResolveResultRater`](upsource:///python/python-psi-api/src/com/jetbrains/python/psi/impl/PyResolveResultRater.java) | 
 |  ![Experimental API](https://img.shields.io/badge/-Experimental_API-red) | Pythonid.thirdPartySdkDetector | [`PyThirdPartySdkDetector`](upsource:///python/python-psi-api/src/com/jetbrains/python/psi/resolve/PyThirdPartySdkDetector.java) | 
 |  | Pythonid.typeProvider | [`PyTypeProvider`](upsource:///python/python-psi-api/src/com/jetbrains/python/psi/impl/PyTypeProvider.java) | 
@@ -1348,10 +1388,13 @@ title: Extension Point List
 |  | com.intellij.refactoring.pushDown | [`PushDownDelegate`](upsource:///platform/lang-impl/src/com/intellij/refactoring/memberPushDown/PushDownDelegate.java) | 
 |  | com.intellij.refactoring.safeDeleteProcessor | [`SafeDeleteProcessorDelegate`](upsource:///platform/lang-impl/src/com/intellij/refactoring/safeDelete/SafeDeleteProcessorDelegate.java) | 
 |  | com.intellij.rename.inplace.resolveSnapshotProvider | [`ResolveSnapshotProvider`](upsource:///platform/lang-api/src/com/intellij/refactoring/rename/ResolveSnapshotProvider.java) | 
+|  | com.intellij.rename.referenceRenameUsageFactory | [`ReferenceRenameUsageFactory`](upsource:///platform/lang-impl/src/com/intellij/refactoring/rename/symbol/ReferenceRenameUsageFactory.java) | 
+|  | com.intellij.rename.symbolRenameTargetFactory | [`SymbolRenameTargetFactory`](upsource:///platform/lang-impl/src/com/intellij/refactoring/rename/symbol/SymbolRenameTargetFactory.java) | 
 |  | com.intellij.renameFileActionProvider | [`RenameFileActionProvider`](upsource:///platform/lang-impl/src/com/intellij/refactoring/actions/RenameFileActionProvider.java) | 
 |  | com.intellij.renameHandler | [`RenameHandler`](upsource:///platform/lang-api/src/com/intellij/refactoring/rename/RenameHandler.java) | 
 |  | com.intellij.renameInputValidator | [`RenameInputValidator`](upsource:///platform/lang-api/src/com/intellij/refactoring/rename/RenameInputValidator.java) | 
 |  | com.intellij.renamePsiElementProcessor | [`RenamePsiElementProcessor`](upsource:///platform/lang-impl/src/com/intellij/refactoring/rename/RenamePsiElementProcessor.java) | 
+|  ![Experimental API](https://img.shields.io/badge/-Experimental_API-red) | com.intellij.renamerFactory | [`RenamerFactory`](upsource:///platform/lang-api/src/com/intellij/refactoring/rename/RenamerFactory.java) | 
 |  | com.intellij.suggestedRefactoringSupport | [`SuggestedRefactoringSupport`](upsource:///platform/lang-api/src/com/intellij/refactoring/suggested/SuggestedRefactoringSupport.kt) | 
 |  | com.intellij.updateAddedFileProcessor | [`UpdateAddedFileProcessor`](upsource:///platform/core-impl/src/com/intellij/psi/impl/file/UpdateAddedFileProcessor.java) | 
 |  | com.intellij.vetoRenameCondition | [`Condition`](upsource:///platform/util-rt/src/com/intellij/openapi/util/Condition.java) | 
@@ -1412,6 +1455,7 @@ title: Extension Point List
 
 | Note | Extension Point | Implementation |
 |---|---|---|
+|  | com.intellij.structuralsearch.filter | [`FilterAction`](upsource:///platform/structuralsearch/source/com/intellij/structuralsearch/plugin/ui/filters/FilterAction.java) | 
 |  | com.intellij.structuralsearch.profile | [`StructuralSearchProfile`](upsource:///platform/structuralsearch/source/com/intellij/structuralsearch/StructuralSearchProfile.java) | 
 
 ## [tasks.xml](upsource:///platform/tasks-platform-impl/resources/META-INF/tasks.xml)
@@ -1446,6 +1490,7 @@ title: Extension Point List
 |  ![Experimental API](https://img.shields.io/badge/-Experimental_API-red) ![Project-Level](https://img.shields.io/badge/-Project--Level-yellow) | com.intellij.customVcsLogUiFactoryProvider | [`CustomVcsLogUiFactoryProvider`](upsource:///platform/vcs-log/impl/src/com/intellij/vcs/log/impl/CustomVcsLogUiFactoryProvider.java) | 
 |  | com.intellij.logHighlighterFactory | [`VcsLogHighlighterFactory`](upsource:///platform/vcs-log/impl/src/com/intellij/vcs/log/ui/highlighters/VcsLogHighlighterFactory.java) | 
 |  ![Project-Level](https://img.shields.io/badge/-Project--Level-yellow) | com.intellij.logProvider | [`VcsLogProvider`](upsource:///platform/vcs-log/api/src/com/intellij/vcs/log/VcsLogProvider.java) | 
+|  | com.intellij.vcsLogCustomColumn | [`VcsLogCustomColumn`](upsource:///platform/vcs-log/impl/src/com/intellij/vcs/log/ui/table/column/VcsLogCustomColumn.kt) | 
 
 ## [VcsExtensionPoints.xml](upsource:///platform/vcs-impl/resources/META-INF/VcsExtensionPoints.xml)
 
@@ -1461,21 +1506,23 @@ title: Extension Point List
 |  ![Project-Level](https://img.shields.io/badge/-Project--Level-yellow) | com.intellij.ignoredFileContentProvider | [`IgnoredFileContentProvider`](upsource:///platform/vcs-api/src/com/intellij/openapi/vcs/changes/IgnoredFileContentProvider.java) | 
 |  ![Experimental API](https://img.shields.io/badge/-Experimental_API-red) | com.intellij.ignoredFileProvider | [`IgnoredFileProvider`](upsource:///platform/vcs-api/src/com/intellij/openapi/vcs/changes/IgnoredFileProvider.java) | 
 |  | com.intellij.openapi.vcs.actions.AnnotateToggleAction.Provider | [`Provider`](upsource:///platform/vcs-impl/src/com/intellij/openapi/vcs/actions/AnnotateToggleAction.java) | 
-|  | com.intellij.openapi.vcs.changes.actions.CreatePatchFromChangesAction.<br>Clipboard.ExtensionProvider | [`AnActionExtensionProvider`](upsource:///platform/platform-impl/src/com/intellij/openapi/actionSystem/AnActionExtensionProvider.java) | 
-|  | com.intellij.openapi.vcs.changes.actions.CreatePatchFromChangesAction.<br>Dialog.ExtensionProvider | [`AnActionExtensionProvider`](upsource:///platform/platform-impl/src/com/intellij/openapi/actionSystem/AnActionExtensionProvider.java) | 
-|  | com.intellij.openapi.vcs.changes.actions.diff.ChangeDiffRequestProvider | [`ChangeDiffRequestProvider`](upsource:///platform/vcs-impl/src/com/intellij/openapi/vcs/changes/actions/diff/ChangeDiffRequestProvider.java) | 
-|  | com.intellij.openapi.vcs.changes.actions.diff.ChangeDiffViewerWrapperProvider | [`ChangeDiffViewerWrapperProvider`](upsource:///platform/vcs-impl/src/com/intellij/openapi/vcs/changes/actions/diff/ChangeDiffViewerWrapperProvider.java) | 
+|  | com.intellij.openapi.vcs.changes.actions.<br>CreatePatchFromChangesAction.Clipboard.ExtensionProvider | [`AnActionExtensionProvider`](upsource:///platform/platform-impl/src/com/intellij/openapi/actionSystem/AnActionExtensionProvider.java) | 
+|  | com.intellij.openapi.vcs.changes.actions.<br>CreatePatchFromChangesAction.Dialog.ExtensionProvider | [`AnActionExtensionProvider`](upsource:///platform/platform-impl/src/com/intellij/openapi/actionSystem/AnActionExtensionProvider.java) | 
+|  | com.intellij.openapi.vcs.changes.actions.<br>diff.ChangeDiffRequestProvider | [`ChangeDiffRequestProvider`](upsource:///platform/vcs-impl/src/com/intellij/openapi/vcs/changes/actions/diff/ChangeDiffRequestProvider.java) | 
+|  | com.intellij.openapi.vcs.changes.actions.<br>diff.ChangeDiffViewerWrapperProvider | [`ChangeDiffViewerWrapperProvider`](upsource:///platform/vcs-impl/src/com/intellij/openapi/vcs/changes/actions/diff/ChangeDiffViewerWrapperProvider.java) | 
 |  | com.intellij.openapi.vcs.changes.ui.filePathIconProvider | [`FilePathIconProvider`](upsource:///platform/vcs-api/src/com/intellij/openapi/vcs/changes/FilePathIconProvider.java) | 
 |  | com.intellij.openapi.vcs.changes.vcsPreservingExecutor | [`VcsPreservingExecutor`](upsource:///platform/vcs-api/src/com/intellij/openapi/vcs/changes/VcsPreservingExecutor.java) | 
-|  | com.intellij.openapi.vcs.history.actions.ShowDiffAfterWithLocalAction.<br>ExtensionProvider | [`AnActionExtensionProvider`](upsource:///platform/platform-impl/src/com/intellij/openapi/actionSystem/AnActionExtensionProvider.java) | 
-|  | com.intellij.openapi.vcs.history.actions.ShowDiffBeforeWithLocalAction.<br>ExtensionProvider | [`AnActionExtensionProvider`](upsource:///platform/platform-impl/src/com/intellij/openapi/actionSystem/AnActionExtensionProvider.java) | 
+|  | com.intellij.openapi.vcs.history.actions.<br>ShowDiffAfterWithLocalAction.ExtensionProvider | [`AnActionExtensionProvider`](upsource:///platform/platform-impl/src/com/intellij/openapi/actionSystem/AnActionExtensionProvider.java) | 
+|  | com.intellij.openapi.vcs.history.actions.<br>ShowDiffBeforeWithLocalAction.ExtensionProvider | [`AnActionExtensionProvider`](upsource:///platform/platform-impl/src/com/intellij/openapi/actionSystem/AnActionExtensionProvider.java) | 
+|  | com.intellij.openapi.vcs.impl.LocalLineStatusTrackerProvider | [`LocalLineStatusTrackerProvider`](upsource:///platform/vcs-impl/src/com/intellij/openapi/vcs/impl/LineStatusTrackerManager.kt) | 
 |  | com.intellij.openapi.vcs.ui.cloneDialog.VcsCloneDialogExtension | [`VcsCloneDialogExtension`](upsource:///platform/vcs-api/src/com/intellij/openapi/vcs/ui/cloneDialog/VcsCloneDialogExtension.kt) | 
-|  ![Project-Level](https://img.shields.io/badge/-Project--Level-yellow) | com.intellij.patch.extension | [`PatchEP`](upsource:///platform/vcs-api/vcs-api-core/src/com/intellij/openapi/diff/impl/patch/PatchEP.java) | 
+|  | com.intellij.patch.extension | [`PatchEP`](upsource:///platform/vcs-api/vcs-api-core/src/com/intellij/openapi/diff/impl/patch/PatchEP.java) | 
 |  | com.intellij.unresolvedMergeCheckProvider | [`UnresolvedMergeCheckProvider`](upsource:///platform/vcs-impl/src/com/intellij/openapi/vcs/checkin/UnresolvedMergeCheckProvider.java) | 
 |  | com.intellij.vcs | [`AbstractVcs`](upsource:///platform/vcs-api/src/com/intellij/openapi/vcs/AbstractVcs.java) | 
 |  | com.intellij.vcs.actions.ScheduleForAdditionActionExtension | [`ScheduleForAdditionActionExtension`](upsource:///platform/vcs-impl/src/com/intellij/openapi/vcs/changes/actions/ScheduleForAdditionActionExtension.kt) | 
 |  ![Project-Level](https://img.shields.io/badge/-Project--Level-yellow) | com.intellij.vcs.baseContentProvider | [`VcsBaseContentProvider`](upsource:///platform/vcs-impl/src/com/intellij/openapi/vcs/impl/VcsBaseContentProvider.java) | 
 |  ![Project-Level](https://img.shields.io/badge/-Project--Level-yellow) | com.intellij.vcs.branchStateProvider | [`BranchStateProvider`](upsource:///platform/vcs-api/src/com/intellij/vcs/branch/BranchStateProvider.java) | 
+|  ![Experimental API](https://img.shields.io/badge/-Experimental_API-red) ![Project-Level](https://img.shields.io/badge/-Project--Level-yellow) | com.intellij.vcs.changeListChangeAssigner | [`ChangeListChangeAssigner`](upsource:///platform/vcs-impl/src/com/intellij/openapi/vcs/changes/ChangeListChangeAssigner.java) | 
 |  ![Project-Level](https://img.shields.io/badge/-Project--Level-yellow) | com.intellij.vcs.changeListDecorator | [`ChangeListDecorator`](upsource:///platform/vcs-api/src/com/intellij/openapi/vcs/changes/ChangeListDecorator.java) | 
 |  ![Project-Level](https://img.shields.io/badge/-Project--Level-yellow) | com.intellij.vcs.changes.changesViewModifier | [`ChangesViewModifier`](upsource:///platform/vcs-impl/src/com/intellij/openapi/vcs/changes/ChangesViewModifier.java) | 
 |  ![Project-Level](https://img.shields.io/badge/-Project--Level-yellow) | com.intellij.vcs.changes.localCommitExecutor | [`LocalCommitExecutor`](upsource:///platform/vcs-api/src/com/intellij/openapi/vcs/changes/LocalCommitExecutor.java) | 
@@ -1492,14 +1539,21 @@ title: Extension Point List
 |  ![Project-Level](https://img.shields.io/badge/-Project--Level-yellow) | com.intellij.vcsChangesViewRefresher | [`ChangesViewRefresher`](upsource:///platform/vcs-api/src/com/intellij/openapi/vcs/changes/ChangesViewRefresher.java) | 
 |  | com.intellij.vcsCheckinHandlerFactory | [`VcsCheckinHandlerFactory`](upsource:///platform/vcs-api/src/com/intellij/openapi/vcs/checkin/VcsCheckinHandlerFactory.kt) | 
 |  | com.intellij.vcsConfigurableProvider | [`VcsConfigurableProvider`](upsource:///platform/vcs-api/src/com/intellij/openapi/vcs/VcsConfigurableProvider.java) | 
-|  ![Project-Level](https://img.shields.io/badge/-Project--Level-yellow) | com.intellij.vcsIgnoreChecker | [`VcsIgnoreChecker`](upsource:///platform/vcs-api/src/com/intellij/openapi/vcs/VcsIgnoreChecker.java) | 
+|  | com.intellij.vcsIgnoreChecker | [`VcsIgnoreChecker`](upsource:///platform/vcs-api/src/com/intellij/openapi/vcs/VcsIgnoreChecker.java) | 
 |  | com.intellij.vcsPopupProvider | [`VcsQuickListContentProvider`](upsource:///platform/vcs-api/src/com/intellij/openapi/vcs/actions/VcsQuickListContentProvider.java) | 
 |  | com.intellij.vcsRepositoryInitializer | [`VcsRepositoryInitializer`](upsource:///platform/vcs-api/src/com/intellij/vcs/VcsRepositoryInitializer.java) | 
 |  | com.intellij.vcsRootChecker | [`VcsRootChecker`](upsource:///platform/vcs-api/src/com/intellij/openapi/vcs/VcsRootChecker.java) | 
 |  | com.intellij.vcsSelectionProvider | [`VcsSelectionProvider`](upsource:///platform/vcs-api/src/com/intellij/vcsUtil/VcsSelectionProvider.java) | 
 |  ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | com.intellij.vcsStartupActivity | [`VcsStartupActivity`](upsource:///platform/vcs-impl/src/com/intellij/openapi/vcs/impl/VcsStartupActivity.java) | 
 
-## [xdebugger.xml](upsource:///platform/platform-resources/src/META-INF/xdebugger.xml)
+## [WorkspaceModelExtensions.xml](upsource:///platform/workspaceModel/ide/src/META-INF/WorkspaceModelExtensions.xml)
+
+| Note | Extension Point | Implementation |
+|---|---|---|
+|  | com.intellij.workspaceModel.customModuleComponentSerializer | [`CustomModuleComponentSerializer`](upsource:///platform/workspaceModel/ide/src/com/intellij/workspaceModel/ide/impl/jps/serialization/CustomModuleComponentSerializer.kt) | 
+|  | com.intellij.workspaceModel.customModuleRootsSerializer | [`CustomModuleRootsSerializer`](upsource:///platform/workspaceModel/ide/src/com/intellij/workspaceModel/ide/impl/jps/serialization/CustomModuleRootsSerializer.kt) | 
+
+## [xdebugger.xml](upsource:///platform/xdebugger-impl/resources/META-INF/xdebugger.xml)
 
 | Note | Extension Point | Implementation |
 |---|---|---|
@@ -1519,8 +1573,9 @@ title: Extension Point List
 |  | com.intellij.embeddedTokenTypesProvider | [`EmbeddedTokenTypesProvider`](upsource:///xml/xml-psi-impl/src/com/intellij/lexer/EmbeddedTokenTypesProvider.java) | 
 |  | com.intellij.html.attributeValueProvider | [`HtmlAttributeValueProvider`](upsource:///xml/impl/src/com/intellij/html/impl/providers/HtmlAttributeValueProvider.java) | 
 |  | com.intellij.html.codestyle.panel | [`HtmlCodeStylePanelExtension`](upsource:///xml/impl/src/com/intellij/application/options/HtmlCodeStylePanelExtension.java) | 
+|  | com.intellij.html.embeddedContentSupport | [`HtmlEmbeddedContentSupport`](upsource:///xml/xml-psi-impl/src/com/intellij/html/embedding/HtmlEmbeddedContentSupport.kt) | 
 |  | com.intellij.html.htmlScriptInjectionBlocker | [`HtmlScriptInjectionBlocker`](upsource:///xml/impl/src/com/intellij/psi/impl/source/html/HtmlScriptInjectionBlocker.java) | 
-|  | com.intellij.html.inlineScriptTokenTypesProvider | [`HtmlInlineScriptTokenTypesProvider`](upsource:///xml/xml-psi-impl/src/com/intellij/lang/HtmlInlineScriptTokenTypesProvider.java) | 
+|  | com.intellij.html.inlineScriptTokenTypesProvider | [~~`HtmlInlineScriptTokenTypesProvider`~~](upsource:///xml/xml-psi-impl/src/com/intellij/lang/HtmlInlineScriptTokenTypesProvider.java) | 
 |  | com.intellij.html.scriptContentProvider | [`HtmlScriptContentProvider`](upsource:///xml/xml-psi-impl/src/com/intellij/lang/HtmlScriptContentProvider.java) | 
 |  | com.intellij.html.scriptDocumentationProvider | [`DocumentationProvider`](upsource:///platform/analysis-api/src/com/intellij/lang/documentation/DocumentationProvider.java) | 
 |  | com.intellij.standardResource | `n/a` | 
@@ -1546,6 +1601,7 @@ title: Extension Point List
 |  | com.intellij.xml.xmlExtension | [`XmlExtension`](upsource:///xml/xml-psi-impl/src/com/intellij/xml/XmlExtension.java) | 
 |  | com.intellij.xml.xmlSuppressionProvider | [`XmlSuppressionProvider`](upsource:///xml/xml-psi-api/src/com/intellij/codeInspection/XmlSuppressionProvider.java) | 
 |  | com.intellij.xml.xmlTagRuleProvider | [`XmlTagRuleProvider`](upsource:///xml/xml-analysis-api/src/com/intellij/xml/XmlTagRuleProvider.java) | 
+|  ![Experimental API](https://img.shields.io/badge/-Experimental_API-red) | com.intellij.xml.xmlTypedHandlersAdditionalSupport | [`XmlTypedHandlersAdditionalSupport`](upsource:///xml/xml-psi-api/src/com/intellij/openapi/editor/XmlTypedHandlersAdditionalSupport.java) | 
 |  | com.intellij.xml.zenCodingFilter | [`ZenCodingFilter`](upsource:///xml/impl/src/com/intellij/codeInsight/template/emmet/filters/ZenCodingFilter.java) | 
 |  | com.intellij.xml.zenCodingGenerator | [`ZenCodingGenerator`](upsource:///xml/impl/src/com/intellij/codeInsight/template/emmet/generators/ZenCodingGenerator.java) | 
 |  | com.intellij.xmlStructureViewBuilderProvider | [`XmlStructureViewBuilderProvider`](upsource:///xml/xml-structure-view-api/src/com/intellij/ide/structureView/xml/XmlStructureViewBuilderProvider.java) | 

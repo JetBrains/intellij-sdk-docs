@@ -65,7 +65,7 @@ public class EditorIllustrationAction extends AnAction {
 
 **Note:**
 There are other ways to access an `Editor` instance:
-* If a [`DataContext`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/DataContext.java) object is available: `CommonDataKeys.EDITOR.getData(context);`
+* If a [`DataContext`](upsource:///platform/core-ui/src/openapi/actionSystem/DataContext.java) object is available: `CommonDataKeys.EDITOR.getData(context);`
 * If only a `Project` object is available, use `FileEditorManager.getInstance(project).getSelectedTextEditor()`
 
 ### Obtaining a Caret Model and Selection

@@ -52,6 +52,7 @@ Sometimes it also includes language support elements for a custom syntax or DSL.
 * Direct access to framework-specific functionality
 
 Refer to the [Struts 2 plugin](https://github.com/JetBrains/intellij-plugins/tree/master/struts2) as an example of framework integration.
+More reference plugins can be found on [JetBrains Plugins Repository](https://plugins.jetbrains.com/search?orderBy=update%20date&shouldHaveSource=true&tags=Framework%20integration).
 
 ## Tool Integration
 

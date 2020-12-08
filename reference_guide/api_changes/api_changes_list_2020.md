@@ -106,6 +106,8 @@ Added PHP 8 support
 All parameters in `com.jetbrains.python.psi.PyElementVisitor` marked `@NotNull`
 : This may break source-compatibility with inheritors written in Kotlin.
 
+`com.jetbrains.python.sdk.PythonSdkUpdater.updateOrShowError(Sdk, SdkModificator, Project, Component)` method parameter `SdkModificator` removed
+: It was not processed carefully, it should be enough to pass editable sdk instead.
 
 ## 2020.2
 

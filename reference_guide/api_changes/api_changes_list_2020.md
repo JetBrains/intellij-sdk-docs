@@ -106,6 +106,9 @@ Added PHP 8 support
 All parameters in `com.jetbrains.python.psi.PyElementVisitor` marked `@NotNull`
 : This may break source-compatibility with inheritors written in Kotlin.
 
+`com.jetbrains.python.parsing.StatementParsing.FUTURE` class removed
+: Use `com.jetbrains.python.psi.FutureFeature` instead.
+
 
 ## 2020.2
 

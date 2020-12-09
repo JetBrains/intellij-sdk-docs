@@ -127,6 +127,9 @@ All parameters in `com.jetbrains.python.psi.PyElementVisitor` marked `@NotNull`
 `interpreter` property removed from resource bundle `messages.PyBundle`
 : Use `python.interpreter.label` from `messages.PySdkBundle` instead.
 
+`com.jetbrains.python.psi.LanguageLevel.hasWithStatement()` method removed
+: It is `true` for all supported python versions.
+
 ## 2020.2
 
 ### Changes in IntelliJ Platform 2020.2

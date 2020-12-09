@@ -6,7 +6,7 @@ title: Configuring Gradle Projects
 This page serves as a guide to Gradle-based plugin configuration for _IntelliJ Platform_ projects.
 The IntelliJ IDEA Ultimate and Community editions bundle the _Gradle_ and _Plugin DevKit_ plugins to support Gradle-based development.
 
-The [Getting Started with Gradle](prerequisites.md) page provides a tutorial for creating Gradle-based IntelliJ Platform plugins.
+The [Getting Started with Gradle](gradle_prerequisites.md) page provides a tutorial for creating Gradle-based IntelliJ Platform plugins.
 It may be useful to review the IntelliJ Platform page, particularly the description of versioning in the [Open Source](/intro/intellij_platform.md#open-source) section.
 
 > **WARNING** When adding additional repositories to your Gradle build script, always use HTTPS protocol.

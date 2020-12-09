@@ -54,7 +54,7 @@ Please note that any unloading problems in a production environment will ask the
 
 ### Gradle plugin 0.4.22 and Later
 Enabled by default for target platform 2020.2 or later.
-Set `autoReloadPlugins = true` in [**runIde**](/tutorials/build_system/prerequisites.md#running-a-simple-gradle-based-intellij-platform-plugin) task to enable it for earlier platform versions or `autoReloadPlugins = false` to disable it explicitly.
+Set `autoReloadPlugins = true` in [**runIde**](/tutorials/build_system/gradle_prerequisites.md#running-a-simple-gradle-based-intellij-platform-plugin) task to enable it for earlier platform versions or `autoReloadPlugins = false` to disable it explicitly.
 
 ### Gradle plugin 0.4.21 and Earlier/DevKit
 Add system property `idea.auto.reload.plugins` in the [run configuration](getting_started/running_and_debugging_a_plugin.md) (DevKit-based) or [**runIde**](/tutorials/build_system/gradle_prerequisites.md#running-a-simple-gradle-based-intellij-platform-plugin) task (Gradle-based).

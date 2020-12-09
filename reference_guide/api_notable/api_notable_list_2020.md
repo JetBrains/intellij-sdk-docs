@@ -26,7 +26,7 @@ Extensible HTML Lexer/Parser
 Please note that old API from `com.intellij.lexer.BaseHtmlLexer` is no longer working.
 
 Action System
-: New features in [Action System](/basics/action_system.md): `<override-text>` works now for `<group>` as well, `<synonym>` provides alternative names when searching for actions, and groups can be excluded from search results.
+: New features in [Action System](/basics/basic_action_system.md): `<override-text>` works now for `<group>` as well, `<synonym>` provides alternative names when searching for actions, and groups can be excluded from search results.
 
 Welcome Screen customization
 : To provide additional custom tabs, implement `com.intellij.openapi.wm.WelcomeTabFactory` and register in `com.intellij.welcomeTabFactory` extension point.
@@ -118,7 +118,7 @@ JCEF Support (_Experimental Feature_)
 : Allows [embedding](/reference_guide/jcef.md) Chromium-based browser in the IDE.
 
 Override text presentation for actions depending on menu context
-: Set the [`<override-text>`](/basics/basic_action_system.md#setting-the-override-text-element-for-an-action) element within the `<action>` declaration in `plugin.xml`.
+: Set the [`<override-text>`](/basics/basic_action_system.md#setting-the-override-text-element) element within the `<action>` declaration in `plugin.xml`.
 
 Changes in Project Open/Import
 : **Import from Existing Sources** has been removed from the Welcome Screen, leaving only **Open or Import**, which calls a different extension than the one previously used to contribute a wizard step to **Import from Existing Sources** (which is still available in the **File** menu). To support **Open or Import**, a plugin must provide [`ProjectOpenProcessor`](upsource:///platform/platform-api/src/com/intellij/projectImport/ProjectOpenProcessor.java).

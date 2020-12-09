@@ -131,7 +131,7 @@ In the `<action>` element declaration below:
     </group>
 ```
 
-Now the translations for the `text` and `description` attributes must be provided in the resource bundle [`BasicActionsBundle.properties`](https://github.com/JetBrains/intellij-sdk-code-samples/blob/master/action_basics/src/main/resources/messages/BasicActionsBundle.properties) file according to [Localizing Actions and Groups](/basics/action_system.md#localizing-actions-and-groups).
+Now the translations for the `text` and `description` attributes must be provided in the resource bundle [`BasicActionsBundle.properties`](https://github.com/JetBrains/intellij-sdk-code-samples/blob/master/action_basics/src/main/resources/messages/BasicActionsBundle.properties) file according to [Localizing Actions and Groups](/basics/basic_action_system.md#localizing-actions-and-groups).
 Note there are two sets of `text` and `description` translations, one for the action and one for the group.
 Conceivably, there could be another set of translations for the action if it used the `<override-text>` attribute.
 

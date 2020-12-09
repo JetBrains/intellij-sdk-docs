@@ -118,6 +118,15 @@ All parameters in `com.jetbrains.python.psi.PyElementVisitor` marked `@NotNull`
 `com.jetbrains.python.sdk.PythonSdkUpdater.updateOrShowError(Sdk, SdkModificator, Project, Component)` method parameter `SdkModificator` removed
 : It was not processed carefully, it should be enough to pass editable sdk instead.
 
+`python.sdk.interpreter.field.is.empty` property removed from resource bundle `messages.PyBundle`
+: Use `python.sdk.field.is.empty` from `messages.PySdkBundle` instead.
+
+`base.interpreter` property removed from resource bundle `messages.PyBundle`
+: Use `python.venv.base.label` from `messages.PySdkBundle` instead.
+
+`interpreter` property removed from resource bundle `messages.PyBundle`
+: Use `python.interpreter.label` from `messages.PySdkBundle` instead.
+
 ## 2020.2
 
 ### Changes in IntelliJ Platform 2020.2

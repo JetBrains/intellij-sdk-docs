@@ -118,6 +118,9 @@ All parameters in `com.jetbrains.python.psi.PyElementVisitor` marked `@NotNull`
 `com.jetbrains.python.sdk.PythonSdkUpdater.updateOrShowError(Sdk, SdkModificator, Project, Component)` method parameter `SdkModificator` removed
 : It was not processed carefully, it should be enough to pass editable sdk instead.
 
+`com.jetbrains.python.psi.LanguageLevel.hasWithStatement()` method removed
+: It is `true` for all supported python versions.
+
 ## 2020.2
 
 ### Changes in IntelliJ Platform 2020.2

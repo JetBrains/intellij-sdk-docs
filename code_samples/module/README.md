@@ -8,9 +8,9 @@ Module with a custom name, description, and icon set provides a `ModuleBuilder` 
 
 ### Extension Points
 
-| Name                      | Implementation                        | Extension Point Class        |
-| ------------------------- | ------------------------------------- | ---------------------------- |
-| `com.intellij.moduleType` | [DemoModuleType][file:DemoModuleType] | [ModuleType][sdk:ModuleType] |
+| Name                      | Implementation                        | Extension Point Class |
+| ------------------------- | ------------------------------------- | --------------------- |
+| `com.intellij.moduleType` | [DemoModuleType][file:DemoModuleType] | `ModuleType`          |
 
 *Reference: [Plugin Extension Points in IntelliJ SDK Docs][docs:ep]*
 
@@ -20,5 +20,3 @@ Module with a custom name, description, and icon set provides a `ModuleBuilder` 
 [docs:ep]: https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_extensions.html
 
 [file:DemoModuleType]: ./src/main/java/org/intellij/sdk/module/DemoModuleType.java
-
-[sdk:ModuleType]: upsource:///platform/lang-api/src/com/intellij/openapi/module/ModuleType.java

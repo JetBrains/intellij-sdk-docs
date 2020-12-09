@@ -12,15 +12,15 @@ After opening each one, a message dialog is presented to the user with the curre
 
 | Name                              | Implementation                                        | Extension Point Class |
 | --------------------------------- | ----------------------------------------------------- | --------------------- |
-| `com.intellij.applicationService` | [ProjectCountingService][file:ProjectCountingService] |                       |
+| `com.intellij.applicationService` | [ProjectCountingService][file:ProjectCountingService] | n/a                   |
 
 *Reference: [Plugin Extension Points in IntelliJ SDK Docs][docs:ep]*
 
 ### Application Listeners
 
-| Name     | Implementation                                            | Extension Point Class                                |
-| -------- | --------------------------------------------------------- | ---------------------------------------------------- |
-| listener | [ProjectOpenCloseListener][file:ProjectOpenCloseListener] | [ProjectManagerListener][sdk:ProjectManagerListener] |
+| Name     | Implementation                                            | Listener Class           |
+| -------- | --------------------------------------------------------- | ------------------------ |
+| listener | [ProjectOpenCloseListener][file:ProjectOpenCloseListener] | `ProjectManagerListener` |
 
 *Reference: [Plugin Listeners in IntelliJ SDK Docs][docs:listeners]*
 
@@ -31,5 +31,3 @@ After opening each one, a message dialog is presented to the user with the curre
 
 [file:ProjectCountingService]: ./src/main/java/org/intellij/sdk/maxOpenProjects/ProjectCountingService.java
 [file:ProjectOpenCloseListener]: ./src/main/java/org/intellij/sdk/maxOpenProjects/ProjectOpenCloseListener.java
-
-[sdk:ProjectManagerListener]: upsource:///platform/projectModel-api/src/com/intellij/openapi/project/ProjectManagerListener.java

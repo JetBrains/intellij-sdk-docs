@@ -9,6 +9,8 @@ If you intend to use a plugin repository _other than_ the [JetBrains Plugins Rep
 * Upload your plugin JAR/ZIP file to an HTTPS web server.
   This can be the same web server you are using for the custom repository or a different HTTPS web server.
 * Add the URL for the custom repository to the JetBrains IDE [Repository Settings/Preferences](https://www.jetbrains.com/help/idea/managing-plugins.html#repos).
+                                    
+> **TIP** Gradle plugin [IntelliJ plugin uploader](https://github.com/brian-mcnamara/plugin_uploader) can be used to automate deployment.
 
 ## Describing Your Plugins in updatePlugins.xml File
 Every custom plugin repository must have at least one `updatePlugins.xml` file to describe every hosted plugin's latest available version.
@@ -54,13 +56,13 @@ The format of an `updatePlugins.xml` file is simply a list of sequential element
 **Note:**
 * An `updatePlugins.xml` file must contain at least one set of `<plugin></plugin>` elements.
 * A plugin `id` may be listed only once in an `updatePlugins.xml` file.
-* Multiple plugins with the same `id` but different `idea-version` attributes must be split into separate `updatePlugins-*.xml` files.
+* Multiple plugins with the same `id` but different `idea-version` attributes must be split into separate `updatePlugins-*.xml` files. The requesting IDE's version is passed as `build` parameter and can be used for server-side filtering.
 
 ### Optional updatePlugin.xml Elements
 Can additional elements be added to `updatePlugins.xml`? Yes, but it's advisable only if needed.
 The additional elements will have to be synchronized with each plugin's `plugin.xml` file.
 
-During plugin installation the JetBrains IDE reads the plugin JAR/ZIP file, and thereafter displays more information about the plugin.
+During plugin installation the IDE reads the plugin JAR/ZIP file, and thereafter displays more information about the plugin.
 What additional information might help a user select a plugin when [browsing the custom plugin repository](https://www.jetbrains.com/help/idea/managing-plugins.html#repos) before installation? The answer depends on the plugins and repository consumers.
 Here are the candidate elements:
 

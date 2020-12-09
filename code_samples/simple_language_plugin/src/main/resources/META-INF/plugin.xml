@@ -10,7 +10,7 @@
 
   <!-- Product and plugin compatibility requirements -->
   <depends>com.intellij.modules.platform</depends>
-  <depends>com.intellij.modules.java</depends>
+  <depends>com.intellij.java</depends>
 
   <!-- Text to display as description on Preferences/Settings | Plugin page -->
   <description>
@@ -52,7 +52,8 @@
                                     implementationClass="org.intellij.sdk.language.SimpleLineMarkerProvider"/>
     <completion.contributor language="Simple"
                             implementationClass="org.intellij.sdk.language.SimpleCompletionContributor"/>
-    <psi.referenceContributor implementation="org.intellij.sdk.language.SimpleReferenceContributor"/>
+    <psi.referenceContributor language="JAVA"
+                              implementation="org.intellij.sdk.language.SimpleReferenceContributor"/>
     <lang.refactoringSupport language="Simple"
                              implementationClass="org.intellij.sdk.language.SimpleRefactoringSupportProvider"/>
     <lang.findUsagesProvider language="Simple"

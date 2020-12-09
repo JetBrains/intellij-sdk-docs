@@ -29,6 +29,7 @@ Please see also [Improving indexing performance](/reference_guide/performance/pe
 Indexing is a potentially lengthy process.
 It's performed in the background, and during this time, IDE's features are restricted to the ones that don't require index: basic text editing, version control, etc.
 This restriction is managed by [`DumbService`](upsource:///platform/core-api/src/com/intellij/openapi/project/DumbService.java).
+Violations are reported via [`IndexNotReadyException`](upsource:///platform/core-api/src/com/intellij/openapi/project/IndexNotReadyException.java), please see its javadoc on how to adapt callers.                                                         
 
 `DumbService` provides API to query whether the IDE is currently in "dumb" mode (where index access is not allowed) or "smart" mode (with all index built and ready to use).
 It also provides ways of delaying code execution until indices are ready.
@@ -45,3 +46,6 @@ Sometimes, the following conditions hold:
 
 A file-based index can be used in such cases, but file gists provide a way to perform data calculation lazily, caching on disk, and a more lightweight API.
 Please see [`VirtualFileGist`](upsource:///platform/indexing-api/src/com/intellij/util/gist/VirtualFileGist.java) and [`PsiFileGist`](upsource:///platform/indexing-api/src/com/intellij/util/gist/PsiFileGist.java) documentation.
+
+**Example:**
+- [`ImageInfoIndex`](upsource:///images/src/org/intellij/images/index/ImageInfoIndex.java) calculating image dimensions/bit depth needed to be displayed in specific parts of UI.  

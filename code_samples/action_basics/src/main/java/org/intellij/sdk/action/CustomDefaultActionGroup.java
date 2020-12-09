@@ -14,8 +14,8 @@ import icons.SdkIcons;
 public class CustomDefaultActionGroup extends DefaultActionGroup {
 
   /**
-   * Given CustomDefaultActionGroup is derived from ActionGroup, in this context
-   * update() determines whether the action group itself should be enabled or disabled.
+   * Given {@link CustomDefaultActionGroup} is derived from {@link com.intellij.openapi.actionSystem.ActionGroup},
+   * in this context {@code update()} determines whether the action group itself should be enabled or disabled.
    * Requires an editor to be active in order to enable the group functionality.
    *
    * @param event Event received when the associated group-id menu is chosen.

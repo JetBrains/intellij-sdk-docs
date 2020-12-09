@@ -39,8 +39,6 @@ Define a grammar for the Simple Language in the `com/intellij/sdk/language/Simpl
   elementTypeHolderClass="org.intellij.sdk.language.psi.SimpleTypes"
   elementTypeClass="org.intellij.sdk.language.psi.SimpleElementType"
   tokenTypeClass="org.intellij.sdk.language.psi.SimpleTokenType"
-
-  psiImplUtilClass="org.intellij.sdk.language.psi.impl.SimplePsiImplUtil"
 }
 
 simpleFile ::= item_*

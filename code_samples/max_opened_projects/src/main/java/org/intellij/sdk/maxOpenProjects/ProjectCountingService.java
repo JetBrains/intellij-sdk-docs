@@ -3,14 +3,18 @@
 package org.intellij.sdk.maxOpenProjects;
 
 /**
- * Application service implementation to keep a running count of
- * how many projects are open at a given time.
+ * Application service implementation to keep a running count of how many projects are open at a given time.
  */
 public class ProjectCountingService {
 
-  // Sets the maximum allowed number of opened projects.
+  /**
+   * Sets the maximum allowed number of opened projects.
+   */
   private final static int MAX_OPEN_PRJ_LIMIT = 3;
-  // The count of open projects must always be >= 0
+
+  /**
+   * The count of open projects must always be >= 0.
+   */
   private int myOpenProjectCount = 0;
 
   public void incrProjectCount() {

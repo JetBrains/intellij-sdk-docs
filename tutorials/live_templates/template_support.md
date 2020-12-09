@@ -44,10 +44,12 @@ The export produces a file called `Markdown.xml` with the following contents:
 </templateSet>
 ```
 
+The display `name` can also provide localized variants by specifying `key` and `resource-bundle` attributes additionally (2020.3 and later).
+
 Copy this file into the [plugin's resources folder](https://github.com/JetBrains/intellij-sdk-code-samples/tree/master/live_templates/src/main/resources/liveTemplates).
 
 ## Implement TemplateContextType
-A [`TemplateContextType`](upsource:///platform/lang-api/src/com/intellij/codeInsight/template/TemplateContextType.java) tells the IntelliJ Platform where the Live Template is applicable: Markdown files.
+A [`TemplateContextType`](upsource:///platform/analysis-api/src/com/intellij/codeInsight/template/TemplateContextType.java) tells the IntelliJ Platform where the Live Template is applicable: Markdown files.
 Every context must have a unique `TemplateContextType` defined for it, and many context types are defined by the Platform.
 The `MarkdownContext` class defines it for Markdown files.
 Ultimately, a file's extension determines the applicable Markdown context.
@@ -131,4 +133,5 @@ Using the `com.intellij.defaultLiveTemplatesProvider` and `com.intellij.liveTemp
 ## Check Plugin
 Now verify the plugin is working correctly.
 Run the plugin in a Development Instance and verify there is a new entry under **Settings/Preferenes \| Live Templates \| Markdown \| \{ (SDK: New link reference)**.
-Finally, create a new file `Test.md` and confirm that the Live Template works by entering a <kbd>{</kbd> character and then pressing <kbd>Tab</kbd>.
+
+Finally, create a new file `test.md` and confirm that the Live Template works by entering a <kbd>{</kbd> character and then pressing <kbd>Tab</kbd>.

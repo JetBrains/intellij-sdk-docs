@@ -15,7 +15,7 @@ import org.jetbrains.annotations.NotNull;
 /**
  * Menu action to replace a selection of characters with a fixed string.
  *
- * @see com.intellij.openapi.actionSystem.AnAction
+ * @see AnAction
  */
 public class EditorIllustrationAction extends AnAction {
 
@@ -46,9 +46,11 @@ public class EditorIllustrationAction extends AnAction {
 
   /**
    * Sets visibility and enables this action menu item if:
-   * A project is open,
-   * An editor is active,
-   * Some characters are selected
+   * <ul>
+   *   <li>a project is open</li>
+   *   <li>an editor is active</li>
+   *   <li>some characters are selected</li>
+   * </ul>
    *
    * @param e Event related to this action
    */

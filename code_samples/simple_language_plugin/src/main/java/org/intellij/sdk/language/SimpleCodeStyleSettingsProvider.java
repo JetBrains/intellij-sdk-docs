@@ -25,7 +25,6 @@ public class SimpleCodeStyleSettingsProvider extends CodeStyleSettingsProvider {
     return "Simple";
   }
 
-
   @NotNull
   public CodeStyleConfigurable createConfigurable(@NotNull CodeStyleSettings settings, @NotNull CodeStyleSettings modelSettings) {
     return new CodeStyleAbstractConfigurable(settings, modelSettings, this.getConfigurableDisplayName()) {

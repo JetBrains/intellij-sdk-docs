@@ -59,11 +59,11 @@ Note that not all products define and declare modules.
 For example, PhpStorm does not have its own module, but the product itself depends on (and ships with) the PHP language plugin. 
 A plugin project is compatible with PHP functionality if it declares a dependency on this PHP language plugin.
 
-The following table lists(1) modules or built-in plugins that provide specific functionality, and the products currently shipping with them.
+The following table lists **(1)** modules or built-in plugins that provide specific functionality, and the products currently shipping with them.
 
 | Module or Plugin for `<depends>` Element<br>Declaration in `plugin.xml` File | <br>Functionality                                                                                                                                  | IntelliJ Platform-Based<br>Product Compatibility                                                                                                                           |
 | ---------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `com.intellij.modules.java` See (2) below. <br>`com.intellij.java`           | **Java** language PSI Model, Inspections, Intentions, Completion, Refactoring, Test Framework                                                      | IntelliJ IDEA, Android Studio                                                                                                                                              |
+| `com.intellij.modules.java` See **(2)** below. <br>`com.intellij.java`           | **Java** language PSI Model, Inspections, Intentions, Completion, Refactoring, Test Framework                                                      | IntelliJ IDEA, Android Studio                                                                                                                                              |
 | `com.intellij.modules.androidstudio`                                         | Android SDK Platform, Build Tools, Platform Tools, SDK Tools                                                                                       | Android Studio                                                                                                                                                             |
 | `com.intellij.modules.appcode`                                               | CocoaPods, Core Data Objects, Device & Simulator Support                                                                                           | AppCode                                                                                                                                                                    |
 | `com.intellij.modules.cidr.lang`                                             | **C, C++, Objective-C/C++** language PSI Model, Swift/Objective-C Interaction, Inspections, Intentions, Completion, Refactoring, Test Framework    | AppCode, CLion                                                                                                                                                             |
@@ -79,17 +79,19 @@ The following table lists(1) modules or built-in plugins that provide specific f
 | `JavaScript`                                                                 | **JavaScript** language PSI Model, Inspections, Intentions, Completion, Refactoring, Test Framework                                                | WebStorm, and other products if the JavaScript plugin is installed.                                                                                                        |
 
 **Notes about Module and Plugin Dependency:**
+
 **(1)** This table is not exhaustive; other modules are currently available in JetBrains' IntelliJ Platform-based IDEs.
 To see a list of modules, invoke the [code completion](https://www.jetbrains.com/help/idea/auto-completing-code.html#4eac28ba) feature for the `<depends>` element contents while editing the `plugin.xml` file.
 
 **(2)** The [Java language functionality](https://blog.jetbrains.com/platform/2019/06/java-functionality-extracted-as-a-plugin/) was extracted as a plugin in version 2019.2 of the IntelliJ Platform.
 This refactoring separated the Java implementation from the other, non-language portions of the platform.
-Consequently, Java dependencies are expressed differently in `plugin.xml` depending on the version of the IntelliJ Platform being targeted:
-* Syntax _required_ for releases prior to 2019.2, _allowable_ in all releases:
-  * `plugin.xml` include `<depends>com.intellij.modules.java</depends>`
+Consequently, [dependencies](/basics/plugin_structure/plugin_dependencies.md) on Java functionality are expressed differently in `plugin.xml` depending on the version of the IntelliJ Platform being targeted:
+
 * Syntax for 2019.2 and later releases:
-  * `plugin.xml` _allowable_ alternative include `<depends>com.intellij.java</depends>`
-  * `build.gradle` _required_ to include `intellij { plugins 'java' }`
+  * `plugin.xml` _allowable alternative_ add `<depends>com.intellij.java</depends>`
+  * `build.gradle` _required_ define dependency on Java plugin `intellij { plugins = ['com.intellij.java'] }`
+* Syntax _required_ for releases prior to 2019.2, _allowable_ in all releases:
+  * `plugin.xml` add `<depends>com.intellij.modules.java</depends>`
 
 ## Exploring Module and Plugin APIs
 Once the [dependency on a module or plugin](/basics/plugin_structure/plugin_dependencies.md) is declared in `plugin.xml`, it's useful to explore the packages and classes available in that dependency.

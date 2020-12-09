@@ -120,7 +120,6 @@ public class ImagesProjectNode extends AbstractTreeNode<VirtualFile> {
     data.setPresentableText(getValue().getName());
   }
 
-
   @Override
   public boolean canNavigate() {
     return !getValue().isDirectory();

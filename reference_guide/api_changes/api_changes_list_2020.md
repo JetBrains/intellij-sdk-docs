@@ -63,6 +63,9 @@ Please see [Incompatible API Changes](/reference_guide/api_changes_list.md) on h
 > **NOTE** Changes from API marked with `org.jetbrains.annotations.ApiStatus.@Experimental`/`ScheduledForRemoval` are not listed here, as incompatible changes are to be expected.
 
 ## 2020.3
+
+> **NOTE** Java 11 is now required ([blog post](https://blog.jetbrains.com/platform/2020/09/intellij-project-migrates-to-java-11/)) when targeting 2020.3 and later only.
+>  Please make sure to always upgrade to the latest version of `gradle-intellij-plugin`. Follow releases on [GitHub](https://github.com/JetBrains/gradle-intellij-plugin/releases).
                               
 ### Changes in IntelliJ Platform 2020.3
 
@@ -75,7 +78,19 @@ Please see [Incompatible API Changes](/reference_guide/api_changes_list.md) on h
 `com.intellij.execution.ui.ConsoleView.attachToProcess` method `ProcessHandler` parameter marked `@NotNull`
 : This may break source-compatibility with inheritors written in Kotlin if they declare parameter type as nullable.
 
-### Changes in Java Plugin 2019.3
+`com.intellij.util.indexing.FileContentImpl(VirtualFile, byte[])` constructor removed
+: Constructors of `FileContentImpl` were replaced with factory methods, use `FileContentImpl#createByContent(VirtualFile, byte[])`.
+
+`com.intellij.spellchecker.quickfixes.ChangeTo(String)` constructor removed
+: Replaced with `ChangeTo(String, PsiElement, TextRange)`.
+
+`com.intellij.spellchecker.tokenizer.SpellcheckingStrategy.getDefaultRegularFixes(boolean, String, PsiElement)` method removed
+: Replaced with `SpellcheckingStrategy.getDefaultRegularFixes(boolean, String, PsiElement, TextRange)`.
+                           
+`com.intellij.psi.stubs.IStubElementType.createStub` method parameter type changed from `StubElement` to ``StubElement<?>``
+: This may break source-compatibility with inheritors written in Kotlin.
+
+### Changes in Java Plugin 2020.3
 
 The PSI structure of multi-dimensional arrays in Java source files changed (see `com.intellij.psi.PsiTypeElement`)
 : Now the children are flattened: brackets for all the dimensions are direct children of the `PsiTypeElement` that represent the multi-dimensional array. This change doesn't break source or binary compatibility but may produce behavioral changes in the code that traverses the tree of Java source files.
@@ -94,6 +109,29 @@ Added PHP 8 support
 All parameters in `com.jetbrains.python.psi.PyElementVisitor` marked `@NotNull`
 : This may break source-compatibility with inheritors written in Kotlin.
 
+`com.jetbrains.python.parsing.ParsingContext(SyntaxTreeBuilder, LanguageLevel, StatementParsing.FUTURE)` method parameter `StatementParsing.FUTURE` removed
+: It is no longer used in parsing.
+
+`com.jetbrains.python.parsing.StatementParsing(ParsingContext, StatementParsing.FUTURE)` method parameter `StatementParsing.FUTURE` removed
+: It is no longer used in parsing.
+
+`com.jetbrains.python.parsing.StatementParsing.FUTURE` class removed
+: Use `com.jetbrains.python.psi.FutureFeature` instead.
+
+`com.jetbrains.python.sdk.PythonSdkUpdater.updateOrShowError(Sdk, SdkModificator, Project, Component)` method parameter `SdkModificator` removed
+: It was not processed carefully, it should be enough to pass editable sdk instead.
+
+`python.sdk.interpreter.field.is.empty` property removed from resource bundle `messages.PyBundle`
+: Use `python.sdk.field.is.empty` from `messages.PySdkBundle` instead.
+
+`base.interpreter` property removed from resource bundle `messages.PyBundle`
+: Use `python.venv.base.label` from `messages.PySdkBundle` instead.
+
+`interpreter` property removed from resource bundle `messages.PyBundle`
+: Use `python.interpreter.label` from `messages.PySdkBundle` instead.
+
+`com.jetbrains.python.psi.LanguageLevel.hasWithStatement()` method removed
+: It is `true` for all supported python versions.
 
 ## 2020.2
 
@@ -222,6 +260,14 @@ Added Union Types Support
 
 `org.jetbrains.kotlin.idea.core.formatter.KotlinCodeStyleSettings.PACKAGES_TO_USE_STAR_IMPORTS` field type changed from `PackageEntryTable` to `KotlinPackageEntryTable`
 : This change was required to implement import layout order for Kotlin. `KotlinPackageEntryTable` can be used in the same manner as `PackageEntryTable`.
+
+### Changes in Python Plugin 2020.2
+
+`com.jetbrains.python.PythonDialectsTokenSetProvider.INSTANCE` field removed
+: `PythonDialectsTokenSetProvider` became an application service, use `PythonDialectsTokenSetProvider.getInstance()` instead.
+
+`com.jetbrains.python.psi.PyUtil.getLanguageLevelForVirtualFile(Project, VirtualFile)` method removed
+: Use `PythonLanguageLevelPusher.getLanguageLevelForVirtualFile(Project, VirtualFile)` instead.
 
 ## 2020.1
 

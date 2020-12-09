@@ -9,11 +9,10 @@ import icons.SdkIcons;
 import org.jetbrains.annotations.NotNull;
 
 /**
- * Demonstrates adding an action group to a menu statically in plugin.xml, and then creating a menu item
- * within the group at runtime. See plugin.xml for the declaration of DynamicActionGroup,
- * and note the group declaration does not contain an action.
- * DynamicActionGroup is based on ActionGroup because menu children are determined
- * on rules other than just positional constraints.
+ * Demonstrates adding an action group to a menu statically in plugin.xml, and then creating a menu item within
+ * the group at runtime. See plugin.xml for the declaration of {@link DynamicActionGroup}, and note the group
+ * declaration does not contain an action. {@link DynamicActionGroup} is based on {@link ActionGroup} because menu
+ * children are determined on rules other than just positional constraints.
  *
  * @see ActionGroup
  */
@@ -23,8 +22,8 @@ public class DynamicActionGroup extends ActionGroup {
    * Returns an array of menu actions for the group.
    *
    * @param e Event received when the associated group-id menu is chosen.
-   * @return AnAction[]  An instance of AnAction, in this case containing a single instance of the
-   * PopupDialogAction class.
+   * @return AnAction[] An instance of {@link AnAction}, in this case containing a single instance of the
+   * {@link PopupDialogAction} class.
    */
   @NotNull
   @Override

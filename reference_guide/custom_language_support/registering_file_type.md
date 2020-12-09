@@ -18,5 +18,7 @@ To register a file type, the plugin developer provides a subclass of [`FileTypeF
 - [Custom Language Support Tutorial: Language and File Type](/tutorials/custom_language_support/language_and_filetype.md)
 
 To verify that the file type is registered correctly, you can implement the [`LanguageFileType.getIcon()`](upsource:///platform/core-api/src/com/intellij/openapi/fileTypes/LanguageFileType.java) method and verify that the correct icon (see [Working with Icons and Images](/reference_guide/work_with_icons_and_images.md)) is displayed for files associated with your file type.
-
+                                         
 If you want IDEs to show a hint prompting users that your plugin supports a specific file type, see [Plugin Recommendations](https://plugins.jetbrains.com/docs/marketplace/intellij-plugin-recommendations.html).
+
+To control file type association with the IDE in the operating system, implement `com.intellij.openapi.fileTypes.OSFileIdeAssociation` (2020.3).

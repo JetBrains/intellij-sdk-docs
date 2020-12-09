@@ -9,9 +9,9 @@ Action, added to the Main Menu, shows a message dialog when invoked.
 
 ### Actions
 
-| ID               | Implementation                  | Extension Point Class    |
-| ---------------- | ------------------------------- | ------------------------ |
-| `MyPlugin.Hello` | [HelloAction][file:HelloAction] | [AnAction][sdk:AnAction] |
+| ID               | Implementation                  | Base Action Class |
+| ---------------- | ------------------------------- | ----------------- |
+| `MyPlugin.Hello` | [HelloAction][file:HelloAction] | `AnAction`        |
 
 *Reference: [Action System in IntelliJ SDK Docs][docs:actions]*
 
@@ -21,5 +21,3 @@ Action, added to the Main Menu, shows a message dialog when invoked.
 [docs:kotlin]: https://jetbrains.org/intellij/sdk/docs/tutorials/kotlin.html
 
 [file:HelloAction]: ./src/main/kotlin/org/intellij/sdk/kotlin/HelloAction.kt
-
-[sdk:AnAction]: upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java

@@ -8,6 +8,12 @@ We've published our roadmap for the IntelliJ Platform for 2020: [Part I](https:/
 ## 2020.3
 
 ### Notable Changes in IntelliJ Platform 2020.3
+                           
+IntelliJ Platform migrated to Java 11
+: Using Java 11 is now required, please see [blog post](https://blog.jetbrains.com/platform/2020/09/intellij-project-migrates-to-java-11/).
+                    
+Internal changes in Project Model
+: Internal changes related to a significant redesign of the representation of project models have been made, please see [blog post](https://blog.jetbrains.com/platform/2020/10/new-implementation-of-project-model-interfaces-in-2020-3/) for details. This shouldn’t affect any plugins using the IntelliJ API properly and which don’t access internal classes.
 
 Reparsing of `IReparseableLeafElementType`
 : For elements whose `IElementType` implements this interface, platform attempts reparse when a modification is made right before or after the leaf element preventing reparsing the whole file.
@@ -16,7 +22,23 @@ Generating HTML fragments
 : Use `com.intellij.openapi.util.text.HtmlBuilder` for generating formatted content, e.g., for [Documentation](/reference_guide/custom_language_support/documentation.md).
 
 Extensible HTML Lexer/Parser
-: Implement `com.intellij.html.embedding.HtmlEmbeddedContentSupport` and register in `com.intellij.html.embeddedContentSupport` extension point to embed arbitrary tokens into any tag or attribute.                         
+: Implement `com.intellij.html.embedding.HtmlEmbeddedContentSupport` and register in `com.intellij.html.embeddedContentSupport` extension point to embed arbitrary tokens into any tag or attribute.   
+Please note that old API from `com.intellij.lexer.BaseHtmlLexer` is no longer working.
+
+Action System
+: New features in [Action System](/basics/action_system.md): `<override-text>` works now for `<group>` as well, `<synonym>` provides alternative names when searching for actions, and groups can be excluded from search results.
+
+Welcome Screen customization
+: To provide additional custom tabs, implement `com.intellij.openapi.wm.WelcomeTabFactory` and register in `com.intellij.welcomeTabFactory` extension point.
+                                      
+File Type association with the IDE
+: To control file type association with the IDE in the operating system, implement `com.intellij.openapi.fileTypes.OSFileIdeAssociation`. 
+
+Reader Mode customization
+: Implement `com.intellij.codeInsight.actions.ReaderModeProvider` and register in `com.intellij.readerModeProvider` extension point to apply custom settings for files rendered in reader mode. Provide `com.intellij.codeInsight.actions.ReaderModeMatcher` to disable Reader Mode for particular set of files.
+                          
+Text Editor customization
+: Implement `com.intellij.openapi.fileEditor.impl.text.TextEditorCustomizer` and register in `com.intellij.textEditorCustomizer` extension point to customize created editors.
 
 ### Notable Changes in JavaScript Plugin 2020.3
 

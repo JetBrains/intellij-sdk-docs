@@ -11,9 +11,9 @@ It allows us to specify any configuration specified by the `FacetConfiguration` 
 
 ### Extension Points
 
-| Name                     | Implementation                      | Extension Point Class      |
-| ------------------------ | ----------------------------------- | -------------------------- |
-| `com.intellij.facetType` | [DemoFacetType][file:DemoFacetType] | [FacetType][sdk:FacetType] |
+| Name                     | Implementation                      | Extension Point Class |
+| ------------------------ | ----------------------------------- | --------------------- |
+| `com.intellij.facetType` | [DemoFacetType][file:DemoFacetType] | `FacetType`           |
 
 *Reference: [Plugin Extension Points in IntelliJ SDK Docs][docs:ep]*
 
@@ -24,4 +24,3 @@ It allows us to specify any configuration specified by the `FacetConfiguration` 
 
 [file:DemoFacetType]: ./src/main/java/org/intellij/sdk/facet/DemoFacetType.java
 
-[sdk:FacetType]: upsource:///platform/lang-api/src/com/intellij/facet/FacetType.java

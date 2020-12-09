@@ -60,14 +60,14 @@ The action in this group will display the menu text "A Group Action".
 After performing the steps described above, the action group and its content will be available in the **Tools** menu.
 The underlying `PopupDialogAction` implementation is reused for two entries in the **Tools** menu:
 * Once for the top menu entry **Tools \| Pop Dialog Action** with the action `id` equal to `org.intellij.sdk.action.PopupDialogAction` as set in the [Creating Actions](/tutorials/action_system/working_with_custom_actions.md#registering-an-action-with-the-new-action-form) tutorial.
-* A section time for the menu entry **Tools \| Static Grouped Actions \| A Group Action** with the action `id` equal to `org.intellij.sdk.action.GroupPopDialogAction`.
+* A second time for the menu entry **Tools \| Static Grouped Actions \| A Group Action** with the action `id` equal to `org.intellij.sdk.action.GroupPopDialogAction`.
 
 ![Simple Action Group](img/grouped_action.png){:width="550px"}
 
 
 ## Implementing Custom Action Group Classes
 In some cases, the specific behavior of a group of actions needs to depend on the context.
-The solution is analagous to making a [single action entry dependent on context](working_with_custom_actions.md#extending-the-update-method).
+The solution is analogous to making a [single action entry dependent on context](working_with_custom_actions.md#extending-the-update-method).
 
 The steps below show how to make a group of actions available and visible if certain conditions are met.
 In this case, the condition is having an instance of an editor is available.

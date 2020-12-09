@@ -24,13 +24,11 @@ public class DemoFacetEditorTab extends FacetEditorTab {
   private final JTextField myPath;
 
   /**
-   * Only org.intellij.sdk.facet.DemoFacetState is captured so it can be updated per user changes
-   * in the EditorTab.
+   * Only org.intellij.sdk.facet.DemoFacetState is captured so it can be updated per user changes in the EditorTab.
    *
-   * @param state     org.intellij.sdk.facet.DemoFacetState object persisting org.intellij.sdk.facet.DemoFacet state.
+   * @param state     {@link DemoFacetState} object persisting {@link DemoFacet} state.
    * @param context   Facet editor context, can be used to get e.g. the current project module.
-   * @param validator Facet validator manager, can be used to get and apply a custom validator for
-   *                  this facet.
+   * @param validator Facet validator manager, can be used to get and apply a custom validator for this facet.
    */
   public DemoFacetEditorTab(@NotNull DemoFacetState state, @NotNull FacetEditorContext context,
                             @NotNull FacetValidatorsManager validator) {
@@ -39,9 +37,9 @@ public class DemoFacetEditorTab extends FacetEditorTab {
   }
 
   /**
-   * Provides the JPanel displayed in the Preferences | Facet UI
+   * Provides the {@link JPanel} displayed in the Preferences | Facet UI
    *
-   * @return JPanel to be displayed in the org.intellij.sdk.facet.DemoFacetEditorTab.
+   * @return {@link JPanel} to be displayed in the {@link DemoFacetEditorTab}.
    */
   @NotNull
   @Override
@@ -54,7 +52,6 @@ public class DemoFacetEditorTab extends FacetEditorTab {
     return facetPanel;
   }
 
-
   /**
    * @return the name of this facet for display in this editor tab.
    */
@@ -65,12 +62,10 @@ public class DemoFacetEditorTab extends FacetEditorTab {
   }
 
   /**
-   * Determines if the facet state entered in the UI differs
-   * from the currently stored state.
-   * Called when user changes text in myPath.
+   * Determines if the facet state entered in the UI differs from the currently stored state.
+   * Called when user changes text in {@link #myPath}.
    *
-   * @return {@code true} if the state returned from the panel's UI
-   * differs from the stored facet state.
+   * @return {@code true} if the state returned from the panel's UI differs from the stored facet state.
    */
   @Override
   public boolean isModified() {
@@ -80,6 +75,7 @@ public class DemoFacetEditorTab extends FacetEditorTab {
   /**
    * Stores new facet state (text) entered by the user.
    * Called when {@link #isModified()} returns true.
+   *
    * @throws ConfigurationException if anything generates an exception.
    */
   @Override
@@ -94,7 +90,7 @@ public class DemoFacetEditorTab extends FacetEditorTab {
   }
 
   /**
-   * Copies current org.intellij.sdk.facet.DemoFacetState into the myPath UI element.
+   * Copies current {@link DemoFacetState} into the {@link #myPath} UI element.
    * This method is called each time this editor tab is needed for display.
    */
   @Override

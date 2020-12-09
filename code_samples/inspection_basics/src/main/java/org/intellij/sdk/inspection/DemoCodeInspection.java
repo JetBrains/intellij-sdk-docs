@@ -9,12 +9,12 @@ import org.jetbrains.annotations.NotNull;
 public class DemoCodeInspection extends LocalInspectionTool {
 
   /**
-   * This method is overridden to provide a custom visitor
+   * This method is overridden to provide a custom visitor.
    * The visitor must not be recursive and must be thread-safe.
    *
    * @param holder     object for visitor to register problems found.
    * @param isOnTheFly true if inspection was run in non-batch mode
-   * @return DemoInspectionVisitor.
+   * @return {@link DemoInspectionVisitor} instance
    */
   @NotNull
   @Override

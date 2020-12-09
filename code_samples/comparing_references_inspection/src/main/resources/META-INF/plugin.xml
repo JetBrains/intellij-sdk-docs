@@ -9,7 +9,7 @@
   <name>SDK: Comparing References Inspection Sample</name>
 
   <!-- Evaluates java PSI -->
-  <depends>com.intellij.modules.java</depends>
+  <depends>com.intellij.java</depends>
 
   <!-- Text to display as description on Preferences/Settings | Plugin page -->
   <description>

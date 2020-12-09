@@ -3,16 +3,16 @@ title: Plugin Components
 ---
 <!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-> **WARNING** When writing new plugins, creating components should be avoided.
-> Any existing components should be migrated to services, extensions, or listeners (see below).
+> **WARNING** When writing new plugins, creating Components should be avoided.
+> Any existing Components should be migrated to services, extensions, or listeners (see below).
 
-Plugin components are a legacy feature supported for compatibility with plugins created for older versions of the IntelliJ Platform. Plugins using components do not support [dynamic loading](dynamic_plugins.md) (the ability to install, update, and uninstall plugins without restarting the IDE).
+Plugin Components are a legacy feature supported for compatibility with plugins created for older versions of the IntelliJ Platform. Plugins using Components do not support [dynamic loading](dynamic_plugins.md) (the ability to install, update, and uninstall plugins without restarting the IDE).
 
-Plugin components are defined in the `<application-components>`, `<project-components>`, and `<module-components>` sections in a [Plugin Configuration File](plugin_configuration_file.md).
+Plugin Components are defined in the `<application-components>`, `<project-components>`, and `<module-components>` sections in a [Plugin Configuration File](plugin_configuration_file.md).
 
 ## Migration
 
-To migrate existing code from components to more modern APIs, please see the following guidelines.
+To migrate existing code from Components to more modern APIs, please see the following guidelines.
 
 ### Manage State
 

@@ -115,7 +115,7 @@ The full declaration is:
 By using the `override-text` element introduced in 2020.1 of the IntelliJ Platform, the action text can be different depending on the context of where the action appears: menu, toolbar, etc.
 The example above uses this element to ensure the shorter text "Pop Dialog Action" is shown anywhere the action appears in the Main Menu structure.
 Otherwise, the default, more explanatory text "Action Basics Plugin: Pop Dialog Action" is shown.
-For more information, see [Setting the Override-Text Element for an Action](/basics/basic_action_system.md#setting-the-override-text-element-for-an-action)
+For more information, see [Setting the Override-Text Element](/basics/basic_action_system.md#setting-the-override-text-element-for-an-action)
 
 ## Testing the Minimal Custom Action Implementation
 After performing the steps described above, compile and run the plugin to see the newly created action available as a Tools Menu item, which is within the context of the Main Menu:

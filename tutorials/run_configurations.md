@@ -45,7 +45,7 @@ public class DemoRunConfigurationType implements ConfigurationType {
     @NotNull
     @Override
     public String getId() {
-        return "DEMO_RUN_CONFIGURATION";
+        return "DemoRunConfiguration";
     }
 
     @Override

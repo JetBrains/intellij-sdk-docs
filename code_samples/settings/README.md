@@ -10,10 +10,10 @@ This project illustrates a custom Application-level Settings through the impleme
 
 ### Extension Points
 
-| Name                                   | Implementation                                          | Extension Point Class                                    |
-| -------------------------------------- | ------------------------------------------------------- | -------------------------------------------------------- |
-| `com.intellij.applicationConfigurable` | [AppSettingsConfigurable][file:AppSettingsConfigurable] | [Configurable][sdk:Configurable]                         |
-| `com.intellij.applicationService`      | [AppSettingsState][file:AppSettingsState]               | [PersistentStateComponent][sdk:PersistentStateComponent] |
+| Name                                   | Implementation                                          | Extension Point Class      |
+| -------------------------------------- | ------------------------------------------------------- | -------------------------- |
+| `com.intellij.applicationConfigurable` | [AppSettingsConfigurable][file:AppSettingsConfigurable] | `Configurable`             |
+| `com.intellij.applicationService`      | [AppSettingsState][file:AppSettingsState]               | `PersistentStateComponent` |
 
 *Reference: [Plugin Extension Points in IntelliJ SDK Docs][docs:ep]*
 
@@ -25,5 +25,3 @@ This project illustrates a custom Application-level Settings through the impleme
 [file:AppSettingsConfigurable]: ./src/main/java/org/intellij/sdk/settings/AppSettingsConfigurable.java
 [file:AppSettingsState]: ./src/main/java/org/intellij/sdk/settings/AppSettingsState.java
 
-[sdk:Configurable]: upsource:///platform/platform-api/src/com/intellij/openapi/options/Configurable.java
-[sdk:PersistentStateComponent]: upsource:///platform/projectModel-api/src/com/intellij/openapi/components/PersistentStateComponent.java

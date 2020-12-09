@@ -11,7 +11,7 @@ import org.jetbrains.annotations.NotNull;
 import javax.swing.*;
 
 /**
- * Supports creating and managing a JPanel for the Settings Dialog.
+ * Supports creating and managing a {@link JPanel} for the Settings Dialog.
  */
 public class AppSettingsComponent {
 

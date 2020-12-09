@@ -10,6 +10,7 @@ import org.jetbrains.annotations.NotNull;
 import javax.swing.*;
 
 public class DemoRunConfigurationType implements ConfigurationType {
+
   @NotNull
   @Override
   public String getDisplayName() {
@@ -36,4 +37,5 @@ public class DemoRunConfigurationType implements ConfigurationType {
   public ConfigurationFactory[] getConfigurationFactories() {
     return new ConfigurationFactory[]{new DemoConfigurationFactory(this)};
   }
+
 }

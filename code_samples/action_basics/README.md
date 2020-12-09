@@ -17,13 +17,13 @@ Additional features of the plugin:
 
 ### Actions
 
-| ID                                                 | Implementation                                            | Extension Point Class          |
-| -------------------------------------------------- | --------------------------------------------------------- | ------------------------------ |
-| `org.intellij.sdk.action.PopupDialogAction`        | [PopupDialogAction][file:PopupDialogAction]               | [AnAction][sdk:AnAction]       |
-| `org.intellij.sdk.action.GroupPopDialogAction`     | [PopupDialogAction][file:PopupDialogAction]               | [AnAction][sdk:AnAction]       |
-| `org.intellij.sdk.action.CustomGroupedAction`      | [PopupDialogAction][file:PopupDialogAction]               | [AnAction][sdk:AnAction]       |
-| `org.intellij.sdk.action.CustomDefaultActionGroup` | [CustomDefaultActionGroup][file:CustomDefaultActionGroup] | [ActionGroup][sdk:ActionGroup] |
-| `org.intellij.sdk.action.DynamicActionGroup`       | [DynamicActionGroup][file:DynamicActionGroup]             | [ActionGroup][sdk:ActionGroup] |
+| ID                                                 | Implementation                                            | Base Action Class |
+| -------------------------------------------------- | --------------------------------------------------------- | ----------------- |
+| `org.intellij.sdk.action.GroupPopDialogAction`     | [PopupDialogAction][file:PopupDialogAction]               | `AnAction`        |
+| `org.intellij.sdk.action.PopupDialogAction`        | [PopupDialogAction][file:PopupDialogAction]               | `AnAction`        |
+| `org.intellij.sdk.action.CustomGroupedAction`      | [PopupDialogAction][file:PopupDialogAction]               | `AnAction`        |
+| `org.intellij.sdk.action.CustomDefaultActionGroup` | [CustomDefaultActionGroup][file:CustomDefaultActionGroup] | `ActionGroup`     |
+| `org.intellij.sdk.action.DynamicActionGroup`       | [DynamicActionGroup][file:DynamicActionGroup]             | `ActionGroup`     |
 
 *Reference: [Action System in IntelliJ SDK Docs][docs:actions]*
 
@@ -36,6 +36,3 @@ Additional features of the plugin:
 [file:PopupDialogAction]: ./src/main/java/org/intellij/sdk/action/PopupDialogAction.java
 [file:CustomDefaultActionGroup]: ./src/main/java/org/intellij/sdk/action/CustomDefaultActionGroup.java
 [file:DynamicActionGroup]: ./src/main/java/org/intellij/sdk/action/DynamicActionGroup.java
-
-[sdk:AnAction]: upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java
-[sdk:ActionGroup]: upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/ActionGroup.java

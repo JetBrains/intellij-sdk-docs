@@ -15,14 +15,13 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * Implements an intention action to replace a ternary statement with if-then-else
+ * Implements an intention action to replace a ternary statement with if-then-else.
  */
 @NonNls
 public class ConditionalOperatorConverter extends PsiElementBaseIntentionAction implements IntentionAction {
 
   /**
-   * If this action is applicable, returns the text to be shown in the list of
-   * intention actions available.
+   * If this action is applicable, returns the text to be shown in the list of intention actions available.
    */
   @NotNull
   public String getText() {
@@ -30,8 +29,8 @@ public class ConditionalOperatorConverter extends PsiElementBaseIntentionAction 
   }
 
   /**
-   * Returns text for name of this family of intentions. It is used to externalize
-   * "auto-show" state of intentions.
+   * Returns text for name of this family of intentions.
+   * It is used to externalize "auto-show" state of intentions.
    * It is also the directory name for the descriptions.
    *
    * @return the intention family name.
@@ -42,20 +41,17 @@ public class ConditionalOperatorConverter extends PsiElementBaseIntentionAction 
   }
 
   /**
-   * Checks whether this intention is available at the caret offset in file - the caret
-   * must sit just before a "?" character in a ternary statement. If this condition is met,
-   * this intention's entry is shown in the available intentions list.
-   * <p>
-   * Note: this method must do its checks quickly and return.
+   * Checks whether this intention is available at the caret offset in file - the caret must sit just before a "?"
+   * character in a ternary statement. If this condition is met, this intention's entry is shown in the available
+   * intentions list.
+   *
+   * <p>Note: this method must do its checks quickly and return.</p>
    *
    * @param project a reference to the Project object being edited.
    * @param editor  a reference to the object editing the project source
    * @param element a reference to the PSI element currently under the caret
-   * @return <ul>
-   * <li> true if the caret is in a literal string element, so this functionality
-   * should be added to the intention menu.</li>
-   * <li> false for all other types of caret positions</li>
-   * </ul>
+   * @return {@code true} if the caret is in a literal string element, so this functionality should be added to the
+   * intention menu or {@code false} for all other types of caret positions
    */
   public boolean isAvailable(@NotNull Project project, Editor editor, @Nullable PsiElement element) {
     // Quick sanity check
@@ -82,9 +78,8 @@ public class ConditionalOperatorConverter extends PsiElementBaseIntentionAction 
 
   /**
    * Modifies the Psi to change a ternary expression to an if-then-else statement.
-   * If the ternary is part of a declaration, the declaration is separated and
-   * moved above the if-then-else statement. Called when user selects this intention action
-   * from the available intentions list.
+   * If the ternary is part of a declaration, the declaration is separated and moved above the if-then-else statement.
+   * Called when user selects this intention action from the available intentions list.
    *
    * @param project a reference to the Project object being edited.
    * @param editor  a reference to the object editing the project source
@@ -195,13 +190,10 @@ public class ConditionalOperatorConverter extends PsiElementBaseIntentionAction 
   }
 
   /**
-   * Indicates this intention action expects the Psi framework to provide the write action
-   * context for any changes.
+   * Indicates this intention action expects the Psi framework to provide the write action context for any changes.
    *
-   * @return <ul>
-   * <li> true if the intention requires a write action context to be provided</li>
-   * <li> false if this intention action will start a write action</li>
-   * </ul>
+   * @return {@code true} if the intention requires a write action context to be provided or {@code false} if this
+   * intention action will start a write action
    */
   public boolean startInWriteAction() {
     return true;

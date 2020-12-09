@@ -9,9 +9,9 @@ Inspection, enabled by default, uses a visitor passing all PSI elements with no 
 
 ### Extension Points
 
-| Name                           | Implementation                                | Extension Point Class                          |
-| ------------------------------ | --------------------------------------------- | ---------------------------------------------- |
-| `com.intellij.localInspection` | [DemoCodeInspection][file:DemoCodeInspection] | [LocalInspectionTool][sdk:LocalInspectionTool] |
+| Name                           | Implementation                                | Extension Point Class |
+| ------------------------------ | --------------------------------------------- | --------------------- |
+| `com.intellij.localInspection` | [DemoCodeInspection][file:DemoCodeInspection] | `LocalInspectionTool` |
 
 *Reference: [Plugin Extension Points in IntelliJ SDK Docs][docs:ep]*
 
@@ -21,5 +21,3 @@ Inspection, enabled by default, uses a visitor passing all PSI elements with no 
 [docs:ep]: https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_extensions.html
 
 [file:DemoCodeInspection]: ./src/main/java/org/intellij/sdk/inspection/DemoCodeInspection.java
-
-[sdk:LocalInspectionTool]: upsource:///platform/analysis-api/src/com/intellij/codeInspection/LocalInspectionTool.java

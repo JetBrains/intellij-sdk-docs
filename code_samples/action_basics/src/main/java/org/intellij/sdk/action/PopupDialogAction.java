@@ -22,9 +22,8 @@ import javax.swing.*;
 public class PopupDialogAction extends AnAction {
 
   /**
-   * This default constructor is used by the IntelliJ Platform framework to
-   * instantiate this class based on plugin.xml declarations. Only needed in PopupDialogAction
-   * class because a second constructor is overridden.
+   * This default constructor is used by the IntelliJ Platform framework to instantiate this class based on plugin.xml
+   * declarations. Only needed in {@link PopupDialogAction} class because a second constructor is overridden.
    *
    * @see AnAction#AnAction()
    */
@@ -48,7 +47,7 @@ public class PopupDialogAction extends AnAction {
   /**
    * Gives the user feedback when the dynamic action menu is chosen.
    * Pops a simple message dialog. See the psi_demo plugin for an
-   * example of how to use AnActionEvent to access data.
+   * example of how to use {@link AnActionEvent} to access data.
    *
    * @param event Event received when the associated menu item is chosen.
    */

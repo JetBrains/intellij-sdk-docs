@@ -8,9 +8,9 @@ import org.junit.Assert;
 public class ConditionalOperatorConverterTest extends LightJavaCodeInsightFixtureTestCase {
 
   /**
-   * Defines path to files used for running tests
+   * Defines path to files used for running tests.
    *
-   * @return The path from this module's root directory ($MODULE_WORKING_DIR$) to the
+   * @return The path from this module's root directory ({@code $MODULE_WORKING_DIR$}) to the
    * directory containing files for these tests.
    */
   @Override

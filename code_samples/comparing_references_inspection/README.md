@@ -10,9 +10,9 @@ If such a check finds a comparison using the `==` or !`=` operators instead of t
 
 ### Extension Points
 
-| Name                           | Implementation                                                      | Extension Point Class                                    |
-| ------------------------------ | ------------------------------------------------------------------- | -------------------------------------------------------- |
-| `com.intellij.localInspection` | [ComparingReferencesInspection][file:ComparingReferencesInspection] | [AbstractBaseJavaLocalInspectionTool][sdk:AbstractBJLIT] |
+| Name                           | Implementation                                                      | Extension Point Class                 |
+| ------------------------------ | ------------------------------------------------------------------- | ------------------------------------- |
+| `com.intellij.localInspection` | [ComparingReferencesInspection][file:ComparingReferencesInspection] | `AbstractBaseJavaLocalInspectionTool` |
 
 *Reference: [Plugin Extension Points in IntelliJ SDK Docs][docs:ep]*
 
@@ -22,5 +22,3 @@ If such a check finds a comparison using the `==` or !`=` operators instead of t
 [docs:ep]: https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_extensions.html
 
 [file:ComparingReferencesInspection]: ./src/main/java/org/intellij/sdk/codeInspection/ComparingReferencesInspection.java
-
-[sdk:AbstractBJLIT]: upsource:///java/java-analysis-api/src/com/intellij/codeInspection/AbstractBaseJavaLocalInspectionTool.java

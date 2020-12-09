@@ -11,9 +11,9 @@ Component is provided by the `MyToolWindow` class through the `getContent()` met
 
 ### Extension Points
 
-| Name                      | Implementation                                  | Extension Point Class                      |
-| ------------------------- | ----------------------------------------------- | ------------------------------------------ |
-| `com.intellij.toolWindow` | [MyToolWindowFactory][file:MyToolWindowFactory] | [ToolWindowFactory][sdk:ToolWindowFactory] |
+| Name                      | Implementation                                  | Extension Point Class |
+| ------------------------- | ----------------------------------------------- | --------------------- |
+| `com.intellij.toolWindow` | [MyToolWindowFactory][file:MyToolWindowFactory] | `ToolWindowFactory`   |
 
 *Reference: [Plugin Extension Points in IntelliJ SDK Docs][docs:ep]*
 
@@ -23,5 +23,3 @@ Component is provided by the `MyToolWindow` class through the `getContent()` met
 [docs:ep]: https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_extensions.html
 
 [file:MyToolWindowFactory]: ./src/main/java/org/intellij/sdk/toolWindow/MyToolWindowFactory.java
-
-[sdk:ToolWindowFactory]: upsource:///platform/platform-api/src/com/intellij/openapi/wm/ToolWindowFactory.java

@@ -12,19 +12,19 @@ In addition, three actions are available in the Editor context menu:
 
 ### Extension Points
 
-| Name                        | Implementation                        | Extension Point Class                            |
-| --------------------------- | ------------------------------------- | ------------------------------------------------ |
-| `com.intellij.typedHandler` | [MyTypedHandler][file:MyTypedHandler] | [TypedHandlerDelegate][sdk:TypedHandlerDelegate] |
+| Name                        | Implementation                        | Extension Point Class  |
+| --------------------------- | ------------------------------------- | ---------------------- |
+| `com.intellij.typedHandler` | [MyTypedHandler][file:MyTypedHandler] | `TypedHandlerDelegate` |
 
 *Reference: [Plugin Extension Points in IntelliJ SDK Docs][docs:ep]*
 
 ### Actions
 
-| ID                                         | Implementation                                              | Extension Point Class    |
-| ------------------------------------------ | ----------------------------------------------------------- | ------------------------ |
-| `EditorBasics.EditorIllustrationAction`    | [EditorIllustrationAction][file:EditorIllustrationAction]   | [AnAction][sdk:AnAction] |
-| `EditorBasics.EditorHandlerIllustration`   | [EditorHandlerIllustration][file:EditorHandlerIllustration] | [AnAction][sdk:AnAction] |
-| `EditorBasics.LogicalPositionIllustration` | [EditorAreaIllustration][file:EditorAreaIllustration]       | [AnAction][sdk:AnAction] |
+| ID                                         | Implementation                                              | Base Action Class |
+| ------------------------------------------ | ----------------------------------------------------------- | ----------------- |
+| `EditorBasics.EditorIllustrationAction`    | [EditorIllustrationAction][file:EditorIllustrationAction]   | `AnAction`        |
+| `EditorBasics.EditorHandlerIllustration`   | [EditorHandlerIllustration][file:EditorHandlerIllustration] | `AnAction`        |
+| `EditorBasics.LogicalPositionIllustration` | [EditorAreaIllustration][file:EditorAreaIllustration]       | `AnAction`        |
 
 *Reference: [Action System in IntelliJ SDK Docs][docs:actions]*
 
@@ -38,6 +38,3 @@ In addition, three actions are available in the Editor context menu:
 [file:EditorIllustrationAction]: ./src/main/java/org/intellij/sdk/editor/EditorIllustrationAction.java
 [file:EditorHandlerIllustration]: ./src/main/java/org/intellij/sdk/editor/EditorHandlerIllustration.java
 [file:EditorAreaIllustration]: ./src/main/java/org/intellij/sdk/editor/EditorAreaIllustration.java
-
-[sdk:TypedHandlerDelegate]: upsource:///platform/lang-api/src/com/intellij/codeInsight/editorActions/TypedHandlerDelegate.java
-[sdk:AnAction]: upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java

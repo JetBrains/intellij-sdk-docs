@@ -270,6 +270,7 @@
 ## Appendix I - Resources
 
 * [Glossary](appendix/glossary.md)
+* [Extension Point List](appendix/resources/extension_point_list.md)
 * [Useful Links](appendix/resources/useful_links.md)
 * [Marketing](appendix/resources/marketing.md)
 * [Consulting](appendix/resources/consulting.md)
@@ -277,6 +278,7 @@
 ## Appendix II - API Changes
 
 * [Incompatible API Changes](reference_guide/api_changes_list.md)
+    * [2021.*](reference_guide/api_changes/api_changes_list_2021.md)
     * [2020.*](reference_guide/api_changes/api_changes_list_2020.md)
     * [2019.*](reference_guide/api_changes/api_changes_list_2019.md)
     * [2018.*](reference_guide/api_changes/api_changes_list_2018.md)
@@ -284,6 +286,7 @@
     * [2016.*](reference_guide/api_changes/api_changes_list_2016.md)
 
 * [Notable API Changes](reference_guide/api_notable/api_notable.md)
+    * [2021.*](reference_guide/api_notable/api_notable_list_2021.md)
     * [2020.*](reference_guide/api_notable/api_notable_list_2020.md)
     * [2019.*](reference_guide/api_notable/api_notable_list_2019.md)
     * [2018.*](reference_guide/api_notable/api_notable_list_2018.md)

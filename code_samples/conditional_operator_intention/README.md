@@ -35,9 +35,9 @@ The converter in the `isAvailable` method, has defined the token check to match 
 
 ### Extension Points
 
-| Name                           | Implementation                                                    | Extension Point Class                                              |
-| ------------------------------ | ----------------------------------------------------------------- | ------------------------------------------------------------------ |
-| `com.intellij.intentionAction` | [ConditionalOperatorConverter][file:ConditionalOperatorConverter] | [PsiElementBaseIntentionAction][sdk:PsiElementBaseIntentionAction] |
+| Name                           | Implementation                                                    | Extension Point Class           |
+| ------------------------------ | ----------------------------------------------------------------- | ------------------------------- |
+| `com.intellij.intentionAction` | [ConditionalOperatorConverter][file:ConditionalOperatorConverter] | `PsiElementBaseIntentionAction` |
 
 *Reference: [Plugin Extension Points in IntelliJ SDK Docs][docs:ep]*
 
@@ -47,5 +47,3 @@ The converter in the `isAvailable` method, has defined the token check to match 
 [docs:ep]: https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_extensions.html
 
 [file:ConditionalOperatorConverter]: ./src/main/java/org/intellij/sdk/intention/ConditionalOperatorConverter.java
-
-[sdk:PsiElementBaseIntentionAction]: upsource:///platform/lang-api/src/com/intellij/codeInsight/intention/PsiElementBaseIntentionAction.java

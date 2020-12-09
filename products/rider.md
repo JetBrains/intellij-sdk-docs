@@ -40,3 +40,4 @@ This list is intended to provide some representative projects.
 * [TestLinker](https://github.com/matkoch/TestLinker/)
 * [Xao](https://github.com/hmemcpy/ReSharper.Xao/)
 * [Azure Toolkit for Rider](https://github.com/JetBrains/azure-tools-for-intellij)
+* [T4 language support for both ReSharper and Rider](https://github.com/JetBrains/ForTea)

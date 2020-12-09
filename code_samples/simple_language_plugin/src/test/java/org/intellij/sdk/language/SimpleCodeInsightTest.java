@@ -20,7 +20,6 @@ import java.util.List;
 public class SimpleCodeInsightTest extends LightJavaCodeInsightFixtureTestCase {
 
   /**
-   *
    * @return path to test data file directory relative to working directory in the run configuration for this test.
    */
   @Override
@@ -84,4 +83,5 @@ public class SimpleCodeInsightTest extends LightJavaCodeInsightFixtureTestCase {
     PsiElement element = myFixture.getFile().findElementAt(myFixture.getCaretOffset()).getParent();
     assertEquals("https://en.wikipedia.org/", ((SimpleProperty) element.getReferences()[0].resolve()).getValue());
   }
+
 }

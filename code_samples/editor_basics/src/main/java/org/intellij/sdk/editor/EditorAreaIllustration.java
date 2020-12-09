@@ -11,10 +11,9 @@ import com.intellij.openapi.ui.Messages;
 import org.jetbrains.annotations.NotNull;
 
 /**
- * If conditions support it, makes a menu visible to display information
- * about the caret.
+ * If conditions support it, makes a menu visible to display information about the caret.
  *
- * @see com.intellij.openapi.actionSystem.AnAction
+ * @see AnAction
  */
 public class EditorAreaIllustration extends AnAction {
 
@@ -42,8 +41,10 @@ public class EditorAreaIllustration extends AnAction {
 
   /**
    * Sets visibility and enables this action menu item if:
-   * A project is open,
-   * An editor is active,
+   * <ul>
+   *   <li>a project is open</li>
+   *   <li>an editor is active</li>
+   * </ul>
    *
    * @param e Event related to this action
    */

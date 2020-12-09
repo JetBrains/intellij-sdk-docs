@@ -10,11 +10,11 @@ Live Templates Sample Project implements two example live templates for the Mark
 
 ### Extension Points
 
-| Name                                | Implementation                          | Extension Point Class                          |
-| ----------------------------------- | --------------------------------------- | ---------------------------------------------- |
-| `com.intellij.defaultLiveTemplates` | [Markdown][file:Markdown]               |                                                |
-| `com.intellij.liveTemplateContext`  | [MarkdownContext][file:MarkdownContext] | [TemplateContextType][sdk:TemplateContextType] |
-| `com.intellij.liveTemplateMacro`    | [TitleCaseMacro][file:TitleCaseMacro]   | [MacroBase][sdk:MacroBase]                     |
+| Name                                | Implementation                          | Extension Point Class |
+| ----------------------------------- | --------------------------------------- | --------------------- |
+| `com.intellij.defaultLiveTemplates` | [Markdown][file:Markdown]               | n/a                   |
+| `com.intellij.liveTemplateContext`  | [MarkdownContext][file:MarkdownContext] | `TemplateContextType` |
+| `com.intellij.liveTemplateMacro`    | [TitleCaseMacro][file:TitleCaseMacro]   | `MacroBase`           |
 
 *Reference: [Plugin Extension Points in IntelliJ SDK Docs][docs:ep]*
 
@@ -27,5 +27,3 @@ Live Templates Sample Project implements two example live templates for the Mark
 [file:MarkdownContext]: ./src/main/java/org/intellij/sdk/liveTemplates/MarkdownContext.java
 [file:TitleCaseMacro]: ./src/main/java/org/intellij/sdk/liveTemplates/TitleCaseMacro.java
 
-[sdk:TemplateContextType]: upsource:///platform/lang-api/src/com/intellij/codeInsight/template/TemplateContextType.java
-[sdk:MacroBase]: upsource:///platform/lang-impl/src/com/intellij/codeInsight/template/macro/MacroBase.java

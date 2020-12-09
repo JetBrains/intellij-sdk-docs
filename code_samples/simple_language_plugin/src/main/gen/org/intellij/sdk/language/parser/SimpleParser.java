@@ -1,17 +1,17 @@
 // This is a generated file. Not intended for manual editing.
 package org.intellij.sdk.language.parser;
 
+import com.intellij.lang.ASTNode;
+import com.intellij.lang.LightPsiParser;
 import com.intellij.lang.PsiBuilder;
 import com.intellij.lang.PsiBuilder.Marker;
-import static org.intellij.sdk.language.psi.SimpleTypes.*;
-import static com.intellij.lang.parser.GeneratedParserUtilBase.*;
-import com.intellij.psi.tree.IElementType;
-import com.intellij.lang.ASTNode;
-import com.intellij.psi.tree.TokenSet;
 import com.intellij.lang.PsiParser;
-import com.intellij.lang.LightPsiParser;
+import com.intellij.psi.tree.IElementType;
 
-@SuppressWarnings({"SimplifiableIfStatement"})
+import static com.intellij.lang.parser.GeneratedParserUtilBase.*;
+import static org.intellij.sdk.language.psi.SimpleTypes.*;
+
+@SuppressWarnings({"SimplifiableIfStatement", "UnusedAssignment"})
 public class SimpleParser implements PsiParser, LightPsiParser {
 
   public ASTNode parse(IElementType t, PsiBuilder b) {
@@ -56,7 +56,7 @@ public class SimpleParser implements PsiParser, LightPsiParser {
     Marker m = enter_section_(b, l, _NONE_, PROPERTY, "<property>");
     r = property_0(b, l + 1);
     if (!r) r = consumeToken(b, KEY);
-    exit_section_(b, l, m, r, false, recover_property_parser_);
+    exit_section_(b, l, m, r, false, SimpleParser::recover_property);
     return r;
   }
 
@@ -119,9 +119,4 @@ public class SimpleParser implements PsiParser, LightPsiParser {
     return true;
   }
 
-  static final Parser recover_property_parser_ = new Parser() {
-    public boolean parse(PsiBuilder b, int l) {
-      return recover_property(b, l + 1);
-    }
-  };
 }

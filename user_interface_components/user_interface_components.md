@@ -10,6 +10,8 @@ Using those components in your plugins will ensure that your plugin looks and wo
 
 > **NOTE** The recommended way of building UIs on the IntelliJ Platform (2019.2 and later) is using [Kotlin UI DSL](/user_interface_components/kotlin_ui_dsl.md).
 > Using GUI designer with Kotlin is currently [not supported](https://youtrack.jetbrains.com/issue/KT-6660).
+              
+Please refer to [Writing short and clear](https://jetbrains.design/intellij/text/writing_short/) in _IntelliJ Platform UI Guidelines_ on writing UI-related texts.
 
 The following components are particularly noteworthy:
 

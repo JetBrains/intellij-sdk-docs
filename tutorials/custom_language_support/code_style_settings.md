@@ -10,7 +10,7 @@ This example creates a settings/preferences page that uses the default language 
 **Reference**: [Code Style Settings](/reference_guide/custom_language_support/code_formatting.md#code-style-settings)
 
 ## Define Code Style Settings
-Define a code style settings for Simple Language by subclassing [`CustomCodeStyleSettings`](upsource:///platform/lang-api/src/com/intellij/psi/codeStyle/CustomCodeStyleSettings.java).
+Define a code style settings for Simple Language by subclassing [`CustomCodeStyleSettings`](upsource:///platform/code-style-api/src/com/intellij/psi/codeStyle/CustomCodeStyleSettings.java).
 
 ```java
 {% include /code_samples/simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleCodeStyleSettings.java %}

@@ -2,11 +2,11 @@
 
 package org.intellij.sdk.language;
 
-import com.intellij.lang.annotation.AnnotationBuilder;
+import com.intellij.codeInspection.ProblemHighlightType;
 import com.intellij.lang.annotation.AnnotationHolder;
 import com.intellij.lang.annotation.Annotator;
+import com.intellij.lang.annotation.HighlightSeverity;
 import com.intellij.openapi.editor.DefaultLanguageHighlighterColors;
-import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.TextRange;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiLiteralExpression;
@@ -14,10 +14,6 @@ import org.intellij.sdk.language.psi.SimpleProperty;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
-
-import static com.intellij.lang.annotation.HighlightSeverity.ERROR;
-import static com.intellij.lang.annotation.HighlightSeverity.INFORMATION;
-
 
 public class SimpleAnnotator implements Annotator {
 
@@ -32,7 +28,7 @@ public class SimpleAnnotator implements Annotator {
       return;
     }
 
-    // Ensure the Psi element contains a string that starts with the key and separator
+    // Ensure the Psi element contains a string that starts with the prefix and separator
     PsiLiteralExpression literalExpression = (PsiLiteralExpression) element;
     String value = literalExpression.getValue() instanceof String ? (String) literalExpression.getValue() : null;
     if ((value == null) || !value.startsWith(SIMPLE_PREFIX_STR + SIMPLE_SEPARATOR_STR)) {
@@ -46,28 +42,27 @@ public class SimpleAnnotator implements Annotator {
     TextRange separatorRange = TextRange.from(prefixRange.getEndOffset(), SIMPLE_SEPARATOR_STR.length());
     TextRange keyRange = new TextRange(separatorRange.getEndOffset(), element.getTextRange().getEndOffset() - 1);
 
-    // Get the list of properties from the Project
-    String possibleProperties = value.substring(SIMPLE_PREFIX_STR.length() + SIMPLE_SEPARATOR_STR.length());
-    Project project = element.getProject();
-    List<SimpleProperty> properties = SimpleUtil.findProperties(project, possibleProperties);
-
-    // Set the annotations using the text ranges - Normally there would be one range, set by the element itself.
-    holder.newAnnotation(INFORMATION, "")
+    // highlight "simple" prefix and ":" separator
+    holder.newSilentAnnotation(HighlightSeverity.INFORMATION)
             .range(prefixRange).textAttributes(DefaultLanguageHighlighterColors.KEYWORD).create();
-    holder.newAnnotation(INFORMATION, "")
+    holder.newSilentAnnotation(HighlightSeverity.INFORMATION)
             .range(separatorRange).textAttributes(SimpleSyntaxHighlighter.SEPARATOR).create();
+
+
+    // Get the list of properties for given key
+    String key = value.substring(SIMPLE_PREFIX_STR.length() + SIMPLE_SEPARATOR_STR.length());
+    List<SimpleProperty> properties = SimpleUtil.findProperties(element.getProject(), key);
     if (properties.isEmpty()) {
-      // No well-formed property found following the key-separator
-      AnnotationBuilder builder = holder.newAnnotation(ERROR, "Unresolved property").range(keyRange);
-      // Force the text attributes to Simple syntax bad character
-      builder.textAttributes(SimpleSyntaxHighlighter.BAD_CHARACTER);
-      // ** Tutorial step 18.3 - Add a quick fix for the string containing possible properties
-      builder.withFix(new SimpleCreatePropertyQuickFix(possibleProperties));
-      // Finish creating new annotation
-      builder.create();
+      holder.newAnnotation(HighlightSeverity.ERROR, "Unresolved property")
+              .range(keyRange)
+              .highlightType(ProblemHighlightType.LIKE_UNKNOWN_SYMBOL)
+              // ** Tutorial step 18.3 - Add a quick fix for the string containing possible properties
+              .withFix(new SimpleCreatePropertyQuickFix(key))
+              .create();
     } else {
       // Found at least one property, force the text attributes to Simple syntax value character
-      holder.newAnnotation(INFORMATION, "").range(keyRange).textAttributes(SimpleSyntaxHighlighter.VALUE).create();
+      holder.newSilentAnnotation(HighlightSeverity.INFORMATION)
+              .range(keyRange).textAttributes(SimpleSyntaxHighlighter.VALUE).create();
     }
   }
 

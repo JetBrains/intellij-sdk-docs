@@ -11,13 +11,13 @@ import java.util.List;
 
 /**
  * Class for testing ComparingReferencesInspection.
- * Requires idea.home.path to be set in build.gradle
+ * Requires {@code idea.home.path} to be set in build.gradle.
  * doTest() does the work for individual test cases.
  */
 public class ComparingReferencesInspectionTest extends LightJavaCodeInsightFixtureTestCase {
 
   /**
-   * Defines path to files used for running tests
+   * Defines path to files used for running tests.
    *
    * @return The path from this module's root directory ($MODULE_WORKING_DIR$) to the
    * directory containing files for these tests.
@@ -50,14 +50,14 @@ public class ComparingReferencesInspectionTest extends LightJavaCodeInsightFixtu
   }
 
   /**
-   * Test the "==" case
+   * Test the '==' case.
    */
   public void testRelationalEq() {
     doTest("Eq");
   }
 
   /**
-   * Test the "!=" case
+   * Test the '!=' case.
    */
   public void testRelationalNeq() {
     doTest("Neq");

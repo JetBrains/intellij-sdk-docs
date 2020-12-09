@@ -2,7 +2,7 @@
 
 plugins {
   id 'java'
-  id 'org.jetbrains.intellij' version '0.4.26'
+  id 'org.jetbrains.intellij' version '0.6.5'
 }
 
 group 'org.intellij.sdk'
@@ -27,7 +27,7 @@ test {
 // See https://github.com/JetBrains/gradle-intellij-plugin/
 intellij {
   version = '2020.2'
-  plugins = ['java']
+  plugins = ['com.intellij.java']
 }
 
 buildSearchableOptions {
@@ -37,5 +37,5 @@ buildSearchableOptions {
 patchPluginXml {
   version = project.version
   sinceBuild = '202'
-  untilBuild = '202.*'
+  untilBuild = '203.*'
 }

@@ -18,8 +18,7 @@ public class PopupDialogAction extends AnAction {
 
   /**
    * Gives the user feedback when the dynamic action menu is chosen.
-   * Pops a simple message dialog. See the psi_demo plugin for an
-   * example of how to use AnActionEvent to access data.
+   * Pops a simple message dialog. See the psi_demo plugin for an example of how to use AnActionEvent to access data.
    *
    * @param event Event received when the associated menu item is chosen.
    */

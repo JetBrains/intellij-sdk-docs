@@ -109,6 +109,12 @@ All parameters in `com.jetbrains.python.psi.PyElementVisitor` marked `@NotNull`
 `com.jetbrains.python.parsing.StatementParsing(ParsingContext, StatementParsing.FUTURE)` method parameter `StatementParsing.FUTURE` removed
 : It is no longer used in parsing.
 
+`com.jetbrains.python.parsing.StatementParsing.FUTURE` class removed
+: Use `com.jetbrains.python.psi.FutureFeature` instead.
+
+`com.jetbrains.python.sdk.PythonSdkUpdater.updateOrShowError(Sdk, SdkModificator, Project, Component)` method parameter `SdkModificator` removed
+: It was not processed carefully, it should be enough to pass editable sdk instead.
+
 ## 2020.2
 
 ### Changes in IntelliJ Platform 2020.2

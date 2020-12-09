@@ -258,6 +258,14 @@ Added Union Types Support
 `org.jetbrains.kotlin.idea.core.formatter.KotlinCodeStyleSettings.PACKAGES_TO_USE_STAR_IMPORTS` field type changed from `PackageEntryTable` to `KotlinPackageEntryTable`
 : This change was required to implement import layout order for Kotlin. `KotlinPackageEntryTable` can be used in the same manner as `PackageEntryTable`.
 
+### Changes in Python Plugin 2020.2
+
+`com.jetbrains.python.PythonDialectsTokenSetProvider.INSTANCE` field removed
+: `PythonDialectsTokenSetProvider` became an application service, use `PythonDialectsTokenSetProvider.getInstance()` instead.
+
+`com.jetbrains.python.psi.PyUtil.getLanguageLevelForVirtualFile(Project, VirtualFile)` method removed
+: Use `PythonLanguageLevelPusher.getLanguageLevelForVirtualFile(Project, VirtualFile)` instead.
+
 ## 2020.1
 
 ### Changes in IntelliJ Platform 2020.1

@@ -45,7 +45,7 @@ Text Editor customization
 Published Javascript Testframework
 : This allows using existing test base classes, see [WebStorm Plugin Development](/products/webstorm.md#javascript-testframework) page for details.
                   
-### Notable Changes In CLion/AppCode
+### Notable Changes In CLion/AppCode 2020.3
 
 Required changes in project setup
 : When targeting 2020.3, please see this [migration guide](https://blog.jetbrains.com/clion/2020/12/migration-guide-for-plugins-2020-3/).

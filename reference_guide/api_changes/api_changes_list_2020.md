@@ -132,6 +132,11 @@ All parameters in `com.jetbrains.python.psi.PyElementVisitor` marked `@NotNull`
 
 `com.jetbrains.python.psi.LanguageLevel.hasWithStatement()` method removed
 : It is `true` for all supported python versions.
+                       
+### Changes In CLion/AppCode 2020.3
+
+Required changes in project setup
+: When targeting 2020.3, please see this [migration guide](https://blog.jetbrains.com/clion/2020/12/migration-guide-for-plugins-2020-3/).
 
 ## 2020.2
 

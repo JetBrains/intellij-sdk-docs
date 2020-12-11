@@ -68,6 +68,27 @@ _plugin.xml_
 </extensions>
 ```
 
+## Overriding a Service
+
+To override an existing non-[Light Service](#light-services), inherit from it and mark it as an override in `plugin.xml`.
+```java
+package mypackage;
+
+import somepackage.ServiceToOverride;
+
+pubic class OverridingService extends ServiceToOverride {...}
+```
+
+_plugin.xml_
+
+```xml
+<extensions defaultExtensionNs="com.intellij">
+  <applicationService serviceInterface="somepackage.ServiceToOverride"
+                      serviceImplementation="mypackage.OverridingService"
+                      overrides="true" />
+</extensions>
+```
+
 ## Retrieving a Service
 
 Getting service doesn't need a read action and can be performed from any thread.

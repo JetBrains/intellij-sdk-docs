@@ -32,6 +32,9 @@ On the first screen, the type of project is configured:
 * From the _project type_ pane on the left, choose _Gradle_.
 * Specify the _Project SDK_ based on the **Java 8** JDK.
   This SDK will be the default JRE used to run Gradle, and the JDK version used to compile the plugin Java sources.
+
+> **NOTE** When targeting 2020.3 and later only, using Java 11 is now required, please see [blog post](https://blog.jetbrains.com/platform/2020/09/intellij-project-migrates-to-java-11/)  
+
 * In the _Additional Libraries and Frameworks_ panel, select _Java_ and _IntelliJ Platform Plugin_.
   These settings will be used for the remainder of this tutorial.
 

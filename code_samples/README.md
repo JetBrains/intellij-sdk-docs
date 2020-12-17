@@ -11,6 +11,8 @@ These samples show you how features work and help you jumpstart your plugins.
 
 There is also [IntelliJ Platform Plugin Template][gh:template] project available.
 
+Explore usages of Extension Points in open-source plugins using [IntelliJ Platform Explorer](https://jb.gg/ipe).
+
 ## Target Platform
 
 All Code Samples target the latest GA platform release.

@@ -27,6 +27,7 @@ The following links represent useful resources for working with the _IntelliJ Pl
 * [IDE Perf](https://plugins.jetbrains.com/plugin/15104-ide-perf)
 
 ### Webinars
+* [Busy plugin developers series. Episode 0](https://www.youtube.com/watch?v=-6D5-xEaYig) Mikhail Vink/Jakub Chrzanowski/Yann Cebron 2020
 * [How We Built Comma, the Raku IDE, on the IntelliJ Platform](https://blog.jetbrains.com/platform/2020/01/webinar-recording-how-we-built-comma-the-raku-ide-on-the-intellij-platform/) Jonathan Worthington, 2020
 * [Building IntelliJ IDEA plugins in Scala](https://www.youtube.com/watch?v=IPO-cY_giNA) Igal Tabachnik, 2020
 * [Live Development of a PyCharm Plugin](https://blog.jetbrains.com/pycharm/2019/01/webinar-recording-live-development-of-a-pycharm-plugin-with-joachim-ansorg/) Joachim Ansorg, 2019

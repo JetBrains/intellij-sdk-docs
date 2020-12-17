@@ -14,6 +14,8 @@ Welcome to the _IntelliJ Platform_ SDK - the primary source of documentation for
 
 ## Getting Started
 
+Watch [Busy plugin developers series. Episode 0](https://www.youtube.com/watch?v=-6D5-xEaYig) to get started with developing plugins and publishing on JetBrains Marketplace.
+
 * [**What is the IntelliJ Platform?**](intellij_platform.md)
 * [**About this Guide**](about.md)
     * [**Key Topics**](key_topics.md)

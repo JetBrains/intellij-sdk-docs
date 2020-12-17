@@ -13,7 +13,7 @@ See [Recently Updated](/recently_updated.md) ([RSS](https://github.com/JetBrains
 ### December
 
 IntelliJ Platform Explorer
-: Explore usages of [Extension Points](/appendix/resources/extension_point_list.md) in open-source plugins using [IntelliJ Platform Explorer](jb.gg/ipe).
+: Explore usages of [Extension Points](/appendix/resources/extension_point_list.md) in open-source plugins using [IntelliJ Platform Explorer](https://jb.gg/ipe).
  
 ### November
 

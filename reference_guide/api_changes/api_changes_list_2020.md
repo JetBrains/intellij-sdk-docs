@@ -99,6 +99,18 @@ The `com.intellij.psi.PsiAnnotation.getOwner` method now returns `PsiType` inste
 : This change supports identifying whether a type annotation is attached to an inner class or a particular dimension of a multi-dimensional array.
 This change doesn't break source or binary compatibility but may produce behavioral changes for callers.
 
+`com.intellij.execution.application.ApplicationConfiguration.isSwingInspectorEnabled()` method removed
+: The Swing Inspector functionality has been removed from the product.
+
+`com.intellij.execution.application.ApplicationConfiguration.setSwingInspectorEnabled(boolean)` method removed
+: The Swing Inspector functionality has been removed from the product.
+
+show.swing.inspector property removed from resource bundle messages.ExecutionBundle
+: The Swing Inspector functionality has been removed from the product.
+
+show.swing.inspector.disabled property removed from resource bundle messages.ExecutionBundle
+: The Swing Inspector functionality has been removed from the product.
+
 ### Changes in PhpStorm and PHP Plugin 2020.3
 
 Added PHP 8 support

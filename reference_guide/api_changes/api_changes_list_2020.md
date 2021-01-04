@@ -105,7 +105,7 @@ This change doesn't break source or binary compatibility but may produce behavio
 `com.intellij.execution.application.ApplicationConfiguration.setSwingInspectorEnabled(boolean)` method removed
 : The Swing Inspector functionality has been removed from the product.
 
-`show.swing.inspector property` removed from resource bundle `messages.ExecutionBundle`
+`show.swing.inspector` property removed from resource bundle `messages.ExecutionBundle`
 : The Swing Inspector functionality has been removed from the product.
 
 `show.swing.inspector.disabled` property removed from resource bundle `messages.ExecutionBundle`

@@ -59,8 +59,7 @@ Do not store references to PSI elements in objects which can survive plugin load
 Replace with `String` from `Language.getID()`/`FileType.getName()`.
 
 ### Plugin Load/Unload Events
-
-Register [`com.intellij.ide.plugins.DynamicPluginListener`](upsource:///platform/platform-impl/src/com/intellij/ide/plugins/DynamicPlugins.kt) [application listener](plugin_listeners.md) to receive updates on plugin load/unload events.
+Register [`com.intellij.ide.plugins.DynamicPluginListener`](upsource:///platform/core-impl/src/com/intellij/ide/plugins/DynamicPluginListener.kt) [application listener](plugin_listeners.md) to receive updates on plugin load/unload events.
 
 This can be used to e.g., cancel long-running activities or disallow unload due to ongoing processes.
 

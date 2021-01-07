@@ -27,7 +27,7 @@ test {
 sourceSets.main.java.srcDirs 'src/main/gen'
 
 dependencies {
-  testImplementation group: 'junit', name: 'junit', version: '4.12'
+  testImplementation group: 'junit', name: 'junit', version: '4.13.1'
 }
 
 // See https://github.com/JetBrains/gradle-intellij-plugin/

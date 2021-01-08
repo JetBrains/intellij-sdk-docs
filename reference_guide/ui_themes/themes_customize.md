@@ -133,6 +133,8 @@ The `value` is the replacement icon's file name, located in the `resources` fold
 
 The color of a replaced icon takes precedence over any `ColorPalette` overrides.
 
+> **TIP** For generating the SVG icons suited for the IntelliJ-based IDEs, you may also use the third-party web tool – [IntelliJ Icon Generator](https://bjansen.github.io/intellij-icon-generator/).
+
 ## Customizing UI Controls
 UI Themes can change the appearance of more general controls in the IntelliJ Platform UI.
 Examples of these controls are labels, buttons, checkboxes, trees, lists, and menus.

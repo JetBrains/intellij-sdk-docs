@@ -11,6 +11,8 @@ These samples show you how features work and help you jumpstart your plugins.
 
 There is also [IntelliJ Platform Plugin Template][gh:template] project available.
 
+Browse [available Extension Points][docs:eps] and explore usages in open-source plugins using [IntelliJ Platform Explorer](https://jb.gg/ipe).
+
 ## Target Platform
 
 All Code Samples target the latest GA platform release.
@@ -64,3 +66,4 @@ In the following table, you may find all available samples provided in the separ
 [docs]: https://www.jetbrains.org/intellij/sdk/docs
 [docs:gradle]: https://www.jetbrains.org/intellij/sdk/docs/tutorials/build_system.html
 [docs:plugin.xml]: https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_configuration_file.html
+[docs:eps]: https://jetbrains.org/intellij/sdk/docs/appendix/resources/extension_point_list.html

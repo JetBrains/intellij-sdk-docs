@@ -14,7 +14,7 @@ To fill the completion list, the IDE calls [`PsiReference.getVariants()`](upsour
 This method needs to return an array of objects containing either strings, [`PsiElement`](upsource:///platform/core-api/src/com/intellij/psi/PsiElement.java) instances or instances of the [`LookupElement`](upsource:///platform/analysis-api/src/com/intellij/codeInsight/lookup/LookupElement.java) class (see [Lookup Items](#lookup-items) below).
 If a [`PsiElement`](upsource:///platform/core-api/src/com/intellij/psi/PsiElement.java) instance is returned in the array, the completion list shows the icon for the element.
 
-The most common way to implement `getVariants()` is to use the same function for walking up the tree as in [`PsiReference.resolve()`](upsource:///platform/core-api/src/com/intellij/psi/PsiReference.java), and a different implementation of [`PsiScopeProcessor`](upsource:///platform/core-api/src/com/intellij/psi/scope/PsiScopeProcessor.java) which collects all declarations passed to its `processDeclarations()` method and returns them as an array for filling the completion list.
+The most common way to implement `getVariants()` is to use the same function for walking up the tree as in [`PsiReference.resolve()`](upsource:///platform/core-api/src/com/intellij/psi/PsiReference.java), and a different implementation of [`PsiScopeProcessor`](upsource:///platform/core-api/src/com/intellij/psi/scope/PsiScopeProcessor.java) which collects all declarations passed to its `execute()` method and returns them as an array for filling the completion list.
 
 #### Symbol Reference Completion
 

@@ -69,6 +69,7 @@ row {
 }
 ```
 
+> **TIP** To visually debug layout, enable _UI DSL Debug Mode_ from [Internal Actions - UI Submenu](/reference_guide/internal_actions/internal_ui_sub.md).           
 
 ## Adding Components
 

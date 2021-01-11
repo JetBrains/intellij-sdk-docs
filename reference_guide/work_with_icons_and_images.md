@@ -99,6 +99,8 @@ However, the `@2x` version of an SVG icon should still provide the same base siz
 The icon graphics of such an icon can be expressed in more details via double precision.
 If the icon graphics are simple enough so that it renders perfectly in every scale, then the `@2x` version can be omitted.
 
+> **TIP** For generating the SVG icons suited for the IntelliJ-based IDEs, you may also use the third-party web tool – [IntelliJ Icon Generator](https://bjansen.github.io/intellij-icon-generator/).
+
 ### PNG Format
 > **NOTE** Please consider using SVG icons if your plugin targets 2018.2+.
 

@@ -90,6 +90,18 @@ Please see [Incompatible API Changes](/reference_guide/api_changes_list.md) on h
 `com.intellij.psi.stubs.IStubElementType.createStub` method parameter type changed from `StubElement` to ``StubElement<?>``
 : This may break source-compatibility with inheritors written in Kotlin.
 
+`com.intellij.execution.application.ApplicationConfiguration.isSwingInspectorEnabled()` method removed
+: The Swing Inspector functionality has been removed from the product.
+
+`com.intellij.execution.application.ApplicationConfiguration.setSwingInspectorEnabled(boolean)` method removed
+: The Swing Inspector functionality has been removed from the product.
+
+`show.swing.inspector` property removed from resource bundle `messages.ExecutionBundle`
+: The Swing Inspector functionality has been removed from the product.
+
+`show.swing.inspector.disabled` property removed from resource bundle `messages.ExecutionBundle`
+: The Swing Inspector functionality has been removed from the product.
+
 ### Changes in Java Plugin 2020.3
 
 The PSI structure of multi-dimensional arrays in Java source files changed (see `com.intellij.psi.PsiTypeElement`)
@@ -132,6 +144,11 @@ All parameters in `com.jetbrains.python.psi.PyElementVisitor` marked `@NotNull`
 
 `com.jetbrains.python.psi.LanguageLevel.hasWithStatement()` method removed
 : It is `true` for all supported python versions.
+                       
+### Changes In CLion/AppCode 2020.3
+
+Required changes in project setup
+: When targeting 2020.3, please see this [migration guide](https://blog.jetbrains.com/clion/2020/12/migration-guide-for-plugins-2020-3/).
 
 ## 2020.2
 

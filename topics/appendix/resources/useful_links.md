@@ -16,6 +16,7 @@ The following links represent useful resources for working with the _IntelliJ Pl
 * [Internal Actions Menu](internal_actions_intro.md)
 * [IntelliJ Platform Artifacts Repository](intellij_artifacts.md)
 * [IntelliJ Plugin Verifier](https://github.com/JetBrains/intellij-plugin-verifier) (see also [Verifying Compatibility](api_changes_list.md#verifying-compatibility))
+* [IntelliJ Platform Explorer](https://jb.gg/ipe)
 
 ### Plugins
 * [PsiViewer](https://plugins.jetbrains.com/plugin/227-psiviewer)

@@ -13,30 +13,15 @@ That question might be broad or narrowly-focused, but either way, our goal is to
 The style of the _Intellij Platform SDK_ documentation is captured by using a markup language named [_Markdown_](https://github.github.com/gfm/).
 
 ## Documentation Markup
-By default, when building the site, all files are copied to the destination `_site` folder.
-Some files are excluded in the `_config.yml` and `sdkdocs-template/jekyll/_config-defaults.yml` files.
+
 The documentation files themselves are [Markdown](https://github.github.com/gfm/) files (`*.md`) that get automatically converted to HTML when the site is built.
 
-### Liquid Tags and Filters
-Jekyll uses the [Liquid](https://shopify.github.io/liquid/) templating language to process files.
-This process means standard Liquid tags and filters are available.
-There should be little need to use them, however, as the Markdown format is already quite rich.
-See the [Jekyll site](https://jekyllrb.com/docs/liquid/) for more details.
-
 ### Page Format
-Only Markdown files beginning with a [YAML](https://yaml.org) header are converted to HTML.
-If the Markdown file doesn't contain a header, it won't be converted.
-In other words, to convert a `.md` file to HTML, it should look like this:
+Each Markdown file must contain a header defining its title:
 
 ```yaml
-[//]: # (title: Style Guide for SDK Documents)
+[//]: # (title: Contributing to the IntelliJ Platform SDK)
 
-title: The Title Of The Page
-[//]: # (title: Style Guide for SDK Documents)
-
-redirect_from:
-  - /index.html
----
 
 Lorem ipsum...
 ```
@@ -52,8 +37,6 @@ Multiple redirects can be added to the YAML header.
  {type="note"}
 
 ## Content Style
-Further Kramdown features are described on the [converter page](https://kramdown.gettalong.org/converter/html.html), and attribute lists are described on the [syntax page](https://kramdown.gettalong.org/syntax.html).
-Note that source code formatting is configured to use [GitHub Flavoured Markdown](https://help.github.com/articles/github-flavored-markdown/) and "code fences", see below.
 
 ### Terminology
 Consistent terminology helps the reader grasp new concepts more quickly:
@@ -135,10 +118,10 @@ In-paragraph code fragments and IntelliJ Platform APIs are formatted according t
 ### Source Code
 Source code is represented by using [GitHub Flavoured Markdown](https://help.github.com/articles/github-flavored-markdown/) code fences, which are three backticks.
 
-        Syntax highlighting is applied by specifying the language after the first set of ticks:
+Syntax highlighting is applied by specifying the language after the first set of ticks:
 
-        ```csharp
-            // Some C# code
+        ```xml
+            // Some XML
         ```
 
         ```java
@@ -150,32 +133,19 @@ Here is the list of [supported languages](https://github.com/jneen/rouge/wiki/Li
  >  Source code blocks must have one blank line before and after them, and must have a language specification for highlighting.
  >
  {type="note"}
+                       
+Whole files can be imported on a page using `src` attribute after code fences specifying the full path relative to `code_samples` root folder.
 
-Whole files can be imported on a page using an include statement within code fences.
-Search the documentation for `% include` to get the correct include statement syntax.
+  ```java
+  ```
+  {src="simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleFoldingBuilder.java"}
 
-        ```java
-            // Include statement
-        ```
 
 The advantage is the code can come from the `code_samples` directory, so it will be live code that isn't silently stale.
 The disadvantage is the file may contain a large class, too large for the documentation page to be useful.
 In any case, please keep code samples concise and avoid any unnecessary "surrounding" code or import statements.
 
-<!-- //TODO: Not currently supported by rouge, or by the site's CSS
-
-The site is also configured to highlight a range of files in the source code, by specifying `{start-end}` which is the start and end line of the highlighting:
-
-    ```java{2-3}
-    // Not highlighted
-    // Highlighted
-    // Highlighted
-    // Not highlighted
-    ```
--->
-
 ### Tables
-The Kramdown parser also supports tables.
 The syntax is to use the pipe (`|`) and minus symbols:
 
 ```md
@@ -199,13 +169,10 @@ The example below will be displayed as a callout, styled as a "note":
  {type="note"}
 
 The styles available for callouts are:
-* TODO - Do not use it in the SDK documentation.
-  Instead, temporarily embed `[//]: # (TODO: description)` comments.
-  This format isn't visible in the HTML but is recognized by IDE inspections.
-* TIP - Information that makes the reader more productive.
-* NOTE - Information that is important for the reader to understand.
+* `tip` - Information that makes the reader more productive.
+* `note` - Information that is important for the reader to understand.
   This callout is reserved for essential points and concepts.
-* WARNING - Information that is critical for the user to understand to prevent failures or errors.
+* `warning` - Information that is critical for the user to understand to prevent failures or errors.
 
  >  TODO/todo comments are discouraged in the main branch of `intellij-sdk-docs`.
 > There are always exceptions, but the best practice is to resolve all TODOs before the final review.

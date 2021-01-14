@@ -239,7 +239,7 @@ If the width of an image needs to be adjusted, use Kramdown markup:
     ![Alt text](){width="42"}
 ```
 
-## _SUMMARY Site Table of Contents
+## Table of Contents
 The table of contents for the site is displayed in the tree view on the left-hand side of the site, and it is generated from the `ijs.tree` file.
 The list can have nested items, which are displayed as child items in the table of contents.
 

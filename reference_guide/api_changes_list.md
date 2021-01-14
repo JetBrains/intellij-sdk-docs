@@ -1,6 +1,5 @@
----
-title: Incompatible Changes in IntelliJ Platform and Plugins API
----
+[//]: # (title: Incompatible Changes in IntelliJ Platform and Plugins API)
+
 <!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 <!--
@@ -62,11 +61,6 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 
 IntelliJ API may be occasionally changed between releases, leading to existing plugins' incompatibilities with newer IDE builds.
 
-<!--
-> **NOTE** Starting with the 2020.1 release, IntelliJ Platform-based IDEs will use compatibility check information provided by the [JetBrains Plugins Repository](https://plugins.jetbrains.com) to highlight possible compatibility issues to users directly in the IDE's "Plugins" manager.
-> Therefore, it is essential to keep your plugins up to date with the existing and upcoming API changes.
--->
-
 ## Verifying Compatibility
 
 ### Plugin Verifier
@@ -74,7 +68,7 @@ Compatibility with newer IDEs can easily be verified for plugins hosted on the [
 
 For local verification or non-public plugins, [intellij-plugin-verifier](https://github.com/JetBrains/intellij-plugin-verifier) can be used standalone as well.
 
-Integration in [Gradle build](/tutorials/build_system.md) is possible using the `runPluginVerifier` task, please see [Gradle IntelliJ Plugin - Plugin Verifier DSL](https://github.com/JetBrains/gradle-intellij-plugin#plugin-verifier-dsl) for details.
+Integration in [Gradle build](gradle_build_system.md) is possible using the `runPluginVerifier` task, please see [Gradle IntelliJ Plugin - Plugin Verifier DSL](https://github.com/JetBrains/gradle-intellij-plugin#plugin-verifier-dsl) for details.
 
 You can easily integrate it within your CI by running that task as another quality check step.
 Check the IntelliJ Platform Plugin Template [GitHub workflow configuration file](https://github.com/JetBrains/intellij-platform-plugin-template/blob/main/.github/workflows/build.yml) as sample.
@@ -88,18 +82,18 @@ Consider using the following [IDE inspections](https://www.jetbrains.com/help/id
 - JVM languages \| Unstable API Usage
 - JVM languages \| Unstable type is used in signature
 
-
 ## Known Breaking Changes
 
-> **TIP** Follow [JBPlatform](https://twitter.com/JBPlatform/) on Twitter and visit [JetBrains Platform Blog](https://blog.jetbrains.com/platform/) for the latest announcements.
+ >  Follow [JBPlatform](https://twitter.com/JBPlatform/) on Twitter and visit [JetBrains Platform Blog](https://blog.jetbrains.com/platform/) for the latest announcements.
+ >
+ {type="tip"}
 
 The following pages list the breaking changes in IDE and plugin releases with required/recommended steps to take by plugin authors.
 
-* [**Changes in 2021.***](api_changes/api_changes_list_2021.md)
-* [**Changes in 2020.***](api_changes/api_changes_list_2020.md)
-* [**Changes in 2019.***](api_changes/api_changes_list_2019.md)
-* [**Changes in 2018.***](api_changes/api_changes_list_2018.md)
-* [**Changes in 2017.***](api_changes/api_changes_list_2017.md)
-* [**Changes in 2016.***](api_changes/api_changes_list_2016.md)
+* [**Changes in 2021.***](api_changes_list_2021.md)
+* [**Changes in 2020.***](api_changes_list_2020.md)
+* [**Changes in 2019.***](api_changes_list_2019.md)
+* [**Changes in 2018.***](api_changes_list_2018.md)
+* [**Changes in 2017.***](api_changes_list_2017.md)
+* [**Changes in 2016.***](api_changes_list_2016.md)
 
-> **NOTE** Changes from API marked with `org.jetbrains.annotations.ApiStatus.@Experimental`/`ScheduledForRemoval` are not listed here, as incompatible changes are to be expected.

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ihp
+        SYSTEM "https://helpserver.labs.jb.gg/help/ihp.dtd">
+<ihp version="2.0">
+    <settings>
+        <id-generator-method>LOWER_CASE_DASHES_DOT_REMOVE</id-generator-method>
+    </settings>
+    <module name="intellij-sdk"/>
+    <topics src="topics"/>
+    <topics src="reference_guide"/>
+    <images dir="images" web-path="/img/idea-sdk/"/>
+
+    <snippets src="code_samples"/>
+    <product src="ijs.tree" keymaps-mode="none" id="intellij" web-path="/intellij/"/>
+</ihp>

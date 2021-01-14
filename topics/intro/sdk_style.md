@@ -25,16 +25,8 @@ Each Markdown file must contain a header defining its title:
 
 Lorem ipsum...
 ```
-
-The redirect will create an `index.html` file that will automatically redirect to the generated `README.html` file.
-Redirects enable the site URL to show the `README.html` file automatically - `http://localhost:4001/foo-test/` will try to load `index.html`, which will automatically redirect to `README.html`.
-
-It is also useful to redirect when renaming or moving files.
-Multiple redirects can be added to the YAML header.
-
- >  Please update all existing internal links to the new page location.
- >
- {type="note"}
+                        
+Redirects can be specified in the [Table of Contents](#table-of-contents).
 
 ## Content Style
 
@@ -208,7 +200,20 @@ If the width of an image needs to be adjusted, use Kramdown markup:
 ## Table of Contents
 The table of contents for the site is displayed in the tree view on the left-hand side of the site, and it is generated from the `ijs.tree` file.
 The list can have nested items, which are displayed as child items in the table of contents.
+                 
+### Placeholders
 
 If a node does not have its `id` attribute specified, it will still appear in the table of contents but will be greyed out and not clickable.
 It acts as a placeholder for a documentation item.
 A placeholder is useful to keep track of what should be documented, but hasn't yet, and can be helpful to show readers that the topic exists, but isn't yet documented (Pull Requests always welcome!).
+
+### Redirects
+              
+When renaming pages, redirects should be configured so existing links and bookmarks continue working.
+
+Specify the previous path(s) with `.html` extension in `accepts-web-file-names` attribute:
+
+```xml
+  <toc-element id="fundamentals.md" toc-title="Fundamentals" 
+               accepts-web-file-names="reference_guide.html,architectural_overview.html"/>
+```

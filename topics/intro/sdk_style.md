@@ -123,6 +123,7 @@ Syntax highlighting is applied by specifying the language after the first set of
         ```xml
             // Some XML
         ```
+               
 
         ```java
             // Some Java code
@@ -136,9 +137,7 @@ Here is the list of [supported languages](https://github.com/jneen/rouge/wiki/Li
                        
 Whole files can be imported on a page using `src` attribute after code fences specifying the full path relative to `code_samples` root folder.
 
-  ```java
-  ```
-  {src="simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleFoldingBuilder.java"}
+  `{src="simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleFoldingBuilder.java"}`
 
 
 The advantage is the code can come from the `code_samples` directory, so it will be live code that isn't silently stale.

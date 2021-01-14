@@ -105,6 +105,6 @@ jobs:
       - name: Prepare Mirror
         run: |
           git clone --bare git@github.com:JetBrains/intellij-sdk-docs.git .
-          git branch | grep -v "main" | xargs git branch -D
+          git branch | grep -v "main" | xargs -r git branch -D
           git filter-branch --prune-empty --subdirectory-filter code_samples main
           git push --mirror git@github.com:JetBrains/intellij-sdk-code-samples.git

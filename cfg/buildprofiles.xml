@@ -21,7 +21,7 @@
         <og-twitter>@JBPlatform</og-twitter>
         <og-image>https://resources.jetbrains.com/storage/products/jetbrains/img/meta/preview.png</og-image>
         <enable-browser-edits>true</enable-browser-edits>
-        <browser-edits-url>https://github.com/JetBrains/intellij-sdk-docs/edit/master/</browser-edits-url>
+        <browser-edits-url>https://github.com/JetBrains/intellij-sdk-docs/edit/main/</browser-edits-url>
         <images-prefix-override>images/</images-prefix-override>
         <upsource-commit-hash>4b94ba01122752d7576eb9d69638b6e89d1671b7</upsource-commit-hash>
         <upsource-repo-name>idea-ce</upsource-repo-name>

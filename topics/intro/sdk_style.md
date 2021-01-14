@@ -3,7 +3,7 @@
 <!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 This document describes the writing style used in authoring open-source IntelliJ Platform SDK documentation.
-Before you begin, please read this page thoroughly, as well as the [Code of Conduct](intellij-sdk-docs-original_CODE_OF_CONDUCT.md) and [License](https://github.com/JetBrains/intellij-sdk-docs/blob/master/LICENSE.txt) documents.
+Before you begin, please read this page thoroughly, as well as the [Code of Conduct](intellij-sdk-docs-original_CODE_OF_CONDUCT.md) and [License](https://github.com/JetBrains/intellij-sdk-docs/blob/main/LICENSE.txt) documents.
 For information about contributing to the IntelliJ Platform itself, please visit [Contributing to the IntelliJ Platform](platform_contributions.md).
 
 First and foremost, we should keep in mind our audience and their objectives:
@@ -207,7 +207,7 @@ The styles available for callouts are:
   This callout is reserved for essential points and concepts.
 * WARNING - Information that is critical for the user to understand to prevent failures or errors.
 
- >  TODO/todo comments are discouraged in the master branch of `intellij-sdk-docs`.
+ >  TODO/todo comments are discouraged in the main branch of `intellij-sdk-docs`.
 > There are always exceptions, but the best practice is to resolve all TODOs before the final review.
 > If immediate resolution isn't possible, write a YouTrack [SDK Issue](https://youtrack.jetbrains.com/issues/IJSDK) that captures the TODO and remove the comment from the document.
  >

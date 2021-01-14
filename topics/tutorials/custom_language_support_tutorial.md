@@ -9,7 +9,7 @@ In this tutorial we will add support for a [.properties](https://en.wikipedia.or
  >
  {type="tip"}
 
-The example plugin used in this tutorial is the [`simple_language_plugin`](https://github.com/JetBrains/intellij-sdk-code-samples/tree/master/simple_language_plugin) code sample.
+The example plugin used in this tutorial is the [`simple_language_plugin`](https://github.com/JetBrains/intellij-sdk-code-samples/tree/main/simple_language_plugin) code sample.
 This a step-by-step tutorial, and it requires completing each step, in order:
 
 *  [1. Prerequisites](prerequisites.md)

@@ -4,7 +4,7 @@ title: Contributing to the IntelliJ Platform SDK
 <!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 This document describes our contribution guidelines for the open-source IntelliJ Platform SDK documentation and sample code.
-Before you begin contributing content to the SDK, please read this page thoroughly as well as the [Code of Conduct](/CODE_OF_CONDUCT.md) and [License](https://github.com/JetBrains/intellij-sdk-docs/blob/master/LICENSE.txt) documents.
+Before you begin contributing content to the SDK, please read this page thoroughly as well as the [Code of Conduct](/CODE_OF_CONDUCT.md) and [License](https://github.com/JetBrains/intellij-sdk-docs/blob/main/LICENSE.txt) documents.
 For information about contributing to the IntelliJ Platform itself, please visit [Contributing to the IntelliJ Platform](/basics/platform_contributions.md).
 
 Here are some useful things to know before authoring SDK content and submitting your Pull Request.
@@ -17,7 +17,7 @@ Once set up, running the site is as easy as calling `rake preview`.
 
 Alternatively, the site can also be hosted in a [Docker container](https://www.docker.com).
 On Mac and Windows, this means the site is hosted in a virtual machine.
-Docker maintains this container, building it based on the instructions in the [`Dockerfile`](https://github.com/JetBrains/intellij-sdk-docs/blob/master/Dockerfile).
+Docker maintains this container, building it based on the instructions in the [`Dockerfile`](https://github.com/JetBrains/intellij-sdk-docs/blob/main/Dockerfile).
 All dependencies (Ruby, etc.) are automatically installed when building the image, which reduces the manual configuration steps.
 The Docker image is also used to build the [published site](https://www.jetbrains.org/intellij/sdk/docs/index.html), so it is a known working environment.
 

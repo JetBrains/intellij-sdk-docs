@@ -77,7 +77,7 @@ Utility classes used for modifying the project structure can be found in the pac
 Its [`roots`](upsource:///platform/projectModel-impl/src/com/intellij/openapi/roots/) subpackage contains instances and utilities intended for work with project and module source roots, including [`ModuleRootModificationUtil`](upsource:///platform/projectModel-api/src/com/intellij/openapi/roots/ModuleRootModificationUtil.java) and [`ProjectRootUtil`](upsource:///platform/projectModel-impl/src/com/intellij/openapi/projectRoots/impl/ProjectRootUtil.java).
 Project structure changes need to be performed in a [write action](general_threading_rules.md#read-write-lock).
 
-Refer to the [project_model](https://github.com/JetBrains/intellij-sdk-code-samples/blob/master/project_model/src/main/java/org/intellij/sdk/project/model/ModificationAction.java) code sample to learn how project structure modification can be implemented.
+Refer to the [project_model](https://github.com/JetBrains/intellij-sdk-code-samples/blob/main/project_model/src/main/java/org/intellij/sdk/project/model/ModificationAction.java) code sample to learn how project structure modification can be implemented.
 
 ## Receiving Notifications About Project Structure Changes
 To receive notifications about changes in project structure (modules or libraries being added or removed, module dependencies being changed, and so on), use the [message bus](messaging_infrastructure.md) and the `ProjectTopics.PROJECT_ROOTS` topic:

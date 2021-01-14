@@ -21,4 +21,4 @@ As an example, the plugin implemented in the [Custom Language Support Tutorial](
 *  [9. Commenter Test](commenter_test.md)
 *  [10. Reference Test](reference_test.md)
 
-The plugin and test code can be found in the [simple_language_plugin](https://github.com/JetBrains/intellij-sdk-code-samples/tree/master/simple_language_plugin) code sample.
+The plugin and test code can be found in the [simple_language_plugin](https://github.com/JetBrains/intellij-sdk-code-samples/tree/main/simple_language_plugin) code sample.

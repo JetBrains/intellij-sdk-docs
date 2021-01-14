@@ -15,7 +15,7 @@ Classes that extend it should override `AnAction.update()`, and must override `A
 * The `update()` method implements the code that enables or disables an action.
 * The `actionPerformed()` method implements the code that executes when an action is invoked by the user.
 
-As an example, [`PopupDialogAction`](https://github.com/JetBrains/intellij-sdk-code-samples/blob/master/action_basics/src/main/java/org/intellij/sdk/action/PopupDialogAction.java) overrides `AnAction` for the `action_basics` code sample.
+As an example, [`PopupDialogAction`](https://github.com/JetBrains/intellij-sdk-code-samples/blob/main/action_basics/src/main/java/org/intellij/sdk/action/PopupDialogAction.java) overrides `AnAction` for the `action_basics` code sample.
 
 ```java
 public class PopupDialogAction extends AnAction {
@@ -97,7 +97,7 @@ An action declaration can be added manually to the `plugin.xml` file.
 An exhaustive list of declaration elements and attributes is presented in [Registering Actions in plugin.xml](basic_action_system.md#registering-actions-in-pluginxml).
 Attributes are added by selecting them from the **New Action** form, or by editing the registration declaration directly in the plugin.xml file.
 
-The `<action>` declaration for `PopupDialogAction` in the `action_basics` [plugin.xml](https://github.com/JetBrains/intellij-sdk-code-samples/blob/master/action_basics/src/main/resources/META-INF/plugin.xml) file.
+The `<action>` declaration for `PopupDialogAction` in the `action_basics` [plugin.xml](https://github.com/JetBrains/intellij-sdk-code-samples/blob/main/action_basics/src/main/resources/META-INF/plugin.xml) file.
 It also contains an attribute for an [`Icon`](work_with_icons_and_images.md) and encloses elements declaring text overrides, keyboard and mouse shortcuts, and to which menu group the action should be added.
 
 The full declaration is:

@@ -89,7 +89,7 @@ If the action's availability changes in the absence of these events, then call [
  >
  {type="note"}
 
-An example of enabling a menu action based on whether a project is open is demonstrated in [`PopupDialogAction.update()`](https://github.com/JetBrains/intellij-sdk-code-samples/blob/master/action_basics/src/main/java/org/intellij/sdk/action/PopupDialogAction.java) method.
+An example of enabling a menu action based on whether a project is open is demonstrated in [`PopupDialogAction.update()`](https://github.com/JetBrains/intellij-sdk-code-samples/blob/main/action_basics/src/main/java/org/intellij/sdk/action/PopupDialogAction.java) method.
 
 ### Overriding the AnAction.actionPerformed Method
 When the user selects an enabled action, be it from a menu or toolbar, the action's `AnAction.actionPerformed()` method is called.
@@ -100,7 +100,7 @@ For example, the `actionPerformed()` method can modify, remove, or add PSI eleme
 
 The code that executes in the `AnAction.actionPerformed()` method should execute efficiently, but it does not have to meet the same stringent requirements as the `update()` method.
 
-An example of inspecting PSI elements is demonstrated in the SDK code sample `action_basics` [`PopupDialogAction.actionPerformed()`](https://github.com/JetBrains/intellij-sdk-code-samples/blob/master/action_basics/src/main/java/org/intellij/sdk/action/PopupDialogAction.java) method.
+An example of inspecting PSI elements is demonstrated in the SDK code sample `action_basics` [`PopupDialogAction.actionPerformed()`](https://github.com/JetBrains/intellij-sdk-code-samples/blob/main/action_basics/src/main/java/org/intellij/sdk/action/PopupDialogAction.java) method.
 
 ### Action IDs
 Every action and action group has a unique identifier.
@@ -185,7 +185,7 @@ To exclude a group from appearing in **Help \| Find Action** results (e.g., _New
 
 #### Localizing Actions and Groups
 Action and group localization use resource bundles containing property files named `*Bundle.properties`, each file consisting of `key=value` pairs.
-The [`action_basics`](https://github.com/JetBrains/intellij-sdk-code-samples/tree/master/action_basics) plugin demonstrates using a resource bundle to localize the group and action entries added to the Editor Popup Menu.
+The [`action_basics`](https://github.com/JetBrains/intellij-sdk-code-samples/tree/main/action_basics) plugin demonstrates using a resource bundle to localize the group and action entries added to the Editor Popup Menu.
 
 When localizing actions and groups, the `text` and `description` attributes are not declared in `plugin.xml`.
 Instead, those attribute values vary depending on the locale and get declared in a resource bundle.

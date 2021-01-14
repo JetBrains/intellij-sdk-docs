@@ -55,4 +55,4 @@ PsiMethod containingMethod = PsiTreeUtil.getParentOfType(element, PsiMethod.clas
 PsiClass containingClass = containingMethod.getContainingClass();
 ```
 
-To see how the navigation works in practice, please refer to the [code sample](https://github.com/JetBrains/intellij-sdk-code-samples/blob/master/psi_demo/src/main/java/org/intellij/sdk/psi/PsiNavigationDemoAction.java).
+To see how the navigation works in practice, please refer to the [code sample](https://github.com/JetBrains/intellij-sdk-code-samples/blob/main/psi_demo/src/main/java/org/intellij/sdk/psi/PsiNavigationDemoAction.java).

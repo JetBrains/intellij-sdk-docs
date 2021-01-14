@@ -64,12 +64,12 @@ If closing tabs is enabled in general, a plugin can disable closing of specific 
 
 ## Sample Plugin
 
-To clarify how to develop plugins that create tool windows, consider the **toolWindow** sample plugin available in the [code_samples](https://github.com/JetBrains/intellij-sdk-code-samples/tree/master/tool_window) directory of the SDK documentation.
+To clarify how to develop plugins that create tool windows, consider the **toolWindow** sample plugin available in the [code_samples](https://github.com/JetBrains/intellij-sdk-code-samples/tree/main/tool_window) directory of the SDK documentation.
 This plugin creates the **Sample Calendar** tool window that displays the system date, time and time zone.
 
 **To run the toolWindow plugin**
 
-1. Start **IntelliJ IDEA** and open the **tool_window** project saved into the [code_samples/tool_window](https://github.com/JetBrains/intellij-sdk-code-samples/tree/master/tool_window) directory.
+1. Start **IntelliJ IDEA** and open the **tool_window** project saved into the [code_samples/tool_window](https://github.com/JetBrains/intellij-sdk-code-samples/tree/main/tool_window) directory.
 2. Ensure that the project settings are valid for the environment.
    If necessary, modify the project settings.
    To view or modify the project settings, open the [Project Structure](https://www.jetbrains.com/help/idea/project-structure-dialog.html) dialog.

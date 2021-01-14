@@ -125,7 +125,7 @@ If this number exceeds the maximum number of simultaneously opened projects allo
 
 **To install and run the sample plugin**
 
-* Download the included sample plugin project located [here](https://github.com/JetBrains/intellij-sdk-code-samples/tree/master/max_opened_projects).
+* Download the included sample plugin project located [here](https://github.com/JetBrains/intellij-sdk-code-samples/tree/main/max_opened_projects).
 * Start *IntelliJ IDEA*, on the starting page, click *Open Project*, and then use the *Open Project* dialog box to open the project.
 * On the main menu, choose *Run \| Run* or press <kbd>Shift</kbd>+<kbd>F10</kbd>.
 * If necessary, change the [Run/Debug Configurations](https://www.jetbrains.com/help/idea/run-debug-configuration-plugin.html).

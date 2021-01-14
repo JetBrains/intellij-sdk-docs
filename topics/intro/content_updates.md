@@ -4,7 +4,7 @@ This page lists notable additions and updates to the SDK documentation and code 
        
 Follow [JBPlatform](https://twitter.com/JBPlatform/) on Twitter and visit [JetBrains Platform Blog](https://blog.jetbrains.com/platform/) for the latest announcements.
 
-See [Recently Updated](recently_updated.md) ([RSS](https://github.com/JetBrains/intellij-sdk-docs/commits/master.atom)) for a detailed changelog.
+See [Recently Updated](recently_updated.md) ([RSS](https://github.com/JetBrains/intellij-sdk-docs/commits/main.atom)) for a detailed changelog.
 
 ## 2020
                   
@@ -50,7 +50,7 @@ JCEF Support (_Experimental Feature_)
 ### February-20
 
 All Code Samples converted to Gradle
-: [All samples](https://github.com/JetBrains/intellij-sdk-docs/tree/master/code_samples) now use the [recommended solution](gradle_build_system.md) of setting up plugin projects.
+: [All samples](https://github.com/JetBrains/intellij-sdk-docs/tree/main/code_samples) now use the [recommended solution](gradle_build_system.md) of setting up plugin projects.
 
 ### January-20
 

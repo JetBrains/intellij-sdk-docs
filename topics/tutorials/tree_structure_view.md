@@ -14,7 +14,7 @@ See [Creating a Plugin Project](gradle_prerequisites.md).
 
 ## Register Custom TreeStructure Provider
 
-Add new *treeStructureProvider* extension to the [plugin.xml](https://github.com/JetBrains/intellij-sdk-code-samples/blob/master/tree_structure_provider/src/main/resources/META-INF/plugin.xml)
+Add new *treeStructureProvider* extension to the [plugin.xml](https://github.com/JetBrains/intellij-sdk-code-samples/blob/main/tree_structure_provider/src/main/resources/META-INF/plugin.xml)
 
 ```java
 <extensions defaultExtensionNs="com.intellij">
@@ -60,4 +60,4 @@ After going through the steps described above you can see only text files and di
 
 ![Text Files](text_only.png)
 
-Check out [plugin source code](https://github.com/JetBrains/intellij-sdk-code-samples/tree/master/tree_structure_provider) and build the project to see how TreeStructureView provider works in practice.
+Check out [plugin source code](https://github.com/JetBrains/intellij-sdk-code-samples/tree/main/tree_structure_provider) and build the project to see how TreeStructureView provider works in practice.

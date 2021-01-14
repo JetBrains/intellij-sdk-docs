@@ -3,7 +3,7 @@
 <!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 This document describes the coding guidelines used for authoring open-source IntelliJ Platform SDK code samples.
-Before you begin, please read this page thoroughly, as well as the [Code of Conduct](intellij-sdk-docs-original_CODE_OF_CONDUCT.md) and [License](https://github.com/JetBrains/intellij-sdk-docs/blob/master/LICENSE.txt) documents.
+Before you begin, please read this page thoroughly, as well as the [Code of Conduct](intellij-sdk-docs-original_CODE_OF_CONDUCT.md) and [License](https://github.com/JetBrains/intellij-sdk-docs/blob/main/LICENSE.txt) documents.
 For information about contributing to the IntelliJ Platform itself, visit [Contributing to the IntelliJ Platform](platform_contributions.md).
 
 ## Objectives
@@ -37,7 +37,7 @@ Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source 
 ```
 
  >  The copyright statement must appear at the top of every source file.
-> Use the [IntelliJ Platform SDK](https://github.com/JetBrains/intellij-sdk-docs/tree/master/.idea/copyright) copyright profile.
+> Use the [IntelliJ Platform SDK](https://github.com/JetBrains/intellij-sdk-docs/tree/main/.idea/copyright) copyright profile.
  >
  {type="note"}
 

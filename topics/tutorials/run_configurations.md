@@ -12,7 +12,7 @@ Create an empty plugin project as described in [Creating a Plugin Project](getti
 
 ## Register a New ConfigurationType
 
-Add new `configurationType` extension to the [plugin.xml](https://github.com/JetBrains/intellij-sdk-code-samples/blob/master/run_configuration/src/main/resources/META-INF/plugin.xml)
+Add new `configurationType` extension to the [plugin.xml](https://github.com/JetBrains/intellij-sdk-code-samples/blob/main/run_configuration/src/main/resources/META-INF/plugin.xml)
 
 ```xml
 <extensions defaultExtensionNs="com.intellij">

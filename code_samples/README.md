@@ -58,12 +58,12 @@ In the following table, you may find all available samples provided in the separ
 [gh:template]: https://github.com/JetBrains/intellij-platform-plugin-template
 
 [jb:confluence-on-gh]: https://confluence.jetbrains.com/display/ALL/JetBrains+on+GitHub
-[jb:docs]: https://www.jetbrains.org/intellij/sdk/docs
+[jb:docs]: https://plugins.jetbrains.com/docs/intellij/
 [jb:products]: https://www.jetbrains.com/products.html
 [jb:slack]: https://plugins.jetbrains.com/slack
 [jb:twitter]: https://twitter.com/JBPlatform
 
-[docs]: https://www.jetbrains.org/intellij/sdk/docs
-[docs:gradle]: https://www.jetbrains.org/intellij/sdk/docs/tutorials/build_system.html
-[docs:plugin.xml]: https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_configuration_file.html
-[docs:eps]: https://jetbrains.org/intellij/sdk/docs/appendix/resources/extension_point_list.html
+[docs]: https://plugins.jetbrains.com/docs/intellij/
+[docs:gradle]: https://plugins.jetbrains.com/docs/intellij/gradle-build-system.html
+[docs:plugin.xml]: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html
+[docs:eps]: https://plugins.jetbrains.com/docs/intellij/extension-point-list.html

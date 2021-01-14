@@ -2,34 +2,7 @@ name: Build
 on: [push, pull_request]
 
 jobs:
-  docs:
-    name: Docs
-    runs-on: ubuntu-latest
-    container:
-      image: ruby:2.6
-    steps:
-      - name: Fetch Sources
-        uses: actions/checkout@v2
-      - name: Setup Cache
-        uses: actions/cache@v2
-        with:
-          path: vendor/bundle
-          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-gems-
-      - name: Install Dependencies
-        run: |
-          git submodule update --init --remote
-          gem install bundler:2.0.1
-          bundle install
-      - name: Build
-        run: |
-          dpkg-reconfigure --frontend=noninteractive locales && update-locale LANG=C.UTF-8
-          export LC_ALL=C.UTF-8
-          export LANG=en_US.UTF-8
-          export LANGUAGE=en_US.UTF-8
-          rake build
-
+ 
   documentedProblemsPageVerification:
     name: Documented Problems Page Verification
     runs-on: ubuntu-latest

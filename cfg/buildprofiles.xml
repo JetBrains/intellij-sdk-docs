@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<buildprofiles>
+
+    <variables>
+        <web-root>https://plugins.jetbrains.com/docs</web-root>
+        <web-community-path>Developer Community:http://www.jetbrains.net/devnet/community/idea/kb</web-community-path>
+        <download-page/>
+        <search-scope/>
+        <fallback-url/>
+        <generate-sitemap-url-prefix>https://plugins.jetbrains.com/docs/intellij/</generate-sitemap-url-prefix>
+        <config-feedbackRequireEmail>false</config-feedbackRequireEmail>
+        <config-showDownloadButton>true</config-showDownloadButton>
+        <config-disqus-show>false</config-disqus-show>
+        <config-feedback-url>https://data.services.jetbrains.com/feedback</config-feedback-url>
+        <config-feedback-enabled>true</config-feedback-enabled>
+        <config-feedback-widget>true</config-feedback-widget>
+        <config-webmaster>https://plugins.jetbrains.com/docs/intellij/getting-help.html</config-webmaster>
+        <config-feedback-support>https://www.jetbrains.com/support/</config-feedback-support>
+        <config-sideblocks>true</config-sideblocks>
+        <config-search-scopes-provider>https://data.services.jetbrains.com/search/</config-search-scopes-provider>
+        <og-twitter>@JBPlatform</og-twitter>
+        <og-image>https://resources.jetbrains.com/storage/products/jetbrains/img/meta/preview.png</og-image>
+        <enable-browser-edits>true</enable-browser-edits>
+        <browser-edits-url>https://github.com/rayshade/intellij-sdk-new/edit/master/</browser-edits-url>
+        <images-prefix-override>images/</images-prefix-override>
+        <upsource-commit-hash>4b94ba01122752d7576eb9d69638b6e89d1671b7</upsource-commit-hash>
+        <upsource-repo-name>idea-ce</upsource-repo-name>
+        <upsource-server-address>upsource.jetbrains.com</upsource-server-address>
+
+    </variables>
+
+    <build-profile product="ijs"/>
+
+</buildprofiles>

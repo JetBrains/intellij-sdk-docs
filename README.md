@@ -5,15 +5,15 @@
 [![Build](https://github.com/JetBrains/intellij-sdk-docs/workflows/Build/badge.svg)][gh:build]
 [![Slack](https://img.shields.io/badge/Slack-%23intellij--platform-blue)][jb:slack]
 
-Welcome to the repository for [IntelliJ Platform SDK Documentation](https://www.jetbrains.org/intellij/sdk/docs/) site.
+Welcome to the repository for [IntelliJ Platform SDK Documentation](https://plugins.jetbrains.com/docs/intellij/?from=GH-README) site.
 
 The code samples can also be found in [IntelliJ SDK Code Samples](https://github.com/JetBrains/intellij-sdk-code-samples) mirror repository.
 
 ## Feedback
-Please report any content inconsistencies, outdated materials, cosmetic issues, and other defects using the channels listed in [Getting Help](https://www.jetbrains.org/intellij/sdk/docs/intro/getting_help.html).
+Please report any content inconsistencies, outdated materials, cosmetic issues, and other defects using the channels listed in [Getting Help](https://plugins.jetbrains.com/docs/intellij/getting-help.html).
 
-## Working With the Site Locally
-To check out and run a local copy of the site, follow the steps outlined in [Contributing](https://www.jetbrains.org/intellij/sdk/docs/CONTRIBUTING.html).
+## Contributing
+Please follow the steps outlined in [Contributing](https://plugins.jetbrains.com/docs/intellij/intellij-sdk-docs-original-contributing.html).
 
 [gh:build]: https://github.com/JetBrains/intellij-sdk-docs/actions?query=workflow%3ABuild
 

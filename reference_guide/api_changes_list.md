@@ -97,4 +97,3 @@ The following pages list the breaking changes in IDE and plugin releases with re
 * [**Changes in 2017.***](api_changes_list_2017.md)
 * [**Changes in 2016.***](api_changes_list_2016.md)
 
- >  Changes from API marked with `org.jetbrains.annotations.ApiStatus.@Experimental`/`ScheduledForRemoval` are not listed here, as incompatible changes are to be expected.

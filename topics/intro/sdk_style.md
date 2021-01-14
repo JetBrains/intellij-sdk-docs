@@ -240,34 +240,9 @@ If the width of an image needs to be adjusted, use Kramdown markup:
 ```
 
 ## _SUMMARY Site Table of Contents
-The table of contents for the site is displayed in the tree view on the left-hand side of the site, and it is generated from the `_SUMMARY.md` file.
-It is a simple Markdown list, with each item in the list being a link to another Markdown page, either in the root folder or sub-folders.
+The table of contents for the site is displayed in the tree view on the left-hand side of the site, and it is generated from the `ijs.tree` file.
 The list can have nested items, which are displayed as child items in the table of contents.
 
-> ***WARNING*** Every Markdown (`*.md`) document within the SDK repository (`intellij-sdk-docs`) must have an entry in `_SUMMARY.md`.
-
-```md
-# Summary
-
-* [Introduction]()
-* [About This Guide](About.md)
-    * [Key Topics](KeyTopics.md)
-```
-
-The contents can be split into "parts" by separating the list into several lists, each new list starting with a level 2 heading (`##`).
-
-```md
-# Summary
-
-* [Introduction]()
-* [About This Guide](About.md)
-    * [Key Topics](KeyTopics.md)
-
-## Part I - Extending the Platform
-* [Getting Started](GettingStarted.md)
-* ...
-```
-
-If a node doesn't have a link but is just plain text, it will still appear in the table of contents but will be greyed out and not clickable.
+If a node does not have its `id` attribute specified, it will still appear in the table of contents but will be greyed out and not clickable.
 It acts as a placeholder for a documentation item.
 A placeholder is useful to keep track of what should be documented, but hasn't yet, and can be helpful to show readers that the topic exists, but isn't yet documented (Pull Requests always welcome!).

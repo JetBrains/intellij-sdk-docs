@@ -30,9 +30,9 @@ Defines a new language, _Simple language_ with support for syntax highlighting, 
 *Reference: [Plugin Extension Points in IntelliJ SDK Docs][docs:ep]*
 
 
-[docs]: https://www.jetbrains.org/intellij/sdk/docs
-[docs:custom_language_support_tutorial]: https://jetbrains.org/intellij/sdk/docs/tutorials/custom_language_support_tutorial.html
-[docs:ep]: https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_extensions.html
+[docs]: https://plugins.jetbrains.com/docs/intellij/
+[docs:custom_language_support_tutorial]: https://plugins.jetbrains.com/docs/intellij/custom-language-support-tutorial.html
+[docs:ep]: https://plugins.jetbrains.com/docs/intellij/plugin-extensions.html
 
 [file:SimpleFileType]: ./src/main/java/org/intellij/sdk/language/SimpleFileType.java
 [file:SimpleParserDefinition]: ./src/main/java/org/intellij/sdk/language/SimpleParserDefinition.java

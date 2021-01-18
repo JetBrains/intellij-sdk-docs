@@ -76,7 +76,7 @@ When using Gradle, a number of metadata elements will be provided at build time 
   <resource-bundle>messages.MyPluginBundle</resource-bundle>
 
   <!-- Plugin's application components / DEPRECATED - do not use in new plugins
-       See https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_components.html for migration steps
+       See https://plugins.jetbrains.com/docs/intellij/plugin-components.html for migration steps
   -->
   <application-components>
     <component>
@@ -89,7 +89,7 @@ When using Gradle, a number of metadata elements will be provided at build time 
   </application-components>
 
   <!-- Plugin's project components / DEPRECATED - do not use in new plugins
-       See https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_components.html for migration steps
+       See https://plugins.jetbrains.com/docs/intellij/plugin-components.html for migration steps
   -->
   <project-components>
     <component>
@@ -109,7 +109,7 @@ When using Gradle, a number of metadata elements will be provided at build time 
   </project-components>
 
   <!-- Plugin's module components / DEPRECATED - do not use in new plugins
-       See https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_components.html for migration steps
+       See https://plugins.jetbrains.com/docs/intellij/plugin-components.html for migration steps
   -->
   <module-components>
     <component>

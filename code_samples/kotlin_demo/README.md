@@ -16,8 +16,8 @@ Action, added to the Main Menu, shows a message dialog when invoked.
 *Reference: [Action System in IntelliJ SDK Docs][docs:actions]*
 
 
-[docs]: https://www.jetbrains.org/intellij/sdk/docs
-[docs:actions]: https://www.jetbrains.org/intellij/sdk/docs/basics/action_system.html
-[docs:kotlin]: https://jetbrains.org/intellij/sdk/docs/tutorials/kotlin.html
+[docs]: https://plugins.jetbrains.com/docs/intellij/
+[docs:actions]: https://plugins.jetbrains.com/docs/intellij/basic-action-system.html
+[docs:kotlin]: https://plugins.jetbrains.com/docs/intellij/kotlin.html
 
 [file:HelloAction]: ./src/main/kotlin/org/intellij/sdk/kotlin/HelloAction.kt

@@ -21,7 +21,7 @@ Adding badges to the README files in open-source projects is common for providin
 
 Below are listed a few related to the IntelliJ SDK and plugins development provided by [shields.io](https://shields.io) and [espend.de](https://www.espend.de):
 
- >  The following code snippets contain `:pluginId` and `:packageName` placeholders.
+>  The following code snippets contain `:pluginId` and `:packageName` placeholders.
 >
 > `:pluginId` can be obtained from your plugin page URL, like: `https://plugins.jetbrains.com/plugin/6954-kotlin` - in this case, it's `6954`.
 >
@@ -112,9 +112,9 @@ Below are listed a few related to the IntelliJ SDK and plugins development provi
 
 **JetBrains IntelliJ Platform SDK Docs**
 
-[![JetBrains IntelliJ Platform SDK Docs](https://jb.gg/badges/docs.svg)](http://www.jetbrains.org/intellij/sdk/docs)
+[![JetBrains IntelliJ Platform SDK Docs](https://jb.gg/badges/docs.svg)](https://plugins.jetbrains.com/docs/intellij)
 ```markdown
-[![JetBrains IntelliJ Platform SDK Docs](https://jb.gg/badges/docs.svg)](http://www.jetbrains.org/intellij/sdk/docs)
+[![JetBrains IntelliJ Platform SDK Docs](https://jb.gg/badges/docs.svg)](https://plugins.jetbrains.com/docs/intellij)
 ```
 
 **JetBrains Platform Slack**

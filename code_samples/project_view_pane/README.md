@@ -15,8 +15,8 @@ The current demo describes an implementation of the `projectViewPane` extension 
 *Reference: [Plugin Extension Points in IntelliJ SDK Docs][docs:ep]*
 
 
-[docs]: https://www.jetbrains.org/intellij/sdk/docs
-[docs:project_view]: https://jetbrains.org/intellij/sdk/docs/basics/project_view.html
-[docs:ep]: https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_extensions.html
+[docs]: https://plugins.jetbrains.com/docs/intellij/
+[docs:project_view]: https://plugins.jetbrains.com/docs/intellij/project-view.html
+[docs:ep]: https://plugins.jetbrains.com/docs/intellij/plugin-extensions.html
 
 [file:ImagesProjectViewPane]: ./src/main/java/org/intellij/sdk/view/pane/ImagesProjectViewPane.java

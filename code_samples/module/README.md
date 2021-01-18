@@ -15,8 +15,8 @@ Module with a custom name, description, and icon set provides a `ModuleBuilder` 
 *Reference: [Plugin Extension Points in IntelliJ SDK Docs][docs:ep]*
 
 
-[docs]: https://www.jetbrains.org/intellij/sdk/docs
-[docs:plugin_services]: https://jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_services.html
-[docs:ep]: https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_extensions.html
+[docs]: https://plugins.jetbrains.com/docs/intellij/
+[docs:plugin_services]: https://plugins.jetbrains.com/docs/intellij/plugin-services.html
+[docs:ep]: https://plugins.jetbrains.com/docs/intellij/plugin-extensions.html
 
 [file:DemoModuleType]: ./src/main/java/org/intellij/sdk/module/DemoModuleType.java

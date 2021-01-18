@@ -24,9 +24,9 @@ Within the implemented actions, you will be able to:
 *Reference: [Action System in IntelliJ SDK Docs][docs:actions]*
 
 
-[docs]: https://www.jetbrains.org/intellij/sdk/docs
-[docs:actions]: https://www.jetbrains.org/intellij/sdk/docs/basics/action_system.html
-[docs:pycharm]: https://jetbrains.org/intellij/sdk/docs/products/pycharm.html
+[docs]: https://plugins.jetbrains.com/docs/intellij/
+[docs:actions]: https://plugins.jetbrains.com/docs/intellij/basic-action-system.html
+[docs:pycharm]: https://plugins.jetbrains.com/docs/intellij/pycharm.html
 
 [file:ShowSourceRootsActions]: ./src/main/java/org/intellij/sdk/project/model/ShowSourceRootsActions.java
 [file:ProjectSdkAction]: ./src/main/java/org/intellij/sdk/project/model/ProjectSdkAction.java

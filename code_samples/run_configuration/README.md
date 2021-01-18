@@ -15,8 +15,8 @@ In this example, a new *Demo* configuration is added together with `Configuratio
 *Reference: [Plugin Extension Points in IntelliJ SDK Docs][docs:ep]*
 
 
-[docs]: https://www.jetbrains.org/intellij/sdk/docs
-[docs:run_configurations]: https://jetbrains.org/intellij/sdk/docs/basics/run_configurations.html
-[docs:ep]: https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_extensions.html
+[docs]: https://plugins.jetbrains.com/docs/intellij/
+[docs:run_configurations]: https://plugins.jetbrains.com/docs/intellij/run-configurations.html
+[docs:ep]: https://plugins.jetbrains.com/docs/intellij/plugin-extensions.html
 
 [file:DemoRunConfigurationType]: ./src/main/java/org/jetbrains/sdk/runConfiguration/DemoRunConfigurationType.java

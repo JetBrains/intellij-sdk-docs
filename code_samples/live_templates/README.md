@@ -19,9 +19,9 @@ Live Templates Sample Project implements two example live templates for the Mark
 *Reference: [Plugin Extension Points in IntelliJ SDK Docs][docs:ep]*
 
 
-[docs]: https://www.jetbrains.org/intellij/sdk/docs
-[docs:live_templates]: https://jetbrains.org/intellij/sdk/docs/tutorials/live_templates.html
-[docs:ep]: https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_extensions.html
+[docs]: https://plugins.jetbrains.com/docs/intellij/
+[docs:live_templates]: https://plugins.jetbrains.com/docs/intellij/live-templates.html
+[docs:ep]: https://plugins.jetbrains.com/docs/intellij/plugin-extensions.html
 
 [file:Markdown]: ./src/main/resources/liveTemplates/Markdown.xml
 [file:MarkdownContext]: ./src/main/java/org/intellij/sdk/liveTemplates/MarkdownContext.java

@@ -29,11 +29,11 @@ It describes definitions of the actions, extensions, or listeners provided by th
 *Reference: [Plugin Extension Points in IntelliJ SDK Docs][docs:ep]*
 
 
-[docs]: https://www.jetbrains.org/intellij/sdk/docs
-[docs:themes]: https://jetbrains.org/intellij/sdk/docs/reference_guide/ui_themes/themes.html
-[docs:ep]: https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_extensions.html
-[docs:devkit]: https://jetbrains.org/intellij/sdk/docs/basics/getting_started/using_dev_kit.html
-[docs:plugin.xml]: https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_configuration_file.html
+[docs]: https://plugins.jetbrains.com/docs/intellij/
+[docs:themes]: https://plugins.jetbrains.com/docs/intellij/themes.html
+[docs:ep]: https://plugins.jetbrains.com/docs/intellij/plugin-extensions.html
+[docs:devkit]: https://plugins.jetbrains.com/docs/intellij/using-dev-kit.html
+[docs:plugin.xml]: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html
 
 [file:plugin.xml]: ./resources/META-INF/plugin.xml
 [file:theme_basics.theme.json]: ./resources/theme_basics.theme.json

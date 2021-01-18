@@ -18,8 +18,8 @@ Component is provided by the `MyToolWindow` class through the `getContent()` met
 *Reference: [Plugin Extension Points in IntelliJ SDK Docs][docs:ep]*
 
 
-[docs]: https://www.jetbrains.org/intellij/sdk/docs
-[docs:tool_windows]: https://jetbrains.org/intellij/sdk/docs/user_interface_components/tool_windows.html
-[docs:ep]: https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_extensions.html
+[docs]: https://plugins.jetbrains.com/docs/intellij/
+[docs:tool_windows]: https://plugins.jetbrains.com/docs/intellij/tool-windows.html
+[docs:ep]: https://plugins.jetbrains.com/docs/intellij/plugin-extensions.html
 
 [file:MyToolWindowFactory]: ./src/main/java/org/intellij/sdk/toolWindow/MyToolWindowFactory.java

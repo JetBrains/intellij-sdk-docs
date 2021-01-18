@@ -42,8 +42,8 @@ The converter in the `isAvailable` method, has defined the token check to match 
 *Reference: [Plugin Extension Points in IntelliJ SDK Docs][docs:ep]*
 
 
-[docs]: https://www.jetbrains.org/intellij/sdk/docs
-[docs:conditional_operator_intention]: https://www.jetbrains.org/intellij/sdk/docs/tutorials/code_intentions.html
-[docs:ep]: https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_extensions.html
+[docs]: https://plugins.jetbrains.com/docs/intellij/
+[docs:conditional_operator_intention]: https://plugins.jetbrains.com/docs/intellij/code-intentions.html
+[docs:ep]: https://plugins.jetbrains.com/docs/intellij/plugin-extensions.html
 
 [file:ConditionalOperatorConverter]: ./src/main/java/org/intellij/sdk/intention/ConditionalOperatorConverter.java

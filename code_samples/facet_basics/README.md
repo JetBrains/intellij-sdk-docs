@@ -18,9 +18,9 @@ It allows us to specify any configuration specified by the `FacetConfiguration` 
 *Reference: [Plugin Extension Points in IntelliJ SDK Docs][docs:ep]*
 
 
-[docs]: https://www.jetbrains.org/intellij/sdk/docs
-[docs:facet_basics]: https://www.jetbrains.org/intellij/sdk/docs/reference_guide/project_model/facet.html
-[docs:ep]: https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_extensions.html
+[docs]: https://plugins.jetbrains.com/docs/intellij/
+[docs:facet_basics]: https://plugins.jetbrains.com/docs/intellij/facet.html
+[docs:ep]: https://plugins.jetbrains.com/docs/intellij/plugin-extensions.html
 
 [file:DemoFacetType]: ./src/main/java/org/intellij/sdk/facet/DemoFacetType.java
 

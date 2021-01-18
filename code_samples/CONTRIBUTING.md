@@ -5,4 +5,4 @@ Before you begin contributing content to the SDK, please read this page thorough
 This [intellij-sdk-code-samples](https://github.com/JetBrains/intellij-sdk-code-samples) is a mirror of the [IntelliJ SDK Docs Code Samples](https://github.com/JetBrains/intellij-sdk-docs/tree/main/code_samples).
 Any pull requests should be performed across the [IntelliJ SDK Docs](https://github.com/JetBrains/intellij-sdk-docs) repository.
 
-For more details regarding the Code Samples contribution, please read the [Guidelines for Creating IntelliJ Platform SDK Code Samples](https://jetbrains.org/intellij/sdk/docs/intro/sdk_code_guidelines.html).
+For more details regarding the Code Samples contribution, please read the [Guidelines for Creating IntelliJ Platform SDK Code Samples](https://plugins.jetbrains.com/docs/intellij/sdk-code-guidelines.html).

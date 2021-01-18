@@ -17,8 +17,8 @@ If such a check finds a comparison using the `==` or !`=` operators instead of t
 *Reference: [Plugin Extension Points in IntelliJ SDK Docs][docs:ep]*
 
 
-[docs]: https://www.jetbrains.org/intellij/sdk/docs
-[docs:code_inspections]: https://www.jetbrains.org/intellij/sdk/docs/tutorials/code_inspections.html
-[docs:ep]: https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_extensions.html
+[docs]: https://plugins.jetbrains.com/docs/intellij/
+[docs:code_inspections]: https://plugins.jetbrains.com/docs/intellij/code-inspections.html
+[docs:ep]: https://plugins.jetbrains.com/docs/intellij/plugin-extensions.html
 
 [file:ComparingReferencesInspection]: ./src/main/java/org/intellij/sdk/codeInspection/ComparingReferencesInspection.java

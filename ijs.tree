@@ -17,9 +17,7 @@
             <toc-element id="intellij-sdk-docs-original_CODE_OF_CONDUCT.md" toc-title="Code of Conduct"/>
         </toc-element>
         <toc-element id="getting_help.md" toc-title="Getting Help"/>
-        <toc-element id="content_updates.md" toc-title="Content Updates">
-            <toc-element id="recently_updated.md" toc-title="Recently Updated"/>
-        </toc-element>
+        <toc-element id="content_updates.md" toc-title="Content Updates" accepts-web-file-names="recently_updated.html"/>
     </toc-element>
     <toc-element toc-title="Part I - Plugins">
         <toc-element id="basics.md" accepts-web-file-names="basics.html" toc-title="Quick Start Guide">

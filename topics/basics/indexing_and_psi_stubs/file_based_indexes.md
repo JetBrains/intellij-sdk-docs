@@ -45,7 +45,7 @@ If you don't need to associate any value with the files (i.e., your value type i
  >
  {type="warning"}
 
- >  Please see `com.intellij.util.indexing.DebugAssertions` on how to enable additional debugging assertions during development to assert correct index implementation.
+ >  Please set system property `intellij.idea.indices.debug`/`intellij.idea.indices.debug.extra.sanity` to `true` to enable additional debugging assertions during development to assert correct index implementation.
  >
  {type="note"}
 

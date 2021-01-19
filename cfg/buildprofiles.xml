@@ -24,6 +24,7 @@
         <browser-edits-url>https://github.com/JetBrains/intellij-sdk-docs/edit/main/</browser-edits-url>
         <images-prefix-override>images/</images-prefix-override>
         <upsource-commit-hash>4b94ba01122752d7576eb9d69638b6e89d1671b7</upsource-commit-hash>
+        <upsource-tag>203.5981.155</upsource-tag>
         <upsource-repo-name>idea-ce</upsource-repo-name>
         <upsource-server-address>upsource.jetbrains.com</upsource-server-address>
 

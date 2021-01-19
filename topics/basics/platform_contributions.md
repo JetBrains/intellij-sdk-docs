@@ -10,12 +10,12 @@ Please make sure to read the [Code of Conduct](intellij-sdk-docs-original_CODE_O
 There are several community [forums and newsgroups](https://intellij-support.jetbrains.com/hc/en-us/community/topics) you can join to discuss the IntelliJ Platform.
 The forums are an excellent source for users and contributors interested in having technical discussions, answering questions, or resolving potential issues for newcomers.
 
-### Link to jetbrains.org
+### Link to IntelliJ Platform Homepage
 The success of any open-source project depends on the number of people who use the product and contribute back to the project.
-By linking to jetbrains.org, you can increase the chances of a new user or contributor finding out about the project and joining the community.
+By linking to [https://www.jetbrains.com/opensource/idea](https://www.jetbrains.com/opensource/idea), you can increase the chances of a new user or contributor finding out about the project and joining the community.
 
 If you're as excited about IntelliJ IDEA Community Edition as we are, you can show it by linking to us.
-Project logos and other assets are [also available](https://www.jetbrains.com/company/press/).
+Project logos and other assets are [also available](https://www.jetbrains.com/company/brand/logos/).
 
 ### Promote IntelliJ Platform and IntelliJ IDEA Community Edition
 Help promote the platform and IDE by using your blog, Twitter, Facebook, or submitting an article to your favorite local magazine.

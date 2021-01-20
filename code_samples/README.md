@@ -3,7 +3,7 @@
 [![official JetBrains project](https://jb.gg/badges/official.svg)][jb:confluence-on-gh]
 [![JetBrains IntelliJ Platform SDK Docs](https://jb.gg/badges/docs.svg)][jb:docs]
 [![Twitter Follow](https://img.shields.io/twitter/follow/JBPlatform?style=flat)][jb:twitter]
-[![Build](https://github.com/JetBrains/intellij-sdk-docs/workflows/Build/badge.svg)][gh:build]
+[![Build](https://github.com/JetBrains/intellij-sdk-docs/workflows/Code%20Samples/badge.svg)][gh:workflow-code-samples]
 [![Slack](https://img.shields.io/badge/Slack-%23intellij--platform-blue)][jb:slack]
 
 Learn how to build plugins using IntelliJ Platform SDK for the [JetBrains products][jb:products] by experimenting with our code samples.
@@ -54,7 +54,7 @@ In the following table, you may find all available samples provided in the separ
 | [Tool Window](./tool_window)                                           | Custom Tool Window example plugin.                                                                                                                     |
 | [Tree Structure Provider](./tree_structure_provider)                   | Tree Structure Provider showing only plain text files.                                                                                                 |
 
-[gh:build]: https://github.com/JetBrains/intellij-sdk-docs/actions?query=workflow%3ABuild
+[gh:workflow-code-samples]: https://github.com/JetBrains/intellij-sdk-docs/actions?query=workflow%3ACode%20Samples
 [gh:template]: https://github.com/JetBrains/intellij-platform-plugin-template
 
 [jb:confluence-on-gh]: https://confluence.jetbrains.com/display/ALL/JetBrains+on+GitHub

@@ -90,6 +90,6 @@ updates:
     schedule:
       interval: "daily"
   - package-ecosystem: "gradle"
-    directory: "/code_samples/product_specific/"
+    directory: "/code_samples/product_specific/pycharm_basics/"
     schedule:
       interval: "daily"

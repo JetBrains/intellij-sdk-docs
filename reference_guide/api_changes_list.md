@@ -68,19 +68,19 @@ Compatibility with newer IDEs can easily be verified for plugins hosted on the [
 
 For local verification or non-public plugins, [intellij-plugin-verifier](https://github.com/JetBrains/intellij-plugin-verifier) can be used standalone as well.
 
-Integration in [Gradle build](gradle_build_system.md) is possible using the `runPluginVerifier` task, please see [Gradle IntelliJ Plugin - Plugin Verifier DSL](https://github.com/JetBrains/gradle-intellij-plugin#plugin-verifier-dsl) for details.
+Integration in [Gradle build](gradle_build_system.md) is available using the `runPluginVerifier` task, please see [Gradle IntelliJ Plugin - Plugin Verifier DSL](https://github.com/JetBrains/gradle-intellij-plugin#plugin-verifier-dsl) for details.
 
 You can easily integrate it within your CI by running that task as another quality check step.
 Check the IntelliJ Platform Plugin Template [GitHub workflow configuration file](https://github.com/JetBrains/intellij-platform-plugin-template/blob/main/.github/workflows/build.yml) as sample.
 
-If your plugin is hosted on GitHub and you are not using Gradle, consider using the following third-party GitHub Actions:
-- [IntelliJ Platform Plugin Verifier](https://github.com/marketplace/actions/intellij-platform-plugin-verifier)
-- [IntelliJ Plugin Verifier](https://github.com/marketplace/actions/intellij-plugin-verifier)
+If your plugin is hosted on GitHub and you are _not_ using Gradle, consider using third-party GitHub Actions [IntelliJ Platform Plugin Verifier](https://github.com/marketplace/actions/intellij-platform-plugin-verifier) or [IntelliJ Plugin Verifier](https://github.com/marketplace/actions/intellij-plugin-verifier).
 
 ### IDE Support
 Consider using the following [IDE inspections](https://www.jetbrains.com/help/idea/code-inspection.html) to get additional alerts about code that uses unstable API features:
 - JVM languages \| Unstable API Usage
 - JVM languages \| Unstable type is used in signature
+
+Usage of deprecated [Extension Points](plugin_extensions.md) is highlighted in `plugin.xml` files.
 
 ## Known Breaking Changes
 

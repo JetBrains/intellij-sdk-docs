@@ -1,0 +1,95 @@
+version: 2
+updates:
+  - package-ecosystem: "gradle"
+    directory: "/"
+    schedule:
+      interval: "daily"
+
+  - package-ecosystem: "gradle"
+    directory: "/code_samples/action_basics/"
+    schedule:
+      interval: "daily"
+  - package-ecosystem: "gradle"
+    directory: "/code_samples/comparing_references_inspection/"
+    schedule:
+      interval: "daily"
+  - package-ecosystem: "gradle"
+    directory: "/code_samples/conditional_operator_intention/"
+    schedule:
+      interval: "daily"
+  - package-ecosystem: "gradle"
+    directory: "/code_samples/editor_basics/"
+    schedule:
+      interval: "daily"
+  - package-ecosystem: "gradle"
+    directory: "/code_samples/facet_basics/"
+    schedule:
+      interval: "daily"
+  - package-ecosystem: "gradle"
+    directory: "/code_samples/framework_basics/"
+    schedule:
+      interval: "daily"
+  - package-ecosystem: "gradle"
+    directory: "/code_samples/inspection_basics/"
+    schedule:
+      interval: "daily"
+  - package-ecosystem: "gradle"
+    directory: "/code_samples/kotlin_demo/"
+    schedule:
+      interval: "daily"
+  - package-ecosystem: "gradle"
+    directory: "/code_samples/live_templates/"
+    schedule:
+      interval: "daily"
+  - package-ecosystem: "gradle"
+    directory: "/code_samples/max_opened_projects/"
+    schedule:
+      interval: "daily"
+  - package-ecosystem: "gradle"
+    directory: "/code_samples/module/"
+    schedule:
+      interval: "daily"
+  - package-ecosystem: "gradle"
+    directory: "/code_samples/project_model/"
+    schedule:
+      interval: "daily"
+  - package-ecosystem: "gradle"
+    directory: "/code_samples/project_view_pane/"
+    schedule:
+      interval: "daily"
+  - package-ecosystem: "gradle"
+    directory: "/code_samples/project_wizard/"
+    schedule:
+      interval: "daily"
+  - package-ecosystem: "gradle"
+    directory: "/code_samples/psi_demo/"
+    schedule:
+      interval: "daily"
+  - package-ecosystem: "gradle"
+    directory: "/code_samples/run_configuration/"
+    schedule:
+      interval: "daily"
+  - package-ecosystem: "gradle"
+    directory: "/code_samples/settings/"
+    schedule:
+      interval: "daily"
+  - package-ecosystem: "gradle"
+    directory: "/code_samples/simple_language_plugin/"
+    schedule:
+      interval: "daily"
+  - package-ecosystem: "gradle"
+    directory: "/code_samples/theme_basics/"
+    schedule:
+      interval: "daily"
+  - package-ecosystem: "gradle"
+    directory: "/code_samples/tool_window/"
+    schedule:
+      interval: "daily"
+  - package-ecosystem: "gradle"
+    directory: "/code_samples/tree_structure_provider/"
+    schedule:
+      interval: "daily"
+  - package-ecosystem: "gradle"
+    directory: "/code_samples/product_specific/"
+    schedule:
+      interval: "daily"

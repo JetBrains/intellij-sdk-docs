@@ -9,7 +9,7 @@ It is intended to answer why, when and how to use it.
 
 ## Rationale
 
-So, what is messaging in the IntelliJ Platform and why do we need it? Basically, its implementation of [Observer pattern](https://en.wikipedia.org/wiki/Observer_pattern) that provides additional features like _broadcasting on hierarchy_ and special _nested events_ processing (_nested event_ here is a situation when new event is fired (directly or indirectly) from the callback of another event).
+So, what is messaging in the IntelliJ Platform and why do we need it? Basically, its implementation of [Publisher Subscriber Pattern](https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern) that provides additional features like _broadcasting on hierarchy_ and special _nested events_ processing (_nested event_ here is a situation when new event is fired (directly or indirectly) from the callback of another event).
 
 ## Design
 
@@ -170,11 +170,11 @@ Let's see what happens if someone sends a message to the target topic:
 
 ### Relief Listeners Management
 
-Messaging infrastructure is very light-weight, so, it's possible to reuse it at local sub-systems in order to relieve [Observers](https://en.wikipedia.org/wiki/Observer_pattern) construction.
+Messaging infrastructure is very light-weight, so, it's possible to reuse it at local sub-systems in order to relieve [Subscribers](https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern) construction.
 Let's see what is necessary to do then:
 
 1. Define business interface to work with;
-2. Create shared message bus and topic that uses the interface above (_shared_ here means that either _subject_ or _observers_ know about them);
+2. Create shared message bus and topic that uses the interface above (_shared_ here means that either _subject_ or _subscribers_ know about them);
 
 Let's compare that with a manual implementation:
 

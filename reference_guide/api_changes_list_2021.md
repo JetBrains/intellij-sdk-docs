@@ -69,3 +69,9 @@ Please see [Incompatible API Changes](api_changes_list.md) on how to verify comp
 
 `com.intellij.util.io.PersistentHashMap.isCorrupted` method removed
 : The storage checks for corruption automatically, there is no need of any explicit additional checks.
+
+`com.intellij.lang.StdLanguages.JSPX` field removed
+: Add a dependency on the `com.intellij.jsp` plugin and replace the reference with `com.intellij.lang.jspx.JspxLanguageImpl.INSTANCE`
+
+`com.intellij.lang.StdLanguages.JSP` field removed
+: Add a dependency on the `com.intellij.jsp` plugin and replace the reference with `com.intellij.lang.jsp.NewJspLanguage.getInstance()`

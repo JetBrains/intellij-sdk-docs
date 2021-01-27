@@ -5,3 +5,6 @@
 ## 2021.1
 
 ### Notable Changes in IntelliJ Platform 2021.1
+
+_Add unambiguous imports on the fly_ for custom languages
+: Override [`ReferenceImporter#isAddUnambiguousImportsOnTheFlyEnabled()`](upsource:///platform/analysis-impl/src/com/intellij/codeInsight/daemon/ReferenceImporter.java) and provide corresponding user setting. Implement `HintAction` with `fixSilently()` and hook it up to highlighting as a quick fix for unresolved reference.

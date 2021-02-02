@@ -8,17 +8,17 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 
 ## 2020
                   
-### December
+### December-20
 
 IntelliJ Platform Explorer
 : Explore usages of [Extension Points](extension_point_list.md) in open-source plugins using [IntelliJ Platform Explorer](https://jb.gg/ipe).
  
-### November
+### November-20
 
 Extension Point List
 : All EPs [available in IJ Platform and Android](extension_point_list.md) can now be browsed conveniently.
 
-### August
+### August-20
 
 README added to Code Samples
 : All code samples used in this guide now come with `README` making it easier to browse them. They can be conveniently accessed via a [separate GitHub repository](https://github.com/JetBrains/intellij-sdk-code-samples).

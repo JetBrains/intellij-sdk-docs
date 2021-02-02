@@ -75,3 +75,6 @@ Please see [Incompatible API Changes](api_changes_list.md) on how to verify comp
 
 `com.intellij.lang.StdLanguages.JSP` field removed
 : Add a dependency on the `com.intellij.jsp` plugin and replace the reference with `com.intellij.lang.jsp.NewJspLanguage.getInstance()`
+
+`org.sqlite.SQLiteConfig.setBusyTimeout(String milliseconds)` method parameter type changed from `String` to `int`
+: Please use updated sqlite-jdbc api.

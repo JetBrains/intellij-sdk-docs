@@ -75,3 +75,15 @@ Please see [Incompatible API Changes](api_changes_list.md) on how to verify comp
 
 `com.intellij.lang.StdLanguages.JSP` field removed
 : Add a dependency on the `com.intellij.jsp` plugin and replace the reference with `com.intellij.lang.jsp.NewJspLanguage.getInstance()`
+
+`com.intellij.ide.actions.searcheverywhere.SEResultsEqualityProvider.compareItems(alreadyFoundItem)` method parameter type changed from `SearchEverywhereFoundElementInfo` to `List<SearchEverywhereFoundElementInfo>`
+: New API is more abstract which allows to review all already found items before making "deduplication" decision. Also consider implementing `com.intellij.ide.actions.searcheverywhere.AbstractEqualityProvider` instead of `com.intellij.ide.actions.searcheverywhere.SEResultsEqualityProvider`.
+
+`com.intellij.ide.actions.searcheverywhere.SEResultsEqualityProvider.SEEqualElementsActionType.SKIP` field removed
+: Enum class `SEEqualElementsActionType` was converted to sealed class with the same name.
+
+`com.intellij.ide.actions.searcheverywhere.SEResultsEqualityProvider.SEEqualElementsActionType.DO_NOTHING` field removed
+: Enum class `SEEqualElementsActionType` was converted to sealed class with the same name.
+
+`com.intellij.ide.actions.searcheverywhere.SEResultsEqualityProvider.SEEqualElementsActionType.Replace` field removed
+: Enum class `SEEqualElementsActionType` was converted to sealed class with the same name.

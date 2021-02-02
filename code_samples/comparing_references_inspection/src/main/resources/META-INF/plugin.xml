@@ -8,7 +8,8 @@
   <!-- Text to display as name on Preferences/Settings | Plugin page -->
   <name>SDK: Comparing References Inspection Sample</name>
 
-  <!-- Evaluates java PSI -->
+  <!-- Product and plugin compatibility requirements -->
+  <depends>com.intellij.modules.platform</depends>
   <depends>com.intellij.java</depends>
 
   <!-- Text to display as description on Preferences/Settings | Plugin page -->

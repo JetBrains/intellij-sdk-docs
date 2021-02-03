@@ -1,6 +1,6 @@
 [//]: # (title: Incompatible Changes in IntelliJ Platform and Plugins API 2021.*)
 
-<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 <!--
 Before documenting a breaking API change, please, make sure that the change cannot be avoided in an alternative way.
@@ -78,3 +78,6 @@ Please see [Incompatible API Changes](api_changes_list.md) on how to verify comp
 
 `org.sqlite.SQLiteConfig.setBusyTimeout(String milliseconds)` method parameter type changed from `String` to `int`
 : Please use updated sqlite-jdbc api.
+
+`com.intellij.usages.impl.rules.UsageTypeProvider.getUsageType` method `PsiElement` parameter marked `@NotNull`
+: This may break source-compatibility with inheritors written in Kotlin if they declare parameter type as nullable.

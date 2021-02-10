@@ -81,3 +81,6 @@ Please see [Incompatible API Changes](api_changes_list.md) on how to verify comp
 
 `com.intellij.usages.impl.rules.UsageTypeProvider.getUsageType` method `PsiElement` parameter marked `@NotNull`
 : This may break source-compatibility with inheritors written in Kotlin if they declare parameter type as nullable.
+
+`com.jetbrains.performancePlugin.CommandProvider.getCommands(Project)` method parameter `Project` removed
+: Project is now only accessible via `com.intellij.openapi.ui.playback.PlaybackContext.getProject()` since it may change during script execution. 

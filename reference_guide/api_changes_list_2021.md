@@ -96,6 +96,8 @@ Please see [Incompatible API Changes](api_changes_list.md) on how to verify comp
 
 `com.jetbrains.performancePlugin.CommandProvider.getCommands(Project)` method parameter `Project` removed
 : Project is now only accessible via `com.intellij.openapi.ui.playback.PlaybackContext.getProject()` since it may change during script execution. 
+                               
+### Changes in HTTP Client Plugin 2021.1
 
 `com.intellij.ws.rest.client` package removed
 : Replaced by `com.intellij.httpClient.execution` in HTTP Client plugin

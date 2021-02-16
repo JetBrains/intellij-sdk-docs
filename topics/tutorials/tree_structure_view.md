@@ -42,7 +42,7 @@ public class TextOnlyTreeStructureProvider implements TreeStructureProvider {
 }
 ```
 
-## Override modify() Method
+## Override `modify()` Method
 
 To implement Tree Structure nodes filtering logic, override `modify()` method.
 The example below shows how to filter out all the Project View nodes except those which correspond to text files and directories.

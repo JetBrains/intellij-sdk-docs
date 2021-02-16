@@ -13,14 +13,14 @@ Using `PsiLiteralExpression` [introduces a dependency](plugin_compatibility.md#m
 Beginning in version 2019.2 of the IntelliJ Platform these dependencies are declared in `plugin.xml`:
 
 ```xml
-  <depends>com.intellij.modules.java</depends>
+  <depends>com.intellij.java</depends>
 ```
 
 The dependency is also declared in the `build.gradle` file:
 
 ```groovy
 intellij {
-  plugins = ['java']
+  plugins = ['com.intellij.java']
 }
 ```
 

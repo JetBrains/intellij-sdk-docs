@@ -24,6 +24,14 @@ intellij {
 }
 ```
 
+Or the following line in the project's `build.gradle.kts` file:
+
+```kotlin
+intellij {
+    setPlugins ("com.intellij.java")
+}
+```
+
 ## Define an Annotator
 The `SimpleAnnotator` subclasses [`Annotator`](upsource:///platform/analysis-api/src/com/intellij/lang/annotation/Annotator.java).
 Consider a literal string that starts with "simple:" as a prefix of a Simple Language key.

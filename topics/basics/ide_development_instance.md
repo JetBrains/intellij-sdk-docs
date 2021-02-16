@@ -50,6 +50,9 @@ This allows a much faster development cycle by avoiding a full restart of the de
 
 Please note that any unloading problems in a production environment will ask the user to restart the IDE.
 
+ > Auto-Reload does not work when the sandbox IDE instance is running under a debugger.
+ {type="warning"}
+
 ### Gradle plugin 0.4.22 and Later
 Enabled by default for target platform 2020.2 or later.
 Set `autoReloadPlugins = true` in [**runIde**](gradle_prerequisites.md#running-a-simple-gradle-based-intellij-platform-plugin) task to enable it for earlier platform versions or `autoReloadPlugins = false` to disable it explicitly.

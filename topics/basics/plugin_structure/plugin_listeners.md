@@ -22,9 +22,11 @@ The advantage is because listener instances get created lazily - the first time 
 To define an application-level listener, add the following section to your `plugin.xml`:
 
 ```xml
-<applicationListeners>
-  <listener class="myPlugin.MyListenerClass" topic="BaseListenerInterface"/>
-</applicationListeners>
+<idea-plugin>
+    <applicationListeners>
+      <listener class="myPlugin.MyListenerClass" topic="BaseListenerInterface"/>
+    </applicationListeners>
+</idea-plugin>
 ```
 
 The `topic` attribute specifies the listener interface corresponding to the type of events you want to receive.
@@ -70,10 +72,12 @@ Project-level listeners are registered in the same way, except that the top-leve
 They can be used to listen to project-level events, for example, tool window operations:
 
 ```xml
-<projectListeners>
-    <listener class="MyToolwindowListener"
-              topic="com.intellij.openapi.wm.ex.ToolWindowManagerListener" />
-</projectListeners>
+<idea-plugin>
+    <projectListeners>
+        <listener class="MyToolwindowListener"
+                  topic="com.intellij.openapi.wm.ex.ToolWindowManagerListener" />
+    </projectListeners>
+</idea-plugin>
 ```
 
 The class implementing the listener interface can define a one-argument constructor accepting a `Project`, and it will receive the instance of the project for which the listener is created:

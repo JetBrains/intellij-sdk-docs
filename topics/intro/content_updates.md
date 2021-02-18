@@ -1,6 +1,6 @@
 [//]: # (title: Content Updates)
 
-This page lists notable additions and updates to the SDK documentation and code samples.
+This page lists notable additions and updates to the SDK documentation and [code samples](https://github.com/JetBrains/intellij-sdk-code-samples).
        
 Follow [JBPlatform](https://twitter.com/JBPlatform/) on Twitter and visit [JetBrains Platform Blog](https://blog.jetbrains.com/platform/) for the latest announcements.
 

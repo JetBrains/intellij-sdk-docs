@@ -62,6 +62,11 @@ Please see [Incompatible API Changes](api_changes_list.md) on how to verify comp
  >  Changes from API marked with `org.jetbrains.annotations.ApiStatus.@Experimental`/`ScheduledForRemoval` are not listed here, as incompatible changes are to be expected.
  >
  {type="note"}
+       
+ >  Java 11 is required ([blog post](https://blog.jetbrains.com/platform/2020/09/intellij-project-migrates-to-java-11/)) when targeting 2020.3 and later only.
+ >  Please make sure to always upgrade to the latest version of `gradle-intellij-plugin`. Follow releases on [GitHub](https://github.com/JetBrains/gradle-intellij-plugin/releases).
+ >
+ {type="note"}
 
 ## 2021.1
                               

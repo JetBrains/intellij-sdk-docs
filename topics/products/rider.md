@@ -22,7 +22,7 @@ In particular, this article discusses _One Template to Rule Them All_, a way to 
 More background information is available in the [Building a .NET IDE with JetBrains Rider](https://www.codemag.com/Article/1811091/Building-a-.NET-IDE-with-JetBrains-Rider) article, which includes a high-level description of the _Rider Protocol_ communication process between Rider and ReSharper.
 The article is a good counterpoint to the ReSharper DevGuide content, which discusses the protocol at the code level.
 
-## Including custom settings into a plugin
+## Including Custom Settings into a Plugin
 Rider plugins may introduce their own `.DotSettings` files with customized [ReSharper settings](https://www.jetbrains.com/help/resharper/Sharing_Configuration_Options.html).
 This is useful e.g. when a plugin brings its own file templates.
 

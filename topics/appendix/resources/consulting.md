@@ -17,6 +17,7 @@ The following independent companies and individuals provide paid plugin consulti
 | Alexander Schwartz | [msg.group][as], [alexander.schwartz@msg.group][as2]    | Custom Language support around documentation-as-code, especially AsciiDoc and Antora. Plugin: [AsciiDoc][as3]                        |
 | Alexey Stukalov    | [info@cuba-platform.com][ast], [www.haulmont.com][ast2] | Plugins: [CUBA][ast3].                                                                                                               |
 | Edument            | [jonathan@edument.cz][ed], [edument.se][ed2]            | Developers of [Comma IDE][ed3]                                                                                                       |
+| Mikhail Bolotov    | [mikhail.bolotov@gmail.com][mb]                         | Plugins: [Cypress Support Pro][cspro], [k6]                                                                                                       |
 
 [ja]: https://www.plugin-dev.com
 [de]: mailto:daniel@espendiller.net
@@ -34,5 +35,8 @@ The following independent companies and individuals provide paid plugin consulti
 [ed]: mailto:jonathan@edument.cz
 [ed2]: https://www.edument.se/en/page/intellij-platform-development
 [ed3]: https://commaide.com
+[cspro]: https://plugins.jetbrains.com/plugin/13987-cypress-support-pro
+[k6]: https://plugins.jetbrains.com/plugin/16141-k6
+[mb]: https://plugins.jetbrains.com/organization/mbolotov
 
 Please [submit a PR or file a YouTrack issue](getting_help.md) for changes or additions to this list.

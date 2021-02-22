@@ -37,6 +37,10 @@ For highlighting lexer errors, the standard `TextAttributesKey` for bad characte
 **Examples:**
 - [`SyntaxHighlighter`](upsource:///plugins/properties/properties-psi-api/src/com/intellij/lang/properties/PropertiesHighlighter.java) implementation for [Properties language plugin](upsource:///plugins/properties/)
 - [Custom Language Support Tutorial: Syntax Highlighter](syntax_highlighter_and_color_settings_page.md)
+                                        
+ > Use [`HtmlSyntaxInfoUtil`](upsource:///platform/lang-impl/src/com/intellij/openapi/editor/richcopy/HtmlSyntaxInfoUtil.java) to create Lexer-based highlighted code samples, e.g. for usage in documentation.
+ >
+ {type="tip"}
 
 ## Parser
 

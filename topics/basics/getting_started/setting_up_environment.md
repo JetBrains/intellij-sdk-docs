@@ -21,18 +21,19 @@ Use the following checklist to ensure that you are ready to develop your custom 
 ### Configuring IntelliJ Platform SDK
 
 To set up your plugin development environment:
-
+                          
+* Setup required Java SDK. 
+  See the _IntelliJ Build Configuration_ section of [Check Out And Build Community Edition](upsource:///README.md) for instructions about creating **1.8** (**11** when targeting 2020.3 or later) Java SDK.
 * Create a new *IntelliJ Platform SDK* under **File \| Project Structure**:
   ![Create IntelliJ Platform SDK](create_intellij_idea_sdk.png)
   <br/>
   <br/>
-* Specify the installation folder of the *IntelliJ IDEA Community Edition* as the home directory.
+* Specify the installation folder of the *IntelliJ IDEA Community Edition* as the home directory (on Mac, select application icon in _/Applications/_).
   >  You may use IntelliJ IDEA Ultimate as an alternative, but debugging the core code will only work with the *Community Edition*.
   ![Set Home Directory](set_home_directory.png)
   <br/>
   <br/>
-* Select **1.8** as the default Java SDK.
-  See the _IntelliJ Build Configuration_ section of [Check Out And Build Community Edition](upsource:///README.md) for instructions about creating **1.8** Java SDK.
+* Select Java SDK from first step as the default Java SDK.
   ![Set IDEA JDK](set_java_sdk.png)
   <br/>
   <br/>

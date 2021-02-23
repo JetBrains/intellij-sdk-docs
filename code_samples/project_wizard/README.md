@@ -1,5 +1,5 @@
 # Project Wizard Demo [![JetBrains IntelliJ Platform SDK Docs](https://jb.gg/badges/docs.svg)][docs]
-*Reference: [Plugin Services in IntelliJ SDK Docs][docs:project_wizard]*
+*Reference: [Project Wizard in IntelliJ SDK Docs][docs:project_wizard]*
 
 ## Quickstart
 

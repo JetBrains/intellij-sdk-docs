@@ -47,11 +47,9 @@ To set up your plugin development environment:
   <br/>
 * Specify the **Sandbox Home** directory.
   The *Sandbox Home* directory stores the settings of the IDE development instance launched from a Plugin Project's **Run** configuration.
-  Shown below is the default *Sandbox Home* directory for a user on Mac OS X.
+  Shown below is the default *Sandbox Home* directory for a user on macOS.
   Any directory can be chosen as the *Sandbox Home* location.
   Use the ellipsis button (shown below) to define a custom location.
-  >
-  {type="warning"}
 
   See the [IDE Development Instances](ide_development_instance.md) page for more information about default *Sandbox Home* directory locations and contents.
   

@@ -6,7 +6,7 @@
 However, an application might need module of a type that isn't supported yet.
 This tutorial shows how to register a new module type and link it to the project creation procedure and the UI.
            
-The source code for the [`module`](https://github.com/JetBrains/intellij-sdk-code-samples/tree/main/module) code sample is used throughout this tutorial.
+The source code for the [`module`](https://github.com/JetBrains/intellij-sdk-code-samples/tree/main/module) and [`project_wizard`](https://github.com/JetBrains/intellij-sdk-code-samples/tree/main/project_wizard) code samples is used throughout this tutorial.
 
 ## Pre-Requirements
 

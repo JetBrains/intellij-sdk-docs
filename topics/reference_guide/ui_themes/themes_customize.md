@@ -4,6 +4,10 @@
 
 A UI Theme is customized by adding information to the UI Theme description file that overrides the base (_Light_ or _Darcula_) UI Theme.
 
+ > [Color Highlighter Plugin](https://plugins.jetbrains.com/plugin/13309-color-highlighter) adds additional color preview inside the editor.
+ >
+ {type="tip"}
+
 ## Introduction to UI Theme Description File Syntax
 The syntax of a Theme description file follows the JSON open-standard file format of key-value pairs.
 The minimum valid default file is the output of the [DevKit Theme Wizard](themes.md#creating-a-ui-theme-with-the-devkit-theme-wizard).

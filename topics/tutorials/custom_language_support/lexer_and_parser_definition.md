@@ -20,6 +20,8 @@ Or the following line in the project's `build.gradle.kts` file:
   sourceSets["main"].java.srcDirs("src/main/gen")
 ```
 
+Reload the Gradle project for changes to take effect.                
+
 ## Define a Lexer
 Define a `Simple.flex` file with rules for the Simple Language lexer, as demonstrated in `org.intellij.sdk.language.Simple.flex`.
 

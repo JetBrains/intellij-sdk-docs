@@ -3,6 +3,8 @@
 <!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 The first test checks if the Simple Language parser, implemented in the [Lexer and Parser Definition](lexer_and_parser_definition.md) section of the Custom Language Support Tutorial, works as expected.
+                       
+For more complex Lexers (e.g., having additional logic), it is advisable to add separate tests inheriting from [`LexerTestCase`](upsource:///platform/testFramework/src/com/intellij/testFramework/LexerTestCase.java).
 
 ## Update Grammar and Regenerate the Parser
 Before creating the parsing test, ensure the parser definition (`Simple.bnf`) includes the lines shown below.

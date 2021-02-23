@@ -4,7 +4,7 @@
 ## Quickstart
 
 Maximum Open Projects Sample implements a `ProjectManagerListener` with two methods applied to check if the current projects have been opened or closed.
-Each method refers to the `ProjectCountingService` service registered as an `applicationService` extension point.
+Each method refers to the `ProjectCountingService` service registered as an `com.intellij.applicationService` extension point.
 It provides methods to increase and decrease the global counter of the currently opened projects in the IDE.
 After opening each one, a message dialog is presented to the user with the current number.
 

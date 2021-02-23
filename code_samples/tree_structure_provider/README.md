@@ -3,7 +3,7 @@
 
 ## Quickstart
 
-The Tree Structure Provider sample project implements `treeStructureProvider` Extension Point, which allows modifying the structure of the project tree in the Project View panel.
+The Tree Structure Provider sample project implements `com.intellij.treeStructureProvider` Extension Point, which allows modifying the structure of the project tree in the _Project View_ panel.
 This implementation limits the presented files to the Plain Text files only.
 
 The current implementation checks if a Project View node represents a directory or file of the `PlainTextFileType` type.

@@ -3,7 +3,7 @@
 
 ## Quickstart
 
-Run Configuration example project provides an implementation of the `configurationType` extension point responsible for adding new options for the Run/Debug Configurations.
+Run Configuration example project provides an implementation of the `com.intellij.configurationType` extension point responsible for adding new options for the Run/Debug Configurations.
 In this example, a new *Demo* configuration is added together with `ConfigurationFactory` instance that collects run/debug properties - `scriptName` in this case.
 
 ### Extension Points

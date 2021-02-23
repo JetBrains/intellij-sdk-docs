@@ -1,5 +1,5 @@
 # Project Model Sample [![JetBrains IntelliJ Platform SDK Docs](https://jb.gg/badges/docs.svg)][docs]
-*Reference: [PyCharm Plugin Development in IntelliJ SDK Docs][docs:pycharm]*
+*Reference: [Project in IntelliJ SDK Docs][docs:project], [SDK in IntelliJ SDK Docs][docs:sdk], [Library in IntelliJ SDK Docs][docs:library]*
 
 ## Quickstart
 
@@ -26,7 +26,9 @@ Within the implemented actions, you will be able to:
 
 [docs]: https://plugins.jetbrains.com/docs/intellij/
 [docs:actions]: https://plugins.jetbrains.com/docs/intellij/basic-action-system.html
-[docs:pycharm]: https://plugins.jetbrains.com/docs/intellij/pycharm.html
+[docs:project]: https://plugins.jetbrains.com/docs/intellij/project.html
+[docs:sdk]: https://plugins.jetbrains.com/docs/intellij/sdk.html
+[docs:library]: https://plugins.jetbrains.com/docs/intellij/library.html
 
 [file:ShowSourceRootsActions]: ./src/main/java/org/intellij/sdk/project/model/ShowSourceRootsActions.java
 [file:ProjectSdkAction]: ./src/main/java/org/intellij/sdk/project/model/ProjectSdkAction.java

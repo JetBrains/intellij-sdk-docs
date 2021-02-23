@@ -54,7 +54,7 @@ Your `build.gradle` file may look like so:
 plugins {
     id "java"
     id "org.jetbrains.kotlin.jvm" version "1.4.10"
-    id "org.jetbrains.intellij" version "0.7.1"
+    id "org.jetbrains.intellij" version "0.7.2"
 }
 
 apply plugin: "kotlin"

@@ -1,9 +1,9 @@
 # Project View Pane Demo [![JetBrains IntelliJ Platform SDK Docs](https://jb.gg/badges/docs.svg)][docs]
-*Reference: [Plugin Services in IntelliJ SDK Docs][docs:project_view]*
+*Reference: [Project View in IntelliJ SDK Docs][docs:project_view]*
 
 ## Quickstart
 
-The current demo describes an implementation of the `projectViewPane` extension point, which allows creating an additional presentation type for the Project view pane.
+The current demo describes an implementation of the `com.intellij.projectViewPane` extension point, which allows creating an additional presentation type for the Project view pane.
 `ImagesProjectViewPane` limits the project tree to the images only.
 
 ### Extension Points

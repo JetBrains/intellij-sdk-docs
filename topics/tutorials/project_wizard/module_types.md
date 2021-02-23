@@ -5,6 +5,8 @@
 *IntelliJ Platform* provides a set of standard module types.
 However, an application might need module of a type that isn't supported yet.
 This tutorial shows how to register a new module type and link it to the project creation procedure and the UI.
+           
+The source code for the [`module`](https://github.com/JetBrains/intellij-sdk-code-samples/tree/main/module) code sample is used throughout this tutorial.
 
 ## Pre-Requirements
 
@@ -26,9 +28,11 @@ Add a new `com.intellij.moduleType` implementation with the IntelliJ Platform in
 ## Implement ModuleType Interface
 Create the `DemoModuleType` implementation based on [`ModuleType`](upsource:///platform/lang-api/src/com/intellij/openapi/module/ModuleType.java).
 
+`getNodeIcon()` should return module type specific icon.
+
 ```java
 ```
-{src="module/src/main/java/org/intellij/sdk/module/DemoModuleType.java"}
+{src="module/src/main/java/org/intellij/sdk/module/DemoModuleType.java"} 
 
 ## Implement Custom Module Builder
 Create `DemoModuleBuilder` based on [`ModuleBuilder`](upsource:///platform/lang-api/src/com/intellij/ide/util/projectWizard/ModuleBuilder.java).

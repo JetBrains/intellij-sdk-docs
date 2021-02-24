@@ -18,8 +18,6 @@ The key components of a module are:
 * **Order entries** - the dependencies of a module, which are stored in an ordered list.
   A dependency can be a reference to an [SDK](sdk.md), a [library](library.md), or another module.
 * **[Facets](facet.md)** - the list of framework-specific configuration entries.
-  >
-  {type="note"}
 
 In addition to that, a module can store other settings, such as a module-specific [SDK](sdk.md), compile output path settings, etc.
 Plugins can store additional data associated with a module by creating facets or module-level components.

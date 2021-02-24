@@ -8,5 +8,7 @@
 
 Please see "Java" entry in table [Modules Specific to Functionality](plugin_compatibility.md#modules-specific-to-functionality) on how to use Java specific functionality.
 
+[PSI Cookbook](psi_cookbook.md#java-specific) lists a number of common operations for working with Java PSI. 
+
 * [Tomcat Integration](tomcat_integration.md)
 * [Spring API](spring_api.md)

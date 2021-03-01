@@ -33,4 +33,6 @@ Another consequence of our testing approach is what our test framework does not 
 * [Writing Tests](writing_tests.md)
 * [Testing Highlighting](testing_highlighting.md)
 
-Check out [this step-by-step tutorial](writing_tests_for_plugins.md) teaching how to write and run automated tests for your custom language plugin (source code included).
+  > Check out [this step-by-step tutorial](writing_tests_for_plugins.md) teaching how to write and run automated tests for your custom language plugin (source code included).
+  > 
+ {type="tip"}

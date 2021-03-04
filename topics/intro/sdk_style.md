@@ -62,17 +62,13 @@ For example, `## Introduction` gets the ID of `introduction`, and can be linked 
 General Markdown links have the default Markdown link style:
 * `[Gradle](https://gradle.org)`{disable-links} ([Gradle](https://gradle.org)) links to an external site, such as companies, articles, etc.
 * Linking to pages within the SDK documentation:
-  * `[SDK doc page in current directory]()`{disable-links} links to an SDK doc page in the same directory as the current page.
-    Note that the extension is `.md`, _NOT_ `.html`.
-  * `[SDK page in another folder](Page2.md)`{disable-links} links to a page in another folder.
-    Note the URL is navigating from the project root.
-This format works even if the site is hosted in a sub-folder.
-    Relative links also work (`../Folder2/Page2.md`).
+  `[Page Title](page.md)`{disable-links} links to an SDK doc page (all located under `/topics`).
+  Note that the extension is `.md`, _NOT_ `.html`.
 * Linking to specific _sections_ on pages in the SDK documentation.
   The anchor name will be all lower case, and spaces are replaced with `-`, e.g. `## Page setup` becomes `#page-setup`.
   Once the anchor (`#`) character of the link is entered, the IDE code completion feature shows the available sections.
   * `[Link to a section on the current page](#another-section)`{disable-links} links to a heading on the current page.
-  * `[Link to the section on another page](#another-section)`{disable-links} links to a heading on another page.
+  * `[Link to the section on another page](other_page.md#another-section)`{disable-links} links to a heading on another page.
 
 #### Links to IntelliJ Platform Source
 Links to files in the IntelliJ Platform (`intellij-community`) repository use `upsource:///` instead of the full URL to the repository.
@@ -82,7 +78,7 @@ The `upsource:///` URI effectively points to the root of the `intellij-community
 * `[`\`plugin.xml\``](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java)`{disable-links} links to declarative source code files, use `code` style. ([`plugin.xml`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java))
   Examples of this file type include: `settings.gradle`, `plugin.xml` or `theme_basics.theme.json`.
 * `[`\`AnAction\``](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java)`{disable-links} links to source files for code objects like interfaces and classes, use `code` style but without the file extension. [`AnAction`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java)
-  Examples of this file type includeJava and Kotlin.
+  Examples of this file type include Java and Kotlin.
   * Note the use of \`\` characters surrounding the class name in the link.
   * When linking to an API in this manner, the FQN isn't necessary in the link.
   * No file extension (*.java, *.kt, *.py, etc.) is used by convention.
@@ -98,30 +94,25 @@ In-paragraph code fragments and IntelliJ Platform APIs are formatted according t
   Rather than `AnAction`, introduce it as `com.intellij.openapi.actionSystem.AnAction`.
   Subsequent references on the page can be `AnAction`.
   Exception: the FQN is not used with an upsource [link](#links).
-* Use the FQN when first introducing an extension point (EP) on a page.
+* Use the FQN when first introducing an [extension point](plugin_extension_points.md) (EP) on a page.
   Rather than `stubIndex`, introduce `com.intellij.stubIndex`.
   Subsequent mentions on the page can be `stubIndex`.
-  Exception: the FQN is not used when an extension point is introduced in an upsource [link](#links).
 * For XML elements, use the tag notation with syntax highlighting: `<idea-version>`.
   Attributes are shown with syntax highlighting, and attribute values are shown in quotes: `since-build="191"`
 * Method names always use empty parentheses: "call `bar()` to apply."
   Method names are prefixed with the class/interface name when needed for clarity: `Foo.bar()`.
 
 ### Source Code
-Source code is represented by using [GitHub Flavoured Markdown](https://help.github.com/articles/github-flavored-markdown/) code fences, which are three backticks.
+Source code is represented by using code fences, which are three backticks.
 
 Syntax highlighting is applied by specifying the language after the first set of ticks:
 
-        ```xml
-            // Some XML
-        ```
-               
-
-        ```java
-            // Some Java code
-        ```
-
-Here is the list of [supported languages](https://github.com/jneen/rouge/wiki/List-of-supported-languages-and-lexers), and also [Kotlin](https://kotlinlang.org), of course.
+```md
+    ```xml
+        <tagName attribute="value">XML Text</tagName>
+    ```
+```
+Supported languages include `xml`, `java`, `kotlin`, `groovy` `bash`, `md`, and `text` for plaintext.
 
  >  Source code blocks must have one blank line before and after them, and must have a language specification for highlighting.
  >
@@ -140,21 +131,22 @@ In any case, please keep code samples concise and avoid any unnecessary "surroun
 The syntax is to use the pipe (`|`) and minus symbols:
 
 ```md
-| Column 1 | Column 2 | Column 3 |
-| -------- | -------- | -------- |
-| Blah     | Blah     | Blah     |
+    | Column 1 | Column 2 | Column 3 |
+    | -------- | -------- | -------- |
+    | Blah     | Blah     | Blah     |
 ```
 
 ### Notes and Callouts
 Notes and callouts can be specified using the blockquote syntax.
-The converter looks at the first following word to see if it is bold.
+The converter looks at the `type` attribute specified after the text block.
 If so, it applies a callout style.
 The example below will be displayed as a callout, styled as a "note":
 
+```md
     >  This is a note
     >
     {type="note"}
-
+```
  >  This is a note
  >
  {type="note"}
@@ -173,8 +165,7 @@ The styles available for callouts are:
 
 ### Images
 Images can be included by adding the file directly to the `intellij-sdk-docs` repository.
-Each subject directory typically has an `img` subdirectory.
-Keep images close to the corresponding documentation file in the repository directory structure.
+Each subject directory typically has a subdirectory within the root `/images` directory.
 
 Images in this documentation are generally screenshots.
 The preferred image format is PNG at 144 DPI resolution.
@@ -188,13 +179,13 @@ Also, optimize the image files using a tool such as the [PNG optimizer](https://
 Images are embedded in a document by adding a Markdown link to the image like so:
 
 ```md
-    ![Alt text]()
+    ![Alt text](path-to-img.png)
 ```
 
-If the width of an image needs to be adjusted, use Kramdown markup:
+If the width of an image needs to be adjusted it can be specified as follows:
 
 ```md
-    ![Alt text](){width="42"}
+    ![Alt text](path-to-img.png){width="42"}
 ```
 
 ## Table of Contents

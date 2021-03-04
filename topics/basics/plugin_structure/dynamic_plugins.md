@@ -27,13 +27,13 @@ All `<group>`s must declare a unique `id`.
 
 ### Use Only Dynamic Extensions
 
-Whether defined in the platform itself or coming from other plugins, all extensions must be marked as dynamic (see next paragraph).
+Whether defined in the platform itself or coming from other plugins, all used extension points must be marked as dynamic (see next paragraph).
 
 Some deprecated extension points (e.g., `com.intellij.configurationProducer`) are intentionally non-dynamic, and their usage should be migrated to the corresponding replacement.
 
 ### Mark Extension Points as Dynamic
 
-The plugin's extension points must adhere to specific usage rules and then [be declared](plugin_extension_points.md#dynamic-extension-points) ready for dynamic use explicitly.
+The plugin's own extension points must adhere to specific usage rules and then [be declared](plugin_extension_points.md#dynamic-extension-points) ready for dynamic use explicitly.
 
 ### Configurables Depending on Extension Points
 

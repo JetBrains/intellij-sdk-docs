@@ -592,7 +592,7 @@ Example can be found in Struts 2 plugin (package `com.intellij.struts2.dom.strut
 
 DOM elements can be stubbed, so (costly) access to XML/PSI is not necessary (see [Indexing and PSI Stubs](indexing_and_psi_stubs.md) for similar feature for custom languages).
 Performance relevant elements, tag or attribute getters can simply be annotated with `@com.intellij.util.xml.Stubbed`.
-Return `true` from `DomFileDescription.hasStubs()` and increase `DomFileDescription.getStubVersion()` whenever you change `@Stubbed` annotations usage in your DOM hierarchy to trigger proper rebuilding of Stubs during indexing.
+Set and increase `stubVersion` of `com.intellij.dom.fileMetaData` extension whenever you change `@Stubbed` annotations usage in your DOM hierarchy to trigger proper rebuilding of Stubs during indexing.
 
 ## Building a DOM-Based GUI
 

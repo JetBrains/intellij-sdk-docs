@@ -45,7 +45,7 @@ To create a `Document` instance that isn't bound to anything, use `EditorFactory
 
 * `Document.addDocumentListener()` allows receiving notifications about changes in a particular `Document` instance.
 * `EditorFactory.getEventMulticaster().addDocumentListener()` allows receiving notifications about changes in all open documents.
-* Subscribe to `AppTopics.FILE_DOCUMENT_SYNC` on any level bus to receive notifications when a `Document` is saved or reloaded from disk.
+* Register [`FileDocumentManagerListener`](upsource:///platform/platform-api/src/com/intellij/openapi/fileEditor/FileDocumentManagerListener.java) [listener](plugin_listeners.md) or subscribe to `AppTopics.FILE_DOCUMENT_SYNC` on any level bus to receive notifications when a `Document` is saved or reloaded from disk.
 
 ## What are the rules of working with Documents?
 

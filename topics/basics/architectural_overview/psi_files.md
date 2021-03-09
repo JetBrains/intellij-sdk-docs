@@ -24,7 +24,7 @@ To iterate over the elements in a file, use
 
 ```java
   psiFile.accept(new PsiRecursiveElementWalkingVisitor() { 
-   // visitor implementation ... 
+    // visitor implementation ... 
   });
 ```
 
@@ -35,7 +35,9 @@ See also [Navigating the PSI](navigating_psi.md).
 As PSI is language-dependent, PSI files are created using the [`Language`](upsource:///platform/core-api/src/com/intellij/lang/Language.java) instance:
 
 ```java
-  LanguageParserDefinitions.INSTANCE.forLanguage(MyLanguage.INSTANCE).createFile(fileViewProvider);
+  LanguageParserDefinitions.INSTANCE
+        .forLanguage(MyLanguage.INSTANCE)
+        .createFile(fileViewProvider);
 ```
 
 Like documents, PSI files are created on-demand when the PSI is accessed for a particular file.

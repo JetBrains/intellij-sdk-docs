@@ -1,6 +1,6 @@
 [//]: # (title: Documents)
 
-<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 A [`Document`](upsource:///platform/core-api/src/com/intellij/openapi/editor/Document.java) is an editable sequence of Unicode characters, typically corresponding to the text contents of a [virtual file](virtual_file.md).
 
@@ -10,7 +10,7 @@ The *IntelliJ Platform* handles encoding and line break conversions when loading
 ## How do I get a document?
 
 From an Action
-: `e.getData(PlatformDataKeys.EDITOR).getDocument()`
+: `e.getData(CommonDataKeys.EDITOR).getDocument()`
 
 From a Virtual File
 : `FileDocumentManager.getDocument()`. This call forces the document content to be loaded from disk if it wasn't loaded previously. If only open documents or documents which may have been modified are considered relevant, use `FileDocumentManager.getCachedDocument()` instead.
@@ -49,7 +49,7 @@ To create a `Document` instance that isn't bound to anything, use `EditorFactory
 
 ## What are the rules of working with Documents?
 
-The general read/write action rules are in effect.
+The general read/write action rules are in effect (see [General Threading Rules](general_threading_rules.md)).
 Besides, any operations which modify the contents of the document must be wrapped in a command (`CommandProcessor.getInstance().executeCommand()`).
 `executeCommand()` calls can be nested, and the outermost `executeCommand()` call is added to the undo stack.
 If multiple documents are modified within a command, undoing this command will, by default, show a confirmation dialog to the user.

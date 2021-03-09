@@ -13,7 +13,6 @@ The following independent companies and individuals provide paid plugin consulti
 | Joachim Ansorg     | [www.plugin-dev.com][ja]                                | -/-                                                                                                                                  |
 | Daniel Espendiller | [daniel@espendiller.net][de]                            | -/-                                                                                                                                  |
 | Robert Ekendahl    | [www.edaphic.studio][re]                                | Custom Language support                                                                                                              |
-| Patrick Scheibe    | [www.halirutan.de][ps]                                  | Plugins: [Wolfram Language][ps2], [Key Promoter X][ps3]. Highly active in the [#intellij-platform on JetBrains Platform Slack][ps4]. |
 | Alexander Schwartz | [msg.group][as], [alexander.schwartz@msg.group][as2]    | Custom Language support around documentation-as-code, especially AsciiDoc and Antora. Plugin: [AsciiDoc][as3]                        |
 | Alexey Stukalov    | [info@cuba-platform.com][ast], [www.haulmont.com][ast2] | Plugins: [CUBA][ast3].                                                                                                               |
 | Edument            | [jonathan@edument.cz][ed], [edument.se][ed2]            | Developers of [Comma IDE][ed3]                                                                                                       |
@@ -22,10 +21,6 @@ The following independent companies and individuals provide paid plugin consulti
 [ja]: https://www.plugin-dev.com
 [de]: mailto:daniel@espendiller.net
 [re]: https://www.edaphic.studio
-[ps]: https://halirutan.de
-[ps2]: https://plugins.jetbrains.com/plugin/7232-wolfram-language
-[ps3]: https://plugins.jetbrains.com/plugin/9792-key-promoter-x
-[ps4]: https://plugins.jetbrains.com/slack
 [as]: https://msg.group
 [as2]: mailto:alexander.schwartz@msg.group
 [as3]: https://plugins.jetbrains.com/plugin/7391-asciidoc

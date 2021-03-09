@@ -20,15 +20,22 @@ Unlike `VirtualFile` and `Document`, which have application scope (even if multi
 
 Most interesting modification operations are performed on the level of individual PSI elements, not files as a whole.
 
-To iterate over the elements in a file, use `psiFile.accept(new PsiRecursiveElementWalkingVisitor() { ... });`.
+To iterate over the elements in a file, use 
+
+```java
+  psiFile.accept(new PsiRecursiveElementWalkingVisitor() { 
+   // visitor implementation ... 
+  });
+```
+
 See also [Navigating the PSI](navigating_psi.md).
 
 ## Where does a PSI file come from?
 
 As PSI is language-dependent, PSI files are created using the [`Language`](upsource:///platform/core-api/src/com/intellij/lang/Language.java) instance:
 
-```
-  LanguageParserDefinitions.INSTANCE.forLanguage(MyLanguage.INSTANCE).createFile(fileViewProvider)`
+```java
+  LanguageParserDefinitions.INSTANCE.forLanguage(MyLanguage.INSTANCE).createFile(fileViewProvider);
 ```
 
 Like documents, PSI files are created on-demand when the PSI is accessed for a particular file.

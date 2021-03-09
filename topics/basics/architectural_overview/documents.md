@@ -38,7 +38,7 @@ Thus, an unmodified `Document` instance can be garbage-collected if no one refer
 
 ## How do I create a Document?
 
-For creating a new file on disk, please do not create a `Document` but a PSI file and get its `Document`.
+For creating a new file on disk, please do not create a `Document` but a PSI file and get its `Document` (see [How do I create a PSI file?](psi_files.md#how-do-i-create-a-psi-file)).
 To create a `Document` instance that isn't bound to anything, use `EditorFactory.createDocument()`.
 
 ## How do I get notified when Documents change?

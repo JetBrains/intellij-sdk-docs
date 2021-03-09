@@ -25,7 +25,11 @@ See also [Navigating the PSI](navigating_psi.md).
 
 ## Where does a PSI file come from?
 
-As PSI is language-dependent, PSI files are created through the [`Language`](upsource:///platform/core-api/src/com/intellij/lang/Language.java) object, by using the `LanguageParserDefinitions.INSTANCE.forLanguage(language).createFile(fileViewProvider)` method.
+As PSI is language-dependent, PSI files are created using the [`Language`](upsource:///platform/core-api/src/com/intellij/lang/Language.java) instance:
+
+```
+  LanguageParserDefinitions.INSTANCE.forLanguage(MyLanguage.INSTANCE).createFile(fileViewProvider)`
+```
 
 Like documents, PSI files are created on-demand when the PSI is accessed for a particular file.
 

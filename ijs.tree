@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE product-profile
-        SYSTEM "https://helpserver.labs.jb.gg/help/product-profile.dtd">
+        SYSTEM "https://resources.jetbrains.com/stardust/product-profile.dtd">
 <product-profile id="ijs" name="IntelliJ Platform Plugin SDK" start-page="welcome.md" status="release">
     <toc-element toc-title="Summary">
         <toc-element id="welcome.md" accepts-web-file-names="welcome.html" toc-title="Introduction"/>

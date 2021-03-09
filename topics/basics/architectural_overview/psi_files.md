@@ -6,24 +6,22 @@ A PSI (Program Structure Interface) file is the root of a structure representing
 
 The [`PsiFile`](upsource:///platform/core-api/src/com/intellij/psi/PsiFile.java) class is the common base class for all PSI files, while files in a specific language are usually represented by its subclasses.  For example, the [`PsiJavaFile`](upsource:///java/java-psi-api/src/com/intellij/psi/PsiJavaFile.java) class represents a Java file, and the [`XmlFile`](upsource:///xml/xml-psi-api/src/com/intellij/psi/xml/XmlFile.java) class represents an XML file.
 
-Unlike `VirtualFile` and `Document`, which have application scope (even if multiple projects are open, each file is represented by the same `VirtualFile` instance).
-A PSI has project scope.
-The same file is represented by one `PsiFile` instance for each open project to which the file belongs.
-In contrast, `VirtualFile` and Document have application scope; files are represented by the same VirtualFile instance, even if multiple projects are open.
+Unlike `VirtualFile` and `Document`, which have application scope (even if multiple projects are open, each file is represented by the same `VirtualFile` instance), PSI has project scope: the same file is represented by multiple `PsiFile` instances if the file belongs to multiple projects open at the same time.
 
 ## How do I get a PSI file?
 
-* From an action: `e.getData(LangDataKeys.PSI_FILE)`.
+* From an Action: `e.getData(CommonDataKeys.PSI_FILE)`.
 * From a VirtualFile: `PsiManager.getInstance(project).findFile()`
 * From a Document: `PsiDocumentManager.getInstance(project).getPsiFile()`
-* From an element inside the file: `psiElement.getContainingFile()`
+* From an element inside the file: `PsiElement.getContainingFile()`
 * To find files with a specific name anywhere in the project, use `FilenameIndex.getFilesByName(project, name, scope)`
 
 ## What can I do with a PSI file?
 
 Most interesting modification operations are performed on the level of individual PSI elements, not files as a whole.
 
-To iterate over the elements in a file, use `psiFile.accept(new PsiRecursiveElementWalkingVisitor()...);`
+To iterate over the elements in a file, use `psiFile.accept(new PsiRecursiveElementWalkingVisitor() { ... });`.
+See also [Navigating the PSI](navigating_psi.md).
 
 ## Where does a PSI file come from?
 
@@ -44,6 +42,11 @@ To save the PSI file to disk, use the [`PsiDirectory`](upsource:///platform/core
 ## How do I get notified when PSI files change?
 
 `PsiManager.getInstance(project).addPsiTreeChangeListener()` allows you to receive notifications about all changes to the PSI tree of a project.
+Alternatively, register [`PsiTreeChangeListener`](upsource:///platform/core-api/src/com/intellij/psi/PsiTreeChangeListener.java) in `com.intellij.psi.treeChangeListener` extension point.
+
+ > Please see [`PsiTreeChangeEvent`](upsource:///platform/core-api/src/com/intellij/psi/PsiTreeChangeEvent.java) Javadoc for common problems when dealing with PSI events.
+  >
+  {type="note"}
 
 ## How do I extend PSI?
 

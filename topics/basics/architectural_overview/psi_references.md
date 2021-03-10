@@ -57,7 +57,10 @@ References are also often contributed to non-code files, such as XML or JSON.
 Contributing references is one of the most common ways to extend an existing language.
 For example, your plugin can contribute references to Java code, even though the Java PSI is part of the platform and not defined in your plugin.
 
-To contribute references, see the [reference contributor tutorial](reference_contributor.md).
+Implement [`PsiReferenceContributor`](upsource:///platform/core-api/src/com/intellij/psi/PsiReferenceContributor.java) registered in extension point `com.intellij.psi.referenceContributor`. 
+The places to contribute references to are then specified using [Element Patterns](element_patterns.md) in calls to `PsiReferenceRegistrar.registerReferenceProvider()`.
+
+See also [Reference Contributor tutorial](reference_contributor.md).
 
 ## References with Optional or Multiple Resolve Results
 

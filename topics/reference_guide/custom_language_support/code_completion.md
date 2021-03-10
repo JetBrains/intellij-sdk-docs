@@ -32,7 +32,7 @@ Implementing the [`CompletionContributor`](upsource:///platform/analysis-api/src
  >
  {type="note"}
 
-The core scenario of using [`CompletionContributor`](upsource:///platform/analysis-api/src/com/intellij/codeInsight/completion/CompletionContributor.java) consists of calling the `extend()` method and passing in the *pattern* specifying the context in which this completion variant is applicable, as well as a *completion provider* which generates the items to show in the completion list.
+The core scenario of using [`CompletionContributor`](upsource:///platform/analysis-api/src/com/intellij/codeInsight/completion/CompletionContributor.java) consists of calling the `extend()` method and passing in the [Element Pattern](element_patterns.md) specifying the context in which this completion variant is applicable, as well as a *completion provider* which generates the items to show in the completion list.
 
 Keep in mind that the pattern is checked against the leaf PSI element.
 If you want to match a composite element, use `withParent()` or `withSuperParent()` methods.

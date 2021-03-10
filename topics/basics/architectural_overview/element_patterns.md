@@ -4,8 +4,8 @@
 
 Element patterns provide a generic way to specify conditions on objects. Plugin authors use them to check whether PSI elements match a particular structure. Just as regular expressions for strings test whether a (sub-)string matches a particular pattern, element patterns are used to put conditions on the nested structure of PSI elements. Their two main applications inside the _IntelliJ Platform_ are:
 
-1. Specifying where auto-completion should occur when implementing [a completion contributor](https://plugins.jetbrains.com/docs/intellij/completion-contributor.html) for a custom language.
-2. Specifying PSI elements that provide further references via [a PSI reference contributor](https://plugins.jetbrains.com/docs/intellij/psi-references.html#contributed-references).
+1. Specifying where auto-completion should occur when implementing [a completion contributor](completion_contributor.md) for a custom language.
+2. Specifying PSI elements that provide further references via [a PSI reference contributor](psi_references.md#contributed-references).
 
 However, plugin authors rarely implement the [`ElementPattern`](upsource:///platform/core-api/src/com/intellij/patterns/ElementPattern.java) interface directly.
 Instead, we recommend using the high-level pattern classes provided by the _IntelliJ Platform_:
@@ -24,12 +24,12 @@ Some built-in languages in the _IntelliJ Platform_ implement their own pattern c
 
 - [`XmlPatterns`](upsource:///xml/xml-psi-api/src/com/intellij/patterns/XmlPatterns.java) provides patterns for XML attributes, values, entities, and texts.
 - [`PythonPatterns`](upsource:///python/src/com/jetbrains/python/patterns/PythonPatterns.java) provides patterns for literals, strings, arguments, and function/method arguments for Python.
-- [`DomPatterns`](upsource:///xml/dom-openapi/src/com/intellij/patterns/DomPatterns.java) builds upon XmlPatterns and acts as a wrapper to provide further patterns for [DOM-API](https://plugins.jetbrains.com/docs/intellij/xml-dom-api.html).
+- [`DomPatterns`](upsource:///xml/dom-openapi/src/com/intellij/patterns/DomPatterns.java) builds upon XmlPatterns and acts as a wrapper to provide further patterns for [DOM-API](xml_dom_api.md).
 
 ## Examples
 
-A good starting point for element patterns is the [Custom Language Support Tutorial](https://plugins.jetbrains.com/docs/intellij/custom-language-support-tutorial.html).
-They are used in the [completion](https://plugins.jetbrains.com/docs/intellij/completion-contributor.html#define-a-completion-contributor) and [reference](https://plugins.jetbrains.com/docs/intellij/reference-contributor.html#define-a-reference-contributor) contributor section of the tutorial.
+A good starting point for element patterns is the [Custom Language Support Tutorial](custom_language_support_tutorial.md).
+They are used in the [completion](completion_contributor.md#define-a-completion-contributor) and [reference](reference_contributor.md#define-a-reference-contributor) contributor section of the tutorial.
 However, the _IntelliJ Platform_ source code provides many more examples of element patterns for built-in languages like JSON, XML, Groovy, Markdown, and so on.
 Checking the references in the table above or searching for usages of the high-level pattern classes will provide a comprehensive list that shows how element patterns are used in production code.
 

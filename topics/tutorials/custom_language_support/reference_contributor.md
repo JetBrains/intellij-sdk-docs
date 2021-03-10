@@ -9,7 +9,7 @@ Resolving references means the ability to go from the usage of an element to its
  >
  {type="note"}
 
-**Reference**: [References and Resolve](references_and_resolve.md)
+**Reference**: [References and Resolve](references_and_resolve.md), [PSI References](psi_references.md)
 
 ## Define a Named Element Class
 The classes below show how the Simple Language fulfills the need to implement `PsiNamedElement`.

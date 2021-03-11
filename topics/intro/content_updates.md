@@ -6,6 +6,13 @@ Follow [JBPlatform](https://twitter.com/JBPlatform/) on Twitter and visit [JetBr
 
 See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/main) ([RSS](https://github.com/JetBrains/intellij-sdk-docs/commits/main.atom)) for a detailed changelog.
 
+## 2021
+
+### March-21
+
+Element Patterns
+: Add a new section about [Element Patterns](element_patterns.md) that are used when implementing [Completion Contributors](completion_contributor.md) or [PSI Reference Contributors](psi_references.md#contributed-references).
+
 ## 2020
                   
 ### December-20

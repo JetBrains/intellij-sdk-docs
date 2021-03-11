@@ -92,7 +92,7 @@ Note that finding an identifiable part of a pattern can be achieved by setting a
 Using the Markdown code example from above, we note that the `MarkdownLinkDestinationImpl` class is used in the element pattern.
 Now, set a breakpoint at:
 
-```java
+```text
 com.intellij.patterns.ElementPattern#accepts(
   java.lang.Object,
   com.intellij.util.ProcessingContext

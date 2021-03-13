@@ -18,13 +18,13 @@ The [Key Topics](key_topics.md) page aims to link to the pages that are necessar
 
 #### [Part I - Plugins](basics.md)
 
-Describes how to create a plugin that can extend the _IntelliJ Platform_.
-Includes details on how to set up the project, register extension points, target specific versions of the _IntelliJ Platform_, and how to package, deploy, and test your plugins.
+Describes how to create a plugin that can extend the IntelliJ Platform.
+Includes details on how to set up the project, register extension points, target specific versions of the IntelliJ Platform, and how to package, deploy, and test your plugins.
 
 #### [Part II - Base Platform](fundamentals.md)
 
 Describes the foundational layer of the architecture, which provides many features and utilities, such as the component model, the user interface, documents and editors, the virtual file system, settings, threading, and background tasks.
-The Base Platform layer mainly comprises the functionality of the _IntelliJ Platform_ that does not target language features or parsing.
+The Base Platform layer mainly comprises the functionality of the IntelliJ Platform that does not target language features or parsing.
 
 #### [Part III - Project Model](project_structure.md)
 
@@ -48,17 +48,17 @@ Describes the available infrastructure for writing automated tests covering the 
 #### [Part VII - Custom Languages](custom_language_support.md)
 
 Plugins frequently extend support for existing languages, such as adding inspections to Java files.
-This section describes how to add support to the _IntelliJ Platform_ for a new language that isn't supported by default, creating parsers, syntactic and semantic models, and all the features that build on top.
+This section describes how to add support to the IntelliJ Platform for a new language that isn't supported by default, creating parsers, syntactic and semantic models, and all the features that build on top.
 
 #### [Part VIII - Product Specific](dev_alternate_products.md)
 
-A lot of the functionality in the _IntelliJ Platform_ is language and product agnostic.
+A lot of the functionality in the IntelliJ Platform is language and product agnostic.
 For example, code inspections work the same in Java as they do in Ruby; it is just the syntax trees and semantic information that is different.
 This section describes product-specific features, such as specific project model differences and how to target them in a plugin.
 
 #### Part IX - Custom IDEs
 
-Documents how to use the _IntelliJ Platform_ to create a new, custom IDE, rather than plugins to an existing product, e.g., WebStorm, or Android Studio.
+Documents how to use the IntelliJ Platform to create a new, custom IDE, rather than plugins to an existing product, e.g., WebStorm, or Android Studio.
 
 #### [Part X - Plugin Repository](plugin_repository_obsolete.md)
 

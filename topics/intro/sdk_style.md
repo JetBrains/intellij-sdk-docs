@@ -10,7 +10,7 @@ First and foremost, we should keep in mind our audience and their objectives:
 _Someone reading technical content is usually looking to answer a specific question.
 That question might be broad or narrowly-focused, but either way, our goal is to provide answers without distraction._
 
-The style of the _Intellij Platform SDK_ documentation is captured by using a markup language named [_Markdown_](https://github.github.com/gfm/).
+The style of the Intellij Platform SDK documentation is captured by using a markup language named [_Markdown_](https://github.github.com/gfm/).
 
 ## Documentation Markup
 
@@ -32,7 +32,7 @@ Redirects can be specified in the [Table of Contents](#table-of-contents).
 
 ### Terminology
 Consistent terminology helps the reader grasp new concepts more quickly:
-* The open-source code in the GitHub repository `intellij-community` is known as the _IntelliJ Platform_.
+* The open-source code in the GitHub repository `intellij-community` is known as the IntelliJ Platform.
   Use the full phrase in the SDK documentation.
 * IDEs based on the IntelliJ Platform are described as _IntelliJ Platform-based IDEs_.
   Once that term is used on a page, authors may use _IDEs_.

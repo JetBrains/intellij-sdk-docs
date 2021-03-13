@@ -15,7 +15,7 @@ The constructor parameters specify whether files and/or directories can be selec
 
 For more fine-grained control over the allowed selection, you can overload the `isFileSelectable()` method.
 You can also customize the presentation of files by overriding `getIcon()`, `getName()` and `getComment()` methods.
-Note that the native macOS file chooser does not support most of the customizations, so if you rely on them, you need to use an overload of `chooseFiles()` which displays the standard *IntelliJ Platform* dialog.
+Note that the native macOS file chooser does not support most of the customizations, so if you rely on them, you need to use an overload of `chooseFiles()` which displays the standard IntelliJ Platform dialog.
 
 ### Via Textfield
 

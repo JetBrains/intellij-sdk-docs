@@ -61,7 +61,7 @@ When the file is changed, the annotator is called incrementally to process only 
  {type="note"}
 
 ### Errors/Warning
-See [Inspections](https://jetbrains.design/intellij/text/inspections/) topic in _IntelliJ Platform UI Guidelines_ on how to write message texts for highlighting/quick fixes.
+See [Inspections](https://jetbrains.design/intellij/text/inspections/) topic in IntelliJ Platform UI Guidelines on how to write message texts for highlighting/quick fixes.
 
 To highlight a region of text as a warning or error (2020.1 and later):
 ```java

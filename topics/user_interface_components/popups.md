@@ -4,7 +4,7 @@
 
 ## Popups
 
-The *IntelliJ Platform* user interface makes extensive use of popups \- semi-modal windows that have no chrome (explicit closing buttons) and disappear automatically on focus loss.
+The IntelliJ Platform user interface makes extensive use of popups \- semi-modal windows that have no chrome (explicit closing buttons) and disappear automatically on focus loss.
 Making use of these controls in your plugin ensures a consistent user experience between your plugin and the rest of the IDE.
 
 Popups can optionally display a title, are optionally movable and resizable (and support remembering their size), and can be nested (show another popup when an item is selected).

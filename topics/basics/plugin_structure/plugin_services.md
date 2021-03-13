@@ -4,7 +4,7 @@
 
 A _service_ is a plugin component loaded on demand when your plugin calls the `getService()` method of [`ServiceManager`](upsource:///platform/core-api/src/com/intellij/openapi/components/ServiceManager.java).
 
-The *IntelliJ Platform* ensures that only one instance of a service is loaded even though it is called several times.
+The IntelliJ Platform ensures that only one instance of a service is loaded even though it is called several times.
 
 A service must have an implementation class that is used for service instantiation.
 A service may also have an interface class used to obtain the service instance and provide the service's API.
@@ -12,7 +12,7 @@ A service may also have an interface class used to obtain the service instance a
 A service needing a shutdown hook/cleanup routine can implement [`Disposable`](upsource:///platform/util/src/com/intellij/openapi/Disposable.java) and perform necessary work in `dispose()` (see [Automatically Disposed Objects](disposers.md#automatically-disposed-objects)).
 
 #### Types
-The *IntelliJ Platform* offers three types of services: _application level_ services (global singleton), _project level_ services, and _module level_ services.
+The IntelliJ Platform offers three types of services: _application level_ services (global singleton), _project level_ services, and _module level_ services.
 For the latter two, a separate instance of the service is created for each instance of its corresponding scope, see [Project Model Introduction](project_structure.md).
 
  >  Please consider not using module-level services because it can increase memory usage for projects with many modules.
@@ -126,6 +126,6 @@ If this number exceeds the maximum number of simultaneously opened projects allo
 **To install and run the sample plugin**
 
 * Download the included sample plugin project located [here](https://github.com/JetBrains/intellij-sdk-code-samples/tree/main/max_opened_projects).
-* Start *IntelliJ IDEA*, on the starting page, click *Open Project*, and then use the *Open Project* dialog box to open the project.
+* Start IntelliJ IDEA, on the starting page, click *Open Project*, and then use the *Open Project* dialog box to open the project.
 * On the main menu, choose *Run \| Run* or press <kbd>Shift</kbd>+<kbd>F10</kbd>.
 * If necessary, change the [Run/Debug Configurations](https://www.jetbrains.com/help/idea/run-debug-configuration-plugin.html).

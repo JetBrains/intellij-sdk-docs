@@ -2,7 +2,7 @@
 
 <!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-Most of the tests in the *IntelliJ Platform* codebase are *model level functional tests*.
+Most of the tests in the IntelliJ Platform codebase are *model level functional tests*.
 What this means is the following:
 
 * The tests run in a headless environment that uses real production implementations for most components, except for many UI components.
@@ -19,7 +19,7 @@ Another consequence of our testing approach is what our test framework does not 
 
 * We do not provide a recommended approach to mocking.
   We have a few tests in our codebase that use JMock.
-  Still, in general, we find it difficult to mock all of the interactions with *IntelliJ Platform* components that your plugin class will need to have.
+  Still, in general, we find it difficult to mock all of the interactions with IntelliJ Platform components that your plugin class will need to have.
   We recommend working with real components instead.
 * We do not provide a general-purpose framework for Swing UI testing.
   You can try using tools such as [FEST](https://code.google.com/p/fest/) or [Sikuli](https://sikulix.com/) for plugin UI testing, but we don't use either of them and cannot provide any guidelines for their use.

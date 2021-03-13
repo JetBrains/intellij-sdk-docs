@@ -107,13 +107,13 @@ public void doChange(Context context) {
 
 * *MessageBus* instances are available via [`ComponentManager.getMessageBus()`](upsource:///platform/extensions/src/com/intellij/openapi/components/ComponentManager.java)
   Many standard interfaces implement a message bus, e.g., [`Application`](upsource:///platform/core-api/src/com/intellij/openapi/application/Application.java) and [`Project`](upsource:///platform/core-api/src/com/intellij/openapi/project/Project.java).
-* A number of public topics are used by the *IntelliJ Platform*, e.g., [`AppTopics`](upsource:///platform/platform-api/src/com/intellij/AppTopics.java), [`ProjectTopics`](upsource:///platform/projectModel-api/src/com/intellij/ProjectTopics.java), etc.
+* A number of public topics are used by the IntelliJ Platform, e.g., [`AppTopics`](upsource:///platform/platform-api/src/com/intellij/AppTopics.java), [`ProjectTopics`](upsource:///platform/projectModel-api/src/com/intellij/ProjectTopics.java), etc.
   So, it's possible to subscribe to them in order to receive information about the processing;
 
 ## Broadcasting
 
 Message buses can be organised into hierarchies.
-Moreover, the *IntelliJ Platform* has them already:
+Moreover, the IntelliJ Platform has them already:
 
 ![Standard hierarchy](standard_hierarchy.svg)
 

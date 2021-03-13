@@ -68,7 +68,7 @@ That is handled by [`SettingsEditor`](upsource:///platform/platform-api/src/com/
 That run configuration settings are persistent, i.e., they are stored at the file system and loaded back on the IDE startup.
 That is performed via [`writeExternal()`](upsource:///platform/util/src/com/intellij/openapi/util/JDOMExternalizable.java) and [`readExternal()`](upsource:///platform/util/src/com/intellij/openapi/util/JDOMExternalizable.java)<!--#L26--> methods of [`RunConfiguration`](upsource:///platform/lang-api/src/com/intellij/execution/configurations/RunConfiguration.java) class correspondingly.
 
-The actual configurations stored by the *IntelliJ Platform* are represented by instances of the [`RunnerAndConfigurationSettings`](upsource:///platform/lang-api/src/com/intellij/execution/RunnerAndConfigurationSettings.java) class, which combines a run configuration with runner-specific settings, as well as keeping track of certain run configuration flags such as "temporary" or "singleton".
+The actual configurations stored by the IntelliJ Platform are represented by instances of the [`RunnerAndConfigurationSettings`](upsource:///platform/lang-api/src/com/intellij/execution/RunnerAndConfigurationSettings.java) class, which combines a run configuration with runner-specific settings, as well as keeping track of certain run configuration flags such as "temporary" or "singleton".
 
 Dealing with instances of this class becomes necessary when you need to create run configurations from code.
 This is accomplished with the following two steps:

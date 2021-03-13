@@ -72,7 +72,7 @@ The following primary operations are supported:
 
 ## Standard Indexes
 
-The *IntelliJ Platform* contains several standard file-based indexes.
+The IntelliJ Platform contains several standard file-based indexes.
 The most useful indexes for plugin developers are:
 
 ### Word Index

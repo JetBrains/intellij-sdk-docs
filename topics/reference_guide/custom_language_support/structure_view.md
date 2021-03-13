@@ -4,7 +4,7 @@
 
 The Structure View implementation used for a specific file type can be customized on many levels.
 If a custom language plugin provides an implementation of the [`StructureView`](upsource:///platform/editor-ui-api/src/com/intellij/ide/structureView/StructureView.java) interface, it can completely replace the standard structure view implementation with a custom user interface component.
-However, for most languages, this is not necessary, and the standard [`StructureView`](upsource:///platform/editor-ui-api/src/com/intellij/ide/structureView/StructureView.java) implementation provided by *IntelliJ Platform* can be reused.
+However, for most languages, this is not necessary, and the standard [`StructureView`](upsource:///platform/editor-ui-api/src/com/intellij/ide/structureView/StructureView.java) implementation provided by IntelliJ Platform can be reused.
 
 The starting point for the structure view is the [`PsiStructureViewFactory`](upsource:///platform/editor-ui-api/src/com/intellij/lang/PsiStructureViewFactory.java) interface, which is registered in the `com.intellij.lang.psiStructureViewFactory` extension point.
 
@@ -12,7 +12,7 @@ The starting point for the structure view is the [`PsiStructureViewFactory`](ups
 - [`PsiStructureViewFactory`](upsource:///plugins/properties/src/com/intellij/lang/properties/structureView/PropertiesStructureViewBuilderFactory.java) for [Properties language plugin](upsource:///plugins/properties)
 - [Custom Language Support Tutorial: Structure View](structure_view_factory.md)
 
-To reuse the *IntelliJ Platform* implementation of the [`StructureView`](upsource:///platform/editor-ui-api/src/com/intellij/ide/structureView/StructureView.java), the plugin returns a [`TreeBasedStructureViewBuilder`](upsource:///platform/editor-ui-api/src/com/intellij/ide/structureView/TreeBasedStructureViewBuilder.java) from its [`PsiStructureViewFactory.getStructureViewBuilder()`](upsource:///platform/editor-ui-api/src/com/intellij/lang/PsiStructureViewFactory.java) method.
+To reuse the IntelliJ Platform implementation of the [`StructureView`](upsource:///platform/editor-ui-api/src/com/intellij/ide/structureView/StructureView.java), the plugin returns a [`TreeBasedStructureViewBuilder`](upsource:///platform/editor-ui-api/src/com/intellij/ide/structureView/TreeBasedStructureViewBuilder.java) from its [`PsiStructureViewFactory.getStructureViewBuilder()`](upsource:///platform/editor-ui-api/src/com/intellij/lang/PsiStructureViewFactory.java) method.
 As the builder model, the plugin can specify a subclass of [`TextEditorBasedStructureViewModel`](upsource:///platform/editor-ui-api/src/com/intellij/ide/structureView/TextEditorBasedStructureViewModel.java), and by overriding methods of this subclass, it customizes the structure view for a specific language.
 
 **Example**:

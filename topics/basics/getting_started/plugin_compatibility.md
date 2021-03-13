@@ -3,7 +3,7 @@
 <!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 ## Introduction
-All products based on the _IntelliJ Platform_ are built on the same underlying API.
+All products based on the IntelliJ Platform are built on the same underlying API.
 Some of these products share features built on top of the platform, such as Java support in IntelliJ IDEA and Android Studio.
 Underlying those shared features are shared components.
 When authoring a plugin for the IntelliJ Platform, it is important to understand and declare dependencies on these components. 
@@ -141,5 +141,5 @@ Based on the tables above, the [JetBrains Plugins Repository](https://plugins.je
 The compatibility information determines if plugins are available at the plugin repository to users of a particular JetBrains product.
 
 ## Platform API Version Compatibility
-The API of _IntelliJ Platform_ and bundled plugins may change between releases.
+The API of IntelliJ Platform and bundled plugins may change between releases.
 The significant changes that may break plugins are listed on [Incompatible Changes in IntelliJ Platform and Plugins API](api_changes_list.md) page.

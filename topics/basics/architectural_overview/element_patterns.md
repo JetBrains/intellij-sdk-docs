@@ -2,13 +2,13 @@
 
 <!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-Element patterns provide a generic way to specify conditions on objects. Plugin authors use them to check whether PSI elements match a particular structure. Just as regular expressions for strings test whether a (sub-)string matches a particular pattern, element patterns are used to put conditions on the nested structure of PSI elements. Their two main applications inside the _IntelliJ Platform_ are:
+Element patterns provide a generic way to specify conditions on objects. Plugin authors use them to check whether PSI elements match a particular structure. Just as regular expressions for strings test whether a (sub-)string matches a particular pattern, element patterns are used to put conditions on the nested structure of PSI elements. Their two main applications inside the IntelliJ Platform are:
 
 1. Specifying where auto-completion should occur when implementing [a completion contributor](completion_contributor.md) for a custom language.
 2. Specifying PSI elements that provide further references via [a PSI reference contributor](psi_references.md#contributed-references).
 
 However, plugin authors rarely implement the [`ElementPattern`](upsource:///platform/core-api/src/com/intellij/patterns/ElementPattern.java) interface directly.
-Instead, we recommend using the high-level pattern classes provided by the _IntelliJ Platform_:
+Instead, we recommend using the high-level pattern classes provided by the IntelliJ Platform:
 
 | Class                                    | Main Contents                                                                                                             | Notable Examples                                                                                                                              |
 | ---------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -20,7 +20,7 @@ Instead, we recommend using the high-level pattern classes provided by the _Inte
 | [`StringPattern`](upsource:///platform/core-api/src/com/intellij/patterns/StringPattern.java)           | Check if strings match, have a certain length, have a specific beginning or ending, or are one of a collection of strings | [`AbstractGradleCompletionContributor.kt`](upsource:///plugins/gradle/java/src/codeInsight/AbstractGradleCompletionContributor.kt)                                                                                                                                                                  |
 | [`CharPattern`](upsource:///platform/core-api/src/com/intellij/patterns/CharPattern.java)               | Check if characters are whitespace, digits, or Java identifier parts                                                      | [`CompletionUtil`](upsource:///platform/analysis-impl/src/com/intellij/codeInsight/completion/CompletionUtil.java)                                                                                                                                                                                  |
 
-Some built-in languages in the _IntelliJ Platform_ implement their own pattern classes and can provide additional examples:
+Some built-in languages in the IntelliJ Platform implement their own pattern classes and can provide additional examples:
 
 - [`XmlPatterns`](upsource:///xml/xml-psi-api/src/com/intellij/patterns/XmlPatterns.java) provides patterns for XML attributes, values, entities, and texts.
 - [`PythonPatterns`](upsource:///python/src/com/jetbrains/python/patterns/PythonPatterns.java) provides patterns for literals, strings, arguments, and function/method arguments for Python.
@@ -30,7 +30,7 @@ Some built-in languages in the _IntelliJ Platform_ implement their own pattern c
 
 A good starting point for element patterns is the [Custom Language Support Tutorial](custom_language_support_tutorial.md).
 They are used in the [completion](completion_contributor.md#define-a-completion-contributor) and [reference](reference_contributor.md#define-a-reference-contributor) contributor section of the tutorial.
-However, the _IntelliJ Platform_ source code provides many more examples of element patterns for built-in languages like JSON, XML, Groovy, Markdown, and so on.
+However, the IntelliJ Platform source code provides many more examples of element patterns for built-in languages like JSON, XML, Groovy, Markdown, and so on.
 Checking the references in the table above or searching for usages of the high-level pattern classes will provide a comprehensive list that shows how element patterns are used in production code.
 
 For instance, an example can be found in [`MarkdownReferenceProvider`](upsource:///plugins/markdown/src/org/intellij/plugins/markdown/lang/references/MarkdownReferenceProvider.java) that tests if a PSI element is an instance of the `MarkdownLinkDestinationImpl` class and appears in a Markdown file.
@@ -74,7 +74,7 @@ For this section, it is assumed that plugin authors have a basic understanding o
 
 When debugging element patterns, plugin authors need to keep in mind that the places where element patterns are instantiated are unrelated to where they are actually used.
 For instance, while patterns for completion contributors are instantiated when registering the contributor, the patterns are checked during completion while typing.
-Therefore, finding the correct locations in the _IntelliJ Platform_ for debugging element patterns is the first important step.
+Therefore, finding the correct locations in the IntelliJ Platform for debugging element patterns is the first important step.
 
 However, setting breakpoints inside `ElementPattern` will result in many false-positives since element patterns are used extensively throughout the IDE.
 One way to filter out these false-positives is to use a condition on the breakpoints.

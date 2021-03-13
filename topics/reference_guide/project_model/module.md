@@ -22,7 +22,7 @@ The key components of a module are:
 In addition to that, a module can store other settings, such as a module-specific [SDK](sdk.md), compile output path settings, etc.
 Plugins can store additional data associated with a module by creating facets or module-level components.
 
-The *IntelliJ Platform* provides a number of classes and interfaces you can use to work with modules:
+The IntelliJ Platform provides a number of classes and interfaces you can use to work with modules:
 
 * [`Module`](upsource:///platform/core-api/src/com/intellij/openapi/module/Module.java)
 * [`ModuleUtil`](upsource:///platform/lang-api/src/com/intellij/openapi/module/ModuleUtil.java)
@@ -41,7 +41,7 @@ Use the `ModuleManager.getModules()` method.
 ### How do I get dependencies and classpath of a module?
 
 _Order entries_ include SDK, libraries and other modules the module uses.
-With the *IntelliJ IDEA* UI, you can view order entries for a module on the [Dependencies](https://www.jetbrains.com/help/idea/dependencies-tab.html) tab of the *Project Structure* dialog box.
+With the IntelliJ IDEA UI, you can view order entries for a module on the [Dependencies](https://www.jetbrains.com/help/idea/dependencies-tab.html) tab of the *Project Structure* dialog box.
 
 To explore the [module dependencies](https://www.jetbrains.com/help/idea/dependencies-tab.html), use the [`OrderEnumerator`](upsource:///platform/projectModel-api/src/com/intellij/openapi/roots/OrderEnumerator.java) class.
 

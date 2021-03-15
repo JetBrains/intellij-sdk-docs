@@ -7,7 +7,7 @@
 EP: `com.intellij.extendWordSelectionHandler`
 
 Implementing [`ExtendWordSelectionHandler`](upsource:///platform/lang-api/src/com/intellij/codeInsight/editorActions/ExtendWordSelectionHandler.java) and registering it as `com.intellij.extendWordSelectionHandler` EP in your `plugin.xml` allows you to provide additional text ranges to be used when extending or shrinking a selection.
-Return `true` from the `canSelect(PsiElement)` for the PSI elements that you want to provide additional text-ranges for.
+Return `true` from `canSelect(PsiElement)` for the PSI elements that you want to provide additional text-ranges for.
 The IntelliJ Platform will call `select(PsiElement, CharSequence, int, Editor)` for these elements where you can compute additional text ranges and return them as `List<TextRange>`.
 
 See also:
@@ -27,7 +27,7 @@ However, sometimes it’s advantageous to provide additional regions that the us
 This EP has two methods that need to be implemented:
 
 1. `canSelect(PsiElement)` is called on each PSI element, starting from the element at the cursor and walking up each of its parents.
-   By returning `true` for a particular element, you can indicate that further text-ranges should be included for the PSI element.
+   Return `true` for a particular element to indicate that further text-ranges should be included for the PSI element.
 2. `select(PsiElement, CharSequence, int, Editor)` returns the text-ranges within the PSI element of interest are calculated and returned.
 
 ### Example Use-Case

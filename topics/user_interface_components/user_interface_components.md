@@ -14,7 +14,7 @@ Using those components in your plugins will ensure that your plugin looks and wo
  >
  {type="note"}
 
-Please refer to [Writing short and clear](https://jetbrains.design/intellij/text/writing_short/) in _IntelliJ Platform UI Guidelines_ on writing UI-related texts.
+Please refer to [Writing short and clear](https://jetbrains.design/intellij/text/writing_short/) in IntelliJ Platform UI Guidelines on writing UI-related texts.
 
 The following components are particularly noteworthy:
 

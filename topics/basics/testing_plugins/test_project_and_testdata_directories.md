@@ -18,9 +18,9 @@ This is just a directory under your plugin's content root, but not under a sourc
 Files in `testdata` usually are not valid source code and must not be compiled.
 
 To specify the location of `testdata`, you must override the `getTestDataPath()` method.
-The default implementation assumes running as part of the *IntelliJ Platform* source tree and is not appropriate for third-party plugins.
+The default implementation assumes running as part of the IntelliJ Platform source tree and is not appropriate for third-party plugins.
 
- >  A very common pattern in *IntelliJ Platform* tests is to use the test method's name being executed as the base for building the `testdata` file paths.
+ >  A very common pattern in IntelliJ Platform tests is to use the test method's name being executed as the base for building the `testdata` file paths.
 > This allows us to reuse most of the code between different test methods that test various aspects of the same feature, and this approach is also recommended for third-party plugin tests.
 > The name of the test method can be retrieved using `UsefulTestCase.getTestName()`.
  >

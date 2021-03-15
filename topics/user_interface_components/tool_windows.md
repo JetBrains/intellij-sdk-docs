@@ -6,7 +6,7 @@
 
 _Tool windows_ are child windows of the IDE used to display information.
 These windows generally have their own toolbars (referred to as _tool window bars_) along the outer edges of the main window containing one or more _tool window buttons_, which activate panels displayed on the left, bottom and right sides of the main IDE window.
-For detailed information about tool windows, please see [IntelliJ IDEA Web Help](https://www.jetbrains.com/idea/help/tool-windows.html) and [Tool window](https://jetbrains.design/intellij/components/tool_window/) topic in _IntelliJ Platform UI Guidelines_.
+For detailed information about tool windows, please see [IntelliJ IDEA Web Help](https://www.jetbrains.com/idea/help/tool-windows.html) and [Tool window](https://jetbrains.design/intellij/components/tool_window/) topic in IntelliJ Platform UI Guidelines.
 
 Each side contains two tool window groups, the primary and the secondary one, and only one tool window from each group can be active at a time.
 
@@ -69,7 +69,7 @@ This plugin creates the **Sample Calendar** tool window that displays the system
 
 **To run the toolWindow plugin**
 
-1. Start **IntelliJ IDEA** and open the **tool_window** project saved into the [code_samples/tool_window](https://github.com/JetBrains/intellij-sdk-code-samples/tree/main/tool_window) directory.
+1. Start IntelliJ IDEA and open the **tool_window** project saved into the [code_samples/tool_window](https://github.com/JetBrains/intellij-sdk-code-samples/tree/main/tool_window) directory.
 2. Ensure that the project settings are valid for the environment.
    If necessary, modify the project settings.
    To view or modify the project settings, open the [Project Structure](https://www.jetbrains.com/help/idea/project-structure-dialog.html) dialog.

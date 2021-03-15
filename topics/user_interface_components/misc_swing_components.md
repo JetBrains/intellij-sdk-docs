@@ -31,6 +31,6 @@ It has a significantly different look & feel compared to the standard Swing tabs
 
 ### Toolbars
 
-See [Toolbar](https://jetbrains.design/intellij/controls/toolbar/) in _IntelliJ Platform UI Guidelines_ for an overview.
+See [Toolbar](https://jetbrains.design/intellij/controls/toolbar/) in the IntelliJ Platform UI Guidelines for an overview.
 
 [Building UI from Actions](basic_action_system.md#building-ui-from-actions) covers creating `AnAction`-based toolbars.

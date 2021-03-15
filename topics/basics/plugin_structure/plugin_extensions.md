@@ -31,7 +31,7 @@ There are [more than 1000 extension](#how-to-get-the-extension-points-list) poin
     * If the extension point was declared using the `interface` attribute, for newly added child element, set the `implementation` attribute to the name of the class that implements the specified interface.
     * If the extension point was declared using the `beanClass` attribute, for newly added child element, set all attributes annotated with the [`@Attribute`](upsource:///platform/util/src/com/intellij/util/xmlb/annotations/Attribute.java) annotations in the specified bean class.
 
-To clarify this procedure, consider the following sample section of the `plugin.xml` file that defines two extensions designed to access the `com.intellij.appStarter` and `com.intellij.projectTemplatesFactory` extension points in the *IntelliJ Platform* and one extension to access the `another.plugin.myExtensionPoint` extension point in another plugin `another.plugin`:
+To clarify this procedure, consider the following sample section of the `plugin.xml` file that defines two extensions designed to access the `com.intellij.appStarter` and `com.intellij.projectTemplatesFactory` extension points in the IntelliJ Platform and one extension to access the `another.plugin.myExtensionPoint` extension point in another plugin `another.plugin`:
 
 ```xml
 <!-- Declare extensions to access extension points in the IntelliJ Platform.
@@ -91,7 +91,7 @@ Attributes with `Enum` type support code insight with _lowerSnakeCased_ notation
 
 ## How to get the extension points list?
 
-[Extension Point List](extension_point_list.md) contains all available in *IntelliJ Platform* and from bundled plugins in IntelliJ IDEA.
+[Extension Point List](extension_point_list.md) contains all available in IntelliJ Platform and from bundled plugins in IntelliJ IDEA.
 
 Alternatively (or when using 3rd party extension points), all available extension points for the specified namespace can be listed using auto-completion inside the `<extensions>` block.
 Use **View \| Quick Documentation** in the lookup list to access more information about the extension point and implementation (if applicable).

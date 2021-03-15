@@ -2,7 +2,7 @@
 
 <!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-*IntelliJ Platform* is a powerful platform for building development tools targeting *any* language.
+IntelliJ Platform is a powerful platform for building development tools targeting *any* language.
 Most of the IDE features consist of language-independent (provided by the platform) and language-specific parts.
 Supporting a particular feature for a new language can be achieved with a small amount of effort:
 a plugin must implement only the language-specific part.

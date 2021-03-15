@@ -10,7 +10,7 @@ In addition, the comparing_references_inspection code sample demonstrates implem
 You can also create custom inspections through the IntelliJ IDEA user interface.
 See [Code Inspection](https://www.jetbrains.com/idea/webhelp/code-inspection.html) and [Creating Custom Inspections](https://www.jetbrains.com/idea/help/creating-custom-inspections.html) for more information.
                      
-See [Inspections](https://jetbrains.design/intellij/text/inspections/) topic in _IntelliJ Platform UI Guidelines_ on naming, writing description, and message texts for inspections.
+See [Inspections](https://jetbrains.design/intellij/text/inspections/) topic in the IntelliJ Platform UI Guidelines on naming, writing description, and message texts for inspections.
 
 ## Creating an Inspection Plugin
 
@@ -146,7 +146,7 @@ The [comparing_references_inspection](https://github.com/JetBrains/intellij-sdk-
 The inspection reports when the `==` or `!=` operator is used between Java expressions of reference types.
 
 To run the sample plugin:
-* Start **IntelliJ IDEA**, open the `intellij-sdk-docs` project, and highlight the [comparing_references_inspection](https://github.com/JetBrains/intellij-sdk-code-samples/tree/main/comparing_references_inspection) module.
+* Start IntelliJ IDEA, open the `intellij-sdk-docs` project, and highlight the [comparing_references_inspection](https://github.com/JetBrains/intellij-sdk-code-samples/tree/main/comparing_references_inspection) module.
 * Open the [Project Structure](https://www.jetbrains.com/help/idea/project-structure-dialog.html) dialog and ensure that the project settings are valid for your environment.
 * If necessary, modify the [Run/Debug Configurations](https://www.jetbrains.com/idea/webhelp/run-debug-configuration-plugin.html) for the `comparing_references_inspection` module.
 * Run the plugin by choosing **Run** on the main menu.

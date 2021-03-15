@@ -367,4 +367,4 @@ To get a Swing component from such an object, call the respective `getComponent(
 If an action toolbar is attached to a specific component (for example, a panel in a tool window), call `ActionToolbar.setTargetComponent()` and pass the related component's instance as a parameter.
 Setting the target ensures that the toolbar buttons' state depends on the state of the related component, not on the current focus location within the IDE frame.
 
-See [Toolbar](https://jetbrains.design/intellij/controls/toolbar/) in _IntelliJ Platform UI Guidelines_ for an overview.
+See [Toolbar](https://jetbrains.design/intellij/controls/toolbar/) in IntelliJ Platform UI Guidelines for an overview.

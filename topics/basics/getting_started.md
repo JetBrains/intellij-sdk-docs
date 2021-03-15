@@ -2,10 +2,10 @@
 
 <!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-This documentation section will help you get started with developing plugins for the *IntelliJ Platform*.
+This documentation section will help you get started with developing plugins for the IntelliJ Platform.
 You can use either [IntelliJ IDEA Community Edition](https://www.jetbrains.com/idea/download/) or [IntelliJ IDEA Ultimate](https://www.jetbrains.com/idea/download/) as your IDE (it is highly recommended to use the latest available version).
 Both include the complete set of plugin development tools.
-To become more familiar with *IntelliJ IDEA*, please refer to the [IntelliJ IDEA Web Help](https://www.jetbrains.com/idea/help/).
+To become more familiar with IntelliJ IDEA, please refer to the [IntelliJ IDEA Web Help](https://www.jetbrains.com/idea/help/).
 
 There are three supported workflows available for building plugins.
 The recommended workflow for new projects is to [use GitHub Template](#using-github-template) or to [use Gradle](#using-gradle) to create everything from scratch.

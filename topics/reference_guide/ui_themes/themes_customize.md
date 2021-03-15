@@ -132,7 +132,7 @@ The color of a replaced icon takes precedence over any `ColorPalette` overrides.
 UI Themes can change the appearance of more general controls in the IntelliJ Platform UI.
 Examples of these controls are labels, buttons, checkboxes, trees, lists, and menus.
 
-See also [Platform theme colors — UI components](https://jetbrains.design/intellij/principles/platform_theme_colors/#UI-components) in _IntelliJ Platform UI Guidelines_.                      
+See also [Platform theme colors — UI components](https://jetbrains.design/intellij/principles/platform_theme_colors/#UI-components) in IntelliJ Platform UI Guidelines.                      
 
 ### Custom UI Control Colors
 A UI control's custom color is specified by adding a key-value pair to the `"ui": {}` section of a Theme description file.

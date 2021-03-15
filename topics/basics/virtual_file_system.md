@@ -2,7 +2,7 @@
 
 <!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-The virtual file system (VFS) is a component of the *IntelliJ Platform* that encapsulates most of its activity for working with files represented as [Virtual File](virtual_file.md).
+The virtual file system (VFS) is a component of the IntelliJ Platform that encapsulates most of its activity for working with files represented as [Virtual File](virtual_file.md).
 
 It serves the following main purposes:
 
@@ -31,19 +31,19 @@ The snapshot is updated from disk during _refresh operations_, which generally h
 All write operations made through the VFS are synchronous - i.e., the contents are saved to disk immediately.
 
 A refresh operation synchronizes the state of a part of the VFS with the actual disk contents.
-Refresh operations are explicitly invoked by the *IntelliJ Platform* or plugin code - i.e., when a file is changed on disk while the IDE is running, the change will not be immediately picked up by the VFS.
+Refresh operations are explicitly invoked by the IntelliJ Platform or plugin code - i.e., when a file is changed on disk while the IDE is running, the change will not be immediately picked up by the VFS.
 The VFS will be updated during the next refresh operation, which includes the file in its scope.
 
-*IntelliJ Platform* refreshes the entire project contents asynchronously on startup.
+IntelliJ Platform refreshes the entire project contents asynchronously on startup.
 By default, it performs a refresh operation when the user switches to it from another app.
 Still, users can turn this off via **Settings \| Appearance & Behavior \| System Settings \| Synchronize external changes \[...]**.
 
-On Windows, Mac, and Linux, a native file watcher process is started that receives file change notifications from the file system and reports them to the *IntelliJ Platform*.
+On Windows, Mac, and Linux, a native file watcher process is started that receives file change notifications from the file system and reports them to the IntelliJ Platform.
 If a file watcher is available, a refresh operation looks only at the files that have been reported as changed by the file watcher.
 If no file watcher is present, a refresh operation walks through all directories and files in the refresh scope.
 
 Refresh operations are based on file timestamps.
-If a file's contents were changed, but its timestamp remained the same, the *IntelliJ Platform* will not pick up the updated contents.
+If a file's contents were changed, but its timestamp remained the same, the IntelliJ Platform will not pick up the updated contents.
 
 There is currently no facility for removing files from the snapshot.
 If a file was loaded there once, it remains there forever unless it was deleted from the disk, and a refresh operation was called on one of its parent directories.

@@ -22,7 +22,7 @@ The PSI parses code, builds indexes, and creates a semantic model.
 
 ## Common Extension Points
 
-The IntelliJ Platform is extremely exceptionally, and most features and services can be extended.
+The IntelliJ Platform is extremely extensible, and most features and services can be extended.
 Some of the common extension points are:
 
 * [Actions](action_system.md) - menu and toolbar items

@@ -19,3 +19,8 @@ Before creating or altering content, please consult these guides:
 * [SDK Code Sample Guidelines](sdk_code_guidelines.md).
   Conventions for code sample organization, project settings, and naming conventions are described in this document.
   Always test code changes by building and testing the SDK code sample.
+
+ > Currently, building the site locally is not possible. 
+ >
+ {type="note"}
+ 

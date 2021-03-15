@@ -20,7 +20,7 @@ See also:
 The two actions [Extend Selection and Shrink Selection](https://www.jetbrains.com/help/idea/working-with-source-code.html#editor_code_selection) in IntelliJ Platform IDEs let you adjust selected text based on the structure of the source code.
 This makes it easy to select not only expressions, blocks, and function definitions, but also code like whole lines or tags in JavaDoc comments.
 
-When implementing a custom language, the IntelliJ Platform provides a basic implementations of this EP, allowing you to select code based on your PSI structure and to select whole lines.
+When implementing a custom language, the IntelliJ Platform provides basic implementations of this EP, allowing you to select code based on your PSI structure and to select whole lines.
 In many cases this is sufficient to provide a good user experience.
 However, sometimes it’s advantageous to provide additional regions that the user may wish to be able to select when extending or shrinking a selection. 
 
@@ -47,7 +47,7 @@ This can be achieved by implementing this EP in the following way:
 Looking at other implementations can be an effective way to get a better understanding of how this EP works.
 To get further insight into this EP, you may want to take a look at [`DocTagSelectioner`](upsource:///java/java-impl/src/com/intellij/codeInsight/editorActions/wordSelection/DocTagSelectioner.java).
 It provides the ability to select tag names like `@param` in JavaDoc comments.
-Additionally, the [IntelliJ Platform Explorer](https://plugins.jetbrains.com/intellij-platform-explorer/?extensions=com.intellij.extendWordSelectionHandler) provides a list open-source plugins with implementations of the `extendWordSelectionHandler` EP.
+Additionally, the [IntelliJ Platform Explorer](https://plugins.jetbrains.com/intellij-platform-explorer/?extensions=com.intellij.extendWordSelectionHandler) provides a list of open-source plugins with implementations of the `extendWordSelectionHandler` EP.
 
 There are also some important places in the IntelliJ Platform to add breakpoints during debugging.
 When _Extend Selection_ is called by the user, it is handled by [`SelectWordHandler`](upsource:///platform/lang-impl/src/com/intellij/codeInsight/editorActions/SelectWordHandler.java).

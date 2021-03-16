@@ -133,6 +133,7 @@
                              toc-title="2. Editor Coordinates System. Positions and Offsets"/>
                 <toc-element id="editor_events.md" toc-title="3. Handling Editor Events"/>
             </toc-element>
+            <toc-element id="text_selection.md" toc-title="Text Selection"/>
             <toc-element id="multiple_carets.md" toc-title="Multiple Carets"/>
         </toc-element>
         <toc-element id="basic_run_configurations.md" accepts-web-file-names="run_configurations.html"

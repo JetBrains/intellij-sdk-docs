@@ -16,6 +16,9 @@ Element Patterns
 Editor - Text Selection
 : Add a new section about [Text Selection EPs](text_selection.md) and describe [`ExtendWordSelectionHandler`](upsource:///platform/lang-api/src/com/intellij/codeInsight/editorActions/ExtendWordSelectionHandler.java)
 
+SDK Setup Assistance
+: Added a code sample to the SDK tutorial that expands on assisting in the setup of an SDK
+
 ## 2020
                   
 ### December-20

@@ -71,4 +71,40 @@ Although "SDK" is available in most JetBrains products, `ProjectJdksEditor` is s
 The recommended way of managing "SDK" settings is to create a [`CustomStepProjectGenerator`](upsource:///platform/lang-impl/src/com/intellij/ide/util/projectWizard/CustomStepProjectGenerator.java) implementation and save settings in a [`PersistentStateComponent`](persisting_state_of_components.md).
 
 ## Assisting in Setting Up an SDK
-Register the implementation of [`ProjectSdkSetupValidator`](upsource:///platform/lang-impl/src/com/intellij/codeInsight/daemon/ProjectSdkSetupValidator.java) in extension point `com.intellij.projectSdkSetupValidator` to provide quick fix.
+
+Prompting the user with a notification to set up an SDK can help them get up-and-running with a plugin faster. The IntelliJ Platform offers the extension point `com.intellij.projectSdkSetupValidator`, where you can register an implementation of [`ProjectSdkSetupValidator`](upsource:///platform/lang-impl/src/com/intellij/codeInsight/daemon/ProjectSdkSetupValidator.java) to notify the user if they are missing an SDK.
+
+The following is a simplified example that checks whether an instance of "DemoSdk" has been configured in the project when the user opens a "DemoFileType":
+
+```kotlin
+object DemoProjectSdkSetupValidator : ProjectSdkSetupValidator {
+    override fun isApplicableFor(project: Project, file: VirtualFile): Boolean {
+        return file.fileType == DemoFileType
+    }
+
+    override fun getErrorMessage(project: Project, file: VirtualFile): String? {
+        if (ProjectJdkTable.getInstance().getSdksOfType(DemoSdkType.getInstance()).isEmpty())
+            return "No DemoSdks are configured for this project!"
+        return null
+    }
+
+    override fun getFixHandler(project: Project, file: VirtualFile): EditorNotificationPanel.ActionHandler {
+        return SdkPopupFactory.newBuilder()
+            .withProject(project)
+            .withSdkTypeFilter { it is DemoSdkType }
+            .updateSdkForFile(file)
+            .buildEditorNotificationPanelHandler()
+    }
+}
+```
+
+Within `DemoProjectSdkSetupValidator`,
+
+- `isApplicableFor()` checks what condition(s) should be met to run the validation.
+- `getErrorMessage()` runs the validation and return an appropriate error message if the validation fails. (If the validation is successful, then it should return null.)
+- `getFixHandler()` returns an `EditorNotificationPanel.ActionHandler` that enables the user to execute a quick-fix to resolve the validation issue.
+
+
+>  `ProjectSdkSetupValidator` will not work in IntelliJ Platform-based IDEs such as PyCharm. In such cases, you should register an implementation of [`EditorNotifications.Provider`](upsource:///platform/platform-api/src/com/intellij/ui/EditorNotifications.java) at the `com.intellij.editorNotificationProvider` extension point and override the `createNotificationPanel()` method with the conditionality and panel setup you want.
+>
+{type="warning"}

@@ -2,7 +2,7 @@
 
 <!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-UAST (Unified Abstract Syntax Tree) is an abstraction layer on the [PSI](psi_elements.md) of different JVM Languages.
+UAST (Unified Abstract Syntax Tree) is an abstraction layer on the [PSI](psi_elements.md) of different JVM languages.
 It provides a unified API for working with common language elements like classes and method declarations, literal values, and control flow operators.
 
 ## Motivation
@@ -73,7 +73,7 @@ To convert `PsiElement` to the specific `UElement`, use one of the following app
   >
   {type="note"}
 
-### UAST to PSI Conversion: `sourcePsi` and `javaPsi`
+### UAST to PSI Conversion
 
 Sometimes it's required to get from the `UElement` back to sources of the underlying language.
 For that purpose, `UElement#sourcePsi` property returns the corresponding `PsiElement` of the original language.
@@ -159,13 +159,13 @@ This _"implements"_ is considered deprecated and might be removed in the future.
 Also, there is `UElement#psi` property; it returns the same element as `javaPsi` or the `sourcePsi`.
 As it is hard to guess what will be returned, it is also deprecated.
 
-Thus `sourcePsi` and `javaPsi` should be the only ways to obtain `PsiElement` from `UElement`. See the [corresponding section](#uast-to-psi-conversion-and).
+Thus `sourcePsi` and `javaPsi` should be the only ways to obtain `PsiElement` from `UElement`. See the [corresponding section](#uast-to-psi-conversion).
 
 ### Should I use `UMethod` or `PsiMethod`, `UClass` or `PsiClass` ?
 
 UAST provides a unified way to represent JVM compatible declarations via `UMethod`, `UField`, `UClass`, and so on.
 But at the same time, all JVM language plugins implement `PsiMethod`, `PsiClass`, and so on to be compatible with Java.
-These implementations could be [obtained](#uast-to-psi-conversion-and) via `UElement#javaPsi` property.
+These implementations could be [obtained](#uast-to-psi-conversion) via `UElement#javaPsi` property.
 
 So the question is: "What should I use to represent the Java-declaration in my code?".
 The answer is: We encourage using `PsiMethod`, `PsiClass` as common interfaces for Java-declarations regardless of the JVM language

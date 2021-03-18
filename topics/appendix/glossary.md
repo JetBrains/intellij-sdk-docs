@@ -1,6 +1,6 @@
 [//]: # (title: Glossary)
 
-<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2 -->
+<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2 -->
 
 ## A
 
@@ -18,6 +18,7 @@ Document Object Model _(DOM)_
 : [DOM API](xml_dom_api.md) abstracts working with XML files based on a custom semantic model.
 
 ## E
+
 Event Dispatch Thread _(EDT)_
 : The [Event Dispatch Thread](https://docs.oracle.com/javase/tutorial/uiswing/concurrency/dispatch.html) handles all Swing events. See also [General Threading Rules](general_threading_rules.md).
 
@@ -55,6 +56,7 @@ JetBrains Runtime _(JBR)_
 : The [JetBrains Runtime](ide_development_instance.md#using-a-jetbrains-runtime-for-the-development-instance) is the default bundled runtime for all IntelliJ Platform-based IDEs by JetBrains.
 
 ## P
+
 Program Structure Interface _(PSI)_
 : The [Program Structure Interface](psi.md) represents a syntactic and semantic code model of the source input files. &rarr; _Abstract Syntax Tree_ &rarr; _Stubs_
 
@@ -72,7 +74,13 @@ Run Configuration _(RC)_
 Stubs
 : A subset of a &rarr; _Program Structure Interface_ tree in a binary serialized compact format, see [Stub Indexes](stub_indexes.md).
 
+## U
+
+Unified Abstract Syntax Tree _UAST_
+: An [abstraction layer](uast.md) on the &rarr; _Program Structure Interface_ of different JVM languages.
+
 ## V
+
 Version Control System _(VCS)_
 : The API for [Version Control System](vcs_integration_for_plugins.md) allows accessing builtin as well as adding custom implementations.
 

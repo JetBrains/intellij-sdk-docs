@@ -1,19 +1,21 @@
 [//]: # (title: Extension Point List)
 
-1200 Extension Points
-
-_Extension Point_ searches for usages inside existing implementations of open-source IntelliJ Platform plugins via [IntelliJ Platform Explorer](https://plugins.jetbrains.com/intellij-platform-explorer).
+1200 Extension Points (EP)
+                     
+See [Plugin Extensions](plugin_extensions.md) on how to declare extensions in your plugin.
+  
+_Extension Point_ searches for usages inside existing implementations of open-source IntelliJ Platform plugins via [IntelliJ Platform Explorer](https://jb.gg/ipe).
 
 _Implementation_ opens declaration of related class. 
 
-### Note Legend
+#### Note Legend
 
 | Icon | Description | Details |
 |---|---|---|
-| ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | Non-Dynamic Extension Point | Installation/update of plugin requires restart |
+| ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | Non-Dynamic Extension Point | Installation/update of plugin requires restart ([Dynamic Plugins](dynamic_plugins.md)) |
 | ![Experimental API](https://img.shields.io/badge/-Experimental_API-red) | Experimental API | Implementation annotated with `@ApiStatus.Experimental`, API might be altered or removed without prior notice |
 | ![Internal API](https://img.shields.io/badge/-Internal_API-red) | Internal API | Implementation annotated with `@ApiStatus.Internal`, should not be used by 3rd party |
-| ![Project-Level](https://img.shields.io/badge/-Project--Level-yellow) | Project-Level Extension Point | Declared with `area="IDEA_PROJECT"` |
+| ![Project-Level](https://img.shields.io/badge/-Project--Level-yellow) | Project-Level Extension Point | Declared with `area="IDEA_PROJECT"`, can have `Project` as constructor parameter |
 
 ## Analysis.xml
 [Analysis.xml](upsource:///platform/analysis-api/resources/META-INF/Analysis.xml)

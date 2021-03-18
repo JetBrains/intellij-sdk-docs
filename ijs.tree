@@ -181,7 +181,7 @@
             <toc-element id="stub_indexes.md" toc-title="Stub Indexes"/>
         </toc-element>
         <toc-element id="element_patterns.md" toc-title="Element Patterns"/>
-        <toc-element toc-title="Unified AST"/>
+        <toc-element id="uast.md" toc-title="Unified AST"/>
         <toc-element id="xml_dom_api.md" toc-title="XML DOM API"/>
     </toc-element>
     <toc-element toc-title="Part V - Features">

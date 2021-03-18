@@ -5,6 +5,8 @@
 Starting with the 2020.1 release, installing, updating, and uninstalling plugins without restarting the IDE is available in the IntelliJ Platform.
 During plugin development, [Auto-Reload](ide_development_instance.md#enabling-auto-reload) also allows code changes to take effect immediately in the sandbox IDE instance.
 
+To test whether dynamic installation works correctly, verify installing [local build distribution](deployment.md#building-distribution) succeeds (see [Troubleshooting](#troubleshooting)). 
+
  >  If a plugin _requires_ restart (e.g., due to using native libraries) specify `require-restart="true"` for `<idea-plugin>` root tag in `plugin.xml`.
  >
  {type="note"}

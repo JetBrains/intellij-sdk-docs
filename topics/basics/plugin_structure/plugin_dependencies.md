@@ -70,7 +70,7 @@ To do that, open the Project Structure dialog, select the SDK used in the projec
 
 ## Dependency Declaration in plugin.xml
 Regardless of whether a plugin project uses [Modules Available in All Products](plugin_compatibility.md#modules-available-in-all-products), or [Modules Specific to Functionality](plugin_compatibility.md#modules-specific-to-functionality), the correct module must be listed as a dependency in `plugin.xml`.
-If a project depends on another plugin, the dependency must be declared like a [module](plugin-compatibility.md#modules).
+If a project depends on another plugin, the dependency must be declared like a [module](plugin_compatibility.md#modules).
 If only general IntelliJ Platform features (APIs) are used, then a default dependency on `com.intellij.modules.platform` must be declared.
 
 To display a list of available IntelliJ Platform modules, invoke the [code completion](https://www.jetbrains.com/help/idea/auto-completing-code.html#4eac28ba) feature for the `<depends>` element contents while editing the plugin project's `plugin.xml` file.

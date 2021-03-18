@@ -14,7 +14,7 @@ To test whether dynamic installation works correctly, verify installing [local b
 ## Restrictions
 
 For a plugin to support this, all restrictions listed below must be met.
-To verify a plugin locally, run **Analyze \| Run Inspection by Name... \| Plugin.xml dynamic plugin verification** inspection on all plugin descriptor files.
+To verify a plugin locally, invoke **Analyze \| Run Inspection by Name...** and run **Plugin DevKit \| Plugin descriptor \| Plugin.xml dynamic plugin verification inspection** inspection on all plugin descriptor files.
 
 For plugins hosted on the [JetBrains Plugins Repository](https://plugins.jetbrains.com) the built-in [Plugin Verifier](https://blog.jetbrains.com/platform/2018/07/plugins-repository-now-integrates-with-the-plugin-verification-tool/) will run these checks automatically.
 See [Plugin Verifier](api_changes_list.md#plugin-verifier) for more information on how to run it locally or on CI.
@@ -29,7 +29,7 @@ All `<group>`s must declare a unique `id`.
 
 ### Use Only Dynamic Extensions
 
-Whether defined in the platform itself ([Extension Point List](extension_point_list.md)) or coming from other plugins, all used extension points must be marked as dynamic (see next paragraph).
+Whether defined in the platform itself ([Extension Point List](extension_point_list.md)) or coming from other plugins, all used extension points must be marked explicitly as dynamic (see next paragraph).
 
 Some deprecated extension points (e.g., `com.intellij.configurationProducer`) are intentionally non-dynamic, and their usage should be migrated to the corresponding replacement.
 
@@ -43,7 +43,7 @@ Any `Configurable` which depends on dynamic extension points must implement `Con
 
 ### No Use of Service Overrides
 
-Application, project, and module services declared with `overrides="true"` are not allowed.
+Application, project, and module [services](plugin_services.md) declared with `overrides="true"` are not allowed.
 
 ## Code
 
@@ -61,7 +61,7 @@ Do not store references to PSI elements in objects which can survive plugin load
 
 ### Do not Use FileType/Language as Map Key
 
-Replace with `String` from `Language.getID()`/`FileType.getName()`.
+Replace with `String` from `Language.getID()`/`FileType.getName()` (use inspection **Plugin DevKit \| Code \| Map key may leak**).
 
 ### Plugin Load/Unload Events
 Register [`com.intellij.ide.plugins.DynamicPluginListener`](upsource:///platform/core-impl/src/com/intellij/ide/plugins/DynamicPluginListener.kt) [application listener](plugin_listeners.md) to receive updates on plugin load/unload events.
@@ -71,6 +71,8 @@ This can be used to e.g., cancel long-running activities or disallow unload due 
 ## Troubleshooting
 
 When a plugin is being uninstalled or updated, the IDE waits synchronously for plugin unload and asks for restart if the unload failed.
+
+Use the latest available version of the target IDE for verification. See also this [list of known platform issues](https://youtrack.jetbrains.com/issues/IDEA?q=%23dynamic-plugins%20) related to handling dynamic plugins. 
 
 ### Logging
 

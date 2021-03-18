@@ -2,10 +2,12 @@
 
 <!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-Starting with the 2020.1 release, installing, updating, and uninstalling plugins without restarting the IDE is available in the IntelliJ Platform.
-During plugin development, [Auto-Reload](ide_development_instance.md#enabling-auto-reload) also allows code changes to take effect immediately in the sandbox IDE instance.
+Starting with the **2020.1** release, installing, updating, and uninstalling plugins without restarting the IDE is available in the IntelliJ Platform.
 
+During plugin development, [Auto-Reload](ide_development_instance.md#enabling-auto-reload) also allows code changes to take effect immediately in the sandbox IDE instance.
 To test whether dynamic installation works correctly, verify installing [local build distribution](deployment.md#building-distribution) succeeds (see [Troubleshooting](#troubleshooting)). 
+                                
+Please note that any unloading problems in a production environment will simply ask the user to restart the IDE.
 
  >  If a plugin _requires_ restart (e.g., due to using native libraries) specify `require-restart="true"` for `<idea-plugin>` root tag in `plugin.xml`.
  >
@@ -35,7 +37,7 @@ Some deprecated extension points (e.g., `com.intellij.configurationProducer`) ar
 
 ### Mark Extension Points as Dynamic
 
-The plugin's own extension points must adhere to specific usage rules and then [be declared](plugin_extension_points.md#dynamic-extension-points) ready for dynamic use explicitly.
+If a plugin defines its own custom extension points, they must adhere to specific usage rules and then [be declared](plugin_extension_points.md#dynamic-extension-points) ready for dynamic use explicitly.
 
 ### Configurables Depending on Extension Points
 

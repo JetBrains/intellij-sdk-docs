@@ -72,7 +72,8 @@ The recommended way of managing "SDK" settings is to create a [`CustomStepProjec
 
 ## Assisting in Setting Up an SDK
 
-Prompting the user with a notification to set up an SDK can help them get up-and-running with a plugin faster. The IntelliJ Platform offers the extension point `com.intellij.projectSdkSetupValidator`, where you can register an implementation of [`ProjectSdkSetupValidator`](upsource:///platform/lang-impl/src/com/intellij/codeInsight/daemon/ProjectSdkSetupValidator.java) to notify the user if they are missing an SDK.
+Prompting the user with a notification to set up an SDK can help them get up-and-running with a plugin faster.
+The IntelliJ Platform offers the extension point `com.intellij.projectSdkSetupValidator`, where you can register an implementation of [`ProjectSdkSetupValidator`](upsource:///platform/lang-impl/src/com/intellij/codeInsight/daemon/ProjectSdkSetupValidator.java) to notify the user if they are missing an SDK.
 
 The following is a simplified example that checks whether an instance of "DemoSdk" has been configured in the project when the user opens a "DemoFileType":
 
@@ -98,10 +99,10 @@ object DemoProjectSdkSetupValidator : ProjectSdkSetupValidator {
 }
 ```
 
-Within `DemoProjectSdkSetupValidator`,
+Within `DemoProjectSdkSetupValidator`:
 
 - `isApplicableFor()` checks what condition(s) should be met to run the validation.
-- `getErrorMessage()` runs the validation and return an appropriate error message if the validation fails. (If the validation is successful, then it should return null.)
+- `getErrorMessage()` runs the validation and return an appropriate error message if the validation fails. If the validation is successful, then it should return null.
 - `getFixHandler()` returns an `EditorNotificationPanel.ActionHandler` that enables the user to execute a quick-fix to resolve the validation issue.
 
 

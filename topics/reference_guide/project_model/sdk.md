@@ -78,7 +78,7 @@ The IntelliJ Platform offers the extension point `com.intellij.projectSdkSetupVa
 The following is a simplified example that checks whether an instance of "DemoSdk" has been configured in the project when the user opens a "DemoFileType":
 
 ```kotlin
-object DemoProjectSdkSetupValidator : ProjectSdkSetupValidator {
+class DemoProjectSdkSetupValidator : ProjectSdkSetupValidator {
     override fun isApplicableFor(project: Project, file: VirtualFile): Boolean {
         return file.fileType == DemoFileType
     }

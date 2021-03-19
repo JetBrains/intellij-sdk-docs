@@ -146,8 +146,7 @@ For really hard performance optimisation consider using `UastLanguagePlugin.getP
 literal values like numbers, booleans, and string. 
 Although string values are also literals, `ULiteralExpression` is not very handy to work with them.
 For instance, it doesn't handle Kotlin string interpolations.
-To process string literals when evaluating their value or to perform language injection, use   
-[`UInjectionHost`](upsource:///uast/uast-common/src/org/jetbrains/uast/expressions/UInjectionHost.kt) instead.
+To process string literals when evaluating their value or to perform language injection, use [`UInjectionHost`](upsource:///uast/uast-common/src/org/jetbrains/uast/expressions/UInjectionHost.kt) instead.
 
 ### `sourcePsi` and `javaPsi`, `psi` and `UElement` as PSI
 

@@ -12,7 +12,7 @@ Create an empty plugin project as described in [Creating a Plugin Project](getti
 
 ## Register a New ConfigurationType
 
-Add new `configurationType` extension to the [plugin.xml](https://github.com/JetBrains/intellij-sdk-code-samples/blob/main/run_configuration/src/main/resources/META-INF/plugin.xml)
+Add a new `configurationType` extension to the [plugin.xml](https://github.com/JetBrains/intellij-sdk-code-samples/blob/main/run_configuration/src/main/resources/META-INF/plugin.xml)
 
 ```xml
 <extensions defaultExtensionNs="com.intellij">
@@ -22,69 +22,46 @@ Add new `configurationType` extension to the [plugin.xml](https://github.com/Jet
 
 ## Implement ConfigurationType
 
-Implement  [`ConfigurationType`](upsource:///platform/lang-api/src/com/intellij/execution/configurations/ConfigurationType.java)  interface registered in the Step 1.
+Implement the new configurationType that was registered in the previous step. The standard way to do this is to implement the [`ConfigurationType`](upsource:///platform/lang-api/src/com/intellij/execution/configurations/ConfigurationType.java) interface within the IntelliJ API, but the IntelliJ platform now offers the [`SimpleConfigurationType`](upsource:///platform/lang-api/src/com/intellij/execution/configurations/runConfigurationType.kt) class that you can extend to set up your new configurationType even easier. (Although the `SimpleConfigurationType` class is written in Kotlin, it is fully interoperable with Java too)
 
-```java
-public class DemoRunConfigurationType implements ConfigurationType {
-    @Override
-    public String getDisplayName() {
-        return "Demo";
-    }
-
-    @Override
-    public String getConfigurationTypeDescription() {
-        return "Demo Run Configuration Type";
-    }
-
-    @Override
-    public Icon getIcon() {
-        return AllIcons.General.Information;
-    }
-
-    @NotNull
-    @Override
-    public String getId() {
-        return "DemoRunConfiguration";
-    }
-
-    @Override
-    public ConfigurationFactory[] getConfigurationFactories() {
-        return new ConfigurationFactory[]{new DemoConfigurationFactory(this)};
-    }
+```kotlin
+class DemoRunConfigurationType : SimpleConfigurationType(
+    id = "DemoRunConfiguration",
+    name = "Demo",
+    icon = NotNullLazyValue.createValue { AllIcons.General.Information }
+) {
+  override fun createTemplateConfiguration(project: Project): RunConfiguration {
+    return DemoRunConfig(project, this, "Demo")
+  }
 }
 ```
 
-## Implement a ConfigurationFactory
+The `createTemplateConfiguration()` method should return an instance of your run configuration which you will set up in the next step.
 
-Implement a new [`ConfigurationFactory`](upsource:///platform/lang-api/src/com/intellij/execution/configurations/ConfigurationFactory.java) through which custom run configurations will be created.
+>  The `id` field is very important and should not be changed after your first release! If you change it, any configurations your users have created will become unrecognized after they download a plugin update since IntelliJ uses the `id` to determine the configuration's type from xml.
+>
+{type="warning"}
 
-```java
-public class DemoConfigurationFactory extends ConfigurationFactory {
-    private static final String FACTORY_NAME = "Demo configuration factory";
+By default, `SimpleConfigurationType` will set up a factory for your run configurations automatically. If your plugin requires more than one factory for your configurationType, you should extend the [`ConfigurationTypeBase`]() class instead and call the `addFactory()` method in the constructor as many times as needed. Your configuration factories will need to be declared separately and should extend [`ConfigurationFactory`](upsource:///platform/lang-api/src/com/intellij/execution/configurations/ConfigurationFactory.java). You can refer to the [run configuration code sample](https://github.com/JetBrains/intellij-sdk-docs/blob/main/code_samples/run_configuration/src/main/java/org/jetbrains/sdk/runConfiguration/DemoRunConfigurationType.java) for an example of this.
 
-    protected DemoConfigurationFactory(ConfigurationType type) {
-        super(type);
+The following is a sample implementation of [`ConfigurationFactory`](upsource:///platform/lang-api/src/com/intellij/execution/configurations/ConfigurationFactory.java):
+
+```kotlin
+class DemoRunConfigFactory(configurationType: DemoRunConfigType) : ConfigurationFactory(configurationType) {
+    override fun createTemplateConfiguration(project: Project): RunConfiguration {
+        return DemoRunConfig(project, this, "Demo")
     }
 
-    @Override
-    public RunConfiguration createTemplateConfiguration(Project project) {
-        return new DemoRunConfiguration(project, this, "Demo");
-    }
-
-    @Override
-    public String getName() {
-        return FACTORY_NAME;
-    }
+    override fun getId() = "Demo"
 }
-
 ```
 
 ## Implement a Run Configuration
 
 To make your changes visible from the UI, implement a new Run Configuration.
 
-**Note:** In most of the cases you can derive a custom Run Configuration class from the [`RunConfigurationBase`](upsource:///platform/lang-api/src/com/intellij/execution/configurations/RunConfigurationBase.java).
-If you need to implement specific settings externalization rules and I/O behaviour, use [`RunConfiguration`](upsource:///platform/lang-api/src/com/intellij/execution/configurations/RunConfiguration.java) interface.
+**Note:** In most cases, your custom Run Configuration class can just extend [`RunConfigurationBase`](upsource:///platform/lang-api/src/com/intellij/execution/configurations/RunConfigurationBase.java).
+If you need to implement specific settings-externalization rules and I/O behaviour, use the [`RunConfiguration`](upsource:///platform/lang-api/src/com/intellij/execution/configurations/RunConfiguration.java) interface instead.
 
 ```java
 public class DemoRunConfiguration extends RunConfigurationBase {

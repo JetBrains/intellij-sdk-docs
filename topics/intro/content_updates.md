@@ -19,6 +19,9 @@ Editor - Text Selection
 SDK Setup Assistance
 : Added a code sample to the SDK tutorial that expands on [assisting in the setup of an SDK](sdk.md#assisting-in-setting-up-an-sdk).
 
+Run Configurations
+: Updated the [run configuration tutorial](run_configurations.md#implement-configurationtype) to show usages of the newer APIs available in the IntelliJ Platform SDK.
+
 ## 2020
                   
 ### December-20

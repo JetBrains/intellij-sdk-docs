@@ -102,7 +102,7 @@ class DemoProjectSdkSetupValidator : ProjectSdkSetupValidator {
 Within `DemoProjectSdkSetupValidator`:
 
 - `isApplicableFor()` checks what condition(s) should be met to run the validation.
-- `getErrorMessage()` runs the validation and return an appropriate error message if the validation fails. If the validation is successful, then it should return null.
+- `getErrorMessage()` runs the validation and returns an appropriate error message if the validation fails. If the validation is successful, then it should return null.
 - `getFixHandler()` returns an `EditorNotificationPanel.ActionHandler` that enables the user to execute a quick-fix to resolve the validation issue.
 
 

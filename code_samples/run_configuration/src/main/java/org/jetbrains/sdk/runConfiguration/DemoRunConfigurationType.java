@@ -2,40 +2,17 @@
 
 package org.jetbrains.sdk.runConfiguration;
 
-import com.intellij.execution.configurations.ConfigurationFactory;
-import com.intellij.execution.configurations.ConfigurationType;
+import com.intellij.execution.configurations.ConfigurationTypeBase;
 import com.intellij.icons.AllIcons;
-import org.jetbrains.annotations.NotNull;
+import com.intellij.openapi.util.NotNullLazyValue;
 
-import javax.swing.*;
-
-public class DemoRunConfigurationType implements ConfigurationType {
-
-  @NotNull
-  @Override
-  public String getDisplayName() {
-    return "Demo";
+public class DemoRunConfigurationType extends ConfigurationTypeBase {
+  protected DemoRunConfigurationType() {
+    super("DemoRunConfiguration",
+            "Demo",
+            "Demo run configuration type",
+            NotNullLazyValue.createValue(() -> AllIcons.General.Information)
+    );
+    addFactory(new DemoConfigurationFactory(this));
   }
-
-  @Override
-  public String getConfigurationTypeDescription() {
-    return "Demo run configuration type";
-  }
-
-  @Override
-  public Icon getIcon() {
-    return AllIcons.General.Information;
-  }
-
-  @NotNull
-  @Override
-  public String getId() {
-    return "DEMO_RUN_CONFIGURATION";
-  }
-
-  @Override
-  public ConfigurationFactory[] getConfigurationFactories() {
-    return new ConfigurationFactory[]{new DemoConfigurationFactory(this)};
-  }
-
 }

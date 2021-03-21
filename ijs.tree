@@ -90,7 +90,9 @@
             <toc-element id="tool_windows.md" toc-title="Tool Windows"/>
             <toc-element id="dialog_wrapper.md" toc-title="Dialogs"/>
             <toc-element id="popups.md" toc-title="Popups"/>
-            <toc-element id="notifications.md" toc-title="Notifications"/>
+            <toc-element id="notifications.md" toc-title="Notifications">
+                <toc-element id="editor_notifications_provider.md" toc-title="Editor Notifications Provider"/>
+            </toc-element>
             <toc-element id="file_and_class_choosers.md" toc-title="File and Class Choosers"/>
             <toc-element id="editor_components.md" toc-title="Editor Components"/>
             <toc-element id="lists_and_trees.md" toc-title="List and Tree Controls"/>

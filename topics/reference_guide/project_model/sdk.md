@@ -75,7 +75,13 @@ The recommended way of managing "SDK" settings is to create a [`CustomStepProjec
 Prompting the user with a notification to set up an SDK can help them get up-and-running with a plugin faster.
 The IntelliJ Platform offers the extension point `com.intellij.projectSdkSetupValidator`, where you can register an implementation of [`ProjectSdkSetupValidator`](upsource:///platform/lang-impl/src/com/intellij/codeInsight/daemon/ProjectSdkSetupValidator.java) to notify the user if they are missing an SDK.
 
-The following is a simplified example that checks whether an instance of "DemoSdk" has been configured in the project when the user opens a "DemoFileType":
+Here is what you would register in plugin.xml:
+
+```xml
+<projectSdkSetupValidator implementation="org.jetbrains.sdk.DemoProjectSdkSetupValidator"/>
+```
+
+Here is a simplified example that checks whether an instance of "DemoSdk" has been configured in the project when the user opens a "DemoFileType":
 
 ```kotlin
 class DemoProjectSdkSetupValidator : ProjectSdkSetupValidator {
@@ -106,6 +112,6 @@ Within `DemoProjectSdkSetupValidator`:
 - `getFixHandler()` returns an `EditorNotificationPanel.ActionHandler` that enables the user to execute a quick-fix to resolve the validation issue.
 
 
->  `ProjectSdkSetupValidator` will not work in IntelliJ Platform-based IDEs such as PyCharm. In such cases, you should register an implementation of [`EditorNotifications.Provider`](upsource:///platform/platform-api/src/com/intellij/ui/EditorNotifications.java) at the `com.intellij.editorNotificationProvider` extension point and override the `createNotificationPanel()` method with the conditionality and panel setup you want.
+>  `ProjectSdkSetupValidator` will not work in IntelliJ Platform-based IDEs such as PyCharm. In such cases, you should [register an implementation](editor_notifications_provider.md) of [`EditorNotifications.Provider`](upsource:///platform/platform-api/src/com/intellij/ui/EditorNotifications.java) at the `com.intellij.editorNotificationProvider` extension point and override the `createNotificationPanel()` method with the conditionality and panel setup you want.
 >
 {type="warning"}

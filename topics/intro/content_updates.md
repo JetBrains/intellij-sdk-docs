@@ -19,6 +19,9 @@ Editor - Text Selection
 SDK Setup Assistance
 : Added a code sample to the SDK tutorial that expands on [assisting in the setup of an SDK](sdk.md#assisting-in-setting-up-an-sdk).
 
+Editor Notification Provider
+: Added a [new tutorial](editor_notifications_provider.md) explaining how to use the `com.intellij.editorNotificationProvider` extension point.
+
 ## 2020
                   
 ### December-20

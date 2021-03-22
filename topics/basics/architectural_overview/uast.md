@@ -120,9 +120,7 @@ Otherwise, `UastVisitor` will continue the walk into depth.
 or [`UastHintedVisitorAdapter`](upsource:///java/java-analysis-api/src/com/intellij/uast/UastHintedVisitorAdapter.kt).
 The latter is preferable as it offers better performance and more predictable results.
 
-As a general rule, it's recommended to abstain from using `UastVisitor` if you don't need to process many `UElement`s of different types.
-When the structure of elements is not very important, it is better to walk the PSI-tree using `PsiElementVisitor` and [convert](#psi-to-uast-conversion) each `PsiElement` to its
-corresponding UAST explicitly via `UastContext.toUElement()`.
+As a general rule, it's recommended to abstain from using `UastVisitor`: if you don't need to process many `UElement`s of different types and if the structure of elements is not very important, then it is better to walk the PSI-tree using `PsiElementVisitor` and [convert](#psi-to-uast-conversion) each `PsiElement` to its corresponding UAST explicitly via `UastContext.toUElement()`.
 
 ## UAST Performance Hints
 
@@ -146,8 +144,7 @@ For really hard performance optimisation consider using `UastLanguagePlugin.getP
 literal values like numbers, booleans, and string. 
 Although string values are also literals, `ULiteralExpression` is not very handy to work with them.
 For instance, it doesn't handle Kotlin string interpolations.
-To process string literals when evaluating their value or to perform language injection, use   
-[`UInjectionHost`](upsource:///uast/uast-common/src/org/jetbrains/uast/expressions/UInjectionHost.kt) instead.
+To process string literals when evaluating their value or to perform language injection, use [`UInjectionHost`](upsource:///uast/uast-common/src/org/jetbrains/uast/expressions/UInjectionHost.kt) instead.
 
 ### `sourcePsi` and `javaPsi`, `psi` and `UElement` as PSI
 

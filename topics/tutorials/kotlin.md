@@ -98,7 +98,7 @@ There are many good resources for learning how to write build scripts for an Int
 [covscript-intellij](https://github.com/covscript/covscript-intellij/blob/master/build.gradle.kts) or
 [zig-intellij](https://github.com/ice1000/zig-intellij/blob/master/build.gradle.kts).
 
-Additionally, explore IntelliJ Platform Explorer's [list of open-source plugins](https://jb.gg/ipe?buildSystem=gradle_kts) using Gradle KTS.
+Additionally, explore IntelliJ Platform Explorer's [list of open-source plugins](https://jb.gg/ipe?buildSystem=gradle_kts) using Gradle KTS
 
 `build.gradle.kts` basically looks like:
 
@@ -148,6 +148,8 @@ Using a GUI designer with Kotlin is currently [not supported](https://youtrack.j
 
 If a plugin processes Kotlin code (e.g., providing inspections), it needs to add a dependency on the Kotlin plugin (Plugin ID `org.jetbrains.kotlin`) itself.
 Please refer to [Plugin Dependencies](plugin_dependencies.md) for more information.
+
+Depending on exact functionality, a plugin can also target [UAST (Unified Abstract Syntax Tree)](uast.md) to support multiple JVM languages, including Java and Kotlin.
 
 ## Caution
 

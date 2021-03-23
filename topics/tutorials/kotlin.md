@@ -98,6 +98,8 @@ There are many good resources for learning how to write build scripts for an Int
 [covscript-intellij](https://github.com/covscript/covscript-intellij/blob/master/build.gradle.kts) or
 [zig-intellij](https://github.com/ice1000/zig-intellij/blob/master/build.gradle.kts).
 
+Additionally, explore IntelliJ Platform Explorer's [list of open-source plugins](https://jb.gg/ipe?buildSystem=gradle_kts) using Gradle KTS.
+
 `build.gradle.kts` basically looks like:
 
 ```kotlin

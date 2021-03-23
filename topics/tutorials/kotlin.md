@@ -53,7 +53,7 @@ Your `build.gradle` file may look like so:
 ```groovy
 plugins {
     id "java"
-    id "org.jetbrains.kotlin.jvm" version "1.4.10"
+    id "org.jetbrains.kotlin.jvm" version "1.4.32"
     id "org.jetbrains.intellij" version "0.7.2"
 }
 
@@ -78,7 +78,7 @@ repositories {
 }
 
 dependencies {
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.4.10")
+    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.4.32")
 }
 
 intellij {
@@ -105,8 +105,8 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     id("java")
-    id("org.jetbrains.kotlin.jvm") version "1.4.10"
-    id("org.jetbrains.intellij") version "0.6.3"
+    id("org.jetbrains.kotlin.jvm") version "1.4.32"
+    id("org.jetbrains.intellij") version "0.7.2"
 }
 
 group = "com.your.company.name"

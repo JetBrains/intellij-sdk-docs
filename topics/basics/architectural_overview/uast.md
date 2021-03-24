@@ -12,6 +12,8 @@ work the same way for all these languages.
 
 Using UAST allows providing features that will work across all [supported JVM languages](#which-languages-are-supported) using a single implementation.
 
+Presentation [Writing IntelliJ Plugins for Kotlin](https://www.youtube.com/watch?v=j2tvi4GbOr4) offers a thorough overview of using UAST in real-world scenarios.  
+
 ### When should I use UAST?
 
 For plugins that should work for all JVM languages in the same way.
@@ -173,7 +175,7 @@ Still, consider exposing the raw `PsiElement` instead.
 
 ### UAST/PSI Tree Structure Mismatch
 
-UAST is an abstraction level on top of PSI of different languages and tries to build a unified tree.
+UAST is an abstraction level on top of PSI of different languages and tries to build a unified tree (see [Inspecting UAST Tree](#inspecting-uast-tree)).
 It leads to the fact that the tree structure could seriously diverge between UAST and original language,
 so no ancestor-descendant relation preserving is guaranteed.
 
@@ -185,3 +187,21 @@ For instance, results of
 ```
 
 could be different, not only in the number of elements, but also in their order.
+                        
+
+## Using UAST in Plugins
+
+To register extensions applicable to UAST, specify `language="UAST"` in `plugin.xml`.
+             
+### Inspecting UAST Tree
+
+To inspect UAST Tree, invoke [internal action](enabling_internal.md) **Tools \| Internal Actions \| UAST \| Dump UAST Tree (By Each PsiElement)**.
+            
+### Inspections
+
+Use [`AbstractBaseUastLocalInspectionTool`](upsource:///java/java-analysis-api/src/com/intellij/codeInspection/AbstractBaseUastLocalInspectionTool.java) as base class.
+If inspection targets only a subset of default types (`UFile`, `UClass`, `UField`, and `UMethod`), specify `UElement`s as hints in overloaded constructor to improve performance.
+        
+### Line Marker
+
+Use `UastUtils.getUParentForIdentifier()` or `UAnnotationUtils.getIdentifierAnnotationOwner()` for annotations to obtain suitable "identifier" element (see [Line Marker Provider](line_marker_provider.md) for details).

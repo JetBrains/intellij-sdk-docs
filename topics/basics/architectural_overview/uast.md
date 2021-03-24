@@ -27,7 +27,7 @@ Some known examples are:
 
 * Java - full support
 * Kotlin - full support
-* Scala - full support, but not mature yet
+* Scala - beta, but full support
 * Groovy - declarations only, method bodies not supported
 
 ### What about modifying PSI?

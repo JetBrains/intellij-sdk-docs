@@ -41,6 +41,7 @@ The IntelliJ Platform is Open Source, under the [Apache License](upsource:///LIC
 
 While this guide refers to the IntelliJ Platform as a separate entity, there is no "IntelliJ Platform" GitHub repository.
 Instead, the platform is considered to be an almost complete overlap with the IntelliJ IDEA Community Edition, which is a free and Open Source version of IntelliJ IDEA Ultimate (the GitHub repository linked above is the [JetBrains/intellij-community](https://github.com/JetBrains/intellij-community) repository).
+Please note: starting with 2021.1 release, some plugins bundled with IntelliJ IDEA Community Edition are not open-source.                                                            
 
 The version of the IntelliJ Platform is defined by the version of the corresponding release of IntelliJ IDEA Community Edition.
 For example, to build a plugin against IntelliJ IDEA (2019.1.1), build #191.6707.61 means specifying the same build number tag to get the correct Intellij Platform files from the `intellij-community` repository.

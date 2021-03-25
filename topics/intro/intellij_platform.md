@@ -25,13 +25,13 @@ The IntelliJ Platform includes parsers and a PSI model for many languages, and i
 
 Products built on the IntelliJ Platform are extensible applications, with the platform being responsible for creating components and the injection of dependencies into classes.
 The IntelliJ Platform fully supports plugins, and JetBrains hosts the [JetBrains Plugin Repository](https://plugins.jetbrains.com) can be used to distribute plugins that support one or more of the products.
-It is also possible to host your repositories and distribute plugins separately.
+It is also possible to distribute plugins using [Custom Plugin Repositories](update_plugins_format.md).
 
 Plugins can extend the platform in many ways, from adding a simple menu item to adding support for a complete language, build system, and debugger.
 Many of the existing functionality in the IntelliJ Platform is written as plugins that can be included or excluded depending on the needs of the end product.
 See the [Quick Start Guide](basics.md) for more details.
 
-The IntelliJ Platform is a JVM application, written mostly in Java and Kotlin.
+The IntelliJ Platform is a JVM application, written mostly in Java and [Kotlin](https://kotlinlang.org).
 You should be experienced with these languages, large libraries written in them, their associated tooling, and large open-source projects to write plugins for products based on the IntelliJ Platform.
 At this time, it's not possible to extend the IntelliJ Platform in non-JVM languages.
 
@@ -44,12 +44,12 @@ Instead, the platform is considered to be an almost complete overlap with the In
 
 The version of the IntelliJ Platform is defined by the version of the corresponding release of IntelliJ IDEA Community Edition.
 For example, to build a plugin against IntelliJ IDEA (2019.1.1), build #191.6707.61 means specifying the same build number tag to get the correct Intellij Platform files from the `intellij-community` repository.
-See the [build number ranges](build_number_ranges.md) page for more information about build numbers corresponding to version numbering.
+See the [Build Number Ranges](build_number_ranges.md) page for more information about build numbers corresponding to version numbering.
 
 Typically, an IDE that is based on the IntelliJ Platform will include the `intellij-community` repository as a Git submodule and provide configuration to describe which plugins from the `intellij-community`, and which custom plugins will make up the product.
 This is how the IDEA Ultimate team works, and they contribute code to both the custom plugins and the IntelliJ Platform itself.
 
-### IDEs Based on the IntelliJ Platform
+## IDEs Based on the IntelliJ Platform
 The IntelliJ Platform underlies many JetBrains IDEs.
 IntelliJ IDEA Ultimate is a superset of the IntelliJ IDEA Community Edition but includes closed source plugins ([see this feature comparison](https://www.jetbrains.com/idea/features/editions_comparison_matrix.html)).
 Similarly, other products such as WebStorm and DataGrip are based on the IntelliJ IDEA Community Edition, but with a different set of plugins included and excluding other default plugins.
@@ -81,7 +81,7 @@ JetBrains [Rider](https://www.jetbrains.com/rider/) uses the IntelliJ Platform d
 It uses the IntelliJ Platform to provide the user interface for a C# and .NET IDE, with the standard IntelliJ editors, tool windows, debugging experience, etc.
 It also integrates into the standard Find Usages and Search Everywhere UI and uses code completion, syntax highlighting, and so on.
 
-However, Rider doesn't create a full PSI (syntactic and semantic) model for C# files.
+However, Rider doesn't create a full [PSI](psi.md) (syntactic and semantic) model for C# files.
 Instead, it reuses [ReSharper](https://www.jetbrains.com/resharper/) to provide language functionality.
 All of the C# PSI model, inspections, code rewritings, such as quick fixes and refactorings are run out of the process, in a command-line version of ReSharper.
 This means that creating a plugin for Rider involves two parts - a plugin that lives in the IntelliJ "front end" to show user interface, and a plugin that lives in the ReSharper "back end" to analyze and work with the C# PSI.

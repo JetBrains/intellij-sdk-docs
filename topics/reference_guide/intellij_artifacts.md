@@ -22,7 +22,7 @@ Both the Releases and Snapshots repositories have two types of content:
 * Artifacts for individual modules from the IntelliJ Platform.
 These may be downloaded, or accessed directly from a `build.gradle` file, as explained below.
 
-Artifacts for IntelliJ Platform third-party dependencies are hosted at the [Bintray repository](https://jetbrains.bintray.com/intellij-third-party-dependencies).
+Artifacts for IntelliJ Platform third-party dependencies are hosted at a separate [intellij-dependencies](https://cache-redirector.jetbrains.com/intellij-dependencies) repository.
 A link to this repository should be added to `pom.xml`/`build.gradle` files when individual modules from an IntelliJ Platform artifacts repository are used.
 
 ## Using IntelliJ Platform Module Artifacts
@@ -37,7 +37,7 @@ To setup dependencies on a module there are two types of information needed:
 The URL for the desired artifact needs to be added to a Maven or Gradle script:
 * For release versions, use `https://www.jetbrains.com/intellij-repository/releases`
 * For EAP snapshots, use `https://www.jetbrains.com/intellij-repository/snapshots`
-* For dependencies on individual modules from the IntelliJ Platform, also use `https://jetbrains.bintray.com/intellij-third-party-dependencies`
+* For dependencies on individual modules from the IntelliJ Platform, also use `https://cache-redirector.jetbrains.com/intellij-dependencies`
 
 ### Specify the Maven Coordinates for the Artifact
 Describing a desired IntelliJ Platform module artifact is done with Maven coordinates: _groupId_, _artifactId_, and _version_.
@@ -94,7 +94,7 @@ The second URL is needed because this example selects individual modules.
 ```groovy
 repositories {
 	maven { url "https://www.jetbrains.com/intellij-repository/releases" }
-	maven { url "https://jetbrains.bintray.com/intellij-third-party-dependencies" }
+	maven { url "https://cache-redirector.jetbrains.com/intellij-dependencies" }
 }
 ```
 

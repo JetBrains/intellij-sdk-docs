@@ -106,6 +106,6 @@ More details on libraries can be found in the [plugin_model](https://github.com/
 ## Predefined Libraries
 EP: `com.intellij.additionalLibraryRootsProvider`
 
-[`AdditionalLibraryRootsProvider`](upsource:///platform/projectModel-impl/src/com/intellij/openapi/roots/AdditionalLibraryRootsProvider.java)
-Allows providing synthetic/predefined libraries ([`SyntheticLibrary`](upsource:///platform/projectModel-impl/src/com/intellij/openapi/roots/SyntheticLibrary.java)) in a project without exposing them in the model.
+[`AdditionalLibraryRootsProvider`](upsource:///platform/projectModel-api/src/com/intellij/openapi/roots/AdditionalLibraryRootsProvider.java)
+Allows providing synthetic/predefined libraries ([`SyntheticLibrary`](upsource:///platform/projectModel-api/src/com/intellij/openapi/roots/SyntheticLibrary.java)) in a project without exposing them in the model.
 By default, they're also hidden from UI.

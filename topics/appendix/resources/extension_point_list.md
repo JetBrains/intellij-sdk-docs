@@ -1,6 +1,6 @@
 [//]: # (title: Extension Point List)
 
-1200 Extension Points (EP)
+1216 Extension Points (EP)
                      
 See [Plugin Extensions](plugin_extensions.md) on how to declare extensions in your plugin.
   
@@ -49,7 +49,6 @@ _Implementation_ opens declaration of related class.
 
 | Extension Point | Implementation |
 |---|---|
-| [com.intellij.completionData](https://jb.gg/ipe?extensions=com.intellij.completionData) ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | [~~`CompletionData`~~](upsource:///platform/analysis-impl/src/com/intellij/codeInsight/completion/CompletionData.java) | 
 | [com.intellij.elementLookupRenderer](https://jb.gg/ipe?extensions=com.intellij.elementLookupRenderer) | [~~`ElementLookupRenderer`~~](upsource:///platform/analysis-impl/src/com/intellij/codeInsight/lookup/impl/ElementLookupRenderer.java) | 
 | [com.intellij.liveTemplateOptionalProcessor](https://jb.gg/ipe?extensions=com.intellij.liveTemplateOptionalProcessor) | [`TemplateOptionalProcessor`](upsource:///platform/analysis-impl/src/com/intellij/codeInsight/template/impl/TemplateOptionalProcessor.java) | 
 | [com.intellij.liveTemplatePreprocessor](https://jb.gg/ipe?extensions=com.intellij.liveTemplatePreprocessor) | [`TemplatePreprocessor`](upsource:///platform/analysis-impl/src/com/intellij/codeInsight/template/impl/TemplatePreprocessor.java) | 
@@ -96,29 +95,27 @@ _Implementation_ opens declaration of related class.
 |---|---|
 | [com.android.captureType](https://jb.gg/ipe?extensions=com.android.captureType) ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | [`CaptureType`](upsource:///android/android/src/com/android/tools/idea/profiling/capture/CaptureType.java) | 
 | [com.android.customProjectTypeImporter](https://jb.gg/ipe?extensions=com.android.customProjectTypeImporter) ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | [`CustomProjectTypeImporter`](upsource:///android/android/src/com/android/tools/idea/project/CustomProjectTypeImporter.java) | 
-| [com.android.gradle.sync.postSyncModuleSetupStep](https://jb.gg/ipe?extensions=com.android.gradle.sync.postSyncModuleSetupStep) ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | [`ModuleSetupStep`](upsource:///android/android/src/com/android/tools/idea/gradle/project/sync/setup/post/ModuleSetupStep.java) | 
 | [com.android.gradle.sync.postSyncProjectCleanupStep](https://jb.gg/ipe?extensions=com.android.gradle.sync.postSyncProjectCleanupStep) ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | [`ProjectCleanupStep`](upsource:///android/android/src/com/android/tools/idea/gradle/project/sync/setup/post/ProjectCleanupStep.java) | 
 | [com.android.gradle.sync.postSyncProjectSetupStep](https://jb.gg/ipe?extensions=com.android.gradle.sync.postSyncProjectSetupStep) ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | [`ProjectSetupStep`](upsource:///android/android/src/com/android/tools/idea/gradle/project/sync/setup/post/ProjectSetupStep.java) | 
-| [com.android.gradle.sync.syncErrorHandler](https://jb.gg/ipe?extensions=com.android.gradle.sync.syncErrorHandler) ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | [`SyncErrorHandler`](upsource:///android/android/src/com/android/tools/idea/gradle/project/sync/errors/SyncErrorHandler.java) | 
 | [com.android.ide.androidConfigurableContributor](https://jb.gg/ipe?extensions=com.android.ide.androidConfigurableContributor) ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | [`AndroidConfigurableContributor`](upsource:///android/android/src/com/android/tools/idea/structure/dialog/AndroidConfigurableContributor.kt) | 
-| [com.android.ide.developerServiceBuildSystemOperations](https://jb.gg/ipe?extensions=com.android.ide.developerServiceBuildSystemOperations) ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | [`DeveloperServiceBuildSystemOperations`](upsource:///android/android/src/com/android/tools/idea/structure/services/DeveloperServiceBuildSystemOperations.java) | 
 | [com.android.ide.moduleStructureConfigurableContributor](https://jb.gg/ipe?extensions=com.android.ide.moduleStructureConfigurableContributor) ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | [`ModuleStructureConfigurableContributor`](upsource:///android/android/src/com/android/tools/idea/structure/dialog/ModuleStructureConfigurableContributor.java) | 
 | [com.android.ide.projectStructureItemsContributor](https://jb.gg/ipe?extensions=com.android.ide.projectStructureItemsContributor) ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | [`ProjectStructureItemsContributor`](upsource:///android/android/src/com/android/tools/idea/structure/dialog/ProjectStructureItemsContributor.java) | 
 | [com.android.ide.sdkEventListener](https://jb.gg/ipe?extensions=com.android.ide.sdkEventListener) ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | [`AndroidSdkEventListener`](upsource:///android/android/src/com/android/tools/idea/sdk/IdeSdks.java) | 
 | [com.android.logcat.filterProvider](https://jb.gg/ipe?extensions=com.android.logcat.filterProvider) ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | [`LogcatFilterProvider`](upsource:///android/android/src/com/android/tools/idea/logcat/LogcatFilterProvider.java) | 
 | [com.android.moduleDescriptionProvider](https://jb.gg/ipe?extensions=com.android.moduleDescriptionProvider) ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | [`ModuleDescriptionProvider`](upsource:///android/android/src/com/android/tools/idea/npw/module/ModuleDescriptionProvider.kt) | 
+| [com.android.moduleImporter](https://jb.gg/ipe?extensions=com.android.moduleImporter) ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | [`AndroidModuleImporter`](upsource:///android/android/src/com/android/tools/idea/gradle/project/AndroidModuleImporter.kt) | 
 | [com.android.rendering.renderErrorContributor](https://jb.gg/ipe?extensions=com.android.rendering.renderErrorContributor) ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | [`Provider`](upsource:///android/android/src/com/android/tools/idea/rendering/RenderErrorContributor.java) | 
 | [com.android.rendering.renderSecurityManagerOverrides](https://jb.gg/ipe?extensions=com.android.rendering.renderSecurityManagerOverrides) ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | [`RenderSecurityManagerOverrides`](upsource:///android/android/src/com/android/tools/idea/rendering/RenderSecurityManagerOverrides.kt) | 
 | [com.android.run.androidDebugger](https://jb.gg/ipe?extensions=com.android.run.androidDebugger) ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | [`AndroidDebugger`](upsource:///android/android/src/com/android/tools/idea/run/editor/AndroidDebugger.java) | 
 | [com.android.run.androidLaunchTaskContributor](https://jb.gg/ipe?extensions=com.android.run.androidLaunchTaskContributor) ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | [`AndroidLaunchTaskContributor`](upsource:///android/android/src/com/android/tools/idea/run/AndroidLaunchTaskContributor.java) | 
 | [com.android.run.deployTargetProvider](https://jb.gg/ipe?extensions=com.android.run.deployTargetProvider) ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | [`DeployTargetProvider`](upsource:///android/android/src/com/android/tools/idea/run/editor/DeployTargetProvider.java) | 
 | [com.android.run.deviceNameRenderer](https://jb.gg/ipe?extensions=com.android.run.deviceNameRenderer) ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | [`DeviceNameRendererEx`](upsource:///android/android/src/com/android/tools/idea/ddms/DeviceNameRendererEx.java) | 
-| [com.android.tools.gradleModelProvider](https://jb.gg/ipe?extensions=com.android.tools.gradleModelProvider) ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | [`GradleModelProvider`](upsource:///plugins/gradle-dsl/src/com/android/tools/idea/gradle/dsl/api/GradleModelProvider.java) | 
+| [com.android.tools.gradleModelProvider](https://jb.gg/ipe?extensions=com.android.tools.gradleModelProvider) ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | [`GradleModelProvider`](upsource:///android/gradle-dsl/src/com/android/tools/idea/gradle/dsl/api/GradleModelProvider.java) | 
 | [com.android.tools.idea.databinding.layoutBindingSupport](https://jb.gg/ipe?extensions=com.android.tools.idea.databinding.layoutBindingSupport) ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | [`LayoutBindingSupport`](upsource:///android/android/src/com/android/tools/idea/databinding/LayoutBindingSupport.kt) | 
-| [com.android.tools.idea.explorer.fileOpener](https://jb.gg/ipe?extensions=com.android.tools.idea.explorer.fileOpener) ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | `n/a` | 
 | [com.android.tools.idea.lang.databinding.dataBindingCompletionSupport](https://jb.gg/ipe?extensions=com.android.tools.idea.lang.databinding.dataBindingCompletionSupport) ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | [`DataBindingCompletionSupport`](upsource:///android/android/src/com/android/tools/idea/lang/databinding/DataBindingCompletionSupport.kt) | 
 | [com.android.tools.idea.lang.databinding.dataBindingExpressionSupport](https://jb.gg/ipe?extensions=com.android.tools.idea.lang.databinding.dataBindingExpressionSupport) ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | [`DataBindingExpressionSupport`](upsource:///android/android/src/com/android/tools/idea/lang/databinding/DataBindingExpressionSupport.kt) | 
-| [com.android.tools.idea.structure.services.developerServiceCreators](https://jb.gg/ipe?extensions=com.android.tools.idea.structure.services.developerServiceCreators) ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | [`DeveloperServiceCreators`](upsource:///android/android/src/com/android/tools/idea/structure/services/DeveloperServiceCreators.java) | 
+| [com.android.tools.idea.run.editor.androidDebuggerInfoProvider](https://jb.gg/ipe?extensions=com.android.tools.idea.run.editor.androidDebuggerInfoProvider) ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | [`AndroidDebuggerInfoProvider`](upsource:///android/android/src/com/android/tools/idea/run/editor/AndroidDebuggerInfoProvider.java) | 
+| [com.android.tools.idea.templates.additionalTemplateActionsProvider](https://jb.gg/ipe?extensions=com.android.tools.idea.templates.additionalTemplateActionsProvider) ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | [`AdditionalTemplateActionsProvider`](upsource:///android/android/src/com/android/tools/idea/templates/AdditionalTemplateActionsProvider.java) | 
 | [com.android.tools.idea.ui.guiTestingStatusProvider](https://jb.gg/ipe?extensions=com.android.tools.idea.ui.guiTestingStatusProvider) ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | [`GuiTestingStatusProvider`](upsource:///android/android/src/com/android/tools/idea/ui/GuiTestingStatusProvider.java) | 
 | [com.android.tools.idea.wizard.template.wizardTemplateProvider](https://jb.gg/ipe?extensions=com.android.tools.idea.wizard.template.wizardTemplateProvider) ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | `WizardTemplateProvider` | 
 | [org.jetbrains.android.actions.newResourceCreationHandler](https://jb.gg/ipe?extensions=org.jetbrains.android.actions.newResourceCreationHandler) ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | [`NewResourceCreationHandler`](upsource:///android/android/src/org/jetbrains/android/actions/NewResourceCreationHandler.java) | 
@@ -139,6 +136,13 @@ _Implementation_ opens declaration of related class.
 |---|---|
 | [AntSupport.AntMessageCustomizer](https://jb.gg/ipe?extensions=AntSupport.AntMessageCustomizer) | [`AntMessageCustomizer`](upsource:///plugins/ant/src/com/intellij/lang/ant/config/execution/AntMessageCustomizer.java) | 
 
+## app-inspector.xml
+[app-inspector.xml](upsource:///android/app-inspection/inspector/ide/src/META-INF/app-inspector.xml)
+
+| Extension Point | Implementation |
+|---|---|
+| [com.android.tools.idea.appinspection.inspector.ide.appInspectorTabProvider](https://jb.gg/ipe?extensions=com.android.tools.idea.appinspection.inspector.ide.appInspectorTabProvider) ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | [`AppInspectorTabProvider`](upsource:///android/app-inspection/inspector/ide/src/com/android/tools/idea/appinspection/inspector/ide/AppInspectorTabProvider.kt) | 
+
 ## assistant.xml
 [assistant.xml](upsource:///android/assistant/src/META-INF/assistant.xml)
 
@@ -147,6 +151,7 @@ _Implementation_ opens declaration of related class.
 | [com.android.tools.idea.assistant.actionHandler](https://jb.gg/ipe?extensions=com.android.tools.idea.assistant.actionHandler) ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | [`AssistActionHandler`](upsource:///android/assistant/src/com/android/tools/idea/assistant/AssistActionHandler.java) | 
 | [com.android.tools.idea.assistant.actionStateManager](https://jb.gg/ipe?extensions=com.android.tools.idea.assistant.actionStateManager) ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | [`AssistActionStateManager`](upsource:///android/assistant/src/com/android/tools/idea/assistant/AssistActionStateManager.java) | 
 | [com.android.tools.idea.assistant.assistantBundleCreator](https://jb.gg/ipe?extensions=com.android.tools.idea.assistant.assistantBundleCreator) ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | [`AssistantBundleCreator`](upsource:///android/assistant/src/com/android/tools/idea/assistant/AssistantBundleCreator.java) | 
+| [com.android.tools.idea.assistant.navlistener](https://jb.gg/ipe?extensions=com.android.tools.idea.assistant.navlistener) ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | [`AssistNavListener`](upsource:///android/assistant/src/com/android/tools/idea/assistant/AssistNavListener.java) | 
 | [com.android.tools.idea.assistant.panelFactory](https://jb.gg/ipe?extensions=com.android.tools.idea.assistant.panelFactory) ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | [`PanelFactory`](upsource:///android/assistant/src/com/android/tools/idea/assistant/PanelFactory.java) | 
 | [com.android.tools.idea.assistant.scrollHandler](https://jb.gg/ipe?extensions=com.android.tools.idea.assistant.scrollHandler) ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | [`ScrollHandler`](upsource:///android/assistant/src/com/android/tools/idea/assistant/ScrollHandler.java) | 
 
@@ -206,6 +211,7 @@ _Implementation_ opens declaration of related class.
 | [org.jetbrains.plugins.gradle.projectModelContributor](https://jb.gg/ipe?extensions=org.jetbrains.plugins.gradle.projectModelContributor) ![Experimental API](https://img.shields.io/badge/-Experimental_API-red) | [`ProjectModelContributor`](upsource:///plugins/gradle/src/org/jetbrains/plugins/gradle/service/project/ProjectModelContributor.java) | 
 | [org.jetbrains.plugins.gradle.projectResolve](https://jb.gg/ipe?extensions=org.jetbrains.plugins.gradle.projectResolve) | [`GradleProjectResolverExtension`](upsource:///plugins/gradle/src/org/jetbrains/plugins/gradle/service/project/GradleProjectResolverExtension.java) | 
 | [org.jetbrains.plugins.gradle.settingsControlProvider](https://jb.gg/ipe?extensions=org.jetbrains.plugins.gradle.settingsControlProvider) | [`GradleSettingsControlProvider`](upsource:///plugins/gradle/src/org/jetbrains/plugins/gradle/service/settings/GradleSettingsControlProvider.java) | 
+| [org.jetbrains.plugins.gradle.targetEnvironmentAware](https://jb.gg/ipe?extensions=org.jetbrains.plugins.gradle.targetEnvironmentAware) | [`GradleTargetEnvironmentAware`](upsource:///plugins/gradle/src/org/jetbrains/plugins/gradle/execution/target/GradleTargetEnvironmentAware.java) | 
 | [org.jetbrains.plugins.gradle.taskManager](https://jb.gg/ipe?extensions=org.jetbrains.plugins.gradle.taskManager) | [`GradleTaskManagerExtension`](upsource:///plugins/gradle/src/org/jetbrains/plugins/gradle/service/task/GradleTaskManagerExtension.java) | 
 
 ## com.intellij.java-i18n
@@ -228,9 +234,9 @@ _Implementation_ opens declaration of related class.
 
 | Extension Point | Implementation |
 |---|---|
-| [com.intellij.properties.alphaUnsortedInspectionSuppressor](https://jb.gg/ipe?extensions=com.intellij.properties.alphaUnsortedInspectionSuppressor) | [`AlphaUnsortedPropertiesFileInspectionSuppressor`](upsource:///plugins/properties/properties-psi-impl/src/com/intellij/codeInspection/unsorted/AlphaUnsortedPropertiesFileInspectionSuppressor.java) | 
+| [com.intellij.properties.alphaUnsortedInspectionSuppressor](https://jb.gg/ipe?extensions=com.intellij.properties.alphaUnsortedInspectionSuppressor) | [`AlphaUnsortedPropertiesFileInspectionSuppressor`](upsource:///plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/codeInspection/unsorted/AlphaUnsortedPropertiesFileInspectionSuppressor.java) | 
 | [com.intellij.properties.duplicatePropertyKeyAnnotationSuppressor](https://jb.gg/ipe?extensions=com.intellij.properties.duplicatePropertyKeyAnnotationSuppressor) | [`DuplicatePropertyKeyAnnotationSuppressor`](upsource:///plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/DuplicatePropertyKeyAnnotationSuppressor.java) | 
-| [com.intellij.properties.implicitPropertyUsageProvider](https://jb.gg/ipe?extensions=com.intellij.properties.implicitPropertyUsageProvider) | [`ImplicitPropertyUsageProvider`](upsource:///plugins/properties/properties-psi-impl/src/com/intellij/codeInspection/unused/ImplicitPropertyUsageProvider.java) | 
+| [com.intellij.properties.implicitPropertyUsageProvider](https://jb.gg/ipe?extensions=com.intellij.properties.implicitPropertyUsageProvider) | [`ImplicitPropertyUsageProvider`](upsource:///plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/codeInspection/unused/ImplicitPropertyUsageProvider.java) | 
 
 ## com.intellij.stats.completion
 [com.intellij.stats.completion](upsource:///plugins/stats-collector/resources/META-INF/plugin.xml)
@@ -290,13 +296,6 @@ _Implementation_ opens declaration of related class.
 | [com.intellij.packagesearch.projectModuleOperationProvider](https://jb.gg/ipe?extensions=com.intellij.packagesearch.projectModuleOperationProvider) | [`ProjectModuleOperationProvider`](upsource:///plugins/package-search/src/com/jetbrains/packagesearch/intellij/plugin/extensibility/ProjectModuleOperationProvider.kt) | 
 | [com.intellij.packagesearch.projectModuleProvider](https://jb.gg/ipe?extensions=com.intellij.packagesearch.projectModuleProvider) ![Project-Level](https://img.shields.io/badge/-Project--Level-yellow) | [`ProjectModuleProvider`](upsource:///plugins/package-search/src/com/jetbrains/packagesearch/intellij/plugin/extensibility/ProjectModuleProvider.kt) | 
 
-## com.jetbrains.sh
-[com.jetbrains.sh](upsource:///plugins/sh/resources/META-INF/plugin.xml)
-
-| Extension Point | Implementation |
-|---|---|
-| [com.intellij.sh.shSupport](https://jb.gg/ipe?extensions=com.intellij.sh.shSupport) | [~~`ShSupport`~~](upsource:///plugins/sh/src/com/intellij/sh/ShSupport.java) | 
-
 ## CompletionExtensionPoints.xml
 [CompletionExtensionPoints.xml](upsource:///platform/platform-resources/src/META-INF/CompletionExtensionPoints.xml)
 
@@ -334,6 +333,8 @@ _Implementation_ opens declaration of related class.
 | [com.intellij.lang.elementManipulator](https://jb.gg/ipe?extensions=com.intellij.lang.elementManipulator) | [`ElementManipulator`](upsource:///platform/core-api/src/com/intellij/psi/ElementManipulator.java) | 
 | [com.intellij.lang.parserDefinition](https://jb.gg/ipe?extensions=com.intellij.lang.parserDefinition) | [`ParserDefinition`](upsource:///platform/core-api/src/com/intellij/lang/ParserDefinition.java) | 
 | [com.intellij.languageBundle](https://jb.gg/ipe?extensions=com.intellij.languageBundle) ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | `n/a` | 
+| [com.intellij.languageInjectionContributor](https://jb.gg/ipe?extensions=com.intellij.languageInjectionContributor) | [`LanguageInjectionContributor`](upsource:///platform/core-api/src/com/intellij/lang/injection/general/LanguageInjectionContributor.java) | 
+| [com.intellij.languageInjectionPerformer](https://jb.gg/ipe?extensions=com.intellij.languageInjectionPerformer) | [`LanguageInjectionPerformer`](upsource:///platform/core-api/src/com/intellij/lang/injection/general/LanguageInjectionPerformer.java) | 
 | [com.intellij.metaLanguage](https://jb.gg/ipe?extensions=com.intellij.metaLanguage) | [`MetaLanguage`](upsource:///platform/core-api/src/com/intellij/lang/MetaLanguage.java) | 
 | [com.intellij.moduleService](https://jb.gg/ipe?extensions=com.intellij.moduleService) | `n/a` | 
 | [com.intellij.multiHostInjector](https://jb.gg/ipe?extensions=com.intellij.multiHostInjector) ![Project-Level](https://img.shields.io/badge/-Project--Level-yellow) | [`MultiHostInjector`](upsource:///platform/core-api/src/com/intellij/lang/injection/MultiHostInjector.java) | 
@@ -353,6 +354,7 @@ _Implementation_ opens declaration of related class.
 | Extension Point | Implementation |
 |---|---|
 | [com.intellij.controlFlowProvider](https://jb.gg/ipe?extensions=com.intellij.controlFlowProvider) | [`ControlFlowProvider`](upsource:///platform/core-impl/src/com/intellij/codeInsight/controlflow/ControlFlowProvider.java) | 
+| [com.intellij.documentWriteAccessGuard](https://jb.gg/ipe?extensions=com.intellij.documentWriteAccessGuard) ![Experimental API](https://img.shields.io/badge/-Experimental_API-red) | [`DocumentWriteAccessGuard`](upsource:///platform/core-impl/src/com/intellij/openapi/editor/impl/DocumentWriteAccessGuard.java) | 
 | [com.intellij.lang.ast.factory](https://jb.gg/ipe?extensions=com.intellij.lang.ast.factory) | [`ASTFactory`](upsource:///platform/core-impl/src/com/intellij/lang/ASTFactory.java) | 
 | [com.intellij.lang.tokenSeparatorGenerator](https://jb.gg/ipe?extensions=com.intellij.lang.tokenSeparatorGenerator) | [`TokenSeparatorGenerator`](upsource:///platform/core-api/src/com/intellij/lang/TokenSeparatorGenerator.java) | 
 | [com.intellij.psi.implicitReferenceProvider](https://jb.gg/ipe?extensions=com.intellij.psi.implicitReferenceProvider) | [`ImplicitReferenceProvider`](upsource:///platform/core-api/src/com/intellij/model/psi/ImplicitReferenceProvider.java) | 
@@ -362,7 +364,7 @@ _Implementation_ opens declaration of related class.
 | [com.intellij.psi.treeChangePreprocessor](https://jb.gg/ipe?extensions=com.intellij.psi.treeChangePreprocessor) ![Project-Level](https://img.shields.io/badge/-Project--Level-yellow) | [`PsiTreeChangePreprocessor`](upsource:///platform/core-impl/src/com/intellij/psi/impl/PsiTreeChangePreprocessor.java) | 
 | [com.intellij.smartPointer.anchorProvider](https://jb.gg/ipe?extensions=com.intellij.smartPointer.anchorProvider) | [`SmartPointerAnchorProvider`](upsource:///platform/core-impl/src/com/intellij/psi/impl/smartPointers/SmartPointerAnchorProvider.java) | 
 | [com.intellij.treeCopyHandler](https://jb.gg/ipe?extensions=com.intellij.treeCopyHandler) | [`TreeCopyHandler`](upsource:///platform/core-impl/src/com/intellij/psi/impl/source/tree/TreeCopyHandler.java) | 
-| [com.intellij.virtualFileSystem](https://jb.gg/ipe?extensions=com.intellij.virtualFileSystem) | [`VirtualFileSystem`](upsource:///platform/core-api/src/com/intellij/openapi/vfs/VirtualFileSystem.java) | 
+| [com.intellij.virtualFileSystem](https://jb.gg/ipe?extensions=com.intellij.virtualFileSystem) | [`VirtualFileSystem`](upsource:///platform/core-api/src/com/intellij/openapi/vfs/VirtualFileSystem.java) |
 
 ## Coverage
 [Coverage](upsource:///plugins/coverage/src/META-INF/plugin.xml)
@@ -438,6 +440,8 @@ _Implementation_ opens declaration of related class.
 | [com.intellij.cherryPicker](https://jb.gg/ipe?extensions=com.intellij.cherryPicker) ![Project-Level](https://img.shields.io/badge/-Project--Level-yellow) | [`VcsCherryPicker`](upsource:///platform/dvcs-api/src/com/intellij/dvcs/cherrypick/VcsCherryPicker.java) | 
 | [com.intellij.clonePathProvider](https://jb.gg/ipe?extensions=com.intellij.clonePathProvider) | [`ClonePathProvider`](upsource:///platform/dvcs-impl/src/com/intellij/dvcs/repo/ClonePathProvider.java) | 
 | [com.intellij.prePushHandler](https://jb.gg/ipe?extensions=com.intellij.prePushHandler) ![Project-Level](https://img.shields.io/badge/-Project--Level-yellow) | [`PrePushHandler`](upsource:///platform/dvcs-impl/src/com/intellij/dvcs/push/PrePushHandler.java) | 
+| [com.intellij.pushDialogActionsProvider](https://jb.gg/ipe?extensions=com.intellij.pushDialogActionsProvider) ![Internal API](https://img.shields.io/badge/-Internal_API-red) | [`PushDialogActionsProvider`](upsource:///platform/dvcs-impl/src/com/intellij/dvcs/push/PushDialogActionsProvider.kt) | 
+| [com.intellij.pushDialogCustomizer](https://jb.gg/ipe?extensions=com.intellij.pushDialogCustomizer) ![Internal API](https://img.shields.io/badge/-Internal_API-red) | [`PushDialogCustomizer`](upsource:///platform/dvcs-impl/src/com/intellij/dvcs/push/PushDialogCustomizer.kt) | 
 | [com.intellij.pushSupport](https://jb.gg/ipe?extensions=com.intellij.pushSupport) ![Project-Level](https://img.shields.io/badge/-Project--Level-yellow) | [`PushSupport`](upsource:///platform/dvcs-api/src/com/intellij/dvcs/push/PushSupport.java) | 
 | [com.intellij.vcsRepositoryCreator](https://jb.gg/ipe?extensions=com.intellij.vcsRepositoryCreator) | [`VcsRepositoryCreator`](upsource:///platform/dvcs-impl/src/com/intellij/dvcs/repo/VcsRepositoryCreator.java) | 
 
@@ -468,6 +472,7 @@ _Implementation_ opens declaration of related class.
 | [com.intellij.enterHandlerDelegate](https://jb.gg/ipe?extensions=com.intellij.enterHandlerDelegate) | [`EnterHandlerDelegate`](upsource:///platform/lang-impl/src/com/intellij/codeInsight/editorActions/enter/EnterHandlerDelegate.java) | 
 | [com.intellij.extendWordSelectionHandler](https://jb.gg/ipe?extensions=com.intellij.extendWordSelectionHandler) | [`ExtendWordSelectionHandler`](upsource:///platform/lang-api/src/com/intellij/codeInsight/editorActions/ExtendWordSelectionHandler.java) | 
 | [com.intellij.flipCommaIntention.flipper](https://jb.gg/ipe?extensions=com.intellij.flipCommaIntention.flipper) | [`Flipper`](upsource:///platform/lang-impl/src/com/intellij/openapi/editor/actions/FlipCommaIntention.java) | 
+| [com.intellij.generalEditorOptionsCustomizer](https://jb.gg/ipe?extensions=com.intellij.generalEditorOptionsCustomizer) ![Internal API](https://img.shields.io/badge/-Internal_API-red) | [`EditorOptionsPageCustomizer`](upsource:///platform/lang-impl/src/com/intellij/application/options/editor/EditorOptionsPageCustomizer.kt) | 
 | [com.intellij.generalEditorOptionsExtension](https://jb.gg/ipe?extensions=com.intellij.generalEditorOptionsExtension) | [`UnnamedConfigurable`](upsource:///platform/platform-api/src/com/intellij/openapi/options/UnnamedConfigurable.java) | 
 | [com.intellij.joinLinesHandler](https://jb.gg/ipe?extensions=com.intellij.joinLinesHandler) | [`JoinLinesHandlerDelegate`](upsource:///platform/lang-api/src/com/intellij/codeInsight/editorActions/JoinLinesHandlerDelegate.java) | 
 | [com.intellij.lang.emacs](https://jb.gg/ipe?extensions=com.intellij.lang.emacs) | [`EmacsProcessingHandler`](upsource:///platform/lang-impl/src/com/intellij/codeInsight/editorActions/emacs/EmacsProcessingHandler.java) | 
@@ -525,18 +530,19 @@ _Implementation_ opens declaration of related class.
 | [com.intellij.externalFormatProcessor](https://jb.gg/ipe?extensions=com.intellij.externalFormatProcessor) ![Experimental API](https://img.shields.io/badge/-Experimental_API-red) | [`ExternalFormatProcessor`](upsource:///platform/code-style-impl/src/com/intellij/psi/codeStyle/ExternalFormatProcessor.java) | 
 | [com.intellij.fileCodeStyleProvider](https://jb.gg/ipe?extensions=com.intellij.fileCodeStyleProvider) | [`FileCodeStyleProvider`](upsource:///platform/code-style-api/src/com/intellij/psi/codeStyle/FileCodeStyleProvider.java) | 
 | [com.intellij.fileIndentOptionsProvider](https://jb.gg/ipe?extensions=com.intellij.fileIndentOptionsProvider) | [`FileIndentOptionsProvider`](upsource:///platform/code-style-api/src/com/intellij/psi/codeStyle/FileIndentOptionsProvider.java) | 
+| [com.intellij.fileSetDescriptorFactory](https://jb.gg/ipe?extensions=com.intellij.fileSetDescriptorFactory) | [`FileSetDescriptorFactory`](upsource:///platform/code-style-api/src/com/intellij/formatting/fileSet/FileSetDescriptorFactory.java) | 
 | [com.intellij.fileTypeIndentOptionsProvider](https://jb.gg/ipe?extensions=com.intellij.fileTypeIndentOptionsProvider) | [`FileTypeIndentOptionsProvider`](upsource:///platform/lang-api/src/com/intellij/psi/codeStyle/FileTypeIndentOptionsProvider.java) | 
 | [com.intellij.lang.formatter](https://jb.gg/ipe?extensions=com.intellij.lang.formatter) | [`FormattingModelBuilder`](upsource:///platform/code-style-api/src/com/intellij/formatting/FormattingModelBuilder.java) | 
 | [com.intellij.lang.formatter.newLineIndentMarkerProvider](https://jb.gg/ipe?extensions=com.intellij.lang.formatter.newLineIndentMarkerProvider) | [`NewLineIndentMarkerProvider`](upsource:///platform/code-style-impl/src/com/intellij/psi/impl/source/codeStyle/NewLineIndentMarkerProvider.java) | 
 | [com.intellij.lang.formatter.restriction](https://jb.gg/ipe?extensions=com.intellij.lang.formatter.restriction) | [`LanguageFormattingRestriction`](upsource:///platform/code-style-api/src/com/intellij/lang/LanguageFormattingRestriction.java) | 
 | [com.intellij.lang.formatting.extractor](https://jb.gg/ipe?extensions=com.intellij.lang.formatting.extractor) | [`LangCodeStyleExtractor`](upsource:///platform/lang-api/src/com/intellij/psi/codeStyle/extractor/differ/LangCodeStyleExtractor.java) | 
-| [com.intellij.lang.importOptimizer](https://jb.gg/ipe?extensions=com.intellij.lang.importOptimizer) | [`ImportOptimizer`](upsource:///platform/lang-api/src/com/intellij/lang/ImportOptimizer.java) | 
+| [com.intellij.lang.importOptimizer](https://jb.gg/ipe?extensions=com.intellij.lang.importOptimizer) | [`ImportOptimizer`](upsource:///platform/analysis-api/src/com/intellij/lang/ImportOptimizer.java) | 
 | [com.intellij.lang.indentStrategy](https://jb.gg/ipe?extensions=com.intellij.lang.indentStrategy) | [`IndentStrategy`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/editor/IndentStrategy.java) | 
 | [com.intellij.lang.lineWrapStrategy](https://jb.gg/ipe?extensions=com.intellij.lang.lineWrapStrategy) | [`LineWrapPositionStrategy`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/editor/LineWrapPositionStrategy.java) | 
 | [com.intellij.lang.rearranger](https://jb.gg/ipe?extensions=com.intellij.lang.rearranger) | [`Rearranger`](upsource:///platform/code-style-api/src/com/intellij/psi/codeStyle/arrangement/Rearranger.java) | 
 | [com.intellij.lang.whiteSpaceFormattingStrategy](https://jb.gg/ipe?extensions=com.intellij.lang.whiteSpaceFormattingStrategy) | [`WhiteSpaceFormattingStrategy`](upsource:///platform/code-style-impl/src/com/intellij/psi/formatter/WhiteSpaceFormattingStrategy.java) | 
 | [com.intellij.langCodeStyleSettingsProvider](https://jb.gg/ipe?extensions=com.intellij.langCodeStyleSettingsProvider) | [`LanguageCodeStyleSettingsProvider`](upsource:///platform/lang-api/src/com/intellij/psi/codeStyle/LanguageCodeStyleSettingsProvider.java) | 
-| [com.intellij.lineIndentProvider](https://jb.gg/ipe?extensions=com.intellij.lineIndentProvider) | [`LineIndentProvider`](upsource:///platform/lang-api/src/com/intellij/psi/codeStyle/lineIndent/LineIndentProvider.java) | 
+| [com.intellij.lineIndentProvider](https://jb.gg/ipe?extensions=com.intellij.lineIndentProvider) | [`LineIndentProvider`](upsource:///platform/code-style-api/src/com/intellij/psi/codeStyle/lineIndent/LineIndentProvider.java) | 
 | [com.intellij.postFormatProcessor](https://jb.gg/ipe?extensions=com.intellij.postFormatProcessor) | [`PostFormatProcessor`](upsource:///platform/code-style-impl/src/com/intellij/psi/impl/source/codeStyle/PostFormatProcessor.java) | 
 | [com.intellij.preFormatProcessor](https://jb.gg/ipe?extensions=com.intellij.preFormatProcessor) | [`PreFormatProcessor`](upsource:///platform/code-style-impl/src/com/intellij/psi/impl/source/codeStyle/PreFormatProcessor.java) | 
 | [com.intellij.predefinedCodeStyle](https://jb.gg/ipe?extensions=com.intellij.predefinedCodeStyle) | [`PredefinedCodeStyle`](upsource:///platform/lang-api/src/com/intellij/psi/codeStyle/PredefinedCodeStyle.java) | 
@@ -576,6 +582,7 @@ _Implementation_ opens declaration of related class.
 | [com.intellij.definitionsSearch](https://jb.gg/ipe?extensions=com.intellij.definitionsSearch) | [`QueryExecutor`](upsource:///platform/core-api/src/com/intellij/util/QueryExecutor.java) | 
 | [com.intellij.fileBasedIndex](https://jb.gg/ipe?extensions=com.intellij.fileBasedIndex) | [`FileBasedIndexExtension`](upsource:///platform/indexing-api/src/com/intellij/util/indexing/FileBasedIndexExtension.java) | 
 | [com.intellij.fileBasedIndexInfrastructureExtension](https://jb.gg/ipe?extensions=com.intellij.fileBasedIndexInfrastructureExtension) ![Internal API](https://img.shields.io/badge/-Internal_API-red) | [`FileBasedIndexInfrastructureExtension`](upsource:///platform/lang-impl/src/com/intellij/util/indexing/FileBasedIndexInfrastructureExtension.java) | 
+| [com.intellij.fileBasedIndexLayout](https://jb.gg/ipe?extensions=com.intellij.fileBasedIndexLayout) | [`FileBasedIndexLayoutProvider`](upsource:///platform/lang-impl/src/com/intellij/util/indexing/impl/storage/FileBasedIndexLayoutProvider.java) | 
 | [com.intellij.findModelExtension](https://jb.gg/ipe?extensions=com.intellij.findModelExtension) ![Experimental API](https://img.shields.io/badge/-Experimental_API-red) | [`FindModelExtension`](upsource:///platform/indexing-api/src/com/intellij/find/FindModelExtension.java) | 
 | [com.intellij.indexableFilesContributor](https://jb.gg/ipe?extensions=com.intellij.indexableFilesContributor) ![Experimental API](https://img.shields.io/badge/-Experimental_API-red) | [`IndexableFilesContributor`](upsource:///platform/indexing-api/src/com/intellij/util/indexing/roots/IndexableFilesContributor.java) | 
 | [com.intellij.indexedRootsProvider](https://jb.gg/ipe?extensions=com.intellij.indexedRootsProvider) | [`IndexableSetContributor`](upsource:///platform/indexing-api/src/com/intellij/util/indexing/IndexableSetContributor.java) | 
@@ -613,6 +620,7 @@ _Implementation_ opens declaration of related class.
 | [com.intellij.deadCode](https://jb.gg/ipe?extensions=com.intellij.deadCode) | [`EntryPoint`](upsource:///platform/analysis-api/src/com/intellij/codeInspection/reference/EntryPoint.java) | 
 | [com.intellij.java.error.fix](https://jb.gg/ipe?extensions=com.intellij.java.error.fix) | [`IntentionAction`](upsource:///platform/analysis-api/src/com/intellij/codeInsight/intention/IntentionAction.java) | 
 | [com.intellij.lang.jvm.actions.jvmElementActionsFactory](https://jb.gg/ipe?extensions=com.intellij.lang.jvm.actions.jvmElementActionsFactory) | [`JvmElementActionsFactory`](upsource:///java/java-analysis-api/src/com/intellij/lang/jvm/actions/JvmElementActionsFactory.kt) | 
+| [com.intellij.lang.jvm.annotationPackageSupport](https://jb.gg/ipe?extensions=com.intellij.lang.jvm.annotationPackageSupport) | [`AnnotationPackageSupport`](upsource:///java/java-impl/src/com/intellij/codeInsight/annoPackages/AnnotationPackageSupport.java) | 
 | [com.intellij.visibility](https://jb.gg/ipe?extensions=com.intellij.visibility) | [`VisibilityExtension`](upsource:///platform/analysis-impl/src/com/intellij/codeInspection/visibility/VisibilityExtension.java) | 
 
 ## JavaIndexingPlugin.xml
@@ -648,13 +656,13 @@ _Implementation_ opens declaration of related class.
 | [com.intellij.compilableFileTypesProvider](https://jb.gg/ipe?extensions=com.intellij.compilableFileTypesProvider) ![Project-Level](https://img.shields.io/badge/-Project--Level-yellow) | [`CompilableFileTypesProvider`](upsource:///java/compiler/openapi/src/com/intellij/openapi/compiler/CompilableFileTypesProvider.java) | 
 | [com.intellij.compileServer.plugin](https://jb.gg/ipe?extensions=com.intellij.compileServer.plugin) | `n/a` | 
 | [com.intellij.compiler](https://jb.gg/ipe?extensions=com.intellij.compiler) ![Project-Level](https://img.shields.io/badge/-Project--Level-yellow) | [~~`Compiler`~~](upsource:///java/compiler/openapi/src/com/intellij/openapi/compiler/Compiler.java) | 
+| [com.intellij.compiler.buildIssueContributor](https://jb.gg/ipe?extensions=com.intellij.compiler.buildIssueContributor) ![Experimental API](https://img.shields.io/badge/-Experimental_API-red) | [`BuildIssueContributor`](upsource:///java/compiler/impl/src/com/intellij/compiler/progress/BuildIssueContributor.java) | 
 | [com.intellij.compiler.buildTargetScopeProvider](https://jb.gg/ipe?extensions=com.intellij.compiler.buildTargetScopeProvider) | [`BuildTargetScopeProvider`](upsource:///java/compiler/impl/src/com/intellij/compiler/impl/BuildTargetScopeProvider.java) | 
 | [com.intellij.compiler.inspectionValidator](https://jb.gg/ipe?extensions=com.intellij.compiler.inspectionValidator) ![Project-Level](https://img.shields.io/badge/-Project--Level-yellow) | [`InspectionValidator`](upsource:///java/compiler/openapi/src/com/intellij/openapi/compiler/util/InspectionValidator.java) | 
 | [com.intellij.compiler.optionsManager](https://jb.gg/ipe?extensions=com.intellij.compiler.optionsManager) | [`CompilerOptionsFilter`](upsource:///java/compiler/impl/src/com/intellij/compiler/options/CompilerOptionsFilter.java) | 
 | [com.intellij.compiler.task](https://jb.gg/ipe?extensions=com.intellij.compiler.task) ![Project-Level](https://img.shields.io/badge/-Project--Level-yellow) | [`CompileTask`](upsource:///java/compiler/openapi/src/com/intellij/openapi/compiler/CompileTask.java) | 
 | [com.intellij.compiler.updateResourcesBuildContributor](https://jb.gg/ipe?extensions=com.intellij.compiler.updateResourcesBuildContributor) | [`UpdateResourcesBuildContributor`](upsource:///java/compiler/impl/src/com/intellij/compiler/impl/UpdateResourcesBuildContributor.java) | 
 | [com.intellij.compilerFactory](https://jb.gg/ipe?extensions=com.intellij.compilerFactory) ![Project-Level](https://img.shields.io/badge/-Project--Level-yellow) | [~~`CompilerFactory`~~](upsource:///java/compiler/openapi/src/com/intellij/openapi/compiler/CompilerFactory.java) | 
-| [com.intellij.compilerSettingsFactory](https://jb.gg/ipe?extensions=com.intellij.compilerSettingsFactory) ![Project-Level](https://img.shields.io/badge/-Project--Level-yellow) | [~~`CompilerSettingsFactory`~~](upsource:///java/compiler/openapi/src/com/intellij/compiler/CompilerSettingsFactory.java) | 
 | [com.intellij.configuration.ModuleStructureExtension](https://jb.gg/ipe?extensions=com.intellij.configuration.ModuleStructureExtension) | [`ModuleStructureExtension`](upsource:///java/idea-ui/src/com/intellij/openapi/roots/ui/configuration/projectRoot/ModuleStructureExtension.java) | 
 | [com.intellij.constructorBodyGenerator](https://jb.gg/ipe?extensions=com.intellij.constructorBodyGenerator) | [`ConstructorBodyGenerator`](upsource:///java/java-impl/src/com/intellij/codeInsight/generation/ConstructorBodyGenerator.java) | 
 | [com.intellij.conversion.rule](https://jb.gg/ipe?extensions=com.intellij.conversion.rule) | [`TypeConversionRule`](upsource:///java/java-impl/src/com/intellij/refactoring/typeMigration/rules/TypeConversionRule.java) | 
@@ -762,7 +770,6 @@ _Implementation_ opens declaration of related class.
 | [com.intellij.jvm.elementProvider](https://jb.gg/ipe?extensions=com.intellij.jvm.elementProvider) ![Project-Level](https://img.shields.io/badge/-Project--Level-yellow) | [`JvmElementProvider`](upsource:///java/java-psi-api/src/com/intellij/lang/jvm/facade/JvmElementProvider.java) | 
 | [com.intellij.lang.inferredAnnotationProvider](https://jb.gg/ipe?extensions=com.intellij.lang.inferredAnnotationProvider) ![Project-Level](https://img.shields.io/badge/-Project--Level-yellow) | [`InferredAnnotationProvider`](upsource:///java/java-psi-api/src/com/intellij/codeInsight/InferredAnnotationProvider.java) | 
 | [com.intellij.lang.psiAugmentProvider](https://jb.gg/ipe?extensions=com.intellij.lang.psiAugmentProvider) | [`PsiAugmentProvider`](upsource:///java/java-psi-api/src/com/intellij/psi/augment/PsiAugmentProvider.java) | 
-| [com.intellij.lang.psiTypeAnnotationModifier](https://jb.gg/ipe?extensions=com.intellij.lang.psiTypeAnnotationModifier) | [~~`TypeAnnotationModifier`~~](upsource:///java/java-psi-api/src/com/intellij/psi/augment/TypeAnnotationModifier.java) | 
 | [com.intellij.psi.classFileDecompiler](https://jb.gg/ipe?extensions=com.intellij.psi.classFileDecompiler) | [`Decompiler`](upsource:///java/java-psi-api/src/com/intellij/psi/compiled/ClassFileDecompilers.java) | 
 | [com.intellij.psi.clsCustomNavigationPolicy](https://jb.gg/ipe?extensions=com.intellij.psi.clsCustomNavigationPolicy) | [`ClsCustomNavigationPolicy`](upsource:///java/java-psi-impl/src/com/intellij/psi/impl/compiled/ClsCustomNavigationPolicy.java) | 
 | [com.intellij.superMethodsSearch](https://jb.gg/ipe?extensions=com.intellij.superMethodsSearch) | [`QueryExecutor`](upsource:///platform/core-api/src/com/intellij/util/QueryExecutor.java) | 
@@ -843,7 +850,7 @@ _Implementation_ opens declaration of related class.
 | [com.intellij.commandLineInspectionProjectConfigurator](https://jb.gg/ipe?extensions=com.intellij.commandLineInspectionProjectConfigurator) | [`CommandLineInspectionProjectConfigurator`](upsource:///platform/platform-impl/src/com/intellij/ide/CommandLineInspectionProjectConfigurator.java) | 
 | [com.intellij.commentTokenSetProvider](https://jb.gg/ipe?extensions=com.intellij.commentTokenSetProvider) | [`CommentTokenSetProvider`](upsource:///platform/core-impl/src/com/intellij/psi/impl/cache/CommentTokenSetProvider.java) | 
 | [com.intellij.concatenationAwareInjector](https://jb.gg/ipe?extensions=com.intellij.concatenationAwareInjector) ![Project-Level](https://img.shields.io/badge/-Project--Level-yellow) | [`ConcatenationAwareInjector`](upsource:///platform/lang-api/src/com/intellij/lang/injection/ConcatenationAwareInjector.java) | 
-| [com.intellij.configurationProducer](https://jb.gg/ipe?extensions=com.intellij.configurationProducer) ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | [~~`RuntimeConfigurationProducer`~~](upsource:///platform/lang-api/src/com/intellij/execution/junit/RuntimeConfigurationProducer.java) | 
+| [com.intellij.configurationProducer](https://jb.gg/ipe?extensions=com.intellij.configurationProducer) | [~~`RuntimeConfigurationProducer`~~](upsource:///platform/lang-api/src/com/intellij/execution/junit/RuntimeConfigurationProducer.java) | 
 | [com.intellij.configurationType](https://jb.gg/ipe?extensions=com.intellij.configurationType) | [`ConfigurationType`](upsource:///platform/lang-api/src/com/intellij/execution/configurations/ConfigurationType.java) | 
 | [com.intellij.console.folding](https://jb.gg/ipe?extensions=com.intellij.console.folding) | [`ConsoleFolding`](upsource:///platform/execution-impl/src/com/intellij/execution/ConsoleFolding.java) | 
 | [com.intellij.consoleActionsPostProcessor](https://jb.gg/ipe?extensions=com.intellij.consoleActionsPostProcessor) | [`ConsoleActionsPostProcessor`](upsource:///platform/lang-api/src/com/intellij/execution/actions/ConsoleActionsPostProcessor.java) | 
@@ -860,6 +867,7 @@ _Implementation_ opens declaration of related class.
 | [com.intellij.daemon.changeLocalityDetector](https://jb.gg/ipe?extensions=com.intellij.daemon.changeLocalityDetector) | [`ChangeLocalityDetector`](upsource:///platform/analysis-api/src/com/intellij/codeInsight/daemon/ChangeLocalityDetector.java) | 
 | [com.intellij.daemon.externalAnnotatorsFilter](https://jb.gg/ipe?extensions=com.intellij.daemon.externalAnnotatorsFilter) | [`ExternalAnnotatorsFilter`](upsource:///platform/analysis-api/src/com/intellij/lang/ExternalAnnotatorsFilter.java) | 
 | [com.intellij.daemon.highlightInfoFilter](https://jb.gg/ipe?extensions=com.intellij.daemon.highlightInfoFilter) | [`HighlightInfoFilter`](upsource:///platform/analysis-impl/src/com/intellij/codeInsight/daemon/impl/HighlightInfoFilter.java) | 
+| [com.intellij.daemon.indentsPassFilter](https://jb.gg/ipe?extensions=com.intellij.daemon.indentsPassFilter) | [`IndentsPassFilter`](upsource:///platform/lang-impl/src/com/intellij/codeInsight/daemon/impl/IndentsPassFilter.java) | 
 | [com.intellij.daemon.intentionActionFilter](https://jb.gg/ipe?extensions=com.intellij.daemon.intentionActionFilter) | [`IntentionActionFilter`](upsource:///platform/analysis-impl/src/com/intellij/codeInsight/daemon/impl/IntentionActionFilter.java) | 
 | [com.intellij.daemon.tooltipActionProvider](https://jb.gg/ipe?extensions=com.intellij.daemon.tooltipActionProvider) | [`TooltipActionProvider`](upsource:///platform/lang-impl/src/com/intellij/codeInsight/daemon/impl/tooltips/TooltipActionProvider.java) | 
 | [com.intellij.declarationRangeHandler](https://jb.gg/ipe?extensions=com.intellij.declarationRangeHandler) | [`DeclarationRangeHandler`](upsource:///platform/lang-api/src/com/intellij/codeInsight/hint/DeclarationRangeHandler.java) | 
@@ -1027,13 +1035,13 @@ _Implementation_ opens declaration of related class.
 | [com.intellij.scopeDescriptorProvider](https://jb.gg/ipe?extensions=com.intellij.scopeDescriptorProvider) | [`ScopeDescriptorProvider`](upsource:///platform/lang-impl/src/com/intellij/ide/util/scopeChooser/ScopeDescriptorProvider.java) | 
 | [com.intellij.scopeParserExtension](https://jb.gg/ipe?extensions=com.intellij.scopeParserExtension) | [`PackageSetParserExtension`](upsource:///platform/lang-impl/src/com/intellij/psi/search/scope/packageSet/PackageSetParserExtension.java) | 
 | [com.intellij.scratch.creationHelper](https://jb.gg/ipe?extensions=com.intellij.scratch.creationHelper) | [`ScratchFileCreationHelper`](upsource:///platform/lang-impl/src/com/intellij/ide/scratch/ScratchFileCreationHelper.java) | 
-| [com.intellij.scratch.rootType](https://jb.gg/ipe?extensions=com.intellij.scratch.rootType) | [`RootType`](upsource:///platform/lang-api/src/com/intellij/ide/scratch/RootType.java) | 
+| [com.intellij.scratch.rootType](https://jb.gg/ipe?extensions=com.intellij.scratch.rootType) | [`RootType`](upsource:///platform/analysis-api/src/com/intellij/ide/scratch/RootType.java) | 
 | [com.intellij.sdkDownload](https://jb.gg/ipe?extensions=com.intellij.sdkDownload) | [`SdkDownload`](upsource:///platform/lang-impl/src/com/intellij/openapi/roots/ui/configuration/projectRoot/SdkDownload.java) | 
 | [com.intellij.sdkFinder](https://jb.gg/ipe?extensions=com.intellij.sdkFinder) | [`SdkFinder`](upsource:///platform/projectModel-impl/src/com/intellij/openapi/roots/impl/SdkFinder.java) | 
 | [com.intellij.sdkType](https://jb.gg/ipe?extensions=com.intellij.sdkType) | [`SdkType`](upsource:///platform/lang-api/src/com/intellij/openapi/projectRoots/SdkType.java) | 
 | [com.intellij.searchEverywhereClassifier](https://jb.gg/ipe?extensions=com.intellij.searchEverywhereClassifier) | [`SearchEverywhereClassifier`](upsource:///platform/lang-impl/src/com/intellij/ide/actions/SearchEverywhereClassifier.java) | 
 | [com.intellij.searchEverywhereContributor](https://jb.gg/ipe?extensions=com.intellij.searchEverywhereContributor) | [`SearchEverywhereContributorFactory`](upsource:///platform/lang-api/src/com/intellij/ide/actions/searcheverywhere/SearchEverywhereContributorFactory.java) | 
-| [com.intellij.searchEverywhereResultsEqualityProvider](https://jb.gg/ipe?extensions=com.intellij.searchEverywhereResultsEqualityProvider) ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | [`SEResultsEqualityProvider`](upsource:///platform/lang-impl/src/com/intellij/ide/actions/searcheverywhere/SEResultsEqualityProvider.java) | 
+| [com.intellij.searchEverywhereResultsEqualityProvider](https://jb.gg/ipe?extensions=com.intellij.searchEverywhereResultsEqualityProvider) ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | [`SEResultsEqualityProvider`](upsource:///platform/lang-impl/src/com/intellij/ide/actions/searcheverywhere/SEResultsEqualityProvider.kt) | 
 | [com.intellij.searchScopesProvider](https://jb.gg/ipe?extensions=com.intellij.searchScopesProvider) | [`SearchScopeProvider`](upsource:///platform/analysis-impl/src/com/intellij/psi/search/SearchScopeProvider.java) | 
 | [com.intellij.searcher](https://jb.gg/ipe?extensions=com.intellij.searcher) | [`Searcher`](upsource:///platform/indexing-api/src/com/intellij/model/search/Searcher.java) | 
 | [com.intellij.semContributor](https://jb.gg/ipe?extensions=com.intellij.semContributor) | [`SemContributor`](upsource:///platform/lang-api/src/com/intellij/semantic/SemContributor.java) | 
@@ -1041,6 +1049,7 @@ _Implementation_ opens declaration of related class.
 | [com.intellij.silentChangeVetoer](https://jb.gg/ipe?extensions=com.intellij.silentChangeVetoer) | [`SilentChangeVetoer`](upsource:///platform/lang-impl/src/com/intellij/codeInsight/daemon/impl/SilentChangeVetoer.kt) | 
 | [com.intellij.stacktrace.fold](https://jb.gg/ipe?extensions=com.intellij.stacktrace.fold) | `n/a` | 
 | [com.intellij.stacktrace.fold.line.modifier](https://jb.gg/ipe?extensions=com.intellij.stacktrace.fold.line.modifier) ![Experimental API](https://img.shields.io/badge/-Experimental_API-red) | [`ConsoleLineModifier`](upsource:///platform/lang-impl/src/com/intellij/execution/console/ConsoleLineModifier.java) | 
+| [com.intellij.stateWidgetProcess](https://jb.gg/ipe?extensions=com.intellij.stateWidgetProcess) | [`StateWidgetProcess`](upsource:///platform/lang-api/src/com/intellij/execution/stateExecutionWidget/StateWidgetProcess.kt) | 
 | [com.intellij.statistician](https://jb.gg/ipe?extensions=com.intellij.statistician) | [`Statistician`](upsource:///platform/analysis-api/src/com/intellij/psi/statistics/Statistician.java) | 
 | [com.intellij.stepsBeforeRunProvider](https://jb.gg/ipe?extensions=com.intellij.stepsBeforeRunProvider) ![Project-Level](https://img.shields.io/badge/-Project--Level-yellow) | [`BeforeRunTaskProvider`](upsource:///platform/lang-api/src/com/intellij/execution/BeforeRunTaskProvider.java) | 
 | [com.intellij.structureViewBuilder](https://jb.gg/ipe?extensions=com.intellij.structureViewBuilder) | [`StructureViewBuilder`](upsource:///platform/editor-ui-api/src/com/intellij/ide/structureView/StructureViewBuilder.java) | 
@@ -1128,9 +1137,6 @@ _Implementation_ opens declaration of related class.
 | [org.intellij.groovy.methodComparator](https://jb.gg/ipe?extensions=org.intellij.groovy.methodComparator) | [`GrMethodComparator`](upsource:///plugins/groovy/groovy-psi/src/org/jetbrains/plugins/groovy/lang/resolve/GrMethodComparator.java) | 
 | [org.intellij.groovy.methodDescriptor](https://jb.gg/ipe?extensions=org.intellij.groovy.methodDescriptor) | `n/a` | 
 | [org.intellij.groovy.methodMayBeStaticInspectionFilter](https://jb.gg/ipe?extensions=org.intellij.groovy.methodMayBeStaticInspectionFilter) | [`GrMethodMayBeStaticInspectionFilter`](upsource:///plugins/groovy/groovy-psi/src/org/jetbrains/plugins/groovy/codeInspection/declaration/GrMethodMayBeStaticInspectionFilter.java) | 
-| [org.intellij.groovy.mvc.command.executor](https://jb.gg/ipe?extensions=org.intellij.groovy.mvc.command.executor) | [`MvcCommandExecutor`](upsource:///plugins/groovy/src/org/jetbrains/plugins/groovy/mvc/MvcCommandExecutor.java) | 
-| [org.intellij.groovy.mvc.framework](https://jb.gg/ipe?extensions=org.intellij.groovy.mvc.framework) | [`MvcFramework`](upsource:///plugins/groovy/src/org/jetbrains/plugins/groovy/mvc/MvcFramework.java) | 
-| [org.intellij.groovy.mvc.runCommandHandler](https://jb.gg/ipe?extensions=org.intellij.groovy.mvc.runCommandHandler) | [`MvcRunCommandActionHandler`](upsource:///plugins/groovy/src/org/jetbrains/plugins/groovy/mvc/actions/MvcRunCommandActionHandler.java) | 
 | [org.intellij.groovy.namedArgumentProvider](https://jb.gg/ipe?extensions=org.intellij.groovy.namedArgumentProvider) | [`GroovyNamedArgumentProvider`](upsource:///plugins/groovy/groovy-psi/src/org/jetbrains/plugins/groovy/extensions/GroovyNamedArgumentProvider.java) | 
 | [org.intellij.groovy.overloadResolver](https://jb.gg/ipe?extensions=org.intellij.groovy.overloadResolver) | [`GroovyOverloadResolver`](upsource:///plugins/groovy/groovy-psi/src/org/jetbrains/plugins/groovy/lang/resolve/api/GroovyOverloadResolver.java) | 
 | [org.intellij.groovy.positionManagerDelegate](https://jb.gg/ipe?extensions=org.intellij.groovy.positionManagerDelegate) | [`ScriptPositionManagerHelper`](upsource:///plugins/groovy/src/org/jetbrains/plugins/groovy/extensions/debugger/ScriptPositionManagerHelper.java) | 
@@ -1178,13 +1184,12 @@ _Implementation_ opens declaration of related class.
 |---|---|
 | [org.jetbrains.idea.eclipse.natureImporter](https://jb.gg/ipe?extensions=org.jetbrains.idea.eclipse.natureImporter) | [`EclipseNatureImporter`](upsource:///plugins/eclipse/src/org/jetbrains/idea/eclipse/importWizard/EclipseNatureImporter.java) | 
 
-## org.jetbrains.idea.gradle.dsl.impl
-[org.jetbrains.idea.gradle.dsl.impl](upsource:///plugins/gradle-dsl-impl/resources/META-INF/plugin.xml)
+## org.jetbrains.idea.gradle.dsl
+[org.jetbrains.idea.gradle.dsl](upsource:///android/gradle-dsl/resources/META-INF/plugin.xml)
 
 | Extension Point | Implementation |
 |---|---|
-| [org.jetbrains.idea.gradle.dsl.parserFactory](https://jb.gg/ipe?extensions=org.jetbrains.idea.gradle.dsl.parserFactory) | [`GradleDslConverterFactory`](upsource:///plugins/gradle-dsl-impl/src/com/android/tools/idea/gradle/dsl/parser/GradleDslConverterFactory.java) | 
-| [org.jetbrains.idea.gradle.dsl.upToDateChecker](https://jb.gg/ipe?extensions=org.jetbrains.idea.gradle.dsl.upToDateChecker) ![Experimental API](https://img.shields.io/badge/-Experimental_API-red) | [`UpToDateChecker`](upsource:///plugins/gradle-dsl-impl/src/com/android/tools/idea/gradle/dsl/UpToDateChecker.java) | 
+| [org.jetbrains.idea.gradle.dsl.parserFactory](https://jb.gg/ipe?extensions=org.jetbrains.idea.gradle.dsl.parserFactory) | [`GradleDslConverterFactory`](upsource:///android/gradle-dsl-impl/src/com/android/tools/idea/gradle/dsl/parser/GradleDslConverterFactory.java) | 
 
 ## org.jetbrains.idea.maven
 [org.jetbrains.idea.maven](upsource:///plugins/maven/src/main/resources/META-INF/plugin.xml)
@@ -1197,8 +1202,11 @@ _Implementation_ opens declaration of related class.
 | [org.jetbrains.idea.maven.compiler](https://jb.gg/ipe?extensions=org.jetbrains.idea.maven.compiler) | [`MavenCompilerExtension`](upsource:///plugins/maven/src/main/java/org/jetbrains/idea/maven/importing/MavenCompilerExtension.java) | 
 | [org.jetbrains.idea.maven.executionEnvironmentProvider](https://jb.gg/ipe?extensions=org.jetbrains.idea.maven.executionEnvironmentProvider) | [`MavenExecutionEnvironmentProvider`](upsource:///plugins/maven/src/main/java/org/jetbrains/idea/maven/execution/build/MavenExecutionEnvironmentProvider.java) | 
 | [org.jetbrains.idea.maven.importer](https://jb.gg/ipe?extensions=org.jetbrains.idea.maven.importer) | [`MavenImporter`](upsource:///plugins/maven/src/main/java/org/jetbrains/idea/maven/importing/MavenImporter.java) | 
+| [org.jetbrains.idea.maven.log.parser](https://jb.gg/ipe?extensions=org.jetbrains.idea.maven.log.parser) ![Experimental API](https://img.shields.io/badge/-Experimental_API-red) | [`MavenLoggedEventParser`](upsource:///plugins/maven/src/main/java/org/jetbrains/idea/maven/externalSystemIntegration/output/MavenLoggedEventParser.java) | 
 | [org.jetbrains.idea.maven.manifestImporter](https://jb.gg/ipe?extensions=org.jetbrains.idea.maven.manifestImporter) | [`ManifestImporter`](upsource:///plugins/maven/src/main/java/org/jetbrains/idea/maven/importing/ManifestImporter.java) | 
+| [org.jetbrains.idea.maven.mavenServerSupportFactory](https://jb.gg/ipe?extensions=org.jetbrains.idea.maven.mavenServerSupportFactory) | [`MavenRemoteProcessSupportFactory`](upsource:///plugins/maven/src/main/java/org/jetbrains/idea/maven/server/MavenRemoteProcessSupportFactory.java) | 
 | [org.jetbrains.idea.maven.pluginDescriptor](https://jb.gg/ipe?extensions=org.jetbrains.idea.maven.pluginDescriptor) | `n/a` | 
+| [org.jetbrains.idea.maven.remotePathTransformerFactory](https://jb.gg/ipe?extensions=org.jetbrains.idea.maven.remotePathTransformerFactory) | [`RemotePathTransformerFactory`](upsource:///plugins/maven/src/main/java/org/jetbrains/idea/maven/server/RemotePathTransformerFactory.java) | 
 | [org.jetbrains.idea.maven.repositoryProvider](https://jb.gg/ipe?extensions=org.jetbrains.idea.maven.repositoryProvider) | [`MavenRepositoryProvider`](upsource:///plugins/maven/src/main/java/org/jetbrains/idea/maven/indices/MavenRepositoryProvider.java) | 
 | [org.jetbrains.idea.maven.targetConfigurationExtension](https://jb.gg/ipe?extensions=org.jetbrains.idea.maven.targetConfigurationExtension) | [`TargetConfigurationMavenExtension`](upsource:///plugins/maven/src/main/java/org/jetbrains/idea/maven/execution/target/TargetConfigurationMavenExtension.java) | 
 
@@ -1266,13 +1274,13 @@ _Implementation_ opens declaration of related class.
 | [com.intellij.diff.DiffExtension](https://jb.gg/ipe?extensions=com.intellij.diff.DiffExtension) | [`DiffExtension`](upsource:///platform/diff-api/src/com/intellij/diff/DiffExtension.java) | 
 | [com.intellij.diff.DiffTool](https://jb.gg/ipe?extensions=com.intellij.diff.DiffTool) | [`DiffTool`](upsource:///platform/diff-api/src/com/intellij/diff/DiffTool.java) | 
 | [com.intellij.diff.actions.ShowDiffAction.ExtensionProvider](https://jb.gg/ipe?extensions=com.intellij.diff.actions.ShowDiffAction.ExtensionProvider) | [`AnActionExtensionProvider`](upsource:///platform/platform-impl/src/com/intellij/openapi/actionSystem/AnActionExtensionProvider.java) | 
+| [com.intellij.diff.editor.diffRequestProcessorEditorCustomizer](https://jb.gg/ipe?extensions=com.intellij.diff.editor.diffRequestProcessorEditorCustomizer) | [`DiffRequestProcessorEditorCustomizer`](upsource:///platform/diff-impl/src/com/intellij/diff/editor/DiffRequestProcessorEditorCustomizer.kt) | 
 | [com.intellij.diff.impl.DiffToolSubstitutor](https://jb.gg/ipe?extensions=com.intellij.diff.impl.DiffToolSubstitutor) | [`DiffToolSubstitutor`](upsource:///platform/diff-impl/src/com/intellij/diff/impl/DiffToolSubstitutor.java) | 
 | [com.intellij.diff.lang.DiffIgnoredRangeProvider](https://jb.gg/ipe?extensions=com.intellij.diff.lang.DiffIgnoredRangeProvider) | [`DiffIgnoredRangeProvider`](upsource:///platform/diff-impl/src/com/intellij/diff/lang/DiffIgnoredRangeProvider.java) | 
 | [com.intellij.diff.merge.MergeTool](https://jb.gg/ipe?extensions=com.intellij.diff.merge.MergeTool) | [`MergeTool`](upsource:///platform/diff-api/src/com/intellij/diff/merge/MergeTool.java) | 
 | [com.intellij.diff.merge.external.AutomaticExternalMergeTool](https://jb.gg/ipe?extensions=com.intellij.diff.merge.external.AutomaticExternalMergeTool) | [`AutomaticExternalMergeTool`](upsource:///platform/diff-api/src/com/intellij/diff/merge/external/AutomaticExternalMergeTool.java) | 
 | [com.intellij.directoryProjectConfigurator](https://jb.gg/ipe?extensions=com.intellij.directoryProjectConfigurator) | [`DirectoryProjectConfigurator`](upsource:///platform/platform-impl/src/com/intellij/platform/DirectoryProjectConfigurator.java) | 
 | [com.intellij.directoryProjectGenerator](https://jb.gg/ipe?extensions=com.intellij.directoryProjectGenerator) | [`DirectoryProjectGenerator`](upsource:///platform/platform-impl/src/com/intellij/platform/DirectoryProjectGenerator.java) | 
-| [com.intellij.documentWriteAccessGuard](https://jb.gg/ipe?extensions=com.intellij.documentWriteAccessGuard) ![Experimental API](https://img.shields.io/badge/-Experimental_API-red) | [`DocumentWriteAccessGuard`](upsource:///platform/core-impl/src/com/intellij/openapi/editor/impl/DocumentWriteAccessGuard.java) | 
 | [com.intellij.documentationActionProvider](https://jb.gg/ipe?extensions=com.intellij.documentationActionProvider) | [`DocumentationActionProvider`](upsource:///platform/lang-impl/src/com/intellij/codeInsight/documentation/DocumentationActionProvider.java) | 
 | [com.intellij.dynamicActionConfigurationCustomizer](https://jb.gg/ipe?extensions=com.intellij.dynamicActionConfigurationCustomizer) | [`DynamicActionConfigurationCustomizer`](upsource:///platform/platform-impl/src/com/intellij/openapi/actionSystem/impl/DynamicActionConfigurationCustomizer.java) | 
 | [com.intellij.editor.injectedFileChangesHandlerProvider](https://jb.gg/ipe?extensions=com.intellij.editor.injectedFileChangesHandlerProvider) | [`InjectedFileChangesHandlerProvider`](upsource:///platform/editor-ui-api/src/com/intellij/injected/editor/InjectedFileChangesHandlerProvider.java) | 
@@ -1300,6 +1308,8 @@ _Implementation_ opens declaration of related class.
 | [com.intellij.fileDocumentManagerListener](https://jb.gg/ipe?extensions=com.intellij.fileDocumentManagerListener) | [`FileDocumentManagerListener`](upsource:///platform/platform-api/src/com/intellij/openapi/fileEditor/FileDocumentManagerListener.java) | 
 | [com.intellij.fileDocumentSynchronizationVetoer](https://jb.gg/ipe?extensions=com.intellij.fileDocumentSynchronizationVetoer) ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | [`FileDocumentSynchronizationVetoer`](upsource:///platform/platform-api/src/com/intellij/openapi/fileEditor/FileDocumentSynchronizationVetoer.java) | 
 | [com.intellij.fileEditorProvider](https://jb.gg/ipe?extensions=com.intellij.fileEditorProvider) | [`FileEditorProvider`](upsource:///platform/analysis-api/src/com/intellij/openapi/fileEditor/FileEditorProvider.java) | 
+| [com.intellij.fileEditorProviderSuppressor](https://jb.gg/ipe?extensions=com.intellij.fileEditorProviderSuppressor) ![Internal API](https://img.shields.io/badge/-Internal_API-red) | [`FileEditorProviderSuppressor`](upsource:///platform/platform-impl/src/com/intellij/openapi/fileEditor/impl/FileEditorProviderSuppressor.java) | 
+| [com.intellij.fileEncodingProvider](https://jb.gg/ipe?extensions=com.intellij.fileEncodingProvider) | [`FileEncodingProvider`](upsource:///platform/core-api/src/com/intellij/openapi/vfs/encoding/FileEncodingProvider.java) | 
 | [com.intellij.fileIconPatcher](https://jb.gg/ipe?extensions=com.intellij.fileIconPatcher) | [`FileIconPatcher`](upsource:///platform/core-api/src/com/intellij/ide/FileIconPatcher.java) | 
 | [com.intellij.fileIconProvider](https://jb.gg/ipe?extensions=com.intellij.fileIconProvider) | [`FileIconProvider`](upsource:///platform/core-api/src/com/intellij/ide/FileIconProvider.java) | 
 | [com.intellij.fileType](https://jb.gg/ipe?extensions=com.intellij.fileType) | [`FileType`](upsource:///platform/core-api/src/com/intellij/openapi/fileTypes/FileType.java) | 
@@ -1373,6 +1383,7 @@ _Implementation_ opens declaration of related class.
 | [com.intellij.selectInTarget](https://jb.gg/ipe?extensions=com.intellij.selectInTarget) ![Project-Level](https://img.shields.io/badge/-Project--Level-yellow) | [`SelectInTarget`](upsource:///platform/platform-api/src/com/intellij/ide/SelectInTarget.java) | 
 | [com.intellij.smartSelectProvider](https://jb.gg/ipe?extensions=com.intellij.smartSelectProvider) | [`SmartSelectProvider`](upsource:///platform/platform-api/src/com/intellij/openapi/ide/SmartSelectProvider.java) | 
 | [com.intellij.sshCredentialProvider](https://jb.gg/ipe?extensions=com.intellij.sshCredentialProvider) | [`SshCredentialProvider`](upsource:///platform/platform-impl/src/com/intellij/remote/SshCredentialProvider.java) | 
+| [com.intellij.startPagePromoter](https://jb.gg/ipe?extensions=com.intellij.startPagePromoter) | [`StartPagePromoter`](upsource:///platform/platform-api/src/com/intellij/openapi/wm/StartPagePromoter.kt) | 
 | [com.intellij.statistic.eventLog.eventLoggerProvider](https://jb.gg/ipe?extensions=com.intellij.statistic.eventLog.eventLoggerProvider) ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | [`StatisticsEventLoggerProvider`](upsource:///platform/statistics/src/com/intellij/internal/statistic/eventLog/StatisticsEventLogger.kt) | 
 | [com.intellij.statistic.eventLog.fusStateEventTracker](https://jb.gg/ipe?extensions=com.intellij.statistic.eventLog.fusStateEventTracker) ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | [`FeatureUsageStateEventTracker`](upsource:///platform/statistics/src/com/intellij/internal/statistic/eventLog/fus/FeatureUsageStateEventTracker.kt) | 
 | [com.intellij.statistics.actionCustomPlaceAllowlist](https://jb.gg/ipe?extensions=com.intellij.statistics.actionCustomPlaceAllowlist) | `n/a` | 
@@ -1397,6 +1408,7 @@ _Implementation_ opens declaration of related class.
 | [com.intellij.titleInfoProvider](https://jb.gg/ipe?extensions=com.intellij.titleInfoProvider) ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | [`TitleInfoProvider`](upsource:///platform/platform-impl/src/com/intellij/openapi/wm/impl/TitleInfoProvider.kt) | 
 | [com.intellij.toolWindow](https://jb.gg/ipe?extensions=com.intellij.toolWindow) | [`ToolWindowFactory`](upsource:///platform/platform-api/src/com/intellij/openapi/wm/ToolWindowFactory.java) | 
 | [com.intellij.toolWindowAllowlist](https://jb.gg/ipe?extensions=com.intellij.toolWindowAllowlist) | `n/a` | 
+| [com.intellij.toolWindowExtractor](https://jb.gg/ipe?extensions=com.intellij.toolWindowExtractor) | [`ToolWindowViewModelExtractor`](upsource:///platform/platform-api/src/com/intellij/ui/viewModel/extraction/ToolWindowViewModelExtractor.java) | 
 | [com.intellij.trailingSpacesOptionsProvider](https://jb.gg/ipe?extensions=com.intellij.trailingSpacesOptionsProvider) | [`TrailingSpacesOptionsProvider`](upsource:///platform/platform-api/src/com/intellij/openapi/fileEditor/TrailingSpacesOptionsProvider.java) | 
 | [com.intellij.tree.CustomLanguageASTComparator](https://jb.gg/ipe?extensions=com.intellij.tree.CustomLanguageASTComparator) | [`CustomLanguageASTComparator`](upsource:///platform/core-api/src/com/intellij/psi/tree/CustomLanguageASTComparator.java) | 
 | [com.intellij.tritanopiaSupport](https://jb.gg/ipe?extensions=com.intellij.tritanopiaSupport) ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | [`ColorBlindnessSupport`](upsource:///platform/editor-ui-api/src/com/intellij/ide/ui/ColorBlindnessSupport.java) | 
@@ -1404,7 +1416,6 @@ _Implementation_ opens declaration of related class.
 | [com.intellij.trustedHostsConfigurablePanelProvider](https://jb.gg/ipe?extensions=com.intellij.trustedHostsConfigurablePanelProvider) ![Internal API](https://img.shields.io/badge/-Internal_API-red) | [`TrustedHostsConfigurablePanelProvider`](upsource:///platform/platform-impl/src/com/intellij/ide/impl/TrustedHostsConfigurable.kt) | 
 | [com.intellij.ui.optionEditorProvider](https://jb.gg/ipe?extensions=com.intellij.ui.optionEditorProvider) ![Experimental API](https://img.shields.io/badge/-Experimental_API-red) | [`OptionEditorProvider`](upsource:///platform/platform-api/src/com/intellij/openapi/options/OptionEditorProvider.java) | 
 | [com.intellij.ui.suitableFontProvider](https://jb.gg/ipe?extensions=com.intellij.ui.suitableFontProvider) | [`SuitableFontProvider`](upsource:///platform/platform-api/src/com/intellij/ui/SuitableFontProvider.java) | 
-| [com.intellij.uiDropperActions](https://jb.gg/ipe?extensions=com.intellij.uiDropperActions) ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | [`UiDropperActionExtension`](upsource:///platform/platform-impl/src/com/intellij/internal/inspector/UiDropperActionExtension.java) | 
 | [com.intellij.undoProvider](https://jb.gg/ipe?extensions=com.intellij.undoProvider) | [`UndoProvider`](upsource:///platform/platform-impl/src/com/intellij/openapi/command/impl/UndoProvider.java) | 
 | [com.intellij.unknownSdkContributor](https://jb.gg/ipe?extensions=com.intellij.unknownSdkContributor) | [`UnknownSdkContributor`](upsource:///platform/lang-impl/src/com/intellij/openapi/projectRoots/impl/UnknownSdkCollector.kt) | 
 | [com.intellij.unknownSdkResolver](https://jb.gg/ipe?extensions=com.intellij.unknownSdkResolver) | [`UnknownSdkResolver`](upsource:///platform/lang-impl/src/com/intellij/openapi/roots/ui/configuration/UnknownSdkResolver.java) | 
@@ -1420,11 +1431,19 @@ _Implementation_ opens declaration of related class.
 | [org.jetbrains.javaScriptDebuggerStarter](https://jb.gg/ipe?extensions=org.jetbrains.javaScriptDebuggerStarter) | [`JavaScriptDebuggerStarter`](upsource:///platform/platform-impl/src/com/intellij/ide/browsers/JavaScriptDebuggerStarter.java) | 
 | [org.jetbrains.urlOpener](https://jb.gg/ipe?extensions=org.jetbrains.urlOpener) | [`UrlOpener`](upsource:///platform/platform-api/src/com/intellij/ide/browsers/UrlOpener.java) | 
 
+## PlatformLangComponents.xml
+[PlatformLangComponents.xml](upsource:///platform/platform-resources/src/componentSets/PlatformLangComponents.xml)
+
+| Extension Point | Implementation |
+|---|---|
+| [com.intellij.registerToolWindowTaskProvider](https://jb.gg/ipe?extensions=com.intellij.registerToolWindowTaskProvider) ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) ![Internal API](https://img.shields.io/badge/-Internal_API-red) | [`RegisterToolWindowTaskProvider`](upsource:///platform/platform-impl/src/com/intellij/openapi/wm/impl/ToolWindowManagerImpl.kt) | 
+
 ## project-system-plugin.xml
 [project-system-plugin.xml](upsource:///android/project-system/src/META-INF/project-system-plugin.xml)
 
 | Extension Point | Implementation |
 |---|---|
+| [com.android.androidStartupActivity](https://jb.gg/ipe?extensions=com.android.androidStartupActivity) | [`AndroidStartupActivity`](upsource:///android/project-system/src/com/android/tools/idea/AndroidStartupActivity.kt) | 
 | [com.android.project.projectsystem](https://jb.gg/ipe?extensions=com.android.project.projectsystem) ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) ![Project-Level](https://img.shields.io/badge/-Project--Level-yellow) | [`AndroidProjectSystemProvider`](upsource:///android/project-system/src/com/android/tools/idea/projectsystem/AndroidProjectSystemProvider.kt) | 
 
 ## ProjectModel.xml
@@ -1437,14 +1456,14 @@ _Implementation_ opens declaration of related class.
 | [com.intellij.moduleExtension](https://jb.gg/ipe?extensions=com.intellij.moduleExtension) | [`ModuleExtension`](upsource:///platform/projectModel-api/src/com/intellij/openapi/roots/ModuleExtension.java) | 
 | [com.intellij.orderEnumerationHandlerFactory](https://jb.gg/ipe?extensions=com.intellij.orderEnumerationHandlerFactory) | [`Factory`](upsource:///platform/projectModel-api/src/com/intellij/openapi/roots/OrderEnumerationHandler.java) | 
 | [com.intellij.orderRootType](https://jb.gg/ipe?extensions=com.intellij.orderRootType) ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | [`OrderRootType`](upsource:///platform/projectModel-api/src/com/intellij/openapi/roots/OrderRootType.java) | 
-| [com.intellij.projectFileScanner](https://jb.gg/ipe?extensions=com.intellij.projectFileScanner) ![Experimental API](https://img.shields.io/badge/-Experimental_API-red) | [`ProjectFileScanner`](upsource:///platform/projectModel-api/src/com/intellij/openapi/roots/impl/ProjectFileScanner.java) | 
+| [com.intellij.projectFileScanner](https://jb.gg/ipe?extensions=com.intellij.projectFileScanner) ![Experimental API](https://img.shields.io/badge/-Experimental_API-red) | [`IndexableFileScanner`](upsource:///platform/indexing-api/src/com/intellij/util/indexing/roots/IndexableFileScanner.java) | 
 
 ## ProjectModelImpl.xml
 [ProjectModelImpl.xml](upsource:///platform/projectModel-impl/resources/META-INF/ProjectModelImpl.xml)
 
 | Extension Point | Implementation |
 |---|---|
-| [com.intellij.additionalLibraryRootsProvider](https://jb.gg/ipe?extensions=com.intellij.additionalLibraryRootsProvider) | [`AdditionalLibraryRootsProvider`](upsource:///platform/projectModel-impl/src/com/intellij/openapi/roots/AdditionalLibraryRootsProvider.java) | 
+| [com.intellij.additionalLibraryRootsProvider](https://jb.gg/ipe?extensions=com.intellij.additionalLibraryRootsProvider) | [`AdditionalLibraryRootsProvider`](upsource:///platform/projectModel-api/src/com/intellij/openapi/roots/AdditionalLibraryRootsProvider.java) | 
 | [com.intellij.directoryIndexExcludePolicy](https://jb.gg/ipe?extensions=com.intellij.directoryIndexExcludePolicy) ![Project-Level](https://img.shields.io/badge/-Project--Level-yellow) | [`DirectoryIndexExcludePolicy`](upsource:///platform/projectModel-impl/src/com/intellij/openapi/roots/impl/DirectoryIndexExcludePolicy.java) | 
 | [com.intellij.projectExtension](https://jb.gg/ipe?extensions=com.intellij.projectExtension) ![Project-Level](https://img.shields.io/badge/-Project--Level-yellow) | [`ProjectExtension`](upsource:///platform/projectModel-impl/src/com/intellij/openapi/roots/ProjectExtension.java) | 
 
@@ -1486,6 +1505,13 @@ _Implementation_ opens declaration of related class.
 | [Pythonid.sshInterpreterManager](https://jb.gg/ipe?extensions=Pythonid.sshInterpreterManager) | [`PythonSshInterpreterManager`](upsource:///python/src/com/jetbrains/python/remote/PythonSshInterpreterManager.java) | 
 | [Pythonid.unresolvedReferenceQuickFixProvider](https://jb.gg/ipe?extensions=Pythonid.unresolvedReferenceQuickFixProvider) | [`PyUnresolvedReferenceQuickFixProvider`](upsource:///python/openapi/src/com/jetbrains/python/inspections/PyUnresolvedReferenceQuickFixProvider.java) | 
 
+## python-rest-plugin.xml
+[python-rest-plugin.xml](upsource:///python/python-rest/resources/META-INF/python-rest-plugin.xml)
+
+| Extension Point | Implementation |
+|---|---|
+| [restructured.text.html.preview.output.handler](https://jb.gg/ipe?extensions=restructured.text.html.preview.output.handler) ![Experimental API](https://img.shields.io/badge/-Experimental_API-red) | [`RestOutputHandler`](upsource:///python/python-rest/src/com/jetbrains/rest/RestOutputHandler.kt) | 
+
 ## PythonPsi.xml
 [PythonPsi.xml](upsource:///python/python-psi-api/resources/META-INF/PythonPsi.xml)
 
@@ -1519,6 +1545,7 @@ _Implementation_ opens declaration of related class.
 | [Pythonid.importCandidateProvider](https://jb.gg/ipe?extensions=Pythonid.importCandidateProvider) | [`PyImportCandidateProvider`](upsource:///python/python-psi-impl/src/com/jetbrains/python/codeInsight/imports/PyImportCandidateProvider.java) | 
 | [Pythonid.pyDataclassParametersProvider](https://jb.gg/ipe?extensions=Pythonid.pyDataclassParametersProvider) | [`PyDataclassParametersProvider`](upsource:///python/python-psi-impl/src/com/jetbrains/python/codeInsight/PyDataclasses.kt) | 
 | [Pythonid.pyReferenceCustomTargetChecker](https://jb.gg/ipe?extensions=Pythonid.pyReferenceCustomTargetChecker) | [`PyReferenceCustomTargetChecker`](upsource:///python/python-psi-impl/src/com/jetbrains/python/psi/impl/references/PyReferenceCustomTargetChecker.kt) | 
+| [Pythonid.typeCheckerExtension](https://jb.gg/ipe?extensions=Pythonid.typeCheckerExtension) ![Experimental API](https://img.shields.io/badge/-Experimental_API-red) | [`PyTypeCheckerExtension`](upsource:///python/python-psi-impl/src/com/jetbrains/python/psi/types/PyTypeCheckerExtension.java) | 
 | [Pythonid.visitorFilter](https://jb.gg/ipe?extensions=Pythonid.visitorFilter) | [`PythonVisitorFilter`](upsource:///python/python-psi-impl/src/com/jetbrains/python/psi/PythonVisitorFilter.java) | 
 
 ## PythonSdk.xml
@@ -1556,7 +1583,6 @@ _Implementation_ opens declaration of related class.
 | [com.intellij.refactoring.pushDown](https://jb.gg/ipe?extensions=com.intellij.refactoring.pushDown) | [`PushDownDelegate`](upsource:///platform/lang-impl/src/com/intellij/refactoring/memberPushDown/PushDownDelegate.java) | 
 | [com.intellij.refactoring.safeDeleteProcessor](https://jb.gg/ipe?extensions=com.intellij.refactoring.safeDeleteProcessor) | [`SafeDeleteProcessorDelegate`](upsource:///platform/lang-impl/src/com/intellij/refactoring/safeDelete/SafeDeleteProcessorDelegate.java) | 
 | [com.intellij.rename.inplace.resolveSnapshotProvider](https://jb.gg/ipe?extensions=com.intellij.rename.inplace.resolveSnapshotProvider) | [`ResolveSnapshotProvider`](upsource:///platform/lang-api/src/com/intellij/refactoring/rename/ResolveSnapshotProvider.java) | 
-| [com.intellij.rename.referenceRenameUsageFactory](https://jb.gg/ipe?extensions=com.intellij.rename.referenceRenameUsageFactory) | [`ReferenceRenameUsageFactory`](upsource:///platform/lang-impl/src/com/intellij/refactoring/rename/symbol/ReferenceRenameUsageFactory.java) | 
 | [com.intellij.rename.symbolRenameTargetFactory](https://jb.gg/ipe?extensions=com.intellij.rename.symbolRenameTargetFactory) | [`SymbolRenameTargetFactory`](upsource:///platform/lang-impl/src/com/intellij/refactoring/rename/symbol/SymbolRenameTargetFactory.java) | 
 | [com.intellij.renameFileActionProvider](https://jb.gg/ipe?extensions=com.intellij.renameFileActionProvider) | [`RenameFileActionProvider`](upsource:///platform/lang-impl/src/com/intellij/refactoring/actions/RenameFileActionProvider.java) | 
 | [com.intellij.renameHandler](https://jb.gg/ipe?extensions=com.intellij.renameHandler) | [`RenameHandler`](upsource:///platform/lang-api/src/com/intellij/refactoring/rename/RenameHandler.java) | 
@@ -1626,6 +1652,13 @@ _Implementation_ opens declaration of related class.
 | [com.intellij.spellchecker.dictionary.runtimeDictionaryProvider](https://jb.gg/ipe?extensions=com.intellij.spellchecker.dictionary.runtimeDictionaryProvider) | [`RuntimeDictionaryProvider`](upsource:///spellchecker/src/com/intellij/spellchecker/dictionary/RuntimeDictionaryProvider.java) | 
 | [com.intellij.spellchecker.support](https://jb.gg/ipe?extensions=com.intellij.spellchecker.support) | [`SpellcheckingStrategy`](upsource:///spellchecker/src/com/intellij/spellchecker/tokenizer/SpellcheckingStrategy.java) | 
 
+## statistics-devkit.xml
+[statistics-devkit.xml](upsource:///platform/statistics/devkit/resources/META-INF/statistics-devkit.xml)
+
+| Extension Point | Implementation |
+|---|---|
+| [com.intellij.statisticsLogGroupActionsProvider](https://jb.gg/ipe?extensions=com.intellij.statisticsLogGroupActionsProvider) ![Internal API](https://img.shields.io/badge/-Internal_API-red) | [`StatisticsLogGroupActionsProvider`](upsource:///platform/statistics/devkit/src/com/intellij/internal/statistic/toolwindow/StatisticsLogGroupActionsProvider.kt) | 
+
 ## structuralsearch.xml
 [structuralsearch.xml](upsource:///platform/structuralsearch/source/META-INF/structuralsearch.xml)
 
@@ -1669,14 +1702,7 @@ _Implementation_ opens declaration of related class.
 | Extension Point | Implementation |
 |---|---|
 | [training.ift.language.extension](https://jb.gg/ipe?extensions=training.ift.language.extension) | [`LangSupport`](upsource:///plugins/ide-features-trainer/src/training/lang/LangSupport.kt) | 
-| [training.ift.learning.course](https://jb.gg/ipe?extensions=training.ift.learning.course) | [`LearningCourse`](upsource:///plugins/ide-features-trainer/src/training/learn/LearningCourse.kt) | 
-
-## UICore.xml
-[UICore.xml](upsource:///platform/platform-resources/src/componentSets/UICore.xml)
-
-| Extension Point | Implementation |
-|---|---|
-| [com.intellij.registerToolWindowTaskProvider](https://jb.gg/ipe?extensions=com.intellij.registerToolWindowTaskProvider) ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) ![Internal API](https://img.shields.io/badge/-Internal_API-red) | [`RegisterToolWindowTaskProvider`](upsource:///platform/platform-impl/src/com/intellij/openapi/wm/impl/ToolWindowManagerImpl.kt) | 
+| [training.ift.learning.course](https://jb.gg/ipe?extensions=training.ift.learning.course) | [`LearningCourse`](upsource:///plugins/ide-features-trainer/src/training/learn/course/LearningCourse.kt) | 
 
 ## vcs-log.xml
 [vcs-log.xml](upsource:///platform/vcs-log/impl/src/META-INF/vcs-log.xml)
@@ -1726,6 +1752,7 @@ _Implementation_ opens declaration of related class.
 | [com.intellij.vcs.checkoutProcessor](https://jb.gg/ipe?extensions=com.intellij.vcs.checkoutProcessor) | [`VcsCheckoutProcessor`](upsource:///platform/vcs-api/src/com/intellij/openapi/vcs/VcsCheckoutProcessor.java) | 
 | [com.intellij.vcs.commitMessageProvider](https://jb.gg/ipe?extensions=com.intellij.vcs.commitMessageProvider) | [`CommitMessageProvider`](upsource:///platform/vcs-impl/src/com/intellij/openapi/vcs/changes/ui/CommitMessageProvider.java) | 
 | [com.intellij.vcs.consoleFolding](https://jb.gg/ipe?extensions=com.intellij.vcs.consoleFolding) | [`VcsConsoleFolding`](upsource:///platform/vcs-impl/src/com/intellij/vcs/console/VcsConsoleView.kt) | 
+| [com.intellij.vcs.delayedCommitMessageProvider](https://jb.gg/ipe?extensions=com.intellij.vcs.delayedCommitMessageProvider) ![Experimental API](https://img.shields.io/badge/-Experimental_API-red) | [`DelayedCommitMessageProvider`](upsource:///platform/vcs-impl/src/com/intellij/vcs/commit/DelayedCommitMessageProvider.kt) | 
 | [com.intellij.vcs.fileStatusProvider](https://jb.gg/ipe?extensions=com.intellij.vcs.fileStatusProvider) ![Project-Level](https://img.shields.io/badge/-Project--Level-yellow) | [`FileStatusProvider`](upsource:///platform/platform-impl/src/com/intellij/openapi/vcs/impl/FileStatusProvider.java) | 
 | [com.intellij.vcs.ignoredFilesHolder](https://jb.gg/ipe?extensions=com.intellij.vcs.ignoredFilesHolder) ![Project-Level](https://img.shields.io/badge/-Project--Level-yellow) | [`Provider`](upsource:///platform/vcs-impl/src/com/intellij/openapi/vcs/changes/VcsIgnoredFilesHolder.java) | 
 | [com.intellij.vcs.taskHandler](https://jb.gg/ipe?extensions=com.intellij.vcs.taskHandler) ![Project-Level](https://img.shields.io/badge/-Project--Level-yellow) | [`VcsTaskHandler`](upsource:///platform/vcs-api/src/com/intellij/openapi/vcs/VcsTaskHandler.java) | 
@@ -1797,7 +1824,6 @@ _Implementation_ opens declaration of related class.
 | [com.intellij.xml.startTagEndToken](https://jb.gg/ipe?extensions=com.intellij.xml.startTagEndToken) | [`StartTagEndTokenProvider`](upsource:///xml/xml-psi-impl/src/com/intellij/psi/xml/StartTagEndTokenProvider.java) | 
 | [com.intellij.xml.tagNameProvider](https://jb.gg/ipe?extensions=com.intellij.xml.tagNameProvider) | [`XmlTagNameProvider`](upsource:///xml/impl/src/com/intellij/xml/XmlTagNameProvider.java) | 
 | [com.intellij.xml.undefinedElementFixProvider](https://jb.gg/ipe?extensions=com.intellij.xml.undefinedElementFixProvider) | [`XmlUndefinedElementFixProvider`](upsource:///xml/xml-analysis-impl/src/com/intellij/xml/XmlUndefinedElementFixProvider.java) | 
-| [com.intellij.xml.util.htmlDoctypeProvider](https://jb.gg/ipe?extensions=com.intellij.xml.util.htmlDoctypeProvider) ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | [~~`HtmlDoctypeProvider`~~](upsource:///xml/xml-psi-impl/src/com/intellij/xml/util/HtmlDoctypeProvider.java) | 
 | [com.intellij.xml.validateHandler](https://jb.gg/ipe?extensions=com.intellij.xml.validateHandler) | [`ValidateXmlHandler`](upsource:///xml/xml-psi-impl/src/com/intellij/xml/actions/validate/ValidateXmlHandler.java) | 
 | [com.intellij.xml.xmlExtension](https://jb.gg/ipe?extensions=com.intellij.xml.xmlExtension) | [`XmlExtension`](upsource:///xml/xml-psi-impl/src/com/intellij/xml/XmlExtension.java) | 
 | [com.intellij.xml.xmlSuppressionProvider](https://jb.gg/ipe?extensions=com.intellij.xml.xmlSuppressionProvider) | [`XmlSuppressionProvider`](upsource:///xml/xml-psi-api/src/com/intellij/codeInspection/XmlSuppressionProvider.java) | 
@@ -1813,7 +1839,7 @@ _Implementation_ opens declaration of related class.
 
 | Extension Point | Implementation |
 |---|---|
-| [XPathView.xpath.contextProviderExtension](https://jb.gg/ipe?extensions=XPathView.xpath.contextProviderExtension) ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | [`ContextProviderExtension`](upsource:///plugins/xpath/xpath-lang/src/org/intellij/lang/xpath/context/ContextProviderExtension.java) | 
-| [XPathView.xpath.functionProvider](https://jb.gg/ipe?extensions=XPathView.xpath.functionProvider) ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | [`XPathFunctionProvider`](upsource:///plugins/xpath/xpath-lang/src/org/intellij/lang/xpath/context/functions/XPathFunctionProvider.java) | 
-| [XPathView.xsltRunnerExtension](https://jb.gg/ipe?extensions=XPathView.xsltRunnerExtension) ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | [`XsltRunnerExtension`](upsource:///plugins/xpath/xpath-lang/src/org/intellij/lang/xpath/xslt/run/XsltRunnerExtension.java) | 
+| [XPathView.xpath.contextProviderExtension](https://jb.gg/ipe?extensions=XPathView.xpath.contextProviderExtension) | [`ContextProviderExtension`](upsource:///plugins/xpath/xpath-lang/src/org/intellij/lang/xpath/context/ContextProviderExtension.java) | 
+| [XPathView.xpath.functionProvider](https://jb.gg/ipe?extensions=XPathView.xpath.functionProvider) | [`XPathFunctionProvider`](upsource:///plugins/xpath/xpath-lang/src/org/intellij/lang/xpath/context/functions/XPathFunctionProvider.java) | 
+| [XPathView.xsltRunnerExtension](https://jb.gg/ipe?extensions=XPathView.xsltRunnerExtension) | [`XsltRunnerExtension`](upsource:///plugins/xpath/xpath-lang/src/org/intellij/lang/xpath/xslt/run/XsltRunnerExtension.java) | 
 

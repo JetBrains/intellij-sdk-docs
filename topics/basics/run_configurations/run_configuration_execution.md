@@ -36,7 +36,7 @@ The standard base class used as implementation of `RunProfileState` is [`Command
 It contains the logic for putting together a running process and a console into an [`ExecutionResult`](upsource:///platform/lang-api/src/com/intellij/execution/ExecutionResult.java), but doesn't know anything how the process is actually started.
 For starting the process, it's best to use the [`GeneralCommandLine`](upsource:///platform/platform-util-io/src/com/intellij/execution/configurations/GeneralCommandLine.java) class, which takes care of setting up the command line parameters and executing the process.
 
-Alternatively, if the process you need to run is a JVM-based one, you can use the [`JavaCommandLineState`](upsource:///java/execution/openapi/src/com/intellij/execution/configurations/JavaCommandLineState.java) base class.
+Alternatively, if the process you need to run is a JVM-based one, you can use the [`JavaCommandLineState`](upsource:///java/execution/impl/src/com/intellij/execution/configurations/JavaCommandLineState.java) base class.
 It knows about the JVM command line parameters and can take care of details like calculating the classpath for the JVM.
 
 To monitor the execution of a process and capture its output, the [`OSProcessHandler`](upsource:///platform/platform-util-io/src/com/intellij/execution/process/OSProcessHandler.java) class is usually used.

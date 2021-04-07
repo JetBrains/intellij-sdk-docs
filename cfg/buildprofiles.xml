@@ -23,11 +23,14 @@
         <enable-browser-edits>true</enable-browser-edits>
         <browser-edits-url>https://github.com/JetBrains/intellij-sdk-docs/edit/main/</browser-edits-url>
         <images-prefix-override>images/</images-prefix-override>
+        <noindex-content-in-deprecated>false</noindex-content-in-deprecated>
+        <noindex-content-in-eap>false</noindex-content-in-eap>
+        <noindex-content-in-release>false</noindex-content-in-release>
+
         <upsource-commit-hash>b8f393732fae6beb1e4f70ec4d605f2838253529</upsource-commit-hash>
         <upsource-tag>211.6693.111</upsource-tag>
         <upsource-repo-name>idea-ce</upsource-repo-name>
         <upsource-server-address>upsource.jetbrains.com</upsource-server-address>
-
     </variables>
 
     <build-profile product="ijs"/>

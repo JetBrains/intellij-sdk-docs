@@ -15,6 +15,9 @@ _Add unambiguous imports on the fly_ for custom languages
                                     
 Ability to override encoding per `VirtualFile`
 : Implement [`FileEncodingProvider`](upsource:///platform/core-api/src/com/intellij/openapi/vfs/encoding/FileEncodingProvider.java) and register in `com.intellij.fileEncodingProvider` extension point.
+                                                                         
+[JCEF](jcef.md): wrapper for `CefBrowser` 
+: [`JBCefOsrHandlerBrowser`](upsource:///platform/platform-api/src/com/intellij/ui/jcef/JBCefOsrHandlerBrowser.java) forwards to custom `CefRenderHandler`, e.g., for off-screen rendering.
 
 ### Notable Changes in Java Plugin 2021.1
 

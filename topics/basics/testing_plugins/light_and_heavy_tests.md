@@ -23,7 +23,7 @@ The standard way of writing a light test is to extend the following classes:
 * [`LightPlatformCodeInsightFixtureTestCase`](upsource:///platform/testFramework/src/com/intellij/testFramework/fixtures/LightPlatformCodeInsightFixtureTestCase.java) for tests that don't have any Java dependencies.
 * [`LightCodeInsightFixtureTestCase`](upsource:///java/testFramework/src/com/intellij/testFramework/fixtures/LightCodeInsightFixtureTestCase.java) for tests that require the Java PSI or any related functionality.
 
- >  In 2019.2, `LightPlatformCodeInsightFixtureTestCase` has been renamed to `BasePlatformTestCase` and `LightCodeInsightFixtureTestCase` to `LightJavaCodeInsightFixtureTestCase` respectively.
+ >  In 2019.2, `LightPlatformCodeInsightFixtureTestCase` has been renamed to [`BasePlatformTestCase`](upsource:///platform/testFramework/src/com/intellij/testFramework/fixtures/BasePlatformTestCase.java) and `LightCodeInsightFixtureTestCase` to [`LightJavaCodeInsightFixtureTestCase`](upsource:///java/testFramework/src/com/intellij/testFramework/fixtures/LightJavaCodeInsightFixtureTestCase.java) respectively.
  >
  {type="note"}
 
@@ -38,7 +38,7 @@ Before executing each test, the project instance will be reused if the test case
  >
  {type="note"}
 
- >  In 2019.3, `PlatformTestCase` has been renamed to `HeavyPlatformTestCase` reflecting its "heavy test" characteristics.
+ >  In 2019.3, `PlatformTestCase` has been renamed to [`HeavyPlatformTestCase`](upsource:///platform/testFramework/src/com/intellij/testFramework/HeavyPlatformTestCase.java) reflecting its "heavy test" characteristics.
  >
  {type="note"}
 

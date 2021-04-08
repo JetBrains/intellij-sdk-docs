@@ -14,7 +14,11 @@ This page is intended to list the key topics that a plugin author would be inter
 - [Extension points](plugin_extensions.md) - how to register components with extension points, and how to find out what extension points are available.
 - [Virtual files](virtual_file.md) - all file access should go through the Virtual File System, which abstracts and caches the file system.
   It means you can work with files that are on the local file system, in a zip file or are old versions from version control.
-
+                        
+ > See also [Glossary](glossary.md) for a handy reference of common terms.
+  >
+  {type="tip"}
+ 
 ## Code Model
 
 The IntelliJ Platform's code model is called the PSI - the [Program Structure Interface](psi.md).

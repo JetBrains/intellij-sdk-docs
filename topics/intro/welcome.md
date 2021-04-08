@@ -13,7 +13,7 @@ Watch [Busy plugin developers series. Episode 0](https://www.youtube.com/watch?v
 * [What is the IntelliJ Platform?](intellij_platform.md)
 * [About this Guide](about.md)
     * [Key Topics](key_topics.md)
-* [Getting Help](getting_help.md)
+    * [Getting Help](getting_help.md)
 * [Creating Your First Plugin](getting_started.md)
 * [Useful Links](useful_links.md)
 * [Marketing](marketing.md)

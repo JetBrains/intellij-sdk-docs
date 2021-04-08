@@ -15,6 +15,10 @@ The [Key Topics](key_topics.md) page aims to link to the pages that are necessar
 > Please see the [Contributing](intellij-sdk-docs-original_CONTRIBUTING.md) page for details on building the guide locally and contributing.
  >
  {type="note"}
+                                                                
+ > See also [Glossary](glossary.md) for a handy reference of common terms.
+  >
+  {type="tip"}
 
 #### [Part I - Plugins](basics.md)
 

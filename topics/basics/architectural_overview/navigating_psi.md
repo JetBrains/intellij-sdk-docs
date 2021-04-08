@@ -1,6 +1,6 @@
 [//]: # (title: Navigating the PSI)
 
-<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 There are three main ways to navigate the PSI: *top-down*, *bottom-up*, and *references*.
 In the first scenario,  you have a PSI file or another higher-level element (for example, a method). You need to find all elements that match a specified condition (for example, all variable declarations).
@@ -10,7 +10,7 @@ References are described in a [separate topic](psi_references.md).
 
 ## Top-Down Navigation
 
-The most common way to perform top-down navigation is to use a *visitor*.
+The most common way to perform top-down navigation is to use a [Visitor](https://en.wikipedia.org/wiki/Visitor_pattern).
 To use a visitor, you create a class (usually an anonymous inner class) that extends the base visitor class, overrides the methods that handle the elements you're interested in, and passes the visitor instance to `PsiElement.accept()`.
 
 The base classes for visitors are language-specific.

@@ -1,13 +1,13 @@
 [//]: # (title: Getting Help)
 
-<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 ## Problems with the Guide
 
 If you’re having problems with the guide itself, such as missing, incorrect, or confusing content, please [raise an issue on YouTrack](https://youtrack.jetbrains.com/newIssue?project=IJSDK&clearDraft=true&c=).
 If the problem is easily solved, you can also submit a [Pull Request on GitHub](https://github.com/JetBrains/intellij-sdk-docs).
                                               
-If you want to report issues for a specific page, you can also use _Was this page helpful_ feedback form on the bottom of each page by providing more details after clicking the _No_ button.
+If you want to report (smaller) issues for a _specific_ page, you can also use _Was this page helpful_ feedback form on the bottom of each page by providing more details after clicking the _No_ button. Please try to be as specific as possible and provide your e-mail address for further questions and getting notified of updates.
 
 If you just want to share feedback on the guide, again, [raise an issue](https://youtrack.jetbrains.com/newIssue?project=IJSDK&clearDraft=true&c=), even if it’s for a discussion, ideas on improvements or suggestions.
 

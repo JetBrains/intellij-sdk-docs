@@ -72,6 +72,12 @@ Please see [Incompatible API Changes](api_changes_list.md) on how to verify comp
                               
 ### Changes in IntelliJ Platform 2021.2
 
+`com.intellij.openapi.editor.impl.event.DocumentEventImpl.translateLineViaDiff(int)` method removed
+: Use persistent range markers instead, see `com.intellij.openapi.editor.Document.createRangeMarker(int, int, boolean)` with `surviveOnExternalChange=true`.
+
+`com.intellij.openapi.editor.impl.event.DocumentEventImpl.translateLineViaDiffStrict(int)` method removed
+: Use persistent range markers instead, see `com.intellij.openapi.editor.Document.createRangeMarker(int, int, boolean)` with `surviveOnExternalChange=true`.
+
 ## 2021.1
                               
 ### Changes in IntelliJ Platform 2021.1

@@ -10,6 +10,8 @@ In addition, the sample plugin contains a JUnit-based test.
 The IntelliJ Platform analyzes your code and helps handle situations that may result in errors.
 When a possible problem is suspected, the IDE suggests an appropriate intention action, denoted with special icons.
 For more information, refer to [Intention Actions](https://www.jetbrains.com/help/idea/intention-actions.html) in the IntelliJ IDEA Web Help.
+                  
+See [Inspections](https://jetbrains.design/intellij/text/inspections/) topic in the IntelliJ Platform UI Guidelines on naming, writing description, and message texts for inspections/intentions.
 
 You can view a list of all available intention actions using the [Intention List](https://www.jetbrains.com/help/idea/intention-actions.html#intention-settings) provided by the IDE.
 

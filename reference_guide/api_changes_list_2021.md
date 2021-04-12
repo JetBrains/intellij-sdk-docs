@@ -77,6 +77,9 @@ Please see [Incompatible API Changes](api_changes_list.md) on how to verify comp
 
 `com.intellij.openapi.editor.impl.event.DocumentEventImpl.translateLineViaDiffStrict(int)` method removed
 : Use persistent range markers instead, see `com.intellij.openapi.editor.Document.createRangeMarker(int, int, boolean)` with `surviveOnExternalChange=true`.
+                                      
+`com.intellij.openapi.file.exclude.EnforcedPlainTextFileType` class removed
+: Use `com.intellij.openapi.fileTypes.PlainTextFileType` instead.
 
 ## 2021.1
                               

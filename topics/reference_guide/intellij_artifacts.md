@@ -22,9 +22,15 @@ Both the Releases and Snapshots repositories have two types of content:
 * Artifacts for individual modules from the IntelliJ Platform.
 These may be downloaded, or accessed directly from a `build.gradle` file, as explained below.
 
+### Third-Party Dependencies                              
+
 Artifacts for IntelliJ Platform third-party dependencies are hosted at a separate [intellij-dependencies](https://cache-redirector.jetbrains.com/intellij-dependencies) repository.
 A link to this repository should be added to `pom.xml`/`build.gradle` files when individual modules from an IntelliJ Platform artifacts repository are used.
-
+                                                                                    
+ > Usages of deprecated URL `https://jetbrains.bintray.com/intellij-third-party-dependencies` must be replaced with `https://cache-redirector.jetbrains.com/intellij-dependencies` in build scripts.
+  >
+  {type="warning"}
+ 
 ## Using IntelliJ Platform Module Artifacts
 IntelliJ Platform module artifacts are utilized by adding information to a project's `build.gradle` file.
 More information about [Gradle support](https://www.jetbrains.com/help/idea/gradle.html) is available in the IntelliJ IDEA Help documentation.

@@ -97,3 +97,4 @@ The following pages list the breaking changes in IDE and plugin releases with re
 * [**Changes in 2017.***](api_changes_list_2017.md)
 * [**Changes in 2016.***](api_changes_list_2016.md)
 
+Information about bundled Third-Party Software/Libraries and their respective versions is available [here](https://www.jetbrains.com/legal/third-party-software/).

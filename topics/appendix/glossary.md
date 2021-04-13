@@ -2,6 +2,8 @@
 
 <!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2 -->
 
+See also [Oracle's Java Technology Glossary](https://www.oracle.com/java/technologies/glossary.html).
+
 ## A
 
 Abstract Syntax Tree _(AST)_

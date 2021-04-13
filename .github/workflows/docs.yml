@@ -16,8 +16,9 @@ jobs:
       - name: Get Plugin Verifier Version
         id: get-version
         run: |
+          sudo apt-get install libxml2-utils
           URL="https://packages.jetbrains.team/maven/p/intellij-plugin-verifier/intellij-plugin-verifier/org/jetbrains/intellij/plugins/verifier-cli/maven-metadata.xml"
-          echo "::set-output name=version::$(curl -Ss $URL -L | xpath -q -e 'metadata/versioning/latest/text()')"
+          echo "::set-output name=version::$(curl -Ss $URL -L | xmllint --xpath 'metadata/versioning/latest/text()' -)"
         shell: bash
       - name: Setup Cache
         id: cache

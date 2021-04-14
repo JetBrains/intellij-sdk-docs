@@ -1,9 +1,9 @@
 name: Code Samples
 on:
   push:
-    paths: ['code_samples/**']
+    paths: [ 'code_samples/**','.github/workflows/code-samples.yml' ]
   pull_request:
-    paths: ['code_samples/**']
+    paths: [ 'code_samples/**','.github/workflows/code-samples.yml' ]
 
 jobs:
 

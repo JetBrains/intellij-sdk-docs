@@ -15,6 +15,11 @@ Using those components in your plugins will ensure that your plugin looks and wo
  {type="note"}
 
 Please refer to [Writing short and clear](https://jetbrains.design/intellij/text/writing_short/) in IntelliJ Platform UI Guidelines on writing UI-related texts.
+                                                     
+ > When using [Figma](https://www.figma.com) to design UI: see [IntelliJ Platform UI Kit](https://www.figma.com/community/file/938505862996154830) and [IntelliJ Icons](https://www.figma.com/community/plugin/948276470997072333/IntelliJ-Icons).
+  >
+  {type="tip"}
+ 
 
 The following components are particularly noteworthy:
 

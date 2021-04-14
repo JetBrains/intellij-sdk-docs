@@ -1,6 +1,6 @@
 [//]: # (title: 8. Line Marker Provider)
 
-<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 Line markers help annotate code with icons on the gutter.
 These markers can provide navigation targets to related code.
@@ -18,10 +18,12 @@ For this example, override the `collectNavigationMarkers()` method to collect us
 
 ## Best Practices for Implementing Line Marker Providers
 This section addresses important details about implementing a marker provider.
+
 The `collectNavigationMarkers()` method should:
 * Only return line marker information consistent with the element passed into the method.
   For example, do not return a _class_ marker if `getLineMarkerInfo()` was called with an element that corresponds to a _method_.
 * Return line marker information for the appropriate element at the correct scope of the PSI tree.
+  Return leaf elements only - i.e., the smallest possible elements.
   For example, do not return method marker for [`PsiMethod`](upsource:///java/java-psi-api/src/com/intellij/psi/PsiMethod.java).
   Instead, return it for the [`PsiIdentifier`](upsource:///java/java-psi-api/src/com/intellij/psi/PsiIdentifier.java) which contains the name of the method.
 
@@ -50,7 +52,7 @@ However, if a method like `actionPerformed()` is not completely visible in the E
 * The second pass tries to add a line marker because `MyWrongLineMarkerProvider()` is called for the `PsiMethod`.
 
 As a result, _the line marker icon would blink annoyingly_.
-To fix this problem, rewrite `MyWrongLineMarkerProvider` to return info for `PsiIdentifier` instead of `PsiMethod` as shown below:
+To fix this problem for this case, rewrite `MyWrongLineMarkerProvider` to return info for `PsiIdentifier` instead of `PsiMethod` as shown below:
 
 ```java
 public class MyCorrectLineMarkerProvider implements LineMarkerProvider {

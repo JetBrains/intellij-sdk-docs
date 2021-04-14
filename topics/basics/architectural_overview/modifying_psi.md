@@ -58,7 +58,7 @@ Just as everywhere else in the IntelliJ Platform API, the text passed to `create
 ## Maintaining Tree Structure Consistency
 
 The PSI modification methods do not restrict you in the way you can build the resulting tree structure.
-For example, when working with a Java class, you can add a `for` statement as a direct child of a `PsiMethod` element, even though the Java parser will never produce such a structure (the `for` statement will always be a child of the `PsiCodeBlock`) representing the method body).
+For example, when working with a Java class, you can add a `for` statement as a direct child of a `PsiMethod` element, even though the Java parser will never produce such a structure (the `for` statement will always be a child of the `PsiCodeBlock`) representing the method body.
 Modifications that produce incorrect tree structures may appear to work, but they will lead to problems and exceptions later.
 Therefore, you always need to ensure that the structure you built with PSI modification operations is the same as what the parser would produce when parsing the code that you've created.
 

@@ -1,6 +1,6 @@
 [//]: # (title: Custom Language Support Tutorial)
 
-<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 In this tutorial we will add support for a [.properties](https://en.wikipedia.org/wiki/.properties) language and its usages within Java code.
 
@@ -9,7 +9,11 @@ In this tutorial we will add support for a [.properties](https://en.wikipedia.or
  >
  {type="tip"}
 
-The example plugin used in this tutorial is the [`simple_language_plugin`](https://github.com/JetBrains/intellij-sdk-code-samples/tree/main/simple_language_plugin) code sample.
+
+ > The complete and fully working example plugin used in this tutorial is the [`simple_language_plugin`](https://github.com/JetBrains/intellij-sdk-code-samples/tree/main/simple_language_plugin) code sample.
+ >
+ {type="note"}
+
 This a step-by-step tutorial, and it requires completing each step, in order:
 
 *  [1. Prerequisites](prerequisites.md)

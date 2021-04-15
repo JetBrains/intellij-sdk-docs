@@ -1,6 +1,6 @@
 [//]: # (title: Optimizing Performance)
 
-<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
  >  [IDE Perf](https://plugins.jetbrains.com/plugin/15104-ide-perf) plugin provides on-the-fly performance diagnostic tools, including a dedicated view for [`CachedValue`](#cache-results-of-heavy-computations) metrics.
  >
@@ -54,8 +54,10 @@ Use lexer information instead of parsed trees if possible.
 If impossible, use light AST which doesn't create memory-hungry AST nodes inside, so traversing it might be faster.
 Make sure to traverse only the nodes you need to.
 
+For indexing XML, also consider using [`NanoXmlUtil`](upsource:///platform/indexing-api/src/com/intellij/util/xml/NanoXmlUtil.java).
+
 For stub index, implement [`LightStubBuilder`](upsource:///platform/core-impl/src/com/intellij/psi/stubs/LightStubBuilder.java).
-For other indices, you can obtain the light AST manually via `((PsiDependentFileContent) fileContent).getLighterAST()`.
+For other indexes, you can obtain the light AST manually via `((PsiDependentFileContent) fileContent).getLighterAST()`.
 
 If a custom language contains lazy-parseable elements that never or rarely contain any stubs, consider implementing `StubBuilder.skipChildProcessingWhenBuildingStubs()` (preferably using Lexer/node text).
 

@@ -17,6 +17,8 @@ Other [`HintManager`](upsource:///platform/platform-api/src/com/intellij/codeIns
                  
 ### Editor Banner
 
+For UI reference, see [Banner](https://jetbrains.design/intellij/controls/banner/) in the IntelliJ Platform UI Guidelines.
+                   
 Notifications that appear at the top of the file editor are a great way to ask the user to take an important action that would otherwise impede their experience if ignored (e.g., missing SDK, setup/project configuration requiring user input).
                      
 Register an implementation of [`EditorNotifications.Provider`](upsource:///platform/platform-api/src/com/intellij/ui/EditorNotifications.java) using `com.intellij.editorNotificationProvider` extension point.
@@ -24,7 +26,7 @@ If no [index access](indexing_and_psi_stubs.md#dumb-mode) is required, it can im
 
 A commonly used UI implementation is [`EditorNotificationPanel`](upsource:///platform/platform-api/src/com/intellij/ui/EditorNotificationPanel.java).
 
-### Top-Level Notifications
+### Top-Level Notifications (Balloons)
 
 The most general way to display non-modal notifications is to use the [`Notifications`](upsource:///platform/platform-api/src/com/intellij/notification/Notifications.java) class.
 

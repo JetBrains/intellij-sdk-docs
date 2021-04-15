@@ -1,15 +1,15 @@
 [//]: # (title: Useful Links)
 
-<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 The following links represent useful resources for working with the IntelliJ Platform and creating plugins.
 
 ### Repositories
-* [IntelliJ SDK Documentation](https://github.com/JetBrains/intellij-sdk-docs)
+* [IntelliJ Platform SDK Documentation](https://github.com/JetBrains/intellij-sdk-docs) & [IntelliJ Platform SDK Code Samples](https://github.com/JetBrains/intellij-sdk-code-samples)
 * [IntelliJ Platform Plugin Template](https://github.com/JetBrains/intellij-platform-plugin-template)
 * [IntelliJ Community Edition](https://github.com/JetBrains/intellij-community)
 * [IntelliJ Plugins](https://github.com/JetBrains/intellij-plugins)
-* [Open Source Plugins](https://plugins.jetbrains.com/search?correctionAllowed=true&pr=&orderBy=name&search=&should_have_source=true)
+* [Open Source Plugins](https://plugins.jetbrains.com/search?orderBy=name&shouldHaveSource=true)
 
 ### Tooling
 * [IDE Settings, Caches, Logs, and Plugins](https://intellij-support.jetbrains.com/hc/en-us/articles/206544519-Directories-used-by-the-IDE-to-store-settings-caches-plugins-and-logs)
@@ -20,8 +20,8 @@ The following links represent useful resources for working with the IntelliJ Pla
 
 ### Plugins
 * [PsiViewer](https://plugins.jetbrains.com/plugin/227-psiviewer)
-* [Grammar-Kit](https://github.com/JetBrains/Grammar-Kit) & [Grammar-Kit Folder](https://plugins.jetbrains.com/plugin/12983-grammar-kit-folder)
-* [Indices Viewer](https://plugins.jetbrains.com/plugin/13029-indices-viewer/)
+* [Grammar-Kit](https://plugins.jetbrains.com/plugin/6606-grammar-kit) & [Grammar-Kit Folder](https://plugins.jetbrains.com/plugin/12983-grammar-kit-folder)
+* [Index Viewer](https://plugins.jetbrains.com/plugin/13029-index-viewer/)
 * [IDE Perf](https://plugins.jetbrains.com/plugin/15104-ide-perf)
 
 ### Webinars

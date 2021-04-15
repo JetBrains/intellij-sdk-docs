@@ -1,6 +1,6 @@
 [//]: # (title: 3. Grammar and Parser)
 
-<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 In order for the IntelliJ Platform to parse a Simple Language file, tokens and elements must be defined based on [`IElementType`](upsource:///platform/core-api/src/com/intellij/psi/tree/IElementType.java).
 The Simple Language grammar must also be defined to generate a parser.
@@ -47,7 +47,7 @@ private item_ ::= (property|COMMENT|CRLF)
 property ::= (KEY? SEPARATOR VALUE?) | KEY
 ```
 
-As shown, a properties file can contain properties, comments, and line breaks.
+As shown, a Simple Language file can contain properties, comments, and line breaks.
 
 Please see [Grammar Kit](https://github.com/JetBrains/Grammar-Kit) documentation for more details on BNF syntax.
 
@@ -55,7 +55,7 @@ The grammar defines the flexibility of the support for a language.
 The above grammar specifies that a property may have or may not have key and value.
 This flexibility allows the IntelliJ Platform to recognize incorrectly defined properties and provide corresponding code analysis and quick-fixes.
 
-Note that the `SimpleTypes` class in the `elementTypeHolderClass` field above specifies the name of a class that gets generated from the grammar; it doesn't exist at this point.
+Note that the `SimpleTypes` class in the `elementTypeHolderClass` attribute above specifies the name of a class that gets generated from the grammar; it doesn't exist at this point.
 
 ## Generate a Parser
 Now that the grammar is defined generate a parser with PSI classes via **Generate Parser Code** from the context menu on the *Simple.bnf* file.

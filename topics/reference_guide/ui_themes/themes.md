@@ -1,6 +1,6 @@
 [//]: # (title: Creating Custom UI Themes)
 
-<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 Creating a custom UI Theme is a process of choosing a base IDE Theme (_Light_ or _Darcula_,) then changing aspects of the base Theme definition.
 Custom UI Themes can:
@@ -27,6 +27,7 @@ UI Themes have several components:
 
 ## Custom UI Theme Workflow
 Creating a UI Theme follows this general sequence:
+* [Setup Development Environment](setting_up_environment.md)
 * [Start with a Plugin Project](creating_plugin_project.md)
 * [Add UI Theme components to the plugin](#creating-a-ui-theme-with-the-devkit-theme-wizard) by using the DevKit UI Theme Wizard.
 * [Customize the UI Theme](themes_customize.md) by adding data objects to the Theme description (JSON) file.

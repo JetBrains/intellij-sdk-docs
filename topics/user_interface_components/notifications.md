@@ -14,6 +14,15 @@ When working in dialog, instead of checking the validity of the input when the _
 
 For actions invoked from the editor (such as refactorings, navigation actions and different code insight features), the best way to notify the user about the inability to perform an action is to use the [`HintManager`](upsource:///platform/platform-api/src/com/intellij/codeInsight/hint/HintManager.java) class. Its method `showErrorHint()` displays a floating popup above the editor which is automatically hidden when the user starts performing another action in the editor.
 Other [`HintManager`](upsource:///platform/platform-api/src/com/intellij/codeInsight/hint/HintManager.java) methods can be used for displaying other kinds of non-modal notification hints over an editor.
+                 
+### Editor Banner
+
+Notifications that appear at the top of the file editor are a great way to ask the user to take an important action that would otherwise impede their experience if ignored (e.g., missing SDK, setup/project configuration requiring user input).
+                     
+Register an implementation of [`EditorNotifications.Provider`](upsource:///platform/platform-api/src/com/intellij/ui/EditorNotifications.java) using `com.intellij.editorNotificationProvider` extension point.
+If no [index access](indexing_and_psi_stubs.md#dumb-mode) is required, it can implement [`DumbAware`](upsource:///platform/core-api/src/com/intellij/openapi/project/DumbAware.java) to be shown during indexing.
+
+A commonly used UI implementation is [`EditorNotificationPanel`](upsource:///platform/platform-api/src/com/intellij/ui/EditorNotificationPanel.java).
 
 ### Top-Level Notifications
 

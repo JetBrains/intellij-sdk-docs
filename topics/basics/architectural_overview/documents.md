@@ -7,7 +7,7 @@ A [`Document`](upsource:///platform/core-api/src/com/intellij/openapi/editor/Doc
 Line breaks in a document are _always_ normalized to `\n`.
 The IntelliJ Platform handles encoding and line break conversions when loading and saving documents transparently.
 
-## How do I get a document?
+## How do I get a Document?
 
 From an Action
 : `e.getData(CommonDataKeys.EDITOR).getDocument()`

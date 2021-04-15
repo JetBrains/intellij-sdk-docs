@@ -1,6 +1,6 @@
 [//]: # (title: Setting Up a Development Environment)
 
-<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
  >  For new projects, it is highly recommended to use [Gradle](gradle_build_system.md).
  >
@@ -24,6 +24,10 @@ To set up your plugin development environment:
                           
 * Setup required Java SDK. 
   See the _IntelliJ Build Configuration_ section of [Check Out And Build Community Edition](upsource:///README.md) for instructions about creating **1.8** (**11** when targeting 2020.3 or later) Java SDK.
+
+  > Do not use a more recent Java version than the one specified. 
+  >
+  {type="warning"}
 * Create a new *IntelliJ Platform SDK* under **File \| Project Structure**:
   ![Create IntelliJ Platform SDK](create_intellij_idea_sdk.png)
   <br/>

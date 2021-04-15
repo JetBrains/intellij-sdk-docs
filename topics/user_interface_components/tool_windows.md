@@ -1,6 +1,6 @@
 [//]: # (title: Tool Windows)
 
-<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 ## Tool Windows
 
@@ -50,8 +50,8 @@ When using an overload that takes a component, the component becomes the first c
                      
 ## Contents (Tabs)
 
-Displaying the contents of many tool windows requires access to the indices.
-Because of that, tool windows are normally disabled while building indices unless the `ToolWindowFactory` implements [`DumbAware`](upsource:///platform/core-api/src/com/intellij/openapi/project/DumbAware.java). For programmatic setup, parameter `canWorkInDumbMode` must be set to `true` in calls to `registerToolWindow()`.
+Displaying the contents of many tool windows requires access to [indexes](indexing_and_psi_stubs.md).
+Because of that, tool windows are normally disabled while building indexes unless the `ToolWindowFactory` implements [`DumbAware`](upsource:///platform/core-api/src/com/intellij/openapi/project/DumbAware.java). For programmatic setup, parameter `canWorkInDumbMode` must be set to `true` in calls to `registerToolWindow()`.
 
 As mentioned previously, tool windows can contain multiple tabs, or contents.
 To manage the contents of a tool window, call [`ToolWindow.getContentManager()`](upsource:///platform/platform-api/src/com/intellij/openapi/wm/ToolWindow.java).

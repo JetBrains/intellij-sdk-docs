@@ -66,6 +66,9 @@ The `SimpleFileTypeFactory` is registered using the `com.intellij.openapi.fileTy
 ```
 
 ## Run the Project
+
+Run your project by using the [runIde task](gradle_prerequisites.md#running-a-simple-gradle-based-intellij-platform-plugin) in Gradle-based projects or [using the Plugin Run/Debug configuration](running_and_debugging_a_plugin.md) in DevKit-based projects. 
+
 Create an empty file with the extension `*.simple`, and IntelliJ IDEA automatically associates it with our language.
 Note the appearance of the Simple Language file icon next to the `test.simple` file in the **Project Tool Window**, and the editor tab for the file.
 

@@ -166,7 +166,7 @@ For this reason, plugins *must not* use [Kotlin objects](https://kotlinlang.org/
 There are many [open-source Kotlin plugins](https://jb.gg/ipe?language=kotlin) built on the IntelliJ Platform.
 For a readily available source of up to date examples and applications of the Kotlin language for building developer tools with the IntelliJ Platform, developers may look to these projects for inspiration:
 
-* [IntelliJ-presentation-assistant](https://github.com/chashnikov/IntelliJ-presentation-assistant)
+* [Presentation Assistant](https://github.com/chashnikov/IntelliJ-presentation-assistant)
 * [Rust](https://github.com/intellij-rust/intellij-rust)
 * [TeXiFy IDEA](https://github.com/Hannah-Sten/TeXiFy-IDEA)
-* [Makefile support](https://github.com/JetBrains/intellij-plugins/tree/master/Deno)
+* [Deno](https://github.com/JetBrains/intellij-plugins/tree/master/Deno)

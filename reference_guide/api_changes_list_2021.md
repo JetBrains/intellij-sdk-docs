@@ -128,3 +128,8 @@ Please see [Incompatible API Changes](api_changes_list.md) on how to verify comp
 
 `com.intellij.ws.http.request` package removed
 : Replaced by `com.intellij.httpClient.http.request` in HTTP Client plugin
+                          
+### Java UML Plugin 2021.1
+
+Rename of packages to `.java.` specific variants
+: A number of packages have been renamed: `com.intellij.uml.utils` becomes `com.intellij.uml.java.utils`, `com.intellij.uml.project` becomes `com.intellij.uml.java.project`, and `com.intellij.uml.jigsaw` becomes `com.intellij.uml.java.jigsaw`.

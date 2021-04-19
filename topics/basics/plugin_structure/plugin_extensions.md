@@ -1,6 +1,6 @@
 [//]: # (title: Plugin Extensions)
 
-<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 _Extensions_ are the most common way for a plugin to extend the IntelliJ Platform's functionality in a way that is not as straightforward as adding an action to a menu or toolbar.
 
@@ -13,7 +13,16 @@ The following are some of the most common tasks accomplished using extensions:
   * [Custom language plugins](custom_language_support.md) use many extension points
     to extend various language support features in the IDE.
 
-There are [more than 1000 extension](#how-to-get-the-extension-points-list) points available in the platform and the bundled plugins, allowing to customize different parts of the IDE behavior.
+There are more than 1000 extension points available in the platform and the bundled plugins, allowing to customize different parts of the IDE behavior.
+
+## Exploring Available Extensions
+
+[Extension Point List](extension_point_list.md) contains all available extension points in IntelliJ Platform and from bundled plugins in IntelliJ IDEA.
+
+Alternatively (or when using 3rd party extension points), all available extension points for the specified namespace can be listed using auto-completion inside the `<extensions>` block in `plugin.xml`.
+Use **View \| Quick Documentation** in the lookup list to access more information about the extension point and implementation (if applicable).
+                                           
+Browse usages inside existing implementations of open-source IntelliJ Platform plugins via [IntelliJ Platform Explorer](https://jb.gg/ipe).
 
 ## Declaring Extensions
 
@@ -88,10 +97,3 @@ Similarly, `action` resolves to all registered `<action>` IDs.
 Specifying `@org.jetbrains.annotations.Nls` validates a UI `String` capitalization according to the text property `Capitalization` enum value (2019.2 and later).
 
 Attributes with `Enum` type support code insight with _lowerSnakeCased_ notation (2020.1 and later).
-
-## How to get the extension points list?
-
-[Extension Point List](extension_point_list.md) contains all available in IntelliJ Platform and from bundled plugins in IntelliJ IDEA.
-
-Alternatively (or when using 3rd party extension points), all available extension points for the specified namespace can be listed using auto-completion inside the `<extensions>` block.
-Use **View \| Quick Documentation** in the lookup list to access more information about the extension point and implementation (if applicable).

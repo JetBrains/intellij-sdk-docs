@@ -5,6 +5,9 @@
 ## 2021.2
 
 ### Notable Changes in IntelliJ Platform 2021.2
+       
+Unit test mode: non-production `IconManager`        
+: Now `com.intellij.ui.IconManager.createDeferredIcon()` doesn't use `iconProducer` which might result in "wrong" composite icons and failed assertions. Override `UsefulTestCase.isIconRequired()` returning `true` to restore production icons. Alternatively, invoke `Registry.get("psi.deferIconLoading").setValue(false)` in `setUp()` and `Registry.get("psi.deferIconLoading").resetToDefault()` in `tearDown()`.
 
 ## 2021.1
 

@@ -17,6 +17,7 @@ The following links represent useful resources for working with the IntelliJ Pla
 * [IntelliJ Platform Artifacts Repository](intellij_artifacts.md)
 * [IntelliJ Plugin Verifier](https://github.com/JetBrains/intellij-plugin-verifier) (see also [Verifying Compatibility](api_changes_list.md#verifying-compatibility))
 * [IntelliJ Platform Explorer](https://jb.gg/ipe)
+* [Figma UI Kit](https://jetbrains.design/intellij/resources/UI_kit/)
 
 ### Plugins
 * [PsiViewer](https://plugins.jetbrains.com/plugin/227-psiviewer)

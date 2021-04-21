@@ -81,7 +81,7 @@ Please see [Incompatible API Changes](api_changes_list.md) on how to verify comp
 `com.intellij.openapi.file.exclude.EnforcedPlainTextFileType` class removed
 : Use `com.intellij.openapi.fileTypes.PlainTextFileType` instead.
 
-### GitHub plugin
+### GitHub Plugin 2021.2
 
 `org.jetbrains.plugins.github.util.GithubSettings.getAuthData(GithubAuthData)` method removed
 : Only used by an already incompatible plugin

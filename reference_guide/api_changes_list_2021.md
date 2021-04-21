@@ -82,6 +82,12 @@ Please see [Incompatible API Changes](api_changes_list.md) on how to verify comp
 : Use `com.intellij.openapi.fileTypes.PlainTextFileType` instead.
 
 ### GitHub Plugin 2021.2
+                                          
+`org.jetbrains.plugins.github.util.GithubAuthData` class removed
+: Use `org.jetbrains.plugins.github.authentication.GithubAuthenticationManager` instead.
+
+`org.jetbrains.plugins.github.util.GithubAuthData$BasicAuth` class removed
+: Use `org.jetbrains.plugins.github.authentication.GithubAuthenticationManager` instead.
 
 `org.jetbrains.plugins.github.util.GithubSettings.getAuthData(GithubAuthData)` method removed
 : Use `org.jetbrains.plugins.github.authentication.GithubAuthenticationManager` instead.

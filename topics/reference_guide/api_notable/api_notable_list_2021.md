@@ -8,6 +8,9 @@
        
 Unit test mode: non-production `IconManager`        
 : Now `com.intellij.ui.IconManager.createDeferredIcon()` doesn't use `iconProducer` which might result in "wrong" composite icons and failed assertions. Override `UsefulTestCase.isIconRequired()` returning `true` to restore production icons. Alternatively, invoke `Registry.get("psi.deferIconLoading").setValue(false)` in `setUp()` and `Registry.get("psi.deferIconLoading").resetToDefault()` in `tearDown()`.
+                     
+Constructor Injection disabled for Extensions
+: Please obtain necessary components only when needed (logged as ERROR now).
 
 ## 2021.1
 

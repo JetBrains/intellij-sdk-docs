@@ -116,7 +116,7 @@ Please see [Incompatible API Changes](api_changes_list.md) on how to verify comp
 : Project is now only accessible via `com.intellij.openapi.ui.playback.PlaybackContext.getProject()` since it may change during script execution. 
                                 
 JSON Widget suppressor EP `com.intellij.json.jsonWidgetSuppressor`                                    
-: Override new method [`JsonWidgetSuppressor.isCandidateForSuppress(VirtualFile file, Project project)`](upsource:///json/src/com/jetbrains/jsonSchema/extension/JsonWidgetSuppressor.java) for quick check in EDT before `suppressSwitcherWidget()` is called on background thread.
+: Override new method [`JsonWidgetSuppressor.isCandidateForSuppress(VirtualFile, Project)`](upsource:///json/src/com/jetbrains/jsonSchema/extension/JsonWidgetSuppressor.java) for quick check in EDT before `suppressSwitcherWidget()` is called on background thread.
 
 ### Changes in HTTP Client Plugin 2021.1
 

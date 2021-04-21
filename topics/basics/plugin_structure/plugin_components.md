@@ -1,9 +1,9 @@
 [//]: # (title: Plugin Components)
 
-<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
- >  When writing new plugins, creating Components should be avoided.
-> Any existing Components should be migrated to services, extensions, or listeners (see below).
+ > When writing new plugins, creating Components should be avoided.
+ > Any existing Components should be migrated to services, extensions, or listeners (see below).
  >
  {type="warning"}
 
@@ -31,7 +31,7 @@ To subscribe to events, use a [listener](plugin_listeners.md) or create an [exte
 
 Executing code on application startup should be avoided whenever possible because it slows down startup.
 Plugin code should only be executed when projects are opened (see [Project Open](#project-open)) or when the user invokes an action of a plugin.
-If this cannot be avoided, add a [listener](plugin_listeners.md) subscribing to the [AppLifecycleListener](upsource:///platform/platform-impl/src/com/intellij/ide/AppLifecycleListener.java) topic.
+If this cannot be avoided, add a [listener](plugin_listeners.md) subscribing to the [`AppLifecycleListener`](upsource:///platform/platform-impl/src/com/intellij/ide/AppLifecycleListener.java) topic.
 
 To execute an activity in background on IDE startup (e.g., to warm up caches), use [`PreloadingActivity`](upsource:///platform/platform-impl/src/com/intellij/openapi/application/PreloadingActivity.java).
 
@@ -40,10 +40,10 @@ To execute an activity in background on IDE startup (e.g., to warm up caches), u
 To execute code when a project is being opened, use one of these two [extensions](plugin_extensions.md):
 
 `com.intellij.postStartupActivity`
-: [StartupActivity](upsource:///platform/core-api/src/com/intellij/openapi/startup/StartupActivity.java) for immediate execution on EDT. Implement `DumbAware` to indicate activity can run in background thread (in parallel with other such tasks). 
+: [`StartupActivity`](upsource:///platform/core-api/src/com/intellij/openapi/startup/StartupActivity.java) for immediate execution on EDT. Implement `DumbAware` to indicate activity can run in background thread (in parallel with other such tasks). 
 
 `com.intellij.backgroundPostStartupActivity`
-: [StartupActivity.Background](upsource:///platform/core-api/src/com/intellij/openapi/startup/StartupActivity.java) for execution with 5 seconds delay in background thread (2019.3 or later).
+: [`StartupActivity.Background`](upsource:///platform/core-api/src/com/intellij/openapi/startup/StartupActivity.java) for execution with 5 seconds delay in background thread (2019.3 or later).
 
 Any long-running or CPU intensive tasks should be made visible to users by using `ProgressManager.run(Task.Backgroundable)`.
 Access to indices must be wrapped with `DumbService`, see also [General Threading Rules](general_threading_rules.md).  

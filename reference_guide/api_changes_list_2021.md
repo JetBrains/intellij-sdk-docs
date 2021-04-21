@@ -84,13 +84,13 @@ Please see [Incompatible API Changes](api_changes_list.md) on how to verify comp
 ### GitHub Plugin 2021.2
 
 `org.jetbrains.plugins.github.util.GithubSettings.getAuthData(GithubAuthData)` method removed
-: Only used by an already incompatible plugin
+: Use `org.jetbrains.plugins.github.authentication.GithubAuthenticationManager` instead.
 
 `org.jetbrains.plugins.github.util.GithubSettings.getLogin` method removed
-: Only used by an already incompatible plugin
+: Use `org.jetbrains.plugins.github.authentication.GithubAuthenticationManager` instead.
 
 `org.jetbrains.plugins.github.util.GithubSettings.isAuthConfigured` method removed
-: Only used by an already incompatible plugin
+: Use `org.jetbrains.plugins.github.authentication.GithubAuthenticationManager` instead.
 
 ## 2021.1
                               

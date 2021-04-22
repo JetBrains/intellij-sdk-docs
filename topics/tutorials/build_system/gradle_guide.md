@@ -1,6 +1,6 @@
 [//]: # (title: Configuring Gradle Projects)
 
-<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 This page serves as a guide to Gradle-based plugin configuration for IntelliJ Platform projects.
 The IntelliJ IDEA Ultimate and Community editions bundle the _Gradle_ and _Plugin DevKit_ plugins to support Gradle-based development.
@@ -128,7 +128,7 @@ The Gradle plugin provides two tasks that allow for running integrity and compat
 - `runPluginVerifier` - runs the [IntelliJ Plugin Verifier](https://github.com/JetBrains/intellij-plugin-verifier) tool to check the binary compatibility with specified IntelliJ IDE builds.
 
 Plugin Verifier integration task allows for configuring the exact IDE versions that your plugin will be checked against.
-Please check the [Plugin Verifier DSL](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/build.gradle.kts#plugin-verifier-dsl) for more details.
+See [Verifying Compatibility](api_changes_list.md#verifying-compatibility) for more information.
 
 ### Publishing with the Gradle Plugin
 Please review the [Publishing Plugins with Gradle](deployment.md) page before using the [Publishing DSL](https://github.com/JetBrains/gradle-intellij-plugin#publishing-dsl) attributes.

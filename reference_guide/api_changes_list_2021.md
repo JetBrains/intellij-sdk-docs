@@ -12,18 +12,22 @@ To document a new incompatible change, add a new line with the problem pattern f
 The following problem patterns are supported:
 
 <package name> package removed
+
 <class name> class removed
 <class name> class renamed to <new class name>
+<class name> class moved to package <package name>
 
+<class name>.<method name>(<human-readable parameters>) marked abstract
+<class name>.<method name>(<human-readable parameters>) abstract method added
 <class name>.<method name>(<human-readable parameters>) method removed
 <class name>.<method name>(<human-readable parameters>) method return type changed from <before> to <after>
-<class name>.<method name>(<human-readable parameters>) method parameter <type> removed
-<class name>.<method name>(<human-readable parameters>) method parameter type changed from <before> to <after>
 <class name>.<method name>(<human-readable parameters>) method visibility changed from <before> to <after>
 <class name>.<method name>(<human-readable parameters>) method marked final
+<class name>.<method name>(<human-readable parameters>) method parameter <type> removed
+<class name>.<method name>(<human-readable parameters>) method parameter type changed from <before> to <after>
+<class name>.<method name> method <parameter name> parameter marked @<class name>
 <class name> (class|interface) now (extends|implements) <class name> and inherits its final method <method name>(<human-readable parameters>)?
 <class name> (class|interface) now (extends|implements) <class name> and inherits its abstract method <method name>(<human-readable parameters>)?
-<class name>.<method name> method <parameter name> parameter marked @<class name>
 
 <class name>(<human-readable parameters>) constructor removed
 <class name>(<human-readable parameters>) constructor parameter <type> removed
@@ -33,10 +37,6 @@ The following problem patterns are supported:
 <class name>.<field name> field removed
 <class name>.<field name> field type changed from <before> to <after>
 <class name>.<field name> field visibility changed from <before> to <after>
-
-<class name>.<method name>(<human-readable parameters>) marked abstract
-<class name>.<method name>(<human-readable parameters>) abstract method added
-<class name> class moved to package <package name>
 
 <property name> property removed from resource bundle <bundle name>
 

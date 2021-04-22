@@ -1,6 +1,6 @@
 [//]: # (title: Incompatible Changes in IntelliJ Platform and Plugins API)
 
-<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 <!--
 =============== DO NOT RENAME OR MOVE THIS FILE ===============
@@ -80,7 +80,7 @@ Consider using the following [IDE inspections](https://www.jetbrains.com/help/id
 - JVM languages \| Unstable API Usage
 - JVM languages \| Unstable type is used in signature
 
-Usage of deprecated [Extension Points](plugin_extensions.md) is highlighted in `plugin.xml` files.
+Usage of deprecated or annotated with `org.jetbrains.annotations.ApiStatus.@Experimental`/`@Internal` [Extension Points](plugin_extensions.md) is highlighted in `plugin.xml` files.
 
 ## Known Breaking Changes
 

@@ -1,6 +1,6 @@
 [//]: # (title: Module)
 
-<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 A _module_ is a discrete unit of functionality that can be run, tested, and debugged independently.
 Modules include such things as source code, build scripts, unit tests, deployment descriptors, etc.
@@ -33,6 +33,8 @@ The IntelliJ Platform provides a number of classes and interfaces you can use to
 * [`ModifiableRootModel`](upsource:///platform/projectModel-api/src/com/intellij/openapi/roots/ModifiableRootModel.java)
 
 This section discusses how to complete some common tasks related to management of modules.
+
+See [Changing the Project Structure](project.md#changing-the-project-structure) for information on modifying project/module structure. 
 
 ### How do I get a list of modules the project includes?
 

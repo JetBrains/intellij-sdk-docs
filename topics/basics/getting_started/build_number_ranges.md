@@ -1,12 +1,15 @@
 [//]: # (title: Build Number Ranges)
+<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 Use this reference of build number ranges to specify the correct `since-build` and `until-build` values in your plugin descriptor.
 
-When using Gradle, setting the actual values in `plugin.xml` is usually managed by the `patchPluginXml` task, see [Patching the Plugin Configuration File](gradle_guide.md#patching-the-plugin-configuration-file) for details.
+Setting the actual values in `plugin.xml` is usually managed by `patchPluginXml` Gradle task, see [Patching the Plugin Configuration File](gradle_guide.md#patching-the-plugin-configuration-file) for details.
 
- >  Compatibility with specified version range (and compatible products) should always be verified using [Plugin Verifier](api_changes_list.md#verifying-compatibility) to ensure binary compatibility.
+ > Compatibility with the specified version range (and compatible products) must always be verified using [Plugin Verifier](api_changes_list.md#verifying-compatibility) to ensure binary compatibility.
+ > 
+ > Plugins hosted on [JetBrains Plugins Repository](https://plugins.jetbrains.com) are checked automatically. According to [Approval Guidelines](https://plugins.jetbrains.com/legal/approval-guidelines), incompatible plugin versions will be restricted by JetBrains if necessary. 
  >
- {type="note"}
+ {type="warning"}
 
 Starting with IntelliJ IDEA 9 beta, a multi-part build number is used, such as `IU-162.94`.
 

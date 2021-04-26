@@ -95,7 +95,7 @@ boolean isDependent = ModuleManager.getInstance(project).isModuleDependent(modul
     To clarify, consider the following code snippet:
 
 ```java
-String pathToFile = "C:\\users\\firstName.LastName\\plugins\\myPlugin\src\MyAction.java";
+String pathToFile = "C:\\users\\firstName.LastName\\plugins\\myPlugin\\src\\MyAction.java";
 VirtualFile virtualFile = LocalFileSystem.getInstance().findFileByPath(pathToFile);
 Module module = ModuleUtil.findModuleForFile(virtualFile,myProject);
 String moduleName = module == null ? "Module not found" : module.getName();
@@ -133,3 +133,5 @@ project.getMessageBus().connect().subscribe(ProjectTopics.MODULES, new ModuleLis
   }
 });
 ```
+
+If targeting 2019.3 or later, [declarative registration](plugin_listeners.md) is available as well.

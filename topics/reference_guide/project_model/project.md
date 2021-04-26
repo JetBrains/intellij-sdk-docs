@@ -1,16 +1,16 @@
 [//]: # (title: Project)
 
-<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 In the IntelliJ Platform, a project encapsulates all the source code, libraries, and build instructions into a single organizational unit.
 Everything done in the IDE is accomplished within the context of a project.
-A project defines some collections referred to as modules and libraries.
+A project defines some collections referred to as [modules](module.md) and [libraries](library.md).
 Depending on the logical and functional requirements for the project, a single-module or a multi-module project is possible.
 
 ## Working with Projects
 
 The IntelliJ Platform stores the project configuration data in XML files.
-The list of those files depends on the chosen [project](https://www.jetbrains.com/help/idea/about-projects.html) format.
+The list of those files depends on the chosen [project format](https://www.jetbrains.com/help/idea/creating-and-managing-projects.html#project-formats).
 
 For file-based format projects (legacy), the information core to the project itself (e.g., location of the component modules, compiler settings, etc.) is stored in the `%project_name%.ipr` file.
 The information about modules the project includes is stored in `%module_name%.iml` files.
@@ -50,7 +50,7 @@ Use [`ProjectFileIndex`](upsource:///platform/projectModel-api/src/com/intellij/
 ProjectFileIndex projectFileIndex = ProjectRootManager.getInstance(project).getFileIndex();
 ```
 
-### Getting the Content or Source Root to Which the a File or Directory Belongs
+### Getting the Content or Source Root to Which a File or Directory Belongs
 Use the `ProjectFileIndex.getContentRootForFile()` and `ProjectFileIndex.getSourceRootForFile()` methods.
 For example:
 
@@ -89,5 +89,7 @@ project.getMessageBus().connect().subscribe(ProjectTopics.PROJECT_ROOTS, new Mod
   }
 });
 ```
+
+If targeting 2019.3 or later, [declarative registration](plugin_listeners.md) is available as well.
 
 The event only notifies that something has changed; if more details are needed about what changes have occurred, keep a copy of the state of the project structure model which is relevant, and to compare it with the state after the change.

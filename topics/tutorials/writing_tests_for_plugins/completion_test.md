@@ -46,6 +46,8 @@ public class SimpleCodeInsightTest extends LightJavaCodeInsightFixtureTestCase {
 }
 ```
 
+A number of related methods exist in `CodeInsightTestFixture` for testing completion and lookup elements, e.g., when testing completion variants and requiring only one testdata file `CodeInsightTestFixture.testCompletionVariants()`.                                                                     
+
 ## Run the Test
 Run the test by:
 * Opening the **Gradle** Tool Window.

@@ -1,6 +1,6 @@
 [//]: # (title: Plugin Extension Points)
 
-<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
  >  See [Plugin Extensions](plugin_extensions.md) for _using_ extension points in your plugin.
  >
@@ -40,7 +40,7 @@ _myPlugin/META-INF/plugin.xml_
 ```
 
 The `name` attribute assigns a unique name for this extension point. 
-It will be prefixed with the plugin's `<id>` automatically.
+Its fully qualified name required in [Using Extension Points](#using-extension-points) is built by prefixing `<id>` + `.`: `my.plugin.myExtensionPoint1` and `my.plugin.myExtensionPoint2`.
 
 The `beanClass` attribute sets a bean class that specifies one or several properties annotated with the [`@Attribute`](upsource:///platform/util/src/com/intellij/util/xmlb/annotations/Attribute.java) annotation.
 The `interface` attribute sets an interface the plugin that contributes to the extension point must implement.

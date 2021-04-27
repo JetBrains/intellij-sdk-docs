@@ -1,6 +1,6 @@
 [//]: # (title: 3. Completion Test)
 
-<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 This test checks if the Simple Language code completion functionality, implemented in the [Reference Contributor](reference_contributor.md) section of the Custom Language Support Tutorial, works as expected.
 
@@ -12,7 +12,7 @@ Create the `DefaultTestData.simple` properties file in the `testData` directory.
 {src="simple_language_plugin/src/test/testData/DefaultTestData.simple"}
 
 Create a test input Java file `CompleteTestData.java` in the `testData` directory.
-This file contains a Simple Language snippet within the Java.
+This file contains a Simple Language reference within the Java code at `<caret>`.
 
 ```java
 ```
@@ -27,7 +27,7 @@ This method:
 * Configures the test using the two input files.
 * Calls the basic completion functionality.
   Behind the scenes, this method call creates a list of possible elements to complete the embedded Simple Language reference.
-* Checks the list of possible element names to ensure it contains all Simple Language completion possibilities.
+* Checks the list of returned lookup strings to ensure it matches the completion variants provided by the reference.
 
 ```java
 public class SimpleCodeInsightTest extends LightJavaCodeInsightFixtureTestCase {
@@ -38,10 +38,10 @@ public class SimpleCodeInsightTest extends LightJavaCodeInsightFixtureTestCase {
 
   public void testCompletion() {
     myFixture.configureByFiles("CompleteTestData.java", "DefaultTestData.simple");
-    myFixture.complete(CompletionType.BASIC, 1);
-    List<String> strings = myFixture.getLookupElementStrings();
-    assertTrue(strings.containsAll(Arrays.asList("key with spaces", "language", "message", "tab", "website")));
-    assertEquals(5, strings.size());
+    myFixture.complete(CompletionType.BASIC);
+    List<String> lookupElementStrings = myFixture.getLookupElementStrings();
+    assertNotNull(lookupElementStrings);
+    assertSameElements(lookupElementStrings, "key with spaces", "language", "message", "tab", "website");
   }
 }
 ```

@@ -6,7 +6,7 @@ import com.intellij.application.options.CodeStyle;
 import com.intellij.codeInsight.completion.CompletionType;
 import com.intellij.codeInsight.generation.actions.CommentByLineCommentAction;
 import com.intellij.openapi.command.WriteCommandAction;
-import com.intellij.psi.PsiElement;
+import com.intellij.psi.PsiReference;
 import com.intellij.psi.codeStyle.CodeStyleManager;
 import com.intellij.testFramework.fixtures.LightJavaCodeInsightFixtureTestCase;
 import com.intellij.usageView.UsageInfo;
@@ -78,9 +78,10 @@ public class SimpleCodeInsightTest extends LightJavaCodeInsightFixtureTestCase {
   }
 
   public void testReference() {
-    myFixture.configureByFiles("ReferenceTestData.java", "DefaultTestData.simple");
-    PsiElement element = myFixture.getFile().findElementAt(myFixture.getCaretOffset()).getParent();
-    assertEquals("https://en.wikipedia.org/", ((SimpleProperty) element.getReferences()[0].resolve()).getValue());
+    PsiReference referenceAtCaret =
+            myFixture.getReferenceAtCaretPositionWithAssertion("ReferenceTestData.java", "DefaultTestData.simple");
+    final SimpleProperty resolvedSimpleProperty = assertInstanceOf(referenceAtCaret.resolve(), SimpleProperty.class);
+    assertEquals("https://en.wikipedia.org/", resolvedSimpleProperty.getValue());
   }
 
 }

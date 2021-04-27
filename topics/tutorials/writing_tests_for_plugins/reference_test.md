@@ -15,15 +15,16 @@ This file has one Simple Language prefix and key, with the caret placed after th
 {src="simple_language_plugin/src/test/testData/ReferenceTestData.java"}
 
 ## Define a Test Method
-Add the `testReference()` method to the `SimpleCodeInsightTest` class [previously defined](completion_test.md#define-a-test).
+Add the ` testReference()` method to the `SimpleCodeInsightTest` class [previously defined](completion_test.md#define-a-test).
 This test is configured by the test files.
-The fixture gets the `PsiElement` at the caret, then compares its value with the known value of that key.
+The fixture gets the `PsiReference` at the caret position, and then asserts the resolved `SimpleProperty.value()` with the known value of that key.
 
 ```java
   public void testReference() {
-    myFixture.configureByFiles("ReferenceTestData.java", "DefaultTestData.simple");
-    PsiElement element = myFixture.getFile().findElementAt(myFixture.getCaretOffset()).getParent();
-    assertEquals("https://en.wikipedia.org/", ((SimpleProperty) element.getReferences()[0].resolve()).getValue());
+    PsiReference referenceAtCaret = 
+            myFixture.getReferenceAtCaretPositionWithAssertion("ReferenceTestData.java", "DefaultTestData.simple");
+    final SimpleProperty resolvedSimpleProperty = assertInstanceOf(referenceAtCaret.resolve(), SimpleProperty.class);
+    assertEquals("https://en.wikipedia.org/", resolvedSimpleProperty.getValue());
   }
 ```
 

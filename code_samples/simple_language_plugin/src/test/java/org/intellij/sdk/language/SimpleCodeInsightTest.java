@@ -1,4 +1,4 @@
-// Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
+// Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
 
 package org.intellij.sdk.language;
 
@@ -13,7 +13,6 @@ import com.intellij.usageView.UsageInfo;
 import com.intellij.util.containers.ContainerUtil;
 import org.intellij.sdk.language.psi.SimpleProperty;
 
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 
@@ -29,10 +28,10 @@ public class SimpleCodeInsightTest extends LightJavaCodeInsightFixtureTestCase {
 
   public void testCompletion() {
     myFixture.configureByFiles("CompleteTestData.java", "DefaultTestData.simple");
-    myFixture.complete(CompletionType.BASIC, 1);
-    List<String> strings = myFixture.getLookupElementStrings();
-    assertTrue(strings.containsAll(Arrays.asList("key with spaces", "language", "message", "tab", "website")));
-    assertEquals(5, strings.size());
+    myFixture.complete(CompletionType.BASIC);
+    List<String> lookupElementStrings = myFixture.getLookupElementStrings();
+    assertNotNull(lookupElementStrings);
+    assertSameElements(lookupElementStrings, "key with spaces", "language", "message", "tab", "website");
   }
 
   public void testAnnotator() {

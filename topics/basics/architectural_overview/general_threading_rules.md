@@ -41,7 +41,7 @@ None specified
 If a UI thread activity needs to access [file-based index](indexing_and_psi_stubs.md) (e.g., it's doing any project-wide PSI analysis, resolves references, etc.), please use `DumbService.smartInvokeLater()`.
 That way, it is run after all possible indexing processes have been completed.
 
-## Background processes and `ProcessCanceledException`
+## Background Processes and `ProcessCanceledException`
 
 Background progresses are managed by [`ProgressManager`](upsource:///platform/core-api/src/com/intellij/openapi/progress/ProgressManager.java) class,  which has plenty of methods to execute the given code with a modal (dialog), non-modal (visible in the status bar), or invisible progress.
 In all cases, the code is executed on a background thread, which is associated with a [`ProgressIndicator`](upsource:///platform/core-api/src/com/intellij/openapi/progress/ProgressIndicator.java) object.

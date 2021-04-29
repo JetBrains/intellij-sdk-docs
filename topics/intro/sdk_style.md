@@ -1,6 +1,6 @@
 [//]: # (title: Style Guide for SDK Documents)
 
-<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 This document describes the writing style used in authoring open-source IntelliJ Platform SDK documentation.
 Before you begin, please read this page thoroughly, as well as the [Code of Conduct](intellij-sdk-docs-original_CODE_OF_CONDUCT.md) and [License](https://github.com/JetBrains/intellij-sdk-docs/blob/main/LICENSE.txt) documents.
@@ -41,15 +41,15 @@ Consistent terminology helps the reader grasp new concepts more quickly:
 
 ### Text Format Conventions
 Consistent text styles are used to standardize references and keywords:
-* Menu paths are formatted as bold with pipe characters separating each level: \*\*Settings/Preferences \\\| Editor\*\* (**Settings/Preferences \| Editor**)
+* Menu paths are wrapped using `<menupath>` with pipe characters separating each level: `<menupath>Settings/Preferences | Editor</menupath>`: <menupath>Settings/Preferences | Editor</menupath> 
   Menu paths to settings always start with "Settings/Preferences" to cover all platforms.
 * Non-code keywords and quotations, or the names of non-code files, are formatted as italic style: \_UI Theme\_ (_UI Theme_), \_README.md\_ (_README.md_.)
   Examples of this file type include _LICENSE.txt_ and _README.md_.
-* Code keywords, or the names of files containing source code, are formatted as code style: \`interface\` (`interface`), \`plugin.xml\` (`plugin.xml`), \`AnAction\` (`AnAction`)
-  Examples of this file type include `build.gradle`, `AnAction.java` or `theme_basics.theme.json`.
+* Code keywords and classnames are formatted as code style: \`interface\`: `interface`, \`AnAction\`: `AnAction`, \`name\` attribute: `name` attribute.
+* File names are wrapped using `<path>`: `<path>build.gradle</path>` <path>build.gradle</path>.
 * File formats are shown as all capital letters: PNG and XML.
-* Filename extensions are not capitalized when part of a full filename, path, or URL: `filename.ext`.
-* Represent keyboard shortcuts with HTML elements: `press <kbd>Alt</kbd>+<kbd>Insert</kbd>` becomes "press <kbd>Alt</kbd>+<kbd>Insert</kbd>"
+* Filename extensions are not capitalized when part of a full filename, path, or URL: <path>filename.ext</path>.
+* Keyboard shortcuts are wrapped using `<shortcut>`: `press <shortcut>Alt+Insert</shortcut>` becomes "press <shortcut>Alt+Insert</shortcut>".
 * See [Guidelines for Highlighting Syntax](#guidelines-for-highlighting-syntax) for more best practices for representing code fragments.
 * See [Links to IntelliJ Platform Source](#links-to-intellij-platform-source) for more details about representing names of source files in links.
 
@@ -189,7 +189,7 @@ If the width of an image needs to be adjusted it can be specified as follows:
 ```
 
 ## Table of Contents
-The table of contents for the site is displayed in the tree view on the left-hand side of the site, and it is generated from the `ijs.tree` file.
+The table of contents for the site is displayed in the tree view on the left-hand side of the site, and it is generated from the <path>ijs.tree</path> file.
 The list can have nested items, which are displayed as child items in the table of contents.
                  
 ### Placeholders

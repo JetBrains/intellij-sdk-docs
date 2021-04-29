@@ -1,21 +1,20 @@
 [//]: # (title: Internal Actions - UI Inspector)
-[//]: # (: )
 
-<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 The _UI Inspector_ is a tool to interrogate elements of the IntelliJ IDEA UI to get an internal description of each element.
 UI elements can be tested interactively by clicking on the element while the _UI Inspector_ is enabled.
 
-If the menu item **Tools \| Internal Actions \| UI \| UI Inspector** is not available in IntelliJ IDEA, then the first step is to [enable internal mode](enabling_internal.md)
+If the menu item <menupath>Tools | Internal Actions | UI | UI Inspector</menupath> is not available in IntelliJ IDEA, then the first step is to [enable internal mode](enabling_internal.md).
 
 ## Enabling the UI Inspector
-Before using the _UI Inspector_, it must be enabled by selecting the menu item **Tools \| Internal Actions \| UI \| UI Inspector**.
+Before using the _UI Inspector_, it must be enabled by selecting the menu item <menupath>Tools | Internal Actions | UI | UI Inspector</menupath>.
 The enabled state of the _UI Inspector_ is modal; it remains enabled until it is disabled by selecting the _UI Inspector_ menu item again.
 
 ## Using the UI Inspector
-While enabled, centering the cursor on a UI element and pressing <kbd>Control/Cmd</kbd>+<kbd>Alt</kbd> when _clicking_ the mouse reveals the properties of the Swing component.
+While enabled, centering the cursor on a UI element and pressing <shortcut>Control/Cmd+Alt</shortcut> when _clicking_ the mouse reveals the properties of the Swing component.
 
-For example, to get information about the _Build Project_ button's icon (hammer) on the toolbar (highlighted in green), put the mouse cursor on the icon and press <kbd>Control/Cmd</kbd>+<kbd>Alt</kbd> while clicking the mouse.
+For example, to get information about the _Build Project_ button's icon (hammer) on the toolbar (highlighted in green), put the mouse cursor on the icon and press <shortcut>Control/Cmd+Alt</shortcut> while clicking the mouse.
 
 The _UI Inspector_ displays that the icon has the internal path `AllIcons.Actions.Compile`:
 

@@ -1,6 +1,6 @@
 [//]: # (title: IntelliJ Platform SDK)
 
-<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 [![official JetBrains project](https://jb.gg/badges/official-flat-square.svg)](https://confluence.jetbrains.com/display/ALL/JetBrains+on+GitHub) [![Twitter Follow](https://img.shields.io/twitter/follow/JBPlatform?style=flat-square)](https://twitter.com/JBPlatform/) [![Slack](https://img.shields.io/badge/Slack-%23intellij--platform-blue)](https://plugins.jetbrains.com/slack)
 
@@ -35,6 +35,6 @@ Verify your plugin follows guidelines from [Dynamic Plugins](dynamic_plugins.md)
 
 This guide is Open Source and licensed under Apache 2.0.
 The source (as Markdown) is [hosted on GitHub](https://github.com/JetBrains/intellij-sdk-docs).
-Please see [CONTRIBUTING.md](intellij-sdk-docs-original_CONTRIBUTING.md) for details on hosting the docs locally and contributing.
+Please see [CONTRIBUTING](intellij-sdk-docs-original_CONTRIBUTING.md) for details on hosting the docs locally and contributing.
 
 Please see [Getting Help](getting_help.md) if you encounter bugs in this guide or require help with missing content.

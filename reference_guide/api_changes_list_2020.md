@@ -60,14 +60,15 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 
 Please see [Incompatible API Changes](api_changes_list.md) on how to verify compatibility.
 
- >  Changes from API marked with `org.jetbrains.annotations.ApiStatus.@Experimental`/`ScheduledForRemoval` are not listed here, as incompatible changes are to be expected.
+ >  Changes from API marked with [`org.jetbrains.annotations.ApiStatus`](https://github.com/JetBrains/java-annotations/blob/master/common/src/main/java/org/jetbrains/annotations/ApiStatus.java) `@Experimental`, `@ScheduledForRemoval`, or `@Internal` are not listed here, as incompatible changes are to be expected.
  >
- {type="note"}
+ {type="note"} 
 
 ## 2020.3
 
- >  Java 11 is now required ([blog post](https://blog.jetbrains.com/platform/2020/09/intellij-project-migrates-to-java-11/)) when targeting 2020.3 and later only.
->  Please make sure to always upgrade to the latest version of `gradle-intellij-plugin`. Follow releases on [GitHub](https://github.com/JetBrains/gradle-intellij-plugin/releases).
+ >  Java 11 is required ([blog post](https://blog.jetbrains.com/platform/2020/09/intellij-project-migrates-to-java-11/)) when targeting 2020.3 and later only.
+ >  
+ >  Please make sure to always upgrade to the [latest version](https://github.com/JetBrains/gradle-intellij-plugin/releases) of `gradle-intellij-plugin`.
  >
  {type="note"}
 

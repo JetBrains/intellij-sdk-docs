@@ -33,26 +33,26 @@ Each roadmap should contain:
 Use the standard intellij-community copyright notice in all sample plugins authored by JetBrains:
 
 ```text
-Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file."
+Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file."
 ```
 
- >  The copyright statement must appear at the top of every source file.
-> Use the [IntelliJ Platform SDK](https://github.com/JetBrains/intellij-sdk-docs/tree/main/.idea/copyright) copyright profile.
+ > The copyright statement must appear at the top of every source file.
+ > Use the [IntelliJ Platform SDK](https://github.com/JetBrains/intellij-sdk-docs/tree/main/.idea/copyright) copyright profile.
  >
  {type="note"}
 
 ## Directory Naming Conventions for SDK Plugins
 For _basic_ samples, the plugin directory name is derived from the IntelliJ Platform extension points demonstrated.
-For example, `foo_basics` where `foo` corresponds to an IntelliJ Platform framework, extension point, or component.
-Some naming examples include `facet_basics` and `editor_basics`.
+For example, <path>foo_basics</path> where _foo_ corresponds to an IntelliJ Platform framework, extension point, or component.
+Some naming examples include <path>facet_basics</path> and <path>editor_basics</path>.
 There is only one _basic_ sample per IntelliJ Platform API area.
 
 For _advanced_ code samples, the name should reflect the complex functionality delivered by the plugin rather than the IntelliJ Platform APIs.
 Advanced samples will be cross-referenced to the IntelliJ Platform APIs demonstrated in the sample.
 
-The only symbol characters allowed in the name of a plugin root directory are underscores, such as `foo_basics` or `max_opened_projects`.
+The only symbol characters allowed in the name of a plugin root directory are underscores, such as <path>foo_basics</path> or <path>max_opened_projects</path>.
 However, underscores should _not_ be used in any other symbol names, such as `Artifact ID`, plugin ID, package names, etc.
-Instead, concatenate a long name into camelCase such as `maxOpenedProjects`
+Instead, concatenate a long name into camelCase such as <path>maxOpenedProjects</path>.
 
 ## Group and Artifact ID
 When creating a Gradle-based IntelliJ Platform plugin, the plugin's Maven coordinates (`Group ID`, `Artifact ID`, `Version`) are defined.
@@ -65,14 +65,14 @@ An `Artifact ID` should not contain symbols.
 For _basic_ code samples, it is not necessary to include "basic" in the `Artifact ID`.
 For example, the `foo_basics` directory name would have the `Artifact ID` `foo`.
 
-A plugin with a longer directory name, such as `conditional_operator_intention`, could have the more succinct `Artifact ID` of `conditionalOperatorIntention`.
-(For legacy reasons, the `conditional_operator_intention` plugin uses a more concise `Artifact ID`.)
+A plugin with a longer directory name, such as <path>conditional_operator_intention</path>, could have the more succinct `Artifact ID` of `conditionalOperatorIntention`.
+(For legacy reasons, the <path>conditional_operator_intention</path> plugin uses a more concise `Artifact ID`.)
 
 ## Plugin ID Conventions
-The plugin ID appears between `<id>` elements in the `plugin.xml` file.
+The plugin ID appears between `<id>` elements in the <path>plugin.xml</path> file.
 
 In general, the plugin ID is the `Group ID` concatenated with the `Artifact ID`.
-For example, a plugin like `facet_basics` has the plugin ID `org.intellij.sdk.facet`.
+For example, a plugin like <path>facet_basics</path> has the plugin ID `org.intellij.sdk.facet`.
 
 Plugin IDs do not contain underscores.
 
@@ -116,17 +116,17 @@ code_samples/
 ```
 
 ## build.gradle Conventions
-New SDK code samples should be developed [using Gradle](gradle_build_system.md).
-As of this writing, the use of Gradle in SDK code samples still relies heavily on the `plugin.xml` for specifying the plugin configuration.
+SDK code samples should be developed [using Gradle](gradle_build_system.md).
+As of this writing, the use of Gradle in SDK code samples still relies heavily on the <path>plugin.xml</path> for specifying the plugin configuration.
 At a later, second phase, the SDK code samples will transition to rely more on the Gradle configuration.
 
-The default contents of a `build.gradle` file are produced by the [New Project Wizard](gradle_prerequisites.md#creating-a-gradle-based-intellij-platform-plugin-with-new-project-wizard).
-A consistent structure for an SDK code sample's `build.gradle` file is essential for clarity and is based on the default produced by the project wizard.
-Comments in SDK code sample `build.gradle` files should only draw attention to the parts of the Gradle configuration that are unique for a plugin.
+The default contents of a <path>build.gradle</path> file are produced by the [New Project Wizard](gradle_prerequisites.md#creating-a-gradle-based-intellij-platform-plugin-with-new-project-wizard).
+A consistent structure for an SDK code sample's <path>build.gradle</path> file is essential for clarity and is based on the default produced by the project wizard.
+Comments in SDK code sample <path>build.gradle</path> files should only draw attention to the parts of the Gradle configuration that are unique for a plugin.
 
-For SDK code samples, a few alterations are needed to the default `build.gradle` file produced by the plugin wizard:
+For SDK code samples, a few alterations are needed to the default <path>build.gradle</path> file produced by the plugin wizard:
 * Maintain the Gradle properties `version` (`project.version`) and `group` (`project.group`).
-  See the [Plugin Gradle Properties](gradle_prerequisites.md#plugin-gradle-properties-and-plugin-configuration-file-elements) section for how these Gradle properties relate to the elements in `plugin.xml`.
+  See the [Plugin Gradle Properties](gradle_prerequisites.md#plugin-gradle-properties-and-plugin-configuration-file-elements) section for how these Gradle properties relate to the elements in <path>plugin.xml</path>.
 * Add the following statement to the [Setup DSL](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md#setup-dsl) (`intellij{}`) section:
   ```groovy
       // Prevents patching <idea-version> attributes in plugin.xml
@@ -142,7 +142,7 @@ For SDK code samples, a few alterations are needed to the default `build.gradle`
 A consistent structure for the [`plugin.xml`](plugin_configuration_file.md) configuration file of an SDK code sample is important because we want to draw attention to the unique parts of the file for a plugin.
 Comment profusely about unique elements and configurations, and comment sparingly for the rest.
 
-The sequence of elements in an SDK code sample `plugin.xml` file is:
+The sequence of elements in an SDK code sample <path>plugin.xml</path> file is:
 * `<id>` Use the fully qualified [Plugin ID](#plugin-id-conventions).
 * `<name>` The name value does not have to match the [Plugin Directory Name](#directory-naming-conventions-for-sdk-plugins).
   The name is used for display purposes and should reflect the functionality of the plugin.
@@ -160,7 +160,7 @@ The sequence of elements in an SDK code sample `plugin.xml` file is:
 * `<depends>` Include at least one dependency with the module `com.intellij.modules.platform` to indicate basic plugin compatibility with IntelliJ Platform-based products.
   Add `<depends>` elements containing module FQNs as needed to describe more specialized [Compatibility with Multiple Products](plugin_compatibility.md), and any other [Plugin Dependencies](plugin_dependencies.md).
 * `<description>` is a concise explanation of what is being demonstrated and how a user would access the functionality.
-  If the plugin by default overrides IDE behavior (such as `tree_structure_provider`) it must be noted in the description.
+  If the plugin by default overrides IDE behavior (such as <path>tree_structure_provider</path>) it must be noted in the description.
 * `<change-notes>` is an ordered list by version numbers with a brief description of changes for each version.
 * `<vendor>` Set the value to `IntelliJ Platform SDK`.
   Set the attributes:
@@ -176,7 +176,7 @@ Code samples should build cleanly, with no warnings or errors, and new code samp
 Testers should complete the following checklist.
 Here the term "IDE" means the IntelliJ Platform-based IDE in which the plugin is designed to run:
 * The plugin should load in the IDE.
-* The correct information about the plugin should display in the **Preferences \| Plugins** panel.
+* The correct information about the plugin should display in the <menupath>Settings/Preferences | Plugins</menupath> panel.
 * If applicable, the plugin UI, such as tool windows, menu additions, etc. should display correctly.
 * The functionality of the plugin should be tested with a sample file.
 * If applicable, the plugin should pass unit tests.

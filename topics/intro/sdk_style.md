@@ -14,7 +14,7 @@ The style of the Intellij Platform SDK documentation is captured by using a mark
 
 ## Documentation Markup
 
-The documentation files themselves are [Markdown](https://github.github.com/gfm/) files (`*.md`) that get automatically converted to HTML when the site is built.
+The documentation files themselves are [Markdown](https://github.github.com/gfm/) files (<path>*.md</path>) that get automatically converted to HTML when the site is built.
 
 ### Page Format
 Each Markdown file must contain a header defining its title:

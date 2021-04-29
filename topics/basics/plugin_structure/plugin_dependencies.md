@@ -1,6 +1,6 @@
 [//]: # (title: Plugin Dependencies)
 
-<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 A plugin may depend on classes from other plugins, either bundled, third-party, or by the same author.
 This document describes the syntax for declaring plugin dependencies and optional plugin dependencies.
@@ -63,7 +63,7 @@ If the project uses [DevKit](using_dev_kit.md), add the JARs of the plugin on wh
  >
  {type="warning"}
 
-To do that, open the Project Structure dialog, select the SDK used in the project, press the <kbd>+</kbd> button in the Classpath tab, and select the plugin JAR file or files:
+To do that, open the Project Structure dialog, select the SDK used in the project, press the <shortcut>+</shortcut> button in the Classpath tab, and select the plugin JAR file or files:
 * For bundled plugins, the plugin JAR files are located in `plugins/<pluginname>` or `plugins/<pluginname>/lib` under the main installation directory.
   If you're not sure which JAR to add, you can add all of them.
 * For non-bundled plugins, the plugin JAR files are located in `config/plugins/<pluginname>` or `config/plugins/<pluginname>/lib` under the directory specified as "Sandbox Home" in the IntelliJ Platform Plugin SDK settings.

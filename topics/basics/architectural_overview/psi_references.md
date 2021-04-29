@@ -1,6 +1,6 @@
 [//]: # (title: PSI References)
 
-<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 A *reference* in a PSI tree is an object that represents a link from a *usage* of a particular element in the code to the corresponding *declaration*. *Resolving* a reference means locating the declaration to which a specific usage refers.
 
@@ -48,7 +48,7 @@ File f = new File("foo.txt");
 ```
 
 Here, "foo.txt" has no special meaning from the point of view of the Java syntax - it's just a string literal.
-However, opening this example in IntelliJ IDEA and having a file called "foo.txt" in the same directory, one can <kbd>Ctrl/Cmd</kbd>-Click on "foo.txt" and navigate to the file.
+However, opening this example in IntelliJ IDEA and having a file called "foo.txt" in the same directory, one can <shortcut>Ctrl/Cmd+Click</shortcut> on "foo.txt" and navigate to the file.
 This works because the IDE recognizes the semantics of `new File(...)` and _contributes a reference_ into the string literal passed as a parameter to the method.
 
 Typically, references can be contributed to elements that don't have their own references, such as string literals and comments.

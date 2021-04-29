@@ -1,6 +1,6 @@
 [//]: # (title: Creating New Functions for Live Templates)
 
-<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 The [Predefined Functions](https://www.jetbrains.com/help/idea/template-variables.html?s=quick#predefined_functions) are the building blocks for creating [Parameterized Templates and Surround Templates](https://www.jetbrains.com/help/idea/using-live-templates.html?s=quick#live_templates_types).
 However, sometimes the Predefined Functions are not enough.
@@ -57,12 +57,12 @@ Using the `com.intellij.liveTemplateMacro` extension point, register the impleme
 Now verify the plugin is working correctly.
 * Run the plugin in a Development Instance.
 * Create a new file `testing.md` and enter several words in lower case.
-* Highlight the text and enter <kbd>⌥⌘J</kbd> to open the Select Template popup.
+* Highlight the text and enter <shortcut>Ctrl/Cmd+J</shortcut> to open the Select Template popup.
   Confirm that the _SDK: Convert to title case_ is available in the popup, and select it.
 
 ![Convert to title case](invoke_titleCase.png){width="700"}
 
-Test that the Live Template works by entering <kbd>m</kbd> or <kbd>return</kbd>.
+Test that the Live Template works by entering <shortcut>m</shortcut> or <shortcut>Return</shortcut>.
 The text will change to have each word capitalized:
 
 ![Converted to title case](applied_titleCase.png){width="700"}

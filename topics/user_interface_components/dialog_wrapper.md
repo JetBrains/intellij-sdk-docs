@@ -1,6 +1,6 @@
 [//]: # (title: Dialogs)
 
-<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 ## DialogWrapper
 
@@ -13,9 +13,9 @@ It provides the following features:
 * Remembering the size of the dialog
 * Non-modal validation (displaying an error message text when the data entered into the dialog is not valid)
 * Keyboard shortcuts:
-    * <kbd>Esc</kbd> for closing the dialog
-    * <kbd>Left/Right</kbd> for switching between buttons
-    * <kbd>Y</kbd>/<kbd>N</kbd> for _Yes_/_No_ actions if they exist in the dialog
+    * <shortcut>Esc</shortcut> for closing the dialog
+    * <shortcut>Left/Right</shortcut> for switching between buttons
+    * <shortcut>Y</shortcut>/<shortcut>N</shortcut> for _Yes_/_No_ actions if they exist in the dialog
 * Optional _Do not ask again_ checkbox
 
 When using the [`DialogWrapper`](upsource:///platform/platform-api/src/com/intellij/openapi/ui/DialogWrapper.java) class for a dialog, follow these steps:

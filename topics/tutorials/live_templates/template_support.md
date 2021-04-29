@@ -137,4 +137,4 @@ Using the `com.intellij.defaultLiveTemplatesProvider` and `com.intellij.liveTemp
 Now verify the plugin is working correctly.
 Run the plugin in a Development Instance and verify there is a new entry under **Settings/Preferenes \| Live Templates \| Markdown \| \{ (SDK: New link reference)**.
 
-Finally, create a new file `test.md` and confirm that the Live Template works by entering a <kbd>{</kbd> character and then pressing <kbd>Tab</kbd>.
+Finally, create a new file `test.md` and confirm that the Live Template works by entering a <shortcut>{</shortcut> character and then pressing <shortcut>Tab</shortcut>.

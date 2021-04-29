@@ -1,6 +1,6 @@
 [//]: # (title: About This Guide)
 
-<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 This guide is split into several parts, similar to a textbook.
 Each one builds on the content of the previous section, but it is not necessary to read the guide in order.
@@ -42,7 +42,7 @@ It also details how PSI creates and uses indexes.
 
 #### Part V - Features
 
-Describes how to extend and interact with various features that use the PSI layer, such as code completion, navigation, <kbd>Alt</kbd>+<kbd>Enter</kbd> items, intentions, refactorings, and more.
+Describes how to extend and interact with various features that use the PSI layer, such as code completion, navigation, <shortcut>Alt+Enter</shortcut> items, intentions, refactorings, and more.
 See also the section on Custom Languages below for language-specific features that are only applicable when adding support for a new language.
 
 #### [Part VI - Testing](testing_plugins.md)

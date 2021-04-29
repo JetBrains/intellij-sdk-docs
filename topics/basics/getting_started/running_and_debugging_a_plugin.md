@@ -1,6 +1,6 @@
 [//]: # (title: Running and Debugging a Plugin)
 
-<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 It's possible to run and debug a plugin directly from the IntelliJ IDEA.
 You need a configured special profile (a *Plugin* Run/Debug configuration) that specifies the plugin module, VM parameters, and other specific options.
@@ -14,8 +14,8 @@ Using IntelliJ IDEA's debugger, you can find out the origin of the run-time erro
 
 **To debug a plugin**
 
-*  Select **Run \| Debug** in the main menu, or press <kbd>Shift</kbd> + <kbd>F9</kbd>.
+*  Select **Run \| Debug** in the main menu, or press <shortcut>Shift+F9</shortcut>.
 
 **To run a plugin**
 
-*  Select **Run \| Run** in the main menu, or press <kbd>Shift</kbd> + <kbd>F10</kbd>.
+*  Select **Run \| Run** in the main menu, or press <shortcut>Shift+F10</shortcut>.

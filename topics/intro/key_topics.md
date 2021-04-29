@@ -1,6 +1,6 @@
 [//]: # (title: Key Topics)
 
-<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 The IntelliJ Platform is extensive and very capable, and its size and scope can initially be very daunting.
 This page is intended to list the key topics that a plugin author would be interested in, and provide quick links to the most common extension points.
@@ -31,5 +31,5 @@ Some of the common extension points are:
 
 * [Actions](action_system.md) - menu and toolbar items
 * [Code inspections](code_inspections.md) - code analysis that looks at the syntax trees and semantic models and highlight issues in the editor.
-* [Intentions](code_intentions.md) - context-specific actions that are available in the <kbd>Alt</kbd>+<kbd>Enter</kbd> menu when the text caret is at a particular location.
+* [Intentions](code_intentions.md) - context-specific actions that are available in the <shortcut>Alt+Enter</shortcut> menu when the text caret is at a particular location.
 * [Code completion](code_completion.md).

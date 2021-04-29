@@ -1,6 +1,6 @@
 [//]: # (title: Plugin Services)
 
-<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 A _service_ is a plugin component loaded on demand when your plugin calls the `getService()` method of [`ServiceManager`](upsource:///platform/core-api/src/com/intellij/openapi/components/ServiceManager.java).
 
@@ -127,5 +127,5 @@ If this number exceeds the maximum number of simultaneously opened projects allo
 
 * Download the included sample plugin project located [here](https://github.com/JetBrains/intellij-sdk-code-samples/tree/main/max_opened_projects).
 * Start IntelliJ IDEA, on the starting page, click *Open Project*, and then use the *Open Project* dialog box to open the project.
-* On the main menu, choose *Run \| Run* or press <kbd>Shift</kbd>+<kbd>F10</kbd>.
+* On the main menu, choose *Run \| Run* or press <shortcut>Shift+F10</shortcut>.
 * If necessary, change the [Run/Debug Configurations](https://www.jetbrains.com/help/idea/run-debug-configuration-plugin.html).

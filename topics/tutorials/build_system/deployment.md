@@ -1,10 +1,10 @@
 [//]: # (title: Publishing Plugins with Gradle)
 
-<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 Once you have configured Gradle support, you can automatically build and deploy your plugin to the [JetBrains Plugins Repository](https://plugins.jetbrains.com).
 To automatically deploy a plugin, you need to have _already published the plugin to the plugin repository at least once._
-Please see the guide page for manually [publishing a plugin](publishing_plugin.md) for the first time.
+Please see the guide page for manually [publishing a plugin](publishing_plugin.md) for the first time and [Building Distribution](#building-distribution) on obtaining the initial plugin distribution artifact. 
 
  >  Please see [Marketing](marketing.md) for remarks on how to prepare your plugin for optimal presentation.
  >
@@ -15,7 +15,7 @@ Please see the guide page for manually [publishing a plugin](publishing_plugin.m
  {type="warning"}
 
 ## Building Distribution
-For manual distribution or local installation, invoke the `buildPlugin` Gradle task to create the plugin distribution.
+For initial upload, manual distribution or local installation, invoke the `buildPlugin` Gradle task to create the plugin distribution.
 The resulting JAR/ZIP is located in `build/distributions` and can then be installed via drag & drop (or using [plugin manager](https://www.jetbrains.com/help/idea/managing-plugins.html#installing-plugins-from-disk))
 or uploaded to a [custom plugin repository](update_plugins_format.md).
 

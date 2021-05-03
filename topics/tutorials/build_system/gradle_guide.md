@@ -91,7 +91,7 @@ Standardizing the versions of the Gradle plugin and Gradle system across project
 
 There are controls for managing the `gradle-intellij-plugin` version, and the version of Gradle itself.
 The plugin version is defined in the `plugins {}` section of a project's <path>build.gradle</path> file.
-The version of Gradle is defined in <path>$PROJECT ROOT$/gradle/wrapper/gradle-wrapper.properties</path>.
+The version of Gradle is defined in <path>$PROJECT_ROOT$/gradle/wrapper/gradle-wrapper.properties</path>.
 
 ### Patching the Plugin Configuration File
 A plugin project's <path>plugin.xml</path> file has element values that are "patched" at build time from the attributes of the `patchPluginXml` task ([Patching DSL](https://github.com/JetBrains/gradle-intellij-plugin#patching-dsl)).

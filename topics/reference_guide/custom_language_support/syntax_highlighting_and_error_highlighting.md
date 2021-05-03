@@ -1,6 +1,6 @@
 [//]: # (title: Syntax Highlighting and Error Highlighting)
 
-<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 The class used to specify how a particular range of text should be highlighted is called [`TextAttributesKey`](upsource:///platform/core-api/src/com/intellij/openapi/editor/colors/TextAttributesKey.java).
 An instance of this class is created for every distinct type of item that should be highlighted (keyword, number, string, etc.).
@@ -88,7 +88,7 @@ In previous versions, call `AnnotationHolder.createInfoAnnotation()` with an emp
 
 ## External Tool
 
-Finally, if the custom language employs external tools for validating files in the language (for example, uses the Xerces library for XML schema validation), it can provide an implementation of the [`ExternalAnnotator`](upsource:///platform/analysis-api/src/com/intellij/lang/annotation/ExternalAnnotator.java) interface and register it in `com.intellij.externalAnnotator` extension point.
+Finally, if the custom language employs external tools for validating files in the language (for example, uses the Xerces library for XML schema validation), it can provide an implementation of the [`ExternalAnnotator`](upsource:///platform/analysis-api/src/com/intellij/lang/annotation/ExternalAnnotator.java) interface and register it in `com.intellij.externalAnnotator` extension point (`language` attribute must be specified).
 
 The [`ExternalAnnotator`](upsource:///platform/analysis-api/src/com/intellij/lang/annotation/ExternalAnnotator.java) highlighting has the lowest priority and is invoked only after all other background processing has completed.
 It uses the same [`AnnotationHolder`](upsource:///platform/analysis-api/src/com/intellij/lang/annotation/AnnotationHolder.java) interface for converting the output of the external tool into editor highlighting.

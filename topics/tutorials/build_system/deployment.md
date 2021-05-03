@@ -16,7 +16,7 @@ Please see the guide page for manually [publishing a plugin](publishing_plugin.m
 
 ## Building Distribution
 For initial upload, manual distribution or local installation, invoke the `buildPlugin` Gradle task to create the plugin distribution.
-The resulting JAR/ZIP is located in `build/distributions` and can then be installed via drag & drop (or using [plugin manager](https://www.jetbrains.com/help/idea/managing-plugins.html#installing-plugins-from-disk))
+The resulting ZIP file is located in <path>build/distributions</path> and can then be installed via drag & drop (or using [plugin manager](https://www.jetbrains.com/help/idea/managing-plugins.html#installing-plugins-from-disk))
 or uploaded to a [custom plugin repository](update_plugins_format.md).
 
 ## Providing Your Hub Permanent Token to Gradle
@@ -33,7 +33,7 @@ Start by defining an environment variable such as:
 export ORG_GRADLE_PROJECT_intellijPublishToken='YOUR_HUB_TOKEN_HERE'
 ```
 
- >  On macOS systems, environment variables set in `.bash_profile` are only visible to processes you run from bash.
+ >  On macOS systems, environment variables set in <path>.bash_profile</path> are only visible to processes you run from bash.
 Environment variables visible to all processes need to be defined in [Environment.plist](https://developer.apple.com/library/archive/qa/qa1067/_index.html).
  >
  {type="note"}

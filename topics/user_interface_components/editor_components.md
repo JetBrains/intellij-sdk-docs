@@ -1,6 +1,6 @@
 [//]: # (title: Editor Components)
 
-<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 ## EditorTextField
 
@@ -36,6 +36,10 @@ Document document = PsiDocumentManager.getInstance(editor.getProject()).getDocum
 
 EditorTextField myInput = new EditorTextField(document, editor.getProject(), JavaFileType.INSTANCE);
 ```
+ 
+ > If your plugin depends on Java functionality and targets 2019.2 or later, please make sure to follow the steps from this [blog post](https://blog.jetbrains.com/platform/2019/06/java-functionality-extracted-as-a-plugin/).
+ >
+ {type="note"}
 
 **TIPS**:
 

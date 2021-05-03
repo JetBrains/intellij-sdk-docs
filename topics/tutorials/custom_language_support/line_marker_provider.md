@@ -15,6 +15,8 @@ For this example, override the `collectNavigationMarkers()` method to collect us
 ```java
 ```
 {src="simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleLineMarkerProvider.java"}
+                           
+Extending from [`GutterIconDescriptor`](upsource:///platform/lang-api/src/com/intellij/codeInsight/daemon/GutterIconDescriptor.java) allows configuring gutter icons to be shown via <menupath>Settings/Preferences | Editor | General | Gutter Icons</menupath>.
 
 ## Best Practices for Implementing Line Marker Providers
 This section addresses important details about implementing a marker provider.

@@ -47,7 +47,7 @@ Optionally:
 * To include support for the Kotlin language in the plugin, check the _Kotlin/JVM_ box (circled in green below).
   This option can be selected with or without the _Java_ language.
   See [Kotlin for Plugin Developers](kotlin.md) for more information.
-* To create the `build.gradle` file as a Kotlin build script (`build.gradle.kts`) rather than Groovy, check the _Kotlin DSL build script_ box (circled in magenta below).
+* To create the <path>build.gradle</path> file as a Kotlin build script (<path>build.gradle.kts</path>) rather than Groovy, check the _Kotlin DSL build script_ box (circled in magenta below).
 
 Then click _Next_:
 
@@ -55,12 +55,12 @@ Then click _Next_:
 
 ### Project Naming/Artifact Coordinates Screen
 Expand the _Artifact Coordinates_ section and specify a [GroupId, ArtifactId, and Version](https://www.jetbrains.com/help/idea/gradle.html#project_create_gradle) using [Maven naming](https://maven.apache.org/guides/mini/guide-naming-conventions.html) conventions.
-* _GroupId_ is typically a Java package name, and it is used for the Gradle property `project.group` value in the project's `build.gradle` file.
+* _GroupId_ is typically a Java package name, and it is used for the Gradle property `project.group` value in the project's <path>build.gradle</path> file.
   For this example, enter `com.your.company`.
 * _ArtifactId_ is the default name of the project JAR file (without version).
-  It is also used for the Gradle property `rootProject.name` value in the project's `settings.gradle` file.
+  It is also used for the Gradle property `rootProject.name` value in the project's <path>settings.gradle</path> file.
   For this example, enter `my_gradle_plugin`.
-* _Version_ is used for the Gradle property `project.version` value in the `build.gradle` file.
+* _Version_ is used for the Gradle property `project.version` value in the <path>build.gradle</path> file.
   For this example, enter `1.0`.
 
 The _Name_ field is synced automatically with the specified _ArtifactId_.
@@ -91,13 +91,13 @@ my_gradle_plugin
         └── resources
 ```
 
-* The default IntelliJ Platform `build.gradle` file (see next paragraph).
+* The default IntelliJ Platform <path>build.gradle</path> file (see next paragraph).
 * The Gradle Wrapper files, and in particular the `gradle-wrapper.properties` file, which specifies the version of Gradle to be used to build the plugin.
   If needed, the IntelliJ IDEA Gradle plugin downloads the version of Gradle specified in this file.
-* The `settings.gradle` file, containing a definition of the `rootProject.name`.
-* The `META-INF` directory under the default `main` [SourceSet](https://docs.gradle.org/current/userguide/java_plugin.html#sec:java_project_layout) contains the plugin [configuration file](plugin_configuration_file.md).
+* The <path>settings.gradle</path> file, containing a definition of the `rootProject.name`.
+* The <path>META-INF</path> directory under the default `main` [SourceSet](https://docs.gradle.org/current/userguide/java_plugin.html#sec:java_project_layout) contains the plugin [configuration file](plugin_configuration_file.md).
 
-The generated `my_gradle_plugin` project `build.gradle` file:
+The generated `my_gradle_plugin` project <path>build.gradle</path> file:
 
 ```groovy
   plugins {
@@ -139,7 +139,7 @@ The generated `my_gradle_plugin` project `build.gradle` file:
 * The value of the Patching DSL attribute `patchPluginXml.changeNotes` is set to a place holder text.
 
 #### Plugin Gradle Properties and Plugin Configuration File Elements
-The Gradle properties `rootProject.name` and `project.group` will not, in general, match the respective [plugin configuration file](plugin_configuration_file.md) `plugin.xml` elements `<name>` and `<id>`.
+The Gradle properties `rootProject.name` and `project.group` will not, in general, match the respective [plugin configuration file](plugin_configuration_file.md) <path>plugin.xml</path> elements `<name>` and `<id>`.
 There is no IntelliJ Platform-related reason they should as they serve different functions.
 
 The `<name>` element (used as the plugin's display name) is often the same as `rootProject.name`, but it can be more explanatory.
@@ -151,9 +151,9 @@ Please note that it is impossible to change the `<id>` of a published plugin wit
 Converting a [DevKit-based](using_dev_kit.md) plugin project to a Gradle-based plugin project can be done using the New Project Wizard to create a Gradle-based project around the existing DevKit-based project:
 * Ensure the directory containing the DevKit-based IntelliJ Platform plugin project can be fully recovered if necessary.
 * Delete all the artifacts of the DevKit-based project:
-  * `.idea` directory
-  * `[modulename].iml` file
-  * `out` directory
+  * <path>.idea</path> directory
+  * <path>[modulename].iml</path> file
+  * <path>out</path> directory
 * Arrange the existing source files within the project directory in the Gradle [SourceSet](https://docs.gradle.org/current/userguide/java_plugin.html#sec:java_project_layout) format.
 * Use the New Project Wizard as though creating a [new Gradle project](#creating-a-gradle-based-intellij-platform-plugin-with-new-project-wizard) from scratch.
 * On the [Project Naming/Artifact Coordinates Screen](#project-namingartifact-coordinates-screen) set the values to:

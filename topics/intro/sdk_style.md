@@ -43,6 +43,7 @@ Consistent terminology helps the reader grasp new concepts more quickly:
 Consistent text styles are used to standardize references and keywords:
 * Menu paths are wrapped using `<menupath>` with pipe characters separating each level: `<menupath>Settings/Preferences | Editor</menupath>`: <menupath>Settings/Preferences | Editor</menupath> 
   Menu paths to settings always start with "Settings/Preferences" to cover all platforms.
+* User interface element names like buttons, checkboxes, etc. are wrapped using `<control>`: `Press <control>Continue</continue>`: Press <control>Continue</control>
 * Non-code keywords and quotations, or the names of non-code files, are formatted as italic style: \_UI Theme\_ (_UI Theme_), \_README.md\_ (_README.md_.)
   Examples of this file type include _LICENSE.txt_ and _README.md_.
 * Code keywords and classnames are formatted as code style: \`interface\`: `interface`, \`AnAction\`: `AnAction`, \`name\` attribute: `name` attribute.

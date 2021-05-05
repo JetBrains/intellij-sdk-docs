@@ -181,8 +181,8 @@ _Implementation_ opens declaration of related class.
 | Extension Point | Implementation |
 |---|---|
 | [com.intellij.completion.ml.lookupFeatures](https://jb.gg/ipe?extensions=com.intellij.completion.ml.lookupFeatures) ![Internal API](https://img.shields.io/badge/-Internal_API-red) | [`LookupFeatureProvider`](upsource:///plugins/completion-ml-ranking/src/com/intellij/completion/ml/sorting/LookupFeatureProvider.java) | 
-| [com.intellij.completion.ml.ranking.features.policy](https://jb.gg/ipe?extensions=com.intellij.completion.ml.ranking.features.policy) | [`CompletionFeaturesPolicy`](upsource:///plugins/completion-ml-ranking/src/com/intellij/completion/ml/features/CompletionFeaturesPolicy.kt) | 
-| [com.intellij.completion.ml.ranking.policy](https://jb.gg/ipe?extensions=com.intellij.completion.ml.ranking.policy) | [`CompletionMLPolicy`](upsource:///plugins/completion-ml-ranking/src/com/intellij/completion/ml/CompletionMLPolicy.kt) | 
+| [com.intellij.completion.ml.ranking.features.policy](https://jb.gg/ipe?extensions=com.intellij.completion.ml.ranking.features.policy) ![Internal API](https://img.shields.io/badge/-Internal_API-red) | [`CompletionFeaturesPolicy`](upsource:///plugins/completion-ml-ranking/src/com/intellij/completion/ml/features/CompletionFeaturesPolicy.kt) | 
+| [com.intellij.completion.ml.ranking.policy](https://jb.gg/ipe?extensions=com.intellij.completion.ml.ranking.policy) ![Experimental API](https://img.shields.io/badge/-Experimental_API-red) | [`CompletionMLPolicy`](upsource:///plugins/completion-ml-ranking/src/com/intellij/completion/ml/CompletionMLPolicy.kt) | 
 
 ## com.intellij.copyright
 [com.intellij.copyright](upsource:///plugins/copyright/src/META-INF/plugin.xml)
@@ -364,7 +364,7 @@ _Implementation_ opens declaration of related class.
 | [com.intellij.psi.treeChangePreprocessor](https://jb.gg/ipe?extensions=com.intellij.psi.treeChangePreprocessor) ![Project-Level](https://img.shields.io/badge/-Project--Level-yellow) | [`PsiTreeChangePreprocessor`](upsource:///platform/core-impl/src/com/intellij/psi/impl/PsiTreeChangePreprocessor.java) | 
 | [com.intellij.smartPointer.anchorProvider](https://jb.gg/ipe?extensions=com.intellij.smartPointer.anchorProvider) | [`SmartPointerAnchorProvider`](upsource:///platform/core-impl/src/com/intellij/psi/impl/smartPointers/SmartPointerAnchorProvider.java) | 
 | [com.intellij.treeCopyHandler](https://jb.gg/ipe?extensions=com.intellij.treeCopyHandler) | [`TreeCopyHandler`](upsource:///platform/core-impl/src/com/intellij/psi/impl/source/tree/TreeCopyHandler.java) | 
-| [com.intellij.virtualFileSystem](https://jb.gg/ipe?extensions=com.intellij.virtualFileSystem) | [`VirtualFileSystem`](upsource:///platform/core-api/src/com/intellij/openapi/vfs/VirtualFileSystem.java) |
+| [com.intellij.virtualFileSystem](https://jb.gg/ipe?extensions=com.intellij.virtualFileSystem) | [`VirtualFileSystem`](upsource:///platform/core-api/src/com/intellij/openapi/vfs/VirtualFileSystem.java) | 
 
 ## Coverage
 [Coverage](upsource:///plugins/coverage/src/META-INF/plugin.xml)
@@ -1383,7 +1383,7 @@ _Implementation_ opens declaration of related class.
 | [com.intellij.selectInTarget](https://jb.gg/ipe?extensions=com.intellij.selectInTarget) ![Project-Level](https://img.shields.io/badge/-Project--Level-yellow) | [`SelectInTarget`](upsource:///platform/platform-api/src/com/intellij/ide/SelectInTarget.java) | 
 | [com.intellij.smartSelectProvider](https://jb.gg/ipe?extensions=com.intellij.smartSelectProvider) | [`SmartSelectProvider`](upsource:///platform/platform-api/src/com/intellij/openapi/ide/SmartSelectProvider.java) | 
 | [com.intellij.sshCredentialProvider](https://jb.gg/ipe?extensions=com.intellij.sshCredentialProvider) | [`SshCredentialProvider`](upsource:///platform/platform-impl/src/com/intellij/remote/SshCredentialProvider.java) | 
-| [com.intellij.startPagePromoter](https://jb.gg/ipe?extensions=com.intellij.startPagePromoter) | [`StartPagePromoter`](upsource:///platform/platform-api/src/com/intellij/openapi/wm/StartPagePromoter.kt) | 
+| [com.intellij.startPagePromoter](https://jb.gg/ipe?extensions=com.intellij.startPagePromoter) ![Internal API](https://img.shields.io/badge/-Internal_API-red) | [`StartPagePromoter`](upsource:///platform/platform-api/src/com/intellij/openapi/wm/StartPagePromoter.kt) | 
 | [com.intellij.statistic.eventLog.eventLoggerProvider](https://jb.gg/ipe?extensions=com.intellij.statistic.eventLog.eventLoggerProvider) ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | [`StatisticsEventLoggerProvider`](upsource:///platform/statistics/src/com/intellij/internal/statistic/eventLog/StatisticsEventLogger.kt) | 
 | [com.intellij.statistic.eventLog.fusStateEventTracker](https://jb.gg/ipe?extensions=com.intellij.statistic.eventLog.fusStateEventTracker) ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | [`FeatureUsageStateEventTracker`](upsource:///platform/statistics/src/com/intellij/internal/statistic/eventLog/fus/FeatureUsageStateEventTracker.kt) | 
 | [com.intellij.statistics.actionCustomPlaceAllowlist](https://jb.gg/ipe?extensions=com.intellij.statistics.actionCustomPlaceAllowlist) | `n/a` | 
@@ -1408,7 +1408,7 @@ _Implementation_ opens declaration of related class.
 | [com.intellij.titleInfoProvider](https://jb.gg/ipe?extensions=com.intellij.titleInfoProvider) ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | [`TitleInfoProvider`](upsource:///platform/platform-impl/src/com/intellij/openapi/wm/impl/TitleInfoProvider.kt) | 
 | [com.intellij.toolWindow](https://jb.gg/ipe?extensions=com.intellij.toolWindow) | [`ToolWindowFactory`](upsource:///platform/platform-api/src/com/intellij/openapi/wm/ToolWindowFactory.java) | 
 | [com.intellij.toolWindowAllowlist](https://jb.gg/ipe?extensions=com.intellij.toolWindowAllowlist) | `n/a` | 
-| [com.intellij.toolWindowExtractor](https://jb.gg/ipe?extensions=com.intellij.toolWindowExtractor) | [`ToolWindowViewModelExtractor`](upsource:///platform/platform-api/src/com/intellij/ui/viewModel/extraction/ToolWindowViewModelExtractor.java) | 
+| [com.intellij.toolWindowExtractor](https://jb.gg/ipe?extensions=com.intellij.toolWindowExtractor) ![Experimental API](https://img.shields.io/badge/-Experimental_API-red) | [`ToolWindowViewModelExtractor`](upsource:///platform/platform-api/src/com/intellij/ui/viewModel/extraction/ToolWindowViewModelExtractor.java) | 
 | [com.intellij.trailingSpacesOptionsProvider](https://jb.gg/ipe?extensions=com.intellij.trailingSpacesOptionsProvider) | [`TrailingSpacesOptionsProvider`](upsource:///platform/platform-api/src/com/intellij/openapi/fileEditor/TrailingSpacesOptionsProvider.java) | 
 | [com.intellij.tree.CustomLanguageASTComparator](https://jb.gg/ipe?extensions=com.intellij.tree.CustomLanguageASTComparator) | [`CustomLanguageASTComparator`](upsource:///platform/core-api/src/com/intellij/psi/tree/CustomLanguageASTComparator.java) | 
 | [com.intellij.tritanopiaSupport](https://jb.gg/ipe?extensions=com.intellij.tritanopiaSupport) ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | [`ColorBlindnessSupport`](upsource:///platform/editor-ui-api/src/com/intellij/ide/ui/ColorBlindnessSupport.java) | 

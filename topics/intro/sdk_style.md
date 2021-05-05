@@ -63,7 +63,7 @@ For example, `## Introduction` gets the ID of `introduction`, and can be linked 
 General Markdown links have the default Markdown link style:
 * `[Gradle](https://gradle.org)`{disable-links} ([Gradle](https://gradle.org)) links to an external site, such as companies, articles, etc.
 * Linking to pages within the SDK documentation:
-  `[Page Title](page.md)`{disable-links} links to an SDK doc page (all located under `/topics`).
+  `[Page Title](page.md)`{disable-links} links to an SDK doc page (all located under <path>/topics</path>).
   Note that the extension is `.md`, _NOT_ `.html`.
 * Linking to specific _sections_ on pages in the SDK documentation.
   The anchor name will be all lower case, and spaces are replaced with `-`, e.g. `## Page setup` becomes `#page-setup`.
@@ -119,7 +119,7 @@ Supported languages include `xml`, `java`, `kotlin`, `groovy` `bash`, `md`, and 
  >
  {type="note"}
                        
-Whole files can be imported on a page using `src` attribute after code fences specifying the full path relative to `code_samples` root folder.
+Whole files can be imported on a page using `src` attribute after code fences specifying the full path relative to <path>code_samples</path> root folder.
 
   `{src="simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleFoldingBuilder.java"}`
 
@@ -166,7 +166,7 @@ The styles available for callouts are:
 
 ### Images
 Images can be included by adding the file directly to the `intellij-sdk-docs` repository.
-Each subject directory typically has a subdirectory within the root `/images` directory.
+Each subject directory typically has a subdirectory within the root <path>/images</path> directory.
 
 Images in this documentation are generally screenshots.
 The preferred image format is PNG at 144 DPI resolution.

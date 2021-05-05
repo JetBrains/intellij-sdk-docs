@@ -8,13 +8,12 @@
         <search-scope/>
         <fallback-url/>
         <generate-sitemap-url-prefix>https://plugins.jetbrains.com/docs/intellij/</generate-sitemap-url-prefix>
-        <config-feedbackRequireEmail>false</config-feedbackRequireEmail>
+        <config-feedbackRequireEmail>true</config-feedbackRequireEmail>
         <config-showDownloadButton>true</config-showDownloadButton>
         <config-disqus-show>false</config-disqus-show>
         <config-feedback-url>https://data.services.jetbrains.com/feedback</config-feedback-url>
         <config-feedback-enabled>true</config-feedback-enabled>
         <config-feedback-widget>true</config-feedback-widget>
-        <config-feedbackRequireEmail>true</config-feedbackRequireEmail>
         <config-webmaster>https://plugins.jetbrains.com/docs/intellij/getting-help.html</config-webmaster>
         <config-feedback-support>https://www.jetbrains.com/support/</config-feedback-support>
         <config-sideblocks>true</config-sideblocks>

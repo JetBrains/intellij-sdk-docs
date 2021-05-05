@@ -51,7 +51,7 @@ object DemoPluginIcons {
 }
 ```
 
-Use these constants inside <path>plugin.xml</path> when specifying `icon` attribute for `<action>` or extension points, as well in [`@Presentation`](upsource:///platform/analysis-api/src/com/intellij/ide/presentation/Presentation.java) `icon` attribute.
+Use these constants inside <path>plugin.xml</path> when specifying `icon` attribute for `<action>` or extension points, as well in [`@Presentation`](upsource:///platform/platform-api/src/com/intellij/ide/presentation/Presentation.java) `icon` attribute.
 Note that the package name `icons` will be automatically prefixed and must not be specified.
 
 ```xml

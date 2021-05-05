@@ -154,3 +154,8 @@ JSON Widget suppressor EP `com.intellij.json.jsonWidgetSuppressor`
 
 Rename of packages to `.java.` specific variants
 : A number of packages have been renamed: `com.intellij.uml.utils` becomes `com.intellij.uml.java.utils`, `com.intellij.uml.project` becomes `com.intellij.uml.java.project`, and `com.intellij.uml.jigsaw` becomes `com.intellij.uml.java.jigsaw`.
+
+### Kotlin Plugin 2021.1
+
+`org.jetbrains.kotlin.idea.refactoring.changeSignature.KotlinChangeInfo(KotlinMethodDescriptor, String, KotlinTypeInfo, Visibility, List, KotlinParameterInfo, PsiElement, Collection)` constructor parameter type changed from `org.jetbrains.kotlin.descriptors.Visibility` to `org.jetbrains.kotlin.descriptors.DescriptorVisibility`
+: The compiler change

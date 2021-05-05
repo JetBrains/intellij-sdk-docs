@@ -158,4 +158,4 @@ Rename of packages to `.java.` specific variants
 ### Kotlin Plugin 2021.1
 
 `org.jetbrains.kotlin.idea.refactoring.changeSignature.KotlinChangeInfo(KotlinMethodDescriptor, String, KotlinTypeInfo, Visibility, List, KotlinParameterInfo, PsiElement, Collection)` constructor parameter type changed from `org.jetbrains.kotlin.descriptors.Visibility` to `org.jetbrains.kotlin.descriptors.DescriptorVisibility`
-: The compiler change
+: `Visibility` has been renamed to `DescriptorVisibility`. 

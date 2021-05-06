@@ -37,5 +37,10 @@ The dependency on the AppCode APIs must be declared in the `plugin.xml` file.
 As described in [Modules Specific to Functionality](plugin_compatibility.md#modules-specific-to-functionality) table, the `<depends>` tags must declare `com.intellij.modules.appcode`.
 
 ## Available AppCode APIs
+
+ > See [AppCode Extension Point List](appcode_extension_point_list.md) for complete list.
+ >
+ {type="note"}
+
 Use the [Exploring APIs as a Consumer](plugin_compatibility.md#exploring-apis-as-a-consumer) process to identify the libraries in AppCode.
 Test your plugin with any version of AppCode you wish to support.

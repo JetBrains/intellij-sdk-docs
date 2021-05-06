@@ -301,7 +301,9 @@
         </toc-element>
         <toc-element id="idea.md" toc-title="IntelliJ IDEA">
             <toc-element id="tomcat_integration.md" toc-title="Tomcat Integration"/>
-            <toc-element id="spring_api.md" toc-title="Spring API"/>
+            <toc-element id="spring_api.md" toc-title="Spring API">
+                <toc-element id="spring_extension_point_list.md" toc-title="Spring API Extension Point List"/>
+            </toc-element>
         </toc-element>
         <toc-element id="phpstorm.md" accepts-web-file-names="phpstorm.html,setting_up_environment.html"
                      toc-title="PhpStorm">

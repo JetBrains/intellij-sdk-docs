@@ -1,6 +1,6 @@
 [//]: # (title: Spring API)
 
-<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 Spring API allows 3rd party plugins to re-use, integrate with or extend existing Spring Framework support in IntelliJ IDEA.
 
@@ -64,6 +64,10 @@ As an API-user, you will usually prefer working with `SpringModel`, which is bui
  {type="note"}
 
 ## How Do I...
+                      
+ > See [Spring API Extension Point List](spring_extension_point_list.md) for complete list.
+ >
+ {type="note"}
 
 ### Spring Setup
 To check availability of Spring/Spring Facet etc. see `com.intellij.spring.model.utils.SpringCommonUtils`.

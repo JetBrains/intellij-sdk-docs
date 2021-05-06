@@ -42,6 +42,11 @@ The dependency declaration is illustrated in the `plugin.xml` snippet below:
 ```
 
 ## Available RubyMine APIs
+
+ > See [RubyMine Extension Point List](rubymine_extension_point_list.md) for complete list.
+ >
+ {type="note"}
+
 Use the [Exploring APIs as a Consumer](plugin_compatibility.md#exploring-apis-as-a-consumer) process to identify the library `ruby.jar`.
 Test your plugin with any version of RubyMine you intend to support.
 

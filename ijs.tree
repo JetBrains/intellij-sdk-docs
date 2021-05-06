@@ -296,7 +296,9 @@
         <toc-element id="app_code.md" toc-title="AppCode"/>
         <toc-element id="clion.md" toc-title="CLion"/>
         <toc-element id="data_grip.md" toc-title="DataGrip"/>
-        <toc-element id="goland.md" toc-title="GoLand"/>
+        <toc-element id="goland.md" toc-title="GoLand">
+            <toc-element id="goland_extension_point_list.md" toc-title="GoLand Extension Point List"/>
+        </toc-element>
         <toc-element id="idea.md" toc-title="IntelliJ IDEA">
             <toc-element id="tomcat_integration.md" toc-title="Tomcat Integration"/>
             <toc-element id="spring_api.md" toc-title="Spring API"/>

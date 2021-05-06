@@ -1,4 +1,6 @@
 [//]: # (title: Extension Point List)
+                                               
+<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 1216 Extension Points (EP) for
 
@@ -6,6 +8,10 @@
 - [IntelliJ Community Plugins](#intellij-community-plugins)
 - [Android Plugin](#android-plugin)
                      
+ > Dedicated Extension Point Lists specific to IDEs are available under _Part VIII - Product Specific_. 
+ >
+ {type="tip"}
+
 See [Plugin Extensions](plugin_extensions.md) on how to declare extensions in your plugin.
   
 **Extension Point** searches for usages inside existing implementations of open-source IntelliJ Platform plugins via [IntelliJ Platform Explorer](https://jb.gg/ipe).

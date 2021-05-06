@@ -1,5 +1,7 @@
 [//]: # (title: PHP Extension Point List)
 
+<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+
 48 Extension Points (EP) for PHP
 
 See [Plugin Extensions](plugin_extensions.md) on how to declare extensions in your plugin.

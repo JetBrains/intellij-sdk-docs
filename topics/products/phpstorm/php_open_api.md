@@ -16,6 +16,10 @@
 
 ## PHP Extension Points
 
+ > See [PHP Extension Point List](php_extension_point_list.md) for complete list.
+ >
+ {type="note"}
+
 ### `PhpTypeProvider`
 
 Here is a code fragment that makes [PHPUnit field references in setUp support](https://youtrack.jetbrains.com/issue/WI-22143) work

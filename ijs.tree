@@ -310,6 +310,7 @@
                     <toc-element id="php_open_api_breaking_changes_202.md" toc-title="2020.2"/>
                 </toc-element>
             </toc-element>
+            <toc-element id="php_extension_point_list.md" toc-title="PHP Extension Point List"/>
             <toc-element id="existing_plugins.md" accepts-web-file-names="existing_plugins.html"
                          toc-title="Existing Third Party Plugins"/>
         </toc-element>

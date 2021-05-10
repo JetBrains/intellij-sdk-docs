@@ -4,6 +4,8 @@
 
 20 Extension Points (EP) for AppCode
 
+See [Extension Point List](extension_point_list.md) for IntelliJ Platform EPs.
+
 See [Plugin Extensions](plugin_extensions.md) on how to declare extensions in your plugin.
   
 **Extension Point** searches for usages inside existing implementations of open-source IntelliJ Platform plugins via [IntelliJ Platform Explorer](https://jb.gg/ipe).

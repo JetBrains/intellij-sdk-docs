@@ -3,6 +3,8 @@
 <!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 14 Extension Points (EP) for GoLand
+         
+See [Extension Point List](extension_point_list.md) for IntelliJ Platform EPs.
 
 See [Plugin Extensions](plugin_extensions.md) on how to declare extensions in your plugin.
   

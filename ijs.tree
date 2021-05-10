@@ -321,7 +321,9 @@
                          toc-title="Existing Third Party Plugins"/>
         </toc-element>
         <toc-element id="pycharm.md" toc-title="PyCharm"/>
-        <toc-element id="rider.md" toc-title="Rider"/>
+        <toc-element id="rider.md" toc-title="Rider">
+            <toc-element id="rider_extension_point_list.md" toc-title="Rider Extension Point List"/>
+        </toc-element>
         <toc-element id="rubymine.md" toc-title="RubyMine">
             <toc-element id="rubymine_extension_point_list.md" toc-title="RubyMine Extension Point List"/>
         </toc-element>

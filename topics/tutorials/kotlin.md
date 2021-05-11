@@ -1,6 +1,6 @@
 [//]: # (title: Kotlin for Plugin Developers)
 
-<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 ## Why Kotlin?
 
@@ -35,7 +35,7 @@ To learn more about building IntelliJ Platform plugins with Kotlin, this tutoria
 
 ## Adding Kotlin Support
 
- >  The [GitHub Template](github_template.md) provides a preconfigured project using Kotlin.
+ >  The [IntelliJ Platform Plugin Template](github_template.md) provides a preconfigured project using Kotlin.
  >
  {type="tip"}
 
@@ -48,7 +48,7 @@ For detailed instructions, please refer to the [Kotlin documentation](https://ko
 For plugins already using the [Gradle Build System](gradle_build_system.md), or those that require precise control over the Kotlin build process, we recommend using the [kotlin-gradle-plugin](https://kotlinlang.org/docs/gradle.html#configuring-dependencies).
 This [Gradle plugin](https://mvnrepository.com/artifact/org.jetbrains.kotlin/kotlin-gradle-plugin-core) greatly simplifies building Kotlin projects in a controlled and reproducible manner.
 
-Your `build.gradle` file may look like so:
+Your <path>build.gradle</path> file may look like so:
 
 ```groovy
 plugins {
@@ -90,7 +90,7 @@ intellij {
 
 ### Use Kotlin to Write Gradle Script
 
-Starting with 4.4, Gradle supports `build.gradle.kts`, an alternative to `build.gradle` written in Kotlin.
+Starting with 4.4, Gradle supports <path>build.gradle.kts</path>, an alternative to <path>build.gradle</path> written in Kotlin.
 
 There are many good resources for learning how to write build scripts for an IntelliJ plugin with Kotlin script, like
 [intellij-rust](https://github.com/intellij-rust/intellij-rust/blob/master/build.gradle.kts),
@@ -98,9 +98,9 @@ There are many good resources for learning how to write build scripts for an Int
 [covscript-intellij](https://github.com/covscript/covscript-intellij/blob/master/build.gradle.kts) or
 [zig-intellij](https://github.com/ice1000/intellij-zig/blob/master/build.gradle.kts).
 
-Additionally, explore IntelliJ Platform Explorer's [list of open-source plugins](https://jb.gg/ipe?buildSystem=gradle_kts) using Gradle KTS
+Additionally, explore IntelliJ Platform Explorer's [list of open-source plugins](https://jb.gg/ipe?buildSystem=gradle_kts) using Gradle KTS.
 
-`build.gradle.kts` basically looks like:
+<path>build.gradle.kts</path> basically looks like:
 
 ```kotlin
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
@@ -159,7 +159,7 @@ Depending on exact functionality, a plugin can also target [UAST (Unified Abstra
 
 Plugins *must* use [Kotlin classes](https://kotlinlang.org/docs/classes.html) to implement declarations in the [plugin configuration file](plugin_configuration_file.md).
 When registering an extension, the platform uses a dependency injection framework to instantiate these classes.
-For this reason, plugins *must not* use [Kotlin objects](https://kotlinlang.org/docs/object-declarations.html) to implement any `plugin.xml` declarations.
+For this reason, plugins *must not* use [Kotlin objects](https://kotlinlang.org/docs/object-declarations.html) to implement any <path>plugin.xml</path> declarations.
 
 ## Examples
 

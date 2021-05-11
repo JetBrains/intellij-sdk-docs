@@ -1,6 +1,6 @@
 [//]: # (title: Dynamic Plugins)
 
-<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 Starting with the **2020.1** release, installing, updating, and uninstalling plugins without restarting the IDE is available in the IntelliJ Platform.
 
@@ -9,14 +9,14 @@ To test whether dynamic installation works correctly, verify installing [local b
                                 
 Please note that any unloading problems in a production environment will simply ask the user to restart the IDE.
 
- >  If a plugin _requires_ restart (e.g., due to using native libraries) specify `require-restart="true"` for `<idea-plugin>` root tag in `plugin.xml`.
+ > If a plugin _requires_ restart (e.g., due to using native libraries) specify `require-restart="true"` for `<idea-plugin>` root tag in <path>plugin.xml</path>.
  >
  {type="note"}
 
 ## Restrictions
 
 For a plugin to support this, all restrictions listed below must be met.
-To verify a plugin locally, invoke **Analyze \| Run Inspection by Name...** and run **Plugin DevKit \| Plugin descriptor \| Plugin.xml dynamic plugin verification inspection** inspection on all plugin descriptor files.
+To verify a plugin locally, invoke <menupath>Analyze | Run Inspection by Name...</menupath> and run <control>Plugin DevKit | Plugin descriptor | Plugin.xml dynamic plugin verification inspection</control> inspection on all plugin descriptor files.
 
 For plugins hosted on the [JetBrains Plugins Repository](https://plugins.jetbrains.com) the built-in [Plugin Verifier](https://blog.jetbrains.com/platform/2018/07/plugins-repository-now-integrates-with-the-plugin-verification-tool/) will run these checks automatically.
 See [Plugin Verifier](api_changes_list.md#plugin-verifier) for more information on how to run it locally or on CI.
@@ -63,7 +63,7 @@ Do not store references to PSI elements in objects which can survive plugin load
 
 ### Do not Use FileType/Language as Map Key
 
-Replace with `String` from `Language.getID()`/`FileType.getName()` (use inspection **Plugin DevKit \| Code \| Map key may leak**).
+Replace with `String` from `Language.getID()`/`FileType.getName()` (use inspection <control>Plugin DevKit | Code | Map key may leak</control>).
 
 ### Plugin Load/Unload Events
 Register [`com.intellij.ide.plugins.DynamicPluginListener`](upsource:///platform/core-impl/src/com/intellij/ide/plugins/DynamicPluginListener.kt) [application listener](plugin_listeners.md) to receive updates on plugin load/unload events.
@@ -86,7 +86,7 @@ To find leaks preventing clean unload, perform the following steps:
 
 - Set registry key `ide.plugins.snapshot.on.unload.fail` to `true`
 - Verify that IDE runs with VM parameter `-XX:+UnlockDiagnosticVMOptions`
-- Open the `.hprof` snapshot generated on plugin unload, look for the plugin ID string
+- Open the <path>.hprof</path> snapshot generated on plugin unload, look for the plugin ID string
 - Find the `PluginClassLoader` referencing the plugin ID string
 - Look at references to the `PluginClassLoader` instance.
   Every one of them is a memory leak (or part of a memory leak) that needs to be resolved.

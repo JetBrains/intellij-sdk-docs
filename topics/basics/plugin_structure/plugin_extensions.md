@@ -19,8 +19,8 @@ There are more than 1000 extension points available in the platform and the bund
 
 [Extension Point List](extension_point_list.md) contains all available extension points in IntelliJ Platform and from bundled plugins in IntelliJ IDEA.
 
-Alternatively (or when using 3rd party extension points), all available extension points for the specified namespace can be listed using auto-completion inside the `<extensions>` block in `plugin.xml`.
-Use **View \| Quick Documentation** in the lookup list to access more information about the extension point and implementation (if applicable).
+Alternatively (or when using 3rd party extension points), all available extension points for the specified namespace can be listed using auto-completion inside the `<extensions>` block in <path>plugin.xml</path>.
+Use <menupath>View | Quick Documentation</menupath> in the lookup list to access more information about the extension point and implementation (if applicable).
                                            
 Browse usages inside existing implementations of open-source IntelliJ Platform plugins via [IntelliJ Platform Explorer](https://jb.gg/ipe).
 
@@ -30,7 +30,7 @@ Browse usages inside existing implementations of open-source IntelliJ Platform p
  >
  {type="tip"}
 
-1. Add an `<extensions>` element to your `plugin.xml` if it's not yet present there.
+1. Add an `<extensions>` element to your <path>plugin.xml</path> if it's not yet present there.
    Set the `defaultExtensionNs` attribute to one of the following values:
     * `com.intellij`, if your plugin extends the IntelliJ Platform core functionality.
     * `{ID of a plugin}`, if your plugin extends the functionality of another plugin (must configure [Plugin Dependencies](plugin_dependencies.md)).
@@ -40,7 +40,7 @@ Browse usages inside existing implementations of open-source IntelliJ Platform p
     * If the extension point was declared using the `interface` attribute, for newly added child element, set the `implementation` attribute to the name of the class that implements the specified interface.
     * If the extension point was declared using the `beanClass` attribute, for newly added child element, set all attributes annotated with the [`@Attribute`](upsource:///platform/util/src/com/intellij/util/xmlb/annotations/Attribute.java) annotations in the specified bean class.
 
-To clarify this procedure, consider the following sample section of the `plugin.xml` file that defines two extensions designed to access the `com.intellij.appStarter` and `com.intellij.projectTemplatesFactory` extension points in the IntelliJ Platform and one extension to access the `another.plugin.myExtensionPoint` extension point in another plugin `another.plugin`:
+To clarify this procedure, consider the following sample section of the <path>plugin.xml</path> file that defines two extensions designed to access the `com.intellij.appStarter` and `com.intellij.projectTemplatesFactory` extension points in the IntelliJ Platform and one extension to access the `another.plugin.myExtensionPoint` extension point in another plugin `another.plugin`:
 
 ```xml
 <!-- Declare extensions to access extension points in the IntelliJ Platform.
@@ -71,7 +71,7 @@ The following properties are available always:
 If an extension instance needs to "opt out" in certain scenarios, it can throw [`ExtensionNotApplicableException`](upsource:///platform/extensions/src/com/intellij/openapi/extensions/ExtensionNotApplicableException.java) in its constructor.
 
 ### Extension Properties Code Insight
-Several tooling features are available to help configure bean class extension points in `plugin.xml`.
+Several tooling features are available to help configure bean class extension points in <path>plugin.xml</path>.
 
 Properties annotated with [`@RequiredElement`](upsource:///platform/extensions/src/com/intellij/openapi/extensions/RequiredElement.java) are inserted automatically and validated (2019.3 and later).
 If the given property is allowed to have an explicit empty value, set `allowEmpty` to `true` (2020.3 and later).

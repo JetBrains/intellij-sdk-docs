@@ -17,12 +17,12 @@ There are two types of extension points:
 
 ## Declaring Extension Points
 
-You can declare extensions and extension points in the plugin configuration file `plugin.xml`, within the `<extensions>` and `<extensionPoints>` sections.
+You can declare extensions and extension points in the plugin configuration file <path>plugin.xml</path>, within the `<extensions>` and `<extensionPoints>` sections.
 
-To declare extension points in your plugin, add an `<extensionPoints>` section to your `plugin.xml`.
+To declare extension points in your plugin, add an `<extensionPoints>` section to your <path>plugin.xml</path>.
 Then insert a child element `<extensionPoint>` that defines the extension point name and the name of a bean class or an interface that is allowed to extend the plugin functionality in the `name`, `beanClass` and `interface` attributes, respectively.
 
-_myPlugin/META-INF/plugin.xml_
+<path>myPlugin/META-INF/plugin.xml</path>
 
 ```xml
 <idea-plugin>
@@ -49,13 +49,13 @@ The `area` attribute determines the scope in which the extension will be instant
 As extensions should be stateless, it is **not** recommended to use non-default.
 Must be one of `IDEA_APPLICATION` for Application (default), `IDEA_PROJECT` for Project, or `IDEA_MODULE` for Module scope.
 
-The plugin that contributes to the extension point will read those properties from the `plugin.xml` file.
+The plugin that contributes to the extension point will read those properties from the <path>plugin.xml</path> file.
 
 ### Sample
 
-To clarify this, consider the following sample `MyBeanClass` bean class used in the above `plugin.xml` file:
+To clarify this, consider the following sample `MyBeanClass` bean class used in the above <path>plugin.xml</path> file:
 
-_myPlugin/src/com/myplugin/MyBeanClass.java_
+<path>myPlugin/src/com/myplugin/MyBeanClass.java</path>
 
 ```java
 public class MyBeanClass extends AbstractExtensionPointBean {
@@ -82,7 +82,7 @@ public class MyBeanClass extends AbstractExtensionPointBean {
 
 For above extension points usage in _anotherPlugin_ would look like this (see also [Declaring Extensions](plugin_extensions.md#declaring-extensions)):
 
-_anotherPlugin/META-INF/plugin.xml_
+<path>anotherPlugin/META-INF/plugin.xml</path>
 
 ```xml
 <idea-plugin>
@@ -123,7 +123,7 @@ public class MyExtensionUsingService {
 }
 ```
 
-A gutter icon for the `ExtensionPointName` declaration allows navigating to the corresponding `<extensionPoint>` declaration in `plugin.xml`.
+A gutter icon for the `ExtensionPointName` declaration allows navigating to the corresponding `<extensionPoint>` declaration in <path>plugin.xml</path>.
 
 ## Dynamic Extension Points
 To support [Dynamic Plugins](dynamic_plugins.md) (2020.1 and later), an extension point must adhere to specific usage rules:
@@ -141,5 +141,5 @@ Extension points matching these conditions can then be marked as _dynamic_ by ad
   </extensionPoints>
 ```
 
- >  All non-dynamic extension points are highlighted via _Plugin DevKit \| Plugin descriptor \| Plugin.xml dynamic plugin verification_ inspection available in IntelliJ IDEA 2020.1 or later.
-> Previous versions also highlight the `dynamic` attribute as "experimental".
+ >  All non-dynamic extension points are highlighted via <control>Plugin DevKit | Plugin descriptor | Plugin.xml dynamic plugin verification</control> inspection available in IntelliJ IDEA 2020.1 or later.
+ > Previous versions also highlight the `dynamic` attribute as "experimental".

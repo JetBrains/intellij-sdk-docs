@@ -34,7 +34,7 @@ To improve startup performance, avoid any heavy initializations in the construct
  >
  {type="note"}
 
-A service not going to be overridden does not need to be registered in `plugin.xml` (see [Declaring a Service](#declaring-a-service)).
+A service not going to be overridden does not need to be registered in <path>plugin.xml</path> (see [Declaring a Service](#declaring-a-service)).
 Instead, annotate service class with [`@Service`](upsource:///platform/core-api/src/com/intellij/openapi/components/Service.java).
 The service instance will be created in scope according to the caller (see [Retrieving a Service](#retrieving-a-service)).
 
@@ -59,8 +59,7 @@ If `serviceInterface` isn't specified, it's supposed to have the same value as `
 
 To provide custom implementation for test/headless environment, specify `testServiceImplementation`/`headlessImplementation` additionally.
 
-_plugin.xml_
-
+<path>plugin.xml</path>
 ```xml
 <extensions defaultExtensionNs="com.intellij">
   <!-- Declare the application level service -->
@@ -97,7 +96,7 @@ val projectService = project.service<MyProjectService>()
 ## Project Service Sample
 This minimal sample shows [Light Service](#light-services) `ProjectService` interacting with another project level service `AnotherService` (not shown here).
 
-_ProjectService.java_
+<path>ProjectService.java</path>
 
 ```java
   @Service
@@ -126,6 +125,6 @@ If this number exceeds the maximum number of simultaneously opened projects allo
 **To install and run the sample plugin**
 
 * Download the included sample plugin project located [here](https://github.com/JetBrains/intellij-sdk-code-samples/tree/main/max_opened_projects).
-* Start IntelliJ IDEA, on the starting page, click *Open Project*, and then use the *Open Project* dialog box to open the project.
-* On the main menu, choose *Run \| Run* or press <shortcut>Shift+F10</shortcut>.
+* Start IntelliJ IDEA, on the starting page, click <control>Open Project</control>, and then use the dialog box to open the project.
+* On the main menu, choose <menupath>Run | Run</menupath> or press <shortcut>Shift+F10</shortcut>.
 * If necessary, change the [Run/Debug Configurations](https://www.jetbrains.com/help/idea/run-debug-configuration-plugin.html).

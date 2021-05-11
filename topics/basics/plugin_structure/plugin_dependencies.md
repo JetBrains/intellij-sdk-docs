@@ -17,10 +17,10 @@ A compatible version must be chosen carefully according to the plugin's [compati
 
 For plugins published on [JetBrains Plugins Repository](https://plugins.jetbrains.com)
 - open plugin's detail page
-- select _Versions_ tab
-- open detail page for the desired version, displaying the _Compatibility Range_ and _Plugin ID_
+- select <control>Versions</control> tab
+- open detail page for the desired version, displaying the <control>Compatibility Range</control> and <control>Plugin ID</control>
 
-For bundled and non-public plugins, locate the plugin's main JAR file containing `META-INF/plugin.xml` descriptor with `<id>` tag (or `<name>` if not specified).
+For bundled and non-public plugins, locate the plugin's main JAR file containing <path>META-INF/plugin.xml</path> descriptor with `<id>` tag (or `<name>` if not specified).
 
 If the plugin is not bundled with the target IDE, run the (sandbox) [IDE Development Instance](ide_development_instance.md) of your target IDE and install the plugin there.
 
@@ -32,7 +32,7 @@ Depending on the chosen development workflow (Gradle or DevKit), one of the two 
  >
  {type="note"}
 
-If the project uses [Gradle](gradle_build_system.md) with a Groovy build script to build the plugin, add the dependency to the `plugins` parameter of the `intellij` block in your `build.gradle`, for example:
+If the project uses [Gradle](gradle_build_system.md) with a Groovy build script to build the plugin, add the dependency to the `plugins` parameter of the `intellij` block in your <path>build.gradle</path>, for example:
 
 ```groovy
 intellij {
@@ -57,27 +57,27 @@ intellij {
  >
  {type="tip"}
 
-If the project uses [DevKit](using_dev_kit.md), add the JARs of the plugin on which the project depends to the **classpath** of the *IntelliJ Platform SDK*.
+If the project uses [DevKit](using_dev_kit.md), add the JARs of the plugin on which the project depends to the <control>Classpath</control> of the *IntelliJ Platform SDK*.
 
  >  Do not add the plugin JARs as a library: this will fail at runtime because the IntelliJ Platform will load two separate copies of the dependency plugin classes.
  >
  {type="warning"}
 
-To do that, open the Project Structure dialog, select the SDK used in the project, press the <shortcut>+</shortcut> button in the Classpath tab, and select the plugin JAR file or files:
-* For bundled plugins, the plugin JAR files are located in `plugins/<pluginname>` or `plugins/<pluginname>/lib` under the main installation directory.
+To do that, open the Project Structure dialog, select the SDK used in the project, press the <shortcut>+</shortcut> button in the <control>Classpath</control> tab, and select the plugin JAR file(s):
+* For bundled plugins, the plugin JAR files are located in <path>plugins/$PLUGINNAME$</path> or <path>plugins/$PLUGINNAME$/lib</path> under the main installation directory.
   If you're not sure which JAR to add, you can add all of them.
-* For non-bundled plugins, the plugin JAR files are located in `config/plugins/<pluginname>` or `config/plugins/<pluginname>/lib` under the directory specified as "Sandbox Home" in the IntelliJ Platform Plugin SDK settings.
+* For non-bundled plugins, the plugin JAR files are located in <path>config/plugins/$PLUGINNAME$</path> or <path>config/plugins/$PLUGINNAME$/lib</path> under the directory specified as <control>Sandbox Home</control> in the IntelliJ Platform Plugin SDK settings.
 
 ## Dependency Declaration in plugin.xml
-Regardless of whether a plugin project uses [Modules Available in All Products](plugin_compatibility.md#modules-available-in-all-products), or [Modules Specific to Functionality](plugin_compatibility.md#modules-specific-to-functionality), the correct module must be listed as a dependency in `plugin.xml`.
+Regardless of whether a plugin project uses [Modules Available in All Products](plugin_compatibility.md#modules-available-in-all-products), or [Modules Specific to Functionality](plugin_compatibility.md#modules-specific-to-functionality), the correct module must be listed as a dependency in <path>plugin.xml</path>.
 If a project depends on another plugin, the dependency must be declared like a [module](plugin_compatibility.md#modules).
 If only general IntelliJ Platform features (APIs) are used, then a default dependency on `com.intellij.modules.platform` must be declared.
 
-To display a list of available IntelliJ Platform modules, invoke the [code completion](https://www.jetbrains.com/help/idea/auto-completing-code.html#4eac28ba) feature for the `<depends>` element contents while editing the plugin project's `plugin.xml` file.
+To display a list of available IntelliJ Platform modules, invoke the [code completion](https://www.jetbrains.com/help/idea/auto-completing-code.html#4eac28ba) feature for the `<depends>` element contents while editing the plugin project's <path>plugin.xml</path> file.
 
 ### Configuring plugin.xml
-In the `plugin.xml`, add a `<depends>` tag with the dependency plugin's ID as its content.
-Continuing with the example from [Project Setup](#project-setup) above, the dependency declaration in `plugin.xml` would be:
+In the <path>plugin.xml</path>, add a `<depends>` tag with the dependency plugin's ID as its content.
+Continuing with the example from [Project Setup](#project-setup) above, the dependency declaration in <path>plugin.xml</path> would be:
 
 ```xml
 <depends>org.another.plugin</depends>
@@ -93,15 +93,14 @@ Declare additional `optional="true"` and `config-file` attribute pointing to opt
   <depends optional="true" config-file="myPluginId-optionalPluginName.xml">dependency.plugin.id</depends> 
 ```
                                                                          
- >  Additional plugin descriptor files must follow the naming pattern `myPluginId-$NAME$.xml` resulting in unique filenames to prevent problems with classloaders in tests ([Details](https://youtrack.jetbrains.com/issue/IDEA-205964)).
+ >  Additional plugin descriptor files must follow the naming pattern <path>myPluginId-$NAME$.xml</path> resulting in unique filenames to prevent problems with classloaders in tests ([Details](https://youtrack.jetbrains.com/issue/IDEA-205964)).
  >
  {type="note"}
 
 For example, if a plugin adds additional highlighting for Java and Kotlin files, use the following setup.
-The main `plugin.xml` will define an annotator for Java and specify an optional dependency on the Kotlin plugin (`org.jetbrains.kotlin`):
+The main <path>plugin.xml</path> will define an annotator for Java and specify an optional dependency on the Kotlin plugin (`org.jetbrains.kotlin`):
 
-_plugin.xml_
-
+<path>plugin.xml</path>
 ```xml
 <idea-plugin>
    ...
@@ -113,10 +112,10 @@ _plugin.xml_
 </idea-plugin>
 ```
 
-Then create a file called `myPluginId-withKotlin.xml`, in the same directory as the main `plugin.xml` file.
+Then create a file called <path>myPluginId-withKotlin.xml</path>, in the same directory as the main <path>plugin.xml</path> file.
 In that file, define an annotator for Kotlin:
 
-_myPluginId-withKotlin.xml_
+<path>myPluginId-withKotlin.xml</path>
 
 ```xml
 <idea-plugin>

@@ -1,6 +1,6 @@
 [//]: # (title: Plugin Logo)
 
-<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 Beginning in version 2019.1, the IntelliJ Platform supports representing a plugin with a logo.
 A _Plugin Logo_ is intended to be a unique representation of a plugin's functionality, technology, or company.
@@ -25,7 +25,7 @@ For a Plugin Logo to be displayed correctly within an IntelliJ Platform-based ID
 * Follow the best practices design guidelines,
 * Be in the correct file format,
 * Conform to file name conventions,
-* Be in the `META-INF` folder of the plugin distribution file.
+* Be in the <path>META-INF</path> folder of the plugin distribution file.
 
 ### Plugin Logo Size
 The Plugin Logo should be provided in one size: 40px by 40px.
@@ -54,7 +54,6 @@ Note the different areas of transparent padding used for each shape:
 | ![Horizontal rectangle 36px by 26px](rectangle_horizontal.png){width="225"} | ![Vertical rectangle 26px by 36px](rectangle_vertical.png){:width="225"} |
 | _Horizontal rectangular logo 36px by 26px_ | _Vertical rectangular logo 26px by 36px_ |
 
-<br/>
 
 ### Plugin Logo Colors
 If the plugin's technology already has a logo, use its colors.
@@ -75,20 +74,19 @@ Consequently, a separate Plugin Logo for dark backgrounds is needed.
 | _The light Plugin Logo design<br/>works well on light UI Theme_ | _The light Plugin Logo design does<br/>not work well on a dark UI Theme_ | _A separate, dark Plugin Logo design<br/>works well on dark UI Theme_ |
 
 ### Plugin Logo File Format
-All Plugin Logo images must be SVG format.
+All Plugin Logo images must be in SVG format.
 This vector image format is required because the Plugin Logo file must be small, and the image must scale without any loss of quality.
 
 ### Plugin Logo File Naming Convention
 Name the Plugin Logo files according to the following conventions:
-* `pluginIcon.svg` is the default Plugin Logo.
+* <path>pluginIcon.svg</path> is the default Plugin Logo.
   If a separate Logo file for dark UI Themes exists in the plugin, then this file is used solely for light UI Themes,
-* `pluginIcon_dark.svg` is an optional, alternative Plugin Logo for use solely with dark IDE UI Themes.
+* <path>pluginIcon_dark.svg</path> is an optional, alternative Plugin Logo for use solely with dark IDE UI Themes.
 
 ## Adding Plugin Logo Files to a Plugin Project
-The Plugin Logo files must be in the `META-INF` folder of the plugin distribution file, i.e., the `*.jar` or `*.zip` file you upload to the plugin repository and install into a JetBrains IDE.
+The Plugin Logo files must be in the <path>META-INF</path> folder of the plugin distribution file, i.e., the <path>*.jar</path> or <path>*.zip</path> file you upload to the plugin repository and install into an IDE.
 
-To include Plugin Logo files in your distribution file, place the Plugin Logo files into a plugin project's `resources/META-INF` folder.
-Note that this requirement is the same regardless of using DevKit or Gradle for developing a plugin.
+To include Plugin Logo files in your distribution file, place the Plugin Logo files into a plugin project's <path>resources/META-INF</path> folder.
 For example:
 
 ![Plugin Logo Files in META-INF folder](resource_directory_structure.png){width="450"}

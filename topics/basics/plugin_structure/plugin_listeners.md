@@ -1,8 +1,8 @@
 [//]: # (title: Plugin Listeners)
 
-<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
- >  Defining listeners in `plugin.xml` is supported starting with version 2019.3 of the platform.
+ >  Defining listeners in <path>plugin.xml</path> is supported starting with version 2019.3 of the platform.
  >
  {type="note"}
 
@@ -19,7 +19,7 @@ The advantage is because listener instances get created lazily - the first time 
 
 ## Defining Application-Level Listeners
 
-To define an application-level listener, add the following section to your `plugin.xml`:
+To define an application-level listener, add the following section to your <path>plugin.xml</path>:
 
 ```xml
 <idea-plugin>

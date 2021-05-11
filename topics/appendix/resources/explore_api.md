@@ -23,6 +23,7 @@ The most important resource for discovering new EPs is the extensive list provid
 On this page, you will find all of the EPs, and each entry includes a link to the online source code and a link to the
 [IntelliJ Platform Explorer](https://jb.gg/ipe),
 which helps you find examples of this EP in other plugins.
+Additionally, dedicated Extension Point Lists specific to IDEs are available under _Part VIII - Product Specific_. 
 
 ### 1.2 Use Autocompletion Information
 
@@ -47,7 +48,7 @@ There you'll find more EPs, and browsing through this list helps you discover fe
 or
 [Go to file](https://www.jetbrains.com/help/idea/discover-intellij-idea.html#navigation-and-search)
 helps you search for all files containing extension points.
-Just use <path>*ExtensionPoints.xml</path> as the search pattern and enable the <emphasis>include non-project items</emphasis> checkbox.
+Just use <path>*ExtensionPoints.xml</path> as the search pattern and enable the _include non-project items_ checkbox.
 
 However, if a bundled or third-party plugin exposes EPs for others to implement, these EPs are defined in the <path>plugin.xml</path> files
 of the plugins and not in the <path>*ExtensionPoints.xml</path> files of the IntelliJ Platform.
@@ -63,7 +64,7 @@ to find all the files that meet the following criteria:
 
 - The file type is XML
 - It contains the tag `<idea-plugin>`
-- The file is in the scope <emphasis>Project and Libraries</emphasis>
+- The file is in the scope _Project and Libraries_
 
 ![Search Structurally for plugin.xml](search_structurally_for_plugin_xml.png)
 
@@ -118,12 +119,12 @@ Inspecting the contents of this package shows many related classes that will be 
 As a last resort, it is sometimes helpful to search directly for a method, class, and class member if you can guess a part of its name.
 You can either use
 [Search Everything or Go to Symbol](https://www.jetbrains.com/help/idea/reference-keymap-win-default.html#find_everything).
-Note that you need to change the search scope to <emphasis>All Places</emphasis> in the search window to find all occurrences of symbols.
+Note that you need to change the search scope to _All Places_ in the search window to find all occurrences of symbols.
 
 ### 2.5 Refrain from Using Internal Classes
 
 As a general remark, the use of internal classes is strongly discouraged (i.e. classes ending with `Impl` in their name,
-located under `impl` package, or included in <path>platform-impl.jar</path>).
+located under `impl` package, or included in <path>*-impl.jar</path>).
 
 ## 3 Tools and References
 

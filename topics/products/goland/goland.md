@@ -13,16 +13,16 @@ Plugin projects for GoLand can be developed using IntelliJ IDEA with the `gradle
 ## Configuring Plugin Projects Targeting GoLand
 The configuration of GoLand plugin projects follows the methods described in [Configuring Plugin Projects using the IntelliJ IDEA Product Attribute](dev_alternate_products.md#configuring-plugin-projects-using-the-intellij-idea-product-attribute), and [Configuring the plugin.xml File](dev_alternate_products.md#configuring-pluginxml).
 
-The table below summarizes the `gradle-intellij-plugin` attributes to set in the plugin project's `build.gradle` file.
+The table below summarizes the `gradle-intellij-plugin` attributes to set in the plugin project's <path>build.gradle</path> file.
 Click on an entry in the table's *Attribute* column to go to the documentation about that attribute.
-To see how these attributes appear in a similar `build.gradle` file for PhpStorm, see [Configuring build.gradle using the IntelliJ IDEA Product Attribute](dev_alternate_products.md#configuring-buildgradle-using-the-intellij-idea-product-attribute).
+To see how these attributes appear in a similar <path>build.gradle</path> file for PhpStorm, see [Configuring build.gradle using the IntelliJ IDEA Product Attribute](dev_alternate_products.md#configuring-buildgradle-using-the-intellij-idea-product-attribute).
 
 | `gradle-intellij-plugin` Attribute | Attribute Value                                                                                                                                                                                     |
 | ---------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [`intellij.type`][properties]      | `IU` for IntelliJ IDEA Ultimate. The Go plugin isn't compatible with IntelliJ IDEA Community Edition.                                                                                               |
 | [`intellij.version`][properties]   | Set to the same `IU` BRANCH.BUILD as the GoLand target version, e.g. `193.5233.102`.                                                                                                                |
 | [`intellij.plugins`][properties]   | `org.jetbrains.plugins.go:193.5233.102.83` for the Go plugin.<br/>See below for Go plugin version information.                                                                                       |
-| [`runIde.ideDirectory`][dsl]       | Path to locally installed target version of GoLand. For example, on macOS:<br/>`/Users/<user name>/Library/Application Support/JetBrains/Toolbox/apps/Goland/ch-0/193.5233.112/GoLand.app/Contents`. |
+| [`runIde.ideDirectory`][dsl]       | Path to locally installed target version of GoLand. For example, on macOS:<br/><path>/Users/<user name>/Library/Application Support/JetBrains/Toolbox/apps/Goland/ch-0/193.5233.112/GoLand.app/Contents</path>. |
 
 [properties]: https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md#intellij-platform-properties
 [dsl]: https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md#running-dsl
@@ -30,10 +30,10 @@ To see how these attributes appear in a similar `build.gradle` file for PhpStorm
 The Go plugin version is explicitly declared because it isn't bundled with IntelliJ IDEA Ultimate Edition.
 Select a [version](https://plugins.jetbrains.com/plugin/9568-go/versions) of the Go plugin compatible with the IntelliJ Idea Ultimate version.
 
-The dependency on the Go plugin APIs must be declared in the `plugin.xml` file.
+The dependency on the Go plugin APIs must be declared in the <path>plugin.xml</path> file.
 As described in [Modules Specific to Functionality](plugin_compatibility.md#modules-specific-to-functionality) table, the `<depends>` tags must declare `com.intellij.modules.go`.
-The `plugin.xml` file must also declare a dependency on `com.intellij.modules.platform` as explained in [Configuring the plugin.xml File](dev_alternate_products.md#configuring-pluginxml).
-The dependency declaration is illustrated in the `plugin.xml` snippet below:
+The <path>plugin.xml</path> file must also declare a dependency on `com.intellij.modules.platform` as explained in [Configuring the plugin.xml File](dev_alternate_products.md#configuring-pluginxml).
+The dependency declaration is illustrated in the <path>plugin.xml</path> snippet below:
 
 ```xml
   <!-- Requires the Go plugin -->
@@ -48,7 +48,7 @@ The dependency declaration is illustrated in the `plugin.xml` snippet below:
  >
  {type="note"}
 
-Use the [Exploring APIs as a Consumer](plugin_compatibility.md#exploring-apis-as-a-consumer) process to identify the library `intellij-go-<version>.jar`, where `<version>` corresponds to the version of the Go plugin.
+Use the [Exploring APIs as a Consumer](plugin_compatibility.md#exploring-apis-as-a-consumer) process to identify the library <path>intellij-go-$version$.jar</path>, where `$version$` corresponds to the version of the Go plugin.
 Test your plugin with any version of GoLand you intend to support.
 
 ## Open Source Plugins for GoLand

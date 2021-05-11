@@ -17,16 +17,16 @@ The configuration of DataGrip plugin projects follows the methods described in [
  >
  {type="note"}
 
-The table below summarizes the `gradle-intellij-plugin` attributes to set in the plugin project's `build.gradle` file.
+The table below summarizes the `gradle-intellij-plugin` attributes to set in the plugin project's <path>build.gradle</path> file.
 Click on an entry in the table's *Attribute* column to go to the documentation about that attribute.
-To see how these attributes appear in a similar `build.gradle` file for PhpStorm, see [Configuring build.gradle using the IntelliJ IDEA Product Attribute](dev_alternate_products.md#configuring-buildgradle-using-the-intellij-idea-product-attribute).
+To see how these attributes appear in a similar <path>build.gradle</path> file for PhpStorm, see [Configuring build.gradle using the IntelliJ IDEA Product Attribute](dev_alternate_products.md#configuring-buildgradle-using-the-intellij-idea-product-attribute).
 
 | `gradle-intellij-plugin` Attribute | Attribute Value                                                                                                                                                                                            |
 | ---------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [`intellij.type`][properties]      | `IU` for IntelliJ IDEA Ultimate.<br/>(`IC` is incompatible with the required `DatabaseTools` plugin.)                                                                                                       |
 | [`intellij.version`][properties]   | `2019.3` Set to the same version as the DataGrip target version, as set by `runIde.ideDirectory`.                                                                                                          |
 | [`intellij.plugins`][properties]   | `plugins 'DatabaseTools'` Dependency on the bundled `DatabaseTools` plugin.                                                                                                                                |
-| [`runIde.ideDirectory`][dsl]       | Path to locally installed target version of DataGrip. For example, for macOS:<br/>`/Users/<user name>/Library/Application Support/JetBrains/Toolbox/apps/datagrip/ch-0/193.5233.139/DataGrip.app/Contents`. |
+| [`runIde.ideDirectory`][dsl]       | Path to locally installed target version of DataGrip. For example, for macOS:<br/><path>/Users/<user name>/Library/Application Support/JetBrains/Toolbox/apps/datagrip/ch-0/193.5233.139/DataGrip.app/Contents</path>. |
 | [`runIde.jvmArgs`][dsl]            | `jvmArgs '-Didea.platform.prefix=DataGrip'`<br/>Only required for `gradle-intellij-plugin` 0.4.16 or earlier.                                                                                               |
 
 [properties]: https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md#intellij-platform-properties
@@ -37,7 +37,7 @@ This attribute declares that Gradle should use the DataGrip platform to run/debu
 It is not required for building plugins and manually installing them in DataGrip.
 Benign, but redundant attribute if used for later versions of the `gradle-intellj-plugin`.
 
-The dependency on the DataGrip APIs must be declared in the `plugin.xml` file.
+The dependency on the DataGrip APIs must be declared in the <path>plugin.xml</path> file.
 As described in [Modules Specific to Functionality](plugin_compatibility.md#modules-specific-to-functionality) table, the `<depends>` tags must declare `com.intellij.database`.
 **Note** that DataGrip plugins must also declare a dependency on `com.intellij.modules.platform` because `com.intellij.database` is not recognized as a module.
 Consequently, without the `com.intellij.modules.platform` declaration the plugin is assumed to be a [legacy plugin](plugin_compatibility.md#declaring-plugin-dependencies) and will not load in DataGrip.

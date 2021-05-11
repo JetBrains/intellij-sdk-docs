@@ -1,6 +1,6 @@
 [//]: # (title: Rider Plugin Development)
 
-<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 ## Introduction
 Rider plugins are generally used to expose the functionality of a ReSharper plugin.
@@ -13,7 +13,7 @@ Rider uses the IntelliJ Platform to provide the user interface for a C# and .NET
 
 ## IntelliJ IDEA Configuration for Rider Plugin Development
 Although there is no dedicated Rider SDK, the [ReSharper DevGuide](https://www.jetbrains.com/help/resharper/sdk/Products/Rider.html)  addresses the subject of plugins for Rider.
-The documentation describes the [configuration](https://www.jetbrains.com/help/resharper/sdk/Products/Rider.html#plugin-project-jvm) of `build.gradle` and `settings.gradle` files to build a Rider plugin using the [Gradle project system](gradle_build_system.md) in IntelliJ IDEA.
+The documentation describes the [configuration](https://www.jetbrains.com/help/resharper/sdk/Products/Rider.html#plugin-project-jvm) of <path>build.gradle</path> and <path>settings.gradle</path> files to build a Rider plugin using the [Gradle project system](gradle_build_system.md) in IntelliJ IDEA.
 
  > See [Rider Extension Point List](rider_extension_point_list.md) for complete list.
  >
@@ -32,10 +32,10 @@ This is useful e.g. when a plugin brings its own file templates.
 
 For the ReSharper part to pick these settings, the settings files should be available in the plugin JAR file under the path `dotnet/Extensions/<backend-plugin-id>/settings`, where `backend-plugin-id` is calculated according to the following rules:
 
-- if the IntelliJ plugin id (the `<id>` element of the `plugin.xml`) includes a dot, then `backend-plugin-id` is the same as the IntelliJ plugin id;
+- if the IntelliJ plugin id (the `<id>` element of the <path>plugin.xml</path>) includes a dot, then `backend-plugin-id` is the same as the IntelliJ plugin id;
 - otherwise, the `backend-plugin-id` is a concatenation of the IntelliJ plugin vendor name (the `<vendor>` element of the `plugin.xml`) and the IntelliJ plugin id.
 
-For example, for a plugin with the following `plugin.xml` contents, the file `dotnet/Extensions/org.awesomeplugin/settings/templates.DotSettings` would be picked up:
+For example, for a plugin with the following <path>plugin.xml</path> contents, the file `dotnet/Extensions/org.awesomeplugin/settings/templates.DotSettings` would be picked up:
 
 ```xml
 <idea-plugin>
@@ -44,7 +44,7 @@ For example, for a plugin with the following `plugin.xml` contents, the file `do
 </idea-plugin>
 ```
 
-And the following `plugin.xml` would require to place the file under a path `dotnet/Extensions/Jean-Luc Picard.Enterprise/settings/templates.DotSettings`:
+And the following <path>plugin.xml</path> would require to place the file under a path `dotnet/Extensions/Jean-Luc Picard.Enterprise/settings/templates.DotSettings`:
 
 ```xml
 <idea-plugin>

@@ -1,6 +1,6 @@
 [//]: # (title: Android Studio Plugin Development)
 
-<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 ## Introduction
 Android Studio plugins extend or add functionality to the [Android Studio IDE](https://developer.android.com/studio).
@@ -23,7 +23,7 @@ The version number of Android Studio contains the version of the underlying Inte
 To find the version of the IntelliJ Platform used to build Android Studio, use the Android Studio _About_ dialog screen.
 An example is shown below.
 In this case, the (BRANCH.BUILD.FIX) version of the IntelliJ Platform is `191.8026.42`, which corresponds to the IntelliJ IDEA version 2019.1.4.
-The [`build.gradle` configuration steps](#configuring-the-plugin-buildgradle-file) section below explains how to set the IntelliJ Platform version to match the target version of Android Studio.
+The [build.gradle configuration steps](#configuring-the-plugin-buildgradle-file) section below explains how to set the IntelliJ Platform version to match the target version of Android Studio.
 
 ![Example Android Studio About Dialog](android_studio_build.png){width="600"}
 
@@ -31,16 +31,16 @@ The [`build.gradle` configuration steps](#configuring-the-plugin-buildgradle-fil
 The use-case of developing for a non-IntelliJ IDEA IDE is reviewed in the [Plugins Targeting Alternate IntelliJ Platform-Based IDEs](gradle_guide.md#plugins-targeting-alternate-intellij-platform-based-ides) section of the [Configuring Gradle for IntelliJ Platform Plugins](gradle_guide.md) page.
 The particular example in that section discusses configuring a plugin project for PhpStorm, so the details for an Android Studio plugin project are reviewed here.
 
-Here are the steps to configure the `build.gradle` file for developing a plugin to target Android Studio:
+Here are the steps to configure the <path>build.gradle</path> file for developing a plugin to target Android Studio:
 * The Gradle plugin attributes describing the configuration of the [IntelliJ Platform used to build the plugin project](gradle_guide.md#configuring-the-gradle-plugin-for-building-intellij-platform-plugin-projects) must be explicitly set.
   Continuing with the example [above](#matching-versions-of-the-intellij-platform-with-the-android-studio-version), set the `intellij.version` value to `191.8026.42`.
   Alternatively, specify `intellij.localPath` to refer to a local installation of Android Studio.
 * Android Studio plugin projects that use APIs from the `android` plugin must declare a dependency on that plugin.
- Declare the dependency in `build.gradle` using the Gradle plugin `intellij.plugins` attribute, which in this case lists the [directory name](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md#intellij-platform-properties) of the plugin.
+ Declare the dependency in <path>build.gradle</path> using the Gradle plugin `intellij.plugins` attribute, which in this case lists the [directory name](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md#intellij-platform-properties) of the plugin.
 * The best practice is to use the target version of Android Studio as the IDE Development Instance.
   Set the Development Instance to the (user-specific) absolute path to the target Android Studio application.
 
-The snippet below is an example of configuring the Setup and Running DSLs in a `build.gradle` specific to developing a plugin targeted at Android Studio.
+The snippet below is an example of configuring the Setup and Running DSLs in a <path>build.gradle</path> specific to developing a plugin targeted at Android Studio.
 
 ```groovy
   intellij {
@@ -65,7 +65,7 @@ When using APIs from the `android` plugin, declare a dependency:
   <depends>org.jetbrains.android</depends>
 ```
 
-As discussed in the [Plugin Dependencies](plugin_compatibility.md#declaring-plugin-dependencies) section of this guide, a plugin's dependency on [Modules Specific to Functionality](plugin_compatibility.md#modules-specific-to-functionality) must be declared in `plugin.xml`.
+As discussed in the [Plugin Dependencies](plugin_compatibility.md#declaring-plugin-dependencies) section of this guide, a plugin's dependency on [Modules Specific to Functionality](plugin_compatibility.md#modules-specific-to-functionality) must be declared in <path>plugin.xml</path>.
 When using Android Studio-specific features (APIs), a dependency on `com.intellij.modules.androidstudio` must be declared as shown in the code snippet below.
 Otherwise, if only general IntelliJ Platform features (APIs) are used, then a dependency on `com.intellij.modules.platform` must be declared as discussed in [Plugin Compatibility with IntelliJ Platform Products](plugin_compatibility.md).
 

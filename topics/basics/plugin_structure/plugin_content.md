@@ -2,7 +2,7 @@
 
 <!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-The plugin `jar` file must contain:
+The plugin <path>jar</path> file must contain:
 - the configuration file (<path>META-INF/plugin.xml</path>) ([Plugin Configuration File](plugin_configuration_file.md))
 - the classes that implement the plugin functionality
 - recommended: plugin logo file(s) (<path>META-INF/pluginIcon*.svg</path>) ([Plugin Logo](plugin_icon_file.md))

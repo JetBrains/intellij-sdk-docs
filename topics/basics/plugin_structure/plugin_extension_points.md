@@ -103,9 +103,9 @@ For above extension points usage in _anotherPlugin_ would look like this (see al
 ```
 
 ## Using Extension Points
-To refer to all registered extension instances at runtime, declare an [`ExtensionPointName`](upsource:///platform/extensions/src/com/intellij/openapi/extensions/ExtensionPointName.java) passing in the fully-qualified name matching its [declaration in `plugin.xml`](#declaring-extension-points).
+To refer to all registered extension instances at runtime, declare an [`ExtensionPointName`](upsource:///platform/extensions/src/com/intellij/openapi/extensions/ExtensionPointName.java) passing in the fully-qualified name matching its [declaration in plugin.xml](#declaring-extension-points).
 
-_myPlugin/src/com/myplugin/MyExtensionUsingService.java_
+<path>myPlugin/src/com/myplugin/MyExtensionUsingService.java</path>
 
 ```java
 public class MyExtensionUsingService {

@@ -297,7 +297,9 @@
             <toc-element id="appcode_extension_point_list.md" toc-title="AppCode Extension Point List"/>
         </toc-element>
         <toc-element id="clion.md" toc-title="CLion"/>
-        <toc-element id="data_grip.md" toc-title="DataGrip"/>
+        <toc-element id="data_grip.md" toc-title="DataGrip">
+            <toc-element id="data_grip_extension_point_list.md" toc-title="DataGrip Extension Point List"/>
+        </toc-element>
         <toc-element id="goland.md" toc-title="GoLand">
             <toc-element id="goland_extension_point_list.md" toc-title="GoLand Extension Point List"/>
         </toc-element>

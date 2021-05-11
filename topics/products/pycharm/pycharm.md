@@ -1,6 +1,6 @@
 [//]: # (title: PyCharm Plugin Development)
 
-<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 ## Introduction
 [PyCharm](https://www.jetbrains.com/pycharm/) is an IntelliJ Platform-based product.
@@ -12,7 +12,7 @@ Plugin projects for PyCharm can be developed using IntelliJ IDEA with the `gradl
 
 ## Configuring Plugin Projects Targeting PyCharm
 The configuration of PyCharm plugin projects follows the methods described in [Configuring Plugin Projects using a Product-Specific Attribute](dev_alternate_products.md#configuring-plugin-projects-using-a-product-specific-attribute), and [Configuring the plugin.xml File](dev_alternate_products.md#configuring-pluginxml).
-The table below summarizes the `gradle-intellij-plugin` attributes to set in the `build.gradle` file.
+The table below summarizes the `gradle-intellij-plugin` attributes to set in the <path>build.gradle</path> file.
 Click on an entry in the table's *Attribute* column to go to the documentation about that attribute.
 
 | `gradle-intellij-plugin` Attribute       | Attribute Value                                                                |
@@ -26,13 +26,15 @@ Click on an entry in the table's *Attribute* column to go to the documentation a
 [properties]: https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md#intellij-platform-properties
 [dsl]: https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md#running-dsl
 
-The dependency on the PyCharm APIs must be declared in the `plugin.xml` file.
+The dependency on the PyCharm APIs must be declared in the <path>plugin.xml</path> file.
 As described in [Configuring the plugin.xml File](dev_alternate_products.md#configuring-pluginxml), the `<depends>` tags must declare `com.intellij.modules.python`.
 
 See the SDK code sample [`pycharm_basics`](https://github.com/JetBrains/intellij-sdk-code-samples/tree/main/product_specific/pycharm_basics/) for an example configuration.
 Please note that this code sample must be imported into Gradle explicitly, as it is not included in the `_gradleCompositeBuild`.
 
 ## Available PyCharm APIs
+See [Extension Point List](extension_point_list.md) for PyCharm Community EPs.
+
 The plugin [Python](https://plugins.jetbrains.com/plugin/631-python) defines the APIs for PyCharm Professional.
 The plugin [Python Community Edition](https://plugins.jetbrains.com/plugin/7322-python-community-edition) defines the APIs for PyCharm Community.
 These plugins include the modules `openapi` and `python-psi-api`.

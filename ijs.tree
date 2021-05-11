@@ -340,6 +340,7 @@
     </toc-element>
     <toc-element toc-title="Appendix I - Resources">
         <toc-element id="glossary.md" toc-title="Glossary"/>
+        <toc-element id="explore_api.md" toc-title="Explore the API"/>
         <toc-element id="extension_point_list.md" toc-title="Extension Point List"/>
         <toc-element id="useful_links.md" accepts-web-file-names="resources.html" toc-title="Useful Links"/>
         <toc-element id="marketing.md" toc-title="Marketing"/>

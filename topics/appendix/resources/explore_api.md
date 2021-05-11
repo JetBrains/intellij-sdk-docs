@@ -16,7 +16,7 @@ Furthermore, the tips below will help build your confidence as you explore the I
 
 ## 1 Extension Points (EPs)
 
-### 1.1 
+### 1.1 Browse Lists of EPs
 
 The most important resource for discovering new EPs is the extensive list provided directly in the
 [IntelliJ Platform SDK Documentation](extension_point_list.md).
@@ -24,38 +24,38 @@ On this page, you will find all of the EPs, and each entry includes a link to th
 [IntelliJ Platform Explorer](https://jb.gg/ipe),
 which helps you find examples of this EP in other plugins.
 
-### 1.2
+### 1.2 Use Autocompletion Information
 
 Another way to discover EPs is by using autocompletion or navigating through EP XML files.
-When you open a new tag in your `plugin.xml` file (inside the `extensions` block with `defaultExtensionNs="com.intellij"`),
+When you open a new tag in your <path>plugin.xml</path> file (inside the `extensions` block with `defaultExtensionNs="com.intellij"`),
 the IDE will automatically suggest possible EPs.
 
-![Use Completion Suggestions](plugin_xml_completion_suggestion.gif)
+<img src="plugin_xml_completion_suggestion.png" alt="Using Completion Suggestions" width="706" animated="true"/>
 
 This is the first step in discovering new features that haven't been explicitly mentioned in the IntelliJ Platform Docs.
 Note that in the completion popup you can call
 [quick documentation](https://www.jetbrains.com/help/idea/viewing-reference-information.html#inline-quick-documentation),
 which then shows the properties and the implementation class of the EP.
 
-### 1.3
+### 1.3 Search the IntelliJ Platform Code
 
 Use 
 [Go to Declaration](https://www.jetbrains.com/help/idea/navigating-through-the-source-code.html#go_to_declaration)
-on EPs that are implemented in `plugin.xml` to navigate to its definition in the XML file.
+on EPs that are implemented in <path>plugin.xml</path> to navigate to its definition in the XML file.
 There you'll find more EPs, and browsing through this list helps you discover features you might not have been aware of.
 [Search everywhere](https://www.jetbrains.com/help/idea/searching-everywhere.html)
 or
 [Go to file](https://www.jetbrains.com/help/idea/discover-intellij-idea.html#navigation-and-search)
 helps you search for all files containing extension points.
-Just use `*ExtensionPoints.xml` as the search pattern and enable the “include non-project items” checkbox.
+Just use <path>*ExtensionPoints.xml</path> as the search pattern and enable the <emphasis>include non-project items</emphasis> checkbox.
 
-However, if a bundled or third-party plugin exposes EPs for others to implement, these EPs are defined in the `plugin.xml` files
-of the plugins and not in the `*ExtensionPoints.xml` files of the IntelliJ Platform.
+However, if a bundled or third-party plugin exposes EPs for others to implement, these EPs are defined in the <path>plugin.xml</path> files
+of the plugins and not in the <path>*ExtensionPoints.xml</path> files of the IntelliJ Platform.
 One such example is the EPs exposed by the Markdown plugin that adds support for custom languages inside fenced code blocks of Markdown files.
 
-### 1.4
+### 1.4 Use Advanced Search
 
-Explore the `plugin.xml` files of bundled or 3rd party plugins.
+Explore the <path>plugin.xml</path> files of bundled or 3rd party plugins.
 If you have the IntelliJ Platform sources available either in your own plugin project or in a separate instance,
 you can use
 [Structural Search](https://www.jetbrains.com/help/idea/structural-search-and-replace.html)
@@ -63,13 +63,13 @@ to find all the files that meet the following criteria:
 
 - The file type is XML
 - It contains the tag `<idea-plugin>`
-- The file is in the scope “Project and Libraries”
+- The file is in the scope <emphasis>Project and Libraries</emphasis>
 
 ![Search Structurally for plugin.xml](search_structurally_for_plugin_xml.png)
 
 The search results will contain many plugin XML files.
-To find specific implementations of EPs in third-party plugins, use the IntelliJ Platform Explorer ([see 3.2](explore_api.md#13)).
-Inspecting the `plugin.xml` files of other plugins not only helps you discover new features but also shows how things like menu entries or
+To find specific implementations of EPs in third-party plugins, use the IntelliJ Platform Explorer ([see 3.2](explore_api.md#32-search-the-intellij-platform-explorer)).
+Inspecting the <path>plugin.xml</path> files of other plugins not only helps you discover new features but also shows how things like menu entries or
 notification groups can be defined in the XML file.
 
 ## 2 Navigating the IntelliJ Platform Source Code
@@ -88,14 +88,14 @@ Others simply search the source code of the IntelliJ Platform that is attached b
 While both methods work, it should be noted that developing plugins without inspecting the IntelliJ Platform code is nearly impossible,
 and all of the tips below assume that you have the source code available.
 
-### 2.1
+### 2.1 Find Example Implementations
 
 When working with interfaces or abstract classes of EPs, use IntelliJ IDEA's
 [Go to Implementation](https://www.jetbrains.com/help/idea/navigating-through-the-source-code.html#go_to_implementation) or
 [Find Usages](https://www.jetbrains.com/help/idea/find-usages-dialog.html)
 feature to discover examples of how they are used in the IntelliJ Platform.
 
-### 2.2
+### 2.2 Look for Particular Class Names
 
 Access to many features is provided through the `Manager` and `Service` classes, such as:
 
@@ -105,29 +105,29 @@ Access to many features is provided through the `Manager` and `Service` classes,
 Therefore, it can be helpful to search for classes that match the pattern `com.intellij.*Manager` and look through the list of results.
 Note that not all of these classes have the `com.intellij` prefix, and also that you can
 [define custom scopes](https://www.jetbrains.com/help/idea/configuring-scopes-and-file-colors.html)
-to limit your searches, for example to only `idea-xxx.jar` files.
+to limit your searches, for example to only <path>idea-xxx.jar</path> files.
 
-### 2.3
+### 2.3 Inspect the Contents of Packages
 
 If you open an EP's interface or abstract class, it is always helpful to inspect the contents of its package.
 For instance, the interface of the `com.intellij.sdkType` EP lives in the `com.intellij.openapi.projectRoots` package.
 Inspecting the contents of this package shows many related classes that will be useful if you are implementing this feature.
 
-### 2.4
+### 2.4 Search for Symbol Names
 
 As a last resort, it is sometimes helpful to search directly for a method, class, and class member if you can guess a part of its name.
 You can either use
 [Search Everything or Go to Symbol](https://www.jetbrains.com/help/idea/reference-keymap-win-default.html#find_everything).
-Note that you need to change the search scope to “All Places” in the search window to find all occurrences of symbols.
+Note that you need to change the search scope to <emphasis>All Places</emphasis> in the search window to find all occurrences of symbols.
 
-### 2.5
+### 2.5 Refrain from Using Internal Classes
 
 As a general remark, the use of internal classes is strongly discouraged (i.e. classes ending with `Impl` in their name,
-located under `impl` package, or included in `platform-impl.jar`).
+located under `impl` package, or included in <path>platform-impl.jar</path>).
 
 ## 3 Tools and References
 
-### 3.1
+### 3.1 Use Internal Mode and PsiViewer
 
 As a plugin developer, you should enable [internal mode](enabling_internal.md) in IntelliJ IDEA.
 This provides access to a suite of tools to help you develop, debug, and test IntelliJ Platform plugins.
@@ -136,19 +136,19 @@ which lets you investigate all parts of the UI of every IntelliJ-based IDE by si
 Equally important is the UI Debugger, which you can find in the <menupath>Tools | Internal Actions</menupath> menu.
 It will display all actions that are run by the IDE when you interact with UI elements, for example by clicking a button.
 
-Finally, internal mode provides the _View PSI Structure…_ and _View PSI Structure of Current File…_ actions in the Tools menu,
+Finally, internal mode provides the <menupath>View PSI Structure…</menupath> and <menupath>View PSI Structure of Current File…</menupath> actions in the Tools menu,
 which allow you to analyze the PSI tree.
 The [PsiViewer plugin](https://plugins.jetbrains.com/plugin/227-psiviewer) is a separate plugin with similar capabilities for inspecting PSI trees,
 and it comes with a dedicated tool window that displays information on the fly.
 However, it does not display information about [stubs](stub_indexes.md) or [formatting models](code_formatting.md).
 
-### 3.2
+### 3.2 Search the IntelliJ Platform Explorer
 
 The [IntelliJ Platform Explorer](https://plugins.jetbrains.com/intellij-platform-explorer)
 is a search tool for browsing EPs inside existing implementations of open-source IntelliJ Platform plugins.
 You can navigate directly to the source files hosted on GitHub to find inspiration when implementing your own extensions for IntelliJ-based IDEs.
 
-### 3.3
+### 3.3 Browse Available References
 
 The IntelliJ Platform SDK Documentation should always be the first resource you check for information.
 Here is a condensed list you can use for further reference:

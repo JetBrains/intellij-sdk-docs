@@ -48,7 +48,7 @@ There you'll find more EPs, and browsing through this list helps you discover fe
 or
 [Go to file](https://www.jetbrains.com/help/idea/discover-intellij-idea.html#navigation-and-search)
 helps you search for all files containing extension points.
-Just use <path>*ExtensionPoints.xml</path> as the search pattern and enable the _include non-project items_ checkbox.
+Just use <path>*ExtensionPoints.xml</path> as the search pattern and enable the <control>include non-project items</control> checkbox.
 
 However, if a bundled or third-party plugin exposes EPs for others to implement, these EPs are defined in the <path>plugin.xml</path> files
 of the plugins and not in the <path>*ExtensionPoints.xml</path> files of the IntelliJ Platform.
@@ -64,7 +64,7 @@ to find all the files that meet the following criteria:
 
 - The file type is XML
 - It contains the tag `<idea-plugin>`
-- The file is in the scope _Project and Libraries_
+- The file is in the scope <control>Project and Libraries</control>
 
 ![Search Structurally for plugin.xml](search_structurally_for_plugin_xml.png)
 
@@ -119,7 +119,7 @@ Inspecting the contents of this package shows many related classes that will be 
 As a last resort, it is sometimes helpful to search directly for a method, class, and class member if you can guess a part of its name.
 You can either use
 [Search Everything or Go to Symbol](https://www.jetbrains.com/help/idea/reference-keymap-win-default.html#find_everything).
-Note that you need to change the search scope to _All Places_ in the search window to find all occurrences of symbols.
+Note that you need to change the search scope to <control>All Places</control> in the search window to find all occurrences of symbols.
 
 ### 2.5 Refrain from Using Internal Classes
 

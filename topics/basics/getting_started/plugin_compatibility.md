@@ -1,6 +1,6 @@
 [//]: # (title: Plugin Compatibility with IntelliJ Platform Products)
 
-<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 ## Introduction
 All products based on the IntelliJ Platform are built on the same underlying API.
@@ -21,10 +21,10 @@ Declaring a dependency on a module also expresses a plugin's compatibility with 
 [Part I](plugin_dependencies.md) of this document describes the syntax for declaring plugin dependencies and optional plugin dependencies.
 Part II of this document (below) describes the IntelliJ Platform modules' functionality to aid in determining the dependencies of a plugin.
 
-The way dependency declarations are handled by the Intellij Platform is determined by the contents of the `plugin.xml` file:
-* If a plugin does not declare any dependencies in its `plugin.xml` file, or if it declares dependencies only on other plugins but not modules, it's assumed to be a legacy plugin and is loaded only in IntelliJ IDEA.
+The way dependency declarations are handled by the Intellij Platform is determined by the contents of the <path>plugin.xml</path> file:
+* If a plugin does not declare any dependencies in its <path>plugin.xml</path> file, or if it declares dependencies only on other plugins but not modules, it's assumed to be a legacy plugin and is loaded only in IntelliJ IDEA.
   This configuration of the dependency declaration is deprecated; do not use it for new plugin projects.
-* If a plugin declares at least _one_ module dependency in its `plugin.xml` file, the plugin is loaded if an IntelliJ Platform-based product contains _all the modules and plugins_ on which the plugin has declared a dependency.
+* If a plugin declares at least _one_ module dependency in its <path>plugin.xml</path> file, the plugin is loaded if an IntelliJ Platform-based product contains _all the modules and plugins_ on which the plugin has declared a dependency.
 
 ## Modules
 A _module_ represents a built-in plugin that is a non-removable part of a product.
@@ -32,7 +32,7 @@ Some modules are available in all products, and some modules are available only 
 This section identifies and discusses modules of both types.
 
 ### Declaring Incompatibility with Module
-Starting in 2020.2, a plugin can declare incompatibility with an arbitrary module by specifying `<incompatible-with>` containing module ID in its `plugin.xml`.
+Starting in 2020.2, a plugin can declare incompatibility with an arbitrary module by specifying `<incompatible-with>` containing module ID in its <path>plugin.xml</path>.
 
 ### Modules Available in All Products
 A core set of modules are available in all products based on the IntelliJ Platform.
@@ -43,7 +43,7 @@ The following table lists modules that are currently available in all products.
  >
  {type="note"}
 
-| Module for `<depends>` Element<br/>Declaration in `plugin.xml` File | <br/>Functionality                                                                                                |
+| Module for `<depends>` Element<br/>Declaration in <path>plugin.xml</path> File | <br/>Functionality                                                                                   |
 | ------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------- |
 | **`com.intellij.modules.platform`**                                | Messaging, UI Themes, UI Components, Files, Documents, Actions, Components, Services, Extensions, Editors        |
 | `com.intellij.modules.lang`                                        | File Type, Lexer, Parser, Highlighting, References, Code Completion, Find, Rename, Formatter, Code Navigation    |
@@ -51,7 +51,7 @@ The following table lists modules that are currently available in all products.
 | `com.intellij.modules.vcs`                                         | VCS Revision Numbers, File Status, Change Lists, File History, Annotations                                       |
 | `com.intellij.modules.xdebugger`                                   | Debug Session, Stack Frames, Break Points, Source Positions, Memory Views, Tracked Instances                     |
 
-As of this writing, if a plugin: **A)** is dependent _only_ on one or more of the modules in the table above, **and B)** declares those module dependencies in `plugin.xml`, then any product developed by JetBrains based on the IntelliJ Platform will load it.
+As of this writing, if a plugin: **A)** is dependent _only_ on one or more of the modules in the table above, **and B)** declares those module dependencies in <path>plugin.xml</path>, then any product developed by JetBrains based on the IntelliJ Platform will load it.
 
 ### Modules Specific to Functionality
 More specialized functionality is also delivered via modules and plugins in IntelliJ Platform-based products.
@@ -64,9 +64,9 @@ A plugin project is compatible with PHP functionality if it declares a dependenc
 
 The following table lists **(1)** modules or built-in plugins that provide specific functionality, and the products currently shipping with them.
 
-| Module or Plugin for `<depends>` Element<br/>Declaration in `plugin.xml` File | <br/>Functionality                                                                                                                                  | IntelliJ Platform-Based<br/>Product Compatibility                                                                                                                           |
+| Module or Plugin for `<depends>` Element<br/>Declaration in <path>plugin.xml</path> File | <br/>Functionality                                                                                                                     | IntelliJ Platform-Based<br/>Product Compatibility                                                                                                                          |
 | ---------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `com.intellij.modules.java` See **(2)** below. <br/>`com.intellij.java`           | **Java** language PSI Model, Inspections, Intentions, Completion, Refactoring, Test Framework                                                      | IntelliJ IDEA, Android Studio                                                                                                                                              |
+| `com.intellij.modules.java` See **(2)** below. <br/>`com.intellij.java`      | **Java** language PSI Model, Inspections, Intentions, Completion, Refactoring, Test Framework                                                      | IntelliJ IDEA, Android Studio                                                                                                                                              |
 | `com.intellij.modules.androidstudio`                                         | Android SDK Platform, Build Tools, Platform Tools, SDK Tools                                                                                       | Android Studio                                                                                                                                                             |
 | `com.intellij.modules.appcode`                                               | CocoaPods, Core Data Objects, Device & Simulator Support                                                                                           | AppCode                                                                                                                                                                    |
 | `com.intellij.modules.cidr.lang`                                             | **C, C++, Objective-C/C++** language PSI Model, Swift/Objective-C Interaction, Inspections, Intentions, Completion, Refactoring, Test Framework    | AppCode, CLion                                                                                                                                                             |
@@ -84,22 +84,22 @@ The following table lists **(1)** modules or built-in plugins that provide speci
 **Notes about Module and Plugin Dependency:**
 
 **(1)** This table is not exhaustive; other modules are currently available in JetBrains' IntelliJ Platform-based IDEs.
-To see a list of modules, invoke the [code completion](https://www.jetbrains.com/help/idea/auto-completing-code.html#4eac28ba) feature for the `<depends>` element contents while editing the `plugin.xml` file.
+To see a list of modules, invoke the [code completion](https://www.jetbrains.com/help/idea/auto-completing-code.html#4eac28ba) feature for the `<depends>` element contents while editing the <path>plugin.xml</path> file.
 
 **(2)** The [Java language functionality](https://blog.jetbrains.com/platform/2019/06/java-functionality-extracted-as-a-plugin/) was extracted as a plugin in version 2019.2 of the IntelliJ Platform.
 This refactoring separated the Java implementation from the other, non-language portions of the platform.
-Consequently, [dependencies](plugin_dependencies.md) on Java functionality are expressed differently in `plugin.xml` depending on the version of the IntelliJ Platform being targeted:
+Consequently, [dependencies](plugin_dependencies.md) on Java functionality are expressed differently in <path>plugin.xml</path> depending on the version of the IntelliJ Platform being targeted:
 
 * Syntax for 2019.2 and later releases:
-  * `plugin.xml` _allowable alternative_ add `<depends>com.intellij.java</depends>`
-  * `build.gradle` _required_ define dependency on Java plugin `intellij { plugins = ['com.intellij.java'] }`
+  * <path>plugin.xml</path> _allowable alternative_ add `<depends>com.intellij.java</depends>`
+  * <path>build.gradle</path> _required_ define dependency on Java plugin `intellij { plugins = ['com.intellij.java'] }`
 * Syntax _required_ for releases prior to 2019.2, _allowable_ in all releases:
-  * `plugin.xml` add `<depends>com.intellij.modules.java</depends>`
+  * <path>plugin.xml</path> add `<depends>com.intellij.modules.java</depends>`
 
 ## Exploring Module and Plugin APIs
-Once the [dependency on a module or plugin](plugin_dependencies.md) is declared in `plugin.xml`, it's useful to explore the packages and classes available in that dependency.
+Once the [dependency on a module or plugin](plugin_dependencies.md) is declared in <path>plugin.xml</path>, it's useful to explore the packages and classes available in that dependency.
 The section below gives some recommended procedures for discovering what's available in a module or plugin on which a project depends.
-These procedures assume a project has the `build.gradle` and `plugin.xml` dependencies configured correctly.
+These procedures assume a project has the <path>build.gradle</path> and <path>plugin.xml</path> dependencies configured correctly.
 
 ### Exploring APIs as a Consumer
 Exploring the available packages and classes in a plugin or module utilizes features in the IntelliJ IDEA IDE.
@@ -108,7 +108,7 @@ If the project is not up to date, [Reimport the Gradle project](https://www.jetb
 Reimporting the project will automatically update the dependencies.
 
 In the Project Window, select Project View and scroll to the bottom to see [External Libraries](https://www.jetbrains.com/help/idea/project-tool-window.html#content_pane).
-Look for the library `Gradle:unzipped.com.jetbrains.plugins:foo:`, where "foo" matches, or is similar to the contents of the `<depends>` tags in `plugin.xml` or the `intellij.plugins` declaration in `build.gradle`.
+Look for the library `Gradle:unzipped.com.jetbrains.plugins:foo:`, where "foo" matches, or is similar to the contents of the `<depends>` tags in <path>plugin.xml</path> or the `intellij.plugins` declaration in <path>build.gradle</path>.
 The image below shows the External Libraries for the example plugin project configuration explained in [Configuring build.gradle](dev_alternate_products.md#configuring-buildgradle-using-the-intellij-idea-product-attribute) and [Configuring plugin.xml](dev_alternate_products.md#configuring-pluginxml).
 
 ![Example PhpStorm Project Libraries](php_prj_libs.png){width="700"}
@@ -118,16 +118,20 @@ Drill down into the JAR files to expose the packages and (decompiled) classes.
 
 ### Exploring APIs as an Extender
 If a project is dependent on a plugin or module, in some cases, the project can also [extend](plugin_extensions.md) the functionality available from the plugin or module.
+                                    
+ > See [Explore the IntelliJ Platform API](explore_api.md) for more information and strategies.                
+ >
+ {type="tip"}
 
-To browse the opportunities for extension, start by placing the cursor on the contents of the `<depends>` elements in the project's `plugin.xml` file.
-Use the [Go to Declaration](https://www.jetbrains.com/help/idea/navigating-through-the-source-code.html#go_to_declaration) IDE feature to navigate to the `plugin.xml` file for the plugin on which the project depends.
+To browse the opportunities for extension, start by placing the cursor on the contents of the `<depends>` elements in the project's <path>plugin.xml</path> file.
+Use the [Go to Declaration](https://www.jetbrains.com/help/idea/navigating-through-the-source-code.html#go_to_declaration) IDE feature to navigate to the <path>plugin.xml</path> file for the plugin on which the project depends.
 
-For example, performing this procedure on the `<depends>com.jetbrains.php</depends>` declaration in a project's `plugin.xml` file will navigate to the `plugin.xml` file for the `com.jetbrains.php` (PHP) project.
+For example, performing this procedure on the `<depends>com.jetbrains.php</depends>` declaration in a project's <path>plugin.xml</path> file will navigate to the <path>plugin.xml</path> file for the `com.jetbrains.php` (PHP) project.
 A common, but not universal, pattern in the IntelliJ platform is for a plugin (like PHP) to declare `<extensionPoints>` and then implement each one as `<extensions>`.
-Continuing the example, search the PHP plugin's `plugin.xml` file for:
+Continuing the example, search the PHP plugin's <path>plugin.xml</path> file for:
 * `<extensionPoints>` to find the opportunities for extending the PHP plugin's functionality.
 * `<extensions defaultExtensionNs="com.jetbrains.php">` to find where the PHP plugin extends functionality.
-  The extension namespace (in this example `com.jetbrains.php`) will match the `<id>` defined in the `plugin.xml` file.
+  The extension namespace (in this example `com.jetbrains.php`) will match the `<id>` defined in the <path>plugin.xml</path> file.
 
 ## Verifying Dependency
 Before marking a plugin project as _dependent only on modules in a target product_ in addition to `com.intellij.modules.platform`, verify the plugin isn't implicitly dependent on any APIs that are specific to IntelliJ IDEA.

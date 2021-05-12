@@ -9,7 +9,9 @@
 - [Android Plugin](#android-plugin)
                      
  > Dedicated Extension Point Lists specific to IDEs are available under _Part VIII - Product Specific_. 
- >
+ >  
+ > See also [Explore the IntelliJ Platform API](explore_api.md) for more information and strategies.
+ > 
  {type="tip"}
 
 See [Plugin Extensions](plugin_extensions.md) on how to declare extensions in your plugin.

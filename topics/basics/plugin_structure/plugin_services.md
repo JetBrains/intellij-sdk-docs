@@ -88,9 +88,9 @@ MyProjectService projectService = project.getService(MyProjectService.class)
 In Kotlin code, use convenience methods:
 
 ```kotlin
-val applicationService = service<MyApplicationService>()
+val applicationService = ServiceManager.getService(MyApplicationService::class.java)
 
-val projectService = project.service<MyProjectService>()
+val projectService = project.getService(MyProjectService::class.java)
 ```
 
 ## Project Service Sample

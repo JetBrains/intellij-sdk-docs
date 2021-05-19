@@ -329,7 +329,9 @@
         <toc-element id="rubymine.md" toc-title="RubyMine">
             <toc-element id="rubymine_extension_point_list.md" toc-title="RubyMine Extension Point List"/>
         </toc-element>
-      <toc-element id="webstorm.md" toc-title="WebStorm"/>
+        <toc-element id="webstorm.md" toc-title="WebStorm">
+            <toc-element id="webstorm_extension_point_list.md" toc-title="WebStorm Extension Point List"/>
+        </toc-element>
     </toc-element>
     <toc-element toc-title="Part IX - Custom IDEs">
         <toc-element toc-title="Build Your Own IDE"/>

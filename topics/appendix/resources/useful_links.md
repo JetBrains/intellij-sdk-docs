@@ -24,6 +24,7 @@ The following links represent useful resources for working with the IntelliJ Pla
 * [Grammar-Kit](https://plugins.jetbrains.com/plugin/6606-grammar-kit) & [Grammar-Kit Folder](https://plugins.jetbrains.com/plugin/12983-grammar-kit-folder)
 * [Index Viewer](https://plugins.jetbrains.com/plugin/13029-index-viewer/)
 * [IDE Perf](https://plugins.jetbrains.com/plugin/15104-ide-perf)
+* [Thread Access Info](https://plugins.jetbrains.com/plugin/16815-thread-access-info)
 
 ### Webinars
 * [IntelliJ IDEA Conf 2021](https://www.youtube.com/watch?v=akrPpWAZzQk&list=PLPZy-hmwOdEUdLO-AKiJJ7LuZ3p16zJ4x) includes a number of presentations related to plugin development

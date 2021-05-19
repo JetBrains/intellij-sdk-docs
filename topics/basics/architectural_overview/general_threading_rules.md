@@ -1,8 +1,12 @@
 [//]: # (title: General Threading Rules)
 
-<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 ## Read-Write Lock
+
+ > [Thread Access Info](https://plugins.jetbrains.com/plugin/16815-thread-access-info) plugin visualizes Read/Write Access and Thread information in debugger.
+ >
+ {type="tip"}
 
 In general, code-related data structures in the IntelliJ Platform are covered by a single reader/writer lock.
 

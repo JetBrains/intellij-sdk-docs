@@ -78,14 +78,15 @@ If your plugin is hosted on GitHub and you are _not_ using Gradle, consider usin
 
 ### IDE Support
 Consider using the following [IDE inspections](https://www.jetbrains.com/help/idea/code-inspection.html) to get additional alerts about code that uses unstable API features:
-- JVM languages \| Unstable API Usage
-- JVM languages \| Unstable type is used in signature
+ 
+- <control>JVM languages | Unstable API Usage</control>
+- <control>JVM languages | Unstable type is used in signature</control>
 
-Usage of deprecated or annotated with `org.jetbrains.annotations.ApiStatus.@Experimental`/`@Internal` [Extension Points](plugin_extensions.md) is highlighted in `plugin.xml` files.
+Usage of [Extension Points](plugin_extensions.md) which are deprecated or annotated with [`org.jetbrains.annotations.ApiStatus`](https://github.com/JetBrains/java-annotations/blob/master/common/src/main/java/org/jetbrains/annotations/ApiStatus.java) `@Experimental`/`@Internal` is highlighted in <path>plugin.xml</path> files.
 
 ## Known Breaking Changes
 
- >  Follow [JBPlatform](https://twitter.com/JBPlatform/) on Twitter and visit [JetBrains Platform Blog](https://blog.jetbrains.com/platform/) for the latest announcements.
+ > Follow [JBPlatform](https://twitter.com/JBPlatform/) on Twitter and visit [JetBrains Platform Blog](https://blog.jetbrains.com/platform/) for the latest announcements.
  >
  {type="tip"}
 
@@ -97,5 +98,7 @@ The following pages list the breaking changes in IDE and plugin releases with re
 * [**Changes in 2018.***](api_changes_list_2018.md)
 * [**Changes in 2017.***](api_changes_list_2017.md)
 * [**Changes in 2016.***](api_changes_list_2016.md)
+                                                                                       
+## Library Updates
 
 Information about bundled Third-Party Software/Libraries and their respective versions is available [here](https://www.jetbrains.com/legal/third-party-software/).

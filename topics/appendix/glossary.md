@@ -78,7 +78,7 @@ Stubs
 
 ## U
 
-Unified Abstract Syntax Tree _UAST_
+Unified Abstract Syntax Tree _(UAST)_
 : An [abstraction layer](uast.md) on the &rarr; _Program Structure Interface_ of different JVM languages.
 
 ## V

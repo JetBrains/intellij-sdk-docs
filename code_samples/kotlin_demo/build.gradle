@@ -19,10 +19,6 @@ dependencies {
   implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
 }
 
-sourceSets {
-  main.kotlin.srcDirs += 'src/main/kotlin'
-}
-
 // See https://github.com/JetBrains/gradle-intellij-plugin/
 intellij {
   version = '2020.2.4'

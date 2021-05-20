@@ -7,7 +7,7 @@
 If you’re having problems with the guide itself, such as missing, incorrect, or confusing content, please [raise an issue on YouTrack](https://youtrack.jetbrains.com/newIssue?project=IJSDK&clearDraft=true&c=).
 If the problem is easily solved, you can also submit a [Pull Request](intellij-sdk-docs-original_CONTRIBUTING.md).
                                               
-If you want to report (smaller) issues for a _specific_ page, you can also use <control>Was this page helpful</control> feedback form on the bottom of each page by providing more details after clicking the <control>No<control> button. Please try to be as specific as possible and provide your e-mail address for further questions and getting notified of updates.
+If you want to report (smaller) issues for a _specific_ page, you can also use <control>Was this page helpful</control> feedback form on the bottom of each page by providing more details after clicking the <control>No</control> button. Please try to be as specific as possible and provide your e-mail address for further questions and getting notified of updates.
 
 If you just want to share feedback on the guide, again, [raise an issue](https://youtrack.jetbrains.com/newIssue?project=IJSDK&clearDraft=true&c=), even if it’s for a discussion, ideas on improvements or suggestions.
 

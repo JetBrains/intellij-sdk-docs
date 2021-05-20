@@ -17,12 +17,14 @@ It provides the following features:
     * <shortcut>Left/Right</shortcut> for switching between buttons
     * <shortcut>Y</shortcut>/<shortcut>N</shortcut> for <control>Yes</control>/<control>No</control> actions if they exist in the dialog
 * Optional <control>Do not ask again</control> checkbox
+                                    
+### Usage
 
 When using the [`DialogWrapper`](upsource:///platform/platform-api/src/com/intellij/openapi/ui/DialogWrapper.java) class for a dialog, follow these steps:
 
-* Call the base class constructor and provide either a project in the frame of which the dialog will be displayed, or a parent component for the dialog.
+* Call the base class constructor and provide either a `Project` in the frame of which the dialog will be displayed, or a parent component for the dialog.
 * Call the `init()` method from the constructor of the dialog class
-* Call the `setTitle()` method to set the title for the dialog box
+* Call the `setTitle()` method to set the title for the dialog
 * Implement the `createCenterPanel()` method to return the component comprising the main contents of the dialog.
 
 * *Optional*: Override the `getPreferredFocusedComponent()` method and return the component that should be focused when the dialog is first displayed.
@@ -44,6 +46,8 @@ To customize the buttons displayed in the dialog (replacing the standard <contro
 Both of these methods return an array of Swing Action objects.
 If a button closes the dialog, use [`DialogWrapperExitAction`](upsource:///platform/platform-api/src/com/intellij/openapi/ui/DialogWrapper.java) as the base class for the action.
 Use `action.putValue(DialogWrapper.DEFAULT_ACTION, true)` to set the default button.
+         
+### Input Validation
 
 To validate the data entered into the dialog, override the `doValidate()` method.
 The method will be called automatically by timer.

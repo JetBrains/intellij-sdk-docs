@@ -20,18 +20,20 @@ It provides the following features:
                                     
 ### Usage
 
-When using the [`DialogWrapper`](upsource:///platform/platform-api/src/com/intellij/openapi/ui/DialogWrapper.java) class for a dialog, follow these steps:
+When using the [`DialogWrapper`](upsource:///platform/platform-api/src/com/intellij/openapi/ui/DialogWrapper.java) class for a dialog, follow these required steps:
 
 * Call the base class constructor and provide either a `Project` in the frame of which the dialog will be displayed, or a parent component for the dialog.
 * Call the `init()` method from the constructor of the dialog class
 * Call the `setTitle()` method to set the title for the dialog
 * Implement the `createCenterPanel()` method to return the component comprising the main contents of the dialog.
+                                                            
+Optionally:
 
-* *Optional*: Override the `getPreferredFocusedComponent()` method and return the component that should be focused when the dialog is first displayed.
-* *Optional*: Override the `getDimensionServiceKey()` method to return the identifier which will be used for persisting the dialog dimensions.
-* *Optional*: Override the `getHelpId()` method to return the context help topic associated with the dialog.
+* Override the `getPreferredFocusedComponent()` method and return the component that should be focused when the dialog is first displayed.
+* Override the `getDimensionServiceKey()` method to return the identifier which will be used for persisting the dialog dimensions.
+* Override the `getHelpId()` method to return the context help topic associated with the dialog.
 
-The [`DialogWrapper`](upsource:///platform/platform-api/src/com/intellij/openapi/ui/DialogWrapper.java) class is often used together with [GUI Designer forms](https://www.jetbrains.com/help/idea/gui-designer-basics.html).
+The `DialogWrapper` class is often used together with [GUI Designer forms](https://www.jetbrains.com/help/idea/gui-designer-basics.html).
 In this case, bind a GUI Designer form to the class extending `DialogWrapper`, bind the top-level panel of the form to a field and return that field from the `createCenterPanel()` method.
 When using Kotlin, use [Kotlin UI DSL](kotlin_ui_dsl.md) to provide the dialog's contents.
 
@@ -82,7 +84,7 @@ public class SampleDialogWrapper extends DialogWrapper {
 }
 ```
 
-Usage of [`DialogWrapper`](upsource:///platform/platform-api/src/com/intellij/openapi/ui/DialogWrapper.java):
+Show `SampleDialogWrapper` dialog when user clicks on button:
 
 ```java
 JButton testButton = new JButton();

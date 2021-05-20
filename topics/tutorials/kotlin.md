@@ -36,6 +36,8 @@ To learn more about building IntelliJ Platform plugins with Kotlin, this tutoria
 ## Adding Kotlin Support
 
  > The [IntelliJ Platform Plugin Template](github_template.md) provides a preconfigured project using Kotlin.
+ > 
+ > See also [kotlin_demo](https://github.com/JetBrains/intellij-sdk-code-samples/tree/main/kotlin_demo) for a minimal sample plugin.
  >
  {type="tip"}
 
@@ -57,8 +59,7 @@ See [Dependency on the standard library](https://kotlinlang.org/docs/gradle.html
 
 ## Kotlin Gradle Plugin
 
-For plugins already using the [Gradle Build System](gradle_build_system.md), or those that require precise control over the Kotlin build process, we recommend using the [kotlin-gradle-plugin](https://kotlinlang.org/docs/gradle.html#configuring-dependencies).
-This [Gradle plugin](https://mvnrepository.com/artifact/org.jetbrains.kotlin/kotlin-gradle-plugin-core) greatly simplifies building Kotlin projects in a controlled and reproducible manner.
+Plugins using the [Gradle Build System](gradle_build_system.md) use the [Kotlin JVM Gradle plugin](https://kotlinlang.org/docs/gradle.html#targeting-the-jvm).
 
 Your <path>build.gradle</path> file may look like so:
 
@@ -90,11 +91,11 @@ repositories {
 }
 
 dependencies {
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.4.32")
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
 }
 
 intellij {
-    version = "2020.1"
+    version = "2020.2.4"
     pluginName = "Example"
     updateSinceUntilBuild = false
 }
@@ -104,7 +105,7 @@ intellij {
 
 Starting with 4.4, Gradle supports <path>build.gradle.kts</path>, an alternative to <path>build.gradle</path> written in Kotlin.
 
-There are many good resources for learning how to write build scripts for an IntelliJ plugin with Kotlin script, like
+There are many good resources for learning how to write build scripts for an IntelliJ Platform plugin with Kotlin script, like
 [intellij-rust](https://github.com/intellij-rust/intellij-rust/blob/master/build.gradle.kts),
 [julia-intellij](https://github.com/JuliaEditorSupport/julia-intellij/blob/master/build.gradle.kts),
 [covscript-intellij](https://github.com/covscript/covscript-intellij/blob/master/build.gradle.kts) or
@@ -145,7 +146,7 @@ dependencies {
 }
 
 intellij {
-    version = "2020.1"
+    version = "2020.2.4"
     pluginName = 'Example'
     updateSinceUntilBuild = false
 }

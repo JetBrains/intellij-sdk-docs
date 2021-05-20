@@ -6,13 +6,12 @@ This guide is split into several parts, similar to a textbook.
 Each one builds on the content of the previous section, but it is not necessary to read the guide in order.
 The [Key Topics](key_topics.md) page aims to link to the pages that are necessary to be able to understand the architecture and get started building plugins.
 
- >  While browsing this guide, you will notice that there are topics that are greyed out.
-> Unfortunately, the guide is not complete and contains placeholders for specific topics.
-> We are working on increasing the coverage, but if you get stuck due to missing content, please see the [Getting Help](getting_help.md) section for details on how to get moving again.
->
-> The guide is also [Open Source on GitHub](https://github.com/JetBrains/intellij-sdk-docs), and Pull Requests for new content or updates are always gratefully received.
-> A Pull Request does not need to be fully comprehensive - if a little update would help you, it will help other developers too! All pull requests will be reviewed before being accepted, so don't worry about inaccuracies.
-> Please see the [Contributing](intellij-sdk-docs-original_CONTRIBUTING.md) page for details on building the guide locally and contributing.
+ > While browsing this guide, you will notice that there are topics that are greyed out.
+ > Unfortunately, the guide is not complete and contains placeholders for specific topics.
+ > We are working on increasing the coverage, but if you get stuck due to missing content, please see the [Getting Help](getting_help.md) section for details on how to get moving again.
+ >
+ > The guide is also [Open Source on GitHub](https://github.com/JetBrains/intellij-sdk-docs), and Pull Requests for new content, corrections or updates are always gratefully received.
+ > Please see the [Contributing](intellij-sdk-docs-original_CONTRIBUTING.md) page for details.
  >
  {type="note"}
                                                                 
@@ -20,21 +19,21 @@ The [Key Topics](key_topics.md) page aims to link to the pages that are necessar
   >
   {type="tip"}
 
-#### [Part I - Plugins](basics.md)
+#### Part I - Plugins
 
 Describes how to create a plugin that can extend the IntelliJ Platform.
 Includes details on how to set up the project, register extension points, target specific versions of the IntelliJ Platform, and how to package, deploy, and test your plugins.
 
-#### [Part II - Base Platform](fundamentals.md)
+#### Part II - Base Platform
 
 Describes the foundational layer of the architecture, which provides many features and utilities, such as the component model, the user interface, documents and editors, the virtual file system, settings, threading, and background tasks.
 The Base Platform layer mainly comprises the functionality of the IntelliJ Platform that does not target language features or parsing.
 
-#### [Part III - Project Model](project_structure.md)
+#### Part III - Project Model
 
 Documents the Project Model, which represents the files and configuration of the currently loaded project, as well as the build system used to build the project.
 
-#### [Part IV - PSI](psi.md)
+#### Part IV - PSI
 
 The Program Structure Interface builds the syntactic and semantic models for lots of different file types.
 This section describes how to work with the PSI, navigating and manipulating the syntax trees, and also looks at the powerful references system, which allows a syntax tree node to reference an item in the semantic model.
@@ -45,16 +44,16 @@ It also details how PSI creates and uses indexes.
 Describes how to extend and interact with various features that use the PSI layer, such as code completion, navigation, <shortcut>Alt+Enter</shortcut> items, intentions, refactorings, and more.
 See also the section on Custom Languages below for language-specific features that are only applicable when adding support for a new language.
 
-#### [Part VI - Testing](testing_plugins.md)
+#### Part VI - Testing
 
 Describes the available infrastructure for writing automated tests covering the functionality of plugins.
 
-#### [Part VII - Custom Languages](custom_language_support.md)
+#### Part VII - Custom Languages
 
 Plugins frequently extend support for existing languages, such as adding inspections to Java files.
 This section describes how to add support to the IntelliJ Platform for a new language that isn't supported by default, creating parsers, syntactic and semantic models, and all the features that build on top.
 
-#### [Part VIII - Product Specific](dev_alternate_products.md)
+#### Part VIII - Product Specific
 
 A lot of the functionality in the IntelliJ Platform is language and product agnostic.
 For example, code inspections work the same in Java as they do in Ruby; it is just the syntax trees and semantic information that is different.
@@ -64,14 +63,14 @@ This section describes product-specific features, such as specific project model
 
 Documents how to use the IntelliJ Platform to create a new, custom IDE, rather than plugins to an existing product, e.g., WebStorm, or Android Studio.
 
-#### [Part X - Plugin Repository](plugin_repository_obsolete.md)
+#### Part X - Plugin Repository
 
 This part has been moved to [JetBrains Marketplace documentation](https://plugins.jetbrains.com/docs/marketplace/about-marketplace.html).
 
-#### [Appendix I - Resources](useful_links.md)
+#### Appendix I - Resources
 
-Links to useful resources, such as the IntelliJ Community Edition source code, the Plugin Development forum, and the JetBrains Platform Slack.
+Links to [useful resources](useful_links.md), [Glossary](glossary.md), [Extension Point List](extension_point_list.md), and tips on how to [Explore the IntelliJ Platform API](explore_api.md).
 
-#### [Appendix II - API Changes](api_changes_list.md)
+#### Appendix II - API Changes
 
 Provides a list of [backward-incompatible](api_changes_list.md) API changes as well as [notable changes and new features](api_notable.md) in each major release of the IntelliJ Platform.

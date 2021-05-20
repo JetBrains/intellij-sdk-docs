@@ -103,7 +103,7 @@ intellij {
 
 ### Use Kotlin to Write Gradle Script
 
-Starting with 4.4, Gradle supports <path>build.gradle.kts</path>, an alternative to <path>build.gradle</path> written in Kotlin.
+Gradle also supports using Kotlin in build scripts: <path>build.gradle.kts</path>.
 
 There are many good resources for learning how to write build scripts for an IntelliJ Platform plugin with Kotlin script, like
 [intellij-rust](https://github.com/intellij-rust/intellij-rust/blob/master/build.gradle.kts),

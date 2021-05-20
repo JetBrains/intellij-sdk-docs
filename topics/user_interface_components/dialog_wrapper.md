@@ -8,15 +8,15 @@ The [`DialogWrapper`](upsource:///platform/platform-api/src/com/intellij/openapi
 
 It provides the following features:
 
-* Button layout (platform-specific order of _OK_/_Cancel_ buttons, macOS-specific `Help` button)
+* Button layout (platform-specific order of <control>OK</control>/<control>Cancel</control> buttons, macOS-specific <control>Help</control> button)
 * Context help
 * Remembering the size of the dialog
 * Non-modal validation (displaying an error message text when the data entered into the dialog is not valid)
 * Keyboard shortcuts:
     * <shortcut>Esc</shortcut> for closing the dialog
     * <shortcut>Left/Right</shortcut> for switching between buttons
-    * <shortcut>Y</shortcut>/<shortcut>N</shortcut> for _Yes_/_No_ actions if they exist in the dialog
-* Optional _Do not ask again_ checkbox
+    * <shortcut>Y</shortcut>/<shortcut>N</shortcut> for <control>Yes</control>/<control>No</control> actions if they exist in the dialog
+* Optional <control>Do not ask again</control> checkbox
 
 When using the [`DialogWrapper`](upsource:///platform/platform-api/src/com/intellij/openapi/ui/DialogWrapper.java) class for a dialog, follow these steps:
 
@@ -40,7 +40,7 @@ When using Kotlin, use [Kotlin UI DSL](kotlin_ui_dsl.md) to provide the dialog's
 To display the dialog, call the `show()` method and then use the `getExitCode()` method to check how the dialog was closed.
 The `showAndGet()` method can be used to combine these two calls.
 
-To customize the buttons displayed in the dialog (replacing the standard _OK_/_Cancel_/_Help_ set of buttons), override either the `createActions()` or `createLeftActions()` methods.
+To customize the buttons displayed in the dialog (replacing the standard <control>OK</control>/<control>Cancel</control>/<control>Help</control> set of buttons), override either the `createActions()` or `createLeftActions()` methods.
 Both of these methods return an array of Swing Action objects.
 If a button closes the dialog, use [`DialogWrapperExitAction`](upsource:///platform/platform-api/src/com/intellij/openapi/ui/DialogWrapper.java) as the base class for the action.
 Use `action.putValue(DialogWrapper.DEFAULT_ACTION, true)` to set the default button.
@@ -49,7 +49,7 @@ To validate the data entered into the dialog, override the `doValidate()` method
 The method will be called automatically by timer.
 If the currently entered data is valid, return `null`.
 Otherwise, return a [`ValidationInfo`](upsource:///platform/platform-api/src/com/intellij/openapi/ui/ValidationInfo.java) object which encapsulates an error message, and an optional component associated with the invalid data.
-When specifying a component, an error icon will be displayed next to it, and it will be focused when the user tries to invoke the _OK_ action.
+When specifying a component, an error icon will be displayed next to it, and it will be focused when the user tries to invoke the <control>OK</control> action.
 
 ## Example
 

@@ -9,7 +9,7 @@
 Learn how to build plugins using IntelliJ Platform SDK for the [JetBrains products][jb:products] by experimenting with our code samples.
 These samples show you how features work and help you jumpstart your plugins.
 
-To start a new plugin project, please also consider using [IntelliJ Platform Plugin Template][gh:template] which offers a pure boilerplate template to make it easier to create a new plugin project.
+> **NOTE** To start a new plugin project, please also consider using [IntelliJ Platform Plugin Template][gh:template] which offers a pure boilerplate template to make it easier to create a new plugin project.
 
 Browse [available Extension Points][docs:eps] and explore usages in open-source plugins using [IntelliJ Platform Explorer](https://jb.gg/ipe).
 

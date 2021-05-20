@@ -51,6 +51,8 @@ Use `action.putValue(DialogWrapper.DEFAULT_ACTION, true)` to set the default but
          
 ### Input Validation
 
+Please see also [Validation errors](https://jetbrains.design/intellij/principles/validation_errors/) topic in the IntelliJ Platform UI Guidelines.
+
 To validate the data entered into the dialog, override the `doValidate()` method.
 The method will be called automatically by timer.
 If the currently entered data is valid, return `null`.

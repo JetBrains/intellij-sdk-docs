@@ -4,7 +4,7 @@
 
 ## Why Kotlin?
 
-Using Kotlin to write plugins for the IntelliJ Platform is very similar to writing plugins in Java.
+Using [Kotlin](https://kotlinlang.org) to write plugins for the IntelliJ Platform is very similar to writing plugins in Java.
 Existing plugin developers can get started by converting boilerplate Java classes to their Kotlin equivalents by using the [J2K compiler](https://kotlinlang.org/docs/mixing-java-kotlin-intellij.html#converting-an-existing-java-file-to-kotlin-with-j2k) bundled with the IntelliJ Platform (versions 143.+), and developers can easily mix and match Kotlin classes with their existing Java code.
 
 In addition to [null safety](https://kotlinlang.org/docs/null-safety.html) and [type-safe builders](https://kotlinlang.org/docs/type-safe-builders.html), the Kotlin language offers many convenient features for plugin development, which make plugins easier to read and simpler to maintain.
@@ -35,13 +35,25 @@ To learn more about building IntelliJ Platform plugins with Kotlin, this tutoria
 
 ## Adding Kotlin Support
 
- >  The [IntelliJ Platform Plugin Template](github_template.md) provides a preconfigured project using Kotlin.
+ > The [IntelliJ Platform Plugin Template](github_template.md) provides a preconfigured project using Kotlin.
  >
  {type="tip"}
 
-Plugins targeting the IntelliJ Platform versions 143 and above are easy to migrate: just start writing Kotlin.
-The IDE already bundles the necessary Kotlin plugins and libraries, requiring no further configuration.
+IntelliJ IDEA bundles the necessary Kotlin plugin, requiring no further configuration.
 For detailed instructions, please refer to the [Kotlin documentation](https://kotlinlang.org/docs/getting-started.html).
+               
+### Kotlin Standard Library
+
+Since Kotlin 1.4, a dependency on the standard library `stdlib` is added automatically ([API Docs](https://kotlinlang.org/api/latest/jvm/stdlib/)).
+In most cases, it is not needed to include it in the plugin distribution as the platform already bundles it.
+
+To opt out, add this line in <path>gradle.properties</path>:
+
+```properties
+kotlin.stdlib.default.dependency = false
+```
+
+See [Dependency on the standard library](https://kotlinlang.org/docs/gradle.html#dependency-on-the-standard-library) for more details.
 
 ## Kotlin Gradle Plugin
 

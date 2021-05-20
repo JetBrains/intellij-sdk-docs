@@ -11,7 +11,7 @@ These samples show you how features work and help you jumpstart your plugins.
 
 > **NOTE** To start a new plugin project, please also consider using [IntelliJ Platform Plugin Template][gh:template] which offers a pure boilerplate template to make it easier to create a new plugin project.
 
-Browse [available Extension Points][docs:eps] and explore usages in open-source plugins using [IntelliJ Platform Explorer](https://jb.gg/ipe).
+To learn more, browse [available Extension Points][docs:eps], explore Extension Point usages in open-source plugins using [IntelliJ Platform Explorer](https://jb.gg/ipe) and learn how to [Explore the IntelliJ Platform API][docs:explore-api].
 
 ## Target Platform
 
@@ -67,3 +67,4 @@ In the following table, you may find all available samples provided in the separ
 [docs:eps]: https://plugins.jetbrains.com/docs/intellij/extension-point-list.html
 [docs:gradle]: https://plugins.jetbrains.com/docs/intellij/gradle-build-system.html
 [docs:plugin.xml]: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html
+[docs:explore-api]: https://plugins.jetbrains.com/docs/intellij/explore-api.html

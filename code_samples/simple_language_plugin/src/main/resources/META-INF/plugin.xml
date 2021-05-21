@@ -66,6 +66,7 @@
     <codeStyleSettingsProvider implementation="org.intellij.sdk.language.SimpleCodeStyleSettingsProvider"/>
     <langCodeStyleSettingsProvider implementation="org.intellij.sdk.language.SimpleLanguageCodeStyleSettingsProvider"/>
     <lang.commenter language="Simple" implementationClass="org.intellij.sdk.language.SimpleCommenter"/>
+    <documentationProvider implementation="org.intellij.sdk.language.SimpleDocumentationProvider"/>
   </extensions>
 
 </idea-plugin>

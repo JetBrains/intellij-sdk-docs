@@ -91,8 +91,8 @@ Please see [Incompatible API Changes](api_changes_list.md) on how to verify comp
 `com.intellij.openapi.updateSettings.impl.pluginsAdvertisement.PluginsAdvertiser.Plugin` class removed
 : Use `com.intellij.ide.plugins.advertiser.PluginData` instead.
 
-`com.intellij.ide.plugins.DisabledPluginsState.disablePlugin(com.intellij.openapi.extensions.PluginId)` method removed
-: Use either `com.intellij.ide.plugins.PluginManagerCore.disablePlugin(com.intellij.openapi.extensions.PluginId)` or `com.intellij.ide.plugins.PluginEnabler.disablePlugins(Collection)` instead.
+`com.intellij.ide.plugins.DisabledPluginsState.disablePlugin(PluginId)` method removed
+: Use either `com.intellij.ide.plugins.PluginManagerCore.disablePlugin(PluginId)` or `com.intellij.ide.plugins.PluginEnabler.disablePlugins(Collection)` instead.
 
 ### GitHub Plugin 2021.2
                                           

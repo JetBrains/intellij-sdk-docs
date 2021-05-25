@@ -55,6 +55,18 @@ To opt out, add this line in <path>gradle.properties</path>:
 kotlin.stdlib.default.dependency = false
 ```
 
+If a plugin supports [multiple platform versions](build_number_ranges.md), it must either target the lowest bundled `stdlib` version or provide the specific version in plugin distribution.       
+                                                                                          
+| IntelliJ Platform version | Bundled `stdlib` version |
+|---------------------------|--------------------------|
+| 2021.1                    | 1.4.32                   |
+| 2020.3                    | 1.4.0                    |
+| 2020.2                    | 1.3.70                   |
+| 2020.1                    | 1.3.70                   |
+| 2019.3                    | 1.3.31                   |
+| 2019.2                    | 1.3.3                    |
+| 2019.1                    | 1.3.11                   |
+
 See [Dependency on the standard library](https://kotlinlang.org/docs/gradle.html#dependency-on-the-standard-library) for more details.
 
 ## Kotlin Gradle Plugin

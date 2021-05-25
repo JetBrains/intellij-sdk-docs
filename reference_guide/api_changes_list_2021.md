@@ -82,6 +82,18 @@ Please see [Incompatible API Changes](api_changes_list.md) on how to verify comp
 `com.intellij.openapi.file.exclude.EnforcedPlainTextFileType` class removed
 : Use `com.intellij.openapi.fileTypes.PlainTextFileType` instead.
 
+`com.intellij.openapi.updateSettings.impl.CheckForUpdateResult` class removed
+: Use `com.intellij.openapi.updateSettings.impl.PlatformUpdates` instead.
+
+`com.intellij.openapi.updateSettings.impl.UpdateStrategy.checkForUpdates()` method return type changed from `com.intellij.openapi.updateSettings.impl.CheckForUpdateResult` to `com.intellij.openapi.updateSettings.impl.PlatformUpdates`
+: Use `com.intellij.openapi.updateSettings.impl.PlatformUpdates` instead of `com.intellij.openapi.updateSettings.impl.CheckForUpdateResult`.
+
+`com.intellij.openapi.updateSettings.impl.pluginsAdvertisement.PluginsAdvertiser.Plugin` class removed
+: Use `com.intellij.ide.plugins.advertiser.PluginData` instead.
+
+`com.intellij.ide.plugins.DisabledPluginsState.disablePlugin(com.intellij.openapi.extensions.PluginId)` method removed
+: Use either `com.intellij.ide.plugins.PluginManagerCore.disablePlugin(com.intellij.openapi.extensions.PluginId)` or `com.intellij.ide.plugins.PluginEnabler.disablePlugins(Collection)` instead.
+
 ### GitHub Plugin 2021.2
                                           
 `org.jetbrains.plugins.github.util.GithubAuthData` class removed

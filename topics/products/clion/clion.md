@@ -1,6 +1,6 @@
 [//]: # (title: CLion Plugin Development)
 
-<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 ## Introduction
 [CLion](https://www.jetbrains.com/clion/) is an IntelliJ Platform-based product.
@@ -32,8 +32,8 @@ Click on an entry in the table's *Attribute* column to go to the documentation a
 [properties]: https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md#intellij-platform-properties
 [dsl]: https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md#running-dsl
 
-The dependency on the CLion APIs must be declared in the `plugin.xml` file.
-As described in [Modules Specific to Functionality](plugin_compatibility.md#modules-specific-to-functionality) table, the `<depends>` elements should contain the CLion module, as illustrated in the `plugin.xml` snippet below:
+The dependency on the CLion APIs must be declared in the <path>plugin.xml</path> file.
+As described in [Modules Specific to Functionality](plugin_compatibility.md#modules-specific-to-functionality) table, the `<depends>` elements should contain the CLion module, as illustrated in the <path>plugin.xml</path> snippet below:
 
 ```xml
   <!-- Required for core CLion functionality -->

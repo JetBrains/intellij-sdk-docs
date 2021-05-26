@@ -226,62 +226,60 @@
         <toc-element id="testing_highlighting.md" toc-title="Testing Highlighting"/>
     </toc-element>
     <toc-element toc-title="Part VII - Custom Languages">
-        <toc-element id="custom_language_support.md" toc-title="Custom Language Support">
-            <toc-element id="registering_file_type.md" toc-title="Registering File Type"/>
-            <toc-element id="implementing_lexer.md" toc-title="Implementing Lexer"/>
-            <toc-element id="implementing_parser_and_psi.md" toc-title="Implementing Parser and PSI"/>
-            <toc-element id="syntax_highlighting_and_error_highlighting.md"
-                         toc-title="Syntax Highlighting and Error Highlighting"/>
-            <toc-element id="references_and_resolve.md" toc-title="References and Resolve"/>
-            <toc-element id="symbols.md" toc-title="Symbols"/>
-            <toc-element id="declarations_and_references.md" toc-title="Declarations and References"/>
-            <toc-element id="navigation.md" toc-title="Navigation"/>
-            <toc-element id="code_completion.md" toc-title="Code Completion"/>
-            <toc-element id="find_usages.md" toc-title="Find Usages"/>
-            <toc-element id="rename_refactoring.md" toc-title="Rename Refactoring"/>
-            <toc-element id="safe_delete_refactoring.md" toc-title="Safe Delete Refactoring"/>
-            <toc-element id="code_formatting.md" toc-title="Code Formatter"/>
-            <toc-element id="code_inspections_and_intentions.md" toc-title="Code Inspections and Intentions"/>
-            <toc-element id="structure_view.md" toc-title="Structure View"/>
-            <toc-element id="surround_with.md" toc-title="Surround With"/>
-            <toc-element id="go_to_class_and_go_to_symbol.md" toc-title="Go to Class and Go to Symbol"/>
-            <toc-element id="documentation.md" toc-title="Documentation"/>
-            <toc-element id="additional_minor_features.md" toc-title="Additional Minor Features"/>
+        <toc-element id="custom_language_support.md">
+            <toc-element id="registering_file_type.md"/>
+            <toc-element id="implementing_lexer.md"/>
+            <toc-element id="implementing_parser_and_psi.md"/>
+            <toc-element id="syntax_highlighting_and_error_highlighting.md"/>
+            <toc-element id="references_and_resolve.md"/>
+            <toc-element id="symbols.md"/>
+            <toc-element id="declarations_and_references.md"/>
+            <toc-element id="navigation.md"/>
+            <toc-element id="code_completion.md"/>
+            <toc-element id="find_usages.md"/>
+            <toc-element id="rename_refactoring.md"/>
+            <toc-element id="safe_delete_refactoring.md"/>
+            <toc-element id="code_formatting.md"/>
+            <toc-element id="code_inspections_and_intentions.md"/>
+            <toc-element id="structure_view.md"/>
+            <toc-element id="surround_with.md"/>
+            <toc-element id="go_to_class_and_go_to_symbol.md"/>
+            <toc-element id="documentation.md"/>
+            <toc-element id="additional_minor_features.md"/>
             <toc-element toc-title="Parameter Info"/>
             <toc-element toc-title="Parameter Hints"/>
         </toc-element>
-        <toc-element id="custom_language_support_tutorial.md" toc-title="Custom Language Support Tutorial">
-            <toc-element id="prerequisites.md" toc-title="1. Prerequisites"/>
-            <toc-element id="language_and_filetype.md" toc-title="2. Language and File Type"/>
-            <toc-element id="grammar_and_parser.md" toc-title="3. Grammar and Parser"/>
-            <toc-element id="lexer_and_parser_definition.md" toc-title="4. Lexer and Parser Definition"/>
-            <toc-element id="syntax_highlighter_and_color_settings_page.md"
-                         toc-title="5. Syntax Highlighter and Color Settings Page"/>
-            <toc-element id="psi_helper_and_utilities.md" toc-title="6. PSI Helpers and Utilities"/>
-            <toc-element id="annotator.md" toc-title="7. Annotator"/>
-            <toc-element id="line_marker_provider.md" toc-title="8. Line Marker Provider"/>
-            <toc-element id="completion_contributor.md" toc-title="9. Completion Contributor"/>
-            <toc-element id="reference_contributor.md" toc-title="10. Reference Contributor"/>
-            <toc-element id="find_usages_provider.md" toc-title="11. Find Usages Provider"/>
-            <toc-element id="folding_builder.md" toc-title="12. Folding Builder"/>
-            <toc-element id="go_to_symbol_contributor.md" toc-title="13. Go To Symbol Contributor"/>
-            <toc-element id="structure_view_factory.md" toc-title="14. Structure View Factory"/>
-            <toc-element id="formatter.md" toc-title="15. Formatter"/>
-            <toc-element id="code_style_settings.md" toc-title="16. Code Style Settings"/>
-            <toc-element id="commenter.md" toc-title="17. Commenter"/>
-            <toc-element id="quick_fix.md" toc-title="18. Quick Fix"/>
+        <toc-element id="custom_language_support_tutorial.md">
+            <toc-element id="prerequisites.md"/>
+            <toc-element id="language_and_filetype.md"/>
+            <toc-element id="grammar_and_parser.md"/>
+            <toc-element id="lexer_and_parser_definition.md"/>
+            <toc-element id="syntax_highlighter_and_color_settings_page.md"/>
+            <toc-element id="psi_helper_and_utilities.md"/>
+            <toc-element id="annotator.md"/>
+            <toc-element id="line_marker_provider.md"/>
+            <toc-element id="completion_contributor.md"/>
+            <toc-element id="reference_contributor.md"/>
+            <toc-element id="find_usages_provider.md"/>
+            <toc-element id="folding_builder.md"/>
+            <toc-element id="go_to_symbol_contributor.md"/>
+            <toc-element id="structure_view_factory.md"/>
+            <toc-element id="formatter.md"/>
+            <toc-element id="code_style_settings.md"/>
+            <toc-element id="commenter.md"/>
+            <toc-element id="quick_fix.md"/>
         </toc-element>
-        <toc-element id="writing_tests_for_plugins.md" toc-title="Testing a Custom Language Plugin">
-            <toc-element id="tests_prerequisites.md" toc-title="1. Tests Prerequisites"/>
-            <toc-element id="parsing_test.md" toc-title="2. Parsing Test"/>
-            <toc-element id="completion_test.md" toc-title="3. Completion Test"/>
-            <toc-element id="annotator_test.md" toc-title="4. Annotator Test"/>
-            <toc-element id="formatter_test.md" toc-title="5. Formatter Test"/>
-            <toc-element id="rename_test.md" toc-title="6. Rename Test"/>
-            <toc-element id="folding_test.md" toc-title="7. Folding Test"/>
-            <toc-element id="find_usages_test.md" toc-title="8. Find Usages Test"/>
-            <toc-element id="commenter_test.md" toc-title="9. Commenter Test"/>
-            <toc-element id="reference_test.md" toc-title="10. Reference Test"/>
+        <toc-element id="writing_tests_for_plugins.md">
+            <toc-element id="tests_prerequisites.md"/>
+            <toc-element id="parsing_test.md"/>
+            <toc-element id="completion_test.md"/>
+            <toc-element id="annotator_test.md"/>
+            <toc-element id="formatter_test.md"/>
+            <toc-element id="rename_test.md"/>
+            <toc-element id="folding_test.md"/>
+            <toc-element id="find_usages_test.md"/>
+            <toc-element id="commenter_test.md"/>
+            <toc-element id="reference_test.md"/>
         </toc-element>
         <toc-element toc-title="Injected Languages"/>
         <toc-element toc-title="Build System"/>

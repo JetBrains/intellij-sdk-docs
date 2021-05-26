@@ -296,7 +296,9 @@
         <toc-element id="app_code.md" toc-title="AppCode">
             <toc-element id="appcode_extension_point_list.md" toc-title="AppCode Extension Point List"/>
         </toc-element>
-        <toc-element id="clion.md" toc-title="CLion"/>
+        <toc-element id="clion.md" toc-title="CLion">
+            <toc-element id="clion_extension_point_list.md" toc-title="CLion Extension Point List"/>
+        </toc-element>
         <toc-element id="data_grip.md" toc-title="DataGrip">
             <toc-element id="data_grip_extension_point_list.md" toc-title="DataGrip Extension Point List"/>
         </toc-element>

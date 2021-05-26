@@ -41,6 +41,11 @@ As described in [Modules Specific to Functionality](plugin_compatibility.md#modu
 ```
 
 ## Available CLion APIs
+
+ > See [CLion Extension Point List](clion_extension_point_list.md) for complete list.
+ >
+ {type="note"}
+
 Use the [Exploring APIs as a Consumer](plugin_compatibility.md#exploring-apis-as-a-consumer) process to identify the JAR files under the External Library `Gradle:com.jetbrains:clion:<version>`.
 Test your plugin with versions of CLion you intend to support.
 

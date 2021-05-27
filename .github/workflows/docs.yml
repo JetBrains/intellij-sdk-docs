@@ -1,9 +1,9 @@
 name: Docs
 on:
   push:
-    paths-ignore: ['code_samples/**']
+    paths: [ 'reference_guide/**' ]
   pull_request:
-    paths-ignore: ['code_samples/**']
+    paths: [ 'reference_guide/**' ]
 
 jobs:
  

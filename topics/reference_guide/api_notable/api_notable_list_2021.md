@@ -11,6 +11,11 @@ Unit test mode: non-production `IconManager`
                      
 Constructor Injection disabled for Extensions
 : Please obtain necessary components only when needed (logged as ERROR now).
+                   
+### Notable Changes in IntelliJ IDEA 2021.2
+
+Unbundled plugins
+: Several plugins (Arquillian, AspectJ, CoffeeScript, Debugger Support for JSP (JSR45), Drools, Guice, Helidon, Java EE: Enterprise Java Beans (EJB), Spring OSGi, Spring Web Flow) have been unbundled. The IDE will suggest installation if the project contains related framework dependency. If your plugin depends on them, users will need to install them from the [JetBrains Plugins Repository](https://plugins.jetbrains.com). 
 
 ## 2021.1
 

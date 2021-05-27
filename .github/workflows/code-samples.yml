@@ -21,6 +21,7 @@ jobs:
     needs: gradleValidation
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
         plugin:
           - action_basics

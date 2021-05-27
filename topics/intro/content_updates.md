@@ -9,6 +9,9 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 ## 2021
 
 ### May-21
+            
+IDE specific Extension Point Lists
+: See _Part VIII - Product Specific_.
 
 New Guide - Explore the IntelliJ Platform API
 : Add a new section [Explore the IntelliJ Platform API](explore_api.md) that describes how plugin authors work with the IntelliJ Platform API and what tools they use.

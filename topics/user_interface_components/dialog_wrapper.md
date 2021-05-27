@@ -41,7 +41,7 @@ When using Kotlin, use [Kotlin UI DSL](kotlin_ui_dsl.md) to provide the dialog's
  >
  {type="tip"}
 
-To display the dialog, call the `show()` method and then use the `getExitCode()` method to check how the dialog was closed.
+To display the dialog, call the `show()` method and then use the `getExitCode()` method to check how the dialog was closed (see `DialogWrapper#OK_EXIT_CODE|CANCEL_EXIT_CODE|CLOSE_EXIT_CODE`).
 The `showAndGet()` method can be used to combine these two calls.
 
 To customize the buttons displayed in the dialog (replacing the standard <control>OK</control>/<control>Cancel</control>/<control>Help</control> set of buttons), override either the `createActions()` or `createLeftActions()` methods.

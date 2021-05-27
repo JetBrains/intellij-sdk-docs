@@ -6,12 +6,6 @@
 
 See [Extension Point List](extension_point_list.md) for IntelliJ Platform EPs.
 
-See [Plugin Extensions](plugin_extensions.md) on how to declare extensions in your plugin.
-  
-**Extension Point** searches for usages inside existing implementations of open-source IntelliJ Platform plugins via [IntelliJ Platform Explorer](https://jb.gg/ipe).
-
-**Implementation** is related EP class. 
-
 <include src="extension_point_list.md" include-id="ep_list_legend"></include>
 
 ## AppCode

@@ -19,22 +19,20 @@ Watch [Busy plugin developers series. Episode 0](https://www.youtube.com/watch?v
 * [Marketing](marketing.md)
 
 ## Updates
+                        
+ > Gradle IntelliJ Plugin 1.0 is now available [What's New & Upgrade Instructions](https://lp.jetbrains.com/gradle-intellij-plugin)
+ >
+ {type="note"}
 
 See [Content Updates](content_updates.md) for the latest changes.
 Follow [JBPlatform](https://twitter.com/JBPlatform/) on Twitter and visit [JetBrains Platform Blog](https://blog.jetbrains.com/platform/) for the latest announcements.
 
 Upgrading your plugin to the latest platform release? Make sure to check [Incompatible Changes](api_changes_list.md) as well as [Notable Changes and Features](api_notable.md).
-
 Verify your plugin follows guidelines from [Dynamic Plugins](dynamic_plugins.md) to allow installing/updating without IDE restarts. 
-
- >  If your plugin depends on Java functionality and targets 2019.2 or later, please make sure to follow the steps from this [blog post](https://blog.jetbrains.com/platform/2019/06/java-functionality-extracted-as-a-plugin/).
- >
- {type="note"}
 
 ## Open Source
 
 This guide is Open Source and licensed under Apache 2.0.
-The source (as Markdown) is [hosted on GitHub](https://github.com/JetBrains/intellij-sdk-docs).
-Please see [CONTRIBUTING](intellij-sdk-docs-original_CONTRIBUTING.md) for details on hosting the docs locally and contributing.
+[Contributions](intellij-sdk-docs-original_CONTRIBUTING.md) are very welcome.
 
 Please see [Getting Help](getting_help.md) if you encounter bugs in this guide or require help with missing content.

@@ -78,9 +78,6 @@ FileType mapping via hashbang (`#!`)
 Add information to About dialog
 : Implement `com.intellij.ide.AboutPopupDescriptionProvider` and register in `com.intellij.aboutInfoProvider` extension point.
 
-Unbundled plugins
-: Several plugins (ASP, CFML, Flash/Flex, GWT, JBoss Seam Pageflow, JBoss Seam, JBoss jBPM, OSGi, Play Framework, Resin, Seam Navigation, Tapestry, Virgo/dmServer) for no longer actively maintained technology have been unbundled. If your plugin depends on them, users will need to install them from the [JetBrains Plugins Repository](https://plugins.jetbrains.com).
-
 Previewing Intention/Quick Fix
 : To support preview in intention popup, suitable `FileModifier` must be provided (default implementation `FileModifier.getFileModifierForPreview()` works for most cases).
 
@@ -95,6 +92,11 @@ ASM Library 8.0.1
 
 Validating Lexer for editor highlighting
 : Lexer is wrapped using `ValidatingLexerWrapper` to verify it generates a continuous sequence of tokens and doesn't stall during iteration.
+                   
+### Notable Changes in IntelliJ IDEA 2020.2
+
+Unbundled plugins
+: Several plugins (ASP, CFML, Flash/Flex, GWT, JBoss Seam Pageflow, JBoss Seam, JBoss jBPM, OSGi, Play Framework, Resin, Seam Navigation, Tapestry, Virgo/dmServer) for no longer actively maintained technology have been unbundled. If your plugin depends on them, users will need to install them from the [JetBrains Plugins Repository](https://plugins.jetbrains.com).
 
 ## 2020.1
 

@@ -22,7 +22,7 @@ jobs:
         shell: bash
       - name: Setup Cache
         id: cache
-        uses: actions/cache@v2.1.5
+        uses: actions/cache@v2.1.6
         with:
           path: ~/.verifier
           key: ${{ runner.os }}-verifier-${{ steps.get-version.outputs.version }}

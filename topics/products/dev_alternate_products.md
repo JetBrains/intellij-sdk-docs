@@ -44,10 +44,10 @@ The `gradle-intellij-plugin` will fetch the matching build of PyCharm Profession
 No additional product-specific configuration needs to be set in <path>build.gradle</path>:
 
 ```groovy
-    intellij {
-      version '2019.2.3'
-      type 'PY'
-    }
+intellij {
+  version = '2019.2.3'
+  type = 'PY'
+}
 ```
 
 ### Configuring Plugin Projects Using the IntelliJ IDEA Product Attribute
@@ -107,21 +107,21 @@ The exact path format varies by operating system.
 This snippet is an example for configuring the Setup and Running DSLs in a <path>build.gradle</path> specific to developing a plugin for _targetIDE_.
 
 ```groovy
-  intellij {
-    // Define the IntelliJ Platform against which to build the plugin project.
-    // Use the IntelliJ Platform BRANCH.BUILD version matching "targetIDE" (PhpStorm)
-    version '192.7142.36'   // baseIntelliJPlatformVersion
-    type 'IU'
-    // Require the targetIDE plugin or library
-    // Use the stable version compatible with intellij.version and intellij.type specified above
-    plugins 'com.jetbrains.php:192.6603.42'
-  }
+intellij {
+  // Define the IntelliJ Platform against which to build the plugin project.
+  // Use the IntelliJ Platform BRANCH.BUILD version matching "targetIDE" (PhpStorm)
+  version = '192.7142.36'   // baseIntelliJPlatformVersion
+  type = 'IU'
+  // Require the targetIDE plugin or library
+  // Use the stable version compatible with intellij.version and intellij.type specified above
+  plugins = ['com.jetbrains.php:192.6603.42']
+}
 
-  runIde {
-      // Absolute path to the installed targetIDE to use as IDE Development Instance
-      // Note the Contents directory must be added at the end of the path for macOS.
-      ideDirectory '/Users/$USERNAME$/Library/Application Support/JetBrains/Toolbox/apps/PhpStorm/ch-0/192.7142.41/PhpStorm.app/Contents'
-  }
+runIde {
+  // Absolute path to the installed targetIDE to use as IDE Development Instance
+  // Note the Contents directory must be added at the end of the path for macOS.
+  ideDirectory = '/Users/$USERNAME$/Library/Application Support/JetBrains/Toolbox/apps/PhpStorm/ch-0/192.7142.41/PhpStorm.app/Contents'
+}
 ```
 
 ## Configuring plugin.xml

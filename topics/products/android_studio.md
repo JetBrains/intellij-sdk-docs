@@ -45,16 +45,16 @@ The snippet below is an example of configuring the Setup and Running DSLs in a <
 ```groovy
   intellij {
     // Define IntelliJ Platform against which to build the plugin project.
-    version '191.8026.42'  // Same IntelliJ IDEA version (2019.1.4) as target 3.5 Android Studio
-    type 'IC'              // Use IntelliJ IDEA CE because it's the basis of the IntelliJ Platform
+    version = '191.8026.42'  // Same IntelliJ IDEA version (2019.1.4) as target 3.5 Android Studio
+    type = 'IC'              // Use IntelliJ IDEA CE because it's the basis of the IntelliJ Platform
     // Require the Android plugin, Gradle will match the plugin version to intellij.version
-    plugins 'android'
+    plugins = ['android']
   }
 
   runIde {
       // Absolute path to installed target 3.5 Android Studio to use as IDE Development Instance
       // The "Contents" directory is macOS specific.
-      ideDirectory '/Applications/Android Studio.app/Contents'
+      ideDirectory = '/Applications/Android Studio.app/Contents'
   }
 ```
 

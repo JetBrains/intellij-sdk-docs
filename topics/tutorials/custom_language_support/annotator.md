@@ -27,8 +27,8 @@ intellij {
 Or the following line in the project's `build.gradle.kts` file:
 
 ```kotlin
-intellij {
-    setPlugins ("com.intellij.java")
+intellij { 
+  plugins.set(listOf("com.intellij.java"))
 }
 ```
 

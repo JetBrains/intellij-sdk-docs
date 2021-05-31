@@ -40,7 +40,7 @@ intellij {
 }
 ```
 
-When using Kotlin build script, use `setPlugins()` within the `intellij` block, for example:
+When using Kotlin build script, use `plugins.set()` within the `intellij` block, for example:
 
 ```kotlin
 intellij {

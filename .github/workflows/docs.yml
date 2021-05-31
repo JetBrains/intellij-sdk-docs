@@ -1,6 +1,7 @@
 name: Docs
 on:
   push:
+    branches: [ main ]
     paths: [ 'reference_guide/**' ]
   pull_request:
     paths: [ 'reference_guide/**' ]

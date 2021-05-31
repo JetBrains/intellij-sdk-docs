@@ -36,7 +36,7 @@ If the project uses [Gradle](gradle_build_system.md) with a Groovy build script 
 
 ```groovy
 intellij {
-    plugins 'org.another.plugin:1.0'
+    plugins = ['org.another.plugin:1.0']
 }
 ```
 
@@ -44,7 +44,7 @@ When using Kotlin build script, use `setPlugins()` within the `intellij` block, 
 
 ```kotlin
 intellij {
-    setPlugins("org.another.plugin:1.0")
+    plugins.set(listOf("org.another.plugin:1.0"))
 }
 ```
 

@@ -73,7 +73,7 @@ For example:
 
 ```groovy
 publishPlugin {
-    channels 'beta'
+  channels = ['beta']
 }
 ```
 
@@ -82,7 +82,7 @@ However, you can publish it to an arbitrarily-named channel.
 These non-default release channels are treated as separate repositories.
 
 When using a non-default release channel, users need to configure a new [custom plugin repository](https://www.jetbrains.com/help/idea/managing-plugins.html#repos) in their IDE to install your plugin.
-For example, if you specify `publishPlugin.channels 'canary'`, then users need to add the `https://plugins.jetbrains.com/plugins/canary/list` repository to install the plugin and receive updates.
+For example, if you specify `publishPlugin.channels = ['canary']`, then users need to add the `https://plugins.jetbrains.com/plugins/canary/list` repository to install the plugin and receive updates.
 
 Popular channel names include:
 * `alpha`: https://plugins.jetbrains.com/plugins/alpha/list

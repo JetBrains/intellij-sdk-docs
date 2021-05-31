@@ -118,10 +118,10 @@ The generated `my_gradle_plugin` project <path>build.gradle</path> file:
 
   // See https://github.com/JetBrains/gradle-intellij-plugin/
   intellij {
-      version '2020.1'
+      version = '2020.1'
   }
   patchPluginXml {
-      changeNotes """
+      changeNotes = """
         Add change notes here.<br/>
         <em>most HTML tags may be used</em>"""
   }

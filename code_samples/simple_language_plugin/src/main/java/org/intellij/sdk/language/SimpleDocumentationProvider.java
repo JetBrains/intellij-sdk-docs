@@ -2,13 +2,14 @@ package org.intellij.sdk.language;
 
 import com.intellij.lang.documentation.AbstractDocumentationProvider;
 import com.intellij.lang.documentation.DocumentationMarkup;
-import com.intellij.lang.documentation.DocumentationUtil;
 import com.intellij.openapi.editor.Editor;
 import com.intellij.psi.*;
+import org.apache.commons.lang3.tuple.Pair;
 import org.intellij.sdk.language.psi.SimpleProperty;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class SimpleDocumentationProvider extends AbstractDocumentationProvider {
@@ -23,8 +24,8 @@ public class SimpleDocumentationProvider extends AbstractDocumentationProvider {
   }
 
   /**
-   * Formats the key, value and documentation comment of a Simple key/value entry for showing
-   * it in quick documentation.
+   * Extracts the key, value, file and documentation comment of a Simple key/value entry and returns
+   * a formatted representation of the information.
    */
   @Override
   public @Nullable String generateDoc(PsiElement element, @Nullable PsiElement originalElement) {
@@ -34,16 +35,20 @@ public class SimpleDocumentationProvider extends AbstractDocumentationProvider {
       final String file = element.getContainingFile().getVirtualFile().getName();
       final String docComment = SimpleUtil.findDocumentationComment((SimpleProperty) element);
 
-      StringBuilder doc = new StringBuilder();
-      doc.append(DocumentationMarkup.DEFINITION_START);
-      DocumentationUtil.formatEntityName("File", file, doc);
-      DocumentationUtil.formatEntityName("Key", key, doc);
-      DocumentationUtil.formatEntityName("Value", value, doc);
-      doc.append(DocumentationMarkup.DEFINITION_END);
-      doc.append(DocumentationMarkup.CONTENT_START);
-      doc.append(docComment);
-      doc.append(DocumentationMarkup.CONTENT_END);
-      return doc.toString();
+      return renderFullDoc(key, value, file, docComment);
+    }
+    return null;
+  }
+
+  /**
+   * Provides the information in which file the Simple language key/value is defined.
+   */
+  @Override
+  public @Nullable String getQuickNavigateInfo(PsiElement element, PsiElement originalElement) {
+    if (element instanceof SimpleProperty) {
+      final String key = ((SimpleProperty) element).getKey();
+      final String file = element.getContainingFile().getVirtualFile().getName();
+      return "\"" + key + "\" in " + file;
     }
     return null;
   }
@@ -53,10 +58,7 @@ public class SimpleDocumentationProvider extends AbstractDocumentationProvider {
    */
   @Override
   public @Nullable String generateHoverDoc(@NotNull PsiElement element, @Nullable PsiElement originalElement) {
-    if (element instanceof SimpleProperty) {
       return generateDoc(element, originalElement);
-    }
-    return null;
   }
 
   /**
@@ -100,4 +102,40 @@ public class SimpleDocumentationProvider extends AbstractDocumentationProvider {
     }
     return super.getCustomDocumentationElement(editor, file, contextElement, targetOffset);
   }
-}
+
+  /**
+   * Creates the formatted documentation using {@link DocumentationMarkup}. See the Java doc of
+   * {@link com.intellij.lang.documentation.DocumentationProvider#generateDoc(PsiElement, PsiElement)} for more
+   * information about building the layout.
+   */
+  private String renderFullDoc(String key, String value, String file, String docComment) {
+    List<Pair<String, String>> values = new ArrayList<>();
+    values.add(Pair.of("Key:", key));
+    values.add(Pair.of("Value:", value));
+    values.add(Pair.of("File:", file));
+    values.add(Pair.of("Comment:", docComment));
+
+
+    StringBuilder doc = new StringBuilder();
+    doc.append(DocumentationMarkup.DEFINITION_START);
+    doc.append("Simple Property");
+    doc.append(DocumentationMarkup.DEFINITION_END);
+    doc.append(DocumentationMarkup.CONTENT_START);
+    doc.append(value);
+    doc.append(DocumentationMarkup.CONTENT_END);
+    doc.append(DocumentationMarkup.SECTIONS_START);
+    for (Pair<String, String> p : values) {
+      if (!p.getRight().isEmpty()) {
+        doc.append(DocumentationMarkup.SECTION_HEADER_START);
+        doc.append(p.getLeft());
+        doc.append(DocumentationMarkup.SECTION_SEPARATOR);
+        doc.append("<p>");
+        doc.append(p.getRight());
+        doc.append(DocumentationMarkup.SECTION_END);
+      }
+    }
+    doc.append(DocumentationMarkup.SECTIONS_END);
+    return doc.toString();
+  }
+
+ }

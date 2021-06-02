@@ -1,6 +1,6 @@
 [//]: # (title: Getting Started with Gradle)
 
-<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 Gradle is the preferred solution for creating IntelliJ Platform plugins.
 The IntelliJ IDEA Ultimate and Community editions bundle the necessary plugins to support Gradle-based development.
@@ -96,7 +96,12 @@ my_gradle_plugin
   If needed, the IntelliJ IDEA Gradle plugin downloads the version of Gradle specified in this file.
 * The <path>settings.gradle</path> file, containing a definition of the `rootProject.name`.
 * The <path>META-INF</path> directory under the default `main` [SourceSet](https://docs.gradle.org/current/userguide/java_plugin.html#sec:java_project_layout) contains the plugin [configuration file](plugin_configuration_file.md).
-
+                                                 
+ > Please note: the generated <path>build.gradle</path> file needs to be adjusted as shown below, as IntelliJ IDEA currently generates template incompatible with gradle-intellij-plugin 1.0 release.   
+ > See [Upgrade Instructions](https://lp.jetbrains.com/gradle-intellij-plugin/) for more details.
+ > 
+ {type="warning"}
+ 
 The generated `my_gradle_plugin` project <path>build.gradle</path> file:
 
 ```groovy

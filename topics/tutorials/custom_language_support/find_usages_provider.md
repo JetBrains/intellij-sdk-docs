@@ -1,6 +1,6 @@
 [//]: # (title: 11. Find Usages Provider)
 
-<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 A `FindUsagesProvider` uses a word scanner to build an index of words in every file.
 A scanner breaks the text into words and defines the context for each word.
@@ -27,7 +27,8 @@ The `SimpleFindUsagesProvider` implementation is registered with the IntelliJ Pl
 ```
 
 ## Run the Project
-Rebuild the project, and run `simple_language_plugin` in a Development Instance.
+Run the plugin by using the Gradle [runIde task](gradle_prerequisites.md#running-a-simple-gradle-based-intellij-platform-plugin).
+
 The IDE now supports [Find Usages](https://www.jetbrains.com/help/idea/find-highlight-usages.html) for any property with a reference:
 
 ![Find Usages](find_usages.png)

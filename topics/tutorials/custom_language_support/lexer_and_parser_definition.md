@@ -1,6 +1,6 @@
 [//]: # (title: 4. Lexer and Parser Definition)
 
-<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 The lexical analyzer defines how the contents of a file are broken into tokens, which is the basis for supporting custom language features.
 The easiest way to create a lexer is to use [JFlex](https://jflex.de/).
@@ -79,7 +79,10 @@ For example, see `simple_language_plugin/src/main/resources/META-INF/plugin.xml`
 ```
 
 ## Run the Project
-With the `simple_language_plugin` loaded in a Development Instance, create a `test.simple` properties file with the following content:
+
+Run the plugin by using the Gradle [runIde task](gradle_prerequisites.md#running-a-simple-gradle-based-intellij-platform-plugin).
+
+Create a `test.simple` properties file with the following content:
 
 ```text
 # You are reading the ".properties" entry.

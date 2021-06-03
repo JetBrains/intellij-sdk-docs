@@ -1,6 +1,6 @@
 [//]: # (title: 18. Quick Fix)
 
-<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 A quick fix for a custom language supports the IntelliJ Platform-based IDE feature [Intention Actions](https://www.jetbrains.com/help/idea/intention-actions.html#apply-intention-actions).
 For the Simple Language, this tutorial adds a quick fix that helps to define an unresolved property from its usage.
@@ -34,7 +34,8 @@ This method call registers the `SimpleCreatePropertyQuickFix` as the Intention A
 {src="simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleAnnotator.java"}
 
 ## Run the Project
-Open the test [Java file](annotator.md#run-the-project) in an IDE Development Instance running the `simple_language_plugin`.
+Run the project by using the Gradle [runIde task](gradle_prerequisites.md#running-a-simple-gradle-based-intellij-platform-plugin).
+Open the test [Java file](annotator.md#run-the-project).
 
 To test `SimpleCreatePropertyQuickFix`, change `simple:website` to `simple:website.url`.
 The key `website.url` is highlighted by `SimpleAnnotator` as an invalid key, as shown below.

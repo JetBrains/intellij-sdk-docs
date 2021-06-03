@@ -1,6 +1,6 @@
 [//]: # (title: 17. Commenter)
 
-<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 A commenter enables the user to comment-out a line of code at the cursor or selected code automatically.
 The [`Commenter`](upsource:///platform/core-api/src/com/intellij/lang/Commenter.java) defines support for **Code \| Comment with Line Comment** and **Code \| Comment with Block Comment** actions.
@@ -22,6 +22,8 @@ The `SimpleCommenter` implementation is registered in the plugin configuration f
 ```
 
 ## Run the Project
+Run the plugin by using the Gradle [runIde task](gradle_prerequisites.md#running-a-simple-gradle-based-intellij-platform-plugin).
+
 Open the example Simple Language [properties file ](lexer_and_parser_definition.md#run-the-project) in the IDE Development Instance.
 Place the cursor at the `website` line.
 Select **Code \| Comment with Line Comment**.

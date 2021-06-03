@@ -1,6 +1,6 @@
 [//]: # (title: 15. Formatter)
 
-<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 The IntelliJ Platform includes a powerful framework for implementing formatting for custom languages.
 A formatter enables reformatting code automatically based on code style settings.
@@ -39,6 +39,9 @@ The `SimpleFormattingModelBuilder` implementation is registered with the Intelli
 ```
 
 ## Run the Project
+Run the plugin by using the Gradle [runIde task](gradle_prerequisites.md#running-a-simple-gradle-based-intellij-platform-plugin).
+
+Open the example Simple Language [properties file ](lexer_and_parser_definition.md#run-the-project) in the IDE Development Instance.
 Add some extra spaces around the `=` separator between `language` and `English`.
 Reformat the code by selecting **Code \| Show Reformat File Dialog** and choose **Run**.
 

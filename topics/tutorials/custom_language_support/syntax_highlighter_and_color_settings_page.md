@@ -1,6 +1,6 @@
 [//]: # (title: 5. Syntax Highlighter and Color Settings Page)
 
-<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 The first level of syntax highlighting is based on the lexer output, and is provided by `SyntaxHighlighter`.
 A plugin can also define color settings based on `ColorSettingPage` so the user can configure highlight colors.
@@ -59,6 +59,8 @@ Register the Simple Language color settings page with the IntelliJ Platform in t
 ```
 
 ### Run the Project
+Run the project by using the Gradle [runIde task](gradle_prerequisites.md#running-a-simple-gradle-based-intellij-platform-plugin).
+
 In the IDE Development Instance, open the Simple Language highlight settings page: **Preferences/Settings \| Editor \| Color Scheme \| Simple**.
 Each color initially inherits from a _Language Defaults_ value.
 

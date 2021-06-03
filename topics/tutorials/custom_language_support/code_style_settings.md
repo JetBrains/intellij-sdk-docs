@@ -1,6 +1,6 @@
 [//]: # (title: 16. Code Style Settings)
 
-<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 Code style settings enable defining formatting options.
 A code style settings provider creates an instance of the settings and also creates an options page in settings/preferences.
@@ -50,6 +50,8 @@ The `SimpleLanguageCodeStyleSettingsProvider` implementation is registered with 
 ```
 
 ## Run the Project
+Run the plugin by using the Gradle [runIde task](gradle_prerequisites.md#running-a-simple-gradle-based-intellij-platform-plugin).
+
 In the IDE Development Instance, open the Simple Language code formatting page: **Preferences/Settings \| Editor \| Code Style \| Simple**.
 
 ![Code Style Settings](code_style_settings.png)

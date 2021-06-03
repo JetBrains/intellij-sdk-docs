@@ -180,12 +180,10 @@ See the [Creating Actions](working_with_custom_actions.md) tutorial for step-by-
 
 ### Executing the Plugin
 Open the Gradle tool window and search for the `runIde` task:
-* If it’s not in the list, hit the [Refresh](https://www.jetbrains.com/help/idea/jetgradle-tool-window.html#1eeec055) button at the top of the Gradle window.
+* If it’s not in the list, hit the [Refresh](https://www.jetbrains.com/help/idea/jetgradle-tool-window.html#1eeec055) button at the top of the Gradle tool window.
 * Or [Create a new Gradle Run Configuration](https://www.jetbrains.com/help/idea/create-run-debug-configuration-gradle-tasks.html).
 
 ![Gradle Tool Window](gradle_tasks_in_tool_window.png){width="398"}
 
 Double-click on the _runIde_ task to execute it.
 See the IntelliJ IDEA help for more information about [Working with Gradle tasks](https://www.jetbrains.com/help/idea/gradle.html#96bba6c3).
-
-Finally, when `my_gradle_plugin` launches in the IDE development instance, there should be a new menu under the **Tools** menu.

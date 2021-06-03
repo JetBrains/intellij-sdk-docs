@@ -76,7 +76,9 @@ The `SimpleLineMarkerProvider` implementation is registered with the IntelliJ Pl
 ```
 
 ## Run the Project
-Run the `simple_language_plugin` in a Development Instance and open the [Test file](annotator.md#run-the-project).
+Run the plugin by using the Gradle [runIde task](gradle_prerequisites.md#running-a-simple-gradle-based-intellij-platform-plugin).
+
+Open the Java [Test file](annotator.md#run-the-project).
 Now the icon appears next to line 3 on the gutter.
 A user can click on the icon to navigate to the property definition.
 

@@ -26,7 +26,9 @@ The `SimpleCompletionContributor` implementation is registered in the plugin con
 ```
 
 ## Run the Project
-Run the `simple_language_plugin` in a Development Instance and open the [`test.simple`](lexer_and_parser_definition.md#run-the-project) file.
+Run the plugin by using the Gradle [runIde task](gradle_prerequisites.md#running-a-simple-gradle-based-intellij-platform-plugin).
+
+Open the [`test.simple`](lexer_and_parser_definition.md#run-the-project) file.
 Erase the property "English" and invoke [Basic Code Completion](https://www.jetbrains.com/help/idea/auto-completing-code.html#invoke-basic-completion).
 The choice "Hello" is shown:
 

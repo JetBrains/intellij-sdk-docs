@@ -1,6 +1,6 @@
 [//]: # (title: 13. Go To Symbol Contributor)
 
-<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 A _Go to Symbol Contributor_ helps the user to navigate to any PSI element by its name.
 
@@ -66,7 +66,8 @@ The `SimpleChooseByNameContributor` implementation is registered with the Intell
 ```
 
 ## Run the Project
-Rebuild the project, and run `simple_language_plugin` in a Development Instance.
+Run the plugin by using the Gradle [runIde task](gradle_prerequisites.md#running-a-simple-gradle-based-intellij-platform-plugin).
+
 The IDE now supports navigating to a property definition by name pattern via **Navigate \| Symbol** action.
 
 ![Go To Symbol](go_to_symbol.png){width="800"}

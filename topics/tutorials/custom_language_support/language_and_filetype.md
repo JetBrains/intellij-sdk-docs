@@ -1,6 +1,6 @@
 [//]: # (title: 2. Language and File Type)
 
-<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 The IntelliJ Platform determines file type by examining the name of a file.
 Each language has [Language](upsource:///platform/core-api/src/com/intellij/lang/Language.java) and [LanguageFileType](upsource:///platform/core-api/src/com/intellij/openapi/fileTypes/LanguageFileType.java) objects defining the language.
@@ -67,7 +67,7 @@ The `SimpleFileTypeFactory` is registered using the `com.intellij.openapi.fileTy
 
 ## Run the Project
 
-Run your project by using the [runIde task](gradle_prerequisites.md#running-a-simple-gradle-based-intellij-platform-plugin) in Gradle-based projects or [using the Plugin Run/Debug configuration](running_and_debugging_a_plugin.md) in DevKit-based projects. 
+Run the plugin by using the Gradle [runIde task](gradle_prerequisites.md#running-a-simple-gradle-based-intellij-platform-plugin).
 
 Create an empty file with the extension `*.simple`, and IntelliJ IDEA automatically associates it with our language.
 Note the appearance of the Simple Language file icon next to the `test.simple` file in the **Project Tool Window**, and the editor tab for the file.

@@ -1,6 +1,6 @@
 [//]: # (title: 7. Annotator)
 
-<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 An `Annotator` helps highlight and annotate any code based on specific rules.
 This section adds annotation functionality to support the Simple Language in the context of Java code.
@@ -60,6 +60,9 @@ Using the `com.intellij.annotator` extension point in the plugin configuration f
 ```
 
 ## Run the Project
+
+Run the plugin by using the Gradle [runIde task](gradle_prerequisites.md#running-a-simple-gradle-based-intellij-platform-plugin).
+
 As a test, define the following Java file containing a Simple Language `prefix:value` pair:
 
 ```java

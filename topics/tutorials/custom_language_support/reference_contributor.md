@@ -1,6 +1,6 @@
 [//]: # (title: 10. Reference Contributor)
 
-<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 The references functionality is one of the most important parts in the implementation of custom language support.
 Resolving references means the ability to go from the usage of an element to its declaration, completion, rename refactoring, find usages, etc.
@@ -128,7 +128,8 @@ The `SimpleReferenceContributor` implementation is registered with the IntelliJ 
 ```
 
 ## Run the Project with the Reference Contributor
-Rebuild the project, and run `simple_language_plugin` in a Development Instance.
+Run the project by using the Gradle [runIde task](gradle_prerequisites.md#running-a-simple-gradle-based-intellij-platform-plugin).
+
 The IDE now resolves the property and provides [completion](https://www.jetbrains.com/help/idea/auto-completing-code.html#basic_completion) suggestions:
 
 ![Reference Contributor](reference_contributor.png){width="800"}
@@ -157,7 +158,8 @@ The `SimpleRefactoringSupportProvider` implementation is registered with the Int
 ```
 
 ## Run the Project
-Rebuild the project, and run `simple_language_plugin` in a Development Instance.
+Run the project by using the Gradle [runIde task](gradle_prerequisites.md#running-a-simple-gradle-based-intellij-platform-plugin).
+
 The IDE now supports [refactoring](https://www.jetbrains.com/help/idea/rename-refactorings.html) suggestions:
 
 ![In Place Rename](in_place_rename.png){width="800"}

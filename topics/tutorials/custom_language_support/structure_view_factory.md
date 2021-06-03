@@ -1,6 +1,6 @@
 [//]: # (title: 14. Structure View Factory)
 
-<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 The structure view can be customized for a specific file type.
 Creating a structure view factory allows showing the structure of any file in a _Structure_ Tool Window for easy navigation between items in the current editor.
@@ -44,7 +44,8 @@ The `SimpleStructureViewFactory` implementation is registered with the IntelliJ 
 ```
 
 ## Run the Project
-Rebuild the project, and run `simple_language_plugin` in a Development Instance.
+Run the project by using the Gradle [runIde task](gradle_prerequisites.md#running-a-simple-gradle-based-intellij-platform-plugin).
+
 Open the `test.simple` file and choose **View \| Tool Windows \| Structure**.
 The IDE now supports a structure view of the Simple Language:
 

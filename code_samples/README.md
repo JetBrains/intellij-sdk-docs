@@ -27,7 +27,7 @@ It describes definitions of the actions, extensions, or listeners provided by th
 
 ## Code Samples
 
-Please see [docs:code-samples] on how to import and run code samples.    
+Please see [Code Samples][docs:code-samples] topic on how to import and run code samples.    
 
 In the following table, you may find all available samples provided in the separated directories as stand-alone projects available for running with the Gradle `:runIde` task.
 

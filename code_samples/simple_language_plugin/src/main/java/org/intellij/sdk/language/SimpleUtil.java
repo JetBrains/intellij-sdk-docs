@@ -72,7 +72,7 @@ public class SimpleUtil {
     PsiElement element = property.getPrevSibling();
     while (element instanceof PsiComment || element instanceof PsiWhiteSpace) {
       if (element instanceof PsiComment) {
-        String commentText = element.getText().replaceFirst("[# ]+", "");
+        String commentText = element.getText().replaceFirst("[!# ]+", "");
         result.add(commentText);
       }
       element = element.getPrevSibling();

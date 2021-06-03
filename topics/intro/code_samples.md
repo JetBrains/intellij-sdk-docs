@@ -10,15 +10,19 @@ Please see <path>README.md</path> which lists all available code samples with a 
 
 Each sample is stored in a dedicated folder and is accompanied by its own <path>README.md</path>. Links to the corresponding tutorial or reference page in this tutorial, as well as a list of relevant show-cased elements are provided.
 
-## Setting up Code Samples
+## Using Gradle
 
-All sample plugins are based on Gradle, see [Building Plugins with Gradle](gradle_build_system.md) to get started. Additionally, the screencast [Working with Gradle in IntelliJ IDEA](https://www.youtube.com/watch?v=6V6G3RyxEMk) offers a thorough introduction to Gradle functionality.
+All sample plugins are based on Gradle, see [Building Plugins with Gradle](gradle_build_system.md) to get started.
+
+Additionally, the screencast [Working with Gradle in IntelliJ IDEA](https://www.youtube.com/watch?v=6V6G3RyxEMk) offers a thorough introduction to Gradle functionality inside IntelliJ IDEA.
+
+## Setting up Code Samples
 
 Make sure plugins _Git_, _Gradle_, and _Plugin DevKit_ are enabled.
 
 Clone the [intellij-sdk-code-samples](https://github.com/JetBrains/intellij-sdk-code-samples) GitHub repository via <control>Git | Clone...</control>. After successful cloning, the IDE suggests opening the project.
 
-Select the code sample(s) to import via the [Gradle tool window](https://www.jetbrains.com/help/idea/gradle.html#link_gradle_project). 
+Select the code sample(s) to import via the [Gradle tool window](https://www.jetbrains.com/help/idea/gradle.html#link_gradle_project).
 
 Alternatively, import _all_ code samples available by choosing `_gradleCompositeBuild`, which links all Gradle projects in a Composite Build.
 

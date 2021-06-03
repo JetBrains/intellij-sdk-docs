@@ -126,7 +126,7 @@ Implicit in using [`LocalInspectionTool`](upsource:///platform/analysis-api/src/
   If a short name is not provided by the plugin, the IntelliJ Platform computes one by removing `Inspection` suffix from the implementation class name.
 
 ### Inspection Unit Test
- >  Please note that running the test requires setting system property `idea.home.path` in `test {}` block of `build.gradle``.
+ >  Please note that running the test requires setting system property `idea.home.path` in `test {}` block of <path>build.gradle</path>.
  >
  {type="note"}
 
@@ -137,11 +137,11 @@ The `comparing_references_inspection` test is based on the [`UsefulTestCase`](up
 This class handles much of the underlying boilerplate for tests.
 
 By convention, the folder <path>test/testData/</path> contains the test files.
-The folder contains pairs of files for each test using the name convention <path>*.java</path> and <path>*.after.java</path>.
+The folder contains pairs of files for each test using the name convention <path>X.java</path> and <path>X.after.java</path>.
 
 In the case of `comparing_references_inspection` the test files are <path>Eq.java</path> / <path>Eq.after.java</path>, and <path>Neq.java</path> / <path>Neq.after.java</path>.
 
-The `comparing_references_inspection` tests run the inspection on the <path>*.java</path> files, implement the quick fix, and compare the results with the respective <path>*.after.java</path> files containing expected result.
+The `comparing_references_inspection` tests run the inspection on the <path>X.java</path> files, implement the quick fix, and compare the results with the respective <path>X.after.java</path> files containing expected result.
 
 ## Running the Comparing References Inspection Code Sample
 The [comparing_references_inspection](https://github.com/JetBrains/intellij-sdk-code-samples/tree/main/comparing_references_inspection) code sample adds a new inspection to the <control>Java | Probable Bugs</control> group in the [Inspections List](https://www.jetbrains.com/help/idea/inspections-settings.html).

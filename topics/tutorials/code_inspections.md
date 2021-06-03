@@ -126,7 +126,7 @@ Implicit in using [`LocalInspectionTool`](upsource:///platform/analysis-api/src/
   If a short name is not provided by the plugin, the IntelliJ Platform computes one by removing `Inspection` suffix from the implementation class name.
 
 ### Inspection Unit Test
- >  Please note that running the test requires setting system property `idea.home.path` in `test {}` block of <path>build.gradle</path>.
+ >  Please note that running the test requires setting system property `idea.home.path` in `test {}` block of `build.gradle``.
  >
  {type="note"}
 

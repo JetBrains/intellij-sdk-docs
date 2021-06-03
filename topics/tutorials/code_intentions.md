@@ -1,8 +1,8 @@
 [//]: # (title: Code Intentions)
 
-<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-This topic describes the [conditional_operator_intention](https://github.com/JetBrains/intellij-sdk-code-samples/tree/main/conditional_operator_intention), a sample plugin that adds a new [intention action](https://www.jetbrains.com/help/idea/intention-actions.html) to the IntelliJ Platform Intentions list.
+This topic describes the [conditional_operator_intention](https://github.com/JetBrains/intellij-sdk-code-samples/tree/main/conditional_operator_intention), a sample plugin that adds a new [intention action](https://www.jetbrains.com/help/idea/intention-actions.html) to the IDE Intentions list.
 In addition, the sample plugin contains a JUnit-based test.
 
 ## About Intention Actions
@@ -13,14 +13,7 @@ For more information, refer to [Intention Actions](https://www.jetbrains.com/hel
                   
 See [Inspections](https://jetbrains.design/intellij/text/inspections/) topic in the IntelliJ Platform UI Guidelines on naming, writing description, and message texts for inspections/intentions.
 
-You can view a list of all available intention actions using the [Intention List](https://www.jetbrains.com/help/idea/intention-actions.html#intention-settings) provided by the IDE.
-
-**To display Intention List**
-
-1. Open the **Settings** dialog box.
-2. Under **IDE Settings**, click **Intentions**. This displays the list of all intention actions currently available in IntelliJ IDEA.
-- The intention actions are grouped according to the areas of their use.
-- To enable/disable an intention action, select/deselect the check box to its left.
+You can view a list of all available intention actions as well as enable/disable them using the [Intentions List](https://www.jetbrains.com/help/idea/intention-actions.html#intention-settings) in <menupath>Settings/Preferences | Editor | Intentions</menupath>.
 
 ## Techniques Used
 
@@ -33,23 +26,18 @@ The [conditional_operator_intention](https://github.com/JetBrains/intellij-sdk-c
 
 ## Sample Plugin
 
-The **ConditionalOperatorConverter** sample plugin is available in the `<%IntelliJ SDK Docs project%>/code_samples/conditional_operator_intention` directory.
-When launched, this plugin adds the **Convert ternary operator if statement** item to the **Conditional Operator** node in the IDEA Intentions list:
+When launched, this plugin adds the <control>Convert ternary operator if statement</control> item to the <control>Conditional Operator</control> node in the Intentions List:
 
 ![](IntentionsList.png)
 
 #### Running the Plugin
 
-**To run the sample plugin**
-
-1. Start IntelliJ IDEA and open the **conditionalOperatorConvertor** plugin project saved into the `<%IntelliJ SDK Docs project%>/code_samples/conditional_operator_intention` directory.
-2. Open the [Project Structure](https://www.jetbrains.com/help/idea/project-structure-dialog.html) dialog and ensure that the project settings are valid for your environment.
-3. If necessary, modify the [Run/Debug Configurations](https://www.jetbrains.com/idea/webhelp/run-debug-configuration-plugin.html) and Run the plugin by choosing the **Run** on the main menu.
+See [Code Samples](code_samples.md) on how to set up and run the plugin.
 
 #### How does it work?
 
-The plugin analyzes symbols under the cursor in your code opened in the IDEA editor.
-If the cursor is positioned on the "?" conditional operator, IntelliJ IDEA proposes to replace this conditional (ternary) operator with the "if-then-else" statement:
+The plugin analyzes symbols under the cursor in your code opened in the editor.
+If the cursor is positioned on the `?` conditional operator, IntelliJ IDEA proposes to replace this conditional (ternary) operator with the "if-then-else" statement:
 
 ![](TernaryOperator.png)
 
@@ -69,12 +57,13 @@ if ((n>=0)) {
 }
 ```
 
-##### Testing the Plugin
- >  Please note that running the test requires setting system property `idea.home.path` in `test {}` block of `build.gradle`
+#### Testing the Plugin
+
+ >  Please note that running the test requires setting system property `idea.home.path` in `test {}` block of <path>build.gradle</path>
  >
  {type="note"}
 
-The sample plugin contains the `ConditionalOperatorConverterTest` Java class and the test data in the `test/testData/` directory.
+The sample plugin contains the `ConditionalOperatorConverterTest` Java class and the test data in the <path>test/testData/</path> directory.
 To perform the plugin test, run the `ConditionalOperatorConverterTest.testIntention()` method.
 
 For detailed information about testing and all related procedures, refer to [Testing](https://www.jetbrains.com/help/idea/performing-tests.html) in the IntelliJ IDEA Web Help.

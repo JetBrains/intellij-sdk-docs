@@ -1,9 +1,11 @@
 [//]: # (title: Building Plugins with Gradle)
 
-<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-The [gradle-intellij-plugin](https://github.com/JetBrains/gradle-intellij-plugin) Gradle plugin is the recommended solution for building IntelliJ plugins.
+The [gradle-intellij-plugin](https://github.com/JetBrains/gradle-intellij-plugin) Gradle plugin is the recommended solution for building IntelliJ Platform plugins.
 The plugin takes care of the dependencies of your plugin project - both the base IDE and other plugin dependencies.
+It provides tasks to run the IDE with your plugin and to package and publish your plugin to the [JetBrains Plugins Repository](https://plugins.jetbrains.com).
+To make sure that a plugin is not affected by [API changes](api_changes_list.md), which may happen between major releases of the platform, you can quickly verify your plugin against other IDEs and releases.
 
  >  [IntelliJ Platform Plugin Template](https://github.com/JetBrains/intellij-platform-plugin-template) makes it easier to create and maintain your IDE plugins, having the Gradle plugin already integrated and CI covered with GitHub Actions.
  >
@@ -13,15 +15,10 @@ The plugin takes care of the dependencies of your plugin project - both the base
  >
  {type="note"}
 
-The gradle-intellij-plugin provides tasks to run the IDE with your plugin and to publish your plugin to the [JetBrains Plugins Repository](https://plugins.jetbrains.com).
-To make sure that your plugin is not affected by [API changes](api_changes_list.md), which may happen between major releases of the platform, you can quickly build your plugin against many versions of the base IDE.
 
- >  When adding additional repositories to your Gradle build script, always use HTTPS protocol.
- >
- {type="warning"}
-
- >  Please make sure to always upgrade to the latest version of `gradle-intellij-plugin`.
-Follow releases on [GitHub](https://github.com/JetBrains/gradle-intellij-plugin/releases).
+ > Please make sure to always upgrade to the [latest version](https://github.com/JetBrains/gradle-intellij-plugin/releases) of `gradle-intellij-plugin`.
+ > 
+ > See [What's New & Upgrade Instructions](https://lp.jetbrains.com/gradle-intellij-plugin) for upgrading from pre-1.0 versions. 
  >
  {type="note"}
 

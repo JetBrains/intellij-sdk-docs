@@ -1,12 +1,12 @@
 [//]: # (title: 1. Tests Prerequisites)
 
-<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 This page discusses the steps to configure a plugin project for creating tests.
 
 ## Create a Folder for Tests
-Open the plugin project and create a separate folder named `test` under the `src` directory.
-Under `test`, create the `java` folder for test source code, and the folder `testData` for test data files and reimport the Gradle project.
+Open the plugin project and create a separate folder named <path>test</path> under the <path>src</path> directory.
+Under <path>test</path>, create the <path>java</path> folder for test source code, and the folder <path>testData</path> for test data files and reimport the Gradle project.
 
 ```text
 └── src
@@ -19,15 +19,16 @@ Under `test`, create the `java` folder for test source code, and the folder `tes
 ```
 
 ## Set the Run Configuration Parameters
-Because some of the tests use Java files as test data, the tests need to mock up the project SDK.
-IntelliJ IDEA does everything automatically when the utility class [`LightJavaCodeInsightFixtureTestCase`](upsource:///java/testFramework/src/com/intellij/testFramework/fixtures/LightJavaCodeInsightFixtureTestCase.java) is used as the basis for the tests.
 
-The system properties are defined in the `build.gradle` file using the snippet shown below.
-The `/path/to/community/` is set to the absolute path to the local intellij-community source's root directory on the machine running the tests.
-For example, on macOS the `path/to/community/` might be `/Users/<user name>/Documents/<IJ community source root>/`
+Because some of the tests use Java files as test data, the tests need to mock up the project's SDK.
+The testing framework uses <path>java/mockJDK-$JAVA_VERSION$</path> from IntelliJ Community sources by default when using [`LightJavaCodeInsightFixtureTestCase`](upsource:///java/testFramework/src/com/intellij/testFramework/fixtures/LightJavaCodeInsightFixtureTestCase.java) test base class.
+
+The system properties are defined in the <path>build.gradle</path> file using the snippet shown below.
+The <path>/path/to/intellij-community/</path> is set to the absolute path to the local [IntelliJ Community project](https://github.com/JetBrains/intellij-community) source's root directory on the machine running the tests.
+For example, on macOS it might be <path>/Users/$USER_NAME$/Documents/intellij-community/</path>
 
 ```groovy
   test {
-    systemProperty "idea.home.path", "/path/to/community/"
+    systemProperty "idea.home.path", "/path/to/intellij-community/"
   }
 ```

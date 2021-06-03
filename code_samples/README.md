@@ -12,7 +12,7 @@ These samples show you how features work and help you jumpstart your plugins.
 > **NOTE** To start a new plugin project, please also consider using [IntelliJ Platform Plugin Template][gh:template] which offers a pure boilerplate template to make it easier to create a new plugin project.
 
 To learn more, browse [available Extension Points][docs:eps], explore Extension Point usages in open-source plugins using [IntelliJ Platform Explorer](https://jb.gg/ipe) and learn how to [Explore the IntelliJ Platform API][docs:explore-api].
-
+                                
 ## Target Platform
 
 All Code Samples target the latest GA platform release.
@@ -26,6 +26,8 @@ The main plugin definition file is stored in the `plugin.xml` file, which is cre
 It describes definitions of the actions, extensions, or listeners provided by the plugin.
 
 ## Code Samples
+
+Please see [docs:code-samples] on how to import and run code samples.    
 
 In the following table, you may find all available samples provided in the separated directories as stand-alone projects available for running with the Gradle `:runIde` task.
 
@@ -64,6 +66,7 @@ In the following table, you may find all available samples provided in the separ
 [jb:twitter]: https://twitter.com/JBPlatform
 
 [docs]: https://plugins.jetbrains.com/docs/intellij/
+[docs:code-samples]: https://plugins.jetbrains.com/docs/intellij/code-samples.html
 [docs:eps]: https://plugins.jetbrains.com/docs/intellij/extension-point-list.html
 [docs:gradle]: https://plugins.jetbrains.com/docs/intellij/gradle-build-system.html
 [docs:plugin.xml]: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html

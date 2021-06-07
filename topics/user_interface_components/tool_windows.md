@@ -1,4 +1,4 @@
-[//]: # (title: Tool Windows)
+7[//]: # (title: Tool Windows)
 
 <!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
@@ -64,19 +64,11 @@ If closing tabs is enabled in general, a plugin can disable closing of specific 
 
 ## Sample Plugin
 
-To clarify how to develop plugins that create tool windows, consider the **toolWindow** sample plugin available in the [code_samples](https://github.com/JetBrains/intellij-sdk-code-samples/tree/main/tool_window) directory of the SDK documentation.
+To clarify how to develop plugins that create tool windows, consider the **toolWindow** sample plugin available in the [code samples](https://github.com/JetBrains/intellij-sdk-code-samples/tree/main/tool_window).
+
+See [Code Samples](code_samples.md) on how to set up and run the plugin.
+
 This plugin creates the **Sample Calendar** tool window that displays the system date, time and time zone.
-
-**To run the toolWindow plugin**
-
-1. Start IntelliJ IDEA and open the **tool_window** project saved into the [code_samples/tool_window](https://github.com/JetBrains/intellij-sdk-code-samples/tree/main/tool_window) directory.
-2. Ensure that the project settings are valid for the environment.
-   If necessary, modify the project settings.
-   To view or modify the project settings, open the [Project Structure](https://www.jetbrains.com/help/idea/project-structure-dialog.html) dialog.
-3. Run the plugin by choosing the **Run | Run** on the main menu.
-   If necessary, change the [Run/Debug Configurations](https://www.jetbrains.com/help/idea/run-debug-configuration-plugin.html).
-
-The plugin creates the **Sample Calendar** tool window.
 When opened, this tool window is similar to the following screen:
 
 ![Sample Calendar](sample_calendar.png)

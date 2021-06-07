@@ -94,6 +94,20 @@ Please see [Incompatible API Changes](api_changes_list.md) on how to verify comp
 `com.intellij.ide.plugins.DisabledPluginsState.disablePlugin(PluginId)` method removed
 : Use either `com.intellij.ide.plugins.PluginManagerCore.disablePlugin(PluginId)` or `com.intellij.ide.plugins.PluginEnabler.disablePlugins(Collection)` instead.
 
+`com.intellij.ssh.ui.unified.SshConfigConfigurable.Visibility` class removed
+: Use `com.intellij.ssh.ui.unified.SshConfigVisibility` instead.
+
+`com.intellij.ssh.ui.unified.SshConfigComboBox.reload(PresentableId, SshConfigConfigurable.Visibility)` method parameter type changed from `com.intellij.ssh.ui.unified.SshConfigConfigurable.Visibility` to `com.intellij.ssh.ui.unified.SshConfigVisibility`
+: `SshConfigConfigurable.Visibility` has been renamed to `SshConfigVisibility`.
+
+`com.intellij.ssh.ui.unified.SshConfigComboBox(Project, Disposable, SshConfigConfigurable.Visibility)` constructor parameter type changed from `com.intellij.ssh.ui.unified.SshConfigConfigurable.Visibility` to `com.intellij.ssh.ui.unified.SshConfigVisibility`
+: `SshConfigConfigurable.Visibility` has been renamed to `SshConfigVisibility`.
+
+### Database Plugin 2021.2
+
+`com.intellij.database.dataSource.DatabaseCredentialsAuthProvider.UserWidget` class removed
+: Use `com.intellij.database.dataSource.DatabaseCredentialsAuthProviderUi.UserWidget` instead.
+
 ### GitHub Plugin 2021.2
                                           
 `org.jetbrains.plugins.github.util.GithubAuthData` class removed

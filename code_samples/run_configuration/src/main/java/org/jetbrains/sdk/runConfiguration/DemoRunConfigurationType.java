@@ -1,4 +1,4 @@
-// Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
+// Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
 
 package org.jetbrains.sdk.runConfiguration;
 
@@ -10,6 +10,8 @@ import org.jetbrains.annotations.NotNull;
 import javax.swing.*;
 
 public class DemoRunConfigurationType implements ConfigurationType {
+
+  static final String ID = "DemoRunConfiguration";
 
   @NotNull
   @Override
@@ -30,7 +32,7 @@ public class DemoRunConfigurationType implements ConfigurationType {
   @NotNull
   @Override
   public String getId() {
-    return "DEMO_RUN_CONFIGURATION";
+    return ID;
   }
 
   @Override

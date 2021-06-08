@@ -23,8 +23,8 @@ It provides the following features:
 When using the [`DialogWrapper`](upsource:///platform/platform-api/src/com/intellij/openapi/ui/DialogWrapper.java) class for a dialog, follow these required steps:
 
 * Call the base class constructor and provide either a `Project` in the frame of which the dialog will be displayed, or a parent component for the dialog.
-* Call the `init()` method from the constructor of the dialog class
 * Call the `setTitle()` method to set the title for the dialog
+* Call the `init()` method from the constructor of the dialog class
 * Implement the `createCenterPanel()` method to return the component comprising the main contents of the dialog.
                                                             
 Optionally:
@@ -68,8 +68,8 @@ public class SampleDialogWrapper extends DialogWrapper {
 
     public SampleDialogWrapper() {
         super(true); // use current window as parent
-        init();
         setTitle("Test DialogWrapper");
+        init();
     }
 
     @Nullable

@@ -14,25 +14,25 @@ Add the following method to `SimplePsiImplUtil`:
 ```java
 public static ItemPresentation getPresentation(final SimpleProperty element) {
     return new ItemPresentation() {
-        @Nullable
-        @Override
-        public String getPresentableText() {
-            return element.getKey();
-        }
+      @Nullable
+      @Override
+      public String getPresentableText() {
+        return element.getKey();
+      }
 
-        @Nullable
-        @Override
-        public String getLocationString() {
-            return element.getContainingFile().getName();
-        }
+      @Nullable
+      @Override
+      public String getLocationString() {
+        PsiFile containingFile = element.getContainingFile();
+        return containingFile == null ? null : containingFile.getName();
+      }
 
-        @Nullable
-        @Override
-        public Icon getIcon(boolean unused) {
-            return SimpleIcons.FILE;
-        }
+      @Override
+      public Icon getIcon(boolean unused) {
+        return SimpleIcons.FILE;
+      }
     };
-}
+  }
 ```
 
 ## Update Grammar and Regenerate the Parser

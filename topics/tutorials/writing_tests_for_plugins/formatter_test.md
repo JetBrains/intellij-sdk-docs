@@ -23,10 +23,12 @@ Add the `testFormatter()` method to the `SimpleCodeInsightTest` class [previousl
     myFixture.configureByFile("FormatterTestData.simple");
     CodeStyle.getLanguageSettings(myFixture.getFile()).SPACE_AROUND_ASSIGNMENT_OPERATORS = true;
     CodeStyle.getLanguageSettings(myFixture.getFile()).KEEP_BLANK_LINES_IN_CODE = 2;
-    WriteCommandAction.writeCommandAction(getProject()).run(() -> {
-      CodeStyleManager.getInstance(getProject()).reformatText(myFixture.getFile(),
-                                   ContainerUtil.newArrayList(myFixture.getFile().getTextRange()));
-    });
+    WriteCommandAction.writeCommandAction(getProject()).run(() ->
+            CodeStyleManager.getInstance(getProject()).reformatText(
+                    myFixture.getFile(),
+                    ContainerUtil.newArrayList(myFixture.getFile().getTextRange())
+            )
+    );
     myFixture.checkResultByFile("DefaultTestData.simple");
   }
 ```

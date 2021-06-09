@@ -2,10 +2,8 @@ package org.intellij.sdk.language;
 
 import com.intellij.lang.documentation.AbstractDocumentationProvider;
 import com.intellij.lang.documentation.DocumentationMarkup;
-import com.intellij.openapi.editor.Editor;
-import com.intellij.psi.*;
+import com.intellij.psi.PsiElement;
 import com.intellij.psi.presentation.java.SymbolPresentationUtil;
-import com.intellij.psi.util.PsiTreeUtil;
 import org.intellij.sdk.language.psi.SimpleProperty;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -58,38 +56,8 @@ public class SimpleDocumentationProvider extends AbstractDocumentationProvider {
    */
   @Override
   public @Nullable String generateHoverDoc(@NotNull PsiElement element, @Nullable PsiElement originalElement) {
-      return generateDoc(element, originalElement);
+    return generateDoc(element, originalElement);
   }
-
-  /**
-   * Extracts {@code SimpleProperty} element from usages in Java strings or Simple files
-   */
-//  @Override
-//  public @Nullable PsiElement getCustomDocumentationElement(@NotNull Editor editor, @NotNull PsiFile file, @Nullable PsiElement contextElement, int targetOffset) {
-//    if (contextElement != null) {
-//      // In this part the SimpleProperty element is extracted from inside a Java string
-//      if (contextElement instanceof PsiJavaToken && ((PsiJavaToken) contextElement).getTokenType().equals(JavaTokenType.STRING_LITERAL)) {
-//        final PsiElement parent = contextElement.getParent();
-//        final PsiReference[] references = parent.getReferences();
-//        for (PsiReference ref : references) {
-//          if (ref instanceof SimpleReference) {
-//            final PsiElement property = ref.resolve();
-//            if (property instanceof SimpleProperty) {
-//              return property;
-//            }
-//          }
-//        }
-//      }
-//      // In this part the SimpleProperty element is extracted when inside a .simple file
-//      else if (contextElement.getLanguage() == SimpleLanguage.INSTANCE) {
-//        final PsiElement property = PsiTreeUtil.getParentOfType(contextElement, SimpleProperty.class);
-//        if (property != null) {
-//          return property;
-//        }
-//      }
-//    }
-//    return super.getCustomDocumentationElement(editor, file, contextElement, targetOffset);
-//  }
 
   /**
    * Creates a key/value row for the rendered documentation.
@@ -125,4 +93,4 @@ public class SimpleDocumentationProvider extends AbstractDocumentationProvider {
     return sb.toString();
   }
 
- }
+}

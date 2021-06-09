@@ -8,6 +8,11 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 
 ## 2021
 
+### June-21
+
+Documentation Provider
+: Add [Documentation](documentation.md) section with an [accompanying tutorial](documentation_provider.md) that show how to implement a `DocumentationProvider` for custom languages.
+
 ### May-21
             
 IDE specific Extension Point Lists

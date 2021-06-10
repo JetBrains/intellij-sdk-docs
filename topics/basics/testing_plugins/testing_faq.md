@@ -20,9 +20,9 @@ This page lists a number of common questions/issues and techniques useful for te
 ### How to avoid blinking tests?
 
 - Always call `super.tearDown()` inside `finally {..}` block of your test class to avoid leaks and side-effects from previously run (failed) tests.
-- Avoid OS-specific assumptions (e.g., filesystem case-sensitivity, use `java.io.File.separator`).
-- Use _ordered_ collections if necessary or use [`UsefulTestCase#assertUnorderedCollection()`](upsource:///platform/testFramework/src/com/intellij/testFramework/UsefulTestCase.java).
-- Code deferring execution (e.g., via `Application#invokeLater()`) might not run during test execution (and possibly fails in production, too). Use `invokeLater(runnable, myProject.getDisposed()`.
+- Avoid OS-specific assumptions (e.g., filesystem case-sensitivity, hardcoded separator instead of `java.io.File.separator`).
+- Use _ordered_ collections or [`UsefulTestCase.assertUnorderedCollection()`](upsource:///platform/testFramework/src/com/intellij/testFramework/UsefulTestCase.java).
+- Code deferring execution (e.g., via `Application.invokeLater()`) might not run during test execution (and possibly fails in production, too). Use `invokeLater(runnable, myProject.getDisposed()`.
 
 ### How to avoid test failure when using resources?
 
@@ -56,7 +56,7 @@ Use [`DefaultLogger.disableStderrDumping()`](upsource:///platform/util/src/com/i
 
 ### How to register a resource (DTD, XSD) temporarily?
 
-Use `com.intellij.javaee.ExternalResourceManagerExImpl.registerResourceTemporarily()` passing `getTestRootDisposable()`. 
+Use [`ExternalResourceManagerExImpl.registerResourceTemporarily()`](upsource:///xml/xml-psi-impl/src/com/intellij/javaee/ExternalResourceManagerExImpl.java) passing `getTestRootDisposable()`. 
                      
 ### How to replace component/service in tests?
 

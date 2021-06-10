@@ -1,6 +1,6 @@
 [//]: # (title: Testing Plugins)
 
-<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 Most of the tests in the IntelliJ Platform codebase are *model level functional tests*.
 What this means is the following:
@@ -21,13 +21,10 @@ Another consequence of our testing approach is what our test framework does not 
   We have a few tests in our codebase that use JMock.
   Still, in general, we find it difficult to mock all of the interactions with IntelliJ Platform components that your plugin class will need to have.
   We recommend working with real components instead.
-
-### UI Tests
-
-Please see dedicated [intellij-ui-test-robot](https://github.com/JetBrains/intellij-ui-test-robot) library.
-It is fully integrated with Gradle-based setup via `runIdeForUiTests` task.
-
-Please do not use _platform/testGuiFramework_; it is reserved for internal use.
+* We do not provide a general-purpose framework for Swing UI testing.
+  You can try using tools such as [FEST](https://code.google.com/p/fest/) or [Sikuli](https://sikulix.com/) for plugin UI testing, but we don't use either of them and cannot provide any guidelines for their use.
+  Internally, we use manual testing for testing our Swing UIs.
+  Please do not use _platform/testGuiFramework_; it is reserved for internal use.
 
 ## Topics
 * [Tests and Fixtures](tests_and_fixtures.md)

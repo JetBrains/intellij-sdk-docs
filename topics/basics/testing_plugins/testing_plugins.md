@@ -35,6 +35,7 @@ Please do not use _platform/testGuiFramework_; it is reserved for internal use.
 * [Test Project and Testdata Directories](test_project_and_testdata_directories.md)
 * [Writing Tests](writing_tests.md)
 * [Testing Highlighting](testing_highlighting.md)
+* [Testing FAQ](testing_faq.md)
 
   > Check out [this step-by-step tutorial](writing_tests_for_plugins.md) teaching how to write and run automated tests for your custom language plugin (source code included).
   > 

@@ -41,6 +41,10 @@ Use [`FileBasedTestCaseHelper`](upsource:///platform/testFramework/src/com/intel
 ### How to modify setup on per-test basis?
 
 Use `UsefulTestCase.getTestName()` or create your own annotation(s) which can be checked via `UsefulTestCase.annotatedWith()`.
+                                            
+### How to run performance test?
+
+Use [`PlatformTestUtil.startPerformanceTest()`](upsource:///platform/testFramework/src/com/intellij/testFramework/PlatformTestUtil.java) to assert machine-adjusted metrics.
 
 ### How to dispatch pending UI events?
 

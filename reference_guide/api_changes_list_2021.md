@@ -107,7 +107,7 @@ Please see [Incompatible API Changes](api_changes_list.md) on how to verify comp
 : Use `org.jetbrains.uast.UAnnotated.getUAnnotations()` instead.
 
 `org.jetbrains.uast.UAnnotated.getUAnnotations()` marked abstract
-: Previously this circulary referenced `org.jetbrains.uast.UAnnotated.getAnnotations()`, wich has been removed.
+: Previously this circulary referenced `org.jetbrains.uast.UAnnotated.getAnnotations()`, which has been removed.
 
 ### Database Plugin 2021.2
 

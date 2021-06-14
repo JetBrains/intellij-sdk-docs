@@ -36,7 +36,7 @@ Make sure the class is registered in the <path>plugin.xml</path> between the `ex
 
 For the Simple Language, we consider two use-cases:
 
-1. A Simple key is [used inside a Java string literal](https://plugins.jetbrains.com/docs/intellij/reference-contributor.html), 
+1. A Simple key is [used inside a Java string literal](reference_contributor.md), 
    and we would like to show documentation for the key/value right from the reference inside the Java file.
 2. The cursor is already over a key/value definition inside a Simple file, in which case we would also like to show its documentation.
 
@@ -61,14 +61,20 @@ Since the Simple Language only allows for one property per string,
 it would be nice if <emphasis>Quick Documentation</emphasis> worked no matter where your cursor was positioned in the string as long as the string contained a Simple property.
 Inside a Simple file, the situation is similar, and calling <menupath>View | Quick Documentation</menupath> only works when the cursor is positioned on the key.
 
-Please refer to the Addendum below, which explains how to improve on this situation by implementing a custom `getCustomDocumentationElement()` method.
+Please refer to the Addendum below, which explains how to improve on this situation by additionally overriding `getCustomDocumentationElement()` method.
 
 
 ## Extract Documentation Comments from Key/Value Definitions
 
-While `SimpleProperty` elements will provide us with their key and value, we have no direct access to a possible comment that is above the key/value definition.
+While `SimpleProperty` elements will provide us with their key and value, we have no direct access to a possible comment that is preceding the key/value definition.
 Since we would like to show this comment in the documentation as well, we need a small helper function that extracts the text from the comment.
-This function will reside in the `SimpleUtil` class.
+This function will reside in the `SimpleUtil` class and will find for instance the comment preceding `apikey` in the following short example:
+
+```text
+#An application programming interface key (API key) is a unique identifier used
+#to authenticate a user, developer, or calling program to an API.
+apikey=ph342m91337h4xX0r5k!11Zz!
+```
 
 The following implementation will check if there is any comment preceding a `SimpleProperty`, and if there is,
 it will collect all comment lines until it reaches either the previous key/value definition or the beginning of the file.
@@ -98,13 +104,14 @@ we now have everything in place to provide a useful implementation of `generateD
 
 ```java
 @Override
-public @Nullable String generateDoc(PsiElement element, @Nullable PsiElement originalElement){
-  if(element instanceof SimpleProperty){
-    final String key=((SimpleProperty)element).getKey();
-    final String value=((SimpleProperty)element).getValue();
-    final String file=SymbolPresentationUtil.getFilePathPresentation(element.getContainingFile());
-    final String docComment=SimpleUtil.findDocumentationComment((SimpleProperty)element);
-    return renderFullDoc(key,value,file,docComment);
+public @Nullable String generateDoc(PsiElement element, @Nullable PsiElement originalElement) {
+  if (element instanceof SimpleProperty) {
+    final String key = ((SimpleProperty) element).getKey();
+    final String value = ((SimpleProperty) element).getValue();
+    final String file = SymbolPresentationUtil.getFilePathPresentation(element.getContainingFile());
+    final String docComment = SimpleUtil.findDocumentationComment((SimpleProperty) element);
+
+    return renderFullDoc(key, value, file, docComment);
   }
   return null;
 }
@@ -150,7 +157,7 @@ After implementing all the steps above, the IDE will show the rendered documenta
 
 ## Implement Additional Functionality
 
-We can provide implementations for additional functionality that comes with a DocumentationProvider.
+We can provide implementations for additional functionality that comes with a `DocumentationProvider`.
 For instance, when simply hovering the mouse over the code, it also shows documentation after a short delay.
 It’s not necessary that this popup show the exact same information as when calling _Quick Documentation_, but for the purpose of this tutorial, we’ll do just that.
 
@@ -160,7 +167,7 @@ public @Nullable String generateHoverDoc(@NotNull PsiElement element, @Nullable 
 }
 ```
 
-When the mouse hovers over code with `Ctrl`/`Cmd` pressed, the IDE shows navigation information of the symbol under the cursor,
+When the mouse hovers over code with <shortcut>Ctrl</shortcut>/<shortcut>Cmd</shortcut> pressed, the IDE shows navigation information of the symbol under the cursor,
 such as its namespace or package.
 The implementation below will show the Simple key and the file where it is defined.
 
@@ -179,7 +186,7 @@ public @Nullable String getQuickNavigateInfo(PsiElement element, PsiElement orig
 
 Finally, <menupath>View | Quick Documentation</menupath> can also be called from a selected entry within the autocompletion popup.
 In that case, language developers need to ensure that the correct PSI element for generating the documentation is provided.
-In the case of Simple Language, the lookup element is already a SimpleProperty and no additional work needs to be done.
+In the case of Simple Language, the lookup element is already a `SimpleProperty` and no additional work needs to be done.
 In other circumstances, you can override `getDocumentationElementForLookupItem() `and return the correct PSI element.
 
 
@@ -192,7 +199,7 @@ To be able to call <menupath>View | Quick Documentation</menupath> for Simple pr
 2. The `getCustomDocumentationElement()` method needs to be implemented to find the correct target PSI element for creating the documentation.
 
 Therefore, the current version of the code could be extended to check whether <menupath>View | Quick Documentation</menupath> was called from inside a Java string or a Simple file.
-It then uses PSI and PsiReference functionalities to determine the correct target element.
+It then uses PSI and `PsiReference` functionalities to determine the correct target element.
 This allows getting documentation for a Simple property no matter where it was called inside a Java string literal or a Simple property definition.
 
 ```java

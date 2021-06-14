@@ -5,14 +5,14 @@
 Custom languages can use the `com.intellij.lang.documentationProvider` extension point (EP) to show documentation for functions,
 methods, classes, or other constructs right inside the IDE.
 Accessing the documentation is done by calling
-[<menupath>View | Quick Documentation</menupath>](https://www.jetbrains.com/help/idea/viewing-reference-information.html#inline-quick-documentation)
+<menupath>[View | Quick Documentation](https://www.jetbrains.com/help/idea/viewing-reference-information.html#inline-quick-documentation)</menupath>
 or hovering over a symbol, which will open a popup to show type information, parameters, usage descriptions, or examples.
 The source of the documentation contents can vary.
 Often it is extracted from comments (e.g. JavaDoc comments) in the source code,
 but it’s also possible to access external resources like web pages.
 
 In addition to showing the documentation, the `getQuickNavigateInfo()` method returns the text to be displayed
-when the user hovers over an element with `Ctrl`/`Cmd` pressed.
+when the user hovers over an element with <shortcut>Ctrl</shortcut>/<shortcut>Cmd</shortcut> pressed.
 
 Custom actions can also be added to documentation inlays and documentation popups via
 `com.intellij.codeInsight.documentation.DocumentationActionProvider` registered in the
@@ -22,9 +22,9 @@ Custom actions can also be added to documentation inlays and documentation popup
 # Implementation
 
 Custom language developers usually extend from
-[`AbstractDocumentationProvider`](https://upsource.jetbrains.com/idea-ce/file/idea-ce-7b9b8cc138bbd90aec26433f82cd2c6838694003/platform/analysis-api/src/com/intellij/lang/documentation/AbstractDocumentationProvider.java?_ga=2.266434503.859029121.1622422021-1187869345.1619700453)
+[`AbstractDocumentationProvider`](upsource:///platform/analysis-api/src/com/intellij/lang/documentation/AbstractDocumentationProvider.java)
 instead of implementing the
-[`DocumentationProvider`](https://upsource.jetbrains.com/idea-ce/file/idea-ce-7b9b8cc138bbd90aec26433f82cd2c6838694003/platform/analysis-api/src/com/intellij/lang/documentation/DocumentationProvider.java?_ga=2.97574870.859029121.1622422021-1187869345.1619700453) interface.
+[`DocumentationProvider`](upsource:///platform/analysis-api/src/com/intellij/lang/documentation/DocumentationProvider.java) interface.
 This implementation needs to be registered as `com.intellij.lang.documentationProvider` in the <path>plugin.xml</path>.
 
 The main work is done in `generateDoc()`, which has two PSI element arguments:
@@ -35,12 +35,12 @@ and provide the correct element.
 How the documentation for the target element is created is up to the custom language developer.
 A common choice is to extract and format documentation comments.
 To format the documentation contents, you should use
-[`DocumentationMarkup`](https://upsource.jetbrains.com/idea-ce/file/idea-ce-7b9b8cc138bbd90aec26433f82cd2c6838694003/platform/analysis-api/src/com/intellij/lang/documentation/DocumentationMarkup.java?_ga=2.194568036.859029121.1622422021-1187869345.1619700453)
+[`DocumentationMarkup`](upsource:///platform/analysis-api/src/com/intellij/lang/documentation/DocumentationMarkup.java)
 to achieve a consistent output.
 
 Once these steps are completed, the following additional features can be implemented:
 
-* Implement `getQuickNavigateInfo()` to provide the text that should be displayed when an element is hovered over with `Ctrl`/`Cmd` pressed.
+* Implement `getQuickNavigateInfo()` to provide the text that should be displayed when an element is hovered over with <shortcut>Ctrl</shortcut>/<shortcut>Cmd</shortcut> pressed.
 * Implement `generateHoverDoc()` to show different contents on mouse hover.
 * Implement `getDocumentationElementForLookupItem()` to return a suitable PSI element for the given lookup element when 
   <menupath>View | Quick Documentation</menupath> is called on an element of the autocompletion popup.

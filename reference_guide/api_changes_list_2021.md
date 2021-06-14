@@ -103,6 +103,12 @@ Please see [Incompatible API Changes](api_changes_list.md) on how to verify comp
 `com.intellij.ssh.ui.unified.SshConfigComboBox(Project, Disposable, SshConfigConfigurable.Visibility)` constructor parameter type changed from `com.intellij.ssh.ui.unified.SshConfigConfigurable.Visibility` to `com.intellij.ssh.ui.unified.SshConfigVisibility`
 : `SshConfigConfigurable.Visibility` has been renamed to `SshConfigVisibility`.
 
+`org.jetbrains.uast.UAnnotated.getAnnotations()` method removed
+: Use `org.jetbrains.uast.UAnnotated.getUAnnotations()` instead.
+
+`org.jetbrains.uast.UAnnotated.getUAnnotations()` marked abstract
+: Previously this circulary referenced `org.jetbrains.uast.UAnnotated.getAnnotations()`, which has been removed.
+
 ### Database Plugin 2021.2
 
 `com.intellij.database.dataSource.DatabaseCredentialsAuthProvider.UserWidget` class removed

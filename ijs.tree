@@ -260,6 +260,7 @@
             <toc-element id="code_style_settings.md"/>
             <toc-element id="commenter.md"/>
             <toc-element id="quick_fix.md"/>
+            <toc-element id="documentation_provider.md"/>
         </toc-element>
         <toc-element id="writing_tests_for_plugins.md">
             <toc-element id="tests_prerequisites.md"/>

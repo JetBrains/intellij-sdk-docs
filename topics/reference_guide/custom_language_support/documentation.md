@@ -53,5 +53,4 @@ The [custom language tutorial](documentation_provider.md) contains a step-by-ste
 In addition, several implementations of other languages exist in the IntelliJ Platform code, for instance:
 
 * The [Properties Language plugin](upsource:///plugins/properties/) has a small and easy-to-understand [`DocumentationProvider`](upsource:///plugins/properties/src/com/intellij/lang/properties/PropertiesDocumentationProvider.java) similar to the one shown in the custom language tutorial.
-* The [`CssDocumentationProvider`](upsource:///CSS/src/com/intellij/psi/css/impl/util/CssDocumentationProvider.java) is an example of an `ExternalDocumentationProvider`, which accesses online resources to provide documentation.
-* Usage examples for DocumentationMarkup can be found in [`ThemeJsonDocumentationProvider`](upsource:///plugins/devkit/devkit-core/src/themes/ThemeJsonDocumentationProvider.java).
+* Usage examples for `DocumentationMarkup` can be found in [`ThemeJsonDocumentationProvider`](upsource:///plugins/devkit/devkit-core/src/themes/ThemeJsonDocumentationProvider.java).

@@ -193,3 +193,8 @@ Rename of packages to `.java.` specific variants
 
 `org.jetbrains.kotlin.idea.refactoring.changeSignature.KotlinChangeInfo(KotlinMethodDescriptor, String, KotlinTypeInfo, Visibility, List, KotlinParameterInfo, PsiElement, Collection)` constructor parameter type changed from `org.jetbrains.kotlin.descriptors.Visibility` to `org.jetbrains.kotlin.descriptors.DescriptorVisibility`
 : `Visibility` has been renamed to `DescriptorVisibility`. 
+
+### Go Plugin 2021.1
+
+`com.goide.sdk.combobox.GoSdkChooserCombo.getSdk` method moved to the superclass
+: Recompile the dependant code.

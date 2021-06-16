@@ -1,6 +1,6 @@
 [//]: # (title: Incompatible Changes in IntelliJ Platform and Plugins API 2020.*)
 
-<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 <!--
 Before documenting a breaking API change, please, make sure that the change cannot be avoided in an alternative way.
@@ -20,6 +20,7 @@ The following problem patterns are supported:
 <class name>.<method name>(<human-readable parameters>) marked abstract
 <class name>.<method name>(<human-readable parameters>) abstract method added
 <class name>.<method name>(<human-readable parameters>) method removed
+<class name>.<method name>(<human-readable parameters>) method moved to the superclass
 <class name>.<method name>(<human-readable parameters>) method return type changed from <before> to <after>
 <class name>.<method name>(<human-readable parameters>) method visibility changed from <before> to <after>
 <class name>.<method name>(<human-readable parameters>) method marked final
@@ -35,11 +36,11 @@ The following problem patterns are supported:
 <class name>(<human-readable parameters>) constructor visibility changed from <before> to <after>
 
 <class name>.<field name> field removed
+<class name>.<field name> field moved to the superclass
 <class name>.<field name> field type changed from <before> to <after>
 <class name>.<field name> field visibility changed from <before> to <after>
 
 <property name> property removed from resource bundle <bundle name>
-
 
 Where the placeholders must be enclosed in code quotes (`name`):
 

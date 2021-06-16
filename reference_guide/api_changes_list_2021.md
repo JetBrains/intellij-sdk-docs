@@ -20,6 +20,7 @@ The following problem patterns are supported:
 <class name>.<method name>(<human-readable parameters>) marked abstract
 <class name>.<method name>(<human-readable parameters>) abstract method added
 <class name>.<method name>(<human-readable parameters>) method removed
+<class name>.<method name>(<human-readable parameters>) method moved to the superclass
 <class name>.<method name>(<human-readable parameters>) method return type changed from <before> to <after>
 <class name>.<method name>(<human-readable parameters>) method visibility changed from <before> to <after>
 <class name>.<method name>(<human-readable parameters>) method marked final
@@ -35,6 +36,7 @@ The following problem patterns are supported:
 <class name>(<human-readable parameters>) constructor visibility changed from <before> to <after>
 
 <class name>.<field name> field removed
+<class name>.<field name> field moved to the superclass
 <class name>.<field name> field type changed from <before> to <after>
 <class name>.<field name> field visibility changed from <before> to <after>
 

@@ -5,7 +5,7 @@
 <!--
 =============== DO NOT RENAME OR MOVE THIS FILE ===============
 
-Before documenting a breaking API change, please ensure that the change cannot be avoided in an alternative way.
+Before documenting a breaking API change, please, make sure that the change cannot be avoided in an alternative way.
 
 APIs marked with @ApiStatus.Experimental, @ApiStatus.Internal, or @ApiStatus.ScheduledForRemoval don't need to be documented.
 
@@ -22,6 +22,7 @@ The following problem patterns are supported:
 <class name>.<method name>(<human-readable parameters>) marked abstract
 <class name>.<method name>(<human-readable parameters>) abstract method added
 <class name>.<method name>(<human-readable parameters>) method removed
+<class name>.<method name>(<human-readable parameters>) method moved to the superclass
 <class name>.<method name>(<human-readable parameters>) method return type changed from <before> to <after>
 <class name>.<method name>(<human-readable parameters>) method visibility changed from <before> to <after>
 <class name>.<method name>(<human-readable parameters>) method marked final
@@ -37,11 +38,11 @@ The following problem patterns are supported:
 <class name>(<human-readable parameters>) constructor visibility changed from <before> to <after>
 
 <class name>.<field name> field removed
+<class name>.<field name> field moved to the superclass
 <class name>.<field name> field type changed from <before> to <after>
 <class name>.<field name> field visibility changed from <before> to <after>
 
 <property name> property removed from resource bundle <bundle name>
-
 
 Where the placeholders must be enclosed in code quotes (`name`):
 
@@ -50,7 +51,7 @@ Where the placeholders must be enclosed in code quotes (`name`):
 <human-readable parameters> is a string representing parameters, which are not necessarily fully qualified. They do not affect the parser. For example, instead of (java.lang.Object, java.util.List, int) you are free to write (Object, List<String>, int)
 <parameter name> is exact name of the method's parameter
 <property name> is a full name of a property from .properties file, like `some.action.description`
-<bundle name> is a fully qualified name of the property bundle, including its package, like `message.IdeBundle`
+<bundle name> is a fully qualified name of the property bundle, which includes its package, like `message.IdeBundle`
 
 NOTE: If a code change you're trying to document doesn't match any of the above patterns, fill in a ticket in the YouTrack.
 An example of a ticket is https://youtrack.jetbrains.com/issue/MP-1218. Until supported, you may document the change as you prefer, and I will correct it later.

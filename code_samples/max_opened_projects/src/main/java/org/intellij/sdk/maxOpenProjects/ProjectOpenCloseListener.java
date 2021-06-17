@@ -1,9 +1,8 @@
-// Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
+// Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
 
 package org.intellij.sdk.maxOpenProjects;
 
 import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.components.ServiceManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManagerListener;
 import com.intellij.openapi.ui.Messages;
@@ -27,7 +26,8 @@ public class ProjectOpenCloseListener implements ProjectManagerListener {
       return;
     }
     // Get the counting service
-    ProjectCountingService projectCountingService = ServiceManager.getService(ProjectCountingService.class);
+    ProjectCountingService projectCountingService =
+            ApplicationManager.getApplication().getService(ProjectCountingService.class);
     // Increment the project count
     projectCountingService.incrProjectCount();
     // See if the total # of projects violates the limit.
@@ -52,7 +52,8 @@ public class ProjectOpenCloseListener implements ProjectManagerListener {
       return;
     }
     // Get the counting service
-    ProjectCountingService projectCountingService = ServiceManager.getService(ProjectCountingService.class);
+    ProjectCountingService projectCountingService =
+            ApplicationManager.getApplication().getService(ProjectCountingService.class);
     // Decrement the count because a project just closed
     projectCountingService.decrProjectCount();
   }

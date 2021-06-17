@@ -1,9 +1,9 @@
-// Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
+// Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
 
 package org.intellij.sdk.settings;
 
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.PersistentStateComponent;
-import com.intellij.openapi.components.ServiceManager;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.util.xmlb.XmlSerializerUtil;
@@ -25,7 +25,7 @@ public class AppSettingsState implements PersistentStateComponent<AppSettingsSta
   public boolean ideaStatus = false;
 
   public static AppSettingsState getInstance() {
-    return ServiceManager.getService(AppSettingsState.class);
+    return ApplicationManager.getApplication().getService(AppSettingsState.class);
   }
 
   @Nullable

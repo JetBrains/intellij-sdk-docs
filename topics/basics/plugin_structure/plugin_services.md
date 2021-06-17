@@ -118,13 +118,9 @@ This minimal sample shows [Light Service](#light-services) `ProjectService` inte
 
 ## Sample Plugin
 
-This sample plugin illustrates how to create and use a plugin service.
+To clarify how to use services, consider the **maxOpenProjects** sample plugin available in the [code samples](https://github.com/JetBrains/intellij-sdk-code-samples/tree/main/max_opened_projects).
+
 This plugin has an application service counting the number of currently opened projects in the IDE.
-If this number exceeds the maximum number of simultaneously opened projects allowed by the plugin, it displays a warning message.
+If this number exceeds the maximum number of simultaneously opened projects allowed by the plugin (3), it displays a warning message.
 
-**To install and run the sample plugin**
-
-* Download the included sample plugin project located [here](https://github.com/JetBrains/intellij-sdk-code-samples/tree/main/max_opened_projects).
-* Start IntelliJ IDEA, on the starting page, click <control>Open Project</control>, and then use the dialog box to open the project.
-* On the main menu, choose <menupath>Run | Run</menupath> or press <shortcut>Shift+F10</shortcut>.
-* If necessary, change the [Run/Debug Configurations](https://www.jetbrains.com/help/idea/run-debug-configuration-plugin.html).
+See [Code Samples](code_samples.md) on how to set up and run the plugin.

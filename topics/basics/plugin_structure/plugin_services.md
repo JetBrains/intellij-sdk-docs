@@ -2,7 +2,7 @@
 
 <!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-A _service_ is a plugin component loaded on demand when your plugin calls the `getService()` method of [`ServiceManager`](upsource:///platform/core-api/src/com/intellij/openapi/components/ServiceManager.java).
+A _service_ is a plugin component loaded on demand when your plugin calls the `getService()` method of corresponding [`ComponentManager`](upsource:///platform/extensions/src/com/intellij/openapi/components/ComponentManager.java) instance (see [Types](#types)).
 
 The IntelliJ Platform ensures that only one instance of a service is loaded even though it is called several times.
 
@@ -80,7 +80,7 @@ If service is requested from several threads, it will be initialized in the firs
 To retrieve a service in Java code:
 
 ```java
-MyApplicationService applicationService = ServiceManager.getService(MyApplicationService.class);
+MyApplicationService applicationService = ApplicationManager.getApplication().getService(MyApplicationService.class);
 
 MyProjectService projectService = project.getService(MyProjectService.class)
 ```

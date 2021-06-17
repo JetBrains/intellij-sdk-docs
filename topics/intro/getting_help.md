@@ -17,7 +17,7 @@ If you just want to share feedback on the guide, again, [raise an issue](https:/
 
 ## Problems with Code - Support Issues
                                                                       
- > See also [Explore the IntelliJ Platform API](explore_api.md) for tips & tricks.
+ > Please see [Plugin Development FAQ](faq.md) and [Explore the IntelliJ Platform API](explore_api.md) for tips & tricks.
  > 
  {type="tip"}
 

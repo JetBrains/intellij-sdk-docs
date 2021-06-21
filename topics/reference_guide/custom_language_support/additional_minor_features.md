@@ -27,7 +27,7 @@ EP: `com.intellij.lang.commenter`
 
 [`Commenter`](upsource:///platform/core-api/src/com/intellij/lang/Commenter.java) returns the prefix for the line comment, and the prefix and suffix for the block comment if supported by the language.
 
-- [`Commenter`](upsource:///plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/PropertiesCommenter.java) for [Properties language plugin](upsource:///plugins/properties/)
+- [`Commenter`](upsource:///plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/PropertiesCommenter.java) for [Properties language plugin](upsource:///plugins/properties)
 - [Custom Language Support Tutorial: Commenter](commenter.md)
 
 ### Code Folding

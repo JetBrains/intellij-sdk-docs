@@ -34,7 +34,7 @@ The parser receives an instance of the [`PsiBuilder`](upsource:///platform/core-
 The parser must process all tokens returned by the lexer up to the end of the stream, in other words, until [`PsiBuilder.getTokenType()`](upsource:///platform/core-api/src/com/intellij/lang/PsiBuilder.java) returns `null`, even if the tokens are not valid according to the language syntax.
 
 **Example**:
-[`PsiParser`](upsource:///plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/parsing/PropertiesParser.java) implementation for [Properties language plugin](upsource:///plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/).
+[`PsiParser`](upsource:///plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/parsing/PropertiesParser.java) implementation for [Properties language plugin](upsource:///plugins/properties/properties-psi-impl/src/com/intellij/lang/properties).
 
 The parser works by setting pairs of markers ( [`PsiBuilder.Marker`](upsource:///platform/core-api/src/com/intellij/lang/PsiBuilder.java) instances) within the stream of tokens received from the lexer.
 Each pair of markers defines the range of lexer tokens for a single node in the AST tree.

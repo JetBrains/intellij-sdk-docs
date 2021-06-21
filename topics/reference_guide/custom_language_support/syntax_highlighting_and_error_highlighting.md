@@ -14,7 +14,7 @@ It can be configured by the user by providing an implementation of [`ColorSettin
 The _Export to HTML_ feature uses the same syntax highlighting mechanism as the editor, so it will work automatically for custom languages, which provide a syntax highlighter.
 
 **Examples**:
-- [`ColorSettingsPage`](upsource:///plugins/properties/src/com/intellij/lang/properties/PropertiesColorsPage.java) for [Properties language plugin](upsource:///plugins/properties/)
+- [`ColorSettingsPage`](upsource:///plugins/properties/src/com/intellij/lang/properties/PropertiesColorsPage.java) for [Properties language plugin](upsource:///plugins/properties)
 - [Custom Language Support Tutorial: Color Settings Page](syntax_highlighter_and_color_settings_page.md)
 
  >  New functionality about Language Defaults and support for additional color schemes are detailed in [Color Scheme Management](color_scheme_management.md).
@@ -35,7 +35,7 @@ The syntax highlighter returns the `TextAttributesKey` instances for each token 
 For highlighting lexer errors, the standard `TextAttributesKey` for bad characters [`HighlighterColors.BAD_CHARACTER`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/editor/HighlighterColors.java) can be used.
 
 **Examples:**
-- [`SyntaxHighlighter`](upsource:///plugins/properties/properties-psi-api/src/com/intellij/lang/properties/PropertiesHighlighter.java) implementation for [Properties language plugin](upsource:///plugins/properties/)
+- [`SyntaxHighlighter`](upsource:///plugins/properties/properties-psi-api/src/com/intellij/lang/properties/PropertiesHighlighter.java) implementation for [Properties language plugin](upsource:///plugins/properties)
 - [Custom Language Support Tutorial: Syntax Highlighter](syntax_highlighter_and_color_settings_page.md)
                                         
  > Use [`HtmlSyntaxInfoUtil`](upsource:///platform/lang-impl/src/com/intellij/openapi/editor/richcopy/HtmlSyntaxInfoUtil.java) to create Lexer-based highlighted code samples, e.g. for usage in documentation.
@@ -83,7 +83,7 @@ To apply additional syntax highlighting (2020.1 and later):
 In previous versions, call `AnnotationHolder.createInfoAnnotation()` with an empty message and then [`Annotation.setTextAttributes()`](upsource:///platform/analysis-api/src/com/intellij/lang/annotation/Annotation.java).
                                       
 **Examples:**
-- [`Annotator`](upsource:///plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/PropertiesAnnotator.java) for [Properties language plugin](upsource:///plugins/properties/)
+- [`Annotator`](upsource:///plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/PropertiesAnnotator.java) for [Properties language plugin](upsource:///plugins/properties)
 - [Custom Language Support Tutorial: Annotator](annotator.md)
 
 ## External Tool

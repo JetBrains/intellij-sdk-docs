@@ -7,7 +7,7 @@ The _Find Usages_ action is a multi-step process, and each step of the process r
 The language plugin participates in the Find Usages process by registering an implementation of [`FindUsagesProvider`](upsource:///platform/indexing-api/src/com/intellij/lang/findUsages/FindUsagesProvider.java) in the `com.intellij.lang.findUsagesProvider` extension point, and through the PSI implementation using [`PsiNamedElement`](upsource:///platform/core-api/src/com/intellij/psi/PsiNamedElement.java) and [`PsiReference`](upsource:///platform/core-api/src/com/intellij/psi/PsiReference.java) interfaces.
 
 **Examples**:
-- Implementation of [`FindUsagesProvider`](upsource:///plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/findUsages/PropertiesFindUsagesProvider.java) in [Properties language plugin](upsource:///plugins/properties/)
+- Implementation of [`FindUsagesProvider`](upsource:///plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/findUsages/PropertiesFindUsagesProvider.java) in [Properties language plugin](upsource:///plugins/properties)
 - [Custom Language Support Tutorial: Find Usages](find_usages_provider.md)
 
 The steps of the _Find Usages_ action are the following:
@@ -33,7 +33,7 @@ To have the title of the found element be correctly displayed in the title of th
 The [`ElementDescriptionLocation`](upsource:///platform/core-api/src/com/intellij/psi/ElementDescriptionLocation.java) passed to the provider in this case will be an instance of [`UsageViewLongNameLocation`](upsource:///platform/lang-impl/src/com/intellij/usageView/UsageViewLongNameLocation.java).
 
 **Example:**
-[`ElementDescriptionProvider`](upsource:///plugins/properties/src/com/intellij/lang/properties/PropertiesDescriptionProvider.java) for [Properties language plugin](upsource:///plugins/properties/)
+[`ElementDescriptionProvider`](upsource:///plugins/properties/src/com/intellij/lang/properties/PropertiesDescriptionProvider.java) for [Properties language plugin](upsource:///plugins/properties)
 
  >  In cases like function parameters and local variables, consider overriding  [`PsiElement.getUseScope()`](upsource:///platform/core-api/src/com/intellij/psi/PsiElement.java) to return a narrower scope.
 > For instance, you might return just the scope of the nearest function definition.

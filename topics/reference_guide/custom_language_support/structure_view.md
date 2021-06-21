@@ -30,4 +30,4 @@ The latter method returns an array of `PsiElement`\-derived classes, which can b
 It is used to select the Structure View item matching the cursor position when the structure view is first opened or when the _Autoscroll from source_ option is enabled.
 
 **Example:**
-[`StructureViewTreeElement`](upsource:///plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/editor/PropertyStructureViewElement.java) for [Properties language plugin](upsource:///plugins/properties/)
+[`StructureViewTreeElement`](upsource:///plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/editor/PropertyStructureViewElement.java) for [Properties language plugin](upsource:///plugins/properties)

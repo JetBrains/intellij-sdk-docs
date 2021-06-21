@@ -19,7 +19,7 @@ See [Inspections](https://jetbrains.design/intellij/text/inspections/) topic in 
 
 **Examples**:
 - [Code Inspections Tutorial](code_inspections.md)
-- A [simple inspection](upsource:///plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/codeInspection/TrailingSpacesInPropertyInspection.java) for [Properties language plugin](upsource:///plugins/properties/)
+- A [simple inspection](upsource:///plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/codeInspection/TrailingSpacesInPropertyInspection.java) for [Properties language plugin](upsource:///plugins/properties)
 
 ### Intentions
 

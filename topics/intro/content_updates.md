@@ -10,6 +10,9 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 
 ### June-21
 
+Testing FAQ
+: [Testing FAQ](testing_faq.md) page lists common issues, useful classes, and techniques for writing and maintaining tests.
+
 Documentation Provider
 : Add [Documentation](documentation.md) section with an [accompanying tutorial](documentation_provider.md) that show how to implement a `DocumentationProvider` for custom languages.
 

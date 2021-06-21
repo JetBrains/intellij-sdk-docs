@@ -37,6 +37,10 @@ A common choice is to extract and format documentation comments.
 To format the documentation contents, you should use
 [`DocumentationMarkup`](upsource:///platform/analysis-api/src/com/intellij/lang/documentation/DocumentationMarkup.java)
 to achieve a consistent output.
+            
+ > Use [`HtmlSyntaxInfoUtil`](upsource:///platform/lang-impl/src/com/intellij/openapi/editor/richcopy/HtmlSyntaxInfoUtil.java) to create Lexer-based highlighted code samples.
+ >
+ {type="tip"}
 
 Once these steps are completed, the following additional features can be implemented:
 

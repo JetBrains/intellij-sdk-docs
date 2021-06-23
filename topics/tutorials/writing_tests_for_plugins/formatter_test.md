@@ -21,19 +21,8 @@ Add the `testFormatter()` method to the `SimpleCodeInsightTest` class [previousl
 * The formatted file is compared to the expected results in the benchmark file `DefaultTestData.simple`.
 
 ```java
-  public void testFormatter() {
-    myFixture.configureByFile("FormatterTestData.simple");
-    CodeStyle.getLanguageSettings(myFixture.getFile()).SPACE_AROUND_ASSIGNMENT_OPERATORS = true;
-    CodeStyle.getLanguageSettings(myFixture.getFile()).KEEP_BLANK_LINES_IN_CODE = 2;
-    WriteCommandAction.writeCommandAction(getProject()).run(() ->
-            CodeStyleManager.getInstance(getProject()).reformatText(
-                    myFixture.getFile(),
-                    ContainerUtil.newArrayList(myFixture.getFile().getTextRange())
-            )
-    );
-    myFixture.checkResultByFile("DefaultTestData.simple");
-  }
 ```
+{src="simple_language_plugin/src/test/java/org/intellij/sdk/language/SimpleCodeInsightTest.java" include-symbol="testFormatter"}
 
 ## Run the Test
 [Run](completion_test.md#run-the-test) the test and make sure it's green.

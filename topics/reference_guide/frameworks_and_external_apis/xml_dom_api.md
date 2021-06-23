@@ -1,6 +1,6 @@
 [//]: # (title: XML DOM API)
 
-<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 <!-- TODO content: DOM <=> PSI, Go To Symbol, editor gutter icon->DOM -->
 
@@ -78,9 +78,10 @@ interface Bar extends com.intellij.util.xml.DomElement {
 }
 ```
 
-Next, you should create a [`DomFileDescription`](upsource:///xml/dom-openapi/src/com/intellij/util/xml/DomFileDescription.java) object, pass to its constructor the root tag name and root element interface, and register it with extension point `com.intellij.dom.fileDescription`.
+Next, you should create a [`DomFileDescription`](upsource:///xml/dom-openapi/src/com/intellij/util/xml/DomFileDescription.java) class, pass to its constructor the root tag name and root element interface.
+Register it in <path>plugin.xml</path> using `com.intellij.dom.fileMetaData` extension point and specify `rootTagName` and `domVersion`/`stubVersion` attributes.
 
- >  If your plugin targets 2019.1 or later, please use extension point `com.intellij.dom.fileMetaData` instead and specify `rootTagName` and `domVersion`/`stubVersion` in `plugin.xml`.
+ >  When targeting 2019.1 or earlier, use `com.intellij.dom.fileDescription` extension point instead.
  >
  {type="note"}
 

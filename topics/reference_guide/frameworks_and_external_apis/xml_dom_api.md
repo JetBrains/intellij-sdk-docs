@@ -787,3 +787,4 @@ The following bundled open-source plugins make (heavy) use of DOM:
 - [Plugin DevKit](upsource:///plugins/devkit/devkit-core)
 - [Maven](upsource:///plugins/maven)
 - [Struts 2](https://github.com/JetBrains/intellij-plugins/tree/master/struts2) (Ultimate Edition)
+- [IntelliJ Platform Explorer - OSS plugins using DOM](https://jb.gg/ipe?extensions=com.intellij.dom.fileMetaData)

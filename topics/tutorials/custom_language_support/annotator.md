@@ -8,15 +8,14 @@ This section adds annotation functionality to support the Simple Language in the
 **Reference**: [Annotator](syntax_highlighting_and_error_highlighting.md#annotator)
 
 ## Required Project Configuration Changes
-Classes defined in this step of the tutorial depend on `com.intellij.psi.PsiLiteralExpression` at runtime.
-Using `PsiLiteralExpression` [introduces a dependency](plugin_compatibility.md#modules-specific-to-functionality) on `com.intellij.modules.java`.
-Beginning in version 2019.2 of the IntelliJ Platform these dependencies are declared in `plugin.xml`:
+Classes defined in this step of the tutorial depend on `com.intellij.psi.PsiLiteralExpression` (the PSI representation for String literals in Java code) at runtime.
+Using `PsiLiteralExpression` [introduces a dependency](plugin_compatibility.md#modules-specific-to-functionality) on `com.intellij.java`.
 
-```xml
-  <depends>com.intellij.java</depends>
-```
-
-The dependency is also declared in the `build.gradle` file:
+Beginning in version 2019.2, a dependency on Java plugin [must be declared explicitly](https://blog.jetbrains.com/platform/2019/06/java-functionality-extracted-as-a-plugin/). 
+First, add a dependency on the Java plugin in Gradle build file:
+                                           
+<tabs>
+<tab title="build.gradle">
 
 ```groovy
 intellij {
@@ -24,12 +23,23 @@ intellij {
 }
 ```
 
-Or the following line in the project's `build.gradle.kts` file:
+</tab>
+
+<tab title="build.gradle.kts">
 
 ```kotlin
 intellij { 
   plugins.set(listOf("com.intellij.java"))
 }
+```
+
+</tab>
+</tabs>
+
+Then, declare the dependency in <path>plugin.xml</path> (use code insight)
+
+```xml
+  <depends>com.intellij.java</depends>
 ```
 
 ## Define an Annotator

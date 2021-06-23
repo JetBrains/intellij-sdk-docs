@@ -51,7 +51,12 @@ Note that you still need to put some default values (can be empty) in the Gradle
 
 ### Using Parameters for the Gradle Task
 Like using environment variables, you can also pass your token as a parameter to the Gradle task.
-For example, you can provide the parameter `-Dorg.gradle.project.intellijPublishToken=YOUR_HUB_TOKEN_HERE` on the command line or by putting it in the arguments of your Gradle run configuration.
+For example, you can provide the parameter 
+
+```bash
+-Dorg.gradle.project.intellijPublishToken=YOUR_HUB_TOKEN_HERE
+```
+on the command line or by putting it in the arguments of your Gradle run configuration.
 
 Note that also, in this case, you still need to put some default values in your Gradle properties.
 

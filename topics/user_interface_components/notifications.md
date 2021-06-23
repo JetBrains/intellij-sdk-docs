@@ -47,9 +47,11 @@ The `groupId` parameter of the [`Notification`](upsource:///platform/platform-ap
 
 To specify the preferred display type, you need to use [`NotificationGroup`](upsource:///platform/platform-api/src/com/intellij/notification/NotificationGroup.kt) to create notifications.
 
-Please see the following two paragraphs for setup, depending on the target platform version.
+Please see the following steps for setup, depending on the target platform version.
 
-##### NotificationGroup (2020.3 and later)
+<tabs>
+
+<tab title="2020.3 and later">
 
 `NotificationGroup` is registered in `plugin.xml` using `com.intellij.notificationGroup` extension point. Use `key` to provide a localized group display name.
 
@@ -76,8 +78,9 @@ public class MyNotifier {
 
 }
 ```
+</tab>
 
-##### NotificationGroup (Pre-2020.3)
+<tab title="Pre-2020.3">
 
 `NotificationGroup` is registered in code.
 
@@ -94,3 +97,6 @@ public class MyNotifier {
 
 }
 ```
+</tab>
+
+</tabs>

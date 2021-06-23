@@ -19,9 +19,9 @@ Presentation [Writing IntelliJ Plugins for Kotlin](https://www.youtube.com/watch
 For plugins that should work for all JVM languages in the same way.
 
 Some known examples are:
-* Spring Framework support
-* Android Studio
-* Plugin DevKit
+* [Spring Framework](spring_api.md)
+* [Android Studio](android_studio.md)
+- [Plugin DevKit](upsource:///plugins/devkit/devkit-core)
 
 ### Which languages are supported?
 
@@ -38,11 +38,11 @@ There are experimental [`UastCodeGenerationPlugin`](upsource:///uast/uast-common
 
 ## Working with UAST
 
-The base element of UAST is [`UElement.kt`](upsource:///uast/uast-common/src/org/jetbrains/uast/baseElements/UElement.kt). 
+The base element of UAST is [`UElement`](upsource:///uast/uast-common/src/org/jetbrains/uast/baseElements/UElement.kt). 
 All common base sub-interfaces are located in the [declarations](upsource:///uast/uast-common/src/org/jetbrains/uast/declarations) and [expressions](upsource:///uast/uast-common/src/org/jetbrains/uast/expressions) directories of the **uast** module.
 
 All these sub-interfaces provide methods to get the information about common syntax elements: 
-[`UClass.kt`](upsource:///uast/uast-common/src/org/jetbrains/uast/declarations/UClass.kt) about class declarations, [`UIfExpression.kt`](upsource:///uast/uast-common/src/org/jetbrains/uast/controlStructures/UIfExpression.kt) about conditional expressions, and so on.
+[`UClass`](upsource:///uast/uast-common/src/org/jetbrains/uast/declarations/UClass.kt) about class declarations, [`UIfExpression`](upsource:///uast/uast-common/src/org/jetbrains/uast/controlStructures/UIfExpression.kt) about conditional expressions, and so on.
 
 ### PSI to UAST Conversion
 
@@ -59,14 +59,16 @@ To convert `PsiElement` to the specific `UElement`, use one of the following app
 - for conversion to one of different given options:
 
 ```java
-  UastFacade.INSTANCE.convertElementWithParent(element, new Class[]{UInjectionHost.class, UReferenceExpression.class})
+  UastFacade.INSTANCE.convertElementWithParent(element,
+        new Class[]{UInjectionHost.class, UReferenceExpression.class})
 ```
 
 - in some cases, `PsiElement` could represent several `UElement`s. For instance, the parameter of a primary constructor in Kotlin is `UField` and `UParameter` at the same time. 
   When needing all options, use:
 
 ```java
-  UastFacade.INSTANCE.convertToAlternatives(element, new Class[]{UField.class, UParameter.class}
+  UastFacade.INSTANCE.convertToAlternatives(element, 
+        new Class[]{UField.class, UParameter.class}
 ```
 
  > It is always better to convert to the specific type of `UElement`, rather than to convert without type and then cast to the specific type:
@@ -191,11 +193,11 @@ could be different, not only in the number of elements, but also in their order.
 
 ## Using UAST in Plugins
 
-To register extensions applicable to UAST, specify `language="UAST"` in `plugin.xml`.
+To register extensions applicable to UAST, specify `language="UAST"` in <path>plugin.xml</path>.
              
 ### Inspecting UAST Tree
 
-To inspect UAST Tree, invoke [internal action](enabling_internal.md) **Tools \| Internal Actions \| UAST \| Dump UAST Tree (By Each PsiElement)**.
+To inspect UAST Tree, invoke [internal action](enabling_internal.md) <menupath>Tools | Internal Actions | UAST | Dump UAST Tree (By Each PsiElement)</menupath>.
             
 ### Inspections
 

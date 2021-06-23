@@ -7,7 +7,7 @@ This test checks if the Simple Language formatter, implemented in the [Formatter
  >  See also [`FormatterTestCase`](upsource:///platform/testFramework/src/com/intellij/psi/formatter/FormatterTestCase.java) as convenient base class.
 
 ## Define Test Data
-Create the `FormatterTestData.simple` properties file in the `testData` directory.
+Create the <path>FormatterTestData.simple</path> file in the <path>testData</path> directory.
 
 ```bash
 ```
@@ -18,7 +18,7 @@ Add the `testFormatter()` method to the `SimpleCodeInsightTest` class [previousl
 * Again, this method configures the test fixture by using the test file.
 * The code style Simple Language settings for spaces and blank lines are set.
 * The file is then formatted according to the settings.
-* The formatted file is compared to the expected results in the benchmark file `DefaultTestData.simple`.
+* The formatted file is compared to the expected results in the benchmark file <path>DefaultTestData.simple</path>.
 
 ```java
 ```

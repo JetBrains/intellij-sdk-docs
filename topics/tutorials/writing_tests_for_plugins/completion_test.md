@@ -5,13 +5,13 @@
 This test checks if the Simple Language code completion functionality, implemented in the [Reference Contributor](reference_contributor.md) section of the Custom Language Support Tutorial, works as expected.
 
 ## Define Test Data
-Create the `DefaultTestData.simple` properties file in the `testData` directory.
+Create the <path>DefaultTestData.simple</path> file in the <path>testData</path> directory.
 
 ```bash
 ```
 {src="simple_language_plugin/src/test/testData/DefaultTestData.simple"}
 
-Create a test input Java file `CompleteTestData.java` in the `testData` directory.
+Create a test input Java file <path>CompleteTestData.java</path> in the <path>testData</path> directory.
 This file contains a Simple Language reference within the Java code at `<caret>`.
 
 ```java
@@ -20,7 +20,12 @@ This file contains a Simple Language reference within the Java code at `<caret>`
 
 ## Define a Test
 Subclass [`LightJavaCodeInsightFixtureTestCase`](upsource:///java/testFramework/src/com/intellij/testFramework/fixtures/LightJavaCodeInsightFixtureTestCase.java) to create `SimpleCodeInsightTest`.
-Override `getTestDataPath()`, and return the path from the root of this plugin module to the `testData` directory.
+Override `getTestDataPath()`, and return the path from the root of this plugin module to the <path>testData</path> directory.
+                              
+```java
+```
+{src="simple_language_plugin/src/test/java/org/intellij/sdk/language/SimpleCodeInsightTest.java" include-symbol="getTestDataPath"}
+
 
 At this point only one test is defined in `SimpleCodeInsightTest`: `testCompletion()`.
 This method:
@@ -30,35 +35,11 @@ This method:
 * Checks the list of returned lookup strings to ensure it matches the completion variants provided by the reference.
 
 ```java
-public class SimpleCodeInsightTest extends LightJavaCodeInsightFixtureTestCase {
-  @Override
-  protected String getTestDataPath() {
-    return "src/test/testData";
-  }
-
-  public void testCompletion() {
-    myFixture.configureByFiles("CompleteTestData.java", "DefaultTestData.simple");
-    myFixture.complete(CompletionType.BASIC);
-    List<String> lookupElementStrings = myFixture.getLookupElementStrings();
-    assertNotNull(lookupElementStrings);
-    assertSameElements(lookupElementStrings, "key with spaces", "language", "message", "tab", "website");
-  }
-}
 ```
+{src="simple_language_plugin/src/test/java/org/intellij/sdk/language/SimpleCodeInsightTest.java" include-symbol="testCompletion"}
+
 
 A number of related methods exist in `CodeInsightTestFixture` for testing completion and lookup elements, e.g., when testing completion variants and requiring only one testdata file `CodeInsightTestFixture.testCompletionVariants()`.                                                                     
 
 ## Run the Test
-Run the test by:
-* Opening the **Gradle** Tool Window.
-* Select the `simple_language_plugin`.
-  You may need to reimport it as a Gradle project.
-* Drill down under `simple_language_plugin` to *Tasks*, *verification*, *test* task.
-* Run the *test* task.
-
-The results are displayed in the **Run** Tool Window, and also written to the `simple_language_plugin/build/test-results/test/` directory.
-
-If the **Run** Tool Window displays the error *Test events were not received*, do the following:
-* In the **Gradle** Tool Window, drill down under `simple_language_plugin` to *Tasks*, *build*, *clean* task.
-* Run the *clean* task, which deletes the `simple_language_plugin/build/` directory.
-* Retry the test.
+[Run](completion_test.md#run-the-test) the test and make sure it's green.

@@ -7,38 +7,18 @@ A _Go to Symbol Contributor_ helps the user to navigate to any PSI element by it
 **Reference**: [Go to Class and Go to Symbol](go_to_class_and_go_to_symbol.md)
 
 ## Define a Helper Method for Generated PSI Elements
-To specify how a PSI element looks like in the **Go To Symbol** popup window, **Structure** tool window, or other components, it should implement `getPresentation()`.
+To specify how a PSI element looks like in the <menupath>Navigate | Symbol</menupath> popup window, <control>Structure</control> tool window, or other components, it should implement `getPresentation()`.
 This method gets defined in the utility class `SimplePsiImplUtil`, and the parser and PSI classes must be regenerated.
 Add the following method to `SimplePsiImplUtil`:
 
 ```java
-public static ItemPresentation getPresentation(final SimpleProperty element) {
-    return new ItemPresentation() {
-      @Nullable
-      @Override
-      public String getPresentableText() {
-        return element.getKey();
-      }
-
-      @Nullable
-      @Override
-      public String getLocationString() {
-        PsiFile containingFile = element.getContainingFile();
-        return containingFile == null ? null : containingFile.getName();
-      }
-
-      @Override
-      public Icon getIcon(boolean unused) {
-        return SimpleIcons.FILE;
-      }
-    };
-  }
 ```
+{src="simple_language_plugin/src/main/java/org/intellij/sdk/language/psi/impl/SimplePsiImplUtil.java" include-symbol="getPresentation"}
 
 ## Update Grammar and Regenerate the Parser
-Now add the `SimplePsiImplUtil.getPresentation()` to the `property` methods definition in the `Simple.bnf` grammar file by replacing the `property` definition with the lines below.
+Now add the `SimplePsiImplUtil.getPresentation()` to the `property` methods definition in the <path>Simple.bnf</path> grammar file by replacing the `property` definition with the lines below.
 Don't forget to regenerate the parser after updating the file!
-Right-click on the `Simple.bnf` file and select **Generate Parser Code**.
+Right-click on the <path>Simple.bnf</path> file and select <control>Generate Parser Code</control>.
 
 ```java
 property ::= (KEY? SEPARATOR VALUE?) | KEY {
@@ -48,8 +28,8 @@ property ::= (KEY? SEPARATOR VALUE?) | KEY {
 }
 ```
 
-## Define a Go to Symbol Contributor
-To enable the `simple_language_plugin` to contribute items to **Navigate \| Class..., File..., Symbol...** lists, subclass [`ChooseByNameContributor`](upsource:///platform/lang-api/src/com/intellij/navigation/ChooseByNameContributor.java) to create `SimpleChooseByNameContributor`:
+## Define a Go To Symbol Contributor
+To contribute items to <menupath>Navigate | Symbol</menupath> results, subclass [`ChooseByNameContributor`](upsource:///platform/lang-api/src/com/intellij/navigation/ChooseByNameContributor.java) to create `SimpleChooseByNameContributor`:
 
 ```java
 ```
@@ -68,6 +48,6 @@ The `SimpleChooseByNameContributor` implementation is registered with the Intell
 ## Run the Project
 Run the plugin by using the Gradle [runIde task](gradle_prerequisites.md#running-a-simple-gradle-based-intellij-platform-plugin).
 
-The IDE now supports navigating to a property definition by name pattern via **Navigate \| Symbol** action.
+The IDE now supports navigating to a property definition by name pattern via <menupath>Navigate | Symbol</menupath> action.
 
 ![Go To Symbol](go_to_symbol.png){width="800"}

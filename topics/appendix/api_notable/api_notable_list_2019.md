@@ -59,7 +59,7 @@ New API for Editor Inlay Hints
 : Use new dedicated extension point `com.intellij.highlightingPassFactory`.
 
 `com.intellij.openapi.fileTypes.FileTypeFactory` deprecated
-: When registering file type via file extension, pattern or exact file name matching, use extension point `com.intellij.fileType` instead (see [Sample](language_and_filetype.md#register-the-filetype-directly)).
+: When registering file type via file extension, pattern or exact file name matching, use extension point `com.intellij.fileType` instead (see [Sample](language_and_filetype.md#register-the-filetype)).
 
 `@org.jetbrains.annotations.ApiStatus.NonExtendable`
 : Indicates that the annotated API class, interface, or method must not get extended, implemented, or overridden by external plugins but can only be obtained or instantiated for classes and interfaces, or called for methods.

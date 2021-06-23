@@ -23,18 +23,20 @@ This can be accomplished with the following steps:
 * Call [`PsiDocumentManager.getInstance().getDocument()`](upsource:///platform/core-api/src/com/intellij/psi/PsiDocumentManager.java) to get the document corresponding to the code fragment;
 * Pass the returned document to the [`EditorTextField`](upsource:///platform/platform-impl/src/com/intellij/ui/EditorTextField.java) constructor or its `setDocument()` method.
 
-E.g.:
-
 ```java
-PsiFile psiFile = PsiDocumentManager.getInstance(editor.getProject()).getPsiFile(editor.getDocument());
+PsiFile psiFile = PsiDocumentManager.getInstance(project)
+        .getPsiFile(editor.getDocument());
 PsiElement element = psiFile.findElementAt(editor.getCaretModel().getOffset());
 
-PsiExpressionCodeFragment code = JavaCodeFragmentFactory.getInstance(editor.getProject())
-                                   .createExpressionCodeFragment("", element, null, true);
+PsiExpressionCodeFragment code = 
+        JavaCodeFragmentFactory.getInstance(project)
+        .createExpressionCodeFragment("", element, null, true);
 
-Document document = PsiDocumentManager.getInstance(editor.getProject()).getDocument(code);
+Document document =
+        PsiDocumentManager.getInstance(project).getDocument(code);
 
-EditorTextField myInput = new EditorTextField(document, editor.getProject(), JavaFileType.INSTANCE);
+EditorTextField myInput = 
+        new EditorTextField(document, project, JavaFileType.INSTANCE);
 ```
  
  > If your plugin depends on Java functionality and targets 2019.2 or later, please make sure to follow the steps from this [blog post](https://blog.jetbrains.com/platform/2019/06/java-functionality-extracted-as-a-plugin/).

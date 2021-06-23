@@ -63,14 +63,27 @@ When the file is changed, the annotator is called incrementally to process only 
 ### Errors/Warning
 See [Inspections](https://jetbrains.design/intellij/text/inspections/) topic in IntelliJ Platform UI Guidelines on how to write message texts for highlighting/quick fixes.
 
-To highlight a region of text as a warning or error (2020.1 and later):
+To highlight a region of text as a warning or error:
+
+<tabs>
+
+<tab title="2020.1 and later">
+
 ```java
     holder.newAnnotation(HighlightSeverity.WARNING, "Invalid code") // or HighlightSeverity.ERROR
         .withFix(new MyFix(psiElement))
         .create();
 ```
 
-In previous versions, call `createWarningAnnotation()`/`createErrorAnnotation()` on the [`AnnotationHolder`](upsource:///platform/analysis-api/src/com/intellij/lang/annotation/AnnotationHolder.java), and optionally calls `registerFix()` on the returned [`Annotation`](upsource:///platform/analysis-api/src/com/intellij/lang/annotation/Annotation.java) object to add a quick fix for the error or warning.
+</tab>
+
+<tab title="Pre-2020.1">
+
+Call `createWarningAnnotation()`/`createErrorAnnotation()` on the [`AnnotationHolder`](upsource:///platform/analysis-api/src/com/intellij/lang/annotation/AnnotationHolder.java), and optionally calls `registerFix()` on the returned [`Annotation`](upsource:///platform/analysis-api/src/com/intellij/lang/annotation/Annotation.java) object to add a quick fix for the error or warning.
+
+</tab>
+
+</tabs>
 
 ### Syntax
 To apply additional syntax highlighting (2020.1 and later):

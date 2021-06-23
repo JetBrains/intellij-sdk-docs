@@ -77,7 +77,7 @@ The Gradle plugin will fetch the specified JetBrains Runtime as needed.
 ### Managing Directories Used by the Gradle Plugin
 There are several attributes to control where the Gradle plugin places directories for downloads and use by the IDE Development Instance.
 
-The location of the [sandbox home](ide_development_instance.md#sandbox-home-location-for-gradle-based-plugin-projects) directory and its subdirectories can be controlled with Gradle plugin attributes.
+The location of the [sandbox home](ide_development_instance.md#the-development-instance-sandbox-directory) directory and its subdirectories can be controlled with Gradle plugin attributes.
 The `intellij.sandboxDirectory` attribute is used to set the path for the sandbox directory to be used while running the plugin in an IDE Development Instance.
 Locations of the sandbox [subdirectories](ide_development_instance.md#development-instance-settings-caches-logs-and-plugins) can be controlled using the `runIde.configDirectory`, `runIde.pluginsDirectory`, and `runIde.systemDirectory` attributes.
 If the `intellij.sandboxDirectory` path is explicitly set, the subdirectory attributes default to the new sandbox directory.

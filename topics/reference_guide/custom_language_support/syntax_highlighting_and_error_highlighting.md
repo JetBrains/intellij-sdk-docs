@@ -75,12 +75,24 @@ In previous versions, call `createWarningAnnotation()`/`createErrorAnnotation()`
 ### Syntax
 To apply additional syntax highlighting (2020.1 and later):
 
+<tabs>
+
+<tab title="2020.1 and later">
+
 ```java
     holder.newSilentAnnotation(HighlightSeverity.INFORMATION)
             .range(rangeToHighlight).textAttributes(MyHighlighter.EXTRA_HIGHLIGHT_ATTRIBUTE).create();
 ```
 
-In previous versions, call `AnnotationHolder.createInfoAnnotation()` with an empty message and then [`Annotation.setTextAttributes()`](upsource:///platform/analysis-api/src/com/intellij/lang/annotation/Annotation.java).
+</tab>
+
+<tab title="Pre-2020.1">
+
+Call `AnnotationHolder.createInfoAnnotation()` with an empty message and then [`Annotation.setTextAttributes()`](upsource:///platform/analysis-api/src/com/intellij/lang/annotation/Annotation.java).
+
+</tab>
+
+</tabs>
                                       
 **Examples:**
 - [`Annotator`](upsource:///plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/PropertiesAnnotator.java) for [Properties language plugin](upsource:///plugins/properties)

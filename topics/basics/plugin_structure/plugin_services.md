@@ -77,7 +77,8 @@ To provide custom implementation for test/headless environment, specify `testSer
 Getting service doesn't need a read action and can be performed from any thread.
 If service is requested from several threads, it will be initialized in the first thread, and other threads will be blocked until service is fully initialized.
 
-To retrieve a service in Java code:
+<tabs>
+<tab title="Java">
 
 ```java
 MyApplicationService applicationService = ApplicationManager.getApplication().getService(MyApplicationService.class);
@@ -85,13 +86,18 @@ MyApplicationService applicationService = ApplicationManager.getApplication().ge
 MyProjectService projectService = project.getService(MyProjectService.class)
 ```
 
-In Kotlin code, use convenience methods:
+</tab>
+
+<tab title="Kotlin">
 
 ```kotlin
 val applicationService = service<MyApplicationService>()
 
 val projectService = project.service<MyProjectService>()
 ```
+</tab>
+
+</tabs>
 
 ## Project Service Sample
 This minimal sample shows [Light Service](#light-services) `ProjectService` interacting with another project level service `AnotherService` (not shown here).

@@ -1,6 +1,6 @@
 [//]: # (title: Adding Live Templates to a Plugin)
 
-<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 This tutorial illustrates how to add default Custom Live Templates to an IntelliJ Platform plugin, and assign valid contexts for these templates based on the surrounding code and file type.
 In addition, the tutorial discusses how to export existing Live Templates, and bundle them within a plugin.
@@ -78,13 +78,12 @@ Consider reusing one of the many existing template context types that inherit fr
 
 ## Completing the Live Template Implementation
 Depending on the version of the IntelliJ Platform, different steps are used to complete the implementation of the feature.
+                  
+<tabs>
+<tab title="2020.1 and later">
 
-### Versions 2020.1 and Later
-For 2020.1 and later, follow this section to register the extension points and then proceed to the [Check Plugin](#check-plugin) section.
-
-#### Register Extension Points
 Using the `com.intellij.defaultLiveTemplates` and `com.intellij.liveTemplateContext` extension points, register the implementations with the IntelliJ Platform.
-The `file` attribute in the `defaultLiveTemplates` element specifies `path/filename` under the `src/main/resources` folder.
+The `file` attribute in the `defaultLiveTemplates` element specifies `path/filename` under the <path>src/main/resources</path> folder.
 
 ```xml
   <extensions defaultExtensionNs="com.intellij">
@@ -93,15 +92,12 @@ The `file` attribute in the `defaultLiveTemplates` element specifies `path/filen
   </extensions>
 ```
 
-Now go to the [Check Plugin](#check-plugin) section to test the template.
+</tab>
 
-### Versions 2019.3 and Earlier
-For older versions of the IntelliJ Platform follow this section to complete the implementation and register the extension points.
-Then proceed to the [Check Plugin](#check-plugin) section.
+<tab title="Versions 2019.3 and Earlier">
 
-#### Implement DefaultLiveTemplatesProvider
-The `MarkdownTemplateProvider` tells the Platform where to find the Live Template settings file.
-Make sure to include the full path to the file, relative to the `src/main/resources` directory, excluding the file extension.
+The `MarkdownTemplateProvider` implementing [`DefaultLiveTemplatesProvider`](upsource:///platform/lang-impl/src/com/intellij/codeInsight/template/impl/DefaultLiveTemplatesProvider.java) tells the Platform where to find the Live Template settings file.
+Make sure to include the full path to the file, relative to the <path>src/main/resources</path> directory, excluding the file extension.
 
 ```java
 package org.intellij.sdk.liveTemplates;
@@ -123,7 +119,6 @@ public class MarkdownTemplateProvider implements DefaultLiveTemplatesProvider {
 }
 ```
 
-#### Register DefaultLiveTemplatesProvider Extension Point
 Using the `com.intellij.defaultLiveTemplatesProvider` and `com.intellij.liveTemplateContext` extension points, register the implementations with the IntelliJ Platform.
 
 ```xml
@@ -132,6 +127,9 @@ Using the `com.intellij.defaultLiveTemplatesProvider` and `com.intellij.liveTemp
     <liveTemplateContext implementation="org.intellij.sdk.liveTemplates.MarkdownContext"/>
   </extensions>
 ```
+
+</tab>
+</tabs>
 
 ## Check Plugin
 Now verify the plugin is working correctly.

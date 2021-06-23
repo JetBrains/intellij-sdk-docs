@@ -3,7 +3,7 @@
 
 Use this reference of build number ranges to specify the correct `since-build` and `until-build` values in your plugin descriptor.
 
-Setting the actual values in `plugin.xml` is usually managed by `patchPluginXml` Gradle task, see [Patching the Plugin Configuration File](gradle_guide.md#patching-the-plugin-configuration-file) for details.
+Setting the actual values in <path>plugin.xml</path> is usually managed by `patchPluginXml` Gradle task, see [Patching the Plugin Configuration File](gradle_guide.md#patching-the-plugin-configuration-file) for details.
 
  > Compatibility with the specified version range (and compatible products) must always be verified using [Plugin Verifier](api_changes_list.md#verifying-compatibility) to ensure binary compatibility.
  > 
@@ -51,6 +51,7 @@ Usually you should omit the product ID and use only the branch number and build 
 
 | Branch number                                                   | IntelliJ Platform version |
 | --------------------------------------------------------------- | ------------------------- |
+| [212](https://github.com/JetBrains/intellij-community/tree/211) | 2021.2                    |
 | [211](https://github.com/JetBrains/intellij-community/tree/211) | 2021.1                    |
 | [203](https://github.com/JetBrains/intellij-community/tree/203) | 2020.3 **NOTE** Java 11 is now required ([blog post](https://blog.jetbrains.com/platform/2020/09/intellij-project-migrates-to-java-11/)) |
 | [202](https://github.com/JetBrains/intellij-community/tree/202) | 2020.2                    |

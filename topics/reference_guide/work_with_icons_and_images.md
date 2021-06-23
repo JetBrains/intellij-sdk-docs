@@ -26,6 +26,9 @@ The `getIcon()` method of [`IconLoader`](upsource:///platform/util/ui/src/com/in
  {type="note"}
 
 Then define a class/interface in a top-level package called `icons` holding icon constants as static fields:
+                            
+<tabs>
+<tab title="Java">
 
 ```java
 package icons;
@@ -36,6 +39,10 @@ public interface DemoPluginIcons {
   Icon FileType = IconLoader.getIcon("/icons/myLangFileType.png", DemoPluginIcons.class);
 }
 ```
+
+</tab>
+       
+<tab title="Kotlin">
 
 When using Kotlin, fields must be annotated with `@JvmField`:
 
@@ -50,6 +57,9 @@ object DemoPluginIcons {
   // ...
 }
 ```
+
+</tab>
+</tabs>      
 
 Use these constants inside <path>plugin.xml</path> when specifying `icon` attribute for `<action>` or extension points, as well in [`@Presentation`](upsource:///platform/platform-api/src/com/intellij/ide/presentation/Presentation.java) `icon` attribute.
 Note that the package name `icons` will be automatically prefixed and must not be specified.

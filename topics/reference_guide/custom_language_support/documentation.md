@@ -15,7 +15,7 @@ In addition to showing the documentation, the `getQuickNavigateInfo()` method re
 when the user hovers over an element with <shortcut>Ctrl</shortcut>/<shortcut>Cmd</shortcut> pressed.
 
 Custom actions can also be added to documentation inlays and documentation popups via
-`com.intellij.codeInsight.documentation.DocumentationActionProvider` registered in the
+[`DocumentationActionProvider`](upsource:///platform/lang-impl/src/com/intellij/codeInsight/documentation/DocumentationActionProvider.java) registered in the
 `com.intellij.documentationActionProvider` extension point.
 
 

@@ -94,7 +94,7 @@ Continuing with the example from [Project Setup](#project-setup) above, the depe
 ```
 
 ## Optional Plugin Dependencies
-A project can also specify an optional plugin dependency.
+A plugin can also specify an optional plugin dependency.
 In this case, the plugin will load even if the plugin it depends on is not installed or enabled, but part of the plugin's functionality will not be available.
 
 Declare additional `optional="true"` and `config-file` attribute pointing to optional plugin descriptor file:
@@ -108,7 +108,7 @@ Declare additional `optional="true"` and `config-file` attribute pointing to opt
  {type="note"}
 
 For example, if a plugin adds additional highlighting for Java and Kotlin files, use the following setup.
-The main <path>plugin.xml</path> will define an annotator for Java and specify an optional dependency on the Kotlin plugin (`org.jetbrains.kotlin`):
+The main <path>plugin.xml</path> will define an annotator for Java and specify an optional dependency on the Kotlin plugin (plugin ID `org.jetbrains.kotlin`):
 
 <path>plugin.xml</path>
 ```xml

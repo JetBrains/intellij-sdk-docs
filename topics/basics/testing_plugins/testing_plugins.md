@@ -30,13 +30,17 @@ It is fully integrated with Gradle-based setup via `runIdeForUiTests` task.
 Please do not use _platform/testGuiFramework_; it is reserved for internal use.
 
 ## Topics
+
+  > Check out [this step-by-step tutorial](writing_tests_for_plugins.md) teaching how to write and run automated tests for your custom language plugin.
+  > Also, code samples 
+  > [comparing_references_inspection](https://github.com/JetBrains/intellij-sdk-docs/tree/main/code_samples/comparing_references_inspection)
+  > and [conditional_operator_intention](https://github.com/JetBrains/intellij-sdk-docs/tree/main/code_samples/conditional_operator_intention) demonstrate using tests.
+  > 
+ {type="note"}
+ 
 * [Tests and Fixtures](tests_and_fixtures.md)
 * [Light and Heavy Tests](light_and_heavy_tests.md)
 * [Test Project and Testdata Directories](test_project_and_testdata_directories.md)
 * [Writing Tests](writing_tests.md)
 * [Testing Highlighting](testing_highlighting.md)
 * [Testing FAQ](testing_faq.md)
-
-  > Check out [this step-by-step tutorial](writing_tests_for_plugins.md) teaching how to write and run automated tests for your custom language plugin (source code included).
-  > 
- {type="tip"}

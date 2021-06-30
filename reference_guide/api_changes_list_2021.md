@@ -111,6 +111,13 @@ Please see [Incompatible API Changes](api_changes_list.md) on how to verify comp
 `org.jetbrains.uast.UAnnotated.getUAnnotations()` marked abstract
 : Previously this circularly referenced `org.jetbrains.uast.UAnnotated.getAnnotations()`, which has been removed.
 
+`com.intellij.database.actions.DdlActions.DeleteProvider1` class removed
+: Use `com.intellij.database.actions.DbDeleteProvider#getDeleteProvider` instead.
+
+`com.intellij.database.model.RawConnectionConfig.getEffectiveUrl(Project)` method removed
+: Use `com.intellij.database.model.RawConnectionConfig.getUrl()` instead. Or use `com.intellij.database.dataSource.DatabaseConnectionEstablisher#processInterceptors`
+
+
 ### Performance Testing Plugin 2021.2
 
 `com.jetbrains.performancePlugin.CommandProvider.getCommands()` method return type changed from `java.util.List` to `java.util.Map`

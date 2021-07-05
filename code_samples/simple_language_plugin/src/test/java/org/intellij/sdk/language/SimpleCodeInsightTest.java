@@ -4,8 +4,11 @@ package org.intellij.sdk.language;
 
 import com.intellij.application.options.CodeStyle;
 import com.intellij.codeInsight.completion.CompletionType;
+import com.intellij.codeInsight.documentation.DocumentationManager;
 import com.intellij.codeInsight.generation.actions.CommentByLineCommentAction;
+import com.intellij.lang.documentation.DocumentationProvider;
 import com.intellij.openapi.command.WriteCommandAction;
+import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiReference;
 import com.intellij.psi.codeStyle.CodeStyleManager;
 import com.intellij.testFramework.fixtures.LightJavaCodeInsightFixtureTestCase;
@@ -82,6 +85,23 @@ public class SimpleCodeInsightTest extends LightJavaCodeInsightFixtureTestCase {
             myFixture.getReferenceAtCaretPositionWithAssertion("ReferenceTestData.java", "DefaultTestData.simple");
     final SimpleProperty resolvedSimpleProperty = assertInstanceOf(referenceAtCaret.resolve(), SimpleProperty.class);
     assertEquals("https://en.wikipedia.org/", resolvedSimpleProperty.getValue());
+  }
+
+  public void testDocumentation() {
+    myFixture.configureByFiles("DocumentationTestData.java", "DocumentationTestData.simple");
+    final PsiElement originalElement = myFixture.getElementAtCaret();
+    PsiElement element = DocumentationManager
+        .getInstance(getProject())
+        .findTargetElement(myFixture.getEditor(), originalElement.getContainingFile(), originalElement);
+
+    if (element == null) {
+      element = originalElement;
+    }
+
+    final DocumentationProvider documentationProvider = DocumentationManager.getProviderFromElement(element);
+    final String generateDoc = documentationProvider.generateDoc(element, originalElement);
+    assertNotNull(generateDoc);
+    assertSameLinesWithFile(getTestDataPath() + "/" + "DocumentationTest.html.expected", generateDoc);
   }
 
 }

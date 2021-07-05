@@ -144,6 +144,10 @@ Please see [Incompatible API Changes](api_changes_list.md) on how to verify comp
 `org.jetbrains.plugins.github.util.GithubSettings.isAuthConfigured` method removed
 : Use `org.jetbrains.plugins.github.authentication.GithubAuthenticationManager` instead.
 
+### Spring 2021.2
+
+`icons.SpringApiIcons` class moved to package `com.intellij.spring`.
+
 ## 2021.1
                               
 ### Changes in IntelliJ Platform 2021.1

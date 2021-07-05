@@ -79,7 +79,7 @@ Your <path>build.gradle</path> file may look like so:
 plugins {
     id "java"
     id "org.jetbrains.kotlin.jvm" version "1.4.32"
-    id "org.jetbrains.intellij" version "1.0"
+    id "org.jetbrains.intellij" version "1.1.2"
 }
 
 apply plugin: "kotlin"
@@ -133,7 +133,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
     id("java")
     id("org.jetbrains.kotlin.jvm") version "1.4.32"
-    id("org.jetbrains.intellij") version "1.0"
+    id("org.jetbrains.intellij") version "1.1.2"
 }
 
 group = "com.your.company.name"

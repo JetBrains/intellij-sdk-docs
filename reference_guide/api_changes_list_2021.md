@@ -149,6 +149,9 @@ Please see [Incompatible API Changes](api_changes_list.md) on how to verify comp
 `icons.SpringApiIcons` class moved to package `com.intellij.spring`
 : Use `com.intellij.spring.SpringApiIcons` instead.
 
+`icons.SpringApiIcons.Gutter` class moved to package `com.intellij.spring`
+: Use `com.intellij.spring.SpringApiIcons.Gutter` instead.
+
 ## 2021.1
                               
 ### Changes in IntelliJ Platform 2021.1

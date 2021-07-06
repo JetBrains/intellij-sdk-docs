@@ -93,12 +93,12 @@ Usage of [Extension Points](plugin_extensions.md) which are deprecated or annota
 
 The following pages list the breaking changes in IDE and plugin releases with required/recommended steps to take by plugin authors.
 
-* [**Changes in 2021.***](api_changes_list_2021.md)
-* [**Changes in 2020.***](api_changes_list_2020.md)
-* [**Changes in 2019.***](api_changes_list_2019.md)
-* [**Changes in 2018.***](api_changes_list_2018.md)
-* [**Changes in 2017.***](api_changes_list_2017.md)
-* [**Changes in 2016.***](api_changes_list_2016.md)
+* [Changes in 2021.*](api_changes_list_2021.md)
+* [Changes in 2020.*](api_changes_list_2020.md)
+* [Changes in 2019.*](api_changes_list_2019.md)
+* [Changes in 2018.*](api_changes_list_2018.md)
+* [Changes in 2017.*](api_changes_list_2017.md)
+* [Changes in 2016.*](api_changes_list_2016.md)
                                                                                        
 ## Library Updates
 

@@ -91,4 +91,4 @@ Massive batches of VFS events can be pre-processed in background, see [`AsyncFil
 
 #### Don't block EDT by long non-cancellable `ReadAction`s in background threads
 
-See [General Threading Rules](general_threading_rules.md), especially its section on [*Read Action Cancellability*](general_threading_rules.md#read-action-cancellability).
+See [General Threading Rules](general_threading_rules.md), especially its section on [Read Action Cancellability](general_threading_rules.md#read-action-cancellability).

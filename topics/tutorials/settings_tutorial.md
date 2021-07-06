@@ -3,7 +3,7 @@
 <!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 ## Introduction
-As discussed in the [_Settings_ Guide](settings_guide.md), plugins can add Settings to IntelliJ Platform-based IDEs.
+As discussed in the [Settings Guide](settings_guide.md), plugins can add Settings to IntelliJ Platform-based IDEs.
 The IDE displays the Settings in response to a user choosing **Settings/Preferences**.
 Custom Settings are displayed and function just like those native to the IDE.
 

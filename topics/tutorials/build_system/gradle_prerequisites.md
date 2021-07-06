@@ -169,7 +169,7 @@ Converting a [DevKit-based](using_dev_kit.md) plugin project to a Gradle-based p
     (It should be pre-filled from the <control>ArtifactId</control>)
   * Set the <control>Location</control> to the directory of the existing plugin.
 * Click <control>Finish</control> to create the new Gradle-based plugin.
-* [Add more modules](https://www.jetbrains.com/help/idea/gradle.html#gradle_add_module) using Gradle [_Source Sets_](https://www.jetbrains.com/help/idea/gradle.html#gradle_source_sets) as needed.
+* [Add more modules](https://www.jetbrains.com/help/idea/gradle.html#gradle_add_module) using Gradle [Source Sets](https://www.jetbrains.com/help/idea/gradle.html#gradle_source_sets) as needed.
 
 ## Running a Simple Gradle-Based IntelliJ Platform Plugin
 Gradle projects are run from the IDE's Gradle Tool window.

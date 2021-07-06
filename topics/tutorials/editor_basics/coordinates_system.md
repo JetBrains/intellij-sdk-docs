@@ -1,6 +1,6 @@
 [//]: # (title: 2. Editor Coordinates System. Positions and Offsets)
 
-<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 The previous tutorial [Working with Text](working_with_text.md) demonstrated how to use actions to access a caret placed in a document open in an editor.
 The examples replaced selected text in a document by using information about the caret.
@@ -38,7 +38,7 @@ public class EditorAreaIllustration extends AnAction {
 ## Editor Coordinate Systems
 When a `Document` is opened, the `Editor` assigns an internal, zero-based coordinate system to lines and columns in the `Document`.
 The first line in a `Document` and the first character in each line are assigned the zero position.
-Every character in a `Document` is assigned an [_Offset_](#caret-offset), which is a zero-based count of the characters from the beginning of the file to that character.
+Every character in a `Document` is assigned an [Offset](#caret-offset), which is a zero-based count of the characters from the beginning of the file to that character.
 These [LogicalPosition](#caret-logical-position) coordinates are used to describe the line and column number for a caret position.
 Note that the Logical Position coordinate system is different from the editor UI, which is one-based rather than zero-based.
 

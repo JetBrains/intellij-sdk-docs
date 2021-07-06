@@ -10,7 +10,7 @@ First and foremost, we should keep in mind our audience and their objectives:
 _Someone reading technical content is usually looking to answer a specific question.
 That question might be broad or narrowly-focused, but either way, our goal is to provide answers without distraction._
 
-The style of the Intellij Platform SDK documentation is captured by using a markup language named [_Markdown_](https://github.github.com/gfm/).
+The style of the Intellij Platform SDK documentation is captured by using a markup language named [Markdown](https://github.github.com/gfm/).
 
 ## Documentation Markup
 
@@ -74,7 +74,7 @@ General Markdown links have the default Markdown link style:
 #### Links to IntelliJ Platform Source
 Links to files in the IntelliJ Platform (`intellij-community`) repository use `upsource:///` instead of the full URL to the repository.
 The `upsource:///` URI effectively points to the root of the `intellij-community` repository.
-* `[_README.md_](upsource:///README.md)`{disable-links} links to general, non-code information files, use _italic_ style. ([_README.md_](upsource:///README.md))
+* `[README.md](upsource:///README.md)`{disable-links} links to general, non-code information files. ([README.md](upsource:///README.md))
   Examples of this file type include _LICENSE.txt_ and _README.md_.
 * `[`\`plugin.xml\``](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java)`{disable-links} links to declarative source code files, use `code` style. ([`plugin.xml`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java))
   Examples of this file type include: `settings.gradle`, `plugin.xml` or `theme_basics.theme.json`.

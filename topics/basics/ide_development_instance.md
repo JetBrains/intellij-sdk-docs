@@ -3,7 +3,7 @@
 <!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 A JetBrains feature for developing plugins is running or debugging a plugin project from within an IntelliJ Platform-based IDE such as IntelliJ IDEA.
-Selecting the [**runIde**](gradle_prerequisites.md#running-a-simple-gradle-based-intellij-platform-plugin) task for a Gradle-based project (or [**Run**](running_and_debugging_a_plugin.md) menu for a DevKit-based project) will launch a _Development Instance_ of the IDE with the plugin enabled.
+Selecting the [runIde](gradle_prerequisites.md#running-a-simple-gradle-based-intellij-platform-plugin) task for a Gradle-based project (or [Run](running_and_debugging_a_plugin.md) menu for a DevKit-based project) will launch a _Development Instance_ of the IDE with the plugin enabled.
 This page describes how to control some of the settings for the Development Instance.
 
  >  Please see also [Advanced Configuration](https://www.jetbrains.com/help/idea/tuning-the-ide.html) for general VM options and properties.
@@ -69,13 +69,13 @@ Please note that any unloading problems in a production environment will ask the
 
 Enabled by default for target platform 2020.2 or later (Gradle plugin version 0.4.22 and later).
 
-Set `autoReloadPlugins = true` in [**runIde**](gradle_prerequisites.md#running-a-simple-gradle-based-intellij-platform-plugin) task to enable it for earlier platform versions or `autoReloadPlugins = false` to disable it explicitly.
+Set `autoReloadPlugins = true` in [runIde](gradle_prerequisites.md#running-a-simple-gradle-based-intellij-platform-plugin) task to enable it for earlier platform versions or `autoReloadPlugins = false` to disable it explicitly.
 
 </tab>
 
 <tab title="DevKit">
 
-Add system property `idea.auto.reload.plugins` in the [run configuration](running_and_debugging_a_plugin.md) (DevKit-based) or [**runIde**](gradle_prerequisites.md#running-a-simple-gradle-based-intellij-platform-plugin) task (Gradle-based).
+Add system property `idea.auto.reload.plugins` in the [run configuration](running_and_debugging_a_plugin.md) (DevKit-based) or [runIde](gradle_prerequisites.md#running-a-simple-gradle-based-intellij-platform-plugin) task (Gradle-based).
 For [Gradle-based plugins](gradle_prerequisites.md) using `gradle-intellij-plugin` 0.4.17 or later, this property is set automatically.
 
 To disable auto-reload, set `idea.auto.reload.plugins` to `false` explicitly (2020.1.2+).

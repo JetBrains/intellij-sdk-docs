@@ -2,7 +2,7 @@
 <!DOCTYPE product-profile
         SYSTEM "https://resources.jetbrains.com/stardust/product-profile.dtd">
 <product-profile id="ijs" name="IntelliJ Platform Plugin SDK" start-page="welcome.md" status="release">
-    <toc-element id="welcome.md" accepts-web-file-names="welcome.html" toc-title="Home"/>
+    <toc-element id="welcome.md" toc-title="Home"/>
     <toc-element toc-title="Introduction">
         <toc-element id="intellij_platform.md">
             <toc-element id="platform_contributions.md"/>
@@ -68,7 +68,7 @@
             </toc-element>
         </toc-element>
         <toc-element id="performance.md"/>
-        <toc-element id="faq.md" accepts-web-file-names="faq.html"/>
+        <toc-element id="faq.md"/>
     </toc-element>
     <toc-element toc-title="Part II - Base Platform">
         <toc-element id="fundamentals.md" accepts-web-file-names="reference_guide.html,architectural_overview.html">
@@ -302,7 +302,7 @@
                 <toc-element id="spring_extension_point_list.md"/>
             </toc-element>
         </toc-element>
-        <toc-element id="phpstorm.md" accepts-web-file-names="phpstorm.html,setting_up_environment.html"
+        <toc-element id="phpstorm.md"
                      toc-title="PhpStorm">
             <toc-element id="php_open_api.md" accepts-web-file-names="php_open_api.html"
                          toc-title="Working with the PHP Open API">

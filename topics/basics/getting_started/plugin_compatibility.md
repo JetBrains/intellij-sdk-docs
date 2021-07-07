@@ -62,6 +62,11 @@ Note that not all products define and declare modules.
 For example, PhpStorm does not have its own module, but the product itself depends on (and ships with) the PHP language plugin. 
 A plugin project is compatible with PHP functionality if it declares a dependency on this PHP language plugin.
 
+ > A high-level feature comparison tool for JetBrains IDEs is available [here](https://www.jetbrains.com/products/compare/). 
+ >
+ {type="tip"}
+ 
+
 The following table lists **(1)** modules or built-in plugins that provide specific functionality, and the products currently shipping with them.
 
 | Module or Plugin for `<depends>` Element<br/>Declaration in <path>plugin.xml</path> File | <br/>Functionality                                                                                                                     | IntelliJ Platform-Based<br/>Product Compatibility                                                                                                                          |

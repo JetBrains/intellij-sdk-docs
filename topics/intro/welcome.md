@@ -20,7 +20,7 @@ Watch [Busy plugin developers series. Episode 0](https://www.youtube.com/watch?v
 
 ## Updates
                         
- > Gradle IntelliJ Plugin 1.0 is now available [What's New & Upgrade Instructions](https://lp.jetbrains.com/gradle-intellij-plugin)
+ > Gradle IntelliJ Plugin 1.x is now available [What's New & Upgrade Instructions](https://lp.jetbrains.com/gradle-intellij-plugin)
  >
  {type="note"}
 

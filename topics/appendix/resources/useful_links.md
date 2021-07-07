@@ -27,6 +27,7 @@ The following links represent useful resources for working with the IntelliJ Pla
 * [Thread Access Info](https://plugins.jetbrains.com/plugin/16815-thread-access-info)
 
 ### Webinars
+* [Busy plugin developers series. Episode 1](https://www.youtube.com/watch?v=vAlor5-hC0Q) Jakub Chrzanowski/Semyon Atamas/Paweł Lipski, 2021
 * [Make IntelliJ IDEA Your Own](https://youtu.be/cAwH_DbFrfw?t=1120) Sirisha Pratha, 2021
 * [IntelliJ IDEA Conf 2021](https://www.youtube.com/watch?v=akrPpWAZzQk&list=PLPZy-hmwOdEUdLO-AKiJJ7LuZ3p16zJ4x) includes a number of presentations related to plugin development, 2021
 * [Busy plugin developers series. Episode 0](https://www.youtube.com/watch?v=-6D5-xEaYig) Mikhail Vink/Jakub Chrzanowski/Yann Cebron, 2020

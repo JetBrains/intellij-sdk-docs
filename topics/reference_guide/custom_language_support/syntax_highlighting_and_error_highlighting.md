@@ -6,6 +6,11 @@ The class used to specify how a particular range of text should be highlighted i
 An instance of this class is created for every distinct type of item that should be highlighted (keyword, number, string, etc.).
 The `TextAttributesKey` defines the default attributes applied to items of the corresponding type (for example, keywords are bold, numbers are blue, strings are bold and green).
 Highlighting from multiple `TextAttributesKey` items can be layered - for example, one key may define an item's boldness and another color.
+
+ > To force re-highlighting (e.g., after changing plugin specific settings), use
+ > [`DaemonCodeAnalyzer.restart()`](upsource:///platform/analysis-api/src/com/intellij/codeInsight/daemon/DaemonCodeAnalyzer.java).
+ >
+ {type="tip"}
                                                                         
 ## Color Settings
 The mapping of the `TextAttributesKey` to specific attributes used in an editor is defined by the [`EditorColorsScheme`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/editor/colors/EditorColorsScheme.java) class. 
@@ -20,11 +25,6 @@ The _Export to HTML_ feature uses the same syntax highlighting mechanism as the 
  >  New functionality about Language Defaults and support for additional color schemes are detailed in [Color Scheme Management](color_scheme_management.md).
  >
  {type="note"}
-
- >  To force re-highlighting, use
-> [`DaemonCodeAnalyzer.restart()`](upsource:///platform/analysis-api/src/com/intellij/codeInsight/daemon/DaemonCodeAnalyzer.java).
- >
- {type="tip"}
 
 The syntax and error highlighting are performed on multiple levels: Lexer, Parser, and (External) Annotator.
 

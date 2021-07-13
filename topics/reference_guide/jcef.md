@@ -17,12 +17,21 @@ Embedding of the browser component inside the IDE allows amongst others:
 - previewing generated HTML (e.g., from Markdown)
 
 ## Enabling JCEF
- >  JCEF is available and enabled by default in 2020.2.
+
+<tabs>
+<tab title="2020.2 and later">
+
+ > JCEF is available and enabled by default since 2020.2
  >
  {type="note"}
 
+</tab>
+<tab title="Earlier versions">
+
 Using JCEF requires using a dedicated JetBrains Runtime, please follow these [installation instructions](https://youtrack.jetbrains.com/issue/IDEA-231833#focus=streamItem-27-3993099.0-0) on how to obtain and activate it in your IDE.
 Enable `ide.browser.jcef.enabled` in Registry dialog (invoke **Help \| Find Action** and type "Registry") and restart the IDE for changes to take effect.
+</tab>
+</tabs>
 
 ## Debugging
 The [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/), embedded into JCEF, can be used as a debugging and profiling tool.

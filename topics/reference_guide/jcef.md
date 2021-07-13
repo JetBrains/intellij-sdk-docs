@@ -1,6 +1,6 @@
 [//]: # (title: JCEF - Java Chromium Embedded Framework)
 
-<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
  >  JCEF is available since 2020.1 as an **experimental feature**.
 > We plan to deprecate using JavaFX in 3rd party plugins and switch to JCEF in 2020.2.
@@ -80,7 +80,7 @@ Is tied to every browser component explicitly or implicitly.
 Used for adding handlers to the associated browser.
 The same instance can be shared among multiple browsers.
 It is up to the developer to use a shared or per-browser instance, depending on the handlers' logic.
-If a client was created explicitly, it should be disposed by the developer; otherwise, it is disposed automatically following the associated browser instance disposal.
+If a client was created explicitly, it should be [disposed](disposers.md) by the developer; otherwise, it is disposed automatically following the associated browser instance disposal.
 
 ### [`JBCefBrowser`](upsource:///platform/platform-api/src/com/intellij/ui/jcef/JBCefBrowser.java)
 Provides the browser UI component:

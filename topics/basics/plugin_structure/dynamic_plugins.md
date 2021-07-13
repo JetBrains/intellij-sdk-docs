@@ -84,10 +84,10 @@ All events are tracked under `com.intellij.ide.plugins.DynamicPlugins` category 
 
 To find leaks preventing clean unload, perform the following steps:
 
-1. Verify that the IDE is running with the VM parameter `-XX:+UnlockDiagnosticVMOptions`. If you are using the [Gradle](gradle_guide.md), the `runIde.jvmArgs += "-XX:+UnlockDiagnosticVMOptions"` otherwise you can [Configure JVM Options](https://www.jetbrains.com/help/idea/tuning-the-ide.html#procedure-jvm-options) to change them.
+1. Verify that the IDE is running with the VM parameter `-XX:+UnlockDiagnosticVMOptions`. When using [Gradle](gradle_guide.md), specify `runIde.jvmArgs += "-XX:+UnlockDiagnosticVMOptions"` otherwise [Configure JVM Options](https://www.jetbrains.com/help/idea/tuning-the-ide.html#procedure-jvm-options).
 2. Set Registry key `ide.plugins.snapshot.on.unload.fail` to `true` (Go to <menupath>Navigate | Search Everywhere</menupath> and type `Registry`).
 3. Trigger the plugin reload.
-3. Open the `.hprof` memory snapshot generated on plugin unload, look for the plugin ID string. [IntelliJ Ultimate](https://www.jetbrains.com/help/idea/analyze-hprof-memory-snapshots.html) can open memory snapshots directly.
+3. Open the <path>.hprof</path> memory snapshot generated on plugin unload, look for the plugin ID string. [IntelliJ Ultimate](https://www.jetbrains.com/help/idea/analyze-hprof-memory-snapshots.html) can open memory snapshots directly.
 4. Find the `PluginClassLoader` referencing the plugin ID string
 5. Look at references to the `PluginClassLoader` instance.
 6. Every one of them is a memory leak (or part of a memory leak) that needs to be resolved.
@@ -112,5 +112,5 @@ is keeping the class loader in memory.
 
 #### Other Tips
 
-1. Try a newer version of IntelliJ, in some cases platform bugs might be an issue.
-2. Try in a fresh and new configuration (e.g., clean the sandbox or use a different configuration directory).
+1. Try a newer version of the IDE, in some cases platform bugs might be an issue.
+2. Try in a fresh and new configuration (e.g., clean the [sandbox](ide_development_instance.md#the-development-instance-sandbox-directory) or use a different configuration directory).

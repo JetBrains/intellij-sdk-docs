@@ -2,6 +2,10 @@
 
 <!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
+## 2021.3
+
+### Notable Changes in IntelliJ Platform 2021.3
+
 ## 2021.2
 
 ### Notable Changes in IntelliJ Platform 2021.2

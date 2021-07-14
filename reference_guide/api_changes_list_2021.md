@@ -71,6 +71,11 @@ Please see [Incompatible API Changes](api_changes_list.md) on how to verify comp
  >
  {type="note"}
 
+## 2021.3
+                              
+### Changes in IntelliJ Platform 2021.3
+
+
 ## 2021.2
                               
 ### Changes in IntelliJ Platform 2021.2

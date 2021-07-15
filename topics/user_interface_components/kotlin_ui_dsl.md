@@ -5,18 +5,18 @@
 Kotlin UI DSL allows creating UI components using a declarative syntax inside Kotlin.
 It shares similarities with [Jetpack Compose](https://developer.android.com/jetpack/compose) for Android and makes it easy to develop UIs for, e.g. dialogs, settings or tool windows.
 
- >  Please note the Kotlin UI DSL is in active development and [breaking changes](api_changes_list.md) can occur between major releases.
+ > Please note the Kotlin UI DSL is in active development and [breaking changes](api_changes_list.md) can occur between major releases.
  >
  {type="warning"}
 
- >  This document covers the Kotlin UI DSL in IntelliJ Platform 2019.2.
-> A lot of the features described in this document are not available for plugins targeting earlier versions.
+ > This document covers the Kotlin UI DSL in IntelliJ Platform 2019.2.
+ > A lot of the features described in this document are not available for plugins targeting earlier versions.
  >
  {type="note"}
 
 ## Layout Structure
 
-Use `panel` to create UI:
+Use [`panel`](upsource:///platform/platform-impl/src/com/intellij/ui/layout/layout.kt) to create UI:
 
 ```kotlin
 panel {
@@ -75,24 +75,21 @@ row {
 }
 ```
 
- >  To visually debug layout, enable _UI DSL Debug Mode_ from [Internal Actions - UI Submenu](internal_ui_sub.md).           
+ > To visually debug layout, enable <control>UI DSL Debug Mode</control> from [Internal Actions - UI Submenu](internal_ui_sub.md).           
  >
  {type="tip"}
 
 ## Adding Components
 
 There are two ways to add child components.
-The recommended way is to use factory methods `label`, `button`, `radioButton`, `hint`, `link`, etc.
+The recommended way is to use factory methods `label`, `button`, `radioButton`, `link`, etc.
 It allows you to create consistent UI and reuse common patterns.
-  ```kotlin
-  note("""Do not have an account? <a href="https://account.jetbrains.com/login">Sign Up</a>""", span, wrap)
-  ```
 
 These methods also support **property bindings**, allowing you to automatically load the value displayed in the component from a property and to store it back.
 The easiest way to do that is to pass a reference to a Kotlin bound property:
 
 ```kotlin
-checkBox("Show tabs in single row", uiSettings::scrollTabLayoutInEditor)
+  checkBox("Show tabs in single row", uiSettings::scrollTabLayoutInEditor)
 ```
 
 Note that the bound property reference syntax also can be used to reference Java fields, but not getter/setter pairs.
@@ -109,11 +106,10 @@ Alternatively, many factory methods support specifying a getter/setter pair for 
 If you want to add a component for which there are no factory methods, you can simply invoke an instance of your component, using the `()` overloaded operator:
 
 ```kotlin
-  val userField = JTextField(credentials?.userName)
-  panel() {
-    row { userField(grow, wrap) }
+  val customComponent = MyCustomComponent()
+  panel {
+    row { customComponent() }
   }
-  // use userField variable somehow
 ```
 
 ## Supported Components
@@ -158,8 +154,8 @@ buttonGroup {
 Use the `textField` method for a simple text field:
 
 ```kotlin
-row("Parameters:") {
-    textField(settings::mergeParameters)
+row("Username:") {
+    textField(settings::userName)
 }
 ```
 
@@ -215,8 +211,14 @@ Use the `link` method:
 
 ```kotlin
 link("Forgot password?") {
-  BrowserUtil.browse("https://account.jetbrains.com/forgot-password")
+  // handle click, e.g. showing dialog  
 }
+```
+   
+To open URL in the browser, use `browserLink`:
+
+```kotlin
+browserLink("Open Homepage", "https://www.jetbrains.com")
 ```
 
 ### Separators
@@ -242,14 +244,16 @@ checkBox(message("checkbox.smart.tab.reuse"),
 ## Integrating Panels with Property Bindings
 
 A panel returned by the `panel` method is an instance of [`DialogPanel`](upsource:///platform/platform-api/src/com/intellij/openapi/ui/DialogPanel.kt).
-This base class supports the standard `apply`, `reset`, and `isModified` methods.
+This base class supports the standard `apply()`, `reset()`, and `isModified()` methods.
 
 ### Dialogs
+            
+**Reference**: [DialogWrapper](dialog_wrapper.md)
 
-If you're using a [`DialogPanel`](upsource:///platform/platform-api/src/com/intellij/openapi/ui/DialogPanel.kt) as the main panel of a `DialogWrapper`, the `apply` method will be automatically called when the dialog is closed with the OK action.
+If you're using a [`DialogPanel`](upsource:///platform/platform-api/src/com/intellij/openapi/ui/DialogPanel.kt) as the main panel of a `DialogWrapper`, the `apply()` method will be automatically called when the dialog is closed using <control>OK</control> action.
 The other methods are unused in this case.
 
-Use the `focused` method to specify which control should be focused when the dialog is initialized:
+Use the `focused()` method to specify which control should be focused when the dialog is initialized:
 
 ```kotlin
 return panel {
@@ -260,6 +264,8 @@ return panel {
 ```
 
 ### Configurables
+                   
+**Reference**: [Settings Guide](settings_guide.md)
 
 If you're using the UI DSL to implement a [`Configurable`](upsource:///platform/platform-api/src/com/intellij/openapi/options/Configurable.java), use [`BoundConfigurable`](upsource:///platform/platform-api/src/com/intellij/openapi/options/BoundConfigurable.kt) as the base class.
 In this case, the `Configurable` methods will be automatically delegated to the panel.

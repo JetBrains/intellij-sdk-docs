@@ -5,14 +5,6 @@
 Kotlin UI DSL allows creating UI components using a declarative syntax inside Kotlin.
 It shares similarities with [Jetpack Compose](https://developer.android.com/jetpack/compose) for Android and makes it easy to develop UIs for, e.g. dialogs, settings or tool windows.
 
-A working example of how to use Kotlin UI DSL inside IntelliJ IDEA can be found in <menupath>Tools | Internal Actions | UI | UI DSL Showcase</menupath>
-when [internal mode is enabled](enabling_internal.md).
-The content for each tab shown in the dialog is a function in [`testPanels`](upsource:///platform/platform-impl/src/com/intellij/ui/layout/testPanels.kt) that returns a `JPanel`.
-[`ShowcaseUiDslAction`](upsource:///platform/platform-impl/src/com/intellij/ui/layout/ShowcaseUiDslAction.kt) collects all these functions and adds their returned `JPanel` to a `JBTabs` container.
-
-Plugin developers who want to use Kotlin UI DSL to create their UI follow the same strategy: Create the UI component with Kotlin UI DSL and use the `JPanel` as content of components like
-[dialogs](dialog_wrapper.md) or [tool windows](tool_windows.md).
-
  >  Please note the Kotlin UI DSL is in active development and [breaking changes](api_changes_list.md) can occur between major releases.
  >
  {type="warning"}

@@ -7,8 +7,18 @@ The Credentials Store API allows you to store sensitive user data securely, like
 ## How to Use
 Use [`PasswordSafe`](upsource:///platform/platform-api/src/com/intellij/ide/passwordSafe/PasswordSafe.kt) to work with credentials.
 
-### Retrieve Stored Credentials
+_Common Utility Method:_
 
+```java
+    private CredentialAttributes createCredentialAttributes(String key) {
+      return new CredentialAttributes(
+        CredentialAttributesKt.generateServiceName("MySystem", key)
+      );
+    }
+```
+
+### Retrieve Stored Credentials
+                       
 ```java
     String key = null; // e.g. serverURL, accountID
     CredentialAttributes credentialAttributes = createCredentialAttributes(key);
@@ -21,9 +31,6 @@ Use [`PasswordSafe`](upsource:///platform/platform-api/src/com/intellij/ide/pass
     // or get password only
     String password = PasswordSafe.getInstance().getPassword(credentialAttributes);
 
-    private CredentialAttributes createCredentialAttributes(String key) {
-        return new CredentialAttributes(CredentialAttributesKt.generateServiceName("MySystem", key));
-    }
 ```
 
 ### Store Credentials

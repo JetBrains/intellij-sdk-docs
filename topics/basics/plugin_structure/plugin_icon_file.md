@@ -25,6 +25,7 @@ For a Plugin Logo to be displayed correctly within an IntelliJ Platform-based ID
 * Follow the best practices design guidelines,
 * Be in the correct file format,
 * Conform to file name conventions,
+* Have the correct size,
 * Be in the <path>META-INF</path> folder of the plugin distribution file.
 
 ### Plugin Logo Size

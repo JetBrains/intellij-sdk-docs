@@ -292,22 +292,13 @@ checkBox("Hide tabs if there is no space", uiSettings::hideTabsIfNeed)
               myScrollTabLayoutInEditorCheckBox.selected)
 ```
 
-## Example
+## Examples
+              
+Sample usages in IntelliJ Platform IDEs:
 
-```kotlin
-val panel = panel {
-  noteRow("Login to get notified when the submitted\nexceptions are fixed.")
-  row("Username:") { userField() }
-  row("Password:") { passwordField() }
-  row {
-    rememberCheckBox()
-    right {
-      link("Forgot password?") { /* custom action */ }
-    }
-  }
-  noteRow("""Do not have an account? <a href="https://account.jetbrains.com/login">Sign Up</a>""")
-}
-```
+- [`GitNewBranchDialog`](upsource:///plugins/git4idea/src/git4idea/branch/GitNewBranchDialog.kt) - <control>New Branch</control> dialog in Git ([Manage Git branches](https://www.jetbrains.com/help/idea/manage-branches.html))
+- [`DiffSettingsConfigurable`](upsource:///platform/diff-impl/src/com/intellij/diff/settings/DiffSettingsConfigurable.kt) - <menupath>Settings/Preferences | Tools | Diff & Merge</menupath>
+- [`EditorTabsConfigurable`](upsource:///platform/platform-impl/src/com/intellij/application/options/editor/EditorTabsConfigurable.kt) - <menupath>Settings/Preferences | Editor | General | Editor Tabs</path>
 
 ## FAQ
 

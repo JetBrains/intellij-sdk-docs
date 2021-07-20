@@ -1,4 +1,4 @@
-// Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
+// Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
 
 package org.intellij.sdk.language;
 
@@ -7,7 +7,7 @@ import com.intellij.ide.structureView.StructureViewModelBase;
 import com.intellij.ide.structureView.StructureViewTreeElement;
 import com.intellij.ide.util.treeView.smartTree.Sorter;
 import com.intellij.psi.PsiFile;
-import org.intellij.sdk.language.psi.SimpleFile;
+import org.intellij.sdk.language.psi.SimpleProperty;
 import org.jetbrains.annotations.NotNull;
 
 public class SimpleStructureViewModel extends StructureViewModelBase implements
@@ -30,7 +30,7 @@ public class SimpleStructureViewModel extends StructureViewModelBase implements
 
   @Override
   public boolean isAlwaysLeaf(StructureViewTreeElement element) {
-    return element instanceof SimpleFile;
+    return element.getValue() instanceof SimpleProperty;
   }
 
 }

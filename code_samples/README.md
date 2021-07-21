@@ -9,7 +9,7 @@
 Learn how to build plugins using IntelliJ Platform SDK for the [JetBrains products][jb:products] by experimenting with our code samples.
 These samples show you how features work and help you jumpstart your plugins.
 
-> **NOTE** To start a new plugin project, please also consider using [IntelliJ Platform Plugin Template][gh:template] which offers a pure boilerplate template to make it easier to create a new plugin project.
+> **NOTE** To start a new plugin project, consider using [IntelliJ Platform Plugin Template][gh:template] which offers a pure boilerplate template to make it easier to create a new plugin project.
 
 To learn more, browse [available Extension Points][docs:eps], explore Extension Point usages in open-source plugins using [IntelliJ Platform Explorer](https://jb.gg/ipe) and learn how to [Explore the IntelliJ Platform API][docs:explore-api].
                                 
@@ -34,23 +34,23 @@ In the following table, you may find all available samples provided in the separ
 | Code Sample                                                            | Description                                                                                                                                            |
 | ---------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | [Action Basics](./action_basics)                                       | Action and Action Group patterns implementation, adds entries to the Tools menu.                                                                       |
-| [Comparing References Inspection](./comparing_references_inspection)   | Local Inspection Tool, adds entries to `Preferences \| Editor \| Inspections \| Java \| Probable Bugs`.                                                |
-| [Conditional Operator Intention](./conditional_operator_intention)     | Intention action, suggests converting a ternary operator into an *if* block and adds entry to `Preferences \| Editor \| Intentions \| SDK Intentions`. |
+| [Comparing References Inspection](./comparing_references_inspection)   | Local Inspection Tool, adds entries to **Settings/Preferences \| Editor \| Inspections \| Java \| Probable Bugs**.                                     |
+| [Conditional Operator Intention](./conditional_operator_intention)     | Intention action, suggests converting a ternary operator into an `if` block and adds entry to **Settings/Preferences \| Editor \| Intentions \| SDK Intentions**. |
 | [Editor Basics](./editor_basics)                                       | Basic Editor APIs example with editor popup menu with extra actions.                                                                                   |
-| [Facet Basics](./facet_basics)                                         | Custom Facet pattern, adds *SDK Facet* to the `Project Structure \| Project Settings \| Facets menu`.                                                  |
-| [Framework Basics](./framework_basics)                                 | Basic *SDK Demo Framework* support added to the `File \| New \| Project \| IntelliJ Platform Plugin`                                                   |
-| [Inspection Basics](./inspection_basics)                               | Code Inspection entry added to the `Preferences \| Editor \| Inspections \| SDK \| Example Tools`.                                                     |
-| [Kotlin Demo](./kotlin_demo)                                           | Kotlin example extending the *Main Menu* with a `Greeting` menu group.                                                                                 |
-| [Live Templates](./live_templates)                                     | Live templates for Markdown language, adds an entry to the `Preferences \| Editor \| Live Templates` dialog.                                           |
+| [Facet Basics](./facet_basics)                                         | Custom Facet pattern, adds *SDK Facet* to the **Project Structure \| Project Settings \| Facets** menu.                                                |
+| [Framework Basics](./framework_basics)                                 | Basic *SDK Demo Framework* support added to the **File \| New \| Project \| Java** wizard.                                                             |
+| [Inspection Basics](./inspection_basics)                               | Code Inspection entry added to the **Settings/Preferences \| Editor \| Inspections \| SDK \| Example Tools**.                                          |
+| [Kotlin Demo](./kotlin_demo)                                           | Kotlin example extending the *Main Menu* with a **Greeting** menu group.                                                                               |
+| [Live Templates](./live_templates)                                     | Live templates for Markdown language, adds an entry to the **Settings/Preferences \| Editor \| Live Templates** dialog.                                |
 | [Max Opened Projects](./max_opened_projects)                           | Application services and listeners, shows warning dialog when more than 3 open projects are opened.                                                    |
-| [Module](./module)                                                     | *SDK Demo Module* module type added to the `File \| New \| Project...`.                                                                                |
+| [Module](./module)                                                     | *SDK Demo Module* module type added to the **File \| New \| Project...** wizard.                                                                       |
 | [Product Specific - PyCharm Sample](./product_specific/pycharm_basics) | Plugin project configuration for the PyCharm IDE.                                                                                                      |
-| [Project Model](./project_model)                                       | Interacts with the project model, adds menu items to `Tools` and `Editor Context` menus.                                                               |
+| [Project Model](./project_model)                                       | Interacts with the project model, adds menu items to **Tools** and **Editor Context** menus.                                                           |
 | [Project View Pane](./project_view_pane)                               | Project View Pane listing only image files.                                                                                                            |
 | [Project Wizard](./project_wizard)                                     | Project Wizard example with demo steps.                                                                                                                |
 | [PSI Demo](./psi_demo)                                                 | PSI Navigation features presentation.                                                                                                                  |
 | [Run Configuration](./run_configuration)                               | Run configuration implementation with factory, options and UI.                                                                                         |
-| [Settings](./settings)                                                 | Custom settings panel, adds a settings panel to the `Settings \| Preferences` panel under `Tools`.                                                     |
+| [Settings](./settings)                                                 | Custom settings panel, adds a settings panel to the **Settings/Preferences** panel under **Tools**.                                                    |
 | [Simple Language Plugin](./simple_language_plugin)                     | Custom language support, defines a new *Simple language* with syntax highlighting, annotations, code completion, and other features.                   |
 | [Theme Basics](./theme_basics)                                         | Sample *UI Theme* plugin with basic interface modifications.                                                                                           |
 | [Tool Window](./tool_window)                                           | Custom Tool Window example plugin.                                                                                                                     |

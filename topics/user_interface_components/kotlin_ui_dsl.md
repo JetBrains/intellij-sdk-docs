@@ -300,10 +300,12 @@ checkBox("Hide tabs if there is no space", uiSettings::hideTabsIfNeed)
               
 Sample usages in IntelliJ Platform IDEs:
 
-- [`GitNewBranchDialog`](upsource:///plugins/git4idea/src/git4idea/branch/GitNewBranchDialog.kt) - <control>New Branch</control> dialog in Git ([Manage Git branches](https://www.jetbrains.com/help/idea/manage-branches.html))
-- [`ReaderModeConfigurable`](upsource:///platform/lang-impl/src/com/intellij/codeInsight/actions/ReaderModeConfigurable.kt) - <menupath>Settings/Preferences | Editor | Reader Mode</menupath>
-- [`DiffSettingsConfigurable`](upsource:///platform/diff-impl/src/com/intellij/diff/settings/DiffSettingsConfigurable.kt) - <menupath>Settings/Preferences | Tools | Diff & Merge</menupath>
-- [`EditorTabsConfigurable`](upsource:///platform/platform-impl/src/com/intellij/application/options/editor/EditorTabsConfigurable.kt) - <menupath>Settings/Preferences | Editor | General | Editor Tabs</menupath>
+| User Interface | Implementation |
+|----------------|----------------|
+| <menupath>Settings/Preferences &#124; Editor &#124; Reader Mode</menupath> | [`ReaderModeConfigurable`](upsource:///platform/lang-impl/src/com/intellij/codeInsight/actions/ReaderModeConfigurable.kt) |
+| <control>New Branch</control> dialog in Git ([Manage Git branches](https://www.jetbrains.com/help/idea/manage-branches.html)) | [`GitNewBranchDialog`](upsource:///plugins/git4idea/src/git4idea/branch/GitNewBranchDialog.kt) |
+| <menupath>Settings/Preferences &#124; Tools &#124; Diff & Merge</menupath> | [`DiffSettingsConfigurable`](upsource:///platform/diff-impl/src/com/intellij/diff/settings/DiffSettingsConfigurable.kt) |
+| <menupath>Settings/Preferences &#124; Editor &#124; General &#124; Editor Tabs</menupath> | [`EditorTabsConfigurable`](upsource:///platform/platform-impl/src/com/intellij/application/options/editor/EditorTabsConfigurable.kt) |
 
 ## FAQ
 

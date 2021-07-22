@@ -15,7 +15,11 @@ It shares similarities with [Jetpack Compose](https://developer.android.com/jetp
  {type="note"}
 
 ## Layout Structure
-
+            
+ > See [Layout](https://jetbrains.design/intellij/principles/layout) topic in IntelliJ Platform UI Guidelines for recommendations on arranging UI controls in dialogs. 
+ >
+ {type="tip"}
+ 
 Use [`panel`](upsource:///platform/platform-impl/src/com/intellij/ui/layout/layout.kt) to create UI:
 
 ```kotlin

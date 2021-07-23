@@ -58,6 +58,7 @@
         <toc-element id="dynamic_plugins.md"/>
         <toc-element id="intellij_artifacts.md"/>
         <toc-element id="kotlin.md"/>
+        <toc-element id="plugin_signing.md"/>
         <toc-element id="internal_actions_intro.md" accepts-web-file-names="interal_actions_menu.html">
             <toc-element id="enabling_internal.md"/>
             <toc-element id="internal_ui_sub.md" toc-title="UI Tools">

@@ -44,7 +44,7 @@ Both methods require a private certificate key to be already present.
 
 ### Generate Private Key
 
-To generate an RSA private key, run the `openssl genpkey` command in the terminal, as below:
+To generate an RSA `private.pem` private key, run the `openssl genpkey` command in the terminal, as below:
 
 ```bash
 openssl genpkey -aes-256-cbc -algorithm RSA -out private.pem -pkeyopt rsa_keygen_bits:4096
@@ -53,7 +53,7 @@ openssl genpkey -aes-256-cbc -algorithm RSA -out private.pem -pkeyopt rsa_keygen
 At this point, the content of the generated `private.key` should be provided to the `signPlugin.privateKey` property.
 Provided password should be specified as `signPlugin.password` property in the `signPlugin` configuration.
 
-As a next step, we'll generate a certificate chain with:
+As a next step, we'll generate a `chain.crt` certificate chain with:
 
 ```bash
 openssl req -key private.key -new -x509 -days 365 -out chain.crt
@@ -188,8 +188,9 @@ After downloading the `zip-signer-cli.jar`, execute it as below:
 
 ```bash
 java -jar zip-signer-cli.jar sign\
-  -in "unsigned.zip"
-  -out "signed.zip"
-  -cert "/path/to/chain.crt"
-  -key "/path/to/private.key"
+  -in "unsigned.zip"\
+  -out "signed.zip"\
+  -cert "/path/to/chain.crt"\
+  -key "/path/to/private.pem"\
+  -key-pass "PRIVATE_KEY_PASSWORD"
 ```

@@ -194,3 +194,43 @@ java -jar zip-signer-cli.jar sign\
   -key "/path/to/private.pem"\
   -key-pass "PRIVATE_KEY_PASSWORD"
 ```
+
+
+## Signing for custom repositories
+
+Signing plugins hosted on a custom repository can be accomplished for added trust between the repository and installation,
+however unlike the marketplace, the custom repository will not re-sign the plugin with the Jetbrains key. Instead a trusted private CA
+or self-signed certificate can be used to sign and validate plugins.
+
+### Verification
+
+Before looking at how we can sign a plugin, lets first revierw how verification works when a non-Jetbrains certificate is used.
+As of 2021.2, during verification, IntelliJ-based IDEs check if the plugin was signed by the Jetbrains CA certificate or
+any public keys provided by the user via `Preferences > Plugins > Manage Plugin Certificates`. In 2021.2.1, a 
+system property has been added: `intellij.plugins.truststore` which can point to a trusted JKS truststore. During verification,
+the plugins public key is extracted from the signature and the last certificate entry in the chain matched against the certificates stored 
+in one of the storages from above.
+
+### Using a trusted internal CA
+
+If an internal CA is available, you can use this to generate certificates to be used for signing. Its important when choosing this route
+that the certificate chain includes the root CA public key at the end of the chain.
+
+With this approach, existing internal truststores may exist and could be used. Be sure when choosing a truststore that the CAs are limited
+to the internal CAs you trust. Using an truststore with public CAs can expose the users to an attack vector.
+
+If adding a truststore to a users environment is not possible, the user may also add the root CAs public key to `Preferences > Plugins > Manage Plugin Certificates`
+
+### Using self-signed certificates
+
+Using a self-signed certificate is an option if no internal CAs exist. To generate the key and public key, 
+see: [Generate Private Key](#Generate Private Key)
+
+If providing users with a truststore, you can generate one with the public key using keytool:
+
+```bash
+keytool -import -alias IdeaPlugin -file chain.crt -keystore pluginKeystore.jks -storepass changeit
+```
+(note: the truststore password must remain `changeit`)
+
+Otherwise users may add the public key manually to `Preferences > Plugins > Manage Plugin Certificates`.

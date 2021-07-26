@@ -9,6 +9,9 @@ You can choose to publish it on the [JetBrains Plugins Repository](https://plugi
  >
  {type="tip"}
 
+Before publishing your plugin, make sure it is signed.
+For more details on generating a proper certificate and configuring the signing process, check the [Plugin Signing](plugin_signing.md) article.
+
 ## Publishing to the JetBrains Plugins Repository
 To upload your plugin to the [JetBrains Plugins Repository](https://plugins.jetbrains.com),  you must log in with your personal JetBrains Account.
 

@@ -64,6 +64,13 @@ Note that also, in this case, you still need to put some default values in your 
 The first step when deploying a plugin is to confirm that it works correctly.
 You may wish to verify this by [installing your plugin from disk](https://www.jetbrains.com/help/idea/managing-plugins.html) on a fresh instance of your target IDE(s).
 
+### Signing a Plugin
+
+The Marketplace signing is designed to ensure that plugins are not modified over the course of the publishing and delivery pipeline.
+In version `1.x`, the Gradle IntelliJ Plugin provides the `signPlugin` task, which will be executed automatically right before the `publishPlugin`.
+
+For more details on generating a proper certificate and configuring the `signPlugin` task, check the [Plugin Signing](plugin_signing.md) article.
+
 ### Publishing a Plugin
 Once you are confident, the plugin works as intended, make sure the plugin version is updated, as the JetBrains Plugins Repository won't accept multiple artifacts with the same version.
 

@@ -23,14 +23,16 @@ The plugin author's sign-verify process is as follows:
 - The JetBrains sign-verify process is as follows:
   - JetBrains CA is used as the source of truth here.
   - Its public part will be added to the IDE Java TrustStore, while the private part will be used only once to generate an intermediate certificate.
-  - The private key of JetBrains CA is super-secret; in fact, we've already said too much.
-- The intermediate certificate issues a certificate that will be used to sign plugins.
-  This way, it will be possible to re-generate this certificate without access to JetBrains CA's super-secret private key.
-  The private key of the intermediate certificate is issued and kept in the AWS Certificate Manager, and no application has access to it; people's access is also limited.
-  So now we have an AWS-based Intermediate CA.
-  The public part of the intermediate certificate will be added to the plugin file together with the signing certificate.
-- The certificate used to sign plugins is stored securely, too.
-  JetBrains Marketplace uses AWS KMS as a signature provider to sign plugin files.
+  - The private key of JetBrains CA is super-secret; in fact, we've already said too much. 
+
+The intermediate certificate issues a certificate that will be used to sign plugins.
+This way, it will be possible to re-generate this certificate without access to JetBrains CA's super-secret private key.
+The private key of the intermediate certificate is issued and kept in the AWS Certificate Manager, and no application has access to it; people's access is also limited.
+So now we have an AWS-based Intermediate CA.
+The public part of the intermediate certificate will be added to the plugin file together with the signing certificate. 
+
+The certificate used to sign plugins is stored securely, too.
+JetBrains Marketplace uses AWS KMS as a signature provider to sign plugin files.
 
 ## Signing Methods
 
@@ -45,7 +47,11 @@ Both methods require a private certificate key to be already present.
 To generate an RSA `private.pem` private key, run the `openssl genpkey` command in the terminal, as below:
 
 ```bash
-openssl genpkey -aes-256-cbc -algorithm RSA -out private.pem -pkeyopt rsa_keygen_bits:4096
+openssl genpkey\
+  -aes-256-cbc\
+  -algorithm RSA\
+  -out private.pem\
+  -pkeyopt rsa_keygen_bits:4096
 ```
 
 At this point, the generated `private.key` content should be provided to the `signPlugin.privateKey` property.
@@ -54,7 +60,12 @@ Provided password should be specified as the `signPlugin.password` property in t
 As a next step, we'll generate a `chain.crt` certificate chain with:
 
 ```bash
-openssl req -key private.key -new -x509 -days 365 -out chain.crt
+openssl req\
+  -key private.key\
+  -new\
+  -x509\
+  -days 365\
+  -out chain.crt
 ```
 
 The content of the `chain.crt` file will be used for the `signPlugin.certificateChain` property.
@@ -192,7 +203,6 @@ java -jar zip-signer-cli.jar sign\
   -key "/path/to/private.pem"\
   -key-pass "PRIVATE_KEY_PASSWORD"
 ```
-
 
 ## Signing for Custom Repositories
 

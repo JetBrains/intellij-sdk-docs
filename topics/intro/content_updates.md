@@ -8,6 +8,11 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 
 ## 2021
 
+### July-21
+
+Plugin Signing
+: [Plugin Signing](plugin_signing.md) page describes the plugin signing process, explains how to generate a certificate, configure the Gradle `signPlugin` task, and introduces standalone CLI tool.
+
 ### June-21
 
 Testing FAQ

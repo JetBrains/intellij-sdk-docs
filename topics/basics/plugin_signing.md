@@ -54,14 +54,14 @@ openssl genpkey\
   -pkeyopt rsa_keygen_bits:4096
 ```
 
-At this point, the generated `private.key` content should be provided to the `signPlugin.privateKey` property.
+At this point, the generated `private.pem` content should be provided to the `signPlugin.privateKey` property.
 Provided password should be specified as the `signPlugin.password` property in the `signPlugin` configuration.
 
 As a next step, we'll generate a `chain.crt` certificate chain with:
 
 ```bash
 openssl req\
-  -key private.key\
+  -key private.pem\
   -new\
   -x509\
   -days 365\

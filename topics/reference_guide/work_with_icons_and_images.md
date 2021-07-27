@@ -9,11 +9,13 @@ Plugins need icons mostly for actions, custom components renderers, tool windows
  > For more information see the [Plugin Icon](plugin_icon_file.md) page.
  >
  {type="note"}
+          
+## Platform vs. Custom Icons
 
- > Plugins should reuse existing platform icons whenever possible, see [Icons list](https://jetbrains.design/intellij/resources/icons_list/) and [`AllIcons`](upsource:///platform/util/src/com/intellij/icons/AllIcons.java).
- > A detailed [design guideline](https://jetbrains.design/intellij/principles/icons/) is available for creating custom icons.
- >
- {type="tip"}
+Plugins should reuse existing platform icons whenever possible. Use [Icons list](https://jetbrains.design/intellij/resources/icons_list/) to browse existing icons. 
+Platform icons are located in [`AllIcons`](upsource:///platform/util/src/com/intellij/icons/AllIcons.java). Icons from plugins are located in corresponding `<PLUGIN_NAME>Icons` class (e.g., `GithubIcons`).
+
+If custom icons are required, please refer to detailed [design guide](https://jetbrains.design/intellij/principles/icons/).
 
 ## How to organize and how to use icons?
 

@@ -59,6 +59,7 @@ If a plugin supports [multiple platform versions](build_number_ranges.md), it mu
                                                                                           
 | IntelliJ Platform version | Bundled `stdlib` version |
 |---------------------------|--------------------------|
+| 2021.2                    | 1.5.10                   |
 | 2021.1                    | 1.4.32                   |
 | 2020.3                    | 1.4.0                    |
 | 2020.2                    | 1.3.70                   |

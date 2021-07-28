@@ -1,16 +1,11 @@
-// Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
+// Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
 
 package org.intellij.sdk.language;
 
 import com.intellij.formatting.*;
-import com.intellij.lang.ASTNode;
-import com.intellij.openapi.util.TextRange;
-import com.intellij.psi.PsiElement;
-import com.intellij.psi.PsiFile;
 import com.intellij.psi.codeStyle.CodeStyleSettings;
 import org.intellij.sdk.language.psi.SimpleTypes;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 public class SimpleFormattingModelBuilder implements FormattingModelBuilder {
 
@@ -22,22 +17,16 @@ public class SimpleFormattingModelBuilder implements FormattingModelBuilder {
             .none();
   }
 
-  @NotNull
   @Override
-  public FormattingModel createModel(PsiElement element, CodeStyleSettings settings) {
+  public @NotNull FormattingModel createModel(@NotNull FormattingContext formattingContext) {
+    final CodeStyleSettings codeStyleSettings = formattingContext.getCodeStyleSettings();
     return FormattingModelProvider
-            .createFormattingModelForPsiFile(element.getContainingFile(),
-                    new SimpleBlock(element.getNode(),
+            .createFormattingModelForPsiFile(formattingContext.getContainingFile(),
+                    new SimpleBlock(formattingContext.getNode(),
                             Wrap.createWrap(WrapType.NONE, false),
                             Alignment.createAlignment(),
-                            createSpaceBuilder(settings)),
-                    settings);
-  }
-
-  @Nullable
-  @Override
-  public TextRange getRangeAffectingIndent(PsiFile file, int offset, ASTNode elementAtOffset) {
-    return null;
+                            createSpaceBuilder(codeStyleSettings)),
+                    codeStyleSettings);
   }
 
 }

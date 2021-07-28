@@ -2,7 +2,7 @@
 
 <!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-20 Extension Points (EP) for AppCode
+24 Extension Points (EP) for AppCode
 
 See [Extension Point List](extension_point_list.md) for IntelliJ Platform EPs.
 
@@ -11,21 +11,18 @@ See [Extension Point List](extension_point_list.md) for IntelliJ Platform EPs.
 ## AppCode
                 
 ### AppCodeSwiftPlugin.xml
-AppCodeSwiftPlugin.xml
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| [appcode.swift.sourceModuleProducer](https://jb.gg/ipe?extensions=appcode.swift.sourceModuleProducer) ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | `AppcodeSourceModuleProducer` | 
+| [appcode.swift.sourceModuleProducer](https://jb.gg/ipe?extensions=appcode.swift.sourceModuleProducer) ![Non-Dynamic][non-dynamic] | `AppcodeSourceModuleProducer` | 
 
 ### CocoaCommonPlugin.xml
-CocoaCommonPlugin.xml
 
 | Extension Point | Implementation |
 |-----------------|----------------|
 | [cidr.cocoa.xcodeProjectFileProvider](https://jb.gg/ipe?extensions=cidr.cocoa.xcodeProjectFileProvider) | `XcodeProjectFileProvider` | 
 
 ### CocoaPlugin.xml
-CocoaPlugin.xml
 
 | Extension Point | Implementation |
 |-----------------|----------------|
@@ -33,37 +30,37 @@ CocoaPlugin.xml
 | [cidr.cocoa.documentation.search.usr.provider](https://jb.gg/ipe?extensions=cidr.cocoa.documentation.search.usr.provider) | `XcodeDocumentationUsrProvider` | 
 
 ### com.intellij.appcode
-com.intellij.appcode
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| [appcode.runConfigurationExtension](https://jb.gg/ipe?extensions=appcode.runConfigurationExtension) ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | `AppCodeRunConfigurationExtension` | 
-| [appcode.xcodeExternalBuildProvider](https://jb.gg/ipe?extensions=appcode.xcodeExternalBuildProvider) ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | `XcodeExternalBuildProvider` | 
-| [appcode.xcodeTemplatePathsProvider](https://jb.gg/ipe?extensions=appcode.xcodeTemplatePathsProvider) ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | `XcodeTemplatePathsProvider` | 
+| [appcode.runConfigurationExtension](https://jb.gg/ipe?extensions=appcode.runConfigurationExtension) ![Non-Dynamic][non-dynamic] | `AppCodeRunConfigurationExtension` | 
+| [appcode.xcodeExternalBuildProvider](https://jb.gg/ipe?extensions=appcode.xcodeExternalBuildProvider) ![Non-Dynamic][non-dynamic] | `XcodeExternalBuildProvider` | 
+| [appcode.xcodeTemplatePathsProvider](https://jb.gg/ipe?extensions=appcode.xcodeTemplatePathsProvider) ![Non-Dynamic][non-dynamic] | `XcodeTemplatePathsProvider` | 
+| [appcode.xcodeTemplatesProvider](https://jb.gg/ipe?extensions=appcode.xcodeTemplatesProvider) | `XcodeTemplatesProvider` | 
 
 ### SwiftLanguageInternalPlugin.xml
-SwiftLanguageInternalPlugin.xml
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| [swift.sdkInfo.extractor](https://jb.gg/ipe?extensions=swift.sdkInfo.extractor) | `SwiftOCResolveConfigurationSdkInfoExtractor` | 
+| [swift.lang.libraryModuleImportRestriction](https://jb.gg/ipe?extensions=swift.lang.libraryModuleImportRestriction) | `SwiftLibraryModuleImportRestriction` | 
+| [swift.sdkInfo.extractor](https://jb.gg/ipe?extensions=swift.sdkInfo.extractor) | `OCResolveConfigurationSdkInfoExtractor` | 
+| [swift.sourcekit.blacklistedModulesProvider](https://jb.gg/ipe?extensions=swift.sourcekit.blacklistedModulesProvider) ![Non-Dynamic][non-dynamic] | `SourceKitBlacklistedModulesProvider` | 
+| [swift.sourcekit.dependenciesLoader](https://jb.gg/ipe?extensions=swift.sourcekit.dependenciesLoader) | `SourceKitPlatformBinaryDependenciesLoader` | 
 
 ### SwiftPlugin.xml
-SwiftPlugin.xml
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| [cidr.lang.swiftCustomIncludePathProvider](https://jb.gg/ipe?extensions=cidr.lang.swiftCustomIncludePathProvider) ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | `SwiftCustomIncludePathProvider` | 
-| [cidr.lang.swiftSourceModuleProvider](https://jb.gg/ipe?extensions=cidr.lang.swiftSourceModuleProvider) ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | `SwiftSourceModuleProvider` | 
-| [cidr.lang.swiftTypeInheritorsSearch](https://jb.gg/ipe?extensions=cidr.lang.swiftTypeInheritorsSearch) ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | [`QueryExecutor`](upsource:///platform/core-api/src/com/intellij/util/QueryExecutor.java) | 
-| [swift.kotlinNative](https://jb.gg/ipe?extensions=swift.kotlinNative) ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | `KotlinNativeExtensionPoint` | 
+| [cidr.lang.swiftCustomIncludePathProvider](https://jb.gg/ipe?extensions=cidr.lang.swiftCustomIncludePathProvider) ![Non-Dynamic][non-dynamic] | `SwiftCustomIncludePathProvider` | 
+| [cidr.lang.swiftSourceModuleProvider](https://jb.gg/ipe?extensions=cidr.lang.swiftSourceModuleProvider) ![Non-Dynamic][non-dynamic] | `SwiftSourceModuleProvider` | 
+| [cidr.lang.swiftTypeInheritorsSearch](https://jb.gg/ipe?extensions=cidr.lang.swiftTypeInheritorsSearch) ![Non-Dynamic][non-dynamic] | [`QueryExecutor`](upsource:///platform/core-api/src/com/intellij/util/QueryExecutor.java) | 
+| [swift.kotlinNative](https://jb.gg/ipe?extensions=swift.kotlinNative) ![Non-Dynamic][non-dynamic] | `KotlinNativeExtensionPoint` | 
 | [swift.lang.sourceKit.compileArgumentsCollector](https://jb.gg/ipe?extensions=swift.lang.sourceKit.compileArgumentsCollector) | `SwiftSourceKitCompileArgumentsCollector` | 
-| [swift.lang.sourceKit.dataGenerator](https://jb.gg/ipe?extensions=swift.lang.sourceKit.dataGenerator) ![Project-Level](https://img.shields.io/badge/-Project--Level-yellow) | `SourceKitDataGenerator` | 
+| [swift.lang.sourceKit.dataGenerator](https://jb.gg/ipe?extensions=swift.lang.sourceKit.dataGenerator) ![Project-Level][project-level] | `SourceKitDataGenerator` | 
 | [swift.lang.sourceKit.declarationLocationValidator](https://jb.gg/ipe?extensions=swift.lang.sourceKit.declarationLocationValidator) | `SourceKitDeclarationLocationValidator` | 
 | [swift.lang.swiftSupportProvider](https://jb.gg/ipe?extensions=swift.lang.swiftSupportProvider) | `SwiftSupportProvider` | 
 
 ### SwiftPMCommon.xml
-SwiftPMCommon.xml
 
 | Extension Point | Implementation |
 |-----------------|----------------|
@@ -71,3 +68,4 @@ SwiftPMCommon.xml
 | [swift.packageManager.environmentConfigurator](https://jb.gg/ipe?extensions=swift.packageManager.environmentConfigurator) | `SwiftPackageManagerEnvironmentConfigurator` | 
 | [swift.packageManager.modulemapsCollector](https://jb.gg/ipe?extensions=swift.packageManager.modulemapsCollector) | `SwiftPackageModuleMapsCollector` | 
 | [swift.packageManager.systemModuleResolver](https://jb.gg/ipe?extensions=swift.packageManager.systemModuleResolver) | `SwiftPackageManagerSystemModuleResolver` | 
+

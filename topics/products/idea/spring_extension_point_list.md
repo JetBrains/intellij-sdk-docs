@@ -2,14 +2,13 @@
 
 <!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-48 Extension Points (EP) for Spring API
+47 Extension Points (EP) for Spring API
 
 <include src="extension_point_list.md" include-id="ep_list_legend"></include>
 
 ## Spring
 
 ### com.intellij.spring
-com.intellij.spring
 
 | Extension Point | Implementation |
 |-----------------|----------------|
@@ -40,11 +39,9 @@ com.intellij.spring
 | [com.intellij.spring.valueConverter](https://jb.gg/ipe?extensions=com.intellij.spring.valueConverter) | `SpringValueConvertersProvider` | 
 
 ### com.intellij.spring.boot
-com.intellij.spring.boot
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| [com.intellij.spring.boot.applicationUpdatePolicy](https://jb.gg/ipe?extensions=com.intellij.spring.boot.applicationUpdatePolicy) | `SpringBootApplicationUpdatePolicy` | 
 | [com.intellij.spring.boot.customHintReferenceProvider](https://jb.gg/ipe?extensions=com.intellij.spring.boot.customHintReferenceProvider) | `SpringBootCustomHintReferenceProvider` | 
 | [com.intellij.spring.boot.modelConditionalContributor](https://jb.gg/ipe?extensions=com.intellij.spring.boot.modelConditionalContributor) | `ConditionalContributor` | 
 | [com.intellij.spring.boot.modelConfigFileContributor](https://jb.gg/ipe?extensions=com.intellij.spring.boot.modelConfigFileContributor) | `SpringBootModelConfigFileContributor` | 
@@ -52,27 +49,14 @@ com.intellij.spring.boot
 | [com.intellij.spring.boot.modelExtender](https://jb.gg/ipe?extensions=com.intellij.spring.boot.modelExtender) | `SpringBootModelExtender` | 
 | [com.intellij.spring.boot.placeholderReferenceResolver](https://jb.gg/ipe?extensions=com.intellij.spring.boot.placeholderReferenceResolver) | `SpringBootPlaceholderReferenceResolver` | 
 | [com.intellij.spring.boot.replacementTokenResolver](https://jb.gg/ipe?extensions=com.intellij.spring.boot.replacementTokenResolver) | `SpringBootReplacementTokenResolver` | 
-| [com.intellij.spring.boot.run.applicationUrlPathProviderFactory](https://jb.gg/ipe?extensions=com.intellij.spring.boot.run.applicationUrlPathProviderFactory) | `SpringBootApplicationUrlPathProviderFactory` | 
-| [com.intellij.spring.boot.run.endpoint](https://jb.gg/ipe?extensions=com.intellij.spring.boot.run.endpoint) ![Experimental API](https://img.shields.io/badge/-Experimental_API-red) | `Endpoint` | 
-| [com.intellij.spring.boot.run.endpointTabConfigurable](https://jb.gg/ipe?extensions=com.intellij.spring.boot.run.endpointTabConfigurable) ![Project-Level](https://img.shields.io/badge/-Project--Level-yellow) | `EndpointTabConfigurable` | 
-| [com.intellij.spring.boot.run.liveBeansPanelContent](https://jb.gg/ipe?extensions=com.intellij.spring.boot.run.liveBeansPanelContent) | `LiveBeansPanelContent` | 
-
-### com.intellij.spring.integration
-com.intellij.spring.integration
-
-| Extension Point | Implementation |
-|-----------------|----------------|
-| [com.intellij.spring.integration.security.accessAttributeContributor](https://jb.gg/ipe?extensions=com.intellij.spring.integration.security.accessAttributeContributor) | `AccessAttributeContributor` | 
 
 ### com.intellij.spring.messaging
-com.intellij.spring.messaging
 
 | Extension Point | Implementation |
 |-----------------|----------------|
 | [com.intellij.spring.messaging.urlProvider](https://jb.gg/ipe?extensions=com.intellij.spring.messaging.urlProvider) | `SpringMessagingUrlProvider` | 
 
 ### com.intellij.spring.mvc
-com.intellij.spring.mvc
 
 | Extension Point | Implementation |
 |-----------------|----------------|
@@ -81,37 +65,43 @@ com.intellij.spring.mvc
 | [com.intellij.spring.mvc.viewResolverFactory](https://jb.gg/ipe?extensions=com.intellij.spring.mvc.viewResolverFactory) | `ViewResolverFactory` | 
 
 ### com.intellij.spring.security
-com.intellij.spring.security
 
 | Extension Point | Implementation |
 |-----------------|----------------|
 | [com.intellij.spring.security.rolesProvider](https://jb.gg/ipe?extensions=com.intellij.spring.security.rolesProvider) | `SpringSecurityRolesProvider` | 
 
-### com.intellij.spring.webflow
-com.intellij.spring.webflow
-
-| Extension Point | Implementation |
-|-----------------|----------------|
-| [com.intellij.spring.webflow.securedAttributesContributor](https://jb.gg/ipe?extensions=com.intellij.spring.webflow.securedAttributesContributor) | `ExtendableSecuredAttributesContributor` | 
-
-### spring-boot-mvc.xml
-spring-boot-mvc.xml
+### intellij.spring.boot.core.mvc.xml
 
 | Extension Point | Implementation |
 |-----------------|----------------|
 | [com.intellij.spring.boot.mvc.templateAvailabilityProvider](https://jb.gg/ipe?extensions=com.intellij.spring.boot.mvc.templateAvailabilityProvider) | `TemplateAvailabilityProvider` | 
 
-### spring-diagram-integration.xml
-spring-diagram-integration.xml
+### intellij.spring.boot.initializr.xml
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| [com.intellij.spring.gutterDiagramActionProvider](https://jb.gg/ipe?extensions=com.intellij.spring.gutterDiagramActionProvider) | `SpringGutterDiagramActionProvider` | 
+| [com.intellij.spring.boot.initializr.sharedIndexesProvider](https://jb.gg/ipe?extensions=com.intellij.spring.boot.initializr.sharedIndexesProvider) | `SpringSharedIndexesProvider` | 
 
-### spring-el.xml
-spring-el.xml
+### intellij.spring.boot.run.xml
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| [com.intellij.spring.boot.run.applicationUpdatePolicy](https://jb.gg/ipe?extensions=com.intellij.spring.boot.run.applicationUpdatePolicy) | `SpringBootApplicationUpdatePolicy` | 
+| [com.intellij.spring.boot.run.applicationUrlPathProviderFactory](https://jb.gg/ipe?extensions=com.intellij.spring.boot.run.applicationUrlPathProviderFactory) | `SpringBootApplicationUrlPathProviderFactory` | 
+| [com.intellij.spring.boot.run.endpoint](https://jb.gg/ipe?extensions=com.intellij.spring.boot.run.endpoint) ![Experimental API][experimental] | `Endpoint` | 
+| [com.intellij.spring.boot.run.endpointTabConfigurable](https://jb.gg/ipe?extensions=com.intellij.spring.boot.run.endpointTabConfigurable) ![Project-Level][project-level] | `EndpointTabConfigurable` | 
+| [com.intellij.spring.boot.run.liveBeansPanelContent](https://jb.gg/ipe?extensions=com.intellij.spring.boot.run.liveBeansPanelContent) | `LiveBeansPanelContent` | 
+
+### intellij.spring.core.el.xml
 
 | Extension Point | Implementation |
 |-----------------|----------------|
 | [com.intellij.spring.el.contexts](https://jb.gg/ipe?extensions=com.intellij.spring.el.contexts) | `SpringElContextsExtension` | 
 | [com.intellij.spring.el.injection.context](https://jb.gg/ipe?extensions=com.intellij.spring.el.injection.context) | `SpringElInjectionContext` | 
+
+### spring-diagram-integration.xml
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| [com.intellij.spring.gutterDiagramActionProvider](https://jb.gg/ipe?extensions=com.intellij.spring.gutterDiagramActionProvider) | `SpringGutterDiagramActionProvider` | 
+

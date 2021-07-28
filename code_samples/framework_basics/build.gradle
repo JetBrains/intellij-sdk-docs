@@ -2,13 +2,13 @@
 
 plugins {
   id 'java'
-  id 'org.jetbrains.intellij' version '1.1.2'
+  id 'org.jetbrains.intellij' version '1.1.4'
 }
 
 group 'org.intellij.sdk'
 version '2.0.0'
 
-sourceCompatibility = 1.8
+sourceCompatibility = 11
 
 repositories {
   mavenCentral()
@@ -16,7 +16,7 @@ repositories {
 
 // See https://github.com/JetBrains/gradle-intellij-plugin/
 intellij {
-  version = '2020.2.4'
+  version = '2020.3.4'
   plugins = ['com.intellij.java']
 }
 

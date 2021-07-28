@@ -160,6 +160,11 @@ Please see [Incompatible API Changes](api_changes_list.md) on how to verify comp
 `icons.SpringApiIcons.Gutter` class moved to package `com.intellij.spring`
 : Use `com.intellij.spring.SpringApiIcons.Gutter` instead.
 
+### Python Plugin 2021.2.1
+
+`com.jetbrains.python.psi.types.PyTypedDictType.Companion.match(PyTypedDictType, PyDictLiteralExpression, TypeEvalContext)` method removed
+: As the result of the refactoring aimed at fixing https://youtrack.jetbrains.com/issue/PY-48799, for dict literals containing only string keys we infer PyTypedDictType now, so there's no need to match dict literals with TypedDicts. There's a new method for comparing the inferred TypedDicts with the given ones: `com.jetbrains.python.psi.types.PyTypedDictType.Companion.match(PyType, PyTypedDictType, TypeEvalContext)`.
+
 ## 2021.1
                               
 ### Changes in IntelliJ Platform 2021.1

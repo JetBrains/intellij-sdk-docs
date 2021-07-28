@@ -68,7 +68,7 @@ If a custom language contains lazy-parseable elements that never or rarely conta
 #### Consider Prebuilt Stubs
 
 If your language has a massive standard library, which is mostly the same for all users, you can avoid stub-indexing it in each installation by providing prebuilt stubs with your distribution.
-See [`PrebuiltStubsProvider`](upsource:///platform/lang-impl/src/com/intellij/psi/stubs/PrebuiltStubs.kt) extension.
+See [`PrebuiltStubsProvider`](upsource:///platform/indexing-impl/src/com/intellij/psi/stubs/PrebuiltStubs.kt) extension.
 
 ## Avoiding UI Freezes
 

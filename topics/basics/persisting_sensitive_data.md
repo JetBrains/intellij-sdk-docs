@@ -5,7 +5,7 @@
 The Credentials Store API allows you to store sensitive user data securely, like passwords, server URLs, etc.
 
 ## How to Use
-Use [`PasswordSafe`](upsource:///platform/platform-api/src/com/intellij/ide/passwordSafe/PasswordSafe.kt) to work with credentials.
+Use [`PasswordSafe`](upsource:///platform/remote-core/src/ide/passwordSafe/PasswordSafe.kt) to work with credentials.
 
 _Common Utility Method:_
 

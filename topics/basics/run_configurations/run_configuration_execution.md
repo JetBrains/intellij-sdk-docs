@@ -56,7 +56,7 @@ If the running process uses ANSI escape codes to color its output, the [`Colored
 Console [filters](upsource:///platform/lang-api/src/com/intellij/execution/filters/Filter.java) allow you to convert certain strings found in the process output to clickable hyperlinks.
 To attach a filter to the console, use `CommandLineState.addConsoleFilters()` or, if you're creating a console manually, `TextConsoleBuilder.addFilter()`.
 
-Two common filter implementations you may want to reuse are [`RegexpFilter`](upsource:///platform/lang-api/src/com/intellij/execution/filters/RegexpFilter.java) and [`UrlFilter`](upsource:///platform/lang-api/src/com/intellij/execution/filters/UrlFilter.java).
+Two common filter implementations you may want to reuse are [`RegexpFilter`](upsource:///platform/lang-api/src/com/intellij/execution/filters/RegexpFilter.java) and [`UrlFilter`](upsource:///platform/execution-impl/src/com/intellij/execution/filters/UrlFilter.java).
 
 ## Starting a Run Configuration from Code
 

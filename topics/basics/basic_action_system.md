@@ -31,7 +31,7 @@ Every IntelliJ Platform action should override `AnAction.update()` and must over
 * An action's method `AnAction.update()` is called by the IntelliJ Platform framework to update an action state.
   The state (enabled, visible) of an action determines whether the action is available in the UI of an IDE.
   An object of the [`AnActionEvent`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnActionEvent.java) type is passed to this method and contains information about the current context for the action.
-  Actions are made available by changing state in the [Presentation](upsource:///platform/platform-api/src/com/intellij/ide/presentation/Presentation.java) object associated with the event context.
+  Actions are made available by changing state in the [`Presentation`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/Presentation.java) object associated with the event context.
   As explained in [Overriding the `AnAction.update()`  Method](#overriding-the-anactionupdate-method), it is vital `update()` methods _execute quickly_ and return execution to the IntelliJ Platform.
 * An action's method `AnAction.actionPerformed()` is called by the IntelliJ Platform if available and selected by the user.
   This method does the heavy lifting for the action - it contains the code executed when the action gets invoked.
@@ -119,7 +119,7 @@ An action must have a unique identifier for each place it appears in the IDE UI.
 See the [Action Declaration Reference](#action-declaration-reference) section for information about how to specify locations in the IDE UI.
 
 #### Presentation
-A new [`Presentation`](upsource:///platform/platform-api/src/com/intellij/ide/presentation/Presentation.java) gets created for every place where the action appears.
+A new [`Presentation`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/Presentation.java) gets created for every place where the action appears.
 Therefore, the same action can have different text or icons when it appears in different places of the user interface.
 Different presentations for the action are created by copying the Presentation returned by the `AnAction.getTemplatePresentation()` method.
 

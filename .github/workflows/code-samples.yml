@@ -46,7 +46,7 @@ jobs:
           - tool_window
           - tree_structure_provider
     container:
-      image: gradle:jdk8
+      image: gradle:jdk11
     steps:
       - name: Fetch Sources
         uses: actions/checkout@v2.3.4

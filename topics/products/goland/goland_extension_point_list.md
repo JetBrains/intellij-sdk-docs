@@ -30,3 +30,8 @@ See [Extension Point List](extension_point_list.md) for IntelliJ Platform EPs.
 | [com.goide.sdk.targetSdkVersionProvider](https://jb.gg/ipe?extensions=com.goide.sdk.targetSdkVersionProvider) | `GoTargetSdkVersionProvider` | 
 | [com.goide.sdkProvider](https://jb.gg/ipe?extensions=com.goide.sdkProvider) | `GoSdkProvider` | 
 | [com.goide.support](https://jb.gg/ipe?extensions=com.goide.support) | `GoLangSupport` | 
+                                                      
+[non-dynamic]: https://img.shields.io/badge/-Non--Dynamic-orange
+[experimental]: https://img.shields.io/badge/-Experimental_API-red
+[internal]: https://img.shields.io/badge/-Internal_API-red
+[project-level]: https://img.shields.io/badge/-Project--Level-yellow

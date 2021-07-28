@@ -30,3 +30,8 @@ See [Extension Point List](extension_point_list.md) for IntelliJ Platform EPs.
 | [com.intellij.database.queryValidator](https://jb.gg/ipe?extensions=com.intellij.database.queryValidator) | `DbQueryValidator` | 
 | [com.intellij.database.urlEditorInspector](https://jb.gg/ipe?extensions=com.intellij.database.urlEditorInspector) | `UrlEditorInspector` | 
 | [com.intellij.database.urlParamEditorProvider](https://jb.gg/ipe?extensions=com.intellij.database.urlParamEditorProvider) ![Non-Dynamic][non-dynamic] | `TypeDescriptorFactory` |
+
+[non-dynamic]: https://img.shields.io/badge/-Non--Dynamic-orange
+[experimental]: https://img.shields.io/badge/-Experimental_API-red
+[internal]: https://img.shields.io/badge/-Internal_API-red
+[project-level]: https://img.shields.io/badge/-Project--Level-yellow

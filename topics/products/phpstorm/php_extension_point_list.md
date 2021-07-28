@@ -95,3 +95,8 @@ See [Extension Point List](extension_point_list.md) for IntelliJ Platform EPs.
 | [com.jetbrains.php.remote.interpreter.ui.customConfigProvider](https://jb.gg/ipe?extensions=com.jetbrains.php.remote.interpreter.ui.customConfigProvider) | `PhpProjectConfigComponentProvider` | 
 | [com.jetbrains.php.remote.phpHelperScriptProvider](https://jb.gg/ipe?extensions=com.jetbrains.php.remote.phpHelperScriptProvider) | `PhpHelperScriptProvider` | 
 | [com.jetbrains.php.remote.remoteProcessManager](https://jb.gg/ipe?extensions=com.jetbrains.php.remote.remoteProcessManager) | `PhpRemoteProcessManager` | 
+                                                                                                 
+[non-dynamic]: https://img.shields.io/badge/-Non--Dynamic-orange
+[experimental]: https://img.shields.io/badge/-Experimental_API-red
+[internal]: https://img.shields.io/badge/-Internal_API-red
+[project-level]: https://img.shields.io/badge/-Project--Level-yellow

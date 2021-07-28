@@ -191,3 +191,8 @@ See [Extension Point List](extension_point_list.md) for IntelliJ Platform EPs.
 | [clion.makefile.buildSystemDetector](https://jb.gg/ipe?extensions=clion.makefile.buildSystemDetector) | `MkBuildSystemDetector` | 
 | [clion.makefile.projectPreConfigurator](https://jb.gg/ipe?extensions=clion.makefile.projectPreConfigurator) | `MkProjectPreConfigurator` | 
 
+                                                              
+[non-dynamic]: https://img.shields.io/badge/-Non--Dynamic-orange
+[experimental]: https://img.shields.io/badge/-Experimental_API-red
+[internal]: https://img.shields.io/badge/-Internal_API-red
+[project-level]: https://img.shields.io/badge/-Project--Level-yellow

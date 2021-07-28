@@ -83,3 +83,8 @@ See [Extension Point List](extension_point_list.md) for IntelliJ Platform EPs.
 | [org.jetbrains.plugins.ruby.rubyFileStructureProvider](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.rubyFileStructureProvider) | `RubyFileStructureViewProvider` | 
 | [org.jetbrains.plugins.ruby.rubyTestFinder](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.rubyTestFinder) | `AbstractRubyTestFinder` | 
 | [org.jetbrains.plugins.ruby.runConfigurationExtension](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.runConfigurationExtension) | `RubyRunConfigurationExtension` |
+
+[non-dynamic]: https://img.shields.io/badge/-Non--Dynamic-orange
+[experimental]: https://img.shields.io/badge/-Experimental_API-red
+[internal]: https://img.shields.io/badge/-Internal_API-red
+[project-level]: https://img.shields.io/badge/-Project--Level-yellow

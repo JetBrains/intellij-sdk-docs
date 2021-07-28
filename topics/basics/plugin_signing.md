@@ -15,7 +15,7 @@ To be sure a file has not been modified, the file will be signed twice – first
 
 The plugin author's sign-verify process is as follows:
 
-- A plugin author generates a key pair and uploads the public part to JetBrains Marketplace.
+- A plugin author generates a key pair ~~and uploads the public part to JetBrains Marketplace~~ (this feature is not yet available).
 - A build tool signs a plugin file during the assembly process.
 - The user uploads the plugin file to JetBrains Marketplace.
 - JetBrains Marketplace checks if the public key is present in the user profile.

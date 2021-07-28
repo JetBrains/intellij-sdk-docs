@@ -2,7 +2,7 @@
 
 <!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-58 Extension Points (EP) for RubyMine
+59 Extension Points (EP) for RubyMine
 
 See [Extension Point List](extension_point_list.md) for IntelliJ Platform EPs.
 
@@ -11,14 +11,12 @@ See [Extension Point List](extension_point_list.md) for IntelliJ Platform EPs.
 ## RubyMine
 
 ### intellij.ruby.coverage.xml
-intellij.ruby.coverage.xml
 
 | Extension Point | Implementation |
 |-----------------|----------------|
 | [org.jetbrains.plugins.ruby.coverage.deserializer](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.coverage.deserializer) | `RubyCoverageDeserializationProvider` | 
 
 ### ruby-core.xml
-ruby-core.xml
 
 | Extension Point | Implementation |
 |-----------------|----------------|
@@ -28,7 +26,6 @@ ruby-core.xml
 | [org.jetbrains.plugins.ruby.callNavigationOffsetProvider](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.callNavigationOffsetProvider) | `StructureCallNavigationOffsetProvider` | 
 | [org.jetbrains.plugins.ruby.callTypeProvider](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.callTypeProvider) | `RubyCallTypeProvider` | 
 | [org.jetbrains.plugins.ruby.completionProvider](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.completionProvider) | `RubyCompletionProvider` | 
-| [org.jetbrains.plugins.ruby.deprecatedGemsProvider](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.deprecatedGemsProvider) | `DeprecatedGemProvider` | 
 | [org.jetbrains.plugins.ruby.gem.module.gemInfrastructure](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.gem.module.gemInfrastructure) | `GemInfrastructure` | 
 | [org.jetbrains.plugins.ruby.gemScannerSuppressor](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.gemScannerSuppressor) | `GemScannerSuppressor` | 
 | [org.jetbrains.plugins.ruby.implicitGemProvider](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.implicitGemProvider) | `ImplicitRequireGemProvider` | 
@@ -40,6 +37,8 @@ ruby-core.xml
 | [org.jetbrains.plugins.ruby.overriddenMethodGenerator](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.overriddenMethodGenerator) | `OverriddenMethodGenerator` | 
 | [org.jetbrains.plugins.ruby.paramDefProvider](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.paramDefProvider) | `ParamDefProvider` | 
 | [org.jetbrains.plugins.ruby.renameHelper](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.renameHelper) | `RubyRenameHelper` | 
+| [org.jetbrains.plugins.ruby.ruby.expectedParameterTypeProvider](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.ruby.expectedParameterTypeProvider) | `RubyExpectedParameterTypeProvider` | 
+| [org.jetbrains.plugins.ruby.ruby.expectedReturnTypeProvider](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.ruby.expectedReturnTypeProvider) | `RubyExpectedReturnTypeProvider` | 
 | [org.jetbrains.plugins.ruby.ruby.run.runEnvironmentProvider](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.ruby.run.runEnvironmentProvider) | `RunEnvironmentProvider` | 
 | [org.jetbrains.plugins.ruby.ruby.run.testFrameworkConfigurator](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.ruby.run.testFrameworkConfigurator) | `TestFrameworkConfigurator` | 
 | [org.jetbrains.plugins.ruby.rubyElementNameAndDescriptionProvider](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.rubyElementNameAndDescriptionProvider) | `RubyElementNameAndDescriptionProvider` | 
@@ -62,7 +61,6 @@ ruby-core.xml
 | [org.jetbrains.plugins.ruby.versionManagerHandler](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.versionManagerHandler) | `RubyVersionManagerHandler` | 
 
 ### ruby-plugin.xml
-ruby-plugin.xml
 
 | Extension Point | Implementation |
 |-----------------|----------------|
@@ -84,4 +82,4 @@ ruby-plugin.xml
 | [org.jetbrains.plugins.ruby.ruby.run.configuration.debugger.rubyDebugHelperFactory](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.ruby.run.configuration.debugger.rubyDebugHelperFactory) | `RubyDebugHelperFactory` | 
 | [org.jetbrains.plugins.ruby.rubyFileStructureProvider](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.rubyFileStructureProvider) | `RubyFileStructureViewProvider` | 
 | [org.jetbrains.plugins.ruby.rubyTestFinder](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.rubyTestFinder) | `AbstractRubyTestFinder` | 
-| [org.jetbrains.plugins.ruby.runConfigurationExtension](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.runConfigurationExtension) | `RubyRunConfigurationExtension` | 
+| [org.jetbrains.plugins.ruby.runConfigurationExtension](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.runConfigurationExtension) | `RubyRunConfigurationExtension` |

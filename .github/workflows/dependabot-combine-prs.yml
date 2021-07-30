@@ -1,3 +1,4 @@
+# Workflow originally created by Martin Gjaldbaek (https://github.com/hrvey/combine-prs-workflow)
 name: Dependabot Combine PRs
 
 # Controls when the action will run - in this case triggered manually

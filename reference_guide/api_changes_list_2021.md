@@ -75,6 +75,20 @@ Please see [Incompatible API Changes](api_changes_list.md) on how to verify comp
                               
 ### Changes in IntelliJ Platform 2021.3
 
+`com.intellij.execution.process.ColoredOutputTypeRegistry.getAnsiColorKey(int)` method removed
+: Use `com.intellij.execution.process.ColoredOutputTypeRegistryImpl.getAnsiColorKey(int)` instead
+
+`com.intellij.diagnostic.PerformanceWatcher.Snapshot` class now interface
+: Recompile the dependant code or use `com.intellij.diagnostic.PerformanceWatcherImpl.SnapshotImpl` instead
+
+`com.intellij.openapi.fileEditor.impl.EditorTabPresentationUtil.getEditorTabTitle(Project, VirtualFile, EditorWindow)` method parameter `EditorWindow` removed
+: This parameter never needed, but lead to code coupling 
+
+`com.intellij.openapi.fileEditor.impl.EditorTabPresentationUtil.getUniqueEditorTabTitle(Project, VirtualFile, EditorWindow)` method parameter `EditorWindow` removed
+: This parameter never needed, but lead to code coupling
+
+`com.intellij.openapi.fileEditor.impl.EditorTabTitleProvider.getEditorTabTitle(Project, VirtualFile, EditorWindow)` method parameter `EditorWindow` removed
+: This parameter never needed, but lead to code coupling
 
 ## 2021.2
                               

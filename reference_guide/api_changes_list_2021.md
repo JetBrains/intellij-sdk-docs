@@ -87,8 +87,14 @@ Please see [Incompatible API Changes](api_changes_list.md) on how to verify comp
 `com.intellij.openapi.fileEditor.impl.EditorTabTitleProvider.getEditorTabTitle(Project, VirtualFile, EditorWindow)` method parameter `EditorWindow` removed
 : This parameter never needed, but lead to code coupling
 
-Modules `intelij.platform.util.strings`, `intellij.platform.util.collections` and `intellij.platform.util.diagnostic` 
-was joined into `intellij.platform.util.base` 
+`intelij.platform.util.strings` package removed
+: Module `intelij.platform.util.strings` was joined into `intellij.platform.util.base`
+
+`intellij.platform.util.collections` package removed
+: Module `intellij.platform.util.collections` was joined into `intellij.platform.util.base`
+
+`intellij.platform.util.diagnostic` package removed
+: Module `intellij.platform.util.diagnostic` was joined into `intellij.platform.util.base`
 
 ## 2021.2
                               

@@ -75,16 +75,16 @@ Please see [Incompatible API Changes](api_changes_list.md) on how to verify comp
                               
 ### Changes in IntelliJ Platform 2021.3
 
-`com.intellij.ui.mac.MacMessages.showMessageDialog(String, String, String[], boolean, Window, int, int, DialogWrapper.DoNotAskOption) : int` method removed
-: Use `com.intellij.ui.mac.MacMessages.showMessageDialog(String, String, String[], boolean, Window, int, int,  DoNotAskOption) : int` instead
+`com.intellij.ui.mac.MacMessages.showMessageDialog(String, String, String[], boolean, Window, int, int, DialogWrapper.DoNotAskOption)` method removed
+: Use `com.intellij.ui.mac.MacMessages.showMessageDialog(String, String, String[], boolean, Window, int, int,  DoNotAskOption)` instead
 
 `com.intellij.openapi.ui.MessageDialogBuilder.doNotAsk(DialogWrapper.DoNotAskOption)` method removed
 : Use `com.intellij.openapi.ui.MessageDialogBuilder.doNotAsk(DoNotAskOption)` instead
 
-`com.intellij.ide.util.projectWizard.WizardContext.getWizard() : AbstractWizard` method removed
-: Use `ccom.intellij.ide.util.projectWizard.WizardContext.getUserData(AbstractWizard.KEY)` instead
+`com.intellij.ide.util.projectWizard.WizardContext.getWizard()` method removed
+: Use `com.intellij.ide.util.projectWizard.WizardContext.getUserData(AbstractWizard.KEY)` instead
 
-`com.intellij.openapi.ui.TextComponentAccessor.TEXT_FIELD_WITH_HISTORY_WHOLE_TEXT : TextComponentAccessor` field removed
+`com.intellij.openapi.ui.TextComponentAccessor.TEXT_FIELD_WITH_HISTORY_WHOLE_TEXT` field removed
 : Use `com.intellij.openapi.ui.TextComponentAccessors.TEXT_FIELD_WITH_HISTORY_WHOLE_TEXT` instead
 
 `com.intellij.execution.process.ColoredOutputTypeRegistry.getAnsiColorKey(int)` method removed

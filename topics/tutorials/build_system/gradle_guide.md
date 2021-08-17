@@ -66,7 +66,7 @@ Using the corresponding JetBrains Runtime is also the default, so for this use c
 
 #### Running Against Alternate Versions and Types of IntelliJ Platform-Based IDEs
 The IntelliJ Platform IDE used for the Development Instance can be different from that used to build the plugin project.
-Setting the [Running DSL](https://github.com/JetBrains/gradle-intellij-plugin#running-dsl) attribute `runIde.ideDirectory` will define an IDE to be used for the Development Instance.
+Setting the [Running DSL](https://github.com/JetBrains/gradle-intellij-plugin#running-dsl) attribute `runIde.ideDir` will define an IDE to be used for the Development Instance.
 This attribute is commonly used when running or debugging a plugin in an [alternate IntelliJ Platform-based IDE](intellij_platform.md#ides-based-on-the-intellij-platform).
 
 #### Running Against Alternate Versions of the JetBrains Runtime

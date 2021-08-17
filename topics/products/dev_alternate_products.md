@@ -101,7 +101,7 @@ Use the Gradle plugin attribute `intellij.plugins` to declare a dependency.
 See the specific product pages in Part VIII for the _targetIDE_ plugin or module name.
 
 The best practice is to modify the `runIde {}` task to use a local installation of _targetIDE_ as the [IDE Development Instance](ide_development_instance.md).
-Set the `runIde.ideDirectory` attribute to the (user-specific) absolute path of the _targetIDE_ application.
+Set the `runIde.ideDir` attribute to the (user-specific) absolute path of the _targetIDE_ application.
 The exact path format varies by operating system.
 
 This snippet is an example for configuring the Setup and Running DSLs in a <path>build.gradle</path> specific to developing a plugin for _targetIDE_.
@@ -120,7 +120,7 @@ intellij {
 runIde {
   // Absolute path to the installed targetIDE to use as IDE Development Instance
   // Note the Contents directory must be added at the end of the path for macOS.
-  ideDirectory = '/Users/$USERNAME$/Library/Application Support/JetBrains/Toolbox/apps/PhpStorm/ch-0/192.7142.41/PhpStorm.app/Contents'
+  ideDir = '/Users/$USERNAME$/Library/Application Support/JetBrains/Toolbox/apps/PhpStorm/ch-0/192.7142.41/PhpStorm.app/Contents'
 }
 ```
 

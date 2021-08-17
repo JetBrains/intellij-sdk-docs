@@ -27,7 +27,7 @@ Click on an entry in the table's *Attribute* column to go to the documentation a
 | [`intellij.version`][properties]         | Set to the targeted CLion version, e.g. `2019.3.1`.                            |
 | [`intellij.plugins`][properties]         | No specific declaration is needed.                                             |
 | [`intellij.downloadSources`][properties] | `false` is required because no public source code is available.                |
-| [`runIde.ideDirectory`][dsl]             | Not needed; the Development Instance will automatically match `intellij.type`. |
+| [`runIde.ideDir`][dsl]                   | Not needed; the Development Instance will automatically match `intellij.type`. |
 
 [properties]: https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md#intellij-platform-properties
 [dsl]: https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md#running-dsl

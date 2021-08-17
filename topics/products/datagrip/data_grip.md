@@ -21,13 +21,13 @@ The table below summarizes the `gradle-intellij-plugin` attributes to set in the
 Click on an entry in the table's *Attribute* column to go to the documentation about that attribute.
 To see how these attributes appear in a similar <path>build.gradle</path> file for PhpStorm, see [Configuring build.gradle using the IntelliJ IDEA Product Attribute](dev_alternate_products.md#configuring-buildgradle-using-the-intellij-idea-product-attribute).
 
-| `gradle-intellij-plugin` Attribute | Attribute Value                                                                                                                                                                                            |
-| ---------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [`intellij.type`][properties]      | `IU` for IntelliJ IDEA Ultimate.<br/>(`IC` is incompatible with the required `DatabaseTools` plugin.)                                                                                                       |
-| [`intellij.version`][properties]   | `2019.3` Set to the same version as the DataGrip target version, as set by `runIde.ideDirectory`.                                                                                                          |
-| [`intellij.plugins`][properties]   | `plugins 'DatabaseTools'` Dependency on the bundled `DatabaseTools` plugin.                                                                                                                                |
-| [`runIde.ideDirectory`][dsl]       | Path to locally installed target version of DataGrip. For example, for macOS:<br/><path>/Users/$USERNAME$/Library/Application Support/JetBrains/Toolbox/apps/datagrip/ch-0/193.5233.139/DataGrip.app/Contents</path>. |
-| [`runIde.jvmArgs`][dsl]            | `jvmArgs '-Didea.platform.prefix=DataGrip'`<br/>Only required for `gradle-intellij-plugin` 0.4.16 or earlier.                                                                                               |
+| `gradle-intellij-plugin` Attribute | Attribute Value                                                                                                                                                                                                       |
+| ---------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [`intellij.type`][properties]      | `IU` for IntelliJ IDEA Ultimate.<br/>(`IC` is incompatible with the required `DatabaseTools` plugin.)                                                                                                                 |
+| [`intellij.version`][properties]   | `2019.3` Set to the same version as the DataGrip target version, as set by `runIde.ideDir`.                                                                                                                           |
+| [`intellij.plugins`][properties]   | `plugins 'DatabaseTools'` Dependency on the bundled `DatabaseTools` plugin.                                                                                                                                           |
+| [`runIde.ideDir`][dsl]             | Path to locally installed target version of DataGrip. For example, for macOS:<br/><path>/Users/$USERNAME$/Library/Application Support/JetBrains/Toolbox/apps/datagrip/ch-0/193.5233.139/DataGrip.app/Contents</path>. |
+| [`runIde.jvmArgs`][dsl]            | `jvmArgs '-Didea.platform.prefix=DataGrip'`<br/>Only required for `gradle-intellij-plugin` 0.4.16 or earlier.                                                                                                         |
 
 [properties]: https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md#intellij-platform-properties
 [dsl]: https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md#running-dsl

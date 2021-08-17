@@ -22,7 +22,7 @@ To see how these attributes appear in a similar <path>build.gradle</path> file f
 | [`intellij.type`][properties]      | `IU` for IntelliJ IDEA Ultimate.                                                                                                                                                                         |
 | [`intellij.version`][properties]   | Set to the same `IU` BRANCH.BUILD as the RubyMine target version, e.g. `192.7142.36`.                                                                                                                    |
 | [`intellij.plugins`][properties]   | `org.jetbrains.plugins.ruby:2019.2.20191029` for the Ruby plugin.<br/>See below for Ruby plugin version information.                                                                                      |
-| [`runIde.ideDirectory`][dsl]       | Path to locally installed target version of RubyMine. For example, on macOS:<br/><path>/Users/$USERNAME$/Library/Application Support/JetBrains/Toolbox/apps/RubyMine/ch-0/192.7142.37/RubyMine.app/Contents</path>. |
+| [`runIde.ideDir`][dsl]             | Path to locally installed target version of RubyMine. For example, on macOS:<br/><path>/Users/$USERNAME$/Library/Application Support/JetBrains/Toolbox/apps/RubyMine/ch-0/192.7142.37/RubyMine.app/Contents</path>. |
 
 [properties]: https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md#intellij-platform-properties
 [dsl]: https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md#running-dsl

@@ -22,7 +22,7 @@ To see how these attributes appear in a similar <path>build.gradle</path> file f
 | [`intellij.type`][properties]      | `IU` for IntelliJ IDEA Ultimate.<br/>(`IC` is incompatible with the required `JavaScriptLanguage` plugin.                                                                                                  |
 | [`intellij.version`][properties]   | `192.7142.36` Set to the same BRANCH.BUILD as the WebStorm target version.                                                                                                                                |
 | [`intellij.plugins`][properties]   | Dependency on the `JavaScriptLanguage` plugin.                                                                                                                                                            |
-| [`runIde.ideDirectory`][dsl]       | Path to locally installed target version of WebStorm. For example, for macOS:<br/><path>/Users/$USERNAME$/Library/Application Support/JetBrains/Toolbox/apps/WebStorm/ch-0/192.7142.35/WebStorm.app/Contents</path>. |
+| [`runIde.ideDir`][dsl]             | Path to locally installed target version of WebStorm. For example, for macOS:<br/><path>/Users/$USERNAME$/Library/Application Support/JetBrains/Toolbox/apps/WebStorm/ch-0/192.7142.35/WebStorm.app/Contents</path>. |
 
 [properties]: https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md#intellij-platform-properties
 [dsl]: https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md#running-dsl

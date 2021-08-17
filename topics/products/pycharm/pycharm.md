@@ -21,7 +21,7 @@ Click on an entry in the table's *Attribute* column to go to the documentation a
 | [`intellij.version`][properties]         | Set to the targeted `PY` or `PC` version.                                      |
 | [`intellij.plugins`][properties]         | No specific declaration is needed to use `PY` or `PC` APIs.                    |
 | [`intellij.downloadSources`][properties] | `false` is required because no public source code is available.                |
-| [`runIde.ideDirectory`][dsl]             | Not needed; the Development Instance will automatically match `intellij.type`. |
+| [`runIde.ideDir`][dsl]                   | Not needed; the Development Instance will automatically match `intellij.type`. |
 
 [properties]: https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md#intellij-platform-properties
 [dsl]: https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md#running-dsl

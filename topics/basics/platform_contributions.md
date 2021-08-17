@@ -1,6 +1,6 @@
 [//]: # (title: Contributing to the IntelliJ Platform)
 
-<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 Please make sure to read the [Code of Conduct](intellij-sdk-docs-original_CODE_OF_CONDUCT.md).
 
@@ -53,13 +53,13 @@ You can submit a plugin to the [JetBrains Plugins Repository](https://plugins.je
 When writing a plugin, you have control over the code and don't need to sign the contribution agreement.
 
 ### Submit a Patch
-If you would like to improve the code in the IntelliJ Platform or the core functionality of IntelliJ IDEA, you can submit a patch in the [YouTrack bug database](https://youtrack.jetbrains.com/issues/IDEA).
-You can either file a new issue with the patch attached or attach a patch to an issue submitted by another user.
-When writing a patch, please make sure to follow the [IntelliJ Platform Coding Guidelines](intellij_coding_guidelines.md).
+If you would like to improve the code in the IntelliJ Platform or the core functionality of IntelliJ IDEA, you can submit a pull request to the [IntelliJ IDEA Community Edition repository on GitHub](https://github.com/JetBrains/intellij-community).
+When preparing the change, please make sure to follow the [IntelliJ Platform Coding Guidelines](intellij_coding_guidelines.md).
+A developer will review your contribution and, if it meets the quality criteria and fits well with the rest of the code, you'll be notified about the acceptance of the patch.
 
-Alternatively, you can fork the [IntelliJ IDEA Community Edition repository on GitHub](https://github.com/JetBrains/intellij-community), make the changes in your fork and send us a pull request.
-A developer will review your patch and, if it meets the [quality criteria](intellij_coding_guidelines.md) and fits well with the rest of the code, you'll be notified about the acceptance of the patch.
-You will also need to sign the [JetBrains Contributor License Agreement (CLA)](https://www.jetbrains.com/agreements/cla/) to complete your contribution.
+Alternatively, you can attach a patch to the ticket in the [YouTrack bug database](https://youtrack.jetbrains.com/issues/IDEA).
+You can either file a new issue with the patch attached or attach a patch to an issue submitted by another user. 
+In this case, you will also need to sign the [JetBrains Contributor License Agreement (CLA)](https://www.jetbrains.com/agreements/cla/) to complete your contribution. 
 
 ### Become a Committer
 Developers with a long history of submitting high-quality patches can gain direct commit rights.

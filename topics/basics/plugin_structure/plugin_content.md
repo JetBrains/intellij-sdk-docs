@@ -2,6 +2,8 @@
 
 <!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
+Plugin distribution will be built using [Gradle](deployment.md) or [Plugin DevKit](deploying_plugin.md).
+
 The plugin <path>jar</path> file must contain:
 - the configuration file (<path>META-INF/plugin.xml</path>) ([Plugin Configuration File](plugin_configuration_file.md))
 - the classes that implement the plugin functionality

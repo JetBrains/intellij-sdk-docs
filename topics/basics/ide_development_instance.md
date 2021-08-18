@@ -61,6 +61,7 @@ This allows a much faster development cycle by avoiding a full restart of the de
 Please note that any unloading problems in a production environment will ask the user to restart the IDE.
 
  > Auto-Reload does not work when the sandbox IDE instance is running under a debugger.
+ >
  {type="warning"}
 
 <tabs>
@@ -71,6 +72,12 @@ Enabled by default for target platform 2020.2 or later.
 
 Set `autoReloadPlugins = true` in [runIde](gradle_prerequisites.md#running-a-simple-gradle-based-intellij-platform-plugin) task to enable it for earlier platform versions or `autoReloadPlugins = false` to disable it explicitly.
 
+After starting the sandbox IDE instance, run `buildPlugin` task after modifications in the plugin project and switch focus back to sandbox instance to trigger reload.
+
+ > `buildSearchableOptions` task must currently be [disabled explicitly](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/FAQ.md#how-to-disable-building-searchable-options) to workaround _Only one instance of IDEA can be run at a time_ problem.
+ >
+ {type="warning"}
+   
 </tab>
 
 <tab title="DevKit">

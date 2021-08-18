@@ -101,8 +101,8 @@ For Gradle-based plugins, the default Sandbox Home location is defined by the In
 See [Configuring a Gradle Plugin Project](gradle_prerequisites.md) for more information about specifying a Sandbox Home location.
 
 The default Sandbox Home location is:
-* **Windows**> <path>$PROJECT_DIRECTORY$\build\idea-sandbox</path>
-* **Linux or macOS**: <path>$PROJECT_DIRECTORY$/build/idea-sandbox</path>
+* Windows: <path>$PROJECT_DIRECTORY$\build\idea-sandbox</path>
+* Linux/macOS: <path>$PROJECT_DIRECTORY$/build/idea-sandbox</path>
 
 </tab>
 
@@ -112,9 +112,9 @@ For DevKit-based plugins, the default Sandbox Home location is defined in the In
 See specifying the [Sandbox Home for DevKit Projects](setting_up_environment.md) for more information.
 
 The default Sandbox Home directory location is:
-* **Windows:** `<User home>\.<product_system_name><product_version>\system\plugins-sandbox\`
-* **Linux:** `~/.<product_system_name><product_version>/system/plugins-sandbox/`
-* **macOS** `~/Library/Caches/<product_system_name><product_version>/plugins-sandbox/`
+* Windows: `<User home>\.<product_system_name><product_version>\system\plugins-sandbox\`
+* Linux: `~/.<product_system_name><product_version>/system/plugins-sandbox/`
+* macOS: `~/Library/Caches/<product_system_name><product_version>/plugins-sandbox/`
 
 </tab>
 </tabs>

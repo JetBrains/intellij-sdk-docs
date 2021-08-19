@@ -96,3 +96,7 @@ Generally, the word index should be accessed indirectly by using helper methods 
 
 ### File Type Index
 [`FileTypeIndex`](upsource:///platform/indexing-api/src/com/intellij/psi/search/FileTypeIndex.java) serves a similar goal: it allows to find all files of a particular [`FileType`](upsource:///platform/core-api/src/com/intellij/openapi/fileTypes/FileType.java) quickly.
+                       
+## Additional Index Roots
+
+To add additional files/directories to be indexed, implement [`IndexableSetContributor`](upsource:///platform/indexing-api/src/com/intellij/util/indexing/IndexableSetContributor.java) and register in [`com.intellij.indexedRootsProvider`](https://jb.gg/ipe?extensions=com.intellij.indexedRootsProvider) extension point.

@@ -43,7 +43,7 @@ Still, additional optimizations are possible (for example, performing the tree w
 There are a set of interfaces that can be used as a base for implementing resolve support, namely the [`PsiScopeProcessor`](upsource:///platform/core-api/src/com/intellij/psi/scope/PsiScopeProcessor.java) interface and the [`PsiElement.processDeclarations()`](upsource:///platform/core-api/src/com/intellij/psi/PsiElement.java) method.
 These interfaces have several extra complexities that are unnecessary for most custom languages (like support for substituting Java generics types).
 Still, they are required if the custom language can have references to Java code.
-If Java interoperability is not required, the plugin can forgo the standard interfaces and provide its own, different implementation of resolve.
+If Java interoperability is not required, the plugin can forgot the standard interfaces and provide its own, different implementation of resolve.
 
 The implementation of resolve based on the standard helper classes contains the following components:
 

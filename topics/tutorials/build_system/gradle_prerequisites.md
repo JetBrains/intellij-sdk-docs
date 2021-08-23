@@ -187,3 +187,5 @@ Open the Gradle tool window and search for the <control>runIde</control> task:
 
 Double-click on the <control>runIde</control> task to execute it.
 See the IntelliJ IDEA help for more information about [Working with Gradle tasks](https://www.jetbrains.com/help/idea/gradle.html#96bba6c3).
+                       
+To debug your plugin in a _standalone_ IDE instance, please see [How to Debug Your Own IntelliJ IDEA Instance](https://medium.com/agorapulse-stories/how-to-debug-your-own-intellij-idea-instance-7d7df185a48d) blog post.

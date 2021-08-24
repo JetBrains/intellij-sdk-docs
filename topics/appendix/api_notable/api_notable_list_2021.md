@@ -15,7 +15,10 @@ Unit test mode: non-production `IconManager`
                      
 Constructor Injection disabled for Extensions
 : Please obtain necessary components only when needed (logged as ERROR now).
-                   
+          
+Language Injection
+: Use [`LanguageInjectionContributor`](upsource:///platform/core-api/src/com/intellij/lang/injection/general/LanguageInjectionContributor.java) (EP `com.intellij.languageInjectionContributor`) and [`LanguageInjectionPerformer`](upsource:///platform/core-api/src/com/intellij/lang/injection/general/LanguageInjectionPerformer.java) (EP `com.intellij.languageInjectionPerformer`) to customize language injection. 
+         
 ### Notable Changes in IntelliJ IDEA 2021.2
 
 Unbundled plugins

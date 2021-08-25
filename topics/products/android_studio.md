@@ -54,7 +54,7 @@ The snippet below is an example of configuring the Setup and Running DSLs in a <
   runIde {
       // Absolute path to installed target 3.5 Android Studio to use as IDE Development Instance
       // The "Contents" directory is macOS specific.
-      ideDir = '/Applications/Android Studio.app/Contents'
+      ideDir = file('/Applications/Android Studio.app/Contents')
   }
 ```
 

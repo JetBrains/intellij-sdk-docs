@@ -120,7 +120,7 @@ intellij {
 runIde {
   // Absolute path to the installed targetIDE to use as IDE Development Instance
   // Note the Contents directory must be added at the end of the path for macOS.
-  ideDir = '/Users/$USERNAME$/Library/Application Support/JetBrains/Toolbox/apps/PhpStorm/ch-0/192.7142.41/PhpStorm.app/Contents'
+  ideDir = file('/Users/$USERNAME$/Library/Application Support/JetBrains/Toolbox/apps/PhpStorm/ch-0/192.7142.41/PhpStorm.app/Contents')
 }
 ```
 

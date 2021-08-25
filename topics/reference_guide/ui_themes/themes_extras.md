@@ -55,7 +55,7 @@ For example, the snippet below sets the color of the line numbers displayed in t
 For additional examples of `name` and `value` attributes, review the editor color scheme XML file for the [High Contrast editor scheme](upsource:///platform/platform-resources/src/themes/highContrastScheme.xml).
 
 ### Customizing Version Control File Status Colors
-As [described above](#creating-a-custom-editor-scheme-using-settingspreferences), colors corresponding to the VCS status of files can be customized and exported via the [Preferences/Settings](https://www.jetbrains.com/help/idea/file-status-highlights.html).
+As [described above](#creating-a-custom-editor-scheme-using-settingspreferences), colors corresponding to the VCS status of files can be customized and exported via the [Settings/Preferences](https://www.jetbrains.com/help/idea/file-status-highlights.html).
 No other procedure is necessary to customize these colors.
 In the exported color scheme file the `name` is the VCS file status, and the `value` is the new color corresponding to that status.
 For example, customized VCS colors for a subset of file statuses will appear in the editor scheme file as:

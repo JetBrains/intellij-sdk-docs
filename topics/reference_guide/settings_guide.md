@@ -140,7 +140,7 @@ The following nested interfaces are markers, which convey information about the 
 #### Additional Interfaces Based on Configurable
 There are classes in the IntelliJ Platform specialized for particular types of Settings.
 These subtypes are based on `com.intellij.openapi.options.ConfigurableEP`.
-For example, **Settings/Preferences \| Editor \| General \|Appearance** allows adding Settings via [`EditorSmartKeysConfigurableEP`](upsource:///platform/lang-impl/src/com/intellij/application/options/editor/EditorSmartKeysConfigurableEP.java) and `com.intellij.editorSmartKeysConfigurable` EP.
+For example, <menupath>Settings/Preferences | Editor | General | Appearance</menupath> allows adding Settings via [`EditorSmartKeysConfigurableEP`](upsource:///platform/lang-impl/src/com/intellij/application/options/editor/EditorSmartKeysConfigurableEP.java) and `com.intellij.editorSmartKeysConfigurable` EP.
 
 ### The ConfigurableProvider Class
 The [`ConfigurableProvider`](upsource:///platform/platform-api/src/com/intellij/openapi/options/ConfigurableProvider.java) class only provides a `Configurable` implementation if its runtime conditions are met.

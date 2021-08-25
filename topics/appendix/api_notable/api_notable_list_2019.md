@@ -22,7 +22,7 @@ Symbol completion in plain text editor (VCS Commit Message)
 : Contribute symbol names (classes, methods, ..) via `com.intellij.completion.plainTextSymbol` extension point (`com.intellij.codeInsight.completion.PlainTextSymbolCompletionContributor`).
 
 User-customizable date/time formatting
-: Use `com.intellij.util.text.JBDateFormat#getFormatter()` to use configured format from `Settings | Appearance & Behavior | System Settings | Date Formats`.
+: Use `com.intellij.util.text.JBDateFormat#getFormatter()` to use configured format from <menupath>Settings/Preferences | Appearance & Behavior | System Settings | Date Formats</menupath>.
 
 ### Notable Changes in IntelliJ IDEA 2019.3
 

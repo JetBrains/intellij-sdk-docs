@@ -52,7 +52,7 @@ A more comprehensive explanation of action registration is available in the [Act
 
 ### Registering an Action with the New Action Form
 IntelliJ IDEA has an embedded inspection that spots unregistered actions.
-Verify the inspection is enabled at **Settings/Preferences \| Editor \| Inspections \| Plugin DevKit \| Code \| Component/Action not registered**.
+Verify the inspection is enabled at <menupath>Settings/Preferences | Editor | Inspections | Plugin DevKit | Code | Component/Action not registered</menupath>.
 Here is an example for this stage of the `PopupDialogAction` class:
 
 !["Action never used" inspection](action_never_used.png){width="600"}

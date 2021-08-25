@@ -36,7 +36,7 @@ The VFS will be updated during the next refresh operation, which includes the fi
 
 IntelliJ Platform refreshes the entire project contents asynchronously on startup.
 By default, it performs a refresh operation when the user switches to it from another app.
-Still, users can turn this off via **Settings \| Appearance & Behavior \| System Settings \| Synchronize external changes \[...]**.
+Still, users can turn this off via <menupath>Settings/Preferences | Appearance & Behavior | System Settings | Synchronize external changes\[...]</menupath>.
 
 On Windows, Mac, and Linux, a native file watcher process is started that receives file change notifications from the file system and reports them to the IntelliJ Platform.
 If a file watcher is available, a refresh operation looks only at the files that have been reported as changed by the file watcher.
@@ -48,7 +48,7 @@ If a file's contents were changed, but its timestamp remained the same, the Inte
 There is currently no facility for removing files from the snapshot.
 If a file was loaded there once, it remains there forever unless it was deleted from the disk, and a refresh operation was called on one of its parent directories.
 
-The VFS itself does not honor ignored files listed in **Settings \| Editor \| File Types** and folders to ignore and excluded folders listed in **Project Structure \| Modules \| Sources \| Excluded**.
+The VFS itself does not honor ignored files listed in <menupath>Settings/Preferences | Editor | File Types</menupath> and folders to ignore and excluded folders listed in <menupath>Project Structure | Modules | Sources | Excluded</menupath>.
 If the application code accesses them, the VFS will load and return their contents.
 In most cases, the ignored files and excluded folders must be skipped from processing by higher-level code.
 

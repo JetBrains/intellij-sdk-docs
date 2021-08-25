@@ -173,7 +173,7 @@ The caret Offset includes:
 * The first (0th) character in a document.
 * Whitespace characters, including newline and tabs.
 * Any characters after end-of-line if the IDE settings permit them.
-  (**Preferences \| Editor \| General \| Virtual Space**)
+  (<menupath>Settings/Preferences | Editor | General | Virtual Space</menupath>)
 * The character selected by the caret.
 
 The example below demonstrates the Offset of a caret placed at the first character of Logical line one.

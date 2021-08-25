@@ -104,7 +104,7 @@ Also review notes about [IntelliJ Platform Interactions](settings_guide.md#intel
 
 ## Testing the Custom Settings Plugin
 After performing the steps described above, compile and run the plugin in a Development Instance to see the custom Settings available in the Settings Dialog.
-Open the IDE Settings by selecting **Settings/Preferences \| Tools \| SDK: Application Settings Example**.
+Open the IDE Settings by selecting <menupath>Settings/Preferences | Tools | SDK: Application Settings Example</menupath>.
 The settings are preloaded with the default values:
 
 !["Settings Defaults"](settings_defaults.png){width="600"}

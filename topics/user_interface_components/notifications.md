@@ -1,6 +1,6 @@
 [//]: # (title: Notifications)
 
-<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 One of the leading design principles is avoiding the use of modal message boxes for notifying the user about errors and other situations that may warrant the user's attention. As a replacement, the IntelliJ Platform provides multiple non-modal notification UI options.
 
@@ -32,8 +32,8 @@ The most general way to display non-modal notifications is to use the [`Notifica
 
 It has two main advantages:
 
-* The user can control the way each notification type is displayed under `Settings | Appearance & Behavior | Notifications`
-* All displayed notifications are gathered in the Event Log tool window and can be reviewed later
+* The user can control the way each notification type is displayed under <menupath>Settings/Preferences | Appearance & Behavior | Notifications</menupath>
+* All displayed notifications are gathered in the <control>Event Log</control> tool window and can be reviewed later
          
 For UI reference, see [Balloon](https://jetbrains.design/intellij/controls/balloon/) in the IntelliJ Platform UI Guidelines.
 
@@ -43,7 +43,7 @@ The text of the notification can include HTML tags.
 
 Use `Notification.addAction(AnAction)` to add links below the content, use [`NotificationAction`](upsource:///platform/platform-api/src/com/intellij/notification/NotificationAction.java) for convenience.
 
-The `groupId` parameter of the [`Notification`](upsource:///platform/platform-api/src/com/intellij/notification/Notification.java) constructor specifies a notification type. The user can choose the display type corresponding to each notification type under `Settings | Appearance and Behavior | Notifications`.
+The `groupId` parameter of the [`Notification`](upsource:///platform/platform-api/src/com/intellij/notification/Notification.java) constructor specifies a notification type. The user can choose the display type corresponding to each notification type under <menupath>Settings/Preferences | Appearance & Behavior | Notifications</menupath>.
 
 To specify the preferred display type, you need to use [`NotificationGroup`](upsource:///platform/platform-api/src/com/intellij/notification/NotificationGroup.kt) to create notifications.
 

@@ -38,6 +38,12 @@ Implement a new [`ConfigurationFactory`](upsource:///platform/lang-api/src/com/i
 ```java
 ```
 {src="run_configuration/src/main/java/org/jetbrains/sdk/runConfiguration/DemoConfigurationFactory.java"}
+                             
+Implement corresponding configuration options class extending [`RunConfigurationOptions`](upsource:///platform/lang-api/src/com/intellij/execution/configurations/RunConfigurationOptions.kt) to store settings.
+
+```java
+```
+{src="run_configuration/src/main/java/org/jetbrains/sdk/runConfiguration/DemoRunConfigurationOptions.java"}
 
 ## Implement a Run Configuration
 

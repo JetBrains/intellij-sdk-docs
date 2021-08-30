@@ -19,10 +19,13 @@ This page lists a number of common questions/issues and techniques useful for te
 
 ### How to avoid blinking tests?
 
-- Always call `super.tearDown()` inside `finally {..}` block of your test class to avoid leaks and side-effects from previously run (failed) tests.
-- Avoid OS-specific assumptions (e.g., filesystem case-sensitivity, hardcoded separator instead of `java.io.File.separator`).
-- Use _ordered_ collections or [`UsefulTestCase.assertUnorderedCollection()`](upsource:///platform/testFramework/src/com/intellij/testFramework/UsefulTestCase.java).
-- Code deferring execution (e.g., via `Application.invokeLater()`) might not run during test execution (and possibly fails in production, too). Use `invokeLater(runnable, myProject.getDisposed()`.
+Always call `super.tearDown()` inside `finally {..}` block of your test class to avoid leaks and side-effects from previously run (failed) tests.
+
+Avoid OS-specific assumptions (e.g., filesystem case-sensitivity, hardcoded separator instead of `java.io.File.separator`).
+
+Use _ordered_ collections or [`UsefulTestCase.assertUnorderedCollection()`](upsource:///platform/testFramework/src/com/intellij/testFramework/UsefulTestCase.java).
+
+Code deferring execution (e.g., via `Application.invokeLater()`) might not run during test execution (and possibly fails in production, too). Use `invokeLater(runnable, myProject.getDisposed()`.
 
 ### How to avoid test failure when using resources?
 

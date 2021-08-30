@@ -34,6 +34,10 @@ In some situations, added or changed files (e.g. DTDs provided by plugin) are no
 ### How to enable DEBUG/TRACE logging?
 
 Set system properties `idea.log.debug.categories` or `idea.log.trace.categories`, respectively.
+                                           
+### How to get separate logs for failing tests?
+
+Set system property `idea.split.test.logs` to `true` to generate separate test log files in `splitTestLogs` subdirectory for failing tests (WARN/ERROR level messages) (2021.3).
 
 ## Techniques
                          

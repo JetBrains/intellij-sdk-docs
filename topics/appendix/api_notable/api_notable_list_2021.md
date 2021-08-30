@@ -5,6 +5,9 @@
 ## 2021.3
 
 ### Notable Changes in IntelliJ Platform 2021.3
+                                                                                                                  
+Simplified API for `CustomComponentAction`
+: Use new method `updateCustomComponent(Component, Presentation)` to synchronize given Presentation and component state.
 
 ## 2021.2
 

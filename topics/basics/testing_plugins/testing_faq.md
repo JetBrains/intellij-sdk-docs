@@ -27,6 +27,10 @@ This page lists a number of common questions/issues and techniques useful for te
 ### How to avoid test failure when using resources?
 
 In some situations, added or changed files (e.g. DTDs provided by plugin) are not refreshed in VFS. In such cases, simply delete <path>test-system/caches</path> in your [sandbox directory](ide_development_instance.md#the-development-instance-sandbox-directory) and try again.
+                                                                    
+### How to enable DEBUG/TRACE logging?
+
+Set system properties `idea.log.debug.categories` or `idea.log.trace.categories`, respectively.
 
 ## Techniques
                          

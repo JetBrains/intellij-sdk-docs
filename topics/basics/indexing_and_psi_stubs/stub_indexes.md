@@ -1,6 +1,6 @@
 [//]: # (title: Stub Indexes)
 
-<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 ## Stub Trees
 
@@ -20,6 +20,13 @@ To support stubs for your custom language, you first need to decide which of you
 Typically, you need to have stubs for things like methods or fields visible from other files.
 You usually don't need to have stubs for things like statements or local variables, which are not visible externally.
 
+### Implementation
+                 
+The following steps need to be performed only once for each language that supports stubs:
+
+* Change the file element type for your language (the element type that you return from `ParserDefinition.getFileNodeType()`) to a class that extends [`IStubFileElementType`](upsource:///platform/core-impl/src/com/intellij/psi/tree/IStubFileElementType.java).
+* In your `plugin.xml`, define the `com.intellij.stubElementTypeHolder` extension and specify the interface which contains the `IElementType` constants used by your language's parser as well as `externalIdPrefix` if possible ([example](upsource:///plugins/properties/src/META-INF/plugin.xml)).
+
 For each element type that you want to store in the stub tree, you need to perform the following steps:
 
 * Define an interface for the stub, derived from the [`StubElement`](upsource:///platform/core-api/src/com/intellij/psi/stubs/StubElement.java) interface ([example](upsource:///plugins/properties/properties-psi-api/src/com/intellij/lang/properties/psi/PropertyStub.java)).
@@ -33,29 +40,24 @@ For each element type that you want to store in the stub tree, you need to perfo
 * Use the class implementing `IStubElementType` as the element type constant when parsing ([example](upsource:///plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/parsing/PropertiesElementTypes.java)).
 * Make sure all methods in the PSI element interface access the stub data rather than the PSI tree when appropriate ([example: `Property.getKey()` implementation](upsource:///plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/psi/impl/PropertyImpl.java)).
 
-The following steps need to be performed only once for each language that supports stubs:
+By default, if a PSI element extends `StubBasedPsiElement`, all elements of that type will be stored in the stub tree.
+If you need more precise control over which elements are stored, override `IStubElementType.shouldCreateStub()` and return `false` for elements that should not be included in the stub tree.
+The exclusion is not recursive: if some elements of the element for which you returned false are also stub-based PSI elements, they will be included in the stub tree.
 
-* Change the file element type for your language (the element type that you return from `ParserDefinition.getFileNodeType()`) to a class that extends [`IStubFileElementType`](upsource:///platform/core-impl/src/com/intellij/psi/tree/IStubFileElementType.java).
-* In your `plugin.xml`, define the `com.intellij.stubElementTypeHolder` extension and specify the interface which contains the `IElementType` constants used by your language's parser as well as `externalIdPrefix` if possible ([example](upsource:///plugins/properties/src/META-INF/plugin.xml)).
+### Serializing Data
 
 For serializing string data, e.g. element names, in stubs, we recommend to use `StubOutputStream.writeName()` and `StubInputStream.readName()` methods.
 These methods ensure that each unique identifier is stored only once in the data stream.
 This reduces the size of the serialized stub tree data.
+See also [`DataInputOutputUtil`](upsource:///platform/util/src/com/intellij/util/io/DataInputOutputUtil.java).
 
 If you need to change the stored binary format for the stubs (for example, if you want to store some additional data or some new elements), make sure you advance the stub version returned from `IStubFileElementType.getStubVersion()` for your language.
-This will cause the stubs and stub indices to be rebuilt, and will avoid mismatches between the stored data format, and the code trying to load it.
-
-By default, if a PSI element extends `StubBasedPsiElement`, all elements of that type will be stored in the stub tree.
-If you need more precise control over which elements are stored, override `IStubElementType.shouldCreateStub()` and return `false` for elements that should not be included in the stub tree.
-
- >  The exclusion is not recursive: if some elements of the element for which you returned false are also stub-based PSI elements, they will be included in the stub tree.
- >
- {type="note"}
+This will cause the stubs and [stub indices](#stub-indexes) to be rebuilt, and will avoid mismatches between the stored data format, and the code trying to load it.
 
 It's essential to ensure that all information stored in the stub tree depends only on the contents of the file for which stubs are being built, and does not depend on any external files.
 Otherwise, the stub tree will not be rebuilt when external dependency changes, and you will have stale and incorrect data in the stub tree.
 
- >  Please see also [Improving indexing performance](performance.md#improving-indexing-performance).
+ > Please see also [Improving indexing performance](performance.md#improving-indexing-performance).
  >
  {type="tip"}
 

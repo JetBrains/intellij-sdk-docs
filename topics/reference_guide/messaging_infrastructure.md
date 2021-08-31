@@ -34,7 +34,7 @@ I.e., clients are allowed to subscribe to a specific topic within a bus and send
 Is the core of the messaging system.
 Is used at the following scenarios:
 
-![Bus](bus.png)
+![Bus](bus.svg)
 
 ### Connection
 

@@ -99,6 +99,12 @@ val projectService = project.service<MyProjectService>()
 
 </tabs>
 
+<procedure title="Getting Service Flow" initial-collapse-state="collapsed">
+
+![Getting Service](getting_service.svg)
+
+</procedure>
+
 ## Project Service Sample
 This minimal sample shows [Light Service](#light-services) `ProjectService` interacting with another project level service `AnotherService` (not shown here).
 

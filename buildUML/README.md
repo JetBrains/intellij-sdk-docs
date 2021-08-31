@@ -34,9 +34,13 @@ Use [https://kroki.io/](https://kroki.io/) to generate SVG files by pasting:
 
 [contents of jb-plantuml-theme.puml]
 
-[contents of your_diagram.puml]
+[contents of your_diagram.puml (without `@startuml`)]
 
 @enduml
 ```
 
 and then c/p generated SVG output.
+
+### Post Process
+
+In SVG file `<defs>`, insert `<style>@import url('https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono&amp;display=swap');</style>` tag.

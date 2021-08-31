@@ -2,8 +2,8 @@
 skinparam monochrome true
 skinparam shadowing true
 
-skinparam DefaultFontName Roboto
-skinparam DefaultMonospacedFontName "Roboto Mono"
+skinparam DefaultFontName "Roboto,sans-serif"
+skinparam DefaultMonospacedFontName "Roboto Mono,monospace"
 
 ' https://material.io/design/typography/the-type-system.html
 ' Body 2

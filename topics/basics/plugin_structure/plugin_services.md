@@ -101,7 +101,7 @@ val projectService = project.service<MyProjectService>()
 
 <procedure title="Getting Service Flow" initial-collapse-state="collapsed">
 
-![Getting Service](getting_service.svg)
+![Getting Service](getting_service.svg){thumbnail="true" thumbnail-same-file="true"}
 
 </procedure>
 

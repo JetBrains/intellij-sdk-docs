@@ -185,14 +185,41 @@ Also, optimize the image files using a tool such as the [PNG optimizer](https://
 Images are embedded in a document by adding a Markdown link to the image like so:
 
 ```md
-    ![Alt text](path-to-img.png)
+    ![Alt text](image.png)
 ```
 
 If the width of an image needs to be adjusted it can be specified as follows:
 
 ```md
-    ![Alt text](path-to-img.png){width="42"}
+    ![Alt text](image.png){width="42"}
 ```
+
+#### Zoom Popup    
+                               
+Images too big to fit into main content can have <path>+</path> overlay control to open a popup with the "zoomed" variant.
+
+<tabs>
+<tab title="PNG">
+
+For **PNG** images, provide additional zoomed variant <path>image.zoomed.png</path> with this notation:
+
+```md
+    ![Alt text](image.png){thumbnail="true"}
+```
+
+</tab>
+
+<tab title="SVG">
+
+For **SVG** images, use this notation:
+
+```md
+    ![Alt text](image.svg){thumbnail-same-file="true"}
+```
+
+</tab>
+
+</tabs>
 
 ## Table of Contents
 The table of contents for the site is displayed in the tree view on the left-hand side of the site, and it is generated from the <path>ijs.tree</path> file.

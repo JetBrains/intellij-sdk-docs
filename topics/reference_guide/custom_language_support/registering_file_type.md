@@ -13,7 +13,7 @@ A custom language file type is a class derived from [`LanguageFileType`](upsourc
 
 <tab title="2019.2 and later">
 
-When targeting 2019.2 or later only, use `com.intellij.fileType` extension point to associate `LanguageFileType` with corresponding filename extensions and patterns.
+When targeting 2019.2 or later *only*, use `com.intellij.fileType` extension point to associate `LanguageFileType` with corresponding filename extension(s), hardcoded file names, hash bangs (2020.2), and patterns.
 
 </tab>
 

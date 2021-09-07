@@ -6,6 +6,9 @@ on:
   pull_request:
     paths: [ 'code_samples/**','.github/workflows/code-samples.yml' ]
 
+env:
+  PLUGIN_VERIFIER_IDES: '2020.3.4', '2021.1.3', '2021.2.1'
+
 jobs:
 
   gradleValidation:
@@ -21,8 +24,6 @@ jobs:
     name: Code Samples / ${{ matrix.plugin }}
     needs: gradleValidation
     runs-on: ubuntu-latest
-    env:
-      IDE_VERSIONS: '2020.3.4', '2021.1.3', '2021.2.1'
     strategy:
       fail-fast: false
       matrix:
@@ -64,7 +65,7 @@ jobs:
         run: |
           echo "
           runPluginVerifier {
-            ideVersions = [${{ IDE_VERSIONS }}]
+            ideVersions = [${{ PLUGIN_VERIFIER_IDES }}]
           }
           " >> code_samples/${{ matrix.plugin }}/build.gradle
           (cd code_samples/${{ matrix.plugin }}; ./gradlew runPluginVerifier)

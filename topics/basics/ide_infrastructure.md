@@ -20,7 +20,8 @@ import com.intellij.openapi.diagnostic.Logger;
 
 public class MyPluginFunctionality {
 
-  private static final Logger LOG = Logger.getInstance(MyPluginFunctionality.class);
+  private static final Logger LOG = 
+          Logger.getInstance(MyPluginFunctionality.class);
 
   public void someMethod() {
     LOG.info("someMethod() was called");

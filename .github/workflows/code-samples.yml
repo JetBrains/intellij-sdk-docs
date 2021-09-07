@@ -45,22 +45,19 @@ jobs:
           - simple_language_plugin
           - tool_window
           - tree_structure_provider
-    container:
-      image: gradle:jdk11
     steps:
       - name: Fetch Sources
         uses: actions/checkout@v2.3.4
-      - name: Setup Cache
-        uses: actions/cache@v2.1.6
+      - name: Setup Java
+        uses: actions/setup-java@v2
         with:
-          path: ~/.gradle/caches
-          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle') }}
-          restore-keys: |
-            ${{ runner.os }}-gradle-
+          distribution: zulu
+          java-version: 11
+          cache: gradle
       - name: Verify Plugin
-        run: gradle -p code_samples/${{ matrix.plugin }} verifyPlugin
+        run: (cd code_samples/${{ matrix.plugin }}; ./gradlew verifyPlugin)
       - name: Test Plugin
-        run: gradle -p code_samples/${{ matrix.plugin }} test
+        run: (cd code_samples/${{ matrix.plugin }}; ./gradlew test)
 
   mirror:
     name: Code Samples Mirror

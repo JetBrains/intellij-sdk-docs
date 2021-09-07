@@ -65,7 +65,7 @@ jobs:
         run: |
           echo "
           runPluginVerifier {
-            ideVersions = [${{ PLUGIN_VERIFIER_IDES }}]
+            ideVersions = $PLUGIN_VERIFIER_IDES
           }
           " >> code_samples/${{ matrix.plugin }}/build.gradle
           (cd code_samples/${{ matrix.plugin }}; ./gradlew runPluginVerifier)

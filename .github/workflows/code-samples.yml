@@ -7,7 +7,7 @@ on:
     paths: [ 'code_samples/**','.github/workflows/code-samples.yml' ]
 
 env:
-  PLUGIN_VERIFIER_IDE_VERSIONS: '2020.3.4, 2021.1.3, 2021.2.1'
+  PLUGIN_VERIFIER_IDE_VERSIONS: '2020.3.4 2021.1.3 2021.2.1'
 
 jobs:
 
@@ -67,7 +67,7 @@ jobs:
         id: properties
         shell: bash
         run: |
-          echo "::set-output name=ideVersions::${PLUGIN_VERIFIER_IDE_VERSIONS// /}"
+          echo "::set-output name=ideVersions::${PLUGIN_VERIFIER_IDE_VERSIONS// /-}"
           echo "::set-output name=pluginVerifierHomeDir::~/.pluginVerifier"
       - name: Setup Plugin Verifier IDEs Cache
         uses: actions/cache@v2.1.6
@@ -79,7 +79,7 @@ jobs:
         run: |
           echo "
           runPluginVerifier {
-            ideVersions = '${{ steps.properties.outputs.ideVersions }}'.split(',')
+            ideVersions = '$PLUGIN_VERIFIER_IDE_VERSIONS'.split(' ')
           }
           " >> code_samples/${{ matrix.plugin }}/build.gradle
           cd code_samples/${{ matrix.plugin }}

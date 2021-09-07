@@ -57,17 +57,18 @@ jobs:
           distribution: zulu
           java-version: 11
           cache: gradle
+      - name: Setup Plugin Verifier IDEs Cache
+        uses: actions/cache@v2.1.6
+        with:
+          path: ${{ steps.properties.outputs.pluginVerifierHomeDir }}/ides
+          key: plugin-verifier-${{ steps.properties.outputs.ideVersions }}
       - name: Verify Plugin
         run: (cd code_samples/${{ matrix.plugin }}; ./gradlew verifyPlugin)
       - name: Test Plugin
         run: (cd code_samples/${{ matrix.plugin }}; ./gradlew test)
       - name: Run Plugin Verifier
         run: |
-          echo "
-          runPluginVerifier {
-            ideVersions = $PLUGIN_VERIFIER_IDES
-          }
-          " >> code_samples/${{ matrix.plugin }}/build.gradle
+          echo "runPluginVerifier { ideVersions = $PLUGIN_VERIFIER_IDES }" >> code_samples/${{ matrix.plugin }}/build.gradle
           (cd code_samples/${{ matrix.plugin }}; ./gradlew runPluginVerifier)
 
   mirror:

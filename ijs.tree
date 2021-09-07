@@ -81,6 +81,7 @@
             <toc-element id="messaging_infrastructure.md"/>
             <toc-element toc-title="Queries and Query Executors"/>
         </toc-element>
+        <toc-element id="ide_infrastructure.md"/>
         <toc-element id="user_interface_components.md">
             <toc-element id="tool_windows.md"/>
             <toc-element id="dialog_wrapper.md"/>

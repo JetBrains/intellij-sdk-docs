@@ -73,3 +73,12 @@ See [Development Instance Sandbox Directory](ide_development_instance.md#the-dev
 
 See [Testing FAQ](testing_faq.md) on how to enable `DEBUG`/`TRACE` level logging during tests, and obtain separate logs for failing tests.
 
+
+## Runtime Information
+
+[`ApplicationInfo`](upsource:///platform/core-api/src/com/intellij/openapi/application/ApplicationInfo.java) provides information on the IDE version and vendor.
+NOTE: to restrict compatibility, declare [IDEs](plugin_compatibility.md) and [versions](build_number_ranges.md) via <path>plugin.xml</path>.
+
+To obtain information about OS and Java VM, use [`SystemInfo`](upsource:///platform/util/src/com/intellij/openapi/util/SystemInfo.java).
+
+To access relevant configuration directories, see [`PathManager`](upsource:///platform/util/src/com/intellij/openapi/application/PathManager.java).

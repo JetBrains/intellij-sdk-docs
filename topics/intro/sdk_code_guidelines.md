@@ -173,8 +173,8 @@ The sequence of elements in an SDK code sample <path>plugin.xml</path> file is:
 Each code sample provided within the IntelliJ Platform SDK should contain a README file describing the sample purpose and its content.
 The [`SAMPLE_README.md`](https://github.com/JetBrains/intellij-sdk-code-samples/blob/main/SAMPLE_README.md) file contains a template that should be used as an initial draft for further writing.
 
-Each `README.md` file is supposed to have the same structure for better navigation and readability:
-- A header with the link to the main IntelliJ SDK documentation and an article that the sample refers to.
+Each <path>README.md</path> file is supposed to have the same structure for better navigation and readability:
+- A header with the link to the main IntelliJ SDK documentation and a page that the sample refers to.
 - _Quickstart_ section briefly describes the sample's purpose and significant parts of the IntelliJ SDK it implements.
 - _Extension Points_ section (if implements) with a listing of implemented extension points, links to the implementation classes, and names of extended classes.
 - _Actions_ section (if implements) with a listing of implemented actions, action IDs, links to the implementation classes, and names of base action classes.

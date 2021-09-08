@@ -8,6 +8,8 @@ The IntelliJ Platform provides a dedicated utility and markup format for this ta
 To test the highlighting for the file currently loaded into the in-memory editor, you invoke the `checkHighlighting()` method.
 The parameters to the method specify which severities should be taken into account when comparing the results with the expected results: errors are always taken into account, whereas warnings, weak warnings, and infos are optional.
 Alternatively, you can use the `testHighlighting()` method, which loads a <path>testdata</path> file into the in-memory editor and highlights it as a single operation.
+              
+## Inspections
 
 If you need to test inspections (rather than generic highlighting provided by a highlighting lexer or annotator), you need to enable inspections that you're testing.
 This is done by calling `CodeInsightTestFixture.enableInspections()` in the setup method of your test or directly in a test method, before the call to `checkHighlighting()`.

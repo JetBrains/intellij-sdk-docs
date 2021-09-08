@@ -27,7 +27,7 @@ We recommend working with real components instead.
 Please see the dedicated [intellij-ui-test-robot](https://github.com/JetBrains/intellij-ui-test-robot) library.
 It is fully integrated with Gradle-based setup via `runIdeForUiTests` task.
 
-Please do not use _platform/testGuiFramework_; it is reserved for internal use.
+Please do not use <path>platform/testGuiFramework</path> it is reserved for internal use.
 
 ## Topics
 

@@ -5,6 +5,10 @@
 ## Introduction
 [WebStorm](https://www.jetbrains.com/webstorm/) is an IntelliJ Platform-based product.
 Plugin projects for WebStorm can be developed using IntelliJ IDEA with the `gradle-intellij-plugin`.
+                               
+  > Follow _Building a Plugin for WebStorm – Tutorial for JavaScript Developers_ blog post series to get started: [Part 1](https://blog.jetbrains.com/webstorm/2021/09/building-a-plugin-for-webstorm-part-1/)
+  >
+  {type="note"}
 
  >  Qualifying Open Source projects can [apply for free licenses](https://www.jetbrains.com/community/opensource/) of JetBrains products.
  >

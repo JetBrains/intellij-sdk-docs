@@ -1,4 +1,5 @@
 [//]: # (title: Content Updates)
+<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 This page lists notable additions and updates to the SDK documentation and [code samples](https://github.com/JetBrains/intellij-sdk-code-samples).
        
@@ -11,7 +12,7 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 ### July-21
 
 Plugin Signing
-: [Plugin Signing](plugin_signing.md) page describes the plugin signing process, explains how to generate a certificate, configure the Gradle `signPlugin` task, and introduces standalone CLI tool.
+: [Plugin Signing](plugin_signing.md) describes the plugin signing process, explains how to generate a certificate, configure the Gradle `signPlugin` task, and introduces a standalone CLI tool.
 
 ### June-21
 
@@ -58,7 +59,7 @@ Extension Point List
 ### August-20
 
 README added to Code Samples
-: All code samples used in this guide now come with `README` making it easier to browse them. They can be conveniently accessed via a [separate GitHub repository](https://github.com/JetBrains/intellij-sdk-code-samples).
+: All code samples used in this guide now come with `README`, making it easier to browse them. They can be conveniently accessed via a [separate GitHub repository](https://github.com/JetBrains/intellij-sdk-code-samples).
 
 ### June-20
 
@@ -95,7 +96,7 @@ Custom Language Support Tutorial converted to Gradle
 : The [corresponding tutorial](custom_language_support_tutorial.md) and [Testing a Custom Language Plugin](writing_tests_for_plugins.md) have been updated and enhanced as well.
 
 Targeting specific IDEs
-: [Part VIII - Product Specific](plugin_compatibility.md) has been expanded massively, now also covering each IDE with its own dedicated page.
+: [Part VIII - Product Specific](plugin_compatibility.md) has been expanded massively, now also covering each IDE with its dedicated page.
 
 ## 2019
 

@@ -2,7 +2,7 @@
 
 <!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-[![official JetBrains project](https://jb.gg/badges/official-flat-square.svg)](https://confluence.jetbrains.com/display/ALL/JetBrains+on+GitHub) [![Twitter Follow](https://img.shields.io/twitter/follow/JBPlatform?style=flat-square)](https://twitter.com/JBPlatform/) [![Slack](https://img.shields.io/badge/Slack-%23intellij--platform-blue)](https://plugins.jetbrains.com/slack)
+[![official JetBrains project](https://jb.gg/badges/official-flat-square.svg)](https://confluence.jetbrains.com/display/ALL/JetBrains+on+GitHub) [![Twitter Follow](https://img.shields.io/twitter/follow/JBPlatform?style=flat-square&logo=twitter)](https://twitter.com/JBPlatform/) [![Slack](https://img.shields.io/badge/Slack-%23intellij--platform-blue?style=flat-square&logo=slack)](https://plugins.jetbrains.com/slack)
 
 Welcome to the IntelliJ Platform SDK - the primary source of documentation for extending the IntelliJ Platform by creating plugins, custom language support, or building a custom IDE.
 
@@ -44,7 +44,7 @@ Watch [Busy plugin developers series. Episode 0](https://www.youtube.com/watch?v
 
 ## Updates
 
- > Gradle IntelliJ Plugin 1.x is now available, please update your build scripts [![GitHub Release](https://img.shields.io/github/release/jetbrains/gradle-intellij-plugin.svg)](https://github.com/jetbrains/gradle-intellij-plugin/releases)      
+ > Gradle IntelliJ Plugin 1.x is now available, please update your build scripts [![GitHub Release](https://img.shields.io/github/release/jetbrains/gradle-intellij-plugin.svg?style=flat-square)](https://github.com/jetbrains/gradle-intellij-plugin/releases)      
  > 
  > [What's New & Upgrade Instructions](https://lp.jetbrains.com/gradle-intellij-plugin)
  >

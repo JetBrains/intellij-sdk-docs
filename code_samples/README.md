@@ -1,10 +1,10 @@
 # IntelliJ Platform SDK Code Samples
 
-[![official JetBrains project](https://jb.gg/badges/official.svg)][jb:confluence-on-gh]
-[![JetBrains IntelliJ Platform SDK Docs](https://jb.gg/badges/docs.svg)][jb:docs]
-[![Twitter Follow](https://img.shields.io/twitter/follow/JBPlatform?style=flat)][jb:twitter]
-[![Build](https://github.com/JetBrains/intellij-sdk-docs/workflows/Code%20Samples/badge.svg)][gh:workflow-code-samples]
-[![Slack](https://img.shields.io/badge/Slack-%23intellij--platform-blue)][jb:slack]
+[![official JetBrains project](https://jb.gg/badges/official-flat-square.svg)][jb:confluence-on-gh]
+[![JetBrains IntelliJ Platform SDK Docs](https://jb.gg/badges/docs.svg?style=flat-square)][jb:docs]
+[![Twitter Follow](https://img.shields.io/twitter/follow/JBPlatform?style=flat-square&logo=twitter)][jb:twitter]
+[![Build](https://img.shields.io/github/workflow/status/JetBrains/intellij-sdk-docs/Code%20Samples?style=flat-square)][gh:workflow-code-samples]
+[![Slack](https://img.shields.io/badge/Slack-%23intellij--platform-blue?style=flat-square&logo=Slack)][jb:slack]
 
 Learn how to build plugins using IntelliJ Platform SDK for the [JetBrains products][jb:products] by experimenting with our code samples.
 These samples show you how features work and help you jumpstart your plugins.

@@ -9,7 +9,6 @@
     <module name="intellij-sdk"/>
     <topics src="topics"/>
     <topics src="reference_guide"/>
-    <topics src="."/>
     <images dir="images" web-path="/img/idea-sdk/"/>
 
     <snippets src="code_samples"/>

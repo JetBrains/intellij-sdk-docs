@@ -111,7 +111,7 @@ See [Extension Point List](extension_point_list.md) for IntelliJ Platform EPs.
 |-----------------|----------------|
 | [com.intellij.sass.extension](https://jb.gg/ipe?extensions=com.intellij.sass.extension) | `SassExtension` | 
        
-[non-dynamic]: https://img.shields.io/badge/-Non--Dynamic-orange
-[experimental]: https://img.shields.io/badge/-Experimental_API-red
-[internal]: https://img.shields.io/badge/-Internal_API-red
-[project-level]: https://img.shields.io/badge/-Project--Level-yellow
+[experimental]: https://img.shields.io/badge/-Experimental_API-red?style=flat-square
+[internal]: https://img.shields.io/badge/-Internal_API-red?style=flat-square
+[project-level]: https://img.shields.io/badge/-Project--Level-yellow?style=flat-square
+[non-dynamic]: https://img.shields.io/badge/-Non--Dynamic-orange?style=flat-square

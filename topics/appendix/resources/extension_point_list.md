@@ -31,10 +31,10 @@ See [Plugin Extensions](plugin_extensions.md) on how to declare extensions in yo
 | ![Project-Level][project-level] | Project-Level Extension Point | Declared with `area="IDEA_PROJECT"`, can have `Project` as constructor parameter |
 | ![Non-Dynamic][non-dynamic] | Non-Dynamic Extension Point | Installation/update of plugin requires restart ([Dynamic Plugins](dynamic_plugins.md)) |
              
-[experimental]: https://img.shields.io/badge/-Experimental_API-red
-[internal]: https://img.shields.io/badge/-Internal_API-red
-[project-level]: https://img.shields.io/badge/-Project--Level-yellow
-[non-dynamic]: https://img.shields.io/badge/-Non--Dynamic-orange
+[experimental]: https://img.shields.io/badge/-Experimental_API-red?style=flat-square
+[internal]: https://img.shields.io/badge/-Internal_API-red?style=flat-square
+[project-level]: https://img.shields.io/badge/-Project--Level-yellow?style=flat-square
+[non-dynamic]: https://img.shields.io/badge/-Non--Dynamic-orange?style=flat-square
 </chunk>
 
 ## IntelliJ Platform

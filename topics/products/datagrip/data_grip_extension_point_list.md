@@ -18,7 +18,7 @@ See [Extension Point List](extension_point_list.md) for IntelliJ Platform EPs.
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| [com.intellij.database.artifactsConfig](https://jb.gg/ipe?extensions=com.intellij.database.artifactsConfig) ![Non-Dynamic](https://img.shields.io/badge/-Non--Dynamic-orange) | `n/a` | 
+| [com.intellij.database.artifactsConfig](https://jb.gg/ipe?extensions=com.intellij.database.artifactsConfig) ![Non-Dynamic][non-dynamic] | `n/a` | 
 | [com.intellij.database.configValidator](https://jb.gg/ipe?extensions=com.intellij.database.configValidator) | `DatabaseConfigValidator` | 
 | [com.intellij.database.connectionInterceptor](https://jb.gg/ipe?extensions=com.intellij.database.connectionInterceptor) ![Internal API][internal] | `DatabaseConnectionInterceptor` |
 | [com.intellij.database.databaseViewStructureExtension](https://jb.gg/ipe?extensions=com.intellij.database.databaseViewStructureExtension) | `DvStructureExtension` | 
@@ -31,7 +31,7 @@ See [Extension Point List](extension_point_list.md) for IntelliJ Platform EPs.
 | [com.intellij.database.urlEditorInspector](https://jb.gg/ipe?extensions=com.intellij.database.urlEditorInspector) | `UrlEditorInspector` | 
 | [com.intellij.database.urlParamEditorProvider](https://jb.gg/ipe?extensions=com.intellij.database.urlParamEditorProvider) ![Non-Dynamic][non-dynamic] | `TypeDescriptorFactory` |
 
-[non-dynamic]: https://img.shields.io/badge/-Non--Dynamic-orange
-[experimental]: https://img.shields.io/badge/-Experimental_API-red
-[internal]: https://img.shields.io/badge/-Internal_API-red
-[project-level]: https://img.shields.io/badge/-Project--Level-yellow
+[experimental]: https://img.shields.io/badge/-Experimental_API-red?style=flat-square
+[internal]: https://img.shields.io/badge/-Internal_API-red?style=flat-square
+[project-level]: https://img.shields.io/badge/-Project--Level-yellow?style=flat-square
+[non-dynamic]: https://img.shields.io/badge/-Non--Dynamic-orange?style=flat-square

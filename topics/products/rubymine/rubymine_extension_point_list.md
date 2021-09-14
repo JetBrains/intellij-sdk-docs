@@ -2,13 +2,28 @@
 
 <!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-59 Extension Points (EP) for RubyMine
+59 Extension Points (EP) and 10 Listeners for RubyMine
 
 See [Extension Point List](extension_point_list.md) for IntelliJ Platform EPs.
 
 <include src="extension_point_list.md" include-id="ep_list_legend"></include>
 
 ## RubyMine
+
+### RubyMine - Listeners
+
+| Topic | Listener |
+|-------|----------|
+| `org.jetbrains.plugins.ruby.chef.sourceRoot.ChefTopics#COOKBOOK`| `org.jetbrains.plugins.ruby.chef.sdk.CookbooksListener` |
+| `org.jetbrains.plugins.ruby.gem.GemManager#GEMSET_CHANGED_TOPIC`| `org.jetbrains.plugins.ruby.gem.GemManager.GemSetListener` |
+| `org.jetbrains.plugins.ruby.gem.GemManager#MODULE_GEMS_CHANGED_TOPIC` ![Project-Level][project-level]| `org.jetbrains.plugins.ruby.gem.GemManager.ModuleGemsListener` |
+| `org.jetbrains.plugins.ruby.rails.InflectorService#INFLECTIONS_CHANGED`| `org.jetbrains.plugins.ruby.rails.InflectorService.InflectionChanged` |
+| `org.jetbrains.plugins.ruby.rails.codeInsight.sprockets.assetsPaths.AssetsRegistrationWatcher#ASSETS_CHANGED_TOPIC`| `org.jetbrains.plugins.ruby.rails.codeInsight.sprockets.assetsPaths.AssetsRegistrationWatcher.AssetsListener` |
+| `org.jetbrains.plugins.ruby.rails.database.MigrationParser#MIGRATIONS_CHANGED_TOPIC` ![Project-Level][project-level]| `org.jetbrains.plugins.ruby.rails.database.MigrationParser.MigrationListener` |
+| `org.jetbrains.plugins.ruby.remote.RubyRemoteInterpreterManager#RUBY_REMOTE_SDK_TRANSFER_LISTENER_TOPIC`| `org.jetbrains.plugins.ruby.remote.RubyRemoteSdkTransferListener` |
+| `org.jetbrains.plugins.ruby.ruby.codeInsight.symbols.cache.RequiresIndexExtension.RequireSetChangedListener#TOPIC`| `org.jetbrains.plugins.ruby.ruby.codeInsight.symbols.cache.RequiresIndexExtension.RequireSetChangedListener` |
+| `org.jetbrains.plugins.ruby.ruby.sdk.RubySdkType#SDK_PATHS_INITIALIZED_TOPIC`| `org.jetbrains.plugins.ruby.ruby.sdk.RubySdkType.SdkPathsInitializedListener` |
+| `org.jetbrains.plugins.ruby.version.management.rvm.RVMSupportUtil#RVM_GEMSET_ADDED_TOPIC`| `org.jetbrains.plugins.ruby.version.management.rvm.RVMSupportUtil.RVMGemsetListener` |
 
 ### intellij.ruby.coverage.xml
 
@@ -82,7 +97,7 @@ See [Extension Point List](extension_point_list.md) for IntelliJ Platform EPs.
 | [org.jetbrains.plugins.ruby.ruby.run.configuration.debugger.rubyDebugHelperFactory](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.ruby.run.configuration.debugger.rubyDebugHelperFactory) | `RubyDebugHelperFactory` | 
 | [org.jetbrains.plugins.ruby.rubyFileStructureProvider](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.rubyFileStructureProvider) | `RubyFileStructureViewProvider` | 
 | [org.jetbrains.plugins.ruby.rubyTestFinder](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.rubyTestFinder) | `AbstractRubyTestFinder` | 
-| [org.jetbrains.plugins.ruby.runConfigurationExtension](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.runConfigurationExtension) | `RubyRunConfigurationExtension` |
+| [org.jetbrains.plugins.ruby.runConfigurationExtension](https://jb.gg/ipe?extensions=org.jetbrains.plugins.ruby.runConfigurationExtension) | `RubyRunConfigurationExtension` | 
 
 [experimental]: https://img.shields.io/badge/-Experimental_API-red?style=flat-square
 [internal]: https://img.shields.io/badge/-Internal_API-red?style=flat-square

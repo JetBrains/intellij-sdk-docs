@@ -16,13 +16,15 @@
 
 <chunk id="ep_list_legend">
 
-See [Plugin Extensions](plugin_extensions.md) on how to declare extensions in your plugin.
+ > See [Plugin Extensions](plugin_extensions.md) on how to declare extensions in your plugin.
+ >
+ {type="tip"}
+
+## Legend
   
 **Extension Point** searches for usages inside existing implementations of open-source IntelliJ Platform plugins via [IntelliJ Platform Explorer](https://jb.gg/ipe).
 
 **Implementation** is related Extension Point class. 
-
-## Note Legend
 
 | Icon | Description | Details |
 |---|---|---|

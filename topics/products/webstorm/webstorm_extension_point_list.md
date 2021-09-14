@@ -2,13 +2,21 @@
 
 <!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-66 Extension Points (EP) for WebStorm
+66 Extension Points (EP) and 3 Listeners for WebStorm
 
 See [Extension Point List](extension_point_list.md) for IntelliJ Platform EPs.
 
 <include src="extension_point_list.md" include-id="ep_list_legend"></include>
 
 ## WebStorm
+
+### WebStorm - Listeners
+
+| Topic | Listener |
+|-------|----------|
+| `com.intellij.javascript.jest.JestConsoleProperties#COVERAGE_CONFIG_TOPIC` ![Project-Level][project-level]| `com.intellij.javascript.jest.JestCoverageConfigListener` |
+| `com.intellij.javascript.nodejs.packageJson.PackageJsonFileManager#TOPIC` ![Project-Level][project-level]| `com.intellij.javascript.nodejs.packageJson.PackageJsonFileManager.PackageJsonChangeListener` |
+| `com.intellij.lang.javascript.library.JSLibraryManager#TOPIC` ![Project-Level][project-level]| `com.intellij.lang.javascript.library.JSLibraryManager.JSLibraryManagerChangeListener` |
 
 ### com.intellij.css
 

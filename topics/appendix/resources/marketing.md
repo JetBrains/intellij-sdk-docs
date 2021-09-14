@@ -1,8 +1,8 @@
 [//]: # (title: Marketing)
 
-<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
- >  Please make sure to follow these [Quality Guidelines](https://plugins.jetbrains.com/docs/marketplace/quality-guidelines.html) for the general presentation of your plugin on JetBrains Marketplace.
+ > Please make sure to follow the guidelines from [Plugin Overview page](https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html) for an optimal presentation of your plugin on JetBrains Marketplace.
  >
  {type="tip"}
 
@@ -95,6 +95,7 @@ Below are listed a few related to the IntelliJ SDK and plugins development provi
 ```
 
 **ReSharper Plugins (incl. pre-releases)**
+            
 
 ![Version](https://img.shields.io/badge/resharper-v2017.3.0--pre0001-yellow)
 ```markdown

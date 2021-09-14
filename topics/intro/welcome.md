@@ -38,6 +38,8 @@ Watch [Busy plugin developers series. Episode 0](https://www.youtube.com/watch?v
 
 <video href="-6D5-xEaYig" title="Busy plugin developers series. Episode 0" />
 
+More webinars are available [here](useful_links.md#webinars).
+
 </td>
 </tr>
 </table>

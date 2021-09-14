@@ -2,13 +2,25 @@
 
 <!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-16 Extension Points (EP) for GoLand
-         
+17 Extension Points (EP) and 7 Listeners for GoLand
+
 See [Extension Point List](extension_point_list.md) for IntelliJ Platform EPs.
 
 <include src="extension_point_list.md" include-id="ep_list_legend"></include>
 
 ## GoLand
+
+### GoLand - Listeners
+
+| Topic | Listener |
+|-------|----------|
+| `com.goide.dep.GoDepProjectSettings#DEP_INTEGRATION_TOPIC`| `com.goide.dep.GoDepProjectSettings.IntegrationListener` |
+| `com.goide.project.GoLibrariesService#LIBRARIES_TOPIC`| `com.goide.project.GoLibrariesService.LibrariesListener` |
+| `com.goide.project.GoModuleSettings#BUILD_TARGET_TOPIC` ![Project-Level][project-level]| `com.goide.project.GoModuleSettings.BuildTargetListener` |
+| `com.goide.project.GoModuleSettings#GO_SUPPORT_TOPIC` ![Project-Level][project-level]| `com.goide.project.GoModuleSettings.GoSupportListener` |
+| `com.goide.project.GoModuleSettings#VENDORING_TOPIC` ![Project-Level][project-level]| `com.goide.project.GoModuleSettings.VendoringListener` |
+| `com.goide.project.GoProjectLifecycleListener#TOPIC`| `com.goide.project.GoProjectLifecycleListener` |
+| `com.goide.vgo.configuration.VgoProjectSettings#VGO_INTEGRATION_TOPIC`| `com.goide.vgo.configuration.VgoProjectSettings.IntegrationListener` |
 
 ### goland.xml
 
@@ -27,6 +39,7 @@ See [Extension Point List](extension_point_list.md) for IntelliJ Platform EPs.
 | [com.goide.packageFactory](https://jb.gg/ipe?extensions=com.goide.packageFactory) | `GoPackageFactory` | 
 | [com.goide.rootsProvider](https://jb.gg/ipe?extensions=com.goide.rootsProvider) | `GoRootsProvider` | 
 | [com.goide.runConfigurationExtension](https://jb.gg/ipe?extensions=com.goide.runConfigurationExtension) | `GoRunConfigurationExtension` | 
+| [com.goide.sdk.sdkVetoer](https://jb.gg/ipe?extensions=com.goide.sdk.sdkVetoer) | `GoBasedSdkVetoer` | 
 | [com.goide.sdk.targetSdkVersionProvider](https://jb.gg/ipe?extensions=com.goide.sdk.targetSdkVersionProvider) | `GoTargetSdkVersionProvider` | 
 | [com.goide.sdkProvider](https://jb.gg/ipe?extensions=com.goide.sdkProvider) | `GoSdkProvider` | 
 | [com.goide.support](https://jb.gg/ipe?extensions=com.goide.support) | `GoLangSupport` | 

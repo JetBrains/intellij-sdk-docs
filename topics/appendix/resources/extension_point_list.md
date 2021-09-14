@@ -28,6 +28,7 @@
 
 | Icon | Description | Details |
 |---|---|---|
+| ![Deprecated][deprecated] | Deprecated | Please see code documentation for replacement |
 | ![Experimental API][experimental] | Experimental API | Implementation annotated with [`@ApiStatus.Experimental`](https://github.com/JetBrains/java-annotations/blob/master/common/src/main/java/org/jetbrains/annotations/ApiStatus.java), API might be altered or removed without prior notice |
 | ![Internal API][internal] | Internal API | Implementation annotated with [`@ApiStatus.Internal`](https://github.com/JetBrains/java-annotations/blob/master/common/src/main/java/org/jetbrains/annotations/ApiStatus.java), should not be used by 3rd party |
 | ![Project-Level][project-level] | Project-Level Extension Point | Declared with `area="IDEA_PROJECT"`, can have `Project` as constructor parameter |
@@ -37,6 +38,7 @@
 [internal]: https://img.shields.io/badge/-Internal_API-red?style=flat-square
 [project-level]: https://img.shields.io/badge/-Project--Level-yellow?style=flat-square
 [non-dynamic]: https://img.shields.io/badge/-Non--Dynamic-orange?style=flat-square
+[deprecated]: https://img.shields.io/badge/-Deprecated-lightgrey?style=flat-square
 </chunk>
 
 ## IntelliJ Platform

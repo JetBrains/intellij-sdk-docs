@@ -2,14 +2,23 @@
 
 <!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-24 Extension Points (EP) for AppCode
+24 Extension Points (EP) and 4 Listeners for AppCode
 
 See [Extension Point List](extension_point_list.md) for IntelliJ Platform EPs.
 
 <include src="extension_point_list.md" include-id="ep_list_legend"></include>
 
 ## AppCode
-                
+
+### AppCode - Listeners
+
+| Topic | Listener |
+|-------|----------|
+| `com.jetbrains.cidr.cocoapods.CocoaPodsUtils#GEM_TOPIC`| `com.jetbrains.cidr.cocoapods.CocoaPodsUtils.GemListener` |
+| `com.jetbrains.cidr.cocoapods.CocoaPodsUtils#PODS_TOPIC`| `com.jetbrains.cidr.cocoapods.CocoaPodsUtils.PodsListener` |
+| `com.jetbrains.cidr.execution.deviceSupport.AMDeviceManager#DEVICE_LISTENER_TOPIC`| `com.jetbrains.cidr.execution.deviceSupport.AMDeviceListener` |
+| `com.jetbrains.cidr.xcode.model.XcodeProjectTestListener#TOPIC`| `com.jetbrains.cidr.xcode.model.XcodeProjectTestListener` |
+
 ### AppCodeSwiftPlugin.xml
 
 | Extension Point | Implementation |

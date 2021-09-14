@@ -2,11 +2,21 @@
 
 <!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-47 Extension Points (EP) for Spring API
-
+47 Extension Points (EP) and 5 Listeners for Spring API
+       
 <include src="extension_point_list.md" include-id="ep_list_legend"></include>
 
 ## Spring
+
+### Spring - Listeners
+
+| Topic | Listener |
+|-------|----------|
+| `com.intellij.spring.boot.run.lifecycle.tabs.SpringBootEndpointsTabSettings#TOPIC`| `com.intellij.spring.boot.run.lifecycle.tabs.SpringBootEndpointsTabSettings.Listener` |
+| `com.intellij.spring.data.commons.view.SpringRepositoriesViewSettings#TOPIC`| `com.intellij.spring.data.commons.view.SpringRepositoriesViewSettings.Listener` |
+| `com.intellij.spring.facet.SpringFileSetService#TOPIC`| `com.intellij.spring.facet.SpringFileSetService.SpringFileSetListener` |
+| `com.intellij.spring.mvc.toolwindow.SpringMvcViewSettings#TOPIC`| `com.intellij.spring.mvc.toolwindow.SpringMvcViewSettings.Listener` |
+| `com.intellij.spring.toolWindow.SpringBeansViewSettings#TOPIC`| `com.intellij.spring.toolWindow.SpringBeansViewSettings.Listener` |
 
 ### com.intellij.spring
 

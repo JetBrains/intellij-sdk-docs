@@ -2,13 +2,25 @@
 
 <!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-51 Extension Points (EP) for PHP
+52 Extension Points (EP) and 7 Listeners for PHP
                
 See [Extension Point List](extension_point_list.md) for IntelliJ Platform EPs.
 
 <include src="extension_point_list.md" include-id="ep_list_legend"></include>
                                      
 ## PhpStorm
+
+### PhpStorm - Listeners
+
+| Topic | Listener |
+|-------|----------|
+| `com.jetbrains.php.config.PhpProjectConfigurationFacade.StateChangedListener#TOPIC`| `com.jetbrains.php.config.PhpProjectConfigurationFacade.StateChangedListener` |
+| `com.jetbrains.php.config.PhpProjectConfigurationFacade.StateChangedListener#LANGUAGE_LEVEL_CHANGED_TOPIC`| `com.jetbrains.php.config.PhpProjectConfigurationFacade.StateChangedListener` |
+| `com.jetbrains.php.config.PhpProjectWorkspaceConfiguration#TOPIC`| `com.jetbrains.php.config.PhpProjectWorkspaceConfigurationListener` |
+| `com.jetbrains.php.config.PhpRuntimeConfiguration.DefaultStubsPathListener#TOPIC`| `com.jetbrains.php.config.PhpRuntimeConfiguration.DefaultStubsPathListener` |
+| `com.jetbrains.php.config.interpreters.PhpInterpretersManagerImpl.PhpInterpreterConflictResolveListener#TOPIC`| `com.jetbrains.php.config.interpreters.PhpInterpretersManagerImpl.PhpInterpreterConflictResolveListener` |
+| `com.jetbrains.php.debug.listener.PhpDebugExternalConnectionsAccepter.StateChangedListener#TOPIC`| `com.jetbrains.php.debug.listener.PhpDebugExternalConnectionsAccepter.StateChangedListener` |
+| `com.jetbrains.php.remote.interpreter.ui.PhpRemoteInterpreterConfigurationForm.PhpRemoteInterpreterChangedListener#TOPIC`| `com.jetbrains.php.remote.interpreter.ui.PhpRemoteInterpreterConfigurationForm.PhpRemoteInterpreterChangedListener` |
 
 ### com.intellij.phing
 
@@ -35,7 +47,7 @@ See [Extension Point List](extension_point_list.md) for IntelliJ Platform EPs.
 |-----------------|----------------|
 | [com.intellij.php.debug.template.configurable](https://jb.gg/ipe?extensions=com.intellij.php.debug.template.configurable) ![Project-Level][project-level] | `PhpTemplateDebugConfigurable` | 
 | [com.intellij.php.debug.templateLanguage](https://jb.gg/ipe?extensions=com.intellij.php.debug.templateLanguage) | `PhpTemplateLanguagePathMapper` | 
-| [com.intellij.php.typeProvider2](https://jb.gg/ipe?extensions=com.intellij.php.typeProvider2) | `PhpTypeProvider2` | 
+| [com.intellij.php.typeProvider2](https://jb.gg/ipe?extensions=com.intellij.php.typeProvider2) ![Deprecated][deprecated] | `PhpTypeProvider2` | 
 | [com.intellij.phpDeadCode](https://jb.gg/ipe?extensions=com.intellij.phpDeadCode) | [`EntryPoint`](upsource:///platform/analysis-api/src/com/intellij/codeInspection/reference/EntryPoint.java) | 
 | [com.jetbrains.php.arrayShapesProvider](https://jb.gg/ipe?extensions=com.jetbrains.php.arrayShapesProvider) | `PhpArrayShapesProvider` | 
 | [com.jetbrains.php.classAliasProvider](https://jb.gg/ipe?extensions=com.jetbrains.php.classAliasProvider) | `PhpClassAliasProvider` | 
@@ -48,6 +60,7 @@ See [Extension Point List](extension_point_list.md) for IntelliJ Platform EPs.
 | [com.jetbrains.php.debug.mapping.localPathFixer](https://jb.gg/ipe?extensions=com.jetbrains.php.debug.mapping.localPathFixer) | `PhpLocalPathFixer` | 
 | [com.jetbrains.php.deprecationFixesProvider](https://jb.gg/ipe?extensions=com.jetbrains.php.deprecationFixesProvider) | `PhpDeprecationQuickFixesProvider` | 
 | [com.jetbrains.php.deprecationProvider](https://jb.gg/ipe?extensions=com.jetbrains.php.deprecationProvider) | `PhpDeprecationProvider` | 
+| [com.jetbrains.php.docPrefixProvider](https://jb.gg/ipe?extensions=com.jetbrains.php.docPrefixProvider) ![Internal API][internal] | `PhpDocPrefixProvider` | 
 | [com.jetbrains.php.docTagParserExtension](https://jb.gg/ipe?extensions=com.jetbrains.php.docTagParserExtension) | `PhpDocTagParser` | 
 | [com.jetbrains.php.docTagValuesStubProvider](https://jb.gg/ipe?extensions=com.jetbrains.php.docTagValuesStubProvider) | `PhpCustomDocTagValuesStubProvider` | 
 | [com.jetbrains.php.externalUsagesSearcher](https://jb.gg/ipe?extensions=com.jetbrains.php.externalUsagesSearcher) | `PhpExternalUsagesSearcher` | 
@@ -66,14 +79,14 @@ See [Extension Point List](extension_point_list.md) for IntelliJ Platform EPs.
 | [com.jetbrains.php.referenceResolver2](https://jb.gg/ipe?extensions=com.jetbrains.php.referenceResolver2) | `PhpMultipleDeclarationFilter` | 
 | [com.jetbrains.php.relatedToPhpFilesContributor](https://jb.gg/ipe?extensions=com.jetbrains.php.relatedToPhpFilesContributor) | `RelatedToPhpFilesContributor` | 
 | [com.jetbrains.php.remote.remoteInterpreterManager](https://jb.gg/ipe?extensions=com.jetbrains.php.remote.remoteInterpreterManager) | `PhpRemoteInterpreterManager` | 
-| [com.jetbrains.php.testFramework.phpTestOldConfigHolder](https://jb.gg/ipe?extensions=com.jetbrains.php.testFramework.phpTestOldConfigHolder) | `PhpTestFrameworkOldConfigHolder` | 
+| [com.jetbrains.php.testFramework.phpTestOldConfigHolder](https://jb.gg/ipe?extensions=com.jetbrains.php.testFramework.phpTestOldConfigHolder) ![Deprecated][deprecated] | `PhpTestFrameworkOldConfigHolder` | 
 | [com.jetbrains.php.testFrameworkType](https://jb.gg/ipe?extensions=com.jetbrains.php.testFrameworkType) | `PhpTestFrameworkType` | 
 | [com.jetbrains.php.tools.projectConfigurableForm](https://jb.gg/ipe?extensions=com.jetbrains.php.tools.projectConfigurableForm) ![Project-Level][project-level] | `QualityToolProjectConfigurableForm` | 
 | [com.jetbrains.php.tools.quality.messDetector.messDetectorConfigurationProvider](https://jb.gg/ipe?extensions=com.jetbrains.php.tools.quality.messDetector.messDetectorConfigurationProvider) | `MessDetectorConfigurationProvider` | 
 | [com.jetbrains.php.tools.quality.phpCSFixer.phpCSFixerConfigurationProvider](https://jb.gg/ipe?extensions=com.jetbrains.php.tools.quality.phpCSFixer.phpCSFixerConfigurationProvider) | `PhpCSFixerConfigurationProvider` | 
 | [com.jetbrains.php.tools.quality.phpcs.phpCSConfigurationProvider](https://jb.gg/ipe?extensions=com.jetbrains.php.tools.quality.phpcs.phpCSConfigurationProvider) | `PhpCSConfigurationProvider` | 
 | [com.jetbrains.php.tools.quality.type](https://jb.gg/ipe?extensions=com.jetbrains.php.tools.quality.type) | `QualityToolType` | 
-| [com.jetbrains.php.typeProvider3](https://jb.gg/ipe?extensions=com.jetbrains.php.typeProvider3) | `PhpTypeProvider3` | 
+| [com.jetbrains.php.typeProvider3](https://jb.gg/ipe?extensions=com.jetbrains.php.typeProvider3) ![Deprecated][deprecated] | `PhpTypeProvider3` | 
 | [com.jetbrains.php.typeProvider4](https://jb.gg/ipe?extensions=com.jetbrains.php.typeProvider4) | `PhpTypeProvider4` | 
 
 ### com.jetbrains.php.behat

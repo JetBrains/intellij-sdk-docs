@@ -12,11 +12,11 @@
 
 | Topic | Listener |
 |-------|----------|
-| `com.intellij.spring.boot.run.lifecycle.tabs.SpringBootEndpointsTabSettings#TOPIC`| `com.intellij.spring.boot.run.lifecycle.tabs.SpringBootEndpointsTabSettings.Listener` |
-| `com.intellij.spring.data.commons.view.SpringRepositoriesViewSettings#TOPIC`| `com.intellij.spring.data.commons.view.SpringRepositoriesViewSettings.Listener` |
-| `com.intellij.spring.facet.SpringFileSetService#TOPIC`| `com.intellij.spring.facet.SpringFileSetService.SpringFileSetListener` |
-| `com.intellij.spring.mvc.toolwindow.SpringMvcViewSettings#TOPIC`| `com.intellij.spring.mvc.toolwindow.SpringMvcViewSettings.Listener` |
-| `com.intellij.spring.toolWindow.SpringBeansViewSettings#TOPIC`| `com.intellij.spring.toolWindow.SpringBeansViewSettings.Listener` |
+| `SpringBootEndpointsTabSettings#TOPIC` | `Listener` |
+| `SpringRepositoriesViewSettings#TOPIC` | `Listener` |
+| `SpringFileSetService#TOPIC` | `SpringFileSetListener` |
+| `SpringMvcViewSettings#TOPIC` | `Listener` |
+| `SpringBeansViewSettings#TOPIC` | `Listener` |
 
 ### com.intellij.spring
 

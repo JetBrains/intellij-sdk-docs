@@ -14,13 +14,13 @@ See [Extension Point List](extension_point_list.md) for IntelliJ Platform EPs.
 
 | Topic | Listener |
 |-------|----------|
-| `com.jetbrains.php.config.PhpProjectConfigurationFacade.StateChangedListener#TOPIC`| `com.jetbrains.php.config.PhpProjectConfigurationFacade.StateChangedListener` |
-| `com.jetbrains.php.config.PhpProjectConfigurationFacade.StateChangedListener#LANGUAGE_LEVEL_CHANGED_TOPIC`| `com.jetbrains.php.config.PhpProjectConfigurationFacade.StateChangedListener` |
-| `com.jetbrains.php.config.PhpProjectWorkspaceConfiguration#TOPIC`| `com.jetbrains.php.config.PhpProjectWorkspaceConfigurationListener` |
-| `com.jetbrains.php.config.PhpRuntimeConfiguration.DefaultStubsPathListener#TOPIC`| `com.jetbrains.php.config.PhpRuntimeConfiguration.DefaultStubsPathListener` |
-| `com.jetbrains.php.config.interpreters.PhpInterpretersManagerImpl.PhpInterpreterConflictResolveListener#TOPIC`| `com.jetbrains.php.config.interpreters.PhpInterpretersManagerImpl.PhpInterpreterConflictResolveListener` |
-| `com.jetbrains.php.debug.listener.PhpDebugExternalConnectionsAccepter.StateChangedListener#TOPIC`| `com.jetbrains.php.debug.listener.PhpDebugExternalConnectionsAccepter.StateChangedListener` |
-| `com.jetbrains.php.remote.interpreter.ui.PhpRemoteInterpreterConfigurationForm.PhpRemoteInterpreterChangedListener#TOPIC`| `com.jetbrains.php.remote.interpreter.ui.PhpRemoteInterpreterConfigurationForm.PhpRemoteInterpreterChangedListener` |
+| `StateChangedListener#TOPIC` | `StateChangedListener` |
+| `StateChangedListener#LANGUAGE_LEVEL_CHANGED_TOPIC` | `StateChangedListener` |
+| `PhpProjectWorkspaceConfiguration#TOPIC` | `PhpProjectWorkspaceConfigurationListener` |
+| `DefaultStubsPathListener#TOPIC` | `DefaultStubsPathListener` |
+| `PhpInterpreterConflictResolveListener#TOPIC` | `PhpInterpreterConflictResolveListener` |
+| `StateChangedListener#TOPIC` | `StateChangedListener` |
+| `PhpRemoteInterpreterChangedListener#TOPIC` | `PhpRemoteInterpreterChangedListener` |
 
 ### com.intellij.phing
 

@@ -14,29 +14,29 @@ See [Extension Point List](extension_point_list.md) for IntelliJ Platform EPs.
 
 | Topic | Listener |
 |-------|----------|
-| `com.jetbrains.cidr.lang.symbols.symtable.FileSymbolTablesCache#OUT_OF_CODE_BLOCK_TOPIC` ![Project-Level][project-level]| [`Listener`](upsource:///platform/core-api/src/com/intellij/psi/util/PsiModificationTracker.java) |
-| `com.jetbrains.cidr.cpp.cmake.workspace.CMakeWorkspaceListener#TOPIC`| `com.jetbrains.cidr.cpp.cmake.workspace.CMakeWorkspaceListener` |
-| `com.jetbrains.cidr.cpp.embedded.stm32cubemx.CubeMXManager#TOPIC`| `com.jetbrains.cidr.cpp.embedded.stm32cubemx.CubeMXManager.CubeStatusListener` |
-| `com.jetbrains.cidr.cpp.toolchains.CPPToolchainsConfigurable#TOPIC`| `com.jetbrains.cidr.cpp.toolchains.CPPToolchainsConfigurable.Listener` |
-| `com.jetbrains.cidr.cpp.toolchains.CPPToolchainsListener#TOPIC`| `com.jetbrains.cidr.cpp.toolchains.CPPToolchainsListener` |
-| `com.jetbrains.cidr.execution.CidrRunConfigurationExecutableEditor.ExecutableListener#TOPIC`| `com.jetbrains.cidr.execution.CidrRunConfigurationExecutableEditor.ExecutableListener` |
-| `com.jetbrains.cidr.execution.build.CidrBuildListener#TOPIC` ![Project-Level][project-level]| `com.jetbrains.cidr.execution.build.CidrBuildListener` |
-| `com.jetbrains.cidr.external.system.workspace.ExternalWorkspaceListener#TOPIC`| `com.jetbrains.cidr.external.system.workspace.ExternalWorkspaceListener` |
-| `com.jetbrains.cidr.lang.daemon.clang.clangd.ClangLanguageServiceProviderListener#TOPIC`| `com.jetbrains.cidr.lang.daemon.clang.clangd.ClangLanguageServiceProviderListener` |
-| `com.jetbrains.cidr.lang.daemon.clang.clangd.lsp.server.ClangServerListener#TOPIC`| `com.jetbrains.cidr.lang.daemon.clang.clangd.lsp.server.ClangServerListener` |
-| `com.jetbrains.cidr.lang.daemon.clang.clangd.lsp.telemetry.ClangTelemetryListener#TOPIC`| `com.jetbrains.cidr.lang.daemon.clang.clangd.lsp.telemetry.ClangTelemetryListener` |
-| `com.jetbrains.cidr.lang.daemon.clang.clangd.memory.ClangMemoryUsageWatchDogListener#TOPIC`| `com.jetbrains.cidr.lang.daemon.clang.clangd.memory.ClangMemoryUsageWatchDogListener` |
-| `com.jetbrains.cidr.lang.daemon.clang.clangd.reparsing.OCLanguageServiceReparsingPassListener#TOPIC`| `com.jetbrains.cidr.lang.daemon.clang.clangd.reparsing.OCLanguageServiceReparsingPassListener` |
-| `com.jetbrains.cidr.lang.daemon.clang.clangd.settings.ClangdSettingsListener#TOPIC`| `com.jetbrains.cidr.lang.daemon.clang.clangd.settings.ClangdSettingsListener` |
-| `com.jetbrains.cidr.lang.daemon.clang.clangd.settings.ClangdSettingsListener#TOPIC_UI`| `com.jetbrains.cidr.lang.daemon.clang.clangd.settings.ClangdSettingsListener` |
-| `com.jetbrains.cidr.lang.editor.CidrInjectionListener#INJECTION_TOPIC`| `com.jetbrains.cidr.lang.editor.CidrInjectionListener` |
-| `com.jetbrains.cidr.lang.preprocessor.OCInclusionContextListener#TOPIC`| `com.jetbrains.cidr.lang.preprocessor.OCInclusionContextListener` |
-| `com.jetbrains.cidr.lang.symbols.symtable.FileSymbolTableCacheListener#TOPIC`| `com.jetbrains.cidr.lang.symbols.symtable.FileSymbolTableCacheListener` |
-| `com.jetbrains.cidr.lang.symbols.symtable.OCFileSymbolTableListener#TOPIC`| `com.jetbrains.cidr.lang.symbols.symtable.OCFileSymbolTableListener` |
-| `com.jetbrains.cidr.lang.workspace.OCWorkspaceListener#TOPIC`| `com.jetbrains.cidr.lang.workspace.OCWorkspaceListener` |
-| `com.jetbrains.cidr.project.CidrRootConfigurationListener#TOPIC`| `com.jetbrains.cidr.project.CidrRootConfigurationListener` |
-| `com.jetbrains.cidr.project.workspace.CidrWorkspaceListener#TOPIC`| `com.jetbrains.cidr.project.workspace.CidrWorkspaceListener` |
-| `com.jetbrains.cidr.system.RemoteDeploymentListener#TOPIC`| `com.jetbrains.cidr.system.RemoteDeploymentListener` |
+| `FileSymbolTablesCache#OUT_OF_CODE_BLOCK_TOPIC` ![Project-Level][project-level] | [`Listener`](upsource:///platform/core-api/src/com/intellij/psi/util/PsiModificationTracker.java) |
+| `CMakeWorkspaceListener#TOPIC` | `CMakeWorkspaceListener` |
+| `CubeMXManager#TOPIC` | `CubeStatusListener` |
+| `CPPToolchainsConfigurable#TOPIC` | `Listener` |
+| `CPPToolchainsListener#TOPIC` | `CPPToolchainsListener` |
+| `ExecutableListener#TOPIC` | `ExecutableListener` |
+| `CidrBuildListener#TOPIC` ![Project-Level][project-level] | `CidrBuildListener` |
+| `ExternalWorkspaceListener#TOPIC` | `ExternalWorkspaceListener` |
+| `ClangLanguageServiceProviderListener#TOPIC` | `ClangLanguageServiceProviderListener` |
+| `ClangServerListener#TOPIC` | `ClangServerListener` |
+| `ClangTelemetryListener#TOPIC` | `ClangTelemetryListener` |
+| `ClangMemoryUsageWatchDogListener#TOPIC` | `ClangMemoryUsageWatchDogListener` |
+| `OCLanguageServiceReparsingPassListener#TOPIC` | `OCLanguageServiceReparsingPassListener` |
+| `ClangdSettingsListener#TOPIC` | `ClangdSettingsListener` |
+| `ClangdSettingsListener#TOPIC_UI` | `ClangdSettingsListener` |
+| `CidrInjectionListener#INJECTION_TOPIC` | `CidrInjectionListener` |
+| `OCInclusionContextListener#TOPIC` | `OCInclusionContextListener` |
+| `FileSymbolTableCacheListener#TOPIC` | `FileSymbolTableCacheListener` |
+| `OCFileSymbolTableListener#TOPIC` | `OCFileSymbolTableListener` |
+| `OCWorkspaceListener#TOPIC` | `OCWorkspaceListener` |
+| `CidrRootConfigurationListener#TOPIC` | `CidrRootConfigurationListener` |
+| `CidrWorkspaceListener#TOPIC` | `CidrWorkspaceListener` |
+| `RemoteDeploymentListener#TOPIC` | `RemoteDeploymentListener` |
 
 ### CidrCoveragePlugin.xml
 

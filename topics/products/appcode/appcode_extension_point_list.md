@@ -14,10 +14,10 @@ See [Extension Point List](extension_point_list.md) for IntelliJ Platform EPs.
 
 | Topic | Listener |
 |-------|----------|
-| `com.jetbrains.cidr.cocoapods.CocoaPodsUtils#GEM_TOPIC`| `com.jetbrains.cidr.cocoapods.CocoaPodsUtils.GemListener` |
-| `com.jetbrains.cidr.cocoapods.CocoaPodsUtils#PODS_TOPIC`| `com.jetbrains.cidr.cocoapods.CocoaPodsUtils.PodsListener` |
-| `com.jetbrains.cidr.execution.deviceSupport.AMDeviceManager#DEVICE_LISTENER_TOPIC`| `com.jetbrains.cidr.execution.deviceSupport.AMDeviceListener` |
-| `com.jetbrains.cidr.xcode.model.XcodeProjectTestListener#TOPIC`| `com.jetbrains.cidr.xcode.model.XcodeProjectTestListener` |
+| `CocoaPodsUtils#GEM_TOPIC` | `GemListener` |
+| `CocoaPodsUtils#PODS_TOPIC` | `PodsListener` |
+| `AMDeviceManager#DEVICE_LISTENER_TOPIC` | `AMDeviceListener` |
+| `XcodeProjectTestListener#TOPIC` | `XcodeProjectTestListener` |
 
 ### AppCodeSwiftPlugin.xml
 

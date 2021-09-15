@@ -14,9 +14,9 @@ See [Extension Point List](extension_point_list.md) for IntelliJ Platform EPs.
 
 | Topic | Listener |
 |-------|----------|
-| `com.intellij.javascript.jest.JestConsoleProperties#COVERAGE_CONFIG_TOPIC` ![Project-Level][project-level]| `com.intellij.javascript.jest.JestCoverageConfigListener` |
-| `com.intellij.javascript.nodejs.packageJson.PackageJsonFileManager#TOPIC` ![Project-Level][project-level]| `com.intellij.javascript.nodejs.packageJson.PackageJsonFileManager.PackageJsonChangeListener` |
-| `com.intellij.lang.javascript.library.JSLibraryManager#TOPIC` ![Project-Level][project-level]| `com.intellij.lang.javascript.library.JSLibraryManager.JSLibraryManagerChangeListener` |
+| `JestConsoleProperties#COVERAGE_CONFIG_TOPIC` ![Project-Level][project-level]| `JestCoverageConfigListener` |
+| `PackageJsonFileManager#TOPIC` ![Project-Level][project-level]| `PackageJsonChangeListener` |
+| `JSLibraryManager#TOPIC` ![Project-Level][project-level]| `JSLibraryManagerChangeListener` |
 
 ### com.intellij.css
 

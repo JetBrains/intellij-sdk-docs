@@ -14,16 +14,16 @@ See [Extension Point List](extension_point_list.md) for IntelliJ Platform EPs.
 
 | Topic | Listener |
 |-------|----------|
-| `org.jetbrains.plugins.ruby.chef.sourceRoot.ChefTopics#COOKBOOK`| `org.jetbrains.plugins.ruby.chef.sdk.CookbooksListener` |
-| `org.jetbrains.plugins.ruby.gem.GemManager#GEMSET_CHANGED_TOPIC`| `org.jetbrains.plugins.ruby.gem.GemManager.GemSetListener` |
-| `org.jetbrains.plugins.ruby.gem.GemManager#MODULE_GEMS_CHANGED_TOPIC` ![Project-Level][project-level]| `org.jetbrains.plugins.ruby.gem.GemManager.ModuleGemsListener` |
-| `org.jetbrains.plugins.ruby.rails.InflectorService#INFLECTIONS_CHANGED`| `org.jetbrains.plugins.ruby.rails.InflectorService.InflectionChanged` |
-| `org.jetbrains.plugins.ruby.rails.codeInsight.sprockets.assetsPaths.AssetsRegistrationWatcher#ASSETS_CHANGED_TOPIC`| `org.jetbrains.plugins.ruby.rails.codeInsight.sprockets.assetsPaths.AssetsRegistrationWatcher.AssetsListener` |
-| `org.jetbrains.plugins.ruby.rails.database.MigrationParser#MIGRATIONS_CHANGED_TOPIC` ![Project-Level][project-level]| `org.jetbrains.plugins.ruby.rails.database.MigrationParser.MigrationListener` |
-| `org.jetbrains.plugins.ruby.remote.RubyRemoteInterpreterManager#RUBY_REMOTE_SDK_TRANSFER_LISTENER_TOPIC`| `org.jetbrains.plugins.ruby.remote.RubyRemoteSdkTransferListener` |
-| `org.jetbrains.plugins.ruby.ruby.codeInsight.symbols.cache.RequiresIndexExtension.RequireSetChangedListener#TOPIC`| `org.jetbrains.plugins.ruby.ruby.codeInsight.symbols.cache.RequiresIndexExtension.RequireSetChangedListener` |
-| `org.jetbrains.plugins.ruby.ruby.sdk.RubySdkType#SDK_PATHS_INITIALIZED_TOPIC`| `org.jetbrains.plugins.ruby.ruby.sdk.RubySdkType.SdkPathsInitializedListener` |
-| `org.jetbrains.plugins.ruby.version.management.rvm.RVMSupportUtil#RVM_GEMSET_ADDED_TOPIC`| `org.jetbrains.plugins.ruby.version.management.rvm.RVMSupportUtil.RVMGemsetListener` |
+| `ChefTopics#COOKBOOK` | `CookbooksListener` |
+| `GemManager#GEMSET_CHANGED_TOPIC` | `GemSetListener` |
+| `GemManager#MODULE_GEMS_CHANGED_TOPIC` ![Project-Level][project-level] | `ModuleGemsListener` |
+| `InflectorService#INFLECTIONS_CHANGED` | `InflectionChanged` |
+| `AssetsRegistrationWatcher#ASSETS_CHANGED_TOPIC` | `AssetsListener` |
+| `MigrationParser#MIGRATIONS_CHANGED_TOPIC` ![Project-Level][project-level] | `MigrationListener` |
+| `RubyRemoteInterpreterManager#RUBY_REMOTE_SDK_TRANSFER_LISTENER_TOPIC` | `RubyRemoteSdkTransferListener` |
+| `RequireSetChangedListener#TOPIC` | `RequireSetChangedListener` |
+| `RubySdkType#SDK_PATHS_INITIALIZED_TOPIC` | `SdkPathsInitializedListener` |
+| `RVMSupportUtil#RVM_GEMSET_ADDED_TOPIC` | `RVMGemsetListener` |
 
 ### intellij.ruby.coverage.xml
 

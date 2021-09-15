@@ -66,7 +66,8 @@ If logging is used only to report exceptions, use convenience method `thisLogger
 By default, all messages with level `INFO` and higher are written to log output file <path>idea.log</path>.
 To enable `DEBUG`/`TRACE` logging for specific categories, use <menupath>Help | Diagnostic Tools | Debug Log Settings</menupath>.
 
-When [internal mode](enabling_internal.md) is enabled, the currently running IDE log file can be opened using <menupath>Help | Open Log in Editor</menupath> or located in filesystem via <menupath>Help | Show Log in Finder/Explorer</menupath> action.
+To locate the log file, choose the <menupath>Help | Show Log in Finder/Explorer</menupath> action.
+When [internal mode](enabling_internal.md) is enabled, the currently running IDE log file can be opened using <menupath>Help | Open Log in Editor</menupath>.
 
 To locate it for a specific installation, see this [Knowledge Base article](https://intellij-support.jetbrains.com/hc/en-us/articles/206544519).
 See [Development Instance Sandbox Directory](ide_development_instance.md#the-development-instance-sandbox-directory) on how to find it for development instances.

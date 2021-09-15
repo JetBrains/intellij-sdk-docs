@@ -15,7 +15,6 @@ Also, consider posting requests in _#jobs_ channel on [JetBrains Platform Slack]
 | Joachim Ansorg     | [www.plugin-dev.com][ja]                                | -/-                                                                                                                                  |
 | Daniel Espendiller | [daniel@espendiller.net][de]                            | -/-                                                                                                                                  |
 | Robert Ekendahl    | [www.edaphic.studio][re]                                | Custom Language support                                                                                                              |
-| Alexander Schwartz | [msg.group][as], [alexander.schwartz@msg.group][as2]    | Custom Language support around documentation-as-code, especially AsciiDoc and Antora. Plugin: [AsciiDoc][as3]                        |
 | Alexey Stukalov    | [info@cuba-platform.com][ast], [www.haulmont.com][ast2] | Plugins: [CUBA][ast3].                                                                                                               |
 | Edument            | [jonathan@edument.cz][ed], [edument.se][ed2]            | Developers of [Comma IDE][ed3]                                                                                                       |
 | Mikhail Bolotov    | [mikhail.bolotov@gmail.com][mb]                         | Plugins: [Cypress Support Pro][cspro], [k6]                                                                                                       |
@@ -23,9 +22,6 @@ Also, consider posting requests in _#jobs_ channel on [JetBrains Platform Slack]
 [ja]: https://www.plugin-dev.com
 [de]: mailto:daniel@espendiller.net
 [re]: https://www.edaphic.studio
-[as]: https://msg.group
-[as2]: mailto:alexander.schwartz@msg.group
-[as3]: https://plugins.jetbrains.com/plugin/7391-asciidoc
 [ast]: mailto:info@cuba-platform.com
 [ast2]: https://www.haulmont.com/services/cuba-platform-services/support
 [ast3]: https://plugins.jetbrains.com/plugin/7249-cuba

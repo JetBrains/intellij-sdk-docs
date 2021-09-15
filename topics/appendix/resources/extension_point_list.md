@@ -23,14 +23,24 @@
  {type="tip"}
 
 ## Legend
-  
+         
+### Listeners                  
+
+**Topic** links the declaration of corresponding `Topic`.
+
+**Listener** links corresponding listener interface to implement.
+
+### Extension Points
+
 **Extension Point** searches for usages inside existing implementations of open-source IntelliJ Platform plugins via [IntelliJ Platform Explorer](https://jb.gg/ipe).
 
 **Implementation** is related Extension Point class. 
+             
+### Tags
 
-| Icon | Description | Details |
+| Icon | Description | Details |             
 |---|---|---|
-| ![Deprecated][deprecated] | Deprecated | Please see code documentation for replacement |
+| ![Deprecated][deprecated] | Deprecated API | Please see code documentation for replacement |
 | ![Experimental API][experimental] | Experimental API | Implementation annotated with [`@ApiStatus.Experimental`](https://github.com/JetBrains/java-annotations/blob/master/common/src/main/java/org/jetbrains/annotations/ApiStatus.java), API might be altered or removed without prior notice |
 | ![Internal API][internal] | Internal API | Implementation annotated with [`@ApiStatus.Internal`](https://github.com/JetBrains/java-annotations/blob/master/common/src/main/java/org/jetbrains/annotations/ApiStatus.java), should not be used by 3rd party |
 | ![Project-Level][project-level] | Project-Level Extension Point/Topic | Can have `Project` as constructor parameter.<br/>Extension Point: Declared with `area="IDEA_PROJECT"`<br/>Listener: registered in `<projectListeners>` |

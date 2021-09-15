@@ -20,13 +20,13 @@ import com.intellij.openapi.diagnostic.Logger;
 
 public class MyPluginFunctionality {
 
-  private static final Logger LOG = 
+  private static final Logger LOG =
           Logger.getInstance(MyPluginFunctionality.class);
 
   public void someMethod() {
     LOG.info("someMethod() was called");
-  }  
-  
+  }
+
 }
 ```
 
@@ -46,7 +46,7 @@ class MyPluginFunctionality {
 }
 
 ```
-                                  
+
 If logging is used only to report exceptions, use convenience method `thisLogger()`:
 
 ```kotlin
@@ -74,6 +74,13 @@ See [Development Instance Sandbox Directory](ide_development_instance.md#the-dev
 
 See [Testing FAQ](testing_faq.md) on how to enable `DEBUG`/`TRACE` level logging during tests, and obtain separate logs for failing tests.
 
+## Error Reporting
+
+Fatal errors and logging messages with `ERROR` level will be shown in the <control>IDE Fatal Errors</control> dialog for EAP releases or when running in [internal mode](enabling_internal.md).
+For errors caused by third-party plugins, reporting is disabled by default - instead, there's an option to disable the plugin causing the exception.
+
+To let users report such errors to the vendor, plugins can implement custom [`ErrorReportSubmitter`](upsource:///platform/platform-api/src/com/intellij/openapi/diagnostic/ErrorReportSubmitter.java) registered in extension point `com.intellij.errorHandler`.
+See [IntelliJ Platform Explorer](https://jb.gg/ipe?extensions=com.intellij.errorHandler) for existing implementations - ranging from pre-filling web-based issue tracker forms to fully automated submission to log monitoring systems.
 
 ## Runtime Information
 

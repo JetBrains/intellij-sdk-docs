@@ -1,6 +1,6 @@
 [//]: # (title: Messaging Infrastructure)
 
-<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 ## Purpose
 
@@ -28,6 +28,10 @@ I.e., clients are allowed to subscribe to a specific topic within a bus and send
   Subscribers register an implementation of this interface at the messaging infrastructure.
   Publishers later retrieve objects that conform to the interface (IS-A) and call any methods defined on those implementations.
   The messaging infrastructure takes care of dispatching the message to all subscribers of the topic by calling the same method with the same arguments on the registered implementation callbacks;
+
+ > All available listeners/topics are listed on [Extension Point List](extension_point_list.md) under _Listeners_ sections.
+ >
+ {type="tip"}
 
 ### Message Bus
 

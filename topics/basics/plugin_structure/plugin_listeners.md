@@ -2,20 +2,21 @@
 
 <!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
- >  Defining listeners in <path>plugin.xml</path> is supported starting with version 2019.3 of the platform.
- >
- {type="note"}
-
- >  Listener implementations must be stateless and may not implement life-cycle (e.g., `Disposable`).
- >
- {type="note"}
-
 _Listeners_ allow plugins to declaratively subscribe to events delivered through the message bus (see [Messaging infrastructure](messaging_infrastructure.md) for details).
+Listener implementations must be stateless and may not implement life-cycle (e.g., `Disposable`).
 
 You can define both application- and project-level listeners.
 
-Declarative registration of listeners allows you to achieve better performance than registering listeners from code. 
+ > All available listeners/topics are listed on [Extension Point List](extension_point_list.md) under _Listeners_ sections.
+ >
+ {type="tip"}
+
+Declarative registration of listeners allows you to achieve better performance than registering listeners from code.
 The advantage is because listener instances get created lazily - the first time an event is sent to the topic - and not during application startup or project opening.
+
+ > Defining listeners in <path>plugin.xml</path> is supported starting with version 2019.3 of the platform.
+ >
+ {type="note"}
 
 ## Defining Application-Level Listeners
 

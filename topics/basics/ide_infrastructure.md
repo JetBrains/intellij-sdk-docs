@@ -74,6 +74,8 @@ See [Development Instance Sandbox Directory](ide_development_instance.md#the-dev
 
 See [Testing FAQ](testing_faq.md) on how to enable `DEBUG`/`TRACE` level logging during tests, and obtain separate logs for failing tests.
 
+To provide additional context for [reporting fatal errors](#error-reporting), use `Logger.error()` methods taking additional `Attachment` (see [`AttachmentFactory`](upsource:///platform/core-impl/src/com/intellij/diagnostic/AttachmentFactory.java)).
+
 ## Error Reporting
 
 Fatal errors and logging messages with `ERROR` level will be shown in the <control>IDE Fatal Errors</control> dialog for EAP releases or when running in [internal mode](enabling_internal.md).

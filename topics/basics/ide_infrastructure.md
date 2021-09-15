@@ -92,3 +92,7 @@ NOTE: to restrict compatibility, declare [IDEs](plugin_compatibility.md) and [ve
 To obtain information about OS and Java VM, use [`SystemInfo`](upsource:///platform/util/src/com/intellij/openapi/util/SystemInfo.java).
 
 To access relevant configuration directories, see [`PathManager`](upsource:///platform/util/src/com/intellij/openapi/application/PathManager.java).
+
+## Context Help
+
+To show custom context web-based help for your plugin's functionality (e.g., for [dialogs](dialog_wrapper.md)), provide [`WebHelpProvider`](upsource:///platform/platform-api/src/com/intellij/openapi/help/WebHelpProvider.java) registered in `com.intellij.webHelpProvider` extension point.

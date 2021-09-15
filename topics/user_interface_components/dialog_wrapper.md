@@ -17,7 +17,7 @@ It provides the following features:
     * <shortcut>Left/Right</shortcut> for switching between buttons
     * <shortcut>Y</shortcut>/<shortcut>N</shortcut> for <control>Yes</control>/<control>No</control> actions if they exist in the dialog
 * Optional <control>Do not ask again</control> checkbox
-                                    
+
 ### Usage
 
 When using the [`DialogWrapper`](upsource:///platform/platform-api/src/com/intellij/openapi/ui/DialogWrapper.java) class for a dialog, follow these required steps:
@@ -26,19 +26,19 @@ When using the [`DialogWrapper`](upsource:///platform/platform-api/src/com/intel
 * Call the `setTitle()` method to set the title for the dialog
 * Call the `init()` method from the constructor of the dialog class
 * Implement the `createCenterPanel()` method to return the component comprising the main contents of the dialog.
-                                                            
+
 Optionally:
 
 * Override the `getPreferredFocusedComponent()` method and return the component that should be focused when the dialog is first displayed.
 * Override the `getDimensionServiceKey()` method to return the identifier which will be used for persisting the dialog dimensions.
-* Override the `getHelpId()` method to return the context help topic associated with the dialog.
+* Override the `getHelpId()` method to return the context help topic associated with the dialog (see [Context Help](ide_infrastructure.md#context-help)).
 
 The `DialogWrapper` class is often used together with [GUI Designer forms](https://www.jetbrains.com/help/idea/gui-designer-basics.html).
 In this case, bind a GUI Designer form to the class extending `DialogWrapper`, bind the top-level panel of the form to a field and return that field from the `createCenterPanel()` method.
 When using Kotlin, use [Kotlin UI DSL](kotlin_ui_dsl.md) to provide the dialog's contents.
 
- > See [Layout](https://jetbrains.design/intellij/principles/layout) topic in IntelliJ Platform UI Guidelines for recommendations on arranging UI controls in dialogs. 
- > 
+ > See [Layout](https://jetbrains.design/intellij/principles/layout) topic in IntelliJ Platform UI Guidelines for recommendations on arranging UI controls in dialogs.
+ >
  > Existing dialogs can be inspected at runtime using [UI Inspector](internal_ui_inspector.md), e.g., to locate the underlying implementation of UI components.
  >
  {type="tip"}
@@ -50,7 +50,7 @@ To customize the buttons displayed in the dialog (replacing the standard <contro
 Both of these methods return an array of Swing Action objects.
 If a button closes the dialog, use [`DialogWrapperExitAction`](upsource:///platform/platform-api/src/com/intellij/openapi/ui/DialogWrapper.java) as the base class for the action.
 Use `action.putValue(DialogWrapper.DEFAULT_ACTION, true)` to set the default button.
-         
+
 ### Input Validation
 
 Please see also [Validation errors](https://jetbrains.design/intellij/principles/validation_errors/) topic in the IntelliJ Platform UI Guidelines.

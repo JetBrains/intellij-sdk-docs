@@ -127,7 +127,7 @@ If the icon graphics are simple enough so that it renders perfectly in every sca
  {type="tip"}
 
 ### PNG Format
- >  Please consider using SVG icons if your plugin targets 2018.2+.
+ >  Please consider using [SVG icons](#svg-format) for optimal results if your plugin targets 2018.2+.
  >
  {type="note"}
 

@@ -5,14 +5,14 @@
 Icons and images are used widely by IntelliJ Platform plugins.
 Plugins need icons mostly for actions, custom components renderers, tool windows, and so on.
 
- >  Plugin Icons, which represent a plugin itself, have different requirements than icons and images used within a plugin.
+ > Plugin Icons, which represent a plugin itself, have different requirements than icons and images used within a plugin.
  > For more information see the [Plugin Icon](plugin_icon_file.md) page.
  >
  {type="note"}
-          
+
 ## Platform vs. Custom Icons
 
-Plugins should reuse existing platform icons whenever possible. Use [Icons list](https://jetbrains.design/intellij/resources/icons_list/) to browse existing icons. 
+Plugins should reuse existing platform icons whenever possible. Use [Icons list](https://jetbrains.design/intellij/resources/icons_list/) to browse existing icons.
 Platform icons are located in [`AllIcons`](upsource:///platform/util/src/com/intellij/icons/AllIcons.java). Icons from plugins are located in corresponding `<PLUGIN_NAME>Icons` class (e.g., `GithubIcons`).
 
 If custom icons are required, please refer to detailed [design guide](https://jetbrains.design/intellij/principles/icons/).
@@ -28,7 +28,7 @@ The `getIcon()` method of [`IconLoader`](upsource:///platform/util/ui/src/com/in
  {type="note"}
 
 Then define a class/interface in a top-level package called `icons` holding icon constants as static fields:
-                            
+
 <tabs>
 <tab title="Java">
 
@@ -43,7 +43,7 @@ public interface DemoPluginIcons {
 ```
 
 </tab>
-       
+
 <tab title="Kotlin">
 
 When using Kotlin, fields must be annotated with `@JvmField`:
@@ -52,7 +52,7 @@ When using Kotlin, fields must be annotated with `@JvmField`:
 package icons
 
 object DemoPluginIcons {
-  
+
   @JvmField
   val DemoAction = IconLoader.getIcon("/icons/demoAction.png", javaClass)
 
@@ -61,7 +61,12 @@ object DemoPluginIcons {
 ```
 
 </tab>
-</tabs>      
+</tabs>
+
+ > Starting with 2021.2, `*Icons` class is not required to be located in `icons` package but can use plugin's package: `icons.DemoPluginIcons` &rarr; `my.plugin.DemoPluginIcons`.
+  >
+  {type="note"}
+
 
 Use these constants inside <path>plugin.xml</path> when specifying `icon` attribute for `<action>` or extension points, as well in [`@Presentation`](upsource:///platform/analysis-api/src/com/intellij/ide/presentation/Presentation.java) `icon` attribute.
 Note that the package name `icons` will be automatically prefixed and must not be specified.

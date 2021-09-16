@@ -597,6 +597,10 @@ Set and increase `stubVersion` of `com.intellij.dom.fileMetaData` extension when
 
 ## Building a DOM-Based GUI
 
+ > This is API is unmaintained and will likely be removed in future versions.
+ >
+ {type="warning"}
+
 ### Forms
 All forms that deal with DOM are organized in a special way.
 They support two main things: getting data from XML into the UI, and saving UI data to XML.

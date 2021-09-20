@@ -36,14 +36,14 @@ To learn more about building IntelliJ Platform plugins with Kotlin, this tutoria
 ## Adding Kotlin Support
 
  > The [IntelliJ Platform Plugin Template](github_template.md) provides a preconfigured project using Kotlin.
- > 
+ >
  > See also [kotlin_demo](https://github.com/JetBrains/intellij-sdk-code-samples/tree/main/kotlin_demo) for a minimal sample plugin.
  >
  {type="tip"}
 
 IntelliJ IDEA bundles the necessary Kotlin plugin, requiring no further configuration.
 For detailed instructions, please refer to the [Kotlin documentation](https://kotlinlang.org/docs/getting-started.html).
-               
+
 ### Kotlin Standard Library
 
 Since Kotlin 1.4, a dependency on the standard library `stdlib` is added automatically ([API Docs](https://kotlinlang.org/api/latest/jvm/stdlib/)).
@@ -55,8 +55,8 @@ To opt out, add this line in <path>gradle.properties</path>:
 kotlin.stdlib.default.dependency = false
 ```
 
-If a plugin supports [multiple platform versions](build_number_ranges.md), it must either target the lowest bundled `stdlib` version or provide the specific version in plugin distribution.       
-                                                                                          
+If a plugin supports [multiple platform versions](build_number_ranges.md), it must either target the lowest bundled `stdlib` version or provide the specific version in plugin distribution.
+
 | IntelliJ Platform version | Bundled `stdlib` version |
 |---------------------------|--------------------------|
 | 2021.2                    | 1.5.10                   |
@@ -79,7 +79,7 @@ Your <path>build.gradle</path> file may look like so:
 ```groovy
 plugins {
     id "java"
-    id "org.jetbrains.kotlin.jvm" version "1.5.30"
+    id "org.jetbrains.kotlin.jvm" version "1.5.31"
     id "org.jetbrains.intellij" version "1.1.4"
 }
 
@@ -133,7 +133,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     id("java")
-    id("org.jetbrains.kotlin.jvm") version "1.5.30"
+    id("org.jetbrains.kotlin.jvm") version "1.5.31"
     id("org.jetbrains.intellij") version "1.1.4"
 }
 

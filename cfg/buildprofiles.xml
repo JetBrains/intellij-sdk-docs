@@ -8,7 +8,7 @@
         <search-scope/>
         <fallback-url/>
         <generate-sitemap-url-prefix>https://plugins.jetbrains.com/docs/intellij/</generate-sitemap-url-prefix>
-        <config-feedbackRequireEmail>true</config-feedbackRequireEmail>
+        <config-feedbackRequireEmail>false</config-feedbackRequireEmail>
         <config-showDownloadButton>true</config-showDownloadButton>
         <config-disqus-show>false</config-disqus-show>
         <config-feedback-url>https://forms-service.jetbrains.com/feedback</config-feedback-url>

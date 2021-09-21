@@ -6,8 +6,19 @@
 
 Welcome to the IntelliJ Platform SDK - the primary source of documentation for extending the IntelliJ Platform by creating plugins, custom language support, or building a custom IDE.
 
+ > Save the date for upcoming **Busy Plugin Developers. Episode 2**
+ >
+ > Learn about:
+ > - How to improve plugin pages on JetBrains Marketplace
+ > - ide-probe – a framework for testing plugins for IntelliJ-based IDEs
+ >
+ > September 27 at 17:00 CEST [Register Here](https://info.jetbrains.com/ijplatform-webinar-september-2021.html)
+  >
+  {type="tip"}
+
+
 ## Getting Started
-                  
+
 <table>
 <tr>
 <th>
@@ -33,8 +44,8 @@ Webinar
 <td width="50%">
 
 Watch [Busy plugin developers series. Episode 0](https://www.youtube.com/watch?v=-6D5-xEaYig) to get started with developing plugins and publishing on [JetBrains Marketplace](https://plugins.jetbrains.com).
-<br/>      
-<br/>      
+<br/>
+<br/>
 
 <video href="-6D5-xEaYig" title="Busy plugin developers series. Episode 0" />
 
@@ -46,8 +57,8 @@ More webinars are available [here](useful_links.md#webinars).
 
 ## Updates
 
- > Gradle IntelliJ Plugin 1.x is now available, please update your build scripts [![GitHub Release](https://img.shields.io/github/release/jetbrains/gradle-intellij-plugin.svg?style=flat-square)](https://github.com/jetbrains/gradle-intellij-plugin/releases)      
- > 
+ > Gradle IntelliJ Plugin 1.x is now available, please update your build scripts [![GitHub Release](https://img.shields.io/github/release/jetbrains/gradle-intellij-plugin.svg?style=flat-square)](https://github.com/jetbrains/gradle-intellij-plugin/releases)
+ >
  > [What's New & Upgrade Instructions](https://lp.jetbrains.com/gradle-intellij-plugin)
  >
  {type="note"}
@@ -56,7 +67,7 @@ See [Content Updates](content_updates.md) for the latest changes.
 Follow [JBPlatform](https://twitter.com/JBPlatform/) on Twitter and visit [JetBrains Platform Blog](https://blog.jetbrains.com/platform/) for the latest announcements.
 
 Upgrading your plugin to the latest platform release? Make sure to check [Incompatible Changes](api_changes_list.md) as well as [Notable Changes and Features](api_notable.md).
-Verify your plugin follows guidelines from [Dynamic Plugins](dynamic_plugins.md) to allow installing/updating without IDE restarts. 
+Verify your plugin follows guidelines from [Dynamic Plugins](dynamic_plugins.md) to allow installing/updating without IDE restarts.
 
 ## Open Source
 

@@ -2,10 +2,6 @@
 
 <!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
- > This page is _Work in Progress_ - more information will be added over time.
- >
- {type="note"}
-
 ### Logging
 
 The IntelliJ platform uses [`Logger`](upsource:///platform/util/src/com/intellij/openapi/diagnostic/Logger.java) abstraction class to shield from underlying logging implementation and configuration.

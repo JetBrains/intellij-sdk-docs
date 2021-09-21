@@ -11,6 +11,9 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 
 ### September-21
 
+IDE Infrastructure
+: [IDE Infrastructure](ide_infrastructure.md) handles Logging, Error Reporting, Runtime Information, and how to provide Context Help.
+
 Extension Point Lists: Listeners, Deprecation status
 : [Extension Point List](extension_point_list.md) now contains sections listing all provided [Listener](plugin_listeners.md) Topics. See also corresponding Extension Point Lists under _Part VIII - Product Specific_. Also, all deprecated API now has a dedicated tag.
 

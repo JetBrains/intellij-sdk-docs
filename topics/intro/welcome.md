@@ -6,7 +6,7 @@
 
 Welcome to the IntelliJ Platform SDK - the primary source of documentation for extending the IntelliJ Platform by creating plugins, custom language support, or building a custom IDE.
 
- > Save the date for upcoming **Busy Plugin Developers. Episode 2**
+ > Save the date for upcoming webinar **Busy Plugin Developers. Episode 2**
  >
  > Learn about:
  > - How to improve plugin pages on JetBrains Marketplace
@@ -55,6 +55,8 @@ More webinars are available [here](useful_links.md#webinars).
 </tr>
 </table>
 
+Please see [Getting Help](getting_help.md) if you encounter bugs in this guide or require help with missing content.
+
 ## Updates
 
  > Gradle IntelliJ Plugin 1.x is now available, please update your build scripts [![GitHub Release](https://img.shields.io/github/release/jetbrains/gradle-intellij-plugin.svg?style=flat-square)](https://github.com/jetbrains/gradle-intellij-plugin/releases)
@@ -69,9 +71,7 @@ Follow [JBPlatform](https://twitter.com/JBPlatform/) on Twitter and visit [JetBr
 Upgrading your plugin to the latest platform release? Make sure to check [Incompatible Changes](api_changes_list.md) as well as [Notable Changes and Features](api_notable.md).
 Verify your plugin follows guidelines from [Dynamic Plugins](dynamic_plugins.md) to allow installing/updating without IDE restarts.
 
-## Open Source
+## Contribute
 
 This guide is Open Source and licensed under Apache 2.0.
 [Contributions](intellij-sdk-docs-original_CONTRIBUTING.md) are very welcome.
-
-Please see [Getting Help](getting_help.md) if you encounter bugs in this guide or require help with missing content.

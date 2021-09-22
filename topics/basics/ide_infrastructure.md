@@ -92,3 +92,7 @@ To access relevant configuration directories, see [`PathManager`](upsource:///pl
 ## Context Help
 
 To show custom context web-based help for your plugin's functionality (e.g., for [dialogs](dialog_wrapper.md)), provide [`WebHelpProvider`](upsource:///platform/platform-api/src/com/intellij/openapi/help/WebHelpProvider.java) registered in `com.intellij.webHelpProvider` extension point.
+
+## Running Tasks Once
+
+Use [`RunOnceUtil`](upsource:///platform/core-api/src/com/intellij/ide/util/RunOnceUtil.java) to run a task exactly once per project/application.

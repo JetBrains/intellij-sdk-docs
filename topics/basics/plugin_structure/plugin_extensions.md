@@ -1,4 +1,4 @@
-[//]: # (title: Plugin Extensions)
+[//]: # (title: Extensions)
 
 <!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
@@ -18,12 +18,12 @@ There are more than 1000 extension points available in the platform and the bund
 ## Exploring Available Extensions
 
 [Extension Point List](extension_point_list.md) contains all available extension points in IntelliJ Platform and from bundled plugins in IntelliJ IDEA.
-Additionally, dedicated Extension Point Lists specific to IDEs are available under _Part VIII - Product Specific_. 
+Additionally, dedicated Extension Point Lists specific to IDEs are available under _Part VIII - Product Specific_.
 Browse usages inside existing implementations of open-source IntelliJ Platform plugins via [IntelliJ Platform Explorer](https://jb.gg/ipe).
 
 Alternatively (or when using 3rd party extension points), all available extension points for the specified namespace (`defaultExtensionNs`) can be listed using auto-completion inside the `<extensions>` block in <path>plugin.xml</path>.
 Use <menupath>View | Quick Documentation</menupath> in the lookup list to access more information about the extension point and implementation (if applicable).
-See [Explore the IntelliJ Platform API](explore_api.md) for more information and strategies.                
+See [Explore the IntelliJ Platform API](explore_api.md) for more information and strategies.
 
 ## Declaring Extensions
 
@@ -68,7 +68,7 @@ The following properties are available always:
 - `id` - unique ID
 - `order` - allows to order all defined extensions using `first`, `last` or `before|after [id]` respectively
 - `os` - allows restricting extension to given OS, e.g., `os="windows"` registers the extension on Windows only
-                     
+
 If an extension instance needs to "opt out" in certain scenarios, it can throw [`ExtensionNotApplicableException`](upsource:///platform/extensions/src/com/intellij/openapi/extensions/ExtensionNotApplicableException.java) in its constructor.
 
 ### Extension Properties Code Insight

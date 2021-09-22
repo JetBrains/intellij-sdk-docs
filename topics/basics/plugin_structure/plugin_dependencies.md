@@ -1,4 +1,4 @@
-[//]: # (title: Plugin Dependencies)
+[//]: # (title: Dependencies)
 
 <!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
@@ -13,7 +13,7 @@ For more information about dependencies on the IntelliJ Platform modules, see Pa
 To express dependencies on classes from other plugins or modules, perform the following three required steps:
 
 ## Locating Plugin ID and Preparing Sandbox
-A compatible version must be chosen carefully according to the plugin's [compatibility](build_number_ranges.md). 
+A compatible version must be chosen carefully according to the plugin's [compatibility](build_number_ranges.md).
 
 For plugins published on [JetBrains Plugins Repository](https://plugins.jetbrains.com)
 - open plugin's detail page
@@ -26,16 +26,16 @@ If the plugin is not bundled with the target IDE, run the (sandbox) [IDE Develop
 
 ## Project Setup
 Depending on the chosen development workflow (Gradle or DevKit), one of the two following steps is necessary.
-      
+
 <tabs>
 <tab title="Gradle">
- 
+
  >  Please see the `plugins` attribute [gradle-intellij-plugin: Configuration](https://github.com/JetBrains/gradle-intellij-plugin#configuration) for acceptable values.
  >
  {type="note"}
 
 If the project uses [Gradle](gradle_build_system.md) with a Groovy build script to build the plugin, add the dependency to the `plugins` parameter of the `intellij` block in your <path>build.gradle</path>, for example:
-            
+
 <path>build.gradle</path>
 ```groovy
 intellij {
@@ -100,9 +100,9 @@ In this case, the plugin will load even if the plugin it depends on is not insta
 Declare additional `optional="true"` and `config-file` attribute pointing to optional plugin descriptor file:
 
 ```xml
-  <depends optional="true" config-file="myPluginId-optionalPluginName.xml">dependency.plugin.id</depends> 
+  <depends optional="true" config-file="myPluginId-optionalPluginName.xml">dependency.plugin.id</depends>
 ```
-                                                                         
+
  >  Additional plugin descriptor files must follow the naming pattern <path>myPluginId-$NAME$.xml</path> resulting in unique filenames to prevent problems with classloaders in tests ([Details](https://youtrack.jetbrains.com/issue/IDEA-205964)).
  >
  {type="note"}

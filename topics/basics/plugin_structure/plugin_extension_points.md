@@ -1,4 +1,4 @@
-[//]: # (title: Plugin Extension Points)
+[//]: # (title: Extension Points)
 
 <!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
@@ -39,7 +39,7 @@ Then insert a child element `<extensionPoint>` that defines the extension point 
 </idea-plugin>
 ```
 
-The `name` attribute assigns a unique name for this extension point. 
+The `name` attribute assigns a unique name for this extension point.
 Its fully qualified name required in [Using Extension Points](#using-extension-points) is built by prefixing `<id>` + `.`: `my.plugin.myExtensionPoint1` and `my.plugin.myExtensionPoint2`.
 
 The `beanClass` attribute sets a bean class that specifies one or several properties annotated with the [`@Attribute`](upsource:///platform/util/src/com/intellij/util/xmlb/annotations/Attribute.java) annotation.

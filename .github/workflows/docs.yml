@@ -1,4 +1,4 @@
-name: Docs
+name: Check API Changes pages
 on:
   push:
     branches: [ main ]
@@ -7,7 +7,7 @@ on:
     paths: [ 'reference_guide/**', '.github/workflows/docs.yml' ]
 
 jobs:
- 
+
   documentedProblemsPageVerification:
     name: Documented Problems Page Verification
     runs-on: ubuntu-latest

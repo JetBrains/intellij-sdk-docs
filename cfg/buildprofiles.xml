@@ -27,8 +27,8 @@
         <noindex-content-in-eap>false</noindex-content-in-eap>
         <noindex-content-in-release>false</noindex-content-in-release>
 
-        <upsource-commit-hash>d2d97a272c3386114507b34451a81018031e94c9</upsource-commit-hash>
-        <upsource-tag>212.5080.55</upsource-tag>
+        <upsource-commit-hash>f3337ede11680b745f513943772150ee781a51c0</upsource-commit-hash>
+        <upsource-tag>212.5284.40</upsource-tag>
         <upsource-repo-name>idea-ce</upsource-repo-name>
         <upsource-server-address>upsource.jetbrains.com</upsource-server-address>
         <product-web-url>https://plugins.jetbrains.com</product-web-url>

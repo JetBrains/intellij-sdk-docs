@@ -29,6 +29,8 @@ I.e., clients are allowed to subscribe to a specific topic within a bus and send
   Publishers later retrieve objects that conform to the interface (IS-A) and call any methods defined on those implementations.
   The messaging infrastructure takes care of dispatching the message to all subscribers of the topic by calling the same method with the same arguments on the registered implementation callbacks;
 
+To clarify corresponding message bus, `Topic` field declaration can be annotated with `com.intellij.util.messages.Topic.AppLevel` and `com.intellij.util.messages.Topic.ProjectLevel`, respectively.
+
  > All available listeners/topics are listed on [Extension Point List](extension_point_list.md) under _Listeners_ sections.
  >
  {type="tip"}
@@ -112,7 +114,7 @@ public void doChange(Context context) {
 * *MessageBus* instances are available via [`ComponentManager.getMessageBus()`](upsource:///platform/extensions/src/com/intellij/openapi/components/ComponentManager.java)
   Many standard interfaces implement a message bus, e.g., [`Application`](upsource:///platform/core-api/src/com/intellij/openapi/application/Application.java) and [`Project`](upsource:///platform/core-api/src/com/intellij/openapi/project/Project.java).
 * A number of public topics are used by the IntelliJ Platform, e.g., [`AppTopics`](upsource:///platform/platform-api/src/com/intellij/AppTopics.java), [`ProjectTopics`](upsource:///platform/projectModel-api/src/com/intellij/ProjectTopics.java), etc.
-  So, it's possible to subscribe to them in order to receive information about the processing;
+  So, it's possible to subscribe to them in order to receive information about the processing.
 
 ## Broadcasting
 

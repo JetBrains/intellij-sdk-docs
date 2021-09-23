@@ -22,7 +22,7 @@ If `NoClassDefFoundError` occurs at runtime, it means that either Step 3 was omi
 
 </procedure>
 
-## Locating Plugin ID and Preparing Sandbox
+## 1. Locating Plugin ID and Preparing Sandbox
 A compatible version must be chosen carefully according to the plugin's [compatibility](build_number_ranges.md).
 
 For plugins published on [JetBrains Plugins Repository](https://plugins.jetbrains.com)
@@ -34,7 +34,7 @@ For bundled and non-public plugins, locate the plugin's main JAR file containing
 
 If the plugin is not bundled with the target IDE, run the (sandbox) [IDE Development Instance](ide_development_instance.md) of your target IDE and install the plugin there.
 
-## Project Setup
+## 2. Project Setup
 Depending on the chosen development workflow (Gradle or DevKit), one of the two following steps is necessary.
 
 <tabs>
@@ -88,7 +88,7 @@ To do that, open the Project Structure dialog, select the SDK used in the projec
 
 </tabs>
 
-## Dependency Declaration in plugin.xml
+## 3. Dependency Declaration in plugin.xml
 Regardless of whether a plugin project uses [Modules Available in All Products](plugin_compatibility.md#modules-available-in-all-products), or [Modules Specific to Functionality](plugin_compatibility.md#modules-specific-to-functionality), the correct module must be listed as a dependency in <path>plugin.xml</path>.
 If a project depends on another plugin, the dependency must be declared like a [module](plugin_compatibility.md#modules).
 If only general IntelliJ Platform features (APIs) are used, then a default dependency on `com.intellij.modules.platform` must be declared.
@@ -97,7 +97,7 @@ To display a list of available IntelliJ Platform modules, invoke the [code compl
 
 ### Configuring plugin.xml
 In the <path>plugin.xml</path>, add a `<depends>` tag with the dependency plugin's ID as its content.
-Continuing with the example from [Project Setup](#project-setup) above, the dependency declaration in <path>plugin.xml</path> would be:
+Continuing with the example from [Project Setup](#2-project-setup) above, the dependency declaration in <path>plugin.xml</path> would be:
 
 ```xml
 <depends>org.another.plugin</depends>

@@ -6,7 +6,7 @@ The first level of syntax highlighting is based on the lexer output, and is prov
 A plugin can also define color settings based on `ColorSettingPage` so the user can configure highlight colors.
 The `SimpleSyntaxHighlighter`, `SimpleSyntaxHighlighterFactory`, and `SimpleColorSettingsPage` discussed on this page are demonstrated in the `simple_language_plugin` code sample.
 
-**Reference**: [Syntax Highlighting and Error Highlighting](syntax_highlighting_and_error_highlighting.md)
+**Reference**: [](syntax_highlighting_and_error_highlighting.md)
 
 ## Define a Syntax Highlighter
 The Simple Language syntax highlighter class extends [`SyntaxHighlighterBase`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/fileTypes/SyntaxHighlighterBase.java).

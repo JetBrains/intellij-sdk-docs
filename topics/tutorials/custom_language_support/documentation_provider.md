@@ -7,12 +7,12 @@ helps users by showing documentation for symbols like method calls inside the ed
 For the custom language tutorial, we’re implementing a version of this EP for the Simple Language that shows the key/value,
 the file where it is defined, and any related documentation comment.
 
-**Reference:** [Documentation](documentation.md)
+**Reference:** [](documentation.md)
 
 
 ## Implement DocumentationProvider and Register the EP
 
-In the first step, we create an empty class that extends 
+In the first step, we create an empty class that extends
 [`AbstractDocumentationProvider`](upsource:///platform/analysis-api/src/com/intellij/lang/documentation/AbstractDocumentationProvider.java)
 and registers it in the <path>plugin.xml</path>.
 
@@ -36,7 +36,7 @@ Make sure the class is registered in the <path>plugin.xml</path> between the `ex
 
 For the Simple Language, we consider two use-cases:
 
-1. A Simple key is [used inside a Java string literal](reference_contributor.md), 
+1. A Simple key is [used inside a Java string literal](reference_contributor.md),
    and we would like to show documentation for the key/value right from the reference inside the Java file.
 2. The cursor is already over a key/value definition inside a Simple file, in which case we would also like to show its documentation.
 
@@ -194,7 +194,7 @@ In other circumstances, you can override `getDocumentationElementForLookupItem()
 
 To be able to call <menupath>View | Quick Documentation</menupath> for Simple properties in all places of a Java string literal, two steps are required:
 
-1. The extension point needs to be changed from `lang.documentationProvider` to `documentationProvider` because only then 
+1. The extension point needs to be changed from `lang.documentationProvider` to `documentationProvider` because only then
    the Simple DocumentationProvider is called for PSI elements with a different language.
 2. The `getCustomDocumentationElement()` method needs to be implemented to find the correct target PSI element for creating the documentation.
 

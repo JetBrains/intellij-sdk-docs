@@ -6,7 +6,7 @@ The IntelliJ Platform includes a powerful framework for implementing formatting 
 A formatter enables reformatting code automatically based on code style settings.
 The formatter controls spaces, indents, wrap, and alignment.
 
-**Reference**: [Code Formatter](code_formatting.md)
+**Reference**: [](code_formatting.md)
 
 ## Define a Block
 The formatting model represents the formatting structure of a file as a tree of [`Block`](upsource:///platform/code-style-api/src/com/intellij/formatting/Block.java) objects, with associated indent, wrap, alignment and spacing settings.

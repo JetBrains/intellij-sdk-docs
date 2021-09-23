@@ -6,7 +6,7 @@ The IntelliJ Platform determines file type by examining the name of a file.
 Each language has [Language](upsource:///platform/core-api/src/com/intellij/lang/Language.java) and [LanguageFileType](upsource:///platform/core-api/src/com/intellij/openapi/fileTypes/LanguageFileType.java) objects defining the language.
 Register the `LanguageFileType` with the IntelliJ Platform in the plugin configuration file.
 
-**Reference**: [Registering a File Type](registering_file_type.md)
+**Reference**: [](registering_file_type.md)
 
 ## Define the Language
 The language implemented in this tutorial is named "Simple" - note the case of the name.

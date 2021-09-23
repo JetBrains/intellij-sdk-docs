@@ -5,7 +5,7 @@
 The lexical analyzer defines how the contents of a file are broken into tokens, which is the basis for supporting custom language features.
 The easiest way to create a lexer is to use [JFlex](https://jflex.de/).
 
-**Reference**: [Implementing Lexer](implementing_lexer.md)
+**Reference**: [](implementing_lexer.md)
 
 ## Required Project Configuration Change
 The previous tutorial step [Grammar and Parser](grammar_and_parser.md), and this page, generate source files in the directory `src/main/gen`.
@@ -20,7 +20,7 @@ Or the following line in the project's `build.gradle.kts` file:
   sourceSets["main"].java.srcDirs("src/main/gen")
 ```
 
-Reload the Gradle project for changes to take effect.                
+Reload the Gradle project for changes to take effect.
 
 ## Define a Lexer
 Define a `Simple.flex` file with rules for the Simple Language lexer, as demonstrated in `org.intellij.sdk.language.Simple.flex`.

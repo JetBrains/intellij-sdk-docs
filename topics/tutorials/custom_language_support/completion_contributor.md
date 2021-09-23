@@ -2,9 +2,9 @@
 
 <!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-Custom languages provide code completion using one of two approaches: Contributor and Reference-based (see [10. Reference Contributor](reference_contributor.md)) completion.
+Custom languages provide code completion using one of two approaches: Contributor and Reference-based (see [](reference_contributor.md)) completion.
 
-**Reference**: [Code Completion](code_completion.md)
+**Reference**: [](code_completion.md)
 
 ## Define a Completion Contributor
 For this tutorial, the `simple_language_plugin` provides custom completion for values in Simple Language property files.

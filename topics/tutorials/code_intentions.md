@@ -10,7 +10,7 @@ In addition, the sample plugin contains a JUnit-based test.
 The IntelliJ Platform analyzes your code and helps handle situations that may result in errors.
 When a possible problem is suspected, the IDE suggests an appropriate intention action, denoted with special icons.
 For more information, refer to [Intention Actions](https://www.jetbrains.com/help/idea/intention-actions.html) in the IntelliJ IDEA Web Help.
-                  
+
 See [Inspections](https://jetbrains.design/intellij/text/inspections/) topic in the IntelliJ Platform UI Guidelines on naming, writing description, and message texts for inspections/intentions.
 
 You can view a list of all available intention actions as well as enable/disable them using the [Intentions List](https://www.jetbrains.com/help/idea/intention-actions.html#intention-settings) in <menupath>Settings/Preferences | Editor | Intentions</menupath>.
@@ -28,7 +28,7 @@ The [conditional_operator_intention](https://github.com/JetBrains/intellij-sdk-c
 
 When launched, this plugin adds the <control>Convert ternary operator if statement</control> item to the <control>Conditional Operator</control> node in the Intentions List:
 
-![](IntentionsList.png)
+![Intention settings dialog](IntentionsList.png)
 
 #### Running the Plugin
 
@@ -39,7 +39,7 @@ See [Code Samples](code_samples.md) on how to set up and run the plugin.
 The plugin analyzes symbols under the cursor in your code opened in the editor.
 If the cursor is positioned on the `?` conditional operator, IntelliJ IDEA proposes to replace this conditional (ternary) operator with the "if-then-else" statement:
 
-![](TernaryOperator.png)
+![Convert ternary operator intention popup](TernaryOperator.png)
 
 In this example, the code:
 

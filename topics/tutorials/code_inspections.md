@@ -9,7 +9,7 @@ In addition, the comparing_references_inspection code sample demonstrates implem
 
 You can also create custom inspections through the IntelliJ IDEA user interface.
 See [Code Inspection](https://www.jetbrains.com/idea/webhelp/code-inspection.html) and [Creating Custom Inspections](https://www.jetbrains.com/idea/help/creating-custom-inspections.html) for more information.
-                     
+
 See [Inspections](https://jetbrains.design/intellij/text/inspections/) topic in the IntelliJ Platform UI Guidelines on naming, writing description, and message texts for inspections.
 
 ## Creating an Inspection Plugin
@@ -156,7 +156,7 @@ You can specify the Java classes to participate in the code inspection and the s
 On the main menu, open the <menupath>Settings/Preferences | Editor | Inspections</menupath> dialog.
 In the list of the IntelliJ IDEA <control>Java</control> inspections, expand the <control>Probable bugs</control> node, and then click <control>SDK: '==' or '!=' instead of 'equals()'</control>.
 
-![](comparingReferences_options.png)
+![Comparing References inspection options](comparingReferences_options.png)
 
 Under <control>Options</control>, you can specify the following plugin settings:
 * From the <control>Severity</control> list, select the severity level of probable bugs the plugin finds such as <control>Warning</control>, <control>Error</control>, etc.
@@ -168,7 +168,7 @@ Under <control>Options</control>, you can specify the following plugin settings:
 The plugin inspects your code opened in the IntelliJ IDEA editor.
 The plugin highlights the code fragments where two variables of the reference type are separated by `==` or `!=` and proposes to replace this code fragment with `.equals()`:
 
-![](comparingReferences.png)
+![Comparing References inspection highlighting and quick fix](comparingReferences.png)
 
 In this example, the `str1` and `str2` are variables of the String type.
 Clicking <control>SDK: Use equals()</control> replaces:

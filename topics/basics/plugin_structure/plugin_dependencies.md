@@ -18,7 +18,7 @@ To express dependencies on classes from other plugins or modules, perform the fo
 2. Project Setup
 3. Declaration in `plugin.xml`
 
-If `NoClassDefFoundError` occurs at runtime, it means that either Step 3 was omitted or loading the (required) plugin dependency failed (please check log files [Development Instance](ide_development_instance.md#development-instance-settings-caches-logs-and-plugins)).
+If `NoClassDefFoundError` occurs at runtime, it means that either Step 3 was omitted or loading the plugin dependency failed (please check log files from [Development Instance](ide_development_instance.md#development-instance-settings-caches-logs-and-plugins)).
 
 </procedure>
 

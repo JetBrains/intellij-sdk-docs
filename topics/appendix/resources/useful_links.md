@@ -28,13 +28,13 @@ The following links represent useful resources for working with the IntelliJ Pla
 
 ### Webinars
 
-| Webinar | Info |                       
+| Webinar | Info |
 |-|-|
-| **Busy plugin developers series. Episode 1** <br/>Jakub Chrzanowski/Semyon Atamas/Paweł Lipski, 2021 <video href="-6D5-xEaYig" title="Busy plugin developers series. Episode 1" width="300"/> | |
+| **Busy plugin developers series. Episode 1** <br/>Jakub Chrzanowski/Semyon Atamas/Paweł Lipski, 2021 <video href="vAlor5-hC0Q" title="Busy plugin developers series. Episode 1" width="300"/> | |
 | **Make IntelliJ IDEA Your Own** <br/>Sirisha Pratha, 2021 <video href="cAwH_DbFrfw?t=1120" title="Make IntelliJ IDEA Your Own" width="300"/> | |
 | **IntelliJ IDEA Conf 2021** <br/>_Various Speakers_,2021 <video href="akrPpWAZzQk&amp;list=PLPZy-hmwOdEUdLO-AKiJJ7LuZ3p16zJ4x" title="IntelliJ IDEA Conf 2021" width="300"/> | Includes a number of presentations related to plugin development |
-| **Busy plugin developers series. Episode** <br/>Mikhail Vink/Jakub Chrzanowski/Yann Cebron, 2020 <video href="-6D5-xEaYig" title="Busy plugin developers series. Episode 0" width="300" /> | |
-| **How We Built Comma, the Raku IDE, on the IntelliJ Platform** <br/>Jonathan Worthington, 2020 <video href="zDP9uUMYrvs" title="How We Built Comma, the Raku IDE, on the IntelliJ Platform" width="300"/> | [Blog post](https://blog.jetbrains.com/platform/2020/01/webinar-recording-how-we-built-comma-the-raku-ide-on-the-intellij-platform/) | 
+| **Busy plugin developers series. Episode 0** <br/>Mikhail Vink/Jakub Chrzanowski/Yann Cebron, 2020 <video href="-6D5-xEaYig" title="Busy plugin developers series. Episode 0" width="300" /> | |
+| **How We Built Comma, the Raku IDE, on the IntelliJ Platform** <br/>Jonathan Worthington, 2020 <video href="zDP9uUMYrvs" title="How We Built Comma, the Raku IDE, on the IntelliJ Platform" width="300"/> | [Blog post](https://blog.jetbrains.com/platform/2020/01/webinar-recording-how-we-built-comma-the-raku-ide-on-the-intellij-platform/) |
 | **Building IntelliJ IDEA plugins in Scala** <br/>Igal Tabachnik, 2020 <video href="IPO-cY_giNA" title="Building IntelliJ IDEA plugins in Scala" width="300"/> | |
 | **Live Development of a PyCharm Plugin** <br/>Joachim Ansorg, 2019 <video href="cR-28eaXGQI" title="Live Development of a PyCharm Plugin" width="300"/> | [Blog post](https://blog.jetbrains.com/pycharm/2019/01/webinar-recording-live-development-of-a-pycharm-plugin-with-joachim-ansorg/) |
 | **Build Developer Tools On Top of IntelliJ Platform** <br/>Dmitry Jemerov, 2013 <video href="vQDzjGzkPFc" title="Build Developer Tools On Top of IntelliJ Platform" width="300"/> | |

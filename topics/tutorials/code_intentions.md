@@ -41,13 +41,13 @@ If the cursor is positioned on the `?` conditional operator, IntelliJ IDEA propo
 
 ![Convert ternary operator intention popup](TernaryOperator.png)
 
-In this example, the code:
+In this example:
+
+<compare>
 
 ```java
 return (n>=0) ? n : -n;
 ```
-
-will be replaced with the code:
 
 ```java
 if ((n>=0)) {
@@ -56,6 +56,7 @@ if ((n>=0)) {
     return -n;
 }
 ```
+</compare>
 
 #### Testing the Plugin
 

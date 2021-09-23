@@ -171,14 +171,15 @@ The plugin highlights the code fragments where two variables of the reference ty
 ![Comparing References inspection highlighting and quick fix](comparingReferences.png)
 
 In this example, the `str1` and `str2` are variables of the String type.
-Clicking <control>SDK: Use equals()</control> replaces:
+Invoking <control>SDK: Use equals()</control> replaces:
+
+<compare>
 
 ```java
 return (str1==str2);
 ```
 
-with the code:
-
 ```java
 return (str1.equals(str2));
 ```
+</compare>

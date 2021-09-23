@@ -10,7 +10,17 @@ For more information about dependencies on the IntelliJ Platform modules, see Pa
  >
  {type="note"}
 
-To express dependencies on classes from other plugins or modules, perform the following three required steps:
+<procedure title="Required Steps">
+
+To express dependencies on classes from other plugins or modules, perform the following three required steps detailed below on this page:
+
+1. Locate Plugin ID
+2. Project Setup
+3. Declaration in `plugin.xml`
+
+If `NoClassDefFoundError` occurs at runtime, it means that either Step 3 was omitted or loading the (required) plugin dependency failed (please check log files [Development Instance](ide_development_instance.md#development-instance-settings-caches-logs-and-plugins)).
+
+</procedure>
 
 ## Locating Plugin ID and Preparing Sandbox
 A compatible version must be chosen carefully according to the plugin's [compatibility](build_number_ranges.md).

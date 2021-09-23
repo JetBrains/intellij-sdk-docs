@@ -72,6 +72,8 @@ Please see [Incompatible API Changes](api_changes_list.md) on how to verify comp
  >
  {type="note"}
 
+_Early Access Program_ (EAP) releases of upcoming versions are available [here](https://eap.jetbrains.com).
+
 ## 2021.3
 
 ### Changes in IntelliJ Platform 2021.3

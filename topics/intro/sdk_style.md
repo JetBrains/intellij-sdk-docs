@@ -25,7 +25,7 @@ Each Markdown file must contain a header defining its title:
 
 Lorem ipsum...
 ```
-                        
+
 Redirects can be specified in the [Table of Contents](#table-of-contents).
 
 ## Content Style
@@ -41,7 +41,7 @@ Consistent terminology helps the reader grasp new concepts more quickly:
 
 ### Text Format Conventions
 Consistent text styles are used to standardize references and keywords:
-* Menu paths are wrapped using `<menupath>` with pipe characters separating each level: `<menupath>Settings/Preferences | Editor</menupath>`: <menupath>Settings/Preferences | Editor</menupath> 
+* Menu paths are wrapped using `<menupath>` with pipe characters separating each level: `<menupath>Settings/Preferences | Editor</menupath>`: <menupath>Settings/Preferences | Editor</menupath>
   Menu paths to settings always start with "Settings/Preferences" to cover all platforms. Inside tables, use `&#124;` instead of `|` to prevent escaping problems.
 * User interface element names like buttons, checkboxes, etc. are wrapped using `<control>`: `Press <control>Continue</continue>`: Press <control>Continue</control>
 * Non-code keywords and quotations, or the names of non-code files, are formatted as italic style: \_UI Theme\_ (_UI Theme_), \_README.md\_ (_README.md_.)
@@ -56,6 +56,9 @@ Consistent text styles are used to standardize references and keywords:
 
 ### Links
 Links are handled as standard Markdown links and can be anchored to external sites, pages within the sites, or headings in the sites.
+
+To link to a page within the site using its `title:` as link text, use shortcut notation `[](page.md)`{disable-links}.
+
 When a Markdown header is converted to an HTML header, it is assigned an ID so that it can be linked.
 For example, `## Introduction` gets the ID of `introduction`, and can be linked either in the same page or cross-page as described below.
 
@@ -118,7 +121,7 @@ Supported languages include `xml`, `java`, `kotlin`, `groovy` `bash`, `md`, and 
  >  Source code blocks must have one blank line before and after them, and must have a language specification for highlighting.
  >
  {type="note"}
-                       
+
 Whole files can be imported on a page using `src` attribute after code fences specifying the full path relative to <path>code_samples</path> root folder.
 
   `{src="simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleFoldingBuilder.java"}`
@@ -194,8 +197,8 @@ If the width of an image needs to be adjusted it can be specified as follows:
     ![Alt text](image.png){width="42"}
 ```
 
-#### Zoom Popup    
-                               
+#### Zoom Popup
+
 Images too big to fit into main content can have <path>+</path> overlay control to open a popup with the "zoomed" variant.
 
 <tabs>
@@ -224,7 +227,7 @@ For **SVG** images, use this notation:
 ## Table of Contents
 The table of contents for the site is displayed in the tree view on the left-hand side of the site, and it is generated from the <path>ijs.tree</path> file.
 The list can have nested items, which are displayed as child items in the table of contents.
-                 
+
 ### Placeholders
 
 If a node does not have its `id` attribute specified, it will still appear in the table of contents but will be greyed out and not clickable.
@@ -232,12 +235,12 @@ It acts as a placeholder for a documentation item.
 A placeholder is useful to keep track of what should be documented, but hasn't yet, and can be helpful to show readers that the topic exists, but isn't yet documented (Pull Requests always welcome!).
 
 ### Redirects
-              
+
 When renaming pages, redirects should be configured so existing links and bookmarks continue working.
 
 Specify the previous path(s) with `.html` extension in `accepts-web-file-names` attribute:
 
 ```xml
-  <toc-element id="fundamentals.md" toc-title="Fundamentals" 
+  <toc-element id="fundamentals.md" toc-title="Fundamentals"
                accepts-web-file-names="reference_guide.html,architectural_overview.html"/>
 ```

@@ -1,10 +1,10 @@
 [//]: # (title: Actions)
 
-<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 ## Introduction
 The actions system is an extension point that allows plugins to add their items to IntelliJ Platform-based IDE menus and toolbars.
-For example, one of the action classes is responsible for the **File \| Open File...** menu item and the **Open File** toolbar button.
+For example, one of the action classes is responsible for the <menupath>File | Open File...</menupath> menu item and the <control>Open File</control> toolbar button.
 
 Actions in the IntelliJ Platform require a [code implementation](#action-implementation) and must be [registered](#registering-actions).
 The action implementation determines the contexts in which an action is available, and its functionality when selected in the UI.
@@ -142,10 +142,10 @@ All other combinations of `compact`, visibility, and enablement produce N/A for 
 See the [Grouping Actions](grouping_action.md) tutorial for examples of creating action groups.
 
 ## Registering Actions
-There are two main ways to register an action: either by listing it in the `<actions>` section of a plugin's `plugin.xml` file or through code.
+There are two main ways to register an action: either by listing it in the `<actions>` section of a plugin's <path>plugin.xml</path> file or through code.
 
 ### Registering Actions in plugin.xml
-Registering actions in `plugin.xml` is demonstrated in the following reference examples, which document all elements and attributes used in the `<actions>` section and describe each element's meaning.
+Registering actions in <path>plugin.xml</path> is demonstrated in the following reference examples, which document all elements and attributes used in the `<actions>` section and describe each element's meaning.
 
 #### Setting the Override-Text Element
 
@@ -158,40 +158,40 @@ The `add-to-group` element declares the action is added to the Tools Menu.
 
 However, the `override-text` element declares that text for `VssIntegration.GarbageCollection` displayed anywhere in the Main Menu system should be the alternate text "Collect _Garbage."
 The Tools Menu is part of the Main Menu, so the displayed menu text is "Collect _Garbage."
-A different context, such as searching for the action using **Help \| Find Action...**,  displays the default text "Garbage Collector: Collect _Garbage" to give the user additional information about the action.
+A different context, such as searching for the action using <menupath>Help | Find Action</menupath>, displays the default text "Garbage Collector: Collect _Garbage" to give the user additional information about the action.
 
 A second `override-text` element uses `place` and `use-text-of-place` attributes to declare the same version of the text used in the Main Menu is also used in the Editor Popup Menu.
 Additional `override-text` elements could be used to specify other places where the Main Menu text should be used.
 
 An example of using `<override-text>` is demonstrated in the [Creating Actions](working_with_custom_actions.md#using-override-text-for-an-action) tutorial.
-                             
+
 #### Setting the Synonym Element
 _2020.3_
-Users can locate actions via their name by invoking **Help \| Find Action**.
+Users can locate actions via their name by invoking <menupath>Help | Find Action</menupath>.
 
 To allow using alternative names in search, add one or more `<synonym>` elements inside `<action>` or `<reference>`:
 
 ```xml
   <action id="MyAction" text="My Action Name" ...>
-    <synonym text="Another Search Term"/> 
+    <synonym text="Another Search Term"/>
   </action>
 ```
 
 To provide a localized synonym, specify `key` instead of `text` attribute.
-                             
+
 #### Disabling Search for Group
 _2020.3_
-To exclude a group from appearing in **Help \| Find Action** results (e.g., _New..._ popup), specify `searchable="false"`.
+To exclude a group from appearing in <menupath>Help | Find Action</menupath> results (e.g., <control>New...</control> popup), specify `searchable="false"`.
 
 #### Localizing Actions and Groups
 Action and group localization use resource bundles containing property files named `*Bundle.properties`, each file consisting of `key=value` pairs.
 The [`action_basics`](https://github.com/JetBrains/intellij-sdk-code-samples/tree/main/action_basics) plugin demonstrates using a resource bundle to localize the group and action entries added to the Editor Popup Menu.
 
-When localizing actions and groups, the `text` and `description` attributes are not declared in `plugin.xml`.
+When localizing actions and groups, the `text` and `description` attributes are not declared in <path>plugin.xml</path>.
 Instead, those attribute values vary depending on the locale and get declared in a resource bundle.
 
-The name and location of the resource bundle must be declared in the `plugin.xml` file.
-In the case of `action_basics`, only a default localization resource bundle (`/resources/messages/BasicActionsBundle.properties`) is provided:
+The name and location of the resource bundle must be declared in the <path>plugin.xml</path> file.
+In the case of `action_basics`, only a default localization resource bundle (<path>/resources/messages/BasicActionsBundle.properties</path>) is provided:
 
 ```xml
   <resource-bundle>messages.BasicActionsBundle</resource-bundle>
@@ -206,7 +206,13 @@ If necessary, a dedicated resource bundle to use for actions and groups can be d
   </actions>
 ```
 
-##### Actions
+
+See [Extending DefaultActionGroup](grouping_action.md#extending-defaultactiongroup) for a tutorial of localizing Actions and Groups.
+
+<tabs>
+
+<tab title="Actions">
+
 For Actions, the key in property files incorporates the action `id` in this specific structure:
 * `action.<action-id>.text=Translated Action Text`
 * `action.<action-id>.description=Translated Action Description`
@@ -215,16 +221,22 @@ _2020.1_
 If `<override-text>` is used for an action `id`, the key includes the `<place>` attribute:
 * `action.<action-id>.<place>.text=Place-dependent Translated Action Text`
 
-##### Groups
+</tab>
+
+<tab title="Groups">
+
 For Groups, the `key` in the property files incorporates the group `id` in this specific structure:
 * `group.<group-id>.text=Translated Group Text`
 * `group.<group-id>.description=Translated Group Description`
 
-_2020.3_ 
-If `<override-text>` is used for an group `id`, the key includes the `<place>` attribute:
+_2020.3_
+If `<override-text>` is used for a group `id`, the key includes the `<place>` attribute:
 * `group.<group-id>.<place>.text=Place-dependent Translated Group Text`
 
-See [Extending DefaultActionGroup](grouping_action.md#extending-defaultactiongroup) for a tutorial of localizing Actions and Groups.
+</tab>
+
+</tabs>
+
 
 #### Action Declaration Reference
 The places where actions can appear are defined by constants in [`ActionPlaces`](upsource:///platform/platform-api/src/com/intellij/openapi/actionSystem/ActionPlaces.java).

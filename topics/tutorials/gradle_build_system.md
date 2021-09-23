@@ -16,9 +16,9 @@ To make sure that a plugin is not affected by [API changes](api_changes_list.md)
  {type="note"}
 
 
- > Please make sure to always upgrade to the [latest version](https://github.com/JetBrains/gradle-intellij-plugin/releases) of `gradle-intellij-plugin`.
- > 
- > See [What's New & Upgrade Instructions](https://lp.jetbrains.com/gradle-intellij-plugin) for upgrading from pre-1.0 versions. 
+ > Please make sure to always upgrade `gradle-intellij-plugin` to the latest version [![GitHub Release](https://img.shields.io/github/release/jetbrains/gradle-intellij-plugin.svg?style=flat-square)](https://github.com/jetbrains/gradle-intellij-plugin/releases)
+ >
+ > See [What's New & Upgrade Instructions](https://lp.jetbrains.com/gradle-intellij-plugin) for upgrading from pre-1.0 versions.
  >
  {type="note"}
 

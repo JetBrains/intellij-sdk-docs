@@ -78,7 +78,7 @@ Consider reusing one of the many existing template context types that inherit fr
 
 ## Completing the Live Template Implementation
 Depending on the version of the IntelliJ Platform, different steps are used to complete the implementation of the feature.
-                  
+
 <tabs>
 <tab title="2020.1 and later">
 
@@ -133,6 +133,6 @@ Using the `com.intellij.defaultLiveTemplatesProvider` and `com.intellij.liveTemp
 
 ## Check Plugin
 Now verify the plugin is working correctly.
-Run the plugin in a Development Instance and verify there is a new entry under **Settings/Preferenes \| Live Templates \| Markdown \| \{ (SDK: New link reference)**.
+Run the plugin in a Development Instance and verify there is a new entry under <menupath>Settings/Preferences | Live Templates | Markdown | \{ (SDK: New link reference)</menupath>.
 
-Finally, create a new file `test.md` and confirm that the Live Template works by entering a <shortcut>{</shortcut> character and then pressing <shortcut>Tab</shortcut>.
+Finally, create a new file <path>test.md</path> and confirm that the Live Template works by entering a <shortcut>{</shortcut> character and then pressing <shortcut>Tab</shortcut>.

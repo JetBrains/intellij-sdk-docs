@@ -15,25 +15,25 @@ Using those components in your plugins will ensure that your plugin looks and wo
  {type="note"}
 
 Please refer to [Writing short and clear](https://jetbrains.design/intellij/text/writing_short/) in IntelliJ Platform UI Guidelines on writing UI-related texts.
-                                                     
+
  > See [UI Kit](https://jetbrains.design/intellij/resources/UI_kit/) when using [Figma](https://www.figma.com) to design UI.
   >
   {type="tip"}
- 
+
 
 The following components are particularly noteworthy:
 
-*  Menus and toolbars are built using the [Action System](basic_action_system.md)
-*  [Tool Windows](tool_windows.md)
-*  [Dialogs](dialog_wrapper.md)
-*  [Popups](popups.md)
-*  [Notifications](notifications.md)
-*  [File and Class Choosers](file_and_class_choosers.md)
-*  [Editor Components](editor_components.md)
-*  [List and Tree Controls](lists_and_trees.md)
+*  Menus and toolbars are built using the [](basic_action_system.md)
+*  [](tool_windows.md)
+*  [](dialog_wrapper.md)
+*  [](popups.md)
+*  [](notifications.md)
+*  [](file_and_class_choosers.md)
+*  [](editor_components.md)
+*  [](lists_and_trees.md)
 *  Tables (TableView) (TBD)
 *  Drag & Drop Helpers (TBD)
-*  [Miscellaneous Swing Components](misc_swing_components.md)
+*  [](misc_swing_components.md)
     *  Messages
     *  JBSplitter
     *  JBTabs

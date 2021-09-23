@@ -64,13 +64,13 @@ Please see [Incompatible API Changes](api_changes_list.md) on how to verify comp
 
  >  Changes from API marked with [`org.jetbrains.annotations.ApiStatus`](https://github.com/JetBrains/java-annotations/blob/master/common/src/main/java/org/jetbrains/annotations/ApiStatus.java) `@Experimental`, `@ScheduledForRemoval`, or `@Internal` are not listed here, as incompatible changes are to be expected.
  >
- {type="note"} 
+ {type="note"}
 
 ## 2020.3
 
  >  Java 11 is required ([blog post](https://blog.jetbrains.com/platform/2020/09/intellij-project-migrates-to-java-11/)) when targeting 2020.3 and later only.
- >  
- >  Please make sure to always upgrade to the [latest version](https://github.com/JetBrains/gradle-intellij-plugin/releases) of `gradle-intellij-plugin`.
+ >
+ >  Please make sure to always upgrade `gradle-intellij-plugin` to the latest version [![GitHub Release](https://img.shields.io/github/release/jetbrains/gradle-intellij-plugin.svg?style=flat-square)]
  >
  {type="note"}
 
@@ -78,7 +78,7 @@ Please see [Incompatible API Changes](api_changes_list.md) on how to verify comp
 
 `com.intellij.openapi.application.NonBlockingReadAction.finishOnUiThread` method parameter type changed from ``Consumer<T>`` to ``Consumer<? super T>``
 : This may break source-compatibility with inheritors written in Kotlin.
-                                              
+
 `com.intellij.openapi.diagnostic.ErrorReportSubmitter.submit` method parameter type changed from ``Consumer<SubmittedReportInfo>`` to ``Consumer<? super SubmittedReportInfo>``
 : This may break source-compatibility with inheritors written in Kotlin.
 
@@ -93,7 +93,7 @@ Please see [Incompatible API Changes](api_changes_list.md) on how to verify comp
 
 `com.intellij.spellchecker.tokenizer.SpellcheckingStrategy.getDefaultRegularFixes(boolean, String, PsiElement)` method removed
 : Replaced with `SpellcheckingStrategy.getDefaultRegularFixes(boolean, String, PsiElement, TextRange)`.
-                           
+
 `com.intellij.psi.stubs.IStubElementType.createStub` method parameter type changed from `StubElement` to ``StubElement<?>``
 : This may break source-compatibility with inheritors written in Kotlin.
 
@@ -151,7 +151,7 @@ All parameters in `com.jetbrains.python.psi.PyElementVisitor` marked `@NotNull`
 
 `com.jetbrains.python.psi.LanguageLevel.hasWithStatement()` method removed
 : It is `true` for all supported python versions.
-                       
+
 ### Changes In CLion/AppCode 2020.3
 
 Required changes in project setup

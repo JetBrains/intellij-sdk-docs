@@ -65,15 +65,15 @@ Please see [Incompatible API Changes](api_changes_list.md) on how to verify comp
  >  Changes from API marked with [`org.jetbrains.annotations.ApiStatus`](https://github.com/JetBrains/java-annotations/blob/master/common/src/main/java/org/jetbrains/annotations/ApiStatus.java) `@Experimental`, `@ScheduledForRemoval`, or `@Internal` are not listed here, as incompatible changes are to be expected.
  >
  {type="note"}
-       
+
  >  Java 11 is required ([blog post](https://blog.jetbrains.com/platform/2020/09/intellij-project-migrates-to-java-11/)) when targeting 2020.3 and later only.
- >  
- >  Please make sure to always upgrade to the [latest version](https://github.com/JetBrains/gradle-intellij-plugin/releases) of `gradle-intellij-plugin`.
+ >
+ >  Please make sure to always upgrade `gradle-intellij-plugin` to the latest version [![GitHub Release](https://img.shields.io/github/release/jetbrains/gradle-intellij-plugin.svg?style=flat-square)]
  >
  {type="note"}
 
 ## 2021.3
-                              
+
 ### Changes in IntelliJ Platform 2021.3
 
 `com.intellij.ui.mac.MacMessages.showMessageDialog(String, String, String[], boolean, Window, int, int, DialogWrapper.DoNotAskOption)` method removed
@@ -95,7 +95,7 @@ Please see [Incompatible API Changes](api_changes_list.md) on how to verify comp
 : Recompile the dependant code or use `com.intellij.diagnostic.PerformanceWatcherImpl.SnapshotImpl` instead
 
 `com.intellij.openapi.fileEditor.impl.EditorTabPresentationUtil.getEditorTabTitle(Project, VirtualFile, EditorWindow)` method parameter `EditorWindow` removed
-: This parameter never needed, but lead to code coupling 
+: This parameter never needed, but lead to code coupling
 
 `com.intellij.openapi.fileEditor.impl.EditorTabPresentationUtil.getUniqueEditorTabTitle(Project, VirtualFile, EditorWindow)` method parameter `EditorWindow` removed
 : This parameter never needed, but lead to code coupling
@@ -104,7 +104,7 @@ Please see [Incompatible API Changes](api_changes_list.md) on how to verify comp
 : This parameter never needed, but lead to code coupling
 
 ## 2021.2
-                              
+
 ### Changes in IntelliJ Platform 2021.2
 
 `com.intellij.openapi.editor.impl.event.DocumentEventImpl.translateLineViaDiff(int)` method removed
@@ -112,7 +112,7 @@ Please see [Incompatible API Changes](api_changes_list.md) on how to verify comp
 
 `com.intellij.openapi.editor.impl.event.DocumentEventImpl.translateLineViaDiffStrict(int)` method removed
 : Use persistent range markers instead, see `com.intellij.openapi.editor.Document.createRangeMarker(int, int, boolean)` with `surviveOnExternalChange=true`.
-                                      
+
 `com.intellij.openapi.file.exclude.EnforcedPlainTextFileType` class removed
 : Use `com.intellij.openapi.fileTypes.PlainTextFileType` instead.
 
@@ -127,7 +127,7 @@ Please see [Incompatible API Changes](api_changes_list.md) on how to verify comp
 
 `com.intellij.ide.plugins.DisabledPluginsState.disablePlugin(PluginId)` method removed
 : Use either `com.intellij.ide.plugins.PluginManagerCore.disablePlugin(PluginId)` or `com.intellij.ide.plugins.PluginEnabler.disablePlugins(Collection)` instead.
-                                                                                        
+
 `com.intellij.ide.plugins.PluginManagerMain.suggestToEnableInstalledDependantPlugins(PluginEnabler, List)` method parameter type changed from `com.intellij.ide.plugins.PluginManagerMain.PluginEnabler` to `com.intellij.ide.plugins.PluginEnabler`
 : `com.intellij.ide.plugins.PluginManagerMain.PluginEnabler` has been renamed to `com.intellij.ide.plugins.PluginEnabler`.
 
@@ -163,7 +163,7 @@ Please see [Incompatible API Changes](api_changes_list.md) on how to verify comp
 : Use `com.intellij.database.model.RawConnectionConfig.getUrl()` instead. Or use `com.intellij.database.dataSource.DatabaseConnectionEstablisher.processInterceptors()`
 
 ### GitHub Plugin 2021.2
-                                          
+
 `org.jetbrains.plugins.github.util.GithubAuthData` class removed
 : Use `org.jetbrains.plugins.github.authentication.GithubAuthenticationManager` instead.
 
@@ -193,7 +193,7 @@ Please see [Incompatible API Changes](api_changes_list.md) on how to verify comp
 : As the result of the refactoring aimed at fixing https://youtrack.jetbrains.com/issue/PY-48799, for dict literals containing only string keys we infer PyTypedDictType now, so there's no need to match dict literals with TypedDicts. There's a new method for comparing the inferred TypedDicts with the given ones: `com.jetbrains.python.psi.types.PyTypedDictType.Companion.match(PyType, PyTypedDictType, TypeEvalContext)`.
 
 ## 2021.1
-                              
+
 ### Changes in IntelliJ Platform 2021.1
 
 `com.intellij.util.io.PersistentHashMap.isCorrupted` method removed
@@ -224,9 +224,9 @@ Please see [Incompatible API Changes](api_changes_list.md) on how to verify comp
 : This may break source-compatibility with inheritors written in Kotlin if they declare parameter type as nullable.
 
 `com.jetbrains.performancePlugin.CommandProvider.getCommands(Project)` method parameter `Project` removed
-: Project is now only accessible via `com.intellij.openapi.ui.playback.PlaybackContext.getProject()` since it may change during script execution. 
-                                
-JSON Widget suppressor EP `com.intellij.json.jsonWidgetSuppressor`                                    
+: Project is now only accessible via `com.intellij.openapi.ui.playback.PlaybackContext.getProject()` since it may change during script execution.
+
+JSON Widget suppressor EP `com.intellij.json.jsonWidgetSuppressor`
 : Override new method [`JsonWidgetSuppressor.isCandidateForSuppress(VirtualFile, Project)`](upsource:///json/src/com/jetbrains/jsonSchema/extension/JsonWidgetSuppressor.java) for quick check in EDT before `suppressSwitcherWidget()` is called on background thread.
 
 ### Changes in HTTP Client Plugin 2021.1
@@ -242,7 +242,7 @@ JSON Widget suppressor EP `com.intellij.json.jsonWidgetSuppressor`
 
 `com.intellij.ws.http.request` package removed
 : Replaced by `com.intellij.httpClient.http.request` in HTTP Client plugin
-                          
+
 ### Java UML Plugin 2021.1
 
 Rename of packages to `.java.` specific variants
@@ -251,7 +251,7 @@ Rename of packages to `.java.` specific variants
 ### Kotlin Plugin 2021.1
 
 `org.jetbrains.kotlin.idea.refactoring.changeSignature.KotlinChangeInfo(KotlinMethodDescriptor, String, KotlinTypeInfo, Visibility, List, KotlinParameterInfo, PsiElement, Collection)` constructor parameter type changed from `org.jetbrains.kotlin.descriptors.Visibility` to `org.jetbrains.kotlin.descriptors.DescriptorVisibility`
-: `Visibility` has been renamed to `DescriptorVisibility`. 
+: `Visibility` has been renamed to `DescriptorVisibility`.
 
 ### Go Plugin 2021.1
 

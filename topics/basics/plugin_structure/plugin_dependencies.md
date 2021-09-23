@@ -110,7 +110,8 @@ In this case, the plugin will load even if the plugin it depends on is not insta
 Declare additional `optional="true"` and `config-file` attribute pointing to optional plugin descriptor file:
 
 ```xml
-  <depends optional="true" config-file="myPluginId-optionalPluginName.xml">dependency.plugin.id</depends>
+  <depends optional="true"
+           config-file="myPluginId-optionalPluginName.xml">dependency.plugin.id</depends>
 ```
 
  >  Additional plugin descriptor files must follow the naming pattern <path>myPluginId-$NAME$.xml</path> resulting in unique filenames to prevent problems with classloaders in tests ([Details](https://youtrack.jetbrains.com/issue/IDEA-205964)).
@@ -124,10 +125,12 @@ The main <path>plugin.xml</path> will define an annotator for Java and specify a
 ```xml
 <idea-plugin>
    ...
-   <depends optional="true" config-file="myPluginId-withKotlin.xml">org.jetbrains.kotlin</depends>
+   <depends optional="true"
+            config-file="myPluginId-withKotlin.xml">org.jetbrains.kotlin</depends>
 
    <extensions defaultExtensionNs="com.intellij">
-      <annotator language="JAVA" implementationClass="com.example.MyJavaAnnotator"/>
+      <annotator language="JAVA"
+                 implementationClass="com.example.MyJavaAnnotator"/>
    </extensions>
 </idea-plugin>
 ```
@@ -140,7 +143,8 @@ In that file, define an annotator for Kotlin:
 ```xml
 <idea-plugin>
    <extensions defaultExtensionNs="com.intellij">
-      <annotator language="kotlin" implementationClass="com.example.MyKotlinAnnotator"/>
+      <annotator language="kotlin"
+                 implementationClass="com.example.MyKotlinAnnotator"/>
    </extensions>
 </idea-plugin>
 ```

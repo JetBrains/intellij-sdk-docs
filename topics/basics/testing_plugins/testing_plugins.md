@@ -32,15 +32,15 @@ Please do not use <path>platform/testGuiFramework</path> it is reserved for inte
 ## Topics
 
   > Check out [this step-by-step tutorial](writing_tests_for_plugins.md) teaching how to write and run automated tests for your custom language plugin.
-  > Also, code samples 
+  > Also, code samples
   > [comparing_references_inspection](https://github.com/JetBrains/intellij-sdk-docs/tree/main/code_samples/comparing_references_inspection)
   > and [conditional_operator_intention](https://github.com/JetBrains/intellij-sdk-docs/tree/main/code_samples/conditional_operator_intention) demonstrate using tests.
-  > 
+  >
  {type="note"}
- 
-* [Tests and Fixtures](tests_and_fixtures.md)
-* [Light and Heavy Tests](light_and_heavy_tests.md)
-* [Test Project and Testdata Directories](test_project_and_testdata_directories.md)
-* [Writing Tests](writing_tests.md)
-* [Testing Highlighting](testing_highlighting.md)
-* [Testing FAQ](testing_faq.md)
+
+* [](tests_and_fixtures.md)
+* [](light_and_heavy_tests.md)
+* [](test_project_and_testdata_directories.md)
+* [](writing_tests.md)
+* [](testing_highlighting.md)
+* [](testing_faq.md)

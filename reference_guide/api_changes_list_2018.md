@@ -1,6 +1,6 @@
 [//]: # (title: Incompatible Changes in IntelliJ Platform and Plugins API 2018.*)
 
-<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 <!--
 
@@ -14,11 +14,11 @@ Please see [Incompatible API Changes](api_changes_list.md) on how to verify comp
 
  >  Changes from API marked with [`org.jetbrains.annotations.ApiStatus`](https://github.com/JetBrains/java-annotations/blob/master/common/src/main/java/org/jetbrains/annotations/ApiStatus.java) `@Experimental`, `@ScheduledForRemoval`, or `@Internal` are not listed here, as incompatible changes are to be expected.
  >
- {type="note"} 
+ {type="note"}
 
 ## 2018.3
 
-### Changes in IntelliJ Platform 2018.3
+### IntelliJ Platform 2018.3
 
 `com.intellij.openapi.externalSystem.action.ExternalSystemAction.isEnabled` method `AnActionEvent` parameter marked `@NotNull`
 : This may break source-compatibility with inheritors written in Kotlin if they declare parameter type as nullable.
@@ -46,7 +46,7 @@ Please see [Incompatible API Changes](api_changes_list.md) on how to verify comp
 
 ## 2018.2
 
-### Changes in IntelliJ Platform 2018.2
+### IntelliJ Platform 2018.2
 
 `com.intellij.util.Query.forEach` method parameter type changed from `Processor<Result>` to `Processor<? super Result>`
 : Update `Query` implementations accordingly.
@@ -74,7 +74,7 @@ Please see [Incompatible API Changes](api_changes_list.md) on how to verify comp
 
 ## 2018.1
 
-### Changes in IntelliJ Platform 2018.1
+### IntelliJ Platform 2018.1
 
 `com.google.common.base.Objects.ToStringHelper` class removed
 : Use `com.google.common.base.MoreObjects.ToStringHelper` instead.
@@ -94,7 +94,7 @@ Please see [Incompatible API Changes](api_changes_list.md) on how to verify comp
 `com.intellij.ide.structureView.newStructureView.StructureViewComponent.getTreeBuilder` method removed
 : Use `queueUpdate` and `getTree` instead.
 
-### Changes in PhpStorm and PHP Plugin 2018.1
+### PhpStorm and PHP Plugin 2018.1
 
 `com.jetbrains.php.lang.documentation.phpdoc.parser.PhpDocElementTypes.DOC_COMMENT` field type changed from `com.intellij.psi.tree.ILazyParseableElementType` to `com.jetbrains.php.lang.documentation.phpdoc.psi.stubs.PhpDocCommentElementType`
 : In most of the cases, it's enough to recompile the code. It may also be needed to check that the code doesn't rely on the field's type.

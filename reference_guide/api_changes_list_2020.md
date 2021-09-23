@@ -74,7 +74,7 @@ Please see [Incompatible API Changes](api_changes_list.md) on how to verify comp
  >
  {type="note"}
 
-### Changes in IntelliJ Platform 2020.3
+### IntelliJ Platform 2020.3
 
 `com.intellij.openapi.application.NonBlockingReadAction.finishOnUiThread` method parameter type changed from ``Consumer<T>`` to ``Consumer<? super T>``
 : This may break source-compatibility with inheritors written in Kotlin.
@@ -109,7 +109,7 @@ Please see [Incompatible API Changes](api_changes_list.md) on how to verify comp
 `show.swing.inspector.disabled` property removed from resource bundle `messages.ExecutionBundle`
 : The Swing Inspector functionality has been removed from the product.
 
-### Changes in Java Plugin 2020.3
+### Java Plugin 2020.3
 
 The PSI structure of multi-dimensional arrays in Java source files changed (see `com.intellij.psi.PsiTypeElement`)
 : Now the children are flattened: brackets for all the dimensions are direct children of the `PsiTypeElement` that represent the multi-dimensional array. This change doesn't break source or binary compatibility but may produce behavioral changes in the code that traverses the tree of Java source files.
@@ -118,12 +118,12 @@ The `com.intellij.psi.PsiAnnotation.getOwner` method now returns `PsiType` inste
 : This change supports identifying whether a type annotation is attached to an inner class or a particular dimension of a multi-dimensional array.
 This change doesn't break source or binary compatibility but may produce behavioral changes for callers.
 
-### Changes in PhpStorm and PHP Plugin 2020.3
+### PhpStorm and PHP Plugin 2020.3
 
 Added PHP 8 support
 : See [Breaking Changes in PhpStorm 2020.3](php_open_api_breaking_changes_203.md).
 
-### Changes in Python Plugin 2020.3
+### Python Plugin 2020.3
 
 All parameters in `com.jetbrains.python.psi.PyElementVisitor` marked `@NotNull`
 : This may break source-compatibility with inheritors written in Kotlin.
@@ -152,14 +152,14 @@ All parameters in `com.jetbrains.python.psi.PyElementVisitor` marked `@NotNull`
 `com.jetbrains.python.psi.LanguageLevel.hasWithStatement()` method removed
 : It is `true` for all supported python versions.
 
-### Changes In CLion/AppCode 2020.3
+### CLion/AppCode 2020.3
 
 Required changes in project setup
 : When targeting 2020.3, please see this [migration guide](https://blog.jetbrains.com/clion/2020/12/migration-guide-for-plugins-2020-3/).
 
 ## 2020.2
 
-### Changes in IntelliJ Platform 2020.2
+### IntelliJ Platform 2020.2
 
 Support for JavaFX deprecated
 : Plugins should migrate to [JCEF](jcef.md). Alternatively, add an explicit dependency on [JavaFX Runtime for Plugins](https://plugins.jetbrains.com/plugin/14250-javafx-runtime-for-plugins).
@@ -236,7 +236,7 @@ IntelliJ IDEA supports preview features of the latest Java release and one upcom
 `com.intellij.codeInsight.actions.FormatChangedTextUtil.getChangedElements(Project, Change[], Function)` method removed
 : Use `com.intellij.codeInsight.actions.VcsFacadeImpl.getVcsInstance().getChangedElements(...)` instead.
 
-### Changes in GitHub Plugin 2020.2
+### GitHub Plugin 2020.2
 
 `org.jetbrains.plugins.github.util.LazyCancellableBackgroundProcessValue(ProgressManager)` constructor removed
 : Required for more tight control of task scheduling. Use `org.jetbrains.plugins.github.util.LazyCancellableBackgroundProcessValue.Companion#create(ProgressManager, (ProgressIndicator) -> T)` instead of subclassing
@@ -250,12 +250,12 @@ IntelliJ IDEA supports preview features of the latest Java release and one upcom
 `org.jetbrains.plugins.github.util.GithubGitHelper.getPossibleRemoteUrlCoordinates()` method removed
 : Use `org.jetbrains.plugins.github.util.GHProjectRepositoriesManager.getKnownRepositories()` instead
 
-### Changes in Groovy Plugin 2020.2
+### Groovy Plugin 2020.2
 
 `org.jetbrains.plugins.groovy.formatter.AlignmentProvider.addPair` method parameter type changed from `Boolean` to `boolean`
 : Please adjust/recompile the code.
 
-### Changes in Java EE Plugins 2020.2
+### Java EE Plugins 2020.2
 
 Java EE plugins split
 : Plugin `com.intellij.javaee` _Java EE: EJB, JPA, Servlets_ has been split to:
@@ -265,22 +265,22 @@ Java EE plugins split
 - `com.intellij.javaee.jpa` _Java EE: JPA_
 - `com.intellij.javaee.web` _Java EE: Web/Servlets_
 
-### Changes in JavaScript Plugin 2020.2
+### JavaScript Plugin 2020.2
 
 `com.intellij.lang.javascript.linter.jslint` package removed
 : JSLint functionality has been unbundled and moved to a separate plugin. [Issue](https://youtrack.jetbrains.com/issue/WEB-44511)
 
-### Changes in PhpStorm and PHP Plugin 2020.2
+### PhpStorm and PHP Plugin 2020.2
 
 Added Union Types Support
 : See [Breaking Changes in PhpStorm 2020.2](php_open_api_breaking_changes_202.md).
 
-### Changes in Kotlin Plugin 1.4
+### Kotlin Plugin 1.4
 
 `org.jetbrains.kotlin.idea.core.formatter.KotlinCodeStyleSettings.PACKAGES_TO_USE_STAR_IMPORTS` field type changed from `PackageEntryTable` to `KotlinPackageEntryTable`
 : This change was required to implement import layout order for Kotlin. `KotlinPackageEntryTable` can be used in the same manner as `PackageEntryTable`.
 
-### Changes in Python Plugin 2020.2
+### Python Plugin 2020.2
 
 `com.jetbrains.python.PythonDialectsTokenSetProvider.INSTANCE` field removed
 : `PythonDialectsTokenSetProvider` became an application service, use `PythonDialectsTokenSetProvider.getInstance()` instead.
@@ -290,7 +290,7 @@ Added Union Types Support
 
 ## 2020.1
 
-### Changes in IntelliJ Platform 2020.1
+### IntelliJ Platform 2020.1
 
 `com.intellij.compiler.ant` package removed
 : 'Generate Ant build' functionality is removed from the IDE. Delete the code extending this or replace it with a dependency on the `generate-ant` plugin.
@@ -361,7 +361,7 @@ Images module functionality (package `org.intellij.images.*`) extracted to plugi
     ```
   * If your plugin depends on other plugins using `com.intellij.platform.images` (e.g., CSS), please make sure to use `gradle-intellij-plugin` >=0.4.19
 
-### Changes in Python Plugin 2020.1
+### Python Plugin 2020.1
 
 `com.jetbrains.python.psi.PyCallExpression.PyMarkedCallee` class removed
 : Use `com.jetbrains.python.psi.types.PyCallableType` instead.

@@ -5,7 +5,7 @@
 The following pages list notable changes and new features in IDE releases.
 
 Plugin authors are encouraged to verify their compatible releases take advantage of the latest API additions.
-                                                
+
  >  Follow [JBPlatform](https://twitter.com/JBPlatform/) on Twitter and visit [JetBrains Platform Blog](https://blog.jetbrains.com/platform/) for the latest announcements.
  >
  {type="tip"}

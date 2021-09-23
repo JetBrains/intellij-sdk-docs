@@ -76,7 +76,7 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 
 ## 2021.3
 
-### Changes in IntelliJ Platform 2021.3
+### IntelliJ Platform 2021.3
 
 `com.intellij.ui.mac.MacMessages.showMessageDialog(String, String, String[], boolean, Window, int, int, DialogWrapper.DoNotAskOption)` method removed
 : Use `com.intellij.ui.mac.MacMessages.showMessageDialog(String, String, String[], boolean, Window, int, int,  DoNotAskOption)` instead
@@ -107,7 +107,7 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 
 ## 2021.2
 
-### Changes in IntelliJ Platform 2021.2
+### IntelliJ Platform 2021.2
 
 `com.intellij.openapi.editor.impl.event.DocumentEventImpl.translateLineViaDiff(int)` method removed
 : Use persistent range markers instead, see `com.intellij.openapi.editor.Document.createRangeMarker(int, int, boolean)` with `surviveOnExternalChange=true`.
@@ -196,7 +196,7 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 
 ## 2021.1
 
-### Changes in IntelliJ Platform 2021.1
+### IntelliJ Platform 2021.1
 
 `com.intellij.util.io.PersistentHashMap.isCorrupted` method removed
 : The storage checks for corruption automatically, there is no need of any explicit additional checks.
@@ -231,7 +231,7 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 JSON Widget suppressor EP `com.intellij.json.jsonWidgetSuppressor`
 : Override new method [`JsonWidgetSuppressor.isCandidateForSuppress(VirtualFile, Project)`](upsource:///json/src/com/jetbrains/jsonSchema/extension/JsonWidgetSuppressor.java) for quick check in EDT before `suppressSwitcherWidget()` is called on background thread.
 
-### Changes in HTTP Client Plugin 2021.1
+### HTTP Client Plugin 2021.1
 
 `com.intellij.ws.rest.client` package removed
 : Replaced by `com.intellij.httpClient.execution` in HTTP Client plugin

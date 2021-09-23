@@ -14,5 +14,8 @@ Once this is complete, the project is ready to be cloned to your local environme
 
 For more details, please refer to the [IntelliJ Platform Plugin Template][gh:ippt] project documentation.
 
+The webinar **Busy plugin developers series. Episode 1** also offers a thorough walk-through.
+<video href="vAlor5-hC0Q" title="Busy plugin developers series. Episode 1"/>
+
 [gh:ippt]: https://github.com/JetBrains/intellij-platform-plugin-template
 [jb:download-ij]: https://www.jetbrains.com/idea/download

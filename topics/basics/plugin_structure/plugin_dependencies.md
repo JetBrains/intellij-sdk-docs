@@ -95,7 +95,6 @@ If only general IntelliJ Platform features (APIs) are used, then a default depen
 
 To display a list of available IntelliJ Platform modules, invoke the [code completion](https://www.jetbrains.com/help/idea/auto-completing-code.html#4eac28ba) feature for the `<depends>` element contents while editing the plugin project's <path>plugin.xml</path> file.
 
-### Configuring plugin.xml
 In the <path>plugin.xml</path>, add a `<depends>` tag with the dependency plugin's ID as its content.
 Continuing with the example from [Project Setup](#2-project-setup) above, the dependency declaration in <path>plugin.xml</path> would be:
 

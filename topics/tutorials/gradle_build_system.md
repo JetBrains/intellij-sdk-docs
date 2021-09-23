@@ -7,7 +7,7 @@ The plugin takes care of the dependencies of your plugin project - both the base
 It provides tasks to run the IDE with your plugin and to package and publish your plugin to the [JetBrains Plugins Repository](https://plugins.jetbrains.com).
 To make sure that a plugin is not affected by [API changes](api_changes_list.md), which may happen between major releases of the platform, you can quickly verify your plugin against other IDEs and releases.
 
- >  [IntelliJ Platform Plugin Template](https://github.com/JetBrains/intellij-platform-plugin-template) makes it easier to create and maintain your IDE plugins, having the Gradle plugin already integrated and CI covered with GitHub Actions.
+ >  [IntelliJ Platform Plugin Template](github_template.md) makes it easier to create and maintain your IDE plugins, having the Gradle plugin already integrated and CI covered with GitHub Actions.
  >
  {type="tip"}
 

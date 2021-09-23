@@ -58,7 +58,7 @@ The Gradle plugin will fetch any plugins in the list defined by `intellij.plugin
 See the Gradle plugin [README](https://github.com/JetBrains/gradle-intellij-plugin#setup-dsl) for information about specifying the plugin and version.
 
 Note that this attribute describes a dependency so that the Gradle plugin can fetch the required artifacts.
-The runtime dependency must be added in the [Plugin Configuration](plugin_configuration_file.md) (<path>plugin.xml</path>) file as described in [Plugin Dependencies](plugin_dependencies.md#dependency-declaration-in-pluginxml).
+The runtime dependency must be added in the [Plugin Configuration](plugin_configuration_file.md) (<path>plugin.xml</path>) file as described in [Plugin Dependencies](plugin_dependencies.md#3-dependency-declaration-in-pluginxml).
 
 ### Configuring the Gradle Plugin for Running IntelliJ Platform Plugin Projects
 By default, the Gradle plugin will use the same version of the IntelliJ Platform for the IDE Development Instance as was used for building the plugin.

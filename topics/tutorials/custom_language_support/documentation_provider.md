@@ -82,19 +82,8 @@ One caveat is that since we’re collecting the comment lines backwards, we need
 A simple regex is used to remove the leading hash characters and whitespaces from each line.
 
 ```java
-public static @NotNull String findDocumentationComment(SimpleProperty property) {
- List<String> result = new LinkedList<>();
- PsiElement element = property.getPrevSibling();
- while (element instanceof PsiComment || element instanceof PsiWhiteSpace) {
-   if (element instanceof PsiComment) {
-     String commentText = element.getText().replaceFirst("[# ]+", "");
-     result.add(commentText);
-   }
-   element = element.getPrevSibling();
- }
- return StringUtil.join(Lists.reverse(result),"\n ");
-}
 ```
+{src="simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleUtil.java" include-symbol="findDocumentationComment"}
 
 
 ## Render the Documentation
@@ -103,54 +92,24 @@ With easy ways to access the key, the value, the file, and a possible documentat
 we now have everything in place to provide a useful implementation of `generateDoc()`.
 
 ```java
-@Override
-public @Nullable String generateDoc(PsiElement element, @Nullable PsiElement originalElement) {
-  if (element instanceof SimpleProperty) {
-    final String key = ((SimpleProperty) element).getKey();
-    final String value = ((SimpleProperty) element).getValue();
-    final String file = SymbolPresentationUtil.getFilePathPresentation(element.getContainingFile());
-    final String docComment = SimpleUtil.findDocumentationComment((SimpleProperty) element);
-
-    return renderFullDoc(key, value, file, docComment);
-  }
-  return null;
-}
 ```
+{src="simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleDocumentationProvider.java" include-symbol="generateDoc"}
+
 
 The creation of the rendered documentation is done in a separate method for clarity.
 It uses `DocumentationMarkup` to align and format the contents.
 
 ```java
-private String renderFullDoc(String key, String value, String file, String docComment) {
-  StringBuilder sb = new StringBuilder();
-  sb.append(DocumentationMarkup.DEFINITION_START);
-  sb.append("Simple Property");
-  sb.append(DocumentationMarkup.DEFINITION_END);
-  sb.append(DocumentationMarkup.CONTENT_START);
-  sb.append(value);
-  sb.append(DocumentationMarkup.CONTENT_END);
-  sb.append(DocumentationMarkup.SECTIONS_START);
-  addKeyValueSection("Key:", key, sb);
-  addKeyValueSection("Value:", value, sb);
-  addKeyValueSection("File:", file, sb);
-  addKeyValueSection("Comment:", docComment, sb);
-  sb.append(DocumentationMarkup.SECTIONS_END);
-  return sb.toString();
-}
 ```
+{src="simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleDocumentationProvider.java" include-symbol="renderFullDoc"}
+
 
 The `addKeyValueSection()` method used is just a small helper function to reduce repetition.
 
 ```java
-private void addKeyValueSection(String key, String value, StringBuilder sb) {
-  sb.append(DocumentationMarkup.SECTION_HEADER_START);
-  sb.append(key);
-  sb.append(DocumentationMarkup.SECTION_SEPARATOR);
-  sb.append("<p>");
-  sb.append(value);
-  sb.append(DocumentationMarkup.SECTION_END);
-}
 ```
+{src="simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleDocumentationProvider.java" include-symbol="addKeyValueSection"}
+
 
 After implementing all the steps above, the IDE will show the rendered documentation for a Simple key when called with <menupath>View | Quick Documentation</menupath>.
 
@@ -162,26 +121,17 @@ For instance, when simply hovering the mouse over the code, it also shows docume
 It’s not necessary that this popup show the exact same information as when calling _Quick Documentation_, but for the purpose of this tutorial, we’ll do just that.
 
 ```java
-public @Nullable String generateHoverDoc(@NotNull PsiElement element, @Nullable PsiElement originalElement) {
-   return generateDoc(element, originalElement);
-}
 ```
+{src="simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleDocumentationProvider.java" include-symbol="generateHoverDoc"}
+
 
 When the mouse hovers over code with <shortcut>Ctrl</shortcut>/<shortcut>Cmd</shortcut> pressed, the IDE shows navigation information of the symbol under the cursor,
 such as its namespace or package.
 The implementation below will show the Simple key and the file where it is defined.
 
 ```java
-@Override
-public @Nullable String getQuickNavigateInfo(PsiElement element, PsiElement originalElement) {
-  if (element instanceof SimpleProperty) {
-    final String key = ((SimpleProperty) element).getKey();
-    final String file = SymbolPresentationUtil.getFilePathPresentation(element.getContainingFile());
-    return "\"" + key + "\" in " + file;
-  }
-  return null;
-}
 ```
+{src="simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleDocumentationProvider.java" include-symbol="getQuickNavigateInfo"}
 
 
 Finally, <menupath>View | Quick Documentation</menupath> can also be called from a selected entry within the autocompletion popup.

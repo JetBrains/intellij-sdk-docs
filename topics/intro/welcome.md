@@ -6,17 +6,6 @@
 
 Welcome to the IntelliJ Platform SDK - the primary source of documentation for extending the IntelliJ Platform by creating plugins, custom language support, or building a custom IDE.
 
- > Save the date for upcoming webinar **Busy Plugin Developers. Episode 2**
- >
- > Learn about:
- > - How to improve plugin pages on JetBrains Marketplace
- > - ide-probe – a framework for testing plugins for IntelliJ-based IDEs
- >
- > September 27 at 17:00 CEST [Register Here](https://info.jetbrains.com/ijplatform-webinar-september-2021.html)
-  >
-  {type="tip"}
-
-
 ## Getting Started
 
 <table>

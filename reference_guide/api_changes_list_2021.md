@@ -78,6 +78,9 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 
 ### IntelliJ Platform 2021.3
 
+Running tests fails with `jarFiles is not set for [...]` or `Created extension classloader is not equal to plugin’s one`
+: Set system property `idea.force.use.core.classloader` to `true`.
+
 `com.intellij.ui.mac.MacMessages.showMessageDialog(String, String, String[], boolean, Window, int, int, DialogWrapper.DoNotAskOption)` method removed
 : Use `com.intellij.ui.mac.MacMessages.showMessageDialog(String, String, String[], boolean, Window, int, int,  DoNotAskOption)` instead
 

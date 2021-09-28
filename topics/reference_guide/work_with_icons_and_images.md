@@ -5,10 +5,10 @@
 Icons and images are used widely by IntelliJ Platform plugins.
 Plugins need icons mostly for actions, custom components renderers, tool windows, and so on.
 
- > Plugin Icons, which represent a plugin itself, have different requirements than icons and images used within a plugin.
- > For more information see the [Plugin Icon](plugin_icon_file.md) page.
+ > Plugin _Logos_, which represent a plugin itself, have different requirements than icons and images used within a plugin.
+ > For more information see the [](plugin_icon_file.md).
  >
- {type="note"}
+ {type="tip"}
 
 ## Platform vs. Custom Icons
 
@@ -19,13 +19,14 @@ If custom icons are required, please refer to detailed [design guide](https://je
 
 ## How to organize and how to use icons?
 
-The best way to deal with icons and other image resources is to put them to a dedicated source root marked as *Resources Root*, say <path>icons</path> or <path>resources</path>.
+ > See [Action Basics](https://github.com/JetBrains/intellij-sdk-code-samples/tree/main/action_basics) sample plugin as reference.
+ >
+ {type="tip"}
+
+The best way to deal with icons and other image resources is to put them to a dedicated source root marked as <control>Resources Root</control>, say <path>icons</path> or <path>resources</path>.
 
 The `getIcon()` method of [`IconLoader`](upsource:///platform/util/ui/src/com/intellij/openapi/util/IconLoader.java) can be used to access the icons.
-
- > The path to the icon passed in as argument to `IconLoader.getIcon()` must start with leading `/`
- >
- {type="note"}
+The path to the icon passed in as argument to `IconLoader.getIcon()` **must** start with leading `/`.
 
 Then define a class/interface in a top-level package called `icons` holding icon constants as static fields:
 

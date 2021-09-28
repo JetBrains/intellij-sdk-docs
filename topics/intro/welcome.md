@@ -36,7 +36,7 @@ Watch [Busy plugin developers series. Episode 0](https://www.youtube.com/watch?v
 <br/>
 <br/>
 
-<video href="-6D5-xEaYig" title="Busy plugin developers series. Episode 0" />
+<video href="-6D5-xEaYig" title="Busy plugin developers series. Episode 0" width="300"/>
 
 More webinars are available [here](useful_links.md#webinars).
 

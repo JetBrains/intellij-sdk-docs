@@ -23,10 +23,6 @@ Before creating a new Gradle project, familiarize yourself with the help topic [
 This page emphasizes the steps in the process of creating IntelliJ Platform plugin projects that are Gradle-based.
 Additionally, screencast [Working with Gradle in IntelliJ IDEA](https://www.youtube.com/watch?v=6V6G3RyxEMk) offers a thorough introduction.
 
- >  Please note that Gradle 6.1 has a [known bug](https://github.com/gradle/gradle/issues/11966) that prevents using it for developing plugins, please upgrade to 6.1.1 or later.
- >
- {type="warning"}
-
 Launch the [New Project Wizard](https://www.jetbrains.com/help/idea/gradle.html#project_create_gradle).
 It guides you through the Gradle project creation process with two screens.
 
@@ -36,7 +32,7 @@ On the first screen, the type of project is configured:
 * Specify the <control>Project SDK</control> based on the **Java 8** JDK.
   This SDK will be the default JRE used to run Gradle, and the JDK version used to compile the plugin Java sources.
 
- >  When targeting 2020.3 and later only, using Java 11 is now required, please see [blog post](https://blog.jetbrains.com/platform/2020/09/intellij-project-migrates-to-java-11/)  
+ > When targeting 2020.3 and later only, using Java 11 is now required, please see [blog post](https://blog.jetbrains.com/platform/2020/09/intellij-project-migrates-to-java-11/)
  >
  {type="note"}
 
@@ -96,18 +92,18 @@ my_gradle_plugin
   If needed, the IntelliJ IDEA Gradle plugin downloads the version of Gradle specified in this file.
 * The <path>settings.gradle</path> file, containing a definition of the `rootProject.name`.
 * The <path>META-INF</path> directory under the default `main` [SourceSet](https://docs.gradle.org/current/userguide/java_plugin.html#sec:java_project_layout) contains the plugin [configuration file](plugin_configuration_file.md).
-                                                 
- > Please note: the generated <path>build.gradle</path> file needs to be adjusted as shown below, as IntelliJ IDEA currently generates template incompatible with gradle-intellij-plugin 1.0 release.   
+
+ > Please note: the generated <path>build.gradle</path> file needs to be adjusted as shown below, as IntelliJ IDEA currently generates template incompatible with gradle-intellij-plugin 1.0 release.
  > See [Upgrade Instructions](https://lp.jetbrains.com/gradle-intellij-plugin/) for more details.
- > 
+ >
  {type="warning"}
- 
+
 The generated `my_gradle_plugin` project <path>build.gradle</path> file:
 
 ```groovy
   plugins {
       id 'java'
-      id 'org.jetbrains.intellij' version '1.1.4'
+      id 'org.jetbrains.intellij' version '1.1.6'
   }
 
   group 'com.your.company'
@@ -118,7 +114,7 @@ The generated `my_gradle_plugin` project <path>build.gradle</path> file:
       mavenCentral()
   }
   dependencies {
-      testImplementation group: 'junit', name: 'junit', version: '4.12'
+      testImplementation group: 'junit', name: 'junit', version: '4.13.2'
   }
 
   // See https://github.com/JetBrains/gradle-intellij-plugin/
@@ -187,5 +183,5 @@ Open the Gradle tool window and search for the <control>runIde</control> task:
 
 Double-click on the <control>runIde</control> task to execute it.
 See the IntelliJ IDEA help for more information about [Working with Gradle tasks](https://www.jetbrains.com/help/idea/gradle.html#96bba6c3).
-                       
+
 To debug your plugin in a _standalone_ IDE instance, please see [How to Debug Your Own IntelliJ IDEA Instance](https://medium.com/agorapulse-stories/how-to-debug-your-own-intellij-idea-instance-7d7df185a48d) blog post.

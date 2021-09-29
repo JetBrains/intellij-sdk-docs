@@ -4,6 +4,9 @@
 
  > Please make sure to follow the guidelines from [Plugin Overview page](https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html) for an optimal presentation of your plugin on JetBrains Marketplace.
  >
+ > This webinar also discusses _5 tips for optimizing JetBrains Marketplace plugin page_:
+ > <video href="oB1GA9JeeiY" title="Busy plugin developers series. Episode 2" width="300"/>
+ >
  {type="tip"}
 
 ## Embeddable Widgets
@@ -95,7 +98,7 @@ Below are listed a few related to the IntelliJ SDK and plugins development provi
 ```
 
 **ReSharper Plugins (incl. pre-releases)**
-            
+
 
 ![Version](https://img.shields.io/badge/resharper-v2017.3.0--pre0001-yellow)
 ```markdown

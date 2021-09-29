@@ -74,45 +74,11 @@ See [Dependency on the standard library](https://kotlinlang.org/docs/gradle.html
 
 Plugins using the [Gradle Build System](gradle_build_system.md) use the [Kotlin JVM Gradle plugin](https://kotlinlang.org/docs/gradle.html#targeting-the-jvm).
 
-Your <path>build.gradle</path> file may look like so:
+See the <path>build.gradle</path> from [kotlin_demo](https://github.com/JetBrains/intellij-sdk-code-samples/tree/main/kotlin_demo) sample plugin:
 
 ```groovy
-plugins {
-    id "java"
-    id "org.jetbrains.kotlin.jvm" version "1.5.31"
-    id "org.jetbrains.intellij" version "1.1.4"
-}
-
-apply plugin: "kotlin"
-apply plugin: "org.jetbrains.intellij"
-
-group "com.example"
-version "0.0.1"
-
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
-
-compileKotlin {
-    kotlinOptions.jvmTarget = "1.8"
-}
-compileTestKotlin {
-    kotlinOptions.jvmTarget = "1.8"
-}
-
-repositories {
-    mavenCentral()
-}
-
-dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
-}
-
-intellij {
-    version = "2020.2.4"
-    pluginName = "Example"
-    updateSinceUntilBuild = false
-}
 ```
+{src="kotlin_demo/build.gradle"}
 
 ### Use Kotlin to Write Gradle Script
 
@@ -125,45 +91,6 @@ There are many good resources for learning how to write build scripts for an Int
 [zig-intellij](https://github.com/ice1000/intellij-zig/blob/master/build.gradle.kts).
 
 Additionally, explore IntelliJ Platform Explorer's [list of open-source plugins](https://jb.gg/ipe?buildSystem=gradle_kts) using Gradle KTS.
-
-<path>build.gradle.kts</path> basically looks like:
-
-```kotlin
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-
-plugins {
-    id("java")
-    id("org.jetbrains.kotlin.jvm") version "1.5.31"
-    id("org.jetbrains.intellij") version "1.1.4"
-}
-
-group = "com.your.company.name"
-version = "0.1-SNAPSHOT"
-
-tasks.withType<JavaCompile> {
-    sourceCompatibility = "1.8"
-    targetCompatibility = "1.8"
-}
-listOf("compileKotlin", "compileTestKotlin").forEach {
-    tasks.getByName<KotlinCompile>(it) {
-        kotlinOptions.jvmTarget = "1.8"
-    }
-}
-
-repositories {
-    mavenCentral()
-}
-
-dependencies {
-    implementation(kotlin("stdlib-jdk8"))
-}
-
-intellij {
-    version = "2020.2.4"
-    pluginName = 'Example'
-    updateSinceUntilBuild = false
-}
-```
 
 ## UI in Kotlin
 

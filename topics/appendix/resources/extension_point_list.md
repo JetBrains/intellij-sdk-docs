@@ -47,8 +47,8 @@
 | ![Non-Dynamic][non-dynamic] | Non-Dynamic Extension Point | Installation/update of plugin requires IDE restart ([Dynamic Plugins](dynamic_plugins.md)) |
 
 [experimental]: https://img.shields.io/badge/-Experimental_API-red?style=flat-square
-[internal]: https://img.shields.io/badge/-Internal_API-red?style=flat-square
-[project-level]: https://img.shields.io/badge/-Project--Level-yellow?style=flat-square
+[internal]: https://img.shields.io/badge/-Internal_API-darkred?style=flat-square
+[project-level]: https://img.shields.io/badge/-Project--Level-blue?style=flat-square
 [non-dynamic]: https://img.shields.io/badge/-Non--Dynamic-orange?style=flat-square
 [deprecated]: https://img.shields.io/badge/-Deprecated-lightgrey?style=flat-square
 </chunk>

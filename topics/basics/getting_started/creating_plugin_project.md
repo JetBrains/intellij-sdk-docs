@@ -2,7 +2,7 @@
 
 <!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
- >  For new projects, it is highly recommended to use [Gradle](gradle_build_system.md).
+ >  For new projects, it is highly recommended to use [Gradle-based setup](getting_started.md).
  >
  {type="note"}
 
@@ -12,8 +12,8 @@ You can also add a new plugin module to a current IntelliJ Platform project.
 For more information, refer to the [IntelliJ IDEA Web Help](https://www.jetbrains.com/idea/help/new-project-wizard.html).
 
 ### To Create an IntelliJ Platform Plugin Project:
-                                
- > Make sure to [Setup Development Environment](setting_up_environment.md) before proceeding. 
+
+ > Make sure to [Setup Development Environment](setting_up_environment.md) before proceeding.
  >
  {type="note"}
 

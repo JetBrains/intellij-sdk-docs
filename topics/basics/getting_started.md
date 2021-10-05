@@ -21,7 +21,7 @@ The Gradle workflow offers several advantages:
   * Training, documentation, and community help for general Gradle topics are widely available.
 
 Specific to development of IntelliJ Platform plugins with the Gradle plugin for IntelliJ IDEA:
-  * Changing plugin targets is more comfortable because it is all done in <path>build.gradle</path>:
+  * Changing plugin targets is more comfortable because it is all done in the Gradle build file:
       * Switching the version of the target IntelliJ Platform (IDE),
       * Changing the target IntelliJ Platform-based IDE, e.g., from IntelliJ IDEA to PyCharm,
       * Running a plugin against alternate versions of the JetBrains runtime.

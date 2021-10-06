@@ -1,6 +1,6 @@
 [//]: # (title: Code Formatter)
 
-<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 The IntelliJ Platform includes a powerful framework for implementing custom language formatters.
 In this framework, the plugin specifies the *constraints* on the spacing between different syntax elements.
@@ -75,3 +75,12 @@ The return value of `createIndentOptions()` determines the default indent size.
 Allows custom languages to provide user-configurable arrangement/grouping rules for element types supported by language plugin.
 Rules can be refined via modifiers and name, ordering can be applied additionally.
 Please see [`Rearranger`](upsource:///platform/code-style-api/src/com/intellij/psi/codeStyle/arrangement/Rearranger.java) and related for JavaDoc.
+
+### External Code Formatter
+
+_2021.3_
+
+Register `com.intellij.formatting.service.AsyncDocumentFormattingService` implementation in extension point `com.intellij.formattingService` to invoke external formatter instead of IDE's builtin formatter.
+
+**Example**:
+`com.intellij.sh.formatter.ShExternalFormatter` from _Shell Script_ plugin

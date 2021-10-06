@@ -8,6 +8,9 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 
 ### IntelliJ Platform 2021.3
 
+External code formatter tools API
+: Allows integration of standalone tools like `shfmt`: [External Code Formatter](code_formatting.md#external-code-formatter).
+
 Simplified API for `CustomComponentAction`
 : Use new method `updateCustomComponent(Component, Presentation)` to synchronize given Presentation and component state.
 

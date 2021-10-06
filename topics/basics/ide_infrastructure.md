@@ -74,8 +74,11 @@ To provide additional context for [reporting fatal errors](#error-reporting), us
 
 ## Error Reporting
 
-Fatal errors and logging messages with `ERROR` level will be shown in the <control>IDE Fatal Errors</control> dialog for EAP releases or when running in [internal mode](enabling_internal.md).
-For errors caused by third-party plugins, reporting is disabled by default - instead, there's an option to disable the plugin causing the exception.
+The IDE will show fatal errors caught by itself as well as logging messages with `ERROR` level and passing `Exception` instance in the <control>IDE Fatal Errors</control> dialog:
+- for IDE platform: in EAP releases or when running in [internal mode](enabling_internal.md)
+- for third-party plugins: always
+
+For the latter, reporting is disabled by default - instead, there's an option to disable the plugin causing the exception.
 
 To let users report such errors to the vendor, plugins can implement custom [`ErrorReportSubmitter`](upsource:///platform/platform-api/src/com/intellij/openapi/diagnostic/ErrorReportSubmitter.java) registered in extension point `com.intellij.errorHandler`.
 See [IntelliJ Platform Explorer](https://jb.gg/ipe?extensions=com.intellij.errorHandler) for existing implementations - ranging from pre-filling web-based issue tracker forms to fully automated submission to log monitoring systems.

@@ -39,7 +39,7 @@ For every block, the plugin specifies the following properties:
 *  The _indent_ specifies how the block is indented relative to its parent block.
    There are different modes of indenting defined by factory methods in the Indent class.
    The most commonly used are the none indent (which means the child block is not indented), the regular indent (the child block is indented by the number of spaces specified in the **Project Code Style \| General \| Indent** setting), and the continuation indent (based on **Project Code Style \| General \| Continuation Indent** setting).
-   If the formatting model does not specify an indent, the "continuation without first" mode is used. 
+   If the formatting model does not specify an indent, the "continuation without first" mode is used.
    This default means that the first block in a sequence of blocks with that type is not indented, and the following blocks are indented with a continuation indent.
 
 *  The _wrap_ ([`Wrap`](upsource:///platform/code-style-api/src/com/intellij/formatting/Wrap.java)) specifies whether the content of the block is wrapped to the next line.
@@ -72,7 +72,6 @@ The return value of `createIndentOptions()` determines the default indent size.
 
 ### Rearranger
 
-**New in IntelliJ IDEA 12:**
 Allows custom languages to provide user-configurable arrangement/grouping rules for element types supported by language plugin.
 Rules can be refined via modifiers and name, ordering can be applied additionally.
 Please see [`Rearranger`](upsource:///platform/code-style-api/src/com/intellij/psi/codeStyle/arrangement/Rearranger.java) and related for JavaDoc.

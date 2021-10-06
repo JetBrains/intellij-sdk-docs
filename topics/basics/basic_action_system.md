@@ -45,6 +45,7 @@ However, the `update()` and `actionPerformed()` methods are essential to basic o
 ### Overriding the AnAction.update Method
 The method `AnAction.update()` is periodically called by the IntelliJ Platform in response to user gestures.
 The `update()` method gives an action to evaluate the current context and enable or disable its functionality.
+Implementors must ensure that changing presentation and availability status handles all variants and state transitions; otherwise, the given Action will get "stuck".
 
  >  The `AnAction.update()` method can be called frequently and on a UI thread.
 This method needs to _execute very quickly_; no real work should be performed in this method.

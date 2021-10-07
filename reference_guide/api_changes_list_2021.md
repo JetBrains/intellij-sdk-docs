@@ -108,6 +108,19 @@ Running tests fails with `jarFiles is not set for [...]` or `Created extension c
 `com.intellij.openapi.fileEditor.impl.EditorTabTitleProvider.getEditorTabTitle(Project, VirtualFile, EditorWindow)` method parameter `EditorWindow` removed
 : This parameter never needed, but lead to code coupling
 
+### VCS Log 2021.3
+
+`com.intellij.vcs.log.ui.frame.CommitPanel` class removed
+: Removed unnecessary inheritance
+
+### Git Plugin 2021.3
+
+`git4idea.ui.branch.GitBranchActionsUtilKt.checkoutOrReset(Project, List, String, GitNewBranchOptions)` method removed
+: Method was dropped to avoid supporting outdated behavior
+
+`git4idea.ui.branch.GitBranchActionsUtilKt.createNewBranch(Project, List, String, GitNewBranchOptions)` method removed
+: Method was dropped to avoid supporting outdated behavior
+
 ## 2021.2
 
 ### IntelliJ Platform 2021.2

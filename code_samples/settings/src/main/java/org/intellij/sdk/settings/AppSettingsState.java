@@ -17,7 +17,7 @@ import org.jetbrains.annotations.Nullable;
  */
 @State(
         name = "org.intellij.sdk.settings.AppSettingsState",
-        storages = {@Storage("SdkSettingsPlugin.xml")}
+        storages = @Storage("SdkSettingsPlugin.xml")
 )
 public class AppSettingsState implements PersistentStateComponent<AppSettingsState> {
 

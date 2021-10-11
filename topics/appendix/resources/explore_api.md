@@ -10,7 +10,7 @@ This usually happens in two situations:
   class that allows you to hook into the relevant mechanisms.
 - You have already started working on a feature but you're unsure how the different parts of the IntelliJ Platform interact with each other.
   In such situations, it is helpful to be able to navigate the IntelliJ Platform code confidently and to find relevant examples in other plugins.
-  
+
 This guide provides a list of proven strategies that can help you overcome these challenges and gather enough information to continue your work.
 Furthermore, the tips below will help build your confidence as you explore the IntelliJ Platform.
 
@@ -23,7 +23,7 @@ The most important resource for discovering new EPs is the extensive list provid
 On this page, you will find all of the EPs, and each entry includes a link to the online source code and a link to the
 [IntelliJ Platform Explorer](https://jb.gg/ipe),
 which helps you find examples of this EP in other plugins.
-Additionally, dedicated Extension Point Lists specific to IDEs are available under _Part VIII - Product Specific_. 
+Additionally, dedicated Extension Point Lists specific to IDEs are available under _Part VIII - Product Specific_.
 
 ### 1.2 Use Autocompletion Information
 
@@ -40,7 +40,7 @@ which then shows the properties and the implementation class of the EP.
 
 ### 1.3 Search the IntelliJ Platform Code
 
-Use 
+Use
 [Go to Declaration](https://www.jetbrains.com/help/idea/navigating-through-the-source-code.html#go_to_declaration)
 on EPs that are implemented in <path>plugin.xml</path> to navigate to its definition in the XML file.
 There you'll find more EPs, and browsing through this list helps you discover features you might not have been aware of.
@@ -77,14 +77,14 @@ notification groups can be defined in the XML file.
 
 The following tips will help you navigate through the IntelliJ Platform source code if you already have an idea of what you're looking for.
 It's important that you're familiar with
-[navigating](https://www.jetbrains.com/help/idea/reference-keymap-win-default.html#navigate_from_symbols) and 
+[navigating](https://www.jetbrains.com/help/idea/reference-keymap-win-default.html#navigate_from_symbols) and
 [searching](https://www.jetbrains.com/help/idea/reference-keymap-win-default.html#find_everything)
 source code, as well as other basic features of IntelliJ IDEA.
 
 Many developers keep the
 [IntelliJ Community source code](https://github.com/JetBrains/intellij-community)
 open in a separate window while working on their plugin.
-Others simply search the source code of the IntelliJ Platform that is attached by default when using a 
+Others simply search the source code of the IntelliJ Platform that is attached by default when using a
 [Gradle-based plugin project](https://github.com/JetBrains/gradle-intellij-plugin#infrastructure-properties).
 While both methods work, it should be noted that developing plugins without inspecting the IntelliJ Platform code is nearly impossible,
 and all of the tips below assume that you have the source code available.
@@ -146,8 +146,8 @@ However, it does not display information about [stubs](stub_indexes.md) or [form
 ### 3.2 Search the IntelliJ Platform Explorer
 
 The [IntelliJ Platform Explorer](https://plugins.jetbrains.com/intellij-platform-explorer)
-is a search tool for browsing EPs inside existing implementations of open-source IntelliJ Platform plugins.
-You can navigate directly to the source files hosted on GitHub to find inspiration when implementing your own extensions for IntelliJ-based IDEs.
+is a search tool for browsing Extension Points (EP) inside existing implementations of all open-source IntelliJ Platform plugins published on [JetBrains Marketplace](https://plugins.jetbrains.com).
+You can navigate directly to the source files to find inspiration when implementing your own extensions for IntelliJ-based IDEs.
 
 ### 3.3 Browse Available References
 
@@ -155,6 +155,6 @@ The IntelliJ Platform SDK Documentation should always be the first resource you 
 Here is a condensed list you can use for further reference:
 
 - [Useful links](useful_links.md) for plugin developers.
-- [List of all EPs](extension_point_list.md).
+- [List of all Extension Points (EP)](extension_point_list.md).
 - Section on [exploring module and plugin APIs](plugin_compatibility.md#exploring-module-and-plugin-apis).
 - List of [notable](api_notable.md) and [incompatible](api_changes_list.md) API changes.

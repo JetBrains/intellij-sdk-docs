@@ -81,9 +81,18 @@ If service is requested from several threads, it will be initialized in the firs
 <tab title="Java">
 
 ```java
-MyApplicationService applicationService = ApplicationManager.getApplication().getService(MyApplicationService.class);
+MyApplicationService applicationService = ApplicationManager.getApplication()
+          .getService(MyApplicationService.class);
 
-MyProjectService projectService = project.getService(MyProjectService.class)
+MyProjectService projectService = project.getService(MyProjectService.class);
+```
+
+Service implementations can wrap these calls with convenient static `getInstance()` or `getInstance(Project)` method:
+
+```java
+MyApplicationService applicationService = MyApplicationService.getInstance();
+
+MyProjectService projectService = MyProjectService.getInstance(project);
 ```
 
 </tab>

@@ -1,6 +1,6 @@
 [//]: # (title: Persisting State of Components)
 
-<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 The IntelliJ Platform provides an API that allows components or services to persist their state between restarts of the IDE.
 You can use either a simple API to persist a few values or persist the state of more complicated components using the [`PersistentStateComponent`](upsource:///platform/projectModel-api/src/com/intellij/openapi/components/PersistentStateComponent.java) interface.
@@ -41,6 +41,10 @@ In the former case, the state class instance is typically stored as a field in t
 ```java
 @State(...)
 class MyService implements PersistentStateComponent<MyService.State> {
+
+  public static MyService getInstance() {
+    // implementation according to Application/Project level service
+  }
 
   static class State {
     public String value;

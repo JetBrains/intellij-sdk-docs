@@ -67,6 +67,11 @@ In the latter case, you can use the following pattern to implement `getState()` 
 ```java
 @State(...)
 class MyService implements PersistentStateComponent<MyService> {
+
+  public static MyService getInstance() {
+    // implementation according to Application/Project level service
+  }
+
   public String stateValue;
 
   public MyService getState() {

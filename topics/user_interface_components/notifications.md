@@ -14,17 +14,21 @@ When working in dialog, instead of checking the validity of the input when the _
 
 For actions invoked from the editor (such as refactorings, navigation actions and different code insight features), the best way to notify the user about the inability to perform an action is to use the [`HintManager`](upsource:///platform/platform-api/src/com/intellij/codeInsight/hint/HintManager.java) class. Its method `showErrorHint()` displays a floating popup above the editor which is automatically hidden when the user starts performing another action in the editor.
 Other [`HintManager`](upsource:///platform/platform-api/src/com/intellij/codeInsight/hint/HintManager.java) methods can be used for displaying other kinds of non-modal notification hints over an editor.
-                 
+
 ### Editor Banner
 
 For UI reference, see [Banner](https://jetbrains.design/intellij/controls/banner/) in the IntelliJ Platform UI Guidelines.
-                   
+
 Notifications that appear at the top of the file editor are a great way to ask the user to take an important action that would otherwise impede their experience if ignored (e.g., missing SDK, setup/project configuration requiring user input).
-                     
+
 Register an implementation of [`EditorNotifications.Provider`](upsource:///platform/platform-api/src/com/intellij/ui/EditorNotifications.java) using `com.intellij.editorNotificationProvider` extension point.
 If no [index access](indexing_and_psi_stubs.md#dumb-mode) is required, it can implement [`DumbAware`](upsource:///platform/core-api/src/com/intellij/openapi/project/DumbAware.java) to be shown during indexing.
 
 A commonly used UI implementation is [`EditorNotificationPanel`](upsource:///platform/platform-api/src/com/intellij/ui/EditorNotificationPanel.java).
+
+### "Got It" Notification
+
+Use to highlight important new/changed features via [`GotItMessage`](upsource:///platform/platform-impl/src/com/intellij/ui/GotItMessage.java).See [Got It tooltip](https://jetbrains.design/intellij/controls/got_it_tooltip/) in IntelliJ Platform UI Guidelines for an overview.
 
 ### Top-Level Notifications (Balloons)
 
@@ -34,7 +38,7 @@ It has two main advantages:
 
 * The user can control the way each notification type is displayed under <menupath>Settings/Preferences | Appearance & Behavior | Notifications</menupath>
 * All displayed notifications are gathered in the <control>Event Log</control> tool window and can be reviewed later
-         
+
 For UI reference, see [Balloon](https://jetbrains.design/intellij/controls/balloon/) in the IntelliJ Platform UI Guidelines.
 
 The specific method used to display a notification is [`Notifications.Bus.notify()`](upsource:///platform/platform-api/src/com/intellij/notification/Notifications.java). If the current Project is known, please use overload with `Project` parameter, so the notification is shown in its associated frame.

@@ -1,6 +1,6 @@
 [//]: # (title: Virtual Files)
 
-<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 A [`VirtualFile`](upsource:///platform/core-api/src/com/intellij/openapi/vfs/VirtualFile.java) (VF) is the IntelliJ Platform's representation of a file in a [Virtual File System (VFS)](virtual_file_system.md).
 
@@ -12,18 +12,18 @@ Contents of a `VirtualFile` are treated as a stream of bytes, but concepts like 
 
 ## How do I get a virtual file?
 
-From an action
-: `e.getData(PlatformDataKeys.VIRTUAL_FILE)` or `e.getData(PlatformDataKeys.VIRTUAL_FILE_ARRAY)` for multiple selection
+#### From an Action
+`e.getData(PlatformDataKeys.VIRTUAL_FILE)` or `e.getData(PlatformDataKeys.VIRTUAL_FILE_ARRAY)` for multiple selection
 
-From a path in the local file system:
-:  - `LocalFileSystem.getInstance().findFileByIoFile()`
+#### From Path in Local File System
+- `LocalFileSystem.getInstance().findFileByIoFile()`
 - `VirtualFileManager.findFileByNioPath()`/`refreshAndFindFileByNioPath()` (2020.2 and later)
 
-From a PSI file
-: `psiFile.getVirtualFile()` (may return `null` if the PSI file exists only in memory)
+#### From a PSI File
+`psiFile.getVirtualFile()` (may return `null` if the PSI file exists only in memory)
 
-From a document
-: `FileDocumentManager.getInstance().getFile()`
+#### From a Document
+`FileDocumentManager.getInstance().getFile()`
 
 ## What can I do with it?
 

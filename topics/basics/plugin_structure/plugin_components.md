@@ -40,11 +40,11 @@ To execute an activity in background on IDE startup (e.g., to warm up caches), u
 
 To execute code when a project is being opened, use one of these two [extensions](plugin_extensions.md):
 
-`com.intellij.postStartupActivity`
-: [`StartupActivity`](upsource:///platform/core-api/src/com/intellij/openapi/startup/StartupActivity.java) for immediate execution on EDT. Implement `DumbAware` to indicate activity can run in background thread (in parallel with other such tasks).
+#### `com.intellij.postStartupActivity`
+[`StartupActivity`](upsource:///platform/core-api/src/com/intellij/openapi/startup/StartupActivity.java) for immediate execution on EDT. Implement `DumbAware` to indicate activity can run in background thread (in parallel with other such tasks).
 
-`com.intellij.backgroundPostStartupActivity`
-: [`StartupActivity.Background`](upsource:///platform/core-api/src/com/intellij/openapi/startup/StartupActivity.java) for execution with 5 seconds delay in background thread (2019.3 or later).
+#### `com.intellij.backgroundPostStartupActivity`
+[`StartupActivity.Background`](upsource:///platform/core-api/src/com/intellij/openapi/startup/StartupActivity.java) for execution with 5 seconds delay in background thread (2019.3 or later).
 
 Any long-running or CPU intensive tasks should be made visible to users by using `ProgressManager.run(Task.Backgroundable)`.
 Access to indices must be wrapped with `DumbService`, see also [General Threading Rules](general_threading_rules.md).

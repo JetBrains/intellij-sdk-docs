@@ -9,14 +9,14 @@ The IntelliJ Platform handles encoding and line break conversions when loading a
 
 ## How do I get a Document?
 
-From an Action
-: `e.getData(CommonDataKeys.EDITOR).getDocument()`
+#### From an Action
+`e.getData(CommonDataKeys.EDITOR).getDocument()`
 
-From a Virtual File
-: `FileDocumentManager.getDocument()`. This call forces the document content to be loaded from disk if it wasn't loaded previously. If only open documents or documents which may have been modified are considered relevant, use `FileDocumentManager.getCachedDocument()` instead.
+#### From a Virtual File
+`FileDocumentManager.getDocument()`. This call forces the document content to be loaded from disk if it wasn't loaded previously. If only open documents or documents which may have been modified are considered relevant, use `FileDocumentManager.getCachedDocument()` instead.
 
-From a PSI File
-: `PsiDocumentManager.getInstance().getDocument()` or `PsiDocumentManager.getInstance().getCachedDocument()`
+#### From a PSI File
+`PsiDocumentManager.getInstance().getDocument()` or `PsiDocumentManager.getInstance().getCachedDocument()`
 
 ## What can I do with a Document?
 
@@ -58,7 +58,7 @@ If the file corresponding to a `Document` is read-only (for example, not checked
 Thus, before modifying the `Document`, it is necessary to call `ReadonlyStatusHandler.getInstance(project).ensureFilesWritable()` to check out the file.
 
 All text strings passed to `Document` modification methods (`setText()`, `insertString()`, `replaceString()`) must use only `\n` as line separators.
-                        
+
 See also [Working with Text](working_with_text.md#safely-replacing-selected-text-in-the-document) in Editors Basics tutorial.
 
 ## Are there any utilities available for working with Documents?

@@ -14,7 +14,13 @@ The following attributes can be specified:
 * Whether the text field is read-only or editable;
 * Whether the text field is single-line or multiline.
 
-Further customizations are possible by subclassing and overriding `createEditor()`.
+Further customizations are possible by subclassing and overriding `createEditor()` and applying [`EditorCustomization`](upsource:///platform/platform-impl/src/com/intellij/ui/EditorCustomization.java).
+Several commonly needed customization implementations exist, including:
+- [`SpellCheckingEditorCustomization`](upsource:///spellchecker/src/com/intellij/spellchecker/ui/SpellCheckingEditorCustomization.java) disables spellchecking
+- [`HorizontalScrollBarEditorCustomization`](upsource:///platform/platform-impl/src/com/intellij/ui/HorizontalScrollBarEditorCustomization.java) to turn on/off horizontal scrollbar
+- [`ErrorStripeEditorCustomization`](upsource:///platform/platform-impl/src/com/intellij/ui/ErrorStripeEditorCustomization.java) to turn on/off error stripes on right
+
+### Java
 
 A common use case for `EditorTextField` is entering the name of a Java class or package.
 This can be accomplished with the following steps:
@@ -28,17 +34,17 @@ PsiFile psiFile = PsiDocumentManager.getInstance(project)
         .getPsiFile(editor.getDocument());
 PsiElement element = psiFile.findElementAt(editor.getCaretModel().getOffset());
 
-PsiExpressionCodeFragment code = 
+PsiExpressionCodeFragment code =
         JavaCodeFragmentFactory.getInstance(project)
         .createExpressionCodeFragment("", element, null, true);
 
 Document document =
         PsiDocumentManager.getInstance(project).getDocument(code);
 
-EditorTextField myInput = 
+EditorTextField myInput =
         new EditorTextField(document, project, JavaFileType.INSTANCE);
 ```
- 
+
  > If your plugin depends on Java functionality and targets 2019.2 or later, please make sure to follow the steps from this [blog post](https://blog.jetbrains.com/platform/2019/06/java-functionality-extracted-as-a-plugin/).
  >
  {type="note"}

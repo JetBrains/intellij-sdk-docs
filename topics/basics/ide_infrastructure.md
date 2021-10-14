@@ -74,7 +74,7 @@ To provide additional context for [reporting fatal errors](#error-reporting), us
 
 ## Error Reporting
 
-The IDE will show fatal errors caught by itself as well as logging messages with `ERROR` level and passing `Exception` instance in the <control>IDE Fatal Errors</control> dialog:
+The IDE will show fatal errors caught by itself as well as logging messages with `ERROR` level in the <control>IDE Fatal Errors</control> dialog:
 - for IDE platform: in EAP releases or when running in [internal mode](enabling_internal.md)
 - for third-party plugins: always
 

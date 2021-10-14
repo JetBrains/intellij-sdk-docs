@@ -31,7 +31,7 @@
         <upsource-tag>212.5284.40</upsource-tag>
         <upsource-repo-name>idea-ce</upsource-repo-name>
         <upsource-server-address>upsource.jetbrains.com</upsource-server-address>
-        <product-web-url>https://plugins.jetbrains.com</product-web-url>
+        <product-web-url>https://plugins.jetbrains.com/docs/intellij/</product-web-url>
     </variables>
 
     <build-profile product="ijs"/>

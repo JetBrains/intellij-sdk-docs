@@ -19,7 +19,7 @@ Alternatively, using programmatic setup, the tool window is created to show the 
 
 ### Declarative Setup
 
-The tool window is registered in `plugin.xml` using the `com.intellij.toolWindow` extension point.
+The tool window is registered in <path>plugin.xml</path> using the `com.intellij.toolWindow` extension point.
 The extension point attributes specify all the data which is necessary to display the tool window button:
 
 *  The `id` of the tool window (corresponds to the text displayed on the tool window button)
@@ -39,15 +39,17 @@ If the tool window of a plugin doesn't need to be displayed for all projects:
 * For versions 2019.3 and earlier, also specify the `conditionClass` attribute: the FQN of a class implementing [`Condition<Project>`](upsource:///platform/util-rt/src/com/intellij/openapi/util/Condition.java), which can be the same class as the tool window factory implementation.
 
 Note the condition is evaluated only once when the project is loaded; to show and hide a tool window dynamically while the user is working with the project use [programmatic setup](#programmatic-setup) for tool window registration.
-              
+
 To provide a localized text for the tool window button, specify matching `toolwindow.stripe.[id]` message key (escape spaces with `_`) in your [message bundle](localization_guide.md) (code insight supported in 2020.3 and later).
+
+Project-level topic [`ToolWindowManagerListener`](upsource:///platform/platform-impl/src/com/intellij/openapi/wm/ex/ToolWindowManagerListener.java) allows listening to tool window (un-)registering/show events.
 
 ### Programmatic Setup
 
 The second method involves simply calling [`ToolWindowManager.registerToolWindow()`](upsource:///platform/platform-api/src/com/intellij/openapi/wm/ToolWindowManager.kt) from the plugin code.
 The method has multiple overloads that can be used depending on the task.
 When using an overload that takes a component, the component becomes the first content (tab) displayed in the tool window.
-                     
+
 ## Contents (Tabs)
 
 Displaying the contents of many tool windows requires access to [indexes](indexing_and_psi_stubs.md).

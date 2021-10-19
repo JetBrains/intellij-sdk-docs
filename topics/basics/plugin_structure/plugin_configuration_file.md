@@ -24,7 +24,7 @@ When using Gradle, a number of metadata elements will be provided at build time 
   <name>Plugin Template</name>
 
   <!-- Plugin version. It is recommended to use the SemVer approach: https://semver.org
-     Displayed in the "Plugins" settings dialog and the plugin repository Web interface. -->
+       Displayed in the "Plugins" settings dialog and the plugin repository Web interface. -->
   <version>1.0.0</version>
 
   <!-- A displayed Vendor name or Organization ID (if you have one created. The optional `URL` attribute specifies
@@ -32,7 +32,8 @@ When using Gradle, a number of metadata elements will be provided at build time 
        Displayed on the Plugins Page. -->
   <vendor url="https://plugins.jetbrains.com" email="marketplace@jetbrains.com">JetBrains</vendor>
 
-  <!-- If you decide to make your plugin paid, you will need to define the parameters in the <product-descriptor> tag.
+  <!-- IMPORTANT: This tag should not be used in case of free plugins.
+       If you decide to make your plugin paid, you will need to define the parameters in the <product-descriptor> tag.
        You can also enable free functionality in a paid plugin. Learn more in a guide to selling plugin:
        https://plugins.jetbrains.com/build-and-market -->
   <product-descriptor code="PLUGINTEMPLATE" release-date="20210901" release-version="20211" optional="true"/>

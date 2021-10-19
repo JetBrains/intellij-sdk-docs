@@ -20,8 +20,7 @@ When using Gradle, a number of metadata elements will be provided at build time 
        If not specified, <name> will be used (not recommended). -->
   <id>org.jetbrains.plugins.template</id>
 
-  <!-- Public plugin name should be written in Title Case. Guidelines: -->
-  <!-- TODO: [URL HERE] -->
+  <!-- Public plugin name should be written in Title Case. Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-name -->
   <name>Plugin Template</name>
 
   <!-- Plugin version. It is recommended to use the SemVer approach: https://semver.org
@@ -43,8 +42,7 @@ When using Gradle, a number of metadata elements will be provided at build time 
 
   <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
        Simple HTML elements ( text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
-       Guidelines:  -->
-  <!-- TODO: [URL HERE] -->
+       Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
   <description>
   <![CDATA[
     Provides a boilerplate template for easier plugin creation. <br/>

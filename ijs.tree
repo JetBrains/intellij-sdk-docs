@@ -277,7 +277,7 @@
             <toc-element id="reference_test.md"/>
             <toc-element id="documentation_test.md"/>
         </toc-element>
-        <toc-element toc-title="Injected Languages"/>
+        <toc-element id="language_injection.md"/>
         <toc-element toc-title="Build System"/>
         <toc-element toc-title="Compiler"/>
         <toc-element toc-title="Debugger"/>

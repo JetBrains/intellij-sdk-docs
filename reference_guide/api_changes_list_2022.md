@@ -77,3 +77,7 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 ## 2022.1
 
 ### IntelliJ Platform 2022.1
+
+`com.intellij.platform.DirectoryProjectConfigurator.configureProject(Project, VirtualFile, Ref<Module>, boolean)` marked abstract
+: Implement it instead of removed one
+

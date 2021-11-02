@@ -107,16 +107,17 @@ For instance, injecting SQLite into Python code is specified by the following op
 
 Inside an injection, the following tags can be used:
 
-- `<display-name>`: A short name for the injection.
-- `<place>`: The element pattern that defines where an injection will take place. The content is wrapped in `![CDATA[...]]`.
-- `<prefix>` and `<suffix>`: Static content that is wrapped around the injected code, e.g., to make it a valid expression.
-  For example, to a CSS color specification inside a string, it can be wrapped with the prefix `div { color:` and the suffix `;}` to make it a valid CSS expression.
-- `<value-pattern>`: A regex for the content that specifies when this injection should be applied.
-- `<ignore-pattern>`: A regex for the content that specifies when this injection should not be applied.
+| XML Tag                   | Description                                                                                                                                                                                                                                                      |
+|---------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `<display-name>`          | A short name for the injection.                                                                                                                                                                                                                                  |
+| `<place>`                 | The element pattern that defines where an injection will take place. The content is wrapped in `![CDATA[...]]`.                                                                                                                                                  |
+| `<prefix>` and `<suffix>` | Static content that is wrapped around the injected code, e.g., to make it a valid expression. For example, to a CSS color specification inside a string, it can be wrapped with the prefix `div { color:` and the suffix `;}` to make it a valid CSS expression. |
+| `<value-pattern>`         | A regex for the content that specifies when this injection should be applied.                                                                                                                                                                                    |
+| `<ignore-pattern>`        | A regex for the content that specifies when this injection should not be applied.                                                                                                                                                                                |
 
 #### Create an XML File to Load the Configuration
 
-Create an XML file <path>language-injections.xml</path> next to your <path>plugin.xml</path> that loads the above configuration.
+Create an XML file <path>myLanguageID-injections.xml</path> next to your <path>plugin.xml</path> that loads the above configuration.
 Custom language authors also register their implementation of the `languageSupport` EP there.
 
 ```xml
@@ -133,7 +134,7 @@ The injections are an optional dependency that only work when IntelliLang is ena
 Therefore, you load the configuration optionally in your main <path>plugin.xml</path>:
 
 ````xml
-<depends optional="true" config-file="language-injection.xml">org.intellij.intelliLang</depends>
+<depends optional="true" config-file="myLanguageID-injections.xml">org.intellij.intelliLang</depends>
 ````
 
 ### LanguageInjectionContributor and LanguageInjectionPerformer

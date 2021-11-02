@@ -137,7 +137,7 @@ Therefore, you load the configuration optionally in your main <path>plugin.xml</
 <depends optional="true" config-file="myLanguageID-injections.xml">org.intellij.intelliLang</depends>
 ````
 
-### LanguageInjectionContributor and LanguageInjectionPerformer
+## LanguageInjectionContributor and LanguageInjectionPerformer
 
 The `com.intellij.languageInjectionContributor` EP provides injection information for the given context in terms of _what_ to inject.
 As a plugin author, implement this EP to provide context-specific injections.
@@ -175,7 +175,7 @@ If there is no primary `LanguageInjectionPerformer` found, then a fallback injec
 
 The method `performInjection()` does the actual injection into the context PSI element and/or some elements around it if needed in case if they are semantically connected (concatenation injection for instance).
 
-### MultiHostInjector
+## MultiHostInjector
 
 `com.intellij.lang.injection.MultiHostInjector` is a very low-level API, but it gives plugin authors the most freedom.
 It performs language injection inside other PSI elements, e.g. inject SQL inside XML tag text or inject regular expressions into Java string literals.

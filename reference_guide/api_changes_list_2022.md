@@ -1,10 +1,8 @@
-[//]: # (title: Incompatible Changes in IntelliJ Platform and Plugins API)
+[//]: # (title: Incompatible Changes in IntelliJ Platform and Plugins API 2022.*)
 
 <!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 <!--
-=============== DO NOT RENAME OR MOVE THIS FILE ===============
-
 Before documenting a breaking API change, please, make sure that the change cannot be avoided in an alternative way.
 
 APIs marked with @ApiStatus.Experimental, @ApiStatus.Internal, or @ApiStatus.ScheduledForRemoval don't need to be documented.
@@ -62,46 +60,24 @@ NOTE: You are allowed to prettify the pattern using links: [`org.example.Foo`](h
 NOTE: Entries not starting with code quotes (`name`) can be added to document non-code changes  and will be skipped in API verification.
 -->
 
-IntelliJ API may be occasionally changed between releases, leading to existing plugins' incompatibilities with newer IDE builds.
+Please see [Incompatible API Changes](api_changes_list.md) on how to verify compatibility.
 
-## Verifying Compatibility
-
-### Plugin Verifier
-Compatibility with newer IDEs can easily be verified for plugins hosted on the [JetBrains Plugins Repository](https://plugins.jetbrains.com) using the built-in [Plugin Verifier](https://blog.jetbrains.com/platform/2018/07/plugins-repository-now-integrates-with-the-plugin-verification-tool/).
-
-For local verification or non-public plugins, [intellij-plugin-verifier](https://github.com/JetBrains/intellij-plugin-verifier) can be used standalone as well.
-
-Integration in [Gradle build](gradle_build_system.md) is available using the `runPluginVerifier` task, please see [Gradle IntelliJ Plugin - Plugin Verifier DSL](https://github.com/JetBrains/gradle-intellij-plugin#plugin-verifier-dsl) for details.
-
-You can easily integrate it within your CI by running that task as another quality check step.
-Check the IntelliJ Platform Plugin Template [GitHub workflow configuration file](https://github.com/JetBrains/intellij-platform-plugin-template/blob/main/.github/workflows/build.yml) as sample.
-
-If your plugin is hosted on GitHub and you are _not_ using Gradle, consider using third-party GitHub Actions [IntelliJ Platform Plugin Verifier](https://github.com/marketplace/actions/intellij-platform-plugin-verifier) or [IntelliJ Plugin Verifier](https://github.com/marketplace/actions/intellij-plugin-verifier).
-
-### IDE Support
-Consider using the following [IDE inspections](https://www.jetbrains.com/help/idea/code-inspection.html) to get additional alerts about code that uses unstable API features:
-
-- <control>JVM languages | Unstable API Usage</control>
-- <control>JVM languages | Unstable type is used in signature</control>
-
-Usage of [Extension Points](plugin_extensions.md) which are deprecated or annotated with [`org.jetbrains.annotations.ApiStatus`](https://github.com/JetBrains/java-annotations/blob/master/common/src/main/java/org/jetbrains/annotations/ApiStatus.java) `@Experimental`/`@Internal` is highlighted in <path>plugin.xml</path> files.
-
-## Known Breaking Changes
-
- > Follow [JBPlatform](https://twitter.com/JBPlatform/) on Twitter and visit [JetBrains Platform Blog](https://blog.jetbrains.com/platform/) for the latest announcements.
+ >  Changes from API marked with [`org.jetbrains.annotations.ApiStatus`](https://github.com/JetBrains/java-annotations/blob/master/common/src/main/java/org/jetbrains/annotations/ApiStatus.java) `@Experimental`, `@ScheduledForRemoval`, or `@Internal` are not listed here, as incompatible changes are to be expected.
  >
- {type="tip"}
+ {type="note"}
 
-The following pages list the breaking changes in IDE and plugin releases with required/recommended steps to take by plugin authors.
+ >  Java 11 is required ([blog post](https://blog.jetbrains.com/platform/2020/09/intellij-project-migrates-to-java-11/)) when targeting 2020.3 and later only.
+ >
+ >  Please make sure to always upgrade `gradle-intellij-plugin` to the latest version [![GitHub Release](https://img.shields.io/github/release/jetbrains/gradle-intellij-plugin.svg?style=flat-square)](https://github.com/jetbrains/gradle-intellij-plugin/releases)
+ >
+ {type="note"}
 
-* [Changes in 2022.*](api_changes_list_2022.md)
-* [Changes in 2021.*](api_changes_list_2021.md)
-* [Changes in 2020.*](api_changes_list_2020.md)
-* [Changes in 2019.*](api_changes_list_2019.md)
-* [Changes in 2018.*](api_changes_list_2018.md)
-* [Changes in 2017.*](api_changes_list_2017.md)
-* [Changes in 2016.*](api_changes_list_2016.md)
+_Early Access Program_ (EAP) releases of upcoming versions are available [here](https://eap.jetbrains.com).
 
-## Library Updates
+## 2022.1
 
-Information about bundled Third-Party Software/Libraries and their respective versions is available [here](https://www.jetbrains.com/legal/third-party-software/).
+### IntelliJ Platform 2022.1
+
+`com.intellij.platform.DirectoryProjectConfigurator.configureProject(Project, VirtualFile, Ref<Module>, boolean)` marked abstract
+: Implement it instead of removed one
+

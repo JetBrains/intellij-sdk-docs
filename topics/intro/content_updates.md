@@ -9,6 +9,12 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 
 ## 2021
 
+### November-21
+
+Language Injection
+: Add [Language Injection](language_injection.md) section that shows how the IntelliJ Platform handles different languages within the same source file.
+
+
 ### September-21
 
 IDE Infrastructure

@@ -1,6 +1,6 @@
 [//]: # (title: Language Injection)
 
-<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 Language injection is the way the IntelliJ Platform handles different languages within the same source file. Well-known examples are:
 
@@ -12,13 +12,13 @@ Injected code is always bound to a specific context that depends on the surround
 
 <tabs>
     <tab title="Regex">
-        <img src="regex_language_injection.png" alt="Table of Contents" width="460" border-effect="line"/>
+        <img src="regex_language_injection.png" alt="Regex Language Injection" width="460" border-effect="line"/>
     </tab>
     <tab title="SQL">
-        <img src="sql_language_injection.png" alt="Table of Contents" width="460" border-effect="line"/>
+        <img src="sql_language_injection.png" alt="SQL Language Injection" width="460" border-effect="line"/>
     </tab>
     <tab title="Markdown">
-        <img src="markdown_code_language_injection.png" alt="Table of Contents" width="460" border-effect="line"/>
+        <img src="markdown_code_language_injection.png" alt="Markdown Language Injection" width="460" border-effect="line"/>
     </tab>
 </tabs>
 
@@ -46,7 +46,7 @@ The injections shown are configured through XML files and loaded automatically.
 Let’s take a look at the Java `String.matches()` method that injects the RegExp language into the string of the first argument.
 In the IntelliLang settings, it is defined as one possible injection in Java code.
 
-<img src="language_injection_settings.png" alt="Table of Contents" width="706" border-effect="line"/>
+![Language Injection Settings](language_injection_settings.png){border-effect="line"}
 
 Double-clicking on this entry shows the exact context where a RegExp can be injected, and `String.matches()` is one of several possibilities.
 On the plugin side, these entries are defined in the file [`javaInjections.xml`](upsource:///plugins/IntelliLang/java-support/resources/javaInjections.xml):
@@ -55,7 +55,12 @@ On the plugin side, these entries are defined in the file [`javaInjections.xml`]
 <injection language="RegExp" injector-id="java">
   <display-name>String (java.lang)</display-name>
   ...
-  <place><![CDATA[psiParameter().ofMethod(0, psiMethod().withName("matches").withParameters("java.lang.String").definedInClass("java.lang.String"))]]></place>
+  <place><![CDATA[
+    psiParameter()
+      .ofMethod(0, psiMethod().withName("matches")
+      .withParameters("java.lang.String")
+      .definedInClass("java.lang.String"))
+  ]]></place>
 </injection>
 ```
 
@@ -107,13 +112,13 @@ For instance, injecting SQLite into Python code is specified by the following op
 
 Inside an injection, the following tags can be used:
 
-| XML Tag                   | Description                                                                                                                                                                                                                                                      |
-|---------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `<display-name>`          | A short name for the injection.                                                                                                                                                                                                                                  |
-| `<place>`                 | The element pattern that defines where an injection will take place. The content is wrapped in `![CDATA[...]]`.                                                                                                                                                  |
-| `<prefix>` and `<suffix>` | Static content that is wrapped around the injected code, e.g., to make it a valid expression. For example, to a CSS color specification inside a string, it can be wrapped with the prefix `div { color:` and the suffix `;}` to make it a valid CSS expression. |
-| `<value-pattern>`         | A regex for the content that specifies when this injection should be applied.                                                                                                                                                                                    |
-| `<ignore-pattern>`        | A regex for the content that specifies when this injection should not be applied.                                                                                                                                                                                |
+| XML Tag                   | Description                                                                                                                                                                                                                                                                     |
+|---------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `<display-name>`          | A short name for the injection.                                                                                                                                                                                                                                                 |
+| `<place>`                 | The element pattern that defines where an injection will take place. The content is wrapped in `![CDATA[...]]`.                                                                                                                                                                 |
+| `<prefix>` and `<suffix>` | Static content that is wrapped around the injected code, e.g., to make it a valid expression. For example, to a CSS color specification inside a string, it can be wrapped with the prefix `div { color:` and the suffix `;}` to make it a valid CSS expression.                |
+| `<value-pattern>`         | A regex for the content that specifies when this injection should be applied. Regex groups can specify the text range of the injection (e.g. `^javascript:(.+)`, see [`xmlInjections-html.xml`](upsource:///plugins/IntelliLang/xml-support/resources/xmlInjections-html.xml)). |
+| `<ignore-pattern>`        | A regex for the content that specifies when this injection should not be applied.                                                                                                                                                                                               |
 
 #### Create an XML File to Load the Configuration
 
@@ -134,7 +139,9 @@ The injections are an optional dependency that only work when IntelliLang is ena
 Therefore, you load the configuration optionally in your main <path>plugin.xml</path>:
 
 ````xml
-<depends optional="true" config-file="myLanguageID-injections.xml">org.intellij.intelliLang</depends>
+<depends optional="true" config-file="myLanguageID-injections.xml">
+  org.intellij.intelliLang
+</depends>
 ````
 
 ## LanguageInjectionContributor and LanguageInjectionPerformer
@@ -149,10 +156,12 @@ public final class MyConfigInjector implements LanguageInjectionContributor {
 public Injection getInjection(@NotNull PsiElement context) {
   if (!isConfigPlace(context)) return null;
     if (shouldInjectYaml(context)) {
-      return new SimpleInjection(YAMLLanguage.INSTANCE.getID(), "", "", null);
+      return new SimpleInjection(
+              YAMLLanguage.INSTANCE.getID(), "", "", null);
     }
     else if (shouldInjectJSON(context)) {
-      return new SimpleInjection(JsonLanguage.INSTANCE.getID(), "", "", null);
+      return new SimpleInjection(
+              JsonLanguage.INSTANCE.getID(), "", "", null);
     }
     return null;
   }
@@ -162,7 +171,9 @@ public Injection getInjection(@NotNull PsiElement context) {
 Register the implementation in your <path>plugin.xml</path>:
 
 ```xml
-<languageInjectionContributor implementationClass="MyConfigInjector" language="YourLanguage"/>
+<languageInjectionContributor
+        implementationClass="MyConfigInjector"
+        language="YourLanguage"/>
 ```
 
 If you want more control over how the injection should be done then implement the `com.intellij.languageInjectionPerformer` EP which allows for complex language injections, e.g. for concatenation or interpolation of strings.
@@ -184,11 +195,15 @@ Plugin authors need to implement `getLanguagesToInject()` to provide a list of p
 For example, to inject regular expressions into Java string literal, you can override this method with something similar to this:
 
 ```java
-class MyRegExpToJavaInjector implements MultiHostInjector {
-  void getLanguagesToInject(MultiHostRegistrar registrar, PsiElement context) {
-    if (context instanceof PsiLiteralExpression && looksLikeAGoodPlaceToInject(context)) {
-      registrar.startInjecting(REGEXP_LANG)
-        .addPlace(null,null,context,innerRangeStrippingQuotes(context));
+public class MyRegExpToJavaInjector implements MultiHostInjector {
+  public void getLanguagesToInject(
+          MultiHostRegistrar registrar, PsiElement context) {
+    if (context instanceof PsiLiteralExpression &&
+            looksLikeAGoodPlaceToInject(context)) {
+      registrar
+        .startInjecting(REGEXP_LANG)
+        .addPlace(null,null,
+                context,innerRangeStrippingQuotes(context));
     }
   }
 }
@@ -198,7 +213,12 @@ A more complex example is when you need to inject into several fragments at once
 For example, if we have an XML-based DSL:
 
 ```xml
-<myDSL><method><name>foo</name><body>System.out.println(42);</body></method></myDSL>
+<myDSL>
+  <method>
+    <name>foo</name>
+    <body>System.out.println(42);</body>
+  </method>
+</myDSL>
 ```
 
 which should be converted to the equivalent Java code:
@@ -210,13 +230,19 @@ class MyDsl { void foo() { System.out.println(42); } }
 Here, we need to inject Java into several places at once, i.e. method name and its body:
 
 ```java
-class MyBizarreDSLInjector implements MultiHostInjector {
-  void getLanguagesToInject(MultiHostRegistrar registrar, PsiElement context) {
+public class MyBizarreDSLInjector implements MultiHostInjector {
+  public void getLanguagesToInject(
+          MultiHostRegistrar registrar, PsiElement context) {
     if (isMethodTag(context)) {
       registrar.startInjecting(JavaLanguage.INSTANCE);
-      // construct class header, method header, inject method name, append code block start
-      registrar.addPlace("class MyDsl { void ", "() {", context, rangeForMethodName(context));
-      // inject method body, append closing braces to form a valid Java class structure
+
+      // construct class header, method header,
+      // inject method name, append code block start
+      registrar.addPlace("class MyDsl { void ", "() {",
+              context, rangeForMethodName(context));
+
+      // inject method body, append closing braces
+      // to form a valid Java class structure
       registrar.addPlace(null, "}}", context, rangeForBody(context));
       registrar.doneInjecting();
     }

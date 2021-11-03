@@ -51,6 +51,7 @@ Usually you should omit the product ID and use only the branch number and build 
 
 | Branch number                                                   | IntelliJ Platform version                                                                                                                |
 |-----------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------|
+| [213](https://github.com/JetBrains/intellij-community/tree/213) | 2021.3                                                                                                                                   |
 | [212](https://github.com/JetBrains/intellij-community/tree/212) | 2021.2                                                                                                                                   |
 | [211](https://github.com/JetBrains/intellij-community/tree/211) | 2021.1                                                                                                                                   |
 | [203](https://github.com/JetBrains/intellij-community/tree/203) | 2020.3 **NOTE** Java 11 is now required ([blog post](https://blog.jetbrains.com/platform/2020/09/intellij-project-migrates-to-java-11/)) |

@@ -6,8 +6,8 @@ Use this reference of build number ranges to specify the correct `since-build` a
 Setting the actual values in <path>plugin.xml</path> is usually managed by `patchPluginXml` Gradle task, see [Patching the Plugin Configuration File](gradle_guide.md#patching-the-plugin-configuration-file) for details.
 
  > Compatibility with the specified version range (and compatible products) must always be verified using [Plugin Verifier](api_changes_list.md#verifying-compatibility) to ensure binary compatibility.
- > 
- > Plugins hosted on [JetBrains Plugins Repository](https://plugins.jetbrains.com) are checked automatically. According to [Approval Guidelines](https://plugins.jetbrains.com/legal/approval-guidelines), incompatible plugin versions will be restricted by JetBrains if necessary. 
+ >
+ > Plugins hosted on [JetBrains Plugins Repository](https://plugins.jetbrains.com) are checked automatically. According to [Approval Guidelines](https://plugins.jetbrains.com/legal/approval-guidelines), incompatible plugin versions will be restricted by JetBrains if necessary.
  >
  {type="warning"}
 
@@ -49,32 +49,32 @@ Usually you should omit the product ID and use only the branch number and build 
  >
  {type="tip"}
 
-| Branch number                                                   | IntelliJ Platform version |
-| --------------------------------------------------------------- | ------------------------- |
-| [212](https://github.com/JetBrains/intellij-community/tree/211) | 2021.2                    |
-| [211](https://github.com/JetBrains/intellij-community/tree/211) | 2021.1                    |
+| Branch number                                                   | IntelliJ Platform version                                                                                                                |
+|-----------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------|
+| [212](https://github.com/JetBrains/intellij-community/tree/211) | 2021.2                                                                                                                                   |
+| [211](https://github.com/JetBrains/intellij-community/tree/211) | 2021.1                                                                                                                                   |
 | [203](https://github.com/JetBrains/intellij-community/tree/203) | 2020.3 **NOTE** Java 11 is now required ([blog post](https://blog.jetbrains.com/platform/2020/09/intellij-project-migrates-to-java-11/)) |
-| [202](https://github.com/JetBrains/intellij-community/tree/202) | 2020.2                    |
-| [201](https://github.com/JetBrains/intellij-community/tree/201) | 2020.1                    |
-| [193](https://github.com/JetBrains/intellij-community/tree/193) | 2019.3                    |
-| [192](https://github.com/JetBrains/intellij-community/tree/192) | 2019.2                    |
-| [191](https://github.com/JetBrains/intellij-community/tree/191) | 2019.1                    |
-| [183](https://github.com/JetBrains/intellij-community/tree/183) | 2018.3                    |
-| [182](https://github.com/JetBrains/intellij-community/tree/182) | 2018.2                    |
-| [181](https://github.com/JetBrains/intellij-community/tree/181) | 2018.1                    |
-| [173](https://github.com/JetBrains/intellij-community/tree/173) | 2017.3                    |
-| [172](https://github.com/JetBrains/intellij-community/tree/172) | 2017.2                    |
-| [171](https://github.com/JetBrains/intellij-community/tree/171) | 2017.1                    |
-| [163](https://github.com/JetBrains/intellij-community/tree/163) | 2016.3                    |
-| [162](https://github.com/JetBrains/intellij-community/tree/162) | 2016.2                    |
+| [202](https://github.com/JetBrains/intellij-community/tree/202) | 2020.2                                                                                                                                   |
+| [201](https://github.com/JetBrains/intellij-community/tree/201) | 2020.1                                                                                                                                   |
+| [193](https://github.com/JetBrains/intellij-community/tree/193) | 2019.3                                                                                                                                   |
+| [192](https://github.com/JetBrains/intellij-community/tree/192) | 2019.2                                                                                                                                   |
+| [191](https://github.com/JetBrains/intellij-community/tree/191) | 2019.1                                                                                                                                   |
+| [183](https://github.com/JetBrains/intellij-community/tree/183) | 2018.3                                                                                                                                   |
+| [182](https://github.com/JetBrains/intellij-community/tree/182) | 2018.2                                                                                                                                   |
+| [181](https://github.com/JetBrains/intellij-community/tree/181) | 2018.1                                                                                                                                   |
+| [173](https://github.com/JetBrains/intellij-community/tree/173) | 2017.3                                                                                                                                   |
+| [172](https://github.com/JetBrains/intellij-community/tree/172) | 2017.2                                                                                                                                   |
+| [171](https://github.com/JetBrains/intellij-community/tree/171) | 2017.1                                                                                                                                   |
+| [163](https://github.com/JetBrains/intellij-community/tree/163) | 2016.3                                                                                                                                   |
+| [162](https://github.com/JetBrains/intellij-community/tree/162) | 2016.2                                                                                                                                   |
 
 Note that there is no `170`.
 In the `YYYY.R` versioning scheme, the `R` part starts at 1.
 
 ### IntelliJ Platform Based Products of Pre-2016.2 IDE Versions
 
-|  Branch number                                                  |  Product version                                                                                                                       |
-| --------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| Branch number                                                   | Product version                                                                                                                        |
+|-----------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------|
 | [145](https://github.com/JetBrains/intellij-community/tree/145) | IntelliJ IDEA 2016.1, AppCode 2016.1, CLion 2016.1, DataGrip 2016.1, PhpStorm 2016.1, PyCharm 2016.1, RubyMine 2016.1, WebStorm 2016.1 |
 | [143](https://github.com/JetBrains/intellij-community/tree/143) | IntelliJ IDEA 15, AppCode 3.3, CLion 1.2, DataGrip 1.0, PhpStorm 10, PyCharm 5, RubyMine 8, WebStorm 11                                |
 | [141](https://github.com/JetBrains/intellij-community/tree/141) | IntelliJ IDEA 14.1, Android Studio 1.3, PyCharm 4.1, WebStorm 10                                                                       |

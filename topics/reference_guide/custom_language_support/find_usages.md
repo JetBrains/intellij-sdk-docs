@@ -1,6 +1,6 @@
 [//]: # (title: Find Usages)
 
-<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 The _Find Usages_ action is a multi-step process, and each step of the process requires involvement from the custom language plugin.
 
@@ -28,6 +28,7 @@ The steps of the _Find Usages_ action are the following:
   If the element was indexed as a comment or literal and the search in comments or literals is enabled, it checks if the word is equal to the searched element's name.
 * After the usages are collected, results are shown in the usages pane.
   The text shown for each found element is taken from the [`FindUsagesProvider.getNodeText()`](upsource:///platform/indexing-api/src/com/intellij/lang/findUsages/FindUsagesProvider.java) method.
+  To group results by type, implement [`UsageTypeProvider`](upsource:///platform/usageView/src/com/intellij/usages/impl/rules/UsageTypeProvider.java) and register in extension point `com.intellij.usageTypeProvider` to provide custom or predefined [`UsageType`](upsource:///platform/usageView/src/com/intellij/usages/impl/rules/UsageType.java).
 
 To have the title of the found element be correctly displayed in the title of the Find Usages tool window, you need to provide an implementation of the [`ElementDescriptionProvider`](upsource:///platform/core-api/src/com/intellij/psi/ElementDescriptionProvider.java) interface.
 The [`ElementDescriptionLocation`](upsource:///platform/core-api/src/com/intellij/psi/ElementDescriptionLocation.java) passed to the provider in this case will be an instance of [`UsageViewLongNameLocation`](upsource:///platform/lang-impl/src/com/intellij/usageView/UsageViewLongNameLocation.java).

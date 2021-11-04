@@ -121,6 +121,87 @@ Running tests fails with `jarFiles is not set for [...]` or `Created extension c
 `git4idea.ui.branch.GitBranchActionsUtilKt.createNewBranch(Project, List, String, GitNewBranchOptions)` method removed
 : Method was dropped to avoid supporting outdated behavior
 
+### IntelliJ Ultimate 2021.3
+
+`com.intellij.javaee.serverInstances` package moved to `com.intellij.javaee.appServers.serverInstances`: new 'dynamic plugin' model/optional dependencies/modules
+
+`com.intellij.javaee.appServerIntegrations` package moved to `com.intellij.javaee.appServers.appServerIntegrations`: new 'dynamic plugin' model/optional dependencies/modules
+
+`com.intellij.javaee.deployment` package moved to `com.intellij.javaee.appServers.deployment`: new 'dynamic plugin' model/optional dependencies/modules
+
+`com.intellij.javaee.run` package moved to `com.intellij.javaee.appServers.run`: new 'dynamic plugin' model/optional dependencies/modules
+
+`com.intellij.javaee.supportProvider` package moved to `com.intellij.javaee.appServers.supportProvider`: new 'dynamic plugin' model/optional dependencies/modules
+
+`com.intellij.jsp.el.impl.ELResolveUtil.VariableInfoData` class removed: Use `com.intellij.jsp.el.impl.JspELResolveUtil.VariableInfoData` instead.
+
+`com.intellij.javaee.deployment.DeploymentModel` class removed: Use `com.intellij.javaee.appServers.deployment.DeploymentModel` instead.
+
+`com.intellij.javaee.deployment.DeploymentSource` class removed: Use `com.intellij.javaee.appServers.deployment.DeploymentSource` instead.
+
+`com.intellij.javaee.deployment.DeploymentProvider` class removed: Use `com.intellij.javaee.appServers.deployment.DeploymentProvider` instead.
+
+`com.intellij.javaee.openapi.ex.AppServerIntegrationsManager` class removed: Use `com.intellij.javaee.appServers.openapi.ex.AppServerIntegrationsManager` instead.
+
+`com.intellij.javaee.facet.JavaeeFrameworkSupportInfoCollector` class removed: Use `com.intellij.javaee.appServers.facet.JavaeeFrameworkSupportInfoCollector` instead.
+
+`com.intellij.jsp.el.impl.ELResolveUtil` class removed: Use `com.intellij.jsp.el.impl.JspELResolveUtil`(`com.intellij.jsp` plugin)  or `com.intellij.javaee.el.util.ELResolveUtil` (`com.intellij.javaee.el` plugin) instead.
+
+`com.intellij.jsp.el.impl.ELElementProcessor` class removed from `com.intellij.jsp` plugin: Use `com.intellij.javaee.el.ELElementProcessor` from `com.intellij.javaee.el` plugin instead.
+
+`com.intellij.psi.jsp.el.ELElementTypes` class removed from `com.intellij.jsp` plugin: Use `com.intellij.javaee.el.psi.ELElementTypes` from `com.intellij.javaee.el` plugin instead.
+
+`com.intellij.psi.jsp.el.ELLiteralExpression` class removed from `com.intellij.jsp` plugin
+: Use `com.intellij.javaee.el.psi.ELLiteralExpression` instead. `ELLiteralExpression`class was moved from 'com.intellij.jsp' to 'com.intellij.javaee.el' plugin
+
+`com.intellij.psi.jsp.el.ELElementType` class removed: Use `com.intellij.javaee.el.psi.ELElementType` from `com.intellij.javaee.el` plugin instead.
+
+`com.intellij.psi.jsp.el.ELExpressionHolder` class removed  from `com.intellij.jsp` plugin: Use `com.intellij.javaee.el.psi.ELExpressionHolder` from `com.intellij.javaee.el` plugin instead.
+
+`com.intellij.jsp.el.impl.ElVariablesProvider` class removed from `com.intellij.jsp` plugin: Use `com.intellij.javaee.el.providers.ElVariablesProvider` (`com.intellij.javaee.el` plugin) instead.
+
+`com.intellij.psi.jsp.el.ELVariable` class removed from `com.intellij.jsp`: Use `com.intellij.javaee.el.psi.ELVariable`(`com.intellij.javaee.el` plugin) instead.
+
+`com.intellij.psi.jsp.el.ElLiteralCustomReferenceProvider` class removed from `com.intellij.jsp` plugin: Use `com.intellij.javaee.el.psi.ElLiteralCustomReferenceProvider` (`com.intellij.javaee.el` plugin) instead.
+
+`com.intellij.psi.jsp.JspImplicitVariable` class removed: Use `com.intellij.javaee.el.util.ELImplicitVariable` (`com.intellij.javaee.el` plugin) instead.
+
+`com.intellij.j2ee.webSphere.configuration.WebSphereVersionUtil.createVersion(ApplicationServer)` class of method parameter `ApplicationServer` moved
+: `com.intellij.javaee.appServerIntegrations.ApplicationServer`  moved to `com.intellij.javaee.appServers.appServerIntegrations.ApplicationServer`
+
+`com.intellij.javaee.appServers.run.configuration.CommonStrategy.setApplicationServer(ApplicationServer)` class of method parameter `ApplicationServer` moved
+: `com.intellij.javaee.appServerIntegrations.ApplicationServer`  moved to `com.intellij.javaee.appServers.appServerIntegrations.ApplicationServer`
+
+`com.intellij.javaee.appServers.run.configuration.ServerModel.createOutputProcessor(ProcessHandler,J2EEServerInstance)` class of method parameter `J2EEServerInstance` moved
+: `com.intellij.javaee.serverInstances.J2EEServerInstance`  moved to `com.intellij.javaee.appServers.serverInstances.J2EEServerInstance`
+
+`com.intellij.javaee.appServers.run.configuration.ServerModel.setCommonModel(CommonModel)` class of method parameter `CommonModel` moved
+: `com.intellij.javaee.run.configuration.CommonModel`  moved to `com.intellij.javaee.appServers.run.configuration.CommonModel`
+
+`com.intellij.javaee.appServers.run.configuration.J2EEConfigurationFactory.addAppServerConfiguration(Project, ConfigurationFactory, ApplicationServer)
+` class of method parameter `ApplicationServer` moved
+: `com.intellij.javaee.appServerIntegrations.ApplicationServer`  moved to `com.intellij.javaee.appServers.appServerIntegrations.ApplicationServer`
+
+`com.intellij.javaee.appServers.integration.impl.ApplicationServerImpl.setIntegration(AppServerIntegration)` class of method parameter `AppServerIntegration` moved
+: `com.intellij.javaee.appServerIntegrations.AppServerIntegration`  moved to `com.intellij.javaee.appServers.appServerIntegrations.AppServerIntegration`
+
+`com.intellij.javaee.appServers.integration.impl.ApplicationServerImpl(Library, ApplicationServerPersistentData)` class of constructor parameter `ApplicationServerPersistentData` moved: `com.intellij.javaee.appServerIntegrations.ApplicationServerPersistentData`  moved to `com.intellij.javaee.appServers.appServerIntegrations.ApplicationServerPersistentData`
+
+`com.intellij.javaee.appServers.run.configuration.J2EEConfigurationFactory.createJ2EERunConfiguration(ConfigurationFactory, Project, ServerModel, AppServerIntegration, boolean, ExecutableObjectStartupPolicy)` classes of method parameters moved:  to `com.intellij.javaee.appServers.appServerIntegrations.AppServerIntegration` and `com.intellij.javaee.appServers.run.localRun.ExecutableObjectStartupPolicy`
+
+`com.intellij.javaee.oss.glassfish.server.GlassfishDeploymentModel(CommonModel, DeploymentSource)` classes of constructor parameters `CommonModel` and `DeploymentSource`  moved:  use `com.intellij.javaee.appServers.run.configuration.CommonModel`  and `com.intellij.javaee.appServers.deployment.DeploymentSource`
+
+`com.intellij.javaee.appServers.run.configuration.CommonStrategy(String, AppServerIntegration, Project, ConfigurationFactory, ServerModel, boolean, ExecutableObjectStartupPolicy)` classes of constructor parameters moved :  use `com.intellij.javaee.appServers.appServerIntegrations.AppServerIntegration` and `com.intellij.javaee.appServers.run.localRun.ExecutableObjectStartupPolicy`
+
+`org.jetbrains.idea.tomcat.server.TomcatIntegration.getApplicationServerHelper()` return type `ApplicationServerHelper` changed: `com.intellij.javaee.appServerIntegrations.ApplicationServerHelper`  moved to `com.intellij.javaee.appServers.appServerIntegrations.ApplicationServerHelper`
+
+`com.intellij.javaee.appServers.run.configuration.ServerModel.createServerInstance()` return type `J2EEServerInstance` changed: `com.intellij.javaee.serverInstances.J2EEServerInstance`  moved to `com.intellij.javaee.appServers.serverInstances.J2EEServerInstance`
+
+`com.intellij.javaee.appServers.run.configuration.ServerModel.getDeploymentProvider()` return type `DeploymentProvider` changed: `com.intellij.javaee.deployment.DeploymentProvider`  moved to `com.intellij.javaee.appServers.deployment.DeploymentProvider`
+
+### New Plugin Dependencies:
+Expression Language(EL) extracted from `com.intellij.jsp`("Java Server Pages (JSP)") plugin to new `com.intellij.javaee.el`("Java EE: Expression Language (EL)") plugin. `com.intellij.jsp` has a mandatory dependency to  `com.intellij.javaee.el`. 10+ ultimate plugins(spring,javaee, frameworks) have optional dependencies to `com.intellij.javaee.el` plugin( mandatory dependency to `com.intellij.jsp` was removed). 
+
 ## 2021.2
 
 ### IntelliJ Platform 2021.2

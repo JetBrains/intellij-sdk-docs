@@ -9,12 +9,12 @@ The code inspections for custom languages use the same API as all other code ins
 The functionality of [`LocalInspectionTool`](upsource:///platform/analysis-api/src/com/intellij/codeInspection/LocalInspectionTool.java) partially duplicates that of [Annotator](syntax_highlighting_and_error_highlighting.md#annotator).
 
 The main differences are:
-- supports batch analysis of code (through the **Analyze \| Inspect Code...** action)
+- supports batch analysis of code (through the <menupath>Code | Inspect Code...</menupath> action)
 - the possibility to turn off the inspection (globally or by suppressing them on various levels)
 - ability to configure the inspection options.
 
 If none of that is required and the analysis only needs to run in the active editor, [Annotator](syntax_highlighting_and_error_highlighting.md#annotator) provides better performance (because it supports incremental analysis) and more flexibility for highlighting errors.
-                           
+
 See [Inspections](https://jetbrains.design/intellij/text/inspections/) topic in the IntelliJ Platform UI Guidelines on naming, writing description, and message texts for inspections.
 
 **Examples**:

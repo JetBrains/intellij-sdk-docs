@@ -5,8 +5,8 @@
 Starting with the **2020.1** release, installing, updating, and uninstalling plugins without restarting the IDE is available in the IntelliJ Platform.
 
 During plugin development, [Auto-Reload](ide_development_instance.md#enabling-auto-reload) also allows code changes to take effect immediately in the sandbox IDE instance.
-To test whether dynamic installation works correctly, verify installing [local build distribution](deployment.md#building-distribution) succeeds (see [Troubleshooting](#troubleshooting)). 
-                                
+To test whether dynamic installation works correctly, verify installing [local build distribution](deployment.md#building-distribution) succeeds (see [Troubleshooting](#troubleshooting)).
+
 Please note that any unloading problems in a production environment will simply ask the user to restart the IDE.
 
  > If a plugin _requires_ restart (e.g., due to using native libraries) specify `require-restart="true"` for `<idea-plugin>` root tag in <path>plugin.xml</path>.
@@ -16,7 +16,7 @@ Please note that any unloading problems in a production environment will simply 
 ## Restrictions
 
 For a plugin to support this, all restrictions listed below must be met.
-To verify a plugin locally, invoke <menupath>Analyze | Run Inspection by Name...</menupath> and run <control>Plugin DevKit | Plugin descriptor | Plugin.xml dynamic plugin verification inspection</control> inspection on all plugin descriptor files.
+To verify a plugin locally, invoke <menupath>Code | Analyze Code | Run Inspection by Name...</menupath> and run <control>Plugin DevKit | Plugin descriptor | Plugin.xml dynamic plugin verification inspection</control> inspection on all plugin descriptor files.
 
 For plugins hosted on the [JetBrains Plugins Repository](https://plugins.jetbrains.com) the built-in [Plugin Verifier](https://blog.jetbrains.com/platform/2018/07/plugins-repository-now-integrates-with-the-plugin-verification-tool/) will run these checks automatically.
 See [Plugin Verifier](api_changes_list.md#plugin-verifier) for more information on how to run it locally or on CI.
@@ -74,7 +74,7 @@ This can be used to e.g., cancel long-running activities or disallow unload due 
 
 When a plugin is being uninstalled or updated, the IDE waits synchronously for plugin unload and asks for restart if the unload failed.
 
-Use the latest available version of the target IDE for verification. See also this [list of known platform issues](https://youtrack.jetbrains.com/issues/IDEA?q=%23dynamic-plugins%20) related to handling dynamic plugins. 
+Use the latest available version of the target IDE for verification. See also this [list of known platform issues](https://youtrack.jetbrains.com/issues/IDEA?q=%23dynamic-plugins%20) related to handling dynamic plugins.
 
 ### Logging
 

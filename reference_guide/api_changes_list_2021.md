@@ -121,6 +121,94 @@ Running tests fails with `jarFiles is not set for [...]` or `Created extension c
 `git4idea.ui.branch.GitBranchActionsUtilKt.createNewBranch(Project, List, String, GitNewBranchOptions)` method removed
 : Method was dropped to avoid supporting outdated behavior
 
+### IntelliJ IDEA Ultimate
+
+#### Expression Language (EL) / JSP
+
+Expression Language (EL) was extracted from `com.intellij.jsp` (_"Java Server Pages (JSP)"_) plugin to new `com.intellij.javaee.el` (_Java EE: Expression Language (EL)_) plugin.
+`com.intellij.jsp` has mandatory dependency on `com.intellij.javaee.el`.
+10+ Ultimate plugins (Spring, Java EE, Frameworks) now have optional dependency on `com.intellij.javaee.el` plugin (mandatory dependency to `com.intellij.jsp` was removed).
+
+`com.intellij.jsp.el.impl.ELResolveUtil.VariableInfoData` class renamed to `com.intellij.jsp.el.impl.JspELResolveUtil.VariableInfoData`
+: To support dynamic plugins.
+
+`com.intellij.jsp.el.impl.ELResolveUtil` class renamed to `com.intellij.javaee.el.util.ELResolveUtil`
+: Use new class from `com.intellij.javaee.el` plugin instead or `com.intellij.jsp.el.impl.JspELResolveUtil` from `com.intellij.jsp` plugin.
+
+`com.intellij.jsp.el.impl.ELElementProcessor` class renamed to `com.intellij.javaee.el.ELElementProcessor`
+: Use new class from `com.intellij.javaee.el` plugin instead.
+
+`com.intellij.psi.jsp.el.ELElementTypes` class renamed to `com.intellij.javaee.el.psi.ELElementTypes`
+: Use new class from `com.intellij.javaee.el` plugin instead.
+
+`com.intellij.psi.jsp.el.ELLiteralExpression` class renamed to `com.intellij.javaee.el.psi.ELLiteralExpression`
+: Use new class from `com.intellij.javaee.el` plugin instead.
+
+`com.intellij.psi.jsp.el.ELElementType` class renamed to `com.intellij.javaee.el.psi.ELElementType`
+: Use new class from `com.intellij.javaee.el` plugin instead.
+
+`com.intellij.psi.jsp.el.ELExpressionHolder` class renamed to `com.intellij.javaee.el.psi.ELExpressionHolder`
+: Use new class from `com.intellij.javaee.el` plugin instead.
+
+`com.intellij.jsp.el.impl.ElVariablesProvider` class renamed to `com.intellij.javaee.el.providers.ElVariablesProvider`
+: Use new class from `com.intellij.javaee.el` plugin instead.
+
+`com.intellij.psi.jsp.el.ELVariable` class renamed to `com.intellij.javaee.el.psi.ELVariable`
+: Use new class from `com.intellij.javaee.el` plugin instead.
+
+`com.intellij.psi.jsp.el.ElLiteralCustomReferenceProvider` class renamed to `com.intellij.javaee.el.psi.ElLiteralCustomReferenceProvider`
+: Use new class from `com.intellij.javaee.el` plugin instead.
+
+`com.intellij.psi.jsp.JspImplicitVariable` class renamed to `com.intellij.javaee.el.util.ELImplicitVariable`
+: Use new class from `com.intellij.javaee.el` plugin instead.
+
+#### Application Servers
+
+Various package renames to support dynamic plugins
+
+| Old package name                            | New package name                                       |
+|---------------------------------------------|--------------------------------------------------------|
+| `com.intellij.javaee.serverInstances`       | `com.intellij.javaee.appServers.serverInstances`       |
+| `com.intellij.javaee.appServerIntegrations` | `com.intellij.javaee.appServers.appServerIntegrations` |
+| `com.intellij.javaee.deployment`            | `com.intellij.javaee.appServers.deployment`            |
+| `com.intellij.javaee.run`                   | `com.intellij.javaee.appServers.run`                   |
+
+`com.intellij.javaee.deployment.DeploymentModel` class renamed to `com.intellij.javaee.appServers.deployment.DeploymentModel`
+: To support dynamic plugins.
+
+`com.intellij.javaee.deployment.DeploymentSource` class renamed to `com.intellij.javaee.appServers.deployment.DeploymentSource`
+: To support dynamic plugins.
+
+`com.intellij.javaee.deployment.DeploymentProvider` class renamed to `com.intellij.javaee.appServers.deployment.DeploymentProvider`
+: To support dynamic plugins.
+
+`com.intellij.javaee.openapi.ex.AppServerIntegrationsManager` class renamed to `com.intellij.javaee.appServers.openapi.ex.AppServerIntegrationsManager`
+: To support dynamic plugins.
+
+`com.intellij.javaee.appServerIntegrations.AppServerIntegration` class renamed to `com.intellij.javaee.appServers.appServerIntegrations.AppServerIntegration`
+: To support dynamic plugins.
+
+`com.intellij.javaee.appServerIntegrations.ApplicationServerPersistentData` class renamed to `com.intellij.javaee.appServers.appServerIntegrations.ApplicationServerPersistentData`
+: To support dynamic plugins.
+
+`com.intellij.javaee.facet.JavaeeFrameworkSupportInfoCollector` class renamed to `com.intellij.javaee.appServers.facet.JavaeeFrameworkSupportInfoCollector`
+: To support dynamic plugins.
+
+`com.intellij.javaee.appServerIntegrations.ApplicationServer` class renamed to `com.intellij.javaee.appServers.appServerIntegrations.ApplicationServer`
+: To support dynamic plugins.
+
+`com.intellij.javaee.appServerIntegrations.ApplicationServerHelper` class renamed to `com.intellij.javaee.appServers.appServerIntegrations.ApplicationServerHelper`
+: To support dynamic plugins.
+
+`com.intellij.javaee.serverInstances.J2EEServerInstance` class renamed to `com.intellij.javaee.appServers.serverInstances.J2EEServerInstance`
+: To support dynamic plugins.
+
+`com.intellij.javaee.run.configuration.CommonModel` class renamed to `com.intellij.javaee.appServers.run.configuration.CommonModel`
+: To support dynamic plugins.
+
+`com.intellij.javaee.run.localRun.ExecutableObjectStartupPolicy` class renamed to `com.intellij.javaee.appServers.run.localRun.ExecutableObjectStartupPolicy`
+: To support dynamic plugins.
+
 ## 2021.2
 
 ### IntelliJ Platform 2021.2

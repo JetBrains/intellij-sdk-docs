@@ -173,6 +173,9 @@ Various package renames to support dynamic plugins
 | `com.intellij.javaee.deployment`            | `com.intellij.javaee.appServers.deployment`            |
 | `com.intellij.javaee.run`                   | `com.intellij.javaee.appServers.run`                   |
 
+`com.intellij.javaee.appServerIntegrations` package removed
+: See table above.
+
 `com.intellij.javaee.deployment.DeploymentModel` class renamed to `com.intellij.javaee.appServers.deployment.DeploymentModel`
 : To support dynamic plugins.
 

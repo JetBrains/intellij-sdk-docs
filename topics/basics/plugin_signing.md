@@ -199,8 +199,8 @@ After downloading the <path>zip-signer-cli.jar</path>, execute it as below:
 java -jar zip-signer-cli.jar sign\
   -in "unsigned.zip"\
   -out "signed.zip"\
-  -cert "/path/to/chain.crt"\
-  -key "/path/to/private.pem"\
+  -cert-file "/path/to/chain.crt"\
+  -key-file "/path/to/private.pem"\
   -key-pass "PRIVATE_KEY_PASSWORD"
 ```
 

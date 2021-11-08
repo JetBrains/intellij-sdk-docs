@@ -131,6 +131,15 @@ Running tests fails with `jarFiles is not set for [...]` or `Created extension c
 `icons.RestClientIcons` class renamed to `com.intellij.httpClient.RestClientIcons`
 : To support dynamic plugins.
 
+`com.intellij.javaee.model.xml.persistence` package renamed to `com.intellij.jpa.model.xml.persistence`
+: To support dynamic plugins.
+
+`com.intellij.jpa.JpaImplementationProvider.setConnectionProperties(Project, PersistenceUnit, RawConnectionConfig, Credentials)` method parameter type changed from `com.intellij.javaee.model.xml.persistence.PersistenceUnit` to `com.intellij.jpa.model.xml.persistence.PersistenceUnit`
+: To support dynamic plugins.
+
+`com.intellij.jpa.JpaImplementationProvider.setDefaultProperties(PersistenceUnit)` method parameter type changed from `com.intellij.javaee.model.xml.persistence.PersistenceUnit` to `com.intellij.jpa.model.xml.persistence.PersistenceUnit`
+: To support dynamic plugins.
+
 #### Expression Language (EL) / JSP
 
 Expression Language (EL) was extracted from `com.intellij.jsp` (_"Java Server Pages (JSP)"_) plugin to new `com.intellij.javaee.el` (_Java EE: Expression Language (EL)_) plugin.

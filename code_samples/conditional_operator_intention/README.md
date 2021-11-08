@@ -36,7 +36,7 @@ The converter in the `isAvailable` method, has defined the token check to match 
 ### Extension Points
 
 | Name                           | Implementation                                                    | Extension Point Class           |
-| ------------------------------ | ----------------------------------------------------------------- | ------------------------------- |
+|--------------------------------|-------------------------------------------------------------------|---------------------------------|
 | `com.intellij.intentionAction` | [ConditionalOperatorConverter][file:ConditionalOperatorConverter] | `PsiElementBaseIntentionAction` |
 
 *Reference: [Plugin Extension Points in IntelliJ SDK Docs][docs:ep]*

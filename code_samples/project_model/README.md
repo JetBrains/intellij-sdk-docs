@@ -14,7 +14,7 @@ Within the implemented actions, you will be able to:
 ### Actions
 
 | ID                                | Implementation                                                    | Base Action Class |
-| --------------------------------- | ----------------------------------------------------------------- | ----------------- |
+|-----------------------------------|-------------------------------------------------------------------|-------------------|
 | `ProjectModel.SourceRoots`        | [ShowSourceRootsActions][file:ShowSourceRootsActions]             | `AnAction`        |
 | `ProjectModel.ProjectSdk`         | [ProjectSdkAction][file:ProjectSdkAction]                         | `AnAction`        |
 | `ProjectModel.ProjectFileIndex`   | [ProjectFileIndexSampleAction][file:ProjectFileIndexSampleAction] | `AnAction`        |

@@ -12,7 +12,7 @@ PSI Demo project demonstrates working with the PSI Navigation by implementing `A
 ### Actions
 
 | ID                  | Implementation                                          | Base Action Class |
-| ------------------- | ------------------------------------------------------- | ----------------- |
+|---------------------|---------------------------------------------------------|-------------------|
 | `PsiNavigationDemo` | [PsiNavigationDemoAction][file:PsiNavigationDemoAction] | `AnAction`        |
 
 *Reference: [Action System in IntelliJ SDK Docs][docs:actions]*

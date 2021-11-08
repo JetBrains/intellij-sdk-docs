@@ -9,7 +9,7 @@ This sample implementation adds a new *SDK Demo Framework* support in the Java t
 ### Extension Points
 
 | Name                          | Implementation                      | Extension Point Class |
-| ----------------------------- | ----------------------------------- | --------------------- |
+|-------------------------------|-------------------------------------|-----------------------|
 | `com.intellij.framework.type` | [DemoFramework][file:DemoFramework] | `FrameworkTypeEx`     |
 
 *Reference: [Plugin Extension Points in IntelliJ SDK Docs][docs:ep]*

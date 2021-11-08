@@ -9,7 +9,7 @@ The new step contains a simple `JLabel` element as an example presentation of th
 ### Extension Points
 
 | Name                         | Implementation                                    | Extension Point Class |
-| ---------------------------- | ------------------------------------------------- | --------------------- |
+|------------------------------|---------------------------------------------------|-----------------------|
 | `com.intellij.moduleBuilder` | [DemoModuleWizardStep][file:DemoModuleWizardStep] | `ModuleBuilder`       |
 
 *Reference: [Plugin Extension Points in IntelliJ SDK Docs][docs:ep]*

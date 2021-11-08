@@ -9,7 +9,7 @@ In this example, a new *Demo* configuration is added together with `Configuratio
 ### Extension Points
 
 | Name                             | Implementation                                            | Extension Point Class |
-| -------------------------------- | --------------------------------------------------------- | --------------------- |
+|----------------------------------|-----------------------------------------------------------|-----------------------|
 | `com.intellij.configurationType` | [DemoRunConfigurationType][file:DemoRunConfigurationType] | `ConfigurationType`   |
 
 *Reference: [Plugin Extension Points in IntelliJ SDK Docs][docs:ep]*

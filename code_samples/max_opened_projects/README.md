@@ -11,7 +11,7 @@ After opening each one, a message dialog is presented to the user with the curre
 ### Extension Points
 
 | Name                              | Implementation                                        | Extension Point Class |
-| --------------------------------- | ----------------------------------------------------- | --------------------- |
+|-----------------------------------|-------------------------------------------------------|-----------------------|
 | `com.intellij.applicationService` | [ProjectCountingService][file:ProjectCountingService] | n/a                   |
 
 *Reference: [Plugin Extension Points in IntelliJ SDK Docs][docs:ep]*
@@ -19,7 +19,7 @@ After opening each one, a message dialog is presented to the user with the curre
 ### Application Listeners
 
 | Name     | Implementation                                            | Listener Class           |
-| -------- | --------------------------------------------------------- | ------------------------ |
+|----------|-----------------------------------------------------------|--------------------------|
 | listener | [ProjectOpenCloseListener][file:ProjectOpenCloseListener] | `ProjectManagerListener` |
 
 *Reference: [Plugin Listeners in IntelliJ SDK Docs][docs:listeners]*

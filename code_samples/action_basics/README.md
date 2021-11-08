@@ -18,7 +18,7 @@ Additional features of the plugin:
 ### Actions
 
 | ID                                                 | Implementation                                            | Base Action Class |
-| -------------------------------------------------- | --------------------------------------------------------- | ----------------- |
+|----------------------------------------------------|-----------------------------------------------------------|-------------------|
 | `org.intellij.sdk.action.GroupPopDialogAction`     | [PopupDialogAction][file:PopupDialogAction]               | `AnAction`        |
 | `org.intellij.sdk.action.PopupDialogAction`        | [PopupDialogAction][file:PopupDialogAction]               | `AnAction`        |
 | `org.intellij.sdk.action.CustomGroupedAction`      | [PopupDialogAction][file:PopupDialogAction]               | `AnAction`        |

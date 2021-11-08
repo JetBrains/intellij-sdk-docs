@@ -9,7 +9,7 @@ The implementation utilizes a simple action added to the *MainMenu* group displa
 ### Actions
 
 | ID                                           | Implementation                              | Base Action Class |
-| -------------------------------------------- | ------------------------------------------- | ----------------- |
+|----------------------------------------------|---------------------------------------------|-------------------|
 | `org.intellij.sdk.pycharm.PopupDialogAction` | [PopupDialogAction][file:PopupDialogAction] | `AnAction`        |
 
 *Reference: [Action System in IntelliJ SDK Docs][docs:actions]*

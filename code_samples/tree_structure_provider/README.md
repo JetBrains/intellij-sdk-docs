@@ -12,7 +12,7 @@ Otherwise, an element is not included in the results list, so only directories a
 ### Extension Points
 
 | Name                                 | Implementation                                                      | Extension Point Class   |
-| ------------------------------------ | ------------------------------------------------------------------- | ----------------------- |
+|--------------------------------------|---------------------------------------------------------------------|-------------------------|
 | `com.intellij.treeStructureProvider` | [TextOnlyTreeStructureProvider][file:TextOnlyTreeStructureProvider] | `TreeStructureProvider` |
 
 *Reference: [Plugin Extension Points in IntelliJ SDK Docs][docs:ep]*

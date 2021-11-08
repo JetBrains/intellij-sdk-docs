@@ -10,7 +10,7 @@ Action, added to the Main Menu, shows a message dialog when invoked.
 ### Actions
 
 | ID               | Implementation                  | Base Action Class |
-| ---------------- | ------------------------------- | ----------------- |
+|------------------|---------------------------------|-------------------|
 | `MyPlugin.Hello` | [HelloAction][file:HelloAction] | `AnAction`        |
 
 *Reference: [Action System in IntelliJ SDK Docs][docs:actions]*

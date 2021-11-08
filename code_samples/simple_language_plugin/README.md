@@ -7,25 +7,25 @@ Defines a new language, _Simple language_ with support for syntax highlighting, 
 
 ### Extension Points
 
-| Name                                          | Implementation                                                                          | Extension Point Class                |
-| --------------------------------------------- | --------------------------------------------------------------------------------------- | ------------------------------------ |
-| `com.intellij.fileType`                       | [SimpleFileType][file:SimpleFileType]                                                   | `LanguageFileType`                   |
-| `com.intellij.lang.parserDefinition`          | [SimpleParserDefinition][file:SimpleParserDefinition]                                   | `ParserDefinition`                   |
-| `com.intellij.lang.syntaxHighlighterFactory`  | [SimpleSyntaxHighlighterFactory][file:SimpleSyntaxHighlighterFactory]                   | `SyntaxHighlighterFactory`           |
-| `com.intellij.colorSettingsPage`              | [SimpleColorSettingsPage][file:SimpleColorSettingsPage]                                 | `ColorSettingsPage`                  |
-| `com.intellij.annotator`                      | [SimpleAnnotator][file:SimpleAnnotator]                                                 | `Annotator`                          |
-| `com.intellij.codeInsight.lineMarkerProvider` | [SimpleLineMarkerProvider][file:SimpleLineMarkerProvider]                               | `RelatedItemLineMarkerProvider`      |
-| `com.intellij.completion.contributor`         | [SimpleCompletionContributor][file:SimpleCompletionContributor]                         | `CompletionContributor`              |
-| `com.intellij.psi.referenceContributor`       | [SimpleReferenceContributor][file:SimpleReferenceContributor]                           | `PsiReferenceContributor`            |
-| `com.intellij.lang.refactoringSupport`        | [SimpleRefactoringSupportProvider][file:SimpleRefactoringSupportProvider]               | `RefactoringSupportProvider`         |
-| `com.intellij.lang.findUsagesProvider`        | [SimpleFindUsagesProvider][file:SimpleFindUsagesProvider]                               | `FindUsagesProvider`                 |
-| `com.intellij.lang.foldingBuilder`            | [SimpleFoldingBuilder][file:SimpleFoldingBuilder]                                       | `FoldingBuilderEx`                   |
-| `com.intellij.gotoSymbolContributor`          | [SimpleChooseByNameContributor][file:SimpleChooseByNameContributor]                     | `ChooseByNameContributor`            |
-| `com.intellij.lang.psiStructureViewFactory`   | [SimpleStructureViewFactory][file:SimpleStructureViewFactory]                           | `PsiStructureViewFactory`            |
-| `com.intellij.lang.formatter`                 | [SimpleFormattingModelBuilder][file:SimpleFormattingModelBuilder]                       | `FormattingModelBuilder`             |
-| `com.intellij.codeStyleSettingsProvider`      | [SimpleCodeStyleSettingsProvider][file:SimpleCodeStyleSettingsProvider]                 | `CodeStyleSettingsProvider`          |
-| `com.intellij.langCodeStyleSettingsProvider`  | [SimpleLanguageCodeStyleSettingsProvider][file:SimpleLanguageCodeStyleSettingsProvider] | `LanguageCodeStyleSettingsProvider`  |
-| `com.intellij.lang.commenter`                 | [SimpleCommenter][file:SimpleCommenter]                                                 | `Commenter`                          |
+| Name                                          | Implementation                                                                          | Extension Point Class               |
+|-----------------------------------------------|-----------------------------------------------------------------------------------------|-------------------------------------|
+| `com.intellij.fileType`                       | [SimpleFileType][file:SimpleFileType]                                                   | `LanguageFileType`                  |
+| `com.intellij.lang.parserDefinition`          | [SimpleParserDefinition][file:SimpleParserDefinition]                                   | `ParserDefinition`                  |
+| `com.intellij.lang.syntaxHighlighterFactory`  | [SimpleSyntaxHighlighterFactory][file:SimpleSyntaxHighlighterFactory]                   | `SyntaxHighlighterFactory`          |
+| `com.intellij.colorSettingsPage`              | [SimpleColorSettingsPage][file:SimpleColorSettingsPage]                                 | `ColorSettingsPage`                 |
+| `com.intellij.annotator`                      | [SimpleAnnotator][file:SimpleAnnotator]                                                 | `Annotator`                         |
+| `com.intellij.codeInsight.lineMarkerProvider` | [SimpleLineMarkerProvider][file:SimpleLineMarkerProvider]                               | `RelatedItemLineMarkerProvider`     |
+| `com.intellij.completion.contributor`         | [SimpleCompletionContributor][file:SimpleCompletionContributor]                         | `CompletionContributor`             |
+| `com.intellij.psi.referenceContributor`       | [SimpleReferenceContributor][file:SimpleReferenceContributor]                           | `PsiReferenceContributor`           |
+| `com.intellij.lang.refactoringSupport`        | [SimpleRefactoringSupportProvider][file:SimpleRefactoringSupportProvider]               | `RefactoringSupportProvider`        |
+| `com.intellij.lang.findUsagesProvider`        | [SimpleFindUsagesProvider][file:SimpleFindUsagesProvider]                               | `FindUsagesProvider`                |
+| `com.intellij.lang.foldingBuilder`            | [SimpleFoldingBuilder][file:SimpleFoldingBuilder]                                       | `FoldingBuilderEx`                  |
+| `com.intellij.gotoSymbolContributor`          | [SimpleChooseByNameContributor][file:SimpleChooseByNameContributor]                     | `ChooseByNameContributor`           |
+| `com.intellij.lang.psiStructureViewFactory`   | [SimpleStructureViewFactory][file:SimpleStructureViewFactory]                           | `PsiStructureViewFactory`           |
+| `com.intellij.lang.formatter`                 | [SimpleFormattingModelBuilder][file:SimpleFormattingModelBuilder]                       | `FormattingModelBuilder`            |
+| `com.intellij.codeStyleSettingsProvider`      | [SimpleCodeStyleSettingsProvider][file:SimpleCodeStyleSettingsProvider]                 | `CodeStyleSettingsProvider`         |
+| `com.intellij.langCodeStyleSettingsProvider`  | [SimpleLanguageCodeStyleSettingsProvider][file:SimpleLanguageCodeStyleSettingsProvider] | `LanguageCodeStyleSettingsProvider` |
+| `com.intellij.lang.commenter`                 | [SimpleCommenter][file:SimpleCommenter]                                                 | `Commenter`                         |
 
 *Reference: [Plugin Extension Points in IntelliJ SDK Docs][docs:ep]*
 

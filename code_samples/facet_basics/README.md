@@ -12,7 +12,7 @@ It allows us to specify any configuration specified by the `FacetConfiguration` 
 ### Extension Points
 
 | Name                     | Implementation                      | Extension Point Class |
-| ------------------------ | ----------------------------------- | --------------------- |
+|--------------------------|-------------------------------------|-----------------------|
 | `com.intellij.facetType` | [DemoFacetType][file:DemoFacetType] | `FacetType`           |
 
 *Reference: [Plugin Extension Points in IntelliJ SDK Docs][docs:ep]*

@@ -9,7 +9,7 @@ Module with a custom name, description, and icon set provides a `ModuleBuilder` 
 ### Extension Points
 
 | Name                      | Implementation                        | Extension Point Class |
-| ------------------------- | ------------------------------------- | --------------------- |
+|---------------------------|---------------------------------------|-----------------------|
 | `com.intellij.moduleType` | [DemoModuleType][file:DemoModuleType] | `ModuleType`          |
 
 *Reference: [Plugin Extension Points in IntelliJ SDK Docs][docs:ep]*

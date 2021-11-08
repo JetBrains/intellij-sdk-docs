@@ -12,7 +12,7 @@ Component is provided by the `MyToolWindow` class through the `getContent()` met
 ### Extension Points
 
 | Name                      | Implementation                                  | Extension Point Class |
-| ------------------------- | ----------------------------------------------- | --------------------- |
+|---------------------------|-------------------------------------------------|-----------------------|
 | `com.intellij.toolWindow` | [MyToolWindowFactory][file:MyToolWindowFactory] | `ToolWindowFactory`   |
 
 *Reference: [Plugin Extension Points in IntelliJ SDK Docs][docs:ep]*

@@ -11,7 +11,7 @@ If such a check finds a comparison using the `==` or !`=` operators instead of t
 ### Extension Points
 
 | Name                           | Implementation                                                      | Extension Point Class                 |
-| ------------------------------ | ------------------------------------------------------------------- | ------------------------------------- |
+|--------------------------------|---------------------------------------------------------------------|---------------------------------------|
 | `com.intellij.localInspection` | [ComparingReferencesInspection][file:ComparingReferencesInspection] | `AbstractBaseJavaLocalInspectionTool` |
 
 *Reference: [Plugin Extension Points in IntelliJ SDK Docs][docs:ep]*

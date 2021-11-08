@@ -8,7 +8,7 @@ The Sample implements `com.intellij.sample` Extension Point, which should be exp
 ### Extension Points
 
 | Name                  | Implementation                                    | Extension Point Class |
-| --------------------- | ------------------------------------------------- | --------------------- |
+|-----------------------|---------------------------------------------------|-----------------------|
 | `com.intellij.sample` | [SampleExtensionPoint][file:SampleExtensionPoint] | `ExtensionPoint`      |
 
 *Reference: [Plugin Extension Points in IntelliJ SDK Docs][docs:ep]*
@@ -16,7 +16,7 @@ The Sample implements `com.intellij.sample` Extension Point, which should be exp
 ### Actions
 
 | ID                                     | Implementation                    | Base Action Class |
-| -------------------------------------- | --------------------------------- | ----------------- |
+|----------------------------------------|-----------------------------------|-------------------|
 | `org.intellij.sdk.action.SampleAction` | [SampleAction][file:SampleAction] | `AnAction`        |
 
 *Reference: [Action System in IntelliJ SDK Docs][docs:actions]*
@@ -24,7 +24,7 @@ The Sample implements `com.intellij.sample` Extension Point, which should be exp
 ### Listeners
 
 | Name     | Implementation                        | Listener Class |
-| -------- | ------------------------------------- | -------------- |
+|----------|---------------------------------------|----------------|
 | listener | [SampleListener][file:SampleListener] | `Listener`     |
 
 *Reference: [Plugin Listeners in IntelliJ SDK Docs][docs:listeners]*

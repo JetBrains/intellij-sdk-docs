@@ -13,7 +13,7 @@ In addition, three actions are available in the Editor context menu:
 ### Extension Points
 
 | Name                        | Implementation                        | Extension Point Class  |
-| --------------------------- | ------------------------------------- | ---------------------- |
+|-----------------------------|---------------------------------------|------------------------|
 | `com.intellij.typedHandler` | [MyTypedHandler][file:MyTypedHandler] | `TypedHandlerDelegate` |
 
 *Reference: [Plugin Extension Points in IntelliJ SDK Docs][docs:ep]*
@@ -21,7 +21,7 @@ In addition, three actions are available in the Editor context menu:
 ### Actions
 
 | ID                                         | Implementation                                              | Base Action Class |
-| ------------------------------------------ | ----------------------------------------------------------- | ----------------- |
+|--------------------------------------------|-------------------------------------------------------------|-------------------|
 | `EditorBasics.EditorIllustrationAction`    | [EditorIllustrationAction][file:EditorIllustrationAction]   | `AnAction`        |
 | `EditorBasics.EditorHandlerIllustration`   | [EditorHandlerIllustration][file:EditorHandlerIllustration] | `AnAction`        |
 | `EditorBasics.LogicalPositionIllustration` | [EditorAreaIllustration][file:EditorAreaIllustration]       | `AnAction`        |

@@ -128,6 +128,8 @@ Running tests fails with `jarFiles is not set for [...]` or `Created extension c
 `com.intellij.util.JavaeeIcons` class renamed to `com.intellij.javaee.JavaeeIcons`
 : To support dynamic plugins.
 
+`icons.RestClientIcons` class renamed to `com.intellij.httpClient.RestClientIcons`
+: To support dynamic plugins.
 
 #### Expression Language (EL) / JSP
 

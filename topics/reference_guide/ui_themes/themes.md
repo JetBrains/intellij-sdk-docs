@@ -16,12 +16,12 @@ Theme plugins should be stand-alone plugins, and not combined with other plugin 
 This approach is the best user experience because it avoids an IDE restart when installing a UI Theme plugin.
 
 UI Themes have several components:
-* A required Theme description (JSON) file in the plugin project's `resources` folder.
-* A required `themeProvider` declaration in the plugin's `plugin.xml` file, located in the plugin project's `META-INF` folder.
+* A required Theme description (JSON) file in the plugin project's <path>resources</path> folder.
+* A required `themeProvider` declaration in the plugin's <path>plugin.xml</path> file, located in the plugin project's <path>META-INF</path> folder.
 * An optional Editor Scheme description (XML) file derived from an exported IDE editor scheme.
-  This file is located in the plugin project's `resources` folder.
-* An optional background image file, located in the plugin project's `resources` folder.
-* Optional icon image files, located in the plugin project's `resources` folder.
+  This file is located in the plugin project's <path>resources</path> folder.
+* An optional background image file, located in the plugin project's <path>resources</path> folder.
+* Optional icon image files, located in the plugin project's <path>resources</path> folder.
 
 ![UI Theme Components](theme_components.png)
 
@@ -44,8 +44,8 @@ A UI Theme is added to an IntelliJ Platform plugin using the DevKit UI Theme Wiz
 The DevKit Wizard is part of the DevKit plugin, which is bundled with IntelliJ IDEA.
 This Wizard can be used for both DevKit-based and Gradle-based plugins.
 
-While a plugin project is open in IntelliJ IDEA, select the `resources` folder in the _Project_ tool window.
-From the main menu, select the _**New | Plugin DevKit | Theme**_ action.
+While a plugin project is open in IntelliJ IDEA, select the <path>resources</path> folder in the _Project_ tool window.
+From the main menu, select the <menupath>New | Plugin DevKit | Theme</menupath> action.
 
 ![DevKit Wizard Action](devkit_wiz_action.png)
 
@@ -57,12 +57,12 @@ The Wizard then prompts for the name of the new Theme, and the basis for the The
 
 The best practice is to name the new Theme the same as the name of the plugin.
 The checkbox indicates the basis for the Theme.
-Checking _Dark theme_ means basing the custom Theme on _Darcula_.
+Checking <control>Dark theme</control> means basing the custom Theme on _Darcula_.
 Leaving the box unchecked means basing the custom Theme on the default IntelliJ IDEA _Light_ Theme.
 For the SDK code sample `theme_basics` the box is _unchecked_.
 
-Clicking the _OK_ button creates a default Theme description file named `[themeName].theme.json` in the plugin project's `resources` folder.
-In this example, the file is named `theme_basics.theme.json`.
+Clicking the <control>OK</control> button creates a default Theme description file named <path>$THEME_NAME$.theme.json</path> in the plugin project's <path>resources</path> folder.
+In this example, the file is named <path>theme_basics.theme.json</path>.
 The content of the default file is a short set of key–value pairs:
 
 ```json
@@ -76,13 +76,13 @@ The content of the default file is a short set of key–value pairs:
 }
 ```
 
-The `value` of the `name` key matches the first portion of the Theme description `[themeName].theme.json` file name.
-The `value` of `name` is displayed in the [Theme](https://www.jetbrains.com/help/idea/settings-appearance.html)  _Preferences_ dropdown when the UI Theme's plugin is installed in the IDE.
+The value of the `name` key matches the first portion of the Theme description <path>$THEME_NAME$.theme.json</path> file name.
+The value of `name` is displayed in the [Theme](https://www.jetbrains.com/help/idea/settings-appearance.html)  _Preferences_ dropdown when the UI Theme's plugin is installed in the IDE.
 The value of the `author` key is by default empty.
 The `editorScheme` section will be addressed in [Adding a Custom Editor Scheme](themes_extras.md#adding-a-custom-editor-scheme)
 The `ui` section will be addressed in [Customizing UI Control Colors](themes_customize.md#customizing-ui-controls).
 
-The Wizard also creates a `themeProvider` declaration in the `<extensions>` section of the plugin's `plugin.xml` file.
+The Wizard also creates a `themeProvider` declaration in the `<extensions>` section of the plugin's <path>plugin.xml</path> file.
 This declaration binds the Theme description file to a theme provider extension using a generated unique `id`.
 
 ```xml
@@ -97,11 +97,11 @@ This declaration binds the Theme description file to a theme provider extension 
 
 At this point, the UI Theme `theme_basics` is a valid UI Theme.
 Its plugin can be built and tested in IntelliJ Platform-based IDEs, giving the user the opportunity to select _theme_basics_ in the [Theme](https://www.jetbrains.com/help/idea/settings-appearance.html) _Preferences_ dropdown.
-The custom Theme looks exactly like the IntelliJ IDEA default `Light` Theme, but it is a valid custom Theme.
+The custom Theme looks exactly like the IDE default `Light` Theme, but it is a valid custom Theme.
 
 ### Completing the Default UI Theme Description File
 The default UI Theme definition can be directly edited to add or change some of the values for the default keys, if desired:
-The following values can be changed directly in the Theme (`*.theme.json`) description file:
+The following values can be changed directly in the Theme (<path>*.theme.json</path>) description file:
 * The value of the `dark` key can be changed to `true`, which would switch the basis of the Theme to _Darcula_ instead of _Light_.
 * The value of the `author` key, which defaults to an empty string, can be set to a `String` literal.
 In the case of the `theme_basics` code sample, it is set to "IntelliJ Platform SDK".

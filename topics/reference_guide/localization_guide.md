@@ -1,17 +1,17 @@
 [//]: # (title: Localization Guide)
 
-<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 The purpose of the document is to describe steps necessary to create localized versions of IDEA.
 
 ## Application Bundle Layout
 
 In regards to localization purpose all the resources (in English) that need to be translated are located in jar files called
-***resources_en.jar***.
+<path>resources_en.jar</path>.
 There's one such jar file for IDEA core functionality located at
-***%INST_HOME%\lib\resources_en.jar***
+<path>INSTALL_HOME\lib\resources_en.jar</path>
 and one jar for each of bundled plugins at
-***%INST_HOME%\plugins\$Plugin$\lib\resources_en.jar***.
+<path>INSTALL_HOME\plugins\$Plugin$\lib\resources_en.jar</path>.
 
 Translated resources should be jarred and placed exactly in the same folder original jar comes from.
 So localization pack should have exactly the same number of jar files and they have to be laid out in exactly the same way original jars are laid out.
@@ -27,8 +27,8 @@ See [native2ascii](https://docs.oracle.com/javase/7/docs/technotes/tools/solaris
 
 Property values mostly follow MessageFormat rules.
 
- >  Due to historic reasons main menu, toolbar, popup menus and other actions have their mnemonic char prefixed with `\_` (underscore) char while all other mnemonics like those for checkboxes, buttons etc. use `&` (ampersand) sign for the same purpose.  
-> Moreover one can encounter `&&` (double ampersand) in some places, which denote alternative mnemonic to be used under macOS (mnemonics mapped to `U`, `I`, `O`, `N` chars won't work there).  
+ > Due to historic reasons main menu, toolbar, popup menus and other actions have their mnemonic char prefixed with `\_` (underscore) char while all other mnemonics like those for checkboxes, buttons etc. use `&` (ampersand) sign for the same purpose.
+> Moreover one can encounter `&&` (double ampersand) in some places, which denote alternative mnemonic to be used under macOS (mnemonics mapped to `U`, `I`, `O`, `N` chars won't work there).
 > Generally, use the same mnemonic denotation used in the original property value and everything will be OK.
  >
  {type="note"}

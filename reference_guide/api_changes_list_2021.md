@@ -108,6 +108,18 @@ Running tests fails with `jarFiles is not set for [...]` or `Created extension c
 `com.intellij.openapi.fileEditor.impl.EditorTabTitleProvider.getEditorTabTitle(Project, VirtualFile, EditorWindow)` method parameter `EditorWindow` removed
 : This parameter never needed, but lead to code coupling
 
+Constructor `com.intellij.codeInsight.hints.settings.InlayProviderSettingsModel` changed
+: Added `Language` parameter.
+
+`com.intellij.codeInsight.hints.settings.InlayProviderSettingsModel.getDescription()` abstract method added
+: Provides short description.
+
+`com.intellij.codeInsight.hints.settings.InlayProviderSettingsModel.getCaseDescription(ImmediateConfigurable.Case)` abstract method added
+: Provides description text for given case.
+
+`com.intellij.codeInsight.hints.settings.InlayProviderSettingsModel.getCasePreview(ImmediateConfigurable.Case)` abstract method added
+: Provides preview text for given case.
+
 ### VCS Log 2021.3
 
 `com.intellij.vcs.log.ui.frame.CommitPanel` class removed

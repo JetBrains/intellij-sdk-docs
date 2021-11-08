@@ -172,7 +172,7 @@ Expression Language (EL) was extracted from `com.intellij.jsp` (_"Java Server Pa
 
 #### Persistence
 
-`com.intellij.javaee.model.xml.persistence` package renamed to `com.intellij.jpa.model.xml.persistence`
+Package `com.intellij.javaee.model.xml.persistence` renamed to `com.intellij.jpa.model.xml.persistence`
 : To support dynamic plugins.
 
 #### Application Servers

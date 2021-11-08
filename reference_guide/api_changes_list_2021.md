@@ -123,6 +123,12 @@ Running tests fails with `jarFiles is not set for [...]` or `Created extension c
 
 ### IntelliJ IDEA Ultimate
 
+#### Miscellaneous
+
+`com.intellij.util.JavaeeIcons` class renamed to `com.intellij.javaee.JavaeeIcons`
+: To support dynamic plugins.
+
+
 #### Expression Language (EL) / JSP
 
 Expression Language (EL) was extracted from `com.intellij.jsp` (_"Java Server Pages (JSP)"_) plugin to new `com.intellij.javaee.el` (_Java EE: Expression Language (EL)_) plugin.
@@ -172,9 +178,6 @@ Various package renames to support dynamic plugins
 | `com.intellij.javaee.appServerIntegrations` | `com.intellij.javaee.appServers.appServerIntegrations` |
 | `com.intellij.javaee.deployment`            | `com.intellij.javaee.appServers.deployment`            |
 | `com.intellij.javaee.run`                   | `com.intellij.javaee.appServers.run`                   |
-
-`com.intellij.javaee.appServerIntegrations` package removed
-: See table above.
 
 `com.intellij.javaee.deployment.DeploymentModel` class renamed to `com.intellij.javaee.appServers.deployment.DeploymentModel`
 : To support dynamic plugins.

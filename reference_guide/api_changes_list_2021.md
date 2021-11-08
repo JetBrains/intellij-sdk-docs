@@ -133,7 +133,7 @@ Constructor `com.intellij.codeInsight.hints.settings.InlayProviderSettingsModel`
 `git4idea.ui.branch.GitBranchActionsUtilKt.createNewBranch(Project, List, String, GitNewBranchOptions)` method removed
 : Method was dropped to avoid supporting outdated behavior
 
-### IntelliJ IDEA Ultimate
+### IntelliJ IDEA Ultimate 2021.3
 
 #### Miscellaneous
 

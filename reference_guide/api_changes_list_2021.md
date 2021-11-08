@@ -170,6 +170,11 @@ Expression Language (EL) was extracted from `com.intellij.jsp` (_"Java Server Pa
 `com.intellij.psi.jsp.JspImplicitVariable` class renamed to `com.intellij.javaee.el.util.ELImplicitVariable`
 : Use new class from `com.intellij.javaee.el` plugin instead.
 
+#### Persistence
+
+`com.intellij.javaee.model.xml.persistence` package renamed to `com.intellij.jpa.model.xml.persistence`
+: To support dynamic plugins.
+
 #### Application Servers
 
 Various package renames to support dynamic plugins

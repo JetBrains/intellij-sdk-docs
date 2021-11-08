@@ -14,6 +14,9 @@ External code formatter tools API
 Simplified API for `CustomComponentAction`
 : Use new method `updateCustomComponent(Component, Presentation)` to synchronize given Presentation and component state.
 
+Highlighting API exposes priority range
+: Use `getPriorityRange()` in `AnnotationSession`/`LocalInspectionToolSession` to optimize highlighting for coarse-grained files (e.g., `PsiPlainTextFile` files with single node).
+
 ## 2021.2
 
 ### IntelliJ Platform 2021.2

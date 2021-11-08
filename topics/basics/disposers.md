@@ -21,7 +21,7 @@ The most important type of such objects is [services](plugin_services.md).
 Application-level services are automatically disposed by the platform when the IDE is closed or the plugin providing the service is unloaded.
 Project-level services are disposed when the project is closed, or the plugin is unloaded.
 
-Note that extensions registered in `plugin.xml` are *not* automatically disposed.
+Note that extensions registered in <path>plugin.xml</path> are *not* automatically disposed.
 If an extension requires executing some code to dispose it, you need to define a service and to put the code in its `dispose()` method or use it as a parent disposable.
 
 ## The Disposer Singleton

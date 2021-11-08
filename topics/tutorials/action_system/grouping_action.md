@@ -13,7 +13,7 @@ In this first example, the action group will be available as a top-level menu it
 The group is based on a default IntelliJ Platform implementation.
 
 ### Creating Simple Groups
-Grouping can be registered by adding a `<group>` element to the `<actions>` section of a plugin's `plugin.xml` file.
+Grouping can be registered by adding a `<group>` element to the `<actions>` section of a plugin's <path>plugin.xml</path> file.
 This example has no `class` attribute in the `<group>` element because the IntelliJ Platform framework will supply a default implementation class for the group.
 This default implementation is used if a set of actions belonging to the group is static, i.e., does not change at runtime, which is the majority of cases.
 The `id` attribute must be unique, so incorporating the plugin ID or package name is the best practice.
@@ -88,7 +88,7 @@ As an example, extend [`DefaultActionGroup`](upsource:///platform/platform-api/s
 ```
 
 ### Registering the Custom Action Group
-As in the case with the static action group, the action `<group>` should be declared in the `<actions>` section of the `plugin.xml` file, for example, the [action_basics](https://github.com/JetBrains/intellij-sdk-code-samples/blob/main/action_basics/src/main/resources/META-INF/plugin.xml) plugin.
+As in the case with the static action group, the action `<group>` should be declared in the `<actions>` section of the <path>plugin.xml</path> file, for example, the [action_basics](https://github.com/JetBrains/intellij-sdk-code-samples/blob/main/action_basics/src/main/resources/META-INF/plugin.xml) plugin.
 For demonstration purposes, this implementation will use localization.
 
 The `<group>` element declaration below shows:

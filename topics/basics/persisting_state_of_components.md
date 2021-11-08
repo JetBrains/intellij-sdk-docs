@@ -150,7 +150,7 @@ The simplest ways of specifying the `@Storage` annotation are as follows (since 
 
 The state is persisted in a separate file by specifying a different setting for the `value` parameter, which was the `file` parameter before 2016.x.
 
- >  For application-level components, it is strongly recommended to use a custom file, using of `other.xml` is deprecated.
+ >  For application-level components, it is strongly recommended to use a custom file, using of <path>other.xml</path> is deprecated.
  >
  {type="note"}
 
@@ -194,6 +194,6 @@ Implementations can manually store the state in attributes and sub-elements or u
 
 Components save their state in the following files:
 
-* Project-level: project (`.ipr`) file.
-  However, if the workspace option in the `plugin.xml` file is set to `true`, then the workspace (`.iws`) file is used instead.
-* Module-level: module (`.iml`) file.
+* Project-level: project (<path>.ipr</path>) file.
+  However, if the workspace option in the <path>plugin.xml</path> file is set to `true`, then the workspace (<path>.iws</path>) file is used instead.
+* Module-level: module (<path>.iml</path>) file.

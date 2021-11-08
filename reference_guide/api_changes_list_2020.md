@@ -351,8 +351,8 @@ Java code migrated to use `TYPE_USE` nullability annotations
 
 Images module functionality (package `org.intellij.images.*`) extracted to plugin
 : The dependency [must be declared](plugin_dependencies.md) explicitly now:
-  * Add `<depends>com.intellij.platform.images</depends>` in `plugin.xml`
-  * Add to `build.gradle`:
+  * Add `<depends>com.intellij.platform.images</depends>` in <path>plugin.xml</path>
+  * Add to <path>build.gradle</path>:
 
     ```groovy
     intellij {

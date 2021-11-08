@@ -6,7 +6,7 @@
 
 EP: `com.intellij.extendWordSelectionHandler`
 
-Implementing [`ExtendWordSelectionHandler`](upsource:///platform/lang-api/src/com/intellij/codeInsight/editorActions/ExtendWordSelectionHandler.java) and registering it as `com.intellij.extendWordSelectionHandler` EP in your `plugin.xml` allows you to provide additional text ranges to be used when extending or shrinking a selection.
+Implementing [`ExtendWordSelectionHandler`](upsource:///platform/lang-api/src/com/intellij/codeInsight/editorActions/ExtendWordSelectionHandler.java) and registering it as `com.intellij.extendWordSelectionHandler` EP in your <path>plugin.xml</path> allows you to provide additional text ranges to be used when extending or shrinking a selection.
 Return `true` from `canSelect(PsiElement)` for the PSI elements that you want to provide additional text-ranges for.
 The IntelliJ Platform will call `select(PsiElement, CharSequence, int, Editor)` for these elements where you can compute additional text ranges and return them as `List<TextRange>`.
 
@@ -22,7 +22,7 @@ This makes it easy to select not only expressions, blocks, and function definiti
 
 When implementing a custom language, the IntelliJ Platform provides basic implementations of this EP, allowing you to select code based on your PSI structure and to select whole lines.
 In many cases this is sufficient to provide a good user experience.
-However, sometimes it’s advantageous to provide additional regions that the user may wish to be able to select when extending or shrinking a selection. 
+However, sometimes it’s advantageous to provide additional regions that the user may wish to be able to select when extending or shrinking a selection.
 
 This EP has two methods that need to be implemented:
 
@@ -37,7 +37,7 @@ If the cursor is located at argument `a`, extending the selection would first se
 However, you might want to select the list of all arguments as an intermediate step.
 This can be achieved by implementing this EP in the following way:
 
-1. Create a class that implements the `ExtendWordSelectionHandler` interface and register it as a `com.intellij.extendWordSelectionHandler` EP in your `plugin.xml`.
+1. Create a class that implements the `ExtendWordSelectionHandler` interface and register it as a `com.intellij.extendWordSelectionHandler` EP in your <path>plugin.xml</path>.
 2. The `canSelect(PsiElement)` method should return `true` for the function call node.
    That indicates that `select(PsiElement, CharSequence, int, Editor)` will be called for the function-call node.
 3. When the `select()` method is called, you can use the function call PSI element or the editor text to extract the text range that spans the arguments `a` and `b` and return it as `List<TextRange>` with one element.

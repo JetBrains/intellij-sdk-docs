@@ -33,7 +33,7 @@ This is useful e.g. when a plugin brings its own file templates.
 For the ReSharper part to pick these settings, the settings files should be available in the plugin JAR file under the path <path>dotnet/Extensions/$backend-plugin-id$/settings</path>, where `backend-plugin-id` is calculated according to the following rules:
 
 - if the IntelliJ plugin id (the `<id>` element of the <path>plugin.xml</path>) includes a dot, then `backend-plugin-id` is the same as the IntelliJ plugin id;
-- otherwise, the `backend-plugin-id` is a concatenation of the IntelliJ plugin vendor name (the `<vendor>` element of the `plugin.xml`) and the IntelliJ plugin id.
+- otherwise, the `backend-plugin-id` is a concatenation of the IntelliJ plugin vendor name (the `<vendor>` element of the <path>plugin.xml</path>) and the IntelliJ plugin id.
 
 For example, for a plugin with the following <path>plugin.xml</path> contents, the file `dotnet/Extensions/org.awesomeplugin/settings/templates.DotSettings` would be picked up:
 

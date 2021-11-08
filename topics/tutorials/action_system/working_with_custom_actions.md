@@ -46,8 +46,8 @@ These methods fully implemented in [Developing the AnAction Methods](#developing
 Before fleshing out those methods, to complete this minimal implementation, `PopupDialogAction` must be registered with the IntelliJ Platform.
 
 ## Registering a Custom Action
-Actions are registered by declaring them in code or by declaring them in the `<actions>` section of a plugin configuration (`plugin.xml`) file.
-This section describes using IDE tooling - the New Action Form - to add a declaration to the `plugin.xml` file, and then tuning registration attributes manually.
+Actions are registered by declaring them in code or by declaring them in the `<actions>` section of a plugin configuration (<path>plugin.xml</path>) file.
+This section describes using IDE tooling - the New Action Form - to add a declaration to the <path>plugin.xml</path> file, and then tuning registration attributes manually.
 A more comprehensive explanation of action registration is available in the [Action Registration](basic_action_system.md#registering-actions) section of this guide.
 
 ### Registering an Action with the New Action Form
@@ -93,7 +93,7 @@ The `<add-to-group>` element declares where the action will appear and mirrors t
 This declaration is adequate, but adding more attributes is discussed in the next section.
 
 ### Setting Registration Attributes Manually
-An action declaration can be added manually to the `plugin.xml` file.
+An action declaration can be added manually to the <path>plugin.xml</path> file.
 An exhaustive list of declaration elements and attributes is presented in [Registering Actions in plugin.xml](basic_action_system.md#registering-actions-in-pluginxml).
 Attributes are added by selecting them from the **New Action** form, or by editing the registration declaration directly in the plugin.xml file.
 

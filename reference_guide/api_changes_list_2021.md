@@ -82,31 +82,31 @@ Running tests fails with `jarFiles is not set for [...]` or `Created extension c
 : Set system property `idea.force.use.core.classloader` to `true`.
 
 `com.intellij.ui.mac.MacMessages.showMessageDialog(String, String, String[], boolean, Window, int, int, DialogWrapper.DoNotAskOption)` method removed
-: Use `com.intellij.ui.mac.MacMessages.showMessageDialog(String, String, String[], boolean, Window, int, int,  DoNotAskOption)` instead
+: Use `com.intellij.ui.mac.MacMessages.showMessageDialog(String, String, String[], boolean, Window, int, int,  DoNotAskOption)` instead.
 
 `com.intellij.openapi.ui.MessageDialogBuilder.doNotAsk(DialogWrapper.DoNotAskOption)` method removed
-: Use `com.intellij.openapi.ui.MessageDialogBuilder.doNotAsk(DoNotAskOption)` instead
+: Use `com.intellij.openapi.ui.MessageDialogBuilder.doNotAsk(DoNotAskOption)` instead.
 
 `com.intellij.ide.util.projectWizard.WizardContext.getWizard()` method removed
-: Use `com.intellij.ide.util.projectWizard.WizardContext.getUserData(AbstractWizard.KEY)` instead
+: Use `com.intellij.ide.util.projectWizard.WizardContext.getUserData(AbstractWizard.KEY)` instead.
 
 `com.intellij.openapi.ui.TextComponentAccessor.TEXT_FIELD_WITH_HISTORY_WHOLE_TEXT` field removed
-: Use `com.intellij.openapi.ui.TextComponentAccessors.TEXT_FIELD_WITH_HISTORY_WHOLE_TEXT` instead
+: Use `com.intellij.openapi.ui.TextComponentAccessors.TEXT_FIELD_WITH_HISTORY_WHOLE_TEXT` instead.
 
 `com.intellij.execution.process.ColoredOutputTypeRegistry.getAnsiColorKey(int)` method removed
-: Use `com.intellij.execution.process.ColoredOutputTypeRegistryImpl.getAnsiColorKey(int)` instead
+: Use `com.intellij.execution.process.ColoredOutputTypeRegistryImpl.getAnsiColorKey(int)` instead.
 
 `com.intellij.diagnostic.PerformanceWatcher.Snapshot` class now interface
-: Recompile the dependant code or use `com.intellij.diagnostic.PerformanceWatcherImpl.SnapshotImpl` instead
+: Recompile the dependant code or use `com.intellij.diagnostic.PerformanceWatcherImpl.SnapshotImpl` instead.
 
 `com.intellij.openapi.fileEditor.impl.EditorTabPresentationUtil.getEditorTabTitle(Project, VirtualFile, EditorWindow)` method parameter `EditorWindow` removed
-: This parameter never needed, but lead to code coupling
+: This parameter never needed, but lead to code coupling.
 
 `com.intellij.openapi.fileEditor.impl.EditorTabPresentationUtil.getUniqueEditorTabTitle(Project, VirtualFile, EditorWindow)` method parameter `EditorWindow` removed
-: This parameter never needed, but lead to code coupling
+: This parameter never needed, but lead to code coupling.
 
 `com.intellij.openapi.fileEditor.impl.EditorTabTitleProvider.getEditorTabTitle(Project, VirtualFile, EditorWindow)` method parameter `EditorWindow` removed
-: This parameter never needed, but lead to code coupling
+: This parameter never needed, but lead to code coupling.
 
 Constructor `com.intellij.codeInsight.hints.settings.InlayProviderSettingsModel` changed
 : Added `Language` parameter.
@@ -123,15 +123,15 @@ Constructor `com.intellij.codeInsight.hints.settings.InlayProviderSettingsModel`
 ### VCS Log 2021.3
 
 `com.intellij.vcs.log.ui.frame.CommitPanel` class removed
-: Removed unnecessary inheritance
+: Removed unnecessary inheritance.
 
 ### Git Plugin 2021.3
 
 `git4idea.ui.branch.GitBranchActionsUtilKt.checkoutOrReset(Project, List, String, GitNewBranchOptions)` method removed
-: Method was dropped to avoid supporting outdated behavior
+: Method was dropped to avoid supporting outdated behavior.
 
 `git4idea.ui.branch.GitBranchActionsUtilKt.createNewBranch(Project, List, String, GitNewBranchOptions)` method removed
-: Method was dropped to avoid supporting outdated behavior
+: Method was dropped to avoid supporting outdated behavior.
 
 ### IntelliJ IDEA Ultimate 2021.3
 
@@ -291,7 +291,7 @@ Various package renames to support dynamic plugins
 : Use `com.intellij.database.actions.DbDeleteProvider.getDeleteProvider()` instead.
 
 `com.intellij.database.model.RawConnectionConfig.getEffectiveUrl(Project)` method removed
-: Use `com.intellij.database.model.RawConnectionConfig.getUrl()` instead. Or use `com.intellij.database.dataSource.DatabaseConnectionEstablisher.processInterceptors()`
+: Use `com.intellij.database.model.RawConnectionConfig.getUrl()` instead. Or use `com.intellij.database.dataSource.DatabaseConnectionEstablisher.processInterceptors()`.
 
 ### GitHub Plugin 2021.2
 
@@ -321,7 +321,7 @@ Various package renames to support dynamic plugins
 ### Python Plugin 2021.2.1
 
 `com.jetbrains.python.psi.types.PyTypedDictType.Companion.match(PyTypedDictType, PyDictLiteralExpression, TypeEvalContext)` method removed
-: As the result of the refactoring aimed at fixing https://youtrack.jetbrains.com/issue/PY-48799, for dict literals containing only string keys we infer PyTypedDictType now, so there's no need to match dict literals with TypedDicts. There's a new method for comparing the inferred TypedDicts with the given ones: `com.jetbrains.python.psi.types.PyTypedDictType.Companion.match(PyType, PyTypedDictType, TypeEvalContext)`.
+: As the result of the refactoring aimed at fixing [PY-48799](https://youtrack.jetbrains.com/issue/PY-48799), for dict literals containing only string keys we infer `PyTypedDictType` now, so there's no need to match dict literals with `TypedDict`s. There's a new method for comparing the inferred `TypedDict`s with the given ones: `com.jetbrains.python.psi.types.PyTypedDictType.Companion.match(PyType, PyTypedDictType, TypeEvalContext)`.
 
 ## 2021.1
 
@@ -331,10 +331,10 @@ Various package renames to support dynamic plugins
 : The storage checks for corruption automatically, there is no need of any explicit additional checks.
 
 `com.intellij.lang.StdLanguages.JSPX` field removed
-: Add a dependency on the `com.intellij.jsp` plugin and replace the reference with `com.intellij.lang.jspx.JspxLanguageImpl.INSTANCE`
+: Add a dependency on the `com.intellij.jsp` plugin and replace the reference with `com.intellij.lang.jspx.JspxLanguageImpl.INSTANCE`.
 
 `com.intellij.lang.StdLanguages.JSP` field removed
-: Add a dependency on the `com.intellij.jsp` plugin and replace the reference with `com.intellij.lang.jsp.NewJspLanguage.getInstance()`
+: Add a dependency on the `com.intellij.jsp` plugin and replace the reference with `com.intellij.lang.jsp.NewJspLanguage.getInstance()`.
 
 `com.intellij.ide.actions.searcheverywhere.SEResultsEqualityProvider.compareItems(alreadyFoundItem)` method parameter type changed from `SearchEverywhereFoundElementInfo` to `List<SearchEverywhereFoundElementInfo>`
 : New API is more abstract which allows to review all already found items before making "deduplication" decision. Also consider implementing `com.intellij.ide.actions.searcheverywhere.AbstractEqualityProvider` instead of `com.intellij.ide.actions.searcheverywhere.SEResultsEqualityProvider`.
@@ -349,7 +349,7 @@ Various package renames to support dynamic plugins
 : Enum class `SEEqualElementsActionType` was converted to sealed class with the same name.
 
 `org.sqlite.SQLiteConfig.setBusyTimeout(String)` method parameter type changed from `String` to `int`
-: Please use updated sqlite-jdbc api.
+: Please use updated sqlite-jdbc API.
 
 `com.intellij.usages.impl.rules.UsageTypeProvider.getUsageType` method `PsiElement` parameter marked `@NotNull`
 : This may break source-compatibility with inheritors written in Kotlin if they declare parameter type as nullable.
@@ -363,21 +363,26 @@ JSON Widget suppressor EP `com.intellij.json.jsonWidgetSuppressor`
 ### HTTP Client Plugin 2021.1
 
 `com.intellij.ws.rest.client` package removed
-: Replaced by `com.intellij.httpClient.execution` in HTTP Client plugin
+: Replaced by `com.intellij.httpClient.execution` in HTTP Client plugin.
 
 `com.intellij.ws.actions` package removed
-: Replaced by `com.intellij.httpClient.actions` in HTTP Client plugin
+: Replaced by `com.intellij.httpClient.actions` in HTTP Client plugin.
 
 `com.intellij.ws.converters` package removed
-: Replaced by `com.intellij.httpClient.converters` in HTTP Client plugin
+: Replaced by `com.intellij.httpClient.converters` in HTTP Client plugin.
 
 `com.intellij.ws.http.request` package removed
-: Replaced by `com.intellij.httpClient.http.request` in HTTP Client plugin
+: Replaced by `com.intellij.httpClient.http.request` in HTTP Client plugin.
 
 ### Java UML Plugin 2021.1
 
 Rename of packages to `.java.` specific variants
-: A number of packages have been renamed: `com.intellij.uml.utils` becomes `com.intellij.uml.java.utils`, `com.intellij.uml.project` becomes `com.intellij.uml.java.project`, and `com.intellij.uml.jigsaw` becomes `com.intellij.uml.java.jigsaw`.
+
+| Old package name           | New package name                |
+|----------------------------|---------------------------------|
+| `com.intellij.uml.utils`   | `com.intellij.uml.java.utils`   |
+| `com.intellij.uml.project` | `com.intellij.uml.java.project` |
+| `com.intellij.uml.jigsaw`  | `com.intellij.uml.java.jigsaw`  |
 
 ### Kotlin Plugin 2021.1
 

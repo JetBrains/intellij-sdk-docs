@@ -138,7 +138,7 @@ All parameters in `com.jetbrains.python.psi.PyElementVisitor` marked `@NotNull`
 : Use `com.jetbrains.python.psi.FutureFeature` instead.
 
 `com.jetbrains.python.sdk.PythonSdkUpdater.updateOrShowError(Sdk, SdkModificator, Project, Component)` method parameter `SdkModificator` removed
-: It was not processed carefully, it should be enough to pass editable sdk instead.
+: It was not processed carefully, it should be enough to pass editable SDK instead.
 
 `python.sdk.interpreter.field.is.empty` property removed from resource bundle `messages.PyBundle`
 : Use `python.sdk.field.is.empty` from `messages.PySdkBundle` instead.
@@ -195,10 +195,10 @@ Support for JavaFX deprecated
 : Update call sites accordingly.
 
 `com.intellij.openapi.editor.markup.MarkupModel.addLineHighlighter(TextAttributesKey, int, int)` abstract method added
-: Use it instead of `MarkupModel.addLineHighlighter(int, int, TextAttributes)`
+: Use it instead of `MarkupModel.addLineHighlighter(int, int, TextAttributes)`.
 
 `com.intellij.openapi.editor.markup.MarkupModel.addRangeHighlighter(TextAttributesKey, int, int, int, HighlighterTargetArea)` abstract method added
-: Use it instead of `MarkupModel.addRangeHighlighter(int, int, int, TextAttributes, HighlighterTargetArea)`
+: Use it instead of `MarkupModel.addRangeHighlighter(int, int, int, TextAttributes, HighlighterTargetArea)`.
 
 `com.intellij.codeInsight.daemon.LineMarkerProvider.getLineMarkerInfo` method return type changed from ``LineMarkerInfo`` to ``LineMarkerInfo<?>``
 : This may break source-compatibility with inheritors written in Kotlin.
@@ -239,16 +239,16 @@ IntelliJ IDEA supports preview features of the latest Java release and one upcom
 ### GitHub Plugin 2020.2
 
 `org.jetbrains.plugins.github.util.LazyCancellableBackgroundProcessValue(ProgressManager)` constructor removed
-: Required for more tight control of task scheduling. Use `org.jetbrains.plugins.github.util.LazyCancellableBackgroundProcessValue.Companion#create(ProgressManager, (ProgressIndicator) -> T)` instead of subclassing
+: Required for more tight control of task scheduling. Use `org.jetbrains.plugins.github.util.LazyCancellableBackgroundProcessValue.Companion#create(ProgressManager, (ProgressIndicator) -> T)` instead of subclassing.
 
 `org.jetbrains.plugins.github.util.LazyCancellableBackgroundProcessValue.compute(ProgressIndicator)` method return type changed from `T` to `CompletableFuture<T>`
-: Required for more tight control of task scheduling. Use `org.jetbrains.plugins.github.util.LazyCancellableBackgroundProcessValue.Companion#create(ProgressManager, (ProgressIndicator) -> T)` instead of subclassing
+: Required for more tight control of task scheduling. Use `org.jetbrains.plugins.github.util.LazyCancellableBackgroundProcessValue.Companion#create(ProgressManager, (ProgressIndicator) -> T)` instead of subclassing.
 
 `org.jetbrains.plugins.github.pullrequest.ui.GHCompletableFutureLoadingModel()` constructor removed
-: Model was made disposable and it is now required to pass parent disposable in constructor
+: Model was made disposable and it is now required to pass parent disposable in constructor.
 
 `org.jetbrains.plugins.github.util.GithubGitHelper.getPossibleRemoteUrlCoordinates()` method removed
-: Use `org.jetbrains.plugins.github.util.GHProjectRepositoriesManager.getKnownRepositories()` instead
+: Use `org.jetbrains.plugins.github.util.GHProjectRepositoriesManager.getKnownRepositories()` instead.
 
 ### Groovy Plugin 2020.2
 

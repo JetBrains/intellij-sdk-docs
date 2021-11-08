@@ -8,7 +8,7 @@ These parent groups are the existing categories of Settings in the IntelliJ Plat
 However, suppose the custom Settings are rich enough to require multiple levels?
 For example, a custom Setting implementation has multiple sub-Settings implementations.
 Extension Point declarations can create this kind of multilayer Settings hierarchy.
- 
+
 ## Extension Points for Parent-Child Settings Relationships
 There are multiple ways of creating parent-child relationships in groups of Settings: in implementations, or Extension Point declarations.
 However, there are performance penalties for creating these relationships in implementations because the objects must be instantiated to determine the relationships.
@@ -75,9 +75,9 @@ The other attributes are the same as discussed in [Settings EP Attributes](setti
 
 For the child of a parent, the `id` attribute becomes compound:
 
-| Attribute | Required | Value |
-|:---   |  :---:  |:---  |
-| `id` | Y | Compound FQN of implementation based on `com.intellij.openapi.options.Configurable` in the form: `XX.YY` where:<br/>`XX` is the parent Settings component FQN-based id.<br/>`YY` is unique to the child among other siblings.  |
+| Attribute | Required | Value                                                                                                                                                                                                                         |
+|:----------|:--------:|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `id`      |    Y     | Compound FQN of implementation based on `com.intellij.openapi.options.Configurable` in the form: `XX.YY` where:<br/>`XX` is the parent Settings component FQN-based id.<br/>`YY` is unique to the child among other siblings. |
 
  >  All children share the parent's `id` as the basis of their own `id`.
 > All children have an `id` suffix that is unique among their siblings.

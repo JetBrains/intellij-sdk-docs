@@ -10,14 +10,14 @@ Also, consider posting requests in _#jobs_ channel on [JetBrains Platform Slack]
  >
  {type="note"}
 
-| Name               | Contact                                                 | Notes                                                                                                                                |
-| ------------------ | ------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
-| Joachim Ansorg     | [www.plugin-dev.com][ja]                                | -/-                                                                                                                                  |
-| Daniel Espendiller | [daniel@espendiller.net][de]                            | -/-                                                                                                                                  |
-| Robert Ekendahl    | [www.edaphic.studio][re]                                | Custom Language support                                                                                                              |
-| Alexey Stukalov    | [info@cuba-platform.com][ast], [www.haulmont.com][ast2] | Plugins: [CUBA][ast3].                                                                                                               |
-| Edument            | [jonathan@edument.cz][ed], [edument.se][ed2]            | Developers of [Comma IDE][ed3]                                                                                                       |
-| Mikhail Bolotov    | [mikhail.bolotov@gmail.com][mb]                         | Plugins: [Cypress Support Pro][cspro], [k6]                                                                                                       |
+| Name               | Contact                                                 | Notes                                       |
+|--------------------|---------------------------------------------------------|---------------------------------------------|
+| Joachim Ansorg     | [www.plugin-dev.com][ja]                                | -/-                                         |
+| Daniel Espendiller | [daniel@espendiller.net][de]                            | -/-                                         |
+| Robert Ekendahl    | [www.edaphic.studio][re]                                | Custom Language support                     |
+| Alexey Stukalov    | [info@cuba-platform.com][ast], [www.haulmont.com][ast2] | Plugins: [CUBA][ast3].                      |
+| Edument            | [jonathan@edument.cz][ed], [edument.se][ed2]            | Developers of [Comma IDE][ed3]              |
+| Mikhail Bolotov    | [mikhail.bolotov@gmail.com][mb]                         | Plugins: [Cypress Support Pro][cspro], [k6] |
 
 [ja]: https://www.plugin-dev.com
 [de]: mailto:daniel@espendiller.net

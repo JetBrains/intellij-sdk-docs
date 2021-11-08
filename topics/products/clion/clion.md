@@ -22,7 +22,7 @@ The table below summarizes the `gradle-intellij-plugin` attributes to set in the
 Click on an entry in the table's *Attribute* column to go to the documentation about that attribute.
 
 | `gradle-intellij-plugin` Attribute       | Attribute Value                                                                |
-| ---------------------------------------- | ------------------------------------------------------------------------------ |
+|------------------------------------------|--------------------------------------------------------------------------------|
 | [`intellij.type`][properties]            | `CL` for the product CLion.                                                    |
 | [`intellij.version`][properties]         | Set to the targeted CLion version, e.g. `2019.3.1`.                            |
 | [`intellij.plugins`][properties]         | No specific declaration is needed.                                             |

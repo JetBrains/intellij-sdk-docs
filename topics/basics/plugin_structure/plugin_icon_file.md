@@ -15,7 +15,7 @@ They also appear in the Settings/Preferences [Plugin Manager](https://www.jetbra
 Whether online or in the product UI, a Plugin Logo helps users to identify a plugin more quickly in a list, as shown below:
 
 ![Example Product Plugin Preferences Dialog](plugin_prefs.png){width="800"}
-                                
+
  >  When browsing [custom plugin repositories](update_plugins_format.md), there is no support for showing logos for plugins hosted there but not yet installed.
  >
  {type="note"}
@@ -49,11 +49,11 @@ See more examples of [visual weight compensation](https://jetbrains.design/intel
 For basic shapes, use the following sizes.
 Note the different areas of transparent padding used for each shape:
 
-| ![Square 32px by 32px](square_logo.png){width="225"} | ![Circle 36px in diameter](circle_logo.png){:width="225"} |
-|:---:|:---:|
-| _Square logo 32px by 32px_ | _Circular logo 36px in diameter_ |
+|            ![Square 32px by 32px](square_logo.png){width="225"}             |        ![Circle 36px in diameter](circle_logo.png){:width="225"}         |
+|:---------------------------------------------------------------------------:|:------------------------------------------------------------------------:|
+|                         _Square logo 32px by 32px_                          |                     _Circular logo 36px in diameter_                     |
 | ![Horizontal rectangle 36px by 26px](rectangle_horizontal.png){width="225"} | ![Vertical rectangle 26px by 36px](rectangle_vertical.png){:width="225"} |
-| _Horizontal rectangular logo 36px by 26px_ | _Vertical rectangular logo 26px by 36px_ |
+|                 _Horizontal rectangular logo 36px by 26px_                  |                 _Vertical rectangular logo 26px by 36px_                 |
 
 
 ### Plugin Logo Colors
@@ -62,17 +62,17 @@ Check the license terms before using the logo.
 If there is no existing logo, or its use is prohibited, create a custom logo based on the [Action Colors Palette](https://jetbrains.design/intellij/principles/icons/#action-icons) in the IntelliJ Platform UI Guidelines for Icons.
 
 | ![The YouTrack Plugin Logo uses the YouTrack product logo ](yt_logo.png){height="200" width="200"} | ![The Keymap Plugin Logo uses a color from the Action Colors Palette](keymap_logo.png){:height="200" width="200"} |
-|:---:|:---:|
-| _The YouTrack Plugin Logo uses<br/>the YouTrack product logo_ | _The Keymap Plugin Logo uses a color<br/>from the Action Colors Palette_ |
+|:--------------------------------------------------------------------------------------------------:|:-----------------------------------------------------------------------------------------------------------------:|
+|                   _The YouTrack Plugin Logo uses<br/>the YouTrack product logo_                    |                     _The Keymap Plugin Logo uses a color<br/>from the Action Colors Palette_                      |
 
 Ensure a Plugin Logo is visible on both light and dark backgrounds.
 If one Plugin Logo design does not work on both light and dark backgrounds, create separate light and dark versions of the Plugin Logo.
 The examples below illustrate how a Plugin Logo design may work well for a light background but not for a dark background.
 Consequently, a separate Plugin Logo for dark backgrounds is needed.
 
-| ![Plugin Logo on Light UI Theme](light_version.png){width="225"} | ![Light Plugin Logo on Dark UI Theme](dark_bad.png){:width="225"} | ![Plugin Logo for Dark UI Theme](dark_good.png){:width="225"} |
-|:---:|:---:|:---:|
-| _The light Plugin Logo design<br/>works well on light UI Theme_ | _The light Plugin Logo design does<br/>not work well on a dark UI Theme_ | _A separate, dark Plugin Logo design<br/>works well on dark UI Theme_ |
+| ![Plugin Logo on Light UI Theme](light_version.png){width="225"} |    ![Light Plugin Logo on Dark UI Theme](dark_bad.png){:width="225"}     |     ![Plugin Logo for Dark UI Theme](dark_good.png){:width="225"}     |
+|:----------------------------------------------------------------:|:------------------------------------------------------------------------:|:---------------------------------------------------------------------:|
+| _The light Plugin Logo design<br/>works well on light UI Theme_  | _The light Plugin Logo design does<br/>not work well on a dark UI Theme_ | _A separate, dark Plugin Logo design<br/>works well on dark UI Theme_ |
 
 ### Plugin Logo File Format
 All Plugin Logo images must be in SVG format.

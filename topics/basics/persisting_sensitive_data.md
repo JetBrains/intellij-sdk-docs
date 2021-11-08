@@ -18,7 +18,7 @@ _Common Utility Method:_
 ```
 
 ### Retrieve Stored Credentials
-                       
+
 ```java
     String key = null; // e.g. serverURL, accountID
     CredentialAttributes credentialAttributes = createCredentialAttributes(key);
@@ -47,7 +47,7 @@ To remove stored credentials, pass `null` for the `credentials` parameter.
 The default storage format depends on the OS.
 
 | OS      | Storage                                               |
-| ------- | ----------------------------------------------------- |
+|---------|-------------------------------------------------------|
 | Windows | File in [KeePass][Windows] format                     |
 | macOS   | Keychain using [Security Framework][macOS]            |
 | Linux   | [Secret Service API][linux] using [libsecret][linux2] |

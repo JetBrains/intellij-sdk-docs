@@ -15,11 +15,11 @@ It shares similarities with [Jetpack Compose](https://developer.android.com/jetp
  {type="note"}
 
 ## Layout Structure
-            
- > See [Layout](https://jetbrains.design/intellij/principles/layout) topic in IntelliJ Platform UI Guidelines for recommendations on arranging UI controls in dialogs. 
+
+ > See [Layout](https://jetbrains.design/intellij/principles/layout) topic in IntelliJ Platform UI Guidelines for recommendations on arranging UI controls in dialogs.
  >
  {type="tip"}
- 
+
 Use [`panel`](upsource:///platform/platform-impl/src/com/intellij/ui/layout/layout.kt) to create UI:
 
 ```kotlin
@@ -79,7 +79,7 @@ row {
 }
 ```
 
- > To visually debug layout, enable <control>UI DSL Debug Mode</control> from [Internal Actions - UI Submenu](internal_ui_sub.md).           
+ > To visually debug layout, enable <control>UI DSL Debug Mode</control> from [Internal Actions - UI Submenu](internal_ui_sub.md).
  >
  {type="tip"}
 
@@ -215,10 +215,10 @@ Use the `link` method:
 
 ```kotlin
 link("Forgot password?") {
-  // handle click, e.g. showing dialog  
+  // handle click, e.g. showing dialog
 }
 ```
-   
+
 To open URL in the browser, use `browserLink`:
 
 ```kotlin
@@ -251,7 +251,7 @@ A panel returned by the `panel` method is an instance of [`DialogPanel`](upsourc
 This base class supports the standard `apply()`, `reset()`, and `isModified()` methods.
 
 ### Dialogs
-            
+
 **Reference**: [DialogWrapper](dialog_wrapper.md)
 
 If you're using a [`DialogPanel`](upsource:///platform/platform-api/src/com/intellij/openapi/ui/DialogPanel.kt) as the main panel of a `DialogWrapper`, the `apply()` method will be automatically called when the dialog is closed using <control>OK</control> action.
@@ -268,7 +268,7 @@ return panel {
 ```
 
 ### Configurables
-                   
+
 **Reference**: [Settings Guide](settings_guide.md)
 
 If you're using the UI DSL to implement a [`Configurable`](upsource:///platform/platform-api/src/com/intellij/openapi/options/Configurable.java), use [`BoundConfigurable`](upsource:///platform/platform-api/src/com/intellij/openapi/options/BoundConfigurable.kt) as the base class.
@@ -297,15 +297,15 @@ checkBox("Hide tabs if there is no space", uiSettings::hideTabsIfNeed)
 ```
 
 ## Examples
-              
+
 Sample usages in IntelliJ Platform IDEs:
 
-| User Interface | Implementation |
-|----------------|----------------|
-| <menupath>Settings/Preferences &#124; Editor &#124; Reader Mode</menupath> | [`ReaderModeConfigurable`](upsource:///platform/lang-impl/src/com/intellij/codeInsight/actions/ReaderModeConfigurable.kt) |
-| <control>New Branch</control> dialog in Git ([Manage Git branches](https://www.jetbrains.com/help/idea/manage-branches.html)) | [`GitNewBranchDialog`](upsource:///plugins/git4idea/src/git4idea/branch/GitNewBranchDialog.kt) |
-| <menupath>Settings/Preferences &#124; Tools &#124; Diff & Merge</menupath> | [`DiffSettingsConfigurable`](upsource:///platform/diff-impl/src/com/intellij/diff/settings/DiffSettingsConfigurable.kt) |
-| <menupath>Settings/Preferences &#124; Editor &#124; General &#124; Editor Tabs</menupath> | [`EditorTabsConfigurable`](upsource:///platform/platform-impl/src/com/intellij/application/options/editor/EditorTabsConfigurable.kt) |
+| User Interface                                                                                                                | Implementation                                                                                                                       |
+|-------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------|
+| <menupath>Settings/Preferences &#124; Editor &#124; Reader Mode</menupath>                                                    | [`ReaderModeConfigurable`](upsource:///platform/lang-impl/src/com/intellij/codeInsight/actions/ReaderModeConfigurable.kt)            |
+| <control>New Branch</control> dialog in Git ([Manage Git branches](https://www.jetbrains.com/help/idea/manage-branches.html)) | [`GitNewBranchDialog`](upsource:///plugins/git4idea/src/git4idea/branch/GitNewBranchDialog.kt)                                       |
+| <menupath>Settings/Preferences &#124; Tools &#124; Diff & Merge</menupath>                                                    | [`DiffSettingsConfigurable`](upsource:///platform/diff-impl/src/com/intellij/diff/settings/DiffSettingsConfigurable.kt)              |
+| <menupath>Settings/Preferences &#124; Editor &#124; General &#124; Editor Tabs</menupath>                                     | [`EditorTabsConfigurable`](upsource:///platform/platform-impl/src/com/intellij/application/options/editor/EditorTabsConfigurable.kt) |
 
 ## FAQ
 

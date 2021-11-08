@@ -6,7 +6,7 @@
 All products based on the IntelliJ Platform are built on the same underlying API.
 Some of these products share features built on top of the platform, such as Java support in IntelliJ IDEA and Android Studio.
 Underlying those shared features are shared components.
-When authoring a plugin for the IntelliJ Platform, it is important to understand and declare dependencies on these components. 
+When authoring a plugin for the IntelliJ Platform, it is important to understand and declare dependencies on these components.
 Otherwise, it may not be possible to load or run the plugin in a product because the components on which it depends aren't available.
 
  >  Qualifying Open Source projects can [apply for free licenses](https://www.jetbrains.com/community/opensource/) of JetBrains products.
@@ -43,13 +43,13 @@ The following table lists modules that are currently available in all products.
  >
  {type="note"}
 
-| Module for `<depends>` Element<br/>Declaration in <path>plugin.xml</path> File | <br/>Functionality                                                                                   |
-| ------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------- |
-| **`com.intellij.modules.platform`**                                | Messaging, UI Themes, UI Components, Files, Documents, Actions, Components, Services, Extensions, Editors        |
-| `com.intellij.modules.lang`                                        | File Type, Lexer, Parser, Highlighting, References, Code Completion, Find, Rename, Formatter, Code Navigation    |
-| `com.intellij.modules.xml`                                         | XML, XML DOM, XSD/DTD, DOM Model                                                                                 |
-| `com.intellij.modules.vcs`                                         | VCS Revision Numbers, File Status, Change Lists, File History, Annotations                                       |
-| `com.intellij.modules.xdebugger`                                   | Debug Session, Stack Frames, Break Points, Source Positions, Memory Views, Tracked Instances                     |
+| Module for `<depends>` Element<br/>Declaration in <path>plugin.xml</path> File | <br/>Functionality                                                                                            |
+|--------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------|
+| **`com.intellij.modules.platform`**                                            | Messaging, UI Themes, UI Components, Files, Documents, Actions, Components, Services, Extensions, Editors     |
+| `com.intellij.modules.lang`                                                    | File Type, Lexer, Parser, Highlighting, References, Code Completion, Find, Rename, Formatter, Code Navigation |
+| `com.intellij.modules.xml`                                                     | XML, XML DOM, XSD/DTD, DOM Model                                                                              |
+| `com.intellij.modules.vcs`                                                     | VCS Revision Numbers, File Status, Change Lists, File History, Annotations                                    |
+| `com.intellij.modules.xdebugger`                                               | Debug Session, Stack Frames, Break Points, Source Positions, Memory Views, Tracked Instances                  |
 
 As of this writing, if a plugin: **A)** is dependent _only_ on one or more of the modules in the table above, **and B)** declares those module dependencies in <path>plugin.xml</path>, then any product developed by JetBrains based on the IntelliJ Platform will load it.
 
@@ -59,32 +59,32 @@ For example, the `com.intellij.modules.python` module supports the Python langua
 If a plugin uses this module's functionality, such as Python-specific inspections and refactoring, it must declare a dependency on this module.
 
 Note that not all products define and declare modules.
-For example, PhpStorm does not have its own module, but the product itself depends on (and ships with) the PHP language plugin. 
+For example, PhpStorm does not have its own module, but the product itself depends on (and ships with) the PHP language plugin.
 A plugin project is compatible with PHP functionality if it declares a dependency on this PHP language plugin.
 
- > A high-level feature comparison tool for JetBrains IDEs is available [here](https://www.jetbrains.com/products/compare/). 
+ > A high-level feature comparison tool for JetBrains IDEs is available [here](https://www.jetbrains.com/products/compare/).
  >
  {type="tip"}
- 
+
 
 The following table lists **(1)** modules or built-in plugins that provide specific functionality, and the products currently shipping with them.
 
-| Module or Plugin for `<depends>` Element<br/>Declaration in <path>plugin.xml</path> File | <br/>Functionality                                                                                                                     | IntelliJ Platform-Based<br/>Product Compatibility                                                                                                                          |
-| ---------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `com.intellij.modules.java` See **(2)** below. <br/>`com.intellij.java`      | **Java** language PSI Model, Inspections, Intentions, Completion, Refactoring, Test Framework                                                      | IntelliJ IDEA, Android Studio                                                                                                                                              |
-| `com.intellij.modules.androidstudio`                                         | Android SDK Platform, Build Tools, Platform Tools, SDK Tools                                                                                       | Android Studio                                                                                                                                                             |
-| `com.intellij.modules.appcode`                                               | CocoaPods, Core Data Objects, Device & Simulator Support                                                                                           | AppCode                                                                                                                                                                    |
-| `com.intellij.modules.cidr.lang`                                             | **C, C++, Objective-C/C++** language PSI Model, Swift/Objective-C Interaction, Inspections, Intentions, Completion, Refactoring, Test Framework    | AppCode, CLion                                                                                                                                                             |
-| `com.intellij.modules.cidr.debugger`                                         | Debugger Watches, Evaluations, Breakpoints, Inline Debugging                                                                                       | AppCode, CLion, RubyMine                                                                                                                                                   |
-| `com.intellij.modules.clion`                                                 | CMake, Profiler, Embedded Development, Remote Development, Remote Debug, Disassembly                                                               | CLion                                                                                                                                                                      |
-| `com.intellij.database`                                                      | **Database Tools and SQL** language PSI Model, Inspections, Completion, Refactoring, Queries                                                       | DataGrip, IntelliJ IDEA Ultimate, AppCode, PhpStorm, PyCharm Professional, RubyMine, CLion, GoLand, Rider, and WebStorm if the Database Tools and SQL plugin is installed. |
-| `com.intellij.modules.go`                                                    | **Go** language PSI Model, Inspections, Intentions, Completion, Refactoring, Test Framework                                                        | GoLand                                                                                                                                                                     |
-| `com.intellij.modules.python`                                                | **Python** language PSI Model, Inspections, Intentions, Completion, Refactoring, Test Framework                                                    | PyCharm, and other products if the Python plugin is installed.                                                                                                             |
-| `com.intellij.modules.rider`                                                 | Connection to **ReSharper** Process in Background                                                                                                  | Rider                                                                                                                                                                      |
-| `com.intellij.modules.ruby`                                                  | **Ruby** language PSI Model, Inspections, Intentions, Completion, Refactoring, Test Framework                                                      | RubyMine, and IntelliJ IDEA Ultimate if the Ruby plugin is installed.                                                                                                      |
-| `com.intellij.modules.ultimate`                                              | Licensing                                                                                                                                          | All commercial IDEs (IntelliJ IDEA Ultimate, PhpStorm, DataGrip, ...)                                                                                                      |
-| `com.jetbrains.php`                                                          | **PHP** language PSI Model, Inspections, Intentions, Completion, Refactoring, Test Framework                                                       | PhpStorm, and other products if the PHP plugin is installed.                                                                                                               |
-| `JavaScript`                                                                 | **JavaScript** language PSI Model, Inspections, Intentions, Completion, Refactoring, Test Framework                                                | WebStorm, and other products if the JavaScript plugin is installed.                                                                                                        |
+| Module or Plugin for `<depends>` Element<br/>Declaration in <path>plugin.xml</path> File | <br/>Functionality                                                                                                                              | IntelliJ Platform-Based<br/>Product Compatibility                                                                                                                          |
+|------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `com.intellij.modules.java` See **(2)** below. <br/>`com.intellij.java`                  | **Java** language PSI Model, Inspections, Intentions, Completion, Refactoring, Test Framework                                                   | IntelliJ IDEA, Android Studio                                                                                                                                              |
+| `com.intellij.modules.androidstudio`                                                     | Android SDK Platform, Build Tools, Platform Tools, SDK Tools                                                                                    | Android Studio                                                                                                                                                             |
+| `com.intellij.modules.appcode`                                                           | CocoaPods, Core Data Objects, Device & Simulator Support                                                                                        | AppCode                                                                                                                                                                    |
+| `com.intellij.modules.cidr.lang`                                                         | **C, C++, Objective-C/C++** language PSI Model, Swift/Objective-C Interaction, Inspections, Intentions, Completion, Refactoring, Test Framework | AppCode, CLion                                                                                                                                                             |
+| `com.intellij.modules.cidr.debugger`                                                     | Debugger Watches, Evaluations, Breakpoints, Inline Debugging                                                                                    | AppCode, CLion, RubyMine                                                                                                                                                   |
+| `com.intellij.modules.clion`                                                             | CMake, Profiler, Embedded Development, Remote Development, Remote Debug, Disassembly                                                            | CLion                                                                                                                                                                      |
+| `com.intellij.database`                                                                  | **Database Tools and SQL** language PSI Model, Inspections, Completion, Refactoring, Queries                                                    | DataGrip, IntelliJ IDEA Ultimate, AppCode, PhpStorm, PyCharm Professional, RubyMine, CLion, GoLand, Rider, and WebStorm if the Database Tools and SQL plugin is installed. |
+| `com.intellij.modules.go`                                                                | **Go** language PSI Model, Inspections, Intentions, Completion, Refactoring, Test Framework                                                     | GoLand                                                                                                                                                                     |
+| `com.intellij.modules.python`                                                            | **Python** language PSI Model, Inspections, Intentions, Completion, Refactoring, Test Framework                                                 | PyCharm, and other products if the Python plugin is installed.                                                                                                             |
+| `com.intellij.modules.rider`                                                             | Connection to **ReSharper** Process in Background                                                                                               | Rider                                                                                                                                                                      |
+| `com.intellij.modules.ruby`                                                              | **Ruby** language PSI Model, Inspections, Intentions, Completion, Refactoring, Test Framework                                                   | RubyMine, and IntelliJ IDEA Ultimate if the Ruby plugin is installed.                                                                                                      |
+| `com.intellij.modules.ultimate`                                                          | Licensing                                                                                                                                       | All commercial IDEs (IntelliJ IDEA Ultimate, PhpStorm, DataGrip, ...)                                                                                                      |
+| `com.jetbrains.php`                                                                      | **PHP** language PSI Model, Inspections, Intentions, Completion, Refactoring, Test Framework                                                    | PhpStorm, and other products if the PHP plugin is installed.                                                                                                               |
+| `JavaScript`                                                                             | **JavaScript** language PSI Model, Inspections, Intentions, Completion, Refactoring, Test Framework                                             | WebStorm, and other products if the JavaScript plugin is installed.                                                                                                        |
 
 **Notes about Module and Plugin Dependency:**
 
@@ -123,9 +123,9 @@ Drill down into the JAR files to expose the packages and (decompiled) classes.
 
 ### Exploring APIs as an Extender
 If a project is dependent on a plugin or module, in some cases, the project can also [extend](plugin_extensions.md) the functionality available from the plugin or module.
-                                    
- > See [Explore the IntelliJ Platform API](explore_api.md) for more information and strategies.   
- > Dedicated Extension Point Lists specific to IDEs are available under _Part VIII - Product Specific_.  
+
+ > See [Explore the IntelliJ Platform API](explore_api.md) for more information and strategies.
+ > Dedicated Extension Point Lists specific to IDEs are available under _Part VIII - Product Specific_.
  >
  {type="tip"}
 

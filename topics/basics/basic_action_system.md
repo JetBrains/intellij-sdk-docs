@@ -132,11 +132,11 @@ In contrast, if the `compact` attribute is `false`, an action in the menu appear
 Some menus like **Tools** have the `compact` attribute set, so there isn't a way to show an action on the tools menu if it is not enabled.
 
 | Host Menu<br/>`compact` Setting | Action Enabled | Visibility Enabled | Menu Item Visible? | Menu Item Appears Gray? |
-| :-----: | :------------: | :----------------: | :----------------: | :---------------------: |
-|    T    |     **F**      |         T          |      **F**         |         N/A             |
-|    T    |       T        |         T          |        T           |         F               |
-|    F    |     **F**      |         T          |      **T**         |       **T**             |
-|    F    |       T        |         T          |        T           |         F               |
+|:-------------------------------:|:--------------:|:------------------:|:------------------:|:-----------------------:|
+|                T                |     **F**      |         T          |       **F**        |           N/A           |
+|                T                |       T        |         T          |         T          |            F            |
+|                F                |     **F**      |         T          |       **T**        |          **T**          |
+|                F                |       T        |         T          |         T          |            F            |
 
 All other combinations of `compact`, visibility, and enablement produce N/A for gray appearance because the menu item isn't visible.
 

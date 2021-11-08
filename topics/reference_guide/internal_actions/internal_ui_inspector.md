@@ -24,14 +24,14 @@ The _UI Inspector_ displays that the icon has the internal path `AllIcons.Action
 Various components used in the IntelliJ Platform expose additional properties.
 These can be useful to locate the underlying implementation, related Action, etc.
 
-| Type                                            | Place                      | Properties                                                                                                                   |
-| ----------------------------------------------- | -------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| Type                                            | Place                       | Properties                                                                                                                     |
+|-------------------------------------------------|-----------------------------|--------------------------------------------------------------------------------------------------------------------------------|
 | [`AnAction`][ActionSystem]                      | Action Button<br/>Menu Item | `Action` - [`AnAction`][us:AnAction] implementation<br/>`Action ID` - Action `id`<br/>`Action Plugin ID` - contributing plugin |
-| [`ActionToolbar`][ActionSystem]                 | Action Toolbar             | `Toolbar Group` - Action Group ID<br/>`All Groups` - contained Action Group IDs                                               |
-| [`DialogWrapper`][DialogWrapper]                | Modal Dialog               | `dialogWrapperClass` - [`DialogWrapper`][us:DialogWrapper] implementation                                                    |
-| [`GutterMark`][us:GutterMark]                   | Editor Gutter Icon         | `gutter renderer` - [`GutterMark`][us:GutterMark] implementation                                                             |
-| [`IntentionAction`/`QuickFix`][IntentionAction] | Popup Menu in Editor       | `intention action`/`quick fix` - [`IntentionAction`][us:IntentionAction] / [`QuickFix`][us:QuickFix] implementation          |
-| [`Tree`][Tree]                                  | Tree                       | `treeModelClass` - `javax.swing.tree.TreeModel` implementation                                                               |
+| [`ActionToolbar`][ActionSystem]                 | Action Toolbar              | `Toolbar Group` - Action Group ID<br/>`All Groups` - contained Action Group IDs                                                |
+| [`DialogWrapper`][DialogWrapper]                | Modal Dialog                | `dialogWrapperClass` - [`DialogWrapper`][us:DialogWrapper] implementation                                                      |
+| [`GutterMark`][us:GutterMark]                   | Editor Gutter Icon          | `gutter renderer` - [`GutterMark`][us:GutterMark] implementation                                                               |
+| [`IntentionAction`/`QuickFix`][IntentionAction] | Popup Menu in Editor        | `intention action`/`quick fix` - [`IntentionAction`][us:IntentionAction] / [`QuickFix`][us:QuickFix] implementation            |
+| [`Tree`][Tree]                                  | Tree                        | `treeModelClass` - `javax.swing.tree.TreeModel` implementation                                                                 |
 
 [ActionSystem]: basic_action_system.md
 [DialogWrapper]: dialog_wrapper.md

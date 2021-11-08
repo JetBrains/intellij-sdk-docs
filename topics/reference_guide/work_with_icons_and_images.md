@@ -94,7 +94,7 @@ In some cases, you can skip dark variants if the original icon looks good under 
 Required icon sizes depend on the usage as listed in the following table:
 
 | Usage                  | Icon Size (pixels) |
-| ---------------------- | ------------------ |
+|------------------------|--------------------|
 | Node, Action, Filetype | 16x16              |
 | Tool window            | 13x13              |
 | Editor gutter          | 12x12              |
@@ -143,8 +143,8 @@ The `IconLoader` class will load the icon that matches the best depending on the
 
 Here are examples of <path>toolWindowStructure.png</path> icon representations:
 
-| Theme/Resolution | File name                                    | Image                                                                       |
-| ---------------- | -------------------------------------------- | --------------------------------------------------------------------------- |
+| Theme/Resolution | File name                                    | Image                                                                   |
+|------------------|----------------------------------------------|-------------------------------------------------------------------------|
 | Default          | <path>toolWindowStructure.png</path>         | ![Tool Window Structure](toolWindowStructure.png)                       |
 | Darcula          | <path>toolWindowStructure_dark.png</path>    | ![Tool Window Structure, dark](toolWindowStructure_dark.png)            |
 | Default + Retina | <path>toolWindowStructure@2x.png</path>      | ![Tool Window Structure, retina](toolWindowStructure@2x.png)            |

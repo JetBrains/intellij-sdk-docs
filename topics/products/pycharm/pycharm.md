@@ -16,7 +16,7 @@ The table below summarizes the `gradle-intellij-plugin` attributes to set in the
 Click on an entry in the table's *Attribute* column to go to the documentation about that attribute.
 
 | `gradle-intellij-plugin` Attribute       | Attribute Value                                                                |
-| ---------------------------------------- | ------------------------------------------------------------------------------ |
+|------------------------------------------|--------------------------------------------------------------------------------|
 | [`intellij.type`][properties]            | `PY` for PyCharm Professional Edition, or `PC` for PyCharm Community Edition.  |
 | [`intellij.version`][properties]         | Set to the targeted `PY` or `PC` version.                                      |
 | [`intellij.plugins`][properties]         | No specific declaration is needed to use `PY` or `PC` APIs.                    |

@@ -5,7 +5,7 @@
 ## Introduction
 [WebStorm](https://www.jetbrains.com/webstorm/) is an IntelliJ Platform-based product.
 Plugin projects for WebStorm can be developed using IntelliJ IDEA with the `gradle-intellij-plugin`.
-                               
+
   > Follow _Building a Plugin for WebStorm – Tutorial for JavaScript Developers_ blog post series to get started: [Part 1](https://blog.jetbrains.com/webstorm/2021/09/building-a-plugin-for-webstorm-part-1/)
   >
   {type="note"}
@@ -21,11 +21,11 @@ The table below summarizes the `gradle-intellij-plugin` attributes to set in the
 Click on an entry in the table's *Attribute* column to go to the documentation about that attribute.
 To see how these attributes appear in a similar <path>build.gradle</path> file for PhpStorm, see [Configuring build.gradle using the IntelliJ IDEA Product Attribute](dev_alternate_products.md#configuring-buildgradle-using-the-intellij-idea-product-attribute).
 
-| `gradle-intellij-plugin` Attribute | Attribute Value                                                                                                                                                                                           |
-| ---------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [`intellij.type`][properties]      | `IU` for IntelliJ IDEA Ultimate.<br/>(`IC` is incompatible with the required `JavaScriptLanguage` plugin)                                                                                                  |
-| [`intellij.version`][properties]   | `192.7142.36` Set to the same BRANCH.BUILD as the WebStorm target version.                                                                                                                                |
-| [`intellij.plugins`][properties]   | Dependency on the `JavaScriptLanguage` plugin.                                                                                                                                                            |
+| `gradle-intellij-plugin` Attribute | Attribute Value                                                                                                                                                                                                      |
+|------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [`intellij.type`][properties]      | `IU` for IntelliJ IDEA Ultimate.<br/>(`IC` is incompatible with the required `JavaScriptLanguage` plugin)                                                                                                            |
+| [`intellij.version`][properties]   | `192.7142.36` Set to the same BRANCH.BUILD as the WebStorm target version.                                                                                                                                           |
+| [`intellij.plugins`][properties]   | Dependency on the `JavaScriptLanguage` plugin.                                                                                                                                                                       |
 | [`runIde.ideDir`][dsl]             | Path to locally installed target version of WebStorm. For example, for macOS:<br/><path>/Users/$USERNAME$/Library/Application Support/JetBrains/Toolbox/apps/WebStorm/ch-0/192.7142.35/WebStorm.app/Contents</path>. |
 
 [properties]: https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md#intellij-platform-properties
@@ -44,7 +44,7 @@ Consequently, without the `com.intellij.modules.platform` declaration the plugin
 
 Use the [Exploring APIs as a Consumer](plugin_compatibility.md#exploring-apis-as-a-consumer) process to identify the libraries <path>JavaScriptLanguage.jar</path>, and <path>javascript-openapi.jar</path>.
 Test your plugin with any version of WebStorm you wish to support.
-                       
+
 ### Javascript Testframework
 To use existing test base classes, specify `com.jetbrains.intellij.javascript:javascript-test-framework:$VERSION$` as `testImplementation` dependency explicitly (see [IntelliJ Platform Artifacts Repositories](intellij_artifacts.md#gradle-example-for-an-individual-module-from-the-intellij-platform)) (2020.3 and later).
 

@@ -25,8 +25,8 @@ Instead, configure AppCode plugin projects to use the `intellij.localPath` attri
 The table below summarizes the `gradle-intellij-plugin` attributes to set in the plugin project's <path>build.gradle</path> file.
 Click on an entry in the table's *Attribute* column to go to the documentation about that attribute.
 
-| `gradle-intellij-plugin` Attribute | Attribute Value                                                                                                                                                                                        |
-| ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `gradle-intellij-plugin` Attribute | Attribute Value                                                                                                                                                                                                   |
+|------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [`intellij.localPath`][properties] | Path to locally installed target version of AppCode. For example, for macOS:<br/><path>/Users/$USERNAME$/Library/Application Support/JetBrains/Toolbox/apps/AppCode/ch-0/193.5662.55/AppCode.app/Contents</path>. |
 | [`runIde.ideDir`][dsl]             | Path to locally installed target version of AppCode. For example, for macOS:<br/><path>/Users/$USERNAME$/Library/Application Support/JetBrains/Toolbox/apps/AppCode/ch-0/193.5662.55/AppCode.app/Contents</path>. |
 

@@ -7,10 +7,10 @@ The following minimal sample demonstrates all details required when exposing UI 
 `/resources/META-INF/plugin.xml`:
 
 ```xml
-<idea-plugin> 
+<idea-plugin>
   <extensions defaultExtensionNs="com.intellij">
     <themeMetadataProvider path="/META-INF/MyPlugin.themeMetadata.json"/>
-  </extensions>    
+  </extensions>
 </idea-plugin>
 ```
 
@@ -78,7 +78,7 @@ All keys must follow this Naming Pattern:
 #### Property
 
 | Word              | Use for                                                                                                                                                                                                                                                                    | Example                                          |
-| ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------ |
+|-------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------|
 | **`foreground`**  | Text color.                                                                                                                                                                                                                                                                | `Label.foreground`                               |
 | **`background`**  | Background color for objects with text.                                                                                                                                                                                                                                    | `Label.background`                               |
 | **`<part>Color`** | Objects with a single color (do not have foreground/background). Do not use the word “Color” separately, always use with the “part” word. <br/><br/>_The word “Color” shows that this is a color property. Otherwise, it can be confused with a property of another type._ | `Popup.borderColor` <br/> `Group.separatorColor` |
@@ -86,7 +86,7 @@ All keys must follow this Naming Pattern:
 #### State
 
 | Word                                                | Use for                                                                                                                                                                | Example                                                                          |
-| --------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+|-----------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------|
 | ~~**`Active`**~~                                    | Enabled components, default state. Omit this word. The default state does not need explicit naming.                                                                    | `Notification.background`                                                        |
 | **`Inactive`**                                      | Enabled components that might be perceived as interactive but are actually not. Example: a tree with visible selection but not in focus. Goes after other state words. | `Tree.inactiveBackground` <br/> `ToolWindow.HeaderTab.hoverInactiveBackground`   |
 | **`Focused`**                                       | The current focused component.                                                                                                                                         | `Button.focusedBorderColor`                                                      |
@@ -102,7 +102,7 @@ A part is an internal element of a component, e.g., an arrow button in a combo b
 If a part is common among several components, use the same name for it. Notable examples of common parts:
 
 | Common parts                           | Use for                                                                                                                                                           | Example                                                                                                                         |
-| -------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+|----------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------|
 | **`Accelerator`** <br/> **`Shortcut`** | Shortcut foreground.                                                                                                                                              | `Menu.acceleratorForeground` <br/> `Editor.shortcutForeground`                                                                  |
 | **`Border`**                           | A line around a component.                                                                                                                                        | `NavBar.borderColor`                                                                                                            |
 | **`Caret`**                            | The vertical line that denotes typing place.                                                                                                                      | `TextField.caretForeground`                                                                                                     |
@@ -134,7 +134,7 @@ Capitalize Object and SubObject. Use lowerCamelCase for property.
 #### Do Not Use
 
 | Do not use                                | Use instead   |
-| ----------------------------------------- | ------------- |
+|-------------------------------------------|---------------|
 | `Color` _as a separate word_              | `<Part>Color` |
 | `Outline`                                 | `borderColor` |
 | `Text`                                    | `Foreground`  |

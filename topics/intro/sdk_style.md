@@ -65,6 +65,7 @@ For example, `## Introduction` gets the ID of `introduction`, and can be linked 
 #### General Links
 General Markdown links have the default Markdown link style:
 * `[Gradle](https://gradle.org)`{disable-links} ([Gradle](https://gradle.org)) links to an external site, such as companies, articles, etc.
+  If URL contains `%` character, append `{interpolate-variables="false"}`.
 * Linking to pages within the SDK documentation:
   `[Page Title](page.md)`{disable-links} links to an SDK doc page (all located under <path>/topics</path>).
   Note that the extension is `.md`, _NOT_ `.html`.

@@ -3,9 +3,9 @@
 <!-- Copyright 2000-202 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 This FAQ is a topical index of questions that have been asked (and answered) on our [IntelliJ IDEA Open API and Plugin Development forum](https://intellij-support.jetbrains.com/hc/en-us/community/topics/200366979-IntelliJ-IDEA-Open-API-and-Plugin-Development).
-                                          
+
  > See also [Explore the IntelliJ Platform API](explore_api.md) for more information and strategies.
- > 
+ >
  {type="tip"}
 
 ## Open-Source Plugins
@@ -95,7 +95,7 @@ This FAQ is a topical index of questions that have been asked (and answered) on 
 *  [How do I get the cursor position in the current editor?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206794335-How-to-get-cursor-position-in-the-current-editor-)
 *  [How do I clear the read-only status of a file?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206142039-Clear-read-only-status)
 *  [How do I show a popup hint in an editor?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206146719-HintManager-API-question)
-*  [How do I create live template-like red box edit regions in an editor?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206800165-How-to-%C3%A7reate-live-template-like-red-box-edit-regions-in-an-editor)
+*  [How do I create live template-like red box edit regions in an editor?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206800165-How-to-%C3%A7reate-live-template-like-red-box-edit-regions-in-an-editor){interpolate-variables="false"}
 *  [How can I show an editor with error highlighting in a tool window?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206146679-Error-highlighting-in-Editors)
 
 ## Inspections

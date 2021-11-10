@@ -2,7 +2,7 @@
 
 <!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-91 Extension Points (EP) and 23 Listeners for CLion
+91 Extension Points (EP) and 27 Listeners for CLion
 
 See [Extension Point List](extension_point_list.md) for IntelliJ Platform EPs.
 
@@ -17,6 +17,8 @@ See [Extension Point List](extension_point_list.md) for IntelliJ Platform EPs.
 | `FileSymbolTablesCache#OUT_OF_CODE_BLOCK_TOPIC` ![Project-Level][project-level] | [`Listener`](upsource:///platform/core-api/src/com/intellij/psi/util/PsiModificationTracker.java) |
 | `CMakeWorkspaceListener#TOPIC` | `CMakeWorkspaceListener` |
 | `CubeMXManager#TOPIC` | `CubeStatusListener` |
+| `CLionExternalBuildManagerListener#TOPIC` | `CLionExternalBuildManagerListener` |
+| `MakefileBuildTargetsManagerListener#TOPIC` | `MakefileBuildTargetsManagerListener` |
 | `CPPToolchainsConfigurable#TOPIC` | `Listener` |
 | `CPPToolchainsListener#TOPIC` | `CPPToolchainsListener` |
 | `ExecutableListener#TOPIC` | `ExecutableListener` |
@@ -32,11 +34,13 @@ See [Extension Point List](extension_point_list.md) for IntelliJ Platform EPs.
 | `CidrInjectionListener#INJECTION_TOPIC` | `CidrInjectionListener` |
 | `OCInclusionContextListener#TOPIC` | `OCInclusionContextListener` |
 | `FileSymbolTableCacheListener#TOPIC` | `FileSymbolTableCacheListener` |
+| `FileSymbolTablesPackListener#TOPIC` | `FileSymbolTablesPackListener` |
 | `OCFileSymbolTableListener#TOPIC` | `OCFileSymbolTableListener` |
 | `OCWorkspaceListener#TOPIC` | `OCWorkspaceListener` |
 | `CidrRootConfigurationListener#TOPIC` | `CidrRootConfigurationListener` |
 | `CidrWorkspaceListener#TOPIC` | `CidrWorkspaceListener` |
 | `RemoteDeploymentListener#TOPIC` | `RemoteDeploymentListener` |
+| `AllowedModules#INVALIDATION_TOPIC` | `Runnable` |
 
 ### CidrCoveragePlugin.xml
 

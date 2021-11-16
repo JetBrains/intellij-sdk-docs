@@ -11,9 +11,9 @@ Highlighting from multiple `TextAttributesKey` items can be layered - for exampl
  > [`DaemonCodeAnalyzer.restart()`](upsource:///platform/analysis-api/src/com/intellij/codeInsight/daemon/DaemonCodeAnalyzer.java).
  >
  {type="tip"}
-                                                                        
+
 ## Color Settings
-The mapping of the `TextAttributesKey` to specific attributes used in an editor is defined by the [`EditorColorsScheme`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/editor/colors/EditorColorsScheme.java) class. 
+The mapping of the `TextAttributesKey` to specific attributes used in an editor is defined by the [`EditorColorsScheme`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/editor/colors/EditorColorsScheme.java) class.
 It can be configured by the user by providing an implementation of [`ColorSettingPage`](upsource:///platform/platform-api/src/com/intellij/openapi/options/colors/ColorSettingsPage.java) registered in `com.intellij.colorSettingsPage` extension point.
 
 The _Export to HTML_ feature uses the same syntax highlighting mechanism as the editor, so it will work automatically for custom languages, which provide a syntax highlighter.
@@ -37,7 +37,7 @@ For highlighting lexer errors, the standard `TextAttributesKey` for bad characte
 **Examples:**
 - [`SyntaxHighlighter`](upsource:///plugins/properties/properties-psi-api/src/com/intellij/lang/properties/PropertiesHighlighter.java) implementation for [Properties language plugin](upsource:///plugins/properties)
 - [Custom Language Support Tutorial: Syntax Highlighter](syntax_highlighter_and_color_settings_page.md)
-                                        
+
  > Use [`HtmlSyntaxInfoUtil`](upsource:///platform/lang-impl/src/com/intellij/openapi/editor/richcopy/HtmlSyntaxInfoUtil.java) to create Lexer-based highlighted code samples, e.g. for usage in documentation.
  >
  {type="tip"}
@@ -94,7 +94,9 @@ To apply additional syntax highlighting (2020.1 and later):
 
 ```java
     holder.newSilentAnnotation(HighlightSeverity.INFORMATION)
-            .range(rangeToHighlight).textAttributes(MyHighlighter.EXTRA_HIGHLIGHT_ATTRIBUTE).create();
+            .range(rangeToHighlight)
+            .textAttributes(MyHighlighter.EXTRA_HIGHLIGHT_ATTRIBUTE)
+            .create();
 ```
 
 </tab>
@@ -106,7 +108,7 @@ Call `AnnotationHolder.createInfoAnnotation()` with an empty message and then [`
 </tab>
 
 </tabs>
-                                      
+
 **Examples:**
 - [`Annotator`](upsource:///plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/PropertiesAnnotator.java) for [Properties language plugin](upsource:///plugins/properties)
 - [Custom Language Support Tutorial: Annotator](annotator.md)
@@ -117,5 +119,5 @@ Finally, if the custom language employs external tools for validating files in t
 
 The [`ExternalAnnotator`](upsource:///platform/analysis-api/src/com/intellij/lang/annotation/ExternalAnnotator.java) highlighting has the lowest priority and is invoked only after all other background processing has completed.
 It uses the same [`AnnotationHolder`](upsource:///platform/analysis-api/src/com/intellij/lang/annotation/AnnotationHolder.java) interface for converting the output of the external tool into editor highlighting.
-                              
+
 To skip running specific `ExternalAnnotator` for given file, register [`ExternalAnnotatorsFilter`](upsource:///platform/analysis-api/src/com/intellij/lang/ExternalAnnotatorsFilter.java) extension in `com.intellij.daemon.externalAnnotatorsFilter` extension point.

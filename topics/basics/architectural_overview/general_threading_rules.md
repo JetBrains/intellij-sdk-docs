@@ -33,7 +33,7 @@ The latter API allows specifying the _modality state_ ([`ModalityState`](upsourc
 #### `ModalityState.NON_MODAL`
 The operation will be executed after all modal dialogs are closed. If any of the open (unrelated) project displays a per-project modal dialog, the action will be performed after the dialog is closed.
 
-####`ModalityState.stateForComponent()`
+#### `ModalityState.stateForComponent()`
 The operation can be executed when the topmost shown dialog is the one that contains the specified component or is one of its parent dialogs.
 
 #### None Specified

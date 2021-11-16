@@ -14,8 +14,6 @@ Each [symbol](symbols.md) may be declared in zero or more places, for example:
 - a Java local variable is a symbol with a single declaration;
 - and a file is a symbol without declarations; it has only references.
 
-Declarations are implementations of
-[`SymbolDeclaration`](upsource:///platform/core-api/src/com/intellij/model/SymbolDeclaration.java).
 Declarations in PSI elements are implementations of
 [`PsiSymbolDeclaration`](upsource:///platform/core-api/src/com/intellij/model/psi/PsiSymbolDeclaration.java).
 
@@ -26,25 +24,18 @@ To report a declaration in a PSI element, either:
 
 ## References
 
-References are implementations of
-[`SymbolReference`](upsource:///platform/core-api/src/com/intellij/model/SymbolReference.java) interface.
 References from PSI elements are implementations of
 [`PsiSymbolReference`](upsource:///platform/core-api/src/com/intellij/model/psi/PsiSymbolReference.java) interface.
 
-The main method of `SymbolReference` is `resolveReference()`, which returns the collection of symbols to which the reference points,
+The main method of `PsiSymbolReference` is `resolveReference()`, which returns the collection of symbols to which the reference points,
 plus additional data.
 If it is not possible to resolve the reference, for example, if it points to an undefined class, an empty collection gets returned.
-A counterpart to the `resolveReference()` method is `SymbolReference.resolvesTo()`,
+A counterpart to the `resolveReference()` method is `PsiSymbolReference.resolvesTo()`,
 which checks if the reference resolves to the specified symbol.
 This method can be implemented to walk the tree only if the element's text is equal to the reference's text.
 
-For convenience, if the reference can possibly be resolved:
-- with a single result, then it might be extended from
-[`SingleResultReference`](upsource:///platform/core-api/src/com/intellij/model/SingleResultReference.java);
-- to a single symbol without additional data, then it might be extended from
-[`SingleTargetReference`](upsource:///platform/core-api/src/com/intellij/model/SingleTargetReference.java);
-- to multiple symbols without additional data, then
-[`SymbolResolveResult.fromSymbol()`](upsource:///platform/core-api/src/com/intellij/model/SymbolResolveResult.java) might be used.
+For convenience, if the reference can possibly be resolved to a single symbol without additional data, then it might be extended from
+[`SingleTargetReference`](upsource:///platform/core-api/src/com/intellij/model/SingleTargetReference.java).
 
 ### Own References
 

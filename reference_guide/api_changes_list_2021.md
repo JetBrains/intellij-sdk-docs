@@ -393,3 +393,8 @@ Rename of packages to `.java.` specific variants
 
 `com.goide.sdk.combobox.GoSdkChooserCombo.getSdk` method moved to the superclass
 : Recompile the dependant code.
+
+### CoffeeScript Plugin 2021.1
+
+`icons.CoffeescriptIcons` class renamed to `org.coffeescript.CoffeescriptIcons`
+: To support dynamic plugins.

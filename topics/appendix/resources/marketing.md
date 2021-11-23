@@ -22,13 +22,13 @@ For more details, please follow the [Embeddable Content](https://plugins.jetbrai
 
 Adding badges to the README files in open-source projects is common for providing additional information for users.
 
-Below are listed a few related to the IntelliJ SDK and plugins development provided by [shields.io](https://shields.io) and [espend.de](https://www.espend.de):
+Below are listed a few related to the IntelliJ SDK and plugins development provided by [shields.io](https://shields.io):
 
 >  The following code snippets contain `:pluginId` and `:packageName` placeholders.
 >
 > `:pluginId` can be obtained from your plugin page URL, like: `https://plugins.jetbrains.com/plugin/6954-kotlin` - in this case, it's `6954`.
 >
-> `:pluginId` for shields.io also accepts a string ID that can be found in *Versions* tab, like `https://plugins.jetbrains.com/plugin/6954-kotlin/versions`.
+> `:pluginId` also accepts a string ID that can be found in *Versions* tab, like `https://plugins.jetbrains.com/plugin/6954-kotlin/versions`.
 >
 > `:packageName` for ReSharper accepts only string ID.
  >
@@ -41,16 +41,6 @@ Below are listed a few related to the IntelliJ SDK and plugins development provi
 ![Downloads](https://img.shields.io/badge/downloads-10M-brightgreen)
 ```markdown
 ![Downloads](https://img.shields.io/jetbrains/plugin/d/:pluginId)
-```
-
-![Downloads](https://img.shields.io/badge/downloads-10M-blue)
-```markdown
-![Downloads](http://phpstorm.espend.de/badge/:pluginId/downloads)
-```
-
-![Downloads Last Month](https://img.shields.io/badge/downloads-10%20k%20last%20month-blue)
-```markdown
-![Downloads Last Month](http://phpstorm.espend.de/badge/:pluginId/last-month)
 ```
 
 **ReSharper Plugins**
@@ -83,11 +73,6 @@ Below are listed a few related to the IntelliJ SDK and plugins development provi
 ![Version](https://img.shields.io/badge/jetbrains%20plugin-v1.7-blue)
 ```markdown
 ![Version](https://img.shields.io/jetbrains/plugin/v/:pluginId)
-```
-
-![Version](https://img.shields.io/badge/version-v1.7-569AC7)
-```markdown
-![Version](http://phpstorm.espend.de/badge/:pluginId/version)
 ```
 
 **ReSharper Plugins**

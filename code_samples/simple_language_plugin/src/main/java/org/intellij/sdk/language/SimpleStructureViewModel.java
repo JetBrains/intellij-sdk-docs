@@ -18,7 +18,7 @@ public class SimpleStructureViewModel extends StructureViewModelBase implements
   }
 
   @NotNull
-  public Sorter[] getSorters() {
+  public Sorter @NotNull [] getSorters() {
     return new Sorter[]{Sorter.ALPHA_SORTER};
   }
 

@@ -1,4 +1,4 @@
-// Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
+// Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
 
 package org.intellij.sdk.language;
 
@@ -41,22 +41,24 @@ public class SimpleSyntaxHighlighter extends SyntaxHighlighterBase {
     return new SimpleLexerAdapter();
   }
 
-  @NotNull
   @Override
-  public TextAttributesKey[] getTokenHighlights(IElementType tokenType) {
+  public TextAttributesKey @NotNull [] getTokenHighlights(IElementType tokenType) {
     if (tokenType.equals(SimpleTypes.SEPARATOR)) {
       return SEPARATOR_KEYS;
-    } else if (tokenType.equals(SimpleTypes.KEY)) {
-      return KEY_KEYS;
-    } else if (tokenType.equals(SimpleTypes.VALUE)) {
-      return VALUE_KEYS;
-    } else if (tokenType.equals(SimpleTypes.COMMENT)) {
-      return COMMENT_KEYS;
-    } else if (tokenType.equals(TokenType.BAD_CHARACTER)) {
-      return BAD_CHAR_KEYS;
-    } else {
-      return EMPTY_KEYS;
     }
+    if (tokenType.equals(SimpleTypes.KEY)) {
+      return KEY_KEYS;
+    }
+    if (tokenType.equals(SimpleTypes.VALUE)) {
+      return VALUE_KEYS;
+    }
+    if (tokenType.equals(SimpleTypes.COMMENT)) {
+      return COMMENT_KEYS;
+    }
+    if (tokenType.equals(TokenType.BAD_CHARACTER)) {
+      return BAD_CHAR_KEYS;
+    }
+    return EMPTY_KEYS;
   }
 
 }

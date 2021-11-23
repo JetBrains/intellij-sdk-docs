@@ -25,9 +25,8 @@ public class DynamicActionGroup extends ActionGroup {
    * @return AnAction[] An instance of {@link AnAction}, in this case containing a single instance of the
    * {@link PopupDialogAction} class.
    */
-  @NotNull
   @Override
-  public AnAction[] getChildren(AnActionEvent e) {
+  public AnAction @NotNull [] getChildren(AnActionEvent e) {
     return new AnAction[]{
             new PopupDialogAction("Action Added at Runtime", "Dynamic Action Demo", SdkIcons.Sdk_default_icon)
     };

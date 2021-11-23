@@ -1,4 +1,4 @@
-// Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
+// Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
 
 package org.intellij.sdk.language;
 
@@ -59,9 +59,8 @@ public class SimpleStructureViewElement implements StructureViewTreeElement, Sor
     return presentation != null ? presentation : new PresentationData();
   }
 
-  @NotNull
   @Override
-  public TreeElement[] getChildren() {
+  public TreeElement @NotNull [] getChildren() {
     if (myElement instanceof SimpleFile) {
       List<SimpleProperty> properties = PsiTreeUtil.getChildrenOfTypeAsList(myElement, SimpleProperty.class);
       List<TreeElement> treeElements = new ArrayList<>(properties.size());

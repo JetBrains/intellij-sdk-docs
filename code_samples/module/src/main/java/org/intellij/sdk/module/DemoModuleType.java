@@ -1,4 +1,4 @@
-// Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
+// Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
 
 package org.intellij.sdk.module;
 
@@ -48,11 +48,10 @@ public class DemoModuleType extends ModuleType<DemoModuleBuilder> {
     return SdkIcons.Sdk_default_icon;
   }
 
-  @NotNull
   @Override
-  public ModuleWizardStep[] createWizardSteps(@NotNull WizardContext wizardContext,
-                                              @NotNull DemoModuleBuilder moduleBuilder,
-                                              @NotNull ModulesProvider modulesProvider) {
+  public ModuleWizardStep @NotNull [] createWizardSteps(@NotNull WizardContext wizardContext,
+                                                        @NotNull DemoModuleBuilder moduleBuilder,
+                                                        @NotNull ModulesProvider modulesProvider) {
     return super.createWizardSteps(wizardContext, moduleBuilder, modulesProvider);
   }
 

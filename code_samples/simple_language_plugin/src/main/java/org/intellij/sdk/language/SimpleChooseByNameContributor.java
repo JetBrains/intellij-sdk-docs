@@ -1,4 +1,4 @@
-// Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
+// Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
 
 package org.intellij.sdk.language;
 
@@ -13,9 +13,8 @@ import java.util.List;
 
 public class SimpleChooseByNameContributor implements ChooseByNameContributor {
 
-  @NotNull
   @Override
-  public String[] getNames(Project project, boolean includeNonProjectItems) {
+  public String @NotNull [] getNames(Project project, boolean includeNonProjectItems) {
     List<SimpleProperty> properties = SimpleUtil.findProperties(project);
     List<String> names = new ArrayList<>(properties.size());
     for (SimpleProperty property : properties) {
@@ -26,9 +25,8 @@ public class SimpleChooseByNameContributor implements ChooseByNameContributor {
     return names.toArray(new String[names.size()]);
   }
 
-  @NotNull
   @Override
-  public NavigationItem[] getItemsByName(String name, String pattern, Project project, boolean includeNonProjectItems) {
+  public NavigationItem @NotNull [] getItemsByName(String name, String pattern, Project project, boolean includeNonProjectItems) {
     // TODO: include non project items
     List<SimpleProperty> properties = SimpleUtil.findProperties(project, name);
     return properties.toArray(new NavigationItem[properties.size()]);

@@ -1,15 +1,13 @@
 // This is a generated file. Not intended for manual editing.
 package org.intellij.sdk.language.psi.impl;
 
-import java.util.List;
-import org.jetbrains.annotations.*;
 import com.intellij.lang.ASTNode;
+import com.intellij.navigation.ItemPresentation;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiElementVisitor;
-import com.intellij.psi.util.PsiTreeUtil;
-import static org.intellij.sdk.language.psi.SimpleTypes.*;
-import org.intellij.sdk.language.psi.*;
-import com.intellij.navigation.ItemPresentation;
+import org.intellij.sdk.language.psi.SimpleProperty;
+import org.intellij.sdk.language.psi.SimpleVisitor;
+import org.jetbrains.annotations.NotNull;
 
 public class SimplePropertyImpl extends SimpleNamedElementImpl implements SimpleProperty {
 
@@ -43,7 +41,7 @@ public class SimplePropertyImpl extends SimpleNamedElementImpl implements Simple
   }
 
   @Override
-  public PsiElement setName(String newName) {
+  public PsiElement setName(@NotNull String newName) {
     return SimplePsiImplUtil.setName(this, newName);
   }
 

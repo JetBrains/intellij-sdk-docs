@@ -102,7 +102,7 @@ I suppose this looks a little bit nicer.
 You often work with your model in more than one place.
 Re-creating the model is too inefficient, so we cache it for you, and any subsequent calls to `DomManager.getFileElement()` will return the same instance.
 So, it is useful to invoke this method just once, and then keep everywhere only the "root" object you've obtained.
-In this case you wont need to repeat that scary first line, and the code will look even nicer.
+In this case you won't need to repeat that scary first line, and the code will look even nicer.
 
 It is also important to note that with this scenario we avoid potential `NullPointerException`: our DOM guarantees that every method accessing a tags child will return a not-null element, even if the correspondingly-named sub-tag doesn't exist.
 That may seem strange at a first glance, but it appears to be rather convenient.
@@ -166,7 +166,7 @@ enum CmpVersion implements NamedEnum {
 
     private final String value;
 
-    private CmpVersion(String value) {
+    CmpVersion(String value) {
         this.value = value;
     }
 
@@ -191,7 +191,7 @@ interface GenericDomValue<T> {
 }
 ```
 
-So, you can just specify a particular `T` when using this interface --- and everything will work.
+So, you can just specify a particular `T` when using this interface - and everything will work.
 Methods that work with `String` are provided for many reasons.
 For example, your `T` is [`PsiClass`](upsource:///java/java-psi-api/src/com/intellij/psi/PsiClass.java).
 It would be useful to highlight invalid values in UI.
@@ -236,7 +236,7 @@ In our example, the attribute name would be "someClass".
 
 If attribute doesn't define a `PsiClass`, but some other custom `T` that needs a converter, you just need to specify the `@Convert` annotation to the getter.
 
-Please note that the attributes getter method will never return `null`, even if the attribute isn't specified in XML.
+Please note that the attributes' getter method will never return `null`, even if the attribute isn't specified in XML.
 Its `getValue()`, `getStringValue()` and `getXmlAttribute()` methods will return `null`, but the DOM interface instance will exist and be valid.
 If the element has an underlying attribute, this can be easily fixed (surely, only if you need that): just call the `undefine()` method (defined in `DomElement`), and the XML attribute disappears, while [`GenericAttributeValue`](upsource:///xml/dom-openapi/src/com/intellij/util/xml/GenericAttributeValue.java) remains valid.
 
@@ -364,7 +364,7 @@ Output correctness/completeness will largely depend on the input scheme and may 
 Follow these steps:
 
 * Run IntelliJ IDEA with _Plugin DevKit_ enabled in [internal mode](enabling_internal.md)
-* Select *Tools \| Internal Actions \| DevKit \| Generate DOM Model*
+* Select <menupath>Tools | Internal Actions | DevKit | Generate DOM Model</menupath>
 * Select Scheme file and set options, then click "Generate" to generate sources
 * Modify generated sources according to your needs
 
@@ -597,7 +597,7 @@ Set and increase `stubVersion` of `com.intellij.dom.fileMetaData` extension when
 
 ## Building a DOM-Based GUI
 
- > This is API is unmaintained and will likely be removed in future versions.
+ > This API is unmaintained and will likely be removed in future versions.
  >
  {type="warning"}
 

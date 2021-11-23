@@ -92,7 +92,7 @@ public class MyToolwindowListener implements ToolWindowManagerListener {
     }
 
     @Override
-    public void stateChanged() {
+    public void stateChanged(@NotNull ToolWindowManager toolWindowManager) {
         // handle the state change
     }
 }

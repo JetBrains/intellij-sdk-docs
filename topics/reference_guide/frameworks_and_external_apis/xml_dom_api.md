@@ -357,6 +357,9 @@ Register it in "extenderClass" attribute of EP `com.intellij.dom.extender`, wher
 
 If the contributed elements depend on anything other than plain XML file content (used framework version, libraries in classpath, ...), make sure to return `false` from `DomExtender.supportsStubs()`.
 
+### Namespace Support
+Annotate DOM model with [`Namespace`](upsource:///xml/dom-openapi/src/com/intellij/util/xml/Namespace.java) and register namespace key mapping via `DomFileDescription.registerNamespacePolicy()` from `DomFileDescription.initializeFileDescription()`.
+
 ### Generating DOM from Existing XSD
 DOM can be generated automatically from existing XSD/DTD.
 Output correctness/completeness will largely depend on the input scheme and may require additional manual adjustments.

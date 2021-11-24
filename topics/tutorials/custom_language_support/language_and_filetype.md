@@ -40,12 +40,15 @@ The Simple Language file type is defined by subclassing [`LanguageFileType`](ups
 
 Direct registration is possible - no `FileTypeFactory` is required.
 
-Instead, the file type is registered via the `com.intellij.fileType` extension point in <path>plugin.xml</path>:
+Instead, the file type is registered via the `com.intellij.fileType` extension point in <path>plugin.xml</path> and registered with <path>*.simple</path> extension:
 
 ```xml
   <extensions defaultExtensionNs="com.intellij">
-    <fileType name="Simple File" implementationClass="org.intellij.sdk.language.SimpleFileType"
-            fieldName="INSTANCE" language="Simple" extensions="simple"/>
+    <fileType name="Simple File"
+              implementationClass="org.intellij.sdk.language.SimpleFileType"
+              fieldName="INSTANCE"
+              language="Simple"
+              extensions="simple"/>
   </extensions>
 ```
 

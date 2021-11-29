@@ -81,6 +81,9 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 Running tests fails with `jarFiles is not set for [...]` or `Created extension classloader is not equal to plugin’s one`
 : Set system property `idea.force.use.core.classloader` to `true`.
 
+Running tests fails using Gradle setup
+: Please use [workarounds](https://youtrack.jetbrains.com/issue/IDEA-278926#focus=Comments-27-5561012.0-0).
+
 `com.intellij.ui.mac.MacMessages.showMessageDialog(String, String, String[], boolean, Window, int, int, DialogWrapper.DoNotAskOption)` method removed
 : Use `com.intellij.ui.mac.MacMessages.showMessageDialog(String, String, String[], boolean, Window, int, int,  DoNotAskOption)` instead.
 

@@ -103,13 +103,13 @@ Running tests fails using Gradle setup
 : Recompile the dependant code or use `com.intellij.diagnostic.PerformanceWatcherImpl.SnapshotImpl` instead.
 
 `com.intellij.openapi.fileEditor.impl.EditorTabPresentationUtil.getEditorTabTitle(Project, VirtualFile, EditorWindow)` method parameter `EditorWindow` removed
-: This parameter never needed, but lead to code coupling.
+: This parameter was never needed, but led to code coupling.
 
 `com.intellij.openapi.fileEditor.impl.EditorTabPresentationUtil.getUniqueEditorTabTitle(Project, VirtualFile, EditorWindow)` method parameter `EditorWindow` removed
-: This parameter never needed, but lead to code coupling.
+: This parameter was never needed, but led to code coupling.
 
 `com.intellij.openapi.fileEditor.impl.EditorTabTitleProvider.getEditorTabTitle(Project, VirtualFile, EditorWindow)` method parameter `EditorWindow` removed
-: This parameter never needed, but lead to code coupling.
+: This parameter was never needed, but led to code coupling.
 
 Constructor `com.intellij.codeInsight.hints.settings.InlayProviderSettingsModel` changed
 : Added `Language` parameter.

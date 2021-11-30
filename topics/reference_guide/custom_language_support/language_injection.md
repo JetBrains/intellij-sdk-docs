@@ -147,24 +147,25 @@ Therefore, you load the configuration optionally in your main <path>plugin.xml</
 ## LanguageInjectionContributor and LanguageInjectionPerformer
 
 The `com.intellij.languageInjectionContributor` EP provides injection information for the given context in terms of _what_ to inject.
-As a plugin author, implement this EP to provide context-specific injections.
+As a plugin author, implement [`LanguageInjectionContributor`](upsource:///platform/core-api/src/com/intellij/lang/injection/general/LanguageInjectionContributor.java) to provide context-specific injections.
+
 For instance, if you want to inject a YAML or JSON to a literal language depending on some conditions you could implement this interface like this:
 
+```java
 public final class MyConfigInjector implements LanguageInjectionContributor {
 
-```java
-public Injection getInjection(@NotNull PsiElement context) {
-  if (!isConfigPlace(context)) return null;
-    if (shouldInjectYaml(context)) {
-      return new SimpleInjection(
-              YAMLLanguage.INSTANCE.getID(), "", "", null);
+  public Injection getInjection(@NotNull PsiElement context) {
+    if (!isConfigPlace(context)) return null;
+      if (shouldInjectYaml(context)) {
+        return new SimpleInjection(
+                YAMLLanguage.INSTANCE.getID(), "", "", null);
+      }
+      else if (shouldInjectJSON(context)) {
+        return new SimpleInjection(
+                JsonLanguage.INSTANCE.getID(), "", "", null);
+      }
+      return null;
     }
-    else if (shouldInjectJSON(context)) {
-      return new SimpleInjection(
-              JsonLanguage.INSTANCE.getID(), "", "", null);
-    }
-    return null;
-  }
 }
 ```
 
@@ -181,14 +182,15 @@ If it is not implemented then the
 [`DefaultLanguageInjectionPerformer`](upsource:///plugins/IntelliLang/src/org/intellij/plugins/intelliLang/inject/DefaultLanguageInjectionPerformer.java)
 will be used.
 
-For the `com.intellij.languageInjectionPerformer` EP, two methods need to be implemented. First, `isPrimary()` determines if this is the default `LanguageInjectionPerformer` for the language and if it handles most of the injections.
+For the `com.intellij.languageInjectionPerformer` EP, two methods need to be implemented in [`LanguageInjectionPerformer`](upsource:///platform/core-api/src/com/intellij/lang/injection/general/LanguageInjectionPerformer.java).
+First, `isPrimary()` determines if this is the default `LanguageInjectionPerformer` for the language and if it handles most of the injections.
 If there is no primary `LanguageInjectionPerformer` found, then a fallback injection will be performed.
 
 The method `performInjection()` does the actual injection into the context PSI element and/or some elements around it if needed in case if they are semantically connected (concatenation injection for instance).
 
 ## MultiHostInjector
 
-`com.intellij.lang.injection.MultiHostInjector` is a very low-level API, but it gives plugin authors the most freedom.
+[`MultiHostInjector`](upsource:///platform/core-api/src/com/intellij/lang/injection/MultiHostInjector.java) registered in extension point `com.intellij.multiHostInjector` is a very low-level API, but it gives plugin authors the most freedom.
 It performs language injection inside other PSI elements, e.g. inject SQL inside XML tag text or inject regular expressions into Java string literals.
 
 Plugin authors need to implement `getLanguagesToInject()` to provide a list of places to inject a language to.

@@ -146,13 +146,13 @@ Therefore, you load the configuration optionally in your main <path>plugin.xml</
 
 ## LanguageInjectionContributor and LanguageInjectionPerformer
 
-The `com.intellij.languageInjectionContributor` EP provides injection information for the given context in terms of _what_ to inject.
+The `com.intellij.LanguageInjectionContributor` EP provides injection information for the given context in terms of _what_ to inject.
 As a plugin author, implement this EP to provide context-specific injections.
 For instance, if you want to inject a YAML or JSON to a literal language depending on some conditions you could implement this interface like this:
 
+```java
 public final class MyConfigInjector implements LanguageInjectionContributor {
 
-```java
 public Injection getInjection(@NotNull PsiElement context) {
   if (!isConfigPlace(context)) return null;
     if (shouldInjectYaml(context)) {

@@ -1522,7 +1522,7 @@
 |-----------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
 | [org.jetbrains.kotlin.completionExtension](https://jb.gg/ipe?extensions=org.jetbrains.kotlin.completionExtension) ![Non-Dynamic][non-dynamic] | [`KotlinCompletionExtension`](upsource:///plugins/kotlin/completion/src/org/jetbrains/kotlin/idea/completion/KotlinCompletionContributor.kt) |
 
-### core.xml
+### core.xml (Kotlin)
 [core.xml](upsource:///plugins/kotlin/plugin/resources/META-INF/core.xml)
 
 | Extension Point                                                                                                                                   | Implementation                                                                                                                                 |

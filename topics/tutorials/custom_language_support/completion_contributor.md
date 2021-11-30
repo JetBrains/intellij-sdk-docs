@@ -2,6 +2,8 @@
 
 <!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
+<include src="language_and_filetype.md" include-id="custom_language_tutorial_header"></include>
+
 Custom languages provide code completion using one of two approaches: Contributor and Reference-based (see [](reference_contributor.md)) completion.
 
 **Reference**: [](code_completion.md)

@@ -2,6 +2,8 @@
 
 <!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
+<include src="language_and_filetype.md" include-id="custom_language_tutorial_header"></include>
+
 A commenter enables the user to comment-out a line of code at the cursor or selected code automatically.
 The [`Commenter`](upsource:///platform/core-api/src/com/intellij/lang/Commenter.java) defines support for **Code \| Comment with Line Comment** and **Code \| Comment with Block Comment** actions.
 

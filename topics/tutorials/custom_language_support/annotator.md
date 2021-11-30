@@ -2,6 +2,8 @@
 
 <!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
+<include src="language_and_filetype.md" include-id="custom_language_tutorial_header"></include>
+
 An `Annotator` helps highlight and annotate any code based on specific rules.
 This section adds annotation functionality to support the Simple Language in the context of Java code.
 
@@ -11,9 +13,9 @@ This section adds annotation functionality to support the Simple Language in the
 Classes defined in this step of the tutorial depend on `com.intellij.psi.PsiLiteralExpression` (the PSI representation for String literals in Java code) at runtime.
 Using `PsiLiteralExpression` [introduces a dependency](plugin_compatibility.md#modules-specific-to-functionality) on `com.intellij.java`.
 
-Beginning in version 2019.2, a dependency on Java plugin [must be declared explicitly](https://blog.jetbrains.com/platform/2019/06/java-functionality-extracted-as-a-plugin/). 
+Beginning in version 2019.2, a dependency on Java plugin [must be declared explicitly](https://blog.jetbrains.com/platform/2019/06/java-functionality-extracted-as-a-plugin/).
 First, add a dependency on the Java plugin in Gradle build file:
-                                           
+
 <tabs>
 <tab title="build.gradle">
 
@@ -28,7 +30,7 @@ intellij {
 <tab title="build.gradle.kts">
 
 ```kotlin
-intellij { 
+intellij {
   plugins.set(listOf("com.intellij.java"))
 }
 ```

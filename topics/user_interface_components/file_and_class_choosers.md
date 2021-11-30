@@ -10,8 +10,8 @@ This method has multiple overloads.
 The best method to use is the one which returns void and takes a callback receiving the list of selected files as a parameter.
 This is the only overload which will display a native file open dialog on macOS.
 
-The [`FileChooserDescriptor`](upsource:///platform/platform-api/src/com/intellij/openapi/fileChooser/FileChooserDescriptor.java) class allows you to control which files can be selected.
-The constructor parameters specify whether files and/or directories can be selected, and whether multiple selection is allowed (see [FileChooserDescriptorFactory](upsource:///platform/platform-api/src/com/intellij/openapi/fileChooser/FileChooserDescriptorFactory.java) for common variants).
+The [`FileChooserDescriptor`](upsource:///platform/ide-core/src/com/intellij/openapi/fileChooser/FileChooserDescriptor.java) class allows you to control which files can be selected.
+The constructor parameters specify whether files and/or directories can be selected, and whether multiple selection is allowed (see [`FileChooserDescriptorFactory`](upsource:///platform/ide-core/src/com/intellij/openapi/fileChooser/FileChooserDescriptorFactory.java) for common variants).
 
 For more fine-grained control over the allowed selection, you can overload the `isFileSelectable()` method.
 You can also customize the presentation of files by overriding `getIcon()`, `getName()` and `getComment()` methods.

@@ -64,7 +64,7 @@ Instead, the file type is registered via the `com.intellij.fileType` extension p
 <tab title="Pre-2019.2">
 
 ### Define a FileType Factory
-First, define `SimpleFileTypeFactory` as a subclass of [`FileTypeFactory`](upsource:///platform/platform-api/src/com/intellij/openapi/fileTypes/FileTypeFactory.java).
+First, define `SimpleFileTypeFactory` as a subclass of [`FileTypeFactory`](upsource:///platform/ide-core/src/com/intellij/openapi/fileTypes/FileTypeFactory.java).
 
 ```java
 ```

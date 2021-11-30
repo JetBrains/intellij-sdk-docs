@@ -25,7 +25,7 @@ Unlike [Developing Custom Language Plugins](custom_language_support.md), it talk
 
 ### How can I cause the PSI for a virtual file to be rebuilt?
 
-[`FileContentUtil.reparseFiles()`](upsource:///platform/lang-api/src/com/intellij/util/FileContentUtil.java)
+[`FileContentUtil.reparseFiles()`](upsource:///platform/analysis-api/src/com/intellij/util/FileContentUtil.java)
 
 ## Java Specific
 
@@ -59,7 +59,7 @@ PsiPackage psiPackage = JavaPsiFacade.getInstance(project)
 ```
 
 or
-                             
+
 [`PsiUtil.getPackageName()`](upsource:///java/java-psi-api/src/com/intellij/psi/util/PsiUtil.java)
 
 ### How do I find the methods overriding a specific method?

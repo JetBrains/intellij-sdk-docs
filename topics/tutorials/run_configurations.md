@@ -5,7 +5,7 @@
 These series of steps show how to register and implement a simple Run Configuration.
 Run Configurations are used to run internal and external processes from within IntelliJ Platform based products.
 To get familiar with the concept of a Run Configuration refer [Run/Debug Configuration](https://www.jetbrains.com/idea/help/run-debug-configuration.html) section of [IntelliJ IDEA Web Help](https://www.jetbrains.com/idea/help/intellij-idea.html)
-                                               
+
 Consider the **runConfiguration** sample plugin available in the [code samples](https://github.com/JetBrains/intellij-sdk-code-samples/tree/main/run_configuration).
 See [Code Samples](code_samples.md) on how to set up and run the plugin.
 
@@ -25,7 +25,7 @@ Add new `com.intellij.configurationType` extension to the [plugin.xml](https://g
 
 ## Implement ConfigurationType
 
-Implement [`ConfigurationType`](upsource:///platform/lang-api/src/com/intellij/execution/configurations/ConfigurationType.java)  interface registered in the Step 1.
+Implement [`ConfigurationType`](upsource:///platform/execution/src/com/intellij/execution/configurations/ConfigurationType.java)  interface registered in the Step 1.
 
 ```java
 ```
@@ -33,13 +33,13 @@ Implement [`ConfigurationType`](upsource:///platform/lang-api/src/com/intellij/e
 
 ## Implement a ConfigurationFactory
 
-Implement a new [`ConfigurationFactory`](upsource:///platform/lang-api/src/com/intellij/execution/configurations/ConfigurationFactory.java) through which custom run configurations will be created.
+Implement a new [`ConfigurationFactory`](upsource:///platform/execution/src/com/intellij/execution/configurations/ConfigurationFactory.java) through which custom run configurations will be created.
 
 ```java
 ```
 {src="run_configuration/src/main/java/org/jetbrains/sdk/runConfiguration/DemoConfigurationFactory.java"}
-                             
-Implement corresponding configuration options class extending [`RunConfigurationOptions`](upsource:///platform/lang-api/src/com/intellij/execution/configurations/RunConfigurationOptions.kt) to store settings.
+
+Implement corresponding configuration options class extending [`RunConfigurationOptions`](upsource:///platform/execution/src/com/intellij/execution/configurations/RunConfigurationOptions.kt) to store settings.
 
 ```java
 ```
@@ -49,8 +49,8 @@ Implement corresponding configuration options class extending [`RunConfiguration
 
 To make your changes visible from the UI, implement a new Run Configuration.
 
-**Note:** In most of the cases you can derive a custom Run Configuration class from the [`RunConfigurationBase`](upsource:///platform/lang-api/src/com/intellij/execution/configurations/RunConfigurationBase.java).
-If you need to implement specific settings externalization rules and I/O behaviour, use [`RunConfiguration`](upsource:///platform/lang-api/src/com/intellij/execution/configurations/RunConfiguration.java) interface.
+**Note:** In most of the cases you can derive a custom Run Configuration class from the [`RunConfigurationBase`](upsource:///platform/execution/src/com/intellij/execution/configurations/RunConfigurationBase.java).
+If you need to implement specific settings externalization rules and I/O behaviour, use [`RunConfiguration`](upsource:///platform/execution/src/com/intellij/execution/configurations/RunConfiguration.java) interface.
 
 ```java
 ```

@@ -3,18 +3,18 @@
 <!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 This page gives an overview of the Version Control Integration API.
-                  
+
 Reference: [OSS plugins providing VCS](https://jb.gg/ipe?extensions=com.intellij.vcs)
 
 ## Key Concepts
 
 ### FilePath
 
-A [`FilePath`](upsource:///platform/platform-api/src/com/intellij/openapi/vcs/FilePath.java) represents a path to a file or directory on disk or in the VCS repository.
+A [`FilePath`](upsource:///platform/ide-core/src/com/intellij/openapi/vcs/FilePath.java) represents a path to a file or directory on disk or in the VCS repository.
 Unlike a [`VirtualFile`](upsource:///platform/core-api/src/com/intellij/openapi/vfs/VirtualFile.java), a `FilePath` can represent a path to a file which doesn't exist on disk.
-The main difference between a `FilePath` and a [`java.io.File`](https://docs.oracle.com/javase/8/docs/api/java/io/File.html) is that a `FilePath` caches the [`VirtualFile`](upsource:///platform/core-api/src/com/intellij/openapi/vfs/VirtualFile.java) corresponding to the path, so it can be retrieved without doing a VFS search.
+The main difference between a `FilePath` and a [`java.io.File`](https://docs.oracle.com/javase/8/docs/api/java/io/File.html) is that a `FilePath` caches the `VirtualFile` corresponding to the path, so it can be retrieved without doing a VFS search.
 
-To create instances of [`FilePath`](upsource:///platform/platform-api/src/com/intellij/openapi/vcs/FilePath.java), the [`VcsContextFactory`](upsource:///platform/vcs-api/src/com/intellij/openapi/vcs/actions/VcsContextFactory.java) API is used.
+To create instances of `FilePath`, the [`VcsContextFactory`](upsource:///platform/vcs-api/src/com/intellij/openapi/vcs/actions/VcsContextFactory.java) API is used.
 It can be accessed as`PeerFactory.getInstance().getVcsContextFactory()`
 
 `FilePath` representing paths in a VCS repository, rather than local paths, are created using `VcsContextFactory.createFilePathOnNonLocal()`.

@@ -29,7 +29,7 @@ To associate the file type in the IDE, specify one or more associations as liste
 
 <tab title="Pre-2019.2">
 
-To register a file type, the plugin developer provides a subclass of [`FileTypeFactory`](upsource:///platform/platform-api/src/com/intellij/openapi/fileTypes/FileTypeFactory.java), which is registered via the `com.intellij.fileTypeFactory` extension point.
+To register a file type, the plugin developer provides a subclass of [`FileTypeFactory`](upsource:///platform/ide-core/src/com/intellij/openapi/fileTypes/FileTypeFactory.java), which is registered via the `com.intellij.fileTypeFactory` extension point.
 
 </tab>
 </tabs>

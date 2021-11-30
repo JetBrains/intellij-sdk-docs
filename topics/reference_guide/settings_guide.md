@@ -15,7 +15,7 @@ This document describes adding custom Settings at the Project and Application (o
 Custom Settings implementations are declared in a plugin's configuration (`plugin.xml`) file using one of two Extension Points (EPs), depending on the level of the Settings.
 Many [attributes](#settings-declaration-attributes) are shared between the EP declarations.
 
-Application and Project Settings typically provide an implementation based on the [`Configurable`](upsource:///platform/platform-api/src/com/intellij/openapi/options/Configurable.java) interface because they do not have runtime dependencies.
+Application and Project Settings typically provide an implementation based on the [`Configurable`](upsource:///platform/ide-core/src/com/intellij/openapi/options/Configurable.java) interface because they do not have runtime dependencies.
 See [Implementations for Settings Extension Points](#implementations-for-settings-extension-points) for more information.
 
  >  For performance reasons, the recommended approach is to declare as much information as possible about a Settings' implementation using attributes in the Extension Point.
@@ -51,7 +51,7 @@ See [Settings Declaration Attributes](#settings-declaration-attributes) for deta
 ```
 
 ### Settings Declaration Attributes
-Readers are encouraged to review the Javadoc comments for [`Configurable`](upsource:///platform/platform-api/src/com/intellij/openapi/options/Configurable.java) because the attribute information applies to `ConfigurableProvider` as well as `Configurable`, as noted.
+Readers are encouraged to review the Javadoc comments for [`Configurable`](upsource:///platform/ide-core/src/com/intellij/openapi/options/Configurable.java) because the attribute information applies to `ConfigurableProvider` as well as `Configurable`, as noted.
 This section provides some additional clarification of those comments.
 
 #### Table of Attributes
@@ -94,12 +94,12 @@ See the [previous section](#table-of-attributes) for all supported attributes.
 
 ## Implementations for Settings Extension Points
 Implementations for `com.intellij.projectConfigurable` and `com.intellij.applicationConfigurable` EPs can have one of two bases:
-* The [`Configurable`](upsource:///platform/platform-api/src/com/intellij/openapi/options/Configurable.java) interface, which provides a named configurable component with a Swing form.
+* The [`Configurable`](upsource:///platform/ide-core/src/com/intellij/openapi/options/Configurable.java) interface, which provides a named configurable component with a Swing form.
   Most Settings providers are based on the `Configurable` interface or one of its sub- or supertypes.
-* The [`ConfigurableProvider`](upsource:///platform/platform-api/src/com/intellij/openapi/options/ConfigurableProvider.java) class, which can hide a configurable component from the Settings dialog based on runtime conditions.
+* The [`ConfigurableProvider`](upsource:///platform/ide-core/src/com/intellij/openapi/options/ConfigurableProvider.java) class, which can hide a configurable component from the Settings dialog based on runtime conditions.
 
 ### The Configurable Interface
-Many Settings in the `intellij-community` code base implement `Configurable` or one of its subtypes, such as [`SearchableConfigurable`](upsource:///platform/platform-api/src/com/intellij/openapi/options/SearchableConfigurable.java).
+Many Settings in the `intellij-community` code base implement `Configurable` or one of its subtypes, such as [`SearchableConfigurable`](upsource:///platform/ide-core/src/com/intellij/openapi/options/SearchableConfigurable.java).
 Readers are encouraged to review the Javadoc comments for `Configurable`.
 
 #### Constructors
@@ -143,7 +143,7 @@ These subtypes are based on `com.intellij.openapi.options.ConfigurableEP`.
 For example, <menupath>Settings/Preferences | Editor | General | Appearance</menupath> allows adding Settings via [`EditorSmartKeysConfigurableEP`](upsource:///platform/lang-impl/src/com/intellij/application/options/editor/EditorSmartKeysConfigurableEP.java) and `com.intellij.editorSmartKeysConfigurable` EP.
 
 ### The ConfigurableProvider Class
-The [`ConfigurableProvider`](upsource:///platform/platform-api/src/com/intellij/openapi/options/ConfigurableProvider.java) class only provides a `Configurable` implementation if its runtime conditions are met.
+The [`ConfigurableProvider`](upsource:///platform/ide-core/src/com/intellij/openapi/options/ConfigurableProvider.java) class only provides a `Configurable` implementation if its runtime conditions are met.
 The IntelliJ Platform first calls the `ConfigurableProvider.canCreateConfigurable()`, which evaluates runtime conditions to determine if Settings changes make sense in the current context.
 If the Settings make sense to display, `canCreateConfigurable()` returns `true`.
 In that case the IntelliJ Platform calls `ConfigurableProvider.createConfigurable()`, which returns the `Configurable` object for its Settings implementation.

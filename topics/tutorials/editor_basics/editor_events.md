@@ -67,7 +67,7 @@ When the `EditorHandlerIllustration.actionPerformed()` method clones the caret, 
 An instance of [`EditorActionManager`](upsource:///platform/platform-api/src/com/intellij/openapi/editor/actionSystem/EditorActionManager.java) is required to obtain the correct `EditorActionHandler`.
 The `EditorActionManager` class provides a static method to do this.
 
-To request the correct `EditorActionHandler` from `EditorActionManager`, consult the [`IdeActions`](upsource:///platform/platform-api/src/com/intellij/openapi/actionSystem/IdeActions.java) interface for the correct constant to pass into the `EditorActionManager.getActionHandler()` method.
+To request the correct `EditorActionHandler` from `EditorActionManager`, consult the [`IdeActions`](upsource:///platform/ide-core/src/com/intellij/openapi/actionSystem/IdeActions.java) interface for the correct constant to pass into the `EditorActionManager.getActionHandler()` method.
 For cloning a caret below the primary caret, the constant is `ACTION_EDITOR_CLONE_CARET_BELOW`.
 Based on that constant, the `EditorActionManager` returns an instance of [`CloneCaretActionHandler`](upsource:///platform/platform-impl/src/com/intellij/openapi/editor/actions/CloneCaretActionHandler.java), a subclass of `EditorActionHandler`.
 

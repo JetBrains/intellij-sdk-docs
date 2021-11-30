@@ -2,7 +2,7 @@
 
 <!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-24 Extension Points (EP) and 4 Listeners for AppCode
+25 Extension Points (EP) and 4 Listeners for AppCode
 
 See [Extension Point List](extension_point_list.md) for IntelliJ Platform EPs.
 
@@ -42,6 +42,7 @@ See [Extension Point List](extension_point_list.md) for IntelliJ Platform EPs.
 
 | Extension Point | Implementation |
 |-----------------|----------------|
+| [appcode.attachDebuggerProvider](https://jb.gg/ipe?extensions=appcode.attachDebuggerProvider) ![Non-Dynamic][non-dynamic] | `AppCodeAttachDebuggerExtension` |
 | [appcode.runConfigurationExtension](https://jb.gg/ipe?extensions=appcode.runConfigurationExtension) ![Non-Dynamic][non-dynamic] | `AppCodeRunConfigurationExtension` |
 | [appcode.xcodeExternalBuildProvider](https://jb.gg/ipe?extensions=appcode.xcodeExternalBuildProvider) ![Non-Dynamic][non-dynamic] | `XcodeExternalBuildProvider` |
 | [appcode.xcodeTemplatePathsProvider](https://jb.gg/ipe?extensions=appcode.xcodeTemplatePathsProvider) ![Non-Dynamic][non-dynamic] | `XcodeTemplatePathsProvider` |

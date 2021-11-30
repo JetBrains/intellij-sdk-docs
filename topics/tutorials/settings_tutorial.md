@@ -90,7 +90,7 @@ An explanation of this declaration can be found in [Declaring Application Settin
 ```
 
 ### Creating the AppSettingsConfigurable Implementation
-The `AppSettingsConfigurable` class implements [`Configurable`](upsource:///platform/platform-api/src/com/intellij/openapi/options/Configurable.java) interface.
+The `AppSettingsConfigurable` class implements [`Configurable`](upsource:///platform/ide-core/src/com/intellij/openapi/options/Configurable.java) interface.
 The class has one field to hold a reference to the `AppSettingsComponent`.
 
 ```java

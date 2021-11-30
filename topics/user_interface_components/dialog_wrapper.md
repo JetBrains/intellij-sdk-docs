@@ -58,7 +58,7 @@ Please see also [Validation errors](https://jetbrains.design/intellij/principles
 To validate the data entered into the dialog, override the `doValidate()` method.
 The method will be called automatically by timer.
 If the currently entered data is valid, return `null`.
-Otherwise, return a [`ValidationInfo`](upsource:///platform/platform-api/src/com/intellij/openapi/ui/ValidationInfo.java) object which encapsulates an error message, and an optional component associated with the invalid data.
+Otherwise, return a [`ValidationInfo`](upsource:///platform/ide-core/src/com/intellij/openapi/ui/ValidationInfo.java) object which encapsulates an error message, and an optional component associated with the invalid data.
 When specifying a component, an error icon will be displayed next to it, and it will be focused when the user tries to invoke the <control>OK</control> action.
 
 ## Example

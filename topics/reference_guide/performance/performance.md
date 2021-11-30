@@ -46,7 +46,7 @@ Usually, [`CachedValue`](upsource:///platform/core-api/src/com/intellij/psi/util
 If the information you cache depends only on a subtree of the current PSI element (and nothing else: no resolve results or other files), you can cache it in a field in that `PsiElement` and drop the cache in an override of `ASTDelegatePsiElement.subtreeChanged()`.
 
 ## Improving Indexing Performance
-                  
+
 #### Performance Metrics
 Indexing performance metrics in JSON format are generated in [logs directory](https://intellij-support.jetbrains.com/hc/en-us/articles/206544519-Directories-used-by-the-IDE-to-store-settings-caches-plugins-and-logs) (see [sandbox directory](ide_development_instance.md#the-development-instance-sandbox-directory) for development instance) in 2020.2 and later.
 These are additionally available in HTML format starting with 2020.1.
@@ -58,7 +58,7 @@ Use lexer information instead of parsed trees if possible.
 If impossible, use light AST which doesn't create memory-hungry AST nodes inside, so traversing it might be faster.
 Make sure to traverse only the nodes you need to.
 
-For indexing XML, also consider using [`NanoXmlUtil`](upsource:///platform/indexing-api/src/com/intellij/util/xml/NanoXmlUtil.java).
+For indexing XML, also consider using [`NanoXmlUtil`](upsource:///platform/indexing-impl/src/com/intellij/util/xml/NanoXmlUtil.java).
 
 For stub index, implement [`LightStubBuilder`](upsource:///platform/core-impl/src/com/intellij/psi/stubs/LightStubBuilder.java).
 For other indexes, you can obtain the light AST manually via `((PsiDependentFileContent) fileContent).getLighterAST()`.
@@ -85,7 +85,7 @@ Meanwhile, you can try to speed up what you can in your plugin, it'll be benefic
 Don't do anything expensive in event listeners.
 Ideally, you should only clear some caches.
 You can also schedule background processing of events, but be prepared that some new events might be delivered before your background processing starts, and thus the world might have changed by that moment or even in the middle of background processing.
-Consider using [`MergingUpdateQueue`](upsource:///platform/platform-api/src/com/intellij/util/ui/update/MergingUpdateQueue.java) and `ReadAction.nonBlocking()` to mitigate these issues.
+Consider using [`MergingUpdateQueue`](upsource:///platform/ide-core/src/com/intellij/util/ui/update/MergingUpdateQueue.java) and `ReadAction.nonBlocking()` to mitigate these issues.
 
 Massive batches of VFS events can be pre-processed in background, see [`AsyncFileListener`](upsource:///platform/core-api/src/com/intellij/openapi/vfs/AsyncFileListener.java) (2019.2 or later).
 

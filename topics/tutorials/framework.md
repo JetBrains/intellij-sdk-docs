@@ -57,7 +57,7 @@ public class DemoFramework extends FrameworkTypeEx {
 ## Creating Provider for Enabling Framework Support
 To make the framework set up available while executing the steps to create a project, the
 `DemoFramework.createProvider()` method must be implemented to return an object of type [`FrameworkSupportInModuleConfigurable`](upsource:///java/idea-ui/src/com/intellij/framework/addSupport/FrameworkSupportInModuleConfigurable.java), which adds the framework to a module.
-In this example the framework is added to any [`ModuleType`](upsource:///platform/lang-api/src/com/intellij/openapi/module/ModuleType.java) without checking, which is usually not the case.
+In this example the framework is added to any [`ModuleType`](upsource:///platform/lang-core/src/com/intellij/openapi/module/ModuleType.java) without checking, which is usually not the case.
 
 ```java
   @NotNull

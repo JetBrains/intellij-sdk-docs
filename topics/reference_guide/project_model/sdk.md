@@ -50,7 +50,7 @@ See the [project_model](https://github.com/JetBrains/intellij-sdk-code-samples/t
 
 ## Working with a Custom SDK
 
-To create a custom SDK, provide a class extending [`SdkType`](upsource:///platform/lang-api/src/com/intellij/openapi/projectRoots/SdkType.java), leave `saveAdditionalData()` blank, and register it in the `com.intellij.sdkType` extension point.
+To create a custom SDK, provide a class extending [`SdkType`](upsource:///platform/lang-core/src/com/intellij/openapi/projectRoots/SdkType.java), leave `saveAdditionalData()` blank, and register it in the `com.intellij.sdkType` extension point.
 
 To make SDK settings persistent, override `setupSdkPaths()` and save settings by `modificator.commitChanges()`:
 

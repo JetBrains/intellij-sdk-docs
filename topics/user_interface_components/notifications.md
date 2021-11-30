@@ -32,7 +32,7 @@ Use to highlight important new/changed features via [`GotItMessage`](upsource://
 
 ### Top-Level Notifications (Balloons)
 
-The most general way to display non-modal notifications is to use the [`Notifications`](upsource:///platform/platform-api/src/com/intellij/notification/Notifications.java) class.
+The most general way to display non-modal notifications is to use the [`Notifications`](upsource:///platform/ide-core/src/com/intellij/notification/Notifications.java) class.
 
 It has two main advantages:
 
@@ -41,15 +41,15 @@ It has two main advantages:
 
 For UI reference, see [Balloon](https://jetbrains.design/intellij/controls/balloon/) in the IntelliJ Platform UI Guidelines.
 
-The specific method used to display a notification is [`Notifications.Bus.notify()`](upsource:///platform/platform-api/src/com/intellij/notification/Notifications.java). If the current Project is known, please use overload with `Project` parameter, so the notification is shown in its associated frame.
+The specific method used to display a notification is [`Notifications.Bus.notify()`](upsource:///platform/ide-core/src/com/intellij/notification/Notifications.java). If the current Project is known, please use overload with `Project` parameter, so the notification is shown in its associated frame.
 
 The text of the notification can include HTML tags.
 
-Use `Notification.addAction(AnAction)` to add links below the content, use [`NotificationAction`](upsource:///platform/platform-api/src/com/intellij/notification/NotificationAction.java) for convenience.
+Use `Notification.addAction(AnAction)` to add links below the content, use [`NotificationAction`](upsource:///platform/ide-core/src/com/intellij/notification/NotificationAction.java) for convenience.
 
-The `groupId` parameter of the [`Notification`](upsource:///platform/platform-api/src/com/intellij/notification/Notification.java) constructor specifies a notification type. The user can choose the display type corresponding to each notification type under <menupath>Settings/Preferences | Appearance & Behavior | Notifications</menupath>.
+The `groupId` parameter of the [`Notification`](upsource:///platform/ide-core/src/com/intellij/notification/Notification.java) constructor specifies a notification type. The user can choose the display type corresponding to each notification type under <menupath>Settings/Preferences | Appearance & Behavior | Notifications</menupath>.
 
-To specify the preferred display type, you need to use [`NotificationGroup`](upsource:///platform/platform-api/src/com/intellij/notification/NotificationGroup.kt) to create notifications.
+To specify the preferred display type, you need to use [`NotificationGroup`](upsource:///platform/ide-core/src/com/intellij/notification/NotificationGroup.kt) to create notifications.
 
 Please see the following steps for setup, depending on the target platform version.
 

@@ -271,7 +271,7 @@ return panel {
 
 **Reference**: [Settings Guide](settings_guide.md)
 
-If you're using the UI DSL to implement a [`Configurable`](upsource:///platform/platform-api/src/com/intellij/openapi/options/Configurable.java), use [`BoundConfigurable`](upsource:///platform/platform-api/src/com/intellij/openapi/options/BoundConfigurable.kt) as the base class.
+If you're using the UI DSL to implement a [`Configurable`](upsource:///platform/ide-core/src/com/intellij/openapi/options/Configurable.java), use [`BoundConfigurable`](upsource:///platform/platform-api/src/com/intellij/openapi/options/BoundConfigurable.kt) as the base class.
 In this case, the `Configurable` methods will be automatically delegated to the panel.
 
 ## Enabling and Disabling Controls

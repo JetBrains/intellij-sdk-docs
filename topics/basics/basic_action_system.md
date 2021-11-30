@@ -108,7 +108,7 @@ Every action and action group has a unique identifier.
 Basing the identifier for a custom action on the FQN of the implementation is the best practice, assuming the package incorporates the `<id>` of the plugin.
 An action must have a unique identifier for each place.
 It is used in the IDE UI, even though the FQN of the implementation is the same.
-Definitions of identifiers for the standard IntelliJ Platform actions are in [`IdeActions`](upsource:///platform/platform-api/src/com/intellij/openapi/actionSystem/IdeActions.java).
+Definitions of identifiers for the standard IntelliJ Platform actions are in [`IdeActions`](upsource:///platform/ide-core/src/com/intellij/openapi/actionSystem/IdeActions.java).
 
 ### Grouping Actions
 Groups organize actions into logical UI structures, which in turn can contain other groups.
@@ -240,7 +240,7 @@ If `<override-text>` is used for a group `id`, the key includes the `<place>` at
 
 
 #### Action Declaration Reference
-The places where actions can appear are defined by constants in [`ActionPlaces`](upsource:///platform/platform-api/src/com/intellij/openapi/actionSystem/ActionPlaces.java).
+The places where actions can appear are defined by constants in [`ActionPlaces`](upsource:///platform/ide-core/src/com/intellij/openapi/actionSystem/ActionPlaces.java).
 Group IDs for the IntelliJ Platform are defined in [`PlatformActions.xml`](upsource:///platform/platform-resources/src/idea/PlatformActions.xml).
 
 This, and additional information can also be found by using the [Code Completion](https://www.jetbrains.com/help/idea/auto-completing-code.html#invoke-basic-completion), [Quick Definition](https://www.jetbrains.com/help/idea/viewing-reference-information.html#view-definition-symbols) and [Quick Documentation](https://www.jetbrains.com/help/idea/viewing-reference-information.html#inline-quick-documentation) features.

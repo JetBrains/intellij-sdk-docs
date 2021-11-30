@@ -2,7 +2,7 @@
 
 <!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-91 Extension Points (EP) and 27 Listeners for CLion
+95 Extension Points (EP) and 27 Listeners for CLion
 
 See [Extension Point List](extension_point_list.md) for IntelliJ Platform EPs.
 
@@ -120,17 +120,19 @@ See [Extension Point List](extension_point_list.md) for IntelliJ Platform EPs.
 | [cidr.lang.libraryFileConfigurationProvider](https://jb.gg/ipe?extensions=cidr.lang.libraryFileConfigurationProvider) ![Non-Dynamic][non-dynamic] | `OCLibraryFileResolveConfigurationProvider` |
 | [cidr.lang.moduleMapManagerRequestor](https://jb.gg/ipe?extensions=cidr.lang.moduleMapManagerRequestor) ![Non-Dynamic][non-dynamic] | `ModuleMapManagerRequestor` |
 | [cidr.lang.moduleMapPlatformTypeProvider](https://jb.gg/ipe?extensions=cidr.lang.moduleMapPlatformTypeProvider) ![Non-Dynamic][non-dynamic] | `ModuleMapPlatformTypeProvider` |
+| [cidr.lang.moduleMapRootSerializer](https://jb.gg/ipe?extensions=cidr.lang.moduleMapRootSerializer) ![Non-Dynamic][non-dynamic] | `ModuleMapRootSerializer` |
 | [cidr.lang.moduleMapSearchRootProvider](https://jb.gg/ipe?extensions=cidr.lang.moduleMapSearchRootProvider) ![Non-Dynamic][non-dynamic] | `ModuleMapSearchRootProvider` |
 | [cidr.lang.moduleResolver](https://jb.gg/ipe?extensions=cidr.lang.moduleResolver) ![Non-Dynamic][non-dynamic] | `OCModuleResolver` |
 | [cidr.lang.ocAdditionalFileSymbolTableBuilder](https://jb.gg/ipe?extensions=cidr.lang.ocAdditionalFileSymbolTableBuilder) ![Non-Dynamic][non-dynamic] | `OCAdditionalFileSymbolTableBuilder` |
 | [cidr.lang.ocDirectInheritorsSearch](https://jb.gg/ipe?extensions=cidr.lang.ocDirectInheritorsSearch) ![Non-Dynamic][non-dynamic] | [`QueryExecutor`](upsource:///platform/core-api/src/com/intellij/util/QueryExecutor.java) |
+| [cidr.lang.ocResolveRootAndConfigurationProvider](https://jb.gg/ipe?extensions=cidr.lang.ocResolveRootAndConfigurationProvider) ![Non-Dynamic][non-dynamic] | `OCResolveRootAndConfigurationProvider` |
 | [cidr.lang.renameHandlerExtension](https://jb.gg/ipe?extensions=cidr.lang.renameHandlerExtension) ![Non-Dynamic][non-dynamic] | `OCRenameHandlerExtension` |
 | [cidr.lang.renameProcessorExtension](https://jb.gg/ipe?extensions=cidr.lang.renameProcessorExtension) ![Non-Dynamic][non-dynamic] | `OCRenameProcessorExtension` |
 | [cidr.lang.resourceCompletionProviders](https://jb.gg/ipe?extensions=cidr.lang.resourceCompletionProviders) ![Non-Dynamic][non-dynamic] | `OCResourceCompletionProviders` |
 | [cidr.lang.resourceFilesProvider](https://jb.gg/ipe?extensions=cidr.lang.resourceFilesProvider) ![Non-Dynamic][non-dynamic] | `OCResourceFilesProvider` |
 | [cidr.lang.searchHelper](https://jb.gg/ipe?extensions=cidr.lang.searchHelper) ![Non-Dynamic][non-dynamic] | `OCSearchHelper` |
 | [cidr.lang.serializerProvider](https://jb.gg/ipe?extensions=cidr.lang.serializerProvider) ![Non-Dynamic][non-dynamic] | `SerializerProvider` |
-| [cidr.lang.symbolTableProvider](https://jb.gg/ipe?extensions=cidr.lang.symbolTableProvider) ![Non-Dynamic][non-dynamic] | `SymbolTableProvider` |
+| [cidr.lang.symbolTableProvider](https://jb.gg/ipe?extensions=cidr.lang.symbolTableProvider) ![Non-Dynamic][non-dynamic] | `FileSymbolTableProvider` |
 | [cidr.lang.testFramework](https://jb.gg/ipe?extensions=cidr.lang.testFramework) ![Non-Dynamic][non-dynamic] | `OCTestFramework` |
 | [cidr.lang.typeStructureProvider](https://jb.gg/ipe?extensions=cidr.lang.typeStructureProvider) ![Non-Dynamic][non-dynamic] | `PolyglotTypeStructureProvider` |
 | [cidr.projectModel.unloadedResolveContextsManager](https://jb.gg/ipe?extensions=cidr.projectModel.unloadedResolveContextsManager) | `OCUnloadedResolveContextsManager` |
@@ -213,6 +215,8 @@ See [Extension Point List](extension_point_list.md) for IntelliJ Platform EPs.
 
 | Extension Point | Implementation |
 |-----------------|----------------|
+| [clangd.clangTidyAnnotationApplier](https://jb.gg/ipe?extensions=clangd.clangTidyAnnotationApplier) | `ClangTidyAnnotationApplier` |
+| [clangd.clangTidyResolveInfoProvider](https://jb.gg/ipe?extensions=clangd.clangTidyResolveInfoProvider) | `ClangTidyResolveInfoProvider` |
 | [clangd.clangdBridge](https://jb.gg/ipe?extensions=clangd.clangdBridge) | `ClangdBridgeInterface` |
 | [com.intellij.cidrCommandLineParser](https://jb.gg/ipe?extensions=com.intellij.cidrCommandLineParser) ![Project-Level][project-level] | `CidrCommandLineParser` |
 

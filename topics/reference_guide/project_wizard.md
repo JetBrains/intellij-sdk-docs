@@ -9,7 +9,7 @@ Working with the project wizard can be illustrated with the [RedLine SmallTalk p
 ## Implementing New Module Type
 
 Additional support for specific tools and technologies is usually done via implementing some certain module type which is attached to the project.
-New module type should be derived from the class [`ModuleType`](upsource:///platform/lang-api/src/com/intellij/openapi/module/ModuleType.java).
+New module type should be derived from the class [`ModuleType`](upsource:///platform/lang-core/src/com/intellij/openapi/module/ModuleType.java).
 
 ## Custom Project Wizard
 
@@ -31,12 +31,12 @@ To create a new module type and an extension
 ```
 
 to the [`plugin.xml`](https://github.com/bulenkov/RedlineSmalltalk/blob/master/resources/META-INF/plugin.xml).
-A custom module type should extend the [`ModuleType`](upsource:///platform/lang-api/src/com/intellij/openapi/module/ModuleType.java) generic from [`ModuleBuilder`](upsource:///platform/lang-api/src/com/intellij/ide/util/projectWizard/ModuleBuilder.java).
+A custom module type should extend the [`ModuleType`](upsource:///platform/lang-core/src/com/intellij/openapi/module/ModuleType.java) generic from [`ModuleBuilder`](upsource:///platform/lang-core/src/com/intellij/ide/util/projectWizard/ModuleBuilder.java).
 The following [module type implementation](https://github.com/bulenkov/RedlineSmalltalk/blob/master/src/st/redline/smalltalk/module/RsModuleType.java) of a custom module type show how this instance can be registered and implemented.
 
 ### Implementing Module Builder
 
-To set up a new module environment [`ModuleBuilder`](upsource:///platform/lang-api/src/com/intellij/ide/util/projectWizard/ModuleBuilder.java) class should be extended and registered as an extension point like the following snippet shows:
+To set up a new module environment [`ModuleBuilder`](upsource:///platform/lang-core/src/com/intellij/ide/util/projectWizard/ModuleBuilder.java) class should be extended and registered as an extension point like the following snippet shows:
 
 ```xml
 <extensions defaultExtensionNs="com.intellij">
@@ -64,7 +64,7 @@ Refer to [SmallTalk module type](https://github.com/bulenkov/RedlineSmalltalk/bl
 ### Implementing Module Builder Listener
 
 Module builder listener reacts on a new module creation, which could be done either as a part of the project creation process, or as adding a new module to the already existing project.
-To provide a certain behavior right after a module has been created, module builder should implement [`ModuleBuilderListener`](upsource:///platform/lang-api/src/com/intellij/ide/util/projectWizard/ModuleBuilderListener.java)
+To provide a certain behavior right after a module has been created, module builder should implement [`ModuleBuilderListener`](upsource:///platform/lang-core/src/com/intellij/ide/util/projectWizard/ModuleBuilderListener.java)
 Method
 
 ```java
@@ -85,7 +85,7 @@ public ModuleWizardStep[] createWizardSteps(WizardContext wizardContext, Modules
 method in a custom [module builder](https://github.com/bulenkov/RedlineSmalltalk/blob/master/src/st/redline/smalltalk/module/RsModuleBuilder.java).
 If this method returns a non-empty array of ModuleWizardStep objects, new steps will be shown in their indexing order while creating a new module.
 The following [implementation](https://github.com/bulenkov/RedlineSmalltalk/blob/master/src/st/redline/smalltalk/module/RsModuleWizardStep.java) for the SmallTalk project type illustrates how a custom wizard step can be created.
-The [`RsModuleWizardStep`](https://github.com/bulenkov/RedlineSmalltalk/blob/master/src/st/redline/smalltalk/module/RsModuleWizardStep.java) class is derived from [`ModuleWizardStep`](upsource:///platform/lang-api/src/com/intellij/ide/util/projectWizard/ModuleWizardStep.java), which has two methods to be overridden:
+The [`RsModuleWizardStep`](https://github.com/bulenkov/RedlineSmalltalk/blob/master/src/st/redline/smalltalk/module/RsModuleWizardStep.java) class is derived from [`ModuleWizardStep`](upsource:///platform/lang-core/src/com/intellij/ide/util/projectWizard/ModuleWizardStep.java), which has two methods to be overridden:
 
 * ```java
   public JComponent getComponent();

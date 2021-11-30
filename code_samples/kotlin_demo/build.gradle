@@ -21,7 +21,7 @@ dependencies {
 
 // See https://github.com/JetBrains/gradle-intellij-plugin/
 intellij {
-  version = '2020.3.4'
+  version = '2021.1.3'
 }
 
 buildSearchableOptions {
@@ -31,7 +31,7 @@ buildSearchableOptions {
 patchPluginXml {
   version = project.version
   sinceBuild = '203'
-  untilBuild = '212.*'
+  untilBuild = '213.*'
 }
 
 compileKotlin {

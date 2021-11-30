@@ -2,6 +2,13 @@
 
 <!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
+<chunk id="custom_language_testing_tutorial_header">
+
+> This page is part of multi step [](writing_tests_for_plugins.md) tutorial.
+{type="tip"}
+
+</chunk>
+
 This page discusses the steps to configure a plugin project for creating tests.
 
 ## Create a Folder for Tests

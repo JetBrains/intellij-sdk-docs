@@ -2,6 +2,8 @@
 
 <!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
+<include src="tests_prerequisites.md" include-id="custom_language_testing_tutorial_header"></include>
+
 This test will check if the commenter, implemented in the [Commenter](commenter.md) section of the Custom Language Support Tutorial, works as expected.
 
 ## Define a Test Method

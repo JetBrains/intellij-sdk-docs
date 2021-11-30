@@ -2,6 +2,8 @@
 
 <!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
+<include src="tests_prerequisites.md" include-id="custom_language_testing_tutorial_header"></include>
+
 This test checks if the Simple Language code completion functionality, implemented in the [Reference Contributor](reference_contributor.md) section of the Custom Language Support Tutorial, works as expected.
 
 ## Define Test Data
@@ -21,7 +23,7 @@ This file contains a Simple Language reference within the Java code at `<caret>`
 ## Define a Test
 Subclass [`LightJavaCodeInsightFixtureTestCase`](upsource:///java/testFramework/src/com/intellij/testFramework/fixtures/LightJavaCodeInsightFixtureTestCase.java) to create `SimpleCodeInsightTest`.
 Override `getTestDataPath()`, and return the path from the root of this plugin module to the <path>testData</path> directory.
-                              
+
 ```java
 ```
 {src="simple_language_plugin/src/test/java/org/intellij/sdk/language/SimpleCodeInsightTest.java" include-symbol="getTestDataPath"}
@@ -39,7 +41,7 @@ This method:
 {src="simple_language_plugin/src/test/java/org/intellij/sdk/language/SimpleCodeInsightTest.java" include-symbol="testCompletion"}
 
 
-A number of related methods exist in `CodeInsightTestFixture` for testing completion and lookup elements, e.g., when testing completion variants and requiring only one testdata file `CodeInsightTestFixture.testCompletionVariants()`.                                                                     
+A number of related methods exist in `CodeInsightTestFixture` for testing completion and lookup elements, e.g., when testing completion variants and requiring only one testdata file `CodeInsightTestFixture.testCompletionVariants()`.
 
 ## Run the Test
 [Run](completion_test.md#run-the-test) the test and make sure it's green.

@@ -193,10 +193,10 @@ In the <control>Run/Debug Configuration</control> for `publishPlugin` Gradle tas
 CLI tool is required if you don't rely on the Gradle IntelliJ Plugin – i.e. when working with Themes.
 
 To get the latest Marketplace ZIP Signer CLI Tool, visit the [JetBrains/marketplace-zip-signer](https://github.com/JetBrains/marketplace-zip-signer/releases) GitHub Releases page.
-After downloading the <path>zip-signer-cli.jar</path>, execute it as below:
+After downloading the <path>marketplace-zip-signer-cli.jar</path>, execute it as below:
 
 ```bash
-java -jar zip-signer-cli.jar sign\
+java -jar marketplace-zip-signer-cli.jar sign\
   -in "unsigned.zip"\
   -out "signed.zip"\
   -cert-file "/path/to/chain.crt"\

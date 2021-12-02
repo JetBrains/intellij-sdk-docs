@@ -5,7 +5,7 @@
 The _UI Inspector_ is a tool to interrogate elements of the IntelliJ IDEA UI to get an internal description of each element.
 UI elements can be tested interactively by clicking on the element while the _UI Inspector_ is enabled.
 
-If the menu item <menupath>Tools | Internal Actions | UI | UI Inspector</menupath> is not available in IntelliJ IDEA, then the first step is to [enable internal mode](enabling_internal.md).
+<include src="internal_actions_intro.md" include-id="enable_internal_mode_tip"></include>
 
 ## Enabling the UI Inspector
 Before using the _UI Inspector_, it must be enabled by selecting the menu item <menupath>Tools | Internal Actions | UI | UI Inspector</menupath>.

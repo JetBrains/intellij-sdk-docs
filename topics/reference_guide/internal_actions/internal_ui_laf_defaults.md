@@ -6,7 +6,7 @@
 The _LaF Defaults_ window provides a key-value pair lookup for UI Controls.
 It also allows interactive prototyping of UI Control color changes.
 
-If the menu item **Tools \| Internal Actions** is not available in IntelliJ IDEA, then the first step is to [enable internal mode](enabling_internal.md)
+<include src="internal_actions_intro.md" include-id="enable_internal_mode_tip"></include>
 
 ## Opening LaF Defaults
 The _LaF Defaults_ window is opened by selecting the menu item **Tools \| Internal Actions \| UI \| LaF Defaults**.

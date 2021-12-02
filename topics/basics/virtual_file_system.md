@@ -1,8 +1,8 @@
 [//]: # (title: Virtual File System)
 
-<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-The virtual file system (VFS) is a component of the IntelliJ Platform that encapsulates most of its activity for working with files represented as [Virtual File](virtual_file.md).
+The Virtual File System (VFS) is a component of the IntelliJ Platform that encapsulates most of its activity for working with files represented as [Virtual File](virtual_file.md).
 
 It serves the following main purposes:
 
@@ -41,6 +41,10 @@ Still, users can turn this off via <menupath>Settings/Preferences | Appearance &
 On Windows, Mac, and Linux, a native file watcher process is started that receives file change notifications from the file system and reports them to the IntelliJ Platform.
 If a file watcher is available, a refresh operation looks only at the files that have been reported as changed by the file watcher.
 If no file watcher is present, a refresh operation walks through all directories and files in the refresh scope.
+
+ > Invoke [internal action](internal_actions_intro.md) <menupath>Tools | Internal Actions | VFS | Show Watched VFS Roots</menupath> to see all registered roots for current project.
+ >
+ {type="tip"}
 
 Refresh operations are based on file timestamps.
 If a file's contents were changed, but its timestamp remained the same, the IntelliJ Platform will not pick up the updated contents.

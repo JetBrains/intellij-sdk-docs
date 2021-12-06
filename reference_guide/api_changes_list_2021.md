@@ -136,6 +136,11 @@ Constructor `com.intellij.codeInsight.hints.settings.InlayProviderSettingsModel`
 `git4idea.ui.branch.GitBranchActionsUtilKt.createNewBranch(Project, List, String, GitNewBranchOptions)` method removed
 : Method was dropped to avoid supporting outdated behavior.
 
+### Python Plugin 2021.3
+
+`com.jetbrains.python.console.PydevConsoleRunnerImpl(Project, Sdk, PyConsoleType, String, Map<String, String>, PyConsoleOptions.PyConsoleSettings, Consumer<? super String>, String[])` constructor parameter type `com.intellij.util.Consumer<? super String>` removed
+: There is no need to pass a Restart action as a constructor parameter, it should be created inside the `com.jetbrains.python.console.PydevConsoleRunnerImpl#createRerunAction` method
+
 ### IntelliJ IDEA Ultimate 2021.3
 
 #### Miscellaneous

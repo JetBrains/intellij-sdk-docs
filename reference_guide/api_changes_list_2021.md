@@ -123,6 +123,9 @@ Constructor `com.intellij.codeInsight.hints.settings.InlayProviderSettingsModel`
 `com.intellij.codeInsight.hints.settings.InlayProviderSettingsModel.getCasePreview(ImmediateConfigurable.Case)` abstract method added
 : Provides preview text for given case.
 
+`com.intellij.openapi.wm.ToolWindow.getEmptyText()` method removed
+: Please safe-cast and use `com.intellij.openapi.wm.ex.ToolWindowEx.getEmptyText()`.
+
 ### VCS Log 2021.3
 
 `com.intellij.vcs.log.ui.frame.CommitPanel` class removed

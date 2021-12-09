@@ -363,5 +363,6 @@
             <toc-element id="api_notable_list_2019.md" toc-title="2019.*"/>
             <toc-element id="api_notable_list_2018.md" toc-title="2018.*"/>
         </toc-element>
+        <toc-element id="api_internal.md"/>
     </toc-element>
 </product-profile>

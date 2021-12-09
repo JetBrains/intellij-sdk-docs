@@ -31,17 +31,17 @@ Each entry is mapped to its corresponding _Replacement_, pointing to recommended
 | `ApplicationLoadListener`                | See [](plugin_components.md#application-startup)                                                                                                                                |
 | `AnAction.applyTextOverride()`           | [](basic_action_system.md#setting-the-override-text-element)                                                                                                                    |
 | `FileTypeIndex.NAME`                     | Use static methods in `FileTypeIndex` directly                                                                                                                                  |
-| `IElementType.getDebugName()`            | Override/use `toString()`                                                                                                                                                       |
+| `IElementType.getDebugName()`            | Override/use `IElementType.toString()`                                                                                                                                          |
 | `IndexingDataKeys`                       | [See Doc](https://github.com/JetBrains/intellij-community/blob/master/platform/core-impl/src/com/intellij/util/indexing/IndexingDataKeys.java)                                  |
-| `IconLoader.LazyIcon`                    | Use `com.intellij.openapi.util.IconLoader.createLazy()`                                                                                                                         |
-| `IconLoader.CachedImageIcon`             | Use methods exposed in `com.intellij.openapi.util.IconLoader`                                                                                                                   |
+| `IconLoader.LazyIcon`                    | Use `IconLoader.createLazy()`                                                                                                                                                   |
+| `IconLoader.CachedImageIcon`             | Use methods exposed in `IconLoader`                                                                                                                                             |
 | `ScrollBarPainter`                       | [See Doc](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/ui/components/ScrollBarPainter.java)                               |
-| `PluginManager.getLogger()`              | Use own logger [](ide_infrastructure.md#logging)                                                                                                                                |
+| `PluginManager.getLogger()`              | Use own logger, see [](ide_infrastructure.md#logging)                                                                                                                           |
 | `EdtDataContext`                         | [See Doc](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-impl/src/com/intellij/openapi/actionSystem/impl/EdtDataContext.java)                    |
 | `PathMacros.setMacro()`                  | Use `com.intellij.pathMacroContributor` extension point, [`PathMacroContributor`](upsource:///platform/core-api/src/com/intellij/openapi/application/PathMacroContributor.java) |
-| `ProjectLibraryTable`                    | Use `com.intellij.openapi.roots.libraries.LibraryTablesRegistrar.getLibraryTable()` instead                                                                                     |
-| `CompactVirtualFileSet`                  | Use `com.intellij.openapi.vfs.VfsUtilCore#createCompactVirtualFileSet()`                                                                                                        |
-| `BuildNumber.currentVersion()`           | Use `com.intellij.openapi.application.ApplicationInfo.getBuild()`                                                                                                               |
+| `ProjectLibraryTable`                    | Use `LibraryTablesRegistrar.getLibraryTable()`                                                                                                                                  |
+| `CompactVirtualFileSet`                  | Use `VfsUtilCore.createCompactVirtualFileSet()`                                                                                                                                 |
+| `BuildNumber.currentVersion()`           | Use `ApplicationInfo.getBuild()`                                                                                                                                                |
 | `UtilKt.targetPresentation()`            | [See Doc](https://github.com/JetBrains/intellij-community/blob/master/platform/lang-impl/src/com/intellij/codeInsight/navigation/util.kt)                                       |
 
 ## Plugins
@@ -50,4 +50,4 @@ Each entry is mapped to its corresponding _Replacement_, pointing to recommended
 
 | Internal API                 | Replacement                                                                                                                                   |
 |------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------|
-| `DbDataSource.getDelegate()` | For connection config use `DbDataSource#getConnectionConfig()`, for `LocalDataSource` use `DbImplUtil#getMaybeLocalDataSource(DasDataSource)` |
+| `DbDataSource.getDelegate()` | For connection config use `DbDataSource.getConnectionConfig()`, for `LocalDataSource` use `DbImplUtil.getMaybeLocalDataSource(DasDataSource)` |

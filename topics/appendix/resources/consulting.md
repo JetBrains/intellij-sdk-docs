@@ -18,6 +18,8 @@ Also, consider posting requests in _#jobs_ channel on [JetBrains Platform Slack]
 | Alexey Stukalov    | [info@cuba-platform.com][ast], [www.haulmont.com][ast2] | Plugins: [CUBA][ast3].                      |
 | Edument            | [jonathan@edument.cz][ed], [edument.se][ed2]            | Developers of [Comma IDE][ed3]              |
 | Mikhail Bolotov    | [mikhail.bolotov@gmail.com][mb]                         | Plugins: [Cypress Support Pro][cspro], [k6] |
+| Mikhail Bolotov    | [mikhail.bolotov@gmail.com][mb]                         | Plugins: [Cypress Support Pro][cspro], [k6] |
+| Ilscipio GmbH      | [Paul Piper][il], [www.ilscipio.com][il2]               | Custom Plugin Development                   |
 
 [ja]: https://www.plugin-dev.com
 [de]: mailto:daniel@espendiller.net
@@ -31,5 +33,7 @@ Also, consider posting requests in _#jobs_ channel on [JetBrains Platform Slack]
 [cspro]: https://plugins.jetbrains.com/plugin/13987-cypress-support-pro
 [k6]: https://plugins.jetbrains.com/plugin/16141-k6
 [mb]: https://plugins.jetbrains.com/organization/mbolotov
+[il]: mailto:info@ilscipio.com
+[il2]: https://www.ilscipio.com
 
 Please [submit a PR or file a YouTrack issue](getting_help.md) for changes or additions to this list.

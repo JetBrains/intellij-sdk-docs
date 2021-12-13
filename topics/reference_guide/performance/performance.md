@@ -49,7 +49,7 @@ If the information you cache depends only on a subtree of the current PSI elemen
 
 #### Performance Metrics
 Indexing performance metrics in JSON format are generated in [logs directory](https://intellij-support.jetbrains.com/hc/en-us/articles/206544519-Directories-used-by-the-IDE-to-store-settings-caches-plugins-and-logs) (see [sandbox directory](ide_development_instance.md#the-development-instance-sandbox-directory) for development instance) in 2020.2 and later.
-These are additionally available in HTML format starting with 2020.1.
+These are additionally available in HTML format starting with 2021.1.
 
 #### Avoid Using AST
 

@@ -10,7 +10,7 @@ See [Extension Point List](extension_point_list.md) for IntelliJ Platform EPs.
 
 ## Rider
 
-### Listeners
+### Rider - Listeners
 
 | Topic                                                          | Listener                                                                                                                             |
 |----------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------|

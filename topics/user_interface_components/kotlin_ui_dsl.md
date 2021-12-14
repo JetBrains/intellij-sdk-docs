@@ -1,11 +1,15 @@
-[//]: # (title: Kotlin UI DSL)
+[//]: # (title: Kotlin UI DSL Version 1)
 
 <!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 Kotlin UI DSL allows creating UI components using a declarative syntax inside Kotlin.
 It shares similarities with [Jetpack Compose](https://developer.android.com/jetpack/compose) for Android and makes it easy to develop UIs for, e.g. dialogs, settings or tool windows.
 
- > Please note the Kotlin UI DSL is in active development and [breaking changes](api_changes_list.md) can occur between major releases.
+ > If you're targeting IntelliJ Platform 2021.3 and later only, please use [](kotlin_ui_dsl_version_2.md).
+ >
+ > **The version documented on this page is deprecated and will be removed in future platform releases.**
+ >
+ > Please note [breaking changes](api_changes_list.md) can occur for this API between major releases.
  >
  {type="warning"}
 
@@ -14,7 +18,7 @@ It shares similarities with [Jetpack Compose](https://developer.android.com/jetp
  >
  {type="note"}
 
-## Layout Structure
+## Layout structure
 
  > See [Layout](https://jetbrains.design/intellij/principles/layout) topic in IntelliJ Platform UI Guidelines for recommendations on arranging UI controls in dialogs.
  >

@@ -126,6 +126,10 @@ Constructor `com.intellij.codeInsight.hints.settings.InlayProviderSettingsModel`
 `com.intellij.openapi.wm.ToolWindow.getEmptyText()` method removed
 : Please safe-cast and use `com.intellij.openapi.wm.ex.ToolWindowEx.getEmptyText()`.
 
+`com.intellij.openapi.actionSystem.ex.CustomComponentAction#createCustomComponent(Presentation, String, DataContext)` method removed
+: Please use `createCustomComponent(Presentation, String)`, one shall not depend on `dataContext` there.
+
+
 ### VCS Log 2021.3
 
 `com.intellij.vcs.log.ui.frame.CommitPanel` class removed

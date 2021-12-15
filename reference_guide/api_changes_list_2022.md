@@ -81,3 +81,12 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 `com.intellij.platform.DirectoryProjectConfigurator.configureProject(Project, VirtualFile, Ref<Module>, boolean)` marked abstract
 : Implement it instead of removed one.
 
+`com.intellij.psi.impl.java.stubs.index.JavaStubIndexKeys.CLASS_FQN` field type changed from `StubIndexKey<Integer, PsiClass>` to `StubIndexKey<CharSequence, PsiClass>`
+: `JavaFullClassNameIndex` now takes `CharSequence` instead of its `hashCode` to allow specific optimizations
+
+`com.intellij.psi.impl.java.stubs.index.JavaFullClassNameIndex.getKey` method return type changed from `StubIndexKey<Integer, PsiClass>` to `StubIndexKey<CharSequence, PsiClass>`
+: `JavaFullClassNameIndex` now takes `CharSequence` instead of its `hashCode` to allow specific optimizations
+
+`com.intellij.psi.impl.java.stubs.index.JavaFullClassNameIndex.get(Integer, Project, GlobalSearchScope)` method parameter type changed from `Integer` to `CharSequence`
+: `JavaFullClassNameIndex` now takes `CharSequence` instead of its `hashCode` to allow specific optimizations
+

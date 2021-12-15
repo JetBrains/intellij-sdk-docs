@@ -18,7 +18,7 @@ It shares similarities with [Jetpack Compose](https://developer.android.com/jetp
  >
  {type="note"}
 
-## Layout structure
+## Layout Structure
 
  > See [Layout](https://jetbrains.design/intellij/principles/layout) topic in IntelliJ Platform UI Guidelines for recommendations on arranging UI controls in dialogs.
  >

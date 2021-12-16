@@ -12,11 +12,11 @@ To develop plugins, you will need to use _IntelliJ IDEA Ultimate Edition_ versio
 
 Setup [Gradle build script](gradle_guide.md#intellij-platform-configuration) to target IntelliJ IDEA Ultimate, then [add dependency](plugin_dependencies.md) to bundled Spring plugin with ID `com.intellij.spring`.
 
-Please use only Spring-related functionality exposed in `spring-api.jar` (where sources are provided) in your plugin.
-Using any other "internal" (implementation) classes from Spring plugin itself (`spring.jar`) is _not_ supported.
+Please use only Spring-related functionality exposed in <path>spring-api.jar</path> (sources are provided in <path>$IDEA_HOME$/lib/src/src_spring-boot-openapi.zip</path>) in your plugin.
+Using any other "internal" (implementation) classes from Spring plugin itself (<path>spring.jar</path>) is _not_ supported.
 
 ### plugin.xml
-Add `<depends>com.intellij.spring</depends>` to your `plugin.xml` to require "Spring Support" plugin to be activated.
+Add `<depends>com.intellij.spring</depends>` to your <path>plugin.xml</path> to require "Spring Support" plugin to be activated.
 All available extension points are provided under `com.intellij.spring` prefix.
 Note that the "Spring Support" plugin itself has dependencies on a few other plugins which need to be enabled in your sandbox (see notifications on startup).
 
@@ -167,17 +167,11 @@ Spring Boot API allows extending/accessing Spring Boot specific support in the I
  {type="warning"}
 
 ### Setting up
-Please perform these steps _additionally_ to setting up Spring API support (see [here](#setting-up-intellij-platform-sdk)):
-
-* add to _classpath_ (_not_ to your plugin module's dependencies)
-   * `$IDEA_HOME$/plugins/SpringBoot/lib/spring-boot.jar`
-   * `$IDEA_HOME$/plugins/SpringBoot/lib/spring-boot-initializr.jar` (optional)
-   * `$IDEA_HOME$/plugins/SpringBoot/lib/spring-boot-run.jar` (optional)
-* add to _sourcepath_
-   * `$IDEA_HOME$/lib/src/src_spring-boot-openapi.zip`
+[Add dependency](plugin_dependencies.md) to bundled Spring Boot plugin with ID `com.intellij.spring.boot`.
+Sources for Spring Boot API are available in <path>$IDEA_HOME$/lib/src/src_spring-boot-openapi.zip</path>.
 
 ### Update plugin.xml
-Add `<depends>com.intellij.spring.boot</depends>` to your `plugin.xml` to require "Spring Boot" plugin to be activated.
+Add `<depends>com.intellij.spring.boot</depends>` to your <path>plugin.xml</path> to require "Spring Boot" plugin to be activated.
 All available extension points are provided under `com.intellij.spring.boot` prefix.
 
 ### Spring Boot Library
@@ -192,12 +186,8 @@ Existing `Condition` implementations can be simulated at design time in IDE via 
 Custom `@ConditionalOn...` annotations implementing `com.intellij.spring.boot.model.autoconfigure.conditions.jam.ConditionalOnJamElement` will be added into evaluation automatically.
 
 ### Spring Initializr
-requires `spring-boot-initializr.jar`
-
 `com.intellij.spring.boot.initializr.SpringInitializrModuleBuilderPostTask` allows performing custom setup steps after creation of module (e.g. setup integration with build system).
 
 ### Endpoint Tab
-_2018.2_ - requires `spring-boot-run.jar`
-
 Use EP `com.intellij.spring.boot.run.endpoint` to add custom actuator endpoint tabs.
 Any settings should be exposed in "Spring Boot" settings tab via `com.intellij.spring.boot.run.endpointTabConfigurable` EP.

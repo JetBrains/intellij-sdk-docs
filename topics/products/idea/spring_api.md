@@ -8,28 +8,9 @@ A popular plugin using Spring API is [hybris integration](https://plugins.jetbra
 
 To develop plugins, you will need to use _IntelliJ IDEA Ultimate Edition_ version 13.1 or higher.
 
-## Setting up IntelliJ Platform SDK
+## Setting up Project
 
- >  This applies to [Plugin DevKit](using_dev_kit.md) projects only.
-> For [Gradle](gradle_build_system.md) projects, simply add dependency to bundled Spring plugin `com.intellij.spring`.
- >
- {type="note"}
-
-### New SDK
-Please create an IntelliJ Platform SDK to include all minimum required files.
-Then add `$IDEA_HOME$/plugins/Spring/lib/spring.jar` to its _classpath_ (_not_ to your plugin module's dependencies).
-
-### Existing SDK
-Follow these steps to modify the existing IntelliJ Platform SDK:
-
-* add to _classpath_ (_not_ to your plugin module's dependencies)
-   * `$IDEA_HOME$/plugins/Spring/lib/spring-api.jar` _not in recent versions, merged into `spring.jar`_
-   * `$IDEA_HOME$/plugins/Spring/lib/spring.jar`
-* add to _sourcepath_
-   * `$IDEA_HOME$/lib/src/src_spring-openapi.zip`
-
-### General Notes
-If you use other Spring functionality (e.g., Spring EL) in your plugin, add all required JARs to your IntelliJ Platform SDK classpath to make your plugin's tests work.
+Setup [Gradle build script](gradle_guide.md#intellij-platform-configuration) to target IntelliJ IDEA Ultimate, then [add dependency](plugin_dependencies.md) to bundled Spring plugin with ID `com.intellij.spring`.
 
 Please use only Spring-related functionality exposed in `spring-api.jar` (where sources are provided) in your plugin.
 Using any other "internal" (implementation) classes from Spring plugin itself (`spring.jar`) is _not_ supported.
@@ -40,7 +21,7 @@ All available extension points are provided under `com.intellij.spring` prefix.
 Note that the "Spring Support" plugin itself has dependencies on a few other plugins which need to be enabled in your sandbox (see notifications on startup).
 
 ## Main Concepts
-A Spring facet can be attached to a Module. 
+A Spring facet can be attached to a Module.
 Nearly all Spring functionality requires an existing and correctly setup Spring facet.
 
 Spring facets usually contain one more user-configured or automatically provided filesets, which group a set of Spring related configuration files (XML, Code, .properties, or other configuration files).
@@ -64,7 +45,7 @@ As an API-user, you will usually prefer working with `SpringModel`, which is bui
  {type="note"}
 
 ## How Do I...
-                      
+
  > See [Spring API Extension Point List](spring_extension_point_list.md) for complete list.
  >
  {type="note"}

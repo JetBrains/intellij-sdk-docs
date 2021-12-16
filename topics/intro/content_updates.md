@@ -9,6 +9,11 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 
 ## 2021
 
+### December-21
+
+Trusted Project
+: Potentially unsafe features must be guarded using [Trusted Project API](trusted_projects.md).
+
 ### November-21
 
 Language Injection

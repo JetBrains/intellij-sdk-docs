@@ -149,6 +149,7 @@
     <toc-element toc-title="Part III - Project Model">
         <toc-element id="project_structure.md" toc-title="Introduction"/>
         <toc-element id="project.md">
+            <toc-element id="trusted_projects.md"/>
             <toc-element id="project_wizard.md" toc-title="Project Wizard"/>
             <toc-element id="intro_project_wizard.md" accepts-web-file-names="project_wizard.html">
                 <toc-element id="adding_new_steps.md"/>

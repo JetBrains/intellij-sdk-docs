@@ -129,6 +129,11 @@ Constructor `com.intellij.codeInsight.hints.settings.InlayProviderSettingsModel`
 `com.intellij.openapi.actionSystem.ex.CustomComponentAction#createCustomComponent(Presentation, String, DataContext)` method removed
 : Please use `createCustomComponent(Presentation, String)`, one shall not depend on `dataContext` there.
 
+`com.intellij.ui.EditorTextField.addNotify()` method marked final
+: Please use `addSettingsProvider(EditorSettingsProvider)` to configure `Editor`. Now editor creation me be postponed.
+
+`com.intellij.database.model.ModelLightCopierUtils` class removed
+: This was the internal class, never meant for external usages.
 
 ### VCS Log 2021.3
 

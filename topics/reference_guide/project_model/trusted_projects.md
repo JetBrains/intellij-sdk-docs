@@ -7,7 +7,7 @@
  > Please see related [Project Security](https://www.jetbrains.com/help/idea/project-security.html) topic from product documentation.
  >
 
-When a project is opened in the IDE for the first time, the user will be asked whether she trusts the project or not.
+When a project is opened in the IDE for the first time, the user will be asked whether they trust the project or not.
 If the user chooses to preview the project in the safe mode, no potentially dangerous feature can be executed automatically or unexpectedly.
 
 A plugin can check whether the project is trusted via the Kotlin extension method `Project.isTrusted()` or from Java via static method [`TrustedProjects.isTrusted(Project)`](upsource:///platform/platform-impl/src/com/intellij/ide/impl/TrustedProjects.kt).

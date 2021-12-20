@@ -129,6 +129,8 @@ Constructor `com.intellij.codeInsight.hints.settings.InlayProviderSettingsModel`
 `com.intellij.openapi.actionSystem.ex.CustomComponentAction#createCustomComponent(Presentation, String, DataContext)` method removed
 : Please use `createCustomComponent(Presentation, String)`, one shall not depend on `dataContext` there.
 
+`com.intellij.ui.EditorTextField.addNotify()` method marked final
+: Please use `addSettingsProvider(EditorSettingsProvider)` to configure `Editor` as editor creation may be postponed now.
 
 ### VCS Log 2021.3
 
@@ -248,6 +250,12 @@ Various package renames to support dynamic plugins
 
 `com.intellij.javaee.run.localRun.ExecutableObjectStartupPolicy` class renamed to `com.intellij.javaee.appServers.run.localRun.ExecutableObjectStartupPolicy`
 : To support dynamic plugins.
+
+### Database Plugin 2021.3
+
+`com.intellij.database.model.ModelLightCopierUtils` class removed
+: Internal class not to be used by 3rd party.
+
 
 ## 2021.2
 

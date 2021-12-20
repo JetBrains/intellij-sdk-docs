@@ -8,8 +8,7 @@ Also, consider posting requests in _#jobs_ channel on [JetBrains Platform Slack]
 
  >  JetBrains is not responsible for nor guarantees the performance of these independent third-party companies.
  >
- {type="note"}
-
+ 
 | Name               | Contact                                                 | Notes                                       |
 |--------------------|---------------------------------------------------------|---------------------------------------------|
 | Joachim Ansorg     | [www.plugin-dev.com][ja]                                | -/-                                         |
@@ -17,7 +16,6 @@ Also, consider posting requests in _#jobs_ channel on [JetBrains Platform Slack]
 | Robert Ekendahl    | [www.edaphic.studio][re]                                | Custom Language support                     |
 | Alexey Stukalov    | [info@cuba-platform.com][ast], [www.haulmont.com][ast2] | Plugins: [CUBA][ast3].                      |
 | Edument            | [jonathan@edument.cz][ed], [edument.se][ed2]            | Developers of [Comma IDE][ed3]              |
-| Mikhail Bolotov    | [mikhail.bolotov@gmail.com][mb]                         | Plugins: [Cypress Support Pro][cspro], [k6] |
 | Mikhail Bolotov    | [mikhail.bolotov@gmail.com][mb]                         | Plugins: [Cypress Support Pro][cspro], [k6] |
 | Ilscipio GmbH      | [Paul Piper][il], [www.ilscipio.com][il2]               | Custom Plugin Development                   |
 

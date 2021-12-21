@@ -90,3 +90,6 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 `com.intellij.psi.impl.java.stubs.index.JavaFullClassNameIndex.get(Integer, Project, GlobalSearchScope)` method parameter type changed from `Integer` to `CharSequence`
 : `JavaFullClassNameIndex` now takes `CharSequence` instead of its `hashCode` to allow specific optimizations
 
+<!-- https://youtrack.jetbrains.com/issue/MP-4136 -->
+JSch was removed from the core
+: Add [com.jcraft:jsch:0.1.55](https://mvnrepository.com/artifact/com.jcraft/jsch/0.1.55) as a dependency explicitly.

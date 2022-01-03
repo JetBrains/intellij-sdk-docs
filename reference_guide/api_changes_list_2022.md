@@ -1,6 +1,6 @@
 [//]: # (title: Incompatible Changes in IntelliJ Platform and Plugins API 2022.*)
 
-<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 <!--
 Before documenting a breaking API change, please, make sure that the change cannot be avoided in an alternative way.
@@ -90,6 +90,5 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 `com.intellij.psi.impl.java.stubs.index.JavaFullClassNameIndex.get(Integer, Project, GlobalSearchScope)` method parameter type changed from `Integer` to `CharSequence`
 : `JavaFullClassNameIndex` now takes `CharSequence` instead of its `hashCode` to allow specific optimizations
 
-<!-- https://youtrack.jetbrains.com/issue/MP-4136 -->
-JSch was removed from the core
+JSch library removed
 : Add [com.jcraft:jsch:0.1.55](https://mvnrepository.com/artifact/com.jcraft/jsch/0.1.55) as a dependency explicitly.

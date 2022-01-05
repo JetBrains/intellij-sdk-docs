@@ -1,10 +1,10 @@
 [//]: # (title: Settings Tutorial)
 
-<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 ## Introduction
 As discussed in the [Settings Guide](settings_guide.md), plugins can add Settings to IntelliJ Platform-based IDEs.
-The IDE displays the Settings in response to a user choosing **Settings/Preferences**.
+The IDE displays the Settings in response to a user choosing <menupath>Settings/Preferences</menupath>.
 Custom Settings are displayed and function just like those native to the IDE.
 
 ## Overview of a Custom Settings Implementation
@@ -21,13 +21,14 @@ The `AppSettingsState` class persistently stores the custom Settings.
 It is based on the [IntelliJ Platform Persistence Model](persisting_state_of_components.md#using-persistentstatecomponent).
 
 ### Declaring AppSettingsState
-Given a [Light Service](plugin_services.md#light-services) is not used, the persistent data class must be declared as a [Service](plugin_services.md#declaring-a-service) EP in the `plugin.xml` file.
+Given a [Light Service](plugin_services.md#light-services) is not used, the persistent data class must be declared as a [Service](plugin_services.md#declaring-a-service) EP in the <path>plugin.xml</path> file.
 If these were Project Settings, the `com.intellij.projectService` EP would be used.
 However, because these are Application Settings, the `com.intellij.applicationService` EP is used with the FQN of the implementation class:
 
 ```xml
   <extensions defaultExtensionNs="com.intellij">
-    <applicationService serviceImplementation="org.intellij.sdk.settings.AppSettingsState"/>
+    <applicationService
+      serviceImplementation="org.intellij.sdk.settings.AppSettingsState"/>
   </extensions>
 ```
 
@@ -36,7 +37,7 @@ As discussed in [Implementing the PersistentStateComponent Interface](persisting
 
 ```java
 ```
-{src="settings/src/main/java/org/intellij/sdk/settings/AppSettingsState.java"}
+{src="settings/src/main/java/org/intellij/sdk/settings/AppSettingsState.java" include-symbol="AppSettingsState"}
 
 #### Storage Annotation
 The [`@State`](upsource:///platform/projectModel-api/src/com/intellij/openapi/components/State.java) annotation, located just above the class declaration, [defines the data storage location](persisting_state_of_components.md#defining-the-storage-location).
@@ -68,7 +69,7 @@ The `AppSettingsComponent` defines a `JPanel` containing a [`JBTextField`](upsou
 
 ```java
 ```
-{src="settings/src/main/java/org/intellij/sdk/settings/AppSettingsComponent.java"}
+{src="settings/src/main/java/org/intellij/sdk/settings/AppSettingsComponent.java" include-symbol="AppSettingsComponent"}
 
 #### AppSettingsComponent Methods
 The constructor builds the `JPanel` using the convenient [`FormBuilder`](upsource:///platform/platform-api/src/com/intellij/util/ui/FormBuilder.java), and saves a reference to the `JPanel`.
@@ -95,7 +96,7 @@ The class has one field to hold a reference to the `AppSettingsComponent`.
 
 ```java
 ```
-{src="settings/src/main/java/org/intellij/sdk/settings/AppSettingsConfigurable.java"}
+{src="settings/src/main/java/org/intellij/sdk/settings/AppSettingsConfigurable.java" include-symbol="AppSettingsConfigurable"}
 
 #### AppSettingsConfigurable Methods
 All the methods in this class are overrides of the methods in the `Configurable` interface.
@@ -110,10 +111,10 @@ The settings are preloaded with the default values:
 !["Settings Defaults"](settings_defaults.png){width="600"}
 
 Now edit the settings values to "John Doe" and click the checkbox.
-Click on the **OK** button to close the Settings dialog and save the changes.
+Click on the <control>OK</control> button to close the Settings dialog and save the changes.
 Exit the Development Instance.
 
-Open the file `SdkSettingsPlugin.xml` to see the Settings persistently stored.
-In this demonstration the file resides in `code_samples/settings/build/idea-sandbox/config/options/`, but see [IDE Development Instances](ide_development_instance.md) for the general Development Instance case, or [Default IDE directories](https://www.jetbrains.com/help/idea/tuning-the-ide.html#default-dirs) if you are testing the `settings` plugin directly in an IDE.
+Open the file <path>SdkSettingsPlugin.xml</path> to see the Settings persistently stored.
+In this demonstration the file resides in <path>code_samples/settings/build/idea-sandbox/config/options/</path>, but see [IDE Development Instances](ide_development_instance.md) for the general Development Instance case, or [Default IDE directories](https://www.jetbrains.com/help/idea/tuning-the-ide.html#default-dirs) if you are testing the `settings` plugin directly in an IDE.
 
 !["Persisted Settings"](settings_persisted.png){width="600"}

@@ -1,5 +1,5 @@
 [//]: # (title: Build Number Ranges)
-<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 Use this reference of build number ranges to specify the correct `since-build` and `until-build` values in your plugin descriptor.
 
@@ -34,8 +34,12 @@ Usually you should omit the product ID and use only the branch number and build 
 ```xml
 <idea-version since-build="94.539"/>
 <idea-version since-build="162.539.11"/>
-<idea-version until-build="162"/> <!-- any build until 162, not inclusive!-->
-<idea-version since-build="162" until-build="162.*"/> <!-- any 162-based version, 162.94, 162.94.11, etc.-->
+
+<!-- any build until 162, not inclusive!-->
+<idea-version until-build="162"/>
+
+<!-- any 162-based version, 162.94, 162.94.11, etc.-->
+<idea-version since-build="162" until-build="162.*"/>
 ```
 
  >  Specific build numbers and their corresponding release version are available via _Previous Releases_ on the corresponding product's download page, e.g. [Previous IntelliJ IDEA Releases](https://www.jetbrains.com/idea/download/previous.html).
@@ -48,6 +52,8 @@ Usually you should omit the product ID and use only the branch number and build 
  >  Which versions should your plugin support? We've collected some insights based on download statistics in [Statistics: Product Versions in Use](https://plugins.jetbrains.com/docs/marketplace/product-versions-in-use-statistics.html).
  >
  {type="tip"}
+
+Please see also corresponding entries in [Incompatible API Changes](api_changes_list.md) and [Notable API Changes](api_notable.md).
 
 | Branch number                                                   | IntelliJ Platform version                                                                                                                |
 |-----------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------|

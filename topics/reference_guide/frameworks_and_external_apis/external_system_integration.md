@@ -1,6 +1,6 @@
 [//]: # (title: External System Integration)
 
-<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 This page provides high-level overview of *External System* sub-system.
 There are multiple project management systems ([Apache Maven](https://maven.apache.org/), [Gradle](https://www.gradle.org/), [sbt](https://www.scala-sbt.org/) etc) and it's good to support them at the IDE.
@@ -104,3 +104,14 @@ It's recommended to extend from [`AbstractExternalProjectSettingsControl`](upsou
 Similar approach is used for providing 'import from external system' UI - implementation is expected to extend [`AbstractImportFromExternalSystemControl`](upsource:///java/idea-ui/src/com/intellij/openapi/externalSystem/service/settings/AbstractImportFromExternalSystemControl.java) and it has not linked external projects list but target external project path control:
 
 ![Import from external system](import.png)
+
+## Testing
+
+_2022.1_
+
+Use `com.jetbrains.intellij.platform:external-system-test-framework` from [](intellij_artifacts.md).
+
+Relevant base classes:
+
+- `com.intellij.openapi.externalSystem.test.ExternalSystemImportingTestCase`
+- `com.intellij.openapi.externalSystem.test.ExternalSystemTestCase`

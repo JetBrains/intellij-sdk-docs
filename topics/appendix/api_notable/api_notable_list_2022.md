@@ -8,6 +8,9 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 
 ### IntelliJ Platform 2022.1
 
+External System Test Framework
+: Available as `com.jetbrains.intellij.platform:external-system-test-framework` from [](intellij_artifacts.md), see [](external_system_integration.md#testing).
+
 ### Maven Plugin 2022.1
 
 Published Maven Test Framework

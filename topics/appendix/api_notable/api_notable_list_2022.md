@@ -7,3 +7,8 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 ## 2022.1
 
 ### IntelliJ Platform 2022.1
+
+### Maven Plugin 2022.1
+
+Published Maven Test Framework
+: Available as `com.jetbrains.intellij.maven:maven-test-framework` from [](intellij_artifacts.md).

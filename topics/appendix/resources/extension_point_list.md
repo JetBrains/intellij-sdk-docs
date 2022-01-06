@@ -1,6 +1,6 @@
 [//]: # (title: Extension Point List)
 
-<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 1361 Extension Points and 199 Listeners
 
@@ -1522,23 +1522,6 @@
 |-----------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
 | [org.jetbrains.kotlin.completionExtension](https://jb.gg/ipe?extensions=org.jetbrains.kotlin.completionExtension) ![Non-Dynamic][non-dynamic] | [`KotlinCompletionExtension`](upsource:///plugins/kotlin/completion/src/org/jetbrains/kotlin/idea/completion/KotlinCompletionContributor.kt) |
 
-### core.xml (Kotlin)
-[core.xml](upsource:///plugins/kotlin/plugin/resources/META-INF/core.xml)
-
-| Extension Point                                                                                                                                   | Implementation                                                                                                                                 |
-|---------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
-| [org.jetbrains.kotlin.buildSystemTypeDetector](https://jb.gg/ipe?extensions=org.jetbrains.kotlin.buildSystemTypeDetector)                         | [`BuildSystemTypeDetector`](upsource:///plugins/kotlin/analysis/src/org/jetbrains/kotlin/idea/configuration/BuildSystemType.kt)                |
-| [org.jetbrains.kotlin.clearBuildState](https://jb.gg/ipe?extensions=org.jetbrains.kotlin.clearBuildState) ![Non-Dynamic][non-dynamic]             | [`ClearBuildStateExtension`](upsource:///plugins/kotlin/idea/src/org/jetbrains/kotlin/idea/compiler/configuration/ClearBuildStateExtension.kt) |
-| [org.jetbrains.kotlin.experimentalFeature](https://jb.gg/ipe?extensions=org.jetbrains.kotlin.experimentalFeature)                                 | [`ExperimentalFeature`](upsource:///plugins/kotlin/idea/src/org/jetbrains/kotlin/idea/configuration/ExperimentalFeatures.kt)                   |
-| [org.jetbrains.kotlin.facetValidatorCreator](https://jb.gg/ipe?extensions=org.jetbrains.kotlin.facetValidatorCreator) ![Non-Dynamic][non-dynamic] | [`KotlinFacetValidatorCreator`](upsource:///plugins/kotlin/idea/src/org/jetbrains/kotlin/idea/facet/KotlinFacetValidatorCreator.kt)            |
-| [org.jetbrains.kotlin.idea.codeInsight.unambiguousImports](https://jb.gg/ipe?extensions=org.jetbrains.kotlin.idea.codeInsight.unambiguousImports) | [`KotlinAutoImportsFilter`](upsource:///plugins/kotlin/idea/src/org/jetbrains/kotlin/idea/codeInsight/KotlinAutoImportsFilter.kt)              |
-| [org.jetbrains.kotlin.idea.testFrameworkProvider](https://jb.gg/ipe?extensions=org.jetbrains.kotlin.idea.testFrameworkProvider)                   | [`KotlinTestFrameworkProvider`](upsource:///plugins/kotlin/idea/src/org/jetbrains/kotlin/idea/extensions/KotlinTestFrameworkProvider.kt)       |
-| [org.jetbrains.kotlin.j2kConverterExtension](https://jb.gg/ipe?extensions=org.jetbrains.kotlin.j2kConverterExtension)                             | [`J2kConverterExtension`](upsource:///plugins/kotlin/j2k/old/src/org/jetbrains/kotlin/j2k/J2KConverterExtension.kt)                            |
-| [org.jetbrains.kotlin.newFileHook](https://jb.gg/ipe?extensions=org.jetbrains.kotlin.newFileHook) ![Non-Dynamic][non-dynamic]                     | [`NewKotlinFileHook`](upsource:///plugins/kotlin/idea/src/org/jetbrains/kotlin/idea/actions/NewKotlinFileAction.kt)                            |
-| [org.jetbrains.kotlin.pluginUpdateVerifier](https://jb.gg/ipe?extensions=org.jetbrains.kotlin.pluginUpdateVerifier) ![Non-Dynamic][non-dynamic]   | [`PluginUpdateVerifier`](upsource:///plugins/kotlin/idea/src/org/jetbrains/kotlin/idea/update/PluginUpdateVerifier.kt)                         |
-| [org.jetbrains.kotlin.projectConfigurator](https://jb.gg/ipe?extensions=org.jetbrains.kotlin.projectConfigurator)                                 | [`KotlinProjectConfigurator`](upsource:///plugins/kotlin/jvm/src/org/jetbrains/kotlin/idea/configuration/KotlinProjectConfigurator.kt)         |
-| [org.jetbrains.kotlin.updater](https://jb.gg/ipe?extensions=org.jetbrains.kotlin.updater) ![Non-Dynamic][non-dynamic]                             | `n/a`                                                                                                                                          |
-
 ### Coverage
 [Coverage](upsource:///plugins/coverage/src/META-INF/plugin.xml)
 
@@ -1840,6 +1823,23 @@
 |---------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [com.intellij.codeInsight.blockingMethodChecker](https://jb.gg/ipe?extensions=com.intellij.codeInsight.blockingMethodChecker)         | [`BlockingMethodChecker`](upsource:///jvm/jvm-analysis-api/src/com/intellij/codeInspection/blockingCallsDetection/BlockingMethodChecker.java)         |
 | [com.intellij.codeInsight.nonBlockingContextChecker](https://jb.gg/ipe?extensions=com.intellij.codeInsight.nonBlockingContextChecker) | [`NonBlockingContextChecker`](upsource:///jvm/jvm-analysis-api/src/com/intellij/codeInspection/blockingCallsDetection/NonBlockingContextChecker.java) |
+
+### kotlin-core.xml
+[kotlin-core.xml](upsource:///plugins/kotlin/plugin/resources/META-INF/kotlin-core.xml)
+
+| Extension Point                                                                                                                                   | Implementation                                                                                                                                 |
+|---------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
+| [org.jetbrains.kotlin.buildSystemTypeDetector](https://jb.gg/ipe?extensions=org.jetbrains.kotlin.buildSystemTypeDetector)                         | [`BuildSystemTypeDetector`](upsource:///plugins/kotlin/analysis/src/org/jetbrains/kotlin/idea/configuration/BuildSystemType.kt)                |
+| [org.jetbrains.kotlin.clearBuildState](https://jb.gg/ipe?extensions=org.jetbrains.kotlin.clearBuildState) ![Non-Dynamic][non-dynamic]             | [`ClearBuildStateExtension`](upsource:///plugins/kotlin/idea/src/org/jetbrains/kotlin/idea/compiler/configuration/ClearBuildStateExtension.kt) |
+| [org.jetbrains.kotlin.experimentalFeature](https://jb.gg/ipe?extensions=org.jetbrains.kotlin.experimentalFeature)                                 | [`ExperimentalFeature`](upsource:///plugins/kotlin/idea/src/org/jetbrains/kotlin/idea/configuration/ExperimentalFeatures.kt)                   |
+| [org.jetbrains.kotlin.facetValidatorCreator](https://jb.gg/ipe?extensions=org.jetbrains.kotlin.facetValidatorCreator) ![Non-Dynamic][non-dynamic] | [`KotlinFacetValidatorCreator`](upsource:///plugins/kotlin/idea/src/org/jetbrains/kotlin/idea/facet/KotlinFacetValidatorCreator.kt)            |
+| [org.jetbrains.kotlin.idea.codeInsight.unambiguousImports](https://jb.gg/ipe?extensions=org.jetbrains.kotlin.idea.codeInsight.unambiguousImports) | [`KotlinAutoImportsFilter`](upsource:///plugins/kotlin/idea/src/org/jetbrains/kotlin/idea/codeInsight/KotlinAutoImportsFilter.kt)              |
+| [org.jetbrains.kotlin.idea.testFrameworkProvider](https://jb.gg/ipe?extensions=org.jetbrains.kotlin.idea.testFrameworkProvider)                   | [`KotlinTestFrameworkProvider`](upsource:///plugins/kotlin/idea/src/org/jetbrains/kotlin/idea/extensions/KotlinTestFrameworkProvider.kt)       |
+| [org.jetbrains.kotlin.j2kConverterExtension](https://jb.gg/ipe?extensions=org.jetbrains.kotlin.j2kConverterExtension)                             | [`J2kConverterExtension`](upsource:///plugins/kotlin/j2k/old/src/org/jetbrains/kotlin/j2k/J2KConverterExtension.kt)                            |
+| [org.jetbrains.kotlin.newFileHook](https://jb.gg/ipe?extensions=org.jetbrains.kotlin.newFileHook) ![Non-Dynamic][non-dynamic]                     | [`NewKotlinFileHook`](upsource:///plugins/kotlin/idea/src/org/jetbrains/kotlin/idea/actions/NewKotlinFileAction.kt)                            |
+| [org.jetbrains.kotlin.pluginUpdateVerifier](https://jb.gg/ipe?extensions=org.jetbrains.kotlin.pluginUpdateVerifier) ![Non-Dynamic][non-dynamic]   | [`PluginUpdateVerifier`](upsource:///plugins/kotlin/idea/src/org/jetbrains/kotlin/idea/update/PluginUpdateVerifier.kt)                         |
+| [org.jetbrains.kotlin.projectConfigurator](https://jb.gg/ipe?extensions=org.jetbrains.kotlin.projectConfigurator)                                 | [`KotlinProjectConfigurator`](upsource:///plugins/kotlin/jvm/src/org/jetbrains/kotlin/idea/configuration/KotlinProjectConfigurator.kt)         |
+| [org.jetbrains.kotlin.updater](https://jb.gg/ipe?extensions=org.jetbrains.kotlin.updater) ![Non-Dynamic][non-dynamic]                             | `n/a`                                                                                                                                          |
 
 ### kotlin.gradle.gradle-idea.xml
 [kotlin.gradle.gradle-idea.xml](upsource:///plugins/kotlin/gradle/gradle-idea/resources/kotlin.gradle.gradle-idea.xml)

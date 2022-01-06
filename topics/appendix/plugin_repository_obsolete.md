@@ -1,15 +1,14 @@
 [//]: # (title: Plugin Repository [moved])
-[//]: # (: )
 
-<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-JetBrains provides an official plugins repository [JetBrains Plugin Repository](https://plugins.jetbrains.com) for all IntelliJ Platform-based IDEs, as well as TeamCity (limited functionality).
+JetBrains provides an official plugins repository [JetBrains Marketplace](https://plugins.jetbrains.com) for all IntelliJ Platform-based IDEs, as well as other products.
 
  >  **Part X - Plugin Repository** pages have moved to [JetBrains Marketplace](https://plugins.jetbrains.com/docs/marketplace/about-marketplace.html) documentation, please update your bookmarks.
  >
  {type="warning"}
 
-For your convenience pages previously part of this documentation are linked below:
+For your convenience, pages previously part of this documentation are linked below:
 
 * [API Reference](https://plugins.jetbrains.com/docs/marketplace/api-reference.html)
   * [Plugin Upload](https://plugins.jetbrains.com/docs/marketplace/plugin-upload.html)

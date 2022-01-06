@@ -1,12 +1,12 @@
 [//]: # (title: Android Studio Plugin Development)
 
-<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 ## Introduction
 Android Studio plugins extend or add functionality to the [Android Studio IDE](https://developer.android.com/studio).
 Plugins can be written in Kotlin or Java, or a mix of both, and are created using IntelliJ IDEA and the [IntelliJ Platform](intellij_platform.md).
 It's also helpful to be familiar with [Java Swing](https://docs.oracle.com/javase/8/javase-clienttechnologies.htm).
-Once completed, plugins can be packaged and distributed at [JetBrains Plugin Repository](https://plugins.jetbrains.com).
+Once completed, plugins can be packaged and distributed at [JetBrains Marketplace](https://plugins.jetbrains.com).
 
 Android Studio plugins are not Android modules or apps to run in the Android operating system, such as smartphones or tablets.
 
@@ -72,7 +72,7 @@ Otherwise, if only general IntelliJ Platform features (APIs) are used, then a de
 ```xml
   <depends>com.intellij.modules.androidstudio</depends>
 ```
-                                                              
+
 ### Android Specific Extension Points
 
 See _Android Plugin_ section in [Extension Point List](extension_point_list.md).
@@ -88,7 +88,7 @@ When learning new development configurations, it is helpful to have some represe
 * [Android postfix plugin](https://github.com/takahirom/android-postfix-plugin) for Android Studio.
 * [Flutter Plugin](https://github.com/flutter/flutter-intellij).
 * Bal Sikandar's [list of Android Studio plugins](https://github.com/balsikandar/Android-Studio-Plugins).
-                        
+
 ## FAQ
 
 ### How To Sync Gradle Project

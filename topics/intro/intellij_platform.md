@@ -1,6 +1,6 @@
 [//]: # (title: The IntelliJ Platform)
 
-<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 The IntelliJ Platform is not a product in and of itself but provides a platform for building IDEs.
 It is used to power JetBrains products such as [IntelliJ IDEA](https://www.jetbrains.com/idea/).
@@ -9,7 +9,7 @@ It is also Open Source and can be used by third parties to build IDEs, such as [
 The IntelliJ Platform provides all of the infrastructures that these IDEs need to provide rich language tooling support.
 It is a component-driven, cross-platform JVM based application host with a high-level user interface toolkit for creating tool windows, tree views, and lists (supporting fast search) as well as popup menus and dialogs.
 
-The IntelliJ Platform has a full-text editor with abstract implementations of syntax highlighting, code folding, code completion, and other rich text editing features. 
+The IntelliJ Platform has a full-text editor with abstract implementations of syntax highlighting, code folding, code completion, and other rich text editing features.
 An image editor is also included.
 
 Furthermore, it includes open APIs to build standard IDE functionality, such as a project model and a build system.
@@ -24,7 +24,7 @@ The IntelliJ Platform includes parsers and a PSI model for many languages, and i
 ## Plugins
 
 Products built on the IntelliJ Platform are extensible applications, with the platform being responsible for creating components and the injection of dependencies into classes.
-The IntelliJ Platform fully supports plugins, and JetBrains hosts the [JetBrains Plugin Repository](https://plugins.jetbrains.com) can be used to distribute plugins that support one or more of the products.
+The IntelliJ Platform fully supports plugins, and JetBrains hosts the [JetBrains Marketplace](https://plugins.jetbrains.com) can be used to distribute plugins that support one or more of the products.
 It is also possible to distribute plugins using [Custom Plugin Repositories](update_plugins_format.md).
 
 Plugins can extend the platform in many ways, from adding a simple menu item to adding support for a complete language, build system, and debugger.
@@ -41,7 +41,7 @@ The IntelliJ Platform is Open Source, under the [Apache License](upsource:///LIC
 
 While this guide refers to the IntelliJ Platform as a separate entity, there is no "IntelliJ Platform" GitHub repository.
 Instead, the platform is considered to be an almost complete overlap with the IntelliJ IDEA Community Edition, which is a free and Open Source version of IntelliJ IDEA Ultimate (the GitHub repository linked above is the [JetBrains/intellij-community](https://github.com/JetBrains/intellij-community) repository).
-Please note: starting with 2021.1 release, some plugins bundled with IntelliJ IDEA Community Edition are not open-source.                                                            
+Please note: starting with 2021.1 release, some plugins bundled with IntelliJ IDEA Community Edition are not open-source.
 
 The version of the IntelliJ Platform is defined by the version of the corresponding release of IntelliJ IDEA Community Edition.
 For example, to build a plugin against IntelliJ IDEA (2019.1.1), build #191.6707.61 means specifying the same build number tag to get the correct Intellij Platform files from the `intellij-community` repository.

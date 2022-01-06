@@ -1,8 +1,8 @@
 [//]: # (title: Publishing a Plugin to a Custom Plugin Repository)
 
-<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-If you intend to use a plugin repository _other than_ the [JetBrains Plugins Repository](https://plugins.jetbrains.com), you will need to:
+If you intend to use a plugin repository _other than_ the [JetBrains Marketplace](https://plugins.jetbrains.com), you will need to:
 * Create and maintain an `updatePlugins.xml` file on the HTTPS web server you are using for your custom repository.
   This file describes all the plugins available in your custom repository and each plugin's download URL.
 * Upload your plugin JAR/ZIP file to an HTTPS web server.

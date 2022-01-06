@@ -1,12 +1,12 @@
 [//]: # (title: Plugins Targeting IntelliJ Platform-Based IDEs)
 
-<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 ## Introduction
 Plugin projects can target IDEs other than IntelliJ IDEA, as long as the products are based on the [IntelliJ Platform](intellij_platform.md).
 Such plugins are developed much like plugin projects that target IntelliJ IDEA.
 They can be written in Kotlin or Java, or a mix of both.
-Once completed, the plugins can be packaged and distributed at [JetBrains Plugin Repository](https://plugins.jetbrains.com).
+Once completed, the plugins can be packaged and distributed at [JetBrains Marketplace](https://plugins.jetbrains.com).
 
 Project configuration attributes common to projects targeting products other than IntelliJ IDEA are described here.
 Details particular to an IntelliJ Platform-based product are described on the individual product pages in Part VIII.

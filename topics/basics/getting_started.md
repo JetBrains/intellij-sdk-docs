@@ -1,6 +1,6 @@
 [//]: # (title: Creating Your First Plugin)
 
-<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 This documentation section will help you get started with developing plugins for the IntelliJ Platform.
 You can use either [IntelliJ IDEA Community Edition](https://www.jetbrains.com/idea/download/) or [IntelliJ IDEA Ultimate](https://www.jetbrains.com/idea/download/) as your IDE (it is highly recommended to use the latest available version).
@@ -25,9 +25,9 @@ Specific to development of IntelliJ Platform plugins with the Gradle plugin for 
       * Switching the version of the target IntelliJ Platform (IDE),
       * Changing the target IntelliJ Platform-based IDE, e.g., from IntelliJ IDEA to PyCharm,
       * Running a plugin against alternate versions of the JetBrains runtime.
-  * Gradle is fully integrated with Continuous Integration systems and [JetBrains Plugin Repository](https://plugins.jetbrains.com), so it is easy to customize and extend the build and publishing processes.
+  * Gradle is fully integrated with Continuous Integration systems and [JetBrains Marketplace](https://plugins.jetbrains.com), so it is easy to customize and extend the build and publishing processes.
   * Built-in verification task for <path>plugin.xml</path> and plugin distribution structure.
-  * Built-in integration with [IntelliJ Plugin Verifier](https://github.com/JetBrains/intellij-plugin-verifier) tool used for running the compatibility checks as performed on [JetBrains Plugin Repository](https://plugins.jetbrains.com).
+  * Built-in integration with [IntelliJ Plugin Verifier](https://github.com/JetBrains/intellij-plugin-verifier) tool used for running the compatibility checks as performed on [JetBrains Marketplace](https://plugins.jetbrains.com).
 
 ## Using GitHub Template
 

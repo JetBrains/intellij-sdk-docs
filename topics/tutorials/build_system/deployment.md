@@ -1,10 +1,10 @@
 [//]: # (title: Publishing Plugins with Gradle)
 
-<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 Once you have [configured Gradle support](gradle_guide.md), you can automatically build and deploy your plugin to the [JetBrains Plugins Repository](https://plugins.jetbrains.com).
 To automatically deploy a plugin, you need to have _already published the plugin to the plugin repository at least once._
-Please see the guide page for manually [publishing a plugin](publishing_plugin.md) for the first time and [Building Distribution](#building-distribution) on obtaining the initial plugin distribution artifact. 
+Please see the guide page for manually [publishing a plugin](publishing_plugin.md) for the first time and [Building Distribution](#building-distribution) on obtaining the initial plugin distribution artifact.
 
  >  Please see [Marketing](marketing.md) for remarks on how to prepare your plugin for optimal presentation.
  >
@@ -51,7 +51,7 @@ Note that you still need to put some default values (can be empty) in the Gradle
 
 ### Using Parameters for the Gradle Task
 Like using environment variables, you can also pass your token as a parameter to the Gradle task.
-For example, you can provide the parameter 
+For example, you can provide the parameter
 
 ```bash
 -Dorg.gradle.project.intellijPublishToken=YOUR_HUB_TOKEN_HERE
@@ -89,7 +89,7 @@ publishPlugin {
 }
 ```
 
-When empty, this uses the default plugin repository, available to all [JetBrains Plugins Repository](https://plugins.jetbrains.com/) users.
+When empty, this uses the default plugin repository, available to all [JetBrains Marketplace](https://plugins.jetbrains.com/) users.
 However, you can publish it to an arbitrarily-named channel.
 These non-default release channels are treated as separate repositories.
 

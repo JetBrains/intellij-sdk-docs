@@ -1,6 +1,6 @@
 [//]: # (title: Plugin Compatibility with IntelliJ Platform Products)
 
-<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 ## Introduction
 All products based on the IntelliJ Platform are built on the same underlying API.
@@ -147,8 +147,8 @@ For [Gradle-based](gradle_build_system.md) projects, [Plugin Verifier](api_chang
 For [DevKit-based](using_dev_kit.md) projects, create an SDK pointing to an installation of the intended target IntelliJ Platform-based product, e.g., PhpStorm, rather than IntelliJ IDEA.
 Use the same development version of the IntelliJ platform as the targeted product.
 
-Based on the tables above, the [JetBrains Plugins Repository](https://plugins.jetbrains.com/) automatically detects the JetBrains products with which a plugin is compatible, and makes the compatibility information available to plugin authors.
-The compatibility information determines if plugins are available at the plugin repository to users of a particular JetBrains product.
+Based on the tables above, the [JetBrains Marketplace](https://plugins.jetbrains.com/) automatically detects the JetBrains products with which a plugin is compatible, and makes the compatibility information available to plugin authors.
+The compatibility information determines if plugins are available for users of a particular JetBrains product.
 
 ## Platform API Version Compatibility
 The API of IntelliJ Platform and bundled plugins may change between releases.

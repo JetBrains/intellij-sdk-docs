@@ -39,8 +39,10 @@ Each entry is mapped to its corresponding _Replacement_, pointing to recommended
 | `ModuleTypeManager.registerModuleType()` | Use `com.intellij.moduleType` extension point instead, [`ModuleType`](upsource:///platform/lang-core/src/com/intellij/openapi/module/ModuleType.java)                           |
 | `PathMacros.setMacro()`                  | Use `com.intellij.pathMacroContributor` extension point, [`PathMacroContributor`](upsource:///platform/core-api/src/com/intellij/openapi/application/PathMacroContributor.java) |
 | `PlatformUtils`                          | [See Doc](https://github.com/JetBrains/intellij-community/blob/master/platform/core-api/src/com/intellij/util/PlatformUtils.java)                                               |
+| `PluginClassLoader`                      | Cast to [`PluginAwareClassLoader`](upsource:///platform/extensions/src/com/intellij/ide/plugins/cl/PluginAwareClassLoader.java)                                                 |
 | `PluginManager.getLogger()`              | Use own logger, see [](ide_infrastructure.md#logging)                                                                                                                           |
 | `ProjectLibraryTable`                    | Use `LibraryTablesRegistrar.getLibraryTable()`                                                                                                                                  |
+| `SVGLoader`                              | Use `ImageLoader.loadFromResource()`                                                                                                                                            |
 | `ScrollBarPainter`                       | [See Doc](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-api/src/com/intellij/ui/components/ScrollBarPainter.java)                               |
 | `UtilKt.targetPresentation()`            | [See Doc](https://github.com/JetBrains/intellij-community/blob/master/platform/lang-impl/src/com/intellij/codeInsight/navigation/util.kt)                                       |
 
@@ -58,6 +60,9 @@ Each entry is mapped to its corresponding _Replacement_, pointing to recommended
 The API listed in this table is currently (or was previously) marked with `@ApiStatus.Internal`, but its status has changed in the meantime (or will change).
 Therefore, any reported violations can be disregarded.
 
-| Internal API              | Note                                            |
-|---------------------------|-------------------------------------------------|
-| `org.jetbrains.yaml.meta` | YAML Metadata API will be made public in 2022.2 |
+| Internal API                                                                                                                                           | Note                                            |
+|--------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------|
+| [`BundleBase`](upsource:///platform/util/src/com/intellij/BundleBase.java)                                                                             | Made public in 2022.1                           |
+| [`IdFilter`](upsource:///platform/indexing-api/src/com/intellij/util/indexing/IdFilter.java)                                                           | Reverted in 2021.2/3                            |
+| [`RunAnythingCommandLineProvider`](upsource:///platform/lang-impl/src/com/intellij/ide/actions/runAnything/activity/RunAnythingCommandLineProvider.kt) | Made public in 2021.3                           |
+| `org.jetbrains.yaml.meta.*`                                                                                                                            | YAML Metadata API will be made public in 2022.2 |

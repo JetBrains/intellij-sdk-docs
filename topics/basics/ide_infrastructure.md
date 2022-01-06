@@ -93,6 +93,8 @@ To obtain information about OS and Java VM, use [`SystemInfo`](upsource:///platf
 
 To access relevant configuration directories, see [`PathManager`](upsource:///platform/util/src/com/intellij/openapi/application/PathManager.java).
 
+To obtain unique installation UUID, use [`PermanentInstallationID`](upsource:///platform/platform-impl/src/com/intellij/openapi/application/PermanentInstallationID.java).
+
 ## Context Help
 
 To show custom context web-based help for your plugin's functionality (e.g., for [dialogs](dialog_wrapper.md)), provide [`WebHelpProvider`](upsource:///platform/platform-api/src/com/intellij/openapi/help/WebHelpProvider.java) registered in `com.intellij.webHelpProvider` extension point.

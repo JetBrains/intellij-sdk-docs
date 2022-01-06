@@ -1,6 +1,6 @@
 [//]: # (title: IDE Infrastructure)
 
-<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 ### Logging
 
@@ -100,3 +100,18 @@ To show custom context web-based help for your plugin's functionality (e.g., for
 ## Running Tasks Once
 
 Use [`RunOnceUtil`](upsource:///platform/core-api/src/com/intellij/ide/util/RunOnceUtil.java) to run a task exactly once per project/application.
+
+## Plugin Management
+
+Currently installed plugins can be checked via [`PluginManagerCore.isPluginInstalled()`](upsource:///platform/core-impl/src/com/intellij/ide/plugins/PluginManagerCore.java).
+
+### Plugin Suggestions
+
+For specific features (e.g., [File Type](registering_file_type.md), [Facet](facet.md), ...), the IDE will suggest installing matching plugins automatically.
+See [Plugin Recommendations](https://plugins.jetbrains.com/docs/marketplace/intellij-plugin-recommendations.html) in Marketplace documentation for details.
+
+To suggest other relevant plugins, use [`PluginsAdvertiser.installAndEnable()`](upsource:///platform/platform-impl/src/com/intellij/openapi/updateSettings/impl/pluginsAdvertisement/PluginsAdvertiser.kt).
+
+### Deprecating a Plugin
+
+To suggest replacing the currently installed deprecated plugin with the new one, implement [`PluginReplacement`](upsource:///platform/platform-api/src/com/intellij/ide/plugins/PluginReplacement.java) registered in `com.intellij.pluginReplacement` extension point.

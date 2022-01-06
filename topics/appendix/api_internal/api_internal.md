@@ -51,3 +51,13 @@ Each entry is mapped to its corresponding _Replacement_, pointing to recommended
 | Internal API                 | Replacement                                                                                                                                   |
 |------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------|
 | `DbDataSource.getDelegate()` | For connection config use `DbDataSource.getConnectionConfig()`, for `LocalDataSource` use `DbImplUtil.getMaybeLocalDataSource(DasDataSource)` |
+
+
+## Exceptions
+
+The API listed in this table is currently (or was previously) marked with `@ApiStatus.Internal`, but its status has changed in the meantime (or will change).
+Therefore, any reported violations can be disregarded.
+
+| Internal API              | Note                                            |
+|---------------------------|-------------------------------------------------|
+| `org.jetbrains.yaml.meta` | YAML Metadata API will be made public in 2022.2 |

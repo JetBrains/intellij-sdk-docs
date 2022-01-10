@@ -1,6 +1,6 @@
 [//]: # (title: Persisting State of Components)
 
-<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 The IntelliJ Platform provides an API that allows components or services to persist their state between restarts of the IDE.
 You can use either a simple API to persist a few values or persist the state of more complicated components using the [`PersistentStateComponent`](upsource:///platform/projectModel-api/src/com/intellij/openapi/components/PersistentStateComponent.java) interface.
@@ -8,16 +8,6 @@ You can use either a simple API to persist a few values or persist the state of 
  >  If you need to persist sensitive data like passwords, please see [Persisting Sensitive Data](persisting_sensitive_data.md).
  >
  {type="warning"}
-
-## Using PropertiesComponent for Simple Non-Roamable Persistence
-
-If the plugin needs to persist just a few simple values, the easiest way to do so is to use the [`com.intellij.ide.util.PropertiesComponent`](upsource:///platform/core-api/src/com/intellij/ide/util/PropertiesComponent.java) service.
-It can save both application-level values and project-level values in the workspace file.
-Roaming is disabled for `PropertiesComponent`, so use it only for temporary, non-roamable properties.
-
-Use the `PropertiesComponent.getInstance()` method for storing application-level values, and the `PropertiesComponent.getInstance(Project)` method for storing project-level values.
-
-Since all plugins share the same namespace, it is highly recommended to prefix key names (e.g., using plugin ID `com.myplugin.myCustomSetting`).
 
 ## Using PersistentStateComponent
 
@@ -156,7 +146,7 @@ The state is persisted in a separate file by specifying a different setting for 
 
 The `roamingType` parameter of the `@Storage` annotation specifies the roaming type when the Settings Repository plugin is used.
 
-## Customizing the XML Format of Persisted Values
+### Customizing the XML Format of Persisted Values
 
  >  Please consider using annotation parameters only to achieve backward compatibility.
 > Otherwise, please feel free to file issues about serialization cosmetics.
@@ -172,11 +162,11 @@ In that case, you can use the `getState()` method to build an XML element with a
 In the `loadState()` method, you can deserialize the JDOM element tree using any custom logic.
 Please note this is not recommended and should be avoided whenever possible.
 
-## Migrating Persisted Values
+### Migrating Persisted Values
 
 If the underlying persistence model or storage format has changed, a [`ConverterProvider`](upsource:///platform/lang-impl/src/com/intellij/conversion/ConverterProvider.java) can provide [`ProjectConverter`](upsource:///platform/lang-impl/src/com/intellij/conversion/ProjectConverter.java) whose `getAdditionalAffectedFiles()` method returns affected files to migrate and performs programmatic migration of stored values.
 
-## Persistent Component Lifecycle
+### Persistent Component Lifecycle
 
 The `loadState()` method is called after the component has been created (only if there is some non-default state persisted for the component), and after the XML file with the persisted state is changed externally (for example, if the project file was updated from the version control system).
 In the latter case, the component is responsible for updating the UI and other related components according to the changed state.
@@ -184,6 +174,16 @@ In the latter case, the component is responsible for updating the UI and other r
 The `getState()` method is called every time the settings are saved (for example, on frame deactivation or when closing the IDE).
 If the state returned from `getState()` is equal to the default state (obtained by creating the state class with a default constructor), nothing is persisted in the XML.
 Otherwise, the returned state is serialized in XML and stored.
+
+## Using PropertiesComponent for Simple Non-Roamable Persistence
+
+If the plugin needs to persist just a few simple values, the easiest way to do so is to use the [`com.intellij.ide.util.PropertiesComponent`](upsource:///platform/core-api/src/com/intellij/ide/util/PropertiesComponent.java) service.
+It can save both application-level values and project-level values in the workspace file.
+Roaming is disabled for `PropertiesComponent`, so use it only for temporary, non-roamable properties.
+
+Use the `PropertiesComponent.getInstance()` method for storing application-level values, and the `PropertiesComponent.getInstance(Project)` method for storing project-level values.
+
+Since all plugins share the same namespace, it is highly recommended prefixing key names (e.g., using plugin ID `com.myplugin.myCustomSetting`).
 
 ## Legacy API (JDOMExternalizable)
 
@@ -197,3 +197,4 @@ Components save their state in the following files:
 * Project-level: project (<path>.ipr</path>) file.
   However, if the workspace option in the <path>plugin.xml</path> file is set to `true`, then the workspace (<path>.iws</path>) file is used instead.
 * Module-level: module (<path>.iml</path>) file.
+

@@ -1,6 +1,6 @@
 [//]: # (title: SDK Docs Style Guide)
 
-<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 This document describes the writing style used in authoring open-source IntelliJ Platform SDK documentation.
 Before you begin, please read this page thoroughly, as well as the [Code of Conduct](intellij-sdk-docs-original_CODE_OF_CONDUCT.md) and [License](https://github.com/JetBrains/intellij-sdk-docs/blob/main/LICENSE.txt) documents.
@@ -181,6 +181,8 @@ Images in this documentation are generally screenshots.
 The preferred image format is PNG at 144 DPI resolution.
 A resolution of 72 DPI is acceptable but may look blurry on high-resolution monitors.
 
+Use [Window Resizer](https://plugins.jetbrains.com/plugin/18045-window-resizer) plugin for exact resizing of IDE application window.
+
 It is crucial to reduce the size of image files to prevent bloating the repository and impacting the performance of the documentation site.
 Resize an image to be nearly the desired width on a documentation page.
 Reducing an image's dimensions is the most effective way to reduce image file size.
@@ -200,7 +202,7 @@ If the width of an image needs to be adjusted it can be specified as follows:
 
 #### Zoom Popup
 
-Images too big to fit into main content can have <path>+</path> overlay control to open a popup with the "zoomed" variant.
+Images too big to fit into main content can have <control>+</control> overlay control to open a popup with the "zoomed" variant.
 
 <tabs>
 <tab title="PNG">

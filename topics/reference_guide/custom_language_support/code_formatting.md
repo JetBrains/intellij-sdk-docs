@@ -66,13 +66,27 @@ Code formatting can be suppressed per region via [special comments](https://yout
 **Example**:
 [Custom Language Support Tutorial: Formatter](formatter.md)
 
-### Code Style Settings
+## Non-Whitespace Modifications
 
-To specify the default indent size for the language provided by your plugin, and to allow the user to configure the tab size and indent size, you need to implement the [`FileTypeIndentOptionsProvider`](upsource:///platform/lang-api/src/com/intellij/psi/codeStyle/FileTypeIndentOptionsProvider.java) interface and to register the implementation in the `com.intellij.fileTypeIndentOptionsProvider` extension point.
-The return value of `createIndentOptions()` determines the default indent size.
+Sometimes a plugin requires performing non-whitespace characters modifications like reordering methods, changing letter cases, or adding missing braces. The formatting framework provides extensions points allowing to achieve these goals.
 
-**Example**:
-[Custom Language Support Tutorial: Code Style Settings](code_style_settings.md)
+### Pre-Processor
+
+Allows executing additional processing before the actual formatting is performed. For example, it can be used to adjust the formatting range or modify the code by adding, removing, or converting elements like braces, semicolons, quotes, etc. All the introduced changes will be handled by the main formatting step.
+
+To register a formatting pre-processor, a plugin has to provide an implementation of [`PreFormatProcessor`](upsource:///platform/code-style-api/src/com/intellij/psi/impl/source/codeStyle/PreFormatProcessor.java) and register it in the `com.intellij.preFormatProcessor` extension point.
+
+**Example:**
+[`JsonTrailingCommaRemover`](upsource:///json/src/com/intellij/json/formatter/JsonTrailingCommaRemover.java) removing trailing commas in JSON files
+
+### Post-Processor
+
+It's similar to the pre-processor but is run after the actual formatting is performed. It can be used for adding, removing, or converting elements like braces, semicolons, quotes, letter-cases, etc.
+
+To register a formatting post-processor, a plugin has to provide an implementation of [`PostFormatProcessor`](upsource:///platform/code-style-api/src/com/intellij/psi/impl/source/codeStyle/PostFormatProcessor.java) and register it in the `com.intellij.postFormatProcessor` extension point.
+
+**Example:**
+[`TrailingCommaPostFormatProcessor`](upsource:///plugins/kotlin/idea/src/org/jetbrains/kotlin/idea/formatter/TrailingCommaPostFormatProcessor.kt) inserting trailing commas in Kotlin files
 
 ### Rearranger
 
@@ -80,7 +94,15 @@ Allows custom languages to provide user-configurable arrangement/grouping rules 
 Rules can be refined via modifiers and name, ordering can be applied additionally.
 Please see [`Rearranger`](upsource:///platform/code-style-api/src/com/intellij/psi/codeStyle/arrangement/Rearranger.java) and related for JavaDoc.
 
-### External Code Formatter
+## Code Style Settings
+
+To specify the default indent size for the language provided by your plugin, and to allow the user to configure the tab size and indent size, you need to implement the [`FileTypeIndentOptionsProvider`](upsource:///platform/lang-api/src/com/intellij/psi/codeStyle/FileTypeIndentOptionsProvider.java) interface and to register the implementation in the `com.intellij.fileTypeIndentOptionsProvider` extension point.
+The return value of `createIndentOptions()` determines the default indent size.
+
+**Example**:
+[Custom Language Support Tutorial: Code Style Settings](code_style_settings.md)
+
+## External Code Formatter
 
 _2021.3_
 

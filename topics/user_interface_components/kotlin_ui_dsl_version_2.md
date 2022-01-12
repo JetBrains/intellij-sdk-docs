@@ -146,7 +146,7 @@ Must also be used for `Row.checkBox` if these are grouped with some title.
 
 ```kotlin
 var value = true
-buttonsGroup("Panel.buttonGroup:") {
+buttonsGroup("Panel.buttonsGroup:") {
  row {
   radioButton("true", true)
  }

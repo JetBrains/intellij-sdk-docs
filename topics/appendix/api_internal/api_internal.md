@@ -66,3 +66,4 @@ Therefore, any reported violations can be disregarded.
 | [`IdFilter`](upsource:///platform/indexing-api/src/com/intellij/util/indexing/IdFilter.java)                                                           | Reverted in 2021.2/3                            |
 | [`RunAnythingCommandLineProvider`](upsource:///platform/lang-impl/src/com/intellij/ide/actions/runAnything/activity/RunAnythingCommandLineProvider.kt) | Made public in 2021.3                           |
 | `org.jetbrains.yaml.meta.*`                                                                                                                            | YAML Metadata API will be made public in 2022.2 |
+| `PhpExpectedFunctionArgument`                                                                                                                          | Made public in 2022.1                           |

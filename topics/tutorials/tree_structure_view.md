@@ -1,6 +1,6 @@
 [//]: # (title: Modifying Project View Structure)
 
-<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 This tutorial is meant to illustrate how the project tree structure view appearance can be modified programmatically.
 If you need to know more about basic concepts of a project view in IntelliJ-based IDEs, please refer to [Exploring The Project Structure](https://www.jetbrains.com/idea/help/exploring-the-project-structure.html#d164891e120) of  [IntelliJ IDEA Web Help](https://www.jetbrains.com/idea/help/intellij-idea.html).

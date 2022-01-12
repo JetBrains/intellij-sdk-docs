@@ -1,6 +1,6 @@
 [//]: # (title: Explore the IntelliJ Platform API)
 
-<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2 -->
+<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2 -->
 
 Sometimes it can be challenging to implement plugin features for the IntelliJ Platform,
 especially when you've hit a roadblock and you're unsure how to move forward.

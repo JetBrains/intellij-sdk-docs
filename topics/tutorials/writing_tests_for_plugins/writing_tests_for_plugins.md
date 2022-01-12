@@ -1,6 +1,6 @@
 [//]: # (title: Testing a Custom Language Plugin)
 
-<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
  > Please see [Testing Plugins](testing_plugins.md) for a general introduction.
  >

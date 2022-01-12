@@ -1,6 +1,6 @@
 [//]: # (title: Getting Started with Gradle)
 
-<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 Gradle is the preferred solution for creating IntelliJ Platform plugins.
 The IntelliJ IDEA Ultimate and Community editions bundle the necessary plugins to support Gradle-based development.

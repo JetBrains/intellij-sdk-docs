@@ -1,6 +1,6 @@
 [//]: # (title: Live Templates)
 
-<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 *Live Templates* are customizable rules that allow developers to abbreviate repetitive patterns of text in the editor.
 When a user types the designated abbreviation followed by a configurable *expansion key* (usually `Tab`), the IDE transforms the preceding input sequence to its full-length output, and update the cursor position.

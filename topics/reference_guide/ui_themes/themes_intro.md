@@ -1,6 +1,6 @@
 [//]: # (title: Custom UI Themes)
 
-<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 Beginning with the 2019.1 release, custom UI Themes are supported.
 Custom UI Themes give designers control of the appearance of built-in UI elements.

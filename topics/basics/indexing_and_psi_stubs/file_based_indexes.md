@@ -1,6 +1,6 @@
 [//]: # (title: File-Based Indexes)
 
-<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 File-based indexes are based on a [Map/Reduce architecture](https://en.wikipedia.org/wiki/MapReduce).
 Each index has a specific type of key and a particular type of value.

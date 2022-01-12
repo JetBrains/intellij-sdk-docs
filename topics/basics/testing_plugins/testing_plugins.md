@@ -1,6 +1,6 @@
 [//]: # (title: Testing Plugins)
 
-<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 Most of the tests in the IntelliJ Platform codebase are *model-level functional tests*.
 What this means is the following:

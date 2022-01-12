@@ -1,6 +1,6 @@
 [//]: # (title: Go to Class and Go to Symbol)
 
-<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 A custom language plugin can provide its items to be included in the lists shown when the user chooses the <menupath>Navigate | Class</menupath> or <menupath>Navigate | Symbol</menupath> action.
 

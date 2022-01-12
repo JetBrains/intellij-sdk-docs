@@ -1,6 +1,6 @@
 [//]: # (title: Kotlin UI DSL Version 2)
 
-<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
  > This page describes API available in IntelliJ Platform releases **2021.3 and later** only.
  >

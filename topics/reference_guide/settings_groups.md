@@ -1,6 +1,6 @@
 [//]: # (title: Custom Settings Groups)
 
-<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 As described in [Extension Points for Settings](settings_guide.md#extension-points-for-settings), custom _Settings_ can be declared as children of existing parent groups such as `tools`.
 These parent groups are the existing categories of Settings in the IntelliJ Platform-based IDE.

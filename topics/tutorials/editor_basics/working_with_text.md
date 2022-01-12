@@ -1,6 +1,6 @@
 [//]: # (title: 1. Working with Text)
 
-<!-- Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 This tutorial shows how to use actions to access a caret placed in a document open in an editor. 
 Using information about the caret, replace selected text in a document with a string. 

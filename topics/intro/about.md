@@ -1,6 +1,6 @@
 [//]: # (title: About This Guide)
 
-<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 This guide is split into several parts, similar to a textbook.
 Each one builds on the content of the previous section, but it is not necessary to read the guide in order.

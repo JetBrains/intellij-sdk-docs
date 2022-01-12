@@ -1,6 +1,6 @@
 [//]: # (title: PSI Cookbook)
 
-<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 This page gives recipes for the most common operations for working with the PSI (Program Structure Interface).
 Unlike [Developing Custom Language Plugins](custom_language_support.md), it talks about working with the PSI of existing languages (such as Java).

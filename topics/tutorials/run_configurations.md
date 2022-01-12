@@ -1,6 +1,6 @@
 [//]: # (title: Run Configurations Tutorial)
 
-<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 These series of steps show how to register and implement a simple Run Configuration.
 Run Configurations are used to run internal and external processes from within IntelliJ Platform based products.

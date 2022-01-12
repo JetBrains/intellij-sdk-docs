@@ -1,6 +1,6 @@
 [//]: # (title: IntelliJ Platform Plugin Template)
 
-<!-- Copyright 2000-2021 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 [IntelliJ Platform Plugin Template][gh:ippt] is a repository that provides a pure boilerplate template to make it easier to create a new plugin project using the recommended [Gradle setup](gradle_build_system.md).
 

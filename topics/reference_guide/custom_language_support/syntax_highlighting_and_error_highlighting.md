@@ -18,7 +18,8 @@ Existing highlighting can be suppressed programmatically in certain contexts, se
 The mapping of the `TextAttributesKey` to specific attributes used in an editor is defined by the [`EditorColorsScheme`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/editor/colors/EditorColorsScheme.java) class.
 It can be configured by the user by providing an implementation of [`ColorSettingPage`](upsource:///platform/platform-api/src/com/intellij/openapi/options/colors/ColorSettingsPage.java) registered in `com.intellij.colorSettingsPage` extension point.
 
-The _Export to HTML_ feature uses the same syntax highlighting mechanism as the editor, so it will work automatically for custom languages, which provide a syntax highlighter.
+The <menupath>File | Export | Files or Selection to HTML</menupath> feature uses the same syntax highlighting mechanism as the editor.
+Thus, it will work automatically for custom languages that provide a syntax highlighter.
 
 **Examples**:
 - [`ColorSettingsPage`](upsource:///plugins/properties/src/com/intellij/lang/properties/PropertiesColorsPage.java) for [Properties language plugin](upsource:///plugins/properties)
@@ -28,7 +29,7 @@ The _Export to HTML_ feature uses the same syntax highlighting mechanism as the 
  >
  {type="note"}
 
-The syntax and error highlighting are performed on multiple levels: Lexer, Parser, and (External) Annotator.
+The syntax and error highlighting are performed on multiple levels: Lexer, Parser, and (External) Annotator(s).
 
 ## Lexer
 

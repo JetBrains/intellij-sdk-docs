@@ -7,6 +7,8 @@ An instance of this class is created for every distinct type of item that should
 The `TextAttributesKey` defines the default attributes applied to items of the corresponding type (for example, keywords are bold, numbers are blue, strings are bold and green).
 Highlighting from multiple `TextAttributesKey` items can be layered - for example, one key may define an item's boldness and another color.
 
+Existing highlighting can be suppressed programmatically in certain contexts, see [](controlling_highlighting.md).
+
  > To force re-highlighting (e.g., after changing plugin specific settings), use
  > [`DaemonCodeAnalyzer.restart()`](upsource:///platform/analysis-api/src/com/intellij/codeInsight/daemon/DaemonCodeAnalyzer.java).
  >
@@ -46,6 +48,8 @@ For highlighting lexer errors, the standard `TextAttributesKey` for bad characte
 
 The second level of error highlighting happens during parsing.
 If a particular sequence of tokens is invalid according to the grammar of the language, the [`PsiBuilder.error()`](upsource:///platform/core-api/src/com/intellij/lang/PsiBuilder.java) method can highlight the invalid tokens and display an error message showing why they are not valid.
+
+See [](syntax_errors.md) on how to programmatically suppress these errors in certain contexts.
 
 ## Annotator
 

@@ -56,12 +56,12 @@ panel {
 ```
 
 Building content of any form starts from `panel {` which returns [`DialogPanel`](upsource:///platform/platform-api/src/com/intellij/openapi/ui/DialogPanel.kt) filled with components described inside the panel block.
-A panel consists of any number of rows marked with `row` tag.
+A panel consists of any number of rows marked with `row` tag created vertically from top to bottom.
+
 Every row consists of cells where the last cell in a row occupies the remaining width.
+Inside one row, cells are added from left to right in the same order calls to factory methods or `cell()` appear in each row.
 Cells can contain one component or a sub-panel.
 
-Rows are created vertically from top to bottom, in the same order as lines of code that call `row`.
-Inside one row, you add components from left to right in the same order calls to factory method or `cell()` appear in each row.
 If there are unoccupied cells at the end of a row, they are merged into one cell with the last non-empty cell.
 
 ## Panel
@@ -137,7 +137,7 @@ collapsibleGroup("Title") {
 }
 ```
 
-### Panel.buttonGroup
+### Panel.buttonsGroup
 
 **UI DSL Showcase Tab**: Groups (Sources: [`DemoGroups`](upsource:///platform/platform-impl/src/com/intellij/internal/ui/uiDslShowcase/DemoGroups.kt))
 

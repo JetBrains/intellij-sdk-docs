@@ -104,8 +104,8 @@ Readers are encouraged to review the Javadoc comments for `Configurable`.
 
 #### Constructors
 Implementations must meet several requirements for constructors.
-* Application Settings implementations, declared using the [`applicationConfiguration` EP](#declaring-application-settings), must have a default constructor with no arguments.
-* Project Settings implementations, declared using the [`projectSettings` EP](#declaring-project-settings), must declare a constructor with a single argument of type [`Project`](upsource:///platform/core-api/src/com/intellij/openapi/project/Project.java).
+* Application Settings implementations, declared using the [`applicationConfigurable` EP](#declaring-application-settings), must have a default constructor with no arguments.
+* Project Settings implementations, declared using the [`projectConfigurable` EP](#declaring-project-settings), must declare a constructor with a single argument of type [`Project`](upsource:///platform/core-api/src/com/intellij/openapi/project/Project.java).
 * Beginning in 2020.2, constructor injection (other than for `Project`) is not allowed.
 
 For a `Configurable` implementation correctly declared using an EP, the implementation's constructor is not invoked by the IntelliJ Platform until a user chooses the corresponding Settings `displayName` in the Settings Dialog menu.

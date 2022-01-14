@@ -27,8 +27,8 @@ Its children cover individual classes in the file, blocks on the next level cove
 The formatter modifies only the characters between blocks, and the tree of blocks must be built so that the bottom-level blocks cover all non-whitespace characters in the file.
 Otherwise, the characters between blocks may be deleted by the formatter.
 
-For better understanding how to build the blocks structure, use [PsiViewer](explore_api.md#31-use-internal-mode-and-psiviewer) and inspect formatting
-blocks built for an existing language:
+To better understand how to build the blocks structure, use [PsiViewer](explore_api.md#31-use-internal-mode-and-psiviewer) and inspect formatting blocks built for an existing language.
+To invoke PsiViewer with the possibility of inspecting Block Structure, use <menupath>Tools | View PSI Structure...</menupath> or <menupath>Tools | View PSI Structure of Current File...</menupath>:
 
 ![Formatting Blocks Structure](psi_viewer_formatting_blocks.png){width="720"}
 

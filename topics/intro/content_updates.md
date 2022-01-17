@@ -7,6 +7,16 @@ Follow [JBPlatform](https://twitter.com/JBPlatform/) on Twitter and visit [JetBr
 
 See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/main) ([RSS](https://github.com/JetBrains/intellij-sdk-docs/commits/main.atom)) for a detailed changelog.
 
+## 2022
+
+### January-22
+
+Syntax Errors
+: Add [Syntax Errors](syntax_errors.md) section explaining syntax highlighting basics and filtering syntax errors highlighting.
+
+Controlling Highlighting
+: Add [Controlling Highlighting](controlling_highlighting.md) section explaining when and how to control highlighting information.
+
 ## 2021
 
 ### December-21

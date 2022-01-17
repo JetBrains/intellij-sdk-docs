@@ -40,6 +40,11 @@ Consistent terminology helps the reader grasp new concepts more quickly:
   However, only use product names when extensibility or functionality is particular to a product.
 
 ### Text Format Conventions
+
+Start every sentence on a new line.
+For very long sentences, add additional line breaks after `,`, `:` or other sensible places.
+Very long links should also be on a separate line.
+
 Consistent text styles are used to standardize references and keywords:
 * Menu paths are wrapped using `<menupath>` with pipe characters separating each level: `<menupath>Settings/Preferences | Editor</menupath>`: <menupath>Settings/Preferences | Editor</menupath>
   Menu paths to settings always start with "Settings/Preferences" to cover all platforms. Inside tables, use `&#124;` instead of `|` to prevent escaping problems.

@@ -54,3 +54,9 @@ The webinar [How We Built Comma, the Raku IDE, on the IntelliJ Platform](https:/
 * [](go_to_class_and_go_to_symbol.md)
 * [](documentation.md)
 * [](additional_minor_features.md)
+
+> If a topic you are interested in is not covered in the above sections, let us know via the "**Was this page helpful?**" feedback form below or [other channels](getting_help.md#problems-with-the-guide).
+>
+> Please be specific about the topics and reasons for adding them, and leave your email in case we need more details.
+>
+{type="note"}

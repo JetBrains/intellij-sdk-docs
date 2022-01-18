@@ -11,11 +11,8 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 
 ### January-22
 
-Syntax Errors
-: Add [Syntax Errors](syntax_errors.md) section explaining syntax highlighting basics and filtering syntax errors highlighting.
-
-Controlling Highlighting
-: Add [Controlling Highlighting](controlling_highlighting.md) section explaining when and how to control highlighting information.
+Highlighting
+: Add [Syntax Errors](syntax_errors.md) and [Controlling Highlighting](controlling_highlighting.md) sections explaining syntax highlighting basics and filtering highlighting information.
 
 ## 2021
 

@@ -103,6 +103,13 @@ To show custom context web-based help for your plugin's functionality (e.g., for
 
 Use [`RunOnceUtil`](upsource:///platform/core-api/src/com/intellij/ide/util/RunOnceUtil.java) to run a task exactly once per project/application.
 
+## Application Events
+
+Application lifecycle events can be tracked via [`AppLifecycleListener`](upsource:///platform/platform-impl/src/com/intellij/ide/AppLifecycleListener.java) [listener](plugin_listeners.md).
+See also [](plugin_components.md#application-startup) and [](plugin_components.md#application-project-close).
+
+Register [`ApplicationActivationListener`](upsource:///platform/ide-core/src/com/intellij/openapi/application/ApplicationActivationListener.java) [listener](plugin_listeners.md) to be notified of "application focused/unfocused" events.
+
 ## Plugin Management
 
 Currently installed plugins can be checked via [`PluginManagerCore.isPluginInstalled()`](upsource:///platform/core-impl/src/com/intellij/ide/plugins/PluginManagerCore.java).

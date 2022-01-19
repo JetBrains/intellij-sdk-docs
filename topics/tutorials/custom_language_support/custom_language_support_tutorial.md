@@ -34,3 +34,9 @@ This a step-by-step tutorial, and it requires completing each step, in order:
 *  [](code_style_settings.md)
 *  [](commenter.md)
 *  [](quick_fix.md)
+
+> If a topic you are interested in is not covered in the above sections, let us know via the "**Was this page helpful?**" feedback form below or [other channels](getting_help.md#problems-with-the-guide).
+>
+> Please be specific about the topics and reasons for adding them, and leave your email in case we need more details.
+>
+{type="note"}

@@ -12,7 +12,7 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 ### January-22
 
 Highlighting
-: Add [Syntax Errors](syntax_errors.md) and [Controlling Highlighting](controlling_highlighting.md) sections explaining syntax highlighting basics and filtering highlighting information.
+: Add [](syntax_errors.md) and [](controlling_highlighting.md) sections explaining syntax highlighting basics and filtering highlighting information.
 
 ## 2021
 
@@ -24,29 +24,29 @@ Trusted Project
 ### November-21
 
 Language Injection
-: Add [Language Injection](language_injection.md) section that shows how the IntelliJ Platform handles different languages within the same source file.
+: Add [](language_injection.md) section that shows how the IntelliJ Platform handles different languages within the same source file.
 
 
 ### September-21
 
 IDE Infrastructure
-: [IDE Infrastructure](ide_infrastructure.md) handles Logging, Error Reporting, Runtime Information, and how to provide Context Help.
+: [](ide_infrastructure.md) handles Logging, Error Reporting, Runtime Information, and how to provide Context Help.
 
 Extension Point Lists: Listeners, Deprecation status
-: [Extension Point List](extension_point_list.md) now contains sections listing all provided [Listener](plugin_listeners.md) Topics. See also corresponding Extension Point Lists under _Part VIII - Product Specific_. Also, all deprecated API now has a dedicated tag.
+: [](extension_point_list.md) now contains sections listing all provided [Listener](plugin_listeners.md) Topics. See also corresponding Extension Point Lists under _Part VIII - Product Specific_. Also, all deprecated API now has a dedicated tag.
 
 ### July-21
 
 Plugin Signing
-: [Plugin Signing](plugin_signing.md) describes the plugin signing process, explains how to generate a certificate, configure the Gradle `signPlugin` task, and introduces a standalone CLI tool.
+: [](plugin_signing.md) describes the plugin signing process, explains how to generate a certificate, configure the Gradle `signPlugin` task, and introduces a standalone CLI tool.
 
 ### June-21
 
 Testing FAQ
-: [Testing FAQ](testing_faq.md) page lists common issues, useful classes, and techniques for writing and maintaining tests.
+: [](testing_faq.md) page lists common issues, useful classes, and techniques for writing and maintaining tests.
 
 Documentation Provider
-: Add [Documentation](documentation.md) section with an [accompanying tutorial](documentation_provider.md) that show how to implement a `DocumentationProvider` for custom languages.
+: Add [](documentation.md) section with an [accompanying tutorial](documentation_provider.md) that show how to implement a `DocumentationProvider` for custom languages.
 
 ### May-21
 
@@ -54,7 +54,7 @@ IDE specific Extension Point Lists
 : See _Part VIII - Product Specific_.
 
 New Guide - Explore the IntelliJ Platform API
-: Add a new section [Explore the IntelliJ Platform API](explore_api.md) that describes how plugin authors work with the IntelliJ Platform API and what tools they use.
+: Add a new section [](explore_api.md) that describes how plugin authors work with the IntelliJ Platform API and what tools they use.
 
 ### March-21
 

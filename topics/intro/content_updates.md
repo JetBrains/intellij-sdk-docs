@@ -14,6 +14,9 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 Highlighting
 : Add [](syntax_errors.md) and [](controlling_highlighting.md) sections explaining syntax highlighting basics and filtering highlighting information.
 
+IDE Infrastructure
+: Added sections [](ide_infrastructure.md#application-events) and [](ide_infrastructure.md#plugin-management).
+
 ## 2021
 
 ### December-21

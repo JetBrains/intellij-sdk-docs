@@ -54,6 +54,6 @@ Access to indices must be wrapped with `DumbService`, see also [General Threadin
 
 See also [Running Tasks Once](ide_infrastructure.md).
 
-### Application/Project Close
+### Project and Application Close
 
 To execute code on project closing or application shutdown, implement the `Disposable` interface in a [Service](plugin_services.md) and place the code in the `dispose()` method. Alternatively, use `Disposer.register()` passing a `Project` or `Application` service instance as the `parent` argument (see [Choosing a Disposable Parent](disposers.md#choosing-a-disposable-parent)).

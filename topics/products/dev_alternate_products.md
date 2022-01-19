@@ -24,8 +24,8 @@ Modifications are needed to the skeleton project's <path>build.gradle</path> and
 The <path>build.gradle</path> file is modified to specify the target product, determining the APIs available during development.
 The <path>plugin.xml</path> file is modified to declare the plugin's dependency on modules or libraries.
 
-## Configuring Build.Gradle to Target Products other than IntelliJ IDEA
-The best practice is to use the `gradle-intellij-plugin` `intellij.type` [attribute](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md#intellij-platform-properties) to specify the target product.
+## Configuring build.gradle to Target Products other than IntelliJ IDEA
+The best practice is to use the `gradle-intellij-plugin` `intellij.type` [attribute](https://github.com/JetBrains/gradle-intellij-plugin#intellij-platform-properties) to specify the target product.
 For example, `PY` for PyCharm professional.
 Configuration using an `intellij.type` attribute is explained in the [Product-Specific Attribute](#configuring-plugin-projects-using-a-product-specific-attribute) section below.
 

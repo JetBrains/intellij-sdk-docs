@@ -28,8 +28,8 @@ To see how these attributes appear in a similar <path>build.gradle</path> file f
 | [`intellij.plugins`][properties]   | Dependency on the `JavaScriptLanguage` plugin.                                                                                                                                                                       |
 | [`runIde.ideDir`][dsl]             | Path to locally installed target version of WebStorm. For example, for macOS:<br/><path>/Users/$USERNAME$/Library/Application Support/JetBrains/Toolbox/apps/WebStorm/ch-0/192.7142.35/WebStorm.app/Contents</path>. |
 
-[properties]: https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md#intellij-platform-properties
-[dsl]: https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md#running-dsl
+[properties]: https://github.com/JetBrains/gradle-intellij-plugin#intellij-platform-properties
+[dsl]: https://github.com/JetBrains/gradle-intellij-plugin#running-dsl
 
 The dependency on the WebStorm APIs must be declared in the <path>plugin.xml</path> file.
 As described in [Modules Specific to Functionality](plugin_compatibility.md#modules-specific-to-functionality) table, the `<depends>` tags must declare `JavaScriptLanguage`.

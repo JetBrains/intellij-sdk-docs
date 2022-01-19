@@ -36,7 +36,7 @@ Here are the steps to configure the <path>build.gradle</path> file for developin
   Continuing with the example [above](#matching-versions-of-the-intellij-platform-with-the-android-studio-version), set the `intellij.version` value to `191.8026.42`.
   Alternatively, specify `intellij.localPath` to refer to a local installation of Android Studio.
 * Android Studio plugin projects that use APIs from the `android` plugin must declare a dependency on that plugin.
- Declare the dependency in <path>build.gradle</path> using the Gradle plugin `intellij.plugins` attribute, which in this case lists the [directory name](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md#intellij-platform-properties) of the plugin.
+ Declare the dependency in <path>build.gradle</path> using the Gradle plugin `intellij.plugins` attribute, which in this case lists the [directory name](https://github.com/JetBrains/gradle-intellij-plugin#intellij-platform-properties) of the plugin.
 * The best practice is to use the target version of Android Studio as the IDE Development Instance.
   Set the Development Instance to the (user-specific) absolute path to the target Android Studio application.
 

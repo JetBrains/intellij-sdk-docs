@@ -31,8 +31,8 @@ To see how these attributes appear in the <path>build.gradle</path> file for Php
 | [`intellij.plugins`][properties]   | `com.jetbrains.php:193.5233.102` for the PHP plugin.<br/>See below for PHP plugin version information.                                                                                                               |
 | [`runIde.ideDir`][dsl]             | Path to locally installed target version of PhpStorm. For example, on macOS:<br/><path>/Users/$USERNAME$/Library/Application Support/JetBrains/Toolbox/apps/PhpStorm/ch-0/193.5233.101/PhpStorm.app/Contents</path>. |
 
-[properties]: https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md#intellij-platform-properties
-[dsl]: https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md#running-dsl
+[properties]: https://github.com/JetBrains/gradle-intellij-plugin#intellij-platform-properties
+[dsl]: https://github.com/JetBrains/gradle-intellij-plugin#running-dsl
 
 The PHP plugin version is explicitly declared because it isn't bundled with IntelliJ IDEA Ultimate Edition.
 Select a [version](https://plugins.jetbrains.com/plugin/6610-php/versions) of the PHP plugin compatible with the `intellij.version`.

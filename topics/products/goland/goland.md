@@ -48,8 +48,8 @@ Select a [version](https://plugins.jetbrains.com/plugin/9568-go/versions) of the
 | [`intellij.plugins`][properties]   | `org.jetbrains.plugins.go:193.5233.102.83` for the Go plugin.<br/>See below for Go plugin version information.                                                                                                 |
 | [`runIde.ideDir`][dsl]             | Path to locally installed target version of GoLand. For example, on macOS:<br/><path>/Users/$USERNAME$/Library/Application Support/JetBrains/Toolbox/apps/Goland/ch-0/193.5233.112/GoLand.app/Contents</path>. |
 
-[properties]: https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md#intellij-platform-properties
-[dsl]: https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md#running-dsl
+[properties]: https://github.com/JetBrains/gradle-intellij-plugin#intellij-platform-properties
+[dsl]: https://github.com/JetBrains/gradle-intellij-plugin#running-dsl
 
 </tab>
 

@@ -128,12 +128,12 @@ Comments in SDK code sample <path>build.gradle</path> files should only draw att
 For SDK code samples, a few alterations are needed to the default <path>build.gradle</path> file produced by the plugin wizard:
 * Maintain the Gradle properties `version` (`project.version`) and `group` (`project.group`).
   See the [Plugin Gradle Properties](gradle_prerequisites.md#plugin-gradle-properties-and-plugin-configuration-file-elements) section for how these Gradle properties relate to the elements in <path>plugin.xml</path>.
-* Add the following statement to the [Setup DSL](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md#setup-dsl) (`intellij{}`) section:
+* Add the following statement to the [Setup DSL](https://github.com/JetBrains/gradle-intellij-plugin#setup-dsl) (`intellij{}`) section:
   ```groovy
       // Prevents patching <idea-version> attributes in plugin.xml
       updateSinceUntilBuild = false
   ```
-* Add the following statement to the [Patching DSL](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md#patching-dsl) (`patchPluginXml{}`) section:
+* Add the following statement to the [Patching DSL](https://github.com/JetBrains/gradle-intellij-plugin#patching-dsl) (`patchPluginXml{}`) section:
   ```groovy
       // Patches <version> value in plugin.xml
       version = project.version

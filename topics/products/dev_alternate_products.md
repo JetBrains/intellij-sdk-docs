@@ -33,7 +33,7 @@ However, not all products have an `intellij.type` attribute defined by the `grad
 If the target product does not have an `intellij.type` attribute defined, then the best approach is to configure the project using the [IntelliJ IDEA Attribute](#configuring-buildgradle-using-the-intellij-idea-product-attribute).
 
 ### Configuring Plugin Projects Using a Product-Specific Attribute
-If the `gradle-intellij-plugin` supports a target product directly, there will be an `intellij.type` [attribute](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md#intellij-platform-properties) defined.
+If the `gradle-intellij-plugin` supports a target product directly, there will be an `intellij.type` [attribute](https://github.com/JetBrains/gradle-intellij-plugin#intellij-platform-properties) defined.
 Specifying the target as a product-specific `intellij.type` attribute has two advantages:
 * The APIs available to the plugin will be limited to only what is defined in the target product.
   (Unless additional plugin dependencies are specified.)

@@ -29,8 +29,8 @@ To see how these attributes appear in a similar <path>build.gradle</path> file f
 | [`runIde.ideDir`][dsl]             | Path to locally installed target version of DataGrip. For example, for macOS:<br/><path>/Users/$USERNAME$/Library/Application Support/JetBrains/Toolbox/apps/datagrip/ch-0/193.5233.139/DataGrip.app/Contents</path>. |
 | [`runIde.jvmArgs`][dsl]            | `jvmArgs '-Didea.platform.prefix=DataGrip'`<br/>Only required for `gradle-intellij-plugin` 0.4.16 or earlier.                                                                                                         |
 
-[properties]: https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md#intellij-platform-properties
-[dsl]: https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md#running-dsl
+[properties]: https://github.com/JetBrains/gradle-intellij-plugin#intellij-platform-properties
+[dsl]: https://github.com/JetBrains/gradle-intellij-plugin#running-dsl
 
 The additional attribute `runIde.jvmArgs` is required for versions of the `gradle-intellij-plugin` 0.4.16 and earlier.
 This attribute declares that Gradle should use the DataGrip platform to run/debug plugins in a development instance.

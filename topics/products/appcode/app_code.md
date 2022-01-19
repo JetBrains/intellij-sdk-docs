@@ -30,8 +30,8 @@ Click on an entry in the table's *Attribute* column to go to the documentation a
 | [`intellij.localPath`][properties] | Path to locally installed target version of AppCode. For example, for macOS:<br/><path>/Users/$USERNAME$/Library/Application Support/JetBrains/Toolbox/apps/AppCode/ch-0/193.5662.55/AppCode.app/Contents</path>. |
 | [`runIde.ideDir`][dsl]             | Path to locally installed target version of AppCode. For example, for macOS:<br/><path>/Users/$USERNAME$/Library/Application Support/JetBrains/Toolbox/apps/AppCode/ch-0/193.5662.55/AppCode.app/Contents</path>. |
 
-[properties]: https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md#intellij-platform-properties
-[dsl]: https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md#running-dsl
+[properties]: https://github.com/JetBrains/gradle-intellij-plugin#intellij-platform-properties
+[dsl]: https://github.com/JetBrains/gradle-intellij-plugin#running-dsl
 
 The dependency on the AppCode APIs must be declared in the <path>plugin.xml</path> file.
 As described in [Modules Specific to Functionality](plugin_compatibility.md#modules-specific-to-functionality) table, the `<depends>` tags must declare `com.intellij.modules.appcode`.

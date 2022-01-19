@@ -29,8 +29,8 @@ Click on an entry in the table's *Attribute* column to go to the documentation a
 | [`intellij.downloadSources`][properties] | `false` is required because no public source code is available.                |
 | [`runIde.ideDir`][dsl]                   | Not needed; the Development Instance will automatically match `intellij.type`. |
 
-[properties]: https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md#intellij-platform-properties
-[dsl]: https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md#running-dsl
+[properties]: https://github.com/JetBrains/gradle-intellij-plugin#intellij-platform-properties
+[dsl]: https://github.com/JetBrains/gradle-intellij-plugin#running-dsl
 
 The dependency on the CLion APIs must be declared in the <path>plugin.xml</path> file.
 As described in [Modules Specific to Functionality](plugin_compatibility.md#modules-specific-to-functionality) table, the `<depends>` elements should contain the CLion module, as illustrated in the <path>plugin.xml</path> snippet below:

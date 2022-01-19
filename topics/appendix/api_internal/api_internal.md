@@ -67,3 +67,9 @@ Therefore, any reported violations can be disregarded.
 | [`RunAnythingCommandLineProvider`](upsource:///platform/lang-impl/src/com/intellij/ide/actions/runAnything/activity/RunAnythingCommandLineProvider.kt) | Made public in 2021.3                           |
 | `org.jetbrains.yaml.meta.*`                                                                                                                            | YAML Metadata API will be made public in 2022.2 |
 | `PhpExpectedFunctionArgument`                                                                                                                          | Made public in 2022.1                           |
+
+> Missing entries? Please let us know via the "**Was this page helpful?**" feedback form below or [other channels](getting_help.md#problems-with-the-guide).
+>
+> Please leave your email in case we need more details.
+>
+{type="note"}

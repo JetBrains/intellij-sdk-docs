@@ -97,3 +97,9 @@ Virtual File System _(VFS)_
 Write Action
 : Allows accessing code-related data structures for writing purposes. See also [General Threading Rules](general_threading_rules.md).
 &rarr; _Read Action_
+
+> Missing entries? Please let us know via the "**Was this page helpful?**" feedback form below or [other channels](getting_help.md#problems-with-the-guide).
+>
+> Please leave your email in case we need more details.
+>
+{type="note"}

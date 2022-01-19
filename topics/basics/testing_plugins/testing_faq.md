@@ -84,3 +84,9 @@ Use `com.intellij.util.TimeoutUtil.sleep()`.
 ### JVM: How to add Maven dependencies?
 
 Use [`MavenDependencyUtil`](upsource:///java/testFramework/src/com/intellij/testFramework/fixtures/MavenDependencyUtil.java).
+
+> If a topic you are interested in is not covered in the above sections, let us know via the "**Was this page helpful?**" feedback form below or [other channels](getting_help.md#problems-with-the-guide).
+>
+> Please be specific about the topics and reasons for adding them, and leave your email in case we need more details.
+>
+{type="note"}

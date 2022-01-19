@@ -5,12 +5,13 @@
 In this tutorial we will add support for a [.properties](https://en.wikipedia.org/wiki/.properties) language and its usages within Java code.
 
  >  IntelliJ Platform support for custom languages is discussed in more depth in the [Custom Language Support](custom_language_support.md) section.
-> Corresponding parts are linked under **Reference** on top of each page in this tutorial.
+ > Corresponding parts are linked under **Reference** on top of each page in this tutorial.
  >
  {type="tip"}
 
 
  > The complete and fully working example plugin used in this tutorial is the [`simple_language_plugin`](https://github.com/JetBrains/intellij-sdk-code-samples/tree/main/simple_language_plugin) code sample.
+ > See [](code_samples.md) on how to build and run it.
  >
  {type="note"}
 

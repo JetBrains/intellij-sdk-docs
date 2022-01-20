@@ -33,7 +33,8 @@ In some situations, added or changed files (e.g. DTDs provided by plugin) are no
 
 ### How to enable DEBUG/TRACE logging?
 
-Set system properties `idea.log.debug.categories` or `idea.log.trace.categories`, respectively.
+Provide JVM system properties (Gradle: via `systemProperty` for `test` task) `idea.log.debug.categories` or `idea.log.trace.categories`, respectively.
+Multiple categories can set using a comma separated value list.
 
 ### How to get separate logs for failing tests?
 

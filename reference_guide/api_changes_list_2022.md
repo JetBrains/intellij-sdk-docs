@@ -92,3 +92,6 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 
 `com.jcraft.jsch` package removed
 : [JSch library](https://mvnrepository.com/artifact/com.jcraft/jsch) was removed, bundle it with your plugin instead.
+
+`com.intellij.diagnostic.DialogAppender.addFilter(Filter)` method removed
+: `DialogAppender` now implements `java.util.logging.Handler`, use `setFilter` method if you need to apply a filter

@@ -52,7 +52,7 @@ To execute code when a project is being opened, use one of these two [extensions
 Any long-running or CPU intensive tasks should be made visible to users by using `ProgressManager.run(Task.Backgroundable)`.
 Access to indices must be wrapped with `DumbService`, see also [General Threading Rules](general_threading_rules.md).
 
-See also [Running Tasks Once](ide_infrastructure.md).
+See also [](ide_infrastructure.md#running-tasks-once).
 
 ### Project and Application Close
 

@@ -82,16 +82,16 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 : Implement it instead of removed one.
 
 `com.intellij.psi.impl.java.stubs.index.JavaStubIndexKeys.CLASS_FQN` field type changed from `StubIndexKey<Integer, PsiClass>` to `StubIndexKey<CharSequence, PsiClass>`
-: `JavaFullClassNameIndex` now takes `CharSequence` instead of its `hashCode` to allow specific optimizations
+: `JavaFullClassNameIndex` now takes `CharSequence` instead of its `hashCode` to allow specific optimizations.
 
 `com.intellij.psi.impl.java.stubs.index.JavaFullClassNameIndex.getKey` method return type changed from `StubIndexKey<Integer, PsiClass>` to `StubIndexKey<CharSequence, PsiClass>`
-: `JavaFullClassNameIndex` now takes `CharSequence` instead of its `hashCode` to allow specific optimizations
+: `JavaFullClassNameIndex` now takes `CharSequence` instead of its `hashCode` to allow specific optimizations.
 
 `com.intellij.psi.impl.java.stubs.index.JavaFullClassNameIndex.get(Integer, Project, GlobalSearchScope)` method parameter type changed from `Integer` to `CharSequence`
-: `JavaFullClassNameIndex` now takes `CharSequence` instead of its `hashCode` to allow specific optimizations
+: `JavaFullClassNameIndex` now takes `CharSequence` instead of its `hashCode` to allow specific optimizations.
 
 `com.jcraft.jsch` package removed
 : [JSch library](https://mvnrepository.com/artifact/com.jcraft/jsch) was removed, bundle it with your plugin instead.
 
 `com.intellij.diagnostic.DialogAppender.addFilter(Filter)` method removed
-: `DialogAppender` now implements `java.util.logging.Handler`, use `setFilter` method if you need to apply a filter
+: `DialogAppender` now implements `java.util.logging.Handler`, use `setFilter` method if you need to apply a filter.

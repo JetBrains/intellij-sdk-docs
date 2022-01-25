@@ -31,7 +31,7 @@ Another way to discover EPs is by using autocompletion or navigating through EP 
 When you open a new tag in your <path>plugin.xml</path> file (inside the `extensions` block with `defaultExtensionNs="com.intellij"`),
 the IDE will automatically suggest possible EPs.
 
-<img src="plugin_xml_completion_suggestion.png" alt="Using Completion Suggestions" width="706" animated="true" border-effect="rounded"/>
+![Using Completion Suggestions](plugin_xml_completion_suggestion.png){width="706"}{animated="true"}{border-effect="rounded"}
 
 This is the first step in discovering new features that haven't been explicitly mentioned in the IntelliJ Platform Docs.
 Note that in the completion popup you can call

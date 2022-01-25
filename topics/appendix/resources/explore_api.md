@@ -34,9 +34,10 @@ the IDE will automatically suggest possible EPs.
 ![Using Completion Suggestions](plugin_xml_completion_suggestion.png){width="706"}{animated="true"}{border-effect="rounded"}
 
 This is the first step in discovering new features that haven't been explicitly mentioned in the IntelliJ Platform Docs.
-Note that in the completion popup you can call
+Note that in the completion popup, you can call
 [quick documentation](https://www.jetbrains.com/help/idea/viewing-reference-information.html#inline-quick-documentation),
-which then shows the properties and the implementation class of the EP.
+which then shows its properties, the implementation class, as well as a direct link to open usage results from
+[IntelliJ Platform Explorer](https://jb.gg/ipe).
 
 ### 1.3 Search the IntelliJ Platform Code
 

@@ -24,7 +24,7 @@ It may also help to review some of the [UI Themes available](https://plugins.jet
 ## Defining Named Colors
 Colors can always be defined individually as six-digit RGB or eight-digit RGBA hexadecimal notation.
 However, Theme definitions often use the same color in multiple places.
-Maintaining a Theme is more manageable if _Named Colors_ are globally defined in a `colors {}` block as part of the <path>*.theme.json<path> file.
+Maintaining a Theme is more manageable if _Named Colors_ are globally defined in a `colors {}` block as part of the <path>*.theme.json</path> file.
 After that, the Named Color can be used instead of a hexadecimal description of the color.
 For example, defining the Named Color `basicBackground` and then using it to set the background color of panels.
 (Don't be concerned with the `"ui"` syntax in the example below; it will be discussed in [Custom UI Control Colors](#custom-ui-control-colors).)

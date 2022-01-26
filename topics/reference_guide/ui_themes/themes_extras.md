@@ -15,16 +15,16 @@ Note that editor [Colors and Fonts](https://www.jetbrains.com/help/idea/configur
 Use the following procedure to customize an editor color scheme for a UI Theme:
 * Create the desired custom editor color scheme using the IDE preferences.
 * Export the custom editor color scheme to the desired file name.
-  In this example, the file is exported to `Lightning.icls`
-* Once exported, change the file extension from `*.icls` to `*.xml`.
-  In this example, the result is `Lightning.xml`.
+  In this example, the file is exported to <path>Lightning.icls</path>.
+* Once exported, change the file extension from <path>\*.icls</path> to <path>\*.xml</path>.
+  In this example, the result is <path>Lightning.xml</path>.
 * See [Customizing Editor Scroll Bar Colors](#customizing-editor-scroll-bar-colors) to change the colors of editor scroll bars.
 
 ### Incorporating the Editor Color Scheme in the Custom UI Theme
 The next step is to add the color scheme to the UI Theme plugin project:
-* Replace the default generated custom editor color scheme XML file (in this example `theme_basics.xml`) in the `resources` folder with the exported custom editor color scheme.
-  In this case, the action is to _replace_ `theme_basics.xml` with `Lightning.xml`.
-* In the UI Theme file (in this example `theme_basics.theme.json`,) replace the name of the generated editor scheme file (`theme_basics.xml`) with the new (`Lightning.xml`) file name.
+* Replace the default generated custom editor color scheme XML file (in this example, <path>theme_basics.xml</path>) in the project's <path>resources</path> folder with the exported custom editor color scheme.
+  In this case, the action is to _replace_ <path>theme_basics.xml</path> with <path>Lightning.xml</path>.
+* In the UI Theme file (in this example <path>theme_basics.theme.json</path>), replace the name of the generated editor scheme file (<path>theme_basics.xml</path>) with the new (<path>Lightning.xml</path>) file name.
   The `key` is always "editorScheme".
   The `value` is the name of the editor color scheme file.
 
@@ -73,7 +73,7 @@ For additional examples of `FILESTATUS` color `name` attributes, see the editor 
 
 ### Customizing Editor Scroll Bar Colors
 Editor scroll bar colors should be coordinated with, and switch together with an editor color scheme.
-Please note that Custom UI Theme (`*.theme.json`) files also contain `ScrollBar.*` name attributes, but these are for scroll bars outside the context of the editor.
+Please note that Custom UI Theme (<path>*.theme.json</path>) files also contain `ScrollBar.*` name attributes, but these are for scroll bars outside the context of the editor.
 
  >  The Editor Scroll Bar colors are the only editor scheme settings that cannot be customized and exported through IDE preferences.
  >
@@ -117,7 +117,7 @@ The `name` attribute patterns are enumerated below.
 The horizontal scroll bar background color is set by `ScrollBar.background`.
 This background color is visible only if the horizontal scroll bar's `*.trackColor` has transparency.
 
-At this time the vertical scrollbar background color cannot be customized.
+At this time, the vertical scrollbar background color cannot be customized.
 
 **Windows/Linux Name Attributes**
 
@@ -139,7 +139,7 @@ Users can do this manually in [Preferences](https://www.jetbrains.com/help/idea/
 
 UI Themes support specifying a background image as a key-value pair in the `"background": {}` section of a Theme description file:
 * The `image` key uses the file name of the image as the value.
-The background image is placed in the UI Theme plugin project's resources folder.
+The background image is placed in the UI Theme plugin project's <path>resources</path> folder.
 * The `transparency` key uses a `value` of 1-100.
 A `value` of 100 is opaque.
 * The `fill` key uses a value of `scale`, meaning to expand the image to fill the space as the window gets resized.

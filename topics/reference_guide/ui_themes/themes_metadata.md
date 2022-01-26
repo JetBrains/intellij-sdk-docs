@@ -1,10 +1,10 @@
 [//]: # (title: Exposing Theme Metadata)
 
-All available UI Customization Keys that can be used in [Custom Themes](themes_customize.md) must be defined in a dedicated `*.themeMetadata.json` file which is registered via `com.intellij.themeMetadataProvider` extension point.
+All available UI Customization Keys that can be used in [Custom Themes](themes_customize.md) must be defined in a dedicated <path>*.themeMetadata.json</path> file which is registered via `com.intellij.themeMetadataProvider` extension point.
 
 The following minimal sample demonstrates all details required when exposing UI customization keys of your plugin's UI.
 
-`/resources/META-INF/plugin.xml`:
+<path>/resources/META-INF/plugin.xml</path>:
 
 ```xml
 <idea-plugin>
@@ -14,7 +14,7 @@ The following minimal sample demonstrates all details required when exposing UI 
 </idea-plugin>
 ```
 
-`/resources/META-INF/MyPlugin.themeMetadata.json`:
+<path>/resources/META-INF/MyPlugin.themeMetadata.json</path>:
 
 ```json
 {
@@ -25,7 +25,7 @@ The following minimal sample demonstrates all details required when exposing UI 
       "key": "MyComponent.border",
       "description": "The border for my component. Not used anymore.",
       "deprecated": true,
-      "source": "com.myplugin.MyComponent",
+      "source": "com.myplugin.MyComponent"
     },
     {
       [more keys...]
@@ -40,7 +40,7 @@ The following minimal sample demonstrates all details required when exposing UI 
 - `ui` - Root element listing all customization keys:
 
     - `key` - Customization key name (see [Key Naming Scheme](#key-naming-scheme))
-    - `description` - Description to be shown to Theme authors editing `*.theme.json` files
+    - `description` - Description to be shown to Theme authors editing <path>*.theme.json</path> files
     - `deprecated` - `true` when key is deprecated, please provide explanation and/or replacement in `description` if available
     - `source` - FQN of the underlying UI component implementation
     - `since` - The release number (e.g. `[2019.2]`) when this UI customization key was exposed.
@@ -157,10 +157,10 @@ Examples of Swing keys:
  {type="note"}
 
 Metadata is split up as follows:
-- [`IntelliJPlatform.themeMetadata.json`](upsource:///platform/platform-resources/src/themes/metadata/IntelliJPlatform.themeMetadata.json) - all keys from IntelliJ Platform and custom UI components
-- [`JDK.themeMetadata.json`](upsource:///platform/platform-resources/src/themes/metadata/JDK.themeMetadata.json) - all keys from Swing components
+- <path>[IntelliJPlatform.themeMetadata.json`](upsource:///platform/platform-resources/src/themes/metadata/IntelliJPlatform.themeMetadata.json)</path> - all keys from IntelliJ Platform and custom UI components
+- <path>[JDK.themeMetadata.json`](upsource:///platform/platform-resources/src/themes/metadata/JDK.themeMetadata.json)</path> - all keys from Swing components
 
-New keys should be added to `IntelliJPlatform.themeMetadata.json` only (or corresponding "local" `*.themeMetadata.json` file of the plugin if applicable).
+New keys should be added to <path>IntelliJPlatform.themeMetadata.json</path> only (or corresponding "local" <path>*.themeMetadata.json</path> file of the plugin if applicable).
 
 Please make sure to add a `description` and use `since` and `deprecated` attributes explained in [Attributes](#attributes).
 Respect [Key Naming Scheme](#key-naming-scheme) and keep alphabetical ordering of keys.

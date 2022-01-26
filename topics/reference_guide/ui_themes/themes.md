@@ -12,8 +12,8 @@ Custom UI Themes can:
 
 ## The Structure of a UI Theme
 UI Themes are components within IntelliJ Platform plugins.
-Theme plugins should be stand-alone plugins, and not combined with other plugin functionality.
-This approach is the best user experience because it avoids an IDE restart when installing a UI Theme plugin.
+The theme plugins should be stand-alone and not combined with other plugin functionality.
+This approach provides the best user experience because it avoids an IDE restart when installing a UI Theme plugin.
 
 UI Themes have several components:
 * A required Theme description (JSON) file in the plugin project's <path>resources</path> folder.

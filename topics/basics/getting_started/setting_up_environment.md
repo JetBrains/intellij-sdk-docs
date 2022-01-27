@@ -19,6 +19,8 @@ Use the following checklist to ensure that you are ready to develop your custom 
 
 ### Configuring IntelliJ Platform SDK
 
+> For more information about SDKs, see [SDKs section](https://www.jetbrains.com/help/idea/working-with-sdks.html) in the IntelliJ IDEA Web Help.
+
 To set up your plugin development environment:
 
 * Set up a required Java SDK.

@@ -11,6 +11,11 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 External System Test Framework
 : Available as `com.jetbrains.intellij.platform:external-system-test-framework` from [](intellij_artifacts.md), see [](external_system_integration.md#testing).
 
+### IntelliJ IDEA 2021.2
+
+Unbundled plugins
+: Several plugins (Grails, Jakarta EE: Batch Applications, Jakarta EE: Server Faces (JSF), Jakarta EE: Web Services (JAX-WS), Smali Support, Spring Batch, Spring Integration Patterns, Spring Web Services) have been unbundled. The IDE will suggest installation if the project contains related framework dependency. If your plugin depends on them, users will need to install them from the [JetBrains Plugins Repository](https://plugins.jetbrains.com).
+
 ### Maven Plugin 2022.1
 
 Published Maven Test Framework

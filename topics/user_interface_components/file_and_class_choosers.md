@@ -42,3 +42,8 @@ If you want to offer the user a possibility to select a Java class, you can use 
 Its different methods allow you to specify the scope from which the classes are taken, to restrict the choice to descendants of a specific class or implementations of an interface, and to include or exclude inner classes from the list.
 
 For choosing a Java package, you can use the [`PackageChooserDialog`](upsource:///java/java-impl/src/com/intellij/ide/util/PackageChooserDialog.java) class.
+
+> To use Java-specific components in plugins targeting versions 2019.2+, explicit dependency on the Java plugin is required.
+> See the [Modules Specific to Functionality](plugin_compatibility.md#modules-specific-to-functionality) page for details.
+>
+{type="note"}

@@ -35,7 +35,7 @@ Optionally:
 
 The `DialogWrapper` class is often used together with [GUI Designer forms](https://www.jetbrains.com/help/idea/gui-designer-basics.html).
 In this case, bind a GUI Designer form to the class extending `DialogWrapper`, bind the top-level panel of the form to a field and return that field from the `createCenterPanel()` method.
-When using Kotlin, use [Kotlin UI DSL](kotlin_ui_dsl.md) to provide the dialog's contents.
+When using Kotlin, use [Kotlin UI DSL](kotlin_ui_dsl_version_2.md) to provide the dialog's contents.
 
  > See [Layout](https://jetbrains.design/intellij/principles/layout) topic in IntelliJ Platform UI Guidelines for recommendations on arranging UI controls in dialogs.
  >

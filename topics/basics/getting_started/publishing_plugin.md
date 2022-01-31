@@ -37,7 +37,9 @@ See also [Marketplace Docs](https://plugins.jetbrains.com/docs/marketplace/uploa
 
 ### Uploading a New Version
 
-New versions can be uploaded on the plugin's detail page, see [Marketplace Docs](https://plugins.jetbrains.com/docs/marketplace/custom-release-channels.html) for details.
+When using Gradle, use the provided tasks as described in [](deployment.md).
+
+New versions can be uploaded manually on the plugin's detail page, see [Marketplace Docs](https://plugins.jetbrains.com/docs/marketplace/custom-release-channels.html) for details.
 
 ## Publishing a Plugin to a Custom Plugin Repository
 

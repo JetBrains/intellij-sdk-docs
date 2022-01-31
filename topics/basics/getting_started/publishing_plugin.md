@@ -26,6 +26,8 @@ To upload your plugin to the [JetBrains Marketplace](https://plugins.jetbrains.c
 2. On your Profile page that opens, click **Add new plugin**.
 3. Fill in the **Add new plugin** form that opens and click the **Add the plugin** button to upload your plugin.
 
+See also [Marketplace Docs](https://plugins.jetbrains.com/docs/marketplace/uploading-a-new-plugin.html).
+
 ### Uploading a New Version
 
 New versions can be uploaded on the plugin's detail page, see [Marketplace Docs](https://plugins.jetbrains.com/docs/marketplace/custom-release-channels.html) for details.

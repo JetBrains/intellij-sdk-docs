@@ -21,7 +21,7 @@ Typically, you need to have stubs for things like methods or fields visible from
 You usually don't need to have stubs for things like statements or local variables, which are not visible externally.
 
 ### Implementation
-                 
+
 The following steps need to be performed only once for each language that supports stubs:
 
 * Change the file element type for your language (the element type that you return from `ParserDefinition.getFileNodeType()`) to a class that extends [`IStubFileElementType`](upsource:///platform/core-impl/src/com/intellij/psi/tree/IStubFileElementType.java).
@@ -40,9 +40,14 @@ For each element type that you want to store in the stub tree, you need to perfo
 * Use the class implementing `IStubElementType` as the element type constant when parsing ([example](upsource:///plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/parsing/PropertiesElementTypes.java)).
 * Make sure all methods in the PSI element interface access the stub data rather than the PSI tree when appropriate ([example: `Property.getKey()` implementation](upsource:///plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/psi/impl/PropertyImpl.java)).
 
+> If you use [Grammar-Kit](https://github.com/JetBrains/Grammar-Kit) to generate your language PSI, see the [Stub indices support](https://github.com/JetBrains/Grammar-Kit/blob/master/HOWTO.md#35-stub-indices-support) section for instructions on integrating your grammar with stubs.
+>
+{type="note"}
+
 By default, if a PSI element extends `StubBasedPsiElement`, all elements of that type will be stored in the stub tree.
 If you need more precise control over which elements are stored, override `IStubElementType.shouldCreateStub()` and return `false` for elements that should not be included in the stub tree.
 The exclusion is not recursive: if some elements of the element for which you returned false are also stub-based PSI elements, they will be included in the stub tree.
+
 
 ### Serializing Data
 

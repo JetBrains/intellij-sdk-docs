@@ -19,7 +19,7 @@ This page lists a number of common questions/issues and techniques useful for te
 
 ### How to avoid blinking tests?
 
-Always call `super.tearDown()` inside `finally {..}` block of your test class to avoid leaks and side-effects from previously run (failed) tests.
+Always call `super.tearDown()` inside `finally {..}` block of your test class to avoid leaks and side effects from previously run (failed) tests.
 
 Avoid OS-specific assumptions (e.g., filesystem case-sensitivity, hardcoded separator instead of `java.io.File.separator`).
 
@@ -29,7 +29,7 @@ Code deferring execution (e.g., via `Application.invokeLater()`) might not run d
 
 ### How to avoid test failure when using resources?
 
-In some situations, added or changed files (e.g. DTDs provided by plugin) are not refreshed in VFS. In such cases, simply delete <path>test-system/caches</path> in your [sandbox directory](ide_development_instance.md#the-development-instance-sandbox-directory) and try again.
+In some situations, added or changed files (e.g. DTDs provided by a plugin) are not refreshed in VFS. In such cases, simply delete <path>test-system/caches</path> in your [sandbox directory](ide_development_instance.md#the-development-instance-sandbox-directory) and try again.
 
 ### How to enable DEBUG/TRACE logging?
 
@@ -50,11 +50,11 @@ Annotate with [`org.jetbrains.annotations.TestOnly`](https://github.com/JetBrain
 
 Use [`FileBasedTestCaseHelper`](upsource:///platform/testFramework/src/com/intellij/testFramework/FileBasedTestCaseHelper.java), please see its javadoc for instructions.
 
-### How to modify setup on per-test basis?
+### How to modify setup on a per-test basis?
 
 Use `UsefulTestCase.getTestName()` or create your own annotation(s) which can be checked via `UsefulTestCase.annotatedWith()`.
 
-### How to run performance test?
+### How to run a performance test?
 
 Use [`PlatformTestUtil.startPerformanceTest()`](upsource:///platform/testFramework/src/com/intellij/testFramework/PlatformTestUtil.java) to assert machine-adjusted metrics.
 
@@ -78,7 +78,7 @@ Provide `testServiceImplementation` for service declaration in <path>plugin.xml<
 
 Use [`ExtensionTestUtil`](upsource:///platform/testFramework/src/com/intellij/testFramework/ExtensionTestUtil.kt).
 
-### How to wait for specified amount of time?
+### How to wait for a specified amount of time?
 
 Use `com.intellij.util.TimeoutUtil.sleep()`.
 

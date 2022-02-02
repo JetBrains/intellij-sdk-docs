@@ -19,15 +19,15 @@ Light and heavy tests use different base classes or fixture classes, as describe
 ## Light Tests
 
 The standard way of writing a light test is to extend the following classes:
-                               
+
 <tabs>
 
 <tab title="2019.2 and later">
 
-* [`BasePlatformTestCase`](upsource:///platform/testFramework/src/com/intellij/testFramework/fixtures/BasePlatformTestCase.java) for tests that don't have any Java dependencies (previously `LightPlatformCodeInsightFixtureTestCase`).
-* [`LightJavaCodeInsightFixtureTestCase`](upsource:///java/testFramework/src/com/intellij/testFramework/fixtures/LightJavaCodeInsightFixtureTestCase.java) for tests that require the Java PSI or any related functionality (previously `LightCodeInsightFixtureTestCase`).
+* [`BasePlatformTestCase`](upsource:///platform/testFramework/src/com/intellij/testFramework/fixtures/BasePlatformTestCase.java) for tests that don't have any Java dependencies.
+* [`LightJavaCodeInsightFixtureTestCase`](upsource:///java/testFramework/src/com/intellij/testFramework/fixtures/LightJavaCodeInsightFixtureTestCase.java) for tests that require the Java PSI or any related functionality.
 
-</tab>                
+</tab>
 
 <tab title="Pre-2019.2">
 

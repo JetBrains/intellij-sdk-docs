@@ -2,11 +2,6 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-In the IntelliJ Platform, a project encapsulates all the source code, libraries, and build instructions into a single organizational unit.
-Everything done in the IDE is accomplished within the context of a project.
-A project defines some collections referred to as [modules](module.md) and [libraries](library.md).
-Depending on the logical and functional requirements for the project, a single-module or a multi-module project is possible.
-
 ## Working with Projects
 
 The IntelliJ Platform stores the project configuration data in XML files.

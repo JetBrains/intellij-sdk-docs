@@ -20,22 +20,8 @@ Light and heavy tests use different base classes or fixture classes, as describe
 
 The standard way of writing a light test is to extend the following classes:
 
-<tabs>
-
-<tab title="2019.2 and later">
-
-* [`BasePlatformTestCase`](upsource:///platform/testFramework/src/com/intellij/testFramework/fixtures/BasePlatformTestCase.java) for tests that don't have any Java dependencies.
-* [`LightJavaCodeInsightFixtureTestCase`](upsource:///java/testFramework/src/com/intellij/testFramework/fixtures/LightJavaCodeInsightFixtureTestCase.java) for tests that require the Java PSI or any related functionality.
-
-</tab>
-
-<tab title="Pre-2019.2">
-
-* [`LightPlatformCodeInsightFixtureTestCase`](upsource:///platform/testFramework/src/com/intellij/testFramework/fixtures/LightPlatformCodeInsightFixtureTestCase.java) for tests that don't have any Java dependencies.
-* [`LightCodeInsightFixtureTestCase`](upsource:///java/testFramework/src/com/intellij/testFramework/fixtures/LightCodeInsightFixtureTestCase.java) for tests that require the Java PSI or any related functionality.
-
-</tab>
-</tabs>
+* [`BasePlatformTestCase`](upsource:///platform/testFramework/src/com/intellij/testFramework/fixtures/BasePlatformTestCase.java) (2019.2 and later) for tests that don't have any Java dependencies. For plugins using pre-2019.2 versions use [`LightPlatformCodeInsightFixtureTestCase`](upsource:///platform/testFramework/src/com/intellij/testFramework/fixtures/LightPlatformCodeInsightFixtureTestCase.java).
+* [`LightJavaCodeInsightFixtureTestCase`](upsource:///java/testFramework/src/com/intellij/testFramework/fixtures/LightJavaCodeInsightFixtureTestCase.java) (2019.2 and later) for tests that require the Java PSI or any related functionality. For plugins using pre-2019.2 versions use [`LightCodeInsightFixtureTestCase`](upsource:///java/testFramework/src/com/intellij/testFramework/fixtures/LightCodeInsightFixtureTestCase.java).
 
 When writing a light test, you can specify the project's requirements that you need to have in your test, such as the module type, the configured SDK, facets, libraries, etc.
 You do so by extending the [`LightProjectDescriptor`](upsource:///platform/testFramework/src/com/intellij/testFramework/LightProjectDescriptor.java) class and returning your project descriptor from `getProjectDescriptor()`.
@@ -55,10 +41,13 @@ Before executing each test, the project instance will be reused if the test case
 The setup code for a multi-module Java project looks something like that:
 
 ```java
-final TestFixtureBuilder<IdeaProjectTestFixture> projectBuilder = IdeaTestFixtureFactory.getFixtureFactory().createFixtureBuilder(getName());
+TestFixtureBuilder<IdeaProjectTestFixture> projectBuilder =
+        IdeaTestFixtureFactory.getFixtureFactory().createFixtureBuilder(getName());
 
 // Repeat the following line for each module
-final JavaModuleFixtureBuilder moduleFixtureBuilder = projectBuilder.addModule(JavaModuleFixtureBuilder.class);
+JavaModuleFixtureBuilder moduleFixtureBuilder =
+        projectBuilder.addModule(JavaModuleFixtureBuilder.class);
 
-myFixture = JavaTestFixtureFactory.getFixtureFactory().createCodeInsightFixture(projectBuilder.getFixture());
+myFixture = JavaTestFixtureFactory.getFixtureFactory()
+        .createCodeInsightFixture(projectBuilder.getFixture());
 ```

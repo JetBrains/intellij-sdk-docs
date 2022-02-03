@@ -93,3 +93,7 @@ When learning new development configurations, it is helpful to have some represe
 
 ### How To Sync Gradle Project
 Use `com.android.tools.idea.gradle.project.sync.GradleSyncInvoker.requestProjectSync()` for programmatic synchronization.
+
+## See also
+
+(IntelliJ Android Plugin README)[https://github.com/JetBrains/android#contents]

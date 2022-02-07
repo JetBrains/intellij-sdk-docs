@@ -95,3 +95,8 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 
 `com.intellij.diagnostic.DialogAppender.addFilter(Filter)` method removed
 : `DialogAppender` now implements `java.util.logging.Handler`, use `setFilter` method if you need to apply a filter.
+
+### Collaboration tools module
+
+`com.intellij.collaboration.auth.ui.AccountsPanelFactory.accountsPanel(Row, AccountManager, PersistentDefaultAccountHolder, AccountsListModel, AccountsDetailsProvider, Disposable, Icon)` method removed
+: support for default accounts required a signature change

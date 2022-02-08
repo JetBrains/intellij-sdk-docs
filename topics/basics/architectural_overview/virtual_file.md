@@ -81,6 +81,8 @@ Plugins targeting versions 2017.2 or older of the platform can use the now depre
 
 [`VfsUtil`](upsource:///platform/analysis-api/src/com/intellij/openapi/vfs/VfsUtil.java) and [`VfsUtilCore`](upsource:///platform/core-api/src/com/intellij/openapi/vfs/VfsUtilCore.java) provide utility methods for analyzing files in the Virtual File System.
 
+For storing a large set of Virtual Files, use dedicated `VfsUtilCore.createCompactVirtualFileSet()`.
+
 Use [`ProjectLocator`](upsource:///platform/projectModel-api/src/com/intellij/openapi/project/ProjectLocator.java) to find the projects that contain a given virtual file.
 
 ## How do I extend VFS?

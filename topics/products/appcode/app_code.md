@@ -34,7 +34,7 @@ Click on an entry in the table's *Attribute* column to go to the documentation a
 [dsl]: https://github.com/JetBrains/gradle-intellij-plugin#running-dsl
 
 The dependency on the AppCode APIs must be declared in the <path>plugin.xml</path> file.
-As described in [Modules Specific to Functionality](plugin_compatibility.md#modules-specific-to-functionality) table, the `<depends>` tags must declare `com.intellij.modules.appcode`.
+As described in [Modules Specific to Functionality](plugin_compatibility.md#modules-specific-to-functionality) table, the `<depends>` tags must declare `com.intellij.modules.appcode` module dependency, or `com.intellij.appcode` plugin dependency for plugins targeting only versions 2020.3+.
 
 ## Available AppCode APIs
 

@@ -33,12 +33,7 @@ Click on an entry in the table's *Attribute* column to go to the documentation a
 [dsl]: https://github.com/JetBrains/gradle-intellij-plugin#running-dsl
 
 The dependency on the CLion APIs must be declared in the <path>plugin.xml</path> file.
-As described in [Modules Specific to Functionality](plugin_compatibility.md#modules-specific-to-functionality) table, the `<depends>` elements should contain the CLion module, as illustrated in the <path>plugin.xml</path> snippet below:
-
-```xml
-  <!-- Required for core CLion functionality -->
-  <depends>com.intellij.modules.clion</depends>
-```
+As described in [Modules Specific to Functionality](plugin_compatibility.md#modules-specific-to-functionality) table, the `<depends>` tags must declare `com.intellij.modules.clion` module dependency, or `com.intellij.clion` plugin dependency for plugins targeting only versions 2020.3+.
 
 ## Available CLion APIs
 

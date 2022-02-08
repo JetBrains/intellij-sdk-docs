@@ -36,7 +36,7 @@ IDE Infrastructure
 : [](ide_infrastructure.md) handles Logging, Error Reporting, Runtime Information, and how to provide Context Help.
 
 Extension Point Lists: Listeners, Deprecation status
-: [](extension_point_list.md) now contains sections listing all provided [Listener](plugin_listeners.md) Topics. See also corresponding Extension Point Lists under _Part VIII - Product Specific_. Also, all deprecated API now has a dedicated tag.
+: [](extension_point_list.md) now contains sections listing all provided [Listener](plugin_listeners.md) Topics. See also corresponding Extension Point Lists under _Part VIII — Product Specific_. Also, all deprecated API now has a dedicated tag.
 
 ### July-21
 
@@ -54,7 +54,7 @@ Documentation Provider
 ### May-21
 
 IDE specific Extension Point Lists
-: See _Part VIII - Product Specific_.
+: See _Part VIII — Product Specific_.
 
 New Guide - Explore the IntelliJ Platform API
 : Add a new section [](explore_api.md) that describes how plugin authors work with the IntelliJ Platform API and what tools they use.
@@ -125,7 +125,7 @@ Custom Language Support Tutorial converted to Gradle
 : The [corresponding tutorial](custom_language_support_tutorial.md) and [Testing a Custom Language Plugin](writing_tests_for_plugins.md) have been updated and enhanced as well.
 
 Targeting specific IDEs
-: [Part VIII - Product Specific](plugin_compatibility.md) has been expanded massively, now also covering each IDE with its dedicated page.
+: [Part VIII — Product Specific](plugin_compatibility.md) has been expanded massively, now also covering each IDE with its dedicated page.
 
 ## 2019
 
@@ -139,7 +139,7 @@ Plugin Components migration
 
 ### October-19
 
-Part X - Plugin Repository moved
+Part X — Plugin Repository moved
 : All contents have been moved to [JetBrains Marketplace](https://plugins.jetbrains.com/docs/marketplace/about-marketplace.html) documentation.
 
 ### July-19

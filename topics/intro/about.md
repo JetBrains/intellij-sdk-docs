@@ -19,58 +19,58 @@ The [Key Topics](key_topics.md) page aims to link to the pages that are necessar
   >
   {type="tip"}
 
-#### Part I - Plugins
+#### Part I — Plugins
 
 Describes how to create a plugin that can extend the IntelliJ Platform.
 Includes details on how to set up the project, register extension points, target specific versions of the IntelliJ Platform, and how to package, deploy, and test your plugins.
 
-#### Part II - Base Platform
+#### Part II — Base Platform
 
 Describes the foundational layer of the architecture, which provides many features and utilities, such as the component model, the user interface, documents and editors, the virtual file system, settings, threading, and background tasks.
 The Base Platform layer mainly comprises the functionality of the IntelliJ Platform that does not target language features or parsing.
 
-#### Part III - Project Model
+#### Part III — Project Model
 
 Documents the Project Model, which represents the files and configuration of the currently loaded project, as well as the build system used to build the project.
 
-#### Part IV - PSI
+#### Part IV — PSI
 
 The Program Structure Interface builds the syntactic and semantic models for lots of different file types.
 This section describes how to work with the PSI, navigating and manipulating the syntax trees, and also looks at the powerful references system, which allows a syntax tree node to reference an item in the semantic model.
 It also details how PSI creates and uses indexes.
 
-#### Part V - Features
+#### Part V — Features
 
 Describes how to extend and interact with various features that use the PSI layer, such as code completion, navigation, <shortcut>Alt+Enter</shortcut> items, intentions, refactorings, and more.
 See also the section on Custom Languages below for language-specific features that are only applicable when adding support for a new language.
 
-#### Part VI - Testing
+#### Part VI — Testing
 
 Describes the available infrastructure for writing automated tests covering the functionality of plugins.
 
-#### Part VII - Custom Languages
+#### Part VII — Custom Languages
 
 Plugins frequently extend support for existing languages, such as adding inspections to Java files.
 This section describes how to add support to the IntelliJ Platform for a new language that isn't supported by default, creating parsers, syntactic and semantic models, and all the features that build on top.
 
-#### Part VIII - Product Specific
+#### Part VIII — Product Specific
 
 A lot of the functionality in the IntelliJ Platform is language and product agnostic.
 For example, code inspections work the same in Java as they do in Ruby; it is just the syntax trees and semantic information that is different.
 This section describes product-specific features, such as specific project model differences and how to target them in a plugin.
 
-#### Part IX - Custom IDEs
+#### Part IX — Custom IDEs
 
 Documents how to use the IntelliJ Platform to create a new, custom IDE, rather than plugins to an existing product, e.g., WebStorm, or Android Studio.
 
-#### Part X - Plugin Repository
+#### Part X — Plugin Repository
 
 This part has been moved to [JetBrains Marketplace documentation](https://plugins.jetbrains.com/docs/marketplace/about-marketplace.html).
 
-#### Appendix I - Resources
+#### Appendix I — Resources
 
 Links to [useful resources](useful_links.md), [Glossary](glossary.md), [](extension_point_list.md), and tips on how to [Explore the IntelliJ Platform API](explore_api.md).
 
-#### Appendix II - API Changes
+#### Appendix II — API Changes
 
 Provides a list of [backward-incompatible](api_changes_list.md) API changes as well as [notable changes and new features](api_notable.md) in each major release of the IntelliJ Platform.

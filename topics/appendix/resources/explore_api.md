@@ -23,7 +23,7 @@ The most important resource for discovering new EPs is the extensive list provid
 On this page, you will find all of the EPs, and each entry includes a link to the online source code and a link to the
 [IntelliJ Platform Explorer](https://jb.gg/ipe),
 which helps you find examples of this EP in other plugins.
-Additionally, dedicated Extension Point Lists specific to IDEs are available under _Part VIII - Product Specific_.
+Additionally, dedicated Extension Point Lists specific to IDEs are available under _Part VIII — Product Specific_.
 
 ### 1.2 Use Autocompletion Information
 

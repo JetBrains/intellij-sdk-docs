@@ -89,4 +89,4 @@ This means that creating a plugin for Rider involves two parts - a plugin that l
 
 Fortunately, many plugins can simply work with the ReSharper backend.
 The Rider takes care of displaying the results of inspections and code completion, and many plugins can be written that don't require an IntelliJ UI component.
-More details can be found in the *Part VIII - Product Specific* section.
+More details can be found in the *Part VIII — Product Specific* section.

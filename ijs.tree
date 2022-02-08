@@ -20,7 +20,7 @@
         <toc-element id="getting_help.md"/>
         <toc-element id="content_updates.md" accepts-web-file-names="recently_updated.html"/>
     </toc-element>
-    <toc-element toc-title="Part I - Plugins">
+    <toc-element toc-title="Part I — Plugins">
         <toc-element id="basics.md">
             <toc-element id="types_of_plugins.md"/>
         </toc-element>
@@ -71,7 +71,7 @@
         <toc-element id="performance.md"/>
         <toc-element id="faq.md"/>
     </toc-element>
-    <toc-element toc-title="Part II - Base Platform">
+    <toc-element toc-title="Part II — Base Platform">
         <toc-element id="fundamentals.md" accepts-web-file-names="reference_guide.html,architectural_overview.html">
             <toc-element toc-title="Component Model"/>
             <toc-element id="disposers.md"/>
@@ -146,7 +146,7 @@
         <toc-element id="localization_guide.md"/>
         <toc-element toc-title="Diagrams"/>
     </toc-element>
-    <toc-element toc-title="Part III - Project Model">
+    <toc-element toc-title="Part III — Project Model">
         <toc-element id="project_structure.md" toc-title="Introduction"/>
         <toc-element id="project.md">
             <toc-element id="trusted_projects.md"/>
@@ -163,7 +163,7 @@
         <toc-element id="facet.md"/>
         <toc-element id="external_system_integration.md"/>
     </toc-element>
-    <toc-element toc-title="Part IV - PSI">
+    <toc-element toc-title="Part IV — PSI">
         <toc-element id="psi.md" toc-title="What Is the PSI?"/>
         <toc-element id="psi_files.md"/>
         <toc-element id="file_view_providers.md"/>
@@ -180,7 +180,7 @@
         <toc-element id="uast.md" toc-title="Unified AST"/>
         <toc-element id="xml_dom_api.md"/>
     </toc-element>
-    <toc-element toc-title="Part V - Features">
+    <toc-element toc-title="Part V — Features">
         <toc-element toc-title="Navigation"/>
         <toc-element id="editing.md">
             <toc-element toc-title="Code Completion"/>
@@ -215,7 +215,7 @@
             <toc-element id="external_builder_api.md"/>
         </toc-element>
     </toc-element>
-    <toc-element toc-title="Part VI - Testing">
+    <toc-element toc-title="Part VI — Testing">
         <toc-element id="testing_plugins.md" accepts-web-file-names="testing_plugins.html"/>
         <toc-element id="tests_and_fixtures.md"/>
         <toc-element id="light_and_heavy_tests.md"/>
@@ -224,7 +224,7 @@
         <toc-element id="testing_highlighting.md"/>
         <toc-element id="testing_faq.md"/>
     </toc-element>
-    <toc-element toc-title="Part VII - Custom Languages">
+    <toc-element toc-title="Part VII — Custom Languages">
         <toc-element id="custom_language_support.md">
             <toc-element id="registering_file_type.md"/>
             <toc-element id="implementing_lexer.md"/>
@@ -287,7 +287,7 @@
         <toc-element toc-title="Compiler"/>
         <toc-element toc-title="Debugger"/>
     </toc-element>
-    <toc-element toc-title="Part VIII - Product Specific">
+    <toc-element toc-title="Part VIII — Product Specific">
         <toc-element id="build_number_ranges.md"/>
         <toc-element id="dev_alternate_products.md" toc-title="Developing for Multiple Products"/>
         <toc-element id="plugin_compatibility.md" toc-title="Compatibility with Multiple Products"/>
@@ -334,16 +334,16 @@
             <toc-element id="webstorm_extension_point_list.md"/>
         </toc-element>
     </toc-element>
-    <toc-element toc-title="Part IX - Custom IDEs">
+    <toc-element toc-title="Part IX — Custom IDEs">
         <toc-element toc-title="Build Your Own IDE"/>
         <toc-element toc-title="Licensing"/>
     </toc-element>
-    <toc-element toc-title="Part X - Plugin Repository [moved]">
+    <toc-element toc-title="Part X — Plugin Repository [moved]">
         <toc-element id="plugin_repository_obsolete.md"
                      accepts-web-file-names="api_reference.html,feature_extractor.html,plugin_details.html,custom_channels.html,plugins_list.html,maven_interface.html,plugin_upload.html,plugin_developers.html"
                      toc-title="Overview"/>
     </toc-element>
-    <toc-element toc-title="Appendix I - Resources">
+    <toc-element toc-title="Appendix I — Resources">
         <toc-element id="glossary.md"/>
         <toc-element id="explore_api.md" toc-title="Explore the API"/>
         <toc-element id="extension_point_list.md"/>
@@ -351,7 +351,7 @@
         <toc-element id="marketing.md"/>
         <toc-element id="consulting.md"/>
     </toc-element>
-    <toc-element toc-title="Appendix II - API Changes">
+    <toc-element toc-title="Appendix II — API Changes">
         <toc-element id="api_changes_list.md" toc-title="Incompatible API Changes">
             <toc-element id="api_changes_list_2022.md" toc-title="2022.*"/>
             <toc-element id="api_changes_list_2021.md" toc-title="2021.*"/>

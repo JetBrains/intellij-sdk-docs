@@ -8,7 +8,7 @@
 - [IntelliJ Community Plugins](#intellij-community-plugins)
 - [Android Plugin](#android-plugin)
 
- > Dedicated Extension Point Lists specific to IDEs are available under _Part VIII - Product Specific_.
+ > Dedicated Extension Point/Listener Lists specific to IDEs are available under _Part VIII — Product Specific_.
  >
  > See also [Explore the IntelliJ Platform API](explore_api.md) for more information and strategies.
  >

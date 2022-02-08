@@ -23,7 +23,8 @@ When using Gradle, a number of metadata elements will be provided at build time 
   <!-- Public plugin name should be written in Title Case. Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-name -->
   <name>Plugin Template</name>
 
-  <!-- Plugin version. It is recommended to use the SemVer approach: https://semver.org
+  <!-- Plugin version. It is recommended to use the SemVer approach: https://semver.org.
+       For new plugins uploaded on JetBrains Marketplace, it is required to use SemVer: https://plugins.jetbrains.com/docs/marketplace/semver.html
        Displayed in the "Plugins" settings dialog and the plugin repository Web interface. -->
   <version>1.0.0</version>
 
@@ -74,7 +75,7 @@ When using Gradle, a number of metadata elements will be provided at build time 
     <applicationService serviceImplementation="com.foo.impl.MyApplicationService"/>
     <projectService serviceImplementation="com.foo.impl.MyProjectService"/>
   </extensionPoints>
-  
+
   <!-- Application-level listeners, see: https://plugins.jetbrains.com/docs/intellij/plugin-listeners.html#defining-application-level-listeners -->
   <applicationListeners>
     <listener class="com.foo.impl.MyListener" topic="com.intellij.openapi.vfs.newvfs.BulkFileListener"/>
@@ -96,8 +97,8 @@ When using Gradle, a number of metadata elements will be provided at build time 
   <extensions defaultExtensionNs="VssIntegration">
     <myExtensionPoint implementation="com.foo.impl.MyExtensionImpl"/>
   </extensions>
-  
-  
+
+
   <!-- DEPRECATED: Plugin's application components / do not use in new plugins.
        See https://plugins.jetbrains.com/docs/intellij/plugin-components.html for migration steps. -->
   <application-components>

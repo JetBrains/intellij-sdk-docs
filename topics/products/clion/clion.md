@@ -37,7 +37,7 @@ As described in [Modules Specific to Functionality](plugin_compatibility.md#modu
 
 ## Available CLion APIs
 
- > See [CLion Extension Point List](clion_extension_point_list.md) for complete list.
+ > See [](clion_extension_point_list.md) for the complete list.
  >
  {type="note"}
 

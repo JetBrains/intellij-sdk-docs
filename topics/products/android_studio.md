@@ -75,7 +75,7 @@ Otherwise, if only general IntelliJ Platform features (APIs) are used, then a de
 
 ### Android Specific Extension Points
 
-See _Android Plugin_ section in [Extension Point List](extension_point_list.md).
+See _Android Plugin_ section in [](extension_point_list.md).
 
 ## Additional Articles and Resources
 * Discussion of extending Android Lint - [How to Register AndroidLintInspectionBase in IntelliJIdea Plugin](https://intellij-support.jetbrains.com/hc/en-us/community/posts/360005018559-How-to-register-AndroidLintInspectionBase-in-IntellijIdea-Plugin)

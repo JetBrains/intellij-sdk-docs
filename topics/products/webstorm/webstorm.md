@@ -38,7 +38,7 @@ Consequently, without the `com.intellij.modules.platform` declaration the plugin
 
 ## Available WebStorm APIs
 
- > See [WebStorm Extension Point List](webstorm_extension_point_list.md) for complete list.
+ > See [](webstorm_extension_point_list.md) for the complete list.
  >
  {type="note"}
 

@@ -46,7 +46,7 @@ As an API-user, you will usually prefer working with `SpringModel`, which is bui
 
 ## How Do I...
 
- > See [Spring API Extension Point List](spring_extension_point_list.md) for complete list.
+ > See [](spring_extension_point_list.md) for the complete list.
  >
  {type="note"}
 

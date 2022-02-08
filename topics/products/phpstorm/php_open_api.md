@@ -16,7 +16,7 @@
 
 ## PHP Extension Points
 
- > See [PHP Extension Point List](php_extension_point_list.md) for complete list.
+ > See [](php_extension_point_list.md) for the complete list.
  >
  {type="note"}
 
@@ -63,7 +63,7 @@ public interface PhpTypeProvider4 {
    * @param expression Signature expression to decode. You can use PhpIndex.getBySignature() to look up expression internals.
    * @param visited Recursion guard: please pass this on into any phpIndex calls having same parameter
    * @param depth Recursion guard: please pass this on into any phpIndex calls having same parameter
-   * @param project well so you can reach the PhpIndex 
+   * @param project well so you can reach the PhpIndex
    * @return null if no match
    */
   Collection<? extends PhpNamedElement> getBySignature(String expression, Set<String> visited, int depth, Project project);

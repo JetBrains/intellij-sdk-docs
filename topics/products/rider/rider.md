@@ -15,7 +15,7 @@ Rider uses the IntelliJ Platform to provide the user interface for a C# and .NET
 Although there is no dedicated Rider SDK, the [ReSharper DevGuide](https://www.jetbrains.com/help/resharper/sdk/Products/Rider.html)  addresses the subject of plugins for Rider.
 The documentation describes the [configuration](https://www.jetbrains.com/help/resharper/sdk/Products/Rider.html#plugin-project-jvm) of <path>build.gradle</path> and <path>settings.gradle</path> files to build a Rider plugin using the [Gradle project system](gradle_build_system.md) in IntelliJ IDEA.
 
- > See [Rider Extension Point List](rider_extension_point_list.md) for complete list.
+ > See [](rider_extension_point_list.md) for the complete list.
  >
  {type="note"}
 

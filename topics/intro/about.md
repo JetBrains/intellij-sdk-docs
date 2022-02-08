@@ -14,7 +14,7 @@ The [Key Topics](key_topics.md) page aims to link to the pages that are necessar
  > Please see the [Contributing](intellij-sdk-docs-original_CONTRIBUTING.md) page for details.
  >
  {type="note"}
-                                                                
+
  > See also [Glossary](glossary.md) for a handy reference of common terms.
   >
   {type="tip"}
@@ -69,7 +69,7 @@ This part has been moved to [JetBrains Marketplace documentation](https://plugin
 
 #### Appendix I - Resources
 
-Links to [useful resources](useful_links.md), [Glossary](glossary.md), [Extension Point List](extension_point_list.md), and tips on how to [Explore the IntelliJ Platform API](explore_api.md).
+Links to [useful resources](useful_links.md), [Glossary](glossary.md), [](extension_point_list.md), and tips on how to [Explore the IntelliJ Platform API](explore_api.md).
 
 #### Appendix II - API Changes
 

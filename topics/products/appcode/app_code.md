@@ -38,7 +38,7 @@ As described in [Modules Specific to Functionality](plugin_compatibility.md#modu
 
 ## Available AppCode APIs
 
- > See [AppCode Extension Point List](appcode_extension_point_list.md) for complete list.
+ > See [](appcode_extension_point_list.md) for the complete list.
  >
  {type="note"}
 

@@ -31,7 +31,7 @@ I.e., clients are allowed to subscribe to a specific topic within a bus and send
 
 To clarify corresponding message bus, `Topic` field declaration can be annotated with `com.intellij.util.messages.Topic.AppLevel` and `com.intellij.util.messages.Topic.ProjectLevel`, respectively.
 
- > All available listeners/topics are listed on [Extension Point List](extension_point_list.md) under _Listeners_ sections.
+ > All available listeners/topics are listed on [](extension_point_list.md) under _Listeners_ sections.
  >
  {type="tip"}
 

@@ -7,7 +7,7 @@ Listener implementations must be stateless and may not implement life-cycle (e.g
 
 You can define both application- and project-level listeners.
 
- > All available listeners/topics are listed on [Extension Point List](extension_point_list.md) under _Listeners_ sections.
+ > All available listeners/topics are listed on [](extension_point_list.md) under _Listeners_ sections.
  >
  {type="tip"}
 

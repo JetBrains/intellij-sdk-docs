@@ -44,7 +44,7 @@ Consequently, without the `com.intellij.modules.platform` declaration the plugin
 
 ## Available DataGrip APIs
 
- > See [DataGrip Extension Point List](data_grip_extension_point_list.md) for complete list.
+ > See [](data_grip_extension_point_list.md) for the complete list.
  >
  {type="note"}
 

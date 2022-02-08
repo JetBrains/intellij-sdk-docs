@@ -69,7 +69,7 @@ The dependency declaration is illustrated in the <path>plugin.xml</path> snippet
 
 ## Available GoLand APIs
 
- > See [GoLand Extension Point List](goland_extension_point_list.md) for complete list.
+ > See [](goland_extension_point_list.md) for the complete list.
  >
  {type="note"}
 

@@ -1,4 +1,4 @@
-[//]: # (title: DataGrip Extension Point List)
+[//]: # (title: DataGrip Extension Point and Listener List)
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
@@ -8,7 +8,7 @@
  >
  {type="warning"}
 
-See [Extension Point List](extension_point_list.md) for IntelliJ Platform EPs.
+See [](extension_point_list.md) for IntelliJ Platform.
 
 <include src="extension_point_list.md" include-id="ep_list_legend"></include>
 

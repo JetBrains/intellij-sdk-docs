@@ -156,6 +156,6 @@ The IntelliJ Platform SDK Documentation should always be the first resource you 
 Here is a condensed list you can use for further reference:
 
 - [Useful links](useful_links.md) for plugin developers.
-- [List of all Extension Points (EP)](extension_point_list.md).
+- [](extension_point_list.md).
 - Section on [exploring module and plugin APIs](plugin_compatibility.md#exploring-module-and-plugin-apis).
 - List of [notable](api_notable.md) and [incompatible](api_changes_list.md) API changes.

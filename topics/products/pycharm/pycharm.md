@@ -33,7 +33,7 @@ See the SDK code sample [`pycharm_basics`](https://github.com/JetBrains/intellij
 Please note that this code sample must be imported into Gradle explicitly, as it is not included in the `_gradleCompositeBuild`.
 
 ## Available PyCharm APIs
-See [Extension Point List](extension_point_list.md) for PyCharm Community EPs.
+See [](extension_point_list.md) for PyCharm Community.
 
 The plugin [Python](https://plugins.jetbrains.com/plugin/631-python) defines the APIs for PyCharm Professional.
 The plugin [Python Community Edition](https://plugins.jetbrains.com/plugin/7322-python-community-edition) defines the APIs for PyCharm Community.

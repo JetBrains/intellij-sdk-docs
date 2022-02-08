@@ -43,7 +43,7 @@ The dependency declaration is illustrated in the <path>plugin.xml</path> snippet
 
 ## Available RubyMine APIs
 
- > See [RubyMine Extension Point List](rubymine_extension_point_list.md) for complete list.
+ > See [](rubymine_extension_point_list.md) for the complete list.
  >
  {type="note"}
 

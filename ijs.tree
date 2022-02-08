@@ -338,11 +338,9 @@
         <toc-element toc-title="Build Your Own IDE"/>
         <toc-element toc-title="Licensing"/>
     </toc-element>
-    <toc-element toc-title="Part X — Plugin Repository [moved]">
-        <toc-element id="plugin_repository_obsolete.md"
-                     accepts-web-file-names="api_reference.html,feature_extractor.html,plugin_details.html,custom_channels.html,plugins_list.html,maven_interface.html,plugin_upload.html,plugin_developers.html"
-                     toc-title="Overview"/>
-    </toc-element>
+    <toc-element toc-title="Part X — Plugin Repository [moved]"
+                 id="plugin_repository_obsolete.md"
+                 accepts-web-file-names="api_reference.html,feature_extractor.html,plugin_details.html,custom_channels.html,plugins_list.html,maven_interface.html,plugin_upload.html,plugin_developers.html"/>
     <toc-element toc-title="Appendix I — Resources">
         <toc-element id="glossary.md"/>
         <toc-element id="explore_api.md" toc-title="Explore the API"/>

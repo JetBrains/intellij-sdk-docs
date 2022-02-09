@@ -82,9 +82,36 @@ Use [`ExtensionTestUtil`](upsource:///platform/testFramework/src/com/intellij/te
 
 Use `com.intellij.util.TimeoutUtil.sleep()`.
 
-### JVM: How to add Maven dependencies?
+### How to test a JVM language?
 
-Use [`MavenDependencyUtil`](upsource:///java/testFramework/src/com/intellij/testFramework/fixtures/MavenDependencyUtil.java).
+Plugins supporting a JVM language may require JDK and language standard library to be set up in a test project, so the classes like `java.lang.String` can be correctly resolved during tests.
+Tests extending [`LightJavaCodeInsightFixtureTestCase`](upsource:///java/testFramework/src/com/intellij/testFramework/fixtures/LightJavaCodeInsightFixtureTestCase.java) use one of the mock JDKs distributed with the [IntelliJ Community project](https://github.com/JetBrains/intellij-community) sources (notice <path>java/mockJDK-$JAVA_VERSION$</path> directories).
+These JAR files are not available in plugin project dependencies, so the IntelliJ Community sources must be checked out to the machine running the tests, and sources' location must be provided to the test framework.
+It's done by setting the `idea.home.path` system property to the absolute path of the checked out sources.
+In projects using Gradle it can be done by providing system property in the `test` task configuration:
+
+```kotlin
+test {
+  systemProperty("idea.home.path", "/path/to/intellij-community")
+}
+```
+
+The default JDK version used by the test framework depends on the target platform version and is the latest supported version.
+The easiest way to change the JDK version to the custom is overriding the `LightJavaCodeInsightFixtureTestCase.getProjectDescriptor()` method and using one of the project descriptors predefined in `LightJavaCodeInsightFixtureTestCase`.
+If a project descriptor requires more customizations, its `getSdk()` method can use one of the [`IdeaTestUtil.getMockJdk*()`](upsource:///java/testFramework/src/com/intellij/testFramework/IdeaTestUtil.java) methods.
+
+Sometimes testing a JVM language requires adding standard or other libraries to a test project.
+If a required library is available in the Maven repository, use [`MavenDependencyUtil`](upsource:///java/testFramework/src/com/intellij/testFramework/fixtures/MavenDependencyUtil.java), e.g.:
+
+```java
+MavenDependencyUtil.addFromMaven(model, "org.jetbrains.kotlin:kotlin-stdlib:1.6.10");
+```
+
+If a required library is an unpublished JAR file, use [`PsiTestUtil.addLibrary()`](upsource:///platform/testFramework/src/com/intellij/testFramework/PsiTestUtil.java) or `addProjectLibrary()` method and the JAR file path, e.g.:
+
+```java
+PsiTestUtil.addLibrary(model, "kotlin-stdlib", getTestDataPath(), "kotlin-stdlib.jar");
+```
 
 > If a topic you are interested in is not covered in the above sections, let us know via the "**Was this page helpful?**" feedback form below or [other channels](getting_help.md#problems-with-the-guide).
 >

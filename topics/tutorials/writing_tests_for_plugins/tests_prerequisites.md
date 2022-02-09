@@ -27,15 +27,4 @@ Under <path>test</path>, create the <path>java</path> folder for test source cod
 
 ## Set the Run Configuration Parameters
 
-Because some of the tests use Java files as test data, the tests need to mock up the project's SDK.
-The testing framework uses <path>java/mockJDK-$JAVA_VERSION$</path> from IntelliJ Community sources by default when using [`LightJavaCodeInsightFixtureTestCase`](upsource:///java/testFramework/src/com/intellij/testFramework/fixtures/LightJavaCodeInsightFixtureTestCase.java) test base class.
-
-The system properties are defined in the <path>build.gradle</path> file using the snippet shown below.
-The <path>/path/to/intellij-community/</path> is set to the absolute path to the local [IntelliJ Community project](https://github.com/JetBrains/intellij-community) source's root directory on the machine running the tests.
-For example, on macOS it might be <path>/Users/$USER_NAME$/Documents/intellij-community/</path>
-
-```groovy
-  test {
-    systemProperty "idea.home.path", "/path/to/intellij-community/"
-  }
-```
+Because some tests use Java files as test data, the tests need to mock up the project's SDK. See the [](testing_faq.md#how-to-test-a-jvm-language) section for details.

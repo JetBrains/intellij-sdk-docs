@@ -130,9 +130,9 @@ It has the following fields:
 * `name` (required) — specifies the name of the state (name of the root tag in XML).
 * `storages` — one or more of `@com.intellij.openapi.components.Storage` annotations to specify the storage locations.
   Optional for project-level values — standard project file is used in this case.
-* `reloadable` (optional) — if set to false, complete project (or application) reload is required when the XML file is changed externally, and the state has changed.
+* `reloadable` (optional) — if set to false, a full project (or application) reload is required when the XML file is changed externally, and the state has changed.
 
-The simplest ways of specifying the `@Storage` annotation are as follows (since 2016.x; for previous versions, please see [old version](https://github.com/JetBrains/intellij-sdk-docs/blob/5dcb02991cf828a7d4680d125ce56b4c10234146/basics/persisting_state_of_components.md) of this document):
+The simplest ways of specifying the `@Storage` annotation are as follows:
 
 * `@Storage("yourName.xml")` If a component is project-level — for `.ipr` based projects standard project file is used automatically - no need to specify anything.
 
@@ -140,7 +140,7 @@ The simplest ways of specifying the `@Storage` annotation are as follows (since 
 
 The state is persisted in a separate file by specifying a different setting for the `value` parameter, which was the `file` parameter before 2016.x.
 
- >  For application-level components, it is strongly recommended to use a custom file, using of <path>other.xml</path> is deprecated.
+ >  For application-level storage, it is strongly recommended to use a custom file, using of <path>other.xml</path> is deprecated.
  >
  {type="note"}
 
@@ -148,8 +148,8 @@ The `roamingType` parameter of the `@Storage` annotation specifies the roaming t
 
 ### Customizing the XML Format of Persisted Values
 
- >  Please consider using annotation parameters only to achieve backward compatibility.
-> Otherwise, please feel free to file issues about serialization cosmetics.
+ > Please consider using annotation parameters only to achieve backward compatibility.
+ > Otherwise, please feel free to file issues about specific serialization cosmetics.
  >
  {type="note"}
 

@@ -31,13 +31,13 @@ Basic API classes and interfaces for the concepts of [`Project`](upsource:///pla
 
 A Project instance is available in multiple contexts:
 
-| Context                          | API                                                                                                                                                                                                                                                      |
-|----------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [Action](basic_action_system.md) | [`DataContext.getData(CommonDataKeys.PROJECT)`](upsource:///platform/core-ui/src/openapi/actionSystem/DataContext.java) <br/>[`AnActionEvent.getProject()`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnActionEvent.java) |
-| [Editor](editor_basics.md)       | [`Editor.getProject()`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/editor/Editor.java)                                                                                                                                                  |
-| [Module](module.md)              | [`Module.getProject()`](upsource:///platform/core-api/src/com/intellij/openapi/module/Module.java)                                                                                                                                                       |
-| [PSI](psi.md)                    | [`PsiElement.getProject()`](upsource:///platform/core-api/src/com/intellij/psi/PsiElement.java)                                                                                                                                                          |
-| [Tests](testing_plugins.md)      | [`IdeaProjectTestFixture.getProject()`](upsource:///platform/testFramework/src/com/intellij/testFramework/fixtures/IdeaProjectTestFixture.java)                                                                                                          |
+| Context                          | API                                                                                                                                                                                                                                                     |
+|----------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [Action](basic_action_system.md) | [`AnActionEvent.getProject()`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnActionEvent.java)<br/>[`DataContext.getData(CommonDataKeys.PROJECT)`](upsource:///platform/core-ui/src/openapi/actionSystem/DataContext.java) |
+| [Editor](editor_basics.md)       | [`Editor.getProject()`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/editor/Editor.java)                                                                                                                                                 |
+| [Module](module.md)              | [`Module.getProject()`](upsource:///platform/core-api/src/com/intellij/openapi/module/Module.java)                                                                                                                                                      |
+| [PSI](psi.md)                    | [`PsiElement.getProject()`](upsource:///platform/core-api/src/com/intellij/psi/PsiElement.java)                                                                                                                                                         |
+| [Tests](testing_plugins.md)      | [`IdeaProjectTestFixture.getProject()`](upsource:///platform/testFramework/src/com/intellij/testFramework/fixtures/IdeaProjectTestFixture.java)                                                                                                         |
 
 It is also possible to retrieve projects in generic contexts:
 * Project from [`VirtualFile`](virtual_file.md):
@@ -51,16 +51,21 @@ To clarify this, consider the following code snippet:
 
 ```java
 String projectName = project.getName();
-VirtualFile[] vFiles = ProjectRootManager.getInstance(project).getContentSourceRoots();
-String sourceRootsList = Arrays.stream(vFiles).map(VirtualFile::getUrl).collect(Collectors.joining("\n"));
-Messages.showInfoMessage("Source roots for the " + projectName + " plugin:\n" + sourceRootsList, "Project Properties");
+VirtualFile[] vFiles = ProjectRootManager.getInstance(project)
+    .getContentSourceRoots();
+String sourceRootsList = Arrays.stream(vFiles)
+    .map(VirtualFile::getUrl)
+    .collect(Collectors.joining("\n"));
+Messages.showInfoMessage("Source roots for the " + projectName +
+    " plugin:\n" + sourceRootsList, "Project Properties");
 ```
 
 ### Checking if a File Belongs to a Project
 Use [`ProjectFileIndex`](upsource:///platform/projectModel-api/src/com/intellij/openapi/roots/ProjectFileIndex.java) to get this information:
 
 ```java
-ProjectFileIndex projectFileIndex = ProjectRootManager.getInstance(project).getFileIndex();
+ProjectFileIndex projectFileIndex =
+    ProjectRootManager.getInstance(project).getFileIndex();
 ```
 
 ### Getting the Content or Source Root to Which a File or Directory Belongs
@@ -68,8 +73,10 @@ Use the `ProjectFileIndex.getContentRootForFile()` and `ProjectFileIndex.getSour
 For example:
 
 ```java
-VirtualFile moduleContentRoot = ProjectRootManager.getInstance(project).getFileIndex().getContentRootForFile(virtualFileOrDirectory);
-VirtualFile moduleSourceRoot = ProjectRootManager.getInstance(project).getFileIndex().getSourceRootForFile(virtualFileOrDirectory);
+VirtualFile moduleContentRoot = ProjectRootManager.getInstance(project)
+    .getFileIndex().getContentRootForFile(virtualFileOrDirectory);
+VirtualFile moduleSourceRoot = ProjectRootManager.getInstance(project)
+    .getFileIndex().getSourceRootForFile(virtualFileOrDirectory);
 ```
 
 Note that this method returns `null` if the file or directory does not belong to any source root of modules in the project.
@@ -96,11 +103,12 @@ Refer to the [project_model](https://github.com/JetBrains/intellij-sdk-code-samp
 To receive notifications about changes in project structure (modules or libraries being added or removed, module dependencies being changed, and so on), use the [message bus](messaging_infrastructure.md) and the `ProjectTopics.PROJECT_ROOTS` topic:
 
 ```java
-project.getMessageBus().connect().subscribe(ProjectTopics.PROJECT_ROOTS, new ModuleRootListener() {
-  @Override
-  public void rootsChanged(ModuleRootEvent event) {
-  }
-});
+project.getMessageBus().connect().subscribe(ProjectTopics.PROJECT_ROOTS,
+    new ModuleRootListener() {
+        @Override
+        public void rootsChanged(ModuleRootEvent event) {
+        }
+    });
 ```
 
 If targeting 2019.3 or later, [declarative registration](plugin_listeners.md) is available as well.

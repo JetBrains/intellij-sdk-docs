@@ -49,6 +49,9 @@ Intention
 Local History _(LVCS)_
 : A builtin &rarr; _Version Control System_ tracking all changes in the project [locally](https://www.jetbrains.com/help/idea/local-history.html).
 
+Look and Feel _(LaF)_
+: Defines the visual appearance and behavior of the user interface; see [Swing Tutorial](https://docs.oracle.com/javase/tutorial/uiswing/lookandfeel/index.html).
+
 ## J
 
 JetBrains Project System _(JPS)_

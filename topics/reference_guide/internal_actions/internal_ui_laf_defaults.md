@@ -5,6 +5,8 @@
 The <control>LaF Defaults</control> window provides a key-value pair lookup for UI Controls.
 It also allows interactive prototyping of UI Control color changes.
 
+_LaF_ stands for _Look and Feel_, see [Swing Tutorial](https://docs.oracle.com/javase/tutorial/uiswing/lookandfeel/index.html) for more details.
+
 <include src="internal_actions_intro.md" include-id="enable_internal_mode_tip"></include>
 
 ## Opening LaF Defaults

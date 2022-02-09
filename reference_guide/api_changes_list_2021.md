@@ -303,6 +303,9 @@ Various package renames to support dynamic plugins
 `com.intellij.openapi.actionSystem.ActionPlaces.isMainMenuOrShortcut(String)` method removed
 : Use `isMainMenuOrActionSearch(String)` method instead.
 
+Add implementation for `com.intellij.openapi.fileEditor.FileEditor.getFile()`
+: Implementations should return non-null `VirtualFile` instance.
+
 ### Performance Testing Plugin 2021.2
 
 `com.jetbrains.performancePlugin.CommandProvider.getCommands()` method return type changed from `java.util.List` to `java.util.Map`

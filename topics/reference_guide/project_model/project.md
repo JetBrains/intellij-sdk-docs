@@ -27,6 +27,24 @@ To work with projects and project files, use the following classes and interface
 Other classes for working with the project model are located in the [`projectModel-api.openapi`](upsource:///platform/projectModel-api/src/com/intellij/openapi) package.
 Basic API classes and interfaces for the concepts of [`Project`](upsource:///platform/core-api/src/com/intellij/openapi/project/Project.java), [`Module`](upsource:///platform/core-api/src/com/intellij/openapi/module/Module.java) and [`Application`](upsource:///platform/core-api/src/com/intellij/openapi/application/Application.java)  are placed in the [`core-api.openapi`](upsource:///platform/core-api/src/com/intellij/openapi) package.
 
+### How to get a Project instance?
+
+A Project instance is available in multiple contexts:
+
+| Context                          | API                                                                                                                                                                                                                                                      |
+|----------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [Action](basic_action_system.md) | [`DataContext.getData(CommonDataKeys.PROJECT)`](upsource:///platform/core-ui/src/openapi/actionSystem/DataContext.java) <br/>[`AnActionEvent.getProject()`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnActionEvent.java) |
+| [Editor](editor_basics.md)       | [`Editor.getProject()`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/editor/Editor.java)                                                                                                                                                  |
+| [Module](module.md)              | [`Module.getProject()`](upsource:///platform/core-api/src/com/intellij/openapi/module/Module.java)                                                                                                                                                       |
+| [PSI](psi.md)                    | [`PsiElement.getProject()`](upsource:///platform/core-api/src/com/intellij/psi/PsiElement.java)                                                                                                                                                          |
+| [Tests](testing_plugins.md)      | [`IdeaProjectTestFixture.getProject()`](upsource:///platform/testFramework/src/com/intellij/testFramework/fixtures/IdeaProjectTestFixture.java)                                                                                                          |
+
+It is also possible to retrieve projects in generic contexts:
+* Project from [`VirtualFile`](virtual_file.md):
+  * [`ProjectLocator.guessProjectForFile(VirtualFile)`](upsource:///platform/projectModel-api/src/com/intellij/openapi/project/ProjectLocator.java) - returns any project containing a given file.
+  * [`ProjectLocator.getProjectsForFile(VirtualFile)`](upsource:///platform/projectModel-api/src/com/intellij/openapi/project/ProjectLocator.java) - returns the list of projects that a given file is a part of.
+* List of currently opened projects: [`ProjectManager.getOpenProjects()`](upsource:///platform/projectModel-api/src/com/intellij/openapi/project/ProjectManager.java)
+
 ### Getting a List of Source Roots for All Modules in a Project
 Use the `ProjectRootManager.getContentSourceRoots()` method.
 To clarify this, consider the following code snippet:

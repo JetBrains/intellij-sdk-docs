@@ -109,7 +109,7 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 `org.intellij.markdown.parser.constraints.MarkdownConstraints.Companion` field removed
 : Some methods from a companion object were moved to `CommonMarkdownConstraints` and to extension functions on `MarkdownConstraints`.
 
-`class org.intellij.markdown.parser.constraints.MarkdownConstraints` class now interface
+`org.intellij.markdown.parser.constraints.MarkdownConstraints` class now interface
 : Use `CommonMarkdownConstraints` for default method implementations instead.
 
 `org.intellij.markdown.parser.markerblocks.providers.AtxHeaderProvider.<init>(boolean)` constructor parameter `boolean` removed

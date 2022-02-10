@@ -25,7 +25,7 @@ If `NoClassDefFoundError` occurs at runtime, it means that either Step 3 was omi
 ## 1. Locating Plugin ID and Preparing Sandbox
 A compatible version must be chosen carefully according to the plugin's [compatibility](build_number_ranges.md).
 
-For plugins published on [JetBrains Plugins Repository](https://plugins.jetbrains.com)
+For plugins published on [JetBrains Marketplace](https://plugins.jetbrains.com)
 - open plugin's detail page
 - select <control>Versions</control> tab
 - open detail page for the desired version, displaying the <control>Compatibility Range</control> and <control>Plugin ID</control>

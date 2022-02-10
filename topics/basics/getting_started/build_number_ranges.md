@@ -7,7 +7,7 @@ Setting the actual values in <path>plugin.xml</path> is usually managed by `patc
 
  > Compatibility with the specified version range (and compatible products) must always be verified using [Plugin Verifier](api_changes_list.md#verifying-compatibility) to ensure binary compatibility.
  >
- > Plugins hosted on [JetBrains Plugins Repository](https://plugins.jetbrains.com) are checked automatically. According to [Approval Guidelines](https://plugins.jetbrains.com/legal/approval-guidelines), incompatible plugin versions will be restricted by JetBrains if necessary.
+ > Plugins hosted on [JetBrains Marketplace](https://plugins.jetbrains.com) are checked automatically. According to [Approval Guidelines](https://plugins.jetbrains.com/legal/approval-guidelines), incompatible plugin versions will be restricted by JetBrains if necessary.
  >
  {type="warning"}
 

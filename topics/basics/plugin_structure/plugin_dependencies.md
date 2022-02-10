@@ -6,10 +6,6 @@ A plugin may depend on classes from other plugins, either bundled, third-party, 
 This document describes the syntax for declaring plugin dependencies and optional plugin dependencies.
 For more information about dependencies on the IntelliJ Platform modules, see Part II of this document: [Plugin Compatibility with IntelliJ Platform Products](plugin_compatibility.md).
 
- >  It is impossible to specify the minimum/maximum version for the dependent plugin. ([Issue](https://youtrack.jetbrains.com/issue/IDEABKL-7906))
- >
- {type="note"}
-
 <procedure title="Required Steps">
 
 To express a dependency on classes from other plugins or modules, perform the following three required steps detailed below on this page:
@@ -25,6 +21,7 @@ If `java.lang.NoClassDefFoundError` occurs at runtime, it means that either Step
 ## 1. Locating Plugin ID and Preparing Sandbox
 
 A compatible version must be chosen carefully according to the plugin's [compatibility](build_number_ranges.md).
+It is not possible to specify the minimum/maximum version for the dependent plugin. ([Issue](https://youtrack.jetbrains.com/issue/IDEABKL-7906))
 
 ### JetBrains Marketplace
 
@@ -37,7 +34,7 @@ For plugins published on [JetBrains Marketplace](https://plugins.jetbrains.com):
 ### Other Plugins
 
 For bundled and non-public plugins, locate the plugin's main JAR file containing <path>META-INF/plugin.xml</path> descriptor with `<id>` tag (or `<name>` if not specified).
-Bundled plugins are located in <path>$PRODUCT_ROOT$/plugins/$PLUGIN_NAME/lib/$PLUGIN_NAME$.jar</path>.
+Bundled plugins are located in <path>$PRODUCT_ROOT$/plugins/$PLUGIN_NAME$/lib/$PLUGIN_NAME$.jar</path>.
 
 ### Preparing Sandbox
 

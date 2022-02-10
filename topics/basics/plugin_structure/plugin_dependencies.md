@@ -12,25 +12,34 @@ For more information about dependencies on the IntelliJ Platform modules, see Pa
 
 <procedure title="Required Steps">
 
-To express dependencies on classes from other plugins or modules, perform the following three required steps detailed below on this page:
+To express a dependency on classes from other plugins or modules, perform the following three required steps detailed below on this page:
 
 1. Locate Plugin ID
 2. Project Setup
 3. Declaration in <path>plugin.xml</path>
 
-If `NoClassDefFoundError` occurs at runtime, it means that either Step 3 was omitted or loading the plugin dependency failed (please check log files from [Development Instance](ide_development_instance.md#development-instance-settings-caches-logs-and-plugins)).
+If `java.lang.NoClassDefFoundError` occurs at runtime, it means that either Step 3 was omitted or loading the plugin dependency failed (please check log files from [Development Instance](ide_development_instance.md#development-instance-settings-caches-logs-and-plugins)).
 
 </procedure>
 
 ## 1. Locating Plugin ID and Preparing Sandbox
+
 A compatible version must be chosen carefully according to the plugin's [compatibility](build_number_ranges.md).
 
-For plugins published on [JetBrains Marketplace](https://plugins.jetbrains.com)
-- open plugin's detail page
-- select <control>Versions</control> tab
-- open detail page for the desired version, displaying the <control>Compatibility Range</control> and <control>Plugin ID</control>
+### JetBrains Marketplace
+
+For plugins published on [JetBrains Marketplace](https://plugins.jetbrains.com):
+
+1. Open plugin's detail page
+2. Select <control>Versions</control> tab
+3. Open detail page for the desired version, displaying the <control>Compatibility Range</control> and <control>Plugin ID</control>
+
+### Other Plugins
 
 For bundled and non-public plugins, locate the plugin's main JAR file containing <path>META-INF/plugin.xml</path> descriptor with `<id>` tag (or `<name>` if not specified).
+Bundled plugins are located in <path>$PRODUCT_ROOT$/plugins/$PLUGIN_NAME/lib/$PLUGIN_NAME$.jar</path>.
+
+### Preparing Sandbox
 
 If the plugin is not bundled with the target IDE, run the (sandbox) [IDE Development Instance](ide_development_instance.md) of your target IDE and install the plugin there.
 

@@ -100,3 +100,23 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 
 `com.intellij.collaboration.auth.ui.AccountsPanelFactory.accountsPanel(Row, AccountManager, PersistentDefaultAccountHolder, AccountsListModel, AccountsDetailsProvider, Disposable, Icon)` method removed
 : Support for default accounts required a signature change.
+
+### Markdown Plugin 2022.1
+
+`org.intellij.markdown.parser.constraints.MarkdownConstraints.Companion` class removed
+: Some methods from a companion object were moved to `CommonMarkdownConstraints` and to extension functions on `MarkdownConstraints`.
+
+`org.intellij.markdown.parser.constraints.MarkdownConstraints.Companion` field removed
+: Some methods from a companion object were moved to `CommonMarkdownConstraints` and to extension functions on `MarkdownConstraints`.
+
+`class org.intellij.markdown.parser.constraints.MarkdownConstraints` class now interface
+: Use `CommonMarkdownConstraints` for default method implementations instead.
+
+`org.intellij.markdown.parser.markerblocks.providers.AtxHeaderProvider.<init>(boolean)` constructor parameter `boolean` removed
+: `AtxHeaderProvider` now always requires at least one space between `#` and its content as specified by the CommonMark spec.
+
+`org.intellij.markdown.html.HtmlGenerator.generateHtml()` method removed
+: Use `org.intellij.markdown.html.HtmlGenerator.generateHtml(org.intellij.markdown.html.HtmlGenerator.TagRenderer)` instead.
+
+`org.intellij.markdown.parser.markerblocks.MarkerBlockProvider.Companion.passSmallIndent(CharSequence)` was removed
+: Use `org.intellij.markdown.parser.markerblocks.MarkerBlockProvider.Companion.passSmallIndent(CharSequence, Integer)` instead.

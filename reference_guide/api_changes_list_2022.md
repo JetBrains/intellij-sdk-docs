@@ -78,8 +78,14 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 
 ### IntelliJ Platform 2022.1
 
-log4j library removed from IntelliJ Platform
-: Please see this [blog post](https://blog.jetbrains.com/platform/2022/02/removing-log4j-from-the-intellij-platform/) for migration instructions.
+`org.apache.log4j` package removed
+: log4j library removed from IntelliJ Platform, please see this [blog post](https://blog.jetbrains.com/platform/2022/02/removing-log4j-from-the-intellij-platform/) for migration instructions.
+
+`org.slf4j` package removed.
+: log4j library removed from IntelliJ Platform, please see this [blog post](https://blog.jetbrains.com/platform/2022/02/removing-log4j-from-the-intellij-platform/) for migration instructions.
+
+`com.intellij.openapi.diagnostic.Log4jBasedLogger` class removed
+: log4j library removed from IntelliJ Platform, please see this [blog post](https://blog.jetbrains.com/platform/2022/02/removing-log4j-from-the-intellij-platform/) for migration instructions.
 
 `com.intellij.platform.DirectoryProjectConfigurator.configureProject(Project, VirtualFile, Ref<Module>, boolean)` marked abstract
 : Implement it instead of removed one.

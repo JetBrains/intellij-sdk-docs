@@ -118,5 +118,5 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 `org.intellij.markdown.html.HtmlGenerator.generateHtml()` method removed
 : Use `org.intellij.markdown.html.HtmlGenerator.generateHtml(org.intellij.markdown.html.HtmlGenerator.TagRenderer)` instead.
 
-`org.intellij.markdown.parser.markerblocks.MarkerBlockProvider.Companion.passSmallIndent(CharSequence)` was removed
+`org.intellij.markdown.parser.markerblocks.MarkerBlockProvider.Companion.passSmallIndent(CharSequence)` method removed
 : Use `org.intellij.markdown.parser.markerblocks.MarkerBlockProvider.Companion.passSmallIndent(CharSequence, Integer)` instead.

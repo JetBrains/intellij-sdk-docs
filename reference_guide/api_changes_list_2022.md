@@ -81,7 +81,7 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 `org.apache.log4j` package removed
 : log4j library removed from IntelliJ Platform, please see this [blog post](https://blog.jetbrains.com/platform/2022/02/removing-log4j-from-the-intellij-platform/) for migration instructions.
 
-`org.slf4j` package removed.
+`org.slf4j` package removed
 : log4j library removed from IntelliJ Platform, please see this [blog post](https://blog.jetbrains.com/platform/2022/02/removing-log4j-from-the-intellij-platform/) for migration instructions.
 
 `com.intellij.openapi.diagnostic.Log4jBasedLogger` class removed

@@ -112,7 +112,7 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 `org.intellij.markdown.parser.constraints.MarkdownConstraints` class now interface
 : Use `CommonMarkdownConstraints` for default method implementations instead.
 
-`org.intellij.markdown.parser.markerblocks.providers.AtxHeaderProvider.<init>(boolean)` constructor parameter `boolean` removed
+`org.intellij.markdown.parser.markerblocks.providers.AtxHeaderProvider(boolean)` constructor parameter `boolean` removed
 : `AtxHeaderProvider` now always requires at least one space between `#` and its content as specified by the CommonMark spec.
 
 `org.intellij.markdown.html.HtmlGenerator.generateHtml()` method removed

@@ -1838,7 +1838,6 @@
 | [org.jetbrains.kotlin.j2kConverterExtension](https://jb.gg/ipe?extensions=org.jetbrains.kotlin.j2kConverterExtension)                             | [`J2kConverterExtension`](upsource:///plugins/kotlin/j2k/old/src/org/jetbrains/kotlin/j2k/J2KConverterExtension.kt)                            |
 | [org.jetbrains.kotlin.newFileHook](https://jb.gg/ipe?extensions=org.jetbrains.kotlin.newFileHook) ![Non-Dynamic][non-dynamic]                     | [`NewKotlinFileHook`](upsource:///plugins/kotlin/idea/src/org/jetbrains/kotlin/idea/actions/NewKotlinFileAction.kt)                            |
 | [org.jetbrains.kotlin.pluginUpdateVerifier](https://jb.gg/ipe?extensions=org.jetbrains.kotlin.pluginUpdateVerifier) ![Non-Dynamic][non-dynamic]   | [`PluginUpdateVerifier`](upsource:///plugins/kotlin/idea/src/org/jetbrains/kotlin/idea/update/PluginUpdateVerifier.kt)                         |
-| [org.jetbrains.kotlin.projectConfigurator](https://jb.gg/ipe?extensions=org.jetbrains.kotlin.projectConfigurator)                                 | [`KotlinProjectConfigurator`](upsource:///plugins/kotlin/jvm/src/org/jetbrains/kotlin/idea/configuration/KotlinProjectConfigurator.kt)         |
 | [org.jetbrains.kotlin.updater](https://jb.gg/ipe?extensions=org.jetbrains.kotlin.updater) ![Non-Dynamic][non-dynamic]                             | `n/a`                                                                                                                                          |
 
 ### kotlin.gradle.gradle-idea.xml

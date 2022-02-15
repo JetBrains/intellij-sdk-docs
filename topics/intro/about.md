@@ -6,6 +6,8 @@ This guide is split into several parts, similar to a textbook.
 Each one builds on the content of the previous section, but it is not necessary to read the guide in order.
 The [Key Topics](key_topics.md) page aims to link to the pages that are necessary to be able to understand the architecture and get started building plugins.
 
+All source links and reference lists target IntelliJ Platform %ijPlatform%.
+
  > While browsing this guide, you will notice that there are topics that are greyed out.
  > Unfortunately, the guide is not complete and contains placeholders for specific topics.
  > We are working on increasing the coverage, but if you get stuck due to missing content, please see the [Getting Help](getting_help.md) section for details on how to get moving again.

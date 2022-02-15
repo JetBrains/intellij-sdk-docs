@@ -2,7 +2,7 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-1361 Extension Points and 199 Listeners
+1361 Extension Points and 199 Listeners for IntelliJ Platform %ijPlatform%
 
 - [IntelliJ Platform](#intellij-platform)
 - [IntelliJ Community Plugins](#intellij-community-plugins)

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE vars
+        SYSTEM "https://resources.jetbrains.com/stardust/vars.dtd">
+
+<vars>
+  <var name="ijPlatform" value="2021.3.2"/>
+  <var name="ijPlatformBuild" value="213.6777.52"/>
+</vars>

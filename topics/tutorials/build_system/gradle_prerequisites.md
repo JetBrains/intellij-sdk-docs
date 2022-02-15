@@ -11,7 +11,7 @@ To verify these plugins are installed and enabled, see the help section about [M
  >
  {type="tip"}
 
- >  When adding additional repositories to your Gradle build script, always use HTTPS protocol.
+ >  When adding additional repositories to your Gradle build script, always use the HTTPS protocol.
  >
  {type="warning"}
 
@@ -32,7 +32,7 @@ On the first screen, the type of project is configured:
 * Specify the <control>Project SDK</control> based on the **Java 8** JDK.
   This SDK will be the default JRE used to run Gradle, and the JDK version used to compile the plugin Java sources.
 
- > When targeting 2020.3 and later only, using Java 11 is now required, please see [blog post](https://blog.jetbrains.com/platform/2020/09/intellij-project-migrates-to-java-11/)
+ > When targeting 2020.3 and later only, using Java 11 is now required; please see this [blog post](https://blog.jetbrains.com/platform/2020/09/intellij-project-migrates-to-java-11/)
  >
  {type="note"}
 

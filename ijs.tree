@@ -85,6 +85,9 @@
         <toc-element id="user_interface_components.md">
             <toc-element id="tool_windows.md"/>
             <toc-element id="dialog_wrapper.md"/>
+            <toc-element id="kotlin_ui_dsl_version_2.md">
+                <toc-element id="kotlin_ui_dsl.md"/>
+            </toc-element>
             <toc-element id="popups.md"/>
             <toc-element id="notifications.md"/>
             <toc-element id="file_and_class_choosers.md"/>
@@ -93,9 +96,6 @@
             <toc-element id="misc_swing_components.md"/>
             <toc-element id="work_with_icons_and_images.md" toc-title="Icons and Images"/>
             <toc-element id="color_scheme_management.md"/>
-            <toc-element id="kotlin_ui_dsl_version_2.md">
-                <toc-element id="kotlin_ui_dsl.md"/>
-            </toc-element>
         </toc-element>
         <toc-element id="jcef.md" toc-title="JCEF"/>
         <toc-element id="themes_intro.md">

@@ -3,7 +3,7 @@
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 Icons and images are used widely by IntelliJ Platform plugins.
-Plugins need icons mostly for actions, custom components renderers, tool windows, and so on.
+Plugins need icons mostly for [actions](basic_action_system.md), custom components renderers, [tool windows](tool_windows.md), and so on.
 
  > Plugin _Logos_, which represent a plugin itself, have different requirements than icons and images used within a plugin.
  > For more information see the [](plugin_icon_file.md).
@@ -13,7 +13,8 @@ Plugins need icons mostly for actions, custom components renderers, tool windows
 ## Platform vs. Custom Icons
 
 Plugins should reuse existing platform icons whenever possible. Use [Icons list](https://jetbrains.design/intellij/resources/icons_list/) to browse existing icons.
-Platform icons are located in [`AllIcons`](upsource:///platform/util/src/com/intellij/icons/AllIcons.java). Icons from plugins are located in corresponding `<PLUGIN_NAME>Icons` class (e.g., `GithubIcons`).
+Platform icons are located in [`AllIcons`](upsource:///platform/util/src/com/intellij/icons/AllIcons.java).
+Icons from plugins are located in corresponding `<PLUGIN_NAME>Icons` class (e.g., [`GithubIcons`](upsource:///plugins/github/src/org/jetbrains/plugins/github/GithubIcons.java)).
 
 If custom icons are required, please refer to detailed [design guide](https://jetbrains.design/intellij/principles/icons/).
 
@@ -69,7 +70,7 @@ object DemoPluginIcons {
   {type="note"}
 
 
-Use these constants inside <path>plugin.xml</path> when specifying `icon` attribute for `<action>` or extension points, as well in [`@Presentation`](upsource:///platform/analysis-api/src/com/intellij/ide/presentation/Presentation.java) `icon` attribute.
+Use these constants inside <path>plugin.xml</path> when specifying `icon` attribute for `<action>` or extension point, as well in [`@Presentation`](upsource:///platform/analysis-api/src/com/intellij/ide/presentation/Presentation.java) `icon` attribute.
 Note that the package name `icons` will be automatically prefixed and must not be specified.
 
 ```xml
@@ -87,7 +88,7 @@ Note that the package name `icons` will be automatically prefixed and must not b
 
 ## Image Formats
 
-IntelliJ Platform supports Retina displays and has dark theme called Darcula.
+IntelliJ Platform supports Retina displays and has a bundled dark theme called [Darcula](https://www.jetbrains.com/help/idea/user-interface-themes.html).
 Thus, every icon should have a dedicated variant for Retina devices and Darcula theme.
 In some cases, you can skip dark variants if the original icon looks good under Darcula.
 
@@ -104,7 +105,7 @@ Required icon sizes depend on the usage as listed in the following table:
  >
  {type="note"}
 
-As SVG icons can be scaled arbitrarily, they provide better results on HiDPI environments or when used in combination with bigger screen fonts (e.g., in presentation mode).
+As SVG icons can be scaled arbitrarily, they provide better results in HiDPI environments or when used in combination with bigger screen fonts (e.g., in presentation mode).
 
 A base size denoting the size (in the user space) of the rendered image in 1x scale should be provided.
 The size is set via the `width` and `height` attributes omitting the size units.
@@ -123,7 +124,7 @@ However, the `@2x` version of an SVG icon should still provide the same base siz
 The icon graphics of such an icon can be expressed in more details via double precision.
 If the icon graphics are simple enough so that it renders perfectly in every scale, then the `@2x` version can be omitted.
 
- >  For generating the SVG icons suited for the IntelliJ-based IDEs, you may also use the third-party web tool – [IntelliJ Icon Generator](https://bjansen.github.io/intellij-icon-generator/).
+ > For generating the SVG icons suited for the IntelliJ-based IDEs, you may also use the third-party web tool [IntelliJ Icon Generator](https://bjansen.github.io/intellij-icon-generator/).
  >
  {type="tip"}
 

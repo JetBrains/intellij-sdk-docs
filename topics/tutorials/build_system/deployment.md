@@ -19,10 +19,16 @@ For initial upload, manual distribution or local installation, invoke the `build
 The resulting ZIP file is located in <path>build/distributions</path> and can then be installed via drag & drop (or using [plugin manager](https://www.jetbrains.com/help/idea/managing-plugins.html#installing-plugins-from-disk))
 or uploaded to a [custom plugin repository](update_plugins_format.md).
 
-## Providing Your Hub Permanent Token to Gradle
-To deploy a plugin to the JetBrains Plugins Repository, you need to supply your [JetBrains Hub Permanent Token](https://plugins.jetbrains.com/docs/marketplace/plugin-upload.html).
+## Providing Your Personal Access Token to Gradle
+To deploy a plugin to the JetBrains Plugins Repository, you need to supply your Personal Access Token, which you can find on your profile page, in [My Tokens](https://plugins.jetbrains.com/author/me/tokens) section.
 
-This section describes two options to supply your _Hub Permanent Token_ via Gradle using:
+To create a new token, provide its name and click the **Generate Token** button. A new token will be created and displayed right below.
+
+>  Copy it before you close this page and keep it in a secure location. This is the only time the token is visible.
+>
+{type="note"}
+
+This section describes two options to supply your _Personal Access Token_ via Gradle using:
 * Environment variables,
 * Parameters to the Gradle task.
 
@@ -30,7 +36,7 @@ This section describes two options to supply your _Hub Permanent Token_ via Grad
 Start by defining an environment variable such as:
 
 ```bash
-export ORG_GRADLE_PROJECT_intellijPublishToken='YOUR_HUB_TOKEN_HERE'
+export ORG_GRADLE_PROJECT_intellijPublishToken='YOUR_TOKEN'
 ```
 
  >  On macOS systems, environment variables set in <path>.bash_profile</path> are only visible to processes you run from bash.
@@ -54,7 +60,7 @@ Like using environment variables, you can also pass your token as a parameter to
 For example, you can provide the parameter
 
 ```bash
--Dorg.gradle.project.intellijPublishToken=YOUR_HUB_TOKEN_HERE
+-Dorg.gradle.project.intellijPublishToken=YOUR_TOKEN
 ```
 on the command line or by putting it in the arguments of your Gradle run configuration.
 

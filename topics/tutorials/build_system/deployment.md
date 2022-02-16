@@ -22,7 +22,7 @@ or uploaded to a [custom plugin repository](update_plugins_format.md).
 ## Providing Your Personal Access Token to Gradle
 To deploy a plugin to the JetBrains Plugins Repository, you need to supply your Personal Access Token, which you can find on your profile page, in [My Tokens](https://plugins.jetbrains.com/author/me/tokens) section.
 
-To create a new token, provide its name and click the **Generate Token** button. A new token will be created and displayed right below.
+To create a new token, provide its name and click the <control>Generate Token</control> button. A new token will be created and displayed right below.
 
 >  Copy it before you close this page and keep it in a secure location. This is the only time the token is visible.
 >

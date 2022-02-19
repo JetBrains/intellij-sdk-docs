@@ -70,6 +70,22 @@ openssl req\
 
 The content of the <path>chain.crt</path> file will be used for the `signPlugin.certificateChain` property.
 
+### Download The CLI Tool
+
+CLI tool is required if you don't rely on the Gradle IntelliJ Plugin – i.e. when working with Themes.
+
+To get the latest Marketplace ZIP Signer CLI Tool, visit the [JetBrains/marketplace-zip-signer](https://github.com/JetBrains/marketplace-zip-signer/releases) GitHub Releases page.
+After downloading the <path>marketplace-zip-signer-cli.jar</path>, execute it as below:
+
+```bash
+java -jar marketplace-zip-signer-cli.jar sign\
+  -in "unsigned.zip"\
+  -out "signed.zip"\
+  -cert-file "/path/to/chain.crt"\
+  -key-file "/path/to/private.pem"\
+  -key-pass "PRIVATE_KEY_PASSWORD"
+```
+
 ### Gradle IntelliJ Plugin
 
 In version `1.x`, the Gradle IntelliJ Plugin provides the `signPlugin` task, which will be executed automatically right before the `publishPlugin` task when `signPlugin certificateChain` and `signPlugin.privateKey` signing properties are specified.
@@ -99,6 +115,7 @@ signPlugin {
   """.stripIndent()
 
   password = "8awS22%#3(4wVDDBMlTREX"
+  cliPath = "/path/to/marketplace-zip-signer-cli.jar"
 }
 
 publishPlugin {
@@ -128,6 +145,7 @@ signPlugin {
   """.trimIndent())
 
   password.set("8awS22%#3(4wVDDBMlTREX")
+  cliPath.set("/path/to/marketplace-zip-signer-cli.jar")
 }
 
 publishPlugin {
@@ -159,6 +177,7 @@ signPlugin {
   certificateChain = System.getenv("CERTIFICATE_CHAIN")
   privateKey = System.getenv("PRIVATE_KEY")
   password = System.getenv("PRIVATE_KEY_PASSWORD")
+  cliPath = System.getenv("CLI_PATH")
 }
 
 publishPlugin {
@@ -174,6 +193,7 @@ signPlugin {
   certificateChain.set(System.getenv("CERTIFICATE_CHAIN"))
   privateKey.set(System.getenv("PRIVATE_KEY"))
   password.set(System.getenv("PRIVATE_KEY_PASSWORD"))
+  cliPath.set(System.getenv("CLI_PATH"))
 }
 
 publishPlugin {
@@ -186,23 +206,7 @@ publishPlugin {
 
 In the <control>Run/Debug Configuration</control> for `publishPlugin` Gradle task, provide <control>Environment Variables</control> using relevant environment variable names:
 
-![Run/Debug Configuration Environment Variables](plugin_singing_env_variables.png)
-
-### CLI Tool
-
-CLI tool is required if you don't rely on the Gradle IntelliJ Plugin – i.e. when working with Themes.
-
-To get the latest Marketplace ZIP Signer CLI Tool, visit the [JetBrains/marketplace-zip-signer](https://github.com/JetBrains/marketplace-zip-signer/releases) GitHub Releases page.
-After downloading the <path>marketplace-zip-signer-cli.jar</path>, execute it as below:
-
-```bash
-java -jar marketplace-zip-signer-cli.jar sign\
-  -in "unsigned.zip"\
-  -out "signed.zip"\
-  -cert-file "/path/to/chain.crt"\
-  -key-file "/path/to/private.pem"\
-  -key-pass "PRIVATE_KEY_PASSWORD"
-```
+![Run/Debug Configuration Environment Variables](plugin_signing_env_variables.png)
 
 ## Signing for Custom Repositories
 

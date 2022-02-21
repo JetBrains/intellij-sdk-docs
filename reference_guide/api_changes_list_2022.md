@@ -129,3 +129,11 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 
 `org.intellij.markdown.parser.markerblocks.MarkerBlockProvider.Companion.passSmallIndent(CharSequence)` method removed
 : Use `org.intellij.markdown.parser.markerblocks.MarkerBlockProvider.Companion.passSmallIndent(CharSequence, Integer)` instead.
+
+### Database Tools and SQL Plugin 2022.1
+
+`com.intellij.database.datagrid.DataProducer.processRequest(DataRequest)` method parameter type changed from `DataRequest` to `GridDataRequest`
+: `GridDataRequest` is a part of new API for async loading of table data. It's not possible to keep old method with default implementation because `DataProducer` will no longer have dependency on `DataRequest`. Plugins need to be recompiled to maintain bytecode compatibility.
+
+`com.intellij.database.datagrid.DataRequest.RawQueryRequest.afterLastRowAdded(DataRequest.Context, int)` method parameter type changed from `DataRequest.Context` to `GridDataRequest.Context`
+: The signature of the method was changed in the interface `com.intellij.database.datagrid.DataConsumer` that is now a part of new API for async loading of table data. Change the type of overriden method and recompile plugin to maintain bytecode compatibility.

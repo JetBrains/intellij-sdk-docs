@@ -97,7 +97,7 @@ These methods also support **property bindings**, allowing you to automatically 
 The easiest way to do that is to pass a reference to a Kotlin bound property:
 
 ```kotlin
-  checkBox("Show tabs in single row", uiSettings::scrollTabLayoutInEditor)
+checkBox("Show tabs in single row", uiSettings::scrollTabLayoutInEditor)
 ```
 
 Note that the bound property reference syntax also can be used to reference Java fields, but not getter/setter pairs.
@@ -108,17 +108,16 @@ Alternatively, many factory methods support specifying a getter/setter pair for 
 checkBox(
   "Show file extensions in editor tabs",
   { !uiSettings.hideKnownExtensionInTabs },
-  { uiSettings.hideKnownExtensionInTabs = !it }
-)
+  { uiSettings.hideKnownExtensionInTabs = !it })
 ```
 
 If you want to add a component for which there are no factory methods, you can simply invoke an instance of your component, using the `()` overloaded operator:
 
 ```kotlin
-  val customComponent = MyCustomComponent()
-  panel {
-    row { customComponent() }
-  }
+val customComponent = MyCustomComponent()
+panel {
+  row { customComponent() }
+}
 ```
 
 ## Supported Components
@@ -189,7 +188,7 @@ To specify the size of a text field, either pass the `columns` parameter as show
 ```kotlin
 val userField = JTextField(credentials?.userName)
 val panel = panel {
-    row("Username:") { userField().growPolicy(GrowPolicy.SHORT_TEXT) }
+  row("Username:") { userField().growPolicy(GrowPolicy.SHORT_TEXT) }
 }
 ```
 

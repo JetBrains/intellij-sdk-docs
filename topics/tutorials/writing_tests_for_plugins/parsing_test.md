@@ -59,4 +59,16 @@ Override `getTestDataPath()`, and return the path from the root of this plugin m
 {src="simple_language_plugin/src/test/java/org/intellij/sdk/language/SimpleParsingTest.java"}
 
 ## Run the Test
-[Run](completion_test.md#run-the-test) the test and make sure it's green.
+Run the test by:
+* Opening the **Gradle** Tool Window.
+* Select the `simple_language_plugin`.
+  You may need to reimport it as a Gradle project.
+* Drill down under `simple_language_plugin` to *Tasks*, *verification*, *test* task.
+* Run the *test* task.
+
+The results are displayed in the **Run** Tool Window, and also written to the `simple_language_plugin/build/test-results/test/` directory.
+
+If the **Run** Tool Window displays the error *Test events were not received*, do the following:
+* In the **Gradle** Tool Window, drill down under `simple_language_plugin` to *Tasks*, *build*, *clean* task.
+* Run the *clean* task, which deletes the `simple_language_plugin/build/` directory.
+* Retry the test.

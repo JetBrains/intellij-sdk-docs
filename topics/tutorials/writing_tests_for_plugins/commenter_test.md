@@ -17,4 +17,4 @@ It again calls the line comment action to remove the comment character and verif
 {src="simple_language_plugin/src/test/java/org/intellij/sdk/language/SimpleCodeInsightTest.java" include-symbol="testCommenter"}
 
 ## Run the Test
-[Run](completion_test.md#run-the-test) the test and make sure it's green.
+[Run](parsing_test.md#run-the-test) the test and make sure it's green.

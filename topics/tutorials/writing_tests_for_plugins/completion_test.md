@@ -44,4 +44,4 @@ This method:
 A number of related methods exist in `CodeInsightTestFixture` for testing completion and lookup elements, e.g., when testing completion variants and requiring only one testdata file `CodeInsightTestFixture.testCompletionVariants()`.
 
 ## Run the Test
-[Run](completion_test.md#run-the-test) the test and make sure it's green.
+[Run](parsing_test.md#run-the-test) the test and make sure it's green.

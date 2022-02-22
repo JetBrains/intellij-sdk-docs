@@ -33,4 +33,4 @@ It then calls the `checkHighlighting()` method to verify weak warnings.
 {src="simple_language_plugin/src/test/java/org/intellij/sdk/language/SimpleCodeInsightTest.java" include-symbol="testAnnotator"}
 
 ## Run the Test
-[Run](completion_test.md#run-the-test) the test and make sure it's green.
+[Run](parsing_test.md#run-the-test) the test and make sure it's green.

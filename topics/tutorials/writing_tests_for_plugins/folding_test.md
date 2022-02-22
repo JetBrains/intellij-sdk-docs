@@ -28,4 +28,4 @@ This test method reuses the <path>DefaultTestData.simple</path> Simple file.
 
 
 ## Run the Test
-[Run](completion_test.md#run-the-test) the test and make sure it's green.
+[Run](parsing_test.md#run-the-test) the test and make sure it's green.

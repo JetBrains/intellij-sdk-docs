@@ -27,4 +27,4 @@ Add the `testFormatter()` method to the `SimpleCodeInsightTest` class [previousl
 {src="simple_language_plugin/src/test/java/org/intellij/sdk/language/SimpleCodeInsightTest.java" include-symbol="testFormatter"}
 
 ## Run the Test
-[Run](completion_test.md#run-the-test) the test and make sure it's green.
+[Run](parsing_test.md#run-the-test) the test and make sure it's green.

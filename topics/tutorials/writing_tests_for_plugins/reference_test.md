@@ -27,4 +27,4 @@ The fixture gets the `PsiReference` at the caret position, and then asserts the 
 
 
 ## Run the Test
-[Run](completion_test.md#run-the-test) the test and make sure it's green.
+[Run](parsing_test.md#run-the-test) the test and make sure it's green.

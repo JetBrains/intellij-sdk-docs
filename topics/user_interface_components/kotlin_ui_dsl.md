@@ -105,10 +105,11 @@ Note that the bound property reference syntax also can be used to reference Java
 Alternatively, many factory methods support specifying a getter/setter pair for cases when a property mapping is more complicated:
 
 ```kotlin
-  checkBox(
-    "Show file extensions in editor tabs",
-    { !uiSettings.hideKnownExtensionInTabs },
-    { uiSettings.hideKnownExtensionInTabs = !it }
+checkBox(
+  "Show file extensions in editor tabs",
+  { !uiSettings.hideKnownExtensionInTabs },
+  { uiSettings.hideKnownExtensionInTabs = !it }
+)
 ```
 
 If you want to add a component for which there are no factory methods, you can simply invoke an instance of your component, using the `()` overloaded operator:

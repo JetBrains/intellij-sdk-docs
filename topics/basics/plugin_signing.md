@@ -223,7 +223,7 @@ If adding a TrustStore to a users environment is not possible, the user may also
 
 ### Using Self-Signed Certificates
 
-Using a self-signed certificate is an option if no internal CAs exist. To generate the key and public key, see: [Generate Private Key](#Generate Private Key)
+Using a self-signed certificate is an option if no internal CAs exist. To generate the key and public key, see: [Generate Private Key](#generate-private-key)
 
 If providing users with a TrustStore, you can generate one with the public key using `keytool`:
 

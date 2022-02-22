@@ -121,7 +121,7 @@ This FAQ is a topical index of questions that have been asked (and answered) on 
 
 ## User Interface
 *  [How do I provide animated status bar notifications?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206791945-IDE-Notifications)
-*  [How do I enable file name completion in a combobox?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206139509-Combobox-with-Browse-Button-and-Autocompletion-)
+*  [How do I enable file name completion in a combo box?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206139509-Combobox-with-Browse-Button-and-Autocompletion-)
 *  [How do I show a popup with left-aligned and right-aligned parts for each item?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206139049-popup-menu-with-left-and-right-aligned-items)
 *  [Can I use an embedded Web browser from my plugin?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206351479-Using-Browser-Component)
 *  [How do I provide a custom icon for files/PSI elements?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206143779-Is-it-possible-to-change-icon-of-file-in-Project-view-)

@@ -19,8 +19,8 @@ Get started by [creating a new Live Template](https://www.jetbrains.com/idea/hel
 [$TEXT$]($LINK$)$END$
 ```
 
-The variables `$TEXT$` and `$LINK$` may be further configured in the *Edit variables* dialogue to reorder their precedence and bind to functions that invoke auto-completion at the appropriate time.
-In the *Edit variables* dialog, set the `Expression` for the `LINK` to `complete()` using the combobox.
+The variables `$TEXT$` and `$LINK$` may be further configured in the *Edit variables* dialogue to reorder their precedence and bind to the functions that invoke auto-completion at the appropriate time.
+In the *Edit variables* dialog, set the `Expression` for the `LINK` to `complete()` using the combo box.
 
 There are many other [predefined functions](https://www.jetbrains.com/idea/help/creating-and-editing-template-variables.html) that developers should become familiar with before implementing any unique functionality in a plugin.
 

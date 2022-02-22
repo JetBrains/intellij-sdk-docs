@@ -290,7 +290,7 @@ checkBox("Show tabs in single row", uiSettings::scrollTabLayoutInEditor)
 
 The available predicates are:
 * `selected` to check the selected state of a checkbox or radio button
-* `selectedValueIs` and `selectedValueMatches` to check the selected item in a combobox.
+* `selectedValueIs` and `selectedValueMatches` to check the selected item in a combo box.
 
 Predicates can be combined with `and` and `or` infix functions:
 

@@ -26,9 +26,9 @@
 
 ### Listeners
 
-**Topic** links the declaration of corresponding `Topic`.
+**Topic** links the declaration of corresponding [`Topic`](upsource:///platform/extensions/src/com/intellij/util/messages/Topic.java).
 
-**Listener** links corresponding listener interface to implement.
+**Listener** links corresponding listener to implement.
 
 ### Extension Points
 
@@ -43,7 +43,7 @@
 | ![Deprecated][deprecated]         | Deprecated API                      | Please see code documentation for replacement                                                                                                                                                                                            |
 | ![Experimental API][experimental] | Experimental API                    | Implementation annotated with [`@ApiStatus.Experimental`](https://github.com/JetBrains/java-annotations/blob/master/common/src/main/java/org/jetbrains/annotations/ApiStatus.java), API might be altered or removed without prior notice |
 | ![Internal API][internal]         | Internal API                        | Implementation annotated with [`@ApiStatus.Internal`](https://github.com/JetBrains/java-annotations/blob/master/common/src/main/java/org/jetbrains/annotations/ApiStatus.java), should not be used by 3rd party                          |
-| ![Project-Level][project-level]   | Project-Level Extension Point/Topic | Can have `Project` as constructor parameter<br/><br/>Extension Point: Declared with `area="IDEA_PROJECT"`<br/>Listener: registered in `<projectListeners>`                                                                               |
+| ![Project-Level][project-level]   | Project-Level Extension Point/Topic | Can have [`Project`](upsource:///platform/core-api/src/com/intellij/openapi/project/Project.java) as constructor parameter<br/><br/>Extension Point: Declared with `area="IDEA_PROJECT"`<br/>Listener: registered in `<projectListeners>`                                                                               |
 | ![Non-Dynamic][non-dynamic]       | Non-Dynamic Extension Point         | Installation/update of plugin requires IDE restart ([Dynamic Plugins](dynamic_plugins.md))                                                                                                                                               |
 
 [experimental]: https://img.shields.io/badge/-Experimental_API-red?style=flat-square

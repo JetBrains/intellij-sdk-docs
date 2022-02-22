@@ -57,6 +57,7 @@ Please see also corresponding entries in [Incompatible API Changes](api_changes_
 
 | Branch number                                                   | IntelliJ Platform version                                                                                                                |
 |-----------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------|
+| [221](https://github.com/JetBrains/intellij-community/tree/221) | 2022.1                                                                                                                                   |
 | [213](https://github.com/JetBrains/intellij-community/tree/213) | 2021.3                                                                                                                                   |
 | [212](https://github.com/JetBrains/intellij-community/tree/212) | 2021.2                                                                                                                                   |
 | [211](https://github.com/JetBrains/intellij-community/tree/211) | 2021.1                                                                                                                                   |

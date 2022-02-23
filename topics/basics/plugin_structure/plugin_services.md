@@ -15,24 +15,24 @@ A service needing a shutdown hook/cleanup routine can implement [`Disposable`](u
 The IntelliJ Platform offers three types of services: _application level_ services (global singleton), _project level_ services, and _module level_ services.
 For the latter two, a separate instance of the service is created for each instance of its corresponding scope, see [Project Model Introduction](project_structure.md).
 
- >  Please consider not using module-level services because it can increase memory usage for projects with many modules.
- >
- {type="note"}
+> Please consider not using module-level services because it can increase memory usage for projects with many modules.
+>
+{type="note"}
 
 #### Constructor
 Project/Module level service constructors can have a `Project`/`Module` argument.
 To improve startup performance, avoid any heavy initializations in the constructor.
 
- >  Please note that using constructor injection is deprecated (and not supported in [Light Services](#light-services)) for performance reasons.
+> Please note that using constructor injection is deprecated (and not supported in [Light Services](#light-services)) for performance reasons.
 > Other dependencies should be [acquired only when needed](#retrieving-a-service) in all corresponding methods (see `someServiceMethod()` in [Project Service Sample](#project-service-sample)).
- >
- {type="note"}
+>
+{type="note"}
 
 ## Light Services
 
- >  Light Services are available since IntelliJ Platform 2019.3.
- >
- {type="note"}
+> Light Services are available since IntelliJ Platform 2019.3.
+>
+{type="note"}
 
 A service not going to be overridden does not need to be registered in <path>plugin.xml</path> (see [Declaring a Service](#declaring-a-service)).
 Instead, annotate service class with [`@Service`](upsource:///platform/core-api/src/com/intellij/openapi/components/Service.java).
@@ -82,7 +82,7 @@ If service is requested from several threads, it will be initialized in the firs
 
 ```java
 MyApplicationService applicationService = ApplicationManager.getApplication()
-          .getService(MyApplicationService.class);
+  .getService(MyApplicationService.class);
 
 MyProjectService projectService = project.getService(MyProjectService.class);
 ```
@@ -115,26 +115,27 @@ val projectService = project.service<MyProjectService>()
 </procedure>
 
 ## Project Service Sample
-This minimal sample shows [Light Service](#light-services) `ProjectService` interacting with another project level service `AnotherService` (not shown here).
+
+This minimal sample shows [Light Service](#light-services) `ProjectService` interacting with another project-level service `AnotherService` (not shown here).
 
 <path>ProjectService.java</path>
 
 ```java
-  @Service
-  public final class ProjectService {
+@Service
+public final class ProjectService {
 
-     private final Project myProject;
+  private final Project myProject;
 
-     public ProjectService(Project project) {
-       myProject = project;
-     }
-
-     public void someServiceMethod(String parameter) {
-       AnotherService anotherService = myProject.getService(AnotherService.class);
-       String result = anotherService.anotherServiceMethod(parameter, false);
-       // do some more stuff
-     }
+  public ProjectService(Project project) {
+    myProject = project;
   }
+
+  public void someServiceMethod(String parameter) {
+    AnotherService anotherService = myProject.getService(AnotherService.class);
+    String result = anotherService.anotherServiceMethod(parameter, false);
+    // do some more stuff
+  }
+}
 ```
 
 ## Sample Plugin

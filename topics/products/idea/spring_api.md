@@ -2,7 +2,12 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
+<excerpt rel="excerpt"/>
+<p id="excerpt">
 Spring API allows 3rd party plugins to re-use, integrate with or extend existing Spring Framework support in IntelliJ IDEA Ultimate.
+</p>
+
+Please see [Spring Framework Support](https://www.jetbrains.com/lp/intellij-frameworks/) for general feature overview.
 
 A popular plugin using Spring API is [hybris integration](https://plugins.jetbrains.com/plugin/7525-hybris-integration).
 

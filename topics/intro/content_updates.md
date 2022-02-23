@@ -9,13 +9,18 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 
 ## 2022
 
+### February-22
+
+Parameter Info
+: Add [](parameter_info.md) section explaining how information about function parameters can be shown in the IDE.
+
 ### January-22
 
 Highlighting
 : Add [](syntax_errors.md) and [](controlling_highlighting.md) sections explaining syntax highlighting basics and filtering highlighting information.
 
 IDE Infrastructure
-: Added sections [](ide_infrastructure.md#application-events) and [](ide_infrastructure.md#plugin-management).
+: Add sections [](ide_infrastructure.md#application-events) and [](ide_infrastructure.md#plugin-management).
 
 ## 2021
 

@@ -38,7 +38,10 @@ See [](explore_api.md) for more information and strategies.
    * If the extension point was declared using the `interface` attribute, for newly added child element, set the `implementation` attribute to the name of the class that implements the specified interface.
    * If the extension point was declared using the `beanClass` attribute, for newly added child element, set all attributes annotated with the [`@Attribute`](upsource:///platform/util/src/com/intellij/util/xmlb/annotations/Attribute.java) annotations in the specified bean class.
 
-To clarify this procedure, consider the following sample section of the <path>plugin.xml</path> file that defines two extensions designed to access the `com.intellij.appStarter` and `com.intellij.projectTemplatesFactory` extension points in the IntelliJ Platform and one extension to access the `another.plugin.myExtensionPoint` extension point in another plugin `another.plugin`:
+   See the [](plugin_extension_points.md#declaring-extension-points) section for details.
+
+To clarify this procedure, consider the following sample section of the <path>plugin.xml</path> file that defines two extensions designed to access the `com.intellij.appStarter` and `com.intellij.projectTemplatesFactory` extension points in the IntelliJ Platform,
+and one extension to access the `another.plugin.myExtensionPoint` extension point in another plugin `another.plugin`:
 
 ```xml
 <!--
@@ -78,7 +81,7 @@ Several tooling features are available to help configure bean class extension po
 Properties annotated with [`@RequiredElement`](upsource:///platform/extensions/src/com/intellij/openapi/extensions/RequiredElement.java) are inserted automatically and validated (2019.3 and later).
 If the given property is allowed to have an explicit empty value, set `allowEmpty` to `true` (2020.3 and later).
 
-Property names matching the following list will resolve to FQN:
+Property names matching the following list will resolve to fully qualified class name:
 - `implementation`
 - `className`
 - `serviceInterface` / `serviceImplementation`
@@ -98,4 +101,4 @@ Similarly, `action` resolves to all registered `<action>` IDs.
 
 Specifying `@org.jetbrains.annotations.Nls` validates a UI `String` capitalization according to the text property `Capitalization` enum value (2019.2 and later).
 
-Attributes with `Enum` type support code insight with _lowerSnakeCased_ notation (2020.1 and later).
+Attributes with `Enum` type support code insight with _lower_snake_cased_ notation (2020.1 and later).

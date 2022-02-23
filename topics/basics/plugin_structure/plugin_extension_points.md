@@ -43,6 +43,8 @@ The `name` attribute assigns a unique name for this extension point.
 Its fully qualified name required in [Using Extension Points](#using-extension-points) is built by prefixing `<id>` + `.`: `my.plugin.myExtensionPoint1` and `my.plugin.myExtensionPoint2`.
 
 The `beanClass` attribute sets a bean class that specifies one or several properties annotated with the [`@Attribute`](upsource:///platform/util/src/com/intellij/util/xmlb/annotations/Attribute.java) annotation.
+Note that bean classes do not follow the JavaBean standard.
+
 The `interface` attribute sets an interface the plugin that contributes to the extension point must implement.
 
 The `area` attribute determines the scope in which the extension will be instantiated.

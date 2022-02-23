@@ -6,72 +6,73 @@ _Extensions_ are the most common way for a plugin to extend the IntelliJ Platfor
 
 The following are some of the most common tasks accomplished using extensions:
 
-  * The `com.intellij.toolWindow` extension point allows plugins to add [tool windows](tool_windows.md)
-  (panels displayed at the sides of the IDE user interface);
-  * The `com.intellij.applicationConfigurable` and `com.intellij.projectConfigurable` extension points allow plugins to add pages to the
-    [Settings/Preferences dialog](settings.md);
-  * [Custom language plugins](custom_language_support.md) use many extension points
-    to extend various language support features in the IDE.
+* The `com.intellij.toolWindow` extension point allows plugins to add [tool windows](tool_windows.md) (panels displayed at the sides of the IDE user interface);
+* The `com.intellij.applicationConfigurable` and `com.intellij.projectConfigurable` extension points allow plugins to add pages to the [Settings/Preferences dialog](settings.md);
+* [Custom language plugins](custom_language_support.md) use many extension points to extend various language support features in the IDE.
 
-There are more than 1000 extension points available in the platform and the bundled plugins, allowing to customize different parts of the IDE behavior.
+There are more than 1000 extension points available in the platform and the bundled plugins, allowing customizing different parts of the IDE behavior.
 
 ## Exploring Available Extensions
 
 [](extension_point_list.md) lists all available extension points in IntelliJ Platform and from bundled plugins in IntelliJ IDEA.
-Additionally, dedicated Extension Point Lists specific to IDEs are available under _Part VIII — Product Specific_.
+Additionally, dedicated Extension Point and Listener Lists specific to IDEs are available under _Part VIII — Product Specific_.
 Browse usages inside existing implementations of open-source IntelliJ Platform plugins via [IntelliJ Platform Explorer](https://jb.gg/ipe).
 
 Alternatively (or when using 3rd party extension points), all available extension points for the specified namespace (`defaultExtensionNs`) can be listed using auto-completion inside the `<extensions>` block in <path>plugin.xml</path>.
 Use <menupath>View | Quick Documentation</menupath> in the lookup list to access more information about the extension point and implementation (if applicable).
-See [Explore the IntelliJ Platform API](explore_api.md) for more information and strategies.
+See [](explore_api.md) for more information and strategies.
 
 ## Declaring Extensions
 
- >  Auto-completion, Quick Documentation, and other code insight features are available on extension point tags and attributes.
- >
- {type="tip"}
+> Auto-completion, Quick Documentation, and other code insight features are available on extension point tags and attributes.
+>
+{type="tip"}
 
 1. Add an `<extensions>` element to your <path>plugin.xml</path> if it's not yet present there.
    Set the `defaultExtensionNs` attribute to one of the following values:
-    * `com.intellij`, if your plugin extends the IntelliJ Platform core functionality.
-    * `{ID of a plugin}`, if your plugin extends the functionality of another plugin (must configure [Plugin Dependencies](plugin_dependencies.md)).
+   * `com.intellij`, if your plugin extends the IntelliJ Platform core functionality.
+   * `{ID of a plugin}`, if your plugin extends the functionality of another plugin (must configure [Plugin Dependencies](plugin_dependencies.md)).
 2. Add a new child element to the `<extensions>` element.
-   The child element name must match the name of the extension point you want the extension to access.
+   The child element's name must match the name of the extension point you want the extension to access.
 3. Depending on the type of the extension point, do one of the following:
-    * If the extension point was declared using the `interface` attribute, for newly added child element, set the `implementation` attribute to the name of the class that implements the specified interface.
-    * If the extension point was declared using the `beanClass` attribute, for newly added child element, set all attributes annotated with the [`@Attribute`](upsource:///platform/util/src/com/intellij/util/xmlb/annotations/Attribute.java) annotations in the specified bean class.
+   * If the extension point was declared using the `interface` attribute, for newly added child element, set the `implementation` attribute to the name of the class that implements the specified interface.
+   * If the extension point was declared using the `beanClass` attribute, for newly added child element, set all attributes annotated with the [`@Attribute`](upsource:///platform/util/src/com/intellij/util/xmlb/annotations/Attribute.java) annotations in the specified bean class.
 
 To clarify this procedure, consider the following sample section of the <path>plugin.xml</path> file that defines two extensions designed to access the `com.intellij.appStarter` and `com.intellij.projectTemplatesFactory` extension points in the IntelliJ Platform and one extension to access the `another.plugin.myExtensionPoint` extension point in another plugin `another.plugin`:
 
 ```xml
-<!-- Declare extensions to access extension points in the IntelliJ Platform.
-     These extension points have been declared using "interface".
+<!--
+  Declare extensions to access extension points in the IntelliJ Platform.
+  These extension points have been declared using "interface".
  -->
-  <extensions defaultExtensionNs="com.intellij">
-    <appStarter implementation="com.myplugin.MyAppStarter" />
-    <projectTemplatesFactory implementation="com.myplugin.MyProjectTemplatesFactory" />
-  </extensions>
+<extensions defaultExtensionNs="com.intellij">
+  <appStarter implementation="com.myplugin.MyAppStarter" />
+  <projectTemplatesFactory implementation="com.myplugin.MyProjectTemplatesFactory" />
+</extensions>
 
-<!-- Declare extensions to access extension points in a custom plugin "another.plugin"
-     The "myExtensionPoint" extension point has been declared using "beanClass"
-     and exposes custom properties "key" and "implementationClass".
+<!--
+  Declare extensions to access extension points in a custom plugin "another.plugin".
+  The "myExtensionPoint" extension point has been declared using "beanClass"
+  and exposes custom properties "key" and "implementationClass".
 -->
-  <extensions defaultExtensionNs="another.plugin">
-     <myExtensionPoint key="keyValue"
-                       implementationClass="com.myplugin.MyExtensionPointImpl" />
-  </extensions>
+<extensions defaultExtensionNs="another.plugin">
+  <myExtensionPoint key="keyValue"
+                    implementationClass="com.myplugin.MyExtensionPointImpl" />
+</extensions>
 ```
 
 ### Extension Default Properties
+
 The following properties are available always:
 
-- `id` - unique ID
-- `order` - allows to order all defined extensions using `first`, `last` or `before|after [id]` respectively
-- `os` - allows restricting extension to given OS, e.g., `os="windows"` registers the extension on Windows only
+* `id` - unique ID
+* `order` - allows ordering all defined extensions using `first`, `last` or `before|after [id]` respectively
+* `os` - allows restricting an extension to given OS, e.g., `os="windows"` registers the extension on Windows only
 
 If an extension instance needs to "opt out" in certain scenarios, it can throw [`ExtensionNotApplicableException`](upsource:///platform/extensions/src/com/intellij/openapi/extensions/ExtensionNotApplicableException.java) in its constructor.
 
 ### Extension Properties Code Insight
+
 Several tooling features are available to help configure bean class extension points in <path>plugin.xml</path>.
 
 Properties annotated with [`@RequiredElement`](upsource:///platform/extensions/src/com/intellij/openapi/extensions/RequiredElement.java) are inserted automatically and validated (2019.3 and later).
@@ -86,9 +87,9 @@ Property names matching the following list will resolve to FQN:
 A required parent type can be specified in the extension point declaration via nested `<with>`:
 
 ```xml
-    <extensionPoint name="myExtension" beanClass="MyExtensionBean">
-      <with attribute="psiElementClass" implements="com.intellij.psi.PsiElement"/>
-    </extensionPoint>
+<extensionPoint name="myExtension" beanClass="MyExtensionBean">
+  <with attribute="psiElementClass" implements="com.intellij.psi.PsiElement"/>
+</extensionPoint>
 ```
 
 Property name `language` (or ending in `*Language`, 2020.2+) resolves to all present `Language` IDs.

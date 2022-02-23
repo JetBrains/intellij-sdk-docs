@@ -2,9 +2,9 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
- >  See [Plugin Extensions](plugin_extensions.md) for _using_ extension points in your plugin.
- >
- {type="note"}
+> See [Plugin Extensions](plugin_extensions.md) for _using_ extension points in your plugin.
+>
+{type="note"}
 
 By defining _extension points_ in your plugin, you can allow other plugins to extend your plugin's functionality.
 There are two types of extension points:
@@ -76,9 +76,9 @@ public class MyBeanClass extends AbstractExtensionPointBean {
 }
 ```
 
- >  See [Extension properties code insight](plugin_extensions.md#extension-properties-code-insight) on how to provide smart completion/validation.
- >
- {type="tip"}
+> See [Extension properties code insight](plugin_extensions.md#extension-properties-code-insight) on how to provide smart completion/validation.
+>
+{type="tip"}
 
 For above extension points usage in _anotherPlugin_ would look like this (see also [Declaring Extensions](plugin_extensions.md#declaring-extensions)):
 
@@ -88,10 +88,10 @@ For above extension points usage in _anotherPlugin_ would look like this (see al
 <idea-plugin>
   <id>another.plugin</id>
 
-  <!-- declare dependency on plugin defining extension point -->
+  <!-- Declare dependency on plugin defining extension point: -->
   <depends>my.plugin</depends>
 
-  <!-- use "my.plugin" namespace -->
+  <!-- Use "my.plugin" namespace: -->
   <extensions defaultExtensionNs="my.plugin">
     <myExtensionPoint1 key="someKey"
                        implementationClass="another.some.implementation.class"/>
@@ -110,16 +110,16 @@ To refer to all registered extension instances at runtime, declare an [`Extensio
 ```java
 public class MyExtensionUsingService {
 
-    private static final ExtensionPointName<MyBeanClass> EP_NAME =
-      ExtensionPointName.create("my.plugin.myExtensionPoint1");
+  private static final ExtensionPointName<MyBeanClass> EP_NAME =
+    ExtensionPointName.create("my.plugin.myExtensionPoint1");
 
-    public void useExtensions() {
-      for (MyBeanClass extension : EP_NAME.getExtensionList()) {
-        String key = extension.getKey();
-        String clazz = extension.getClass();
-        // ...
-      }
+  public void useExtensions() {
+    for (MyBeanClass extension : EP_NAME.getExtensionList()) {
+      String key = extension.getKey();
+      String clazz = extension.getClass();
+      // ...
     }
+  }
 }
 ```
 

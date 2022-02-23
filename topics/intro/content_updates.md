@@ -116,7 +116,7 @@ UI Inspector
 
 ### March-20
 
-JCEF Support (_Experimental Feature_)
+JCEF Support
 : Allows [embedding](jcef.md) Chromium-based browser in the IDE.
 
 ### February-20

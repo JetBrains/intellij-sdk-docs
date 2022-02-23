@@ -8,9 +8,9 @@
 
 ## Working with PSI Efficiently
 
-#### Avoid Expensive Methods in `PsiElement`
+#### Avoid Expensive Methods of `PsiElement`
 
-Avoid `PsiElement` methods which are expensive with deep trees.
+Avoid `PsiElement`'s methods which are expensive with deep trees.
 
 `getText()` traverses the whole tree under the given element and concatenates strings, consider `textMatches()` instead.
 
@@ -19,7 +19,7 @@ If you only need PSI element length, use `getTextLength()`.
 
 File and project often can be computed once per some analysis and then stored in fields or passed via parameters.
 
-Additionally, `getText()`, `getNode()`, `getTextRange()`, etc., all need AST, which can be quite an expensive operation.
+Additionally, methods such as `getText()`, `getNode()`, or `getTextRange()`, need the AST, obtaining which can be quite an expensive operation.
 See below.
 
 #### Avoid Using Many PSI Trees/Documents
@@ -30,7 +30,7 @@ Everything else, even if it's needed for resolve/highlighting purposes, can be a
 
 If stubs don't suit your case well (e.g., the information you need is large and/or very rarely needed, or you're developing a plugin for a language whose PSI you don't control), you can create a [custom index or gist](indexing_and_psi_stubs.md).
 
-You can use [`AstLoadingFilter`](upsource:///platform/core-api/src/com/intellij/util/AstLoadingFilter.java) in production and `PsiManagerEx.setAssertOnFileLoadingFilter()` in tests to ensure you're not loading AST accidentally.
+To ensure you're not loading AST accidentally, you can use [`AstLoadingFilter`](upsource:///platform/core-api/src/com/intellij/util/AstLoadingFilter.java) in production and `PsiManagerEx.setAssertOnFileLoadingFilter()` in tests.
 
 The same applies to documents: only the ones opened in editors should be loaded.
 Usually, you shouldn't need document contents (as most information can be retrieved from PSI).
@@ -39,9 +39,7 @@ If you still need documents, then at least ensure you load them one by one and d
 
 #### Cache Results of Heavy Computations
 
-These include `PsiElement.getReference(s)`, `PsiReference.resolve()` (and `multiResolve()` and other equivalents), expression types, type inference results, control flow graphs, etc.
-
-Usually, [`CachedValue`](upsource:///platform/core-api/src/com/intellij/psi/util/CachedValue.java) works well.
+Method calls such as `PsiElement.getReference(s)`, `PsiReference.resolve()` (and `multiResolve()` and other equivalents) or computation of expression types, type inference results, control flow graphs, etc. can be expensive. To avoid paying this cost several times, the result of such computation can be cached and reused. Usually, [`CachedValue`](upsource:///platform/core-api/src/com/intellij/psi/util/CachedValue.java) works well for this purpose.
 
 If the information you cache depends only on a subtree of the current PSI element (and nothing else: no resolve results or other files), you can cache it in a field in that `PsiElement` and drop the cache in an override of `ASTDelegatePsiElement.subtreeChanged()`.
 
@@ -68,7 +66,7 @@ If a custom language contains lazy-parseable elements that never or rarely conta
 #### Consider Prebuilt Stubs
 
 If your language has a massive standard library, which is mostly the same for all users, you can avoid stub-indexing it in each installation by providing prebuilt stubs with your distribution.
-See [`PrebuiltStubsProvider`](upsource:///platform/indexing-impl/src/com/intellij/psi/stubs/PrebuiltStubs.kt) extension.
+See [`PrebuiltStubsProvider`](upsource:///platform/indexing-impl/src/com/intellij/psi/stubs/PrebuiltStubs.kt) extension. <!-- PrebuildStubsProvider is deprecated; someone with more expertise in this should rewrite this piece. -->
 
 ## Avoiding UI Freezes
 

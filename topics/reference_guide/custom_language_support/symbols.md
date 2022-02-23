@@ -23,7 +23,7 @@ A `Symbol` is not required to be backed by a `PsiElement`, and it is incorrect t
 Examples:
 - Java local variable is a symbol in Java language model, it's backed by a `PsiVariable` element.
 - Compiled class is a symbol in JVM model, it's backed by JDK library stubs, and it's not bound to any project.
-- Spring Bean is a symbol in Spring framework model, it's defined on-the-fly by framework support (not backed by a `PsiElement`) and bound to a `Project`.
+- Spring Bean is a symbol in [Spring framework model](spring_api.md), it's defined on-the-fly by framework support (not backed by a `PsiElement`) and bound to a `Project`.
 - Database column is a symbol defined by data source (not backed by a `PsiElement`) and not bound to a `Project` since database elements might be shared between projects.
 
 ## Lifecycle

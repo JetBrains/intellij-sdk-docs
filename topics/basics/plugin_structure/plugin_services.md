@@ -12,7 +12,7 @@ A service may also have an interface class used to obtain the service instance a
 A service needing a shutdown hook/cleanup routine can implement [`Disposable`](upsource:///platform/util/src/com/intellij/openapi/Disposable.java) and perform necessary work in `dispose()` (see [Automatically Disposed Objects](disposers.md#automatically-disposed-objects)).
 
 #### Types
-The IntelliJ Platform offers three types of services: _application level_ services (global singleton), _project level_ services, and _module level_ services.
+The IntelliJ Platform offers three types of services: _application-level_ services (global singleton), _project-level_ services, and _module-level_ services.
 For the latter two, a separate instance of the service is created for each instance of its corresponding scope, see [Project Model Introduction](project_structure.md).
 
 > Please consider not using module-level services because it can increase memory usage for projects with many modules.
@@ -20,7 +20,7 @@ For the latter two, a separate instance of the service is created for each insta
 {type="note"}
 
 #### Constructor
-Project/Module level service constructors can have a `Project`/`Module` argument.
+Project/Module-level service constructors can have a `Project`/`Module` argument.
 To improve startup performance, avoid any heavy initializations in the constructor.
 
 > Please note that using constructor injection is deprecated (and not supported in [Light Services](#light-services)) for performance reasons.
@@ -44,15 +44,15 @@ Restrictions:
 * Constructor injection is not supported (since it is deprecated).
 * If service is a [PersistentStateComponent](persisting_state_of_components.md), roaming must be disabled (`roamingType = RoamingType.DISABLED`).
 
-See [Project Level Service](#project-service-sample) below for a sample.
+See [Project-Level Service](#project-service-sample) below for a sample.
 
 ## Declaring a Service
 
 To register a non-[Light Service](#light-services), distinct extension points are provided for each type:
 
-* `com.intellij.applicationService` - application level service
-* `com.intellij.projectService` - project level service
-* `com.intellij.moduleService` - module level service (not recommended, see Note above)
+* `com.intellij.applicationService` - application-level service
+* `com.intellij.projectService` - project-level service
+* `com.intellij.moduleService` - module-level service (not recommended, see Note above)
 
 To expose service API, create separate class for `serviceInterface` and extend it in corresponding class registered in `serviceImplementation`.
 If `serviceInterface` isn't specified, it's supposed to have the same value as `serviceImplementation`.
@@ -62,11 +62,11 @@ To provide custom implementation for test/headless environment, specify `testSer
 <path>plugin.xml</path>
 ```xml
 <extensions defaultExtensionNs="com.intellij">
-  <!-- Declare the application level service -->
+  <!-- Declare the application-level service -->
   <applicationService serviceInterface="mypackage.MyApplicationService"
                       serviceImplementation="mypackage.MyApplicationServiceImpl" />
 
-  <!-- Declare the project level service -->
+  <!-- Declare the project-level service -->
   <projectService serviceInterface="mypackage.MyProjectService"
                   serviceImplementation="mypackage.MyProjectServiceImpl" />
 </extensions>
@@ -75,7 +75,7 @@ To provide custom implementation for test/headless environment, specify `testSer
 ## Retrieving a Service
 
 Getting service doesn't need a read action and can be performed from any thread.
-If service is requested from several threads, it will be initialized in the first thread, and other threads will be blocked until service is fully initialized.
+If a service is requested from several threads, it will be initialized in the first thread, and other threads will be blocked until the service is fully initialized.
 
 <tabs>
 <tab title="Java">

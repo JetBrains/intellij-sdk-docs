@@ -93,7 +93,7 @@ Extension Point List
 ### August-20
 
 README added to Code Samples
-: All code samples used in this guide now come with `README`, making it easier to browse them. They can be conveniently accessed via a [separate GitHub repository](https://github.com/JetBrains/intellij-sdk-code-samples).
+: All code samples used in this guide now come with <path>README</path>, making it easier to browse them. They can be conveniently accessed via a [separate GitHub repository](https://github.com/JetBrains/intellij-sdk-code-samples).
 
 ### June-20
 
@@ -145,7 +145,7 @@ Plugin Components migration
 ### October-19
 
 Part X — Plugin Repository moved
-: All contents have been moved to [JetBrains Marketplace](https://plugins.jetbrains.com/docs/marketplace/about-marketplace.html) documentation.
+: All contents have been moved to [JetBrains Marketplace Documentation](https://plugins.jetbrains.com/docs/marketplace/about-marketplace.html).
 
 ### July-19
 

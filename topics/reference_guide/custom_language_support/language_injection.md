@@ -11,15 +11,21 @@ Language injection is the way the IntelliJ Platform handles different languages 
 Injected code is always bound to a specific context that depends on the surrounding code, and the IntelliJ Platform treats injected fragments as separate small files that are in a different language. To ensure highlighting and code-insight features work correctly, these fragments must be a valid statement or expression in the injected language. The three examples from above would then be shown like this in IntelliJ IDEs:
 
 <tabs>
-    <tab title="Regex">
-        <img src="regex_language_injection.png" alt="Regex Language Injection" width="460" border-effect="line"/>
-    </tab>
-    <tab title="SQL">
-        <img src="sql_language_injection.png" alt="SQL Language Injection" width="460" border-effect="line"/>
-    </tab>
-    <tab title="Markdown">
-        <img src="markdown_code_language_injection.png" alt="Markdown Language Injection" width="460" border-effect="line"/>
-    </tab>
+<tab title="Regex">
+
+![Regex Language Injection](regex_language_injection.png){border-effect="line"}
+
+</tab>
+<tab title="SQL">
+
+![SQL Language Injection](sql_language_injection.png){border-effect="line"}
+
+</tab>
+<tab title="Markdown">
+
+![Markdown Language Injection](markdown_code_language_injection.png){border-effect="line"}
+
+</tab>
 </tabs>
 
 It’s not unusual that injected fragments are distributed among, e.g., several strings that are concatenated like it is common for SQL queries. To solve this, the IntelliJ Platform allows injecting a language into several fragments at once. Multiple parts are then considered belonging together.

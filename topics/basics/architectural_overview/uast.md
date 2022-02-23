@@ -7,12 +7,12 @@ It provides a unified API for working with common language elements like classes
 
 ## Motivation
 
-Different JVM languages have their own [PSI](psi_elements.md), but many IDE features like inspections, gutter markers, reference injection, and many others 
+Different JVM languages have their own [PSI](psi_elements.md), but many IDE features like inspections, gutter markers, reference injection, and many others
 work the same way for all these languages.
 
 Using UAST allows providing features that will work across all [supported JVM languages](#which-languages-are-supported) using a single implementation.
 
-Presentation [Writing IntelliJ Plugins for Kotlin](https://www.youtube.com/watch?v=j2tvi4GbOr4) offers a thorough overview of using UAST in real-world scenarios.  
+Presentation [Writing IntelliJ Plugins for Kotlin](https://www.youtube.com/watch?v=j2tvi4GbOr4) offers a thorough overview of using UAST in real-world scenarios.
 
 ### When should I use UAST?
 
@@ -32,16 +32,15 @@ Some known examples are:
 
 ### What about modifying PSI?
 
-UAST is a read-only API. 
+UAST is a read-only API.
 There are experimental [`UastCodeGenerationPlugin`](upsource:///uast/uast-common/src/org/jetbrains/uast/generate/UastCodeGenerationPlugin.kt) and [`JvmElementActionsFactory`](upsource:///java/java-analysis-api/src/com/intellij/lang/jvm/actions/JvmElementActionsFactory.kt) classes, but they are currently not recommended for external usage.
-               
 
 ## Working with UAST
 
-The base element of UAST is [`UElement`](upsource:///uast/uast-common/src/org/jetbrains/uast/baseElements/UElement.kt). 
+The base element of UAST is [`UElement`](upsource:///uast/uast-common/src/org/jetbrains/uast/baseElements/UElement.kt).
 All common base sub-interfaces are located in the [declarations](upsource:///uast/uast-common/src/org/jetbrains/uast/declarations) and [expressions](upsource:///uast/uast-common/src/org/jetbrains/uast/expressions) directories of the **uast** module.
 
-All these sub-interfaces provide methods to get the information about common syntax elements: 
+All these sub-interfaces provide methods to get the information about common syntax elements:
 [`UClass`](upsource:///uast/uast-common/src/org/jetbrains/uast/declarations/UClass.kt) about class declarations, [`UIfExpression`](upsource:///uast/uast-common/src/org/jetbrains/uast/controlStructures/UIfExpression.kt) about conditional expressions, and so on.
 
 ### PSI to UAST Conversion
@@ -50,7 +49,7 @@ To obtain UAST for given `PsiElement` of one of supported languages, use [`UastF
 
 To convert `PsiElement` to the specific `UElement`, use one of the following approaches:
 
-- for simple conversion: 
+- for simple conversion:
 
 ```java
   UastContextKt.toUElement(element, UCallExpression.class)
@@ -63,11 +62,11 @@ To convert `PsiElement` to the specific `UElement`, use one of the following app
         new Class[]{UInjectionHost.class, UReferenceExpression.class})
 ```
 
-- in some cases, `PsiElement` could represent several `UElement`s. For instance, the parameter of a primary constructor in Kotlin is `UField` and `UParameter` at the same time. 
+- in some cases, `PsiElement` could represent several `UElement`s. For instance, the parameter of a primary constructor in Kotlin is `UField` and `UParameter` at the same time.
   When needing all options, use:
 
 ```java
-  UastFacade.INSTANCE.convertToAlternatives(element, 
+  UastFacade.INSTANCE.convertToAlternatives(element,
         new Class[]{UField.class, UParameter.class}
 ```
 
@@ -83,13 +82,13 @@ Sometimes it's required to get from the `UElement` back to sources of the underl
 For that purpose, `UElement#sourcePsi` property returns the corresponding `PsiElement` of the original language.
 
 The `sourcePsi` is a "physical" `PsiElement`, and it is mostly used for getting text ranges in the original file (e.g., for highlighting).
-Avoid casting the `sourcePsi` to specific classes because it means falling back from the UAST abstraction to the language-specific PSI. 
-Some `UElement` are "virtual" and thus do not have `sourcePsi`. 
+Avoid casting the `sourcePsi` to specific classes because it means falling back from the UAST abstraction to the language-specific PSI.
+Some `UElement` are "virtual" and thus do not have `sourcePsi`.
 For some `UElement`, the `sourcePsi` could be different from the element from which the `UElement` was obtained.
 
 Also, there is a `UElement#javaPsi` property that returns a "Java-like" `PsiElement`.
 It is a "fake" `PsiElement` to make different JVM languages emulate Java language to keep compatibility with Java-API.
-For instance, when calling `MethodReferencesSearch.search(PsiMethod)`, only Java natively provides `PsiMethod`;  
+For instance, when calling `MethodReferencesSearch.search(PsiMethod)`, only Java natively provides `PsiMethod`;
 other JVM languages thus provide a "fake" `PsiMethod` via `UMethod#javaPsi`.
 
 Note that `UElement#javaPsi` is physical for Java only. Thus `UElement#sourcePsi` should be used to obtain text-range or an anchor element for inspection warnings/gutter marker placement.
@@ -132,7 +131,7 @@ UAST is not a zero-cost abstraction: [some methods](https://youtrack.jetbrains.c
 so be careful with optimizations because it could yield the opposite effect.
 
 [Converting](#psi-to-uast-conversion) to `UElement` also could require resolve for some languages in some cases, again, possibly unexpectedly expensive.
-Converting to UAST should be performed only when necessary. 
+Converting to UAST should be performed only when necessary.
 For instance, converting the whole `PsiFile` to `UFile` and then walk it solely to collect `UMethod` declarations is inefficient.
 Instead, walk the `PsiFile` and convert each encountered matching element to `UMethod` explicitly.
 
@@ -144,8 +143,8 @@ For really hard performance optimisation consider using `UastLanguagePlugin.getP
 
 ### `ULiteralExpression` should not be used for strings
 
-[`ULiteralExpression`](upsource:///uast/uast-common/src/org/jetbrains/uast/expressions/ULiteralExpression.kt) represents 
-literal values like numbers, booleans, and string. 
+[`ULiteralExpression`](upsource:///uast/uast-common/src/org/jetbrains/uast/expressions/ULiteralExpression.kt) represents
+literal values like numbers, booleans, and string.
 Although string values are also literals, `ULiteralExpression` is not very handy to work with them.
 For instance, it doesn't handle Kotlin string interpolations.
 To process string literals when evaluating their value or to perform language injection, use [`UInjectionHost`](upsource:///uast/uast-common/src/org/jetbrains/uast/expressions/UInjectionHost.kt) instead.
@@ -182,28 +181,27 @@ It leads to the fact that the tree structure could seriously diverge between UAS
 so no ancestor-descendant relation preserving is guaranteed.
 
 For instance, results of
-                                                                     
+
 ```kotlin
       generateSequence(uElement, UElement::uastParent).mapNotNull { it.sourcePsi }
       generateSequence(uElement.sourcePsi) { it.parent }
 ```
 
 could be different, not only in the number of elements, but also in their order.
-                        
 
 ## Using UAST in Plugins
 
 To register extensions applicable to UAST, specify `language="UAST"` in <path>plugin.xml</path>.
-             
+
 ### Inspecting UAST Tree
 
 To inspect UAST Tree, invoke [internal action](enabling_internal.md) <menupath>Tools | Internal Actions | UAST | Dump UAST Tree (By Each PsiElement)</menupath>.
-            
+
 ### Inspections
 
 Use [`AbstractBaseUastLocalInspectionTool`](upsource:///java/java-analysis-api/src/com/intellij/codeInspection/AbstractBaseUastLocalInspectionTool.java) as base class.
 If inspection targets only a subset of default types (`UFile`, `UClass`, `UField`, and `UMethod`), specify `UElement`s as hints in overloaded constructor to improve performance.
-        
+
 ### Line Marker
 
 Use `UastUtils.getUParentForIdentifier()` or `UAnnotationUtils.getIdentifierAnnotationOwner()` for annotations to obtain suitable "identifier" element (see [Line Marker Provider](line_marker_provider.md) for details).

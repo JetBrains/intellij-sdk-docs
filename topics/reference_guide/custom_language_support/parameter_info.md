@@ -55,7 +55,7 @@ This allows for, e.g., highlighting a function usage with different arguments or
 Therefore, when the user moves the caret or types something, the following happens:
 
 1. The `syncUpdateOnCaretMove()` method is called.
-2. The `findElementForUpdatingParameterInfo()` method is called and it should find the correct function call (`ParamterOwner`) for the changed caret position.
+2. The `findElementForUpdatingParameterInfo()` method is called and it should find the correct function call (`ParameterOwner`) for the changed caret position.
    Implementations return `null` if an appropriate element could not be found or if it is different from `getParameterOwner()` of the provided `UpdateParameterInfoContext`.
    If `null` is returned, the `dispose()` method is called.
 3. The `processFoundElementForUpdatingParameterInfo()` method is called which allows for additional adjustments of the `UpdateParameterInfoContext`.

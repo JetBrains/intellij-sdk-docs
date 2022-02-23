@@ -21,14 +21,14 @@ For plugins that should work for all JVM languages in the same way.
 Some known examples are:
 * [Spring Framework](spring_api.md)
 * [Android Studio](android_studio.md)
-- [Plugin DevKit](upsource:///plugins/devkit/devkit-core)
+* [Plugin DevKit](upsource:///plugins/devkit/devkit-core)
 
 ### Which languages are supported?
 
-* Java - full support
-* Kotlin - full support
-* Scala - beta, but full support
-* Groovy - declarations only, method bodies not supported
+* Java: full support
+* Kotlin: full support
+* Scala: beta, but full support
+* Groovy: declarations only, method bodies not supported
 
 ### What about modifying PSI?
 

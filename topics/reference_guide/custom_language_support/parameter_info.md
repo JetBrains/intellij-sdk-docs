@@ -68,7 +68,7 @@ Therefore, when the user moves the caret or types something, the following happe
 Language authors can implement
 [`ParameterInfoHandlerWithTabActionSupport`](upsource:///platform/lang-api/src/com/intellij/lang/parameterInfo/ParameterInfoHandlerWithTabActionSupport.java)
 to extend the parameter info functionality with the ability to jump between parameter positions by pressing the tab key.
-For recurring tasks like finding the index of the current parameter in a function call, `com.intellij.lang.parameterInfo.ParameterInfoUtils` provides a collection of useful functions.
+For recurring tasks like finding the index of the current parameter in a function call, [`ParameterInfoUtils`](upsource:///platform/lang-api/src/com/intellij/lang/parameterInfo/ParameterInfoUtils.java) provides a collection of useful functions.
 
 It is further helpful to inspect all the context-interfaces that extend from `ParameterInfoContext` and can be found in the `com.intellij.lang.parameterInfo` package
 as they provide insight into what data of the parameter info can be accessed and changed in the different stages.

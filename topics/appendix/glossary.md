@@ -79,6 +79,9 @@ Run Configuration _(RC)_
 Stubs
 : A subset of a &rarr; _Program Structure Interface_ tree in a binary serialized compact format, see [Stub Indexes](stub_indexes.md).
 
+Symbol
+: A semantic element in some model, e.g., language or framework model, see [](symbols.md).
+
 ## U
 
 Unified Abstract Syntax Tree _(UAST)_

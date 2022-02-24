@@ -80,12 +80,7 @@ The new action should be registered under the `NewGroup` group, e.g:
 ### Custom "Create File From Template" Actions
 
 In some cases, the default mechanism for creating files from templates is insufficient.
-Consider a language that defines multiple types of core entities, e.g., in the Java language, the following entities can be created:
-* Class
-* Interface
-* Record
-* Enum
-* Annotation
+Consider a language that defines multiple types of core entities, e.g., in the Java language, the following entities can be created: Class, Interface, Record, Enum, and Annotation.
 
 Having all of those items in the <menupath>File | New</menupath> action group may overwhelm users with the number of options to choose.
 It is more user-friendly to provide a single <menupath>File | New | Java Class</menupath> action and let users choose a specific entity type in the creation dialog:
@@ -116,7 +111,8 @@ Internal templates can be exposed in the _Files_ category by additionally regist
 <internalFileTemplate name="My Record"/>
 ```
 
-Example: [`NewKotlinFileAction`](upsource:///plugins/kotlin/idea/src/org/jetbrains/kotlin/idea/actions/NewKotlinFileAction.kt) for Kotlin files creation action
+**Example**:
+[`NewKotlinFileAction`](upsource:///plugins/kotlin/idea/src/org/jetbrains/kotlin/idea/actions/NewKotlinFileAction.kt) for Kotlin files creation action
 
 ## Improving "Save File as Template…" Action
 

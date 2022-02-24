@@ -26,7 +26,7 @@ Create the `SimpleElementType` in the `org.intellij.sdk.language.psi` package by
 {src="simple_language_plugin/src/main/java/org/intellij/sdk/language/psi/SimpleElementType.java"}
 
 ## Define the Grammar
-Define a grammar for the Simple Language in the `com/intellij/sdk/language/Simple.bnf` file.
+Define a grammar for the Simple Language in the <path>com/intellij/sdk/language/Simple.bnf</path> file.
 
 ```properties
 {
@@ -62,11 +62,11 @@ This flexibility allows the IntelliJ Platform to recognize incorrectly defined p
 Note that the `SimpleTypes` class in the `elementTypeHolderClass` attribute above specifies the name of a class that gets generated from the grammar; it doesn't exist at this point.
 
 ## Generate a Parser
-Now that the grammar is defined generate a parser with PSI classes via **Generate Parser Code** from the context menu on the *Simple.bnf* file.
-This step generates a parser and PSI elements in the `/src/main/gen` folder of the project.
-Mark this folder as *Generated Sources Root* and make sure everything compiles without errors.
+Now that the grammar is defined, generate a parser with PSI classes via <control>Generate Parser Code</control> from the context menu on the <path>Simple.bnf</path> file.
+This step generates a parser and PSI elements in the <path>/src/main/gen</path> folder of the project.
+Mark this folder as <control>Generated Sources Root</control> and make sure everything compiles without errors.
 
- >  Gradle plugin [gradle-grammarkit-plugin](https://github.com/JetBrains/gradle-grammar-kit-plugin) can be used alternatively.
+ > Gradle plugin [gradle-grammarkit-plugin](https://github.com/JetBrains/gradle-grammar-kit-plugin) can be used alternatively.
  >
  {type="tip"}
 

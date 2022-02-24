@@ -140,6 +140,8 @@ The simplest ways of specifying the `@Storage` annotation are as follows:
 
 The state is persisted in a separate file by specifying a different setting for the `value` parameter, which was the `file` parameter before 2016.x.
 
+See [`StoragePathMacros`](upsource:///platform/projectModel-api/src/com/intellij/openapi/components/StoragePathMacros.java) for commonly used values.
+
  >  For application-level storage, it is strongly recommended to use a custom file, using of <path>other.xml</path> is deprecated.
  >
  {type="note"}

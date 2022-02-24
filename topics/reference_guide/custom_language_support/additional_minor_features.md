@@ -57,11 +57,6 @@ EP: `com.intellij.highlightUsagesHandlerFactory`
 
 [`HighlightUsagesHandlerFactory`](upsource:///platform/lang-impl/src/com/intellij/codeInsight/highlighting/HighlightUsagesHandlerFactory.java) allows highlighting e.g., Exit Points or Exceptions.
 
-### Parameter Info
-EP: `com.intellij.codeInsight.parameterInfo`
-
-[`ParameterInfoHandler`](upsource:///platform/lang-api/src/com/intellij/lang/parameterInfo/ParameterInfoHandler.java) provides support for *View \| Parameter Info*.
-
 ### To Do View
 EP: n/a
 
@@ -78,6 +73,7 @@ EP: `com.intellij.spellchecker.support`
 [`SpellcheckingStrategy`](upsource:///spellchecker/src/com/intellij/spellchecker/tokenizer/SpellcheckingStrategy.java) provides [`Tokenizer`](upsource:///spellchecker/src/com/intellij/spellchecker/tokenizer/Tokenizer.java) to use for given `PsiElement` (return `EMPTY_TOKENIZER` for no spellchecking).
 
 ### Reference Injection
+
 EP: `com.intellij.referenceInjector`
 
 [`ReferenceInjector`](upsource:///platform/analysis-api/src/com/intellij/psi/injection/ReferenceInjector.java) allows users to inject pre-defined references (e.g., "Encoding", "File Reference") into `PsiLanguageInjectionHost` elements (IntelliLang plugin required).
@@ -90,4 +86,5 @@ EP: `com.intellij.colorProvider`
 ### File Includes
 EP: `com.intellij.include.provider`
 
-[`FileIncludeProvider`](upsource:///platform/lang-impl/src/com/intellij/psi/impl/include/FileIncludeProvider.java) provides information about _include_ statements resolving to files (e.g., `<xi:include>` in XML). Including/included files can then be obtained via [`FileIncludeManager`](upsource:///platform/lang-api/src/com/intellij/psi/impl/include/FileIncludeManager.java).
+[`FileIncludeProvider`](upsource:///platform/lang-impl/src/com/intellij/psi/impl/include/FileIncludeProvider.java) provides information about _include_ statements resolving to files (e.g., `<xi:include>` in XML).
+Including/included files can then be obtained via [`FileIncludeManager`](upsource:///platform/lang-api/src/com/intellij/psi/impl/include/FileIncludeManager.java).

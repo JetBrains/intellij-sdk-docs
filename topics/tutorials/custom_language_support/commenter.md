@@ -28,8 +28,8 @@ Run the plugin by using the Gradle [runIde task](gradle_prerequisites.md#running
 
 Open the example Simple Language [properties file ](lexer_and_parser_definition.md#run-the-project) in the IDE Development Instance.
 Place the cursor at the `website` line.
-Select **Code \| Comment with Line Comment**.
+Select <menupath>Code | Comment with Line Comment</menupath>.
 The line is converted to a comment.
-Select **Code \| Comment with Line Comment** again, and the comment is converted back to active code.
+Select <menupath>Code | Comment with Line Comment</menupath> again, and the comment is converted back to active code.
 
 ![Commenter](commenter.png)

@@ -28,7 +28,7 @@ Injected code is always bound to a specific context that depends on the surround
 </tab>
 </tabs>
 
-It’s not unusual that injected fragments are distributed among, e.g., several strings that are concatenated like it is common for SQL queries. To solve this, the IntelliJ Platform allows injecting a language into several fragments at once. Multiple parts are then considered belonging together.
+It's not unusual that injected fragments are distributed among, e.g., several strings that are concatenated like it is common for SQL queries. To solve this, the IntelliJ Platform allows injecting a language into several fragments at once. Multiple parts are then considered belonging together.
 
 As a plugin author, you can provide language injection in different ways:
 
@@ -39,7 +39,7 @@ As a plugin author, you can provide language injection in different ways:
   For more control over how a language is injected, plugin authors use the `com.intellij.languageInjectionPerformer` EP.
 - Implementing the `com.intellij.multiHostInjector` EP gives plugin authors the most control over where and how language injection will take place.
 
-In the following sections, we’ll discuss these three options in more detail.
+In the following sections, we'll discuss these three options in more detail.
 
 ## IntelliLang
 
@@ -49,7 +49,7 @@ The injections shown are configured through XML files and loaded automatically.
 
 ### Example
 
-Let’s take a look at the Java `String.matches()` method that injects the RegExp language into the string of the first argument.
+Let's take a look at the Java `String.matches()` method that injects the RegExp language into the string of the first argument.
 In the IntelliLang settings, it is defined as one possible injection in Java code.
 
 ![Language Injection Settings](language_injection_settings.png){border-effect="line"}

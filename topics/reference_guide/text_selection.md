@@ -22,7 +22,7 @@ This makes it easy to select not only expressions, blocks, and function definiti
 
 When implementing a custom language, the IntelliJ Platform provides basic implementations of this EP, allowing you to select code based on your PSI structure and to select whole lines.
 In many cases this is sufficient to provide a good user experience.
-However, sometimes it’s advantageous to provide additional regions that the user may wish to be able to select when extending or shrinking a selection.
+However, sometimes it's advantageous to provide additional regions that the user may wish to be able to select when extending or shrinking a selection.
 
 This EP has two methods that need to be implemented:
 

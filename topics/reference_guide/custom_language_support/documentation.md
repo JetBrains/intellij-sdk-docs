@@ -9,7 +9,7 @@ Accessing the documentation is done by calling
 or hovering over a symbol, which will open a popup to show type information, parameters, usage descriptions, or examples.
 The source of the documentation contents can vary.
 Often it is extracted from comments (e.g. JavaDoc comments) in the source code,
-but it’s also possible to access external resources like web pages.
+but it's also possible to access external resources like web pages.
 
 In addition to showing the documentation, the `getQuickNavigateInfo()` method returns the text to be displayed
 when the user hovers over an element with <shortcut>Ctrl</shortcut>/<shortcut>Cmd</shortcut> pressed.
@@ -37,7 +37,7 @@ A common choice is to extract and format documentation comments.
 To format the documentation contents, you should use
 [`DocumentationMarkup`](upsource:///platform/analysis-api/src/com/intellij/lang/documentation/DocumentationMarkup.java)
 to achieve a consistent output.
-            
+
  > Use [`HtmlSyntaxInfoUtil`](upsource:///platform/lang-impl/src/com/intellij/openapi/editor/richcopy/HtmlSyntaxInfoUtil.java) to create Lexer-based highlighted code samples.
  >
  {type="tip"}
@@ -46,7 +46,7 @@ Once these steps are completed, the following additional features can be impleme
 
 * Implement `getQuickNavigateInfo()` to provide the text that should be displayed when an element is hovered over with <shortcut>Ctrl</shortcut>/<shortcut>Cmd</shortcut> pressed.
 * Implement `generateHoverDoc()` to show different contents on mouse hover.
-* Implement `getDocumentationElementForLookupItem()` to return a suitable PSI element for the given lookup element when 
+* Implement `getDocumentationElementForLookupItem()` to return a suitable PSI element for the given lookup element when
   <menupath>View | Quick Documentation</menupath> is called on an element of the autocompletion popup.
 * Implement `getUrlFor()` and [`ExternalDocumentationProvider`](upsource:///platform/analysis-api/src/com/intellij/lang/documentation/ExternalDocumentationProvider.java) to fetch documentation for elements from online resources.
 

@@ -29,7 +29,7 @@ When using Gradle, a number of metadata elements will be provided at build time 
   <version>1.0.0</version>
 
   <!-- A displayed Vendor name or Organization ID (if you have one created. The optional `URL` attribute specifies
-       the link to the vendor’s homepage.The optional `email` attribute specifies the vendor’s e-mail address.
+       the link to the vendor's homepage.The optional `email` attribute specifies the vendor's e-mail address.
        Displayed on the Plugins Page. -->
   <vendor url="https://plugins.jetbrains.com" email="marketplace@jetbrains.com">JetBrains</vendor>
 

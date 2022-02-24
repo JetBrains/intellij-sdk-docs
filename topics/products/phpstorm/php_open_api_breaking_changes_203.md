@@ -38,7 +38,7 @@ The following changes were introduced:
 See the [YouTrack issue](https://youtrack.jetbrains.com/issue/WI-54484) for details.
 
 ### Constructor Property Promotion
-The new shorthand syntax allows defining class properties by [“promoting” the constructor parameters](https://wiki.php.net/rfc/constructor_promotion) with a visibility keyword (`public`, `protected`, or `private`).
+The new shorthand syntax allows defining class properties by ["promoting" the constructor parameters](https://wiki.php.net/rfc/constructor_promotion) with a visibility keyword (`public`, `protected`, or `private`).
 
 The following changes were introduced:
 * `com.jetbrains.php.lang.psi.elements.Parameter` now can contain one of `com.jetbrains.php.lang.lexer.PhpTokenTypes#tsVARIABLE_MODIFIERS` as a child element.
@@ -67,7 +67,7 @@ With [attributes](https://wiki.php.net/rfc/attributes_v2), you can provide struc
 The following changes were introduced:
 * New PSI elements `PhpAttribute` and `PhpAttributesList` were added.
 
-* Possible attributes’ owners (`com.jetbrains.php.lang.psi.elements.Function`, `com.jetbrains.php.lang.psi.elements.Parameter`, and so on) can now have zero or more instances of `PhpAttributesList` as first children. This means that now it is not safe to assume that `PhpPsiElement#getFirstChild` will return some token. We encourage finding the needed tokens by `IElementType` manually.
+* Possible attributes' owners (`com.jetbrains.php.lang.psi.elements.Function`, `com.jetbrains.php.lang.psi.elements.Parameter`, and so on) can now have zero or more instances of `PhpAttributesList` as first children. This means that now it is not safe to assume that `PhpPsiElement#getFirstChild` will return some token. We encourage finding the needed tokens by `IElementType` manually.
 
 * If a PHPDoc comment of a named element is preceded by `PhpAttribute`, it will not be a sibling of a named element, but rather a child. We encourage using `PhpNamedElement#getDocComment` (which is already updated to reflect the changes) instead of finding the PHPDoc comment manually.
 

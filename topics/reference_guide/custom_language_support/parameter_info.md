@@ -59,7 +59,7 @@ Therefore, when the user moves the caret or types something, the following happe
    Implementations return `null` if an appropriate element could not be found or if it is different from `getParameterOwner()` of the provided `UpdateParameterInfoContext`.
    If `null` is returned, the `dispose()` method is called.
 3. The `processFoundElementForUpdatingParameterInfo()` method is called which allows for additional adjustments of the `UpdateParameterInfoContext`.
-   By default, this method does nothing and it’s usually not necessary to implement it.
+   By default, this method does nothing and it's usually not necessary to implement it.
 4. The `updateParameterInfo()` is called. Many implementations only invoke `setParameterOwner()` of the `UpdateParameterInfoContext` here.
 5. The `updateUI()` method is called for each item in the `getItemsToShow()` array of the context which were collected in the initial phase.
 

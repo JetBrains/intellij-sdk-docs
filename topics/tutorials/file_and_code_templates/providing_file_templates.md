@@ -15,7 +15,7 @@ There are multiple ways of creating file templates:
 Once the file templates are created and saved, they should be copied to the plugin project's <path>resources</path> directory.
 The created template can be found in the [IDE configuration directory](https://www.jetbrains.com/help/idea/directories-used-by-the-ide-to-store-settings-caches-plugins-and-logs.html#config-directory) in the <path>fileTemplates</path> directory, or they can be exported via <menupath>File | Manage IDE Settings | Export Settings</menupath> by selecting the <control>File Templates (schemes)</control> checkbox.
 The exported ZIP file will contain the <path>fileTemplates</path> directory with the created templates.
-The <path>fileTemplates</path> directory should be moved to the plugin project's <path>resources</path> folder, and the `.ft` extension must be added to the template files, e.g., `My Class.java` must be renamed to `My Class.java.ft`.
+The <path>fileTemplates</path> directory should be moved to the plugin project's <path>resources</path> folder, and the `.ft` extension must be added to the template files, e.g., <path>My Class.java</path> must be renamed to <path>My Class.java.ft</path>.
 
 The template name and extension displayed in the IDE settings will automatically be extracted from the file name.
 The <control>Enable Live Templates</control> option will be enabled if the template's content includes a `#[[$` fragment.
@@ -31,33 +31,33 @@ File templates can be assigned to one of the predefined categories depending on 
 
 #### Files
 
-The _Files_ category contains templates used for creating new files.
+The <control>Files</control> category contains templates used for creating new files.
 This is the main category, and it includes all templates placed directly in the <path>fileTemplates</path> directory.
 It should contain only templates for given language core entities, e.g., a class, an interface, or other items that users very frequently create.
 If the language defines a lot of core entities, see [](using_file_templates.md#custom-create-file-from-template-actions) for a more user-friendly solution.
 
 #### Includes
 
-The _Includes_ category contains reusable fragments used for including in other file templates using the Apache Velocity `#parse()` directive, e.g., license header or documentation comment skeleton.
+The <control>Includes</control> category contains reusable fragments used for including in other file templates using the Apache Velocity `#parse()` directive, e.g., license header or documentation comment skeleton.
 It includes templates located in the <path>fileTemplates/includes</path> directory.
 
 #### Code
 
-The _Code_ category contains templates used for inserting in existing files, e.g., a code fragment used in an [intention action](code_intentions.md) or [quick fix](code_inspections.md#quick-fix-implementation).
+The <control>Code</control> category contains templates used for inserting in existing files, e.g., a code fragment used in an [intention action](code_intentions.md) or [quick fix](code_inspections.md#quick-fix-implementation).
 It includes templates located in the <path>fileTemplates/code</path> directory.
 
 #### Internal
 
-The _Internal_ category contains templates that are not visible in the IDE settings by default and cannot be edited by users.
+The <control>Internal</control> category contains templates that are not visible in the IDE settings by default and cannot be edited by users.
 It includes templates located in the <path>fileTemplates/internal</path> directory.
 
 #### Other
 
-The _Other_ category contains other templates organized in groups.
+The <control>Other</control> category contains other templates organized in groups.
 It includes templates located in the <path>fileTemplates/j2ee</path> directory and registered via the `com.intellij.fileTemplateGroup` extension point (EP).
 Note that the <path>j2ee</path> directory name is historical and unrelated to the J2EE technology.
 This category is intended for templates that are not used for creating core language entities or are used less frequently by users, e.g., a specific XML configuration file, a framework-specific class in Java language, etc.
-To include file templates in the _Other_ section of the <menupath>Settings/Preferences | Editor | File and Code Templates</menupath> settings page, provide an implementation of the
+To include file templates in the <control>Other</control> section of the <menupath>Settings/Preferences | Editor | File and Code Templates</menupath> settings page, provide an implementation of the
 [`FileTemplateGroupDescriptorFactory`](upsource:///platform/lang-api/src/com/intellij/ide/fileTemplates/FileTemplateGroupDescriptorFactory.java)
 and register it via the `com.intellij.fileTemplateGroup` EP.
 
@@ -76,8 +76,8 @@ By default, the description contains generic text about the syntax and propertie
 It is highly recommended to provide a custom description explaining its purpose and any available properties.
 Overriding the default description is achieved by creating an HTML file with the name matching template's name but with the `.html` extension.
 Example:
-* Template file name: `My Class.java.ft`
-* Description file name: `My Class.java.html`
+* Template file name: <path>My Class.java.ft</path>
+* Description file name: <path>My Class.java.html</path>
 
 The description file must be located in the same directory as the template file.
 It is recommended to follow the convention from the
@@ -94,4 +94,4 @@ and register it via the `com.intellij.defaultTemplatePropertiesProvider` EP.
 
 **Example**: Java Plugin's
 [`TemplatePackagePropertyProvider`](upsource:///java/java-impl/src/com/intellij/ide/fileTemplates/TemplatePackagePropertyProvider.java)
-providing `PACKAGE_NAME` property based on the directory a file is created in
+providing `PACKAGE_NAME` property based on the directory a file is created in.

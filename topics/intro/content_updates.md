@@ -9,15 +9,13 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 
 ## 2022
 
-### February-24
-
-File and Code Templates
-: Add [](file_and_code_templates.md) section explaining how to implement file and code templates functionality.
-
 ### February-22
 
 Parameter Info
 : Add [](parameter_info.md) section explaining how information about function parameters can be shown in the IDE.
+
+File and Code Templates
+: Add [](file_and_code_templates.md) section explaining how to implement functionality that allows generating files and code fragments containing repetitive text and patterns.
 
 ### January-22
 

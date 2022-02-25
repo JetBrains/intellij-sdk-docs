@@ -21,3 +21,7 @@ The contents of all listed file templates can be edited in the IDE settings so t
 > See [File and Code Templates](https://www.jetbrains.com/help/idea/settings-file-and-code-templates.html), [File templates](https://www.jetbrains.com/help/idea/using-file-and-code-templates.html), and related sections in the IntelliJ IDEA Web Help for more information.
 >
 {type="note"}
+
+These sections describe how to add File and Code Templates, and their associated building blocks, to plugins:
+* [](providing_file_templates.md)
+* [](using_file_templates.md)

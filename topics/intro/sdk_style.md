@@ -17,6 +17,7 @@ The style of the Intellij Platform SDK documentation is captured by using a mark
 The documentation files themselves are [Markdown](https://github.github.com/gfm/) files (<path>*.md</path>) that get automatically converted to HTML when the site is built.
 
 ### Page Format
+
 Each Markdown file must contain a header defining its title:
 
 ```yaml
@@ -31,6 +32,7 @@ Redirects can be specified in the [Table of Contents](#table-of-contents).
 ## Content Style
 
 ### Terminology
+
 Consistent terminology helps the reader grasp new concepts more quickly:
 * The open-source code in the GitHub repository `intellij-community` is known as the IntelliJ Platform.
   Use the full phrase in the SDK documentation.
@@ -60,6 +62,7 @@ Consistent text styles are used to standardize references and keywords:
 * See [Links to IntelliJ Platform Source](#links-to-intellij-platform-source) for more details about representing names of source files in links.
 
 ### Links
+
 Links are handled as standard Markdown links and can be anchored to external sites, pages within the sites, or headings in the sites.
 
 To link to a page within the site using its `title:` as link text, use shortcut notation `[](page.md)`{disable-links}.
@@ -68,6 +71,7 @@ When a Markdown header is converted to an HTML header, it is assigned an ID so t
 For example, `## Introduction` gets the ID of `introduction`, and can be linked either in the same page or cross-page as described below.
 
 #### General Links
+
 General Markdown links have the default Markdown link style:
 * `[Gradle](https://gradle.org)`{disable-links} ([Gradle](https://gradle.org)) links to an external site, such as companies, articles, etc.
   If URL contains `%` character, append `{interpolate-variables="false"}`.
@@ -81,6 +85,7 @@ General Markdown links have the default Markdown link style:
   * `[Link to the section on another page](other_page.md#another-section)`{disable-links} links to a heading on another page.
 
 #### Links to IntelliJ Platform Source
+
 Links to files in the IntelliJ Platform (`intellij-community`) repository use `upsource:///` instead of the full URL to the repository.
 The `upsource:///` URI effectively points to the root of the `intellij-community` repository.
 * `[README.md](upsource:///README.md)`{disable-links} links to general, non-code information files. ([README.md](upsource:///README.md))
@@ -97,6 +102,7 @@ The `upsource:///` URI effectively points to the root of the `intellij-community
 * Links to files in source code packages in other repositories follow much the same rules, except the links use `https:` instead of `upsource:///`.
 
 ### Guidelines for Highlighting Syntax
+
 In-paragraph code fragments and IntelliJ Platform APIs are formatted according to these rules:
 * Avoid using qualifiers like "`Foo` interface" or "`Foo` abstract class".
   Just refer to `Foo`.
@@ -113,6 +119,7 @@ In-paragraph code fragments and IntelliJ Platform APIs are formatted according t
   Method names are prefixed with the class/interface name when needed for clarity: `Foo.bar()`.
 
 ### Source Code
+
 Source code is represented by using code fences, which are three backticks.
 
 Syntax highlighting is applied by specifying the language after the first set of ticks:
@@ -124,9 +131,9 @@ Syntax highlighting is applied by specifying the language after the first set of
 ```
 Supported languages include `xml`, `java`, `kotlin`, `groovy` `bash`, `md`, and `text` for plaintext.
 
- >  Source code blocks must have one blank line before and after them, and must have a language specification for highlighting.
- >
- {type="note"}
+> Source code blocks must have one blank line before and after them, and must have a language specification for highlighting.
+>
+{type="note"}
 
 Whole files can be imported on a page using `src` attribute after code fences specifying the full path relative to <path>code_samples</path> root folder.
 
@@ -141,6 +148,7 @@ To include only a specific method, specify `include-symbol="methodName"` additio
 In any case, please keep code samples concise and avoid any unnecessary "surrounding" code or import statements.
 
 ### Tables
+
 The syntax is to use the pipe (`|`) and minus symbols:
 
 ```md
@@ -152,6 +160,7 @@ The syntax is to use the pipe (`|`) and minus symbols:
 Use `&#124;` instead of `|` to prevent escaping problems for `<menupath>` elements.
 
 ### Notes and Callouts
+
 Notes and callouts can be specified using the blockquote syntax.
 The converter looks at the `type` attribute specified after the text block.
 If so, it applies a callout style.
@@ -162,9 +171,9 @@ The example below will be displayed as a callout, styled as a "note":
     >
     {type="note"}
 ```
- >  This is a note
- >
- {type="note"}
+> This is a note
+>
+{type="note"}
 
 The styles available for callouts are:
 * `tip` - Information that makes the reader more productive.
@@ -172,13 +181,14 @@ The styles available for callouts are:
   This callout is reserved for essential points and concepts.
 * `warning` - Information that is critical for the user to understand to prevent failures or errors.
 
- >  TODO/todo comments are discouraged in the main branch of `intellij-sdk-docs`.
+> TODO/todo comments are discouraged in the main branch of `intellij-sdk-docs`.
 > There are always exceptions, but the best practice is to resolve all TODOs before the final review.
 > If immediate resolution isn't possible, write a YouTrack [SDK Issue](https://youtrack.jetbrains.com/issues/IJSDK) that captures the TODO and remove the comment from the document.
- >
- {type="tip"}
+>
+{type="tip"}
 
 ### Images
+
 Images can be included by adding the file directly to the `intellij-sdk-docs` repository.
 Each subject directory typically has a subdirectory within the root <path>/images</path> directory.
 
@@ -186,7 +196,7 @@ Images in this documentation are generally screenshots.
 The preferred image format is PNG at 144 DPI resolution.
 A resolution of 72 DPI is acceptable but may look blurry on high-resolution monitors.
 
-Use [Window Resizer](https://plugins.jetbrains.com/plugin/18045-window-resizer) plugin for exact resizing of IDE application window.
+Use [Window Resizer](https://plugins.jetbrains.com/plugin/18045-window-resizer) plugin for exact resizing of the IDE application window.
 
 It is crucial to reduce the size of image files to prevent bloating the repository and impacting the performance of the documentation site.
 Resize an image to be nearly the desired width on a documentation page.
@@ -199,7 +209,7 @@ Images are embedded in a document by adding a Markdown link to the image like so
     ![Alt text](image.png)
 ```
 
-If the width of an image needs to be adjusted it can be specified as follows:
+If the width of an image needs to be adjusted, it can be specified as follows:
 
 ```md
     ![Alt text](image.png){width="42"}
@@ -212,7 +222,7 @@ Images too big to fit into main content can have <control>+</control> overlay co
 <tabs>
 <tab title="PNG">
 
-For **PNG** images, provide additional zoomed variant <path>image.zoomed.png</path> with this notation:
+For **PNG** images, provide an additional zoomed variant <path>image.zoomed.png</path> with this notation:
 
 ```md
     ![Alt text](image.png){thumbnail="true"}
@@ -233,6 +243,7 @@ For **SVG** images, use this notation:
 </tabs>
 
 ## Table of Contents
+
 The table of contents for the site is displayed in the tree view on the left-hand side of the site, and it is generated from the <path>ijs.tree</path> file.
 The list can have nested items, which are displayed as child items in the table of contents.
 

@@ -15,7 +15,7 @@ There are multiple ways of creating file templates:
 Once the file templates are created and saved, they should be copied to the plugin project's <path>resources</path> directory.
 The created template can be found in the [IDE configuration directory](https://www.jetbrains.com/help/idea/directories-used-by-the-ide-to-store-settings-caches-plugins-and-logs.html#config-directory) in the <path>fileTemplates</path> directory, or they can be exported via <menupath>File | Manage IDE Settings | Export Settings</menupath> by selecting the <control>File Templates (schemes)</control> checkbox.
 The exported ZIP file will contain the <path>fileTemplates</path> directory with the created templates.
-The <path>fileTemplates</path> directory should be moved to the plugin project's <path>resources</path> folder, and the `.ft` extension must be added to the template files, e.g., <path>My Class.java</path> must be renamed to <path>My Class.java.ft</path>.
+The <path>fileTemplates</path> directory should be moved to the plugin project's <path>resources</path> folder, and the <path>.ft</path> extension must be added to the template files, e.g., <path>My Class.java</path> must be renamed to <path>My Class.java.ft</path>.
 
 The template name and extension displayed in the IDE settings will automatically be extracted from the file name.
 The <control>Enable Live Templates</control> option will be enabled if the template's content includes a `#[[$` fragment.
@@ -74,7 +74,7 @@ which allows creating nested groups.
 
 By default, the description contains generic text about the syntax and properties of the given template.
 It is highly recommended to provide a custom description explaining its purpose and any available properties.
-Overriding the default description is achieved by creating an HTML file with the name matching template's name but with the `.html` extension.
+Overriding the default description is achieved by creating an HTML file with the name matching template's name but with the <path>.html</path> extension.
 Example:
 * Template file name: <path>My Class.java.ft</path>
 * Description file name: <path>My Class.java.html</path>

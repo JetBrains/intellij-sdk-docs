@@ -41,7 +41,7 @@ The IntelliJ Platform is Open Source, under the [Apache License](upsource:///LIC
 
 While this guide refers to the IntelliJ Platform as a separate entity, there is no "IntelliJ Platform" GitHub repository.
 Instead, the platform is considered to be an almost complete overlap with the IntelliJ IDEA Community Edition, which is a free and Open Source version of IntelliJ IDEA Ultimate (the GitHub repository linked above is the [JetBrains/intellij-community](https://github.com/JetBrains/intellij-community) repository).
-Please note: starting with 2021.1 release, some plugins bundled with IntelliJ IDEA Community Edition are not open-source.
+Please note: starting with the 2021.1 release, some plugins bundled with IntelliJ IDEA Community Edition are not open-source.
 
 The version of the IntelliJ Platform is defined by the version of the corresponding release of IntelliJ IDEA Community Edition.
 For example, to build a plugin against IntelliJ IDEA (2019.1.1), build #191.6707.61 means specifying the same build number tag to get the correct Intellij Platform files from the `intellij-community` repository.
@@ -56,12 +56,12 @@ IntelliJ IDEA Ultimate is a superset of the IntelliJ IDEA Community Edition but 
 Similarly, other products such as WebStorm and DataGrip are based on the IntelliJ IDEA Community Edition, but with a different set of plugins included and excluding other default plugins.
 This allows plugins to target multiple products, as each product will include base functionality and a selection of plugins from the IntelliJ IDEA Community Edition repository.
 
- >  Qualifying Open Source projects can [apply for free licenses](https://www.jetbrains.com/community/opensource/) of JetBrains products.
+ > Qualifying Open Source projects can [apply for free licenses](https://www.jetbrains.com/community/opensource/) of JetBrains products.
  >
  {type="tip"}
 
 The following IDEs are based on the IntelliJ Platform:
-* JetBrains IDEs
+* JetBrains IDEs:
   * [AppCode](https://www.jetbrains.com/objc/)
   * [CLion](https://www.jetbrains.com/clion/)
   * [DataGrip](https://www.jetbrains.com/datagrip/)
@@ -73,9 +73,9 @@ The following IDEs are based on the IntelliJ Platform:
   * [Rider](#rider)
   * [RubyMine](https://www.jetbrains.com/ruby/)
   * [WebStorm](https://www.jetbrains.com/webstorm/)
-* [Android Studio](https://developer.android.com/studio/index.html) IDE from Google.
+* [Android Studio](https://developer.android.com/studio/index.html) IDE from Google
 * [Comma](https://commaide.com/) IDE for Raku (formerly known as Perl 6)
-* [CUBA Studio](https://www.cuba-platform.com/)
+* [Jmix Studio](https://www.jmix.io/tools/)
 
 #### Rider
 JetBrains [Rider](https://www.jetbrains.com/rider/) uses the IntelliJ Platform differently than other IntelliJ based IDEs.
@@ -85,7 +85,7 @@ It also integrates into the standard Find Usages and Search Everywhere UI and us
 However, Rider doesn't create a full [PSI](psi.md) (syntactic and semantic) model for C# files.
 Instead, it reuses [ReSharper](https://www.jetbrains.com/resharper/) to provide language functionality.
 All of the C# PSI model, inspections, code rewritings, such as quick fixes and refactorings are run out of the process, in a command-line version of ReSharper.
-This means that creating a plugin for Rider involves two parts - a plugin that lives in the IntelliJ "front end" to show user interface, and a plugin that lives in the ReSharper "back end" to analyze and work with the C# PSI.
+This means that creating a plugin for Rider involves two parts — a plugin that lives in the IntelliJ "front end" to show user interface, and a plugin that lives in the ReSharper "back end" to analyze and work with the C# PSI.
 
 Fortunately, many plugins can simply work with the ReSharper backend.
 The Rider takes care of displaying the results of inspections and code completion, and many plugins can be written that don't require an IntelliJ UI component.

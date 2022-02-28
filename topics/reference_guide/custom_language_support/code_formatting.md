@@ -45,8 +45,8 @@ For every block, the plugin specifies the following properties:
    There are different modes of indenting defined by factory methods in the `Indent` class.
    The most commonly used are:
   * the none indent (which means the child block is not indented)
-  * the regular indent (the child block is indented by the number of spaces specified in the **Project Code Style \| General \| Indent** setting)
-  * the continuation indent (based on **Project Code Style \| General \| Continuation Indent** setting)
+  * the regular indent (the child block is indented by the number of spaces specified in the <control>Tabs and Indents | Indent</control> code style setting)
+  * the continuation indent (based on <control>Tabs and Indents | Continuation indent</control> code style setting)
 
   If the formatting model does not specify an indent, the "continuation without first" mode is used.
      This default means that the first block in a sequence of blocks with that type is not indented, and the following blocks are indented with a continuation indent.
@@ -65,7 +65,6 @@ An important special case in using the formatter is the smart indent performed w
 To determine the indent for the new line, the formatter engine calls the method `getChildAttributes()` on either the block immediately before the caret or the parent of that block, depending on the return value of the `isIncomplete()` method for the block before the caret.
 If the block before the cursor is incomplete (contains elements that the user will probably type but has not yet typed, like a closing parenthesis of the parameter list or the trailing semicolon of a statement), `getChildAttributes()` is called on the block before the caret; otherwise, it's called on the parent block.
 
-**New in IntelliJ IDEA 13**:
 Code formatting can be suppressed per region via [special comments](https://youtrack.jetbrains.com/issue/IDEA-56995#comment=27-605969).
 
 **Example**:

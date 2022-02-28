@@ -53,8 +53,8 @@ These files don't have extensions, so you need to map corresponding patterns to 
 
 Sources of a plugin for External Builder should be put in a separate module.
 By convention, such a module has a name '...-jps-plugin', and its sources are placed under the 'jps-plugin' directory in the main plugin directory.
-Use `com.intellij.compileServer.plugin` extension to add the plugin to the classpath of the external build process, the plugin jar should be named `<jps module name>.jar`. 'Build' \| 'Prepare Plugin Module for deployment' action will automatically pack the 'jps-plugin' part to a separate jar accordingly.
-                          
+Use `com.intellij.compileServer.plugin` extension to add the plugin to the classpath of the external build process, the plugin JAR should be named `<jps module name>.jar`. 'Build' \| 'Prepare Plugin Module for deployment' action will automatically pack the 'jps-plugin' part to a separate JAR accordingly.
+
 See [IntelliJ Platform Explorer](https://jb.gg/ipe?extensions=com.intellij.compileServer.plugin) for samples.
 
 ### Debugging a Plugin for External Builder
@@ -62,7 +62,7 @@ See [IntelliJ Platform Explorer](https://jb.gg/ipe?extensions=com.intellij.compi
 **If your test IDE is IntelliJ IDEA 16.0 or newer**
 
 Switch on "Debug Build Process" toggle action (available via 'Find Action') in the test IDE.
-After that every time compilation is run, the build process will wait for debugger connection on some (random) port and will show the port number in the status bar.
+After that, every time compilation is run, the build process will wait for debugger connection on some (random) port and will show the port number in the status bar.
 In a working copy of IDE, a "Remote" run configuration should be created and pointed to this port.
 Suppose you often need to debug external builders and want to reuse the created "Remote" run configuration.
 In that case, you may fix the port number by adding the following VM option to the plugin run configuration:
@@ -89,7 +89,7 @@ To enable them do the following:
 
 1. Copy `<ide-home>/lib/yjp-controller-api-redist.jar` and `<ide-home>/bin/yjpagent.*`  files to `<ide-system-dir>/compile-server`
 2. In "Settings \| Compiler \| Additional compiler process VM options" field enter `-Dprofiling.mode=true`
-3. Make sure automatic make is turned off
+3. Make sure the automatic make is turned off
 
 After this, every build process run should result in a CPU snapshot stored in `<user-home>`/Snapshots directory.
 Snapshots are named like "ExternalBuild\-\{date\}.snapshot".

@@ -3,6 +3,7 @@
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 ## Introduction
+
 Plugins can add actions to existing IDE menus and toolbars, as well as add new menus and toolbars.
 The IntelliJ Platform calls the actions of plugins in response to user interactions with the IDE.
 However, the actions of a plugin must first be defined and registered with the IntelliJ Platform.
@@ -10,6 +11,7 @@ However, the actions of a plugin must first be defined and registered with the I
 Using the SDK code sample `action_basics`, this tutorial illustrates the steps to create an action for a plugin.
 
 ## Creating a Custom Action
+
 Custom actions extend the abstract class [`AnAction`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java).
 Classes that extend it should override `AnAction.update()`, and must override `AnAction.actionPerformed()`.
 * The `update()` method implements the code that enables or disables an action.
@@ -33,11 +35,11 @@ public class PopupDialogAction extends AnAction {
 }
 ```
 
- >  `AnAction` classes do not have class fields of any kind.
+> `AnAction` classes do not have class fields of any kind.
 > This restriction prevents memory leaks.
 > For more information about why, see [Action Implementation](basic_action_system.md#action-implementation).
- >
- {type="warning"}
+>
+{type="warning"}
 
 At this stage, `update()` implicitly defaults always to enable this action.
 The implementation of `actionPerformed()` does nothing.
@@ -46,11 +48,13 @@ These methods fully implemented in [Developing the AnAction Methods](#developing
 Before fleshing out those methods, to complete this minimal implementation, `PopupDialogAction` must be registered with the IntelliJ Platform.
 
 ## Registering a Custom Action
+
 Actions are registered by declaring them in code or by declaring them in the `<actions>` section of a plugin configuration (<path>plugin.xml</path>) file.
 This section describes using IDE tooling - the New Action Form - to add a declaration to the <path>plugin.xml</path> file, and then tuning registration attributes manually.
 A more comprehensive explanation of action registration is available in the [Action Registration](basic_action_system.md#registering-actions) section of this guide.
 
 ### Registering an Action with the New Action Form
+
 IntelliJ IDEA has an embedded inspection that spots unregistered actions.
 Verify the inspection is enabled at <menupath>Settings/Preferences | Editor | Inspections | Plugin DevKit | Code | Component/Action not registered</menupath>.
 Here is an example for this stage of the `PopupDialogAction` class:
@@ -87,12 +91,13 @@ After finishing the **New Action** form and applying the changes, the `<actions>
   </actions>
 ```
 
-The `<action>` element declares the _Action ID_ (`id`,) _Class Name_ (`class`,) _Name_ (`text`,) and _Description_ from the **New Action** form.
+The `<action>` element declares the _Action ID_ (`id`), _Class Name_ (`class`), _Name_ (`text`), and _Description_ from the **New Action** form.
 The `<add-to-group>` element declares where the action will appear and mirrors the names of entries from the form.
 
 This declaration is adequate, but adding more attributes is discussed in the next section.
 
 ### Setting Registration Attributes Manually
+
 An action declaration can be added manually to the <path>plugin.xml</path> file.
 An exhaustive list of declaration elements and attributes is presented in [Registering Actions in plugin.xml](basic_action_system.md#registering-actions-in-pluginxml).
 Attributes are added by selecting them from the **New Action** form, or by editing the registration declaration directly in the plugin.xml file.
@@ -113,12 +118,14 @@ The full declaration is:
 ```
 
 #### Using Override-Text for an Action
+
 By using the `override-text` element introduced in 2020.1 of the IntelliJ Platform, the action text can be different depending on the context of where the action appears: menu, toolbar, etc.
 The example above uses this element to ensure the shorter text "Pop Dialog Action" is shown anywhere the action appears in the Main Menu structure.
 Otherwise, the default, more explanatory text "Action Basics Plugin: Pop Dialog Action" is shown.
 For more information, see [Setting the Override-Text Element](basic_action_system.md#setting-the-override-text-element).
 
 ## Testing the Minimal Custom Action Implementation
+
 After performing the steps described above, compile and run the plugin to see the newly created action available as a Tools Menu item, which is within the context of the Main Menu:
 
 !["Register action"](tools_menu_item_action.png){width="350"}
@@ -132,6 +139,7 @@ Selecting the action from the menu, keyboard/mouse shortcuts, or Find Action won
 However, it confirms the new entry appears at **Tools \| Pop Dialog Action** and **Help \| Find Action...**.
 
 ## Developing the `AnAction` Methods
+
 At this point, the new action `PopupDialogAction` is registered with the IntelliJ Platform and functions in the sense that  `update()` and `actionPerformed()` are called in response to user interaction with the IDE Tools menu.
 However, neither method implements any code to perform useful work.
 
@@ -140,6 +148,7 @@ The `update()` method defaults to always enable the action, which is satisfactor
 So `actionPerformed()` will be developed first.
 
 ### Extending the `actionPerformed()` Method
+
 Adding code to the `PopupDialogAction.actionPerformed()` method makes the action do something useful.
 The code below gets information from the `anActionEvent` input parameter and constructs a message dialog.
 A generic icon, and the `dlgMsg` and `dlgTitle` attributes from the invoking menu action are displayed.
@@ -167,6 +176,7 @@ See [Determining the Action Context](basic_action_system.md#determining-the-acti
 ```
 
 ### Extending the `update()` Method
+
 Adding code to `PopupDialogAction.update()` gives finer control of the action's visibility and availability.
 The action's state and(or) presentation can be dynamically changed depending on the context.
 
@@ -195,11 +205,13 @@ The `update()` method does not check to see if a `Navigatable` object is availab
 This check is unnecessary because using the `Navigatable` object is opportunistic in `actionPerformed()`.
 See [Determining the Action Context](basic_action_system.md#determining-the-action-context) for more information about accessing information from the `AnActionEvent` input parameter.
 
-### Other Method Overrides
+### Other Methods Overrides
+
 A constructor is overridden in `PopupDialogAction`, but this is an artifact of reusing this class for a dynamically created menu action.
 Otherwise, overriding constructors for `AnAction` is not required.
 
 ## Testing the Custom Action
+
 After compiling and running the plugin project and invoking the action, the dialog will pop up:
 
 ![Action performed](action_performed.png){width="800"}

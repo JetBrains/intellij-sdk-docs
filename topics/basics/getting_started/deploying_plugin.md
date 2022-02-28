@@ -12,8 +12,8 @@ To deploy a plugin:
 
   ![Prepare Plugin for Deployment](prepare_plugin_for_deployment.png)
 
-* If the plugin module does not depend on any libraries, a `.jar` archive will be created.
-  Otherwise, a `.zip` archive will be created, including all the plugin libraries specified in the project settings.
+* If the plugin module does not depend on any libraries, a JAR archive will be created.
+  Otherwise, a ZIP archive will be created, including all the plugin libraries specified in the project settings.
 
   ![Jar Saved Notification](jar_saved_notification.png)
 

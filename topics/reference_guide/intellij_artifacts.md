@@ -35,7 +35,7 @@ A link to this repository should be added to <path>pom.xml</path>/<path>build.gr
 IntelliJ Platform module artifacts are utilized by adding information to a project's <path>build.gradle</path> file.
 More information about [Gradle support](https://www.jetbrains.com/help/idea/gradle.html) is available in the IntelliJ IDEA Help documentation.
 
-To setup dependencies on a module there are two types of information needed:
+To set up dependencies on a module, there are two types of information needed:
 1. Specify the corresponding repository URL for the artifact.
 2. Specify the [Maven coordinates](https://maven.apache.org/pom.html#Maven_Coordinates) for the artifact.
 
@@ -94,7 +94,7 @@ The example illustrates declaring the artifact URL, Maven coordinates, and versi
 There are two parts to the example: the repository and the dependency sections.
 
 ### Repositories Section
-This code snippet selects the release repository with the first URL, and repository of IntelliJ Platform dependencies with the second URL.
+This code snippet selects the release repository with the first URL, and the repository of IntelliJ Platform dependencies with the second URL.
 The second URL is needed because this example selects individual modules.
 
 ```groovy

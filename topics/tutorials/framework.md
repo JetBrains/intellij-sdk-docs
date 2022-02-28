@@ -14,7 +14,7 @@ public class DemoFramework extends FrameworkTypeEx {
 ```
 
 ## Registering Framework
-The newly created framework class should be registered as an extension point by adding `com.intellij.framework.type` extension in   [`plugin.xml`](https://github.com/JetBrains/intellij-sdk-code-samples/blob/main/framework_basics/src/main/resources/META-INF/plugin.xml) configuration file:
+The newly created framework class should be registered as an extension point by adding `com.intellij.framework.type` extension in [`plugin.xml`](https://github.com/JetBrains/intellij-sdk-code-samples/blob/main/framework_basics/src/main/resources/META-INF/plugin.xml) configuration file:
 
 ```xml
 <extensions defaultExtensionNs="com.intellij">
@@ -34,6 +34,7 @@ public class DemoFramework extends FrameworkTypeEx {
   protected DemoFramework() {
     super(FRAMEWORK_ID);
   }
+}
 ```
 
 The *Presentable name* and *icon* define the appearance of visual components related to the framework:
@@ -60,43 +61,42 @@ To make the framework set up available while executing the steps to create a pro
 In this example the framework is added to any [`ModuleType`](upsource:///platform/lang-core/src/com/intellij/openapi/module/ModuleType.java) without checking, which is usually not the case.
 
 ```java
-  @NotNull
-  @Override
-  public FrameworkSupportInModuleProvider createProvider() {
-    return new FrameworkSupportInModuleProvider() {
-      @NotNull
-      @Override
-      public FrameworkTypeEx getFrameworkType() {
-        return DemoFramework.this;
-      }
+@NotNull
+@Override
+public FrameworkSupportInModuleProvider createProvider() {
+  return new FrameworkSupportInModuleProvider() {
+    @NotNull
+    @Override
+    public FrameworkTypeEx getFrameworkType() {
+      return DemoFramework.this;
+    }
 
-      @NotNull
-      @Override
-      public FrameworkSupportInModuleConfigurable createConfigurable(@NotNull FrameworkSupportModel model) {
-        return new FrameworkSupportInModuleConfigurable() {
+    @NotNull
+    @Override
+    public FrameworkSupportInModuleConfigurable createConfigurable(@NotNull FrameworkSupportModel model) {
+      return new FrameworkSupportInModuleConfigurable() {
 
-          @Override
-          public JComponent createComponent() {
-            return new JCheckBox("SDK Extra Option");
-          }
+        @Override
+        public JComponent createComponent() {
+          return new JCheckBox("SDK Extra Option");
+        }
 
-          @Override
-          public void addSupport(@NotNull Module module,
-                                 @NotNull ModifiableRootModel model,
-                                 @NotNull ModifiableModelsProvider provider) {
-            // This is the place to set up a library, generate a specific file, etc
-            // and actually add framework support to a module.
-          }
-        };
-      }
+        @Override
+        public void addSupport(@NotNull Module module,
+                               @NotNull ModifiableRootModel model,
+                               @NotNull ModifiableModelsProvider provider) {
+          // This is the place to set up a library, generate a specific file, etc
+          // and actually add framework support to a module.
+        }
+      };
+    }
 
-      @Override
-      public boolean isEnabledForModuleType(@NotNull ModuleType type) {
-        return true;
-      }
-    };
-  }
-
+    @Override
+    public boolean isEnabledForModuleType(@NotNull ModuleType type) {
+      return true;
+    }
+  };
+}
 ```
 ## Compile and Run the Plugin
 

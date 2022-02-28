@@ -18,7 +18,7 @@ In the simplest case, when one needs to know in what files some data is present,
 When the index implementation indexes a file, it receives a file's content and returns a map from the keys found in the file to the associated values.
 
 When accessing an index, specify the key you're interested in and get back the list of files in which the key occurs, and the value associated with each file.
-                                      
+
  > In some cases, using [Gists](indexing_and_psi_stubs.md#gists) can be considered as an alternative.
  >
  {type="tip"}
@@ -46,17 +46,17 @@ In case of single value per file, extend from [`SingleEntryFileBasedIndexExtensi
 
 Please see also [Improving indexing performance](performance.md#improving-indexing-performance).
 
- > **Critical Implementation Notes** 
- > 
- > Value class must implement `equals()` and `hashCode()` properly, so a value deserialized from binary data should be equal to original one.
- >
- > The data returned by `DataIndexer.map()` must depend only on input data passed to the method, and must not depend on any external files.
- > Otherwise, your index will not be correctly updated when the external data changes, and you will have stale data in your index.
- >
- > Please set system property `intellij.idea.indices.debug`/`intellij.idea.indices.debug.extra.sanity` to `true` to enable additional debugging assertions during development to assert correct index implementation.
- >
- {type="warning"}
- 
+> **Critical Implementation Notes**
+>
+> Value class must implement `equals()` and `hashCode()` properly, so a value deserialized from binary data should be equal to original one.
+>
+> The data returned by `DataIndexer.map()` must depend only on input data passed to the method, and must not depend on any external files.
+> Otherwise, your index will not be correctly updated when the external data changes, and you will have stale data in your index.
+>
+> Please set system property `intellij.idea.indices.debug`/`intellij.idea.indices.debug.extra.sanity` to `true` to enable additional debugging assertions during development to assert correct index implementation.
+>
+{type="warning"}
+
 ## Accessing a File-Based Index
 
 Access to file-based indexes is performed through the [`FileBasedIndex`](upsource:///platform/indexing-api/src/com/intellij/util/indexing/FileBasedIndex.java) class.
@@ -96,7 +96,7 @@ Generally, the word index should be accessed indirectly by using helper methods 
 
 ### File Type Index
 [`FileTypeIndex`](upsource:///platform/indexing-api/src/com/intellij/psi/search/FileTypeIndex.java) serves a similar goal: it allows to find all files of a particular [`FileType`](upsource:///platform/core-api/src/com/intellij/openapi/fileTypes/FileType.java) quickly.
-                       
+
 ## Additional Index Roots
 
 To add additional files/directories to be indexed, implement [`IndexableSetContributor`](upsource:///platform/indexing-api/src/com/intellij/util/indexing/IndexableSetContributor.java) and register in [`com.intellij.indexedRootsProvider`](https://jb.gg/ipe?extensions=com.intellij.indexedRootsProvider) extension point.

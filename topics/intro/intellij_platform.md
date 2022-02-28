@@ -77,6 +77,8 @@ The following IDEs are based on the IntelliJ Platform:
 * [Comma](https://commaide.com/) IDE for Raku (formerly known as Perl 6)
 * [Jmix Studio](https://www.jmix.io/tools/)
 
+See *Part VIII — Product Specific* for IDE specific details.
+
 #### Rider
 JetBrains [Rider](https://www.jetbrains.com/rider/) uses the IntelliJ Platform differently than other IntelliJ based IDEs.
 It uses the IntelliJ Platform to provide the user interface for a C# and .NET IDE, with the standard IntelliJ editors, tool windows, debugging experience, etc.
@@ -89,4 +91,4 @@ This means that creating a plugin for Rider involves two parts — a plugin that
 
 Fortunately, many plugins can simply work with the ReSharper backend.
 The Rider takes care of displaying the results of inspections and code completion, and many plugins can be written that don't require an IntelliJ UI component.
-More details can be found in the *Part VIII — Product Specific* section.
+More details can be found in [](rider.md).

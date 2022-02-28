@@ -43,6 +43,6 @@ Run the plugin by using the Gradle [runIde task](gradle_prerequisites.md#running
 
 Now when a Java file is opened in the editor, it shows the property's value instead of the key.
 This is because `SimpleFoldingBuilder.isCollapsedByDefault()` always returns `true`.
-Try using **Code \| Folding \| Expand All** to show the key rather than the value.
+Try using <menupath>Code | Folding | Expand All</menupath> to show the key rather than the value.
 
 ![Folding](folding.png)

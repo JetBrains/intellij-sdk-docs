@@ -44,7 +44,7 @@ View \| Appearance \| Description in Tree Views
 : Toggles showing additional details in UI (e.g. modification timestamp in Project View) see `UISettings.getShowInplaceComments()`.
 
 New API for Editor Inlay Hints
-: Allows a variety of presentations (incl. custom painting), mouse event handling, and exposing settings in _Editor \| Inlay Hints_. See `com.intellij.codeInsight.hints.InlayHintsProvider`.
+: Allows a variety of presentations (incl. custom painting), mouse event handling, and exposing settings in <menupath>Settings/Preferences | Editor | Inlay Hints</menupath>. See `com.intellij.codeInsight.hints.InlayHintsProvider`.
 
 `com.intellij.openapi.vfs.AsyncFileListener`
 : A non-blocking variant for `com.intellij.openapi.vfs.newvfs.BulkFileListener`.

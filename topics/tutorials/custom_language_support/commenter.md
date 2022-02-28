@@ -5,7 +5,7 @@
 <include src="language_and_filetype.md" include-id="custom_language_tutorial_header"></include>
 
 A commenter enables the user to comment-out a line of code at the cursor or selected code automatically.
-The [`Commenter`](upsource:///platform/core-api/src/com/intellij/lang/Commenter.java) defines support for **Code \| Comment with Line Comment** and **Code \| Comment with Block Comment** actions.
+The [`Commenter`](upsource:///platform/core-api/src/com/intellij/lang/Commenter.java) defines support for <menupath>Code | Comment with Line Comment</menupath> and <menupath>Code | Comment with Block Comment</menupath> actions.
 
 ## Define a Commenter
 The commenter for Simple Language defines the line comment prefix as `#`.

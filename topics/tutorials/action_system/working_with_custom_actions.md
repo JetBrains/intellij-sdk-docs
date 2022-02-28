@@ -61,8 +61,8 @@ Here is an example for this stage of the `PopupDialogAction` class:
 
 !["Action never used" inspection](action_never_used.png){width="600"}
 
-To register `PopupDialogAction` and set up its basic attributes press ***Alt + Shift + Enter***.
-Fill out the **New Action** form to set up the parameters for `PopupDialogAction`:
+To register `PopupDialogAction` and set up its basic attributes press <shortcut>Alt + Shift + Enter</shortcut>.
+Fill out the on <control>New Action</control> form to set up the parameters for `PopupDialogAction`:
 
 ![New Action](new_action.png){width="800"}
 
@@ -76,11 +76,11 @@ The fields of the form are:
 * _Description_ - Hint text to be displayed.
 * _Add to Group_ - The action group - menu or toolbar - to which the action is added.
   Clicking in the list of groups and typing invokes a search, such as "ToolsMenu."
-* _Anchor_ - Where the menu action should be placed in the **Tools** menu relative to the other actions in that menu.
+* _Anchor_ - Where the menu action should be placed in the <menupath>Tools</menupath> menu relative to the other actions in that menu.
 
-In this case, `PopupDialogAction` would be available in the **Tools** menu, it would be placed at the top, and would have no shortcuts.
+In this case, `PopupDialogAction` would be available in the <menupath>Tools</menupath> menu, it would be placed at the top, and would have no shortcuts.
 
-After finishing the **New Action** form and applying the changes, the `<actions>` section of the plugin's <path>plugins.xml</path> file would contain:
+After finishing the <control>New Action</control> form and applying the changes, the `<actions>` section of the plugin's <path>plugins.xml</path> file would contain:
 
 ```xml
   <actions>
@@ -91,7 +91,7 @@ After finishing the **New Action** form and applying the changes, the `<actions>
   </actions>
 ```
 
-The `<action>` element declares the _Action ID_ (`id`), _Class Name_ (`class`), _Name_ (`text`), and _Description_ from the **New Action** form.
+The `<action>` element declares the _Action ID_ (`id`), _Class Name_ (`class`), _Name_ (`text`), and _Description_ from the <control>New Action</control> form.
 The `<add-to-group>` element declares where the action will appear and mirrors the names of entries from the form.
 
 This declaration is adequate, but adding more attributes is discussed in the next section.
@@ -100,7 +100,7 @@ This declaration is adequate, but adding more attributes is discussed in the nex
 
 An action declaration can be added manually to the <path>plugin.xml</path> file.
 An exhaustive list of declaration elements and attributes is presented in [Registering Actions in plugin.xml](basic_action_system.md#registering-actions-in-pluginxml).
-Attributes are added by selecting them from the **New Action** form, or by editing the registration declaration directly in the plugin.xml file.
+Attributes are added by selecting them from the <control>New Action</control> form, or by editing the registration declaration directly in the <path>plugin.xml</path> file.
 
 The `<action>` declaration for `PopupDialogAction` in the `action_basics` [plugin.xml](https://github.com/JetBrains/intellij-sdk-code-samples/blob/main/action_basics/src/main/resources/META-INF/plugin.xml) file.
 It also contains an attribute for an [`Icon`](work_with_icons_and_images.md) and encloses elements declaring text overrides, keyboard and mouse shortcuts, and to which menu group the action should be added.
@@ -130,13 +130,13 @@ After performing the steps described above, compile and run the plugin to see th
 
 !["Register action"](tools_menu_item_action.png){width="350"}
 
-To see the alternate, more verbose text declared by the `override-text` element, use **Help \| Find Action...** and search for "Pop Dialog Action".
+To see the alternate, more verbose text declared by the `override-text` element, use <menupath>Help | Find Action...</menupath> and search for "Pop Dialog Action".
 The search shows the verbose menu text in a context outside of the Main Menu:
 
 !["Override Text Display"](find_action.png){width="500"}
 
 Selecting the action from the menu, keyboard/mouse shortcuts, or Find Action won't do anything at this point because the implementations are empty.
-However, it confirms the new entry appears at **Tools \| Pop Dialog Action** and **Help \| Find Action...**.
+However, it confirms the new entry appears at <menupath>Tools | Pop Dialog Action</menupath> and <menupath>Help | Find Action...</menupath>.
 
 ## Developing the `AnAction` Methods
 

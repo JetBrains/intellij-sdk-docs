@@ -15,7 +15,7 @@ When the user invokes an action that involves executing an external build (Make,
 * Some source generation tasks that depend on the PSI (e.g., UI designer form to source compilation) are executed in the IDE process.
 * [`BuildTargetScopeProvider`](upsource:///java/compiler/impl/src/com/intellij/compiler/impl/BuildTargetScopeProvider.java) extensions are called to calculate the scope of the external build (the set of build targets to compile based on the target module to make and the known set of changes).
 * The external build process is spawned (or an existing build process background process is reused).
-* The external build process loads the project model (.idea, .iml files, and so on), represented by a [`JpsModel`](upsource:///jps/model-api/src/org/jetbrains/jps/model/JpsModel.java) instance.
+* The external build process loads the project model (<path>.idea</path>, <path>.iml</path> files, and so on), represented by a [`JpsModel`](upsource:///jps/model-api/src/org/jetbrains/jps/model/JpsModel.java) instance.
 * The full tree of targets to build is calculated based on each build target's dependencies to be compiled.
 * For each target, the set of builders capable of building this target is calculated.
 * For every target and every builder, the `build()` method is called.
@@ -52,8 +52,8 @@ These files don't have extensions, so you need to map corresponding patterns to 
 ### Registering a Plugin for External Builder
 
 Sources of a plugin for External Builder should be put in a separate module.
-By convention, such a module has a name '...-jps-plugin', and its sources are placed under the 'jps-plugin' directory in the main plugin directory.
-Use `com.intellij.compileServer.plugin` extension to add the plugin to the classpath of the external build process, the plugin JAR should be named `<jps module name>.jar`. 'Build' \| 'Prepare Plugin Module for deployment' action will automatically pack the 'jps-plugin' part to a separate JAR accordingly.
+By convention, such a module has a name '...-jps-plugin', and its sources are placed under the <path>jps-plugin</path> directory in the main plugin directory.
+Use `com.intellij.compileServer.plugin` extension to add the plugin to the classpath of the external build process, the plugin JAR should be named <path>$JPS_module_name$.jar</path>. <menupath>Build | Prepare Plugin Module for Deployment</menupath> action will automatically pack the 'jps-plugin' part to a separate JAR accordingly.
 
 See [IntelliJ Platform Explorer](https://jb.gg/ipe?extensions=com.intellij.compileServer.plugin) for samples.
 
@@ -87,17 +87,17 @@ Specifying port "-1" will disable debugging mode.
 The build process has built-in self-cpu-profiling capabilities.
 To enable them do the following:
 
-1. Copy `<ide-home>/lib/yjp-controller-api-redist.jar` and `<ide-home>/bin/yjpagent.*`  files to `<ide-system-dir>/compile-server`
-2. In "Settings \| Compiler \| Additional compiler process VM options" field enter `-Dprofiling.mode=true`
+1. Copy <path>$IDE_HOME$/lib/yjp-controller-api-redist.jar</path> and <path>$IDE_HOME$/bin/yjpagent.*</path> files to <path>$IDE_SYSTEM_DIR$/compile-server</path>
+2. In <menupath>Settings/Preferences | Build, Execution, Deployment | Compiler | Java Compiler</menupath> add `-Dprofiling.mode=true` in <control>Additional command line parameters</control>
 3. Make sure the automatic make is turned off
 
-After this, every build process run should result in a CPU snapshot stored in `<user-home>`/Snapshots directory.
-Snapshots are named like "ExternalBuild\-\{date\}.snapshot".
+After this, every build process run should result in a CPU snapshot stored in <path>$USER_HOME$/Snapshots</path> directory.
+Snapshots are named like <path>ExternalBuild\-\$DATE$.snapshot</path>.
 
 Specifying `-Dprofiling.mode=false` will turn profiling off.
 Please capture a couple of snapshots for the situations you believe the build should work much faster than it does.
 
-Please create an issue in the issue tracker and attach generated \*.snapshot files to it or upload them as [described here](https://intellij-support.jetbrains.com/hc/en-us/articles/206869619) and specify links in the issue.
+Please create an issue in the issue tracker and attach generated <path>*.snapshot</path> files to it or upload them as [described here](https://intellij-support.jetbrains.com/hc/en-us/articles/206869619) and specify links in the issue.
 Please also provide details about the memory and other VM settings for the build process you were using.
 
 ### Accessing External Build Process' Logs

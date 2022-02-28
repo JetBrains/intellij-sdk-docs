@@ -29,7 +29,7 @@ See [Registering Actions in plugin.xml](basic_action_system.md#registering-actio
 ```
 
 ### Binding Action Groups to UI Components
-The following sample shows how to use an `<add-to-group>` element to place a custom action group relative to an entry in the **Tools** menu.
+The following sample shows how to use an `<add-to-group>` element to place a custom action group relative to an entry in the <menupath>Tools</menupath> menu.
 The attribute `relative-to-action` references the action `id` for `PopupDialogAction`, not a native IntelliJ menu entry.
 Rather `PopupDialogAction` is defined in the same [`plugin.xml`](https://github.com/JetBrains/intellij-sdk-code-samples/blob/main/action_basics/src/main/resources/META-INF/plugin.xml) file.
 This group is placed after the single entry for the action `PopupDialogAction`, as defined in the tutorial [Creating Actions](working_with_custom_actions.md#registering-an-action-with-the-new-action-form).
@@ -56,10 +56,10 @@ The action in this group will display the menu text "A Group Action".
     </group>
 ```
 
-After performing the steps described above, the action group and its content will be available in the **Tools** menu.
-The underlying `PopupDialogAction` implementation is reused for two entries in the **Tools** menu:
-* Once for the top menu entry **Tools \| Pop Dialog Action** with the action `id` equal to `org.intellij.sdk.action.PopupDialogAction` as set in the [Creating Actions](working_with_custom_actions.md#registering-an-action-with-the-new-action-form) tutorial.
-* A second time for the menu entry **Tools \| Static Grouped Actions \| A Group Action** with the action `id` equal to `org.intellij.sdk.action.GroupPopDialogAction`.
+After performing the steps described above, the action group and its content will be available in the <menupath>Tools</menupath> menu.
+The underlying `PopupDialogAction` implementation is reused for two entries in the <menupath>Tools</menupath> menu:
+* Once for the top menu entry <menupath>Tools | Pop Dialog Action</menupath> with the action `id` equal to `org.intellij.sdk.action.PopupDialogAction` as set in the [Creating Actions](working_with_custom_actions.md#registering-an-action-with-the-new-action-form) tutorial.
+* A second time for the menu entry <menupath>Tools | Static Grouped Actions | A Group Action</menupath> with the action `id` equal to `org.intellij.sdk.action.GroupPopDialogAction`.
 
 ![Simple Action Group](grouped_action.png){width="550"}
 
@@ -157,7 +157,7 @@ public class CustomDefaultActionGroup extends DefaultActionGroup {
 }
 ```
 
-After compiling and running the code sample above and opening a file in the editor and right-clicking, the **Editing** menu will pop up containing a new group of actions in the first position.
+After compiling and running the code sample above and opening a file in the editor and right-clicking, the Editor context menu will pop up containing a new group of actions in the first position.
 Note the group and actions come from the resource file as all contain the suffix "[en]".
 The new group will also have an icon:
 
@@ -178,7 +178,7 @@ public class DynamicActionGroup extends ActionGroup {
 
 ### Registering a Variable Action Group
 To register the dynamic menu group, a `<group>` attribute needs to be placed in the `<actions>` section of [`plugin`.xml](https://github.com/JetBrains/intellij-sdk-code-samples/blob/main/action_basics/src/main/resources/META-INF/plugin.xml).
-When enabled, this group appears at the entry just below the [Static Grouped Actions](#binding-action-groups-to-ui-components) in the **Tools** menu:
+When enabled, this group appears at the entry just below the [Static Grouped Actions](#binding-action-groups-to-ui-components) in the <menupath>Tools</menupath> menu:
 
 ```xml
     <group id="org.intellij.sdk.action.DynamicActionGroup" class="org.intellij.sdk.action.DynamicActionGroup" popup="true"
@@ -209,6 +209,6 @@ public class DynamicActionGroup extends ActionGroup {
 }
 ```
 
-After providing the implementation of `DynamicActionGroup` and making it return a non-empty array of actions, the third position in the **Tools** menu will contain a new group of actions:
+After providing the implementation of `DynamicActionGroup` and making it return a non-empty array of actions, the third position in the <menupath>Tools</menupath> menu will contain a new group of actions:
 
 ![Dynamic Action Group](dynamic_action_group.png){width="600"}

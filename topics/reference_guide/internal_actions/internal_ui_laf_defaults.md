@@ -11,7 +11,7 @@ _LaF_ stands for _Look and Feel_, see [Swing Tutorial](https://docs.oracle.com/j
 
 ## Opening LaF Defaults
 
-The <control>LaF Defaults</control> window is opened by selecting the menu item **Tools \| Internal Actions \| UI \| LaF Defaults**.
+The <control>LaF Defaults</control> window is opened by selecting the menu item <menupath>Tools | Internal Actions | UI | LaF Defaults</menupath>.
 
 It has two columns representing key-value pairs for UI Controls:
 

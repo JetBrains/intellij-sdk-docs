@@ -45,6 +45,6 @@ Run the plugin by using the Gradle [runIde task](gradle_prerequisites.md#running
 
 Open the example Simple Language [properties file ](lexer_and_parser_definition.md#run-the-project) in the IDE Development Instance.
 Add some extra spaces around the `=` separator between `language` and `English`.
-Reformat the code by selecting **Code \| Show Reformat File Dialog** and choose **Run**.
+Reformat the code by invoking <menupath>Code | Reformat File...</menupath> dialog and choose <control>Run</control>.
 
 ![Formatter](formatter.png)

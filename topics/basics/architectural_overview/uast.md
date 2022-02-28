@@ -153,7 +153,7 @@ To process string literals when evaluating their value or to perform language in
 
 For historical reasons, the relations between `UElement` and `PsiElement` are complicated.
 Some `UElement`s implement `PsiElement`; for instance, `UMethod` implements `PsiMethod`.
-It is strongly discouraged to use `UElement` as `PsiElement`, and Plugin DevKit provides a corresponding inspection (_Plugin DevKit \| Code \| UElement as PsiElement usage_).
+It is strongly discouraged to use `UElement` as `PsiElement`, and Plugin DevKit provides a corresponding inspection (<control>Plugin DevKit | Code | UElement as PsiElement usage</control>).
 This _"implements"_ is considered deprecated and might be removed in the future.
 
 Also, there is `UElement#psi` property; it returns the same element as `javaPsi` or the `sourcePsi`.

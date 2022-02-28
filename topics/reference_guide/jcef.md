@@ -29,7 +29,7 @@ Embedding of the browser component inside the IDE allows amongst others:
 <tab title="Earlier versions">
 
 Using JCEF requires using a dedicated JetBrains Runtime, please follow these [installation instructions](https://youtrack.jetbrains.com/issue/IDEA-231833#focus=streamItem-27-3993099.0-0) on how to obtain and activate it in your IDE.
-Enable `ide.browser.jcef.enabled` in Registry dialog (invoke **Help \| Find Action** and type "Registry") and restart the IDE for changes to take effect.
+Enable `ide.browser.jcef.enabled` in Registry dialog (invoke <menupath>Help | Find Action</menupath> and type "Registry") and restart the IDE for changes to take effect.
 </tab>
 </tabs>
 

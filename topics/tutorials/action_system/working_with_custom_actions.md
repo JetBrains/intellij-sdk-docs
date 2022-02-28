@@ -76,7 +76,7 @@ The fields of the form are:
 
 In this case, `PopupDialogAction` would be available in the **Tools** menu, it would be placed at the top, and would have no shortcuts.
 
-After finishing the **New Action** form and applying the changes, the `<actions>` section of the plugin's `plugins.xml` file would contain:
+After finishing the **New Action** form and applying the changes, the `<actions>` section of the plugin's <path>plugins.xml</path> file would contain:
 
 ```xml
   <actions>

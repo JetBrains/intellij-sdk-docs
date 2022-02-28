@@ -7,13 +7,13 @@
 The IntelliJ Platform stores the project configuration data in XML files.
 The list of those files depends on the chosen [project format](https://www.jetbrains.com/help/idea/creating-and-managing-projects.html#project-formats).
 
-For file-based format projects (legacy), the information core to the project itself (e.g., location of the component modules, compiler settings, etc.) is stored in the `$project_name$.ipr` file.
-The information about modules the project includes is stored in `$module_name$.iml` files.
+For file-based format projects (legacy), the information core to the project itself (e.g., location of the component modules, compiler settings, etc.) is stored in the <path>$project_name$.ipr</path> file.
+The information about modules the project includes is stored in <path>$module_name$.iml</path> files.
 Module files are created for each module.
 
-For directory-based format projects, the project and workspace settings are stored in a number of XML files under the `$project_home_directory$/.idea` directory.
-Each XML file is responsible for its own set of settings and can be recognized by its name: `projectCodeStyle.xml`, `encodings.xml`, `vcs.xml` etc.
-As for the file-based format projects, `.iml` files describe modules.
+For directory-based format projects, the project and workspace settings are stored in a number of XML files under the <path>$project_home_directory$/.idea</path> directory.
+Each XML file is responsible for its own set of settings and can be recognized by its name: <path>projectCodeStyle.xml</path>, <path>encodings.xml</path>, <path>vcs.xml</path> etc.
+As for the file-based format projects, <path>.iml</path> files describe modules.
 
 Note that direct access to project files isn't required to load or save settings.
 See [Persisting State of Components](persisting_state_of_components.md) for more information.

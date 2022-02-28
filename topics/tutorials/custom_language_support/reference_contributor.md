@@ -92,7 +92,7 @@ public class SimpleElementFactory {
 ## Update Grammar and Regenerate the Parser
 Now make corresponding changes to the `Simple.bnf` grammar file by replacing the `property` definition with the lines below.
 Don't forget to regenerate the parser after updating the file!
-Right-click on the `Simple.bnf` file and select **Generate Parser Code**.
+Right-click on the <path>Simple.bnf</path> file and select **Generate Parser Code**.
 
 ```java
 property ::= (KEY? SEPARATOR VALUE?) | KEY {

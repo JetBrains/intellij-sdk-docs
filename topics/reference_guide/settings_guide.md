@@ -12,7 +12,7 @@ Settings can [affect different levels](https://www.jetbrains.com/help/idea/confi
 This document describes adding custom Settings at the Project and Application (or Global, IDE) levels.
 
 ## Extension Points for Settings
-Custom Settings implementations are declared in a plugin's configuration (`plugin.xml`) file using one of two Extension Points (EPs), depending on the level of the Settings.
+Custom Settings implementations are declared in a plugin's configuration (<path>plugin.xml</path>) file using one of two Extension Points (EPs), depending on the level of the Settings.
 Many [attributes](#settings-declaration-attributes) are shared between the EP declarations.
 
 Application and Project Settings typically provide an implementation based on the [`Configurable`](upsource:///platform/ide-core/src/com/intellij/openapi/options/Configurable.java) interface because they do not have runtime dependencies.

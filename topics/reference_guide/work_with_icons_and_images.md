@@ -133,7 +133,7 @@ If the icon graphics are simple enough so that it renders perfectly in every sca
  >
  {type="note"}
 
-All icon files must be placed in the same directory following this naming pattern (replace `.png` with `.svg` for SVG icons):
+All icon files must be placed in the same directory following this naming pattern (replace <path>.png</path> with <path>.svg</path> for SVG icons):
 
 * <path>iconName.png</path> W x H pixels (Will be used on non-Retina devices with default theme)
 * <path>iconName@2x.png</path> 2\*W x 2\*H pixels (Will be used on Retina devices with default theme)

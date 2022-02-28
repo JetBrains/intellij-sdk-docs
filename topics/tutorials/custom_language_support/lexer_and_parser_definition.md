@@ -10,14 +10,14 @@ The easiest way to create a lexer is to use [JFlex](https://jflex.de/).
 **Reference**: [](implementing_lexer.md)
 
 ## Required Project Configuration Change
-The previous tutorial step [Grammar and Parser](grammar_and_parser.md), and this page, generate source files in the directory `src/main/gen`.
-To include those files, the project's `sourceSets` must be expanded by inserting the following line in the project's `build.gradle` file:
+The previous tutorial step [Grammar and Parser](grammar_and_parser.md), and this page, generate source files in the directory <path>src/main/gen</path>.
+To include those files, the project's `sourceSets` must be expanded by inserting the following line in the project's <path>build.gradle</path> file:
 
 ```groovy
   sourceSets.main.java.srcDirs 'src/main/gen'
 ```
 
-Or the following line in the project's `build.gradle.kts` file:
+Or the following line in the project's <path>build.gradle.kts</path> file:
 ```kotlin
   sourceSets["main"].java.srcDirs("src/main/gen")
 ```
@@ -25,14 +25,14 @@ Or the following line in the project's `build.gradle.kts` file:
 Reload the Gradle project for changes to take effect.
 
 ## Define a Lexer
-Define a `Simple.flex` file with rules for the Simple Language lexer, as demonstrated in `org.intellij.sdk.language.Simple.flex`.
+Define a <path>Simple.flex</path> file with rules for the Simple Language lexer, as demonstrated in `org.intellij.sdk.language.Simple.flex`.
 
 ```java
 ```
 {src="simple_language_plugin/src/main/java/org/intellij/sdk/language/Simple.flex"}
 
 ## Generate a Lexer Class
-Now generate a lexer class via **JFlex Generator** from the context menu on `Simple.flex` file.
+Now generate a lexer class via **JFlex Generator** from the context menu on <path>Simple.flex</path> file.
 
 The Grammar-Kit plugin uses the JFlex lexer generation.
 When running for the first time, JFlex prompts for a destination folder to download the JFlex library and skeleton.
@@ -71,7 +71,7 @@ The Simple Language parser is defined by subclassing [`ParserDefinition`](upsour
 ## Register the Parser Definition
 Registering the parser definition in the <path>plugin.xml</path> file makes it available to the IntelliJ Platform.
 Use the `com.intellij.lang.parserDefinition` extension point for registration.
-For example, see `simple_language_plugin/src/main/resources/META-INF/plugin.xml`.
+For example, see <path>simple_language_plugin/src/main/resources/META-INF/plugin.xml</path>.
 
 ```xml
   <extensions defaultExtensionNs="com.intellij">
@@ -84,7 +84,7 @@ For example, see `simple_language_plugin/src/main/resources/META-INF/plugin.xml`
 
 Run the plugin by using the Gradle [runIde task](gradle_prerequisites.md#running-a-simple-gradle-based-intellij-platform-plugin).
 
-Create a `test.simple` properties file with the following content:
+Create a <path>test.simple</path> properties file with the following content:
 
 ```text
 # You are reading the ".properties" entry.

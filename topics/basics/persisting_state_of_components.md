@@ -134,7 +134,7 @@ It has the following fields:
 
 The simplest ways of specifying the `@Storage` annotation are as follows:
 
-* `@Storage("yourName.xml")` If a component is project-level — for `.ipr` based projects standard project file is used automatically - no need to specify anything.
+* `@Storage("yourName.xml")` If a component is project-level — for <path>.ipr</path> based projects standard project file is used automatically - no need to specify anything.
 
 * `@Storage(StoragePathMacros.WORKSPACE_FILE)` for values stored in the workspace file.
 

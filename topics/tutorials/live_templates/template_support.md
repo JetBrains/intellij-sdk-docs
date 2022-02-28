@@ -30,7 +30,7 @@ There are many other [predefined functions](https://www.jetbrains.com/idea/help/
 
 ## Export the Live Template
 Once the Live Template produces the expected result, [export the Live Template](https://www.jetbrains.com/help/idea/sharing-live-templates.html).
-The export produces a file called `Markdown.xml` with the following contents:
+The export produces a file called <path>Markdown.xml</path> with the following contents:
 
 ```xml
 <templateSet group="Markdown">
@@ -63,7 +63,7 @@ Ultimately, a file's extension determines the applicable Markdown context.
  >
  {type="note"}
 
-Within the `<template>...</template>` elements in the `Markdown.xml` [Live Template definition file](#export-the-live-template), add the following context elements:
+Within the `<template>...</template>` elements in the <path>Markdown.xml</path> [Live Template definition file](#export-the-live-template), add the following context elements:
 
 ```xml
     <variable.../>

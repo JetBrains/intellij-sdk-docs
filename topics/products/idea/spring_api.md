@@ -153,7 +153,7 @@ Add additional inspections (e.g. for custom namespace) to Spring Validator (*Set
 
 #### Add Additional Files to Spring Validator
 _Version 14.1_
-Additional files to be processed by inspections registered with Spring Validator (e.g. specific `.properties` configuration files) can be registered via  `com.intellij.spring.SpringInspectionsRegistry$AdditionalFilesContributor`
+Additional files to be processed by inspections registered with Spring Validator (e.g. specific <path>.properties</path> configuration files) can be registered via  `com.intellij.spring.SpringInspectionsRegistry$AdditionalFilesContributor`
 
 #### Configure Spring Support for Other Frameworks
 Use `com.intellij.spring.facet.SpringConfigurator` to provide "automatic" configuration when Spring facet is added via framework wizard.

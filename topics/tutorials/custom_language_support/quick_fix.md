@@ -45,7 +45,7 @@ Choose "Create Property".
 
 ![Quick Fix](quick_fix.png){width="800"}
 
-The IDE opens the `test.simple` file and adds `website.url` as a new key.
+The IDE opens the <path>test.simple</path> file and adds `website.url` as a new key.
 Add the new value `jetbrains.com` for the new `website.url` key.
 
 ![New Property](new_property.png)

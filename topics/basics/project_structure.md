@@ -30,9 +30,9 @@ A module can depend on other modules of the project.
 ### Library
 A _library_ is an archive of compiled code (such as JAR files) on which modules depend.
 The IntelliJ Platform supports three types of libraries:
-* **Module Library**: the library classes are visible only in this module, and the library information is recorded in the module's `.iml` file.
-* **Project Library**: the library classes are visible within the project, and the library information is recorded in the project's `.ipr` file or in `.idea/libraries`.
-* **Global Library**: the library information is recorded in the `applicationLibraries.xml` file in the `~/.IntelliJIdea/config/options` directory.
+* **Module Library**: the library classes are visible only in this module, and the library information is recorded in the module's <path>.iml</path> file.
+* **Project Library**: the library classes are visible within the project, and the library information is recorded in the project's <path>.ipr</path> file or in <path>.idea/libraries</path>.
+* **Global Library**: the library information is recorded in the <path>applicationLibraries.xml</path> file in the <path>~/.IntelliJIdea/config/options</path> directory.
   Global libraries are similar to project libraries but are visible for different projects.
 
 For more information about libraries, refer to [Library](https://www.jetbrains.com/help/idea/working-with-libraries.html).

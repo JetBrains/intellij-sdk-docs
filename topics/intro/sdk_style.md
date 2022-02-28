@@ -77,7 +77,7 @@ General Markdown links have the default Markdown link style:
   If URL contains `%` character, append `{interpolate-variables="false"}`.
 * Linking to pages within the SDK documentation:
   `[Page Title](page.md)`{disable-links} links to an SDK doc page (all located under <path>/topics</path>).
-  Note that the extension is `.md`, _NOT_ `.html`.
+  Note that the extension is <path>.md</path>, _NOT_ <path>.html</path>.
 * Linking to specific _sections_ on pages in the SDK documentation.
   The anchor name will be all lower case, and spaces are replaced with `-`, e.g. `## Page setup` becomes `#page-setup`.
   Once the anchor (`#`) character of the link is entered, the IDE code completion feature shows the available sections.
@@ -257,7 +257,7 @@ A placeholder is useful to keep track of what should be documented, but hasn't y
 
 When renaming pages, redirects should be configured so existing links and bookmarks continue working.
 
-Specify the previous path(s) with `.html` extension in `accepts-web-file-names` attribute:
+Specify the previous path(s) with <path>.html</path> extension in `accepts-web-file-names` attribute:
 
 ```xml
   <toc-element id="fundamentals.md" toc-title="Fundamentals"

@@ -9,7 +9,7 @@ Previously language plug-ins were using fixed default colors incompatible, for e
 
 The new implementation allows specifying a dependency on a set of standard text attributes linked to a scheme but not to any specific language.
 Language-specific attributes still can be set by a scheme designer if needed, but it's optional.
-New color schemes have got a new `.icls` (Idea CoLor Scheme) extension to avoid confusion about compatibility problems with older platform versions:
+New color schemes have got a new <path>.icls</path> (Idea CoLor Scheme) extension to avoid confusion about compatibility problems with older platform versions:
 if only standard attributes are set, they will not be used by the version before 12.1, resulting in different highlighting colors.
 
 ## Plug-in Developers
@@ -41,14 +41,14 @@ The rule is the same: if text attributes can not be found by the `MY_PREDEFINED_
  {type="note"}
 
 If you are unsure which base key to use, it's better to pick the most generic one, for example, `DefaultLanguageHighlighterColors.IDENTIFIER`.
-Remember that using fixed default attributes *will force*  a scheme designer to explicitly set up a color for this element.
+Remember that using fixed default attributes *will force* a scheme designer to explicitly set up a color for this element.
 Otherwise, its default colors may visually conflict with a color scheme.
 If the scheme designer doesn't have a language plug-in, he will not be able to fix this at all.
 
 ### Providing Attributes for Specific Schemes
 
 A language plug-in may provide default text attributes for "Default" and "Darcula" bundled schemes or basically for any other scheme if the scheme's name is known.
-This can be done in `plugin.xml` by adding an `com.intellij.additionalTextAttributes` extension providing the name of the file containing desired text attributes, for example:
+This can be done in <path>plugin.xml</path> by adding an `com.intellij.additionalTextAttributes` extension providing the name of the file containing desired text attributes, for example:
 
 ```xml
 <extensions defaultExtensionNs="com.intellij">
@@ -58,8 +58,8 @@ This can be done in `plugin.xml` by adding an `com.intellij.additionalTextAttrib
 </extensions>
 ```
 
-It tells the IDE that the file `MyLangDefault.xml` must be searched in resources under `colorSchemes`.
-Note that the path should *not* start with a backslash and its fully qualified name (in our case `colorSchemes/MyLangDefault.xml`) *MUST BE UNIQUE* to avoid naming collisions between different providers.
+It tells the IDE that the file <path>MyLangDefault.xml</path> must be searched in resources under <path>colorSchemes</path>.
+Note that the path should *not* start with a backslash and its fully qualified name (in our case <path>colorSchemes/MyLangDefault.xml</path>) *MUST BE UNIQUE* to avoid naming collisions between different providers.
 Thus adding a language prefix, for example, "MyLang", is highly recommended.
 
 The file itself is an extract from a color scheme with required attributes, for example:
@@ -82,8 +82,8 @@ The file itself is an extract from a color scheme with required attributes, for 
 </list>
 ```
 
-*Note:*  When the scheme is copied via "Save as..." all its attributes, including the ones defined in the extension, will be copied to the new scheme.
-A scheme designer may need to check that these copied attributes do not conflict with his/her color scheme, although in this case the plug-in is installed, and it should not cause any problems.
+*Note:* When the scheme is copied via "Save as..." all its attributes, including the ones defined in the extension, will be copied to the new scheme.
+A scheme designer may need to check that these copied attributes do not conflict with his/her color scheme, although in this case, the plug-in is installed, and it should not cause any problems.
 Anyway, try to stick with a simple key dependency if possible (note that it works well for "Darcula") and provide explicit attributes only if necessary.
 
 ## Scheme Designers
@@ -91,10 +91,10 @@ Anyway, try to stick with a simple key dependency if possible (note that it work
 ### A Typical Workflow for a New Scheme Creation
 
 * Choose a scheme which will be used as a base, for example, "Default"
-* Click "Save As.." and give a name for the new scheme
-* First set attributes in *General*  section and proceed with *Language Defaults*
+* Click "Save As..." and give a name for the new scheme
+* First set attributes in the *General* section and proceed with *Language Defaults*
 * Check all the languages and adjust language-specific text attributes if necessary.
-  In most cases this may not be needed, but two cases may require an extra action:
+  In most cases, this may not be needed, but two cases may require an extra action:
 
     * There is an obsolete plug-in which does not use the new color scheme management API and therefore does not utilize the attributes set in "Language Defaults".
       Ideally, a report must be created for the language plug-in so that its author will fix it eventually.
@@ -105,6 +105,6 @@ Anyway, try to stick with a simple key dependency if possible (note that it work
 ### Text Attributes Inheritance
 
 For many language text attributes that do not have any values, there will be a line indicating that the attributes are inherited from a specific section/attributes, such as "Keyword (Language Defaults)".
-If an element has *any*  attributes set, only these attributes are used.
+If an element has *any* attributes set, only these attributes are used.
 All attributes from the base element are ignored.
-To *restore*  the inheritance, unchecks all the boxes, and click *Apply*.
+To *restore* the inheritance, unchecks all the boxes, and click *Apply*.

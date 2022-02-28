@@ -45,8 +45,8 @@ To pass custom data between the invocation of the same builder between multiple 
 
 The external builder process uses the standard Java [services](https://docs.oracle.com/javase/8/docs/api/java/util/ServiceLoader.html) mechanism to support plugins.
 There are several service interfaces (e.g. [`BuilderService`](upsource:///jps/jps-builders/src/org/jetbrains/jps/incremental/BuilderService.java) which can be implemented in plugins to extend the builder functionality.
-An implementation of a service needs to be registered by creating the `META-INF/services/<service-interface-fqn>` file containing the implementation class's qualified name.
-E.g. `BuilderService` implementations are registered in `META-INF/services/org.jetbrains.jps.incremental.BuilderService` file.
+An implementation of a service needs to be registered by creating the <path>META-INF/services/$service-interface-fqn$</path> file containing the implementation class's qualified name.
+E.g. `BuilderService` implementations are registered in <path>META-INF/services/org.jetbrains.jps.incremental.BuilderService</path> file.
 These files don't have extensions, so you need to map corresponding patterns to text files in IDE settings.
 
 ### Registering a Plugin for External Builder
@@ -108,11 +108,11 @@ The log file is located under the directory:
 <ide-system-directory>/log/build-log
 ```
 
-There, both `build-log.log` and `build-log.properties` files can be found.
-The `build-log.properties` is a log4j configuration file, where the log level and desired logging categories can be adjusted.
+There, both <path>build-log.log</path> and <path>build-log.properties</path> files can be found.
+The <path>build-log.properties</path> is a log4j configuration file, where the log level and desired logging categories can be adjusted.
 This file contains logging from all build sessions, including those from the auto-make.
 
-In IntelliJ Platform versions before version 14.1, log4j configuration was stored in `build-log.xml`.
+In IntelliJ Platform versions before version 14.1, log4j configuration was stored in <path>build-log.xml</path>.
 
 ### Accessing Project Model and Configuration from External Build
 

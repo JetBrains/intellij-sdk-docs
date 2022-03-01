@@ -34,6 +34,7 @@ The [build.gradle configuration steps](#configuring-the-plugin-buildgradle-file)
 
 ![Example Android Studio About Dialog](android_studio_build.png){width="600"}
 
+### Android Studio Releases Listing
 Below you may find a list of Android Studio releases mapped to the relevant IntelliJ IDEA versions:
 
 <include src="android_studio_releases.md" include-id="releases_table"></include>

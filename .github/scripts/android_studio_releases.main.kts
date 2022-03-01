@@ -1,5 +1,11 @@
 #!/usr/bin/env kotlin
 
+/**
+ * This script is used to update the Android Studio releases page.
+ * At first, it fetches the list of Android Studio updates from the official `updates.xml` file.
+ * Parsed list is used to generate the Markdown table.
+ * The actual IntelliJ IDEA release version is obtained with the help of the JetBrains Data Services API.
+ */
 @file:DependsOn("org.simpleframework:simple-xml:2.7.1")
 @file:DependsOn("org.json:json:20211205")
 

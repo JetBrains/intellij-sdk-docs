@@ -19,7 +19,7 @@ Click on an entry in the table's *Attribute* column to go to the documentation a
 |------------------------------------------|--------------------------------------------------------------------------------|
 | [`intellij.type`][properties]            | `PY` for PyCharm Professional Edition, or `PC` for PyCharm Community Edition.  |
 | [`intellij.version`][properties]         | Set to the targeted `PY` or `PC` version.                                      |
-| [`intellij.plugins`][properties]         | No specific declaration is needed to use `PY` or `PC` APIs.                    |
+| [`intellij.plugins`][properties]         | `Pythonid` for `PY` / `PythonCore` for `PC`.                                   |
 | [`intellij.downloadSources`][properties] | `false` is required because no public source code is available.                |
 | [`runIde.ideDir`][dsl]                   | Not needed; the Development Instance will automatically match `intellij.type`. |
 
@@ -35,8 +35,10 @@ Please note that this code sample must be imported into Gradle explicitly, as it
 ## Available PyCharm APIs
 See [](extension_point_list.md) for PyCharm Community.
 
-The plugin [Python](https://plugins.jetbrains.com/plugin/631-python) defines the APIs for PyCharm Professional.
-The plugin [Python Community Edition](https://plugins.jetbrains.com/plugin/7322-python-community-edition) defines the APIs for PyCharm Community.
+The plugin [Python](https://plugins.jetbrains.com/plugin/631-python) (Plugin ID `Pythonid`) defines the APIs for PyCharm Professional.
+
+The plugin [Python Community Edition](https://plugins.jetbrains.com/plugin/7322-python-community-edition) (Plugin ID `PythonCore`) defines the APIs for PyCharm Community.
+
 These plugins include the modules `openapi` and `python-psi-api`.
 These are considered stable APIs, but care should be taken to test your plugin with any version of PyCharm you wish to support.
 

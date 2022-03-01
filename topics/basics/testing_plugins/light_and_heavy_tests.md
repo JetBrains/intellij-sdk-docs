@@ -25,6 +25,7 @@ The standard way of writing a light test is to extend the following classes:
 
 When writing a light test, you can specify the project's requirements that you need to have in your test, such as the module type, the configured SDK, facets, libraries, etc.
 You do so by extending the [`LightProjectDescriptor`](upsource:///platform/testFramework/src/com/intellij/testFramework/LightProjectDescriptor.java) class and returning your project descriptor from `getProjectDescriptor()`.
+If your plugin builds on top of Java support, please see [](testing_faq.md#how-to-test-a-jvm-language) to set up your test environment to obtain the required _Mock JDK_ automatically.
 
 Before executing each test, the project instance will be reused if the test case returns the same project descriptor (usually stored in `static final` field) as the previous one or recreated if the descriptor is different (`equals() = false`).
 

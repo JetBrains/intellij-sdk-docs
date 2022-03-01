@@ -20,12 +20,24 @@ Some minor modifications to the skeleton project are needed, as discussed below.
 For API compatibility, it is essential to match the version of the IntelliJ Platform APIs used for plugin development with the target version of Android Studio.
 The version number of Android Studio contains the version of the underlying IntelliJ Platform APIs that were used to build it.
 
+The actual Android Studio version doesn't entirely reflect the (YEAR.MAJOR.MINOR) version of the IntelliJ Platform.
+The Android Studio version presented below is `2021.1.1 Patch 1`, but the `2021.1` part marked with the green rectangle refers to the IntelliJ IDEA release.
+
 To find the version of the IntelliJ Platform used to build Android Studio, use the Android Studio _About_ dialog screen.
 An example is shown below.
-In this case, the (BRANCH.BUILD.FIX) version of the IntelliJ Platform is `191.8026.42`, which corresponds to the IntelliJ IDEA version 2019.1.4.
+In this case, the (BRANCH.BUILD.FIX) version of the IntelliJ Platform is `211.7628.21` – marked with the blue rectangle – is corresponding to the IntelliJ IDEA version `2021.1.3`.
+
+In your Gradle build script, you should set both versions – build number and the release number – to the `intellij.version` property.
+To figure out the exact release number based on the build number, visit the [IntelliJ Repository Releases](https://www.jetbrains.com/intellij-repository/releases/) listing and check the `com.jetbrains.intellij.idea` section.
+
 The [build.gradle configuration steps](#configuring-the-plugin-buildgradle-file) section below explains how to set the IntelliJ Platform version to match the target version of Android Studio.
 
 ![Example Android Studio About Dialog](android_studio_build.png){width="600"}
+
+### Android Studio Releases Listing
+Below you may find a list of Android Studio releases mapped to the relevant IntelliJ IDEA versions:
+
+<include src="android_studio_releases.md" include-id="releases_table"></include>
 
 ### Configuring the Plugin build.gradle File
 The use-case of developing for a non-IntelliJ IDEA IDE is reviewed in the [Plugins Targeting Alternate IntelliJ Platform-Based IDEs](gradle_guide.md#plugins-targeting-alternate-intellij-platform-based-ides) section of the [Configuring Gradle for IntelliJ Platform Plugins](gradle_guide.md) page.
@@ -36,7 +48,7 @@ Here are the steps to configure the <path>build.gradle</path> file for developin
   Continuing with the example [above](#matching-versions-of-the-intellij-platform-with-the-android-studio-version), set the `intellij.version` value to `191.8026.42`.
   Alternatively, specify `intellij.localPath` to refer to a local installation of Android Studio.
 * Android Studio plugin projects that use APIs from the `android` plugin must declare a dependency on that plugin.
- Declare the dependency in <path>build.gradle</path> using the Gradle plugin `intellij.plugins` attribute, which in this case lists the [directory name](https://github.com/JetBrains/gradle-intellij-plugin#intellij-platform-properties) of the plugin.
+  Declare the dependency in <path>build.gradle</path> using the Gradle plugin `intellij.plugins` attribute, which in this case lists the [directory name](https://github.com/JetBrains/gradle-intellij-plugin#intellij-platform-properties) of the plugin.
 * The best practice is to use the target version of Android Studio as the IDE Development Instance.
   Set the Development Instance to the (user-specific) absolute path to the target Android Studio application.
 

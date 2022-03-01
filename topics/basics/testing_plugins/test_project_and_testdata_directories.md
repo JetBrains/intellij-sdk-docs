@@ -12,7 +12,7 @@ The test project files exist either in a temporary directory or in an in-memory 
  > If you get an unexpected error after a series of successful runs, **try rerunning the test**, and if that doesn't help, **delete the "system" subdirectory** in your [sandbox directory](ide_development_instance.md#the-development-instance-sandbox-directory).
  >
  {type="warning"}
-                       
+
 ## Testdata Files
 
 In your plugin, you usually store the test data for your tests (such as files on which plugin features will be executed and expected output files) in the <path>testdata</path> directory.
@@ -28,7 +28,7 @@ The default implementation assumes running as part of the IntelliJ Platform sour
  >
  {type="note"}
 
- >  If your plugin builds on top of Java support, please see [Tests Prerequisites](tests_prerequisites.md) to set up your test environment to obtain the required _Mock JDK_ automatically.
+ >  If your plugin builds on top of Java support, please see [](testing_faq.md#how-to-test-a-jvm-language) to set up your test environment to obtain the required _Mock JDK_ automatically.
  >
  {type="note"}
 

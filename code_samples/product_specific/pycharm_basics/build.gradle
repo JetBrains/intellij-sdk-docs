@@ -18,6 +18,7 @@ repositories {
 intellij {
   version = '2021.2'
   type = 'PY'
+  plugins = ["Pythonid"]
   downloadSources = false
 }
 

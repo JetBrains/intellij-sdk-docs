@@ -3,6 +3,7 @@ name: Generate Android Studio releases
 on:
   schedule:
     - cron: "1 1 * * *"
+  workflow_dispatch:
 
 jobs:
   example-action:

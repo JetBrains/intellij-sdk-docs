@@ -6,73 +6,137 @@
  * Parsed list is used to generate the Markdown table.
  * The actual IntelliJ IDEA release version is obtained with the help of the JetBrains Data Services API.
  */
+@file:DependsOn("it.skrape:skrapeit:1.1.5")
+@file:DependsOn("net.swiftzer.semver:semver:1.1.2")
 @file:DependsOn("org.simpleframework:simple-xml:2.7.1")
 @file:DependsOn("org.json:json:20211205")
 
-import org.json.JSONObject
+import it.skrape.core.htmlDocument
+import net.swiftzer.semver.SemVer
 import org.simpleframework.xml.Attribute
 import org.simpleframework.xml.ElementList
-import org.simpleframework.xml.Path
 import org.simpleframework.xml.Root
 import org.simpleframework.xml.core.Persister
+import java.io.BufferedInputStream
 import java.io.File
+import java.io.FileOutputStream
 import java.net.URL
+import java.util.zip.ZipFile
 
-val DATA_SERVICES_RELEASES_URL = "https://data.services.jetbrains.com/products/releases"
-val ANDROID_STUDIO_RELEASES_URL = "https://dl.google.com/android/studio/patches/updates.xml"
-val RELEASES_FILE_PATH = "topics/_generated/android_studio_releases.md"
+val RELEASES_FILE_PATH_MD = "topics/_generated/android_studio_releases.md"
+val RELEASES_FILE_PATH_XML = "topics/_generated/android_studio_releases.xml"
+val INTELLIJ_RELEASES = "https://www.jetbrains.com/intellij-repository/releases/"
+val ANDROID_STUDIO_HOST = "https://developer.android.com"
 
-fun resolveMarketingRelease(build: String) = URL("$DATA_SERVICES_RELEASES_URL?code=IC&build=$build").openStream().use {
-  it.readBytes().toString(Charsets.UTF_8).let { content ->
-    (JSONObject(content).getJSONArray("IIC").first() as JSONObject).getString("version")
+val platformBuildToVersionMapping = INTELLIJ_RELEASES.fetch { content ->
+  htmlDocument(content) {
+    findAll("h2:contains(com.jetbrains.intellij.idea) + table tbody tr").mapNotNull { tr ->
+      val (version, build) = tr.findAll("td:nth-child(odd)").map { SemVer.parse(it.text) }
+      (build to version).takeIf { version.major > 2000 }
+    }.toMap().toSortedMap()
   }
 }
 
-URL(ANDROID_STUDIO_RELEASES_URL).openStream().use { inputStream ->
-  inputStream.reader().run {
-    Persister().read(ProductsReleases::class.java, readText())
-  }.run {
+val frameUrl = "$ANDROID_STUDIO_HOST/studio/archive".fetch { content ->
+  htmlDocument(content) {
+    findFirst("devsite-iframe iframe[src]").attribute("src")
+  }
+}.let { "$ANDROID_STUDIO_HOST/$it" }
+
+frameUrl.fetch { content ->
+  val contentFile = file(RELEASES_FILE_PATH_XML)
+  val current = contentFile.takeIf { it.length() > 0 }?.let {
+    Persister().read(Content::class.java, it)
+  } ?: Content()
+
+  val nameToPlatformBuildMapping = current.items.associate {
+    it.name to it.platformBuild
+  }
+
+  htmlDocument(content) {
+    findAll("section.expandable").take(5).map { item ->
+      val title = item.findFirst("p").text
+      val (name, version, channel, date) =
+              """^([\w ]+ \(?([\d.]+)\)? ?(?:(\w+) \d+)?) (\w+ \d+, \d+)$""".toRegex()
+                      .find(title)?.groupValues?.drop(1)
+                      ?: emptyList()
+
+      println("# $name")
+      val platformBuild = nameToPlatformBuildMapping[name]?.let(SemVer::parse) ?: run {
+        item.findFirst(".downloads a[href$=.zip]").attribute("href").resolveBuild()
+      }
+      val platformVersion = platformBuildToVersionMapping[platformBuild] ?: run {
+        platformBuildToVersionMapping.entries.find { it.value < platformBuild }?.value
+      }
+
+      println("  version='${version}'")
+      println("  platformBuild='${platformBuild}'")
+      println("  platformVersion='${platformVersion}'")
+
+      Item(name, version, channel.lowercase(), platformBuild.toString(), platformVersion.toString(), date)
+    }.let { Content(current.version + 1, it) }
+  }.also {
+    Persister().write(it, contentFile)
+  }.also { (_, items) ->
     """
-    | Android Studio | Channel | Build Number | IntelliJ IDEA Build Number | IntelliJ IDEA Release |
-    |----------------|---------|--------------|----------------------------|-----------------------|
+    <chunk id="releases_table">
 
-    """.trimIndent() + channels.distinctBy { it.number }.joinToString("\n") {
-      val name = it.version.replace('|', '-')
-      val channel = it.status
-      val number = it.number.split('-').last()
-      val ijBuild = it.apiVersion.split('-').last()
-      val ijRelease = ijBuild.let(::resolveMarketingRelease)
+    | Android Studio | Channel | Release Date | IntelliJ IDEA Build Number | IntelliJ IDEA Release Version |
+    |----------------|---------|--------------|----------------------------|-------------------------------|
 
-      "| $name | $channel | $number | $ijBuild | $ijRelease |"
+    """.trimIndent() + items.joinToString("\n") {
+      "| ${it.name} | ${it.channel} | ${it.date} | ${it.platformBuild} | ${it.platformVersion} |"
+    } + "\n\n</chunk>".let {
+      file(RELEASES_FILE_PATH_MD).writeText(it)
     }
-  }.let {
-    "<chunk id=\"releases_table\">\n\n$it\n\n</chunk>"
-  }.let {
-    File(System.getenv("GITHUB_WORKSPACE")).resolve(RELEASES_FILE_PATH).writeText(it)
   }
 }
 
-@Root(name = "products", strict = false)
-data class ProductsReleases(
-        @field:ElementList(name = "channel", inline = true)
-        @field:Path("product")
-        var channels: List<Channel> = mutableListOf()
-)
+fun <T> String.fetch(block: (String) -> T) = URL(this).openStream().use { inputStream ->
+  block(inputStream.readBytes().toString(Charsets.UTF_8))
+}
+
+fun <T> String.download(block: (File) -> T) = URL(this).openStream().use { inputStream ->
+  BufferedInputStream(inputStream).use { bis ->
+    File.createTempFile("android-studio", ".zip").also(File::deleteOnExit).let { tempFile ->
+      FileOutputStream(tempFile).use { outputStream ->
+        println("  Downloading $this to $tempFile")
+        val data = ByteArray(1024)
+        var count: Int
+        while (bis.read(data, 0, data.size).also { count = it } != -1) {
+          outputStream.write(data, 0, count)
+        }
+      }
+      block(tempFile)
+    }
+  }
+}
+
+fun String.resolveBuild() = download { file ->
+  ZipFile(file).use { zip ->
+    zip.getEntry("android-studio/build.txt").let { entry ->
+      zip.getInputStream(entry).use { inputStream ->
+        inputStream.readBytes().toString(Charsets.UTF_8)
+      }
+    }.split("-").last().split(".").take(3).joinToString(".").let(SemVer.Companion::parse)
+  }.also {
+    file.delete()
+  }
+}
+
+fun file(path: String) = File(System.getenv("GITHUB_WORKSPACE") ?: "../../").resolve(path).also(File::createNewFile)
 
 @Root(strict = false)
-data class Channel(
-        @field:Attribute
-        var status: String = "",
+data class Content(
+        @field:Attribute var version: Int = 1,
+        @field:ElementList(inline = true, required = false) var items: List<Item> = mutableListOf(),
+)
 
-        @field:Path("build")
-        @field:Attribute
-        var apiVersion: String = "",
-
-        @field:Path("build")
-        @field:Attribute
-        var number: String = "",
-
-        @field:Path("build")
-        @field:Attribute
+data class Item(
+        var name: String = "",
         var version: String = "",
+        var channel: String = "",
+        var platformBuild: String? = null,
+        var platformVersion: String? = null,
+        var date: String = "",
 )

@@ -6,6 +6,10 @@ A plugin may depend on classes from other plugins, either bundled, third-party, 
 This document describes the syntax for declaring plugin dependencies and optional plugin dependencies.
 For more information about dependencies on the IntelliJ Platform modules, see Part II of this document: [Plugin Compatibility with IntelliJ Platform Products](plugin_compatibility.md).
 
+ > For adding dependencies on 3rd party libraries, use regular [Gradle dependency management](https://docs.gradle.org/current/userguide/core_dependency_management.html).
+ >
+ {type="note"}
+
 <procedure title="Required Steps">
 
 To express a dependency on classes from other plugins or modules, perform the following three required steps detailed below on this page:

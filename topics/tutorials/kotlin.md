@@ -47,7 +47,7 @@ For detailed instructions, please refer to the [Kotlin documentation](https://ko
 ### Kotlin Standard Library
 
 Since Kotlin 1.4, a dependency on the standard library `stdlib` is added automatically ([API Docs](https://kotlinlang.org/api/latest/jvm/stdlib/)).
-In most cases, it is not needed to include it in the plugin distribution as the platform already bundles it.
+In most cases, it is not necessary to include it in the plugin distribution as the platform already bundles it.
 
 To opt out, add this line in <path>gradle.properties</path>:
 
@@ -59,6 +59,7 @@ If a plugin supports [multiple platform versions](build_number_ranges.md), it mu
 
 | IntelliJ Platform version | Bundled `stdlib` version |
 |---------------------------|--------------------------|
+| 2022.1                    | 1.6.10                   |
 | 2021.3                    | 1.5.10                   |
 | 2021.2                    | 1.5.10                   |
 | 2021.1                    | 1.4.32                   |

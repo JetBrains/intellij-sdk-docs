@@ -6,14 +6,13 @@
  * Parsed list is used to generate the Markdown table.
  * The actual IntelliJ IDEA release version is obtained with the help of the JetBrains Data Services API.
  */
-@file:DependsOn("it.skrape:skrapeit:1.2.1")
-@file:DependsOn("org.jsoup:jsoup:1.13.1")
+@file:DependsOn("org.jsoup:jsoup:1.14.3")
 @file:DependsOn("net.swiftzer.semver:semver:1.1.2")
 @file:DependsOn("org.simpleframework:simple-xml:2.7.1")
 @file:DependsOn("org.json:json:20211205")
 
-import it.skrape.core.htmlDocument
 import net.swiftzer.semver.SemVer
+import org.jsoup.Jsoup
 import org.simpleframework.xml.Attribute
 import org.simpleframework.xml.ElementList
 import org.simpleframework.xml.Root
@@ -30,18 +29,14 @@ val INTELLIJ_RELEASES = "https://www.jetbrains.com/intellij-repository/releases/
 val ANDROID_STUDIO_HOST = "https://developer.android.com"
 
 val platformBuildToVersionMapping = INTELLIJ_RELEASES.fetch { content ->
-  htmlDocument(content) {
-    findAll("h2:contains(com.jetbrains.intellij.idea) + table tbody tr").mapNotNull { tr ->
-      val (version, build) = tr.findAll("td:nth-child(odd)").map { SemVer.parse(it.text) }
-      (build to version).takeIf { version.major > 2000 }
-    }.toMap().toSortedMap()
-  }
+  Jsoup.parse(content, "").select("h2:contains(com.jetbrains.intellij.idea) + table tbody tr").mapNotNull { tr ->
+    val (version, build) = tr.select("td:nth-child(odd)").map { SemVer.parse(it.text()) }
+    (build to version).takeIf { version.major > 2000 }
+  }.toMap().toSortedMap()
 }
 
 val frameUrl = "$ANDROID_STUDIO_HOST/studio/archive".fetch { content ->
-  htmlDocument(content) {
-    findFirst("devsite-iframe iframe[src]").attribute("src")
-  }
+  Jsoup.parse(content, "").select("devsite-iframe iframe[src]").firstOrNull()?.attr("src")
 }.let { "$ANDROID_STUDIO_HOST/$it" }
 
 frameUrl.fetch { content ->
@@ -54,28 +49,27 @@ frameUrl.fetch { content ->
     it.name to it.platformBuild
   }
 
-  htmlDocument(content) {
-    findAll("section.expandable").take(5).map { item ->
-      val title = item.findFirst("p").text
-      val (name, version, channel, date) =
-              """^([\w ]+ \(?([\d.]+)\)? ?(?:(\w+) \d+)?) (\w+ \d+, \d+)$""".toRegex()
-                      .find(title)?.groupValues?.drop(1)
-                      ?: emptyList()
+  Jsoup.parse(content, "").select("section.expandable").map { item ->
+    val title = item.select("p").firstOrNull()?.text() ?: throw IllegalStateException("No title found")
+    val (name, version, channel, date)
+            = """^([\w ]+ \(?([\d.]+)\)? ?(?:(\w+) \d+)?) (\w+ \d+, \d+)$""".toRegex().find(title)?.groupValues?.drop(1)
+            ?: emptyList()
 
-      println("# $name")
-      val platformBuild = nameToPlatformBuildMapping[name]?.let(SemVer::parse) ?: run {
-        item.findFirst(".downloads a[href$=.zip]").attribute("href").resolveBuild()
-      }
-      val platformVersion = platformBuildToVersionMapping[platformBuild] ?: run {
-        platformBuildToVersionMapping.entries.find { it.value < platformBuild }?.value
-      }
+    println("# $name")
+    val platformBuild = nameToPlatformBuildMapping[name]?.let(SemVer::parse) ?: run {
+      item.select(".downloads a[href$=.zip]").firstOrNull()?.attr("href")?.resolveBuild()
+    } ?: throw IllegalStateException("No platform build found for $name")
+    val platformVersion = platformBuildToVersionMapping[platformBuild] ?: run {
+      platformBuildToVersionMapping.entries.find { it.value < platformBuild }?.value
+    }
 
-      println("  version='${version}'")
-      println("  platformBuild='${platformBuild}'")
-      println("  platformVersion='${platformVersion}'")
+    println("  version='${version}'")
+    println("  platformBuild='${platformBuild}'")
+    println("  platformVersion='${platformVersion}'")
 
-      Item(name, version, channel.lowercase(), platformBuild.toString(), platformVersion.toString(), date)
-    }.let { Content(current.version + 1, it) }
+    Item(name, version, channel.lowercase(), platformBuild.toString(), platformVersion.toString(), date)
+  }.let {
+    Content(current.version + 1, it)
   }.also {
     Persister().write(it, contentFile)
   }.also { (_, items) ->

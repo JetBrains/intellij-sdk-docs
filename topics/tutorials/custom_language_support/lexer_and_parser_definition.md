@@ -9,21 +9,6 @@ The easiest way to create a lexer is to use [JFlex](https://jflex.de/).
 
 **Reference**: [](implementing_lexer.md)
 
-## Required Project Configuration Change
-The previous tutorial step [Grammar and Parser](grammar_and_parser.md), and this page, generate source files in the directory <path>src/main/gen</path>.
-To include those files, the project's `sourceSets` must be expanded by inserting the following line in the project's <path>build.gradle</path> file:
-
-```groovy
-  sourceSets.main.java.srcDirs 'src/main/gen'
-```
-
-Or the following line in the project's <path>build.gradle.kts</path> file:
-```kotlin
-  sourceSets["main"].java.srcDirs("src/main/gen")
-```
-
-Reload the Gradle project for changes to take effect.
-
 ## Define a Lexer
 Define a <path>Simple.flex</path> file with rules for the Simple Language lexer, as demonstrated in `org.intellij.sdk.language.Simple.flex`.
 

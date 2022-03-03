@@ -62,10 +62,24 @@ Note that the `SimpleTypes` class in the `elementTypeHolderClass` attribute abov
 ## Generate a Parser
 Now that the grammar is defined, generate a parser with PSI classes via <control>Generate Parser Code</control> from the context menu on the <path>Simple.bnf</path> file.
 This step generates a parser and PSI elements in the <path>/src/main/gen</path> folder of the project.
-Mark this folder as <control>Generated Sources Root</control> and make sure everything compiles without errors.
 
  > Gradle plugin [gradle-grammarkit-plugin](https://github.com/JetBrains/gradle-grammar-kit-plugin) can be used alternatively.
  >
  {type="tip"}
 
 ![Parser](generated_parser.png){width="800"}
+
+## Add Generated Sources Root
+
+To include the sources generated into <path>/src/main/gen</path>, the project's `sourceSets` must be expanded by inserting the following line in the project's <path>build.gradle</path> file:
+
+```groovy
+  sourceSets.main.java.srcDirs 'src/main/gen'
+```
+
+Or the following line in the project's <path>build.gradle.kts</path> file:
+```kotlin
+  sourceSets["main"].java.srcDirs("src/main/gen")
+```
+
+Reload the Gradle project for changes to take effect and build the project.

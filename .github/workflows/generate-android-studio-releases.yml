@@ -6,12 +6,12 @@ on:
   workflow_dispatch:
 
 jobs:
-  example-action:
+  generate:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - name: Generate
-        run: .github/workflows/generate-android-studio-releases.sh
+        run: "${GITHUB_WORKSPACE}/.github/scripts/android_studio_releases.main.kts"
       - name: Commit changes
         uses: Endbug/add-and-commit@v8
         with:

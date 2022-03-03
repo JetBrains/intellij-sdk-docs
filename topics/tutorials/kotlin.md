@@ -76,6 +76,10 @@ See [Dependency on the standard library](https://kotlinlang.org/docs/gradle.html
 >
 {type="tip"}
 
+### Other Bundled Kotlin Libraries
+
+Please see [Third-Party Software and Licenses](https://www.jetbrains.com/legal/third-party-software/).
+
 ## Kotlin Gradle Plugin
 
 Plugins using the [Gradle Build System](gradle_build_system.md) use the [Kotlin JVM Gradle plugin](https://kotlinlang.org/docs/gradle.html#targeting-the-jvm).

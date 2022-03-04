@@ -349,6 +349,7 @@
         <toc-element id="glossary.md"/>
         <toc-element id="explore_api.md" toc-title="Explore the API"/>
         <toc-element id="extension_point_list.md"/>
+        <toc-element id="android_studio_releases_list.md"/>
         <toc-element id="useful_links.md" accepts-web-file-names="resources.html"/>
         <toc-element id="marketing.md"/>
         <toc-element id="consulting.md"/>

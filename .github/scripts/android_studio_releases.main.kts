@@ -6,10 +6,7 @@
  * Parsed list is used to generate the Markdown table.
  * The actual IntelliJ IDEA release version is obtained with the help of the JetBrains Data Services API.
  */
-@file:DependsOn("org.jsoup:jsoup:1.14.3")
-@file:DependsOn("net.swiftzer.semver:semver:1.1.2")
-@file:DependsOn("org.simpleframework:simple-xml:2.7.1")
-@file:DependsOn("org.json:json:20211205")
+@file:DependsOn("org.jsoup:jsoup:1.14.3") @file:DependsOn("net.swiftzer.semver:semver:1.1.2") @file:DependsOn("org.simpleframework:simple-xml:2.7.1") @file:DependsOn("org.json:json:20211205")
 
 import net.swiftzer.semver.SemVer
 import org.jsoup.Jsoup
@@ -44,46 +41,67 @@ frameUrl.fetch { content ->
   val current = contentFile.takeIf { it.length() > 0 }?.let {
     Persister().read(Content::class.java, it)
   } ?: Content()
+  val nameToBuildMapping = current.items.associate { it.name to it.build }
 
-  val nameToPlatformBuildMapping = current.items.associate {
-    it.name to it.platformBuild
-  }
+  Jsoup.parse(content, "").select("section.expandable").run {
+    mapIndexed { index, item ->
+      val title = item.select("p").firstOrNull()?.text() ?: throw IllegalStateException("No title found")
+      val (name, version, channel, date) = """^([\w ]+ \(?([\d.]+)\)? ?(?:(\w+) \d+)?) (\w+ \d+, \d+)$""".toRegex().find(title)?.groupValues?.drop(1)
+              ?: emptyList()
 
-  Jsoup.parse(content, "").select("section.expandable").map { item ->
-    val title = item.select("p").firstOrNull()?.text() ?: throw IllegalStateException("No title found")
-    val (name, version, channel, date)
-            = """^([\w ]+ \(?([\d.]+)\)? ?(?:(\w+) \d+)?) (\w+ \d+, \d+)$""".toRegex().find(title)?.groupValues?.drop(1)
-            ?: emptyList()
+      println("# $name")
+      println("  ${index + 1}/$size")
 
-    println("# $name")
-    val platformBuild = nameToPlatformBuildMapping[name]?.let(SemVer::parse) ?: run {
-      item.select(".downloads a[href$=.zip]").firstOrNull()?.attr("href")?.resolveBuild()
-    } ?: throw IllegalStateException("No platform build found for $name")
-    val platformVersion = platformBuildToVersionMapping[platformBuild] ?: run {
-      platformBuildToVersionMapping.entries.find { it.value < platformBuild }?.value
+      val build = nameToBuildMapping[name] ?: run {
+        item.select(".downloads a[href$=.zip]").firstOrNull()?.attr("href")?.resolveBuild()
+      } ?: throw IllegalStateException("No platform build found for $name")
+      val platformBuild = build.split("-").last().split(".").take(3).joinToString(".").let(SemVer.Companion::parse)
+      val platformVersion = platformBuildToVersionMapping[platformBuild] ?: run {
+        platformBuildToVersionMapping.entries.find { it.value < platformBuild }?.value
+      }
+
+      println("  version='${version}'")
+      println("  build='${build}'")
+      println("  platformBuild='${platformBuild}'")
+      println("  platformVersion='${platformVersion}'")
+
+      Item(name, build, version, channel.lowercase(), platformBuild.toString(), platformVersion.toString(), date)
     }
-
-    println("  version='${version}'")
-    println("  platformBuild='${platformBuild}'")
-    println("  platformVersion='${platformVersion}'")
-
-    Item(name, version, channel.lowercase(), platformBuild.toString(), platformVersion.toString(), date)
   }.let {
     Content(current.version + 1, it)
   }.also {
     Persister().write(it, contentFile)
   }.also { (_, items) ->
-    """
-    <chunk id="releases_table">
+    ("" +
+            """
+            <chunk id="releases_table">
+            | Android Studio | Channel | Build | Version | Release Date | IntelliJ IDEA Build Number | IntelliJ IDEA Release Version |
+            |----------------|---------|-------|---------|--------------|----------------------------|-------------------------------|
+            """.trimIndent() +
 
-    | Android Studio | Channel | Release Date | IntelliJ IDEA Build Number | IntelliJ IDEA Release Version |
-    |----------------|---------|--------------|----------------------------|-------------------------------|
+            items.joinToString("\n") {
+              "| ${it.name} | ${it.channel} | ${it.build} | ${it.version} | ${it.date} | ${it.platformBuild} | ${it.platformVersion} |"
+            } +
 
-    """.trimIndent() + items.joinToString("\n") {
-      "| ${it.name} | ${it.channel} | ${it.date} | ${it.platformBuild} | ${it.platformVersion} |"
-    } + "\n\n</chunk>".let {
-      file(RELEASES_FILE_PATH_MD).writeText(it)
-    }
+            """
+            </chunk>
+
+            <chunk id="releases_table_short">
+            | Android Studio | Release Date | IntelliJ IDEA Version |
+            |----------------|--------------|-----------------------|
+            """.trimIndent() +
+
+            items.distinctBy { it.version }.take(5).joinToString("\n") {
+              "| ${it.name} | ${it.date} | ${it.platformVersion} (${it.platformBuild}) |"
+            } +
+
+            """
+            </chunk>
+            """.trimIndent()
+
+            ).let {
+              file(RELEASES_FILE_PATH_MD).writeText(it)
+            }
   }
 }
 
@@ -112,8 +130,10 @@ fun String.resolveBuild() = download { file ->
     zip.getEntry("android-studio/build.txt").let { entry ->
       zip.getInputStream(entry).use { inputStream ->
         inputStream.readBytes().toString(Charsets.UTF_8)
+      }.also {
+        println("  Resolved build number: $it")
       }
-    }.split("-").last().split(".").take(3).joinToString(".").let(SemVer.Companion::parse)
+    }
   }.also {
     file.delete()
   }
@@ -129,6 +149,7 @@ data class Content(
 
 data class Item(
         var name: String = "",
+        var build: String = "",
         var version: String = "",
         var channel: String = "",
         var platformBuild: String? = null,

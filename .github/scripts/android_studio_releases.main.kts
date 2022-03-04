@@ -46,7 +46,7 @@ frameUrl.fetch { content ->
   Jsoup.parse(content, "").select("section.expandable").run {
     mapIndexed { index, item ->
       val title = item.select("p").firstOrNull()?.text() ?: throw IllegalStateException("No title found")
-      val (name, version, channel, date) = """^([\w ]+ \(?([\d.]+)\)? ?(?:(\w+) \d+)?) (\w+ \d+, \d+)$""".toRegex().find(title)?.groupValues?.drop(1)
+      val (name, version, channelRaw, date) = """^([\w ]+ \(?([\d.]+)\)? ?(?:(\w+) \d+)?) (\w+ \d+, \d+)$""".toRegex().find(title)?.groupValues?.drop(1)
               ?: emptyList()
 
       println("# $name")
@@ -59,13 +59,14 @@ frameUrl.fetch { content ->
       val platformVersion = platformBuildToVersionMapping[platformBuild] ?: run {
         platformBuildToVersionMapping.entries.find { it.value < platformBuild }?.value
       }
+      val channel = channelRaw.takeIf { it.isNotBlank() } ?: "release"
 
       println("  version='${version}'")
       println("  build='${build}'")
       println("  platformBuild='${platformBuild}'")
       println("  platformVersion='${platformVersion}'")
 
-      Item(name, build, version, channel.lowercase(), platformBuild.toString(), platformVersion.toString(), date)
+      Item(name, build, version, channel, platformBuild.toString(), platformVersion.toString(), date)
     }
   }.let {
     Content(current.version + 1, it)

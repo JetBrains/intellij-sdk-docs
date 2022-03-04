@@ -75,6 +75,7 @@ frameUrl.fetch { content ->
     ("" +
             """
             <chunk id="releases_table">
+
             | Android Studio | Channel | Build | Version | Release Date | IntelliJ IDEA Build Number | IntelliJ IDEA Release Version |
             |----------------|---------|-------|---------|--------------|----------------------------|-------------------------------|
 
@@ -85,9 +86,12 @@ frameUrl.fetch { content ->
             } +
 
             """
+
+
             </chunk>
 
             <chunk id="releases_table_short">
+
             | Android Studio | Release Date | IntelliJ IDEA Version |
             |----------------|--------------|-----------------------|
 
@@ -98,7 +102,10 @@ frameUrl.fetch { content ->
             } +
 
             """
+
+
             </chunk>
+
             """.trimIndent()
 
             ).let {

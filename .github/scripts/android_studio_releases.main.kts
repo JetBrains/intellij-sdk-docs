@@ -52,7 +52,7 @@ frameUrl.fetch { content ->
       println("# $name")
       println("  ${index + 1}/$size")
 
-      val build = nameToBuildMapping[name] ?: run {
+      val build = nameToBuildMapping[name].takeUnless(String?::isNullOrBlank) ?: run {
         item.select(".downloads a[href$=.zip]").firstOrNull()?.attr("href")?.resolveBuild()
       } ?: throw IllegalStateException("No platform build found for $name")
       val platformBuild = build.split("-").last().split(".").take(3).joinToString(".").let(SemVer.Companion::parse)
@@ -77,6 +77,7 @@ frameUrl.fetch { content ->
             <chunk id="releases_table">
             | Android Studio | Channel | Build | Version | Release Date | IntelliJ IDEA Build Number | IntelliJ IDEA Release Version |
             |----------------|---------|-------|---------|--------------|----------------------------|-------------------------------|
+
             """.trimIndent() +
 
             items.joinToString("\n") {
@@ -89,6 +90,7 @@ frameUrl.fetch { content ->
             <chunk id="releases_table_short">
             | Android Studio | Release Date | IntelliJ IDEA Version |
             |----------------|--------------|-----------------------|
+
             """.trimIndent() +
 
             items.distinctBy { it.version }.take(5).joinToString("\n") {

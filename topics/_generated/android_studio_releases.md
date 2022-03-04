@@ -1,6 +1,7 @@
 <chunk id="releases_table">
 | Android Studio | Channel | Build | Version | Release Date | IntelliJ IDEA Build Number | IntelliJ IDEA Release Version |
-|----------------|---------|-------|---------|--------------|----------------------------|-------------------------------|| Android Studio Dolphin (2021.3.1) Canary 5 | canary | AI-213.6777.52.2113.8233036 | 2021.3.1 | March 3, 2022 | 213.6777.52 | 2021.3.2 |
+|----------------|---------|-------|---------|--------------|----------------------------|-------------------------------|
+| Android Studio Dolphin (2021.3.1) Canary 5 | canary | AI-213.6777.52.2113.8233036 | 2021.3.1 | March 3, 2022 | 213.6777.52 | 2021.3.2 |
 | Android Studio Dolphin (2021.3.1) Canary 4 | canary | AI-213.6777.52.2113.8195552 | 2021.3.1 | February 28, 2022 | 213.6777.52 | 2021.3.2 |
 | Android Studio Chipmunk (2021.2.1) Beta 3 | beta | AI-212.5712.43.2112.8184640 | 2021.2.1 | February 28, 2022 | 212.5712.43 | 2021.2.4 |
 | Android Studio Bumblebee (2021.1.1) Patch 2 | patch | AI-211.7628.21.2111.8193401 | 2021.1.1 | February 23, 2022 | 211.7628.21 | 2021.1.3 |
@@ -299,7 +300,8 @@
 
 <chunk id="releases_table_short">
 | Android Studio | Release Date | IntelliJ IDEA Version |
-|----------------|--------------|-----------------------|| Android Studio Dolphin (2021.3.1) Canary 5 | March 3, 2022 | 2021.3.2 (213.6777.52) |
+|----------------|--------------|-----------------------|
+| Android Studio Dolphin (2021.3.1) Canary 5 | March 3, 2022 | 2021.3.2 (213.6777.52) |
 | Android Studio Chipmunk (2021.2.1) Beta 3 | February 28, 2022 | 2021.2.4 (212.5712.43) |
 | Android Studio Bumblebee (2021.1.1) Patch 2 | February 23, 2022 | 2021.1.3 (211.7628.21) |
 | Android Studio Arctic Fox (2020.3.1) Patch 4 | December 8, 2021 | 2020.3.3 (203.7717.56) |

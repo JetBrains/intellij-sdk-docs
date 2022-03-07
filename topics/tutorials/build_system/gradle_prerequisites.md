@@ -101,31 +101,31 @@ my_gradle_plugin
 The generated `my_gradle_plugin` project <path>build.gradle</path> file:
 
 ```groovy
-  plugins {
-      id 'java'
-      id 'org.jetbrains.intellij' version '1.4.0'
-  }
+plugins {
+    id 'java'
+    id 'org.jetbrains.intellij' version '1.4.0'
+}
 
-  group 'com.your.company'
-  version '1.0'
-  sourceCompatibility = 1.8
+group 'com.your.company'
+version '1.0'
+sourceCompatibility = 1.8
 
-  repositories {
-      mavenCentral()
-  }
-  dependencies {
-      testImplementation group: 'junit', name: 'junit', version: '4.13.2'
-  }
+repositories {
+    mavenCentral()
+}
+dependencies {
+    testImplementation group: 'junit', name: 'junit', version: '4.13.2'
+}
 
-  // See https://github.com/JetBrains/gradle-intellij-plugin/
-  intellij {
-      version = '2020.1.3'
-  }
-  patchPluginXml {
-      changeNotes = """
-        Add change notes here.<br/>
-        <em>most HTML tags may be used</em>"""
-  }
+// See https://github.com/JetBrains/gradle-intellij-plugin/
+intellij {
+    version = '2020.1.3'
+}
+patchPluginXml {
+    changeNotes = """
+      Add change notes here.<br/>
+      <em>most HTML tags may be used</em>"""
+}
 ```
 
 * Two plugins to Gradle are explicitly declared:

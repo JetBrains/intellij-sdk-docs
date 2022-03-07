@@ -81,7 +81,7 @@ An example `pluginSigning` configuration may look like:
 <tabs>
 <tab title="Gradle">
 
-```Groovy
+```groovy
 signPlugin {
   certificateChain = """
     -----BEGIN CERTIFICATE-----
@@ -110,7 +110,7 @@ publishPlugin {
 </tab>
 <tab title="Gradle Kotlin DSL">
 
-```Kotlin
+```kotlin
 signPlugin {
   certificateChain.set("""
     -----BEGIN CERTIFICATE-----
@@ -155,7 +155,7 @@ To specify secrets like `PUBLISH_TOKEN` and values required for the `signPlugin`
 <tabs>
 <tab title="Gradle">
 
-```Groovy
+```groovy
 signPlugin {
   certificateChain = System.getenv("CERTIFICATE_CHAIN")
   privateKey = System.getenv("PRIVATE_KEY")
@@ -170,7 +170,7 @@ publishPlugin {
 </tab>
 <tab title="Gradle Kotlin DSL">
 
-```Kotlin
+```kotlin
 signPlugin {
   certificateChain.set(System.getenv("CERTIFICATE_CHAIN"))
   privateKey.set(System.getenv("PRIVATE_KEY"))

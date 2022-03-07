@@ -56,21 +56,47 @@ Here are the steps to configure the <path>build.gradle</path> file for developin
 
 The snippet below is an example of configuring the Setup and Running DSLs in a <path>build.gradle</path> specific to developing a plugin targeted at Android Studio.
 
-```groovy
-  intellij {
-    // Define IntelliJ Platform against which to build the plugin project.
-    version = '191.8026.42'  // Same IntelliJ IDEA version (2019.1.4) as target 3.5 Android Studio
-    type = 'IC'              // Use IntelliJ IDEA CE because it's the basis of the IntelliJ Platform
-    // Require the Android plugin, Gradle will match the plugin version to intellij.version
-    plugins = ['android']
-  }
+<tabs>
+<tab title="Gradle">
 
-  runIde {
-      // Absolute path to installed target 3.5 Android Studio to use as IDE Development Instance
-      // The "Contents" directory is macOS specific.
-      ideDir = file('/Applications/Android Studio.app/Contents')
-  }
+```groovy
+intellij {
+  // Define IntelliJ Platform against which to build the plugin project.
+  version = '191.8026.42'  // Same IntelliJ IDEA version (2019.1.4) as target 3.5 Android Studio
+  type = 'IC'              // Use IntelliJ IDEA CE because it's the basis of the IntelliJ Platform
+  // Require the Android plugin, Gradle will match the plugin version to intellij.version
+  plugins = ['android']
+}
+
+runIde {
+  // Absolute path to installed target 3.5 Android Studio to use as IDE Development Instance
+  // The "Contents" directory is macOS specific.
+  ideDir = file('/Applications/Android Studio.app/Contents')
+}
 ```
+
+</tab>
+<tab title="Gradle Kotlin DSL">
+
+```kotlin
+intellij {
+  // Define IntelliJ Platform against which to build the plugin project.
+  version.set("191.8026.42")  // Same IntelliJ IDEA version (2019.1.4) as target 3.5 Android Studio
+  type.set("IC")              // Use IntelliJ IDEA CE because it's the basis of the IntelliJ Platform
+  // Require the Android plugin, Gradle will match the plugin version to intellij.version
+  plugins.set(listOf("android"))
+}
+
+runIde {
+  // Absolute path to installed target 3.5 Android Studio to use as IDE Development Instance
+  // The "Contents" directory is macOS specific.
+  ideDir.set(file("/Applications/Android Studio.app/Contents"))
+}
+```
+
+</tab>
+</tabs>
+
 
 ### Configuring the Plugin plugin.xml File
 When using APIs from the `android` plugin, declare a dependency:

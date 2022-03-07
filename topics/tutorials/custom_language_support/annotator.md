@@ -17,17 +17,16 @@ Beginning in version 2019.2, a dependency on Java plugin [must be declared expli
 First, add a dependency on the Java plugin in Gradle build file:
 
 <tabs>
-<tab title="build.gradle">
+<tab title="Gradle">
 
-```groovy
+```kotlin
 intellij {
   plugins = ['com.intellij.java']
 }
 ```
 
 </tab>
-
-<tab title="build.gradle.kts">
+<tab title="Gradle Kotlin DSL">
 
 ```kotlin
 intellij {

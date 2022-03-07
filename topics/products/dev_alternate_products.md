@@ -43,12 +43,28 @@ A <path>build.gradle</path> snippet setting a plugin project to target PyCharm i
 The `gradle-intellij-plugin` will fetch the matching build of PyCharm Professional to define the APIs available, and use that build of PyCharm (and associated JetBrains runtime) as the Development Instance.
 No additional product-specific configuration needs to be set in <path>build.gradle</path>:
 
+<tabs>
+<tab title="Gradle">
+
 ```groovy
 intellij {
   version = '2019.2.3'
   type = 'PY'
 }
 ```
+
+</tab>
+<tab title="Gradle Kotlin DSL">
+
+```kotlin
+intellij {
+  version.set("2019.2.3")
+  type.set("PY")
+}
+```
+
+</tab>
+</tabs>
 
 ### Configuring Plugin Projects Using the IntelliJ IDEA Product Attribute
 If the `gradle-intellij-plugin` does not directly support an IntelliJ Platform-based product, the <path>build.gradle</path> file can still be configured to target the desired product.
@@ -106,6 +122,9 @@ The exact path format varies by operating system.
 
 This snippet is an example for configuring the Setup and Running DSLs in a <path>build.gradle</path> specific to developing a plugin for _targetIDE_.
 
+<tabs>
+<tab title="Gradle">
+
 ```groovy
 intellij {
   // Define the IntelliJ Platform against which to build the plugin project.
@@ -123,6 +142,30 @@ runIde {
   ideDir = file('/Users/$USERNAME$/Library/Application Support/JetBrains/Toolbox/apps/PhpStorm/ch-0/192.7142.41/PhpStorm.app/Contents')
 }
 ```
+
+</tab>
+<tab title="Gradle Kotlin DSL">
+
+```kotlin
+intellij {
+  // Define the IntelliJ Platform against which to build the plugin project.
+  // Use the IntelliJ Platform BRANCH.BUILD version matching "targetIDE" (PhpStorm)
+  version.set("192.7142.36")   // baseIntelliJPlatformVersion
+  type.set("IU")
+  // Require the targetIDE plugin or library
+  // Use the stable version compatible with intellij.version and intellij.type specified above
+  plugins.set(listOf("com.jetbrains.php:192.6603.42"))
+}
+
+runIde {
+  // Absolute path to the installed targetIDE to use as IDE Development Instance
+  // Note the Contents directory must be added at the end of the path for macOS.
+  ideDir.set(file("/Users/$USERNAME$/Library/Application Support/JetBrains/Toolbox/apps/PhpStorm/ch-0/192.7142.41/PhpStorm.app/Contents"))
+}
+```
+
+</tab>
+</tabs>
 
 ## Configuring plugin.xml
 As discussed on the [Plugin Dependencies](plugin_compatibility.md#declaring-plugin-dependencies) page of this guide, a plugin's dependency on [Modules Specific to Functionality](plugin_compatibility.md#modules-specific-to-functionality) must be declared in <path>plugin.xml</path>.

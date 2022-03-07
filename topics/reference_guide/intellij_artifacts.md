@@ -97,6 +97,9 @@ There are two parts to the example: the repository and the dependency sections.
 This code snippet selects the release repository with the first URL, and the repository of IntelliJ Platform dependencies with the second URL.
 The second URL is needed because this example selects individual modules.
 
+<tabs>
+<tab title="Gradle">
+
 ```groovy
 repositories {
 	maven { url "https://www.jetbrains.com/intellij-repository/releases" }
@@ -104,15 +107,44 @@ repositories {
 }
 ```
 
+</tab>
+<tab title="Gradle Kotlin DSL">
+
+```kotlin
+repositories {
+	maven("https://www.jetbrains.com/intellij-repository/releases")
+	maven("https://cache-redirector.jetbrains.com/intellij-dependencies")
+}
+```
+
+</tab>
+</tabs>
+
 ### Dependencies Section
 This code snippet specifies the desired module artifacts.
 
+<tabs>
+<tab title="Gradle">
+
 ```groovy
 dependencies {
-	compile "com.jetbrains.intellij.platform:jps-model-serialization:182.2949.4"
-	compile "com.jetbrains.intellij.platform:jps-model-impl:182.2949.4"
+	implementation "com.jetbrains.intellij.platform:jps-model-serialization:182.2949.4"
+	implementation "com.jetbrains.intellij.platform:jps-model-impl:182.2949.4"
 }
 ```
+
+</tab>
+<tab title="Gradle Kotlin DSL">
+
+```kotlin
+dependencies {
+	implementation("com.jetbrains.intellij.platform:jps-model-serialization:182.2949.4")
+	implementation("com.jetbrains.intellij.platform:jps-model-impl:182.2949.4")
+}
+```
+
+</tab>
+</tabs>
 
 Note:
  * The artifact version (`182.2949.4`) must match in both statements.

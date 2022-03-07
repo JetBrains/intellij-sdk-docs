@@ -84,13 +84,14 @@ frameUrl.fetch { content ->
             """
             <chunk id="releases_table">
 
-            | Android Studio | Channel | Build | Version | Release Date | IntelliJ IDEA Build Number | IntelliJ IDEA Release Version |
-            |----------------|---------|-------|---------|--------------|----------------------------|-------------------------------|
+            | Release Name | Channel | Build | Version | Release Date | IntelliJ IDEA Build Number | IntelliJ IDEA Release Version |
+            |--------------|---------|-------|---------|--------------|----------------------------|-------------------------------|
 
             """.trimIndent() +
 
             items.joinToString("\n") {
-              "| ${it.name} | ${it.channel} | ${it.build} | ${it.version} | ${it.date} | ${it.platformBuild} | ${it.platformVersion} |"
+              val name = it.name.removePrefix("Android Studio").trim()
+              "| $name | ${it.channel} | ${it.build} | ${it.version} | ${it.date} | ${it.platformBuild} | ${it.platformVersion} |"
             } +
 
             """
@@ -100,13 +101,14 @@ frameUrl.fetch { content ->
 
             <chunk id="releases_table_short">
 
-            | Android Studio | Release Date | IntelliJ IDEA Version |
-            |----------------|--------------|-----------------------|
+            | Release Name | Release Date | IntelliJ IDEA Version |
+            |--------------|--------------|-----------------------|
 
             """.trimIndent() +
 
             items.distinctBy { it.version }.take(5).joinToString("\n") {
-              "| ${it.name} | ${it.date} | ${it.platformVersion} (${it.platformBuild}) |"
+              val name = it.name.removePrefix("Android Studio").trim()
+              "| $name | ${it.date} | ${it.platformVersion} (${it.platformBuild}) |"
             } +
 
             """

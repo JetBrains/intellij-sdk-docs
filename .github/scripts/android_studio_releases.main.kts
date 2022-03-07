@@ -66,7 +66,7 @@ frameUrl.fetch { content ->
       val platformVersion = platformBuildToVersionMapping[platformBuild] ?: run {
         platformBuildToVersionMapping.entries.findLast { it.key < platformBuild }?.value
       }
-      val channel = channelRaw.takeIf { it.isNotBlank() } ?: "release"
+      val channel = channelRaw.takeIf { it.isNotBlank() } ?: "Release"
 
       println("  version='${version}'")
       println("  build='${build}'")
@@ -101,11 +101,18 @@ frameUrl.fetch { content ->
               }.joinToString("\n") {
                 val name = it.name.removePrefix("Android Studio").trim()
                 val channel = it.channel.lowercase()
-                "| $name | $channel | <small>${it.build}</small> | ${it.version} | ${it.date} | ${it.platformBuild} | ${it.platformVersion} |"
+                "| $name | ![$channel][$channel] | <small>${it.build}</small> | ${it.version} | ${it.date} | ${it.platformBuild} | ${it.platformVersion} |"
               }
             } +
 
             """
+
+
+            [release]: https://img.shields.io/badge/-release-blue?style=flat-square
+            [patch]: https://img.shields.io/badge/-patch-orange?style=flat-square
+            [rc]: https://img.shields.io/badge/-rc-red?style=flat-square
+            [beta]: https://img.shields.io/badge/-beta-darkred?style=flat-square
+            [canary]: https://img.shields.io/badge/-canary-lightgrey?style=flat-square
 
 
             </chunk>

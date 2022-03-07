@@ -4,7 +4,7 @@
 
 ## Introduction
 Android Studio plugins extend or add functionality to the [Android Studio IDE](https://developer.android.com/studio).
-Plugins can be written in Kotlin or Java, or a mix of both, and are created using IntelliJ IDEA and the [IntelliJ Platform](intellij_platform.md).
+Plugins can be written in [Kotlin](kotlin.md) or Java, or a mix of both, and are created using IntelliJ IDEA and the [IntelliJ Platform](intellij_platform.md).
 It's also helpful to be familiar with [Java Swing](https://docs.oracle.com/javase/8/javase-clienttechnologies.htm).
 Once completed, plugins can be packaged and distributed at [JetBrains Marketplace](https://plugins.jetbrains.com).
 
@@ -23,7 +23,7 @@ The version number of Android Studio contains the version of the underlying Inte
 The actual Android Studio version doesn't entirely reflect the (YEAR.MAJOR.MINOR) version of the IntelliJ Platform.
 The Android Studio version presented below is `2021.1.1 Patch 1`, but the `2021.1` part marked with the green rectangle refers to the IntelliJ IDEA release.
 
-To find the version of the IntelliJ Platform used to build Android Studio, use the Android Studio _About_ dialog screen.
+To find the version of the IntelliJ Platform used to build Android Studio, use the Android Studio <control>About</control> dialog screen.
 An example is shown below.
 In this case, the (BRANCH.BUILD.FIX) version of the IntelliJ Platform is `211.7628.21` – marked with the blue rectangle – is corresponding to the IntelliJ IDEA version `2021.1.3`.
 

@@ -84,14 +84,25 @@ frameUrl.fetch { content ->
             """
             <chunk id="releases_table">
 
-            | Release Name | Channel | Build | Version | Release Date | IntelliJ IDEA Build Number | IntelliJ IDEA Release Version |
-            |--------------|---------|-------|---------|--------------|----------------------------|-------------------------------|
 
             """.trimIndent() +
 
-            items.joinToString("\n") {
-              val name = it.name.removePrefix("Android Studio").trim()
-              "| $name | ${it.channel} | ${it.build} | ${it.version} | ${it.date} | ${it.platformBuild} | ${it.platformVersion} |"
+            items.groupBy {
+              SemVer.parse(it.version).major
+            }.entries.joinToString("\n\n") { entry ->
+              """
+                ## ${entry.key}.x
+
+                | Release Name | Channel | Build | Version | Release Date | IntelliJ IDEA Build Number | IntelliJ IDEA Release Version |
+                |--------------|---------|-------|---------|--------------|----------------------------|-------------------------------|
+
+              """.trimIndent() + entry.value.sortedByDescending {
+                SemVer.parse(it.version)
+              }.joinToString("\n") {
+                val name = it.name.removePrefix("Android Studio").trim()
+                val channel = it.channel.lowercase()
+                "| $name | $channel | <small>${it.build}</small> | ${it.version} | ${it.date} | ${it.platformBuild} | ${it.platformVersion} |"
+              }
             } +
 
             """

@@ -9,6 +9,11 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 
 ## 2022
 
+### March-22
+
+Android Studio Releases List
+: Add [](android_studio_releases_list.md) section containing a complete list of the Android Studio releases with the relevant IntelliJ IDEA release version specified.
+
 ### February-22
 
 Parameter Info

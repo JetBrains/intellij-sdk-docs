@@ -27,6 +27,13 @@ val RELEASES_FILE_PATH_MD = "topics/_generated/android_studio_releases.md"
 val RELEASES_FILE_PATH_XML = "topics/_generated/android_studio_releases.xml"
 val INTELLIJ_RELEASES = "https://www.jetbrains.com/intellij-repository/releases/"
 val ANDROID_STUDIO_HOST = "https://developer.android.com"
+val CHANNEL_BADGES_LIST = """
+  [release]: https://img.shields.io/badge/-release-blue?style=flat-square
+  [patch]: https://img.shields.io/badge/-patch-orange?style=flat-square
+  [rc]: https://img.shields.io/badge/-rc-red?style=flat-square
+  [beta]: https://img.shields.io/badge/-beta-darkred?style=flat-square
+  [canary]: https://img.shields.io/badge/-canary-lightgrey?style=flat-square
+"""
 
 val platformBuildToVersionMapping = INTELLIJ_RELEASES.fetch { content ->
   Jsoup.parse(content, "").select("h2:contains(com.jetbrains.intellij.idea) + table tbody tr").mapNotNull { tr ->
@@ -80,72 +87,37 @@ frameUrl.fetch { content ->
   }.also {
     Persister().write(it, contentFile)
   }.also { (_, items) ->
-    ("" +
-            """
-            <chunk id="releases_table">
+    ("""
+    <chunk id="releases_table">
+    """ + items.groupBy { SemVer.parse(it.version).major }.entries.joinToString("\n\n") {
+      """
+        ## ${it.key}.x
 
+        ${it.value.renderTable()}
+      """
+    } + """
+      $CHANNEL_BADGES_LIST
+    </chunk>
 
-            """.trimIndent() +
-
-            items.groupBy {
-              SemVer.parse(it.version).major
-            }.entries.joinToString("\n\n") { entry ->
-              """
-                ## ${entry.key}.x
-
-                | Release Name | Channel | Release Date | Version | IntelliJ IDEA Version |
-                |--------------|:-------:|--------------|---------|-----------------------|
-
-              """.trimIndent() + entry.value.sortedByDescending {
-                SemVer.parse(it.version)
-              }.joinToString("\n") {
-                val name = it.name.removePrefix("Android Studio").trim()
-                val channel = it.channel.lowercase().run { "![$this][$this]" }
-                val date = it.date
-                val version = "<strong>${it.version}</strong> <small>(${it.build})</small>"
-                val platform = "<strong>${it.platformVersion}</strong> <small>(${it.platformBuild})</small>"
-
-                "| $name | $channel | $date | $version | $platform |"
-              }
-            } +
-
-            """
-
-
-            [release]: https://img.shields.io/badge/-release-blue?style=flat-square
-            [patch]: https://img.shields.io/badge/-patch-orange?style=flat-square
-            [rc]: https://img.shields.io/badge/-rc-red?style=flat-square
-            [beta]: https://img.shields.io/badge/-beta-darkred?style=flat-square
-            [canary]: https://img.shields.io/badge/-canary-lightgrey?style=flat-square
-
-
-            </chunk>
-
-            <chunk id="releases_table_short">
-
-            | Release Name | Release Date | IntelliJ IDEA Version |
-            |--------------|--------------|-----------------------|
-
-            """.trimIndent() +
-
-            items.distinctBy { it.version }.take(5).joinToString("\n") {
-              val name = it.name.removePrefix("Android Studio").trim()
-              val platform = "${it.platformVersion} <small>(${it.platformBuild})</small>"
-
-              "| $name | ${it.date} | $platform |"
-            } +
-
-            """
-
-
-            </chunk>
-
-            """.trimIndent()
-
-            ).let {
-              file(RELEASES_FILE_PATH_MD).writeText(it)
-            }
+    <chunk id="releases_table_short">
+      ${items.distinctBy(Item::version).take(5).renderTable()}
+      $CHANNEL_BADGES_LIST
+    </chunk>
+  """).split("\n").joinToString("\n", transform = String::trim).let(file(RELEASES_FILE_PATH_MD)::writeText)
   }
+}
+
+fun List<Item>.renderTable() = """
+  | Release Name | Channel | Release Date | Version | IntelliJ IDEA Version |
+  |--------------|:-------:|--------------|---------|-----------------------|
+""" + sortedByDescending { SemVer.parse(it.version) }.joinToString("\n") {
+  val name = it.name.removePrefix("Android Studio").trim()
+  val channel = it.channel.lowercase().run { "![$this][$this]" }
+  val date = it.date
+  val version = "<strong>${it.version}</strong> <small>(${it.build})</small>"
+  val platform = "<strong>${it.platformVersion}</strong> <small>(${it.platformBuild})</small>"
+
+  "| $name | $channel | $date | $version | $platform |"
 }
 
 fun <T> String.fetch(block: (String) -> T) = URL(this).openStream().use { inputStream ->

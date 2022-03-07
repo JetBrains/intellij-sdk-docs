@@ -1,6 +1,8 @@
+
 <chunk id="releases_table">
 
 ## 2021.x
+
 
 | Release Name | Channel | Release Date | Version | IntelliJ IDEA Version |
 |--------------|:-------:|--------------|---------|-----------------------|
@@ -42,7 +44,10 @@
 | Bumblebee (2021.1.1) Canary 2 | ![canary][canary] | June 7, 2021 | <strong>2021.1.1</strong> <small>(AI-211.6222.4.2111.7407564)</small> | <strong>2020.3.4</strong> <small>(211.6222.4)</small> |
 | Bumblebee (2021.1.1) Canary 1 | ![canary][canary] | May 18, 2021 | <strong>2021.1.1</strong> <small>(AI-203.7717.56.2111.7361063)</small> | <strong>2020.3.3</strong> <small>(203.7717.56)</small> |
 
+
+
 ## 2020.x
+
 
 | Release Name | Channel | Release Date | Version | IntelliJ IDEA Version |
 |--------------|:-------:|--------------|---------|-----------------------|
@@ -73,7 +78,10 @@
 | 2020.3.1 Canary 2 | ![canary][canary] | December 3, 2020 | <strong>2020.3.1</strong> <small>(AI-202.7319.50.2031.7006259)</small> | <strong>2020.2.2</strong> <small>(202.7319.50)</small> |
 | 2020.3.1 Canary 1 | ![canary][canary] | December 1, 2020 | <strong>2020.3.1</strong> <small>(AI-202.7319.50.2031.6983675)</small> | <strong>2020.2.2</strong> <small>(202.7319.50)</small> |
 
+
+
 ## 4.x
+
 
 | Release Name | Channel | Release Date | Version | IntelliJ IDEA Version |
 |--------------|:-------:|--------------|---------|-----------------------|
@@ -144,7 +152,10 @@
 | 4.0 Canary 2 | ![canary][canary] | November 7, 2019 | <strong>4.0</strong> <small>(AI-192.6817.14.36.5984562)</small> | <strong>2019.2.3</strong> <small>(192.6817.14)</small> |
 | 4.0 Canary 1 | ![canary][canary] | October 23, 2019 | <strong>4.0</strong> <small>(AI-192.6817.14.36.5959023)</small> | <strong>2019.2.3</strong> <small>(192.6817.14)</small> |
 
+
+
 ## 3.x
+
 
 | Release Name | Channel | Release Date | Version | IntelliJ IDEA Version |
 |--------------|:-------:|--------------|---------|-----------------------|
@@ -310,7 +321,10 @@
 | 3.0 Canary 2 | ![canary][canary] | May 26, 2017 | <strong>3.0</strong> <small>(AI-171.4041253)</small> | <strong>2017.1.0</strong> <small>(171.4041.0)</small> |
 | 3.0 Canary 1 | ![canary][canary] | May 17, 2017 | <strong>3.0</strong> <small>(AI-171.4010489)</small> | <strong>2017.1.0</strong> <small>(171.4010.0)</small> |
 
+
+
 ## 2.x
+
 
 | Release Name | Channel | Release Date | Version | IntelliJ IDEA Version |
 |--------------|:-------:|--------------|---------|-----------------------|
@@ -321,23 +335,29 @@
 | 2.3.3 | ![release][release] | June 8, 2017 | <strong>2.3.3</strong> <small>(AI-162.4069837)</small> | <strong>2016.2.5</strong> <small>(162.4069.0)</small> |
 | 2.3.2 | ![release][release] | May 11, 2017 | <strong>2.3.2</strong> <small>(AI-162.3934792)</small> | <strong>2016.2.5</strong> <small>(162.3934.0)</small> |
 
+
 [release]: https://img.shields.io/badge/-release-blue?style=flat-square
 [patch]: https://img.shields.io/badge/-patch-orange?style=flat-square
 [rc]: https://img.shields.io/badge/-rc-red?style=flat-square
 [beta]: https://img.shields.io/badge/-beta-darkred?style=flat-square
 [canary]: https://img.shields.io/badge/-canary-lightgrey?style=flat-square
 
-
 </chunk>
 
 <chunk id="releases_table_short">
 
-| Release Name | Release Date | IntelliJ IDEA Version |
-|--------------|--------------|-----------------------|
-| Dolphin (2021.3.1) Canary 5 | March 3, 2022 | 2021.3.2 <small>(213.6777.52)</small> |
-| Chipmunk (2021.2.1) Beta 3 | February 28, 2022 | 2021.2.4 <small>(212.5712.43)</small> |
-| Bumblebee (2021.1.1) Patch 2 | February 23, 2022 | 2021.1.3 <small>(211.7628.21)</small> |
-| Arctic Fox (2020.3.1) Patch 4 | December 8, 2021 | 2020.3.3 <small>(203.7717.56)</small> |
-| 4.2.2 | June 30, 2021 | 2020.2.3 <small>(202.7660.26)</small> |
+| Release Name | Channel | Release Date | Version | IntelliJ IDEA Version |
+|--------------|:-------:|--------------|---------|-----------------------|
+| Dolphin (2021.3.1) Canary 5 | ![canary][canary] | March 3, 2022 | <strong>2021.3.1</strong> <small>(AI-213.6777.52.2113.8233036)</small> | <strong>2021.3.2</strong> <small>(213.6777.52)</small> |
+| Chipmunk (2021.2.1) Beta 3 | ![beta][beta] | February 28, 2022 | <strong>2021.2.1</strong> <small>(AI-212.5712.43.2112.8184640)</small> | <strong>2021.2.4</strong> <small>(212.5712.43)</small> |
+| Bumblebee (2021.1.1) Patch 2 | ![patch][patch] | February 23, 2022 | <strong>2021.1.1</strong> <small>(AI-211.7628.21.2111.8193401)</small> | <strong>2021.1.3</strong> <small>(211.7628.21)</small> |
+| Arctic Fox (2020.3.1) Patch 4 | ![patch][patch] | December 8, 2021 | <strong>2020.3.1</strong> <small>(AI-203.7717.56.2031.7935034)</small> | <strong>2020.3.3</strong> <small>(203.7717.56)</small> |
+| 4.2.2 | ![release][release] | June 30, 2021 | <strong>4.2.2</strong> <small>(AI-202.7660.26.42.7486908)</small> | <strong>2020.2.3</strong> <small>(202.7660.26)</small> |
+
+[release]: https://img.shields.io/badge/-release-blue?style=flat-square
+[patch]: https://img.shields.io/badge/-patch-orange?style=flat-square
+[rc]: https://img.shields.io/badge/-rc-red?style=flat-square
+[beta]: https://img.shields.io/badge/-beta-darkred?style=flat-square
+[canary]: https://img.shields.io/badge/-canary-lightgrey?style=flat-square
 
 </chunk>

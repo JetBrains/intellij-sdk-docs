@@ -74,6 +74,10 @@ Please see [Incompatible API Changes](api_changes_list.md) on how to verify comp
 
 _Early Access Program_ (EAP) releases of upcoming versions are available [here](https://eap.jetbrains.com).
 
+## 2022.2
+
+### IntelliJ Platform 2022.2
+
 ## 2022.1
 
 ### IntelliJ Platform 2022.1

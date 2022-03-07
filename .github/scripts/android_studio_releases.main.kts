@@ -6,7 +6,10 @@
  * Parsed list is used to generate the Markdown table.
  * The actual IntelliJ IDEA release version is obtained with the help of the JetBrains Data Services API.
  */
-@file:DependsOn("org.jsoup:jsoup:1.14.3") @file:DependsOn("net.swiftzer.semver:semver:1.1.2") @file:DependsOn("org.simpleframework:simple-xml:2.7.1") @file:DependsOn("org.json:json:20211205")
+@file:DependsOn("org.jsoup:jsoup:1.14.3")
+@file:DependsOn("net.swiftzer.semver:semver:1.1.2")
+@file:DependsOn("org.simpleframework:simple-xml:2.7.1")
+@file:DependsOn("org.json:json:20211205")
 
 import net.swiftzer.semver.SemVer
 import org.jsoup.Jsoup
@@ -55,9 +58,13 @@ frameUrl.fetch { content ->
       val build = nameToBuildMapping[name].takeUnless(String?::isNullOrBlank) ?: run {
         item.select(".downloads a[href$=.zip]").firstOrNull()?.attr("href")?.resolveBuild()
       } ?: throw IllegalStateException("No platform build found for $name")
-      val platformBuild = build.split("-").last().split(".").take(3).joinToString(".").let(SemVer.Companion::parse)
+      val platformBuild = build.split('-', '.').drop(1).map { it.take(4).toInt() }.let {
+        val (major, minor, patch) = it + 0
+        SemVer(major, minor, patch)
+      }
+
       val platformVersion = platformBuildToVersionMapping[platformBuild] ?: run {
-        platformBuildToVersionMapping.entries.find { it.value < platformBuild }?.value
+        platformBuildToVersionMapping.entries.findLast { it.key < platformBuild }?.value
       }
       val channel = channelRaw.takeIf { it.isNotBlank() } ?: "release"
 

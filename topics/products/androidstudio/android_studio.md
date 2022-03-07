@@ -39,7 +39,7 @@ Below you may find a list of Android Studio releases mapped to the relevant Inte
 
 <include src="android_studio_releases.md" include-id="releases_table_short"></include>
 
-For the full list of Android Studio releases with more details, visit the [Android Studio Releases List](android_studio_releases_list.md) page available in *Appendix I – Resources* section.
+For the full list of Android Studio releases with more details, visit the [Android Studio Releases List](android_studio_releases_list.md) page.
 
 ### Configuring the Plugin build.gradle File
 The use-case of developing for a non-IntelliJ IDEA IDE is reviewed in the [Plugins Targeting Alternate IntelliJ Platform-Based IDEs](gradle_guide.md#plugins-targeting-alternate-intellij-platform-based-ides) section of the [Configuring Gradle for IntelliJ Platform Plugins](gradle_guide.md) page.

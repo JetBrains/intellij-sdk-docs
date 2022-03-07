@@ -295,7 +295,9 @@
         <toc-element id="build_number_ranges.md"/>
         <toc-element id="dev_alternate_products.md" toc-title="Developing for Multiple Products"/>
         <toc-element id="plugin_compatibility.md" toc-title="Compatibility with Multiple Products"/>
-        <toc-element id="android_studio.md" toc-title="Android Studio"/>
+        <toc-element id="android_studio.md" toc-title="Android Studio">
+            <toc-element id="android_studio_releases_list.md"/>
+        </toc-element>
         <toc-element id="app_code.md" toc-title="AppCode">
             <toc-element id="appcode_extension_point_list.md"/>
         </toc-element>
@@ -349,7 +351,6 @@
         <toc-element id="glossary.md"/>
         <toc-element id="explore_api.md" toc-title="Explore the API"/>
         <toc-element id="extension_point_list.md"/>
-        <toc-element id="android_studio_releases_list.md"/>
         <toc-element id="useful_links.md" accepts-web-file-names="resources.html"/>
         <toc-element id="marketing.md"/>
         <toc-element id="consulting.md"/>

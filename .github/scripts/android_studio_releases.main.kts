@@ -115,8 +115,8 @@ fun List<Item>.renderTable() = """
   val name = it.name.removePrefix("Android Studio").trim()
   val channel = it.channel.lowercase().run { "![$this][$this]" }
   val date = it.date
-  val version = "**${it.version}** (${it.build})"
-  val platform = "**${it.platformVersion}** (${it.platformBuild})"
+  val version = "**${it.version}** <br/> ${it.build}"
+  val platform = "**${it.platformVersion}** <br/> ${it.platformBuild}"
 
   "| $name | $channel | $date | $version | $platform |"
 }

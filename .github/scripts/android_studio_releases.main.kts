@@ -33,6 +33,7 @@ val CHANNEL_BADGES_LIST = """
   [rc]: https://img.shields.io/badge/-rc-red?style=flat-square
   [beta]: https://img.shields.io/badge/-beta-darkred?style=flat-square
   [canary]: https://img.shields.io/badge/-canary-lightgrey?style=flat-square
+  [preview]: https://img.shields.io/badge/-preview-darktgrey?style=flat-square
 """
 
 val platformBuildToVersionMapping = INTELLIJ_RELEASES.fetch { content ->
@@ -91,7 +92,7 @@ frameUrl.fetch { content ->
     <chunk id="releases_table">
     """ + items.groupBy { SemVer.parse(it.version).major }.entries.joinToString("\n\n") {
       """
-        ## ${it.key}.x
+        ## ${it.key}.*
 
         ${it.value.renderTable()}
       """

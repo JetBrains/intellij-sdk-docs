@@ -1,7 +1,7 @@
 
 <chunk id="releases_table">
 
-## 2021.x
+## 2021.*
 
 
 | Release Name | Channel | Release Date | Version | IntelliJ IDEA Version |
@@ -46,7 +46,7 @@
 
 
 
-## 2020.x
+## 2020.*
 
 
 | Release Name | Channel | Release Date | Version | IntelliJ IDEA Version |
@@ -80,7 +80,7 @@
 
 
 
-## 4.x
+## 4.*
 
 
 | Release Name | Channel | Release Date | Version | IntelliJ IDEA Version |
@@ -154,7 +154,7 @@
 
 
 
-## 3.x
+## 3.*
 
 
 | Release Name | Channel | Release Date | Version | IntelliJ IDEA Version |
@@ -323,7 +323,7 @@
 
 
 
-## 2.x
+## 2.*
 
 
 | Release Name | Channel | Release Date | Version | IntelliJ IDEA Version |
@@ -341,6 +341,7 @@
 [rc]: https://img.shields.io/badge/-rc-red?style=flat-square
 [beta]: https://img.shields.io/badge/-beta-darkred?style=flat-square
 [canary]: https://img.shields.io/badge/-canary-lightgrey?style=flat-square
+[preview]: https://img.shields.io/badge/-preview-darktgrey?style=flat-square
 
 </chunk>
 
@@ -359,5 +360,6 @@
 [rc]: https://img.shields.io/badge/-rc-red?style=flat-square
 [beta]: https://img.shields.io/badge/-beta-darkred?style=flat-square
 [canary]: https://img.shields.io/badge/-canary-lightgrey?style=flat-square
+[preview]: https://img.shields.io/badge/-preview-darktgrey?style=flat-square
 
 </chunk>

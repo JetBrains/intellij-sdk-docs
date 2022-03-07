@@ -88,9 +88,9 @@ Usage of [Extension Points](plugin_extensions.md) which are deprecated or annota
 
 ## Known Breaking Changes
 
- > Follow [JBPlatform](https://twitter.com/JBPlatform/) on Twitter and visit [JetBrains Platform Blog](https://blog.jetbrains.com/platform/) for the latest announcements.
- >
- {type="tip"}
+> Follow [JBPlatform](https://twitter.com/JBPlatform/) on Twitter and visit [JetBrains Platform Blog](https://blog.jetbrains.com/platform/) for the latest announcements.
+>
+{type="tip"}
 
 The following pages list the breaking changes in IDE and plugin releases with required/recommended steps to take by plugin authors.
 

@@ -6,9 +6,9 @@
 [GoLand](https://www.jetbrains.com/go/) is an IntelliJ Platform-based product.
 Plugin projects for GoLand can be developed using IntelliJ IDEA with the `gradle-intellij-plugin`.
 
- >  Qualifying Open Source projects can [apply for free licenses](https://www.jetbrains.com/community/opensource/) of JetBrains products.
- >
- {type="tip"}
+> Qualifying Open Source projects can [apply for free licenses](https://www.jetbrains.com/community/opensource/) of JetBrains products.
+>
+{type="tip"}
 
 ## Configuring Plugin Projects Targeting GoLand
 
@@ -69,9 +69,9 @@ The dependency declaration is illustrated in the <path>plugin.xml</path> snippet
 
 ## Available GoLand APIs
 
- > See [](goland_extension_point_list.md) for the complete list.
- >
- {type="note"}
+> See [](goland_extension_point_list.md) for the complete list.
+>
+{type="note"}
 
 Use the [Exploring APIs as a Consumer](plugin_compatibility.md#exploring-apis-as-a-consumer) process to identify the library <path>intellij-go-$version$.jar</path>, where `$version$` corresponds to the version of the Go plugin.
 Test your plugin with any version of GoLand you intend to support.

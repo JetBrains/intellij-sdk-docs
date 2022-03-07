@@ -60,9 +60,9 @@ if ((n>=0)) {
 
 #### Testing the Plugin
 
- >  Please note that running the test requires setting system property `idea.home.path` in `test {}` block of <path>build.gradle</path>
- >
- {type="note"}
+> Please note that running the test requires setting system property `idea.home.path` in `test {}` block of <path>build.gradle</path>
+>
+{type="note"}
 
 The sample plugin contains the `ConditionalOperatorConverterTest` Java class and the test data in the <path>test/testData/</path> directory.
 To perform the plugin test, run the `ConditionalOperatorConverterTest.testIntention()` method.

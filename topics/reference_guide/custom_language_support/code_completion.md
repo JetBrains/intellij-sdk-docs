@@ -17,9 +17,9 @@ The most common way to implement `getVariants()` is to use the same function for
 
 #### Symbol Reference Completion
 
- >  This API is available starting from 2020.3 and currently in development and thus in experimental state.
- >
- {type="warning"}
+> This API is available starting from 2020.3 and currently in development and thus in experimental state.
+>
+{type="warning"}
 
 To provide completion variants by a `PsiSymbolReference` implement
 [`PsiCompletableReference`](upsource:///platform/analysis-api/src/com/intellij/model/psi/PsiCompletableReference.java).
@@ -28,9 +28,9 @@ To provide completion variants by a `PsiSymbolReference` implement
 
 Implementing the [`CompletionContributor`](upsource:///platform/analysis-api/src/com/intellij/codeInsight/completion/CompletionContributor.java) interface gives you the greatest control over the operation of code completion for your language.
 
- >  Note that the JavaDoc of that class contains a detailed FAQ for implementing code completion.
- >
- {type="note"}
+> Note that the JavaDoc of that class contains a detailed FAQ for implementing code completion.
+>
+{type="note"}
 
 The core scenario of using [`CompletionContributor`](upsource:///platform/analysis-api/src/com/intellij/codeInsight/completion/CompletionContributor.java) consists of calling the `extend()` method and passing in the [Element Pattern](element_patterns.md) specifying the context in which this completion variant is applicable, as well as a *completion provider* which generates the items to show in the completion list.
 

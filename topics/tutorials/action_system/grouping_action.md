@@ -187,10 +187,10 @@ When enabled, this group appears at the entry just below the [Static Grouped Act
     </group>
 ```
 
- >  If a`<group>` element's `class` attribute names a class derived from `ActionGroup`, then any static `<action>` declarations in that group throw an exception.
-For a statically defined group, use `DefaultActionGroup`.
- >
- {type="warning"}
+> If a`<group>` element's `class` attribute names a class derived from `ActionGroup`, then any static `<action>` declarations in that group throw an exception.
+> For a statically defined group, use `DefaultActionGroup`.
+>
+{type="warning"}
 
 ### Adding Child Actions to the Dynamic Group
 To add actions to the `DynamicActionGroup`, a non-empty array of `AnAction` instances should be returned from the `DynamicActionGroup.getChildren()` method.

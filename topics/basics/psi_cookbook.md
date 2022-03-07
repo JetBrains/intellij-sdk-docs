@@ -9,9 +9,9 @@ This page gives recipes for the most common operations for working with the PSI 
 
 Unlike [Developing Custom Language Plugins](custom_language_support.md), it is about working with the PSI of existing languages (such as Java).
 
- > Please see also [Working with PSI efficiently](performance.md#working-with-psi-efficiently).
- >
- {type="tip"}
+> Please see also [Working with PSI efficiently](performance.md#working-with-psi-efficiently).
+>
+{type="tip"}
 
 ## General
 
@@ -33,10 +33,10 @@ Unlike [Developing Custom Language Plugins](custom_language_support.md), it is a
 
 ## Java Specific
 
- > If your plugin depends on Java functionality and targets 2019.2 or later, please make sure to follow the steps from this [blog post](https://blog.jetbrains.com/platform/2019/06/java-functionality-extracted-as-a-plugin/).
- > Also consider using [UAST](uast.md) if your plugin supports other JVM languages.
- >
- {type="note"}
+> If your plugin depends on Java functionality and targets 2019.2 or later, please make sure to follow the steps from this [blog post](https://blog.jetbrains.com/platform/2019/06/java-functionality-extracted-as-a-plugin/).
+> Also consider using [UAST](uast.md) if your plugin supports other JVM languages.
+>
+{type="note"}
 
 ### How do I find all inheritors of a class?
 

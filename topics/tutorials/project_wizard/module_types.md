@@ -12,9 +12,9 @@ The source code for the [`module`](https://github.com/JetBrains/intellij-sdk-cod
 
 Create an empty plugin project, see [Creating a Plugin Project](gradle_build_system.md).
 
- >  The UI for selecting module types and the creation of modules through project wizard is IntelliJ IDEA-specific.
- >
- {type="note"}
+> The UI for selecting module types and the creation of modules through project wizard is IntelliJ IDEA-specific.
+>
+{type="note"}
 
 ## Register a New Module Type
 Add a new `com.intellij.moduleType` implementation with the IntelliJ Platform in the <path>plugin.xml</path> configuration file.

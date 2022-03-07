@@ -22,10 +22,10 @@ If the information is available in the snapshot, the snapshot data is returned.
 The contents of files and the lists of files in directories are stored in the snapshot only if that specific information was accessed.
 Otherwise, only file metadata like name, length, timestamp, attributes are stored.
 
- >  This means that the state of the file system and the file contents displayed in the IntelliJ Platform UI comes from the snapshot, which may not always match the disk's actual contents.
+> This means that the state of the file system and the file contents displayed in the IntelliJ Platform UI comes from the snapshot, which may not always match the disk's actual contents.
 > For example, in some cases, deleted files can still be visible in the UI for some time before the deletion is picked up by the IntelliJ Platform.
- >
- {type="note"}
+>
+{type="note"}
 
 The snapshot is updated from disk during _refresh operations_, which generally happen asynchronously.
 All write operations made through the VFS are synchronous - i.e., the contents are saved to disk immediately.
@@ -42,9 +42,9 @@ On Windows, Mac, and Linux, a native file watcher process is started that receiv
 If a file watcher is available, a refresh operation looks only at the files that have been reported as changed by the file watcher.
 If no file watcher is present, a refresh operation walks through all directories and files in the refresh scope.
 
- > Invoke [internal action](internal_actions_intro.md) <menupath>Tools | Internal Actions | VFS | Show Watched VFS Roots</menupath> to see all registered roots for current project.
- >
- {type="tip"}
+> Invoke [internal action](internal_actions_intro.md) <menupath>Tools | Internal Actions | VFS | Show Watched VFS Roots</menupath> to see all registered roots for current project.
+>
+{type="tip"}
 
 Refresh operations are based on file timestamps.
 If a file's contents were changed, but its timestamp remained the same, the IntelliJ Platform will not pick up the updated contents.
@@ -88,10 +88,10 @@ The most efficient way to listen to VFS events is to implement [`BulkFileListene
 A non-blocking variant [`AsyncFileListener`](upsource:///platform/core-api/src/com/intellij/openapi/vfs/AsyncFileListener.java) is also available in 2019.2 or later.
 See [How do I get notified when VFS changes?](virtual_file.md#how-do-i-get-notified-when-vfs-changes) for implementation details.
 
- >  VFS listeners are application level and will receive events for changes happening in *all* the projects opened by the user.
+> VFS listeners are application level and will receive events for changes happening in *all* the projects opened by the user.
 > You may need to filter out events that aren't relevant to your task (e.g., via [`ProjectFileIndex.isInContent()`](upsource:///platform/projectModel-api/src/com/intellij/openapi/roots/ProjectFileIndex.java)).
- >
- {type="warning"}
+>
+{type="warning"}
 
 VFS events are sent both before and after each change, and you can access the old contents of the file in the before event.
 Note that events caused by a refresh are sent after the changes have already occurred on disk.

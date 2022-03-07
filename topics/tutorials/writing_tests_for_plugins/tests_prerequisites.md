@@ -27,4 +27,5 @@ Under <path>test</path>, create the <path>java</path> folder for test source cod
 
 ## Set the Run Configuration Parameters
 
-Because some tests use Java files as test data, the tests need to mock up the project's SDK. See the [](testing_faq.md#how-to-test-a-jvm-language) section for details.
+Because some tests use Java files as test data, the tests need to mock up the project's SDK.
+See the [](testing_faq.md#how-to-test-a-jvm-language) section for details.

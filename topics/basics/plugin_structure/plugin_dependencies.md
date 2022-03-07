@@ -6,9 +6,9 @@ A plugin may depend on classes from other plugins, either bundled, third-party, 
 This document describes the syntax for declaring plugin dependencies and optional plugin dependencies.
 For more information about dependencies on the IntelliJ Platform modules, see Part II of this document: [Plugin Compatibility with IntelliJ Platform Products](plugin_compatibility.md).
 
- > For adding dependencies on 3rd party libraries, use regular [Gradle dependency management](https://docs.gradle.org/current/userguide/core_dependency_management.html).
- >
- {type="note"}
+> For adding dependencies on 3rd party libraries, use regular [Gradle dependency management](https://docs.gradle.org/current/userguide/core_dependency_management.html).
+>
+{type="note"}
 
 <procedure title="Required Steps">
 
@@ -50,9 +50,9 @@ Depending on the chosen development workflow (Gradle or DevKit), one of the two 
 <tabs>
 <tab title="Gradle">
 
- >  Please see the `plugins` attribute [gradle-intellij-plugin: Configuration](https://github.com/JetBrains/gradle-intellij-plugin#configuration) for acceptable values.
- >
- {type="note"}
+> Please see the `plugins` attribute [gradle-intellij-plugin: Configuration](https://github.com/JetBrains/gradle-intellij-plugin#configuration) for acceptable values.
+>
+{type="note"}
 
 If the project uses [Gradle](gradle_build_system.md) with a Groovy build script to build the plugin, add the dependency to the `plugins` parameter of the `intellij` block in your <path>build.gradle</path>, for example:
 
@@ -72,22 +72,22 @@ intellij {
 }
 ```
 
- >  Transitive dependencies required for tests must currently be [specified explicitly](https://github.com/JetBrains/gradle-intellij-plugin/issues/38).
- >
- {type="note"}
+> Transitive dependencies required for tests must currently be [specified explicitly](https://github.com/JetBrains/gradle-intellij-plugin/issues/38).
+>
+{type="note"}
 </tab>
 
 <tab title="DevKit">
 
- >  Existing DevKit-based projects can be converted to use [Gradle setup](gradle_prerequisites.md#adding-gradle-support-to-an-existing-devkit-based-intellij-platform-plugin) where managing dependencies is fully automated.
- >
- {type="tip"}
+> Existing DevKit-based projects can be converted to use [Gradle setup](gradle_prerequisites.md#adding-gradle-support-to-an-existing-devkit-based-intellij-platform-plugin) where managing dependencies is fully automated.
+>
+{type="tip"}
 
 If the project uses [DevKit](using_dev_kit.md), add the JARs of the plugin on which the project depends to the <control>Classpath</control> of the *IntelliJ Platform SDK*.
 
- >  Do not add the plugin JARs as a library: this will fail at runtime because the IntelliJ Platform will load two separate copies of the dependency plugin classes.
- >
- {type="warning"}
+> Do not add the plugin JARs as a library: this will fail at runtime because the IntelliJ Platform will load two separate copies of the dependency plugin classes.
+>
+{type="warning"}
 
 To do that, open the Project Structure dialog, select the SDK used in the project, press the <shortcut>+</shortcut> button in the <control>Classpath</control> tab, and select the plugin JAR file(s):
 * For bundled plugins, the plugin JAR files are located in <path>plugins/$PLUGINNAME$</path> or <path>plugins/$PLUGINNAME$/lib</path> under the main installation directory.
@@ -123,9 +123,9 @@ Declare additional `optional="true"` and `config-file` attribute pointing to opt
            config-file="myPluginId-optionalPluginName.xml">dependency.plugin.id</depends>
 ```
 
- >  Additional plugin descriptor files must follow the naming pattern <path>myPluginId-$NAME$.xml</path> resulting in unique filenames to prevent problems with classloaders in tests ([Details](https://youtrack.jetbrains.com/issue/IDEA-205964)).
- >
- {type="note"}
+> Additional plugin descriptor files must follow the naming pattern <path>myPluginId-$NAME$.xml</path> resulting in unique filenames to prevent problems with classloaders in tests ([Details](https://youtrack.jetbrains.com/issue/IDEA-205964)).
+>
+{type="note"}
 
 For example, if a plugin adds additional highlighting for Java and Kotlin files, use the following setup.
 The main <path>plugin.xml</path> will define an annotator for Java and specify an optional dependency on the Kotlin plugin (plugin ID `org.jetbrains.kotlin`):

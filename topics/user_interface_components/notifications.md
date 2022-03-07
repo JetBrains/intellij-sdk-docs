@@ -2,7 +2,8 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-One of the leading design principles is avoiding the use of modal message boxes for notifying the user about errors and other situations that may warrant the user's attention. As a replacement, the IntelliJ Platform provides multiple non-modal notification UI options.
+One of the leading design principles is avoiding the use of modal message boxes for notifying the user about errors and other situations that may warrant the user's attention.
+As a replacement, the IntelliJ Platform provides multiple non-modal notification UI options.
 
 For an overview, refer to [Notifications](https://jetbrains.design/intellij/controls/notifications/) in IntelliJ Platform UI Guidelines.
 
@@ -12,7 +13,8 @@ When working in dialog, instead of checking the validity of the input when the _
 
 ### Editor Hints
 
-For actions invoked from the editor (such as refactorings, navigation actions and different code insight features), the best way to notify the user about the inability to perform an action is to use the [`HintManager`](upsource:///platform/platform-api/src/com/intellij/codeInsight/hint/HintManager.java) class. Its method `showErrorHint()` displays a floating popup above the editor which is automatically hidden when the user starts performing another action in the editor.
+For actions invoked from the editor (such as refactorings, navigation actions and different code insight features), the best way to notify the user about the inability to perform an action is to use the [`HintManager`](upsource:///platform/platform-api/src/com/intellij/codeInsight/hint/HintManager.java) class.
+Its method `showErrorHint()` displays a floating popup above the editor which is automatically hidden when the user starts performing another action in the editor.
 Other [`HintManager`](upsource:///platform/platform-api/src/com/intellij/codeInsight/hint/HintManager.java) methods can be used for displaying other kinds of non-modal notification hints over an editor.
 
 ### Editor Banner
@@ -47,7 +49,8 @@ The text of the notification can include HTML tags.
 
 Use `Notification.addAction(AnAction)` to add links below the content, use [`NotificationAction`](upsource:///platform/ide-core/src/com/intellij/notification/NotificationAction.java) for convenience.
 
-The `groupId` parameter of the [`Notification`](upsource:///platform/ide-core/src/com/intellij/notification/Notification.java) constructor specifies a notification type. The user can choose the display type corresponding to each notification type under <menupath>Settings/Preferences | Appearance & Behavior | Notifications</menupath>.
+The `groupId` parameter of the [`Notification`](upsource:///platform/ide-core/src/com/intellij/notification/Notification.java) constructor specifies a notification type.
+The user can choose the display type corresponding to each notification type under <menupath>Settings/Preferences | Appearance & Behavior | Notifications</menupath>.
 
 To specify the preferred display type, you need to use [`NotificationGroup`](upsource:///platform/ide-core/src/com/intellij/notification/NotificationGroup.kt) to create notifications.
 
@@ -57,7 +60,8 @@ Please see the following steps for setup, depending on the target platform versi
 
 <tab title="2020.3 and later">
 
-`NotificationGroup` is registered in <path>plugin.xml</path> using `com.intellij.notificationGroup` extension point. Use `key` to provide a localized group display name.
+`NotificationGroup` is registered in <path>plugin.xml</path> using `com.intellij.notificationGroup` extension point.
+Use `key` to provide a localized group display name.
 
 ```xml
 <extensions defaultExtensionNs="com.intellij">
@@ -67,9 +71,9 @@ Please see the following steps for setup, depending on the target platform versi
 
 Registered instances can then be obtained via their `id`.
 
- >  Code insight is available for parameters expecting notification group `id`.
- >
- {type="tip"}
+> Code insight is available for parameters expecting notification group `id`.
+>
+{type="tip"}
 
 ```java
 public class MyNotifier {

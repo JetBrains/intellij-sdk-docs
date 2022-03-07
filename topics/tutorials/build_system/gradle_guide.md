@@ -8,9 +8,9 @@ The IntelliJ IDEA Ultimate and Community editions bundle the _Gradle_ and _Plugi
 The [Getting Started with Gradle](gradle_prerequisites.md) page provides a tutorial for creating Gradle-based IntelliJ Platform plugins.
 It may be useful to review the IntelliJ Platform page, particularly the description of versioning in the [Open Source](intellij_platform.md#open-source) section.
 
- >  When adding additional repositories to your Gradle build script, always use HTTPS protocol.
- >
- {type="warning"}
+> When adding additional repositories to your Gradle build script, always use HTTPS protocol.
+>
+{type="warning"}
 
 ## Overview of the Gradle Plugin
 The Gradle plugin is built from the open-source project [gradle-intellij-plugin](https://github.com/JetBrains/gradle-intellij-plugin).
@@ -36,9 +36,9 @@ This section presents a guided tour of Gradle plugin attributes to achieve the c
 ### Configuring the Gradle Plugin for Building IntelliJ Platform Plugin Projects
 By default, the Gradle plugin will build a plugin project against the IntelliJ Platform defined by the latest EAP snapshot of the IntelliJ IDEA Community Edition.
 
- >  Using EAP versions of the IntelliJ Platform requires adding the _Snapshots repository_ to the <path>build.gradle</path> file (see [IntelliJ Platform Artifacts Repositories](intellij_artifacts.md)).
- >
- {type="note"}
+> Using EAP versions of the IntelliJ Platform requires adding the _Snapshots repository_ to the <path>build.gradle</path> file (see [IntelliJ Platform Artifacts Repositories](intellij_artifacts.md)).
+>
+{type="note"}
 
 If a matching version of the specified IntelliJ Platform is not available on the local machine, the Gradle plugin downloads the correct version and type.
 IntelliJ IDEA then indexes the build and any associated source code and JetBrains Java Runtime.
@@ -110,9 +110,9 @@ That way the values for these parameters do not appear in two places in the sour
 The Gradle plugin will add the necessary elements as part of the patching process.
 For those `patchPluginXml` attributes that contain descriptions such as `changeNotes` and `pluginDescription`, a `CDATA` block is not necessary when using HTML elements.
 
- >  To maintain and generate an up-to-date changelog, try using [Gradle Changelog Plugin](https://github.com/JetBrains/gradle-changelog-plugin).
- >
- {type="tip"}
+> To maintain and generate an up-to-date changelog, try using [Gradle Changelog Plugin](https://github.com/JetBrains/gradle-changelog-plugin).
+>
+{type="tip"}
 
 As discussed in [Components of a Wizard-Generated Gradle IntelliJ Platform Plugin](gradle_prerequisites.md#components-of-a-wizard-generated-gradle-intellij-platform-plugin), the Gradle properties `project.version`, `project.group`, and `rootProject.name` are all generated based on the input to the Wizard.
 However, the `gradle-intellij-plugin` does not combine and substitute those Gradle properties for the default `<id>` and `<name>` elements in the <path>plugin.xml</path> file.

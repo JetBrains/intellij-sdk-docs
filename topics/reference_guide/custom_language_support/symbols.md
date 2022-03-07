@@ -2,9 +2,9 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
- >  This API is available starting from 2020.3 and is currently in development and thus in an experimental state.
- >
- {type="warning"}
+> This API is available starting from 2020.3 and is currently in development and thus in an experimental state.
+>
+{type="warning"}
 
 <excerpt rel="excerpt"/>
 <p id="excerpt">

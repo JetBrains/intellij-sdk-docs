@@ -66,13 +66,13 @@ Examples of its usage:
 * [`TypedAction`](upsource:///platform/platform-api/src/com/intellij/openapi/editor/actionSystem/TypedAction.java).
 * [`XmlGtTypedHandler`](upsource:///xml/impl/src/com/intellij/codeInsight/editorActions/XmlGtTypedHandler.java).
 
- >  Starting from version 14, [`TypedHandlerDelegate`](upsource:///platform/lang-api/src/com/intellij/codeInsight/editorActions/TypedHandlerDelegate.java) implementations are invoked automatically for each caret.
+> Starting from version 14, [`TypedHandlerDelegate`](upsource:///platform/lang-api/src/com/intellij/codeInsight/editorActions/TypedHandlerDelegate.java) implementations are invoked automatically for each caret.
 > If one wants to implement custom multicaret behaviour on typing, [`TypedActionHandler`](upsource:///platform/platform-api/src/com/intellij/openapi/editor/actionSystem/TypedActionHandler.java) needs to be provided instead.
- >
- {type="note"}
+>
+{type="note"}
 
 ## Code Insight Actions
 
 Existing actions inheriting from [`CodeInsightAction`](upsource:///platform/lang-api/src/com/intellij/codeInsight/actions/CodeInsightAction.java) will work for primary caret only.
-To support multiple carets, one should subclass [`MultiCaretCodeInsightAction`](upsource:///platform/lang-impl/src/com/intellij/codeInsight/actions/MultiCaretCodeInsightAction.java) instead. 
+To support multiple carets, one should subclass [`MultiCaretCodeInsightAction`](upsource:///platform/lang-impl/src/com/intellij/codeInsight/actions/MultiCaretCodeInsightAction.java) instead.
 Each caret might have a different editor and PSI instance, so using the old API is not possible.

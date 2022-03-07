@@ -6,9 +6,9 @@ A custom language plugin can provide its items to be included in the lists shown
 
 Provide implementations of [`ChooseByNameContributor`](upsource:///platform/lang-api/src/com/intellij/navigation/ChooseByNameContributor.java) interface (separate implementations need to be provided for <control>Class</control> and <control>Symbol</control>, respectively), and register them in the `com.intellij.gotoClassContributor` and `com.intellij.gotoSymbolContributor` extension points.
 
- > Please consider implementing [`ChooseByNameContributorEx`](upsource:///platform/lang-impl/src/com/intellij/navigation/ChooseByNameContributorEx.java) for better performance.
- >
- {type="tip"}
+> Please consider implementing [`ChooseByNameContributorEx`](upsource:///platform/lang-impl/src/com/intellij/navigation/ChooseByNameContributorEx.java) for better performance.
+>
+{type="tip"}
 
 Each contributor must return a complete list of names to show in the list for a specified project, which the IDE will then filter according to the text typed by the user in the dialog.
 Using [File-based or Stub indices](indexing_and_psi_stubs.md) to obtain matching candidates is highly recommended to improve performance.

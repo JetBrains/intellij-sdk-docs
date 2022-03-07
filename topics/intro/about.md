@@ -8,18 +8,18 @@ The [Key Topics](key_topics.md) page aims to link to the pages that are necessar
 
 All source links and reference lists target IntelliJ Platform %ijPlatform%.
 
- > While browsing this guide, you will notice that there are topics that are greyed out.
- > Unfortunately, the guide is not complete and contains placeholders for specific topics.
- > We are working on increasing the coverage, but if you get stuck due to missing content, please see the [Getting Help](getting_help.md) section for details on how to get moving again.
- >
- > The guide is also [Open Source on GitHub](https://github.com/JetBrains/intellij-sdk-docs), and Pull Requests for new content, corrections or updates are always gratefully received.
- > Please see the [Contributing](intellij-sdk-docs-original_CONTRIBUTING.md) page for details.
- >
- {type="note"}
+> While browsing this guide, you will notice that there are topics that are greyed out.
+> Unfortunately, the guide is not complete and contains placeholders for specific topics.
+> We are working on increasing the coverage, but if you get stuck due to missing content, please see the [Getting Help](getting_help.md) section for details on how to get moving again.
+>
+> The guide is also [Open Source on GitHub](https://github.com/JetBrains/intellij-sdk-docs), and Pull Requests for new content, corrections or updates are always gratefully received.
+> Please see the [Contributing](intellij-sdk-docs-original_CONTRIBUTING.md) page for details.
+>
+{type="note"}
 
- > See also [Glossary](glossary.md) for a handy reference of common terms.
-  >
-  {type="tip"}
+> See also [Glossary](glossary.md) for a handy reference of common terms.
+>
+{type="tip"}
 
 #### Part I — Plugins
 

@@ -6,9 +6,9 @@
 [RubyMine](https://www.jetbrains.com/ruby/) is an IntelliJ Platform-based product.
 Plugin projects for RubyMine can be developed using IntelliJ IDEA with the `gradle-intellij-plugin`.
 
- > Qualifying Open Source projects can [apply for free licenses](https://www.jetbrains.com/community/opensource/) of JetBrains products.
- >
- {type="tip"}
+> Qualifying Open Source projects can [apply for free licenses](https://www.jetbrains.com/community/opensource/) of JetBrains products.
+>
+{type="tip"}
 
 ## Configuring Plugin Projects Targeting RubyMine
 The configuration of RubyMine plugin projects follows the methods described in [Configuring Plugin Projects using the IntelliJ IDEA Product Attribute](dev_alternate_products.md#configuring-plugin-projects-using-the-intellij-idea-product-attribute), and [Configuring the plugin.xml File](dev_alternate_products.md#configuring-pluginxml).
@@ -43,9 +43,9 @@ The dependency declaration is illustrated in the <path>plugin.xml</path> snippet
 
 ## Available RubyMine APIs
 
- > See [](rubymine_extension_point_list.md) for the complete list.
- >
- {type="note"}
+> See [](rubymine_extension_point_list.md) for the complete list.
+>
+{type="note"}
 
 Use the [Exploring APIs as a Consumer](plugin_compatibility.md#exploring-apis-as-a-consumer) process to identify the library <path>ruby.jar</path>.
 Test your plugin with any version of RubyMine you intend to support.

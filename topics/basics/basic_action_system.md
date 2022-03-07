@@ -19,12 +19,12 @@ The rest of this page is an overview of actions as an extension point.
 An action is a class derived from the abstract class [`AnAction`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java).
 The IntelliJ Platform calls methods of an action when a user interacts with a menu item or toolbar button.
 
- >  Classes based on `AnAction` do not have class fields of any kind.
+> Classes based on `AnAction` do not have class fields of any kind.
 > This is because an instance of `AnAction` class exists for the entire lifetime of the application.
 > If the `AnAction` class uses a field to store data that has a shorter lifetime and doesn't clear this data promptly, the data leaks.
 > For example, any `AnAction` data that exists only within the context of a `Project` causes the `Project` to be kept in memory after the user has closed it.
- >
- {type="warning"}
+>
+{type="warning"}
 
 ### Principal Implementation Overrides
 Every IntelliJ Platform action should override `AnAction.update()` and must override `AnAction.actionPerformed()`.
@@ -47,15 +47,15 @@ The method `AnAction.update()` is periodically called by the IntelliJ Platform i
 The `update()` method gives an action to evaluate the current context and enable or disable its functionality.
 Implementors must ensure that changing presentation and availability status handles all variants and state transitions; otherwise, the given Action will get "stuck".
 
- >  The `AnAction.update()` method can be called frequently and on a UI thread.
-This method needs to _execute very quickly_; no real work should be performed in this method.
-For example, checking selection in a tree or a list is considered valid, but working with the file system is not.
- >
- {type="warning"}
+> The `AnAction.update()` method can be called frequently and on a UI thread.
+> This method needs to _execute very quickly_; no real work should be performed in this method.
+> For example, checking selection in a tree or a list is considered valid, but working with the file system is not.
+>
+{type="warning"}
 
- >  If the new state of an action cannot be determined quickly, then evaluation should be performed in the `AnAction.actionPerformed()` method, and notify the user that the action cannot be executed if the context isn't suitable.
- >
- {type="tip"}
+> If the new state of an action cannot be determined quickly, then evaluation should be performed in the `AnAction.actionPerformed()` method, and notify the user that the action cannot be executed if the context isn't suitable.
+>
+{type="tip"}
 
 #### Determining the Action Context
 The `AnActionEvent` object passed to `update()` carries information about the current context for the action.
@@ -85,10 +85,10 @@ Toolbar actions display their respective icons for the disabled state.
 The visibility of a disabled action in a menu depends on whether the host menu (e.g., "ToolsMenu") containing the action has the `compact` attribute set.
 See [Grouping Actions](#grouping-actions) for more information about the `compact` attribute and menu actions' visibility.
 
- >  If an action is added to a toolbar, its `update()` can be called if there was any user activity or focus transfer.
-If the action's availability changes in the absence of these events, then call [`ActivityTracker.getInstance().inc()`](upsource:///platform/platform-api/src/com/intellij/ide/ActivityTracker.java) to notify the action subsystem to update all toolbar actions.
- >
- {type="note"}
+> If an action is added to a toolbar, its `update()` can be called if there was any user activity or focus transfer.
+> If the action's availability changes in the absence of these events, then call [`ActivityTracker.getInstance().inc()`](upsource:///platform/platform-api/src/com/intellij/ide/ActivityTracker.java) to notify the action subsystem to update all toolbar actions.
+>
+{type="note"}
 
 An example of enabling a menu action based on whether a project is open is demonstrated in [`PopupDialogAction.update()`](https://github.com/JetBrains/intellij-sdk-code-samples/blob/main/action_basics/src/main/java/org/intellij/sdk/action/PopupDialogAction.java) method.
 
@@ -245,9 +245,9 @@ Group IDs for the IntelliJ Platform are defined in [`PlatformActions.xml`](upsou
 
 This, and additional information can also be found by using the [Code Completion](https://www.jetbrains.com/help/idea/auto-completing-code.html#invoke-basic-completion), [Quick Definition](https://www.jetbrains.com/help/idea/viewing-reference-information.html#view-definition-symbols) and [Quick Documentation](https://www.jetbrains.com/help/idea/viewing-reference-information.html#inline-quick-documentation) features.
 
- >  To lookup existing Action ID (e.g. for use in `relative-to-action`), [UI Inspector](internal_ui_inspector.md) can be used.
- >
- {type="tip"}
+> To lookup existing Action ID (e.g. for use in `relative-to-action`), [UI Inspector](internal_ui_inspector.md) can be used.
+>
+{type="tip"}
 
 ```xml
 <!-- Actions -->

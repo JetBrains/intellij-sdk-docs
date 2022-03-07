@@ -8,12 +8,12 @@ The [UI Themes available for download](https://plugins.jetbrains.com/search?head
 
 [Creating a new UI element](user_interface_components.md) for a plugin is distinctly different than Custom UI Themes.
 
- >  See this introductory [blog post](https://blog.jetbrains.com/platform/2021/10/themes-in-intellij-based-ides/) for an overview (available in multiple languages).
- >
+> See this introductory [blog post](https://blog.jetbrains.com/platform/2021/10/themes-in-intellij-based-ides/) for an overview (available in multiple languages).
+>
 > Creating a new UI Theme from scratch is also shown in this webinar:
- > <video href="9J0j-90dC60" title="Busy plugin developers series. Episode 3" width="300"/>
- >
- {type="note"}
+> <video href="9J0j-90dC60" title="Busy plugin developers series. Episode 3" width="300"/>
+>
+{type="note"}
 
 This section discusses creating and customizing UI Themes:
 * [Creating UI Themes](themes.md)

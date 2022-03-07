@@ -7,16 +7,16 @@ Listener implementations must be stateless and may not implement life-cycle (e.g
 
 You can define both application- and project-level listeners.
 
- > All available listeners/topics are listed on [](extension_point_list.md) under _Listeners_ sections.
- >
- {type="tip"}
+> All available listeners/topics are listed on [](extension_point_list.md) under _Listeners_ sections.
+>
+{type="tip"}
 
 Declarative registration of listeners allows you to achieve better performance than registering listeners from code.
 The advantage is because listener instances get created lazily - the first time an event is sent to the topic - and not during application startup or project opening.
 
- > Defining listeners in <path>plugin.xml</path> is supported starting with version 2019.3 of the platform.
- >
- {type="note"}
+> Defining listeners in <path>plugin.xml</path> is supported starting with version 2019.3 of the platform.
+>
+{type="note"}
 
 ## Defining Application-Level Listeners
 

@@ -55,9 +55,9 @@ If one needs to create a file through VFS, use `VirtualFile.createChildData()` t
 
 ## How do I get notified when VFS changes?
 
- >  See [Virtual file system events](virtual_file_system.md#virtual-file-system-events) for important details.
- >
- {type="note"}
+> See [Virtual file system events](virtual_file_system.md#virtual-file-system-events) for important details.
+>
+{type="note"}
 
 Implement [`BulkFileListener`](upsource:///platform/core-api/src/com/intellij/openapi/vfs/newvfs/BulkFileListener.java) and subscribe to the [message bus](messaging_infrastructure.md) topic `VirtualFileManager.VFS_CHANGES`.
 For example:

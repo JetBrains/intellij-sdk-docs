@@ -5,24 +5,24 @@
 Kotlin UI DSL allows creating UI components using a declarative syntax inside Kotlin.
 It shares similarities with [Jetpack Compose](https://developer.android.com/jetpack/compose) for Android and makes it easy to develop UIs for, e.g. dialogs, settings or tool windows.
 
- > If you're targeting IntelliJ Platform 2021.3 and later only, please use [](kotlin_ui_dsl_version_2.md).
- >
- > **The version documented on this page is deprecated and will be removed in future platform releases.**
- >
- > Please note [breaking changes](api_changes_list.md) can occur for this API between major releases.
- >
- {type="warning"}
+> If you're targeting IntelliJ Platform 2021.3 and later only, please use [](kotlin_ui_dsl_version_2.md).
+>
+> **The version documented on this page is deprecated and will be removed in future platform releases.**
+>
+> Please note [breaking changes](api_changes_list.md) can occur for this API between major releases.
+>
+{type="warning"}
 
- > This document covers the Kotlin UI DSL in IntelliJ Platform 2019.2.
- > A lot of the features described in this document are not available for plugins targeting earlier versions.
- >
- {type="note"}
+> This document covers the Kotlin UI DSL in IntelliJ Platform 2019.2.
+> A lot of the features described in this document are not available for plugins targeting earlier versions.
+>
+{type="note"}
 
 ## Layout Structure
 
- > See [Layout](https://jetbrains.design/intellij/principles/layout) topic in IntelliJ Platform UI Guidelines for recommendations on arranging UI controls in dialogs.
- >
- {type="tip"}
+> See [Layout](https://jetbrains.design/intellij/principles/layout) topic in IntelliJ Platform UI Guidelines for recommendations on arranging UI controls in dialogs.
+>
+{type="tip"}
 
 Use [`panel`](upsource:///platform/platform-impl/src/com/intellij/ui/layout/layout.kt) to create UI:
 
@@ -83,9 +83,9 @@ row {
 }
 ```
 
- > To visually debug layout, enable <control>UI DSL Debug Mode</control> from [Internal Actions - UI Submenu](internal_ui_sub.md).
- >
- {type="tip"}
+> To visually debug layout, enable <control>UI DSL Debug Mode</control> from [Internal Actions - UI Submenu](internal_ui_sub.md).
+>
+{type="tip"}
 
 ## Adding Components
 

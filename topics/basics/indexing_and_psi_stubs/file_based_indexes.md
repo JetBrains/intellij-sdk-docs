@@ -19,15 +19,15 @@ When the index implementation indexes a file, it receives a file's content and r
 
 When accessing an index, specify the key you're interested in and get back the list of files in which the key occurs, and the value associated with each file.
 
- > In some cases, using [Gists](indexing_and_psi_stubs.md#gists) can be considered as an alternative.
- >
- {type="tip"}
+> In some cases, using [Gists](indexing_and_psi_stubs.md#gists) can be considered as an alternative.
+>
+{type="tip"}
 
 ## Implementing a File-Based Index
 
- > A relatively simple file-based index implementation is the [UI Designer bound forms index](upsource:///plugins/ui-designer/src/com/intellij/uiDesigner/binding/FormClassIndex.java), storing FQN of bound implementation class for [GUI Designer](https://www.jetbrains.com/help/idea/gui-designer-basics.html) <path>.form</path> files.
- >
- {type="tip"}
+> A relatively simple file-based index implementation is the [UI Designer bound forms index](upsource:///plugins/ui-designer/src/com/intellij/uiDesigner/binding/FormClassIndex.java), storing FQN of bound implementation class for [GUI Designer](https://www.jetbrains.com/help/idea/gui-designer-basics.html) <path>.form</path> files.
+>
+{type="tip"}
 
 Each specific index implementation is a class extending [`FileBasedIndexExtension`](upsource:///platform/indexing-api/src/com/intellij/util/indexing/FileBasedIndexExtension.java) registered via `com.intellij.fileBasedIndex` extension point.
 
@@ -37,7 +37,8 @@ An implementation of a file-based index consists of the following main parts:
 * `getKeyDescriptor()` returns the [`KeyDescriptor`](upsource:///platform/util/src/com/intellij/util/io/KeyDescriptor.java) responsible for comparing keys and storing them in a serialized binary format.
    Probably the most commonly used implementation is [`EnumeratorStringDescriptor`](upsource:///platform/util/src/com/intellij/util/io/EnumeratorStringDescriptor.java), which is designed for storing identifiers efficiently.
 * `getValueExternalizer()` returns the [`DataExternalizer`](upsource:///platform/util/src/com/intellij/util/io/DataExternalizer.java) responsible for storing values in a serialized binary format.
-* `getInputFilter()` allows restricting the indexing only to a certain set of files. Consider using [`DefaultFileTypeSpecificInputFilter`](upsource:///platform/indexing-api/src/com/intellij/util/indexing/DefaultFileTypeSpecificInputFilter.java).
+* `getInputFilter()` allows restricting the indexing only to a certain set of files.
+  Consider using [`DefaultFileTypeSpecificInputFilter`](upsource:///platform/indexing-api/src/com/intellij/util/indexing/DefaultFileTypeSpecificInputFilter.java).
 * `getVersion()` returns the version of the index implementation.
   The index is automatically rebuilt if the current version differs from the version of the index implementation used to build it.
 
@@ -61,27 +62,27 @@ Please see also [Improving indexing performance](performance.md#improving-indexi
 
 Access to file-based indexes is performed through the [`FileBasedIndex`](upsource:///platform/indexing-api/src/com/intellij/util/indexing/FileBasedIndex.java) class.
 
- > Please note index access is restricted during [Dumb Mode](indexing_and_psi_stubs.md#dumb-mode).
- >
- {type="note"}
+> Please note index access is restricted during [Dumb Mode](indexing_and_psi_stubs.md#dumb-mode).
+>
+{type="note"}
 
 The following primary operations are supported:
 
 * `getAllKeys()` and `processAllKeys()` allow obtaining the list of all keys found in files, which are a part of the specified project.
   To optimize performance, consider returning `true` from `FileBasedIndexExtension.traceKeyHashToVirtualFileMapping()` (see javadoc for details).
 
- >  The returned data is guaranteed to contain all keys found in up-to-date project content, but may also include additional keys not currently found in the project.
- >
- {type="note"}
+> The returned data is guaranteed to contain all keys found in up-to-date project content, but may also include additional keys not currently found in the project.
+>
+{type="note"}
 
 * `getValues()` allows to get all values associated with a specific key but not the files in which they were found.
 * `getContainingFiles()` allows collecting all files in which a particular key was encountered.
 * `processValues()` allows iterating through all files in which a specific key was encountered and accessing the associated values simultaneously.
 
- > Nested index access is forbidden as it might lead to a deadlock.
- > Collect all necessary data from index _A_ first, then process results while accessing index _B_.
- >
- {type="warning"}
+> Nested index access is forbidden as it might lead to a deadlock.
+> Collect all necessary data from index _A_ first, then process results while accessing index _B_.
+>
+{type="warning"}
 
 ## Standard Indexes
 

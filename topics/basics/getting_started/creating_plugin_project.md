@@ -2,9 +2,9 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
- >  For new projects, it is highly recommended to use [Gradle-based setup](getting_started.md).
- >
- {type="note"}
+> For new projects, it is highly recommended to use [Gradle-based setup](getting_started.md).
+>
+{type="note"}
 
 This section explains how you can create a new plugin project from scratch using the New Project wizard.
 Optionally, you can import an existing project or import a project from external models.
@@ -13,9 +13,9 @@ For more information, refer to the [IntelliJ IDEA Web Help](https://www.jetbrain
 
 ### To Create an IntelliJ Platform Plugin Project:
 
- > Make sure to [Setup Development Environment](setting_up_environment.md) before proceeding.
- >
- {type="note"}
+> Make sure to [Setup Development Environment](setting_up_environment.md) before proceeding.
+>
+{type="note"}
 
 * On the main menu, choose **File \| New \| Project**.
   The *New Project* wizard starts.

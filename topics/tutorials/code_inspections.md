@@ -125,16 +125,16 @@ Implicit in using [`LocalInspectionTool`](upsource:///platform/analysis-api/src/
 * The name of the description file is expected to be the inspection <path>$SHORT_NAME$.html</path> as provided by the inspection description, or the inspection implementation class.
   If a short name is not provided by the plugin, the IntelliJ Platform computes one by removing `Inspection` suffix from the implementation class name.
 
- > To open related [settings](settings.md) directly from the inspection description, add a link with `settings://$CONFIGURABLE_ID$`, optionally followed by `?$SEARCH_STRING$` to pre-select UI element:
- >
- > `See <em>Includes</em> tab in <a href="settings://fileTemplates">Settings | Editor | File and Code Templates</a> to configure.`
- >
- {type="tip"}
+> To open related [settings](settings.md) directly from the inspection description, add a link with `settings://$CONFIGURABLE_ID$`, optionally followed by `?$SEARCH_STRING$` to pre-select UI element:
+>
+> `See <em>Includes</em> tab in <a href="settings://fileTemplates">Settings | Editor | File and Code Templates</a> to configure.`
+>
+{type="tip"}
 
 ### Inspection Unit Test
- >  Please note that running the test requires setting system property `idea.home.path` in `test {}` block of <path>build.gradle</path>.
- >
- {type="note"}
+> Please note that running the test requires setting system property `idea.home.path` in `test {}` block of <path>build.gradle</path>.
+>
+{type="note"}
 
 The `comparing_references_inspection` code sample provides a unit test for the inspection.
 See the [Testing Plugins](testing_plugins.md) section for general information about plugin testing.

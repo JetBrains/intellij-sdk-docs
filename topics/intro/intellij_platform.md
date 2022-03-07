@@ -56,9 +56,9 @@ IntelliJ IDEA Ultimate is a superset of the IntelliJ IDEA Community Edition but 
 Similarly, other products such as WebStorm and DataGrip are based on the IntelliJ IDEA Community Edition, but with a different set of plugins included and excluding other default plugins.
 This allows plugins to target multiple products, as each product will include base functionality and a selection of plugins from the IntelliJ IDEA Community Edition repository.
 
- > Qualifying Open Source projects can [apply for free licenses](https://www.jetbrains.com/community/opensource/) of JetBrains products.
- >
- {type="tip"}
+> Qualifying Open Source projects can [apply for free licenses](https://www.jetbrains.com/community/opensource/) of JetBrains products.
+>
+{type="tip"}
 
 The following IDEs are based on the IntelliJ Platform:
 * JetBrains IDEs:

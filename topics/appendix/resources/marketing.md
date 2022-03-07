@@ -2,12 +2,12 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
- > Please make sure to follow the guidelines from [Plugin Overview page](https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html) for an optimal presentation of your plugin on JetBrains Marketplace.
- >
- > This webinar also discusses _5 tips for optimizing JetBrains Marketplace plugin page_:
- > <video href="oB1GA9JeeiY" title="Busy plugin developers series. Episode 2" width="300"/>
- >
- {type="tip"}
+> Please make sure to follow the guidelines from [Plugin Overview page](https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html) for an optimal presentation of your plugin on JetBrains Marketplace.
+>
+> This webinar also discusses _5 tips for optimizing JetBrains Marketplace plugin page_:
+> <video href="oB1GA9JeeiY" title="Busy plugin developers series. Episode 2" width="300"/>
+>
+{type="tip"}
 
 ## Embeddable Widgets
 
@@ -24,15 +24,15 @@ Adding badges to the README files in open-source projects is common for providin
 
 Below are listed a few related to the IntelliJ SDK and plugins development provided by [shields.io](https://shields.io):
 
->  The following code snippets contain `:pluginId` and `:packageName` placeholders.
+> The following code snippets contain `:pluginId` and `:packageName` placeholders.
 >
 > `:pluginId` can be obtained from your plugin page URL, like: `https://plugins.jetbrains.com/plugin/6954-kotlin` - in this case, it's `6954`.
 >
 > `:pluginId` also accepts a string ID that can be found in *Versions* tab, like `https://plugins.jetbrains.com/plugin/6954-kotlin/versions`.
 >
 > `:packageName` for ReSharper accepts only string ID.
- >
- {type="note"}
+>
+{type="note"}
 
 ### Downloads
 

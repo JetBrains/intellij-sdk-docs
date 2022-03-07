@@ -31,9 +31,9 @@ I.e., clients are allowed to subscribe to a specific topic within a bus and send
 
 To clarify corresponding message bus, `Topic` field declaration can be annotated with `com.intellij.util.messages.Topic.AppLevel` and `com.intellij.util.messages.Topic.ProjectLevel`, respectively.
 
- > All available listeners/topics are listed on [](extension_point_list.md) under _Listeners_ sections.
- >
- {type="tip"}
+> All available listeners/topics are listed on [](extension_point_list.md) under _Listeners_ sections.
+>
+{type="tip"}
 
 ### Message Bus
 
@@ -73,9 +73,9 @@ public interface ChangeActionNotifier {
 
 ![Subscribing](subscribe.svg)
 
- >  If targeting 2019.3 or later, use [declarative registration](plugin_listeners.md) if possible.
- >
- {type="note"}
+> If targeting 2019.3 or later, use [declarative registration](plugin_listeners.md) if possible.
+>
+{type="note"}
 
 ```java
 public void init(MessageBus bus) {

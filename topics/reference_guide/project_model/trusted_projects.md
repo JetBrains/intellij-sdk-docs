@@ -2,10 +2,9 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
- > This API is available in platform releases 2021.2.4/2021.3.1 and later.
- >
- > Please see related [Project Security](https://www.jetbrains.com/help/idea/project-security.html) topic from product documentation.
- >
+> This API is available in platform releases 2021.2.4/2021.3.1 and later.
+>
+> Please see related [Project Security](https://www.jetbrains.com/help/idea/project-security.html) topic from product documentation.
 
 When a project is opened in the IDE for the first time, the user will be asked whether they trust the project or not.
 If the user chooses to preview the project in the safe mode, no potentially dangerous feature can be executed automatically or unexpectedly.
@@ -21,7 +20,8 @@ Or better, use one of [`TrustedProjects.whenProjectTrusted()`](upsource:///platf
 
 ## Is the feature dangerous?
 
-Suppose the feature can potentially execute malicious code, and it is not obvious that this code is going to be executed. In that case, this feature has to be disabled in the safe mode, and enabling it has to be protected via a [confirmation](misc_swing_components.md#messages).
+Suppose the feature can potentially execute malicious code, and it is not obvious that this code is going to be executed.
+In that case, this feature has to be disabled in the safe mode, and enabling it has to be protected via a [confirmation](misc_swing_components.md#messages).
 
 Samples:
 - It is not obvious that opening a folder in the IDE can execute <path>build.gradle</path>, which in turn can call a malicious code located inside the project => the Gradle import is disabled in the safe mode.

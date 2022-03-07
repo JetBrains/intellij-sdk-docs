@@ -2,11 +2,11 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
- > This page describes API available in IntelliJ Platform releases **2021.3 and later** only.
- >
- > See [](kotlin_ui_dsl.md) for targeting earlier releases.
- >
- {type="note"}
+> This page describes API available in IntelliJ Platform releases **2021.3 and later** only.
+>
+> See [](kotlin_ui_dsl.md) for targeting earlier releases.
+>
+{type="note"}
 
 Kotlin UI DSL version 2 helps create UI based on [IntelliJ Platform UI Guidelines](https://jetbrains.design/intellij/).
 It supports many core Swing components and custom components widely used in JetBrains products based on the IntelliJ Platform.
@@ -21,11 +21,16 @@ Version 1 is deprecated and will be removed in future platform releases.
 
 The following significant changes were made:
 
-- Reduced API, which allows conceiving API easier and faster. Example: there were 5 overloaded methods `Cell.checkBox()` in version 1, now only one method remains. Functionality for binding properties is extracted into `Cell<T>.bindSelected()` methods.
-- UI DSL became stricter, so the available API in every context is much smaller. Example: code like `row { row {` is forbidden now.
-- Structured API mostly based on interfaces, because it's easier to learn API by grouped methods. Only a small part of API is implemented as extensions.
+- Reduced API, which allows conceiving API easier and faster.
+  Example: there were 5 overloaded methods `Cell.checkBox()` in version 1, now only one method remains.
+  Functionality for binding properties is extracted into `Cell<T>.bindSelected()` methods.
+- UI DSL became stricter, so the available API in every context is much smaller.
+  Example: code like `row { row {` is forbidden now.
+- Structured API mostly based on interfaces, because it's easier to learn API by grouped methods.
+  Only a small part of API is implemented as extensions.
 - KDoc is widely used.
-- MIG layout is fully removed from the new UI DSL and replaced by `GridLayout`. Because MIG layout is an external library, it's hard to fix bugs there (e.g., there are layout problems when components become invisible) and extend its functionality.
+- MIG layout is fully removed from the new UI DSL and replaced by `GridLayout`.
+  Because MIG layout is an external library, it's hard to fix bugs there (e.g., there are layout problems when components become invisible) and extend its functionality.
   Fixed focus ring cropping problems: when components are placed near the panel border focus ring could be cropped if panel insets do not specify enough space.
 - Implemented [Placeholder](#placeholder) that allows replacing components at runtime after content is shown.
 
@@ -35,11 +40,11 @@ It is highly recommended taking a look at <control>UI DSL Showcase</control> dem
 
 It describes some UI DSL basics and contains explanations, tips, a list of all available components, and many examples.
 
- > All sections below refer to relevant tab available in this demo:
- >
- > **UI DSL Showcase Tab**: _Tab Name_ (Link to sources of demonstration tab)
- >
- {type="tip"}
+> All sections below refer to relevant tab available in this demo:
+>
+> **UI DSL Showcase Tab**: _Tab Name_ (Link to sources of demonstration tab)
+>
+{type="tip"}
 
 ## UI DSL Basics
 
@@ -170,7 +175,8 @@ It contains all available factory methods for creating components (like `button(
 **UI DSL Showcase Tab**: Row Layout (Sources: [`DemoRowLayout`](upsource:///platform/platform-impl/src/com/intellij/internal/ui/uiDslShowcase/DemoRowLayout.kt))
 
 There are three possible layouts:
-- `INDEPENDENT`: all cells of the row (including label if present) independent of the parent grid. That means this row has its own grid.
+- `INDEPENDENT`: all cells of the row (including label if present) independent of the parent grid.
+  That means this row has its own grid.
 - `LABEL_ALIGNED`: label is aligned with the parent grid, other components independent of the parent grid.
 - `PARENT_GRID`: all components, including label (if present), are in the parent grid.
 

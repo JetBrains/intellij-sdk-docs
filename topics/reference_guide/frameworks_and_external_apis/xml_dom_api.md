@@ -81,9 +81,9 @@ interface Bar extends com.intellij.util.xml.DomElement {
 Next, you should create a [`DomFileDescription`](upsource:///xml/dom-openapi/src/com/intellij/util/xml/DomFileDescription.java) class, pass to its constructor the root tag name and root element interface.
 Register it in <path>plugin.xml</path> using `com.intellij.dom.fileMetaData` extension point and specify `rootTagName` and `domVersion`/`stubVersion` attributes.
 
- >  When targeting 2019.1 or earlier, use `com.intellij.dom.fileDescription` extension point instead.
- >
- {type="note"}
+> When targeting 2019.1 or earlier, use `com.intellij.dom.fileDescription` extension point instead.
+>
+{type="note"}
 
 You can now get the file element from [`DomManager`](upsource:///xml/dom-openapi/src/com/intellij/util/xml/DomManager.java).
 To get the "239" value, you only have to write the following code:
@@ -590,9 +590,9 @@ Usually you will want to add searcher/utility methods to work with your `DomMode
 Example can be found in Struts 2 plugin (package `com.intellij.struts2.dom.struts.model`).
 
 ### DOM Stubs
- >  Please use it sparingly and only for heavily accessed parts in your DOM model, as it increases disk space usage/indexing run time.
- >
- {type="note"}
+> Please use it sparingly and only for heavily accessed parts in your DOM model, as it increases disk space usage/indexing run time.
+>
+{type="note"}
 
 DOM elements can be stubbed, so (costly) access to XML/PSI is not necessary (see [Indexing and PSI Stubs](indexing_and_psi_stubs.md) for similar feature for custom languages).
 Performance relevant elements, tag or attribute getters can simply be annotated with `@com.intellij.util.xml.Stubbed`.
@@ -600,9 +600,9 @@ Set and increase `stubVersion` of `com.intellij.dom.fileMetaData` extension when
 
 ## Building a DOM-Based GUI
 
- > This API is unmaintained and will likely be removed in future versions.
- >
- {type="warning"}
+> This API is unmaintained and will likely be removed in future versions.
+>
+{type="warning"}
 
 ### Forms
 All forms that deal with DOM are organized in a special way.

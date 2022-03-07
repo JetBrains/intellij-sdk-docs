@@ -72,11 +72,14 @@ Code formatting can be suppressed per region via [special comments](https://yout
 
 ## Non-Whitespace Modifications
 
-Sometimes a plugin requires performing non-whitespace characters modifications like reordering methods, changing letter cases, or adding missing braces. The formatting framework provides extensions points allowing to achieve these goals.
+Sometimes a plugin requires performing non-whitespace characters modifications like reordering methods, changing letter cases, or adding missing braces.
+The formatting framework provides extensions points allowing to achieve these goals.
 
 ### Pre-Processor
 
-Allows executing additional processing before the actual formatting is performed. For example, it can be used to adjust the formatting range or modify the code by adding, removing, or converting elements like braces, semicolons, quotes, etc. All the introduced changes will be handled by the main formatting step.
+Allows executing additional processing before the actual formatting is performed.
+For example, it can be used to adjust the formatting range or modify the code by adding, removing, or converting elements like braces, semicolons, quotes, etc.
+All the introduced changes will be handled by the main formatting step.
 
 To register a formatting pre-processor, a plugin has to provide an implementation of [`PreFormatProcessor`](upsource:///platform/code-style-api/src/com/intellij/psi/impl/source/codeStyle/PreFormatProcessor.java) and register it in the `com.intellij.preFormatProcessor` extension point.
 
@@ -85,7 +88,8 @@ To register a formatting pre-processor, a plugin has to provide an implementatio
 
 ### Post-Processor
 
-It's similar to the pre-processor but is run after the actual formatting is performed. It can be used for adding, removing, or converting elements like braces, semicolons, quotes, letter-cases, etc.
+It's similar to the pre-processor but is run after the actual formatting is performed.
+It can be used for adding, removing, or converting elements like braces, semicolons, quotes, letter-cases, etc.
 
 To register a formatting post-processor, a plugin has to provide an implementation of [`PostFormatProcessor`](upsource:///platform/code-style-api/src/com/intellij/psi/impl/source/codeStyle/PostFormatProcessor.java) and register it in the `com.intellij.postFormatProcessor` extension point.
 

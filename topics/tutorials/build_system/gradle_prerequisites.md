@@ -7,13 +7,13 @@ The IntelliJ IDEA Ultimate and Community editions bundle the necessary plugins t
 These IntelliJ IDEA plugins are _Gradle_ and _Plugin DevKit_, which are enabled by default.
 To verify these plugins are installed and enabled, see the help section about [Managing Plugins](https://www.jetbrains.com/help/idea/managing-plugins.html).
 
- >  [IntelliJ Platform Plugin Template](https://github.com/JetBrains/intellij-platform-plugin-template) makes it easier to create and maintain your IDE plugins, having the Gradle plugin already integrated and CI covered with GitHub Actions.
- >
- {type="tip"}
+> [IntelliJ Platform Plugin Template](https://github.com/JetBrains/intellij-platform-plugin-template) makes it easier to create and maintain your IDE plugins, having the Gradle plugin already integrated and CI covered with GitHub Actions.
+>
+{type="tip"}
 
- >  When adding additional repositories to your Gradle build script, always use the HTTPS protocol.
- >
- {type="warning"}
+> When adding additional repositories to your Gradle build script, always use the HTTPS protocol.
+>
+{type="warning"}
 
 ## Creating a Gradle-Based IntelliJ Platform Plugin with New Project Wizard
 Creating new Gradle-based IntelliJ Platform plugin projects is performed using the [New Project Wizard](https://www.jetbrains.com/help/idea/gradle.html#project_create_gradle).
@@ -32,9 +32,9 @@ On the first screen, the type of project is configured:
 * Specify the <control>Project SDK</control> based on the **Java 8** JDK.
   This SDK will be the default JRE used to run Gradle, and the JDK version used to compile the plugin Java sources.
 
- > When targeting 2020.3 and later only, using Java 11 is now required; please see this [blog post](https://blog.jetbrains.com/platform/2020/09/intellij-project-migrates-to-java-11/)
- >
- {type="note"}
+> When targeting 2020.3 and later only, using Java 11 is now required; please see this [blog post](https://blog.jetbrains.com/platform/2020/09/intellij-project-migrates-to-java-11/)
+>
+{type="note"}
 
 * In the <control>Additional Libraries and Frameworks</control> panel, select <control>Java</control> and <control>IntelliJ Platform Plugin</control>.
   These settings will be used for the remainder of this tutorial.
@@ -93,10 +93,10 @@ my_gradle_plugin
 * The <path>settings.gradle</path> file, containing a definition of the `rootProject.name`.
 * The <path>META-INF</path> directory under the default `main` [SourceSet](https://docs.gradle.org/current/userguide/java_plugin.html#sec:java_project_layout) contains the plugin [configuration file](plugin_configuration_file.md).
 
- > Please note: the generated <path>build.gradle</path> file needs to be adjusted as shown below, as IntelliJ IDEA currently generates template incompatible with gradle-intellij-plugin 1.0 release.
- > See [Upgrade Instructions](https://lp.jetbrains.com/gradle-intellij-plugin/) for more details.
- >
- {type="warning"}
+> Please note: the generated <path>build.gradle</path> file needs to be adjusted as shown below, as IntelliJ IDEA currently generates template incompatible with gradle-intellij-plugin 1.0 release.
+> See [Upgrade Instructions](https://lp.jetbrains.com/gradle-intellij-plugin/) for more details.
+>
+{type="warning"}
 
 The generated `my_gradle_plugin` project <path>build.gradle</path> file:
 
@@ -150,9 +150,9 @@ Please note that it is impossible to change the `<id>` of a published plugin wit
 
 ## Adding Gradle Support to an Existing DevKit-Based IntelliJ Platform Plugin
 
- > See [Revamping Plugins #3 – Migrating from DevKit to the Gradle build system](https://blog.jetbrains.com/platform/2021/12/migrating-from-devkit-to-the-gradle-build-system/) blog post for a step-by-step walk-through.
- >
- {type="tip"}
+> See [Revamping Plugins #3 – Migrating from DevKit to the Gradle build system](https://blog.jetbrains.com/platform/2021/12/migrating-from-devkit-to-the-gradle-build-system/) blog post for a step-by-step walk-through.
+>
+{type="tip"}
 
 Converting a [DevKit-based](using_dev_kit.md) plugin project to a Gradle-based plugin project can be done using the New Project Wizard to create a Gradle-based project around the existing DevKit-based project:
 * Ensure the directory containing the DevKit-based IntelliJ Platform plugin project can be fully recovered if necessary.

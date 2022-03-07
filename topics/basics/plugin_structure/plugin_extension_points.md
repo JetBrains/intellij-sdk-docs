@@ -143,5 +143,5 @@ Extension points matching these conditions can then be marked as _dynamic_ by ad
   </extensionPoints>
 ```
 
- >  All non-dynamic extension points are highlighted via <control>Plugin DevKit | Plugin descriptor | Plugin.xml dynamic plugin verification</control> inspection available in IntelliJ IDEA 2020.1 or later.
- > Previous versions also highlight the `dynamic` attribute as "experimental".
+> All non-dynamic extension points are highlighted via <control>Plugin DevKit | Plugin descriptor | Plugin.xml dynamic plugin verification</control> inspection available in IntelliJ IDEA 2020.1 or later.
+> Previous versions also highlight the `dynamic` attribute as "experimental".

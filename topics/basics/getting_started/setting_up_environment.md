@@ -2,9 +2,9 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
- >  For new projects, it is highly recommended to use [Gradle-based setup](getting_started.md).
- >
- {type="note"}
+> For new projects, it is highly recommended to use [Gradle-based setup](getting_started.md).
+>
+{type="note"}
 
 ### Preliminary Steps
 
@@ -26,16 +26,17 @@ To set up your plugin development environment:
 * Set up a required Java SDK.
   See the _IntelliJ Build Configuration_ section of [Check Out And Build Community Edition](upsource:///README.md) for instructions about creating **1.8** (**11** when targeting 2020.3 or later) Java SDK.
 
-  > Do not use a more recent Java version than the one specified.
-  >
-  {type="warning"}
+> Do not use a more recent Java version than the one specified.
+>
+{type="warning"}
+
 * Create a new *IntelliJ Platform SDK* under **File \| Project Structure**:
   ![Create IntelliJ Platform SDK](create_intellij_idea_sdk.png)
   <br/>
   <br/>
 * Specify the installation folder of the *IntelliJ IDEA Community Edition* as the home directory (on Mac, select application icon in _/Applications/_).
   You can use the installation package built from sources or download it from the [Download IntelliJ IDEA page](https://www.jetbrains.com/idea/download/).
-  >  You may use IntelliJ IDEA Ultimate as an alternative, but debugging the core code will only work with the *Community Edition*.
+  > You may use IntelliJ IDEA Ultimate as an alternative, but debugging the core code will only work with the *Community Edition*.
   ![Set Home Directory](set_home_directory.png)
   <br/>
   <br/>

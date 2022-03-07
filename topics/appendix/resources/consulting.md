@@ -6,9 +6,8 @@ The following independent companies and individuals provide paid plugin consulti
 
 Also, consider posting requests in _#jobs_ channel on [JetBrains Platform Slack](https://plugins.jetbrains.com/slack).
 
- >  JetBrains is not responsible for nor guarantees the performance of these independent third-party companies.
- >
- 
+> JetBrains is not responsible for nor guarantees the performance of these independent third-party companies.
+
 | Name               | Contact                                                 | Notes                                       |
 |--------------------|---------------------------------------------------------|---------------------------------------------|
 | Joachim Ansorg     | [www.plugin-dev.com][ja]                                | -/-                                         |

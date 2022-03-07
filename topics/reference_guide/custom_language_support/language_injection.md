@@ -2,13 +2,16 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-Language injection is the way the IntelliJ Platform handles different languages within the same source file. Well-known examples are:
+Language injection is the way the IntelliJ Platform handles different languages within the same source file.
+Well-known examples are:
 
 - Regular expressions in Java string literals
 - SQL queries in Java string literals
 - Fenced code blocks within Markdown files
 
-Injected code is always bound to a specific context that depends on the surrounding code, and the IntelliJ Platform treats injected fragments as separate small files that are in a different language. To ensure highlighting and code-insight features work correctly, these fragments must be a valid statement or expression in the injected language. The three examples from above would then be shown like this in IntelliJ IDEs:
+Injected code is always bound to a specific context that depends on the surrounding code, and the IntelliJ Platform treats injected fragments as separate small files that are in a different language.
+To ensure highlighting and code-insight features work correctly, these fragments must be a valid statement or expression in the injected language.
+The three examples from above would then be shown like this in IntelliJ IDEs:
 
 <tabs>
 <tab title="Regex">
@@ -28,7 +31,9 @@ Injected code is always bound to a specific context that depends on the surround
 </tab>
 </tabs>
 
-It's not unusual that injected fragments are distributed among, e.g., several strings that are concatenated like it is common for SQL queries. To solve this, the IntelliJ Platform allows injecting a language into several fragments at once. Multiple parts are then considered belonging together.
+It's not unusual that injected fragments are distributed among, e.g., several strings that are concatenated like it is common for SQL queries.
+To solve this, the IntelliJ Platform allows injecting a language into several fragments at once.
+Multiple parts are then considered belonging together.
 
 As a plugin author, you can provide language injection in different ways:
 

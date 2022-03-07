@@ -4,9 +4,9 @@
 
 12 Extension Points (EP) and 13 Listeners for DataGrip
 
- > Please use only Extension Points and Listeners listed below; others are not recommended to be used by 3rd party plugins.
- >
- {type="warning"}
+> Please use only Extension Points and Listeners listed below; others are not recommended to be used by 3rd party plugins.
+>
+{type="warning"}
 
 See [](extension_point_list.md) for IntelliJ Platform.
 

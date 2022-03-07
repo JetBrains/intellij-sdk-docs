@@ -46,17 +46,17 @@ The following minimal sample demonstrates all details required when exposing UI 
     - `since` - The release number (e.g. `[2019.2]`) when this UI customization key was exposed.
                 A release number prior to 2019.2 is valid.
 
- >  Support for the `since` attribute began with version 2019.2, so this attribute is only displayed in versions 2019.2 and later.
- >
- {type="note"}
+> Support for the `since` attribute began with version 2019.2, so this attribute is only displayed in versions 2019.2 and later.
+>
+{type="note"}
 
- >  It is highly recommended to always provide a `description` entry, so Theme authors can understand usages.
- >
- {type="tip"}
+> It is highly recommended to always provide a `description` entry, so Theme authors can understand usages.
+>
+{type="tip"}
 
- >  Do not remove existing keys, but deprecate them instead to help Theme authors upgrade their existing themes.
- >
- {type="tip"}
+> Do not remove existing keys, but deprecate them instead to help Theme authors upgrade their existing themes.
+>
+{type="tip"}
 
 Color keys can be used via `JBColor.namedColor()` providing defaults for Light and Dark theme:
 
@@ -97,9 +97,11 @@ All keys must follow this Naming Pattern:
 
 #### Part
 
-A part is an internal element of a component, e.g., an arrow button in a combo box. Create a separate key for a part if its properties differ from the parent object.
+A part is an internal element of a component, e.g., an arrow button in a combo box.
+Create a separate key for a part if its properties differ from the parent object.
 
-If a part is common among several components, use the same name for it. Notable examples of common parts:
+If a part is common among several components, use the same name for it.
+Notable examples of common parts:
 
 | Common parts                           | Use for                                                                                                                                                           | Example                                                                                                                         |
 |----------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------|
@@ -152,9 +154,9 @@ Examples of Swing keys:
 - `TableHeader.background` Correct: `Table.Header.background`
 
 ## IntelliJ Platform Metadata
- >  This section is relevant for IntelliJ Platform developers only.
- >
- {type="note"}
+> This section is relevant for IntelliJ Platform developers only.
+>
+{type="note"}
 
 Metadata is split up as follows:
 - [`IntelliJPlatform.themeMetadata.json`](upsource:///platform/platform-resources/src/themes/metadata/IntelliJPlatform.themeMetadata.json) - all keys from IntelliJ Platform and custom UI components

@@ -2,9 +2,9 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
- >  When using additional repositories, make sure to use HTTPS always.
- >
- {type="warning"}
+> When using additional repositories, make sure to use HTTPS always.
+>
+{type="warning"}
 
 JetBrains maintains public repositories that host artifacts related to the IntelliJ Platform, such as binaries and source code.
 These repositories make artifacts more accessible for plugin developers.
@@ -27,9 +27,9 @@ These may be downloaded, or accessed directly from a <path>build.gradle</path> f
 Artifacts for IntelliJ Platform third-party dependencies are hosted at a separate [intellij-dependencies](https://cache-redirector.jetbrains.com/intellij-dependencies) repository.
 A link to this repository should be added to <path>pom.xml</path>/<path>build.gradle</path> files when individual modules from an IntelliJ Platform artifacts repository are used.
 
- > Usages of deprecated URL `https://jetbrains.bintray.com/intellij-third-party-dependencies` must be replaced with `https://cache-redirector.jetbrains.com/intellij-dependencies` in build scripts.
-  >
-  {type="warning"}
+> Usages of deprecated URL `https://jetbrains.bintray.com/intellij-third-party-dependencies` must be replaced with `https://cache-redirector.jetbrains.com/intellij-dependencies` in build scripts.
+>
+{type="warning"}
 
 ## Using IntelliJ Platform Module Artifacts
 IntelliJ Platform module artifacts are utilized by adding information to a project's <path>build.gradle</path> file.

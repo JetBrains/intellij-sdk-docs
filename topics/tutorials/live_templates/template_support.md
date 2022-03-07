@@ -24,9 +24,9 @@ In the *Edit variables* dialog, set the `Expression` for the `LINK` to `complete
 
 There are many other [predefined functions](https://www.jetbrains.com/idea/help/creating-and-editing-template-variables.html) that developers should become familiar with before implementing any unique functionality in a plugin.
 
- >  Consider iteratively testing the Live Template using the current editor and a markdown file to minimize debugging later.
- >
- {type="tip"}
+> Consider iteratively testing the Live Template using the current editor and a markdown file to minimize debugging later.
+>
+{type="tip"}
 
 ## Export the Live Template
 Once the Live Template produces the expected result, [export the Live Template](https://www.jetbrains.com/help/idea/sharing-live-templates.html).
@@ -59,9 +59,9 @@ Ultimately, a file's extension determines the applicable Markdown context.
 ```
 {src="live_templates/src/main/java/org/intellij/sdk/liveTemplates/MarkdownContext.java"}
 
- >  Once the `MarkdownContext` is defined, be sure to add the new context type to the previously created Live Template settings file.
- >
- {type="note"}
+> Once the `MarkdownContext` is defined, be sure to add the new context type to the previously created Live Template settings file.
+>
+{type="note"}
 
 Within the `<template>...</template>` elements in the <path>Markdown.xml</path> [Live Template definition file](#export-the-live-template), add the following context elements:
 

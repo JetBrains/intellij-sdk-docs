@@ -7,7 +7,8 @@ Plugin Signing is a mechanism introduced in the 2021.2 release cycle to increase
 The Marketplace signing is designed to ensure that plugins are not modified over the course of the publishing and delivery pipeline.
 If the author does not sign the plugin or has a revoked certificate, a warning dialog will appear in the IDE during installation.
 
-On our side, we will check if the public part of a key is present, and we will verify the signature. This is similar to the [Google upload key](https://developer.android.com/studio/publish/app-signing#generate-key) mechanism.
+On our side, we will check if the public part of a key is present, and we will verify the signature.
+This is similar to the [Google upload key](https://developer.android.com/studio/publish/app-signing#generate-key) mechanism.
 
 ## How Signing Works
 
@@ -206,24 +207,32 @@ java -jar marketplace-zip-signer-cli.jar sign\
 
 ## Signing for Custom Repositories
 
-Signing plugins hosted on a custom repository can be accomplished for added trust between the repository and installation. However, unlike Marketplace, the custom repository will not re-sign the plugin with the JetBrains key. Instead, a trusted private CA or self-signed certificate can be used to sign and validate plugins.
+Signing plugins hosted on a custom repository can be accomplished for added trust between the repository and installation.
+However, unlike Marketplace, the custom repository will not re-sign the plugin with the JetBrains key.
+Instead, a trusted private CA or self-signed certificate can be used to sign and validate plugins.
 
 ### Verification
 
 Before looking at how we can sign a plugin, let's first review how verification works when a non-JetBrains certificate is used.
-As of 2021.2, during verification, IntelliJ-based IDEs check if the plugin was signed by the JetBrains CA certificate or any public key provided by the user via <menupath>Settings/Preferences | Plugins | Manage Plugin Certificates</menupath>. In 2021.2.1, a system property has been added: `intellij.plugins.truststore`, pointing to a trusted JKS TrustStore. During verification, the plugin's public key is extracted from the signature. The last certificate entry in the chain matched against the certificates stored in one of the storages from above.
+As of 2021.2, during verification, IntelliJ-based IDEs check if the plugin was signed by the JetBrains CA certificate or any public key provided by the user via <menupath>Settings/Preferences | Plugins | Manage Plugin Certificates</menupath>. In 2021.2.1, a system property has been added: `intellij.plugins.truststore`, pointing to a trusted JKS TrustStore.
+During verification, the plugin's public key is extracted from the signature.
+The last certificate entry in the chain matched against the certificates stored in one of the storages from above.
 
 ### Using a Trusted Internal CA
 
-If an internal CA is available, you can use this to generate certificates for signing. When choosing this route, the certificate chain includes the root CA public key at the end of the chain.
+If an internal CA is available, you can use this to generate certificates for signing.
+When choosing this route, the certificate chain includes the root CA public key at the end of the chain.
 
-With this approach, existing internal TrustStores may exist and could be used. Be sure when choosing a TrustStore that the CAs are limited to the internal CAs you trust. Using a TrustStore with public CAs can expose the users to an attack vector.
+With this approach, existing internal TrustStores may exist and could be used.
+Be sure when choosing a TrustStore that the CAs are limited to the internal CAs you trust.
+Using a TrustStore with public CAs can expose the users to an attack vector.
 
 If adding a TrustStore to a users environment is not possible, the user may also add the root CAs public key to <menupath>Settings/Preferences | Plugins | Manage Plugin Certificates</menupath>.
 
 ### Using Self-Signed Certificates
 
-Using a self-signed certificate is an option if no internal CAs exist. To generate the key and public key, see: [Generate Private Key](#generate-private-key)
+Using a self-signed certificate is an option if no internal CAs exist.
+To generate the key and public key, see: [Generate Private Key](#generate-private-key)
 
 If providing users with a TrustStore, you can generate one with the public key using `keytool`:
 

@@ -13,7 +13,8 @@ The IntelliJ Platform handles encoding and line break conversions when loading a
 `e.getData(CommonDataKeys.EDITOR).getDocument()`
 
 #### From a Virtual File
-`FileDocumentManager.getDocument()`. This call forces the document content to be loaded from disk if it wasn't loaded previously. If only open documents or documents which may have been modified are considered relevant, use `FileDocumentManager.getCachedDocument()` instead.
+`FileDocumentManager.getDocument()`. This call forces the document content to be loaded from disk if it wasn't loaded previously.
+If only open documents or documents which may have been modified are considered relevant, use `FileDocumentManager.getCachedDocument()` instead.
 
 #### From a PSI File
 `PsiDocumentManager.getInstance().getDocument()` or `PsiDocumentManager.getInstance().getCachedDocument()`
@@ -32,9 +33,9 @@ Also, document instances not linked to any virtual files can be created temporar
 Document instances are weakly referenced from `VirtualFile` instances.
 Thus, an unmodified `Document` instance can be garbage-collected if no one references it, and a new instance is created if the document contents are reaccessed later.
 
- >  Storing `Document` references in long-term data structures of a plugin will cause memory leaks.
- >
- {type="warning"}
+> Storing `Document` references in long-term data structures of a plugin will cause memory leaks.
+>
+{type="warning"}
 
 ## How do I create a Document?
 

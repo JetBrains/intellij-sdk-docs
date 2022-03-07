@@ -49,7 +49,8 @@ Very long links should also be on a separate line.
 
 Consistent text styles are used to standardize references and keywords:
 * Menu paths are wrapped using `<menupath>` with pipe characters separating each level: `<menupath>Settings/Preferences | Editor</menupath>`: <menupath>Settings/Preferences | Editor</menupath>
-  Menu paths to settings always start with "Settings/Preferences" to cover all platforms. Inside tables, use `&#124;` instead of `|` to prevent escaping problems.
+  Menu paths to settings always start with "Settings/Preferences" to cover all platforms.
+  Inside tables, use `&#124;` instead of `|` to prevent escaping problems.
 * User interface element names like labels, buttons, checkboxes, etc. are wrapped using `<control>`: `Press <control>Continue</continue>`: Press <control>Continue</control>
 * Non-code keywords and quotations, or the names of non-code files, are formatted as italic style: \_UI Theme\_ (_UI Theme_), \_README.md\_ (_README.md_.)
   Examples of this file type include _LICENSE.txt_ and _README.md_.
@@ -167,9 +168,9 @@ If so, it applies a callout style.
 The example below will be displayed as a callout, styled as a "note":
 
 ```md
-    >  This is a note
-    >
-    {type="note"}
+> This is a note
+>
+{type="note"}
 ```
 > This is a note
 >

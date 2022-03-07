@@ -6,13 +6,13 @@
 [WebStorm](https://www.jetbrains.com/webstorm/) is an IntelliJ Platform-based product.
 Plugin projects for WebStorm can be developed using IntelliJ IDEA with the `gradle-intellij-plugin`.
 
-  > Follow _Building a Plugin for WebStorm – Tutorial for JavaScript Developers_ blog post series to get started: [Part 1](https://blog.jetbrains.com/webstorm/2021/09/building-a-plugin-for-webstorm-part-1/) [Part 2](https://blog.jetbrains.com/webstorm/2021/11/building-a-plugin-for-webstorm-part-2/)
-  >
-  {type="note"}
+> Follow _Building a Plugin for WebStorm – Tutorial for JavaScript Developers_ blog post series to get started: [Part 1](https://blog.jetbrains.com/webstorm/2021/09/building-a-plugin-for-webstorm-part-1/) [Part 2](https://blog.jetbrains.com/webstorm/2021/11/building-a-plugin-for-webstorm-part-2/)
+>
+{type="note"}
 
- >  Qualifying Open Source projects can [apply for free licenses](https://www.jetbrains.com/community/opensource/) of JetBrains products.
- >
- {type="tip"}
+> Qualifying Open Source projects can [apply for free licenses](https://www.jetbrains.com/community/opensource/) of JetBrains products.
+>
+{type="tip"}
 
 ## Configuring Plugin Projects Targeting WebStorm
 The configuration of WebStorm plugin projects follows the methods described in [Configuring Plugin Projects using the IntelliJ IDEA Product Attribute](dev_alternate_products.md#configuring-plugin-projects-using-the-intellij-idea-product-attribute) and [Configuring the plugin.xml File](dev_alternate_products.md#configuring-pluginxml) for PhpStorm.
@@ -38,9 +38,9 @@ Consequently, without the `com.intellij.modules.platform` declaration the plugin
 
 ## Available WebStorm APIs
 
- > See [](webstorm_extension_point_list.md) for the complete list.
- >
- {type="note"}
+> See [](webstorm_extension_point_list.md) for the complete list.
+>
+{type="note"}
 
 Use the [Exploring APIs as a Consumer](plugin_compatibility.md#exploring-apis-as-a-consumer) process to identify the libraries <path>JavaScriptLanguage.jar</path>, and <path>javascript-openapi.jar</path>.
 Test your plugin with any version of WebStorm you wish to support.

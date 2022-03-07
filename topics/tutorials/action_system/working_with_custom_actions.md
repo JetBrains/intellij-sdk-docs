@@ -180,10 +180,10 @@ See [Determining the Action Context](basic_action_system.md#determining-the-acti
 Adding code to `PopupDialogAction.update()` gives finer control of the action's visibility and availability.
 The action's state and(or) presentation can be dynamically changed depending on the context.
 
- >  This method needs to _execute very quickly_.
+> This method needs to _execute very quickly_.
 > For more information about this constraint, see the warning in [Overriding the AnAction.update Method](basic_action_system.md#overriding-the-anactionupdate-method).
- >
- {type="warning"}
+>
+{type="warning"}
 
 In this example, the `update()` method relies on a `Project` object being available.
 This requirement means the user must have at least one project open in the IDE for the `PopupDialogAction` to be available.

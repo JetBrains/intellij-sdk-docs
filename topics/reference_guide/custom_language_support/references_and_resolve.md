@@ -6,9 +6,9 @@ One of the most important and tricky parts in implementing a custom language PSI
 Resolving references gives users the ability to navigate from a PSI element usage (accessing a variable, calling a method, etc.) to the declaration of that element (the variable's definition, a method declaration, and so on).
 This feature is needed in order to support the _Go to Declaration_ action invoked by **Ctrl-B** and **Ctrl-Click**, and it is a prerequisite for implementing the [Find Usages](find_usages.md) action, the [Rename Refactoring](rename_refactoring.md) and [Code Completion](code_completion.md).
 
- >  The _Quick Definition_ action is based on the same mechanism, so it becomes automatically available for all references that can be resolved by the language plugin.
- >
- {type="note"}
+> The _Quick Definition_ action is based on the same mechanism, so it becomes automatically available for all references that can be resolved by the language plugin.
+>
+{type="note"}
 
 All PSI elements which work as references (for which the _Go to Declaration_ action applies) need to implement the
 [`PsiElement.getReference()`](upsource:///platform/core-api/src/com/intellij/psi/PsiElement.java) method and to return a [`PsiReference`](upsource:///platform/core-api/src/com/intellij/psi/PsiReference.java) implementation from that method.
@@ -18,14 +18,14 @@ An element can also contain multiple references (for example, a string literal c
 The primary method of the [`PsiReference`](upsource:///platform/core-api/src/com/intellij/psi/PsiReference.java) interface is `resolve()`, which returns the element to which the reference points, or `null` if it was not possible to resolve the reference to a valid element (for example, should it point to an undefined class).
 The resolved element should implement the [`PsiNamedElement`](upsource:///platform/core-api/src/com/intellij/psi/PsiNamedElement.java) interface.
 
- >  While the referencing element and the referenced element both may have a name, only the element which **introduces** the name (e.g., the definition `int x = 42`) needs to implement the [`PsiNamedElement`](upsource:///platform/core-api/src/com/intellij/psi/PsiNamedElement.java) interface.
+> While the referencing element and the referenced element both may have a name, only the element which **introduces** the name (e.g., the definition `int x = 42`) needs to implement the [`PsiNamedElement`](upsource:///platform/core-api/src/com/intellij/psi/PsiNamedElement.java) interface.
 > The referencing element at the point of usage (e.g., the `x` in the expression `x + 1`) should not implement `PsiNamedElement` since it does not _have_ a name.
- >
- {type="note"}
+>
+{type="note"}
 
- >  In order to enable more advanced IntelliJ functionality, prefer implementing [`PsiNameIdentifierOwner`](upsource:///platform/core-api/src/com/intellij/psi/PsiNameIdentifierOwner.java) over [`PsiNamedElement`](upsource:///platform/core-api/src/com/intellij/psi/PsiNamedElement.java) where possible.
- >
- {type="tip"}
+> In order to enable more advanced IntelliJ functionality, prefer implementing [`PsiNameIdentifierOwner`](upsource:///platform/core-api/src/com/intellij/psi/PsiNameIdentifierOwner.java) over [`PsiNamedElement`](upsource:///platform/core-api/src/com/intellij/psi/PsiNamedElement.java) where possible.
+>
+{type="tip"}
 
 A counterpart to the `resolve()` method is `isReferenceTo()`, which checks if the reference resolves to the specified element.
 The latter method can be implemented by calling `resolve()` and comparing the result with the passed PSI element.
@@ -35,10 +35,10 @@ Still, additional optimizations are possible (for example, performing the tree w
 - [Reference](upsource:///plugins/properties/src/com/intellij/lang/properties/ResourceBundleReference.java) to a ResourceBundle in the [Properties language plugin](upsource:///plugins/properties)
 - [Custom Language Support Tutorial: Reference Contributor](reference_contributor.md)
 
- >  To optimize `getReferences()` performance, consider implementing [`HintedReferenceHost`](upsource:///platform/core-api/src/com/intellij/psi/HintedReferenceHost.java) to provide additional hints.
+> To optimize `getReferences()` performance, consider implementing [`HintedReferenceHost`](upsource:///platform/core-api/src/com/intellij/psi/HintedReferenceHost.java) to provide additional hints.
 > Please see also _Cache Results of Heavy Computations_ in [Working with PSI efficiently](performance.md#working-with-psi-efficiently).
- >
- {type="tip"}
+>
+{type="tip"}
 
 There are a set of interfaces that can be used as a base for implementing resolve support, namely the [`PsiScopeProcessor`](upsource:///platform/core-api/src/com/intellij/psi/scope/PsiScopeProcessor.java) interface and the [`PsiElement.processDeclarations()`](upsource:///platform/core-api/src/com/intellij/psi/PsiElement.java) method.
 These interfaces have several extra complexities that are unnecessary for most custom languages (like support for substituting Java generics types).

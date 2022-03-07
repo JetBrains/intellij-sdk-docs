@@ -50,10 +50,10 @@ Enabling `--charat` option passes the source data for lexing as a `java.lang.Cha
 For developing lexers using JFlex, the [GrammarKit plugin](https://plugins.jetbrains.com/plugin/6606-grammar-kit) can be useful.
 It provides syntax highlighting and other useful features for editing JFlex files (<path>*.flex</path>).
 
- > Lexers, and in particular JFlex-based lexers, need to be created so that they always match the entire contents of the file, without any gaps between tokens, and generate special tokens for characters which are not valid at their location.
- > Lexers must never abort prematurely because of an invalid character.
- >
- {type="note"}
+> Lexers, and in particular JFlex-based lexers, need to be created so that they always match the entire contents of the file, without any gaps between tokens, and generate special tokens for characters which are not valid at their location.
+> Lexers must never abort prematurely because of an invalid character.
+>
+{type="note"}
 
 **Examples**:
 - [JFlex](upsource:///plugins/properties/src/com/intellij/lang/properties/parsing/Properties.flex) definition file for [Properties language plugin](upsource:///plugins/properties)

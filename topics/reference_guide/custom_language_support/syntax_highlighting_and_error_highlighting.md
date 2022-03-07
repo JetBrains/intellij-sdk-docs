@@ -9,10 +9,10 @@ Highlighting from multiple `TextAttributesKey` items can be layered - for exampl
 
 Existing highlighting can be suppressed programmatically in certain contexts, see [](controlling_highlighting.md).
 
- > To force re-highlighting (e.g., after changing plugin specific settings), use
- > [`DaemonCodeAnalyzer.restart()`](upsource:///platform/analysis-api/src/com/intellij/codeInsight/daemon/DaemonCodeAnalyzer.java).
- >
- {type="tip"}
+> To force re-highlighting (e.g., after changing plugin specific settings), use
+> [`DaemonCodeAnalyzer.restart()`](upsource:///platform/analysis-api/src/com/intellij/codeInsight/daemon/DaemonCodeAnalyzer.java).
+>
+{type="tip"}
 
 ## Color Settings
 The mapping of the `TextAttributesKey` to specific attributes used in an editor is defined by the [`EditorColorsScheme`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/editor/colors/EditorColorsScheme.java) class.
@@ -25,9 +25,9 @@ Thus, it will work automatically for custom languages that provide a syntax high
 - [`ColorSettingsPage`](upsource:///plugins/properties/src/com/intellij/lang/properties/PropertiesColorsPage.java) for [Properties language plugin](upsource:///plugins/properties)
 - [Custom Language Support Tutorial: Color Settings Page](syntax_highlighter_and_color_settings_page.md)
 
- >  New functionality about Language Defaults and support for additional color schemes are detailed in [Color Scheme Management](color_scheme_management.md).
- >
- {type="note"}
+> New functionality about Language Defaults and support for additional color schemes are detailed in [Color Scheme Management](color_scheme_management.md).
+>
+{type="note"}
 
 The syntax and error highlighting are performed on multiple levels: Lexer, Parser, and (External) Annotator(s).
 
@@ -41,9 +41,9 @@ For highlighting lexer errors, the standard `TextAttributesKey` for bad characte
 - [`SyntaxHighlighter`](upsource:///plugins/properties/properties-psi-api/src/com/intellij/lang/properties/PropertiesHighlighter.java) implementation for [Properties language plugin](upsource:///plugins/properties)
 - [Custom Language Support Tutorial: Syntax Highlighter](syntax_highlighter_and_color_settings_page.md)
 
- > Use [`HtmlSyntaxInfoUtil`](upsource:///platform/lang-impl/src/com/intellij/openapi/editor/richcopy/HtmlSyntaxInfoUtil.java) to create Lexer-based highlighted code samples, e.g. for usage in documentation.
- >
- {type="tip"}
+> Use [`HtmlSyntaxInfoUtil`](upsource:///platform/lang-impl/src/com/intellij/openapi/editor/richcopy/HtmlSyntaxInfoUtil.java) to create Lexer-based highlighted code samples, e.g. for usage in documentation.
+>
+{type="tip"}
 
 ## Parser
 
@@ -61,9 +61,9 @@ Annotators can analyze not only the syntax, but also the semantics using PSI, an
 The annotator can also provide quick fixes to problems it detects.
 When the file is changed, the annotator is called incrementally to process only changed elements in the PSI tree.
 
- >  See also [Code Inspections](code_inspections_and_intentions.md) which offer a more fine-grained control and some additional features.
- >
- {type="note"}
+> See also [Code Inspections](code_inspections_and_intentions.md) which offer a more fine-grained control and some additional features.
+>
+{type="note"}
 
 ### Errors/Warning
 See [Inspections](https://jetbrains.design/intellij/text/inspections/) topic in IntelliJ Platform UI Guidelines on how to write message texts for highlighting/quick fixes.

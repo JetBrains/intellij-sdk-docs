@@ -102,10 +102,12 @@ class DemoProjectSdkSetupValidator : ProjectSdkSetupValidator {
 Within `DemoProjectSdkSetupValidator`:
 
 - `isApplicableFor()` checks what condition(s) should be met to run the validation.
-- `getErrorMessage()` runs the validation and return an appropriate error message if the validation fails. If the validation is successful, then it should return null.
+- `getErrorMessage()` runs the validation and return an appropriate error message if the validation fails.
+  If the validation is successful, then it should return null.
 - `getFixHandler()` returns an `EditorNotificationPanel.ActionHandler` that enables the user to execute a quick-fix to resolve the validation issue.
 
 
->  `ProjectSdkSetupValidator` will not work in IntelliJ Platform-based IDEs such as PyCharm. In such cases, you should register an implementation of [`EditorNotifications.Provider`](upsource:///platform/platform-api/src/com/intellij/ui/EditorNotifications.java) at the `com.intellij.editorNotificationProvider` extension point and override the `createNotificationPanel()` method with the conditionality and panel setup you want.
+> `ProjectSdkSetupValidator` will not work in IntelliJ Platform-based IDEs such as PyCharm.
+> In such cases, you should register an implementation of [`EditorNotifications.Provider`](upsource:///platform/platform-api/src/com/intellij/ui/EditorNotifications.java) at the `com.intellij.editorNotificationProvider` extension point and override the `createNotificationPanel()` method with the conditionality and panel setup you want.
 >
 {type="warning"}

@@ -6,9 +6,9 @@ A JetBrains feature for developing plugins is running or debugging a plugin proj
 Selecting the [runIde](gradle_prerequisites.md#running-a-simple-gradle-based-intellij-platform-plugin) task for a Gradle-based project (or [Run](running_and_debugging_a_plugin.md) menu for a DevKit-based project) will launch a _Development Instance_ of the IDE with the plugin enabled.
 This page describes how to control some of the settings for the Development Instance.
 
- >  Please see also [Advanced Configuration](https://www.jetbrains.com/help/idea/tuning-the-ide.html) for general VM options and properties.
- >
- {type="tip"}
+> Please see also [Advanced Configuration](https://www.jetbrains.com/help/idea/tuning-the-ide.html) for general VM options and properties.
+>
+{type="tip"}
 
 ## Using a JetBrains Runtime for the Development Instance
 An everyday use case is to develop (build) a plugin project against a JDK, e.g., Java 8, and then run or debug the plugin in a Development Instance of the IDE.
@@ -33,7 +33,7 @@ For example, if a plugin is developed against the Java 8 SE Development Kit 8 fo
     For example, `jbrx-8u252-osx-x64` matches the Java 8 JDK, build 252: `jdk-8u252-macosx-x64`.
   * Pick the highest JetBrains Runtime build number available.
     For example, the file is <path>jbrx-8u252-osx-x64-b1649.2.tar.gz</path>, meaning build 1649.2 for this JetBrains Runtime matching Java 8 JDK build 252.
-                        
+
 <tabs>
 
 <tab title="Gradle">
@@ -60,9 +60,9 @@ This allows a much faster development cycle by avoiding a full restart of the de
 
 Please note that any unloading problems in a production environment will ask the user to restart the IDE.
 
- > Auto-Reload does not work when the sandbox IDE instance is running under a debugger.
- >
- {type="warning"}
+> Auto-Reload does not work when the sandbox IDE instance is running under a debugger.
+>
+{type="warning"}
 
 <tabs>
 
@@ -74,10 +74,10 @@ Set `autoReloadPlugins = true` in [runIde](gradle_prerequisites.md#running-a-sim
 
 After starting the sandbox IDE instance, run `buildPlugin` task after modifications in the plugin project and switch focus back to sandbox instance to trigger reload.
 
- > `buildSearchableOptions` task must currently be [disabled explicitly](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/FAQ.md#how-to-disable-building-searchable-options) to workaround _Only one instance of IDEA can be run at a time_ problem.
- >
- {type="warning"}
-   
+> `buildSearchableOptions` task must currently be [disabled explicitly](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/FAQ.md#how-to-disable-building-searchable-options) to workaround _Only one instance of IDEA can be run at a time_ problem.
+>
+{type="warning"}
+
 </tab>
 
 <tab title="DevKit">
@@ -88,7 +88,7 @@ To disable auto-reload, set `idea.auto.reload.plugins` to `false` explicitly (20
 
 </tab>
 
-</tabs>      
+</tabs>
 
 ## The Development Instance Sandbox Directory
 The _Sandbox Home_ directory contains the [settings, caches, logs, and plugins](#development-instance-settings-caches-logs-and-plugins) for a Development Instance of the IDE.

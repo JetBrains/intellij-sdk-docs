@@ -4,9 +4,9 @@
 
 A UI Theme is customized by adding information to the UI Theme description file that overrides the base (_Light_ or _Darcula_) UI Theme.
 
- > [Color Highlighter Plugin](https://plugins.jetbrains.com/plugin/13309-color-highlighter) adds additional color preview inside the editor.
- >
- {type="tip"}
+> [Color Highlighter Plugin](https://plugins.jetbrains.com/plugin/13309-color-highlighter) adds additional color preview inside the editor.
+>
+{type="tip"}
 
 ## Introduction to UI Theme Description File Syntax
 The syntax of a Theme description file follows the JSON open-standard file format of key-value pairs.
@@ -124,9 +124,9 @@ The `value` is the replacement icon's file name, located in the `resources` fold
 
 The color of a replaced icon takes precedence over any `ColorPalette` overrides.
 
- >  For generating the SVG icons suited for the IntelliJ-based IDEs, you may also use the third-party web tool – [IntelliJ Icon Generator](https://bjansen.github.io/intellij-icon-generator/).
- >
- {type="tip"}
+> For generating the SVG icons suited for the IntelliJ-based IDEs, you may also use the third-party web tool – [IntelliJ Icon Generator](https://bjansen.github.io/intellij-icon-generator/).
+>
+{type="tip"}
 
 ## Customizing UI Controls
 UI Themes can change the appearance of more general controls in the IntelliJ Platform UI.
@@ -139,7 +139,8 @@ A UI control's custom color is specified by adding a key-value pair to the `"ui"
 
 A UI control `key` has the compound format `element.property`, where:
 * `element` is the type (label, checkbox, etc.) of the UI control.
-* `property` is how the color is applied. Examples include `foreground`, `background`, and `errorForeground `.
+* `property` is how the color is applied.
+  Examples include `foreground`, `background`, and `errorForeground `.
 
 Note that some UI control keys have more than two parts, for example, `Popup.Advertiser.foreground` or `ScrollBar.Mac.Transparent.thumbColor`.
 The full key must be used to customize that specific button control.

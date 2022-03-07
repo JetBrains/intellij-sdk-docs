@@ -38,8 +38,8 @@ By returning a new popup step from the `onChosen()` method, you can implement hi
 Once you've created the popup, you need to display it by calling one of the `show()` methods.
 You can let the IntelliJ Platform automatically choose the position based on the context, by calling `showInBestPositionFor()`, or specify the position explicitly through methods like `showUnderneathOf()` and `showInCenterOf()`.
 
- > The `show()` methods return immediately and do not wait for the popup to be closed.
- >
- {type="note"}
+> The `show()` methods return immediately and do not wait for the popup to be closed.
+>
+{type="note"}
 
 If you need to perform some action when the popup is closed, you can either attach a listener to it using the `addListener()` method, override a method of the popup contents such as [`PopupStep.onChosen()`](upsource:///platform/core-ui/src/openapi/ui/popup/PopupStep.java), or attach an event handler to your own component within the popup.

@@ -91,9 +91,9 @@ This declaration binds the Theme description file to a theme provider extension 
   </extensions>
 ```
 
- >  Do not modify or re-use an existing value of the generated `id` attribute.
- >
- {type="warning"}
+> Do not modify or re-use an existing value of the generated `id` attribute.
+>
+{type="warning"}
 
 At this point, the UI Theme `theme_basics` is a valid UI Theme.
 Its plugin can be built and tested in IntelliJ Platform-based IDEs, giving the user the opportunity to select _theme_basics_ in the [Theme](https://www.jetbrains.com/help/idea/settings-appearance.html) _Preferences_ dropdown.

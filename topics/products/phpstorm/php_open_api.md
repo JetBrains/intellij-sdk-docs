@@ -16,9 +16,9 @@
 
 ## PHP Extension Points
 
- > See [](php_extension_point_list.md) for the complete list.
- >
- {type="note"}
+> See [](php_extension_point_list.md) for the complete list.
+>
+{type="note"}
 
 ### `PhpTypeProvider`
 
@@ -70,7 +70,8 @@ public interface PhpTypeProvider4 {
 }
 ```
 
-Sample implementation of provider. Goal is to provide types for filed references assigned in setUp method if containing class is PHPUnit one.
+Sample implementation of provider.
+Goal is to provide types for filed references assigned in setUp method if containing class is PHPUnit one.
 Since during 'getType' call it's impossible to access indices, we will encode all needed information and use it in 'complete' method where indices access is allowed.
 
 ```java

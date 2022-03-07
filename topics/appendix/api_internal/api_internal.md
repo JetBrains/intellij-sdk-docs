@@ -4,19 +4,19 @@
 
 This page lists commonly used API annotated with [`org.jetbrains.annotations.ApiStatus.Internal`](https://github.com/JetBrains/java-annotations/blob/master/common/src/main/java/org/jetbrains/annotations/ApiStatus.java) which indicates it's _private API_ and must not be used outside of IntelliJ Platform itself:
 
- > _ApiStatus.Internal Javadoc_:
- >
- > Indicates that the annotated element (class, method, field, etc.) **must not be considered as a public API**. It's made visible to allow
- > usages in other packages of the declaring library, but it **must not be used outside of that library**. Such elements
- > may be renamed, changed or removed in future versions.
+> _ApiStatus.Internal Javadoc_:
+>
+> Indicates that the annotated element (class, method, field, etc.) **must not be considered as a public API**. It's made visible to allow
+> usages in other packages of the declaring library, but it **must not be used outside of that library**. Such elements
+> may be renamed, changed or removed in future versions.
 
 Such violations are reported from [Plugin Verifier](api_changes_list.md#plugin-verifier) and are highlighted in the IDE using [dedicated inspection](api_changes_list.md#ide-support).
 
 Each entry is mapped to its corresponding _Replacement_, pointing to recommended API.
 
- > The list is not complete and will be updated continuously. Please check corresponding code documentation when encountering API not listed below.
- >
- {type="tip"}
+> The list is not complete and will be updated continuously. Please check corresponding code documentation when encountering API not listed below.
+>
+{type="tip"}
 
 ## IntelliJ Platform
 

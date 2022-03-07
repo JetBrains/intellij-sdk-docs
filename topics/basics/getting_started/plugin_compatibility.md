@@ -9,9 +9,9 @@ Underlying those shared features are shared components.
 When authoring a plugin for the IntelliJ Platform, it is important to understand and declare dependencies on these components.
 Otherwise, it may not be possible to load or run the plugin in a product because the components on which it depends aren't available.
 
- >  Qualifying Open Source projects can [apply for free licenses](https://www.jetbrains.com/community/opensource/) of JetBrains products.
- >
- {type="tip"}
+> Qualifying Open Source projects can [apply for free licenses](https://www.jetbrains.com/community/opensource/) of JetBrains products.
+>
+{type="tip"}
 
 ## Declaring Plugin Dependencies
 For the purposes of dependencies, a _module_ can be thought of like a built-in plugin that ships as a non-removable part of a product.
@@ -39,9 +39,9 @@ A core set of modules are available in all products based on the IntelliJ Platfo
 These modules provide a set of shared functionality.
 The following table lists modules that are currently available in all products.
 
- >  All plugins should declare a dependency on **`com.intellij.modules.platform`** to indicate dependence on shared functionality.
- >
- {type="note"}
+> All plugins should declare a dependency on **`com.intellij.modules.platform`** to indicate dependence on shared functionality.
+>
+{type="note"}
 
 | Module for `<depends>` Element<br/>Declaration in <path>plugin.xml</path> File | <br/>Functionality                                                                                            |
 |--------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------|
@@ -62,9 +62,9 @@ Note that not all products define and declare modules.
 For example, PhpStorm does not have its own module, but the product itself depends on (and ships with) the PHP language plugin.
 A plugin project is compatible with PHP functionality if it declares a dependency on this PHP language plugin.
 
- > A high-level feature comparison tool for JetBrains IDEs is available [here](https://www.jetbrains.com/products/compare/).
- >
- {type="tip"}
+> A high-level feature comparison tool for JetBrains IDEs is available [here](https://www.jetbrains.com/products/compare/).
+>
+{type="tip"}
 
 
 The following table lists **(1)** modules or built-in plugins that provide specific functionality, and the products currently shipping with them.
@@ -142,10 +142,10 @@ Drill down into the JAR files to expose the packages and (decompiled) classes.
 ### Exploring APIs as an Extender
 If a project is dependent on a plugin or module, in some cases, the project can also [extend](plugin_extensions.md) the functionality available from the plugin or module.
 
- > See [Explore the IntelliJ Platform API](explore_api.md) for more information and strategies.
- > Dedicated Extension Point Lists specific to IDEs are available under _Part VIII — Product Specific_.
- >
- {type="tip"}
+> See [Explore the IntelliJ Platform API](explore_api.md) for more information and strategies.
+> Dedicated Extension Point Lists specific to IDEs are available under _Part VIII — Product Specific_.
+>
+{type="tip"}
 
 To browse the opportunities for extension, start by placing the cursor on the contents of the `<depends>` elements in the project's <path>plugin.xml</path> file.
 Use the [Go to Declaration](https://www.jetbrains.com/help/idea/navigating-through-the-source-code.html#go_to_declaration) IDE feature to navigate to the <path>plugin.xml</path> file for the plugin on which the project depends.

@@ -7,9 +7,10 @@
 This topic considers the concept of projects based on the IntelliJ Platform and related subjects, such as _modules_, _facets_, _libraries_, and _SDK_.
 The project structure and Java classes available to manage projects and modules are discussed.
 
- >  Internal changes related to a significant redesign of the representation of project models are included in 2020.3 release; please see [blog post](https://blog.jetbrains.com/platform/2020/10/new-implementation-of-project-model-interfaces-in-2020-3/) for details. This shouldn't affect any plugins using the IntelliJ API properly and which don't access internal classes.
- >
- {type="note"}
+> Internal changes related to a significant redesign of the representation of project models are included in 2020.3 release; please see [blog post](https://blog.jetbrains.com/platform/2020/10/new-implementation-of-project-model-interfaces-in-2020-3/) for details.
+> This shouldn't affect any plugins using the IntelliJ API properly and which don't access internal classes.
+>
+{type="note"}
 
 ## Project and Its Components
 This section briefly discusses the IDEA project structure, project components, and related terms.

@@ -6,9 +6,10 @@
 
 This test verifies the Simple Language folding builder, implemented in the [Folding Builder](folding_builder.md) section of the Custom Language Support Tutorial, works as expected.
 
- >  A folding builder must implement [`DumbAware`](upsource:///platform/core-api/src/com/intellij/openapi/project/DumbAware.java) to pass tests. See [Define a Folding Builder](folding_builder.md#define-a-folding-builder) for more information.
- >
- {type="note"}
+> A folding builder must implement [`DumbAware`](upsource:///platform/core-api/src/com/intellij/openapi/project/DumbAware.java) to pass tests.
+> See [Define a Folding Builder](folding_builder.md#define-a-folding-builder) for more information.
+>
+{type="note"}
 
 ## Define Test Data
 Create a file <path>FoldingTestData.java</path> in the <path>testData</path> directory.

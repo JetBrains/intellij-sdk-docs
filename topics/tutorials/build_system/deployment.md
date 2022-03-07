@@ -6,13 +6,13 @@ Once you have [configured Gradle support](gradle_guide.md), you can automaticall
 To automatically deploy a plugin, you need to have _already published the plugin to the plugin repository at least once._
 Please see the guide page for manually [publishing a plugin](publishing_plugin.md) for the first time and [Building Distribution](#building-distribution) on obtaining the initial plugin distribution artifact.
 
- >  Please see [Marketing](marketing.md) for remarks on how to prepare your plugin for optimal presentation.
- >
- {type="tip"}
+> Please see [Marketing](marketing.md) for remarks on how to prepare your plugin for optimal presentation.
+>
+{type="tip"}
 
- >  When adding additional repositories to your Gradle build script, always use HTTPS protocol.
- >
- {type="warning"}
+> When adding additional repositories to your Gradle build script, always use HTTPS protocol.
+>
+{type="warning"}
 
 ## Building Distribution
 For initial upload, manual distribution or local installation, invoke the `buildPlugin` Gradle task to create the plugin distribution.
@@ -22,9 +22,11 @@ or uploaded to a [custom plugin repository](update_plugins_format.md).
 ## Providing Your Personal Access Token to Gradle
 To deploy a plugin to the JetBrains Plugins Repository, you need to supply your Personal Access Token, which you can find on your profile page, in [My Tokens](https://plugins.jetbrains.com/author/me/tokens) section.
 
-To create a new token, provide its name and click the <control>Generate Token</control> button. A new token will be created and displayed right below.
+To create a new token, provide its name and click the <control>Generate Token</control> button.
+A new token will be created and displayed right below.
 
->  Copy it before you close this page and keep it in a secure location. This is the only time the token is visible.
+> Copy it before you close this page and keep it in a secure location.
+> This is the only time the token is visible.
 >
 {type="note"}
 
@@ -39,10 +41,10 @@ Start by defining an environment variable such as:
 export ORG_GRADLE_PROJECT_intellijPublishToken='YOUR_TOKEN'
 ```
 
- >  On macOS systems, environment variables set in <path>.bash_profile</path> are only visible to processes you run from bash.
-Environment variables visible to all processes need to be defined in [Environment.plist](https://developer.apple.com/library/archive/qa/qa1067/_index.html).
- >
- {type="note"}
+> On macOS systems, environment variables set in <path>.bash_profile</path> are only visible to processes you run from bash.
+> Environment variables visible to all processes need to be defined in [Environment.plist](https://developer.apple.com/library/archive/qa/qa1067/_index.html).
+>
+{type="note"}
 
 Now provide the environment variable in the run configuration with which you run the `publishPlugin` task locally.
 To do so, create a Gradle run configuration (if not already done), choose your Gradle project, specify the `publishPlugin` task, and then add the environment variable.

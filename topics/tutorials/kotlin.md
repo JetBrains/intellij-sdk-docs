@@ -35,11 +35,11 @@ To learn more about building IntelliJ Platform plugins with Kotlin, this tutoria
 
 ## Adding Kotlin Support
 
- > The [IntelliJ Platform Plugin Template](github_template.md) provides a preconfigured project using Kotlin.
- >
- > See also [kotlin_demo](https://github.com/JetBrains/intellij-sdk-code-samples/tree/main/kotlin_demo) for a minimal sample plugin.
- >
- {type="tip"}
+> The [IntelliJ Platform Plugin Template](github_template.md) provides a preconfigured project using Kotlin.
+>
+> See also [kotlin_demo](https://github.com/JetBrains/intellij-sdk-code-samples/tree/main/kotlin_demo) for a minimal sample plugin.
+>
+{type="tip"}
 
 IntelliJ IDEA bundles the necessary Kotlin plugin, requiring no further configuration.
 For detailed instructions, please refer to the [Kotlin documentation](https://kotlinlang.org/docs/getting-started.html).

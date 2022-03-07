@@ -33,7 +33,9 @@ See the [YouTrack issue](https://youtrack.jetbrains.com/issue/WI-54481) for deta
 With this PHP 8 change, it is now possible to catch exceptions [without capturing them to variables](https://wiki.php.net/rfc/non-capturing_catches).
 
 The following changes were introduced:
-* `Catch` now might not have a variable inside. The `@Nullable` annotation for the method `Catch.getException()` that returns a variable was already available. However, if you are getting a variable from `Catch` differently, or ignoring the `@Nullable` annotation, you need to be aware of this case effective since PHP 8.0.
+* `Catch` now might not have a variable inside.
+  The `@Nullable` annotation for the method `Catch.getException()` that returns a variable was already available.
+  However, if you are getting a variable from `Catch` differently, or ignoring the `@Nullable` annotation, you need to be aware of this case effective since PHP 8.0.
 
 See the [YouTrack issue](https://youtrack.jetbrains.com/issue/WI-54484) for details.
 
@@ -57,7 +59,8 @@ See the [YouTrack issue](https://youtrack.jetbrains.com/issue/WI-54639) for deta
 With [named parameters](https://wiki.php.net/rfc/named_params), you can pass arguments to a function based on the parameter name, rather than its position.
 
 The following changes were introduced:
-* The layout of `com.jetbrains.php.lang.psi.elements.ParameterList` for call sites has changed. Earlier, it was a comma-separated list of arguments; now, each argument can have optional previous siblings: `com.jetbrains.php.lang.lexer.PhpTokenTypes#IDENTIFIER` and `com.jetbrains.php.lang.lexer.PhpTokenTypesopCOLON`.
+* The layout of `com.jetbrains.php.lang.psi.elements.ParameterList` for call sites has changed.
+  Earlier, it was a comma-separated list of arguments; now, each argument can have optional previous siblings: `com.jetbrains.php.lang.lexer.PhpTokenTypes#IDENTIFIER` and `com.jetbrains.php.lang.lexer.PhpTokenTypesopCOLON`.
 
 See the [YouTrack issue](https://youtrack.jetbrains.com/issue/WI-54640) for details.
 
@@ -67,11 +70,15 @@ With [attributes](https://wiki.php.net/rfc/attributes_v2), you can provide struc
 The following changes were introduced:
 * New PSI elements `PhpAttribute` and `PhpAttributesList` were added.
 
-* Possible attributes' owners (`com.jetbrains.php.lang.psi.elements.Function`, `com.jetbrains.php.lang.psi.elements.Parameter`, and so on) can now have zero or more instances of `PhpAttributesList` as first children. This means that now it is not safe to assume that `PhpPsiElement#getFirstChild` will return some token. We encourage finding the needed tokens by `IElementType` manually.
+* Possible attributes' owners (`com.jetbrains.php.lang.psi.elements.Function`, `com.jetbrains.php.lang.psi.elements.Parameter`, and so on) can now have zero or more instances of `PhpAttributesList` as first children.
+  This means that now it is not safe to assume that `PhpPsiElement#getFirstChild` will return some token.
+  We encourage finding the needed tokens by `IElementType` manually.
 
-* If a PHPDoc comment of a named element is preceded by `PhpAttribute`, it will not be a sibling of a named element, but rather a child. We encourage using `PhpNamedElement#getDocComment` (which is already updated to reflect the changes) instead of finding the PHPDoc comment manually.
+* If a PHPDoc comment of a named element is preceded by `PhpAttribute`, it will not be a sibling of a named element, but rather a child.
+  We encourage using `PhpNamedElement#getDocComment` (which is already updated to reflect the changes) instead of finding the PHPDoc comment manually.
 
-* The stub tree structure has changed for some elements. If this causes problems in plugins, consider using higher-level facilities or [contact support](https://www.jetbrains.com/help/phpstorm/getting-started.html#contact-support) for additional help.
+* The stub tree structure has changed for some elements.
+  If this causes problems in plugins, consider using higher-level facilities or [contact support](https://www.jetbrains.com/help/phpstorm/getting-started.html#contact-support) for additional help.
 
 See the [YouTrack issue](https://youtrack.jetbrains.com/issue/WI-53163) for details.
 
@@ -91,6 +98,7 @@ See the [YouTrack issue](https://youtrack.jetbrains.com/issue/WI-54356) for deta
 
 ## Twig Support Changes
 The following changes were introduced:
-* PSI layout of Twig variables and fields has been changed. Earlier, Twig variables and fields used to be parsed as `PsiIdentifier`; now they are wrapped into new PSI elements: `TwigVariable` and `TwigField`.
+* PSI layout of Twig variables and fields has been changed.
+  Earlier, Twig variables and fields used to be parsed as `PsiIdentifier`; now they are wrapped into new PSI elements: `TwigVariable` and `TwigField`.
 
 * `TwigField` may be nested and contain a variable or other fields inside.

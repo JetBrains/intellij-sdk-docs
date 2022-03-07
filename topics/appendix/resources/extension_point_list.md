@@ -8,19 +8,19 @@
 - [IntelliJ Community Plugins](#intellij-community-plugins)
 - [Android Plugin](#android-plugin)
 
- > Dedicated Extension Point/Listener Lists specific to IDEs are available under _Part VIII — Product Specific_.
- >
- > See also [Explore the IntelliJ Platform API](explore_api.md) for more information and strategies.
- >
- {type="tip"}
+> Dedicated Extension Point/Listener Lists specific to IDEs are available under _Part VIII — Product Specific_.
+>
+> See also [Explore the IntelliJ Platform API](explore_api.md) for more information and strategies.
+>
+{type="tip"}
 
 <chunk id="ep_list_legend">
 
- > See [Plugin Extensions](plugin_extensions.md) on how to declare extensions in your plugin.
- >
- > See [Plugin Listeners](plugin_listeners.md) on how to register Listeners.
- >
- {type="tip"}
+> See [Plugin Extensions](plugin_extensions.md) on how to declare extensions in your plugin.
+>
+> See [Plugin Listeners](plugin_listeners.md) on how to register Listeners.
+>
+{type="tip"}
 
 ## Legend
 

@@ -6,9 +6,9 @@
 
 Welcome to the IntelliJ Platform SDK - the primary source of documentation for extending the IntelliJ Platform by creating plugins, custom language support, or building a custom IDE.
 
- > We're looking for a [Software Developer](https://www.jetbrains.com/careers/jobs/software-developer-intellij-sdk-advocacy-680/) to work on Plugin Verifier tooling.
- >
- {type="note"}
+> We're looking for a [Software Developer](https://www.jetbrains.com/careers/jobs/software-developer-intellij-sdk-advocacy-680/) to work on Plugin Verifier tooling.
+>
+{type="note"}
 
 ## Getting Started
 
@@ -52,11 +52,11 @@ Please see [Getting Help](getting_help.md) if you encounter bugs in this guide o
 
 ## Updates
 
- > Gradle IntelliJ Plugin 1.x is now available, please update your build scripts [![GitHub Release](https://img.shields.io/github/release/jetbrains/gradle-intellij-plugin.svg?style=flat-square)](https://github.com/jetbrains/gradle-intellij-plugin/releases)
- >
- > [What's New & Upgrade Instructions](https://lp.jetbrains.com/gradle-intellij-plugin)
- >
- {type="note"}
+> Gradle IntelliJ Plugin 1.x is now available, please update your build scripts [![GitHub Release](https://img.shields.io/github/release/jetbrains/gradle-intellij-plugin.svg?style=flat-square)](https://github.com/jetbrains/gradle-intellij-plugin/releases)
+>
+> [What's New & Upgrade Instructions](https://lp.jetbrains.com/gradle-intellij-plugin)
+>
+{type="note"}
 
 See [Content Updates](content_updates.md) for the latest changes.
 Follow [JBPlatform](https://twitter.com/JBPlatform/) on Twitter and visit [JetBrains Platform Blog](https://blog.jetbrains.com/platform/) for the latest announcements.

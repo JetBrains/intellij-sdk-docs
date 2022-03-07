@@ -14,9 +14,9 @@ If you intend to use a plugin repository _other than_ the [JetBrains Marketplace
 
 </procedure>
 
- > Gradle plugin [IntelliJ plugin uploader](https://github.com/brian-mcnamara/plugin_uploader) can be used to automate deployment.
- >
- {type="tip"}
+> Gradle plugin [IntelliJ plugin uploader](https://github.com/brian-mcnamara/plugin_uploader) can be used to automate deployment.
+>
+{type="tip"}
 
 ## Describing Your Plugins in updatePlugins.xml File
 
@@ -69,7 +69,8 @@ The format of an <path>updatePlugins.xml</path> file is simply a list of sequent
 
 * An <path>updatePlugins.xml</path> file must contain at least one set of `<plugin></plugin>` elements.
 * A plugin `id` may be listed only once in an <path>updatePlugins.xml</path> file.
-* Multiple plugins with the same `id` but different `idea-version` attributes must be split into separate <path>updatePlugins-*.xml</path> files. The requesting IDE's version is passed as `build` parameter and can be used for server-side filtering.
+* Multiple plugins with the same `id` but different `idea-version` attributes must be split into separate <path>updatePlugins-*.xml</path> files.
+  The requesting IDE's version is passed as `build` parameter and can be used for server-side filtering.
 
 ### Optional updatePlugin.xml Elements
 Can additional elements be added to <path>updatePlugins.xml</path>? Yes, but it's advisable only if needed.

@@ -75,9 +75,9 @@ For additional examples of `FILESTATUS` color `name` attributes, see the editor 
 Editor scroll bar colors should be coordinated with, and switch together with an editor color scheme.
 Please note that Custom UI Theme (<path>*.theme.json</path>) files also contain `ScrollBar.*` name attributes, but these are for scroll bars outside the context of the editor.
 
- >  The Editor Scroll Bar colors are the only editor scheme settings that cannot be customized and exported through IDE preferences.
- >
- {type="note"}
+> The Editor Scroll Bar colors are the only editor scheme settings that cannot be customized and exported through IDE preferences.
+>
+{type="note"}
 
 Customizing the editor scroll bar colors requires manually changing an editor color scheme XML file.
 At this time there isn't code completion functionality for changing custom color editor scheme XML files, so the `name` attributes are described below.

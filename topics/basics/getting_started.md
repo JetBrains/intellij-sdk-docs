@@ -11,9 +11,9 @@ There are three supported workflows available for building plugins.
 The recommended workflow for new projects is to [use GitHub Template](#using-github-template) or to [use Gradle](#using-gradle) to create everything from scratch.
 The old [Plugin DevKit](#using-devkit) workflow still supports existing projects.
 
- >  If a new plugin will be Scala-based, a dedicated SBT plugin [sbt-idea-plugin](https://github.com/JetBrains/sbt-idea-plugin) is available.
- >
- {type="note"}
+> If a new plugin will be Scala-based, a dedicated SBT plugin [sbt-idea-plugin](https://github.com/JetBrains/sbt-idea-plugin) is available.
+>
+{type="note"}
 
 The Gradle workflow offers several advantages:
   * Representations of source sets, modules, and projects are portable,

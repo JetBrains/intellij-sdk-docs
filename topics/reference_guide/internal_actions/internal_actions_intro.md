@@ -6,9 +6,9 @@ The <menupath>Tools | Internal Actions</menupath> menu provides plugin developer
 
 <chunk id="enable_internal_mode_tip">
 
- >  If the menu item <menupath>Tools | Internal Actions</menupath> is not available in IntelliJ IDEA, then the first step is [Enabling Internal Mode](enabling_internal.md)
- >
- {type="tip"}
+> If the menu item <menupath>Tools | Internal Actions</menupath> is not available in IntelliJ IDEA, then the first step is [Enabling Internal Mode](enabling_internal.md)
+>
+{type="tip"}
 
 </chunk>
 

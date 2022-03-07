@@ -4,8 +4,9 @@
 
 <chunk id="custom_language_tutorial_header">
 
- > This page is part of multi step [](custom_language_support_tutorial.md).
- {type="tip"}
+> This page is part of multi step [](custom_language_support_tutorial.md).
+>
+{type="tip"}
 
 </chunk>
 

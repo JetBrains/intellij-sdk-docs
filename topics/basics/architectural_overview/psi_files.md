@@ -20,11 +20,11 @@ Unlike `VirtualFile` and `Document`, which have application scope (even if multi
 
 Most interesting modification operations are performed on the level of individual PSI elements, not files as a whole.
 
-To iterate over the elements in a file, use 
+To iterate over the elements in a file, use
 
 ```java
-  psiFile.accept(new PsiRecursiveElementWalkingVisitor() { 
-    // visitor implementation ... 
+  psiFile.accept(new PsiRecursiveElementWalkingVisitor() {
+    // visitor implementation ...
   });
 ```
 
@@ -57,9 +57,9 @@ To save the PSI file to disk, use the [`PsiDirectory`](upsource:///platform/core
 `PsiManager.getInstance(project).addPsiTreeChangeListener()` allows you to receive notifications about all changes to the PSI tree of a project.
 Alternatively, register [`PsiTreeChangeListener`](upsource:///platform/core-api/src/com/intellij/psi/PsiTreeChangeListener.java) in `com.intellij.psi.treeChangeListener` extension point.
 
- > Please see [`PsiTreeChangeEvent`](upsource:///platform/core-api/src/com/intellij/psi/PsiTreeChangeEvent.java) Javadoc for common problems when dealing with PSI events.
-  >
-  {type="note"}
+> Please see [`PsiTreeChangeEvent`](upsource:///platform/core-api/src/com/intellij/psi/PsiTreeChangeEvent.java) Javadoc for common problems when dealing with PSI events.
+>
+{type="note"}
 
 ## How do I extend PSI?
 

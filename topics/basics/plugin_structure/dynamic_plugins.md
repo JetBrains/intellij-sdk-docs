@@ -9,9 +9,9 @@ To test whether dynamic installation works correctly, verify installing [local b
 
 Please note that any unloading problems in a production environment will simply ask the user to restart the IDE.
 
- > If a plugin _requires_ restart (e.g., due to using native libraries) specify `require-restart="true"` for `<idea-plugin>` root tag in <path>plugin.xml</path>.
- >
- {type="note"}
+> If a plugin _requires_ restart (e.g., due to using native libraries) specify `require-restart="true"` for `<idea-plugin>` root tag in <path>plugin.xml</path>.
+>
+{type="note"}
 
 ## Restrictions
 
@@ -49,9 +49,9 @@ Application, project, and module [services](plugin_services.md) declared with `o
 
 ## Code
 
- >  Loading and unloading plugins happens in EDT and under write action.
- >
- {type="note"}
+> Loading and unloading plugins happens in EDT and under write action.
+>
+{type="note"}
 
 ### CachedValue
 
@@ -74,11 +74,13 @@ This can be used to e.g., cancel long-running activities or disallow unload due 
 
 When a plugin is being uninstalled or updated, the IDE waits synchronously for plugin unload and asks for restart if the unload failed.
 
-Use the latest available version of the target IDE for verification. See also this [list of known platform issues](https://youtrack.jetbrains.com/issues/IDEA?q=%23dynamic-plugins%20) related to handling dynamic plugins.
+Use the latest available version of the target IDE for verification.
+See also this [list of known platform issues](https://youtrack.jetbrains.com/issues/IDEA?q=%23dynamic-plugins%20) related to handling dynamic plugins.
 
 ### Logging
 
-All events are tracked under `com.intellij.ide.plugins.DynamicPlugins` category in IDE log file. If a plugin fails to reload, the log will contain a cause as to why.
+All events are tracked under `com.intellij.ide.plugins.DynamicPlugins` category in IDE log file.
+If a plugin fails to reload, the log will contain a cause as to why.
 
 ### Diagnosing Leaks
 

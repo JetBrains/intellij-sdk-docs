@@ -5,9 +5,9 @@
 The IntelliJ Platform provides an API that allows components or services to persist their state between restarts of the IDE.
 You can use either a simple API to persist a few values or persist the state of more complicated components using the [`PersistentStateComponent`](upsource:///platform/projectModel-api/src/com/intellij/openapi/components/PersistentStateComponent.java) interface.
 
- >  If you need to persist sensitive data like passwords, please see [Persisting Sensitive Data](persisting_sensitive_data.md).
- >
- {type="warning"}
+> If you need to persist sensitive data like passwords, please see [Persisting Sensitive Data](persisting_sensitive_data.md).
+>
+{type="warning"}
 
 ## Using PersistentStateComponent
 
@@ -142,18 +142,18 @@ The state is persisted in a separate file by specifying a different setting for 
 
 See [`StoragePathMacros`](upsource:///platform/projectModel-api/src/com/intellij/openapi/components/StoragePathMacros.java) for commonly used values.
 
- >  For application-level storage, it is strongly recommended to use a custom file, using of <path>other.xml</path> is deprecated.
- >
- {type="note"}
+> For application-level storage, it is strongly recommended to use a custom file, using of <path>other.xml</path> is deprecated.
+>
+{type="note"}
 
 The `roamingType` parameter of the `@Storage` annotation specifies the roaming type when the Settings Repository plugin is used.
 
 ### Customizing the XML Format of Persisted Values
 
- > Please consider using annotation parameters only to achieve backward compatibility.
- > Otherwise, please feel free to file issues about specific serialization cosmetics.
- >
- {type="note"}
+> Please consider using annotation parameters only to achieve backward compatibility.
+> Otherwise, please feel free to file issues about specific serialization cosmetics.
+>
+{type="note"}
 
 If you want to use the default bean serialization but need to customize the storage format in XML (for example, for compatibility with previous versions of your plugin or externally defined XML formats), you can use the `@Tag`, `@Attribute`, `@Property`, `@MapAnnotation`, `@AbstractCollection` annotations.
 

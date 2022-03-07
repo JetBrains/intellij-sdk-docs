@@ -6,16 +6,16 @@
 [DataGrip](https://www.jetbrains.com/datagrip/) is an IntelliJ Platform-based product.
 Plugin projects targeting DataGrip can be developed using IntelliJ IDEA with the `gradle-intellij-plugin`.
 
- >  Qualifying Open Source projects can [apply for free licenses](https://www.jetbrains.com/community/opensource/) of JetBrains products.
- >
- {type="tip"}
+> Qualifying Open Source projects can [apply for free licenses](https://www.jetbrains.com/community/opensource/) of JetBrains products.
+>
+{type="tip"}
 
 ## Configuring Plugin Projects Targeting DataGrip
 The configuration of DataGrip plugin projects follows the methods described in [Configuring Plugin Projects using the IntelliJ IDEA Product Attribute](dev_alternate_products.md#configuring-plugin-projects-using-the-intellij-idea-product-attribute), and [Configuring the plugin.xml File](dev_alternate_products.md#configuring-pluginxml).
 
- >  DataGrip plugin development may require setting an additional Gradle attribute: `runIde.jvmArgs`. See table below.
- >
- {type="note"}
+> DataGrip plugin development may require setting an additional Gradle attribute: `runIde.jvmArgs`. See table below.
+>
+{type="note"}
 
 The table below summarizes the `gradle-intellij-plugin` attributes to set in the plugin project's <path>build.gradle</path> file.
 Click on an entry in the table's *Attribute* column to go to the documentation about that attribute.
@@ -44,9 +44,9 @@ Consequently, without the `com.intellij.modules.platform` declaration the plugin
 
 ## Available DataGrip APIs
 
- > See [](data_grip_extension_point_list.md) for the complete list.
- >
- {type="note"}
+> See [](data_grip_extension_point_list.md) for the complete list.
+>
+{type="note"}
 
 Use the [Exploring APIs as a Consumer](plugin_compatibility.md#exploring-apis-as-a-consumer) process to identify the libraries in `DatabaseTools`.
 Test your plugin with any version of DataGrip you wish to support.

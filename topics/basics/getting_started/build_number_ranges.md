@@ -5,11 +5,12 @@ Use this reference of build number ranges to specify the correct `since-build` a
 
 Setting the actual values in <path>plugin.xml</path> is usually managed by `patchPluginXml` Gradle task, see [Patching the Plugin Configuration File](gradle_guide.md#patching-the-plugin-configuration-file) for details.
 
- > Compatibility with the specified version range (and compatible products) must always be verified using [Plugin Verifier](api_changes_list.md#verifying-compatibility) to ensure binary compatibility.
- >
- > Plugins hosted on [JetBrains Marketplace](https://plugins.jetbrains.com) are checked automatically. According to [Approval Guidelines](https://plugins.jetbrains.com/legal/approval-guidelines), incompatible plugin versions will be restricted by JetBrains if necessary.
- >
- {type="warning"}
+> Compatibility with the specified version range (and compatible products) must always be verified using [Plugin Verifier](api_changes_list.md#verifying-compatibility) to ensure binary compatibility.
+>
+> Plugins hosted on [JetBrains Marketplace](https://plugins.jetbrains.com) are checked automatically.
+> According to [Approval Guidelines](https://plugins.jetbrains.com/legal/approval-guidelines), incompatible plugin versions will be restricted by JetBrains if necessary.
+>
+{type="warning"}
 
 Starting with IntelliJ IDEA 9 beta, a multi-part build number is used, such as `IU-162.94`.
 
@@ -42,16 +43,16 @@ Usually you should omit the product ID and use only the branch number and build 
 <idea-version since-build="162" until-build="162.*"/>
 ```
 
- >  Specific build numbers and their corresponding release version are available via _Previous Releases_ on the corresponding product's download page, e.g. [Previous IntelliJ IDEA Releases](https://www.jetbrains.com/idea/download/previous.html).
- >  See also [What versions of IntelliJ-based IDEs are supported?](https://intellij-support.jetbrains.com/hc/en-us/articles/360019574859-What-versions-of-IntelliJ-based-IDEs-are-supported-) for JetBrains IDE support policy.
- >
- {type="note"}
+> Specific build numbers and their corresponding release version are available via _Previous Releases_ on the corresponding product's download page, e.g. [Previous IntelliJ IDEA Releases](https://www.jetbrains.com/idea/download/previous.html).
+> See also [What versions of IntelliJ-based IDEs are supported?](https://intellij-support.jetbrains.com/hc/en-us/articles/360019574859-What-versions-of-IntelliJ-based-IDEs-are-supported-) for JetBrains IDE support policy.
+>
+{type="note"}
 
 ### IntelliJ Platform Based Products of Recent IDE Versions
 
- >  Which versions should your plugin support? We've collected some insights based on download statistics in [Statistics: Product Versions in Use](https://plugins.jetbrains.com/docs/marketplace/product-versions-in-use-statistics.html).
- >
- {type="tip"}
+> Which versions should your plugin support? We've collected some insights based on download statistics in [Statistics: Product Versions in Use](https://plugins.jetbrains.com/docs/marketplace/product-versions-in-use-statistics.html).
+>
+{type="tip"}
 
 Please see also corresponding entries in [Incompatible API Changes](api_changes_list.md) and [Notable API Changes](api_notable.md).
 

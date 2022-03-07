@@ -11,7 +11,8 @@ Most of the project management systems provide a similar set of facilities from 
 * allow to execute a particular task
 * and more
 
-That means that we can separate external system-specific logic and general IDE processing. The *External System* sub-system provides a simple API for wrapping external system elements and extensible IDE-specific processing logic.
+That means that we can separate external system-specific logic and general IDE processing.
+The *External System* sub-system provides a simple API for wrapping external system elements and extensible IDE-specific processing logic.
 
 ## Project Management
 
@@ -68,9 +69,9 @@ Example of the project import provider and builder for Gradle:
 
 It's possible to configure external system integration to automatically refresh project structure when external project's config files are modified.
 
- > From 2020.1, auto-import cannot be disabled by a user.
- >
- {type="tip"}
+> From 2020.1, auto-import cannot be disabled by a user.
+>
+{type="tip"}
 
 ### Auto-Import for ExternalSystemManager Implementation
 
@@ -79,7 +80,7 @@ Describe project's settings files to track by having external system [`ExternalS
 > The `ExternalSystemAutoImportAware.getAffectedExternalProjectPath()` method is called quite often, that's why it's expected to return control as soon as possible.
 > Helper `CachingExternalSystemAutoImportAware` class might be used for caching, i.e. `ExternalSystemManager` which implements `ExternalSystemAutoImportAware` can have a field like `new CachingExternalSystemAutoImportAware(new MyExternalSystemAutoImportAware())` and delegate `ExternalSystemAutoImportAware.getAffectedExternalProjectPath()` calls to it.
 >
- {type="note"}
+{type="note"}
 
 ### Auto-Import for Standalone External Systems
 
@@ -89,8 +90,8 @@ Then register the instance with `ExternalSystemProjectTracker` to start tracking
 
 > Multiple `ExternalSystemProjectAware` instances can correspond to a single external system.
 > It allows performing project reload differently depending on the set of settings files (project aware per settings file, per module, per external project, etc.).
- >
- {type="note"}
+>
+{type="note"}
 
 ### Icon for Reload Notification
 

@@ -37,23 +37,23 @@ Hierarchies can be modeled by depending on another fileset (possibly from anothe
 As an API-user, you will usually prefer working with `SpringModel`, which is built on top of fileset(s).
 
 ## API Updates
- >  2017.3: `LocalXmlModel#setActiveProfiles` & `LocalAnnotationModel#setActiveProfiles` have been deprecated and will be removed in 2018.1.
- >
- {type="note"}
+> 2017.3: `LocalXmlModel#setActiveProfiles` & `LocalAnnotationModel#setActiveProfiles` have been deprecated and will be removed in 2018.1.
+>
+{type="note"}
 
- >  Starting with 2016.2, the internal representation of bean _type_ has been changed from `PsiClass` to `PsiType`, please note deprecations.
- >
- {type="note"}
+> Starting with 2016.2, the internal representation of bean _type_ has been changed from `PsiClass` to `PsiType`, please note deprecations.
+>
+{type="note"}
 
- >  Some core classes have been changed in 14(.1); please see "_Version 14(.1)_" notes for info on how to replace existing API-calls.
- >
- {type="note"}
+> Some core classes have been changed in 14(.1); please see "_Version 14(.1)_" notes for info on how to replace existing API-calls.
+>
+{type="note"}
 
 ## How Do I...
 
- > See [](spring_extension_point_list.md) for the complete list.
- >
- {type="note"}
+> See [](spring_extension_point_list.md) for the complete list.
+>
+{type="note"}
 
 ### Spring Setup
 To check availability of Spring/Spring Facet etc. see `com.intellij.spring.model.utils.SpringCommonUtils`.
@@ -167,9 +167,9 @@ _2018.1_
 
 Spring Boot API allows extending/accessing Spring Boot specific support in the IDE.
 
- >  While we try to maintain compatibility, please be prepared for a less strict policy.
- >
- {type="warning"}
+> While we try to maintain compatibility, please be prepared for a less strict policy.
+>
+{type="warning"}
 
 ### Setting up
 [Add dependency](plugin_dependencies.md) to bundled Spring Boot plugin with ID `com.intellij.spring.boot`.

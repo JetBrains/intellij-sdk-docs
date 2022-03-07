@@ -16,9 +16,9 @@ Whether online or in the product UI, a Plugin Logo helps users to identify a plu
 
 ![Example Product Plugin Preferences Dialog](plugin_prefs.png){width="800"}
 
- >  When browsing [custom plugin repositories](update_plugins_format.md), there is no support for showing logos for plugins hosted there but not yet installed.
- >
- {type="note"}
+> When browsing [custom plugin repositories](update_plugins_format.md), there is no support for showing logos for plugins hosted there but not yet installed.
+>
+{type="note"}
 
 ## Plugin Logo Requirements
 For a Plugin Logo to be displayed correctly within an IntelliJ Platform-based IDE, it must:

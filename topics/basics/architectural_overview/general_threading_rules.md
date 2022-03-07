@@ -4,9 +4,9 @@
 
 ## Read-Write Lock
 
- > [Thread Access Info](https://plugins.jetbrains.com/plugin/16815-thread-access-info) plugin visualizes Read/Write Access and Thread information in debugger.
- >
- {type="tip"}
+> [Thread Access Info](https://plugins.jetbrains.com/plugin/16815-thread-access-info) plugin visualizes Read/Write Access and Thread information in debugger.
+>
+{type="tip"}
 
 In general, code-related data structures in the IntelliJ Platform are covered by a single reader/writer lock.
 
@@ -31,16 +31,20 @@ To pass control from a background thread to the [Event Dispatch Thread](https://
 The latter API allows specifying the _modality state_ ([`ModalityState`](upsource:///platform/core-api/src/com/intellij/openapi/application/ModalityState.java)) for the call, i.e., the stack of modal dialogs under which the call is allowed to execute:
 
 #### `ModalityState.NON_MODAL`
-The operation will be executed after all modal dialogs are closed. If any of the open (unrelated) project displays a per-project modal dialog, the action will be performed after the dialog is closed.
+The operation will be executed after all modal dialogs are closed.
+If any of the open (unrelated) project displays a per-project modal dialog, the action will be performed after the dialog is closed.
 
 #### `ModalityState.stateForComponent()`
 The operation can be executed when the topmost shown dialog is the one that contains the specified component or is one of its parent dialogs.
 
 #### None Specified
-`ModalityState.defaultModalityState()` will be used. This is the optimal choice in most cases that uses the current modality state when invoked from UI thread. It has special handling for background processes started with `ProgressManager`: `invokeLater()` from such a process may run in the same dialog that the process started.
+`ModalityState.defaultModalityState()` will be used.
+This is the optimal choice in most cases that uses the current modality state when invoked from UI thread.
+It has special handling for background processes started with `ProgressManager`: `invokeLater()` from such a process may run in the same dialog that the process started.
 
 #### `ModalityState.any()`
-The operation will be executed as soon as possible regardless of modal dialogs. Please note that modifying PSI, VFS, or project model is prohibited from such runnables.
+The operation will be executed as soon as possible regardless of modal dialogs.
+Please note that modifying PSI, VFS, or project model is prohibited from such runnables.
 
 If a UI thread activity needs to access [file-based index](indexing_and_psi_stubs.md) (e.g., it's doing any project-wide PSI analysis, resolves references, etc.), please use `DumbService.smartInvokeLater()`.
 That way, it is run after all possible indexing processes have been completed.

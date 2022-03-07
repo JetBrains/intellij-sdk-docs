@@ -2,12 +2,12 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
- >  JCEF is available since 2020.1 as an **experimental feature**.
+> JCEF is available since 2020.1 as an **experimental feature**.
 > We plan to deprecate using JavaFX in 3rd party plugins and switch to JCEF in 2020.2.
 > To continue using JavaFX in 2020.2 or later, an explicit dependency on [JavaFX Runtime for Plugins](https://plugins.jetbrains.com/plugin/14250-javafx-runtime-for-plugins) must be added.
 > Please see also blog post [JavaFX and JCEF in the IntelliJ Platform](https://blog.jetbrains.com/platform/2020/07/javafx-and-jcef-in-the-intellij-platform/) for summary of plans.
- >
- {type="warning"}
+>
+{type="warning"}
 
 JCEF is a Java port of [CEF](https://bitbucket.org/chromiumembedded/cef/wiki/Home) framework for embedding [Chromium-based browsers](https://www.chromium.org/Home) in applications using Swing.
 
@@ -21,15 +21,16 @@ Embedding of the browser component inside the IDE allows amongst others:
 <tabs>
 <tab title="2020.2 and later">
 
- > JCEF is available and enabled by default since 2020.2
- >
- {type="note"}
+> JCEF is available and enabled by default since 2020.2
+>
+{type="note"}
 
 </tab>
 <tab title="Earlier versions">
 
 Using JCEF requires using a dedicated JetBrains Runtime, please follow these [installation instructions](https://youtrack.jetbrains.com/issue/IDEA-231833#focus=streamItem-27-3993099.0-0) on how to obtain and activate it in your IDE.
 Enable `ide.browser.jcef.enabled` in Registry dialog (invoke <menupath>Help | Find Action</menupath> and type "Registry") and restart the IDE for changes to take effect.
+
 </tab>
 </tabs>
 

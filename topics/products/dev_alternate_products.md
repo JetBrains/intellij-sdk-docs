@@ -12,9 +12,9 @@ Project configuration attributes common to projects targeting products other tha
 Details particular to an IntelliJ Platform-based product are described on the individual product pages in Part VIII.
 All of the Gradle configuration attributes described here are discussed in-depth on the [Configuring Gradle for IntelliJ Platform Plugins](gradle_guide.md) and the `gradle-intellij-plugin` [README](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md) pages.
 
- >  Qualifying Open Source projects can [apply for free licenses](https://www.jetbrains.com/community/opensource/) of JetBrains products.
- >
- {type="tip"}
+> Qualifying Open Source projects can [apply for free licenses](https://www.jetbrains.com/community/opensource/) of JetBrains products.
+>
+{type="tip"}
 
 ## Getting Started
 To create a new Gradle plugin project, follow the tutorial on the [Getting Started with Gradle](gradle_prerequisites.md) page.
@@ -129,10 +129,10 @@ As discussed on the [Plugin Dependencies](plugin_compatibility.md#declaring-plug
 When using features (APIs) specific to the target product, a dependency on the target product module must be declared, as shown in the code snippet below.
 Otherwise, if only general IntelliJ Platform features (APIs) are used, then a dependency on `com.intellij.modules.platform` must be declared as discussed in [Plugin Compatibility with IntelliJ Platform Products](plugin_compatibility.md).
 
- >  In the particular case of a plugin project declaring dependencies only on other plugins, it must also declare a dependency on `com.intellij.modules.platform`.
+> In the particular case of a plugin project declaring dependencies only on other plugins, it must also declare a dependency on `com.intellij.modules.platform`.
 > Otherwise, the plugin project is considered to be legacy and will only load in IntelliJ IDEA.
- >
- {type="note"}
+>
+{type="note"}
 
 Continuing with the example of developing a plugin for PhpStorm:
 

@@ -62,7 +62,8 @@ To convert `PsiElement` to the specific `UElement`, use one of the following app
         new Class[]{UInjectionHost.class, UReferenceExpression.class})
 ```
 
-- in some cases, `PsiElement` could represent several `UElement`s. For instance, the parameter of a primary constructor in Kotlin is `UField` and `UParameter` at the same time.
+- in some cases, `PsiElement` could represent several `UElement`s.
+  For instance, the parameter of a primary constructor in Kotlin is `UField` and `UParameter` at the same time.
   When needing all options, use:
 
 ```java
@@ -70,11 +71,11 @@ To convert `PsiElement` to the specific `UElement`, use one of the following app
         new Class[]{UField.class, UParameter.class}
 ```
 
- > It is always better to convert to the specific type of `UElement`, rather than to convert without type and then cast to the specific type:
- > * Because of performance: `toUElement()` with type is fail-fast
- > * Because of possibly getting different results in some cases: conversion with type is more predictable
-  >
-  {type="note"}
+> It is always better to convert to the specific type of `UElement`, rather than to convert without type and then cast to the specific type:
+> * Because of performance: `toUElement()` with type is fail-fast
+> * Because of possibly getting different results in some cases: conversion with type is more predictable
+>
+{type="note"}
 
 ### UAST to PSI Conversion
 
@@ -91,7 +92,8 @@ It is a "fake" `PsiElement` to make different JVM languages emulate Java languag
 For instance, when calling `MethodReferencesSearch.search(PsiMethod)`, only Java natively provides `PsiMethod`;
 other JVM languages thus provide a "fake" `PsiMethod` via `UMethod#javaPsi`.
 
-Note that `UElement#javaPsi` is physical for Java only. Thus `UElement#sourcePsi` should be used to obtain text-range or an anchor element for inspection warnings/gutter marker placement.
+Note that `UElement#javaPsi` is physical for Java only.
+Thus `UElement#sourcePsi` should be used to obtain text-range or an anchor element for inspection warnings/gutter marker placement.
 
 In short:
 

@@ -16,4 +16,4 @@ jobs:
         uses: Endbug/add-and-commit@v8
         with:
           message: 'Generate Android Studio releases'
-          add: 'android_studio_releases.md'
+          add: 'topics/_generated/*'

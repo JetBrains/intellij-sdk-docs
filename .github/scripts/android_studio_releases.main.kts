@@ -93,15 +93,19 @@ frameUrl.fetch { content ->
               """
                 ## ${entry.key}.x
 
-                | Release Name | Channel | Build | Version | Release Date | IntelliJ IDEA Build Number | IntelliJ IDEA Release Version |
-                |--------------|---------|-------|---------|--------------|----------------------------|-------------------------------|
+                | Release Name | Channel | Release Date | Version | IntelliJ IDEA Version |
+                |--------------|:-------:|--------------|---------|-----------------------|
 
               """.trimIndent() + entry.value.sortedByDescending {
                 SemVer.parse(it.version)
               }.joinToString("\n") {
                 val name = it.name.removePrefix("Android Studio").trim()
-                val channel = it.channel.lowercase()
-                "| $name | ![$channel][$channel] | <small>${it.build}</small> | ${it.version} | ${it.date} | ${it.platformBuild} | ${it.platformVersion} |"
+                val channel = it.channel.lowercase().run { "![$this][$this]" }
+                val date = it.date
+                val version = "<strong>${it.version}</strong> <small>(${it.build})</small>"
+                val platform = "<strong>${it.platformVersion}</strong> <small>(${it.platformBuild})</small>"
+
+                "| $name | $channel | $date | $version | $platform |"
               }
             } +
 
@@ -126,7 +130,9 @@ frameUrl.fetch { content ->
 
             items.distinctBy { it.version }.take(5).joinToString("\n") {
               val name = it.name.removePrefix("Android Studio").trim()
-              "| $name | ${it.date} | ${it.platformVersion} (${it.platformBuild}) |"
+              val platform = "${it.platformVersion} <small>(${it.platformBuild})</small>"
+
+              "| $name | ${it.date} | $platform |"
             } +
 
             """

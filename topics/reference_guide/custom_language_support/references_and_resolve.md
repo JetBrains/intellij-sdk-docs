@@ -4,7 +4,7 @@
 
 One of the most important and tricky parts in implementing a custom language PSI is resolving references.
 Resolving references gives users the ability to navigate from a PSI element usage (accessing a variable, calling a method, etc.) to the declaration of that element (the variable's definition, a method declaration, and so on).
-This feature is needed in order to support the <menupath>Navigate | Declaration or Usages</menupath> action invoked by <shortcut>Ctrl+B</shortcut> or <shortcut>Ctrl-Click</shortcut>, and it is a prerequisite for implementing the [Find Usages](find_usages.md) action, the [Rename Refactoring](rename_refactoring.md) and [Code Completion](code_completion.md).
+This feature is needed in order to support the <menupath>Navigate | Declaration or Usages</menupath> action invoked by <shortcut>Ctrl/Cmd+B</shortcut> or clicking the mouse button while holding <shortcut>Ctrl/Cmd</shortcut> key, and it is a prerequisite for implementing the [Find Usages](find_usages.md) action, the [Rename Refactoring](rename_refactoring.md) and [Code Completion](code_completion.md).
 
 > The <menupath>View | Quick Definition</menupath> action is based on the same mechanism, so it becomes automatically available for all references that can be resolved by the language plugin.
 >
@@ -41,7 +41,7 @@ Still, additional optimizations are possible (for example, performing the tree w
 >
 {type="tip"}
 
-There are a set of interfaces that can be used as a base for implementing resolve support, namely the [`PsiScopeProcessor`](upsource:///platform/core-api/src/com/intellij/psi/scope/PsiScopeProcessor.java) interface and the [`PsiElement.processDeclarations()`](upsource:///platform/core-api/src/com/intellij/psi/PsiElement.java) method.
+There is a set of interfaces that can be used as a base for implementing resolve support, namely the [`PsiScopeProcessor`](upsource:///platform/core-api/src/com/intellij/psi/scope/PsiScopeProcessor.java) interface and the [`PsiElement.processDeclarations()`](upsource:///platform/core-api/src/com/intellij/psi/PsiElement.java) method.
 These interfaces have several extra complexities that are unnecessary for most custom languages (like support for substituting Java generics types).
 Still, they are required if the custom language can have references to Java code.
 If Java interoperability is not required, the plugin can forgo the standard interfaces and provide its own, different implementation of resolve.
@@ -52,8 +52,10 @@ The implementation of resolve based on the standard helper classes contains the 
   The primary method which needs to be implemented is `execute()`, which is called to process every declaration encountered during the resolve, and returns `true` if the resolve needs to be continued or `false` if the declaration has been found.
   The methods `getHint()` and `handleEvent()` are used for internal optimizations and can be left empty in the `PsiScopeProcessor` implementations for custom languages.
 * A function which walks the PSI tree up from the reference location until the resolve has successfully completed or until the end of the resolve scope has been reached.
-  If the target of the reference is located in a different file, the file can be located, for example, using [`FilenameIndex.getFilesByName()`](upsource:///platform/indexing-api/src/com/intellij/psi/search/FilenameIndex.java) (if the file name is known) or by iterating through all custom language files in the project (`iterateContent()` in the [`ProjectFileIndex`](upsource:///platform/projectModel-api/src/com/intellij/openapi/roots/ProjectFileIndex.java) interface obtained
-  from [`ProjectRootManager.getFileIndex()`](upsource:///platform/projectModel-api/src/com/intellij/openapi/roots/ProjectRootManager.java)).
+  If the target of the reference is located in a different file, the file can be located, for example, using [`FilenameIndex.getFilesByName()`](upsource:///platform/indexing-api/src/com/intellij/psi/search/FilenameIndex.java) (if the file name is known) or by iterating through all custom language files in the project (`iterateContent()` in the
+  [`ProjectFileIndex`](upsource:///platform/projectModel-api/src/com/intellij/openapi/roots/ProjectFileIndex.java) interface obtained
+  from
+  [`ProjectRootManager.getFileIndex()`](upsource:///platform/projectModel-api/src/com/intellij/openapi/roots/ProjectRootManager.java)).
 * The individual PSI elements, on which the `processDeclarations()` method is called during the PSI tree walk.
   If a PSI element is a declaration, it passes itself to the `execute()` method of the `PsiScopeProcessor` passed to it.
   Also, if necessary, according to the language scoping rules, a PSI element can pass the `PsiScopeProcessor` to its child elements.

@@ -3,6 +3,7 @@
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 ## Introduction
+
 The actions system is an extension point that allows plugins to add their items to IntelliJ Platform-based IDE menus and toolbars.
 For example, one of the action classes is responsible for the <menupath>File | Open File...</menupath> menu item and the <control>Open File</control> toolbar button.
 
@@ -16,8 +17,9 @@ The [Grouping Actions](grouping_action.md) tutorial demonstrates three types of 
 The rest of this page is an overview of actions as an extension point.
 
 ## Action Implementation
+
 An action is a class derived from the abstract class [`AnAction`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java).
-The IntelliJ Platform calls methods of an action when a user interacts with a menu item or toolbar button.
+The IntelliJ Platform calls methods of action when a user interacts with a menu item or toolbar button.
 
 > Classes based on `AnAction` do not have class fields of any kind.
 > This is because an instance of `AnAction` class exists for the entire lifetime of the application.
@@ -27,6 +29,7 @@ The IntelliJ Platform calls methods of an action when a user interacts with a me
 {type="warning"}
 
 ### Principal Implementation Overrides
+
 Every IntelliJ Platform action should override `AnAction.update()` and must override `AnAction.actionPerformed()`.
 * An action's method `AnAction.update()` is called by the IntelliJ Platform framework to update an action state.
   The state (enabled, visible) of an action determines whether the action is available in the UI of an IDE.
@@ -43,6 +46,7 @@ There is also a use case for overriding action constructors when registering the
 However, the `update()` and `actionPerformed()` methods are essential to basic operation.
 
 ### Overriding the AnAction.update Method
+
 The method `AnAction.update()` is periodically called by the IntelliJ Platform in response to user gestures.
 The `update()` method gives an action to evaluate the current context and enable or disable its functionality.
 Implementors must ensure that changing presentation and availability status handles all variants and state transitions; otherwise, the given Action will get "stuck".
@@ -58,6 +62,7 @@ Implementors must ensure that changing presentation and availability status hand
 {type="tip"}
 
 #### Determining the Action Context
+
 The `AnActionEvent` object passed to `update()` carries information about the current context for the action.
 Context information is available from the methods of `AnActionEvent`, providing information such as the Presentation and whether the action is triggered by a Toolbar.
 Additional context information is available using the method `AnActionEvent.getData()`.
@@ -65,6 +70,7 @@ Keys defined in [`CommonDataKeys`](upsource:///platform/editor-ui-api/src/com/in
 Accessing this information is relatively light-weight and is suited for `AnAction.update()`.
 
 #### Enabling and Setting Visibility for an Action
+
 Based on information about the action context, the `AnAction.update()` method can enable, disable, or hide an action.
 An action's enable/disable state and visibility are set using methods of the `Presentation` object, which is accessed using `AnActionEvent.getPresentation()`.
 
@@ -93,6 +99,7 @@ See [Grouping Actions](#grouping-actions) for more information about the `compac
 An example of enabling a menu action based on whether a project is open is demonstrated in [`PopupDialogAction.update()`](https://github.com/JetBrains/intellij-sdk-code-samples/blob/main/action_basics/src/main/java/org/intellij/sdk/action/PopupDialogAction.java) method.
 
 ### Overriding the AnAction.actionPerformed Method
+
 When the user selects an enabled action, be it from a menu or toolbar, the action's `AnAction.actionPerformed()` method is called.
 This method contains the code executed to perform the action, and it is here that the real work gets done.
 
@@ -104,6 +111,7 @@ The code that executes in the `AnAction.actionPerformed()` method should execute
 An example of inspecting PSI elements is demonstrated in the SDK code sample `action_basics` [`PopupDialogAction.actionPerformed()`](https://github.com/JetBrains/intellij-sdk-code-samples/blob/main/action_basics/src/main/java/org/intellij/sdk/action/PopupDialogAction.java) method.
 
 ### Action IDs
+
 Every action and action group has a unique identifier.
 Basing the identifier for a custom action on the FQN of the implementation is the best practice, assuming the package incorporates the `<id>` of the plugin.
 An action must have a unique identifier for each place.
@@ -111,6 +119,7 @@ It is used in the IDE UI, even though the FQN of the implementation is the same.
 Definitions of identifiers for the standard IntelliJ Platform actions are in [`IdeActions`](upsource:///platform/ide-core/src/com/intellij/openapi/actionSystem/IdeActions.java).
 
 ### Grouping Actions
+
 Groups organize actions into logical UI structures, which in turn can contain other groups.
 A group of actions can form a toolbar or a menu.
 Subgroups of a group can form submenus of a menu.
@@ -120,11 +129,13 @@ An action must have a unique identifier for each place it appears in the IDE UI.
 See the [Action Declaration Reference](#action-declaration-reference) section for information about how to specify locations in the IDE UI.
 
 #### Presentation
+
 A new [`Presentation`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/Presentation.java) gets created for every place where the action appears.
 Therefore, the same action can have different text or icons when it appears in different places of the user interface.
 Different presentations for the action are created by copying the Presentation returned by the `AnAction.getTemplatePresentation()` method.
 
 #### Compact Attribute
+
 A group's "compact" attribute specifies whether an action within that group is visible when disabled.
 See [Registering Actions in plugin.xml](#registering-actions-in-pluginxml) for an explanation of how the `compact` attribute is set for a group.
 If the `compact` attribute is `true` for a menu group, an action in the menu only appears if its state is both enabled and visible.
@@ -143,9 +154,11 @@ All other combinations of `compact`, visibility, and enablement produce N/A for 
 See the [Grouping Actions](grouping_action.md) tutorial for examples of creating action groups.
 
 ## Registering Actions
+
 There are two main ways to register an action: either by listing it in the `<actions>` section of a plugin's <path>plugin.xml</path> file or through code.
 
 ### Registering Actions in plugin.xml
+
 Registering actions in <path>plugin.xml</path> is demonstrated in the following reference examples, which document all elements and attributes used in the `<actions>` section and describe each element's meaning.
 
 #### Setting the Override-Text Element
@@ -167,24 +180,27 @@ Additional `override-text` elements could be used to specify other places where 
 An example of using `<override-text>` is demonstrated in the [Creating Actions](working_with_custom_actions.md#using-override-text-for-an-action) tutorial.
 
 #### Setting the Synonym Element
+
 _2020.3_
 Users can locate actions via their name by invoking <menupath>Help | Find Action</menupath>.
 
 To allow using alternative names in search, add one or more `<synonym>` elements inside `<action>` or `<reference>`:
 
 ```xml
-  <action id="MyAction" text="My Action Name" ...>
-    <synonym text="Another Search Term"/>
-  </action>
+<action id="MyAction" text="My Action Name" ...>
+  <synonym text="Another Search Term"/>
+</action>
 ```
 
 To provide a localized synonym, specify `key` instead of `text` attribute.
 
 #### Disabling Search for Group
+
 _2020.3_
 To exclude a group from appearing in <menupath>Help | Find Action</menupath> results (e.g., <control>New...</control> popup), specify `searchable="false"`.
 
 #### Localizing Actions and Groups
+
 Action and group localization use resource bundles containing property files named `*Bundle.properties`, each file consisting of `key=value` pairs.
 The [`action_basics`](https://github.com/JetBrains/intellij-sdk-code-samples/tree/main/action_basics) plugin demonstrates using a resource bundle to localize the group and action entries added to the Editor Popup Menu.
 
@@ -240,6 +256,7 @@ If `<override-text>` is used for a group `id`, the key includes the `<place>` at
 
 
 #### Action Declaration Reference
+
 The places where actions can appear are defined by constants in [`ActionPlaces`](upsource:///platform/ide-core/src/com/intellij/openapi/actionSystem/ActionPlaces.java).
 Group IDs for the IntelliJ Platform are defined in [`PlatformActions.xml`](upsource:///platform/platform-resources/src/idea/PlatformActions.xml).
 
@@ -427,12 +444,14 @@ This, and additional information can also be found by using the [Code Completion
 ```
 
 ### Registering Actions from Code
+
 Two steps are required to register an action from code:
 * First, an instance of the class derived from `AnAction` must be passed to the `registerAction()` method of [`ActionManager`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/ActionManager.java), to associate the action with an ID.
 * Second, the action needs to be added to one or more groups.
   To get an instance of an action group by ID, it is necessary to call `ActionManager.getAction()` and cast the returned value to [`DefaultActionGroup`](upsource:///platform/platform-api/src/com/intellij/openapi/actionSystem/DefaultActionGroup.java).
 
 ## Building UI from Actions
+
 If a plugin needs to include a toolbar or popup menu built from a group of actions in its user interface, that is accomplished through [`ActionPopupMenu`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/ActionPopupMenu.java) and [`ActionToolbar`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/ActionToolbar.java).
 These objects can be created through calls to the `ActionManager.createActionPopupMenu()` and `createActionToolbar()` methods.
 To get a Swing component from such an object, call the respective `getComponent()` method.

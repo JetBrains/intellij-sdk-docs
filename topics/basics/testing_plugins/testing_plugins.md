@@ -7,9 +7,9 @@ What this means is the following:
 
 * The tests run in a headless environment that uses real production implementations for most components, except for many UI components.
 * The tests usually test a feature as a whole rather than individual functions that comprise its implementation.
-* The tests do not test the Swing UI and work directly with the underlying model instead.
-* Most tests take a source file or a set of source files as input data, execute a feature, and compare the output with expected results.
-  Results can be specified as another set of source files, special markup in the input file, or directly in the test code.
+* The tests do not test the Swing UI and work directly with the underlying model instead (see also [](#ui-tests)).
+* Most tests take a source file or a set of source files as [input data](test_project_and_testdata_directories.md), execute a feature, and compare the output with expected results.
+  Results can be specified as another set of source files, [special markup](testing_highlighting.md) in the input file, or directly in the test code.
 
 The most significant benefit of this test approach is that tests are very stable and require very little maintenance once written, no matter how much the underlying implementation is refactored or rewritten.
 
@@ -21,6 +21,7 @@ Another consequence of our testing approach is that we do not provide a recommen
 We have a few tests in our codebase that use JMock.
 Still, in general, we find it difficult to mock all of the interactions with IntelliJ Platform components that your plugin class will need to have.
 We recommend working with real components instead.
+See also [](testing_faq.md#how-to-replace-componentservice-in-tests) and [](testing_faq.md#how-to-replace-extension-points-in-tests).
 
 ### UI Tests
 

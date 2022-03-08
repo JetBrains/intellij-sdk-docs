@@ -26,16 +26,18 @@ Avoid OS-specific assumptions (e.g., filesystem case-sensitivity, hardcoded sepa
 
 Use _ordered_ collections or [`UsefulTestCase.assertUnorderedCollection()`](upsource:///platform/testFramework/src/com/intellij/testFramework/UsefulTestCase.java).
 
-Code deferring execution (e.g., via `Application.invokeLater()`) might not run during test execution (and possibly fails in production, too). Use `invokeLater(runnable, myProject.getDisposed()`.
+Code deferring execution (e.g., via `Application.invokeLater()`) might not run during test execution (and possibly fails in production, too).
+Use `invokeLater(runnable, myProject.getDisposed()`.
 
 ### How to avoid test failure when using resources?
 
-In some situations, added or changed files (e.g. DTDs provided by a plugin) are not refreshed in VFS. In such cases, simply delete <path>test-system/caches</path> in your [sandbox directory](ide_development_instance.md#the-development-instance-sandbox-directory) and try again.
+In some situations, added or changed files (e.g. XML DTDs provided by a plugin) are not refreshed in [VFS](virtual_file_system.md).
+In such cases, simply delete <path>test-system/caches</path> in your [sandbox directory](ide_development_instance.md#the-development-instance-sandbox-directory) and try again.
 
 ### How to enable DEBUG/TRACE logging?
 
 Provide JVM system properties (Gradle: via `systemProperty` for `test` task) `idea.log.debug.categories` or `idea.log.trace.categories`, respectively.
-Multiple categories can set using a comma separated value list.
+Multiple categories can be set using a comma separated value list.
 
 ### How to get separate logs for failing tests?
 
@@ -73,7 +75,7 @@ Use [`ExternalResourceManagerExImpl.registerResourceTemporarily()`](upsource:///
 
 ### How to replace component/service in tests?
 
-Provide `testServiceImplementation` for service declaration in <path>plugin.xml</path>, or use [`ServiceContainerUtil`](upsource:///platform/testFramework/src/com/intellij/testFramework/ServiceContainerUtil.kt).
+Provide dedicated test implementation via `testServiceImplementation` in [service declaration](plugin_services.md#declaring-a-service), or use [`ServiceContainerUtil`](upsource:///platform/testFramework/src/com/intellij/testFramework/ServiceContainerUtil.kt).
 
 ### How to replace extension points in tests?
 
@@ -93,7 +95,7 @@ In projects using Gradle it can be done by providing system property in the `tes
 
 ```kotlin
 test {
-  systemProperty("idea.home.path", "/path/to/intellij-community")
+  systemProperty("idea.home.path", "/path/to/intellij-community-sources")
 }
 ```
 
@@ -105,13 +107,13 @@ Sometimes testing a JVM language requires adding standard or other libraries to 
 If a required library is available in the Maven repository, use [`MavenDependencyUtil`](upsource:///java/testFramework/src/com/intellij/testFramework/fixtures/MavenDependencyUtil.java), e.g.:
 
 ```java
-MavenDependencyUtil.addFromMaven(model, "org.jetbrains.kotlin:kotlin-stdlib:1.6.10");
+MavenDependencyUtil.addFromMaven(model,"org.jetbrains.kotlin:kotlin-stdlib:1.6.10");
 ```
 
 If a required library is an unpublished JAR file, use [`PsiTestUtil.addLibrary()`](upsource:///platform/testFramework/src/com/intellij/testFramework/PsiTestUtil.java) or `addProjectLibrary()` method and the JAR file path, e.g.:
 
 ```java
-PsiTestUtil.addLibrary(model, "kotlin-stdlib", getTestDataPath(), "kotlin-stdlib.jar");
+PsiTestUtil.addLibrary(model,"kotlin-stdlib",getTestDataPath(),"kotlin-stdlib.jar");
 ```
 
 > If a topic you are interested in is not covered in the above sections, let us know via the "**Was this page helpful?**" feedback form below or [other channels](getting_help.md#problems-with-the-guide).

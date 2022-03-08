@@ -84,7 +84,13 @@ frameUrl.fetch { content ->
       Item(name, build, version, channel, platformBuild.toString(), platformVersion.toString(), date)
     }
   }.let {
-    Content(current.version + 1, it)
+    val version = with (current) {
+      when (items.hashCode() != it.hashCode()) {
+        true -> version + 1
+        false -> version
+      }
+    }
+    Content(version, it)
   }.also {
     Persister().write(it, contentFile)
   }.also { (_, items) ->
@@ -130,10 +136,11 @@ fun <T> String.download(block: (File) -> T) = URL(this).openStream().use { input
     File.createTempFile("android-studio", ".zip").also(File::deleteOnExit).let { tempFile ->
       FileOutputStream(tempFile).use { outputStream ->
         println("  Downloading $this to $tempFile")
-        val data = ByteArray(1024)
-        var count: Int
-        while (bis.read(data, 0, data.size).also { count = it } != -1) {
-          outputStream.write(data, 0, count)
+        ByteArray(1024).let { data ->
+          var count: Int
+          while (bis.read(data, 0, data.size).also { count = it } != -1) {
+            outputStream.write(data, 0, count)
+          }
         }
       }
       block(tempFile)

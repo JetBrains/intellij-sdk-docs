@@ -36,7 +36,7 @@ Still, additional optimizations are possible (for example, performing the tree w
 - [Custom Language Support Tutorial: Reference Contributor](reference_contributor.md)
 
 > To optimize `getReferences()` performance, consider implementing [`HintedReferenceHost`](upsource:///platform/core-api/src/com/intellij/psi/HintedReferenceHost.java) to provide additional hints.
-> Please see also _Cache Results of Heavy Computations_ in [Working with PSI efficiently](performance.md#working-with-psi-efficiently).
+> Please see also [](psi_performance.md#cache-results-of-heavy-computations).
 >
 {type="tip"}
 

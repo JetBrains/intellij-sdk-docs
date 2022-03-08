@@ -172,6 +172,7 @@
         <toc-element id="psi_references.md"/>
         <toc-element id="modifying_psi.md"/>
         <toc-element id="psi_cookbook.md"/>
+        <toc-element id="psi_performance.md"/>
         <toc-element id="indexing_and_psi_stubs.md">
             <toc-element id="file_based_indexes.md"/>
             <toc-element id="stub_indexes.md"/>

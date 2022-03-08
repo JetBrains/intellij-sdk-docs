@@ -9,7 +9,7 @@ This page gives recipes for the most common operations for working with the PSI 
 
 Unlike [Developing Custom Language Plugins](custom_language_support.md), it is about working with the PSI of existing languages (such as Java).
 
-> Please see also [Working with PSI efficiently](performance.md#working-with-psi-efficiently).
+> Please see also [](psi_performance.md).
 >
 {type="tip"}
 

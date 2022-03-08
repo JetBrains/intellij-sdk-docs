@@ -127,6 +127,10 @@ Note that you need to change the search scope to <control>All Places</control> i
 As a general remark, the use of internal classes is strongly discouraged (i.e. classes ending with `Impl` in their name,
 located under `impl` package, or included in <path>*-impl.jar</path>).
 
+Also, API annotated with
+[`org.jetbrains.annotations.ApiStatus.Internal`](https://github.com/JetBrains/java-annotations/blob/master/common/src/main/java/org/jetbrains/annotations/ApiStatus.java)
+should not be used, see [](api_internal.md) for more details and replacements.
+
 ## 3 Tools and References
 
 ### 3.1 Use Internal Mode and PsiViewer
@@ -135,11 +139,11 @@ As a plugin developer, you should enable [internal mode](enabling_internal.md) i
 This provides access to a suite of tools to help you develop, debug, and test IntelliJ Platform plugins.
 One of its most helpful features is the [UI Inspector](internal_ui_inspector.md),
 which lets you investigate all parts of the UI of every IntelliJ-based IDE by simply clicking on them.
-Equally important is the UI Debugger, which you can find in the <menupath>Tools | Internal Actions</menupath> menu.
-It will display all actions that are run by the IDE when you interact with UI elements, for example by clicking a button.
+Equally important is the <menupath>Tools | Internal Actions | UI Debugger</menupath> tool.
+It will display all actions that are run by the IDE when you interact with UI elements, for example, by clicking a button.
 
-Finally, internal mode provides the <menupath>View PSI Structure…</menupath> and <menupath>View PSI Structure of Current File…</menupath> actions in the Tools menu,
-which allow you to analyze the PSI tree.
+Finally, internal mode provides the <menupath>Tools | View PSI Structure…</menupath> and <menupath>Tools | View PSI Structure of Current File…</menupath> actions,
+which allow you to analyze the [PSI tree](psi.md), please see [documentation](https://www.jetbrains.com/help/idea/psi-viewer.html).
 The [PsiViewer plugin](https://plugins.jetbrains.com/plugin/227-psiviewer) is a separate plugin with similar capabilities for inspecting PSI trees,
 and it comes with a dedicated tool window that displays information on the fly.
 However, it does not display information about [stubs](stub_indexes.md) or [formatting models](code_formatting.md).

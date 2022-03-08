@@ -2,13 +2,14 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-> This API is available starting from 2020.3 and currently in development and thus in experimental state.
+> This API is available starting from 2020.3 and is currently in development and thus in an experimental state.
 >
 {type="warning"}
 
 ## Declarations
 
 Each [symbol](symbols.md) may be declared in zero or more places, for example:
+
 - a C# partial class is a symbol with several declarations;
 - a property key is a symbol possibly declared in several files simultaneously;
 - a Java local variable is a symbol with a single declaration;
@@ -18,6 +19,7 @@ Declarations in PSI elements are implementations of
 [`PsiSymbolDeclaration`](upsource:///platform/core-api/src/com/intellij/model/psi/PsiSymbolDeclaration.java).
 
 To report a declaration in a PSI element, either:
+
 - implement and register
   [`PsiSymbolDeclarationProvider`](upsource:///platform/core-api/src/com/intellij/model/psi/PsiSymbolDeclarationProvider.java);
 - or implement `PsiSymbolDeclaration` directly in the `PsiElement`.
@@ -71,10 +73,13 @@ without the inverse ability to search or rename such references by a target.
 
 **Example:**
 `var` keyword in `var x = new Person()` Java declaration has an Implicit reference, because it doesn't make sense to obtain the reference by the target class.
-At the same time it's possible:
-- to navigate to the class by ctrl-clicking `var`;
+
+At the same time, it's possible:
+
+- to navigate to the class by <shortcut>Ctrl-Click</shortcut> on `var`;
 - to start a refactoring (e.g., rename) from the class targeted by this reference;
 - to view documentation of the class targeted by this reference.
 
 To provide an Implicit reference, implement and register
-[`ImplicitReferenceProvider`](upsource:///platform/core-api/src/com/intellij/model/psi/ImplicitReferenceProvider.java).
+[`ImplicitReferenceProvider`](upsource:///platform/core-api/src/com/intellij/model/psi/ImplicitReferenceProvider.java)
+in `com.intellij.psi.implicitReferenceProvider` extension point.

@@ -124,7 +124,7 @@ The `value` is the replacement icon's file name, located in the `resources` fold
 
 The color of a replaced icon takes precedence over any `ColorPalette` overrides.
 
-> For generating the SVG icons suited for the IntelliJ-based IDEs, you may also use the third-party web tool – [IntelliJ Icon Generator](https://bjansen.github.io/intellij-icon-generator/).
+> For generating the SVG icons suited for the IntelliJ-based IDEs, you may also use the third-party web tool: [IntelliJ Icon Generator](https://bjansen.github.io/intellij-icon-generator/).
 >
 {type="tip"}
 
@@ -140,7 +140,7 @@ A UI control's custom color is specified by adding a key-value pair to the `"ui"
 A UI control `key` has the compound format `element.property`, where:
 * `element` is the type (label, checkbox, etc.) of the UI control.
 * `property` is how the color is applied.
-  Examples include `foreground`, `background`, and `errorForeground `.
+  Examples include `foreground`, `background`, and `errorForeground`.
 
 Note that some UI control keys have more than two parts, for example, `Popup.Advertiser.foreground` or `ScrollBar.Mac.Transparent.thumbColor`.
 The full key must be used to customize that specific button control.
@@ -241,7 +241,7 @@ The format of keys for borders is `element.property`, where:
 * `element` is the type of UI control containing a border, such as a window or a popup menu.
 * `property` is the desired border appearance, for example:
   * `border` is the border width (in pixels) specified as a top, left, bottom, and right widths.
-  Border color is also (optionally) specified as hexadecimal RGB, e.g. "E6E6E6" with no "#" character.
+  Border color is also (optionally) specified as hexadecimal RGB, e.g. `E6E6E6` with no `#` character.
   * `borderInsets` is the inset distance (in pixels) from the edge of the `element` to the border.
   It is specified as top, left, bottom, and right insets.
 
@@ -275,9 +275,9 @@ New entries in the `"ui": {}` section will invoke the code completion popup, as 
 ![UI Control Key Code Completion](uit_control_complete.png)
 
 Beginning with version 2019.2 of the IntelliJ Platform, the editor has added features for Code Completion and [Quick Documentation](https://www.jetbrains.com/help/idea/viewing-reference-information.html#inline-quick-documentation) to show the release in which a UI control key began to be supported.
-It appears as the _Since_ attribute in editor popups.
-In the Quick Documentation popup, the format is e.g., _Since: 2019.2_.
-The Code Completion popup is similar, but the format is e.g., _[Since 2019.2]_.
+It appears as the <control>Since</control> attribute in editor popups.
+In the Quick Documentation popup, the format is e.g., <control>Since: 2019.2</control>.
+The Code Completion popup is similar, but the format is e.g., <control>[Since 2019.2]</control>.
 
 ### Finding a UI Control Key Using Laf Defaults UI
 Using the [Laf Defaults](internal_ui_laf_defaults.md) inspector, enter the `element` portion of the key.

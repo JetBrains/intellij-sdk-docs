@@ -27,7 +27,7 @@ Avoid OS-specific assumptions (e.g., filesystem case-sensitivity, hardcoded sepa
 Use _ordered_ collections or [`UsefulTestCase.assertUnorderedCollection()`](upsource:///platform/testFramework/src/com/intellij/testFramework/UsefulTestCase.java).
 
 Code deferring execution (e.g., via `Application.invokeLater()`) might not run during test execution (and possibly fails in production, too).
-Use `invokeLater(runnable, myProject.getDisposed()`.
+Use `Application.invokeLater(runnable, myProject.getDisposed()`.
 
 ### How to avoid test failure when using resources?
 
@@ -41,7 +41,7 @@ Multiple categories can be set using a comma separated value list.
 
 ### How to get separate logs for failing tests?
 
-Set system property `idea.split.test.logs` to `true` to generate separate test log files in `splitTestLogs` subdirectory for failing tests (WARN/ERROR level messages) (2021.3).
+Set system property `idea.split.test.logs` to `true` to generate separate test log files in <path>splitTestLogs</path> subdirectory for failing tests (WARN/ERROR level messages) (2021.3).
 
 ## Techniques
 

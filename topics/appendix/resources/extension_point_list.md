@@ -10,15 +10,15 @@
 
 > Dedicated Extension Point/Listener Lists specific to IDEs are available under _Part VIII — Product Specific_.
 >
-> See also [Explore the IntelliJ Platform API](explore_api.md) for more information and strategies.
+> See also [](explore_api.md) for more information and strategies.
 >
 {type="tip"}
 
 <chunk id="ep_list_legend">
 
-> See [Plugin Extensions](plugin_extensions.md) on how to declare extensions in your plugin.
+> See [Extensions](plugin_extensions.md) on how to declare extensions in your plugin.
 >
-> See [Plugin Listeners](plugin_listeners.md) on how to register Listeners.
+> See [Listeners](plugin_listeners.md) on how to register listeners.
 >
 {type="tip"}
 

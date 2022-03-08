@@ -6,7 +6,7 @@ A library is an archive of compiled code (such as JAR files) that modules depend
 
 The IntelliJ Platform supports three types of libraries:
 * **Module Library**: the library classes are visible only in this module and the library information is recorded in the module <path>.iml</path> file.
-* **Project Library**: the library classes are visible within the project and the library information is recorded under `.idea/libraries` directory or in the project <path>.ipr</path> file.
+* **Project Library**: the library classes are visible within the project and the library information is recorded under <path>.idea/libraries</path> directory or in the project <path>.ipr</path> file.
 * **Global Library**: the library information is recorded in the <path>applicationLibraries.xml</path> file in <path>$USER_HOME$/.IntelliJIdea/config/options</path> directory. Global libraries are similar to project libraries, but are visible for different projects.
 
 For more information about libraries, refer to [Libraries](https://www.jetbrains.com/help/idea/working-with-libraries.html).

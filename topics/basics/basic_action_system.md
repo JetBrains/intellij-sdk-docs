@@ -170,12 +170,12 @@ This is also available for groups in 2020.3 and later.
 In the `action` element reference example (below) with `id` attribute `VssIntegration.GarbageCollection`, the default is to use the menu text "Garbage Collector: Collect _Garbage."
 The `add-to-group` element declares the action is added to the Tools Menu.
 
-However, the `override-text` element declares that text for `VssIntegration.GarbageCollection` displayed anywhere in the Main Menu system should be the alternate text "Collect _Garbage."
-The Tools Menu is part of the Main Menu, so the displayed menu text is "Collect _Garbage."
+However, the `override-text` element declares that text for `VssIntegration.GarbageCollection` displayed anywhere in the main menu system should be the alternate text "Collect _Garbage."
+The Tools menu is part of the main menu, so the displayed menu text is "Collect _Garbage."
 A different context, such as searching for the action using <menupath>Help | Find Action</menupath>, displays the default text "Garbage Collector: Collect _Garbage" to give the user additional information about the action.
 
-A second `override-text` element uses `place` and `use-text-of-place` attributes to declare the same version of the text used in the Main Menu is also used in the Editor Popup Menu.
-Additional `override-text` elements could be used to specify other places where the Main Menu text should be used.
+A second `override-text` element uses `place` and `use-text-of-place` attributes to declare the same version of the text used in the main menu is also used in the editor popup menu.
+Additional `override-text` elements could be used to specify other places where the main menu text should be used.
 
 An example of using `<override-text>` is demonstrated in the [Creating Actions](working_with_custom_actions.md#using-override-text-for-an-action) tutorial.
 

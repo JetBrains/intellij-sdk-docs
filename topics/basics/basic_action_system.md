@@ -250,118 +250,178 @@ This, and additional information can also be found by using the [Code Completion
 {type="tip"}
 
 ```xml
-<!-- Actions -->
 <actions>
-  <!-- The <action> element defines an action to register.
-       The mandatory "id" attribute specifies a unique
-       identifier for the action.
-       The mandatory "class" attribute specifies the
-       FQN of the class implementing the action.
-       The mandatory "text" attribute specifies the default long-version text to be displayed for the
-       action (tooltip for toolbar button or text for menu item).
-       The optional "use-shortcut-of" attribute specifies the ID
-       of the action whose keyboard shortcut this action will use.
-       The optional "description" attribute specifies the text
-       which is displayed in the status bar when the action is focused.
-       The optional "icon" attribute specifies the icon which is
-       displayed on the toolbar button or next to the menu item. -->
-  <action id="VssIntegration.GarbageCollection" class="com.foo.impl.CollectGarbage" text="Garbage Collector: Collect _Garbage"
-                description="Run garbage collector" icon="icons/garbage.png">
-    <!-- The <override-text> element defines an alternate version of the text for the menu action.
-         The mandatory "text" attribute defines the text to be displayed for the action.
-         The mandatory "place" attribute declares where the alternate text should be used. In this example,
-         any time the action is displayed in the IDE Main Menu (and submenus) the override-text
-         version should be used.
-         The second <override-text> element uses the alternate attribute "use-text-of-place" to define
-         a location (EditorPopup) to use the same text as is used in MainMenu. It is a way to specify
-         use of alternate menu text in multiple discrete menu groups. -->
+
+  <!--
+  The <action> element defines an action to register. Attributes:
+   - "id" (mandatory) - specifies a unique identifier for the action
+   - "class" (mandatory) - specifies the FQN of the class implementing
+     the action
+   - "text" (mandatory) - specifies the default long-version text to be
+     displayed for the action (tooltip for toolbar button or text for
+     menu item)
+   - "use-shortcut-of" (optional) - specifies the ID of the action
+     whose keyboard shortcut this action will use
+   - "description" (optional) - specifies the text which is displayed
+     in the status bar when the action is focused
+   - "icon" (optional) - specifies the icon which is displayed on
+     the toolbar button or next to the menu item
+  -->
+  <action id="VssIntegration.GarbageCollection"
+          class="com.foo.impl.CollectGarbage"
+          text="Garbage Collector: Collect _Garbage"
+          description="Run garbage collector"
+          icon="icons/garbage.png">
+
+    <!--
+    The <override-text> element defines an alternate version of the text
+    for the menu action. Attributes:
+     - "text" (mandatory) - defines the text to be displayed for the action
+     - "place" (mandatory) - declares where the alternate text should
+        be used. In this example, any time the action is displayed in
+        the IDE main menu (and submenus), the override-text version should
+        be used.
+    The second <override-text> element uses the alternate attribute
+    "use-text-of-place" to define a location (EditorPopup) to use the same
+    text as is used in MainMenu. It is a way to specify the use of
+    an alternate menu text in multiple discrete menu groups.
+    -->
     <override-text place="MainMenu" text="Collect _Garbage"/>
     <override-text place="EditorPopup" use-text-of-place="MainMenu"/>
+
     <!-- Provide alternative names for searching action by name -->
     <synonym text="GC"/>
-    <!-- The <add-to-group> node specifies that the action should be added
-         to an existing group. An action can be added to several groups.
-         The mandatory "group-id" attribute specifies the ID of the group
-         to which the action is added.
-         The group must be implemented by an instance of the DefaultActionGroup class.
-         The mandatory "anchor" attribute specifies the position of the
-         action in the relative to other actions. It can have the values
-         "first", "last", "before" and "after".
-         The "relative-to-action" attribute is mandatory if the anchor
-         is set to "before" and "after", and specifies the action before or after which
-         the current action is inserted. -->
-    <add-to-group group-id="ToolsMenu" relative-to-action="GenerateJavadoc" anchor="after"/>
-      <!-- The <keyboard-shortcut> node specifies the keyboard shortcut
-           for the action. An action can have several keyboard shortcuts.
-           The mandatory "first-keystroke" attribute specifies the first
-           keystroke of the action. The keystrokes are specified according
-           to the regular Swing rules.
-           The optional "second-keystroke" attribute specifies the second
-           keystroke of the action.
-           The mandatory "keymap" attribute specifies the keymap for which
-           the action is active. IDs of the standard keymaps are defined as
-           constants in the com.intellij.openapi.keymap.KeymapManager class.
-           The optional "remove" attribute in the second <keyboard-shortcut>
-           element below means the specified shortcut should be removed from
-           the specified action.
-           The optional "replace-all" attribute in the third <keyboard-shortcut>
-           element below means remove all keyboard and mouse shortcuts from the specified
-           action before adding the specified shortcut.  -->
-    <!-- Add the first and second keystrokes to all keymaps  -->
-    <keyboard-shortcut keymap="$default" first-keystroke="control alt G" second-keystroke="C"/>
-    <!-- Except to the "Mac OS X" keymap and its children -->
-    <keyboard-shortcut keymap="Mac OS X" first-keystroke="control alt G" second-keystroke="C" remove="true"/>
-    <!-- The "Mac OS X 10.5+" keymap and its children will have only this keyboard shortcut for this action.  -->
-    <keyboard-shortcut keymap="Mac OS X 10.5+" first-keystroke="control alt G" second-keystroke="C" replace-all="true"/>
-    <!-- The <mouse-shortcut> node specifies the mouse shortcut for the
-           action. An action can have several mouse shortcuts.
-           The mandatory "keystroke" attribute specifies the clicks and
-           modifiers for the action. It is defined as a sequence of words
-           separated by spaces:
-           "button1", "button2", "button3" for the mouse buttons;
-           "shift", "control", "meta", "alt", "altGraph" for the modifier keys;
-           "doubleClick" if the action is activated by a double-click of the button.
-           The mandatory "keymap" attribute specifies the keymap for which
-           the action is active. IDs of the standard keymaps are defined as
-           constants in the com.intellij.openapi.keymap.KeymapManager class.
-           The "remove" and "replace-all" attributes can also be used in
-           a <mouse-shortcut> element. See <keyboard-shortcut> for documentation.  -->
-    <mouse-shortcut keymap="$default" keystroke="control button3 doubleClick"/>
+
+    <!--
+    The <add-to-group> node specifies that the action should be added to an
+    existing group. An action can be added to several groups. Attributes:
+     - "group-id" (mandatory) - specifies the ID of the group to which the
+       action is added. The group must be an implementation of the
+       DefaultActionGroup class.
+     - "anchor" (mandatory) - specifies the position of the action in
+       the relative to other actions. Allowed values: "first", "last",
+       "before", and "after".
+     - "relative-to-action" (mandatory if "anchor" is "before" or "after") -
+       specifies the action before or after which the current action is
+       inserted.
+    -->
+    <add-to-group group-id="ToolsMenu"
+                  relative-to-action="GenerateJavadoc"
+                  anchor="after"/>
+
+    <!--
+    The <keyboard-shortcut> node specifies the keyboard shortcut for
+    the action. An action can have several keyboard shortcuts. Attributes:
+     - "first-keystroke" (mandatory) - specifies the first keystroke of
+       the action. The keystrokes are specified according to the regular
+       Swing rules.
+     - "second-keystroke" (optional) - specifies the second keystroke of
+       the action.
+     - "keymap" (mandatory) - specifies the keymap for which the action
+       is active. IDs of the standard keymaps are defined as constants
+       in the com.intellij.openapi.keymap.KeymapManager class.
+     - "remove" (optional) - shortcut should be removed from the specified
+       action. See the second <keyboard-shortcut> example element below.
+     - "replace-all" (optional) - removes all keyboard and mouse shortcuts
+       from the specified action before adding the specified shortcut.
+       See the third <keyboard-shortcut> example element below.
+    -->
+
+    <!-- Add the first and second keystrokes to all keymaps... -->
+    <keyboard-shortcut keymap="$default"
+                       first-keystroke="control alt G"
+                       second-keystroke="C"/>
+
+    <!-- ...except the "Mac OS X" keymap and its children. -->
+    <keyboard-shortcut keymap="Mac OS X"
+                       first-keystroke="control alt G"
+                       second-keystroke="C"
+                       remove="true"/>
+
+    <!-- The "Mac OS X 10.5+" keymap and its children will have only this
+    keyboard shortcut for this action. -->
+    <keyboard-shortcut keymap="Mac OS X 10.5+"
+                       first-keystroke="control alt G"
+                       second-keystroke="C"
+                       replace-all="true"/>
+
+    <!--
+    The <mouse-shortcut> node specifies the mouse shortcut for the action.
+    An action can have several mouse shortcuts. Attributes:
+    - "keystroke" (mandatory) - specifies the clicks and modifiers for
+      the action. It is defined as a sequence of words separated by spaces:
+       * mouse buttons: "button1", "button2", "button3"
+       * modifier keys: "shift", "control", "meta", "alt", "altGraph"
+       * button double-click: "doubleClick"
+    - "keymap" (mandatory) - specifies the keymap for which the action is
+      active. IDs of the standard keymaps are defined as constants in
+      the com.intellij.openapi.keymap.KeymapManager class.
+    The <mouse-shortcut> element can also specify "remove" and "replace-all"
+    attributes. See <keyboard-shortcut> description above for details.
+    -->
+    <mouse-shortcut keymap="$default"
+                    keystroke="control button3 doubleClick"/>
   </action>
-  <!--  This action declares neither a text nor description attribute. If it has
-        a resource bundle declared the text and descriptions will be retrieved
-        based on the action-id incorporated in the key for a translated string -->
-  <action id="sdk.action.PopupDialogAction" class="sdk.action.PopupDialogAction"
-        icon="SdkIcons.Sdk_default_icon">
-  </action>
-  <!-- The <group> element defines an action group. <action>, <group> and
-       <separator> elements defined within it are automatically included in the group.
-       The mandatory "id" attribute specifies a unique identifier for the group.
-       The optional "class" attribute specifies the FQN of
-       the class implementing the group. If not specified,
-       com.intellij.openapi.actionSystem.DefaultActionGroup is used.
-       The optional "text" attribute specifies the text of the group (text
-       for the menu item showing the submenu).
-       The optional "description" attribute specifies the text which is displayed
-       in the status bar when the group has focus.
-       The optional "icon" attribute specifies the icon which is displayed on
-       the toolbar button or next to the menu group.
-       The optional "popup" attribute specifies how the group is presented in
-       the menu. If a group has popup="true", actions in it are placed in a
-       submenu; for popup="false", actions are displayed as a section of the
-       same menu delimited by separators.
-       The optional "compact" attribute specifies whether an action within that group is visible when disabled.
-       Setting compact="true" specifies an action in the group isn't visible unless the action is enabled.        -->
-  <group class="com.foo.impl.MyActionGroup" id="TestActionGroup" text="Test Group" description="Group with test actions" icon="icons/testgroup.png" popup="true" compact="true">
-    <action id="VssIntegration.TestAction" class="com.foo.impl.TestAction" text="My Test Action" description="My test action"/>
+
+  <!--
+  This action declares neither a text nor a description attribute. If it
+  has a resource bundle declared, the text and descriptions will be
+  retrieved based on the action-id incorporated in the key for a translated
+  string.
+  -->
+  <action id="sdk.action.PopupDialogAction"
+          class="sdk.action.PopupDialogAction"
+          icon="SdkIcons.Sdk_default_icon"/>
+
+  <!--
+  The <group> element defines an action group. The <action>, <group>
+  and <separator> elements defined within it are automatically included
+  in the group. Attributes:
+   - "id" (mandatory) - specifies a unique identifier for the group.
+   - "class" (optional) - specifies the FQN of the class implementing
+     the group. If not specified,
+     com.intellij.openapi.actionSystem.DefaultActionGroup is used.
+   - "text" (optional) - specifies the text of the group (text for the menu
+     item showing the submenu).
+   - "description" (optional) specifies the text which is displayed in the
+     status bar when the group has focus.
+   - "icon" (optional) - specifies the icon which is displayed on
+     the toolbar button or next to the menu group.
+   - "popup" (optional) - specifies how the group is presented in the menu.
+      * "true" - group actions are placed in a submenu
+      * "false" - actions are displayed as a section of the same menu
+        delimited by separators.
+   - "compact" (optional) - specifies whether an action within that group
+     is visible when disabled. Setting compact="true" specifies an action
+     in the group isn't visible unless the action is enabled.
+  -->
+  <group class="com.foo.impl.MyActionGroup"
+         id="TestActionGroup"
+         text="Test Group"
+         description="Group with test actions"
+         icon="icons/testgroup.png"
+         popup="true"
+         compact="true">
+
+    <action id="VssIntegration.TestAction"
+            class="com.foo.impl.TestAction"
+            text="My Test Action"
+            description="My test action"/>
+
     <!-- The <separator> element defines a separator between actions.
-         It can also have an <add-to-group> child element. -->
+    It can also have an <add-to-group> child element. -->
     <separator/>
+
     <group id="TestActionSubGroup"/>
-    <!-- The <reference> element allows to add an existing action to the group.
-         The mandatory "ref" attribute specifies the ID of the action to add. -->
+
+    <!-- The <reference> element allows adding an existing action to
+    the group. The mandatory "ref" attribute specifies the ID of
+    the action to add. -->
     <reference ref="EditorCopy"/>
-    <add-to-group group-id="MainMenu" relative-to-action="HelpMenu" anchor="before"/>
+
+    <add-to-group group-id="MainMenu"
+                  relative-to-action="HelpMenu"
+                  anchor="before"/>
   </group>
 </actions>
 ```

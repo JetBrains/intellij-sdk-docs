@@ -51,7 +51,7 @@ Sometimes it also includes language support elements for a custom syntax or DSL.
 * Direct access to framework-specific functionality
 
 Refer to the [Struts 2 plugin](https://github.com/JetBrains/intellij-plugins/tree/master/struts2) as an example of framework integration.
-More reference plugins can be found on [JetBrains Marketplace](https://plugins.jetbrains.com/search?orderBy=update%20date&shouldHaveSource=true&tags=Framework%20integration).
+More reference plugins can be found on [JetBrains Marketplace](https://plugins.jetbrains.com/search?orderBy=update%20date&shouldHaveSource=true&tags=Framework).
 
 ## Tool Integration
 
@@ -61,7 +61,7 @@ Tool integration makes it possible to manipulate third-party tools and component
 * Related UI components
 * Access to external resources
 
-Refer to the [Gerrit integration](https://plugins.jetbrains.com/plugin/7272?pr=idea) plugin as an example.
+Refer to the [Gerrit integration](https://plugins.jetbrains.com/plugin/7272) plugin as an example.
 
 ## User Interface Add-Ons
 

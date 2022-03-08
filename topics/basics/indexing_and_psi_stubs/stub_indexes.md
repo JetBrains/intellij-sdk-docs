@@ -62,7 +62,7 @@ This will cause the stubs and [stub indices](#stub-indexes) to be rebuilt, and w
 It's essential to ensure that all information stored in the stub tree depends only on the contents of the file for which stubs are being built, and does not depend on any external files.
 Otherwise, the stub tree will not be rebuilt when external dependency changes, and you will have stale and incorrect data in the stub tree.
 
-> Please see also [Improving indexing performance](performance.md#improving-indexing-performance).
+> Please see also [Improving indexing performance](indexing_and_psi_stubs.md#improving-indexing-performance).
 >
 {type="tip"}
 

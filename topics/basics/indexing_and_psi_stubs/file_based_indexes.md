@@ -45,7 +45,7 @@ An implementation of a file-based index consists of the following main parts:
 If there's no value to associate with the files (i.e., value type is `Void`), simplify the implementation by extending [`ScalarIndexExtension`](upsource:///platform/indexing-api/src/com/intellij/util/indexing/ScalarIndexExtension.java).
 In case of single value per file, extend from [`SingleEntryFileBasedIndexExtension`](upsource:///platform/indexing-api/src/com/intellij/util/indexing/SingleEntryFileBasedIndexExtension.java).
 
-Please see also [Improving indexing performance](performance.md#improving-indexing-performance).
+Please see also [Improving indexing performance](indexing_and_psi_stubs.md#improving-indexing-performance).
 
 > **Critical Implementation Notes**
 >

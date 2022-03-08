@@ -6,6 +6,10 @@
 >
 {type="tip"}
 
+> See also [](indexing_and_psi_stubs.md#improving-indexing-performance)
+>
+{type="note"}
+
 ## Working with PSI Efficiently
 
 #### Avoid Expensive Methods of `PsiElement`
@@ -44,31 +48,6 @@ To avoid paying this cost several times, the result of such computation can be c
 Usually, [`CachedValue`](upsource:///platform/core-api/src/com/intellij/psi/util/CachedValue.java) works well for this purpose.
 
 If the information you cache depends only on a subtree of the current PSI element (and nothing else: no resolve results or other files), you can cache it in a field in that `PsiElement` and drop the cache in an override of `ASTDelegatePsiElement.subtreeChanged()`.
-
-## Improving Indexing Performance
-
-#### Performance Metrics
-Indexing performance metrics in JSON format are generated in [logs directory](https://intellij-support.jetbrains.com/hc/en-us/articles/206544519-Directories-used-by-the-IDE-to-store-settings-caches-plugins-and-logs) (see [sandbox directory](ide_development_instance.md#the-development-instance-sandbox-directory) for development instance) in 2020.2 and later.
-These are additionally available in HTML format starting with 2021.1.
-
-#### Avoid Using AST
-
-Use lexer information instead of parsed trees if possible.
-
-If impossible, use light AST which doesn't create memory-hungry AST nodes inside, so traversing it might be faster.
-Make sure to traverse only the nodes you need to.
-
-For indexing XML, also consider using [`NanoXmlUtil`](upsource:///platform/indexing-impl/src/com/intellij/util/xml/NanoXmlUtil.java).
-
-For stub index, implement [`LightStubBuilder`](upsource:///platform/core-impl/src/com/intellij/psi/stubs/LightStubBuilder.java).
-For other indexes, you can obtain the light AST manually via `((PsiDependentFileContent) fileContent).getLighterAST()`.
-
-If a custom language contains lazy-parseable elements that never or rarely contain any stubs, consider implementing `StubBuilder.skipChildProcessingWhenBuildingStubs()` (preferably using Lexer/node text).
-
-#### Consider Prebuilt Stubs
-
-If your language has a massive standard library, which is mostly the same for all users, you can avoid stub-indexing it in each installation by providing prebuilt stubs with your distribution.
-See [`PrebuiltStubsProvider`](upsource:///platform/indexing-impl/src/com/intellij/psi/stubs/PrebuiltStubs.kt) extension. <!-- PrebuildStubsProvider is deprecated; someone with more expertise in this should rewrite this piece. -->
 
 ## Avoiding UI Freezes
 

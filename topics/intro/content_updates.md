@@ -14,6 +14,9 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 Android Studio Releases List
 : Add [](android_studio_releases_list.md) section containing a complete list of the Android Studio releases with the relevant IntelliJ IDEA release version specified.
 
+Alternatives to Implementing a Plugin
+: Add [](plugin_alternatives.md) section describing alternative approaches to extending IDE functionality without actual plugin development.
+
 ### February-22
 
 Parameter Info

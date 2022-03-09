@@ -4,6 +4,10 @@
 
 <excerpt>Links to articles and webinars about plugin development</excerpt>
 
+> Follow [JBPlatform](https://twitter.com/JBPlatform/) on Twitter and visit [JetBrains Platform Blog](https://blog.jetbrains.com/platform/) for the latest announcements.
+>
+{type="tip"}
+
 ## Articles
 
 ### Building a Plugin for WebStorm

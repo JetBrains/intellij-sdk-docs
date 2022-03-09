@@ -137,7 +137,7 @@ Implicit in using [`LocalInspectionTool`](upsource:///platform/analysis-api/src/
 {type="note"}
 
 The `comparing_references_inspection` code sample provides a unit test for the inspection.
-See the [Testing Plugins](testing_plugins.md) section for general information about plugin testing.
+See [](testing_plugins.md) for general information about plugin testing.
 
 The `comparing_references_inspection` test is based on the [`UsefulTestCase`](upsource:///platform/testFramework/src/com/intellij/testFramework/UsefulTestCase.java) class, part of the JUnit framework APIs.
 This class handles much of the underlying boilerplate for tests.

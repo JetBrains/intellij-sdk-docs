@@ -190,19 +190,17 @@ The styles available for callouts are:
 
 ### Images
 
-Images can be included by adding the file directly to the `intellij-sdk-docs` repository.
-Each subject directory typically has a subdirectory within the root <path>/images</path> directory.
+Every page typically has a dedicated subdirectory within root <path>/images</path>.
 
 Images in this documentation are generally screenshots.
+For consistency, images should be 296, 460, or 706 pixels wide.
 The preferred image format is PNG at 144 DPI resolution.
 A resolution of 72 DPI is acceptable but may look blurry on high-resolution monitors.
 
 Use [Window Resizer](https://plugins.jetbrains.com/plugin/18045-window-resizer) plugin for exact resizing of the IDE application window.
 
 It is crucial to reduce the size of image files to prevent bloating the repository and impacting the performance of the documentation site.
-Resize an image to be nearly the desired width on a documentation page.
-Reducing an image's dimensions is the most effective way to reduce image file size.
-Also, optimize the image files using a tool such as the [PNG optimizer](https://plugins.jetbrains.com/plugin/7942-png-optimizer).
+Optimize the image files using a tool such as the [PNG optimizer](https://plugins.jetbrains.com/plugin/7942-png-optimizer) plugin.
 
 Images are embedded in a document by adding a Markdown link to the image like so:
 

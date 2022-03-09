@@ -10,7 +10,7 @@ Consider implementing an actual plugin only when the described solutions are ins
 
 ## Structural Search and Replace Inspections
 
-The [structural search and replace (SSR)](https://www.jetbrains.com/help/idea/structural-search-and-replace.html) functionality allows defining search patterns which are based not only on textual information but also on the structure of the searched code fragments, no matter how it is formatted or commented.
+The [Structural Search and Replace (SSR)](https://www.jetbrains.com/help/idea/structural-search-and-replace.html) functionality allows defining search patterns which are based not only on textual information but also on the structure of the searched code fragments, no matter how it is formatted or commented.
 The SSR templates can be used for [creating custom inspections](https://www.jetbrains.com/help/idea/creating-custom-inspections.html), which can be an alternative for programmatic [code inspections](code_inspections.md).
 Depending on requirements, an inspection can report an issue for a code fragment matching a given template, but also provide a quick fix replacing the reported fragment with the configured replacement template.
 All inspection metadata like name, problem tooltip, and description are configurable.
@@ -18,7 +18,7 @@ A single inspection can use multiple search and replacement templates.
 
 Once SSR inspections are created and configured, they can be shared with other team members via [inspection profiles](https://www.jetbrains.com/help/idea/customizing-profiles.html).
 
-> See [I(J)nspector](https://ijnspector.wordpress.com/) blog for practical SSR templates examples.
+> See the [I(J)nspector](https://ijnspector.wordpress.com/) blog for practical SSR templates examples.
 >
 {type="note"}
 
@@ -36,7 +36,7 @@ Flora extensions have access to all available IntelliJ Platform APIs, just like 
 
 Every extension is represented by a single file and stored directly in a project's <path>.plugins</path> directory.
 Extensions can be easily shared with other team members by adding the <path>.plugins</path> directory to VCS.
-Also, adding the Flora plugin in the <menupath>Build, Execution, Deployment | Required Plugins</menupath> and sharing this configuration as part of a project makes it effortless to deliver additional IDE functionalities to your team without any manual setup.
+Also, adding the Flora plugin in the <menupath>Settings/Preferences | Build, Execution, Deployment | Required Plugins</menupath> and sharing this configuration as part of a project makes it effortless to deliver additional IDE functionalities to your team without any manual setup.
 
 ## LivePlugin
 
@@ -48,6 +48,6 @@ Extensions can use all IntelliJ Platform APIs and additional LivePlugin API that
 Created extensions are stored on the IDE level and can be shared with other team members as plain files, GitHub gists, or repositories.
 Additionally, if they are stored in a project's <path>.live-plugins</path> directory and LivePlugin's <control>Run Project Specific Plugins</control> option is enabled, all extensions from this directory will be loaded automatically when the project is opened and unloaded when the project is closed.
 
-> See [LivePlugin author's article](https://dmitrykandalov.com/liveplugin) and [presentation](https://www.youtube.com/watch?v=GcYa4lMRta0) for more information.
+> See the LivePlugin author's [article](https://dmitrykandalov.com/liveplugin) and [presentation](https://www.youtube.com/watch?v=GcYa4lMRta0) for more information.
 >
 {type="note"}

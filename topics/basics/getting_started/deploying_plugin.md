@@ -6,9 +6,9 @@ Before your custom plugin can be used, it must be deployed: built, installed, an
 
 To deploy a plugin:
 
-* Make your project by invoking **Build \| Build Project** or **Build \| Build Module \<module name\>**.
+* Make your project by invoking <menupath>Build | Build Project</menupath> or <menupath>Build | Build Module $MODULE_NAME$</menupath>.
 * Prepare your plugin for deployment.
-  In the main menu, select **Build \| Prepare Plugin Module \<module name\> for Deployment**.
+  In the main menu, select <menupath>Build | Prepare Plugin Module $MODULE_NAME$ for Deployment</menupath>.
 
   ![Prepare Plugin for Deployment](prepare_plugin_for_deployment.png)
 

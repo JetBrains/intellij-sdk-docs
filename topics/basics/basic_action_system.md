@@ -140,7 +140,7 @@ A group's "compact" attribute specifies whether an action within that group is v
 See [Registering Actions in plugin.xml](#registering-actions-in-pluginxml) for an explanation of how the `compact` attribute is set for a group.
 If the `compact` attribute is `true` for a menu group, an action in the menu only appears if its state is both enabled and visible.
 In contrast, if the `compact` attribute is `false`, an action in the menu appears if its state is disabled but visible.
-Some menus like **Tools** have the `compact` attribute set, so there isn't a way to show an action on the tools menu if it is not enabled.
+Some menus like <menupath>Tools</menupath> have the `compact` attribute set, so there isn't a way to show an action on the <menupath>Tools</menupath> menu if it is not enabled.
 
 | Host Menu<br/>`compact` Setting | Action Enabled | Visibility Enabled | Menu Item Visible? | Menu Item Appears Gray? |
 |:-------------------------------:|:--------------:|:------------------:|:------------------:|:-----------------------:|
@@ -171,7 +171,7 @@ In the `action` element reference example (below) with `id` attribute `VssIntegr
 The `add-to-group` element declares the action is added to the Tools Menu.
 
 However, the `override-text` element declares that text for `VssIntegration.GarbageCollection` displayed anywhere in the main menu system should be the alternate text "Collect _Garbage."
-The Tools menu is part of the main menu, so the displayed menu text is "Collect _Garbage."
+The <menupath>Tools</menupath> menu is part of the main menu, so the displayed menu text is "Collect _Garbage."
 A different context, such as searching for the action using <menupath>Help | Find Action</menupath>, displays the default text "Garbage Collector: Collect _Garbage" to give the user additional information about the action.
 
 A second `override-text` element uses `place` and `use-text-of-place` attributes to declare the same version of the text used in the main menu is also used in the editor popup menu.

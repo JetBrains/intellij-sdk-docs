@@ -137,7 +137,7 @@ For more information, see [](basic_action_system.md#setting-the-override-text-el
 
 ## Testing the Minimal Custom Action Implementation
 
-After performing the steps described above, compile and run the plugin to see the newly created action available as a <control>Tools</control> menu item, which is within the context of the main menu:
+After performing the steps described above, compile and run the plugin to see the newly created action available as a <menupath>Tools</menupath> menu item, which is within the context of the main menu:
 
 ![Register action](tools_menu_item_action.png){width="350"}
 
@@ -151,7 +151,7 @@ However, it confirms the new entry appears at <menupath>Tools | Pop Dialog Actio
 
 ## Developing the `AnAction` Methods
 
-At this point, the new action `PopupDialogAction` is registered with the IntelliJ Platform and functions in the sense that  `update()` and `actionPerformed()` are called in response to user interaction with the IDE <control>Tools</control> menu.
+At this point, the new action `PopupDialogAction` is registered with the IntelliJ Platform and functions in the sense that  `update()` and `actionPerformed()` are called in response to user interaction with the IDE <menupath>Tools</menupath> menu.
 However, neither method implements any code to perform useful work.
 
 This section describes adding useful code to these methods.

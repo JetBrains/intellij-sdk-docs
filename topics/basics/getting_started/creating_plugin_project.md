@@ -6,7 +6,7 @@
 >
 {type="note"}
 
-This section explains how you can create a new plugin project from scratch using the New Project wizard.
+This section explains how you can create a new plugin project from scratch using the <menupath>New Project</menupath> wizard.
 Optionally, you can import an existing project or import a project from external models.
 You can also add a new plugin module to the current IntelliJ Platform project.
 For more information, refer to the [IntelliJ IDEA Web Help](https://www.jetbrains.com/idea/help/new-project-wizard.html).
@@ -17,23 +17,23 @@ For more information, refer to the [IntelliJ IDEA Web Help](https://www.jetbrain
 >
 {type="note"}
 
-* On the main menu, choose **File \| New \| Project**.
-  The *New Project* wizard starts.
+* On the main menu, choose <menupath>File | New | Project</menupath>.
+  The <control>New Project</control> wizard starts.
   ![New Project Wizard](new_project_wizard.png)
-* Set *IntelliJ Platform Plugin* project type.
-* Click **Next**.
+* Select <control>IntelliJ Platform Plugin</control> project type.
+* Click <control>Next</control> button.
 * Set the desired project name.
-* Click **Finish** to generate project structure files.
-* Go to **File \| Project Structure** to customize project settings if required.
+* Click <control>Finish</control> to generate project structure files.
+* Go to <menupath>File | Project Structure</menupath> to customize project settings if required.
 
 ### To Create an IntelliJ Platform Plugin Module
 
-* Select **File \| New \| Module** and choose the *IntelliJ Platform Plugin* module type
+* Select <menupath>File | New | Module</menupath> and choose the <control>IntelliJ Platform Plugin</control> module type.
   ![IntelliJ Platform Plugin Module](intellij_platform_plugin_module.png)
   <br/>
   <br/>
 * Enter your desired plugin name.
-* Go to **File \| Project Structure** and select the newly created *IntelliJ Platform SDK* as the default SDK for the plugin module:
+* Go to <menupath>File | Project Structure</menupath> and select the newly created *IntelliJ Platform SDK* as the default SDK for the plugin module:
   ![Set Plugin Module SDK](set_plugin_module_sdk.png)
 
 ### Adding Code to the Project

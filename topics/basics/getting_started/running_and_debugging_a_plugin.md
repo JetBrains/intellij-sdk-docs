@@ -6,7 +6,7 @@ It's possible to run and debug a plugin directly from the IntelliJ IDEA.
 You need a configured special profile (a *Plugin* Run/Debug configuration) that specifies the plugin module, VM parameters, and other specific options.
 When you run such a profile, it launches the IDE with your plugin installed.
 
-See [IDE Development Instances](ide_development_instance.md) for more information about configuration and advanced settings.
+See [](ide_development_instance.md) for more information about configuration and advanced settings.
 
 For information on how to change the Run/Debug configuration profile, refer to [Run/Debug Configuration](https://www.jetbrains.com/help/idea/run-debug-configuration.html) and [Run/Debug Configuration: Plugin](https://www.jetbrains.com/idea/help/run-debug-configuration-plugin.html) in IntelliJ IDEA Web Help.
 
@@ -14,8 +14,8 @@ Using IntelliJ IDEA's debugger, you can find out the origin of the run-time erro
 
 **To debug a plugin**
 
-*  Select **Run \| Debug** in the main menu, or press <shortcut>Shift+F9</shortcut>.
+*  Select <menupath>Run | Debug...</menupath> in the main menu, or press <shortcut>Shift+F9</shortcut>.
 
 **To run a plugin**
 
-*  Select **Run \| Run** in the main menu, or press <shortcut>Shift+F10</shortcut>.
+* Select <menupath>Run | Run...</menupath> in the main menu, or press <shortcut>Shift+F10</shortcut>.

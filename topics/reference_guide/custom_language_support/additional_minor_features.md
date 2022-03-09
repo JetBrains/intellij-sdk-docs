@@ -2,6 +2,8 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
+<excerpt>Additional minor features for custom languages.</excerpt>
+
 A number of minor features are listed in the following format:
 
 _EP: `fully.qualified.extensionPointName`_ - Extension Point Name (must be specified in <path>plugin.xml</path>)

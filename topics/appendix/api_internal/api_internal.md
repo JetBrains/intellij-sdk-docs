@@ -2,6 +2,8 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
+<excerpt>Lists private API annotated with ApiStatus.Internal and corresponding replacement.</excerpt>
+
 This page lists commonly used API annotated with [`org.jetbrains.annotations.ApiStatus.Internal`](https://github.com/JetBrains/java-annotations/blob/master/common/src/main/java/org/jetbrains/annotations/ApiStatus.java) which indicates it's _private API_ and must not be used outside of IntelliJ Platform itself:
 
 > _ApiStatus.Internal Javadoc_:

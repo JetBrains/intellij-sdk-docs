@@ -2,6 +2,8 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
+<excerpt>Adding entries in Settings/Preferences.</excerpt>
+
 _Settings_ persistently store states that control the behavior and appearance of IntelliJ Platform-based IDEs.
 On this page, the term "Settings" means the same as "Preferences" on some platforms.
 

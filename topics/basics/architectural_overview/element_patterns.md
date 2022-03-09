@@ -2,7 +2,10 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
+<excerpt rel="excerpt"/>
+<p id="excerpt">
 Element patterns provide a generic way to specify conditions on objects.
+</p>
 Plugin authors use them to check whether PSI elements match a particular structure.
 Just as regular expressions for strings test whether a (sub-)string matches a particular pattern, element patterns are used to put conditions on the nested structure of PSI elements.
 Their two main applications inside the IntelliJ Platform are:

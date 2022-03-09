@@ -2,6 +2,8 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2 -->
 
+<excerpt>Strategies and tools for exploring the API.</excerpt>
+
 Sometimes it can be challenging to implement plugin features for the IntelliJ Platform,
 especially when you've hit a roadblock and you're unsure how to move forward.
 This usually happens in two situations:

@@ -14,7 +14,7 @@ You can define both application- and project-level listeners.
 {type="tip"}
 
 Declarative registration of listeners allows you to achieve better performance than registering listeners from code.
-The advantage is because listener instances get created lazily - the first time an event is sent to the topic - and not during application startup or project opening.
+The advantage is because listener instances get created lazily — the first time an event is sent to the topic — and not during application startup or project opening.
 
 > Defining listeners in <path>plugin.xml</path> is supported starting with version 2019.3 of the platform.
 >
@@ -27,7 +27,8 @@ To define an application-level listener, add the following section to your <path
 ```xml
 <idea-plugin>
     <applicationListeners>
-      <listener class="myPlugin.MyListenerClass" topic="BaseListenerInterface"/>
+      <listener class="myPlugin.MyListenerClass"
+                topic="BaseListenerInterface"/>
     </applicationListeners>
 </idea-plugin>
 ```
@@ -36,7 +37,7 @@ The `topic` attribute specifies the listener interface corresponding to the type
 Usually, this is the interface used as the type parameter of the [`Topic`](upsource:///platform/extensions/src/com/intellij/util/messages/Topic.java) instance for the type of events.
 The `class` attribute specifies the class in your plugin that implements the listener interface and receives the events.
 
-As a specific example, if you want to receive events about all virtual file system changes, you need to implement the `BulkFileListener` interface, corresponding to the topic `VirtualFileManager.VFS_CHANGES`.
+As a specific example, if you want to receive events about all [Virtual File System](virtual_file_system.md) changes, you need to implement the `BulkFileListener` interface, corresponding to the topic `VirtualFileManager.VFS_CHANGES`.
 To subscribe to this topic from code, you could use something like the following snippet:
 
 ```java
@@ -61,6 +62,8 @@ Instead, you refer directly to the listener interface class:
 Then you provide the listener implementation as a top-level class:
 
 ```java
+package myPlugin;
+
 public class MyVfsListener implements BulkFileListener {
     @Override
     public void after(@NotNull List<? extends VFileEvent> events) {
@@ -71,22 +74,24 @@ public class MyVfsListener implements BulkFileListener {
 
 ## Defining Project-Level Listeners
 
-Project-level listeners are registered in the same way, except that the top-level tag is `<projectListeners>`.
-They can be used to listen to project-level events, for example, tool window operations:
+[Project](project.md)-level listeners are registered in the same way, except that the top-level tag is `<projectListeners>`.
+They can be used to listen to project-level events, for example, [tool window](tool_windows.md) operations:
 
 ```xml
 <idea-plugin>
     <projectListeners>
-        <listener class="MyToolwindowListener"
+        <listener class="myPlugin.MyToolWindowListener"
                   topic="com.intellij.openapi.wm.ex.ToolWindowManagerListener" />
     </projectListeners>
 </idea-plugin>
 ```
 
-The class implementing the listener interface can define a one-argument constructor accepting a `Project`, and it will receive the instance of the project for which the listener is created:
+The class implementing the listener interface can define a one-argument constructor accepting a [`Project`](upsource:///platform/core-api/src/com/intellij/openapi/project/Project.java), and it will receive the instance of the project for which the listener is created:
 
 ```java
-public class MyToolwindowListener implements ToolWindowManagerListener {
+package myPlugin;
+
+public class MyToolWindowListener implements ToolWindowManagerListener {
     private final Project project;
 
     public MyToolwindowListener(Project project) {
@@ -104,7 +109,7 @@ public class MyToolwindowListener implements ToolWindowManagerListener {
 
 Registration of listeners can be restricted using the following attributes:
 
-- `os` - allows to restrict listener to given OS, e.g., `os="windows"` for Windows only (2020.1 and later)
-- `activeInTestMode` - set to `false` to disable listener if `com.intellij.openapi.application.Application.isUnitTestMode()`==`true`
-- `activeInHeadlessMode` - set to `false` to disable listener if `com.intellij.openapi.application.Application.isHeadlessEnvironment()`==`true`.
+- `os` - allows restricting listener to given OS, e.g., `os="windows"` for Windows only (2020.1 and later)
+- `activeInTestMode` - set to `false` to disable listener if [`Application.isUnitTestMode()`](upsource:///platform/core-api/src/com/intellij/openapi/application/Application.java) returns `true`
+- `activeInHeadlessMode` - set to `false` to disable listener if [`Application.isHeadlessEnvironment()`](upsource:///platform/core-api/src/com/intellij/openapi/application/Application.java) returns `true`.
   Also, covers `activeInTestMode` as test mode implies headless mode.

@@ -50,4 +50,4 @@ Additionally, if they are stored in a project's <path>.live-plugins</path> direc
 
 > See [LivePlugin author's article](https://dmitrykandalov.com/liveplugin) and [presentation](https://www.youtube.com/watch?v=GcYa4lMRta0) for more information.
 >
-{type="info"}
+{type="note"}

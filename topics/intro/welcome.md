@@ -29,7 +29,8 @@ Webinar
     * [Key Topics](key_topics.md)
     * [Getting Help](getting_help.md)
 * [Creating Your First Plugin](getting_started.md)
-* [Useful Links](useful_links.md)
+* [](useful_links.md)
+* [](learning_resources.md)
 * [Marketing](marketing.md)
 
 </td>
@@ -42,7 +43,7 @@ Watch [Busy plugin developers series. Episode 0](https://www.youtube.com/watch?v
 
 <video href="-6D5-xEaYig" title="Busy plugin developers series. Episode 0" width="300"/>
 
-More webinars are available [here](useful_links.md#webinars).
+More webinars are available [here](learning_resources.md#webinars).
 
 </td>
 </tr>

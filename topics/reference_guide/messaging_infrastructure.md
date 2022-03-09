@@ -62,7 +62,7 @@ Manages all subscriptions for particular client within particular bus.
 ```java
 public interface ChangeActionNotifier {
 
-    Topic<ChangeActionNotifier> CHANGE_ACTION_TOPIC = Topic.create("custom name", ChangeActionNotifier.class)
+    Topic<ChangeActionNotifier> CHANGE_ACTION_TOPIC = Topic.create("custom name", ChangeActionNotifier.class);
 
     void beforeAction(Context context);
     void afterAction(Context context);
@@ -213,4 +213,4 @@ We had the following then:
 9. _subscriber2_ receives _message1_ and also modifies a document;
 10. the call stack is unwinded and _actual change_ phase of document modification operation requested by _subscriber1_ begins;
 
-**The problem**  is that document range used by _subscriber1_ for initial modification request is invalid if _subscriber2_ has changed document's range before it.
+**The problem** is that document range used by _subscriber1_ for initial modification request is invalid if _subscriber2_ has changed document's range before it.

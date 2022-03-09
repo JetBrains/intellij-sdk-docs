@@ -211,16 +211,16 @@ The name and location of the resource bundle must be declared in the <path>plugi
 In the case of `action_basics`, only a default localization resource bundle (<path>/resources/messages/BasicActionsBundle.properties</path>) is provided:
 
 ```xml
-  <resource-bundle>messages.BasicActionsBundle</resource-bundle>
+<resource-bundle>messages.BasicActionsBundle</resource-bundle>
 ```
 
 _2020.1_
 If necessary, a dedicated resource bundle to use for actions and groups can be defined on `<actions>`:
 
 ```xml
-  <actions resource-bundle="messages.MyActionsBundle">
-    <!-- action/group defined here will use keys from MyActionsBundle.properties -->
-  </actions>
+<actions resource-bundle="messages.MyActionsBundle">
+  <!-- action/group defined here will use keys from MyActionsBundle.properties -->
+</actions>
 ```
 
 

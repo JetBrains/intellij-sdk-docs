@@ -114,7 +114,6 @@
         <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/code_samples/_gradleCompositeBuild" />
-        <option name="gradleHome" value="/usr/local/Cellar/gradle/7.1.1/libexec" />
         <option name="gradleJvm" value="11" />
         <option name="modules">
           <set>

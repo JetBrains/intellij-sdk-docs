@@ -47,9 +47,9 @@ These instances are typically created through the [`LookupElementBuilder`](upsou
 
 For every lookup element, you can specify the following attributes:
 
-* Text. Shown left-aligned.
-* Tail text. Shown next to the main item text, is not used for prefix matching, and can be used, for example, to show the parameter list of the method.
-* Type text. Shown right-aligned in the lookup list and can be used to show the return type or containing class of a method, for example.
-* Icon
-* Text attributes. Bold, Strikeout, etc.
-* Insert handler. The insert handler is a callback which is called when the item is selected and can be used to perform additional modifications of the text (for example, to put in the parentheses for a method call)
+* **Text** Shown left-aligned.
+* **Tail text** Shown next to the main item text, is not used for prefix matching, and can be used, for example, to show the parameter list of the method.
+* **Type text** Shown right-aligned in the lookup list and can be used to show the return type or containing class of a method, for example.
+* **Icon**
+* **Text attributes** Bold, Strikeout, etc.
+* **Insert handler** The insert handler is a callback which is called when the item is selected and can be used to perform additional modifications of the text (for example, to put in the parentheses for a method call)

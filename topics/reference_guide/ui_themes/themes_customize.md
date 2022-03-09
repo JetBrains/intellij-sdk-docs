@@ -197,15 +197,15 @@ There are two implementations of tabs in the IntelliJ Platform:
 The control keys for UI Tabs were expanded from release 2019.1 to 2019.2 of the IntelliJ Platform.
 The 2019.1 release control keys are compatible with release 2019.2 and later versions of the IntelliJ Platform.
 
-| Release 2019.1 Element     | Release 2019.2 Element     | Description of Release 2019.2 Element                                                                                  |
-|----------------------------|----------------------------|------------------------------------------------------------------------------------------------------------------------|
-| N/A                        | **`DefaultTabs`**          | Applied to all tabs except `TabbedPane`, _unless_ overridden by a more specific Tab control element.                   |
-| **`EditorTabs`**           | **`EditorTabs`**           | Applied only to Editor tabs. Overrides any `DefaultTab` settings. 192 has many more `property` settings than 191.      |
-| **`ToolWindow.HeaderTab`** | **`ToolWindow.HeaderTab`** | Applied only to Tool Window tabs. Overrides any `DefaultTab` settings. 192 has many more `property` settings than 191. |
-| **`DebuggerTabs`**         | **`DefaultTabs`**          | `DefaultTab` settings are used instead of `DebuggerTabs`, except for key `DebuggerTabs.underlineHeight`.               |
-| **`TabbedPane`**           | **`TabbedPane`**           | Applied only to Tabbed Panes.                                                                                          |
-| **`Plugins.Tab`**          | **`TabbedPane`**           | Use `TabbedPane` instead.                                                                                              |
-| **`SearchEverywhere.Tab`** | **`SearchEverywhere.Tab`** | No change.                                                                                                             |
+| Release 2019.1 Element | Release 2019.2 Element | Description of Release 2019.2 Element                                                                                  |
+|------------------------|------------------------|------------------------------------------------------------------------------------------------------------------------|
+| N/A                    | `DefaultTabs`          | Applied to all tabs except `TabbedPane`, _unless_ overridden by a more specific Tab control element.                   |
+| `EditorTabs`           | `EditorTabs`           | Applied only to Editor tabs. Overrides any `DefaultTab` settings. 192 has many more `property` settings than 191.      |
+| `ToolWindow.HeaderTab` | `ToolWindow.HeaderTab` | Applied only to Tool Window tabs. Overrides any `DefaultTab` settings. 192 has many more `property` settings than 191. |
+| `DebuggerTabs`         | `DefaultTabs`          | `DefaultTab` settings are used instead of `DebuggerTabs`, except for key `DebuggerTabs.underlineHeight`.               |
+| `TabbedPane`           | `TabbedPane`           | Applied only to Tabbed Panes.                                                                                          |
+| `Plugins.Tab`          | `TabbedPane`           | Use `TabbedPane` instead.                                                                                              |
+| `SearchEverywhere.Tab` | `SearchEverywhere.Tab` | No change.                                                                                                             |
 
 Methods for identifying UI control keys are in the [Finding Attribute Keys for UI Controls](#finding-attribute-keys-for-ui-controls) section.
 

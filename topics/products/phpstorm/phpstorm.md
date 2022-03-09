@@ -2,10 +2,8 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-## Introduction
 [PhpStorm](https://www.jetbrains.com/phpstorm/) is an IntelliJ Platform-based product.
 Plugins for PhpStorm are developed in Java using the Ultimate edition of IntelliJ IDEA.
-The [PsiViewer plugin](https://plugins.jetbrains.com/plugin/227-psiviewer) is also recommended.
 
 This page describes configuring plugin projects targeting PhpStorm.
 See also:

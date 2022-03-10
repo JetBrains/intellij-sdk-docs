@@ -15,23 +15,9 @@ There are three supported workflows available for building plugins.
 The recommended workflow for new projects is to [use GitHub Template](#using-github-template) or to [use Gradle](#using-gradle) to create everything from scratch.
 The old [Plugin DevKit](#using-devkit) workflow still supports existing projects.
 
-> If a new plugin will be Scala-based, a dedicated SBT plugin [sbt-idea-plugin](https://github.com/JetBrains/sbt-idea-plugin) is available.
+> If a new plugin will be Scala-based, a dedicated [SBT plugin](https://github.com/JetBrains/sbt-idea-plugin) is available.
 >
 {type="note"}
-
-The Gradle workflow offers several advantages:
-  * Representations of source sets, modules, and projects are portable,
-  * Projects of any size or complexity usually require scripts for build management, which Gradle handles natively,
-  * Training, documentation, and community help for general Gradle topics are widely available.
-
-Specific to development of IntelliJ Platform plugins with the Gradle plugin for IntelliJ IDEA:
-  * Changing plugin targets is more comfortable because it is all done in the Gradle build file:
-      * Switching the version of the target IntelliJ Platform (IDE),
-      * Changing the target IntelliJ Platform-based IDE, e.g., from IntelliJ IDEA to PyCharm,
-      * Running a plugin against alternate versions of the JetBrains runtime.
-  * Gradle is fully integrated with Continuous Integration systems and [JetBrains Marketplace](https://plugins.jetbrains.com), so it is easy to customize and extend the build and publishing processes.
-  * Built-in verification task for <path>plugin.xml</path> and plugin distribution structure.
-  * Built-in integration with [IntelliJ Plugin Verifier](https://github.com/JetBrains/intellij-plugin-verifier) tool used for running the compatibility checks as performed on [JetBrains Marketplace](https://plugins.jetbrains.com).
 
 ## Using GitHub Template
 
@@ -49,7 +35,6 @@ Specific to development of IntelliJ Platform plugins with the Gradle plugin for 
 * [Developing plugins using DevKit](using_dev_kit.md)
     * [Setting Up a Development Environment](setting_up_environment.md)
     * [Creating a Plugin Project](creating_plugin_project.md)
-    * [Creating Actions](working_with_custom_actions.md)
     * [Running and Debugging a Plugin](running_and_debugging_a_plugin.md)
     * [Deploying a Plugin](deploying_plugin.md)
     * [Publishing a Plugin](publishing_plugin.md)

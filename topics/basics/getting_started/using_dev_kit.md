@@ -13,7 +13,6 @@ In this section:
 
 * [Setting Up a Development Environment](setting_up_environment.md)
 * [Creating a Plugin Project](creating_plugin_project.md)
-* [Creating Actions](working_with_custom_actions.md)
 * [Running and Debugging a Plugin](running_and_debugging_a_plugin.md)
 * [Deploying a Plugin](deploying_plugin.md)
 * [Publishing a Plugin](publishing_plugin.md)

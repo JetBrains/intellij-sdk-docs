@@ -155,7 +155,7 @@ The `roamingType` parameter of the `@Storage` annotation specifies the roaming t
 >
 {type="note"}
 
-If you want to use the default bean serialization but need to customize the storage format in XML (for example, for compatibility with previous versions of your plugin or externally defined XML formats), you can use the `@Tag`, `@Attribute`, `@Property`, `@MapAnnotation`, `@AbstractCollection` annotations.
+If you want to use the default bean serialization but need to customize the storage format in XML (for example, for compatibility with previous versions of your plugin or externally defined XML formats), you can use the `@Tag`, `@Attribute`, `@Property`, `@MapAnnotation`, `@XCollection` annotations.
 
 Please see `com.intellij.util.xmlb.annotations`'s [`package.html`](upsource:///platform/util/src/com/intellij/util/xmlb/annotations/package.html) for more information.
 

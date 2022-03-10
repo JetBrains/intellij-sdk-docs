@@ -7,6 +7,10 @@ You can use either [IntelliJ IDEA Community Edition](https://www.jetbrains.com/i
 Both include the complete set of plugin development tools.
 To become more familiar with IntelliJ IDEA, please refer to the [IntelliJ IDEA Web Help](https://www.jetbrains.com/idea/help/).
 
+> In some cases, implementing an actual IntelliJ Platform plugin might not be necessary, as [alternative solutions](plugin_alternatives.md) exist.
+>
+{type="tip"}
+
 There are three supported workflows available for building plugins.
 The recommended workflow for new projects is to [use GitHub Template](#using-github-template) or to [use Gradle](#using-gradle) to create everything from scratch.
 The old [Plugin DevKit](#using-devkit) workflow still supports existing projects.

@@ -35,6 +35,10 @@ The IntelliJ Platform is a JVM application, written mostly in Java and [Kotlin](
 You should be experienced with these languages, large libraries written in them, their associated tooling, and large open-source projects to write plugins for products based on the IntelliJ Platform.
 At this time, it's not possible to extend the IntelliJ Platform in non-JVM languages.
 
+> In some cases, implementing an actual IntelliJ Platform plugin might not be necessary, as [alternative solutions](plugin_alternatives.md) exist.
+>
+{type="tip"}
+
 ## Open Source
 
 The IntelliJ Platform is Open Source, under the [Apache License](upsource:///LICENSE.txt), and [hosted on GitHub](https://github.com/JetBrains/intellij-community).

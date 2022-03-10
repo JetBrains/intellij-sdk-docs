@@ -28,6 +28,7 @@ Webinar
 * [About this Guide](about.md)
     * [Key Topics](key_topics.md)
     * [Getting Help](getting_help.md)
+* [](plugin_alternatives.md)
 * [Creating Your First Plugin](getting_started.md)
 * [](useful_links.md)
 * [](learning_resources.md)

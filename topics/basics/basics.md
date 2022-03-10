@@ -6,6 +6,7 @@ This section covers the basics of working with the IntelliJ Platform.
 It will familiarize you with the working environment, project structure, and frequently used API components.
 
 * [Main Types of IntelliJ Platform Plugins](types_of_plugins.md)
+* [](plugin_alternatives.md)
 * [Creating Your First Plugin](getting_started.md)
 * [Plugin Structure](plugin_structure.md)
 * [Kotlin for Plugin Developers](kotlin.md)

@@ -166,7 +166,7 @@ The sequence of elements in an SDK code sample <path>plugin.xml</path> file is:
 * `<vendor>` Set the value to `IntelliJ Platform SDK`.
   Set the attributes:
   * `email` omit this attribute.
-  * `url` to the JetBrains Plugins Repository `"https://plugins.jetbrains.com"`
+  * `url` to the JetBrains Marketplace `"https://plugins.jetbrains.com"`
 * The remainder of the [plugin configuration elements](plugin_configuration_file.md) should only appear if they are needed by a specific plugin.
 
 ## README File

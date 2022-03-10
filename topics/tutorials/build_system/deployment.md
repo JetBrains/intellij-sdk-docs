@@ -20,7 +20,7 @@ The resulting ZIP file is located in <path>build/distributions</path> and can th
 or uploaded to a [custom plugin repository](update_plugins_format.md).
 
 ## Providing Your Personal Access Token to Gradle
-To deploy a plugin to the JetBrains Plugins Repository, you need to supply your Personal Access Token, which you can find on your profile page, in [My Tokens](https://plugins.jetbrains.com/author/me/tokens) section.
+To deploy a plugin to the JetBrains Marketplace, you need to supply your Personal Access Token, which you can find on your profile page, in [My Tokens](https://plugins.jetbrains.com/author/me/tokens) section.
 
 To create a new token, provide its name and click the <control>Generate Token</control> button.
 A new token will be created and displayed right below.
@@ -96,11 +96,11 @@ In version `1.x`, the Gradle IntelliJ Plugin provides the `signPlugin` task, whi
 For more details on generating a proper certificate and configuring the `signPlugin` task, check the [Plugin Signing](plugin_signing.md) article.
 
 ### Publishing a Plugin
-Once you are confident, the plugin works as intended, make sure the plugin version is updated, as the JetBrains Plugins Repository won't accept multiple artifacts with the same version.
+Once you are confident the plugin works as intended, make sure the plugin version is updated, as the JetBrains Marketplace won't accept multiple artifacts with the same version.
 
-To deploy a new version of your plugin to the JetBrains Plugins Repository, invoke the `publishPlugin` Gradle task.
+To deploy a new version of your plugin to the JetBrains Marketplace, invoke the `publishPlugin` Gradle task.
 
-Now check the most recent version of your plugin on the [JetBrains Plugins Repository](https://plugins.jetbrains.com/).
+Now check the most recent version of your plugin on the [JetBrains Marketplace](https://plugins.jetbrains.com/).
 If successfully deployed, any users who currently have your plugin installed on an available version of the IntelliJ Platform are notified of a new update available as soon as the update has been verified.
 
 ### Specifying a Release Channel

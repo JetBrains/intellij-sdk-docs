@@ -2,7 +2,7 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-JetBrains provides an official plugins repository [JetBrains Marketplace](https://plugins.jetbrains.com) for all IntelliJ Platform-based IDEs, as well as other products.
+JetBrains provides an official plugin repository [JetBrains Marketplace](https://plugins.jetbrains.com) for all IntelliJ Platform-based IDEs, as well as other products.
 
 > **Part X — Plugin Repository** pages have moved to [JetBrains Marketplace](https://plugins.jetbrains.com/docs/marketplace/about-marketplace.html) documentation, please update your bookmarks.
 >

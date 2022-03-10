@@ -12,7 +12,7 @@ There are lots of features included into this plugin, such as Symfony-specific c
 * [Official Symfony plugin Web Site](https://symfony2-plugin.espend.de/)
 * [GitHub](https://github.com/Haehnchen/idea-php-symfony2-plugin)
 * [Symfony Development in PhpStorm](https://www.jetbrains.com/help/phpstorm/symfony-support.html)
-* [Symfony plugin in PhpStorm Plugins Repository](https://plugins.jetbrains.com/plugin/7219-symfony-support)
+* [Symfony plugin on JetBrains Marketplace](https://plugins.jetbrains.com/plugin/7219-symfony-support)
 
 ## Laravel
 The Laravel plugin is a free plugin for Laravel developers.
@@ -30,7 +30,7 @@ It provides a wide array of code generation and code completion features and inc
 
 * [Documentation](https://laravel-idea.com/docs/3.x/overview)
 * [Issue Tracker](https://github.com/laravel-idea/plugin/issues)
-* [Laravel Idea plugin in PhpStorm Plugins Repository](https://plugins.jetbrains.com/plugin/13441-laravel-idea)
+* [Laravel Idea plugin on JetBrains Marketplace](https://plugins.jetbrains.com/plugin/13441-laravel-idea)
 * [Laravel Development in PhpStorm](https://www.jetbrains.com/help/phpstorm/laravel.html)
 
 ## Magicento
@@ -40,7 +40,7 @@ Features include: Goto for factories and template paths, autocomplete for factor
 
 * [Official Magicento Web Site](https://magicento.com/)
 * [GitHub](https://github.com/enriquepiatti/Magicento)
-* [Magicento in PhpStorm Plugins Repository](https://plugins.jetbrains.com/plugin/7089-magicento)
+* [Magicento on JetBrains Marketplace](https://plugins.jetbrains.com/plugin/7089-magicento)
 
 ## YiiStorm
 YiiStorm is a plugin for PhpStorm IDE that is adding code navigation enhancements for Yii framework based projects.
@@ -49,7 +49,7 @@ Includes controllers, partials, and widgets.
 Supports all ways of specifying a view: themes, smarty .tpl views and external actions; Going from model name in relations() to the model class; Going from the $this->widget('path.to.widget.Class') call to the widget class; Going from controller actions() to action class.
 
 * [GitHub](https://github.com/cmazx/yiistorm)
-* [YiiStorm in PhpStorm Plugins Repository](https://plugins.jetbrains.com/plugin/7182-yiistorm)
+* [YiiStorm on JetBrains Marketplace](https://plugins.jetbrains.com/plugin/7182-yiistorm)
 
 ## Nette
 
@@ -67,5 +67,5 @@ Nette is a family of mature and stand-alone components for PHP that create a fra
 ## PHP Annotations
 The PHP Annotations plugin extends PhpStorm to support annotations in PHPDoc blocks.
 
-* [PHP Annotations in PhpStorm Plugins Repository](https://plugins.jetbrains.com/plugin/7320-php-annotations)
+* [PHP Annotations on JetBrains Marketplace](https://plugins.jetbrains.com/plugin/7320-php-annotations)
 * [GitHub](https://github.com/Haehnchen/idea-php-annotation-plugin)

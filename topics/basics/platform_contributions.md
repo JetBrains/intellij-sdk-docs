@@ -49,7 +49,7 @@ Leaving comments notifying about the status of such issues helps the team keep t
 
 ### Write a Plugin
 One of the best ways to contribute a larger piece of code, adding extra functionality to IntelliJ IDEA or any of the other IntelliJ Platform-based IDEs, is by writing a plugin.
-You can submit a plugin to the [JetBrains Plugins Repository](https://plugins.jetbrains.com/), making it available for all users.
+You can submit a plugin to the [JetBrains Marketplace](https://plugins.jetbrains.com/), making it available for all users.
 When writing a plugin, you have control over the code and don't need to sign the contribution agreement.
 
 ### Submit a Patch
@@ -58,8 +58,8 @@ When preparing the change, please make sure to follow the [IntelliJ Platform Cod
 A developer will review your contribution and, if it meets the quality criteria and fits well with the rest of the code, you'll be notified about the acceptance of the patch.
 
 Alternatively, you can attach a patch to the ticket in the [YouTrack bug database](https://youtrack.jetbrains.com/issues/IDEA).
-You can either file a new issue with the patch attached or attach a patch to an issue submitted by another user. 
-In this case, you will also need to sign the [JetBrains Contributor License Agreement (CLA)](https://www.jetbrains.com/agreements/cla/) to complete your contribution. 
+You can either file a new issue with the patch attached or attach a patch to an issue submitted by another user.
+In this case, you will also need to sign the [JetBrains Contributor License Agreement (CLA)](https://www.jetbrains.com/agreements/cla/) to complete your contribution.
 
 ### Become a Committer
 Developers with a long history of submitting high-quality patches can gain direct commit rights.

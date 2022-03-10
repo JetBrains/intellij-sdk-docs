@@ -33,7 +33,7 @@ The Plugin Logo should be provided in one size: 40px by 40px.
 
 A Plugin Logo is displayed in two sizes, and scales automatically in each context:
 * 40px by 40px in the plugins list in the Plugin Manager UI.
-* 80px by 80px in the plugin details screen in the Plugin Manager UI, on the plugin's page in the Plugins Repository, and on MarketPlace.
+* 80px by 80px in the plugin details screen in the Plugin Manager UI and on the plugin's page in JetBrains Marketplace.
 
 Verify that Plugin Logo designs are effective in both sizes and all display contexts.
 

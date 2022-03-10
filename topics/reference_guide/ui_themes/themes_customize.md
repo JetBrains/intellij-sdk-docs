@@ -19,7 +19,7 @@ Colors are defined by six-digit RGB or eight-digit RGBA hexadecimal notation.
 ### UI Theme Reference Implementations
 When learning new syntax, it is often useful to have some existing implementations for reference.
 For example, refer to the [Theme description file](upsource:///platform/platform-resources/src/themes/HighContrast.theme.json) for the IntelliJ IDEA _High Contrast_ Theme.
-It may also help to review some of the [UI Themes available](https://plugins.jetbrains.com/search?headline=164-theme&tags=Theme) at the JetBrains Plugins Repository.
+It may also help to review some of the [UI Themes available](https://plugins.jetbrains.com/search?headline=164-theme&tags=Theme) at the JetBrains Marketplace.
 
 ## Defining Named Colors
 Colors can always be defined individually as six-digit RGB or eight-digit RGBA hexadecimal notation.

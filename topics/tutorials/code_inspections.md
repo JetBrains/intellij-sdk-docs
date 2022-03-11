@@ -127,7 +127,7 @@ Implicit in using [`LocalInspectionTool`](upsource:///platform/analysis-api/src/
 
 > To open related [settings](settings.md) directly from the inspection description, add a link with `settings://$CONFIGURABLE_ID$`, optionally followed by `?$SEARCH_STRING$` to pre-select UI element:
 >
-> `See <em>Includes</em> tab in <a href="settings://fileTemplates">Settings | Editor | File and Code Templates</a> to configure.`
+> `See <em>Includes</em> tab in <a href="settings://fileTemplates">Settings/Preferences | Editor | File and Code Templates</a> to configure.`
 >
 {type="tip"}
 

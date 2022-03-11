@@ -49,7 +49,7 @@ In the following sections, we'll discuss these three options in more detail.
 ## IntelliLang
 
 First, please read the available [documentation](https://www.jetbrains.com/help/idea/language-injections-settings.html) on IntelliLang.
-A good point to start with is to inspect available language injections that you can find in the IntelliLang settings under <menupath>Settings | Editor | Language Injections</menupath>.
+A good point to start with is to inspect available language injections that you can find in the IntelliLang settings under <menupath>Settings/Preferences | Editor | Language Injections</menupath>.
 The injections shown are configured through XML files and loaded automatically.
 
 ### Example

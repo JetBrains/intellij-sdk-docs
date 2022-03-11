@@ -15,11 +15,13 @@ Please see the guide page for manually [publishing a plugin](publishing_plugin.m
 {type="warning"}
 
 ## Building Distribution
+
 For initial upload, manual distribution or local installation, invoke the `buildPlugin` Gradle task to create the plugin distribution.
 The resulting ZIP file is located in <path>build/distributions</path> and can then be installed via drag & drop (or using [plugin manager](https://www.jetbrains.com/help/idea/managing-plugins.html#installing-plugins-from-disk))
 or uploaded to a [custom plugin repository](update_plugins_format.md).
 
 ## Providing Your Personal Access Token to Gradle
+
 To deploy a plugin to the JetBrains Marketplace, you need to supply your Personal Access Token, which you can find on your profile page, in [My Tokens](https://plugins.jetbrains.com/author/me/tokens) section.
 
 To create a new token, provide its name and click the <control>Generate Token</control> button.
@@ -35,6 +37,7 @@ This section describes two options to supply your _Personal Access Token_ via Gr
 * Parameters to the Gradle task.
 
 ### Using Environment Variables
+
 Start by defining an environment variable such as:
 
 ```bash
@@ -74,6 +77,7 @@ publishPlugin {
 Note that you still need to put some default values (can be empty) in the Gradle properties because otherwise, you will get a compilation error.
 
 ### Using Parameters for the Gradle Task
+
 Like using environment variables, you can also pass your token as a parameter to the Gradle task.
 For example, you can provide the parameter
 
@@ -85,6 +89,7 @@ on the command line or by putting it in the arguments of your Gradle run configu
 Note that also, in this case, you still need to put some default values in your Gradle properties.
 
 ## Deploying a Plugin with Gradle
+
 The first step when deploying a plugin is to confirm that it works correctly.
 You may wish to verify this by [installing your plugin from disk](https://www.jetbrains.com/help/idea/managing-plugins.html) on a fresh instance of your target IDE(s).
 
@@ -96,6 +101,7 @@ In version `1.x`, the Gradle IntelliJ Plugin provides the `signPlugin` task, whi
 For more details on generating a proper certificate and configuring the `signPlugin` task, check the [Plugin Signing](plugin_signing.md) article.
 
 ### Publishing a Plugin
+
 Once you are confident the plugin works as intended, make sure the plugin version is updated, as the JetBrains Marketplace won't accept multiple artifacts with the same version.
 
 To deploy a new version of your plugin to the JetBrains Marketplace, invoke the `publishPlugin` Gradle task.
@@ -104,6 +110,7 @@ Now check the most recent version of your plugin on the [JetBrains Marketplace](
 If successfully deployed, any users who currently have your plugin installed on an available version of the IntelliJ Platform are notified of a new update available as soon as the update has been verified.
 
 ### Specifying a Release Channel
+
 You may also deploy plugins to a release channel of your choosing, by configuring the `publishPlugin.channels` property.
 For example:
 

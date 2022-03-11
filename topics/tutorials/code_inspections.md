@@ -39,18 +39,20 @@ The overall approach works for inspections aimed at other languages as well.
 * In the case of localization, copy the key from the bundle file identified by the search.
   * Use the key text as the target for a search within the _intellij_community_ project.
     This search locates the plugin configuration file that describes the inspection.
-  * From the inspection description entry find the `implementationClass` attribute value.
+  * From the inspection description entry, find the `implementationClass` attribute value.
 * Use the `implementationClass` text as the [target of a class search](https://www.jetbrains.com/help/idea/searching-everywhere.html#Searching_Everywhere.xml) in the _intellij_community_ codebase to find the implementation.
 
-See also [Explore the IntelliJ Platform API](explore_api.md) for more information and strategies.
+See also [](explore_api.md) for more information and strategies.
 
 ## Creating an Inspection
+
 The [comparing_references_inspection](https://github.com/JetBrains/intellij-sdk-code-samples/tree/main/comparing_references_inspection) code sample reports when the `==` or `!=` operators are used between Java expressions of reference types.
 The user can apply a quick fix to change `a==b` to `a.equals(b)`, or `a!=b` to `!a.equals(b)`.
 
 The details of the `comparing_references_inspection` implementation illustrate the components of an inspection plugin.
 
 ### Plugin Configuration File
+
 The `comparing_references_inspection` is described as a `com.intellij.localInspection` extension point in the `comparing_references_inspection` plugin configuration ([`plugin.xml`](https://github.com/JetBrains/intellij-sdk-code-samples/blob/main/comparing_references_inspection/src/main/resources/META-INF/plugin.xml)) file.
 
 There exist two types of inspection extensions:
@@ -65,6 +67,7 @@ Note that some attributes are not displayed to the user, so they are never local
 If required, inspections can define all of the attribute information (except `implementationClass`) by overriding methods in the inspection implementation class (not recommended in general).
 
 ### Inspection Implementation Java Class
+
 Inspection implementations for Java files, like [`ComparingReferencesInspection`](https://github.com/JetBrains/intellij-sdk-code-samples/blob/main/comparing_references_inspection/src/main/java/org/intellij/sdk/codeInspection/ComparingReferencesInspection.java), are often based on the Java class [`AbstractBaseJavaLocalInspectionTool`](upsource:///java/java-analysis-api/src/com/intellij/codeInspection/AbstractBaseJavaLocalInspectionTool.java).
 The `AbstractBaseJavaLocalInspectionTool` implementation class offers methods to inspect Java classes, fields, and methods.
 
@@ -84,6 +87,7 @@ The `ComparingReferencesInspection` class defines two `String` fields:
 The overridden `ComparingReferencesInspection` methods are discussed in the sections below.
 
 ### Visitor Implementation Class
+
 The visitor class evaluates whether elements of the file's PSI tree are of interest to an inspection.
 
 The `ComparingReferencesInspection.buildVisitor()` method creates an anonymous visitor class based on [`JavaElementVisitor`](upsource:///java/java-psi-api/src/com/intellij/psi/JavaElementVisitor.java) to traverse the PSI tree of the Java file being edited, inspecting for suspect syntax.
@@ -94,6 +98,7 @@ The anonymous class overrides three methods in particular.
 * `isCheckedType()` evaluates the `PsiType` of the operands to determine if they are of interest to this inspection.
 
 ### Quick Fix Implementation
+
 The quick fix class acts much like an intention, allowing the user to invoke it on the `PsiElement` (or `TextRange`) highlighted by the inspection.
 
 The `ComparingReferencesInspection` implementation uses the nested class `CriQuickFix` to implement a quick fix based on [`LocalQuickFix`](upsource:///platform/analysis-api/src/com/intellij/codeInspection/LocalQuickFix.java).
@@ -107,6 +112,7 @@ The change to the PSI tree is accomplished by the usual approach to modification
 * Replacing the original binary expression with the `PsiMethodCallExpression`.
 
 ### Inspection Preferences Panel
+
 The inspection preferences panel is used to display information and provide additional options for the inspection.
 
 The panel created by `ComparingReferencesInspection.createOptionsPanel()` just defines a single `JTextField` to display in a `JPanel`.
@@ -116,6 +122,7 @@ The `JTextField` allows editing of the `CHECKED_CLASSES` field while displayed i
 Note that the IntelliJ Platform provides most of the UI displayed in the <control>Inspections</control> panel.
 
 ### Inspection Description
+
 The inspection description is an HTML file.
 The description is displayed in the upper right panel of the <control>Inspections</control> settings dialog when an inspection is selected from the list.
 
@@ -132,12 +139,13 @@ Implicit in using [`LocalInspectionTool`](upsource:///platform/analysis-api/src/
 {type="tip"}
 
 ### Inspection Unit Test
+
 > Please note that running the test requires setting system property `idea.home.path` in `test {}` block of <path>build.gradle</path>.
 >
 {type="note"}
 
 The `comparing_references_inspection` code sample provides a unit test for the inspection.
-See [](testing_plugins.md) for general information about plugin testing.
+See the [](testing_plugins.md) section for general information about plugin testing.
 
 The `comparing_references_inspection` test is based on the [`UsefulTestCase`](upsource:///platform/testFramework/src/com/intellij/testFramework/UsefulTestCase.java) class, part of the JUnit framework APIs.
 This class handles much of the underlying boilerplate for tests.
@@ -150,9 +158,10 @@ In the case of `comparing_references_inspection` the test files are <path>Eq.jav
 The `comparing_references_inspection` tests run the inspection on the <path>∗.java</path> files, implement the quick fix, and compare the results with the respective <path>∗.after.java</path> files containing expected result.
 
 ## Running the Comparing References Inspection Code Sample
+
 The [comparing_references_inspection](https://github.com/JetBrains/intellij-sdk-code-samples/tree/main/comparing_references_inspection) code sample adds a new inspection to the <control>Java | Probable Bugs</control> group in the [Inspections List](https://www.jetbrains.com/help/idea/inspections-settings.html).
 
-See [Code Samples](code_samples.md) on how to set up and run the plugin.
+See [](code_samples.md) on how to set up and run the plugin.
 
 ### Configuring the Plugin
 
@@ -182,7 +191,7 @@ Invoking <control>SDK: Use equals()</control> replaces:
 <compare>
 
 ```java
-return (str1==str2);
+return (str1 == str2);
 ```
 
 ```java

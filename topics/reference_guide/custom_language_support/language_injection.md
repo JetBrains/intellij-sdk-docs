@@ -5,9 +5,9 @@
 Language injection is the way the IntelliJ Platform handles different languages within the same source file.
 Well-known examples are:
 
-- Regular expressions in Java string literals
-- SQL queries in Java string literals
-- Fenced code blocks within Markdown files
+* Regular expressions in Java string literals
+* SQL queries in Java string literals
+* Fenced code blocks within Markdown files
 
 Injected code is always bound to a specific context that depends on the surrounding code, and the IntelliJ Platform treats injected fragments as separate small files that are in a different language.
 To ensure highlighting and code-insight features work correctly, these fragments must be a valid statement or expression in the injected language.
@@ -40,7 +40,7 @@ As a plugin author, you can provide language injection in different ways:
 - For simple cases, the bundled [IntelliLang plugin](https://plugins.jetbrains.com/plugin/1105-intellilang) can handle injections,
   and plugin authors need to provide a configuration with patterns that specify the context where languages should be injected.
   IntelliLang can also be extended to support unknown custom languages.
-- Implementing the `com.intellij.languageInjectionContributor` EP provides a high-level API for the injection of other languages.
+- Implementing the `com.intellij.languageInjectionContributor` extension point (EP) provides a high-level API for the injection of other languages.
   For more control over how a language is injected, plugin authors use the `com.intellij.languageInjectionPerformer` EP.
 - Implementing the `com.intellij.multiHostInjector` EP gives plugin authors the most control over where and how language injection will take place.
 
@@ -119,6 +119,8 @@ For instance, injecting SQLite into Python code is specified by the following op
 
 ```xml
 <injection language="SQLite" injector-id="python">
+  ...
+</injection>
 ```
 
 Inside an injection, the following tags can be used:
@@ -146,7 +148,7 @@ Custom language authors also register their implementation of the `languageSuppo
 
 #### Load the Injection Configuration in plugin.xml
 
-The injections are an optional dependency that only work when IntelliLang is enabled.
+The injections are an optional dependency that only works when IntelliLang is enabled.
 Therefore, you load the configuration optionally in your main <path>plugin.xml</path>:
 
 ````xml
@@ -160,32 +162,30 @@ Therefore, you load the configuration optionally in your main <path>plugin.xml</
 The `com.intellij.languageInjectionContributor` EP provides injection information for the given context in terms of _what_ to inject.
 As a plugin author, implement [`LanguageInjectionContributor`](upsource:///platform/core-api/src/com/intellij/lang/injection/general/LanguageInjectionContributor.java) to provide context-specific injections.
 
-For instance, if you want to inject a YAML or JSON to a literal language depending on some conditions you could implement this interface like this:
+For instance, if you want to inject a YAML or JSON to a literal language depending on some conditions, you could implement this interface like this:
 
 ```java
-public final class MyConfigInjector implements LanguageInjectionContributor {
+public final class MyInjector implements LanguageInjectionContributor {
 
   public Injection getInjection(@NotNull PsiElement context) {
     if (!isConfigPlace(context)) return null;
-      if (shouldInjectYaml(context)) {
-        return new SimpleInjection(
-                YAMLLanguage.INSTANCE.getID(), "", "", null);
-      }
-      else if (shouldInjectJSON(context)) {
-        return new SimpleInjection(
-                JsonLanguage.INSTANCE.getID(), "", "", null);
-      }
-      return null;
+    if (shouldInjectYaml(context)) {
+      return new SimpleInjection(
+          YAMLLanguage.INSTANCE.getID(), "", "", null);
+    } else if (shouldInjectJSON(context)) {
+      return new SimpleInjection(
+          JsonLanguage.INSTANCE.getID(), "", "", null);
     }
+    return null;
+  }
 }
 ```
 
 Register the implementation in your <path>plugin.xml</path>:
 
 ```xml
-<languageInjectionContributor
-        implementationClass="MyConfigInjector"
-        language="YourLanguage"/>
+<languageInjectionContributor implementationClass="MyInjector"
+                              language="YourLanguage"/>
 ```
 
 If you want more control over how the injection should be done then implement the `com.intellij.languageInjectionPerformer` EP which allows for complex language injections, e.g. for concatenation or interpolation of strings.
@@ -201,22 +201,21 @@ The method `performInjection()` does the actual injection into the context PSI e
 
 ## MultiHostInjector
 
-[`MultiHostInjector`](upsource:///platform/core-api/src/com/intellij/lang/injection/MultiHostInjector.java) registered in extension point `com.intellij.multiHostInjector` is a very low-level API, but it gives plugin authors the most freedom.
-It performs language injection inside other PSI elements, e.g. inject SQL inside XML tag text or inject regular expressions into Java string literals.
+[`MultiHostInjector`](upsource:///platform/core-api/src/com/intellij/lang/injection/MultiHostInjector.java) registered in `com.intellij.multiHostInjector` EP is a very low-level API, but it gives plugin authors the most freedom.
+It performs language injection inside other PSI elements, e.g. inject SQL inside an XML tag text or inject regular expressions into Java string literals.
 
 Plugin authors need to implement `getLanguagesToInject()` to provide a list of places to inject a language to.
 For example, to inject regular expressions into Java string literal, you can override this method with something similar to this:
 
 ```java
 public class MyRegExpToJavaInjector implements MultiHostInjector {
-  public void getLanguagesToInject(
-          MultiHostRegistrar registrar, PsiElement context) {
-    if (context instanceof PsiLiteralExpression &&
-            looksLikeAGoodPlaceToInject(context)) {
+
+  public void getLanguagesToInject(@NotNull MultiHostRegistrar registrar,
+                                   @NotNull PsiElement context) {
+    if (context instanceof PsiLiteralExpression && shouldInject(context)) {
       registrar
         .startInjecting(REGEXP_LANG)
-        .addPlace(null,null,
-                context,innerRangeStrippingQuotes(context));
+        .addPlace(null, null, context, innerRangeStrippingQuotes(context));
     }
   }
 }
@@ -244,8 +243,9 @@ Here, we need to inject Java into several places at once, i.e. method name and i
 
 ```java
 public class MyBizarreDSLInjector implements MultiHostInjector {
-  public void getLanguagesToInject(
-          MultiHostRegistrar registrar, PsiElement context) {
+
+  public void getLanguagesToInject(@NotNull MultiHostRegistrar registrar,
+                                   @NotNull PsiElement context) {
     if (isMethodTag(context)) {
       registrar.startInjecting(JavaLanguage.INSTANCE);
 

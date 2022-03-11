@@ -37,12 +37,12 @@ Multiple parts are then considered belonging together.
 
 As a plugin author, you can provide language injection in different ways:
 
-- For simple cases, the bundled [IntelliLang plugin](https://plugins.jetbrains.com/plugin/1105-intellilang) can handle injections,
+* For simple cases, the bundled [IntelliLang plugin](https://plugins.jetbrains.com/plugin/1105-intellilang) can handle injections,
   and plugin authors need to provide a configuration with patterns that specify the context where languages should be injected.
   IntelliLang can also be extended to support unknown custom languages.
-- Implementing the `com.intellij.languageInjectionContributor` extension point (EP) provides a high-level API for the injection of other languages.
+* Implementing the `com.intellij.languageInjectionContributor` extension point (EP) provides a high-level API for the injection of other languages.
   For more control over how a language is injected, plugin authors use the `com.intellij.languageInjectionPerformer` EP.
-- Implementing the `com.intellij.multiHostInjector` EP gives plugin authors the most control over where and how language injection will take place.
+* Implementing the `com.intellij.multiHostInjector` EP gives plugin authors the most control over where and how language injection will take place.
 
 In the following sections, we'll discuss these three options in more detail.
 
@@ -252,7 +252,7 @@ public class MyBizarreDSLInjector implements MultiHostInjector {
       // construct class header, method header,
       // inject method name, append code block start
       registrar.addPlace("class MyDsl { void ", "() {",
-              context, rangeForMethodName(context));
+          context, rangeForMethodName(context));
 
       // inject method body, append closing braces
       // to form a valid Java class structure

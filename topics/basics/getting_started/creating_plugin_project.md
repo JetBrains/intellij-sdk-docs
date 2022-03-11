@@ -11,7 +11,7 @@ Optionally, you can import an existing project or import a project from external
 You can also add a new plugin module to the current IntelliJ Platform project.
 For more information, refer to the [IntelliJ IDEA Web Help](https://www.jetbrains.com/idea/help/new-project-wizard.html).
 
-### Creating IntelliJ Platform Plugin Project
+### Creating an IntelliJ Platform Plugin Project
 
 > Make sure to [](setting_up_environment.md) before proceeding.
 >
@@ -26,7 +26,7 @@ For more information, refer to the [IntelliJ IDEA Web Help](https://www.jetbrain
 * Click <control>Finish</control> to generate project structure files.
 * Go to <menupath>File | Project Structure</menupath> to customize project settings if required.
 
-### To Create an IntelliJ Platform Plugin Module
+### Creating an IntelliJ Platform Plugin Module
 
 * Select <menupath>File | New | Module</menupath> and choose the <control>IntelliJ Platform Plugin</control> module type.
   ![IntelliJ Platform Plugin Module](intellij_platform_plugin_module.png)

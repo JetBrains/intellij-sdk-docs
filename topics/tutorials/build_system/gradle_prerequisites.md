@@ -24,6 +24,8 @@ Before creating a new Gradle project, familiarize yourself with the [Creating a 
 This page emphasizes the steps in the process of creating IntelliJ Platform plugin projects that are Gradle-based.
 Additionally, the [Working with Gradle in IntelliJ IDEA](https://www.youtube.com/watch?v=6V6G3RyxEMk) screencast offers a thorough introduction.
 
+<video href="6V6G3RyxEMk" title="Working with Gradle in IntelliJ IDEA" width="300"/>
+
 Launch the [New Project Wizard](https://www.jetbrains.com/help/idea/gradle.html#project_create_gradle).
 It guides you through the Gradle project creation process with two screens.
 

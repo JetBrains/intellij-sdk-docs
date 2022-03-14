@@ -85,7 +85,7 @@ Consider a language that defines multiple types of core entities, e.g., in the J
 Having all of those items in the <menupath>File | New</menupath> action group may overwhelm users with the number of options to choose.
 It is more user-friendly to provide a single <menupath>File | New | Java Class</menupath> action and let users choose a specific entity type in the creation dialog:
 
-![Create Java class](new_java_class_popup.png){width="460" border-effect="line"}
+![Create Java class](new_java_class_popup.png){width="296" border-effect="line"}
 
 This can be achieved by placing templates in the <control>[Internal](providing_file_templates.md#internal)</control> category, so they are not picked up by the default mechanism, and then registering a custom
 [`CreateFileFromTemplateAction`](upsource:///platform/lang-impl/src/com/intellij/ide/actions/CreateFileFromTemplateAction.java)

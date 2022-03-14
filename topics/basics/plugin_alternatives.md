@@ -40,7 +40,7 @@ Also, adding the Flora plugin in the <menupath>Settings/Preferences | Build, Exe
 
 ## LivePlugin
 
-The [LivePlugin](https://plugins.jetbrains.com/plugin/7282-liveplugin) allows for extending IntelliJ-based IDEs functionalities the runtime, without the need of restarting IDE.
+The [LivePlugin](https://plugins.jetbrains.com/plugin/7282-liveplugin) allows for extending IntelliJ-based IDEs functionalities at the runtime, without the need of restarting IDE.
 It adds a new <control>Plugins</control> tool window that lists all available extensions and allows managing them.
 Extensions can be implemented in Kotlin or Groovy and edited directly in the IDE.
 Extensions can use all IntelliJ Platform APIs and additional LivePlugin API that shorten common use cases.

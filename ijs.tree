@@ -197,7 +197,7 @@
                     <toc-element id="using_file_templates.md"/>
                 </toc-element>
             </toc-element>
-            <toc-element toc-title="QuickDoc"/>
+            <toc-element id="code_documentation.md"/>
             <toc-element id="code_intentions.md" toc-title="Intentions"/>
         </toc-element>
         <toc-element id="analyzing.md" toc-title="Analysing">

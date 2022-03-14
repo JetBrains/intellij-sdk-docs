@@ -13,7 +13,7 @@ jobs:
       - name: Generate
         run: "${GITHUB_WORKSPACE}/.github/scripts/android_studio_releases.main.kts"
       - name: Commit changes
-        uses: Endbug/add-and-commit@v8
+        uses: Endbug/add-and-commit@v9
         with:
           message: 'Generate Android Studio releases'
           add: 'topics/_generated/*'

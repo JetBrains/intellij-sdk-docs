@@ -7,7 +7,8 @@ Plugins for PhpStorm are developed in Java using the Ultimate edition of Intelli
 
 This page describes configuring plugin projects targeting PhpStorm.
 See also:
-* [Working with PHP Open API](php_open_api.md)
+* [PhpStorm Plugin Alternative](plugin_alternatives.md#phpstorm-advanced-metadata)
+* [Working with the PHP Open API](php_open_api.md)
 * [](existing_plugins.md)
 
 ## Configuring Plugin Projects Targeting PhpStorm

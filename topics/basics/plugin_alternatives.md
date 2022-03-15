@@ -51,3 +51,9 @@ Additionally, if they are stored in a project's <path>.live-plugins</path> direc
 > See the LivePlugin author's [article](https://dmitrykandalov.com/liveplugin) and [presentation](https://www.youtube.com/watch?v=GcYa4lMRta0) for more information.
 >
 {type="note"}
+
+## PhpStorm Advanced Metadata
+
+PhpStorm supports special [metadata files](https://www.jetbrains.com/help/phpstorm/ide-advanced-metadata.html) describing the behavior of methods and functions.
+This information is used for using the existing IDE features such as code completion, navigation, finding usages, and other.
+The metadata files can be [part of project files](https://www.jetbrains.com/help/phpstorm/ide-advanced-metadata.html#create-metadata-files-inside-your-project), which makes it easy to share it between team members via VCS.

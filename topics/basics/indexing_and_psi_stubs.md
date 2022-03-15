@@ -68,9 +68,9 @@ Obtain [`LighterAST`](upsource:///platform/core-api/src/com/intellij/lang/Lighte
 Make sure to traverse only the nodes you need to.
 See also [`LighterASTNodeVisitor`](upsource:///platform/core-impl/src/com/intellij/psi/impl/source/tree/LighterASTNodeVisitor.java) and [`LightTreeUtil`](upsource:///platform/core-impl/src/com/intellij/psi/impl/source/tree/LightTreeUtil.java) for useful utility methods.
 
-For stub index, implement [`LightStubBuilder`](upsource:///platform/core-impl/src/com/intellij/psi/stubs/LightStubBuilder.java).
+For [stub index](stub_indexes.md), implement [`LightStubBuilder`](upsource:///platform/core-impl/src/com/intellij/psi/stubs/LightStubBuilder.java).
 
-If a custom language contains lazy-parseable elements that never or rarely contain any stubs, consider implementing `StubBuilder.skipChildProcessingWhenBuildingStubs()` (preferably using Lexer/node text).
+If a custom language contains lazy-parseable elements that never or rarely contain any stubs, consider implementing [`StubBuilder.skipChildProcessingWhenBuildingStubs()`](upsource:///platform/core-api/src/com/intellij/psi/StubBuilder.java) (preferably using Lexer/node text).
 
 For indexing XML, also consider using [`NanoXmlUtil`](upsource:///platform/indexing-impl/src/com/intellij/util/xml/NanoXmlUtil.java).
 

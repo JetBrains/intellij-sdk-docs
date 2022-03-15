@@ -13,7 +13,7 @@ The [`PsiElement`](upsource:///platform/core-api/src/com/intellij/psi/PsiElement
 
 ## How do I get a PSI element?
 
-* From an Action: `e.getData(CommonDataKeys.PSI_ELEMENT)`.
+* From an Action: `AnActionEvent.getData(CommonDataKeys.PSI_ELEMENT)`.
   Note: if an editor is currently open and the element under caret is a [reference](psi_references.md), this will return the result of resolving the reference.
   This may or may not be what you need.
 * From a file by offset: `PsiFile.findElementAt()`.

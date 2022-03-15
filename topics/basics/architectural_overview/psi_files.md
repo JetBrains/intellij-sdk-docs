@@ -10,7 +10,7 @@ Unlike `VirtualFile` and `Document`, which have application scope (even if multi
 
 ## How do I get a PSI file?
 
-* From an Action: `e.getData(CommonDataKeys.PSI_FILE)`.
+* From an Action: `AnActionEvent.getData(CommonDataKeys.PSI_FILE)`.
 * From a VirtualFile: `PsiManager.getInstance(project).findFile()`
 * From a Document: `PsiDocumentManager.getInstance(project).getPsiFile()`
 * From an element inside the file: `PsiElement.getContainingFile()`

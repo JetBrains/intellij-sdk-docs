@@ -13,7 +13,7 @@ Contents of a `VirtualFile` are treated as a stream of bytes, but concepts like 
 ## How do I get a virtual file?
 
 #### From an Action
-`e.getData(PlatformDataKeys.VIRTUAL_FILE)` or `e.getData(PlatformDataKeys.VIRTUAL_FILE_ARRAY)` for multiple selection
+`AnActionEvent.getData(PlatformDataKeys.VIRTUAL_FILE)` or `AnActionEvent.getData(PlatformDataKeys.VIRTUAL_FILE_ARRAY)` for multiple selection
 
 #### From Path in Local File System
 - `LocalFileSystem.getInstance().findFileByIoFile()`

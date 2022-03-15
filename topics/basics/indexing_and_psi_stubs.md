@@ -64,14 +64,15 @@ These are additionally available in HTML format starting with 2021.1.
 Use [lexer](implementing_lexer.md) information instead of parsed trees if possible.
 
 If impossible, use light AST which doesn't create memory-hungry AST nodes inside, so traversing it might be faster.
+Obtain [`LighterAST`](upsource:///platform/core-api/src/com/intellij/lang/LighterAST.java) by casting `FileContent` input parameter to [`PsiDependentFileContent`](upsource:///platform/core-api/src/com/intellij/util/indexing/PsiDependentFileContent.java) and calling `getLighterAST()`.
 Make sure to traverse only the nodes you need to.
-
-For indexing XML, also consider using [`NanoXmlUtil`](upsource:///platform/indexing-impl/src/com/intellij/util/xml/NanoXmlUtil.java).
+See also [`LighterASTNodeVisitor`](upsource:///platform/core-impl/src/com/intellij/psi/impl/source/tree/LighterASTNodeVisitor.java) and [`LightTreeUtil`](upsource:///platform/core-impl/src/com/intellij/psi/impl/source/tree/LightTreeUtil.java) for useful utility methods.
 
 For stub index, implement [`LightStubBuilder`](upsource:///platform/core-impl/src/com/intellij/psi/stubs/LightStubBuilder.java).
-For other indexes, you can obtain the light AST manually via `((PsiDependentFileContent) fileContent).getLighterAST()`.
 
 If a custom language contains lazy-parseable elements that never or rarely contain any stubs, consider implementing `StubBuilder.skipChildProcessingWhenBuildingStubs()` (preferably using Lexer/node text).
+
+For indexing XML, also consider using [`NanoXmlUtil`](upsource:///platform/indexing-impl/src/com/intellij/util/xml/NanoXmlUtil.java).
 
 ### Consider Prebuilt Stubs
 

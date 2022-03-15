@@ -7,10 +7,11 @@ Plugins for PhpStorm are developed in Java using the Ultimate edition of Intelli
 
 This page describes configuring plugin projects targeting PhpStorm.
 See also:
-* [Working with the PHP Open API](php_open_api.md)
-* [Example Third Party PhpStorm plugins](existing_plugins.md)
+* [Working with PHP Open API](php_open_api.md)
+* [](existing_plugins.md)
 
 ## Configuring Plugin Projects Targeting PhpStorm
+
 The IntelliJ IDEA Ultimate Edition (with the PHP plugin) must be used for developing PhpStorm plugins because the PHP plugin is incompatible with IntelliJ IDEA Community Edition.
 However, this IntelliJ IDEA Ultimate configuration runs the risk of accidentally using some APIs that are not available in PhpStorm.
 The recommended best practice is to use PhpStorm for testing.

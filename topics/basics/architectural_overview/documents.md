@@ -10,18 +10,21 @@ The IntelliJ Platform handles encoding and line break conversions when loading a
 ## How do I get a Document?
 
 #### From an Action
+
 `AnActionEvent.getData(CommonDataKeys.EDITOR).getDocument()`
 
 #### From a Virtual File
+
 `FileDocumentManager.getDocument()`. This call forces the document content to be loaded from disk if it wasn't loaded previously.
 If only open documents or documents which may have been modified are considered relevant, use `FileDocumentManager.getCachedDocument()` instead.
 
 #### From a PSI File
+
 `PsiDocumentManager.getInstance().getDocument()` or `PsiDocumentManager.getInstance().getCachedDocument()`
 
 ## What can I do with a Document?
 
-You may perform any operations that access or modify the file contents on the "plain text" level (as a sequence of characters, not as a tree of PSI elements).
+You may perform any operations that access or modify the file contents on the "plain text" level (as a sequence of characters, not as a tree of [PSI](psi.md) elements).
 
 ## Where does a Document come from?
 
@@ -40,7 +43,7 @@ Thus, an unmodified `Document` instance can be garbage-collected if no one refer
 ## How do I create a Document?
 
 For creating a new file on disk, please do not create a `Document` but a PSI file and get its `Document` (see [How do I create a PSI file?](psi_files.md#how-do-i-create-a-psi-file)).
-To create a `Document` instance that isn't bound to anything, use `EditorFactory.createDocument()`.
+To create a `Document` instance that isn't bound to anything, use [`EditorFactory.createDocument()`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/editor/EditorFactory.java).
 
 ## How do I get notified when Documents change?
 
@@ -51,12 +54,12 @@ To create a `Document` instance that isn't bound to anything, use `EditorFactory
 ## What are the rules of working with Documents?
 
 The general read/write action rules are in effect (see [General Threading Rules](general_threading_rules.md)).
-Besides, any operations which modify the contents of the document must be wrapped in a command (`CommandProcessor.getInstance().executeCommand()`).
+Besides, any operations which modify the contents of the document must be wrapped in a command ([`CommandProcessor.getInstance().executeCommand()`](upsource:///platform/core-api/src/com/intellij/openapi/command/CommandProcessor.java)).
 `executeCommand()` calls can be nested, and the outermost `executeCommand()` call is added to the undo stack.
 If multiple documents are modified within a command, undoing this command will, by default, show a confirmation dialog to the user.
 
 If the file corresponding to a `Document` is read-only (for example, not checked out from the version control system), document modifications will fail.
-Thus, before modifying the `Document`, it is necessary to call `ReadonlyStatusHandler.getInstance(project).ensureFilesWritable()` to check out the file.
+Thus, before modifying the `Document`, it is necessary to call [`ReadonlyStatusHandler.getInstance(project).ensureFilesWritable()`](upsource:///platform/core-api/src/com/intellij/openapi/vfs/ReadonlyStatusHandler.java) to check out the file.
 
 All text strings passed to `Document` modification methods (`setText()`, `insertString()`, `replaceString()`) must use only `\n` as line separators.
 

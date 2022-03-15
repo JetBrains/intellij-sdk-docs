@@ -10,7 +10,7 @@ The IntelliJ Platform handles encoding and line break conversions when loading a
 ## How do I get a Document?
 
 #### From an Action
-`e.getData(CommonDataKeys.EDITOR).getDocument()`
+`AnActionEvent.getData(CommonDataKeys.EDITOR).getDocument()`
 
 #### From a Virtual File
 `FileDocumentManager.getDocument()`. This call forces the document content to be loaded from disk if it wasn't loaded previously.

@@ -18,6 +18,14 @@ Many IntelliJ Platform Settings implementations use fewer classes, but the `sett
 
 The structure of the implementation is the same for Project Settings, but there are minor differences in the [`Configurable` implementation](settings_guide.md#constructors) and [extension point (EP) declaration](settings_guide.md#declaring-project-settings).
 
+> See
+> [`MarkdownSettings`](upsource:///plugins/markdown/src/org/intellij/plugins/markdown/settings/MarkdownSettings.kt)
+> and
+> [`MarkdownSettingsConfigurable`](upsource:///plugins/markdown/src/org/intellij/plugins/markdown/settings/MarkdownSettingsConfigurable.kt)
+> classes for the settings example implemented in Kotlin with usage of [Kotlin UI DSL](kotlin_ui_dsl_version_2.md).
+>
+{type="note"}
+
 ## The AppSettingsState Class
 
 The `AppSettingsState` class persistently stores the custom Settings.

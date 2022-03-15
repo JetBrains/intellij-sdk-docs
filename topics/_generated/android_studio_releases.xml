@@ -1,4 +1,13 @@
-<content version="75">
+<content version="76">
+   <item>
+      <name>Android Studio Dolphin (2021.3.1) Canary 6</name>
+      <build>AI-213.6777.52.2113.8265607</build>
+      <version>2021.3.1</version>
+      <channel>Canary</channel>
+      <platformBuild>213.6777.52</platformBuild>
+      <platformVersion>2021.3.2</platformVersion>
+      <date>March 14, 2022</date>
+   </item>
    <item>
       <name>Android Studio Chipmunk (2021.2.1) Beta 4</name>
       <build>AI-212.5712.43.2112.8233820</build>

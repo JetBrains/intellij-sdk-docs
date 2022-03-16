@@ -3,21 +3,23 @@
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 ## Introduction
+
 Plugin projects can target IDEs other than IntelliJ IDEA, as long as the products are based on the [IntelliJ Platform](intellij_platform.md).
 Such plugins are developed much like plugin projects that target IntelliJ IDEA.
 They can be written in Kotlin or Java, or a mix of both.
 Once completed, the plugins can be packaged and distributed at [JetBrains Marketplace](https://plugins.jetbrains.com).
 
-Project configuration attributes common to projects targeting products other than IntelliJ IDEA are described here.
-Details particular to an IntelliJ Platform-based product are described on the individual product pages in Part VIII.
-All of the Gradle configuration attributes described here are discussed in-depth on the [Configuring Gradle for IntelliJ Platform Plugins](gradle_guide.md) and the `gradle-intellij-plugin` [README](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md) pages.
+Project configuration attributes common to projects targeting products other than IntelliJ IDEA are described on this page.
+Details particular to an IntelliJ Platform-based product are described on the individual product pages in _Part VIII_.
+All of the Gradle configuration attributes described here are discussed in-depth on the [](gradle_guide.md) and the `gradle-intellij-plugin` [README](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md) pages.
 
 > Qualifying Open Source projects can [apply for free licenses](https://www.jetbrains.com/community/opensource/) of JetBrains products.
 >
 {type="tip"}
 
 ## Getting Started
-To create a new Gradle plugin project, follow the tutorial on the [Getting Started with Gradle](gradle_prerequisites.md) page.
+
+To create a new Gradle plugin project, follow the tutorial on the [](gradle_prerequisites.md) page.
 The tutorial produces a skeleton Gradle project suitable to use as a starting point.
 
 Modifications are needed to the skeleton project's <path>build.gradle</path> and <path>plugin.xml</path> files, as described below, and on the individual product pages in Part VIII.
@@ -25,6 +27,7 @@ The <path>build.gradle</path> file is modified to specify the target product, de
 The <path>plugin.xml</path> file is modified to declare the plugin's dependency on modules or libraries.
 
 ## Configuring build.gradle to Target Products other than IntelliJ IDEA
+
 The best practice is to use the `gradle-intellij-plugin` `intellij.type` [attribute](https://github.com/JetBrains/gradle-intellij-plugin#intellij-platform-properties) to specify the target product.
 For example, `PY` for PyCharm professional.
 Configuration using an `intellij.type` attribute is explained in the [Product-Specific Attribute](#configuring-plugin-projects-using-a-product-specific-attribute) section below.
@@ -33,6 +36,7 @@ However, not all products have an `intellij.type` attribute defined by the `grad
 If the target product does not have an `intellij.type` attribute defined, then the best approach is to configure the project using the [IntelliJ IDEA Attribute](#configuring-buildgradle-using-the-intellij-idea-product-attribute).
 
 ### Configuring Plugin Projects Using a Product-Specific Attribute
+
 If the `gradle-intellij-plugin` supports a target product directly, there will be an `intellij.type` [attribute](https://github.com/JetBrains/gradle-intellij-plugin#intellij-platform-properties) defined.
 Specifying the target as a product-specific `intellij.type` attribute has two advantages:
 * The APIs available to the plugin will be limited to only what is defined in the target product.
@@ -67,6 +71,7 @@ intellij {
 </tabs>
 
 ### Configuring Plugin Projects Using the IntelliJ IDEA Product Attribute
+
 If the `gradle-intellij-plugin` does not directly support an IntelliJ Platform-based product, the <path>build.gradle</path> file can still be configured to target the desired product.
 In this case, the <path>build.gradle</path> file is configured to use IntelliJ IDEA (Community or Ultimate Edition) as the basis for the available APIs.
 This does have the drawback that APIs not specific to the target product might accidentally be included in the plugin project.
@@ -82,6 +87,7 @@ Understanding the relationship between build numbers is critical when using this
 For API compatibility, the IntelliJ Platform version used in the _targetIDE_ dictates the _baseIntelliJPlatformVersion_ used for developing a plugin.
 
 #### Matching Versions of the IntelliJ Platform with the Target IDE Version
+
 The _baseIntelliJPlatformVersion_ used in the _targetIDE_ may not be readily apparent, depending on the product.
 See the individual product pages in Part VIII for exceptions.
 
@@ -105,6 +111,7 @@ The BRANCH and BUILD numbers match, therefore in this PhpStorm example:
 This information is used to configure the plugin project's <path>build.gradle</path> and <path>plugin.xml</path> files.
 
 #### Configuring build.gradle using the IntelliJ IDEA Product Attribute
+
 Configuring a Gradle plugin project for using _baseIntelliJPlatformVersion_ requires changing some of the default settings in the <path>build.gradle</path> file.
 Changes need to be made in two tasks: `intellij {}` and `runIde {}`.
 
@@ -116,7 +123,7 @@ Any [dependencies](gradle_guide.md#plugin-dependencies) on _targetIDE_-specific 
 Use the Gradle plugin attribute `intellij.plugins` to declare a dependency.
 See the specific product pages in Part VIII for the _targetIDE_ plugin or module name.
 
-The best practice is to modify the `runIde {}` task to use a local installation of _targetIDE_ as the [IDE Development Instance](ide_development_instance.md).
+The best practice is to modify the `runIde {}` task to use a local installation of _targetIDE_ as the [](ide_development_instance.md).
 Set the `runIde.ideDir` attribute to the (user-specific) absolute path of the _targetIDE_ application.
 The exact path format varies by operating system.
 
@@ -168,9 +175,10 @@ runIde {
 </tabs>
 
 ## Configuring plugin.xml
-As discussed on the [Plugin Dependencies](plugin_compatibility.md#declaring-plugin-dependencies) page of this guide, a plugin's dependency on [Modules Specific to Functionality](plugin_compatibility.md#modules-specific-to-functionality) must be declared in <path>plugin.xml</path>.
+
+As discussed on the [Plugin Dependencies](plugin_compatibility.md#declaring-plugin-dependencies) page of this guide, a plugin's dependency on [](plugin_compatibility.md#modules-specific-to-functionality) must be declared in <path>plugin.xml</path>.
 When using features (APIs) specific to the target product, a dependency on the target product module must be declared, as shown in the code snippet below.
-Otherwise, if only general IntelliJ Platform features (APIs) are used, then a dependency on `com.intellij.modules.platform` must be declared as discussed in [Plugin Compatibility with IntelliJ Platform Products](plugin_compatibility.md).
+Otherwise, if only general IntelliJ Platform features (APIs) are used, then a dependency on `com.intellij.modules.platform` must be declared as discussed in [](plugin_compatibility.md).
 
 > In the particular case of a plugin project declaring dependencies only on other plugins, it must also declare a dependency on `com.intellij.modules.platform`.
 > Otherwise, the plugin project is considered to be legacy and will only load in IntelliJ IDEA.
@@ -180,7 +188,7 @@ Otherwise, if only general IntelliJ Platform features (APIs) are used, then a de
 Continuing with the example of developing a plugin for PhpStorm:
 
 ```xml
-  <!-- Targeting PhpStorm, so is dependent on the PHP plugin -->
-  <depends>com.jetbrains.php</depends>
-  <depends>com.intellij.modules.platform</depends>
+<!-- Targeting PhpStorm, so is dependent on the PHP plugin -->
+<depends>com.jetbrains.php</depends>
+<depends>com.intellij.modules.platform</depends>
 ```

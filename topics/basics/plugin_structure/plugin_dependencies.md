@@ -35,10 +35,22 @@ For plugins published on [JetBrains Marketplace](https://plugins.jetbrains.com):
 2. Select <control>Versions</control> tab
 3. Open detail page for the desired version, displaying the <control>Compatibility Range</control> and <control>Plugin ID</control>
 
-### Other Plugins
+### Bundled and Other Plugins
 
 For bundled and non-public plugins, locate the plugin's main JAR file containing <path>META-INF/plugin.xml</path> descriptor with `<id>` tag (or `<name>` if not specified).
 Bundled plugins are located in <path>$PRODUCT_ROOT$/plugins/$PLUGIN_NAME$/lib/$PLUGIN_NAME$.jar</path>.
+
+#### IDs of Bundled Plugins
+
+The following table lists some commonly used bundled plugins and their ID.
+See also [](extension_point_list.md#intellij-community-plugins) and [](plugin_compatibility.md#modules-specific-to-functionality).
+
+| Plugin Name               | Plugin ID                |
+|---------------------------|--------------------------|
+| Java                      | `com.intellij.java`      |
+| Kotlin                    | `org.jetbrains.kotlin`   |
+| Copyright                 | `com.intellij.copyright` |
+| JavaScript and TypeScript | `JavaScript`             |
 
 ### Preparing Sandbox
 

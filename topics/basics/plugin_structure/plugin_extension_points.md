@@ -29,11 +29,13 @@ Then insert a child element `<extensionPoint>` that defines the extension point 
   <id>my.plugin</id>
 
   <extensionPoints>
-    <extensionPoint name="myExtensionPoint1"
-                    beanClass="com.myplugin.MyBeanClass"/>
+    <extensionPoint
+        name="myExtensionPoint1"
+        beanClass="com.example.MyBeanClass"/>
 
-    <extensionPoint name="myExtensionPoint2"
-                    interface="com.myplugin.MyInterface"/>
+    <extensionPoint
+        name="myExtensionPoint2"
+        interface="com.example.MyInterface"/>
   </extensionPoints>
 
 </idea-plugin>
@@ -95,10 +97,12 @@ For above extension points usage in _anotherPlugin_ would look like this (see al
 
   <!-- Use "my.plugin" namespace: -->
   <extensions defaultExtensionNs="my.plugin">
-    <myExtensionPoint1 key="someKey"
-                       implementationClass="another.some.implementation.class"/>
+    <myExtensionPoint1
+        key="someKey"
+        implementationClass="another.some.implementation.class"/>
 
-    <myExtensionPoint2 implementation="another.MyInterfaceImpl"/>
+    <myExtensionPoint2
+        implementation="another.MyInterfaceImpl"/>
   </extension>
 
 </idea-plugin>
@@ -136,11 +140,12 @@ To support [Dynamic Plugins](dynamic_plugins.md) (2020.1 and later), an extensio
 Extension points matching these conditions can then be marked as _dynamic_ by adding `dynamic="true"` in their declaration:
 
 ```xml
-  <extensionPoints>
-    <extensionPoint name="myDynamicExtensionPoint"
-                    beanClass="com.myplugin.MyBeanClass"
-                    dynamic="true" />
-  </extensionPoints>
+<extensionPoints>
+  <extensionPoint
+      name="myDynamicExtensionPoint"
+      beanClass="com.example.MyBeanClass"
+      dynamic="true"/>
+</extensionPoints>
 ```
 
 > All non-dynamic extension points are highlighted via <control>Plugin DevKit | Plugin descriptor | Plugin.xml dynamic plugin verification</control> inspection available in IntelliJ IDEA 2020.1 or later.

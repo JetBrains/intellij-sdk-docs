@@ -39,9 +39,12 @@ Then define a class/interface in a top-level package called `icons` holding icon
 package icons;
 
 public interface DemoPluginIcons {
-  Icon DemoAction = IconLoader.getIcon("/icons/demoAction.png", DemoPluginIcons.class);
-  Icon StructureToolWindow = IconLoader.getIcon("/icons/toolWindowStructure.png", DemoPluginIcons.class);
-  Icon FileType = IconLoader.getIcon("/icons/myLangFileType.png", DemoPluginIcons.class);
+  Icon DemoAction =
+      IconLoader.getIcon("/icons/demoAction.png", DemoPluginIcons.class);
+  Icon StructureToolWindow =
+      IconLoader.getIcon("/icons/toolWindowStructure.png", DemoPluginIcons.class);
+  Icon FileType =
+      IconLoader.getIcon("/icons/myLangFileType.png", DemoPluginIcons.class);
 }
 ```
 
@@ -55,7 +58,6 @@ When using Kotlin, fields must be annotated with `@JvmField`:
 package icons
 
 object DemoPluginIcons {
-
   @JvmField
   val DemoAction = IconLoader.getIcon("/icons/demoAction.png", javaClass)
 
@@ -76,15 +78,18 @@ Note that the package name `icons` will be automatically prefixed and must not b
 
 ```xml
 <actions>
-    <action id="DemoPlugin.DemoAction"
-            icon="DemoPluginIcons.DemoAction" [...] />
+  <action
+      id="DemoPlugin.DemoAction"
+      icon="DemoPluginIcons.DemoAction"
+      ... />
 </actions>
 
 <extensions defaultExtensionNs="com.intellij">
-    <toolWindow id="CustomStructure"
-                icon="DemoPluginIcons.StructureToolWindow" [...] />
+  <toolWindow
+      id="CustomStructure"
+      icon="DemoPluginIcons.StructureToolWindow"
+      ... />
 </extensions>
-
 ```
 
 ## Image Formats
@@ -102,6 +107,7 @@ Required icon sizes depend on the usage as listed in the following table:
 | Editor gutter          | 12x12              |
 
 ### SVG Format
+
 > SVG ([Scalable Vector Graphics](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics)) icons are supported since 2018.2.
 >
 {type="note"}
@@ -116,7 +122,7 @@ A minimal SVG icon file:
 
 ```xml
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16">
- <rect width="100%" height="100%" fill="green"/>
+  <rect width="100%" height="100%" fill="green"/>
 </svg>
 ```
 

@@ -2,10 +2,11 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-This tutorial shows how to use actions to access a caret placed in a document open in an editor. 
-Using information about the caret, replace selected text in a document with a string. 
+This tutorial shows how to use actions to access a caret placed in a document open in an editor.
+Using information about the caret, replace selected text in a document with a string.
 
 ## Introduction
+
 The approach in this tutorial relies heavily on creating and registering actions.
 To review the fundamentals of creating and registering actions, refer to the [Actions Tutorial](action_system.md).
 
@@ -15,6 +16,7 @@ It may be helpful to open that project in an IntelliJ Platform-based IDE, build 
 ![Editor Basics Menu](basics.png){width="600"}
 
 ## Creating a New Menu Action
+
 In this example, we access the `Editor` from an action.
 The source code for the Java class in this example is [EditorIllustrationAction](https://github.com/JetBrains/intellij-sdk-code-samples/blob/main/editor_basics/src/main/java/org/intellij/sdk/editor/EditorIllustrationAction.java).
 
@@ -23,16 +25,18 @@ For more information, refer to the [Registering Actions](working_with_custom_act
 The `EditorIllustrationAction` action is registered in the group `EditorPopupMenu` so it will be available from the context menu when focus is on the editor:
 
 ```xml
-    <action id="EditorBasics.EditorIllustrationAction"
-            class="org.intellij.sdk.editor.EditorIllustrationAction"
-            text="Editor Replace Text"
-            description="Replaces selected text with 'Replacement'."
-            icon="SdkIcons.Sdk_default_icon">
-      <add-to-group group-id="EditorPopupMenu" anchor="first"/>
-    </action>
+<action
+    id="EditorBasics.EditorIllustrationAction"
+    class="org.intellij.sdk.editor.EditorIllustrationAction"
+    text="Editor Replace Text"
+    description="Replaces selected text with 'Replacement'."
+    icon="SdkIcons.Sdk_default_icon">
+  <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+</action>
 ```
 
 ## Defining the Menu Action's Visibility
+
 To determine conditions by which the action will be visible and available requires `EditorIllustrationAction` to override the `AnAction.update()` method.
 For more information, refer to [Extending the Update Method](working_with_custom_actions.md#extending-the-update-method) section of the Actions Tutorial.
 
@@ -44,6 +48,7 @@ To work with a selected part of the text, it's reasonable to make the menu actio
 Additional steps will show how to check these conditions through obtaining instances of `Project` and `Editor` objects, and how to show or hide the action's menu items based on them.
 
 ### Getting an Instance of the Active Editor from an Action Event
+
 Using the [`AnActionEvent`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnActionEvent.java) event passed into the `update` method, a reference to an instance of the `Editor` can be obtained by calling `getData(CommonDataKeys.EDITOR)`.
 Similarly, to obtain a project reference, we use the `getProject()` method.
 
@@ -64,6 +69,7 @@ There are other ways to access an `Editor` instance:
 * If only a `Project` object is available, use `FileEditorManager.getInstance(project).getSelectedTextEditor()`
 
 ### Obtaining a Caret Model and Selection
+
 After making sure a project is open, and an instance of the `Editor` is obtained, we need to check if any selection is available.
 The [`SelectionModel`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/editor/SelectionModel.java) interface is accessed from the `Editor` object.
 Determining whether some text is selected is accomplished by calling the `SelectionModel.hasSelection()` method.
@@ -77,10 +83,11 @@ public class EditorIllustrationAction extends AnAction {
     final Project project = e.getProject();
     final Editor editor = e.getData(CommonDataKeys.EDITOR);
 
-    // Set visibility only in case of existing project and editor and if a selection exists
-    e.getPresentation().setEnabledAndVisible( project != null
-                                              && editor != null
-                                              && editor.getSelectionModel().hasSelection() );
+    // Set visibility only in the case of
+    // existing project editor, and selection
+    e.getPresentation().setEnabledAndVisible(project != null
+            && editor != null
+            && editor.getSelectionModel().hasSelection());
   }
 }
 ```
@@ -95,6 +102,7 @@ The model classes are located in [editor](upsource:///platform/editor-ui-api/src
 * [`SoftWrapModel`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/editor/SoftWrapModel.java)
 
 ## Safely Replacing Selected Text in the Document
+
 Based on the evaluation of conditions by `EditorIllustrationAction.update()`, the `EditorIllustrationAction` action menu item is visible.
 To make the menu item do something, the `EditorIllustrationAction` class must override the `AnAction.actionPerformed()` method.
 As explained below, this will require the `EditorIllustrationAction.actionPerformed()` method to:

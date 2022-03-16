@@ -14,7 +14,8 @@ The list of available configuration types is shown when a user opens the _'Edit 
 Every type there is represented as an instance of [`ConfigurationType`](upsource:///platform/execution/src/com/intellij/execution/configurations/ConfigurationType.java) and registered like below:
 
 ```xml
-<configurationType implementation="org.jetbrains.plugins.gradle.service.execution.GradleExternalTaskConfigurationType" />
+<configurationType
+    implementation="org.jetbrains.plugins.gradle.service.execution.GradleExternalTaskConfigurationType"/>
 ```
 
 The easiest way to implement this interface is to use the [`ConfigurationTypeBase`](upsource:///platform/execution/src/com/intellij/execution/configurations/runConfigurationType.kt) base class.

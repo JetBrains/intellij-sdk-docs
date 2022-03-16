@@ -259,6 +259,8 @@ When renaming pages, redirects should be configured so existing links and bookma
 Specify the previous path(s) with <path>.html</path> extension in `accepts-web-file-names` attribute:
 
 ```xml
-  <toc-element id="fundamentals.md" toc-title="Fundamentals"
-               accepts-web-file-names="reference_guide.html,architectural_overview.html"/>
+<toc-element
+    id="fundamentals.md"
+    toc-title="Fundamentals"
+    accepts-web-file-names="reference_guide.html,architectural_overview.html"/>
 ```

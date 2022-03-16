@@ -22,8 +22,9 @@ Add a new `com.intellij.moduleType` implementation with the IntelliJ Platform in
 
 ```xml
 <extensions defaultExtensionNs="com.intellij">
-  <moduleType id="DEMO_MODULE_TYPE"
-              implementationClass="org.intellij.sdk.module.DemoModuleType"/>
+  <moduleType
+      id="DEMO_MODULE_TYPE"
+      implementationClass="org.intellij.sdk.module.DemoModuleType"/>
 </extensions>
 ```
 

@@ -10,6 +10,7 @@ Plugin projects for RubyMine can be developed using IntelliJ IDEA with the `grad
 {type="tip"}
 
 ## Configuring Plugin Projects Targeting RubyMine
+
 The configuration of RubyMine plugin projects follows the methods described in [Configuring Plugin Projects using the IntelliJ IDEA Product Attribute](dev_alternate_products.md#configuring-plugin-projects-using-the-intellij-idea-product-attribute), and [Configuring the plugin.xml File](dev_alternate_products.md#configuring-pluginxml).
 
 The table below summarizes the `gradle-intellij-plugin` attributes to set in the <path>build.gradle</path> file for a RubyMine plugin project.
@@ -36,8 +37,8 @@ As described in [Modules Specific to Functionality](plugin_compatibility.md#modu
 The dependency declaration is illustrated in the <path>plugin.xml</path> snippet below:
 
 ```xml
-  <!-- Requires the Ruby plugin -->
-  <depends>com.intellij.modules.ruby</depends>
+<!-- Requires the Ruby plugin -->
+<depends>com.intellij.modules.ruby</depends>
 ```
 
 ## Available RubyMine APIs
@@ -50,6 +51,7 @@ Use the [Exploring APIs as a Consumer](plugin_compatibility.md#exploring-apis-as
 Test your plugin with any version of RubyMine you intend to support.
 
 ## Open Source Plugins for RubyMine
+
 When learning new APIs, it is helpful to have some representative projects for reference:
 * [Ruby-Doc-Adder](https://github.com/aristotll/RubyDocAdder)
 * [Ruby Dynamic Code Insight](https://github.com/JetBrains/ruby-type-inference)

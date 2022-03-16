@@ -26,7 +26,8 @@ Make sure the class is registered in the <path>plugin.xml</path> between the `ex
 ```xml
 <extensions defaultExtensionNs="com.intellij">
   <!-- Other extensions… -->
-  <lang.documentationProvider language="Simple"
+  <lang.documentationProvider
+      language="Simple"
       implementationClass="org.intellij.sdk.language.SimpleDocumentationProvider"/>
 </extensions>
 ```

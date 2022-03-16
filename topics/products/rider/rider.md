@@ -11,7 +11,8 @@ Rider uses the IntelliJ Platform to provide the user interface for a C# and .NET
 {type="tip"}
 
 ## IntelliJ IDEA Configuration for Rider Plugin Development
-Although there is no dedicated Rider SDK, the [ReSharper DevGuide](https://www.jetbrains.com/help/resharper/sdk/Products/Rider.html)  addresses the subject of plugins for Rider.
+
+Although there is no dedicated Rider SDK, the [ReSharper DevGuide](https://www.jetbrains.com/help/resharper/sdk/Products/Rider.html) addresses the subject of plugins for Rider.
 The documentation describes the [configuration](https://www.jetbrains.com/help/resharper/sdk/Products/Rider.html#plugin-project-jvm) of <path>build.gradle</path> and <path>settings.gradle</path> files to build a Rider plugin using the [Gradle project system](gradle_build_system.md) in IntelliJ IDEA.
 
 > See [](rider_extension_point_list.md) for the complete list.
@@ -19,6 +20,7 @@ The documentation describes the [configuration](https://www.jetbrains.com/help/r
 {type="note"}
 
 ## Developing Rider Plugins with the IDEA and ReSharper SDKs
+
 Before starting a new Rider plugin project, review the article [Writing plugins for ReSharper and Rider](https://blog.jetbrains.com/dotnet/2019/02/14/writing-plugins-resharper-rider/).
 In particular, this article discusses _One Template to Rule Them All_, a way to quickly get started writing plugins for both Rider and ReSharper.
 
@@ -26,6 +28,7 @@ More background information is available in the [Building a .NET IDE with JetBra
 The article is a good counterpoint to the ReSharper DevGuide content, which discusses the protocol at the code level.
 
 ## Including Custom Settings into a Plugin
+
 Rider plugins may introduce their own <path>.DotSettings</path> files with customized [ReSharper settings](https://www.jetbrains.com/help/resharper/Sharing_Configuration_Options.html).
 This is useful e.g. when a plugin brings its own file templates.
 
@@ -38,8 +41,8 @@ For example, for a plugin with the following <path>plugin.xml</path> contents, t
 
 ```xml
 <idea-plugin>
-    <id>org.awesomeplugin</id>
-    <!-- … -->
+  <id>org.awesomeplugin</id>
+  <!-- ... -->
 </idea-plugin>
 ```
 
@@ -47,13 +50,14 @@ And the following <path>plugin.xml</path> would require to place the file under 
 
 ```xml
 <idea-plugin>
-    <id>Enterprise</id>
-    <vendor>Jean-Luc Picard</vendor>
-    <!-- … -->
+  <id>Enterprise</id>
+  <vendor>Jean-Luc Picard</vendor>
+  <!-- ... -->
 </idea-plugin>
 ```
 
 ## Open Source Rider Plugins
+
 When learning new development configurations, it is helpful to have some existing plugins for reference.
 This list is intended to provide some representative projects.
 * [Unity support for both ReSharper and Rider](https://github.com/JetBrains/resharper-unity)

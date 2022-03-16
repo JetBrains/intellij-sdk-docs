@@ -27,7 +27,9 @@ These classes and interfaces serve the following purposes:
 To create a new module type and an extension
 
 ```xml
-<moduleType id="MY_MODULE" implementationClass="st.redline.smalltalk.module.MyModuleType"/>
+<moduleType
+    id="MY_MODULE"
+    implementationClass="st.redline.smalltalk.module.MyModuleType"/>
 ```
 
 to the [`plugin.xml`](https://github.com/bulenkov/RedlineSmalltalk/blob/master/resources/META-INF/plugin.xml).
@@ -40,7 +42,8 @@ To set up a new module environment [`ModuleBuilder`](upsource:///platform/lang-c
 
 ```xml
 <extensions defaultExtensionNs="com.intellij">
-    <moduleBuilder builderClass="org.jetbrains.plugins.ruby.rails.facet.versions.MyModuleBuilder"/>
+  <moduleBuilder
+      builderClass="org.jetbrains.plugins.ruby.rails.facet.versions.MyModuleBuilder"/>
 </extensions>
 ```
 
@@ -79,7 +82,9 @@ For more details please see the following [SmallTalk custom module type](https:/
 Adding new steps to the module wizard can be done by overriding the
 
 ```java
-public ModuleWizardStep[] createWizardSteps(WizardContext wizardContext, ModulesProvider modulesProvider);
+public ModuleWizardStep[] createWizardSteps(
+    WizardContext wizardContext,
+    ModulesProvider modulesProvider);
 ```
 
 method in a custom [module builder](https://github.com/bulenkov/RedlineSmalltalk/blob/master/src/st/redline/smalltalk/module/RsModuleBuilder.java).
@@ -108,8 +113,11 @@ To support the creation of your module when a project is imported from existing 
 To detect your files your module supports implement
 
 ```java
-public abstract DirectoryProcessingResult detectRoots(@NotNull File dir, @NotNull File[] children, @NotNull File base,
-                                                        @NotNull List<DetectedProjectRoot> result);
+public abstract DirectoryProcessingResult detectRoots(
+    @NotNull File dir,
+    @NotNull File[] children,
+    @NotNull File base,
+    @NotNull List<DetectedProjectRoot> result);
 ```
 
 Refer to the [Smalltalk project structure detector](https://github.com/bulenkov/RedlineSmalltalk/blob/master/src/st/redline/smalltalk/module/RsProjectStructureDetector.java)
@@ -119,21 +127,17 @@ Here is an example that creates a module if no other modules exist in the projec
 
 ```java
 @Override
-    public void setupProjectStructure(@NotNull final Collection<DetectedProjectRoot> roots,
-        @NotNull final ProjectDescriptor projectDescriptor,
-        @NotNull final ProjectFromSourcesBuilder builder)
-    {
-        List<ModuleDescriptor> modules = projectDescriptor.getModules();
-        if (modules.isEmpty())
-        {
-            modules = new ArrayList<>();
-            for (DetectedProjectRoot root : roots)
-            {
-                modules.add(
-                    new ModuleDescriptor(root.getDirectory(), MyModuleType.getInstance(),
-                        ContainerUtil.emptyList()));
-            }
-            projectDescriptor.setModules(modules);
-        }
+public void setupProjectStructure(@NotNull Collection<DetectedProjectRoot> roots,
+                                  @NotNull ProjectDescriptor projectDescriptor,
+                                  @NotNull ProjectFromSourcesBuilder builder) {
+  List<ModuleDescriptor> modules = projectDescriptor.getModules();
+  if (modules.isEmpty()) {
+    modules = new ArrayList<>();
+    for (DetectedProjectRoot root : roots) {
+      modules.add(new ModuleDescriptor(root.getDirectory(),
+          MyModuleType.getInstance(), ContainerUtil.emptyList()));
     }
+    projectDescriptor.setModules(modules);
+  }
+}
 ```

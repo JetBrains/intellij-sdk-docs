@@ -86,14 +86,15 @@ In this case, `PopupDialogAction` would be available in the <menupath>Tools</men
 After finishing the <control>New Action</control> form and applying the changes, the `<actions>` section of the plugin's <path>plugins.xml</path> file would contain:
 
 ```xml
-  <actions>
-    <action id="org.intellij.sdk.action.PopupDialogAction"
-            class="org.intellij.sdk.action.PopupDialogAction"
-            text="Popup Dialog Action"
-            description="SDK action example">
-      <add-to-group group-id="ToolsMenu" anchor="first"/>
-    </action>
-  </actions>
+<actions>
+  <action
+      id="org.intellij.sdk.action.PopupDialogAction"
+      class="org.intellij.sdk.action.PopupDialogAction"
+      text="Popup Dialog Action"
+      description="SDK action example">
+    <add-to-group group-id="ToolsMenu" anchor="first"/>
+  </action>
+</actions>
 ```
 
 The `<action>` element declares the <control>Action ID</control> (`id`), <control>Class Name</control> (`class`), <control>Name</control> (`text`), and <control>Description</control> from the <control>New Action</control> form.
@@ -113,17 +114,20 @@ It also contains an attribute for an [`Icon`](work_with_icons_and_images.md) and
 The full declaration is:
 
 ```xml
-<action id="org.intellij.sdk.action.PopupDialogAction"
-        class="org.intellij.sdk.action.PopupDialogAction"
-        text="Action Basics Plugin: Popup Dialog Action"
-        description="SDK action example"
-        icon="SdkIcons.Sdk_default_icon">
+<action
+    id="org.intellij.sdk.action.PopupDialogAction"
+    class="org.intellij.sdk.action.PopupDialogAction"
+    text="Action Basics Plugin: Popup Dialog Action"
+    description="SDK action example"
+    icon="SdkIcons.Sdk_default_icon">
   <override-text place="MainMenu" text="Popup Dialog Action"/>
-  <keyboard-shortcut keymap="$default"
-                     first-keystroke="control alt A"
-                     second-keystroke="C"/>
-  <mouse-shortcut keymap="$default"
-                  keystroke="control button3 doubleClick"/>
+  <keyboard-shortcut
+      keymap="$default"
+      first-keystroke="control alt A"
+      second-keystroke="C"/>
+  <mouse-shortcut
+      keymap="$default"
+      keystroke="control button3 doubleClick"/>
   <add-to-group group-id="ToolsMenu" anchor="first"/>
 </action>
 ```

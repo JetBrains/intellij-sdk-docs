@@ -21,10 +21,10 @@ Let's assume you have the following XML:
 
 ```xml
 <root>
-    <foo>
-        <bar>42</bar>
-        <bar>239</bar>
-    </foo>
+  <foo>
+    <bar>42</bar>
+    <bar>239</bar>
+  </foo>
 </root>
 ```
 
@@ -66,15 +66,15 @@ For example, let's create several interfaces:
 
 ```java
 interface Root extends com.intellij.util.xml.DomElement {
-    Foo getFoo();
+  Foo getFoo();
 }
 
 interface Foo extends com.intellij.util.xml.DomElement {
-    List<Bar> getBars();
+  List<Bar> getBars();
 }
 
 interface Bar extends com.intellij.util.xml.DomElement {
-    String getValue();
+  String getValue();
 }
 ```
 
@@ -93,8 +93,8 @@ DomManager manager = DomManager.getDomManager(project);
 Root root = manager.getFileElement(file).getRootElement();
 List<Bar> bars = root.getFoo().getBars();
 if (bars.size() > 1) {
-    String s = bars.get(1).getValue();
-    // do something
+  String s = bars.get(1).getValue();
+  // do something
 }
 ```
 
@@ -161,16 +161,18 @@ In our example, the code will look as follows:
 
 ```java
 enum CmpVersion implements NamedEnum {
-    CmpVersion_1_X ("1.x"),
-    CmpVersion_2_X ("2.x");
+  CmpVersion_1_X ("1.x"),
+  CmpVersion_2_X ("2.x");
 
-    private final String value;
+  private final String value;
 
-    CmpVersion(String value) {
-        this.value = value;
-    }
+  CmpVersion(String value) {
+    this.value = value;
+  }
 
-    public String getValue() { return value; }
+  public String getValue() {
+    return value;
+  }
 }
 ```
 
@@ -180,14 +182,14 @@ And we provide such an element:
 
 ```java
 interface GenericDomValue<T> {
-    T getValue();
-    void setValue(T t);
+  T getValue();
+  void setValue(T t);
 
-    @TagValue
-    String getStringValue();
+  @TagValue
+  String getStringValue();
 
-    @TagValue
-    void setStringValue(String s);
+  @TagValue
+  void setStringValue(String s);
 }
 ```
 
@@ -206,7 +208,7 @@ So it's natural to create something like `GenericDomValue<T>` and then work as u
 
 ```java
 interface GenericAttributeValue<T> extends GenericDomValue<T> {
-    XmlAttribute getXmlAttribute();
+  XmlAttribute getXmlAttribute();
 }
 ```
 
@@ -352,15 +354,18 @@ To add elements to such mixed collections, you should create "add" methods for e
 The index parameter in the last example means the index in the merged collection, not in the collection of tags named "bar".
 
 ### Dynamic Definition
+
 You can extend existing DOM model at runtime by implementing `com.intellij.util.xml.reflect.DomExtender<T>`.
 Register it in "extenderClass" attribute of EP `com.intellij.dom.extender`, where "domClass" specifies DOM class `<T>` to be extended. [`DomExtensionsRegistrar`](upsource:///xml/dom-openapi/src/com/intellij/util/xml/reflect/DomExtensionsRegistrar.java) provides various methods to register dynamic attributes and children.
 
 If the contributed elements depend on anything other than plain XML file content (used framework version, libraries in classpath, ...), make sure to return `false` from `DomExtender.supportsStubs()`.
 
 ### Namespace Support
+
 Annotate DOM model with [`Namespace`](upsource:///xml/dom-openapi/src/com/intellij/util/xml/Namespace.java) and register namespace key mapping via `DomFileDescription.registerNamespacePolicy()` from `DomFileDescription.initializeFileDescription()`.
 
 ### Generating DOM from Existing XSD
+
 DOM can be generated automatically from existing XSD/DTD.
 Output correctness/completeness will largely depend on the input scheme and may require additional manual adjustments.
 
@@ -372,6 +377,7 @@ Follow these steps:
 * Modify generated sources according to your needs
 
 ### IDE Support
+
 _Plugin DevKit_ supports the following features for working with DOM related code:
 
 * [`DomElement`](upsource:///xml/dom-openapi/src/com/intellij/util/xml/DomElement.java) - provide implicit usages for all DOM-related methods defined in inheriting classes (to suppress "unused method" warning)
@@ -380,6 +386,7 @@ _Plugin DevKit_ supports the following features for working with DOM related cod
 ## Working with the DOM
 
 ### Class Choosers
+
 It often happens that a collection contains same-named tags that may have different structure or even be represented by different types in the DTD or Schema.
 As an example, JSF Managed Beans may be of three types.
 If a `<managed-bean>` tag contains a `<map-entries>` sub-tag, then the Managed Bean type is `MapEntriesBean`.
@@ -391,9 +398,10 @@ This is achieved by extending the [`TypeChooser`](upsource:///xml/dom-openapi/sr
 
 ```java
 public abstract class TypeChooser {
-    public abstract Type chooseType(XmlTag tag);
-    public abstract void distinguishTag(XmlTag tag, Type aClass) throws IncorrectOperationException;
-    public abstract Type[] getChooserTypes();
+  public abstract Type chooseType(XmlTag tag);
+  public abstract void distinguishTag(XmlTag tag, Type aClass)
+      throws IncorrectOperationException;
+  public abstract Type[] getChooserTypes();
 }
 ```
 
@@ -406,6 +414,7 @@ To make your `TypeChooser` work, register it in your overridden `DomFileDescript
 ### Useful Methods of DomElement and DomManager
 
 #### PSI Connection
+
 Of course, DOM is tightly connected to XML PSI, so there's always a way of getting the `XmlTag` instance (which can be `null` for fixed-number children and attributes) using the `getXmlTag()` method.
 We remember that in `GenericAttributeValue` there's also the `getXmlAttribute()` method.
 In general case there is `getXmlElement()` method.
@@ -417,6 +426,7 @@ This method will always delete the underlying XML element (tag or attribute).
 If the element was a collection child, then neither it nor its entire sub-tree will be valid anymore.
 
 #### Tree Structure
+
 In every normal tree there's always a possibility to walk up. `DomElement` is no exception.
 Method `getParent()` just returns element's parent in tree.
 
@@ -426,6 +436,7 @@ You can see the standard _strict_ parameter, that can return the DOM element its
 Finally, `getRoot()` will return the `DomFileElement`, which is the root of every DOM tree.
 
 #### Validity
+
 An element becomes invalid if it has been deleted explicitly or due to external PSI changes.
 Fixed-number children and attributes are meant to stay valid as long as possible, no matter what happens with XML.
 They can become invalid only if they have collection tree ancestor that has been deleted.
@@ -435,12 +446,14 @@ Newly created DOM elements are always correct and valid, so their `isValid()` me
 Element validity is very important, since you cannot invoke any methods on invalid elements (except, of course, `isValid()` itself).
 
 #### DOM Reflection
+
 DOM also has a kind of reflection, called "Generic Info".
 One would use it to be able to access children by tag names directly, instead of calling getter methods.
 See [`DomGenericInfo`](upsource:///xml/dom-openapi/src/com/intellij/util/xml/reflect/DomGenericInfo.java) interface and `getGenericInfo()` methods in `DomElement` and `DomManager` for more information.
 There's also `DomElement.getXmlElementName()` method that returns the name of a corresponding tag or attribute.
 
 #### Presentation
+
 <!-- TODO: using @Presentation -->
 
 `DomElement.getPresentation()` returns an instance of [`ElementPresentation`](upsource:///xml/dom-openapi/src/com/intellij/util/xml/ElementPresentation.java), an interface that knows presentable element type, name, and sometimes even its icon.
@@ -452,10 +465,12 @@ For `DomElement`, there's another way to get this presentable name:
 `DomElement.getGenericInfo().getElementName()`.
 
 #### Events
+
 If you want to be notified on every change in the DOM model, add `DomEventListener` to `DomManager`.
 DOM supports the following events: tag value changed, element defined/undefined/changed, and collection child added/removed.
 
 #### Highlighting Annotations
+
 The DOM supports error checking and highlighting.
 It's based on annotations which you add to the DOM element in a special place (don't confuse these annotations with the ones of Java 5 — they are very different).
 You need to implement the [`DomElementAnnotator`](upsource:///xml/dom-openapi/src/com/intellij/util/xml/highlighting/DomElementsAnnotator.java) interface, and override `DomFileDescription.createAnnotator()` method, and create this annotator there.
@@ -463,6 +478,7 @@ In `DomElementsAnnotator.annotate(DomElement element, DomElementsProblemsHolder 
 You should return this annotator in the corresponding virtual method of the `DomFileDescription`.
 
 #### Automatic Highlighting (BasicDomElementsInspection)
+
 The following errors can be highlighted automatically by providing an instance of `BasicDomElementsInspection`:
 
 - `@Required` element missing or having empty text
@@ -475,12 +491,14 @@ The checking uses the `DomFileDescription.getIdentityScope()` method to get the 
 To suppress spellchecking annotate your DomElement with `@com.intellij.spellchecker.xml.NoSpellchecking`.
 
 #### Required Children
+
 There is a common case in error highlighting, when one needs to say, that some required sub-tag or attribute is missing.
 DOM will do this for you automatically, if you annotate the getter for that child with the `@Required` annotation.
 For collection children getters, this annotation will mean, that the collection should be not empty (corresponding to '+' sign in DTD).
 Also, when you create a new element that has required fixed-number or attribute children, their tags or attributes will also be created in XML.
 
 ### Resolving
+
 Remember the interface `GenericDomValue<T>` and its sub-interface `GenericAttributeValue<T>`? Remember, that ANY class may be passed as `T` — for example, let's interpret `GenericDomValue<PsiClass>` as a reference to a class.
 Then we can always consider it as a reference to an object of class `T`! With Strings or enums, it is not a very useful idea, but we'll use it in another way.
 Very often XML has such a structure that an object is declared at some place, and is referenced at some other place (more precisely, in a tag or attribute value).
@@ -504,6 +522,7 @@ Those familiar with [`PsiReference`](upsource:///platform/core-api/src/com/intel
 If you need to choose a `Converter` depending on other values (e.g. in sibling/parent element) or any runtime condition (e.g. presence or version of library), you can use `WrappingConverter`. See also `GenericDomValueConvertersRegistry` for managing an extensible registry of available Converters to choose from.
 
 ### Mock and Stable Elements
+
 Your DOM elements do not have to be tied to a physical file. `DomManager.createMockElement()` will help you to create a virtual element of a given class with the given module.
 An element may be physical or not. 'Physical' here means that DOM will create a mock document for it, so you can enjoy Undo functionality if you pass this document to the right place in file editor.
 
@@ -535,6 +554,7 @@ Stable DOM elements also implement the `StableElement` interface, which has the 
 * `void revalidate()` — calls the factory, and if it returns something new (i.e. not the same as the current wrapped element) invalidates the old value and adopts the new one.
 
 ### Visitor
+
 Visitor is a very common design pattern.
 DOM model also has a visitor, and it's called `DomElementVisitor`.
 The `DomElement` interface has methods `accept()` and `acceptChildren()` that take this visitor as a parameter.
@@ -552,6 +572,7 @@ class MyVisitor implements DomElementVisitor {
 ```
 
 ### Implementation
+
 Sometimes you may want to extend your model with some functionality that isn't directly connected with XML, but relates to your program logic.
 And the most appropriate place for this functionality is the DOM element interface.
 What to do then?
@@ -582,6 +603,7 @@ Now you only have to let DOM know that you wish to use this implementation every
 Simply register it using extension point `com.intellij.dom.implementation` and DOM will generate at run-time the class that not only implements the needed interface, but also extends your abstract class.
 
 ### Models Across Multiple Files
+
 Many frameworks require a set of XML configuration files ("fileset") to work as one model, so resolving/navigation works across all related DOM files.
 Depending on implementation/plugin, providing filesets implicitly (using existing framework's setup in project) or via user configuration (usually via dedicated `Facet`) can be achieved.
 
@@ -590,6 +612,7 @@ Usually you will want to add searcher/utility methods to work with your `DomMode
 Example can be found in Struts 2 plugin (package `com.intellij.struts2.dom.struts.model`).
 
 ### DOM Stubs
+
 > Please use it sparingly and only for heavily accessed parts in your DOM model, as it increases disk space usage/indexing run time.
 >
 {type="note"}
@@ -605,6 +628,7 @@ Set and increase `stubVersion` of `com.intellij.dom.fileMetaData` extension when
 {type="warning"}
 
 ### Forms
+
 All forms that deal with DOM are organized in a special way.
 They support two main things: getting data from XML into the UI, and saving UI data to XML.
 The former is called resetting, the latter — committing.
@@ -628,6 +652,7 @@ Then you should define the `addCommitListener()` method of that DOM control and 
 This method will be invoked inside the same write action as the main `commit()`, so any changes you do in this method to the XML will be merged with the `commit()` in the Undo queue.
 
 ### Simple Controls
+
 With simple controls, you can edit `GenericDomValue`: simple text, class names, enums and boolean values.
 These controls take a special object as a constructor parameter.
 This object should implement the `DomWrapper` interface that knows how to set/get values to/from DOM model.
@@ -642,12 +667,14 @@ But sometimes you may want to create the controls directly.
 So let's look at the simple controls more closely.
 
 ##### BooleanControl
+
 It allows you to edit boolean values.
 The control is bound to `JCheckBox`.
 
 ![BooleanControl](booleancontrol.gif)
 
 ##### ComboControl
+
 The control is bound to a non-editable `JComboBox`, so it can be used to choose something from a limited set.
 One case of such a limited set is enum.
 Or it can be a constructor where you can provide a `Factory<List<String>>`, and return from this factory anything you want (for example, a list of database names to choose from).
@@ -659,6 +686,7 @@ Or you can just delegate to that renderer in your own way.
 ![ComboControl](combocontrol.gif)
 
 ##### BooleanEnumControl
+
 Sometimes, when there are only 2 alternatives, it's convenient to use a check box instead of combo box.
 This control is designed specially for such cases.
 While being (and being bound to) a check box, the control edits not just "true" or "false", but any two String values, or two enum elements.
@@ -667,10 +695,12 @@ By default _invertedOrder_ is set to `false`, so the first element corresponds t
 If you set the parameter to `true`, the states will swap.
 
 ### Editor-Based Controls
+
 Please note that editor-based controls are built on IntelliJ Platform's `Editor` instead of standard `JTextField`.
 Since there's currently no way to instantiate Editor directly through the Open API, controls are bound to special `JPanel` inheritors, and their `bind()` method adds the necessary content to those panels.
 
 ##### TextControl
+
 This control allows you to edit simple string values.
 The control is bound to a `TextPanel` component.
 There's also an inheritor of that panel — `MultiLineTextPanel`.
@@ -679,6 +709,7 @@ In case you don't have space for a big editor, bind it to a `BigTextPanel`.
 Then it will be filled with a text editor, and the browse button will be added to open a dialog with the big editor where you can type a longer string.
 
 ##### PsiClassControl
+
 This is a one-line editor with a browse button that opens the standard class selection dialog.
 The control accepts class names only.
 It is bound to `PsiClassPanel`.
@@ -686,10 +717,12 @@ It is bound to `PsiClassPanel`.
 ![PsiClassControl](psiclasscontrol.gif)
 
 ##### PsiTypeControl
+
 This is almost the same as PsiClassControl, but allows entering not only class names, but also Java primitive types and even arrays.
 It is bound to `PsiTypePanel`.
 
 ### Collection Control
+
 There is a special table component where each row represents one collection child.
 It's called `DomCollectionControl<T>`, where `T` is your collection element type.
 To function properly, it needs `DomElement` (parent of the collection), some description of the collection (sub-tag name or a `DomCollectionChildDescription` from DOM reflection), and a `ColumnInfo` array.
@@ -739,7 +772,9 @@ If you want to change this behavior, override `DomTableView.allowMultipleRowsSel
 ![CollectionControl](collectioncontrol.gif)
 
 ### UI Organization
-The easiest way to create a DOM-based UI form is to extend the [`BasicDomElementComponent`](upsource:///xml/dom-openapi/src/com/intellij/util/xml/ui/BasicDomElementComponent.java) class.
+
+The easiest way to create a DOM-based UI form is to extend the
+[`BasicDomElementComponent`](upsource:///xml/dom-openapi/src/com/intellij/util/xml/ui/BasicDomElementComponent.java) class.
 This will require you to pass some DOM element to the constructor.
 Then you bind an IntelliJ IDEA GUI Designer form to your subclass and design a beautiful form there.
 You will surely want to bind some controls to DOM UI, in which case you should of course ensure that they have right types.
@@ -753,8 +788,8 @@ Imagine that you have such DOM interface:
 
 ```java
 public interface Converter extends DomElement {
-    GenericDomValue<String> getConverterId();
-    GenericDomValue<PsiClass> getConverterClass();
+  GenericDomValue<String> getConverterId();
+  GenericDomValue<PsiClass> getConverterClass();
 }
 ```
 
@@ -762,31 +797,39 @@ In this case, the UI form class can look like this:
 
 ```java
 public class ConverterComponent extends BasicDomElementComponent<Converter> {
-    private JPanel myRootPane;
-    private TextPanel myConverterId;
-    private PsiClassPanel myConverterClass;
+  private JPanel myRootPane;
+  private TextPanel myConverterId;
+  private PsiClassPanel myConverterClass;
 
-    public ConverterComponent(final Converter domElement) {
-        super(domElement);
-
-        bindProperties();
-    }
+  public ConverterComponent(Converter domElement) {
+    super(domElement);
+    bindProperties();
+  }
 }
 ```
 
 All the fields here are now bound to controls in a GUI form.
 
 Very often you'll have to create your own file editor.
-Then, to use all the binding and undo functionality, it's suggested to inherit your [`FileEditorProvider`](upsource:///platform/analysis-api/src/com/intellij/openapi/fileEditor/FileEditorProvider.java) from [`PerspectiveFileEditorProvider`](upsource:///xml/dom-openapi/src/com/intellij/util/xml/ui/PerspectiveFileEditorProvider.java), create an instance of [`DomFileEditor`](upsource:///xml/dom-openapi/src/com/intellij/util/xml/ui/DomFileEditor.java) there, and pass a [`BasicDomElementComponent`](upsource:///xml/dom-openapi/src/com/intellij/util/xml/ui/BasicDomElementComponent.java).
-To easily create an editor with a caption at the top, like in our EJB and JSF, you may use the static method `DomFileEditor.createDomFileEditor()`. `DomFileEditor` automatically listens to all changes in the document corresponding to the given DOM element, and therefore refreshes your component on undo.
+Then, to use all the binding and undo functionality, it's suggested to inherit your
+[`FileEditorProvider`](upsource:///platform/analysis-api/src/com/intellij/openapi/fileEditor/FileEditorProvider.java)
+from
+[`PerspectiveFileEditorProvider`](upsource:///xml/dom-openapi/src/com/intellij/util/xml/ui/PerspectiveFileEditorProvider.java), create an instance of
+[`DomFileEditor`](upsource:///xml/dom-openapi/src/com/intellij/util/xml/ui/DomFileEditor.java)
+there, and pass a
+[`BasicDomElementComponent`](upsource:///xml/dom-openapi/src/com/intellij/util/xml/ui/BasicDomElementComponent.java).
+To easily create an editor with a caption at the top, like in our EJB and JSF, you may use the static method `DomFileEditor.createDomFileEditor()`.
+`DomFileEditor` automatically listens to all changes in the document corresponding to the given DOM element, and therefore refreshes your component on undo.
 If you want to listen to changes in additional documents, use the methods `addWatchedDocument()`, `removeWatchedDocument()`, `addWatchedElement()`, `removeWatchedElement()` in `DomFileEditor`.
 
 ## Conclusion
+
 Thank you for your time and attention.
 We hope you've found this article really useful.
 You are welcome to post your questions and comments to our [Open API and Plugin Development Forum](https://intellij-support.jetbrains.com/hc/en-us/community/topics/200366979-IntelliJ-IDEA-Open-API-and-Plugin-Development).
 
 ### Further Material
+
 The following bundled open-source plugins make (heavy) use of DOM:
 
 - [Android](https://github.com/JetBrains/android)

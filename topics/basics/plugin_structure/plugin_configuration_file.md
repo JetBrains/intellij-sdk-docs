@@ -123,7 +123,7 @@ When using Gradle, a number of metadata elements will be provided at build time 
            Note that the <option> element is used only if the component
            implements the JDOMExternalizable interface. Otherwise, the
            use of the <option> element takes no effect.  -->
-      <option name="workspace" value="true" />
+      <option name="workspace" value="true"/>
 
       <!-- If the "loadForDefaultProject" tag is present, the project component is instantiated also for the default project. -->
       <loadForDefaultProject/>

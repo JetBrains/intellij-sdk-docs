@@ -27,7 +27,7 @@ Or, as a more specific example:
 
 ```xml
 public int <warning descr="The compareTo() method does not reference 'foo' which is referenced from equals(); inconsistency may result">compareTo</warning>(Simple other) {
-    return 0;
+  return 0;
 }
 ```
 

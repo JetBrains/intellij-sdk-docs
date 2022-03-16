@@ -52,9 +52,11 @@ This can be done in <path>plugin.xml</path> by adding an `com.intellij.additiona
 
 ```xml
 <extensions defaultExtensionNs="com.intellij">
-..
-  <additionalTextAttributes scheme="Default" file="colorSchemes/MyLangDefault.xml"/>
-..
+  ...
+  <additionalTextAttributes
+      scheme="Default"
+      file="colorSchemes/MyLangDefault.xml"/>
+  ...
 </extensions>
 ```
 

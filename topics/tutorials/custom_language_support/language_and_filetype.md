@@ -17,6 +17,7 @@ Register the `LanguageFileType` with the IntelliJ Platform in the plugin configu
 **Reference**: [](registering_file_type.md)
 
 ## Define the Language
+
 The language implemented in this tutorial is named "Simple" - note the case of the name.
 The `SimpleLanguage` class is defined in the `org.intellij.sdk.language` package of the `simple_language_plugin` code sample:
 
@@ -25,6 +26,7 @@ The `SimpleLanguage` class is defined in the `org.intellij.sdk.language` package
 {src="simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleLanguage.java"}
 
 ## Define an Icon
+
 The [icon](https://github.com/JetBrains/intellij-sdk-code-samples/blob/main/simple_language_plugin/src/main/resources/icons/jar-gray.png) for the Simple Language is defined by the `SimpleIcons` class.
 Please see [](work_with_icons_and_images.md) for details on how to define and use icons.
 
@@ -33,6 +35,7 @@ Please see [](work_with_icons_and_images.md) for details on how to define and us
 {src="simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleIcons.java"}
 
 ## Define a FileType
+
 The Simple Language file type is defined by subclassing [`LanguageFileType`](upsource:///platform/core-api/src/com/intellij/openapi/fileTypes/LanguageFileType.java):
 
 ```java
@@ -50,13 +53,14 @@ Direct registration is possible - no `FileTypeFactory` is required.
 Instead, the file type is registered via the `com.intellij.fileType` extension point in <path>plugin.xml</path> and registered with <path>*.simple</path> extension:
 
 ```xml
-  <extensions defaultExtensionNs="com.intellij">
-    <fileType name="Simple File"
-              implementationClass="org.intellij.sdk.language.SimpleFileType"
-              fieldName="INSTANCE"
-              language="Simple"
-              extensions="simple"/>
-  </extensions>
+<extensions defaultExtensionNs="com.intellij">
+  <fileType
+       name="Simple File"
+       implementationClass="org.intellij.sdk.language.SimpleFileType"
+       fieldName="INSTANCE"
+       language="Simple"
+       extensions="simple"/>
+</extensions>
 ```
 
 </tab>
@@ -64,6 +68,7 @@ Instead, the file type is registered via the `com.intellij.fileType` extension p
 <tab title="Pre-2019.2">
 
 ### Define a FileType Factory
+
 First, define `SimpleFileTypeFactory` as a subclass of [`FileTypeFactory`](upsource:///platform/ide-core/src/com/intellij/openapi/fileTypes/FileTypeFactory.java).
 
 ```java
@@ -71,12 +76,14 @@ First, define `SimpleFileTypeFactory` as a subclass of [`FileTypeFactory`](upsou
 {src="simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleFileTypeFactory.java"}
 
 ### Register the FileType Factory
+
 The `SimpleFileTypeFactory` is registered using the `com.intellij.openapi.fileTypes.FileTypeFactory` extension point in <path>plugin.xml</path>.
 
 ```xml
-  <extensions defaultExtensionNs="com.intellij">
-    <fileTypeFactory implementation="org.intellij.sdk.language.SimpleFileTypeFactory"/>
-  </extensions>
+<extensions defaultExtensionNs="com.intellij">
+  <fileTypeFactory
+      implementation="org.intellij.sdk.language.SimpleFileTypeFactory"/>
+</extensions>
 ```
 
 </tab>

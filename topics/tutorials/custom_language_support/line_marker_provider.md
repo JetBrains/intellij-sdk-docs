@@ -8,6 +8,7 @@ Line markers help annotate code with icons on the gutter.
 These markers can provide navigation targets to related code.
 
 ## Define a Line Marker Provider
+
 A line marker provider annotates usages of Simple Language properties within Java code and provides navigation to the definition of these properties.
 The visual marker is a Simple Language icon in the gutter of the Editor window.
 
@@ -21,6 +22,7 @@ For this example, override the `collectNavigationMarkers()` method to collect us
 Extending from [`GutterIconDescriptor`](upsource:///platform/lang-api/src/com/intellij/codeInsight/daemon/GutterIconDescriptor.java) allows configuring gutter icons to be shown via <menupath>Settings/Preferences | Editor | General | Gutter Icons</menupath>.
 
 ## Best Practices for Implementing Line Marker Providers
+
 This section addresses important details about implementing a marker provider.
 
 The `collectNavigationMarkers()` method should:
@@ -39,7 +41,9 @@ For example, if `MyWrongLineMarkerProvider()` erroneously returns a `PsiMethod` 
 ```java
 public class MyWrongLineMarkerProvider implements LineMarkerProvider {
   public LineMarkerInfo getLineMarkerInfo(@NotNull PsiElement element) {
-    if (element instanceof PsiMethod) return new LineMarkerInfo(element, ...);
+    if (element instanceof PsiMethod) {
+      return new LineMarkerInfo(element, ...);
+    }
     return null;
   }
 }
@@ -61,23 +65,29 @@ To fix this problem for this case, rewrite `MyWrongLineMarkerProvider` to return
 ```java
 public class MyCorrectLineMarkerProvider implements LineMarkerProvider {
   public LineMarkerInfo getLineMarkerInfo(@NotNull PsiElement element) {
-    if (element instanceof PsiIdentifier && element.getParent() instanceof PsiMethod) return new LineMarkerInfo(element, ...);
+    if (element instanceof PsiIdentifier &&
+            element.getParent() instanceof PsiMethod) {
+      return new LineMarkerInfo(element, ...);
+    }
     return null;
   }
 }
 ```
 
 ## Register the Line Marker Provider
+
 The `SimpleLineMarkerProvider` implementation is registered with the IntelliJ Platform in the plugin configuration file using the `com.intellij.codeInsight.lineMarkerProvider` extension point.
 
 ```xml
-  <extensions defaultExtensionNs="com.intellij">
-    <codeInsight.lineMarkerProvider language="JAVA"
-            implementationClass="org.intellij.sdk.language.SimpleLineMarkerProvider"/>
-  </extensions>
+<extensions defaultExtensionNs="com.intellij">
+  <codeInsight.lineMarkerProvider
+      language="JAVA"
+      implementationClass="org.intellij.sdk.language.SimpleLineMarkerProvider"/>
+</extensions>
 ```
 
 ## Run the Project
+
 Run the plugin by using the Gradle [runIde task](gradle_prerequisites.md#running-a-simple-gradle-based-intellij-platform-plugin).
 
 Open the Java [Test file](annotator.md#run-the-project).

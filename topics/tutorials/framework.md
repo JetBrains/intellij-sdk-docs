@@ -6,6 +6,7 @@ The following tutorial shows how to support a custom framework type for a projec
 The examples in this tutorial rely heavily on the [framework_basics](https://github.com/JetBrains/intellij-sdk-code-samples/tree/main/framework_basics) code sample.
 
 ## Creating a New Framework
+
 In oder to make a custom framework available and configurable for a project the [`FrameworkTypeEx`](upsource:///java/idea-ui/src/com/intellij/framework/FrameworkTypeEx.java) class needs to be extended, in this example to make the [DemoFramework](https://github.com/JetBrains/intellij-sdk-code-samples/blob/main/framework_basics/src/main/java/org/intellij/sdk/framework/DemoFramework.java) class.
 
 ```java
@@ -14,22 +15,26 @@ public class DemoFramework extends FrameworkTypeEx {
 ```
 
 ## Registering Framework
+
 The newly created framework class should be registered as an extension point by adding `com.intellij.framework.type` extension in [`plugin.xml`](https://github.com/JetBrains/intellij-sdk-code-samples/blob/main/framework_basics/src/main/resources/META-INF/plugin.xml) configuration file:
 
 ```xml
 <extensions defaultExtensionNs="com.intellij">
-    <framework.type implementation="org.intellij.sdk.framework.DemoFramework"/>
+  <framework.type
+      implementation="org.intellij.sdk.framework.DemoFramework"/>
 </extensions>
 ```
 
 ## Setting up Mandatory Attributes
+
 The framework component should have a unique name passed as a string literal to the constructor.
 It is best if this is the FQN name of the class:
 
 ```java
 public class DemoFramework extends FrameworkTypeEx {
 
-  public static final String FRAMEWORK_ID = "org.intellij.sdk.framework.DemoFramework";
+  public static final String FRAMEWORK_ID =
+      "org.intellij.sdk.framework.DemoFramework";
 
   protected DemoFramework() {
     super(FRAMEWORK_ID);
@@ -56,6 +61,7 @@ public class DemoFramework extends FrameworkTypeEx {
 ```
 
 ## Creating Provider for Enabling Framework Support
+
 To make the framework set up available while executing the steps to create a project, the
 `DemoFramework.createProvider()` method must be implemented to return an object of type [`FrameworkSupportInModuleConfigurable`](upsource:///java/idea-ui/src/com/intellij/framework/addSupport/FrameworkSupportInModuleConfigurable.java), which adds the framework to a module.
 In this example the framework is added to any [`ModuleType`](upsource:///platform/lang-core/src/com/intellij/openapi/module/ModuleType.java) without checking, which is usually not the case.
@@ -73,7 +79,8 @@ public FrameworkSupportInModuleProvider createProvider() {
 
     @NotNull
     @Override
-    public FrameworkSupportInModuleConfigurable createConfigurable(@NotNull FrameworkSupportModel model) {
+    public FrameworkSupportInModuleConfigurable createConfigurable(
+        @NotNull FrameworkSupportModel model) {
       return new FrameworkSupportInModuleConfigurable() {
 
         @Override
@@ -85,7 +92,7 @@ public FrameworkSupportInModuleProvider createProvider() {
         public void addSupport(@NotNull Module module,
                                @NotNull ModifiableRootModel model,
                                @NotNull ModifiableModelsProvider provider) {
-          // This is the place to set up a library, generate a specific file, etc
+          // This is the place to set up a library, generate a specific file,
           // and actually add framework support to a module.
         }
       };

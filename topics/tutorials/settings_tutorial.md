@@ -40,7 +40,7 @@ However, because these are Application Settings, the `com.intellij.applicationSe
 ```xml
 <extensions defaultExtensionNs="com.intellij">
   <applicationService
-    serviceImplementation="org.intellij.sdk.settings.AppSettingsState"/>
+      serviceImplementation="org.intellij.sdk.settings.AppSettingsState"/>
 </extensions>
 ```
 
@@ -105,10 +105,11 @@ An explanation of this declaration can be found in [Declaring Application Settin
 
 ```xml
 <extensions defaultExtensionNs="com.intellij">
-  <applicationConfigurable parentId="tools"
-                           instance="org.intellij.sdk.settings.AppSettingsConfigurable"
-                           id="org.intellij.sdk.settings.AppSettingsConfigurable"
-                           displayName="SDK: Application Settings Example"/>
+  <applicationConfigurable
+      parentId="tools"
+      instance="org.intellij.sdk.settings.AppSettingsConfigurable"
+      id="org.intellij.sdk.settings.AppSettingsConfigurable"
+      displayName="SDK: Application Settings Example"/>
 </extensions>
 ```
 

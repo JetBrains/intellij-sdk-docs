@@ -104,13 +104,27 @@ Here `name` is the unique name of the VCS (this must match the string returned b
 This component is responsible for tracking user changes to the working copy, and reporting these changes to the IntelliJ Platform core.
 An implementation of this class is returned from [`AbstractVcs.getChangeProvider()`](upsource:///platform/vcs-api/src/com/intellij/openapi/vcs/AbstractVcs.java).
 
-The ChangeProvider works in tandem with [`VcsDirtyScopeManager`](upsource:///platform/vcs-api/src/com/intellij/openapi/vcs/changes/VcsDirtyScopeManager.java), which is a component in IntelliJ Platform core. [`VcsDirtyScopeManager`](upsource:///platform/vcs-api/src/com/intellij/openapi/vcs/changes/VcsDirtyScopeManager.java) keeps track of the 'dirty scope' - the set of files for which the VCS file status may be out of date.
-Files are added to the dirty scope either when they are modified on disk, or when their VCS status is invalidated by an explicit call to [`VcsDirtyScopeManager.fileDirty()`](upsource:///platform/vcs-api/src/com/intellij/openapi/vcs/changes/VcsDirtyScopeManager.java) or [`VcsDirtyScopeManager.dirDirtyRecursively()`](upsource:///platform/vcs-api/src/com/intellij/openapi/vcs/changes/VcsDirtyScopeManager.java).
+The ChangeProvider works in tandem with
+[`VcsDirtyScopeManager`](upsource:///platform/vcs-api/src/com/intellij/openapi/vcs/changes/VcsDirtyScopeManager.java)
+, which is a component in IntelliJ Platform core.
+[`VcsDirtyScopeManager`](upsource:///platform/vcs-api/src/com/intellij/openapi/vcs/changes/VcsDirtyScopeManager.java)
+keeps track of the 'dirty scope' - the set of files for which the VCS file status may be out of date.
+Files are added to the dirty scope either when they are modified on disk, or when their VCS status is invalidated by an explicit call to
+[`VcsDirtyScopeManager.fileDirty()`](upsource:///platform/vcs-api/src/com/intellij/openapi/vcs/changes/VcsDirtyScopeManager.java)
+or
+[`VcsDirtyScopeManager.dirDirtyRecursively()`](upsource:///platform/vcs-api/src/com/intellij/openapi/vcs/changes/VcsDirtyScopeManager.java).
 
-After some files have been added to the dirty scope, the dirty scope is passed to [`ChangeProvider.getChanges()`](upsource:///platform/vcs-api/src/com/intellij/openapi/vcs/changes/ChangeProvider.java), along with a [`ChangelistBuilder`](upsource:///platform/vcs-api/src/com/intellij/openapi/vcs/changes/ChangelistBuilder.java) instance, which serves as a sink to which the [`ChangeProvider`](upsource:///platform/vcs-api/src/com/intellij/openapi/vcs/changes/ChangeProvider.java) feeds the data about the changed files.
+After some files have been added to the dirty scope, the dirty scope is passed to
+[`ChangeProvider.getChanges()`](upsource:///platform/vcs-api/src/com/intellij/openapi/vcs/changes/ChangeProvider.java), along with a
+[`ChangelistBuilder`](upsource:///platform/vcs-api/src/com/intellij/openapi/vcs/changes/ChangelistBuilder.java)
+instance, which serves as a sink to which the
+[`ChangeProvider`](upsource:///platform/vcs-api/src/com/intellij/openapi/vcs/changes/ChangeProvider.java)
+feeds the data about the changed files.
 This processing happens asynchronously in a background thread.
 
-The [`ChangeProvider`](upsource:///platform/vcs-api/src/com/intellij/openapi/vcs/changes/ChangeProvider.java) can either iterate all files under the dirty scope using [`VcsDirtyScope.iterate()`](upsource:///platform/vcs-api/src/com/intellij/openapi/vcs/changes/VcsDirtyScope.java), or retrieve information about its contents using the `getDirtyFiles()` and `getDirtyDirectoriesRecursively()` methods.
+The [`ChangeProvider`](upsource:///platform/vcs-api/src/com/intellij/openapi/vcs/changes/ChangeProvider.java) can either iterate all files under the dirty scope using
+[`VcsDirtyScope.iterate()`](upsource:///platform/vcs-api/src/com/intellij/openapi/vcs/changes/VcsDirtyScope.java)
+, or retrieve information about its contents using the `getDirtyFiles()` and `getDirtyDirectoriesRecursively()` methods.
 If it is possible to retrieve the information about the local changes from the VCS in batch, it's strongly preferable to use the second method, as it scales much better for large working copies.
 
 The [`ChangeProvider`](upsource:///platform/vcs-api/src/com/intellij/openapi/vcs/changes/ChangeProvider.java) reports data to ChangelistBuilder using the following methods:

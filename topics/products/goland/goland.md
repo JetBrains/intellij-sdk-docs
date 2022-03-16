@@ -60,10 +60,10 @@ The <path>plugin.xml</path> file must also declare a dependency on `com.intellij
 The dependency declaration is illustrated in the <path>plugin.xml</path> snippet below:
 
 ```xml
-  <!-- Requires the Go plugin -->
-  <depends>org.jetbrains.plugins.go</depends>
-  <!-- Requires the platform module to distinguish it from a legacy plugin -->
-  <depends>com.intellij.modules.platform</depends>
+<!-- Requires the Go plugin -->
+<depends>org.jetbrains.plugins.go</depends>
+<!-- Requires the platform module to distinguish it from a legacy plugin -->
+<depends>com.intellij.modules.platform</depends>
 ```
 
 ## Available GoLand APIs
@@ -76,6 +76,7 @@ Use the [Exploring APIs as a Consumer](plugin_compatibility.md#exploring-apis-as
 Test your plugin with any version of GoLand you intend to support.
 
 ## Open Source Plugins for GoLand
+
 When learning new APIs, it is helpful to have some representative projects for reference:
 * [Go Method Generator](https://github.com/pkondratev/Intellij-go-method-generator)
 * [Go Builder Generator](https://github.com/OddCN/go-builder-generator-idea-plugin)

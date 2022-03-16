@@ -5,10 +5,12 @@
 UI Themes can also provide custom color and font settings, as well as custom images for display in the IDE application window.
 
 ## Adding a Custom Editor Scheme
+
 Users of IntelliJ Platform-based IDEs, such as Intellij IDEA, can set preferences to configure the colors and fonts used in the Editor.
 These custom color and font settings are called _Editor Color Schemes_.
 
 ### Creating a Custom Editor Scheme Using Settings/Preferences
+
 Custom editor color schemes can be specified and exported using the IDE _Settings/Preferences_ dialog.
 Note that editor [Colors and Fonts](https://www.jetbrains.com/help/idea/configuring-colors-and-fonts.html), and [Colors for Version Control File Status](https://www.jetbrains.com/help/idea/file-status-highlights.html) are customized in different sections of _Settings/Preferences_.
 
@@ -21,6 +23,7 @@ Use the following procedure to customize an editor color scheme for a UI Theme:
 * See [Customizing Editor Scroll Bar Colors](#customizing-editor-scroll-bar-colors) to change the colors of editor scroll bars.
 
 ### Incorporating the Editor Color Scheme in the Custom UI Theme
+
 The next step is to add the color scheme to the UI Theme plugin project:
 * Replace the default generated custom editor color scheme XML file (in this example, <path>theme_basics.xml</path>) in the project's <path>resources</path> folder with the exported custom editor color scheme.
   In this case, the action is to _replace_ <path>theme_basics.xml</path> with <path>Lightning.xml</path>.
@@ -42,19 +45,21 @@ The example below adds an editor scheme named "Lightning" to the _Theme Basics_ 
 ```
 
 ### Editor Color Scheme XML Files
+
 When an editor color scheme is exported as a file, the color options appear as `name`-`value` attributes of `option` elements.
 The `name` is the aspect of the editor to be changed, and the `value` is the new color in six-digit RGB or eight-digit RGBA hexadecimal notation.
 For example, the snippet below sets the color of the line numbers displayed in the editor:
 
 ```xml
 <colors>
-  <option name="LINE_NUMBERS_COLOR" value="999999" />
+  <option name="LINE_NUMBERS_COLOR" value="999999"/>
 </colors>
 ```
 
 For additional examples of `name` and `value` attributes, review the editor color scheme XML file for the [High Contrast editor scheme](upsource:///platform/platform-resources/src/themes/highContrastScheme.xml).
 
 ### Customizing Version Control File Status Colors
+
 As [described above](#creating-a-custom-editor-scheme-using-settingspreferences), colors corresponding to the VCS status of files can be customized and exported via the [Settings/Preferences](https://www.jetbrains.com/help/idea/file-status-highlights.html).
 No other procedure is necessary to customize these colors.
 In the exported color scheme file the `name` is the VCS file status, and the `value` is the new color corresponding to that status.
@@ -62,9 +67,9 @@ For example, customized VCS colors for a subset of file statuses will appear in 
 
 ```xml
 <colors>
-  <option name="FILESTATUS_ADDED" value="62cc47" />
-  <option name="FILESTATUS_COPIED" value="62cc47" />
-  <option name="FILESTATUS_DELETED" value="ed864a" />
+  <option name="FILESTATUS_ADDED" value="62cc47"/>
+  <option name="FILESTATUS_COPIED" value="62cc47"/>
+  <option name="FILESTATUS_DELETED" value="ed864a"/>
 </colors>
 
 ```
@@ -72,6 +77,7 @@ For example, customized VCS colors for a subset of file statuses will appear in 
 For additional examples of `FILESTATUS` color `name` attributes, see the editor color scheme XML file for the [High Contrast editor scheme](upsource:///platform/platform-resources/src/themes/highContrastScheme.xml).
 
 ### Customizing Editor Scroll Bar Colors
+
 Editor scroll bar colors should be coordinated with, and switch together with an editor color scheme.
 Please note that Custom UI Theme (<path>*.theme.json</path>) files also contain `ScrollBar.*` name attributes, but these are for scroll bars outside the context of the editor.
 
@@ -83,6 +89,7 @@ Customizing the editor scroll bar colors requires manually changing an editor co
 At this time there isn't code completion functionality for changing custom color editor scheme XML files, so the `name` attributes are described below.
 
 #### Editor Scroll Bar Attribute Name Format
+
 The typical format of a scroll bar `name` attribute is `ScrollBar.usage`, where `usage` describes where the color is to be applied.
 In some cases `usage` itself can be compound such as `ScrollBar.Mac.Transparent.thumbColor`.
 In these compound cases, the last portion of the compound `usage` still describes where the color is to be applied.
@@ -91,12 +98,13 @@ Note that the following example snippet uses an eight-digit hexadecimal color `v
 
 ```xml
 <color>
-<option name="ScrollBar.Mac.trackColor" value="000000"/>
-<option name="ScrollBar.Mac.thumbColor" value="FFFFFFBE"/>
+  <option name="ScrollBar.Mac.trackColor" value="000000"/>
+  <option name="ScrollBar.Mac.thumbColor" value="FFFFFFBE"/>
 </color>
 ```
 
 #### Editor Scroll Bar Attribute Names
+
 A list of scroll bar `name` attributes is in the [High Contrast editor scheme](upsource:///platform/platform-resources/src/themes/highContrastScheme.xml) file.
 These name attributes cannot be accessed from anywhere in the IDE UI at this time, so they must be manually added to an editor color scheme XML file.
 
@@ -128,12 +136,13 @@ The `name` attributes for Windows and Linux scroll bars have the pattern `Scroll
 The `name` attribute pattern for the vertical scroll bar is `ScrollBar.Mac.*`.
 
 The `name` attribute pattern for the horizontal scroll bar depends on the macOS preferences _Show scroll bars_ setting:
-  * `ScrollBar.Mac.*` when the _Always_ setting is selected.
-  * `ScrollBar.Mac.Transparent.*` when the _When scrolling_ setting is selected.
+* `ScrollBar.Mac.*` when the _Always_ setting is selected.
+* `ScrollBar.Mac.Transparent.*` when the _When scrolling_ setting is selected.
 
 The wildcard portion of these patterns corresponds to the `usage` definitions above.
 
 ## Adding a Custom Background Image
+
 The IDE supports setting an image as a background in the application window.
 Users can do this manually in [Preferences](https://www.jetbrains.com/help/idea/setting-background-image.html).
 

@@ -64,12 +64,14 @@ To provide custom implementation for test/headless environment, specify `testSer
 ```xml
 <extensions defaultExtensionNs="com.intellij">
   <!-- Declare the application-level service -->
-  <applicationService serviceInterface="mypackage.MyApplicationService"
-                      serviceImplementation="mypackage.MyApplicationServiceImpl" />
+  <applicationService
+      serviceInterface="mypackage.MyApplicationService"
+      serviceImplementation="mypackage.MyApplicationServiceImpl"/>
 
   <!-- Declare the project-level service -->
-  <projectService serviceInterface="mypackage.MyProjectService"
-                  serviceImplementation="mypackage.MyProjectServiceImpl" />
+  <projectService
+      serviceInterface="mypackage.MyProjectService"
+      serviceImplementation="mypackage.MyProjectServiceImpl"/>
 </extensions>
 ```
 

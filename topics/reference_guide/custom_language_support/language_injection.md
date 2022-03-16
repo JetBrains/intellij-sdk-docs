@@ -80,7 +80,8 @@ The XML file with the injection configurations is loaded through the `org.intell
 
 ```xml
 <extensions defaultExtensionNs="org.intellij.intelliLang">
-  <languageSupport implementation="org.intellij.plugins.intelliLang.inject.java.JavaLanguageInjectionSupport"/>
+  <languageSupport
+      implementation="org.intellij.plugins.intelliLang.inject.java.JavaLanguageInjectionSupport"/>
   <injectionConfig config="resources/javaInjections.xml"/>
 </extensions>
 ```
@@ -152,9 +153,9 @@ The injections are an optional dependency that only works when IntelliLang is en
 Therefore, you load the configuration optionally in your main <path>plugin.xml</path>:
 
 ````xml
-<depends optional="true" config-file="myLanguageID-injections.xml">
-  org.intellij.intelliLang
-</depends>
+<depends
+    optional="true"
+    config-file="myLanguageID-injections.xml">org.intellij.intelliLang</depends>
 ````
 
 ## LanguageInjectionContributor and LanguageInjectionPerformer
@@ -184,8 +185,9 @@ public final class MyInjector implements LanguageInjectionContributor {
 Register the implementation in your <path>plugin.xml</path>:
 
 ```xml
-<languageInjectionContributor implementationClass="MyInjector"
-                              language="YourLanguage"/>
+<languageInjectionContributor
+    implementationClass="MyInjector"
+    language="YourLanguage"/>
 ```
 
 If you want more control over how the injection should be done then implement the `com.intellij.languageInjectionPerformer` EP which allows for complex language injections, e.g. for concatenation or interpolation of strings.

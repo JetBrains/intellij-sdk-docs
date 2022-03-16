@@ -9,6 +9,7 @@ In this step of the tutorial, the folding builder is used to identify folding re
 Rather than the usual practice of using a folding builder to collapse a class, method, or comments to fewer lines, the folding builder replaces Simple Language keys with their corresponding values.
 
 ## Define a Folding Builder
+
 The `SimpleFoldingBuilder` replaces usages of properties with their values by default.
 Start by subclassing [`FoldingBuilderEx`](upsource:///platform/core-api/src/com/intellij/lang/folding/FoldingBuilderEx.java)
 
@@ -29,16 +30,19 @@ The IntelliJ Platform uses the value to substitute for the key when the code get
 {src="simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleFoldingBuilder.java"}
 
 ## Register the Folding Builder
+
 The `SimpleFoldingBuilder` implementation is registered with the IntelliJ Platform in the plugin configuration file using the `com.intellij.lang.foldingBuilder` extension point.
 
 ```xml
-  <extensions defaultExtensionNs="com.intellij">
-    <lang.foldingBuilder language="JAVA"
-            implementationClass="org.intellij.sdk.language.SimpleFoldingBuilder"/>
-  </extensions>
+<extensions defaultExtensionNs="com.intellij">
+  <lang.foldingBuilder
+      language="JAVA"
+      implementationClass="org.intellij.sdk.language.SimpleFoldingBuilder"/>
+</extensions>
 ```
 
 ## Run the Project
+
 Run the plugin by using the Gradle [runIde task](gradle_prerequisites.md#running-a-simple-gradle-based-intellij-platform-plugin).
 
 Now when a Java file is opened in the editor, it shows the property's value instead of the key.

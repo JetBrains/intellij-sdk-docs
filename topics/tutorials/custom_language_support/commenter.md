@@ -8,6 +8,7 @@ A commenter enables the user to comment-out a line of code at the cursor or sele
 The [`Commenter`](upsource:///platform/core-api/src/com/intellij/lang/Commenter.java) defines support for <menupath>Code | Comment with Line Comment</menupath> and <menupath>Code | Comment with Block Comment</menupath> actions.
 
 ## Define a Commenter
+
 The commenter for Simple Language defines the line comment prefix as `#`.
 
 ```java
@@ -15,15 +16,19 @@ The commenter for Simple Language defines the line comment prefix as `#`.
 {src="simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleCommenter.java"}
 
 ## Register the Commenter
+
 The `SimpleCommenter` implementation is registered in the plugin configuration file using the `com.intellij.lang.commenter` extension point.
 
 ```xml
-  <extensions defaultExtensionNs="com.intellij">
-    <lang.commenter language="Simple" implementationClass="org.intellij.sdk.language.SimpleCommenter"/>
-  </extensions>
+<extensions defaultExtensionNs="com.intellij">
+  <lang.commenter
+      language="Simple"
+      implementationClass="org.intellij.sdk.language.SimpleCommenter"/>
+</extensions>
 ```
 
 ## Run the Project
+
 Run the plugin by using the Gradle [runIde task](gradle_prerequisites.md#running-a-simple-gradle-based-intellij-platform-plugin).
 
 Open the example Simple Language [properties file ](lexer_and_parser_definition.md#run-the-project) in the IDE Development Instance.

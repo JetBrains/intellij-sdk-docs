@@ -33,8 +33,8 @@ Register as follows in <path>plugin.xml</path>:
 ```xml
 <extensions defaultExtensionNs="com.intellij">
   <fileType.fileViewProviderFactory
-          filetype="$file_type$"
-          implementationClass="com.plugin.MyFileViewProviderFactory" />
+      filetype="$file_type$"
+      implementationClass="com.plugin.MyFileViewProviderFactory"/>
 </extensions>
 ```
 

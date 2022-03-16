@@ -51,8 +51,10 @@ and one extension to access the `another.plugin.myExtensionPoint` extension poin
   These extension points have been declared using "interface".
  -->
 <extensions defaultExtensionNs="com.intellij">
-  <appStarter implementation="com.myplugin.MyAppStarter" />
-  <projectTemplatesFactory implementation="com.myplugin.MyProjectTemplatesFactory" />
+  <appStarter
+      implementation="com.example.MyAppStarter"/>
+  <projectTemplatesFactory
+      implementation="com.example.MyProjectTemplatesFactory"/>
 </extensions>
 
 <!--
@@ -61,8 +63,9 @@ and one extension to access the `another.plugin.myExtensionPoint` extension poin
   and exposes custom properties "key" and "implementationClass".
 -->
 <extensions defaultExtensionNs="another.plugin">
-  <myExtensionPoint key="keyValue"
-                    implementationClass="com.myplugin.MyExtensionPointImpl" />
+  <myExtensionPoint
+      key="keyValue"
+      implementationClass="com.example.MyExtensionPointImpl"/>
 </extensions>
 ```
 
@@ -93,7 +96,9 @@ A required parent type can be specified in the extension point declaration via n
 
 ```xml
 <extensionPoint name="myExtension" beanClass="MyExtensionBean">
-  <with attribute="psiElementClass" implements="com.intellij.psi.PsiElement"/>
+  <with
+      attribute="psiElementClass"
+      implements="com.intellij.psi.PsiElement"/>
 </extensionPoint>
 ```
 

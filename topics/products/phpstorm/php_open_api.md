@@ -25,7 +25,8 @@
 Here is a code fragment that makes [PHPUnit field references in setUp support](https://youtrack.jetbrains.com/issue/WI-22143) work
 
 ```xml
-<php.typeProvider4 implementation="com.jetbrains.php.lang.psi.resolve.types.PhpUnitFiledInitializedInSetUpMethodsTP"/>
+<php.typeProvider4
+    implementation="com.jetbrains.php.lang.psi.resolve.types.PhpUnitFiledInitializedInSetUpMethodsTP"/>
 ```
 
 Interface:

@@ -37,28 +37,36 @@ The format of an <path>updatePlugins.xml</path> file is simply a list of sequent
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  The <plugins> element contains the description of the plugins available at this repository. Required.
+The <plugins> element (required) contains the description of the plugins
+available at this repository.
 -->
 <plugins>
   <!--
-    Each <plugin> element describes one plugin in the repository. Required.
-    id - used by JetBrains IDEs to uniquely identify a plugin. Required. Must match <id> in plugin.xml
-    url - path to download the plugin JAR/ZIP file. Required. Must be HTTPS
-    version - version of this plugin. Required. Must match <version> in plugin.xml
+  Each <plugin> element (required) describes one plugin in the repository.
+  Attributes:
+   - "id" (required) - used by JetBrains IDEs to uniquely identify a plugin.
+     Must match <id> in the plugin.xml file.
+   - "url" (required) - URL to download the plugin JAR/ZIP file. Must be HTTPS.
+   - "version" (required) - version of this plugin. Must match <version>
+     in the plugin.xml file.
   -->
-  <plugin id="fully.qualified.id.of.this.plugin"
-          url="https://www.mycompany.com/my_repository/mypluginname.jar"
-          version="major.minor.update">
+  <plugin
+      id="fully.qualified.id.of.this.plugin"
+      url="https://www.mycompany.com/my_repository/mypluginname.jar"
+      version="major.minor.update">
     <!--
-      The <idea-version> element must match the same element in plugin.xml. Required.
+    The <idea-version> element (required) must match the same element
+    in the plugin.xml file.
     -->
-    <idea-version since-build="181.3" until-build="191.*" />
+    <idea-version since-build="181.3" until-build="191.*"/>
   </plugin>
-  <plugin id="id.of.different.plugin"
-          url="https://www.otherserver.com/other_repository/differentplugin.jar"
-          version="major.minor">
-    <idea-version since-build="181.3" until-build="191.*" />
+  <plugin
+      id="id.of.different.plugin"
+      url="https://www.otherserver.com/other_repository/differentplugin.jar"
+      version="major.minor">
+    <idea-version since-build="181.3" until-build="191.*"/>
   </plugin>
+
   <plugin>
     <!-- And so on for other plugins... -->
   </plugin>
@@ -73,7 +81,9 @@ The format of an <path>updatePlugins.xml</path> file is simply a list of sequent
   The requesting IDE's version is passed as `build` parameter and can be used for server-side filtering.
 
 ### Optional updatePlugin.xml Elements
-Can additional elements be added to <path>updatePlugins.xml</path>? Yes, but it's advisable only if needed.
+
+Can additional elements be added to <path>updatePlugins.xml</path>?
+Yes, but it's advisable only if needed.
 The additional elements will have to be synchronized with each plugin's <path>plugin.xml</path> file.
 
 During plugin installation the IDE reads the plugin JAR/ZIP file, and thereafter displays more information about the plugin.

@@ -57,6 +57,7 @@ See also [](extension_point_list.md#intellij-community-plugins) and [](plugin_co
 If the plugin is not bundled with the target IDE, run the (sandbox) [IDE Development Instance](ide_development_instance.md) of your target IDE and install the plugin there.
 
 ## 2. Project Setup
+
 Depending on the chosen development workflow (Gradle or DevKit), one of the two following steps is necessary.
 
 <tabs>
@@ -71,7 +72,7 @@ If the project uses [Gradle](gradle_build_system.md) with a Groovy build script 
 <path>build.gradle</path>
 ```groovy
 intellij {
-    plugins = ['org.another.plugin:1.0']
+  plugins = ['org.another.plugin:1.0']
 }
 ```
 
@@ -80,7 +81,7 @@ When using Kotlin build script, use `plugins.set()` within the `intellij` block,
 <path>build.gradle.kts</path>
 ```kotlin
 intellij {
-    plugins.set(listOf("org.another.plugin:1.0"))
+  plugins.set(listOf("org.another.plugin:1.0"))
 }
 ```
 
@@ -111,6 +112,7 @@ To do that, open the Project Structure dialog, select the SDK used in the projec
 </tabs>
 
 ## 3. Dependency Declaration in plugin.xml
+
 Regardless of whether a plugin project uses [Modules Available in All Products](plugin_compatibility.md#modules-available-in-all-products), or [Modules Specific to Functionality](plugin_compatibility.md#modules-specific-to-functionality), the correct module must be listed as a dependency in <path>plugin.xml</path>.
 If a project depends on another plugin, the dependency must be declared like a [module](plugin_compatibility.md#modules).
 If only general IntelliJ Platform features (APIs) are used, then a default dependency on `com.intellij.modules.platform` must be declared.
@@ -125,14 +127,16 @@ Continuing with the example from [Project Setup](#2-project-setup) above, the de
 ```
 
 ## Optional Plugin Dependencies
+
 A plugin can also specify an optional plugin dependency.
 In this case, the plugin will load even if the plugin it depends on is not installed or enabled, but part of the plugin's functionality will not be available.
 
 Declare additional `optional="true"` and `config-file` attribute pointing to optional plugin descriptor file:
 
 ```xml
-  <depends optional="true"
-           config-file="myPluginId-optionalPluginName.xml">dependency.plugin.id</depends>
+<depends
+    optional="true"
+    config-file="myPluginId-optionalPluginName.xml">dependency.plugin.id</depends>
 ```
 
 > Additional plugin descriptor files must follow the naming pattern <path>myPluginId-$NAME$.xml</path> resulting in unique filenames to prevent problems with classloaders in tests ([Details](https://youtrack.jetbrains.com/issue/IDEA-205964)).
@@ -146,12 +150,14 @@ The main <path>plugin.xml</path> will define an annotator for Java and specify a
 ```xml
 <idea-plugin>
    ...
-   <depends optional="true"
-            config-file="myPluginId-withKotlin.xml">org.jetbrains.kotlin</depends>
+   <depends
+       optional="true"
+       config-file="myPluginId-withKotlin.xml">org.jetbrains.kotlin</depends>
 
    <extensions defaultExtensionNs="com.intellij">
-      <annotator language="JAVA"
-                 implementationClass="com.example.MyJavaAnnotator"/>
+      <annotator
+          language="JAVA"
+          implementationClass="com.example.MyJavaAnnotator"/>
    </extensions>
 </idea-plugin>
 ```
@@ -164,8 +170,9 @@ In that file, define an annotator for Kotlin:
 ```xml
 <idea-plugin>
    <extensions defaultExtensionNs="com.intellij">
-      <annotator language="kotlin"
-                 implementationClass="com.example.MyKotlinAnnotator"/>
+      <annotator
+          language="kotlin"
+          implementationClass="com.example.MyKotlinAnnotator"/>
    </extensions>
 </idea-plugin>
 ```

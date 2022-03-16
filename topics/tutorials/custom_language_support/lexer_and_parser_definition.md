@@ -10,6 +10,7 @@ The easiest way to create a lexer is to use [JFlex](https://jflex.de/).
 **Reference**: [](implementing_lexer.md)
 
 ## Define a Lexer
+
 Define a <path>Simple.flex</path> file with rules for the Simple Language lexer in package `org.intellij.sdk.language`.
 
 ```java
@@ -17,6 +18,7 @@ Define a <path>Simple.flex</path> file with rules for the Simple Language lexer 
 {src="simple_language_plugin/src/main/java/org/intellij/sdk/language/Simple.flex"}
 
 ## Generate a Lexer Class
+
 Now generate a lexer class via <menupath>Run JFlex Generator</menupath> from the context menu on <path>Simple.flex</path> file.
 
 The Grammar-Kit plugin uses the JFlex lexer generation.
@@ -30,6 +32,7 @@ After that, the IDE generates the lexer under the <path>gen</path> directory, fo
 {type="tip"}
 
 ## Define a Lexer Adapter
+
 The JFlex lexer needs to be adapted to the IntelliJ Platform Lexer API.
 This is done by subclassing [`FlexAdapter`](upsource:///platform/core-api/src/com/intellij/lexer/FlexAdapter.java).
 
@@ -38,6 +41,7 @@ This is done by subclassing [`FlexAdapter`](upsource:///platform/core-api/src/co
 {src="simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleLexerAdapter.java"}
 
 ## Define a Root File
+
 The `SimpleFile` implementation is the top-level node of the [tree of `PsiElements`](implementing_parser_and_psi.md) for a Simple Language file.
 
 ```java
@@ -45,6 +49,7 @@ The `SimpleFile` implementation is the top-level node of the [tree of `PsiElemen
 {src="simple_language_plugin/src/main/java/org/intellij/sdk/language/psi/SimpleFile.java"}
 
 ## Define a Parser
+
 The Simple Language parser is defined by subclassing [`ParserDefinition`](upsource:///platform/core-api/src/com/intellij/lang/ParserDefinition.java).
 
 ```java
@@ -52,15 +57,17 @@ The Simple Language parser is defined by subclassing [`ParserDefinition`](upsour
 {src="simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleParserDefinition.java"}
 
 ## Register the Parser Definition
+
 Registering the parser definition in the <path>plugin.xml</path> file makes it available to the IntelliJ Platform.
 Use the `com.intellij.lang.parserDefinition` extension point for registration.
 For example, see <path>simple_language_plugin/src/main/resources/META-INF/plugin.xml</path>.
 
 ```xml
-  <extensions defaultExtensionNs="com.intellij">
-    <lang.parserDefinition language="Simple"
-            implementationClass="org.intellij.sdk.language.SimpleParserDefinition"/>
-  </extensions>
+<extensions defaultExtensionNs="com.intellij">
+  <lang.parserDefinition
+      language="Simple"
+      implementationClass="org.intellij.sdk.language.SimpleParserDefinition"/>
+</extensions>
 ```
 
 ## Run the Project

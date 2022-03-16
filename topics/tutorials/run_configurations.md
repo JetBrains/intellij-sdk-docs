@@ -19,7 +19,8 @@ Add new `com.intellij.configurationType` extension to the [plugin.xml](https://g
 
 ```xml
 <extensions defaultExtensionNs="com.intellij">
-  <configurationType implementation="org.jetbrains.sdk.runConfiguration.DemoRunConfigurationType"/>
+  <configurationType
+      implementation="org.jetbrains.sdk.runConfiguration.DemoRunConfigurationType"/>
 </extensions>
 ```
 

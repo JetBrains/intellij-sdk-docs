@@ -26,10 +26,11 @@ To define an application-level listener, add the following section to your <path
 
 ```xml
 <idea-plugin>
-    <applicationListeners>
-      <listener class="myPlugin.MyListenerClass"
-                topic="BaseListenerInterface"/>
-    </applicationListeners>
+  <applicationListeners>
+    <listener
+        class="myPlugin.MyListenerClass"
+        topic="BaseListenerInterface"/>
+  </applicationListeners>
 </idea-plugin>
 ```
 
@@ -41,11 +42,12 @@ As a specific example, if you want to receive events about all [Virtual File Sys
 To subscribe to this topic from code, you could use something like the following snippet:
 
 ```java
-messageBus.connect().subscribe(VirtualFileManager.VFS_CHANGES, new BulkFileListener() {
-    @Override
-    public void after(@NotNull List<? extends VFileEvent> events) {
-        // handle the events
-    }
+messageBus.connect().subscribe(VirtualFileManager.VFS_CHANGES,
+    new BulkFileListener() {
+        @Override
+        public void after(@NotNull List<? extends VFileEvent> events) {
+          // handle the events
+        }
 });
 ```
 
@@ -54,8 +56,9 @@ Instead, you refer directly to the listener interface class:
 
 ```xml
 <applicationListeners>
-  <listener class="myPlugin.MyVfsListener"
-            topic="com.intellij.openapi.vfs.newvfs.BulkFileListener"/>
+  <listener
+      class="myPlugin.MyVfsListener"
+      topic="com.intellij.openapi.vfs.newvfs.BulkFileListener"/>
 </applicationListeners>
 ```
 
@@ -65,10 +68,10 @@ Then you provide the listener implementation as a top-level class:
 package myPlugin;
 
 public class MyVfsListener implements BulkFileListener {
-    @Override
-    public void after(@NotNull List<? extends VFileEvent> events) {
-        // handle the events
-    }
+  @Override
+  public void after(@NotNull List<? extends VFileEvent> events) {
+    // handle the events
+  }
 }
 ```
 
@@ -79,10 +82,11 @@ They can be used to listen to project-level events, for example, [tool window](t
 
 ```xml
 <idea-plugin>
-    <projectListeners>
-        <listener class="myPlugin.MyToolWindowListener"
-                  topic="com.intellij.openapi.wm.ex.ToolWindowManagerListener" />
-    </projectListeners>
+  <projectListeners>
+    <listener
+        class="myPlugin.MyToolWindowListener"
+        topic="com.intellij.openapi.wm.ex.ToolWindowManagerListener"/>
+  </projectListeners>
 </idea-plugin>
 ```
 
@@ -92,16 +96,16 @@ The class implementing the listener interface can define a one-argument construc
 package myPlugin;
 
 public class MyToolWindowListener implements ToolWindowManagerListener {
-    private final Project project;
+  private final Project project;
 
-    public MyToolwindowListener(Project project) {
-        this.project = project;
-    }
+  public MyToolwindowListener(Project project) {
+    this.project = project;
+  }
 
-    @Override
-    public void stateChanged(@NotNull ToolWindowManager toolWindowManager) {
-        // handle the state change
-    }
+  @Override
+  public void stateChanged(@NotNull ToolWindowManager toolWindowManager) {
+    // handle the state change
+  }
 }
 ```
 

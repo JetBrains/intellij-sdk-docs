@@ -10,6 +10,7 @@ As an example, a function is created to convert a selection to Title Case.
 Refer to the SDK code sample [`live_templates`](https://github.com/JetBrains/intellij-sdk-code-samples/tree/main/live_templates).
 
 ## Implementing a New Function
+
 Under the hood, the predefined functions for Live Templates are called _macros_.
 A new custom function for Live Templates is implemented in `TitleCaseMacro`, which extends [`MacroBase`](upsource:///platform/lang-impl/src/com/intellij/codeInsight/template/macro/MacroBase.java).
 Three `TitleCaseMacro` methods are of particular interest:
@@ -24,6 +25,7 @@ Three `TitleCaseMacro` methods are of particular interest:
 {src="live_templates/src/main/java/org/intellij/sdk/liveTemplates/TitleCaseMacro.java"}
 
 ## Adding a Live Template
+
 Using the procedures previously discussed for [Template Creation](template_support.md#template-creation) and [Export the Live Template](template_support.md#export-the-live-template), add a Live Template to the [Markdown.xml](https://github.com/JetBrains/intellij-sdk-code-samples/tree/main/live_templates/src/main/resources/liveTemplates) file for the plugin.
 The XML representation of an example Live Template using the new `titleCase` function is listed below.
 
@@ -32,28 +34,36 @@ The expression for `TITLE` evaluates to the `titleCase` function provided by the
 The argument to the `titleCase` function is `SELECTION`, which tells the IntelliJ Platform to operate on the current selection.
 
 ```xml
-<template name="mc"
-        value="$TITLE$"
-        description="SDK: Convert to title case"
-        toReformat="true"
-        toShortenFQNames="false">
-  <variable name="TITLE" expression="titleCase(SELECTION)" defaultValue="the quick brown fox" alwaysStopAt="true" />
+<template
+    name="mc"
+    value="$TITLE$"
+    description="SDK: Convert to title case"
+    toReformat="true"
+    toShortenFQNames="false">
+  <variable
+      name="TITLE"
+      expression="titleCase(SELECTION)"
+      defaultValue="the quick brown fox"
+      alwaysStopAt="true"/>
   <context>
-    <option name="MARKDOWN" value="true" />
+    <option name="MARKDOWN" value="true"/>
   </context>
 </template>
 ```
 
 ## Register Extension Point
+
 Using the `com.intellij.liveTemplateMacro` extension point, register the implementation with the IntelliJ Platform.
 
 ```xml
-  <extensions defaultExtensionNs="com.intellij">
-    <liveTemplateMacro implementation="org.intellij.sdk.liveTemplates.TitleCaseMacro"/>
-  </extensions>
+<extensions defaultExtensionNs="com.intellij">
+  <liveTemplateMacro
+      implementation="org.intellij.sdk.liveTemplates.TitleCaseMacro"/>
+</extensions>
 ```
 
 ## Check Plugin
+
 Now verify the plugin is working correctly.
 * Run the plugin in a Development Instance.
 * Create a new file `testing.md` and enter several words in lower case.

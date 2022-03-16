@@ -96,7 +96,7 @@ Then register the instance with `ExternalSystemProjectTracker` to start tracking
 ### Icon for Reload Notification
 
 From 2020.1, the icon for reload notification can be specified per external system.
-Implement [`ExternalSystemIconProvider`](upsource:///platform/external-system-api/src/com/intellij/openapi/externalSystem/ui/ExternalSystemIconProvider.kt) and register via [com.intellij.externalIconProvider](https://jb.gg/ipe?extensions=com.intellij.externalIconProvider) extension point in `plugin.xml`.
+Implement [`ExternalSystemIconProvider`](upsource:///platform/external-system-api/src/com/intellij/openapi/externalSystem/ui/ExternalSystemIconProvider.kt) and register via [com.intellij.externalIconProvider](https://jb.gg/ipe?extensions=com.intellij.externalIconProvider) extension point in <path>plugin.xml</path>.
 Alternatively, set `reloadIcon` field external system implements `ExternalSystemIconProvider` directly.
 
 ## Settings
@@ -109,7 +109,7 @@ So, basically particular external system settings UI looks as below:
 
 It's recommended to extend from [`AbstractExternalProjectSettingsControl`](upsource:///platform/external-system-impl/src/com/intellij/openapi/externalSystem/service/settings/AbstractExternalProjectSettingsControl.java) for implementing project-level settings control as it already handles some of them.
 
-Similar approach is used for providing 'import from external system' UI - implementation is expected to extend [`AbstractImportFromExternalSystemControl`](upsource:///java/idea-ui/src/com/intellij/openapi/externalSystem/service/settings/AbstractImportFromExternalSystemControl.java) and it has not linked external projects list but target external project path control:
+Similar approach is used for providing _Import from External System_ UI - implementation is expected to extend [`AbstractImportFromExternalSystemControl`](upsource:///java/idea-ui/src/com/intellij/openapi/externalSystem/service/settings/AbstractImportFromExternalSystemControl.java) and it has not linked external projects list, but target external project path control:
 
 ![Import from external system](import.png)
 

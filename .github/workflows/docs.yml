@@ -14,31 +14,16 @@ jobs:
     steps:
       - name: Fetch Sources
         uses: actions/checkout@v3
-      - name: Get Plugin Verifier Version
-        id: get-version
-        run: |
-          sudo apt-get install libxml2-utils
-          URL="https://packages.jetbrains.team/maven/p/intellij-plugin-verifier/intellij-plugin-verifier/org/jetbrains/intellij/plugins/verifier-cli/maven-metadata.xml"
-          echo "::set-output name=version::$(curl -Ss $URL -L | xmllint --xpath 'metadata/versioning/latest/text()' -)"
-        shell: bash
-      - name: Setup Cache
-        id: cache
-        uses: actions/cache@v2.1.7
-        with:
-          path: ~/.verifier
-          key: ${{ runner.os }}-verifier-${{ steps.get-version.outputs.version }}
       - name: Setup Java
         uses: actions/setup-java@v2
         with:
           distribution: zulu
           java-version: 11
       - name: Download Plugin Verifier
-        if: steps.cache.outputs.cache-hit != 'true'
-        env:
-          VERSION: ${{ steps.get-version.outputs.version }}
         run: |
-          mkdir -p ~/.verifier/
-          curl -L --output ~/.verifier/verifier-all.jar https://packages.jetbrains.team/maven/p/intellij-plugin-verifier/intellij-plugin-verifier/org/jetbrains/intellij/plugins/verifier-cli/$VERSION/verifier-cli-$VERSION-all.jar
+          curl -s https://api.github.com/repos/JetBrains/intellij-plugin-verifier/releases/latest \
+            | jq -r '.assets[].browser_download_url' \
+            | xargs curl --output ~/.verifier/verifier-all.jar
       - name: Run Plugin Verifier
         run: |
           PR_REPOSITORY=$(jq -re ".pull_request.head.repo.full_name // empty" $GITHUB_EVENT_PATH) || true

@@ -29,5 +29,3 @@ provider before the default one:
 
 For detailed instructions on how to implement a `DocumentationProvider`, please refer to the [Custom Language Support](documentation_provider.md)
 section and the descriptions in the [Custom Language Support Tutorial](documentation.md).
-
-  implementationClass="com.jetbrains.python.documentation.PythonExternalDoc

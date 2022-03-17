@@ -27,5 +27,5 @@ provider before the default one:
   order="before pythonDocumentationProvider"/>
 ```
 
-For detailed instructions on how to implement a `DocumentationProvider`, please refer to the [Custom Language Support](documentation_provider.md)
-section and the descriptions in the [Custom Language Support Tutorial](documentation.md).
+For detailed instructions on how to implement a `DocumentationProvider`, please refer to the [Custom Language Support](documentation.md)
+section and the descriptions in the [Custom Language Support Tutorial](documentation_provider.md).

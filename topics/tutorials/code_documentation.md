@@ -6,7 +6,7 @@
 helps users by showing documentation, e.g., for classes, functions, or methods inside the editor.
 Plugin authors implement
 [`DocumentationProvider`](upsource:///platform/analysis-api/src/com/intellij/lang/documentation/DocumentationProvider.java)
-to show documentation for particular PSI elements.
+to show documentation for particular [PSI elements](psi_elements.md).
 
 Implementations of `DocumentationProvider` can be registered either at the `com.intellij.documentationProvider` or the
 `com.intellij.lang.documentationProvider` extension point (EP).
@@ -18,7 +18,7 @@ the first one that returns a value different from `null` wins.
 
 Although discouraged, the ordering of documentation providers can be influenced by using the `order` attribute when registering the extension.
 For instance, [`python-core-common.xml`](upsource:///python/src/META-INF/python-core-common.xml) uses the following to call the external documentation
-provider before the default one:
+provider before the default one (registered with `id="pythonDocumentationProvider"`):
 
 ```xml
 <lang.documentationProvider

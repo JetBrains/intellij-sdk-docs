@@ -87,8 +87,7 @@ public class EditorIllustrationAction extends AnAction {
     // Set visibility only in the case of
     // existing project editor, and selection
     e.getPresentation().setEnabledAndVisible(project != null
-            && editor != null
-            && editor.getSelectionModel().hasSelection());
+        && editor != null && editor.getSelectionModel().hasSelection());
   }
 }
 ```
@@ -134,7 +133,7 @@ public class EditorIllustrationAction extends AnAction {
     // Get all the required data from data keys
     Editor editor = e.getRequiredData(CommonDataKeys.EDITOR);
     Project project = e.getRequiredData(CommonDataKeys.PROJECT);
-    final Document document = editor.getDocument();
+    Document document = editor.getDocument();
 
     // Work off of the primary caret to get the selection info
     Caret primaryCaret = editor.getCaretModel().getPrimaryCaret();

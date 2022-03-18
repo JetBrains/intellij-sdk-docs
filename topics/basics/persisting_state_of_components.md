@@ -100,14 +100,14 @@ For other types, extend [`com.intellij.util.xmlb.Converter`](upsource:///platfor
 ```java
 class LocalDateTimeConverter extends Converter<LocalDateTime> {
   public LocalDateTime fromString(String value) {
-    final long epochMilli = Long.parseLong(value);
-    final ZoneId zoneId = ZoneId.systemDefault();
+    long epochMilli = Long.parseLong(value);
+    ZoneId zoneId = ZoneId.systemDefault();
     return Instant.ofEpochMilli(epochMilli).atZone(zoneId).toLocalDateTime();
   }
 
   public String toString(LocalDateTime value) {
-    final ZoneId zoneId = ZoneId.systemDefault();
-    final long toEpochMilli = value.atZone(zoneId).toInstant().toEpochMilli();
+    ZoneId zoneId = ZoneId.systemDefault();
+    long toEpochMilli = value.atZone(zoneId).toInstant().toEpochMilli();
     return Long.toString(toEpochMilli);
   }
 }
@@ -199,4 +199,3 @@ Components save their state in the following files:
 * Project-level: project (<path>.ipr</path>) file.
   However, if the workspace option in the <path>plugin.xml</path> file is set to `true`, then the workspace (<path>.iws</path>) file is used instead.
 * Module-level: module (<path>.iml</path>) file.
-

@@ -127,7 +127,7 @@ class MyTypedHandler implements TypedActionHandler {
   public void execute(@NotNull Editor editor,
                       char c,
                       @NotNull DataContext dataContext) {
-    final Document document = editor.getDocument();
+    Document document = editor.getDocument();
     Project project = editor.getProject();
     Runnable runnable = () -> document.insertString(0, "editor_basics\n");
     WriteCommandAction.runWriteCommandAction(project, runnable);

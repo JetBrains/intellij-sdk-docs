@@ -55,11 +55,11 @@ Instead, the file type is registered via the `com.intellij.fileType` extension p
 ```xml
 <extensions defaultExtensionNs="com.intellij">
   <fileType
-       name="Simple File"
-       implementationClass="org.intellij.sdk.language.SimpleFileType"
-       fieldName="INSTANCE"
-       language="Simple"
-       extensions="simple"/>
+      name="Simple File"
+      implementationClass="org.intellij.sdk.language.SimpleFileType"
+      fieldName="INSTANCE"
+      language="Simple"
+      extensions="simple"/>
 </extensions>
 ```
 

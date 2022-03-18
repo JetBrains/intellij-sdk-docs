@@ -51,9 +51,9 @@ After ensuring that `Project` and `Editor` objects are available, the `Editor` o
 ```java
 public class EditorHandlerIllustration extends AnAction {
   @Override
-  public void update(@NotNull final AnActionEvent e) {
-    Project project = e.getProject();
-    Editor editor = e.getData(CommonDataKeys.EDITOR);
+  public void update(@NotNull AnActionEvent event) {
+    Project project = event.getProject();
+    Editor editor = event.getData(CommonDataKeys.EDITOR);
 
     // Make sure at least one caret is available
     boolean menuAllowed = false;
@@ -61,7 +61,7 @@ public class EditorHandlerIllustration extends AnAction {
       // Ensure the list of carets in the editor is not empty
       menuAllowed = !editor.getCaretModel().getAllCarets().isEmpty();
     }
-    e.getPresentation().setEnabledAndVisible(menuAllowed);
+    event.getPresentation().setEnabledAndVisible(menuAllowed);
   }
 }
 ```
@@ -90,13 +90,13 @@ To clone the caret requires only calling the `EditorActionHandler.execute()` met
 ```java
 public class EditorHandlerIllustration extends AnAction {
   @Override
-  public void actionPerformed(@NotNull final AnActionEvent e) {
-    Editor editor = e.getRequiredData(CommonDataKeys.EDITOR);
+  public void actionPerformed(@NotNull AnActionEvent event) {
+    Editor editor = event.getRequiredData(CommonDataKeys.EDITOR);
     EditorActionManager actionManager = EditorActionManager.getInstance();
     EditorActionHandler actionHandler =
         actionManager.getActionHandler(IdeActions.ACTION_EDITOR_CLONE_CARET_BELOW);
     actionHandler.execute(editor,
-        editor.getCaretModel().getPrimaryCaret(), e.getDataContext());
+        editor.getCaretModel().getPrimaryCaret(), event.getDataContext());
   }
 }
 ```

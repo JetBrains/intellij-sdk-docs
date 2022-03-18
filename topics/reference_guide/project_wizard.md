@@ -51,7 +51,8 @@ Functionality which is mandatory to implement consists of:
 
 * Setting up a root model for the new module by overriding
   ```java
-  public abstract void setupRootModel(ModifiableRootModel modifiableRootModel) throws ConfigurationException;
+  public abstract void setupRootModel(
+      ModifiableRootModel modifiableRootModel) throws ConfigurationException;
   ```
 * Getting a module type
   ```java

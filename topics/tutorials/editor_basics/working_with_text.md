@@ -55,10 +55,10 @@ Similarly, to obtain a project reference, we use the `getProject()` method.
 ```java
 public class EditorIllustrationAction extends AnAction {
   @Override
-  public void update(@NotNull final AnActionEvent e) {
+  public void update(@NotNull AnActionEvent event) {
     // Get required data keys
-    Project project = e.getProject();
-    Editor editor = e.getData(CommonDataKeys.EDITOR);
+    Project project = event.getProject();
+    Editor editor = event.getData(CommonDataKeys.EDITOR);
     // ...
   }
 }
@@ -74,19 +74,19 @@ There are other ways to access an `Editor` instance:
 After making sure a project is open, and an instance of the `Editor` is obtained, we need to check if any selection is available.
 The [`SelectionModel`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/editor/SelectionModel.java) interface is accessed from the `Editor` object.
 Determining whether some text is selected is accomplished by calling the `SelectionModel.hasSelection()` method.
-Here's how the `EditorIllustrationAction.update(AnActionEvent e)` method should look:
+Here's how the `EditorIllustrationAction.update(AnActionEvent event)` method should look:
 
 ```java
 public class EditorIllustrationAction extends AnAction {
   @Override
-  public void update(@NotNull AnActionEvent e) {
+  public void update(@NotNull AnActionEvent event) {
     // Get required data keys
-    Project project = e.getProject();
-    Editor editor = e.getData(CommonDataKeys.EDITOR);
+    Project project = event.getProject();
+    Editor editor = event.getData(CommonDataKeys.EDITOR);
 
     // Set visibility only in the case of
     // existing project editor, and selection
-    e.getPresentation().setEnabledAndVisible(project != null
+    event.getPresentation().setEnabledAndVisible(project != null
         && editor != null && editor.getSelectionModel().hasSelection());
   }
 }
@@ -129,10 +129,10 @@ The complete `EditorIllustrationAction.actionPerformed()` method is shown below:
 ```java
 public class EditorIllustrationAction extends AnAction {
   @Override
-  public void actionPerformed(@NotNull final AnActionEvent e) {
+  public void actionPerformed(@NotNull AnActionEvent event) {
     // Get all the required data from data keys
-    Editor editor = e.getRequiredData(CommonDataKeys.EDITOR);
-    Project project = e.getRequiredData(CommonDataKeys.PROJECT);
+    Editor editor = event.getRequiredData(CommonDataKeys.EDITOR);
+    Project project = event.getRequiredData(CommonDataKeys.PROJECT);
     Document document = editor.getDocument();
 
     // Work off of the primary caret to get the selection info

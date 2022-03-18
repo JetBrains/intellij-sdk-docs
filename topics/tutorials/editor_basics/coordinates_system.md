@@ -29,9 +29,9 @@ The `Editor` object provides access to the `CaretModel` object, as shown below:
 ```java
 public class EditorAreaIllustration extends AnAction {
   @Override
-  public void actionPerformed(@NotNull final AnActionEvent e) {
+  public void actionPerformed(@NotNull AnActionEvent event) {
     // Get access to the editor and caret model. update() validated editor's existence.
-    Editor editor = e.getRequiredData(CommonDataKeys.EDITOR);
+    Editor editor = event.getRequiredData(CommonDataKeys.EDITOR);
     CaretModel caretModel = editor.getCaretModel();
   }
 }
@@ -102,9 +102,9 @@ The Logical and Visual Position objects for a caret are obtained from the [`Care
 ```java
 public class EditorAreaIllustration extends AnAction {
   @Override
-  public void actionPerformed(@NotNull final AnActionEvent e) {
+  public void actionPerformed(@NotNull AnActionEvent event) {
     // Get access to the editor and caret model.
-    Editor editor = e.getRequiredData(CommonDataKeys.EDITOR);
+    Editor editor = event.getRequiredData(CommonDataKeys.EDITOR);
     CaretModel caretModel = editor.getCaretModel();
     Caret primaryCaret = caretModel.getPrimaryCaret();
     LogicalPosition logicalPos = primaryCaret.getLogicalPosition();
@@ -199,9 +199,9 @@ To display the values of caret Logical and Visual positions, and Offset, a
 ```java
 public class EditorAreaIllustration extends AnAction {
 
-  public void actionPerformed(@NotNull final AnActionEvent e) {
+  public void actionPerformed(@NotNull AnActionEvent event) {
     // Get access to the editor and caret model.
-    Editor editor = e.getRequiredData(CommonDataKeys.EDITOR);
+    Editor editor = event.getRequiredData(CommonDataKeys.EDITOR);
     CaretModel caretModel = editor.getCaretModel();
 
     // Getting the primary caret ensures we get the correct one of a possible many.

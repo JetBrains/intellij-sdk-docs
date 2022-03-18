@@ -46,7 +46,7 @@ For example, for a plugin with the following <path>plugin.xml</path> contents, t
 </idea-plugin>
 ```
 
-And the following <path>plugin.xml</path> would require to place the file under a path <path>dotnet/Extensions/Jean-Luc Picard.Enterprise/settings/templates.DotSettings</path>:
+And the following <path>plugin.xml</path> would require placing the file under <path>dotnet/Extensions/Jean-Luc Picard.Enterprise/settings/templates.DotSettings</path> path:
 
 ```xml
 <idea-plugin>

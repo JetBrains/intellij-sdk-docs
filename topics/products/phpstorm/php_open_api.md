@@ -22,7 +22,7 @@
 
 ### `PhpTypeProvider`
 
-Here is a code fragment that makes [PHPUnit field references in setUp support](https://youtrack.jetbrains.com/issue/WI-22143) work
+Here is a code fragment that makes [PHPUnit field references in setUp support](https://youtrack.jetbrains.com/issue/WI-22143) work.
 
 ```xml
 <php.typeProvider4
@@ -72,8 +72,8 @@ public interface PhpTypeProvider4 {
 ```
 
 Sample implementation of provider.
-Goal is to provide types for filed references assigned in setUp method if containing class is PHPUnit one.
-Since during 'getType' call it's impossible to access indices, we will encode all needed information and use it in 'complete' method where indices access is allowed.
+The goal is to provide types for filed references assigned in `setUp` method if containing class is PHPUnit one.
+Since during `getType` call it's impossible to access indices, we will encode all needed information and use it in 'complete' method where index access is allowed.
 
 ```java
 import com.intellij.openapi.project.Project;

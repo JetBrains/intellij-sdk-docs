@@ -60,7 +60,7 @@ if (document != null) {
 ```
 
 Looks awful, doesn't it? But there's a better way to do the same thing.
-You just need to extend a special interface --- [`DomElement`](upsource:///xml/dom-openapi/src/com/intellij/util/xml/DomElement.java).
+You just need to extend a special interface - [`DomElement`](upsource:///xml/dom-openapi/src/com/intellij/util/xml/DomElement.java).
 
 For example, let's create several interfaces:
 

@@ -109,14 +109,14 @@ A list of scroll bar `name` attributes is in the [High Contrast editor scheme](u
 These name attributes cannot be accessed from anywhere in the IDE UI at this time, so they must be manually added to an editor color scheme XML file.
 
 The following list explains the `usage` format of the `name` attribute, i.e. where a custom scroll bar color is applied:
-* `*.trackColor` — The scroll bar thumb moves across this area.
+* `*.trackColor` - The scroll bar thumb moves across this area.
   At this time the vertical scrollbar track color and transparency cannot be customized.
-* `*.thumbColor` — The movable rectangle that corresponds to the visible content's size.
-* `*.thumbBorderColor` — The thumb border.
-* `*.hoverTrackColor` — Same `usage` as above but for hover.
+* `*.thumbColor` - The movable rectangle that corresponds to the visible content's size.
+* `*.thumbBorderColor` - The thumb border.
+* `*.hoverTrackColor` - Same `usage` as above but for hover.
   At this time the vertical scrollbar hover track color and transparency cannot be customized.
-* `*.hoverThumbColor` — Same `usage` as above but for hover.
-* `*.hoverThumbBorderColor` — Same `usage` as above but for hover.
+* `*.hoverThumbColor` - Same `usage` as above but for hover.
+* `*.hoverThumbBorderColor` - Same `usage` as above but for hover.
 
 The `name` attribute patterns are enumerated below.
 

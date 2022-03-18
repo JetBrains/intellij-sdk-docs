@@ -43,19 +43,19 @@ So the code would probably look like this:
 
 ```java
 XmlFile file = ...;
-final XmlDocument document = file.getDocument();
+XmlDocument document = file.getDocument();
 if (document != null) {
-    final XmlTag rootTag = document.getRootTag();
-    if (rootTag != null) {
-        final XmlTag foo = rootTag.findFirstSubTag("foo");
-        if (foo != null) {
-            final XmlTag[] bars = foo.findSubTags("bar");
-            if (bars.length > 1) {
-                String s = bars[1].getValue().getTrimmedText();
-                // do something
-            }
-        }
+  XmlTag rootTag = document.getRootTag();
+  if (rootTag != null) {
+    XmlTag foo = rootTag.findFirstSubTag("foo");
+    if (foo != null) {
+      XmlTag[] bars = foo.findSubTags("bar");
+      if (bars.length > 1) {
+        String s = bars[1].getValue().getTrimmedText();
+        // do something
+      }
     }
+  }
 }
 ```
 
@@ -565,9 +565,9 @@ For example, if you have two DOM element classes — `Foo` and `Bar` — your vi
 
 ```java
 class MyVisitor implements DomElementVisitor {
-    void visitDomElement(DomElement element) {}
-    void visitFoo(Foo foo) {}
-    void visitBar(Bar bar) {}
+  void visitDomElement(DomElement element) {}
+  void visitFoo(Foo foo) {}
+  void visitBar(Bar bar) {}
 }
 ```
 
@@ -582,10 +582,10 @@ You can easily write this helper method and annotate it with the `@PropertyAcces
 For example, you can write:
 
 ```java
-GenericDomValue<String> getVeryLongName()
+GenericDomValue<String> getVeryLongName();
 
 @PropertyAccessor("very-long-name")
-GenericDomValue<String> getName()
+GenericDomValue<String> getName();
 ```
 
 In this case, the second method will return just the same as the first one.

@@ -52,8 +52,8 @@ After ensuring that `Project` and `Editor` objects are available, the `Editor` o
 public class EditorHandlerIllustration extends AnAction {
   @Override
   public void update(@NotNull final AnActionEvent e) {
-    final Project project = e.getProject();
-    final Editor editor = e.getData(CommonDataKeys.EDITOR);
+    Project project = e.getProject();
+    Editor editor = e.getData(CommonDataKeys.EDITOR);
 
     // Make sure at least one caret is available
     boolean menuAllowed = false;
@@ -77,9 +77,10 @@ For cloning a caret below the primary caret, the constant is `ACTION_EDITOR_CLON
 Based on that constant, the `EditorActionManager` returns an instance of [`CloneCaretActionHandler`](upsource:///platform/platform-impl/src/com/intellij/openapi/editor/actions/CloneCaretActionHandler.java), a subclass of `EditorActionHandler`.
 
 ```java
-    // Snippet from EditorHandlerIllustration.actionPerformed()
-    final EditorActionManager actionManager = EditorActionManager.getInstance();
-    final EditorActionHandler actionHandler = actionManager.getActionHandler(IdeActions.ACTION_EDITOR_CLONE_CARET_BELOW);
+// Snippet from EditorHandlerIllustration.actionPerformed()
+EditorActionManager actionManager = EditorActionManager.getInstance();
+EditorActionHandler actionHandler =
+    actionManager.getActionHandler(IdeActions.ACTION_EDITOR_CLONE_CARET_BELOW);
 ```
 
 ### Using an EditorActionHandler to Clone the Caret
@@ -90,10 +91,12 @@ To clone the caret requires only calling the `EditorActionHandler.execute()` met
 public class EditorHandlerIllustration extends AnAction {
   @Override
   public void actionPerformed(@NotNull final AnActionEvent e) {
-    final Editor editor = e.getRequiredData(CommonDataKeys.EDITOR);
-    final EditorActionManager actionManager = EditorActionManager.getInstance();
-    final EditorActionHandler actionHandler = actionManager.getActionHandler(IdeActions.ACTION_EDITOR_CLONE_CARET_BELOW);
-    actionHandler.execute(editor, editor.getCaretModel().getPrimaryCaret(), e.getDataContext());
+    Editor editor = e.getRequiredData(CommonDataKeys.EDITOR);
+    EditorActionManager actionManager = EditorActionManager.getInstance();
+    EditorActionHandler actionHandler =
+        actionManager.getActionHandler(IdeActions.ACTION_EDITOR_CLONE_CARET_BELOW);
+    actionHandler.execute(editor,
+        editor.getCaretModel().getPrimaryCaret(), e.getDataContext());
   }
 }
 ```
@@ -125,7 +128,7 @@ class MyTypedHandler implements TypedActionHandler {
                       char c,
                       @NotNull DataContext dataContext) {
     final Document document = editor.getDocument();
-    final Project project = editor.getProject();
+    Project project = editor.getProject();
     Runnable runnable = () -> document.insertString(0, "editor_basics\n");
     WriteCommandAction.runWriteCommandAction(project, runnable);
   }
@@ -142,11 +145,11 @@ The method `TypedAction.setupHandler()` is used to register the custom `MyTypedH
 
 ```java
 public class EditorHandlerIllustration extends AnAction {
-    static {
-        final EditorActionManager actionManager = EditorActionManager.getInstance();
-        final TypedAction typedAction = actionManager.getTypedAction();
-        typedAction.setupHandler(new MyTypedHandler());
-    }
+  static {
+    EditorActionManager actionManager = EditorActionManager.getInstance();
+    TypedAction typedAction = actionManager.getTypedAction();
+    typedAction.setupHandler(new MyTypedHandler());
+  }
 }
 ```
 

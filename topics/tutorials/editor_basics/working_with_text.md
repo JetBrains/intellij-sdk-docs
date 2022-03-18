@@ -54,12 +54,13 @@ Similarly, to obtain a project reference, we use the `getProject()` method.
 
 ```java
 public class EditorIllustrationAction extends AnAction {
-    @Override
-    public void update(@NotNull final AnActionEvent e) {
-      // Get required data keys
-      final Project project = e.getProject();
-      final Editor editor = e.getData(CommonDataKeys.EDITOR);
-    }
+  @Override
+  public void update(@NotNull final AnActionEvent e) {
+    // Get required data keys
+    Project project = e.getProject();
+    Editor editor = e.getData(CommonDataKeys.EDITOR);
+    // ...
+  }
 }
 ```
 
@@ -78,10 +79,10 @@ Here's how the `EditorIllustrationAction.update(AnActionEvent e)` method should 
 ```java
 public class EditorIllustrationAction extends AnAction {
   @Override
-  public void update(@NotNull final AnActionEvent e) {
+  public void update(@NotNull AnActionEvent e) {
     // Get required data keys
-    final Project project = e.getProject();
-    final Editor editor = e.getData(CommonDataKeys.EDITOR);
+    Project project = e.getProject();
+    Editor editor = e.getData(CommonDataKeys.EDITOR);
 
     // Set visibility only in the case of
     // existing project editor, and selection
@@ -131,8 +132,8 @@ public class EditorIllustrationAction extends AnAction {
   @Override
   public void actionPerformed(@NotNull final AnActionEvent e) {
     // Get all the required data from data keys
-    final Editor editor = e.getRequiredData(CommonDataKeys.EDITOR);
-    final Project project = e.getRequiredData(CommonDataKeys.PROJECT);
+    Editor editor = e.getRequiredData(CommonDataKeys.EDITOR);
+    Project project = e.getRequiredData(CommonDataKeys.PROJECT);
     final Document document = editor.getDocument();
 
     // Work off of the primary caret to get the selection info

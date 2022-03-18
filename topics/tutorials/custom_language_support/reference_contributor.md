@@ -78,7 +78,7 @@ import org.intellij.sdk.language.SimpleFileType;
 public class SimpleElementFactory {
 
   public static SimpleProperty createProperty(Project project, String name) {
-    final SimpleFile file = createFile(project, name);
+    SimpleFile file = createFile(project, name);
     return (SimpleProperty) file.getFirstChild();
   }
 

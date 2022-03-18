@@ -34,7 +34,7 @@ Register as follows in <path>plugin.xml</path>:
 <extensions defaultExtensionNs="com.intellij">
   <fileType.fileViewProviderFactory
       filetype="$file_type$"
-      implementationClass="com.plugin.MyFileViewProviderFactory"/>
+      implementationClass="com.example.MyFileViewProviderFactory"/>
 </extensions>
 ```
 

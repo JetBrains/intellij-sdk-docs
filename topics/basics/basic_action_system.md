@@ -286,7 +286,7 @@ This, and additional information can also be found by using the [Code Completion
   -->
   <action
       id="VssIntegration.GarbageCollection"
-      class="com.foo.impl.CollectGarbage"
+      class="com.example.impl.CollectGarbage"
       text="Garbage Collector: Collect _Garbage"
       description="Run garbage collector"
       icon="icons/garbage.png">
@@ -420,7 +420,7 @@ This, and additional information can also be found by using the [Code Completion
      in the group isn't visible unless the action is enabled.
   -->
   <group
-      class="com.foo.impl.MyActionGroup"
+      class="com.example.impl.MyActionGroup"
       id="TestActionGroup"
       text="Test Group"
       description="Group with test actions"
@@ -430,7 +430,7 @@ This, and additional information can also be found by using the [Code Completion
 
     <action
         id="VssIntegration.TestAction"
-        class="com.foo.impl.TestAction"
+        class="com.example.impl.TestAction"
         text="My Test Action"
         description="My test action"/>
 

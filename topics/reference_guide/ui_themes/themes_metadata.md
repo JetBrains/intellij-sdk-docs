@@ -25,7 +25,7 @@ The following minimal sample demonstrates all details required when exposing UI 
       "key": "MyComponent.border",
       "description": "The border for my component. Not used anymore.",
       "deprecated": true,
-      "source": "com.myplugin.MyComponent"
+      "source": "com.example.MyComponent"
     },
     {
       [more keys...]

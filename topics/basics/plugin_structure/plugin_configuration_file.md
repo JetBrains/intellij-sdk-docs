@@ -104,13 +104,13 @@ It is displayed on the plugin page in the Marketplace.
 
   <!--
   Optional dependency on another plugin. If the plugin with the
-  "com.MySecondPlugin" ID is installed, the contents of "mysecondplugin.xml"
-  (the format of this file conforms to the format of plugin.xml) will be
-  loaded.
+  "com.example.my-second-plugin" ID is installed, the contents
+  of "mysecondplugin.xml" (the format of this file conforms to
+  the format of plugin.xml) will be loaded.
   -->
   <depends
       optional="true"
-      config-file="mysecondplugin.xml">com.MySecondPlugin</depends>
+      config-file="mysecondplugin.xml">com.example.my-second-plugin</depends>
 
   <!--
   Resource bundle (/messages/MyPluginBundle.properties) to be used with

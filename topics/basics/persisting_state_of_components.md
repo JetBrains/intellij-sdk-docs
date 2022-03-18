@@ -185,7 +185,7 @@ Roaming is disabled for `PropertiesComponent`, so use it only for temporary, non
 
 Use the `PropertiesComponent.getInstance()` method for storing application-level values, and the `PropertiesComponent.getInstance(Project)` method for storing project-level values.
 
-Since all plugins share the same namespace, it is highly recommended prefixing key names (e.g., using plugin ID `com.myplugin.myCustomSetting`).
+Since all plugins share the same namespace, it is highly recommended prefixing key names (e.g., using plugin ID `com.example.myCustomSetting`).
 
 ## Legacy API (JDOMExternalizable)
 

@@ -106,8 +106,8 @@ is keeping the class loader in memory.
   com.intellij.openapi.actionSystem.impl.ActionToolbarImpl.myVisibleActions
   java.util.ArrayList.elementData
   java.lang.Object[]
-  com.test.ActionExample.<class>
-  com.test.ActionExample.<loader>
+  com.example.ActionExample.<class>
+  com.example.ActionExample.<loader>
 * com.intellij.ide.plugins.cl.PluginClassLoader
 ```
 

@@ -23,7 +23,7 @@ jobs:
         run: |
           curl -s https://api.github.com/repos/JetBrains/intellij-plugin-verifier/releases/latest \
             | jq -r '.assets[].browser_download_url' \
-            | xargs curl --output ~/verifier-all.jar
+            | xargs curl -L --output ~/verifier-all.jar
       - name: Run Plugin Verifier
         run: |
           PR_REPOSITORY=$(jq -re ".pull_request.head.repo.full_name // empty" $GITHUB_EVENT_PATH) || true

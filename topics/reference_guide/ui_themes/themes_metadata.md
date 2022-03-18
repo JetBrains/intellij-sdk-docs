@@ -61,8 +61,9 @@ The following minimal sample demonstrates all details required when exposing UI 
 Color keys can be used via `JBColor.namedColor()` providing defaults for Light and Dark theme:
 
 ```java
-  private static final Color SECTION_HEADER_FOREGROUND =
-    JBColor.namedColor("Plugins.SectionHeader.foreground", new JBColor(0x787878, 0x999999));
+private static final Color SECTION_HEADER_FOREGROUND = JBColor.namedColor(
+    "Plugins.SectionHeader.foreground",
+    new JBColor(0x787878, 0x999999));
 ```
 
 Other keys can be obtained via `javax.swing.UIManager#getXXX()` methods.
@@ -118,17 +119,17 @@ Notable examples of common parts:
 
 #### SubObject
 Use a subobject when creating keys for one of the following:
-- An implementation variation. Usually has a similar set of UI property keys as the parent object. Examples:
-  - Default button: `Button.Default.background`
-  - Tool window notification: `Notification.ToolWindow.errorBackground`
-- An internal smaller component of a complex component with its own UI and behavior. Examples:
-  - Tool window tab: `ToolWindow.HeaderTab.inactiveBackground`
-  - The hint text at the bottom of a popup: `Popup.Advertiser.background`
+* An implementation variation. Usually has a similar set of UI property keys as the parent object. Examples:
+  * Default button: `Button.Default.background`
+  * Tool window notification: `Notification.ToolWindow.errorBackground`
+* An internal smaller component of a complex component with its own UI and behavior. Examples:
+  * Tool window tab: `ToolWindow.HeaderTab.inactiveBackground`
+  * The hint text at the bottom of a popup: `Popup.Advertiser.background`
 
 #### Gradient Color
 If a component has a gradient color, add the words "start" and "end" for the beginning and ending of a gradient. Examples:
-- `Button.startBorderColor` / `Button.endBorderColor`
-- `SearchMatch.startBackground` / `SearchMatch.endBackground`
+* `Button.startBorderColor` / `Button.endBorderColor`
+* `SearchMatch.startBackground` / `SearchMatch.endBackground`
 
 #### Capitalization
 Capitalize Object and SubObject. Use lowerCamelCase for property.
@@ -149,9 +150,9 @@ Such keys are inherited from Java Swing and cannot be renamed for compatibility 
 Do not use naming patterns from the legacy keys.
 
 Examples of Swing keys:
-- `activeCaption`  Correct: `WindowsDialogHeader.background`
-- `Button.disabledText` Correct: `Button.disabledForeground`
-- `TableHeader.background` Correct: `Table.Header.background`
+* `activeCaption`  Correct: `WindowsDialogHeader.background`
+* `Button.disabledText` Correct: `Button.disabledForeground`
+* `TableHeader.background` Correct: `Table.Header.background`
 
 ## IntelliJ Platform Metadata
 > This section is relevant for IntelliJ Platform developers only.

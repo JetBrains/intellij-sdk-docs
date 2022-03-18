@@ -60,8 +60,10 @@ package icons
 object DemoPluginIcons {
   @JvmField
   val DemoAction = IconLoader.getIcon("/icons/demoAction.png", javaClass)
-
-  // ...
+  @JvmField
+  val StructureToolWindow = IconLoader.getIcon("/icons/toolWindowStructure.png", javaClass)
+  @JvmField
+  val FileType = IconLoader.getIcon("/icons/myLangFileType.png", javaClass)
 }
 ```
 

@@ -148,5 +148,5 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 `com.intellij.database.datagrid.DataConsumer.addRows(DataRequest.Context, List<DataConsumer.Row>)` method parameter type changed from `List<DataConsumer.Row>` to `List<? extends GridRow>`
 : The signature of the method was changed in the interface `com.intellij.database.datagrid.DataConsumer` that is now a part of new API for async loading of table data. Change the parameter type of the overridden method and recompile plugin to maintain bytecode compatibility.
 
-`com.intellij.database.datagrid.DataConsumer.foooo(DataRequest.Context, List<DataConsumer.Row>)` method parameter type changed from `List<DataConsumer.Row>` to `List<? extends GridRow>`
+`com.intellij.database.datagrid.DataConsumer.foooo2(DataRequest.Context, List<DataConsumer.Row>)` method parameter type changed from `List<DataConsumer.Row>` to `List<? extends GridRow>`
 : The signature of the method was changed in the interface `com.intellij.database.datagrid.DataConsumer` that is now a part of new API for async loading of table data. Change the parameter type of the overridden method and recompile plugin to maintain bytecode compatibility.

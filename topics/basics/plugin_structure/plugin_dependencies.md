@@ -72,7 +72,7 @@ If the project uses [Gradle](gradle_build_system.md) with a Groovy build script 
 <path>build.gradle</path>
 ```groovy
 intellij {
-  plugins = ['org.another.plugin:1.0']
+  plugins = ['com.example.another-plugin:1.0']
 }
 ```
 
@@ -81,7 +81,7 @@ When using Kotlin build script, use `plugins.set()` within the `intellij` block,
 <path>build.gradle.kts</path>
 ```kotlin
 intellij {
-  plugins.set(listOf("org.another.plugin:1.0"))
+  plugins.set(listOf("com.example.another-plugin:1.0"))
 }
 ```
 
@@ -123,7 +123,7 @@ In the <path>plugin.xml</path>, add a `<depends>` tag with the dependency plugin
 Continuing with the example from [Project Setup](#2-project-setup) above, the dependency declaration in <path>plugin.xml</path> would be:
 
 ```xml
-<depends>org.another.plugin</depends>
+<depends>com.example.another-plugin</depends>
 ```
 
 ## Optional Plugin Dependencies

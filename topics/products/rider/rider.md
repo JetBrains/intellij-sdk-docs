@@ -37,11 +37,11 @@ For the ReSharper part to pick these settings, the settings files should be avai
 - if the IntelliJ plugin id (the `<id>` element of the <path>plugin.xml</path>) includes a dot, then `backend-plugin-id` is the same as the IntelliJ plugin id;
 - otherwise, the `backend-plugin-id` is a concatenation of the IntelliJ plugin vendor name (the `<vendor>` element of the <path>plugin.xml</path>) and the IntelliJ plugin id.
 
-For example, for a plugin with the following <path>plugin.xml</path> contents, the file <path>dotnet/Extensions/org.awesomeplugin/settings/templates.DotSettings</path> would be picked up:
+For example, for a plugin with the following <path>plugin.xml</path> contents, the file <path>dotnet/Extensions/com.example.awesomeplugin/settings/templates.DotSettings</path> would be picked up:
 
 ```xml
 <idea-plugin>
-  <id>org.awesomeplugin</id>
+  <id>com.example.awesomeplugin</id>
   <!-- ... -->
 </idea-plugin>
 ```

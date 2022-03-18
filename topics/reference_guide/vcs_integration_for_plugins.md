@@ -75,7 +75,7 @@ There are two main kinds of changelists:
   For VCSes which use per-file commit (like CVS), the plugin can use heuristics to group a sequence of individual file commits into a
   [`CommittedChangeList`](upsource:///platform/vcs-api/src/com/intellij/openapi/vcs/versionBrowser/CommittedChangeList.java)
 
-> The *Unversioned Files*, *Locally Deleted Files*, etc., nodes in the *Changes* view are not actually change lists, and files under those nodes are not represented by `ChangeList` objects.
+> The <control>Unversioned Files</control>, <control>Locally Deleted Files</control>, etc., nodes in the <control>Changes</control> view are not actually change lists, and files under those nodes are not represented by `ChangeList` objects.
 >
 {type="note"}
 

@@ -109,6 +109,12 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 `com.intellij.diagnostic.DialogAppender.addFilter(Filter)` method removed
 : `DialogAppender` now implements `java.util.logging.Handler`, use `setFilter` method if you need to apply a filter.
 
+`com.intellij.psi.impl.cache.impl.BaseFilterLexerUtil.ScanContent` class removed
+: Todo index is removed from the indexing procedure, use specific `calcIdEntries` or `calcTodoEntries` method instead.
+
+`com.intellij.psi.impl.cache.impl.BaseFilterLexerUtil.scanContent(FileContent, IdAndToDoScannerBasedOnFilterLexer)` method removed
+: Todo index is removed from the indexing procedure, use specific `calcIdEntries` or `calcTodoEntries` method instead.
+
 ### Collaboration Tools 2022.1
 
 `com.intellij.collaboration.auth.ui.AccountsPanelFactory.accountsPanel(Row, AccountManager, PersistentDefaultAccountHolder, AccountsListModel, AccountsDetailsProvider, Disposable, Icon)` method removed

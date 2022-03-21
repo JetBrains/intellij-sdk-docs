@@ -53,7 +53,7 @@ These files don't have extensions, so you need to map corresponding patterns to 
 
 Sources of a plugin for External Builder should be put in a separate module.
 By convention, such a module has a name '...-jps-plugin', and its sources are placed under the <path>jps-plugin</path> directory in the main plugin directory.
-Use `com.intellij.compileServer.plugin` extension to add the plugin to the classpath of the external build process, the plugin JAR should be named <path>$JPS_module_name$.jar</path>. <menupath>Build | Prepare Plugin Module for Deployment</menupath> action will automatically pack the 'jps-plugin' part to a separate JAR accordingly.
+Use `com.intellij.compileServer.plugin` extension point to add the plugin to the classpath of the external build process, the plugin JAR should be named <path>$JPS_module_name$.jar</path>. <menupath>Build | Prepare Plugin Module for Deployment</menupath> action will automatically pack the 'jps-plugin' part to a separate JAR accordingly.
 
 See [IntelliJ Platform Explorer](https://jb.gg/ipe?extensions=com.intellij.compileServer.plugin) for samples.
 

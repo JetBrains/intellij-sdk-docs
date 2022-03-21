@@ -346,9 +346,6 @@
         <toc-element toc-title="Build Your Own IDE"/>
         <toc-element toc-title="Licensing"/>
     </toc-element>
-    <toc-element toc-title="Part X — Plugin Repository [moved]"
-                 id="plugin_repository_obsolete.md"
-                 accepts-web-file-names="api_reference.html,feature_extractor.html,plugin_details.html,custom_channels.html,plugins_list.html,maven_interface.html,plugin_upload.html,plugin_developers.html"/>
     <toc-element toc-title="Appendix I — Resources">
         <toc-element id="glossary.md"/>
         <toc-element id="explore_api.md" toc-title="Explore the API"/>
@@ -357,6 +354,8 @@
         <toc-element id="learning_resources.md"/>
         <toc-element id="marketing.md"/>
         <toc-element id="consulting.md"/>
+        <toc-element id="plugin_repository_obsolete.md"
+                     accepts-web-file-names="api_reference.html,feature_extractor.html,plugin_details.html,custom_channels.html,plugins_list.html,maven_interface.html,plugin_upload.html,plugin_developers.html"/>
     </toc-element>
     <toc-element toc-title="Appendix II — API Changes">
         <toc-element id="api_changes_list.md" toc-title="Incompatible API Changes">

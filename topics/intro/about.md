@@ -65,10 +65,6 @@ This section describes product-specific features, such as specific project model
 
 Documents how to use the IntelliJ Platform to create a new, custom IDE, rather than plugins to an existing product, e.g., WebStorm, or Android Studio.
 
-#### Part X — Plugin Repository
-
-This part has been moved to [JetBrains Marketplace documentation](https://plugins.jetbrains.com/docs/marketplace/about-marketplace.html).
-
 #### Appendix I — Resources
 
 Links to [useful resources](useful_links.md), [Glossary](glossary.md), [](extension_point_list.md), and tips on how to [Explore the IntelliJ Platform API](explore_api.md).

@@ -156,7 +156,7 @@ Plugin Components migration
 ### October-19
 
 Part X — Plugin Repository moved
-: All contents have been moved to [JetBrains Marketplace Documentation](https://plugins.jetbrains.com/docs/marketplace/about-marketplace.html).
+: All contents have been moved to [JetBrains Marketplace Documentation](https://plugins.jetbrains.com/docs/marketplace/).
 
 ### July-19
 

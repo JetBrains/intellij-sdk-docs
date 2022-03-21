@@ -77,7 +77,7 @@ First, define `SimpleFileTypeFactory` as a subclass of [`FileTypeFactory`](upsou
 
 ### Register the FileType Factory
 
-The `SimpleFileTypeFactory` is registered using the `com.intellij.openapi.fileTypes.FileTypeFactory` extension point in <path>plugin.xml</path>.
+The `SimpleFileTypeFactory` is registered using the `com.intellij.fileTypeFactory` extension point in <path>plugin.xml</path>.
 
 ```xml
 <extensions defaultExtensionNs="com.intellij">

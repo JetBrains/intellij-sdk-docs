@@ -29,7 +29,7 @@ This implementation needs to be registered as `com.intellij.lang.documentationPr
 
 The main work is done in `generateDoc()`, which has two PSI element arguments:
 the target element for which the documentation is requested and the original element under the cursor.
-If  IntelliJ Platform's choice of target element isn't suitable for your language, you can override `getCustomDocumentationElement()`
+If IntelliJ Platform's choice of the target element isn't suitable for your language, you can override `getCustomDocumentationElement()`
 and provide the correct element.
 
 How the documentation for the target element is created is up to the custom language developer.

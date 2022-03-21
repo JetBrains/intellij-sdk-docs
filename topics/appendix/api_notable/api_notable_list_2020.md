@@ -76,7 +76,7 @@ FileType mapping via hashbang (`#!`)
 : Specify `hashBangs` attribute in `com.intellij.fileType` extension point. [Issue](https://youtrack.jetbrains.com/issue/IDEA-175757)
 
 Add information to About dialog
-: Implement `com.intellij.ide.AboutPopupDescriptionProvider` and register in `com.intellij.aboutInfoProvider` extension point.
+: Implement `com.intellij.ide.AboutPopupDescriptionProvider` and register in `com.intellij.aboutPopupDescriptionProvider` extension point.
 
 Previewing Intention/Quick Fix
 : To support preview in intention popup, suitable `FileModifier` must be provided (default implementation `FileModifier.getFileModifierForPreview()` works for most cases).

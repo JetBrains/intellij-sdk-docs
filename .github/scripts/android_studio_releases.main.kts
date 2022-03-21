@@ -57,19 +57,17 @@ frameUrl.fetch { content ->
   Jsoup.parse(content, "").select("section.expandable").run {
     mapIndexed { index, item ->
       val title = item.select("p").firstOrNull()?.text() ?: throw IllegalStateException("No title found")
-      val (name, version, channelRaw, date) = """^([\w ]+ \(?([\d.]+)\)? ?(?:(\w+) \d+)?) (\w+ \d+, \d+)$""".toRegex().find(title)?.groupValues?.drop(1)
+      val (name, channelRaw, date) = """^([\w ]+ \(?[\d.]+\)? ?(?:(\w+) \d+)?) (\w+ \d+, \d+)$""".toRegex().find(title)?.groupValues?.drop(1)
               ?: emptyList()
 
       println("# $name")
       println("  ${index + 1}/$size")
 
-      val build = nameToBuildMapping[name].takeUnless(String?::isNullOrBlank) ?: run {
-        item.select(".downloads a[href$=.zip]").firstOrNull()?.attr("href")?.resolveBuild()
-      } ?: throw IllegalStateException("No platform build found for $name")
-      val platformBuild = build.split('-', '.').drop(1).map { it.take(4).toInt() }.let {
-        val (major, minor, patch) = it + 0
-        SemVer(major, minor, patch)
-      }
+      val href = item.select(".downloads a[href$=.zip]").firstOrNull()?.attr("href")
+      val version = href?.split('/')?.let { it[it.indexOf("ide-zips") + 1] }
+              ?: throw IllegalStateException("No version found for $name")
+      val build = nameToBuildMapping[name].takeUnless(String?::isNullOrBlank) ?: run { href.resolveBuild() }
+      val platformBuild = build.split('-').last().toLooseVersion()
 
       val platformVersion = platformBuildToVersionMapping[platformBuild] ?: run {
         platformBuildToVersionMapping.entries.findLast { it.key < platformBuild }?.value
@@ -84,7 +82,7 @@ frameUrl.fetch { content ->
       Item(name, build, version, channel, platformBuild.toString(), platformVersion.toString(), date)
     }
   }.let {
-    val version = with (current) {
+    val version = with(current) {
       when (items.hashCode() != it.hashCode()) {
         true -> version + 1
         false -> version
@@ -96,7 +94,7 @@ frameUrl.fetch { content ->
   }.also { (_, items) ->
     ("""
     <chunk id="releases_table">
-    """ + items.groupBy { SemVer.parse(it.version).major }.entries.joinToString("\n\n") {
+    """ + items.groupBy { it.version.toLooseVersion().major }.entries.joinToString("\n\n") {
       """
         ## ${it.key}.*
 
@@ -117,7 +115,7 @@ frameUrl.fetch { content ->
 fun List<Item>.renderTable() = """
   | Release Name | Channel | Release Date | Version | IntelliJ IDEA Version |
   |--------------|:-------:|--------------|---------|-----------------------|
-""" + sortedByDescending { SemVer.parse(it.version) }.joinToString("\n") {
+""" + sortedByDescending { it.version.toLooseVersion() }.joinToString("\n") {
   val name = it.name.removePrefix("Android Studio").trim()
   val channel = it.channel.lowercase().run { "![$this][$this]" }
   val date = it.date
@@ -160,6 +158,11 @@ fun String.resolveBuild() = download { file ->
   }.also {
     file.delete()
   }
+}
+
+fun String.toLooseVersion() = split('.').map { it.take(4).toInt() }.let {
+  val (major, minor, patch) = it + 0
+  SemVer(major, minor, patch)
 }
 
 fun file(path: String) = File(System.getenv("GITHUB_WORKSPACE") ?: "../../").resolve(path).also(File::createNewFile)

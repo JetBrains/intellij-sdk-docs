@@ -2,7 +2,9 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-Custom languages can use the `com.intellij.lang.parameterInfo.ParameterInfoHandler` extension point (EP) to show information about parameters in method and function calls.
+Custom languages can use
+[`ParameterInfoHandler`](upsource:///platform/lang-api/src/com/intellij/lang/parameterInfo/ParameterInfoHandler.java)
+registered in `com.intellij.codeInsight.parameterInfo` extension point (EP) to show information about parameters in method and function calls.
 This is a convenient way to display type signatures directly as a popup in the editor without having to consult the documentation.
 If it is available, the IDE can show this popup automatically after a short delay, or it can be invoked explicitly via
 <menupath>[View | Parameter Info](https://www.jetbrains.com/help/idea/viewing-reference-information.html#view-parameter-info)</menupath>.

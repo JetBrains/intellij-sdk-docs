@@ -78,6 +78,11 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 
 ### IntelliJ Platform 2022.2
 
+### Plugin DevKit Plugin 2022.2
+
+`icons.DevkitIcons` class renamed to `org.jetbrains.idea.devkit.DevKitIcons`
+: Use `org.jetbrains.idea.devkit.DevKitIcons` instead.
+
 ## 2022.1
 
 ### IntelliJ Platform 2022.1

@@ -55,16 +55,14 @@ See the [Attributes for Parent-Child Settings EPs](#attributes-for-parent-child-
 
 ### Parent-Child Settings Using Nested EPs
 
-A shorthand for the separate declaration approach is using the `com.intellij.configurable` EP.
+A shorthand for the separate declaration approach is using the `configurable` property.
 This approach nests the child's Settings declaration within the `com.intellij.projectConfigurable` or `com.intellij.applicationConfigurable` EP.
-Using `<configurable>` EP would not be possible if the parent Settings were declared in another plugin or file.
-In that case, [Parent-Child Settings Using Separate EPs](#parent-child-settings-using-separate-eps) would be used.
 
-When using `<configurable>` EP there isn't a `parentId` for the child because the nesting implies it.
+When using `configurable` there isn't a `parentId` for the child because the nesting implies it.
 As with using separate EP declarations, formatting restrictions are placed on the child's `id` attribute - the suffix (`servers`) gets added.
 See the [Attributes for Parent-Child Settings EPs](#attributes-for-parent-child-settings-eps) section.
 
-The example below demonstrates a `<configurable>` EP declaration:
+The example below demonstrates a nested `configurable` declaration:
 
 ```xml
 <extensions defaultExtensionNs="com.intellij">

@@ -10,12 +10,14 @@ Once completed, plugins can be packaged and distributed at [JetBrains Marketplac
 Android Studio plugins are not Android modules or apps to run in the Android operating system, such as smartphones or tablets.
 
 ## Configuring IntelliJ Platform Projects for Android Studio Plugin Development
+
 To create a new Android Studio plugin project, follow the tutorial on the [Getting Started with Gradle](gradle_prerequisites.md) page.
 The tutorial produces a skeleton project suitable to use as a starting point for an Android Studio plugin.
 On the [New Project Configuration Screen](gradle_prerequisites.md#new-project-configuration-screen) of the New Project Wizard tutorial, choose Gradle from the product category pane as described in the tutorial, **not** _Android_.
 Some minor modifications to the skeleton project are needed, as discussed below.
 
 ### Matching Versions of the IntelliJ Platform with the Android Studio Version
+
 For API compatibility, it is essential to match the version of the IntelliJ Platform APIs used for plugin development with the target version of Android Studio.
 The version number of Android Studio contains the version of the underlying IntelliJ Platform APIs that were used to build it.
 
@@ -34,6 +36,7 @@ The [build.gradle configuration steps](#configuring-the-plugin-buildgradle-file)
 ![Example Android Studio About Dialog](android_studio_build.png){width="600"}
 
 ### Android Studio Releases Listing
+
 Below you may find a list of recent Android Studio releases mapped to the relevant IntelliJ IDEA versions:
 
 <include src="android_studio_releases.md" include-id="releases_table_short"></include>
@@ -41,6 +44,7 @@ Below you may find a list of recent Android Studio releases mapped to the releva
 For the full list of Android Studio releases with more details, visit the [Android Studio Releases List](android_studio_releases_list.md) page.
 
 ### Configuring the Plugin build.gradle File
+
 The use-case of developing for a non-IntelliJ IDEA IDE is reviewed in the [Plugins Targeting Alternate IntelliJ Platform-Based IDEs](gradle_guide.md#plugins-targeting-alternate-intellij-platform-based-ides) section of the [Configuring Gradle for IntelliJ Platform Plugins](gradle_guide.md) page.
 The particular example in that section discusses configuring a plugin project for PhpStorm, so the details for an Android Studio plugin project are reviewed here.
 
@@ -61,15 +65,20 @@ The snippet below is an example of configuring the Setup and Running DSLs in a G
 ```kotlin
 intellij {
   // Define IntelliJ Platform against which to build the plugin project.
-  version.set("191.8026.42")  // Same IntelliJ IDEA version (2019.1.4) as target 3.5 Android Studio
-  type.set("IC")              // Use IntelliJ IDEA CE because it's the basis of the IntelliJ Platform
-  // Require the Android plugin, Gradle will match the plugin version to intellij.version
+
+  // Same IntelliJ IDEA version (2019.1.4) as target 3.5 Android Studio:
+  version.set("191.8026.42")
+
+  // Use IntelliJ IDEA CE because it's the basis of the IntelliJ Platform:
+  type.set("IC")
+
+  // Require the Android plugin (Gradle will choose the correct version):
   plugins.set(listOf("android"))
 }
 
 runIde {
-  // Absolute path to installed target 3.5 Android Studio to use as IDE Development Instance
-  // The "Contents" directory is macOS specific.
+  // Absolute path to installed target 3.5 Android Studio to use as
+  // IDE Development Instance (the "Contents" directory is macOS specific):
   ideDir.set(file("/Applications/Android Studio.app/Contents"))
 }
 ```
@@ -80,15 +89,20 @@ runIde {
 ```groovy
 intellij {
   // Define IntelliJ Platform against which to build the plugin project.
-  version = '191.8026.42'  // Same IntelliJ IDEA version (2019.1.4) as target 3.5 Android Studio
-  type = 'IC'              // Use IntelliJ IDEA CE because it's the basis of the IntelliJ Platform
-  // Require the Android plugin, Gradle will match the plugin version to intellij.version
+
+  // Same IntelliJ IDEA version (2019.1.4) as target 3.5 Android Studio:
+  version = '191.8026.42'
+
+  // Use IntelliJ IDEA CE because it's the basis of the IntelliJ Platform:
+  type = 'IC'
+
+  // Require the Android plugin (Gradle will choose the correct version):
   plugins = ['android']
 }
 
 runIde {
-  // Absolute path to installed target 3.5 Android Studio to use as IDE Development Instance
-  // The "Contents" directory is macOS specific.
+  // Absolute path to installed target 3.5 Android Studio to use as
+  // IDE Development Instance (the "Contents" dir is macOS specific):
   ideDir = file('/Applications/Android Studio.app/Contents')
 }
 ```
@@ -98,6 +112,7 @@ runIde {
 
 
 ### Configuring the Plugin plugin.xml File
+
 When using APIs from the `android` plugin, declare a dependency:
 
 ```xml
@@ -117,11 +132,13 @@ Otherwise, if only general IntelliJ Platform features (APIs) are used, then a de
 See _Android Plugin_ section in [](extension_point_list.md).
 
 ## Additional Articles and Resources
+
 * Discussion of extending Android Lint - [How to Register AndroidLintInspectionBase in IntelliJIdea Plugin](https://intellij-support.jetbrains.com/hc/en-us/community/posts/360005018559-How-to-register-AndroidLintInspectionBase-in-IntellijIdea-Plugin)
 * Grzegorz Matyszczak's article [How I Automated Creating Files for a New Screen with My Own Android Studio Plugin](https://proandroiddev.com/how-i-automated-creating-files-for-a-new-screen-with-my-own-android-studio-plugin-5d54b14ba6fa)
 * Marcos Holgado's article series [Write an Android Studio Plugin (Part 1)](https://proandroiddev.com/write-an-android-studio-plugin-part-1-creating-a-basic-plugin-af956c4f8b50)
 
 ## Open Source Plugins for Android Studio
+
 When learning new development configurations, it is helpful to have some representative projects for reference:
 * [ADB Idea](https://github.com/pbreault/adb-idea) plugin for Android Studio and Intellij IDEA that speeds up Android development.
 * [Android postfix plugin](https://github.com/takahirom/android-postfix-plugin) for Android Studio.
@@ -131,6 +148,7 @@ When learning new development configurations, it is helpful to have some represe
 ## FAQ
 
 ### How To Sync Gradle Project
+
 Use `com.android.tools.idea.gradle.project.sync.GradleSyncInvoker.requestProjectSync()` for programmatic synchronization.
 
 ## See Also

@@ -18,6 +18,9 @@ A single inspection can use multiple search and replacement templates.
 
 Once SSR inspections are created and configured, they can be shared with other team members via [inspection profiles](https://www.jetbrains.com/help/idea/customizing-profiles.html).
 
+SSR inspections can be created only for languages providing SSR support.
+To verify if a given language supports SSR, invoke the <menupath>Edit | Find | Search Structurally...</menupath> action in an IDE supporting the language, and check if it is present in the <control>Language</control> select list.
+
 > See the [I(J)nspector](https://ijnspector.wordpress.com/) blog for practical SSR templates examples.
 >
 {type="note"}

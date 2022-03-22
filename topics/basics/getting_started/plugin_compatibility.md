@@ -104,32 +104,128 @@ This refactoring separated the Java implementation from the other, non-language 
 Consequently, [dependencies](plugin_dependencies.md) on Java functionality are expressed differently in <path>plugin.xml</path> depending on the version of the IntelliJ Platform being targeted:
 
 * Syntax for 2019.2 and later releases:
-  * <path>plugin.xml</path> _allowable alternative_ add `<depends>com.intellij.java</depends>`
-  * <path>build.gradle</path> _required_ define dependency on Java plugin `intellij { plugins = ['com.intellij.java'] }`
+  * <path>plugin.xml</path> (_allowable alternative_):
+     ```xml
+     <depends>com.intellij.java</depends>
+     ```
+  * Gradle build script (_required_):
+
+    <tabs>
+    <tab title="Kotlin">
+
+    ```kotlin
+    intellij {
+      plugins.set(listOf("com.intellij.java"))
+    }
+    ```
+
+    </tab>
+    <tab title="Groovy">
+
+    ```groovy
+    intellij {
+      plugins = ['com.intellij.java']
+    }
+    ```
+
+    </tab>
+    </tabs>
+
 * Syntax _required_ for releases prior to 2019.2, _allowable_ in all releases:
-  * <path>plugin.xml</path> add `<depends>com.intellij.modules.java</depends>`
+  * <path>plugin.xml</path>:
+     ```xml
+     <depends>com.intellij.modules.java</depends>
+     ```
 
 **(3)** The [AppCode and CLion code was restructured](https://blog.jetbrains.com/clion/2020/12/migration-guide-for-plugins-2020-3/) in version 2020.3.
 This refactoring extracted some functionalities into specific modules for easier maintainability and reuse between AppCode/CLion and other JetBrains IDEs.
 Consequently, [dependencies](plugin_dependencies.md) on AppCode and CLion functionalities are expressed differently in <path>plugin.xml</path> depending on the version of the AppCode/CLion Platform being targeted:
 
+
+<tabs>
+<tab title="AppCode">
+
 * Syntax for 2020.3 and later releases:
-  * <path>plugin.xml</path> _allowable alternative_ add:
-    * `<depends>com.intellij.appcode</depends>` for AppCode
-    * `<depends>com.intellij.clion</depends>` for CLion
-  * <path>build.gradle</path> _required_ define dependency on plugin:
-    * `intellij { plugins = ['com.intellij.appcode'] }` for AppCode
-    * `intellij { plugins = ['com.intellij.clion'] }` for CLion
+  * <path>plugin.xml</path> (_allowable alternative_):
+    ```xml
+    <depends>com.intellij.appcode</depends>
+    ```
+
+  * Gradle build script (_required_):
+
+    <tabs>
+    <tab title="Kotlin">
+
+    ```kotlin
+    intellij {
+      plugins.set(listOf("com.intellij.appcode"))
+    }
+    ```
+
+    </tab>
+    <tab title="Groovy">
+
+    ```groovy
+    intellij {
+      plugins = ['com.intellij.appcode']
+    }
+    ```
+
+    </tab>
+    </tabs>
+
 * Syntax _required_ for releases prior to 2020.3, _allowable_ in all releases:
-  * <path>plugin.xml</path> add:
-    * `<depends>com.intellij.modules.appcode</depends>` for AppCode
-    * `<depends>com.intellij.modules.clion</depends>` for CLion
+  * <path>plugin.xml</path>:
+    ```xml
+    <depends>com.intellij.modules.appcode</depends>
+    ```
+
+</tab>
+<tab title="CLion">
+
+* Syntax for 2020.3 and later releases:
+  * <path>plugin.xml</path> (_allowable alternative_):
+    ```xml
+    <depends>com.intellij.clion</depends>
+    ```
+
+  * Gradle build script (_required_):
+
+    <tabs>
+    <tab title="Kotlin">
+
+    ```kotlin
+    intellij {
+      plugins.set(listOf("com.intellij.clion"))
+    }
+    ```
+
+    </tab>
+    <tab title="Groovy">
+
+    ```groovy
+    intellij {
+      plugins = ['com.intellij.clion']
+    }
+    ```
+
+    </tab>
+    </tabs>
+
+* Syntax _required_ for releases prior to 2020.3, _allowable_ in all releases:
+  * <path>plugin.xml</path>:
+    ```xml
+    <depends>com.intellij.modules.clion</depends>
+    ```
+
+</tab>
+</tabs>
 
 ## Exploring Module and Plugin APIs
 
 Once the [dependency on a module or plugin](plugin_dependencies.md) is declared in <path>plugin.xml</path>, it's useful to explore the packages and classes available in that dependency.
 The section below gives some recommended procedures for discovering what's available in a module or plugin on which a project depends.
-These procedures assume a project has the <path>build.gradle</path> and <path>plugin.xml</path> dependencies configured correctly.
+These procedures assume a project has the Gradle build script and <path>plugin.xml</path> dependencies configured correctly.
 
 ### Exploring APIs as a Consumer
 
@@ -139,8 +235,8 @@ If the project is not up-to-date, [reimport the Gradle project](https://www.jetb
 Reimporting the project will automatically update the dependencies.
 
 In the Project Window, select Project View and scroll to the bottom to see [External Libraries](https://www.jetbrains.com/help/idea/project-tool-window.html#content_pane).
-Look for the library `Gradle:unzipped.com.jetbrains.plugins:foo:`, where "foo" matches, or is similar to the contents of the `<depends>` tags in <path>plugin.xml</path> or the `intellij.plugins` declaration in <path>build.gradle</path>.
-The image below shows the External Libraries for the example plugin project configuration explained in [Configuring build.gradle](dev_alternate_products.md#configuring-buildgradle-using-the-intellij-idea-product-attribute) and [Configuring plugin.xml](dev_alternate_products.md#configuring-pluginxml).
+Look for the library `Gradle:unzipped.com.jetbrains.plugins:foo:`, where "foo" matches, or is similar to the contents of the `<depends>` tags in <path>plugin.xml</path> or the `intellij.plugins` declaration in the Gradle build script.
+The image below shows the External Libraries for the example plugin project configuration explained in [Configuring Gradle build script](dev_alternate_products.md#configuring-buildgradle-using-the-intellij-idea-product-attribute) and [Configuring plugin.xml](dev_alternate_products.md#configuring-pluginxml).
 
 ![Example PhpStorm Project Libraries](php_prj_libs.png){width="700"}
 

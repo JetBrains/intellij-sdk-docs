@@ -3,6 +3,7 @@
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 ## Introduction
+
 All products based on the IntelliJ Platform are built on the same underlying API.
 Some of these products share features built on top of the platform, such as Java support in IntelliJ IDEA and Android Studio.
 Underlying those shared features are shared components.
@@ -14,7 +15,8 @@ Otherwise, it may not be possible to load or run the plugin in a product because
 {type="tip"}
 
 ## Declaring Plugin Dependencies
-For the purposes of dependencies, a _module_ can be thought of like a built-in plugin that ships as a non-removable part of a product.
+
+For the purposes of dependencies, a _module_ can be thought of as a built-in plugin that ships as a non-removable part of a product.
 A working definition of a dependency is that a plugin project cannot be run without the module present in an IntelliJ Platform-based product.
 Declaring a dependency on a module also expresses a plugin's compatibility with a product in that the IntelliJ Platform determines whether a product contains the correct modules to support a plugin before loading it.
 
@@ -27,16 +29,19 @@ The way dependency declarations are handled by the Intellij Platform is determin
 * If a plugin declares at least _one_ module dependency in its <path>plugin.xml</path> file, the plugin is loaded if an IntelliJ Platform-based product contains _all the modules and plugins_ on which the plugin has declared a dependency.
 
 ## Modules
+
 A _module_ represents a built-in plugin that is a non-removable part of a product.
 Some modules are available in all products, and some modules are available only in some, or even just one product.
 This section identifies and discusses modules of both types.
 
 ### Declaring Incompatibility with Module
+
 Starting in 2020.2, a plugin can declare incompatibility with an arbitrary module by specifying `<incompatible-with>` containing module ID in its <path>plugin.xml</path>.
 
 ### Modules Available in All Products
-A core set of modules are available in all products based on the IntelliJ Platform.
-These modules provide a set of shared functionality.
+
+A core set of modules is available in all products based on the IntelliJ Platform.
+These modules provide a set of shared functionalities.
 The following table lists modules that are currently available in all products.
 
 > All plugins should declare a dependency on **`com.intellij.modules.platform`** to indicate dependence on shared functionality.
@@ -54,6 +59,7 @@ The following table lists modules that are currently available in all products.
 As of this writing, if a plugin: **A)** is dependent _only_ on one or more of the modules in the table above, **and B)** declares those module dependencies in <path>plugin.xml</path>, then any product developed by JetBrains based on the IntelliJ Platform will load it.
 
 ### Modules Specific to Functionality
+
 More specialized functionality is also delivered via modules and plugins in IntelliJ Platform-based products.
 For example, the `com.intellij.modules.python` module supports the Python language-specific functionality.
 If a plugin uses this module's functionality, such as Python-specific inspections and refactoring, it must declare a dependency on this module.
@@ -108,26 +114,28 @@ This refactoring extracted some functionalities into specific modules for easier
 Consequently, [dependencies](plugin_dependencies.md) on AppCode and CLion functionalities are expressed differently in <path>plugin.xml</path> depending on the version of the AppCode/CLion Platform being targeted:
 
 * Syntax for 2020.3 and later releases:
-    * <path>plugin.xml</path> _allowable alternative_ add:
-      * `<depends>com.intellij.appcode</depends>` for AppCode
-      * `<depends>com.intellij.clion</depends>` for CLion
-    * <path>build.gradle</path> _required_ define dependency on plugin:
-      * `intellij { plugins = ['com.intellij.appcode'] }` for AppCode
-      * `intellij { plugins = ['com.intellij.clion'] }` for CLion
+  * <path>plugin.xml</path> _allowable alternative_ add:
+    * `<depends>com.intellij.appcode</depends>` for AppCode
+    * `<depends>com.intellij.clion</depends>` for CLion
+  * <path>build.gradle</path> _required_ define dependency on plugin:
+    * `intellij { plugins = ['com.intellij.appcode'] }` for AppCode
+    * `intellij { plugins = ['com.intellij.clion'] }` for CLion
 * Syntax _required_ for releases prior to 2020.3, _allowable_ in all releases:
-    * <path>plugin.xml</path> add:
-      * `<depends>com.intellij.modules.appcode</depends>` for AppCode
-      * `<depends>com.intellij.modules.clion</depends>` for CLion
+  * <path>plugin.xml</path> add:
+    * `<depends>com.intellij.modules.appcode</depends>` for AppCode
+    * `<depends>com.intellij.modules.clion</depends>` for CLion
 
 ## Exploring Module and Plugin APIs
+
 Once the [dependency on a module or plugin](plugin_dependencies.md) is declared in <path>plugin.xml</path>, it's useful to explore the packages and classes available in that dependency.
 The section below gives some recommended procedures for discovering what's available in a module or plugin on which a project depends.
 These procedures assume a project has the <path>build.gradle</path> and <path>plugin.xml</path> dependencies configured correctly.
 
 ### Exploring APIs as a Consumer
+
 Exploring the available packages and classes in a plugin or module utilizes features in the IntelliJ IDEA IDE.
 
-If the project is not up to date, [Reimport the Gradle project](https://www.jetbrains.com/help/idea/work-with-gradle-projects.html#gradle_refresh_project) as a first step.
+If the project is not up-to-date, [reimport the Gradle project](https://www.jetbrains.com/help/idea/work-with-gradle-projects.html#gradle_refresh_project) as a first step.
 Reimporting the project will automatically update the dependencies.
 
 In the Project Window, select Project View and scroll to the bottom to see [External Libraries](https://www.jetbrains.com/help/idea/project-tool-window.html#content_pane).
@@ -140,6 +148,7 @@ Expand the External Library (as shown) to reveal the JAR files contained in the 
 Drill down into the JAR files to expose the packages and (decompiled) classes.
 
 ### Exploring APIs as an Extender
+
 If a project is dependent on a plugin or module, in some cases, the project can also [extend](plugin_extensions.md) the functionality available from the plugin or module.
 
 > See [Explore the IntelliJ Platform API](explore_api.md) for more information and strategies.
@@ -147,7 +156,7 @@ If a project is dependent on a plugin or module, in some cases, the project can 
 >
 {type="tip"}
 
-To browse the opportunities for extension, start by placing the cursor on the contents of the `<depends>` elements in the project's <path>plugin.xml</path> file.
+To browse the opportunities for an extension, start by placing the cursor on the contents of the `<depends>` elements in the project's <path>plugin.xml</path> file.
 Use the [Go to Declaration](https://www.jetbrains.com/help/idea/navigating-through-the-source-code.html#go_to_declaration) IDE feature to navigate to the <path>plugin.xml</path> file for the plugin on which the project depends.
 
 For example, performing this procedure on the `<depends>com.jetbrains.php</depends>` declaration in a project's <path>plugin.xml</path> file will navigate to the <path>plugin.xml</path> file for the `com.jetbrains.php` (PHP) project.
@@ -158,6 +167,7 @@ Continuing the example, search the PHP plugin's <path>plugin.xml</path> file for
   The extension namespace (in this example `com.jetbrains.php`) will match the `<id>` defined in the <path>plugin.xml</path> file.
 
 ## Verifying Dependency
+
 Before marking a plugin project as _dependent only on modules in a target product_ in addition to `com.intellij.modules.platform`, verify the plugin isn't implicitly dependent on any APIs that are specific to IntelliJ IDEA.
 
 For [Gradle-based](gradle_build_system.md) projects, [Plugin Verifier](api_changes_list.md#plugin-verifier) can be used to ensure compatibility with all specified target IDEs.
@@ -169,5 +179,6 @@ Based on the tables above, the [JetBrains Marketplace](https://plugins.jetbrains
 The compatibility information determines if plugins are available for users of a particular JetBrains product.
 
 ## Platform API Version Compatibility
+
 The API of IntelliJ Platform and bundled plugins may change between releases.
 The significant changes that may break plugins are listed on [Incompatible Changes in IntelliJ Platform and Plugins API](api_changes_list.md) page.

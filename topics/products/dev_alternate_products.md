@@ -35,6 +35,10 @@ Configuration using an `intellij.type` attribute is explained in the [Product-Sp
 However, not all products have an `intellij.type` attribute defined by the `gradle-intellij-plugin`, for example, PhpStorm.
 If the target product does not have an `intellij.type` attribute defined, then the best approach is to configure the project using the [IntelliJ IDEA Attribute](#configuring-buildgradle-using-the-intellij-idea-product-attribute).
 
+> To target multiple products (e.g., IntelliJ IDEA and PyCharm) with the same plugin, see [](plugin_compatibility.md) page.
+>
+{type="note"}
+
 ### Configuring Plugin Projects Using a Product-Specific Attribute
 
 If the `gradle-intellij-plugin` supports a target product directly, there will be an `intellij.type` [attribute](https://github.com/JetBrains/gradle-intellij-plugin#intellij-platform-properties) defined.

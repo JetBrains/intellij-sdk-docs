@@ -32,6 +32,7 @@ A link to this repository should be added to <path>pom.xml</path>/<path>build.gr
 {type="warning"}
 
 ## Using IntelliJ Platform Module Artifacts
+
 IntelliJ Platform module artifacts are utilized by adding information to a project's <path>build.gradle</path> file.
 More information about [Gradle support](https://www.jetbrains.com/help/idea/gradle.html) is available in the IntelliJ IDEA Help documentation.
 
@@ -40,12 +41,14 @@ To set up dependencies on a module, there are two types of information needed:
 2. Specify the [Maven coordinates](https://maven.apache.org/pom.html#Maven_Coordinates) for the artifact.
 
 ### Specify the Repository URL
+
 The URL for the desired artifact needs to be added to a Maven or Gradle script:
-* For release versions, use `https://www.jetbrains.com/intellij-repository/releases`
-* For EAP snapshots, use `https://www.jetbrains.com/intellij-repository/snapshots`
-* For dependencies on individual modules from the IntelliJ Platform, also use `https://cache-redirector.jetbrains.com/intellij-dependencies`
+* For release versions, use:<br/>`https://www.jetbrains.com/intellij-repository/releases`
+* For EAP snapshots, use:<br/>`https://www.jetbrains.com/intellij-repository/snapshots`
+* For dependencies on individual modules from the IntelliJ Platform, also use:<br/>`https://cache-redirector.jetbrains.com/intellij-dependencies`
 
 ### Specify the Maven Coordinates for the Artifact
+
 Describing a desired IntelliJ Platform module artifact is done with Maven coordinates: _groupId_, _artifactId_, and _version_.
 The Maven coordinates are based on the names of modules.
 
@@ -82,18 +85,21 @@ The artifact _version_ can be specified in one of several ways because each arti
     There are many builds of this type for each branch of each product.
 
 ### Example Artifact Specification
+
 For example, to specify the `jps-model-serialization` module:
-  * _groupId_ = `com.jetbrains.intellij.platform`
-  * _artifactId_ = `jps-model-serialization`
-  * _classifier_ = `""`
-  * _packaging_ = `jar`
+* _groupId_ = `com.jetbrains.intellij.platform`
+* _artifactId_ = `jps-model-serialization`
+* _classifier_ = `""`
+* _packaging_ = `jar`
 
 ## Gradle Example for an Individual Module from the IntelliJ Platform
+
 This section presents an example of using a Gradle script to incorporate an IntelliJ Platform module and repository in a <path>build.gradle</path> file.
 The example illustrates declaring the artifact URL, Maven coordinates, and version for the `jps-model-serialization` module artifact.
 There are two parts to the example: the repository and the dependency sections.
 
 ### Repositories Section
+
 This code snippet selects the release repository with the first URL, and the repository of IntelliJ Platform dependencies with the second URL.
 The second URL is needed because this example selects individual modules.
 
@@ -102,8 +108,8 @@ The second URL is needed because this example selects individual modules.
 
 ```kotlin
 repositories {
-	maven("https://www.jetbrains.com/intellij-repository/releases")
-	maven("https://cache-redirector.jetbrains.com/intellij-dependencies")
+  maven("https://www.jetbrains.com/intellij-repository/releases")
+  maven("https://cache-redirector.jetbrains.com/intellij-dependencies")
 }
 ```
 
@@ -112,8 +118,8 @@ repositories {
 
 ```groovy
 repositories {
-	maven { url "https://www.jetbrains.com/intellij-repository/releases" }
-	maven { url "https://cache-redirector.jetbrains.com/intellij-dependencies" }
+  maven { url "https://www.jetbrains.com/intellij-repository/releases" }
+  maven { url "https://cache-redirector.jetbrains.com/intellij-dependencies" }
 }
 ```
 
@@ -121,6 +127,7 @@ repositories {
 </tabs>
 
 ### Dependencies Section
+
 This code snippet specifies the desired module artifacts.
 
 <tabs>
@@ -128,8 +135,8 @@ This code snippet specifies the desired module artifacts.
 
 ```kotlin
 dependencies {
-	implementation("com.jetbrains.intellij.platform:jps-model-serialization:182.2949.4")
-	implementation("com.jetbrains.intellij.platform:jps-model-impl:182.2949.4")
+  implementation("com.jetbrains.intellij.platform:jps-model-serialization:182.2949.4")
+  implementation("com.jetbrains.intellij.platform:jps-model-impl:182.2949.4")
 }
 ```
 
@@ -138,8 +145,8 @@ dependencies {
 
 ```groovy
 dependencies {
-	implementation "com.jetbrains.intellij.platform:jps-model-serialization:182.2949.4"
-	implementation "com.jetbrains.intellij.platform:jps-model-impl:182.2949.4"
+  implementation "com.jetbrains.intellij.platform:jps-model-serialization:182.2949.4"
+  implementation "com.jetbrains.intellij.platform:jps-model-impl:182.2949.4"
 }
 ```
 
@@ -147,5 +154,5 @@ dependencies {
 </tabs>
 
 Note:
- * The artifact version (`182.2949.4`) must match in both statements.
- * In this example `jps-model-serialization` declares the APIs and `jps-model-impl` provides the implementation, so both are required dependencies.
+* The artifact version (`182.2949.4`) must match in both statements.
+* In this example `jps-model-serialization` declares the APIs and `jps-model-impl` provides the implementation, so both are required dependencies.

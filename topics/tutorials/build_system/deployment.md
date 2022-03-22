@@ -53,20 +53,20 @@ Now provide the environment variable in the run configuration with which you run
 To do so, create a Gradle run configuration (if not already done), choose your Gradle project, specify the `publishPlugin` task, and then add the environment variable.
 
 <tabs>
-<tab title="Gradle">
-
-```groovy
-publishPlugin {
-  token = System.getenv("ORG_GRADLE_PROJECT_intellijPublishToken")
-}
-```
-
-</tab>
 <tab title="Gradle Kotlin DSL">
 
 ```kotlin
 publishPlugin {
   token.set(System.getenv("ORG_GRADLE_PROJECT_intellijPublishToken"))
+}
+```
+
+</tab>
+<tab title="Gradle">
+
+```groovy
+publishPlugin {
+  token = System.getenv("ORG_GRADLE_PROJECT_intellijPublishToken")
 }
 ```
 
@@ -115,20 +115,20 @@ You may also deploy plugins to a release channel of your choosing, by configurin
 For example:
 
 <tabs>
-<tab title="Gradle">
-
-```groovy
-publishPlugin {
-  channels = ['beta']
-}
-```
-
-</tab>
 <tab title="Gradle Kotlin DSL">
 
 ```kotlin
 publishPlugin {
   channels.set(listOf("beta"))
+}
+```
+
+</tab>
+<tab title="Gradle">
+
+```groovy
+publishPlugin {
+  channels = ['beta']
 }
 ```
 

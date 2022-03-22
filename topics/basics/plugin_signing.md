@@ -79,35 +79,6 @@ Otherwise, it'll be skipped.
 An example `pluginSigning` configuration may look like:
 
 <tabs>
-<tab title="Gradle">
-
-```groovy
-signPlugin {
-  certificateChain = """
-    -----BEGIN CERTIFICATE-----
-    MIIElgCCAn4CCQDo83LWYj2QSTANBgkqhkiG9w0BAQsFADANMQswCQYDVQQGEwJQ
-    ...
-    gdZzxCN8t1EmH8kD2Yve6YKGFCRAIIzveEg=
-    -----END CERTIFICATE-----
-  """.stripIndent()
-
-  privateKey = """
-    -----BEGIN RSA PRIVATE KEY-----
-    MIIJKgIBAAKCAgEAwU8awS22Rw902BmwVDDBMlTREX440BAAVM40NW3E0lJ7YTJG
-    ...
-    EnNBfIVFhh6khisKqTBWSEo5iS2RYJcuZs961riCn1LARztiaXL4l17oW8t+Qw==
-    -----END RSA PRIVATE KEY-----
-  """.stripIndent()
-
-  password = "8awS22%#3(4wVDDBMlTREX"
-}
-
-publishPlugin {
-  token = "perm:a961riC....l17oW8t+Qw=="
-}
-```
-
-</tab>
 <tab title="Gradle Kotlin DSL">
 
 ```kotlin
@@ -137,6 +108,35 @@ publishPlugin {
 ```
 
 </tab>
+<tab title="Gradle">
+
+```groovy
+signPlugin {
+  certificateChain = """
+    -----BEGIN CERTIFICATE-----
+    MIIElgCCAn4CCQDo83LWYj2QSTANBgkqhkiG9w0BAQsFADANMQswCQYDVQQGEwJQ
+    ...
+    gdZzxCN8t1EmH8kD2Yve6YKGFCRAIIzveEg=
+    -----END CERTIFICATE-----
+  """.stripIndent()
+
+  privateKey = """
+    -----BEGIN RSA PRIVATE KEY-----
+    MIIJKgIBAAKCAgEAwU8awS22Rw902BmwVDDBMlTREX440BAAVM40NW3E0lJ7YTJG
+    ...
+    EnNBfIVFhh6khisKqTBWSEo5iS2RYJcuZs961riCn1LARztiaXL4l17oW8t+Qw==
+    -----END RSA PRIVATE KEY-----
+  """.stripIndent()
+
+  password = "8awS22%#3(4wVDDBMlTREX"
+}
+
+publishPlugin {
+  token = "perm:a961riC....l17oW8t+Qw=="
+}
+```
+
+</tab>
 </tabs>
 
 > Do not commit your credentials to the Version Control System! To avoid that, you may use environment variables, like:
@@ -153,21 +153,6 @@ To avoid storing hard-coded values in the project configuration, the most suitab
 To specify secrets like `PUBLISH_TOKEN` and values required for the `signPlugin` task, modify your Gradle configuration as follows:
 
 <tabs>
-<tab title="Gradle">
-
-```groovy
-signPlugin {
-  certificateChain = System.getenv("CERTIFICATE_CHAIN")
-  privateKey = System.getenv("PRIVATE_KEY")
-  password = System.getenv("PRIVATE_KEY_PASSWORD")
-}
-
-publishPlugin {
-  token = System.getenv("PUBLISH_TOKEN")
-}
-```
-
-</tab>
 <tab title="Gradle Kotlin DSL">
 
 ```kotlin
@@ -179,6 +164,21 @@ signPlugin {
 
 publishPlugin {
   token.set(System.getenv("PUBLISH_TOKEN"))
+}
+```
+
+</tab>
+<tab title="Gradle">
+
+```groovy
+signPlugin {
+  certificateChain = System.getenv("CERTIFICATE_CHAIN")
+  privateKey = System.getenv("PRIVATE_KEY")
+  password = System.getenv("PRIVATE_KEY_PASSWORD")
+}
+
+publishPlugin {
+  token = System.getenv("PUBLISH_TOKEN")
 }
 ```
 

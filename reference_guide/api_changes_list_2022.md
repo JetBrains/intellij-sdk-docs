@@ -83,6 +83,9 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 `icons.DevkitIcons` class renamed to `org.jetbrains.idea.devkit.DevKitIcons`
 : Use `org.jetbrains.idea.devkit.DevKitIcons` instead.
 
+`icons.DevkitIcons.Gutter` class renamed to `org.jetbrains.idea.devkit.DevKitIcons.Gutter`
+: Use `org.jetbrains.idea.devkit.DevKitIcons.Gutter` instead.
+
 ## 2022.1
 
 ### IntelliJ Platform 2022.1

@@ -15,10 +15,10 @@ Classes defined in this step of the tutorial depend on `com.intellij.psi.PsiLite
 Using `PsiLiteralExpression` [introduces a dependency](plugin_compatibility.md#modules-specific-to-functionality) on `com.intellij.java`.
 
 Beginning in version 2019.2, a dependency on Java plugin [must be declared explicitly](https://blog.jetbrains.com/platform/2019/06/java-functionality-extracted-as-a-plugin/).
-First, add a dependency on the Java plugin in Gradle build file:
+First, add a dependency on the Java plugin in the Gradle build script:
 
 <tabs>
-<tab title="Gradle Kotlin DSL">
+<tab title="Kotlin">
 
 ```kotlin
 intellij {
@@ -27,7 +27,7 @@ intellij {
 ```
 
 </tab>
-<tab title="Gradle">
+<tab title="Groovy">
 
 ```kotlin
 intellij {

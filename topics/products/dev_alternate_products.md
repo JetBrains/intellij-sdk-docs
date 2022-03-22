@@ -49,10 +49,10 @@ Specifying the target as a product-specific `intellij.type` attribute has two ad
 
 A <path>build.gradle</path> snippet setting a plugin project to target PyCharm is shown below.
 The `gradle-intellij-plugin` will fetch the matching build of PyCharm Professional to define the APIs available, and use that build of PyCharm (and associated JetBrains runtime) as the Development Instance.
-No additional product-specific configuration needs to be set in <path>build.gradle</path>:
+No additional product-specific configuration needs to be set in the Gradle build script:
 
 <tabs>
-<tab title="Gradle Kotlin DSL">
+<tab title="Kotlin">
 
 ```kotlin
 intellij {
@@ -62,7 +62,7 @@ intellij {
 ```
 
 </tab>
-<tab title="Gradle">
+<tab title="Groovy">
 
 ```groovy
 intellij {
@@ -131,10 +131,10 @@ The best practice is to modify the `runIde {}` task to use a local installation 
 Set the `runIde.ideDir` attribute to the (user-specific) absolute path of the _targetIDE_ application.
 The exact path format varies by operating system.
 
-This snippet is an example for configuring the Setup and Running DSLs in a <path>build.gradle</path> specific to developing a plugin for _targetIDE_.
+This snippet is an example for configuring the Setup and Running DSLs in a Gradle build script specific to developing a plugin for _targetIDE_.
 
 <tabs>
-<tab title="Gradle Kotlin DSL">
+<tab title="Kotlin">
 
 ```kotlin
 intellij {
@@ -155,7 +155,7 @@ runIde {
 ```
 
 </tab>
-<tab title="Gradle">
+<tab title="Groovy">
 
 ```groovy
 intellij {

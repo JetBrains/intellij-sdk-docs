@@ -53,10 +53,10 @@ Here are the steps to configure the <path>build.gradle</path> file for developin
 * The best practice is to use the target version of Android Studio as the IDE Development Instance.
   Set the Development Instance to the (user-specific) absolute path to the target Android Studio application.
 
-The snippet below is an example of configuring the Setup and Running DSLs in a <path>build.gradle</path> specific to developing a plugin targeted at Android Studio.
+The snippet below is an example of configuring the Setup and Running DSLs in a Gradle build script specific to developing a plugin targeted at Android Studio.
 
 <tabs>
-<tab title="Gradle Kotlin DSL">
+<tab title="Kotlin">
 
 ```kotlin
 intellij {
@@ -75,7 +75,7 @@ runIde {
 ```
 
 </tab>
-<tab title="Gradle">
+<tab title="Groovy">
 
 ```groovy
 intellij {

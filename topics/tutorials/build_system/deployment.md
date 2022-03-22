@@ -53,7 +53,7 @@ Now provide the environment variable in the run configuration with which you run
 To do so, create a Gradle run configuration (if not already done), choose your Gradle project, specify the `publishPlugin` task, and then add the environment variable.
 
 <tabs>
-<tab title="Gradle Kotlin DSL">
+<tab title="Kotlin">
 
 ```kotlin
 publishPlugin {
@@ -62,7 +62,7 @@ publishPlugin {
 ```
 
 </tab>
-<tab title="Gradle">
+<tab title="Groovy">
 
 ```groovy
 publishPlugin {
@@ -115,7 +115,7 @@ You may also deploy plugins to a release channel of your choosing, by configurin
 For example:
 
 <tabs>
-<tab title="Gradle Kotlin DSL">
+<tab title="Kotlin">
 
 ```kotlin
 publishPlugin {
@@ -124,7 +124,7 @@ publishPlugin {
 ```
 
 </tab>
-<tab title="Gradle">
+<tab title="Groovy">
 
 ```groovy
 publishPlugin {

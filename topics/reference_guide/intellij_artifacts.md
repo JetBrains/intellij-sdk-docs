@@ -104,7 +104,7 @@ This code snippet selects the release repository with the first URL, and the rep
 The second URL is needed because this example selects individual modules.
 
 <tabs>
-<tab title="Gradle Kotlin DSL">
+<tab title="Kotlin">
 
 ```kotlin
 repositories {
@@ -114,7 +114,7 @@ repositories {
 ```
 
 </tab>
-<tab title="Gradle">
+<tab title="Groovy">
 
 ```groovy
 repositories {
@@ -131,7 +131,7 @@ repositories {
 This code snippet specifies the desired module artifacts.
 
 <tabs>
-<tab title="Gradle Kotlin DSL">
+<tab title="Kotlin">
 
 ```kotlin
 dependencies {
@@ -141,7 +141,7 @@ dependencies {
 ```
 
 </tab>
-<tab title="Gradle">
+<tab title="Groovy">
 
 ```groovy
 dependencies {

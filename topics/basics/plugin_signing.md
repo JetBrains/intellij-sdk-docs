@@ -79,7 +79,7 @@ Otherwise, it'll be skipped.
 An example `pluginSigning` configuration may look like:
 
 <tabs>
-<tab title="Gradle Kotlin DSL">
+<tab title="Kotlin">
 
 ```kotlin
 signPlugin {
@@ -108,7 +108,7 @@ publishPlugin {
 ```
 
 </tab>
-<tab title="Gradle">
+<tab title="Groovy">
 
 ```groovy
 signPlugin {
@@ -153,7 +153,7 @@ To avoid storing hard-coded values in the project configuration, the most suitab
 To specify secrets like `PUBLISH_TOKEN` and values required for the `signPlugin` task, modify your Gradle configuration as follows:
 
 <tabs>
-<tab title="Gradle Kotlin DSL">
+<tab title="Kotlin">
 
 ```kotlin
 signPlugin {
@@ -168,7 +168,7 @@ publishPlugin {
 ```
 
 </tab>
-<tab title="Gradle">
+<tab title="Groovy">
 
 ```groovy
 signPlugin {

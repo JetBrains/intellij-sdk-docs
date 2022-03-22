@@ -138,18 +138,21 @@ This snippet is an example for configuring the Setup and Running DSLs in a Gradl
 
 ```kotlin
 intellij {
-  // Define the IntelliJ Platform against which to build the plugin project.
-  // Use the IntelliJ Platform BRANCH.BUILD version matching "targetIDE" (PhpStorm)
+  // Define IntelliJ Platform against which to build the plugin project.
+
+  // Use the IntelliJ Platform BRANCH.BUILD version matching
+  // "targetIDE" (PhpStorm):
   version.set("192.7142.36")   // baseIntelliJPlatformVersion
   type.set("IU")
-  // Require the targetIDE plugin or library
-  // Use the stable version compatible with intellij.version and intellij.type specified above
+
+  // Require the targetIDE plugin or library. Use the stable version
+  // compatible with intellij.version and intellij.type specified above:
   plugins.set(listOf("com.jetbrains.php:192.6603.42"))
 }
 
 runIde {
-  // Absolute path to the installed targetIDE to use as IDE Development Instance
-  // Note the Contents directory must be added at the end of the path for macOS.
+  // Absolute path to the installed targetIDE to use as IDE Development
+  // Instance (the "Contents" directory is macOS specific):
   ideDir.set(file("/Users/$USERNAME$/Library/Application Support/JetBrains/Toolbox/apps/PhpStorm/ch-0/192.7142.41/PhpStorm.app/Contents"))
 }
 ```
@@ -159,18 +162,21 @@ runIde {
 
 ```groovy
 intellij {
-  // Define the IntelliJ Platform against which to build the plugin project.
-  // Use the IntelliJ Platform BRANCH.BUILD version matching "targetIDE" (PhpStorm)
-  version = '192.7142.36'   // baseIntelliJPlatformVersion
+  // Define IntelliJ Platform against which to build the plugin project.
+
+  // Use the IntelliJ Platform BRANCH.BUILD version matching
+  // "targetIDE" (PhpStorm):
+  version = '192.7142.36'      // baseIntelliJPlatformVersion
   type = 'IU'
-  // Require the targetIDE plugin or library
-  // Use the stable version compatible with intellij.version and intellij.type specified above
+
+  // Require the targetIDE plugin or library. Use the stable version
+  // compatible with intellij.version and intellij.type specified above:
   plugins = ['com.jetbrains.php:192.6603.42']
 }
 
 runIde {
-  // Absolute path to the installed targetIDE to use as IDE Development Instance
-  // Note the Contents directory must be added at the end of the path for macOS.
+  // Absolute path to the installed targetIDE to use as IDE Development
+  // Instance (the "Contents" directory is macOS specific):
   ideDir = file('/Users/$USERNAME$/Library/Application Support/JetBrains/Toolbox/apps/PhpStorm/ch-0/192.7142.41/PhpStorm.app/Contents')
 }
 ```

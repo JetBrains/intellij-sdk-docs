@@ -51,7 +51,7 @@ Extensions can use all IntelliJ Platform APIs and additional LivePlugin API that
 Created extensions are stored on the IDE level and can be shared with other team members as plain files, GitHub gists, or repositories.
 Additionally, if they are stored in a project's <path>.live-plugins</path> directory and LivePlugin's <control>Run Project Specific Plugins</control> option is enabled, all extensions from this directory will be loaded automatically when the project is opened and unloaded when the project is closed.
 
-> See the LivePlugin author's [article](https://dmitrykandalov.com/liveplugin) and [presentation](https://www.youtube.com/watch?v=GcYa4lMRta0) for more information.
+> See the LivePlugin [description](https://dmitrykandalov.com/liveplugin), [presentation](https://www.youtube.com/watch?v=GcYa4lMRta0), and [extensions examples](https://github.com/dkandalov/live-plugin#more-examples) for more information.
 >
 {type="note"}
 

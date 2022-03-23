@@ -16,7 +16,7 @@ Presentation [Writing IntelliJ Plugins for Kotlin](https://www.youtube.com/watch
 
 ### When should I use UAST?
 
-For plugins that should work for all JVM languages in the same way.
+For plugins, that should work for all JVM languages in the same way.
 
 Some known examples are:
 * [Spring Framework](spring_api.md)
@@ -52,14 +52,14 @@ To convert `PsiElement` to the specific `UElement`, use one of the following app
 - for simple conversion:
 
 ```java
-  UastContextKt.toUElement(element, UCallExpression.class)
+UastContextKt.toUElement(element, UCallExpression.class);
 ```
 
 - for conversion to one of different given options:
 
 ```java
-  UastFacade.INSTANCE.convertElementWithParent(element,
-        new Class[]{UInjectionHost.class, UReferenceExpression.class})
+UastFacade.INSTANCE.convertElementWithParent(element,
+    new Class[]{UInjectionHost.class, UReferenceExpression.class});
 ```
 
 - in some cases, `PsiElement` could represent several `UElement`s.
@@ -67,8 +67,8 @@ To convert `PsiElement` to the specific `UElement`, use one of the following app
   When needing all options, use:
 
 ```java
-  UastFacade.INSTANCE.convertToAlternatives(element,
-        new Class[]{UField.class, UParameter.class}
+UastFacade.INSTANCE.convertToAlternatives(element,
+    new Class[]{UField.class, UParameter.class});
 ```
 
 > It is always better to convert to the specific type of `UElement`, rather than to convert without type and then cast to the specific type:
@@ -148,7 +148,7 @@ For really hard performance optimisation consider using `UastLanguagePlugin.getP
 [`ULiteralExpression`](upsource:///uast/uast-common/src/org/jetbrains/uast/expressions/ULiteralExpression.kt) represents
 literal values like numbers, booleans, and string.
 Although string values are also literals, `ULiteralExpression` is not very handy to work with them.
-For instance, it doesn't handle Kotlin string interpolations.
+For instance, it doesn't handle Kotlin's string interpolations.
 To process string literals when evaluating their value or to perform language injection, use [`UInjectionHost`](upsource:///uast/uast-common/src/org/jetbrains/uast/expressions/UInjectionHost.kt) instead.
 
 ### `sourcePsi` and `javaPsi`, `psi` and `UElement` as PSI
@@ -182,11 +182,11 @@ UAST is an abstraction level on top of PSI of different languages and tries to b
 It leads to the fact that the tree structure could seriously diverge between UAST and original language,
 so no ancestor-descendant relation preserving is guaranteed.
 
-For instance, results of
+For instance, the results of:
 
 ```kotlin
-      generateSequence(uElement, UElement::uastParent).mapNotNull { it.sourcePsi }
-      generateSequence(uElement.sourcePsi) { it.parent }
+generateSequence(uElement, UElement::uastParent).mapNotNull { it.sourcePsi }
+generateSequence(uElement.sourcePsi) { it.parent }
 ```
 
 could be different, not only in the number of elements, but also in their order.

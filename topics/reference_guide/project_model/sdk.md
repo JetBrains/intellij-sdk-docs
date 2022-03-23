@@ -33,13 +33,13 @@ Sdk projectSdk = ProjectRootManager.getInstance(project).getProjectSdk();
 * To set the project-level SDK:
 
   ```java
-  ProjectRootManager.getInstance(project).setProjectSdk(Sdk jdk);
+  ProjectRootManager.getInstance(project).setProjectSdk(jdk);
   ```
 
 * To set the project-level SDK name:
 
   ```java
-  ProjectRootManager.getInstance(project).setProjectSdkName(String name);
+  ProjectRootManager.getInstance(project).setProjectSdkName(name);
   ```
 
 See the [project_model](https://github.com/JetBrains/intellij-sdk-code-samples/tree/main/project_model/src/main/java/org/intellij/sdk/project/model/ProjectSdkAction.java) code sample to get more familiar with SDK manipulation toolset.

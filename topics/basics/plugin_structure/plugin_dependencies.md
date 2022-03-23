@@ -4,7 +4,7 @@
 
 A plugin may depend on classes from other plugins, either bundled, third-party, or by the same author.
 This document describes the syntax for declaring plugin dependencies and optional plugin dependencies.
-For more information about dependencies on the IntelliJ Platform modules, see Part II of this document: [Plugin Compatibility with IntelliJ Platform Products](plugin_compatibility.md).
+For more information about dependencies on the IntelliJ Platform modules, see Part II of this document: [](plugin_compatibility.md).
 
 > For adding dependencies on 3rd party libraries, use regular [Gradle dependency management](https://docs.gradle.org/current/userguide/core_dependency_management.html).
 >
@@ -92,7 +92,7 @@ intellij {
 
 <tab title="DevKit">
 
-> Existing DevKit-based projects can be converted to use [Gradle setup](gradle_prerequisites.md#adding-gradle-support-to-an-existing-devkit-based-intellij-platform-plugin) where managing dependencies is fully automated.
+> Existing DevKit-based projects can be converted to use [Gradle setup](gradle_prerequisites.md#adding-gradle-support-to-an-existing-devkit-based-intellij-platform-plugin) where dependency management is fully automated.
 >
 {type="tip"}
 
@@ -113,7 +113,7 @@ To do that, open the Project Structure dialog, select the SDK used in the projec
 
 ## 3. Dependency Declaration in plugin.xml
 
-Regardless of whether a plugin project uses [Modules Available in All Products](plugin_compatibility.md#modules-available-in-all-products), or [Modules Specific to Functionality](plugin_compatibility.md#modules-specific-to-functionality), the correct module must be listed as a dependency in <path>plugin.xml</path>.
+Regardless of whether a plugin project uses [](plugin_compatibility.md#modules-available-in-all-products), or [](plugin_compatibility.md#modules-specific-to-functionality), the correct module must be listed as a dependency in <path>plugin.xml</path>.
 If a project depends on another plugin, the dependency must be declared like a [module](plugin_compatibility.md#modules).
 If only general IntelliJ Platform features (APIs) are used, then a default dependency on `com.intellij.modules.platform` must be declared.
 

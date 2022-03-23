@@ -22,7 +22,7 @@ Many techniques are discussed, such as choosing a version of IntelliJ IDEA Ultim
 
 The table below summarizes the `gradle-intellij-plugin` attributes to set in the plugin project's Gradle build script.
 Click on an entry in the table's *Attribute* column to go to the documentation about that attribute.
-To see how these attributes appear in the Gradle build script for PhpStorm, see [Configuring build.gradle using the IntelliJ IDEA Product Attribute](dev_alternate_products.md#configuring-buildgradle-using-the-intellij-idea-product-attribute).
+To see how these attributes appear in the Gradle build script for PhpStorm, see [](dev_alternate_products.md#configuring-gradle-build-script-using-the-intellij-idea-product-attribute).
 
 | `gradle-intellij-plugin` Attribute | Attribute Value                                                                                                                                                                                                      |
 |------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

@@ -15,7 +15,7 @@ The configuration of RubyMine plugin projects follows the methods described in [
 
 The table below summarizes the `gradle-intellij-plugin` attributes to set in the Gradle build script for a RubyMine plugin project.
 Click on an entry in the table's *Attribute* column to go to the documentation about that attribute.
-To see how these attributes appear in a similar Gradle build script for PhpStorm, see [Configuring build.gradle using the IntelliJ IDEA Product Attribute](dev_alternate_products.md#configuring-buildgradle-using-the-intellij-idea-product-attribute).
+To see how these attributes appear in a similar Gradle build script for PhpStorm, see [](dev_alternate_products.md#configuring-gradle-build-script-using-the-intellij-idea-product-attribute).
 
 | `gradle-intellij-plugin` Attribute | Attribute Value                                                                                                                                                                                                     |
 |------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

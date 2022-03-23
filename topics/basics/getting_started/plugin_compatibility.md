@@ -236,7 +236,7 @@ Reimporting the project will automatically update the dependencies.
 
 In the Project Window, select Project View and scroll to the bottom to see [External Libraries](https://www.jetbrains.com/help/idea/project-tool-window.html#content_pane).
 Look for the library `Gradle:unzipped.com.jetbrains.plugins:foo:`, where "foo" matches, or is similar to the contents of the `<depends>` tags in <path>plugin.xml</path> or the `intellij.plugins` declaration in the Gradle build script.
-The image below shows the External Libraries for the example plugin project configuration explained in [Configuring Gradle build script](dev_alternate_products.md#configuring-buildgradle-using-the-intellij-idea-product-attribute) and [Configuring plugin.xml](dev_alternate_products.md#configuring-pluginxml).
+The image below shows the External Libraries for the example plugin project configuration explained in [Configuring Gradle build script](dev_alternate_products.md#configuring-gradle-build-script-using-the-intellij-idea-product-attribute) and [Configuring plugin.xml](dev_alternate_products.md#configuring-pluginxml).
 
 ![Example PhpStorm Project Libraries](php_prj_libs.png){width="700"}
 

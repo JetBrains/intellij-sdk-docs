@@ -35,7 +35,7 @@ The configuration of GoLand plugin projects follows the methods described in [Co
 
 The table below summarizes the `gradle-intellij-plugin` attributes to set in the plugin project's Gradle build script.
 Click on an entry in the table's *Attribute* column to go to the documentation about that attribute.
-To see how these attributes appear in a similar Gradle build script for PhpStorm, see [Configuring build.gradle using the IntelliJ IDEA Product Attribute](dev_alternate_products.md#configuring-buildgradle-using-the-intellij-idea-product-attribute).
+To see how these attributes appear in a similar Gradle build script for PhpStorm, see [](dev_alternate_products.md#configuring-gradle-build-script-using-the-intellij-idea-product-attribute).
 
 The Go plugin version is explicitly declared because it isn't bundled with IntelliJ IDEA Ultimate Edition.
 Select a [version](https://plugins.jetbrains.com/plugin/9568-go/versions) of the Go plugin compatible with the IntelliJ Idea Ultimate version.

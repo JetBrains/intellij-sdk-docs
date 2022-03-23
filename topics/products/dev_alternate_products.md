@@ -26,14 +26,14 @@ Modifications are needed to the skeleton project's Gradle build script and <path
 The Gradle build script is modified to specify the target product, determining the APIs available during development.
 The <path>plugin.xml</path> file is modified to declare the plugin's dependency on modules or libraries.
 
-## Configuring build.gradle to Target Products other than IntelliJ IDEA
+## Configuring Gradle Build Script to Target Products Other Than IntelliJ IDEA
 
 The best practice is to use the `gradle-intellij-plugin` `intellij.type` [attribute](https://github.com/JetBrains/gradle-intellij-plugin#intellij-platform-properties) to specify the target product.
 For example, `PY` for PyCharm professional.
 Configuration using an `intellij.type` attribute is explained in the [Product-Specific Attribute](#configuring-plugin-projects-using-a-product-specific-attribute) section below.
 
 However, not all products have an `intellij.type` attribute defined by the `gradle-intellij-plugin`, for example, PhpStorm.
-If the target product does not have an `intellij.type` attribute defined, then the best approach is to configure the project using the [IntelliJ IDEA Attribute](#configuring-buildgradle-using-the-intellij-idea-product-attribute).
+If the target product does not have an `intellij.type` attribute defined, then the best approach is to configure the project using the [IntelliJ IDEA Attribute](#configuring-gradle-build-script-using-the-intellij-idea-product-attribute).
 
 > To target multiple products (e.g., IntelliJ IDEA and PyCharm) with the same plugin, see [](plugin_compatibility.md) page.
 >
@@ -114,7 +114,7 @@ The BRANCH and BUILD numbers match, therefore in this PhpStorm example:
 
 This information is used to configure the plugin project's Gradle build script and <path>plugin.xml</path> file.
 
-#### Configuring build.gradle using the IntelliJ IDEA Product Attribute
+#### Configuring Gradle Build Script Using the IntelliJ IDEA Product Attribute
 
 Configuring a Gradle plugin project for using _baseIntelliJPlatformVersion_ requires changing some default settings in the Gradle build script.
 Changes need to be made in two tasks: `intellij` and `runIde`.

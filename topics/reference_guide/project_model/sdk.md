@@ -18,25 +18,25 @@ Sdk projectSdk = ProjectRootManager.getInstance(project).getProjectSdk();
 
 ## Getting and Setting Project SDK Attributes
 
-* To get the project level SDK
+* To get the project-level SDK:
 
   ```java
-  Sdk projectSDK = ProjectRootManager.getInstance(project).getProjectSdk();
+  Sdk projectSdk = ProjectRootManager.getInstance(project).getProjectSdk();
   ```
 
-* To get the project level SDK name:
+* To get the project-level SDK name:
 
   ```java
-  String projectSDKName = ProjectRootManager.getInstance(project).getProjectSdkName();
+  String projectSdkName = ProjectRootManager.getInstance(project).getProjectSdkName();
   ```
 
-* To set the project level SDK:
+* To set the project-level SDK:
 
   ```java
   ProjectRootManager.getInstance(project).setProjectSdk(Sdk jdk);
   ```
 
-* To set the project level SDK name:
+* To set the project-level SDK name:
 
   ```java
   ProjectRootManager.getInstance(project).setProjectSdkName(String name);
@@ -57,10 +57,10 @@ To make SDK settings persistent, override `setupSdkPaths()` and save settings by
 ```java
 @Override
 public boolean setupSdkPaths(@NotNull Sdk sdk, @NotNull SdkModel sdkModel) {
-    SdkModificator modificator = sdk.getSdkModificator();
-    modificator.setVersionString(getVersionString(sdk));
-    modificator.commitChanges(); // save
-    return true;
+  SdkModificator modificator = sdk.getSdkModificator();
+  modificator.setVersionString(getVersionString(sdk));
+  modificator.commitChanges(); // save
+  return true;
 }
 ```
 
@@ -79,32 +79,34 @@ The following is a simplified example that checks whether an instance of "DemoSd
 
 ```kotlin
 class DemoProjectSdkSetupValidator : ProjectSdkSetupValidator {
-    override fun isApplicableFor(project: Project, file: VirtualFile): Boolean {
-        return file.fileType == DemoFileType
-    }
+  override fun isApplicableFor(project: Project, file: VirtualFile): Boolean {
+    return file.fileType == DemoFileType
+  }
 
-    override fun getErrorMessage(project: Project, file: VirtualFile): String? {
-        if (ProjectJdkTable.getInstance().getSdksOfType(DemoSdkType.getInstance()).isEmpty())
-            return "No DemoSdks are configured for this project!"
-        return null
+  override fun getErrorMessage(project: Project, file: VirtualFile): String? {
+    if (ProjectJdkTable.getInstance().getSdksOfType(DemoSdkType.getInstance()).isEmpty()) {
+      return "No DemoSdks are configured for this project!"
     }
+    return null
+  }
 
-    override fun getFixHandler(project: Project, file: VirtualFile): EditorNotificationPanel.ActionHandler {
-        return SdkPopupFactory.newBuilder()
-            .withProject(project)
-            .withSdkTypeFilter { it is DemoSdkType }
-            .updateSdkForFile(file)
-            .buildEditorNotificationPanelHandler()
-    }
+  override fun getFixHandler(project: Project, file: VirtualFile):
+        EditorNotificationPanel.ActionHandler {
+    return SdkPopupFactory.newBuilder()
+        .withProject(project)
+        .withSdkTypeFilter { it is DemoSdkType }
+        .updateSdkForFile(file)
+        .buildEditorNotificationPanelHandler()
+  }
 }
 ```
 
 Within `DemoProjectSdkSetupValidator`:
 
-- `isApplicableFor()` checks what condition(s) should be met to run the validation.
-- `getErrorMessage()` runs the validation and return an appropriate error message if the validation fails.
-  If the validation is successful, then it should return null.
-- `getFixHandler()` returns an `EditorNotificationPanel.ActionHandler` that enables the user to execute a quick-fix to resolve the validation issue.
+* `isApplicableFor()` checks what condition(s) should be met to run the validation.
+* `getErrorMessage()` runs the validation and return an appropriate error message if the validation fails.
+* If the validation is successful, then it should return null.
+* `getFixHandler()` returns an `EditorNotificationPanel.ActionHandler` that enables the user to execute a quick-fix to resolve the validation issue.
 
 
 > `ProjectSdkSetupValidator` will not work in IntelliJ Platform-based IDEs such as PyCharm.

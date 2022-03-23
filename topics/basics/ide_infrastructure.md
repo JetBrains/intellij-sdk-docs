@@ -18,10 +18,9 @@ Plugins should obtain a dedicated instance:
 ```java
 import com.intellij.openapi.diagnostic.Logger;
 
-public class MyPluginFunctionality {
+public class MyPluginClass {
 
-  private static final Logger LOG =
-          Logger.getInstance(MyPluginFunctionality.class);
+  private static final Logger LOG = Logger.getInstance(MyPluginClass.class);
 
   public void someMethod() {
     LOG.info("someMethod() was called");
@@ -35,29 +34,25 @@ public class MyPluginFunctionality {
 <tab title="Kotlin">
 
 ```kotlin
+private val LOG = logger<MyPluginClass>()
 
-private val LOG = logger<MyPluginFunctionality>()
-
-class MyPluginFunctionality {
+class MyPluginClass {
 
   fun someMethod() {
     LOG.info("someMethod() was called")
   }
 }
-
 ```
 
 If logging is used only to report exceptions, use convenience method `thisLogger()`:
 
 ```kotlin
-
-   try {
-     // some code
-   }
-   catch (e: Throwable) {
-     thisLogger().error("some code failed", e)
-   }
-
+try {
+  // some code
+}
+catch (e: Throwable) {
+  thisLogger().error("some code failed", e)
+}
 ```
 
 </tab>

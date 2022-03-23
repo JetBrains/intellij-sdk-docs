@@ -8,7 +8,7 @@ This allows each plugin to use a different library version, even if the same lib
 ## Overriding IDE Dependencies
 
 Gradle 7 introduced `implementation` scope, replacing `compile` scope.
-For this setup to use project defined dependency instead of the bundled IDE version, please add this snippet to your <path>build.gradle.kts</path>:
+For this setup, to use project defined dependency instead of the bundled IDE version, add this snippet to your <path>build.gradle.kts</path>:
 
 ```kotlin
 configurations {
@@ -28,14 +28,16 @@ This allows a plugin to reference classes from other plugins.
 ## Using ServiceLoader
 
 Some libraries use [`ServiceLoader`](https://docs.oracle.com/javase/8/docs/api/index.html?java/util/ServiceLoader.html) to detect and load implementations.
-For this to work in a plugin, the context class loader must be set to the plugin's classloader and restored afterwards with original one around initialization code:
+For this to work in a plugin, the context class loader must be set to the plugin's classloader and restored afterwards with the original one around initialization code:
 
 ```java
-    ClassLoader current = Thread.currentThread().getContextClassLoader();
-    try {
-        Thread.currentThread().setContextClassLoader(this.getClass().getClassLoader());
-        // code working with ServiceLoader here
-    } finally {
-        Thread.currentThread().setContextClassLoader(current);
-    }
+Thread currentThread = Thread.currentThread();
+ClassLoader originalClassLoader = currentThread.getContextClassLoader();
+ClassLoader pluginClassLoader = this.getClass().getClassLoader();
+try {
+  currentThread.setContextClassLoader(pluginClassLoader);
+  // code working with ServiceLoader here
+} finally {
+  currentThread.setContextClassLoader(originalClassLoader);
+}
 ```

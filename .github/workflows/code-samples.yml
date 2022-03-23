@@ -81,7 +81,7 @@ jobs:
           runPluginVerifier {
             ideVersions = '$PLUGIN_VERIFIER_IDE_VERSIONS'.split(' ').toList()
           }
-          " >> code_samples/${{ matrix.plugin }}/build.gradle
+          " >> code_samples/${{ matrix.plugin }}/build.gradle.kts
           cd code_samples/${{ matrix.plugin }}
           ./gradlew runPluginVerifier -Pplugin.verifier.home.dir=${{ steps.properties.outputs.pluginVerifierHomeDir }}
 

@@ -11,7 +11,7 @@ Once completed, the plugins can be packaged and distributed at [JetBrains Market
 
 Project configuration attributes common to projects targeting products other than IntelliJ IDEA are described on this page.
 Details particular to an IntelliJ Platform-based product are described on the individual product pages in _Part VIII_.
-All of the Gradle configuration attributes described here are discussed in-depth on the [](gradle_guide.md) and the `gradle-intellij-plugin` [README](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md) pages.
+All the Gradle configuration attributes described here are discussed in-depth on the [](gradle_guide.md) and the `gradle-intellij-plugin` [README](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md) pages.
 
 > Qualifying Open Source projects can [apply for free licenses](https://www.jetbrains.com/community/opensource/) of JetBrains products.
 >
@@ -116,18 +116,18 @@ This information is used to configure the plugin project's <path>build.gradle</p
 
 #### Configuring build.gradle using the IntelliJ IDEA Product Attribute
 
-Configuring a Gradle plugin project for using _baseIntelliJPlatformVersion_ requires changing some of the default settings in the <path>build.gradle</path> file.
-Changes need to be made in two tasks: `intellij {}` and `runIde {}`.
+Configuring a Gradle plugin project for using _baseIntelliJPlatformVersion_ requires changing some default settings in the Gradle build script.
+Changes need to be made in two tasks: `intellij` and `runIde`.
 
-The Gradle plugin attributes describing the configuration of the [IntelliJ Platform used to build the plugin project](gradle_guide.md#configuring-the-gradle-plugin-for-building-intellij-platform-plugin-projects) must be explicitly set in the `intellij {}` task.
+The Gradle plugin attributes describing the configuration of the [IntelliJ Platform used to build the plugin project](gradle_guide.md#configuring-the-gradle-plugin-for-building-intellij-platform-plugin-projects) must be explicitly set in the `intellij` task.
 The `intellij.type` is "IU" because although the IntelliJ IDEA Community Edition defines the IntelliJ Platform, the PHP plugin is only compatible with IntelliJ IDEA Ultimate.
 The `intellij.version` is _baseIntelliJPlatformVersion_.
 
-Any [dependencies](gradle_guide.md#plugin-dependencies) on _targetIDE_-specific plugins or modules must be declared in the `intellij {}` task.
+Any [dependencies](gradle_guide.md#plugin-dependencies) on _targetIDE_-specific plugins or modules must be declared in the `intellij` task.
 Use the Gradle plugin attribute `intellij.plugins` to declare a dependency.
 See the specific product pages in Part VIII for the _targetIDE_ plugin or module name.
 
-The best practice is to modify the `runIde {}` task to use a local installation of _targetIDE_ as the [](ide_development_instance.md).
+The best practice is to modify the `runIde` task to use a local installation of _targetIDE_ as the [](ide_development_instance.md).
 Set the `runIde.ideDir` attribute to the (user-specific) absolute path of the _targetIDE_ application.
 The exact path format varies by operating system.
 

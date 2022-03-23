@@ -19,6 +19,18 @@ The configuration of targeting GoLand IDE follows the methods described in [Conf
 
 Starting with 2020.2, it's possible to configure `GO` for `intellij.type` in the Gradle build script.
 
+<tabs>
+<tab title="Kotlin">
+
+```kotlin
+intellij {
+  version.set("2020.3")
+  type.set("GO")
+}
+```
+
+</tab>
+<tab title="Groovy">
 
 ```groovy
 intellij {
@@ -26,6 +38,10 @@ intellij {
   type = 'GO'
 }
 ```
+
+</tab>
+</tabs>
+
 
 </tab>
 

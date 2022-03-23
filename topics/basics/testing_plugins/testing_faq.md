@@ -93,11 +93,28 @@ These JAR files are not available in plugin project dependencies, so the Intelli
 It's done by setting the `idea.home.path` system property to the absolute path of the checked out sources.
 In projects using Gradle it can be done by providing system property in the `test` task configuration:
 
+
+<tabs>
+<tab title="Kotlin">
+
 ```kotlin
 test {
   systemProperty("idea.home.path", "/path/to/intellij-community-sources")
 }
 ```
+
+</tab>
+<tab title="Groovy">
+
+```groovy
+test {
+  systemProperty "idea.home.path", "/path/to/intellij-community-sources"
+}
+```
+
+</tab>
+</tabs>
+
 
 The default JDK version used by the test framework depends on the target platform version and is the latest supported version.
 The easiest way to change the JDK version to the custom is overriding the `LightJavaCodeInsightFixtureTestCase.getProjectDescriptor()` method and using one of the project descriptors predefined in `LightJavaCodeInsightFixtureTestCase`.
@@ -107,13 +124,15 @@ Sometimes testing a JVM language requires adding standard or other libraries to 
 If a required library is available in the Maven repository, use [`MavenDependencyUtil`](upsource:///java/testFramework/src/com/intellij/testFramework/fixtures/MavenDependencyUtil.java), e.g.:
 
 ```java
-MavenDependencyUtil.addFromMaven(model,"org.jetbrains.kotlin:kotlin-stdlib:1.6.10");
+MavenDependencyUtil.addFromMaven(model,
+    "org.jetbrains.kotlin:kotlin-stdlib:1.6.10");
 ```
 
 If a required library is an unpublished JAR file, use [`PsiTestUtil.addLibrary()`](upsource:///platform/testFramework/src/com/intellij/testFramework/PsiTestUtil.java) or `addProjectLibrary()` method and the JAR file path, e.g.:
 
 ```java
-PsiTestUtil.addLibrary(model,"kotlin-stdlib",getTestDataPath(),"kotlin-stdlib.jar");
+PsiTestUtil.addLibrary(model,
+    "kotlin-stdlib", getTestDataPath(), "kotlin-stdlib.jar");
 ```
 
 > If a topic you are interested in is not covered in the above sections, let us know via the "**Was this page helpful?**" feedback form below or [other channels](getting_help.md#problems-with-the-guide).

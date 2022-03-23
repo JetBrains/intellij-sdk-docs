@@ -29,7 +29,7 @@ intellij {
 </tab>
 <tab title="Groovy">
 
-```kotlin
+```groovy
 intellij {
   plugins = ['com.intellij.java']
 }

@@ -31,7 +31,7 @@ In this case, the (BRANCH.BUILD.FIX) version of the IntelliJ Platform is `211.76
 In your Gradle build script, you should set both versions – build number and the release number – to the `intellij.version` property.
 To figure out the exact release number based on the build number, visit the [IntelliJ Repository Releases](https://www.jetbrains.com/intellij-repository/releases/) listing and check the `com.jetbrains.intellij.idea` section.
 
-The [Gradle build script configuration steps](#configuring-the-plugins-gradle-build-script) section below explains how to set the IntelliJ Platform version to match the target version of Android Studio.
+The [Gradle build script configuration steps](#configuring-the-plugin-gradle-build-script) section below explains how to set the IntelliJ Platform version to match the target version of Android Studio.
 
 ![Example Android Studio About Dialog](android_studio_build.png){width="600"}
 
@@ -43,7 +43,7 @@ Below, you may find a list of recent Android Studio releases mapped to the relev
 
 For the full list of Android Studio releases with more details, visit the [Android Studio Releases List](android_studio_releases_list.md) page.
 
-### Configuring the Plugin's Gradle Build Script
+### Configuring the Plugin Gradle Build Script
 
 The use-case of developing for a non-IntelliJ IDEA IDE is reviewed in the [Plugins Targeting Alternate IntelliJ Platform-Based IDEs](gradle_guide.md#plugins-targeting-alternate-intellij-platform-based-ides) section of the [Configuring Gradle for IntelliJ Platform Plugins](gradle_guide.md) page.
 The particular example in that section discusses configuring a plugin project for PhpStorm, so the details for an Android Studio plugin project are reviewed here.

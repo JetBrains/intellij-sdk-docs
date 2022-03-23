@@ -17,15 +17,15 @@ See the [Maven coordinates](#specify-the-maven-coordinates-for-the-artifact) sec
 
 Both the Releases and Snapshots repositories have two types of content:
 * Binary and source code artifacts for cross-platform, ZIP distributions of IntelliJ Platform-based IDEs, such as IntelliJ IDEA, CLion, Rider, and MPS.
-  These artifacts are _not intended_ to be accessed directly from a plugin project's <path>build.gradle</path> file.
+  These artifacts are _not intended_ to be accessed directly from a plugin project's Gradle build script.
   The `gradle-intellij-plugin` will access them as-needed for a plugin project.
 * Artifacts for individual modules from the IntelliJ Platform.
-These may be downloaded, or accessed directly from a <path>build.gradle</path> file, as explained below.
+These may be downloaded, or accessed directly from a Gradle build script, as explained below.
 
 ### Third-Party Dependencies
 
 Artifacts for IntelliJ Platform third-party dependencies are hosted at a separate [intellij-dependencies](https://cache-redirector.jetbrains.com/intellij-dependencies) repository.
-A link to this repository should be added to <path>pom.xml</path>/<path>build.gradle</path> files when individual modules from an IntelliJ Platform artifacts repository are used.
+A link to this repository should be added to Maven POM or Gradle build script when individual modules from an IntelliJ Platform artifacts repository are used.
 
 > Usages of deprecated URL `https://jetbrains.bintray.com/intellij-third-party-dependencies` must be replaced with `https://cache-redirector.jetbrains.com/intellij-dependencies` in build scripts.
 >
@@ -33,7 +33,7 @@ A link to this repository should be added to <path>pom.xml</path>/<path>build.gr
 
 ## Using IntelliJ Platform Module Artifacts
 
-IntelliJ Platform module artifacts are utilized by adding information to a project's <path>build.gradle</path> file.
+IntelliJ Platform module artifacts are utilized by adding information to a project's Gradle build script.
 More information about [Gradle support](https://www.jetbrains.com/help/idea/gradle.html) is available in the IntelliJ IDEA Help documentation.
 
 To set up dependencies on a module, there are two types of information needed:
@@ -94,7 +94,7 @@ For example, to specify the `jps-model-serialization` module:
 
 ## Gradle Example for an Individual Module from the IntelliJ Platform
 
-This section presents an example of using a Gradle script to incorporate an IntelliJ Platform module and repository in a <path>build.gradle</path> file.
+This section presents an example of adding IntelliJ Platform repository and module in a Gradle build script.
 The example illustrates declaring the artifact URL, Maven coordinates, and version for the `jps-model-serialization` module artifact.
 There are two parts to the example: the repository and the dependency sections.
 

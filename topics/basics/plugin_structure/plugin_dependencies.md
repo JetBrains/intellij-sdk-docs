@@ -67,23 +67,28 @@ Depending on the chosen development workflow (Gradle or DevKit), one of the two 
 >
 {type="note"}
 
-If the project uses [Gradle](gradle_build_system.md) with a Groovy build script to build the plugin, add the dependency to the `plugins` parameter of the `intellij` block in your <path>build.gradle</path>, for example:
+If the project uses [Gradle](gradle_build_system.md), add the dependency to the `plugins` parameter of the `intellij` block in your build script:
 
-<path>build.gradle</path>
+<tabs>
+<tab title="Kotlin">
+
+```kotlin
+intellij {
+  plugins.set(listOf("com.example.another-plugin:1.0"))
+}
+```
+
+</tab>
+<tab title="Groovy">
+
 ```groovy
 intellij {
   plugins = ['com.example.another-plugin:1.0']
 }
 ```
 
-When using Kotlin build script, use `plugins.set()` within the `intellij` block, for example:
-
-<path>build.gradle.kts</path>
-```kotlin
-intellij {
-  plugins.set(listOf("com.example.another-plugin:1.0"))
-}
-```
+</tab>
+</tabs>
 
 > Transitive dependencies required for tests must currently be [specified explicitly](https://github.com/JetBrains/gradle-intellij-plugin/issues/38).
 >

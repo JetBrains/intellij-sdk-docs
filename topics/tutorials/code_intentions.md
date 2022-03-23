@@ -51,16 +51,16 @@ return (n>=0) ? n : -n;
 
 ```java
 if ((n>=0)) {
-    return n;
+  return n;
 } else {
-    return -n;
+  return -n;
 }
 ```
 </compare>
 
 #### Testing the Plugin
 
-> Please note that running the test requires setting system property `idea.home.path` in `test {}` block of <path>build.gradle</path>
+> Please note that running the test requires setting system property `idea.home.path` in the `test` task configuration of the Gradle build script.
 >
 {type="note"}
 

@@ -90,7 +90,7 @@ See the <path>build.gradle</path> from [kotlin_demo](https://github.com/JetBrain
 ```
 {src="kotlin_demo/build.gradle"}
 
-### Use Kotlin to Write Gradle Script
+### Use Kotlin for Gradle Build Scripts
 
 Gradle also supports using Kotlin in build scripts: <path>build.gradle.kts</path>.
 

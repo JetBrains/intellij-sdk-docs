@@ -140,7 +140,7 @@ Implicit in using [`LocalInspectionTool`](upsource:///platform/analysis-api/src/
 
 ### Inspection Unit Test
 
-> Please note that running the test requires setting system property `idea.home.path` in `test {}` block of <path>build.gradle</path>.
+> Please note that running the test requires setting system property `idea.home.path` in the `test` task configuration of the Gradle build script.
 >
 {type="note"}
 

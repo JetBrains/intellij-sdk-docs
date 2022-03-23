@@ -22,8 +22,8 @@ All the Gradle configuration attributes described here are discussed in-depth on
 To create a new Gradle plugin project, follow the tutorial on the [](gradle_prerequisites.md) page.
 The tutorial produces a skeleton Gradle project suitable to use as a starting point.
 
-Modifications are needed to the skeleton project's <path>build.gradle</path> and <path>plugin.xml</path> files, as described below, and on the individual product pages in Part VIII.
-The <path>build.gradle</path> file is modified to specify the target product, determining the APIs available during development.
+Modifications are needed to the skeleton project's Gradle build script and <path>plugin.xml</path> files, as described below, and on the individual product pages in Part VIII.
+The Gradle build script is modified to specify the target product, determining the APIs available during development.
 The <path>plugin.xml</path> file is modified to declare the plugin's dependency on modules or libraries.
 
 ## Configuring build.gradle to Target Products other than IntelliJ IDEA
@@ -47,7 +47,7 @@ Specifying the target as a product-specific `intellij.type` attribute has two ad
   (Unless additional plugin dependencies are specified.)
 * The default [Development Instance](ide_development_instance.md) for running the plugin will be the target product.
 
-A <path>build.gradle</path> snippet setting a plugin project to target PyCharm is shown below.
+A Gradle build script snippet setting a plugin project to target PyCharm is shown below.
 The `gradle-intellij-plugin` will fetch the matching build of PyCharm Professional to define the APIs available, and use that build of PyCharm (and associated JetBrains runtime) as the Development Instance.
 No additional product-specific configuration needs to be set in the Gradle build script:
 
@@ -76,8 +76,8 @@ intellij {
 
 ### Configuring Plugin Projects Using the IntelliJ IDEA Product Attribute
 
-If the `gradle-intellij-plugin` does not directly support an IntelliJ Platform-based product, the <path>build.gradle</path> file can still be configured to target the desired product.
-In this case, the <path>build.gradle</path> file is configured to use IntelliJ IDEA (Community or Ultimate Edition) as the basis for the available APIs.
+If the `gradle-intellij-plugin` does not directly support an IntelliJ Platform-based product, the Gradle build script can still be configured to target the desired product.
+In this case, the build script is configured to use IntelliJ IDEA (Community or Ultimate Edition) as the basis for the available APIs.
 This does have the drawback that APIs not specific to the target product might accidentally be included in the plugin project.
 However, testing the plugin project in the target product helps to find such mistakes.
 
@@ -112,7 +112,7 @@ The BRANCH and BUILD numbers match, therefore in this PhpStorm example:
 * The _targetIDE_ is PhpStorm, build `192.7142.41`,
 * The _baseIntelliJPlatformVersion_ (IntelliJ IDEA Community Edition) is build `192.7142.36`
 
-This information is used to configure the plugin project's <path>build.gradle</path> and <path>plugin.xml</path> files.
+This information is used to configure the plugin project's Gradle build script and <path>plugin.xml</path> file.
 
 #### Configuring build.gradle using the IntelliJ IDEA Product Attribute
 

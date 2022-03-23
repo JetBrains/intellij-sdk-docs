@@ -56,12 +56,12 @@ Then click _Next_:
 ### Project Naming/Artifact Coordinates Screen
 
 Expand the <control>Artifact Coordinates</control> section and specify a [GroupId, ArtifactId, and Version](https://www.jetbrains.com/help/idea/gradle.html#project_create_gradle) using [Maven naming](https://maven.apache.org/guides/mini/guide-naming-conventions.html) conventions.
-* <control>GroupId</control> is typically a Java package name, and it is used for the Gradle property `project.group` value in the project's <path>build.gradle</path> file.
+* <control>GroupId</control> is typically a Java package name, and it is used for the Gradle property `project.group` value in the project's Gradle build script.
   For this example, enter `com.example.mycompany`.
 * <control>ArtifactId</control> is the default name of the project JAR file (without a version).
   It is also used for the Gradle property `rootProject.name` value in the project's <path>settings.gradle</path> file.
   For this example, enter `my_gradle_plugin`.
-* <control>Version</control> is used for the Gradle property `project.version` value in the <path>build.gradle</path> file.
+* <control>Version</control> is used for the Gradle property `project.version` value in the Gradle build script.
   For this example, enter `1.0`.
 
 The <control>Name</control> field is synced automatically with the specified <control>ArtifactId</control>.

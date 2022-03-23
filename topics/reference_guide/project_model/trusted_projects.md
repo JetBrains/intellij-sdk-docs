@@ -24,5 +24,5 @@ Suppose the feature can potentially execute malicious code, and it is not obviou
 In that case, this feature has to be disabled in the safe mode, and enabling it has to be protected via a [confirmation](misc_swing_components.md#messages).
 
 Samples:
-- It is not obvious that opening a folder in the IDE can execute <path>build.gradle</path>, which in turn can call a malicious code located inside the project => the Gradle import is disabled in the safe mode.
-- It is obvious that running or debugging the source code can execute malicious code => it is not necessary to wrap this action with a confirmation.
+* It is not obvious that opening a folder in the IDE can execute Gradle build script, which in turn can call a malicious code located inside the project => the Gradle import is disabled in the safe mode.
+* It is obvious that running or debugging the source code can execute malicious code => it is not necessary to wrap this action with a confirmation.

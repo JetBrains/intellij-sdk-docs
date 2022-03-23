@@ -6,7 +6,7 @@ This page provides a high-level overview of the *External System* sub-system.
 There are multiple project management systems ([Apache Maven](https://maven.apache.org/), [Gradle](https://www.gradle.org/), [sbt](https://www.scala-sbt.org/), etc.) and IntelliJ Platform provides a mechanism to support them in IDEs.
 
 Most of the project management systems provide a similar set of facilities from the integration point of view:
-* build a project from external system config (<path>pom.xml</path>, <path>build.gradle</path>, etc.)
+* build a project from external system config (<path>pom.xml</path>, <path>build.gradle.kts</path>, etc.)
 * provide a list of available tasks
 * allow to execute a particular task
 * and more

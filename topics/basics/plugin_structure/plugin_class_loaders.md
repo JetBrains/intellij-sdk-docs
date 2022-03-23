@@ -8,15 +8,28 @@ This allows each plugin to use a different library version, even if the same lib
 ## Overriding IDE Dependencies
 
 Gradle 7 introduced `implementation` scope, replacing `compile` scope.
-For this setup, to use project defined dependency instead of the bundled IDE version, add this snippet to your <path>build.gradle.kts</path>:
+For this setup, to use project defined dependency instead of the bundled IDE version, add the following snippet to your Gradle build script:
+
+<tabs>
+<tab title="Kotlin">
 
 ```kotlin
-configurations {
-  all {
-    resolutionStrategy.sortArtifacts(ResolutionStrategy.SortOrder.DEPENDENCY_FIRST)
-  }
+configurations.all {
+  resolutionStrategy.sortArtifacts(ResolutionStrategy.SortOrder.DEPENDENCY_FIRST)
 }
 ```
+
+</tab>
+<tab title="Groovy">
+
+```groovy
+configurations.all {
+  resolutionStrategy.sortArtifacts(ResolutionStrategy.SortOrder.DEPENDENCY_FIRST)
+}
+```
+
+</tab>
+</tabs>
 
 ## Classes from Plugin Dependencies
 

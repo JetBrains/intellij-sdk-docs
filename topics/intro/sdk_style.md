@@ -55,7 +55,7 @@ Consistent text styles are used to standardize references and keywords:
 * Non-code keywords and quotations, or the names of non-code files, are formatted as italic style: \_UI Theme\_ (_UI Theme_), \_README.md\_ (_README.md_.)
   Examples of this file type include _LICENSE.txt_ and _README.md_.
 * Code keywords and classnames are formatted as code style: \`interface\`: `interface`, \`AnAction\`: `AnAction`, \`name\` attribute: `name` attribute.
-* File names are wrapped using `<path>`: `<path>build.gradle</path>` <path>build.gradle</path>.
+* File names are wrapped using `<path>`: `<path>build.gradle.kts</path>` <path>build.gradle.kts</path>.
 * File formats are shown as all capital letters: PNG and XML.
 * Filename extensions are not capitalized when part of a full filename, path, or URL: <path>filename.ext</path>.
 * Keyboard shortcuts are wrapped using `<shortcut>`: `press <shortcut>Alt+Insert</shortcut>` becomes "press <shortcut>Alt+Insert</shortcut>".

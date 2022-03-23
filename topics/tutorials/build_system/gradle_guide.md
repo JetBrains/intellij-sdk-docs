@@ -39,7 +39,7 @@ This section presents a guided tour of Gradle plugin attributes to achieve the c
 
 By default, the Gradle plugin will build a plugin project against the IntelliJ Platform defined by the latest EAP snapshot of the IntelliJ IDEA Community Edition.
 
-> Using EAP versions of the IntelliJ Platform requires adding the _Snapshots repository_ to the <path>build.gradle</path> file (see [IntelliJ Platform Artifacts Repositories](intellij_artifacts.md)).
+> Using EAP versions of the IntelliJ Platform requires adding the _Snapshots repository_ to the Gradle build script (see [IntelliJ Platform Artifacts Repositories](intellij_artifacts.md)).
 >
 {type="note"}
 
@@ -100,20 +100,20 @@ As mentioned in the section about [configuring the IntelliJ Platform](#configuri
 Standardizing the versions of the Gradle plugin and Gradle system across projects will minimize the time spent downloading versions.
 
 There are controls for managing the `gradle-intellij-plugin` version, and the version of Gradle itself.
-The plugin version is defined in the `plugins {}` section of a project's <path>build.gradle</path> file.
+The plugin version is defined in the `plugins {...}` section of a project's Gradle build script.
 The version of Gradle is defined in <path>$PROJECT_ROOT$/gradle/wrapper/gradle-wrapper.properties</path>.
 
 ### Patching the Plugin Configuration File
 
 A plugin project's <path>plugin.xml</path> file has element values that are "patched" at build time from the attributes of the `patchPluginXml` task ([Patching DSL](https://github.com/JetBrains/gradle-intellij-plugin#patching-dsl)).
 As many as possible of the attributes in the Patching DSL will be substituted into the corresponding element values in a plugin project's <path>plugin.xml</path> file:
-* If a `patchPluginXml` attribute default value is defined, the attribute value will be patched in <path>plugin.xml</path> _regardless of whether the `patchPluginXml` task appears in the <path>build.gradle</path> file_.
+* If a `patchPluginXml` attribute default value is defined, the attribute value will be patched in <path>plugin.xml</path> _regardless of whether the `patchPluginXml` task appears in the Gradle build script_.
   * For example, the default values for the attributes `patchPluginXml.sinceBuild` and `patchPluginXml.untilBuild` are defined based on the declared (or default) value of `intellij.version`.
     So by default `patchPluginXml.sinceBuild` and `patchPluginXml.untilBuild` are substituted into the `<idea-version>` element's `since-build` and `until-build` attributes in the <path>plugin.xml</path> file.
 * If a `patchPluginXml` attribute value is explicitly defined, the attribute value will be substituted in <path>plugin.xml</path>.
   * If both `patchPluginXml.sinceBuild` and `patchPluginXml.untilBuild` attributes are explicitly set, both are substituted in <path>plugin.xml</path>.
   * If one attribute is explicitly set (e.g. `patchPluginXml.sinceBuild`) and one is not (e.g. `patchPluginXml.untilBuild` has a default value,) both attributes are patched at their respective (explicit and default) values.
-* For **no substitution** of the `<idea-version>` element's `since-build` and `until-build` attributes, one of the following must appear in the <path>build.gradle</path> file:
+* For **no substitution** of the `<idea-version>` element's `since-build` and `until-build` attributes, one of the following must appear in the Gradle build script:
   * Either set `intellij.updateSinceUntilBuild = false`, which will disable substituting both `since-build` and `until-build` attributes,
 
 The best practice to avoid confusion is to replace the elements in <path>plugin.xml</path> that will be patched by the Gradle plugin with a comment.
@@ -129,7 +129,7 @@ As discussed in [Components of a Wizard-Generated Gradle IntelliJ Platform Plugi
 However, the `gradle-intellij-plugin` does not combine and substitute those Gradle properties for the default `<id>` and `<name>` elements in the <path>plugin.xml</path> file.
 
 The best practice is to keep `project.version` current.
-By default, if you modify `project.version` in <path>build.gradle</path>, the Gradle plugin will automatically update the `<version>` value in the <path>plugin.xml</path> file.
+By default, if you modify `project.version` in Gradle build script, the Gradle plugin will automatically update the `<version>` value in the <path>plugin.xml</path> file.
 This practice keeps all version declarations synchronized.
 
 ### Verifying Plugin

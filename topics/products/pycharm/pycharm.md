@@ -11,7 +11,7 @@ Plugin projects for PyCharm can be developed using IntelliJ IDEA with the `gradl
 
 ## Configuring Plugin Projects Targeting PyCharm
 The configuration of PyCharm plugin projects follows the methods described in [Configuring Plugin Projects using a Product-Specific Attribute](dev_alternate_products.md#configuring-plugin-projects-using-a-product-specific-attribute), and [Configuring the plugin.xml File](dev_alternate_products.md#configuring-pluginxml).
-The table below summarizes the `gradle-intellij-plugin` attributes to set in the <path>build.gradle</path> file.
+The table below summarizes the `gradle-intellij-plugin` attributes to set in the Gradle build script.
 Click on an entry in the table's *Attribute* column to go to the documentation about that attribute.
 
 | `gradle-intellij-plugin` Attribute       | Attribute Value                                                                |

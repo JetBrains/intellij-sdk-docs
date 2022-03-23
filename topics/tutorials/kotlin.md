@@ -86,13 +86,13 @@ Plugins using the [Gradle Build System](gradle_build_system.md) use the [Kotlin 
 
 See the <path>build.gradle</path> from [kotlin_demo](https://github.com/JetBrains/intellij-sdk-code-samples/tree/main/kotlin_demo) sample plugin:
 
-```groovy
+```kotlin
 ```
-{src="kotlin_demo/build.gradle"}
+{src="kotlin_demo/build.gradle.kts" lines="2-"}
 
 ### Use Kotlin for Gradle Build Scripts
 
-Gradle also supports using Kotlin in build scripts: <path>build.gradle.kts</path>.
+Gradle also supports using Kotlin in the build scripts: <path>build.gradle.kts</path>.
 
 There are many good resources for learning how to write build scripts for an IntelliJ Platform plugin with Kotlin script, like
 [intellij-rust](https://github.com/intellij-rust/intellij-rust/blob/master/build.gradle.kts),

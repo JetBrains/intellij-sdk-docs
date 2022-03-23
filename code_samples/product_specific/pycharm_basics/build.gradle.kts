@@ -1,33 +1,37 @@
 // Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license.
 
 plugins {
-  id 'java'
-  id 'org.jetbrains.intellij' version '1.4.0'
+  id("java")
+  id("org.jetbrains.intellij") version "1.4.0"
 }
 
-group 'com.intellij.sdk'
-version '0.1.0'
-
-sourceCompatibility = 11
+group = "com.intellij.sdk"
+version = "0.1.0"
 
 repositories {
   mavenCentral()
 }
 
+java {
+  sourceCompatibility = JavaVersion.VERSION_11
+}
+
 // See https://github.com/JetBrains/gradle-intellij-plugin/
 intellij {
-  version = '2021.2'
-  type = 'PY'
-  plugins = ["Pythonid"]
-  downloadSources = false
+  version.set("2021.2")
+  type.set("PY")
+  plugins.set(listOf("Pythonid"))
+  downloadSources.set(false)
 }
 
-buildSearchableOptions {
-  enabled = false
-}
+tasks {
+  buildSearchableOptions {
+    enabled = false
+  }
 
-patchPluginXml {
-  version = project.version
-  sinceBuild = '212'
-  untilBuild = '213.*'
+  patchPluginXml {
+    version.set("${project.version}")
+    sinceBuild.set("212")
+    untilBuild.set("213.*")
+  }
 }

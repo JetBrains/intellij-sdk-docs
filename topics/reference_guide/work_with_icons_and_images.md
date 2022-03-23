@@ -38,13 +38,10 @@ Then define a class/interface in a top-level package called `icons` holding icon
 ```java
 package icons;
 
-public interface DemoPluginIcons {
-  Icon DemoAction =
-      IconLoader.getIcon("/icons/demoAction.png", DemoPluginIcons.class);
-  Icon StructureToolWindow =
-      IconLoader.getIcon("/icons/toolWindowStructure.png", DemoPluginIcons.class);
-  Icon FileType =
-      IconLoader.getIcon("/icons/myLangFileType.png", DemoPluginIcons.class);
+public interface MyIcons {
+  Icon Action = IconLoader.getIcon("/icons/myAction.png", MyIcons.class);
+  Icon Structure = IconLoader.getIcon("/icons/myStructure.png", MyIcons.class);
+  Icon FileType = IconLoader.getIcon("/icons/myFileType.png", MyIcons.class);
 }
 ```
 
@@ -57,20 +54,20 @@ When using Kotlin, fields must be annotated with `@JvmField`:
 ```kotlin
 package icons
 
-object DemoPluginIcons {
+object MyIcons {
   @JvmField
-  val DemoAction = IconLoader.getIcon("/icons/demoAction.png", javaClass)
+  val Action = IconLoader.getIcon("/icons/myAction.png", javaClass)
   @JvmField
-  val StructureToolWindow = IconLoader.getIcon("/icons/toolWindowStructure.png", javaClass)
+  val Structure = IconLoader.getIcon("/icons/myStructure.png", javaClass)
   @JvmField
-  val FileType = IconLoader.getIcon("/icons/myLangFileType.png", javaClass)
+  val FileType = IconLoader.getIcon("/icons/myFileType.png", javaClass)
 }
 ```
 
 </tab>
 </tabs>
 
-> Starting with 2021.2, `*Icons` class is not required to be located in `icons` package but can use plugin's package: `icons.DemoPluginIcons` &rarr; `my.plugin.DemoPluginIcons`.
+> Starting with 2021.2, `*Icons` class is not required to be located in `icons` package but can use plugin's package: `icons.MyIcons` &rarr; `my.plugin.MyIcons`.
 >
 {type="note"}
 
@@ -82,14 +79,14 @@ Note that the package name `icons` will be automatically prefixed and must not b
 <actions>
   <action
       id="DemoPlugin.DemoAction"
-      icon="DemoPluginIcons.DemoAction"
+      icon="MyIcons.Action"
       ... />
 </actions>
 
 <extensions defaultExtensionNs="com.intellij">
   <toolWindow
       id="CustomStructure"
-      icon="DemoPluginIcons.StructureToolWindow"
+      icon="MyIcons.Structure"
       ... />
 </extensions>
 ```

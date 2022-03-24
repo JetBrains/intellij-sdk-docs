@@ -84,11 +84,11 @@ Please see [Third-Party Software and Licenses](https://www.jetbrains.com/legal/t
 
 Plugins using the [Gradle Build System](gradle_build_system.md) use the [Kotlin JVM Gradle plugin](https://kotlinlang.org/docs/gradle.html#targeting-the-jvm).
 
-See the <path>build.gradle</path> from [kotlin_demo](https://github.com/JetBrains/intellij-sdk-code-samples/tree/main/kotlin_demo) sample plugin:
+See the <path>build.gradle.kts</path> from [kotlin_demo](https://github.com/JetBrains/intellij-sdk-code-samples/tree/main/kotlin_demo) sample plugin:
 
-```groovy
+```kotlin
 ```
-{src="kotlin_demo/build.gradle"}
+{src="kotlin_demo/build.gradle.kts" lines="2-"}
 
 ### Use Kotlin for Gradle Build Scripts
 

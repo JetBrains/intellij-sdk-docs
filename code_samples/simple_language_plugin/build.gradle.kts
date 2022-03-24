@@ -47,12 +47,10 @@ tasks {
   }
 
   test {
-    // This path value is machine-specific placeholder text.
+    // This path value is a machine-specific placeholder text.
     // Set idea.home.path to the absolute path to the intellij-community source
-    // on your local machine.
-    // Use variants described in:
+    // on your local machine. For real world projects, use variants described in:
     // https://docs.gradle.org/current/userguide/build_environment.html
-    // for real world projects.
     systemProperty("idea.home.path", "/Users/jhake/Documents/source/comm")
   }
 }

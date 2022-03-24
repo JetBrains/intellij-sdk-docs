@@ -116,35 +116,35 @@ code_samples/
         java/
           org.intellij.sdk.foo/
         resources/
-    build.gradle
+    build.gradle.kts
     gradlew
     gradle.bat
-    settings.gradle
+    settings.gradle.kts
     README.md
 ```
 
-## build.gradle Conventions
+## Gradle Build Script Conventions
 
 SDK code samples should be developed [using Gradle](gradle_build_system.md).
 As of this writing, the use of Gradle in SDK code samples still relies heavily on the <path>plugin.xml</path> for specifying the plugin configuration.
 At a later, second phase, the SDK code samples will transition to rely more on the Gradle configuration.
 
-The default contents of a <path>build.gradle</path> file are produced by the [New Project Wizard](gradle_prerequisites.md#creating-a-gradle-based-intellij-platform-plugin-with-new-project-wizard).
-A consistent structure for an SDK code sample's <path>build.gradle</path> file is essential for clarity and is based on the default produced by the project wizard.
-Comments in SDK code sample <path>build.gradle</path> files should only draw attention to the parts of the Gradle configuration that are unique for a plugin.
+The default contents of a Gradle build script file are produced by the [New Project Wizard](gradle_prerequisites.md#creating-a-gradle-based-intellij-platform-plugin-with-new-project-wizard).
+A consistent structure for an SDK code sample's Gradle build script file is essential for clarity and is based on the default produced by the project wizard.
+Comments in SDK code sample Gradle build scripts should only draw attention to the parts of the Gradle configuration that are unique for a plugin.
 
-For SDK code samples, a few alterations are needed to the default <path>build.gradle</path> file produced by the plugin wizard:
+For SDK code samples, a few alterations are needed to the default <path>build.gradle.kts</path> file produced by the plugin wizard:
 * Maintain the Gradle properties `version` (`project.version`) and `group` (`project.group`).
   See the [Plugin Gradle Properties](gradle_prerequisites.md#plugin-gradle-properties-and-plugin-configuration-file-elements) section for how these Gradle properties relate to the elements in <path>plugin.xml</path>.
-* Add the following statement to the [Setup DSL](https://github.com/JetBrains/gradle-intellij-plugin#setup-dsl) (`intellij{}`) section:
-  ```groovy
-    // Prevents patching <idea-version> attributes in plugin.xml
-    updateSinceUntilBuild = false
+* Add the following statement to the [Setup DSL](https://github.com/JetBrains/gradle-intellij-plugin#setup-dsl) (`intellij {...}`) section:
+  ```kotlin
+  // Prevents patching <idea-version> attributes in plugin.xml
+  updateSinceUntilBuild.set(false)
   ```
-* Add the following statement to the [Patching DSL](https://github.com/JetBrains/gradle-intellij-plugin#patching-dsl) (`patchPluginXml{}`) section:
-  ```groovy
-    // Patches <version> value in plugin.xml
-    version = project.version
+* Add the following statement to the [Patching DSL](https://github.com/JetBrains/gradle-intellij-plugin#patching-dsl) (`patchPluginXml {...}`) section:
+  ```kotlin
+  // Patches <version> value in plugin.xml
+  version.set(project.version)
   ```
 
 ## plugin.xml Conventions

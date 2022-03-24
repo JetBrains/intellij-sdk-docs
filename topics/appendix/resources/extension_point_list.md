@@ -4,9 +4,9 @@
 
 1361 Extension Points and 199 Listeners for IntelliJ Platform %ijPlatform%
 
-- [IntelliJ Platform](#intellij-platform)
-- [IntelliJ Community Plugins](#intellij-community-plugins)
-- [Android Plugin](#android-plugin)
+- [](#intellij-platform)
+- [](#intellij-community-plugins)
+- [](#android-plugin)
 
 > Dedicated Extension Point/Listener Lists specific to IDEs are available under _Part VIII — Product Specific_.
 >
@@ -16,9 +16,9 @@
 
 <chunk id="ep_list_legend">
 
-> See [Extensions](plugin_extensions.md) on how to declare extensions in your plugin.
+> See [](plugin_extensions.md) on how to declare extensions in your plugin.
 >
-> See [Listeners](plugin_listeners.md) on how to register listeners.
+> See [](plugin_listeners.md) on how to register listeners.
 >
 {type="tip"}
 

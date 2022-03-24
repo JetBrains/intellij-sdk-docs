@@ -79,7 +79,7 @@ jobs:
         run: |
           echo "
           runPluginVerifier {
-            ideVersions = '$PLUGIN_VERIFIER_IDE_VERSIONS'.split(' ').toList()
+            ideVersions.set("$PLUGIN_VERIFIER_IDE_VERSIONS".split(' ').toList())
           }
           " >> code_samples/${{ matrix.plugin }}/build.gradle.kts
           cd code_samples/${{ matrix.plugin }}

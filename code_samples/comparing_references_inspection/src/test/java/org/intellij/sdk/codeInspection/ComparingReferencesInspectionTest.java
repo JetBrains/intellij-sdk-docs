@@ -1,4 +1,4 @@
-// Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
+// Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license.
 
 package org.intellij.sdk.codeInspection;
 
@@ -11,7 +11,7 @@ import java.util.List;
 
 /**
  * Class for testing ComparingReferencesInspection.
- * Requires {@code idea.home.path} to be set in build.gradle.
+ * Requires {@code idea.home.path} to be set in build.gradle.kts.
  * doTest() does the work for individual test cases.
  */
 public class ComparingReferencesInspectionTest extends LightJavaCodeInsightFixtureTestCase {

@@ -84,7 +84,7 @@ Please see [Third-Party Software and Licenses](https://www.jetbrains.com/legal/t
 
 Plugins using the [Gradle Build System](gradle_build_system.md) use the [Kotlin JVM Gradle plugin](https://kotlinlang.org/docs/gradle.html#targeting-the-jvm).
 
-See the <path>build.gradle</path> from [kotlin_demo](https://github.com/JetBrains/intellij-sdk-code-samples/tree/main/kotlin_demo) sample plugin:
+See the <path>build.gradle.kts</path> from [kotlin_demo](https://github.com/JetBrains/intellij-sdk-code-samples/tree/main/kotlin_demo) sample plugin:
 
 ```kotlin
 ```
@@ -92,7 +92,7 @@ See the <path>build.gradle</path> from [kotlin_demo](https://github.com/JetBrain
 
 ### Use Kotlin for Gradle Build Scripts
 
-Gradle also supports using Kotlin in the build scripts: <path>build.gradle.kts</path>.
+Gradle also supports using Kotlin in build scripts: <path>build.gradle.kts</path>.
 
 There are many good resources for learning how to write build scripts for an IntelliJ Platform plugin with Kotlin script, like
 [intellij-rust](https://github.com/intellij-rust/intellij-rust/blob/master/build.gradle.kts),

@@ -12,18 +12,12 @@ Contents of a `VirtualFile` are treated as a stream of bytes, but concepts like 
 
 ## How do I get a virtual file?
 
-#### From an Action
-`AnActionEvent.getData(PlatformDataKeys.VIRTUAL_FILE)` or `AnActionEvent.getData(PlatformDataKeys.VIRTUAL_FILE_ARRAY)` for multiple selection
-
-#### From Path in Local File System
-- `LocalFileSystem.getInstance().findFileByIoFile()`
-- `VirtualFileManager.findFileByNioPath()`/`refreshAndFindFileByNioPath()` (2020.2 and later)
-
-#### From a PSI File
-`psiFile.getVirtualFile()` (may return `null` if the PSI file exists only in memory)
-
-#### From a Document
-`FileDocumentManager.getInstance().getFile()`
+| Context                          | API                                                                                                                                                                                                                                                                                                                                          |
+|----------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [Action](basic_action_system.md) | [`AnActionEvent.getData(PlatformDataKeys.VIRTUAL_FILE)`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnActionEvent.java)<br/>[`AnActionEvent.getData(PlatformDataKeys.VIRTUAL_FILE_ARRAY)`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnActionEvent.java) for multiple selection |
+| [Document](documents.md)         | [`FileDocumentManager.getInstance().getFile()`](upsource:///platform/core-api/src/com/intellij/openapi/fileEditor/FileDocumentManager.java)                                                                                                                                                                                                  |
+| [PsiFile](psi_files.md)          | [`PsiFile.getVirtualFile()`](upsource:///platform/core-api/src/com/intellij/psi/PsiFile.java) (may return `null` if the PSI file exists only in memory)                                                                                                                                                                                      |
+| Local File System Path           | [`LocalFileSystem.getInstance().findFileByIoFile()`](upsource:///platform/analysis-api/src/com/intellij/openapi/vfs/LocalFileSystem.java)<br/>[`VirtualFileManager.findFileByNioPath()`/`refreshAndFindFileByNioPath()`](upsource:///platform/core-api/src/com/intellij/openapi/vfs/VirtualFileManager.java) (2020.2+)                       |
 
 ## What can I do with it?
 

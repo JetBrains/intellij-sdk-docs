@@ -1,6 +1,6 @@
 [//]: # (title: Virtual Files)
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 A [`VirtualFile`](upsource:///platform/core-api/src/com/intellij/openapi/vfs/VirtualFile.java) (VF) is the IntelliJ Platform's representation of a file in a [Virtual File System (VFS)](virtual_file_system.md).
 
@@ -33,7 +33,7 @@ Recursive iteration should be performed using `VfsUtilCore.iterateChildrenRecurs
 ## Where does it come from?
 
 The VFS is built incrementally by scanning the file system up and down, starting from the project root.
-VFS _refreshes_ detect new files appearing in the file system.
+VFS _refresh_ operations detect new files appearing in the file system.
 A refresh operation can be initiated programmatically using `VirtualFileManager.syncRefresh()`/`asyncRefresh()` or `VirtualFile.refresh()`.
 VFS refreshes are also triggered whenever file system watchers receive file system change notifications.
 
@@ -63,12 +63,13 @@ Implement [`BulkFileListener`](upsource:///platform/core-api/src/com/intellij/op
 For example:
 
 ```java
-project.getMessageBus().connect().subscribe(VirtualFileManager.VFS_CHANGES, new BulkFileListener() {
-    @Override
-    public void after(@NotNull List<? extends VFileEvent> events) {
+project.getMessageBus().connect().subscribe(VirtualFileManager.VFS_CHANGES,
+    new BulkFileListener() {
+      @Override
+      public void after(@NotNull List<? extends VFileEvent> events) {
         // handle the events
-    }
-});
+      }
+    });
 ```
 
 See [Message Infrastructure](messaging_infrastructure.md) and [Plugin Listeners](plugin_listeners.md) for more details.

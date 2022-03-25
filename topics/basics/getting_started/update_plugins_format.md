@@ -1,6 +1,6 @@
 [//]: # (title: Publishing a Plugin to a Custom Plugin Repository)
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 If you intend to use a plugin repository _other than_ the [JetBrains Marketplace](https://plugins.jetbrains.com), you will need to:
 
@@ -52,7 +52,7 @@ available at this repository.
   -->
   <plugin
       id="fully.qualified.id.of.this.plugin"
-      url="https://www.mycompany.com/my_repository/mypluginname.jar"
+      url="https://mycompany.example.com/my_repo/my_plugin.jar"
       version="major.minor.update">
     <!--
     The <idea-version> element (required) must match the same element
@@ -62,7 +62,7 @@ available at this repository.
   </plugin>
   <plugin
       id="id.of.different.plugin"
-      url="https://www.otherserver.com/other_repository/differentplugin.jar"
+      url="https://othercompany.example.com/other_repo/other_plugin.jar"
       version="major.minor">
     <idea-version since-build="181.3" until-build="191.*"/>
   </plugin>

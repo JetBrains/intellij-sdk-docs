@@ -12,8 +12,10 @@ A `FileViewProvider` instance corresponds to a single `VirtualFile`, a single `D
 
 ## How do I get a FileViewProvider?
 
-* From a `VirtualFile`: `PsiManager.getInstance(project).findViewProvider()`
-* From a `PsiFile`: `psiFile.getViewProvider()`
+| Context                         | API                                                                                                                        |
+|---------------------------------|----------------------------------------------------------------------------------------------------------------------------|
+| [PSI File](psi_files.md)        | [`PsiFile.getViewProvider()`](upsource:///platform/core-api/src/com/intellij/psi/PsiFile.java)                             |
+| [Virtual File](virtual_file.md) | [`PsiManager.getInstance(project).findViewProvider()`](upsource:///platform/core-api/src/com/intellij/psi/PsiManager.java) |
 
 ## What can I do with a FileViewProvider?
 

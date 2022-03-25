@@ -1,6 +1,6 @@
 [//]: # (title: Documents)
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 A [`Document`](upsource:///platform/core-api/src/com/intellij/openapi/editor/Document.java) is an editable sequence of Unicode characters, typically corresponding to the text contents of a [virtual file](virtual_file.md).
 
@@ -9,18 +9,11 @@ The IntelliJ Platform handles encoding and line break conversions when loading a
 
 ## How do I get a Document?
 
-#### From an Action
-
-`AnActionEvent.getData(CommonDataKeys.EDITOR).getDocument()`
-
-#### From a Virtual File
-
-`FileDocumentManager.getDocument()`. This call forces the document content to be loaded from disk if it wasn't loaded previously.
-If only open documents or documents which may have been modified are considered relevant, use `FileDocumentManager.getCachedDocument()` instead.
-
-#### From a PSI File
-
-`PsiDocumentManager.getInstance().getDocument()` or `PsiDocumentManager.getInstance().getCachedDocument()`
+| Context                          | API                                                                                                                                                                                                                                                                                                                                                                                                                                |
+|----------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [Action](basic_action_system.md) | [`AnActionEvent.getData(CommonDataKeys.EDITOR).getDocument()`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnActionEvent.java)                                                                                                                                                                                                                                                                        |
+| [PSI File](psi_files.md)         | [`PsiDocumentManager.getInstance(project).getDocument()`/`getCachedDocument()`](upsource:///platform/core-api/src/com/intellij/psi/PsiDocumentManager.java)                                                                                                                                                                                                                                                                        |
+| [Virtual File](virtual_file.md)  | [`FileDocumentManager.getDocument()`](upsource:///platform/core-api/src/com/intellij/openapi/fileEditor/FileDocumentManager.java) (forces the document content to be loaded from a disk if it wasn't loaded previously)<br/>[`FileDocumentManager.getCachedDocument()`](upsource:///platform/core-api/src/com/intellij/openapi/fileEditor/FileDocumentManager.java) (use if only open or possibly modified documents are relevant) |
 
 ## What can I do with a Document?
 

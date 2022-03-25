@@ -49,6 +49,7 @@ See also [](extension_point_list.md#intellij-community-plugins) and [](plugin_co
 |---------------------------|---------------------------------|
 | Copyright                 | `com.intellij.copyright`        |
 | CSS                       | `com.intellij.css`              |
+| IntelliLang               | `org.intellij.intelliLang`      |
 | Java                      | `com.intellij.java`             |
 | JavaScript and TypeScript | `JavaScript`                    |
 | Kotlin                    | `org.jetbrains.kotlin`          |

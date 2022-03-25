@@ -1,6 +1,6 @@
 [//]: # (title: File View Providers)
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 A file view provider ([`FileViewProvider`](upsource:///platform/core-api/src/com/intellij/psi/FileViewProvider.java)) manages access to multiple PSI trees within a single file.
 
@@ -33,9 +33,9 @@ Register as follows in <path>plugin.xml</path>:
 ```xml
 <extensions defaultExtensionNs="com.intellij">
   <fileType.fileViewProviderFactory
-      filetype="$file_type$"
+      filetype="$FILE_TYPE$"
       implementationClass="com.example.MyFileViewProviderFactory"/>
 </extensions>
 ```
 
-Where `$file_type$` refers to the type of the file being created (for example, "JFS").
+Where `$FILE_TYPE$` refers to the type of the file being created (for example, "JSF").

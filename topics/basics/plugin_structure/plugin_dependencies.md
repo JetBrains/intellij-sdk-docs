@@ -45,12 +45,15 @@ Bundled plugins are located in <path>$PRODUCT_ROOT$/plugins/$PLUGIN_NAME$/lib/$P
 The following table lists some commonly used bundled plugins and their ID.
 See also [](extension_point_list.md#intellij-community-plugins) and [](plugin_compatibility.md#modules-specific-to-functionality).
 
-| Plugin Name               | Plugin ID                |
-|---------------------------|--------------------------|
-| Java                      | `com.intellij.java`      |
-| Kotlin                    | `org.jetbrains.kotlin`   |
-| Copyright                 | `com.intellij.copyright` |
-| JavaScript and TypeScript | `JavaScript`             |
+| Plugin Name               | Plugin ID                       |
+|---------------------------|---------------------------------|
+| Copyright                 | `com.intellij.copyright`        |
+| CSS                       | `com.intellij.css`              |
+| Java                      | `com.intellij.java`             |
+| JavaScript and TypeScript | `JavaScript`                    |
+| Kotlin                    | `org.jetbrains.kotlin`          |
+| Markdown                  | `org.intellij.plugins.markdown` |
+| Maven                     | `org.jetbrains.idea.maven`      |
 
 ### Preparing Sandbox
 

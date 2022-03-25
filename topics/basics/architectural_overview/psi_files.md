@@ -1,6 +1,6 @@
 [//]: # (title: PSI Files)
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 A PSI (Program Structure Interface) file is the root of a structure representing a file's contents as a hierarchy of elements in a particular programming language.
 
@@ -23,9 +23,9 @@ Most interesting modification operations are performed on the level of individua
 To iterate over the elements in a file, use
 
 ```java
-  psiFile.accept(new PsiRecursiveElementWalkingVisitor() {
-    // visitor implementation ...
-  });
+psiFile.accept(new PsiRecursiveElementWalkingVisitor() {
+  // visitor implementation ...
+});
 ```
 
 See also [Navigating the PSI](navigating_psi.md).
@@ -35,9 +35,9 @@ See also [Navigating the PSI](navigating_psi.md).
 As PSI is language-dependent, PSI files are created using the [`Language`](upsource:///platform/core-api/src/com/intellij/lang/Language.java) instance:
 
 ```java
-  LanguageParserDefinitions.INSTANCE
-        .forLanguage(MyLanguage.INSTANCE)
-        .createFile(fileViewProvider);
+LanguageParserDefinitions.INSTANCE
+    .forLanguage(MyLanguage.INSTANCE)
+    .createFile(fileViewProvider);
 ```
 
 Like documents, PSI files are created on-demand when the PSI is accessed for a particular file.

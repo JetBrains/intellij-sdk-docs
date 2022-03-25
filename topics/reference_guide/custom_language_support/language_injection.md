@@ -201,7 +201,7 @@ If there is no primary `LanguageInjectionPerformer` found, then a fallback injec
 
 The method `performInjection()` does the actual injection into the context PSI element and/or some elements around it if needed in case if they are semantically connected (concatenation injection for instance).
 
-> To use Language Injection API in your project, [add dependency](plugin_dependencies.md#2-project-setup) on the `IntelliLang` plugin.
+> To use Language Injection API in your project, [add dependency](plugin_dependencies.md#2-project-setup) on the `org.intellij.intelliLang` plugin.
 >
 {type="note"}
 

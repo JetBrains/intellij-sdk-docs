@@ -10,11 +10,13 @@ Unlike `VirtualFile` and `Document`, which have application scope (even if multi
 
 ## How do I get a PSI file?
 
-* From an Action: `AnActionEvent.getData(CommonDataKeys.PSI_FILE)`.
-* From a VirtualFile: `PsiManager.getInstance(project).findFile()`
-* From a Document: `PsiDocumentManager.getInstance(project).getPsiFile()`
-* From an element inside the file: `PsiElement.getContainingFile()`
-* To find files with a specific name anywhere in the project, use `FilenameIndex.getFilesByName(project, name, scope)`
+| Context                          | API                                                                                                                                                                      |
+|----------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [Action](basic_action_system.md) | [`AnActionEvent.getData(CommonDataKeys.PSI_FILE)`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnActionEvent.java)                          |
+| [Document](documents.md)         | [`PsiDocumentManager.getInstance(project).getPsiFile()`](upsource:///platform/core-api/src/com/intellij/psi/PsiDocumentManager.java)                                     |
+| [PSI Element](psi_elements.md)   | [`PsiElement.getContainingFile()`](upsource:///platform/core-api/src/com/intellij/psi/PsiElement.java) (may return `null` if the PSI element is not contained in a file) |
+| [Virtual File](virtual_file.md)  | [`PsiManager.getInstance(project).findFile()`](upsource:///platform/core-api/src/com/intellij/psi/PsiManager.java)                                                       |
+| File Name                        | [`FilenameIndex.getFilesByName(project, name, scope)`](upsource:///platform/indexing-api/src/com/intellij/psi/search/FilenameIndex.java)                                 |
 
 ## What can I do with a PSI file?
 

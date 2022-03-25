@@ -1,6 +1,6 @@
 [//]: # (title: Grouping Actions)
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 If an implementation requires several actions, or there are simply too many actions that overload the menu, the actions can be placed into groups.
 This tutorial demonstrates adding an action to an existing group, creating a new action group, and action groups with a variable number of actions.
@@ -59,7 +59,7 @@ The `PopupDialogAction` implementation will be reused and registered in the newl
 The `id` attribute for the reused `PopupDialogAction` implementation is set to a unique value, `org.intellij.sdk.action.GroupPopDialogAction`.
 This value differentiates this new `<action>` entry from the `id` previously used to register this action implementation in the [Creating Actions](working_with_custom_actions.md#registering-an-action-with-the-new-action-form) tutorial.
 A unique `id` supports reuse of action classes in more than one menu or group.
-The action in this group will display the menu text "A Group Action".
+The action in this group will be displayed in the menu as "A Group Action".
 
 ```xml
 <group
@@ -90,11 +90,11 @@ The underlying `PopupDialogAction` implementation is reused for two entries in t
 
 ## Implementing Custom Action Group Classes
 
-In some cases, the specific behavior of a group of actions needs to depend on the context.
+In some cases, the specific behavior of an action group needs to depend on the context.
 The solution is analogous to making a [single action entry dependent on context](working_with_custom_actions.md#extending-the-update-method).
 
 The steps below show how to make a group of actions available and visible if certain conditions are met.
-In this case, the condition is having an instance of an editor is available.
+In this case, the condition is having an instance of available editor.
 This condition is needed because the custom action group is added to an IntelliJ menu that is only enabled for editing.
 
 ### Extending DefaultActionGroup
@@ -109,7 +109,7 @@ As an example, extend [`DefaultActionGroup`](upsource:///platform/platform-api/s
 public class CustomDefaultActionGroup extends DefaultActionGroup {
   @Override
   public void update(AnActionEvent event) {
-    // Enable/disable depending on whether user is editing...
+    // Enable/disable depending on whether a user is editing...
   }
 }
 ```
@@ -120,7 +120,7 @@ As in the case with the static action group, the action `<group>` should be decl
 For demonstration purposes, this implementation will use localization.
 
 The `<group>` element declaration below shows:
-* An optional resource bundle declaration outside of the `<actions>` section for localizing actions.
+* An optional resource bundle declaration outside the `<actions>` section for localizing actions.
 * The presence of the `class` attribute in the `<group>` element tells the IntelliJ Platform framework to use `CustomDefaultActionGroup` rather than the default implementation.
 * Setting the group's `popup` attribute to allow submenus.
 * The `text` and `description` attributes are omitted in the `<group>` declaration in favor of using the localization resource bundle to define them.
@@ -182,7 +182,7 @@ Also, a custom icon is added to demonstrate that group icons can be changed depe
 public class CustomDefaultActionGroup extends DefaultActionGroup {
   @Override
   public void update(AnActionEvent event) {
-    // Enable/disable depending on whether user is editing
+    // Enable/disable depending on whether a user is editing
     Editor editor = event.getData(CommonDataKeys.EDITOR);
     event.getPresentation().setEnabled(editor != null);
     // Take this opportunity to set an icon for the group.
@@ -192,12 +192,12 @@ public class CustomDefaultActionGroup extends DefaultActionGroup {
 ```
 
 After compiling and running the code sample above and opening a file in the editor and right-clicking, the Editor context menu will pop up containing a new group of actions in the first position.
-Note the group and actions come from the resource file as all contain the suffix "[en]".
+Note that the group and actions come from the resource file as all contain the suffix "[en]".
 The new group will also have an icon:
 
 ![Custom Action Group](editor_popup_menu.png)
 
-## Action Groups with Variable Actions Sets
+## Action Groups with Dynamic Actions Sets
 
 If a set of actions belonging to a custom group varies depending on the context, the group must extend [`ActionGroup`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/ActionGroup.java).
 The set of actions in the `ActionGroup` is dynamically defined.
@@ -215,7 +215,7 @@ public class DynamicActionGroup extends ActionGroup {
 ### Registering a Variable Action Group
 
 To register the dynamic menu group, a `<group>` attribute needs to be placed in the `<actions>` section of [`plugin`.xml](https://github.com/JetBrains/intellij-sdk-code-samples/blob/main/action_basics/src/main/resources/META-INF/plugin.xml).
-When enabled, this group appears at the entry just below the [Static Grouped Actions](#binding-action-groups-to-ui-components) in the <menupath>Tools</menupath> menu:
+When enabled, this group appears just below the [Static Grouped Actions](#binding-action-groups-to-ui-components) in the <menupath>Tools</menupath> menu:
 
 ```xml
 <group
@@ -247,7 +247,7 @@ This use case is why `PopupDialogAction` overrides a constructor:
 public class DynamicActionGroup extends ActionGroup {
   @NotNull
   @Override
-  public AnAction[] getChildren(AnActionEvent e) {
+  public AnAction[] getChildren(AnActionEvent event) {
     return new AnAction[]{
         new PopupDialogAction(
             "Action Added at Runtime",

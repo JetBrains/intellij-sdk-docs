@@ -1,6 +1,6 @@
 [//]: # (title: Language Injection)
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 Language injection is the way the IntelliJ Platform handles different languages within the same source file.
 Well-known examples are:
@@ -191,7 +191,7 @@ Register the implementation in your <path>plugin.xml</path>:
 ```
 
 If you want more control over how the injection should be done then implement the `com.intellij.languageInjectionPerformer` EP which allows for complex language injections, e.g. for concatenation or interpolation of strings.
-If it is not implemented then the
+If it is not implemented, then the
 [`DefaultLanguageInjectionPerformer`](upsource:///plugins/IntelliLang/src/org/intellij/plugins/intelliLang/inject/DefaultLanguageInjectionPerformer.java)
 will be used.
 

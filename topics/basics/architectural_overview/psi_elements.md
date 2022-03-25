@@ -1,6 +1,6 @@
 [//]: # (title: PSI Elements)
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 A PSI (Program Structure Interface) file represents a hierarchy of PSI elements (so-called _PSI trees_).
 A single [PSI file](psi_files.md) (itself being a PSI element) may expose several PSI trees in specific programming languages (see [](file_view_providers.md)).
@@ -13,14 +13,11 @@ The [`PsiElement`](upsource:///platform/core-api/src/com/intellij/psi/PsiElement
 
 ## How do I get a PSI element?
 
-* From an Action: `AnActionEvent.getData(CommonDataKeys.PSI_ELEMENT)`.
-  Note: if an editor is currently open and the element under caret is a [reference](psi_references.md), this will return the result of resolving the reference.
-  This may or may not be what you need.
-* From a file by offset: `PsiFile.findElementAt()`.
-  Note: this returns the lowest level element ("leaf") at the specified offset, normally a lexer token.
-  Most likely, you should use `PsiTreeUtil.getParentOfType()` to find the element you really need.
-* By iterating through a PSI file: using a [`PsiRecursiveElementWalkingVisitor`](upsource:///platform/core-api/src/com/intellij/psi/PsiRecursiveElementWalkingVisitor.java).
-* By resolving a [reference](psi_references.md): `PsiReference.resolve()`
+| Context                          | API                                                                                                                                                                                                                                                                                                                                                                                               |
+|----------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [Action](basic_action_system.md) | [`AnActionEvent.getData(CommonDataKeys.PSI_ELEMENT)`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnActionEvent.java)<br/>Note: If an editor is currently open and the element under caret is a [reference](psi_references.md), this will return the result of resolving the reference.                                                                              |
+| [PSI File](psi_files.md)         | [`PsiFile.findElementAt(offset)`](upsource:///platform/core-api/src/com/intellij/psi/PsiFile.java) - This returns a leaf element at the specified offset, normally a lexer token. Use `PsiTreeUtil.getParentOfType()` to find the element of the exact type.<br/>[`PsiRecursiveElementWalkingVisitor`](upsource:///platform/core-api/src/com/intellij/psi/PsiRecursiveElementWalkingVisitor.java) |
+| [Reference](psi_references.md)   | [`PsiReference.resolve()`](upsource:///platform/core-api/src/com/intellij/psi/PsiReference.java)                                                                                                                                                                                                                                                                                                  |
 
 ## What can I do with PSI elements?
 

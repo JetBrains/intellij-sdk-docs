@@ -54,6 +54,13 @@ EP: `com.intellij.lang.smartEnterProcessor`
 
 [`SmartEnterProcessor`](upsource:///platform/lang-api/src/com/intellij/codeInsight/editorActions/smartEnter/SmartEnterProcessor.java) handles <menupath>Edit | Complete Statement</menupath> (e.g., autocomplete missing semicolon/parentheses).
 
+### Move Element Left/Right
+
+EP: `com.intellij.moveLeftRightHandler`
+
+Return children of given element from [`MoveElementLeftRightHandler`](upsource:///platform/lang-api/src/com/intellij/codeInsight/editorActions/moveLeftRight/MoveElementLeftRightHandler.java) for <menupath>Code | Move Element Left|Right</menupath>, e.g., method call parameters.
+Alternatively, implement [`PsiListLikeElement`](upsource:///platform/core-api/src/com/intellij/psi/PsiListLikeElement.java) in PSI element.
+
 ### Naming Suggestions
 
 EP: `com.intellij.nameSuggestionProvider`

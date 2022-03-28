@@ -19,7 +19,7 @@ java {
 
 // See https://github.com/JetBrains/gradle-intellij-plugin/
 intellij {
-  version.set("2021.1.3")
+  version.set("2021.2.4")
 }
 
 tasks {
@@ -29,8 +29,8 @@ tasks {
 
   patchPluginXml {
     version.set("${project.version}")
-    sinceBuild.set("211")
-    untilBuild.set("213.*")
+    sinceBuild.set("212")
+    untilBuild.set("221.*")
   }
 
   compileKotlin {

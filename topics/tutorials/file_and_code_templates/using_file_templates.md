@@ -4,7 +4,7 @@
 
 File templates provided by a plugin can be used during new file creation, in code intention actions, or other plugin features.
 They can be accessed with the
-[`FileTemplateManager`](upsource:///platform/lang-impl/src/com/intellij/ide/fileTemplates/FileTemplateManager.java)
+[`FileTemplateManager`](upsource:///platform/ide-core-impl/src/com/intellij/ide/fileTemplates/FileTemplateManager.java)
 service providing methods returning all or single file templates from a given category.
 For example, to obtain a template from the <control>[Code](providing_file_templates.md#code)</control> category, pass its name to the `getCodeTemplate()` method (notice the lack of the <path>.ft</path> extension):
 

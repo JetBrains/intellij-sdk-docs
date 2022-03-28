@@ -121,5 +121,5 @@ Use `com.jetbrains.intellij.platform:external-system-test-framework` from [](int
 
 Relevant base classes:
 
-- [`ExternalSystemImportingTestCase`](upsource:///platform/external-system-impl/testSrc/com/intellij/openapi/externalSystem/test/ExternalSystemImportingTestCase.java)
-- [`ExternalSystemTestCase`](upsource:///platform/external-system-impl/testSrc/com/intellij/openapi/externalSystem/test/ExternalSystemTestCase.java)
+- [`ExternalSystemImportingTestCase`](upsource:///platform/external-system-api/testFramework/src/com/intellij/platform/externalSystem/testFramework/ExternalSystemImportingTestCase.java)
+- [`ExternalSystemTestCase`](upsource:///platform/external-system-api/testFramework/src/com/intellij/platform/externalSystem/testFramework/ExternalSystemTestCase.java)

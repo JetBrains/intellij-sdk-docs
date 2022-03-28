@@ -13,7 +13,7 @@ Thus, surprisingly, the easiest way to get the replacement node is to create a d
 **Examples:**
 - [`setName()`](upsource:///plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/psi/impl/PropertyImpl.java) implementation for a [Properties language plugin](upsource:///plugins/properties)
 - [Custom Language Support Tutorial: Reference Contributor](reference_contributor.md)
-                  
+
 To disable renaming for specific elements, implement `com.intellij.openapi.util.Condition<T>` for PsiElement of type `T` and register it in `com.intellij.vetoRenameCondition` extension point.
 
 ### Name Validation
@@ -26,7 +26,7 @@ Implementations of `NamesValidator` are registered in the `com.intellij.lang.nam
 
 ### Custom Rename UI and Workflow
 Further customization of the Rename refactoring processing is possible on multiple levels.
-Providing a custom implementation of the [`RenameHandler`](upsource:///platform/lang-api/src/com/intellij/refactoring/rename/RenameHandler.java) interface allows you to entirely replace the UI and workflow of the rename refactoring, and also to support renaming something which is not a [`PsiElement`](upsource:///platform/core-api/src/com/intellij/psi/PsiElement.java) at all.
+Providing a custom implementation of the [`RenameHandler`](upsource:///platform/refactoring/src/com/intellij/refactoring/rename/RenameHandler.java) interface allows you to entirely replace the UI and workflow of the rename refactoring, and also to support renaming something which is not a [`PsiElement`](upsource:///platform/core-api/src/com/intellij/psi/PsiElement.java) at all.
 
 **Example**:
 [`RenameHandler`](upsource:///plugins/properties/properties-resource-bundle-editor/src/com/intellij/lang/properties/refactoring/rename/ResourceBundleFromEditorRenameHandler.java) for renaming a resource bundle in the [Properties language plugin](upsource:///plugins/properties)

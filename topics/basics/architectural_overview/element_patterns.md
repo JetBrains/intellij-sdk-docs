@@ -39,7 +39,7 @@ They are used in the [completion](completion_contributor.md#define-a-completion-
 However, the IntelliJ Platform source code provides many more examples of element patterns for built-in languages like JSON, XML, Groovy, Markdown, and so on.
 Checking the references in the table above or searching for usages of the high-level pattern classes will provide a comprehensive list that shows how element patterns are used in production code.
 
-For instance, an example can be found in [`MarkdownReferenceProvider`](upsource:///plugins/markdown/src/org/intellij/plugins/markdown/lang/references/MarkdownReferenceProvider.java) that tests if a PSI element is an instance of the `MarkdownLinkDestinationImpl` class and appears in a Markdown file.
+For instance, an example can be found in [`MarkdownReferenceProvider`](upsource:///plugins/markdown/core/src/org/intellij/plugins/markdown/lang/references/MarkdownReferenceProvider.java) that tests if a PSI element is an instance of the `MarkdownLinkDestinationImpl` class and appears in a Markdown file.
 
 ```java
 PsiElementPattern.Capture<MarkdownLinkDestinationImpl> linkDestinationCapture =

@@ -60,9 +60,9 @@ For visible progresses, threads can use `ProgressIndicator` to notify the user a
 Progress indicators also provide means to handle cancellation of background processes, either by the user (pressing the _Cancel_ button) or from code (e.g., when the current operation becomes obsolete due to some changes in the project).
 The progress can be marked as canceled by calling `ProgressIndicator.cancel()`.
 The process reacts to this by calling `ProgressIndicator.checkCanceled()` (or `ProgressManager.checkCanceled()` if no indicator instance at hand).
-This call throws a special unchecked [`ProcessCanceledException`](upsource:///platform/util/src/com/intellij/openapi/progress/ProcessCanceledException.java) if the background process has been canceled.
+This call throws a special unchecked [`ProcessCanceledException`](upsource:///platform/util/base/src/com/intellij/openapi/progress/ProcessCanceledException.java) if the background process has been canceled.
 
-All code working with PSI, or in other kinds of background processes, must be prepared for [`ProcessCanceledException`](upsource:///platform/util/src/com/intellij/openapi/progress/ProcessCanceledException.java) being thrown from any point.
+All code working with PSI, or in other kinds of background processes, must be prepared for [`ProcessCanceledException`](upsource:///platform/util/base/src/com/intellij/openapi/progress/ProcessCanceledException.java) being thrown from any point.
 This exception should never be logged but rethrown, and it'll be handled in the infrastructure that started the process.
 
 The `checkCanceled()` should be called often enough to guarantee the process's smooth cancellation.

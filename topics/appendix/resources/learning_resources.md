@@ -13,8 +13,9 @@
 ### Building a Plugin for WebStorm
 
 A tutorial blog post series for JavaScript developers:
-* [Part 1](https://blog.jetbrains.com/webstorm/2021/09/building-a-plugin-for-webstorm-part-1/)
-* [Part 2](https://blog.jetbrains.com/webstorm/2021/11/building-a-plugin-for-webstorm-part-2/)
+ [Part 1](https://blog.jetbrains.com/webstorm/2021/09/building-a-plugin-for-webstorm-part-1/)
+ [Part 2](https://blog.jetbrains.com/webstorm/2021/11/building-a-plugin-for-webstorm-part-2/)
+ [Part 3](https://blog.jetbrains.com/webstorm/2022/03/building-a-plugin-for-webstorm-part-3/)
 
 ## Webinars
 

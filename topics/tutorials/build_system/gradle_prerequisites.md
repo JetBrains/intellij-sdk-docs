@@ -109,7 +109,7 @@ The generated `my_gradle_plugin` project <path>build.gradle</path> file:
 ```groovy
 plugins {
   id 'java'
-  id 'org.jetbrains.intellij' version '1.4.0'
+  id 'org.jetbrains.intellij' version '1.5.0'
 }
 
 group 'com.example.mycompany'

@@ -12,6 +12,10 @@ _`com.extensionPoint.class`_ _description text_ - Extension Point class/interfac
 
 _- Sample 1_ - Sample implementation
 
+> See also [](extension_point_list.md#langextensionpointsxml) to discover more Language-related Extension Points. See also [](explore_api.md).
+>
+{type="tip"}
+
 ### Brace Matching
 
 EP: `com.intellij.lang.braceMatcher`
@@ -109,3 +113,9 @@ EP: `com.intellij.include.provider`
 
 [`FileIncludeProvider`](upsource:///platform/lang-impl/src/com/intellij/psi/impl/include/FileIncludeProvider.java) provides information about _include_ statements resolving to files (e.g., `<xi:include>` in XML).
 Including/included files can then be obtained via [`FileIncludeManager`](upsource:///platform/lang-api/src/com/intellij/psi/impl/include/FileIncludeManager.java).
+
+> If a topic you are interested in is not covered in the above sections, let us know via the "**Was this page helpful?**" feedback form below or [other channels](getting_help.md#problems-with-the-guide).
+>
+> Please be specific about the topics and reasons for adding them, and leave your email in case we need more details.
+>
+{type="note"}

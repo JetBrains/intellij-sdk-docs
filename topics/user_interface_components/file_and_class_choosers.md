@@ -19,7 +19,7 @@ Note that the native macOS file chooser does not support most of the customizati
 
 ### Via Textfield
 
-A very common way of using file choosers is to use a text field for entering the path with an ellipsis button ("...") for showing the file chooser.
+A very common way of using file choosers is to use a text field for entering the path with an ellipsis button (<control>...</control>) for showing the file chooser.
 To create such a control, use the [`TextFieldWithBrowseButton`](upsource:///platform/platform-api/src/com/intellij/openapi/ui/TextFieldWithBrowseButton.java) component and call the `addBrowseFolderListener()` method on it to set up the file chooser.
 As an added bonus, this will enable filename completion when entering paths in the text box.
 
@@ -31,10 +31,9 @@ An alternative UI for selecting files, which works best when the most common way
 The dialog shown by this API has two tabs:
 
 *  One shows the project structure
+*  Another shows a list of files similar to the one used by the <menupath>Navigate | File</menupath> popup.
 
-*  Another shows a list of files similar to the one used by the `Goto File` popup.
-
-To show the dialog, call `showDialog()` on the chooser returned from `createFileChooser()`, and then call `getSelectedFile` to retrieve the user's selection.
+To show the dialog, call `showDialog()` on the chooser returned from `createFileChooser()`, and then call `getSelectedFile()` to retrieve the user's selection.
 
 ## Class and Package Choosers
 

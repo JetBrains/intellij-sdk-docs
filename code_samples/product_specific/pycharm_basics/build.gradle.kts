@@ -18,7 +18,7 @@ java {
 
 // See https://github.com/JetBrains/gradle-intellij-plugin/
 intellij {
-  version.set("2021.2")
+  version.set("2021.2.4")
   type.set("PY")
   plugins.set(listOf("Pythonid"))
   downloadSources.set(false)

@@ -17,6 +17,7 @@ The following links represent useful resources for working with the IntelliJ Pla
 * [IntelliJ Platform Artifacts Repository](intellij_artifacts.md)
 * [IntelliJ Plugin Verifier](https://github.com/JetBrains/intellij-plugin-verifier) (see also [Verifying Compatibility](api_changes_list.md#verifying-compatibility))
 * [IntelliJ Platform Explorer](https://jb.gg/ipe) ([Blog post](https://blog.jetbrains.com/platform/2020/12/intellij-platform-explorer-get-to-the-extension-point/))
+* [IDE Log Analyzer](https://github.com/annikovk/idea_log_analyzer)
 * [Figma UI Kit](https://jetbrains.design/intellij/resources/UI_kit/) ([Blog post](https://blog.jetbrains.com/idea/2021/05/intellij-platform-ui-kit/))
 
 ### Plugins

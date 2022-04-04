@@ -1,0 +1,227 @@
+<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
+<topic xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/stardust/topic.v2.xsd"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="tools_gradle_intellij_plugin"
+       title="Gradle IntelliJ Plugin">
+  <p>The Gradle IntelliJ Plugin is a plugin for the Gradle build system to help configuring your environment for
+    building and testing plugins for IntelliJ-based IDEs.
+  </p>
+  <chapter id="usage" title="Usage">
+    <p>To enable this plugin in your Gradle-based project, add the following entry to the <code>plugins</code> section:
+    </p>
+    <note>
+      <p>Current Gradle IntelliJ Plugin version is:
+        <b>1.6.0</b>
+      </p>
+    </note>
+    <tabs>
+      <tab title="Kotlin">
+        <code style="block" lang="kotlin"><![CDATA[plugins {
+  id(&quot;org.jetbrains.intellij&quot;) version &quot;...&quot;
+}
+]]></code>
+      </tab>
+      <tab title="Groovy">
+        <code style="block" lang="groovy"><![CDATA[plugins {
+  id &quot;org.jetbrains.intellij&quot; version &quot;...&quot;
+}
+]]></code>
+      </tab>
+    </tabs>
+    <chapter id="snapshot-release" title="Snapshot Release">
+      <p>The Snapshot release is a pre-release version built nightly from the latest main branch.
+        To use it, it is required to point Gradle to the dedicated snapshot repository by adding an entry to the Gradle
+        settings file.
+      </p>
+      <note>
+        <p>Current Gradle IntelliJ Plugin Snapshot version is:
+          <b>1.7.0-SNAPSHOT</b>
+        </p>
+      </note>
+      <tabs>
+        <tab title="Kotlin">
+          <p>
+            <code>build.gradle.kts</code>
+          </p>
+          <code style="block" lang="kotlin"><![CDATA[plugins {
+    id(&quot;org.jetbrains.intellij&quot;) version &quot;...&quot;
+}
+]]></code>
+          <p>
+            <code>settings.gradle.kts</code>
+          </p>
+          <code style="block" lang="kotlin"><![CDATA[pluginManagement {
+    repositories {
+        maven(&quot;https://oss.sonatype.org/content/repositories/snapshots/&quot;)
+        gradlePluginPortal()
+    }
+}
+]]></code>
+        </tab>
+        <tab title="Groovy">
+          <p>
+            <code>build.gradle</code>
+          </p>
+          <code style="block" lang="groovy"><![CDATA[plugins {
+    id &quot;org.jetbrains.intellij&quot; version &quot;...&quot;
+}
+]]></code>
+          <p>
+            <code>settings.gradle</code>
+          </p>
+          <code style="block" lang="groovy"><![CDATA[pluginManagement {
+    repositories {
+        maven {
+            url 'https://oss.sonatype.org/content/repositories/snapshots/'
+        }
+        gradlePluginPortal()
+    }
+}
+]]></code>
+        </tab>
+      </tabs>
+    </chapter>
+  </chapter>
+  <chapter id="configuration" title="Configuration">
+    <p>The Gradle IntelliJ Plugin introduces a dedicated <code>intellij {}</code> extension closure to configure the
+      plugin, build environment, and dependencies by providing values for the most common and significant options.
+    </p>
+    <table>
+      <tr>
+        <td>Property</td>
+        <td>Description</td>
+        <td>Type</td>
+        <td>Value</td>
+      </tr>
+      <tr>
+        <td>
+          <code>version</code>
+        </td>
+        <td><b>REQUIRED</b>. The version of the IntelliJ Platform IDE that will be used to build the plugin. Please see <a
+                href="plugin_compatibility.md">Plugin Compatibility
+        </a> topic in SDK docs for more details.
+        </td>
+        <td>
+          <code>String</code>
+        </td>
+        <td>
+          <b>Accepted values:</b>
+          <br/>
+          - version number: <code>2022.1.1</code> or <code>IC-2022.1.1</code>
+          <br/>
+          - build number: <code>221.5080.210</code> or <code>IC-221.5080.210</code>
+          <br/>
+          - snapshot: <code>221-EAP-SNAPSHOT</code> or <code>LATEST-EAP-SNAPSHOT</code>
+          <br/>
+          All available JetBrains IDEs versions can be found at <a href="intellij_artifacts.md">IntelliJ Artifacts</a> page.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code>type</code>
+        </td>
+        <td>The type of the IntelliJ-based IDE distribution. The type may also be specified as a prefix of the value for
+          the <code>intellij.version</code> property.
+        </td>
+        <td>
+          <code>String</code>
+        </td>
+        <td>
+          <b>Accepted values:</b>
+          'IC' - IntelliJ IDEA Community Edition. 'IU' - IntelliJ IDEA Ultimate Edition. 'CL' - CLion. 'PY' - PyCharm
+          Professional Edition. 'PC' - PyCharm Community Edition. 'RD' - Rider. 'GO' - GoLand. 'JPS' - JPS-only. Default
+          Value:
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code>pluginName</code>
+        </td>
+        <td>The name of the generated ZIP archive distribution: <code>/build/distributions/PluginName-1.0.0.zip</code>.
+        </td>
+        <td>
+          <code>String</code>
+        </td>
+        <td>
+          <b>Default value:</b>
+          <code>${project.name}</code>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code>plugins</code>
+        </td>
+        <td/>
+        <td/>
+        <td/>
+      </tr>
+      <tr>
+        <td>
+          <code>localPath</code>
+        </td>
+        <td/>
+        <td/>
+        <td/>
+      </tr>
+      <tr>
+        <td>
+          <code>localSourcesPath</code>
+        </td>
+        <td/>
+        <td/>
+        <td/>
+      </tr>
+      <tr>
+        <td>
+          <code>sameSinceUntilBuild</code>
+        </td>
+        <td/>
+        <td/>
+        <td/>
+      </tr>
+      <tr>
+        <td>
+          <code>instrumentCode</code>
+        </td>
+        <td/>
+        <td/>
+        <td/>
+      </tr>
+      <tr>
+        <td>
+          <code>sandboxDir</code>
+        </td>
+        <td/>
+        <td/>
+        <td/>
+      </tr>
+      <tr>
+        <td>
+          <code>intellijRepository</code>
+        </td>
+        <td/>
+        <td/>
+        <td/>
+      </tr>
+      <tr>
+        <td>
+          <code>pluginsRepositories</code>
+        </td>
+        <td/>
+        <td/>
+        <td/>
+      </tr>
+    </table>
+    <warning>
+      <p>
+        <code>intellij.version</code>
+        and <code>intellij.localPath</code> should not be specified at the same time.
+      </p>
+    </warning>
+  </chapter>
+  <chapter id="tasks" title="Tasks">
+    <p>The Gradle IntelliJ Plugin provides a number of tasks that let you configure, build, test, and run your plugin
+      locally or on CI.
+    </p>
+  </chapter>
+</topic>

@@ -375,4 +375,7 @@
     </toc-element>
     <toc-element id="api_internal.md"/>
   </toc-element>
+  <toc-element toc-title="Appendix III — Tools">
+    <toc-element id="tools_gradle_intellij_plugin.md"/>
+  </toc-element>
 </product-profile>

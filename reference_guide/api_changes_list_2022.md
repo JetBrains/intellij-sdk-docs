@@ -89,16 +89,16 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 ### Collaboration Tools 2022.2
 
 `com.intellij.collaboration.auth.ui.AccountsListModelBase.notifyCredentialsChanged(A account)` method visibility changed from protected to private
-: Method hidden for better incapsulation
+: Method hidden for better encapsulation.
 
 `com.intellij.collaboration.auth.ui.AccountsPanelFactory.INSTANCE` field removed
-: Factory is now a factory
+: Factory is now a factory.
 
 `com.intellij.collaboration.auth.ui.LoadingAccountsDetailsProvider.DetailsLoadingResult` class removed
-: Better API introduced in the form of `com.intellij.collaboration.auth.ui.AccountsDetailsLoader`
+: Better API introduced in the form of `com.intellij.collaboration.auth.ui.AccountsDetailsLoader`.
 
 `com.intellij.collaboration.auth.ui.LoadingAccountsDetailsProvider` class removed
-: Better API introduced in the form of `com.intellij.collaboration.auth.ui.AccountsDetailsLoader`
+: Better API introduced in the form of `com.intellij.collaboration.auth.ui.AccountsDetailsLoader`.
 
 ## 2022.1
 

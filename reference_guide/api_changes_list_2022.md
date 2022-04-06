@@ -86,6 +86,20 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 `icons.DevkitIcons.Gutter` class renamed to `org.jetbrains.idea.devkit.DevKitIcons.Gutter`
 : Use `org.jetbrains.idea.devkit.DevKitIcons.Gutter` instead.
 
+### Collaboration Tools 2022.2
+
+`com.intellij.collaboration.auth.ui.AccountsListModelBase.notifyCredentialsChanged(A account)` method visibility changed from protected to private
+: Method hidden for better incapsulation
+
+`com.intellij.collaboration.auth.ui.AccountsPanelFactory.INSTANCE` field removed
+: Factory is now a factory
+
+`com.intellij.collaboration.auth.ui.LoadingAccountsDetailsProvider.DetailsLoadingResult` class removed
+: Better API introduced in the form of `com.intellij.collaboration.auth.ui.AccountsDetailsLoader`
+
+`com.intellij.collaboration.auth.ui.LoadingAccountsDetailsProvider` class removed
+: Better API introduced in the form of `com.intellij.collaboration.auth.ui.AccountsDetailsLoader`
+
 ## 2022.1
 
 ### IntelliJ Platform 2022.1
@@ -122,6 +136,9 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 
 `com.intellij.psi.impl.cache.impl.BaseFilterLexerUtil.scanContent(FileContent, IdAndToDoScannerBasedOnFilterLexer)` method removed
 : Todo index is removed from the indexing procedure, use specific `calcIdEntries` or `calcTodoEntries` method instead.
+
+`com.intellij.util.ui.StartupUiUtil.createStyleSheet(String)` method removed
+: Method moved to `com.intellij.util.ui.StyleSheetUtil`
 
 ### Collaboration Tools 2022.1
 

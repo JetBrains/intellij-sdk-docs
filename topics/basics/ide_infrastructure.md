@@ -83,6 +83,8 @@ To let users report such errors to the vendor, plugins can implement custom [`Er
 See [IntelliJ Platform Explorer](https://jb.gg/ipe?extensions=com.intellij.errorHandler) for existing implementations — ranging from pre-filling web-based issue tracker forms to fully automated submission to log monitoring systems.
 This [tutorial](https://www.plugin-dev.com/intellij/general/error-reporting/) also offers a working solution for using _Sentry_.
 
+To disable red exclamation notification icon in status bar, invoke <menupath>Help | Edit Custom Properties...</menupath> and add `idea.fatal.error.notification=disabled` in opened <path>idea.properties</path>.
+
 ## Runtime Information
 
 [`ApplicationInfo`](upsource:///platform/core-api/src/com/intellij/openapi/application/ApplicationInfo.java) provides information on the IDE version and vendor.

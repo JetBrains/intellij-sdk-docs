@@ -1,11 +1,13 @@
 [//]: # (title: Content Updates)
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-This page lists notable additions and updates to the SDK documentation and [code samples](https://github.com/JetBrains/intellij-sdk-code-samples).
-
-Follow [JBPlatform](https://twitter.com/JBPlatform/) on Twitter and visit [JetBrains Platform Blog](https://blog.jetbrains.com/platform/) for the latest announcements.
+This page lists notable additions and updates to the SDK documentation and [](code_samples.md).
 
 See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/main) ([RSS](https://github.com/JetBrains/intellij-sdk-docs/commits/main.atom)) for a detailed changelog.
+
+> Follow [JBPlatform](https://twitter.com/JBPlatform/) on Twitter and visit [JetBrains Platform Blog](https://blog.jetbrains.com/platform/) for the latest announcements.
+>
+{type="tip"}
 
 ## 2022
 

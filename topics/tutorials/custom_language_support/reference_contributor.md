@@ -150,7 +150,7 @@ The [Rename refactoring](https://www.jetbrains.com/help/idea/rename-refactorings
 ## Define a Refactoring Support Provider
 
 Support for in-place refactoring is specified explicitly in a refactoring support provider.
-Create `SimpleRefactoringSupportProvider` by subclassing [`RefactoringSupportProvider`](upsource:///platform/lang-api/src/com/intellij/lang/refactoring/RefactoringSupportProvider.java)
+Create `SimpleRefactoringSupportProvider` by subclassing [`RefactoringSupportProvider`](upsource:///platform/refactoring/src/com/intellij/lang/refactoring/RefactoringSupportProvider.java)
 As long as an element is a `SimpleProperty` it is allowed to be refactored:
 
 ```java

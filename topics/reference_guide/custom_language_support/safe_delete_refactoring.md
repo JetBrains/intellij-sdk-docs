@@ -6,11 +6,11 @@ The _Safe Delete_ refactoring also builds on the same [Find Usages](find_usages.
 
 In addition to that, to support _Safe Delete_, a plugin needs to implement two things:
 
-*  The
-   [`RefactoringSupportProvider`](upsource:///platform/lang-api/src/com/intellij/lang/refactoring/RefactoringSupportProvider.java)
+* The
+   [`RefactoringSupportProvider`](upsource:///platform/refactoring/src/com/intellij/lang/refactoring/RefactoringSupportProvider.java)
    interface, registered in the `com.intellij.lang.refactoringSupport` extension point, and the `isSafeDeleteAvailable()` method, which checks if the _Safe Delete_ refactoring is available for a specific PSI element
 
-*  The
+* The
    [`PsiElement.delete()`](upsource:///platform/core-api/src/com/intellij/psi/PsiElement.java)
    method for the
    [`PsiElement`](upsource:///platform/core-api/src/com/intellij/psi/PsiElement.java)

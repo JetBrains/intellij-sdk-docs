@@ -69,7 +69,7 @@ Alternatively, implement [`PsiListLikeElement`](upsource:///platform/core-api/sr
 
 EP: `com.intellij.nameSuggestionProvider`
 
-[`NameSuggestionProvider`](upsource:///platform/lang-api/src/com/intellij/refactoring/rename/NameSuggestionProvider.java) provides name suggestions for the given element, e.g., for Rename refactoring.
+[`NameSuggestionProvider`](upsource:///platform/refactoring/src/com/intellij/refactoring/rename/NameSuggestionProvider.java) provides name suggestions for the given element, e.g., for Rename refactoring.
 
 ### Semantic Highlight Usages
 

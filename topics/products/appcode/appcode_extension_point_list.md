@@ -2,7 +2,7 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-25 Extension Points (EP) and 4 Listeners for AppCode
+28 Extension Points and 4 Listeners for AppCode
 
 See [](extension_point_list.md) for IntelliJ Platform.
 
@@ -42,7 +42,10 @@ See [](extension_point_list.md) for IntelliJ Platform.
 
 | Extension Point | Implementation |
 |-----------------|----------------|
+| [appcode.additionalRootsProvider](https://jb.gg/ipe?extensions=appcode.additionalRootsProvider) ![Non-Dynamic][non-dynamic] | `XcodeMetaDataAdditionalRootsProvider` |
 | [appcode.attachDebuggerProvider](https://jb.gg/ipe?extensions=appcode.attachDebuggerProvider) ![Non-Dynamic][non-dynamic] | `AppCodeAttachDebuggerExtension` |
+| [appcode.projectRootNodeDelegateProvider](https://jb.gg/ipe?extensions=appcode.projectRootNodeDelegateProvider) ![Non-Dynamic][non-dynamic] | `AppCodeProjectRootNodeDelegateProvider` |
+| [appcode.rootsInfoPostProcessor](https://jb.gg/ipe?extensions=appcode.rootsInfoPostProcessor) ![Non-Dynamic][non-dynamic] | `XcodeRootsInfoPostProcessor` |
 | [appcode.runConfigurationExtension](https://jb.gg/ipe?extensions=appcode.runConfigurationExtension) ![Non-Dynamic][non-dynamic] | `AppCodeRunConfigurationExtension` |
 | [appcode.xcodeExternalBuildProvider](https://jb.gg/ipe?extensions=appcode.xcodeExternalBuildProvider) ![Non-Dynamic][non-dynamic] | `XcodeExternalBuildProvider` |
 | [appcode.xcodeTemplatePathsProvider](https://jb.gg/ipe?extensions=appcode.xcodeTemplatePathsProvider) ![Non-Dynamic][non-dynamic] | `XcodeTemplatePathsProvider` |

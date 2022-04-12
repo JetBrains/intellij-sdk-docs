@@ -17,6 +17,7 @@ See [](extension_point_list.md) for IntelliJ Platform.
 | `JestConsoleProperties#COVERAGE_CONFIG_TOPIC` ![Project-Level][project-level] | `JestCoverageConfigListener`     |
 | `PackageJsonFileManager#TOPIC` ![Project-Level][project-level]                | `PackageJsonChangeListener`      |
 | `JSLibraryManager#TOPIC` ![Project-Level][project-level]                      | `JSLibraryManagerChangeListener` |
+| `JSRemoteModulesRegistry#TOPIC`                                               | `JSRemoteModulesChangeListener`  |
 
 ### com.intellij.css
 
@@ -73,7 +74,7 @@ See [](extension_point_list.md) for IntelliJ Platform.
 | [JavaScript.importCandidatesFactory](https://jb.gg/ipe?extensions=JavaScript.importCandidatesFactory)                                                         | `CandidatesFactory`                                                                                |
 | [JavaScript.importModulePathStrategy](https://jb.gg/ipe?extensions=JavaScript.importModulePathStrategy)                                                       | `JSImportModulePathStrategy`                                                                       |
 | [JavaScript.indexedFileTypeProvider](https://jb.gg/ipe?extensions=JavaScript.indexedFileTypeProvider)                                                         | `IndexedFileTypeProvider`                                                                          |
-| [JavaScript.indexedFilesFilter](https://jb.gg/ipe?extensions=JavaScript.indexedFilesFilter) ![Experimental API][experimental] ![Internal API][internal]       | `JSIndexedFilesFilterProvider`                                                                     |
+| [JavaScript.indexedFilesFilter](https://jb.gg/ipe?extensions=JavaScript.indexedFilesFilter) ![Deprecated][deprecated]                                         | `JSIndexedFilesFilterProvider`                                                                     |
 | [JavaScript.inheritedLanguagesConfigurableProvider](https://jb.gg/ipe?extensions=JavaScript.inheritedLanguagesConfigurableProvider)                           | `JSInheritedLanguagesConfigurableProvider`                                                         |
 | [JavaScript.intentionAndInspectionFilter](https://jb.gg/ipe?extensions=JavaScript.intentionAndInspectionFilter)                                               | `IntentionAndInspectionFilter`                                                                     |
 | [JavaScript.jestPackageProvider](https://jb.gg/ipe?extensions=JavaScript.jestPackageProvider)                                                                 | `JestPackageProvider`                                                                              |
@@ -82,6 +83,7 @@ See [](extension_point_list.md) for IntelliJ Platform.
 | [JavaScript.languageServiceRemoteHelperFactory](https://jb.gg/ipe?extensions=JavaScript.languageServiceRemoteHelperFactory)                                   | `Factory`                                                                                          |
 | [JavaScript.moduleReferenceContributor](https://jb.gg/ipe?extensions=JavaScript.moduleReferenceContributor)                                                   | `JSModuleReferenceContributor`                                                                     |
 | [JavaScript.nodeModulesIndexableFileNamesProvider](https://jb.gg/ipe?extensions=JavaScript.nodeModulesIndexableFileNamesProvider)                             | `NodeModulesIndexableFileNamesProvider`                                                            |
+| [JavaScript.nodeRunConfigurationExtension](https://jb.gg/ipe?extensions=JavaScript.nodeRunConfigurationExtension)                                             | `AbstractNodeRunConfigurationExtension`                                                            |
 | [JavaScript.predefinedLibraryProvider](https://jb.gg/ipe?extensions=JavaScript.predefinedLibraryProvider)                                                     | `JSPredefinedLibraryProvider`                                                                      |
 | [JavaScript.resolveHelper](https://jb.gg/ipe?extensions=JavaScript.resolveHelper)                                                                             | `JSResolveHelper`                                                                                  |
 | [JavaScript.runConfigurationBuilder](https://jb.gg/ipe?extensions=JavaScript.runConfigurationBuilder) ![Project-Level][project-level]                         | `JSRunConfigurationBuilder`                                                                        |
@@ -104,12 +106,6 @@ See [](extension_point_list.md) for IntelliJ Platform.
 | [com.intellij.jsbtFileManagerProvider](https://jb.gg/ipe?extensions=com.intellij.jsbtFileManagerProvider)                                                     | `JsbtFileManagerProvider`                                                                          |
 | [com.intellij.jsbtService](https://jb.gg/ipe?extensions=com.intellij.jsbtService)                                                                             | `JsbtApplicationService`                                                                           |
 | [com.intellij.lang.typescript.languageService.extension](https://jb.gg/ipe?extensions=com.intellij.lang.typescript.languageService.extension)                 | `TypeScriptServiceExtension`                                                                       |
-
-### NodeJS
-
-| Extension Point                                                                                   | Implementation                    |
-|---------------------------------------------------------------------------------------------------|-----------------------------------|
-| [NodeJS.runConfigurationExtension](https://jb.gg/ipe?extensions=NodeJS.runConfigurationExtension) | `NodeJSRunConfigurationExtension` |
 
 ### org.jetbrains.plugins.node-remote-interpreter
 

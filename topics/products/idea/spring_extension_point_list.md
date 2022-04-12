@@ -2,7 +2,7 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-48 Extension Points (EP) and 5 Listeners for Spring API
+47 Extension Points and 5 Listeners for Spring API
 
 <include src="extension_point_list.md" include-id="ep_list_legend"></include>
 
@@ -58,7 +58,6 @@
 | [com.intellij.spring.boot.modelConfigFileContributor](https://jb.gg/ipe?extensions=com.intellij.spring.boot.modelConfigFileContributor)         | `SpringBootModelConfigFileContributor`     |
 | [com.intellij.spring.boot.modelConfigFileNameContributor](https://jb.gg/ipe?extensions=com.intellij.spring.boot.modelConfigFileNameContributor) | `SpringBootModelConfigFileNameContributor` |
 | [com.intellij.spring.boot.modelExtender](https://jb.gg/ipe?extensions=com.intellij.spring.boot.modelExtender)                                   | `SpringBootModelExtender`                  |
-| [com.intellij.spring.boot.placeholderReferenceResolver](https://jb.gg/ipe?extensions=com.intellij.spring.boot.placeholderReferenceResolver)     | `SpringBootPlaceholderReferenceResolver`   |
 | [com.intellij.spring.boot.replacementTokenResolver](https://jb.gg/ipe?extensions=com.intellij.spring.boot.replacementTokenResolver)             | `SpringBootReplacementTokenResolver`       |
 
 ### com.intellij.spring.messaging

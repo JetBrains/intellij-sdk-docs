@@ -24,7 +24,7 @@ It contains a single abstract method `shouldHighlightErrorElement()` which shoul
 
 **Examples:**
 - [`HtmlClosingTagErrorFilter`](upsource:///xml/xml-analysis-impl/src/com/intellij/codeInsight/highlighting/HtmlClosingTagErrorFilter.java) ignoring unmatched closing tag in HTML files
-- [`CodeFenceHighlightErrorFilter`](upsource:///plugins/markdown/src/org/intellij/plugins/markdown/injection/MarkdownCodeFenceErrorHighlightingIntention.kt) ignoring all syntax errors in a code injected into a Markdown code blocks
+- [`MarkdownCodeFenceErrorHighlightingIntention`](upsource:///plugins/markdown/core/src/org/intellij/plugins/markdown/injection/MarkdownCodeFenceErrorHighlightingIntention.kt) ignoring all syntax errors in a code injected into a Markdown code blocks
 
 **See also:**
 - [Controlling Highlighting](controlling_highlighting.md)

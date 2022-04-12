@@ -8,6 +8,8 @@ _Tool windows_ are child windows of the IDE used to display information.
 These windows generally have their own toolbars (referred to as _tool window bars_) along the outer edges of the main window containing one or more _tool window buttons_, which activate panels displayed on the left, bottom and right sides of the main IDE window.
 For detailed information about tool windows, please see [IntelliJ IDEA Web Help](https://www.jetbrains.com/idea/help/tool-windows.html) and [Tool window](https://jetbrains.design/intellij/components/tool_window/) topic in IntelliJ Platform UI Guidelines.
 
+See also [Tool window](https://jetbrains.design/intellij/components/tool_window/) in IntelliJ Platform UI Guidelines.
+
 Each side contains two tool window groups, the primary and the secondary one, and only one tool window from each group can be active at a time.
 
 Each tool window can show multiple tabs (or "contents", as they are called in the API).
@@ -31,7 +33,7 @@ To provide a localized text, specify matching `toolwindow.stripe.[id]` message k
 
 *  The `secondary` attribute, specifying whether the tool window is displayed in the primary or the secondary group
 
-*  The `icon` to display on the tool window button (13x13 pixels, see [Working with Icons and Images](work_with_icons_and_images.md))
+*  The `icon` to display on the tool window button (13x13 pixels, grey and monochromatic; see [Tool window](https://jetbrains.design/intellij/components/tool_window/#07) in IntelliJ Platform UI Guidelines and [Working with Icons and Images](work_with_icons_and_images.md))
 
 In addition to that, specify the `factoryClass` attribute - the name of a class implementing the [`ToolWindowFactory`](upsource:///platform/platform-api/src/com/intellij/openapi/wm/ToolWindowFactory.java) interface.
 When the user clicks on the tool window button, the `createToolWindowContent()` method of the factory class is called, and initializes the UI of the tool window.

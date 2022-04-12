@@ -54,6 +54,8 @@ Use the following guidelines to choose the correct parent:
 > Even though `Application` and `Project` implement `Disposable`, they must NEVER be used as parent disposables in plugin code.
 > Disposables registered using those objects as parents will not be disposed when the plugin is unloaded, leading to memory leaks.
 >
+> Inspection <control>Plugin DevKit | Code | Incorrect parentDisposable parameter</control> will highlight such problems.
+>
 {type="warning"}
 
 The `Disposer` API's flexibility means that if the parent instance is chosen unwisely, the child may consume resources for longer than required.

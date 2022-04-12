@@ -4,5 +4,5 @@
 
 <vars>
   <var name="ijPlatform" value="2022.1"/>
-  <var name="ijPlatformBuild" value="221.5080.56"/>
+  <var name="ijPlatformBuild" value="221.5080.169"/>
 </vars>

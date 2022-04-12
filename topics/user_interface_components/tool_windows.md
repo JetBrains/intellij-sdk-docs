@@ -84,7 +84,7 @@ To clarify how to develop plugins that create tool windows, consider the **toolW
 
 See [Code Samples](code_samples.md) on how to set up and run the plugin.
 
-This plugin creates the **Sample Calendar** tool window that displays the system date, time and time zone.
+This plugin creates the <control>Sample Calendar</control> tool window that displays the system date, time and time zone.
 When opened, this tool window is similar to the following screen:
 
 ![Sample Calendar](sample_calendar.png)

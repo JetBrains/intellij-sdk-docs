@@ -30,7 +30,8 @@ A commonly used UI implementation is [`EditorNotificationPanel`](upsource:///pla
 
 ### "Got It" Notification
 
-Use to highlight important new/changed features via [`GotItMessage`](upsource:///platform/platform-impl/src/com/intellij/ui/GotItMessage.java).See [Got It tooltip](https://jetbrains.design/intellij/controls/got_it_tooltip/) in IntelliJ Platform UI Guidelines for an overview.
+Use to highlight important new/changed features via [`GotItMessage`](upsource:///platform/platform-impl/src/com/intellij/ui/GotItMessage.java).
+See [Got It tooltip](https://jetbrains.design/intellij/controls/got_it_tooltip/) in IntelliJ Platform UI Guidelines for an overview.
 
 ### Top-Level Notifications (Balloons)
 
@@ -43,7 +44,8 @@ It has two main advantages:
 
 For UI reference, see [Balloon](https://jetbrains.design/intellij/controls/balloon/) in the IntelliJ Platform UI Guidelines.
 
-The specific method used to display a notification is [`Notifications.Bus.notify()`](upsource:///platform/ide-core/src/com/intellij/notification/Notifications.java). If the current Project is known, please use overload with `Project` parameter, so the notification is shown in its associated frame.
+The specific method used to display a notification is [`Notifications.Bus.notify()`](upsource:///platform/ide-core/src/com/intellij/notification/Notifications.java).
+If the current Project is known, please use overload with `Project` parameter, so the notification is shown in its associated frame.
 
 The text of the notification can include HTML tags.
 
@@ -64,8 +66,11 @@ Please see the following steps for setup, depending on the target platform versi
 Use `key` to provide a localized group display name.
 
 ```xml
+
 <extensions defaultExtensionNs="com.intellij">
-  <notificationGroup id="Custom Notification Group" displayType="BALLOON" key="notification.group.name"/>
+  <notificationGroup id="Custom Notification Group"
+                     displayType="BALLOON"
+                     key="notification.group.name"/>
 </extensions>
 ```
 
@@ -78,14 +83,17 @@ Registered instances can then be obtained via their `id`.
 ```java
 public class MyNotifier {
 
-  public static void notifyError(@Nullable Project project, String content) {
-    NotificationGroupManager.getInstance().getNotificationGroup("Custom Notification Group")
+  public static void notifyError(@Nullable Project project,
+                                 String content) {
+    NotificationGroupManager.getInstance()
+            .getNotificationGroup("Custom Notification Group")
             .createNotification(content, NotificationType.ERROR)
             .notify(project);
   }
 
 }
 ```
+
 </tab>
 
 <tab title="Pre-2020.3">
@@ -100,11 +108,12 @@ public class MyNotifier {
 
   public static void notifyError(@Nullable Project project, String content) {
     NOTIFICATION_GROUP.createNotification(content, NotificationType.ERROR)
-                      .notify(project);
+            .notify(project);
   }
 
 }
 ```
+
 </tab>
 
 </tabs>

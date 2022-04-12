@@ -24,6 +24,7 @@
 | Chipmunk (2021.2.1) Canary 3 | ![canary][canary] | October 27, 2021 | **2021.2.1.3** <br/> AI-212.5284.40.2112.7855545 | **2021.2.2** <br/> 212.5284.40 |
 | Chipmunk (2021.2.1) Canary 2 | ![canary][canary] | October 19, 2021 | **2021.2.1.2** <br/> AI-212.5284.40.2112.7824075 | **2021.2.2** <br/> 212.5284.40 |
 | Chipmunk (2021.2.1) Canary 1 | ![canary][canary] | October 13, 2021 | **2021.2.1.1** <br/> AI-212.4037.9.2112.7818732 | **2021.1.3** <br/> 212.4037.9 |
+| Bumblebee (2021.1.1) Patch 3 | ![patch][patch] | April 7, 2022 | **2021.1.1.23** <br/> AI-211.7628.21.2111.8309675 | **2021.1.3** <br/> 211.7628.21 |
 | Bumblebee (2021.1.1) Patch 2 | ![patch][patch] | February 23, 2022 | **2021.1.1.22** <br/> AI-211.7628.21.2111.8193401 | **2021.1.3** <br/> 211.7628.21 |
 | Bumblebee (2021.1.1) Patch 1 | ![patch][patch] | February 04, 2022 | **2021.1.1.21** <br/> AI-211.7628.21.2111.8139111 | **2021.1.3** <br/> 211.7628.21 |
 | Bumblebee (2021.1.1) | ![release][release] | January 25, 2022 | **2021.1.1.20** <br/> AI-211.7628.21.2111.8092744 | **2021.1.3** <br/> 211.7628.21 |
@@ -355,8 +356,8 @@
 | Dolphin (2021.3.1) Canary 7 | ![canary][canary] | March 17, 2022 | **2021.3.1.7** <br/> AI-213.6777.52.2113.8305692 | **2021.3.2** <br/> 213.6777.52 |
 | Dolphin (2021.3.1) Canary 6 | ![canary][canary] | March 14, 2022 | **2021.3.1.6** <br/> AI-213.6777.52.2113.8265607 | **2021.3.2** <br/> 213.6777.52 |
 | Dolphin (2021.3.1) Canary 5 | ![canary][canary] | March 3, 2022 | **2021.3.1.5** <br/> AI-213.6777.52.2113.8233036 | **2021.3.2** <br/> 213.6777.52 |
-| Dolphin (2021.3.1) Canary 4 | ![canary][canary] | February 28, 2022 | **2021.3.1.4** <br/> AI-213.6777.52.2113.8195552 | **2021.3.2** <br/> 213.6777.52 |
 | Chipmunk (2021.2.1) Beta 4 | ![beta][beta] | March 9, 2022 | **2021.2.1.11** <br/> AI-212.5712.43.2112.8233820 | **2021.2.4** <br/> 212.5712.43 |
+| Bumblebee (2021.1.1) Patch 3 | ![patch][patch] | April 7, 2022 | **2021.1.1.23** <br/> AI-211.7628.21.2111.8309675 | **2021.1.3** <br/> 211.7628.21 |
 
 [release]: https://img.shields.io/badge/-release-blue?style=flat-square
 [patch]: https://img.shields.io/badge/-patch-orange?style=flat-square

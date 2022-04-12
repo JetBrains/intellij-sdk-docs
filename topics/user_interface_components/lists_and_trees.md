@@ -18,14 +18,14 @@ In addition to the features of [`JBList`](upsource:///platform/platform-api/src/
 ### ColoredListCellRenderer and ColoredTreeCellRenderer
 
 When you need to customize the presentation of items in a list box or a tree, it's recommended to use the [`ColoredListCellRenderer`](upsource:///platform/platform-api/src/com/intellij/ui/ColoredListCellRenderer.java) or [`ColoredTreeCellRenderer`](upsource:///platform/platform-api/src/com/intellij/ui/ColoredTreeCellRenderer.java) classes as the cell renderer.
-These classes allow you to compose the presentation out of multiple text fragments with different attributes by calling `append()` and to set an optional icon for the item by calling `setIcon`.
+These classes allow you to compose the presentation out of multiple text fragments with different attributes by calling `append()` and to set an optional icon for the item by calling `setIcon()`.
 The renderer automatically takes care of setting the correct text color for selected items and of many other platform-specific rendering details.
 
 ### ListSpeedSearch and TreeSpeedSearch
 
 To facilitate keyboard-based selection of items in a list box or a tree, you can install a speed search handler on it using the [`ListSpeedSearch`](upsource:///platform/platform-impl/src/com/intellij/ui/ListSpeedSearch.java) and [`TreeSpeedSearch`](upsource:///platform/platform-impl/src/com/intellij/ui/TreeSpeedSearch.java).
 This can be done simply by calling `new ListSpeedSearch(list)` or `new TreeSpeedSearch(tree)`.
-If you need to customize the text which is used to locate the element, you can override the `getElementText()` method.
+To customize the text which is used to locate the element, override the `getElementText()` method.
 Alternatively, you can pass a function to convert items to strings.
 A function needs to be passed as `elementTextDelegate` to the [`ListSpeedSearch`](upsource:///platform/platform-impl/src/com/intellij/ui/ListSpeedSearch.java) constructor or as `toString` to the [`TreeSpeedSearch`](upsource:///platform/platform-impl/src/com/intellij/ui/TreeSpeedSearch.java) constructor.
 

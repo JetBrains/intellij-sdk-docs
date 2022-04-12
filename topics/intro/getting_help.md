@@ -32,4 +32,4 @@ Of course, all issues will be used to try and improve this guide.
 
 ## Problems with Products
 
-If you have a problem with an IntelliJ Platform-based product, such as IntelliJ IDEA, WebStorm, Rider, etc., please raise an issue on [YouTrack](https://youtrack.jetbrains.com), assigning it to the correct project for the product.
+If you have a problem with an IntelliJ Platform-based product, such as IntelliJ IDEA, WebStorm, Rider, etc., please use [Product Support](https://www.jetbrains.com/support/) channels.

@@ -56,8 +56,8 @@ No additional product-specific configuration needs to be set in the Gradle build
 
 ```kotlin
 intellij {
-  version.set("2019.2.3")
   type.set("PY")
+  version.set("2019.2.3")
 }
 ```
 
@@ -66,8 +66,8 @@ intellij {
 
 ```groovy
 intellij {
-  version = '2019.2.3'
   type = 'PY'
+  version = '2019.2.3'
 }
 ```
 
@@ -139,11 +139,11 @@ This snippet is an example for configuring the Setup and Running DSLs in a Gradl
 ```kotlin
 intellij {
   // Define IntelliJ Platform against which to build the plugin project.
+  type.set("IU")
 
   // Use the IntelliJ Platform BRANCH.BUILD version matching
   // "targetIDE" (PhpStorm):
   version.set("192.7142.36")   // baseIntelliJPlatformVersion
-  type.set("IU")
 
   // Require the targetIDE plugin or library. Use the stable version
   // compatible with intellij.version and intellij.type specified above:
@@ -163,11 +163,11 @@ runIde {
 ```groovy
 intellij {
   // Define IntelliJ Platform against which to build the plugin project.
+  type = 'IU'
 
   // Use the IntelliJ Platform BRANCH.BUILD version matching
   // "targetIDE" (PhpStorm):
   version = '192.7142.36'      // baseIntelliJPlatformVersion
-  type = 'IU'
 
   // Require the targetIDE plugin or library. Use the stable version
   // compatible with intellij.version and intellij.type specified above:

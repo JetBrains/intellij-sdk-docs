@@ -8,9 +8,6 @@ This FAQ is a topical index of questions that have been asked (and answered) on 
 >
 {type="tip"}
 
-## Open-Source Plugins
-*  [How do I compile the Scala plugin?](https://github.com/jetbrains/intellij-scala#setting-up-the-project)
-
 ## Unresolved Classes after Upgrading to 2019.2 or later
 *  [Java functionality extracted as a plugin](https://blog.jetbrains.com/platform/2019/06/java-functionality-extracted-as-a-plugin/)
 

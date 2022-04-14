@@ -71,9 +71,6 @@ This FAQ is a topical index of questions that have been asked (and answered) on 
 *  [Can I provide additional decorations for changelists in the Changes view?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206139549-Is-it-possible-to-decorate-change-lists-)
 *  [How do I report out-of-date files?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206791775-VCS-OpenAPI-what-to-do-with-files-detected-as-out-of-date-)
 
-## Test Framework
-*  [How do I create a library dependency in my test module?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206791555-library-depndency-in-InspectionTestCase)
-
 ## Plugin Architecture
 *  [How do I provide a custom exception reporter for my plugin?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206793965-Custom-exception-reporting)
 *  [How can I add the help topics of my plugin to the IntelliJ Platform help system?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206760095-how-do-i-plug-into-the-main-idea-help-system-)

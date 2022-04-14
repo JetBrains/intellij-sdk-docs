@@ -470,6 +470,7 @@ Version 2 is placed in `com.intellij.ui.dsl.builder` package.
 | `fullRow {`                                       | `row {`                                                               |
 | `titledRow(…) {`                                  | `group(…) {`                                                          |
 | `hideableRow`                                     | `collapsibleGroup`                                                    |
+| `cell` used as sub-grid                           | `row { panel { … } }`                                                 |
 | `component(…)` or its invocation via `()`         | `cell(…)`                                                             |
 | `enableIf`                                        | `enabledIf`                                                           |
 | `checkBox(text, bindOptions)`                     | `checkBox(text).bindSelected(bindOptions)`                            |

@@ -68,11 +68,6 @@ This FAQ is a topical index of questions that have been asked (and answered) on 
 *  [Can I provide additional decorations for changelists in the Changes view?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206139549-Is-it-possible-to-decorate-change-lists-)
 *  [How do I report out-of-date files?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206791775-VCS-OpenAPI-what-to-do-with-files-detected-as-out-of-date-)
 
-## Plugin Architecture
-*  [How do I provide a custom exception reporter for my plugin?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206793965-Custom-exception-reporting)
-*  [How can I add the help topics of my plugin to the IntelliJ Platform help system?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206760095-how-do-i-plug-into-the-main-idea-help-system-)
-*  [How do I get the version of IntelliJ Platform under which my plugin is running?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206800275-How-to-get-the-idea-version)
-
 ## Editors, Documents and Files
 *  [Why doesn't the file change on disk after I changed it through the PSI?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206791625-Action-doesn-t-see-changes-in-xml-file)
 *  [Can I hook into the file save logic?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206790685-Can-you-tie-into-the-file-save-logic-)

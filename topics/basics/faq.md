@@ -13,12 +13,6 @@ This FAQ is a topical index of questions that have been asked (and answered) on 
 
 ## Action System
 *  [How do I trigger actions programmatically?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206130119-Triggering-AnAction-instances-)
-*  [How do I add a main menu item?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206750335-Add-new-Main-menu-option-for-plugin)
-*  [How do I customize the "New..." menu?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206765055-Overriding-the-New-context-menu-in-the-Project-view)
-*  [How do I customize the compiler output context menu?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206142169-How-to-add-a-menu-item-below-Exclude-From-Compile-)
-*  [How do I get the context of an action (selected file, active project, etc.)?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206756455-Question-about-Actions)
-*  [How do I change the icon of an action dynamically?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206763405-How-to-dynamically-change-icons-in-the-tool-bar-)
-*  [How do I add icons to the IDEA toolbar?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206151289-How-to-add-icons-to-the-toolbar-)
 *  [Where do I get the list of built-in action IDs?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206126699-List-of-built-in-action-ID-s-)
 
 ## Accessing and Modifying the Source Code
@@ -40,13 +34,10 @@ This FAQ is a topical index of questions that have been asked (and answered) on 
 * [How do I find references to a class from non-Java files?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206800695-How-to-obtain-the-references-to-a-class-from-non-java-files-)
 * [How do I find the source file given the path to a .class file?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206800595-How-to-find-the-source-for-a-class-file)
 * [How do I find classes with the specified non-qualified name?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206146759-How-to-resolve-unqualified-name-to-possible-PsiClasses-)
-* [How do I find the module in which a class is located?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206103859-How-to-get-Module-from-PsiClass-)
 
 ## Working with XML and XML DOM
 *  [How do I change the value of an XML attribute through the PSI?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206139639-Change-xml-attribute-value)
-*  [How do I add custom references to Java elements in XML files?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206795875-XmlTagValue-reference-to-Java-methods)
 *  [How do I programmatically register a DTD or schema?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206795425-How-to-register-DTD-with-idea)
-*  [What is the "strict" parameter in DomElement.getParentOfType()?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206791535-DOM-DomElement-getParentOfType)
 
 ## Code Completion
 *  [How do I determine what type of code completion was invoked?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206133529-How-to-determine-what-type-of-code-completion-was-invoked)
@@ -71,18 +62,13 @@ This FAQ is a topical index of questions that have been asked (and answered) on 
 *  [Can I hook into the file save logic?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206790685-Can-you-tie-into-the-file-save-logic-)
 *  [Can I mark a part of a file as read-only?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/207042355-Read-only-section-in-editor)
 *  [How do I control what happens when the user tries to edit such a part?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206791375-Using-locked-regions)
-*  [How do I implement a custom editor?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206143969-Rough-guide-to-xml-gui-editor-type-plugin-)
 *  [How can I show several editors for a single file in tabs?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206795495-Alternative-Editors-ala-HTML-Preview)
 *  [Can I open an editor which has no underlying file on disk?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206135449-Create-an-Editor-for-a-non-physical-file)
-*  [How do I save the content of my custom editor when the user saves all documents?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206792085-Catching-the-Save-All-action)
 *  [How do I highlight elements in a source code editor?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206143909-MarkupModel-navigate-highlighted-elements)
 *  [How do I allow to navigate between highlighted elements using Find Next?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206143879-HighlightManager-how-to-enable-F3-functionality)
-*  [How do I force code to be re-analyzed?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206143679-Forcing-an-annotator-to-update-status-of-a-file)
 *  [How do I get the active editor instance?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206141119-how-to-get-the-Editor-from-PsiElement-)
 *  [How do I get the cursor position in the current editor?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206794335-How-to-get-cursor-position-in-the-current-editor-)
 *  [How do I clear the read-only status of a file?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206142039-Clear-read-only-status)
-*  [How do I show a popup hint in an editor?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206146719-HintManager-API-question)
-*  [How do I create live template-like red box edit regions in an editor?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206800165-How-to-%C3%A7reate-live-template-like-red-box-edit-regions-in-an-editor){interpolate-variables="false"}
 *  [How can I show an editor with error highlighting in a tool window?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206146679-Error-highlighting-in-Editors)
 
 ## Inspections

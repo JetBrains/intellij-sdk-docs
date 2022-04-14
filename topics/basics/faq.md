@@ -123,10 +123,7 @@ This FAQ is a topical index of questions that have been asked (and answered) on 
 
 ## General
 *  [How do I get the currently active project outside of an AnAction?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206763335-Getting-active-project-)
-*  [How do I detect when a project is closing?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206792155-Detecting-frame-project-closing)
 *  [How can I implement a custom stack trace analyzer?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206142959-Stack-Analyzer-extension)
 *  [Where is the state of an ApplicationComponent stored?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206794095-Where-is-ApplicationComponent-state-stored-in-)
 *  [How do I open a project programmatically?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206146969-how-to-open-a-project-)
 *  [How do I get the folder of the currently selected file?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206121889-How-to-get-the-folder-of-currenctly-selected-file)
-*  [How do I encrypt some values in the configuration data of my plugin?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206147039-JDOMExternalizable-and-encrypting-)
-*  [How can I track exceptions from my plugin?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206762245-How-can-I-track-plugin-s-exceptions-/comments/206112345)

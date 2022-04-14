@@ -100,11 +100,9 @@ This FAQ is a topical index of questions that have been asked (and answered) on 
 *  [How do I access all configured JDKs?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206141569-selecting-a-configured-jdk)
 
 ## Custom Languages
-*  [How do I provide Parameter Info support for my language?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206791995-Parameter-Info)
 *  [How do I provide auto-popup code completion in my language?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206139359-Autopopup-code-completion-in-custom-language)
 *  [How to make a closing brace unindent?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206797085-Custom-Language-How-to-make-a-closing-brace-unindent-)
 *  [How to automatically insert closing quotes?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206144059-How-the-insertion-of-closing-quote-works-in-Javascript-plugin-)
-*  [How do I provide Ctrl+mouse popups for my language?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206797015-Ctrl-mouse)
 *  [How do I enable debugging for my custom language which is compiled into Java?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206786875-Debugging-custom-languages-)
 *  [How do I generate virtual Java classes mirroring the classes of my language?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206143749-Custom-languages-masquarding-as-a-java-source-file-within-IntelliJ)
 

@@ -86,7 +86,6 @@ This FAQ is a topical index of questions that have been asked (and answered) on 
 ## Custom Languages
 *  [How do I provide auto-popup code completion in my language?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206139359-Autopopup-code-completion-in-custom-language)
 *  [How to make a closing brace unindent?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206797085-Custom-Language-How-to-make-a-closing-brace-unindent-)
-*  [How to automatically insert closing quotes?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206144059-How-the-insertion-of-closing-quote-works-in-Javascript-plugin-)
 *  [How do I enable debugging for my custom language which is compiled into Java?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206786875-Debugging-custom-languages-)
 *  [How do I generate virtual Java classes mirroring the classes of my language?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206143749-Custom-languages-masquarding-as-a-java-source-file-within-IntelliJ)
 

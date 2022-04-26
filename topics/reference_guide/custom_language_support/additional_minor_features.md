@@ -29,6 +29,13 @@ Certain types of braces can be marked as structural.
 Structural braces have higher priority than regular braces: they are matched with each other even if there are unmatched braces of different types between them.
 An opening non-structural brace is not matched with a closing one if one of them is inside a pair of matched structural braces and another is outside.
 
+### Quote Handling
+
+EP: `com.intellij.lang.quoteHandler`
+
+To support _Insert pair quote_ feature, provide [`QuoteHandler`](upsource:///platform/lang-impl/src/com/intellij/codeInsight/editorActions/QuoteHandler.java).
+In most cases, [`SimpleTokenSetQuoteHandler`](upsource:///platform/lang-impl/src/com/intellij/codeInsight/editorActions/SimpleTokenSetQuoteHandler.java) base implementation will be suitable.
+
 ### Comment Code
 
 EP: `com.intellij.lang.commenter`

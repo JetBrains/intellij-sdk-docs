@@ -128,6 +128,9 @@ MavenDependencyUtil.addFromMaven(model,
     "org.jetbrains.kotlin:kotlin-stdlib:1.6.10");
 ```
 
+For [light tests](light_and_heavy_tests.md), use convenience method [`DefaultLightProjectDescriptor.withRepositoryLibrary()`](upsource:///java/testFramework/src/com/intellij/testFramework/fixtures/DefaultLightProjectDescriptor.java)
+and [`JavaModuleFixtureBuilder.addMavenLibrary()`](upsource:///java/testFramework/src/com/intellij/testFramework/builders/JavaModuleFixtureBuilder.java) for [heavy tests](light_and_heavy_tests.md).
+
 If a required library is an unpublished JAR file, use [`PsiTestUtil.addLibrary()`](upsource:///platform/testFramework/src/com/intellij/testFramework/PsiTestUtil.java) or `addProjectLibrary()` method and the JAR file path, e.g.:
 
 ```java

@@ -120,7 +120,7 @@ The default JDK version used by the test framework depends on the target platfor
 The easiest way to change the JDK version to the custom is overriding the `LightJavaCodeInsightFixtureTestCase.getProjectDescriptor()` method and using one of the project descriptors predefined in `LightJavaCodeInsightFixtureTestCase`.
 If a project descriptor requires more customizations, its `getSdk()` method can use one of the [`IdeaTestUtil.getMockJdk*()`](upsource:///java/testFramework/src/com/intellij/testFramework/IdeaTestUtil.java) methods.
 
-Sometimes testing a JVM language requires adding standard or other libraries to a test project.
+Sometimes, testing a JVM language requires adding standard or other libraries to a test project.
 If a required library is available in the Maven repository, use [`MavenDependencyUtil`](upsource:///java/testFramework/src/com/intellij/testFramework/fixtures/MavenDependencyUtil.java), e.g.:
 
 ```java
@@ -132,7 +132,7 @@ If a required library is an unpublished JAR file, use [`PsiTestUtil.addLibrary()
 
 ```java
 PsiTestUtil.addLibrary(model,
-    "kotlin-stdlib", getTestDataPath(), "kotlin-stdlib.jar");
+    "internal-library", getTestDataPath(), "internal-library-2.0.jar");
 ```
 
 > If a topic you are interested in is not covered in the above sections, let us know via the "**Was this page helpful?**" feedback form below or [other channels](getting_help.md#problems-with-the-guide).

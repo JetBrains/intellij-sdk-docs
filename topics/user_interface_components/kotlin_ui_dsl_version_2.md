@@ -403,7 +403,7 @@ There are many extensions for specific components described in [](#cellbind).
 
 ### Cell.bind
 
-**UI DSL Showcase Tab**: Binding (Sources: [`DemoBinding`](https://github.com/JetBrains/intellij-community/blob/master/platform/platform-impl/src/com/intellij/internal/ui/uiDslShowcase/DemoBinding.kt))
+**UI DSL Showcase Tab**: Binding (Sources: [`DemoBinding`](upsource:///platform/platform-impl/src/com/intellij/internal/ui/uiDslShowcase/DemoBinding.kt))
 
 Binds `component` value that is provided by `componentGet` and `componentSet` methods to specified binding property.
 The property is applied only when `DialogPanel.apply()` is invoked.

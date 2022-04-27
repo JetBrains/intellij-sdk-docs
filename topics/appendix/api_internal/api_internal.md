@@ -4,7 +4,7 @@
 
 <excerpt>Lists private API annotated with ApiStatus.Internal and corresponding replacement.</excerpt>
 
-This page lists commonly used API annotated with [`org.jetbrains.annotations.ApiStatus.Internal`](https://github.com/JetBrains/java-annotations/blob/master/common/src/main/java/org/jetbrains/annotations/ApiStatus.java) which indicates it's _private API_ and must not be used outside of IntelliJ Platform itself:
+This page lists commonly used API annotated with [`org.jetbrains.annotations.ApiStatus.Internal`](https://github.com/JetBrains/java-annotations/blob/master/common/src/main/java/org/jetbrains/annotations/ApiStatus.java) which indicates it is _private API_ and must not be used outside of IntelliJ Platform itself:
 
 > _ApiStatus.Internal Javadoc_:
 >
@@ -16,7 +16,7 @@ Such violations are reported from [Plugin Verifier](api_changes_list.md#plugin-v
 
 Each entry is mapped to its corresponding _Replacement_, pointing to recommended API.
 
-> The list is not complete and will be updated continuously. Please check corresponding code documentation when encountering API not listed below.
+> The list is not complete and will be updated continuously. Please check corresponding code documentation when encountering any API not listed below.
 >
 {type="tip"}
 

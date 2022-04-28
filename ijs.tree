@@ -199,7 +199,7 @@
         </toc-element>
       </toc-element>
       <toc-element id="code_documentation.md"/>
-      <toc-element id="code_intentions.md" toc-title="Intentions"/>
+      <toc-element id="code_intentions.md"/>
     </toc-element>
     <toc-element id="analyzing.md" toc-title="Analysing">
       <toc-element id="syntax_errors.md"/>

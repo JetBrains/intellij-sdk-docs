@@ -8,7 +8,10 @@ If you need to know more about basic concepts of the project view in IntelliJ-ba
 This topic describes the [treeStructureProvider](https://github.com/JetBrains/intellij-sdk-code-samples/tree/main/tree_structure_provider) sample plugin.
 
 The steps below show how to filter out and keep visible only text files and directories in the Project View Panel.
-Other use cases include grouping/nesting related entries, e.g., [GUI Designer](https://www.jetbrains.com/help/idea/gui-designer-basics.html) <path>.form</path> file and related bound class ([`FormMergerTreeStructureProvider`](upsource:///plugins/ui-designer/src/com/intellij/uiDesigner/projectView/FormMergerTreeStructureProvider.java)).
+
+Other use cases include:
+- grouping/nesting related entries, e.g., [GUI Designer](https://www.jetbrains.com/help/idea/gui-designer-basics.html) <path>.form</path> file and related bound class ([`FormMergerTreeStructureProvider`](upsource:///plugins/ui-designer/src/com/intellij/uiDesigner/projectView/FormMergerTreeStructureProvider.java)).
+- provide additional "nested" nodes, e.g., contents of custom archive file
 
 ## Register Custom TreeStructure Provider
 

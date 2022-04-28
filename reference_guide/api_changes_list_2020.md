@@ -64,6 +64,8 @@ Please see [Incompatible API Changes](api_changes_list.md) on how to verify comp
 
 > Changes from API marked with `@Deprecated(forRemoval=true)` or any of [`org.jetbrains.annotations.ApiStatus`](https://github.com/JetBrains/java-annotations/blob/master/common/src/main/java/org/jetbrains/annotations/ApiStatus.java) `@Experimental`, `@ScheduledForRemoval`, or `@Internal` are not listed here, as incompatible changes are to be expected.
 >
+> For API annotated with `ApiStatus.@Internal`, see [](api_internal.md) for more details and replacements.
+>
 {type="note"}
 
 ## 2020.3

@@ -3,7 +3,7 @@
 
     <variables>
         <web-root>https://plugins.jetbrains.com/docs</web-root>
-        <web-community-path>Developer Community:http://www.jetbrains.net/devnet/community/idea/kb</web-community-path>
+        <web-community-path>Developer Community:https://intellij-support.jetbrains.com/hc/en-us/community/topics/200366979</web-community-path>
         <download-page/>
         <search-scope/>
         <fallback-url/>

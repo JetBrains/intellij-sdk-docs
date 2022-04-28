@@ -55,8 +55,8 @@ Specify the `conditionClass` attribute in <path>plugin.xml</path> with a class i
 
 </tabs>
 
-Note the condition is evaluated only once when the project is loaded.
-To show and hide a tool window dynamically while the user is working with the project use [programmatic setup](#programmatic-setup) for tool window registration.
+Note, the condition is evaluated only once when the project is loaded.
+To show and hide a tool window dynamically while the user is working with the project, use [programmatic setup](#programmatic-setup) for tool window registration.
 
 ### Programmatic Setup
 
@@ -70,14 +70,14 @@ Displaying the contents of many tool windows requires access to [indexes](indexi
 Because of that, tool windows are normally disabled while building indexes unless the `ToolWindowFactory` implements [`DumbAware`](upsource:///platform/core-api/src/com/intellij/openapi/project/DumbAware.java).
 For programmatic setup, parameter `canWorkInDumbMode` must be set to `true` in calls to `registerToolWindow()`.
 
-As mentioned previously, tool windows can contain multiple tabs, or contents.
+As mentioned previously, tool windows can contain multiple contents (tabs).
 To manage the contents of a tool window, call [`ToolWindow.getContentManager()`](upsource:///platform/ide-core/src/com/intellij/openapi/wm/ToolWindow.java).
-To add a tab (content), first create it by calling [`ContentManager.getFactory().createContent()`](upsource:///platform/ide-core/src/com/intellij/ui/content/ContentManager.java), and then to add it to the tool window using [`ContentManager.addContent()`](upsource:///platform/ide-core/src/com/intellij/ui/content/ContentManager.java).
+To add a content (tab), first create it by calling [`ContentManager.getFactory().createContent()`](upsource:///platform/ide-core/src/com/intellij/ui/content/ContentManager.java), and then to add it to the tool window using [`ContentManager.addContent()`](upsource:///platform/ide-core/src/com/intellij/ui/content/ContentManager.java).
 Use `Content.setDisposer()` to register associated `Disposable` (see [](disposers.md)).
 
 ### Closing Tabs
 
-A plugin can control whether the user is allowed to close tabs either globally or on a per-tab basis.
+A plugin can control whether the user is allowed to close tabs either globally or on a per-content basis.
 The former is done by passing the `canCloseContents` parameter to the `registerToolWindow()` function, or by specifying `canCloseContents="true"` in <path>plugin.xml</path>.
 The default value is `false`; calling `setClosable(true)` on `ContentManager` content will be ignored unless `canCloseContents` is explicitly set.
 If closing tabs is enabled in general, a plugin can disable closing of specific tabs by calling [`Content.setCloseable(false)`](upsource:///platform/ide-core/src/com/intellij/ui/content/Content.java).

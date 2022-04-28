@@ -16,7 +16,7 @@ Other use cases include:
 
 Add new `com.intellij.treeStructureProvider` extension to the [plugin.xml](https://github.com/JetBrains/intellij-sdk-code-samples/blob/main/tree_structure_provider/src/main/resources/META-INF/plugin.xml)
 
-```java
+```xml
 <extensions defaultExtensionNs="com.intellij">
   <treeStructureProvider implementation="org.intellij.sdk.treeStructureProvider.TextOnlyTreeStructureProvider"/>
 </extensions>

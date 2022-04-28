@@ -8,6 +8,8 @@ This feature is needed in order to support the <menupath>Navigate | Declaration 
 
 > The <menupath>View | Quick Definition</menupath> action is based on the same mechanism, so it becomes automatically available for all references that can be resolved by the language plugin.
 >
+> To customize exact document range to show in the popup (e.g., include "surrounding" code or comments), provide [`ImplementationTextSelectioner`](upsource:///platform/lang-api/src/com/intellij/codeInsight/hint/ImplementationTextSelectioner.java) registered in `com.intellij.lang.implementationTextSelectioner` extension point.
+>
 {type="note"}
 
 All PSI elements which work as references (for which the <menupath>Navigate | Declaration or Usages</menupath> action applies) need to implement the

@@ -3,7 +3,6 @@
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 This tutorial is meant to illustrate how the project tree structure view appearance can be modified programmatically.
-If you need to know more about basic concepts of the project view in IntelliJ-based IDEs, please refer to the [Project Tool Window](https://www.jetbrains.com/help/idea/project-tool-window.html) section in IntelliJ IDEA Web Help.
 
 This topic describes the [treeStructureProvider](https://github.com/JetBrains/intellij-sdk-code-samples/tree/main/tree_structure_provider) sample plugin.
 

@@ -11,6 +11,11 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 
 ## 2022
 
+### April-22
+
+Internal API Migration
+: As API annotated with `ApiStatus.@Internal` should not be used in plugins, refer to [](api_internal.md) for a list corresponding API replacements and additional information.
+
 ### March-22
 
 Code Samples Build Scripts Migrated to Kotlin

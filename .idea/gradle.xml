@@ -7,7 +7,7 @@
         <compositeConfiguration>
           <compositeBuild compositeDefinitionSource="SCRIPT">
             <builds>
-              <build path="$PROJECT_DIR$/code_samples/action_basics" name="action">
+              <build path="$PROJECT_DIR$/code_samples/action_basics" name="action_basics">
                 <projects>
                   <project path="$PROJECT_DIR$/code_samples/action_basics" />
                 </projects>
@@ -22,27 +22,27 @@
                   <project path="$PROJECT_DIR$/code_samples/conditional_operator_intention" />
                 </projects>
               </build>
-              <build path="$PROJECT_DIR$/code_samples/editor_basics" name="editor">
+              <build path="$PROJECT_DIR$/code_samples/editor_basics" name="editor_basics">
                 <projects>
                   <project path="$PROJECT_DIR$/code_samples/editor_basics" />
                 </projects>
               </build>
-              <build path="$PROJECT_DIR$/code_samples/facet_basics" name="facet">
+              <build path="$PROJECT_DIR$/code_samples/facet_basics" name="facet_basics">
                 <projects>
                   <project path="$PROJECT_DIR$/code_samples/facet_basics" />
                 </projects>
               </build>
-              <build path="$PROJECT_DIR$/code_samples/framework_basics" name="framework">
+              <build path="$PROJECT_DIR$/code_samples/framework_basics" name="framework_basics">
                 <projects>
                   <project path="$PROJECT_DIR$/code_samples/framework_basics" />
                 </projects>
               </build>
-              <build path="$PROJECT_DIR$/code_samples/inspection_basics" name="inspection">
+              <build path="$PROJECT_DIR$/code_samples/inspection_basics" name="inspection_basics">
                 <projects>
                   <project path="$PROJECT_DIR$/code_samples/inspection_basics" />
                 </projects>
               </build>
-              <build path="$PROJECT_DIR$/code_samples/kotlin_demo" name="kotlin">
+              <build path="$PROJECT_DIR$/code_samples/kotlin_demo" name="kotlin_demo">
                 <projects>
                   <project path="$PROJECT_DIR$/code_samples/kotlin_demo" />
                 </projects>
@@ -52,7 +52,7 @@
                   <project path="$PROJECT_DIR$/code_samples/live_templates" />
                 </projects>
               </build>
-              <build path="$PROJECT_DIR$/code_samples/max_opened_projects" name="maxOpenProjects">
+              <build path="$PROJECT_DIR$/code_samples/max_opened_projects" name="max_opened_projects">
                 <projects>
                   <project path="$PROJECT_DIR$/code_samples/max_opened_projects" />
                 </projects>
@@ -72,17 +72,17 @@
                   <project path="$PROJECT_DIR$/code_samples/project_view_pane" />
                 </projects>
               </build>
-              <build path="$PROJECT_DIR$/code_samples/project_wizard" name="projectWizard">
+              <build path="$PROJECT_DIR$/code_samples/project_wizard" name="project_wizard">
                 <projects>
                   <project path="$PROJECT_DIR$/code_samples/project_wizard" />
                 </projects>
               </build>
-              <build path="$PROJECT_DIR$/code_samples/psi_demo" name="psi">
+              <build path="$PROJECT_DIR$/code_samples/psi_demo" name="psi_demo">
                 <projects>
                   <project path="$PROJECT_DIR$/code_samples/psi_demo" />
                 </projects>
               </build>
-              <build path="$PROJECT_DIR$/code_samples/run_configuration" name="runConfiguration">
+              <build path="$PROJECT_DIR$/code_samples/run_configuration" name="run_configuration">
                 <projects>
                   <project path="$PROJECT_DIR$/code_samples/run_configuration" />
                 </projects>
@@ -97,12 +97,12 @@
                   <project path="$PROJECT_DIR$/code_samples/simple_language_plugin" />
                 </projects>
               </build>
-              <build path="$PROJECT_DIR$/code_samples/tool_window" name="toolWindow">
+              <build path="$PROJECT_DIR$/code_samples/tool_window" name="tool_window">
                 <projects>
                   <project path="$PROJECT_DIR$/code_samples/tool_window" />
                 </projects>
               </build>
-              <build path="$PROJECT_DIR$/code_samples/tree_structure_provider" name="treeStructureProvider">
+              <build path="$PROJECT_DIR$/code_samples/tree_structure_provider" name="tree_structure_provider">
                 <projects>
                   <project path="$PROJECT_DIR$/code_samples/tree_structure_provider" />
                 </projects>

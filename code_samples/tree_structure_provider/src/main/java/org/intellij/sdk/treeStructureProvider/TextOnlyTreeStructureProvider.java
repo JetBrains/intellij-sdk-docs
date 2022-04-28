@@ -9,7 +9,6 @@ import com.intellij.ide.util.treeView.AbstractTreeNode;
 import com.intellij.openapi.fileTypes.PlainTextFileType;
 import com.intellij.openapi.vfs.VirtualFile;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -32,12 +31,6 @@ public class TextOnlyTreeStructureProvider implements TreeStructureProvider {
       nodes.add(child);
     }
     return nodes;
-  }
-
-  @Nullable
-  @Override
-  public Object getData(@NotNull Collection<AbstractTreeNode<?>> selected, @NotNull String dataId) {
-    return null;
   }
 
 }

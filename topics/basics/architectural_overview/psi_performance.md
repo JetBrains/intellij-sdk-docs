@@ -10,15 +10,14 @@
 
 Avoid `PsiElement`'s methods which are expensive with deep trees.
 
-`getText()` traverses the whole tree under the given element and concatenates strings, consider `textMatches()` instead.
+`getText()` traverses the whole tree under the given element and concatenates strings, consider using `textMatches()` instead.
 
 `getTextRange()`, `getContainingFile()`, and `getProject()` traverse the tree up to the file, which can be long in very nested trees.
 If you only need PSI element length, use `getTextLength()`.
 
-File and project often can be computed once per some analysis and then stored in fields or passed via parameters.
+`getContainingFile()` and `getProject()` often can be computed once per task and then stored in fields or passed via parameters.
 
-Additionally, methods such as `getText()`, `getNode()`, or `getTextRange()`, need the AST, obtaining which can be quite an expensive operation.
-See below.
+Additionally, methods such as `getText()`, `getNode()`, or `getTextRange()`, need the AST, obtaining which can be quite an expensive operation, see next section.
 
 ## Avoid Using Many PSI Trees/Documents
 
@@ -41,4 +40,4 @@ Method calls such as `PsiElement.getReference(s)`, `PsiReference.resolve()` (and
 To avoid paying this cost several times, the result of such computation can be cached and reused.
 Usually, [`CachedValue`](upsource:///platform/core-api/src/com/intellij/psi/util/CachedValue.java) works well for this purpose.
 
-If the information you cache depends only on a subtree of the current PSI element (and nothing else: no resolve results or other files), you can cache it in a field in that `PsiElement` and drop the cache in an override of `ASTDelegatePsiElement.subtreeChanged()`.
+If the information you cache depends only on a subtree of the current PSI element (and nothing else: no resolve results or other files), you can cache it in a field in your `PsiElement` implementation and drop the cache in an override of `ASTDelegatePsiElement.subtreeChanged()`.

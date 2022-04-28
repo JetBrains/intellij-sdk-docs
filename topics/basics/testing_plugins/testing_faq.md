@@ -18,6 +18,10 @@ This page lists a number of common questions/issues and techniques useful for te
 
 ## Issues
 
+### "No Tests Found" targeting 2021.3+
+
+Please see [notes](https://plugins.jetbrains.com/docs/intellij/api-changes-list-2021.html#20213).
+
 ### How to avoid blinking tests?
 
 Always call `super.tearDown()` inside `finally {..}` block of your test class to avoid leaks and side effects from previously run (failed) tests.

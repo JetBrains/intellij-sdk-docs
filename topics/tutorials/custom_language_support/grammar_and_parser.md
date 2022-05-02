@@ -67,7 +67,7 @@ Note that the `SimpleTypes` class in the `elementTypeHolderClass` attribute abov
 Now that the grammar is defined, generate a parser with PSI classes via <control>Generate Parser Code</control> from the context menu on the <path>Simple.bnf</path> file.
 This step generates a parser and PSI elements in the <path>/src/main/gen</path> folder of the project.
 
-> Gradle plugin [gradle-grammarkit-plugin](https://github.com/JetBrains/gradle-grammar-kit-plugin) can be used alternatively.
+> Gradle plugin [gradle-grammar-kit-plugin](https://github.com/JetBrains/gradle-grammar-kit-plugin) can be used alternatively.
 >
 {type="tip"}
 

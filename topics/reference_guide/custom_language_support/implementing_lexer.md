@@ -7,7 +7,7 @@ A Lexer defines how a file's contents are broken into tokens.
 </excerpt>
 
 The lexer, or [lexical analyzer](https://en.wikipedia.org/wiki/Lexical_analysis), defines how a file's contents are broken into tokens.
-The lexer serves as a foundation for nearly all of the features of custom language plugins, from basic syntax highlighting to advanced code analysis features.
+The lexer serves as a foundation for nearly all features of custom language plugins, from basic syntax highlighting to advanced code analysis features.
 
 The API for the lexer is defined by the [`Lexer`](upsource:///platform/core-api/src/com/intellij/lexer/Lexer.java) interface.
 
@@ -47,7 +47,7 @@ A [patched version of JFlex](https://github.com/JetBrains/intellij-deps-jflex) c
 The patched version of JFlex provides a new command-line option `--charat` that changes the JFlex generated code to work with the IntelliJ Platform skeleton.
 Enabling `--charat` option passes the source data for lexing as a `java.lang.CharSequence` and not as an array of characters.
 
-For developing lexers using JFlex, the [GrammarKit plugin](https://plugins.jetbrains.com/plugin/6606-grammar-kit) can be useful.
+For developing lexers using JFlex, the [Grammar-Kit plugin](https://plugins.jetbrains.com/plugin/6606-grammar-kit) can be useful.
 It provides syntax highlighting and other useful features for editing JFlex files (<path>*.flex</path>).
 
 > Lexers, and in particular JFlex-based lexers, need to be created so that they always match the entire contents of the file, without any gaps between tokens, and generate special tokens for characters which are not valid at their location.

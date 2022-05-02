@@ -50,7 +50,7 @@ Please see [Getting Help](getting_help.md) if you encounter bugs in this guide o
 
 ## Updates
 
-> Gradle IntelliJ Plugin 1.x is now available, please update your build scripts [![GitHub Release](https://img.shields.io/github/release/jetbrains/gradle-intellij-plugin.svg?style=flat-square)](https://github.com/jetbrains/gradle-intellij-plugin/releases)
+> Gradle IntelliJ Plugin 1.x is now available, please update your Gradle build script [![GitHub Release](https://img.shields.io/github/release/jetbrains/gradle-intellij-plugin.svg?style=flat-square)](https://github.com/jetbrains/gradle-intellij-plugin/releases)
 >
 > [What's New & Upgrade Instructions](https://lp.jetbrains.com/gradle-intellij-plugin)
 >

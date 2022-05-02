@@ -12,7 +12,7 @@ Please try to be as specific as possible and provide your e-mail address for fur
 
 If you just want to share feedback on the guide, again, [raise an issue](https://youtrack.jetbrains.com/newIssue?project=IJSDK&clearDraft=true&c=), even if it's for a discussion, ideas on improvements or suggestions.
 
-> Please don't use the **IJSDK** YouTrack project for plugin or product support requests - it's intended for the SDK and the documentation, and you'll get a better response using one of the methods below.
+> Please don't use the **IJSDK** YouTrack project for plugin or [product support](#problems-with-products) requests - it's intended for the SDK and the documentation, and you'll get a better response using one of the methods below.
 >
 {type="note"}
 
@@ -22,14 +22,14 @@ If you just want to share feedback on the guide, again, [raise an issue](https:/
 >
 {type="tip"}
 
-For problems related to code, rather than the content of the guide, you have several options:
+For questions and problems related to plugin development itself (rather than the content of this guide), you have several options:
 
+* [#intellij-platform on JetBrains Platform Slack](https://plugins.jetbrains.com/slack/) - this chat room is a great place to ask questions about extending JetBrains products, with answers coming from both JetBrains team members and members of the community
 * [Plugin Development Forum](https://intellij-support.jetbrains.com/hc/en-us/community/topics/200366979-IntelliJ-IDEA-Open-API-and-Plugin-Development) - post a message to the support forum.
   It is regularly updated with answers by JetBrains team members.
-* [#intellij-platform on JetBrains Platform Slack](https://plugins.jetbrains.com/slack/) - this chat room is a great place to ask questions, with answers coming from both JetBrains team members and members of the community
 
-Of course, all issues will be used to try and improve this guide.
+Of course, all raised questions will be used to try and improve this guide.
 
 ## Problems with Products
 
-If you have a problem with an IntelliJ Platform-based product, such as IntelliJ IDEA, WebStorm, Rider, etc., please use [Product Support](https://www.jetbrains.com/support/) channels.
+If you have a problem with an IntelliJ Platform-based product, such as IntelliJ IDEA, WebStorm, Rider, etc., please use any of the regular [Product Support](https://www.jetbrains.com/support/) channels.

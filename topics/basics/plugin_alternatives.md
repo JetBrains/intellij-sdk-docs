@@ -7,7 +7,7 @@
 In some cases, implementing an actual IntelliJ Platform plugin can be overkill, and using one of the alternative approaches listed below may provide you with the required value in a much shorter time.
 If you need a functionality that is specific to your project domain, conventions, or practices, you can avoid all the steps that are required to implement and publish a plugin and provide these features as a part of your project or IDE configuration files.
 
-Before you start the IntelliJ Platform plugin development, define your requirements and verify if they can be covered with the alternatives described below.
+Before you start the IntelliJ Platform plugin development, define your requirements and verify if they can be covered with any of the alternatives described below.
 Consider implementing an actual plugin only when the described solutions are insufficient in your case and there is a significant number of developers who can benefit from it.
 
 ## Structural Search and Replace Inspections
@@ -59,6 +59,6 @@ Additionally, if they are stored in a project's <path>.live-plugins</path> direc
 
 ## PhpStorm Advanced Metadata
 
-PhpStorm supports special [metadata files](https://www.jetbrains.com/help/phpstorm/ide-advanced-metadata.html) describing the behavior of methods and functions.
-This information is used for using the existing IDE features such as code completion, navigation, finding usages, and other.
-The metadata files can be [part of project files](https://www.jetbrains.com/help/phpstorm/ide-advanced-metadata.html#create-metadata-files-inside-your-project), which makes it easy to share it between team members via VCS.
+[PhpStorm](https://www.jetbrains.com/phpstorm/) supports special [metadata files](https://www.jetbrains.com/help/phpstorm/ide-advanced-metadata.html) describing the behavior of methods and functions.
+This information is used for using the existing IDE features such as code completion, navigation, finding usages, and others.
+The metadata files can be [part of project files](https://www.jetbrains.com/help/phpstorm/ide-advanced-metadata.html#create-metadata-files-inside-your-project), which makes it easy to share it between team members via version control.

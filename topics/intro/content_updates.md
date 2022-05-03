@@ -171,7 +171,7 @@ Part X — Plugin Repository moved
 ### July-19
 
 New page: Optimizing Performance
-: [How to improve performance](performance.md) working with PSI, indexing, and avoiding UI freezes.
+: Optimizing performance when [working with PSI](psi_performance.md), [during indexing](indexing_and_psi_stubs.md#improving-indexing-performance), and [](general_threading_rules.md#avoiding-ui-freezes).
 
 ### May-19
 

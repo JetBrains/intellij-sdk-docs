@@ -4,7 +4,7 @@
 
 [![official JetBrains project](https://jb.gg/badges/official-flat-square.svg)](https://confluence.jetbrains.com/display/ALL/JetBrains+on+GitHub) [![Twitter Follow](https://img.shields.io/twitter/follow/JBPlatform?style=flat-square&logo=twitter)](https://twitter.com/JBPlatform/) [![Slack](https://img.shields.io/badge/Slack-%23intellij--platform-blue?style=flat-square&logo=slack)](https://plugins.jetbrains.com/slack)
 
-Welcome to the IntelliJ Platform SDK - the primary source of documentation for extending the IntelliJ Platform by creating plugins, custom language support, or building a custom IDE.
+Welcome to the IntelliJ Platform SDK – the primary source of documentation for extending the IntelliJ Platform by creating plugins, custom language support, or building a custom IDE.
 
 ## Getting Started
 
@@ -20,15 +20,13 @@ Webinar
 <tr>
 <td>
 
-* [What is the IntelliJ Platform?](intellij_platform.md)
-* [About this Guide](about.md)
-    * [Key Topics](key_topics.md)
-    * [Getting Help](getting_help.md)
+* [](intellij_platform.md)
+* [](about.md)
 * [](plugin_alternatives.md)
-* [Creating Your First Plugin](getting_started.md)
+* [](getting_started.md)
+* [](explore_api.md)
 * [](useful_links.md)
 * [](learning_resources.md)
-* [Marketing](marketing.md)
 
 </td>
 
@@ -59,7 +57,8 @@ Please see [Getting Help](getting_help.md) if you encounter bugs in this guide o
 See [Content Updates](content_updates.md) for the latest changes.
 Follow [JBPlatform](https://twitter.com/JBPlatform/) on Twitter and visit [JetBrains Platform Blog](https://blog.jetbrains.com/platform/) for the latest announcements.
 
-Upgrading your plugin to the latest platform release? Make sure to check [Incompatible Changes](api_changes_list.md) as well as [Notable Changes and Features](api_notable.md).
+Upgrading your plugin to the latest platform release?
+Make sure to check [Incompatible Changes](api_changes_list.md) as well as [Notable Changes and Features](api_notable.md).
 Verify your plugin follows guidelines from [Dynamic Plugins](dynamic_plugins.md) to allow installing/updating without IDE restarts.
 
 ## Contribute

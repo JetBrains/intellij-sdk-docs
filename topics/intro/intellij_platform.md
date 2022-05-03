@@ -2,6 +2,8 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
+<excerpt>Introduction to the IntelliJ Platform, plugins, and IDEs based on it.</excerpt>
+
 The IntelliJ Platform is not a product in and of itself but provides a platform for building IDEs.
 It is used to power JetBrains products such as [IntelliJ IDEA](https://www.jetbrains.com/idea/).
 It is also Open Source and can be used by third parties to build IDEs, such as [Android Studio](https://developer.android.com/studio/index.html) from Google.

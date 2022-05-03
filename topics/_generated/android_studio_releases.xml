@@ -1,4 +1,13 @@
-<content version="82">
+<content version="83">
+   <item>
+      <name>Android Studio Chipmunk (2021.2.1) RC 2</name>
+      <build>AI-212.5712.43.2112.8504664</build>
+      <version>2021.2.1.13</version>
+      <channel>RC</channel>
+      <platformBuild>212.5712.43</platformBuild>
+      <platformVersion>2021.2.4</platformVersion>
+      <date>May 2, 2022</date>
+   </item>
    <item>
       <name>Android Studio Dolphin (2021.3.1) Canary 9</name>
       <build>AI-213.7172.25.2113.8473230</build>

@@ -121,6 +121,10 @@ This method returns `null` if the file or directory does not belong to any sourc
 VirtualFile moduleSourceRoot = ProjectRootManager.getInstance(project).getFileIndex().getSourceRootForFile(virtualFileOrDirectory);
 ```
 
+### Java: Compiler Output Properties
+
+Obtain [`CompilerModuleExtension`](upsource:///platform/projectModel-api/src/com/intellij/openapi/roots/CompilerModuleExtension.java) for given `Module` instance to access <control>Compiler Output</control> path related properties.
+
 ## Receiving Notifications About Module Changes
 
 To receive notifications about module changes (modules being added, removed or renamed), use the [message bus](messaging_infrastructure.md) and the `ProjectTopics.MODULES` topic:

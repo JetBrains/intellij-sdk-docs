@@ -70,7 +70,6 @@
                      toc-title="LaF Defaults"/>
       </toc-element>
     </toc-element>
-    <toc-element id="performance.md"/>
     <toc-element id="faq.md"/>
   </toc-element>
   <toc-element toc-title="Part II — Base Platform">
@@ -174,7 +173,7 @@
     <toc-element id="psi_references.md"/>
     <toc-element id="modifying_psi.md"/>
     <toc-element id="psi_cookbook.md"/>
-    <toc-element id="psi_performance.md"/>
+    <toc-element id="psi_performance.md" accepts-web-file-names="performance.html"/>
     <toc-element id="indexing_and_psi_stubs.md">
       <toc-element id="file_based_indexes.md"/>
       <toc-element id="stub_indexes.md"/>

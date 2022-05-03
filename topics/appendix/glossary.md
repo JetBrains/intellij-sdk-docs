@@ -76,8 +76,11 @@ Run Configuration _(RC)_
 
 ## S
 
+Structural Search and Replace _(SSR)_
+: Allows searching and replacing code by defining the structure of the searched code fragments, see [](plugin_alternatives.md#structural-search-and-replace-inspections).
+
 Stubs
-: A subset of a &rarr; _Program Structure Interface_ tree in a binary serialized compact format, see [Stub Indexes](stub_indexes.md).
+: A subset of a &rarr; _Program Structure Interface_ tree in a binary serialized compact format, see [](stub_indexes.md).
 
 Symbol
 : A semantic element in some model, e.g., language or framework model, see [](symbols.md).

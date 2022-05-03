@@ -2,10 +2,10 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-The PSI is a read-write representation of the source code as a tree of elements corresponding to a source file's structure.
+The PSI is a read/write representation of the source code as a tree of elements corresponding to a source file's structure.
 You can modify the PSI by *adding*, *replacing*, and *deleting* PSI elements.
 
-To perform these operations, you use methods such as `PsiElement.add()`, `PsiElement.delete()`, and `PsiElement.replace()`, as well as other methods defined in the `PsiElement` interface that let you process multiple elements in a single operation, or to specify the exact location in the tree where an element needs to be added.
+To perform these operations, you use methods such as `PsiElement.add()`, `PsiElement.delete()`, and `PsiElement.replace()`, as well as other methods defined in the [`PsiElement`](upsource:///platform/core-api/src/com/intellij/psi/PsiElement.java) interface that let you process multiple elements in a single operation, or to specify the exact location in the tree where an element needs to be added.
 
 Like document operations, PSI modifications need to be wrapped in a write action and in command (and can only be performed in the event dispatch thread).
 See [the Documents article](documents.md#what-are-the-rules-of-working-with-documents) for more information on commands and write actions.
@@ -19,20 +19,21 @@ See also [](psi_files.md#how-do-i-create-a-psi-file).
 Most languages provide factory methods that let you create specific code constructs more easily.
 For example, the [`PsiJavaParserFacade`](upsource:///java/java-psi-api/src/com/intellij/psi/PsiJavaParserFacade.java) class contains methods such as `createMethodFromText()`, which creates a Java method from the given text.
 
-When you're implementing refactorings, intentions, or inspection quickfixes that work with existing code, the text that you pass to the various `createFromText()` methods will combine hard-coded fragments and fragments of code taken from the existing file.
-For small code fragments (individual identifiers), you can simply append the text from the existing code to the text of the code fragment you're building.
+When you're implementing refactorings, [intentions](code_intentions.md), or inspection [quickfixes](code_inspections_and_intentions.md) that work with existing code, the text that you pass to the various `createFromText()` methods will combine hard-coded fragments and fragments of code taken from the existing file.
+For small code fragments (individual identifiers), you can simply append the text from the existing code to the text of the code fragment you are building.
 In that case, you need to make sure that the resulting text is syntactically correct.
-Otherwise the `createFromText()` method will throw an exception.
+Otherwise, the `createFromText()` method will throw an exception.
 
 For larger code fragments, it's best to perform the modification in several steps:
 
- * create a replacement tree fragment from the text, leaving placeholders for the user code fragments;
- * replace the placeholders with the user code fragments;
- * replace the element in the original source file with the replacement tree.
+* create a replacement tree fragment from the text, leaving placeholders for the user code fragments;
+* replace the placeholders with the user code fragments;
+* replace the element in the original source file with the replacement tree.
 
-This ensures that the user code's formatting is preserved and that the modification doesn't introduce any unwanted whitespace changes.
+This ensures that the user code's formatting is preserved and that the modification does not introduce any unwanted whitespace changes.
+Just as everywhere else in the IntelliJ Platform API, the text passed to `createFileFromText()` and other `createFromText()` methods must use only `\n` as line separators.
 
-As an example of this approach, see the quickfix in the `ComparingReferencesInspection` example:
+As an example of this approach, see the quickfix in the `ComparingReferencesInspection` [example](code_inspections.md):
 
 ```java
 // binaryExpression holds a PSI expression of the form "x == y", which needs to be replaced with "x.equals(y)"
@@ -53,8 +54,6 @@ equalsCall.getArgumentList().getExpressions()[0].replace(rExpr);
 // Step 3: replace a larger element in the original file with the replacement tree
 PsiExpression result = (PsiExpression) binaryExpression.replace(equalsCall);
 ```
-
-Just as everywhere else in the IntelliJ Platform API, the text passed to `createFileFromText()` and other `createFromText()` methods must use only `\n` as line separators.
 
 ## Maintaining Tree Structure Consistency
 
@@ -78,6 +77,5 @@ This ensures that the imports are created according to the user's code style set
 
 ## Combining PSI and Document Modifications
 
-In some cases, you need to perform a PSI modification and then to perform an operation on the document you've just modified through the PSI (for example, start a live template).
-In this case, you need to call a special method that completes the PSI-based post-processing (such as formatting) and commits the changes to the document.
-The method you need to call is called `doPostponedOperationsAndUnblockDocument()`, and it's defined in the [`PsiDocumentManager`](upsource:///platform/core-api/src/com/intellij/psi/PsiDocumentManager.java) class.
+In some cases, you need to perform a PSI modification and then to perform an operation on the document you've just modified through the PSI (for example, start a [live template](live_templates.md)).
+To complete the PSI-based post-processing (such as formatting) and commit the changes to the document, call `doPostponedOperationsAndUnblockDocument()` on [`PsiDocumentManager`](upsource:///platform/core-api/src/com/intellij/psi/PsiDocumentManager.java) instance.

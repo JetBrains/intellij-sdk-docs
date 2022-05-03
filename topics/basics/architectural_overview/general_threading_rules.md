@@ -32,7 +32,7 @@ The latter API allows specifying the _modality state_ ([`ModalityState`](upsourc
 
 #### `ModalityState.NON_MODAL`
 The operation will be executed after all modal dialogs are closed.
-If any of the open (unrelated) project displays a per-project modal dialog, the action will be performed after the dialog is closed.
+If any of the open (unrelated) projects displays a per-project modal dialog, the action will be performed after the dialog is closed.
 
 #### `ModalityState.stateForComponent()`
 The operation can be executed when the topmost shown dialog is the one that contains the specified component or is one of its parent dialogs.
@@ -95,15 +95,14 @@ If the activity has to access [file-based index](indexing_and_psi_stubs.md) (e.g
 
 #### Do not Perform Long Operations in UI Thread
 
-In particular, don't traverse VFS, parse PSI, resolve references or query `FileBasedIndex`.
+In particular, don't traverse [](virtual_file_system.md), parse [PSI](psi.md), resolve [references](psi_references.md) or query [indexes/stubs](indexing_and_psi_stubs.md).
 
-There are cases when the platform itself invokes such expensive code (e.g., resolve in `AnAction.update()`).
-We're trying to eliminate them.
-Meanwhile, you can try to speed up what you can in your plugin, it'll be beneficial anyway, as it'll also improve background highlighting performance.
+There are still some cases when the platform itself invokes such expensive code (e.g., resolve in `AnAction.update()`), but these are being worked on.
+Meanwhile, please try to speed up what you can in your plugin, it'll be beneficial anyway, as it'll also improve background highlighting performance.
 
-`WriteAction`s currently have to happen on UI thread, so to speed them up, you can try moving as much as possible out of write action into a preparation step which can be then invoked in background (e.g., using `ReadAction.nonBlocking()`).
+`WriteAction`s currently have to happen on UI thread, so to speed them up, you can try moving as much as possible out of write action into a preparation step which can be then invoked in background (e.g., using `ReadAction.nonBlocking()`, see above).
 
-Don't do anything expensive in event listeners.
+Don't do anything expensive inside event listeners.
 Ideally, you should only clear some caches.
 You can also schedule background processing of events, but be prepared that some new events might be delivered before your background processing starts, and thus the world might have changed by that moment or even in the middle of background processing.
 Consider using [`MergingUpdateQueue`](upsource:///platform/ide-core/src/com/intellij/util/ui/update/MergingUpdateQueue.java) and `ReadAction.nonBlocking()` to mitigate these issues.

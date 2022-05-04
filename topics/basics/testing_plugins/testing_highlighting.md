@@ -61,3 +61,6 @@ The tag can also have the following optional attributes:
 ```xml
 <warning>warning_highlight<info>warning-and_info_highlight</warning>info_highlight</info>
 ```
+
+**Example**:
+[Custom Language Support Tutorial: Testing Annotator](annotator_test.md)

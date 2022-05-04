@@ -11,6 +11,9 @@ To ignore verifying additional highlighting, set parameter `ignoreExtraHighlight
 
 Alternatively, you can use `CodeInsightTestFixture.testHighlighting()`, which loads a [testdata file](test_project_and_testdata_directories.md) into the in-memory editor and highlights it as a single operation.
 
+**Example**:
+[Custom Language Support Tutorial: Testing Annotator](annotator_test.md)
+
 ### Inspections
 
 If you need to test inspections, they must be enabled explicitly.
@@ -30,7 +33,7 @@ In its simplest form, the markup looks like this:
 <warning descr="expected warning message">code to be highlighted</warning>
 ```
 
-Or, as a more specific example:
+A more realistic example, embedded in Java test data to be highlighted:
 
 ```xml
 public int <warning descr="The compareTo() method does not reference 'foo' which is referenced from equals(); inconsistency may result">compareTo</warning>(Simple other) {
@@ -38,6 +41,7 @@ public int <warning descr="The compareTo() method does not reference 'foo' which
 }
 ```
 
+### Severities
 The tag name specifies the severity of the expected highlighting.
 The following severities are supported:
 
@@ -49,17 +53,24 @@ The following severities are supported:
 * `<symbolName>` for a marker that highlights an identifier according to its type
 * any custom severity can be referenced by its name
 
-The tag can also have the following optional attributes:
+### Optional Attributes
 
+The tag can also have the following optional attributes.
+
+**Message**
 * `descr` expected (hardcoded) message associated with the highlighter (if not specified, any text will match; if the message contains a quotation mark, it can be escaped by putting two backslash characters before it)
 * `bundleMsg` expected message from a message bundle in format `[bundleName#] bundleKey [|argument]...`
 * `tooltip` expected tooltip message
+
+**Visual**
 * `textAttributesKey` expected [`TextAttributesKey`](upsource:///platform/core-api/src/com/intellij/openapi/editor/colors/TextAttributesKey.java) referenced by its `externalName`
 * `foregroundColor`, `backgroundColor`, `effectColor` expected colors for the highlighting
 * `effectType` expected effect type for the highlighting (see [`EffectType`](upsource:///platform/core-api/src/com/intellij/openapi/editor/markup/EffectType.java))
 * `fontType` expected font style for the highlighting (`0` - normal, `1` - bold, `2` - italic, `3` - bold italic)
 
-*Nested* tags are **supported**:
+### Special Cases
+
+*Nested* tags are supported:
 ```xml
 <warning>warning_highlight<info>warning_and_info_highlight</info>warning_highlight</warning>
 ```
@@ -68,6 +79,3 @@ The tag can also have the following optional attributes:
 ```xml
 <warning>warning_highlight<info>warning-and_info_highlight</warning>info_highlight</info>
 ```
-
-**Example**:
-[Custom Language Support Tutorial: Testing Annotator](annotator_test.md)

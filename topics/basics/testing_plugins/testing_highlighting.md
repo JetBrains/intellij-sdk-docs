@@ -5,15 +5,22 @@
 When writing plugin tests, a common task is testing various kinds of highlighting (inspections, annotators, parser error highlighting, etc.).
 The IntelliJ Platform provides a dedicated utility and markup format for this task.
 
-To test the highlighting for the file currently loaded into the in-memory editor, you invoke the `checkHighlighting()` method.
+To test the highlighting for the file currently loaded into the in-memory editor, invoke [`CodeInsightTestFixture.checkHighlighting()`](upsource:///platform/testFramework/src/com/intellij/testFramework/fixtures/CodeInsightTestFixture.java).
 The parameters to the method specify which severities should be taken into account when comparing the results with the expected results: errors are always taken into account, whereas warnings, weak warnings, and infos are optional.
 To ignore verifying additional highlighting, set parameter `ignoreExtraHighlighting` to `true`.
-Alternatively, you can use the `testHighlighting()` method, which loads a <path>testdata</path> file into the in-memory editor and highlights it as a single operation.
 
-## Inspections
+Alternatively, you can use `CodeInsightTestFixture.testHighlighting()`, which loads a [testdata file](test_project_and_testdata_directories.md) into the in-memory editor and highlights it as a single operation.
 
-If you need to test inspections (rather than generic highlighting provided by a highlighting lexer or annotator), you need to enable inspections that you're testing.
-This is done by calling `CodeInsightTestFixture.enableInspections()` in the setup method of your test or directly in a test method, before the call to `checkHighlighting()`.
+### Inspections
+
+If you need to test inspections, they must be enabled explicitly.
+This is done by calling `CodeInsightTestFixture.enableInspections()` in the setup method of your test or directly in a test method, before the call to `CodeInsightTestFixture.checkHighlighting()`.
+
+### Syntax Highlighting
+
+To test syntax highlighting provided by [Lexer](implementing_lexer.md), use [`EditorTestUtil.testFileSyntaxHighlighting()`](upsource:///platform/testFramework/src/com/intellij/testFramework/EditorTestUtil.java).
+
+## Expected Highlighting Results
 
 The expected results of the highlighting are specified directly in the source file.
 The platform supports an extensive XML-like markup language for this.
@@ -38,14 +45,14 @@ The following severities are supported:
 * `<warning>`
 * `<weak_warning>`
 * `<info>`
-* `<inject>` for an injected fragment
+* `<inject>` for an [injected fragment](language_injection.md)
 * `<symbolName>` for a marker that highlights an identifier according to its type
 * any custom severity can be referenced by its name
 
 The tag can also have the following optional attributes:
 
 * `descr` expected (hardcoded) message associated with the highlighter (if not specified, any text will match; if the message contains a quotation mark, it can be escaped by putting two backslash characters before it)
-* `bundleMsg` expected message from message bundle in format `[bundleName#] bundleKey [|argument]...`
+* `bundleMsg` expected message from a message bundle in format `[bundleName#] bundleKey [|argument]...`
 * `tooltip` expected tooltip message
 * `textAttributesKey` expected [`TextAttributesKey`](upsource:///platform/core-api/src/com/intellij/openapi/editor/colors/TextAttributesKey.java) referenced by its `externalName`
 * `foregroundColor`, `backgroundColor`, `effectColor` expected colors for the highlighting

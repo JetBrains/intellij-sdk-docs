@@ -91,6 +91,10 @@ The dependency declaration is illustrated in the <path>plugin.xml</path> snippet
 Use the [Exploring APIs as a Consumer](plugin_compatibility.md#exploring-apis-as-a-consumer) process to identify the library <path>intellij-go-$version$.jar</path>, where `$version$` corresponds to the version of the Go plugin.
 Test your plugin with any version of GoLand you intend to support.
 
+## GoLand Test Framework
+
+Please see [this issue](https://github.com/JetBrains/gradle-intellij-plugin/issues/477#issuecomment-845022914) for required additional dependency setup.
+
 ## Open Source Plugins for GoLand
 
 When learning new APIs, it is helpful to have some representative projects for reference:

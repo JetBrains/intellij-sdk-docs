@@ -15,7 +15,7 @@ There are two main scenarios for the use of tool windows in a plugin.
 Using [declarative setup](#declarative-setup), a tool window button is always visible, and the user can activate it and interact with the plugin functionality at any time.
 Alternatively, using [programmatic setup](#programmatic-setup), the tool window is created to show the results of a specific operation, and can be closed by the user after the operation is completed.
 
-Project-level topic [`ToolWindowManagerListener`](upsource:///platform/platform-impl/src/com/intellij/openapi/wm/ex/ToolWindowManagerListener.java) allows listening to tool window (un-)registering/show events.
+Project-level topic [`ToolWindowManagerListener`](upsource:///platform/platform-impl/src/com/intellij/openapi/wm/ex/ToolWindowManagerListener.java) allows listening to tool window (un-)registering/show events (see [](plugin_listeners.md)).
 
 ### Declarative Setup
 

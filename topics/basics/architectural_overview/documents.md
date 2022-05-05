@@ -12,12 +12,12 @@ The IntelliJ Platform handles encoding and line break conversions when loading a
 | Context                          | API                                                                                                                                                                                                                                                                                                                                                                                                                                |
 |----------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [Action](basic_action_system.md) | [`AnActionEvent.getData(CommonDataKeys.EDITOR).getDocument()`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnActionEvent.java)                                                                                                                                                                                                                                                                        |
-| [PSI File](psi_files.md)         | [`PsiDocumentManager.getInstance(project).getDocument()`/`getCachedDocument()`](upsource:///platform/core-api/src/com/intellij/psi/PsiDocumentManager.java)                                                                                                                                                                                                                                                                        |
+| [PSI File](psi_files.md)         | [`PsiDocumentManager.getDocument()`/`getCachedDocument()`](upsource:///platform/core-api/src/com/intellij/psi/PsiDocumentManager.java)                                                                                                                                                                                                                                                                                             |
 | [Virtual File](virtual_file.md)  | [`FileDocumentManager.getDocument()`](upsource:///platform/core-api/src/com/intellij/openapi/fileEditor/FileDocumentManager.java) (forces the document content to be loaded from a disk if it wasn't loaded previously)<br/>[`FileDocumentManager.getCachedDocument()`](upsource:///platform/core-api/src/com/intellij/openapi/fileEditor/FileDocumentManager.java) (use if only open or possibly modified documents are relevant) |
 
 ## What can I do with a Document?
 
-You may perform any operations that access or modify the file contents on the "plain text" level (as a sequence of characters, not as a tree of [PSI](psi.md) elements).
+You may perform any operations that access or modify the file contents on the "plain text" level (as a sequence of characters, not as a tree of [](psi.md) elements).
 
 ## Where does a Document come from?
 
@@ -35,7 +35,7 @@ Thus, an unmodified `Document` instance can be garbage-collected if no one refer
 
 ## How do I create a Document?
 
-For creating a new file on disk, please do not create a `Document` but a PSI file and get its `Document` (see [How do I create a PSI file?](psi_files.md#how-do-i-create-a-psi-file)).
+For creating a new file on disk, please do not create a `Document` but a PSI file and get its `Document` (see [](psi_files.md#how-do-i-create-a-psi-file)).
 To create a `Document` instance that isn't bound to anything, use [`EditorFactory.createDocument()`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/editor/EditorFactory.java).
 
 ## How do I get notified when Documents change?
@@ -46,8 +46,8 @@ To create a `Document` instance that isn't bound to anything, use [`EditorFactor
 
 ## What are the rules of working with Documents?
 
-The general read/write action rules are in effect (see [General Threading Rules](general_threading_rules.md)).
-Besides, any operations which modify the contents of the document must be wrapped in a command ([`CommandProcessor.getInstance().executeCommand()`](upsource:///platform/core-api/src/com/intellij/openapi/command/CommandProcessor.java)).
+The general read/write action rules are in effect (see [](general_threading_rules.md)).
+Besides, any operations which modify the contents of the document must be wrapped in a command ([`CommandProcessor.executeCommand()`](upsource:///platform/core-api/src/com/intellij/openapi/command/CommandProcessor.java)).
 `executeCommand()` calls can be nested, and the outermost `executeCommand()` call is added to the undo stack.
 If multiple documents are modified within a command, undoing this command will, by default, show a confirmation dialog to the user.
 

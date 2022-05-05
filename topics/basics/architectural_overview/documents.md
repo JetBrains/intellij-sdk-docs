@@ -52,7 +52,7 @@ Besides, any operations which modify the contents of the document must be wrappe
 If multiple documents are modified within a command, undoing this command will, by default, show a confirmation dialog to the user.
 
 If the file corresponding to a `Document` is read-only (for example, not checked out from the version control system), document modifications will fail.
-Thus, before modifying the `Document`, it is necessary to call [`ReadonlyStatusHandler.getInstance(project).ensureFilesWritable()`](upsource:///platform/core-api/src/com/intellij/openapi/vfs/ReadonlyStatusHandler.java) to check out the file.
+Thus, before modifying the `Document`, it is necessary to call [`ReadonlyStatusHandler.ensureFilesWritable()`](upsource:///platform/core-api/src/com/intellij/openapi/vfs/ReadonlyStatusHandler.java) to check out the file.
 
 All text strings passed to `Document` modification methods (`setText()`, `insertString()`, `replaceString()`) must use only `\n` as line separators.
 

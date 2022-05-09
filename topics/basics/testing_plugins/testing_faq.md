@@ -101,7 +101,11 @@ Use [`ExtensionTestUtil`](upsource:///platform/testFramework/src/com/intellij/te
 
 ### How to wait for a specified amount of time?
 
-Use `com.intellij.util.TimeoutUtil.sleep()`.
+If possible, use [](#how-to-wait-for-condition-with-timeout) approach. Otherwise, call `com.intellij.util.TimeoutUtil.sleep()`.
+
+### How to wait for condition with timeout?
+
+Use [`WaitFor`](upsource:///platform/util/src/com/intellij/util/WaitFor.java).
 
 ### How to test a JVM language?
 

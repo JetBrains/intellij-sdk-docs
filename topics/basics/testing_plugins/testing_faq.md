@@ -24,7 +24,21 @@ Please see [notes](https://plugins.jetbrains.com/docs/intellij/api-changes-list-
 
 ### How to avoid blinking tests?
 
-Always call `super.tearDown()` inside `finally {..}` block of your test class to avoid leaks and side effects from previously run (failed) tests.
+Always call `super.tearDown()` inside `finally {..}` block of your test class to avoid leaks and side effects from previously run (failed) tests:
+
+```java
+void tearDown() {
+  try {
+    // test specific tear down calls
+  }
+  catch (Exception e) {
+    addSuppressedException(e);
+  }
+  finally {
+    super.tearDown();
+  }
+}
+```
 
 Avoid OS-specific assumptions (e.g., filesystem case-sensitivity, hardcoded separator instead of `java.io.File.separator`).
 

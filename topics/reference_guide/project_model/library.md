@@ -9,12 +9,12 @@ The IntelliJ Platform supports three types of libraries:
 * **Project Library**: the library classes are visible within the project and the library information is recorded under <path>.idea/libraries</path> directory or in the project <path>.ipr</path> file.
 * **Global Library**: the library information is recorded in the <path>applicationLibraries.xml</path> file in <path>$USER_HOME$/.IntelliJIdea/config/options</path> directory. Global libraries are similar to project libraries, but are visible for different projects.
 
-For more information about libraries, refer to [Libraries](https://www.jetbrains.com/help/idea/working-with-libraries.html).
+For more information about libraries, refer to [Libraries](https://www.jetbrains.com/help/idea/library.html).
 
 A particular type of programmatically defined libraries is [Predefined Libraries](#predefined-libraries).
 
 ## Accessing Libraries and Jars
-Package [`libraries`](upsource:///platform/projectModel-api/src/com/intellij/openapi/roots/libraries) provides functionality for working with project libraries and jars.
+Package [`com.intellij.openapi.roots.libraries`](upsource:///platform/projectModel-api/src/com/intellij/openapi/roots/libraries) provides functionality for working with project libraries and JAR files.
 
 ### Getting a List of Libraries a Module Depends On
 To get the list of libraries that a module depends on, use `OrderEnumerator.forEachLibrary` as follows.
@@ -32,10 +32,10 @@ This sample code outputs a list of libraries that the given module depends on.
 
 ### Getting a List of All Libraries
 To manage the lists of application and project libraries, use [`LibraryTable`](upsource:///platform/projectModel-api/src/com/intellij/openapi/roots/libraries/LibraryTable.java).
-The list of application-level library tables is accessed by calling `LibraryTablesRegistrar.getInstance().getLibraryTable()`, whereas the list of project-level library tables is accessed through `LibraryTablesRegistrar.getInstance().getLibraryTable()`.
+The list of application-level library tables is accessed by calling [`LibraryTablesRegistrar.getLibraryTable()`](upsource:///platform/projectModel-api/src/com/intellij/openapi/roots/libraries/LibraryTablesRegistrar.java), whereas the list of project-level library tables is accessed via `LibraryTablesRegistrar.getLibraryTable(Project)`.
 Once you have a `LibraryTable`, you can get the libraries in it by calling `LibraryTable.getLibraries()`.
 
-To get the list of all module libraries defined in a given module, use the following API:
+To get the list of all module libraries defined in a given module, use API from [`OrderEntryUtil`](upsource:///platform/projectModel-impl/src/com/intellij/openapi/roots/impl/OrderEntryUtil.java):
 
 ```java
 OrderEntryUtil.getModuleLibraries(ModuleRootManager.getInstance(module));
@@ -53,7 +53,7 @@ for (String each : lib.getUrls(OrderRootType.SOURCES)) {
 }
 roots.append("Classes:\n");
 for (String each : lib.getUrls(OrderRootType.CLASSES)) {
-  strRoots.append(each).append("\n");
+  roots.append(each).append("\n");
 }
 Messages.showInfoMessage(roots.toString(), "Library Info");
 ```
@@ -80,7 +80,7 @@ To add or change the roots of a library, you need to perform the following steps
   * Commit the model using `Library.ModifiableModel.commit()`.
 
 ### Adding a Library Dependency to a Module
-Use `ModuleRootModificationUtil.addDependency(module, library)` from under a write action.
+Use `ModuleRootModificationUtil.addDependency(Module, Library)` from under a [write action](general_threading_rules.md#read-write-lock).
 
 ### Checking Belonging to a Library
 The [`ProjectFileIndex`](upsource:///platform/projectModel-api/src/com/intellij/openapi/roots/ProjectFileIndex.java) interface implements a number of methods you can use to check whether the specified file belongs to the project library classes or library sources.

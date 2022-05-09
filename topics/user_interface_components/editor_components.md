@@ -25,8 +25,8 @@ Several commonly needed customization implementations exist, including:
 A common use case for `EditorTextField` is entering the name of a Java class or package.
 This can be accomplished with the following steps:
 
-* Use [`JavaCodeFragmentFactory.getInstance().createReferenceCodeFragment()`](upsource:///java/java-psi-api/src/com/intellij/psi/JavaCodeFragmentFactory.java) to create a code fragment representing the class or package name;
-* Call [`PsiDocumentManager.getInstance().getDocument()`](upsource:///platform/core-api/src/com/intellij/psi/PsiDocumentManager.java) to get the document corresponding to the code fragment;
+* Use [`JavaCodeFragmentFactory.createReferenceCodeFragment()`](upsource:///java/java-psi-api/src/com/intellij/psi/JavaCodeFragmentFactory.java) to create a code fragment representing the class or package name;
+* Call [`PsiDocumentManager.getDocument()`](upsource:///platform/core-api/src/com/intellij/psi/PsiDocumentManager.java) to get the document corresponding to the code fragment;
 * Pass the returned document to the [`EditorTextField`](upsource:///platform/platform-impl/src/com/intellij/ui/EditorTextField.java) constructor or its `setDocument()` method.
 
 ```java

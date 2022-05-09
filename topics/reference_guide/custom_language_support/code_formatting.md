@@ -22,12 +22,12 @@ The process of formatting a file or a file fragment consists of the following ma
 
 *  The formatting model is requested to insert the calculated whitespace characters at necessary positions in the file.
 
-The structure of blocks is usually built so that it mirrors the PSI structure of the file - for example, in Java code, the top-level formatting block covers the entire file.
+The structure of blocks is usually built so that it mirrors the PSI structure of the file – for example, in Java code, the top-level formatting block covers the entire file.
 Its children cover individual classes in the file, blocks on the next level cover methods inside classes, etc.
 The formatter modifies only the characters between blocks, and the tree of blocks must be built so that the bottom-level blocks cover all non-whitespace characters in the file.
-Otherwise, the characters between blocks may be deleted by the formatter.
+Otherwise, the formatter may delete the characters between blocks.
 
-To better understand how to build the blocks structure, use [PsiViewer](explore_api.md#31-use-internal-mode-and-psiviewer) and inspect formatting blocks built for an existing language.
+To better understand how to build the block structure, use [PsiViewer](explore_api.md#31-use-internal-mode-and-psiviewer) and inspect formatting blocks built for an existing language.
 To invoke PsiViewer with the possibility of inspecting Block Structure, use <menupath>Tools | View PSI Structure...</menupath> or <menupath>Tools | View PSI Structure of Current File...</menupath>:
 
 ![Formatting Blocks Structure](psi_viewer_formatting_blocks.png){width="720"}
@@ -39,7 +39,7 @@ For every block, the plugin specifies the following properties:
 
 * The _spacing_ ([`Spacing`](upsource:///platform/code-style-api/src/com/intellij/formatting/Spacing.java)) specifies what spaces or line breaks are inserted between the specified children of the block.
    The spacing object specifies the minimum and maximum number of spaces that must be placed between the specified child blocks, the minimum number of line breaks to put there, and whether the existing line breaks and blank lines should be preserved.
-   The formatting model can also specify that the spacing between the specified blocks may not be modified by the formatter.
+   The formatting model can also specify that the formatter may not modify the spacing between the specified blocks.
 
 * The _indent_ ([`Indent`](upsource:///platform/code-style-api/src/com/intellij/formatting/Indent.java)) specifies how the block is indented relative to its parent block.
    There are different modes of indenting defined by factory methods in the `Indent` class.
@@ -73,7 +73,7 @@ Code formatting can be suppressed per region via [special comments](https://yout
 ## Non-Whitespace Modifications
 
 Sometimes a plugin requires performing non-whitespace characters modifications like reordering methods, changing letter cases, or adding missing braces.
-The formatting framework provides extensions points allowing to achieve these goals.
+The formatting framework provides extension points allowing to achieve these goals.
 
 ### Pre-Processor
 
@@ -89,7 +89,7 @@ To register a formatting pre-processor, a plugin has to provide an implementatio
 ### Post-Processor
 
 It's similar to the pre-processor but is run after the actual formatting is performed.
-It can be used for adding, removing, or converting elements like braces, semicolons, quotes, letter-cases, etc.
+It can be used for adding, removing, or converting elements like braces, semicolons, quotes, changing letter-cases, etc.
 
 To register a formatting post-processor, a plugin has to provide an implementation of [`PostFormatProcessor`](upsource:///platform/code-style-api/src/com/intellij/psi/impl/source/codeStyle/PostFormatProcessor.java) and register it in the `com.intellij.postFormatProcessor` extension point.
 
@@ -99,7 +99,7 @@ To register a formatting post-processor, a plugin has to provide an implementati
 ### Rearranger
 
 Allows custom languages to provide user-configurable arrangement/grouping rules for element types supported by language plugin.
-Rules can be refined via modifiers and name, ordering can be applied additionally.
+Rules can be refined via modifiers and name; ordering can be applied additionally.
 Please see [`Rearranger`](upsource:///platform/code-style-api/src/com/intellij/psi/codeStyle/arrangement/Rearranger.java) and related for JavaDoc.
 
 ## Code Style Settings

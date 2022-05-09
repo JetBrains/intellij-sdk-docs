@@ -63,5 +63,8 @@ Verify your plugin follows guidelines from [Dynamic Plugins](dynamic_plugins.md)
 
 ## Contribute
 
+The platform, (most of) IntelliJ IDEA Community Edition, (most of) PyCharm Community Edition, and the Python and reStructuredText plugins for IntelliJ IDEA Community Edition are Open Source, mostly licensed under Apache 2.0. (N.B. JetBrains may bundle some closed-source plugins with their releases of IntelliJ IDEA/PyCharm Community Edition.)
+[Contributions](platform_contributions.md) are welcome.
+
 This guide is Open Source and licensed under Apache 2.0.
 [Contributions](intellij-sdk-docs-original_CONTRIBUTING.md) are very welcome.

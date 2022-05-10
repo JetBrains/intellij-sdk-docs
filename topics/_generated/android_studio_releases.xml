@@ -1,4 +1,13 @@
-<content version="83">
+<content version="84">
+   <item>
+      <name>Android Studio Chipmunk (2021.2.1)</name>
+      <build>AI-212.5712.43.2112.8512546</build>
+      <version>2021.2.1.14</version>
+      <channel>Release</channel>
+      <platformBuild>212.5712.43</platformBuild>
+      <platformVersion>2021.2.4</platformVersion>
+      <date>May 9, 2022</date>
+   </item>
    <item>
       <name>Android Studio Chipmunk (2021.2.1) RC 2</name>
       <build>AI-212.5712.43.2112.8504664</build>

@@ -43,7 +43,7 @@
   },
 
   "background": {
-    "image": "/austria.png",
+    "image": "austria.png",
     "transparency": 10,
     "fill": "scale",
     "anchor": "center"

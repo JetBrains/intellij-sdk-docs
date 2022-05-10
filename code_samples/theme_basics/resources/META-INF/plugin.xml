@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 
 <idea-plugin>
@@ -12,9 +12,8 @@
   <!-- The version of this plugin -->
   <version>0.1</version>
 
-  <!-- Compatible with the following versions of IntelliJ Platform:
-        version 2019.1 and newer. -->
-  <idea-version since-build="191"/>
+  <!-- Compatible with the following versions of IntelliJ Platform: version 2021.2 and newer. -->
+  <idea-version since-build="212"/>
 
   <!-- Indicate this plugin can be loaded in all IntelliJ Platform-based products. -->
   <depends>com.intellij.modules.platform</depends>

@@ -26,11 +26,6 @@ To see how these attributes appear in a similar Gradle build script for PhpStorm
 [properties]: https://github.com/JetBrains/gradle-intellij-plugin#intellij-platform-properties
 [dsl]: https://github.com/JetBrains/gradle-intellij-plugin#running-dsl
 
-The additional attribute `runIde.jvmArgs` is required for versions of the `gradle-intellij-plugin` 0.4.16 and earlier.
-This attribute declares that Gradle should use the DataGrip platform to run/debug plugins in a development instance.
-It is not required for building plugins and manually installing them in DataGrip.
-Benign, but redundant attribute if used for later versions of the `gradle-intellj-plugin`.
-
 The dependency on the DataGrip APIs must be declared in the <path>plugin.xml</path> file.
 As described in [Modules Specific to Functionality](plugin_compatibility.md#modules-specific-to-functionality) table, the `<depends>` tags must declare `com.intellij.database`.
 **Note** that DataGrip plugins must also declare a dependency on `com.intellij.modules.platform` because `com.intellij.database` is not recognized as a module.

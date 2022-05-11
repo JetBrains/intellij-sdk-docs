@@ -63,5 +63,6 @@ Verify your plugin follows guidelines from [Dynamic Plugins](dynamic_plugins.md)
 
 ## Contribute
 
-This guide is Open Source and licensed under Apache 2.0.
-[Contributions](intellij-sdk-docs-original_CONTRIBUTING.md) are very welcome.
+This guide is Open Source and licensed under Apache 2.0 and
+[contributions](intellij-sdk-docs-original_CONTRIBUTING.md) are very welcome.
+See also [](platform_contributions.md).

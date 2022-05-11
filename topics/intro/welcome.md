@@ -55,11 +55,12 @@ Please see [Getting Help](getting_help.md) if you encounter bugs in this guide o
 {type="note"}
 
 See [Content Updates](content_updates.md) for the latest changes.
-Follow [JBPlatform](https://twitter.com/JBPlatform/) on Twitter and visit [JetBrains Platform Blog](https://blog.jetbrains.com/platform/) for the latest announcements.
+
+[Subscribe to Marketplace Developer News](https://jb.gg/mp-updates) to receive news and announcements.
+Follow [JBPlatform](https://twitter.com/JBPlatform/) on Twitter and visit [JetBrains Platform Blog](https://blog.jetbrains.com/platform/).
 
 Upgrading your plugin to the latest platform release?
 Make sure to check [Incompatible Changes](api_changes_list.md) as well as [Notable Changes and Features](api_notable.md).
-Verify your plugin follows guidelines from [Dynamic Plugins](dynamic_plugins.md) to allow installing/updating without IDE restarts.
 
 ## Contribute
 

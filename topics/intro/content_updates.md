@@ -5,7 +5,8 @@ This page lists notable additions and updates to the SDK documentation and [](co
 
 See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/main) ([RSS](https://github.com/JetBrains/intellij-sdk-docs/commits/main.atom)) for a detailed changelog.
 
-> Follow [JBPlatform](https://twitter.com/JBPlatform/) on Twitter and visit [JetBrains Platform Blog](https://blog.jetbrains.com/platform/) for the latest announcements.
+> [Subscribe to Marketplace Developer News](https://jb.gg/mp-updates) to receive news and announcements.
+> Also follow [JBPlatform](https://twitter.com/JBPlatform/) on Twitter and visit [JetBrains Platform Blog](https://blog.jetbrains.com/platform/).
 >
 {type="tip"}
 

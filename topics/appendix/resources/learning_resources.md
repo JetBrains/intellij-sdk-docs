@@ -4,18 +4,31 @@
 
 <excerpt>Links to articles and webinars about plugin development.</excerpt>
 
-> Follow [JBPlatform](https://twitter.com/JBPlatform/) on Twitter and visit [JetBrains Platform Blog](https://blog.jetbrains.com/platform/) for the latest announcements.
+> [Subscribe to Marketplace Developer News](https://jb.gg/mp-updates) to receive news and announcements.
+> Also follow [JBPlatform](https://twitter.com/JBPlatform/) on Twitter and visit [JetBrains Platform Blog](https://blog.jetbrains.com/platform/).
 >
 {type="tip"}
 
 ## Articles
 
+- [The Plugin Obfuscation Experience](https://blog.jetbrains.com/platform/2022/05/the-plugin-obfuscation-experience/) 05/2022
+- [Themes in IntelliJ-based IDEs](https://blog.jetbrains.com/platform/2021/10/themes-in-intellij-based-ides/) 10/2021
+
+### Revamping Plugins
+
+The Revamping Plugins series is about sharing the experience of updating outdated plugins to align with the latest IntelliJ Platform SDK guidelines.
+
+- [Revamping Plugins #1 – .ignore](https://blog.jetbrains.com/platform/2021/01/revamping-plugins-ignore/) 01/2021
+- [Revamping Plugins #2 – IDEA Feature Suggester](https://blog.jetbrains.com/platform/2021/03/revamping-plugins-2-idea-feature-suggester/) 03/2021
+- [Revamping Plugins #3 – Migrating from DevKit to the Gradle build system](https://blog.jetbrains.com/platform/2021/12/migrating-from-devkit-to-the-gradle-build-system/) 12/2021
+
 ### Building a Plugin for WebStorm
 
-A tutorial blog post series for JavaScript developers:
- [Part 1](https://blog.jetbrains.com/webstorm/2021/09/building-a-plugin-for-webstorm-part-1/)
- [Part 2](https://blog.jetbrains.com/webstorm/2021/11/building-a-plugin-for-webstorm-part-2/)
- [Part 3](https://blog.jetbrains.com/webstorm/2022/03/building-a-plugin-for-webstorm-part-3/)
+A tutorial blog post series for JavaScript developers.
+
+- [Part 1](https://blog.jetbrains.com/webstorm/2021/09/building-a-plugin-for-webstorm-part-1/) 09/2021
+- [Part 2](https://blog.jetbrains.com/webstorm/2021/11/building-a-plugin-for-webstorm-part-2/) 11/2021
+- [Part 3](https://blog.jetbrains.com/webstorm/2022/03/building-a-plugin-for-webstorm-part-3/) 03/2022
 
 ## Webinars
 

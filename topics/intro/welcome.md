@@ -32,13 +32,11 @@ Webinar
 
 <td width="50%">
 
-Watch [Busy plugin developers series. Episode 0](https://www.youtube.com/watch?v=-6D5-xEaYig) to get started with developing plugins and publishing on [JetBrains Marketplace](https://plugins.jetbrains.com).
+Watch [Busy Plugin Developers #0](https://www.youtube.com/watch?v=-6D5-xEaYig) to get started with developing plugins and publishing on [JetBrains Marketplace](https://plugins.jetbrains.com).
 <br/>
 <br/>
 
-<video href="-6D5-xEaYig" title="Busy plugin developers series. Episode 0" width="300"/>
-
-More webinars are available [here](learning_resources.md#webinars).
+<video href="-6D5-xEaYig" title="Busy Plugin Developers #0" width="300"/>
 
 </td>
 </tr>

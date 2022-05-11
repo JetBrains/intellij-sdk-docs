@@ -128,7 +128,7 @@ code_samples/
 
 ## Gradle Build Script Conventions
 
-SDK code samples should be developed [using Gradle](gradle_build_system.md).
+SDK code samples must be developed [using Gradle](gradle_build_system.md).
 As of this writing, the use of Gradle in SDK code samples still relies heavily on the <path>plugin.xml</path> for specifying the plugin configuration.
 At a later, second phase, the SDK code samples will transition to rely more on the Gradle configuration.
 
@@ -139,20 +139,17 @@ Comments in SDK code sample Gradle build scripts should only draw attention to t
 For SDK code samples, a few alterations are needed to the default <path>build.gradle.kts</path> file produced by the plugin wizard:
 * Maintain the Gradle properties `version` (`project.version`) and `group` (`project.group`).
   See the [Plugin Gradle Properties](gradle_prerequisites.md#plugin-gradle-properties-and-plugin-configuration-file-elements) section for how these Gradle properties relate to the elements in <path>plugin.xml</path>.
-* Add the following statement to the [Setup DSL](https://github.com/JetBrains/gradle-intellij-plugin#setup-dsl) (`intellij {...}`) section:
-  ```kotlin
-  // Prevents patching <idea-version> attributes in plugin.xml
-  updateSinceUntilBuild.set(false)
-  ```
 * Add the following statement to the [Patching DSL](https://github.com/JetBrains/gradle-intellij-plugin#patching-dsl) (`patchPluginXml {...}`) section:
   ```kotlin
   // Patches <version> value in plugin.xml
   version.set(project.version)
+  sinceBuild.set("212")
+  untilBuild.set("221.*")
   ```
 
 ## plugin.xml Conventions
 
-A consistent structure for the [`plugin.xml`](plugin_configuration_file.md) configuration file of an SDK code sample is important because we want to draw attention to the unique parts of the file for a plugin.
+A consistent structure for the <path>plugin.xml</path> [configuration file](plugin_configuration_file.md) of an SDK code sample is important because we want to draw attention to the unique parts of the file for a plugin.
 Comment profusely about unique elements and configurations, and comment sparingly for the rest.
 
 The sequence of elements in an SDK code sample <path>plugin.xml</path> file is:
@@ -164,12 +161,6 @@ The sequence of elements in an SDK code sample <path>plugin.xml</path> file is:
   * MAJOR corresponds to a significant upgrade in functionality.
   * MINOR corresponds to minor refactoring and small improvements in functionality.
   * FIX corresponds to changes that fix problems without significant refactoring.
-* `<idea-version>` Set the attributes:
-  * `since-build` attribute to the earliest compatible build number of the IntelliJ Platform.
-    The default for SDK samples is "193".
-  * `until-build` Omit this attribute for new sample plugins.
-    SDK code samples are reviewed before every major release (20XX.1) to ensure compatibility with the latest IntelliJ Platform.
-    Add this attribute if a plugin sample is deprecated with a release of the IntelliJ Platform.
 * `<depends>` Include at least one dependency with the module `com.intellij.modules.platform` to indicate basic plugin compatibility with IntelliJ Platform-based products.
   Add `<depends>` elements containing module FQNs as needed to describe more specialized [Compatibility with Multiple Products](plugin_compatibility.md), and any other [Plugin Dependencies](plugin_dependencies.md).
 * `<description>` is a concise explanation of what is being demonstrated and how a user would access the functionality.

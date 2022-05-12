@@ -1,11 +1,21 @@
 
 <chunk id="releases_table">
 
+## 2022.*
+
+
+| Release Name | Channel | Release Date | Version | IntelliJ IDEA Version |
+|--------------|:-------:|--------------|---------|-----------------------|
+| Electric Eel (2022.1.1) Canary 1 | ![canary][canary] | May 11, 2022 | **2022.1.1.1** <br/> AI-213.7172.25.2211.8563311 | **2021.3.3** <br/> 213.7172.25 |
+
+
+
 ## 2021.*
 
 
 | Release Name | Channel | Release Date | Version | IntelliJ IDEA Version |
 |--------------|:-------:|--------------|---------|-----------------------|
+| Dolphin (2021.3.1) Beta 1 | ![beta][beta] | May 11, 2022 | **2021.3.1.10** <br/> AI-213.7172.25.2113.8565817 | **2021.3.3** <br/> 213.7172.25 |
 | Dolphin (2021.3.1) Canary 9 | ![canary][canary] | April 21, 2022 | **2021.3.1.9** <br/> AI-213.7172.25.2113.8473230 | **2021.3.3** <br/> 213.7172.25 |
 | Dolphin (2021.3.1) Canary 8 | ![canary][canary] | April 11, 2022 | **2021.3.1.8** <br/> AI-213.7172.25.2113.8421465 | **2021.3.3** <br/> 213.7172.25 |
 | Dolphin (2021.3.1) Canary 7 | ![canary][canary] | March 17, 2022 | **2021.3.1.7** <br/> AI-213.6777.52.2113.8305692 | **2021.3.2** <br/> 213.6777.52 |
@@ -358,11 +368,11 @@
 
 | Release Name | Channel | Release Date | Version | IntelliJ IDEA Version |
 |--------------|:-------:|--------------|---------|-----------------------|
+| Electric Eel (2022.1.1) Canary 1 | ![canary][canary] | May 11, 2022 | **2022.1.1.1** <br/> AI-213.7172.25.2211.8563311 | **2021.3.3** <br/> 213.7172.25 |
+| Dolphin (2021.3.1) Beta 1 | ![beta][beta] | May 11, 2022 | **2021.3.1.10** <br/> AI-213.7172.25.2113.8565817 | **2021.3.3** <br/> 213.7172.25 |
 | Dolphin (2021.3.1) Canary 9 | ![canary][canary] | April 21, 2022 | **2021.3.1.9** <br/> AI-213.7172.25.2113.8473230 | **2021.3.3** <br/> 213.7172.25 |
-| Dolphin (2021.3.1) Canary 8 | ![canary][canary] | April 11, 2022 | **2021.3.1.8** <br/> AI-213.7172.25.2113.8421465 | **2021.3.3** <br/> 213.7172.25 |
 | Chipmunk (2021.2.1) | ![release][release] | May 9, 2022 | **2021.2.1.14** <br/> AI-212.5712.43.2112.8512546 | **2021.2.4** <br/> 212.5712.43 |
 | Chipmunk (2021.2.1) RC 2 | ![rc][rc] | May 2, 2022 | **2021.2.1.13** <br/> AI-212.5712.43.2112.8504664 | **2021.2.4** <br/> 212.5712.43 |
-| Chipmunk (2021.2.1) RC 1 | ![rc][rc] | April 18, 2022 | **2021.2.1.12** <br/> AI-212.5712.43.2112.8403254 | **2021.2.4** <br/> 212.5712.43 |
 
 [release]: https://img.shields.io/badge/-release-blue?style=flat-square
 [patch]: https://img.shields.io/badge/-patch-orange?style=flat-square

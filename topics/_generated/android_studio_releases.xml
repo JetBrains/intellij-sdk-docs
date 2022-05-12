@@ -1,4 +1,22 @@
-<content version="84">
+<content version="85">
+   <item>
+      <name>Android Studio Electric Eel (2022.1.1) Canary 1</name>
+      <build>AI-213.7172.25.2211.8563311</build>
+      <version>2022.1.1.1</version>
+      <channel>Canary</channel>
+      <platformBuild>213.7172.25</platformBuild>
+      <platformVersion>2021.3.3</platformVersion>
+      <date>May 11, 2022</date>
+   </item>
+   <item>
+      <name>Android Studio Dolphin (2021.3.1) Beta 1</name>
+      <build>AI-213.7172.25.2113.8565817</build>
+      <version>2021.3.1.10</version>
+      <channel>Beta</channel>
+      <platformBuild>213.7172.25</platformBuild>
+      <platformVersion>2021.3.3</platformVersion>
+      <date>May 11, 2022</date>
+   </item>
    <item>
       <name>Android Studio Chipmunk (2021.2.1)</name>
       <build>AI-212.5712.43.2112.8512546</build>

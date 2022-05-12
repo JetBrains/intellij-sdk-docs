@@ -70,8 +70,6 @@ See [Message Infrastructure](messaging_infrastructure.md) and [Plugin Listeners]
 
 For a non-blocking alternative, starting with version 2019.2 of the platform, see [`AsyncFileListener`](upsource:///platform/core-api/src/com/intellij/openapi/vfs/AsyncFileListener.java).
 
-Plugins targeting versions 2017.2 or older of the platform can use the now deprecated `VirtualFileManager.addVirtualFileListener()` method, which allows you to receive notifications about all changes in the VFS.
-
 ## Are there any utilities for analyzing and manipulating virtual files?
 
 [`VfsUtil`](upsource:///platform/analysis-api/src/com/intellij/openapi/vfs/VfsUtil.java) and [`VfsUtilCore`](upsource:///platform/core-api/src/com/intellij/openapi/vfs/VfsUtilCore.java) provide utility methods for analyzing files in the Virtual File System.

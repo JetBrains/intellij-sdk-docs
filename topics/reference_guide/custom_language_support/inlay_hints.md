@@ -40,7 +40,7 @@ Examples can be found in the following IntelliJ Platform plugins:
 - [`GroovyInlayParameterHintsProvider`](upsource:///plugins/groovy/src/org/jetbrains/plugins/groovy/codeInsight/hint/GroovyInlayParameterHintsProvider.kt)
   implements inline hints for Groovy methods.
 - [`KotlinInlayParameterHintsProvider`](upsource:///plugins/kotlin/idea/src/org/jetbrains/kotlin/idea/codeInsight/hints/KotlinInlayParameterHintsProvider.kt)
-  shows how Kotlin displays parameter hints.
+  implements parameter hints for Kotlin language.
 
 ### Advanced Inlay Hints
 

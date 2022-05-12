@@ -38,7 +38,7 @@ The API documentation of the `InlayParameterHintsProvider` interface explains in
 Examples can be found in the following IntelliJ Platform plugins:
 
 - [`GroovyInlayParameterHintsProvider`](upsource:///plugins/groovy/src/org/jetbrains/plugins/groovy/codeInsight/hint/GroovyInlayParameterHintsProvider.kt)
-  is a small implementation of this EP for Groovy.
+  implements inline hints for Groovy methods.
 - [`KotlinInlayParameterHintsProvider`](upsource:///plugins/kotlin/idea/src/org/jetbrains/kotlin/idea/codeInsight/hints/KotlinInlayParameterHintsProvider.kt)
   shows how Kotlin displays parameter hints.
 

@@ -15,4 +15,3 @@ Plugin authors are encouraged to verify their compatible releases take advantage
 * [Changes in 2021.*](api_notable_list_2021.md)
 * [Changes in 2020.*](api_notable_list_2020.md)
 * [Changes in 2019.*](api_notable_list_2019.md)
-* [Changes in 2018.*](api_notable_list_2018.md)

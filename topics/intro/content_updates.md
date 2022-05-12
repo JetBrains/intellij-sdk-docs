@@ -12,6 +12,11 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 
 ## 2022
 
+### May-22
+
+Inlay Hints
+: Add section [](inlay_hints.md) describing special markers that appear in the editor and provide additional information code, like the names of the parameters that a called method expects.
+
 ### April-22
 
 Internal API Migration

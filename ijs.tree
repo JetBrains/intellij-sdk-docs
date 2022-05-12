@@ -251,7 +251,7 @@
       <toc-element id="go_to_class_and_go_to_symbol.md"/>
       <toc-element id="documentation.md"/>
       <toc-element id="parameter_info.md"/>
-      <toc-element toc-title="Parameter Hints"/>
+      <toc-element id="inlay_hints.md"/>
       <toc-element id="additional_minor_features.md"/>
     </toc-element>
     <toc-element id="custom_language_support_tutorial.md">

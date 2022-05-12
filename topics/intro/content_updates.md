@@ -15,7 +15,7 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 ### May-22
 
 Inlay Hints
-: Add [](inlay_hints.md) section explaining how to implement editor inlay hints.
+: Add section [](inlay_hints.md) describing special markers that appear in the editor and provide additional information code, like the names of the parameters that a called method expects.
 
 ### April-22
 

@@ -33,7 +33,7 @@ while the second one allows for the placement of inline and block inlays with cu
 Implement
 [`InlayParameterHintsProvider`](upsource:///platform/lang-api/src/com/intellij/codeInsight/hints/InlayParameterHintsProvider.java)
 and register it as `com.intellij.codeInsight.parameterNameHints` EP.
-The API documentation of the `InlayParameterHintsProvider` interface explains in detail the rationale behind all methods.
+The API documentation of `InlayParameterHintsProvider` explains in detail the rationale behind all methods.
 
 Examples can be found in the following IntelliJ Platform plugins:
 
@@ -47,7 +47,7 @@ Examples can be found in the following IntelliJ Platform plugins:
 Implement
 [`InlayHintsProvider`](upsource:///platform/lang-api/src/com/intellij/codeInsight/hints/InlayHintsProvider.kt)
 and register it as `com.intellij.codeInsight.inlayProvider` EP.
-The API documentation of the `InlayHintsProvider` interface explains in detail the rationale behind all methods.
+The API documentation of `InlayHintsProvider` explains in detail the rationale behind all methods.
 
 Examples can be found in the following IntelliJ Platform plugins:
 

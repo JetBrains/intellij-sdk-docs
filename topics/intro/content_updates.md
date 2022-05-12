@@ -12,6 +12,11 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 
 ## 2022
 
+### May-22
+
+Inlay Hints
+: Add [](inlay_hints.md) section explaining how to implement editor inlay hints.
+
 ### April-22
 
 Internal API Migration

@@ -2,7 +2,7 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-The [Predefined Functions](https://www.jetbrains.com/help/idea/template-variables.html?s=quick#predefined_functions) are the building blocks for creating [Parameterized Templates and Surround Templates](https://www.jetbrains.com/help/idea/using-live-templates.html?s=quick#live_templates_types).
+The [Predefined Functions](https://www.jetbrains.com/help/idea/template-variables.html?s=quick#predefined_functions) are the building blocks for creating [Parameterized Templates and Surround Templates](https://www.jetbrains.com/help/idea/using-live-templates.html#live_templates_types).
 However, sometimes the Predefined Functions are not enough.
 
 This tutorial illustrates how to add custom functions to an IntelliJ Platform plugin and make them available for use by Live Templates.

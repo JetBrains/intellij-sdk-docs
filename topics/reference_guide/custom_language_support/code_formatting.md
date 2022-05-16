@@ -28,9 +28,11 @@ The formatter modifies only the characters between blocks, and the tree of block
 Otherwise, the formatter may delete the characters between blocks.
 
 To better understand how to build the block structure, use [PsiViewer](explore_api.md#31-use-internal-mode-and-psiviewer) and inspect formatting blocks built for an existing language.
-To invoke PsiViewer with the possibility of inspecting Block Structure, use <menupath>Tools | View PSI Structure...</menupath> or <menupath>Tools | View PSI Structure of Current File...</menupath>:
+To invoke PsiViewer with the possibility of inspecting <control>Block Structure</control>, use <menupath>Tools | View PSI Structure...</menupath> or <menupath>Tools | View PSI Structure of Current File...</menupath>:
 
 ![Formatting Blocks Structure](psi_viewer_formatting_blocks.png){width="720"}
+
+To change the default "block name" taken from class name, return custom `Block.getDebugName()`.
 
 If the formatting operation does not affect the entire file (for example, if the formatter is called to format the pasted block of text), a complete tree of blocks is not built.
 Rather, only blocks for the text range covered by the formatting operation and their parents are built.

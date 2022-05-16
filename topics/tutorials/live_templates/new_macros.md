@@ -67,8 +67,8 @@ Using the `com.intellij.liveTemplateMacro` extension point, register the impleme
 Now verify the plugin is working correctly.
 * Run the plugin in a Development Instance.
 * Create a new file `testing.md` and enter several words in lower case.
-* Highlight the text and enter <shortcut>Ctrl/Cmd+J</shortcut> to open the Select Template popup.
-  Confirm that the _SDK: Convert to title case_ is available in the popup, and select it.
+* Highlight the text and enter <shortcut>Ctrl/Cmd+J</shortcut> to open the <control>Select Template</control> popup.
+  Confirm that the <control>SDK: Convert to title case</control> is available in the popup, and select it.
 
 ![Convert to title case](invoke_titleCase.png){width="700"}
 

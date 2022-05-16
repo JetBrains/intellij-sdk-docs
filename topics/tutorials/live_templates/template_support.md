@@ -23,7 +23,7 @@ Get started by [creating a new Live Template](https://www.jetbrains.com/idea/hel
 The variables `$TEXT$` and `$LINK$` may be further configured in the <control>Edit variables</control> dialogue to reorder their precedence and bind to the functions that invoke auto-completion at the appropriate time.
 In the <control>Edit variables</control> dialog, set the <control>Expression</control> for the `LINK` to `complete()` using the combo box.
 
-There are many [predefined functions](https://www.jetbrains.com/idea/help/creating-and-editing-template-variables.html) that developers should become familiar with before implementing any unique functionality in a plugin.
+There are many [predefined functions](https://www.jetbrains.com/help/idea/template-variables.html#predefined_functions) that developers should become familiar with before implementing any unique functionality in a plugin.
 
 > Consider iteratively testing the Live Template using the current editor and a markdown file to minimize debugging later.
 >

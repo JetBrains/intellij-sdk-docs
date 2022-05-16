@@ -80,6 +80,11 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 
 ### IntelliJ Platform 2022.2
 
+### Java Plugin 2022.2
+
+`com.intellij.codeInspection.javaDoc.JavaDocLocalInspection` class removed
+: Use `com.intellij.codeInspection.javaDoc.JavadocDeclarationInspection.ADDITIONAL_TAGS` field instead of `JavaDocLocalInspection.myAdditionalJavadocTags`.
+
 ### Plugin DevKit Plugin 2022.2
 
 `icons.DevkitIcons` class renamed to `org.jetbrains.idea.devkit.DevKitIcons`

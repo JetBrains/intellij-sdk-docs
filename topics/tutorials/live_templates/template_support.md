@@ -14,16 +14,16 @@ Get started by [creating a new Live Template](https://www.jetbrains.com/idea/hel
 * Add a new Template Group, "Markdown" and create a new Live Template under this group.
 * Assign the template the abbreviation "**{**".
 * Assign the description "**SDK: New link reference**".
-* Paste the following snippet into the *Template text* field:
+* Paste the following snippet into the <control>Template text</control> field:
 
 ```text
 [$TEXT$]($LINK$)$END$
 ```
 
-The variables `$TEXT$` and `$LINK$` may be further configured in the *Edit variables* dialogue to reorder their precedence and bind to the functions that invoke auto-completion at the appropriate time.
-In the *Edit variables* dialog, set the `Expression` for the `LINK` to `complete()` using the combo box.
+The variables `$TEXT$` and `$LINK$` may be further configured in the <control>Edit variables</control> dialogue to reorder their precedence and bind to the functions that invoke auto-completion at the appropriate time.
+In the <control>Edit variables</control> dialog, set the <control>Expression</control> for the `LINK` to `complete()` using the combo box.
 
-There are many other [predefined functions](https://www.jetbrains.com/idea/help/creating-and-editing-template-variables.html) that developers should become familiar with before implementing any unique functionality in a plugin.
+There are many [predefined functions](https://www.jetbrains.com/idea/help/creating-and-editing-template-variables.html) that developers should become familiar with before implementing any unique functionality in a plugin.
 
 > Consider iteratively testing the Live Template using the current editor and a markdown file to minimize debugging later.
 >
@@ -63,7 +63,7 @@ Copy this file into the [plugin's resources folder](https://github.com/JetBrains
 ## Implement TemplateContextType
 
 A [`TemplateContextType`](upsource:///platform/analysis-api/src/com/intellij/codeInsight/template/TemplateContextType.java) tells the IntelliJ Platform where the Live Template is applicable: Markdown files.
-Every context must have a unique `TemplateContextType` defined for it, and many context types are defined by the Platform.
+Every context must have a unique `TemplateContextType` defined for it, and the Platform defines many context types out of the box.
 The `MarkdownContext` class defines it for Markdown files.
 Ultimately, a file's extension determines the applicable Markdown context.
 

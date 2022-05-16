@@ -190,7 +190,6 @@
         <toc-element id="live_templates.md">
           <toc-element id="template_support.md"/>
           <toc-element id="new_macros.md"/>
-          <toc-element toc-title="Surround Templates"/>
         </toc-element>
         <toc-element id="file_and_code_templates.md">
           <toc-element id="providing_file_templates.md"/>

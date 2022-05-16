@@ -57,7 +57,7 @@ An example of a ticket is https://youtrack.jetbrains.com/issue/MP-1218. Until su
 
 NOTE: You are allowed to prettify the pattern using links: [`org.example.Foo`](https://github.com/JetBrains/intellij-community/tree/master/)
 
-NOTE: Entries not starting with code quotes (`name`) can be added to document non-code changes  and will be skipped in API verification.
+NOTE: Entries not starting with code quotes (`name`) can be added to document non-code changes and will be skipped in API verification.
 -->
 
 Please see [Incompatible API Changes](api_changes_list.md) on how to verify compatibility.
@@ -106,6 +106,11 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 
 `com.intellij.collaboration.auth.ui.LoadingAccountsDetailsProvider` class removed
 : Better API introduced in the form of `com.intellij.collaboration.auth.ui.AccountsDetailsLoader`.
+
+### Grazie Plugin 2022.2
+
+Method `com.intellij.grazie.GrazieBundle.message(key, parameters)` marked static
+: To shorten Java callers.
 
 ## 2022.1
 

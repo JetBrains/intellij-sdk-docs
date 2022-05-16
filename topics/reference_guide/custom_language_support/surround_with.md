@@ -12,3 +12,7 @@ Once the user selects a specific surrounder from the popup menu, the [`Surrounde
 
 **Example:**
 [`SurroundDescriptor`](upsource:///plugins/groovy/src/org/jetbrains/plugins/groovy/lang/surroundWith/GroovySurroundDescriptor.java) for Groovy plugin
+
+> See the [](live_templates.md) section for information on how to support simple code surrounding with the *Live Templates* feature.
+>
+{type="note"}

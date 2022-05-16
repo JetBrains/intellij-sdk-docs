@@ -85,6 +85,10 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 `com.intellij.codeInspection.javaDoc.JavaDocLocalInspection` class removed
 : Use `com.intellij.codeInspection.javaDoc.JavadocDeclarationInspection.ADDITIONAL_TAGS` field instead of `JavaDocLocalInspection.myAdditionalJavadocTags`.
 
+### Grazie Plugin 2022.2
+
+`com.intellij.grazie.GrazieBundle.message(key, parameters)` method marked static; to shorten Java callers
+
 ### Plugin DevKit Plugin 2022.2
 
 `icons.DevkitIcons` class renamed to `org.jetbrains.idea.devkit.DevKitIcons`

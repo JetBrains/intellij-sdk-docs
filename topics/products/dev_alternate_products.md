@@ -31,7 +31,7 @@ The best practice is to use the `gradle-intellij-plugin` `intellij.type` [attrib
 For example, `PY` for PyCharm Professional.
 Configuration using an `intellij.type` attribute is explained in the [Product-Specific Attribute](#configuring-plugin-projects-using-a-product-specific-attribute) section below.
 
-NOTE: Not all products have an `intellij.type` attribute defined by the `gradle-intellij-plugin`, for example, [PhpStorm](phpstorm.md).
+NOTE: Not all products have an `intellij.type` attribute defined by the `gradle-intellij-plugin`, for example, [Android Studio](android_studio.md) and [PhpStorm](phpstorm.md).
 The best approach then is to configure the project using the [IntelliJ IDEA Attribute](#configuring-gradle-build-script-using-the-intellij-idea-product-attribute).
 
 > To target multiple products (e.g., IntelliJ IDEA and PyCharm) with the same plugin, see [](plugin_compatibility.md) page.
@@ -82,7 +82,7 @@ However, testing the plugin project in the target product itself helps to find s
 
 Additional configuration must be done to match the version of IntelliJ IDEA to the version of the target product.
 Understanding the relationship between build numbers is critical when using this approach to project configuration:
-* _targetIDE_ is the (version-specific) IntelliJ Platform-based IDE in which the plugin is intended to run, such as PhpStorm.
+* _targetIDE_ is the (version-specific) IntelliJ Platform-based IDE in which the plugin is intended to run, such as Android Studio or PhpStorm.
 * _baseIntelliJPlatformVersion_ is the (version-specific) IntelliJ Platform used in the build of the _targetIDE_.
   The IntelliJ Platform is defined by a specific build of the IntelliJ IDEA Community Edition.
   The Gradle plugin attribute [`intellij.version`](gradle_guide.md#intellij-platform-configuration) is set to be _baseIntelliJPlatformVersion_.

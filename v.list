@@ -3,6 +3,6 @@
         SYSTEM "https://resources.jetbrains.com/stardust/vars.dtd">
 
 <vars>
-  <var name="ijPlatform" value="2022.1"/>
-  <var name="ijPlatformBuild" value="221.5080.169"/>
+  <var name="ijPlatform" value="2022.1.1"/>
+  <var name="ijPlatformBuild" value="221.5591.52"/>
 </vars>

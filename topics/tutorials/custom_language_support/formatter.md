@@ -23,8 +23,18 @@ Define `SimpleBlock` based on [`AbstractBlock`](upsource:///platform/code-style-
 
 ## Define a Formatting Model Builder
 
-Define a formatter that removes extra spaces except for the single spaces around the property separator.
-For example, reformat "foo  = &nbsp;&nbsp;&nbsp;&nbsp;bar" to "foo = bar".
+Define a formatter that removes extra spaces except for the single spaces around the property separator:
+
+<compare style="top-bottom">
+
+```properties
+foo  =    bar
+```
+
+```properties
+foo = bar
+```
+</compare>
 
 Create `SimpleFormattingModelBuilder` by subclassing [`FormattingModelBuilder`](upsource:///platform/code-style-api/src/com/intellij/formatting/FormattingModelBuilder.java).
 

@@ -18,4 +18,4 @@ and register it as `com.intellij.projectViewNodeDecorator` extension.
 The interface contains two `decorate()` methods where one is for modifying the node representation
 of normal project view nodes and the other is for changing package dependency nodes.
 If you need to update your node representation on certain events, please use
-[`ProjectView#update()`](upsource:///platform/lang-impl/src/com/intellij/ide/projectView/ProjectView.java).
+[`ProjectView.update()`](upsource:///platform/lang-impl/src/com/intellij/ide/projectView/ProjectView.java).

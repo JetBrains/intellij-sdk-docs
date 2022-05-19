@@ -5,3 +5,18 @@
 Please refer to the [Project tool window](https://www.jetbrains.com/help/idea/project-tool-window.html) section in IntelliJ IDEA Web Help.
 
 * [](tree_structure_view.md)
+
+## Decorating Project View Nodes
+
+Plugin authors can modify the representation of nodes in the project view.
+This is used to, e.g., change the icon of module nodes to reflect the module type, add URL and server path
+to Python Jupyter directories as location strings, or mark files as erroneous in the project view when they contain
+syntactical errors.
+
+To modify project view node representations, implement
+[`ProjectViewNodeDecorator`](upsource:///platform/lang-impl/src/com/intellij/ide/projectView/ProjectViewNodeDecorator.java)
+and register it as an `com.intellij.projectViewNodeDecorator` extension point (EP).
+The interface contains two `decorate()` methods where one is for modifying the node representation
+of normal project view nodes and the other is for changing package dependency nodes.
+If you need to update your node representation on certain events, please use
+[`ProjectView#update()`](upsource:///platform/lang-impl/src/com/intellij/ide/projectView/ProjectView.java).

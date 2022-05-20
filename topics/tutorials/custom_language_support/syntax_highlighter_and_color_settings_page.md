@@ -57,6 +57,18 @@ The `SimpleColorSettingsPage` implements [`ColorSettingsPage`](upsource:///platf
 ```
 {src="simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleColorSettingsPage.java"}
 
+It is supported to group related attributes like operators or braces by separating the nodes with `//`, e.g.:
+
+```java
+AttributesDescriptor[] DESCRIPTORS = new AttributesDescriptor[] {
+    new AttributesDescriptor("Operators//Plus", MySyntaxHighlighter.PLUS),
+    new AttributesDescriptor("Operators//Minus", MySyntaxHighlighter.MINUS),
+    new AttributesDescriptor("Operators//Advanced//Sigma", MySyntaxHighlighter.SIGMA),
+    new AttributesDescriptor("Operators//Advanced//Pi", MySyntaxHighlighter.PI),
+    //...
+};
+```
+
 ### Register the Color Settings Page
 
 Register the Simple Language color settings page with the IntelliJ Platform in the plugin configuration file using the `com.intellij.colorSettingsPage` extension point.

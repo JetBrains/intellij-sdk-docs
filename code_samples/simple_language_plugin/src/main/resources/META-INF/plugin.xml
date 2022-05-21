@@ -63,6 +63,7 @@
     <gotoSymbolContributor implementation="org.intellij.sdk.language.SimpleChooseByNameContributor"/>
     <lang.psiStructureViewFactory language="Simple"
                                   implementationClass="org.intellij.sdk.language.SimpleStructureViewFactory"/>
+    <navbar implementation="org.intellij.sdk.language.SimpleStructureAwareNavbar"/>
     <lang.formatter language="Simple" implementationClass="org.intellij.sdk.language.SimpleFormattingModelBuilder"/>
     <codeStyleSettingsProvider implementation="org.intellij.sdk.language.SimpleCodeStyleSettingsProvider"/>
     <langCodeStyleSettingsProvider implementation="org.intellij.sdk.language.SimpleLanguageCodeStyleSettingsProvider"/>

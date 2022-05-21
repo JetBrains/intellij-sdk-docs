@@ -20,7 +20,7 @@ public class SimpleStructureViewFactory implements PsiStructureViewFactory {
       @NotNull
       @Override
       public StructureViewModel createStructureViewModel(@Nullable Editor editor) {
-        return new SimpleStructureViewModel(psiFile);
+        return new SimpleStructureViewModel(editor, psiFile);
       }
     };
   }

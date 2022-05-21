@@ -14,11 +14,11 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 
 ### May-22
 
-Rename Refactoring
-: Add [](rename_refactoring.md) paragraphs mentioning `RenameInputValidator` and `RenameInputValidatorEx`.
-
 Decorating Project View Nodes
 : Add small section to [](project_view.md) describing how to modify the representation of nodes in the project view.
+
+Rename Refactoring
+: Add [](rename_refactoring.md) paragraphs mentioning `RenameInputValidator` and `RenameInputValidatorEx`.
 
 Inlay Hints
 : Add section [](inlay_hints.md) describing special markers that appear in the editor and provide additional information code, like the names of the parameters that a called method expects.

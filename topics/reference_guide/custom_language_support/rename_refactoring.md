@@ -24,6 +24,22 @@ Implementations of `NamesValidator` are registered in the `com.intellij.lang.nam
 **Example**:
 [`PropertiesNamesValidator`](upsource:///plugins/properties/src/com/intellij/lang/properties/PropertiesNamesValidator.java) for [Properties language plugin](upsource:///plugins/properties)
 
+Another way to check is [`RenameInputValidator`](upsource:///platform/refactoring/src/com/intellij/refactoring/rename/RenameInputValidator.java), unlike `NamesValidator` it allows you to more flexibly check the entered name for correctness based on the rule defined in the `isInputValid()` method.
+
+To determine which elements this validator will apply to, override the `getPattern` method where return the pattern of the element to validate.
+
+**Example**:
+[`RRenameInputValidator`](https://github.com/JetBrains/Rplugin/blob/71d42295a9d493aa80bd2cd16a3d57e08ee0cec0/src/org/jetbrains/r/refactoring/rename/RRenameInputValidator.kt) for [R language plugin](https://github.com/JetBrains/Rplugin)
+
+`RenameInputValidator` can be extended to [`RenameInputValidatorEx`](upsource:///platform/refactoring/src/com/intellij/refactoring/rename/RenameInputValidatorEx.java) to override the error message. In this case, additionally override the `getErrorMessage()` method where, in case of invalid name, return an error message or null otherwise.
+
+Note that `getErrorMessage()` only works if all `RenameInputValidator` accept the new name in `isInputValid()` and the name is a valid identifier for the language of the element.
+
+**Example**:
+[`YamlKeyValueRenameInputValidator`](upsource:///plugins/yaml/src/org/jetbrains/yaml/refactoring/rename/YamlKeyValueRenameInputValidator.java) for [YAML language plugin](upsource:///plugins/yaml)
+
+Implementations of `RenameInputValidator` or `RenameInputValidatorEx` are registered in the `com.intellij.renameInputValidator` extension point.
+
 ### Custom Rename UI and Workflow
 Further customization of the Rename refactoring processing is possible on multiple levels.
 Providing a custom implementation of the [`RenameHandler`](upsource:///platform/refactoring/src/com/intellij/refactoring/rename/RenameHandler.java) interface allows you to entirely replace the UI and workflow of the rename refactoring, and also to support renaming something which is not a [`PsiElement`](upsource:///platform/core-api/src/com/intellij/psi/PsiElement.java) at all.

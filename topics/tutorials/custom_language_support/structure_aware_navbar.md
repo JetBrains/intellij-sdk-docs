@@ -32,6 +32,6 @@ The `SimpleStructureAwareNavbar` implementation is registered with the IntelliJ 
 
 Run the project by using the Gradle [runIde task](https://plugins.jetbrains.com/docs/intellij/gradle-prerequisites.html#running-a-simple-gradle-based-intellij-platform-plugin).
 
-Open the <path>test.simple</path> file and select any property. On the top line in navigation bar you will see the name of the property with icon and the path to it.
+Open the <path>test.simple</path> file and put caret in any property. On the top line in navigation bar you will see the name of the property with icon and the path to it.
 
 ![Structure Aware Navbar](structure_aware_navbar.png)

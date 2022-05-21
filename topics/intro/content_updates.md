@@ -14,6 +14,9 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 
 ### May-22
 
+Rename Refactoring update
+: Added paragraphs about `RenameInputValidator` and `RenameInputValidatorEx` to [](rename_refactoring.md).
+
 Decorating Project View Nodes
 : Add small section to [](project_view.md) describing how to modify the representation of nodes in the project view.
 

@@ -18,7 +18,7 @@ To reuse the IntelliJ Platform implementation, you can extend one of two classes
 In this case, you probably only need the following two methods to override:
 
 - `getPresentableText()` – returns a string representation of the navigation bar part element passed to it.
-- `getIcon()` – returns the icon for the element passed to it.
+- `getIcon()` – returns the icon for the navigation bar part passed to it.
 
 ## Structure Aware Navigation Bar
 

@@ -14,6 +14,9 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 
 ### May-22
 
+PHP Type Providers
+: Add section [](php_open_api_php_type_providers.md) about type providers describing type inference in PhpStorm and how to implement your own type provider for PHP.
+
 Decorating Project View Nodes
 : Add small section to [](project_view.md) describing how to modify the representation of nodes in the project view.
 

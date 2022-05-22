@@ -14,7 +14,7 @@ import org.intellij.sdk.language.psi.SimpleProperty;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import javax.swing.*;
+import javax.swing.Icon;
 
 public class SimpleStructureAwareNavbar extends StructureAwareNavBarModelExtension {
     @NotNull

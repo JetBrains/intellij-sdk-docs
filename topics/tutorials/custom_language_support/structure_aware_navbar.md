@@ -6,7 +6,7 @@
 
 Structure aware navbar allows displaying specific file elements in the [navigation bar](https://www.jetbrains.com/help/idea/guided-tour-around-the-user-interface.html#navigation-bar), depending on the location of the caret in it. For example, in Java this is used to display a class and method in which the caret locates.
 
-**Reference**: [Navigation Bar](navbar.md)
+**Reference**: [](navbar.md)
 
 ## Define a SimpleStructureAwareNavbar
 

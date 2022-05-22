@@ -164,7 +164,7 @@ public interface PhpTypeProvider4 {
 }
 ```
 
-In order to implement `PhpTypeProvider4`, you need to implement 4 methods.
+To implement `PhpTypeProvider4`, you need to override 4 methods:
 
 1. `getKey()` is a method that returns a character that will be unique for this type provider. This can be any character, as long as it is unique, for example, PhpStorm uses hieroglyphs.
    For the convenience of checking that, for example, the Incomplete type is a type obtained from your provider, you can use the `PhpCharBasedTypeKey` class in which you need to overload the `getKey()` method that returns a character.

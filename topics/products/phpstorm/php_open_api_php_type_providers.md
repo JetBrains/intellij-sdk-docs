@@ -67,7 +67,7 @@ in this case the name of the function and its arguments.
 
 For this case, PhpStorm will create a new Incomplete type `#琁\foo.`.
 
-#### Incomplete Type Structure
+#### Incomplete Types Structure
 
 At the very beginning there is a `#` character, which is a marker that the type is Incomplete.
 

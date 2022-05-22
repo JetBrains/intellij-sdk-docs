@@ -24,16 +24,22 @@ Implementations of `NamesValidator` are registered in the `com.intellij.lang.nam
 **Example**:
 [`PropertiesNamesValidator`](upsource:///plugins/properties/src/com/intellij/lang/properties/PropertiesNamesValidator.java) for [Properties language plugin](upsource:///plugins/properties)
 
-Another way to check is [`RenameInputValidator`](upsource:///platform/refactoring/src/com/intellij/refactoring/rename/RenameInputValidator.java), unlike `NamesValidator` it allows you to more flexibly check the entered name for correctness based on the rule defined in the `isInputValid()` method.
+Another way to check is [`RenameInputValidator`](upsource:///platform/refactoring/src/com/intellij/refactoring/rename/RenameInputValidator.java),
+unlike `NamesValidator` it allows you to more flexibly check the entered name for correctness based on the rule
+defined in the `isInputValid()` method.
 
-To determine which elements this validator will apply to, override the `getPattern()` method where return the pattern of the element to validate.
+To determine which elements this validator will apply to, override the `getPattern()` method where return the
+pattern of the element to validate.
 
 **Example**:
 [`RRenameInputValidator`](https://github.com/JetBrains/Rplugin/blob/71d42295a9d493aa80bd2cd16a3d57e08ee0cec0/src/org/jetbrains/r/refactoring/rename/RRenameInputValidator.kt) for [R language plugin](https://github.com/JetBrains/Rplugin)
 
-`RenameInputValidator` can be extended to [`RenameInputValidatorEx`](upsource:///platform/refactoring/src/com/intellij/refactoring/rename/RenameInputValidatorEx.java) to override the error message. In this case, additionally override the `getErrorMessage()` method where, in case of invalid name, return an error message or null otherwise.
+`RenameInputValidator` can be extended to [`RenameInputValidatorEx`](upsource:///platform/refactoring/src/com/intellij/refactoring/rename/RenameInputValidatorEx.java) to override the error message.
+In this case, additionally override the `getErrorMessage()` method where, in case of invalid name, return an
+error message or null otherwise.
 
-Note that `getErrorMessage()` only works if all `RenameInputValidator` accept the new name in `isInputValid()` and the name is a valid identifier for the language of the element.
+Note that `getErrorMessage()` only works if all `RenameInputValidator` accept the new name in `isInputValid()`
+and the name is a valid identifier for the language of the element.
 
 **Example**:
 [`YamlKeyValueRenameInputValidator`](upsource:///plugins/yaml/src/org/jetbrains/yaml/refactoring/rename/YamlKeyValueRenameInputValidator.java) for [YAML language plugin](upsource:///plugins/yaml)

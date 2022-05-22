@@ -8,7 +8,7 @@ All providers inherit from `com.jetbrains.php.lang.psi.resolve.types.PhpTypeProv
 
 ## Types in PhpStorm
 
-The first stage of type inference in PhpStorm takes place at the indexing stage, at this moment we don’t know anything about the functions that are in the code, we don’t know what types they return, we don’t know the classes and what methods are called, all this imposes restrictions of how types work in PhpStorm.
+The first stage of type inference in PhpStorm takes place at the indexing stage, at this moment PhpStorm don’t know anything about the functions that are in the code, don’t know what types they return, don’t know the classes and what methods are called, all this imposes restrictions of how types work in PhpStorm.
 
 Because of this, types in PhpStorm are divided into two types:
 
@@ -26,7 +26,7 @@ Complete types are types that are already known exactly, for example, in the fol
 $a = 100;
 ```
 
-The type of the expression that is assigned to the `$a` variable is Complete type `int`, since we can definitely say that a numeric literal is of type `int`.
+The type of the expression that is assigned to the `$a` variable is Complete type `int`, since PhpStorm can definitely say that a numeric literal is of type `int`.
 
 ```php
 <?php
@@ -53,7 +53,7 @@ function foo(): Foo { return new Foo(); }
 foo()->f();
 ```
 
-Here PhpStorm must somehow express the type of the expression `foo()` during indexing, however, during indexing, we cannot refer to the definition of the `foo()` function to return a specific type.
+Here PhpStorm must somehow express the type of the expression `foo()` during indexing, however, during indexing, PhpStorm cannot refer to the definition of the `foo()` function to return a specific type.
 
 So PhpStorm creates an Incomplete type into which it writes all the information it might need to resolve the type, in this case the name of the function and its arguments.
 
@@ -73,7 +73,7 @@ During indexing, the IDE collects information about all types of elements in thi
 
 #### Incomplete Types Resolving
 
-Incomplete types are resolved if it was necessary to infer the element type, since indexing has already been completed at this point, we have access to all information, for example, functions and their return types.
+Incomplete types are resolved if it was necessary to infer the element type, since indexing has already been completed at this point, PhpStorm have access to all information, for example, functions and their return types.
 
 Receiving Incomplete type PhpStorm gets from it all the information that was placed there during the indexing stage, in the example above this is the name of the function and its arguments.
 
@@ -83,7 +83,7 @@ As a result, the obtained Complete type is returned and will be processed furthe
 
 ### Union Types
 
-Since PHP is a dynamically typed language, at the type inference stage we can get a situation where the type is either one or the other. For example:
+Since PHP is a dynamically typed language, at the type inference stage PhpStorm can get a situation where the type is either one or the other. For example:
 
 ```php
 <?php
@@ -96,7 +96,7 @@ if (rand(0, 10) > 5) {
 $a; // (1)
 ```
 
-In (1), the variable `$a` will be of type `int|string` because we can't deduce exactly which branch the execution will take.
+In (1), the variable `$a` will be of type `int|string` because PhpStorm can't deduce exactly which branch the execution will take.
 
 PhpStorm stores these types by separating each of the individual types with a `|` character. Each of the types can also be either Complete or Incomplete. In the Incomplete type resolution process, each union type will be resolved individually.
 

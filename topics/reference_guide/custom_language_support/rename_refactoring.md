@@ -26,7 +26,7 @@ Implementations of `NamesValidator` are registered in the `com.intellij.lang.nam
 
 Another way to check is [`RenameInputValidator`](upsource:///platform/refactoring/src/com/intellij/refactoring/rename/RenameInputValidator.java), unlike `NamesValidator` it allows you to more flexibly check the entered name for correctness based on the rule defined in the `isInputValid()` method.
 
-To determine which elements this validator will apply to, override the `getPattern` method where return the pattern of the element to validate.
+To determine which elements this validator will apply to, override the `getPattern()` method where return the pattern of the element to validate.
 
 **Example**:
 [`RRenameInputValidator`](https://github.com/JetBrains/Rplugin/blob/71d42295a9d493aa80bd2cd16a3d57e08ee0cec0/src/org/jetbrains/r/refactoring/rename/RRenameInputValidator.kt) for [R language plugin](https://github.com/JetBrains/Rplugin)

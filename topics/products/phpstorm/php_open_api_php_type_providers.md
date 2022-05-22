@@ -174,7 +174,7 @@ You can also overload the `emptyResultIsComplete()` method, which indicates whet
 **Examples:**
 
 - [`TupleShapeTypeProvider`](https://github.com/unserialize/kphpstorm/blob/master/src/main/kotlin/com/vk/kphpstorm/typeProviders/TupleShapeTypeProvider.kt) for [KPHP language plugin](https://github.com/unserialize/kphpstorm)
-- [`ForeachTypeProvider`](https://github.com/unserialize/kphpstorm/blob/master/src/main/kotlin/com/vk/kphpstorm/typeProviders/ForeachTypeProvider.kt) for [KPHP language plugin](https://github.com/unserialize/kphpstorm)
+- [`PsalmParamTypeProvider`](https://github.com/JetBrains/phpstorm-psalm-plugin/blob/eb8eb38fa1facc1e3614cc725ab76ec8bea80332/src/com/jetbrains/php/psalm/types/PsalmParamTypeProvider.java) for [Psalm plugin](https://github.com/JetBrains/phpstorm-psalm-plugin)
 
 ## Example Implementation
 

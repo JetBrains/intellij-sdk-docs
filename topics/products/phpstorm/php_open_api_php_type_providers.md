@@ -267,6 +267,8 @@ public class PhpUnitFiledInitializedInSetUpMethodsTP implements PhpTypeProvider4
 The `PhpUnitFiledInitializedInSetUpMethodsTP` implementation is registered with the IntelliJ Platform in the plugin configuration file using the `com.intellij.php.typeProvider4` extension point.
 
 ```xml
-<php.typeProvider4
-        implementation="com.jetbrains.php.lang.psi.resolve.types.PhpUnitFiledInitializedInSetUpMethodsTP"/>
+<extensions defaultExtensionNs="com.intellij">
+  <php.typeProvider4
+          implementation="com.jetbrains.php.lang.psi.resolve.types.PhpUnitFiledInitializedInSetUpMethodsTP"/>
+</extensions>
  ```

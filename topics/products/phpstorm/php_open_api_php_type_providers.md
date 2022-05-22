@@ -271,4 +271,4 @@ The `PhpUnitFiledInitializedInSetUpMethodsTP` implementation is registered with 
   <php.typeProvider4
           implementation="com.jetbrains.php.lang.psi.resolve.types.PhpUnitFiledInitializedInSetUpMethodsTP"/>
 </extensions>
- ```
+```

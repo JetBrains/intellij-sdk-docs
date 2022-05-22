@@ -152,14 +152,15 @@ public interface PhpTypeProvider4 {
    */
   Collection<? extends PhpNamedElement> getBySignature(String expression, Set<String> visited, int depth, Project project);
 
-   default boolean emptyResultIsComplete() {
-      return false;
-   }
+  default boolean emptyResultIsComplete() {
+    return false;
+  }
 
-   @Internal
-   default boolean interceptsNativeSignature() {
-      return false;
-   }
+  @Internal
+  default boolean interceptsNativeSignature() {
+    return false;
+  }
+
 }
 ```
 
@@ -185,7 +186,9 @@ You can also overload the `emptyResultIsComplete()` method, which indicates whet
 
 ## Example Implementation
 
-The goal is to provide types for filed references assigned in `setUp` method if containing class is PHPUnit one.
+The goal of this example is to provide types for filed references assigned in `setUp` method if containing class is PHPUnit one.
+
+### Define a PhpUnitFiledInitializedInSetUpMethodsTP
 
 ```java
 import com.intellij.openapi.project.Project;
@@ -258,3 +261,12 @@ public class PhpUnitFiledInitializedInSetUpMethodsTP implements PhpTypeProvider4
 
 }
 ```
+
+### Register the PhpUnitFiledInitializedInSetUpMethodsTP
+
+The `PhpUnitFiledInitializedInSetUpMethodsTP` implementation is registered with the IntelliJ Platform in the plugin configuration file using the `com.intellij.php.typeProvider4` extension point.
+
+```xml
+<php.typeProvider4
+        implementation="com.jetbrains.php.lang.psi.resolve.types.PhpUnitFiledInitializedInSetUpMethodsTP"/>
+ ```

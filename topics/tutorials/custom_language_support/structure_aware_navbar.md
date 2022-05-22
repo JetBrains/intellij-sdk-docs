@@ -2,6 +2,8 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
+<include src="language_and_filetype.md" include-id="custom_language_tutorial_header"></include>
+
 Structure aware navbar allows displaying specific file elements in the [navigation bar](https://www.jetbrains.com/help/idea/guided-tour-around-the-user-interface.html#navigation-bar), depending on the location of the caret in it. For example, in Java this is used to display a class and method in which the caret locates.
 
 **Reference**: [Navigation Bar](navbar.md)

@@ -2,13 +2,18 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-Type inference in PhpStorm is built on top of type providers, each of which is responsible for inferring the types of specific PSI elements. For example, `com.jetbrains.php.lang.psi.resolve.types.PhpArrayAccessTP` is responsible for inferring the types of expressions like `$arr[10]`. There are dozens of such providers, and they all work one after another to provide type information when needed.
+Type inference in PhpStorm is built on top of type providers, each of which is responsible for inferring the types of
+specific PSI elements.
+For example, `com.jetbrains.php.lang.psi.resolve.types.PhpArrayAccessTP` is responsible for inferring the types of expressions like `$arr[10]`.
+There are dozens of such providers, and they all work one after another to provide type information when needed.
 
 All providers inherit from `com.jetbrains.php.lang.psi.resolve.types.PhpTypeProvider4`, which is registered in the `com.jetbrains.php.typeProvider4` extension point.
 
 ## Types in PhpStorm
 
-The first stage of type inference in PhpStorm takes place at the indexing stage, at this moment PhpStorm don’t know anything about the functions that are in the code, don’t know what types they return, don’t know the classes and what methods are called, all this imposes restrictions of how types work in PhpStorm.
+The first stage of type inference in PhpStorm takes place at the indexing stage, at this moment PhpStorm don’t
+know anything about the functions that are in the code, don’t know what types they return, don’t know the classes
+and what methods are called, all this imposes restrictions of how types work in PhpStorm.
 
 Because of this, types in PhpStorm are divided into two types:
 
@@ -26,7 +31,8 @@ Complete types are types that are already known exactly, for example, in the fol
 $a = 100;
 ```
 
-The type of the expression that is assigned to the `$a` variable is Complete type `int`, since PhpStorm can definitely say that a numeric literal is of type `int`.
+The type of the expression that is assigned to the `$a` variable is Complete type `int`, since PhpStorm can
+definitely say that a numeric literal is of type `int`.
 
 ```php
 <?php
@@ -53,9 +59,11 @@ function foo(): Foo { return new Foo(); }
 foo()->f();
 ```
 
-Here PhpStorm must somehow express the type of the expression `foo()` during indexing, however, during indexing, PhpStorm cannot refer to the definition of the `foo()` function to return a specific type.
+Here PhpStorm must somehow express the type of the expression `foo()` during indexing, however,
+during indexing, PhpStorm cannot refer to the definition of the `foo()` function to return a specific type.
 
-So PhpStorm creates an Incomplete type into which it writes all the information it might need to resolve the type, in this case the name of the function and its arguments.
+So PhpStorm creates an Incomplete type into which it writes all the information it might need to resolve the type,
+in this case the name of the function and its arguments.
 
 For this case, PhpStorm will create a new Incomplete type `#琁\foo.`.
 
@@ -63,27 +71,36 @@ For this case, PhpStorm will create a new Incomplete type `#琁\foo.`.
 
 At the very beginning there is a `#` character, which is a marker that the type is Incomplete.
 
-It is followed by the type provider's unique key. According to it, you can understand that this type was created by the provider of the desired type.
+It is followed by the type provider's unique key.
+According to it, you can understand that this type was created by the provider of the desired type.
 
-The rest of the line is the encoded information. In the example above, it's the fully qualified name and a dot.
+The rest of the line is the encoded information.
+In the example above, it's the fully qualified name and a dot.
 
 The created Incomplete type is returned from the function and will be processed further.
 
-During indexing, the IDE collects information about all types of elements in this way and stores them in the index. When there is a need for the type of some expression, the type obtained at the Incomplete indexing stage is passed for resolving.
+During indexing, the IDE collects information about all types of elements in this way and stores them in the index.
+When there is a need for the type of some expression, the type obtained at the Incomplete indexing stage is passed for resolving.
 
 #### Incomplete Types Resolving
 
-Incomplete types are resolved if it was necessary to infer the element type, since indexing has already been completed at this point, PhpStorm have access to all information, for example, functions and their return types.
+Incomplete types are resolved if it was necessary to infer the element type,
+since indexing has already been completed at this point, PhpStorm have access to all information,
+for example, functions and their return types.
 
-Receiving Incomplete type PhpStorm gets from it all the information that was placed there during the indexing stage, in the example above this is the name of the function and its arguments.
+Receiving Incomplete type PhpStorm gets from it all the information that was placed there during the indexing stage,
+in the example above this is the name of the function and its arguments.
 
-With this information, PhpStorm can access the index and get the information it needs. In the example above, this is the return type of the function.
+With this information, PhpStorm can access the index and get the information it needs.
+In the example above, this is the return type of the function.
 
 As a result, the obtained Complete type is returned and will be processed further.
 
 ### Union Types
 
-Since PHP is a dynamically typed language, at the type inference stage PhpStorm can get a situation where the type is either one or the other. For example:
+Since PHP is a dynamically typed language, at the type inference stage PhpStorm can get a situation
+where the type is either one or the other.
+For example:
 
 ```php
 <?php
@@ -98,7 +115,9 @@ $a; // (1)
 
 In (1), the variable `$a` will be of type `int|string` because PhpStorm can't deduce exactly which branch the execution will take.
 
-PhpStorm stores these types by separating each of the individual types with a `|` character. Each of the types can also be either Complete or Incomplete. In the Incomplete type resolution process, each union type will be resolved individually.
+PhpStorm stores these types by separating each of the individual types with a `|` character.
+Each of the types can also be either Complete or Incomplete.
+In the Incomplete type resolution process, each union type will be resolved individually.
 
 Since some providers may return types for the same PSI element, union types may also appear for some elements.
 
@@ -166,18 +185,30 @@ public interface PhpTypeProvider4 {
 
 To implement `PhpTypeProvider4`, you need to override 4 methods:
 
-1. `getKey()` is a method that returns a character that will be unique for this type provider. This can be any character, as long as it is unique, for example, PhpStorm uses hieroglyphs.
-   For the convenience of checking that, for example, the Incomplete type is a type obtained from your provider, you can use the `PhpCharBasedTypeKey` class in which you need to overload the `getKey()` method that returns a character.
-   In order to check that the type is created by your provider, it will be enough to call the `signed()` method, and in order to sign the type, it will be enough to call the `sign()` method.
+1. `getKey()` is a method that returns a character that will be unique for this type provider.
+   This can be any character, as long as it is unique, for example, PhpStorm uses hieroglyphs.
+   For the convenience of checking that, for example, the Incomplete type is a type obtained from your provider,
+   you can use the `PhpCharBasedTypeKey` class in which you need to overload the `getKey()` method that returns a character.
+   In order to check that the type is created by your provider, it will be enough to call the `signed()` method,
+   and in order to sign the type, it will be enough to call the `sign()` method.
 
-2. `getType()` is a method that returns the type of the expression for the given element. This method is called at the indexing stage and therefore its implementation **cannot access** any information from the index. If some information is needed, then it is necessary to pack the required data into a string and return an Incomplete type based on this string.
+2. `getType()` is a method that returns the type of the expression for the given element.
+   This method is called at the indexing stage and therefore its implementation **cannot access** any information
+   from the index.
+   If some information is needed, then it is necessary to pack the required data into a string and return
+   an Incomplete type based on this string.
 
-3. `complete()` is a method that resolves an Incomplete type into a Complete type. All strings of Incomplete types are sequentially passed to this method, the method should return the Complete type for them.
-   Note that Incomplete types from other type providers also come to this method, so you need to check that the incoming string belongs to your provider.
+3. `complete()` is a method that resolves an Incomplete type into a Complete type.
+   All strings of Incomplete types are sequentially passed to this method, the method should return
+   a Complete type for them.
+   Note that Incomplete types from other type providers also come to this method,
+   so you need to check that the incoming string belongs to your provider.
 
 4. `getBySignature()` is a method with which you can provide additional elements or references.
 
-You can also overload the `emptyResultIsComplete()` method, which indicates whether the `null` returned from the `complete()` method is a valid result. For example, if you index the type `int`, then the result returned from `complete()` will be `null` and it is a valid result.
+You can also overload the `emptyResultIsComplete()` method, which indicates whether the `null` returned from
+the `complete()` method is a valid result.
+For example, if you index the type `int`, then the result returned from `complete()` will be `null` and it is a valid result.
 
 **Examples:**
 
@@ -264,7 +295,8 @@ public class PhpUnitFiledInitializedInSetUpMethodsTP implements PhpTypeProvider4
 
 ### Register the PhpUnitFiledInitializedInSetUpMethodsTP
 
-The `PhpUnitFiledInitializedInSetUpMethodsTP` implementation is registered with the IntelliJ Platform in the plugin configuration file using the `com.intellij.php.typeProvider4` extension point.
+The `PhpUnitFiledInitializedInSetUpMethodsTP` implementation is registered with the IntelliJ Platform in the
+plugin configuration file using the `com.intellij.php.typeProvider4` extension point.
 
 ```xml
 <extensions defaultExtensionNs="com.intellij">

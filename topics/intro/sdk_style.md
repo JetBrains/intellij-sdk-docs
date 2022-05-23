@@ -4,6 +4,7 @@
 
 This document describes the writing style used in authoring open-source IntelliJ Platform SDK documentation.
 Before you begin, please read this page thoroughly, as well as the [Code of Conduct](intellij-sdk-docs-original_CODE_OF_CONDUCT.md) and [License](https://github.com/JetBrains/intellij-sdk-docs/blob/main/LICENSE.txt) documents.
+Please see also [](intellij-sdk-docs-original_CONTRIBUTING.md) for some general remarks.
 For information about contributing to the IntelliJ Platform itself, please visit [Contributing to the IntelliJ Platform](platform_contributions.md).
 
 First and foremost, we should keep in mind our audience and their objectives:
@@ -18,7 +19,7 @@ The documentation files themselves are [Markdown](https://github.github.com/gfm/
 
 ### Page Format
 
-Each Markdown file must contain a header defining its title:
+Each Markdown file must contain a header defining its title using the following notation:
 
 ```yaml
 [//]: # (title: Contributing to the IntelliJ Platform SDK)

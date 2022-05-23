@@ -17,6 +17,9 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 Navigation Bar
 : Add [](navbar.md) section with an [accompanying tutorial](structure_aware_navbar.md) that show how to implement a custom navigation bar for custom languages.
 
+Rename Refactoring
+: Add [](rename_refactoring.md) paragraphs mentioning `RenameInputValidator` and `RenameInputValidatorEx`.
+
 Decorating Project View Nodes
 : Add small section to [](project_view.md) describing how to modify the representation of nodes in the project view.
 

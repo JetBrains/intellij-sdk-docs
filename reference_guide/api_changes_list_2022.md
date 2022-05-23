@@ -68,6 +68,8 @@ Please see [Incompatible API Changes](api_changes_list.md) on how to verify comp
 >
 {type="note"}
 
+> Java 17 is required when targeting 2022.2 or later only.
+>
 > Java 11 is required ([blog post](https://blog.jetbrains.com/platform/2020/09/intellij-project-migrates-to-java-11/)) when targeting 2020.3 and later only.
 >
 > Please make sure to always upgrade `gradle-intellij-plugin` to the latest version [![GitHub Release](https://img.shields.io/github/release/jetbrains/gradle-intellij-plugin.svg?style=flat-square)](https://github.com/jetbrains/gradle-intellij-plugin/releases)
@@ -193,3 +195,9 @@ Method `com.intellij.grazie.GrazieBundle.message(key, parameters)` marked static
 
 `com.intellij.database.extractors.ObjectFormatter.getPlainValue(Object, DataConsumer.Column, Dbms)` method removed
 : Method was removed because we refactor table editor API. It will not depend on Dbms anymore. Please use `ObjectFormatter.objectToString` instead.
+
+`com.intellij.database.DatabaseDataKeys.DATA_SOURCE_KEY` field removed
+: `DatabaseDataKeys` no longer extends `DatabaseDataKeysCore` because `DatabaseDataKeys` was moved to a separate module for table editor. `DATA_SOURCE_KEY` now has to be accessed directly via `DatabaseDataKeysCore`.
+
+`com.intellij.database.extractors.ObjectFormatter` class now interface
+: Method was removed because we refactor table editor API. New API will allow to use table editor in other products and fully customize it.

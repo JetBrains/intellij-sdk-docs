@@ -4,8 +4,9 @@
 
 The navigation bar implementation is used to customize and extend the [navigation bar](https://www.jetbrains.com/help/idea/guided-tour-around-the-user-interface.html#navigation-bar) structure.
 
-The starting point for the navigation bar extension is the [`NavBarModelExtension`](upsource:///platform/lang-impl/src/com/intellij/ide/navigationToolbar/NavBarModelExtension.java) interface,
-which is registered in the `com.intellij.navbar` extension point.
+The starting point for the navigation bar extension is the
+[`NavBarModelExtension`](upsource:///platform/lang-impl/src/com/intellij/ide/navigationToolbar/NavBarModelExtension.java)
+interface, which is registered in the `com.intellij.navbar` extension point.
 
 To reuse the IntelliJ Platform implementation, you can extend one of two classes:
 
@@ -15,8 +16,7 @@ To reuse the IntelliJ Platform implementation, you can extend one of two classes
 ## Default Navigation Bar
 
 `DefaultNavBarExtension` is the basic implementation of the navigation bar for any files.
-Inherit from this class if you want to create a simple navigation bar where you can change the display of
-folders or files for your language.
+Inherit from this class if you want to create a simple navigation bar where you can change the display of folders or files for your language.
 
 In this case, you probably only need the following two methods to override:
 
@@ -35,8 +35,8 @@ Inherit from it if you want to add navigation bar support to your language with 
 In this case, you will also need to override the `getLanguage()` in addition to the two methods described earlier.
 This method returns the language instance for which this extension will work.
 
-The `adjustElement()` method allows you to modify the navigation bar element. It can be used, for example,
-when you want to show a class in the navigation bar when the caret is in a comment that is attached to the class.
+The `adjustElement()` method allows you to modify the navigation bar element.
+It can be used, for example, when you want to show a class in the navigation bar when the caret is in a comment that is attached to the class.
 
 You probably won't need to override other methods unless you want to write your own implementation of the entire `NavBarModelExtension` interface.
 

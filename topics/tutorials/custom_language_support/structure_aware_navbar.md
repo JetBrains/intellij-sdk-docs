@@ -4,14 +4,17 @@
 
 <include src="language_and_filetype.md" include-id="custom_language_tutorial_header"></include>
 
-Structure aware navbar allows displaying specific file elements in the [navigation bar](https://www.jetbrains.com/help/idea/guided-tour-around-the-user-interface.html#navigation-bar), depending on the location of the caret in it.
+Structure aware navbar allows displaying specific file elements in the
+[navigation bar](https://www.jetbrains.com/help/idea/guided-tour-around-the-user-interface.html#navigation-bar),
+depending on the location of the caret in it.
 For example, in Java this is used to display a class and method in which the caret locates.
 
 **Reference**: [](navbar.md)
 
 ## Define a SimpleStructureAwareNavbar
 
-The simple structure aware navbar implements [`StructureAwareNavBarModelExtension`](upsource:///platform/lang-impl/src/com/intellij/ide/navigationToolbar/StructureAwareNavBarModelExtension.java).
+The simple structure aware navbar implements
+[`StructureAwareNavBarModelExtension`](upsource:///platform/lang-impl/src/com/intellij/ide/navigationToolbar/StructureAwareNavBarModelExtension.java).
 
 Override the `getLanguage()` method to return the language for which the navigation bar will be used.
 To define text for a file and a property, override the `getPresentableText()` method, and finally, to display an icon for a property, override the `getIcon()` method.

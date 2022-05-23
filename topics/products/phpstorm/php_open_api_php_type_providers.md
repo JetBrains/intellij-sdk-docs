@@ -62,10 +62,8 @@ foo()->f();
 Here PhpStorm must somehow express the type of the expression `foo()` during indexing, however,
 during indexing, PhpStorm cannot refer to the definition of the `foo()` function to return a specific type.
 
-So PhpStorm creates an Incomplete type into which it writes all the information it might need to resolve the type,
-in this case the name of the function and its arguments.
-
-For this case, PhpStorm will create a new Incomplete type `#琁\foo.`.
+So PhpStorm creates an Incomplete type into which it writes all the information it might need to resolve the type.
+In this case, the name of the function and its arguments, so PhpStorm will create a new Incomplete type `#琁\foo.`.
 
 #### Incomplete Types Structure
 

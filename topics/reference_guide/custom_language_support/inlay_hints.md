@@ -68,10 +68,13 @@ Examples can be found in the following IntelliJ Platform plugins:
    It gives insight into what’s possible.
 2. If you want to support multiple languages with a single type of inlay hints, please see
    [`InlayHintsProviderFactory`](upsource:///platform/lang-api/src/com/intellij/codeInsight/hints/InlayHintsProviderFactory.kt)
-3. For testing inlay hints, see
+3. If you want to suppress inlay hints in specific places, please implement
+   [`ParameterNameHintsSuppressor`](upsource:///platform/lang-api/src/com/intellij/codeInsight/hints/ParameterNameHintsSuppressor.kt)
+   and register it as `com.intellij.codeInsight.parameterNameHintsSuppressor` EP.
+4. For testing inlay hints, see
    [`InlayHintsProviderTestCase`](upsource:///platform/testFramework/src/com/intellij/testFramework/utils/inlays/InlayHintsProviderTestCase.kt)
    and [`InlayParameterHintsTest`](upsource:///platform/testFramework/src/com/intellij/testFramework/utils/inlays/InlayParameterHintsTest.kt).
-4. If you need to force inlay hints to update when using
+5. If you need to force inlay hints to update when using
    [`DaemonCodeAnalyzer#restart()`](upsource:///platform/analysis-api/src/com/intellij/codeInsight/daemon/DaemonCodeAnalyzer.java),
    please use
    [`ParameterHintsPassFactory#forceHintsUpdateOnNextPass()`](upsource:///platform/lang-impl/src/com/intellij/codeInsight/hints/ParameterHintsPassFactory.java)

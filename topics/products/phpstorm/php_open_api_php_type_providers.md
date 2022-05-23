@@ -77,7 +77,7 @@ According to it, you can understand that this type was created by the provider o
 The rest of the line is the encoded information.
 In the example above, it's the fully qualified name and a dot.
 
-The created Incomplete type is returned from the function and will be processed further.
+The created Incomplete type will be processed further when the indexing process is over.
 
 During indexing, the IDE collects information about all types of elements in this way and stores them in the index.
 When there is a need for the type of some expression, the type obtained at the Incomplete indexing stage is passed for resolving.
@@ -88,18 +88,18 @@ Incomplete types are resolved if it was necessary to infer the element type,
 since indexing has already been completed at this point, PhpStorm have access to all information,
 for example, functions and their return types.
 
-Receiving Incomplete type PhpStorm gets from it all the information that was placed there during the indexing stage,
-in the example above this is the name of the function and its arguments.
+Receiving Incomplete type PhpStorm gets from it all the information that was placed there during the indexing stage.
+In the example above this is the name of the function and its arguments.
 
 With this information, PhpStorm can access the index and get the information it needs.
 In the example above, this is the return type of the function.
 
-As a result, the obtained Complete type is returned and will be processed further.
+As a result, the resulting Complete type is returned and will be used by PhpStorm for auto-completion, checks, etc.
 
 ### Union Types
 
 Since PHP is a dynamically typed language, at the type inference stage PhpStorm can get a situation
-where the type is either one or the other.
+where the type can be either one or the other.
 For example:
 
 ```php
@@ -107,7 +107,7 @@ For example:
 
 $a = 100;
 if (rand(0, 10) > 5) {
-  $a = "Hello".
+  $a = "Hello World!".
 }
 
 $a; // (1)
@@ -117,7 +117,7 @@ In (1), the variable `$a` will be of type `int|string` because PhpStorm can't de
 
 PhpStorm stores these types by separating each of the individual types with a `|` character.
 Each of the types can also be either Complete or Incomplete.
-In the Incomplete type resolution process, each union type will be resolved individually.
+In the Incomplete type resolving process, each union type will be resolved individually.
 
 Since some providers may return types for the same PSI element, union types may also appear for some elements.
 
@@ -187,16 +187,15 @@ To implement `PhpTypeProvider4`, you need to override 4 methods:
 
 1. `getKey()` is a method that returns a character that will be unique for this type provider.
    This can be any character, as long as it is unique, for example, PhpStorm uses hieroglyphs.
-   For the convenience of checking that, for example, the Incomplete type is a type obtained from your provider,
+   For the convenience of checking that the Incomplete type is a type obtained from your provider,
    you can use the `PhpCharBasedTypeKey` class in which you need to overload the `getKey()` method that returns a character.
    In order to check that the type is created by your provider, it will be enough to call the `signed()` method,
    and in order to sign the type, it will be enough to call the `sign()` method.
 
 2. `getType()` is a method that returns the type of the expression for the given element.
    This method is called at the indexing stage and therefore its implementation **cannot access** any information
-   from the index.
-   If some information is needed, then it is necessary to pack the required data into a string and return
-   an Incomplete type based on this string.
+   from the index and **must** rely only on local information.
+   If you need some information, then pack the required data into a string and return an Incomplete type based on this string.
 
 3. `complete()` is a method that resolves an Incomplete type into a Complete type.
    All strings of Incomplete types are sequentially passed to this method, the method should return

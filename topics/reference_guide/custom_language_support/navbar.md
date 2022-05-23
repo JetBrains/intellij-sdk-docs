@@ -11,7 +11,7 @@ interface, which is registered in the `com.intellij.navbar` extension point.
 To reuse the IntelliJ Platform implementation, you can extend one of two classes:
 
 - [`DefaultNavBarExtension`](upsource:///platform/lang-impl/src/com/intellij/ide/navigationToolbar/DefaultNavBarExtension.java)
-- [`StructureAwareNavBarModelExtension`](upsource:///platform/lang-impl/src/com/intellij/ide/navigationToolbar/StructureAwareNavBarModelExtension.java)
+- [`StructureAwareNavBarModelExtension`](upsource:///platform/lang-impl/src/com/intellij/ide/navigationToolbar/StructureAwareNavBarModelExtension.kt)
 
 ## Default Navigation Bar
 

@@ -1,4 +1,4 @@
-[//]: # "title: Navigation Bar"
+[//]: # ("title: Navigation Bar")
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
@@ -25,22 +25,21 @@ In this case, you probably only need the following two methods to override:
 
 ## Structure Aware Navigation Bar
 
-`StructureAwareNavBarModelExtension` is an advanced implementation that provides the ability to display specific file elements in a bar.
+`StructureAwareNavBarModelExtension` is an advanced implementation that provides the ability to display specific file elements (e.g., the name of classes, functions, etc.) in a bar.
 Such as, for example, the name of the class inside which the caret is currently located.
 Inherit from it if you want to add navigation bar support to your language with support for specific file elements.
 
-> Don't forget to implement [Structure View](structure_view.md) for correct work.
+> Don't forget to implement [](structure_view.md), this is necessary to build a file structure model based on which the navigation bar displays a specific element.
 {type="note"}
 
-In this case, you will also need to override the `getLanguage()` in addition to the two methods described earlier.
-This method returns the language instance for which this extension will work.
+In this case, you will also need to override the `getLanguage()` in addition to the two methods described earlier, this method returns the language instance for which this extension will work.
 
 The `adjustElement()` method allows you to modify the navigation bar element.
-It can be used, for example, when you want to show a class in the navigation bar when the caret is in a comment that is attached to the class.
+It can be used, for example, when you want to show a class in the navigation bar when the caret is located in a comment that is attached to the class.
 
 You probably won't need to override other methods unless you want to write your own implementation of the entire `NavBarModelExtension` interface.
 
-Note that the `getSuitableClasses()` method on the structure view model class that implements `com.intellij.ide.structureView.TextEditorBasedStructureViewModel` (see [Structure View](structure_view.md))
+Note that the `getSuitableClasses()` method on the structure view model class that implements `com.intellij.ide.structureView.TextEditorBasedStructureViewModel` (see [](structure_view.md))
 must return all the element types you want to display in the navigation bar.
 
 **Example**: [Custom Language Support Tutorial: Structure Aware Navigation Bar](structure_aware_navbar.md)

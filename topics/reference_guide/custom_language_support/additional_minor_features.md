@@ -140,6 +140,25 @@ Please refer to
 [`GroovyBreadcrumbsInfoProvider`](upsource:///plugins/groovy/src/org/jetbrains/plugins/groovy/editor/GroovyBreadcrumbsInfoProvider.kt)
 as an example implementation.
 
+### Navigation Bar
+
+EP: `com.intellij.navbar`
+
+[`NavBarModelExtension`](upsource:///platform/lang-impl/src/com/intellij/ide/navigationToolbar/NavBarModelExtension.java)
+allows for modifying the
+[navigation bar](https://www.jetbrains.com/help/idea/guided-tour-around-the-user-interface.html) or
+adjusting the displayed elements.
+Implementations can extend
+[`AbstractNavBarModelExtension`](upsource:///platform/lang-impl/src/com/intellij/ide/navigationToolbar/AbstractNavBarModelExtension.java)
+instead of implementing the interface.
+Please see
+[`KotlinNavBarModelExtension`](upsource:///plugins/kotlin/idea/src/org/jetbrains/kotlin/idea/navigationToolbar/KotlinNavBarModelExtension.kt),
+[`GrNavBarModelExtension`](upsource:///plugins/groovy/src/org/jetbrains/plugins/groovy/navbar/GrNavBarModelExtension.java),
+and [`GrNavBarModelExtension`](upsource:///plugins/groovy/src/org/jetbrains/plugins/groovy/navbar/GrNavBarModelExtension.java)
+for example implementations.
+
+
+
 > If a topic you are interested in is not covered in the above sections, let us know via the "**Was this page helpful?**" feedback form below or [other channels](getting_help.md#problems-with-the-guide).
 >
 > Please be specific about the topics and reasons for adding them, and leave your email in case we need more details.

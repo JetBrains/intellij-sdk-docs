@@ -130,7 +130,15 @@ allows providing text ranges for more complex code blocks like, e.g., in `if`/`e
 It is used to highlight markers and keywords if one is under the cursor, and for navigation to the beginning/end of blocks.
 See also the [paired brace matching](additional_minor_features.md#brace-matching).
 
+### Breadcrumbs
 
+EP: `com.intellij.breadcrumbsInfoProvider`
+
+[`BreadcrumbsProvider`](upsource:///platform/editor-ui-api/src/com/intellij/ui/breadcrumbs/BreadcrumbsProvider.java)
+allows for language-specific breadcrumbs.
+Please refer to
+[`GroovyBreadcrumbsInfoProvider`](upsource:///plugins/groovy/src/org/jetbrains/plugins/groovy/editor/GroovyBreadcrumbsInfoProvider.kt)
+as an example implementation.
 
 > If a topic you are interested in is not covered in the above sections, let us know via the "**Was this page helpful?**" feedback form below or [other channels](getting_help.md#problems-with-the-guide).
 >

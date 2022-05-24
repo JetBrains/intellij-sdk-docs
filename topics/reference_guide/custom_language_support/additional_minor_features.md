@@ -165,6 +165,14 @@ EP: `completion.plainTextSymbol`
 provides a simple way to extract lookup elements from a file so that users have completion available
 in, e.g., plain text editors like VCS commit messages.
 
+### Splitting and Joining List Constructs
+
+EP: `com.intellij.listSplitJoinContext`
+
+[`ListSplitJoinContext`](upsource:///platform/lang-impl/src/com/intellij/openapi/editor/actions/lists/ListSplitJoinContext.kt)
+needs to be implemented to define the exact behavior of splitting and joining list-like constructs
+in a language.
+
 > If a topic you are interested in is not covered in the above sections, let us know via the "**Was this page helpful?**" feedback form below or [other channels](getting_help.md#problems-with-the-guide).
 >
 > Please be specific about the topics and reasons for adding them, and leave your email in case we need more details.

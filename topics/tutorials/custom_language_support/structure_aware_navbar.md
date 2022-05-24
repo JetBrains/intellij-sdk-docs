@@ -1,4 +1,4 @@
-[//]: # ("title: 15. Structure Aware Navigation Bar")
+[//]: # (title: 15. Structure Aware Navigation Bar)
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
@@ -19,9 +19,6 @@ The simple structure aware navbar implements
 ```java
 ```
 {src="simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleStructureAwareNavbar.java"}
-
-In the `adjustElement()` method, if the current caret is located in a comment, then we check if this comment is located just before a property and then return this property.
-This way, when the user selects a comment, the property name will be displayed in the navigation bar.
 
 ## Register the SimpleStructureAwareNavbar
 

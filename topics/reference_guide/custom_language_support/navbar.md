@@ -1,4 +1,4 @@
-[//]: # ("title: Navigation Bar")
+[//]: # (title: Navigation Bar)
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
@@ -27,8 +27,8 @@ In this case, you probably only need to override the following two methods:
 
 ## Structure Aware Navigation Bar
 
-`StructureAwareNavBarModelExtension` is an advanced implementation that provides the ability to display specific file elements (e.g., the name of classes, functions, etc.) in a bar.
-Such as, for example, the name of the class inside which the caret is currently located.
+`StructureAwareNavBarModelExtension` is an advanced implementation that provides the ability to display specific file elements (e.g., the name of classes, functions, etc.) in a bar e.g.,
+the name of the class at the current caret position.
 Inherit from it if you want to add navigation bar support to your language with support for specific file elements.
 
 > Don't forget to implement [](structure_view.md), this is necessary to build a file structure model based on which the navigation bar displays a specific element.

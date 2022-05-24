@@ -1,4 +1,4 @@
-// Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
+// Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license.
 
 package org.intellij.sdk.language;
 
@@ -7,10 +7,8 @@ import com.intellij.ide.structureView.StructureViewModelBase;
 import com.intellij.ide.structureView.StructureViewTreeElement;
 import com.intellij.ide.util.treeView.smartTree.Sorter;
 import com.intellij.openapi.editor.Editor;
-import com.intellij.psi.PsiComment;
 import com.intellij.psi.PsiFile;
 import org.intellij.sdk.language.psi.SimpleProperty;
-import org.intellij.sdk.language.psi.SimpleTokenType;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -39,6 +37,6 @@ public class SimpleStructureViewModel extends StructureViewModelBase implements
 
   @Override
   protected Class<?> @NotNull [] getSuitableClasses() {
-    return new Class[]{SimpleProperty.class, PsiComment.class};
+    return new Class[]{SimpleProperty.class};
   }
 }

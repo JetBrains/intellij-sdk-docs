@@ -193,6 +193,23 @@ Please see
 [the documentation](https://www.jetbrains.com/help/idea/reader-mode.html)
 to get familiar with reader mode.
 
+### Background Colors for Editors and Project View
+
+EP: `com.intellij.editorTabColorProvider`
+
+[`EditorTabColorProvider`](upsource:///platform/ide-core-impl/src/com/intellij/openapi/fileEditor/impl/EditorTabColorProvider.java)
+allows for the modification of the background colors for specific files.
+
+### Custom Names and Tooltips for Editor Tabs
+
+EP: `com.intellij.editorTabTitleProvider`
+
+[`EditorTabTitleProvider`](upsource:///platform/ide-core-impl/src/com/intellij/openapi/fileEditor/impl/EditorTabTitleProvider.java)
+allows for specifying custom names and tooltips displayed in the titel of editor tabs.
+Please see, e.g.,
+[`GradleEditorTabTitleProvider`](upsource:///plugins/gradle/src/org/jetbrains/plugins/gradle/util/GradleEditorTabTitleProvider.kt)
+which shows how the project name is added to the editor tab for Gradle files.
+
 > If a topic you are interested in is not covered in the above sections, let us know via the "**Was this page helpful?**" feedback form below or [other channels](getting_help.md#problems-with-the-guide).
 >
 > Please be specific about the topics and reasons for adding them, and leave your email in case we need more details.

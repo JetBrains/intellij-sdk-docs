@@ -173,6 +173,16 @@ EP: `com.intellij.listSplitJoinContext`
 needs to be implemented to define the exact behavior of splitting and joining list-like constructs
 in a language.
 
+### Rename and Change Signature Refactoring
+
+EP: `com.intellij.suggestedRefactoringSupport`
+
+[`SuggestedRefactoringSupport`](upsource:///platform/lang-api/src/com/intellij/refactoring/suggested/SuggestedRefactoringSupport.kt)
+provides functionality to implement rename and change signature refactorings for custom languages.
+Please see
+[`KotlinSuggestedRefactoringSupport`](upsource:///plugins/kotlin/idea/src/org/jetbrains/kotlin/idea/refactoring/suggested/KotlinSuggestedRefactoringSupport.kt)
+for an implementation example.
+
 > If a topic you are interested in is not covered in the above sections, let us know via the "**Was this page helpful?**" feedback form below or [other channels](getting_help.md#problems-with-the-guide).
 >
 > Please be specific about the topics and reasons for adding them, and leave your email in case we need more details.

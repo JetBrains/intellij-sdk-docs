@@ -17,6 +17,12 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 PHP Type Providers
 : Add section [](php_open_api_php_type_providers.md) about type providers describing type inference in PhpStorm and how to implement your own type provider for PHP.
 
+Navigation Bar
+: Add [](navbar.md) section with an [accompanying tutorial](structure_aware_navbar.md) showing how to implement a custom navigation bar for a custom language.
+
+Rename Refactoring
+: Add [](rename_refactoring.md) paragraphs mentioning `RenameInputValidator` and `RenameInputValidatorEx`.
+
 Decorating Project View Nodes
 : Add small section to [](project_view.md) describing how to modify the representation of nodes in the project view.
 

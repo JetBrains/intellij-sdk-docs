@@ -138,7 +138,7 @@ EP: `com.intellij.breadcrumbsInfoProvider`
 allows for language-specific breadcrumbs.
 Please refer to
 [`GroovyBreadcrumbsInfoProvider`](upsource:///plugins/groovy/src/org/jetbrains/plugins/groovy/editor/GroovyBreadcrumbsInfoProvider.kt)
-as an example implementation.
+as implementation example.
 
 ### Navigation Bar
 
@@ -155,9 +155,15 @@ Please see
 [`KotlinNavBarModelExtension`](upsource:///plugins/kotlin/idea/src/org/jetbrains/kotlin/idea/navigationToolbar/KotlinNavBarModelExtension.kt),
 [`GrNavBarModelExtension`](upsource:///plugins/groovy/src/org/jetbrains/plugins/groovy/navbar/GrNavBarModelExtension.java),
 and [`GrNavBarModelExtension`](upsource:///plugins/groovy/src/org/jetbrains/plugins/groovy/navbar/GrNavBarModelExtension.java)
-for example implementations.
+for implementation examples.
 
+### Plain Text Completion
 
+EP: `completion.plainTextSymbol`
+
+[`PlainTextSymbolCompletionContributor`](upsource:///platform/lang-api/src/com/intellij/codeInsight/completion/PlainTextSymbolCompletionContributor.java)
+provides a simple way to extract lookup elements from a file so that users have completion available
+in, e.g., plain text editors like VCS commit messages.
 
 > If a topic you are interested in is not covered in the above sections, let us know via the "**Was this page helpful?**" feedback form below or [other channels](getting_help.md#problems-with-the-guide).
 >

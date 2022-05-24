@@ -245,6 +245,7 @@
       <toc-element id="code_formatting.md"/>
       <toc-element id="code_inspections_and_intentions.md"/>
       <toc-element id="structure_view.md"/>
+      <toc-element id="navbar.md"/>
       <toc-element toc-title="Code Hierarchy"/>
       <toc-element id="surround_with.md"/>
       <toc-element id="go_to_class_and_go_to_symbol.md"/>
@@ -268,6 +269,7 @@
       <toc-element id="folding_builder.md"/>
       <toc-element id="go_to_symbol_contributor.md"/>
       <toc-element id="structure_view_factory.md"/>
+      <toc-element id="structure_aware_navbar.md"/>
       <toc-element id="formatter.md"/>
       <toc-element id="code_style_settings.md"/>
       <toc-element id="commenter.md"/>

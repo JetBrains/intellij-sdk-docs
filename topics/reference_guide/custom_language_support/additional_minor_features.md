@@ -183,6 +183,16 @@ Please see
 [`KotlinSuggestedRefactoringSupport`](upsource:///plugins/kotlin/idea/src/org/jetbrains/kotlin/idea/refactoring/suggested/KotlinSuggestedRefactoringSupport.kt)
 for an implementation example.
 
+### Reader Mode
+
+EP: `readerModeMatcher`
+
+[`ReaderModeMatcher`](upsource:///platform/editor-ui-api/src/com/intellij/codeInsight/actions/ReaderModeMatcher.kt)
+provides a way to decide if files are shown in the correct mode: reader mode vs. normal editor mode.
+Please see
+[the documentation](https://www.jetbrains.com/help/idea/reader-mode.html)
+to get familiar with reader mode.
+
 > If a topic you are interested in is not covered in the above sections, let us know via the "**Was this page helpful?**" feedback form below or [other channels](getting_help.md#problems-with-the-guide).
 >
 > Please be specific about the topics and reasons for adding them, and leave your email in case we need more details.

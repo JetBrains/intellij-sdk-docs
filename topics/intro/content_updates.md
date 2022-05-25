@@ -26,6 +26,10 @@ Decorating Project View Nodes
 Inlay Hints
 : Add section [](inlay_hints.md) describing special markers that appear in the editor and provide additional information code, like the names of the parameters that a called method expects.
 
+Minor Changes and Additions
+:
+- Add descriptions for the following EPs to [](additional_minor_features.md): [](additional_minor_features.md#recognizing-complex-multi-block-expressions), [](additional_minor_features.md#breadcrumbs), [](additional_minor_features.md#plain-text-completion), [](additional_minor_features.md#splitting-and-joining-list-constructs), [](additional_minor_features.md#suggesting-rename-and-change-signature-refactorings), [](additional_minor_features.md#reader-mode), [](additional_minor_features.md#background-colors-for-editors-and-project-view), [](additional_minor_features.md#custom-names-and-tooltips-for-editor-tabs).
+
 ### April-22
 
 Internal API Migration

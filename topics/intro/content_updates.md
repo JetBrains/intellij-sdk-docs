@@ -17,17 +17,14 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 Navigation Bar
 : Add [](navbar.md) section with an [accompanying tutorial](structure_aware_navbar.md) showing how to implement a custom navigation bar for a custom language.
 
-Rename Refactoring
-: Add [](rename_refactoring.md) paragraphs mentioning `RenameInputValidator` and `RenameInputValidatorEx`.
-
-Decorating Project View Nodes
-: Add small section to [](project_view.md) describing how to modify the representation of nodes in the project view.
-
 Inlay Hints
 : Add section [](inlay_hints.md) describing special markers that appear in the editor and provide additional information code, like the names of the parameters that a called method expects.
 
 Minor Changes and Additions
-: Add descriptions for the following EPs to [](additional_minor_features.md): [](additional_minor_features.md#recognizing-complex-multi-block-expressions), [](additional_minor_features.md#breadcrumbs), [](additional_minor_features.md#plain-text-completion), [](additional_minor_features.md#splitting-and-joining-list-constructs), [](additional_minor_features.md#suggesting-rename-and-change-signature-refactorings), [](additional_minor_features.md#reader-mode), [](additional_minor_features.md#background-colors-for-editors-and-project-view), [](additional_minor_features.md#custom-names-and-tooltips-for-editor-tabs).
+:
+- Add descriptions for the following EPs to [](additional_minor_features.md): [](additional_minor_features.md#recognizing-complex-multi-block-expressions), [](additional_minor_features.md#breadcrumbs), [](additional_minor_features.md#plain-text-completion), [](additional_minor_features.md#splitting-and-joining-list-constructs), [](additional_minor_features.md#suggesting-rename-and-change-signature-refactorings), [](additional_minor_features.md#reader-mode), [](additional_minor_features.md#background-colors-for-editors-and-project-view), [](additional_minor_features.md#custom-names-and-tooltips-for-editor-tabs).
+- Add small section to [](project_view.md#decorating-project-view-nodes) describing how to modify the representation of nodes in the project view.
+- Add [](rename_refactoring.md) paragraphs mentioning `RenameInputValidator` and `RenameInputValidatorEx`.
 
 ### April-22
 

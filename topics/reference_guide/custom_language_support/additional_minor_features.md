@@ -141,23 +141,6 @@ Please refer to
 [`GroovyBreadcrumbsInfoProvider`](upsource:///plugins/groovy/src/org/jetbrains/plugins/groovy/editor/GroovyBreadcrumbsInfoProvider.kt)
 as implementation example.
 
-### Navigation Bar
-
-EP: `com.intellij.navbar`
-
-[`NavBarModelExtension`](upsource:///platform/lang-impl/src/com/intellij/ide/navigationToolbar/NavBarModelExtension.java)
-allows for modifying the
-[navigation bar](https://www.jetbrains.com/help/idea/guided-tour-around-the-user-interface.html) or
-adjusting the displayed elements.
-Implementations can extend
-[`AbstractNavBarModelExtension`](upsource:///platform/lang-impl/src/com/intellij/ide/navigationToolbar/AbstractNavBarModelExtension.java)
-instead of implementing the interface.
-Please see
-[`KotlinNavBarModelExtension`](upsource:///plugins/kotlin/idea/src/org/jetbrains/kotlin/idea/navigationToolbar/KotlinNavBarModelExtension.kt),
-[`GrNavBarModelExtension`](upsource:///plugins/groovy/src/org/jetbrains/plugins/groovy/navbar/GrNavBarModelExtension.java),
-and [`GrNavBarModelExtension`](upsource:///plugins/groovy/src/org/jetbrains/plugins/groovy/navbar/GrNavBarModelExtension.java)
-for implementation examples.
-
 ### Plain Text Completion
 
 EP: `completion.plainTextSymbol`

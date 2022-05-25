@@ -4,6 +4,7 @@
 
 This document describes the writing style used in authoring open-source IntelliJ Platform SDK documentation.
 Before you begin, please read this page thoroughly, as well as the [Code of Conduct](intellij-sdk-docs-original_CODE_OF_CONDUCT.md) and [License](https://github.com/JetBrains/intellij-sdk-docs/blob/main/LICENSE.txt) documents.
+Please see also [](intellij-sdk-docs-original_CONTRIBUTING.md) for some general remarks.
 For information about contributing to the IntelliJ Platform itself, please visit [Contributing to the IntelliJ Platform](platform_contributions.md).
 
 First and foremost, we should keep in mind our audience and their objectives:
@@ -18,7 +19,7 @@ The documentation files themselves are [Markdown](https://github.github.com/gfm/
 
 ### Page Format
 
-Each Markdown file must contain a header defining its title:
+Each Markdown file must contain a header defining its title using the following notation:
 
 ```yaml
 [//]: # (title: Contributing to the IntelliJ Platform SDK)
@@ -76,14 +77,18 @@ For example, `## Introduction` gets the ID of `introduction`, and can be linked 
 General Markdown links have the default Markdown link style:
 * `[Gradle](https://gradle.org)`{disable-links} ([Gradle](https://gradle.org)) links to an external site, such as companies, articles, etc.
   If URL contains `%` character, append `{interpolate-variables="false"}`.
-* Linking to pages within the SDK documentation:
-  `[Page Title](page.md)`{disable-links} links to an SDK doc page (all located under <path>/topics</path>).
-  Note that the extension is <path>.md</path>, _NOT_ <path>.html</path>.
-* Linking to specific _sections_ on pages in the SDK documentation.
-  The anchor name will be all lower case, and spaces are replaced with `-`, e.g. `## Page setup` becomes `#page-setup`.
-  Once the anchor (`#`) character of the link is entered, the IDE code completion feature shows the available sections.
-  * `[Link to a section on the current page](#another-section)`{disable-links} links to a heading on the current page.
-  * `[Link to the section on another page](other_page.md#another-section)`{disable-links} links to a heading on another page.
+* Linking to pages and page sections within the SDK documentation:
+  * `[Page Title](page.md)`{disable-links} links to an SDK doc page (all located under <path>/topics</path>).
+    Note that the extension is <path>.md</path>, _NOT_ <path>.html</path>.
+  * Specific _sections_ on pages in the SDK documentation are linked by using section anchors.
+    The anchor name will be all lower case, and spaces are replaced with `-`, e.g. `## Page setup` becomes `#page-setup`.
+    Once the anchor (`#`) character of the link is entered, the IDE code completion feature shows the available sections.
+    * `[Link to a section on the current page](#another-section)`{disable-links} links to a heading on the current page.
+    * `[Link to the section on another page](other_page.md#another-section)`{disable-links} links to a heading on another page.
+
+  If the desired link label is the same as an SDK doc page or section title, leave the label part empty, e.g., `[](test-page.md)`{disable-links} or `[](test-page.md#section-1)`{disable-links}.
+  The empty link label will be automatically filled with the actual page or section title.
+
 
 #### Links to IntelliJ Platform Source
 

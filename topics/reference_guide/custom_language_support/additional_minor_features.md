@@ -28,7 +28,7 @@ The IDE will match such braces, but the highlighting for such braces will not be
 Certain types of braces can be marked as structural.
 Structural braces have higher priority than regular braces: they are matched with each other even if there are unmatched braces of different types between them.
 An opening non-structural brace is not matched with a closing one if one of them is inside a pair of matched structural braces and another is outside.
-See also the [Recognizing Complex Multi-Block Expressions](#recognizing-complex-multi-block-expressions) item.
+See also [](#recognizing-complex-multi-block-expressions).
 
 ### Quote Handling
 
@@ -129,7 +129,7 @@ EP: `com.intellij.codeBlockSupportHandler`
 [`CodeBlockSupportHandler`](upsource:///platform/lang-impl/src/com/intellij/codeInsight/highlighting/CodeBlockSupportHandler.java)
 allows providing text ranges for more complex code blocks like, e.g., in `if`/`elsif`/`else` blocks.
 It is used to highlight markers and keywords if one is under the cursor, and for navigation to the beginning/end of blocks.
-See also the [paired brace matching](#brace-matching) item.
+See also [](#brace-matching).
 
 ### Breadcrumbs
 

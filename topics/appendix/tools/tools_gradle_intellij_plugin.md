@@ -187,7 +187,6 @@ Please see [Plugin Compatibility](plugin_compatibility.md) topic in SDK docs for
 - build number: `221.5080.210` or `IC-221.5080.210`
 - snapshot: `221-EAP-SNAPSHOT` or `LATEST-EAP-SNAPSHOT`
 
-
 ### type
 The type of the IntelliJ-based IDE distribution.
 The type may also be specified as a prefix of the value for the `intellij.version` property.
@@ -371,82 +370,426 @@ The path to local archive with IDE sources.
 **Default value:** `null`
 
 
-
-## Tasks
-The Gradle IntelliJ Plugin provides a number of tasks that let you configure, build, test, and run your plugin locally or on CI.
-
-
-### buildPlugin
+## buildPlugin Task
 Assembles plugin and prepares ZIP archive for deployment.
 
 
-### buildSearchableOptions
+## buildSearchableOptions Task
 Builds an index of UI components (searchable options) for the plugin.
 This task runs a headless IDE instance to collect all the available options.
 
 Note, that this is a `runIde`-based task with predefined arguments and all properties of the `runIde` task are also applied to `buildSearchableOptions` tasks.
 
 
-### downloadRobotServerPlugin
+## downloadRobotServerPlugin Task
 Downloads `robot-server` plugin.
-The `robot-server` plugin is required for running the UI tests using the [`runIdeForUiTests`](#runideforuitests) task.
+The `robot-server` plugin is required for running the UI tests using the [`runIdeForUiTests`](#runideforuitests-task) task.
 
 
-### jarSearchableOptions
+## jarSearchableOptions Task
 Creates a JAR file with searchable options to be distributed with the plugin.
 
 
-### listProductsReleases
+## listProductsReleases Task
 List all available IntelliJ-based IDE releases with their updates.
-The result list is used for testing the plugin with Plugin Verifier using the [`runPluginVerifier`](#runpluginverifier) task.
+The result list is used for testing the plugin with Plugin Verifier using the [`runPluginVerifier`](#runpluginverifier-task) task.
 
 
-### patchPluginXml
+## patchPluginXml Task
 Patches `plugin.xml` files with values provided to the task.
 
+> To maintain and generate an up-to-date changelog, try using [Gradle Changelog Plugin](https://github.com/JetBrains/gradle-changelog-plugin).
+>
+{type="tip"}
 
-### prepareSandbox
+
+### destinationDir
+The directory where the patched plugin.xml will be written.
+
+**Type:** `String`
+
+**Default value:** `${project.buildDir}/patchedPluginXmlFiles`
+
+
+### pluginXmlFiles
+The list of `plugin.xml` files to patch.
+
+**Type:** `List<File>`
+
+**Default value:** auto-discovered from the project
+
+
+### pluginDescription
+The description of the plugin – will be set to the `<description>` tag.
+
+**Type:** `String`
+
+**Default value:** `null`
+
+
+### sinceBuild
+The lower bound of the version range to be patched – will be set for the `since-build` attribute of the `<idea-version>` tag.
+
+**Type:** `String`
+
+**Default value:** `intellij.version` in `Branch.Build.Fix` format
+
+
+### untilBuild
+The upper bound of the version range to be patched – will be set for the `until-build` attribute of the `<idea-version>` tag.
+
+**Type:** `String`
+
+**Default value:** `intellij.version` in `Branch.Build.*` format
+
+
+### version
+The version of the plugin – will be set for the `<version>` tag.
+
+**Type:** `String`
+
+**Default value:** `${project.version}`
+
+
+### changeNotes
+The change notes of the plugin – will be set for the `<change-notes>` tag.
+
+**Type:** `String`
+
+**Default value:** `null`
+
+
+### pluginId
+The ID of the plugin – will be set for the `<id>` tag.
+
+**Type:** `String`
+
+**Default value:** `null`
+
+
+## prepareSandbox Task
 Prepares sandbox directory with installed plugin and its dependencies.
 
 
-### prepareTestingSandbox
+## prepareTestingSandbox Task
 Prepares sandbox directory with installed plugin and its dependencies for testing purposes.
 
 
-### prepareUiTestingSandbox
+## prepareUiTestingSandbox Task
 Prepares sandbox directory with installed plugin and its dependencies for UI testing purposes.
 
 
-### publishPlugin
+## publishPlugin Task
 Publishes plugin to the remote Marketplace repository.
 
 
-### runIde
+## runIde Task
 Runs the IDE instance with the developed plugin installed.
 
+`RunIde` tasks extend the [`JavaExec`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html) Gradle task – all properties available in the `JavaExec` as well as the following ones can be used to configure the `runIde` taks.
 
-### runIdeForUiTests
+<tabs>
+<tab title="Kotlin">
+
+```kotlin
+tasks {
+    runIde {
+        jbrVersion.set("11_0_14b1982.1")
+        jbrVariant.set("dcevm")
+        autoReloadPlugins.set(true)
+        jvmArgs("-Xmx2G")
+        systemProperty("name", "value")
+    }
+}
+```
+
+</tab>
+<tab title="Groovy">
+
+```groovy
+runIde {
+    jbrVersion = "11_0_14b1982.1"
+    jbrVariant = "dcevm"
+    autoReloadPlugins = true
+    jvmArgs("-Xmx2G")
+    systemProperty("name", "value")
+}
+```
+
+</tab>
+</tabs>
+
+
+### ideDir
+
+The IDEA dependency sources path.
+Configured automatically with the `SetupDependenciesTask.idea` dependency.
+
+**Type:** `File`
+
+**Default value:** `setupDependenciesTask.idea`
+
+
+### jbrVersion
+Custom JBR version to use for running the IDE.
+
+**Type:** `String`
+
+**Default value:** `null`
+
+**Accepted values:**
+- `8u112b752.4`
+- `8u202b1483.24`
+- `11_0_2b159`
+
+All JetBrains Java versions are available at JetBrains Space Packages, and [GitHub](https://github.com/JetBrains/JetBrainsRuntime/releases).
+
+
+### jbrVariant
+JetBrains Runtime variant to use when running the IDE with the plugin.
+See [JetBrains Runtime Releases](https://github.com/JetBrains/JetBrainsRuntime/releases)
+
+**Type:** `String`
+
+**Default value:** `null`
+
+**Acceptable values:**
+- `jcef`
+- `sdk`
+- `fd`
+- `dcevm`
+- `nomod`
+
+> For `JBR 17`, `dcevm` is bundled by default. As a consequence, separated `dcevm` and `nomod` variants are no longer available.
+>
+{type="note"}
+
+
+### pluginsDir
+Path to the `plugins` directory within the sandbox prepared with the `PrepareSandboxTask`.
+Provided to the `idea.plugins.path` system property.
+
+**Type:** `Directory`
+
+**Default value:** `prepareSandboxTask.destinationDir`
+
+
+### autoReloadPlugins
+Enables auto-reload of dynamic plugins.
+Dynamic plugins will be reloaded automatically when their JARs are modified.
+This allows a much faster development cycle by avoiding a full restart of the development instance after code changes.
+Enabled by default in 2020.2 and higher.
+
+**Type:** `Boolean`
+
+**Default value:** `true`
+
+
+## runIdeForUiTests Task
 Runs the IDE instance with the developed plugin and robot-server installed and ready for UI testing.
 
 See [intellij-ui-test-robot](https://github.com/JetBrains/intellij-ui-test-robot) project.
 
 
-### runIdePerformanceTest
+## runIdePerformanceTest Task
 Runs performance tests on the IDE with the developed plugin installed.
 
+`RunIdePerformanceTest` task extends the `RunIdeBase` task, all configuration attributes of `JavaExec` and `RunIde` task can be used in `RunIdePerformanceTest` as well.
+See [runIde Task](#runide-task) for more details.
 
-### runPluginVerifier
-Runs the [IntelliJ Plugin Verifier](https://github.com/JetBrains/intellij-plugin-verifier) tool to check the binary compatibility with specified IDE builds.
+
+### testDataDir
+Path to directory with test projects and '.ijperf' files.
+
+**Type:** `String`
+
+**Default value:** `null`
 
 
-### setupDependencies
+### artifactsDir
+Path to directory where performance test artifacts (IDE logs, snapshots, screenshots, etc.) will be stored.
+If the directory doesn't exist, it will be created.
+
+**Type:** `String`
+
+**Default value:** `null`
+
+
+### profilerName
+Name of the profiler which will be used during execution.
+
+**Type:** `ProfilerName`
+
+**Default value:** `ProfilerName.ASYNC`
+
+**Acceptable values:**
+- `ProfilerName.ASYNC`
+- `ProfilerName.YOURKIT`
+
+
+## runPluginVerifier Task
+Runs the [IntelliJ Plugin Verifier](https://github.com/JetBrains/intellij-plugin-verifier) tool to check the binary compatibility with specified [IDE builds](api_changes_list.md).
+
+Plugin Verifier DSL `runPluginVerifier { ... }` allows to define the list of IDEs used for the verification, as well as explicit tool version and any of the available [options](https://github.com/JetBrains/intellij-plugin-verifier#common-options) by proxifying them to the Verifier CLI.
+
+> For more details, examples or issues reporting, go to the [IntelliJ Plugin Verifier](https://github.com/JetBrains/intellij-plugin-verifier) repository.
+>
+{type="tip"}
+
+> TIP To run Plugin Verifier in [`-offline`](https://github.com/JetBrains/intellij-plugin-verifier/pull/58) mode, set the Gradle [`offline` start parameter](https://docs.gradle.org/current/javadoc/org/gradle/StartParameter.html#setOffline-boolean-).
+>
+{type="tip"}
+
+
+### ideVersions
+IDEs to check, in `intellij.version` format, i.e.: `["IC-2019.3.5", "PS-2019.3.2"]`.
+Check the available build versions on [IntelliJ Platform Builds list](https://jb.gg/intellij-platform-builds-list).
+
+**Type:** `List<String>`
+
+**Default value:** output of the [`listProductsReleases`](#listproductsreleases-task) task
+
+
+### verifierVersion
+IntelliJ Plugin Verifier version, by default uses the latest available.
+It's recommended to use always the latest version.
+
+**Type:** `String`
+
+**Default value:** `latest`
+
+
+### verifierPath
+IntelliJ Plugin Verifier local path to the pre-downloaded jar file.
+If set, `verifierVersion` is ignored.
+
+**Type:** `String`
+
+**Default value:** path to the JAR file resolved using the `verifierVersion` property
+
+
+### localPaths
+A list of the paths to locally installed IDE distributions that should be used for verification in addition to those specified in `ideVersions`.
+
+**Type:** `List<File>`
+
+**Default value:** `[]`
+
+
+### distributionFile
+JAR or ZIP file of the plugin to verify.
+If empty, the task will be skipped.
+
+**Type:** `File`
+
+**Default value:** output of the `buildPlugin` task
+
+
+### failureLevel
+Defines the verification level at which task should fail if any reported issue will match.
+Can be set as `FailureLevel` enum or `EnumSet<FailureLevel>`.
+
+**Type:** `FailureLevel`
+
+**Default value:** `FailureLevel.COMPATIBILITY_PROBLEMS`
+
+
+### verificationReportsDir
+The path to directory where verification reports will be saved.
+
+**Type:** `String`
+
+**Default value:** `${project.buildDir}/reports/pluginVerifier`
+
+
+### downloadDir
+The path to directory where IDEs used for the verification will be downloaded.
+
+**Type:** `String`
+
+**Default value:** `System.getProperty("plugin.verifier.home.dir")/ides` or `System.getProperty("user.home")/.pluginVerifier/ides` or system temporary directory.
+
+
+### jbrVersion
+Custom JBR version to use for running the IDE.
+
+**Type:** `String`
+
+**Default value:** `null`
+
+**Accepted values:**
+- `8u112b752.4`
+- `8u202b1483.24`
+- `11_0_2b159`
+
+All JetBrains Java versions are available at JetBrains Space Packages, and [GitHub](https://github.com/JetBrains/JetBrainsRuntime/releases).
+
+
+### jbrVariant
+JetBrains Runtime variant to use when running the IDE with the plugin.
+See [JetBrains Runtime Releases](https://github.com/JetBrains/JetBrainsRuntime/releases)
+
+**Type:** `String`
+
+**Default value:** `null`
+
+**Acceptable values:**
+- `jcef`
+- `sdk`
+- `fd`
+- `dcevm`
+- `nomod`
+
+> For `JBR 17`, `dcevm` is bundled by default. As a consequence, separated `dcevm` and `nomod` variants are no longer available.
+>
+{type="note"}
+
+
+### runtimeDir
+The path to directory containing JVM runtime, overrides `jbrVersion`.
+
+**Type:** `String`
+
+**Default value:** `null`
+
+
+### externalPrefixes
+The list of classes prefixes from the external libraries.
+The Plugin Verifier will not report `No such class` for classes of these packages.
+
+**Type:** `List<String>`
+
+**Default value:** `[]`
+
+
+### teamCityOutputFormat
+A flag that controls the output format - if set to `true`, the TeamCity compatible output will be returned to stdout.
+
+**Type:** `Boolean`
+
+**Default value:** `false`
+
+
+### subsystemsToCheck
+Specifies which subsystems of IDE should be checked.
+
+**Type:** `String`
+
+**Default value:** `all`
+
+**Acceptable values:**
+- `all`
+- `android-only`
+- `without-android`
+
+
+## setupDependencies Task
 Setups required dependencies for building and running project.
 
 
-### signPlugin
+## signPlugin Task
 Signs the ZIP archive with the provided key using [marketplace-zip-signer](https://github.com/JetBrains/marketplace-zip-signer) library.
 
 
-### verifyPlugin
+## verifyPlugin Task
 Validates completeness and contents of `plugin.xml` descriptors as well as plugin archive structure.
-

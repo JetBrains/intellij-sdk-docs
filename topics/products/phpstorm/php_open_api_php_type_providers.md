@@ -12,7 +12,7 @@ All providers inherit from `com.jetbrains.php.lang.psi.resolve.types.PhpTypeProv
 ## Types in PhpStorm
 
 The first phase of type inference in PhpStorm takes place at the indexing stage.
-At this phase, the `PhpTypeProvider4#geType()` method is called on each type provider.
+At this phase, the `PhpTypeProvider4#getType()` method is called on each type provider.
 PhpStorm only has access to local information from the current file and cannot use information from others.
 In some cases, the exact type can be deduced from this information, but in other cases this is not possible because information from other files is required.
 

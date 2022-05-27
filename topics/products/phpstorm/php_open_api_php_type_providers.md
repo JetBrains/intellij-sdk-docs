@@ -12,7 +12,7 @@ All providers inherit from `com.jetbrains.php.lang.psi.resolve.types.PhpTypeProv
 ## Types in PhpStorm
 
 The first phase of type inference in PhpStorm takes place at the indexing stage.
-At this phase, the `PhpTypeProvider4#getType()` method is called on each type provider.
+At this phase, the `PhpTypeProvider4.getType()` method is called on each type provider.
 PhpStorm only has access to local information from the current file and cannot use information from others.
 In some cases, the exact type can be deduced from this information, but in other cases this is not possible because information from other files is required.
 
@@ -48,15 +48,19 @@ Incomplete types are types that require additional information from other projec
 
 Suppose we have two files:
 
+<path>foo.php</path>:
+
 ```php
-<?php // foo.php
+<?php
 function foo(): string {
   return "Hello World!";
 }
 ```
 
+<path>main.php</path>:
+
 ```php
-<?php // main.php
+<?php
 
 $a = foo();
 echo $a;
@@ -78,15 +82,15 @@ PhpStorm uses this key to determine which type provider to pass the Incomplete t
 The rest of the line is the encoded information.
 In the example above, this is the fully qualified name of the function.
 
-The created Incomplete type will be further passed to the `PhpTypeProvider4#complete()` method after indexing is done to resolve it into a Complete type.
+The created Incomplete type will be further passed to the `PhpTypeProvider4.complete()` method after indexing is done to resolve it into a Complete type.
 
 During indexing, the IDE collects information about all types of elements in this way and stores them in the index.
 When there is a need for the type of some expression, the type obtained at the Incomplete indexing stage is passed for resolving.
 
 #### Incomplete Types Resolving
 
-The second phase of type inference is the global Incomplete type resolution mode.
-At this phase, the `PhpTypeProvider4#complete()` method is called on each type provider. All Incomplete types are passed to the providers that created them.
+The second phase of type inference is the global Incomplete type resolution.
+At this phase, the `PhpTypeProvider4.complete()` method is called on each type provider. All Incomplete types are passed to the providers that created them.
 PhpStorm can access any information from other files to resolve the Incomplete type.
 
 ### Union Types
@@ -121,6 +125,13 @@ PhpStorm uses the `com.jetbrains.php.lang.psi.resolve.types.PhpType` class to wo
 To add types to it, use the `add()` method, which can take either another `PhpType` or a `string`.
 
 To check that a type is Complete use the `isComplete()` method.
+
+To resolve the Incomplete type, use the `global()` method.
+
+### How to get PhpType from PSI?
+
+In PhpStorm, PSI elements with types implement the `com.jetbrains.php.lang.psi.elements.PhpTypedElement` interface.
+To get the type of element, use the `getType()` method.
 
 ## `PhpTypeProvider4` Implementation
 

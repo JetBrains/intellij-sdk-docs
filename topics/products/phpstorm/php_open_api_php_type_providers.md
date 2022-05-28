@@ -25,17 +25,20 @@ Because of this, types in PhpStorm are divided into two types:
 
 Complete types are types that are known exactly based on **only** the local information of the current file.
 
-```php
+```
 <?php
+
 $a = 100;
 ```
 
 The type of the expression that is assigned to the `$a` variable is Complete type `int`, since PhpStorm can definitely infer that a numeric literal is of type `int`.
 
-```php
+```
 <?php
 
-function foo(): string { return "Hello World!"; }
+function foo(): string {
+  return "Hello World!";
+}
 
 $a = foo();
 ```
@@ -50,7 +53,7 @@ Suppose we have two files:
 
 <path>foo.php</path>:
 
-```php
+```
 <?php
 function foo(): string {
   return "Hello World!";
@@ -59,7 +62,7 @@ function foo(): string {
 
 <path>main.php</path>:
 
-```php
+```
 <?php
 
 $a = foo();
@@ -99,12 +102,12 @@ Since PHP is a dynamically typed language, at the type inference stage PhpStorm 
 
 For example:
 
-```php
+```
 <?php
 
 $a = 100;
 if (rand(0, 10) > 5) {
-  $a = "Hello World!".
+  $a = "Hello World!";
 }
 
 $a; // (1)
@@ -190,10 +193,7 @@ To implement `PhpTypeProvider4`, you need to override 4 methods:
 
 1. `getKey()` is a method that returns a character that will be unique for this type provider.
    This can be any character, as long as it is unique, for example, PhpStorm uses hieroglyphs.
-   For the convenience of checking that the Incomplete type is a type obtained from your provider,
-   you can use the `PhpCharBasedTypeKey` class in which you need to overload the `getKey()` method that returns a character.
-   In order to check that the type is created by your provider, it will be enough to call the `signed()` method,
-   and in order to sign the type, it will be enough to call the `sign()` method.
+   See also `com.jetbrains.php.lang.psi.resolve.types.PhpCharBasedTypeKey`.
 
 2. `getType()` is a method that returns the type of the expression for the given element.
    This method is called at the indexing stage and therefore its implementation **cannot access** any information

@@ -55,6 +55,7 @@ Suppose we have two files:
 
 ```
 <?php
+
 function foo(): string {
   return "Hello World!";
 }
@@ -93,7 +94,8 @@ When there is a need for the type of some expression, the type obtained at the I
 #### Incomplete Types Resolving
 
 The second phase of type inference is the global Incomplete type resolution.
-At this phase, the `PhpTypeProvider4.complete()` method is called on each type provider. All Incomplete types are passed to the providers that created them.
+At this phase, the `PhpTypeProvider4.complete()` method is called on each type provider.
+All Incomplete types are passed to the providers that created them.
 PhpStorm can access any information from other files to resolve the Incomplete type.
 
 ### Union Types
@@ -201,8 +203,7 @@ To implement `PhpTypeProvider4`, you need to override 4 methods:
    If you need some information, then pack the required data into a string and return an Incomplete type based on this string.
 
 3. `complete()` is a method that resolves an Incomplete type into a Complete type.
-   All strings of Incomplete types are sequentially passed to this method, the method should return
-   a Complete type for them.
+   All strings of Incomplete types are sequentially passed to this method, the method should return a Complete type for them.
 
 4. `getBySignature()` is a method with which you can provide additional elements or references.
 

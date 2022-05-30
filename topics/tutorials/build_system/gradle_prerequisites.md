@@ -38,6 +38,8 @@ On the first screen, the type of project is configured:
 
 > When targeting 2020.3 and later only, using Java 11 is now required; please see this [blog post](https://blog.jetbrains.com/platform/2020/09/intellij-project-migrates-to-java-11/)
 >
+> When targeting 2022.2 and later only, using Java 17 is required.
+>
 {type="note"}
 
 * In the <control>Additional Libraries and Frameworks</control> panel, select <control>Java</control> and <control>IntelliJ Platform Plugin</control>.

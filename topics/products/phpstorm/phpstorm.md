@@ -3,13 +3,17 @@
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 [PhpStorm](https://www.jetbrains.com/phpstorm/) is an IntelliJ Platform-based product.
-Plugins for PhpStorm are developed in Java using the Ultimate edition of IntelliJ IDEA.
+Plugins for PhpStorm are developed using the Ultimate Edition of IntelliJ IDEA.
 
 This page describes configuring plugin projects targeting PhpStorm.
 See also:
 * [PhpStorm Plugin Alternative](plugin_alternatives.md#phpstorm-advanced-metadata)
 * [Working with the PHP Open API](php_open_api.md)
 * [](existing_plugins.md)
+
+> Please join the dedicated [intellij-php](https://jetbrains-platform.slack.com/archives/C5P9YB0LT/p1653913208725609) Slack channel to discuss PHP related plugin development.
+>
+{type="tip"}
 
 ## Configuring Plugin Projects Targeting PhpStorm
 

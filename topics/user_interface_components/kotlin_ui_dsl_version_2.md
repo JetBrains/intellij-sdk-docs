@@ -34,7 +34,7 @@ The following significant changes were made:
   Fixed focus ring cropping problems: when components are placed near the panel border focus ring could be cropped if panel insets do not specify enough space.
 - Implemented [Placeholder](#placeholder) that allows replacing components at runtime after content is shown.
 
-## UI DSL Showcase
+## UI DSL Examples
 
 It is highly recommended taking a look at the UI DSL demo available via <menupath>Tools | Internal Actions | UI | UI DSL Showcase</menupath> (see [Internal Actions](internal_actions_intro.md) if not available in your IDE instance).
 

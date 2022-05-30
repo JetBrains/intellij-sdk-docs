@@ -53,16 +53,16 @@ This can be accomplished with the following steps:
 ```java
 PsiFile psiFile = PsiDocumentManager.getInstance(project)
         .getPsiFile(editor.getDocument());
-        PsiElement element = psiFile.findElementAt(editor.getCaretModel().getOffset());
+PsiElement element = psiFile.findElementAt(editor.getCaretModel().getOffset());
 
-        PsiExpressionCodeFragment code =
+PsiExpressionCodeFragment code =
         JavaCodeFragmentFactory.getInstance(project)
         .createExpressionCodeFragment("", element, null, true);
 
-        Document document =
+Document document =
         PsiDocumentManager.getInstance(project).getDocument(code);
 
-        EditorTextField myInput =
+EditorTextField myInput =
         new EditorTextField(document, project, JavaFileType.INSTANCE);
 ```
 

@@ -373,6 +373,15 @@ The path to local archive with IDE sources.
 ## buildPlugin Task
 Assembles plugin and prepares ZIP archive for deployment.
 
+### archiveBaseName
+The base name of the ZIP archive.
+
+This task is preconfigured automatically and takes the output artifacts of `prepareSandbox` and `jarSearchableOptions` tasks as an input.
+
+**Type:** `String`
+
+**Default value:** `${prepareSandboxTask.pluginName}`
+
 
 ## buildSearchableOptions Task
 Builds an index of UI components (searchable options) for the plugin.
@@ -381,18 +390,164 @@ This task runs a headless IDE instance to collect all the available options.
 Note, that this is a `runIde`-based task with predefined arguments and all properties of the `runIde` task are also applied to `buildSearchableOptions` tasks.
 
 
+### outputDir
+
+**Type:** `File`
+
+**Default value:** `build/searchableOptions`
+
+
 ## downloadRobotServerPlugin Task
 Downloads `robot-server` plugin.
 The `robot-server` plugin is required for running the UI tests using the [`runIdeForUiTests`](#runideforuitests-task) task.
+
+
+### version
+The version of the Robot Server Plugin to download.
+
+**Type:** `String`
+
+**Default value:** `LATEST`
+
+
+### pluginArchive
+The archive with the Robot Server Plugin, by default downloaded by to the Maven cache.
+
+**Type:** `File`
+
+**Default value:** Maven cache
+
+
+### outputDir
+Location of the extracted archive.
+
+**Type:** `File`
+
+**Default value:** `build/robotServerPlugin`
+
+
+## instrumentCode Task
+The following attributes help you to tune instrumenting behaviour in `instrumentCode { ... }` block.
+
+### compilerVersion
+A version of instrumenting compiler. It's used for non-IDEA plugins (e.g. CLion or Rider).
+
+**Type:** `String`
+
+**Default value:** Build number of the IDE dependency
 
 
 ## jarSearchableOptions Task
 Creates a JAR file with searchable options to be distributed with the plugin.
 
 
+### outputDir
+The output directory where the JAR file will be created.
+
+**Type:** `String`
+
+Default value: `build/searchableOptions`
+
+
+### pluginName
+The name of the plugin.
+
+**Type:** `String`
+
+Default value: `intellij.pluginName`
+
+
+### sandboxDir
+The sandbox output directory.
+
+**Type:** `String`
+
+Default value: `${prepareSandbox.outputDir}`
+
+
 ## listProductsReleases Task
 List all available IntelliJ-based IDE releases with their updates.
 The result list is used for testing the plugin with Plugin Verifier using the [`runPluginVerifier`](#runpluginverifier-task) task.
+
+Plugin Verifier requires a list of the IDEs that will be used for verifying your plugin build against. The availability of the releases may change in time, i.e., due to security issues in one version – which will be later removed and replaced with an updated IDE release.
+
+With the `listProductsReleases` task, it is possible to list the currently available IDEs matching given conditions, like platform types, since/until release versions. Such a list is fetched from the remote updates file: `https://www.jetbrains.com/updates/updates.xml`, parsed and filtered considering the specified `types`, `sinceVersion`, `untilVersion` properties.
+
+The result list is stored within the `outputFile`, which is used as a source for the Plugin Verifier if the `runPluginVerifier` task has no `ideVersions` property specified, the output of the `listProductsReleases` is used.
+
+
+### updatesFile
+Path to the products releases update file. By default, falls back to the Maven cache.
+
+**Type:** `List<String>`
+
+**Default value:** _Maven cache_
+
+
+### types
+List of types of IDEs that will be listed in results. Uses intellij.type by default.	[intellij.type]
+
+**Type:** `String`
+
+**Default value:**
+
+
+### sinceVersion
+Lower boundary of the listed results in product marketing version format, like `2020.2.1`.
+Takes the precedence over `sinceBuild` property.
+
+**Type:** `String`
+
+**Default value:** `intellij.version`
+
+
+### untilBuild
+Upper boundary of the listed results in product marketing version format, like `2020.2.1`.
+Takes the precedence over [untilBuild] property.
+
+**Type:** `String`
+
+**Default value:** `null`
+
+
+### sinceBuild
+Lower boundary of the listed results in build number format, like `192`.
+
+**Type:** `String`
+
+**Default value:** `intellij.version`
+
+
+### untilBuild
+Upper boundary of the listed results in build number format, like `192`.
+
+**Type:** `String`
+
+**Default value:** `null`
+
+
+### releaseChannels
+`Release channels that product updates will be filtered with.`
+
+**Type:** `Channel`
+
+**Default value:** `EnumSet.allOf(ListProductsReleasesTask.Channel)`
+
+
+### outputFile
+Path to the file, where the output list will be stored.
+
+**Type:** `File`
+
+**Default value:** `File("${project.buildDir}/listProductsReleases.txt")`
+
+
+### androidStudioUpdatePath
+For Android Studio releases, a separated storage for the updates is used.
+
+**Type:** `String`
+
+**Default value:** `https://raw.githubusercontent.com/JetBrains/intellij-sdk-docs/main/topics/_generated/android_studio_releases.xml`
 
 
 ## patchPluginXml Task
@@ -471,16 +626,106 @@ The ID of the plugin – will be set for the `<id>` tag.
 Prepares sandbox directory with installed plugin and its dependencies.
 
 
+### pluginName
+The name of the plugin.
+
+**Type:** `String`
+
+**Default value:** `${intellij.pluginName}`
+
+
+### configDir
+The directory with the plugin configuration.
+
+**Type:** `String`
+
+**Default value:** `${intellij.pluginName}/config`
+
+
+### pluginJar
+The input plugin JAR file used to prepare the sandbox.
+
+**Type:** `File`
+
+**Default value:** `jar` task output
+
+
+### librariesToIgnore
+Libraries that will be ignored when preparing the sandbox. By default, excludes all libraries that are a part of the `setupDependenciesTask.idea` dependency.
+
+**Type:** `List<File>`
+
+**Default value:** `org.jetbrains.intellij.tasks.SetupDependenciesTask.idea.get().jarFiles`
+
+
+### pluginDependencies
+List of dependencies of the current plugin.
+
+**Type:** `List<PluginDependency>`
+
+**Default value:** `org.jetbrains.intellij.IntelliJPluginExtension.getPluginDependenciesList`
+
+
 ## prepareTestingSandbox Task
 Prepares sandbox directory with installed plugin and its dependencies for testing purposes.
+
+See [`prepareSandbox` Task](#preparesandbox-task).
 
 
 ## prepareUiTestingSandbox Task
 Prepares sandbox directory with installed plugin and its dependencies for UI testing purposes.
 
+See [`prepareSandbox` Task](#preparesandbox-task).
+
 
 ## publishPlugin Task
 Publishes plugin to the remote Marketplace repository.
+
+The following attributes are a part of the Publishing DSL `publishPlugin { ... }` in which allows Gradle to upload a working plugin to the JetBrains Plugin Repository. Note that you need to upload the plugin to the repository at least once manually (to specify options like the license, repository URL etc.) before uploads through Gradle can be used.
+
+See the instruction on [how to generate authentication token](https://plugins.jetbrains.com/docs/marketplace/plugin-upload.html).
+
+See [Publishing Plugins with Gradle](deployment.md) tutorial for step-by-step instructions.
+
+
+### token
+Authentication token.
+
+**Type:** `String`
+
+**Default value:** `null`
+
+
+### channels
+List of channel names to upload plugin to.
+
+**Type:** `List<String>`
+
+**Default value:** `["default"]`
+
+
+### host
+URL host of a plugin repository.
+
+**Type:** `String`
+
+**Default value:** `https://plugins.jetbrains.com`
+
+
+### distributionFile
+Jar or Zip file of plugin to upload.
+
+**Type:** `File`
+
+**Default value:** output of the [`buildPlugin`](#buildplugin-task) task
+
+
+### toolboxEnterprise
+Specifies if the Toolbox Enterprise plugin repository service should be used.
+
+**Type:** `Boolean`
+
+**Default value:** `false`
 
 
 ## runIde Task
@@ -589,6 +834,8 @@ Enabled by default in 2020.2 and higher.
 Runs the IDE instance with the developed plugin and robot-server installed and ready for UI testing.
 
 See [intellij-ui-test-robot](https://github.com/JetBrains/intellij-ui-test-robot) project.
+
+See [`runIde`](#runide-task) task for more details.
 
 
 ## runIdePerformanceTest Task
@@ -786,10 +1033,178 @@ Specifies which subsystems of IDE should be checked.
 ## setupDependencies Task
 Setups required dependencies for building and running project.
 
+This task exposes the `idea` property which contains a reference to the resolved `idea` dependency.
+
 
 ## signPlugin Task
 Signs the ZIP archive with the provided key using [marketplace-zip-signer](https://github.com/JetBrains/marketplace-zip-signer) library.
 
+To sign the plugin before publishing to the JetBrains Marketplace with the signPlugin task, it is required to provide a certificate chain and a private key with its password using `signPlugin { ... }` Plugin Signing DSL.
+
+As soon as `privateKey` (or `privateKeyFile`) and `certificateChain` (or `certificateChainFile`) properties are specified, task will be executed automatically right before the [`publishPlugin`](#publishplugin-task) task.
+
+
+### certificateChain
+A string containing X509 certificates.
+The first certificate from the chain will be used as a certificate authority (CA).
+Refers to `cert` CLI option.
+
+**Type:** `String`
+
+**Default value:** `null`
+
+
+### certificateChainFile
+A file containing X509 certificates.
+The first certificate from the chain will be used as a certificate authority (CA).
+Refers to `cert-file` CLI option.
+
+**Type:** `File`
+
+**Default value:** `null`
+
+
+### privateKey
+Encoded private key in PEM format.
+Refers to `key` CLI option.
+
+**Type:** `String`
+
+**Default value:** `null`
+
+
+### privateKeyFile
+A file with encoded private key in PEM format.
+Refers to `key-file` CLI option.
+
+**Type:** `File`
+
+**Default value:** `null`
+
+
+### password
+Password required to decrypt the private key.
+Refers to `key-pass` CLI option.
+
+**Type:** `String`
+
+**Default value:** `null`
+
+
+### cliVersion
+Returns the version of the Marketplace ZIP Signer CLI that will be used.
+
+**Type:** `String`
+
+**Default value:** `LATEST`
+
+
+### cliPath
+Path to the Marketplace ZIP Signer CLI file. Takes a precedence over the cliPath.
+
+**Type:** `String`
+
+**Default value:** `null`
+
+
+### keyStore
+KeyStore file path.
+Refers to `ks` CLI option.
+
+**Type:** `String`
+
+**Default value:** `null`
+
+
+### keyStorePassword
+KeyStore password.
+
+**Type:** `String`
+
+**Default value:** `null`
+
+
+### keyStoreKeyAlias
+KeyStore key alias.
+Refers to `ks-key-alias` CLI option.
+
+**Type:** `String`
+
+**Default value:** `null`
+
+
+### keyStoreType
+KeyStore type.
+
+**Type:** `String`
+
+**Default value:** `null`
+
+
+### keyStoreProviderName
+JCA KeyStore Provider name.
+Refers to `ks-provider-name` CLI option.
+
+**Type:** `String`
+
+**Default value:** `null`
+
+
+### inputArchiveFile
+Input, unsigned ZIP archive file.
+Refers to `in` CLI option.
+
+Provided by the [`buildPlugin`](#buildplugin-task) task.
+
+### outputArchiveFile
+Output, signed ZIP archive file.
+Refers to `out` CLI option.
+
+Predefined with the name of the ZIP archive file with `-signed` name suffix attached.
+
+**Type:** `File`
+
 
 ## verifyPlugin Task
 Validates completeness and contents of `plugin.xml` descriptors as well as plugin archive structure.
+
+
+### ignoreFailures
+Specifies whether the build should break when the verifications performed by this task fail.
+
+**Type**: `Boolean`
+
+**Default value:** `false`
+
+
+### ignoreWarnings
+Specifies whether the build should break when the verifications performed by this task emit warnings.
+
+**Type**: `Boolean`
+
+**Default value:** `true`
+
+
+### pluginDir
+The location of the built plugin file which will be used for verification.
+
+**Type**: `File`
+
+**Default value:** `${prepareSandboxTask.destinationDir}/${prepareSandboxTask.pluginName}`
+
+
+
+## Build Features
+
+With the Gradle IntelliJ Plugin releases, new features are introduced that require additional research, collecting more feedback from developers, or should be enabled or disabled under particular conditions.
+Build Features are an implementation of the feature flags concept and let you control some behaviors of the Gradle IntelliJ Plugin.
+To enable or disable a particular feature, add the Project property to the `gradle.properties` file, like:
+
+```properties
+org.jetbrains.intellij.buildFeature.buildFeatureName=false
+```
+
+### selfUpdateCheck
+Check if the currently used Gradle IntelliJ Plugin is outdated.
+
+**Default value:** `true`

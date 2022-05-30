@@ -4,7 +4,7 @@
 
 The Gradle IntelliJ Plugin is a plugin for the Gradle build system to help configuring your environment for building and testing plugins for IntelliJ-based IDEs.
 
-> Current Gradle IntelliJ Plugin version is: **%GradleIntelliJPluginVersion%**
+> Current Gradle IntelliJ Plugin version is [![GitHub Release](https://img.shields.io/github/release/jetbrains/gradle-intellij-plugin.svg?style=flat-square)](https://github.com/jetbrains/gradle-intellij-plugin/releases)
 >
 {type="note"}
 
@@ -56,7 +56,7 @@ plugins {
 The Snapshot release is a pre-release version built nightly from the latest main branch.
 To use it, it is required to point Gradle to the dedicated snapshot repository by adding an entry to the Gradle settings file.
 
-> Current Gradle IntelliJ Plugin Snapshot version is: **%GradleIntelliJPluginSnapshotVersion%**
+> Current Gradle IntelliJ Plugin Snapshot version is [![GitHub Snapshot Release](https://img.shields.io/nexus/s/org.jetbrains.intellij/org.jetbrains.intellij.gradle.plugin?server=https%3A%2F%2Foss.sonatype.org)](https://github.com/jetbrains/gradle-intellij-plugin/releases)
 >
 {type="note"}
 

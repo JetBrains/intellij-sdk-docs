@@ -109,6 +109,20 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 `com.intellij.collaboration.auth.ui.LoadingAccountsDetailsProvider` class removed
 : Better API introduced in the form of `com.intellij.collaboration.auth.ui.AccountsDetailsLoader`.
 
+### GitHub 2022.2
+
+`org.jetbrains.plugins.github.api.GithubApiRequestExecutorManager.getExecutor(GithubAccount)` method return type changed from `org.jetbrains.plugins.github.api.GithubApiRequestExecutor.WithTokenAuth` to `org.jetbrains.plugins.github.api.GithubApiRequestExecutor`
+: Hidden implementation details
+
+`org.jetbrains.plugins.github.api.GithubApiRequestExecutorManager.getExecutor(GithubAccount, Project)` method return type changed from `org.jetbrains.plugins.github.api.GithubApiRequestExecutor.WithTokenAuth` to `org.jetbrains.plugins.github.api.GithubApiRequestExecutor`
+: Hidden implementation details
+
+`org.jetbrains.plugins.github.api.GithubApiRequestExecutorManager.getExecutor(GithubAccount, JComponent)` method return type changed from `org.jetbrains.plugins.github.api.GithubApiRequestExecutor.WithTokenAuth` to `org.jetbrains.plugins.github.api.GithubApiRequestExecutor`
+: Hidden implementation details
+
+`com.intellij.collaboration.ui.codereview.avatar.CachingAvatarIconsProvider` class renamed to `com.intellij.collaboration.ui.codereview.avatar.CachingCircleImageIconsProvider`
+: Icon provider implementation changes to async
+
 ### Grazie Plugin 2022.2
 
 Method `com.intellij.grazie.GrazieBundle.message(key, parameters)` marked static

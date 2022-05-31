@@ -20,6 +20,28 @@ Several commonly needed customization implementations exist, including:
 - [`HorizontalScrollBarEditorCustomization`](upsource:///platform/platform-impl/src/com/intellij/ui/HorizontalScrollBarEditorCustomization.java) to turn on/off horizontal scrollbar
 - [`ErrorStripeEditorCustomization`](upsource:///platform/platform-impl/src/com/intellij/ui/ErrorStripeEditorCustomization.java) to turn on/off error stripes on right
 
+`EditorTextField` has a number of subclasses that can be used as needed for additional features.
+
+If you want to use an editor as an input field in a dialog box, then consider using
+[`LanguageTextField`](upsource:///platform/platform-impl/src/com/intellij/ui/LanguageTextField.java),
+it provides a more accessible API.
+
+If you want to add autocompletion to the editor, then use
+[`TextFieldWithCompletion`](upsource:///platform/platform-impl/src/com/intellij/util/textCompletion/TextFieldWithCompletion.java).
+The constructor takes as an argument a class that implements
+[`TextCompletionProvider`](upsource:///platform/platform-impl/src/com/intellij/util/textCompletion/TextCompletionProvider.java)
+to provide autocompletion variants.
+Use
+[`TextFieldCompletionProvider`](upsource:///platform/lang-impl/src/com/intellij/util/TextFieldCompletionProvider.java)
+to create your own provider.
+For this, override `addCompletionVariants()` and add completion variants using `CompletionResultSet.addElement()`.
+
+See also
+[`TextFieldCompletionProviderDumbAware`](upsource:///platform/lang-impl/src/com/intellij/util/TextFieldCompletionProviderDumbAware.java)
+for completion even at the indexing stage.
+
+Refer to the [](code_completion.md) to learn more about completion.
+
 ### Java
 
 A common use case for `EditorTextField` is entering the name of a Java class or package.

@@ -58,7 +58,7 @@ Please see also corresponding entries in [Incompatible API Changes](api_changes_
 
 | Branch number                                                   | IntelliJ Platform version                                                                                                                |
 |-----------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------|
-| 222                                                             | 2022.2 (EAP) **NOTE** Java 17 is now required                                                                                            |
+| [222](https://github.com/JetBrains/intellij-community/tree/222) | 2022.2 **NOTE** Java 17 is now required                                                                                                  |
 | [221](https://github.com/JetBrains/intellij-community/tree/221) | 2022.1                                                                                                                                   |
 | [213](https://github.com/JetBrains/intellij-community/tree/213) | 2021.3                                                                                                                                   |
 | [212](https://github.com/JetBrains/intellij-community/tree/212) | 2021.2                                                                                                                                   |

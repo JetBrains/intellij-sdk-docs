@@ -208,7 +208,7 @@ To implement `PhpTypeProvider4`, you need to override 4 methods:
    If you need some information, then pack the required data into a string and return an Incomplete type based on this string.
 
 3. `complete()` is a method that resolves an Incomplete type into a Complete type.
-   All strings of Incomplete types are sequentially passed to this method, the method should return a Complete type for them.
+   All strings of Incomplete types are sequentially passed to this method, it should return a Complete type for them.
 
 4. `getBySignature()` is a method with which you can provide additional elements or references.
 

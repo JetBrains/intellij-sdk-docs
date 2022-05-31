@@ -33,7 +33,8 @@ The constructor takes as an argument a class that implements
 to provide autocompletion variants.
 Use
 [`TextFieldCompletionProvider`](upsource:///platform/lang-impl/src/com/intellij/util/TextFieldCompletionProvider.java)
-to create your own provider. For this, override the `addCompletionVariants()` and add completion variants using `CompletionResultSet.addElement()`.
+to create your own provider.
+For this, override `addCompletionVariants()` and add completion variants using `CompletionResultSet.addElement()`.
 
 See also
 [`TextFieldCompletionProviderDumbAware`](upsource:///platform/lang-impl/src/com/intellij/util/TextFieldCompletionProviderDumbAware.java)

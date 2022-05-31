@@ -2,7 +2,7 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-28 Extension Points and 4 Listeners for AppCode
+30 Extension Points and 4 Listeners for AppCode
 
 See [](extension_point_list.md) for IntelliJ Platform.
 
@@ -14,10 +14,10 @@ See [](extension_point_list.md) for IntelliJ Platform.
 
 | Topic | Listener |
 |-------|----------|
-| `CocoaPodsUtils#GEM_TOPIC` | `GemListener` |
-| `CocoaPodsUtils#PODS_TOPIC` | `PodsListener` |
-| `AMDeviceManager#DEVICE_LISTENER_TOPIC` | `AMDeviceListener` |
-| `XcodeProjectTestListener#TOPIC` | `XcodeProjectTestListener` |
+| [CocoaPodsUtils#GEM_TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.cocoapods.CocoaPodsUtils.GemListener)  | `GemListener` |
+| [CocoaPodsUtils#PODS_TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.cocoapods.CocoaPodsUtils.PodsListener)  | `PodsListener` |
+| [AMDeviceManager#DEVICE_LISTENER_TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.execution.deviceSupport.AMDeviceListener)  | `AMDeviceListener` |
+| [XcodeProjectTestListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.xcode.model.XcodeProjectTestListener)  | `XcodeProjectTestListener` |
 
 ### AppCodeSwiftPlugin.xml
 
@@ -29,6 +29,7 @@ See [](extension_point_list.md) for IntelliJ Platform.
 
 | Extension Point | Implementation |
 |-----------------|----------------|
+| [appcode.breakpointHandlersProvider](https://jb.gg/ipe?extensions=appcode.breakpointHandlersProvider) ![Non-Dynamic][non-dynamic] | `IPhoneBreakpointHandlersProvider` |
 | [cidr.cocoa.xcodeProjectFileProvider](https://jb.gg/ipe?extensions=cidr.cocoa.xcodeProjectFileProvider) | `XcodeProjectFileProvider` |
 
 ### CocoaPlugin.xml
@@ -81,6 +82,12 @@ See [](extension_point_list.md) for IntelliJ Platform.
 | [swift.packageManager.environmentConfigurator](https://jb.gg/ipe?extensions=swift.packageManager.environmentConfigurator) | `SwiftPackageManagerEnvironmentConfigurator` |
 | [swift.packageManager.modulemapsCollector](https://jb.gg/ipe?extensions=swift.packageManager.modulemapsCollector) | `SwiftPackageModuleMapsCollector` |
 | [swift.packageManager.systemModuleResolver](https://jb.gg/ipe?extensions=swift.packageManager.systemModuleResolver) | `SwiftPackageManagerSystemModuleResolver` |
+
+### XcodeModelCorePlugin.xml
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| [xcode.pbxReferenceBuildSettingsProvider](https://jb.gg/ipe?extensions=xcode.pbxReferenceBuildSettingsProvider) ![Non-Dynamic][non-dynamic] | `PBXReferenceBuildSettingProvider` |
 
 [experimental]: https://img.shields.io/badge/-Experimental_API-red?style=flat-square
 [internal]: https://img.shields.io/badge/-Internal_API-darkred?style=flat-square

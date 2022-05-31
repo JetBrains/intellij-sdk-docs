@@ -12,16 +12,16 @@ See [](extension_point_list.md) for IntelliJ Platform.
 
 ### PhpStorm - Listeners
 
-| Topic                                               | Listener                                   |
-|-----------------------------------------------------|--------------------------------------------|
-| `RepositoriesComposerConfig#TOPIC`                  | `ComposerRepositoriesChangedListener`      |
-| `StateChangedListener#TOPIC`                        | `StateChangedListener`                     |
-| `StateChangedListener#LANGUAGE_LEVEL_CHANGED_TOPIC` | `StateChangedListener`                     |
-| `PhpProjectWorkspaceConfiguration#TOPIC`            | `PhpProjectWorkspaceConfigurationListener` |
-| `DefaultStubsPathListener#TOPIC`                    | `DefaultStubsPathListener`                 |
-| `PhpInterpreterConflictResolveListener#TOPIC`       | `PhpInterpreterConflictResolveListener`    |
-| `StateChangedListener#TOPIC`                        | `StateChangedListener`                     |
-| `PhpRemoteInterpreterChangedListener#TOPIC`         | `PhpRemoteInterpreterChangedListener`      |
+| Topic                                                                                                                                                                                             | Listener                                   |
+|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------|
+| [RepositoriesComposerConfig#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.php.composer.json.cache.ComposerRepositoriesChangedListener)                                                  | `ComposerRepositoriesChangedListener`      |
+| [StateChangedListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.php.config.PhpProjectConfigurationFacade.StateChangedListener)                                                      | `StateChangedListener`                     |
+| [StateChangedListener#LANGUAGE_LEVEL_CHANGED_TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.php.config.PhpProjectConfigurationFacade.StateChangedListener)                               | `StateChangedListener`                     |
+| [PhpProjectWorkspaceConfiguration#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.php.config.PhpProjectWorkspaceConfigurationListener)                                                    | `PhpProjectWorkspaceConfigurationListener` |
+| [DefaultStubsPathListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.php.config.PhpRuntimeConfiguration.DefaultStubsPathListener)                                                    | `DefaultStubsPathListener`                 |
+| [PhpInterpreterConflictResolveListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.php.config.interpreters.PhpInterpretersManagerImpl.PhpInterpreterConflictResolveListener)          | `PhpInterpreterConflictResolveListener`    |
+| [StateChangedListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.php.debug.listener.PhpDebugExternalConnectionsAccepter.StateChangedListener)                                        | `StateChangedListener`                     |
+| [PhpRemoteInterpreterChangedListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.php.remote.interpreter.ui.PhpRemoteInterpreterConfigurationForm.PhpRemoteInterpreterChangedListener) | `PhpRemoteInterpreterChangedListener`      |
 
 ### com.intellij.phing
 

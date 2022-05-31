@@ -2,7 +2,7 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-63 Extension Points (EP) and 16 Listeners for DataGrip
+63 Extension Points (EP) and 17 Listeners for DataGrip
 
 See [](extension_point_list.md) for IntelliJ Platform.
 
@@ -14,22 +14,24 @@ See [](extension_point_list.md) for IntelliJ Platform.
 
 | Topic | Listener |
 |-------|----------|
-| `DatabaseSessionManager#topic` | `DatabaseSessionManagerListener` |
-| `AbstractDataSource#TOPIC` | `Listener` |
-| `DataSourceStorageCore#TOPIC` | `Listener` |
-| `DatabaseConnectionManager#TOPIC` | `Listener` |
-| `DatabaseArtifactManager#TOPIC` | `ArtifactListener` |
-| `DatabaseTopics#AUDIT_TOPIC` | `DataAuditor` |
-| `DatabaseTopics#RESPONSE_TOPIC` | `DataConsumer` |
-| `DataGrid#ACTIVE_GRID_CHANGED_TOPIC` | `ActiveGridListener` |
-| `DataGridListener#TOPIC` | `DataGridListener` |
-| `DatabaseTopics#REQUEST_TOPIC` | `DataProducer` |
-| `DataSourceManager#TOPIC` | `Listener` |
-| `DbPsiFacade#TOPIC` | `Listener` |
-| `DatabaseSettings#TOPIC` | `Listener` |
-| `DatabaseColorManager#COLOR_CHANGE_TOPIC` | `ColorChangeListener` |
-| `SqlRoutineIndex#topic` | `SqlRoutineIndexListener` |
-| `DatabaseViewOptions#TOPIC` | `Runnable` |
+| [DatabaseSessionManager#topic](https://jb.gg/ipe/listeners?topics=com.intellij.database.console.session.DatabaseSessionManagerListener)  | `DatabaseSessionManagerListener` |
+| [AbstractDataSource#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.database.dataSource.AbstractDataSource.Listener)  | `Listener` |
+| [DataSourceStorageCore#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.database.dataSource.DataSourceStorageCore.Listener)  | `Listener` |
+| [DatabaseConnectionManager#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.database.dataSource.DatabaseConnectionManager.Listener)  | `Listener` |
+| [DatabaseArtifactManager#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.database.dataSource.artifacts.DatabaseArtifactManager.ArtifactListener)  | `ArtifactListener` |
+| [DatabaseTopics#AUDIT_TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.database.datagrid.DataAuditor)  | `DataAuditor` |
+| [DatabaseTopics#RESPONSE_TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.database.datagrid.DataConsumer)  | `DataConsumer` |
+| [DataGrid#ACTIVE_GRID_CHANGED_TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.database.datagrid.DataGrid.ActiveGridListener)  | `ActiveGridListener` |
+| [DataGridListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.database.datagrid.DataGridListener)  | `DataGridListener` |
+| [DatabaseTopics#REQUEST_TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.database.datagrid.DataProducer)  | `DataProducer` |
+| [ScriptGeneratorDiagnosticListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.database.dialects.base.generator.ScriptGeneratorDiagnosticListener)  | `ScriptGeneratorDiagnosticListener` |
+| [DataSourceManager#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.database.psi.DataSourceManager.Listener)  | `Listener` |
+| [DbPsiFacade#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.database.psi.DbPsiFacade.Listener)  | `Listener` |
+| [DatabaseSettings#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.database.settings.DatabaseSettings.Listener)  | `Listener` |
+| [DatabaseColorManager#COLOR_CHANGE_TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.database.view.DatabaseColorManager.ColorChangeListener)  | `ColorChangeListener` |
+| [SqlRoutineIndex#topic](https://jb.gg/ipe/listeners?topics=com.intellij.sql.SqlRoutineIndex.SqlRoutineIndexListener)  | `SqlRoutineIndexListener` |
+| [DatabaseViewOptions#TOPIC](https://jb.gg/ipe/listeners?topics=java.lang.Runnable)  | `Runnable` |
+
 
 ### DatabaseConnectivity.xml
 

@@ -82,6 +82,13 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 
 ### IntelliJ Platform 2022.2
 
+`com.intellij.openapi.actionSystem.TypeSafeDataProvider` class removed
+: Use `com.intellij.openapi.actionSystem.DataProvider` class instead
+`com.intellij.openapi.vcs.changes.ui.ChangesBrowser` class removed
+: Use `com.intellij.openapi.vcs.changes.ui.ChangesBrowserBase` or `com.intellij.openapi.vcs.changes.ui.SimpleChangesBrowser` instead.
+`com.intellij.openapi.vcs.changes.ui.ChangesTreeList` class removed
+: Use `com.intellij.openapi.vcs.changes.ui.ChangesTree` or `com.intellij.openapi.vcs.changes.ui.ChangesTreeImpl` instead.
+
 ### Java Plugin 2022.2
 
 `com.intellij.codeInspection.javaDoc.JavaDocLocalInspection` class removed

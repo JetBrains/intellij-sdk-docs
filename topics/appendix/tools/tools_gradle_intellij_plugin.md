@@ -19,7 +19,8 @@ The plugin adds extra IntelliJ-specific dependencies, patches `processResources`
 >
 {type="tip"}
 
-> This project requires `Gradle 6.7` or newer, however it is recommended to use the latest Gradle available. Update it with:
+> This project requires `Gradle 6.7` or newer, however it is recommended to use the latest Gradle available.
+> Update it with:
 > ```Bash
 > ./gradlew wrapper --gradle-version=VERSION
 > ```
@@ -208,7 +209,7 @@ Using the `localPath` allows to build the plugin using IDE that is not available
 
 
 ### plugins
-The list of bundled IDE plugins and plugins from the [JetBrains Marketplace](https://plugins.jetbrains.com) or configured [`intellij.pluginsRepositories`][#pluginsrepositories].
+The list of bundled IDE plugins and plugins from [JetBrains Marketplace](https://plugins.jetbrains.com) or configured [`intellij.pluginsRepositories`][#pluginsrepositories].
 
 Please see [Plugin Dependencies](plugin_dependencies.md) for more details.
 
@@ -286,7 +287,7 @@ Configures repositories for downloading plugin dependencies.
 **Default value:** `pluginsRepositories { marketplace() }`
 
 **Acceptable values:**
-- `marketplace()` - use Maven repository with plugins listed in the [JetBrains Marketplace](https://plugins.jetbrains.com)
+- `marketplace()` - use Maven repository with plugins listed in [JetBrains Marketplace](https://plugins.jetbrains.com)
 - `maven(repositoryUrl)` - use custom Maven repository with plugins
 - `maven { repositoryUrl }` - use custom Maven repository with plugins where you can configure additional parameters (credentials, authentication and etc.)
 - `custom(pluginsXmlUrl)` - use [custom plugin repository](update_plugins_format.md)
@@ -302,7 +303,7 @@ URL of repository for downloading [JetBrains Runtime](ide_development_instance.m
 
 ### ideaDependencyCachePath
 Path to the directory where IDE dependency cache is stored.
-If not set, the dependency will be extracted next to the downloaded ZIP archive in Gradle cache directory.
+If not set, the dependency will be extracted next to the downloaded ZIP archive in [Gradle cache](https://docs.gradle.org/current/userguide/directory_layout.html#dir:gradle_user_home) directory.
 
 **Type:** `String`
 
@@ -386,11 +387,11 @@ The version of the Robot Server Plugin to download.
 
 
 ### pluginArchive
-The archive with the Robot Server Plugin, by default downloaded by to the Maven cache.
+The archive with the Robot Server Plugin, downloaded by default to the [Gradle cache](https://docs.gradle.org/current/userguide/directory_layout.html#dir:gradle_user_home).
 
 **Type:** `File`
 
-**Default value:** Maven cache
+**Default value:** [Gradle cache](https://docs.gradle.org/current/userguide/directory_layout.html#dir:gradle_user_home)
 
 
 ### outputDir
@@ -405,7 +406,8 @@ Location of the extracted archive.
 The following attributes help you to tune instrumenting behaviour in `instrumentCode { ... }` block.
 
 ### compilerVersion
-A version of instrumenting compiler. It's used for non-IDEA plugins (e.g. CLion or Rider).
+A version of instrumenting compiler.
+It's used for non-IDEA plugins (e.g. CLion or Rider).
 
 **Type:** `String`
 
@@ -444,9 +446,11 @@ Default value: `${prepareSandbox.outputDir}`
 List all available IntelliJ-based IDE releases with their updates.
 The result list is used for testing the plugin with Plugin Verifier using the [`runPluginVerifier`](#runpluginverifier-task) task.
 
-Plugin Verifier requires a list of the IDEs that will be used for verifying your plugin build against. The availability of the releases may change in time, i.e., due to security issues in one version – which will be later removed and replaced with an updated IDE release.
+Plugin Verifier requires a list of the IDEs that will be used for verifying your plugin build against.
+The availability of the releases may change in time, i.e., due to security issues in one version – which will be later removed and replaced with an updated IDE release.
 
-With the `listProductsReleases` task, it is possible to list the currently available IDEs matching given conditions, like platform types, since/until release versions. Such a list is fetched from the remote updates file: `https://www.jetbrains.com/updates/updates.xml`, parsed and filtered considering the specified `types`, `sinceVersion`, `untilVersion` properties.
+With the `listProductsReleases` task, it is possible to list the currently available IDEs matching given conditions, like platform types, since/until release versions.
+Such a list is fetched from the remote updates file: `https://www.jetbrains.com/updates/updates.xml`, parsed and filtered considering the specified `type`, `sinceVersion`, `untilVersion` properties.
 
 The result list is stored within the `outputFile`, which is used as a source for the Plugin Verifier if the `runPluginVerifier` task has no `ideVersions` property specified, the output of the `listProductsReleases` is used.
 
@@ -519,7 +523,7 @@ Path to the file, where the output list will be stored.
 
 
 ### androidStudioUpdatePath
-For Android Studio releases, a separated storage for the updates is used.
+For [Android Studio releases](android_studio_releases_list.md), a separated storage for the updates is used.
 
 **Type:** `String`
 
@@ -627,7 +631,8 @@ The input plugin JAR file used to prepare the sandbox.
 
 
 ### librariesToIgnore
-Libraries that will be ignored when preparing the sandbox. By default, excludes all libraries that are a part of the `setupDependenciesTask.idea` dependency.
+Libraries that will be ignored when preparing the sandbox.
+By default, excludes all libraries that are a part of the `setupDependenciesTask.idea` dependency.
 
 **Type:** `List<File>`
 
@@ -657,7 +662,8 @@ See [`prepareSandbox` Task](#preparesandbox-task).
 ## publishPlugin Task
 Publishes plugin to the remote [JetBrains Marketplace](https://plugins.jetbrains.com) repository.
 
-The following attributes are a part of the Publishing DSL `publishPlugin { ... }` in which allows Gradle to upload a working plugin to the [JetBrains Marketplace](https://plugins.jetbrains.com). Note that you need to upload the plugin to the repository at least once manually (to specify options like the license, repository URL etc.) before uploads through Gradle can be used.
+The following attributes are a part of the Publishing DSL `publishPlugin { ... }` in which allows Gradle to upload plugin to [JetBrains Marketplace](https://plugins.jetbrains.com).
+Note that you need to [upload the plugin](publishing_plugin.md) to the repository at least once manually (to specify options like the license, repository URL etc.) before uploads through Gradle can be used.
 
 See the instruction on [how to generate authentication token](https://plugins.jetbrains.com/docs/marketplace/plugin-upload.html).
 
@@ -666,6 +672,8 @@ See [Publishing Plugins with Gradle](deployment.md) tutorial for step-by-step in
 
 ### token
 Authentication token.
+
+**Required**
 
 **Type:** `String`
 
@@ -685,7 +693,7 @@ URL host of a plugin repository.
 
 **Type:** `String`
 
-**Default value:** `https://plugins.jetbrains.com`
+**Default value:** [JetBrains Marketplace](https://plugins.jetbrains.com)
 
 
 ### distributionFile
@@ -708,37 +716,6 @@ Specifies if the Toolbox Enterprise plugin repository service should be used.
 Runs the IDE instance with the developed plugin installed.
 
 `RunIde` tasks extend the [`JavaExec`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html) Gradle task – all properties available in the `JavaExec` as well as the following ones can be used to configure the `runIde` taks.
-
-<tabs>
-<tab title="Kotlin">
-
-```kotlin
-tasks {
-    runIde {
-        jbrVersion.set("11_0_14b1982.1")
-        jbrVariant.set("dcevm")
-        autoReloadPlugins.set(true)
-        jvmArgs("-Xmx2G")
-        systemProperty("name", "value")
-    }
-}
-```
-
-</tab>
-<tab title="Groovy">
-
-```groovy
-runIde {
-    jbrVersion = "11_0_14b1982.1"
-    jbrVariant = "dcevm"
-    autoReloadPlugins = true
-    jvmArgs("-Xmx2G")
-    systemProperty("name", "value")
-}
-```
-
-</tab>
-</tabs>
 
 
 ### ideDir
@@ -763,27 +740,16 @@ Custom JBR version to use for running the IDE.
 - `8u202b1483.24`
 - `11_0_2b159`
 
-All JetBrains Java versions are available at JetBrains Space Packages, and [GitHub](https://github.com/JetBrains/JetBrainsRuntime/releases).
-
+> For more information about JBR versions and variants, see [Using a JetBrains Runtime for the Development Instance](ide_development_instance.md#using-a-jetbrains-runtime-for-the-development-instance).
+>
+{type="note"}
 
 ### jbrVariant
 JetBrains Runtime variant to use when running the IDE with the plugin.
-See [JetBrains Runtime Releases](https://github.com/JetBrains/JetBrainsRuntime/releases)
 
 **Type:** `String`
 
 **Default value:** `null`
-
-**Acceptable values:**
-- `jcef`
-- `sdk`
-- `fd`
-- `dcevm`
-- `nomod`
-
-> For `JBR 17`, `dcevm` is bundled by default. As a consequence, separated `dcevm` and `nomod` variants are no longer available.
->
-{type="note"}
 
 
 ### pluginsDir
@@ -800,6 +766,8 @@ Enables auto-reload of dynamic plugins.
 Dynamic plugins will be reloaded automatically when their JARs are modified.
 This allows a much faster development cycle by avoiding a full restart of the development instance after code changes.
 Enabled by default in 2020.2 and higher.
+
+See [Enabling Auto-Reload](ide_development_instance.md#enabling-auto-reload) for more details.
 
 **Type:** `Boolean`
 
@@ -820,6 +788,7 @@ Runs performance tests on the IDE with the developed plugin installed.
 `RunIdePerformanceTest` task extends the `RunIdeBase` task, all configuration attributes of `JavaExec` and `RunIde` task can be used in `RunIdePerformanceTest` as well.
 See [runIde Task](#runide-task) for more details.
 
+Currently, the task is under adaptation, more documentation will be added in the future.
 
 ### testDataDir
 Path to directory with test projects and '.ijperf' files.
@@ -875,7 +844,7 @@ Check the available build versions on [IntelliJ Platform Builds list](https://jb
 
 ### verifierVersion
 IntelliJ Plugin Verifier version, by default uses the latest available.
-It's recommended to use always the latest version.
+Do not change unless absolutely required.
 
 **Type:** `String`
 
@@ -883,7 +852,7 @@ It's recommended to use always the latest version.
 
 
 ### verifierPath
-IntelliJ Plugin Verifier local path to the pre-downloaded jar file.
+IntelliJ Plugin Verifier local path to the pre-downloaded JAR file.
 If set, `verifierVersion` is ignored.
 
 **Type:** `String`
@@ -916,6 +885,21 @@ Can be set as `FailureLevel` enum or `EnumSet<FailureLevel>`.
 
 **Default value:** `FailureLevel.COMPATIBILITY_PROBLEMS`
 
+**Accepted values:**
+- `FailureLevel.COMPATIBILITY_WARNINGS` - Compatibility warnings
+- `FailureLevel.COMPATIBILITY_PROBLEMS` - Compatibility problems
+- `FailureLevel.DEPRECATED_API_USAGES` - Deprecated API usages
+- `FailureLevel.EXPERIMENTAL_API_USAGES` - Experimental API usages
+- `FailureLevel.INTERNAL_API_USAGES` - Internal API usages
+- `FailureLevel.OVERRIDE_ONLY_API_USAGES` - Override-only API usages
+- `FailureLevel.NON_EXTENDABLE_API_USAGES` - Non-extendable API usages
+- `FailureLevel.PLUGIN_STRUCTURE_WARNINGS` - Plugin structure warnings
+- `FailureLevel.MISSING_DEPENDENCIES` - Missing dependencies
+- `FailureLevel.INVALID_PLUGIN` - The following files specified for the verification are not valid plugins
+- `FailureLevel.NOT_DYNAMIC` - Plugin cannot be loaded/unloaded without IDE restart
+- `FailureLevel.ALL` - All of above
+- `FailureLevel.NONE` - None of above
+
 
 ### verificationReportsDir
 The path to directory where verification reports will be saved.
@@ -945,27 +929,17 @@ Custom JBR version to use for running the IDE.
 - `8u202b1483.24`
 - `11_0_2b159`
 
-All JetBrains Java versions are available at JetBrains Space Packages, and [GitHub](https://github.com/JetBrains/JetBrainsRuntime/releases).
+> For more information about JBR versions and variants, see [Using a JetBrains Runtime for the Development Instance](ide_development_instance.md#using-a-jetbrains-runtime-for-the-development-instance).
+>
+{type="note"}
 
 
 ### jbrVariant
 JetBrains Runtime variant to use when running the IDE with the plugin.
-See [JetBrains Runtime Releases](https://github.com/JetBrains/JetBrainsRuntime/releases)
 
 **Type:** `String`
 
 **Default value:** `null`
-
-**Acceptable values:**
-- `jcef`
-- `sdk`
-- `fd`
-- `dcevm`
-- `nomod`
-
-> For `JBR 17`, `dcevm` is bundled by default. As a consequence, separated `dcevm` and `nomod` variants are no longer available.
->
-{type="note"}
 
 
 ### runtimeDir
@@ -986,7 +960,7 @@ The Plugin Verifier will not report `No such class` for classes of these package
 
 
 ### teamCityOutputFormat
-A flag that controls the output format - if set to `true`, the TeamCity compatible output will be returned to stdout.
+A flag that controls the output format - if set to `true`, the [TeamCity Tests Format](https://www.jetbrains.com/help/teamcity/service-messages.html) – the TeamCity compatible output will be returned to stdout.
 
 **Type:** `Boolean`
 
@@ -1015,10 +989,11 @@ This task exposes the `idea` property which contains a reference to the resolved
 ## signPlugin Task
 Signs the ZIP archive with the provided key using [marketplace-zip-signer](https://github.com/JetBrains/marketplace-zip-signer) library.
 
-To sign the plugin before publishing to the [JetBrains Marketplace](https://plugins.jetbrains.com) with the `signPlugin` task, it is required to provide a certificate chain and a private key with its password using `signPlugin { ... }` Plugin Signing DSL.
+To sign the plugin before publishing to [JetBrains Marketplace](https://plugins.jetbrains.com) with the `signPlugin` task, it is required to provide a certificate chain and a private key with its password using `signPlugin { ... }` Plugin Signing DSL.
 
 As soon as `privateKey` (or `privateKeyFile`) and `certificateChain` (or `certificateChainFile`) properties are specified, task will be executed automatically right before the [`publishPlugin`](#publishplugin-task) task.
 
+For more details, see [Plugin Signing](plugin_signing.md) article.
 
 ### certificateChain
 A string containing X509 certificates.
@@ -1068,7 +1043,7 @@ Refers to `key-pass` CLI option.
 
 
 ### cliVersion
-Returns the version of the [JetBrains Marketplace ZIP Signer CLI](https://github.com/JetBrains/marketplace-zip-signer) that will be used.
+Returns the version of [JetBrains Marketplace ZIP Signer CLI](https://github.com/JetBrains/marketplace-zip-signer) that will be used.
 
 **Type:** `String`
 
@@ -1076,7 +1051,7 @@ Returns the version of the [JetBrains Marketplace ZIP Signer CLI](https://github
 
 
 ### cliPath
-Path to the [JetBrains Marketplace ZIP Signer CLI](https://github.com/JetBrains/marketplace-zip-signer) file.
+Path to [JetBrains Marketplace ZIP Signer CLI](https://github.com/JetBrains/marketplace-zip-signer) file.
 Takes precedence over `cliPath`.
 
 **Type:** `String`

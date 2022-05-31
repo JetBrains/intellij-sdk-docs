@@ -23,8 +23,8 @@ To produce accurate results while running or debugging a plugin project in a Dev
 The JetBrains Runtime is determined from the JDK version used to build the plugin project, regardless of whether it is built on macOS, Windows, or Linux.
 For example, if a plugin is developed against the Java 8 SE Development Kit 8 for macOS (<path>jdk-8u212-macosx-x64.dmg</path>) to acquire the compatible JetBrains Runtime:
 
-* Go to the [JetBrains Runtime Site](https://confluence.jetbrains.com/display/JBR/JetBrains+Runtime) for general information and the latest build.
-* Open the [Release notes](https://confluence.jetbrains.com/display/JBR/Release+notes) page to access all releases.
+* Go to the [GitHub JetBrains Runtime Releases](https://github.com/JetBrains/JetBrainsRuntime) for general information and the latest build.
+* Open the [Releases](https://github.com/JetBrains/JetBrainsRuntime/releases) page to access all releases.
 * Select the package name corresponding to the platform and SDK version.
   In this case, the package name is `jbrsdk8-osx-x64` for **J**et**B**rains **R**untime _SDK_ version 8, macOS x64 hardware.
 * On the macOS package page of the JetBrains Bintray site, select the **Files** menu.
@@ -33,6 +33,21 @@ For example, if a plugin is developed against the Java 8 SE Development Kit 8 fo
     For example, `jbrx-8u252-osx-x64` matches the Java 8 JDK, build 252: `jdk-8u252-macosx-x64`.
   * Pick the highest JetBrains Runtime build number available.
     For example, the file is <path>jbrx-8u252-osx-x64-b1649.2.tar.gz</path>, meaning build 1649.2 for this JetBrains Runtime matching Java 8 JDK build 252.
+
+### JetBrains Runtime Variants
+The JetBrains Runtime is delivered in various variants used for different purposes, like debugging, running for development purposes or bundling with the IDE.
+
+Available JBR variants are:
+- `jcef` - the release bundles with the [JCEF](jcef.md) browser engine
+- `sdk` - JBR SDK bundle used for development purposes
+- `fd` - the fastdebug bundle which also includes the `jcef` module
+- `dcevm` - bundles DCEVM (Dynamic Code Evolution Virtual Machine)
+- `nomod` – the release bundled without any additional modules
+
+> For `JBR 17`, `dcevm` is bundled by default.
+> As a consequence, separated `dcevm` and `nomod` variants are no longer available.
+>
+{type="note"}
 
 <tabs>
 

@@ -73,7 +73,7 @@ echo $a;
 In the `main.php` file, we call the `foo()` function, which is defined in another `foo.php` file.
 Because of this, PhpStorm will not be able to infer the type of the `$a` variable during the indexing stage, since it depends on the definition of the `foo()` function from another file.
 
-For such cases, PhpStorm will create an Incomplete type in which write all the necessary information to resolve the type when indexing is finished.
+For such cases, PhpStorm will create an Incomplete type in which writes all the necessary information to resolve the type when indexing is finished.
 In this case, it's the name of the function being called, so PhpStorm will create an Incomplete type `#F\foo`.
 
 #### Incomplete Types Structure
@@ -203,7 +203,7 @@ To implement `PhpTypeProvider4`, you need to override 4 methods:
    {type="note"}
 
 2. `getType()` is a method that returns the type of the expression for the given element.
-   This method is called at the indexing stage and therefore its implementation **cannot access** any information
+   This method is called at the indexing stage, and therefore its implementation **cannot access** any information
    from the index and **must** rely only on local information.
    If you need some information, then pack the required data into a string and return an Incomplete type based on this string.
 

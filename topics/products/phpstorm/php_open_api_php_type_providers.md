@@ -12,7 +12,7 @@ All providers inherit from `com.jetbrains.php.lang.psi.resolve.types.PhpTypeProv
 ## Types in PhpStorm
 
 The first phase of type inference in PhpStorm takes place at the indexing stage.
-At this phase, the `PhpTypeProvider4.getType()` method is called on each type provider.
+At this phase, the `PhpTypeProvider4.getType()` is called on each type provider.
 PhpStorm only has access to local information from the current file and cannot use information from others.
 In some cases, the exact type can be deduced from this information, but in other cases this is not possible because information from other files is required.
 
@@ -43,7 +43,7 @@ function foo(): string {
 $a = foo();
 ```
 
-Here, since the `foo()` function call and its definition are in the same file, PhpStorm can infer the Complete type `string`.
+Here, since the `foo()` call and its definition are in the same file, PhpStorm can infer the Complete type `string`.
 
 ### Incomplete types
 
@@ -70,8 +70,8 @@ $a = foo();
 echo $a;
 ```
 
-In the `main.php` file, we call the `foo()` function, which is defined in another `foo.php` file.
-Because of this, PhpStorm will not be able to infer the type of the `$a` variable during the indexing stage, since it depends on the definition of the `foo()` function from another file.
+In the `main.php` file, we call the `foo()`, which is defined in another `foo.php` file.
+Because of this, PhpStorm will not be able to infer the type of the `$a` variable during the indexing stage, since it depends on the definition of the `foo()` from another file.
 
 For such cases, PhpStorm will create an Incomplete type in which writes all the necessary information to resolve the type when indexing is finished.
 In this case, it's the name of the function being called, so PhpStorm will create an Incomplete type `#F\foo`.
@@ -86,7 +86,7 @@ PhpStorm uses this key to determine which type provider to pass the Incomplete t
 The rest of the line is the encoded information.
 In the example above, this is the fully qualified name of the function.
 
-The created Incomplete type will be further passed to the `PhpTypeProvider4.complete()` method after indexing is done to resolve it into a Complete type.
+The created Incomplete type will be further passed to the `PhpTypeProvider4.complete()` after indexing is finished to resolve it into a Complete type.
 
 During indexing, the IDE collects information about all types of elements in this way and stores them in the index.
 When there is a need for the type of some expression, the type obtained at the Incomplete indexing stage is passed for resolving.
@@ -94,7 +94,7 @@ When there is a need for the type of some expression, the type obtained at the I
 #### Incomplete Types Resolving
 
 The second phase of type inference is the global Incomplete type resolution.
-At this phase, the `PhpTypeProvider4.complete()` method is called on each type provider.
+At this phase, the `PhpTypeProvider4.complete()` is called on each type provider.
 All Incomplete types are passed to the providers that created them.
 PhpStorm can access any information from other files to resolve the Incomplete type.
 
@@ -127,16 +127,16 @@ Since some providers may return types for the same PSI element, union types may 
 
 PhpStorm uses the `com.jetbrains.php.lang.psi.resolve.types.PhpType` class to work with types.
 
-To add types to it, use the `add()` method, which can take either another `PhpType` or a `string`.
+To add types to it, use `add()`, which can take either another `PhpType` or a `string`.
 
-To check that a type is Complete use the `isComplete()` method.
+To check that a type is Complete, use `isComplete()`.
 
-To resolve the Incomplete type, use the `global()` method.
+To resolve the Incomplete type, use `global()`.
 
 ### How to get PhpType from PSI?
 
 In PhpStorm, PSI elements with types implement the `com.jetbrains.php.lang.psi.elements.PhpTypedElement` interface.
-To get the type of element, use the `getType()` method.
+To get the type of element, use the `getType()`.
 
 ## `PhpTypeProvider4` Implementation
 
@@ -193,7 +193,7 @@ public interface PhpTypeProvider4 {
 
 To implement `PhpTypeProvider4`, you need to override 4 methods:
 
-1. `getKey()` is a method that returns a character that will be unique for this type provider.
+1. `getKey()` returns a character that will be unique for this type provider.
    This can be any character, as long as it is unique, for example, PhpStorm uses hieroglyphs.
    See also `com.jetbrains.php.lang.psi.resolve.types.PhpCharBasedTypeKey`.
 
@@ -202,17 +202,16 @@ To implement `PhpTypeProvider4`, you need to override 4 methods:
    >
    {type="note"}
 
-2. `getType()` is a method that returns the type of the expression for the given element.
-   This method is called at the indexing stage, and therefore its implementation **cannot access** any information
-   from the index and **must** rely only on local information.
+2. `getType()` returns the type of the expression for the given element.
+   It's called at the indexing stage, and therefore its implementation **cannot access** any information from the index and **must** rely only on local information.
    If you need some information, then pack the required data into a string and return an Incomplete type based on this string.
 
-3. `complete()` is a method that resolves an Incomplete type into a Complete type.
+3. `complete()` resolves an Incomplete type into a Complete type.
    All strings of Incomplete types are sequentially passed to this method, it should return a Complete type for them.
 
-4. `getBySignature()` is a method with which you can provide additional elements or references.
+4. `getBySignature()` provides additional elements or references.
 
-You can also override the `emptyResultIsComplete()` method, which indicates whether the `null` returned from the `complete()` method is a valid result, which means that the `mixed` type will not be added to the resulting type.
+You can also override the `emptyResultIsComplete()`, which indicates whether the `null` returned from the `complete()` is a valid result, which means that the `mixed` type will not be added to the resulting type.
 
 ## Example Implementation
 

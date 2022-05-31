@@ -13,7 +13,7 @@ When upgrading to `1.x` version, please make sure to follow [migration guide](ht
 
 This plugin allows you to build plugins for IntelliJ Platform using specified IntelliJ SDK and bundled or third-party plugins.
 
-The plugin adds extra IntelliJ-specific dependencies, patches `processResources` tasks to fill some tags (name, version) in `plugin.xml` with appropriate values, patches compile tasks to instrument code with nullability assertions and forms classes made with IntelliJ GUI Designer and provides some build steps which might be helpful while developing plugins for IntelliJ platform.
+The plugin adds extra IntelliJ-specific dependencies, patches `processResources` tasks to fill some tags (name, version) in <path>[plugin.xml](plugin_configuration_file.md)</path> with appropriate values, patches compile tasks to instrument code with nullability assertions and forms classes made with IntelliJ GUI Designer and provides some build steps which might be helpful while developing plugins for IntelliJ platform.
 
 > Gradle JVM should be set to `Java 11` (see <path>Settings/Preferences | Build, Execution</path>, <path>Deployment | Build Tools | Gradle</path>)
 >
@@ -56,7 +56,7 @@ plugins {
 The Snapshot release is a pre-release version built nightly from the latest main branch.
 To use it, it is required to point Gradle to the dedicated snapshot repository by adding an entry to the Gradle settings file.
 
-> Current Gradle IntelliJ Plugin Snapshot version is [![GitHub Snapshot Release](https://img.shields.io/nexus/s/org.jetbrains.intellij/org.jetbrains.intellij.gradle.plugin?server=https%3A%2F%2Foss.sonatype.org)](https://github.com/jetbrains/gradle-intellij-plugin/releases)
+> Current Gradle IntelliJ Plugin Snapshot version is [![GitHub Snapshot Release](https://img.shields.io/nexus/s/org.jetbrains.intellij/org.jetbrains.intellij.gradle.plugin?server=https://oss.sonatype.org)](https://github.com/jetbrains/gradle-intellij-plugin/releases)
 >
 {type="note"}
 
@@ -120,24 +120,8 @@ It is mandatory to specify at least the `intellij.version` property.
 ```kotlin
 intellij {
     version.set("2022.1.1")
-    type.set("IC")
-    pluginName.set("My Plugin")
-    localPath.set("/Applications/Android Studio 4.2 Preview.app/Contents")
-    plugins.set(listOf("com.jetbrains.php:192.6603.42"))
-    updateSinceUntilBuild.set(true)
-    sameSinceUntilBuild.set(false)
-    instrumentCode.set(true)
-    sandboxDir.set("${project.buildDir}/idea-sandbox")
-    intellijRepository.set("https://cache-redirector.jetbrains.com/www.jetbrains.com/intellij-repository")
-    pluginsRepositories {
-        marketplace()
-    }
-    jreRepository.set(null)
-    ideaDependencyCachePath.set("${project.buildDir}/idea-dependency-cache")
-    downloadSources.set(true)
-    configureDefaultDependencies.set(true)
-    extraDependencies.set(listOf("jps-build-test"))
-    localSourcesPath.set("${project.buildDir}/idea-sources")
+    type.set("IU")
+    plugins.set(listOf("com.jetbrains.php:221.5787.21"))
 }
 ```
 
@@ -147,24 +131,8 @@ intellij {
 ```groovy
 intellij {
     version = "2022.1.1"
-    type = "IC"
-    pluginName = "My Plugin"
-    localPath = "/Applications/Android Studio 4.2 Preview.app/Contents"
-    plugins = ["com.jetbrains.php:192.6603.42"]
-    updateSinceUntilBuild = true
-    sameSinceUntilBuild = false
-    instrumentCode = true
-    sandboxDir = "${project.buildDir}/idea-sandbox"
-    intellijRepository = "https://cache-redirector.jetbrains.com/www.jetbrains.com/intellij-repository"
-    pluginsRepositories {
-        marketplace()
-    }
-    jreRepository = null
-    ideaDependencyCachePath = "${project.buildDir}/idea-dependency-cache"
-    downloadSources = true
-    configureDefaultDependencies = true
-    extraDependencies = ["jps-build-test"]
-    localSourcesPath = "${project.buildDir}/idea-sources"
+    type = "IU"
+    plugins = ["com.jetbrains.php:221.5787.21"]
 }
 ```
 
@@ -187,22 +155,28 @@ Please see [Plugin Compatibility](plugin_compatibility.md) topic in SDK docs for
 - build number: `221.5080.210` or `IC-221.5080.210`
 - snapshot: `221-EAP-SNAPSHOT` or `LATEST-EAP-SNAPSHOT`
 
+> The _version number_ format is the most common option for specifying the version of the IntelliJ Platform.
+> Other formats should be used only when your plugin relies on specific parts of the targeted IDE or early-adopting EAP releases.
+>
+{type="tip"}
+
+
 ### type
 The type of the IntelliJ-based IDE distribution.
-The type may also be specified as a prefix of the value for the `intellij.version` property.
+The type may also be specified as a prefix of the value for the `intellij.version` property instead.
 
 **Type:** `String`
 
 **Default value:** `IC`
 
 **Acceptable values:**
-- `IC` - IntelliJ IDEA Community Edition
-- `IU` - IntelliJ IDEA Ultimate Edition
-- `CL` - CLion
-- `PY` - PyCharm Professional Edition
-- `PC` - PyCharm Community Edition
-- `RD` - Rider
-- `GO` - GoLand
+- `IC` - [IntelliJ IDEA Community Edition](idea.md)
+- `IU` - [IntelliJ IDEA Ultimate Edition](idea.md)
+- `CL` - [CLion](clion.md)
+- `PY` - [PyCharm Professional Edition](pycharm.md)
+- `PC` - [PyCharm Community Edition](pycharm.md)
+- `RD` - [Rider](rider.md)
+- `GO` - [GoLand](goland.md)
 - `JPS` - JPS-only
 - `GW` - Gateway
 
@@ -217,31 +191,32 @@ The name of the generated ZIP archive distribution: `/build/distributions/Plugin
 
 ### localPath
 The path to the locally installed IDE distribution that should be used to build the plugin.
+Using the `localPath` allows to build the plugin using IDE that is not available in the [IntelliJ Platform Artifacts Repositories](intellij_artifacts.md).
 
 **Type:** `String`
 
 **Default value:** `null`
 
-**Acceptable values:**
+**Samples:**
 - `C:\Users\user\AppData\Local\JetBrains\Toolbox\apps\IDEA-U\ch-0\211.7142.45`
 - `/Applications/Android Studio 4.2 Preview.app/Contents`
 - `/home/user/idea-IC-181.4445.78`
 
-> `intellij.version` and `intellij.localPath` should not be specified at the same time.
+> `intellij.version` and `intellij.localPath` must not be specified at the same time.
 >
 {type="warning"}
 
 
 ### plugins
-The list of bundled IDE plugins and plugins from the [JetBrains Marketplace](https://plugins.jetbrains.com) or configured `intellij.pluginsRepositories`.
+The list of bundled IDE plugins and plugins from the [JetBrains Marketplace](https://plugins.jetbrains.com) or configured [`intellij.pluginsRepositories`][#pluginsrepositories].
 
 Please see [Plugin Dependencies](plugin_dependencies.md) for more details.
 
 Notes:
-- For plugins from JetBrains Plugin Repository, use format `pluginId:version`.
+- For plugins from [JetBrains Marketplace](https://plugins.jetbrains.com), use format `pluginId:version`.
 - For bundled plugins, version should be omitted: e.g. `org.intellij.groovy`.
 - For subprojects, use project reference `project(':subproject')`.
-- If you need to refer plugin's classes from your project, you also have to define a dependency in your `plugin.xml` file.
+- If you need to refer plugin's classes from your project, you also have to define a dependency in your <path>[plugin.xml](plugin_configuration_file.md)</path> file.
 
 **Type:** `List<Any>`
 
@@ -260,7 +235,7 @@ Notes:
 
 
 ### updateSinceUntilBuild
-Defines if the `plugin.xml` should be patched with the values of `patchPluginXml.sinceBuild` and `patchPluginXml.untilBuild` properties.
+Defines if the <path>[plugin.xml](plugin_configuration_file.md)</path> should be patched with the values of `patchPluginXml.sinceBuild` and `patchPluginXml.untilBuild` properties.
 
 **Type:** `Boolean`
 
@@ -268,7 +243,7 @@ Defines if the `plugin.xml` should be patched with the values of `patchPluginXml
 
 
 ### sameSinceUntilBuild
-Patches `plugin.xml` with the `patchPluginXml.untilBuild` with the value of `patchPluginXml.sinceBuild` used with `*` wildcard, like `sinceBuild.*`, e.g., `220.*`.
+Patches <path>[plugin.xml](plugin_configuration_file.md)</path> with the `patchPluginXml.untilBuild` with the value of `patchPluginXml.sinceBuild` used with `*` wildcard, like `sinceBuild.*`, e.g., `221.*`.
 
 Notes:
 - Useful for building plugins against EAP IDE builds.
@@ -280,7 +255,7 @@ Notes:
 
 
 ### instrumentCode
-Instrument Java classes with nullability assertions and compile forms created by IntelliJ GUI Designer.
+Instrument Java classes with [nullability](https://www.jetbrains.com/help/idea/nullable-and-notnull-annotations.html) assertions and compile forms created by [IntelliJ GUI Designer](https://www.jetbrains.com/help/idea/gui-designer-basics.html.
 
 **Type:** `Boolean`
 
@@ -288,7 +263,7 @@ Instrument Java classes with nullability assertions and compile forms created by
 
 
 ### sandboxDir
-The path of sandbox directory that is used for running IDE with developed plugin.
+The path of [sandbox directory](ide_development_instance.md#the-development-instance-sandbox-directory) that is used for running IDE with developed plugin.
 
 **Type:** `String`
 
@@ -311,14 +286,14 @@ Configures repositories for downloading plugin dependencies.
 **Default value:** `pluginsRepositories { marketplace() }`
 
 **Acceptable values:**
-- `marketplace()` - use Maven repository with plugins listed in the JetBrains Marketplace
+- `marketplace()` - use Maven repository with plugins listed in the [JetBrains Marketplace](https://plugins.jetbrains.com)
 - `maven(repositoryUrl)` - use custom Maven repository with plugins
 - `maven { repositoryUrl }` - use custom Maven repository with plugins where you can configure additional parameters (credentials, authentication and etc.)
-- `custom(pluginsXmlUrl)` - use custom plugin repository
+- `custom(pluginsXmlUrl)` - use [custom plugin repository](update_plugins_format.md)
 
 
 ### jreRepository
-URL of repository for downloading JetBrains Runtime.
+URL of repository for downloading [JetBrains Runtime](ide_development_instance.md#using-a-jetbrains-runtime-for-the-development-instance).
 
 **Type:** `String`
 
@@ -326,7 +301,7 @@ URL of repository for downloading JetBrains Runtime.
 
 
 ### ideaDependencyCachePath
-Path to the directory where IntelliJ IDEA dependency cache is stored.
+Path to the directory where IDE dependency cache is stored.
 If not set, the dependency will be extracted next to the downloaded ZIP archive in Gradle cache directory.
 
 **Type:** `String`
@@ -337,7 +312,7 @@ If not set, the dependency will be extracted next to the downloaded ZIP archive 
 ### downloadSources
 
 Download IntelliJ Platform sources.
-Enabled by default if not on `CI` environment.
+It is enabled by default if the `CI` environment variable is not set – which is present on Continuous Integration environments, like GitHub Actions, TeamCity, and others.
 
 **Type:** `Boolean`
 
@@ -477,7 +452,8 @@ The result list is stored within the `outputFile`, which is used as a source for
 
 
 ### updatesFile
-Path to the products releases update file. By default, falls back to the Maven cache.
+Path to the products releases update file.
+By default, falls back to the Maven cache.
 
 **Type:** `List<String>`
 
@@ -485,16 +461,16 @@ Path to the products releases update file. By default, falls back to the Maven c
 
 
 ### types
-List of types of IDEs that will be listed in results. Uses intellij.type by default.	[intellij.type]
+List of types of IDEs that will be listed in results.
 
 **Type:** `String`
 
-**Default value:**
+**Default value:** `intellij.type`
 
 
 ### sinceVersion
 Lower boundary of the listed results in product marketing version format, like `2020.2.1`.
-Takes the precedence over `sinceBuild` property.
+Takes precedence over `sinceBuild` property.
 
 **Type:** `String`
 
@@ -503,7 +479,7 @@ Takes the precedence over `sinceBuild` property.
 
 ### untilBuild
 Upper boundary of the listed results in product marketing version format, like `2020.2.1`.
-Takes the precedence over [untilBuild] property.
+Takes precedence over `untilBuild` property.
 
 **Type:** `String`
 
@@ -527,7 +503,7 @@ Upper boundary of the listed results in build number format, like `192`.
 
 
 ### releaseChannels
-`Release channels that product updates will be filtered with.`
+Release channels that product updates will be filtered with.
 
 **Type:** `Channel`
 
@@ -551,7 +527,7 @@ For Android Studio releases, a separated storage for the updates is used.
 
 
 ## patchPluginXml Task
-Patches `plugin.xml` files with values provided to the task.
+Patches <path>[plugin.xml](plugin_configuration_file.md)</path> files with values provided to the task.
 
 > To maintain and generate an up-to-date changelog, try using [Gradle Changelog Plugin](https://github.com/JetBrains/gradle-changelog-plugin).
 >
@@ -567,7 +543,7 @@ The directory where the patched plugin.xml will be written.
 
 
 ### pluginXmlFiles
-The list of `plugin.xml` files to patch.
+The list of <path>[plugin.xml](plugin_configuration_file.md)</path> files to patch.
 
 **Type:** `List<File>`
 
@@ -679,9 +655,9 @@ See [`prepareSandbox` Task](#preparesandbox-task).
 
 
 ## publishPlugin Task
-Publishes plugin to the remote Marketplace repository.
+Publishes plugin to the remote [JetBrains Marketplace](https://plugins.jetbrains.com) repository.
 
-The following attributes are a part of the Publishing DSL `publishPlugin { ... }` in which allows Gradle to upload a working plugin to the JetBrains Plugin Repository. Note that you need to upload the plugin to the repository at least once manually (to specify options like the license, repository URL etc.) before uploads through Gradle can be used.
+The following attributes are a part of the Publishing DSL `publishPlugin { ... }` in which allows Gradle to upload a working plugin to the [JetBrains Marketplace](https://plugins.jetbrains.com). Note that you need to upload the plugin to the repository at least once manually (to specify options like the license, repository URL etc.) before uploads through Gradle can be used.
 
 See the instruction on [how to generate authentication token](https://plugins.jetbrains.com/docs/marketplace/plugin-upload.html).
 
@@ -713,7 +689,7 @@ URL host of a plugin repository.
 
 
 ### distributionFile
-Jar or Zip file of plugin to upload.
+ZIP file of plugin to upload.
 
 **Type:** `File`
 
@@ -883,7 +859,7 @@ Plugin Verifier DSL `runPluginVerifier { ... }` allows to define the list of IDE
 >
 {type="tip"}
 
-> TIP To run Plugin Verifier in [`-offline`](https://github.com/JetBrains/intellij-plugin-verifier/pull/58) mode, set the Gradle [`offline` start parameter](https://docs.gradle.org/current/javadoc/org/gradle/StartParameter.html#setOffline-boolean-).
+> To run Plugin Verifier in [`-offline`](https://github.com/JetBrains/intellij-plugin-verifier/pull/58) mode, set the Gradle [`offline` start parameter](https://docs.gradle.org/current/javadoc/org/gradle/StartParameter.html#setOffline-boolean-).
 >
 {type="tip"}
 
@@ -1039,7 +1015,7 @@ This task exposes the `idea` property which contains a reference to the resolved
 ## signPlugin Task
 Signs the ZIP archive with the provided key using [marketplace-zip-signer](https://github.com/JetBrains/marketplace-zip-signer) library.
 
-To sign the plugin before publishing to the JetBrains Marketplace with the signPlugin task, it is required to provide a certificate chain and a private key with its password using `signPlugin { ... }` Plugin Signing DSL.
+To sign the plugin before publishing to the [JetBrains Marketplace](https://plugins.jetbrains.com) with the `signPlugin` task, it is required to provide a certificate chain and a private key with its password using `signPlugin { ... }` Plugin Signing DSL.
 
 As soon as `privateKey` (or `privateKeyFile`) and `certificateChain` (or `certificateChainFile`) properties are specified, task will be executed automatically right before the [`publishPlugin`](#publishplugin-task) task.
 
@@ -1092,7 +1068,7 @@ Refers to `key-pass` CLI option.
 
 
 ### cliVersion
-Returns the version of the Marketplace ZIP Signer CLI that will be used.
+Returns the version of the [JetBrains Marketplace ZIP Signer CLI](https://github.com/JetBrains/marketplace-zip-signer) that will be used.
 
 **Type:** `String`
 
@@ -1100,7 +1076,8 @@ Returns the version of the Marketplace ZIP Signer CLI that will be used.
 
 
 ### cliPath
-Path to the Marketplace ZIP Signer CLI file. Takes a precedence over the cliPath.
+Path to the [JetBrains Marketplace ZIP Signer CLI](https://github.com/JetBrains/marketplace-zip-signer) file.
+Takes precedence over `cliPath`.
 
 **Type:** `String`
 
@@ -1166,11 +1143,11 @@ Predefined with the name of the ZIP archive file with `-signed` name suffix atta
 
 
 ## verifyPlugin Task
-Validates completeness and contents of `plugin.xml` descriptors as well as plugin archive structure.
+Validates completeness and contents of <path>[plugin.xml](plugin_configuration_file.md)</path> descriptors as well as plugin archive structure.
 
 
 ### ignoreFailures
-Specifies whether the build should break when the verifications performed by this task fail.
+Specifies whether the build should fail when the verifications performed by this task fail.
 
 **Type**: `Boolean`
 
@@ -1178,7 +1155,7 @@ Specifies whether the build should break when the verifications performed by thi
 
 
 ### ignoreWarnings
-Specifies whether the build should break when the verifications performed by this task emit warnings.
+Specifies whether the build should fail when the verifications performed by this task emit warnings.
 
 **Type**: `Boolean`
 
@@ -1198,7 +1175,7 @@ The location of the built plugin file which will be used for verification.
 
 With the Gradle IntelliJ Plugin releases, new features are introduced that require additional research, collecting more feedback from developers, or should be enabled or disabled under particular conditions.
 Build Features are an implementation of the feature flags concept and let you control some behaviors of the Gradle IntelliJ Plugin.
-To enable or disable a particular feature, add the Project property to the `gradle.properties` file, like:
+To enable or disable a particular feature, add the Project property to the <path>gradle.properties</path> file, like:
 
 ```properties
 org.jetbrains.intellij.buildFeature.buildFeatureName=false

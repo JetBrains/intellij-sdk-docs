@@ -11,12 +11,12 @@ All providers inherit from `com.jetbrains.php.lang.psi.resolve.types.PhpTypeProv
 
 ## Types in PhpStorm
 
-The first phase of type inference in PhpStorm takes place at the indexing stage.
-At this phase, the `PhpTypeProvider4.getType()` is called on each type provider.
+The first phase of type inference takes place at the indexing stage.
+At this phase, PhpStorm calls `PhpTypeProvider4.getType()` on each type provider.
 PhpStorm only has access to local information from the current file and cannot use information from others.
-In some cases, the exact type can be deduced from this information, but in other cases this is not possible because information from other files is required.
+Sometimes, it can deduce the exact type from this information, but in other cases this is impossible because PhpStorm requires information from other files.
 
-Because of this, types in PhpStorm are divided into two types:
+Because of this, there are two kinds of types in PhpStorm:
 
 - Complete types
 - Incomplete types
@@ -31,7 +31,7 @@ Complete types are types that are known exactly based on **only** the local info
 $a = 100;
 ```
 
-The type of the expression that is assigned to the `$a` variable is Complete type `int`, since PhpStorm can definitely infer that a numeric literal is of type `int`.
+The type of the expression that's assigned to the `$a` variable is Complete type `int`, since PhpStorm can definitely infer that a numeric literal is of type `int`.
 
 ```
 <?php
@@ -47,7 +47,7 @@ Here, since the `foo()` call and its definition are in the same file, PhpStorm c
 
 ### Incomplete types
 
-Incomplete types are types that require additional information from other project files besides the containing file.
+Incomplete types are types that need additional information from other project files besides the containing file.
 
 Suppose we have two files:
 
@@ -71,32 +71,32 @@ echo $a;
 ```
 
 In the `main.php` file, we call the `foo()`, which is defined in another `foo.php` file.
-Because of this, PhpStorm will not be able to infer the type of the `$a` variable during the indexing stage, since it depends on the definition of the `foo()` from another file.
+Because of this, PhpStorm won't be able to infer the type of the `$a` variable during the indexing stage, since it depends on the definition of the `foo()` from another file.
 
 For such cases, PhpStorm will create an Incomplete type in which writes all the necessary information to resolve the type when indexing is finished.
 In this case, it's the name of the function being called, so PhpStorm will create an Incomplete type `#F\foo`.
 
 #### Incomplete Types Structure
 
-At the very beginning there is a `#` character, which is a marker that the type is Incomplete.
+At the beginning there is a `#` character, which is a marker that the type is Incomplete.
 
-It is followed by the type provider's unique key.
-PhpStorm uses this key to determine which type provider to pass the Incomplete type to resolve.
+It's followed by the type provider's unique key.
+PhpStorm uses this key to decide which type provider to pass the Incomplete type to resolve.
 
 The rest of the line is the encoded information.
 In the example above, this is the fully qualified name of the function.
 
-The created Incomplete type will be further passed to the `PhpTypeProvider4.complete()` after indexing is finished to resolve it into a Complete type.
+PhpStorm will further pass the created Incomplete type to the `PhpTypeProvider4.complete()` after indexing is finished to resolve it into a Complete type.
 
-During indexing, the IDE collects information about all types of elements in this way and stores them in the index.
-When there is a need for the type of some expression, the type obtained at the Incomplete indexing stage is passed for resolving.
+During indexing, PhpStorm collects information about all types of elements in this way and stores them in the index.
+When there is a need for the type of some expression, PhpStorm passes the Incomplete type obtained at the indexing stage for resolving.
 
 #### Incomplete Types Resolving
 
 The second phase of type inference is the global Incomplete type resolution.
-At this phase, the `PhpTypeProvider4.complete()` is called on each type provider.
+At this phase, PhpStorm calls `PhpTypeProvider4.complete()` of each type provider.
 All Incomplete types are passed to the providers that created them.
-PhpStorm can access any information from other files to resolve the Incomplete type.
+At this point, PhpStorm can access any information from other files to resolve the Incomplete type.
 
 ### Union Types
 
@@ -117,11 +117,11 @@ $a; // (1)
 
 In (1), the variable `$a` will be of type `int|string` because PhpStorm can't deduce exactly which branch the execution will take.
 
-PhpStorm stores such types as separate strings inside the [`PhpType`](#phptype) class.
-Each of the types can also be either Complete or Incomplete.
-In the Incomplete type resolving process, each union type will be resolved individually.
+PhpStorm stores this types as separate strings inside the [`PhpType`](#phptype) class.
+Each of the types can be either Complete or Incomplete.
+In the Incomplete type resolving process, PhpStorm will resolve each union type individually.
 
-Since some providers may return types for the same PSI element, union types may also appear for some elements.
+Since some providers may return types for the same PSI element, union types may appear for some elements.
 
 ## PhpType
 
@@ -194,7 +194,7 @@ public interface PhpTypeProvider4 {
 To implement `PhpTypeProvider4`, you need to override 4 methods:
 
 1. `getKey()` returns a character that will be unique for this type provider.
-   This can be any character, as long as it is unique, for example, PhpStorm uses hieroglyphs.
+   This can be any character, as long as it's unique, for example, PhpStorm uses hieroglyphs.
    See also `com.jetbrains.php.lang.psi.resolve.types.PhpCharBasedTypeKey`.
 
    > When choosing a provider key, keep in mind that other plugins may already be using it.
@@ -203,7 +203,7 @@ To implement `PhpTypeProvider4`, you need to override 4 methods:
    {type="note"}
 
 2. `getType()` returns the type of the expression for the given element.
-   It's called at the indexing stage, and therefore its implementation **cannot access** any information from the index and **must** rely only on local information.
+   It's called at the indexing stage, and therefore its implementation **can't access** any information from the index and **must** rely only on local information.
    If you need some information, then pack the required data into a string and return an Incomplete type based on this string.
 
 3. `complete()` resolves an Incomplete type into a Complete type.
@@ -211,7 +211,7 @@ To implement `PhpTypeProvider4`, you need to override 4 methods:
 
 4. `getBySignature()` provides additional elements or references.
 
-You can also override the `emptyResultIsComplete()`, which indicates whether the `null` returned from the `complete()` is a valid result, which means that the `mixed` type will not be added to the resulting type.
+You can also override the `emptyResultIsComplete()`, which indicates whether the `null` returned from the `complete()` is a valid result, which means that PhpStorm won't add the `mixed` to the resulting type.
 
 ## Example Implementation
 

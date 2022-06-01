@@ -13,6 +13,8 @@ That question might be broad or narrowly-focused, but either way, our goal is to
 
 The style of the Intellij Platform SDK documentation is captured by using a markup language named [Markdown](https://github.github.com/gfm/).
 
+To verify grammar and correct spelling, it is highly recommended to use [Grazie Professional](https://plugins.jetbrains.com/plugin/16136-grazie-professional) plugin to highlight any issues on-the-fly in the IDE.
+
 ## Documentation Markup
 
 The documentation files themselves are [Markdown](https://github.github.com/gfm/) files (<path>*.md</path>) that get automatically converted to HTML when the site is built.

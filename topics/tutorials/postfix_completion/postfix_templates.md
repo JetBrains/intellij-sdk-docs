@@ -2,6 +2,8 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
+<excerpt>Postfix templates implement possibility to modify or wrap the existing code in additional constructs without navigating the caret back.</excerpt>
+
 The IntelliJ Platform allows plugins to provide custom postfix templates specific to the supported languages, frameworks, or libraries.
 
 To provide custom postfix templates for an existing or custom language, register an implementation of
@@ -37,7 +39,7 @@ class and implementing the key methods:
 ## Postfix Template Description
 
 All postfix templates must provide descriptions and examples showing the code before and after a template is expanded.
-The files describing the template should be placed in the plugin's <path>resources</path> in the <path>postfixTemplates/_$TEMPLATE_NAME$_</path> where the _$TEMPLATE_NAME$_ directory must match the simple name of the template class,
+The files describing the template must be placed in the plugin's <path>resources</path> in the <path>postfixTemplates/_$TEMPLATE_NAME$_</path> where the _$TEMPLATE_NAME$_ directory must match the simple name of the template class,
 e.g., for a template implemented in `com.example.IntroduceVariablePostfixTemplate` class, the directory name should be named as <path>IntroduceVariablePostfixTemplate</path>.
 
 Providing the description explaining the template purpose and context details is achieved by creating the <path>description.html</path> file.

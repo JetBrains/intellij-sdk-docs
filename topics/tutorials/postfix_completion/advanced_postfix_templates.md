@@ -2,7 +2,9 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-While simple templates can be handled by extending
+<excerpt>Advanced postfix templates provide additional features like editing possibilities, expression selector, etc.</excerpt>
+
+While [simple templates](postfix_templates.md) can be handled by extending
 [`PostfixTemplate`](upsource:///platform/lang-impl/src/com/intellij/codeInsight/template/postfix/templates/PostfixTemplate.java)
 class directly, more advanced templates require additional functionalities like selecting the expression that a template should be applied to or editing a template content.
 The IntelliJ Platform provides the base classes simplifying advanced template's features implementation.
@@ -13,7 +15,7 @@ In some contexts, it is not obvious what expression a template should be applied
 Consider the following Java code with the `var` postfix template at the end:
 
 ```java
-order.calculateProductsWeight() > getMaxWeight(order.getDeliveryType()).var
+order.calculateWeight() > getMaxWeight(order.getDeliveryType()).var
 ```
 
 In the above code, a postfix template could be applied to the `getMaxWeight()` method invocation and the entire comparison expression depending on the user's intention.
@@ -45,7 +47,7 @@ than implementing the expansion behavior programmatically.
 
 ## Editable Postfix Templates
 
-All postfix templates that return true from the
+All postfix templates that return `true` from the
 [`PostfixTemplate.isEditable()`](upsource:///platform/lang-impl/src/com/intellij/codeInsight/template/postfix/templates/PostfixTemplate.java)
 method and have a key starting with `.` (dot) can be edited.
 In the simplest case, only the template's name can be edited.

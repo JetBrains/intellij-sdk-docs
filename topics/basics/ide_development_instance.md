@@ -3,7 +3,7 @@
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 A JetBrains feature for developing plugins is running or debugging a plugin project from within an IntelliJ Platform-based IDE such as IntelliJ IDEA.
-Selecting the [runIde](gradle_prerequisites.md#running-a-simple-gradle-based-intellij-platform-plugin) task for a Gradle-based project (or [Run](running_and_debugging_a_plugin.md) menu for a DevKit-based project) will launch a _Development Instance_ of the IDE with the plugin enabled.
+Selecting the [`runIde`](gradle_prerequisites.md#running-a-simple-gradle-based-intellij-platform-plugin) task for a Gradle-based project (or [Run](running_and_debugging_a_plugin.md) menu for a DevKit-based project) will launch a _Development Instance_ of the IDE with the plugin enabled.
 This page describes how to control some of the settings for the Development Instance.
 
 > Please see also [Advanced Configuration](https://www.jetbrains.com/help/idea/tuning-the-ide.html) for general VM options and properties.
@@ -85,7 +85,7 @@ Please note that any unloading problems in a production environment will ask the
 
 Enabled by default for target platform 2020.2 or later.
 
-Set `intellij.autoReloadPlugins = true` in [runIde](gradle_prerequisites.md#running-a-simple-gradle-based-intellij-platform-plugin) task to enable it for earlier platform versions or `intellij.autoReloadPlugins = false` to disable it explicitly.
+Set `intellij.autoReloadPlugins = true` in [`runIde`](gradle_prerequisites.md#running-a-simple-gradle-based-intellij-platform-plugin) task to enable it for earlier platform versions or `intellij.autoReloadPlugins = false` to disable it explicitly.
 
 After starting the sandbox IDE instance, run [`buildPlugin`](tools_gradle_intellij_plugin.md#buildplugin-task) task after modifications in the plugin project and switch focus back to sandbox instance to trigger reload.
 

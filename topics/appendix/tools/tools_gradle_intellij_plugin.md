@@ -107,7 +107,7 @@ pluginManagement {
 ## IntelliJ Extension
 After the Gradle IntelliJ Plugin is applied, the `intellij` extension can be used to configure the plugin and common settings of the provided tasks.
 
-It is mandatory to specify at least the `intellij.version` property.
+It is mandatory to specify at least the [`intellij.version`](#intellij-extension-version) property.
 
 **Example:**
 
@@ -449,6 +449,7 @@ Location of the extracted archive.
 ## instrumentCode Task
 The following attributes help you to tune instrumenting behaviour in `instrumentCode { ... }` block.
 
+
 ### compilerVersion
 {id="instrumentcode-task-compilerversion"}
 
@@ -481,7 +482,7 @@ The name of the plugin.
 
 **Type:** `String`
 
-Default value: `intellij.pluginName`
+Default value: [`intellij.pluginName`](#intellij-extension-pluginname)
 
 
 ### sandboxDir
@@ -491,7 +492,7 @@ The sandbox output directory.
 
 **Type:** `String`
 
-Default value: `${prepareSandbox.outputDir}`
+Default value: [`prepareSandbox.outputDir`](#preparesandbox-task)
 
 
 ## listProductsReleases Task
@@ -525,7 +526,7 @@ List of types of IDEs that will be listed in results.
 
 **Type:** `String`
 
-**Default value:** `intellij.type`
+**Default value:** [`intellij.type`](#intellij-extension-type)
 
 
 ### sinceVersion
@@ -699,7 +700,7 @@ The name of the plugin.
 
 **Type:** `String`
 
-**Default value:** `${intellij.pluginName}`
+**Default value:** [`intellij.pluginName`](#intellij-extension-pluginname)
 
 
 ### configDir

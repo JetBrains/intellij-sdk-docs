@@ -15,7 +15,7 @@ Plugin projects targeting [AppCode](https://www.jetbrains.com/objc/) can be deve
 {type="warning"}
 
 The Gradle configuration of AppCode plugin projects uses neither Product-Specific nor IntelliJ IDEA Attributes.
-Instead, configure AppCode plugin projects to use the `intellij.localPath` attribute.
+Instead, configure AppCode plugin projects to use the [`intellij.localPath`](tools_gradle_intellij_plugin.md#intellij-extension-localpath) attribute.
 
 > AppCode plugin development requires installing AppCode locally.
 >

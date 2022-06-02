@@ -72,7 +72,7 @@ For example, see <path>simple_language_plugin/src/main/resources/META-INF/plugin
 
 ## Run the Project
 
-Run the plugin by using the Gradle [runIde task](gradle_prerequisites.md#running-a-simple-gradle-based-intellij-platform-plugin).
+Run the plugin by using the Gradle [`runIde`](gradle_prerequisites.md#running-a-simple-gradle-based-intellij-platform-plugin) task.
 
 Create a <path>test.simple</path>  file with the following content:
 

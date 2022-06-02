@@ -52,7 +52,7 @@ The `SimpleStructureViewFactory` implementation is registered with the IntelliJ 
 
 ## Run the Project
 
-Run the project by using the Gradle [runIde task](gradle_prerequisites.md#running-a-simple-gradle-based-intellij-platform-plugin).
+Run the project by using the Gradle [`runIde`](gradle_prerequisites.md#running-a-simple-gradle-based-intellij-platform-plugin) task.
 
 Open the <path>test.simple</path> file and choose <menupath>View | Tool Windows | Structure</menupath>.
 The IDE now supports a structure view of the Simple Language:

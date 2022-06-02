@@ -105,7 +105,7 @@ As many as possible of the attributes in the Patching DSL will be substituted in
 The best practice to avoid confusion is to replace the elements in <path>plugin.xml</path> that will be patched by the Gradle plugin with a comment.
 That way, the values for these parameters do not appear in two places in the source code.
 The Gradle plugin will add the necessary elements as part of the patching process.
-For those [`patchPluginXml`](tools_gradle_intellij_plugin.md#patchpluginxml-task) attributes that contain descriptions such as [`changeNotes`](tools_gradle_intellij_plugin.md#patchpluginxml-task-changenotes) and [`pluginDescription`](tools_gradle_intellij_plugin.md#patchpluginxml-task-plugindescription), a `CDATA` block is not necessary when using HTML elements.
+For those [`patchPluginXml`](tools_gradle_intellij_plugin.md#patchpluginxml-task) attributes that contain descriptions such as [`patchPluginXml.changeNotes`](tools_gradle_intellij_plugin.md#patchpluginxml-task-changenotes) and [`patchPluginXml.pluginDescription`](tools_gradle_intellij_plugin.md#patchpluginxml-task-plugindescription), a `CDATA` block is not necessary when using HTML elements.
 
 > To maintain and generate an up-to-date changelog, try using [Gradle Changelog Plugin](https://github.com/JetBrains/gradle-changelog-plugin).
 >

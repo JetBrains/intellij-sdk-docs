@@ -83,7 +83,7 @@ Extension Point Lists: Listeners, Deprecation status
 ### July-21
 
 Plugin Signing
-: [](plugin_signing.md) describes the plugin signing process, explains how to generate a certificate, configure the Gradle `signPlugin` task, and introduces a standalone CLI tool.
+: [](plugin_signing.md) describes the plugin signing process, explains how to generate a certificate, configure the Gradle [`signPlugin`](tools_gradle_intellij_plugin.md#signplugin-task) task, and introduces a standalone CLI tool.
 
 ### June-21
 

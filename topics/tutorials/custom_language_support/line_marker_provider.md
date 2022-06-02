@@ -88,7 +88,7 @@ The `SimpleLineMarkerProvider` implementation is registered with the IntelliJ Pl
 
 ## Run the Project
 
-Run the plugin by using the Gradle [runIde task](gradle_prerequisites.md#running-a-simple-gradle-based-intellij-platform-plugin).
+Run the plugin by using the Gradle [`runIde`](gradle_prerequisites.md#running-a-simple-gradle-based-intellij-platform-plugin) task.
 
 Open the Java [Test file](annotator.md#run-the-project).
 Now the icon appears next to line 3 on the gutter.

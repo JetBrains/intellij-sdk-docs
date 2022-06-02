@@ -82,7 +82,7 @@ However, it can be controlled by setting the [`intellij.ideaDependencyCachePath`
 
 ### Controlling Downloads by the Gradle Plugin
 
-As mentioned in the section about [configuring the IntelliJ Platform](#configuring-the-gradle-plugin-for-building-intellij-platform-plugin-projects) used for building plugin projects, the Gradle plugin will fetch the version of the IntelliJ Platform specified by the default or by the `intellij` attributes.
+As mentioned in the section about [configuring the IntelliJ Platform](#configuring-the-gradle-intellij-plugin-for-building-intellij-platform-plugin-projects) used for building plugin projects, the Gradle plugin will fetch the version of the IntelliJ Platform specified by the default or by the `intellij` attributes.
 Standardizing the versions of the Gradle plugin and Gradle system across projects will minimize the time spent downloading versions.
 
 There are controls for managing the [Gradle IntelliJ Plugin](tools_gradle_intellij_plugin.md) version, and the version of Gradle itself.

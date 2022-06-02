@@ -147,4 +147,4 @@ Popular channel names include:
 * `beta`: https://plugins.jetbrains.com/plugins/beta/list
 * `eap`: https://plugins.jetbrains.com/plugins/eap/list
 
-More information about the available configuration options is in the [documentation of the IntelliJ Gradle plugin](https://github.com/JetBrains/gradle-intellij-plugin#publishing-dsl).
+More information about the available configuration options is in the [documentation of the IntelliJ Gradle Plugin](tools_gradle_intellij_plugin.md#publishplugin-task).

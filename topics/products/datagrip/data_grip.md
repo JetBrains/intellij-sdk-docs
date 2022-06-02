@@ -16,15 +16,12 @@ The table below summarizes the `gradle-intellij-plugin` attributes to set in the
 Click on an entry in the table's *Attribute* column to go to the documentation about that attribute.
 To see how these attributes appear in a similar Gradle build script for PhpStorm, see [](dev_alternate_products.md#configuring-gradle-build-script-using-the-intellij-idea-product-attribute).
 
-| `gradle-intellij-plugin` Attribute | Attribute Value                                                                                                                                                                                                       |
-|------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [`intellij.type`][properties]      | `IU` for IntelliJ IDEA Ultimate.<br/>(`IC` is incompatible with the required `DatabaseTools` plugin.)                                                                                                                 |
-| [`intellij.version`][properties]   | `2019.3` Set to the same version as the DataGrip target version, as set by `runIde.ideDir`.                                                                                                                           |
-| [`intellij.plugins`][properties]   | `DatabaseTools` Dependency on the bundled `DatabaseTools` plugin.                                                                                                                                                     |
-| [`runIde.ideDir`][dsl]             | Path to locally installed target version of DataGrip. For example, for macOS:<br/><path>/Users/$USERNAME$/Library/Application Support/JetBrains/Toolbox/apps/datagrip/ch-0/193.5233.139/DataGrip.app/Contents</path>. |
-
-[properties]: https://github.com/JetBrains/gradle-intellij-plugin#intellij-platform-properties
-[dsl]: https://github.com/JetBrains/gradle-intellij-plugin#running-dsl
+| `gradle-intellij-plugin` Attribute                                               | Attribute Value                                                                                                                                                                                                       |
+|----------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [`intellij.type`](tools_gradle_intellij_plugin.md#intellij-extension-type)       | `IU` for IntelliJ IDEA Ultimate.<br/>(`IC` is incompatible with the required `DatabaseTools` plugin.)                                                                                                                 |
+| [`intellij.version`](tools_gradle_intellij_plugin.md#intellij-extension-version) | `2019.3` Set to the same version as the DataGrip target version, as set by `runIde.ideDir`.                                                                                                                           |
+| [`intellij.plugins`](tools_gradle_intellij_plugin.md#intellij-extension-plugins) | `DatabaseTools` Dependency on the bundled `DatabaseTools` plugin.                                                                                                                                                     |
+| [`runIde.ideDir`](tools_gradle_intellij_plugin.md#runide-task-idedir)            | Path to locally installed target version of DataGrip. For example, for macOS:<br/><path>/Users/$USERNAME$/Library/Application Support/JetBrains/Toolbox/apps/datagrip/ch-0/193.5233.139/DataGrip.app/Contents</path>. |
 
 The dependency on the DataGrip APIs must be declared in the <path>plugin.xml</path> file.
 As described in [Modules Specific to Functionality](plugin_compatibility.md#modules-specific-to-functionality) table, the `<depends>` tags must declare `com.intellij.database`.

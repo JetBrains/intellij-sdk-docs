@@ -400,7 +400,7 @@ This task runs a headless IDE instance to collect all the available options prov
 
 Note, that this is a [`runIde`](#runide-task)-based task with predefined arguments and all properties of the [`runIde`](#runide-task) task are also applied to [`buildSearchableOptions`](#buildsearchableoptions-task) tasks.
 
-> If your plugin doesn't implement custom settings, you may [disable it](#how-to-disable-building-searchable-options).
+> If your plugin doesn't implement custom settings, you may [disable it](tools_gradle_intellij_plugin_faq.md#how-to-disable-building-searchable-options).
 >
 {type="tip"}
 

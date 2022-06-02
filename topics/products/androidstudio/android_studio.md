@@ -49,7 +49,7 @@ The use-case of developing for a non-IntelliJ IDEA IDE is reviewed in the [Plugi
 The particular example in that section discusses configuring a plugin project for PhpStorm, so the details for an Android Studio plugin project are reviewed here.
 
 Here are the steps to configure the Gradle build script for developing a plugin to target Android Studio:
-* The Gradle plugin attributes describing the configuration of the [IntelliJ Platform used to build the plugin project](gradle_guide.md#configuring-the-gradle-plugin-for-building-intellij-platform-plugin-projects) must be explicitly set.
+* The Gradle plugin attributes describing the configuration of the [IntelliJ Platform used to build the plugin project](gradle_guide.md#configuring-the-gradle-intellij-plugin-for-building-intellij-platform-plugin-projects) must be explicitly set.
   Continuing with the example [above](#matching-versions-of-the-intellij-platform-with-the-android-studio-version), set the [`intellij.version`](tools_gradle_intellij_plugin.md#intellij-extension-version) value to `191.8026.42`.
   Alternatively, specify [`intellij.localPath`](tools_gradle_intellij_plugin.md#intellij-extension-localpath) to refer to a local installation of Android Studio.
 * Android Studio plugin projects that use APIs from the `android` plugin must declare a dependency on that plugin.

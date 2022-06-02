@@ -43,10 +43,6 @@ Every page **should** provide a short excerpt (usually one sentence) using dedic
 <excerpt>Listeners allow subscription to application and project events.</excerpt>
 ```
 
-### Redirects
-
-Redirects can be specified in the [Table of Contents](#table-of-contents).
-
 ## Content Style
 
 ### Terminology
@@ -63,7 +59,7 @@ Consistent terminology helps the reader grasp new concepts more quickly:
 
 Start every sentence on a new line.
 For very long sentences, add additional line breaks after `,`, `:` or other sensible places.
-Very long links should also be on a separate line.
+Very long [links](#links) should also be on a separate line.
 
 Consistent text styles are used to standardize references and keywords:
 * Menu paths are wrapped using `<menupath>` with pipe characters separating each level: `<menupath>Settings/Preferences | Editor</menupath>`: <menupath>Settings/Preferences | Editor</menupath>

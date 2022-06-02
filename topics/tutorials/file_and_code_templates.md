@@ -2,6 +2,8 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
+<excerpt>File templates allow generating files and code fragments containing repetitive text and patterns.</excerpt>
+
 The _File templates_ mechanism allows generating files and code fragments containing repetitive text and patterns.
 Its main purpose is to relieve users from unnecessary manual work by generating boilerplate code automatically.
 

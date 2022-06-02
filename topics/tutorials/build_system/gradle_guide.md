@@ -140,7 +140,7 @@ This section reviews some of the more common configurations.
 ### Plugins Targeting IntelliJ IDEA
 
 IntelliJ Platform plugins targeting IntelliJ IDEA have the most straightforward Gradle plugin configuration.
-* Determine the version of [IntelliJ IDEA to use for building the plugin project](#configuring-the-gradle-plugin-for-building-intellij-platform-plugin-projects); this is the desired version of the IntelliJ Platform.
+* Determine the version of [IntelliJ IDEA to use for building the plugin project](#configuring-the-gradle-intellij-plugin-for-building-intellij-platform-plugin-projects); this is the desired version of the IntelliJ Platform.
   This can be EAP (default) or determined from the [build number ranges](build_number_ranges.md).
   * If a production version of IntelliJ IDEA is the desired target, set the [`intellij.version`](tools_gradle_intellij_plugin.md#intellij-extension-version) property accordingly.
   * Set the necessary [plugin dependencies](#plugin-dependencies), if any.

@@ -2,7 +2,7 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-The Gradle IntelliJ Plugin is a plugin for the Gradle build system to help configuring your environment for building and testing plugins for IntelliJ-based IDEs.
+The Gradle IntelliJ Plugin is a plugin for the Gradle build system to help configuring your environment for building, testing, verifying, and publishing plugins for IntelliJ-based IDEs.
 
 > Current Gradle IntelliJ Plugin version is [![GitHub Release](https://img.shields.io/github/release/jetbrains/gradle-intellij-plugin.svg?style=flat-square)](https://github.com/jetbrains/gradle-intellij-plugin/releases)
 >
@@ -39,7 +39,7 @@ plugins {
 
 When upgrading to `1.x` version, please make sure to follow [migration guide](https://lp.jetbrains.com/gradle-intellij-plugin) to adjust your existing build script.
 
-> Gradle JVM should be set to `Java 11` (see <path>Settings/Preferences | Build, Execution</path>, <path>Deployment | Build Tools | Gradle</path>)
+> Gradle JVM must be set to `Java 11` (see <path>Settings/Preferences | Build, Execution</path>, <path>Deployment | Build Tools | Gradle</path>)
 >
 {type="tip"}
 
@@ -49,11 +49,13 @@ When upgrading to `1.x` version, please make sure to follow [migration guide](ht
 > ./gradlew wrapper --gradle-version=VERSION
 > ```
 >
+> See also: [Gradle Installation](https://gradle.org/install/) guide.
 {type="tip"}
 
 ### Snapshot Release
-The Snapshot release is a pre-release version built nightly from the latest main branch.
-To use it, it is required to point Gradle to the dedicated snapshot repository by adding an entry to the Gradle settings file.
+The Snapshot release is a pre-release version built nightly from the latest main branch – as it is built every day using the same version number, it's not recommended to use it in production.
+
+For switching to the snapshot release, point Gradle to the dedicated snapshot repository by adding an entry to the Gradle settings file.
 
 > Current Gradle IntelliJ Plugin Snapshot version is [![GitHub Snapshot Release](https://img.shields.io/nexus/s/org.jetbrains.intellij/org.jetbrains.intellij.gradle.plugin?server=https://oss.sonatype.org)](https://github.com/jetbrains/gradle-intellij-plugin/releases)
 >
@@ -233,7 +235,7 @@ Please see [Plugin Dependencies](plugin_dependencies.md) for more details.
 
 Notes:
 - For plugins from [JetBrains Marketplace](https://plugins.jetbrains.com), use format `pluginId:version`.
-- For bundled plugins, version should be omitted: e.g. `org.intellij.groovy`.
+- For bundled plugins, version must be omitted: e.g. `org.intellij.groovy`.
 - For subprojects, use project reference `project(':subproject')`.
 - If you need to refer plugin's classes from your project, you also have to define a dependency in your <path>[plugin.xml](plugin_configuration_file.md)</path> file.
 
@@ -280,7 +282,7 @@ Notes:
 ### instrumentCode
 {id="intellij-extension-instrumentcode"}
 
-Instrument Java classes with [nullability](https://www.jetbrains.com/help/idea/nullable-and-notnull-annotations.html) assertions and compile forms created by [IntelliJ GUI Designer](https://www.jetbrains.com/help/idea/gui-designer-basics.html.
+Instrument Java classes with [nullability](https://www.jetbrains.com/help/idea/nullable-and-notnull-annotations.html) assertions and compile forms created by [IntelliJ GUI Designer](https://www.jetbrains.com/help/idea/gui-designer-basics.html).
 
 **Type:** `Boolean`
 
@@ -1352,151 +1354,3 @@ org.jetbrains.intellij.buildFeature.buildFeatureName=false
 Check if the currently used Gradle IntelliJ Plugin is outdated.
 
 **Default value:** `true`
-
-
-
-## Frequently Asked Questions
-
-### How to modify JVM arguments of runIde task
-[`runIde`](#runide-task) task is a [Java Exec](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html) task and can be modified according to the documentation.
-
-To add some JVM arguments while launching the IDE, configure [`runIde`](#runide-task) task as follows:
-
-<tabs>
-<tab title="Kotlin">
-
-```kotlin
-tasks {
-    runIde {
-        jvmArgs("-DmyProperty=value")
-    }
-}
-```
-
-</tab>
-<tab title="Groovy">
-
-```groovy
-runIde {
-    jvmArgs "-DmyProperty=value"
-}
-```
-
-</tab>
-</tabs>
-
-
-
-### How to modify system properties of runIde task
-Using the [very same task documentation](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html), configure [`runIde`](#runide-task) task:
-
-<tabs>
-<tab title="Kotlin">
-
-```kotlin
-tasks {
-    runIde {
-       systemProperty("name", "value")
-    }
-}
-```
-
-</tab>
-<tab title="Groovy">
-
-```groovy
-runIde {
-    systemProperty("name", "value")
-}
-```
-
-</tab>
-</tabs>
-
-
-### How to disable automatic reload of dynamic plugins
-Configure [`runIde`](#runide-task) task as follows:
-
-<tabs>
-<tab title="Kotlin">
-
-```kotlin
-tasks {
-    runIde {
-        autoReloadPlugins.set(false)
-    }
-}
-```
-
-</tab>
-<tab title="Groovy">
-
-```groovy
-runIde {
-    autoReloadPlugins = false
-}
-```
-
-</tab>
-</tabs>
-
-
-### How to disable building searchable options
-Building searchable options can be disabled as a task:
-
-<tabs>
-<tab title="Kotlin">
-
-```kotlin
-tasks {
-    buildSearchableOptions {
-        enabled = false
-    }
-}
-```
-
-</tab>
-<tab title="Groovy">
-
-```groovy
-buildSearchableOptions.enabled = false
-```
-
-</tab>
-</tabs>
-
-
-### How disabling building searchable options affects the plugin
-As a result of disabling building searchable options, the configurables that your plugin provides won't be searchable in the Settings dialog.
-
-
-### How do I add my a custom file inside plugin distribution
-[`prepareSandbox`](#preparesandbox-task) task is a [`Sync`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.Sync.html) task and can be modified accordingly.
-Something like following should work:
-
-<tabs>
-<tab title="Kotlin">
-
-```kotlin
-tasks {
-    prepareSandbox {
-        from("yourFile") {
-            into("${intellij.pluginName.get()}/lib/")
-        }
-    }
-}
-```
-
-</tab>
-<tab title="Groovy">
-
-```groovy
-prepareSandbox {
-    from("yourFile") {
-        into "${intellij.pluginName.get()}/lib/"
-    }
-}
-```
-
-</tab>
-</tabs>

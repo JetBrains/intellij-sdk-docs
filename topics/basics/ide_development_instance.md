@@ -89,7 +89,7 @@ Set `autoReloadPlugins = true` in [runIde](gradle_prerequisites.md#running-a-sim
 
 After starting the sandbox IDE instance, run `buildPlugin` task after modifications in the plugin project and switch focus back to sandbox instance to trigger reload.
 
-> `buildSearchableOptions` task must currently be [disabled explicitly](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/FAQ.md#how-to-disable-building-searchable-options) to workaround _Only one instance of IDEA can be run at a time_ problem.
+> `buildSearchableOptions` task must currently be [disabled explicitly](tools_gradle_intellij_plugin.md#how-to-disable-building-searchable-options) to workaround _Only one instance of IDEA can be run at a time_ problem.
 >
 {type="warning"}
 

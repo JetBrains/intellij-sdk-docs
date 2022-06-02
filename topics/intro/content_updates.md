@@ -12,6 +12,11 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 
 ## 2022
 
+### June-22
+
+Postfix Completion
+: Add [](postfix_completion.md) section explaining how to implement generating or wrapping the existing code into additional constructs without navigating the caret back.
+
 ### May-22
 
 Navigation Bar

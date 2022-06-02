@@ -264,6 +264,8 @@ For **SVG** images, use this notation:
 The table of contents for the site is displayed in the tree view on the left-hand side of the site, and it is generated from the <path>ijs.tree</path> file.
 The list can have nested items, which are displayed as child items in the table of contents.
 
+If absolutely required, overriding the page title text to show in table of contents is possible via `toc-title` attribute.
+
 ### Placeholders
 
 If a node does not have its `id` attribute specified, it will still appear in the table of contents but will be greyed out and not clickable.
@@ -272,13 +274,13 @@ A placeholder is useful to keep track of what should be documented, but hasn't y
 
 ### Redirects
 
-When renaming pages, redirects should be configured so existing links and bookmarks continue working.
+When renaming pages, redirects **must** be configured so existing bookmarks continue working.
+All existing links in other topics must be updated.
 
-Specify the previous path(s) with <path>.html</path> extension in `accepts-web-file-names` attribute:
+Specify the previous path(s) including <path>.html</path> extension in `accepts-web-file-names` attribute:
 
 ```xml
 <toc-element
     id="fundamentals.md"
-    toc-title="Fundamentals"
     accepts-web-file-names="reference_guide.html,architectural_overview.html"/>
 ```

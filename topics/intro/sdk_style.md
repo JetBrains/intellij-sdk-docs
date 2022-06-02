@@ -2,6 +2,8 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
+<excerpt>Writing and notation styleguide for SDK Docs.</excerpt>
+
 This document describes the writing style used in authoring open-source IntelliJ Platform SDK documentation.
 Before you begin, please read this page thoroughly, as well as the [Code of Conduct](intellij-sdk-docs-original_CODE_OF_CONDUCT.md) and [License](https://github.com/JetBrains/intellij-sdk-docs/blob/main/LICENSE.txt) documents.
 Please see also [](intellij-sdk-docs-original_CONTRIBUTING.md) for some general remarks.
@@ -21,14 +23,27 @@ The documentation files themselves are [Markdown](https://github.github.com/gfm/
 
 ### Page Format
 
-Each Markdown file must contain a header defining its title using the following notation:
+Each Markdown file **must** start with a header defining its title using the following notation:
 
 ```yaml
 [//]: # (title: Contributing to the IntelliJ Platform SDK)
-
-
-Lorem ipsum...
 ```
+
+The page title should be as concise as possible, so it can be reused in the [](#table-of-contents) as is.
+
+It **must** be followed by a copyright notice, formatted using HTML comment notation:
+
+```html
+<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+```
+
+Every page **should** provide a short excerpt (usually one sentence) using dedicated `<excerpt>` tag before the main page contents:
+
+```html
+<excerpt>Listeners allow subscription to application and project events.</excerpt>
+```
+
+### Redirects
 
 Redirects can be specified in the [Table of Contents](#table-of-contents).
 

@@ -101,7 +101,7 @@ my_gradle_plugin
 * The <path>settings.gradle</path> file, containing a definition of the `rootProject.name`.
 * The <path>META-INF</path> directory under the default `main` [SourceSet](https://docs.gradle.org/current/userguide/java_plugin.html#sec:java_project_layout) contains the plugin [configuration file](plugin_configuration_file.md).
 
-> Please note: the generated <path>build.gradle</path> file needs to be adjusted as shown below, as IntelliJ IDEA currently generates template incompatible with gradle-intellij-plugin 1.0 release.
+> Please note: the generated <path>build.gradle</path> file needs to be adjusted as shown below, as IntelliJ IDEA currently generates template incompatible with [Gradle IntelliJ Plugin](tools_gradle_intellij_plugin.md) 1.0 release.
 > See [Upgrade Instructions](https://lp.jetbrains.com/gradle-intellij-plugin/) for more details.
 >
 {type="warning"}

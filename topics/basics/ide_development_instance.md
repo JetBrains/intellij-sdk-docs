@@ -112,7 +112,7 @@ This information is stored in a different location than for the [installed IDE i
 <tabs>
 <tab title="Gradle">
 
-For Gradle-based plugins, the default Sandbox Home location is defined by the IntelliJ Platform `gradle-intellij-plugin`.
+For Gradle-based plugins, the default Sandbox Home location is defined by the [Gradle IntelliJ Plugin](tools_gradle_intellij_plugin.md).
 See [Configuring a Gradle Plugin Project](gradle_prerequisites.md) for more information about specifying a Sandbox Home location.
 
 The default Sandbox Home location is:

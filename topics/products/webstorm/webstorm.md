@@ -3,7 +3,7 @@
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 [WebStorm](https://www.jetbrains.com/webstorm/) is an IntelliJ Platform-based product.
-Plugin projects for WebStorm can be developed using IntelliJ IDEA with the `gradle-intellij-plugin`.
+Plugin projects for WebStorm can be developed using IntelliJ IDEA with the [Gradle IntelliJ Plugin](tools_gradle_intellij_plugin.md).
 
 > Follow [Building a Plugin for WebStorm – Tutorial for JavaScript Developers](learning_resources.md#articles) blog post series to get started.
 >
@@ -16,19 +16,16 @@ Plugin projects for WebStorm can be developed using IntelliJ IDEA with the `grad
 ## Configuring Plugin Projects Targeting WebStorm
 The configuration of WebStorm plugin projects follows the methods described in [Configuring Plugin Projects using the IntelliJ IDEA Product Attribute](dev_alternate_products.md#configuring-plugin-projects-using-the-intellij-idea-product-attribute) and [Configuring the plugin.xml File](dev_alternate_products.md#configuring-pluginxml) for PhpStorm.
 
-The table below summarizes the `gradle-intellij-plugin` attributes to set in the plugin project's Gradle build script.
+The table below summarizes the [Gradle IntelliJ Plugin](tools_gradle_intellij_plugin.md) attributes to set in the plugin project's Gradle build script.
 Click on an entry in the table's *Attribute* column to go to the documentation about that attribute.
 To see how these attributes appear in a similar Gradle build script for PhpStorm, see [](dev_alternate_products.md#configuring-gradle-build-script-using-the-intellij-idea-product-attribute).
 
-| `gradle-intellij-plugin` Attribute | Attribute Value                                                                                                                                                                                                      |
-|------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [`intellij.type`][properties]      | `IU` for IntelliJ IDEA Ultimate.<br/>(`IC` is incompatible with the required `JavaScriptLanguage` plugin)                                                                                                            |
-| [`intellij.version`][properties]   | `192.7142.36` Set to the same BRANCH.BUILD as the WebStorm target version.                                                                                                                                           |
-| [`intellij.plugins`][properties]   | Dependency on the `JavaScriptLanguage` plugin.                                                                                                                                                                       |
-| [`runIde.ideDir`][dsl]             | Path to locally installed target version of WebStorm. For example, for macOS:<br/><path>/Users/$USERNAME$/Library/Application Support/JetBrains/Toolbox/apps/WebStorm/ch-0/192.7142.35/WebStorm.app/Contents</path>. |
-
-[properties]: https://github.com/JetBrains/gradle-intellij-plugin#intellij-platform-properties
-[dsl]: https://github.com/JetBrains/gradle-intellij-plugin#running-dsl
+| `gradle-intellij-plugin` Attribute                                               | Attribute Value                                                                                                                                                                                                      |
+|----------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [`intellij.type`](tools_gradle_intellij_plugin.md#intellij-extension-type)       | `IU` for IntelliJ IDEA Ultimate.<br/>(`IC` is incompatible with the required `JavaScriptLanguage` plugin)                                                                                                            |
+| [`intellij.version`](tools_gradle_intellij_plugin.md#intellij-extension-version) | `192.7142.36` Set to the same BRANCH.BUILD as the WebStorm target version.                                                                                                                                           |
+| [`intellij.plugins`](tools_gradle_intellij_plugin.md#intellij-extension-plugins) | Dependency on the `JavaScriptLanguage` plugin.                                                                                                                                                                       |
+| [`runIde.ideDir`](tools_gradle_intellij_plugin.md#runide-task-idedir)            | Path to locally installed target version of WebStorm. For example, for macOS:<br/><path>/Users/$USERNAME$/Library/Application Support/JetBrains/Toolbox/apps/WebStorm/ch-0/192.7142.35/WebStorm.app/Contents</path>. |
 
 The dependency on the WebStorm APIs must be declared in the <path>plugin.xml</path> file.
 As described in [Modules Specific to Functionality](plugin_compatibility.md#modules-specific-to-functionality) table, the `<depends>` tags must declare `JavaScriptLanguage`.

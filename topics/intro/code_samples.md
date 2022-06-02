@@ -34,4 +34,4 @@ Invoke <control>Reload All Gradle Projects</control> from the Gradle tool window
 
 ## Running Code Samples
 
-Run the plugin by using the Gradle [runIde task](gradle_prerequisites.md#executing-the-plugin) shown under the corresponding project's <control>Tasks</control> node in the <control>Gradle</control> tool window.
+Run the plugin by using the Gradle [`runIde`](gradle_prerequisites.md#executing-the-plugin) task shown under the corresponding project's <control>Tasks</control> node in the <control>Gradle</control> tool window.

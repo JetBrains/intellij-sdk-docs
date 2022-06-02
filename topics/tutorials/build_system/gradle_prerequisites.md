@@ -101,7 +101,7 @@ my_gradle_plugin
 * The <path>settings.gradle</path> file, containing a definition of the `rootProject.name`.
 * The <path>META-INF</path> directory under the default `main` [SourceSet](https://docs.gradle.org/current/userguide/java_plugin.html#sec:java_project_layout) contains the plugin [configuration file](plugin_configuration_file.md).
 
-> Please note: the generated <path>build.gradle</path> file needs to be adjusted as shown below, as IntelliJ IDEA currently generates template incompatible with gradle-intellij-plugin 1.0 release.
+> Please note: the generated <path>build.gradle</path> file needs to be adjusted as shown below, as IntelliJ IDEA currently generates template incompatible with [Gradle IntelliJ Plugin](tools_gradle_intellij_plugin.md) 1.0 release.
 > See [Upgrade Instructions](https://lp.jetbrains.com/gradle-intellij-plugin/) for more details.
 >
 {type="warning"}
@@ -138,14 +138,13 @@ patchPluginXml {
 
 * Two plugins to Gradle are explicitly declared:
   * The [Gradle Java](https://docs.gradle.org/current/userguide/java_plugin.html) plugin.
-  * The [gradle-intellij-plugin](https://github.com/JetBrains/gradle-intellij-plugin/).
+  * The [Gradle IntelliJ Plugin](tools_gradle_intellij_plugin.md).
 * The <control>GroupId</control> from the Wizard [Project Naming/Artifact Coordinates Screen](#project-namingartifact-coordinates-screen) is the `project.group` value.
 * The <control>Version</control> from the Wizard [Project Naming/Artifact Coordinates Screen](#project-namingartifact-coordinates-screen) is the `project.version` value.
 * The `sourceCompatibility` line is injected to enforce using Java 8 JDK to compile Java sources.
-* The only comment in the file is a link to the [README.md](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md) for the gradle-intellij-plugin, which is a reference for its configuration DSL.
-* The value of the Setup DSL attribute `intellij.version` specifies the version of the IntelliJ Platform to be used to build the plugin.
+* The value of the [`intellij.version`](tools_gradle_intellij_plugin.md#intellij-extension-version) property specifies the version of the IntelliJ Platform to be used to build the plugin.
   It defaults to the version of IntelliJ IDEA that was used to run the New Project Wizard.
-* The value of the Patching DSL attribute `patchPluginXml.changeNotes` is set to a placeholder text.
+* The value of the [`patchPluginXml.changeNotes`](tools_gradle_intellij_plugin.md#patchpluginxml-task-changenotes) property is set to a placeholder text.
 
 #### Plugin Gradle Properties and Plugin Configuration File Elements
 

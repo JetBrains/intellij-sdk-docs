@@ -12,6 +12,11 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 
 ## 2022
 
+### Jun-02
+
+Gradle IntelliJ Plugin
+: Add [](tools_gradle_intellij_plugin.md) documentation to the Appendix III – Tools
+
 ### May-22
 
 Navigation Bar

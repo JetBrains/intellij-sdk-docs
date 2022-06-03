@@ -186,6 +186,10 @@
     <toc-element toc-title="Navigation"/>
     <toc-element id="editing.md">
       <toc-element toc-title="Code Completion"/>
+      <toc-element id="postfix_completion.md">
+        <toc-element id="postfix_templates.md"/>
+        <toc-element id="advanced_postfix_templates.md"/>
+      </toc-element>
       <toc-element id="templates.md">
         <toc-element id="live_templates.md">
           <toc-element id="template_support.md"/>

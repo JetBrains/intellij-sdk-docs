@@ -62,12 +62,15 @@ Marked parts will be highlighted in the <menupath>Settings/Preferences | Editor 
 Template example files can also use the `$key` placeholder which is replaced with the actual template key in the preview UI, e.g., consider a template with the `var` key:
 
 <compare title-before="Content" title-after="Rendition">
-  <code style="block" lang="Text">
-    cart.getProducts()$key
-  </code>
-  <code style="block" lang="Text">
-    cart.getProducts().var
-  </code>
+
+```java
+cart.getProducts()$key
+```
+
+```java
+cart.getProducts().var
+```
+
 </compare>
 
 The gutter icons for a postfix template class allow navigating to the corresponding description and before/after files in plugin resources.

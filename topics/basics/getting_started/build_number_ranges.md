@@ -3,7 +3,7 @@
 
 Use this reference of build number ranges to specify the correct `since-build` and `until-build` values in your plugin descriptor.
 
-Setting the actual values in <path>plugin.xml</path> is usually managed by `patchPluginXml` Gradle task, see [Patching the Plugin Configuration File](gradle_guide.md#patching-the-plugin-configuration-file) for details.
+Setting the actual values in <path>plugin.xml</path> is usually managed by [`patchPluginXml`](tools_gradle_intellij_plugin.md#patchpluginxml-task) Gradle task, see [Patching the Plugin Configuration File](gradle_guide.md#patching-the-plugin-configuration-file) for details.
 
 > Compatibility with the specified version range (and compatible products) must always be verified using [Plugin Verifier](api_changes_list.md#verifying-compatibility) to ensure binary compatibility.
 >
@@ -12,7 +12,7 @@ Setting the actual values in <path>plugin.xml</path> is usually managed by `patc
 >
 {type="warning"}
 
-Starting with IntelliJ IDEA 9 beta, a multi-part build number is used, such as `IU-162.94`.
+Starting with IntelliJ IDEA 9 beta, a multipart build number is used, such as `IU-162.94`.
 
 The number consists of the following parts:
 

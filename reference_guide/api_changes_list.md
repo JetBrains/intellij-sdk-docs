@@ -71,7 +71,7 @@ Compatibility with newer IDEs can easily be verified for plugins hosted on the [
 
 For local verification or non-public plugins, [intellij-plugin-verifier](https://github.com/JetBrains/intellij-plugin-verifier) can be used standalone as well.
 
-Integration in [Gradle build](gradle_build_system.md) is available using the `runPluginVerifier` task, please see [Gradle IntelliJ Plugin - Plugin Verifier DSL](https://github.com/JetBrains/gradle-intellij-plugin#plugin-verifier-dsl) for details.
+Integration in [Gradle build](gradle_build_system.md) is available using the [`runPluginVerifier`](tools_gradle_intellij_plugin.md#runpluginverifier-task) task, please see [Gradle IntelliJ Plugin - Plugin Verifier](tools_gradle_intellij_plugin.md#runpluginverifier-task) for details.
 
 You can easily integrate it within your CI by running that task as another quality check step.
 Check the IntelliJ Platform Plugin Template [GitHub workflow configuration file](https://github.com/JetBrains/intellij-platform-plugin-template/blob/main/.github/workflows/build.yml) as sample.

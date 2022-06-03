@@ -3,7 +3,7 @@
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 A JetBrains feature for developing plugins is running or debugging a plugin project from within an IntelliJ Platform-based IDE such as IntelliJ IDEA.
-Selecting the [runIde](gradle_prerequisites.md#running-a-simple-gradle-based-intellij-platform-plugin) task for a Gradle-based project (or [Run](running_and_debugging_a_plugin.md) menu for a DevKit-based project) will launch a _Development Instance_ of the IDE with the plugin enabled.
+Selecting the [`runIde`](gradle_prerequisites.md#running-a-simple-gradle-based-intellij-platform-plugin) task for a Gradle-based project (or [Run](running_and_debugging_a_plugin.md) menu for a DevKit-based project) will launch a _Development Instance_ of the IDE with the plugin enabled.
 This page describes how to control some of the settings for the Development Instance.
 
 > Please see also [Advanced Configuration](https://www.jetbrains.com/help/idea/tuning-the-ide.html) for general VM options and properties.
@@ -23,8 +23,8 @@ To produce accurate results while running or debugging a plugin project in a Dev
 The JetBrains Runtime is determined from the JDK version used to build the plugin project, regardless of whether it is built on macOS, Windows, or Linux.
 For example, if a plugin is developed against the Java 8 SE Development Kit 8 for macOS (<path>jdk-8u212-macosx-x64.dmg</path>) to acquire the compatible JetBrains Runtime:
 
-* Go to the [JetBrains Runtime Site](https://confluence.jetbrains.com/display/JBR/JetBrains+Runtime) for general information and the latest build.
-* Open the [Release notes](https://confluence.jetbrains.com/display/JBR/Release+notes) page to access all releases.
+* Go to the [GitHub JetBrains Runtime Releases](https://github.com/JetBrains/JetBrainsRuntime) for general information and the latest build.
+* Open the [Releases](https://github.com/JetBrains/JetBrainsRuntime/releases) page to access all releases.
 * Select the package name corresponding to the platform and SDK version.
   In this case, the package name is `jbrsdk8-osx-x64` for **J**et**B**rains **R**untime _SDK_ version 8, macOS x64 hardware.
 * On the macOS package page of the JetBrains Bintray site, select the **Files** menu.
@@ -34,12 +34,27 @@ For example, if a plugin is developed against the Java 8 SE Development Kit 8 fo
   * Pick the highest JetBrains Runtime build number available.
     For example, the file is <path>jbrx-8u252-osx-x64-b1649.2.tar.gz</path>, meaning build 1649.2 for this JetBrains Runtime matching Java 8 JDK build 252.
 
+### JetBrains Runtime Variants
+The JetBrains Runtime is delivered in various variants used for different purposes, like debugging, running for development purposes or bundling with the IDE.
+
+Available JBR variants are:
+- `jcef` - the release bundles with the [JCEF](jcef.md) browser engine
+- `sdk` - JBR SDK bundle used for development purposes
+- `fd` - the fastdebug bundle which also includes the `jcef` module
+- `dcevm` - bundles DCEVM (Dynamic Code Evolution Virtual Machine)
+- `nomod` – the release bundled without any additional modules
+
+> For `JBR 17`, `dcevm` is bundled by default.
+> As a consequence, separated `dcevm` and `nomod` variants are no longer available.
+>
+{type="note"}
+
 <tabs>
 
 <tab title="Gradle">
 
 By default, the Gradle plugin will fetch and use the version of the JetBrains Runtime for the Development Instance corresponding to the version of the IntelliJ Platform used for building the plugin project.
-If required, an alternative version can be specified using `jbrVersion` attribute of `runIde` [task](https://github.com/JetBrains/gradle-intellij-plugin/#running-dsl).
+If required, an alternative version can be specified using [`runIde.jbrVersion`](tools_gradle_intellij_plugin.md#runide-task-jbrversion) task property.
 
 </tab>
 
@@ -70,11 +85,11 @@ Please note that any unloading problems in a production environment will ask the
 
 Enabled by default for target platform 2020.2 or later.
 
-Set `autoReloadPlugins = true` in [runIde](gradle_prerequisites.md#running-a-simple-gradle-based-intellij-platform-plugin) task to enable it for earlier platform versions or `autoReloadPlugins = false` to disable it explicitly.
+Set `intellij.autoReloadPlugins = true` in [`runIde`](gradle_prerequisites.md#running-a-simple-gradle-based-intellij-platform-plugin) task to enable it for earlier platform versions or `intellij.autoReloadPlugins = false` to disable it explicitly.
 
-After starting the sandbox IDE instance, run `buildPlugin` task after modifications in the plugin project and switch focus back to sandbox instance to trigger reload.
+After starting the sandbox IDE instance, run [`buildPlugin`](tools_gradle_intellij_plugin.md#buildplugin-task) task after modifications in the plugin project and switch focus back to sandbox instance to trigger reload.
 
-> `buildSearchableOptions` task must currently be [disabled explicitly](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/FAQ.md#how-to-disable-building-searchable-options) to workaround _Only one instance of IDEA can be run at a time_ problem.
+> [`buildSearchableOptions`](tools_gradle_intellij_plugin.md#buildsearchableoptions-task) task must currently be [disabled explicitly](tools_gradle_intellij_plugin_faq.md#how-to-disable-building-searchable-options) to workaround _Only one instance of IDEA can be run at a time_ problem.
 >
 {type="warning"}
 
@@ -97,7 +112,7 @@ This information is stored in a different location than for the [installed IDE i
 <tabs>
 <tab title="Gradle">
 
-For Gradle-based plugins, the default Sandbox Home location is defined by the IntelliJ Platform `gradle-intellij-plugin`.
+For Gradle-based plugins, the default Sandbox Home location is defined by the [Gradle IntelliJ Plugin](tools_gradle_intellij_plugin.md).
 See [Configuring a Gradle Plugin Project](gradle_prerequisites.md) for more information about specifying a Sandbox Home location.
 
 The default Sandbox Home location is:

@@ -3,7 +3,7 @@
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 [CLion](https://www.jetbrains.com/clion/) is an IntelliJ Platform-based product.
-Plugin projects for CLion can be developed using IntelliJ IDEA with the `gradle-intellij-plugin`.
+Plugin projects for CLion can be developed using IntelliJ IDEA with the [Gradle IntelliJ Plugin](tools_gradle_intellij_plugin.md).
 
 > Qualifying Open Source projects can [apply for free licenses](https://www.jetbrains.com/community/opensource/) of JetBrains products.
 >
@@ -17,19 +17,16 @@ Plugin projects for CLion can be developed using IntelliJ IDEA with the `gradle-
 
 The configuration of CLion plugin projects follows the methods described in [Configuring Plugin Projects using a Product-Specific Attribute](dev_alternate_products.md#configuring-plugin-projects-using-a-product-specific-attribute), and [Configuring the plugin.xml File](dev_alternate_products.md#configuring-pluginxml).
 
-The table below summarizes the `gradle-intellij-plugin` attributes to set in the plugin project's Gradle build script.
+The table below summarizes the [Gradle IntelliJ Plugin](tools_gradle_intellij_plugin.md) attributes to set in the plugin project's Gradle build script.
 Click on an entry in the table's *Attribute* column to go to the documentation about that attribute.
 
-| `gradle-intellij-plugin` Attribute       | Attribute Value                                                                |
-|------------------------------------------|--------------------------------------------------------------------------------|
-| [`intellij.type`][properties]            | `CL` for the product CLion.                                                    |
-| [`intellij.version`][properties]         | Set to the targeted CLion version, e.g. `2019.3.1`.                            |
-| [`intellij.plugins`][properties]         | No specific declaration is needed.                                             |
-| [`intellij.downloadSources`][properties] | `false` is required because no public source code is available.                |
-| [`runIde.ideDir`][dsl]                   | Not needed; the Development Instance will automatically match `intellij.type`. |
-
-[properties]: https://github.com/JetBrains/gradle-intellij-plugin#intellij-platform-properties
-[dsl]: https://github.com/JetBrains/gradle-intellij-plugin#running-dsl
+| `gradle-intellij-plugin` Attribute                                                               | Attribute Value                                                                |
+|--------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------|
+| [`intellij.type`](tools_gradle_intellij_plugin.md#intellij-extension-type)                       | `CL` for the product CLion.                                                    |
+| [`intellij.version`](tools_gradle_intellij_plugin.md#intellij-extension-version)                 | Set to the targeted CLion version, e.g. `2019.3.1`.                            |
+| [`intellij.plugins`](tools_gradle_intellij_plugin.md#intellij-extension-plugins)                 | No specific declaration is needed.                                             |
+| [`intellij.downloadSources`](tools_gradle_intellij_plugin.md#intellij-extension-downloadsources) | `false` is required because no public source code is available.                |
+| [`runIde.ideDir`](tools_gradle_intellij_plugin.md#runide-task-idedir)                            | Not needed; the Development Instance will automatically match `intellij.type`. |
 
 The dependency on the CLion APIs must be declared in the <path>plugin.xml</path> file.
 As described in [Modules Specific to Functionality](plugin_compatibility.md#modules-specific-to-functionality) table, the `<depends>` tags must declare `com.intellij.modules.clion` module dependency, or `com.intellij.clion` plugin dependency for plugins targeting only versions 2020.3+.

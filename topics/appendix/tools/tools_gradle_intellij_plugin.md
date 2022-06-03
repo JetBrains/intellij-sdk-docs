@@ -10,18 +10,22 @@ The Gradle IntelliJ Plugin is a plugin for the Gradle build system to help confi
 
 This plugin allows you to build plugins for IntelliJ Platform using specified IntelliJ SDK and bundled or third-party plugins.
 
-The plugin adds extra IntelliJ-specific dependencies, patches `processResources` tasks to fill some tags (name, version) in <path>[plugin.xml](plugin_configuration_file.md)</path> with appropriate values, patches compile tasks to instrument code with nullability assertions and forms classes made with IntelliJ GUI Designer and provides some build steps which might be helpful while developing plugins for IntelliJ platform.
+The plugin provides the functionalities like:
+- adding extra IntelliJ-specific dependencies
+- patching `processResources` tasks to fill some tags (name, version) in <path>[plugin.xml](plugin_configuration_file.md)</path> with appropriate values
+- patching compile tasks to instrument code with nullability assertions and form classes made with IntelliJ GUI Designer
+- additional build steps which might be helpful while developing plugins for IntelliJ platform
 
 
 ## Usage
-To enable this plugin in your Gradle-based project, add the following entry to the `plugins` section:
+To enable this plugin in your Gradle-based project, register the plugin in the Gradle build script's `plugins` section:
 
 <tabs>
 <tab title="Kotlin">
 
 ```kotlin
 plugins {
-    id("org.jetbrains.intellij") version "..."
+  id("org.jetbrains.intellij") version "..."
 }
 ```
 
@@ -30,7 +34,7 @@ plugins {
 
 ```groovy
 plugins {
-    id "org.jetbrains.intellij" version "..."
+  id "org.jetbrains.intellij" version "..."
 }
 ```
 
@@ -53,11 +57,11 @@ When upgrading to `1.x` version, please make sure to follow [migration guide](ht
 {type="tip"}
 
 ### Snapshot Release
-The Snapshot release is a pre-release version built nightly from the latest main branch – as it is built every day using the same version number, it's not recommended to use it in production.
+The Snapshot release is a pre-release version built nightly from the latest main branch – as it is built every day using the same version number, it's not recommended to use it for production builds.
 
 For switching to the snapshot release, point Gradle to the dedicated snapshot repository by adding an entry to the Gradle settings file.
 
-> Current Gradle IntelliJ Plugin Snapshot version is ![GitHub Snapshot Release](https://img.shields.io/nexus/s/org.jetbrains.intellij/org.jetbrains.intellij.gradle.plugin?server=https://oss.sonatype.org)
+> The current Gradle IntelliJ Plugin Snapshot version is ![GitHub Snapshot Release](https://img.shields.io/nexus/s/org.jetbrains.intellij/org.jetbrains.intellij.gradle.plugin?server=https://oss.sonatype.org)
 >
 {type="note"}
 
@@ -196,7 +200,7 @@ Acceptable values
 ### pluginName
 {id="intellij-extension-pluginname"}
 
-The name of the generated ZIP archive distribution: `/build/distributions/PluginName-1.0.0.zip`.
+The plugin name part used in the generated ZIP distribution: `build/distributions/PluginName-1.0.0.zip` and name of the plugin directory in the sandbox directory.
 
 {style="narrow"}
 Type
@@ -280,7 +284,7 @@ Acceptable values
 ### updateSinceUntilBuild
 {id="intellij-extension-updatesinceuntilbuild"}
 
-Defines if the <path>[plugin.xml](plugin_configuration_file.md)</path> should be patched with the values of [`patchPluginXml.sinceBuild`](#patchpluginxml-task-sincebuild) and [`patchPluginXml.untilBuild`](#patchpluginxml-task-untilbuild) properties.
+Enables patching <path>[plugin.xml](plugin_configuration_file.md)</path> with the values of [`patchPluginXml.sinceBuild`](#patchpluginxml-task-sincebuild) and [`patchPluginXml.untilBuild`](#patchpluginxml-task-untilbuild) properties.
 
 {style="narrow"}
 Type
@@ -293,7 +297,7 @@ Default value
 ### sameSinceUntilBuild
 {id="intellij-extension-samesinceuntilbuild"}
 
-Patches <path>[plugin.xml](plugin_configuration_file.md)</path> with the [`patchPluginXml.untilBuild`](#patchpluginxml-task-untilbuild) with the value of [`patchPluginXml.sinceBuild`](#patchpluginxml-task-sincebuild) used with `*` wildcard, like `sinceBuild.*`, e.g., `221.*`.
+Enables patching <path>[plugin.xml](plugin_configuration_file.md)</path> with the [`patchPluginXml.untilBuild`](#patchpluginxml-task-untilbuild) with the value of [`patchPluginXml.sinceBuild`](#patchpluginxml-task-sincebuild) used with `*` wildcard, like `sinceBuild.*`, e.g., `221.*`.
 
 Notes:
 - Useful for building plugins against EAP IDE builds.
@@ -310,7 +314,7 @@ Default value
 ### instrumentCode
 {id="intellij-extension-instrumentcode"}
 
-Instrument Java classes with [nullability](https://www.jetbrains.com/help/idea/nullable-and-notnull-annotations.html) assertions and compile forms created by [IntelliJ GUI Designer](https://www.jetbrains.com/help/idea/gui-designer-basics.html).
+Enables the instrumentation of Java classes with [nullability](https://www.jetbrains.com/help/idea/nullable-and-notnull-annotations.html) assertions and compilation of forms created by [IntelliJ GUI Designer](https://www.jetbrains.com/help/idea/gui-designer-basics.html).
 
 {style="narrow"}
 Type
@@ -396,7 +400,7 @@ Default value
 ### downloadSources
 {id="intellij-extension-downloadsources"}
 
-Download IntelliJ Platform sources.
+Enables downloading the IntelliJ Platform sources.
 It is enabled by default if the `CI` environment variable is not set – which is present on Continuous Integration environments, like GitHub Actions, TeamCity, and others.
 
 {style="narrow"}
@@ -410,8 +414,8 @@ Default value
 ### configureDefaultDependencies
 {id="intellij-extension-configuredefaultdependencies"}
 
-If enabled, automatically configures the default IntelliJ Platform dependencies in the current project.
-Otherwise, the `DependenciesUtils.intellij`, `DependenciesUtils.intellijPlugin`, and `DependenciesUtils.intellijPlugins` functions could be used for an explicit configuration.
+Enables configuration of the default IntelliJ Platform dependencies in the current project.
+Otherwise, the `DependenciesUtils.intellij()`, `DependenciesUtils.intellijPlugin()`, and `DependenciesUtils.intellijPlugins()` functions could be used for an explicit configuration.
 
 {style="narrow"}
 Type
@@ -424,8 +428,8 @@ Default value
 ### extraDependencies
 {id="intellij-extension-extradependencies"}
 
-Configure extra dependency artifacts from the IntelliJ repository.
-The dependencies on them could be configured only explicitly using the `DependenciesUtils.intellijExtra` function in the `dependencies` block.
+Configures extra dependency artifacts from the IntelliJ repository.
+The dependencies on them could be configured only explicitly using the `DependenciesUtils.intellijExtra()` function in the `dependencies` block.
 
 {style="narrow"}
 Type
@@ -436,7 +440,7 @@ Default value
 
 
 ## buildPlugin Task
-Assembles plugin and prepares ZIP archive for [deployment](deployment.md).
+Assembles a plugin and prepares ZIP archive for [deployment](deployment.md).
 
 ### archiveBaseName
 {id="buildplugin-task-archivebasename"}
@@ -459,7 +463,7 @@ This task runs a headless IDE instance to collect all the available options prov
 
 Note, that this is a [`runIde`](#runide-task)-based task with predefined arguments and all properties of the [`runIde`](#runide-task) task are also applied to [`buildSearchableOptions`](#buildsearchableoptions-task) tasks.
 
-> If your plugin doesn't implement custom settings, you may [disable it](tools_gradle_intellij_plugin_faq.md#how-to-disable-building-searchable-options).
+> If your plugin doesn't implement custom settings, it is recommended to [disable it](tools_gradle_intellij_plugin_faq.md#how-to-disable-building-searchable-options).
 >
 {type="tip"}
 
@@ -496,7 +500,7 @@ Default value
 ### pluginArchive
 {id="downloadrobotserverplugin-task-pluginarchive"}
 
-The archive with the Robot Server Plugin, downloaded by default to the [Gradle cache](https://docs.gradle.org/current/userguide/directory_layout.html#dir:gradle_user_home).
+The Robot Server Plugin archive, downloaded by default to the [Gradle cache](https://docs.gradle.org/current/userguide/directory_layout.html#dir:gradle_user_home).
 
 {style="narrow"}
 Type
@@ -550,7 +554,8 @@ The output directory where the JAR file will be created.
 Type
 : `String`
 
-Default value: `build/searchableOptions`
+Default value
+: `build/searchableOptions`
 
 
 ### pluginName
@@ -562,7 +567,8 @@ The name of the plugin.
 Type
 : `String`
 
-Default value: [`intellij.pluginName`](#intellij-extension-pluginname)
+Default value
+: [`intellij.pluginName`](#intellij-extension-pluginname)
 
 
 ### sandboxDir
@@ -574,7 +580,8 @@ The sandbox output directory.
 Type
 : `String`
 
-Default value: [`prepareSandbox.outputDir`](#preparesandbox-task)
+Default value
+: [`prepareSandbox.outputDir`](#preparesandbox-task)
 
 
 ## listProductsReleases Task
@@ -594,14 +601,13 @@ The result list is stored within the [`listProductsReleases.outputFile`](#listpr
 {id="listproductsreleases-task-updatesfile"}
 
 Path to the products releases update file.
-By default, falls back to the Gradle cache.
 
 {style="narrow"}
 Type
 : `List<String>`
 
 Default value
-: _Gradle cache_
+: [Gradle cache](https://docs.gradle.org/current/userguide/directory_layout.html#dir:gradle_user_home)
 
 
 ### types
@@ -620,8 +626,8 @@ Default value
 ### sinceVersion
 {id="listproductsreleases-task-sinceversion"}
 
-Lower boundary of the listed results in product marketing version format, like `2020.2.1`.
-Takes precedence over [`listProductsReleases.sinceBuild`](#listproductsreleases-task-sincebuild) property.
+Lower boundary of the listed results in product marketing version format, e.g., `2020.2.1`.
+It takes precedence over [`listProductsReleases.sinceBuild`](#listproductsreleases-task-sincebuild) property.
 
 {style="narrow"}
 Type
@@ -634,8 +640,8 @@ Default value
 ### untilVersion
 {id="listproductsreleases-task-untilversion"}
 
-Upper boundary of the listed results in product marketing version format, like `2020.2.1`.
-Takes precedence over [`listProductsReleases.untilBuild`](#listproductsreleases-task-untilbuild) property.
+Upper boundary of the listed results in product marketing version format, e.g., `2020.2.1`.
+It takes precedence over [`listProductsReleases.untilBuild`](#listproductsreleases-task-untilbuild) property.
 
 {style="narrow"}
 Type
@@ -747,7 +753,7 @@ Default value
 ### pluginDescription
 {id="patchpluginxml-task-plugindescription"}
 
-The description of the plugin – will be set to the `<description>` tag.
+The description of the plugin used in the `<description>` tag.
 
 {style="narrow"}
 Type
@@ -760,7 +766,7 @@ Default value
 ### sinceBuild
 {id="patchpluginxml-task-sincebuild"}
 
-The lower bound of the version range to be patched – will be set for the `since-build` attribute of the `<idea-version>` tag.
+The lower bound of the version range to be patched used in the `since-build` attribute of the `<idea-version>` tag.
 
 {style="narrow"}
 Type
@@ -773,7 +779,7 @@ Default value
 ### untilBuild
 {id="patchpluginxml-task-untilbuild"}
 
-The upper bound of the version range to be patched – will be set for the `until-build` attribute of the `<idea-version>` tag.
+The upper bound of the version range to be patched used in the `until-build` attribute of the `<idea-version>` tag.
 
 {style="narrow"}
 Type
@@ -786,7 +792,7 @@ Default value
 ### version
 {id="patchpluginxml-task-version"}
 
-The version of the plugin – will be set for the `<version>` tag.
+The version of the plugin used in the `<version>` tag.
 
 {style="narrow"}
 Type
@@ -799,7 +805,7 @@ Default value
 ### changeNotes
 {id="patchpluginxml-task-changenotes"}
 
-The change notes of the plugin – will be set for the `<change-notes>` tag.
+The change notes of the plugin used in the `<change-notes>` tag.
 
 {style="narrow"}
 Type
@@ -812,7 +818,7 @@ Default value
 ### pluginId
 {id="patchpluginxml-task-pluginid"}
 
-The ID of the plugin – will be set for the `<id>` tag.
+The ID of the plugin used in the `<id>` tag.
 
 {style="narrow"}
 Type
@@ -862,7 +868,7 @@ Type
 : `File`
 
 Default value
-: `jar` task output
+: output of the `jar` task
 
 
 ### librariesToIgnore
@@ -986,7 +992,7 @@ Default value
 ## runIde Task
 Runs the IDE instance with the developed plugin installed.
 
-`RunIde` tasks extend the [`JavaExec`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html) Gradle task – all properties available in the `JavaExec` as well as the following ones can be used to configure the `runIde` taks.
+`RunIde` tasks extend the [`JavaExec`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html) Gradle task – all properties available in the `JavaExec` as well as the following ones can be used to configure the `runIde` task.
 
 
 ### ideDir
@@ -1081,7 +1087,7 @@ See [`runIde`](#runide-task) task for more details.
 ## runIdePerformanceTest Task
 Runs performance tests on the IDE with the developed plugin installed.
 
-`RunIdePerformanceTest` task extends the `RunIdeBase` task, all configuration attributes of `JavaExec` and [`RunIde`](#runide-task) task can be used in `RunIdePerformanceTest` as well.
+The `runIdePerformanceTest` task extends the `RunIdeBase` task, so all configuration attributes of `JavaExec` and [`runIde`](#runide-task) tasks can be used in the `runIdePerformanceTest` as well.
 See [`runIde`](#runide-task) task for more details.
 
 Currently, the task is under adaptation, more documentation will be added in the future.
@@ -1162,7 +1168,7 @@ Default value
 ### verifierVersion
 {id="runpluginverifier-task-verifierversion"}
 
-IntelliJ Plugin Verifier version, by default uses the latest available.
+IntelliJ Plugin Verifier version.
 Do not change unless absolutely required.
 
 {style="narrow"}
@@ -1170,13 +1176,13 @@ Type
 : `String`
 
 Default value
-: `latest`
+: `LATEST`
 
 
 ### verifierPath
 {id="runpluginverifier-task-verifierpath"}
 
-IntelliJ Plugin Verifier local path to the pre-downloaded JAR file.
+Local path to the pre-downloaded IntelliJ Plugin Verifier JAR file.
 If set, [`runPluginVerifier.verifierVersion`](#runpluginverifier-task-verifierversion) is ignored.
 
 {style="narrow"}
@@ -1240,7 +1246,7 @@ Accepted values
 - `FailureLevel.MISSING_DEPENDENCIES` - Missing dependencies
 - `FailureLevel.INVALID_PLUGIN` - The following files specified for the verification are not valid plugins
 - `FailureLevel.NOT_DYNAMIC` - Plugin cannot be loaded/unloaded without IDE restart
-- `FailureLevel.ALL` - All of above
+- `FailureLevel.ALL` - All of the above
 - `FailureLevel.NONE` - None of above
 
 
@@ -1282,7 +1288,7 @@ Type
 Default value
 : `null`
 
-Accepted values
+Acceptable values
 :
 - `8u112b752.4`
 - `8u202b1483.24`

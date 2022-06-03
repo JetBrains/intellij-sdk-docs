@@ -59,7 +59,7 @@ methods:
   [`PostfixTemplateEditor`](upsource:///platform/lang-impl/src/com/intellij/codeInsight/template/postfix/templates/editable/PostfixTemplateEditor.java)
   class which is responsible for building the UI settings for a particular template and creating a template from the settings provided in this UI.
   The editor UI may contain settings controls other than the textual editor, like lists, checkboxes, etc.
-- `PostfixTemplateProvider.writeExternalTemplate()` / `readExternalTemplate()` - serializes/deserializes a given template to/from XML elements.
+- `PostfixTemplateProvider.writeExternalTemplate()` and `readExternalTemplate()` - serializes/deserializes a given template to/from XML elements.
   Serialized template data is stored in the
   [`PostfixTemplateStorage`](upsource:///platform/lang-impl/src/com/intellij/codeInsight/template/postfix/settings/PostfixTemplateStorage.java)
   [persistent component](persisting_state_of_components.md).

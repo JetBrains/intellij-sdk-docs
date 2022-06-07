@@ -110,6 +110,64 @@ pluginManagement {
 </tabs>
 
 
+## Contributing
+There are many ways to contribute to the Gradle IntelliJ Plugin project, and each of them is valuable to us.
+Every submitted feedback, issue, or pull request is highly appreciated.
+
+### Issue Tracker
+The Gradle IntelliJ Plugin is an Open-Source project hosted on GitHub: [JetBrains/gradle-intellij-plugin](https://github.com/JetBrains/gradle-intellij-plugin).
+All project sources, discussions, and issues are publicly available, as we rely on the [GitHub Issues](https://github.com/JetBrains/gradle-intellij-plugin/issues) to track any feature requests or reported problems.
+
+Before reporting an issue, please update your configuration to use always the [latest release](#usage), or try with the [snapshot release](#snapshot-release), which contains not-yet publicly available changes.
+
+If you find your problem unique, and it wasn't yet reported to us, [file an issue](https://github.com/JetBrains/gradle-intellij-plugin/issues/new) and provide as many details as possible, e.g.:
+- issue description
+- full stack trace
+- steps to reproduce it
+- plugin version you use
+- your build configuration
+- ideally, the minimal project will let us reproduce the issue locally.
+
+### Building Project
+If you want to run the Gradle IntelliJ Plugin directly from sources, i.e., to test it against the latest changes, debug the plugin, or verify your changes before creating a pull request, clone it from our GitHub repository:
+
+{style="narrow"}
+HTTPS
+: https://github.com/JetBrains/gradle-intellij-plugin.git
+
+SSH
+: git@github.com:JetBrains/gradle-intellij-plugin.git
+
+GitHub CLI
+: gh repo clone JetBrains/gradle-intellij-plugin
+
+There are three possible ways to run the Gradle IntelliJ Plugin using its sources:
+
+
+#### Build and Test
+Open the Gradle IntelliJ Plugin in your IntelliJ IDEA and run the `build` Gradle task to make all dependencies resolved, code compiled and used against Unit Tests located in [<path>/src/test</path>](https://github.com/JetBrains/gradle-intellij-plugin/tree/master/src/test) directory.
+
+#### Run Integration Tests
+The project provides Unit Tests and Integration Tests to verify if nothing is broken with the real-life project examples.
+[Integration Tests](https://github.com/JetBrains/gradle-intellij-plugin/tree/master/integration-tests) provide various different test cases with a dedicated verification scenarios available in <path>verify.main.kts</path> files.
+Read the [Gradle IntelliJ Plugin Integration Tests](https://github.com/JetBrains/gradle-intellij-plugin/tree/master/integration-tests) document to find more about this kind of test and find out how to create new scenarios.
+
+#### Link With Your Project
+It is possible to link your project with the Gradle IntelliJ Plugin project, so it'll be loaded and built as a module.
+To integrate it with another consumer-like project, in the <path>settings.gradle.kts</path> file (or <path>settings.gradle</path> for Groovy), add the following line and refresh your Gradle configuration:
+
+```kotlin
+includeBuild("/path/to/gradle-intellij-plugin")
+```
+
+### Pull Requests
+To correctly prepare the pull requests, make sure to provide the following information:
+- proper title and description of the GitHub Pull Request – describe what your change introduces, what issue does it fix
+- relevant entry in the [<path>CHANGES.md</path>](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/CHANGES.md) file
+- [Unit Tests](#build-and-test) (if necessary)
+- [Integration Tests](#run-integration-tests) (if necessary)
+
+
 ## IntelliJ Extension
 After the Gradle IntelliJ Plugin is applied, the `intellij` extension can be used to configure the plugin and common settings of the provided tasks.
 

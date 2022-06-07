@@ -115,7 +115,7 @@ There are many ways to contribute to the Gradle IntelliJ Plugin project, and eac
 Every submitted feedback, issue, or pull request is highly appreciated.
 
 ### Issue Tracker
-The Gradle IntelliJ Plugin is an Open-Source project hosted on GitHub: [JetBrains/gradle-intellij-plugin](https://github.com/JetBrains/gradle-intellij-plugin).
+The Gradle IntelliJ Plugin is an open-source project hosted on GitHub: [JetBrains/gradle-intellij-plugin](https://github.com/JetBrains/gradle-intellij-plugin).
 All project sources, discussions, and issues are publicly available, as we rely on the [GitHub Issues](https://github.com/JetBrains/gradle-intellij-plugin/issues) to track any feature requests or reported problems.
 
 Before reporting an issue, please update your configuration to use always the [latest release](#usage), or try with the [snapshot release](#snapshot-release), which contains not-yet publicly available changes.

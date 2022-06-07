@@ -153,7 +153,7 @@ The project provides Unit Tests and Integration Tests to verify if nothing is br
 Read the [Gradle IntelliJ Plugin Integration Tests](https://github.com/JetBrains/gradle-intellij-plugin/tree/master/integration-tests) document to find more about this kind of test and find out how to create new scenarios.
 
 #### Link With Your Project
-It is possible to link your project with the Gradle IntelliJ Plugin project, so it'll be loaded and built as a module.
+It is possible to link your plugin project with the Gradle IntelliJ Plugin project, so it'll be loaded and built as a module.
 To integrate it with another consumer-like project, in the <path>settings.gradle.kts</path> file (or <path>settings.gradle</path> for Groovy), add the following line and refresh your Gradle configuration:
 
 ```kotlin

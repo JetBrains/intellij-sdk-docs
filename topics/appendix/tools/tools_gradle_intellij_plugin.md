@@ -162,7 +162,7 @@ includeBuild("/path/to/gradle-intellij-plugin")
 
 ### Pull Requests
 To correctly prepare the pull requests, make sure to provide the following information:
-- proper title and description of the GitHub Pull Request – describe what your change introduces, what issue does it fix
+- proper title and description of the GitHub Pull Request – describe what your change introduces, what issue it fixes, etc.
 - relevant entry in the [<path>CHANGES.md</path>](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/CHANGES.md) file
 - [Unit Tests](#build-and-test) (if necessary)
 - [Integration Tests](#run-integration-tests) (if necessary)

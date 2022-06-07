@@ -1,6 +1,17 @@
 
 <chunk id="releases_table">
 
+## 2022.*
+
+
+| Release Name | Channel | Release Date | Version | IntelliJ IDEA Version |
+|--------------|:-------:|--------------|---------|-----------------------|
+| Electric Eel (2022.1.1) Canary 3 | ![canary][canary] | June 3, 2022 | **2022.1.1.3** <br/> AI-213.7172.25.2211.8624637 | **2021.3.3** <br/> 213.7172.25 |
+| Electric Eel (2022.1.1) Canary 2 | ![canary][canary] | May 13, 2022 | **2022.1.1.2** <br/> AI-213.7172.25.2211.8571212 | **2021.3.3** <br/> 213.7172.25 |
+| Electric Eel (2022.1.1) Canary 1 | ![canary][canary] | May 11, 2022 | **2022.1.1.1** <br/> AI-213.7172.25.2211.8563311 | **2021.3.3** <br/> 213.7172.25 |
+
+
+
 ## 2021.*
 
 
@@ -54,16 +65,6 @@
 | Bumblebee (2021.1.1) Canary 3 | ![canary][canary] | July 8, 2021 | **2021.1.1.3** <br/> AI-211.7442.40.2111.7518594 | **2021.1.2** <br/> 211.7442.40 |
 | Bumblebee (2021.1.1) Canary 2 | ![canary][canary] | June 7, 2021 | **2021.1.1.2** <br/> AI-211.6222.4.2111.7407564 | **2020.3.4** <br/> 211.6222.4 |
 | Bumblebee (2021.1.1) Canary 1 | ![canary][canary] | May 18, 2021 | **2021.1.1.1** <br/> AI-203.7717.56.2111.7361063 | **2020.3.3** <br/> 203.7717.56 |
-
-
-
-## 2022.*
-
-
-| Release Name | Channel | Release Date | Version | IntelliJ IDEA Version |
-|--------------|:-------:|--------------|---------|-----------------------|
-| Electric Eel (2022.1.1) Canary 2 | ![canary][canary] | May 13, 2022 | **2022.1.1.2** <br/> AI-213.7172.25.2211.8571212 | **2021.3.3** <br/> 213.7172.25 |
-| Electric Eel (2022.1.1) Canary 1 | ![canary][canary] | May 11, 2022 | **2022.1.1.1** <br/> AI-213.7172.25.2211.8563311 | **2021.3.3** <br/> 213.7172.25 |
 
 
 
@@ -370,11 +371,11 @@
 
 | Release Name | Channel | Release Date | Version | IntelliJ IDEA Version |
 |--------------|:-------:|--------------|---------|-----------------------|
+| Electric Eel (2022.1.1) Canary 3 | ![canary][canary] | June 3, 2022 | **2022.1.1.3** <br/> AI-213.7172.25.2211.8624637 | **2021.3.3** <br/> 213.7172.25 |
 | Electric Eel (2022.1.1) Canary 2 | ![canary][canary] | May 13, 2022 | **2022.1.1.2** <br/> AI-213.7172.25.2211.8571212 | **2021.3.3** <br/> 213.7172.25 |
 | Electric Eel (2022.1.1) Canary 1 | ![canary][canary] | May 11, 2022 | **2022.1.1.1** <br/> AI-213.7172.25.2211.8563311 | **2021.3.3** <br/> 213.7172.25 |
 | Dolphin (2021.3.1) Beta 1 | ![beta][beta] | May 11, 2022 | **2021.3.1.10** <br/> AI-213.7172.25.2113.8565817 | **2021.3.3** <br/> 213.7172.25 |
 | Chipmunk (2021.2.1) Patch 1 | ![patch][patch] | May 25, 2022 | **2021.2.1.15** <br/> AI-212.5712.43.2112.8609683 | **2021.2.4** <br/> 212.5712.43 |
-| Chipmunk (2021.2.1) | ![release][release] | May 9, 2022 | **2021.2.1.14** <br/> AI-212.5712.43.2112.8512546 | **2021.2.4** <br/> 212.5712.43 |
 
 [release]: https://img.shields.io/badge/-release-blue?style=flat-square
 [patch]: https://img.shields.io/badge/-patch-orange?style=flat-square

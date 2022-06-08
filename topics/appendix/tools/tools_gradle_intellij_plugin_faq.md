@@ -144,3 +144,16 @@ prepareSandbox {
 
 </tab>
 </tabs>
+
+
+### Task 'setupDependencies' not found in root project
+The [`setupDependencies`](tools_gradle_intellij_plugin.md#setupdependencies-task) task is designed to fetch the target IDE dependency from the IntelliJ Repository in the after-sync Gradle phase, but only when working in the IntelliJ IDEA – to make the IntelliJ SDK classes resolved and code completion available.
+To achieve that, the [`gradle-idea-ext-plugin`](https://github.com/JetBrains/gradle-idea-ext-plugin) is used, which alters the IDEA project's <path>.idea/workspace.xml</path> file making the [`setupDependencies`](tools_gradle_intellij_plugin.md#setupdependencies-task) task activated on `after_sync` event.
+
+Unfortunately, this entry remains even after you disable the `org.jetbrains.intellij` in the project – the [`setupDependencies`](tools_gradle_intellij_plugin.md#setupdependencies-task) task won't be resolved appropriately, which produces the following exception:
+
+```
+Task 'setupDependencies' not found in root project 'projectName'.
+```
+
+To fix that, manually edit the <path>.idea/workspace.xml</path> file removing mentioned entry, go to the Gradle ToolWindow, select the Task Activation action from the context menu of the root project item, and remove it.

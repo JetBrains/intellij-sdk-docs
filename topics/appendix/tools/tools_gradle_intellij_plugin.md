@@ -154,7 +154,7 @@ Read the [Gradle IntelliJ Plugin Integration Tests](https://github.com/JetBrains
 
 #### Link With Your Project
 It is possible to link your plugin project with the Gradle IntelliJ Plugin project, so it'll be loaded and built as a module.
-To integrate it with another consumer-like project, in the <path>settings.gradle.kts</path> file (or <path>settings.gradle</path> for Groovy), add the following line and refresh your Gradle configuration:
+To integrate it with another consumer-like project, add the following line in the Gradle settings file and refresh your Gradle configuration:
 
 ```kotlin
 includeBuild("/path/to/gradle-intellij-plugin")

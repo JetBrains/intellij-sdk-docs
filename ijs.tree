@@ -381,6 +381,7 @@
   </toc-element>
   <toc-element toc-title="Appendix III — Tools">
     <toc-element id="tools_gradle_intellij_plugin.md" show-structure-depth="1">
+      <toc-element toc-title="Usage Examples" id="tools_gradle_intellij_plugin_examples.md"/>
       <toc-element toc-title="Frequently Asked Questions" id="tools_gradle_intellij_plugin_faq.md"/>
       <toc-element toc-title="Migration Guide from 0.x to 1.x" href="https://lp.jetbrains.com/gradle-intellij-plugin/"/>
     </toc-element>

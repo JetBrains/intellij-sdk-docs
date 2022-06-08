@@ -1641,3 +1641,14 @@ Check if the currently used Gradle IntelliJ Plugin is outdated.
 {style="narrow"}
 Default value
 : `true`
+
+### useDependencyFirstResolutionStrategy
+{id="build-features-usedependencyfirstresolutionstrategy"}
+
+Set the `ResolutionStrategy.SortOrder.DEPENDENCY_FIRST` resolution strategy for `compileClasspath` and `testCompileClasspath` Gradle configurations.
+This behaviour allows for making the dependencies specified in the project's Gradle configuration considered before the dependencies added by the Gradle IntelliJ Plugin.
+See [JetBrains/gradle-intellij-plugin#656](https://github.com/JetBrains/gradle-intellij-plugin/issues/656) for more details.
+
+{style="narrow"}
+Default value
+: `true`

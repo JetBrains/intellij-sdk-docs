@@ -231,9 +231,9 @@ Default value
 
 Samples
 :
-- `C:\Users\user\AppData\Local\JetBrains\Toolbox\apps\IDEA-U\ch-0\211.7142.45`
-- `/Applications/Android Studio 4.2 Preview.app/Contents`
-- `/home/user/idea-IC-181.4445.78`
+- Windows: <path>C:\Users\user\AppData\Local\JetBrains\Toolbox\apps\IDEA-U\ch-0\211.7142.45</path>
+- macOS: <path>/Applications/Android Studio 4.2 Preview.app/Contents</path> (note <path>/Contents</path> suffix)
+- Linux: <path>/home/user/idea-IC-181.4445.78</path>
 
 > `intellij.version` and `intellij.localPath` must not be specified at the same time.
 >

@@ -15,7 +15,7 @@ The library is written in [Kotlin](kotlin.md) and makes it easy to develop user 
 The Kotlin UI DSL is not intended to build general UIs, like tool windows controls that trigger some actions and do not contain any input components bound to state objects.
 For this purpose, use [custom Swing components](user_interface_components.md) from the IntelliJ Platform or the standard ones.
 
-The _Kotlin DSL Version 2_ functions are located in the [`com.intellij.ui.dsl.builder`](upsource:///platform/platform-impl/src/com/intellij/ui/dsl/builder) package.
+The _Kotlin UI DSL Version 2_ functions are located in the [`com.intellij.ui.dsl.builder`](upsource:///platform/platform-impl/src/com/intellij/ui/dsl/builder) package.
 
 ## UI DSL Examples
 

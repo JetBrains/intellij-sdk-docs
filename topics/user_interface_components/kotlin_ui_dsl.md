@@ -22,7 +22,7 @@ For this purpose, use [custom Swing components](user_interface_components.md) fr
 >
 {type="note"}
 
-The _Kotlin DSL Version 1_ functions are located in the [`com.intellij.ui.layout`](upsource:///platform/platform-impl/src/com/intellij/ui/layout) package.
+The _Kotlin UI DSL Version 1_ functions are located in the [`com.intellij.ui.layout`](upsource:///platform/platform-impl/src/com/intellij/ui/layout) package.
 
 ## Layout Structure
 

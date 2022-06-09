@@ -85,7 +85,7 @@ Please note that any unloading problems in a production environment will ask the
 
 Enabled by default for target platform 2020.2 or later.
 
-Set `intellij.autoReloadPlugins = true` in [`runIde`](gradle_prerequisites.md#running-a-simple-gradle-based-intellij-platform-plugin) task to enable it for earlier platform versions or `intellij.autoReloadPlugins = false` to disable it explicitly.
+Set property `intellij.autoReloadPlugins` in [`runIde`](gradle_prerequisites.md#running-a-simple-gradle-based-intellij-platform-plugin) task to `true` for enabling it in earlier platform versions or `false` to disable it explicitly, see [](tools_gradle_intellij_plugin_faq.md#how-to-disable-automatic-reload-of-dynamic-plugins).
 
 After starting the sandbox IDE instance, run [`buildPlugin`](tools_gradle_intellij_plugin.md#buildplugin-task) task after modifications in the plugin project and switch focus back to sandbox instance to trigger reload.
 

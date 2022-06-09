@@ -1234,7 +1234,7 @@ Can be set as `FailureLevel` enum or `EnumSet<FailureLevel>`.
 
 {style="narrow"}
 Type
-: `FailureLevel`
+: `org.jetbrains.intellij.tasks.RunPluginVerifierTask.FailureLevel`
 
 Default value
 : `FailureLevel.COMPATIBILITY_PROBLEMS`

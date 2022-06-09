@@ -9,7 +9,8 @@ Using those components in your plugins will ensure that your plugin looks and wo
 >
 {type="tip"}
 
-> The recommended way of building UIs on the IntelliJ Platform (2021.3 and later) is using [Kotlin UI DSL](kotlin_ui_dsl_version_2.md).
+> It is recommended to build UI forms like dialogs or settings pages by using the [Kotlin UI DSL](kotlin_ui_dsl_version_2.md) (IntelliJ Platform 2021.3+).
+>
 > Using GUI designer with Kotlin is currently not supported ([Issue](https://youtrack.jetbrains.com/issue/KTIJ-791)).
 >
 {type="note"}

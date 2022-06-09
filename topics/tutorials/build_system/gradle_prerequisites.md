@@ -12,7 +12,7 @@ To verify these plugins are installed and enabled, see the help section about [M
 Creating new Gradle-based IntelliJ Platform plugin projects is performed using the dedicated generator available in the [New Project Wizard](https://www.jetbrains.com/help/idea/new-project-wizard.html).
 The generator creates all the necessary project files based on a few template inputs.
 
-### New IDE Plugin Project Wizard
+<procedure title="Create IDE Plugin" id="create-ide-plugin">
 
 Launch the <control>New Project</control> wizard via the <menupath>File | New | Project...</menupath> action and provide the following information:
 1. Select the <control>IDE Plugin</control> generator type from the list on the left.
@@ -35,7 +35,9 @@ Launch the <control>New Project</control> wizard via the <menupath>File | New | 
 >
 {type="note"}
 
-After providing all the information, click the <control>Create</control> button to generate the project.
+8. After providing all the information, click the <control>Create</control> button to generate the project.
+
+</procedure>
 
 ### Components of a Wizard-Generated Gradle IntelliJ Platform Plugin
 
@@ -123,7 +125,7 @@ tasks {
 * Two Gradle plugins are explicitly declared:
   * The [Gradle Java](https://docs.gradle.org/current/userguide/java_plugin.html) plugin.
   * The [Gradle IntelliJ Plugin](tools_gradle_intellij_plugin.md).
-* The <control>Group</control> from the [New Project](#new-ide-plugin-project-wizard) wizard is the `project.group` value.
+* The <control>Group</control> from the [New Project](#create-ide-plugin) wizard is the `project.group` value.
 * The `sourceCompatibility` line is injected to enforce using Java 11 JDK to compile Java sources.
 * The values of the [`intellij.version`](tools_gradle_intellij_plugin.md#intellij-extension-version) and [`intellij.type`](tools_gradle_intellij_plugin.md#intellij-extension-type) properties specify the version and type of the IntelliJ Platform to be used to build the plugin.
 * The empty placeholder list for [plugin dependencies](tools_gradle_intellij_plugin.md#intellij-extension-plugins).
@@ -159,7 +161,7 @@ Converting a [DevKit-based](using_dev_kit.md) plugin project to a Gradle-based p
   * <path>out</path> directory
 * Arrange the existing source files within the project directory in the Gradle [source set](https://docs.gradle.org/current/userguide/java_plugin.html#sec:java_project_layout) format.
 * Use the New Project Wizard as though creating a [new Gradle project](#creating-a-gradle-based-intellij-platform-plugin-with-new-project-wizard) from scratch.
-* On the [New Project](#new-ide-plugin-project-wizard) choose the <control>IDE Plugin</control> generator and set the values of:
+* On the [New Project](#create-ide-plugin) choose the <control>IDE Plugin</control> generator and set the values of:
   * <control>Group</control> to the existing package in the initial source set.
   * <control>Artifact</control> to the name of the existing plugin.
   * <control>Name</control> to the name of the directory where the existing plugin is located, e.g. if the plugin project base directory is <path>/Users/john/Projects/old_plugin</path>, it should be the <path>old_plugin</path>.

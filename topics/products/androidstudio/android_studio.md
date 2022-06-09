@@ -13,7 +13,7 @@ Android Studio plugins are not Android modules or apps to run in the Android ope
 
 To create a new Android Studio plugin project, follow the tutorial on the [Getting Started with Gradle](gradle_prerequisites.md) page.
 The tutorial produces a skeleton project suitable to use as a starting point for an Android Studio plugin.
-On the [New Project Screen](gradle_prerequisites.md#new-ide-plugin-project-wizard), choose <control>IDE Plugin</control> from the project generators list as described in the tutorial, **not** <control>Android</control>.
+On the [New Project Screen](gradle_prerequisites.md#create-ide-plugin), choose <control>IDE Plugin</control> from the project generators list as described in the tutorial, **not** <control>Android</control>.
 Some minor modifications to the skeleton project are needed, as discussed below.
 
 ### Matching Versions of the IntelliJ Platform with the Android Studio Version

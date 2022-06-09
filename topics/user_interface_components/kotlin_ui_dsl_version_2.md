@@ -13,6 +13,8 @@ It supports many core Swing components and custom components widely used in JetB
 
 The library is written in [Kotlin](kotlin.md) and makes it easy to develop user interfaces like dialogs and settings by using declarative syntax.
 
+The _Kotlin DSL Version 2_ functions are located in the [`com.intellij.ui.dsl.builder`](upsource:///platform/platform-impl/src/com/intellij/ui/dsl/builder) package.
+
 ## UI DSL Examples
 
 It is highly recommended taking a look at the UI DSL demo available via <menupath>Tools | Internal Actions | UI | UI DSL Showcase</menupath> (see [Internal Actions](internal_actions_intro.md) if not available in your IDE instance).

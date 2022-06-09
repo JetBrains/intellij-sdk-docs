@@ -18,6 +18,8 @@ It shares similarities with [Jetpack Compose](https://developer.android.com/jetp
 >
 {type="note"}
 
+The _Kotlin DSL Version 1_ functions are located in the [`com.intellij.ui.layout`](upsource:///platform/platform-impl/src/com/intellij/ui/layout) package.
+
 ## Layout Structure
 
 > See [Layout](https://jetbrains.design/intellij/principles/layout) topic in IntelliJ Platform UI Guidelines for recommendations on arranging UI controls in dialogs.

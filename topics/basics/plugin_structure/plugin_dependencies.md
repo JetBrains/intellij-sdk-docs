@@ -49,12 +49,15 @@ See also [](extension_point_list.md#intellij-community-plugins) and [](plugin_co
 |---------------------------|---------------------------------|
 | Copyright                 | `com.intellij.copyright`        |
 | CSS                       | `com.intellij.css`              |
+| Database Tools and SQL    | `com.intellij.database`         |
 | IntelliLang               | `org.intellij.intelliLang`      |
 | Java                      | `com.intellij.java`             |
 | JavaScript and TypeScript | `JavaScript`                    |
 | Kotlin                    | `org.jetbrains.kotlin`          |
 | Markdown                  | `org.intellij.plugins.markdown` |
 | Maven                     | `org.jetbrains.idea.maven`      |
+| Spring                    | `com.intellij.spring`           |
+| Spring Boot               | `com.intellij.spring.boot`      |
 
 ### Preparing Sandbox
 

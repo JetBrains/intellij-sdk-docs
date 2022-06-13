@@ -16,6 +16,9 @@ The plugin provides the functionalities like:
 - patching compile tasks to instrument code with nullability assertions and form classes made with IntelliJ GUI Designer
 - additional build steps which might be helpful while developing plugins for IntelliJ platform
 
+> Please see also [](tools_gradle_intellij_plugin_faq.md) and [](tools_gradle_intellij_plugin_examples.md).
+>
+{type="tip"}
 
 ## Usage
 To enable this plugin in your Gradle-based project, register the plugin in the Gradle build script's `plugins` section:
@@ -47,7 +50,7 @@ When upgrading to `1.x` version, please make sure to follow [migration guide](ht
 >
 {type="tip"}
 
-> This project requires `Gradle 6.7` or newer, however it is recommended to use the latest Gradle available.
+> This project requires `Gradle 6.7` or newer, however, it is recommended to use the latest available Gradle version.
 > Update it with:
 > ```Bash
 > ./gradlew wrapper --gradle-version=VERSION
@@ -1229,7 +1232,7 @@ Default value
 ### failureLevel
 {id="runpluginverifier-task-failurelevel"}
 
-Defines the verification level at which task should fail if any reported issue will match.
+Defines the verification level at which the task should fail if any reported issue matches.
 Can be set as `FailureLevel` enum or `EnumSet<FailureLevel>`.
 
 {style="narrow"}

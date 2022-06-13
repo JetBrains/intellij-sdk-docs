@@ -36,7 +36,7 @@ plugins {
 </tab>
 </tabs>
 
-> This project requires `Gradle 6.7` or newer, however it is recommended to use the latest Gradle available.
+> This project requires `Gradle 6.7.1` or newer, however it is recommended to use the latest Gradle available.
 > Update it with:
 > ```Bash
 > ./gradlew wrapper --gradle-version=VERSION

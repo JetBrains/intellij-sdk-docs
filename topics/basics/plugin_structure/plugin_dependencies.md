@@ -45,19 +45,19 @@ Bundled plugins are located in <path>$PRODUCT_ROOT$/plugins/$PLUGIN_NAME$/lib/$P
 The following table lists some commonly used bundled plugins and their ID.
 See also [](extension_point_list.md#intellij-community-plugins) and [](plugin_compatibility.md#modules-specific-to-functionality).
 
-| Plugin Name               | Plugin ID                       |
-|---------------------------|---------------------------------|
-| Copyright                 | `com.intellij.copyright`        |
-| CSS                       | `com.intellij.css`              |
-| Database Tools and SQL    | `com.intellij.database`         |
-| IntelliLang               | `org.intellij.intelliLang`      |
-| Java                      | `com.intellij.java`             |
-| JavaScript and TypeScript | `JavaScript`                    |
-| Kotlin                    | `org.jetbrains.kotlin`          |
-| Markdown                  | `org.intellij.plugins.markdown` |
-| Maven                     | `org.jetbrains.idea.maven`      |
-| Spring                    | `com.intellij.spring`           |
-| Spring Boot               | `com.intellij.spring.boot`      |
+| Plugin Name               | Plugin ID                                    |
+|---------------------------|----------------------------------------------|
+| Copyright                 | `com.intellij.copyright`                     |
+| CSS                       | `com.intellij.css`                           |
+| Database Tools and SQL    | `com.intellij.database` [](data_grip.md)     |
+| IntelliLang               | `org.intellij.intelliLang`                   |
+| Java                      | `com.intellij.java`                          |
+| JavaScript and TypeScript | `JavaScript`                                 |
+| Kotlin                    | `org.jetbrains.kotlin` [](kotlin.md)         |
+| Markdown                  | `org.intellij.plugins.markdown`              |
+| Maven                     | `org.jetbrains.idea.maven`                   |
+| Spring                    | `com.intellij.spring` [](spring_api.md)      |
+| Spring Boot               | `com.intellij.spring.boot` [](spring_api.md) |
 
 ### Preparing Sandbox
 

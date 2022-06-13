@@ -54,7 +54,7 @@ private item_ ::= (property|COMMENT|CRLF)
 property ::= (KEY? SEPARATOR VALUE?) | KEY
 ```
 
-Please see [Grammar Kit](https://github.com/JetBrains/Grammar-Kit) documentation for more details on BNF syntax.
+Please see [Grammar-Kit](https://github.com/JetBrains/Grammar-Kit) documentation for more details on BNF syntax.
 
 The grammar defines the flexibility of the support for a language.
 The above grammar specifies that a property may have or may not have a key and value.
@@ -67,7 +67,7 @@ Note that the `SimpleTypes` class in the `elementTypeHolderClass` attribute abov
 Now that the grammar is defined, generate a parser with PSI classes via <control>Generate Parser Code</control> from the context menu on the <path>Simple.bnf</path> file.
 This step generates a parser and PSI elements in the <path>/src/main/gen</path> folder of the project.
 
-> Gradle plugin [gradle-grammar-kit-plugin](https://github.com/JetBrains/gradle-grammar-kit-plugin) can be used alternatively.
+> [Gradle Grammar-Kit Plugin](tools_gradle_grammar_kit_plugin.md) can be used alternatively.
 >
 {type="tip"}
 

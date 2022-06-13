@@ -385,5 +385,6 @@
       <toc-element toc-title="Frequently Asked Questions" id="tools_gradle_intellij_plugin_faq.md"/>
       <toc-element toc-title="Migration Guide from 0.x to 1.x" href="https://lp.jetbrains.com/gradle-intellij-plugin/"/>
     </toc-element>
+  <toc-element id="tools_gradle_grammar_kit_plugin.md" show-structure-depth="1" />
   </toc-element>
 </product-profile>

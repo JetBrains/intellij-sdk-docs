@@ -15,7 +15,7 @@ As examples of using this plugin, you can also check out following projects:
 - [Rust plugin](https://github.com/intellij-rust/intellij-rust)
     - Uses the Gradle Kotlin DSL
     - Fully written in Kotlin
-    - Uses [Grammar Kit]
+    - Uses [Grammar-Kit]
 - [AWS CloudFormation plugin](https://github.com/shalupov/idea-cloudformation) and its [TeamCity build configuration](https://teamcity.jetbrains.com/project.html?projectId=IdeaAwsCloudFormation&tab=projectOverview)
 - [Bash plugin](https://github.com/jansorg/BashSupport) and its [TeamCity build configuration](https://teamcity.jetbrains.com/project.html?projectId=IntellijIdeaPlugins_BashSupport&tab=projectOverview)
 - [Perl5 plugin](https://github.com/hurricup/Perl5-IDEA) and its [Travis configuration file](https://github.com/hurricup/Perl5-IDEA/blob/master/.travis.yml)
@@ -40,7 +40,7 @@ As examples of using this plugin, you can also check out following projects:
 - [Minecraft Development](https://github.com/minecraft-dev/MinecraftDev) and its [TeamCity build configuration](https://ci.demonwav.com/viewType.html?buildTypeId=MinecraftDevIntelliJ_Build)
     - Uses the Gradle Kotlin DSL
     - Mixes Java, Kotlin, and Groovy code
-    - Uses [Grammar Kit]
+    - Uses [Grammar-Kit]
     - Uses a Kotlin version not bundled with IntelliJ IDEA
 - [Mainframer Integration](https://github.com/elpassion/mainframer-intellij-plugin)
     - Uses the Gradle Kotlin DSL
@@ -63,10 +63,10 @@ As examples of using this plugin, you can also check out following projects:
     - Uses the Gradle Kotlin DSL
     - Fully written in Kotlin
     - Uses other IntelliJ IDEA plugins as test dependencies
-    - Uses [Grammar Kit]
+    - Uses [Grammar-Kit]
     - Uses a Kotlin version not bundled with IntelliJ IDEA
 - [EduTools](https://github.com/JetBrains/educational-plugin)
     - Uses the Gradle Kotlin DSL
     - Mixes Java and Kotlin code
 
-[Grammar Kit]: https://github.com/JetBrains/Grammar-Kit
+[Grammar-Kit]: https://github.com/JetBrains/Grammar-Kit

@@ -13,8 +13,13 @@ This page lists a number of common questions/issues and techniques useful for te
 - [`PsiTestUtil`](upsource:///platform/testFramework/src/com/intellij/testFramework/PsiTestUtil.java)
 - [`VfsTestUtil`](upsource:///platform/testFramework/src/com/intellij/testFramework/VfsTestUtil.java)
 - [`IoTestUtil`](upsource:///platform/testFramework/src/com/intellij/openapi/util/io/IoTestUtil.java)
+
+### UI
+
 - [`ProjectViewTestUtil`](upsource:///platform/testFramework/src/com/intellij/testFramework/ProjectViewTestUtil.java)
 - [`TestLookupElementPresentation`](upsource:///platform/testFramework/src/com/intellij/testFramework/fixtures/TestLookupElementPresentation.java)
+- [`IconTestUtil`](upsource:///platform/testFramework/src/com/intellij/ui/IconTestUtil.java)
+- [`TreeTestUtil`](upsource:///platform/testFramework/src/com/intellij/ui/tree/TreeTestUtil.java)
 
 ## Issues
 

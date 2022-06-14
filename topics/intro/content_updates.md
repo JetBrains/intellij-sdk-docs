@@ -20,6 +20,10 @@ Postfix Completion
 Gradle IntelliJ Plugin
 : Add [](tools_gradle_intellij_plugin.md) documentation to _Appendix III — Tools_.
 
+Minor Changes and Additions
+:
+- Add a small section to [](php_open_api.md#utility-classes) describing `PhpFilePathUtils` utility class.
+
 ### May-22
 
 Navigation Bar
@@ -30,7 +34,6 @@ Inlay Hints
 
 Minor Changes and Additions
 :
-- Add a small section to [](php_open_api.md#utility-classes) describing `PhpFilePathUtils` utility class.
 - Add a small section to [](editor_components.md) describing convenient `EditorTextField` subclasses.
 - Add descriptions for the following EPs to [](additional_minor_features.md): [](additional_minor_features.md#recognizing-complex-multi-block-expressions), [](additional_minor_features.md#breadcrumbs), [](additional_minor_features.md#plain-text-completion), [](additional_minor_features.md#splitting-and-joining-list-constructs), [](additional_minor_features.md#suggesting-rename-and-change-signature-refactorings), [](additional_minor_features.md#reader-mode), [](additional_minor_features.md#background-colors-for-editors-and-project-view), [](additional_minor_features.md#custom-names-and-tooltips-for-editor-tabs).
 - Add small section to [](project_view.md#decorating-project-view-nodes) describing how to modify the representation of nodes in the project view.

@@ -101,6 +101,9 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 `com.intellij.openapi.vcs.changes.ui.ChangesTreeList` class removed
 : Use `com.intellij.openapi.vcs.changes.ui.ChangesTree` or `com.intellij.openapi.vcs.changes.ui.ChangesTreeImpl` instead.
 
+`com.intellij.ide.IdeEventQueue.unsafeNonblockingExecute(Runnable)` method removed
+: Method does not make sense anymore. See https://youtrack.jetbrains.com/issue/JBR-4328
+
 ### Java Plugin 2022.2
 
 `com.intellij.codeInspection.javaDoc.JavaDocLocalInspection` class removed

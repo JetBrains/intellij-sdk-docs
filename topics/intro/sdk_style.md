@@ -148,9 +148,9 @@ Syntax highlighting is applied by specifying the language after the first set of
         <tagName attribute="value">XML Text</tagName>
     ```
 ```
-Supported languages include `xml`, `java`, `kotlin`, `groovy` `bash`, `md`, and `text` for plaintext.
+Supported languages include `xml`, `java`, `kotlin`, `groovy`, `bash`, `md`, `php`, and `text` for plaintext.
 
-> Source code blocks must have one blank line before and after them, and must have a language specification for highlighting.
+> Source code blocks must have one blank line before and after them, and must have a language specification for highlighting (use `text` as fallback).
 >
 {type="note"}
 

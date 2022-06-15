@@ -14,6 +14,9 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 
 ### June-22
 
+PHP Type Providers
+: Add section [](php_open_api_php_type_providers.md) about type providers describing type inference in PhpStorm and how to implement your own type provider for PHP.
+
 Postfix Completion
 : Add [](postfix_completion.md) section explaining how to implement generating or wrapping the existing code into additional constructs without navigating the caret back.
 
@@ -25,9 +28,6 @@ Minor Changes and Additions
 - Add a small section to [](php_open_api.md#utility-classes) describing `PhpFilePathUtils` utility class.
 
 ### May-22
-
-PHP Type Providers
-: Add section [](php_open_api_php_type_providers.md) about type providers describing type inference in PhpStorm and how to implement your own type provider for PHP.
 
 Navigation Bar
 : Add [](navbar.md) section with an [accompanying tutorial](structure_aware_navbar.md) showing how to implement a custom navigation bar for a custom language.

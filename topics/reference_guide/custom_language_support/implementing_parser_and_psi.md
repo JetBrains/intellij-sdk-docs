@@ -27,7 +27,7 @@ The base classes for the PSI implementation, including [`PsiFileBase`](upsource:
 ### Parser Implementation
 
 While coding parser manually is quite possible, we highly recommend generating parser and corresponding PSI classes from grammars using [Grammar-Kit](https://plugins.jetbrains.com/plugin/6606-grammar-kit) plugin.
-Besides code generation, it provides various features for editing grammar files: syntax highlighting, quick navigation, refactorings, etc.
+Besides code generation, it provides various features for editing grammar files: syntax highlighting, quick navigation, refactorings, etc. as well as integration with Gradle via [](tools_gradle_grammar_kit_plugin.md).
 The Grammar-Kit plugin is built using its own engine; its source code and documentation can be found on [GitHub](https://github.com/JetBrains/Grammar-Kit).
 
 For re-using existing ANTLRv4 grammars, see [antlr4-intellij-adaptor](https://github.com/antlr/antlr4-intellij-adaptor) library.

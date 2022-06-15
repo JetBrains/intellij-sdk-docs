@@ -2,6 +2,8 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
+<excerpt>Writing and notation styleguide for SDK Docs.</excerpt>
+
 This document describes the writing style used in authoring open-source IntelliJ Platform SDK documentation.
 Before you begin, please read this page thoroughly, as well as the [Code of Conduct](intellij-sdk-docs-original_CODE_OF_CONDUCT.md) and [License](https://github.com/JetBrains/intellij-sdk-docs/blob/main/LICENSE.txt) documents.
 Please see also [](intellij-sdk-docs-original_CONTRIBUTING.md) for some general remarks.
@@ -13,22 +15,33 @@ That question might be broad or narrowly-focused, but either way, our goal is to
 
 The style of the Intellij Platform SDK documentation is captured by using a markup language named [Markdown](https://github.github.com/gfm/).
 
+To verify grammar and correct spelling, it is highly recommended to use [Grazie Professional](https://plugins.jetbrains.com/plugin/16136-grazie-professional) plugin to highlight any issues on-the-fly in the IDE.
+
 ## Documentation Markup
 
 The documentation files themselves are [Markdown](https://github.github.com/gfm/) files (<path>*.md</path>) that get automatically converted to HTML when the site is built.
 
 ### Page Format
 
-Each Markdown file must contain a header defining its title using the following notation:
+Each Markdown file **must** start with a header defining its title using the following notation:
 
 ```yaml
 [//]: # (title: Contributing to the IntelliJ Platform SDK)
-
-
-Lorem ipsum...
 ```
 
-Redirects can be specified in the [Table of Contents](#table-of-contents).
+The page title should be as concise as possible, so it can be reused in the [](#table-of-contents) as is.
+
+It **must** be followed by a copyright notice, formatted using HTML comment notation:
+
+```html
+<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+```
+
+Every page **should** provide a short excerpt (usually one sentence) using dedicated `<excerpt>` tag before the main page contents:
+
+```html
+<excerpt>Listeners allow subscription to application and project events.</excerpt>
+```
 
 ## Content Style
 
@@ -46,7 +59,7 @@ Consistent terminology helps the reader grasp new concepts more quickly:
 
 Start every sentence on a new line.
 For very long sentences, add additional line breaks after `,`, `:` or other sensible places.
-Very long links should also be on a separate line.
+Very long [links](#links) should also be on a separate line.
 
 Consistent text styles are used to standardize references and keywords:
 * Menu paths are wrapped using `<menupath>` with pipe characters separating each level: `<menupath>Settings/Preferences | Editor</menupath>`: <menupath>Settings/Preferences | Editor</menupath>
@@ -77,14 +90,18 @@ For example, `## Introduction` gets the ID of `introduction`, and can be linked 
 General Markdown links have the default Markdown link style:
 * `[Gradle](https://gradle.org)`{disable-links} ([Gradle](https://gradle.org)) links to an external site, such as companies, articles, etc.
   If URL contains `%` character, append `{interpolate-variables="false"}`.
-* Linking to pages within the SDK documentation:
-  `[Page Title](page.md)`{disable-links} links to an SDK doc page (all located under <path>/topics</path>).
-  Note that the extension is <path>.md</path>, _NOT_ <path>.html</path>.
-* Linking to specific _sections_ on pages in the SDK documentation.
-  The anchor name will be all lower case, and spaces are replaced with `-`, e.g. `## Page setup` becomes `#page-setup`.
-  Once the anchor (`#`) character of the link is entered, the IDE code completion feature shows the available sections.
-  * `[Link to a section on the current page](#another-section)`{disable-links} links to a heading on the current page.
-  * `[Link to the section on another page](other_page.md#another-section)`{disable-links} links to a heading on another page.
+* Linking to pages and page sections within the SDK documentation:
+  * `[Page Title](page.md)`{disable-links} links to an SDK doc page (all located under <path>/topics</path>).
+    Note that the extension is <path>.md</path>, _NOT_ <path>.html</path>.
+  * Specific _sections_ on pages in the SDK documentation are linked by using section anchors.
+    The anchor name will be all lower case, and spaces are replaced with `-`, e.g. `## Page setup` becomes `#page-setup`.
+    Once the anchor (`#`) character of the link is entered, the IDE code completion feature shows the available sections.
+    * `[Link to a section on the current page](#another-section)`{disable-links} links to a heading on the current page.
+    * `[Link to the section on another page](other_page.md#another-section)`{disable-links} links to a heading on another page.
+
+  If the desired link label is the same as an SDK doc page or section title, leave the label part empty, e.g., `[](test-page.md)`{disable-links} or `[](test-page.md#section-1)`{disable-links}.
+  The empty link label will be automatically filled with the actual page or section title.
+
 
 #### Links to IntelliJ Platform Source
 
@@ -247,6 +264,8 @@ For **SVG** images, use this notation:
 The table of contents for the site is displayed in the tree view on the left-hand side of the site, and it is generated from the <path>ijs.tree</path> file.
 The list can have nested items, which are displayed as child items in the table of contents.
 
+If absolutely required, overriding the page title text to show in table of contents is possible via `toc-title` attribute.
+
 ### Placeholders
 
 If a node does not have its `id` attribute specified, it will still appear in the table of contents but will be greyed out and not clickable.
@@ -255,13 +274,13 @@ A placeholder is useful to keep track of what should be documented, but hasn't y
 
 ### Redirects
 
-When renaming pages, redirects should be configured so existing links and bookmarks continue working.
+When renaming pages, redirects **must** be configured so existing bookmarks continue working.
+All existing links in other topics must be updated.
 
-Specify the previous path(s) with <path>.html</path> extension in `accepts-web-file-names` attribute:
+Specify the previous path(s) including <path>.html</path> extension in `accepts-web-file-names` attribute:
 
 ```xml
 <toc-element
     id="fundamentals.md"
-    toc-title="Fundamentals"
     accepts-web-file-names="reference_guide.html,architectural_overview.html"/>
 ```

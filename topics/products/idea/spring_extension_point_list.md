@@ -10,13 +10,13 @@
 
 ### Spring - Listeners
 
-| Topic                                  | Listener                |
-|----------------------------------------|-------------------------|
-| `SpringBootEndpointsTabSettings#TOPIC` | `Listener`              |
-| `SpringRepositoriesViewSettings#TOPIC` | `Listener`              |
-| `SpringFileSetService#TOPIC`           | `SpringFileSetListener` |
-| `SpringMvcViewSettings#TOPIC`          | `Listener`              |
-| `SpringBeansViewSettings#TOPIC`        | `Listener`              |
+| Topic                                                                                                                                                          | Listener                |
+|----------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------|
+| [SpringBootEndpointsTabSettings#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.spring.boot.run.lifecycle.tabs.SpringBootEndpointsTabSettings.Listener) | `Listener`              |
+| [SpringRepositoriesViewSettings#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.spring.data.commons.view.SpringRepositoriesViewSettings.Listener)       | `Listener`              |
+| [SpringFileSetService#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.spring.facet.SpringFileSetService.SpringFileSetListener)                          | `SpringFileSetListener` |
+| [SpringMvcViewSettings#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.spring.mvc.toolwindow.SpringMvcViewSettings.Listener)                            | `Listener`              |
+| [SpringBeansViewSettings#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.spring.toolWindow.SpringBeansViewSettings.Listener)                            | `Listener`              |
 
 ### com.intellij.spring
 
@@ -60,6 +60,12 @@
 | [com.intellij.spring.boot.modelExtender](https://jb.gg/ipe?extensions=com.intellij.spring.boot.modelExtender)                                   | `SpringBootModelExtender`                  |
 | [com.intellij.spring.boot.replacementTokenResolver](https://jb.gg/ipe?extensions=com.intellij.spring.boot.replacementTokenResolver)             | `SpringBootReplacementTokenResolver`       |
 
+### com.intellij.spring.boot.initializr
+
+| Extension Point                                                                                                                                     | Implementation                |
+|-----------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------|
+| [com.intellij.spring.boot.initializr.sharedIndexesProvider](https://jb.gg/ipe?extensions=com.intellij.spring.boot.initializr.sharedIndexesProvider) | `SpringSharedIndexesProvider` |
+
 ### com.intellij.spring.messaging
 
 | Extension Point                                                                                                     | Implementation               |
@@ -85,12 +91,6 @@
 | Extension Point                                                                                                                                     | Implementation                 |
 |-----------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------|
 | [com.intellij.spring.boot.mvc.templateAvailabilityProvider](https://jb.gg/ipe?extensions=com.intellij.spring.boot.mvc.templateAvailabilityProvider) | `TemplateAvailabilityProvider` |
-
-### intellij.spring.boot.initializr.xml
-
-| Extension Point                                                                                                                                     | Implementation                |
-|-----------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------|
-| [com.intellij.spring.boot.initializr.sharedIndexesProvider](https://jb.gg/ipe?extensions=com.intellij.spring.boot.initializr.sharedIndexesProvider) | `SpringSharedIndexesProvider` |
 
 ### intellij.spring.boot.run.xml
 

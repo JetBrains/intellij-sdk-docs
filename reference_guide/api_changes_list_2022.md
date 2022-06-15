@@ -78,9 +78,28 @@ Please see [Incompatible API Changes](api_changes_list.md) on how to verify comp
 
 _Early Access Program_ (EAP) releases of upcoming versions are available [here](https://eap.jetbrains.com).
 
+## 2022.3
+
+### IntelliJ Platform 2022.3
+
 ## 2022.2
 
 ### IntelliJ Platform 2022.2
+
+`com.intellij.openapi.actionSystem.TypeSafeDataProvider` class removed
+: Use `com.intellij.openapi.actionSystem.DataProvider` class instead.
+
+`com.intellij.openapi.actionSystem.DataSink` class removed
+: Removed along with `com.intellij.openapi.actionSystem.TypeSafeDataProvider`.
+
+`com.intellij.openapi.vcs.changes.ui.ChangesBrowser` class removed
+: Use `com.intellij.openapi.vcs.changes.ui.ChangesBrowserBase` or `com.intellij.openapi.vcs.changes.ui.SimpleChangesBrowser` instead.
+
+`com.intellij.openapi.vcs.changes.ui.ChangesBrowser.MyUseCase` class removed
+: Removed along with `com.intellij.openapi.vcs.changes.ui.ChangesBrowser`.
+
+`com.intellij.openapi.vcs.changes.ui.ChangesTreeList` class removed
+: Use `com.intellij.openapi.vcs.changes.ui.ChangesTree` or `com.intellij.openapi.vcs.changes.ui.ChangesTreeImpl` instead.
 
 ### Java Plugin 2022.2
 
@@ -108,6 +127,20 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 
 `com.intellij.collaboration.auth.ui.LoadingAccountsDetailsProvider` class removed
 : Better API introduced in the form of `com.intellij.collaboration.auth.ui.AccountsDetailsLoader`.
+
+`com.intellij.collaboration.ui.codereview.avatar.CachingAvatarIconsProvider` class renamed to `com.intellij.collaboration.ui.codereview.avatar.CachingCircleImageIconsProvider`
+: Icon provider implementation changes to async.
+
+### GitHub 2022.2
+
+`org.jetbrains.plugins.github.api.GithubApiRequestExecutorManager.getExecutor(GithubAccount)` method return type changed from `org.jetbrains.plugins.github.api.GithubApiRequestExecutor.WithTokenAuth` to `org.jetbrains.plugins.github.api.GithubApiRequestExecutor`
+: Hidden implementation details.
+
+`org.jetbrains.plugins.github.api.GithubApiRequestExecutorManager.getExecutor(GithubAccount, Project)` method return type changed from `org.jetbrains.plugins.github.api.GithubApiRequestExecutor.WithTokenAuth` to `org.jetbrains.plugins.github.api.GithubApiRequestExecutor`
+: Hidden implementation details.
+
+`org.jetbrains.plugins.github.api.GithubApiRequestExecutorManager.getExecutor(GithubAccount, JComponent)` method return type changed from `org.jetbrains.plugins.github.api.GithubApiRequestExecutor.WithTokenAuth` to `org.jetbrains.plugins.github.api.GithubApiRequestExecutor`
+: Hidden implementation details.
 
 ### Grazie Plugin 2022.2
 

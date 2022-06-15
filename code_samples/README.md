@@ -9,7 +9,10 @@
 Learn how to build plugins using IntelliJ Platform SDK for the [JetBrains products][jb:products] by experimenting with our code samples.
 These samples show you how features work and help you jumpstart your plugins.
 
-> **NOTE** To start a new plugin project, consider using [IntelliJ Platform Plugin Template][gh:template] which offers a pure boilerplate template to make it easier to create a new plugin project.
+> **Note**
+> To start a new plugin project, consider using [IntelliJ Platform Plugin Template][gh:template] which offers a pure boilerplate template to make it easier to create a new plugin project.
+>
+> The code samples can also be found in the [IntelliJ SDK Code Samples](https://github.com/JetBrains/intellij-sdk-code-samples) mirror repository.
 
 To learn more, browse [available Extension Points][docs:eps], explore Extension Point usages in open-source plugins using [IntelliJ Platform Explorer](https://jb.gg/ipe) and learn how to [Explore the IntelliJ Platform API][docs:explore-api].
 
@@ -29,7 +32,7 @@ It describes definitions of the actions, extensions, or listeners provided by th
 
 Please see [Code Samples][docs:code-samples] topic on how to import and run code samples.
 
-In the following table, you may find all available samples provided in the separated directories as stand-alone projects available for running with the Gradle `:runIde` task.
+In the following table, you may find all available samples provided in the separated directories as stand-alone projects available for running with the Gradle [`runIde`](tools_gradle_intellij_plugin.md#runide-task) task.
 
 | Code Sample                                                            | Description                                                                                                                                                                   |
 |------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

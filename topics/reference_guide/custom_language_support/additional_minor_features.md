@@ -28,6 +28,7 @@ The IDE will match such braces, but the highlighting for such braces will not be
 Certain types of braces can be marked as structural.
 Structural braces have higher priority than regular braces: they are matched with each other even if there are unmatched braces of different types between them.
 An opening non-structural brace is not matched with a closing one if one of them is inside a pair of matched structural braces and another is outside.
+See also [](#recognizing-complex-multi-block-expressions).
 
 ### Quote Handling
 
@@ -120,6 +121,86 @@ EP: `com.intellij.include.provider`
 
 [`FileIncludeProvider`](upsource:///platform/lang-impl/src/com/intellij/psi/impl/include/FileIncludeProvider.java) provides information about _include_ statements resolving to files (e.g., `<xi:include>` in XML).
 Including/included files can then be obtained via [`FileIncludeManager`](upsource:///platform/lang-api/src/com/intellij/psi/impl/include/FileIncludeManager.java).
+
+### Recognizing Complex Multi-Block Expressions
+
+EP: `com.intellij.codeBlockSupportHandler`
+
+[`CodeBlockSupportHandler`](upsource:///platform/lang-impl/src/com/intellij/codeInsight/highlighting/CodeBlockSupportHandler.java)
+allows providing text ranges for more complex code blocks like, e.g., in `if`/`elsif`/`else` blocks.
+It is used to highlight markers and keywords if one is under the cursor, and for navigation to the beginning/end of blocks.
+See also [](#brace-matching).
+
+### Breadcrumbs
+
+EP: `com.intellij.breadcrumbsInfoProvider`
+
+[`BreadcrumbsProvider`](upsource:///platform/editor-ui-api/src/com/intellij/ui/breadcrumbs/BreadcrumbsProvider.java)
+allows for language-specific breadcrumbs.
+Please refer to
+[`GroovyBreadcrumbsInfoProvider`](upsource:///plugins/groovy/src/org/jetbrains/plugins/groovy/editor/GroovyBreadcrumbsInfoProvider.kt)
+as implementation example.
+
+### Plain Text Completion
+
+EP: `completion.plainTextSymbol`
+
+[`PlainTextSymbolCompletionContributor`](upsource:///platform/lang-api/src/com/intellij/codeInsight/completion/PlainTextSymbolCompletionContributor.java)
+provides a simple way to extract lookup elements from a file so that users have completion available
+in, e.g., plain text editors like VCS commit messages.
+
+### Splitting and Joining List Constructs
+
+EP: `com.intellij.listSplitJoinContext`
+
+[`ListSplitJoinContext`](upsource:///platform/lang-impl/src/com/intellij/openapi/editor/actions/lists/ListSplitJoinContext.kt)
+needs to be implemented to define the exact behavior of splitting and joining list-like constructs
+in a language.
+The UI will show implementations of this EP as an
+[intention action](https://www.jetbrains.com/help/idea/intention-actions.html)
+at appropriate locations.
+Developers can use the abstract classes in
+[`DefaultListSplitJoinContext`](upsource:///platform/lang-impl/src/com/intellij/openapi/editor/actions/lists/DefaultListSplitJoinContext.kt)
+for their implementation and
+[`XmlAttributesSplitJoinContext`](upsource:///xml/impl/src/com/intellij/codeInsight/intentions/XmlAttributesSplitJoinContext.kt)
+serves as a good example.
+
+### Suggesting Rename and Change Signature Refactorings
+
+EP: `com.intellij.suggestedRefactoringSupport`
+
+[`SuggestedRefactoringSupport`](upsource:///platform/lang-api/src/com/intellij/refactoring/suggested/SuggestedRefactoringSupport.kt)
+provides functionality for suggesting rename and change signature refactorings for custom languages.
+Please see
+[`KotlinSuggestedRefactoringSupport`](upsource:///plugins/kotlin/idea/src/org/jetbrains/kotlin/idea/refactoring/suggested/KotlinSuggestedRefactoringSupport.kt)
+for an implementation example.
+
+### Reader Mode
+
+EP: `readerModeMatcher`
+
+[`ReaderModeMatcher`](upsource:///platform/editor-ui-api/src/com/intellij/codeInsight/actions/ReaderModeMatcher.kt)
+provides a way to decide if files are shown in the correct mode: reader mode vs. normal editor mode.
+Please see
+[the documentation](https://www.jetbrains.com/help/idea/reader-mode.html)
+to get familiar with reader mode.
+
+### Background Colors for Editors and Project View
+
+EP: `com.intellij.editorTabColorProvider`
+
+[`EditorTabColorProvider`](upsource:///platform/ide-core-impl/src/com/intellij/openapi/fileEditor/impl/EditorTabColorProvider.java)
+allows for the modification of the background colors for specific files.
+
+### Custom Names and Tooltips for Editor Tabs
+
+EP: `com.intellij.editorTabTitleProvider`
+
+[`EditorTabTitleProvider`](upsource:///platform/ide-core-impl/src/com/intellij/openapi/fileEditor/impl/EditorTabTitleProvider.java)
+allows for specifying custom names and tooltips displayed in the title of editor tabs.
+Please see, e.g.,
+[`GradleEditorTabTitleProvider`](upsource:///plugins/gradle/src/org/jetbrains/plugins/gradle/util/GradleEditorTabTitleProvider.kt)
+which shows how the project name is added to the editor tab for Gradle files.
 
 > If a topic you are interested in is not covered in the above sections, let us know via the "**Was this page helpful?**" feedback form below or [other channels](getting_help.md#problems-with-the-guide).
 >

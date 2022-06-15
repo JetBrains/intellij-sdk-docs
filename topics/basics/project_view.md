@@ -15,7 +15,6 @@ to Python Jupyter directories as location strings.
 To modify project view node representations, implement
 [`ProjectViewNodeDecorator`](upsource:///platform/lang-impl/src/com/intellij/ide/projectView/ProjectViewNodeDecorator.java)
 and register it as `com.intellij.projectViewNodeDecorator` extension.
-The interface contains two `decorate()` methods where one is for modifying the node representation
-of normal project view nodes and the other is for changing package dependency nodes.
+From the interface only the `decorate()` method that modifies `ProjectViewNode`s needs to be implemented.
 If you need to update your node representation on certain events, please use
 [`ProjectView.update()`](upsource:///platform/lang-impl/src/com/intellij/ide/projectView/ProjectView.java).

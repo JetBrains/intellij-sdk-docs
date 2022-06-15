@@ -12,12 +12,12 @@ See [](extension_point_list.md) for IntelliJ Platform.
 
 ### WebStorm - Listeners
 
-| Topic                                                                         | Listener                         |
-|-------------------------------------------------------------------------------|----------------------------------|
-| `JestConsoleProperties#COVERAGE_CONFIG_TOPIC` ![Project-Level][project-level] | `JestCoverageConfigListener`     |
-| `PackageJsonFileManager#TOPIC` ![Project-Level][project-level]                | `PackageJsonChangeListener`      |
-| `JSLibraryManager#TOPIC` ![Project-Level][project-level]                      | `JSLibraryManagerChangeListener` |
-| `JSRemoteModulesRegistry#TOPIC`                                               | `JSRemoteModulesChangeListener`  |
+| Topic                                                                                                                                                                                           | Listener                         |
+|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------|
+| [JestConsoleProperties#COVERAGE_CONFIG_TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.javascript.jest.JestCoverageConfigListener)  ![Project-Level][project-level]                      | `JestCoverageConfigListener`     |
+| [PackageJsonFileManager#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.javascript.nodejs.packageJson.PackageJsonFileManager.PackageJsonChangeListener)  ![Project-Level][project-level] | `PackageJsonChangeListener`      |
+| [JSLibraryManager#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.lang.javascript.library.JSLibraryManager.JSLibraryManagerChangeListener)  ![Project-Level][project-level]              | `JSLibraryManagerChangeListener` |
+| [JSRemoteModulesRegistry#TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.lang.javascript.modules.remote.JSRemoteModulesChangeListener)                                                   | `JSRemoteModulesChangeListener`  |
 
 ### com.intellij.css
 

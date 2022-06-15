@@ -2,7 +2,7 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-66 Extension Points and 10 Listeners for RubyMine
+66 Extension Points and 11 Listeners for RubyMine
 
 See [](extension_point_list.md) for IntelliJ Platform.
 
@@ -12,18 +12,19 @@ See [](extension_point_list.md) for IntelliJ Platform.
 
 ### RubyMine - Listeners
 
-| Topic                                                                      | Listener                        |
-|----------------------------------------------------------------------------|---------------------------------|
-| `ChefTopics#COOKBOOK`                                                      | `CookbooksListener`             |
-| `GemManager#GEMSET_CHANGED_TOPIC`                                          | `GemSetListener`                |
-| `GemManager#MODULE_GEMS_CHANGED_TOPIC` ![Project-Level][project-level]     | `ModuleGemsListener`            |
-| `InflectorService#INFLECTIONS_CHANGED`                                     | `InflectionChanged`             |
-| `AssetsRegistrationWatcher#ASSETS_CHANGED_TOPIC`                           | `AssetsListener`                |
-| `MigrationParser#MIGRATIONS_CHANGED_TOPIC` ![Project-Level][project-level] | `MigrationListener`             |
-| `RubyRemoteInterpreterManager#RUBY_REMOTE_SDK_TRANSFER_LISTENER_TOPIC`     | `RubyRemoteSdkTransferListener` |
-| `RequireSetChangedListener#TOPIC`                                          | `RequireSetChangedListener`     |
-| `RubySdkType#SDK_PATHS_INITIALIZED_TOPIC`                                  | `SdkPathsInitializedListener`   |
-| `RVMSupportUtil#RVM_GEMSET_ADDED_TOPIC`                                    | `RVMGemsetListener`             |
+| Topic | Listener |
+|-------|----------|
+| [ChefTopics#COOKBOOK](https://jb.gg/ipe/listeners?topics=org.jetbrains.plugins.ruby.chef.sdk.CookbooksListener)  | `CookbooksListener` |
+| [GemManager#GEMSET_CHANGED_TOPIC](https://jb.gg/ipe/listeners?topics=org.jetbrains.plugins.ruby.gem.GemManager.GemSetListener)  | `GemSetListener` |
+| [GemManager#MODULE_GEMS_CHANGED_TOPIC](https://jb.gg/ipe/listeners?topics=org.jetbrains.plugins.ruby.gem.GemManager.ModuleGemsListener)  ![Project-Level][project-level] | `ModuleGemsListener` |
+| [GemRequirementsHolder#GEM_REQUIREMENTS_CHANGED_TOPIC](https://jb.gg/ipe/listeners?topics=org.jetbrains.plugins.ruby.gem.module.GemRequirementsHolder.RequirementsChangedListener)  ![Project-Level][project-level] | `RequirementsChangedListener` |
+| [InflectorService#INFLECTIONS_CHANGED](https://jb.gg/ipe/listeners?topics=org.jetbrains.plugins.ruby.rails.InflectorService.InflectionChanged)  | `InflectionChanged` |
+| [AssetsRegistrationWatcher#ASSETS_CHANGED_TOPIC](https://jb.gg/ipe/listeners?topics=org.jetbrains.plugins.ruby.rails.codeInsight.sprockets.assetsPaths.AssetsRegistrationWatcher.AssetsListener)  | `AssetsListener` |
+| [MigrationParser#MIGRATIONS_CHANGED_TOPIC](https://jb.gg/ipe/listeners?topics=org.jetbrains.plugins.ruby.rails.database.MigrationParser.MigrationListener)  ![Project-Level][project-level] | `MigrationListener` |
+| [RubyRemoteInterpreterManager#RUBY_REMOTE_SDK_TRANSFER_LISTENER_TOPIC](https://jb.gg/ipe/listeners?topics=org.jetbrains.plugins.ruby.remote.RubyRemoteSdkTransferListener)  | `RubyRemoteSdkTransferListener` |
+| [RequireSetChangedListener#TOPIC](https://jb.gg/ipe/listeners?topics=org.jetbrains.plugins.ruby.ruby.codeInsight.symbols.cache.RequiresIndexExtension.RequireSetChangedListener)  | `RequireSetChangedListener` |
+| [RubySdkType#SDK_PATHS_INITIALIZED_TOPIC](https://jb.gg/ipe/listeners?topics=org.jetbrains.plugins.ruby.ruby.sdk.RubySdkType.SdkPathsInitializedListener)  | `SdkPathsInitializedListener` |
+| [RVMSupportUtil#RVM_GEMSET_ADDED_TOPIC](https://jb.gg/ipe/listeners?topics=org.jetbrains.plugins.ruby.version.management.rvm.RVMSupportUtil.RVMGemsetListener)  | `RVMGemsetListener` |
 
 ### intellij.ruby.coverage.xml
 

@@ -12,10 +12,10 @@ See [](extension_point_list.md) for IntelliJ Platform.
 
 ### Rider - Listeners
 
-| Topic                                                          | Listener                                                                                                                             |
-|----------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------|
-| `RiderStyleCopConfigurable#STYLE_COP_CONFIGURABLE_TOPIC`       | [`EditorOptionsListener`](upsource:///platform/platform-impl/src/com/intellij/application/options/editor/EditorOptionsListener.java) |
-| `RiderClangFormatConfigurable#CLANG_FORMAT_CONFIGURABLE_TOPIC` | [`EditorOptionsListener`](upsource:///platform/platform-impl/src/com/intellij/application/options/editor/EditorOptionsListener.java) |
+| Topic                                                                                                                                                            | Listener                                                                                                                             |
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------|
+| [RiderStyleCopConfigurable#STYLE_COP_CONFIGURABLE_TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.application.options.editor.EditorOptionsListener)       | [`EditorOptionsListener`](upsource:///platform/platform-impl/src/com/intellij/application/options/editor/EditorOptionsListener.java) |
+| [RiderClangFormatConfigurable#CLANG_FORMAT_CONFIGURABLE_TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.application.options.editor.EditorOptionsListener) | [`EditorOptionsListener`](upsource:///platform/platform-impl/src/com/intellij/application/options/editor/EditorOptionsListener.java) |
 
 ### com.jetbrains.dotTrace
 

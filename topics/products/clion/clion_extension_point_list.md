@@ -12,35 +12,35 @@ See [](extension_point_list.md) for IntelliJ Platform.
 
 ### CLion - Listeners
 
-| Topic | Listener |
-|-------|----------|
-| `FileSymbolTablesCache#OUT_OF_CODE_BLOCK_TOPIC` ![Project-Level][project-level] | [`Listener`](upsource:///platform/core-api/src/com/intellij/psi/util/PsiModificationTracker.java) |
-| `CMakeWorkspaceListener#TOPIC` | `CMakeWorkspaceListener` |
-| `CubeMXManager#TOPIC` | `CubeStatusListener` |
-| `CLionExternalBuildManagerListener#TOPIC` | `CLionExternalBuildManagerListener` |
-| `MakefileBuildTargetsManagerListener#TOPIC` | `MakefileBuildTargetsManagerListener` |
-| `CPPToolchainsConfigurable#TOPIC` | `Listener` |
-| `CPPToolchainsListener#TOPIC` | `CPPToolchainsListener` |
-| `ExecutableListener#TOPIC` | `ExecutableListener` |
-| `CidrBuildListener#TOPIC` ![Project-Level][project-level] | `CidrBuildListener` |
-| `ExternalWorkspaceListener#TOPIC` | `ExternalWorkspaceListener` |
-| `ClangLanguageServiceProviderListener#TOPIC` | `ClangLanguageServiceProviderListener` |
-| `ClangServerListener#TOPIC` | `ClangServerListener` |
-| `ClangTelemetryListener#TOPIC` | `ClangTelemetryListener` |
-| `ClangMemoryUsageWatchDogListener#TOPIC` | `ClangMemoryUsageWatchDogListener` |
-| `OCLanguageServiceReparsingPassListener#TOPIC` | `OCLanguageServiceReparsingPassListener` |
-| `ClangdSettingsListener#TOPIC` | `ClangdSettingsListener` |
-| `ClangdSettingsListener#TOPIC_UI` | `ClangdSettingsListener` |
-| `CidrInjectionListener#INJECTION_TOPIC` | `CidrInjectionListener` |
-| `OCInclusionContextListener#TOPIC` | `OCInclusionContextListener` |
-| `FileSymbolTableCacheListener#TOPIC` | `FileSymbolTableCacheListener` |
-| `FileSymbolTablesPackListener#TOPIC` | `FileSymbolTablesPackListener` |
-| `OCFileSymbolTableListener#TOPIC` | `OCFileSymbolTableListener` |
-| `OCWorkspaceListener#TOPIC` | `OCWorkspaceListener` |
-| `CidrRootConfigurationListener#TOPIC` | `CidrRootConfigurationListener` |
-| `CidrWorkspaceListener#TOPIC` | `CidrWorkspaceListener` |
-| `RemoteDeploymentListener#TOPIC` | `RemoteDeploymentListener` |
-| `AllowedModules#INVALIDATION_TOPIC` | `Runnable` |
+| Topic                                                                                                                                                                           | Listener |
+|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
+| [FileSymbolTablesCache#OUT_OF_CODE_BLOCK_TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.psi.util.PsiModificationTracker.Listener)  ![Project-Level][project-level]      | [`Listener`](upsource:///platform/core-api/src/com/intellij/psi/util/PsiModificationTracker.java) |
+| [CMakeWorkspaceListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.cpp.cmake.workspace.CMakeWorkspaceListener)                                                | `CMakeWorkspaceListener` |
+| [CubeMXManager#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.cpp.embedded.stm32cubemx.CubeMXManager.CubeStatusListener)                                          | `CubeStatusListener` |
+| [CLionExternalBuildManagerListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.cpp.execution.external.build.CLionExternalBuildManagerListener)                 | `CLionExternalBuildManagerListener` |
+| [MakefileBuildTargetsManagerListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.cpp.makefile.execution.build.MakefileBuildTargetsManagerListener)             | `MakefileBuildTargetsManagerListener` |
+| [CPPToolchainsConfigurable#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.cpp.toolchains.CPPToolchainsConfigurable.Listener)                                      | `Listener` |
+| [CPPToolchainsListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.cpp.toolchains.CPPToolchainsListener)                                                       | `CPPToolchainsListener` |
+| [ExecutableListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.execution.CidrRunConfigurationExecutableEditor.ExecutableListener)                             | `ExecutableListener` |
+| [CidrBuildListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.execution.build.CidrBuildListener)  ![Project-Level][project-level]                             | `CidrBuildListener` |
+| [ExternalWorkspaceListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.external.system.workspace.ExternalWorkspaceListener)                                    | `ExternalWorkspaceListener` |
+| [ClangLanguageServiceProviderListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.lang.daemon.clang.clangd.ClangLanguageServiceProviderListener)               | `ClangLanguageServiceProviderListener` |
+| [ClangServerListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.lang.daemon.clang.clangd.lsp.server.ClangServerListener)                                      | `ClangServerListener` |
+| [ClangTelemetryListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.lang.daemon.clang.clangd.lsp.telemetry.ClangTelemetryListener)                             | `ClangTelemetryListener` |
+| [ClangMemoryUsageWatchDogListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.lang.daemon.clang.clangd.memory.ClangMemoryUsageWatchDogListener)                | `ClangMemoryUsageWatchDogListener` |
+| [OCLanguageServiceReparsingPassListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.lang.daemon.clang.clangd.reparsing.OCLanguageServiceReparsingPassListener) | `OCLanguageServiceReparsingPassListener` |
+| [ClangdSettingsListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.lang.daemon.clang.clangd.settings.ClangdSettingsListener)                                  | `ClangdSettingsListener` |
+| [ClangdSettingsListener#TOPIC_UI](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.lang.daemon.clang.clangd.settings.ClangdSettingsListener)                               | `ClangdSettingsListener` |
+| [CidrInjectionListener#INJECTION_TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.lang.editor.CidrInjectionListener)                                                | `CidrInjectionListener` |
+| [OCInclusionContextListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.lang.preprocessor.OCInclusionContextListener)                                          | `OCInclusionContextListener` |
+| [FileSymbolTableCacheListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.lang.symbols.symtable.FileSymbolTableCacheListener)                                  | `FileSymbolTableCacheListener` |
+| [FileSymbolTablesPackListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.lang.symbols.symtable.FileSymbolTablesPackListener)                                  | `FileSymbolTablesPackListener` |
+| [OCFileSymbolTableListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.lang.symbols.symtable.OCFileSymbolTableListener)                                        | `OCFileSymbolTableListener` |
+| [OCWorkspaceListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.lang.workspace.OCWorkspaceListener)                                                           | `OCWorkspaceListener` |
+| [CidrRootConfigurationListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.project.CidrRootConfigurationListener)                                              | `CidrRootConfigurationListener` |
+| [CidrWorkspaceListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.project.workspace.CidrWorkspaceListener)                                                    | `CidrWorkspaceListener` |
+| [RemoteDeploymentListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.system.RemoteDeploymentListener)                                                         | `RemoteDeploymentListener` |
+| [AllowedModules#INVALIDATION_TOPIC](https://jb.gg/ipe/listeners?topics=java.lang.Runnable)                                                                                      | `Runnable` |
 
 ### CidrCoveragePlugin.xml
 

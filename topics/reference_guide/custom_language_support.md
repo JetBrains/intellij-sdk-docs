@@ -52,6 +52,7 @@ The webinar [How We Built Comma, the Raku IDE, on the IntelliJ Platform](https:/
 * [](code_formatting.md)
 * [](code_inspections_and_intentions.md)
 * [](structure_view.md)
+* [](navbar.md)
 * Code Hierarchy
 * [](surround_with.md)
 * [](go_to_class_and_go_to_symbol.md)

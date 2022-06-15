@@ -13,6 +13,6 @@ Once the user selects a specific surrounder from the popup menu, the [`Surrounde
 **Example:**
 [`SurroundDescriptor`](upsource:///plugins/groovy/src/org/jetbrains/plugins/groovy/lang/surroundWith/GroovySurroundDescriptor.java) for Groovy plugin
 
-> See the [](live_templates.md) section for information on how to support simple code surrounding with the *Live Templates* feature.
+> See the [](live_templates.md) and [](advanced_postfix_templates.md#surround-postfix-templates) sections for information on how to support code surrounding with other IDE features.
 >
 {type="note"}

@@ -45,16 +45,19 @@ Bundled plugins are located in <path>$PRODUCT_ROOT$/plugins/$PLUGIN_NAME$/lib/$P
 The following table lists some commonly used bundled plugins and their ID.
 See also [](extension_point_list.md#intellij-community-plugins) and [](plugin_compatibility.md#modules-specific-to-functionality).
 
-| Plugin Name               | Plugin ID                       |
-|---------------------------|---------------------------------|
-| Copyright                 | `com.intellij.copyright`        |
-| CSS                       | `com.intellij.css`              |
-| IntelliLang               | `org.intellij.intelliLang`      |
-| Java                      | `com.intellij.java`             |
-| JavaScript and TypeScript | `JavaScript`                    |
-| Kotlin                    | `org.jetbrains.kotlin`          |
-| Markdown                  | `org.intellij.plugins.markdown` |
-| Maven                     | `org.jetbrains.idea.maven`      |
+| Plugin Name               | Plugin ID                                    |
+|---------------------------|----------------------------------------------|
+| Copyright                 | `com.intellij.copyright`                     |
+| CSS                       | `com.intellij.css`                           |
+| Database Tools and SQL    | `com.intellij.database` [](data_grip.md)     |
+| IntelliLang               | `org.intellij.intelliLang`                   |
+| Java                      | `com.intellij.java`                          |
+| JavaScript and TypeScript | `JavaScript`                                 |
+| Kotlin                    | `org.jetbrains.kotlin` [](kotlin.md)         |
+| Markdown                  | `org.intellij.plugins.markdown`              |
+| Maven                     | `org.jetbrains.idea.maven`                   |
+| Spring                    | `com.intellij.spring` [](spring_api.md)      |
+| Spring Boot               | `com.intellij.spring.boot` [](spring_api.md) |
 
 ### Preparing Sandbox
 
@@ -67,11 +70,11 @@ Depending on the chosen development workflow (Gradle or DevKit), one of the two 
 <tabs>
 <tab title="Gradle">
 
-> Please see the `plugins` attribute [gradle-intellij-plugin: Configuration](https://github.com/JetBrains/gradle-intellij-plugin#configuration) for acceptable values.
+> Please see the [`intellij.plugins`](tools_gradle_intellij_plugin.md#intellij-extension-plugins) property for acceptable values.
 >
 {type="note"}
 
-If the project uses [Gradle](gradle_build_system.md), add the dependency to the `plugins` parameter of the `intellij` block in your build script:
+If the project uses [Gradle](gradle_build_system.md), add the dependency to the [`intellij.plugins`](tools_gradle_intellij_plugin.md#intellij-extension-plugins) parameter in your build script:
 
 <tabs>
 <tab title="Kotlin">

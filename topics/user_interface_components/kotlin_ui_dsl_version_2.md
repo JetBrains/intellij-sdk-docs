@@ -8,37 +8,20 @@
 >
 {type="note"}
 
-Kotlin UI DSL version 2 helps create UI based on [IntelliJ Platform UI Guidelines](https://jetbrains.design/intellij/).
-It supports many core Swing components and custom components widely used in JetBrains products based on the IntelliJ Platform.
+Kotlin UI DSL Version 2 allows creating UI forms with input components bound to state objects.
+The forms are built by using a declarative Kotlin syntax and follow the official IntelliJ Platform UI conventions described in the [IntelliJ Platform UI Guidelines](https://jetbrains.design/intellij/).
+The library is written in [Kotlin](kotlin.md) and makes it easy to develop user interfaces like dialogs and settings pages.
 
-The library is written in [Kotlin](kotlin.md) and makes it easy to develop user interfaces like dialogs and settings by using declarative syntax.
+The Kotlin UI DSL is not intended to build general UIs, like tool windows controls that trigger some actions and do not contain any input components bound to state objects.
+For this purpose, use [custom Swing components](user_interface_components.md) from the IntelliJ Platform or the standard ones.
 
-## Version 1 and 2 Comparison
+The _Kotlin UI DSL Version 2_ functions are located in the [`com.intellij.ui.dsl.builder`](upsource:///platform/platform-impl/src/com/intellij/ui/dsl/builder) package.
 
-In UI DSL version 2, some crucial problems from version 1 have been fixed, so porting is highly desirable.
-See [](#migration-from-version-1) on how to port existing UI DSL code from version 1 to version 2 API.
-Version 1 is deprecated and will be removed in future platform releases.
+## UI DSL Examples
 
-The following significant changes were made:
+It is highly recommended taking a look at the UI DSL demo available via <menupath>Tools | Internal Actions | UI | UI DSL Showcase</menupath> (see [Internal Actions](internal_actions_intro.md) if not available in your IDE instance).
 
-- Reduced API, which allows conceiving API easier and faster.
-  Example: there were 5 overloaded methods `Cell.checkBox()` in version 1, now only one method remains.
-  Functionality for binding properties is extracted into `Cell<T>.bindSelected()` methods.
-- UI DSL became stricter, so the available API in every context is much smaller.
-  Example: code like `row { row {` is forbidden now.
-- Structured API mostly based on interfaces, because it's easier to learn API by grouped methods.
-  Only a small part of API is implemented as extensions.
-- KDoc is widely used.
-- MIG layout is fully removed from the new UI DSL and replaced by `GridLayout`.
-  Because MIG layout is an external library, it's hard to fix bugs there (e.g., there are layout problems when components become invisible) and extend its functionality.
-  Fixed focus ring cropping problems: when components are placed near the panel border focus ring could be cropped if panel insets do not specify enough space.
-- Implemented [Placeholder](#placeholder) that allows replacing components at runtime after content is shown.
-
-## UI DSL Showcase
-
-It is highly recommended taking a look at <control>UI DSL Showcase</control> demo available via <menupath>Tools | Internal Actions | UI | UI DSL Showcase</menupath> (see [Internal Actions](internal_actions_intro.md) if not available in your IDE instance).
-
-It describes some UI DSL basics and contains explanations, tips, a list of all available components, and many examples.
+It describes some UI DSL basics and contains explanations, tips, a list of all available components, and many examples with links to the source code.
 
 > All sections below refer to relevant tab available in this demo:
 >
@@ -446,7 +429,28 @@ buttonsGroup(title = "radioButton:") {
 }.bind(model::radioButtonColor)
 ```
 
-## Migration from Version 1
+## Version 1 and 2 Comparison
+
+In UI DSL version 2, some crucial problems from version 1 have been fixed, so porting is highly desirable.
+See [](#migration-from-version-1) on how to port existing UI DSL code from version 1 to version 2 API.
+Version 1 is deprecated and will be removed in future platform releases.
+
+The following significant changes were made:
+
+- Reduced API, which allows conceiving API easier and faster.
+  Example: there were 5 overloaded methods `Cell.checkBox()` in version 1, now only one method remains.
+  Functionality for binding properties is extracted into `Cell<T>.bindSelected()` methods.
+- UI DSL became stricter, so the available API in every context is much smaller.
+  Example: code like `row { row {` is forbidden now.
+- Structured API mostly based on interfaces, because it's easier to learn API by grouped methods.
+  Only a small part of API is implemented as extensions.
+- KDoc is widely used.
+- MIG layout is fully removed from the new UI DSL and replaced by `GridLayout`.
+  Because MIG layout is an external library, it's hard to fix bugs there (e.g., there are layout problems when components become invisible) and extend its functionality.
+  Fixed focus ring cropping problems: when components are placed near the panel border focus ring could be cropped if panel insets do not specify enough space.
+- Implemented [Placeholder](#placeholder) that allows replacing components at runtime after content is shown.
+
+### Migration from Version 1
 
 New API is very similar to the old one and covers almost all functionality now, so moving to the new version can be done quickly.
 

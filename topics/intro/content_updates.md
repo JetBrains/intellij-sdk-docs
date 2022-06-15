@@ -12,6 +12,18 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 
 ## 2022
 
+### June-22
+
+Postfix Completion
+: Add [](postfix_completion.md) section explaining how to implement generating or wrapping the existing code into additional constructs without navigating the caret back.
+
+Gradle IntelliJ Plugin
+: Add [](tools_gradle_intellij_plugin.md) documentation to _Appendix III — Tools_.
+
+Minor Changes and Additions
+:
+- Add a small section to [](php_open_api.md#utility-classes) describing `PhpFilePathUtils` utility class.
+
 ### May-22
 
 PHP Type Providers
@@ -20,14 +32,15 @@ PHP Type Providers
 Navigation Bar
 : Add [](navbar.md) section with an [accompanying tutorial](structure_aware_navbar.md) showing how to implement a custom navigation bar for a custom language.
 
-Rename Refactoring
-: Add [](rename_refactoring.md) paragraphs mentioning `RenameInputValidator` and `RenameInputValidatorEx`.
-
-Decorating Project View Nodes
-: Add small section to [](project_view.md) describing how to modify the representation of nodes in the project view.
-
 Inlay Hints
 : Add section [](inlay_hints.md) describing special markers that appear in the editor and provide additional information code, like the names of the parameters that a called method expects.
+
+Minor Changes and Additions
+:
+- Add a small section to [](editor_components.md) describing convenient `EditorTextField` subclasses.
+- Add descriptions for the following EPs to [](additional_minor_features.md): [](additional_minor_features.md#recognizing-complex-multi-block-expressions), [](additional_minor_features.md#breadcrumbs), [](additional_minor_features.md#plain-text-completion), [](additional_minor_features.md#splitting-and-joining-list-constructs), [](additional_minor_features.md#suggesting-rename-and-change-signature-refactorings), [](additional_minor_features.md#reader-mode), [](additional_minor_features.md#background-colors-for-editors-and-project-view), [](additional_minor_features.md#custom-names-and-tooltips-for-editor-tabs).
+- Add small section to [](project_view.md#decorating-project-view-nodes) describing how to modify the representation of nodes in the project view.
+- Add [](rename_refactoring.md) paragraphs mentioning `RenameInputValidator(Ex)`.
 
 ### April-22
 
@@ -85,7 +98,7 @@ Extension Point Lists: Listeners, Deprecation status
 ### July-21
 
 Plugin Signing
-: [](plugin_signing.md) describes the plugin signing process, explains how to generate a certificate, configure the Gradle `signPlugin` task, and introduces a standalone CLI tool.
+: [](plugin_signing.md) describes the plugin signing process, explains how to generate a certificate, configure the Gradle [`signPlugin`](tools_gradle_intellij_plugin.md#signplugin-task) task, and introduces a standalone CLI tool.
 
 ### June-21
 

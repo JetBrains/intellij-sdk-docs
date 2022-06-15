@@ -27,7 +27,7 @@ Choose the project root directory, for example <path>code_samples/simple_languag
 
 After that, the IDE generates the lexer under the <path>gen</path> directory, for example in <path>simple_language_plugin/src/main/gen/org/intellij/sdk/language/SimpleLexer</path>.
 
-> Gradle plugin [gradle-grammar-kit-plugin](https://github.com/JetBrains/gradle-grammar-kit-plugin) can be used alternatively.
+> [](tools_gradle_grammar_kit_plugin.md) can be used alternatively.
 >
 {type="tip"}
 
@@ -72,7 +72,7 @@ For example, see <path>simple_language_plugin/src/main/resources/META-INF/plugin
 
 ## Run the Project
 
-Run the plugin by using the Gradle [runIde task](gradle_prerequisites.md#running-a-simple-gradle-based-intellij-platform-plugin).
+Run the plugin by using the Gradle [`runIde`](gradle_prerequisites.md#running-a-simple-gradle-based-intellij-platform-plugin) task.
 
 Create a <path>test.simple</path>  file with the following content:
 

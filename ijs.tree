@@ -186,6 +186,10 @@
     <toc-element toc-title="Navigation"/>
     <toc-element id="editing.md">
       <toc-element toc-title="Code Completion"/>
+      <toc-element id="postfix_completion.md">
+        <toc-element id="postfix_templates.md"/>
+        <toc-element id="advanced_postfix_templates.md"/>
+      </toc-element>
       <toc-element id="templates.md">
         <toc-element id="live_templates.md">
           <toc-element id="template_support.md"/>
@@ -375,5 +379,13 @@
       <toc-element id="api_notable_list_2019.md" toc-title="2019.*"/>
     </toc-element>
     <toc-element id="api_internal.md"/>
+  </toc-element>
+  <toc-element toc-title="Appendix III — Tools">
+    <toc-element id="tools_gradle_intellij_plugin.md" show-structure-depth="1">
+      <toc-element toc-title="Usage Examples" id="tools_gradle_intellij_plugin_examples.md"/>
+      <toc-element toc-title="Frequently Asked Questions" id="tools_gradle_intellij_plugin_faq.md"/>
+      <toc-element toc-title="Migration Guide from 0.x to 1.x" href="https://lp.jetbrains.com/gradle-intellij-plugin/"/>
+    </toc-element>
+    <toc-element id="tools_gradle_grammar_kit_plugin.md" show-structure-depth="1" />
   </toc-element>
 </product-profile>

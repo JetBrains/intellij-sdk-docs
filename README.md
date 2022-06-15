@@ -7,7 +7,8 @@
 
 Welcome to the repository for [IntelliJ Platform SDK Documentation](https://plugins.jetbrains.com/docs/intellij/?from=GH-README) site.
 
-The code samples can also be found in the [IntelliJ SDK Code Samples](https://github.com/JetBrains/intellij-sdk-code-samples) mirror repository.
+> **Note**
+> The code samples can also be found in the [IntelliJ SDK Code Samples](https://github.com/JetBrains/intellij-sdk-code-samples) mirror repository.
 
 ## Feedback
 

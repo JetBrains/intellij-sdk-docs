@@ -1,149 +1,141 @@
 [//]: # (title: Getting Started with Gradle)
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 Gradle is the preferred solution for creating IntelliJ Platform plugins.
 The IntelliJ IDEA Ultimate and Community editions bundle the necessary plugins to support Gradle-based development.
 These IntelliJ IDEA plugins are _Gradle_ and _Plugin DevKit_, which are enabled by default.
 To verify these plugins are installed and enabled, see the help section about [Managing Plugins](https://www.jetbrains.com/help/idea/managing-plugins.html).
 
-> [IntelliJ Platform Plugin Template](https://github.com/JetBrains/intellij-platform-plugin-template) makes it easier to create and maintain your IDE plugins, having the Gradle plugin already integrated and CI covered with GitHub Actions.
->
-{type="tip"}
-
-> When adding additional repositories to your Gradle build script, always use the HTTPS protocol.
->
-{type="warning"}
-
 ## Creating a Gradle-Based IntelliJ Platform Plugin with New Project Wizard
 
-Creating new Gradle-based IntelliJ Platform plugin projects is performed using the [New Project Wizard](https://www.jetbrains.com/help/idea/gradle.html#project_create_gradle).
-The Wizard creates all the necessary project files based on a few template inputs.
+Creating new Gradle-based IntelliJ Platform plugin projects is performed using the dedicated generator available in the [New Project Wizard](https://www.jetbrains.com/help/idea/new-project-wizard.html).
+The generator creates all the necessary project files based on a few template inputs.
 
-Before creating a new Gradle project, familiarize yourself with the [Creating a new Gradle project](https://www.jetbrains.com/help/idea/getting-started-with-gradle.html#create_gradle_project) help topic, which is a tutorial for creating general Gradle projects in IntelliJ IDEA.
-This page emphasizes the steps in the process of creating IntelliJ Platform plugin projects that are Gradle-based.
-Additionally, the [Working with Gradle in IntelliJ IDEA](https://www.youtube.com/watch?v=6V6G3RyxEMk) screencast offers a thorough introduction.
+<procedure title="Create IDE Plugin" id="create-ide-plugin">
 
-<video href="6V6G3RyxEMk" title="Working with Gradle in IntelliJ IDEA" width="300"/>
+Launch the <control>New Project</control> wizard via the <menupath>File | New | Project...</menupath> action and provide the following information:
+1. Select the <control>IDE Plugin</control> generator type from the list on the left.
+2. Specify the project <control>Name</control> and <control>Location</control>.
+3. Choose the <control>Plugin</control> option in the project <control>Type</control>.
+4. Choose the <control>Language</control> the plugin will use for implementation.
+  For this example select the <control>Java</control> option.
+  See [Kotlin for Plugin Developers](kotlin.md) for more information.
+5. Provide the <control>Group</control> which is typically an inverted company domain (e.g. `com.example.mycompany`).
+  It is used for the Gradle property `project.group` value in the project's Gradle build script.
+6. Provide the <control>Artifact</control> which is the default name of the build project artifact (without a version).
+  It is also used for the Gradle property `rootProject.name` value in the project's <path>settings.gradle.kts</path> file.
+  For this example, enter `my_plugin`.
+7. Select <control>JDK</control> 11.
+  This JDK will be the default JRE used to run Gradle, and the JDK version used to compile the plugin Java sources.
 
-Launch the [New Project Wizard](https://www.jetbrains.com/help/idea/gradle.html#project_create_gradle).
-It guides you through the Gradle project creation process with two screens.
-
-### New Project Configuration Screen
-
-On the first screen, the type of project is configured:
-* From the project type pane on the left, choose <control>Gradle</control>.
-* Specify the <control>Project SDK</control> based on the **Java 8** JDK.
-  This SDK will be the default JRE used to run Gradle, and the JDK version used to compile the plugin Java sources.
-
-> When targeting 2020.3 and later only, using Java 11 is now required; please see this [blog post](https://blog.jetbrains.com/platform/2020/09/intellij-project-migrates-to-java-11/)
+> When targeting 2020.3 and later only, using Java 11 is now required. See the [IntelliJ project migrates to Java 11](https://blog.jetbrains.com/platform/2020/09/intellij-project-migrates-to-java-11/) blog post for details.
+>
+> When targeting 2022.2 and later only, using Java 17 is required.
 >
 {type="note"}
 
-* In the <control>Additional Libraries and Frameworks</control> panel, select <control>Java</control> and <control>IntelliJ Platform Plugin</control>.
-  These settings will be used for the remainder of this tutorial.
+8. After providing all the information, click the <control>Create</control> button to generate the project.
 
-Optionally:
-* To include support for the Kotlin language in the plugin, check the _Kotlin/JVM_ box (circled in green below).
-  This option can be selected with or without the <control>Java</control> language.
-  See [Kotlin for Plugin Developers](kotlin.md) for more information.
-* To create the <path>build.gradle</path> file as a Kotlin build script (<path>build.gradle.kts</path>) rather than Groovy, check the _Kotlin DSL build script_ box (circled in magenta below).
-
-Then click _Next_:
-
-![Select Gradle in the Project Creation Wizard](step1_new_gradle_project.png){width="800"}
-
-### Project Naming/Artifact Coordinates Screen
-
-Expand the <control>Artifact Coordinates</control> section and specify a [GroupId, ArtifactId, and Version](https://www.jetbrains.com/help/idea/gradle.html#project_create_gradle) using [Maven naming](https://maven.apache.org/guides/mini/guide-naming-conventions.html) conventions.
-* <control>GroupId</control> is typically a Java package name, and it is used for the Gradle property `project.group` value in the project's Gradle build script.
-  For this example, enter `com.example.mycompany`.
-* <control>ArtifactId</control> is the default name of the project JAR file (without a version).
-  It is also used for the Gradle property `rootProject.name` value in the project's <path>settings.gradle</path> file.
-  For this example, enter `my_gradle_plugin`.
-* <control>Version</control> is used for the Gradle property `project.version` value in the Gradle build script.
-  For this example, enter `1.0`.
-
-The <control>Name</control> field is synced automatically with the specified <control>ArtifactId</control>.
-
-Specify the path for the new project in <control>Location</control> and click <control>Finish</control> to continue and generate the project.
+</procedure>
 
 ### Components of a Wizard-Generated Gradle IntelliJ Platform Plugin
 
-For the [example](#creating-a-gradle-based-intellij-platform-plugin-with-new-project-wizard) `my_gradle_plugin`, the New Project Wizard creates the following directory content:
+For the [example](#creating-a-gradle-based-intellij-platform-plugin-with-new-project-wizard) `my_plugin`, the _IDE Plugin_ generator creates the following directory content:
 
 ```text
-my_gradle_plugin
-├── build.gradle
+my_plugin
+├── .run
+│   └── Run IDE with Plugin.run.xml
 ├── gradle
 │   └── wrapper
 │       ├── gradle-wrapper.jar
 │       └── gradle-wrapper.properties
+├── src
+│   ├── main
+│   │   ├── java
+│   │   └── resources
+│   │       └── META-INF
+│   │           └── plugin.xml
+│   └── test
+│       ├── java
+│       └── resources
+├── .gitignore
+├── build.gradle.kts
 ├── gradlew
 ├── gradlew.bat
-├── settings.gradle
-└── src
-    ├── main
-    │   ├── java
-    │   └── resources
-    │       └── META-INF
-    │           └── plugin.xml
-    └── test
-        ├── java
-        └── resources
+└── settings.gradle.kts
 ```
 
-* The default IntelliJ Platform <path>build.gradle</path> file (see next paragraph).
+* The default IntelliJ Platform <path>build.gradle.kts</path> file (see next paragraph).
+* The <path>settings.gradle.kts</path> file, containing a definition of the `rootProject.name`.
 * The Gradle Wrapper files, and in particular the <path>gradle-wrapper.properties</path> file, which specifies the version of Gradle to be used to build the plugin.
   If needed, the IntelliJ IDEA Gradle plugin downloads the version of Gradle specified in this file.
-* The <path>settings.gradle</path> file, containing a definition of the `rootProject.name`.
-* The <path>META-INF</path> directory under the default `main` [SourceSet](https://docs.gradle.org/current/userguide/java_plugin.html#sec:java_project_layout) contains the plugin [configuration file](plugin_configuration_file.md).
+* The <path>META-INF</path> directory under the default `main` [source set](https://docs.gradle.org/current/userguide/java_plugin.html#sec:java_project_layout) contains the plugin [configuration file](plugin_configuration_file.md).
+* The _Run Plugin_ [run configuration](https://www.jetbrains.com/help/idea/run-debug-configuration.html).
 
-> Please note: the generated <path>build.gradle</path> file needs to be adjusted as shown below, as IntelliJ IDEA currently generates template incompatible with gradle-intellij-plugin 1.0 release.
-> See [Upgrade Instructions](https://lp.jetbrains.com/gradle-intellij-plugin/) for more details.
->
-{type="warning"}
+The generated `my_plugin` project <path>build.gradle.kts</path> file:
 
-The generated `my_gradle_plugin` project <path>build.gradle</path> file:
-
-```groovy
+```kotlin
 plugins {
-  id 'java'
-  id 'org.jetbrains.intellij' version '1.5.2'
+  id("java")
+  id("org.jetbrains.intellij") version "1.6.0"
 }
 
-group 'com.example.mycompany'
-version '1.0'
-sourceCompatibility = 1.8
+group = "com.example"
+version = "1.0-SNAPSHOT"
 
 repositories {
   mavenCentral()
 }
-dependencies {
-  testImplementation group: 'junit', name: 'junit', version: '4.13.2'
+
+// Configure Gradle IntelliJ Plugin
+// Read more: https://plugins.jetbrains.com/docs/intellij/tools-gradle-intellij-plugin.html
+intellij {
+  version.set("2021.3")
+  type.set("IC") // Target IDE Platform
+
+  plugins.set(listOf(/* Plugin Dependencies */))
 }
 
-// See https://github.com/JetBrains/gradle-intellij-plugin/
-intellij {
-  version = '2020.1.3'
-}
-patchPluginXml {
-  changeNotes = """
-    Add change notes here.<br/>
-    <em>most HTML tags may be used</em>"""
+tasks {
+  // Set the JVM compatibility versions
+  withType<JavaCompile> {
+    sourceCompatibility = "11"
+    targetCompatibility = "11"
+  }
+
+  patchPluginXml {
+    sinceBuild.set("213")
+    untilBuild.set("223.*")
+  }
+
+  signPlugin {
+    certificateChain.set(System.getenv("CERTIFICATE_CHAIN"))
+    privateKey.set(System.getenv("PRIVATE_KEY"))
+    password.set(System.getenv("PRIVATE_KEY_PASSWORD"))
+  }
+
+  publishPlugin {
+    token.set(System.getenv("PUBLISH_TOKEN"))
+  }
 }
 ```
 
-* Two plugins to Gradle are explicitly declared:
+* Two Gradle plugins are explicitly declared:
   * The [Gradle Java](https://docs.gradle.org/current/userguide/java_plugin.html) plugin.
-  * The [gradle-intellij-plugin](https://github.com/JetBrains/gradle-intellij-plugin/).
-* The <control>GroupId</control> from the Wizard [Project Naming/Artifact Coordinates Screen](#project-namingartifact-coordinates-screen) is the `project.group` value.
-* The <control>Version</control> from the Wizard [Project Naming/Artifact Coordinates Screen](#project-namingartifact-coordinates-screen) is the `project.version` value.
-* The `sourceCompatibility` line is injected to enforce using Java 8 JDK to compile Java sources.
-* The only comment in the file is a link to the [README.md](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/README.md) for the gradle-intellij-plugin, which is a reference for its configuration DSL.
-* The value of the Setup DSL attribute `intellij.version` specifies the version of the IntelliJ Platform to be used to build the plugin.
-  It defaults to the version of IntelliJ IDEA that was used to run the New Project Wizard.
-* The value of the Patching DSL attribute `patchPluginXml.changeNotes` is set to a placeholder text.
+  * The [Gradle IntelliJ Plugin](tools_gradle_intellij_plugin.md).
+* The <control>Group</control> from the [New Project](#create-ide-plugin) wizard is the `project.group` value.
+* The `sourceCompatibility` line is injected to enforce using Java 11 JDK to compile Java sources.
+* The values of the [`intellij.version`](tools_gradle_intellij_plugin.md#intellij-extension-version) and [`intellij.type`](tools_gradle_intellij_plugin.md#intellij-extension-type) properties specify the version and type of the IntelliJ Platform to be used to build the plugin.
+* The empty placeholder list for [plugin dependencies](tools_gradle_intellij_plugin.md#intellij-extension-plugins).
+* The values of the [`patchPluginXml.sinceBuild`](tools_gradle_intellij_plugin.md#patchpluginxml-task-sincebuild) and [`patchPluginXml.untilBuild`](tools_gradle_intellij_plugin.md#patchpluginxml-task-untilbuild) properties specifying the minimum and maximum versions of the IDE build the plugin is compatible with.
+* The initial [`signPlugin`](tools_gradle_intellij_plugin.md#signplugin-task) and [`publishPlugin`](tools_gradle_intellij_plugin.md#publishplugin-task) tasks configuration.
+  See the [](deployment.md) section for more information.
+
+> Consider using the [IntelliJ Platform Plugin Template](https://github.com/JetBrains/intellij-platform-plugin-template) which uses the Gradle setup and provides CI setup covered with GitHub Actions.
+>
+{type="tip"}
 
 #### Plugin Gradle Properties and Plugin Configuration File Elements
 
@@ -152,7 +144,7 @@ There is no IntelliJ Platform-related reason they should as they serve different
 
 The `<name>` element (used as the plugin's display name) is often the same as `rootProject.name`, but it can be more explanatory.
 
-The `<id>` value must be a unique identifier over all plugins, typically a concatenation of the specified <control>GroupId</control> and <control>ArtifactId</control>.
+The `<id>` value must be a unique identifier over all plugins, typically a concatenation of the specified <control>Group</control> and <control>Artifact</control>.
 Please note that it is impossible to change the `<id>` of a published plugin without losing automatic updates for existing installations.
 
 ## Adding Gradle Support to an Existing DevKit-Based IntelliJ Platform Plugin
@@ -167,17 +159,15 @@ Converting a [DevKit-based](using_dev_kit.md) plugin project to a Gradle-based p
   * <path>.idea</path> directory
   * <path>[modulename].iml</path> file
   * <path>out</path> directory
-* Arrange the existing source files within the project directory in the Gradle [SourceSet](https://docs.gradle.org/current/userguide/java_plugin.html#sec:java_project_layout) format.
+* Arrange the existing source files within the project directory in the Gradle [source set](https://docs.gradle.org/current/userguide/java_plugin.html#sec:java_project_layout) format.
 * Use the New Project Wizard as though creating a [new Gradle project](#creating-a-gradle-based-intellij-platform-plugin-with-new-project-wizard) from scratch.
-* On the [Project Naming/Artifact Coordinates Screen](#project-namingartifact-coordinates-screen) set the values of:
-  * <control>GroupId</control> to the existing package in the initial source set.
-  * <control>ArtifactId</control> to the name of the existing plugin.
-  * <control>Version</control> to the same as the existing plugin.
-  * <control>Name</control> to the name of the existing plugin.
-    (It should be pre-filled from the <control>ArtifactId</control>)
-  * <control>Location</control> to the directory of the existing plugin.
+* On the [New Project](#create-ide-plugin) choose the <control>IDE Plugin</control> generator and set the values of:
+  * <control>Group</control> to the existing package in the initial source set.
+  * <control>Artifact</control> to the name of the existing plugin.
+  * <control>Name</control> to the name of the directory where the existing plugin is located, e.g. if the plugin project base directory is <path>/Users/john/Projects/old_plugin</path>, it should be the <path>old_plugin</path>.
+  * <control>Location</control> to the name of the plugin's parent directory, e.g. if the plugin project base directory is <path>/Users/john/Projects/old_plugin</path>, it should be the <path>/Users/john/Projects</path>.
 * Click <control>Finish</control> to create the new Gradle-based plugin.
-* [Add more modules](https://www.jetbrains.com/help/idea/gradle.html#gradle_add_module) using Gradle [Source Sets](https://www.jetbrains.com/help/idea/gradle.html#gradle_source_sets) as needed.
+* [Add more modules](https://www.jetbrains.com/help/idea/gradle.html#gradle_add_module) using Gradle [source sets](https://www.jetbrains.com/help/idea/gradle.html#gradle_source_sets) as needed.
 
 ## Running a Simple Gradle-Based IntelliJ Platform Plugin
 
@@ -185,18 +175,21 @@ Gradle projects are run from the IDE's Gradle Tool window.
 
 ### Adding Code to the Project
 
-Before running [`my_gradle_project`](#components-of-a-wizard-generated-gradle-intellij-platform-plugin), some code can be added to provide simple functionality.
+Before running [`my_plugin`](#components-of-a-wizard-generated-gradle-intellij-platform-plugin), some code can be added to provide simple functionality.
 See the [Creating Actions](working_with_custom_actions.md) tutorial for step-by-step instructions for adding a menu action.
 
 ### Executing the Plugin
 
-Open the Gradle tool window and search for the <control>runIde</control> task:
-* If it's not on the list, hit the [Refresh](https://www.jetbrains.com/help/idea/jetgradle-tool-window.html#1eeec055) button at the top of the Gradle tool window.
-* Or [Create a new Gradle Run Configuration](https://www.jetbrains.com/help/idea/create-run-debug-configuration-gradle-tasks.html).
+The _IDE Plugin_ generator automatically creates the _Run Plugin_ run configuration that can be executed via the <menupath>Run | Run...</menupath> action or can be found in the <control>Gradle</control> tool window under the <control>Run Configurations</control> node.
 
-![Gradle Tool Window](gradle_tasks_in_tool_window.png){width="398"}
+To execute the Gradle `runIde` task directly, open the <control>Gradle</control> tool window and search for the <control>runIde</control> task under the <control>Tasks</control> node.
+If it's not on the list, hit the re-import button in the [toolbar](https://www.jetbrains.com/help/idea/jetgradle-tool-window.html#1eeec055) at the top of the Gradle tool window.
+When the <control>runIde</control> task is visible, double-click it to execute.
 
-Double-click on the <control>runIde</control> task to execute it.
-See the IntelliJ IDEA help for more information about [Working with Gradle tasks](https://www.jetbrains.com/help/idea/gradle.html#96bba6c3).
+> See the IntelliJ IDEA help for more information about [Gradle tasks](https://www.jetbrains.com/help/idea/work-with-gradle-tasks.html).
 
 To debug your plugin in a _standalone_ IDE instance, please see [How to Debug Your Own IntelliJ IDEA Instance](https://medium.com/agorapulse-stories/how-to-debug-your-own-intellij-idea-instance-7d7df185a48d) blog post.
+
+> See the [Working with Gradle in IntelliJ IDEA](https://www.youtube.com/watch?v=6V6G3RyxEMk) screencast for more information about how to work with Gradle-based projects.
+>
+{type="tip"}

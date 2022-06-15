@@ -27,8 +27,8 @@
         <noindex-content-in-eap>false</noindex-content-in-eap>
         <noindex-content-in-release>false</noindex-content-in-release>
 
-        <upsource-commit-hash>b7f0522f0d65d40e620533168416e6915d0c3214</upsource-commit-hash>
-        <upsource-tag>221.5591.52</upsource-tag>        <!-- synchronize with entries in v.list -->
+        <upsource-commit-hash>6ed4281aa53e1672d2e5870243c6606bb48afc84</upsource-commit-hash>
+        <upsource-tag>221.5787.30</upsource-tag>        <!-- synchronize with entries in v.list -->
         <upsource-repo-name>idea-ce</upsource-repo-name>
         <upsource-server-address>upsource.jetbrains.com</upsource-server-address>
         <product-web-url>https://plugins.jetbrains.com/docs/intellij/</product-web-url>

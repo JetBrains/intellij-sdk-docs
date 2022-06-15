@@ -14,13 +14,13 @@ See [](extension_point_list.md) for IntelliJ Platform.
 
 | Topic | Listener |
 |-------|----------|
-| `GoDepProjectSettings#DEP_INTEGRATION_TOPIC` | `IntegrationListener` |
-| `GoLibrariesService#LIBRARIES_TOPIC` | `LibrariesListener` |
-| `GoModuleSettings#BUILD_TARGET_TOPIC` ![Project-Level][project-level] | `BuildTargetListener` |
-| `GoModuleSettings#GO_SUPPORT_TOPIC` ![Project-Level][project-level] | `GoSupportListener` |
-| `GoModuleSettings#VENDORING_TOPIC` ![Project-Level][project-level] | `VendoringListener` |
-| `GoProjectLifecycleListener#TOPIC` | `GoProjectLifecycleListener` |
-| `VgoProjectSettings#VGO_INTEGRATION_TOPIC` | `IntegrationListener` |
+| [GoDepProjectSettings#DEP_INTEGRATION_TOPIC](https://jb.gg/ipe/listeners?topics=com.goide.dep.GoDepProjectSettings.IntegrationListener)  | `IntegrationListener` |
+| [GoLibrariesService#LIBRARIES_TOPIC](https://jb.gg/ipe/listeners?topics=com.goide.project.GoLibrariesService.LibrariesListener)  | `LibrariesListener` |
+| [GoModuleSettings#BUILD_TARGET_TOPIC](https://jb.gg/ipe/listeners?topics=com.goide.project.GoModuleSettings.BuildTargetListener)  ![Project-Level][project-level] | `BuildTargetListener` |
+| [GoModuleSettings#GO_SUPPORT_TOPIC](https://jb.gg/ipe/listeners?topics=com.goide.project.GoModuleSettings.GoSupportListener)  ![Project-Level][project-level] | `GoSupportListener` |
+| [GoModuleSettings#VENDORING_TOPIC](https://jb.gg/ipe/listeners?topics=com.goide.project.GoModuleSettings.VendoringListener)  ![Project-Level][project-level] | `VendoringListener` |
+| [GoProjectLifecycleListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.goide.project.GoProjectLifecycleListener)  | `GoProjectLifecycleListener` |
+| [VgoProjectSettings#VGO_INTEGRATION_TOPIC](https://jb.gg/ipe/listeners?topics=com.goide.vgo.configuration.VgoProjectSettings.IntegrationListener)  | `IntegrationListener` |
 
 ### goland.xml
 

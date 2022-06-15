@@ -3,7 +3,7 @@
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 [PyCharm](https://www.jetbrains.com/pycharm/) is an IntelliJ Platform-based product.
-Plugin projects for PyCharm can be developed using IntelliJ IDEA with the `gradle-intellij-plugin`.
+Plugin projects for PyCharm can be developed using IntelliJ IDEA with the [Gradle IntelliJ Plugin](tools_gradle_intellij_plugin.md).
 
 > Qualifying Open Source projects can [apply for free licenses](https://www.jetbrains.com/community/opensource/) of JetBrains products.
 >
@@ -11,19 +11,16 @@ Plugin projects for PyCharm can be developed using IntelliJ IDEA with the `gradl
 
 ## Configuring Plugin Projects Targeting PyCharm
 The configuration of PyCharm plugin projects follows the methods described in [Configuring Plugin Projects using a Product-Specific Attribute](dev_alternate_products.md#configuring-plugin-projects-using-a-product-specific-attribute), and [Configuring the plugin.xml File](dev_alternate_products.md#configuring-pluginxml).
-The table below summarizes the `gradle-intellij-plugin` attributes to set in the Gradle build script.
+The table below summarizes the [Gradle IntelliJ Plugin](tools_gradle_intellij_plugin.md) attributes to set in the Gradle build script.
 Click on an entry in the table's *Attribute* column to go to the documentation about that attribute.
 
-| `gradle-intellij-plugin` Attribute       | Attribute Value                                                                |
-|------------------------------------------|--------------------------------------------------------------------------------|
-| [`intellij.type`][properties]            | `PY` for PyCharm Professional Edition, or `PC` for PyCharm Community Edition.  |
-| [`intellij.version`][properties]         | Set to the targeted `PY` or `PC` version.                                      |
-| [`intellij.plugins`][properties]         | `Pythonid` for `PY` / `PythonCore` for `PC`.                                   |
-| [`intellij.downloadSources`][properties] | `false` is required because no public source code is available.                |
-| [`runIde.ideDir`][dsl]                   | Not needed; the Development Instance will automatically match `intellij.type`. |
-
-[properties]: https://github.com/JetBrains/gradle-intellij-plugin#intellij-platform-properties
-[dsl]: https://github.com/JetBrains/gradle-intellij-plugin#running-dsl
+| `gradle-intellij-plugin` Attribute                                                               | Attribute Value                                                                |
+|--------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------|
+| [`intellij.type`](tools_gradle_intellij_plugin.md#intellij-extension-type)                       | `PY` for PyCharm Professional Edition, or `PC` for PyCharm Community Edition.  |
+| [`intellij.version`](tools_gradle_intellij_plugin.md#intellij-extension-version)                 | Set to the targeted `PY` or `PC` version.                                      |
+| [`intellij.plugins`](tools_gradle_intellij_plugin.md#intellij-extension-plugins)                 | `Pythonid` for `PY` / `PythonCore` for `PC`.                                   |
+| [`intellij.downloadSources`](tools_gradle_intellij_plugin.md#intellij-extension-downloadsources) | `false` is required because no public source code is available.                |
+| [`runIde.ideDir`](tools_gradle_intellij_plugin.md#runide-task-idedir)                            | Not needed; the Development Instance will automatically match `intellij.type`. |
 
 The dependency on the PyCharm APIs must be declared in the <path>plugin.xml</path> file.
 As described in [Configuring the plugin.xml File](dev_alternate_products.md#configuring-pluginxml), the `<depends>` tags must declare `com.intellij.modules.python`.

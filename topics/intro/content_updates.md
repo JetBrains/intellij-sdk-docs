@@ -22,7 +22,7 @@ Gradle IntelliJ Plugin
 
 Minor Changes and Additions
 :
-- Add a small section to [](php_open_api.md#utility-classes) describing `PhpFilePathUtils` utility class.
+- Add a small sections to [](php_open_api.md#utility-classes) describing `PhpFilePathUtils` and `PhpCompletionUtil` utility classes.
 
 ### May-22
 

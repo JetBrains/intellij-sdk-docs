@@ -44,6 +44,25 @@
 
     Note that PhpStorm automatically adds references for concatenation expressions with `__DIR__` or `dirname(__FILE__)` function call.
 
+### `PhpCompletionUtil`
+
+`com.jetbrains.php.completion.PhpCompletionUtil` contains helper methods for PHP autocompletion.
+
+- `install[Class|ClassInteface|Namespace]Completion()` methods family installs name completion to the passed
+  [](editor_components.md#editortextfield).
+
+- `installAutoCompletionAfterNamespaceSeparator()` installs autocompletion of namespace parts to the passed
+  [](editor_components.md#editortextfield).
+
+- `showCompletion()` shows a popup with autocomplete variants for the current context in the editor.
+  Can be used in conjunction with `com.intellij.codeInsight.editorActions.TypedHandlerDelegate` to show autocomplete variants for custom locations.
+  The overload accepting `com.intellij.codeInsight.completion.InsertionContext` can be used to show autocompletion in implementation of `com.intellij.codeInsight.completion.InsertHandler`.
+
+- `getUsageContext()` returns the usage context of the passed `com.jetbrains.php.lang.psi.elements.ClassReference`.
+  The resulting context can be used for different actions depending on the context, for example if a class is used in an attribute.
+
+- `hasNamespace()` checks if the passed element has the passed namespace.
+
 ## PHP Extension Points
 
 > See [](php_extension_point_list.md) for the complete list.

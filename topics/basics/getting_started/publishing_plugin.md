@@ -5,14 +5,17 @@
 When your plugin is ready, you can publish it to a plugin repository so that other users can install it.
 You can choose to publish it on the [JetBrains Marketplace](https://plugins.jetbrains.com) or a [custom plugin repository](update_plugins_format.md).
 
-> Please see [Marketing](marketing.md) for remarks on how to prepare your plugin for optimal presentation.
+> Please make sure to follow the guidelines from [Plugin Overview page](https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html) for an optimal presentation of your plugin on JetBrains Marketplace.
+>
+> This webinar also discusses _5 tips for optimizing JetBrains Marketplace plugin page_
+> <video href="oB1GA9JeeiY" title="Busy plugin developers series. Episode 2" width="300"/>
 >
 {type="tip"}
 
+## Publishing to JetBrains Marketplace
+
 Before publishing your plugin, make sure it is signed.
 For more details on generating a proper certificate and configuring the signing process, check the [Plugin Signing](plugin_signing.md) article.
-
-## Publishing to JetBrains Marketplace
 
 <procedure title="Creating JetBrains Account">
 

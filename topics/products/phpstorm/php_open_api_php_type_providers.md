@@ -25,7 +25,7 @@ Because of this, there are two kinds of types in PhpStorm:
 
 Complete types are types that are known exactly based on **only** the local information of the current file.
 
-```
+```php
 <?php
 
 $a = 100;
@@ -33,7 +33,7 @@ $a = 100;
 
 The type of the expression that's assigned to the `$a` variable is Complete type `int`, since PhpStorm can definitely infer that a numeric literal is of type `int`.
 
-```
+```php
 <?php
 
 function foo(string $a): string {
@@ -51,7 +51,7 @@ Suppose we have two files:
 
 <path>foo.php</path>:
 
-```
+```php
 <?php
 
 function foo(): string {
@@ -61,7 +61,7 @@ function foo(): string {
 
 <path>main.php</path>:
 
-```
+```php
 <?php
 
 $a = foo();
@@ -71,7 +71,7 @@ echo $a;
 In the `main.php` file, we call the `foo()`, which is defined in another `foo.php` file.
 Because of this, PhpStorm won't be able to infer the type of the `$a` variable during the indexing stage, since it depends on the definition of the `foo()` from another file.
 
-For such cases, PhpStorm will create an Incomplete type in which writes all the necessary information to resolve the type when indexing is finished.
+For such cases, PhpStorm will create an Incomplete type in which writes all the necessary information to resolve the type when it finishes indexing.
 In this case, it's the name of the function being called, so PhpStorm will create an Incomplete type `#F\foo`.
 
 #### Incomplete Types Structure
@@ -104,7 +104,7 @@ Since PHP is a dynamically typed language, at the type inference stage PhpStorm 
 
 For example:
 
-```
+```php
 <?php
 
 $a = 100;

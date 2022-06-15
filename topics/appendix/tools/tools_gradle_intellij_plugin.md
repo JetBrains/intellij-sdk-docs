@@ -1648,6 +1648,21 @@ To enable or disable a particular feature, add the Project property to the <path
 org.jetbrains.intellij.buildFeature.buildFeatureName=false
 ```
 
+
+### noSearchableOptionsWarning
+{id="build-features-nosearchableoptionswarning"}
+
+> Available since the upcoming release
+>
+{type="warning"}
+
+When the [`buildSearchableOptions`](#buildsearchableoptions-task) doesn't produce any results, e.g., when the plugin doesn't implement any [Settings](settings.md), a warning is shown to suggest [disabling the task](tools_gradle_intellij_plugin_faq.md#how-to-disable-building-searchable-options) for better performance.
+
+{style="narrow"}
+Default value
+: `true`
+
+
 ### selfUpdateCheck
 {id="build-features-selfupdatecheck"}
 
@@ -1656,6 +1671,7 @@ Check if the currently used Gradle IntelliJ Plugin is outdated.
 {style="narrow"}
 Default value
 : `true`
+
 
 ### useDependencyFirstResolutionStrategy
 {id="build-features-usedependencyfirstresolutionstrategy"}

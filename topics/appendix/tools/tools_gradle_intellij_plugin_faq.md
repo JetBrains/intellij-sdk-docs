@@ -114,7 +114,8 @@ buildSearchableOptions.enabled = false
 </tab>
 </tabs>
 
-As a result of disabling building searchable options, the [configurables](settings.md) that your plugin provides won't be searchable in the <menupath>Settings/Preferences</menupath> dialog.
+As a result of disabling building searchable options, the [Settings](settings.md) that your plugin provides won't be searchable in the <menupath>Settings/Preferences</menupath> dialog.
+Disabling of the task is suggested for plugins that are not intended to provide custom settings.
 
 ### How to show log file of sandbox instance
 

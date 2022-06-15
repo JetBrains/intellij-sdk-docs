@@ -68,7 +68,7 @@ $a = foo();
 echo $a;
 ```
 
-In the `main.php` file, we call the `foo()`, which is defined in another `foo.php` file.
+In the <path>main.php</path> file, we call the `foo()`, which is defined in another <path>foo.php</path> file.
 Because of this, PhpStorm won't be able to infer the type of the `$a` variable during the indexing stage, since it depends on the definition of the `foo()` from another file.
 
 For such cases, PhpStorm will create an Incomplete type in which writes all the necessary information to resolve the type when it finishes indexing.
@@ -216,7 +216,7 @@ You can also override the `emptyResultIsComplete()`, which indicates whether the
 
 ## Example Implementation
 
-The goal of this example is to provide types for filed references assigned in `setUp` method if containing class is PHPUnit one.
+The goal of this example is to provide types for field references assigned in `setUp` method if containing class is PHPUnit one.
 
 ### Define a PhpUnitFiledInitializedInSetUpMethodsTP
 

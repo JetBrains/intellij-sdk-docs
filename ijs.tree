@@ -327,7 +327,7 @@
                  toc-title="PhpStorm">
       <toc-element id="php_open_api.md" accepts-web-file-names="php_open_api.html"
                    toc-title="Working with the PHP Open API">
-        <toc-element id="php_open_api_php_type_providers.md" toc-title="PHP Type Providers"/>
+        <toc-element id="php_open_api_php_type_providers.md"/>
         <toc-element id="php_open_api_breaking_changes.md" toc-title="Breaking Changes">
           <toc-element id="php_open_api_breaking_changes_203.md" toc-title="2020.3"/>
           <toc-element id="php_open_api_breaking_changes_202.md" toc-title="2020.2"/>

@@ -102,7 +102,7 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 : Use `com.intellij.openapi.vcs.changes.ui.ChangesTree` or `com.intellij.openapi.vcs.changes.ui.ChangesTreeImpl` instead.
 
 `com.intellij.ide.IdeEventQueue.unsafeNonblockingExecute(Runnable)` method removed
-: Method does not make sense anymore. See https://youtrack.jetbrains.com/issue/JBR-4328
+: Method does not make sense anymore, please see [JBR-4328](https://youtrack.jetbrains.com/issue/JBR-4328).
 
 ### Java Plugin 2022.2
 

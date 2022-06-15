@@ -10,6 +10,8 @@ You can choose to publish it on the [JetBrains Marketplace](https://plugins.jetb
 > This webinar also discusses _5 tips for optimizing JetBrains Marketplace plugin page_
 > <video href="oB1GA9JeeiY" title="Busy plugin developers series. Episode 2" width="300"/>
 >
+> See also [](marketing.md) about widgets and badges.
+>
 {type="tip"}
 
 ## Publishing to JetBrains Marketplace

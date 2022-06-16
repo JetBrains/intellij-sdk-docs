@@ -12,6 +12,15 @@ Allowed HTML elements include text formatting, paragraphs, and lists.
 
 When using Gradle, a number of metadata elements will be provided at build time by [`patchPluginXml` task](gradle_guide.md#patching-the-plugin-configuration-file).
 
+> Please make sure to follow the guidelines from [Plugin Overview page](https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html) for an optimal presentation of your plugin on JetBrains Marketplace.
+>
+> This webinar also discusses _5 tips for optimizing JetBrains Marketplace plugin page_
+> <video href="oB1GA9JeeiY" title="Busy plugin developers series. Episode 2" width="300"/>
+>
+> See also [](marketing.md) about widgets and badges.
+>
+{type="tip"}
+
 ```xml
 <!--
 An optional "url" attribute specifies the link to the plugin homepage.

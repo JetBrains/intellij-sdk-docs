@@ -80,7 +80,11 @@ Consequently, a separate Plugin Logo for dark backgrounds is needed.
 
 ### Plugin Logo File Format
 All Plugin Logo images must be in SVG format.
-This vector image format is required because the Plugin Logo file must be small, and the image must scale without any loss of quality.
+This vector image format is required because the Plugin Logo file must be small (ideally less than 2-3kB), and the image must scale without any loss of quality.
+
+> Using automatic conversion of bitmap graphics to SVG is highly discouraged, as the resulting files have excessive size (100kB or more).
+>
+{type="warning"}
 
 ### Plugin Logo File Naming Convention
 Name the Plugin Logo files according to the following conventions:

@@ -150,6 +150,11 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 Method `com.intellij.grazie.GrazieBundle.message(key, parameters)` marked static
 : To shorten Java callers.
 
+### Docker Plugin 2022.2
+
+`com.intellij.docker.registry.DockerRegistry` class renamed to `com.intellij.docker.registry.DockerRegistryConfiguration`
+: Please update usages.
+
 ## 2022.1
 
 ### IntelliJ Platform 2022.1

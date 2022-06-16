@@ -139,6 +139,7 @@ should not be used, see [](api_internal.md) for more details and replacements.
 
 As a plugin developer, you should enable [internal mode](enabling_internal.md) in IntelliJ IDEA.
 This provides access to a suite of tools to help you develop, debug, and test IntelliJ Platform plugins.
+
 One of its most helpful features is the [UI Inspector](internal_ui_inspector.md),
 which lets you investigate all parts of the UI of every IntelliJ-based IDE by simply clicking on them.
 Equally important is the <menupath>Tools | Internal Actions | UI Debugger</menupath> tool.
@@ -153,15 +154,16 @@ However, it does not display information about [stubs](stub_indexes.md) or [form
 ### 3.2 Search the IntelliJ Platform Explorer
 
 The [IntelliJ Platform Explorer](https://plugins.jetbrains.com/intellij-platform-explorer)
-is a search tool for browsing Extension Points (EP) inside existing implementations of all open-source IntelliJ Platform plugins published on [JetBrains Marketplace](https://plugins.jetbrains.com).
-You can navigate directly to the source files to find inspiration when implementing your own extensions for IntelliJ-based IDEs.
+is a search tool for browsing [Extension Points](plugin_extensions.md) (EP) and [Listeners](plugin_listeners.md) inside existing implementations of all open-source IntelliJ Platform plugins published on [JetBrains Marketplace](https://plugins.jetbrains.com).
+You can navigate directly to the source files to find inspiration when implementing your own extensions and listeners for IntelliJ-based IDEs.
 
 ### 3.3 Browse Available References
 
 The IntelliJ Platform SDK Documentation should always be the first resource you check for information.
 Here is a condensed list you can use for further reference:
 
-- [Useful links](useful_links.md) for plugin developers.
-- [](extension_point_list.md).
+- [](useful_links.md)
+- [](learning_resources.md)
+- [](extension_point_list.md)
 - Section on [exploring module and plugin APIs](plugin_compatibility.md#exploring-module-and-plugin-apis).
 - List of [notable](api_notable.md) and [incompatible](api_changes_list.md) API changes.

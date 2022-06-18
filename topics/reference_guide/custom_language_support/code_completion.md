@@ -53,3 +53,7 @@ For every lookup element, you can specify the following attributes:
 * **Icon**
 * **Text attributes** Bold, Strikeout, etc.
 * **Insert handler** The insert handler is a callback which is called when the item is selected and can be used to perform additional modifications of the text (for example, to put in the parentheses for a method call)
+
+### How to show a completion popup programmatically
+
+Use `AutoPopupController.scheduleAutoPopup()`.

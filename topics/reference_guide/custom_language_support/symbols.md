@@ -1,10 +1,17 @@
-[//]: # (title: Symbols)
+[//]: # (1F:89:67:AF:82:13:B9:D1:02:67)
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 > This API is available starting from 2020.3 and is currently in development and thus in an experimental state.
+>  
 >
-{type="warning"}
+>
+>[| `Symbol's` | `Symbol's` |]
+`(<-----
+`{[!p-r-h](BBF63F6ABBCA3E225EF16D45BB32928)}`
+------>)`
+
+
 
 <excerpt rel="excerpt"/>
 <p id="excerpt">

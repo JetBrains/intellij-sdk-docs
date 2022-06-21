@@ -1640,12 +1640,19 @@ Default value
 
 
 ## Build Features
-With the Gradle IntelliJ Plugin releases, new features are introduced that require additional research, collecting more feedback from developers, or should be enabled or disabled under particular conditions.
+With ongoing Gradle IntelliJ Plugin releases, new features are introduced that require additional research, collecting more feedback from developers, or should be enabled or disabled under particular conditions.
 Build Features are an implementation of the feature flags concept and let you control some behaviors of the Gradle IntelliJ Plugin.
-To enable or disable a particular feature, add the Project property to the <path>gradle.properties</path> file, like:
+
+To enable or disable a particular feature, add a Project property to the <path>gradle.properties</path> file with the following pattern:
 
 ```properties
-org.jetbrains.intellij.buildFeature.buildFeatureName=false
+org.jetbrains.intellij.buildFeature.<buildFeatureName>=<true|false>
+```
+
+E.g., to disable the [selfUpdateCheck](#build-features-selfupdatecheck) feature, add this line:
+
+```properties
+org.jetbrains.intellij.buildFeature.selfUpdateCheck=false
 ```
 
 

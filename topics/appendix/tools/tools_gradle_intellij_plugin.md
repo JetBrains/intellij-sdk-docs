@@ -1382,7 +1382,7 @@ Acceptable values
 
 ## setupDependencies Task
 Setups required dependencies for building and running project.
-This task is automatically added to the [*After Sync* Gradle trigger](https://www.jetbrains.com/help/idea/work-with-gradle-tasks.html#config_triggers_gradle) to make the IntelliJ SDK dependency available for IntelliJ IDEA right after the Gradle synchronization.
+This task is automatically added to the ["After Sync" Gradle trigger](https://www.jetbrains.com/help/idea/work-with-gradle-tasks.html#config_triggers_gradle) to make the IntelliJ SDK dependency available for IntelliJ IDEA right after the Gradle synchronization.
 
 > After removing the Gradle IntelliJ Plugin from your project, the `Task 'setupDependencies' not found in root project` exception may occur.
 > See [Frequently Asked Questions](tools_gradle_intellij_plugin_faq.md#task-setupdependencies-not-found-in-root-project) for more details.

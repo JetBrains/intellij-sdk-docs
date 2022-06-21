@@ -1675,7 +1675,7 @@ Default value
 
 > Available since the upcoming release
 >
-> {type="warning"}
+{type="warning"}
 
 Due to IDE limitations, it is impossible to run the IDE in headless mode to collect searchable options for a paid plugin.
 As paid plugins require providing a valid license and presenting a UI dialog, it is impossible to handle such a case, and the task will fail.

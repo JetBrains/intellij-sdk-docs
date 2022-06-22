@@ -56,4 +56,4 @@ For every lookup element, you can specify the following attributes:
 
 ### How to show a completion popup programmatically
 
-Use `com.intellij.codeInsight.AutoPopupController.scheduleAutoPopup()`.
+Use [`AutoPopupController.scheduleAutoPopup()`](upsource:///platform/analysis-impl/src/com/intellij/codeInsight/AutoPopupController.java).

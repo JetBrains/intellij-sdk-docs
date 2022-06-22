@@ -74,3 +74,7 @@ Links to [useful resources](useful_links.md), [Glossary](glossary.md), [](extens
 #### Appendix II — API Changes
 
 Provides a list of [backward-incompatible](api_changes_list.md) API changes as well as [notable changes and new features](api_notable.md) in each major release of the IntelliJ Platform.
+
+#### Appendix III — Tools
+
+Reference and usage guides for commonly used tools like the [](tools_gradle_intellij_plugin.md).

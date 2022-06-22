@@ -18,6 +18,9 @@ The plugin provides the functionalities like:
 
 > Please see also [](tools_gradle_intellij_plugin_faq.md) and [](tools_gradle_intellij_plugin_examples.md).
 >
+> Before visiting the [Issue Tracker](https://github.com/JetBrains/gradle-intellij-plugin/issues), update both plugin and Gradle to the latest versions.
+> Please see [CONTRIBUTING](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/CONTRIBUTING.md) on how to submit feedback and contribute to this project.
+>
 {type="tip"}
 
 ## Usage
@@ -44,13 +47,13 @@ plugins {
 </tab>
 </tabs>
 
-When upgrading to `1.x` version, please make sure to follow [migration guide](https://lp.jetbrains.com/gradle-intellij-plugin) to adjust your existing build script.
+When upgrading to `1.x` version, please make sure to follow the [migration guide](https://lp.jetbrains.com/gradle-intellij-plugin) to adjust your existing build script.
 
-> Gradle JVM must be set to `Java 11` (see <path>Settings/Preferences | Build, Execution</path>, <path>Deployment | Build Tools | Gradle</path>)
+> <control>Gradle JVM</control> must be set to Java 11 in <path>Settings/Preferences | Build, Execution, Deployment | Build Tools | Gradle</path>.
 >
 {type="tip"}
 
-> This project requires `Gradle 6.7.1` or newer, however, it is recommended to use the latest available Gradle version.
+> This project requires Gradle 6.7.1 or newer. However, it is highly recommended to always use the latest available Gradle version.
 > Update it with:
 > ```Bash
 > ./gradlew wrapper --gradle-version=VERSION
@@ -112,12 +115,6 @@ pluginManagement {
 </tab>
 </tabs>
 
-> Please see [CONTRIBUTING](https://github.com/JetBrains/gradle-intellij-plugin/blob/master/CONTRIBUTING.md) on how to submit feedback and contribute to this project.
->
-> Before visiting the [Issue Tracker](https://github.com/JetBrains/gradle-intellij-plugin/issues), update both plugin and Gradle to the latest versions.
->
-{type="tip"}
-
 
 ## IntelliJ Extension
 After the Gradle IntelliJ Plugin is applied, the `intellij` extension can be used to configure the plugin and common settings of the provided tasks.
@@ -159,7 +156,7 @@ intellij {
 All available JetBrains IDEs versions can be found at [IntelliJ Artifacts](intellij_artifacts.md) page.
 
 The version of the IntelliJ Platform IDE that will be used to build the plugin.
-Please see [Plugin Compatibility](plugin_compatibility.md) topic in SDK docs for more details.
+Please see [](plugin_compatibility.md) for more details.
 
 {style="narrow"}
 Required
@@ -209,7 +206,7 @@ Acceptable values
 ### pluginName
 {id="intellij-extension-pluginname"}
 
-The plugin name part used in the generated ZIP distribution: `build/distributions/PluginName-1.0.0.zip` and name of the plugin directory in the sandbox directory.
+The plugin name part used in the generated ZIP distribution: <path>build/distributions/PluginName-1.0.0.zip</path> and name of the plugin directory in the sandbox directory.
 
 {style="narrow"}
 Type
@@ -223,7 +220,7 @@ Default value
 {id="intellij-extension-localpath"}
 
 The path to the locally installed IDE distribution that should be used to build the plugin.
-Using the `intellij.localPath` allows to build the plugin using IDE that is not available in the [IntelliJ Platform Artifacts Repositories](intellij_artifacts.md).
+Using the `intellij.localPath` allows to build the plugin using an IDE that is not available in [](intellij_artifacts.md).
 
 {style="narrow"}
 Type
@@ -262,13 +259,13 @@ Default value
 
 The list of bundled IDE plugins and plugins from [JetBrains Marketplace](https://plugins.jetbrains.com) or configured [`intellij.pluginsRepositories`](#intellij-extension-pluginsrepositories).
 
-Please see [Plugin Dependencies](plugin_dependencies.md) for more details.
+Please see [](plugin_dependencies.md) for more details.
 
 Notes:
 - For plugins from [JetBrains Marketplace](https://plugins.jetbrains.com), use format `pluginId:version`.
 - For bundled plugins, version must be omitted: e.g. `org.intellij.groovy`.
 - For subprojects, use project reference `project(':subproject')`.
-- If you need to refer plugin's classes from your project, you also have to define a dependency in your <path>[plugin.xml](plugin_configuration_file.md)</path> file.
+- If you need to refer plugin's classes from your project, you also have to define a dependency in your <path>plugin.xml</path> file, see [](plugin_dependencies.md).
 
 {style="narrow"}
 Type
@@ -282,9 +279,8 @@ Acceptable values
 - `org.plugin.id:version[@channel]` format, `String` type:
   - `org.intellij.plugins.markdown:8.5.0`
   - `org.intellij.scala:2017.2.638@nightly`
-- `bundledPluginName` format, `String` type:
-  - `android`
-  - `Groovy`
+- `bundledPluginId` format, `String` type:
+  - `org.intellij.groovy`
 - `project(...)` format, `Project` type:
   - `project(":projectName")`
   - `project(":plugin-subproject")`
@@ -306,10 +302,10 @@ Default value
 ### sameSinceUntilBuild
 {id="intellij-extension-samesinceuntilbuild"}
 
-Enables patching <path>[plugin.xml](plugin_configuration_file.md)</path> with the [`patchPluginXml.untilBuild`](#patchpluginxml-task-untilbuild) with the value of [`patchPluginXml.sinceBuild`](#patchpluginxml-task-sincebuild) used with `*` wildcard, like `sinceBuild.*`, e.g., `221.*`.
+Enables patching <path>[plugin.xml](plugin_configuration_file.md)</path> with the [`patchPluginXml.untilBuild`](#patchpluginxml-task-untilbuild) using value of [`patchPluginXml.sinceBuild`](#patchpluginxml-task-sincebuild) with `*` wildcard, like `sinceBuild.*`, e.g., `221.*`.
 
 Notes:
-- Useful for building plugins against EAP IDE builds.
+- Useful for building plugins against EAP builds.
 - If [`patchPluginXml.untilBuild`](#patchpluginxml-task-untilbuild) has a value set, then [`intellij.sameSinceUntilBuild`](#intellij-extension-samesinceuntilbuild) is ignored.
 
 {style="narrow"}
@@ -468,11 +464,12 @@ Default value
 
 ## buildSearchableOptions Task
 Builds an index of UI components (searchable options) for the plugin.
-This task runs a headless IDE instance to collect all the available options provided by the plugin's [settings](settings.md).
+This task runs a headless IDE instance to collect all the available options provided by the plugin's [](settings.md).
 
 Note, that this is a [`runIde`](#runide-task)-based task with predefined arguments and all properties of the [`runIde`](#runide-task) task are also applied to [`buildSearchableOptions`](#buildsearchableoptions-task) tasks.
 
 > If your plugin doesn't implement custom settings, it is recommended to [disable it](tools_gradle_intellij_plugin_faq.md#how-to-disable-building-searchable-options).
+> See also [`noSearchableOptionsWarning`](#build-features-nosearchableoptionswarning) build feature.
 >
 {type="tip"}
 
@@ -540,7 +537,7 @@ The following attributes help you to tune instrumenting behaviour in `instrument
 {id="instrumentcode-task-compilerversion"}
 
 A version of instrumenting compiler.
-It's used in cases when targeting non-IntelliJ IDEA IDEs (e.g. CLion or Rider).
+It's used in cases when targeting non-IntelliJ IDEA IDEs (e.g. [CLion](clion.md) or [Rider](rider.md)).
 
 {style="narrow"}
 Type
@@ -927,7 +924,7 @@ Note that you need to [upload the plugin](publishing_plugin.md) to the repositor
 
 See the instruction on [how to generate authentication token](https://plugins.jetbrains.com/docs/marketplace/plugin-upload.html).
 
-See [Publishing Plugins with Gradle](deployment.md) tutorial for step-by-step instructions.
+See [](deployment.md) tutorial for step-by-step instructions.
 
 
 ### token
@@ -1001,13 +998,13 @@ Default value
 ## runIde Task
 Runs the IDE instance with the developed plugin installed.
 
-`RunIde` tasks extend the [`JavaExec`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html) Gradle task – all properties available in the `JavaExec` as well as the following ones can be used to configure the `runIde` task.
+`runIde` tasks extend the [`JavaExec`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html) Gradle task – all properties available in the `JavaExec` as well as the following ones can be used to configure the `runIde` task.
 
 
 ### ideDir
 {id="runide-task-idedir"}
 
-The IDEA dependency sources path.
+The IDE dependency sources path.
 Configured automatically with the [`setupDependencies.idea`](#setupdependencies-task-idea) dependency.
 
 {style="narrow"}
@@ -1021,7 +1018,7 @@ Default value
 ### jbrVersion
 {id="runide-task-jbrversion"}
 
-Custom JBR version to use for running the IDE.
+Custom JetBrains Runtime (JBR) version to use for running the IDE.
 
 {style="narrow"}
 Type
@@ -1036,14 +1033,14 @@ Accepted values
 - `8u202b1483.24`
 - `11_0_2b159`
 
-> For more information about JBR versions and variants, see [Using a JetBrains Runtime for the Development Instance](ide_development_instance.md#using-a-jetbrains-runtime-for-the-development-instance).
+> For more information about JBR versions and variants, see [](ide_development_instance.md#using-a-jetbrains-runtime-for-the-development-instance).
 >
 {type="note"}
 
 ### jbrVariant
 {id="runide-task-jbrvariant"}
 
-JetBrains Runtime variant to use when running the IDE with the plugin.
+JetBrains Runtime (JBR) variant to use when running the IDE with the plugin.
 
 {style="narrow"}
 Type
@@ -1099,12 +1096,12 @@ Runs performance tests on the IDE with the developed plugin installed.
 The `runIdePerformanceTest` task extends the `RunIdeBase` task, so all configuration attributes of `JavaExec` and [`runIde`](#runide-task) tasks can be used in the `runIdePerformanceTest` as well.
 See [`runIde`](#runide-task) task for more details.
 
-Currently, the task is under adaptation, more documentation will be added in the future.
+Currently, the task is under adaptation; more documentation will be added in the future.
 
 ### testDataDir
 {id="runideperformancetest-task-testdatadir"}
 
-Path to directory with test projects and `.ijperf` files.
+Path to directory with test projects and <path>.ijperf</path> files.
 
 {style="narrow"}
 Type
@@ -1288,7 +1285,7 @@ Default value
 ### jbrVersion
 {id="runpluginverifier-task-jbrversion"}
 
-Custom JBR version to use for running the IDE.
+Custom JetBrains Runtime (JBR) version to use for running the verification.
 
 {style="narrow"}
 Type
@@ -1303,7 +1300,7 @@ Acceptable values
 - `8u202b1483.24`
 - `11_0_2b159`
 
-> For more information about JBR versions and variants, see [Using a JetBrains Runtime for the Development Instance](ide_development_instance.md#using-a-jetbrains-runtime-for-the-development-instance).
+> For more information about JBR versions and variants, see [](ide_development_instance.md#using-a-jetbrains-runtime-for-the-development-instance).
 >
 {type="note"}
 
@@ -1311,7 +1308,7 @@ Acceptable values
 ### jbrVariant
 {id="runpluginverifier-task-jbrvariant"}
 
-JetBrains Runtime variant to use when running the IDE with the plugin.
+JetBrains Runtime (JBR) variant to use when running the verification.
 
 {style="narrow"}
 Type
@@ -1403,7 +1400,7 @@ Signs the ZIP archive with the provided key using [marketplace-zip-signer](https
 
 To sign the plugin before publishing to [JetBrains Marketplace](https://plugins.jetbrains.com) with the [`signPlugin`](#signplugin-task) task, it is required to provide a certificate chain and a private key with its password using `signPlugin { ... }` Plugin Signing DSL.
 
-As soon as [`signPlugin.privateKey`](#signplugin-task-privatekey) (or [`signPlugin.privateKeyFile`](#signplugin-task-privatekeyfile)) and [`signPlugin.certificateChain`](#signplugin-task-certificatechain) (or [`signPlugin.certificateChainFile`](#signplugin-task-certificatechainfile)) properties are specified, task will be executed automatically right before the [`publishPlugin`](#publishplugin-task) task.
+As soon as [`signPlugin.privateKey`](#signplugin-task-privatekey) (or [`signPlugin.privateKeyFile`](#signplugin-task-privatekeyfile)) and [`signPlugin.certificateChain`](#signplugin-task-certificatechain) (or [`signPlugin.certificateChainFile`](#signplugin-task-certificatechainfile)) properties are specified, the task will be executed automatically right before the [`publishPlugin`](#publishplugin-task) task.
 
 For more details, see [Plugin Signing](plugin_signing.md) article.
 

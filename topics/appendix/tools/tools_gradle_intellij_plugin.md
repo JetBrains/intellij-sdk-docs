@@ -202,6 +202,7 @@ Acceptable values
 - `JPS` - JPS-only
 - `GW` - Gateway
 
+To build against IDEs not supported directly by `type`, please see their corresponding page in _Part VIII — Product Specific_.
 
 ### pluginName
 {id="intellij-extension-pluginname"}

@@ -26,6 +26,7 @@ Gradle IntelliJ Plugin
 Minor Changes and Additions
 :
 - Add a small section to [](php_open_api.md#utility-classes) describing `PhpFilePathUtils` utility class.
+- Add mention of the way to programmatically open an autocomplete popup to [](code_completion.md).
 
 ### May-22
 

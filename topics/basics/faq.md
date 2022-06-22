@@ -79,7 +79,6 @@ This FAQ is a topical index of questions that have been asked (and answered) on 
 ## Project Structure
 *  [Can I add a new module dependency storage format?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206137859-Dependency-storage-formats-)
 *  [What is the Pair to be passed to JavaModuleBuilder.setSourcePaths()?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206143559-Usage-of-class-Pair-A-B-)
-*  [How do I access all configured JDKs?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206141569-selecting-a-configured-jdk)
 
 ## Custom Languages
 *  [How do I provide auto-popup code completion in my language?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206139359-Autopopup-code-completion-in-custom-language)
@@ -91,13 +90,9 @@ This FAQ is a topical index of questions that have been asked (and answered) on 
 *  [How do I provide animated status bar notifications?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206791945-IDE-Notifications)
 *  [How do I enable file name completion in a combo box?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206139509-Combobox-with-Browse-Button-and-Autocompletion-)
 *  [How do I show a popup with left-aligned and right-aligned parts for each item?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206139049-popup-menu-with-left-and-right-aligned-items)
-*  [Can I use an embedded Web browser from my plugin?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206351479-Using-Browser-Component)
 *  [How do I provide a custom icon for files/PSI elements?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206143779-Is-it-possible-to-change-icon-of-file-in-Project-view-)
 *  [Can I show a progress indicator for WriteActions?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206139159-WriteActions-and-ProgressIndicator)
-*  [How do I make it possible to search the options of my plugin in the Settings dialog?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206143999-DEMETRA-how-to-contribute-to-searchable-dialog-options-)
 *  [How do I show a custom window or popup based on Structure View?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206142679-Opening-a-customised-StructureView)
-*  [Is it possible to extend the Project View tree?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206141229-is-it-possible-to-extend-the-project-tree-)
-*  [How do I show the "Project Structure" dialog programmatically?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206141379-Showing-Project-Strucuture-dialog-programmatically)
 *  [How do I print messages in the console view?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206141419-Putting-messages-into-console-window-)
 *  [How do I show the package selector dialog programmatically?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206794265-Package-selector-dialog)
 *  [How do I provide syntax and error highlighting in a combo box editor?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206800495-EditorTextField-in-3403-How-to-get-an-Editor-that-does-error-highlighting-)
@@ -105,7 +100,6 @@ This FAQ is a topical index of questions that have been asked (and answered) on 
 *  [How can I display the SDK list in a JComboBox?](https://stackoverflow.com/questions/51499884/how-to-display-the-sdk-list-in-a-jcombobox)
 
 ## General
-*  [How do I get the currently active project outside of an AnAction?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206763335-Getting-active-project-)
 *  [How can I implement a custom stack trace analyzer?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206142959-Stack-Analyzer-extension)
 *  [Where is the state of an ApplicationComponent stored?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206794095-Where-is-ApplicationComponent-state-stored-in-)
 *  [How do I open a project programmatically?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206146969-how-to-open-a-project-)

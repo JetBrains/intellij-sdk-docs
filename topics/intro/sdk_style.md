@@ -85,6 +85,19 @@ To link to a page within the site using its `title:` as link text, use shortcut 
 When a Markdown header is converted to an HTML header, it is assigned an ID so that it can be linked.
 For example, `## Introduction` gets the ID of `introduction`, and can be linked either in the same page or cross-page as described below.
 
+In some cases (e.g., the same heading text appears multiple times on the same page) it is necessary to specify a distinct ID manually:
+
+```md
+## Task 1
+### Properties
+{id="task1-properties"}
+[...]
+## Task 2
+### Properties
+{id="task2-properties"}
+[...]
+```
+
 #### General Links
 
 General Markdown links have the default Markdown link style:

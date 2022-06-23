@@ -1,4 +1,13 @@
-<content version="90">
+<content version="91">
+   <item>
+      <name>Android Studio Dolphin (2021.3.1) Beta 4</name>
+      <build>AI-213.7172.25.2113.8718688</build>
+      <version>2021.3.1.13</version>
+      <channel>Beta</channel>
+      <platformBuild>213.7172.25</platformBuild>
+      <platformVersion>2021.3.3</platformVersion>
+      <date>June 22, 2022</date>
+   </item>
    <item>
       <name>Android Studio Electric Eel (2022.1.1) Canary 5</name>
       <build>AI-221.4165.146.2211.8713749</build>

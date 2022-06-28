@@ -114,7 +114,7 @@ Default value
 ### intellijRelease
 {id="grammar-kit-extension-intellijrelease"}
 
-An optional IntelliJ version to build the classpath for [`GenerateParser`](#) and [`GenerateLexer`](#) tasks.
+An optional IntelliJ version to build the classpath for [`GenerateParser`](#generateparser-task) and [`GenerateLexer`](#generatelexer-task) tasks.
 
 If provided, [`grammarKitRelease`](#grammar-kit-extension-grammarkitrelease) and [`jflexRelease`](#grammar-kit-extension-jflexrelease) properties are ignored as both dependencies will be provided from the given IntelliJ IDEA release.
 

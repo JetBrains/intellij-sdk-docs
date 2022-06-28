@@ -156,3 +156,26 @@ Here are examples of <path>toolWindowStructure.png</path> icon representations:
 | Darcula          | <path>toolWindowStructure_dark.png</path>    | ![Tool Window Structure, dark](toolWindowStructure_dark.png)            |
 | Default + Retina | <path>toolWindowStructure@2x.png</path>      | ![Tool Window Structure, retina](toolWindowStructure@2x.png)            |
 | Darcula + Retina | <path>toolWindowStructure@2x_dark.png</path> | ![Tool Window Structure, retina, dark](toolWindowStructure@2x_dark.png) |
+
+## Animated Icons
+
+Animated icons are a way to show that plugin is now performing some long-time action.
+For example, when plugin is loading some data.
+
+Any animated icon is a set of frames that loop with some delay.
+
+To create a new animated icon, use the
+[`AnimatedIcon`](upsource:///platform/platform-impl/src/com/intellij/ui/AnimatedIcon.java).
+
+If you want to create an icon where frames follow each other with the same delay, use a constructor that accepts a delay and icons:
+
+```java
+AnimatedIcon icon = new AnimatedIcon(500, AllIcons.Ide.Macro.Recording_1, AllIcons.Ide.Macro.Recording_2);
+```
+
+To create an icon from frames with different delays, use `AnimatedIcon.Frame`.
+Each frame represents an icon, and a delay until the next frame.
+
+If you want to show somewhere that there is a long process, you can use the predefined icon
+`AnimatedIcon.Default` which is the default loader.
+This icon has a larger version of `AnimatedIcon.Big`.

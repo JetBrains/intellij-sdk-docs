@@ -177,4 +177,4 @@ To create an icon from frames with different delays, use `AnimatedIcon.Frame`.
 Each frame represents an icon, and a delay until the next frame.
 
 If you want to show somewhere that there is a long process, you can use the predefined `AnimatedIcon.Default` loader icon.
-This icon has a larger version of `AnimatedIcon.Big`.
+This icon has a larger `AnimatedIcon.Big` version.

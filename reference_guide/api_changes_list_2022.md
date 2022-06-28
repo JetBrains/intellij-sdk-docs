@@ -104,7 +104,7 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 `com.intellij.ide.IdeEventQueue.unsafeNonblockingExecute(Runnable)` method removed
 : Method does not make sense anymore, please see [JBR-4328](https://youtrack.jetbrains.com/issue/JBR-4328).
 
-`com.intellij.vcs.log.VcsLogHighlighter.getStyle(int, VcsShortCommitDetails, boolean)` method removed.
+`com.intellij.vcs.log.VcsLogHighlighter.getStyle(int, VcsShortCommitDetails, boolean)` method removed
 : Use `com.intellij.vcs.log.VcsLogHighlighter.getStyle(int, VcsShortCommitDetails, int, boolean)` instead
 
 ### Java Plugin 2022.2

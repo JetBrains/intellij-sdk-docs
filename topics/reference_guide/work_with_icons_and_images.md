@@ -176,6 +176,5 @@ AnimatedIcon icon = new AnimatedIcon(500, AllIcons.Ide.Macro.Recording_1, AllIco
 To create an icon from frames with different delays, use `AnimatedIcon.Frame`.
 Each frame represents an icon, and a delay until the next frame.
 
-If you want to show somewhere that there is a long process, you can use the predefined icon
-`AnimatedIcon.Default` which is the default loader.
+If you want to show somewhere that there is a long process, you can use the predefined `AnimatedIcon.Default` loader icon.
 This icon has a larger version of `AnimatedIcon.Big`.

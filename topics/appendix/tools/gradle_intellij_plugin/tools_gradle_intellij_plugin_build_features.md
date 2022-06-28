@@ -44,6 +44,12 @@ This feature flag displays the given warning when the task is run by a paid plug
 Default value
 : `true`
 
+Example
+:
+```properties
+org.jetbrains.intellij.buildFeature.paidPluginSearchableOptionsWarning=false
+```
+
 
 ## selfUpdateCheck
 
@@ -56,6 +62,12 @@ Feature respects the Gradle [`--offline`](https://docs.gradle.org/current/usergu
 {style="narrow"}
 Default value
 : `true`
+
+Example
+:
+```properties
+org.jetbrains.intellij.buildFeature.selfUpdateCheck=false
+```
 
 
 ## useDependencyFirstResolutionStrategy
@@ -71,3 +83,9 @@ See [JetBrains/gradle-intellij-plugin#656](https://github.com/JetBrains/gradle-i
 {style="narrow"}
 Default value
 : `true`
+
+Example
+:
+```properties
+org.jetbrains.intellij.buildFeature.useDependencyFirstResolutionStrategy=false
+```

@@ -17,7 +17,7 @@ org.jetbrains.intellij.buildFeature.buildFeatureName=false
 >
 {type="warning"}
 
-When the [`buildSearchableOptions`](#buildsearchableoptions-task) doesn't produce any results, e.g., when the plugin doesn't implement any [Settings](settings.md), a warning is shown to suggest [disabling the task](tools_gradle_intellij_plugin_faq.md#how-to-disable-building-searchable-options) for better performance.
+When the [`buildSearchableOptions`](tools_gradle_intellij_plugin.md#buildsearchableoptions-task) doesn't produce any results, e.g., when the plugin doesn't implement any [Settings](settings.md), a warning is shown to suggest [disabling the task](tools_gradle_intellij_plugin_faq.md#how-to-disable-building-searchable-options) for better performance.
 
 {style="narrow"}
 Default value
@@ -47,7 +47,11 @@ Default value
 
 ## selfUpdateCheck
 
-Check if the currently used Gradle IntelliJ Plugin is outdated.
+With this feature, it is possible to check if the currently used Gradle IntelliJ Plugin is outdated and if there's a new release available.
+The plugin performs an update check on every run asking the GitHub Releases page for the redirection URL to the latest version with `HEAD` HTTP request: `https://github.com/jetbrains/gradle-intellij-plugin/releases/latest`
+If the current version is outdated, the plugin will emit a warning presenting the current and the latest versions.
+
+Feature respects the Gradle [`--offline`](https://docs.gradle.org/current/userguide/command_line_interface.html#sec:command_line_execution_options) mode.
 
 {style="narrow"}
 Default value

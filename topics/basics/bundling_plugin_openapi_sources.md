@@ -4,7 +4,7 @@
 
 If a plugin exposes its own API that is meant to be used by other plugins, it is worth considering bundling the plugin sources in the ZIP distribution.
 
-If a third-party plugin uses Gradle IntelliJ Plugin and adds a dependency to the plugin which bundles sources in the ZIP distribution, sources will be automatically attached to the plugin library and visible in the IntelliJ Platform-based IDEs when developers navigate to the API classes.
+If a third-party plugin uses [](tools_gradle_intellij_plugin.md) and adds a dependency to the plugin which bundles sources in the ZIP distribution, sources will be automatically attached to the plugin library and visible in the IntelliJ Platform-based IDEs when developers navigate to the API classes.
 Being able to see API sources drastically improves the development experience, and it is highly recommended to bundle them.
 
 > Attaching bundled plugin sources in IDE is available from the Gradle IntelliJ Plugin 1.7.0.

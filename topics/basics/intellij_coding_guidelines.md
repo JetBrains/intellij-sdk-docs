@@ -6,8 +6,8 @@ If you are writing code that you would like to contribute to the IntelliJ Platfo
 
 ## Following the Latest Source Code
 
-If you submit patches, we strongly recommend building your patches against the latest version of the code from the Git repository.
-The easiest way to do so is to clone the JetBrains Git repository, track your work in Git, and create patches using the "git format-patch" command.
+If you submit patches, we strongly recommend building your patches against the latest version of the code from the [intellij-community Git repository](intellij_platform.md#open-source).
+The easiest way to do so is to clone the repository, track your work in Git, and provide your changes as described in [](platform_contributions.md#submit-a-patch).
 
 ## General Architectural Principles
 

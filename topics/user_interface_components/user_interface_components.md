@@ -32,6 +32,7 @@ The following components are particularly noteworthy:
 *  [](file_and_class_choosers.md)
 *  [](editor_components.md)
 *  [](lists_and_trees.md)
+*  [](status_bar_widgets.md)
 *  Tables (TableView) (TBD)
 *  Drag & Drop Helpers (TBD)
 *  [](misc_swing_components.md)

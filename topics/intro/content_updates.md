@@ -13,6 +13,11 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 
 ## 2022
 
+### July-22
+
+Status Bar Widgets
+: Add section [](status_bar_widgets.md) about status bar widgets describing how to implement your own status bar widgets.
+
 ### June-22
 
 PHP Type Providers

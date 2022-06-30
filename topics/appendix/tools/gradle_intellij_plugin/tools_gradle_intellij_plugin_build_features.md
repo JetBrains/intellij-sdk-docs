@@ -2,12 +2,19 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-With the Gradle IntelliJ Plugin releases, new features are introduced that require additional research, collecting more feedback from developers, or should be enabled or disabled under particular conditions.
+With ongoing Gradle IntelliJ Plugin releases, new features are introduced that require additional research, collecting more feedback from developers, or should be enabled or disabled under particular conditions.
 Build Features are an implementation of the feature flags concept and let you control some behaviors of the Gradle IntelliJ Plugin.
-To enable or disable a particular feature, add the Project property to the <path>gradle.properties</path> file, like:
+
+To enable or disable a particular feature, add a Project property to the <path>gradle.properties</path> file with the following pattern:
 
 ```properties
-org.jetbrains.intellij.buildFeature.buildFeatureName=false
+org.jetbrains.intellij.buildFeature.<buildFeatureName>=<true|false>
+```
+
+E.g., to disable the [`selfUpdateCheck`](#selfupdatecheck) feature, add this line:
+
+```properties
+org.jetbrains.intellij.buildFeature.selfUpdateCheck=false
 ```
 
 
@@ -34,7 +41,7 @@ org.jetbrains.intellij.buildFeature.buildSearchableOptions=false
 
 > Available since the upcoming release
 >
-> {type="warning"}
+{type="warning"}
 
 Due to IDE limitations, it is impossible to run the IDE in headless mode to collect searchable options for a paid plugin.
 As paid plugins require providing a valid license and presenting a UI dialog, it is impossible to handle such a case, and the task will fail.

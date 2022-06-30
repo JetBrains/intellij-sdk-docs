@@ -18,9 +18,9 @@ Each entry is mapped to its corresponding _Replacement_, pointing to recommended
 
 > The list is not complete and will be updated continuously. Please check corresponding code documentation when encountering any API not listed below.
 >
-> In some cases, such documentation might not be available inside the IDE for the current target plaform version. Please use <control>Go to file</control> to browse the latest version in the [intellij-community](https://github.com/jetbrains/intellij-community) GitHub repository instead.
+> In some cases, such documentation might not be available inside the IDE for the current target platform version. Please use <control>Go to file</control> to browse the latest version in the [intellij-community](https://github.com/jetbrains/intellij-community) GitHub repository instead.
 >
-> Please use the feedback form on the bottom of this page if you encounter missing or unclear information.
+> Please use the feedback form at the bottom of this page if you encounter missing or unclear information.
 >
 {type="tip"}
 

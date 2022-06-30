@@ -1242,17 +1242,18 @@ Default value
 
 Accepted values
 :
-- `FailureLevel.COMPATIBILITY_WARNINGS` - Compatibility warnings
-- `FailureLevel.COMPATIBILITY_PROBLEMS` - Compatibility problems
-- `FailureLevel.DEPRECATED_API_USAGES` - Deprecated API usages
-- `FailureLevel.EXPERIMENTAL_API_USAGES` - Experimental API usages
-- `FailureLevel.INTERNAL_API_USAGES` - Internal API usages
-- `FailureLevel.OVERRIDE_ONLY_API_USAGES` - Override-only API usages
-- `FailureLevel.NON_EXTENDABLE_API_USAGES` - Non-extendable API usages
-- `FailureLevel.PLUGIN_STRUCTURE_WARNINGS` - Plugin structure warnings
-- `FailureLevel.MISSING_DEPENDENCIES` - Missing dependencies
-- `FailureLevel.INVALID_PLUGIN` - The following files specified for the verification are not valid plugins
-- `FailureLevel.NOT_DYNAMIC` - Plugin cannot be loaded/unloaded without IDE restart
+- `FailureLevel.COMPATIBILITY_WARNINGS` - Compatibility warnings detected against the specified IDE version.
+- `FailureLevel.COMPATIBILITY_PROBLEMS` - Compatibility problems detected against the specified IDE version.
+- `FailureLevel.DEPRECATED_API_USAGES` - Plugin uses API marked as deprecated (`@Deprecated`).
+- `FailureLevel.SCHEDULED_FOR_REMOVAL_API_USAGES` - Plugin uses API marked as scheduled for removal (`ApiStatus.@ScheduledForRemoval`).
+- `FailureLevel.EXPERIMENTAL_API_USAGES` - Plugin uses API marked as experimental (`ApiStatus.@Experimental`).
+- `FailureLevel.INTERNAL_API_USAGES` - Plugin uses API marked as internal (`ApiStatus.@Internal`).
+- `FailureLevel.OVERRIDE_ONLY_API_USAGES` - Override-only API is used incorrectly (`ApiStatus.@OverrideOnly`).
+- `FailureLevel.NON_EXTENDABLE_API_USAGES` - Non-extendable API is used incorrectly (`ApiStatus.@NonExtendable`).
+- `FailureLevel.PLUGIN_STRUCTURE_WARNINGS` - The structure of the plugin is not valid.
+- `FailureLevel.MISSING_DEPENDENCIES` - Plugin has some dependencies missing.
+- `FailureLevel.INVALID_PLUGIN` - "Provided plugin artifact is not valid."
+- `FailureLevel.NOT_DYNAMIC` - "Plugin cannot be loaded/unloaded without IDE restart."
 - `FailureLevel.ALL` - All of the above
 - `FailureLevel.NONE` - None of above
 

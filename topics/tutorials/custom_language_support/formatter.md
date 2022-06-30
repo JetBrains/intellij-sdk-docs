@@ -36,7 +36,7 @@ foo = bar
 ```
 </compare>
 
-Create `SimpleFormattingModelBuilder` by subclassing [`FormattingModelBuilder`](upsource:///platform/code-style-api/src/com/intellij/formatting/FormattingModelBuilder.java).
+Create `SimpleFormattingModelBuilder` by implementing [`FormattingModelBuilder`](upsource:///platform/code-style-api/src/com/intellij/formatting/FormattingModelBuilder.java).
 
 ```java
 ```

@@ -118,3 +118,8 @@ Registration of listeners can be restricted using the following attributes:
 - `activeInTestMode` - set to `false` to disable listener if [`Application.isUnitTestMode()`](upsource:///platform/core-api/src/com/intellij/openapi/application/Application.java) returns `true`
 - `activeInHeadlessMode` - set to `false` to disable listener if [`Application.isHeadlessEnvironment()`](upsource:///platform/core-api/src/com/intellij/openapi/application/Application.java) returns `true`.
   Also, covers `activeInTestMode` as test mode implies headless mode.
+
+
+> If declared listeners are intended to be used by other plugins depending on your plugin, consider [bundling their sources](bundling_plugin_openapi_sources.md) in the plugin distribution.
+>
+{type="note"}

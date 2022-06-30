@@ -23,6 +23,9 @@ Postfix Completion
 Gradle IntelliJ Plugin
 : Add [](tools_gradle_intellij_plugin.md) documentation to _Appendix III — Tools_.
 
+Bundling Plugin API Sources
+: Add the [](bundling_plugin_openapi_sources.md) section explaining how to expose plugin API sources to dependent plugin developers.
+
 Minor Changes and Additions
 :
 - Add a small section to [](php_open_api.md#utility-classes) describing `PhpFilePathUtils` utility class.

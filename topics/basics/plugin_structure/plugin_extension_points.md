@@ -55,6 +55,10 @@ Must be one of `IDEA_APPLICATION` for Application (default), `IDEA_PROJECT` for 
 
 The plugin that contributes to the extension point will read those properties from the <path>plugin.xml</path> file.
 
+> See [](bundling_plugin_openapi_sources.md) section explaining how to expose extension points sources to other plugins.
+>
+{type="note"}
+
 ### Sample
 
 To clarify this, consider the following sample `MyBeanClass` bean class used in the above <path>plugin.xml</path> file:

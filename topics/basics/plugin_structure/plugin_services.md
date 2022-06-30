@@ -75,6 +75,10 @@ To provide custom implementation for test/headless environment, specify `testSer
 </extensions>
 ```
 
+> If declared services are intended to be used by other plugins depending on your plugin, consider [bundling their sources](bundling_plugin_openapi_sources.md) in the plugin distribution.
+>
+{type="note"}
+
 ## Retrieving a Service
 
 Getting service doesn't need a read action and can be performed from any thread.

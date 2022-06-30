@@ -262,6 +262,11 @@ Continuing the example, search the PHP plugin's <path>plugin.xml</path> file for
 * `<extensions defaultExtensionNs="com.jetbrains.php">` to find where the PHP plugin extends functionality.
   The extension namespace (in this example `com.jetbrains.php`) will match the `<id>` defined in the <path>plugin.xml</path> file.
 
+> If a dependency plugin [bundles its API sources](bundling_plugin_openapi_sources.md) in the distribution file, the Gradle IntelliJ Plugin (1.7.0+) will attach them to the plugin dependency in IDE, making sources available when navigating to the plugin API classes.
+>
+{type="tip"}
+
+
 ## Verifying Dependency
 
 Before marking a plugin project as _dependent only on modules in a target product_ in addition to `com.intellij.modules.platform`, verify the plugin isn't implicitly dependent on any APIs that are specific to IntelliJ IDEA.

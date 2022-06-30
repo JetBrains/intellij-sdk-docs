@@ -46,6 +46,7 @@
     <toc-element id="update_plugins_format.md" toc-title="Custom Plugin Repositories"/>
     <toc-element id="plugin_structure.md">
       <toc-element id="plugin_content.md"/>
+      <toc-element id="bundling_plugin_openapi_sources.md" toc-title="Plugin API Sources"/>
       <toc-element id="plugin_class_loaders.md"/>
       <toc-element id="plugin_actions.md"/>
       <toc-element id="plugin_extensions.md" accepts-web-file-names="plugin_extensions_and_extension_points.html"/>

@@ -165,8 +165,7 @@ For example, when plugin is loading some data.
 Any animated icon is a set of frames that loop with some delay.
 
 To create a new animated icon, use the
-[`AnimatedIcon`](upsource:///platform/platform-impl/src/com/intellij/ui/AnimatedIcon.java).
-
+[`AnimatedIcon`](upsource:///platform/ide-core/src/com/intellij/ui/AnimatedIcon.java).
 If you want to create an icon where frames follow each other with the same delay, use a constructor that accepts a delay and icons:
 
 ```java

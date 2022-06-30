@@ -1,4 +1,13 @@
-<content version="92">
+<content version="93">
+   <item>
+      <name>Android Studio Electric Eel (2022.1.1) Canary 7</name>
+      <build>AI-221.5591.52.2211.8767654</build>
+      <version>2022.1.1.7</version>
+      <channel>Canary</channel>
+      <platformBuild>221.5591.52</platformBuild>
+      <platformVersion>2022.1.1</platformVersion>
+      <date>June 29, 2022</date>
+   </item>
    <item>
       <name>Android Studio Electric Eel (2022.1.1) Canary 6</name>
       <build>AI-221.4501.155.2211.8738788</build>

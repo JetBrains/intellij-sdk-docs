@@ -1,6 +1,6 @@
 [//]: # (title: Extension Points)
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 > See [Plugin Extensions](plugin_extensions.md) for _using_ extension points in your plugin.
 >
@@ -54,6 +54,10 @@ As extensions should be stateless, it is **not** recommended to use non-default.
 Must be one of `IDEA_APPLICATION` for Application (default), `IDEA_PROJECT` for Project, or `IDEA_MODULE` for Module scope.
 
 The plugin that contributes to the extension point will read those properties from the <path>plugin.xml</path> file.
+
+> See [](bundling_plugin_openapi_sources.md) section explaining how to expose extension points sources to other plugins.
+>
+{type="note"}
 
 ### Sample
 

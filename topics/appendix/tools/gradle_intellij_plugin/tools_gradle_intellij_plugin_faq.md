@@ -166,3 +166,7 @@ Task 'setupDependencies' not found in root project 'projectName'.
 ```
 
 To fix that, manually edit the <path>.idea/workspace.xml</path> file removing mentioned entry, go to the <control>Gradle</control> tool window, select the <menupath>Tasks Activation</menupath> action from the context menu of the root project item, and remove it.
+
+### How do I expose my plugin API sources to dependent plugins?
+
+See the [](bundling_plugin_openapi_sources.md) section for details.

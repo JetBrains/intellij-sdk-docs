@@ -1,6 +1,6 @@
 [//]: # (title: Plugin Compatibility with IntelliJ Platform Products)
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 ## Introduction
 
@@ -261,6 +261,11 @@ Continuing the example, search the PHP plugin's <path>plugin.xml</path> file for
 * `<extensionPoints>` to find the opportunities for extending the PHP plugin's functionality.
 * `<extensions defaultExtensionNs="com.jetbrains.php">` to find where the PHP plugin extends functionality.
   The extension namespace (in this example `com.jetbrains.php`) will match the `<id>` defined in the <path>plugin.xml</path> file.
+
+> If a dependency plugin [bundles its API sources](bundling_plugin_openapi_sources.md) in the distribution file, the Gradle IntelliJ Plugin (1.7.0+) will attach them to the plugin dependency in IDE, making sources available when navigating to the plugin API classes.
+>
+{type="tip"}
+
 
 ## Verifying Dependency
 

@@ -1,6 +1,6 @@
 [//]: # (title: Listeners)
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 <excerpt>Listeners allow subscription to application and project events.</excerpt>
 
@@ -118,3 +118,8 @@ Registration of listeners can be restricted using the following attributes:
 - `activeInTestMode` - set to `false` to disable listener if [`Application.isUnitTestMode()`](upsource:///platform/core-api/src/com/intellij/openapi/application/Application.java) returns `true`
 - `activeInHeadlessMode` - set to `false` to disable listener if [`Application.isHeadlessEnvironment()`](upsource:///platform/core-api/src/com/intellij/openapi/application/Application.java) returns `true`.
   Also, covers `activeInTestMode` as test mode implies headless mode.
+
+
+> If declared listeners are intended to be used by other plugins depending on your plugin, consider [bundling their sources](bundling_plugin_openapi_sources.md) in the plugin distribution.
+>
+{type="note"}

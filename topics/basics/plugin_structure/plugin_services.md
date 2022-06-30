@@ -1,6 +1,6 @@
 [//]: # (title: Services)
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 A _service_ is a plugin component loaded on demand when your plugin calls the `getService()` method of corresponding [`ComponentManager`](upsource:///platform/extensions/src/com/intellij/openapi/components/ComponentManager.java) instance (see [Types](#types)).
 The IntelliJ Platform ensures that only one instance of a service is loaded even though it is called several times.

@@ -1,6 +1,6 @@
 [//]: # (title: Bundling Plugin API Sources)
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 If a plugin exposes its own API that is meant to be used by other plugins, it is worth considering bundling the plugin sources in the ZIP distribution.
 

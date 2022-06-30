@@ -1,6 +1,6 @@
 [//]: # (title: Extension Points)
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 > See [Plugin Extensions](plugin_extensions.md) for _using_ extension points in your plugin.
 >

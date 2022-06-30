@@ -42,18 +42,21 @@ This identifier may be needed to later get a widget instance.
 The IntelliJ Platform provides several predefined widget appearance options:
 
 - `com.intellij.openapi.wm.StatusBarWidget.IconPresentation`
+
   Widget with only an icon.
 
   Example:
   [PowerSaveStatusWidgetFactory](upsource:///platform/platform-impl/src/com/intellij/openapi/wm/impl/status/PowerSaveStatusWidgetFactory.java)
 
 - `com.intellij.openapi.wm.StatusBarWidget.TextPresentation`
+
   Widget with only a text.
 
   Example:
   [PositionPanel](upsource:///platform/platform-impl/src/com/intellij/openapi/wm/impl/status/PositionPanel.java)
 
 - `com.intellij.openapi.wm.StatusBarWidget.MultipleTextValuesPresentation`
+
   Widget with a text and a popup.
 
   Example:

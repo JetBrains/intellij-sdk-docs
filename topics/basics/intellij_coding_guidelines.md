@@ -2,7 +2,7 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-If you are writing code that you would like to contribute to the IntelliJ Platform (either as a patch or as a plugin), following these guidelines will make it easier for the JetBrains development team to review and accept your changes.
+If you are writing code that you would like to contribute to the IntelliJ Platform, following these guidelines will make it easier for the JetBrains development team to review and accept your changes.
 
 ## Following the Latest Source Code
 
@@ -24,8 +24,8 @@ It's also strongly recommended that you provide new functional tests that cover 
 We're generally pretty lax about code formatting, but at least the following conventions must be observed:
 
 - 2 space indents in source files
-- **my** prefix for instance variables and **our** prefix for class variables
-- new source code files must include a copyright statement with the Apache 2 license and the name of the contributor.
+- Use `my` prefix for instance variables and `our` prefix for class variables.
+- New source code files must include a copyright statement with the Apache 2 license and the name of the contributor.
 
 The easiest way to follow our code formatting guidelines is to reformat your code submissions using the shared code style, which is included in the IntelliJ IDEA Community Edition project directory.
 
@@ -45,16 +45,17 @@ To avoid unnecessary work when reviewing your changes, please follow these guide
 
 - Look through all of your changes in your patch or pull request before you submit it to us.
   Make sure that everything you've changed is there for a reason.
-- Please don't include unfinished work to the patch.
+- Please don't include unfinished work in the patch.
   Make sure that it doesn't contain any TODO comments.
   If you added some code and ended up not needing it, please make sure that you delete it before you submit your patch.
 - Please don't include any changes that affect formatting, fixing "yellow code" (warnings), or code style along with actual changes that fix a bug or implement a feature.
   No one likes to leave poor code, but remember that having these changes mixed complicates the process of review.
 - Please don't fix multiple problems within a single patch or pull request.
-- Please don't commit your changes to configuration files (runConfigurations/IDEA.xml, codeStyleSettings.xml, misc.xml, etc.) unless it is essential for the fix itself.
+- Please don't commit your changes to configuration files (<path>runConfigurations/IDEA.xml</path>, <path>codeStyleSettings.xml</path>, <path>misc.xml</path>, etc.) unless it is essential for the fix itself.
 - Please avoid moving or renaming classes unless it is necessary for the fix.
 
-The ideal pull request would contain one commit with everything needed to fix the bug or implement a feature, but nothing else. "Commit early, commit often" perfectly applies only to local commits, but such "public commits" are hard to review (the reviewer needs either to go commit by commit spending more time to review work-in-progress, or to review all changes at once thus losing valuable information stored in commit messages).
+The ideal pull request would contain one commit with everything needed to fix the bug or implement a feature, but nothing else.
+"Commit early, commit often" perfectly applies only to local commits, but such "public commits" are hard to review (the reviewer needs either to go commit by commit spending more time to review work-in-progress, or to review all changes at once thus losing valuable information stored in commit messages).
 
 The best would be to commit early, but then to squash all commits into one with a descriptive commit message.
 

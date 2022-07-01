@@ -95,7 +95,7 @@ This identifier may be needed to later get a widget instance.
 
 Implement `createInstance()`, where returns the new widget instance.
 
-Finally, implement the `createPopup()` method where returns the popup that will be displayed when the widget is clicked.
+Finally, implement the `createPopup()` method where returns the [popup](popups.md) that will be displayed when the widget is clicked.
 
 Also, it can be useful to override `registerCustomListeners()` to add custom listeners.
 This can be useful if you want to set custom listeners for a widget that will update it.
@@ -110,8 +110,7 @@ If you want to change visibility programmatically use
 `com.intellij.openapi.wm.impl.status.widget.StatusBarWidgetSettings.setEnabled()`.
 
 The first argument to the method is the factory that created the widget.
-To get it, use `StatusBarWidgetsManager.findWidgetFactory()` where pass the widget ID.
-As the second argument, pass a boolean value that describes whether the widget will be visible or not.
+To get it, use `com.intellij.openapi.wm.impl.status.widget.StatusBarWidgetsManager.findWidgetFactory()` where pass the widget ID and a boolean value that describes whether the widget will be visible or not.
 
 Also, you need to [update](#how-to-update-widget-programmatically) the widget for the changes to take effect.
 

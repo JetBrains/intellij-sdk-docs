@@ -81,19 +81,19 @@ tasks {
 task createOpenApiSourceJar(type: Jar) {
   // Java sources
   from(sourceSets.main.java) {
-    include("**/com/example/plugin/openapi/**/*.java")
+    include '**/com/example/plugin/openapi/**/*.java'
   }
   // Kotlin sources
   from(sourceSets.main.kotlin) {
-    include("**/com/example/plugin/openapi/**/*.kt")
+    include '**/com/example/plugin/openapi/**/*.kt'
   }
-  destinationDirectory.set(layout.buildDirectory.dir("libs"))
-  archiveClassifier.set("src")
+  destinationDirectory = layout.buildDirectory.dir('libs')
+  archiveClassifier = 'src'
 }
 
 buildPlugin {
   dependsOn(createOpenApiSourceJar)
-  from(createOpenApiSourceJar) { into("lib/src") }
+  from(createOpenApiSourceJar) { into 'lib/src' }
 }
 ```
 

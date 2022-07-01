@@ -2,24 +2,18 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-The status bar widget implementation is used to add new widgets to the
-[status bar](https://www.jetbrains.com/help/idea/guided-tour-around-the-user-interface.html#status-bar).
+The IntelliJ Platform allows plugins to extend the IDE [status bar](https://www.jetbrains.com/help/idea/guided-tour-around-the-user-interface.html#status-bar) with additional custom widgets.
 
-Widgets on the status bar are small interface elements that allow you to provide the user important information about the current file or the project.
-For example, the widget showing the encoding of the current file or the current VCS branch of the project.
+Status bar widgets are small UI elements that allow providing users with useful information and settings for the current file, project, IDE, etc.
+For example, the status bar contains the widget showing the encoding of the current file, or the current VCS branch of the project.
 
 The starting point for extending the status bar with new widgets is the
 [`StatusBarWidgetFactory`](upsource:///platform/platform-api/src/com/intellij/openapi/wm/StatusBarWidgetFactory.java)
 interface, which is registered in the `com.intellij.statusBarWidgetFactory` extension point.
 
-To reuse the IntelliJ Platform implementation, you can extend the
+In case a widget provides information or functionality related to the editor files, consider extending the
 [`StatusBarEditorBasedWidgetFactory`](upsource:///platform/platform-api/src/com/intellij/openapi/wm/impl/status/widget/StatusBarEditorBasedWidgetFactory.java)
 class.
-
-> Note that widgets inherited from this class will only work when at least one file is open.
-> If you want your widget to work regardless of open files, implement the `StatusBarWidgetFactory` directly.
->
-{type="note"}
 
 Each widget factory returns a new widget from `createWidget()`.
 To control the disposing of a widget, implement the `disposeWidget()`, if you just want to dispose it, use `Disposer.dispose(widget)`.
@@ -30,10 +24,10 @@ interface.
 
 To reuse the IntelliJ Platform implementation, you can extend one of two classes:
 
-- [`EditorBasedWidget`](upsource:///platform/platform-api/src/com/intellij/openapi/wm/impl/status/EditorBasedWidget.java).
-- [`EditorBasedStatusBarPopup`](upsource:///platform/platform-api/src/com/intellij/openapi/wm/impl/status/EditorBasedStatusBarPopup.java).
+- [`EditorBasedWidget`](upsource:///platform/platform-api/src/com/intellij/openapi/wm/impl/status/EditorBasedWidget.java)
+- [`EditorBasedStatusBarPopup`](upsource:///platform/platform-api/src/com/intellij/openapi/wm/impl/status/EditorBasedStatusBarPopup.java)
 
-## `EditorBasedWidget`
+## EditorBasedWidget
 
 `EditorBasedWidget` is the basic widget implementation.
 To implement it, override `ID()` where returns the unique ID of the widget.
@@ -76,7 +70,7 @@ Override `getComponent()` to return the custom widget's component to display.
 Example:
 [MemoryUsagePanel](upsource:///platform/platform-impl/src/com/intellij/openapi/wm/impl/status/MemoryUsagePanel.java)
 
-## `EditorBasedStatusBarPopup`
+## EditorBasedStatusBarPopup
 
 `EditorBasedStatusBarPopup` is the basis for all widgets that have a popup with a list of actions.
 For example, the encoding widget of the current file.
@@ -102,7 +96,7 @@ This can be useful if you want to set custom listeners for a widget that will up
 
 To update a widget, use `update()`.
 
-## How to change visibility programmatically
+## Controlling Widgets Programmatically
 
 By default, when adding a widget to the status bar, it can be displayed/hidden through the context menu of the status bar or widget.
 
@@ -112,13 +106,9 @@ If you want to change visibility programmatically use
 The first argument to the method is the factory that created the widget.
 To get it, use `com.intellij.openapi.wm.impl.status.widget.StatusBarWidgetsManager.findWidgetFactory()` where pass the widget ID and a boolean value that describes whether the widget will be visible or not.
 
-Also, you need to [update](#how-to-update-widget-programmatically) the widget for the changes to take effect.
+Also, you need to update the widget for the changes to take effect with `com.intellij.openapi.wm.impl.status.widget.StatusBarWidgetsManager.updateWidget()`.
 
-## How to update widget programmatically
-
-To update a widget, use `com.intellij.openapi.wm.impl.status.widget.StatusBarWidgetsManager.updateWidget()`.
-
-## How to show widget in LightEdit mode
+## Showing widget in LightEdit mode
 
 By default, widgets aren't shown in LightEdit mode.
 To show a widget, implement the `com.intellij.ide.lightEdit.LightEditCompatible` interface in your factory.

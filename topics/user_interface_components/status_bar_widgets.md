@@ -9,7 +9,7 @@ Widgets on the status bar are small interface elements that allow you to provide
 For example, the widget showing the encoding of the current file or the current VCS branch of the project.
 
 The starting point for extending the status bar with new widgets is the
-[`StatusBarWidgetFactory`](upsource:///platform/platform-api/src/com/intellij/openapi/wm/StatusBarWidgetFactory.java),
+[`StatusBarWidgetFactory`](upsource:///platform/platform-api/src/com/intellij/openapi/wm/StatusBarWidgetFactory.java)
 interface, which is registered in the `com.intellij.statusBarWidgetFactory` extension point.
 
 To reuse the IntelliJ Platform implementation, you can extend the
@@ -66,7 +66,7 @@ The IntelliJ Platform provides several predefined widget appearance options:
 >
 {type="note"}
 
-To use the selected appearance, return a class implemented one of the interfaces above from `getPresentation()`.
+To use the selected appearance, return a class that implements one of the above interfaces from `getPresentation()`.
 
 To create a widget with custom content, it should implement the
 [`CustomStatusBarWidget`](upsource:///platform/platform-api/src/com/intellij/openapi/wm/CustomStatusBarWidget.java)

@@ -17,20 +17,20 @@ Before 2020.2:
 
 ```java
 private void handleParameterBefore(Parameter parameter) {
-    ClassReference classReference = PsiTreeUtil.getChildOfType(parameter, ClassReference.class);
-    handleReference(classReference);
-  }
+  ClassReference classReference = PsiTreeUtil.getChildOfType(parameter, ClassReference.class);
+  handleReference(classReference);
+}
 ```
 
 After 2020.2:
 
 ```java
-  private void handleParameterAfter(Parameter parameter) {
-    PhpTypeDeclaration typeDeclaration = PsiTreeUtil.getChildOfType(parameter, PhpTypeDeclaration.class);
-    for (ClassReference classReference : typeDeclaration.getClassReferences()) {
-      handleReference(classReference);
-    }
+private void handleParameterAfter(Parameter parameter) {
+  PhpTypeDeclaration typeDeclaration = PsiTreeUtil.getChildOfType(parameter, PhpTypeDeclaration.class);
+  for (ClassReference classReference : typeDeclaration.getClassReferences()) {
+    handleReference(classReference);
   }
+}
 ```
 
 ## Deprecated `PhpReturnType.getClassReference()`
@@ -40,17 +40,18 @@ This method also became nullable, since in earlier versions an incomplete `?` ty
 Before 2020.2:
 
 ```java
-  private void handleReturnTypeBefore(PhpReturnType returnType) {
-    ClassReference classReference = returnType.getClassReference();
-    handleReference(classReference);
-  }
+private void handleReturnTypeBefore(PhpReturnType returnType) {
+  ClassReference classReference = returnType.getClassReference();
+  handleReference(classReference);
+}
 ```
 
 After 2020.2:
 
 ```java
-  private void handleReturnTypeAfter(PhpReturnType returnType) {
-    for (ClassReference classReference : returnType.getClassReferences()) {
-      handleReference(classReference);
-    }
+private void handleReturnTypeAfter(PhpReturnType returnType) {
+  for (ClassReference classReference : returnType.getClassReferences()) {
+    handleReference(classReference);
+  }
+}
 ```

@@ -225,7 +225,7 @@ The method `performInjection()` does the actual injection into the context PSI e
 [`MultiHostInjector`](upsource:///platform/core-api/src/com/intellij/lang/injection/MultiHostInjector.java) registered in `com.intellij.multiHostInjector` EP is a very low-level API, but it gives plugin authors the most freedom.
 It performs language injection inside other PSI elements, e.g. inject SQL inside an XML tag text or inject regular expressions into Java string literals.
 
-Plugin authors need to implement `getLanguagesToInject()` to provide a list of places to inject a language to and `elementsToInjectIn()` to return a list of elements to inject into.
+Plugin authors need to implement `getLanguagesToInject()` to provide a list of places to inject a language, and `elementsToInjectIn()` to return a list of elements to inject.
 
 For example, inject regular expressions into Java string literal:
 
@@ -261,6 +261,13 @@ public class MyRegExpToJavaInjector implements MultiHostInjector {
     return List.of(PsiLiteralExpression.class);
   }
 }
+```
+
+Register the implementation in your <path>plugin.xml</path>:
+
+```xml
+<multiHostInjector
+    implementation="org.intellij.sdk.language.MyRegExpToJavaInjector"/>
 ```
 
 A more complex example is when you need to inject into several fragments at once.

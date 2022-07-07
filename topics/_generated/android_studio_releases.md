@@ -6,6 +6,7 @@
 
 | Release Name | Channel | Release Date | Version | IntelliJ IDEA Version |
 |--------------|:-------:|--------------|---------|-----------------------|
+| Electric Eel (2022.1.1) Canary 8 | ![canary][canary] | July 6, 2022 | **2022.1.1.8** <br/> AI-221.5921.22.2211.8786657 | **2022.1.3** <br/> 221.5921.22 |
 | Electric Eel (2022.1.1) Canary 7 | ![canary][canary] | June 29, 2022 | **2022.1.1.7** <br/> AI-221.5591.52.2211.8767654 | **2022.1.1** <br/> 221.5591.52 |
 | Electric Eel (2022.1.1) Canary 6 | ![canary][canary] | June 27, 2022 | **2022.1.1.6** <br/> AI-221.4501.155.2211.8738788 | **2021.3.3** <br/> 221.4501.155 |
 | Electric Eel (2022.1.1) Canary 5 | ![canary][canary] | June 16, 2022 | **2022.1.1.5** <br/> AI-221.4165.146.2211.8713749 | **2021.3.3** <br/> 221.4165.146 |
@@ -377,10 +378,10 @@
 
 | Release Name | Channel | Release Date | Version | IntelliJ IDEA Version |
 |--------------|:-------:|--------------|---------|-----------------------|
+| Electric Eel (2022.1.1) Canary 8 | ![canary][canary] | July 6, 2022 | **2022.1.1.8** <br/> AI-221.5921.22.2211.8786657 | **2022.1.3** <br/> 221.5921.22 |
 | Electric Eel (2022.1.1) Canary 7 | ![canary][canary] | June 29, 2022 | **2022.1.1.7** <br/> AI-221.5591.52.2211.8767654 | **2022.1.1** <br/> 221.5591.52 |
 | Electric Eel (2022.1.1) Canary 6 | ![canary][canary] | June 27, 2022 | **2022.1.1.6** <br/> AI-221.4501.155.2211.8738788 | **2021.3.3** <br/> 221.4501.155 |
 | Electric Eel (2022.1.1) Canary 5 | ![canary][canary] | June 16, 2022 | **2022.1.1.5** <br/> AI-221.4165.146.2211.8713749 | **2021.3.3** <br/> 221.4165.146 |
-| Electric Eel (2022.1.1) Canary 4 | ![canary][canary] | June 13, 2022 | **2022.1.1.4** <br/> AI-221.3427.89.2211.8689873 | **2021.3.3** <br/> 221.3427.89 |
 | Dolphin (2021.3.1) Beta 4 | ![beta][beta] | June 22, 2022 | **2021.3.1.13** <br/> AI-213.7172.25.2113.8718688 | **2021.3.3** <br/> 213.7172.25 |
 
 [release]: https://img.shields.io/badge/-release-blue?style=flat-square

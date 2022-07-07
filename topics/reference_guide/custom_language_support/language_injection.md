@@ -166,9 +166,22 @@ As a plugin author, implement [`LanguageInjectionContributor`](upsource:///platf
 For instance, if you want to inject a YAML or JSON to a literal language depending on some conditions, you could implement this interface like this:
 
 ```java
+package org.intellij.sdk.language;
+
+import com.intellij.json.JsonLanguage;
+import com.intellij.lang.injection.general.Injection;
+import com.intellij.lang.injection.general.LanguageInjectionContributor;
+import com.intellij.lang.injection.general.SimpleInjection;
+import com.intellij.psi.PsiElement;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
 public final class MyInjector implements LanguageInjectionContributor {
 
-  public Injection getInjection(@NotNull PsiElement context) {
+  // ...
+
+  @Override
+  public @Nullable Injection getInjection(@NotNull PsiElement context) {
     if (!isConfigPlace(context)) return null;
     if (shouldInjectYaml(context)) {
       return new SimpleInjection(
@@ -188,7 +201,7 @@ Register the implementation in your <path>plugin.xml</path>:
 
 ```xml
 <languageInjectionContributor
-    implementationClass="MyInjector"
+    implementationClass="org.intellij.sdk.language.MyInjector"
     language="YourLanguage"/>
 ```
 
@@ -212,20 +225,40 @@ The method `performInjection()` does the actual injection into the context PSI e
 [`MultiHostInjector`](upsource:///platform/core-api/src/com/intellij/lang/injection/MultiHostInjector.java) registered in `com.intellij.multiHostInjector` EP is a very low-level API, but it gives plugin authors the most freedom.
 It performs language injection inside other PSI elements, e.g. inject SQL inside an XML tag text or inject regular expressions into Java string literals.
 
-Plugin authors need to implement `getLanguagesToInject()` to provide a list of places to inject a language to.
-For example, to inject regular expressions into Java string literal, you can override this method with something similar to this:
+Plugin authors need to implement `getLanguagesToInject()` to provide a list of places to inject a language to and `elementsToInjectIn()` to return a list of elements to inject into.
+
+For example, inject regular expressions into Java string literal:
 
 ```java
+package org.intellij.sdk.language;
+
+import com.intellij.lang.injection.MultiHostInjector;
+import com.intellij.lang.injection.MultiHostRegistrar;
+import com.intellij.psi.PsiElement;
+import com.intellij.psi.PsiLiteralExpression;
+import org.intellij.lang.regexp.RegExpLanguage;
+import org.jetbrains.annotations.NotNull;
+
+import java.util.List;
+
 public class MyRegExpToJavaInjector implements MultiHostInjector {
 
+  // ...
+
+  @Override
   public void getLanguagesToInject(@NotNull MultiHostRegistrar registrar,
                                    @NotNull PsiElement context) {
     if (context instanceof PsiLiteralExpression && shouldInject(context)) {
       registrar
-        .startInjecting(REGEXP_LANG)
+        .startInjecting(RegExpLanguage.INSTANCE)
         .addPlace(null, null, context, innerRangeStrippingQuotes(context))
         .doneInjecting();
     }
+  }
+
+  @Override
+  public @NotNull List<? extends Class<? extends PsiElement>> elementsToInjectIn() {
+    return List.of(PsiLiteralExpression.class);
   }
 }
 ```

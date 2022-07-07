@@ -291,8 +291,19 @@ class MyDsl { void foo() { System.out.println(42); } }
 Here, we need to inject Java into several places at once, i.e. method name and its body:
 
 ```java
+package org.intellij.sdk.language;
+
+import com.intellij.lang.injection.MultiHostInjector;
+import com.intellij.lang.injection.MultiHostRegistrar;
+import com.intellij.lang.java.JavaLanguage;
+import com.intellij.psi.PsiElement;
+import org.jetbrains.annotations.NotNull;
+
 public class MyBizarreDSLInjector implements MultiHostInjector {
 
+  // ...
+
+  @Override
   public void getLanguagesToInject(@NotNull MultiHostRegistrar registrar,
                                    @NotNull PsiElement context) {
     if (isMethodTag(context)) {

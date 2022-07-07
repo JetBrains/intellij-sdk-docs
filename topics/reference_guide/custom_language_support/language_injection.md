@@ -172,10 +172,12 @@ public final class MyInjector implements LanguageInjectionContributor {
     if (!isConfigPlace(context)) return null;
     if (shouldInjectYaml(context)) {
       return new SimpleInjection(
-          YAMLLanguage.INSTANCE.getID(), "", "", null);
+          YAMLLanguage.INSTANCE, "", "", null
+      );
     } else if (shouldInjectJSON(context)) {
       return new SimpleInjection(
-          JsonLanguage.INSTANCE.getID(), "", "", null);
+          JsonLanguage.INSTANCE, "", "", null
+      );
     }
     return null;
   }
@@ -221,7 +223,8 @@ public class MyRegExpToJavaInjector implements MultiHostInjector {
     if (context instanceof PsiLiteralExpression && shouldInject(context)) {
       registrar
         .startInjecting(REGEXP_LANG)
-        .addPlace(null, null, context, innerRangeStrippingQuotes(context));
+        .addPlace(null, null, context, innerRangeStrippingQuotes(context))
+        .doneInjecting();
     }
   }
 }

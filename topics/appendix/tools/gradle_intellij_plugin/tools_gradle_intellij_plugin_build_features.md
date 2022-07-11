@@ -20,10 +20,6 @@ org.jetbrains.intellij.buildFeature.selfUpdateCheck=false
 
 ## noSearchableOptionsWarning
 
-> Available since the upcoming release
->
-{type="warning"}
-
 When the [`buildSearchableOptions`](tools_gradle_intellij_plugin.md#buildsearchableoptions-task) doesn't produce any results, e.g., when the plugin doesn't implement any [Settings](settings.md), a warning is shown to suggest [disabling the task](tools_gradle_intellij_plugin_faq.md#how-to-disable-building-searchable-options) for better performance.
 
 {style="narrow"}
@@ -38,10 +34,6 @@ org.jetbrains.intellij.buildFeature.buildSearchableOptions=false
 
 
 ## paidPluginSearchableOptionsWarning
-
-> Available since the upcoming release
->
-{type="warning"}
 
 Due to IDE limitations, it is impossible to run the IDE in headless mode to collect searchable options for a paid plugin.
 As paid plugins require providing a valid license and presenting a UI dialog, it is impossible to handle such a case, and the task will fail.
@@ -78,10 +70,6 @@ org.jetbrains.intellij.buildFeature.selfUpdateCheck=false
 
 
 ## useDependencyFirstResolutionStrategy
-
-> Available since the upcoming release
->
-{type="warning"}
 
 Set the `ResolutionStrategy.SortOrder.DEPENDENCY_FIRST` resolution strategy for `compileClasspath` and `testCompileClasspath` Gradle configurations.
 This behaviour allows for making the dependencies specified in the project's Gradle configuration considered before the dependencies added by the Gradle IntelliJ Plugin.

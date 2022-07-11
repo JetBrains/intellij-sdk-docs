@@ -45,12 +45,12 @@ void tearDown() {
 }
 ```
 
-Avoid OS-specific assumptions (e.g., filesystem case-sensitivity, hardcoded separator instead of `java.io.File.separator`).
+Avoid OS-specific assumptions (e.g., filesystem case-sensitivity, hardcoded separator instead of `java.io.File.separator`, default encoding, line endings).
 
 Use _ordered_ collections or [`UsefulTestCase.assertUnorderedCollection()`](upsource:///platform/testFramework/src/com/intellij/testFramework/UsefulTestCase.java).
 
 Code deferring execution (e.g., via `Application.invokeLater()`) might not run during test execution (and possibly fails in production, too).
-Use `Application.invokeLater(runnable, myProject.getDisposed()`.
+Use `Application.invokeLater(runnable, myProject.getDisposed())`.
 
 ### How to avoid test failure when using resources?
 

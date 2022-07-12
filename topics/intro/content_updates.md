@@ -31,7 +31,7 @@ Minor Changes and Additions
 :
 - Add a small section to [](php_open_api.md#utility-classes) describing `PhpFilePathUtils` utility class.
 - Add mention of the way to programmatically open an autocomplete popup to [](code_completion.md).
-- Add a small section to [](work_with_icons_and_images.md) describing animated icons.
+- Add a small section to [](work_with_icons_and_images.md#animated-icons) describing animated icons.
 
 ### May-22
 

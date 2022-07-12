@@ -2,7 +2,7 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-47 Extension Points and 5 Listeners for Spring API
+49 Extension Points and 5 Listeners for Spring API
 
 <include src="extension_point_list.md" include-id="ep_list_legend"></include>
 
@@ -53,6 +53,7 @@
 
 | Extension Point                                                                                                                                 | Implementation                             |
 |-------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------|
+| [com.intellij.spring.boot.configFileDetector](https://jb.gg/ipe?extensions=com.intellij.spring.boot.configFileDetector)                         | `SpringBootConfigFileDetector`             |
 | [com.intellij.spring.boot.customHintReferenceProvider](https://jb.gg/ipe?extensions=com.intellij.spring.boot.customHintReferenceProvider)       | `SpringBootCustomHintReferenceProvider`    |
 | [com.intellij.spring.boot.modelConditionalContributor](https://jb.gg/ipe?extensions=com.intellij.spring.boot.modelConditionalContributor)       | `ConditionalContributor`                   |
 | [com.intellij.spring.boot.modelConfigFileContributor](https://jb.gg/ipe?extensions=com.intellij.spring.boot.modelConfigFileContributor)         | `SpringBootModelConfigFileContributor`     |
@@ -76,6 +77,7 @@
 
 | Extension Point                                                                                                                                                       | Implementation                                     |
 |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------|
+| [com.intellij.spring.mvc.applicationPathProvider](https://jb.gg/ipe?extensions=com.intellij.spring.mvc.applicationPathProvider)                                       | `SpringApplicationPathProvider`                    |
 | [com.intellij.spring.mvc.applicationPortProvider](https://jb.gg/ipe?extensions=com.intellij.spring.mvc.applicationPortProvider)                                       | `SpringApplicationPortProvider`                    |
 | [com.intellij.spring.mvc.mergingMvcRequestMappingLineMarkerProvider](https://jb.gg/ipe?extensions=com.intellij.spring.mvc.mergingMvcRequestMappingLineMarkerProvider) | `SpringMergingMvcRequestMappingLineMarkerProvider` |
 | [com.intellij.spring.mvc.viewResolverFactory](https://jb.gg/ipe?extensions=com.intellij.spring.mvc.viewResolverFactory)                                               | `ViewResolverFactory`                              |

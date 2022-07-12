@@ -14,20 +14,20 @@ The starting point for extending the status bar with new widgets is the
 interface, which is registered in the `com.intellij.statusBarWidgetFactory` extension point.
 
 In case a widget provides information or functionality related to the editor files, consider extending the
-[`StatusBarEditorBasedWidgetFactory`](upsource:///platform/platform-api/src/com/intellij/openapi/wm/impl/status/widget/StatusBarEditorBasedWidgetFactory.java)
+[`StatusBarEditorBasedWidgetFactory`](upsource:///platform/platform-impl/src/com/intellij/openapi/wm/impl/status/widget/StatusBarEditorBasedWidgetFactory.java)
 class.
 
 Each widget factory returns a new widget from `createWidget()`.
 To control the disposing of a widget, implement the `disposeWidget()`, if you just want to dispose it, use `Disposer.dispose(widget)`.
 
 Any widget must implement the
-[`StatusBarWidget`](upsource:///platform/platform-api/src/com/intellij/openapi/wm/StatusBarWidget.java)
+[`StatusBarWidget`](upsource:///platform/ide-core/src/com/intellij/openapi/wm/StatusBarWidget.java)
 interface.
 
 To reuse the IntelliJ Platform implementation, you can extend one of two classes:
 
-- [`EditorBasedWidget`](upsource:///platform/platform-api/src/com/intellij/openapi/wm/impl/status/EditorBasedWidget.java)
-- [`EditorBasedStatusBarPopup`](upsource:///platform/platform-api/src/com/intellij/openapi/wm/impl/status/EditorBasedStatusBarPopup.java)
+- [`EditorBasedWidget`](upsource:///platform/platform-impl/src/com/intellij/openapi/wm/impl/status/EditorBasedWidget.java)
+- [`EditorBasedStatusBarPopup`](upsource:///platform/platform-impl/src/com/intellij/openapi/wm/impl/status/EditorBasedStatusBarPopup.java)
 
 ## EditorBasedWidget
 

@@ -2,7 +2,7 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-30 Extension Points and 4 Listeners for AppCode
+31 Extension Points and 4 Listeners for AppCode
 
 See [](extension_point_list.md) for IntelliJ Platform.
 
@@ -19,11 +19,6 @@ See [](extension_point_list.md) for IntelliJ Platform.
 | [AMDeviceManager#DEVICE_LISTENER_TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.execution.deviceSupport.AMDeviceListener)  | `AMDeviceListener` |
 | [XcodeProjectTestListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.xcode.model.XcodeProjectTestListener)  | `XcodeProjectTestListener` |
 
-### AppCodeSwiftPlugin.xml
-
-| Extension Point | Implementation |
-|-----------------|----------------|
-| [appcode.swift.sourceModuleProducer](https://jb.gg/ipe?extensions=appcode.swift.sourceModuleProducer) ![Non-Dynamic][non-dynamic] | `AppcodeSourceModuleProducer` |
 
 ### CocoaCommonPlugin.xml
 
@@ -45,6 +40,7 @@ See [](extension_point_list.md) for IntelliJ Platform.
 |-----------------|----------------|
 | [appcode.additionalRootsProvider](https://jb.gg/ipe?extensions=appcode.additionalRootsProvider) ![Non-Dynamic][non-dynamic] | `XcodeMetaDataAdditionalRootsProvider` |
 | [appcode.attachDebuggerProvider](https://jb.gg/ipe?extensions=appcode.attachDebuggerProvider) ![Non-Dynamic][non-dynamic] | `AppCodeAttachDebuggerExtension` |
+| [appcode.projectNameUpdateVeto](https://jb.gg/ipe?extensions=appcode.projectNameUpdateVeto) ![Non-Dynamic][non-dynamic] | `XcodeProjectNameUpdateVeto` |
 | [appcode.projectRootNodeDelegateProvider](https://jb.gg/ipe?extensions=appcode.projectRootNodeDelegateProvider) ![Non-Dynamic][non-dynamic] | `AppCodeProjectRootNodeDelegateProvider` |
 | [appcode.rootsInfoPostProcessor](https://jb.gg/ipe?extensions=appcode.rootsInfoPostProcessor) ![Non-Dynamic][non-dynamic] | `XcodeRootsInfoPostProcessor` |
 | [appcode.runConfigurationExtension](https://jb.gg/ipe?extensions=appcode.runConfigurationExtension) ![Non-Dynamic][non-dynamic] | `AppCodeRunConfigurationExtension` |
@@ -72,6 +68,7 @@ See [](extension_point_list.md) for IntelliJ Platform.
 | [swift.lang.sourceKit.compileArgumentsCollector](https://jb.gg/ipe?extensions=swift.lang.sourceKit.compileArgumentsCollector) | `SwiftSourceKitCompileArgumentsCollector` |
 | [swift.lang.sourceKit.dataGenerator](https://jb.gg/ipe?extensions=swift.lang.sourceKit.dataGenerator) ![Project-Level][project-level] | `SourceKitDataGenerator` |
 | [swift.lang.sourceKit.declarationLocationValidator](https://jb.gg/ipe?extensions=swift.lang.sourceKit.declarationLocationValidator) | `SourceKitDeclarationLocationValidator` |
+| [swift.lang.sourceKitFixExtension](https://jb.gg/ipe?extensions=swift.lang.sourceKitFixExtension) | `SwiftSourceKitFixExtension` |
 | [swift.lang.swiftSupportProvider](https://jb.gg/ipe?extensions=swift.lang.swiftSupportProvider) | `SwiftSupportProvider` |
 
 ### SwiftPMCommon.xml

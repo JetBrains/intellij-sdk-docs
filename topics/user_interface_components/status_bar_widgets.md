@@ -112,7 +112,7 @@ and pass the widget ID and a boolean value that describes whether the widget wil
 Also, you need to update the widget for the changes to take effect with
 [`StatusBarWidgetsManager.updateWidget()`](upsource:///platform/platform-impl/src/com/intellij/openapi/wm/impl/status/widget/StatusBarWidgetsManager.java).
 
-## Showing widget in LightEdit mode
+## Showing Widget in LightEdit Mode
 
 By default, widgets aren't shown in [LightEdit](https://www.jetbrains.com/help/idea/lightedit-mode.html) mode.
 To show a widget, implement

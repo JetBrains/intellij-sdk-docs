@@ -116,4 +116,5 @@ Also, you need to update the widget for the changes to take effect with
 
 By default, widgets aren't shown in [LightEdit](https://www.jetbrains.com/help/idea/lightedit-mode.html) mode.
 To show a widget, implement
-[`LightEditCompatible`](upsource:///platform/core-api/src/com/intellij/ide/lightEdit/LightEditCompatible.java) in your factory.
+[`LightEditCompatible`](upsource:///platform/core-api/src/com/intellij/ide/lightEdit/LightEditCompatible.java)
+in your factory.

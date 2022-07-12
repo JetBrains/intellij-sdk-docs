@@ -2,7 +2,7 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-17 Extension Points (EP) and 7 Listeners for GoLand
+18 Extension Points (EP) and 7 Listeners for GoLand
 
 See [](extension_point_list.md) for IntelliJ Platform.
 
@@ -43,6 +43,12 @@ See [](extension_point_list.md) for IntelliJ Platform.
 | [com.goide.sdk.targetSdkVersionProvider](https://jb.gg/ipe?extensions=com.goide.sdk.targetSdkVersionProvider) | `GoTargetSdkVersionProvider` |
 | [com.goide.sdkProvider](https://jb.gg/ipe?extensions=com.goide.sdkProvider) | `GoSdkProvider` |
 | [com.goide.support](https://jb.gg/ipe?extensions=com.goide.support) | `GoLangSupport` |
+
+### openapi.xml
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| [com.goide.documentation.additionalDocumentationProvider](https://jb.gg/ipe?extensions=com.goide.documentation.additionalDocumentationProvider) | `GoAdditionalDocumentationProvider` |
 
 [experimental]: https://img.shields.io/badge/-Experimental_API-red?style=flat-square
 [internal]: https://img.shields.io/badge/-Internal_API-darkred?style=flat-square

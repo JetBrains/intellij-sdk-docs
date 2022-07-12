@@ -17,7 +17,7 @@ You can obtain additional information about the *Language API* from the JavaDoc 
 ## Tutorial
 
 If you prefer a full example to the detailed descriptions offered in this section, please check out a step-by-step tutorial on how to create custom language support for _Simple Language_:
-[Custom Language Support Tutorial](custom_language_support_tutorial.md).
+[](custom_language_support_tutorial.md).
 Corresponding steps from the tutorial are linked under the "**Example**" section on each page of this reference.
 
 The webinar [How We Built Comma, the Raku IDE, on the IntelliJ Platform](https://blog.jetbrains.com/platform/2020/01/webinar-recording-how-we-built-comma-the-raku-ide-on-the-intellij-platform/) offers an excellent introduction as well.
@@ -57,9 +57,9 @@ The webinar [How We Built Comma, the Raku IDE, on the IntelliJ Platform](https:/
 * [](surround_with.md)
 * [](go_to_class_and_go_to_symbol.md)
 * [](documentation.md)
-* [](additional_minor_features.md)
 * [](parameter_info.md)
-* Parameter Hints
+* [](inlay_hints.md)
+* [](additional_minor_features.md)
 
 > If a topic you are interested in is not covered in the above sections, let us know via the "**Was this page helpful?**" feedback form below or [other channels](getting_help.md#problems-with-the-guide).
 >

@@ -2,7 +2,7 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-79 Extension Points and 2 Listeners for Rider
+81 Extension Points and 2 Listeners for Rider
 
 See [](extension_point_list.md) for IntelliJ Platform.
 
@@ -36,7 +36,7 @@ See [](extension_point_list.md) for IntelliJ Platform.
 | [com.intellij.backend.actions.support](https://jb.gg/ipe?extensions=com.intellij.backend.actions.support) ![Non-Dynamic][non-dynamic]                                                         | `RiderActionSupportPolicy`           |
 | [com.intellij.backend.auto.import.support](https://jb.gg/ipe?extensions=com.intellij.backend.auto.import.support) ![Non-Dynamic][non-dynamic]                                                 | `RiderAutoImportSupportPolicy`       |
 | [com.intellij.backend.autoPopup.support](https://jb.gg/ipe?extensions=com.intellij.backend.autoPopup.support) ![Non-Dynamic][non-dynamic]                                                     | `RiderAutoPopupSupportPolicy`        |
-| [com.intellij.backend.markup.adapterFactory](https://jb.gg/ipe?extensions=com.intellij.backend.markup.adapterFactory) ![Non-Dynamic][non-dynamic]                                             | `FrontendMarkupAdapterFactory`       |
+| [com.intellij.backend.markup.adapterFactory](https://jb.gg/ipe?extensions=com.intellij.backend.markup.adapterFactory) ![Non-Dynamic][non-dynamic]                                             | `n/a`                                |
 | [com.intellij.code.cleanup.support](https://jb.gg/ipe?extensions=com.intellij.code.cleanup.support) ![Non-Dynamic][non-dynamic]                                                               | `RiderCodeCleanupSupportPolicy`      |
 | [com.intellij.lang.altEnter](https://jb.gg/ipe?extensions=com.intellij.lang.altEnter) ![Non-Dynamic][non-dynamic]                                                                             | `BulbMenuModelFactory`               |
 | [com.intellij.lang.altEnter.popupModelDelegate](https://jb.gg/ipe?extensions=com.intellij.lang.altEnter.popupModelDelegate) ![Non-Dynamic][non-dynamic]                                       | `PopupModelDelegate`                 |

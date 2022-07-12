@@ -2,7 +2,7 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-This Gradle plugin automates generating lexers and parsers to support the custom language development of plugins for IntelliJ-based IDEs when using Grammar-Kit.
+The [Gradle Grammar-Kit Plugin](https://github.com/JetBrains/gradle-grammar-kit-plugin) automates generating lexers and parsers to support building [custom language](custom_language_support.md) plugins for IntelliJ-based IDEs when using [Grammar-Kit](https://github.com/JetBrains/Grammar-Kit).
 
 > Current Gradle Grammar-Kit Plugin version is ![GitHub Release](https://img.shields.io/github/release/jetbrains/gradle-grammar-kit-plugin.svg?style=flat-square)
 >

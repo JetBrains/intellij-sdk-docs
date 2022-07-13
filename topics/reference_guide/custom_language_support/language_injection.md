@@ -166,19 +166,7 @@ As a plugin author, implement [`LanguageInjectionContributor`](upsource:///platf
 For instance, if you want to inject a YAML or JSON to a literal language depending on some conditions, you could implement this interface like this:
 
 ```java
-package org.intellij.sdk.language;
-
-import com.intellij.json.JsonLanguage;
-import com.intellij.lang.injection.general.Injection;
-import com.intellij.lang.injection.general.LanguageInjectionContributor;
-import com.intellij.lang.injection.general.SimpleInjection;
-import com.intellij.psi.PsiElement;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
-
 public final class MyInjector implements LanguageInjectionContributor {
-
-  // ...
 
   @Override
   public @Nullable Injection getInjection(@NotNull PsiElement context) {
@@ -201,7 +189,7 @@ Register the implementation in your <path>plugin.xml</path>:
 
 ```xml
 <languageInjectionContributor
-    implementationClass="org.intellij.sdk.language.MyInjector"
+    implementationClass="MyInjector"
     language="YourLanguage"/>
 ```
 
@@ -230,20 +218,7 @@ Plugin authors need to implement `getLanguagesToInject()` to provide a list of p
 For example, inject regular expressions into Java string literal:
 
 ```java
-package org.intellij.sdk.language;
-
-import com.intellij.lang.injection.MultiHostInjector;
-import com.intellij.lang.injection.MultiHostRegistrar;
-import com.intellij.psi.PsiElement;
-import com.intellij.psi.PsiLiteralExpression;
-import org.intellij.lang.regexp.RegExpLanguage;
-import org.jetbrains.annotations.NotNull;
-
-import java.util.List;
-
 public class MyRegExpToJavaInjector implements MultiHostInjector {
-
-  // ...
 
   @Override
   public void getLanguagesToInject(@NotNull MultiHostRegistrar registrar,
@@ -267,7 +242,7 @@ Register the implementation in your <path>plugin.xml</path>:
 
 ```xml
 <multiHostInjector
-    implementation="org.intellij.sdk.language.MyRegExpToJavaInjector"/>
+    implementation="MyRegExpToJavaInjector"/>
 ```
 
 A more complex example is when you need to inject into several fragments at once.
@@ -291,17 +266,7 @@ class MyDsl { void foo() { System.out.println(42); } }
 Here, we need to inject Java into several places at once, i.e. method name and its body:
 
 ```java
-package org.intellij.sdk.language;
-
-import com.intellij.lang.injection.MultiHostInjector;
-import com.intellij.lang.injection.MultiHostRegistrar;
-import com.intellij.lang.java.JavaLanguage;
-import com.intellij.psi.PsiElement;
-import org.jetbrains.annotations.NotNull;
-
 public class MyBizarreDSLInjector implements MultiHostInjector {
-
-  // ...
 
   @Override
   public void getLanguagesToInject(@NotNull MultiHostRegistrar registrar,

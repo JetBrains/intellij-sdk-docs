@@ -7,7 +7,7 @@ The IntelliJ Platform allows plugins to extend the IDE [status bar](https://www.
 Status bar widgets are small UI elements that allow providing users with useful information and settings for the current file, project, IDE, etc.
 For example, the status bar contains the widget showing the encoding of the current file, or the current VCS branch of the project.
 
-Due to the prominent presentation and limited space, they should be used only for information or settings that are relevant enough to be shown "always".
+Due to the prominent presentation and limited space, they should be used only for information or settings that are relevant enough to be "always" shown.
 
 The starting point for extending the status bar with new widgets is the
 [`StatusBarWidgetFactory`](upsource:///platform/platform-api/src/com/intellij/openapi/wm/StatusBarWidgetFactory.java)

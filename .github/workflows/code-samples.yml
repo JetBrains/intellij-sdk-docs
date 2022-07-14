@@ -39,7 +39,6 @@ jobs:
           - live_templates
           - max_opened_projects
           - module
-          - product_specific/pycharm_basics
           - project_model
           - project_view_pane
           - project_wizard

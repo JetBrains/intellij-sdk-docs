@@ -66,7 +66,7 @@ Internal API Migration
 ### March-22
 
 Code Samples Build Scripts Migrated to Kotlin
-: [All samples](https://github.com/JetBrains/intellij-sdk-docs/tree/main/code_samples) now use Kotlin DSL in Gradle build scripts.
+: All [](code_samples.md) now use Kotlin DSL in their Gradle build scripts.
 
 Android Studio Releases List
 : Add [](android_studio_releases_list.md) section containing a complete list of the Android Studio releases with the relevant IntelliJ IDEA release version specified.

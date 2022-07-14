@@ -64,7 +64,7 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 
 IntelliJ API may be occasionally changed between releases, leading to existing plugins' incompatibilities with newer IDE builds.
 
-Please see [](plugin_compatibility.md) on how to use Plugin Verifier and IDE inspections to check such problems.
+Please see [](verifying_plugin_compatibility.md) on how to use Plugin Verifier and IDE inspections to check such problems.
 
 ## Known Breaking Changes
 

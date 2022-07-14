@@ -1,4 +1,7 @@
-[//]: # (title: Plugin Compatibility)
+[//]: # (title: Verifying Plugin Compatibility)
+
+Please see [](api_changes_list.md) for known breaking changes.
+For API annotated with `ApiStatus.@Internal`, see [](api_internal.md) for more details and replacements.
 
 ## Plugin Verifier
 
@@ -22,4 +25,3 @@ Consider using the following [IDE inspections](https://www.jetbrains.com/help/id
 
 Usage of [Extension Points](plugin_extensions.md) which are deprecated or annotated with [`org.jetbrains.annotations.ApiStatus`](https://github.com/JetBrains/java-annotations/blob/master/common/src/main/java/org/jetbrains/annotations/ApiStatus.java) `@Experimental`/`@Internal` is highlighted in <path>plugin.xml</path> files.
 
-For API annotated with `ApiStatus.@Internal`, see [](api_internal.md) for more details and replacements.

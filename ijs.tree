@@ -366,6 +366,7 @@
                  accepts-web-file-names="api_reference.html,feature_extractor.html,plugin_details.html,custom_channels.html,plugins_list.html,maven_interface.html,plugin_upload.html,plugin_developers.html"/>
   </toc-element>
   <toc-element toc-title="Appendix II — API Changes">
+    <toc-element id="plugin_compatibility.md"/>
     <toc-element id="api_changes_list.md" toc-title="Incompatible API Changes"
                  accepts-web-file-names="api-changes-list-2016.html,api-changes-list-2017.html,api-changes-list-2018.html">
       <toc-element id="api_changes_list_2022.md" toc-title="2022.*"/>

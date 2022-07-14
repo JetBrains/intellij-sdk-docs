@@ -4,24 +4,23 @@
 
 ## Introduction
 
-The actions system is an extension point that allows plugins to add their items to IntelliJ Platform-based IDE menus and toolbars.
-For example, one of the action classes is responsible for the <menupath>File | Open File...</menupath> menu item and the <control>Open File</control> toolbar button.
+The actions system allows plugins to add their items to IntelliJ Platform-based IDE menus and toolbars.
+For example, one of the action classes is responsible for the <menupath>File | Open File...</menupath> menu item and the <control>Open...</control> toolbar button.
 
 Actions in the IntelliJ Platform require a [code implementation](#action-implementation) and must be [registered](#registering-actions).
 The action implementation determines the contexts in which an action is available, and its functionality when selected in the UI.
 Registration determines where an action appears in the IDE UI.
 Once implemented and registered, an action receives callbacks from the IntelliJ Platform in response to user gestures.
 
-The [Creating Actions](working_with_custom_actions.md) tutorial describes the process of adding a custom action to a plugin.
-The [Grouping Actions](grouping_action.md) tutorial demonstrates three types of groups that can contain actions.
-The rest of this page is an overview of actions as an extension point.
+The [](working_with_custom_actions.md) tutorial describes the process of adding a custom action to a plugin.
+The [](grouping_action.md) tutorial demonstrates three types of groups that can contain actions.
 
 ## Action Implementation
 
 An action is a class derived from the abstract class [`AnAction`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java).
-The IntelliJ Platform calls methods of action when a user interacts with a menu item or toolbar button.
+The IntelliJ Platform calls methods of actions when a user interacts with a menu item or toolbar button.
 
-> Classes based on `AnAction` do not have class fields of any kind.
+> Classes based on `AnAction` must not have class fields of any kind.
 > This is because an instance of `AnAction` class exists for the entire lifetime of the application.
 > If the `AnAction` class uses a field to store data that has a shorter lifetime and doesn't clear this data promptly, the data leaks.
 > For example, any `AnAction` data that exists only within the context of a `Project` causes the `Project` to be kept in memory after the user has closed it.
@@ -32,18 +31,17 @@ The IntelliJ Platform calls methods of action when a user interacts with a menu 
 
 Every IntelliJ Platform action should override `AnAction.update()` and must override `AnAction.actionPerformed()`.
 * An action's method `AnAction.update()` is called by the IntelliJ Platform framework to update an action state.
-  The state (enabled, visible) of an action determines whether the action is available in the UI of an IDE.
+  The state (enabled, visible) of an action determines whether the action is available in the UI.
   An object of the [`AnActionEvent`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnActionEvent.java) type is passed to this method and contains information about the current context for the action.
   Actions are made available by changing state in the [`Presentation`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/Presentation.java) object associated with the event context.
-  As explained in [Overriding the `AnAction.update()`  Method](#overriding-the-anactionupdate-method), it is vital `update()` methods _execute quickly_ and return execution to the IntelliJ Platform.
+  As explained in [Overriding the `AnAction.update()`  Method](#overriding-the-anactionupdate-method), it is vital `update()` methods _execute quickly_ and return execution to platform.
 * An action's method `AnAction.actionPerformed()` is called by the IntelliJ Platform if available and selected by the user.
-  This method does the heavy lifting for the action - it contains the code executed when the action gets invoked.
-  The `actionPerformed()` method also receives `AnActionEvent` as a parameter, which is used to access projects, files, selection, etc.
+  This method does the heavy lifting for the action: it contains the code executed when the action gets invoked.
+  The `actionPerformed()` method also receives `AnActionEvent` as a parameter, which is used to access any context data like projects, files, selection, etc.
   See [Overriding the `AnAction.actionPerformed()` Method](#overriding-the-anactionactionperformed-method) for more information.
 
 There are other methods to override in the `AnAction` class, such as changing the default `Presentation` object for the action.
 There is also a use case for overriding action constructors when registering them with dynamic action groups, demonstrated in the [Grouping Actions](grouping_action.md#adding-child-actions-to-the-dynamic-group) tutorial.
-However, the `update()` and `actionPerformed()` methods are essential to basic operation.
 
 ### Overriding the AnAction.update Method
 
@@ -52,12 +50,12 @@ The `update()` method gives an action to evaluate the current context and enable
 Implementors must ensure that changing presentation and availability status handles all variants and state transitions; otherwise, the given Action will get "stuck".
 
 > The `AnAction.update()` method can be called frequently and on a UI thread.
-> This method needs to _execute very quickly_; no real work should be performed in this method.
+> It must _execute very quickly_; no real work must be performed.
 > For example, checking selection in a tree or a list is considered valid, but working with the file system is not.
 >
 {type="warning"}
 
-> If the new state of an action cannot be determined quickly, then evaluation should be performed in the `AnAction.actionPerformed()` method, and notify the user that the action cannot be executed if the context isn't suitable.
+> If the new state of an action cannot be determined quickly, then evaluation should be performed in the `AnAction.actionPerformed()` method, and [notify](notifications.md) the user that the action cannot be executed if the context isn't suitable.
 >
 {type="tip"}
 
@@ -66,13 +64,13 @@ Implementors must ensure that changing presentation and availability status hand
 The `AnActionEvent` object passed to `update()` carries information about the current context for the action.
 Context information is available from the methods of `AnActionEvent`, providing information such as the Presentation and whether the action is triggered by a Toolbar.
 Additional context information is available using the method `AnActionEvent.getData()`.
-Keys defined in [`CommonDataKeys`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/CommonDataKeys.java) are passed to the `getData()` method to retrieve objects such as `Project`, `Editor`, `PsiFile`, and other information.
+Keys defined e.g. in [`CommonDataKeys`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/CommonDataKeys.java) are passed to the `getData()` method to retrieve objects such as `Project`, `Editor`, `PsiFile`, and other information.
 Accessing this information is relatively light-weight and is suited for `AnAction.update()`.
 
 #### Enabling and Setting Visibility for an Action
 
 Based on information about the action context, the `AnAction.update()` method can enable, disable, or hide an action.
-An action's enable/disable state and visibility are set using methods of the `Presentation` object, which is accessed using `AnActionEvent.getPresentation()`.
+An action's enabled/disabled state and visibility are set using methods of the `Presentation` object, which is accessed using `AnActionEvent.getPresentation()`.
 
 The default `Presentation` object is a set of descriptive information about a menu or toolbar action.
 Every context for an action - it might appear in multiple menus, toolbars, or Navigation search locations - has a unique presentation.
@@ -81,9 +79,9 @@ The attributes in a presentation get initialized from the [action registration](
 However, some can be changed at runtime using the methods of the `Presentation` object associated with an action.
 
 The enabled/disabled state of an action is set using `Presentation.setEnabled()`.
-The visibility state of an action is set using `Presentation.setVisible()`
-If an action is enabled, the `AnAction.actionPerformed()` can be called if an action is selected in the IDE by a user.
-A menu action shows in the UI location specified in the registration.
+The visibility state of an action is set using `Presentation.setVisible()`.
+If an action is enabled, the `AnAction.actionPerformed()` can be called if a user selects an action in the IDE.
+A menu action shows in the UI location specified in its registration.
 A toolbar action displays its enabled (or selected) icon, depending on the user interaction.
 
 When an action is disabled `AnAction.actionPerformed()` will not be called.
@@ -124,19 +122,19 @@ Groups organize actions into logical UI structures, which in turn can contain ot
 A group of actions can form a toolbar or a menu.
 Subgroups of a group can form submenus of a menu.
 
-Actions can be included in multiple groups, and thus appear in different places within the IDE UI.
-An action must have a unique identifier for each place it appears in the IDE UI.
-See the [Action Declaration Reference](#action-declaration-reference) section for information about how to specify locations in the IDE UI.
+Actions can be included in multiple groups, and thus appear in different places within the UI.
+An action must have a unique identifier for each place it appears in the UI.
+See the [Action Declaration Reference](#action-declaration-reference) section for information about how to specify locations.
 
 #### Presentation
 
 A new [`Presentation`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/Presentation.java) gets created for every place where the action appears.
-Therefore, the same action can have different text or icons when it appears in different places of the user interface.
+Therefore, the same action can have a different text or icon when it appears in different places of the user interface.
 Different presentations for the action are created by copying the Presentation returned by the `AnAction.getTemplatePresentation()` method.
 
 #### Compact Attribute
 
-A group's "compact" attribute specifies whether an action within that group is visible when disabled.
+A group's `compact` attribute specifies whether an action within that group is visible when disabled.
 See [Registering Actions in plugin.xml](#registering-actions-in-pluginxml) for an explanation of how the `compact` attribute is set for a group.
 If the `compact` attribute is `true` for a menu group, an action in the menu only appears if its state is both enabled and visible.
 In contrast, if the `compact` attribute is `false`, an action in the menu appears if its state is disabled but visible.
@@ -168,7 +166,7 @@ Using the `<override-text>` element, the menu text for an action can be differen
 This is also available for groups in 2020.3 and later.
 
 In the `action` element reference example (below) with `id` attribute `VssIntegration.GarbageCollection`, the default is to use the menu text "Garbage Collector: Collect _Garbage."
-The `add-to-group` element declares the action is added to the Tools Menu.
+The `add-to-group` element declares the action is added to the <menupath>Tools</menupath> menu.
 
 However, the `override-text` element declares that text for `VssIntegration.GarbageCollection` displayed anywhere in the main menu system should be the alternate text "Collect _Garbage."
 The <menupath>Tools</menupath> menu is part of the main menu, so the displayed menu text is "Collect _Garbage."
@@ -201,7 +199,7 @@ To exclude a group from appearing in <menupath>Help | Find Action</menupath> res
 
 #### Localizing Actions and Groups
 
-Action and group localization use resource bundles containing property files named `*Bundle.properties`, each file consisting of `key=value` pairs.
+Action and group localization use resource bundles containing property files named <path>$NAME$Bundle.properties</path>, each file consisting of `key=value` pairs.
 The [`action_basics`](https://github.com/JetBrains/intellij-sdk-code-samples/tree/main/action_basics) plugin demonstrates using a resource bundle to localize the group and action entries added to the Editor Popup Menu.
 
 When localizing actions and groups, the `text` and `description` attributes are not declared in <path>plugin.xml</path>.

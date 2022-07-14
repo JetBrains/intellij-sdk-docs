@@ -470,3 +470,23 @@ If an action toolbar is attached to a specific component (for example, a panel i
 Setting the target ensures that the toolbar buttons' state depends on the state of the related component, not on the current focus location within the IDE frame.
 
 See [Toolbar](https://jetbrains.design/intellij/controls/toolbar/) in IntelliJ Platform UI Guidelines for an overview.
+
+## Useful Action Base Classes
+
+### Toggle/Selection
+
+Use [`ToggleAction`](upsource:///platform/platform-api/src/com/intellij/openapi/actionSystem/ToggleAction.java)
+for actions with "selected"/"pressed" state (e.g., menu item with checkbox, toolbar action button).
+See also [`ToggleOptionAction`](upsource:///platform/platform-api/src/com/intellij/openapi/actionSystem/ToggleOptionAction.java).
+
+### Back/Forward Navigation
+
+Use [`BackAction`](upsource:///platform/platform-api/src/com/intellij/ui/navigation/BackAction.java) and
+[`ForwardAction`](upsource:///platform/platform-api/src/com/intellij/ui/navigation/ForwardAction.java) to provide navigation trail taken from
+[`History`](upsource:///platform/platform-api/src/com/intellij/ui/navigation/History.java) provided by `History.KEY`.
+
+### Runtime Placeholder Action
+
+For actions registered at runtime (e.g., in a tool window toolbar), add an `<action>` entry with
+[`EmptyAction`](upsource:///platform/platform-api/src/com/intellij/openapi/actionSystem/EmptyAction.java)
+to "reserve" Action ID so they become visible in <menupath>Settings/Preferences | Keymap</menupath>.

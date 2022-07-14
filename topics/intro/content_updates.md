@@ -18,6 +18,10 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 Status Bar Widgets
 : Add section [](status_bar_widgets.md) describing how to implement your own status bar widgets.
 
+Minor Changes and Additions
+:
+- Add overview of [](basic_action_system.md#useful-action-base-classes).
+
 ### June-22
 
 PHP Type Providers

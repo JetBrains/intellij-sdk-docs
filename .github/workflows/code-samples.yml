@@ -91,7 +91,7 @@ jobs:
         if: ${{ always() }}
         uses: actions/upload-artifact@v3
         with:
-          name: pluginVerifier-result
+          name: ${{ matrix.plugin }}-pluginVerifier-result
           path: ${{ github.workspace }}/code_samples/${{ matrix.plugin }}/build/reports/pluginVerifier
 
   mirror:

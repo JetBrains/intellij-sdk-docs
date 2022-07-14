@@ -125,7 +125,7 @@ The Gradle plugin provides two tasks that allow for running integrity and compat
 * [`runPluginVerifier`](tools_gradle_intellij_plugin.md#runpluginverifier-task) task - runs the [IntelliJ Plugin Verifier](https://github.com/JetBrains/intellij-plugin-verifier) tool to check the binary compatibility with specified IntelliJ IDE builds.
 
 Plugin Verifier integration task allows for configuring the exact IDE versions that your plugin will be checked against.
-See [Verifying Compatibility](api_changes_list.md#verifying-compatibility) for more information.
+See [](verifying_plugin_compatibility.md#plugin-verifier) for more information.
 
 ### Publishing with the Gradle Plugin
 

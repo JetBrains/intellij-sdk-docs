@@ -12,7 +12,7 @@ This page lists commonly used API annotated with [`org.jetbrains.annotations.Api
 > usages in other packages of the declaring library, but it **must not be used outside of that library**. Such elements
 > may be renamed, changed or removed in future versions.
 
-Such violations are reported from [Plugin Verifier](api_changes_list.md#plugin-verifier) and are highlighted in the IDE using [dedicated inspection](api_changes_list.md#ide-support).
+Such violations are reported from [Plugin Verifier](verifying_plugin_compatibility.md#plugin-verifier) and are highlighted in the IDE using [dedicated inspection](verifying_plugin_compatibility.md#ide-support).
 
 Each entry is mapped to its corresponding _Replacement_, pointing to recommended API.
 

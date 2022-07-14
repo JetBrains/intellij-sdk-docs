@@ -271,7 +271,7 @@ Continuing the example, search the PHP plugin's <path>plugin.xml</path> file for
 
 Before marking a plugin project as _dependent only on modules in a target product_ in addition to `com.intellij.modules.platform`, verify the plugin isn't implicitly dependent on any APIs that are specific to IntelliJ IDEA.
 
-For [Gradle-based](gradle_build_system.md) projects, [Plugin Verifier](api_changes_list.md#plugin-verifier) can be used to ensure compatibility with all specified target IDEs.
+For [Gradle-based](gradle_build_system.md) projects, [](verifying_plugin_compatibility.md#plugin-verifier) can be used to ensure compatibility with all specified target IDEs.
 
 For [DevKit-based](using_dev_kit.md) projects, create an SDK pointing to an installation of the intended target IntelliJ Platform-based product, e.g., PhpStorm, rather than IntelliJ IDEA.
 Use the same development version of the IntelliJ platform as the targeted product.

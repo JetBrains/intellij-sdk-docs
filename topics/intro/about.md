@@ -73,7 +73,7 @@ Links to [useful resources](useful_links.md), a [](glossary.md), [](extension_po
 
 #### Appendix II — API Changes
 
-Provides a list of [backward-incompatible](api_changes_list.md) API changes as well as [notable changes and new features](api_notable.md) in each major release of the IntelliJ Platform.
+Information on [](verifying_plugin_compatibility.md) and list of [backwards-incompatible](api_changes_list.md) API changes as well as [notable changes and new features](api_notable.md) in each major release of the IntelliJ Platform.
 
 #### Appendix III — Tools
 

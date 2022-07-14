@@ -5,7 +5,7 @@ Use this reference of build number ranges to specify the correct `since-build` a
 
 Setting the actual values in <path>plugin.xml</path> is usually managed by [`patchPluginXml`](tools_gradle_intellij_plugin.md#patchpluginxml-task) Gradle task, see [Patching the Plugin Configuration File](gradle_guide.md#patching-the-plugin-configuration-file) for details.
 
-> Compatibility with the specified version range (and compatible products) must always be verified using [Plugin Verifier](api_changes_list.md#verifying-compatibility) to ensure binary compatibility.
+> Compatibility with the specified version range (and compatible products) must always be verified using [](verifying_plugin_compatibility.md#plugin-verifier) to ensure binary compatibility.
 >
 > Plugins hosted on [JetBrains Marketplace](https://plugins.jetbrains.com) are checked automatically.
 > According to [Approval Guidelines](https://plugins.jetbrains.com/legal/approval-guidelines), incompatible plugin versions will be restricted by JetBrains if necessary.

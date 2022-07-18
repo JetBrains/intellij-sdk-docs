@@ -277,14 +277,14 @@ Default value
 
 Acceptable values
 :
-- `org.plugin.id:version[@channel]` format, `String` type:
-  - `org.intellij.plugins.markdown:8.5.0`
-  - `org.intellij.scala:2017.2.638@nightly`
-- `bundledPluginId` format, `String` type:
-  - `org.intellij.groovy`
-- `project(...)` format, `Project` type:
-  - `project(":projectName")`
-  - `project(":plugin-subproject")`
+  - `org.plugin.id:version[@channel]` format, `String` type:
+    - `org.intellij.plugins.markdown:8.5.0`
+    - `org.intellij.scala:2017.2.638@nightly`
+  - `bundledPluginId` format, `String` type:
+    - `org.intellij.groovy`
+  - `project(...)` format, `Project` type:
+    - `project(":projectName")`
+    - `project(":plugin-subproject")`
 
 
 ### updateSinceUntilBuild

@@ -1,6 +1,6 @@
 [//]: # (title: UI Themes - Editor Schemes and Background Images)
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 UI Themes can also provide custom color and font settings, as well as custom images for display in the IDE application window.
 
@@ -146,7 +146,7 @@ The wildcard portion of these patterns corresponds to the `usage` definitions ab
 The IDE supports setting an image as a background in the application window.
 Users can do this manually in [Preferences](https://www.jetbrains.com/help/idea/setting-background-image.html).
 
-UI Themes support specifying a background image as a key-value pair in the `"background": {}` section of a Theme description file:
+UI Themes support specifying a background image as a key-value pair in the `"background": {}` (for editor and tools) and `"emptyFrameBackground": {}` (for empty frame) sections of a Theme description file:
 * The `image` key uses the file name of the image as the value.
 The background image is placed in the UI Theme plugin project's <path>resources</path> folder.
 * The `transparency` key uses a `value` of 1-100.
@@ -154,8 +154,7 @@ A `value` of 100 is opaque.
 * The `fill` key uses a value of `scale`, meaning to expand the image to fill the space as the window gets resized.
 * The `anchor` key uses a value of `center`, meaning to locate the center of the image in the center of the window.
 
-The following example adds an image of the Austrian countryside to the _Theme Basics_
-Theme description file:
+The following example adds an image of the Austrian countryside to the _Theme Basics_ Theme description file:
 
 ```json
 {
@@ -169,6 +168,16 @@ Theme description file:
     "transparency": 10,
     "fill": "scale",
     "anchor": "center"
+  },
+  "emptyFrameBackground": {
+    "image": "/austria.png",
+    "transparency": 20,
+    "fill": "scale",
+    "anchor": "center"
   }
 }
 ```
+
+> The `emptyFrameBackground` property is available starting with the 2020.2 release.
+>
+{type="note"}

@@ -164,6 +164,12 @@ There are classes in the IntelliJ Platform specialized in particular types of Se
 These subtypes are based on `com.intellij.openapi.options.ConfigurableEP`.
 For example, <menupath>Settings/Preferences | Editor | General | Appearance</menupath> allows adding Settings via [`EditorSmartKeysConfigurableEP`](upsource:///platform/lang-impl/src/com/intellij/application/options/editor/EditorSmartKeysConfigurableEP.java) and `com.intellij.editorSmartKeysConfigurable` EP.
 
+#### Examples
+
+Existing implementations of `Configurable` in the IntelliJ Platform that can serve as a reference are:
+* [`ConsoleConfigurable`](upsource:///platform/lang-impl/src/com/intellij/execution/console/ConsoleConfigurable.java) (application configurable)
+* [`AutoImportOptionsConfigurable`](upsource:///platform/lang-impl/src/com/intellij/application/options/editor/AutoImportOptionsConfigurable.kt) (project configurable)
+
 ### The ConfigurableProvider Class
 
 The [`ConfigurableProvider`](upsource:///platform/ide-core/src/com/intellij/openapi/options/ConfigurableProvider.java) class only provides a `Configurable` implementation if its runtime conditions are met.
@@ -173,3 +179,5 @@ In that case the IntelliJ Platform calls `ConfigurableProvider.createConfigurabl
 
 By choosing not to provide a `Configuration` implementation in some circumstances, the `ConfigurableProvider` opts out of the Settings display and modification process.
 The use of `ConfigurableProvider` as a basis for a Settings implementation is declared using [attributes](#table-of-attributes) in the EP declaration.
+
+**Example**: [`RunToolbarSettingsConfigurableProvider`](upsource:///platform/execution-impl/src/com/intellij/execution/runToolbar/RunToolbarSettingsConfigurableProvider.kt)

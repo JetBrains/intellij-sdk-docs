@@ -60,7 +60,7 @@ The grammar defines the flexibility of the support for a language.
 The above grammar specifies that a property may have or may not have a key and value.
 This flexibility allows the IntelliJ Platform to recognize incorrectly defined properties and provide corresponding code analysis and quick-fixes.
 
-Note that the `SimpleTypes` class in the `elementTypeHolderClass` attribute above specifies the name of a class that gets generated from the grammar; it doesn't exist at this point.
+Note that the `SimpleTypes` class in the `elementTypeHolderClass` attribute above specifies the name of a class that gets generated from the grammar in the scope of the <control>Generate Parser Code</control> action (see [](#generate-a-parser)); it doesn't exist at this point.
 
 ## Generate a Parser
 

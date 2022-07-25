@@ -31,7 +31,7 @@ Create the `SimpleElementType` in the `org.intellij.sdk.language.psi` package by
 
 Define a grammar for the Simple Language in the <path>com/intellij/sdk/language/Simple.bnf</path> file.
 
-```properties
+```bnf
 {
   parserClass="org.intellij.sdk.language.parser.SimpleParser"
 

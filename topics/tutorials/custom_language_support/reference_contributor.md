@@ -96,7 +96,7 @@ Now make corresponding changes to the <path>Simple.bnf</path> grammar file by re
 Don't forget to regenerate the parser after updating the file!
 Right-click on the <path>Simple.bnf</path> file and select **Generate Parser Code**.
 
-```java
+```bnf
 property ::= (KEY? SEPARATOR VALUE?) | KEY {
   mixin="org.intellij.sdk.language.psi.impl.SimpleNamedElementImpl"
   implements="org.intellij.sdk.language.psi.SimpleNamedElement"

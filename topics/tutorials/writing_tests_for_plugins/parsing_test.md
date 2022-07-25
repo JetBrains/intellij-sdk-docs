@@ -16,7 +16,7 @@ If the lines below are not present in <path>Simple.bnf</path>, replace the exist
 Don't forget to regenerate the parser after updating the file!
 Right-click on the <path>Simple.bnf</path> file and select <control>Generate Parser Code</control>.
 
-```java
+```bnf
 property ::= (KEY? SEPARATOR VALUE?) | KEY {
   pin=3
   recoverWhile="recover_property"

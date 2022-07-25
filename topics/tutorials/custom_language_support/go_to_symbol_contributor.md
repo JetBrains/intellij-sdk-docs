@@ -24,7 +24,7 @@ Now add the `SimplePsiImplUtil.getPresentation()` to the `property` methods defi
 Don't forget to regenerate the parser after updating the file!
 Right-click on the <path>Simple.bnf</path> file and select <control>Generate Parser Code</control>.
 
-```java
+```bnf
 property ::= (KEY? SEPARATOR VALUE?) | KEY {
   mixin="org.intellij.sdk.language.psi.impl.SimpleNamedElementImpl"
   implements="org.intellij.sdk.language.psi.SimpleNamedElement"

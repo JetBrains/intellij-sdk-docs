@@ -44,7 +44,7 @@ Now the utility class is added to the grammar file via the `psiImplUtilClass` at
 Add methods for a particular rule to specify which one should be used for PSI classes.
 Compare the last line of the grammar below to the [previous definition](grammar_and_parser.md#define-the-grammar).
 
-```java
+```bnf
 {
   parserClass="org.intellij.sdk.language.parser.SimpleParser"
 

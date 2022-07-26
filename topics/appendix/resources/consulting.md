@@ -13,7 +13,7 @@ Also, consider posting requests in _#jobs_ channel on [JetBrains Platform Slack]
 | Joachim Ansorg     | [www.plugin-dev.com][ja]                                | -/-                                         |
 | Daniel Espendiller | [daniel@espendiller.net][de]                            | -/-                                         |
 | Robert Ekendahl    | [www.edaphic.studio][re]                                | Custom Language support                     |
-| Alexey Stukalov    | [info@cuba-platform.com][ast], [www.haulmont.com][ast2] | Plugins: [CUBA][ast3].                      |
+| Alexey Stukalov    | [info@jpa-buddy.com][ast], [www.haulmont.com][ast2]     | Plugins: [CUBA][ast3], [JPA Buddy][ast4], [React Buddy][ast5], [Jmix][ast6].|
 | Edument            | [jonathan@edument.cz][ed], [edument.se][ed2]            | Developers of [Comma IDE][ed3]              |
 | Mikhail Bolotov    | [mikhail.bolotov@gmail.com][mb]                         | Plugins: [Cypress Support Pro][cspro], [k6] |
 | Ilscipio GmbH      | [Paul Piper][il], [www.ilscipio.com][il2]               | Custom Plugin Development                   |
@@ -25,6 +25,9 @@ Also, consider posting requests in _#jobs_ channel on [JetBrains Platform Slack]
 [ast]: mailto:info@cuba-platform.com
 [ast2]: https://www.haulmont.com/services/cuba-platform-services/support
 [ast3]: https://plugins.jetbrains.com/plugin/7249-cuba
+[ast4]: https://plugins.jetbrains.com/plugin/15075-jpa-buddy
+[ast5]: https://plugins.jetbrains.com/plugin/17467-react-buddy
+[ast6]: https://plugins.jetbrains.com/plugin/14340-jmix
 [ed]: mailto:jonathan@edument.cz
 [ed2]: https://www.edument.se/en/page/intellij-platform-development
 [ed3]: https://commaide.com

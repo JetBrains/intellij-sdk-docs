@@ -14,6 +14,8 @@ Thus, surprisingly, the easiest way to get the replacement node is to create a d
 - [`setName()`](upsource:///plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/psi/impl/PropertyImpl.java) implementation for a [Properties language plugin](upsource:///plugins/properties)
 - [Custom Language Support Tutorial: Reference Contributor](reference_contributor.md)
 
+If a renamed reference extends [`PsiReferenceBase`](upsource:///platform/core-api/src/com/intellij/psi/PsiReferenceBase.java), renaming is performed by invoking the [`ElementManipulator.handleContentChange()`](upsource:///platform/core-api/src/com/intellij/psi/ElementManipulator.java), responsible for handling the content change and calculating the text range of reference inside the element.
+
 To disable renaming for specific elements, implement `com.intellij.openapi.util.Condition<T>` for PsiElement of type `T` and register it in `com.intellij.vetoRenameCondition` extension point.
 
 ### Name Validation

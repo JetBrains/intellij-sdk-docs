@@ -48,9 +48,7 @@ The Simple Language file type is defined by subclassing [`LanguageFileType`](ups
 
 <tab title="2019.2 and later">
 
-Direct registration is possible - no `FileTypeFactory` is required.
-
-Instead, the file type is registered via the `com.intellij.fileType` extension point in <path>plugin.xml</path> and registered with <path>*.simple</path> extension:
+The Simple Language file type is registered via the `com.intellij.fileType` extension point in <path>plugin.xml</path> and registered with <path>*.simple</path> extension:
 
 ```xml
 <extensions defaultExtensionNs="com.intellij">
@@ -66,6 +64,10 @@ Instead, the file type is registered via the `com.intellij.fileType` extension p
 </tab>
 
 <tab title="Pre-2019.2">
+
+> The FileType Factory approach is deprecated. Use it only when the plugin requires support for platform versions older than 2019.2.
+>
+{type="warning"}
 
 ### Define a FileType Factory
 

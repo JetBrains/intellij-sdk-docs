@@ -65,6 +65,11 @@ If your module type is based on the Java module and meant to support Java as wel
 No extension point needs to be registered.
 Refer to [SmallTalk module type](https://github.com/bulenkov/RedlineSmalltalk/blob/master/src/st/redline/smalltalk/module/RsModuleType.java) to see how [`JavaModuleBuilder`](upsource:///java/openapi/src/com/intellij/ide/util/projectWizard/JavaModuleBuilder.java) can be derived.
 
+> Starting with the 2022.1 release, IntelliJ-based IDEs use the refreshed project wizard and some module builder base classes return `false` from `isAvailable()` when the new wizard is enabled.
+> If your module builder is not visible in 2022.1, make sure that your `ModuleBuilder.isAvailable()` returns `true`.
+>
+{type="note"}
+
 ### Implementing Module Builder Listener
 
 Module builder listener reacts on a new module creation, which could be done either as a part of the project creation process, or as adding a new module to the already existing project.

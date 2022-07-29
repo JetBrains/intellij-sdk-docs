@@ -1,6 +1,6 @@
 [//]: # (title: Popups)
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 ## Introduction
 
@@ -28,7 +28,13 @@ for popups with a variable and potentially large number of items, speed search t
 
 ### List Popups
 
-If you need to create a list-like popup which is more flexible than a simple [`JList`](https://docs.oracle.com/javase/8/docs/api/javax/swing/JList.html) but don't want to represent the possible choices as actions in an action group, you can work directly with the [`ListPopupStep`](upsource:///platform/ide-core/src/com/intellij/openapi/ui/popup/ListPopupStep.java) interface and the [`JBPopupFactory.createListPopup()`](upsource:///platform/platform-api/src/com/intellij/openapi/ui/popup/JBPopupFactory.java) method.
+If you need to create a list-like popup which is more flexible than a simple
+[`JList`](https://docs.oracle.com/javase/8/docs/api/javax/swing/JList.html)
+but don't want to represent the possible choices as actions in an action group, you can work directly with the
+[`ListPopupStep`](upsource:///platform/ide-core/src/com/intellij/openapi/ui/popup/ListPopupStep.java)
+interface and the
+[`JBPopupFactory.createListPopup()`](upsource:///platform/platform-api/src/com/intellij/openapi/ui/popup/JBPopupFactory.java)
+method.
 Normally you don't need to implement the entire interface; instead, you can derive from the [`BaseListPopupStep`](upsource:///platform/platform-api/src/com/intellij/openapi/ui/popup/util/BaseListPopupStep.java) class.
 The key methods to override are `getTextFor()` (returning the text to display for an item) and `onChosen()` (called when an item is selected).
 By returning a new popup step from the `onChosen()` method, you can implement hierarchical (nested) popups.

@@ -41,3 +41,7 @@ To provide navigation targets by a `Symbol`, either:
 If there are no navigation targets available, then the IntelliJ Platform starts finding usages of the target symbol
 obtained by resolving a [reference](declarations_and_references.md#references)
 or from a [declaration](declarations_and_references.md#declarations).
+
+> Existing implementations of the mentioned extension points can be found on the [IntelliJ Platform Explorer](explore_api.md#32-search-the-intellij-platform-explorer).
+>
+{type="note"}

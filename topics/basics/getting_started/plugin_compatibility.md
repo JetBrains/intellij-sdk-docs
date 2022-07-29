@@ -85,7 +85,7 @@ The following table lists **(1)** modules or built-in plugins that provide speci
 | `com.intellij.modules.clion` See **(3)** below. <br/>`com.intellij.clion`                | CMake, Profiler, Embedded Development, Remote Development, Remote Debug, Disassembly                                                                | CLion                                                                                                                                                                      |
 | `com.intellij.cidr.base`                                                                 | Native Debugger Integration, Utility Classes, C/C++ Project Model/Workspace Support (OCWorkspace, CidrWorkspace, etc.), C/C++ Build and Run Support | AppCode, CLion                                                                                                                                                             |
 | `com.intellij.database`                                                                  | **Database Tools and SQL** language PSI Model, Inspections, Completion, Refactoring, Queries                                                        | DataGrip, IntelliJ IDEA Ultimate, AppCode, PhpStorm, PyCharm Professional, RubyMine, CLion, GoLand, Rider, and WebStorm if the Database Tools and SQL plugin is installed. |
-| `com.intellij.modules.go`                                                                | **Go** language PSI Model, Inspections, Intentions, Completion, Refactoring, Test Framework                                                         | GoLand                                                                                                                                                                     |
+| `com.intellij.modules.goland` See **(4)** below.<br/>`com.intellij.modules.go`           | **Go** language PSI Model, Inspections, Intentions, Completion, Refactoring, Test Framework                                                         | GoLand                                                                                                                                                                     |
 | `com.intellij.modules.python`                                                            | **Python** language PSI Model, Inspections, Intentions, Completion, Refactoring, Test Framework                                                     | PyCharm, and other products if the Python plugin is installed.                                                                                                             |
 | `com.intellij.modules.rider`                                                             | Connection to **ReSharper** Process in Background                                                                                                   | Rider                                                                                                                                                                      |
 | `com.intellij.modules.ruby`                                                              | **Ruby** language PSI Model, Inspections, Intentions, Completion, Refactoring, Test Framework                                                       | RubyMine, and IntelliJ IDEA Ultimate if the Ruby plugin is installed.                                                                                                      |
@@ -220,6 +220,10 @@ Consequently, [dependencies](plugin_dependencies.md) on AppCode and CLion functi
 
 </tab>
 </tabs>
+
+**(4)** The `com.intellij.modules.go` module name is deprecated starting with the 2020.2 release. Use it only if your plugin targets versions older than 2020.2.
+When targeting versions 2020.2 and newer, use `com.intellij.modules.goland`.
+See [](goland.md) section for information about depending on the Go functionalities in IDEs other than GoLand.
 
 ## Exploring Module and Plugin APIs
 

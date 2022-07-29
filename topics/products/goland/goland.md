@@ -68,16 +68,43 @@ Select a [version](https://plugins.jetbrains.com/plugin/9568-go/versions) of the
 </tabs>
 
 The dependency on the Go plugin APIs must be declared in the <path>plugin.xml</path> file.
-As described in [Modules Specific to Functionality](plugin_compatibility.md#modules-specific-to-functionality) table, the `<depends>` tags must declare `com.intellij.modules.go`.
+As described in [Modules Specific to Functionality](plugin_compatibility.md#modules-specific-to-functionality) table, the `<depends>` tags must declare `com.intellij.modules.goland`.
 The <path>plugin.xml</path> file must also declare a dependency on `com.intellij.modules.platform` as explained in [Configuring the plugin.xml File](dev_alternate_products.md#configuring-pluginxml).
 The dependency declaration is illustrated in the <path>plugin.xml</path> snippet below:
 
+
+<tabs>
+<tab title="2020.2 and later">
+
 ```xml
 <!-- Requires the Go plugin -->
-<depends>org.jetbrains.plugins.go</depends>
+<depends>com.intellij.modules.goland</depends>
 <!-- Requires the platform module to distinguish it from a legacy plugin -->
 <depends>com.intellij.modules.platform</depends>
 ```
+
+</tab>
+<tab title="Pre-2020.2">
+
+```xml
+<!-- Requires the Go plugin -->
+<depends>com.intellij.modules.go</depends>
+<!-- Requires the platform module to distinguish it from a legacy plugin -->
+<depends>com.intellij.modules.platform</depends>
+```
+
+</tab>
+</tabs>
+
+### Targeting IDEs Other Than GoLand
+
+Depending on the `com.intellij.modules.goland` allows a plugin to be installed in the GoLand IDE only.
+However, the Go plugin can be installed in [IntelliJ IDEA Ultimate](https://www.jetbrains.com/idea/) and potentially other IDEs.
+To make the plugin compatible with GoLand and other IDEs supporting the Go language consider depending on:
+* `org.jetbrains.plugins.go` - The plugin will be loaded only when the Go plugin is actually installed in the running IDE.
+* `com.intellij.modules.go-capable` - The plugin will be loaded in IDEs that are capable of installing the Go plugin.
+  Note that the Go plugin doesn't have to be actually installed when this module is present.
+
 
 ## Available GoLand APIs
 

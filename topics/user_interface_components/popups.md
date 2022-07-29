@@ -12,12 +12,12 @@ Popups can optionally display a title, are optionally movable and resizable (and
 The [`JBPopupFactory`](upsource:///platform/platform-api/src/com/intellij/openapi/ui/popup/JBPopupFactory.java) interface allows you to create popups that display different kinds of components, depending on your specific needs.
 The most commonly used methods are:
 
-| Method                          | Description                                                                                                      |
-|---------------------------------|------------------------------------------------------------------------------------------------------------------|
-| `createComponentPopupBuilder()` | Generic, allows showing any [Swing](https://docs.oracle.com/javase/tutorial/uiswing/start/index.html) component. |
-| `createPopupChooserBuilder()`   | For choosing one or more items from a plain `java.util.List`.                                                    |
-| `createConfirmation()`          | For choosing between two options, and performing different actions depending on which option is selected.        |
-| `createActionGroupPopup()`      | Show actions from an [Action Group](grouping_action.md) and executes the action selected by the user.            |
+| Method                          | Description                                                                                                                                                                                                                                                                                                                                                     |
+|---------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `createComponentPopupBuilder()` | Generic, allows showing any [Swing](https://docs.oracle.com/javase/tutorial/uiswing/start/index.html) component.<br/>Example: [`IntentionPreviewPopupUpdateProcessor`](upsource:///platform/lang-impl/src/com/intellij/codeInsight/intention/impl/preview/IntentionPreviewPopupUpdateProcessor.kt) creating a popup rendering the intention preview.            |
+| `createPopupChooserBuilder()`   | For choosing one or more items from a plain `java.util.List`.<br/>Example: [`ShowMessageHistoryAction`](upsource:///platform/vcs-impl/src/com/intellij/openapi/vcs/actions/ShowMessageHistoryAction.kt) creating a popup with recent commit messages history in the commit message text area.                                                                   |
+| `createConfirmation()`          | For choosing between two options, and performing different actions depending on which option is selected.<br/>Example: [`VariableInplaceRenamer`](upsource:///platform/lang-impl/src/com/intellij/refactoring/rename/inplace/VariableInplaceRenamer.java) creating confirmation popup after invalid variable name is provided in the inplace rename action.     |
+| `createActionGroupPopup()`      | Show actions from an [Action Group](grouping_action.md) and executes the action selected by the user.<br/>Example: [`ShowRecentFindUsagesGroup`](upsource:///platform/lang-impl/src/com/intellij/find/impl/ShowRecentFindUsagesGroup.java) invoked via <menupath>Edit / Find Usages / Recent Find Usages</menupath> and showing recent find usages group popup. |
 
 ### Action Groups
 

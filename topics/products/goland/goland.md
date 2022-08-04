@@ -77,7 +77,7 @@ The dependency declaration is illustrated in the <path>plugin.xml</path> snippet
 <tab title="2020.2 and later">
 
 ```xml
-<!-- Requires the Go plugin -->
+<!-- Requires the GoLand module -->
 <depends>com.intellij.modules.goland</depends>
 <!-- Requires the platform module to distinguish it from a legacy plugin -->
 <depends>com.intellij.modules.platform</depends>
@@ -87,7 +87,7 @@ The dependency declaration is illustrated in the <path>plugin.xml</path> snippet
 <tab title="Pre-2020.2">
 
 ```xml
-<!-- Requires the Go plugin -->
+<!-- Requires the Go module -->
 <depends>com.intellij.modules.go</depends>
 <!-- Requires the platform module to distinguish it from a legacy plugin -->
 <depends>com.intellij.modules.platform</depends>

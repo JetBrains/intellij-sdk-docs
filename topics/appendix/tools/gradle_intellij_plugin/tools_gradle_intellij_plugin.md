@@ -197,6 +197,7 @@ Acceptable values
 - `CL` - [CLion](clion.md)
 - `PY` - [PyCharm Professional Edition](pycharm.md)
 - `PC` - [PyCharm Community Edition](pycharm.md)
+- `PS` - [PhpStorm](phpstorm.md)
 - `RD` - [Rider](rider.md)
 - `GO` - [GoLand](goland.md)
 - `JPS` - JPS-only

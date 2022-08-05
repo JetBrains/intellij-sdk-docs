@@ -16,7 +16,7 @@ Starting with IntelliJ IDEA 9 beta, a multipart build number is used, such as `I
 
 The number consists of the following parts:
 
-* Product ID (`IC` for IDEA Community, `IU` for IDEA Ultimate, `RM` for RubyMine, `PY` for PyCharm, etc.)
+* Product ID (`IC` for IDEA Community, `IU` for IDEA Ultimate, `RM` for RubyMine, `PY` for PyCharm, `PS` for PhpStorm, etc.)
 * Branch number (`162`)
 * Build number in the branch (`94`)
 

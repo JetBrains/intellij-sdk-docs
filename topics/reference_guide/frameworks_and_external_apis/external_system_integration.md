@@ -24,14 +24,14 @@ That information is built with the following base classes:
 * [`Key`](upsource:///platform/external-system-api/src/com/intellij/openapi/externalSystem/model/Key.java)
 * [`ExternalEntityData`](upsource:///platform/external-system-api/src/com/intellij/openapi/externalSystem/model/project/ExternalEntityData.java)
 
-![DataNode](data-node.png)
+![DataNode](data_node.svg)
 
 The `DataNode` class is just a holder for the target data (a data type is defined by the `Key`).
 Multiple `DataNode` objects might be organized in directed graph where every edge identifies parent-child relation.
 
 For example, a simple one-module project might look as below:
 
-![DataNode Example](data-node-example.png)
+![DataNode Example](data_node_example.svg)
 
 The IDE provides a set of built-in `Key` and `ExternalEntityData` classes but any external system integration or third-party plugin developer might enhance project data by defining custom `Key` and `ExternalEntityData` and store them at a child of appropriate `DataNode`.
 
@@ -101,17 +101,20 @@ Alternatively, set `reloadIcon` field external system implements `ExternalSystem
 
 ## Settings
 
-The general idea is that all external system settings controls are represented by implementations of [`ExternalSystemSettingsControl`](upsource:///platform/external-system-impl/src/com/intellij/openapi/externalSystem/util/ExternalSystemSettingsControl.java) interface.
-There are also external system project-local settings and global external system settings.
-So, basically particular external system settings UI looks as below:
+All external system settings controls are represented by implementations of [`ExternalSystemSettingsControl`](upsource:///platform/external-system-impl/src/com/intellij/openapi/externalSystem/util/ExternalSystemSettingsControl.java).
+There are general and linked project-level external system settings.
+A particular external system settings UI contains the following items:
 
-![Configurable](configurable.png)
+* General system settings
+* Linked external projects list
+* Project-level settings for the selected project
 
 It's recommended to extend from [`AbstractExternalProjectSettingsControl`](upsource:///platform/external-system-impl/src/com/intellij/openapi/externalSystem/service/settings/AbstractExternalProjectSettingsControl.java) for implementing project-level settings control as it already handles some of them.
 
 Similar approach is used for providing _Import from External System_ UI - implementation is expected to extend [`AbstractImportFromExternalSystemControl`](upsource:///java/idea-ui/src/com/intellij/openapi/externalSystem/service/settings/AbstractImportFromExternalSystemControl.java) and it has not linked external projects list, but target external project path control:
 
-![Import from external system](import.png)
+A similar approach is used for providing settings in importing external project UI.
+Implementation is expected to extend [`AbstractImportFromExternalSystemControl`](upsource:///java/idea-ui/src/com/intellij/openapi/externalSystem/service/settings/AbstractImportFromExternalSystemControl.java) and instead of linked external projects list it contains target external project path control.
 
 ## Testing
 
@@ -121,5 +124,5 @@ Use `com.jetbrains.intellij.platform:external-system-test-framework` from [](int
 
 Relevant base classes:
 
-- [`ExternalSystemImportingTestCase`](upsource:///platform/external-system-api/testFramework/src/com/intellij/platform/externalSystem/testFramework/ExternalSystemImportingTestCase.java)
-- [`ExternalSystemTestCase`](upsource:///platform/external-system-api/testFramework/src/com/intellij/platform/externalSystem/testFramework/ExternalSystemTestCase.java)
+* [`ExternalSystemImportingTestCase`](upsource:///platform/external-system-api/testFramework/src/com/intellij/platform/externalSystem/testFramework/ExternalSystemImportingTestCase.java)
+* [`ExternalSystemTestCase`](upsource:///platform/external-system-api/testFramework/src/com/intellij/platform/externalSystem/testFramework/ExternalSystemTestCase.java)

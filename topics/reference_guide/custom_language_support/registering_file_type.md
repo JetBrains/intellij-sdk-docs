@@ -29,7 +29,7 @@ To associate the file type in the IDE, specify one or more associations as liste
 
 <tab title="Pre-2019.2">
 
-> The FileType Factory approach is deprecated. Use it only when the plugin requires support for platform versions older than 2019.2.
+> The `FileTypeFactory` approach is deprecated. Use it only when the plugin supports platform versions older than 2019.2.
 >
 {type="warning"}
 

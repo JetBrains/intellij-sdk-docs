@@ -1,8 +1,8 @@
 
+
 <chunk id="releases_table">
 
 ## 2022.*
-
 
 | Release Name | Channel | Release Date | Version | IntelliJ IDEA Version |
 |--------------|:-------:|--------------|---------|-----------------------|
@@ -19,7 +19,6 @@
 
 
 ## 2021.*
-
 
 | Release Name | Channel | Release Date | Version | IntelliJ IDEA Version |
 |--------------|:-------:|--------------|---------|-----------------------|
@@ -80,7 +79,6 @@
 
 ## 2020.*
 
-
 | Release Name | Channel | Release Date | Version | IntelliJ IDEA Version |
 |--------------|:-------:|--------------|---------|-----------------------|
 | Arctic Fox (2020.3.1) Patch 4 | ![patch][patch] | December 8, 2021 | **2020.3.1.26** <br/> AI-203.7717.56.2031.7935034 | **2020.3.3** <br/> 203.7717.56 |
@@ -113,7 +111,6 @@
 
 
 ## 4.*
-
 
 | Release Name | Channel | Release Date | Version | IntelliJ IDEA Version |
 |--------------|:-------:|--------------|---------|-----------------------|
@@ -187,7 +184,6 @@
 
 
 ## 3.*
-
 
 | Release Name | Channel | Release Date | Version | IntelliJ IDEA Version |
 |--------------|:-------:|--------------|---------|-----------------------|
@@ -357,7 +353,6 @@
 
 ## 2.*
 
-
 | Release Name | Channel | Release Date | Version | IntelliJ IDEA Version |
 |--------------|:-------:|--------------|---------|-----------------------|
 | 2.4 Preview 7 | ![preview][preview] | April 28, 2017 | **2.4.0.6** <br/> AI-171.3934896 | **2017.1.0** <br/> 171.3934.0 |
@@ -395,3 +390,4 @@
 [preview]: https://img.shields.io/badge/-preview-darktgrey?style=flat-square
 
 </chunk>
+

@@ -119,7 +119,12 @@ The panel created by `ComparingReferencesInspection.createOptionsPanel()` just d
 This `JPanel` gets added to the <control>Inspections</control> settings dialog when the inspection is selected.
 The `JTextField` allows editing of the `CHECKED_CLASSES` field while displayed in the panel.
 
-Note that the IntelliJ Platform provides most of the UI displayed in the <control>Inspections</control> panel.
+For simple customization requirements, see also:
+
+- [`SingleCheckboxOptionsPanel`](upsource:///platform/lang-api/src/com/intellij/codeInspection/ui/SingleCheckboxOptionsPanel.java) for single checkbox
+- [`MultipleCheckboxOptionsPanel`](upsource:///platform/lang-api/src/com/intellij/codeInspection/ui/MultipleCheckboxOptionsPanel.java) for multiple checkboxes
+- [`SingleIntegerFieldOptionsPanel`](upsource:///platform/lang-api/src/com/intellij/codeInspection/ui/SingleIntegerFieldOptionsPanel.java) for single Integer (text field)
+- [`ConventionOptionsPanel`](upsource:///platform/lang-api/src/com/intellij/codeInspection/ui/ConventionOptionsPanel.java) for validation using regular expression
 
 ### Inspection Description
 

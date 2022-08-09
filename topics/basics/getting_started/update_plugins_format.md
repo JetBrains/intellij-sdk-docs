@@ -18,6 +18,8 @@ If you intend to use a plugin repository _other than_ the [JetBrains Marketplace
 >
 {type="tip"}
 
+To avoid collisions between private plugins and those hosted on JetBrains Marketplace, an organization can [reserve plugin IDs](https://plugins.jetbrains.com/docs/marketplace/reserved-plugin-ids.html).
+
 ## Describing Your Plugins in updatePlugins.xml File
 
 Every custom plugin repository must have at least one <path>updatePlugins.xml</path> file to describe every hosted plugin's latest available version.

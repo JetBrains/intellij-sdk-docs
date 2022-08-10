@@ -61,7 +61,7 @@ Constructor Injection in `Configurable` forbidden
 : Added `VirtualFileManager.findFileByNioPath()`/`refreshAndFindFileByNioPath()`. See also `VirtualFile.toNioPath()`.
 
 Tooltip descriptions for icons
-: Register resource bundle via extension point `com.intellij.iconDescriptionBundle` to provide tooltips automatically for all `SimpleColoredComponent` renderers.
+: Register resource bundle via `com.intellij.iconDescriptionBundle` extension point to provide tooltips automatically for all `SimpleColoredComponent` renderers.
 
 Specify incompatibility with Module
 : A plugin can [mark itself incompatible](plugin_compatibility.md#declaring-incompatibility-with-module) if IDE contains specified module.
@@ -82,7 +82,7 @@ Previewing Intention/Quick Fix
 : To support preview in intention popup, suitable `FileModifier` must be provided (default implementation `FileModifier.getFileModifierForPreview()` works for most cases).
 
 Delegate Run Anything/Terminal commands to IDE features
-: Switch to matching IDE feature by implementing `com.intellij.terminal.TerminalShellCommandHandler` (extension point `com.intellij.terminal.shellCommandHandler`). [Blog post](https://blog.jetbrains.com/idea/2020/07/run-ide-features-from-the-terminal/)
+: Switch to matching IDE feature by implementing `com.intellij.terminal.TerminalShellCommandHandler` (`com.intellij.terminal.shellCommandHandler` extension point). [Blog post](https://blog.jetbrains.com/idea/2020/07/run-ide-features-from-the-terminal/)
 
 Deprecating JavaFX in favor of JCEF
 : We recommend switching to [JCEF](jcef.md), please see [blog post](https://blog.jetbrains.com/platform/2020/07/javafx-and-jcef-in-the-intellij-platform/) for details.

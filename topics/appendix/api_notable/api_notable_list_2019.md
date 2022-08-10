@@ -53,13 +53,13 @@ New API for Editor Inlay Hints
 : Provides background color in all Trees, Lists and ComboBoxes.
 
 `com.intellij.openapi.startup.StartupActivity` background variant
-: Use new dedicated extension point `com.intellij.backgroundPostStartupActivity` (see Javadoc for `StartupActivity#BACKGROUND_POST_STARTUP_ACTIVITY`).
+: Use new dedicated `com.intellij.backgroundPostStartupActivity` extension point (see Javadoc for `StartupActivity#BACKGROUND_POST_STARTUP_ACTIVITY`).
 
 `com.intellij.codeHighlighting.TextEditorHighlightingPassFactory` registration
-: Use new dedicated extension point `com.intellij.highlightingPassFactory`.
+: Use new dedicated `com.intellij.highlightingPassFactory` extension point.
 
 `com.intellij.openapi.fileTypes.FileTypeFactory` deprecated
-: When registering file type via file extension, pattern or exact file name matching, use extension point `com.intellij.fileType` instead (see [Sample](language_and_filetype.md#register-the-filetype)).
+: When registering file type via file extension, pattern or exact file name matching, use `com.intellij.fileType` extension point instead (see [Sample](language_and_filetype.md#register-the-filetype)).
 
 `@org.jetbrains.annotations.ApiStatus.NonExtendable`
 : Indicates that the annotated API class, interface, or method must not get extended, implemented, or overridden by external plugins but can only be obtained or instantiated for classes and interfaces, or called for methods.

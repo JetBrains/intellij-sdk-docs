@@ -79,7 +79,7 @@ The IDE will show fatal errors caught by itself as well as logging messages with
 
 For the latter, reporting is disabled by default — instead, there's an option to disable the plugin causing the exception.
 
-To let users report such errors to the vendor, plugins can implement custom [`ErrorReportSubmitter`](upsource:///platform/platform-api/src/com/intellij/openapi/diagnostic/ErrorReportSubmitter.java) registered in extension point `com.intellij.errorHandler`.
+To let users report such errors to the vendor, plugins can implement custom [`ErrorReportSubmitter`](upsource:///platform/platform-api/src/com/intellij/openapi/diagnostic/ErrorReportSubmitter.java) registered in `com.intellij.errorHandler` extension point.
 See [IntelliJ Platform Explorer](https://jb.gg/ipe?extensions=com.intellij.errorHandler) for existing implementations — ranging from pre-filling web-based issue tracker forms to fully automated submission to log monitoring systems.
 This [tutorial](https://www.plugin-dev.com/intellij/general/error-reporting/) also offers a working solution for using _Sentry_.
 

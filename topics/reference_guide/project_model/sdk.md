@@ -73,7 +73,7 @@ The recommended way of managing "SDK" settings is to create a [`CustomStepProjec
 ## Assisting in Setting Up an SDK
 
 Prompting the user with a notification to set up an SDK can help them get up-and-running with a plugin faster.
-The IntelliJ Platform offers the extension point `com.intellij.projectSdkSetupValidator`, where you can register an implementation of [`ProjectSdkSetupValidator`](upsource:///platform/lang-impl/src/com/intellij/codeInsight/daemon/ProjectSdkSetupValidator.java) to notify the user if they are missing an SDK.
+Use `com.intellij.projectSdkSetupValidator` extension point to register an implementation of [`ProjectSdkSetupValidator`](upsource:///platform/lang-impl/src/com/intellij/codeInsight/daemon/ProjectSdkSetupValidator.java) to notify the user if they are missing an SDK.
 
 The following is a simplified example that checks whether an instance of "DemoSdk" has been configured in the project when the user opens a "DemoFileType":
 

@@ -628,7 +628,7 @@ Add the desired methods to your interface, then create an abstract class impleme
 Note that the class should have a constructor with no arguments.
 
 Now you only have to let DOM know that you wish to use this implementation every time you're creating a model element that should implement the necessary interface.
-Simply register it using extension point `com.intellij.dom.implementation` and DOM will generate at run-time the class that not only implements the needed interface, but also extends your abstract class.
+Simply register it using `com.intellij.dom.implementation` extension point and DOM will generate at run-time the class that not only implements the needed interface, but also extends your abstract class.
 
 ### Models Across Multiple Files
 

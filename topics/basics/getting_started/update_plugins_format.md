@@ -23,7 +23,7 @@ To avoid collisions between private plugins and those hosted on JetBrains Market
 ## Describing Your Plugins in updatePlugins.xml File
 
 Every custom plugin repository must have at least one <path>updatePlugins.xml</path> file to describe every hosted plugin's latest available version.
-The description in <path>updatePlugins.xml</path> is used by JetBrains IDEs to locate plugins by attributes such as id, IDE version, and plugin version.
+The description in <path>updatePlugins.xml</path> is used by JetBrains IDEs to locate plugins by attributes such as identifier, IDE version, and plugin version.
 These attributes are displayed by JetBrains IDEs to help users select or upgrade plugins.
 The description also tells the JetBrains IDE where to download the plugin itself.
 
@@ -46,9 +46,10 @@ available at this repository.
   <!--
   Each <plugin> element (required) describes one plugin in the repository.
   Attributes:
-   - "id" (required) - used by JetBrains IDEs to uniquely identify a plugin.
-     Must match <id> in the plugin.xml file.
-   - "url" (required) - URL to download the plugin JAR/ZIP file. Must be HTTPS.
+   - "id" (required) - used by JetBrains IDEs to uniquely identify
+     a plugin. Must match <id> in the plugin.xml file.
+   - "url" (required) - URL to download the plugin JAR/ZIP file.
+     Must be HTTPS.
    - "version" (required) - version of this plugin. Must match <version>
      in the plugin.xml file.
   -->
@@ -68,16 +69,13 @@ available at this repository.
       version="major.minor">
     <idea-version since-build="181.3" until-build="191.*"/>
   </plugin>
-
-  <plugin>
-    <!-- And so on for other plugins... -->
-  </plugin>
+  <!-- And so on for other plugins... -->
 </plugins>
 ```
 
-**Note:**
+**Notes:**
 
-* An <path>updatePlugins.xml</path> file must contain at least one set of `<plugin></plugin>` elements.
+* An <path>updatePlugins.xml</path> file must contain at least one `<plugin>` element.
 * A plugin `id` may be listed only once in an <path>updatePlugins.xml</path> file.
 * Multiple plugins with the same `id` but different `idea-version` attributes must be split into separate <path>updatePlugins-*.xml</path> files.
   The requesting IDE's version is passed as `build` parameter and can be used for server-side filtering.

@@ -6,12 +6,13 @@ If you intend to use a plugin repository _other than_ the [JetBrains Marketplace
 
 <procedure>
 
-1. Create and maintain an <path>updatePlugins.xml</path> file on the HTTPS web server you are using for your custom repository.
+1. Create and maintain an <path>updatePlugins.xml</path>* file on the HTTPS web server you are using for your custom repository.
    This file describes all the plugins available in your custom repository and each plugin's download URL.
 2. Upload your plugin JAR/ZIP file to an HTTPS web server.
    This can be the same web server you are using for the custom repository or a different HTTPS web server.
 3. Add the URL for the custom repository to the JetBrains IDE [Repository Settings/Preferences](https://www.jetbrains.com/help/idea/managing-plugins.html#repos).
 
+\* The <path>updatePlugin.xml</path> file name is not fixed and can be different.
 </procedure>
 
 > Gradle plugin [IntelliJ plugin uploader](https://github.com/brian-mcnamara/plugin_uploader) can be used to automate deployment.

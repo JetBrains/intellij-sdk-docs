@@ -9,6 +9,8 @@
 >
 {type="tip"}
 
+<excerpt>Widgets and badges for marketing material</excerpt>
+
 ## Embeddable Widgets
 
 [JetBrains Marketplace](https://plugins.jetbrains.com) provides embeddable widgets that you can place on your website using a simple code snippet:

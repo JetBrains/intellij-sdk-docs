@@ -2,6 +2,8 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
+<excerpt>List of Notable API Changes by version</excerpt>
+
 The following pages list notable changes and new features in IDE releases.
 
 Plugin authors are encouraged to verify their compatible releases take advantage of the latest API additions.

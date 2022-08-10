@@ -64,12 +64,12 @@ As shown in the `comparing_references_inspection` plugin configuration file, oth
 In most cases, it is simplest to define the attributes in the plugin configuration file because the underlying parent classes handle most of the class responsibilities based on the configuration file description.
 Note that some attributes are not displayed to the user, so they are never localized.
 
-If required, inspections can define all of the attribute information (except `implementationClass`) by overriding methods in the inspection implementation class (not recommended in general).
+If required, inspections can define all the attribute information (except `implementationClass`) by overriding methods in the inspection implementation class (not recommended in general).
 
 ### Inspection Implementation Java Class
 
 Inspection implementations for Java files, like [`ComparingReferencesInspection`](https://github.com/JetBrains/intellij-sdk-code-samples/blob/main/comparing_references_inspection/src/main/java/org/intellij/sdk/codeInspection/ComparingReferencesInspection.java), are often based on the Java class [`AbstractBaseJavaLocalInspectionTool`](upsource:///java/java-analysis-api/src/com/intellij/codeInspection/AbstractBaseJavaLocalInspectionTool.java).
-The `AbstractBaseJavaLocalInspectionTool` implementation class offers methods to inspect Java classes, fields, and methods.
+The [`AbstractBaseJavaLocalInspectionTool`](upsource:///java/java-analysis-api/src/com/intellij/codeInspection/AbstractBaseJavaLocalInspectionTool.java) base class offers methods to inspect Java classes, fields, and methods.
 
 More generally, `localInspection` types are based on the class [`LocalInspectionTool`](upsource:///platform/analysis-api/src/com/intellij/codeInspection/LocalInspectionTool.java).
 Examining the class hierarchy for `LocalInspectionTool` shows that the IntelliJ Platform provides many child inspection classes for a variety of languages and frameworks.

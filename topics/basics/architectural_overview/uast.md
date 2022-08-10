@@ -201,7 +201,7 @@ To inspect UAST Tree, invoke [internal action](enabling_internal.md) <menupath>T
 
 ### Inspections
 
-Use [`AbstractBaseUastLocalInspectionTool`](upsource:///java/java-analysis-api/src/com/intellij/codeInspection/AbstractBaseUastLocalInspectionTool.java) as base class.
+Use [`AbstractBaseUastLocalInspectionTool`](upsource:///java/java-analysis-api/src/com/intellij/codeInspection/AbstractBaseUastLocalInspectionTool.java) as base class and specify `language="UAST"` in registration.
 If inspection targets only a subset of default types (`UFile`, `UClass`, `UField`, and `UMethod`), specify `UElement`s as hints in overloaded constructor to improve performance.
 
 ### Line Marker

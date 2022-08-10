@@ -59,7 +59,7 @@ There exist two types of inspection extensions:
 * The `com.intellij.localInspection` extension point is used for inspections that operate on one file at a time, and also operate "on-the-fly" as the user edits the file.
 * The `com.intellij.globalInspection` extension point is used for inspections that operate across multiple files, and the associated fix might, for example, refactor code between files.
 
-The minimum inspection description must contain the `implementationClass` attribute.
+The minimum inspection setup must declare the `implementationClass` and `language` attribute (unless the inspection works on any supported language).
 As shown in the `comparing_references_inspection` plugin configuration file, other attributes can be defined in the `localInspection` element, either with or without localization.
 In most cases, it is simplest to define the attributes in the plugin configuration file because the underlying parent classes handle most of the class responsibilities based on the configuration file description.
 Note that some attributes are not displayed to the user, so they are never localized.

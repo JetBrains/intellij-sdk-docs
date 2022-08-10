@@ -126,12 +126,12 @@ Contribute a reference to each usage of a property:
 
 ## Register the Reference Contributor
 
-The `SimpleReferenceContributor` implementation is registered with the IntelliJ Platform using the `com.intellij.psi.referenceContributor` extension point.
+The `SimpleReferenceContributor` implementation is registered using the `com.intellij.psi.referenceContributor` extension point and specifying `language="JAVA"`.
 
 ```xml
 <extensions defaultExtensionNs="com.intellij">
-  <psi.referenceContributor
-      implementation="org.intellij.sdk.language.SimpleReferenceContributor"/>
+  <psi.referenceContributor language="JAVA"
+                            implementation="org.intellij.sdk.language.SimpleReferenceContributor"/>
 </extensions>
 ```
 

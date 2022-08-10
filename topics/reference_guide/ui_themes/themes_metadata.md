@@ -37,18 +37,15 @@ The following minimal sample demonstrates all details required when exposing UI 
 ### Attributes
 
 * `name` - Human-readable name, e.g., plugin name
-* `fixed` - `false` by default, `true` if metadata describes external elements, e.g., an UI library
+* `fixed` - Specifies whether metadata describes external elements, e.g., an UI library. Default:&nbsp;`false`.
 * `ui` - Root element listing all customization keys:
   * `key` - Customization key name (see [Key Naming Scheme](#key-naming-scheme))
   * `description` - Description to be shown to Theme authors editing <path>*.theme.json</path> files
-  * `deprecated` - `true` when key is deprecated, please provide explanation and/or replacement in `description` if available
-  * `source` - FQN of the underlying UI component implementation
-  * `since` - The release number (e.g. `2019.2`) when this UI customization key was exposed.
-    A release number prior to 2019.2 is valid.
+  * `deprecated` - `true` when the key is deprecated. It is highly recommended to provide explanation and/or replacement in `description` if available.
+  * `source` - Fully qualified name of the underlying UI component implementation, e.g.,&nbsp;`javax.swing.JPasswordField`
+  * `since` - The release number when this UI customization key was exposed, e.g.,&nbsp;`2021.1`
 
-> Support for the `since` attribute began with version 2019.2, so this attribute is only displayed in versions 2019.2 and later.
->
-{type="note"}
+    Note: The `since` attribute is supported starting with the 2019.2 release and it is not displayed in versions prior to 2019.2.
 
 > It is highly recommended to always provide a `description` entry, so Theme authors can understand usages.
 >

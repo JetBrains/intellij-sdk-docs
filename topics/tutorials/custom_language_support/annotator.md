@@ -65,7 +65,7 @@ Annotate the `simple:key` literal expression, and differentiate between a well-f
 
 ## Register the Annotator
 
-Using the `com.intellij.annotator` extension point in the plugin configuration file, register the Simple Language annotator class with the IntelliJ Platform:
+Using the `com.intellij.annotator` extension point in the plugin configuration file, register the Simple Language annotator class for `JAVA` language:
 
 ```xml
 <extensions defaultExtensionNs="com.intellij">

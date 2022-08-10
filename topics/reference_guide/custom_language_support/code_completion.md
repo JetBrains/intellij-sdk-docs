@@ -27,6 +27,7 @@ To provide completion variants by a `PsiSymbolReference` implement
 ### Contributor-Based Completion
 
 Implementing the [`CompletionContributor`](upsource:///platform/analysis-api/src/com/intellij/codeInsight/completion/CompletionContributor.java) interface gives you the greatest control over the operation of code completion for your language.
+Register in `com.intellij.completion.contributor` extension point and specify `language` attribute (unless it works on any supported language).
 
 > Note that the JavaDoc of that class contains a detailed FAQ for implementing code completion.
 >

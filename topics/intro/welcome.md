@@ -58,7 +58,7 @@ See [Content Updates](content_updates.md) for the latest changes.
 Follow [JBPlatform](https://twitter.com/JBPlatform/) on Twitter and visit [JetBrains Platform Blog](https://blog.jetbrains.com/platform/).
 
 Upgrading your plugin to the latest platform release?
-Make sure to check [Incompatible Changes](api_changes_list.md) as well as [Notable Changes and Features](api_notable.md).
+Follow [](verifying_plugin_compatibility.md) and check [Incompatible Changes](api_changes_list.md) as well as [Notable Changes and Features](api_notable.md).
 
 ## Contribute
 

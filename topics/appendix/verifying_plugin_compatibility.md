@@ -9,14 +9,14 @@ For API annotated with `ApiStatus.@Internal`, see [](api_internal.md) for more d
 
 Compatibility with newer IDEs can easily be verified for plugins hosted on the [JetBrains Marketplace](https://plugins.jetbrains.com) using the built-in [Plugin Verifier](https://blog.jetbrains.com/platform/2018/07/plugins-repository-now-integrates-with-the-plugin-verification-tool/).
 
-For local verification or non-public plugins, [intellij-plugin-verifier](https://github.com/JetBrains/intellij-plugin-verifier) can be used standalone as well.
-
 Integration in [Gradle build](gradle_build_system.md) is available using the [`runPluginVerifier`](tools_gradle_intellij_plugin.md#runpluginverifier-task) task, please see [Gradle IntelliJ Plugin - Plugin Verifier](tools_gradle_intellij_plugin.md#runpluginverifier-task) for details.
 
 You can easily integrate it within your CI by running this task as another quality check step.
 Check the IntelliJ Platform Plugin Template [GitHub workflow configuration file](https://github.com/JetBrains/intellij-platform-plugin-template/blob/main/.github/workflows/build.yml) as sample.
 
 If your plugin is hosted on GitHub and you are _not_ using Gradle, consider using third-party GitHub Actions [IntelliJ Platform Plugin Verifier](https://github.com/marketplace/actions/intellij-platform-plugin-verifier) or [IntelliJ Plugin Verifier](https://github.com/marketplace/actions/intellij-plugin-verifier).
+
+For non-public plugins [intellij-plugin-verifier](https://github.com/JetBrains/intellij-plugin-verifier) can be used standalone as well.
 
 ## IDE Support
 

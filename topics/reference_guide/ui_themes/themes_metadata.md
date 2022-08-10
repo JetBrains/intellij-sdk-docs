@@ -35,16 +35,16 @@ The following minimal sample demonstrates all details required when exposing UI 
 ```
 
 ### Attributes
-- `name` - Human-readable name, e.g., plugin name
-- `fixed` - `false` by default, `true` if metadata describes external elements, e.g., an UI library
-- `ui` - Root element listing all customization keys:
 
-    - `key` - Customization key name (see [Key Naming Scheme](#key-naming-scheme))
-    - `description` - Description to be shown to Theme authors editing <path>*.theme.json</path> files
-    - `deprecated` - `true` when key is deprecated, please provide explanation and/or replacement in `description` if available
-    - `source` - FQN of the underlying UI component implementation
-    - `since` - The release number (e.g. `[2019.2]`) when this UI customization key was exposed.
-                A release number prior to 2019.2 is valid.
+* `name` - Human-readable name, e.g., plugin name
+* `fixed` - `false` by default, `true` if metadata describes external elements, e.g., an UI library
+* `ui` - Root element listing all customization keys:
+  * `key` - Customization key name (see [Key Naming Scheme](#key-naming-scheme))
+  * `description` - Description to be shown to Theme authors editing <path>*.theme.json</path> files
+  * `deprecated` - `true` when key is deprecated, please provide explanation and/or replacement in `description` if available
+  * `source` - FQN of the underlying UI component implementation
+  * `since` - The release number (e.g. `2019.2`) when this UI customization key was exposed.
+    A release number prior to 2019.2 is valid.
 
 > Support for the `since` attribute began with version 2019.2, so this attribute is only displayed in versions 2019.2 and later.
 >
@@ -118,6 +118,7 @@ Notable examples of common parts:
 | **`Shadow`**                           | A shadow below a component.                                                                                                                                       | `Button.shadowColor`                                                                                                            |
 
 #### SubObject
+
 Use a subobject when creating keys for one of the following:
 * An implementation variation. Usually has a similar set of UI property keys as the parent object. Examples:
   * Default button: `Button.Default.background`
@@ -127,11 +128,13 @@ Use a subobject when creating keys for one of the following:
   * The hint text at the bottom of a popup: `Popup.Advertiser.background`
 
 #### Gradient Color
+
 If a component has a gradient color, add the words "start" and "end" for the beginning and ending of a gradient. Examples:
 * `Button.startBorderColor` / `Button.endBorderColor`
 * `SearchMatch.startBackground` / `SearchMatch.endBackground`
 
 #### Capitalization
+
 Capitalize Object and SubObject. Use lowerCamelCase for property.
 
 #### Do Not Use
@@ -155,13 +158,14 @@ Examples of Swing keys:
 * `TableHeader.background` Correct: `Table.Header.background`
 
 ## IntelliJ Platform Metadata
+
 > This section is relevant for IntelliJ Platform developers only.
 >
 {type="note"}
 
 Metadata is split up as follows:
-- [`IntelliJPlatform.themeMetadata.json`](upsource:///platform/platform-resources/src/themes/metadata/IntelliJPlatform.themeMetadata.json) - all keys from IntelliJ Platform and custom UI components
-- [`JDK.themeMetadata.json`](upsource:///platform/platform-resources/src/themes/metadata/JDK.themeMetadata.json) - all keys from Swing components
+* [`IntelliJPlatform.themeMetadata.json`](upsource:///platform/platform-resources/src/themes/metadata/IntelliJPlatform.themeMetadata.json) - all keys from IntelliJ Platform and custom UI components
+* [`JDK.themeMetadata.json`](upsource:///platform/platform-resources/src/themes/metadata/JDK.themeMetadata.json) - all keys from Swing components
 
 New keys should be added to <path>IntelliJPlatform.themeMetadata.json</path> only (or corresponding "local" <path>*.themeMetadata.json</path> file of the plugin if applicable).
 

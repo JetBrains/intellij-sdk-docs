@@ -63,7 +63,7 @@ See [](syntax_errors.md) on how to programmatically suppress these errors in cer
 
 The third level of highlighting is performed through the [`Annotator`](upsource:///platform/analysis-api/src/com/intellij/lang/annotation/Annotator.java) interface.
 A plugin can register one or more annotators in the `com.intellij.annotator` extension point, and these annotators are called during the background highlighting pass to process the elements in the custom language's PSI tree.
-Attribute `language` should be set to the Language ID where this annotatr applies to.
+Attribute `language` should be set to the Language ID where this annotator applies to.
 
 Annotators can analyze not only the syntax, but also the semantics using PSI, and thus can provide much more complex syntax and error highlighting logic.
 The annotator can also provide quick fixes to problems it detects.

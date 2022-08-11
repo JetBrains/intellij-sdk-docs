@@ -39,6 +39,8 @@ An implementation of a file-based index consists of the following main parts:
 * `getValueExternalizer()` returns the [`DataExternalizer`](upsource:///platform/util/src/com/intellij/util/io/DataExternalizer.java) responsible for storing values in a serialized binary format.
 * `getInputFilter()` allows restricting the indexing only to a certain set of files.
   Consider using [`DefaultFileTypeSpecificInputFilter`](upsource:///platform/indexing-api/src/com/intellij/util/indexing/DefaultFileTypeSpecificInputFilter.java).
+* `getName()` returns a unique index ID.
+  Consider using fully qualified index class name to not clash with other plugins defining index with the same ID, e.g.,&nbsp;`com.example.myplugin.indexing.MyIndex`.
 * `getVersion()` returns the version of the index implementation.
   The index is automatically rebuilt if the current version differs from the version of the index implementation used to build it.
 

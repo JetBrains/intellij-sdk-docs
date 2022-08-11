@@ -73,7 +73,7 @@ and one extension to access the `another.plugin.myExtensionPoint` extension poin
 
 The following properties are available always:
 
-* `id` - unique ID
+* `id` - unique ID. Consider prepending ID with the prefix related to the plugin name or ID to not clash with other plugins defining extensions with the same ID, e.g., `com.example.myplugin.myExtension`.
 * `order` - allows ordering all defined extensions using `first`, `last` or `before|after [id]` respectively
 * `os` - allows restricting an extension to given OS, e.g., `os="windows"` registers the extension on Windows only
 

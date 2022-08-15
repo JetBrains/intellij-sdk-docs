@@ -3,7 +3,7 @@
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 The following tutorial shows how to support a custom framework type for a project and make this framework type embedded in a project wizard as a UI component.
-The examples in this tutorial rely heavily on the [framework_basics](https://github.com/JetBrains/intellij-sdk-code-samples/tree/main/framework_basics) code sample.
+The examples in this tutorial rely heavily on the [framework_basics](%gh-sdk-samples%/framework_basics) code sample.
 
 ## Creating a New Framework
 

@@ -4,7 +4,7 @@
 
 The IntelliJ Platform provides tools designed for static code analysis called _code inspections_, which help the user maintain and clean up code without actually executing it.
 Custom code inspections can be implemented as IntelliJ Platform plugins.
-Examples of the plugin approach are the IntelliJ Platform SDK code samples [inspection_basics](https://github.com/JetBrains/intellij-sdk-code-samples/tree/main/inspection_basics) and [comparing_references_inspection](https://github.com/JetBrains/intellij-sdk-code-samples/tree/main/comparing_references_inspection).
+Examples of the plugin approach are the IntelliJ Platform SDK code samples [inspection_basics](%gh-sdk-samples%/inspection_basics) and [comparing_references_inspection](%gh-sdk-samples%/comparing_references_inspection).
 In addition, the comparing_references_inspection code sample demonstrates implementing a unit test.
 
 You can also create custom inspections through the IntelliJ IDEA user interface.
@@ -14,7 +14,7 @@ See [Inspections](https://jetbrains.design/intellij/text/inspections/) topic in 
 
 ## Creating an Inspection Plugin
 
-The [comparing_references_inspection](https://github.com/JetBrains/intellij-sdk-code-samples/tree/main/comparing_references_inspection) code sample adds a new inspection to the <control>Java | Probable Bugs</control> group in the [Inspections list](https://www.jetbrains.com/help/idea/inspections-settings.html).
+The [comparing_references_inspection](%gh-sdk-samples%/comparing_references_inspection) code sample adds a new inspection to the <control>Java | Probable Bugs</control> group in the [Inspections list](https://www.jetbrains.com/help/idea/inspections-settings.html).
 The inspection reports when the `==` or `!=` operator is used between Java expressions of reference types.
 
 It illustrates the components for a custom inspection plugin:
@@ -46,7 +46,7 @@ See also [](explore_api.md) for more information and strategies.
 
 ## Creating an Inspection
 
-The [comparing_references_inspection](https://github.com/JetBrains/intellij-sdk-code-samples/tree/main/comparing_references_inspection) code sample reports when the `==` or `!=` operators are used between Java expressions of reference types.
+The [comparing_references_inspection](%gh-sdk-samples%/comparing_references_inspection) code sample reports when the `==` or `!=` operators are used between Java expressions of reference types.
 The user can apply a quick fix to change `a==b` to `a.equals(b)`, or `a!=b` to `!a.equals(b)`.
 
 The details of the `comparing_references_inspection` implementation illustrate the components of an inspection plugin.
@@ -164,7 +164,7 @@ The `comparing_references_inspection` tests run the inspection on the <path>∗.
 
 ## Running the Comparing References Inspection Code Sample
 
-The [comparing_references_inspection](https://github.com/JetBrains/intellij-sdk-code-samples/tree/main/comparing_references_inspection) code sample adds a new inspection to the <control>Java | Probable Bugs</control> group in the [Inspections List](https://www.jetbrains.com/help/idea/inspections-settings.html).
+The [comparing_references_inspection](%gh-sdk-samples%/comparing_references_inspection) code sample adds a new inspection to the <control>Java | Probable Bugs</control> group in the [Inspections List](https://www.jetbrains.com/help/idea/inspections-settings.html).
 
 See [](code_samples.md) on how to set up and run the plugin.
 

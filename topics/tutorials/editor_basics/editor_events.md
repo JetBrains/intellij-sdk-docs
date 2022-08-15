@@ -5,13 +5,13 @@
 The previous tutorial [Editor Coordinate Systems](coordinates_system.md) described working with caret coordinate systems in an editor window.
 Caret position was discussed in terms of Logical Position, Visual Position, and Offset.
 This tutorial introduces the Editor Action system, which handles actions activated by keystroke events in the editor.
-Two classes from the [editor_basics](https://github.com/JetBrains/intellij-sdk-code-samples/tree/main/editor_basics) code sample are used to illustrate:
+Two classes from the [editor_basics](%gh-sdk-samples%/editor_basics) code sample are used to illustrate:
 * Using an IntelliJ Platform [`EditorActionHandler`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/editor/actionSystem/EditorActionHandler.java) to manipulate a caret.
 * Creating and registering a custom [`TypedActionHandler`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/editor/actionSystem/TypedActionHandler.java) to intercept keystrokes and change the document.
 
 ## Using an IntelliJ Platform EditorActionHandler
 
-In this portion of the tutorial, the [editor_basics](https://github.com/JetBrains/intellij-sdk-code-samples/tree/main/editor_basics) code sample is used to demonstrate cloning an existing caret.
+In this portion of the tutorial, the [editor_basics](%gh-sdk-samples%/editor_basics) code sample is used to demonstrate cloning an existing caret.
 A custom action class will use `EditorActionManager` to access a specific `EditorActionHandler` for caret cloning.
 The `editor_basics` code sample adds an **Editor Add Caret** menu item to the editor context menu:
 

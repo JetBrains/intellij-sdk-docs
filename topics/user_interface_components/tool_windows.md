@@ -82,7 +82,7 @@ If closing tabs is enabled in general, a plugin can disable closing of specific 
 
 ## Sample Plugin
 
-To clarify how to develop plugins that create tool windows, consider the **toolWindow** sample plugin available in the [code samples](https://github.com/JetBrains/intellij-sdk-code-samples/tree/main/tool_window).
+To clarify how to develop plugins that create tool windows, consider the **toolWindow** sample plugin available in the [code samples](%gh-sdk-samples%/tool_window).
 
 See [Code Samples](code_samples.md) on how to set up and run the plugin.
 

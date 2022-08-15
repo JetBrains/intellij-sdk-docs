@@ -9,7 +9,7 @@ E.g. Spring Framework specific configuration is stored in a Spring facet.
 For more information about facets see [Adding Support for Frameworks and Technologies](https://www.jetbrains.com/help/idea/adding-support-for-frameworks-and-technologies.html) and the help page for the [Facets dialog](https://www.jetbrains.com/help/idea/facet-page.html) in the IntelliJ IDEA Web Help.
 
 ## Facet Basics Sample
-Please see [Facet Basics](https://github.com/JetBrains/intellij-sdk-code-samples/tree/main/facet_basics) sample plugin project.
+Please see [Facet Basics](%gh-sdk-samples%/facet_basics) sample plugin project.
 
 ## Working with Facets
 

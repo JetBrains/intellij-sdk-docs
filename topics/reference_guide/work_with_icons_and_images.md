@@ -21,7 +21,7 @@ If custom icons are required, please refer to detailed [design guide](https://je
 
 ## How to organize and how to use icons?
 
-> See [Action Basics](https://github.com/JetBrains/intellij-sdk-code-samples/tree/main/action_basics) sample plugin as reference.
+> See [Action Basics](%gh-sdk-samples%/action_basics) sample plugin as reference.
 >
 {type="tip"}
 

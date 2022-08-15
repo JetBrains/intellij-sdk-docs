@@ -6,7 +6,7 @@
   <var name="ijPlatform" value="2022.2"/>
   <var name="ijPlatformBuild" value="222.3345.118"/>
 
-  <var name="gh-sdk-samples" value="https://github.com/JetBrains/intellij-sdk-code-samples/blob/main"/>
+  <var name="gh-sdk-samples" value="https://github.com/JetBrains/intellij-sdk-code-samples/tree/main"/>
 
   <var name="gh-ic" value="https://github.com/JetBrains/intellij-community/tree/idea/%ijPlatformBuild%"/>
   <var name="gh-ic-master" value="https://github.com/JetBrains/intellij-community/tree/master"/>

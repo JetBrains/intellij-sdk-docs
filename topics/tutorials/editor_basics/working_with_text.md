@@ -10,7 +10,7 @@ Using information about the caret, replace selected text in a document with a st
 The approach in this tutorial relies heavily on creating and registering actions.
 To review the fundamentals of creating and registering actions, refer to the [Actions Tutorial](action_system.md).
 
-Multiple examples are used from the [editor_basics](https://github.com/JetBrains/intellij-sdk-code-samples/tree/main/editor_basics) plugin code sample from the IntelliJ Platform SDK.
+Multiple examples are used from the [editor_basics](%gh-sdk-samples%/editor_basics) plugin code sample from the IntelliJ Platform SDK.
 It may be helpful to open that project in an IntelliJ Platform-based IDE, build the project, run it, select some text in the editor, and invoke the **Editor Replace Text** menu item on the editor context menu.
 
 ![Editor Basics Menu](basics.png){width="600"}

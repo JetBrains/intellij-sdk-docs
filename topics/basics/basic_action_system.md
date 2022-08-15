@@ -201,7 +201,7 @@ To exclude a group from appearing in <menupath>Help | Find Action</menupath> res
 #### Localizing Actions and Groups
 
 Action and group localization use resource bundles containing property files named <path>$NAME$Bundle.properties</path>, each file consisting of `key=value` pairs.
-The [`action_basics`](https://github.com/JetBrains/intellij-sdk-code-samples/tree/main/action_basics) plugin demonstrates using a resource bundle to localize the group and action entries added to the Editor Popup Menu.
+The [`action_basics`](%gh-sdk-samples%/action_basics) plugin demonstrates using a resource bundle to localize the group and action entries added to the Editor Popup Menu.
 
 When localizing actions and groups, the `text` and `description` attributes are not declared in <path>plugin.xml</path>.
 Instead, those attribute values vary depending on the locale and get declared in a resource bundle.

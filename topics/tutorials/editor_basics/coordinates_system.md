@@ -10,7 +10,7 @@ This tutorial describes how to access information about the caret(s) in an edito
 
 ## Introduction
 
-In this tutorial, the [editor_basics](https://github.com/JetBrains/intellij-sdk-code-samples/tree/main/editor_basics) code sample is used to explore caret positions.
+In this tutorial, the [editor_basics](%gh-sdk-samples%/editor_basics) code sample is used to explore caret positions.
 In particular, the **Caret Position** action added by `editor_basics` to the editor context menu is used to retrieve information about the current caret position.
 A keyboard shortcut can also initiate the action.
 

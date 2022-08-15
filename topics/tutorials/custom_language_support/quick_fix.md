@@ -21,7 +21,7 @@ A new overload of `createProperty()` creates a new `key`-`value` pair for Simple
 ## Define an Intention Action
 The `SimpleCreatePropertyQuickFix` creates a property in the file chosen by the user - in this case, a Java file containing a `prefix:key` - and navigate to this property after creation.
 Under the hood, `SimpleCreatePropertyQuickFix` is an Intention Action.
-For a more in-depth example of an Intention Action, see [`conditional_operator_intention`](https://github.com/JetBrains/intellij-sdk-code-samples/tree/main/conditional_operator_intention).
+For a more in-depth example of an Intention Action, see [`conditional_operator_intention`](%gh-sdk-samples%/conditional_operator_intention).
 
 ```java
 ```

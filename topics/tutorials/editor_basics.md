@@ -12,7 +12,7 @@ For operations that require access to the PSI please see the [PSI Cookbook](psi_
 
 **See also:**
 The following are referenced in the tutorial:
-* The [editor_basics](https://github.com/JetBrains/intellij-sdk-code-samples/tree/main/editor_basics/) plugin code sample,
+* The [editor_basics](%gh-sdk-samples%/editor_basics/) plugin code sample,
 * [editor-ui-api package](%gh-ic%/platform/editor-ui-api),
 * Those not found in editor-ui-api package:
   * [`EditorActionManager`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/editor/actionSystem/EditorActionManager.java),

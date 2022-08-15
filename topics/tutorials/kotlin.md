@@ -37,7 +37,7 @@ To learn more about building IntelliJ Platform plugins with Kotlin, this tutoria
 
 > The [IntelliJ Platform Plugin Template](github_template.md) provides a preconfigured project using Kotlin.
 >
-> See also [kotlin_demo](https://github.com/JetBrains/intellij-sdk-code-samples/tree/main/kotlin_demo) for a minimal sample plugin.
+> See also [kotlin_demo](%gh-sdk-samples%/kotlin_demo) for a minimal sample plugin.
 >
 {type="tip"}
 
@@ -85,7 +85,7 @@ Please see [Third-Party Software and Licenses](https://www.jetbrains.com/legal/t
 
 Plugins using the [Gradle Build System](gradle_build_system.md) use the [Kotlin JVM Gradle plugin](https://kotlinlang.org/docs/gradle.html#targeting-the-jvm).
 
-See the <path>build.gradle.kts</path> from [kotlin_demo](https://github.com/JetBrains/intellij-sdk-code-samples/tree/main/kotlin_demo) sample plugin:
+See the <path>build.gradle.kts</path> from [kotlin_demo](%gh-sdk-samples%/kotlin_demo) sample plugin:
 
 ```kotlin
 ```

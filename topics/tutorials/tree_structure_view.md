@@ -4,7 +4,7 @@
 
 This tutorial is meant to illustrate how the project tree structure view appearance can be modified programmatically.
 
-This topic describes the [treeStructureProvider](https://github.com/JetBrains/intellij-sdk-code-samples/tree/main/tree_structure_provider) sample plugin.
+This topic describes the [treeStructureProvider](%gh-sdk-samples%/tree_structure_provider) sample plugin.
 
 The steps below show how to filter out and keep visible only text files and directories in the Project View Panel.
 

@@ -2,7 +2,7 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
-This topic describes the [conditional_operator_intention](https://github.com/JetBrains/intellij-sdk-code-samples/tree/main/conditional_operator_intention), a sample plugin that adds a new [intention action](https://www.jetbrains.com/help/idea/intention-actions.html) to the IDE Intentions list.
+This topic describes the [conditional_operator_intention](%gh-sdk-samples%/conditional_operator_intention), a sample plugin that adds a new [intention action](https://www.jetbrains.com/help/idea/intention-actions.html) to the IDE Intentions list.
 In addition, the sample plugin contains a JUnit-based test.
 
 ## About Intention Actions
@@ -17,7 +17,7 @@ You can view a list of all available intention actions as well as enable/disable
 
 ## Techniques Used
 
-The [conditional_operator_intention](https://github.com/JetBrains/intellij-sdk-code-samples/tree/main/conditional_operator_intention) sample plugin illustrates the use of the following techniques:
+The [conditional_operator_intention](%gh-sdk-samples%/conditional_operator_intention) sample plugin illustrates the use of the following techniques:
 
 - How to analyze a [PSI tree](psi_files.md).
 - How to find a Java token of interest in the PSI tree.

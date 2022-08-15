@@ -10,7 +10,7 @@ Custom Settings are displayed and function just like those native to the IDE.
 
 ## Overview of Custom Settings Implementation
 
-Using the SDK code sample [`settings`](https://github.com/JetBrains/intellij-sdk-code-samples/tree/main/settings), this tutorial illustrates the steps to create custom Application-level Settings.
+Using the SDK code sample [`settings`](%gh-sdk-samples%/settings), this tutorial illustrates the steps to create custom Application-level Settings.
 Many IntelliJ Platform Settings implementations use fewer classes, but the `settings` code sample factors the functionality into three classes for clarity:
 * The [`AppSettingsConfigurable`](%gh-sdk-samples%/settings/src/main/java/org/intellij/sdk/settings/AppSettingsConfigurable.java) is analogous to a Controller in the MVC model - it interacts with the other two Settings classes and the IntelliJ Platform,
 * The [`AppSettingsState`](%gh-sdk-samples%/settings/src/main/java/org/intellij/sdk/settings/AppSettingsState.java) is like a Model because it stores the Settings persistently,

@@ -8,7 +8,7 @@ Plugins can add actions to existing IDE menus and toolbars, as well as add new m
 The IntelliJ Platform calls the actions of plugins in response to user interactions with the IDE.
 However, the actions of a plugin must first be defined and registered with the IntelliJ Platform.
 
-Using the SDK code sample [`action_basics`](https://github.com/JetBrains/intellij-sdk-code-samples/tree/main/action_basics), this tutorial illustrates the steps to create an action for a plugin.
+Using the SDK code sample [`action_basics`](%gh-sdk-samples%/action_basics), this tutorial illustrates the steps to create an action for a plugin.
 
 ## Creating a Custom Action
 

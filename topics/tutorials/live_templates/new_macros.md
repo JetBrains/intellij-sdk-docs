@@ -7,7 +7,7 @@ However, sometimes the Predefined Functions are not enough.
 
 This tutorial illustrates how to add custom functions to an IntelliJ Platform plugin and make them available for use by Live Templates.
 As an example, a function is created to convert a selection to Title Case.
-Refer to the SDK code sample [`live_templates`](https://github.com/JetBrains/intellij-sdk-code-samples/tree/main/live_templates).
+Refer to the SDK code sample [`live_templates`](%gh-sdk-samples%/live_templates).
 
 ## Implementing a New Function
 
@@ -26,7 +26,7 @@ Three `TitleCaseMacro` methods are of particular interest:
 
 ## Adding a Live Template
 
-Using the procedures previously discussed for [Template Creation](template_support.md#template-creation) and [Export the Live Template](template_support.md#export-the-live-template), add a Live Template to the [Markdown.xml](https://github.com/JetBrains/intellij-sdk-code-samples/tree/main/live_templates/src/main/resources/liveTemplates) file for the plugin.
+Using the procedures previously discussed for [Template Creation](template_support.md#template-creation) and [Export the Live Template](template_support.md#export-the-live-template), add a Live Template to the [Markdown.xml](%gh-sdk-samples%/live_templates/src/main/resources/liveTemplates) file for the plugin.
 The XML representation of an example Live Template using the new `titleCase` function is listed below.
 
 There is only one variable, `TITLE`.

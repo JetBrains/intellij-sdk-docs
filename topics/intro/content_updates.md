@@ -13,6 +13,11 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 
 ## 2022
 
+### August-22
+
+Source links migrated from Upsource to GitHub
+: All source links now point to GitHub instead of Upsource (which is going to be [sunset](https://blog.jetbrains.com/upsource/2022/01/31/upsource-end-of-sales-announcement/)).
+
 ### July-22
 
 Status Bar Widgets

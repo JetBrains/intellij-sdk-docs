@@ -38,7 +38,7 @@
 - `getReferences()` returns all path references from the PSI element.
 
     Using this method in conjunction with
-    [PsiReferenceContributor](upsource:///platform/core-api/src/com/intellij/psi/PsiReferenceContributor.java)
+    [PsiReferenceContributor](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiReferenceContributor.java)
     you can add autocompletion for string literals in the specific contexts.
     For example, if certain PHP functions in your code accept paths, you can autocomplete them when writing arguments.
 

@@ -15,7 +15,7 @@ Create an empty plugin project as described in [Creating a Plugin Project](gradl
 
 ## Register a New ConfigurationType
 
-Add new `com.intellij.configurationType` extension to the [plugin.xml](https://github.com/JetBrains/intellij-sdk-code-samples/blob/main/run_configuration/src/main/resources/META-INF/plugin.xml)
+Add new `com.intellij.configurationType` extension to the [plugin.xml](%gh-sdk-samples%/run_configuration/src/main/resources/META-INF/plugin.xml)
 
 ```xml
 <extensions defaultExtensionNs="com.intellij">
@@ -26,7 +26,7 @@ Add new `com.intellij.configurationType` extension to the [plugin.xml](https://g
 
 ## Implement ConfigurationType
 
-Implement [`ConfigurationType`](upsource:///platform/execution/src/com/intellij/execution/configurations/ConfigurationType.java)  interface registered in the Step 1.
+Implement [`ConfigurationType`](%gh-ic%/platform/execution/src/com/intellij/execution/configurations/ConfigurationType.java)  interface registered in the Step 1.
 
 ```java
 ```
@@ -34,13 +34,13 @@ Implement [`ConfigurationType`](upsource:///platform/execution/src/com/intellij/
 
 ## Implement a ConfigurationFactory
 
-Implement a new [`ConfigurationFactory`](upsource:///platform/execution/src/com/intellij/execution/configurations/ConfigurationFactory.java) through which custom run configurations will be created.
+Implement a new [`ConfigurationFactory`](%gh-ic%/platform/execution/src/com/intellij/execution/configurations/ConfigurationFactory.java) through which custom run configurations will be created.
 
 ```java
 ```
 {src="run_configuration/src/main/java/org/jetbrains/sdk/runConfiguration/DemoConfigurationFactory.java"}
 
-Implement corresponding configuration options class extending [`RunConfigurationOptions`](upsource:///platform/execution/src/com/intellij/execution/configurations/RunConfigurationOptions.kt) to store settings.
+Implement corresponding configuration options class extending [`RunConfigurationOptions`](%gh-ic%/platform/execution/src/com/intellij/execution/configurations/RunConfigurationOptions.kt) to store settings.
 
 ```java
 ```
@@ -50,8 +50,8 @@ Implement corresponding configuration options class extending [`RunConfiguration
 
 To make your changes visible from the UI, implement a new Run Configuration.
 
-**Note:** In most of the cases you can derive a custom Run Configuration class from the [`RunConfigurationBase`](upsource:///platform/execution/src/com/intellij/execution/configurations/RunConfigurationBase.java).
-If you need to implement specific settings externalization rules and I/O behaviour, use [`RunConfiguration`](upsource:///platform/execution/src/com/intellij/execution/configurations/RunConfiguration.java) interface.
+**Note:** In most of the cases you can derive a custom Run Configuration class from the [`RunConfigurationBase`](%gh-ic%/platform/execution/src/com/intellij/execution/configurations/RunConfigurationBase.java).
+If you need to implement specific settings externalization rules and I/O behaviour, use [`RunConfiguration`](%gh-ic%/platform/execution/src/com/intellij/execution/configurations/RunConfiguration.java) interface.
 
 ```java
 ```

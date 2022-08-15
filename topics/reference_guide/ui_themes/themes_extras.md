@@ -56,7 +56,7 @@ For example, the snippet below sets the color of the line numbers displayed in t
 </colors>
 ```
 
-For additional examples of `name` and `value` attributes, review the editor color scheme XML file for the [High Contrast editor scheme](upsource:///platform/platform-resources/src/themes/highContrastScheme.xml).
+For additional examples of `name` and `value` attributes, review the editor color scheme XML file for the [High Contrast editor scheme](%gh-ic%/platform/platform-resources/src/themes/highContrastScheme.xml).
 
 ### Customizing Version Control File Status Colors
 
@@ -74,7 +74,7 @@ For example, customized VCS colors for a subset of file statuses will appear in 
 
 ```
 
-For additional examples of `FILESTATUS` color `name` attributes, see the editor color scheme XML file for the [High Contrast editor scheme](upsource:///platform/platform-resources/src/themes/highContrastScheme.xml).
+For additional examples of `FILESTATUS` color `name` attributes, see the editor color scheme XML file for the [High Contrast editor scheme](%gh-ic%/platform/platform-resources/src/themes/highContrastScheme.xml).
 
 ### Customizing Editor Scroll Bar Colors
 
@@ -105,7 +105,7 @@ Note that the following example snippet uses an eight-digit hexadecimal color `v
 
 #### Editor Scroll Bar Attribute Names
 
-A list of scroll bar `name` attributes is in the [High Contrast editor scheme](upsource:///platform/platform-resources/src/themes/highContrastScheme.xml) file.
+A list of scroll bar `name` attributes is in the [High Contrast editor scheme](%gh-ic%/platform/platform-resources/src/themes/highContrastScheme.xml) file.
 These name attributes cannot be accessed from anywhere in the IDE UI at this time, so they must be manually added to an editor color scheme XML file.
 
 The following list explains the `usage` format of the `name` attribute, i.e. where a custom scroll bar color is applied:

@@ -29,7 +29,7 @@ Everything else, even if it's needed for resolve/highlighting purposes, can be a
 
 If stubs don't suit your case well (e.g., the information you need is large and/or very rarely needed, or you're developing a plugin for a language whose PSI you don't control), you can create a [custom index or gist](indexing_and_psi_stubs.md).
 
-To ensure you're not loading AST accidentally, you can use [`AstLoadingFilter`](upsource:///platform/core-api/src/com/intellij/util/AstLoadingFilter.java) in production and `PsiManagerEx.setAssertOnFileLoadingFilter()` in tests.
+To ensure you're not loading AST accidentally, you can use [`AstLoadingFilter`](%gh-ic%/platform/core-api/src/com/intellij/util/AstLoadingFilter.java) in production and `PsiManagerEx.setAssertOnFileLoadingFilter()` in tests.
 
 The same applies to documents: only the ones opened in editors should be loaded.
 Usually, you shouldn't need document contents (as most information can be retrieved from PSI).
@@ -40,6 +40,6 @@ If you still need documents, then at least ensure you load them one by one and d
 
 Method calls such as `PsiElement.getReference(s)`, `PsiReference.resolve()` (and `multiResolve()` and other equivalents) or computation of expression types, type inference results, control flow graphs, etc. can be expensive.
 To avoid paying this cost several times, the result of such computation can be cached and reused.
-Usually, [`CachedValue`](upsource:///platform/core-api/src/com/intellij/psi/util/CachedValue.java) works well for this purpose.
+Usually, [`CachedValue`](%gh-ic%/platform/core-api/src/com/intellij/psi/util/CachedValue.java) works well for this purpose.
 
 If the information you cache depends only on a subtree of the current PSI element (and nothing else: no resolve results or other files), you can cache it in a field in your `PsiElement` implementation and drop the cache in an override of `ASTDelegatePsiElement.subtreeChanged()`.

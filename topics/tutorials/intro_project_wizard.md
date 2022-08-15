@@ -13,4 +13,4 @@ Configuring Project Wizard automatically allows you to do the following:
 **Note:**
 
 Main utilities to configure a custom project wizard can be found in the package
-[lang-api.ide.util.projectWizard](upsource:///platform/lang-api/src/com/intellij/ide/util/projectWizard).
+[lang-api.ide.util.projectWizard](%gh-ic%/platform/lang-api/src/com/intellij/ide/util/projectWizard).

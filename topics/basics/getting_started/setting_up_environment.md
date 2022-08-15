@@ -14,7 +14,7 @@ Use the following checklist to ensure that you are ready to develop your custom 
   For more information, see below.
 - (_Optional_) **Get IntelliJ IDEA CE source code** on your local computer.
   Getting IntelliJ IDEA CE source code is not a requirement for plugin development, but having it makes debugging your plugins much more straightforward.
-  For detailed instructions, refer to the _Getting IntelliJ IDEA Community Edition Source Code_ section of [Check Out And Build Community Edition](upsource:///README.md).
+  For detailed instructions, refer to the _Getting IntelliJ IDEA Community Edition Source Code_ section of [Check Out And Build Community Edition](%gh-ic%/README.md).
   Note that building IntelliJ IDEA CE from source code is not required for plugin development.
 
 ### Configuring IntelliJ Platform SDK
@@ -24,7 +24,7 @@ Use the following checklist to ensure that you are ready to develop your custom 
 To set up your plugin development environment:
 
 * Set up a required Java SDK.
-  See the _IntelliJ Build Configuration_ section of [Check Out And Build Community Edition](upsource:///README.md) for instructions about creating **1.8** (**11** when targeting 2020.3 or later) Java SDK.
+  See the _IntelliJ Build Configuration_ section of [Check Out And Build Community Edition](%gh-ic%/README.md) for instructions about creating **1.8** (**11** when targeting 2020.3 or later) Java SDK.
 
 > Do not use a more recent Java version than the one specified.
 >

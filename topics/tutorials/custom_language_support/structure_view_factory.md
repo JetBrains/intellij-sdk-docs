@@ -11,8 +11,8 @@ Creating a structure view factory allows showing the structure of any file in a 
 
 ## Define a Structure View Factory
 
-The structure view factory implements [`PsiStructureViewFactory`](upsource:///platform/editor-ui-api/src/com/intellij/lang/PsiStructureViewFactory.java).
-The `getStructureViewBuilder()` implementation reuses the IntelliJ Platform class [`TreeBasedStructureViewBuilder`](upsource:///platform/editor-ui-api/src/com/intellij/ide/structureView/TreeBasedStructureViewBuilder.java).
+The structure view factory implements [`PsiStructureViewFactory`](%gh-ic%/platform/editor-ui-api/src/com/intellij/lang/PsiStructureViewFactory.java).
+The `getStructureViewBuilder()` implementation reuses the IntelliJ Platform class [`TreeBasedStructureViewBuilder`](%gh-ic%/platform/editor-ui-api/src/com/intellij/ide/structureView/TreeBasedStructureViewBuilder.java).
 At this point the project will not compile until `SimpleStructureViewModel` is [implemented below](#define-a-structure-view-model).
 
 ```java
@@ -21,8 +21,8 @@ At this point the project will not compile until `SimpleStructureViewModel` is [
 
 ## Define a Structure View Model
 
-The `SimpleStructureViewModel` is created by implementing [`StructureViewModel`](upsource:///platform/editor-ui-api/src/com/intellij/ide/structureView/StructureViewModel.java), which defines the model for data displayed in the standard structure view.
-It also extends [`StructureViewModelBase`](upsource:///platform/editor-ui-api/src/com/intellij/ide/structureView/StructureViewModelBase.java), an implementation that links the model to a text editor.
+The `SimpleStructureViewModel` is created by implementing [`StructureViewModel`](%gh-ic%/platform/editor-ui-api/src/com/intellij/ide/structureView/StructureViewModel.java), which defines the model for data displayed in the standard structure view.
+It also extends [`StructureViewModelBase`](%gh-ic%/platform/editor-ui-api/src/com/intellij/ide/structureView/StructureViewModelBase.java), an implementation that links the model to a text editor.
 
 ```java
 ```
@@ -30,7 +30,7 @@ It also extends [`StructureViewModelBase`](upsource:///platform/editor-ui-api/sr
 
 ## Define a Structure View Element
 
-The `SimpleStructureViewElement` implements [`StructureViewTreeElement`](upsource:///platform/editor-ui-api/src/com/intellij/ide/structureView/StructureViewTreeElement.java) and [`SortableTreeElement`](upsource:///platform/editor-ui-api/src/com/intellij/ide/util/treeView/smartTree/SortableTreeElement.java).
+The `SimpleStructureViewElement` implements [`StructureViewTreeElement`](%gh-ic%/platform/editor-ui-api/src/com/intellij/ide/structureView/StructureViewTreeElement.java) and [`SortableTreeElement`](%gh-ic%/platform/editor-ui-api/src/com/intellij/ide/util/treeView/smartTree/SortableTreeElement.java).
 The `StructureViewTreeElement` represents an element in the Structure View tree model.
 The `SortableTreeElement` represents an item in a smart tree that allows using text other than the presentable text as a key for alphabetic sorting.
 

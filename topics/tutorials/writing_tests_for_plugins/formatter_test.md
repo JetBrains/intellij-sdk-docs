@@ -6,7 +6,7 @@
 
 This test checks if the Simple Language formatter, implemented in the [Formatter](formatter.md) section of the Custom Language Support Tutorial, works as expected.
 
-> See also [`FormatterTestCase`](upsource:///platform/testFramework/src/com/intellij/psi/formatter/FormatterTestCase.java) as convenient base class.
+> See also [`FormatterTestCase`](%gh-ic%/platform/testFramework/src/com/intellij/psi/formatter/FormatterTestCase.java) as convenient base class.
 
 ## Define Test Data
 Create the <path>FormatterTestData.simple</path> file in the <path>testData</path> directory.

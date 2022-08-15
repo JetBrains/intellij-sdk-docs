@@ -7,7 +7,7 @@ The examples in this tutorial rely heavily on the [framework_basics](https://git
 
 ## Creating a New Framework
 
-In oder to make a custom framework available and configurable for a project the [`FrameworkTypeEx`](upsource:///java/idea-ui/src/com/intellij/framework/FrameworkTypeEx.java) class needs to be extended, in this example to make the [DemoFramework](https://github.com/JetBrains/intellij-sdk-code-samples/blob/main/framework_basics/src/main/java/org/intellij/sdk/framework/DemoFramework.java) class.
+In oder to make a custom framework available and configurable for a project the [`FrameworkTypeEx`](%gh-ic%/java/idea-ui/src/com/intellij/framework/FrameworkTypeEx.java) class needs to be extended, in this example to make the [DemoFramework](%gh-sdk-samples%/framework_basics/src/main/java/org/intellij/sdk/framework/DemoFramework.java) class.
 
 ```java
 public class DemoFramework extends FrameworkTypeEx {
@@ -16,7 +16,7 @@ public class DemoFramework extends FrameworkTypeEx {
 
 ## Registering Framework
 
-The newly created framework class should be registered as an extension point by adding `com.intellij.framework.type` extension in [`plugin.xml`](https://github.com/JetBrains/intellij-sdk-code-samples/blob/main/framework_basics/src/main/resources/META-INF/plugin.xml) configuration file:
+The newly created framework class should be registered as an extension point by adding `com.intellij.framework.type` extension in [`plugin.xml`](%gh-sdk-samples%/framework_basics/src/main/resources/META-INF/plugin.xml) configuration file:
 
 ```xml
 <extensions defaultExtensionNs="com.intellij">
@@ -63,8 +63,8 @@ public class DemoFramework extends FrameworkTypeEx {
 ## Creating Provider for Enabling Framework Support
 
 To make the framework set up available while executing the steps to create a project, the
-`DemoFramework.createProvider()` method must be implemented to return an object of type [`FrameworkSupportInModuleConfigurable`](upsource:///java/idea-ui/src/com/intellij/framework/addSupport/FrameworkSupportInModuleConfigurable.java), which adds the framework to a module.
-In this example the framework is added to any [`ModuleType`](upsource:///platform/lang-core/src/com/intellij/openapi/module/ModuleType.java) without checking, which is usually not the case.
+`DemoFramework.createProvider()` method must be implemented to return an object of type [`FrameworkSupportInModuleConfigurable`](%gh-ic%/java/idea-ui/src/com/intellij/framework/addSupport/FrameworkSupportInModuleConfigurable.java), which adds the framework to a module.
+In this example the framework is added to any [`ModuleType`](%gh-ic%/platform/lang-core/src/com/intellij/openapi/module/ModuleType.java) without checking, which is usually not the case.
 
 ```java
 @NotNull

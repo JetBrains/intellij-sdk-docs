@@ -12,12 +12,12 @@ Using the SDK code sample [`action_basics`](https://github.com/JetBrains/intelli
 
 ## Creating a Custom Action
 
-Custom actions extend the abstract class [`AnAction`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java).
+Custom actions extend the abstract class [`AnAction`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java).
 Classes that extend it should override `AnAction.update()`, and must override `AnAction.actionPerformed()`.
 * The `update()` method implements the code that enables or disables an action.
 * The `actionPerformed()` method implements the code that executes when an action is invoked by the user.
 
-As an example, [`PopupDialogAction`](https://github.com/JetBrains/intellij-sdk-code-samples/blob/main/action_basics/src/main/java/org/intellij/sdk/action/PopupDialogAction.java) overrides `AnAction` for the `action_basics` code sample.
+As an example, [`PopupDialogAction`](%gh-sdk-samples%/action_basics/src/main/java/org/intellij/sdk/action/PopupDialogAction.java) overrides `AnAction` for the `action_basics` code sample.
 
 ```java
 public class PopupDialogAction extends AnAction {
@@ -108,7 +108,7 @@ An action declaration can be added manually to the <path>plugin.xml</path> file.
 An exhaustive list of declaration elements and attributes is presented in [](basic_action_system.md#registering-actions-in-pluginxml).
 Attributes are added by selecting them from the <control>New Action</control> form, or by editing the registration declaration directly in the <path>plugin.xml</path> file.
 
-The `<action>` declaration for `PopupDialogAction` in the `action_basics` [plugin.xml](https://github.com/JetBrains/intellij-sdk-code-samples/blob/main/action_basics/src/main/resources/META-INF/plugin.xml) file.
+The `<action>` declaration for `PopupDialogAction` in the `action_basics` [plugin.xml](%gh-sdk-samples%/action_basics/src/main/resources/META-INF/plugin.xml) file.
 It also contains an attribute for an [`Icon`](work_with_icons_and_images.md) and encloses elements declaring text overrides, keyboard and mouse shortcuts, and to which menu group the action should be added.
 
 The full declaration is:
@@ -169,7 +169,7 @@ The code below gets information from the `anActionEvent` input parameter and con
 A generic icon, and the `message` and `title` attributes from the invoking menu action are displayed.
 However, code in this method could manipulate a project, invoke an inspection, change the contents of a file, etc.
 
-For demonstration purposes the `AnActionEvent.getData()` method tests if a [`Navigatable`](upsource:///platform/core-api/src/com/intellij/pom/Navigatable.java) object is available.
+For demonstration purposes the `AnActionEvent.getData()` method tests if a [`Navigatable`](%gh-ic%/platform/core-api/src/com/intellij/pom/Navigatable.java) object is available.
 If so, information about the selected element is added to the dialog.
 
 See [](basic_action_system.md#determining-the-action-context) for more information about accessing information from the `AnActionEvent` input parameter.

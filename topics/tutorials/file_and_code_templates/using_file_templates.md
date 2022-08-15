@@ -4,7 +4,7 @@
 
 File templates provided by a plugin can be used during new file creation, in code intention actions, or other plugin features.
 They can be accessed with the
-[`FileTemplateManager`](upsource:///platform/ide-core-impl/src/com/intellij/ide/fileTemplates/FileTemplateManager.java)
+[`FileTemplateManager`](%gh-ic%/platform/ide-core-impl/src/com/intellij/ide/fileTemplates/FileTemplateManager.java)
 service providing methods returning all or single file templates from a given category.
 For example, to obtain a template from the <control>[Code](providing_file_templates.md#code)</control> category, pass its name to the `getCodeTemplate()` method (notice the lack of the <path>.ft</path> extension):
 
@@ -28,18 +28,18 @@ The common use case for file templates is creating new files with the initial co
 File templates assigned to the <control>[Files](providing_file_templates.md#files)</control> category are automatically available in the <menupath>File | New</menupath> action group.
 Sometimes, creating a file from a given template in a specific project place doesn't make sense, or a template requires some additional properties for its content.
 It is possible to control a file template's visibility and its available properties using
-[`CreateFromTemplateHandler`](upsource:///platform/lang-impl/src/com/intellij/ide/fileTemplates/CreateFromTemplateHandler.java)
+[`CreateFromTemplateHandler`](%gh-ic%/platform/lang-impl/src/com/intellij/ide/fileTemplates/CreateFromTemplateHandler.java)
 implementation registered in the `com.intellij.createFromTemplateHandler` EP.
 
 **Example**:
-[`JavaCreateFromTemplateHandler`](upsource:///java/java-impl/src/com/intellij/ide/fileTemplates/JavaCreateFromTemplateHandler.java)
+[`JavaCreateFromTemplateHandler`](%gh-ic%/java/java-impl/src/com/intellij/ide/fileTemplates/JavaCreateFromTemplateHandler.java)
 
 ### Exposing File Templates from the Other Category
 
 File templates from the <control>[Other](providing_file_templates.md#other)</control> category are not exposed by default.
 To make them available in the UI, a plugin has to implement and register an action.
 The easiest way to do it is by extending
-[`CreateFileFromTemplateAction`](upsource:///platform/lang-impl/src/com/intellij/ide/actions/CreateFileFromTemplateAction.java)
+[`CreateFileFromTemplateAction`](%gh-ic%/platform/lang-impl/src/com/intellij/ide/actions/CreateFileFromTemplateAction.java)
 base class which contains standard implementations of necessary methods.
 It allows customizing the action by providing an action name, icon, overriding methods creating dialog, and others.
 Example action:
@@ -88,7 +88,7 @@ It is more user-friendly to provide a single <menupath>File | New | Java Class</
 ![Create Java class](new_java_class_popup.png){width="296" border-effect="line"}
 
 This can be achieved by placing templates in the <control>[Internal](providing_file_templates.md#internal)</control> category, so they are not picked up by the default mechanism, and then registering a custom
-[`CreateFileFromTemplateAction`](upsource:///platform/lang-impl/src/com/intellij/ide/actions/CreateFileFromTemplateAction.java)
+[`CreateFileFromTemplateAction`](%gh-ic%/platform/lang-impl/src/com/intellij/ide/actions/CreateFileFromTemplateAction.java)
 implementation as described in the [](#exposing-file-templates-from-the-other-category) section.
 To provide a list of selectable entity types, the action should provide a custom dialog with multiple file kinds for every template type, e.g.:
 
@@ -112,7 +112,7 @@ Internal templates can be exposed in the <control>Files</control> category by ad
 ```
 
 **Example**:
-[`NewKotlinFileAction`](upsource:///plugins/kotlin/idea/src/org/jetbrains/kotlin/idea/actions/NewKotlinFileAction.kt) for Kotlin files creation action.
+[`NewKotlinFileAction`](%gh-ic%/plugins/kotlin/idea/src/org/jetbrains/kotlin/idea/actions/NewKotlinFileAction.kt) for Kotlin files creation action.
 
 ## Improving "Save File as Template…" Action
 
@@ -120,8 +120,8 @@ Some languages or frameworks may require creating many custom file templates dir
 Adjusting created templates manually by replacing dynamic parts with properties can be tedious.
 It is possible to speed up this process by replacing known elements like package or class names with template properties placeholder.
 It can be achieved by implementing the
-[`SaveFileAsTemplateHandler`](upsource:///platform/lang-impl/src/com/intellij/ide/actions/SaveFileAsTemplateHandler.java)
+[`SaveFileAsTemplateHandler`](%gh-ic%/platform/lang-impl/src/com/intellij/ide/actions/SaveFileAsTemplateHandler.java)
 and registering it via the `com.intellij.saveFileAsTemplateHandler` EP.
 
 **Example**:
-[`SaveJavaAsTemplateHandler`](upsource:///java/java-impl/src/com/intellij/ide/fileTemplates/SaveJavaAsTemplateHandler.java) replacing existing class and package names with `${NAME}` and `${PACKAGE_NAME}` properties placeholders respectively.
+[`SaveJavaAsTemplateHandler`](%gh-ic%/java/java-impl/src/com/intellij/ide/fileTemplates/SaveJavaAsTemplateHandler.java) replacing existing class and package names with `${NAME}` and `${PACKAGE_NAME}` properties placeholders respectively.

@@ -14,8 +14,8 @@ See [](extension_point_list.md) for IntelliJ Platform.
 
 | Topic                                                                                                                                                            | Listener                                                                                                                             |
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------|
-| [RiderStyleCopConfigurable#STYLE_COP_CONFIGURABLE_TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.application.options.editor.EditorOptionsListener)       | [`EditorOptionsListener`](upsource:///platform/platform-impl/src/com/intellij/application/options/editor/EditorOptionsListener.java) |
-| [RiderClangFormatConfigurable#CLANG_FORMAT_CONFIGURABLE_TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.application.options.editor.EditorOptionsListener) | [`EditorOptionsListener`](upsource:///platform/platform-impl/src/com/intellij/application/options/editor/EditorOptionsListener.java) |
+| [RiderStyleCopConfigurable#STYLE_COP_CONFIGURABLE_TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.application.options.editor.EditorOptionsListener)       | [`EditorOptionsListener`](%gh-ic%/platform/platform-impl/src/com/intellij/application/options/editor/EditorOptionsListener.java) |
+| [RiderClangFormatConfigurable#CLANG_FORMAT_CONFIGURABLE_TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.application.options.editor.EditorOptionsListener) | [`EditorOptionsListener`](%gh-ic%/platform/platform-impl/src/com/intellij/application/options/editor/EditorOptionsListener.java) |
 
 ### com.jetbrains.dotTrace
 

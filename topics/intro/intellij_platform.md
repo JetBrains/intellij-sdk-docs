@@ -43,7 +43,7 @@ At this time, it's not possible to extend the IntelliJ Platform in non-JVM langu
 
 ## Open Source
 
-The IntelliJ Platform is Open Source, under the [Apache License](upsource:///LICENSE.txt), and [hosted on GitHub](https://github.com/JetBrains/intellij-community).
+The IntelliJ Platform is Open Source, under the [Apache License](%gh-ic%/LICENSE.txt), and [hosted on GitHub](https://github.com/JetBrains/intellij-community).
 
 While this guide refers to the IntelliJ Platform as a separate entity, there is no "IntelliJ Platform" GitHub repository.
 Instead, the platform is considered to be an almost complete overlap with the IntelliJ IDEA Community Edition, which is a free and Open Source version of IntelliJ IDEA Ultimate (the GitHub repository linked above is the [JetBrains/intellij-community](https://github.com/JetBrains/intellij-community) repository).

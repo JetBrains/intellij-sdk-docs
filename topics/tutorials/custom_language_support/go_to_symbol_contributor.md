@@ -34,7 +34,7 @@ property ::= (KEY? SEPARATOR VALUE?) | KEY {
 
 ## Define a Go To Symbol Contributor
 
-To contribute items to <menupath>Navigate | Symbol</menupath> results, subclass [`ChooseByNameContributor`](upsource:///platform/lang-api/src/com/intellij/navigation/ChooseByNameContributor.java) to create `SimpleChooseByNameContributor`:
+To contribute items to <menupath>Navigate | Symbol</menupath> results, subclass [`ChooseByNameContributor`](%gh-ic%/platform/lang-api/src/com/intellij/navigation/ChooseByNameContributor.java) to create `SimpleChooseByNameContributor`:
 
 ```java
 ```

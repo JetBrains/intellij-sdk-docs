@@ -161,8 +161,8 @@ Examples of Swing keys:
 {type="note"}
 
 Metadata is split up as follows:
-* [`IntelliJPlatform.themeMetadata.json`](upsource:///platform/platform-resources/src/themes/metadata/IntelliJPlatform.themeMetadata.json) - all keys from IntelliJ Platform and custom UI components
-* [`JDK.themeMetadata.json`](upsource:///platform/platform-resources/src/themes/metadata/JDK.themeMetadata.json) - all keys from Swing components
+* [`IntelliJPlatform.themeMetadata.json`](%gh-ic%/platform/platform-resources/src/themes/metadata/IntelliJPlatform.themeMetadata.json) - all keys from IntelliJ Platform and custom UI components
+* [`JDK.themeMetadata.json`](%gh-ic%/platform/platform-resources/src/themes/metadata/JDK.themeMetadata.json) - all keys from Swing components
 
 New keys should be added to <path>IntelliJPlatform.themeMetadata.json</path> only (or corresponding "local" <path>*.themeMetadata.json</path> file of the plugin if applicable).
 

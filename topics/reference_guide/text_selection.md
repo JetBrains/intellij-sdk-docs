@@ -6,7 +6,7 @@
 
 EP: `com.intellij.extendWordSelectionHandler`
 
-Implementing [`ExtendWordSelectionHandler`](upsource:///platform/lang-api/src/com/intellij/codeInsight/editorActions/ExtendWordSelectionHandler.java) and registering it as `com.intellij.extendWordSelectionHandler` EP in your <path>plugin.xml</path> allows you to provide additional text ranges to be used when extending or shrinking a selection.
+Implementing [`ExtendWordSelectionHandler`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/editorActions/ExtendWordSelectionHandler.java) and registering it as `com.intellij.extendWordSelectionHandler` EP in your <path>plugin.xml</path> allows you to provide additional text ranges to be used when extending or shrinking a selection.
 Return `true` from `canSelect(PsiElement)` for the PSI elements that you want to provide additional text-ranges for.
 The IntelliJ Platform will call `select(PsiElement, CharSequence, int, Editor)` for these elements where you can compute additional text ranges and return them as `List<TextRange>`.
 
@@ -45,12 +45,12 @@ This can be achieved by implementing this EP in the following way:
 ### Further Insight and Debugging
 
 Looking at other implementations can be an effective way to get a better understanding of how this EP works.
-To get further insight into this EP, you may want to take a look at [`DocTagSelectioner`](upsource:///java/java-impl/src/com/intellij/codeInsight/editorActions/wordSelection/DocTagSelectioner.java).
+To get further insight into this EP, you may want to take a look at [`DocTagSelectioner`](%gh-ic%/java/java-impl/src/com/intellij/codeInsight/editorActions/wordSelection/DocTagSelectioner.java).
 It provides the ability to select tag names like `@param` in JavaDoc comments.
 Additionally, the [IntelliJ Platform Explorer](https://plugins.jetbrains.com/intellij-platform-explorer/?extensions=com.intellij.extendWordSelectionHandler) provides a list of open-source plugins with implementations of the `extendWordSelectionHandler` EP.
 
 There are also some important places in the IntelliJ Platform to add breakpoints during debugging.
-When _Extend Selection_ is called by the user, it is handled by [`SelectWordHandler`](upsource:///platform/lang-impl/src/com/intellij/codeInsight/editorActions/SelectWordHandler.java).
-The majority of the work, however, is then done inside [`SelectWordUtil`](upsource:///platform/lang-impl/src/com/intellij/codeInsight/editorActions/SelectWordUtil.java), where `processElement()` checks which implementations of this EP apply for the current PSI element.
+When _Extend Selection_ is called by the user, it is handled by [`SelectWordHandler`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/editorActions/SelectWordHandler.java).
+The majority of the work, however, is then done inside [`SelectWordUtil`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/editorActions/SelectWordUtil.java), where `processElement()` checks which implementations of this EP apply for the current PSI element.
 If one of them returns `true` from its `canSelect()` method, the additional text ranges are extracted in the `askSelectioner()` function.
 These places are good candidates to set breakpoints and investigate during debugging.

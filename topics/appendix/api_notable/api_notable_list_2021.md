@@ -28,7 +28,7 @@ Constructor Injection disabled for Extensions
 : Please obtain necessary components only when needed (logged as ERROR now).
 
 Language Injection
-: Use [`LanguageInjectionContributor`](upsource:///platform/core-api/src/com/intellij/lang/injection/general/LanguageInjectionContributor.java) (EP `com.intellij.languageInjectionContributor`) and [`LanguageInjectionPerformer`](upsource:///platform/core-api/src/com/intellij/lang/injection/general/LanguageInjectionPerformer.java) (EP `com.intellij.languageInjectionPerformer`) to customize language injection.
+: Use [`LanguageInjectionContributor`](%gh-ic%/platform/core-api/src/com/intellij/lang/injection/general/LanguageInjectionContributor.java) (EP `com.intellij.languageInjectionContributor`) and [`LanguageInjectionPerformer`](%gh-ic%/platform/core-api/src/com/intellij/lang/injection/general/LanguageInjectionPerformer.java) (EP `com.intellij.languageInjectionPerformer`) to customize language injection.
 
 ### IntelliJ IDEA 2021.2
 
@@ -40,13 +40,13 @@ Unbundled plugins
 ### IntelliJ Platform 2021.1
 
 _Add unambiguous imports on the fly_ for custom languages
-: Override [`ReferenceImporter#isAddUnambiguousImportsOnTheFlyEnabled()`](upsource:///platform/analysis-impl/src/com/intellij/codeInsight/daemon/ReferenceImporter.java) and provide corresponding user setting. Implement `HintAction` with `fixSilently()` and hook it up to highlighting as a quick fix for unresolved reference.
+: Override [`ReferenceImporter#isAddUnambiguousImportsOnTheFlyEnabled()`](%gh-ic%/platform/analysis-impl/src/com/intellij/codeInsight/daemon/ReferenceImporter.java) and provide corresponding user setting. Implement `HintAction` with `fixSilently()` and hook it up to highlighting as a quick fix for unresolved reference.
 
 Ability to override encoding per `VirtualFile`
-: Implement [`FileEncodingProvider`](upsource:///platform/core-api/src/com/intellij/openapi/vfs/encoding/FileEncodingProvider.java) and register in `com.intellij.fileEncodingProvider` extension point.
+: Implement [`FileEncodingProvider`](%gh-ic%/platform/core-api/src/com/intellij/openapi/vfs/encoding/FileEncodingProvider.java) and register in `com.intellij.fileEncodingProvider` extension point.
 
 [JCEF](jcef.md): wrapper for `CefBrowser`
-: [`JBCefOsrHandlerBrowser`](upsource:///platform/platform-api/src/com/intellij/ui/jcef/JBCefOsrHandlerBrowser.java) forwards to custom `CefRenderHandler`, e.g., for off-screen rendering.
+: [`JBCefOsrHandlerBrowser`](%gh-ic%/platform/platform-api/src/com/intellij/ui/jcef/JBCefOsrHandlerBrowser.java) forwards to custom `CefRenderHandler`, e.g., for off-screen rendering.
 
 ### Java Plugin 2021.1
 

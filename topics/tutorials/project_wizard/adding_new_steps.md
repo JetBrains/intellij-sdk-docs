@@ -25,7 +25,7 @@ Register a new `com.intellij.moduleBuilder` extension point in the <path>plugin.
 
 ## Create a Custom Module Builder
 
-Extend [`ModuleBuilder`](upsource:///platform/lang-core/src/com/intellij/ide/util/projectWizard/ModuleBuilder.java) class to provide custom configuration.
+Extend [`ModuleBuilder`](%gh-ic%/platform/lang-core/src/com/intellij/ide/util/projectWizard/ModuleBuilder.java) class to provide custom configuration.
 
 ```java
 public class DemoModuleWizardStep extends ModuleBuilder {

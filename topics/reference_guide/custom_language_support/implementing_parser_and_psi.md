@@ -5,24 +5,24 @@
 Parsing files in IntelliJ Platform is a two-step process.
 
 First, an abstract syntax tree (AST) is built, defining the structure of the program.
-AST nodes are created internally by the IDE and are represented by instances of the [`ASTNode`](upsource:///platform/core-api/src/com/intellij/lang/ASTNode.java) class.
-Each AST node has an associated element type [`IElementType`](upsource:///platform/core-api/src/com/intellij/psi/tree/IElementType.java) instance, and the element types are defined by the language plugin.
-The AST tree's top-level node for a file needs to have a special element type, which extends the [`IFileElementType`](upsource:///platform/core-api/src/com/intellij/psi/tree/IFileElementType.java) class.
+AST nodes are created internally by the IDE and are represented by instances of the [`ASTNode`](%gh-ic%/platform/core-api/src/com/intellij/lang/ASTNode.java) class.
+Each AST node has an associated element type [`IElementType`](%gh-ic%/platform/core-api/src/com/intellij/psi/tree/IElementType.java) instance, and the element types are defined by the language plugin.
+The AST tree's top-level node for a file needs to have a special element type, which extends the [`IFileElementType`](%gh-ic%/platform/core-api/src/com/intellij/psi/tree/IFileElementType.java) class.
 
 The AST nodes have a direct mapping to text ranges in the underlying document.
 The bottom-most nodes of the AST match individual tokens returned by the [lexer](implementing_lexer.md), and higher-level nodes match multiple-token fragments.
 Operations performed on nodes of the AST tree, such as inserting, removing, reordering nodes, and so on, are immediately reflected as changes to the underlying document's text.
 
 Second, a PSI, or Program Structure Interface, tree is built on top of the AST, adding semantics and methods for manipulating specific language constructs.
-Nodes of the PSI tree are represented by classes implementing the [`PsiElement`](upsource:///platform/core-api/src/com/intellij/psi/PsiElement.java) interface and are created by the language plugin in the [`ParserDefinition.createElement()`](upsource:///platform/core-api/src/com/intellij/lang/ParserDefinition.java) method.
-The top-level node of the PSI tree for a file needs to implement the [`PsiFile`](upsource:///platform/core-api/src/com/intellij/psi/PsiFile.java) interface and is created in the [`ParserDefinition.createFile()`](upsource:///platform/core-api/src/com/intellij/lang/ParserDefinition.java) method.
+Nodes of the PSI tree are represented by classes implementing the [`PsiElement`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiElement.java) interface and are created by the language plugin in the [`ParserDefinition.createElement()`](%gh-ic%/platform/core-api/src/com/intellij/lang/ParserDefinition.java) method.
+The top-level node of the PSI tree for a file needs to implement the [`PsiFile`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiFile.java) interface and is created in the [`ParserDefinition.createFile()`](%gh-ic%/platform/core-api/src/com/intellij/lang/ParserDefinition.java) method.
 
 **Example**:
-[`ParserDefinition`](upsource:///plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/parsing/PropertiesParserDefinition.java) for [Properties language plugin](upsource:///plugins/properties)
+[`ParserDefinition`](%gh-ic%/plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/parsing/PropertiesParserDefinition.java) for [Properties language plugin](%gh-ic%/plugins/properties)
 
 The PSI's lifecycle is described in more detail in [Fundamentals](fundamentals.md).
 
-The base classes for the PSI implementation, including [`PsiFileBase`](upsource:///platform/core-impl/src/com/intellij/extapi/psi/PsiFileBase.java), the base implementation of [`PsiFile`](upsource:///platform/core-api/src/com/intellij/psi/PsiFile.java), and [`ASTWrapperPsiElement`](upsource:///platform/core-impl/src/com/intellij/extapi/psi/ASTWrapperPsiElement.java), the base implementation of [`PsiElement`](upsource:///platform/core-api/src/com/intellij/psi/PsiElement.java), are provided by IntelliJ Platform.
+The base classes for the PSI implementation, including [`PsiFileBase`](%gh-ic%/platform/core-impl/src/com/intellij/extapi/psi/PsiFileBase.java), the base implementation of [`PsiFile`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiFile.java), and [`ASTWrapperPsiElement`](%gh-ic%/platform/core-impl/src/com/intellij/extapi/psi/ASTWrapperPsiElement.java), the base implementation of [`PsiElement`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiElement.java), are provided by IntelliJ Platform.
 
 ### Parser Implementation
 
@@ -32,15 +32,15 @@ The Grammar-Kit plugin is built using its own engine; its source code and docume
 
 For re-using existing ANTLRv4 grammars, see [antlr4-intellij-adaptor](https://github.com/antlr/antlr4-intellij-adaptor) library.
 
-The language plugin provides the parser implementation as an implementation of the [`PsiParser`](upsource:///platform/core-api/src/com/intellij/lang/PsiParser.java) interface, returned from [`ParserDefinition.createParser()`](upsource:///platform/core-api/src/com/intellij/lang/ParserDefinition.java).
-The parser receives an instance of the [`PsiBuilder`](upsource:///platform/core-api/src/com/intellij/lang/PsiBuilder.java) class, which is used to get the stream of tokens from the lexer and to hold the intermediate state of the AST being built.
-The parser must process all tokens returned by the lexer up to the end of the stream, in other words, until [`PsiBuilder.getTokenType()`](upsource:///platform/core-api/src/com/intellij/lang/PsiBuilder.java) returns `null`, even if the tokens are not valid according to the language syntax.
+The language plugin provides the parser implementation as an implementation of the [`PsiParser`](%gh-ic%/platform/core-api/src/com/intellij/lang/PsiParser.java) interface, returned from [`ParserDefinition.createParser()`](%gh-ic%/platform/core-api/src/com/intellij/lang/ParserDefinition.java).
+The parser receives an instance of the [`PsiBuilder`](%gh-ic%/platform/core-api/src/com/intellij/lang/PsiBuilder.java) class, which is used to get the stream of tokens from the lexer and to hold the intermediate state of the AST being built.
+The parser must process all tokens returned by the lexer up to the end of the stream, in other words, until [`PsiBuilder.getTokenType()`](%gh-ic%/platform/core-api/src/com/intellij/lang/PsiBuilder.java) returns `null`, even if the tokens are not valid according to the language syntax.
 
 **Examples**:
 - [Custom Language Support Tutorial: Grammar and Parser](grammar_and_parser.md)
-- [`PsiParser`](upsource:///plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/parsing/PropertiesParser.java) implementation for [Properties language plugin](upsource:///plugins/properties/properties-psi-impl/src/com/intellij/lang/properties).
+- [`PsiParser`](%gh-ic%/plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/parsing/PropertiesParser.java) implementation for [Properties language plugin](%gh-ic%/plugins/properties/properties-psi-impl/src/com/intellij/lang/properties).
 
-The parser works by setting pairs of markers ([`PsiBuilder.Marker`](upsource:///platform/core-api/src/com/intellij/lang/PsiBuilder.java) instances) within the stream of tokens received from the lexer.
+The parser works by setting pairs of markers ([`PsiBuilder.Marker`](%gh-ic%/platform/core-api/src/com/intellij/lang/PsiBuilder.java) instances) within the stream of tokens received from the lexer.
 Each pair of markers defines the range of lexer tokens for a single node in the AST tree.
 If a pair of markers is nested in another pair (starts after its start and ends before its end), it becomes the outer pair's child node.
 
@@ -57,10 +57,10 @@ When the parser reaches the '+' token following 'b', it can call `precede()` to 
 #### Whitespace and Comments
 
 An essential feature of `PsiBuilder` is its handling of whitespace and comments.
-The types of tokens which are treated as whitespace or comments are defined by `getWhitespaceTokens()` and `getCommentTokens()` in [`ParserDefinition`](upsource:///platform/core-api/src/com/intellij/lang/ParserDefinition.java).
+The types of tokens which are treated as whitespace or comments are defined by `getWhitespaceTokens()` and `getCommentTokens()` in [`ParserDefinition`](%gh-ic%/platform/core-api/src/com/intellij/lang/ParserDefinition.java).
 `PsiBuilder` automatically omits whitespace and comment tokens from the stream of tokens it passes to `PsiParser` and adjusts the token ranges of AST nodes so that leading and trailing whitespace tokens are not included in the node.
 
-The token set returned from [`ParserDefinition.getCommentTokens()`](upsource:///platform/core-api/src/com/intellij/lang/ParserDefinition.java) is also used to search for [TODO items](https://www.jetbrains.com/help/idea/using-todo.html).
+The token set returned from [`ParserDefinition.getCommentTokens()`](%gh-ic%/platform/core-api/src/com/intellij/lang/ParserDefinition.java) is also used to search for [TODO items](https://www.jetbrains.com/help/idea/using-todo.html).
 
 To better understand the process of building a PSI tree for a simple expression, you can refer to the following diagram:
 
@@ -70,9 +70,9 @@ To better understand the process of building a PSI tree for a simple expression,
 
 In general, there is no single right way to implement a PSI for a custom language, and the plugin author can choose the PSI structure and set of methods that are the most convenient for the code which uses the PSI (error analysis, refactorings, and so on).
 However, one base interface needs to be used by a custom language PSI implementation to support features like [](rename_refactoring.md) and [](find_usages.md).
-Every element which can be renamed or referenced (a class definition, a method definition and so on) needs to implement the [`PsiNamedElement`](upsource:///platform/core-api/src/com/intellij/psi/PsiNamedElement.java) interface, with methods `getName()` and `setName()`.
+Every element which can be renamed or referenced (a class definition, a method definition and so on) needs to implement the [`PsiNamedElement`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiNamedElement.java) interface, with methods `getName()` and `setName()`.
 
-Several functions which can be used for implementing and using the PSI can be found in the `com.intellij.psi.util` package, and in particular in the [`PsiUtilCore`](upsource:///platform/core-api/src/com/intellij/psi/util/PsiUtilCore.java) and [`PsiTreeUtil`](upsource:///platform/core-api/src/com/intellij/psi/util/PsiTreeUtil.java) classes.
+Several functions which can be used for implementing and using the PSI can be found in the `com.intellij.psi.util` package, and in particular in the [`PsiUtilCore`](%gh-ic%/platform/core-api/src/com/intellij/psi/util/PsiUtilCore.java) and [`PsiTreeUtil`](%gh-ic%/platform/core-api/src/com/intellij/psi/util/PsiTreeUtil.java) classes.
 
 > Use [builtin tools and PsiViewer plugin](explore_api.md#31-use-internal-mode-and-psiviewer) to explore and inspect PSI.
 >

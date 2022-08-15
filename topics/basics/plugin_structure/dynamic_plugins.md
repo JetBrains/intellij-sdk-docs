@@ -66,7 +66,7 @@ Do not store references to PSI elements in objects which can survive plugin load
 Replace with `String` from `Language.getID()`/`FileType.getName()` (use inspection <control>Plugin DevKit | Code | Map key may leak</control>).
 
 ### Plugin Load/Unload Events
-Register [`DynamicPluginListener`](upsource:///platform/core-api/src/com/intellij/ide/plugins/DynamicPluginListener.kt) [application listener](plugin_listeners.md) to receive updates on plugin load/unload events.
+Register [`DynamicPluginListener`](%gh-ic%/platform/core-api/src/com/intellij/ide/plugins/DynamicPluginListener.kt) [application listener](plugin_listeners.md) to receive updates on plugin load/unload events.
 
 This can be used to e.g., cancel long-running activities or disallow unload due to ongoing processes.
 

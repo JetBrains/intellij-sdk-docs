@@ -62,7 +62,7 @@ Copy this file into the [plugin's resources folder](https://github.com/JetBrains
 
 ## Implement TemplateContextType
 
-A [`TemplateContextType`](upsource:///platform/analysis-api/src/com/intellij/codeInsight/template/TemplateContextType.java) tells the IntelliJ Platform where the Live Template is applicable: Markdown files.
+A [`TemplateContextType`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInsight/template/TemplateContextType.java) tells the IntelliJ Platform where the Live Template is applicable: Markdown files.
 Every context must have a unique `TemplateContextType` defined for it, and the Platform defines many context types out of the box.
 The `MarkdownContext` class defines it for Markdown files.
 Ultimately, a file's extension determines the applicable Markdown context.
@@ -111,7 +111,7 @@ The `file` attribute in the `defaultLiveTemplates` element specifies `path/filen
 
 <tab title="Versions 2019.3 and Earlier">
 
-The `MarkdownTemplateProvider` implementing [`DefaultLiveTemplatesProvider`](upsource:///platform/lang-impl/src/com/intellij/codeInsight/template/impl/DefaultLiveTemplatesProvider.java) tells the Platform where to find the Live Template settings file.
+The `MarkdownTemplateProvider` implementing [`DefaultLiveTemplatesProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/template/impl/DefaultLiveTemplatesProvider.java) tells the Platform where to find the Live Template settings file.
 Make sure to include the full path to the file, relative to the <path>src/main/resources</path> directory, excluding the file extension.
 
 ```java

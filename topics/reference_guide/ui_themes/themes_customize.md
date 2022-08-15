@@ -18,7 +18,7 @@ Colors are defined by six-digit RGB or eight-digit RGBA hexadecimal notation.
 
 ### UI Theme Reference Implementations
 When learning new syntax, it is often useful to have some existing implementations for reference.
-For example, refer to the [Theme description file](upsource:///platform/platform-resources/src/themes/HighContrast.theme.json) for the IntelliJ IDEA _High Contrast_ Theme.
+For example, refer to the [Theme description file](%gh-ic%/platform/platform-resources/src/themes/HighContrast.theme.json) for the IntelliJ IDEA _High Contrast_ Theme.
 It may also help to review some of the [UI Themes available](https://plugins.jetbrains.com/search?headline=164-theme&tags=Theme) at the JetBrains Marketplace.
 
 ## Defining Named Colors
@@ -209,7 +209,7 @@ The 2019.1 release control keys are compatible with release 2019.2 and later ver
 
 Methods for identifying UI control keys are in the [Finding Attribute Keys for UI Controls](#finding-attribute-keys-for-ui-controls) section.
 
-For example, here is an excerpt from the IntelliJ Platform [High Contrast Theme](upsource:///platform/platform-resources/src/themes/HighContrast.theme.json):
+For example, here is an excerpt from the IntelliJ Platform [High Contrast Theme](%gh-ic%/platform/platform-resources/src/themes/HighContrast.theme.json):
 Note that a Theme file can mix versions of `property` identifiers:
 * The first three `property` entries are recognized by release 2019.1 and ignored by subsequent releases because they are defined by new `property` identifiers.
 * The `underlineColor` `property` is recognized by release 2019.1 and subsequent releases.

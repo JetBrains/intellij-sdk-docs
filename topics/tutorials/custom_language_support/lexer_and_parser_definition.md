@@ -34,7 +34,7 @@ After that, the IDE generates the lexer under the <path>gen</path> directory, fo
 ## Define a Lexer Adapter
 
 The JFlex lexer needs to be adapted to the IntelliJ Platform Lexer API.
-This is done by subclassing [`FlexAdapter`](upsource:///platform/core-api/src/com/intellij/lexer/FlexAdapter.java).
+This is done by subclassing [`FlexAdapter`](%gh-ic%/platform/core-api/src/com/intellij/lexer/FlexAdapter.java).
 
 ```java
 ```
@@ -50,7 +50,7 @@ The `SimpleFile` implementation is the top-level node of the [tree of `PsiElemen
 
 ## Define a Parser
 
-The Simple Language parser is defined by subclassing [`ParserDefinition`](upsource:///platform/core-api/src/com/intellij/lang/ParserDefinition.java).
+The Simple Language parser is defined by subclassing [`ParserDefinition`](%gh-ic%/platform/core-api/src/com/intellij/lang/ParserDefinition.java).
 
 ```java
 ```

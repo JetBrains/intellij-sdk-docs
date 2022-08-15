@@ -21,8 +21,8 @@ The [conditional_operator_intention](https://github.com/JetBrains/intellij-sdk-c
 
 - How to analyze a [PSI tree](psi_files.md).
 - How to find a Java token of interest in the PSI tree.
-- How to invoke a quick fix action for a token element under cursor using the [`PsiElementBaseIntentionAction`](upsource:///platform/lang-api/src/com/intellij/codeInsight/intention/PsiElementBaseIntentionAction.java) class.
-- How to create a JUnit test for this plugin using the [`IdeaTestFixtureFactory`](upsource:///platform/testFramework/src/com/intellij/testFramework/fixtures/IdeaTestFixtureFactory.java) class.
+- How to invoke a quick fix action for a token element under cursor using the [`PsiElementBaseIntentionAction`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/intention/PsiElementBaseIntentionAction.java) class.
+- How to create a JUnit test for this plugin using the [`IdeaTestFixtureFactory`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/fixtures/IdeaTestFixtureFactory.java) class.
 
 ## Sample Plugin
 

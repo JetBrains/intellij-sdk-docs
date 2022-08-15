@@ -20,13 +20,13 @@ Light and heavy tests use different base classes or fixture classes, as describe
 
 The standard way of writing a light test is to extend the following classes:
 
-* [`BasePlatformTestCase`](upsource:///platform/testFramework/src/com/intellij/testFramework/fixtures/BasePlatformTestCase.java) (2019.2 and later) for tests that don't have any Java dependencies.
-  For plugins using pre-2019.2 versions use [`LightPlatformCodeInsightFixtureTestCase`](upsource:///platform/testFramework/src/com/intellij/testFramework/fixtures/LightPlatformCodeInsightFixtureTestCase.java).
-* [`LightJavaCodeInsightFixtureTestCase`](upsource:///java/testFramework/src/com/intellij/testFramework/fixtures/LightJavaCodeInsightFixtureTestCase.java) (2019.2 and later) for tests that require the Java PSI or any related functionality.
-  For plugins using pre-2019.2 versions use [`LightCodeInsightFixtureTestCase`](upsource:///java/testFramework/src/com/intellij/testFramework/fixtures/LightCodeInsightFixtureTestCase.java).
+* [`BasePlatformTestCase`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/fixtures/BasePlatformTestCase.java) (2019.2 and later) for tests that don't have any Java dependencies.
+  For plugins using pre-2019.2 versions use [`LightPlatformCodeInsightFixtureTestCase`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/fixtures/LightPlatformCodeInsightFixtureTestCase.java).
+* [`LightJavaCodeInsightFixtureTestCase`](%gh-ic%/java/testFramework/src/com/intellij/testFramework/fixtures/LightJavaCodeInsightFixtureTestCase.java) (2019.2 and later) for tests that require the Java PSI or any related functionality.
+  For plugins using pre-2019.2 versions use [`LightCodeInsightFixtureTestCase`](%gh-ic%/java/testFramework/src/com/intellij/testFramework/fixtures/LightCodeInsightFixtureTestCase.java).
 
 When writing a light test, you can specify the project's requirements that you need to have in your test, such as the module type, the configured [SDK](sdk.md), [facets](facet.md), [libraries](library.md), etc.
-You do so by extending the [`LightProjectDescriptor`](upsource:///platform/testFramework/src/com/intellij/testFramework/LightProjectDescriptor.java) class and returning your project descriptor (usually stored in `static final` field) from `getProjectDescriptor()`.
+You do so by extending the [`LightProjectDescriptor`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/LightProjectDescriptor.java) class and returning your project descriptor (usually stored in `static final` field) from `getProjectDescriptor()`.
 
 If your plugin builds on top of Java support, please see [](testing_faq.md#how-to-test-a-jvm-language) to set up your test environment to obtain the required _Mock JDK_ automatically.
 
@@ -38,7 +38,7 @@ Before executing each test, the project instance will be reused if the test case
 >
 {type="note"}
 
-> In 2019.3, `PlatformTestCase` has been renamed to [`HeavyPlatformTestCase`](upsource:///platform/testFramework/src/com/intellij/testFramework/HeavyPlatformTestCase.java) reflecting its "heavy test" characteristics.
+> In 2019.3, `PlatformTestCase` has been renamed to [`HeavyPlatformTestCase`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/HeavyPlatformTestCase.java) reflecting its "heavy test" characteristics.
 >
 {type="note"}
 

@@ -5,7 +5,7 @@
 When writing plugin tests, a common task is testing various kinds of highlighting (inspections, annotators, parser error highlighting, etc.).
 The IntelliJ Platform provides a dedicated utility and markup format for this task.
 
-To test the highlighting for the file currently loaded into the in-memory editor, invoke [`CodeInsightTestFixture.checkHighlighting()`](upsource:///platform/testFramework/src/com/intellij/testFramework/fixtures/CodeInsightTestFixture.java).
+To test the highlighting for the file currently loaded into the in-memory editor, invoke [`CodeInsightTestFixture.checkHighlighting()`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/fixtures/CodeInsightTestFixture.java).
 The parameters to the method specify which severities should be taken into account when comparing the results with the expected results: errors are always taken into account, whereas warnings, weak warnings, and infos are optional.
 To ignore verifying additional highlighting, set parameter `ignoreExtraHighlighting` to `true`.
 
@@ -21,7 +21,7 @@ This is done by calling `CodeInsightTestFixture.enableInspections()` in the setu
 
 ### Syntax Highlighting
 
-To test syntax highlighting provided by [Lexer](implementing_lexer.md), use [`EditorTestUtil.testFileSyntaxHighlighting()`](upsource:///platform/testFramework/src/com/intellij/testFramework/EditorTestUtil.java).
+To test syntax highlighting provided by [Lexer](implementing_lexer.md), use [`EditorTestUtil.testFileSyntaxHighlighting()`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/EditorTestUtil.java).
 
 ## Expected Highlighting Results
 
@@ -63,9 +63,9 @@ The tag can also have the following optional attributes.
 * `tooltip` expected tooltip message
 
 **Visual**
-* `textAttributesKey` expected [`TextAttributesKey`](upsource:///platform/core-api/src/com/intellij/openapi/editor/colors/TextAttributesKey.java) referenced by its `externalName`
+* `textAttributesKey` expected [`TextAttributesKey`](%gh-ic%/platform/core-api/src/com/intellij/openapi/editor/colors/TextAttributesKey.java) referenced by its `externalName`
 * `foregroundColor`, `backgroundColor`, `effectColor` expected colors for the highlighting
-* `effectType` expected effect type for the highlighting (see [`EffectType`](upsource:///platform/core-api/src/com/intellij/openapi/editor/markup/EffectType.java))
+* `effectType` expected effect type for the highlighting (see [`EffectType`](%gh-ic%/platform/core-api/src/com/intellij/openapi/editor/markup/EffectType.java))
 * `fontType` expected font style for the highlighting (`0` - normal, `1` - bold, `2` - italic, `3` - bold italic)
 
 ### Special Cases

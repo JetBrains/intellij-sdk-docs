@@ -21,7 +21,7 @@ This file contains a Simple Language reference within the Java code at `<caret>`
 {src="simple_language_plugin/src/test/testData/CompleteTestData.java"}
 
 ## Define a Test
-Subclass [`LightJavaCodeInsightFixtureTestCase`](upsource:///java/testFramework/src/com/intellij/testFramework/fixtures/LightJavaCodeInsightFixtureTestCase.java) to create `SimpleCodeInsightTest`.
+Subclass [`LightJavaCodeInsightFixtureTestCase`](%gh-ic%/java/testFramework/src/com/intellij/testFramework/fixtures/LightJavaCodeInsightFixtureTestCase.java) to create `SimpleCodeInsightTest`.
 Override `getTestDataPath()`, and return the path from the root of this plugin module to the <path>testData</path> directory.
 
 ```java

@@ -58,16 +58,16 @@ It includes templates located in the <path>fileTemplates/j2ee</path> directory a
 Note that the <path>j2ee</path> directory name is historical and unrelated to the J2EE technology.
 This category is intended for templates that are not used for creating core language entities or are used less frequently by users, e.g., a specific XML configuration file, a framework-specific class in Java language, etc.
 To include file templates in the <control>Other</control> section of the <menupath>Settings/Preferences | Editor | File and Code Templates</menupath> settings page, provide an implementation of the
-[`FileTemplateGroupDescriptorFactory`](upsource:///platform/lang-api/src/com/intellij/ide/fileTemplates/FileTemplateGroupDescriptorFactory.java)
+[`FileTemplateGroupDescriptorFactory`](%gh-ic%/platform/lang-api/src/com/intellij/ide/fileTemplates/FileTemplateGroupDescriptorFactory.java)
 and register it via the `com.intellij.fileTemplateGroup` EP.
 
 **Example**:
-[`MavenFileTemplateGroupFactory`](upsource:///plugins/maven/src/main/java/org/jetbrains/idea/maven/utils/MavenFileTemplateGroupFactory.java)
+[`MavenFileTemplateGroupFactory`](%gh-ic%/plugins/maven/src/main/java/org/jetbrains/idea/maven/utils/MavenFileTemplateGroupFactory.java)
 
 Note that
-[`FileTemplateGroupDescriptor`](upsource:///platform/lang-api/src/com/intellij/ide/fileTemplates/FileTemplateGroupDescriptor.java)
+[`FileTemplateGroupDescriptor`](%gh-ic%/platform/lang-api/src/com/intellij/ide/fileTemplates/FileTemplateGroupDescriptor.java)
 is a subclass of
-[`FileTemplateDescriptor`](upsource:///platform/core-api/src/com/intellij/ide/fileTemplates/FileTemplateDescriptor.java)`,
+[`FileTemplateDescriptor`](%gh-ic%/platform/core-api/src/com/intellij/ide/fileTemplates/FileTemplateDescriptor.java)`,
 which allows creating nested groups.
 
 ## Creating File Template Description
@@ -81,7 +81,7 @@ Example:
 
 The description file must be located in the same directory as the template file.
 It is recommended to follow the convention from the
-[`default.html`](upsource:///platform/platform-resources-en/src/fileTemplates/default.html)
+[`default.html`](%gh-ic%/platform/platform-resources-en/src/fileTemplates/default.html)
 file.
 
 ## Providing Default File Template Properties
@@ -89,9 +89,9 @@ file.
 A file template body can use a set of [predefined properties](https://www.jetbrains.com/help/idea/file-template-variables.html#predefined_template_variables) exposed by the IntelliJ Platform out of the box.
 Some languages or frameworks may require additional properties exposed to existing templates.
 To provide custom properties, implement
-[`DefaultTemplatePropertiesProvider`](upsource:///platform/lang-api/src/com/intellij/ide/fileTemplates/DefaultTemplatePropertiesProvider.java)
+[`DefaultTemplatePropertiesProvider`](%gh-ic%/platform/lang-api/src/com/intellij/ide/fileTemplates/DefaultTemplatePropertiesProvider.java)
 and register it via the `com.intellij.defaultTemplatePropertiesProvider` EP.
 
 **Example**: Java Plugin's
-[`TemplatePackagePropertyProvider`](upsource:///java/java-impl/src/com/intellij/ide/fileTemplates/TemplatePackagePropertyProvider.java)
+[`TemplatePackagePropertyProvider`](%gh-ic%/java/java-impl/src/com/intellij/ide/fileTemplates/TemplatePackagePropertyProvider.java)
 providing `PACKAGE_NAME` property based on the directory a file is created in.

@@ -25,27 +25,27 @@ When accessing an index, specify the key you're interested in and get back the l
 
 ## Implementing a File-Based Index
 
-> A relatively simple file-based index implementation is the [UI Designer bound forms index](upsource:///plugins/ui-designer/src/com/intellij/uiDesigner/binding/FormClassIndex.java), storing FQN of bound implementation class for [GUI Designer](https://www.jetbrains.com/help/idea/gui-designer-basics.html) <path>.form</path> files.
+> A relatively simple file-based index implementation is the [UI Designer bound forms index](%gh-ic%/plugins/ui-designer/src/com/intellij/uiDesigner/binding/FormClassIndex.java), storing FQN of bound implementation class for [GUI Designer](https://www.jetbrains.com/help/idea/gui-designer-basics.html) <path>.form</path> files.
 >
 {type="tip"}
 
-Each specific index implementation is a class extending [`FileBasedIndexExtension`](upsource:///platform/indexing-api/src/com/intellij/util/indexing/FileBasedIndexExtension.java) registered via `com.intellij.fileBasedIndex` extension point.
+Each specific index implementation is a class extending [`FileBasedIndexExtension`](%gh-ic%/platform/indexing-api/src/com/intellij/util/indexing/FileBasedIndexExtension.java) registered via `com.intellij.fileBasedIndex` extension point.
 
 An implementation of a file-based index consists of the following main parts:
 
-* `getIndexer()` returns the [`DataIndexer`](upsource:///platform/util/src/com/intellij/util/indexing/DataIndexer.java) implementation actually responsible for building a set of key/value pairs based on file content.
-* `getKeyDescriptor()` returns the [`KeyDescriptor`](upsource:///platform/util/src/com/intellij/util/io/KeyDescriptor.java) responsible for comparing keys and storing them in a serialized binary format.
-   Probably the most commonly used implementation is [`EnumeratorStringDescriptor`](upsource:///platform/util/src/com/intellij/util/io/EnumeratorStringDescriptor.java), which is designed for storing identifiers efficiently.
-* `getValueExternalizer()` returns the [`DataExternalizer`](upsource:///platform/util/src/com/intellij/util/io/DataExternalizer.java) responsible for storing values in a serialized binary format.
+* `getIndexer()` returns the [`DataIndexer`](%gh-ic%/platform/util/src/com/intellij/util/indexing/DataIndexer.java) implementation actually responsible for building a set of key/value pairs based on file content.
+* `getKeyDescriptor()` returns the [`KeyDescriptor`](%gh-ic%/platform/util/src/com/intellij/util/io/KeyDescriptor.java) responsible for comparing keys and storing them in a serialized binary format.
+   Probably the most commonly used implementation is [`EnumeratorStringDescriptor`](%gh-ic%/platform/util/src/com/intellij/util/io/EnumeratorStringDescriptor.java), which is designed for storing identifiers efficiently.
+* `getValueExternalizer()` returns the [`DataExternalizer`](%gh-ic%/platform/util/src/com/intellij/util/io/DataExternalizer.java) responsible for storing values in a serialized binary format.
 * `getInputFilter()` allows restricting the indexing only to a certain set of files.
-  Consider using [`DefaultFileTypeSpecificInputFilter`](upsource:///platform/indexing-api/src/com/intellij/util/indexing/DefaultFileTypeSpecificInputFilter.java).
+  Consider using [`DefaultFileTypeSpecificInputFilter`](%gh-ic%/platform/indexing-api/src/com/intellij/util/indexing/DefaultFileTypeSpecificInputFilter.java).
 * `getName()` returns a unique index ID.
   Consider using fully qualified index class name to not clash with other plugins defining index with the same ID, e.g.,&nbsp;`com.example.myplugin.indexing.MyIndex`.
 * `getVersion()` returns the version of the index implementation.
   The index is automatically rebuilt if the current version differs from the version of the index implementation used to build it.
 
-If there's no value to associate with the files (i.e., value type is `Void`), simplify the implementation by extending [`ScalarIndexExtension`](upsource:///platform/indexing-api/src/com/intellij/util/indexing/ScalarIndexExtension.java).
-In case of single value per file, extend from [`SingleEntryFileBasedIndexExtension`](upsource:///platform/indexing-api/src/com/intellij/util/indexing/SingleEntryFileBasedIndexExtension.java).
+If there's no value to associate with the files (i.e., value type is `Void`), simplify the implementation by extending [`ScalarIndexExtension`](%gh-ic%/platform/indexing-api/src/com/intellij/util/indexing/ScalarIndexExtension.java).
+In case of single value per file, extend from [`SingleEntryFileBasedIndexExtension`](%gh-ic%/platform/indexing-api/src/com/intellij/util/indexing/SingleEntryFileBasedIndexExtension.java).
 
 Please see also [Improving indexing performance](indexing_and_psi_stubs.md#improving-indexing-performance).
 
@@ -62,7 +62,7 @@ Please see also [Improving indexing performance](indexing_and_psi_stubs.md#impro
 
 ## Accessing a File-Based Index
 
-Access to file-based indexes is performed through the [`FileBasedIndex`](upsource:///platform/indexing-api/src/com/intellij/util/indexing/FileBasedIndex.java) class.
+Access to file-based indexes is performed through the [`FileBasedIndex`](%gh-ic%/platform/indexing-api/src/com/intellij/util/indexing/FileBasedIndex.java) class.
 
 > Please note index access is restricted during [Dumb Mode](indexing_and_psi_stubs.md#dumb-mode).
 >
@@ -92,14 +92,14 @@ The IntelliJ Platform contains several standard file-based indexes.
 The most useful indexes for plugin developers are:
 
 ### Word Index
-Generally, the word index should be accessed indirectly by using helper methods of the [`PsiSearchHelper`](upsource:///platform/indexing-api/src/com/intellij/psi/search/PsiSearchHelper.java) class.
+Generally, the word index should be accessed indirectly by using helper methods of the [`PsiSearchHelper`](%gh-ic%/platform/indexing-api/src/com/intellij/psi/search/PsiSearchHelper.java) class.
 
 ### File Name Index
-[`FilenameIndex`](upsource:///platform/indexing-api/src/com/intellij/psi/search/FilenameIndex.java) provides a quick way to find all files matching a specific file name.
+[`FilenameIndex`](%gh-ic%/platform/indexing-api/src/com/intellij/psi/search/FilenameIndex.java) provides a quick way to find all files matching a specific file name.
 
 ### File Type Index
-[`FileTypeIndex`](upsource:///platform/indexing-api/src/com/intellij/psi/search/FileTypeIndex.java) serves a similar goal: it allows to find all files of a particular [`FileType`](upsource:///platform/core-api/src/com/intellij/openapi/fileTypes/FileType.java) quickly.
+[`FileTypeIndex`](%gh-ic%/platform/indexing-api/src/com/intellij/psi/search/FileTypeIndex.java) serves a similar goal: it allows to find all files of a particular [`FileType`](%gh-ic%/platform/core-api/src/com/intellij/openapi/fileTypes/FileType.java) quickly.
 
 ## Additional Index Roots
 
-To add additional files/directories to be indexed, implement [`IndexableSetContributor`](upsource:///platform/indexing-api/src/com/intellij/util/indexing/IndexableSetContributor.java) and register in [`com.intellij.indexedRootsProvider`](https://jb.gg/ipe?extensions=com.intellij.indexedRootsProvider) extension point.
+To add additional files/directories to be indexed, implement [`IndexableSetContributor`](%gh-ic%/platform/indexing-api/src/com/intellij/util/indexing/IndexableSetContributor.java) and register in [`com.intellij.indexedRootsProvider`](https://jb.gg/ipe?extensions=com.intellij.indexedRootsProvider) extension point.

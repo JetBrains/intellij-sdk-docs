@@ -4,9 +4,9 @@
 
 The test fixture creates a *test project* environment.
 Unless you customize the project creation, the test project will have one module with one source root called <path>src</path>.
-The test project files exist either in a temporary directory or in an in-memory file system, depending on which implementation of [`TempDirTestFixture`](upsource:///platform/testFramework/src/com/intellij/testFramework/fixtures/TempDirTestFixture.java) is used.
+The test project files exist either in a temporary directory or in an in-memory file system, depending on which implementation of [`TempDirTestFixture`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/fixtures/TempDirTestFixture.java) is used.
 
-[`BasePlatformTestCase`](upsource:///platform/testFramework/src/com/intellij/testFramework/fixtures/BasePlatformTestCase.java) (renamed from `LightPlatformCodeInsightFixtureTestCase` in 2019.2) uses an in-memory implementation; if you set up the test environment by calling `IdeaTestFixtureFactory.createCodeInsightFixture()`, you can specify the implementation to use.
+[`BasePlatformTestCase`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/fixtures/BasePlatformTestCase.java) (renamed from `LightPlatformCodeInsightFixtureTestCase` in 2019.2) uses an in-memory implementation; if you set up the test environment by calling `IdeaTestFixtureFactory.createCodeInsightFixture()`, you can specify the implementation to use.
 
 > If your tests use the in-memory implementation, and you abort the execution of your tests, the persisted filesystem caches may get out of sync with the in-memory structures, and you may get spurious errors in your tests.
 > If you get an unexpected error after a series of successful runs, **try rerunning the test**, and if that doesn't help, **delete the "system" subdirectory** in your [sandbox directory](ide_development_instance.md#the-development-instance-sandbox-directory).
@@ -32,14 +32,14 @@ The default implementation assumes running as part of the IntelliJ Platform sour
 >
 {type="note"}
 
-To copy files or directories from your <path>testdata</path> directory to the test project directory, you can use the `copyFileToProject()` and `copyDirectoryToProject()` methods from [`CodeInsightTestFixture`](upsource:///platform/testFramework/src/com/intellij/testFramework/fixtures/CodeInsightTestFixture.java).
+To copy files or directories from your <path>testdata</path> directory to the test project directory, you can use the `copyFileToProject()` and `copyDirectoryToProject()` methods from [`CodeInsightTestFixture`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/fixtures/CodeInsightTestFixture.java).
 
 Most operations in plugin tests require a file open in the in-memory editor, in which highlighting, completion, and other operations will be performed.
 The in-memory editor instance is returned by `CodeInsightTestFixture.getEditor()`.
 To copy a file from the <path>testdata</path> directory to the test project directory and immediately open it in the editor, you can use the `CodeInsightTestFixture.configureByFile()` or `configureByFiles()` methods.
 The latter copies multiple files to the test project directory and opens the *first* of them in the in-memory editor.
 
-Alternatively, you can use one of the other methods, which take parameters annotated with [`@TestDataFile`](upsource:///platform/testFramework/src/com/intellij/testFramework/TestDataFile.java).
+Alternatively, you can use one of the other methods, which take parameters annotated with [`@TestDataFile`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/TestDataFile.java).
 These methods copy the specified files from the <path>testdata</path> directory to the test project directory, open the first of the specified files in the in-memory editor, and then perform the requested operation such as highlighting or code completion.
 
 > The IDE supports smart navigation between test code and related test data file(s); see this [blog post](https://blog.jetbrains.com/platform/2017/10/improvements-in-testing-intellij-platform-plugins/) for more details.

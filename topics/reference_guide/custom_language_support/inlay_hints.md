@@ -31,34 +31,34 @@ while the second one allows for the placement of inline and block inlays with cu
 ### Simple Text Inlay Hints
 
 Implement
-[`InlayParameterHintsProvider`](upsource:///platform/lang-api/src/com/intellij/codeInsight/hints/InlayParameterHintsProvider.java)
+[`InlayParameterHintsProvider`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/hints/InlayParameterHintsProvider.java)
 and register it as `com.intellij.codeInsight.parameterNameHints` EP.
 The API documentation of `InlayParameterHintsProvider` explains in detail the rationale behind all methods.
 
 Examples can be found in the following IntelliJ Platform plugins:
 
-- [`GroovyInlayParameterHintsProvider`](upsource:///plugins/groovy/src/org/jetbrains/plugins/groovy/codeInsight/hint/GroovyInlayParameterHintsProvider.kt)
+- [`GroovyInlayParameterHintsProvider`](%gh-ic%/plugins/groovy/src/org/jetbrains/plugins/groovy/codeInsight/hint/GroovyInlayParameterHintsProvider.kt)
   implements inline hints for Groovy methods.
-- [`KotlinInlayParameterHintsProvider`](upsource:///plugins/kotlin/idea/src/org/jetbrains/kotlin/idea/codeInsight/hints/KotlinInlayParameterHintsProvider.kt)
+- [`KotlinInlayParameterHintsProvider`](%gh-ic%/plugins/kotlin/idea/src/org/jetbrains/kotlin/idea/codeInsight/hints/KotlinInlayParameterHintsProvider.kt)
   implements parameter hints for Kotlin language.
 
 ### Advanced Inlay Hints
 
 Implement
-[`InlayHintsProvider`](upsource:///platform/lang-api/src/com/intellij/codeInsight/hints/InlayHintsProvider.kt)
+[`InlayHintsProvider`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/hints/InlayHintsProvider.kt)
 and register it as `com.intellij.codeInsight.inlayProvider` EP.
 The API documentation of `InlayHintsProvider` explains in detail the rationale behind all methods.
 
 Examples can be found in the following IntelliJ Platform plugins:
 
 - Groovy provides several implementations of this EP that can serve as a reference:
-  [`GroovyParameterTypeHintsInlayProvider`](upsource:///plugins/groovy/src/org/jetbrains/plugins/groovy/codeInsight/hint/types/GroovyParameterTypeHintsInlayProvider.kt),
-  [`GroovyLocalVariableTypeHintsInlayProvider`](upsource:///plugins/groovy/src/org/jetbrains/plugins/groovy/codeInsight/hint/types/GroovyLocalVariableTypeHintsInlayProvider.kt),
-  and [`GroovyImplicitNullArgumentHintProvider`](upsource:///plugins/groovy/src/org/jetbrains/plugins/groovy/codeInsight/hint/GroovyImplicitNullArgumentHintProvider.kt).
+  [`GroovyParameterTypeHintsInlayProvider`](%gh-ic%/plugins/groovy/src/org/jetbrains/plugins/groovy/codeInsight/hint/types/GroovyParameterTypeHintsInlayProvider.kt),
+  [`GroovyLocalVariableTypeHintsInlayProvider`](%gh-ic%/plugins/groovy/src/org/jetbrains/plugins/groovy/codeInsight/hint/types/GroovyLocalVariableTypeHintsInlayProvider.kt),
+  and [`GroovyImplicitNullArgumentHintProvider`](%gh-ic%/plugins/groovy/src/org/jetbrains/plugins/groovy/codeInsight/hint/GroovyImplicitNullArgumentHintProvider.kt).
 - Markdown uses this EP for _decorating_ tables in
-  [`MarkdownTableInlayProvider`](upsource:///plugins/markdown/core/src/org/intellij/plugins/markdown/editor/tables/ui/MarkdownTableInlayProvider.kt).
+  [`MarkdownTableInlayProvider`](%gh-ic%/plugins/markdown/core/src/org/intellij/plugins/markdown/editor/tables/ui/MarkdownTableInlayProvider.kt).
 - For a more complex example, see
-  [`KotlinLambdasHintsProvider`](upsource:///plugins/kotlin/idea/src/org/jetbrains/kotlin/idea/codeInsight/hints/KotlinLambdasHintsProvider.kt),
+  [`KotlinLambdasHintsProvider`](%gh-ic%/plugins/kotlin/idea/src/org/jetbrains/kotlin/idea/codeInsight/hints/KotlinLambdasHintsProvider.kt),
   its parent class and all implementations.
 
 ### Further Tips
@@ -67,16 +67,16 @@ Examples can be found in the following IntelliJ Platform plugins:
    [Settings | Editor | Inlay Hints](https://www.jetbrains.com/help/idea/inlay-hints.html) and check out inlays that have already been implemented.
    It gives insight into what’s possible.
 2. If you want to support multiple languages with a single type of inlay hints, please see
-   [`InlayHintsProviderFactory`](upsource:///platform/lang-api/src/com/intellij/codeInsight/hints/InlayHintsProviderFactory.kt)
+   [`InlayHintsProviderFactory`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/hints/InlayHintsProviderFactory.kt)
 3. If you want to suppress inlay hints in specific places, please implement
-   [`ParameterNameHintsSuppressor`](upsource:///platform/lang-api/src/com/intellij/codeInsight/hints/ParameterNameHintsSuppressor.kt)
+   [`ParameterNameHintsSuppressor`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/hints/ParameterNameHintsSuppressor.kt)
    and register it as `com.intellij.codeInsight.parameterNameHintsSuppressor` EP.
 4. For testing inlay hints, see
-   [`InlayHintsProviderTestCase`](upsource:///platform/testFramework/src/com/intellij/testFramework/utils/inlays/InlayHintsProviderTestCase.kt)
-   and [`InlayParameterHintsTest`](upsource:///platform/testFramework/src/com/intellij/testFramework/utils/inlays/InlayParameterHintsTest.kt).
+   [`InlayHintsProviderTestCase`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/utils/inlays/InlayHintsProviderTestCase.kt)
+   and [`InlayParameterHintsTest`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/utils/inlays/InlayParameterHintsTest.kt).
 5. If you need to force inlay hints to update when using
-   [`DaemonCodeAnalyzer#restart()`](upsource:///platform/analysis-api/src/com/intellij/codeInsight/daemon/DaemonCodeAnalyzer.java),
+   [`DaemonCodeAnalyzer#restart()`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInsight/daemon/DaemonCodeAnalyzer.java),
    please use
-   [`ParameterHintsPassFactory#forceHintsUpdateOnNextPass()`](upsource:///platform/lang-impl/src/com/intellij/codeInsight/hints/ParameterHintsPassFactory.java)
+   [`ParameterHintsPassFactory#forceHintsUpdateOnNextPass()`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/hints/ParameterHintsPassFactory.java)
    before you call `restart()`.
    If you want to force an update on a specific editor, note that the method also has an overload that takes an editor instance.

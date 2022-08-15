@@ -12,10 +12,10 @@ The formatter controls spaces, indents, wrap, and alignment.
 
 ## Define a Block
 
-The formatting model represents the formatting structure of a file as a tree of [`Block`](upsource:///platform/code-style-api/src/com/intellij/formatting/Block.java) objects, with associated indent, wrap, alignment and spacing settings.
+The formatting model represents the formatting structure of a file as a tree of [`Block`](%gh-ic%/platform/code-style-api/src/com/intellij/formatting/Block.java) objects, with associated indent, wrap, alignment and spacing settings.
 The goal is to cover each PSI element with such a block.
 Since each block builds its children's blocks, it can generate extra blocks or skip any PSI elements.
-Define `SimpleBlock` based on [`AbstractBlock`](upsource:///platform/code-style-impl/src/com/intellij/psi/formatter/common/AbstractBlock.java).
+Define `SimpleBlock` based on [`AbstractBlock`](%gh-ic%/platform/code-style-impl/src/com/intellij/psi/formatter/common/AbstractBlock.java).
 
 ```java
 ```
@@ -36,7 +36,7 @@ foo = bar
 ```
 </compare>
 
-Create `SimpleFormattingModelBuilder` by implementing [`FormattingModelBuilder`](upsource:///platform/code-style-api/src/com/intellij/formatting/FormattingModelBuilder.java).
+Create `SimpleFormattingModelBuilder` by implementing [`FormattingModelBuilder`](%gh-ic%/platform/code-style-api/src/com/intellij/formatting/FormattingModelBuilder.java).
 
 ```java
 ```

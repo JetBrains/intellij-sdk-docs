@@ -36,7 +36,7 @@ To define an application-level listener, add the following section to your <path
 ```
 
 The `topic` attribute specifies the listener interface corresponding to the type of events you want to receive.
-Usually, this is the interface used as the type parameter of the [`Topic`](upsource:///platform/extensions/src/com/intellij/util/messages/Topic.java) instance for the type of events.
+Usually, this is the interface used as the type parameter of the [`Topic`](%gh-ic%/platform/extensions/src/com/intellij/util/messages/Topic.java) instance for the type of events.
 The `class` attribute specifies the class in your plugin that implements the listener interface and receives the events.
 
 As a specific example, if you want to receive events about all [Virtual File System](virtual_file_system.md) changes, you need to implement the `BulkFileListener` interface, corresponding to the topic `VirtualFileManager.VFS_CHANGES`.
@@ -91,7 +91,7 @@ They can be used to listen to project-level events, for example, [tool window](t
 </idea-plugin>
 ```
 
-The class implementing the listener interface can define a one-argument constructor accepting a [`Project`](upsource:///platform/core-api/src/com/intellij/openapi/project/Project.java), and it will receive the instance of the project for which the listener is created:
+The class implementing the listener interface can define a one-argument constructor accepting a [`Project`](%gh-ic%/platform/core-api/src/com/intellij/openapi/project/Project.java), and it will receive the instance of the project for which the listener is created:
 
 ```java
 package myPlugin;
@@ -115,8 +115,8 @@ public class MyToolWindowListener implements ToolWindowManagerListener {
 Registration of listeners can be restricted using the following attributes:
 
 - `os` - allows restricting listener to given OS, e.g., `os="windows"` for Windows only (2020.1 and later)
-- `activeInTestMode` - set to `false` to disable listener if [`Application.isUnitTestMode()`](upsource:///platform/core-api/src/com/intellij/openapi/application/Application.java) returns `true`
-- `activeInHeadlessMode` - set to `false` to disable listener if [`Application.isHeadlessEnvironment()`](upsource:///platform/core-api/src/com/intellij/openapi/application/Application.java) returns `true`.
+- `activeInTestMode` - set to `false` to disable listener if [`Application.isUnitTestMode()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/Application.java) returns `true`
+- `activeInHeadlessMode` - set to `false` to disable listener if [`Application.isHeadlessEnvironment()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/Application.java) returns `true`.
   Also, covers `activeInTestMode` as test mode implies headless mode.
 
 

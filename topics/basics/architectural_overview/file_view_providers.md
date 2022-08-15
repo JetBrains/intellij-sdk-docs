@@ -2,9 +2,9 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-A file view provider ([`FileViewProvider`](upsource:///platform/core-api/src/com/intellij/psi/FileViewProvider.java)) manages access to multiple PSI trees within a single file.
+A file view provider ([`FileViewProvider`](%gh-ic%/platform/core-api/src/com/intellij/psi/FileViewProvider.java)) manages access to multiple PSI trees within a single file.
 
-For example, a JSPX page has a separate PSI tree for the Java code in it (`PsiJavaFile`), a separate tree for the XML code (`XmlFile`), and a separate tree for JSP as a whole ([`JspFile`](upsource:///java/jsp-openapi/src/com/intellij/psi/jsp/JspFile.java)).
+For example, a JSPX page has a separate PSI tree for the Java code in it (`PsiJavaFile`), a separate tree for the XML code (`XmlFile`), and a separate tree for JSP as a whole ([`JspFile`](%gh-ic%/java/jsp-openapi/src/com/intellij/psi/jsp/JspFile.java)).
 
 Each of the PSI trees covers the entire contents of the file and contains special "outer language elements" in the places where contents in a different language can be found.
 
@@ -14,8 +14,8 @@ A `FileViewProvider` instance corresponds to a single `VirtualFile`, a single `D
 
 | Context                         | API                                                                                                                        |
 |---------------------------------|----------------------------------------------------------------------------------------------------------------------------|
-| [PSI File](psi_files.md)        | [`PsiFile.getViewProvider()`](upsource:///platform/core-api/src/com/intellij/psi/PsiFile.java)                             |
-| [Virtual File](virtual_file.md) | [`PsiManager.getInstance(project).findViewProvider()`](upsource:///platform/core-api/src/com/intellij/psi/PsiManager.java) |
+| [PSI File](psi_files.md)        | [`PsiFile.getViewProvider()`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiFile.java)                             |
+| [Virtual File](virtual_file.md) | [`PsiManager.getInstance(project).findViewProvider()`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiManager.java) |
 
 ## What can I do with a FileViewProvider?
 
@@ -28,7 +28,7 @@ A `FileViewProvider` instance corresponds to a single `VirtualFile`, a single `D
 
 To create a file type that has multiple interspersing trees for different languages, a plugin must contain an extension to the `com.intellij.fileType.fileViewProviderFactory` extension point.
 
-Implement [`FileViewProviderFactory`](upsource:///platform/core-api/src/com/intellij/psi/FileViewProviderFactory.java) and return your `FileViewProvider` implementation from `createFileViewProvider()` method.
+Implement [`FileViewProviderFactory`](%gh-ic%/platform/core-api/src/com/intellij/psi/FileViewProviderFactory.java) and return your `FileViewProvider` implementation from `createFileViewProvider()` method.
 
 Register as follows in <path>plugin.xml</path>:
 

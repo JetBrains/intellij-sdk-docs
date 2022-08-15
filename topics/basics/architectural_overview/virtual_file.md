@@ -2,7 +2,7 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-A [`VirtualFile`](upsource:///platform/core-api/src/com/intellij/openapi/vfs/VirtualFile.java) (VF) is the IntelliJ Platform's representation of a file in a [Virtual File System (VFS)](virtual_file_system.md).
+A [`VirtualFile`](%gh-ic%/platform/core-api/src/com/intellij/openapi/vfs/VirtualFile.java) (VF) is the IntelliJ Platform's representation of a file in a [Virtual File System (VFS)](virtual_file_system.md).
 
 Most commonly, a virtual file is a file in a local file system.
 However, the IntelliJ Platform supports multiple pluggable file system implementations, so virtual files can also represent classes in a JAR file, old revisions of files loaded from a version control repository, and so on.
@@ -14,10 +14,10 @@ Contents of a `VirtualFile` are treated as a stream of bytes, but concepts like 
 
 | Context                          | API                                                                                                                                                                                                                                                                                                                                          |
 |----------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [Action](basic_action_system.md) | [`AnActionEvent.getData(PlatformDataKeys.VIRTUAL_FILE)`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnActionEvent.java)<br/>[`AnActionEvent.getData(PlatformDataKeys.VIRTUAL_FILE_ARRAY)`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnActionEvent.java) for multiple selection |
-| [Document](documents.md)         | [`FileDocumentManager.getFile()`](upsource:///platform/core-api/src/com/intellij/openapi/fileEditor/FileDocumentManager.java)                                                                                                                                                                                                                |
-| [PSI File](psi_files.md)         | [`PsiFile.getVirtualFile()`](upsource:///platform/core-api/src/com/intellij/psi/PsiFile.java) (may return `null` if the PSI file exists only in memory)                                                                                                                                                                                      |
-| Local File System Path           | [`LocalFileSystem.findFileByIoFile()`](upsource:///platform/analysis-api/src/com/intellij/openapi/vfs/LocalFileSystem.java)<br/>[`VirtualFileManager.findFileByNioPath()`/`refreshAndFindFileByNioPath()`](upsource:///platform/core-api/src/com/intellij/openapi/vfs/VirtualFileManager.java) (2020.2+)                                     |
+| [Action](basic_action_system.md) | [`AnActionEvent.getData(PlatformDataKeys.VIRTUAL_FILE)`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnActionEvent.java)<br/>[`AnActionEvent.getData(PlatformDataKeys.VIRTUAL_FILE_ARRAY)`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnActionEvent.java) for multiple selection |
+| [Document](documents.md)         | [`FileDocumentManager.getFile()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/fileEditor/FileDocumentManager.java)                                                                                                                                                                                                                |
+| [PSI File](psi_files.md)         | [`PsiFile.getVirtualFile()`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiFile.java) (may return `null` if the PSI file exists only in memory)                                                                                                                                                                                      |
+| Local File System Path           | [`LocalFileSystem.findFileByIoFile()`](%gh-ic%/platform/analysis-api/src/com/intellij/openapi/vfs/LocalFileSystem.java)<br/>[`VirtualFileManager.findFileByNioPath()`/`refreshAndFindFileByNioPath()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/vfs/VirtualFileManager.java) (2020.2+)                                     |
 
 ## What can I do with it?
 
@@ -53,7 +53,7 @@ If one needs to create a file through VFS, use `VirtualFile.createChildData()` t
 >
 {type="note"}
 
-Implement [`BulkFileListener`](upsource:///platform/core-api/src/com/intellij/openapi/vfs/newvfs/BulkFileListener.java) and subscribe to the [message bus](messaging_infrastructure.md) topic `VirtualFileManager.VFS_CHANGES`.
+Implement [`BulkFileListener`](%gh-ic%/platform/core-api/src/com/intellij/openapi/vfs/newvfs/BulkFileListener.java) and subscribe to the [message bus](messaging_infrastructure.md) topic `VirtualFileManager.VFS_CHANGES`.
 For example:
 
 ```java
@@ -68,21 +68,21 @@ project.getMessageBus().connect().subscribe(VirtualFileManager.VFS_CHANGES,
 
 See [Message Infrastructure](messaging_infrastructure.md) and [Plugin Listeners](plugin_listeners.md) for more details.
 
-For a non-blocking alternative, starting with version 2019.2 of the platform, see [`AsyncFileListener`](upsource:///platform/core-api/src/com/intellij/openapi/vfs/AsyncFileListener.java).
+For a non-blocking alternative, starting with version 2019.2 of the platform, see [`AsyncFileListener`](%gh-ic%/platform/core-api/src/com/intellij/openapi/vfs/AsyncFileListener.java).
 
 ## Are there any utilities for analyzing and manipulating virtual files?
 
-[`VfsUtil`](upsource:///platform/analysis-api/src/com/intellij/openapi/vfs/VfsUtil.java) and [`VfsUtilCore`](upsource:///platform/core-api/src/com/intellij/openapi/vfs/VfsUtilCore.java) provide utility methods for analyzing files in the Virtual File System.
+[`VfsUtil`](%gh-ic%/platform/analysis-api/src/com/intellij/openapi/vfs/VfsUtil.java) and [`VfsUtilCore`](%gh-ic%/platform/core-api/src/com/intellij/openapi/vfs/VfsUtilCore.java) provide utility methods for analyzing files in the Virtual File System.
 
 For storing a large set of Virtual Files, use dedicated `VfsUtilCore.createCompactVirtualFileSet()`.
 
-Use [`ProjectLocator`](upsource:///platform/projectModel-api/src/com/intellij/openapi/project/ProjectLocator.java) to find the projects that contain a given virtual file.
+Use [`ProjectLocator`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/project/ProjectLocator.java) to find the projects that contain a given virtual file.
 
 ## How do I extend VFS?
 
-To provide an alternative file system implementation (for example, an FTP file system), implement the [`VirtualFileSystem`](upsource:///platform/core-api/src/com/intellij/openapi/vfs/VirtualFileSystem.java) class (most likely you'll also need to implement `VirtualFile`), and register your implementation via `com.intellij.virtualFileSystem` extension point (2019.2 and later) or [application component](plugin_components.md) for earlier versions.
+To provide an alternative file system implementation (for example, an FTP file system), implement the [`VirtualFileSystem`](%gh-ic%/platform/core-api/src/com/intellij/openapi/vfs/VirtualFileSystem.java) class (most likely you'll also need to implement `VirtualFile`), and register your implementation via `com.intellij.virtualFileSystem` extension point (2019.2 and later) or [application component](plugin_components.md) for earlier versions.
 
-To hook into operations performed in the local file system (for example, when developing a version control system integration that needs custom rename/move handling), implement [`LocalFileOperationsHandler`](upsource:///platform/analysis-api/src/com/intellij/openapi/vfs/LocalFileOperationsHandler.java) and register it via `LocalFileSystem.registerAuxiliaryFileOperationsHandler()`.
+To hook into operations performed in the local file system (for example, when developing a version control system integration that needs custom rename/move handling), implement [`LocalFileOperationsHandler`](%gh-ic%/platform/analysis-api/src/com/intellij/openapi/vfs/LocalFileOperationsHandler.java) and register it via `LocalFileSystem.registerAuxiliaryFileOperationsHandler()`.
 
 ## What are the rules for working with VFS?
 

@@ -37,7 +37,7 @@ See [](basic_action_system.md#registering-actions-in-pluginxml) for more informa
 
 The following sample shows how to use an `<add-to-group>` element to place a custom action group relative to an entry in the <menupath>Tools</menupath> menu.
 The attribute `relative-to-action` references the action `id` for `PopupDialogAction`, not a native IntelliJ menu entry.
-Rather `PopupDialogAction` is defined in the same [`plugin.xml`](https://github.com/JetBrains/intellij-sdk-code-samples/blob/main/action_basics/src/main/resources/META-INF/plugin.xml) file.
+Rather `PopupDialogAction` is defined in the same [`plugin.xml`](%gh-sdk-samples%/action_basics/src/main/resources/META-INF/plugin.xml) file.
 This group is placed after the single entry for the action `PopupDialogAction`, as defined in the tutorial [Creating Actions](working_with_custom_actions.md#registering-an-action-with-the-new-action-form).
 
 ```xml
@@ -99,11 +99,11 @@ This condition is needed because the custom action group is added to an IntelliJ
 
 ### Extending DefaultActionGroup
 
-The [`DefaultActionGroup`](upsource:///platform/platform-api/src/com/intellij/openapi/actionSystem/DefaultActionGroup.java) is an implementation of [`ActionGroup`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/ActionGroup.java).
+The [`DefaultActionGroup`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/actionSystem/DefaultActionGroup.java) is an implementation of [`ActionGroup`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/ActionGroup.java).
 The `DefaultActionGroup` class is used to add child actions and separators between them to a group.
 This class is used if a set of actions belonging to the group does not change at runtime.
 
-As an example, extend [`DefaultActionGroup`](upsource:///platform/platform-api/src/com/intellij/openapi/actionSystem/DefaultActionGroup.java)  to create the `CustomDefaultActionGroup` class in the `action_basics` code sample:
+As an example, extend [`DefaultActionGroup`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/actionSystem/DefaultActionGroup.java)  to create the `CustomDefaultActionGroup` class in the `action_basics` code sample:
 
 ```java
 public class CustomDefaultActionGroup extends DefaultActionGroup {
@@ -116,7 +116,7 @@ public class CustomDefaultActionGroup extends DefaultActionGroup {
 
 ### Registering the Custom Action Group
 
-As in the case with the static action group, the action `<group>` should be declared in the `<actions>` section of the <path>plugin.xml</path> file, for example, the [action_basics](https://github.com/JetBrains/intellij-sdk-code-samples/blob/main/action_basics/src/main/resources/META-INF/plugin.xml) plugin.
+As in the case with the static action group, the action `<group>` should be declared in the `<actions>` section of the <path>plugin.xml</path> file, for example, the [action_basics](%gh-sdk-samples%/action_basics/src/main/resources/META-INF/plugin.xml) plugin.
 For demonstration purposes, this implementation will use localization.
 
 The `<group>` element declaration below shows:
@@ -163,7 +163,7 @@ In the `<action>` element declaration below:
 </group>
 ```
 
-Now the translations for the `text` and `description` attributes must be provided in the resource bundle [`BasicActionsBundle.properties`](https://github.com/JetBrains/intellij-sdk-code-samples/blob/main/action_basics/src/main/resources/messages/BasicActionsBundle.properties) file according to [Localizing Actions and Groups](basic_action_system.md#localizing-actions-and-groups).
+Now the translations for the `text` and `description` attributes must be provided in the resource bundle [`BasicActionsBundle.properties`](%gh-sdk-samples%/action_basics/src/main/resources/messages/BasicActionsBundle.properties) file according to [Localizing Actions and Groups](basic_action_system.md#localizing-actions-and-groups).
 Note there are two sets of `text` and `description` translations, one for the action and one for the group.
 Conceivably, there could be another set of translations for the action if it used the `<override-text>` attribute.
 
@@ -199,13 +199,13 @@ The new group will also have an icon:
 
 ## Action Groups with Dynamic Actions Sets
 
-If a set of actions belonging to a custom group varies depending on the context, the group must extend [`ActionGroup`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/ActionGroup.java).
+If a set of actions belonging to a custom group varies depending on the context, the group must extend [`ActionGroup`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/ActionGroup.java).
 The set of actions in the `ActionGroup` is dynamically defined.
 
 ### Creating Variable Action Group
 
 To create a group of actions with a variable number of actions, extend `ActionGroup`.
-For example, as in the `action_basics` class [`DynamicActionGroup`](https://github.com/JetBrains/intellij-sdk-code-samples/blob/main/action_basics/src/main/java/org/intellij/sdk/action/DynamicActionGroup.java) code:
+For example, as in the `action_basics` class [`DynamicActionGroup`](%gh-sdk-samples%/action_basics/src/main/java/org/intellij/sdk/action/DynamicActionGroup.java) code:
 
 ```java
 public class DynamicActionGroup extends ActionGroup {
@@ -214,7 +214,7 @@ public class DynamicActionGroup extends ActionGroup {
 
 ### Registering a Variable Action Group
 
-To register the dynamic menu group, a `<group>` attribute needs to be placed in the `<actions>` section of [`plugin`.xml](https://github.com/JetBrains/intellij-sdk-code-samples/blob/main/action_basics/src/main/resources/META-INF/plugin.xml).
+To register the dynamic menu group, a `<group>` attribute needs to be placed in the `<actions>` section of [`plugin`.xml](%gh-sdk-samples%/action_basics/src/main/resources/META-INF/plugin.xml).
 When enabled, this group appears just below the [Static Grouped Actions](#binding-action-groups-to-ui-components) in the <menupath>Tools</menupath> menu:
 
 ```xml

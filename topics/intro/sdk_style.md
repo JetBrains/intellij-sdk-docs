@@ -118,20 +118,20 @@ General Markdown links have the default Markdown link style:
 
 #### Links to IntelliJ Platform Source
 
-Links to files in the IntelliJ Platform (`intellij-community`) repository use `upsource:///` instead of the full URL to the repository.
-The `upsource:///` URI effectively points to the root of the `intellij-community` repository.
-* `[README.md](upsource:///README.md)`{disable-links} links to general, non-code information files. ([README.md](upsource:///README.md))
+Links to files in the IntelliJ Platform (`intellij-community`) repository use `%gh-ic%` prefix instead of the full URL to the repository.
+
+* `[README.md](%gh-ic%/README.md)`{disable-links} links to general, non-code information files. ([README.md](%gh-ic%/README.md))
   Examples of this file type include _LICENSE.txt_ and _README.md_.
-* `[`\`plugin.xml\``](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java)`{disable-links} links to declarative source code files, use `code` style. ([`plugin.xml`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java))
+* `[`IdeaPlugin.xml`](%gh-ic%/community-resources/src/META-INF/IdeaPlugin.xml)`{disable-links} links to declarative source code files, use `code` style. ([`IdeaPlugin.xml`](%gh-ic%/community-resources/src/META-INF/IdeaPlugin.xml))
   Examples of this file type include: `settings.gradle`, `plugin.xml` or `theme_basics.theme.json`.
-* `[`\`AnAction\``](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java)`{disable-links} links to source files for code objects like interfaces and classes, use `code` style but without the file extension. [`AnAction`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java)
+* `[`\`AnAction\``](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java)`{disable-links} links to source files for code objects like interfaces and classes, use `code` style but without the file extension. ([`AnAction`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java))
   Examples of this file type include Java and Kotlin.
   * Note the use of \`\` characters surrounding the class name in the link.
   * When linking to an API in this manner, the FQN isn't necessary in the link.
   * No file extension (*.java, *.kt, *.py, etc.) is used by convention.
   * Be judicious when using such links.
     Generally, only one link is needed for a given file on a documentation page.
-* Links to files in source code packages in other repositories follow much the same rules, except the links use `https:` instead of `upsource:///`.
+* Links to files in source code packages in other GitHub repositories follow much the same rules, except the links use a different custom `gh-...` prefix defined in <path>v.list</path>.
 
 ### Guidelines for Highlighting Syntax
 
@@ -141,7 +141,7 @@ In-paragraph code fragments and IntelliJ Platform APIs are formatted according t
 * The FQN is used for the first reference to an interface, class, or package on a page.
   Rather than `AnAction`, introduce it as `com.intellij.openapi.actionSystem.AnAction`.
   Subsequent references on the page can be `AnAction`.
-  Exception: the FQN is not used with an upsource [link](#links).
+  Exception: the FQN is not used with an GitHub [link](#links).
 * Use the FQN when first introducing an [extension point](plugin_extension_points.md) (EP) on a page.
   Rather than `stubIndex`, introduce `com.intellij.stubIndex`.
   Subsequent mentions on the page can be `stubIndex`.

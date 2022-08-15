@@ -24,13 +24,13 @@ Plugins can store additional data associated with a module by creating facets or
 
 The IntelliJ Platform provides a number of classes and interfaces you can use to work with modules:
 
-* [`Module`](upsource:///platform/core-api/src/com/intellij/openapi/module/Module.java)
-* [`ModuleUtil`](upsource:///platform/lang-api/src/com/intellij/openapi/module/ModuleUtil.java)
-* [`ModuleManager`](upsource:///platform/projectModel-api/src/com/intellij/openapi/module/ModuleManager.java)
-* [`ModuleRootManager`](upsource:///platform/projectModel-api/src/com/intellij/openapi/roots/ModuleRootManager.java)
-* [`ModuleRootModel`](upsource:///platform/projectModel-api/src/com/intellij/openapi/roots/ModuleRootModel.java)
-* [`ModifiableModuleModel`](upsource:///platform/projectModel-api/src/com/intellij/openapi/module/ModifiableModuleModel.java)
-* [`ModifiableRootModel`](upsource:///platform/projectModel-api/src/com/intellij/openapi/roots/ModifiableRootModel.java)
+* [`Module`](%gh-ic%/platform/core-api/src/com/intellij/openapi/module/Module.java)
+* [`ModuleUtil`](%gh-ic%/platform/lang-api/src/com/intellij/openapi/module/ModuleUtil.java)
+* [`ModuleManager`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/module/ModuleManager.java)
+* [`ModuleRootManager`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/roots/ModuleRootManager.java)
+* [`ModuleRootModel`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/roots/ModuleRootModel.java)
+* [`ModifiableModuleModel`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/module/ModifiableModuleModel.java)
+* [`ModifiableRootModel`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/roots/ModifiableRootModel.java)
 
 This section discusses how to complete some common tasks related to management of modules.
 
@@ -45,7 +45,7 @@ Use the `ModuleManager.getModules()` method.
 _Order entries_ include SDK, libraries and other modules the module uses.
 With the IntelliJ IDEA UI, you can view order entries for a module on the [Dependencies](https://www.jetbrains.com/help/idea/dependencies-tab.html) tab of the *Project Structure* dialog box.
 
-To explore the [module dependencies](https://www.jetbrains.com/help/idea/dependencies-tab.html), use the [`OrderEnumerator`](upsource:///platform/projectModel-api/src/com/intellij/openapi/roots/OrderEnumerator.java) class.
+To explore the [module dependencies](https://www.jetbrains.com/help/idea/dependencies-tab.html), use the [`OrderEnumerator`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/roots/OrderEnumerator.java) class.
 
 The following code snippet illustrates how you can get classpath (classes root of all dependencies) for a module:
 
@@ -56,7 +56,7 @@ VirtualFile[] roots = ModuleRootManager.getInstance(module).orderEntries().class
 ### How do I get the SDK the module uses?
 
 Use the `ModuleRootManager.getSdk()` method.
-This method returns a value of the [`Sdk`](upsource:///platform/projectModel-api/src/com/intellij/openapi/projectRoots/Sdk.java) type.
+This method returns a value of the [`Sdk`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/projectRoots/Sdk.java) type.
 
 The following code snippet illustrates how you can get detailed information on SDK the specified module uses:
 
@@ -105,7 +105,7 @@ String moduleName = module == null ? "Module not found" : module.getName();
 
 ### Accessing Module Roots
 
-Information about module roots can be accessed via [`ModuleRootManager`](upsource:///platform/projectModel-api/src/com/intellij/openapi/roots/ModuleRootManager.java).
+Information about module roots can be accessed via [`ModuleRootManager`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/roots/ModuleRootManager.java).
 For example, the following snippet shows how to access the content roots of a module:
 
 ```java
@@ -123,7 +123,7 @@ VirtualFile moduleSourceRoot = ProjectRootManager.getInstance(project).getFileIn
 
 ### Java: Compiler Output Properties
 
-Obtain [`CompilerModuleExtension`](upsource:///platform/projectModel-api/src/com/intellij/openapi/roots/CompilerModuleExtension.java) for given `Module` instance to access <control>Compiler Output</control> path related properties.
+Obtain [`CompilerModuleExtension`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/roots/CompilerModuleExtension.java) for given `Module` instance to access <control>Compiler Output</control> path related properties.
 
 ## Receiving Notifications About Module Changes
 

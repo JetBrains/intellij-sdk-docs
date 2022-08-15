@@ -60,7 +60,7 @@ In the IntelliLang settings, it is defined as one possible injection in Java cod
 ![Language Injection Settings](language_injection_settings.png){border-effect="line"}
 
 Double-clicking on this entry shows the exact context where a RegExp can be injected, and `String.matches()` is one of several possibilities.
-On the plugin side, these entries are defined in the file [`javaInjections.xml`](upsource:///plugins/IntelliLang/java-support/resources/javaInjections.xml):
+On the plugin side, these entries are defined in the file [`javaInjections.xml`](%gh-ic%/plugins/IntelliLang/java-support/resources/javaInjections.xml):
 
 ```xml
 <injection language="RegExp" injector-id="java">
@@ -76,7 +76,7 @@ On the plugin side, these entries are defined in the file [`javaInjections.xml`]
 ```
 
 The XML file with the injection configurations is loaded through the `org.intellij.intelliLang.injectionConfig` EP in the file
-[`intellilang-java-support.xml`](upsource:///plugins/IntelliLang/src/META-INF/intellilang-java-support.xml).
+[`intellilang-java-support.xml`](%gh-ic%/plugins/IntelliLang/src/META-INF/intellilang-java-support.xml).
 
 ```xml
 <extensions defaultExtensionNs="org.intellij.intelliLang">
@@ -96,11 +96,11 @@ Therefore, plugin authors who want to provide injections for known languages can
 #### Implement org.intellij.intelliLang.languageSupport EP
 
 Implement the `org.intellij.intelliLang.languageSupport` EP and use
-[`AbstractLanguageInjectionSupport`](upsource:///plugins/IntelliLang/src/org/intellij/plugins/intelliLang/inject/AbstractLanguageInjectionSupport.java) as a base class.
+[`AbstractLanguageInjectionSupport`](%gh-ic%/plugins/IntelliLang/src/org/intellij/plugins/intelliLang/inject/AbstractLanguageInjectionSupport.java) as a base class.
 Please refer to the API docs of
-[`LanguageInjectionSupport`](upsource:///plugins/IntelliLang/src/org/intellij/plugins/intelliLang/inject/LanguageInjectionSupport.java)
+[`LanguageInjectionSupport`](%gh-ic%/plugins/IntelliLang/src/org/intellij/plugins/intelliLang/inject/LanguageInjectionSupport.java)
 for information on methods to override and use
-[`JavaLanguageInjectionSupport`](upsource:///plugins/IntelliLang/java-support/org/intellij/plugins/intelliLang/inject/java/JavaLanguageInjectionSupport.java)
+[`JavaLanguageInjectionSupport`](%gh-ic%/plugins/IntelliLang/java-support/org/intellij/plugins/intelliLang/inject/java/JavaLanguageInjectionSupport.java)
 as an example implementation.
 
 #### Create Injection Configuration
@@ -109,13 +109,13 @@ Create an XML file with the injection configuration.
 You can export existing injections from the IntelliLang settings to create a template and then edit it.
 [Element patterns](https://plugins.jetbrains.com/docs/intellij/element-patterns.html) are used to specify the context where injections will take place.
 Custom language authors can use the specific patterns returned from their implementation of
-[`JavaLanguageInjectionSupport.getPatternClasses`](upsource:///plugins/IntelliLang/java-support/org/intellij/plugins/intelliLang/inject/java/JavaLanguageInjectionSupport.java).
+[`JavaLanguageInjectionSupport.getPatternClasses`](%gh-ic%/plugins/IntelliLang/java-support/org/intellij/plugins/intelliLang/inject/java/JavaLanguageInjectionSupport.java).
 
 The `injection` tag requires the attributes `language` and `injector-id`.
 The first one specifies the `language-id`
-(see [`Language.getID()`](upsource:///platform/core-api/src/com/intellij/lang/Language.java)) of the language that is injected.
+(see [`Language.getID()`](%gh-ic%/platform/core-api/src/com/intellij/lang/Language.java)) of the language that is injected.
 The second one is the id of the host language
-(see [`JavaLanguageInjectionSupport.getId()`](upsource:///plugins/IntelliLang/java-support/org/intellij/plugins/intelliLang/inject/java/JavaLanguageInjectionSupport.java)).
+(see [`JavaLanguageInjectionSupport.getId()`](%gh-ic%/plugins/IntelliLang/java-support/org/intellij/plugins/intelliLang/inject/java/JavaLanguageInjectionSupport.java)).
 For instance, injecting SQLite into Python code is specified by the following opening tag:
 
 ```xml
@@ -131,7 +131,7 @@ Inside an injection, the following tags can be used:
 | `<display-name>`          | A short name for the injection.                                                                                                                                                                                                                                                 |
 | `<place>`                 | The element pattern that defines where an injection will take place. The content is wrapped in `![CDATA[...]]`.                                                                                                                                                                 |
 | `<prefix>` and `<suffix>` | Static content that is wrapped around the injected code, e.g., to make it a valid expression. For example, to a CSS color specification inside a string, it can be wrapped with the prefix `div { color:` and the suffix `;}` to make it a valid CSS expression.                |
-| `<value-pattern>`         | A regex for the content that specifies when this injection should be applied. Regex groups can specify the text range of the injection (e.g. `^javascript:(.+)`, see [`xmlInjections-html.xml`](upsource:///plugins/IntelliLang/xml-support/resources/xmlInjections-html.xml)). |
+| `<value-pattern>`         | A regex for the content that specifies when this injection should be applied. Regex groups can specify the text range of the injection (e.g. `^javascript:(.+)`, see [`xmlInjections-html.xml`](%gh-ic%/plugins/IntelliLang/xml-support/resources/xmlInjections-html.xml)). |
 | `<ignore-pattern>`        | A regex for the content that specifies when this injection should not be applied.                                                                                                                                                                                               |
 
 #### Create an XML File to Load the Configuration
@@ -161,7 +161,7 @@ Therefore, you load the configuration optionally in your main <path>plugin.xml</
 ## LanguageInjectionContributor and LanguageInjectionPerformer
 
 The `com.intellij.languageInjectionContributor` EP provides injection information for the given context in terms of _what_ to inject.
-As a plugin author, implement [`LanguageInjectionContributor`](upsource:///platform/core-api/src/com/intellij/lang/injection/general/LanguageInjectionContributor.java) to provide context-specific injections.
+As a plugin author, implement [`LanguageInjectionContributor`](%gh-ic%/platform/core-api/src/com/intellij/lang/injection/general/LanguageInjectionContributor.java) to provide context-specific injections.
 
 For instance, if you want to inject a YAML or JSON to a literal language depending on some conditions, you could implement this interface like this:
 
@@ -195,10 +195,10 @@ Register the implementation in your <path>plugin.xml</path>:
 
 If you want more control over how the injection should be done then implement the `com.intellij.languageInjectionPerformer` EP which allows for complex language injections, e.g. for concatenation or interpolation of strings.
 If it is not implemented, then the
-[`DefaultLanguageInjectionPerformer`](upsource:///plugins/IntelliLang/src/org/intellij/plugins/intelliLang/inject/DefaultLanguageInjectionPerformer.java)
+[`DefaultLanguageInjectionPerformer`](%gh-ic%/plugins/IntelliLang/src/org/intellij/plugins/intelliLang/inject/DefaultLanguageInjectionPerformer.java)
 will be used.
 
-For the `com.intellij.languageInjectionPerformer` EP, two methods need to be implemented in [`LanguageInjectionPerformer`](upsource:///platform/core-api/src/com/intellij/lang/injection/general/LanguageInjectionPerformer.java).
+For the `com.intellij.languageInjectionPerformer` EP, two methods need to be implemented in [`LanguageInjectionPerformer`](%gh-ic%/platform/core-api/src/com/intellij/lang/injection/general/LanguageInjectionPerformer.java).
 First, `isPrimary()` determines if this is the default `LanguageInjectionPerformer` for the language and if it handles most of the injections.
 If there is no primary `LanguageInjectionPerformer` found, then a fallback injection will be performed.
 
@@ -210,7 +210,7 @@ The method `performInjection()` does the actual injection into the context PSI e
 
 ## MultiHostInjector
 
-[`MultiHostInjector`](upsource:///platform/core-api/src/com/intellij/lang/injection/MultiHostInjector.java) registered in `com.intellij.multiHostInjector` EP is a very low-level API, but it gives plugin authors the most freedom.
+[`MultiHostInjector`](%gh-ic%/platform/core-api/src/com/intellij/lang/injection/MultiHostInjector.java) registered in `com.intellij.multiHostInjector` EP is a very low-level API, but it gives plugin authors the most freedom.
 It performs language injection inside other PSI elements, e.g. inject SQL inside an XML tag text or inject regular expressions into Java string literals.
 
 Plugin authors need to implement `getLanguagesToInject()` to provide a list of places to inject a language, and `elementsToInjectIn()` to return a list of elements to inject.

@@ -12,16 +12,16 @@ Custom Settings are displayed and function just like those native to the IDE.
 
 Using the SDK code sample [`settings`](https://github.com/JetBrains/intellij-sdk-code-samples/tree/main/settings), this tutorial illustrates the steps to create custom Application-level Settings.
 Many IntelliJ Platform Settings implementations use fewer classes, but the `settings` code sample factors the functionality into three classes for clarity:
-* The [`AppSettingsConfigurable`](https://github.com/JetBrains/intellij-sdk-code-samples/blob/main/settings/src/main/java/org/intellij/sdk/settings/AppSettingsConfigurable.java) is analogous to a Controller in the MVC model - it interacts with the other two Settings classes and the IntelliJ Platform,
-* The [`AppSettingsState`](https://github.com/JetBrains/intellij-sdk-code-samples/blob/main/settings/src/main/java/org/intellij/sdk/settings/AppSettingsState.java) is like a Model because it stores the Settings persistently,
-* The [`AppSettingsComponent`](https://github.com/JetBrains/intellij-sdk-code-samples/blob/main/settings/src/main/java/org/intellij/sdk/settings/AppSettingsComponent.java) is similar to a View because it displays and captures edits to the values of the Settings.
+* The [`AppSettingsConfigurable`](%gh-sdk-samples%/settings/src/main/java/org/intellij/sdk/settings/AppSettingsConfigurable.java) is analogous to a Controller in the MVC model - it interacts with the other two Settings classes and the IntelliJ Platform,
+* The [`AppSettingsState`](%gh-sdk-samples%/settings/src/main/java/org/intellij/sdk/settings/AppSettingsState.java) is like a Model because it stores the Settings persistently,
+* The [`AppSettingsComponent`](%gh-sdk-samples%/settings/src/main/java/org/intellij/sdk/settings/AppSettingsComponent.java) is similar to a View because it displays and captures edits to the values of the Settings.
 
 The structure of the implementation is the same for Project Settings, but there are minor differences in the [`Configurable` implementation](settings_guide.md#constructors) and [extension point (EP) declaration](settings_guide.md#declaring-project-settings).
 
 > See
-> [`MarkdownSettings`](upsource:///plugins/markdown/core/src/org/intellij/plugins/markdown/settings/MarkdownSettings.kt)
+> [`MarkdownSettings`](%gh-ic%/plugins/markdown/core/src/org/intellij/plugins/markdown/settings/MarkdownSettings.kt)
 > and
-> [`MarkdownSettingsConfigurable`](upsource:///plugins/markdown/core/src/org/intellij/plugins/markdown/settings/MarkdownSettingsConfigurable.kt)
+> [`MarkdownSettingsConfigurable`](%gh-ic%/plugins/markdown/core/src/org/intellij/plugins/markdown/settings/MarkdownSettingsConfigurable.kt)
 > classes for the settings example implemented in Kotlin with usage of [Kotlin UI DSL](kotlin_ui_dsl_version_2.md).
 >
 {type="note"}
@@ -46,7 +46,7 @@ However, because these are Application Settings, the `com.intellij.applicationSe
 
 ### Creating the AppSettingState Implementation
 
-As discussed in [Implementing the PersistentStateComponent Interface](persisting_state_of_components.md#implementing-the-persistentstatecomponent-interface), `AppSettingsState` uses the pattern of implementing [`PersistentStateComponent`](upsource:///platform/projectModel-api/src/com/intellij/openapi/components/PersistentStateComponent.java) itself:
+As discussed in [Implementing the PersistentStateComponent Interface](persisting_state_of_components.md#implementing-the-persistentstatecomponent-interface), `AppSettingsState` uses the pattern of implementing [`PersistentStateComponent`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/components/PersistentStateComponent.java) itself:
 
 ```java
 ```
@@ -54,11 +54,11 @@ As discussed in [Implementing the PersistentStateComponent Interface](persisting
 
 #### Storage Annotation
 
-The [`@State`](upsource:///platform/projectModel-api/src/com/intellij/openapi/components/State.java) annotation, located just above the class declaration, [defines the data storage location](persisting_state_of_components.md#defining-the-storage-location).
+The [`@State`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/components/State.java) annotation, located just above the class declaration, [defines the data storage location](persisting_state_of_components.md#defining-the-storage-location).
 For `AppSettingsState`, the data `name` parameter is the FQN of the class.
 Using FQN is the best practice to follow, and is required if custom data gets stored in the standard project or workspace files.
 
-The `storages` parameter utilizes the [`@Storage`](upsource:///platform/projectModel-api/src/com/intellij/openapi/components/Storage.java) annotation to define a custom file name for the `AppSettingsState` data.
+The `storages` parameter utilizes the [`@Storage`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/components/Storage.java) annotation to define a custom file name for the `AppSettingsState` data.
 In this case, the file is located in the `options` directory of the [configuration directory](https://www.jetbrains.com/help/idea/tuning-the-ide.html#config-directory) for the IDE.
 
 #### Persistent Data Fields
@@ -71,19 +71,19 @@ See [Implementing the State Class](persisting_state_of_components.md#implementin
 
 The fields are so limited and straightforward for this class that encapsulation is not used for simplicity.
 All that's needed for functionality is to override the two methods called by the IntelliJ Platform when a new component state is loaded (`PersistentStateComponent.loadState()`), and when a state is saved (`PersistentStateComponent.getState()`).
-See [`PersistentStateComponent`](upsource:///platform/projectModel-api/src/com/intellij/openapi/components/PersistentStateComponent.java) for more information about these methods.
+See [`PersistentStateComponent`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/components/PersistentStateComponent.java) for more information about these methods.
 
 One static convenience method has been added - `AppSettingState.getInstance()` - which allows `AppSettingsConfigurable` to easily acquire a reference to `AppSettingState`.
 
 ## The AppSettingsComponent Class
 
-The role of the [`AppSettingsComponent`](https://github.com/JetBrains/intellij-sdk-code-samples/blob/main/settings/src/main/java/org/intellij/sdk/settings/AppSettingsComponent.java) is to provide a `JPanel` for the custom Settings to the IDE Settings Dialog.
+The role of the [`AppSettingsComponent`](%gh-sdk-samples%/settings/src/main/java/org/intellij/sdk/settings/AppSettingsComponent.java) is to provide a `JPanel` for the custom Settings to the IDE Settings Dialog.
 The `AppSettingsComponent` has-a `JPanel`, and is responsible for its lifetime.
 The `AppSettingsComponent` is instantiated by `AppSettingsConfigurable`.
 
 ### Creating the AppSettingsComponent Implementation
 
-The `AppSettingsComponent` defines a `JPanel` containing a [`JBTextField`](upsource:///platform/platform-api/src/com/intellij/ui/components/JBTextField.java) and a [`JBCheckBox`](upsource:///platform/platform-api/src/com/intellij/ui/components/JBCheckBox.java) to hold and display the data that maps to the [data fields](#persistent-data-fields) of `AppSettingsState`:
+The `AppSettingsComponent` defines a `JPanel` containing a [`JBTextField`](%gh-ic%/platform/platform-api/src/com/intellij/ui/components/JBTextField.java) and a [`JBCheckBox`](%gh-ic%/platform/platform-api/src/com/intellij/ui/components/JBCheckBox.java) to hold and display the data that maps to the [data fields](#persistent-data-fields) of `AppSettingsState`:
 
 ```java
 ```
@@ -91,12 +91,12 @@ The `AppSettingsComponent` defines a `JPanel` containing a [`JBTextField`](upsou
 
 #### AppSettingsComponent Methods
 
-The constructor builds the `JPanel` using the convenient [`FormBuilder`](upsource:///platform/platform-api/src/com/intellij/util/ui/FormBuilder.java), and saves a reference to the `JPanel`.
+The constructor builds the `JPanel` using the convenient [`FormBuilder`](%gh-ic%/platform/platform-api/src/com/intellij/util/ui/FormBuilder.java), and saves a reference to the `JPanel`.
 The rest of the class are simple accessors and mutators to encapsulate the UI components used on the `JPanel`.
 
 ## The AppSettingsConfigurable Class
 
-The methods of [`AppSettingsConfigurable`](https://github.com/JetBrains/intellij-sdk-code-samples/blob/main/settings/src/main/java/org/intellij/sdk/settings/AppSettingsConfigurable.java) are called by the IntelliJ Platform, and `AppSettingsConfigurable` in turn interacts with `AppSettingsComponent` and `AppSettingState`.
+The methods of [`AppSettingsConfigurable`](%gh-sdk-samples%/settings/src/main/java/org/intellij/sdk/settings/AppSettingsConfigurable.java) are called by the IntelliJ Platform, and `AppSettingsConfigurable` in turn interacts with `AppSettingsComponent` and `AppSettingState`.
 
 ### Declaring the AppSettingsConfigurable
 
@@ -115,7 +115,7 @@ An explanation of this declaration can be found in [Declaring Application Settin
 
 ### Creating the AppSettingsConfigurable Implementation
 
-The `AppSettingsConfigurable` class implements [`Configurable`](upsource:///platform/ide-core/src/com/intellij/openapi/options/Configurable.java) interface.
+The `AppSettingsConfigurable` class implements [`Configurable`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/options/Configurable.java) interface.
 The class has one field to hold a reference to the `AppSettingsComponent`.
 
 ```java

@@ -22,7 +22,7 @@ For this purpose, use [custom Swing components](user_interface_components.md) fr
 >
 {type="note"}
 
-The _Kotlin UI DSL Version 1_ functions are located in the [`com.intellij.ui.layout`](upsource:///platform/platform-impl/src/com/intellij/ui/layout) package.
+The _Kotlin UI DSL Version 1_ functions are located in the [`com.intellij.ui.layout`](%gh-ic%/platform/platform-impl/src/com/intellij/ui/layout) package.
 
 ## Layout Structure
 
@@ -30,7 +30,7 @@ The _Kotlin UI DSL Version 1_ functions are located in the [`com.intellij.ui.lay
 >
 {type="tip"}
 
-Use [`panel`](upsource:///platform/platform-impl/src/com/intellij/ui/layout/layout.kt) to create UI:
+Use [`panel`](%gh-ic%/platform/platform-impl/src/com/intellij/ui/layout/layout.kt) to create UI:
 
 ```kotlin
 panel {
@@ -257,14 +257,14 @@ checkBox(message("checkbox.smart.tab.reuse"),
 
 ## Integrating Panels with Property Bindings
 
-A panel returned by the `panel` method is an instance of [`DialogPanel`](upsource:///platform/platform-api/src/com/intellij/openapi/ui/DialogPanel.kt).
+A panel returned by the `panel` method is an instance of [`DialogPanel`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/ui/DialogPanel.kt).
 This base class supports the standard `apply()`, `reset()`, and `isModified()` methods.
 
 ### Dialogs
 
 **Reference**: [DialogWrapper](dialog_wrapper.md)
 
-If you're using a [`DialogPanel`](upsource:///platform/platform-api/src/com/intellij/openapi/ui/DialogPanel.kt) as the main panel of a `DialogWrapper`, the `apply()` method will be automatically called when the dialog is closed using <control>OK</control> action.
+If you're using a [`DialogPanel`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/ui/DialogPanel.kt) as the main panel of a `DialogWrapper`, the `apply()` method will be automatically called when the dialog is closed using <control>OK</control> action.
 The other methods are unused in this case.
 
 Use the `focused()` method to specify which control should be focused when the dialog is initialized:
@@ -281,7 +281,7 @@ return panel {
 
 **Reference**: [Settings Guide](settings_guide.md)
 
-If you're using the UI DSL to implement a [`Configurable`](upsource:///platform/ide-core/src/com/intellij/openapi/options/Configurable.java), use [`BoundConfigurable`](upsource:///platform/platform-api/src/com/intellij/openapi/options/BoundConfigurable.kt) as the base class.
+If you're using the UI DSL to implement a [`Configurable`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/options/Configurable.java), use [`BoundConfigurable`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/options/BoundConfigurable.kt) as the base class.
 In this case, the `Configurable` methods will be automatically delegated to the panel.
 
 ## Enabling and Disabling Controls
@@ -312,10 +312,10 @@ Sample usages in IntelliJ Platform IDEs:
 
 | User Interface                                                                                                                | Implementation                                                                                                                       |
 |-------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------|
-| <menupath>Settings/Preferences &#124; Editor &#124; Reader Mode</menupath>                                                    | [`ReaderModeConfigurable`](upsource:///platform/lang-impl/src/com/intellij/codeInsight/actions/ReaderModeConfigurable.kt)            |
-| <control>New Branch</control> dialog in Git ([Manage Git branches](https://www.jetbrains.com/help/idea/manage-branches.html)) | [`GitNewBranchDialog`](upsource:///plugins/git4idea/src/git4idea/branch/GitNewBranchDialog.kt)                                       |
-| <menupath>Settings/Preferences &#124; Tools &#124; Diff & Merge</menupath>                                                    | [`DiffSettingsConfigurable`](upsource:///platform/diff-impl/src/com/intellij/diff/settings/DiffSettingsConfigurable.kt)              |
-| <menupath>Settings/Preferences &#124; Editor &#124; General &#124; Editor Tabs</menupath>                                     | [`EditorTabsConfigurable`](upsource:///platform/platform-impl/src/com/intellij/application/options/editor/EditorTabsConfigurable.kt) |
+| <menupath>Settings/Preferences &#124; Editor &#124; Reader Mode</menupath>                                                    | [`ReaderModeConfigurable`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/actions/ReaderModeConfigurable.kt)            |
+| <control>New Branch</control> dialog in Git ([Manage Git branches](https://www.jetbrains.com/help/idea/manage-branches.html)) | [`GitNewBranchDialog`](%gh-ic%/plugins/git4idea/src/git4idea/branch/GitNewBranchDialog.kt)                                       |
+| <menupath>Settings/Preferences &#124; Tools &#124; Diff & Merge</menupath>                                                    | [`DiffSettingsConfigurable`](%gh-ic%/platform/diff-impl/src/com/intellij/diff/settings/DiffSettingsConfigurable.kt)              |
+| <menupath>Settings/Preferences &#124; Editor &#124; General &#124; Editor Tabs</menupath>                                     | [`EditorTabsConfigurable`](%gh-ic%/platform/platform-impl/src/com/intellij/application/options/editor/EditorTabsConfigurable.kt) |
 
 ## FAQ
 

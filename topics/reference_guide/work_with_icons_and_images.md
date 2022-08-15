@@ -14,8 +14,8 @@ Plugins need icons mostly for [actions](basic_action_system.md), custom componen
 
 Plugins should reuse existing platform icons whenever possible.
 Use [Icons list](https://jetbrains.design/intellij/resources/icons_list/) to browse existing icons.
-Platform icons are located in [`AllIcons`](upsource:///platform/util/src/com/intellij/icons/AllIcons.java).
-Icons from plugins are located in corresponding `<PLUGIN_NAME>Icons` class (e.g., [`GithubIcons`](upsource:///plugins/github/src/org/jetbrains/plugins/github/GithubIcons.java)).
+Platform icons are located in [`AllIcons`](%gh-ic%/platform/util/src/com/intellij/icons/AllIcons.java).
+Icons from plugins are located in corresponding `<PLUGIN_NAME>Icons` class (e.g., [`GithubIcons`](%gh-ic%/plugins/github/src/org/jetbrains/plugins/github/GithubIcons.java)).
 
 If custom icons are required, please refer to detailed [design guide](https://jetbrains.design/intellij/principles/icons/).
 
@@ -27,7 +27,7 @@ If custom icons are required, please refer to detailed [design guide](https://je
 
 The best way to deal with icons and other image resources is to put them to a dedicated source root marked as <control>Resources Root</control>, say <path>icons</path> or <path>resources</path>.
 
-The `getIcon()` method of [`IconLoader`](upsource:///platform/util/ui/src/com/intellij/openapi/util/IconLoader.java) can be used to access the icons.
+The `getIcon()` method of [`IconLoader`](%gh-ic%/platform/util/ui/src/com/intellij/openapi/util/IconLoader.java) can be used to access the icons.
 The path to the icon passed in as argument to `IconLoader.getIcon()` **must** start with leading `/`.
 
 Then define a class/interface in a top-level package called `icons` holding icon constants as static fields:
@@ -72,7 +72,7 @@ object MyIcons {
 {type="note"}
 
 
-Use these constants inside <path>plugin.xml</path> when specifying `icon` attribute for `<action>` or extension point, as well in [`@Presentation`](upsource:///platform/analysis-api/src/com/intellij/ide/presentation/Presentation.java) `icon` attribute.
+Use these constants inside <path>plugin.xml</path> when specifying `icon` attribute for `<action>` or extension point, as well in [`@Presentation`](%gh-ic%/platform/analysis-api/src/com/intellij/ide/presentation/Presentation.java) `icon` attribute.
 Note that the package name `icons` will be automatically prefixed and must not be specified.
 
 ```xml
@@ -165,7 +165,7 @@ For example, when plugin is loading some data.
 Any animated icon is a set of frames that loop with some delay.
 
 To create a new animated icon, use the
-[`AnimatedIcon`](upsource:///platform/ide-core/src/com/intellij/ui/AnimatedIcon.java).
+[`AnimatedIcon`](%gh-ic%/platform/ide-core/src/com/intellij/ui/AnimatedIcon.java).
 If you want to create an icon where frames follow each other with the same delay, use a constructor that accepts a delay and icons:
 
 ```java

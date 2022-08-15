@@ -53,7 +53,7 @@ The details of the `comparing_references_inspection` implementation illustrate t
 
 ### Plugin Configuration File
 
-The `comparing_references_inspection` is described as a `com.intellij.localInspection` extension point in the `comparing_references_inspection` plugin configuration ([`plugin.xml`](https://github.com/JetBrains/intellij-sdk-code-samples/blob/main/comparing_references_inspection/src/main/resources/META-INF/plugin.xml)) file.
+The `comparing_references_inspection` is described as a `com.intellij.localInspection` extension point in the `comparing_references_inspection` plugin configuration ([`plugin.xml`](%gh-sdk-samples%/comparing_references_inspection/src/main/resources/META-INF/plugin.xml)) file.
 
 There exist two types of inspection extensions:
 * The `com.intellij.localInspection` extension point is used for inspections that operate on one file at a time, and also operate "on-the-fly" as the user edits the file.
@@ -68,10 +68,10 @@ If required, inspections can define all the attribute information (except `imple
 
 ### Inspection Implementation Java Class
 
-Inspection implementations for Java files, like [`ComparingReferencesInspection`](https://github.com/JetBrains/intellij-sdk-code-samples/blob/main/comparing_references_inspection/src/main/java/org/intellij/sdk/codeInspection/ComparingReferencesInspection.java), are often based on the Java class [`AbstractBaseJavaLocalInspectionTool`](upsource:///java/java-analysis-api/src/com/intellij/codeInspection/AbstractBaseJavaLocalInspectionTool.java).
-The [`AbstractBaseJavaLocalInspectionTool`](upsource:///java/java-analysis-api/src/com/intellij/codeInspection/AbstractBaseJavaLocalInspectionTool.java) base class offers methods to inspect Java classes, fields, and methods.
+Inspection implementations for Java files, like [`ComparingReferencesInspection`](%gh-sdk-samples%/comparing_references_inspection/src/main/java/org/intellij/sdk/codeInspection/ComparingReferencesInspection.java), are often based on the Java class [`AbstractBaseJavaLocalInspectionTool`](%gh-ic%/java/java-analysis-api/src/com/intellij/codeInspection/AbstractBaseJavaLocalInspectionTool.java).
+The [`AbstractBaseJavaLocalInspectionTool`](%gh-ic%/java/java-analysis-api/src/com/intellij/codeInspection/AbstractBaseJavaLocalInspectionTool.java) base class offers methods to inspect Java classes, fields, and methods.
 
-More generally, `localInspection` types are based on the class [`LocalInspectionTool`](upsource:///platform/analysis-api/src/com/intellij/codeInspection/LocalInspectionTool.java).
+More generally, `localInspection` types are based on the class [`LocalInspectionTool`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInspection/LocalInspectionTool.java).
 Examining the class hierarchy for `LocalInspectionTool` shows that the IntelliJ Platform provides many child inspection classes for a variety of languages and frameworks.
 One of these classes is a good basis for a new inspection implementation, but a bespoke implementation can also be based directly on `LocalInspectionTool`.
 
@@ -90,7 +90,7 @@ The overridden `ComparingReferencesInspection` methods are discussed in the sect
 
 The visitor class evaluates whether elements of the file's PSI tree are of interest to an inspection.
 
-The `ComparingReferencesInspection.buildVisitor()` method creates an anonymous visitor class based on [`JavaElementVisitor`](upsource:///java/java-psi-api/src/com/intellij/psi/JavaElementVisitor.java) to traverse the PSI tree of the Java file being edited, inspecting for suspect syntax.
+The `ComparingReferencesInspection.buildVisitor()` method creates an anonymous visitor class based on [`JavaElementVisitor`](%gh-ic%/java/java-psi-api/src/com/intellij/psi/JavaElementVisitor.java) to traverse the PSI tree of the Java file being edited, inspecting for suspect syntax.
 The anonymous class overrides three methods in particular.
 * `visitReferenceExpression()` to prevent any duplicate visitation of reference-type expressions.
 * `visitBinaryExpression()`, which does all the heavy lifting.
@@ -101,7 +101,7 @@ The anonymous class overrides three methods in particular.
 
 The quick fix class acts much like an intention, allowing the user to invoke it on the `PsiElement` (or `TextRange`) highlighted by the inspection.
 
-The `ComparingReferencesInspection` implementation uses the nested class `CriQuickFix` to implement a quick fix based on [`LocalQuickFix`](upsource:///platform/analysis-api/src/com/intellij/codeInspection/LocalQuickFix.java).
+The `ComparingReferencesInspection` implementation uses the nested class `CriQuickFix` to implement a quick fix based on [`LocalQuickFix`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInspection/LocalQuickFix.java).
 The `CriQuickFix` class gives a user the option to change the use of `a == b` and `a != b` expression to `a.equals(b)` and `!a.equals(b)` respectively.
 
 The heavy lifting is done in `CriQuickFix.applyFix()`, which manipulates the PSI tree to convert the expressions.
@@ -121,17 +121,17 @@ The `JTextField` allows editing of the `CHECKED_CLASSES` field while displayed i
 
 For simple customization requirements, see also:
 
-- [`SingleCheckboxOptionsPanel`](upsource:///platform/lang-api/src/com/intellij/codeInspection/ui/SingleCheckboxOptionsPanel.java) for single checkbox
-- [`MultipleCheckboxOptionsPanel`](upsource:///platform/lang-api/src/com/intellij/codeInspection/ui/MultipleCheckboxOptionsPanel.java) for multiple checkboxes
-- [`SingleIntegerFieldOptionsPanel`](upsource:///platform/lang-api/src/com/intellij/codeInspection/ui/SingleIntegerFieldOptionsPanel.java) for single Integer (text field)
-- [`ConventionOptionsPanel`](upsource:///platform/lang-api/src/com/intellij/codeInspection/ui/ConventionOptionsPanel.java) for validation using regular expression
+- [`SingleCheckboxOptionsPanel`](%gh-ic%/platform/lang-api/src/com/intellij/codeInspection/ui/SingleCheckboxOptionsPanel.java) for single checkbox
+- [`MultipleCheckboxOptionsPanel`](%gh-ic%/platform/lang-api/src/com/intellij/codeInspection/ui/MultipleCheckboxOptionsPanel.java) for multiple checkboxes
+- [`SingleIntegerFieldOptionsPanel`](%gh-ic%/platform/lang-api/src/com/intellij/codeInspection/ui/SingleIntegerFieldOptionsPanel.java) for single Integer (text field)
+- [`ConventionOptionsPanel`](%gh-ic%/platform/lang-api/src/com/intellij/codeInspection/ui/ConventionOptionsPanel.java) for validation using regular expression
 
 ### Inspection Description
 
 The inspection description is an HTML file.
 The description is displayed in the upper right panel of the <control>Inspections</control> settings dialog when an inspection is selected from the list.
 
-Implicit in using [`LocalInspectionTool`](upsource:///platform/analysis-api/src/com/intellij/codeInspection/LocalInspectionTool.java) in the class hierarchy of the inspection implementation means following some conventions.
+Implicit in using [`LocalInspectionTool`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInspection/LocalInspectionTool.java) in the class hierarchy of the inspection implementation means following some conventions.
 * The inspection description file is expected to be located under <path>$RESOURCES_ROOT_DIRECTORY$/inspectionDescriptions/</path>.
   If the inspection description file is to be located elsewhere, override `getDescriptionUrl()` in the inspection implementation class.
 * The name of the description file is expected to be the inspection <path>$SHORT_NAME$.html</path> as provided by the inspection description, or the inspection implementation class.
@@ -152,7 +152,7 @@ Implicit in using [`LocalInspectionTool`](upsource:///platform/analysis-api/src/
 The `comparing_references_inspection` code sample provides a unit test for the inspection.
 See the [](testing_plugins.md) section for general information about plugin testing.
 
-The `comparing_references_inspection` test is based on the [`UsefulTestCase`](upsource:///platform/testFramework/src/com/intellij/testFramework/UsefulTestCase.java) class, part of the JUnit framework APIs.
+The `comparing_references_inspection` test is based on the [`UsefulTestCase`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/UsefulTestCase.java) class, part of the JUnit framework APIs.
 This class handles much of the underlying boilerplate for tests.
 
 By convention, the folder <path>test/testData/</path> contains the test files.

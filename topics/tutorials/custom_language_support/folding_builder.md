@@ -11,16 +11,16 @@ Rather than the usual practice of using a folding builder to collapse a class, m
 ## Define a Folding Builder
 
 The `SimpleFoldingBuilder` replaces usages of properties with their values by default.
-Start by subclassing [`FoldingBuilderEx`](upsource:///platform/core-api/src/com/intellij/lang/folding/FoldingBuilderEx.java)
+Start by subclassing [`FoldingBuilderEx`](%gh-ic%/platform/core-api/src/com/intellij/lang/folding/FoldingBuilderEx.java)
 
-Note that `SimpleFoldingBuilder` also implements [`DumbAware`](upsource:///platform/core-api/src/com/intellij/openapi/project/DumbAware.java), which means the class is allowed to run in dumb mode, when indices are in background update.
+Note that `SimpleFoldingBuilder` also implements [`DumbAware`](%gh-ic%/platform/core-api/src/com/intellij/openapi/project/DumbAware.java), which means the class is allowed to run in dumb mode, when indices are in background update.
 
-> A folding builder must implement [`DumbAware`](upsource:///platform/core-api/src/com/intellij/openapi/project/DumbAware.java) to function in this tutorial and pass tests.
+> A folding builder must implement [`DumbAware`](%gh-ic%/platform/core-api/src/com/intellij/openapi/project/DumbAware.java) to function in this tutorial and pass tests.
 >
 {type="note"}
 
 The `buildFoldRegions()` method searches down a PSI tree from `root` to find all literal expressions containing the [simple prefix](annotator.md#define-an-annotator) `simple:`.
-The remainder of such a string is expected to contain a Simple Language key, and so the text range is stored as a [`FoldingDescriptor`](upsource:///platform/core-api/src/com/intellij/lang/folding/FoldingDescriptor.java).
+The remainder of such a string is expected to contain a Simple Language key, and so the text range is stored as a [`FoldingDescriptor`](%gh-ic%/platform/core-api/src/com/intellij/lang/folding/FoldingDescriptor.java).
 
 The `getPlaceholderText()` method retrieves the Simple Language value corresponding to the key associated with the (ASTNode) provided.
 The IntelliJ Platform uses the value to substitute for the key when the code gets folded.

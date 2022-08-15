@@ -9,11 +9,11 @@ Contributor-based completion provides more features, supports all three completi
 
 ### Reference Completion
 
-To fill the completion list, the IDE calls [`PsiReference.getVariants()`](upsource:///platform/core-api/src/com/intellij/psi/PsiReference.java) either on the reference at the caret location or on a dummy reference that would be placed at the caret.
-This method needs to return an array of objects containing either strings, [`PsiElement`](upsource:///platform/core-api/src/com/intellij/psi/PsiElement.java) instances or instances of the [`LookupElement`](upsource:///platform/analysis-api/src/com/intellij/codeInsight/lookup/LookupElement.java) class (see [Lookup Items](#lookup-items) below).
-If a [`PsiElement`](upsource:///platform/core-api/src/com/intellij/psi/PsiElement.java) instance is returned in the array, the completion list shows the icon for the element.
+To fill the completion list, the IDE calls [`PsiReference.getVariants()`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiReference.java) either on the reference at the caret location or on a dummy reference that would be placed at the caret.
+This method needs to return an array of objects containing either strings, [`PsiElement`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiElement.java) instances or instances of the [`LookupElement`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInsight/lookup/LookupElement.java) class (see [Lookup Items](#lookup-items) below).
+If a [`PsiElement`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiElement.java) instance is returned in the array, the completion list shows the icon for the element.
 
-The most common way to implement `getVariants()` is to use the same function for walking up the tree as in [`PsiReference.resolve()`](upsource:///platform/core-api/src/com/intellij/psi/PsiReference.java), and a different implementation of [`PsiScopeProcessor`](upsource:///platform/core-api/src/com/intellij/psi/scope/PsiScopeProcessor.java) which collects all declarations passed to its `execute()` method and returns them as an array for filling the completion list.
+The most common way to implement `getVariants()` is to use the same function for walking up the tree as in [`PsiReference.resolve()`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiReference.java), and a different implementation of [`PsiScopeProcessor`](%gh-ic%/platform/core-api/src/com/intellij/psi/scope/PsiScopeProcessor.java) which collects all declarations passed to its `execute()` method and returns them as an array for filling the completion list.
 
 #### Symbol Reference Completion
 
@@ -22,18 +22,18 @@ The most common way to implement `getVariants()` is to use the same function for
 {type="warning"}
 
 To provide completion variants by a `PsiSymbolReference` implement
-[`PsiCompletableReference`](upsource:///platform/analysis-api/src/com/intellij/model/psi/PsiCompletableReference.java).
+[`PsiCompletableReference`](%gh-ic%/platform/analysis-api/src/com/intellij/model/psi/PsiCompletableReference.java).
 
 ### Contributor-Based Completion
 
-Implementing the [`CompletionContributor`](upsource:///platform/analysis-api/src/com/intellij/codeInsight/completion/CompletionContributor.java) interface gives you the greatest control over the operation of code completion for your language.
+Implementing the [`CompletionContributor`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInsight/completion/CompletionContributor.java) interface gives you the greatest control over the operation of code completion for your language.
 Register in `com.intellij.completion.contributor` extension point and specify `language` attribute (unless it works on any supported language).
 
 > Note that the JavaDoc of that class contains a detailed FAQ for implementing code completion.
 >
 {type="note"}
 
-The core scenario of using [`CompletionContributor`](upsource:///platform/analysis-api/src/com/intellij/codeInsight/completion/CompletionContributor.java) consists of calling the `extend()` method and passing in the [Element Pattern](element_patterns.md) specifying the context in which this completion variant is applicable, as well as a *completion provider* which generates the items to show in the completion list.
+The core scenario of using [`CompletionContributor`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInsight/completion/CompletionContributor.java) consists of calling the `extend()` method and passing in the [Element Pattern](element_patterns.md) specifying the context in which this completion variant is applicable, as well as a *completion provider* which generates the items to show in the completion list.
 
 Keep in mind that the pattern is checked against the leaf PSI element.
 If you want to match a composite element, use `withParent()` or `withSuperParent()` methods.
@@ -43,8 +43,8 @@ If you want to match a composite element, use `withParent()` or `withSuperParent
 - [Custom Language Support Tutorial: Completion Contributor](completion_contributor.md)
 
 ### Lookup Items
-Items shown in the completion list are represented by instances of the [`LookupElement`](upsource:///platform/analysis-api/src/com/intellij/codeInsight/lookup/LookupElement.java) interface.
-These instances are typically created through the [`LookupElementBuilder`](upsource:///platform/analysis-api/src/com/intellij/codeInsight/lookup/LookupElementBuilder.java) class.
+Items shown in the completion list are represented by instances of the [`LookupElement`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInsight/lookup/LookupElement.java) interface.
+These instances are typically created through the [`LookupElementBuilder`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInsight/lookup/LookupElementBuilder.java) class.
 
 For every lookup element, you can specify the following attributes:
 
@@ -57,4 +57,4 @@ For every lookup element, you can specify the following attributes:
 
 ### How to show a completion popup programmatically
 
-Use [`AutoPopupController.scheduleAutoPopup()`](upsource:///platform/analysis-impl/src/com/intellij/codeInsight/AutoPopupController.java).
+Use [`AutoPopupController.scheduleAutoPopup()`](%gh-ic%/platform/analysis-impl/src/com/intellij/codeInsight/AutoPopupController.java).

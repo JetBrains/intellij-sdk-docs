@@ -105,14 +105,14 @@ Unbundled plugins
 Dynamic Plugins
 : [Compatible plugins](dynamic_plugins.md) can be installed, updated and uninstalled without requiring IDE restart.
 
-[`com.intellij.openapi.application.TransactionGuard`](upsource:///platform/core-api/src/com/intellij/openapi/application/TransactionGuard.java) deprecated
+[`com.intellij.openapi.application.TransactionGuard`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/TransactionGuard.java) deprecated
 : Usage is deprecated and can be replaced with `com.intellij.openapi.application.Application.invokeLater()` in most cases, please consult Javadoc for more details.
 
 `RecursionManager.assertOnMissedCache()` enabled by default in tests
 : Please see `RecursionManager.CachingPreventedException` Javadoc and [this issue](https://youtrack.jetbrains.com/issue/IDEA-228809) for details.
 
 `ResolveCache` using `IdempotenceChecker` in tests
-: Reports when the same reference resolves non-equivalent results in different threads, see [`IdempotenceChecker`](upsource:///platform/core-impl/src/com/intellij/util/IdempotenceChecker.java).
+: Reports when the same reference resolves non-equivalent results in different threads, see [`IdempotenceChecker`](%gh-ic%/platform/core-impl/src/com/intellij/util/IdempotenceChecker.java).
 
 Refactoring dialog: builtin "Open in editor" option
 : Set `addOpenInEditorCheckbox` constructor parameter to enable it in custom `RefactoringDialog` implementation.
@@ -127,7 +127,7 @@ Override text presentation for actions depending on menu context
 : Set the [`<override-text>`](basic_action_system.md#setting-the-override-text-element) element within the `<action>` declaration in <path>plugin.xml</path>.
 
 Changes in Project Open/Import
-: **Import from Existing Sources** has been removed from the Welcome Screen, leaving only **Open or Import**, which calls a different extension than the one previously used to contribute a wizard step to **Import from Existing Sources** (which is still available in the <control>File</control> menu). To support **Open or Import**, a plugin must provide [`ProjectOpenProcessor`](upsource:///platform/platform-api/src/com/intellij/projectImport/ProjectOpenProcessor.java).
+: **Import from Existing Sources** has been removed from the Welcome Screen, leaving only **Open or Import**, which calls a different extension than the one previously used to contribute a wizard step to **Import from Existing Sources** (which is still available in the <control>File</control> menu). To support **Open or Import**, a plugin must provide [`ProjectOpenProcessor`](%gh-ic%/platform/platform-api/src/com/intellij/projectImport/ProjectOpenProcessor.java).
 `ProjectOpenProcessor.canOpenProject()` should return `true` for the folder selected by the user only if it guarantees `doOpenProject()` can handle it. If there are several matching processors, a simple chooser dialog is shown. If additional manual configuration is necessary, a modal dialog can be shown in `doOpenProject()` - however, it is highly recommended performing all setup automatically (like Maven and Gradle plugins do).
 
 ### IntelliJ IDEA 2020.1

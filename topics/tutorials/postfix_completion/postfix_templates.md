@@ -7,30 +7,30 @@
 The IntelliJ Platform allows plugins to provide custom postfix templates specific to the supported languages, frameworks, or libraries.
 
 To provide custom postfix templates for an existing or custom language, register an implementation of
-[`PostfixTemplateProvider`](upsource:///platform/lang-impl/src/com/intellij/codeInsight/template/postfix/templates/PostfixTemplateProvider.java)
+[`PostfixTemplateProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/template/postfix/templates/PostfixTemplateProvider.java)
 in the `com.intellij.codeInsight.template.postfixTemplateProvider` extension point (EP).
 
 The `PostfixTemplateProvider` extension contains the list of templates that extend the
-[`PostfixTemplate`](upsource:///platform/lang-impl/src/com/intellij/codeInsight/template/postfix/templates/PostfixTemplate.java)
+[`PostfixTemplate`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/template/postfix/templates/PostfixTemplate.java)
 class.
 During the code completion mechanism, all postfix template providers registered for the current language are queried for their templates.
 All templates enabled and applicable in the current context will be added to the completion popup items set.
 
 **Examples:**
-- [`JavaPostfixTemplateProvider`](upsource:///java/java-impl/src/com/intellij/codeInsight/template/postfix/templates/JavaPostfixTemplateProvider.java) providing Java postfix templates
-- [`PyPostfixTemplateProvider`](upsource:///python/src/com/jetbrains/python/codeInsight/postfix/PyPostfixTemplateProvider.java) providing Python postfix templates
+- [`JavaPostfixTemplateProvider`](%gh-ic%/java/java-impl/src/com/intellij/codeInsight/template/postfix/templates/JavaPostfixTemplateProvider.java) providing Java postfix templates
+- [`PyPostfixTemplateProvider`](%gh-ic%/python/src/com/jetbrains/python/codeInsight/postfix/PyPostfixTemplateProvider.java) providing Python postfix templates
 
 ## Postfix Templates Implementation
 
 The simplest way to create a postfix template is by extending the
-[`PostfixTemplate`](upsource:///platform/lang-impl/src/com/intellij/codeInsight/template/postfix/templates/PostfixTemplate.java)
+[`PostfixTemplate`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/template/postfix/templates/PostfixTemplate.java)
 class and implementing the key methods:
 - `boolean isApplicable()` determining whether the template can be used in the context described by parameters
 - `void expand()` inserting the template content in the editor
 
 **Examples:**
-- [`InstanceofExpressionPostfixTemplate`](upsource:///java/java-impl/src/com/intellij/codeInsight/template/postfix/templates/InstanceofExpressionPostfixTemplate.java) surrounding an expression with the _instanceof_ check
-- [`TryWithResourcesPostfixTemplate`](upsource:///java/java-impl/src/com/intellij/codeInsight/template/postfix/templates/TryWithResourcesPostfixTemplate.java) wrapping a selected expression in _try-with-resources_ block
+- [`InstanceofExpressionPostfixTemplate`](%gh-ic%/java/java-impl/src/com/intellij/codeInsight/template/postfix/templates/InstanceofExpressionPostfixTemplate.java) surrounding an expression with the _instanceof_ check
+- [`TryWithResourcesPostfixTemplate`](%gh-ic%/java/java-impl/src/com/intellij/codeInsight/template/postfix/templates/TryWithResourcesPostfixTemplate.java) wrapping a selected expression in _try-with-resources_ block
 
 > See the [](advanced_postfix_templates.md) section for information on how to implement postfix templates with more advanced features and editing possibilities.
 >
@@ -76,7 +76,7 @@ cart.getProducts().var
 The gutter icons for a postfix template class allow navigating to the corresponding description and before/after files in plugin resources.
 
 **Example:**
-[`TryWithResourcesPostfixTemplate`](upsource:///java/java-impl/src/postfixTemplates/TryWithResourcesPostfixTemplate)
+[`TryWithResourcesPostfixTemplate`](%gh-ic%/java/java-impl/src/postfixTemplates/TryWithResourcesPostfixTemplate)
 directory containing description files for
-[`TryWithResourcesPostfixTemplate`](upsource:///java/java-impl/src/com/intellij/codeInsight/template/postfix/templates/TryWithResourcesPostfixTemplate.java)
+[`TryWithResourcesPostfixTemplate`](%gh-ic%/java/java-impl/src/com/intellij/codeInsight/template/postfix/templates/TryWithResourcesPostfixTemplate.java)
 template.

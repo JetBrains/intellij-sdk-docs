@@ -10,24 +10,24 @@ For example, the status bar contains the widget showing the encoding of the curr
 Due to the prominent presentation and limited space, they should be used only for information or settings that are relevant enough to be "always" shown.
 
 The starting point for extending the status bar with new widgets is the
-[`StatusBarWidgetFactory`](upsource:///platform/platform-api/src/com/intellij/openapi/wm/StatusBarWidgetFactory.java)
+[`StatusBarWidgetFactory`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/wm/StatusBarWidgetFactory.java)
 interface, which is registered in the `com.intellij.statusBarWidgetFactory` extension point.
 
 In case a widget provides information or functionality related to the editor files, consider extending the
-[`StatusBarEditorBasedWidgetFactory`](upsource:///platform/platform-impl/src/com/intellij/openapi/wm/impl/status/widget/StatusBarEditorBasedWidgetFactory.java)
+[`StatusBarEditorBasedWidgetFactory`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/wm/impl/status/widget/StatusBarEditorBasedWidgetFactory.java)
 class.
 
 Each widget factory returns a new widget from `createWidget()`.
 To control the disposing of a widget, implement the `disposeWidget()`, if you just want to dispose it, use `Disposer.dispose(widget)`.
 
 Any widget must implement the
-[`StatusBarWidget`](upsource:///platform/ide-core/src/com/intellij/openapi/wm/StatusBarWidget.java)
+[`StatusBarWidget`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/wm/StatusBarWidget.java)
 interface.
 
 To reuse the IntelliJ Platform implementation, you can extend one of two classes:
 
-- [`EditorBasedWidget`](upsource:///platform/platform-impl/src/com/intellij/openapi/wm/impl/status/EditorBasedWidget.java)
-- [`EditorBasedStatusBarPopup`](upsource:///platform/platform-impl/src/com/intellij/openapi/wm/impl/status/EditorBasedStatusBarPopup.java)
+- [`EditorBasedWidget`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/wm/impl/status/EditorBasedWidget.java)
+- [`EditorBasedStatusBarPopup`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/wm/impl/status/EditorBasedStatusBarPopup.java)
 
 ## EditorBasedWidget
 
@@ -42,21 +42,21 @@ Use one of the existing predefined widget appearance options:
   Widget with only an icon.
 
   Example:
-  [PowerSaveStatusWidgetFactory](upsource:///platform/platform-impl/src/com/intellij/openapi/wm/impl/status/PowerSaveStatusWidgetFactory.java)
+  [PowerSaveStatusWidgetFactory](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/wm/impl/status/PowerSaveStatusWidgetFactory.java)
 
 - `com.intellij.openapi.wm.StatusBarWidget.TextPresentation`
 
   Widget with only a text.
 
   Example:
-  [PositionPanel](upsource:///platform/platform-impl/src/com/intellij/openapi/wm/impl/status/PositionPanel.java)
+  [PositionPanel](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/wm/impl/status/PositionPanel.java)
 
 - `com.intellij.openapi.wm.StatusBarWidget.MultipleTextValuesPresentation`
 
   Widget with a text and a popup.
 
   Example:
-  [DvcsStatusWidget](upsource:///platform/dvcs-impl/src/com/intellij/dvcs/ui/DvcsStatusWidget.java)
+  [DvcsStatusWidget](%gh-ic%/platform/dvcs-impl/src/com/intellij/dvcs/ui/DvcsStatusWidget.java)
 
 > Note that they can't be combined to get, for example, an icon and a text.
 >
@@ -65,12 +65,12 @@ Use one of the existing predefined widget appearance options:
 To use the selected appearance, return a class that implements one of the above interfaces from `getPresentation()`.
 
 To create a widget with custom content, it should implement the
-[`CustomStatusBarWidget`](upsource:///platform/platform-api/src/com/intellij/openapi/wm/CustomStatusBarWidget.java)
+[`CustomStatusBarWidget`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/wm/CustomStatusBarWidget.java)
 interface.
 Override `getComponent()` to return the custom widget's component to display.
 
 Example:
-[MemoryUsagePanel](upsource:///platform/platform-impl/src/com/intellij/openapi/wm/impl/status/MemoryUsagePanel.java)
+[MemoryUsagePanel](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/wm/impl/status/MemoryUsagePanel.java)
 
 ## EditorBasedStatusBarPopup
 
@@ -102,19 +102,19 @@ To update a widget, use `update()`.
 By default, when adding a widget to the status bar, it can be displayed/hidden through the context menu of the status bar or widget.
 
 If you want to change visibility programmatically use
-[`StatusBarWidgetSettings.setEnabled()`](upsource:///platform/platform-impl/src/com/intellij/openapi/wm/impl/status/widget/StatusBarWidgetSettings.kt).
+[`StatusBarWidgetSettings.setEnabled()`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/wm/impl/status/widget/StatusBarWidgetSettings.kt).
 
 The first argument to the method is the factory that created the widget.
 To get it, use
-[`StatusBarWidgetsManager.findWidgetFactory()`](upsource:///platform/platform-impl/src/com/intellij/openapi/wm/impl/status/widget/StatusBarWidgetsManager.java)
+[`StatusBarWidgetsManager.findWidgetFactory()`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/wm/impl/status/widget/StatusBarWidgetsManager.java)
 and pass the widget ID and a boolean value that describes whether the widget will be visible or not.
 
 Also, you need to update the widget for the changes to take effect with
-[`StatusBarWidgetsManager.updateWidget()`](upsource:///platform/platform-impl/src/com/intellij/openapi/wm/impl/status/widget/StatusBarWidgetsManager.java).
+[`StatusBarWidgetsManager.updateWidget()`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/wm/impl/status/widget/StatusBarWidgetsManager.java).
 
 ## Showing Widget in LightEdit Mode
 
 By default, widgets aren't shown in [LightEdit](https://www.jetbrains.com/help/idea/lightedit-mode.html) mode.
 To show a widget, implement
-[`LightEditCompatible`](upsource:///platform/core-api/src/com/intellij/ide/lightEdit/LightEditCompatible.java)
+[`LightEditCompatible`](%gh-ic%/platform/core-api/src/com/intellij/ide/lightEdit/LightEditCompatible.java)
 in your factory.

@@ -9,12 +9,12 @@ This topic describes the [treeStructureProvider](https://github.com/JetBrains/in
 The steps below show how to filter out and keep visible only text files and directories in the Project View Panel.
 
 Other use cases include:
-- grouping/nesting related entries, e.g., [GUI Designer](https://www.jetbrains.com/help/idea/gui-designer-basics.html) <path>.form</path> file and related bound class ([`FormMergerTreeStructureProvider`](upsource:///plugins/ui-designer/src/com/intellij/uiDesigner/projectView/FormMergerTreeStructureProvider.java)).
+- grouping/nesting related entries, e.g., [GUI Designer](https://www.jetbrains.com/help/idea/gui-designer-basics.html) <path>.form</path> file and related bound class ([`FormMergerTreeStructureProvider`](%gh-ic%/plugins/ui-designer/src/com/intellij/uiDesigner/projectView/FormMergerTreeStructureProvider.java)).
 - provide additional "nested" nodes, e.g., contents of custom archive file
 
 ## Register Custom TreeStructure Provider
 
-Add new `com.intellij.treeStructureProvider` extension to the [plugin.xml](https://github.com/JetBrains/intellij-sdk-code-samples/blob/main/tree_structure_provider/src/main/resources/META-INF/plugin.xml)
+Add new `com.intellij.treeStructureProvider` extension to the [plugin.xml](%gh-sdk-samples%/tree_structure_provider/src/main/resources/META-INF/plugin.xml)
 
 ```xml
 <extensions defaultExtensionNs="com.intellij">
@@ -24,7 +24,7 @@ Add new `com.intellij.treeStructureProvider` extension to the [plugin.xml](https
 
 ## Implement Custom TreeStructureProvider
 
-To provide custom Structure View behaviour, implement [`TreeStructureProvider`](upsource:///platform/editor-ui-api/src/com/intellij/ide/projectView/TreeStructureProvider.java) with the nodes filtering logic in `modify()` method.
+To provide custom Structure View behaviour, implement [`TreeStructureProvider`](%gh-ic%/platform/editor-ui-api/src/com/intellij/ide/projectView/TreeStructureProvider.java) with the nodes filtering logic in `modify()` method.
 The example below shows how to filter out all the Project View nodes except those which correspond to text files and directories.
 
 ```java

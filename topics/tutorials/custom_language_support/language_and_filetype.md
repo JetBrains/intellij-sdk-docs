@@ -11,7 +11,7 @@
 </chunk>
 
 The IntelliJ Platform determines file type by examining the name of a file.
-Each language has [Language](upsource:///platform/core-api/src/com/intellij/lang/Language.java) and [LanguageFileType](upsource:///platform/core-api/src/com/intellij/openapi/fileTypes/LanguageFileType.java) objects defining the language.
+Each language has [Language](%gh-ic%/platform/core-api/src/com/intellij/lang/Language.java) and [LanguageFileType](%gh-ic%/platform/core-api/src/com/intellij/openapi/fileTypes/LanguageFileType.java) objects defining the language.
 Register the `LanguageFileType` with the IntelliJ Platform in the plugin configuration file.
 
 **Reference**: [](registering_file_type.md)
@@ -27,7 +27,7 @@ The `SimpleLanguage` class is defined in the `org.intellij.sdk.language` package
 
 ## Define an Icon
 
-The [icon](https://github.com/JetBrains/intellij-sdk-code-samples/blob/main/simple_language_plugin/src/main/resources/icons/jar-gray.png) for the Simple Language is defined by the `SimpleIcons` class.
+The [icon](%gh-sdk-samples%/simple_language_plugin/src/main/resources/icons/jar-gray.png) for the Simple Language is defined by the `SimpleIcons` class.
 Please see [](work_with_icons_and_images.md) for details on how to define and use icons.
 
 ```java
@@ -36,7 +36,7 @@ Please see [](work_with_icons_and_images.md) for details on how to define and us
 
 ## Define a FileType
 
-The Simple Language file type is defined by subclassing [`LanguageFileType`](upsource:///platform/core-api/src/com/intellij/openapi/fileTypes/LanguageFileType.java):
+The Simple Language file type is defined by subclassing [`LanguageFileType`](%gh-ic%/platform/core-api/src/com/intellij/openapi/fileTypes/LanguageFileType.java):
 
 ```java
 ```
@@ -71,7 +71,7 @@ The Simple Language file type is registered via the `com.intellij.fileType` exte
 
 ### Define a FileType Factory
 
-First, define `SimpleFileTypeFactory` as a subclass of [`FileTypeFactory`](upsource:///platform/ide-core/src/com/intellij/openapi/fileTypes/FileTypeFactory.java).
+First, define `SimpleFileTypeFactory` as a subclass of [`FileTypeFactory`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/fileTypes/FileTypeFactory.java).
 
 ```java
 ```

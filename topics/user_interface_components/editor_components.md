@@ -6,7 +6,7 @@
 
 Compared to [Swing `JTextArea`](https://docs.oracle.com/javase/8/docs/api/javax/swing/JTextArea.html), the IntelliJ Platform's editor component has a ton of advantages: syntax highlighting support, code completion, code folding and much more.
 Editors are normally displayed in editor tabs, but they can be embedded in dialogs or tool windows, too.
-This is enabled by the [`EditorTextField`](upsource:///platform/platform-impl/src/com/intellij/ui/EditorTextField.java) component.
+This is enabled by the [`EditorTextField`](%gh-ic%/platform/platform-impl/src/com/intellij/ui/EditorTextField.java) component.
 
 The following attributes can be specified:
 
@@ -14,30 +14,30 @@ The following attributes can be specified:
 * Whether the text field is read-only or editable;
 * Whether the text field is single-line or multiline.
 
-Further customizations are possible by subclassing and overriding `createEditor()` and applying [`EditorCustomization`](upsource:///platform/platform-impl/src/com/intellij/ui/EditorCustomization.java).
+Further customizations are possible by subclassing and overriding `createEditor()` and applying [`EditorCustomization`](%gh-ic%/platform/platform-impl/src/com/intellij/ui/EditorCustomization.java).
 Several commonly needed customization implementations exist, including:
-- [`SpellCheckingEditorCustomization`](upsource:///spellchecker/src/com/intellij/spellchecker/ui/SpellCheckingEditorCustomization.java) disables spellchecking
-- [`HorizontalScrollBarEditorCustomization`](upsource:///platform/platform-impl/src/com/intellij/ui/HorizontalScrollBarEditorCustomization.java) to turn on/off horizontal scrollbar
-- [`ErrorStripeEditorCustomization`](upsource:///platform/platform-impl/src/com/intellij/ui/ErrorStripeEditorCustomization.java) to turn on/off error stripes on right
+- [`SpellCheckingEditorCustomization`](%gh-ic%/spellchecker/src/com/intellij/spellchecker/ui/SpellCheckingEditorCustomization.java) disables spellchecking
+- [`HorizontalScrollBarEditorCustomization`](%gh-ic%/platform/platform-impl/src/com/intellij/ui/HorizontalScrollBarEditorCustomization.java) to turn on/off horizontal scrollbar
+- [`ErrorStripeEditorCustomization`](%gh-ic%/platform/platform-impl/src/com/intellij/ui/ErrorStripeEditorCustomization.java) to turn on/off error stripes on right
 
 `EditorTextField` has a number of subclasses that can be used as needed for additional features.
 
 If you want to use an editor as an input field in a dialog box, then consider using
-[`LanguageTextField`](upsource:///platform/platform-impl/src/com/intellij/ui/LanguageTextField.java),
+[`LanguageTextField`](%gh-ic%/platform/platform-impl/src/com/intellij/ui/LanguageTextField.java),
 it provides a more accessible API.
 
 If you want to add autocompletion to the editor, then use
-[`TextFieldWithCompletion`](upsource:///platform/platform-impl/src/com/intellij/util/textCompletion/TextFieldWithCompletion.java).
+[`TextFieldWithCompletion`](%gh-ic%/platform/platform-impl/src/com/intellij/util/textCompletion/TextFieldWithCompletion.java).
 The constructor takes as an argument a class that implements
-[`TextCompletionProvider`](upsource:///platform/platform-impl/src/com/intellij/util/textCompletion/TextCompletionProvider.java)
+[`TextCompletionProvider`](%gh-ic%/platform/platform-impl/src/com/intellij/util/textCompletion/TextCompletionProvider.java)
 to provide autocompletion variants.
 Use
-[`TextFieldCompletionProvider`](upsource:///platform/lang-impl/src/com/intellij/util/TextFieldCompletionProvider.java)
+[`TextFieldCompletionProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/util/TextFieldCompletionProvider.java)
 to create your own provider.
 For this, override `addCompletionVariants()` and add completion variants using `CompletionResultSet.addElement()`.
 
 See also
-[`TextFieldCompletionProviderDumbAware`](upsource:///platform/lang-impl/src/com/intellij/util/TextFieldCompletionProviderDumbAware.java)
+[`TextFieldCompletionProviderDumbAware`](%gh-ic%/platform/lang-impl/src/com/intellij/util/TextFieldCompletionProviderDumbAware.java)
 for completion even at the indexing stage.
 
 Refer to the [](code_completion.md) to learn more about completion.
@@ -47,9 +47,9 @@ Refer to the [](code_completion.md) to learn more about completion.
 A common use case for `EditorTextField` is entering the name of a Java class or package.
 This can be accomplished with the following steps:
 
-* Use [`JavaCodeFragmentFactory.createReferenceCodeFragment()`](upsource:///java/java-psi-api/src/com/intellij/psi/JavaCodeFragmentFactory.java) to create a code fragment representing the class or package name;
-* Call [`PsiDocumentManager.getDocument()`](upsource:///platform/core-api/src/com/intellij/psi/PsiDocumentManager.java) to get the document corresponding to the code fragment;
-* Pass the returned document to the [`EditorTextField`](upsource:///platform/platform-impl/src/com/intellij/ui/EditorTextField.java) constructor or its `setDocument()` method.
+* Use [`JavaCodeFragmentFactory.createReferenceCodeFragment()`](%gh-ic%/java/java-psi-api/src/com/intellij/psi/JavaCodeFragmentFactory.java) to create a code fragment representing the class or package name;
+* Call [`PsiDocumentManager.getDocument()`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiDocumentManager.java) to get the document corresponding to the code fragment;
+* Pass the returned document to the [`EditorTextField`](%gh-ic%/platform/platform-impl/src/com/intellij/ui/EditorTextField.java) constructor or its `setDocument()` method.
 
 ```java
 PsiFile psiFile = PsiDocumentManager.getInstance(project)

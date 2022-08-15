@@ -14,7 +14,7 @@ Direct navigation is the navigation from `PsiElement` to another `PsiElement`,
 such as navigation from `break` keyword to the end of a loop in Java, without showing any popups.
 
 To provide `PsiElement` for direct navigation, implement and register
-[`DirectNavigationProvider`](upsource:///platform/core-api/src/com/intellij/navigation/DirectNavigationProvider.java).
+[`DirectNavigationProvider`](%gh-ic%/platform/core-api/src/com/intellij/navigation/DirectNavigationProvider.java).
 
 ## Symbol Navigation
 
@@ -24,16 +24,16 @@ which it obtains by resolving a [reference](declarations_and_references.md#refer
 If there are several target symbols or several navigation targets defined for a symbol,
 then the IDE shows the navigation popup to ask the user to choose where to go.
 
-The [`NavigationTarget`](upsource:///platform/core-api/src/com/intellij/navigation/NavigationTarget.java)
+The [`NavigationTarget`](%gh-ic%/platform/core-api/src/com/intellij/navigation/NavigationTarget.java)
 is essentially a pair of a `Navigatable` and
-a [`TargetPresentation`](upsource:///platform/core-api/src/com/intellij/navigation/TargetPresentation.kt)
+a [`TargetPresentation`](%gh-ic%/platform/core-api/src/com/intellij/navigation/TargetPresentation.kt)
 instances (where to go and what to show in the popup).
 
 To provide navigation targets by a `Symbol`, either:
 - implement and register
-  [`SymbolNavigationProvider`](upsource:///platform/core-api/src/com/intellij/navigation/SymbolNavigationProvider.java);
+  [`SymbolNavigationProvider`](%gh-ic%/platform/core-api/src/com/intellij/navigation/SymbolNavigationProvider.java);
 - or implement
-  [`NavigatableSymbol`](upsource:///platform/core-api/src/com/intellij/navigation/NavigatableSymbol.java)
+  [`NavigatableSymbol`](%gh-ic%/platform/core-api/src/com/intellij/navigation/NavigatableSymbol.java)
   in the `Symbol`.
 
 ## Showing Usages

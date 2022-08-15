@@ -16,7 +16,7 @@ The project structure and Java classes available to manage projects and modules 
 This section briefly discusses the IDEA project structure, project components, and related terms.
 For more information about projects and their components, refer to [Project](https://www.jetbrains.com/help/idea/about-projects.html), [Module](https://www.jetbrains.com/help/idea/creating-and-managing-modules.html), [Library](https://www.jetbrains.com/help/idea/working-with-libraries.html), [Facet](https://www.jetbrains.com/help/idea/adding-support-for-frameworks-and-technologies.html#facets) in the IntelliJ IDEA Web Help.
 
-Use [`ProjectSettingsService`](upsource:///platform/lang-impl/src/com/intellij/openapi/roots/ui/configuration/ProjectSettingsService.java) to open related entries in <control>Project Structure</control> dialog.
+Use [`ProjectSettingsService`](%gh-ic%/platform/lang-impl/src/com/intellij/openapi/roots/ui/configuration/ProjectSettingsService.java) to open related entries in <control>Project Structure</control> dialog.
 
 ### Project
 In the IntelliJ Platform, a _project_ encapsulates all of a project's source code, libraries, and build instructions into a single organizational unit.

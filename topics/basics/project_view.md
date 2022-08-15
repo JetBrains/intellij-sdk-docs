@@ -13,8 +13,8 @@ This is used to, e.g., change the icon of module nodes to reflect the module typ
 to Python Jupyter directories as location strings.
 
 To modify project view node representations, implement
-[`ProjectViewNodeDecorator`](upsource:///platform/lang-impl/src/com/intellij/ide/projectView/ProjectViewNodeDecorator.java)
+[`ProjectViewNodeDecorator`](%gh-ic%/platform/lang-impl/src/com/intellij/ide/projectView/ProjectViewNodeDecorator.java)
 and register it as `com.intellij.projectViewNodeDecorator` extension.
 From the interface only the `decorate()` method that modifies `ProjectViewNode`s needs to be implemented.
 If you need to update your node representation on certain events, please use
-[`ProjectView.update()`](upsource:///platform/lang-impl/src/com/intellij/ide/projectView/ProjectView.java).
+[`ProjectView.update()`](%gh-ic%/platform/lang-impl/src/com/intellij/ide/projectView/ProjectView.java).

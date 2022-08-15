@@ -12,7 +12,7 @@ The `SimpleSyntaxHighlighter`, `SimpleSyntaxHighlighterFactory`, and `SimpleColo
 
 ## Define a Syntax Highlighter
 
-The Simple Language syntax highlighter class extends [`SyntaxHighlighterBase`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/fileTypes/SyntaxHighlighterBase.java).
+The Simple Language syntax highlighter class extends [`SyntaxHighlighterBase`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/fileTypes/SyntaxHighlighterBase.java).
 As recommended in [Color Scheme Management](color_scheme_management.md#text-attribute-key-dependency), the Simple Language highlighting text attributes are specified as a dependency on one of standard Intellij Platform keys.
 For the Simple Language, define only one scheme.
 
@@ -23,7 +23,7 @@ For the Simple Language, define only one scheme.
 ### Define a Syntax Highlighter Factory
 
 The factory provides a standard way for the IntelliJ Platform to instantiate the syntax highlighter for Simple Language files.
-Here, `SimpleSyntaxHighlighterFactory` subclasses [`SyntaxHighlighterFactory`](upsource:///platform/editor-ui-api/src/com/intellij/openapi/fileTypes/SyntaxHighlighterFactory.java).
+Here, `SimpleSyntaxHighlighterFactory` subclasses [`SyntaxHighlighterFactory`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/fileTypes/SyntaxHighlighterFactory.java).
 
 ```java
 ```
@@ -51,7 +51,7 @@ The colors for Simple Language Key, Separator, and Value highlighting default to
 ## Define a Color Settings Page
 
 The color settings page adds the ability for users to customize color settings for the highlighting in Simple Language files.
-The `SimpleColorSettingsPage` implements [`ColorSettingsPage`](upsource:///platform/platform-api/src/com/intellij/openapi/options/colors/ColorSettingsPage.java).
+The `SimpleColorSettingsPage` implements [`ColorSettingsPage`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/options/colors/ColorSettingsPage.java).
 
 ```java
 ```

@@ -6,20 +6,20 @@ This page lists a number of common questions/issues and techniques useful for te
 
 ## Useful Classes
 
-- [`UsefulTestCase`](upsource:///platform/testFramework/src/com/intellij/testFramework/UsefulTestCase.java)
-- [`PlatformTestUtil`](upsource:///platform/testFramework/src/com/intellij/testFramework/PlatformTestUtil.java)
-- [`CodeInsightTestUtil`](upsource:///platform/testFramework/src/com/intellij/testFramework/fixtures/CodeInsightTestUtil.java)
-- [`EditorTestUtil`](upsource:///platform/testFramework/src/com/intellij/testFramework/EditorTestUtil.java)
-- [`PsiTestUtil`](upsource:///platform/testFramework/src/com/intellij/testFramework/PsiTestUtil.java)
-- [`VfsTestUtil`](upsource:///platform/testFramework/src/com/intellij/testFramework/VfsTestUtil.java)
-- [`IoTestUtil`](upsource:///platform/testFramework/src/com/intellij/openapi/util/io/IoTestUtil.java)
+- [`UsefulTestCase`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/UsefulTestCase.java)
+- [`PlatformTestUtil`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/PlatformTestUtil.java)
+- [`CodeInsightTestUtil`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/fixtures/CodeInsightTestUtil.java)
+- [`EditorTestUtil`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/EditorTestUtil.java)
+- [`PsiTestUtil`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/PsiTestUtil.java)
+- [`VfsTestUtil`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/VfsTestUtil.java)
+- [`IoTestUtil`](%gh-ic%/platform/testFramework/src/com/intellij/openapi/util/io/IoTestUtil.java)
 
 ### UI
 
-- [`ProjectViewTestUtil`](upsource:///platform/testFramework/src/com/intellij/testFramework/ProjectViewTestUtil.java)
-- [`TestLookupElementPresentation`](upsource:///platform/testFramework/src/com/intellij/testFramework/fixtures/TestLookupElementPresentation.java)
-- [`IconTestUtil`](upsource:///platform/testFramework/src/com/intellij/ui/IconTestUtil.java)
-- [`TreeTestUtil`](upsource:///platform/testFramework/src/com/intellij/ui/tree/TreeTestUtil.java)
+- [`ProjectViewTestUtil`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/ProjectViewTestUtil.java)
+- [`TestLookupElementPresentation`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/fixtures/TestLookupElementPresentation.java)
+- [`IconTestUtil`](%gh-ic%/platform/testFramework/src/com/intellij/ui/IconTestUtil.java)
+- [`TreeTestUtil`](%gh-ic%/platform/testFramework/src/com/intellij/ui/tree/TreeTestUtil.java)
 
 ## Issues
 
@@ -47,7 +47,7 @@ void tearDown() {
 
 Avoid OS-specific assumptions (e.g., filesystem case-sensitivity, hardcoded separator instead of `java.io.File.separator`, default encoding, line endings).
 
-Use _ordered_ collections or [`UsefulTestCase.assertUnorderedCollection()`](upsource:///platform/testFramework/src/com/intellij/testFramework/UsefulTestCase.java).
+Use _ordered_ collections or [`UsefulTestCase.assertUnorderedCollection()`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/UsefulTestCase.java).
 
 Code deferring execution (e.g., via `Application.invokeLater()`) might not run during test execution (and possibly fails in production, too).
 Use `Application.invokeLater(runnable, myProject.getDisposed())`.
@@ -74,7 +74,7 @@ Annotate with [`org.jetbrains.annotations.TestOnly`](https://github.com/JetBrain
 
 ### How to run tests for all files in a directory?
 
-Use [`FileBasedTestCaseHelper`](upsource:///platform/testFramework/src/com/intellij/testFramework/FileBasedTestCaseHelper.java), please see its javadoc for instructions.
+Use [`FileBasedTestCaseHelper`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/FileBasedTestCaseHelper.java), please see its javadoc for instructions.
 
 ### How to modify setup on a per-test basis?
 
@@ -82,27 +82,27 @@ Use `UsefulTestCase.getTestName()` or create your own annotation(s) which can be
 
 ### How to run a performance test?
 
-Use [`PlatformTestUtil.startPerformanceTest()`](upsource:///platform/testFramework/src/com/intellij/testFramework/PlatformTestUtil.java) to assert machine-adjusted metrics.
+Use [`PlatformTestUtil.startPerformanceTest()`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/PlatformTestUtil.java) to assert machine-adjusted metrics.
 
 ### How to dispatch pending UI events?
 
-Use [`PlatformTestUtil.dispatchAllInvocationEventsInIdeEventQueue()`](upsource:///platform/testFramework/src/com/intellij/testFramework/PlatformTestUtil.java).
+Use [`PlatformTestUtil.dispatchAllInvocationEventsInIdeEventQueue()`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/PlatformTestUtil.java).
 
 ### How to disable stderr logging?
 
-Use [`DefaultLogger.disableStderrDumping()`](upsource:///platform/util/src/com/intellij/openapi/diagnostic/DefaultLogger.java) passing `getTestRootDisposable()`.
+Use [`DefaultLogger.disableStderrDumping()`](%gh-ic%/platform/util/src/com/intellij/openapi/diagnostic/DefaultLogger.java) passing `getTestRootDisposable()`.
 
 ### How to register a resource (DTD, XSD) temporarily?
 
-Use [`ExternalResourceManagerExImpl.registerResourceTemporarily()`](upsource:///xml/xml-psi-impl/src/com/intellij/javaee/ExternalResourceManagerExImpl.java) passing `getTestRootDisposable()`.
+Use [`ExternalResourceManagerExImpl.registerResourceTemporarily()`](%gh-ic%/xml/xml-psi-impl/src/com/intellij/javaee/ExternalResourceManagerExImpl.java) passing `getTestRootDisposable()`.
 
 ### How to replace component/service in tests?
 
-Provide dedicated test implementation via `testServiceImplementation` in [service declaration](plugin_services.md#declaring-a-service), or use [`ServiceContainerUtil`](upsource:///platform/testFramework/src/com/intellij/testFramework/ServiceContainerUtil.kt).
+Provide dedicated test implementation via `testServiceImplementation` in [service declaration](plugin_services.md#declaring-a-service), or use [`ServiceContainerUtil`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/ServiceContainerUtil.kt).
 
 ### How to replace extension points in tests?
 
-Use [`ExtensionTestUtil`](upsource:///platform/testFramework/src/com/intellij/testFramework/ExtensionTestUtil.kt).
+Use [`ExtensionTestUtil`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/ExtensionTestUtil.kt).
 
 ### How to wait for a specified amount of time?
 
@@ -110,12 +110,12 @@ If possible, use [](#how-to-wait-for-condition-with-timeout) approach. Otherwise
 
 ### How to wait for condition with timeout?
 
-Use [`WaitFor`](upsource:///platform/util/src/com/intellij/util/WaitFor.java).
+Use [`WaitFor`](%gh-ic%/platform/util/src/com/intellij/util/WaitFor.java).
 
 ### How to test a JVM language?
 
 Plugins supporting a JVM language may require JDK and language standard library to be set up in a test project, so that classes like `java.lang.String` can be correctly resolved during tests.
-Tests extending [`LightJavaCodeInsightFixtureTestCase`](upsource:///java/testFramework/src/com/intellij/testFramework/fixtures/LightJavaCodeInsightFixtureTestCase.java) use one of the mock JDKs distributed with the [IntelliJ Community project](https://github.com/JetBrains/intellij-community) sources (notice <path>java/mockJDK-$JAVA_VERSION$</path> directories).
+Tests extending [`LightJavaCodeInsightFixtureTestCase`](%gh-ic%/java/testFramework/src/com/intellij/testFramework/fixtures/LightJavaCodeInsightFixtureTestCase.java) use one of the mock JDKs distributed with the [IntelliJ Community project](https://github.com/JetBrains/intellij-community) sources (notice <path>java/mockJDK-$JAVA_VERSION$</path> directories).
 These JAR files are not available in plugin project dependencies, so the IntelliJ Community sources must be checked out to the machine running the tests, and sources' location must be provided to the test framework.
 It's done by setting the `idea.home.path` system property to the absolute path of the checked-out sources in the `test` task configuration:
 
@@ -144,20 +144,20 @@ test {
 
 The default JDK version used by the test framework depends on the target platform version and is the latest supported version.
 The easiest way to change the JDK version to a custom one is by overriding `LightJavaCodeInsightFixtureTestCase.getProjectDescriptor()` and using one of the predefined project descriptors in `LightJavaCodeInsightFixtureTestCase`.
-If a project descriptor requires more customizations, its `getSdk()` method can use one of the [`IdeaTestUtil.getMockJdk*()`](upsource:///java/testFramework/src/com/intellij/testFramework/IdeaTestUtil.java) methods.
+If a project descriptor requires more customizations, its `getSdk()` method can use one of the [`IdeaTestUtil.getMockJdk*()`](%gh-ic%/java/testFramework/src/com/intellij/testFramework/IdeaTestUtil.java) methods.
 
 Sometimes, testing a JVM language requires adding standard or other libraries to a test project.
-If a required library is available in the Maven repository, use [`MavenDependencyUtil`](upsource:///java/testFramework/src/com/intellij/testFramework/fixtures/MavenDependencyUtil.java), e.g.:
+If a required library is available in the Maven repository, use [`MavenDependencyUtil`](%gh-ic%/java/testFramework/src/com/intellij/testFramework/fixtures/MavenDependencyUtil.java), e.g.:
 
 ```java
 MavenDependencyUtil.addFromMaven(model,
     "org.jetbrains.kotlin:kotlin-stdlib:1.6.10");
 ```
 
-For [light tests](light_and_heavy_tests.md), use convenience method [`DefaultLightProjectDescriptor.withRepositoryLibrary()`](upsource:///java/testFramework/src/com/intellij/testFramework/fixtures/DefaultLightProjectDescriptor.java)
-and [`JavaModuleFixtureBuilder.addMavenLibrary()`](upsource:///java/testFramework/src/com/intellij/testFramework/builders/JavaModuleFixtureBuilder.java) for [heavy tests](light_and_heavy_tests.md).
+For [light tests](light_and_heavy_tests.md), use convenience method [`DefaultLightProjectDescriptor.withRepositoryLibrary()`](%gh-ic%/java/testFramework/src/com/intellij/testFramework/fixtures/DefaultLightProjectDescriptor.java)
+and [`JavaModuleFixtureBuilder.addMavenLibrary()`](%gh-ic%/java/testFramework/src/com/intellij/testFramework/builders/JavaModuleFixtureBuilder.java) for [heavy tests](light_and_heavy_tests.md).
 
-If a required library is an unpublished JAR file, use [`PsiTestUtil.addLibrary()`](upsource:///platform/testFramework/src/com/intellij/testFramework/PsiTestUtil.java) or `addProjectLibrary()` method and the JAR file path, e.g.:
+If a required library is an unpublished JAR file, use [`PsiTestUtil.addLibrary()`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/PsiTestUtil.java) or `addProjectLibrary()` method and the JAR file path, e.g.:
 
 ```java
 PsiTestUtil.addLibrary(model,

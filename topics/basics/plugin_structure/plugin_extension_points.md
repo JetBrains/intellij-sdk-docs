@@ -44,7 +44,7 @@ Then insert a child element `<extensionPoint>` that defines the extension point 
 The `name` attribute assigns a unique name for this extension point.
 Its fully qualified name required in [Using Extension Points](#using-extension-points) is built by prefixing `<id>` + `.`: `my.plugin.myExtensionPoint1` and `my.plugin.myExtensionPoint2`.
 
-The `beanClass` attribute sets a bean class that specifies one or several properties annotated with the [`@Attribute`](upsource:///platform/util/src/com/intellij/util/xmlb/annotations/Attribute.java) annotation.
+The `beanClass` attribute sets a bean class that specifies one or several properties annotated with the [`@Attribute`](%gh-ic%/platform/util/src/com/intellij/util/xmlb/annotations/Attribute.java) annotation.
 Note that bean classes do not follow the JavaBean standard.
 
 The `interface` attribute sets an interface the plugin that contributes to the extension point must implement.
@@ -113,7 +113,7 @@ For above extension points usage in _anotherPlugin_ would look like this (see al
 ```
 
 ## Using Extension Points
-To refer to all registered extension instances at runtime, declare an [`ExtensionPointName`](upsource:///platform/extensions/src/com/intellij/openapi/extensions/ExtensionPointName.java) passing in the fully-qualified name matching its [declaration in plugin.xml](#declaring-extension-points).
+To refer to all registered extension instances at runtime, declare an [`ExtensionPointName`](%gh-ic%/platform/extensions/src/com/intellij/openapi/extensions/ExtensionPointName.java) passing in the fully-qualified name matching its [declaration in plugin.xml](#declaring-extension-points).
 
 <path>myPlugin/src/com/myplugin/MyExtensionUsingService.java</path>
 
@@ -139,7 +139,7 @@ A gutter icon for the `ExtensionPointName` declaration allows navigating to the 
 To support [Dynamic Plugins](dynamic_plugins.md) (2020.1 and later), an extension point must adhere to specific usage rules:
 
 - extensions are enumerated on every use and extensions instances are not stored anywhere
-- alternatively, an [`ExtensionPointListener`](upsource:///platform/extensions/src/com/intellij/openapi/extensions/ExtensionPointListener.java) can perform necessary updates of data structures (register via `ExtensionPointName.addExtensionPointListener()`)
+- alternatively, an [`ExtensionPointListener`](%gh-ic%/platform/extensions/src/com/intellij/openapi/extensions/ExtensionPointListener.java) can perform necessary updates of data structures (register via `ExtensionPointName.addExtensionPointListener()`)
 
 Extension points matching these conditions can then be marked as _dynamic_ by adding `dynamic="true"` in their declaration:
 

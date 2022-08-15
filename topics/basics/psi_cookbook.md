@@ -17,19 +17,19 @@ Unlike [Developing Custom Language Plugins](custom_language_support.md), it is a
 
 ### How do I find a file if I know its name but don't know the path?
 
-[`FilenameIndex.getFilesByName()`](upsource:///platform/indexing-api/src/com/intellij/psi/search/FilenameIndex.java)
+[`FilenameIndex.getFilesByName()`](%gh-ic%/platform/indexing-api/src/com/intellij/psi/search/FilenameIndex.java)
 
 ### How do I find where a particular PSI element is used?
 
-[`ReferencesSearch.search()`](upsource:///platform/indexing-api/src/com/intellij/psi/search/searches/ReferencesSearch.java)
+[`ReferencesSearch.search()`](%gh-ic%/platform/indexing-api/src/com/intellij/psi/search/searches/ReferencesSearch.java)
 
 ### How do I rename a PSI element?
 
-[`RefactoringFactory.createRename()`](upsource:///platform/lang-api/src/com/intellij/refactoring/RefactoringFactory.java)
+[`RefactoringFactory.createRename()`](%gh-ic%/platform/lang-api/src/com/intellij/refactoring/RefactoringFactory.java)
 
 ### How can I cause the PSI for a virtual file to be rebuilt?
 
-[`FileContentUtil.reparseFiles()`](upsource:///platform/analysis-api/src/com/intellij/util/FileContentUtil.java)
+[`FileContentUtil.reparseFiles()`](%gh-ic%/platform/analysis-api/src/com/intellij/util/FileContentUtil.java)
 
 ## Java Specific
 
@@ -40,19 +40,19 @@ Unlike [Developing Custom Language Plugins](custom_language_support.md), it is a
 
 ### How do I find all inheritors of a class?
 
-[`ClassInheritorsSearch.search()`](upsource:///java/java-indexing-api/src/com/intellij/psi/search/searches/ClassInheritorsSearch.java)
+[`ClassInheritorsSearch.search()`](%gh-ic%/java/java-indexing-api/src/com/intellij/psi/search/searches/ClassInheritorsSearch.java)
 
 ### How do I find a class by qualified name?
 
-[`JavaPsiFacade.findClass()`](upsource:///java/java-psi-api/src/com/intellij/psi/JavaPsiFacade.java)
+[`JavaPsiFacade.findClass()`](%gh-ic%/java/java-psi-api/src/com/intellij/psi/JavaPsiFacade.java)
 
 ### How do I find a class by short name?
 
-[`PsiShortNamesCache.getClassesByName()`](upsource:///java/java-indexing-api/src/com/intellij/psi/search/PsiShortNamesCache.java)
+[`PsiShortNamesCache.getClassesByName()`](%gh-ic%/java/java-indexing-api/src/com/intellij/psi/search/PsiShortNamesCache.java)
 
 ### How do I find a superclass of a Java class?
 
-[`PsiClass.getSuperClass()`](upsource:///java/java-psi-api/src/com/intellij/psi/PsiClass.java)
+[`PsiClass.getSuperClass()`](%gh-ic%/java/java-psi-api/src/com/intellij/psi/PsiClass.java)
 
 ### How do I get a reference to the containing package of a Java class?
 
@@ -64,8 +64,8 @@ PsiPackage psiPackage = JavaPsiFacade.getInstance(project)
 
 or
 
-[`PsiUtil.getPackageName()`](upsource:///java/java-psi-api/src/com/intellij/psi/util/PsiUtil.java)
+[`PsiUtil.getPackageName()`](%gh-ic%/java/java-psi-api/src/com/intellij/psi/util/PsiUtil.java)
 
 ### How do I find the methods overriding a specific method?
 
-[`OverridingMethodsSearch.search()`](upsource:///java/java-indexing-api/src/com/intellij/psi/search/searches/OverridingMethodsSearch.java)
+[`OverridingMethodsSearch.search()`](%gh-ic%/java/java-indexing-api/src/com/intellij/psi/search/searches/OverridingMethodsSearch.java)

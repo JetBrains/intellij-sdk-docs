@@ -2,13 +2,13 @@
 
 <!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-A _service_ is a plugin component loaded on demand when your plugin calls the `getService()` method of corresponding [`ComponentManager`](upsource:///platform/extensions/src/com/intellij/openapi/components/ComponentManager.java) instance (see [Types](#types)).
+A _service_ is a plugin component loaded on demand when your plugin calls the `getService()` method of corresponding [`ComponentManager`](%gh-ic%/platform/extensions/src/com/intellij/openapi/components/ComponentManager.java) instance (see [Types](#types)).
 The IntelliJ Platform ensures that only one instance of a service is loaded even though it is called several times.
 
 A service must have an implementation class that is used for service instantiation.
 A service may also have an interface class used to obtain the service instance and provide the service's API.
 
-A service needing a shutdown hook/cleanup routine can implement [`Disposable`](upsource:///platform/util/src/com/intellij/openapi/Disposable.java) and perform necessary work in `dispose()` (see [Automatically Disposed Objects](disposers.md#automatically-disposed-objects)).
+A service needing a shutdown hook/cleanup routine can implement [`Disposable`](%gh-ic%/platform/util/src/com/intellij/openapi/Disposable.java) and perform necessary work in `dispose()` (see [Automatically Disposed Objects](disposers.md#automatically-disposed-objects)).
 
 Services are used to encapsulate logic operating on a set of related classes or to provide some reusable functionality that can be used across the plugin project, and conceptually don't differ from the service classes in other languages or frameworks.
 
@@ -36,7 +36,7 @@ To improve startup performance, avoid any heavy initializations in the construct
 {type="note"}
 
 A service not going to be overridden does not need to be registered in <path>plugin.xml</path> (see [Declaring a Service](#declaring-a-service)).
-Instead, annotate service class with [`@Service`](upsource:///platform/core-api/src/com/intellij/openapi/components/Service.java).
+Instead, annotate service class with [`@Service`](%gh-ic%/platform/core-api/src/com/intellij/openapi/components/Service.java).
 The service instance will be created in scope according to the caller (see [Retrieving a Service](#retrieving-a-service)).
 
 Restrictions:

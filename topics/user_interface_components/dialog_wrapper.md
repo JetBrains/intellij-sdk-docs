@@ -4,7 +4,7 @@
 
 ## DialogWrapper
 
-The [`DialogWrapper`](upsource:///platform/platform-api/src/com/intellij/openapi/ui/DialogWrapper.java) is the base class which is supposed to be used for all modal dialogs (and some non-modal dialogs) shown in IntelliJ Platform.
+The [`DialogWrapper`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/ui/DialogWrapper.java) is the base class which is supposed to be used for all modal dialogs (and some non-modal dialogs) shown in IntelliJ Platform.
 
 It provides the following features:
 
@@ -20,7 +20,7 @@ It provides the following features:
 
 ### Usage
 
-When using the [`DialogWrapper`](upsource:///platform/platform-api/src/com/intellij/openapi/ui/DialogWrapper.java) class for a dialog, follow these required steps:
+When using the [`DialogWrapper`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/ui/DialogWrapper.java) class for a dialog, follow these required steps:
 
 * Call the base class constructor and provide either a `Project` in the frame of which the dialog will be displayed, or a parent component for the dialog.
 * Call the `setTitle()` method to set the title for the dialog
@@ -48,7 +48,7 @@ The `showAndGet()` method can be used to combine these two calls.
 
 To customize the buttons displayed in the dialog (replacing the standard <control>OK</control>/<control>Cancel</control>/<control>Help</control> set of buttons), override either the `createActions()` or `createLeftActions()` methods.
 Both of these methods return an array of Swing Action objects.
-If a button closes the dialog, use [`DialogWrapperExitAction`](upsource:///platform/platform-api/src/com/intellij/openapi/ui/DialogWrapper.java) as the base class for the action.
+If a button closes the dialog, use [`DialogWrapperExitAction`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/ui/DialogWrapper.java) as the base class for the action.
 Use `action.putValue(DialogWrapper.DEFAULT_ACTION, true)` to set the default button.
 
 ### Input Validation
@@ -58,12 +58,12 @@ Please see also [Validation errors](https://jetbrains.design/intellij/principles
 To validate the data entered into the dialog, override the `doValidate()` method.
 The method will be called automatically by timer.
 If the currently entered data is valid, return `null`.
-Otherwise, return a [`ValidationInfo`](upsource:///platform/ide-core/src/com/intellij/openapi/ui/ValidationInfo.java) object which encapsulates an error message, and an optional component associated with the invalid data.
+Otherwise, return a [`ValidationInfo`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/ui/ValidationInfo.java) object which encapsulates an error message, and an optional component associated with the invalid data.
 When specifying a component, an error icon will be displayed next to it, and it will be focused when the user tries to invoke the <control>OK</control> action.
 
 ## Example
 
-Simple definition of a [`DialogWrapper`](upsource:///platform/platform-api/src/com/intellij/openapi/ui/DialogWrapper.java):
+Simple definition of a [`DialogWrapper`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/ui/DialogWrapper.java):
 
 ```java
 public class SampleDialogWrapper extends DialogWrapper {

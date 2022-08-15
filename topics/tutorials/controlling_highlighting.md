@@ -25,12 +25,12 @@ For example, the old version of a file could be created in a different project c
 If the old file version used the library that is not used by the project currently, it would cause reporting false-positive code issues.
 
 The IntelliJ Platform exposes the extension point allowing a plugin to decide which highlighting information will be visible in the editor.
-To do that, a plugin has to provide an implementation of [`HighlightInfoFilter`](upsource:///platform/analysis-impl/src/com/intellij/codeInsight/daemon/impl/HighlightInfoFilter.java) and register it in the `com.intellij.daemon.highlightInfoFilter` extension point.
+To do that, a plugin has to provide an implementation of [`HighlightInfoFilter`](%gh-ic%/platform/analysis-impl/src/com/intellij/codeInsight/daemon/impl/HighlightInfoFilter.java) and register it in the `com.intellij.daemon.highlightInfoFilter` extension point.
 It contains a single method `accept()`, which should return `true` if a given `HighlightInfo` should be visible in the editor and `false` to ignore it.
 
 **Examples:**
-- [`DebuggerHighlightFilter`](upsource:///java/debugger/impl/src/com/intellij/debugger/engine/evaluation/DebuggerHighlightFilter.java) disabling reporting unhandled exceptions in the debugger code editor
-- [`LombokHighlightErrorFilter`](upsource:///plugins/lombok/src/main/java/de/plushnikov/intellij/plugin/extension/LombokHighlightErrorFilter.java) disabling false-positive error reports in a project using Lombok
+- [`DebuggerHighlightFilter`](%gh-ic%/java/debugger/impl/src/com/intellij/debugger/engine/evaluation/DebuggerHighlightFilter.java) disabling reporting unhandled exceptions in the debugger code editor
+- [`LombokHighlightErrorFilter`](%gh-ic%/plugins/lombok/src/main/java/de/plushnikov/intellij/plugin/extension/LombokHighlightErrorFilter.java) disabling false-positive error reports in a project using Lombok
 
 **See also:**
 - [Controlling Syntax Errors Highlighting](syntax_errors.md#controlling-syntax-errors-highlighting)

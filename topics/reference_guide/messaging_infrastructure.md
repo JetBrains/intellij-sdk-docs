@@ -53,7 +53,7 @@ Manages all subscriptions for particular client within particular bus.
 * it's possible to specify *default handler* and subscribe to the target topic without explicitly provided callback.
   Connection will use that *default handler* when storing *(topic-handler)* mapping;
 * it's possible to explicitly release acquired resources (*disconnect()* method).
-  Also it can be plugged to standard semi-automatic disposing ([`Disposable`](upsource:///platform/util/src/com/intellij/openapi/Disposable.java));
+  Also it can be plugged to standard semi-automatic disposing ([`Disposable`](%gh-ic%/platform/util/src/com/intellij/openapi/Disposable.java));
 
 ### Putting Altogether
 
@@ -111,9 +111,9 @@ public void doChange(Context context) {
 
 *Existing resources*
 
-* *MessageBus* instances are available via [`ComponentManager.getMessageBus()`](upsource:///platform/extensions/src/com/intellij/openapi/components/ComponentManager.java)
-  Many standard interfaces implement a message bus, e.g., [`Application`](upsource:///platform/core-api/src/com/intellij/openapi/application/Application.java) and [`Project`](upsource:///platform/core-api/src/com/intellij/openapi/project/Project.java).
-* A number of public topics are used by the IntelliJ Platform, e.g., [`AppTopics`](upsource:///platform/platform-api/src/com/intellij/AppTopics.java), [`ProjectTopics`](upsource:///platform/projectModel-api/src/com/intellij/ProjectTopics.java), etc.
+* *MessageBus* instances are available via [`ComponentManager.getMessageBus()`](%gh-ic%/platform/extensions/src/com/intellij/openapi/components/ComponentManager.java)
+  Many standard interfaces implement a message bus, e.g., [`Application`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/Application.java) and [`Project`](%gh-ic%/platform/core-api/src/com/intellij/openapi/project/Project.java).
+* A number of public topics are used by the IntelliJ Platform, e.g., [`AppTopics`](%gh-ic%/platform/platform-api/src/com/intellij/AppTopics.java), [`ProjectTopics`](%gh-ic%/platform/projectModel-api/src/com/intellij/ProjectTopics.java), etc.
   So, it's possible to subscribe to them in order to receive information about the processing.
 
 ## Broadcasting

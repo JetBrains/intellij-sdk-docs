@@ -14,7 +14,7 @@ See [](extension_point_list.md) for IntelliJ Platform.
 
 | Topic | Listener |
 |-------|----------|
-| [FileSymbolTablesCache#OUT_OF_CODE_BLOCK_TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.psi.util.PsiModificationTracker.Listener)  ![Project-Level][project-level] | [`Listener`](upsource:///platform/core-api/src/com/intellij/psi/util/PsiModificationTracker.java) |
+| [FileSymbolTablesCache#OUT_OF_CODE_BLOCK_TOPIC](https://jb.gg/ipe/listeners?topics=com.intellij.psi.util.PsiModificationTracker.Listener)  ![Project-Level][project-level] | [`Listener`](%gh-ic%/platform/core-api/src/com/intellij/psi/util/PsiModificationTracker.java) |
 | [CMakeWorkspaceListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.cpp.cmake.workspace.CMakeWorkspaceListener)  | `CMakeWorkspaceListener` |
 | [CubeMXManager#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.cpp.embedded.stm32cubemx.CubeMXManager.CubeStatusListener)  | `CubeStatusListener` |
 | [CLionExternalBuildManagerListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.cpp.execution.external.build.CLionExternalBuildManagerListener)  | `CLionExternalBuildManagerListener` |
@@ -91,7 +91,7 @@ See [](extension_point_list.md) for IntelliJ Platform.
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| [cidr.lang.annotatorInspectionToolProvider](https://jb.gg/ipe?extensions=cidr.lang.annotatorInspectionToolProvider) ![Non-Dynamic][non-dynamic] | [`NotNullProducer`](upsource:///platform/util/src/com/intellij/util/NotNullProducer.java) |
+| [cidr.lang.annotatorInspectionToolProvider](https://jb.gg/ipe?extensions=cidr.lang.annotatorInspectionToolProvider) ![Non-Dynamic][non-dynamic] | [`NotNullProducer`](%gh-ic%/platform/util/src/com/intellij/util/NotNullProducer.java) |
 | [cidr.lang.fileTypeHelper](https://jb.gg/ipe?extensions=cidr.lang.fileTypeHelper) ![Non-Dynamic][non-dynamic] | `OCFileTypeHelper` |
 | [cidr.lang.knownModuleDetector](https://jb.gg/ipe?extensions=cidr.lang.knownModuleDetector) ![Internal API][internal] | `CidrKnownModuleDetector` |
 | [cidr.lang.languageKindHelper](https://jb.gg/ipe?extensions=cidr.lang.languageKindHelper) ![Non-Dynamic][non-dynamic] | `OCLanguageKindCalculatorHelper` |
@@ -99,7 +99,7 @@ See [](extension_point_list.md) for IntelliJ Platform.
 | [cidr.lang.newFileLangBackendHandler](https://jb.gg/ipe?extensions=cidr.lang.newFileLangBackendHandler) ![Non-Dynamic][non-dynamic] | `OCNewFileLangBackendHandler` |
 | [cidr.lang.newFileModelHandlerProvider](https://jb.gg/ipe?extensions=cidr.lang.newFileModelHandlerProvider) ![Non-Dynamic][non-dynamic] | `OCNewFileProjectModelHandlerProvider` |
 | [cidr.lang.projectWizardFilesFormatter](https://jb.gg/ipe?extensions=cidr.lang.projectWizardFilesFormatter) ![Non-Dynamic][non-dynamic] | `CidrProjectWizardFilesFormatter` |
-| [cidr.lang.standaloneInspectionToolProvider](https://jb.gg/ipe?extensions=cidr.lang.standaloneInspectionToolProvider) ![Non-Dynamic][non-dynamic] | [`NotNullProducer`](upsource:///platform/util/src/com/intellij/util/NotNullProducer.java) |
+| [cidr.lang.standaloneInspectionToolProvider](https://jb.gg/ipe?extensions=cidr.lang.standaloneInspectionToolProvider) ![Non-Dynamic][non-dynamic] | [`NotNullProducer`](%gh-ic%/platform/util/src/com/intellij/util/NotNullProducer.java) |
 
 ### CidrLangPlugin.xml
 
@@ -118,7 +118,7 @@ See [](extension_point_list.md) for IntelliJ Platform.
 | [cidr.lang.foreignUsagesRenameProcessor](https://jb.gg/ipe?extensions=cidr.lang.foreignUsagesRenameProcessor) ![Non-Dynamic][non-dynamic] | `OCForeignUsagesRenameProcessor` |
 | [cidr.lang.groupedFileNaming](https://jb.gg/ipe?extensions=cidr.lang.groupedFileNaming) ![Non-Dynamic][non-dynamic] | `OCGroupedFileNaming` |
 | [cidr.lang.includeHelper](https://jb.gg/ipe?extensions=cidr.lang.includeHelper) ![Non-Dynamic][non-dynamic] | `OCIncludeHelper` |
-| [cidr.lang.includeHierarchyProvider](https://jb.gg/ipe?extensions=cidr.lang.includeHierarchyProvider) ![Non-Dynamic][non-dynamic] | [`HierarchyProvider`](upsource:///platform/lang-api/src/com/intellij/ide/hierarchy/HierarchyProvider.java) |
+| [cidr.lang.includeHierarchyProvider](https://jb.gg/ipe?extensions=cidr.lang.includeHierarchyProvider) ![Non-Dynamic][non-dynamic] | [`HierarchyProvider`](%gh-ic%/platform/lang-api/src/com/intellij/ide/hierarchy/HierarchyProvider.java) |
 | [cidr.lang.initialBuildingActivity](https://jb.gg/ipe?extensions=cidr.lang.initialBuildingActivity) ![Non-Dynamic][non-dynamic] | `OCInitialBuildingActivity` |
 | [cidr.lang.languageKindContributor](https://jb.gg/ipe?extensions=cidr.lang.languageKindContributor) ![Non-Dynamic][non-dynamic] | `OCLanguageKindContributor` |
 | [cidr.lang.libraryFileConfigurationProvider](https://jb.gg/ipe?extensions=cidr.lang.libraryFileConfigurationProvider) ![Non-Dynamic][non-dynamic] | `OCLibraryFileResolveConfigurationProvider` |
@@ -128,7 +128,7 @@ See [](extension_point_list.md) for IntelliJ Platform.
 | [cidr.lang.moduleMapSearchRootProvider](https://jb.gg/ipe?extensions=cidr.lang.moduleMapSearchRootProvider) ![Non-Dynamic][non-dynamic] | `ModuleMapSearchRootProvider` |
 | [cidr.lang.moduleResolver](https://jb.gg/ipe?extensions=cidr.lang.moduleResolver) ![Non-Dynamic][non-dynamic] | `OCModuleResolver` |
 | [cidr.lang.ocAdditionalFileSymbolTableBuilder](https://jb.gg/ipe?extensions=cidr.lang.ocAdditionalFileSymbolTableBuilder) ![Non-Dynamic][non-dynamic] | `OCAdditionalFileSymbolTableBuilder` |
-| [cidr.lang.ocDirectInheritorsSearch](https://jb.gg/ipe?extensions=cidr.lang.ocDirectInheritorsSearch) ![Non-Dynamic][non-dynamic] | [`QueryExecutor`](upsource:///platform/core-api/src/com/intellij/util/QueryExecutor.java) |
+| [cidr.lang.ocDirectInheritorsSearch](https://jb.gg/ipe?extensions=cidr.lang.ocDirectInheritorsSearch) ![Non-Dynamic][non-dynamic] | [`QueryExecutor`](%gh-ic%/platform/core-api/src/com/intellij/util/QueryExecutor.java) |
 | [cidr.lang.ocResolveRootAndConfigurationProvider](https://jb.gg/ipe?extensions=cidr.lang.ocResolveRootAndConfigurationProvider) ![Non-Dynamic][non-dynamic] | `OCResolveRootAndConfigurationProvider` |
 | [cidr.lang.renameHandlerExtension](https://jb.gg/ipe?extensions=cidr.lang.renameHandlerExtension) ![Non-Dynamic][non-dynamic] | `OCRenameHandlerExtension` |
 | [cidr.lang.renameProcessorExtension](https://jb.gg/ipe?extensions=cidr.lang.renameProcessorExtension) ![Non-Dynamic][non-dynamic] | `OCRenameProcessorExtension` |

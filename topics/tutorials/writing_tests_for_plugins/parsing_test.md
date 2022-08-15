@@ -6,7 +6,7 @@
 
 The first test checks if the Simple Language parser, implemented in the [Lexer and Parser Definition](lexer_and_parser_definition.md) section of the Custom Language Support Tutorial, works as expected.
 
-For more complex Lexers (e.g., having additional logic), it is advisable to add separate tests inheriting from [`LexerTestCase`](upsource:///platform/testFramework/src/com/intellij/testFramework/LexerTestCase.java).
+For more complex Lexers (e.g., having additional logic), it is advisable to add separate tests inheriting from [`LexerTestCase`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/LexerTestCase.java).
 
 ## Update Grammar and Regenerate the Parser
 Before creating the parsing test, ensure the parser definition (<path>Simple.bnf</path>) includes the lines shown below.
@@ -51,7 +51,7 @@ Create a file <path>ParsingTestData.txt</path> with the copied PSI tree.
 {src="simple_language_plugin/src/test/testData/ParsingTestData.txt"}
 
 ## Define a Parsing Test
-Subclass [`ParsingTestCase`](upsource:///platform/testFramework/src/com/intellij/testFramework/ParsingTestCase.java) to create `SimpleParsingTest`:
+Subclass [`ParsingTestCase`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/ParsingTestCase.java) to create `SimpleParsingTest`:
 Override `getTestDataPath()`, and return the path from the root of this plugin module to the <path>testData</path> directory.
 
 ```java

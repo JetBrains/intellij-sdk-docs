@@ -4,7 +4,7 @@
 
 <include src="language_and_filetype.md" include-id="custom_language_tutorial_header"></include>
 
-A [`DocumentationProvider`](upsource:///platform/analysis-api/src/com/intellij/lang/documentation/DocumentationProvider.java)
+A [`DocumentationProvider`](%gh-ic%/platform/analysis-api/src/com/intellij/lang/documentation/DocumentationProvider.java)
 helps users by showing documentation for symbols like method calls inside the editor.
 For the custom language tutorial, we're implementing a version of this extension point (EP) for the Simple Language that shows the key/value,
 the file where it is defined, and any related documentation comment.
@@ -14,7 +14,7 @@ the file where it is defined, and any related documentation comment.
 ## Implement DocumentationProvider and Register the EP
 
 In the first step, we create an empty class that extends
-[`AbstractDocumentationProvider`](upsource:///platform/analysis-api/src/com/intellij/lang/documentation/AbstractDocumentationProvider.java)
+[`AbstractDocumentationProvider`](%gh-ic%/platform/analysis-api/src/com/intellij/lang/documentation/AbstractDocumentationProvider.java)
 and registers it in the <path>plugin.xml</path>.
 
 ```java

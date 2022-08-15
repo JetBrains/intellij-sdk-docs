@@ -20,9 +20,9 @@ The *External System* sub-system provides a simple API for wrapping external sys
 
 The external system wrapper is required to be able to build project info on the basis of the given external system config.
 That information is built with the following base classes:
-* [`DataNode`](upsource:///platform/external-system-api/src/com/intellij/openapi/externalSystem/model/DataNode.java)
-* [`Key`](upsource:///platform/external-system-api/src/com/intellij/openapi/externalSystem/model/Key.java)
-* [`ExternalEntityData`](upsource:///platform/external-system-api/src/com/intellij/openapi/externalSystem/model/project/ExternalEntityData.java)
+* [`DataNode`](%gh-ic%/platform/external-system-api/src/com/intellij/openapi/externalSystem/model/DataNode.java)
+* [`Key`](%gh-ic%/platform/external-system-api/src/com/intellij/openapi/externalSystem/model/Key.java)
+* [`ExternalEntityData`](%gh-ic%/platform/external-system-api/src/com/intellij/openapi/externalSystem/model/project/ExternalEntityData.java)
 
 ![DataNode](data_node.svg)
 
@@ -37,7 +37,7 @@ The IDE provides a set of built-in `Key` and `ExternalEntityData` classes but an
 
 ### Managing Project Data
 
-Processing project data built on an external system config basis can be performed with [`ProjectDataService`](upsource:///platform/external-system-api/src/com/intellij/openapi/externalSystem/service/project/manage/ProjectDataService.java).
+Processing project data built on an external system config basis can be performed with [`ProjectDataService`](%gh-ic%/platform/external-system-api/src/com/intellij/openapi/externalSystem/service/project/manage/ProjectDataService.java).
 It is a strategy which knows how to manage particular `ExternalEntityData`.
 For example, when we want to import a project from an external model, we can start with the top level `DataNode` which references project info and then import its data using corresponding service.
 
@@ -49,21 +49,21 @@ That means that a set of `DataNode`, `Key` and `ProjectDataServices` can be intr
 ### Importing from External Model
 
 The IntelliJ Platform provides an API for importing projects from external models:
-* [`ProjectImportBuilder`](upsource:///java/idea-ui/src/com/intellij/projectImport/ProjectImportBuilder.java)
-* [`ProjectImportProvider`](upsource:///java/idea-ui/src/com/intellij/projectImport/ProjectImportProvider.java)
+* [`ProjectImportBuilder`](%gh-ic%/java/idea-ui/src/com/intellij/projectImport/ProjectImportBuilder.java)
+* [`ProjectImportProvider`](%gh-ic%/java/idea-ui/src/com/intellij/projectImport/ProjectImportProvider.java)
 
 There are two classes built on the *template method* pattern which simplify implementation:
-* [`AbstractExternalProjectImportBuilder`](upsource:///java/idea-ui/src/com/intellij/openapi/externalSystem/service/project/wizard/AbstractExternalProjectImportBuilder.java)
-* [`AbstractExternalProjectImportProvider`](upsource:///java/idea-ui/src/com/intellij/openapi/externalSystem/service/project/wizard/AbstractExternalProjectImportProvider.java)
+* [`AbstractExternalProjectImportBuilder`](%gh-ic%/java/idea-ui/src/com/intellij/openapi/externalSystem/service/project/wizard/AbstractExternalProjectImportBuilder.java)
+* [`AbstractExternalProjectImportProvider`](%gh-ic%/java/idea-ui/src/com/intellij/openapi/externalSystem/service/project/wizard/AbstractExternalProjectImportProvider.java)
 
-Note that [`AbstractExternalProjectImportBuilder`](upsource:///java/idea-ui/src/com/intellij/openapi/externalSystem/service/project/wizard/AbstractExternalProjectImportBuilder.java) is built on top of the 'external system settings' controls.
+Note that [`AbstractExternalProjectImportBuilder`](%gh-ic%/java/idea-ui/src/com/intellij/openapi/externalSystem/service/project/wizard/AbstractExternalProjectImportBuilder.java) is built on top of the 'external system settings' controls.
 
 Concrete implementations should be registered in [`com.intellij.projectImportBuilder`](https://jb.gg/ipe?extensions=com.intellij.projectImportBuilder) and [`com.intellij.projectImportProvider`](https://jb.gg/ipe?extensions=com.intellij.projectImportProvider) extension points accordingly.
 
 Example of the project import provider and builder for Gradle:
 
-* [`JavaGradleProjectImportProvider`](upsource:///plugins/gradle/java/src/service/project/wizard/JavaGradleProjectImportProvider.kt)
-* [`JavaGradleProjectImportBuilder`](upsource:///plugins/gradle/java/src/service/project/wizard/JavaGradleProjectImportBuilder.kt)
+* [`JavaGradleProjectImportProvider`](%gh-ic%/plugins/gradle/java/src/service/project/wizard/JavaGradleProjectImportProvider.kt)
+* [`JavaGradleProjectImportBuilder`](%gh-ic%/plugins/gradle/java/src/service/project/wizard/JavaGradleProjectImportBuilder.kt)
 
 ## Auto-Import
 
@@ -75,7 +75,7 @@ It's possible to configure external system integration to automatically refresh 
 
 ### Auto-Import for ExternalSystemManager Implementation
 
-Describe project's settings files to track by having external system [`ExternalSystemManager`](upsource:///platform/external-system-api/src/com/intellij/openapi/externalSystem/ExternalSystemManager.java) implement [`ExternalSystemAutoImportAware`](upsource:///platform/external-system-api/src/com/intellij/openapi/externalSystem/ExternalSystemAutoImportAware.java).
+Describe project's settings files to track by having external system [`ExternalSystemManager`](%gh-ic%/platform/external-system-api/src/com/intellij/openapi/externalSystem/ExternalSystemManager.java) implement [`ExternalSystemAutoImportAware`](%gh-ic%/platform/external-system-api/src/com/intellij/openapi/externalSystem/ExternalSystemAutoImportAware.java).
 
 > The `ExternalSystemAutoImportAware.getAffectedExternalProjectPath()` method is called quite often, that's why it's expected to return control as soon as possible.
 > Helper `CachingExternalSystemAutoImportAware` class might be used for caching, i.e. `ExternalSystemManager` which implements `ExternalSystemAutoImportAware` can have a field like `new CachingExternalSystemAutoImportAware(new MyExternalSystemAutoImportAware())` and delegate `ExternalSystemAutoImportAware.getAffectedExternalProjectPath()` calls to it.
@@ -96,12 +96,12 @@ Then register the instance with `ExternalSystemProjectTracker` to start tracking
 ### Icon for Reload Notification
 
 From 2020.1, the icon for reload notification can be specified per external system.
-Implement [`ExternalSystemIconProvider`](upsource:///platform/external-system-api/src/com/intellij/openapi/externalSystem/ui/ExternalSystemIconProvider.kt) and register via [com.intellij.externalIconProvider](https://jb.gg/ipe?extensions=com.intellij.externalIconProvider) extension point in <path>plugin.xml</path>.
+Implement [`ExternalSystemIconProvider`](%gh-ic%/platform/external-system-api/src/com/intellij/openapi/externalSystem/ui/ExternalSystemIconProvider.kt) and register via [com.intellij.externalIconProvider](https://jb.gg/ipe?extensions=com.intellij.externalIconProvider) extension point in <path>plugin.xml</path>.
 Alternatively, set `reloadIcon` field external system implements `ExternalSystemIconProvider` directly.
 
 ## Settings
 
-All external system settings controls are represented by implementations of [`ExternalSystemSettingsControl`](upsource:///platform/external-system-impl/src/com/intellij/openapi/externalSystem/util/ExternalSystemSettingsControl.java).
+All external system settings controls are represented by implementations of [`ExternalSystemSettingsControl`](%gh-ic%/platform/external-system-impl/src/com/intellij/openapi/externalSystem/util/ExternalSystemSettingsControl.java).
 There are general and linked project-level external system settings.
 A particular external system settings UI contains the following items:
 
@@ -109,14 +109,14 @@ A particular external system settings UI contains the following items:
 * Linked external projects list
 * Project-level settings for the selected project
 
-It's recommended to extend from [`AbstractExternalProjectSettingsControl`](upsource:///platform/external-system-impl/src/com/intellij/openapi/externalSystem/service/settings/AbstractExternalProjectSettingsControl.java) for implementing project-level settings control as it already handles some of them.
+It's recommended to extend from [`AbstractExternalProjectSettingsControl`](%gh-ic%/platform/external-system-impl/src/com/intellij/openapi/externalSystem/service/settings/AbstractExternalProjectSettingsControl.java) for implementing project-level settings control as it already handles some of them.
 
 **Examples**:
-* [`GradleSystemSettingsControl`](upsource:///plugins/gradle/src/org/jetbrains/plugins/gradle/service/settings/GradleSystemSettingsControl.java) handling the <control>General settings</control> in <menupath>Settings/Preferences | Build, Execution, Deployment | Build Tools | Gradle</menupath>
-* [`GradleProjectSettingsControl`](upsource:///plugins/gradle/src/org/jetbrains/plugins/gradle/service/settings/GradleProjectSettingsControl.java) handling the selected Gradle project settings in <menupath>Settings/Preferences | Build, Execution, Deployment | Build Tools | Gradle</menupath>
+* [`GradleSystemSettingsControl`](%gh-ic%/plugins/gradle/src/org/jetbrains/plugins/gradle/service/settings/GradleSystemSettingsControl.java) handling the <control>General settings</control> in <menupath>Settings/Preferences | Build, Execution, Deployment | Build Tools | Gradle</menupath>
+* [`GradleProjectSettingsControl`](%gh-ic%/plugins/gradle/src/org/jetbrains/plugins/gradle/service/settings/GradleProjectSettingsControl.java) handling the selected Gradle project settings in <menupath>Settings/Preferences | Build, Execution, Deployment | Build Tools | Gradle</menupath>
 
 A similar approach is used for providing settings in importing external project UI.
-Implementation is expected to extend [`AbstractImportFromExternalSystemControl`](upsource:///java/idea-ui/src/com/intellij/openapi/externalSystem/service/settings/AbstractImportFromExternalSystemControl.java) and instead of linked external projects list it contains target external project path control.
+Implementation is expected to extend [`AbstractImportFromExternalSystemControl`](%gh-ic%/java/idea-ui/src/com/intellij/openapi/externalSystem/service/settings/AbstractImportFromExternalSystemControl.java) and instead of linked external projects list it contains target external project path control.
 
 ## Testing
 
@@ -126,5 +126,5 @@ Use `com.jetbrains.intellij.platform:external-system-test-framework` from [](int
 
 Relevant base classes:
 
-* [`ExternalSystemImportingTestCase`](upsource:///platform/external-system-api/testFramework/src/com/intellij/platform/externalSystem/testFramework/ExternalSystemImportingTestCase.java)
-* [`ExternalSystemTestCase`](upsource:///platform/external-system-api/testFramework/src/com/intellij/platform/externalSystem/testFramework/ExternalSystemTestCase.java)
+* [`ExternalSystemImportingTestCase`](%gh-ic%/platform/external-system-api/testFramework/src/com/intellij/platform/externalSystem/testFramework/ExternalSystemImportingTestCase.java)
+* [`ExternalSystemTestCase`](%gh-ic%/platform/external-system-api/testFramework/src/com/intellij/platform/externalSystem/testFramework/ExternalSystemTestCase.java)

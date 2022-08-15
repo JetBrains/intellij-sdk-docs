@@ -14,7 +14,7 @@ For example, in Java this is used to display the class and method in which the c
 ## Define a SimpleStructureAwareNavbar
 
 The simple structure aware navbar implements
-[`StructureAwareNavBarModelExtension`](upsource:///platform/lang-impl/src/com/intellij/ide/navigationToolbar/StructureAwareNavBarModelExtension.kt).
+[`StructureAwareNavBarModelExtension`](%gh-ic%/platform/lang-impl/src/com/intellij/ide/navigationToolbar/StructureAwareNavBarModelExtension.kt).
 
 ```java
 ```

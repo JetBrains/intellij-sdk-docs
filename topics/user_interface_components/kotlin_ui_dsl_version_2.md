@@ -15,7 +15,7 @@ The library is written in [Kotlin](kotlin.md) and makes it easy to develop user 
 The Kotlin UI DSL is not intended to build general UIs, like tool windows controls that trigger some actions and do not contain any input components bound to state objects.
 For this purpose, use [custom Swing components](user_interface_components.md) from the IntelliJ Platform or the standard ones.
 
-The _Kotlin UI DSL Version 2_ functions are located in the [`com.intellij.ui.dsl.builder`](upsource:///platform/platform-impl/src/com/intellij/ui/dsl/builder) package.
+The _Kotlin UI DSL Version 2_ functions are located in the [`com.intellij.ui.dsl.builder`](%gh-ic%/platform/platform-impl/src/com/intellij/ui/dsl/builder) package.
 
 ## UI DSL Examples
 
@@ -31,7 +31,7 @@ It describes some UI DSL basics and contains explanations, tips, a list of all a
 
 ## UI DSL Basics
 
-**UI DSL Showcase Tab**: Basics (Sources: [`DemoBasics`](upsource:///platform/platform-impl/src/com/intellij/internal/ui/uiDslShowcase/DemoBasics.kt))
+**UI DSL Showcase Tab**: Basics (Sources: [`DemoBasics`](%gh-ic%/platform/platform-impl/src/com/intellij/internal/ui/uiDslShowcase/DemoBasics.kt))
 
 See the following simple example of UI DSL:
 
@@ -43,7 +43,7 @@ panel {
 }
 ```
 
-Building content of any form starts from `panel {` which returns [`DialogPanel`](upsource:///platform/platform-api/src/com/intellij/openapi/ui/DialogPanel.kt) filled with components described inside the panel block.
+Building content of any form starts from `panel {` which returns [`DialogPanel`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/ui/DialogPanel.kt) filled with components described inside the panel block.
 A panel consists of any number of rows marked with `row` tag created vertically from top to bottom.
 
 Every row consists of cells where the last cell in a row occupies the remaining width.
@@ -54,7 +54,7 @@ If there are unoccupied cells at the end of a row, they are merged into one cell
 
 ## Panel
 
-[`Panel`](upsource:///platform/platform-impl/src/com/intellij/ui/dsl/builder/Panel.kt) is the start interface for building content.
+[`Panel`](%gh-ic%/platform/platform-impl/src/com/intellij/ui/dsl/builder/Panel.kt) is the start interface for building content.
 It can consist of several rows and different UI groups.
 
 ### Panel.row
@@ -63,7 +63,7 @@ Adds row with the label if present.
 
 ### Panel.indent
 
-**UI DSL Showcase Tab**: Gaps (Sources: [`DemoGaps`](upsource:///platform/platform-impl/src/com/intellij/internal/ui/uiDslShowcase/DemoGaps.kt))
+**UI DSL Showcase Tab**: Gaps (Sources: [`DemoGaps`](%gh-ic%/platform/platform-impl/src/com/intellij/internal/ui/uiDslShowcase/DemoGaps.kt))
 
 Adds standard left indent:
 
@@ -80,7 +80,7 @@ indent {
 
 ### Panel.separator
 
-**UI DSL Showcase Tab**: Groups (Sources: [`DemoGroups`](upsource:///platform/platform-impl/src/com/intellij/internal/ui/uiDslShowcase/DemoGroups.kt))
+**UI DSL Showcase Tab**: Groups (Sources: [`DemoGroups`](%gh-ic%/platform/platform-impl/src/com/intellij/internal/ui/uiDslShowcase/DemoGroups.kt))
 
 Adds horizontal line separator with an optional title.
 
@@ -95,7 +95,7 @@ All rows use the parent grid.
 
 ### Panel.group
 
-**UI DSL Showcase Tab**: Groups (Sources: [`DemoGroups`](upsource:///platform/platform-impl/src/com/intellij/internal/ui/uiDslShowcase/DemoGroups.kt))
+**UI DSL Showcase Tab**: Groups (Sources: [`DemoGroups`](%gh-ic%/platform/platform-impl/src/com/intellij/internal/ui/uiDslShowcase/DemoGroups.kt))
 
 Adds a panel with an independent grid, optional title, and some vertical space above and below the group.
 
@@ -113,7 +113,7 @@ Similar to `Panel.group()` method but uses the same grid as the parent.
 
 ### Panel.collapsibleGroup
 
-**UI DSL Showcase Tab**: Groups (Sources: [`DemoGroups`](upsource:///platform/platform-impl/src/com/intellij/internal/ui/uiDslShowcase/DemoGroups.kt))
+**UI DSL Showcase Tab**: Groups (Sources: [`DemoGroups`](%gh-ic%/platform/platform-impl/src/com/intellij/internal/ui/uiDslShowcase/DemoGroups.kt))
 
 Adds collapsible panel with independent grid, title, and some vertical space above and below the group.
 
@@ -127,7 +127,7 @@ collapsibleGroup("Title") {
 
 ### Panel.buttonsGroup
 
-**UI DSL Showcase Tab**: Groups (Sources: [`DemoGroups`](upsource:///platform/platform-impl/src/com/intellij/internal/ui/uiDslShowcase/DemoGroups.kt))
+**UI DSL Showcase Tab**: Groups (Sources: [`DemoGroups`](%gh-ic%/platform/platform-impl/src/com/intellij/internal/ui/uiDslShowcase/DemoGroups.kt))
 
 Unions `Row.radioButton` in one group.
 Must also be used for `Row.checkBox` if these are grouped with some title.
@@ -150,12 +150,12 @@ Registers callbacks that will be called from `DialogPanel.apply()`/`reset()`/`is
 
 ## Row
 
-Every row is represented by the [`Row`](upsource:///platform/platform-impl/src/com/intellij/ui/dsl/builder/Row.kt) interface.
+Every row is represented by the [`Row`](%gh-ic%/platform/platform-impl/src/com/intellij/ui/dsl/builder/Row.kt) interface.
 It contains all available factory methods for creating components (like `button()`, `label()`, `textField()`, etc.) and methods for row configuration.
 
 ### Row.layout
 
-**UI DSL Showcase Tab**: Row Layout (Sources: [`DemoRowLayout`](upsource:///platform/platform-impl/src/com/intellij/internal/ui/uiDslShowcase/DemoRowLayout.kt))
+**UI DSL Showcase Tab**: Row Layout (Sources: [`DemoRowLayout`](%gh-ic%/platform/platform-impl/src/com/intellij/internal/ui/uiDslShowcase/DemoRowLayout.kt))
 
 There are three possible layouts:
 - `INDEPENDENT`: all cells of the row (including label if present) independent of the parent grid.
@@ -190,7 +190,7 @@ For several resizable rows, extra free space is divided between rows equally.
 
 ### Row.rowComment
 
-**UI DSL Showcase Tab**: Comments (Sources: [`DemoComments`](upsource:///platform/platform-impl/src/com/intellij/internal/ui/uiDslShowcase/DemoComments.kt))
+**UI DSL Showcase Tab**: Comments (Sources: [`DemoComments`](%gh-ic%/platform/platform-impl/src/com/intellij/internal/ui/uiDslShowcase/DemoComments.kt))
 
 Adds comment after the row with appropriate color and font.
 Visibility and enabled state of the row affects row comment as well.
@@ -198,7 +198,7 @@ Visibility and enabled state of the row affects row comment as well.
 ### Row.cell
 
 Adds `component`.
-Use it only for custom specific components, all standard components like `label()`, `button()`, `checkbox()` etc. are covered by dedicated [`Row`](upsource:///platform/platform-impl/src/com/intellij/ui/dsl/builder/Row.kt) factory methods.
+Use it only for custom specific components, all standard components like `label()`, `button()`, `checkbox()` etc. are covered by dedicated [`Row`](%gh-ic%/platform/platform-impl/src/com/intellij/ui/dsl/builder/Row.kt) factory methods.
 
 For example, there is no method for password field so that the following code can be used:
 
@@ -211,7 +211,7 @@ row {
 
 ### Row.scrollCell(component)
 
-Adds `component` wrapped with [`JBScrollPane`](upsource:///platform/platform-api/src/com/intellij/ui/components/JBScrollPane.java).
+Adds `component` wrapped with [`JBScrollPane`](%gh-ic%/platform/platform-api/src/com/intellij/ui/components/JBScrollPane.java).
 
 ### Row.topGap/bottomGap
 
@@ -223,14 +223,14 @@ Between unrelated settings, `SMALL` can be used.
 
 ### Row.visible/enabled
 
-**UI DSL Showcase Tab**: Enabled/Visible (Sources: [`DemoAvailability`](upsource:///platform/platform-impl/src/com/intellij/internal/ui/uiDslShowcase/DemoAvailability.kt))
+**UI DSL Showcase Tab**: Enabled/Visible (Sources: [`DemoAvailability`](%gh-ic%/platform/platform-impl/src/com/intellij/internal/ui/uiDslShowcase/DemoAvailability.kt))
 
 Sets visibility/enabled state of the row, including row comment (see `Row.rowComment`) and all children recursively.
 The row is invisible/disabled if there is an invisible/disabled parent.
 
 ### Row.visibleIf/enabledIf
 
-**UI DSL Showcase Tab**: Enabled/Visible (Sources: [`DemoAvailability`](upsource:///platform/platform-impl/src/com/intellij/internal/ui/uiDslShowcase/DemoAvailability.kt))
+**UI DSL Showcase Tab**: Enabled/Visible (Sources: [`DemoAvailability`](%gh-ic%/platform/platform-impl/src/com/intellij/internal/ui/uiDslShowcase/DemoAvailability.kt))
 
 Binds row visibility/enabled state to the provided predicate.
 Below is an example of a checkbox whose enabled state depends on another checkbox:
@@ -247,7 +247,7 @@ row {
 
 ### Row.panel
 
-**UI DSL Showcase Tab**: Groups (Sources: [`DemoGroups`](upsource:///platform/platform-impl/src/com/intellij/internal/ui/uiDslShowcase/DemoGroups.kt))
+**UI DSL Showcase Tab**: Groups (Sources: [`DemoGroups`](%gh-ic%/platform/platform-impl/src/com/intellij/internal/ui/uiDslShowcase/DemoGroups.kt))
 
 Creates a sub-panel inside the cell of the row.
 The panel contains its own set of rows and cells.
@@ -255,8 +255,8 @@ For example, it is possible to create several columns by creating a row with sev
 
 ## Cell
 
-Every component in the UI DSL builder is wrapped into [`Cell`](upsource:///platform/platform-impl/src/com/intellij/ui/dsl/builder/Cell.kt) class.
-Standard components should not be created directly but with factory methods from [`Row`](upsource:///platform/platform-impl/src/com/intellij/ui/dsl/builder/Row.kt) class like `checkBox()`, `button()` and others because of additional functionality, e.g. `textField()` is configured with columns width, radio buttons are placed into radio buttons groups.
+Every component in the UI DSL builder is wrapped into [`Cell`](%gh-ic%/platform/platform-impl/src/com/intellij/ui/dsl/builder/Cell.kt) class.
+Standard components should not be created directly but with factory methods from [`Row`](%gh-ic%/platform/platform-impl/src/com/intellij/ui/dsl/builder/Row.kt) class like `checkBox()`, `button()` and others because of additional functionality, e.g. `textField()` is configured with columns width, radio buttons are placed into radio buttons groups.
 
 ### Cell.component
 
@@ -274,7 +274,7 @@ row("Row:") {
 ```
 ### Cell.resizableColumn
 
-**UI DSL Showcase Tab**: Tips (Sources: [`DemoTips`](upsource:///platform/platform-impl/src/com/intellij/internal/ui/uiDslShowcase/DemoTips.kt))
+**UI DSL Showcase Tab**: Tips (Sources: [`DemoTips`](%gh-ic%/platform/platform-impl/src/com/intellij/internal/ui/uiDslShowcase/DemoTips.kt))
 
 Marks column of the cell as resizable: the column occupies all extra horizontal space in panel and changes size together with the panel.
 It's possible to have several resizable columns, which means extra space is shared between them.
@@ -291,7 +291,7 @@ row("Row") {
 
 ### Cell.gap
 
-**UI DSL Showcase Tab**: Gaps (Sources: [`DemoGaps`](upsource:///platform/platform-impl/src/com/intellij/internal/ui/uiDslShowcase/DemoGaps.kt))
+**UI DSL Showcase Tab**: Gaps (Sources: [`DemoGaps`](%gh-ic%/platform/platform-impl/src/com/intellij/internal/ui/uiDslShowcase/DemoGaps.kt))
 
 Separates the next cell in the current row with `rightGap`.
 `RightGap.SMALL` gap is set after row label automatically by `Panel.row()` methods.
@@ -313,14 +313,14 @@ row("Width:") {
 
 ### Cell.visible/enabled
 
-**UI DSL Showcase Tab**: Enabled/Visible (Sources: [`DemoAvailability`](upsource:///platform/platform-impl/src/com/intellij/internal/ui/uiDslShowcase/DemoAvailability.kt))
+**UI DSL Showcase Tab**: Enabled/Visible (Sources: [`DemoAvailability`](%gh-ic%/platform/platform-impl/src/com/intellij/internal/ui/uiDslShowcase/DemoAvailability.kt))
 
 Sets visibility/enabled state of the cell and all children recursively.
 The cell is invisible/disabled if there is an invisible/disabled parent.
 
 ### Cell.visibleIf/enabledIf
 
-**UI DSL Showcase Tab**: Enabled/Visible (Sources: [`DemoAvailability`](upsource:///platform/platform-impl/src/com/intellij/internal/ui/uiDslShowcase/DemoAvailability.kt))
+**UI DSL Showcase Tab**: Enabled/Visible (Sources: [`DemoAvailability`](%gh-ic%/platform/platform-impl/src/com/intellij/internal/ui/uiDslShowcase/DemoAvailability.kt))
 
 Binds cell visibility/enabled state to the provided predicate.
 
@@ -335,7 +335,7 @@ row {
 
 ### Cell.comment
 
-**UI DSL Showcase Tab**: Comments (Sources: [`DemoComments`](upsource:///platform/platform-impl/src/com/intellij/internal/ui/uiDslShowcase/DemoComments.kt))
+**UI DSL Showcase Tab**: Comments (Sources: [`DemoComments`](%gh-ic%/platform/platform-impl/src/com/intellij/internal/ui/uiDslShowcase/DemoComments.kt))
 
 Adds comment under the cell aligned by left edge with appropriate color and font size (macOS uses smaller font).
 Comment can contain HTML tags except `<html>`, which is added automatically.
@@ -351,7 +351,7 @@ row("Label:") {
 
 ### Cell.label
 
-**UI DSL Showcase Tab**: Components Labels (Sources: [`DemoComponentLabels`](upsource:///platform/platform-impl/src/com/intellij/internal/ui/uiDslShowcase/DemoComponentLabels.kt))
+**UI DSL Showcase Tab**: Components Labels (Sources: [`DemoComponentLabels`](%gh-ic%/platform/platform-impl/src/com/intellij/internal/ui/uiDslShowcase/DemoComponentLabels.kt))
 
 Adds label at the specified position.
 `LabelPosition.TOP` labels occupy available width before the next top label (if present) or the whole remaining width.
@@ -386,7 +386,7 @@ There are many extensions for specific components described in [](#cellbind).
 
 ### Cell.bind
 
-**UI DSL Showcase Tab**: Binding (Sources: [`DemoBinding`](upsource:///platform/platform-impl/src/com/intellij/internal/ui/uiDslShowcase/DemoBinding.kt))
+**UI DSL Showcase Tab**: Binding (Sources: [`DemoBinding`](%gh-ic%/platform/platform-impl/src/com/intellij/internal/ui/uiDslShowcase/DemoBinding.kt))
 
 Binds `component` value that is provided by `componentGet` and `componentSet` methods to specified binding property.
 The property is applied only when `DialogPanel.apply()` is invoked.

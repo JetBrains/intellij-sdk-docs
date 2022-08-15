@@ -101,7 +101,7 @@ For the child of a parent, the `id` attribute becomes compound:
 
 ## Implementations for Parent-Child Settings
 
-Implementations can be based on [`Configurable`](upsource:///platform/ide-core/src/com/intellij/openapi/options/Configurable.java), [`ConfigurableProvider`](upsource:///platform/ide-core/src/com/intellij/openapi/options/ConfigurableProvider.java) or one of their subtypes.
+Implementations can be based on [`Configurable`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/options/Configurable.java), [`ConfigurableProvider`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/options/ConfigurableProvider.java) or one of their subtypes.
 For more information about creating Settings implementations, see [Implementations for Settings Extension Points](settings_guide.md#implementations-for-settings-extension-points).
 
 ### Configurable Marker Interfaces

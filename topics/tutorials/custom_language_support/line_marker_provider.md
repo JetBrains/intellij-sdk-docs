@@ -12,14 +12,14 @@ These markers can provide navigation targets to related code.
 A line marker provider annotates usages of Simple Language properties within Java code and provides navigation to the definition of these properties.
 The visual marker is a Simple Language icon in the gutter of the Editor window.
 
-The Simple Language marker provider subclasses [`RelatedItemLineMarkerProvider`](upsource:///platform/lang-api/src/com/intellij/codeInsight/daemon/RelatedItemLineMarkerProvider.java).
+The Simple Language marker provider subclasses [`RelatedItemLineMarkerProvider`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/daemon/RelatedItemLineMarkerProvider.java).
 For this example, override the `collectNavigationMarkers()` method to collect usage of a Simple Language [key and separators](language_and_filetype.md#define-the-language):
 
 ```java
 ```
 {src="simple_language_plugin/src/main/java/org/intellij/sdk/language/SimpleLineMarkerProvider.java"}
 
-Extending from [`GutterIconDescriptor`](upsource:///platform/lang-api/src/com/intellij/codeInsight/daemon/GutterIconDescriptor.java) allows configuring gutter icons to be shown via <menupath>Settings/Preferences | Editor | General | Gutter Icons</menupath>.
+Extending from [`GutterIconDescriptor`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/daemon/GutterIconDescriptor.java) allows configuring gutter icons to be shown via <menupath>Settings/Preferences | Editor | General | Gutter Icons</menupath>.
 
 ## Best Practices for Implementing Line Marker Providers
 
@@ -30,8 +30,8 @@ The `collectNavigationMarkers()` method should:
   For example, do not return a _class_ marker if `getLineMarkerInfo()` was called with an element that corresponds to a _method_.
 * Return line marker information for the appropriate element at the correct scope of the PSI tree.
   Return leaf elements only - i.e., the smallest possible elements.
-  For example, do not return method marker for [`PsiMethod`](upsource:///java/java-psi-api/src/com/intellij/psi/PsiMethod.java).
-  Instead, return it for the [`PsiIdentifier`](upsource:///java/java-psi-api/src/com/intellij/psi/PsiIdentifier.java) which contains the name of the method.
+  For example, do not return method marker for [`PsiMethod`](%gh-ic%/java/java-psi-api/src/com/intellij/psi/PsiMethod.java).
+  Instead, return it for the [`PsiIdentifier`](%gh-ic%/java/java-psi-api/src/com/intellij/psi/PsiIdentifier.java) which contains the name of the method.
 
 ![Line Marker Location](line_marker_location.png){width="900"}
 
@@ -50,7 +50,7 @@ public class MyWrongLineMarkerProvider implements LineMarkerProvider {
 ```
 
 The consequences of the `MyWrongLineMarkerProvider()` implementation have to do with how the IntelliJ Platform performs inspections.
-For performance reasons, inspection, and specifically the [`LineMarkersPass`](upsource:///platform/lang-impl/src/com/intellij/codeInsight/daemon/impl/LineMarkersPass.java) queries all [`LineMarkerProviders`](upsource:///platform/lang-api/src/com/intellij/codeInsight/daemon/LineMarkerProviders.java) in two phases:
+For performance reasons, inspection, and specifically the [`LineMarkersPass`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/daemon/impl/LineMarkersPass.java) queries all [`LineMarkerProviders`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/daemon/LineMarkerProviders.java) in two phases:
 * The first pass is for all elements visible in the Editor window,
 * The second pass is for the rest of the elements in the file.
 

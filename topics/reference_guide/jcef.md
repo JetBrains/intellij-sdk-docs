@@ -70,7 +70,7 @@ myBrowser.openDevTools();
 
 ### JBCefApp
 
-[`JBCefApp`](upsource:///platform/platform-api/src/com/intellij/ui/jcef/JBCefApp.java)
+[`JBCefApp`](%gh-ic%/platform/platform-api/src/com/intellij/ui/jcef/JBCefApp.java)
 
 Performs JCEF auto-initialization, manages its lifecycle, and provides `JBCefClient` instances.
 
@@ -93,7 +93,7 @@ To avoid the above problems, the IDE should be run with the bundled JetBrains Ru
 
 ### JBCefClient
 
-[`JBCefClient`](upsource:///platform/platform-api/src/com/intellij/ui/jcef/JBCefClient.java)
+[`JBCefClient`](%gh-ic%/platform/platform-api/src/com/intellij/ui/jcef/JBCefClient.java)
 
 Is tied to every browser component explicitly or implicitly.
 Used for adding handlers to the associated browser.
@@ -103,7 +103,7 @@ If a client was created explicitly, it should be [disposed](disposers.md) by the
 
 ### JBCefBrowser
 
-[`JBCefBrowser`](upsource:///platform/platform-api/src/com/intellij/ui/jcef/JBCefBrowser.java)
+[`JBCefBrowser`](%gh-ic%/platform/platform-api/src/com/intellij/ui/jcef/JBCefBrowser.java)
 
 Provides the browser UI component:
 
@@ -142,7 +142,7 @@ myPanel.add(new JBCefBrowser("https://www.jetbrains.com").getComponent());
 
 ### JBCefJSQuery
 
-[`JBCefJSQuery`](upsource:///platform/platform-api/src/com/intellij/ui/jcef/JBCefJSQuery.java)
+[`JBCefJSQuery`](%gh-ic%/platform/platform-api/src/com/intellij/ui/jcef/JBCefJSQuery.java)
 
 Provides JS query callback mechanism.
 

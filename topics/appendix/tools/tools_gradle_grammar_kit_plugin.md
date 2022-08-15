@@ -1,7 +1,5 @@
 [//]: # (title: Gradle Grammar-Kit Plugin)
 
-<toc-settings depth="1"/>
-
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 The [Gradle Grammar-Kit Plugin](https://github.com/JetBrains/gradle-grammar-kit-plugin) automates generating lexers and parsers to support building [custom language](custom_language_support.md) plugins for IntelliJ-based IDEs when using [Grammar-Kit](https://github.com/JetBrains/Grammar-Kit).

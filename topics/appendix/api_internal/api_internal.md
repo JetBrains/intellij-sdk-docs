@@ -66,13 +66,14 @@ Each entry is mapped to its corresponding _Replacement_, pointing to recommended
 The API listed in this table is currently (or was previously) marked with `@ApiStatus.Internal`, but its status has changed in the meantime (or will change).
 Therefore, any reported violations can be disregarded.
 
-| Internal API                                                                                                                                      | Note                                            |
-|---------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------|
-| [`BundleBase`](%gh-ic%/platform/util/src/com/intellij/BundleBase.java)                                                                            | Made public in 2022.1                           |
-| [`IdFilter`](%gh-ic%/platform/indexing-api/src/com/intellij/util/indexing/IdFilter.java)                                                          | Reverted in 2021.2/3                            |
+| Internal API                                                                                                                                       | Note                                            |
+|----------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------|
+| [`AnimatedIcon.ANIMATION_IN_RENDERER_ALLOWED`](%gh-ic%/platform/ide-core/src/com/intellij/ui/AnimatedIcon.java)                                    | Made public in 2021.3                           |
+| [`BundleBase`](%gh-ic%/platform/util/src/com/intellij/BundleBase.java)                                                                             | Made public in 2022.1                           |
+| [`IdFilter`](%gh-ic%/platform/indexing-api/src/com/intellij/util/indexing/IdFilter.java)                                                           | Reverted in 2021.2/3                            |
 | [`RunAnythingCommandLineProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/ide/actions/runAnything/activity/RunAnythingCommandLineProvider.kt) | Made public in 2021.3                           |
-| `org.jetbrains.yaml.meta.*`                                                                                                                       | YAML Metadata API will be made public in 2022.2 |
-| `PhpExpectedFunctionArgument`                                                                                                                     | Made public in 2022.1                           |
+| `PhpExpectedFunctionArgument`                                                                                                                      | Made public in 2022.1                           |
+| `org.jetbrains.yaml.meta.*`                                                                                                                        | YAML Metadata API will be made public in 2022.2 |
 
 > Missing entries? Please let us know via the "**Was this page helpful?**" feedback form below or [other channels](getting_help.md#problems-with-the-guide).
 >

@@ -118,13 +118,13 @@ General Markdown links have the default Markdown link style:
 
 #### Links to IntelliJ Platform Source
 
-Links to files in the IntelliJ Platform (`intellij-community`) repository use `%gh-ic%` prefix instead of the full URL to the repository.
+Links to files in the IntelliJ Platform (`intellij-community`) repository use `%\gh-ic%` prefix instead of the full URL to the repository.
 
-* `[README.md](%gh-ic%/README.md)`{disable-links} links to general, non-code information files. ([README.md](%gh-ic%/README.md))
+* `[README.md](%\gh-ic%/README.md)`{disable-links} links to general, non-code information files. ([README.md](%gh-ic%/README.md))
   Examples of this file type include _LICENSE.txt_ and _README.md_.
-* `[`IdeaPlugin.xml`](%gh-ic%/community-resources/src/META-INF/IdeaPlugin.xml)`{disable-links} links to declarative source code files, use `code` style. ([`IdeaPlugin.xml`](%gh-ic%/community-resources/src/META-INF/IdeaPlugin.xml))
+* `[`IdeaPlugin.xml`](%\gh-ic%/community-resources/src/META-INF/IdeaPlugin.xml)`{disable-links} links to declarative source code files, use `code` style. ([`IdeaPlugin.xml`](%gh-ic%/community-resources/src/META-INF/IdeaPlugin.xml))
   Examples of this file type include: `settings.gradle`, `plugin.xml` or `theme_basics.theme.json`.
-* `[`\`AnAction\``](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java)`{disable-links} links to source files for code objects like interfaces and classes, use `code` style but without the file extension. ([`AnAction`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java))
+* `[`\`AnAction\``](%\gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java)`{disable-links} links to source files for code objects like interfaces and classes, use `code` style but without the file extension. ([`AnAction`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java))
   Examples of this file type include Java and Kotlin.
   * Note the use of \`\` characters surrounding the class name in the link.
   * When linking to an API in this manner, the FQN isn't necessary in the link.

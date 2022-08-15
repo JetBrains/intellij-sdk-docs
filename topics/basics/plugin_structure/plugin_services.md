@@ -81,6 +81,8 @@ To provide custom implementation for test/headless environment, specify `testSer
 
 ## Retrieving a Service
 
+Do not acquire service instances eagerly or store them in fields, but obtain them in the place(s) where they will be used.
+
 Getting service doesn't need a read action and can be performed from any thread.
 If a service is requested from several threads, it will be initialized in the first thread, and other threads will be blocked until the service is fully initialized.
 

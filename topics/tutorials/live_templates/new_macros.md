@@ -67,12 +67,6 @@ Using the `com.intellij.liveTemplateMacro` extension point, register the impleme
 Now verify the plugin is working correctly.
 * Run the plugin in a Development Instance.
 * Create a new file `testing.md` and enter several words in lower case.
-* Highlight the text and enter <shortcut>Ctrl/Cmd+J</shortcut> to open the <control>Select Template</control> popup.
+* Highlight the text and enter invoke <menupath>Code | Surround With...</menupath> to open the <control>Surround With</control> popup.
   Confirm that the <control>SDK: Convert to title case</control> is available in the popup, and select it.
-
-![Convert to title case](invoke_titleCase.png){width="700"}
-
-Test that the Live Template works by entering <shortcut>m</shortcut> or <shortcut>Return</shortcut>.
-The text will change to have each word capitalized:
-
-![Converted to title case](applied_titleCase.png){width="700"}
+* The selected text will change to have each word capitalized.

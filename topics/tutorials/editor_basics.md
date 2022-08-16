@@ -21,5 +21,5 @@ The following are referenced in the tutorial:
   * [`TypedAction`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/editor/actionSystem/TypedAction.java).
 
 **Related topics:**
-* [Action System](action_system.md)
+* [Action System](basic_action_system.md)
 * [Threading Issues](general_threading_rules.md)

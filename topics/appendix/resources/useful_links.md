@@ -15,8 +15,8 @@ The following links represent useful resources for working with the IntelliJ Pla
 
 ### Tooling
 * [IDE Settings, Caches, Logs, and Plugins](https://intellij-support.jetbrains.com/hc/en-us/articles/206544519-Directories-used-by-the-IDE-to-store-settings-caches-plugins-and-logs)
-* [Internal Actions Menu](internal_actions_intro.md)
-* [IntelliJ Platform Artifacts Repository](intellij_artifacts.md)
+* [](internal_actions_intro.md)
+* [](intellij_artifacts.md)
 * [IntelliJ Plugin Verifier](https://github.com/JetBrains/intellij-plugin-verifier) (see also [](verifying_plugin_compatibility.md))
 * [IntelliJ Platform Explorer](https://jb.gg/ipe) ([Blog post](https://blog.jetbrains.com/platform/2020/12/intellij-platform-explorer-get-to-the-extension-point/))
 * [IntelliJ Log Analyzer](https://github.com/JetBrains/IntelliJ-Log-Analyzer)

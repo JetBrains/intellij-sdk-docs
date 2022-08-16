@@ -10,7 +10,6 @@ import com.intellij.openapi.project.Project;
 import com.intellij.psi.FileViewProvider;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiFile;
-import com.intellij.psi.TokenType;
 import com.intellij.psi.tree.IFileElementType;
 import com.intellij.psi.tree.TokenSet;
 import org.intellij.sdk.language.parser.SimpleParser;
@@ -20,7 +19,6 @@ import org.jetbrains.annotations.NotNull;
 
 public class SimpleParserDefinition implements ParserDefinition {
 
-  public static final TokenSet WHITE_SPACES = TokenSet.create(TokenType.WHITE_SPACE);
   public static final TokenSet COMMENTS = TokenSet.create(SimpleTypes.COMMENT);
 
   public static final IFileElementType FILE = new IFileElementType(SimpleLanguage.INSTANCE);
@@ -29,12 +27,6 @@ public class SimpleParserDefinition implements ParserDefinition {
   @Override
   public Lexer createLexer(Project project) {
     return new SimpleLexerAdapter();
-  }
-
-  @NotNull
-  @Override
-  public TokenSet getWhitespaceTokens() {
-    return WHITE_SPACES;
   }
 
   @NotNull

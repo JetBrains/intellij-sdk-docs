@@ -5,7 +5,6 @@
         <web-root>https://plugins.jetbrains.com/docs</web-root>
         <product-web-url>https://plugins.jetbrains.com/docs/intellij/</product-web-url>
         <web-community-path>Developer Community:https://intellij-support.jetbrains.com/hc/en-us/community/topics/200366979</web-community-path>
-        <download-page/>
         <search-scope/>
         <fallback-url/>
         <download-page>https://jb.gg/ipe</download-page>

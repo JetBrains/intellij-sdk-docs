@@ -8,6 +8,9 @@
         <download-page/>
         <search-scope/>
         <fallback-url/>
+        <download-page>https://jb.gg/ipe</download-page>
+        <config-download-title>IntelliJ Platform Explorer</config-download-title>
+        <config-showDownloadButton>true</config-showDownloadButton>
         <generate-sitemap-url-prefix>https://plugins.jetbrains.com/docs/intellij/</generate-sitemap-url-prefix>
         <config-feedbackRequireEmail>false</config-feedbackRequireEmail>
         <config-showDownloadButton>true</config-showDownloadButton>

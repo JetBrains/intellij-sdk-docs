@@ -378,18 +378,6 @@ If the contributed elements depend on anything other than plain XML file content
 
 Annotate DOM model with [`Namespace`](%gh-ic%/xml/dom-openapi/src/com/intellij/util/xml/Namespace.java) and register namespace key mapping via `DomFileDescription.registerNamespacePolicy()` from `DomFileDescription.initializeFileDescription()`.
 
-### Generating DOM from Existing XSD
-
-DOM can be generated automatically from existing XSD/DTD.
-Output correctness/completeness will largely depend on the input scheme and may require additional manual adjustments.
-
-Follow these steps:
-
-* Run IntelliJ IDEA with _Plugin DevKit_ enabled in the [internal mode](enabling_internal.md)
-* Select <menupath>Tools | Internal Actions | DevKit | Generate DOM Model</menupath>
-* Select <control>Scheme File</control> and set options, then click <control>Generate</control> to generate sources
-* Modify generated sources according to your needs
-
 ### IDE Support
 
 _Plugin DevKit_ supports the following features for working with DOM related code:

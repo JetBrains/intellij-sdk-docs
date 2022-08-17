@@ -107,6 +107,9 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 `com.intellij.vcs.log.VcsLogHighlighter.getStyle(int, VcsShortCommitDetails, boolean)` method removed
 : Use `com.intellij.vcs.log.VcsLogHighlighter.getStyle(int, VcsShortCommitDetails, int, boolean)` instead.
 
+`com.intellij.AbstractBundle.getResourceBundle(java.lang.String, java.lang.ClassLoader)` method removed
+: Use `com.intellij.DynamicBundle.getResourceBundle(java.lang.ClassLoader, java.lang.String)` instead
+
 ### Java Plugin 2022.2
 
 `com.intellij.codeInspection.javaDoc.JavaDocLocalInspection` class removed

@@ -369,7 +369,7 @@ The index parameter in the last example means the index in the merged collection
 ### Dynamic Definition
 
 You can extend existing DOM model at runtime by implementing `com.intellij.util.xml.reflect.DomExtender<T>`.
-Register it in "extenderClass" attribute of EP `com.intellij.dom.extender`, where "domClass" specifies DOM class `<T>` to be extended.
+Register it in "extenderClass" attribute of `com.intellij.dom.extender` extension point, where "domClass" specifies DOM class `<T>` to be extended.
 [`DomExtensionsRegistrar`](%gh-ic%/xml/dom-openapi/src/com/intellij/util/xml/reflect/DomExtensionsRegistrar.java) provides various methods to register dynamic attributes and children.
 
 If the contributed elements depend on anything other than plain XML file content (used framework version, libraries in classpath, ...), make sure to return `false` from `DomExtender.supportsStubs()`.

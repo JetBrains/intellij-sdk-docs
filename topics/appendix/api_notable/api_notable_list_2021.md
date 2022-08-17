@@ -28,7 +28,7 @@ Constructor Injection disabled for Extensions
 : Please obtain necessary components only when needed (logged as ERROR now).
 
 Language Injection
-: Use [`LanguageInjectionContributor`](%gh-ic%/platform/core-api/src/com/intellij/lang/injection/general/LanguageInjectionContributor.java) (EP `com.intellij.languageInjectionContributor`) and [`LanguageInjectionPerformer`](%gh-ic%/platform/core-api/src/com/intellij/lang/injection/general/LanguageInjectionPerformer.java) (EP `com.intellij.languageInjectionPerformer`) to customize language injection.
+: Use [`LanguageInjectionContributor`](%gh-ic%/platform/core-api/src/com/intellij/lang/injection/general/LanguageInjectionContributor.java) (`com.intellij.languageInjectionContributor` EP) and [`LanguageInjectionPerformer`](%gh-ic%/platform/core-api/src/com/intellij/lang/injection/general/LanguageInjectionPerformer.java) (`com.intellij.languageInjectionPerformer` EP) to customize language injection.
 
 ### IntelliJ IDEA 2021.2
 

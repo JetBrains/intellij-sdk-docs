@@ -11,10 +11,6 @@ This FAQ is a topical index of questions that have been asked (and answered) on 
 ## Unresolved Classes after Upgrading to 2019.2 or later
 *  [Java functionality extracted as a plugin](https://blog.jetbrains.com/platform/2019/06/java-functionality-extracted-as-a-plugin/)
 
-## Action System
-*  [How do I trigger actions programmatically?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206130119-Triggering-AnAction-instances-)
-*  [Where do I get the list of built-in action IDs?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206126699-List-of-built-in-action-ID-s-)
-
 ## Accessing and Modifying the Source Code
 
 > See also [](psi.md) and [](psi_cookbook.md)
@@ -28,7 +24,6 @@ This FAQ is a topical index of questions that have been asked (and answered) on 
 * [How do I add properties to a .properties file?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206142279-Dynamically-add-new-properties-to-properties-files)
 * [How do I find specific method calls inside a PsiMethod?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206143579-finding-a-statement-within-a-PsiMethod)
 * [What is the lifecycle of a PSI element?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206796015-What-is-the-lifecycle-of-a-PsiElement-)
-* [How do I find a file given its name (but no path)?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206768795-How-to-search-file-by-file-name-in-project-s-root-directory-)
 * [How do I create a new class in the given package?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206771665-Creating-a-new-class)
 * [How do I make a PsiClass extend another PsiClass?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206794255-How-to-make-a-PsiClass-derive-from-another-one-)
 * [How do I find references to a class from non-Java files?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206800695-How-to-obtain-the-references-to-a-class-from-non-java-files-)
@@ -38,10 +33,6 @@ This FAQ is a topical index of questions that have been asked (and answered) on 
 ## Working with XML and XML DOM
 *  [How do I change the value of an XML attribute through the PSI?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206139639-Change-xml-attribute-value)
 *  [How do I programmatically register a DTD or schema?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206795425-How-to-register-DTD-with-idea)
-
-## Code Completion
-*  [How do I determine what type of code completion was invoked?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206133529-How-to-determine-what-type-of-code-completion-was-invoked)
-*  [How do I provide additional code completion in specific places of a Java file?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206139729-Custom-completion-in-editor)
 
 ## Refactoring
 *  [How can I receive notifications about refactoring events?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206795955-Refactoring-Listeners)
@@ -67,7 +58,6 @@ This FAQ is a topical index of questions that have been asked (and answered) on 
 *  [How do I highlight elements in a source code editor?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206143909-MarkupModel-navigate-highlighted-elements)
 *  [How do I allow to navigate between highlighted elements using Find Next?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206143879-HighlightManager-how-to-enable-F3-functionality)
 *  [How do I get the active editor instance?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206141119-how-to-get-the-Editor-from-PsiElement-)
-*  [How do I get the cursor position in the current editor?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206794335-How-to-get-cursor-position-in-the-current-editor-)
 *  [How do I clear the read-only status of a file?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206142039-Clear-read-only-status)
 *  [How can I show an editor with error highlighting in a tool window?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206146679-Error-highlighting-in-Editors)
 
@@ -101,6 +91,5 @@ This FAQ is a topical index of questions that have been asked (and answered) on 
 
 ## General
 *  [How can I implement a custom stack trace analyzer?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206142959-Stack-Analyzer-extension)
-*  [Where is the state of an ApplicationComponent stored?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206794095-Where-is-ApplicationComponent-state-stored-in-)
 *  [How do I open a project programmatically?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206146969-how-to-open-a-project-)
 *  [How do I get the folder of the currently selected file?](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206121889-How-to-get-the-folder-of-currenctly-selected-file)

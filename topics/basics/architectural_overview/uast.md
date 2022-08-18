@@ -47,15 +47,15 @@ All these sub-interfaces provide methods to get the information about common syn
 
 To obtain UAST for given `PsiElement` of one of supported languages, use [`UastFacade`](%gh-ic%/uast/uast-common/src/org/jetbrains/uast/UastContext.kt) class or [`UastContextKt.toUElement()`](%gh-ic%/uast/uast-common/src/org/jetbrains/uast/UastContext.kt):
 
-<tabs>
-<tab title="Java">
+<tabs group="languages">
+<tab title="Java" group-key="java">
 
 ```java
 UastContextKt.toUElement(element);
 ```
 
 </tab>
-<tab title="Kotlin">
+<tab title="Kotlin" group-key="kotlin">
 
 ```kotlin
 element.toUElement()
@@ -68,15 +68,15 @@ To convert `PsiElement` to the specific `UElement`, use one of the following app
 
 - for simple conversion:
 
-  <tabs>
-  <tab title="Java">
+  <tabs group="languages">
+  <tab title="Java" group-key="java">
 
   ```java
   UastContextKt.toUElement(element, UCallExpression.class);
   ```
 
   </tab>
-  <tab title="Kotlin">
+  <tab title="Kotlin" group-key="kotlin">
 
   ```kotlin
   element.toUElement(UCallExpression::class.java)
@@ -87,8 +87,8 @@ To convert `PsiElement` to the specific `UElement`, use one of the following app
 
 - for conversion to one of different given options:
 
-  <tabs>
-  <tab title="Java">
+  <tabs group="languages">
+  <tab title="Java" group-key="java">
 
   ```java
   UastFacade.INSTANCE.convertElementWithParent(element,
@@ -96,7 +96,7 @@ To convert `PsiElement` to the specific `UElement`, use one of the following app
   ```
 
   </tab>
-  <tab title="Kotlin">
+  <tab title="Kotlin" group-key="kotlin">
 
   ```kotlin
   UastFacade.convertElementWithParent(element,
@@ -110,8 +110,8 @@ To convert `PsiElement` to the specific `UElement`, use one of the following app
   For instance, the parameter of a primary constructor in Kotlin is `UField` and `UParameter` at the same time.
   When needing all options, use:
 
-  <tabs>
-  <tab title="Java">
+  <tabs group="languages">
+  <tab title="Java" group-key="java">
 
   ```java
   UastFacade.INSTANCE.convertToAlternatives(element,
@@ -119,7 +119,7 @@ To convert `PsiElement` to the specific `UElement`, use one of the following app
   ```
 
   </tab>
-  <tab title="Kotlin">
+  <tab title="Kotlin" group-key="kotlin">
 
   ```kotlin
   UastFacade.convertToAlternatives(element,

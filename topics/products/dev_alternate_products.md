@@ -50,8 +50,8 @@ A Gradle build script snippet setting a plugin project to target PyCharm is show
 The [Gradle IntelliJ Plugin](tools_gradle_intellij_plugin.md) will fetch the matching build of PyCharm Professional to define the APIs available, and use that build of PyCharm (and associated JetBrains Runtime) as the Development Instance.
 No additional product-specific configuration needs to be set in the Gradle build script:
 
-<tabs>
-<tab title="Kotlin">
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
 
 ```kotlin
 intellij {
@@ -61,7 +61,7 @@ intellij {
 ```
 
 </tab>
-<tab title="Groovy">
+<tab title="Groovy" group-key="groovy">
 
 ```groovy
 intellij {
@@ -132,8 +132,8 @@ The exact path format varies by operating system.
 
 This snippet is an example for configuring the Setup and Running DSLs in a Gradle build script specific to developing a plugin for _targetIDE_.
 
-<tabs>
-<tab title="Kotlin">
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
 
 ```kotlin
 intellij {
@@ -157,7 +157,7 @@ runIde {
 ```
 
 </tab>
-<tab title="Groovy">
+<tab title="Groovy" group-key="groovy">
 
 ```groovy
 intellij {

@@ -49,16 +49,16 @@ Available JBR variants are:
 >
 {type="note"}
 
-<tabs>
+<tabs group="project-type">
 
-<tab title="Gradle">
+<tab title="Gradle" group-key="gradle">
 
 By default, the Gradle plugin will fetch and use the version of the JetBrains Runtime for the Development Instance corresponding to the version of the IntelliJ Platform used for building the plugin project.
 If required, an alternative version can be specified using [`runIde.jbrVersion`](tools_gradle_intellij_plugin.md#runide-task-jbrversion) task property.
 
 </tab>
 
-<tab title="DevKit">
+<tab title="DevKit" group-key="devkit">
 
 The [Run Configuration](https://www.jetbrains.com/help/idea/run-debug-configuration.html) for a DevKit-based plugin project controls the JDK used to run and debug a plugin project in a Development Instance.
 The default Run Configuration uses the same JDK for building the plugin project and running the plugin in a Development Instance.
@@ -79,9 +79,9 @@ Please note that any unloading problems in a production environment will ask the
 >
 {type="warning"}
 
-<tabs>
+<tabs group="project-type">
 
-<tab title="Gradle">
+<tab title="Gradle" group-key="gradle">
 
 Enabled by default for target platform 2020.2 or later.
 
@@ -95,7 +95,7 @@ After starting the sandbox IDE instance, run [`buildPlugin`](tools_gradle_intell
 
 </tab>
 
-<tab title="DevKit">
+<tab title="DevKit" group-key="devkit">
 
 Add system property `idea.auto.reload.plugins` in the Plugin DevKit [run configuration](running_and_debugging_a_plugin.md).
 
@@ -109,8 +109,8 @@ To disable auto-reload, set `idea.auto.reload.plugins` to `false` explicitly (20
 The _Sandbox Home_ directory contains the [settings, caches, logs, and plugins](#development-instance-settings-caches-logs-and-plugins) for a Development Instance of the IDE.
 This information is stored in a different location than for the [installed IDE itself](https://intellij-support.jetbrains.com/hc/en-us/articles/206544519-Directories-used-by-the-IDE-to-store-settings-caches-plugins-and-logs).
 
-<tabs>
-<tab title="Gradle">
+<tabs group="project-type">
+<tab title="Gradle" group-key="gradle">
 
 For Gradle-based plugins, the default Sandbox Home location is defined by the [Gradle IntelliJ Plugin](tools_gradle_intellij_plugin.md).
 See [Configuring a Gradle Plugin Project](gradle_prerequisites.md) for more information about specifying a Sandbox Home location.
@@ -121,7 +121,7 @@ The default Sandbox Home location is:
 
 </tab>
 
-<tab title="DevKit">
+<tab title="DevKit" group-key="devkit">
 
 For DevKit-based plugins, the default Sandbox Home location is defined in the IntelliJ Platform Plugin SDK.
 See specifying the [Sandbox Home for DevKit Projects](setting_up_environment.md) for more information.

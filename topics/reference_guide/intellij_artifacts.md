@@ -103,8 +103,8 @@ There are two parts to the example: the repository and the dependency sections.
 This code snippet selects the release repository with the first URL, and the repository of IntelliJ Platform dependencies with the second URL.
 The second URL is needed because this example selects individual modules.
 
-<tabs>
-<tab title="Kotlin">
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
 
 ```kotlin
 repositories {
@@ -114,7 +114,7 @@ repositories {
 ```
 
 </tab>
-<tab title="Groovy">
+<tab title="Groovy" group-key="groovy">
 
 ```groovy
 repositories {
@@ -130,8 +130,8 @@ repositories {
 
 This code snippet specifies the desired module artifacts.
 
-<tabs>
-<tab title="Kotlin">
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
 
 ```kotlin
 dependencies {
@@ -141,7 +141,7 @@ dependencies {
 ```
 
 </tab>
-<tab title="Groovy">
+<tab title="Groovy" group-key="groovy">
 
 ```groovy
 dependencies {

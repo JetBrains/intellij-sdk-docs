@@ -78,8 +78,8 @@ Otherwise, it'll be skipped.
 
 An example [`signPlugin`](tools_gradle_intellij_plugin.md#signplugin-task) task configuration may look like:
 
-<tabs>
-<tab title="Kotlin">
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
 
 ```kotlin
 signPlugin {
@@ -108,7 +108,7 @@ publishPlugin {
 ```
 
 </tab>
-<tab title="Groovy">
+<tab title="Groovy" group-key="groovy">
 
 ```groovy
 signPlugin {
@@ -152,8 +152,8 @@ To avoid storing hard-coded values in the project configuration, the most suitab
 
 To specify secrets like `PUBLISH_TOKEN` and values required for the [`signPlugin`](tools_gradle_intellij_plugin.md#signplugin-task) task, modify your Gradle configuration as follows:
 
-<tabs>
-<tab title="Kotlin">
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
 
 ```kotlin
 signPlugin {
@@ -168,7 +168,7 @@ publishPlugin {
 ```
 
 </tab>
-<tab title="Groovy">
+<tab title="Groovy" group-key="groovy">
 
 ```groovy
 signPlugin {

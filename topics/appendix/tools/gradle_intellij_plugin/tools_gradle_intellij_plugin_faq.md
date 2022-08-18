@@ -10,8 +10,8 @@
 
 To add some JVM arguments while launching the IDE, configure [`runIde`](tools_gradle_intellij_plugin.md#runide-task) task as follows:
 
-<tabs>
-<tab title="Kotlin">
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
 
 ```kotlin
 tasks {
@@ -22,7 +22,7 @@ tasks {
 ```
 
 </tab>
-<tab title="Groovy">
+<tab title="Groovy" group-key="groovy">
 
 ```groovy
 runIde {
@@ -37,8 +37,8 @@ runIde {
 
 Using the [very same task documentation](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html), configure [`runIde`](tools_gradle_intellij_plugin.md#runide-task) task:
 
-<tabs>
-<tab title="Kotlin">
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
 
 ```kotlin
 tasks {
@@ -49,7 +49,7 @@ tasks {
 ```
 
 </tab>
-<tab title="Groovy">
+<tab title="Groovy" group-key="groovy">
 
 ```groovy
 runIde {
@@ -66,8 +66,8 @@ See [](ide_development_instance.md#enabling-auto-reload) for important caveats.
 
 Configure [`runIde`](tools_gradle_intellij_plugin.md#runide-task) task as follows:
 
-<tabs>
-<tab title="Kotlin">
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
 
 ```kotlin
 tasks {
@@ -78,7 +78,7 @@ tasks {
 ```
 
 </tab>
-<tab title="Groovy">
+<tab title="Groovy" group-key="groovy">
 
 ```groovy
 runIde {
@@ -93,8 +93,8 @@ runIde {
 
 Building searchable options can be disabled as a task:
 
-<tabs>
-<tab title="Kotlin">
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
 
 ```kotlin
 tasks {
@@ -105,7 +105,7 @@ tasks {
 ```
 
 </tab>
-<tab title="Groovy">
+<tab title="Groovy" group-key="groovy">
 
 ```groovy
 buildSearchableOptions.enabled = false
@@ -127,8 +127,8 @@ In the Gradle `runIde` run configuration, add the log file path according to [sa
 [`prepareSandbox`](tools_gradle_intellij_plugin.md#preparesandbox-task) task is a [`Sync`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.Sync.html) task and can be modified accordingly.
 Something like following should work:
 
-<tabs>
-<tab title="Kotlin">
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
 
 ```kotlin
 tasks {
@@ -141,7 +141,7 @@ tasks {
 ```
 
 </tab>
-<tab title="Groovy">
+<tab title="Groovy" group-key="groovy">
 
 ```groovy
 prepareSandbox {

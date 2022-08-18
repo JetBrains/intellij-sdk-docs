@@ -110,8 +110,8 @@ Consequently, [dependencies](plugin_dependencies.md) on Java functionality are e
      ```
   * Gradle build script (_required_):
 
-    <tabs>
-    <tab title="Kotlin">
+    <tabs group="languages">
+    <tab title="Kotlin" group-key="kotlin">
 
     ```kotlin
     intellij {
@@ -120,7 +120,7 @@ Consequently, [dependencies](plugin_dependencies.md) on Java functionality are e
     ```
 
     </tab>
-    <tab title="Groovy">
+    <tab title="Groovy" group-key="groovy">
 
     ```groovy
     intellij {
@@ -153,8 +153,8 @@ Consequently, [dependencies](plugin_dependencies.md) on AppCode and CLion functi
 
   * Gradle build script (_required_):
 
-    <tabs>
-    <tab title="Kotlin">
+    <tabs group="languages">
+    <tab title="Kotlin" group-key="kotlin">
 
     ```kotlin
     intellij {
@@ -163,7 +163,7 @@ Consequently, [dependencies](plugin_dependencies.md) on AppCode and CLion functi
     ```
 
     </tab>
-    <tab title="Groovy">
+    <tab title="Groovy" group-key="groovy">
 
     ```groovy
     intellij {
@@ -191,8 +191,8 @@ Consequently, [dependencies](plugin_dependencies.md) on AppCode and CLion functi
 
   * Gradle build script (_required_):
 
-    <tabs>
-    <tab title="Kotlin">
+    <tabs group="languages">
+    <tab title="Kotlin" group-key="kotlin">
 
     ```kotlin
     intellij {
@@ -201,7 +201,7 @@ Consequently, [dependencies](plugin_dependencies.md) on AppCode and CLion functi
     ```
 
     </tab>
-    <tab title="Groovy">
+    <tab title="Groovy" group-key="groovy">
 
     ```groovy
     intellij {

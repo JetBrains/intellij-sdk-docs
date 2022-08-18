@@ -52,8 +52,8 @@ export ORG_GRADLE_PROJECT_intellijPublishToken='YOUR_TOKEN'
 Now provide the environment variable in the run configuration with which you run the [`publishPlugin`](tools_gradle_intellij_plugin.md#publishplugin-task) task locally.
 To do so, create a Gradle run configuration (if not already done), choose your Gradle project, specify the [`publishPlugin`](tools_gradle_intellij_plugin.md#publishplugin-task) task, and then add the environment variable.
 
-<tabs>
-<tab title="Kotlin">
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
 
 ```kotlin
 publishPlugin {
@@ -62,7 +62,7 @@ publishPlugin {
 ```
 
 </tab>
-<tab title="Groovy">
+<tab title="Groovy" group-key="groovy">
 
 ```groovy
 publishPlugin {
@@ -114,8 +114,8 @@ If successfully deployed, any users who currently have your plugin installed on 
 You may also deploy plugins to a release channel of your choosing, by configuring the [`publishPlugin.channels`](tools_gradle_intellij_plugin.md#publishplugin-task-channels) property.
 For example:
 
-<tabs>
-<tab title="Kotlin">
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
 
 ```kotlin
 publishPlugin {
@@ -124,7 +124,7 @@ publishPlugin {
 ```
 
 </tab>
-<tab title="Groovy">
+<tab title="Groovy" group-key="groovy">
 
 ```groovy
 publishPlugin {

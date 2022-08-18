@@ -78,9 +78,9 @@ See [Inspections](https://jetbrains.design/intellij/text/inspections/) topic in 
 
 To highlight a region of text as a warning or error:
 
-<tabs>
+<tabs group="platform-version">
 
-<tab title="2020.1 and later">
+<tab title="2020.1 and later" group-key="2020.1">
 
 ```java
     holder.newAnnotation(HighlightSeverity.WARNING, "Invalid code") // or HighlightSeverity.ERROR
@@ -90,7 +90,7 @@ To highlight a region of text as a warning or error:
 
 </tab>
 
-<tab title="Pre-2020.1">
+<tab title="Pre-2020.1" group-key="pre-2020.1">
 
 Call `createWarningAnnotation()`/`createErrorAnnotation()` on the [`AnnotationHolder`](%gh-ic%/platform/analysis-api/src/com/intellij/lang/annotation/AnnotationHolder.java), and optionally calls `registerFix()` on the returned [`Annotation`](%gh-ic%/platform/analysis-api/src/com/intellij/lang/annotation/Annotation.java) object to add a quick fix for the error or warning.
 
@@ -101,9 +101,9 @@ Call `createWarningAnnotation()`/`createErrorAnnotation()` on the [`AnnotationHo
 ### Syntax
 To apply additional syntax highlighting (2020.1 and later):
 
-<tabs>
+<tabs group="platform-version">
 
-<tab title="2020.1 and later">
+<tab title="2020.1 and later" group-key="2020.1">
 
 ```java
     holder.newSilentAnnotation(HighlightSeverity.INFORMATION)
@@ -114,7 +114,7 @@ To apply additional syntax highlighting (2020.1 and later):
 
 </tab>
 
-<tab title="Pre-2020.1">
+<tab title="Pre-2020.1" group-key="pre-2020.1">
 
 Call `AnnotationHolder.createInfoAnnotation()` with an empty message and then [`Annotation.setTextAttributes()`](%gh-ic%/platform/analysis-api/src/com/intellij/lang/annotation/Annotation.java).
 

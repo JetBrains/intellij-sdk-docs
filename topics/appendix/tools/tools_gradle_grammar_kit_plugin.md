@@ -17,8 +17,8 @@ The [Gradle Grammar-Kit Plugin](https://github.com/JetBrains/gradle-grammar-kit-
 ## Usage
 To enable this plugin in your Gradle-based project, register the plugin in the Gradle build script's `plugins` section:
 
-<tabs>
-<tab title="Kotlin">
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
 
 ```kotlin
 plugins {
@@ -27,7 +27,7 @@ plugins {
 ```
 
 </tab>
-<tab title="Groovy">
+<tab title="Groovy" group-key="groovy">
 
 ```groovy
 plugins {
@@ -61,8 +61,8 @@ After the Gradle Grammar-Kit Plugin is applied, the `grammarKit` extension can b
 **Example:**
 
 
-<tabs>
-<tab title="Kotlin">
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
 
 ```kotlin
 grammarKit {
@@ -73,7 +73,7 @@ grammarKit {
 ```
 
 </tab>
-<tab title="Groovy">
+<tab title="Groovy" group-key="groovy">
 
 ```groovy
 grammarKit {

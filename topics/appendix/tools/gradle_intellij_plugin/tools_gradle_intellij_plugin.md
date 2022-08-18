@@ -28,8 +28,8 @@ The plugin provides the functionalities like:
 ## Usage
 To enable this plugin in your Gradle-based project, register the plugin in the Gradle build script's `plugins` section:
 
-<tabs>
-<tab title="Kotlin">
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
 
 ```kotlin
 plugins {
@@ -38,7 +38,7 @@ plugins {
 ```
 
 </tab>
-<tab title="Groovy">
+<tab title="Groovy" group-key="groovy">
 
 ```groovy
 plugins {
@@ -73,8 +73,8 @@ For switching to the snapshot release, point Gradle to the dedicated snapshot re
 >
 {type="note"}
 
-<tabs>
-<tab title="Kotlin">
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
 
 `build.gradle.kts`
 ```kotlin
@@ -93,7 +93,7 @@ pluginManagement {
 }
 ```
 </tab>
-<tab title="Groovy">
+<tab title="Groovy" group-key="groovy">
 
 `build.gradle`
 ```groovy
@@ -126,8 +126,8 @@ It is mandatory to specify at least the [`intellij.version`](#intellij-extension
 **Example:**
 
 
-<tabs>
-<tab title="Kotlin">
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
 
 ```kotlin
 intellij {
@@ -138,7 +138,7 @@ intellij {
 ```
 
 </tab>
-<tab title="Groovy">
+<tab title="Groovy" group-key="groovy">
 
 ```groovy
 intellij {

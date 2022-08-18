@@ -21,7 +21,7 @@ Declarations in PSI elements are implementations of
 To report a declaration in a PSI element, either:
 
 - implement and register
-  [`PsiSymbolDeclarationProvider`](%gh-ic%/platform/core-api/src/com/intellij/model/psi/PsiSymbolDeclarationProvider.java);
+  [`PsiSymbolDeclarationProvider`](%gh-ic%/platform/core-api/src/com/intellij/model/psi/PsiSymbolDeclarationProvider.java) in `com.intellij.psi.declarationProvider` EP;
 - or implement `PsiSymbolDeclaration` directly in the `PsiElement`.
 
 ## References
@@ -49,7 +49,7 @@ because this is a reference from Java language point of view, and Java language 
 
 To provide Own references by the `PsiElement`, implement
 [`PsiElement.getOwnReferences()`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiElement.java) in the `PsiElement`.
-If the element contains a single reference, `Collections.singletonList()` can be used
+If the element contains a single reference, `Collections.singletonList()` can be used.
 
 ### External References
 

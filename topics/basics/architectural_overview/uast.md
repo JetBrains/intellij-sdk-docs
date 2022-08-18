@@ -1,6 +1,6 @@
 [//]: # (title: UAST - Unified Abstract Syntax Tree)
 
-<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 UAST (Unified Abstract Syntax Tree) is an abstraction layer on the [PSI](psi_elements.md) of different JVM languages.
 It provides a unified API for working with common language elements like classes and method declarations, literal values, and control flow operators.
@@ -45,31 +45,89 @@ All these sub-interfaces provide methods to get the information about common syn
 
 ### PSI to UAST Conversion
 
-To obtain UAST for given `PsiElement` of one of supported languages, use [`UastFacade`](%gh-ic%/uast/uast-common/src/org/jetbrains/uast/UastContext.kt) class or [`UastContextKt.toUElement()`](%gh-ic%/uast/uast-common/src/org/jetbrains/uast/UastContext.kt) method (`org.jetbrains.uast.toUElement` for Kotlin).
+To obtain UAST for given `PsiElement` of one of supported languages, use [`UastFacade`](%gh-ic%/uast/uast-common/src/org/jetbrains/uast/UastContext.kt) class or [`UastContextKt.toUElement()`](%gh-ic%/uast/uast-common/src/org/jetbrains/uast/UastContext.kt):
+
+<tabs>
+<tab title="Java">
+
+```java
+UastContextKt.toUElement(element);
+```
+
+</tab>
+<tab title="Kotlin">
+
+```kotlin
+element.toUElement()
+```
+
+</tab>
+</tabs>
 
 To convert `PsiElement` to the specific `UElement`, use one of the following approaches:
 
 - for simple conversion:
 
-```java
-UastContextKt.toUElement(element, UCallExpression.class);
-```
+  <tabs>
+  <tab title="Java">
+
+  ```java
+  UastContextKt.toUElement(element, UCallExpression.class);
+  ```
+
+  </tab>
+  <tab title="Kotlin">
+
+  ```kotlin
+  element.toUElement(UCallExpression::class.java)
+  ```
+
+  </tab>
+  </tabs>
 
 - for conversion to one of different given options:
 
-```java
-UastFacade.INSTANCE.convertElementWithParent(element,
-    new Class[]{UInjectionHost.class, UReferenceExpression.class});
-```
+  <tabs>
+  <tab title="Java">
+
+  ```java
+  UastFacade.INSTANCE.convertElementWithParent(element,
+      new Class[]{UInjectionHost.class, UReferenceExpression.class});
+  ```
+
+  </tab>
+  <tab title="Kotlin">
+
+  ```kotlin
+  UastFacade.convertElementWithParent(element,
+      UInjectionHost::class.java, UReferenceExpression::class.java)
+  ```
+
+  </tab>
+  </tabs>
 
 - in some cases, `PsiElement` could represent several `UElement`s.
   For instance, the parameter of a primary constructor in Kotlin is `UField` and `UParameter` at the same time.
   When needing all options, use:
 
-```java
-UastFacade.INSTANCE.convertToAlternatives(element,
-    new Class[]{UField.class, UParameter.class});
-```
+  <tabs>
+  <tab title="Java">
+
+  ```java
+  UastFacade.INSTANCE.convertToAlternatives(element,
+      new Class[]{UField.class, UParameter.class});
+  ```
+
+  </tab>
+  <tab title="Kotlin">
+
+  ```kotlin
+  UastFacade.convertToAlternatives(element,
+      UField::class.java, UParameter::class.java)
+  ```
+
+  </tab>
+  </tabs>
 
 > It is always better to convert to the specific type of `UElement`, rather than to convert without type and then cast to the specific type:
 > * Because of performance: `toUElement()` with type is fail-fast

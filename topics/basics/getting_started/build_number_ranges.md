@@ -2,8 +2,13 @@
 <!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 Use this reference of build number ranges to specify the correct `since-build` and `until-build` values in your plugin descriptor.
+Setting the actual values in <path>plugin.xml</path> is managed by [`patchPluginXml`](tools_gradle_intellij_plugin.md#patchpluginxml-task) Gradle task, see [](gradle_guide.md#patching-the-plugin-configuration-file).
 
-Setting the actual values in <path>plugin.xml</path> is usually managed by [`patchPluginXml`](tools_gradle_intellij_plugin.md#patchpluginxml-task) Gradle task, see [Patching the Plugin Configuration File](gradle_guide.md#patching-the-plugin-configuration-file) for details.
+Please note the following regarding values:
+
+- Values must represent the actual build numbers, any made-up numbers must not be used (e.g., using `999.*` for `until-build`).
+- An empty value for `until-build` means it will include _all_ future builds (including unreleased IDE versions, which might impact compatibility later).
+- Dot star suffix (`.* `) can be used in `until-build` to support all releases for the specific branch (i.e., `222.*` for all 2022.2.x releases).
 
 > Compatibility with the specified version range (and compatible products) must always be verified using [](verifying_plugin_compatibility.md#plugin-verifier) to ensure binary compatibility.
 >

@@ -17,35 +17,30 @@ Please note the following regarding values:
 >
 {type="warning"}
 
-Starting with IntelliJ IDEA 9 beta, a multipart build number is used, such as `IU-162.94`.
-
-The number consists of the following parts:
+To denote a release, a multipart build number is used.
+It consists of the following parts:
 
 * Product ID (`IC` for IDEA Community, `IU` for IDEA Ultimate, `RM` for RubyMine, `PY` for PyCharm, `PS` for PhpStorm, etc.)
 * Branch number (`162`)
 * Build number in the branch (`94`)
 
-Since version 2016.2 of the IntelliJ Platform, branch numbers are based on the `YYYY.R` [IDE release version numbers](https://blog.jetbrains.com/blog/2016/03/09/jetbrains-toolbox-release-and-versioning-changes/).
+Branch numbers are based on the `YYYY.R` [IDE release version numbers](https://blog.jetbrains.com/blog/2016/03/09/jetbrains-toolbox-release-and-versioning-changes/).
 The branch number takes the last two digits of the year and the `R` release number.
-For example, `162` for 2016.2, `163` for 2016.3, `171` for 2017.1.
-In this scheme, `IU-162.94` corresponds to the 2016.2 release.
+For example, `162` for 20*16.2*, `163` for 20*16.3*, etc.
 
-Starting with 2016.2, the build number may also have multiple components: `IU-162.94`, `IU-162.94.11`, `IU-162.94.11.256.42`.
+The build number may have multiple components: `IU-162.94.11`, `IU-162.94.11.256.42`.
 This gives more flexibility for third-party plugins and IDE developers.
-Plugins may specify compatibility versions more precisely; IDE vendors may have build numbers based on a specific IntelliJ Platform version and specify additional internal version (e.g. `256.42` in `XX-162.94.11.256.42`) to allow plugin developers for their IDE to specify compatibility.
+Plugins may specify compatibility versions more precisely (e.g., requiring a specific bugfix release); IDE vendors may have build numbers based on a specific IntelliJ Platform version and specify additional internal version (e.g. `256.42` in `XX-162.94.11.256.42`) to allow plugin developers for their IDE to specify compatibility.
 
-Multi-part build numbers can also be used in the `since-build` and `until-build` attributes of `idea-version`.
+Multipart build numbers can also be used in the `since-build` and `until-build` attributes of `idea-version`.
 Usually you should omit the product ID and use only the branch number and build number, for example:
 
 ```xml
-<idea-version since-build="94.539"/>
-<idea-version since-build="162.539.11"/>
+<!-- any 213-branch version: 2021.3, 2021.3.1, 2021.3.2, ... -->
+<idea-version since-build="213" until-build="213.*"/>
 
-<!-- any build until 162, not inclusive!-->
-<idea-version until-build="162"/>
-
-<!-- any 162-based version, 162.94, 162.94.11, etc.-->
-<idea-version since-build="162" until-build="162.*"/>
+<!-- specific build number (2021.3.3 or higher) -->
+<idea-version since-build="213.7172.25"/>
 ```
 
 > Specific build numbers and their corresponding release version are available via _Previous Releases_ on the corresponding product's download page, e.g. [Previous IntelliJ IDEA Releases](https://www.jetbrains.com/idea/download/previous.html).

@@ -4,8 +4,6 @@
 
 ## Extending/Shrinking Text Selection
 
-EP: `com.intellij.extendWordSelectionHandler`
-
 Implementing [`ExtendWordSelectionHandler`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/editorActions/ExtendWordSelectionHandler.java) and registering it as `com.intellij.extendWordSelectionHandler` EP in your <path>plugin.xml</path> allows you to provide additional text ranges to be used when extending or shrinking a selection.
 Return `true` from `canSelect(PsiElement)` for the PSI elements that you want to provide additional text-ranges for.
 The IntelliJ Platform will call `select(PsiElement, CharSequence, int, Editor)` for these elements where you can compute additional text ranges and return them as `List<TextRange>`.

@@ -70,7 +70,7 @@ This section provides some additional clarification of those comments.
 
 #### Table of Attributes
 
-The attributes supported by `com.intellij.applicationConfigurable` and `com.intellij.projectConfigurable` EPs are in the table below:
+The attributes supported by `com.intellij.applicationConfigurable` EP and `com.intellij.projectConfigurable` EP are in the table below:
 
 | Attribute              | Implementation<br/>Basis                  | Required&ensp;&ensp; | Attribute<br/>Value                                                                                                                                                                                                                                                                                                                                                                        |
 |:-----------------------|:------------------------------------------|:--------------------:|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -110,7 +110,7 @@ See the [previous section](#table-of-attributes) for all supported attributes.
 
 ## Implementations for Settings Extension Points
 
-Implementations for `com.intellij.projectConfigurable` and `com.intellij.applicationConfigurable` EPs can have one of two bases:
+Implementations for `com.intellij.projectConfigurable` EP and `com.intellij.applicationConfigurable` EP can have one of two bases:
 * The [`Configurable`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/options/Configurable.java) interface, which provides a named configurable component with a Swing form.
   Most Settings providers are based on the `Configurable` interface or one of its sub- or supertypes.
 * The [`ConfigurableProvider`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/options/ConfigurableProvider.java) class, which can hide a configurable component from the Settings dialog based on runtime conditions.

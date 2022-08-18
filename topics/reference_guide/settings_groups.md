@@ -19,7 +19,7 @@ This section describes the syntax for declaring more complex parent-child relati
 >
 {type="note"}
 
-There are two ways of declaring parent-child relationships using the `com.intellij.projectConfigurable` or `com.intellij.applicationConfigurable` EPs.
+There are two ways of declaring parent-child relationships using the `com.intellij.projectConfigurable` EP or `com.intellij.applicationConfigurable` EP.
 The first is to use separate EP declarations that are tied together by the value of one attribute.
 The second method is to use nested declarations.
 

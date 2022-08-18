@@ -84,15 +84,17 @@ If a plugin fails to reload, the log will contain a cause as to why.
 
 ### Diagnosing Leaks
 
-To find leaks preventing clean unload, perform the following steps:
+<procedure title="Finding leaks preventing unload">
 
 1. Verify that the IDE is running with the VM parameter `-XX:+UnlockDiagnosticVMOptions`. When using [Gradle](gradle_guide.md), specify `runIde.jvmArgs += "-XX:+UnlockDiagnosticVMOptions"` otherwise [Configure JVM Options](https://www.jetbrains.com/help/idea/tuning-the-ide.html#procedure-jvm-options).
 2. Set Registry key `ide.plugins.snapshot.on.unload.fail` to `true` (Go to <menupath>Navigate | Search Everywhere</menupath> and type `Registry`).
 3. Trigger the plugin reload.
-3. Open the <path>.hprof</path> memory snapshot generated on plugin unload, look for the plugin ID string. [IntelliJ Ultimate](https://www.jetbrains.com/help/idea/analyze-hprof-memory-snapshots.html) can open memory snapshots directly.
-4. Find the `PluginClassLoader` referencing the plugin ID string
-5. Look at references to the `PluginClassLoader` instance.
-6. Every one of them is a memory leak (or part of a memory leak) that needs to be resolved.
+4. Open the <path>.hprof</path> memory snapshot generated on plugin unload, look for the plugin ID string. [IntelliJ Ultimate](https://www.jetbrains.com/help/idea/analyze-hprof-memory-snapshots.html) can open memory snapshots directly.
+5. Find the `PluginClassLoader` referencing the plugin ID string
+6. Look at references to the `PluginClassLoader` instance.
+7. Every one of them is a memory leak (or part of a memory leak) that needs to be resolved.
+
+</procedure>
 
 When you've completed step 1 and 2, the log will contain more information about the memory leak, for instance the following shows a chain of field references that
 is keeping the class loader in memory.

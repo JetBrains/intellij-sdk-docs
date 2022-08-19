@@ -111,6 +111,13 @@ See also [](plugin_components.md#application-startup) and [](plugin_components.m
 
 Register [`ApplicationActivationListener`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/application/ApplicationActivationListener.java) [listener](plugin_listeners.md) to be notified of "application focused/unfocused" events.
 
+## Spell Checker
+
+Spell checking dictionaries can be modified using
+[`SpellCheckerManager`](%gh-ic%/spellchecker/src/com/intellij/spellchecker/SpellCheckerManager.java).
+
+Use `acceptWordAsCorrect()` or `removeWordFromDictionary()` to mark whether a word is correct or not.
+
 ## Plugin Management
 
 Currently, installed plugins can be checked via [`PluginManagerCore.isPluginInstalled()`](%gh-ic%/platform/core-impl/src/com/intellij/ide/plugins/PluginManagerCore.java).

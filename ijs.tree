@@ -259,6 +259,7 @@
       <toc-element id="parameter_info.md"/>
       <toc-element id="inlay_hints.md"/>
       <toc-element id="additional_minor_features.md"/>
+      <toc-element id="spell_checking.md"/>
     </toc-element>
     <toc-element id="custom_language_support_tutorial.md">
       <toc-element id="prerequisites.md"/>
@@ -281,6 +282,7 @@
       <toc-element id="commenter.md"/>
       <toc-element id="quick_fix.md"/>
       <toc-element id="documentation_provider.md"/>
+      <toc-element id="spell_checking_strategy.md"/>
     </toc-element>
     <toc-element id="writing_tests_for_plugins.md">
       <toc-element id="tests_prerequisites.md"/>

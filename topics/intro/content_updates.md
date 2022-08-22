@@ -15,6 +15,9 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 
 ### August-22
 
+Spell Checking
+: Add [](spell_checking.md) section with an [accompanying tutorial](spell_checking_strategy.md) showing how to implement a spell checking for a custom language.
+
 Source links migrated from Upsource to GitHub
 : All source links now point to GitHub instead of Upsource (which is going to be [sunset](https://blog.jetbrains.com/upsource/2022/01/31/upsource-end-of-sales-announcement/)).
 

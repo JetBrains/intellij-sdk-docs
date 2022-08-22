@@ -291,17 +291,39 @@ Children
 #### Element: `extensionPoint`
 {id="idea-plugin__extensionPoints__extensionPoint"}
 
-A single extension point entry in [`<extensionPoints>`](#idea-plugin__extensionPoints) defined by the plugin.
+A single extension point entry of the [`<extensionPoints>`](#idea-plugin__extensionPoints) defined by the plugin.
 
 {style="narrow"}
 Attributes
 :
-- `qualifiedName` - TODO
-- `name` - TODO
-- `beanClass` - TODO
-- `interface` - TODO
-- `dynamic` - TODO
-- `area` - TODO
+- `name` _(`name` or `qualifiedName` is required)_<br/>
+  The extension point name that should be unique in the scope of the plugin, e.g., `myExtension`.
+  The fully qualified name of the extension point is built at runtime by prepending the value of the `name` attribute with the plugin [`<id>`](#idea-plugin__id) + `.` prefix.
+  Only one of the `name` and `qualifiedName` attributes can be specified.<br/>
+  Example: when the `name` is  `myExtension` and plugin ID is `com.example.myplugin`, the fully qualified name of the EP will be `com.example.myplugin.myExtension`.
+- `qualifiedName` _(`name` or `qualifiedName` is required)_<br/>
+  The fully qualified name of the extension point.
+  It should be unique between different plugins, and it is recommended to include a plugin ID to guarantee uniqueness, e.g., `com.example.myplugin.myExtension`.
+  Only one of the `name` and `qualifiedName` attributes can be specified.
+- `interface` _(`interface` or `beanClass` is required)_<br/>
+  The fully qualified name of the interface to be implemented for extending plugin's functionality.
+  Only one of the `interface` and `beanClass` attributes can be specified.
+  See [](plugin_extension_points.md) for more information.
+- `beanClass` _(`interface` or `beanClass` is required)_<br/>
+  The fully qualified name of the extension point bean class providing additional information to the plugin.
+  Only one of the `interface` and `beanClass` attributes can be specified.
+  See [](plugin_extension_points.md) for more information.
+- `dynamic` _(optional)_<br/>
+  Boolean value defining whether the extension point meets the requirements to be [dynamic](plugin_extension_points.md#dynamic-extension-points), which is a prerequisite for [dynamic plugins](dynamic_plugins.md).
+  Default value: `false`.
+- `area` _(optional)_<br/>
+  The scope in which the [extension](plugin_extensions.md) is instantiated.
+  Possible values:
+    - `IDEA_APPLICATION` _(default)_
+    - `IDEA_PROJECT`
+    - `IDEA_MODULE`
+
+    It is not recommended to use non-default value.
 
 Children
 : [`<with>`](#idea-plugin__extensionPoints__extensionPoint__with)

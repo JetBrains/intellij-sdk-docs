@@ -62,7 +62,10 @@ Default value
 : Value of the [`<name>`](#idea-plugin__name) element.<br/>
 
 Example
-: `<id>com.example.my-framework-support</id>`
+:
+```xml
+<id>com.example.my-framework-support</id>
+```
 
 ### Element: `name`
 {id="idea-plugin__name"}
@@ -76,7 +79,10 @@ Required
 : Yes
 
 Example
-: `<name>My Framework Support</name>`
+:
+```xml
+<name>My Framework Support</name>
+```
 
 ### Element: `version`
 {id="idea-plugin__version"}
@@ -89,7 +95,10 @@ Required
 : Yes
 
 Example
-: `<version>1.3.18</version>`
+:
+```xml
+<version>1.3.18</version>
+```
 
 ### Element: `vendor`
 {id="idea-plugin__vendor"}
@@ -111,8 +120,18 @@ Attributes
 
 Examples
 :
-- `<vendor url="..." email="...">John Smith</vendor>`
-- `<vendor url="..." email="...">My Company</vendor>`
+- Personal vendor with an email address provided:
+    ```xml
+    <vendor email="joe@example.com">Joe Doe</vendor>
+    ```
+- Organizational vendor with a website URL and email address provided:
+    ```xml
+    <vendor
+        url="https://mycompany.example.com"
+        email="contact@example.com">
+      My Company
+    </vendor>
+    ```
 
 See also: [Contacts and resources
 ](https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#contacts-and-resources) in the JetBrains Marketplace documentation.
@@ -152,8 +171,15 @@ Attributes
 
 Examples
 :
-- `<idea-version since-build="213.7172"/>`
-- `<idea-version since-build="213" until-build="221.*"/>`
+- Compatibility with a specific build number (2021.3.3) and higher versions:
+    ```xml
+    <idea-version since-build="213.7172.25"/>
+    ```
+- Compatibility with versions from any of `213` branches to any of `221` branches:
+    ```xml
+    <idea-version
+        since-build="213" until-build="221.*"/>
+    ```
 
 ### Element: `description`
 {id="idea-plugin__description"}
@@ -209,14 +235,30 @@ Attributes
 
 Examples
 :
-- Required plugin dependency:<br/>
-  `<depends>com.example.dependency-plugin</depends>`
-- Optional plugin dependency:<br/>
-  `<depends optional="true">`<br/>`com.example.dependency-plugin`<br/>`</depends>`
-- Required plugin dependency with additional configuration:<br/>
-  `<depends config-file="depconfig.xml">`<br/>`com.example.dependency-plugin`<br/>`</depends>`
+- Required plugin dependency:
+    ```xml
+    <depends>com.example.dependency-plugin</depends>
+    ```
+- Optional plugin dependency:
+    ```xml
+    <depends optional="true">
+      com.example.dependency-plugin
+    </depends>
+    ```
+- Required plugin dependency with additional configuration:
+    ```xml
+    <depends config-file="depconfig.xml">
+      com.example.dependency-plugin
+    </depends>
+    ```
 - Optional plugin dependency with additional configuration:<br/>
-  `<depends optional="true" config-file="depconfig.xml">`<br/>`com.example.dependency-plugin`<br/>`</depends>`
+    ```xml
+    <depends
+        optional="true"
+        config-file="depconfig.xml">
+      com.example.dependency-plugin
+    </depends>
+    ```
 
 ### Element: `resource-bundle`
 {id="idea-plugin__resource-bundle"}

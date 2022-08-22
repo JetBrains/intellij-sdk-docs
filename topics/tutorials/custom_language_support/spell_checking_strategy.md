@@ -4,7 +4,7 @@
 
 <include src="language_and_filetype.md" include-id="custom_language_tutorial_header"></include>
 
-Spell Checker allows users to see spelling errors while editing code.
+Spell checking allows users to see spelling errors while editing code.
 
 **Reference**: [](spell_checking.md)
 

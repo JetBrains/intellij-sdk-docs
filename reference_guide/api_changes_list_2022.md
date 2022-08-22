@@ -161,6 +161,20 @@ Method `com.intellij.grazie.GrazieBundle.message(key, parameters)` marked static
 `com.intellij.docker.registry.DockerRegistry` class renamed to `com.intellij.docker.registry.DockerRegistryConfiguration`
 : Please update usages.
 
+### JavaScript Plugin 2022.2
+
+`com.intellij.lang.javascript.buildTools.webpack.WebPackConfigManager.setConfig(WebPackConfig)` method moved to the superclass
+: Should be used only in tests, marked with @TestOnly directive.
+
+`com.intellij.lang.javascript.buildTools.webpack.WebPackConfig` class renamed to `com.intellij.lang.javascript.buildTools.bundler.WebBundlerConfig`
+: Use `com.intellij.lang.javascript.buildTools.bundler.WebBundlerConfig` instead.
+
+`com.intellij.lang.javascript.buildTools.webpack.WebPackResolve` class renamed to `com.intellij.lang.javascript.buildTools.bundler.WebBundlerResolve`
+: Use `com.intellij.lang.javascript.buildTools.bundler.WebBundlerResolve` instead.
+
+`com.intellij.lang.javascript.buildTools.webpack.WebPackConfigPath` class removed
+: A regular String class is used instead.
+
 ## 2022.1
 
 ### IntelliJ Platform 2022.1

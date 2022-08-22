@@ -331,14 +331,46 @@ Children
 ##### Element: `with`
 {id="idea-plugin__extensionPoints__extensionPoint__with"}
 
-TODO
+Specifies the required parent type for class names provided in extension point tags or attributes.
+A single [`<extensionPoint>`](#idea-plugin__extensionPoints__extensionPoint) element can contain multiple `<with>` elements.
 
 {style="narrow"}
 Attributes
 :
-- `tag` - TODO
-- `attribute` - TODO
-- `implements` - TODO
+- `tag` _(`tag` or `attribute` is required)_<br/>
+  The name of the tag holding the fully qualified name of the class which parent type will be limited by the type provided in the `implements` attribute.
+  Only one of the `tag` and `attribute` attributes can be specified.
+- `attribute` _(`tag` or `attribute` is required)_<br/>
+  The name of the attribute holding the fully qualified name of the class which parent type will be limited by the type provided in the `implements` attribute.
+  Only one of the `tag` and `attribute` attributes can be specified.
+- `implements` _(required)_<br/>
+  The fully qualified name of the parent type limiting the type provided in the place specified by `tag` or `attribute`.
+
+Example
+:
+Extension point which restricts the type provided in a `myClass` attribute to be an instance of `com.example.ParentType`, and the type provided in a `someClass` element to be an instance of `java.lang.Comparable`:
+  ```xml
+  <extensionPoint
+      name="myExtension"
+      beanClass="com.example.MyExtension">
+    <with
+        attribute="myClass"
+        implements="com.example.ParentType"/>
+    <with
+        tag="someClass"
+        implements="java.lang.Comparable"/>
+  </extensionPoint>
+  ```
+  The implementing extension declaration could be defined as:
+  ```xml
+  <myExtension ...
+      myClass="com.example.MyCustomType">
+    <someClass>com.example.MyComparable</someClass>
+  </myExtension>
+  ```
+  where:
+  - `com.example.MyCustomType` must be a subtype of `com.example.ParentType`
+  - `com.example.MyComparable` must be a subtype of `java.lang.Comparable`
 
 ### Element: `application-components`
 {id="idea-plugin__application-components"}

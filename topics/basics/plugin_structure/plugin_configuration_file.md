@@ -16,7 +16,7 @@ The <path>plugin.xml</path> file root element.
 
 {style="narrow"}
 Required
-: Yes
+: **Yes**
 
 Attributes
 :
@@ -76,7 +76,7 @@ See the [naming guidelines](https://plugins.jetbrains.com/docs/marketplace/plugi
 
 {style="narrow"}
 Required
-: Yes
+: **Yes**
 
 Example
 :
@@ -92,7 +92,7 @@ Plugins uploaded to the JetBrains Marketplace must follow the [semantic versioni
 
 {style="narrow"}
 Required
-: Yes
+: **Yes**
 
 Example
 :
@@ -107,7 +107,7 @@ The vendor name or organization ID (if created) in the <control>Plugins</control
 
 {style="narrow"}
 Required
-: Yes
+: **Yes**
 
 Attributes
 :
@@ -156,7 +156,7 @@ See how to correctly specify [version ranges](build_number_ranges.md).
 
 {style="narrow"}
 Required
-: Yes<br/>
+: **Yes**<br/>
 The element can be skipped in the source <path>plugin.xml</path> file if the Gradle [patchPluginXml](tools_gradle_intellij_plugin.md#patchpluginxml-task) task is enabled.
 
 Attributes
@@ -192,7 +192,7 @@ See the [description guidelines](https://plugins.jetbrains.com/docs/marketplace/
 
 {style="narrow"}
 Required
-: Yes<br/>
+: **Yes**<br/>
 TODO: can be skipped if Gradle handles it
 
 Example
@@ -209,6 +209,9 @@ Simple HTML elements, like text formatting, paragraphs, lists, etc., are allowed
 TODO: how gradle plugin helps
 
 {style="narrow"}
+Required
+: No
+
 Example
 : TODO
 
@@ -217,10 +220,13 @@ See also: [Change notes](https://plugins.jetbrains.com/docs/marketplace/plugin-o
 ### Element: `depends`
 {id="idea-plugin__depends"}
 
-Specifies a dependency on another plugin.
+Specifies a [dependency](plugin_dependencies.md) on another plugin.
 A single `<idea-plugin>` element can contain multiple `<depends>` elements.
 
 {style="narrow"}
+Required
+: No
+
 Attributes
 :
 - `optional` _(optional)_<br/>
@@ -267,9 +273,14 @@ A resource bundle to be used with message key attributes in extension declaratio
 A single `<idea-plugin>` element can contain multiple `<resource-bundle>` elements.
 
 {style="narrow"}
+Required
+: No
+
 Example
-: To load the content of <path>messages/MyBundle.properties</path> bundle, declare:<br/>
-`<resource-bundle>messages.MyBundle</resource-bundle>`
+: To load the content of <path>messages/Bundle.properties</path> bundle, declare:
+```xml
+<resource-bundle>messages.Bundle</resource-bundle>
+```
 
 ### Element: `applicationListeners`
 {id="idea-plugin__applicationListeners"}
@@ -277,6 +288,9 @@ Example
 TODO
 
 {style="narrow"}
+Required
+: No
+
 Default value
 : TODO
 
@@ -289,6 +303,9 @@ Example
 TODO
 
 {style="narrow"}
+Required
+: No
+
 Default value
 : TODO
 
@@ -303,6 +320,9 @@ TODO
 Additional information about configuring `<actions>` is available in the [Actions](basic_action_system.md#registering-actions) section.
 
 {style="narrow"}
+Required
+: No
+
 Default value
 : TODO
 
@@ -315,6 +335,9 @@ Example
 TODO
 
 {style="narrow"}
+Required
+: No
+
 Default value
 : TODO
 
@@ -327,6 +350,9 @@ Example
 [Extension points](plugin_extension_points.md) defined by the plugin.
 
 {style="narrow"}
+Required
+: No
+
 Children
 : [`<extensionPoint>`](#idea-plugin__extensionPoints__extensionPoint)
 
@@ -334,8 +360,12 @@ Children
 {id="idea-plugin__extensionPoints__extensionPoint"}
 
 A single extension point entry of the [`<extensionPoints>`](#idea-plugin__extensionPoints) defined by the plugin.
+A single `<extensionPoints>` element can contain multiple `<extensionPoint>` elements.
 
 {style="narrow"}
+Required
+: No
+
 Attributes
 :
 - `name` _(`name` or `qualifiedName` is required)_<br/>
@@ -376,7 +406,15 @@ Children
 Specifies the required parent type for class names provided in extension point tags or attributes.
 A single [`<extensionPoint>`](#idea-plugin__extensionPoints__extensionPoint) element can contain multiple `<with>` elements.
 
+[//]: # (TODO: proposal)
+[//]: # (Path)
+[//]: # (:)
+[//]: # ([`idea-plugin`]&#40;#idea-plugin&#41; / [`extensionPoints`]&#40;#idea-plugin__extensionPoints&#41; / [`extensionPoint`]&#40;#idea-plugin__extensionPoints__extensionPoint&#41; / `with`)
+
 {style="narrow"}
+Required
+: No
+
 Attributes
 :
 - `tag` _(`tag` or `attribute` is required)_<br/>
@@ -417,14 +455,19 @@ Extension point which restricts the type provided in a `myClass` attribute to be
 ### Element: `application-components`
 {id="idea-plugin__application-components"}
 
-TODO
+> Element is deprecated. Do not use it in new plugins.
+>
+{type="warning"}
+
+Defines an application component.
+
 
 {style="narrow"}
-Deprecated
-: Yes
+Required
+: No
 
-Default value
-: TODO
+Children
+: `<component>`
 
 Example
 : TODO
@@ -432,11 +475,15 @@ Example
 ### Element: `project-components`
 {id="idea-plugin__project-components"}
 
+> Element is deprecated. Do not use it in new plugins.
+>
+{type="warning"}
+
 TODO
 
 {style="narrow"}
-Deprecated
-: Yes
+Required
+: No
 
 Default value
 : TODO
@@ -447,17 +494,99 @@ Example
 ### Element: `module-components`
 {id="idea-plugin__module-components"}
 
+> Element is deprecated. Do not use it in new plugins.
+>
+{type="warning"}
+
 TODO
 
 {style="narrow"}
-Deprecated
-: Yes
+Required
+: No
 
 Default value
 : TODO
 
 Example
 : TODO
+
+#### Element: `component`
+{id="idea-plugin__components__component"}
+
+> Element is deprecated. Do not use it in new plugins.
+>
+{type="warning"}
+
+TODO
+
+{style="narrow"}
+Required
+: No
+
+##### Element: `implementation-class`
+{id="idea-plugin__components__component__implementation-class"}
+
+> Element is deprecated. Do not use it in new plugins.
+>
+{type="warning"}
+
+TODO
+
+{style="narrow"}
+Required
+: **Yes**
+
+##### Element: `interface-class`
+{id="idea-plugin__components__component__interface-class"}
+
+> Element is deprecated. Do not use it in new plugins.
+>
+{type="warning"}
+
+TODO
+
+{style="narrow"}
+Required
+: No
+
+##### Element: `headless-implementation-class`
+{id="idea-plugin__components__component__headless-implementation-class"}
+
+> Element is deprecated. Do not use it in new plugins.
+>
+{type="warning"}
+
+TODO
+
+{style="narrow"}
+Required
+: No
+
+##### Element: `option`
+{id="idea-plugin__components__component__option"}
+
+> Element is deprecated. Do not use it in new plugins.
+>
+{type="warning"}
+
+TODO
+
+{style="narrow"}
+Required
+: No
+
+##### Element: `loadForDefaultProject`
+{id="idea-plugin__components__component__option"}
+
+> Element is deprecated. Do not use it in new plugins.
+>
+{type="warning"}
+
+TODO
+
+{style="narrow"}
+Required
+: No
 
 
 ## Additional Plugin Configuration Files
@@ -471,6 +600,6 @@ When using Gradle, a number of metadata elements will be provided at build time 
 
 ## Useful Resources
 
-Please make sure to follow the guidelines from [Plugin Overview page](https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html) for an optimal presentation of your plugin on JetBrains Marketplace. The _Busy Plugin Developers. Episode 2_ discusses [5 tips for optimizing JetBrains Marketplace plugin page](https://youtu.be/oB1GA9JeeiY?t=44) in more datail.
+Please make sure to follow the guidelines from [Plugin Overview page](https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html) for an optimal presentation of your plugin on JetBrains Marketplace. The _Busy Plugin Developers. Episode 2_ discusses [5 tips for optimizing JetBrains Marketplace plugin page](https://youtu.be/oB1GA9JeeiY?t=44) in more detail.
 
 See also [](marketing.md) about widgets and badges.

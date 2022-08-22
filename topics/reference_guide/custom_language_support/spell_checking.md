@@ -72,3 +72,5 @@ Override `isSuppressedFor()` to check if the warning is suppressed for the passe
 If the custom language contains words that are not known, then inherit from
 [BundledDictionaryProvider](%gh-ic%/spellchecker/src/com/intellij/spellchecker/BundledDictionaryProvider.java).
 Implement `getBundledDictionaries()` where return path to the word dictionary.
+
+Register it with the `com.intellij.spellchecker.bundledDictionaryProvider` extension point.

@@ -164,7 +164,7 @@ Method `com.intellij.grazie.GrazieBundle.message(key, parameters)` marked static
 ### JavaScript Plugin 2022.2
 
 `com.intellij.lang.javascript.buildTools.webpack.WebPackConfigManager.setConfig(WebPackConfig)` method moved to the superclass
-: Should be used only in tests, marked with @TestOnly directive.
+: Should be used only in tests (marked with `@TestOnly`).
 
 `com.intellij.lang.javascript.buildTools.webpack.WebPackConfig` class renamed to `com.intellij.lang.javascript.buildTools.bundler.WebBundlerConfig`
 : Use `com.intellij.lang.javascript.buildTools.bundler.WebBundlerConfig` instead.

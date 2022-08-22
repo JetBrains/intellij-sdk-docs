@@ -8,6 +8,9 @@ K
 
 ### IntelliJ Platform 2022.3
 
+Specify language for intention
+: Specify `<language>` in `com.intellij.intentionAction` EP registration to avoid instantiating language-specific intentions in non-relevant places.
+
 ## 2022.2
 
 ### IntelliJ Platform 2022.2

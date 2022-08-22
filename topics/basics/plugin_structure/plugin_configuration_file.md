@@ -26,24 +26,24 @@ Attributes
 
 Children
 :
-- [`<id>`](#idea-plugin__id)
-- [`<name>`](#idea-plugin__name)
-- [`<version>`](#idea-plugin__version)
-- [`<vendor>`](#idea-plugin__vendor)
-- [`<product-descriptor>`](#idea-plugin__product-descriptor)
-- [`<idea-version>`](#idea-plugin__idea-version)
-- [`<description>`](#idea-plugin__description)
+- [`<actions>`](#idea-plugin__actions)
+- [`<application-components>`](#idea-plugin__application-components)
+- [`<applicationListeners>`](#idea-plugin__applicationListeners)
 - [`<change-notes>`](#idea-plugin__change-notes)
 - [`<depends>`](#idea-plugin__depends)
-- [`<resource-bundle>`](#idea-plugin__resource-bundle)
-- [`<applicationListeners>`](#idea-plugin__applicationListeners)
-- [`<projectListeners>`](#idea-plugin__projectListeners)
-- [`<actions>`](#idea-plugin__actions)
+- [`<description>`](#idea-plugin__description)
 - [`<extensions>`](#idea-plugin__extensions)
 - [`<extensionPoints>`](#idea-plugin__extensionPoints)
-- [`<application-components>`](#idea-plugin__application-components)
-- [`<project-components>`](#idea-plugin__project-components)
+- [`<id>`](#idea-plugin__id)
+- [`<idea-version>`](#idea-plugin__idea-version)
 - [`<module-components>`](#idea-plugin__module-components)
+- [`<name>`](#idea-plugin__name)
+- [`<product-descriptor>`](#idea-plugin__product-descriptor)
+- [`<project-components>`](#idea-plugin__project-components)
+- [`<projectListeners>`](#idea-plugin__projectListeners)
+- [`<resource-bundle>`](#idea-plugin__resource-bundle)
+- [`<vendor>`](#idea-plugin__vendor)
+- [`<version>`](#idea-plugin__version)
 
 ### Element: `id`
 {id="idea-plugin__id"}

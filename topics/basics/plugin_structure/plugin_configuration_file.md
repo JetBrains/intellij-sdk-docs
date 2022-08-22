@@ -26,24 +26,26 @@ Attributes
 
 Children
 :
-- [`<actions>`](#idea-plugin__actions)
-- [`<application-components>`](#idea-plugin__application-components)
-- [`<applicationListeners>`](#idea-plugin__applicationListeners)
-- [`<change-notes>`](#idea-plugin__change-notes)
-- [`<depends>`](#idea-plugin__depends)
-- [`<description>`](#idea-plugin__description)
-- [`<extensions>`](#idea-plugin__extensions)
-- [`<extensionPoints>`](#idea-plugin__extensionPoints)
-- [`<id>`](#idea-plugin__id)
-- [`<idea-version>`](#idea-plugin__idea-version)
-- [`<module-components>`](#idea-plugin__module-components)
-- [`<name>`](#idea-plugin__name)
-- [`<product-descriptor>`](#idea-plugin__product-descriptor)
-- [`<project-components>`](#idea-plugin__project-components)
-- [`<projectListeners>`](#idea-plugin__projectListeners)
-- [`<resource-bundle>`](#idea-plugin__resource-bundle)
-- [`<vendor>`](#idea-plugin__vendor)
-- [`<version>`](#idea-plugin__version)
+  - [`<actions>`](#idea-plugin__actions)
+  - [`<applicationListeners>`](#idea-plugin__applicationListeners)
+  - [`<change-notes>`](#idea-plugin__change-notes)
+  - [`<depends>`](#idea-plugin__depends)
+  - [`<description>`](#idea-plugin__description)
+  - [`<extensions>`](#idea-plugin__extensions)
+  - [`<extensionPoints>`](#idea-plugin__extensionPoints)
+  - [`<id>`](#idea-plugin__id)
+  - [`<idea-version>`](#idea-plugin__idea-version)
+  - [`<name>`](#idea-plugin__name)
+  - [`<product-descriptor>`](#idea-plugin__product-descriptor)
+  - [`<projectListeners>`](#idea-plugin__projectListeners)
+  - [`<resource-bundle>`](#idea-plugin__resource-bundle)
+  - [`<vendor>`](#idea-plugin__vendor)
+  - [`<version>`](#idea-plugin__version)<br/><br/>
+
+  Deprecated:
+  - [`<application-components>`](#idea-plugin__application-components)
+  - [`<module-components>`](#idea-plugin__module-components)
+  - [`<project-components>`](#idea-plugin__project-components)
 
 ### Element: `id`
 {id="idea-plugin__id"}
@@ -221,7 +223,7 @@ See also: [Change notes](https://plugins.jetbrains.com/docs/marketplace/plugin-o
 {id="idea-plugin__depends"}
 
 Specifies a [dependency](plugin_dependencies.md) on another plugin.
-A single `<idea-plugin>` element can contain multiple `<depends>` elements.
+A single [`<idea-plugin>`](#idea-plugin) element can contain multiple `<depends>` elements.
 
 {style="narrow"}
 Required
@@ -270,7 +272,7 @@ Examples
 {id="idea-plugin__resource-bundle"}
 
 A resource bundle to be used with message key attributes in extension declarations, and for [action and group localization](basic_action_system.md#localizing-actions-and-groups).
-A single `<idea-plugin>` element can contain multiple `<resource-bundle>` elements.
+A single [`<idea-plugin>`](#idea-plugin) element can contain multiple `<resource-bundle>` elements.
 
 {style="narrow"}
 Required
@@ -360,7 +362,7 @@ Children
 {id="idea-plugin__extensionPoints__extensionPoint"}
 
 A single extension point entry of the [`<extensionPoints>`](#idea-plugin__extensionPoints) defined by the plugin.
-A single `<extensionPoints>` element can contain multiple `<extensionPoint>` elements.
+A single [`<extensionPoints>`](#idea-plugin__extensionPoints) element can contain multiple `<extensionPoint>` elements.
 
 {style="narrow"}
 Required
@@ -459,18 +461,14 @@ Extension point which restricts the type provided in a `myClass` attribute to be
 >
 {type="warning"}
 
-Defines an application component.
-
+Defines a list of application [components](plugin_components.md).
 
 {style="narrow"}
 Required
 : No
 
 Children
-: `<component>`
-
-Example
-: TODO
+: [`<component>`](#idea-plugin__components__component)
 
 ### Element: `project-components`
 {id="idea-plugin__project-components"}
@@ -479,17 +477,14 @@ Example
 >
 {type="warning"}
 
-TODO
+Defines a list of project [components](plugin_components.md).
 
 {style="narrow"}
 Required
 : No
 
-Default value
-: TODO
-
-Example
-: TODO
+Children
+: [`<component>`](#idea-plugin__components__component)
 
 ### Element: `module-components`
 {id="idea-plugin__module-components"}
@@ -498,17 +493,14 @@ Example
 >
 {type="warning"}
 
-TODO
+Defines a list of module [components](plugin_components.md).
 
 {style="narrow"}
 Required
 : No
 
-Default value
-: TODO
-
-Example
-: TODO
+Children
+: [`<component>`](#idea-plugin__components__component)
 
 #### Element: `component`
 {id="idea-plugin__components__component"}
@@ -517,11 +509,20 @@ Example
 >
 {type="warning"}
 
-TODO
+Defines a single application, project, or module [component](plugin_components.md).
+A single [`<application-components>`](#idea-plugin__application-components), [`<project-components>`](#idea-plugin__project-components), or [`<module-components>`](#idea-plugin__module-components) element can contain multiple `<component>` elements.
 
 {style="narrow"}
 Required
 : No
+
+Children
+:
+- [`<headless-implementation-class>`](#idea-plugin__components__component__headless-implementation-class)
+- [`<implementation-class>`](#idea-plugin__components__component__implementation-class)
+- [`<interface-class>`](#idea-plugin__components__component__interface-class)
+- [`<loadForDefaultProject>`](#idea-plugin__components__component__loadForDefaultProject)
+- [`<option>`](#idea-plugin__components__component__option)
 
 ##### Element: `implementation-class`
 {id="idea-plugin__components__component__implementation-class"}
@@ -530,7 +531,7 @@ Required
 >
 {type="warning"}
 
-TODO
+The fully qualified name of the component implementation class.
 
 {style="narrow"}
 Required
@@ -543,7 +544,7 @@ Required
 >
 {type="warning"}
 
-TODO
+The fully qualified name of the component interface class. If not specified, the interface will be the same as defined by [`<implementation-class>`](#idea-plugin__components__component__interface-class) element.
 
 {style="narrow"}
 Required
@@ -556,7 +557,7 @@ Required
 >
 {type="warning"}
 
-TODO
+The fully qualified name of the component implementation class to be used when the IDE runs in headless mode.
 
 {style="narrow"}
 Required
@@ -569,25 +570,32 @@ Required
 >
 {type="warning"}
 
-TODO
+Allows to provide additional component options.
+A single [`<component>`](#idea-plugin__components__component) element can contain multiple `<option>` elements.
 
 {style="narrow"}
 Required
 : No
 
+Attributes
+:
+- `name` _(required)_<br/>
+  Option name.
+- `value` _(required)_<br/>
+  Option value.
+
 ##### Element: `loadForDefaultProject`
-{id="idea-plugin__components__component__option"}
+{id="idea-plugin__components__component__loadForDefaultProject"}
 
 > Element is deprecated. Do not use it in new plugins.
 >
 {type="warning"}
 
-TODO
+If present, the component is instantiated also for the default project. It takes effect only when used inside of [`<project-components>`](#idea-plugin__project-components) element.
 
 {style="narrow"}
 Required
 : No
-
 
 ## Additional Plugin Configuration Files
 
@@ -603,3 +611,5 @@ When using Gradle, a number of metadata elements will be provided at build time 
 Please make sure to follow the guidelines from [Plugin Overview page](https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html) for an optimal presentation of your plugin on JetBrains Marketplace. The _Busy Plugin Developers. Episode 2_ discusses [5 tips for optimizing JetBrains Marketplace plugin page](https://youtu.be/oB1GA9JeeiY?t=44) in more detail.
 
 See also [](marketing.md) about widgets and badges.
+
+[//]: # (TODO: links to code samples descriptors?)

@@ -75,6 +75,6 @@ Links to [useful resources](useful_links.md), a [](glossary.md), [](extension_po
 
 Information on [](verifying_plugin_compatibility.md) and list of [backwards-incompatible](api_changes_list.md) API changes as well as [notable changes and new features](api_notable.md) in each major release of the IntelliJ Platform.
 
-#### Appendix III — Tools
+#### Appendix III — Tooling
 
 Reference and usage guides for commonly used tools like the [](tools_gradle_intellij_plugin.md).

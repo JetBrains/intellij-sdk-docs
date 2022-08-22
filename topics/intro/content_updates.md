@@ -36,7 +36,7 @@ Postfix Completion
 : Add [](postfix_completion.md) section explaining how to implement generating or wrapping the existing code into additional constructs without navigating the caret back.
 
 Gradle IntelliJ Plugin
-: Add [](tools_gradle_intellij_plugin.md) documentation to _Appendix III — Tools_.
+: Add [](tools_gradle_intellij_plugin.md) documentation to _Appendix III — Tooling_.
 
 Bundling Plugin API Sources
 : Add the [](bundling_plugin_openapi_sources.md) section explaining how to expose plugin API sources to dependent plugin developers.
@@ -46,7 +46,7 @@ Minor Changes and Additions
 - Add a small section to [](php_open_api.md#utility-classes) describing `PhpFilePathUtils` utility class.
 - Add mention of the way to programmatically open an autocomplete popup to [](code_completion.md).
 - Add a small section to [](work_with_icons_and_images.md#animated-icons) describing animated icons.
-- Moved [](tools_gradle_grammar_kit_plugin.md) documentation to _Appendix III — Tools_
+- Moved [](tools_gradle_grammar_kit_plugin.md) documentation to _Appendix III — Tooling_
 
 ### May-22
 

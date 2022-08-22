@@ -383,7 +383,7 @@
     </toc-element>
     <toc-element id="api_internal.md"/>
   </toc-element>
-  <toc-element toc-title="Appendix III — Tools">
+  <toc-element toc-title="Appendix III — Tooling">
     <toc-element id="tools_gradle_intellij_plugin.md">
       <toc-element toc-title="Usage Examples" id="tools_gradle_intellij_plugin_examples.md"/>
       <toc-element toc-title="Build Features" id="tools_gradle_intellij_plugin_build_features.md"/>

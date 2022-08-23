@@ -55,6 +55,10 @@ To opt out, add this line in <path>gradle.properties</path>:
 kotlin.stdlib.default.dependency = false
 ```
 
+The presence of this Gradle property is checked by the [](tools_gradle_intellij_plugin.md) with the [](tools_gradle_intellij_plugin.md#verifypluginconfiguration-task).
+If the property is not present, a warning will be reported during the plugin configuration verification, as it is a common problem when Kotlin stdlib gets bundled within the plugin archive.
+If it is expected to make Kotlin stdlib present in the final archive, explicitly specify it with `kotlin.stdlib.default.dependency = true`.
+
 If a plugin supports [multiple platform versions](build_number_ranges.md), it must either target the lowest bundled `stdlib` version or provide the specific version in plugin distribution.
 
 | IntelliJ Platform version | Bundled `stdlib` version |

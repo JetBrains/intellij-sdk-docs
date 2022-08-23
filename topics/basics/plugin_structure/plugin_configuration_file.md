@@ -391,11 +391,11 @@ Additional information about configuring `<actions>` is available in the [Action
 Required
 : no
 
-Default value
-: TODO
-
-Example
-: TODO
+Children
+:
+- TODO
+- TODO
+- TODO
 
 ### Element: `extensions`
 {id="idea-plugin__extensions"}

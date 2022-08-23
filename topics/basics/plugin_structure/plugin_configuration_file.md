@@ -379,6 +379,15 @@ Attributes
 Children
 : The children elements are registrations of the extension points defined by [`<extensionPoint>`](#idea-plugin__extensionPoints__extensionPoint) elements. Extension elements names follow the EPs names defined by `name` or `qualifiedName` attributes.
 
+Example
+:
+  ```xml
+  <extensions defaultExtensionNs="com.example.vcs">
+    <myExtension
+      implementation="com.example.impl.MyExtension"/>
+  </extensions>
+  ```
+
 ### Element: `extensionPoints`
 {id="idea-plugin__extensionPoints"}
 

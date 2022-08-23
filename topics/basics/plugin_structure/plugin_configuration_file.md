@@ -364,17 +364,20 @@ Example
 ### Element: `extensions`
 {id="idea-plugin__extensions"}
 
-TODO
+[Plugin extensions](plugin_extensions.md).
 
 {style="narrow"}
 Required
 : no
 
-Default value
-: TODO
+Attributes
+: - `defaultExtensionNs` _(optional)_<br/>
+  Default extensions namespace.
+  It allows skipping the common prefix in fully qualified extension point names.<br/>
+  Example: if `defaultExtensionNs` is `com.example.vcs` and extension point FQN is `com.example.vcs.myExtension`, it can be defined as simple `<myExtension>` element instead of `<com.example.vcs.myExtension>`.
 
-Example
-: TODO
+Children
+: The children elements are registrations of the extension points defined by [`<extensionPoint>`](#idea-plugin__extensionPoints__extensionPoint) elements. Extension elements names follow the EPs names defined by `name` or `qualifiedName` attributes.
 
 ### Element: `extensionPoints`
 {id="idea-plugin__extensionPoints"}

@@ -1672,4 +1672,8 @@ Validates the plugin project configuration:
 - The `languageVersion` property of the Kotlin configuration (if used) can't be lower than the Kotlin bundled with IDE in the version specified by the [`intellij.version`](#intellij-extension-version) or [`patchPluginXml.sinceBuild`](#patchpluginxml-task-sincebuild) properties.
 - The `apiVersion` property of the Kotlin configuration (if used) can't be higher than the Kotlin bundled with IDE in the version specified by the [`intellij.version`](#intellij-extension-version) or [`patchPluginXml.sinceBuild`](#patchpluginxml-task-sincebuild) properties.
 
-For more details regarding the Java version used in the specific IntelliJ SDK, see [](build_number_ranges.md).
+> For more details regarding the Java version used in the specific IntelliJ SDK, see [](build_number_ranges.md).
+
+- The dependency on the Kotlin Standard Library (stdlib) is automatically added when using the Gradle Kotlin plugin and may conflict with the version provided with the IntelliJ Platform.
+
+> Read more about controlling this behavior on [](kotlin.md#kotlin-standard-library).

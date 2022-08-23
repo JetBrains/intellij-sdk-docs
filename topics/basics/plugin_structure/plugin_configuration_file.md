@@ -70,7 +70,7 @@ Default value
 Example
 :
 ```xml
-<id>com.example.my-framework-support</id>
+<id>com.example.myframeworksupport</id>
 ```
 
 ### `name`

@@ -42,6 +42,8 @@ See [](explore_api.md) for more information and strategies.
 
    See the [](plugin_extension_points.md#declaring-extension-points) section for details.
 
+   **NB:** When using Kotlin, use `class` and never `object` for all implementations ([more details](kotlin.md#caution)).
+
 To clarify this procedure, consider the following sample section of the <path>plugin.xml</path> file that defines two extensions designed to access the `com.intellij.appStarter` and `com.intellij.projectTemplatesFactory` extension points in the IntelliJ Platform,
 and one extension to access the `another.plugin.myExtensionPoint` extension point in another plugin `another.plugin`:
 

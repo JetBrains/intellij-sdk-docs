@@ -25,8 +25,7 @@ Required
 Attributes
 :
 - `url` _(optional; ignored in [additional configuration](#additional-plugin-configuration-files))_<br/>
-  The link to the plugin homepage displayed on the plugin page in the [JetBrains Marketplace](https://plugins.jetbrains.com).<br/>
-  Example: `https://example.com/my-plugin-site`
+  The link to the plugin homepage displayed on the plugin page in the [JetBrains Marketplace](https://plugins.jetbrains.com).
 
 Children
 :
@@ -118,11 +117,9 @@ Required
 Attributes
 :
 - `url` _(optional)_<br/>
-  The link to the vendor's homepage.<br/>
-  Example: `https://example.com/my-company`
+  The link to the vendor's homepage.
 - `email` _(optional)_<br/>
-  The vendor's email address.<br/>
-  Example: `contact@example.com`
+  The vendor's email address.
 
 Examples
 :
@@ -269,8 +266,7 @@ Attributes
     - `optional="true"` - the plugin will be loaded.
     - `optional="false"` - the plugin will not be loaded.
 - `config-file` _(optional)_<br/>
-  Relative path to an [additional configuration file](#additional-plugin-configuration-files), loaded only if the dependency plugin is installed in the current IDE.<br/>
-  Example: `subdir/dependency.xml`
+  Relative path to an [additional configuration file](#additional-plugin-configuration-files), loaded only if the dependency plugin is installed in the current IDE.
 
 Examples
 :
@@ -294,7 +290,7 @@ Examples
     ```xml
     <depends
         optional="true"
-        config-file="depconfig.xml">
+        config-file="subdir/depconfig.xml">
       com.example.dependency-plugin
     </depends>
     ```

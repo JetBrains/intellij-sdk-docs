@@ -37,8 +37,8 @@ See [](explore_api.md) for more information and strategies.
 2. Add a new child element to the `<extensions>` element.
    The child element's name must match the name of the extension point you want the extension to access.
 3. Depending on the type of the extension point, do one of the following:
-   * If the extension point was declared using the `interface` attribute, for newly added child element, set the `implementation` attribute to the name of the class that implements the specified interface.
-   * If the extension point was declared using the `beanClass` attribute, for newly added child element, set all attributes annotated with the [`@Attribute`](%gh-ic%/platform/util/src/com/intellij/util/xmlb/annotations/Attribute.java) annotations in the specified bean class.
+   * If the extension point was declared using the `interface` attribute, set the `implementation` attribute to the name of the class that implements the specified interface.
+   * If the extension point was declared using the `beanClass` attribute, set all properties annotated with the [`@Attribute`](%gh-ic%/platform/util/src/com/intellij/util/xmlb/annotations/Attribute.java) and [`Tag`](%gh-ic%/platform/util/src/com/intellij/util/xmlb/annotations/Tag.java) annotations in the specified bean class.
 
    See the [](plugin_extension_points.md#declaring-extension-points) section for details.
 

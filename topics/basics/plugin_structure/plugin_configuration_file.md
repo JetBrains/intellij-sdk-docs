@@ -202,7 +202,19 @@ Required
 TODO: can be skipped if Gradle handles it
 
 Example
-: TODO
+:
+  ```xml
+  <description><![CDATA[
+  Provides support for My Framework.
+  The support includes:
+  <ul>
+  <li>code completion</li>
+  <li>references</li>
+  </ul>
+  For more information visit the
+  <a href="https://example.com">project site</a>.
+  ]]></description>
+  ```
 
 ### Element: `change-notes`
 {id="idea-plugin__change-notes"}
@@ -219,7 +231,21 @@ Required
 : no; ignored in [additional config file](#additional-plugin-configuration-files)
 
 Example
-: TODO
+:
+  ```xml
+  <change-notes><![CDATA[
+  <h2>New Features</h2>
+  <ul>
+  <li>Feature 1</li>
+  <li>Feature 2</li>
+  </ul>
+  <h2>Bug Fixes</h2>
+  <ul>
+  <li>Fixed issue 1</li>
+  <li>Fixed issue 2</li>
+  </ul>
+  ]]></change-notes>
+  ```
 
 See also: [Change notes](https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#change-notes) in the JetBrains Marketplace documentation.
 

@@ -224,6 +224,8 @@ Change notes are displayed on the Marketplace plugin page and in the IDE Plugin 
 
 Simple HTML elements, like text formatting, paragraphs, lists, etc., are allowed and must be wrapped into `<![CDATA[` ... `]]>` section.
 
+See also: [Change notes](https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#change-notes) in the JetBrains Marketplace documentation.
+
 TODO: how gradle plugin helps
 
 {style="narrow"}
@@ -247,7 +249,6 @@ Example
   ]]></change-notes>
   ```
 
-See also: [Change notes](https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#change-notes) in the JetBrains Marketplace documentation.
 
 ### Element: `depends`
 {id="idea-plugin__depends"}
@@ -317,32 +318,67 @@ Example
 ### Element: `applicationListeners`
 {id="idea-plugin__applicationListeners"}
 
-TODO
+Defines the [application-level listeners](plugin_listeners.md#defining-application-level-listeners).
 
 {style="narrow"}
 Required
 : no
 
-Default value
-: TODO
-
-Example
-: TODO
+Children
+: [`<listener>`](#idea-plugin__listeners__listener)
 
 ### Element: `projectListeners`
 {id="idea-plugin__projectListeners"}
 
-TODO
+Defines the [project-level listeners](plugin_listeners.md#defining-project-level-listeners).
 
 {style="narrow"}
 Required
 : no
 
-Default value
-: TODO
+Children
+: [`<listener>`](#idea-plugin__listeners__listener)
+
+#### Element: `listener`
+{id="idea-plugin__listeners__listener"}
+
+Defines a single application or project-level listener.
+A single [`<applicationListeners>`](#idea-plugin__applicationListeners) or [`<projectListeners>`](#idea-plugin__projectListeners) can contain multiple `<listener>` elements.
+
+{style="narrow"}
+Required
+: no
+
+Attributes
+:
+- `topic` _(required)_<br/>
+  The fully qualified name of the listener interface corresponding to the type of received events.
+- `class` _(required)_<br/>
+  The fully qualified name of the class implementing the listener interface that receives and handles the events.
+- `os` _(optional; supported since 2020.1)_<br/>
+  Restricts listener instantiation to a specific operating system.
+  Allowed values:
+    - `freebsd`
+    - `mac`
+    - `linux`
+    - `unix`
+    - `windows`
+- `activeInTestMode` _(optional)_<br/>
+  Boolean flag defining whether the listener should be instantiated in the test mode.<br/>
+  Default value: `true`.
+- `activeInHeadlessMode` _(optional)_<br/>
+  Boolean flag defining whether the listener should be instantiated in the headless mode.<br/>
+  Default value: `true`.
 
 Example
-: TODO
+:
+  ```xml
+  <listener
+      topic="com.intellij.ide.AppLifecycleListener"
+      class="com.example.MyListener"
+      os="mac"
+      activeInTestMode="false"/>
+  ```
 
 ### Element: `actions`
 {id="idea-plugin__actions"}
@@ -434,7 +470,7 @@ Attributes
   Default value: `false`.
 - `area` _(optional)_<br/>
   The scope in which the [extension](plugin_extensions.md) is instantiated.
-  Possible values:
+  Allowed values:
     - `IDEA_APPLICATION` _(default)_
     - `IDEA_PROJECT`
     - `IDEA_MODULE`
@@ -450,7 +486,7 @@ Children
 Specifies the required parent type for class names provided in extension point tags or attributes.
 A single [`<extensionPoint>`](#idea-plugin__extensionPoints__extensionPoint) element can contain multiple `<with>` elements.
 
-[//]: # (TODO: proposal)
+[//]: # (TODO: additional table entry proposal)
 [//]: # (Path)
 [//]: # (:)
 [//]: # ([`idea-plugin`]&#40;#idea-plugin&#41; / [`extensionPoints`]&#40;#idea-plugin__extensionPoints&#41; / [`extensionPoint`]&#40;#idea-plugin__extensionPoints__extensionPoint&#41; / `with`)

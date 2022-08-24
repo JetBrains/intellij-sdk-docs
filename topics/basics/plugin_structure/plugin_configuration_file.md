@@ -10,7 +10,7 @@ Sections below describe all the elements in detail.
 A plugin can contain additional configuration files beside the main <path>plugin.xml</path>.
 They have the same format, and they are included with the `config-file` attribute of [`<depends>`](#idea-plugin__depends) elements.
 However, some elements and attributes required in <path>plugin.xml</path> are ignored in additional configuration files.
-If the requirements differs, the documentation below will state it explicitly.
+If the requirements differ, the documentation below will state it explicitly.
 One use case for additional configuration files is when a plugin provides optional features that are
 only available in some IDEs and require [certain modules](plugin_compatibility.md#modules-specific-to-functionality).
 
@@ -707,3 +707,6 @@ Required
     - ...
 
   So it is easy to see the big picture and quickly navigate to the specific element
+
+
+[//]: # (TODO: when we backlink to related topic&#40;s&#41; maybe we could use same format as we have in custom language tutorial "Reference: [link]" always in same position for element and separated from textual description)

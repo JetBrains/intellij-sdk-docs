@@ -11,14 +11,44 @@ A plugin can contain additional configuration files beside the main <path>plugin
 They have the same format, and they are included with the `config-file` attribute of [`<depends>`](#idea-plugin__depends) elements.
 However, some elements and attributes required in <path>plugin.xml</path> are ignored in additional configuration files.
 If the requirements differ, the documentation below will state it explicitly.
-One use case for additional configuration files is when a plugin provides optional features that are
-only available in some IDEs and require [certain modules](plugin_compatibility.md#modules-specific-to-functionality).
+One use case for additional configuration files is when a plugin provides optional features that are only available in some IDEs and require [certain modules](plugin_compatibility.md#modules-specific-to-functionality).
 
 ## Useful Resources
 
-Please make sure to follow the guidelines from [Plugin Overview page](https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html) for an optimal presentation of your plugin on JetBrains Marketplace. The _Busy Plugin Developers. Episode 2_ discusses [5 tips for optimizing JetBrains Marketplace plugin page](https://youtu.be/oB1GA9JeeiY?t=44) in more detail.
+Please make sure to follow the guidelines from [Plugin Overview page](https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html) for an optimal presentation of your plugin on JetBrains Marketplace.
+The _Busy Plugin Developers.
+Episode 2_ discusses [5 tips for optimizing JetBrains Marketplace plugin page](https://youtu.be/oB1GA9JeeiY?t=52) in more detail.
 
 See also [](marketing.md) about widgets and badges.
+
+## Configuration Structure Overview
+
+- [`<idea-plugin>`](#idea-plugin)
+  - [`<id>`](#idea-plugin__id)
+  - [`<name>`](#idea-plugin__name)
+  - [`<version>`](#idea-plugin__version)
+  - [`<product-descriptor>`](#idea-plugin__product-descriptor)
+  - [`<idea-version>`](#idea-plugin__idea-version)
+  - [`<vendor>`](#idea-plugin__vendor)
+  - [`<description>`](#idea-plugin__description)
+  - [`<change-notes>`](#idea-plugin__change-notes)
+  - [`<depends>`](#idea-plugin__depends)
+  - [`<actions>`](#idea-plugin__actions)
+  - [`<extensionPoints>`](#idea-plugin__extensionPoints)
+    - [`<extensionPoint>`](#idea-plugin__extensionPoints__extensionPoint)
+      - [`<with>`](#idea-plugin__extensionPoints__extensionPoint__with)
+  - [`<extensions>`](#idea-plugin__extensions)
+  - [`<applicationListeners>`](#idea-plugin__applicationListeners)
+    - [`<listener>`](#idea-plugin__listeners__listener)
+  - [`<projectListeners>`](#idea-plugin__projectListeners)
+    - [`<listener>`](#idea-plugin__listeners__listener)
+  - [`<resource-bundle>`](#idea-plugin__resource-bundle)
+
+Deprecated elements are omitted in the list above.
+
+> If an element or an attribute is not documented on this page, please consider them as configuration items intended to be used only by JetBrains teams internally. They should never be used by 3rd-party plugins.
+>
+{type="note"}
 
 ## `idea-plugin`
 {id="idea-plugin"}
@@ -112,40 +142,6 @@ Example
 <version>1.3.18</version>
 ```
 
-### `vendor`
-{id="idea-plugin__vendor"}
-
-The vendor name or organization ID (if created) in the <control>Plugins</control> settings dialog and in the JetBrains Marketplace plugin page.
-
-{style="narrow"}
-Required
-: **yes**; ignored in [additional config file](#additional-plugin-configuration-files)
-
-Attributes
-:
-- `url` _(optional)_<br/>
-  The link to the vendor's homepage.
-- `email` _(optional)_<br/>
-  The vendor's email address.
-
-Examples
-:
-- Personal vendor with an email address provided:
-    ```xml
-    <vendor email="joe@example.com">Joe Doe</vendor>
-    ```
-- Organizational vendor with a website URL and email address provided:
-    ```xml
-    <vendor
-        url="https://mycompany.example.com"
-        email="contact@example.com">
-      My Company
-    </vendor>
-    ```
-
-See also: [Contacts and resources
-](https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#contacts-and-resources) in the JetBrains Marketplace documentation.
-
 ### `product-descriptor`
 {id="idea-plugin__product-descriptor"}
 
@@ -190,6 +186,40 @@ Examples
     <idea-version
         since-build="213" until-build="221.*"/>
     ```
+
+### `vendor`
+{id="idea-plugin__vendor"}
+
+The vendor name or organization ID (if created) in the <control>Plugins</control> settings dialog and in the JetBrains Marketplace plugin page.
+
+{style="narrow"}
+Required
+: **yes**; ignored in [additional config file](#additional-plugin-configuration-files)
+
+Attributes
+:
+- `url` _(optional)_<br/>
+  The link to the vendor's homepage.
+- `email` _(optional)_<br/>
+  The vendor's email address.
+
+Examples
+:
+- Personal vendor with an email address provided:
+    ```xml
+    <vendor email="joe@example.com">Joe Doe</vendor>
+    ```
+- Organizational vendor with a website URL and email address provided:
+    ```xml
+    <vendor
+        url="https://mycompany.example.com"
+        email="contact@example.com">
+      My Company
+    </vendor>
+    ```
+
+See also: [Contacts and resources
+](https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#contacts-and-resources) in the JetBrains Marketplace documentation.
 
 ### `description`
 {id="idea-plugin__description"}
@@ -693,20 +723,5 @@ Required
 - add information that if some element or attribute is missing, it shouldn't be used in 3rd-party plugins
 - links to code sample plugin.xml files?
 - resolve content duplication, e.g., extensions point attributes are described in the [](plugin_extension_points.md#declaring-extension-points) section
-
-- before the elements sections add "Overall structure" or similar section with the nested list showing the whole structure, like:
-  - [`<idea-plugin>`](#idea-plugin)
-    - [`<id>`](#idea-plugin)
-    - [`<name>`](#idea-plugin)
-    - [`<extensionsPoints>`](#idea-plugin)
-      - [`<extensionsPoint>`](#idea-plugin)
-        - [`<with>`](#idea-plugin)
-    - [`<extensions>`](#idea-plugin)
-    - [`<applicationListeners>`](#idea-plugin)
-      - [`<listener>`](#idea-plugin)
-    - ...
-
-  So it is easy to see the big picture and quickly navigate to the specific element
-
 
 [//]: # (TODO: when we backlink to related topic&#40;s&#41; maybe we could use same format as we have in custom language tutorial "Reference: [link]" always in same position for element and separated from textual description)

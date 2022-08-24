@@ -28,11 +28,17 @@ See also [](marketing.md) about widgets and badges.
   - [`<name>`](#idea-plugin__name)
   - [`<version>`](#idea-plugin__version)
   - [`<product-descriptor>`](#idea-plugin__product-descriptor)
+  - [`<category>`](#idea-plugin__category) - **NEEDED OR OBSOLETE?** I couldn't find where it is presented
   - [`<idea-version>`](#idea-plugin__idea-version)
   - [`<vendor>`](#idea-plugin__vendor)
   - [`<description>`](#idea-plugin__description)
   - [`<change-notes>`](#idea-plugin__change-notes)
   - [`<depends>`](#idea-plugin__depends)
+  - `<dependencies>` - **TODO?**
+  - `<include>` - **TODO?**
+  - `<content>` - **TODO?**
+  - `<module>` - **TODO?**
+  - `<incompatible-with>` - **TODO?**
   - [`<actions>`](#idea-plugin__actions)
   - [`<extensionPoints>`](#idea-plugin__extensionPoints)
     - [`<extensionPoint>`](#idea-plugin__extensionPoints__extensionPoint)
@@ -63,6 +69,18 @@ Attributes
 :
 - `url` _(optional; ignored in [additional configuration](#additional-plugin-configuration-files))_<br/>
   The link to the plugin homepage displayed on the plugin page in the [JetBrains Marketplace](https://plugins.jetbrains.com).
+- `require-restart` _(optional)_<br/>
+  **TODO**
+- `implementation-detail` _(optional)_<br/>
+  **TODO?**
+- `package` _(optional)_<br/>
+  **TODO?**
+- `use-idea-classloader` _(optional)_<br/>
+  **TODO?**
+- `allow-bundled-update` _(optional)_<br/>
+  **TODO?**
+- `on-demand` _(optional)_<br/>
+  **TODO?**
 
 Children
 :
@@ -77,6 +95,7 @@ Children
   - [`<idea-version>`](#idea-plugin__idea-version)
   - [`<name>`](#idea-plugin__name)
   - [`<product-descriptor>`](#idea-plugin__product-descriptor)
+  - [`<category>`](#idea-plugin__category)
   - [`<projectListeners>`](#idea-plugin__projectListeners)
   - [`<resource-bundle>`](#idea-plugin__resource-bundle)
   - [`<vendor>`](#idea-plugin__vendor)
@@ -146,12 +165,35 @@ Example
 {id="idea-plugin__product-descriptor"}
 
 [Paid](https://plugins.jetbrains.com/build-and-market) or [Freemium](https://plugins.jetbrains.com/docs/marketplace/freemium.html) plugin descriptor.
-See the [required parameters](https://plugins.jetbrains.com/docs/marketplace/add-required-parameters.html) for more details.<br/>
+
+**Reference:** [How to add required parameters for paid plugins](https://plugins.jetbrains.com/docs/marketplace/add-required-parameters.html)
 
 {style="narrow"}
 Required
 : only for paid or freemium plugins; ignored in [additional config file](#additional-plugin-configuration-files)<br/>
 **Do not add `<product-descriptor>` element in a free plugin.**
+
+Attributes
+:
+- `code` _(required)_<br/>
+  The plugin product code used in the JetBrains Sales System.
+  The code must be agreed with JetBrains in advance and follow [the requirements](https://plugins.jetbrains.com/docs/marketplace/obtain-a-product-code-from-jetbrains.html).
+- `release-date` _(required)_<br/>
+  Date of the major version release in the `YYYYMMDD` format.
+- `release-version` _(required)_<br/>
+  A major version in a special number format.
+- `optional` _(optional)_<br/>
+  The boolean value determining whether the plugin is a [Freemium](https://plugins.jetbrains.com/docs/marketplace/freemium.html) plugin.<br/>
+  Default value: `false`
+
+### `category`
+{id="idea-plugin__category"}
+
+Plugin category. **TODO**: what does it mean (Ivan Chirkov asked, I'm waiting for the answer)?
+
+{style="narrow"}
+Required
+: no; ignored in [additional config file](#additional-plugin-configuration-files)<br/>
 
 ### `idea-version`
 {id="idea-plugin__idea-version"}
@@ -710,11 +752,6 @@ Required
 ## TODO:
 
 - add information about what can be patched by Gradle IntelliJ Plugin (+ links to its docs)
-- add missing stuff:
-  - paid/freemium plugin attributes
-  - idea-plugin@require-restart
-  - category element
 - links to code sample plugin.xml files?
 - resolve content duplication, e.g., extensions point attributes are described in the [](plugin_extension_points.md#declaring-extension-points) section
-
-[//]: # (TODO: when we backlink to related topic&#40;s&#41; maybe we could use same format as we have in custom language tutorial "Reference: [link]" always in same position for element and separated from textual description)
+- when we backlink to related topic(s) maybe we could use same format as we have in custom language tutorial "Reference: [link]" always in same position for element and separated from textual description)

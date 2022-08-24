@@ -14,6 +14,8 @@ Define a utility class with these helper methods:
 package org.intellij.sdk.language.psi.impl;
 
 import com.intellij.lang.ASTNode;
+import org.intellij.sdk.language.psi.SimpleProperty;
+import org.intellij.sdk.language.psi.SimpleTypes;
 
 public class SimplePsiImplUtil {
   public static String getKey(SimpleProperty element) {

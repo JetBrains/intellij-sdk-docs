@@ -421,19 +421,13 @@ Example
 ### `actions`
 {id="idea-plugin__actions"}
 
-TODO
+Plugin actions. _TODO: document the rest of elements and attributes._
 
 Additional information about configuring `<actions>` is available in the [Actions](basic_action_system.md#registering-actions) section.
 
 {style="narrow"}
 Required
 : no
-
-Children
-:
-- TODO
-- TODO
-- TODO
 
 ### `extensions`
 {id="idea-plugin__extensions"}
@@ -720,7 +714,6 @@ Required
   - paid/freemium plugin attributes
   - idea-plugin@require-restart
   - category element
-- add information that if some element or attribute is missing, it shouldn't be used in 3rd-party plugins
 - links to code sample plugin.xml files?
 - resolve content duplication, e.g., extensions point attributes are described in the [](plugin_extension_points.md#declaring-extension-points) section
 

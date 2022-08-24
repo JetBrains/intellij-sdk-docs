@@ -7,9 +7,12 @@ Sections below describe all the elements in detail.
 
 ## Additional Plugin Configuration Files
 
-The described elements and attributes can be part of the <path>plugin.xml</path> file and additional plugin configuration files included with the `config-file` attribute of the [`<depends>`](#idea-plugin__depends) elements.
-Additional files have the same format as the main <path>plugin.xml</path> file, but some elements and attributes required in <path>plugin.xml</path> are ignored in the additional configuration files.
-If the requirement differs in additional file, it will be explicitly stated.
+A plugin can contain additional configuration files beside the main <path>plugin.xml</path>.
+They have the same format, and they are included with the `config-file` attribute of [`<depends>`](#idea-plugin__depends) elements.
+However, some elements and attributes required in <path>plugin.xml</path> are ignored in additional configuration files.
+If the requirements differs, the documentation below will state it explicitly.
+One use case for additional configuration files is when a plugin provides optional features that are
+only available in some IDEs and require [certain modules](plugin_compatibility.md#modules-specific-to-functionality).
 
 ## Useful Resources
 
@@ -58,7 +61,7 @@ Children
 {id="idea-plugin__id"}
 
 A unique identifier of the plugin.
-It should be a fully qualified name including namespace to not collide with existing plugins.
+It should be a fully qualified name similar to Java packages and must not collide with the ID of existing plugins.
 
 **The identifier value cannot be changed between the plugin versions.**
 
@@ -97,7 +100,7 @@ Example
 {id="idea-plugin__version"}
 
 The plugin version displayed in the <control>Plugins</control> settings dialog and in the JetBrains Marketplace plugin page.
-Plugins uploaded to the JetBrains Marketplace must follow the [semantic versioning](https://plugins.jetbrains.com/docs/marketplace/semver.html).
+Plugins uploaded to the JetBrains Marketplace must follow [semantic versioning](https://plugins.jetbrains.com/docs/marketplace/semver.html).
 
 {style="narrow"}
 Required
@@ -157,7 +160,7 @@ Required
 ### `idea-version`
 {id="idea-plugin__idea-version"}
 
-Defines the IntelliJ-based IDEs version compatibility range.
+The plugin's range of compatible IntelliJ-based IDE versions.
 
 See how to correctly specify [version ranges](build_number_ranges.md).
 
@@ -254,7 +257,8 @@ Example
 ### `depends`
 {id="idea-plugin__depends"}
 
-Specifies a [dependency](plugin_dependencies.md) on another plugin.
+Specifies a [dependency](plugin_dependencies.md) on another plugin or a module of
+an [IntelliJ Platform-based product](plugin_compatibility.md#modules-specific-to-functionality).
 A single [`<idea-plugin>`](#idea-plugin) element can contain multiple `<depends>` elements.
 
 {style="narrow"}
@@ -277,6 +281,10 @@ Examples
 - Required plugin dependency:
     ```xml
     <depends>com.example.dependency-plugin</depends>
+    ```
+- Required dependency on the IntelliJ Java module:
+    ```xml
+    <depends>com.intellij.modules.java</depends>
     ```
 - Optional plugin dependency:
     ```xml
@@ -302,7 +310,7 @@ Examples
 ### `resource-bundle`
 {id="idea-plugin__resource-bundle"}
 
-A resource bundle to be used with message key attributes in extension declarations, and for [action and group localization](basic_action_system.md#localizing-actions-and-groups).
+A resource bundle to be used with message key attributes in extension declarations and for [action and group localization](basic_action_system.md#localizing-actions-and-groups).
 A single [`<idea-plugin>`](#idea-plugin) element can contain multiple `<resource-bundle>` elements.
 
 {style="narrow"}
@@ -364,10 +372,10 @@ Attributes
     - `unix`
     - `windows`
 - `activeInTestMode` _(optional)_<br/>
-  Boolean flag defining whether the listener should be instantiated in the test mode.<br/>
+  Boolean flag defining whether the listener should be instantiated in test mode.<br/>
   Default value: `true`.
 - `activeInHeadlessMode` _(optional)_<br/>
-  Boolean flag defining whether the listener should be instantiated in the headless mode.<br/>
+  Boolean flag defining whether the listener should be instantiated in headless mode.<br/>
   Default value: `true`.
 
 Example
@@ -475,7 +483,7 @@ Attributes
     - `IDEA_PROJECT`
     - `IDEA_MODULE`
 
-    It is not recommended to use non-default value.
+    It is not recommended to use non-default values.
 
 Children
 : [`<with>`](#idea-plugin__extensionPoints__extensionPoint__with)
@@ -521,7 +529,7 @@ An extension point which restricts the type provided in a `myClass` attribute to
         implements="java.lang.Comparable"/>
   </extensionPoint>
   ```
-  An implementing extension declaration could be defined as:
+  When using the above extension point, an implementation could be registered as follows:
   ```xml
   <myExtension ...
       myClass="com.example.MyCustomType">

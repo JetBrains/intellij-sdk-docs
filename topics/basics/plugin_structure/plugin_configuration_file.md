@@ -318,16 +318,15 @@ A single [`<idea-plugin>`](#idea-plugin) element can contain multiple `<depends>
 
 {style="narrow"}
 Required
-: no
+: no; in most cases dependency on the [platform](plugin_compatibility.md#modules-available-in-all-products) module is needed
 
 Attributes
 :
 - `optional` _(optional)_<br/>
   Boolean value defining whether the dependency is optional to load the plugin in the IDE.
-  Default value: `false`.<br/>
-  If the dependency plugin is not installed in the current IDE, and:
-    - `optional="true"` - the plugin will be loaded.
-    - `optional="false"` - the plugin will not be loaded.
+  If the dependency plugin is not installed in the current IDE, and `optional` is:
+    - `true` - the plugin will be loaded
+    - `false` (default) - the plugin will not be loaded
 - `config-file` _(optional)_<br/>
   Relative path to an [additional configuration file](#additional-plugin-configuration-files), loaded only if the dependency plugin is installed in the current IDE.
 
@@ -335,30 +334,31 @@ Examples
 :
 - Required plugin dependency:
     ```xml
-    <depends>com.example.dependency-plugin</depends>
+    <depends>com.example.dependencypluginid</depends>
     ```
-- Required dependency on the IntelliJ Java module:
+- Required dependency on the IntelliJ IDEA Java Module:
     ```xml
     <depends>com.intellij.modules.java</depends>
     ```
 - Optional plugin dependency:
     ```xml
     <depends optional="true">
-      com.example.dependency-plugin
+      com.example.dependencypluginid
     </depends>
     ```
-- Required plugin dependency with additional configuration:
+- Required module dependency with additional configuration:
     ```xml
-    <depends config-file="depconfig.xml">
-      com.example.dependency-plugin
+    <depends
+        config-file="myPluginId-withJava.xml">
+      com.intellij.modules.java
     </depends>
     ```
-- Optional plugin dependency with additional configuration:<br/>
+- Optional module dependency with additional configuration:
     ```xml
     <depends
         optional="true"
-        config-file="subdir/depconfig.xml">
-      com.example.dependency-plugin
+        config-file="myPluginId-withKotlin.xml">
+      org.jetbrains.kotlin
     </depends>
     ```
 
@@ -502,14 +502,14 @@ Children
 
 Example
 :
-- Extension declaration using the fully qualified extension name:
+- Extensions declaration using the fully qualified extension name:
     ```xml
     <extensions>
       <com.example.vcs.myExtension
         implementation="com.example.MyExtension"/>
     </extensions>
     ```
-- Extension declaration with the default namespace:
+- Extensions declaration with the default namespace:
     ```xml
     <extensions defaultExtensionNs="com.example.vcs">
       <myExtension

@@ -30,7 +30,6 @@ See also [](marketing.md) about widgets and badges.
   - [`<name>`](#idea-plugin__name)
   - [`<version>`](#idea-plugin__version)
   - [`<product-descriptor>`](#idea-plugin__product-descriptor)
-  - [`<category>`](#idea-plugin__category) - **NEEDED OR OBSOLETE?** I couldn't find where it is presented
   - [`<idea-version>`](#idea-plugin__idea-version)
   - [`<vendor>`](#idea-plugin__vendor)
   - [`<description>`](#idea-plugin__description)
@@ -97,7 +96,6 @@ Children
   - [`<idea-version>`](#idea-plugin__idea-version)
   - [`<name>`](#idea-plugin__name)
   - [`<product-descriptor>`](#idea-plugin__product-descriptor)
-  - [`<category>`](#idea-plugin__category)
   - [`<projectListeners>`](#idea-plugin__projectListeners)
   - [`<resource-bundle>`](#idea-plugin__resource-bundle)
   - [`<vendor>`](#idea-plugin__vendor)
@@ -190,15 +188,6 @@ Attributes
 - `optional` _(optional)_<br/>
   The boolean value determining whether the plugin is a [Freemium](https://plugins.jetbrains.com/docs/marketplace/freemium.html) plugin.<br/>
   Default value: `false`
-
-### `category`
-{id="idea-plugin__category"}
-
-Plugin category. **TODO**: what does it mean (Ivan Chirkov asked, I'm waiting for the answer)?
-
-{style="narrow"}
-Required
-: no; ignored in [additional config file](#additional-plugin-configuration-files)<br/>
 
 ### `idea-version`
 {id="idea-plugin__idea-version"}

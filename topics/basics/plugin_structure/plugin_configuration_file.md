@@ -35,11 +35,7 @@ See also [](marketing.md) about widgets and badges.
   - [`<description>`](#idea-plugin__description)
   - [`<change-notes>`](#idea-plugin__change-notes)
   - [`<depends>`](#idea-plugin__depends)
-  - `<dependencies>` - **TODO?**
-  - `<include>` - **TODO?**
-  - `<content>` - **TODO?**
-  - `<module>` - **TODO?**
-  - `<incompatible-with>` - **TODO?**
+  - [`<incompatible-with>`](#idea-plugin__incompatible-with)
   - [`<actions>`](#idea-plugin__actions)
   - [`<extensionPoints>`](#idea-plugin__extensionPoints)
     - [`<extensionPoint>`](#idea-plugin__extensionPoints__extensionPoint)
@@ -89,6 +85,7 @@ Children
   - [`<applicationListeners>`](#idea-plugin__applicationListeners)
   - [`<change-notes>`](#idea-plugin__change-notes)
   - [`<depends>`](#idea-plugin__depends)
+  - [`<incompatible-with>`](#idea-plugin__incompatible-with)
   - [`<description>`](#idea-plugin__description)
   - [`<extensions>`](#idea-plugin__extensions)
   - [`<extensionPoints>`](#idea-plugin__extensionPoints)
@@ -373,6 +370,25 @@ Examples
       com.example.dependency-plugin
     </depends>
     ```
+
+### `incompatible-with`
+{id="idea-plugin__incompatible-with"}
+
+Declares incompatibility with a provided module.
+
+**Reference:** [](plugin_compatibility.md#declaring-incompatibility-with-module)
+
+{style="narrow"}
+Required
+: no; ignored in [additional config file](#additional-plugin-configuration-files)
+
+Example
+:
+```xml
+<incompatible-with>
+    com.intellij.modules.appcode.ide
+</incompatible-with>
+```
 
 ### `resource-bundle`
 {id="idea-plugin__resource-bundle"}

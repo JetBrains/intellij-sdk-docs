@@ -34,4 +34,12 @@
 
     <build-profile product="ijs"/>
 
+    <footer>
+        <social type="twitter" href="https://twitter.com/JBPlatform/"/>
+        <social type="blog" href="https://blog.jetbrains.com/platform/"/>
+
+        <link href="https://plugins.jetbrains.com/slack/">JetBrains Platform Slack</link>
+        <link href="https://jb.gg/ipe">IntelliJ Platform Explorer</link>
+        <link href="https://plugins.jetbrains.com/plugin-ideas/">Plugin Ideas</link>
+    </footer>
 </buildprofiles>

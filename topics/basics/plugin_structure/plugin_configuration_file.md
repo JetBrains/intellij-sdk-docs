@@ -67,17 +67,8 @@ Attributes
 - `url` _(optional; ignored in [additional configuration](#additional-plugin-configuration-files))_<br/>
   The link to the plugin homepage displayed on the plugin page in the [JetBrains Marketplace](https://plugins.jetbrains.com).
 - `require-restart` _(optional)_<br/>
-  **TODO**
-- `implementation-detail` _(optional)_<br/>
-  **TODO?**
-- `package` _(optional)_<br/>
-  **TODO?**
-- `use-idea-classloader` _(optional)_<br/>
-  **TODO?**
-- `allow-bundled-update` _(optional)_<br/>
-  **TODO?**
-- `on-demand` _(optional)_<br/>
-  **TODO?**
+  The boolean value determining whether the plugin installation, update, or uninstallation requires the IDE restart (see [](dynamic_plugins.md) for details).<br/>
+  Default value: `false`.
 
 Children
 :
@@ -184,7 +175,7 @@ Attributes
   A major version in a special number format.
 - `optional` _(optional)_<br/>
   The boolean value determining whether the plugin is a [Freemium](https://plugins.jetbrains.com/docs/marketplace/freemium.html) plugin.<br/>
-  Default value: `false`
+  Default value: `false`.
 
 ### `idea-version`
 {id="idea-plugin__idea-version"}
